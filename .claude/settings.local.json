@@ -1,0 +1,49 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.worldscientific.com)",
+      "WebFetch(domain:arxiv.org)",
+      "WebFetch(domain:inspirehep.net)",
+      "Bash(timeout:*)",
+      "WebFetch(domain:www.researchgate.net)",
+      "WebFetch(domain:hal.science)",
+      "WebFetch(domain:www.academia.edu)",
+      "WebFetch(domain:prespacetime.com)",
+      "WebFetch(domain:api.semanticscholar.org)",
+      "WebFetch(domain:progress-in-physics.com)",
+      "WebFetch(domain:www.sciencedirect.com)",
+      "Bash(del \"C:\\\\sandbox\\\\Ainulindale Exflation\\\\Paasch\\\\01_1984_Fission_fragment_spectroscopy_large_surface_barrier_detectors.pdf\")",
+      "WebFetch(domain:www.taylorfrancis.com)",
+      "WebFetch(domain:cds.cern.ch)",
+      "Bash(pandoc:*)",
+      "WebFetch(domain:link.springer.com)",
+      "WebFetch(domain:en.wikipedia.org)",
+      "WebFetch(domain:www.ias.ac.in)",
+      "WebFetch(domain:www.thefreelibrary.com)",
+      "WebFetch(domain:iopscience.iop.org)",
+      "Bash(where:*)",
+      "Bash(if not exist \"C:\\\\sandbox\\\\Ainulindale Exflation\\\\tier0-computation\" mkdir \"C:\\\\sandbox\\\\Ainulindale Exflation\\\\tier0-computation\")",
+      "Bash(git init:*)",
+      "Skill(team-blast)",
+      "Bash(\"phonon-exflation-sim/.venv312/Scripts/python.exe\" -c:*)",
+      "Bash(\"phonon-exflation-sim/.venv312/Scripts/python.exe\" -c \":*)",
+      "Bash(\"phonon-exflation-sim/.venv312/Scripts/python.exe\":*)",
+      "WebFetch(domain:www.nature.com)"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash -c 'INPUT=$(cat); FILE_PATH=$(echo \"$INPUT\" | python -c \"import sys,json; print(json.load(sys.stdin).get(\\\"tool_input\\\",{}).get(\\\"file_path\\\",\\\"\\\"))\" 2>/dev/null); if [[ \"$FILE_PATH\" == */sessions/*.md ]]; then echo \"[weave] Meeting minutes modified: $FILE_PATH — run /weave --update to rebuild index\"; fi'",
+            "timeout": 5000
+          }
+        ]
+      }
+    ]
+  },
+  "outputStyle": "Explanatory"
+}

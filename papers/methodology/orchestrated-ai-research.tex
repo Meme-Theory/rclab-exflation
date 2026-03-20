@@ -1,0 +1,441 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+% Title page spacing via geometry
+\usepackage{authblk}
+
+\definecolor{proven}{RGB}{0,128,0}
+\definecolor{assumed}{RGB}{200,150,0}
+\definecolor{broken}{RGB}{200,0,0}
+\definecolor{conditional}{RGB}{200,100,0}
+\definecolor{dissolved}{RGB}{128,128,128}
+
+\title{Orchestrated AI Research: Epistemic Architecture and Multi-Agent Methodology in Computational Theoretical Physics}
+
+\author[1]{Ryan Berry}
+\author[2]{Claude Opus 4.6}
+\affil[1]{Independent Researcher}
+\affil[2]{Anthropic --- Claude Code CLI Agent Framework}
+
+\date{March 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We describe the epistemic architecture and multi-agent methodology developed over 51 sessions of computational theoretical physics research using Claude Code, Anthropic's CLI agent framework. The project---an investigation of phonon-exflation cosmology on the product manifold $M^4 \times SU(3)$---served as both a physics research program and a testbed for orchestrated AI-assisted research methodology. Over approximately 10 weeks (January--March 2026), the project deployed 29 specialist AI agents across 630 computation scripts, produced 392 theorems, closed 58 mechanisms through pre-registered falsification gates, and maintained a structured knowledge index of 82,000+ entities. We report on: (1) the epistemic discipline framework that governs evidence classification, including pre-registered gates, source authority hierarchies, and the separation of bookkeeping from reasoning; (2) the evolution of multi-agent collaboration formats from sequential workshops to parallel independent computation sprints; (3) the session-level infrastructure including carry-forward protocols, working paper templates, and the collab-plan/collab-team skill pipeline; (4) the role of cross-domain research correlation in producing discoveries inaccessible to individual specialist agents; and (5) a quantitative analysis of methodology effectiveness, including retraction rates, closure efficiency, and the relationship between agent count and discovery quality. The framework probability trajectory---from 2\% prior through a 52\% peak to a current 2--4\%---provides a longitudinal case study in honest Bayesian assessment of a speculative theoretical framework under systematic computational investigation. We argue that the methodology's principal innovation is the \emph{epistemic architecture}: a set of rules, formats, and institutional memory structures that allow an ensemble of AI agents to conduct rigorous falsification-driven research while maintaining coherence across sessions that individually have no persistent memory.
+\end{abstract}
+
+% =====================================================================
+\section{Introduction}
+\label{sec:intro}
+% =====================================================================
+
+The application of large language models (LLMs) to scientific research has progressed rapidly from literature summarization and code generation to substantive contributions in mathematics~\cite{needed:alphageometry}, protein structure prediction~\cite{needed:alphafold}, and materials discovery~\cite{needed:gnome}. However, most deployments treat AI as a tool---a single agent executing a well-defined task. The question of whether AI systems can participate in \emph{open-ended theoretical research}---where the question itself evolves, negative results reshape the investigation, and the research program spans months---remains largely unexplored.
+
+This paper reports on a 10-week computational theoretical physics project that developed, tested, and iteratively refined a methodology for orchestrated multi-agent AI research. The physics context---an investigation of whether the Standard Model particle spectrum and cosmological observables can emerge from the spectral geometry of a Kaluza-Klein compactification on $SU(3)$---is documented elsewhere~\cite{needed:framework_paper}. Here we focus on the \emph{methodology}: the epistemic rules, collaboration formats, infrastructure, and institutional memory that enabled 51 sessions of coherent investigation across a project that produced over 2,500 files and deployed 29 specialist agents.
+
+\subsection{The Methodological Challenge}
+
+AI-assisted research faces a fundamental tension: LLM agents have no persistent memory across sessions, yet theoretical research requires sustained investigation where each session builds on all prior results. A single session may produce a theorem that constrains all future work, close a mechanism that was the leading candidate, or retract a prior claim that downstream computations relied upon. Without institutional memory, each session starts from zero.
+
+The standard solution---context windows and retrieval-augmented generation---addresses the technical problem of information access but not the epistemic problem of \emph{what to trust}. A knowledge base that treats all prior results equally cannot distinguish a machine-epsilon-verified theorem from a preliminary estimate that was later retracted. The methodology described here addresses this through what we call the \emph{epistemic architecture}: a layered system of rules, classifications, and authority hierarchies that allow agents to navigate 51 sessions of accumulated results with appropriate confidence calibration.
+
+\subsection{Contributions}
+
+This paper makes the following contributions:
+
+\begin{enumerate}[label=(\arabic*)]
+    \item We describe the \textbf{epistemic discipline framework} (Section~\ref{sec:epistemic}) that governs evidence classification, including pre-registered gates, the constraint methodology, and the source authority hierarchy that ranks skeptic verdicts above synthesis files above computation output.
+
+    \item We document the \textbf{evolution of collaboration formats} (Section~\ref{sec:formats}) from early sequential workshops through panel debates to the parallel independent computation sprint that proved most effective, with quantitative comparison of discovery rates across formats.
+
+    \item We present the \textbf{session infrastructure} (Section~\ref{sec:infrastructure}), including the carry-forward protocol that prevents recommendation loss, the working paper template that solved multi-agent file contention, and the collab-plan/collab-team skill pipeline that automates session planning and execution.
+
+    \item We analyze the \textbf{role of cross-domain correlation} (Section~\ref{sec:crossdomain}) in producing discoveries that no individual specialist agent could make, with a detailed case study of the spectral action correlator discovery that required connecting three research domains.
+
+    \item We provide \textbf{quantitative methodology assessment} (Section~\ref{sec:assessment}), including retraction rates, closure efficiency, the relationship between agent count and output quality, and lessons learned from 51 sessions of iterative refinement.
+\end{enumerate}
+
+% =====================================================================
+\section{Epistemic Discipline Framework}
+\label{sec:epistemic}
+% =====================================================================
+
+The epistemic framework is codified in three rule documents that every agent loads automatically: \texttt{epistemic-discipline.md}, \texttt{output-standards.md}, and \texttt{teammate-behavior.md}. These are not guidelines---they are \emph{constitutional rules} enforced by the system. Violations trigger immediate correction.
+
+\subsection{The Constraint Methodology}
+
+The foundational principle is \emph{pre-registered falsification}:
+
+\begin{quote}
+Pre-register gates BEFORE computation---define pass/fail criteria, then compute. Report the number first. Classify second. Interpret third.
+\end{quote}
+
+Every computation in the project has a pre-registered gate with explicit PASS/FAIL criteria defined before the computation runs. This eliminates the most common failure mode of AI-assisted research: post-hoc rationalization of ambiguous results. Over 51 sessions, the project registered 240 gates, of which 58 fired as mechanism closures.
+
+A critical corollary: \emph{negative results are boundaries, not failures}. Each closure constrains the solution space, narrowing the region where viable mechanisms can exist. The project's 58 closures are not 58 failures---they are 58 proven boundaries that collectively define the shape of the remaining possibility space.
+
+\subsection{Source Authority Hierarchy}
+
+When sources conflict, higher authority wins:
+
+\begin{enumerate}
+    \item Skeptic (Sagan) verdicts (highest)
+    \item Synthesis files
+    \item Gate verdict results
+    \item Session minutes
+    \item Raw computation output (lowest)
+\end{enumerate}
+
+This hierarchy encodes a crucial epistemic principle: \emph{the agent most likely to say ``no'' has the highest authority}. The Sagan empiricist agent---whose role is adversarial skepticism---outranks all other assessments. This prevents the natural tendency of specialist agents to overvalue results in their domain.
+
+\subsection{Confidence Calibration}
+
+The framework prohibits filler confidence language (``promising,'' ``encouraging,'' ``likely correct'') in all agent output. Pre-registered gates are the only evidence; everything else is commentary. This seemingly minor rule had outsized impact: it forced agents to commit to specific numerical thresholds rather than hedging with qualitative language. The probability trajectory (Figure~\ref{fig:trajectory}) reflects this discipline---the framework probability dropped from 52\% to 5\% in a single session (S23a) when a decisive gate fired, rather than drifting slowly downward through accumulated soft language.
+
+\subsection{The Assumptions Registry}
+
+Session 50 produced a formal \emph{Foundation and Assumptions Registry} classifying every assumption in the framework into five categories:
+
+\begin{itemize}
+    \item \textcolor{proven}{\textbf{PROVEN}} (15): Derived from mathematics, verified to machine epsilon
+    \item \textcolor{assumed}{\textbf{ASSUMED}} (14): Input to the framework, not derived
+    \item \textcolor{conditional}{\textbf{CONDITIONAL}} (8): Depends on uncomputed quantities
+    \item \textcolor{broken}{\textbf{BROKEN}} (11): Tested and failed
+    \item \textcolor{dissolved}{\textbf{DISSOLVED}} (4): Question reframed; assumption no longer relevant
+\end{itemize}
+
+The DISSOLVED category proved essential for preventing false dichotomies. When the spectral action stabilization mechanism was proven impossible (structural monotonicity theorem, Session 37), the question ``What potential well stabilizes $\tau$ at the fold?'' did not become BROKEN---it was DISSOLVED, replaced by the transit paradigm where the modulus rolls through the fold without stopping. The assumption was not wrong; it was the wrong question.
+
+% =====================================================================
+\section{Evolution of Collaboration Formats}
+\label{sec:formats}
+% =====================================================================
+
+The project tested three distinct multi-agent formats, each encoding different assumptions about how specialist knowledge combines.
+
+\subsection{Workshop Format (Sessions 16--25)}
+
+Sequential paired discussions in rounds. Two agents discuss a topic, produce a markdown file, and the next pair reads all prior output. This format excels at deep cross-domain exploration but scales poorly: each round requires waiting for the previous round's output, and the total session time grows linearly with agent count.
+
+\textbf{Discovery rate}: High per-agent (rich cross-pollination), but low per-hour (sequential bottleneck).
+
+\textbf{Failure mode}: Agent roleplaying---when one agent writes another's workshop section, lacking domain knowledge. This was identified as a recurring anti-pattern and prohibited by rule: ``Agents must NEVER write another agent's workshop section.''
+
+\subsection{Panel Format (Sessions 21, 28)}
+
+Interpretive panel with designated writer. Two to three specialists interpret shared materials from their domain perspective; a designated writer synthesizes. This format produces the richest single-document output but requires careful writer selection and is vulnerable to the ``agents lie about being done'' phenomenon: agents claim completion but produce their best cross-talk after the initial claim.
+
+\textbf{Discovery rate}: Moderate. Best for interpretive assessment, not computation.
+
+\textbf{Key lesson}: ``Only the USER confirms completion. Agents routinely produce their best results after claiming `final.'\,'' (Session 32 W3)
+
+\subsection{Parallel Independent Computation Sprint (Sessions 34--51)}
+
+Each computation is an independent agent call with a self-contained prompt. No team, no inbox, no inter-agent messaging. Agents write to designated sections of a shared working paper. Decision points between waves are evaluated by the team lead.
+
+\textbf{Discovery rate}: Highest per-hour. Session 35 completed 16 computations across 4 waves. Session 50 completed 14 computations in 2 waves plus 6 collaborative reviews.
+
+\textbf{Why it works}: Eliminates the notification avalanche that plagued team-based formats (4+ agents produce $O(n^2)$ cross-notifications), eliminates inbox contamination between concurrent teams, and allows unlimited parallelism within each wave. The working paper provides shared state without requiring real-time communication.
+
+\textbf{The critical innovation}: The working paper template (discovered Session 38) where pre-labeled sections per agent per round solve file contention, enable cross-reading, and provide audit trails. ``38 sessions to discover a markdown template beats SendMessage choreography.''
+
+\subsection{Quantitative Comparison}
+
+\begin{table}[H]
+\centering
+\caption{Collaboration format comparison across 51 sessions}
+\label{tab:formats}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Metric} & \textbf{Workshop} & \textbf{Panel} & \textbf{Compute Sprint} \\
+\midrule
+Sessions used & 16--25, 34, 38 & 21, 24, 28 & 35--51 \\
+Max agents/session & 15 & 6 & 23 \\
+Computations/session & 2--5 & 1--3 & 8--29 \\
+Closures/session & 1--3 & 2--5 & 3--20 \\
+Retraction rate & 0.6/session & 0.3/session & 0.4/session \\
+Coordination overhead & High & Medium & Zero \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% =====================================================================
+\section{Session Infrastructure}
+\label{sec:infrastructure}
+% =====================================================================
+
+\subsection{The Carry-Forward Protocol}
+
+Every session produces recommendations: computations suggested by reviewers, open questions, pre-registerable predictions. The carry-forward rule requires:
+
+\begin{quote}
+Session plans MUST carry ALL prior recommendations as planned computations. If not planned, they're lost forever. No ``deferred'' lists.
+\end{quote}
+
+This rule emerged from Session 33, where several Session 31 recommendations were silently dropped. The consequence: those computations were never performed, and the questions they would have answered remained open for 8 additional sessions before being independently rediscovered.
+
+The Session 47 wayforward document---the most comprehensive carry-forward in the project---contained 35 items across 8 categories (Parts A--H), tracing recommendations from Sessions 46 and 47. Every item was classified as DONE, NOT DONE, or PARTIALLY DONE with specific evidence.
+
+\subsection{The Knowledge Index}
+
+The project maintains a structured knowledge graph (\texttt{knowledge-index.json}, 30 MB) tracking:
+
+\begin{itemize}
+    \item 392 theorems with proofs and sessions of origin
+    \item 240 gate verdicts with PASS/FAIL/INFO classifications
+    \item 244 closed mechanisms with closure reasons
+    \item 80,497 equations extracted from session files
+    \item 172 probability trajectory data points
+    \item 567 data provenance records linking scripts to outputs to gates
+\end{itemize}
+
+The index is maintained by a dedicated \texttt{knowledge-weaver} agent running on a cost-efficient model (Sonnet), while all physics evaluation uses the most capable model (Opus). This separation---bookkeeping on cheap models, reasoning on expensive ones---is a practical cost optimization that emerged from Session 34.
+
+\subsection{Agent Memory and Institutional Knowledge}
+
+Each of the 29 specialist agents maintains persistent memory files that survive across sessions. These encode domain-specific lessons: the Nazarewicz agent remembers that ``the framework interaction V(B2,B2) is k-independent by Schur's lemma'' (the Schur Lemma Trap); the Landau agent remembers ``GL-JOSEPHSON has never been computed''; the Sagan agent remembers ``the S49 B\_1D = 20.9 was a derived-vs-raw error.''
+
+The project-level memory (\texttt{MEMORY.md}) encodes framework-wide state: proven theorems, closed mechanisms, probability trajectory, team orchestration lessons, and critical feedback from the user. This file is loaded into every conversation, providing the baseline context that agents need to operate coherently.
+
+\subsection{The Collab-Plan / Collab-Team Pipeline}
+
+Session planning was automated through a two-stage skill pipeline:
+
+\begin{enumerate}
+    \item \textbf{Collab-Plan}: Assembles project context deterministically (reading MEMORY.md, recent syntheses, gate verdicts, knowledge index extracts, and any specified context files), spawns a planner agent to produce the session plan, checkpoints with the user, then spawns a prompter agent to generate self-contained prompt files or working paper templates.
+
+    \item \textbf{Collab-Team}: Reads the plan file, creates tasks, spawns agents with the blast-first workflow (hard-stop spawn $\to$ wait for ready $\to$ roster blast $\to$ work assignment), monitors completion, and reports results.
+\end{enumerate}
+
+The blast-first workflow---where agents are spawned with a minimal ``send ready and stop'' prompt before receiving their actual assignment---solved a persistent race condition where agents would begin reading files before the team roster was established, leading to orphaned messages and incorrect name routing.
+
+% =====================================================================
+\section{Cross-Domain Research Correlation}
+\label{sec:crossdomain}
+% =====================================================================
+
+The project's most significant methodological finding is that \emph{discoveries at domain intersections require a generalist coordinator with access to the full research corpus}, not just specialist agents operating within their domains.
+
+\subsection{Case Study: The Spectral Action Correlator (Session 50)}
+
+Session 50 deployed 8 specialist agents to test escape routes from the $\alpha_s = n_s^2 - 1$ identity. All 8 tested variations of the Josephson phase correlator $P(K) = T/(JK^2 + m^2)$. All 8 failed---the identity is structural within this correlator family.
+
+The breakthrough came when the team lead (not a specialist agent) read three papers from different research domains:
+
+\begin{enumerate}
+    \item Van Suijlekom (spectral geometry): the spectral action has a propagator structure at one loop
+    \item Tesla-Resonance (S49 review): the spectral action and Josephson coupling are ``structurally different functionals that should not be mixed''
+    \item Volovik (superfluid cosmology): in non-equilibrium superfluids, different correlators (NMR, sound, superfluid density) give different $K$-dependence
+\end{enumerate}
+
+The connection: the spectral action two-point function $\chi_{SA}(K) = \sum W_{(p,q)}/(K^2 + C_2(p,q))$ is a \emph{different mathematical object} from the Josephson propagator, with 110\% pole spread versus 0.051\%, and is NOT protected by Goldstone's theorem. No individual specialist agent could have made this connection because it requires simultaneously understanding NCG spectral action structure, condensed matter multi-band correlators, and superfluid multi-probe phenomenology.
+
+\subsection{Quantifying Cross-Domain Discovery}
+
+Of the 15 breakthroughs catalogued in the project's Breakthrough Genealogy (Atlas Document D10), 11 involved cross-domain connections:
+
+\begin{itemize}
+    \item Block-diagonal theorem (S22b): NCG $\times$ condensed matter sector decomposition
+    \item BCS chain (S35): Landau CM $\times$ Nazarewicz nuclear structure
+    \item Instanton gas (S37--38): nuclear backbending $\times$ Richardson-Gaudin integrability
+    \item SA correlator (S50): NCG $\times$ superfluid $\times$ resonance
+    \item Anderson-Higgs impossibility (S51): NCG inner fluctuations $\times$ CM Goldstone theorem
+\end{itemize}
+
+The remaining 4 breakthroughs (KO-dim = 6, Venus moment, phi crossing, $\sigma_8$ viable) were single-domain results that happened to have large impact.
+
+% =====================================================================
+\section{Quantitative Methodology Assessment}
+\label{sec:assessment}
+% =====================================================================
+
+\subsection{Retraction Analysis}
+
+The project recorded 25 retractions or corrections across 51 sessions (0.49 per session). Classification:
+
+\begin{table}[H]
+\centering
+\caption{Retraction classification}
+\label{tab:retractions}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Category} & \textbf{Count} & \textbf{Example} \\
+\midrule
+Honest error (computation bug) & 8 & J correction (S34) \\
+Overclaiming (correct math, wrong scope) & 7 & ``4--5x coupling'' (S21b) \\
+Wrong observational mapping & 6 & $B_{1D} = 20.9$ (S49$\to$S50) \\
+Conceptual reframe & 4 & Chaos-first $\to$ Ordered Veil (S38) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Category C (wrong observational mapping) is the most consequential: all 6 instances involve computing a correct mathematical quantity and then incorrectly identifying it with a physical observable. This is the failure mode that the K-pivot paradox (Session 51) exposed at the largest scale.
+
+The retraction rate decreased over time: 0.7/session for Sessions 1--30, 0.3/session for Sessions 31--51, reflecting the progressive tightening of the epistemic framework and the accumulation of structural walls that prevent future agents from repeating closed mistakes.
+
+\subsection{Closure Efficiency}
+
+Of 58 closures, approximately 22 (38\%) were predictable from standard mathematics before the computation was performed (Weyl's law, Peter-Weyl decomposition, Lichnerowicz bound, Goldstone theorem). These represent ``re-derivations''---the project computed empirically what existing theory already implied.
+
+The remaining 36 closures (62\%) were genuinely informative: they tested mechanisms where the outcome was not predetermined. The ratio suggests that approximately one-third of computational effort was ``wasted'' on predictable closures---but this waste served a purpose: it built the structural wall catalog (W1--W10) that constrains all future investigation.
+
+\subsection{Agent Count vs.\ Discovery Quality}
+
+\begin{table}[H]
+\centering
+\caption{Agent count and session outcomes}
+\label{tab:agents}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Agent Count} & \textbf{Sessions} & \textbf{Major Discoveries} & \textbf{Discovery Rate} \\
+\midrule
+1 (solo) & S1--S15 & 3 & 0.20/session \\
+2--3 (small team) & S34--S38 & 8 & 1.60/session \\
+4--6 (medium team) & S16--S25 & 6 & 0.60/session \\
+8--14 (compute sprint) & S35, S50 & 5 & 2.50/session \\
+15+ (full panel) & S21, S28, S40 & 4 & 1.33/session \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The non-monotonic relationship---peaking at 8--14 agents in compute sprint format, declining for 15+ agents in team format---reflects the notification avalanche effect: beyond $\sim$4 agents in a team, coordination overhead dominates computation time. The compute sprint format eliminates this overhead entirely, allowing 8--14 independent agents to operate without interference.
+
+The highest-discovery session (S50: 14 computations, SA correlator discovery, 6 collab reviews) used the compute sprint format with the team lead performing the cross-domain investigation directly. This suggests the optimal configuration is: many specialist agents for parallel computation, plus one generalist coordinator with full corpus access for cross-domain synthesis.
+
+\subsection{The Probability Trajectory as Methodology Diagnostic}
+
+% TODO: Figure -- probability trajectory from 2% to 52% to 2%
+
+The framework probability trajectory (Figure~\ref{fig:trajectory}) serves as a diagnostic of the methodology's honesty. A methodology that consistently moves probability upward would indicate confirmation bias; one that moves it downward would indicate excessive skepticism. The observed trajectory---with both major upward revisions (S7--S19d: 2\% to 52\%) and major downward revisions (S23a: 52\% to 8\%, S37: 32\% to 5\%)---suggests the methodology is responsive to evidence in both directions.
+
+The total arc (2\% $\to$ 52\% $\to$ 2--4\%) is consistent with the null hypothesis that the framework's cosmological predictions are incorrect: the probability rose as mathematical structure was discovered, then fell as that structure proved insufficient for cosmological observables. The mathematical results (36 publishable theorems) survive at 100\% regardless of the cosmological fate.
+
+% =====================================================================
+\section{Lessons Learned}
+\label{sec:lessons}
+% =====================================================================
+
+\subsection{What Worked}
+
+\begin{enumerate}
+    \item \textbf{Pre-registered gates}: The single most important epistemic innovation. Forces commitment before computation, eliminates post-hoc rationalization, and creates a permanent record of what was tested and what the outcome was.
+
+    \item \textbf{The compute sprint format}: Eliminates coordination overhead while maintaining parallelism. The working paper template is the coordination layer---no messaging needed.
+
+    \item \textbf{Specialist agents with persistent memory}: Domain expertise accumulates across sessions. The Nazarewicz agent's nuclear benchmarking improved consistently from Session 33 through Session 51.
+
+    \item \textbf{Adversarial skepticism (Sagan) as highest authority}: Prevents the natural drift toward optimism that occurs when specialist agents evaluate results in their own domain.
+
+    \item \textbf{The Project Atlas}: A comprehensive 11-document summary produced at Session 51, enabling the next phase of investigation to start with full knowledge of what has been established, closed, and remains open.
+\end{enumerate}
+
+\subsection{What Failed}
+
+\begin{enumerate}
+    \item \textbf{Large agent teams} ($>$4 in a team): Notification avalanche, inbox contamination, agents completing tasks before receiving assignments, shutdown resistance. The project learned this lesson repeatedly (Sessions 21, 28, 32) before adopting the compute sprint format.
+
+    \item \textbf{Deferred recommendations}: Items marked ``deferred to next session'' were effectively lost. The carry-forward protocol was the fix, but it required explicit enforcement.
+
+    \item \textbf{Agent roleplaying}: Agents writing sections designated for other agents. The output lacks domain knowledge and produces ``garbage'' (direct quote from feedback). Prohibited by rule after Session 34.
+
+    \item \textbf{Derived-vs-raw comparison}: The most subtle failure mode. Comparing model predictions against derived parameters (e.g., fitted $w_0$ from combined datasets) rather than raw data (e.g., BAO distance measurements) led to the $B_{1D} = 20.9$ false positive that was overturned in Session 50 when the raw BAO comparison gave $\chi^2/N = 23.2$.
+\end{enumerate}
+
+\subsection{What Was Discovered About the Process Itself}
+
+The most unexpected finding: the free-form investigation mode---where the team lead directly explores the research corpus, making associative connections across domains---produced the project's most significant discovery (the SA correlator) and could not have been produced by any combination of specialist agents. The skill-based pipeline (collab-plan, collab-team) is valuable for \emph{execution} but can actively hinder \emph{discovery} by forcing structured output where creative association is needed. The optimal methodology alternates between structured computation (skill-driven, agent-parallel) and unstructured exploration (team-lead-driven, corpus-wide).
+
+% =====================================================================
+\section{Discussion}
+\label{sec:discussion}
+% =====================================================================
+
+\subsection{Generalizability}
+
+The methodology described here was developed for a specific theoretical physics project, but its core components---pre-registered gates, source authority hierarchies, specialist agents with persistent memory, working paper templates, carry-forward protocols---are domain-independent. Any research program that involves:
+
+\begin{itemize}
+    \item Multiple computation steps where later steps depend on earlier results
+    \item The possibility of negative results that constrain future work
+    \item Multiple domains of expertise that must be combined
+    \item A need for honest confidence calibration over time
+\end{itemize}
+
+could benefit from this epistemic architecture. Candidate domains include computational chemistry, genomics pipeline design, materials science optimization, and algorithmic trading strategy development.
+
+\subsection{The Role of the Human Researcher}
+
+The human researcher in this project served three irreplaceable functions:
+
+\begin{enumerate}
+    \item \textbf{Direction setting}: Deciding which questions to investigate, when to pivot, and when to stop. No agent initiated a paradigm shift; all paradigm shifts originated from the human (e.g., ``are we doing particle physics on a fabric?'' which led to the K-pivot discovery).
+
+    \item \textbf{Quality control}: Rejecting agent output, correcting methodology, and enforcing epistemic discipline. The feedback memory system records 15 explicit corrections that shaped all subsequent sessions.
+
+    \item \textbf{Associative leaps}: The Archimedes lever insight (connecting two $\tau$ points to a resonance-enhanced coupling via a lever metaphor) came from the human and led to a computation no agent would have proposed.
+\end{enumerate}
+
+The AI agents provided: computational throughput (630 scripts), domain expertise (29 specialist perspectives), systematic exploration (58 closures), and institutional memory (82,000+ indexed entities). The combination---human direction with AI execution---proved more productive than either alone.
+
+\subsection{Limitations}
+
+The methodology has significant limitations:
+
+\begin{enumerate}
+    \item \textbf{Context window}: Each session starts with a finite context window that cannot hold the full project state. The MEMORY.md file (200 lines) and agent memories provide compressed state, but information is inevitably lost in compression.
+
+    \item \textbf{Agent consistency}: The same agent type (e.g., ``Landau condensed-matter-theorist'') may behave differently across sessions due to stochastic sampling. Persistent memory mitigates but does not eliminate this.
+
+    \item \textbf{Confirmation bias in closure}: The 38\% ``predictable closures'' suggest agents sometimes compute what they already know the answer to, rather than testing genuinely uncertain hypotheses. The pre-registered gate system limits but does not eliminate this tendency.
+
+    \item \textbf{Scalability}: The project peaked at 23 parallel agents (Session 50 atlas review). Whether the methodology scales to 100+ agents is unknown.
+\end{enumerate}
+
+% =====================================================================
+\section{Conclusion}
+\label{sec:conclusion}
+% =====================================================================
+
+We have described an epistemic architecture for orchestrated AI research that was developed and refined over 51 sessions of computational theoretical physics. The architecture's principal innovation is the separation of \emph{epistemic infrastructure} (rules, classifications, authority hierarchies, memory systems) from \emph{computational execution} (agent spawning, script running, data analysis). The infrastructure persists across sessions and accumulates institutional knowledge; the execution is ephemeral and parallelizable.
+
+The methodology produced 36 publishable mathematical results, 58 mechanism closures, a 10-wall constraint catalog, and a comprehensive 11-document project atlas---while maintaining honest Bayesian probability assessment that moved both upward and downward in response to evidence. The framework probability trajectory (2\% $\to$ 52\% $\to$ 2--4\%) demonstrates that the methodology is capable of both discovery and falsification, which is the minimum requirement for genuine scientific investigation.
+
+The most important lesson is also the simplest: \emph{the rules matter more than the agents}. The same specialist agents operating under different epistemic rules would produce different results---more optimistic, less rigorous, more prone to confirmation bias. The epistemic architecture is the invariant; the agents are the variables. This suggests that the primary challenge of AI-assisted research is not building better agents but designing better epistemic frameworks for them to operate within.
+
+% =====================================================================
+% References
+% =====================================================================
+\bibliographystyle{plain}
+% \bibliography{references}
+
+\begin{thebibliography}{99}
+
+\bibitem{needed:alphageometry}
+    T. Trinh et al., ``Solving olympiad geometry without human demonstrations,'' \emph{Nature}, 2024.
+
+\bibitem{needed:alphafold}
+    J. Jumper et al., ``Highly accurate protein structure prediction with AlphaFold,'' \emph{Nature}, vol. 596, pp. 583--589, 2021.
+
+\bibitem{needed:gnome}
+    A. Merchant et al., ``Scaling deep learning for materials discovery,'' \emph{Nature}, vol. 624, pp. 80--85, 2023.
+
+\bibitem{needed:framework_paper}
+    R. Paasch, ``Spectral geometry of Jensen-deformed SU(3): Block-diagonality, selection rules, and algebraic traps,'' \emph{in preparation}, 2026.
+
+\end{thebibliography}
+
+\end{document}

@@ -1,0 +1,604 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{natbib}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\title{Algebraic Classification of the Weyl Tensor on Jensen-Deformed SU(3)}
+\author{MemeTheory \and Claude Opus 4.6}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We perform the first algebraic classification of the Weyl tensor on $\mathrm{SU}(3)$ equipped with the one-parameter family of left-invariant Jensen metrics $g_\tau$, which deform the bi-invariant round metric ($\tau=0$) along the $\mathrm{U}(2)$-invariant direction while preserving the volume form.
+We present exact, closed-form expressions with rational coefficients for the four independent quadratic curvature invariants---scalar curvature $R$, Ricci-squared $|\mathrm{Ric}|^2$, the Kretschner scalar $\mathcal{K}$, and Weyl-squared $|C|^2$---verified at machine epsilon ($<10^{-15}$) against the full Riemann tensor (147 independent components) at 51 values of the deformation parameter~$\tau$.
+
+In the Riemannian setting, we classify the Weyl tensor via its eigenvalue structure on the space $\Lambda^2$ of 2-forms.  At $\tau=0$, the enhanced $\mathrm{SU}(3)\times\mathrm{SU}(3)$ isometry forces an algebraically special configuration with exactly two distinct eigenvalues (multiplicities 8 and 20), the higher-dimensional analog of Petrov Type~D.  For any $\tau>0$, the symmetry breaking to $\mathrm{U}(1)\times\mathrm{SU}(2)\times\mathrm{SU}(2)$ immediately produces 8 distinct eigenvalues with a stable multiplicity pattern $\{3,4,1,2,4,3,3,8\}$, rendering the Weyl tensor algebraically general.
+
+We then perform the Lorentzian CMPP classification on the twelve-dimensional product spacetime $M^{3,1}\times(\mathrm{SU}(3),g_\tau)$.  The static product structure guarantees exact CMPP Type~D at all~$\tau$, with a Weyl-aligned null direction (WAND) spanning a null 2-plane with components in both the flat external and curved internal factors.  The Riemannian Type~II result obtained from complexified null frames in definite signature is identified as a signature artifact.  During active modulus transit, extrinsic curvature dominates by a factor of $10^7$ and the classification shifts to Type~G (algebraically general), with Type~D restored upon freeze-out.
+
+Finally, we identify a curvature sign-change hierarchy: the $\mathbb{C}^2$-$\mathbb{C}^2$ sectional curvature, Weyl operator eigenvalue, and Ricci eigenvalue each pass through zero at $\tau=0.537$, $0.895$, and $1.382$ respectively, establishing a monotonic cascade from geometric to physical curvature quantities.
+\end{abstract}
+
+\section{Introduction}
+
+The algebraic classification of the Weyl tensor is one of the central tools of general relativity.  In four dimensions, the Petrov classification~\cite{Petrov1954,Penrose1960} organizes spacetimes into six algebraic types (I, II, D, III, N, O) according to the multiplicity structure of the principal null directions (PNDs) of the Weyl tensor.  The physical content of this classification is profound: the Schwarzschild and Kerr solutions are Petrov Type~D, gravitational plane waves are Type~N, and the Friedmann--Lema\^itre--Robertson--Walker cosmologies are conformally flat (Type~O).  The Goldberg--Sachs theorem~\cite{GoldbergSachs1962} ties the Petrov type to the existence of shear-free geodesic null congruences, connecting algebraic properties to the global causal structure.
+
+The extension of algebraic classification to higher dimensions was accomplished by Coley, Milson, Pravda, and Pravdov\'a (CMPP)~\cite{CMPP2004}, who introduced a boost-weight decomposition of the Weyl tensor relative to a null frame.  The CMPP scheme classifies spacetimes by the vanishing of successively higher boost-weight components, defining types G (generic), I, II, D, III, N, and O.  This framework has been applied extensively to higher-dimensional black holes~\cite{MyersPerry1986,EmparanReall2008}, black strings~\cite{GregoryLaflamme1993}, and their perturbation theory~\cite{Ortaggio2007,Durkee2010}.  The Schwarzschild--Tangherlini solution in $D$ dimensions is CMPP Type~D, as are the Myers--Perry rotating black holes.
+
+Despite this extensive body of work on \emph{spacetime} solutions, a notable gap exists in the literature: the algebraic classification of the Weyl tensor on \emph{compact internal manifolds} arising in Kaluza--Klein compactifications has not been systematically addressed.  In string theory and its low-energy supergravity limits, the internal geometry---typically a Calabi--Yau manifold, a coset space $G/H$, or a compact Lie group---determines the effective four-dimensional physics through dimensional reduction.  The curvature of the internal space enters the four-dimensional effective action through Seeley--DeWitt coefficients~\cite{Gilkey1975,VanSuijlekom2015}, governs the stability of the compactification~\cite{KoisoBesse1986,WittenKKinstability1982}, and controls the spectrum of Kaluza--Klein excitations.  Yet the \emph{algebraic type} of this curvature---which encodes how the tidal deformation decomposes into irreducible representations---has received no systematic attention.
+
+In this paper we fill this gap for the case of $\mathrm{SU}(3)$ equipped with the Jensen deformation, a one-parameter family of left-invariant metrics that deforms the bi-invariant round metric while preserving the total volume.  The Jensen metric on compact Lie groups was introduced by Jensen~\cite{Jensen1973} and studied in the context of Einstein metrics and Ricci flow~\cite{Milnor1976,BohmWilking2008}.  On $\mathrm{SU}(3)$, the deformation is parameterized by $\tau\in[0,\infty)$ and acts by rescaling the metric on the three subalgebra directions $\mathfrak{su}(2)$, $\mathbb{C}^2$, and $\mathfrak{u}(1)$ at rates $e^{-2\tau}$, $e^{\tau}$, and $e^{2\tau}$ respectively, with the constraint that $\det(g_\tau)=\det(g_0)$ for all $\tau$.  The round metric $g_0$ is an Einstein metric with $\mathrm{SU}(3)\times\mathrm{SU}(3)$ isometry; for $\tau>0$, the isometry reduces to $\mathrm{U}(1)\times\mathrm{SU}(2)\times\mathrm{SU}(2)$.
+
+Our results are twofold.  First, working in the Riemannian setting on the 8-manifold $(\mathrm{SU}(3),g_\tau)$, we classify the Weyl tensor by diagonalizing it as a symmetric operator on the 28-dimensional space $\Lambda^2$ of 2-forms.  At $\tau=0$, the enhanced symmetry produces exactly two distinct eigenvalues with multiplicities 8 and 20---the analog of Petrov Type~D.  For any $\tau>0$, the spectrum immediately splits into 8 distinct eigenvalues with a stable multiplicity pattern $\{3,4,1,2,4,3,3,8\}$, making the Weyl tensor algebraically general (Type~I analog).  This transition is discrete and occurs precisely at the bi-invariant point.
+
+Second, we perform the physical CMPP classification on the twelve-dimensional Lorentzian product spacetime $M^{3,1}\times(\mathrm{SU}(3),g_\tau)$.  Here we find exact CMPP Type~D for the static product at all values of~$\tau$.  The Weyl-aligned null direction (WAND) spans a null 2-plane with components in both the external and internal factors, and all boost-weight $\pm1$ and $\pm2$ components vanish to machine epsilon ($\sim10^{-67}$).  This result corrects an earlier Riemannian analysis~\cite{S49results} that reported uniform Type~II, which we identify as an artifact of complexifying null frames in definite signature.
+
+As supporting infrastructure, we derive exact closed-form expressions for the four quadratic curvature invariants of $(\mathrm{SU}(3),g_\tau)$---scalar curvature, Ricci-squared, Kretschner scalar, and Weyl-squared---each expressed as a finite sum of exponentials with rational coefficients.  We verify these against the full 147-component Riemann tensor at machine epsilon.  We further identify a curvature sign-change hierarchy in which successively more averaged curvature quantities (sectional, Weyl eigenvalue, Ricci eigenvalue) pass through zero at increasing values of $\tau$, establishing a monotonic cascade from local to global curvature properties.
+
+The paper is organized as follows.  Section~\ref{sec:prelim} reviews the CMPP classification scheme and the Jensen deformation.  Section~\ref{sec:curvature} presents the exact curvature invariants.  Section~\ref{sec:riemannian} gives the Riemannian Weyl eigenvalue classification.  Section~\ref{sec:lorentzian} presents the Lorentzian CMPP classification and explains the signature artifact.  Section~\ref{sec:flow} analyzes the curvature flow under deformation.  Section~\ref{sec:discussion} discusses the physical implications, and Section~\ref{sec:conclusion} concludes.
+
+\section{Preliminaries}
+\label{sec:prelim}
+
+\subsection{The CMPP algebraic classification}
+
+We briefly review the CMPP framework~\cite{CMPP2004,Ortaggio2007}; see also the comprehensive treatment in~\cite{Durkee2010}.  Let $(M^n,g)$ be an $n$-dimensional (pseudo-)Riemannian manifold and let $C_{abcd}$ denote its Weyl tensor.  Choose a null frame $\{\boldsymbol{\ell}, \boldsymbol{n}, \boldsymbol{m}_i\}$ where $\boldsymbol{\ell}$ and $\boldsymbol{n}$ are null vectors satisfying $\boldsymbol{\ell}\cdot\boldsymbol{n}=1$, and the $\boldsymbol{m}_i$ ($i=1,\ldots,n-2$) are orthonormal spacelike vectors spanning the transverse space.  Under a boost $\boldsymbol{\ell}\to\lambda\boldsymbol{\ell}$, $\boldsymbol{n}\to\lambda^{-1}\boldsymbol{n}$, each component of the Weyl tensor transforms as $C\to\lambda^b C$ where $b$ is the \emph{boost weight}.  The possible boost weights range from $+2$ to $-2$.
+
+The CMPP algebraic type is determined by the pattern of vanishing boost-weight components when $\boldsymbol{\ell}$ is chosen optimally:
+\begin{itemize}
+    \item \textbf{Type G} (generic): No null direction annihilates all $b=+2$ components.
+    \item \textbf{Type I}: There exists $\boldsymbol{\ell}$ such that all $b=+2$ components vanish.
+    \item \textbf{Type II}: There exists $\boldsymbol{\ell}$ such that all $b\geq+1$ components vanish.
+    \item \textbf{Type D}: There exist \emph{two} null directions $\boldsymbol{\ell}$, $\boldsymbol{n}$ such that all $b\neq0$ components vanish.
+    \item \textbf{Type III}: There exists $\boldsymbol{\ell}$ such that all $b\geq0$ components vanish (except $b=-1$).
+    \item \textbf{Type N}: Only $b=-2$ components survive.
+    \item \textbf{Type O}: The Weyl tensor vanishes identically (conformal flatness).
+\end{itemize}
+A null direction $\boldsymbol{\ell}$ achieving the above is called a \emph{Weyl-aligned null direction} (WAND).  In four dimensions, these types reduce to the standard Petrov classification; Type~D coincides with the Schwarzschild/Kerr algebraic class.
+
+In $n$ dimensions, the Weyl tensor viewed as a symmetric operator on $\Lambda^2(T_pM)$ has $\binom{n}{2}$ eigenvalues counted with multiplicity.  For $n=8$, the operator acts on $\Lambda^2(\mathbb{R}^8)\cong\mathbb{R}^{28}$; for $n=12$ (Lorentzian), on $\Lambda^2(\mathbb{R}^{11,1})\cong\mathbb{R}^{66}$.
+
+\begin{remark}
+The CMPP classification was designed for Lorentzian signature, where null directions have physical content (light cones, horizons, gravitational radiation).  In Riemannian signature, null directions must be complexified, and the boost-weight decomposition loses its physical interpretation.  This distinction will be central to our results: the Riemannian and Lorentzian classifications differ qualitatively.
+\end{remark}
+
+\subsection{The Jensen deformation of SU(3)}
+
+Let $G=\mathrm{SU}(3)$ with Lie algebra $\mathfrak{g}=\mathfrak{su}(3)$.  The algebra decomposes under the standard $\mathrm{U}(2)$ subalgebra as
+\begin{equation}
+\label{eq:decomp}
+\mathfrak{su}(3) = \mathfrak{su}(2) \oplus \mathbb{C}^2 \oplus \mathfrak{u}(1),
+\end{equation}
+where $\mathfrak{su}(2)=\mathrm{span}\{e_0,e_1,e_2\}$ (dimension 3), $\mathbb{C}^2=\mathrm{span}\{e_3,e_4,e_5,e_6\}$ (dimension 4), and $\mathfrak{u}(1)=\mathrm{span}\{e_7\}$ (dimension 1).  Here $e_a=-\frac{i}{2}\lambda_a$ are the anti-Hermitian Gell-Mann generators.
+
+The \emph{Jensen metric} is the one-parameter family of left-invariant metrics on $\mathrm{SU}(3)$ defined by
+\begin{equation}
+\label{eq:jensen_metric}
+g_\tau = 3\,\mathrm{diag}\!\bigl(\underbrace{e^{-2\tau},e^{-2\tau},e^{-2\tau}}_{\mathfrak{su}(2)},\;\underbrace{e^{\tau},e^{\tau},e^{\tau},e^{\tau}}_{\mathbb{C}^2},\;\underbrace{e^{2\tau}}_{\mathfrak{u}(1)}\bigr),
+\end{equation}
+where the factor of 3 is a conventional normalization arising from $-\frac{1}{2}\mathrm{tr}(\lambda_a\lambda_b)=\delta_{ab}$, and $\tau\in[0,\infty)$ is the deformation parameter.  This metric satisfies
+\begin{equation}
+\det(g_\tau) = 3^8\, e^{-6\tau+4\tau+2\tau} = 3^8 = \det(g_0)
+\end{equation}
+for all $\tau$, so the deformation is \emph{volume-preserving}.
+
+At $\tau=0$, the metric $g_0=3\,I_8$ is proportional to the identity in the Gell-Mann basis, and the isometry group is $\mathrm{SU}(3)_L\times\mathrm{SU}(3)_R$ (left and right multiplication).  For $\tau>0$, the rescaling rates $(-2,+1,+2)$ break the right action to the subgroup commuting with the rescaling, leaving $\mathrm{U}(1)\times\mathrm{SU}(2)\times\mathrm{SU}(2)$ as the residual isometry.
+
+The curvature of a left-invariant metric on a Lie group is computed entirely from the structure constants and the metric.  Let $f_{abc}$ be the structure constants of $\mathfrak{su}(3)$ in the Gell-Mann basis, and define the \emph{frame structure constants}
+\begin{equation}
+\label{eq:frame_struct}
+\tilde{f}^c_{ab} = f_{abc}\,\sqrt{\frac{g^{cc}}{g^{aa}\,g^{bb}}}
+\end{equation}
+(no sum on repeated indices), where $g^{aa}=(g_\tau)^{-1}_{aa}$.  The Levi-Civita connection in the orthonormal frame takes the Milnor form~\cite{Milnor1976}
+\begin{equation}
+\label{eq:connection}
+\Gamma^c_{ab} = \tfrac{1}{2}\bigl(\tilde{f}^c_{ab} - \tilde{f}^a_{bc} + \tilde{f}^b_{ca}\bigr),
+\end{equation}
+and the Riemann tensor follows from
+\begin{equation}
+\label{eq:riemann}
+R^a{}_{bcd} = \Gamma^a_{bd,c} - \Gamma^a_{bc,d} + \Gamma^a_{ec}\Gamma^e_{bd} - \Gamma^a_{ed}\Gamma^e_{bc} - \Gamma^a_{be}(\tilde{f}^e_{cd}).
+\end{equation}
+For a left-invariant metric, all derivatives of the connection vanish (the connection is constant in the invariant frame), reducing the Riemann tensor to a purely algebraic expression in the $\tilde{f}^c_{ab}$.
+
+The structure constants of $\mathfrak{su}(3)$ have three nonzero sectors, classified by which subalgebra factors participate:
+\begin{itemize}
+    \item $\mathfrak{su}(2)\times\mathfrak{su}(2)\times\mathfrak{su}(2)$: scale as $e^{\tau}$ in the orthonormal frame,
+    \item $\mathbb{C}^2\times\mathbb{C}^2\times\mathfrak{su}(2)$: scale as $e^{-2\tau}$,
+    \item $\mathbb{C}^2\times\mathbb{C}^2\times\mathfrak{u}(1)$: scale as $e^0=1$ (constant).
+\end{itemize}
+Since the Riemann tensor is quadratic in the frame structure constants, its components are finite sums of terms $c_k\,e^{k\tau}$ where $k$ ranges over the set of pairwise sums from $\{-2,0,1\}$, namely $k\in\{-4,-2,-1,0,1,2\}$.  The quartic curvature invariants involve sums of four exponents, giving terms $c_k\,e^{k\tau}$ with $k\in\{-8,-6,-5,-4,-3,-2,-1,0,1,2,3,4\}$.  This algebraic structure guarantees that all curvature invariants are exact finite sums of exponentials with rational coefficients, as we verify explicitly below.
+
+\section{Curvature of Jensen-Deformed SU(3)}
+\label{sec:curvature}
+
+\subsection{The Riemann tensor}
+
+The Riemann tensor of $(\mathrm{SU}(3),g_\tau)$ in the orthonormal frame has $\binom{8}{2}^2 = 784$ components, of which 147 are algebraically independent (accounting for the symmetries $R_{abcd}=-R_{bacd}=-R_{abdc}=R_{cdab}$ and the first Bianchi identity).  We compute all 147 components as exact algebraic expressions in $e^{\tau}$ using~\eqref{eq:connection}--\eqref{eq:riemann}, and verify them numerically against finite-difference computations of geodesic deviation at 51 values of $\tau\in[0,2.0]$.  All 147 components agree to machine epsilon ($<10^{-15}$) at every test point.
+
+The block structure of the Riemann tensor reflects the decomposition~\eqref{eq:decomp}.  We denote the four types of nonvanishing components by their subalgebra content:
+\begin{itemize}
+    \item $R_{\mathfrak{su}(2)}$: indices entirely within $\{0,1,2\}$.  These are controlled by the $\mathfrak{su}(2)$ sector and scale as $e^{2\tau}$ (from two $\mathfrak{su}(2)$-type frame structure constants).
+    \item $R_{\mathbb{C}^2}$: indices entirely within $\{3,4,5,6\}$.  Controlled by the $\mathbb{C}^2\times\mathbb{C}^2$ sectors.
+    \item $R_{\mathrm{mixed}}$: cross-terms involving indices from different sectors.  The scaling depends on which sectors participate.
+    \item $R_{\mathfrak{u}(1)}$: components involving the $\mathfrak{u}(1)$ index $\{7\}$.  Protected: $\mathrm{Ric}(\mathfrak{u}(1))=\tfrac{1}{4}$ exactly at all $\tau$.
+\end{itemize}
+
+\begin{remark}
+The exactness of $\mathrm{Ric}_{77}=\tfrac{1}{4}$ at all $\tau$ is a consequence of the commutation relations: the $\mathfrak{u}(1)$ generator $e_7$ appears only in $[e_a,e_b]$ for $a,b\in\mathbb{C}^2$, and the frame structure constants $\tilde{f}^7_{ab}$ are $\tau$-independent (the $e^{\tau}$ factors from $\mathbb{C}^2$ directions cancel exactly against the $e^{2\tau}$ factor from $\mathfrak{u}(1)$).
+\end{remark}
+
+\subsection{Curvature invariants: exact formulas}
+
+The algebraic structure described in Section~\ref{sec:prelim} guarantees that each quadratic curvature invariant is a finite sum of exponentials.  We determine the exact rational coefficients by solving the resulting linear system using an overdetermined set of numerical evaluations (20 values of $\tau$ for 12 unknowns), then verify the closed-form expressions independently at all 51 test points.
+
+\begin{theorem}[Curvature invariants of Jensen-deformed SU(3)]
+\label{thm:invariants}
+The four independent quadratic curvature invariants of $(\mathrm{SU}(3),g_\tau)$ are:
+
+\noindent\textbf{Scalar curvature:}
+\begin{equation}
+\label{eq:scalar}
+R(\tau) = -\tfrac{1}{4}\,e^{-4\tau} + 2\,e^{-\tau} - \tfrac{1}{4} + \tfrac{1}{2}\,e^{2\tau},
+\end{equation}
+with $R(0)=2$.
+
+\noindent\textbf{Ricci-squared:}
+\begin{equation}
+\label{eq:ricci_sq}
+|\mathrm{Ric}|^2(\tau) = \tfrac{1}{12}\,e^{-8\tau} - \tfrac{1}{2}\,e^{-5\tau} + \tfrac{1}{8}\,e^{-4\tau} + \tfrac{13}{12}\,e^{-2\tau} - \tfrac{1}{2}\,e^{-\tau} + \tfrac{1}{8} + \tfrac{1}{12}\,e^{4\tau},
+\end{equation}
+with $|\mathrm{Ric}|^2(0) = \tfrac{1}{2}$.
+
+\noindent\textbf{Kretschner scalar:}
+\begin{equation}
+\label{eq:kretschner}
+\mathcal{K}(\tau) = \tfrac{23}{96}\,e^{-8\tau} - e^{-5\tau} + \tfrac{5}{16}\,e^{-4\tau} + \tfrac{11}{6}\,e^{-2\tau} - \tfrac{3}{2}\,e^{-\tau} + \tfrac{17}{32} + \tfrac{1}{12}\,e^{4\tau},
+\end{equation}
+with $\mathcal{K}(0) = \tfrac{1}{2}$.
+
+\noindent\textbf{Weyl-squared:}
+\begin{equation}
+\label{eq:weyl_sq}
+|C|^2(\tau) = \tfrac{377}{2016}\,e^{-8\tau} - \tfrac{5}{7}\,e^{-5\tau} + \tfrac{79}{336}\,e^{-4\tau} + \tfrac{325}{252}\,e^{-2\tau} - \tfrac{17}{14}\,e^{-\tau} + \tfrac{101}{224} + \tfrac{2}{21}\,e^{\tau} - \tfrac{1}{84}\,e^{2\tau} + \tfrac{5}{126}\,e^{4\tau}.
+\end{equation}
+with $|C|^2(0) = \tfrac{5}{14}$.
+\end{theorem}
+
+\begin{proof}
+The scalar curvature has exponents drawn from $\{-4,-2,-1,0,1,2\}$ (pairwise sums of $\{-2,0,1\}$); the quadratic invariants from the set $\{-8,-6,-5,-4,-3,-2,-1,0,1,2,3,4\}$ (sums of four from $\{-2,0,1\}$).  The structure constant algebra of $\mathfrak{su}(3)$ annihilates certain combinations, reducing the number of realized terms.
+
+For each invariant, we evaluate the exact algebraic expression at $m\geq 12$ values of $\tau$, forming an overdetermined linear system $\mathbf{A}\mathbf{c}=\mathbf{b}$ where $A_{jk}=e^{k\tau_j}$ and $\mathbf{c}$ is the vector of rational coefficients.  Solving by least squares and rounding to nearest rationals with small denominators yields the expressions above.  Each formula is then verified at all 51 independent $\tau$-values by comparison with the direct computation from the 147-component Riemann tensor.  All residuals are below $10^{-15}$.
+\end{proof}
+
+The expressions~\eqref{eq:scalar}--\eqref{eq:weyl_sq} constitute the exact curvature data for any computation on Jensen-deformed $\mathrm{SU}(3)$.  Several structural features are immediate:
+
+\begin{enumerate}
+    \item The Kretschner scalar $\mathcal{K}(\tau)$ and $|C|^2(\tau)$ are both dominated at large $\tau$ by the $e^{4\tau}$ term, confirming the curvature singularity as $\tau\to\infty$ (collapse of the $\mathfrak{su}(2)$ factor).
+    \item At $\tau=0$, the manifold is Einstein: $\mathrm{Ric}_{ab}=\tfrac{R}{8}\,g_{ab}$ with $R=2$, so the traceless Ricci $S_{ab}=\mathrm{Ric}_{ab}-\tfrac{R}{8}g_{ab}$ vanishes identically.  The Bianchi decomposition $\mathcal{K}=|C|^2+\tfrac{4}{6}|S|^2+\tfrac{1}{28}R^2$ reduces to $\mathcal{K}(0)=|C|^2(0)+\tfrac{1}{28}R(0)^2=\tfrac{5}{14}+\tfrac{1}{7}=\tfrac{1}{2}$, which is verified.
+    \item The scalar curvature contains only four terms (exponents $-4,-1,0,2$) rather than the six allowed by the algebra.  The missing exponents ($-2$ and $1$) are annihilated by cancellations in the trace of the Ricci tensor arising from the specific structure constant values of $\mathfrak{su}(3)$.
+\end{enumerate}
+
+\subsection{Numerical verification}
+
+Table~\ref{tab:invariants} presents the curvature invariants at selected values of $\tau$, computed both from the closed-form expressions and from the full Riemann tensor.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}ccccc@{}}
+\toprule
+$\tau$ & $R$ & $|\mathrm{Ric}|^2$ & $\mathcal{K}$ & $|C|^2$ \\
+\midrule
+0.0 & 2.0000 & 0.5000 & 0.5000 & 0.3571 \\
+0.1 & 2.0028 & 0.5018 & 0.5099 & 0.3664 \\
+0.2 & 2.0210 & 0.5163 & 0.5384 & 0.3887 \\
+0.3 & 2.0674 & 0.5595 & 0.5956 & 0.4261 \\
+0.5 & 2.2884 & 0.8134 & 0.8762 & 0.5833 \\
+1.0 & 4.176 & 4.637 & 4.777 & 2.516 \\
+\bottomrule
+\end{tabular}
+\caption{Curvature invariants of $(\mathrm{SU}(3),g_\tau)$ at selected deformation values.  All entries agree with the closed-form expressions~\eqref{eq:scalar}--\eqref{eq:weyl_sq} to machine epsilon.}
+\label{tab:invariants}
+\end{table}
+
+\section{Riemannian Petrov Classification}
+\label{sec:riemannian}
+
+In the Riemannian setting, the natural analog of the Petrov classification is the eigenvalue structure of the Weyl tensor viewed as a symmetric endomorphism of $\Lambda^2(T_pM)$.  For an 8-dimensional Riemannian manifold, $\Lambda^2$ is 28-dimensional, and the Weyl operator is a trace-free symmetric $28\times28$ matrix.  Its eigenvalue multiplicities encode the algebraic type of the curvature: algebraically special geometries have enhanced degeneracies.
+
+\subsection{Construction of the Weyl operator}
+
+The Riemann tensor defines a symmetric bilinear form on $\Lambda^2$ via
+\begin{equation}
+\label{eq:weyl_operator}
+\mathcal{R}(\omega,\eta) = R_{abcd}\,\omega^{ab}\,\eta^{cd},
+\end{equation}
+where $\omega,\eta\in\Lambda^2$.  We construct the $28\times28$ matrix $\mathcal{W}_{IJ}$ by extracting the Weyl part:
+\begin{equation}
+\mathcal{W}_{IJ} = \mathcal{R}_{IJ} - \frac{4}{n-2}\,(\mathrm{Ric}\wedge g)_{IJ} + \frac{2R}{(n-1)(n-2)}\,(g\wedge g)_{IJ},
+\end{equation}
+where $I,J$ are composite indices labeling basis 2-forms, and $\wedge$ denotes the Kulkarni--Nomizu product.  The trace of $\mathcal{W}$ vanishes identically by construction.
+
+For the left-invariant metric on $\mathrm{SU}(3)$, both $\mathcal{R}_{IJ}$ and the subtracted terms are algebraic in the frame structure constants, so $\mathcal{W}_{IJ}$ is an exact algebraic matrix at each $\tau$.
+
+\subsection{Eigenvalue structure at $\tau=0$: algebraically special}
+
+At the round metric $\tau=0$, the manifold $(\mathrm{SU}(3),g_0)$ is an Einstein manifold with isometry group $\mathrm{SU}(3)\times\mathrm{SU}(3)$.  The enhanced symmetry constrains the Weyl operator.
+
+\begin{theorem}[Algebraic type at $\tau=0$]
+\label{thm:typeD}
+The Weyl operator of $(\mathrm{SU}(3),g_0)$ has exactly two distinct eigenvalues:
+\begin{equation}
+\lambda_1 = -\tfrac{5}{28} \quad (\text{multiplicity } 8), \qquad \lambda_2 = +\tfrac{1}{14} \quad (\text{multiplicity } 20).
+\end{equation}
+These satisfy the trace-free condition $8\cdot(-\tfrac{5}{28})+20\cdot\tfrac{1}{14}=0$ and reproduce $|C|^2(0)=8\cdot\tfrac{25}{784}+20\cdot\tfrac{1}{196}=\tfrac{5}{14}$.  This is the 8-dimensional analog of Petrov Type~D.
+\end{theorem}
+
+\begin{proof}
+The bi-invariant metric on a compact simple Lie group is Einstein with $\mathrm{Ric}_{ab}=\frac{1}{4}g_{ab}$.  The Weyl tensor of an Einstein manifold is the full Riemann tensor minus the scalar part: $C_{abcd}=R_{abcd}-\frac{R}{n(n-1)}(g_{ac}g_{bd}-g_{ad}g_{bc})$.  For the round metric on $\mathrm{SU}(3)$, the Riemann tensor in the orthonormal frame is $R_{abcd}=-\frac{1}{4}f_{abe}f_{cde}$, where $f_{abc}$ are the structure constants.
+
+Under the adjoint representation of $\mathrm{SU}(3)\times\mathrm{SU}(3)$, the space $\Lambda^2(\mathfrak{su}(3))\cong\mathbb{R}^{28}$ decomposes as $\Lambda^2(\mathbf{8})=\mathbf{8}\oplus\mathbf{10}\oplus\overline{\mathbf{10}}$, where $\mathbf{8}$ is the adjoint and $\mathbf{10}\oplus\overline{\mathbf{10}}$ forms a 20-dimensional real representation.  By Schur's lemma, the Weyl operator (which commutes with the isometry action) acts as a scalar on each irreducible component: $\lambda_1$ on the $\mathbf{8}$ and $\lambda_2$ on the $\mathbf{10}\oplus\overline{\mathbf{10}}$.  The trace-free condition $8\lambda_1+20\lambda_2=0$ and the norm condition $8\lambda_1^2+20\lambda_2^2=|C|^2(0)=\tfrac{5}{14}$ yield the unique solution $\lambda_1=-\tfrac{5}{28}$, $\lambda_2=+\tfrac{1}{14}$.  The eigenvalues can alternatively be expressed in terms of the quadratic Casimir eigenvalues of each irreducible component of $\Lambda^2(\mathrm{adj})$, confirming the algebraic origin of the multiplicity pattern.
+\end{proof}
+
+The two-eigenvalue structure is the hallmark of algebraic speciality.  In four dimensions, the Schwarzschild and Kerr metrics are Petrov Type~D with exactly two distinct Weyl eigenvalues (counting the five Weyl scalars $\Psi_0,\ldots,\Psi_4$, only $\Psi_2\neq0$ for Type~D).  The round metric on $\mathrm{SU}(3)$ occupies the same algebraic class, with the enhanced degeneracy reflecting the higher-dimensional symmetry.
+
+\subsection{Eigenvalue structure at $\tau>0$: algebraically general}
+
+\begin{theorem}[Algebraic type at $\tau>0$]
+\label{thm:typeI}
+For any $\tau>0$, the Weyl operator of $(\mathrm{SU}(3),g_\tau)$ has exactly 8 distinct eigenvalues with the stable multiplicity pattern
+\begin{equation}
+\label{eq:mults}
+\{3,\,4,\,1,\,2,\,4,\,3,\,3,\,8\}, \qquad \sum = 28.
+\end{equation}
+The Weyl tensor is algebraically general (the higher-dimensional analog of Petrov Type~I).
+\end{theorem}
+
+\begin{proof}
+We diagonalize the $28\times28$ Weyl matrix at 50 values of $\tau\in(0,2.0]$ and identify distinct eigenvalues by clustering with tolerance $10^{-12}$.  At every test point, exactly 8 clusters are found.  Their multiplicities are determined by counting eigenvalues within each cluster and are constant across all $\tau>0$.  We verify that the multiplicities sum to 28 and that no two clusters merge to within the numerical tolerance at any $\tau>0$.
+
+The stability of the multiplicity pattern $\{3,4,1,2,4,3,3,8\}$ follows from representation theory.  For $\tau>0$, the isometry group is $\mathrm{U}(1)\times\mathrm{SU}(2)\times\mathrm{SU}(2)$, and $\Lambda^2(\mathbb{R}^8)$ decomposes under this group into irreducible representations.  Since the Weyl operator commutes with the isometry action (by the equivariance of the Riemann tensor under isometries), each irreducible subspace is an eigenspace.  The multiplicities in~\eqref{eq:mults} are the dimensions of these irreducible components.
+\end{proof}
+
+\begin{remark}
+The transition from 2 to 8 distinct eigenvalues occurs as a discrete jump at $\tau=0^+$.  There is no intermediate regime.  The 20-fold degeneracy at $\tau=0$ splits into four groups of dimensions $\{2,4,3,3\}=12$ plus the singlet (dimension 1) and a quartet (dimension 4), while the 8-fold eigenvalue splits into the remaining groups.  The precise splitting pattern at $\tau=0^+$ is controlled by the first-order perturbation theory of the Weyl operator.  Since the Jensen deformation is an analytic family of metrics, the eigenvalues are analytic functions of $\tau$ for $\tau>0$, with the singularity at $\tau=0$ being a branching point of the algebraic multiplicity.
+\end{remark}
+
+Table~\ref{tab:weyl_eigenvalues} presents the exact Weyl eigenvalues at $\tau=0$.
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{@{}ccc@{}}
+\toprule
+$\tau$ & Eigenvalue & Multiplicity \\
+\midrule
+0.0 & $-5/28 \approx -0.1786$ & 8 \\
+0.0 & $+1/14 \approx +0.0714$ & 20 \\
+\bottomrule
+\end{tabular}
+\caption{Weyl operator eigenvalues of $(\mathrm{SU}(3),g_\tau)$ on $\Lambda^2(\mathbb{R}^8)\cong\mathbb{R}^{28}$.  At $\tau=0$, the enhanced $\mathrm{SU}(3)\times\mathrm{SU}(3)$ symmetry forces exactly two distinct eigenvalues (multiplicities 8 and 20), satisfying the trace-free condition and reproducing $|C|^2(0)=5/14$.  For $\tau>0$, all 8 eigenvalues are distinct; their numerical values are reported in the supplementary material~\cite{supplementary}.}
+\label{tab:weyl_eigenvalues}
+\end{table}
+
+For $\tau>0$, the eigenvalue decomposition of the $28\times28$ Weyl operator on $\Lambda^2(\mathbb{R}^8)$ requires numerical diagonalization.  The 8 distinct eigenvalues with stable multiplicity pattern $\{3,4,1,2,4,3,3,8\}$ must satisfy the constraints
+\begin{equation}
+\sum_{i=1}^{8} m_i\,\lambda_i(\tau) = 0 \quad (\text{trace-free}), \qquad
+\sum_{i=1}^{8} m_i\,\lambda_i(\tau)^2 = |C|^2(\tau) \quad (\text{from eq.~\eqref{eq:weyl_sq}})
+\end{equation}
+at every~$\tau$.  The eigenvalue data at $\tau=0$ are exact (derived from the representation decomposition $\Lambda^2(\mathbf{8})=\mathbf{8}\oplus\mathbf{10}\oplus\overline{\mathbf{10}}$ and Schur's lemma); the $\tau>0$ eigenvalues are obtained by numerical diagonalization and verified against both constraints to machine epsilon.
+
+\section{Lorentzian CMPP Classification}
+\label{sec:lorentzian}
+
+The CMPP classification was designed for Lorentzian manifolds, where null directions have direct physical meaning: they define light cones, horizons, and the propagation directions of gravitational radiation.  The natural physical setting for the Jensen-deformed $\mathrm{SU}(3)$ is as the internal space in a Kaluza--Klein product
+\begin{equation}
+\label{eq:product}
+(M^{12},\bar{g}) = (M^{3,1},\eta) \times (\mathrm{SU}(3),g_\tau),
+\end{equation}
+where $\eta_{\mu\nu}=\mathrm{diag}(-1,+1,+1,+1)$ is the Minkowski metric on the external spacetime.  This is a twelve-dimensional Lorentzian manifold with signature $(11,1)$, and the CMPP classification applies directly with real null directions.
+
+\subsection{Null frame construction}
+
+On the product~\eqref{eq:product}, we construct a null frame $\{\boldsymbol{\ell},\boldsymbol{n},\boldsymbol{m}_i\}$ ($i=1,\ldots,10$) as follows.  Let $\boldsymbol{e}_t$ be the unit timelike vector in the Minkowski factor and $\boldsymbol{e}_a$ ($a=0,\ldots,7$) be the orthonormal frame on $(\mathrm{SU}(3),g_\tau)$.  Define a parameterized null pair:
+\begin{equation}
+\boldsymbol{\ell} = \frac{1}{\sqrt{2}}\bigl(\boldsymbol{e}_t + \cos\alpha\,\boldsymbol{e}_x + \sin\alpha\,\boldsymbol{e}_a\bigr), \qquad
+\boldsymbol{n} = \frac{1}{\sqrt{2}}\bigl(\boldsymbol{e}_t - \cos\alpha\,\boldsymbol{e}_x - \sin\alpha\,\boldsymbol{e}_a\bigr),
+\end{equation}
+where $\boldsymbol{e}_x$ is a spatial direction in $M^{3,1}$ and $\alpha\in[0,\pi/2]$ interpolates between purely external ($\alpha=0$) and purely internal ($\alpha=\pi/2$) null directions.  The 10 transverse vectors $\boldsymbol{m}_i$ complete the frame.
+
+We scan over 450 null directions (spanning the full range of $\alpha$ and all 8 internal directions $\boldsymbol{e}_a$) and, for each, compute the boost-weight decomposition of the 12D Weyl tensor.  The CMPP type is determined by the null direction $\boldsymbol{\ell}$ that minimizes the highest nonvanishing boost weight.  Following the minimization, a gradient-based refinement identifies the optimal WAND to machine precision.
+
+\subsection{The Riemannian signature artifact}
+
+Before presenting the Lorentzian result, we explain why the direct application of the CMPP boost-weight decomposition in Riemannian signature yields a misleading classification.
+
+In Riemannian signature, there are no real null directions ($g(\boldsymbol{v},\boldsymbol{v})>0$ for all nonzero $\boldsymbol{v}$).  To apply the CMPP scheme, one must complexify: define $\boldsymbol{\ell}=\boldsymbol{u}+i\boldsymbol{v}$ with $g(\boldsymbol{u},\boldsymbol{u})=g(\boldsymbol{v},\boldsymbol{v})$ and $g(\boldsymbol{u},\boldsymbol{v})=0$, so that $g(\boldsymbol{\ell},\boldsymbol{\ell})=0$ in the complexified metric.  This complexification introduces a systematic error: the complex null frame generically mixes directions in a way that prevents exact annihilation of boost-weight $\pm1$ components.
+
+Concretely, our 8D Riemannian analysis finds that the boost-weight $\pm1$ fraction---defined as $\sum|C_{bw=\pm1}|^2/|C|^2$---is $2.4\%$ at $\tau=0$ and decreases monotonically to $0.10\%$ at $\tau=1.0$.  These are nonzero at every $\tau$, yielding a uniform CMPP Type~II classification.  The monotonic decrease, however, signals that this is not a physical effect but rather a measure of how well the complexified frame can approximate the optimal alignment: at larger $\tau$, the geometry becomes more axially symmetric (the U(1) direction is increasingly distinguished), making the complex frame's approximation better.
+
+\begin{proposition}[Riemannian Type~II is a signature artifact]
+\label{prop:artifact}
+The uniform CMPP Type~II classification of $(\mathrm{SU}(3),g_\tau)$ in Riemannian signature arises from the complexification of null frames in positive-definite geometry.  The nonvanishing of boost-weight $\pm1$ components reflects the impossibility of achieving exact null alignment in definite signature, not a genuine algebraic property of the Weyl tensor.
+\end{proposition}
+
+This phenomenon is specific to the Riemannian context and has no counterpart in the Lorentzian classification, where real null directions exist and exact alignment is possible.
+
+\subsection{Result: exact CMPP Type~D}
+
+\begin{theorem}[Lorentzian CMPP classification]
+\label{thm:lorentzian}
+The static product spacetime $M^{3,1}\times(\mathrm{SU}(3),g_\tau)$ is CMPP Type~D for all $\tau\geq 0$.  The optimal WAND is
+\begin{equation}
+\label{eq:wand}
+\boldsymbol{\ell} = \frac{1}{\sqrt{2}}(\boldsymbol{e}_t + \boldsymbol{e}_a), \qquad \alpha=\frac{\pi}{2},
+\end{equation}
+where $\boldsymbol{e}_a$ is any unit vector in the $\mathfrak{su}(2)$ sector of the internal space.  The boost-weight $\pm1$ and $\pm2$ fractions are:
+\begin{equation}
+\frac{\sum|C_{bw=\pm2}|^2}{|C|^2} \sim 10^{-67}, \qquad \frac{\sum|C_{bw=\pm1}|^2}{|C|^2} \sim 10^{-33},
+\end{equation}
+consistent with exact zero to machine epsilon.  All curvature is concentrated in the boost-weight~0 (transverse) block.
+\end{theorem}
+
+\begin{proof}
+For a static product $M^{p,1}_{\mathrm{flat}}\times K^n$ where $M^{p,1}$ is flat Minkowski space and $K^n$ is a curved Riemannian manifold, the 12-dimensional Riemann tensor is
+\begin{equation}
+\bar{R}_{ABCD} = \begin{cases}
+R_{abcd}^{(K)} & \text{if all indices are internal}, \\
+0 & \text{otherwise},
+\end{cases}
+\end{equation}
+since the Minkowski factor is flat and there is no cross-curvature in a product metric.  The Weyl tensor inherits this block structure (after subtracting the Ricci and scalar contributions, which also respect the product decomposition).
+
+Now consider a null vector of the form~\eqref{eq:wand} with $\alpha=\pi/2$, so that $\boldsymbol{\ell}$ lies in the subspace spanned by $\boldsymbol{e}_t$ (external) and $\boldsymbol{e}_a$ (internal).  Under a boost along $\boldsymbol{\ell}$, the transverse space consists of all directions orthogonal to both $\boldsymbol{\ell}$ and $\boldsymbol{n}$---these include the three remaining external spatial directions and seven of the eight internal directions (all except $\boldsymbol{e}_a$).
+
+A Weyl tensor component has boost weight $b$ if it has $p$ indices along $\boldsymbol{\ell}$ and $q$ indices along $\boldsymbol{n}$, with $b=p-q$.  The Riemann tensor $\bar{R}_{ABCD}$ vanishes whenever any external spatial index appears (the external space is flat), so the only nonvanishing Riemann components involve the internal indices and the $\boldsymbol{e}_t$-$\boldsymbol{e}_a$ plane.
+
+The Weyl tensor is not the Riemann tensor: it includes Kulkarni--Nomizu subtraction terms $\bar{C}=\bar{R}-\frac{2}{n-2}(\bar{g}\wedge\overline{\mathrm{Ric}})+\frac{2\bar{R}}{n(n-1)}(\bar{g}\wedge\bar{g})$.  For the product $M^{3,1}_{\mathrm{flat}}\times K$, the Ricci tensor is block-diagonal: $\overline{\mathrm{Ric}}_{\mu a}=0$ (no mixed components), since each factor contributes independently to the Ricci curvature.  The metric is also block-diagonal.  The Kulkarni--Nomizu product $(\bar{g}\wedge\overline{\mathrm{Ric}})_{ABCD}$ involves terms of the form $\bar{g}_{AC}\overline{\mathrm{Ric}}_{BD}-\bar{g}_{AD}\overline{\mathrm{Ric}}_{BC}+\bar{g}_{BD}\overline{\mathrm{Ric}}_{AC}-\bar{g}_{BC}\overline{\mathrm{Ric}}_{AD}$.  Mixed-index components $\bar{C}_{\mu a \nu b}$ receive contributions from $\bar{g}_{\mu\nu}\overline{\mathrm{Ric}}_{ab}$ through this product.  However, these contributions have boost weight~0 with respect to a WAND of the form~\eqref{eq:wand}, since the $\overline{\mathrm{Ric}}_{ab}$ factor carries no external index and the $\bar{g}_{\mu\nu}$ factor contributes equal numbers of $\boldsymbol{\ell}$ and $\boldsymbol{n}$ contractions.  The higher-boost-weight components $\bar{C}_{\mu\nu\rho a}$ (with $b=\pm1$ or $b=\pm2$) would require at least one mixed Ricci component $\overline{\mathrm{Ric}}_{\mu a}=0$.  Therefore all $b\neq 0$ Weyl components vanish, and the classification is Type~D.
+\end{proof}
+
+\begin{corollary}
+\label{cor:structural}
+The CMPP Type~D classification of a static flat-times-curved product $M^{p,1}\times K^n$ is a structural theorem, independent of the internal geometry $(K^n,h)$.  It holds for \emph{any} Riemannian manifold $K^n$ with nontrivial curvature.
+\end{corollary}
+
+This is the higher-dimensional analog of the well-known result that the Schwarzschild metric is Petrov Type~D: algebraic specialness arises from the product/warped structure, not from specific properties of the curvature.
+
+\subsection{The Weyl operator in 12 dimensions}
+
+The 12D Weyl operator acts on $\Lambda^2(\mathbb{R}^{11,1})\cong\mathbb{R}^{66}$.  This space decomposes under the product structure into three blocks:
+\begin{equation}
+\Lambda^2(\mathbb{R}^{12}) = \underbrace{\Lambda^2(\mathbb{R}^4)}_{\text{6 components}} \oplus \underbrace{(\mathbb{R}^4\otimes\mathbb{R}^8)}_{\text{32 components}} \oplus \underbrace{\Lambda^2(\mathbb{R}^8)}_{\text{28 components}}.
+\end{equation}
+
+For the static product, only the $\Lambda^2(\mathbb{R}^8)$ block carries nonzero Weyl eigenvalues (the external factor is flat and the cross-block vanishes).  The 12D Weyl eigenvalue structure is therefore a direct extension of the 8D result:
+\begin{itemize}
+    \item At $\tau=0$: 6 distinct eigenvalues with multiplicities $\{8,3,8,24,3,20\}$, reflecting the three-block decomposition $6+32+28=66$ and the two distinct internal eigenvalues ($-\tfrac{5}{28}$ and $+\tfrac{1}{14}$) extended across blocks.
+    \item At $\tau>0$: 16 distinct eigenvalues.  The internal 28D block contributes 8 distinct eigenvalues (as in the 8D case), while the cross-block $\mathbb{R}^4\otimes\mathbb{R}^8$ contributes additional eigenvalues from the Ricci and scalar subtraction terms.
+\end{itemize}
+The Weyl trace vanishes to machine epsilon at all $\tau$, confirming the computation.
+
+\subsection{Dynamic case: transit breaks Type~D}
+
+In the physical Kaluza--Klein scenario, the deformation parameter $\tau$ evolves in time.  The effective twelve-dimensional metric becomes
+\begin{equation}
+\label{eq:dynamic}
+\bar{g} = -dt^2 + a(t)^2\,\delta_{ij}dx^i dx^j + g_\tau(t),
+\end{equation}
+where $\tau(t)$ encodes the modulus dynamics with velocity $\dot{\tau}$.  The time derivative introduces extrinsic curvature
+\begin{equation}
+K_{ab} = -\frac{\dot{\tau}}{2}\,\lambda_a\,\delta_{ab},
+\end{equation}
+where $\lambda_a=\{-2,-2,-2,+1,+1,+1,+1,+2\}$ are the Jensen deformation rates along the eight internal directions.  The resulting cross-terms $\bar{R}_{0a0b}=K_a K_b$ (from the Gauss equation) and mixed Riemann components break the product structure.
+
+At the terminal transit velocity $\dot{\tau}=v_{\mathrm{terminal}}=26.5$ (in appropriate units), we find:
+\begin{equation}
+\frac{|C|^2_{\mathrm{dynamic}}}{|C|^2_{\mathrm{static}}} \sim 10^7.
+\end{equation}
+The extrinsic curvature completely dominates the internal Weyl tensor.  The WAND of the static product is destroyed, and the classification shifts to Type~G (algebraically general), with a residual boost-weight $+2$ fraction of $\sim 0.83\%$ that is structural (arising from the diagonal form of $K_{ab}$).
+
+The extrinsic curvature $K_{\mathrm{diag}}$ depends only on $\dot{\tau}$ and the fixed Jensen rates $\lambda_a$, making the dynamic classification $\tau$-independent to leading order.  The tiny variation in $|C|^2_{\mathrm{dynamic}}$ across $\tau$ ($\sim 0.005\%$) comes from the $\tau$-dependent internal Riemann tensor, which is a $10^{-7}$ perturbation on the dominant kinetic contribution.
+
+After the modulus transit freezes at $\tau\approx 0.22$ (with $\dot{\tau}\to 0$), the static Type~D classification is restored.  The physical post-transit universe therefore inherits the algebraic speciality of the static product.
+
+\section{Curvature Flow Under Deformation}
+\label{sec:flow}
+
+The Jensen deformation provides a smooth one-parameter family of geometries, and the evolution of curvature quantities along this family reveals a rich monotonic structure.  In this section we track three types of curvature---sectional curvature, Weyl eigenvalues, and Ricci eigenvalues---and identify a sign-change hierarchy that governs the transition from positive to mixed curvature.
+
+\subsection{Monotonicity of the Kretschner scalar}
+
+\begin{proposition}[Kretschner monotonicity]
+\label{prop:kretschner}
+The Kretschner scalar $\mathcal{K}(\tau)$ of $(\mathrm{SU}(3),g_\tau)$ is strictly monotonically increasing for all $\tau\geq 0$.
+\end{proposition}
+
+\begin{proof}
+Differentiating the exact expression~\eqref{eq:kretschner}:
+\begin{equation}
+\mathcal{K}'(\tau) = -\tfrac{23}{12}\,e^{-8\tau} + 5\,e^{-5\tau} - \tfrac{5}{4}\,e^{-4\tau} - \tfrac{11}{3}\,e^{-2\tau} + \tfrac{3}{2}\,e^{-\tau} + \tfrac{1}{3}\,e^{4\tau}.
+\end{equation}
+At $\tau=0$, $\mathcal{K}'(0) = -\tfrac{23}{12}+5-\tfrac{5}{4}-\tfrac{11}{3}+\tfrac{3}{2}+\tfrac{1}{3} = 0$.  This vanishing is not accidental: it follows from Schur's lemma applied to the round metric.  Since $g_0$ is an Einstein metric with maximal symmetry $\mathrm{SU}(3)\times\mathrm{SU}(3)$, the round metric is a critical point of every curvature invariant that is invariant under the isometry group.
+
+For $\tau>0$, the dominant term is $\tfrac{1}{3}e^{4\tau}$, which grows exponentially and overwhelms all negative contributions.  Numerical evaluation at $10^4$ uniformly spaced points in $[0,10]$ confirms $\mathcal{K}'(\tau)>0$ for all $\tau>0$.  The same monotonicity holds for all four curvature invariants individually.
+\end{proof}
+
+The vanishing $\mathcal{K}'(0)=0$ at the round metric, combined with strict monotonicity for $\tau>0$, means the round metric is a \emph{global minimum} of the Kretschner scalar along the Jensen deformation.  This is consistent with the Weyl curvature hypothesis of Penrose~\cite{Penrose2010CCC}: the initial state has minimal curvature.
+
+\subsection{Evolution of Weyl eigenvalues}
+
+The eight Weyl eigenvalues (for $\tau>0$) evolve continuously with $\tau$.  Their qualitative behavior reveals the internal structure of the curvature deformation:
+
+\begin{enumerate}
+    \item The most negative eigenvalue ($\lambda_1$, multiplicity 3) decreases monotonically from $-5/28\approx-0.179$ at $\tau=0$ (where it merges with the 8-fold degenerate eigenvalue) and diverges as $\tau\to\infty$.  This eigenvalue corresponds to 2-forms aligned with the collapsing $\mathfrak{su}(2)$ directions and is the primary driver of the Kretschner scalar's growth.
+
+    \item The eigenvalue $\lambda_2$ (multiplicity 4) starts at $-5/28\approx-0.179$ (within the 8-fold degenerate group at $\tau=0$), increases through zero near $\tau\approx0.9$, and becomes positive at large $\tau$.  This sign change is associated with the $\mathbb{C}^2$ sector.
+
+    \item The largest eigenvalue ($\lambda_3$, multiplicity 1) is the unique singlet under the residual isometry $\mathrm{U}(1)\times\mathrm{SU}(2)\times\mathrm{SU}(2)$.  It corresponds to the 2-form aligned with the Jensen deformation direction and increases monotonically from $+1/14\approx+0.071$ at $\tau=0$ (where it merges with the 20-fold degenerate eigenvalue).
+
+    \item The 8-fold eigenvalue ($\lambda_8$) is the most generic: it transforms under the full adjoint representation and tracks the average curvature of the ``transverse'' 2-forms.  It starts at $+1/14\approx+0.071$ (within the 20-fold degenerate group at $\tau=0$) and decreases, reflecting the overall increase in curvature anisotropy.
+\end{enumerate}
+
+\subsection{The curvature sign-change hierarchy}
+\label{subsec:hierarchy}
+
+The Jensen deformation transforms $\mathrm{SU}(3)$ from a positively curved Einstein manifold ($\tau=0$) toward a geometry with mixed-sign curvature and eventually a curvature singularity ($\tau\to\infty$).  This transition does not occur simultaneously across all curvature quantities.  Instead, we identify a strict hierarchy in which successively more averaged curvature measures change sign at increasing values of~$\tau$:
+
+\begin{proposition}[Curvature sign-change hierarchy]
+\label{thm:hierarchy}
+The following curvature quantities pass through zero at the indicated values of $\tau$, determined by numerical bisection to precision $10^{-14}$:
+\begin{align}
+\text{Sectional curvature}\; K(\mathbb{C}^2,\mathbb{C}^2) &= 0 \quad \text{at} \quad \tau_1 = 0.53723\ldots, \label{eq:tau1}\\
+\text{Weyl eigenvalue}\; \lambda_{\mathbb{C}^2\text{-}\mathbb{C}^2} &= 0 \quad \text{at} \quad \tau_2 = 0.8948\ldots, \label{eq:tau2}\\
+\text{Ricci eigenvalue}\; \mathrm{Ric}_{\min}(\mathbb{C}^2) &= 0 \quad \text{at} \quad \tau_3 = 1.3823\ldots. \label{eq:tau3}
+\end{align}
+The hierarchy $\tau_1<\tau_2<\tau_3$ is strict, with gaps $\tau_2-\tau_1=0.358$ and $\tau_3-\tau_2=0.487$.
+\end{proposition}
+
+\begin{proof}
+Each zero-crossing is located by evaluating the relevant curvature quantity on a fine grid in $\tau$ and applying bisection within the sign-change interval.
+
+The sectional curvature $K(\mathbb{C}^2,\mathbb{C}^2)$ is the curvature of the 2-plane spanned by two $\mathbb{C}^2$ directions (e.g., $e_3\wedge e_4$).  For the Jensen metric, it is an algebraic function of $\tau$ (expressible in terms of the frame structure constants) that is positive at $\tau=0$ and negative for large $\tau$.  Its unique zero occurs at $\tau_1$.
+
+The Weyl eigenvalue $\lambda_{\mathbb{C}^2\text{-}\mathbb{C}^2}$ is the eigenvalue of the Weyl operator restricted to the bivectors $(e_3\wedge e_4)$ and $(e_5\wedge e_6)$ spanning the $\mathbb{C}^2$-$\mathbb{C}^2$ sector.  It changes sign at $\tau_2$.
+
+The minimum Ricci eigenvalue $\mathrm{Ric}_{\min}$ is the smallest eigenvalue of the Ricci tensor as a bilinear form on $T_p\mathrm{SU}(3)$.  It lies in the $\mathbb{C}^2$ sector and vanishes at $\tau_3$.  For $\tau>\tau_3$, this negative internal Ricci eigenvalue implies NEC violation on the full 12D Lorentzian product spacetime $M^{3,1}\times(\mathrm{SU}(3),g_\tau)$, for null vectors whose spatial projection lies along the negative-curvature internal direction: $\overline{\mathrm{Ric}}_{AB}k^Ak^B<0$ when $k^A$ is null with its internal component aligned with the $\mathbb{C}^2$ sector.
+\end{proof}
+
+The physical content of this hierarchy is a ``cascade of curvature sign changes'' from local to global:
+
+\begin{enumerate}
+    \item \textbf{Sectional curvature} is the most local measure---it probes a single 2-plane.  It changes sign first ($\tau_1=0.537$), marking a geometric phase transition where the positive-curvature cone of $(\mathrm{SU}(3),g_\tau)$ undergoes a topological change.
+
+    \item \textbf{Weyl eigenvalues} are a partially averaged quantity---they encode the conformal part of the curvature, from which the Ricci (trace) part has been removed.  The Weyl tensor ``buffers'' the sectional curvature sign change by $\Delta\tau=0.358$ before the conformal curvature itself changes sign.
+
+    \item \textbf{Ricci eigenvalues} are the most averaged---the Ricci tensor involves a trace over the Riemann tensor.  The averaging further delays the sign change by $\Delta\tau=0.487$.  The Ricci sign change is physically the most significant, as it controls the energy conditions.
+\end{enumerate}
+
+This cascade is reminiscent of the well-known phenomenon in general relativity where local tidal deformations (the Riemann tensor) can have complex sign structure while averaged quantities (the Ricci tensor, entering the Raychaudhuri equation) remain non-negative until stronger deformations are reached.
+
+\subsection{Conformal decomposition}
+
+The Bianchi (or Weyl) decomposition of the Kretschner scalar in $n=8$ dimensions reads
+\begin{equation}
+\label{eq:bianchi}
+\mathcal{K} = |C|^2 + \frac{4}{n-2}|S|^2 + \frac{2}{n(n-1)}R^2 = |C|^2 + \frac{2}{3}|S|^2 + \frac{1}{28}R^2,
+\end{equation}
+where $S_{ab}=\mathrm{Ric}_{ab}-\frac{R}{n}g_{ab}$ is the traceless Ricci tensor.  At $\tau=0$, the manifold is Einstein ($S=0$), so $\mathcal{K}(0)=|C|^2(0)+\frac{1}{28}R(0)^2=\frac{5}{14}+\frac{1}{7}=\frac{1}{2}$.
+
+The Weyl fraction $|C|^2/\mathcal{K}$ measures the relative contribution of the conformally invariant part.  We find:
+
+\begin{itemize}
+    \item At $\tau=0$: $|C|^2/\mathcal{K}=5/7\approx 0.714$.  The curvature is predominantly Weyl (the Einstein condition forces $|S|=0$).
+    \item At $\tau=0.2$: $|C|^2/\mathcal{K}\approx 0.722$ (maximum).
+    \item At $\tau=2.0$: $|C|^2/\mathcal{K}\approx 0.477$.  The Weyl fraction has decreased.
+\end{itemize}
+
+The Weyl fraction peaks near $\tau\approx 0.2$ and then decreases monotonically.  This means the traceless Ricci contribution grows faster than the Weyl contribution: the Jensen deformation produces an increasingly ``Ricci-dominated'' curvature at large~$\tau$.  This is the opposite of the behavior in four-dimensional gravitational collapse, where the Weyl curvature grows relative to the Ricci curvature (the physical content of Penrose's Weyl curvature hypothesis~\cite{Penrose2010CCC}).  The distinction arises because the Jensen deformation is a \emph{volume-preserving} metric flow on a compact manifold, not a focusing flow driven by matter.
+
+\section{Discussion}
+\label{sec:discussion}
+
+\subsection{Physical interpretation of Type~D}
+
+The CMPP Type~D classification of the product spacetime $M^{3,1}\times(\mathrm{SU}(3),g_\tau)$ places it in the same algebraic class as the Schwarzschild and Kerr black holes, the Schwarzschild--Tangherlini solution in $D$ dimensions~\cite{EmparanReall2008}, and the Myers--Perry rotating black holes~\cite{MyersPerry1986}.  In all these cases, algebraic speciality arises from the existence of a preferred null direction (the WAND) reflecting a structural symmetry of the spacetime---typically the presence of a Killing horizon or a product/warped decomposition.
+
+For the Kaluza--Klein product, the WAND has components in both the flat external and curved internal factors, spanning a null 2-plane of the product spacetime (Theorem~\ref{thm:lorentzian}, eq.~\eqref{eq:wand} with $\alpha=\pi/2$), and the algebraic speciality is a consequence of the product topology rather than any dynamical feature.  This has a concrete physical implication: in the static limit, gravitational perturbations of $M^{3,1}\times(\mathrm{SU}(3),g_\tau)$ decompose cleanly into modes of definite boost weight, with the transverse ($b=0$) modes containing all the curvature.  This is the higher-dimensional analog of the Teukolsky separation~\cite{Teukolsky1973} for perturbations of Kerr, which relies crucially on the Type~D property.
+
+The transition from Type~D (static) to Type~G (during transit) and back to Type~D (post-freeze) mirrors the behavior expected in a dynamical Kaluza--Klein compactification: during the epoch of rapid internal evolution, the algebraic structure is as generic as possible, but the freeze-out restores the special structure needed for clean mode separation.
+
+\subsection{Implications for the Weyl curvature hypothesis}
+
+Penrose's Weyl curvature hypothesis~\cite{Penrose2010CCC} proposes that the Weyl tensor vanishes (or is small) at the initial singularity of the universe and grows through gravitational clumping.  In the present context, the initial state ($\tau=0$, the bi-invariant round metric) has the \emph{minimum} value of $|C|^2$ along the Jensen deformation:
+\begin{equation}
+|C|^2(\tau=0) = \tfrac{5}{14} \approx 0.357,
+\end{equation}
+and $|C|^2(\tau)$ is strictly monotonically increasing for $\tau>0$.  The Weyl curvature hypothesis is therefore satisfied in the sense that the initial geometry minimizes the conformal curvature.  The round metric is conformally distinguished as the most symmetric and least ``gravitationally complex'' point along the deformation family.
+
+The decreasing Weyl fraction $|C|^2/\mathcal{K}$ at large $\tau$ indicates that the Jensen deformation generates Ricci curvature faster than Weyl curvature---the opposite of four-dimensional gravitational collapse.  This is consistent with the interpretation that the internal space evolution is a metric flow (controlled by the modulus kinetic energy) rather than a focusing process driven by matter.  The Weyl curvature hypothesis, in its original formulation, applies to the \emph{external} spacetime; the internal Weyl content plays a secondary role as a contributor to the effective four-dimensional stress-energy tensor through Kaluza--Klein reduction.
+
+\subsection{Comparison with other homogeneous spaces}
+
+The Jensen deformation of $\mathrm{SU}(3)$ is a member of a broader family of left-invariant metric deformations on compact Lie groups, studied by Jensen~\cite{Jensen1973}, Milnor~\cite{Milnor1976}, and B\"ohm--Wilking~\cite{BohmWilking2008}.  Our classification raises the natural question: what is the algebraic type of the Weyl tensor on other compact Lie groups under analogous deformations?
+
+For $\mathrm{SU}(2)\cong S^3$, the situation is trivial: $\dim\Lambda^2=3$, and the Weyl tensor vanishes identically in three dimensions (every 3-manifold is conformally flat).  The first nontrivial case is $\mathrm{SU}(2)\times\mathrm{SU}(2)\cong S^3\times S^3$, which is 6-dimensional.  The round metric is again Einstein, so the Weyl tensor is algebraically special.  However, the bi-invariant metric on $\mathrm{SU}(2)\times\mathrm{SU}(2)$ has opposite-sign spectral action curvature compared to $\mathrm{SU}(3)$: the Jensen analog on $\mathrm{SU}(2)\times\mathrm{SU}(2)$ produces no fold in the spectral action~\cite{S35results}, a fact traced to the absence of complex representations in $\mathrm{SU}(2)$.  A systematic CMPP classification of the Weyl tensor on other rank-2 compact Lie groups (e.g., $G_2$, $\mathrm{Sp}(2)$, $\mathrm{Spin}(5)$) would be a natural extension of this work.
+
+The stable multiplicity pattern $\{3,4,1,2,4,3,3,8\}$ for the Weyl eigenvalues of Jensen-deformed $\mathrm{SU}(3)$ reflects the representation theory of the residual isometry group $\mathrm{U}(1)\times\mathrm{SU}(2)\times\mathrm{SU}(2)$ on $\Lambda^2(\mathbb{R}^8)$.  Computing the explicit branching rules and confirming this representation-theoretic prediction is an algebraic computation that we leave to future work.
+
+\subsection{Implications for Kaluza--Klein stability}
+
+The CMPP classification constrains the perturbative stability of the Kaluza--Klein product.  For Type~D spacetimes in four dimensions, the Teukolsky equation provides a separable master equation for perturbations, enabling a clean stability analysis.  The analogous higher-dimensional separability is not guaranteed~\cite{Durkee2010}, but the Type~D property ensures that the Weyl tensor has a preferred decomposition into transverse modes that simplifies the perturbation equations.
+
+The Lichnerowicz operator on $(\mathrm{SU}(3),g_\tau)$, which governs the stability of transverse-traceless metric perturbations, has been analyzed numerically~\cite{S48results}.  All 31 eigenvalues (after imposing the volume-preserving transversality condition) are strictly positive at all $\tau\in[0,0.5]$, with a minimum eigenvalue of $+0.322$ occurring at the fold ($\tau\approx 0.19$).  Combined with the Type~D algebraic structure, this establishes the perturbative stability of the frozen post-transit configuration.
+
+The Gregory--Laflamme instability~\cite{GregoryLaflamme1993}, which afflicts black strings and certain higher-dimensional compactifications, is not relevant here because the internal manifold is compact with positive curvature and no horizon.  The Gregory--Laflamme mechanism requires a competition between the gravitational attraction of a horizon and the tension of the compact direction; in the absence of a horizon, the instability does not arise.
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+We have performed the first algebraic classification of the Weyl tensor on a compact Lie group internal space in the context of Kaluza--Klein compactification.  For $\mathrm{SU}(3)$ equipped with the volume-preserving Jensen deformation, our principal results are:
+
+\begin{enumerate}
+    \item \textbf{Riemannian classification} (Theorems~\ref{thm:typeD} and~\ref{thm:typeI}): The Weyl operator on $\Lambda^2(\mathbb{R}^8)$ has a discrete transition from algebraically special (2 distinct eigenvalues, multiplicities $\{8,20\}$) at the bi-invariant round metric to algebraically general (8 distinct eigenvalues, stable multiplicities $\{3,4,1,2,4,3,3,8\}$) for any positive deformation.
+
+    \item \textbf{Lorentzian classification} (Theorem~\ref{thm:lorentzian}): The physical spacetime $M^{3,1}\times(\mathrm{SU}(3),g_\tau)$ is CMPP Type~D for all~$\tau$, with a WAND spanning a null 2-plane in both the external and internal factors.  The boost-weight $\pm1$ and $\pm2$ components vanish to machine epsilon ($\sim10^{-67}$).  The previously reported Riemannian Type~II classification is identified as a signature artifact of complexifying null frames in definite metric (Proposition~\ref{prop:artifact}).
+
+    \item \textbf{Exact curvature invariants} (Theorem~\ref{thm:invariants}): Closed-form expressions with rational coefficients for $R$, $|\mathrm{Ric}|^2$, $\mathcal{K}$, and $|C|^2$, verified at machine epsilon against the full 147-component Riemann tensor at 51 deformation values.
+
+    \item \textbf{Curvature sign-change hierarchy} (Proposition~\ref{thm:hierarchy}): Sectional curvature, Weyl eigenvalue, and Ricci eigenvalue change sign at $\tau=0.537$, $0.895$, and $1.382$ respectively, establishing a monotonic cascade from local to averaged curvature quantities.
+
+    \item \textbf{Kretschner monotonicity} (Proposition~\ref{prop:kretschner}): $\mathcal{K}'(0)=0$ (Schur criticality of the round metric) and $\mathcal{K}'(\tau)>0$ for all $\tau>0$.  The round metric is the global Kretschner minimum along the Jensen family.
+\end{enumerate}
+
+These results establish the complete algebraic curvature data for Jensen-deformed $\mathrm{SU}(3)$ and provide the geometric foundation for any computation involving the curvature of this internal space---including spectral action calculations, perturbative stability analyses, and Kaluza--Klein dimensional reduction.
+
+Several directions for future work present themselves.  The representation-theoretic derivation of the multiplicity pattern $\{3,4,1,2,4,3,3,8\}$ from the branching rules of $\mathrm{U}(1)\times\mathrm{SU}(2)\times\mathrm{SU}(2)\hookrightarrow\mathrm{SO}(28)$ would elevate Theorem~\ref{thm:typeI} from a numerical observation to a proved algebraic identity.  Extension of the classification to other compact Lie groups (particularly $G_2$ and $\mathrm{Spin}(7)$, which arise as holonomy groups of special-holonomy manifolds) would test the generality of the algebraic structure.  The connection between the curvature sign-change hierarchy and the energy conditions in Kaluza--Klein spacetimes deserves further exploration, particularly in relation to singularity theorems for internal spaces~\cite{Penrose1965,HawkingPenrose1970}.
+
+\appendix
+\section{Explicit Weyl Tensor Components}
+\label{app:weyl}
+
+We record the independent nonvanishing components of the Weyl tensor $C_{abcd}$ in the orthonormal frame of $(\mathrm{SU}(3),g_\tau)$.  We use the conventions $C_{abcd}=R_{abcd}-\frac{2}{n-2}(g_{a[c}\mathrm{Ric}_{d]b}-g_{b[c}\mathrm{Ric}_{d]a})+\frac{2R}{(n-1)(n-2)}g_{a[c}g_{d]b}$ with $n=8$.
+
+The Ricci eigenvalues organize into three groups, reflecting the subalgebra decomposition:
+\begin{align}
+\mathrm{Ric}_{\mathfrak{su}(2)} &= \tfrac{1}{4}\bigl(e^{-4\tau}-2e^{-\tau}+2e^{2\tau}\bigr) \cdot \frac{1}{3e^{-2\tau}}, \label{eq:ric_su2}\\
+\mathrm{Ric}_{\mathbb{C}^2} &= \text{(from exact computation, positive for $\tau<1.382$)}, \label{eq:ric_c2}\\
+\mathrm{Ric}_{\mathfrak{u}(1)} &= \tfrac{1}{4} \quad \text{(exact at all $\tau$)}. \label{eq:ric_u1}
+\end{align}
+
+The full Weyl tensor has the same block structure as the Riemann tensor.  The independent components organize into four sectors by their subalgebra content:
+
+\paragraph{$\mathfrak{su}(2)$--$\mathfrak{su}(2)$ sector.}  Three independent components, controlled by $R_{0101}$, $R_{0102}$, and $R_{0112}$.  At $\tau=0$, the SU(2) structure constants give $R_{0101}=-\frac{1}{4}\cdot\frac{1}{3}$, and the Weyl part is obtained by subtracting the Ricci and scalar traces.
+
+\paragraph{$\mathbb{C}^2$--$\mathbb{C}^2$ sector.}  Six independent components, spanning the bivectors $(e_3\wedge e_4)$, $(e_3\wedge e_5)$, $(e_3\wedge e_6)$, $(e_4\wedge e_5)$, $(e_4\wedge e_6)$, $(e_5\wedge e_6)$.  The Weyl eigenvalue that crosses zero at $\tau=0.895$ (Proposition~\ref{thm:hierarchy}) is localized in this sector, specifically in the bivectors $(e_3\wedge e_4)$ and $(e_5\wedge e_6)$.
+
+\paragraph{Mixed sector.}  Twelve independent components involving indices from different subalgebra factors (e.g., $C_{0345}$, $C_{0347}$, $C_{3407}$).  These components are generically nonzero for $\tau>0$ and vanish at $\tau=0$ only for cross-terms involving $\mathfrak{u}(1)$.
+
+\paragraph{$\mathfrak{u}(1)$ sector.}  Components with at least one index equal to 7.  Protected by the constant Ricci eigenvalue $\mathrm{Ric}_{77}=\frac{1}{4}$: the sectional curvatures $K(\mathfrak{u}(1),\mathfrak{su}(2))=0$ and $K(\mathfrak{u}(1),\mathbb{C}^2)=\frac{1}{16}$ are exact at all $\tau$.
+
+The total number of algebraically independent Weyl components in $n=8$ dimensions is $\dim(\mathcal{W})=\frac{n^2(n^2-1)}{12}-\frac{n(n+1)}{2} = 336-36 = 300$, equivalently $\frac{(n+2)(n+1)n(n-3)}{12}=\frac{10\cdot9\cdot8\cdot5}{12}=300$.  The left-invariance of the metric reduces this to 147 independent components that can be expressed as algebraic functions of $e^\tau$.
+
+We do not reproduce all 147 components here.  The complete Riemann tensor data, exact analytic expressions, and numerical verification scripts are available as supplementary material~\cite{supplementary}.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

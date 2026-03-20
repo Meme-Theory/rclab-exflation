@@ -1,0 +1,92 @@
+Session 32c Gate Verdicts (TOPO-T2: B2-B3 Gap Along T2 Direction)
+========================================================================
+Date: 2026-03-03
+Classifier: coord (coordinator)
+Computation agent: baptista (baptista-spacetime-analyst)
+Interpretation: tesla (tesla-resonance)
+Source data: s32c_topo_t2_scan.npz (41 eps values, tracked eigenvalues,
+             gap profile, Z invariants at 3 checkpoints)
+Pre-session context: Session 32a (4 gates: U-32a PASS, A-32a PASS,
+                     AH-32a PASS conditional, FL-32a ZERO structural)
+                     Session 32b (3 gates: RPA-32b PASS 38x, W-32b PASS
+                     1.9-3.2x, PB-32b FAIL at physical r)
+
+STRUCTURAL GATE (topological scout)
+------------------------------------
+
+TT-32c: OPEN -- Gap minimum = 0.1021 at eps = -0.15 (scan boundary).
+  Gap does NOT close along T2 direction for eps in [-0.15, +0.15].
+  Gap at Jensen (eps=0): 0.1194. Gap range: [0.1021, 0.1338].
+  Gap monotonically decreasing toward negative eps (increasing L1,
+  decreasing L2). B3 min drops from 0.984 to 0.948; B2 max nearly
+  flat (0.850 to 0.845). Gap closure would come from B3 side.
+
+  Z INVARIANT: +1 at all three checkpoints (eps=-0.15, 0, +0.15).
+  No topological transition within scan range.
+
+  STRUCTURAL DISCOVERY -- U(2) PRESERVED ALONG T2:
+  B2 4-fold degeneracy: spread < 2.3e-15 at ALL eps (machine precision).
+  B3 3-fold degeneracy: spread < 2.3e-15 at ALL eps (machine precision).
+  The T2 direction changes metric parameters (L1, L2, L3) while
+  preserving the U(2)-invariant FORM of the metric. Trap 4 (Schur
+  orthogonality) extends from the Jensen 1D curve to the entire
+  U(2)-invariant submanifold scanned. Inter-branch coupling remains
+  exactly zero. Gap cannot close without branch mixing.
+
+  TESLA ZONE-BOUNDARY PREDICTION: PARTIALLY FALSIFIED. Specific
+  prediction (gap closes at T2 = "zone boundary") failed because T2
+  preserves U(2) at the singlet level. General principle (gap closes
+  where symmetry is broken) remains valid -- the correct "zone
+  boundary" is the U(2)-BREAKING family (4 directions from Session
+  29Bb), not T2.
+
+  GATE CLASSIFICATION against pre-registered criteria:
+    PASS: Gap closes (Delta_gap = 0). => NOT MET.
+    OPEN: Gap min < 0.2 but does not close. => MET (0.1021 < 0.2).
+    FAIL: Gap min > 0.2. => NOT MET.
+
+  VERDICT: OPEN. Gap minimum 0.1021 is below the 0.2 FAIL threshold
+  but above zero. Full TOPO-1 needed at U(2)-BREAKING directions.
+  Tesla prediction for T2 gap closure falsified. Mechanism chain
+  (I-1 -> RPA -> Turing -> WALL -> BCS) unaffected because WALL-1
+  operates via kinematic trapping (van Hove), not topological
+  protection (index theorem).
+
+  Pre-registered: YES (Workshop R3 #7, Session 32 plan 32c-1)
+  Output: s32c_topo_t2_scan.{py,npz,png}
+
+========================================================================
+
+AGGREGATE SUMMARY (Session 32c)
+==============================================
+
+Total gates classified:              1/1
+OPEN:                                1/1 (TT-32c)
+PASS:                                0/1
+FAIL:                                0/1
+
+New structural results:
+  - U(2) symmetry preserved along T2 direction at singlet level
+    (B2 and B3 degeneracies exact to machine precision for ALL eps)
+  - Trap 4 extends from Jensen 1D curve to U(2)-invariant submanifold
+  - Z = +1 throughout scanned region (extends Wall 5 to U(2) family)
+  - Gap monotonically decreasing toward negative eps (14% reduction
+    at scan boundary vs Jensen)
+  - B3 eigenvalues drive gap narrowing (SU(2) adjoint sensitive to
+    L2 compression); B2 nearly insensitive (U(2) fundamental protected)
+
+Forward projection:
+  - TOPO-1 redirect: scan U(2)-BREAKING directions (4 directions
+    from Session 29Bb) instead of extended T2
+  - Extended T2 scan (eps to -0.30) has low priority: U(2)
+    preservation prevents gap closure regardless of eps range
+  - Mechanism chain fully intact without TOPO-1 (W-32b kinematic
+    trapping sufficient)
+
+========================================================================
+
+DATA FILES (3 total: 1 script, 1 data archive, 1 plot)
+==============================================
+tier0-computation/s32c_topo_t2_scan.{py,npz,png}   (baptista, TT-32c)
+tier0-computation/s32c_gate_verdicts.txt             (coord)
+sessions/session-32/session-32c-synthesis.md          (coord)

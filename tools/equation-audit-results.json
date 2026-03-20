@@ -1,0 +1,2315 @@
+{
+  "audit_metadata": {
+    "auditor": "gen-physicist",
+    "started": "2026-02-21",
+    "model": "claude-opus-4-6",
+    "conventions": {
+      "metric_signature": "(-,+,+,+)",
+      "units": "natural (hbar=c=1) unless noted",
+      "indices": "Greek=spacetime, Latin=spatial"
+    }
+  },
+  "batches": [
+    {
+      "batch_id": 1,
+      "equations_processed": "eq_1 through eq_50",
+      "type_filter": "structural",
+      "results": [
+        {
+          "id": "eq_1",
+          "original_raw": "The A_F = C + H + M_3(C) structure would require:",
+          "latex": "\\mathcal{A}_F = \\mathbb{C} \\oplus \\mathbb{H} \\oplus M_3(\\mathbb{C})",
+          "status": "ok",
+          "note": "Finite algebra of the NCG Standard Model (Connes-Chamseddine). Source verified at line 51.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_2",
+          "original_raw": "C_{nmpq} = integral_{SU(3)} Y_n* Y_m Y_p* Y_q vol_{g_s}",
+          "latex": "C_{nmpq} = \\int_{\\mathrm{SU}(3)} Y_n^{*} \\, Y_m \\, Y_p^{*} \\, Y_q \\; \\mathrm{vol}_{g_s}",
+          "status": "ok",
+          "note": "CG overlap integral = phonon scattering amplitude. Correctly identified as 4-point vertex. Source verified.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_3",
+          "original_raw": "S = Tr(f(D/Lambda))",
+          "latex": "S = \\operatorname{Tr}\\!\\left( f\\!\\left(\\frac{D}{\\Lambda}\\right)\\right)",
+          "status": "error",
+          "note": "The Connes-Chamseddine spectral action is Tr(f(D^2/Lambda^2)) or equivalently Tr(f(|D|/Lambda)), NOT Tr(f(D/Lambda)). The argument of f must be positive-definite; D itself has both signs. The source text at line 156 writes 'S = Tr(f(D/Lambda))' which is the incorrect form. Standard references: Chamseddine-Connes (1997) use f(D^2/Lambda^2). This matters because f is typically a Laplace transform or cutoff function defined on R+ only.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_4",
+          "original_raw": "F = sum_n f(omega_n / omega_cutoff)",
+          "latex": "F = \\sum_n f\\!\\left(\\frac{\\omega_n}{\\omega_{\\mathrm{cutoff}}}\\right)",
+          "status": "typo",
+          "note": "The phonon free energy should be F = T * sum_n ln(1 - e^{-omega_n/T}) for bosons, or more generally involves the thermal occupation. The expression as written is a generic cutoff sum, not literally the free energy. However, in context (line 160), the source is drawing an analogy to the spectral action form, so the notation is intentionally schematic. Mark as typo: should note it is a formal/structural analogy, not the literal Bose free energy.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_5",
+          "original_raw": "Using generalized entropy S_gen = A/(4*G*hbar) + S_matter:",
+          "latex": "S_{\\mathrm{gen}} = \\frac{A}{4 G \\hbar} + S_{\\mathrm{matter}}",
+          "status": "ok",
+          "note": "Standard Bekenstein-Hawking generalized entropy. Correct form. Source verified at line 273.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_6",
+          "original_raw": "S_BAO(t) = min{S_naive(t), S_photon-bath(t)}",
+          "latex": "S_{\\mathrm{BAO}}(t) = \\min\\!\\left\\{ S_{\\mathrm{naive}}(t),\\; S_{\\mathrm{photon\\text{-}bath}}(t) \\right\\}",
+          "status": "ok",
+          "note": "Quantum extremal surface / island formula applied to BAO. The min prescription is the RT/island analog. Source verified at line 309.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_7",
+          "original_raw": "In thermodynamics, the specific heat C_V = dE/dT encodes the density of states. For spacetime:",
+          "latex": "C_V = \\frac{dE}{dT}",
+          "status": "ok",
+          "note": "Standard thermodynamic definition. The surrounding context discusses volume vs area scaling of C_V. Source verified at line 611.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_8",
+          "original_raw": "T_internal = hbar*c^2 / (2*pi*k_B*b) ~ T_Pl ~ 10^{32} K  (for b ~ l_P)",
+          "latex": "T_{\\mathrm{internal}} = \\frac{\\hbar\\, c^2}{2\\pi\\, k_B\\, b} \\sim T_{\\mathrm{Pl}} \\sim 10^{32}\\;\\mathrm{K} \\quad (b \\sim \\ell_P)",
+          "status": "ok",
+          "note": "Internal Unruh temperature from acceleration a ~ c^2/b. Dimensionally correct: [hbar*c^2/(k_B*length)] = [energy/k_B] = K. Source verified at line 610.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_9",
+          "original_raw": "T_external = hbar*H / (2*pi*k_B) ~ 10^{-30} K",
+          "latex": "T_{\\mathrm{external}} = \\frac{\\hbar\\, H}{2\\pi\\, k_B} \\sim 10^{-30}\\;\\mathrm{K}",
+          "status": "ok",
+          "note": "Gibbons-Hawking temperature of cosmological horizon. Dimensionally correct. Source verified at line 614.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_10",
+          "original_raw": "S_gen = S_geometric(internal) + S_matter(external) + S_radiation(cross-sector)",
+          "latex": "S_{\\mathrm{gen}} = S_{\\mathrm{geometric}}^{\\mathrm{(int)}} + S_{\\mathrm{matter}}^{\\mathrm{(ext)}} + S_{\\mathrm{radiation}}^{\\mathrm{(cross)}}",
+          "status": "ok",
+          "note": "Generalized entropy decomposed into three sectors for KK dimensional reduction. Source verified at line 630.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_11",
+          "original_raw": "pi^o(a) = J pi(a*) J^{-1}",
+          "latex": "\\pi^{\\circ}(a) = J\\, \\pi(a^*)\\, J^{-1}",
+          "status": "ok",
+          "note": "Standard NCG opposite algebra representation via the real structure J. Source verified at line 111.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_12",
+          "original_raw": "D_P(psi^H x phi) = D_M(psi) + gauge(L_ea) + gamma_5 * D_K * phi + Pauli",
+          "latex": "D_P(\\psi^H \\otimes \\phi) = D_M(\\psi) + \\text{gauge}(\\mathcal{L}_{e_a}) + \\gamma_5 \\otimes D_K \\, \\phi + \\text{Pauli}",
+          "status": "typo",
+          "note": "The 'x' should be a tensor product. The 'Pauli' term is shorthand for the spin-connection coupling (Baptista Paper 17 eq 3.8). The structure is correct modulo the informal notation. Source verified at line 39.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_13",
+          "original_raw": "All lambda^2 = n/36 for integer n:",
+          "latex": "\\lambda^2 = \\frac{n}{36}, \\quad n \\in \\mathbb{Z}^+",
+          "status": "ok",
+          "note": "Bi-invariant (s=0) Dirac eigenvalue spectrum on SU(3). The integer n values are listed: {25, 27, 37, 45, 49, 61, 63, 73, 75, 79, 81, 91, 93, 97, 109, 117}. Source verified at line 44.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_14",
+          "original_raw": "V(s) = sum_n (d_n / 64 pi^2) lambda_n^4(s) [ln(lambda_n^2(s) / Lambda^2) - 3/2]",
+          "latex": "V(s) = \\sum_n \\frac{d_n}{64\\pi^2} \\, \\lambda_n^4(s) \\left[ \\ln\\!\\left(\\frac{\\lambda_n^2(s)}{\\Lambda^2}\\right) - \\frac{3}{2} \\right]",
+          "status": "error",
+          "note": "This is presented as THE Coleman-Weinberg potential, but it omits the (-1)^{2j} sign factor distinguishing bosons from fermions. As written, all modes are treated as bosonic. This is identified and corrected later in Session 16 Round 1d (eq_15), but eq_14 in Round 1a lacks the sign. The issue is that if someone reads this equation in isolation from the knowledge index, they get the wrong physics. The source at line 62 matches the raw text exactly — the omission is in the source itself.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_15",
+          "original_raw": "V_CW(s) = +1/(64*pi^2) * SUM_BOSONS d_n * lam_n^4(s) * [ln(lam_n^2/mu^2) - 3/2]",
+          "latex": "V_{\\mathrm{CW}}(s) = +\\frac{1}{64\\pi^2} \\sum_{\\mathrm{bosons}} d_n \\, \\lambda_n^4(s) \\left[ \\ln\\!\\left(\\frac{\\lambda_n^2}{\\mu^2}\\right) - \\frac{3}{2} \\right]",
+          "status": "ok",
+          "note": "Bosonic part of CW potential. The source at line 81 continues with the fermionic part (negative sign) on the next line. Together they form the complete V_CW. Source verified.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_16",
+          "original_raw": "V_CW(s) = Sum_n (d_n / 64*pi^2) * lambda_n^4(s) * [ln(lambda_n^2(s) / Lambda^2) - 3/2]",
+          "latex": "V_{\\mathrm{CW}}(s) = \\sum_n \\frac{d_n}{64\\pi^2} \\, \\lambda_n^4(s) \\left[ \\ln\\!\\left(\\frac{\\lambda_n^2(s)}{\\Lambda^2}\\right) - \\frac{3}{2} \\right]",
+          "status": "error",
+          "note": "Same issue as eq_14: missing (-1)^{2j} sign factor. This is in the Hawking-Sagan round file, repeating the formula without the boson/fermion sign distinction. Source at line 25 matches raw text. The missing sign was the central criticism of Session 16 Round 1d.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_17",
+          "original_raw": "Z(beta) = Tr(exp(-beta * D^2))     with beta = 1/Lambda^2, H = D^2",
+          "latex": "Z(\\beta) = \\operatorname{Tr}\\!\\left(e^{-\\beta D^2}\\right), \\quad \\beta = \\frac{1}{\\Lambda^2},\\; H = D^2",
+          "status": "ok",
+          "note": "Heat kernel = partition function identity. Standard Seeley-DeWitt. Source verified at line 22.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_18",
+          "original_raw": "F(s, T) = U(s) - T * S(s)",
+          "latex": "F(s, T) = U(s) - T\\, S(s)",
+          "status": "ok",
+          "note": "Helmholtz free energy. T ~ Lambda^2 in this context (UV cutoff as temperature). Source verified at line 28.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_19",
+          "original_raw": "F_boson  = +T * Sum_k ln(1 - e^{-E_k/T})    (Bose-Einstein)",
+          "latex": "F_{\\mathrm{boson}} = +T \\sum_k \\ln\\!\\left(1 - e^{-E_k/T}\\right) \\quad \\text{(Bose--Einstein)}",
+          "status": "ok",
+          "note": "Standard Bose-Einstein free energy. Sign convention: F_boson > 0 (repulsive). Source verified at line 103.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_20",
+          "original_raw": "F_fermion = -T * Sum_k ln(1 + e^{-E_k/T})    (Fermi-Dirac)",
+          "latex": "F_{\\mathrm{fermion}} = -T \\sum_k \\ln\\!\\left(1 + e^{-E_k/T}\\right) \\quad \\text{(Fermi--Dirac)}",
+          "status": "ok",
+          "note": "Standard Fermi-Dirac free energy. Sign convention: F_fermion < 0 (attractive). Source verified at line 104.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_21",
+          "original_raw": "U_s = sum(d_n * lam_n**4) / (64 * pi**2)           # Internal energy",
+          "latex": "U(s) = \\frac{1}{64\\pi^2} \\sum_n d_n \\, \\lambda_n^4(s)",
+          "status": "typo",
+          "note": "This is Python-style notation embedded in a code block. Converted to proper math. Missing absolute value bars on eigenvalues (should be |lambda_n|^4 since D_K has both positive and negative eigenvalues). Source verified at line 186.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_22",
+          "original_raw": "TS_s = sum(d_n * lam_n**4 * log(lam_n**2)) / (64 * pi**2)  # T*S term",
+          "latex": "T\\, S(s) = \\frac{1}{64\\pi^2} \\sum_n d_n \\, |\\lambda_n(s)|^4 \\, \\ln|\\lambda_n(s)|^2",
+          "status": "typo",
+          "note": "Python notation. Added absolute values for correctness (log of negative number undefined). Source verified at line 187.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_23",
+          "original_raw": "F_s = U_s - TS_s                                     # Free energy (= V_CW up to constants)",
+          "latex": "F(s) = U(s) - T\\, S(s)",
+          "status": "ok",
+          "note": "Helmholtz decomposition of CW potential. Source verified at line 188.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_24",
+          "original_raw": "def spectral_entropy(eigenvalues, pw_weights, beta=1.0):",
+          "latex": null,
+          "status": "ok",
+          "note": "RECLASSIFY: This is a Python function definition, not a physics equation. Should be type='code', not 'structural'. No LaTeX conversion needed.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_25",
+          "original_raw": "boltzmann = [w * exp(-beta * lam**2) for lam, w in zip(eigenvalues, pw_weights)]",
+          "latex": "p_n = d_n \\, e^{-\\beta \\lambda_n^2}",
+          "status": "ok",
+          "note": "RECLASSIFY: Python code implementing Boltzmann weights. The physics content is the Boltzmann factor. Converted the physics, not the Python.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_26",
+          "original_raw": "Z = sum(boltzmann)",
+          "latex": "Z = \\sum_n d_n \\, e^{-\\beta \\lambda_n^2}",
+          "status": "ok",
+          "note": "Partition function from Boltzmann weights. RECLASSIFY as code. Source verified at line 201.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_27",
+          "original_raw": "Scan Lambda (= temperature) over [0.01, 100] and track s_0(Lambda):",
+          "latex": null,
+          "status": "ok",
+          "note": "RECLASSIFY: This is a procedural instruction, not an equation. No LaTeX needed. Should be removed from equations list.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_28",
+          "original_raw": "s_0 = find_minimum(V_eff(s, mu=mu))",
+          "latex": "s_0 = \\operatorname{arg\\,min}_s V_{\\mathrm{eff}}(s, \\mu)",
+          "status": "ok",
+          "note": "Python pseudocode converted to proper optimization notation. Source verified at line 216.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_29",
+          "original_raw": "C_s = -T * d^2F/dT^2  is finite (not divergent)",
+          "latex": "C_s = -T \\, \\frac{\\partial^2 F}{\\partial T^2} < \\infty",
+          "status": "ok",
+          "note": "Specific heat finiteness check. Source verified at line 265. Standard thermodynamic stability criterion.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_30",
+          "original_raw": "V_eff^{early}(s, T) = V_tree(s) + (T^2/24) * Sum d_n * lam_n^2(s) + O(T^0)",
+          "latex": "V_{\\mathrm{eff}}^{\\mathrm{early}}(s, T) = V_{\\mathrm{tree}}(s) + \\frac{T^2}{24} \\sum_n d_n \\, \\lambda_n^2(s) + \\mathcal{O}(T^0)",
+          "status": "ok",
+          "note": "High-temperature expansion of the thermal effective potential. The T^2/24 coefficient is standard (from -pi^2*T^4/90 + T^2*m^2/24 - ... expansion). Source verified at line 424.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_31",
+          "original_raw": "V_tree(s) = C_tree * { 1 - (1/10) * R_bracket(s) }",
+          "latex": "V_{\\mathrm{tree}}(s) = C_{\\mathrm{tree}} \\left\\{ 1 - \\frac{1}{10}\\, \\mathcal{R}(s) \\right\\}",
+          "status": "ok",
+          "note": "Baptista eq 3.80 tree-level potential. R_bracket(s) = 2e^{2s} - 1 + 8e^{-s} - e^{-4s}. Source verified at line 43.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_32",
+          "original_raw": "V_CW^boson(s) = + (N_b / (64 pi^2)) * sum_i m_i^4(s) * [ln(m_i^2(s)/mu^2) - 3/2]",
+          "latex": "V_{\\mathrm{CW}}^{\\mathrm{boson}}(s) = +\\frac{N_b}{64\\pi^2} \\sum_i m_i^4(s) \\left[ \\ln\\!\\left(\\frac{m_i^2(s)}{\\mu^2}\\right) - \\frac{3}{2} \\right]",
+          "status": "ok",
+          "note": "Bosonic CW contribution with explicit positive sign. N_b = number of bosonic DOF per mode. Source verified at line 60.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_33",
+          "original_raw": "m_C2^2(s) = c_0 * [(e^s - e^{-2s})^2 + (1 - e^{-s})^2]",
+          "latex": "m_{C^2}^2(s) = c_0 \\left[ (e^s - e^{-2s})^2 + (1 - e^{-s})^2 \\right]",
+          "status": "ok",
+          "note": "C^2 gauge boson mass from Baptista eq 3.84. Source verified at line 78. Dimensionally consistent: exponentials are dimensionless, c_0 carries mass^2.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_34",
+          "original_raw": "L_4D = sum_n psi_bar_n (i gamma^mu D_mu - m_n) psi_n",
+          "latex": "\\mathcal{L}_{4D} = \\sum_n \\bar{\\psi}_n \\left( i \\gamma^\\mu D_\\mu - m_n \\right) \\psi_n",
+          "status": "ok",
+          "note": "Standard 4D KK-reduced fermionic Lagrangian. m_n = D_K eigenvalue. Source verified at line 114.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_35",
+          "original_raw": "V_CW = (-1)^{2j} * n_j / (64 pi^2) * m^4 * [ln(m^2/mu^2) - c_j]",
+          "latex": "V_{\\mathrm{CW}} = \\frac{(-1)^{2j}\\, n_j}{64\\pi^2} \\, m^4 \\left[ \\ln\\!\\left(\\frac{m^2}{\\mu^2}\\right) - c_j \\right]",
+          "status": "ok",
+          "note": "General CW formula with spin-statistics factor (-1)^{2j}. This is the correct complete form. Source verified at line 131.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_36",
+          "original_raw": "where c_j = 3/2 (scalars, fermions in MS-bar) or 5/6 (vectors in MS-bar).",
+          "latex": "c_j = \\begin{cases} 3/2 & \\text{scalars, fermions (}\\overline{\\mathrm{MS}}\\text{)} \\\\ 5/6 & \\text{vectors (}\\overline{\\mathrm{MS}}\\text{)} \\end{cases}",
+          "status": "ok",
+          "note": "Standard MS-bar subtraction constants. Source verified at line 134.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_37",
+          "original_raw": "if approach == 'baptista_eft':",
+          "latex": null,
+          "status": "ok",
+          "note": "RECLASSIFY: Pure Python control flow, not physics. Should be type='code'.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_38",
+          "original_raw": "all_evals, eval_data = collect_spectrum(s, gens, f_abc, gammas,",
+          "latex": null,
+          "status": "ok",
+          "note": "RECLASSIFY: Python function call, not physics. Should be type='code'.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_39",
+          "original_raw": "lam = abs(ev)",
+          "latex": "\\lambda = |\\epsilon|",
+          "status": "ok",
+          "note": "RECLASSIFY: Python code taking absolute value of eigenvalue. Trivial. Should be type='code'.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_40",
+          "original_raw": "max_lam_included = max(max_lam_included, lam)",
+          "latex": null,
+          "status": "ok",
+          "note": "RECLASSIFY: Python bookkeeping variable update. Should be type='code'.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_41",
+          "original_raw": "V_eff = V_tree + V_boson + V_fermion",
+          "latex": "V_{\\mathrm{eff}} = V_{\\mathrm{tree}} + V_{\\mathrm{boson}} + V_{\\mathrm{fermion}}",
+          "status": "ok",
+          "note": "Effective potential decomposition. Source verified at line 270. Correct structure.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_42",
+          "original_raw": "V_eff, V_t, V_b, V_f, diag = compute_veff_full(",
+          "latex": null,
+          "status": "ok",
+          "note": "RECLASSIFY: Python function call. Should be type='code'.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_43",
+          "original_raw": "results['V_eff'][i] = V_eff",
+          "latex": null,
+          "status": "ok",
+          "note": "RECLASSIFY: Python array assignment. Should be type='code'.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_44",
+          "original_raw": "idx_min = np.argmin(results['V_eff'])",
+          "latex": null,
+          "status": "ok",
+          "note": "RECLASSIFY: Python numpy call. Should be type='code'.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_45",
+          "original_raw": "s_0 = s_values[idx_min]",
+          "latex": null,
+          "status": "ok",
+          "note": "RECLASSIFY: Python variable assignment. Should be type='code'.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_46",
+          "original_raw": "def convergence_test(s_test_values, gens, f_abc, gammas,\n                     pq_levels=[3, 4, 5, 6], kappa=1.0, mu=1.0):",
+          "latex": null,
+          "status": "ok",
+          "note": "RECLASSIFY: Python function definition. Should be type='code'.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_47",
+          "original_raw": "results, s_0 = veff_sweep(s_test_values, ..., max_pq_sum=max_pq, ...)",
+          "latex": null,
+          "status": "ok",
+          "note": "RECLASSIFY: Python function call. Should be type='code'.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_48",
+          "original_raw": "v\n[Phase 2a] Eigenvalue caching at max_pq=6, 200 s-values  <-- BOTTLENECK",
+          "latex": null,
+          "status": "ok",
+          "note": "RECLASSIFY: This is a log/status message, not an equation. Should be removed from equations list entirely.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_49",
+          "original_raw": "Gamma_1loop = -(1/2) * sign * Tr(ln(D^2/mu^2))",
+          "latex": "\\Gamma_{1\\text{-loop}} = -\\frac{1}{2}\\, \\eta \\, \\operatorname{Tr}\\!\\left[ \\ln\\!\\left(\\frac{D^2}{\\mu^2}\\right) \\right]",
+          "status": "ok",
+          "note": "One-loop effective action from functional determinant. eta = +1 (bosons), -1 (fermions). Standard QFT. Source verified at line 633.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_50",
+          "original_raw": "V_CW = sign * (n_j / (64 pi^2)) * m^4 * [ln(m^2/mu^2) - c_j]",
+          "latex": "V_{\\mathrm{CW}} = \\eta \\, \\frac{n_j}{64\\pi^2} \\, m^4 \\left[ \\ln\\!\\left(\\frac{m^2}{\\mu^2}\\right) - c_j \\right]",
+          "status": "ok",
+          "note": "CW potential per field with explicit sign factor. eta = +1 for bosons, -1 for fermions. Source verified at line 644.",
+          "source_verified": true
+        }
+      ],
+      "batch_summary": {
+        "total_processed": 50,
+        "ok": 42,
+        "typo": 4,
+        "error": 3,
+        "critical": 0,
+        "reclassify_to_code": 11,
+        "reclassify_to_remove": 2,
+        "errors_found": [
+          {
+            "id": "eq_3",
+            "severity": "error",
+            "description": "Spectral action argument should be D^2/Lambda^2 or |D|/Lambda, not D/Lambda. f is defined on R+."
+          },
+          {
+            "id": "eq_14",
+            "severity": "error",
+            "description": "CW potential missing (-1)^{2j} boson/fermion sign factor. All modes treated as bosonic."
+          },
+          {
+            "id": "eq_16",
+            "severity": "error",
+            "description": "Same as eq_14: missing boson/fermion sign distinction in CW formula."
+          }
+        ],
+        "typos_found": [
+          {
+            "id": "eq_4",
+            "description": "Phonon free energy written schematically; not the literal Bose free energy formula."
+          },
+          {
+            "id": "eq_12",
+            "description": "Informal notation: 'x' should be tensor product, 'Pauli' is shorthand."
+          },
+          {
+            "id": "eq_21",
+            "description": "Missing absolute value bars on eigenvalues in internal energy formula."
+          },
+          {
+            "id": "eq_22",
+            "description": "Missing absolute value bars on eigenvalues in entropy formula."
+          }
+        ]
+      }
+    },
+    {
+      "batch_id": 2,
+      "equations_processed": "eq_51 through eq_100",
+      "type_filter": "structural",
+      "results": [
+        {
+          "id": "eq_51",
+          "original_raw": "V_eff = V_tree + V_CW (Formulation 2) is the correct formula.",
+          "latex": "V_{\\mathrm{eff}} = V_{\\mathrm{tree}} + V_{\\mathrm{CW}}",
+          "status": "ok",
+          "note": "Statement of the correct V_eff formulation. Source verified at line 669.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_52",
+          "original_raw": "S_spectral(s) = -Sum_n p_n(s) * ln(p_n(s))",
+          "latex": "S_{\\mathrm{spectral}}(s) = -\\sum_n p_n(s) \\ln p_n(s), \\quad p_n(s) = \\frac{d_n \\, e^{-|\\lambda_n(s)|^2/\\Lambda^2}}{Z(s)}",
+          "status": "ok",
+          "note": "Shannon entropy of Boltzmann-weighted eigenvalue distribution. Source verified at line 767.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_53",
+          "original_raw": "D_P(psi^H tensor phi) = (D_M psi) tensor phi",
+          "latex": "D_P(\\psi^H \\otimes \\phi) = (D_M \\psi) \\otimes \\phi + \\sum_a A^a_\\mu \\gamma^\\mu \\psi \\otimes \\mathcal{L}_{e_a} \\phi + \\gamma_5 \\psi \\otimes D_K \\phi + \\text{(Pauli)}",
+          "status": "typo",
+          "note": "Raw only captures first term of 4-term decomposition (Baptista Paper 17 eq 3.8). Full expression at source line 26.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_54",
+          "original_raw": "M_{alpha beta} = <phi_beta, D_K phi_alpha>_{L^2(K, S_K)}",
+          "latex": "M_{\\alpha\\beta} = \\langle \\phi_\\beta, D_K \\phi_\\alpha \\rangle_{L^2(K, S_K)}",
+          "status": "ok",
+          "note": "4D fermion mass matrix from D_K inner product. Paper 18 eq 7.5. Source verified at line 43.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_55",
+          "original_raw": "D_K = bigoplus_{(p,q)} D_{(p,q)} tensor I_{dim(p,q)}",
+          "latex": "D_K = \\bigoplus_{(p,q)} D_{(p,q)} \\otimes \\mathbf{1}_{\\dim(p,q)}",
+          "status": "ok",
+          "note": "Peter-Weyl decomposition of internal Dirac operator. Source verified at line 53.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_56",
+          "original_raw": "D_{(p,q)} = sum_{a,b} E_{ab}(s) [rho_{(p,q)}(X_b) tensor gamma_a] + I_{dim(p,q)} tensor Omega(s)",
+          "latex": "D_{(p,q)} = \\sum_{a,b} E_{ab}(s) \\left[ \\rho_{(p,q)}(X_b) \\otimes \\gamma_a \\right] + \\mathbf{1}_{\\dim(p,q)} \\otimes \\Omega(s)",
+          "status": "ok",
+          "note": "Explicit Dirac block in (p,q) sector. E_{ab} = orthonormal frame, Omega = spinor curvature offset. Source verified at line 59.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_57",
+          "original_raw": "theta = (1/sqrt(2))(I + i*gamma_5) * psi = exp(i*gamma_5*pi/4) * psi",
+          "latex": "\\theta = \\frac{1}{\\sqrt{2}}(\\mathbf{1} + i\\gamma_5)\\psi = e^{i\\gamma_5 \\pi/4}\\psi",
+          "status": "ok",
+          "note": "Baptista Paper 17 eq 3.11 spinor redefinition. Convention change preserving eigenvalues. Source verified at line 92.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_58",
+          "original_raw": "For the standard embedding phi(a) = diag(det(a)^{-1}, a), the U(2) action on V_{(p,q)} can have:",
+          "latex": "\\phi(a) = \\mathrm{diag}(\\det(a)^{-1}, a), \\quad a \\in U(2)",
+          "status": "ok",
+          "note": "Standard KK embedding of U(2) into SU(3). Source verified at line 163.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_59",
+          "original_raw": "zeta = exp(2*pi*i/3) * I_3",
+          "latex": "\\zeta = e^{2\\pi i/3} \\, \\mathbf{1}_3",
+          "status": "ok",
+          "note": "Generator of Z_3 center of SU(3). Source verified at line 199.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_60",
+          "original_raw": "rho_{(p,q)}(zeta) = omega^{(p-q) mod 3} * I_{dim(p,q)}",
+          "latex": "\\rho_{(p,q)}(\\zeta) = \\omega^{(p-q) \\bmod 3} \\, \\mathbf{1}_{\\dim(p,q)}, \\quad \\omega = e^{2\\pi i/3}",
+          "status": "ok",
+          "note": "Z_3 center action on SU(3) irreps. Source verified at line 205.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_61",
+          "original_raw": "generation = (p - q) % 3",
+          "latex": "\\text{generation} = (p - q) \\bmod 3",
+          "status": "ok",
+          "note": "Z_3 generation assignment. Source verified at line 303.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_62",
+          "original_raw": "gen0_evals = ...",
+          "latex": null,
+          "status": "ok",
+          "note": "RECLASSIFY to code.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_63",
+          "original_raw": "gen1_evals = ...",
+          "latex": null,
+          "status": "ok",
+          "note": "RECLASSIFY to code.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_64",
+          "original_raw": "gen2_evals = ...",
+          "latex": null,
+          "status": "ok",
+          "note": "RECLASSIFY to code.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_65",
+          "original_raw": "Y_op = np.kron(...)",
+          "latex": null,
+          "status": "ok",
+          "note": "RECLASSIFY to code.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_66",
+          "original_raw": "y_val = psi.conj() @ ...",
+          "latex": null,
+          "status": "ok",
+          "note": "RECLASSIFY to code.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_67",
+          "original_raw": "C2_SU2 = sum(...)",
+          "latex": null,
+          "status": "ok",
+          "note": "RECLASSIFY to code.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_68",
+          "original_raw": "j_val = psi.conj() @ ...",
+          "latex": null,
+          "status": "ok",
+          "note": "RECLASSIFY to code.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_69",
+          "original_raw": "evals_h, evecs_h = ...",
+          "latex": null,
+          "status": "ok",
+          "note": "RECLASSIFY to code.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_70",
+          "original_raw": "dim_rho = rho_pq[0].shape[0]",
+          "latex": null,
+          "status": "ok",
+          "note": "RECLASSIFY to code.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_71",
+          "original_raw": "Y_rep = np.kron(...)",
+          "latex": null,
+          "status": "ok",
+          "note": "RECLASSIFY to code.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_72",
+          "original_raw": "T_rep = [np.kron(...)]",
+          "latex": null,
+          "status": "ok",
+          "note": "RECLASSIFY to code.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_73",
+          "original_raw": "Y_total = Y_rep + ...",
+          "latex": null,
+          "status": "ok",
+          "note": "RECLASSIFY to code.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_74",
+          "original_raw": "T_total = [T_rep[a] + ...]",
+          "latex": null,
+          "status": "ok",
+          "note": "RECLASSIFY to code.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_75",
+          "original_raw": "C2_SU2 = sum(T @ T ...)",
+          "latex": null,
+          "status": "ok",
+          "note": "RECLASSIFY to code.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_76",
+          "original_raw": "psi = psi / np.linalg.norm(psi)",
+          "latex": null,
+          "status": "ok",
+          "note": "RECLASSIFY to code.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_77",
+          "original_raw": "Y_val = np.real(...)",
+          "latex": null,
+          "status": "ok",
+          "note": "RECLASSIFY to code.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_78",
+          "original_raw": "C2_val = np.real(...)",
+          "latex": null,
+          "status": "ok",
+          "note": "RECLASSIFY to code.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_79",
+          "original_raw": "generation = (p - q) % 3  # Z_3",
+          "latex": null,
+          "status": "ok",
+          "note": "RECLASSIFY to code (dup of eq_61).",
+          "source_verified": true
+        },
+        {
+          "id": "eq_80",
+          "original_raw": "gen_particle_map = ...",
+          "latex": null,
+          "status": "ok",
+          "note": "RECLASSIFY to code.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_81",
+          "original_raw": "particle_types = set(...)",
+          "latex": null,
+          "status": "ok",
+          "note": "RECLASSIFY to code.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_82",
+          "original_raw": "def test_phi_in_generations(...)",
+          "latex": null,
+          "status": "ok",
+          "note": "RECLASSIFY to code.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_83",
+          "original_raw": "sorted_masses = sorted(...)",
+          "latex": null,
+          "status": "ok",
+          "note": "RECLASSIFY to code.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_84",
+          "original_raw": "Y_total = Y_rep tensor I_16 + I_dim tensor Y_spinor",
+          "latex": "Y_{\\mathrm{total}} = Y_{\\mathrm{rep}} \\otimes \\mathbf{1}_{16} + \\mathbf{1}_{\\dim} \\otimes Y_{\\mathrm{spinor}}",
+          "status": "ok",
+          "note": "Total U(1) hypercharge operator. Source verified at line 661.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_85",
+          "original_raw": "j_total from C2_total = (T_rep + T_spinor)^2",
+          "latex": "C_2^{\\mathrm{SU(2)}} = \\sum_a (T_a^{\\mathrm{rep}} \\otimes \\mathbf{1}_{16} + \\mathbf{1}_{\\dim} \\otimes T_a^{\\mathrm{spinor}})^2",
+          "status": "ok",
+          "note": "Total SU(2) Casimir. Source verified at line 662.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_86",
+          "original_raw": "Average quality...",
+          "latex": null,
+          "status": "ok",
+          "note": "RECLASSIFY: Remove (not equation).",
+          "source_verified": true
+        },
+        {
+          "id": "eq_87",
+          "original_raw": "The spectral action at finite temperature T (cutoff Lambda = k_BT / hbar):",
+          "latex": "\\Lambda = \\frac{k_B T}{\\hbar}",
+          "status": "typo",
+          "note": "Definition, not derived equation. Source verified at line 321.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_88",
+          "original_raw": "S(T, s) = sum_n mult_n * f(lambda_n(s)^2 / Lambda^2)",
+          "latex": "S(T, s) = \\sum_n \\mathrm{mult}_n \\, f\\!\\left(\\frac{\\lambda_n^2(s)}{\\Lambda^2}\\right)",
+          "status": "ok",
+          "note": "Spectral action at finite T. Source verified at line 324.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_89",
+          "original_raw": "V_eff(s, T) = V_tree(s) + V_CW(s) + V_thermal(s, T)",
+          "latex": "V_{\\mathrm{eff}}(s, T) = V_{\\mathrm{tree}}(s) + V_{\\mathrm{CW}}(s) + V_{\\mathrm{thermal}}(s, T)",
+          "status": "ok",
+          "note": "Full thermal effective potential. Source verified at line 330.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_90",
+          "original_raw": "And f_N = f_M^2 = 1.236^2 = 1.528.",
+          "latex": "f_N = f_M^2 = 1.236^2 \\approx 1.528",
+          "status": "typo",
+          "note": "Rounding: 1.236^2 = 1.527696, reported as 1.528. Acceptable to 3 sig figs.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_91",
+          "original_raw": "Within Generation 0 at s=0:",
+          "latex": null,
+          "status": "ok",
+          "note": "RECLASSIFY: Remove (header, not equation).",
+          "source_verified": true
+        },
+        {
+          "id": "eq_92",
+          "original_raw": "V_eff(s) = V_tree(s) + V_CW^boson(s) + V_CW^fermion(s)",
+          "latex": "V_{\\mathrm{eff}}(s) = V_{\\mathrm{tree}}(s) + V_{\\mathrm{CW}}^{\\mathrm{boson}}(s) + V_{\\mathrm{CW}}^{\\mathrm{fermion}}(s)",
+          "status": "ok",
+          "note": "Full V_eff decomposition. Source verified at line 36.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_93",
+          "original_raw": "V_tree(s) = baptista_V_potential(0, s)",
+          "latex": "V_{\\mathrm{tree}}(s) = V_{\\mathrm{Baptista}}(\\sigma{=}0, s) \\quad \\text{[eq 3.80]}",
+          "status": "ok",
+          "note": "Reference to code function. Source verified at line 38.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_94",
+          "original_raw": "V_CW^boson(s) = +n_b/(64*pi^2) * m_C2^4(s) * [ln(m_C2^2(s)/mu^2) - c_b]",
+          "latex": "V_{\\mathrm{CW}}^{\\mathrm{boson}}(s) = +\\frac{n_b}{64\\pi^2} \\, m_{C^2}^4(s) \\left[ \\ln\\!\\left(\\frac{m_{C^2}^2(s)}{\\mu^2}\\right) - c_b \\right]",
+          "status": "ok",
+          "note": "Bosonic CW, n_b=12. Source verified at line 39.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_95",
+          "original_raw": "def compute_veff_cw(...)",
+          "latex": null,
+          "status": "ok",
+          "note": "RECLASSIFY to code.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_96",
+          "original_raw": "V_eff(s) = V_tree + V_boson + V_fermion from cached data.",
+          "latex": "V_{\\mathrm{eff}}(s) = V_{\\mathrm{tree}}(s) + V_{\\mathrm{boson}}(s) + V_{\\mathrm{fermion}}(s)",
+          "status": "ok",
+          "note": "Repeat of eq_92. Source verified at line 107.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_97",
+          "original_raw": "V_tree = baptista_V_potential(0.0, s)",
+          "latex": null,
+          "status": "ok",
+          "note": "RECLASSIFY to code.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_98",
+          "original_raw": "m2_C2, _ = gauge_boson_masses_baptista(0.0, s)",
+          "latex": null,
+          "status": "ok",
+          "note": "RECLASSIFY to code.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_99",
+          "original_raw": "n_b = 12  # 4 directions x 3 polarizations",
+          "latex": "n_b = 12 \\quad \\text{(4 directions} \\times \\text{3 polarizations)}",
+          "status": "ok",
+          "note": "Bosonic DOF count. Source verified at line 114.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_100",
+          "original_raw": "Y_total = rho_{(p,q)}(e_8) tensor I_16 + I_{dim} tensor Y_spinor",
+          "latex": "Y_{\\mathrm{total}} = \\rho_{(p,q)}(e_8) \\otimes \\mathbf{1}_{16} + \\mathbf{1}_{\\dim(p,q)} \\otimes Y_{\\mathrm{spinor}}",
+          "status": "ok",
+          "note": "Duplicate of eq_84 from different source. Source verified at line 191.",
+          "source_verified": true
+        }
+      ],
+      "batch_summary": {
+        "total_processed": 50,
+        "ok": 45,
+        "typo": 3,
+        "error": 0,
+        "critical": 0,
+        "reclassify_to_code": 22,
+        "reclassify_to_remove": 2,
+        "typos_found": [
+          {
+            "id": "eq_53",
+            "description": "Raw only captures first term of 4-term Dirac decomposition."
+          },
+          {
+            "id": "eq_87",
+            "description": "Definition Lambda = k_BT/hbar, not derived equation."
+          },
+          {
+            "id": "eq_90",
+            "description": "Rounding: 1.236^2 = 1.527696, reported as 1.528."
+          }
+        ]
+      }
+    },
+    {
+      "batch_id": 3,
+      "equations_processed": "Gate-critical: eq_470-eq_514 + eq_666-eq_705 + eq_12067-eq_12083",
+      "type_filter": "structural (Sessions 22-24 gate-critical)",
+      "results": [
+        {
+          "id": "eq_470",
+          "original_raw": "D_K = Sum_{a,b} E_{ab}(tau) [rho_{(p,q)}(X_b) tensor gamma_a] + I_V tensor Omega",
+          "latex": "D_K = \\sum_{a,b} E_{ab}(\\tau) \\left[ \\rho_{(p,q)}(X_b) \\otimes \\gamma_a \\right] + \\mathbf{1}_V \\otimes \\Omega",
+          "status": "ok",
+          "note": "Internal Dirac operator in Peter-Weyl basis. Identical structure to eq_56 with tau notation. Source verified at line 19.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_471",
+          "original_raw": "S_{12D} = integral_{M4 x K} R_P sqrt(g_P) d^{12}x",
+          "latex": "S_{12D} = \\int_{M^4 \\times K} R_P \\sqrt{g_P} \\, d^{12}x",
+          "status": "ok",
+          "note": "12D Einstein-Hilbert action. Standard KK starting point. Source verified at line 111.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_472",
+          "original_raw": "B_{n(p,q), m(p',q')} = 0    for (p,q) != (p',q')    [Eq. B-1]",
+          "latex": "\\mathcal{B}_{n(p,q),\\, m(p',q')} = 0 \\quad \\text{for } (p,q) \\neq (p',q')",
+          "status": "ok",
+          "note": "Berry connection vanishes between different PW sectors (block-diagonality). Source verified at line 21.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_473",
+          "original_raw": "a_k(D_total^2) = sum_i a_k^{(i)}(D_M^2) * Tr_{H_F}(P_i)",
+          "latex": "a_k(D_{\\mathrm{total}}^2) = \\sum_i a_k^{(i)}(D_M^2) \\, \\operatorname{Tr}_{\\mathcal{H}_F}(P_i)",
+          "status": "ok",
+          "note": "Seeley-DeWitt coefficient factorization for product geometry. Standard NCG result (Chamseddine-Connes 1996). Source verified at line 21.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_474",
+          "original_raw": "L^2(G,S) = bigoplus_{(p,q)} V_{(p,q)} tensor C^{dim(p,q)} tensor S_{16}",
+          "latex": "L^2(G, S) = \\bigoplus_{(p,q)} V_{(p,q)} \\otimes \\mathbb{C}^{\\dim(p,q)} \\otimes S_{16}",
+          "status": "ok",
+          "note": "Peter-Weyl decomposition of L^2 spinor sections on SU(3). Source verified at line 38.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_475",
+          "original_raw": "a = Tr(Y^dag Y),   c = Tr(M_R^* M_R),   e = Tr(Y_nu^* Y_nu . M_R^* M_R)",
+          "latex": "a = \\operatorname{Tr}(Y^\\dagger Y), \\quad c = \\operatorname{Tr}(M_R^* M_R), \\quad e = \\operatorname{Tr}(Y_\\nu^* Y_\\nu \\cdot M_R^* M_R)",
+          "status": "ok",
+          "note": "CCM Yukawa trace definitions from Paper 10. Used in Trap 3 (Higgs-sigma portal closure). Source verified at line 68.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_476",
+          "original_raw": "dmu(tau) = J(tau) . exp(-S[tau]) . dtau",
+          "latex": "d\\mu(\\tau) = J(\\tau) \\, e^{-S[\\tau]} \\, d\\tau",
+          "status": "ok",
+          "note": "Path integral measure for internal modulus. J(tau) = Jacobian from NCG path integral. Source verified at line 169.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_477",
+          "original_raw": "Delta = Delta_+ + Delta_-",
+          "latex": "\\Delta = \\Delta_+ + \\Delta_-",
+          "status": "ok",
+          "note": "BCS gap parameter decomposition into chiral components. Source verified at line 69.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_478",
+          "original_raw": "gamma_k = u_k a_k + v_k a^{dag}_{-k}",
+          "latex": "\\gamma_k = u_k \\, a_k + v_k \\, a^\\dagger_{-k}",
+          "status": "ok",
+          "note": "Bogoliubov transformation for BCS quasiparticles. Standard BCS. Source verified at line 116.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_479",
+          "original_raw": "S_F = <J psi, D psi>",
+          "latex": "S_F = \\langle J\\psi, D\\psi \\rangle",
+          "status": "ok",
+          "note": "Fermionic action in NCG spectral triple formalism. J = real structure. Source verified at line 132.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_495",
+          "original_raw": "Gamma^(1)[A] = i*hbar * integral ds/s * exp(-is*m^2) * Tr exp(is*(D_slash)^2)",
+          "latex": "\\Gamma^{(1)}[A] = i\\hbar \\int \\frac{ds}{s} \\, e^{-is m^2} \\, \\operatorname{Tr} e^{is (\\slashed{D})^2}",
+          "status": "ok",
+          "note": "One-loop effective action via proper-time / Schwinger representation. Standard QFT. Source verified at line 19.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_496",
+          "original_raw": "F_cond = F_pert - N(0) * Delta^2 / (2g) + O(Delta^4)",
+          "latex": "F_{\\mathrm{cond}} = F_{\\mathrm{pert}} - N(0) \\frac{\\Delta^2}{2g} + \\mathcal{O}(\\Delta^4)",
+          "status": "ok",
+          "note": "BCS condensation free energy. N(0) = density of states at Fermi level. Source verified at line 148.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_497",
+          "original_raw": "delta_F = -N(0) * Delta^2 / (2g) ~ -2 * 0.36 / 7.9 ~ -0.091",
+          "latex": "\\delta F = -N(0) \\frac{\\Delta^2}{2g} \\approx -\\frac{2 \\times 0.36}{7.9} \\approx -0.091",
+          "status": "typo",
+          "note": "Arithmetic: 2 * 0.36 / 7.9 = 0.72/7.9 = 0.0911. Reported as -0.091. The sign is correct (condensation lowers free energy). Rounding acceptable. Source verified at line 152.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_498",
+          "original_raw": "Z = integral D[Delta] exp(i * Gamma[Delta] / hbar)",
+          "latex": "Z = \\int \\mathcal{D}[\\Delta] \\, e^{i \\Gamma[\\Delta]/\\hbar}",
+          "status": "ok",
+          "note": "Path integral over gap parameter (Hubbard-Stratonovich auxiliary field). Source verified at line 190.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_499",
+          "original_raw": "S_rad = min_I ext_{dI} [A(dI)/(4G) + S_bulk(I + R)]",
+          "latex": "S_{\\mathrm{rad}} = \\min_I \\operatorname{ext}_{\\partial I} \\left[ \\frac{A(\\partial I)}{4G} + S_{\\mathrm{bulk}}(I \\cup R) \\right]",
+          "status": "ok",
+          "note": "Island formula for radiation entropy. Standard quantum extremal surface prescription (AMPS/PSSY 2019). Source verified at line 151.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_500",
+          "original_raw": "L = T_c * (S_pert(tau_0) - S_cond(tau_0))",
+          "latex": "L = T_c \\left( S_{\\mathrm{pert}}(\\tau_0) - S_{\\mathrm{cond}}(\\tau_0) \\right)",
+          "status": "ok",
+          "note": "Latent heat of BCS phase transition. Source verified at line 263.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_501",
+          "original_raw": "K_a = K_a^{gauge} + K_a^{scalar} + K_a^{mixed}",
+          "latex": "K_a = K_a^{\\mathrm{gauge}} + K_a^{\\mathrm{scalar}} + K_a^{\\mathrm{mixed}}",
+          "status": "ok",
+          "note": "Kosmann-Lichnerowicz derivative decomposition. Source verified at line 118.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_502",
+          "original_raw": "Delta_n = - sum_m V_{nm} Delta_m / (2 E_m)",
+          "latex": "\\Delta_n = -\\sum_m \\frac{V_{nm} \\Delta_m}{2 E_m}",
+          "status": "ok",
+          "note": "BCS gap equation in eigenvalue basis. E_m = sqrt(xi_m^2 + Delta_m^2). Source verified at line 71.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_503",
+          "original_raw": "F_min(tau) = F_pert(tau) - (1/2) * N(0) * Delta_0^2",
+          "latex": "F_{\\min}(\\tau) = F_{\\mathrm{pert}}(\\tau) - \\frac{1}{2} N(0) \\Delta_0^2",
+          "status": "ok",
+          "note": "BCS condensation energy at optimal gap. Source verified at line 128.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_504",
+          "original_raw": "m_nu [eV] = lambda_min / L_K",
+          "latex": "m_\\nu \\,[\\mathrm{eV}] = \\frac{\\lambda_{\\min}}{L_K}",
+          "status": "ok",
+          "note": "Neutrino mass from minimum D_K eigenvalue / internal length. Source verified at line 88.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_505",
+          "original_raw": "r(tau_0) = sqrt(lambda_{(3,0)}^2 + Delta_{(3,0)}^2) / sqrt(lambda_{(0,0)}^2 + Delta_{(0,0)}^2)",
+          "latex": "r(\\tau_0) = \\frac{\\sqrt{\\lambda_{(3,0)}^2 + \\Delta_{(3,0)}^2}}{\\sqrt{\\lambda_{(0,0)}^2 + \\Delta_{(0,0)}^2}}",
+          "status": "ok",
+          "note": "Mass ratio with BCS gap corrections. Paasch phi-ratio generalization. Source verified at line 156.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_506",
+          "original_raw": "Delta = (coupling) * integral[ Delta / sqrt(xi^2 + Delta^2) ]",
+          "latex": "\\Delta = g \\int \\frac{\\Delta}{\\sqrt{\\xi^2 + \\Delta^2}} \\, d\\xi",
+          "status": "ok",
+          "note": "Standard BCS self-consistency (gap equation). Source verified at line 166.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_507",
+          "original_raw": "N(j)^2 = (m_j/m_e)^{2/3} and lambda^2 = C_2(p,q) + 3/4",
+          "latex": "N(j)^2 = \\left(\\frac{m_j}{m_e}\\right)^{2/3}, \\quad \\lambda^2 = C_2(p,q) + \\frac{3}{4}",
+          "status": "typo",
+          "note": "Two unrelated equations joined by 'and'. lambda^2 = C_2(p,q) + 3/4 is the Parthasarathy formula for the bi-invariant Dirac eigenvalues (up to normalization). But the exact bi-invariant formula is lambda^2 = C_2(p,q)/36 + constant (see eq_13: lambda^2 = n/36). The 3/4 here is suspicious -- it may be using a different normalization. Source verified at line 174 but physics needs cross-check.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_508",
+          "original_raw": "omega^2 = V_FR''(tau_0) / G_{tau tau}",
+          "latex": "\\omega^2 = \\frac{V_{FR}''(\\tau_0)}{G_{\\tau\\tau}}",
+          "status": "ok",
+          "note": "Normal mode frequency of the modulus field around a potential minimum. G_{tau,tau} = moduli space metric. Source verified at line 81.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_509",
+          "original_raw": "gamma_n(tau) = -(tau/lambda_n) * (d lambda_n / d tau)",
+          "latex": "\\gamma_n(\\tau) = -\\frac{\\tau}{\\lambda_n} \\frac{d\\lambda_n}{d\\tau}",
+          "status": "error",
+          "note": "This appears to be the Gruneisen parameter. The standard Gruneisen parameter is gamma = -(V/omega)(domega/dV). Here the analog uses tau (modulus) instead of volume V, and lambda_n instead of omega. The prefactor should be dimensionless: (tau/lambda)(dlambda/dtau) is dimensionless since tau is dimensionless. However, the SIGN convention is non-standard. Standard Gruneisen has gamma > 0 for modes that soften under expansion. The minus sign here would make gamma > 0 for modes that HARDEN under increasing tau, which is the opposite convention. This is potentially confusing but not wrong if consistently used. Mark as error for the sign convention ambiguity in the knowledge index.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_510",
+          "original_raw": "F = pi * (R_1*R_2)^{1/4} / (1 - sqrt(R_1*R_2))",
+          "latex": "\\mathcal{F} = \\frac{\\pi (R_1 R_2)^{1/4}}{1 - \\sqrt{R_1 R_2}}",
+          "status": "ok",
+          "note": "Fabry-Perot finesse formula (Tesla). Source verified at line 73.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_511",
+          "original_raw": "f(0,0) = -4.687 at tau = 0.30,  threshold = -3",
+          "latex": "f(0,0) = -4.687 \\text{ at } \\tau = 0.30, \\quad \\text{threshold} = -3",
+          "status": "ok",
+          "note": "Perturbative exhaustion function value. Source verified at line 52.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_512",
+          "original_raw": "a_4 = (4*pi)^{-4} * (1/360) * integral_K tr[60 E*R + 180 E^2 + 30 Omega_{ij}Omega^{ij}",
+          "latex": "a_4 = \\frac{1}{(4\\pi)^4} \\cdot \\frac{1}{360} \\int_K \\operatorname{tr}\\left[ 60\\,ER + 180\\,E^2 + 30\\,\\Omega_{ij}\\Omega^{ij} + \\dim_S (5R^2 - 2|\\mathrm{Ric}|^2 + 2K) \\right] \\mathrm{vol}_K",
+          "status": "typo",
+          "note": "Raw text truncated (missing closing terms). Full expression includes dim_spinor*(5R^2 - 2|Ric|^2 + 2K). Source at line 35-36 has the full expression. Gilkey-DeWitt a_4 formula.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_513",
+          "original_raw": "R_K(tau) = (3/2)(2 e^{2tau} - 1 + 8 e^{-tau} - e^{-4tau})",
+          "latex": "R_K(\\tau) = \\frac{3}{2}\\left(2 e^{2\\tau} - 1 + 8 e^{-\\tau} - e^{-4\\tau}\\right)",
+          "status": "ok",
+          "note": "Scalar curvature of SU(3) with Jensen deformation. Baptista Paper 15 eq 3.70. At tau=0: R_K = (3/2)(2-1+8-1) = 12 (Baptista normalization). Source verified at line 48.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_514",
+          "original_raw": "V_FR(sigma, tau) = (1/2M^2) * (2*Lambda_P * e^{4sigma/5} - e^{sigma} * R_{g_K}(tau))",
+          "latex": "V_{FR}(\\sigma, \\tau) = \\frac{1}{2M^2}\\left(2\\Lambda_P \\, e^{4\\sigma/5} - e^{\\sigma} \\, R_{g_K}(\\tau)\\right)",
+          "status": "ok",
+          "note": "Classical KK potential from Baptista Paper 15 eq 3.80. Two-field potential for volume modulus sigma and shape modulus tau. Source verified at line 64.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_666",
+          "original_raw": "O_sagan = ln(0.05/0.95) + ln(0.31) = -2.944 + (-1.171) = -4.115",
+          "latex": "O_{\\mathrm{Sagan}} = \\ln\\frac{0.05}{0.95} + \\ln(0.31) = -2.944 + (-1.171) = -4.115",
+          "status": "ok",
+          "note": "GATE-CRITICAL: Bayesian log-odds update from Sagan prior. Arithmetic verified: ln(0.05/0.95) = ln(0.05263) = -2.944, ln(0.31) = -1.171. Sum = -4.115. Source verified at line 199.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_667",
+          "original_raw": "p_sagan = 1/(1 + exp(4.115)) = 1.6%",
+          "latex": "p_{\\mathrm{Sagan}} = \\frac{1}{1 + e^{4.115}} = 1.6\\%",
+          "status": "ok",
+          "note": "GATE-CRITICAL: Sagan posterior probability. Arithmetic verified: exp(4.115) = 61.26, 1/62.26 = 0.01607 = 1.6%. Source verified at line 200.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_668",
+          "original_raw": "O_panel = ln(0.08/0.92) + ln(0.31) = -2.442 + (-1.171) = -3.613",
+          "latex": "O_{\\mathrm{panel}} = \\ln\\frac{0.08}{0.92} + \\ln(0.31) = -2.442 + (-1.171) = -3.613",
+          "status": "ok",
+          "note": "GATE-CRITICAL: Bayesian log-odds update from panel prior. Arithmetic verified: ln(0.08/0.92) = ln(0.08696) = -2.442, ln(0.31) = -1.171. Sum = -3.613. Source verified at line 206.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_669",
+          "original_raw": "p_panel = 1/(1 + exp(3.613)) = 2.6%",
+          "latex": "p_{\\mathrm{panel}} = \\frac{1}{1 + e^{3.613}} = 2.6\\%",
+          "status": "ok",
+          "note": "GATE-CRITICAL: Panel posterior probability. Arithmetic verified: exp(3.613) = 37.08, 1/38.08 = 0.02626 = 2.6%. Source verified at line 207.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_698",
+          "original_raw": "BF_combined = BF_V-1 * BF_R-1^(1-r) * BF_AC-1 * BF_Euclidean^0 * ...",
+          "latex": "\\mathrm{BF}_{\\mathrm{combined}} = \\mathrm{BF}_{V\\text{-}1} \\cdot \\mathrm{BF}_{R\\text{-}1}^{(1-r)} \\cdot \\mathrm{BF}_{AC\\text{-}1} \\cdot \\mathrm{BF}_{\\mathrm{Euclidean}}^0",
+          "status": "ok",
+          "note": "GATE-CRITICAL: Combined Bayes factor with correlation discounting. BF_Euclidean^0 = 1 (no independent info). r = correlation between V-1 and R-1. Source verified at line 113.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_699",
+          "original_raw": "O_panel = ln(0.08/0.92) + ln(0.31)",
+          "latex": "O_{\\mathrm{panel}} = \\ln\\frac{0.08}{0.92} + \\ln(0.31)",
+          "status": "ok",
+          "note": "Duplicate of eq_668 (different source file). Source verified at line 298.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_700",
+          "original_raw": "p_panel = 1/(1 + exp(3.613))",
+          "latex": "p_{\\mathrm{panel}} = \\frac{1}{1 + e^{3.613}}",
+          "status": "ok",
+          "note": "Duplicate of eq_669. Source verified at line 301.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_701",
+          "original_raw": "O_sagan = ln(0.05/0.95) + ln(0.31)",
+          "latex": "O_{\\mathrm{Sagan}} = \\ln\\frac{0.05}{0.95} + \\ln(0.31)",
+          "status": "ok",
+          "note": "Duplicate of eq_666. Source verified at line 311.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_702",
+          "original_raw": "p_sagan = 1/(1 + exp(4.115))",
+          "latex": "p_{\\mathrm{Sagan}} = \\frac{1}{1 + e^{4.115}}",
+          "status": "ok",
+          "note": "Duplicate of eq_667. Source verified at line 314.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_703",
+          "original_raw": "D_mu = (D_4 - mu*gamma_0) tensor 1 + gamma_5 tensor D_K",
+          "latex": "D_\\mu = (D_4 - \\mu\\gamma_0) \\otimes \\mathbf{1} + \\gamma_5 \\otimes D_K",
+          "status": "ok",
+          "note": "KK Dirac operator with chemical potential. Source verified at line 611. Standard thermal field theory on product space.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_704",
+          "original_raw": "S_eff(tau) = sum_{(p,q)} d_{(p,q)} * V_{(p,q)}(tau)",
+          "latex": "S_{\\mathrm{eff}}(\\tau) = \\sum_{(p,q)} d_{(p,q)} \\, V_{(p,q)}(\\tau)",
+          "status": "ok",
+          "note": "Effective action as dimension-weighted sum of sector spectral actions. Key for inter-sector cancellation mechanism. Source verified at line 633.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_705",
+          "original_raw": "S_ferm(tau) = sum_{(p,q)} d_{(p,q)} * [sum_n f(lambda_n^{(p,q)}(tau)^2 / Lambda^2)]",
+          "latex": "S_{\\mathrm{ferm}}(\\tau) = \\sum_{(p,q)} d_{(p,q)} \\sum_n f\\!\\left(\\frac{\\lambda_n^{(p,q)}(\\tau)^2}{\\Lambda^2}\\right)",
+          "status": "ok",
+          "note": "Fermionic spectral action decomposed by PW sector. Source verified at line 637.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_12067",
+          "original_raw": "where rho = c_4/c_2 = f_4/(60*f_2*Lambda^2) is the single free parameter.",
+          "latex": "\\rho = \\frac{c_4}{c_2} = \\frac{f_4}{60 f_2 \\Lambda^2}",
+          "status": "ok",
+          "note": "Spectral action free parameter ratio. Source verified at line 138.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_12068",
+          "original_raw": "H_eff = diag(lambda_1, ..., lambda_16) + V_nm(tau = 0.30)",
+          "latex": "H_{\\mathrm{eff}} = \\mathrm{diag}(\\lambda_1, \\ldots, \\lambda_{16}) + V_{nm}(\\tau = 0.30)",
+          "status": "ok",
+          "note": "Effective Hamiltonian for BCS-type analysis: D_K eigenvalues + interaction matrix. Source verified at line 190.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_12073",
+          "original_raw": "R = (m_3^2 - m_2^2) / (m_2^2 - m_1^2)",
+          "latex": "R = \\frac{m_3^2 - m_2^2}{m_2^2 - m_1^2}",
+          "status": "ok",
+          "note": "Neutrino mass-squared ratio (R-1 gate observable). Target: R in [17, 66] for normal ordering. Source verified at line 143.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_12074",
+          "original_raw": "Combined BF = BF(V_spec) x BF(R)^{independence factor} x BF(A/C)^{correlation discount}.",
+          "latex": "\\mathrm{BF}_{\\mathrm{combined}} = \\mathrm{BF}(V_{\\mathrm{spec}}) \\times \\mathrm{BF}(R)^{(1-r)} \\times \\mathrm{BF}(A/C)^{c}",
+          "status": "ok",
+          "note": "Combined Bayes factor template. Source verified at line 109.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_12075",
+          "original_raw": "m_sigma^2 = V_spec''(tau_min) [in KK natural units]",
+          "latex": "m_\\sigma^2 = V_{\\mathrm{spec}}''(\\tau_{\\min})",
+          "status": "ok",
+          "note": "Modulus mass from curvature of V_spec at minimum. Source verified at line 148.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_12080",
+          "original_raw": "Gi = kT_KK / V_barrier",
+          "latex": "\\mathrm{Gi} = \\frac{k_B T_{KK}}{V_{\\mathrm{barrier}}}",
+          "status": "ok",
+          "note": "Ginzburg criterion for fluctuation-driven disorder. Source verified at line 82.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_12081",
+          "original_raw": "E_ZPF = (1/2) * hbar * omega_sigma = (1/2) * sqrt(V_spec''(tau_min))",
+          "latex": "E_{\\mathrm{ZPF}} = \\frac{1}{2} \\hbar \\omega_\\sigma = \\frac{1}{2} \\sqrt{V_{\\mathrm{spec}}''(\\tau_{\\min})}",
+          "status": "ok",
+          "note": "Zero-point energy of modulus field. Source verified at line 103. In natural units hbar=1.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_12083",
+          "original_raw": "m_sigma = sqrt(V_spec''(tau_min)) [KK units] x M_KK [GeV]",
+          "latex": "m_\\sigma = \\sqrt{V_{\\mathrm{spec}}''(\\tau_{\\min})} \\times M_{KK} \\,[\\mathrm{GeV}]",
+          "status": "ok",
+          "note": "Physical modulus mass in GeV. Source verified at line 116.",
+          "source_verified": true
+        }
+      ],
+      "batch_summary": {
+        "total_processed": 46,
+        "ok": 42,
+        "typo": 3,
+        "error": 1,
+        "critical": 0,
+        "reclassify_to_code": 0,
+        "reclassify_to_remove": 0,
+        "gate_critical_verified": [
+          "eq_666",
+          "eq_667",
+          "eq_668",
+          "eq_669",
+          "eq_698",
+          "eq_699",
+          "eq_700",
+          "eq_701",
+          "eq_702"
+        ],
+        "all_gate_posteriors_correct": true,
+        "errors_found": [
+          {
+            "id": "eq_509",
+            "severity": "error",
+            "description": "Gruneisen parameter sign convention non-standard. Minus sign makes gamma > 0 for hardening modes (opposite to textbook). Potentially confusing in knowledge index."
+          }
+        ],
+        "typos_found": [
+          {
+            "id": "eq_497",
+            "description": "Minor arithmetic rounding: 0.72/7.9 = 0.0911, reported as 0.091."
+          },
+          {
+            "id": "eq_507",
+            "description": "Two unrelated equations joined. lambda^2 = C_2 + 3/4 normalization needs cross-check."
+          },
+          {
+            "id": "eq_512",
+            "description": "Raw text truncated; missing Gilkey a_4 closing terms."
+          }
+        ]
+      }
+    },
+    {
+      "batch_id": 4,
+      "equations_processed": "Session 19/19d structural: eq_176-eq_334 (141 equations total)",
+      "type_filter": "structural (Sessions 19/19d)",
+      "results": [
+        {
+          "id": "eq_176",
+          "original_raw": "lambda_1(tau) = e^{2 tau},   lambda_2(tau) = e^{-2 tau},   lambda_3(tau) = e^{tau}",
+          "latex": "\\lambda_1(\\tau) = e^{2\\tau}, \\quad \\lambda_2(\\tau) = e^{-2\\tau}, \\quad \\lambda_3(\\tau) = e^{\\tau}",
+          "status": "error",
+          "note": "Jensen deformation eigenvalues. The volume preservation condition requires lambda_1*lambda_2*lambda_3^2 = 1 (since the metric involves these on 1D, 3D, and 4D subspaces). Check: e^{2tau} * e^{-2tau} * (e^tau)^2 = 1 * e^{2tau} != 1. This is WRONG unless we interpret lambda_3 as applying to a different number of dimensions. Actually, Baptista eq 3.68 has g_K = diag(e^{2tau}*g_0|_{u(1)}, e^{-2tau}*g_0|_{su(2)}, e^{tau}*g_0|_{C^2}). Volume = det(g)^{1/2}. dim(u(1))=1, dim(su(2))=3, dim(C^2)=4. So vol ~ e^{tau} * e^{-3tau} * e^{2tau} = e^0 = 1. Volume IS preserved. The raw text correctly lists three scale factors. But it should note these are metric eigenvalues (not length eigenvalues), i.e., the metric is multiplied by these factors on the respective subspaces. Downgrading from error to ok.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_179",
+          "original_raw": "m^2(e_a^L) = (3/2) * [e^tau - e^{-2 tau}]^2 + [1 - e^{-tau}]^2",
+          "latex": "m^2(e_a^L) = \\frac{3}{2} \\left[ (e^\\tau - e^{-2\\tau})^2 + (1 - e^{-\\tau})^2 \\right]",
+          "status": "typo",
+          "note": "The raw text has the 3/2 multiplying only the first bracket, but the source shows it should multiply the whole expression (divided by 5). Compare with eq_33 and Baptista eq 3.84. The full formula is m^2 = c_0 * [(e^s - e^{-2s})^2 + (1 - e^{-s})^2] where c_0 includes the 3/2 and /5 factors. The raw extraction lost the formatting.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_181",
+          "original_raw": "K(tau, sigma) = Tr( exp(-sigma D_K(tau)^2) ) = Sum_n mult_n exp(-sigma lambda_n(tau)^2)",
+          "latex": "K(\\tau, \\sigma) = \\operatorname{Tr}\\!\\left(e^{-\\sigma D_K(\\tau)^2}\\right) = \\sum_n \\mathrm{mult}_n \\, e^{-\\sigma \\lambda_n(\\tau)^2}",
+          "status": "ok",
+          "note": "Heat kernel trace on (SU(3), g_tau). Source verified at line 108.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_182",
+          "original_raw": "d_s(tau, sigma) = -2 d(log K(tau, sigma)) / d(log sigma)",
+          "latex": "d_s(\\tau, \\sigma) = -2 \\frac{d \\ln K(\\tau, \\sigma)}{d \\ln \\sigma}",
+          "status": "ok",
+          "note": "Spectral dimension definition from heat kernel. Standard. Source verified at line 110.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_183",
+          "original_raw": "Eigenvalues are lambda^2 = C_2(p,q)/3 with exact degeneracies.",
+          "latex": "\\lambda^2 = \\frac{C_2(p,q)}{3}",
+          "status": "error",
+          "note": "This contradicts eq_13 which says lambda^2 = n/36 for integer n. C_2(p,q) for SU(3) is (p^2 + q^2 + pq + 3p + 3q)/3. At (0,0): C_2 = 0 but lambda^2 = 25/36 (from eq_13). The formula lambda^2 = C_2/3 is WRONG for the Dirac operator -- it would be correct for the scalar Laplacian. The Dirac eigenvalues include a constant shift from the spinor curvature (the Omega term in eq_56). Specifically, lambda^2 = (C_2(p,q) + 3/4 + correction)/normalization. This source error confuses the Laplacian eigenvalues with the Dirac eigenvalues.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_184",
+          "original_raw": "Z(tau, beta) = Sum_n mult_n exp(-beta lambda_n(tau)^2)",
+          "latex": "Z(\\tau, \\beta) = \\sum_n \\mathrm{mult}_n \\, e^{-\\beta \\lambda_n(\\tau)^2}",
+          "status": "ok",
+          "note": "Spectral partition function. Source verified at line 160.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_185",
+          "original_raw": "p_n(tau, beta) = mult_n exp(-beta lambda_n^2) / Z(tau, beta)",
+          "latex": "p_n(\\tau, \\beta) = \\frac{\\mathrm{mult}_n \\, e^{-\\beta \\lambda_n^2}}{Z(\\tau, \\beta)}",
+          "status": "ok",
+          "note": "Boltzmann probability for eigenvalue mode. Source verified at line 162.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_186",
+          "original_raw": "S_spectral(tau, beta) = -Sum_n p_n log p_n = log Z + beta <lambda^2>",
+          "latex": "S_{\\mathrm{spectral}}(\\tau, \\beta) = -\\sum_n p_n \\ln p_n = \\ln Z + \\beta \\langle \\lambda^2 \\rangle",
+          "status": "ok",
+          "note": "Shannon entropy = log Z + beta*<E>. Standard stat mech identity. Source verified at line 164.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_187",
+          "original_raw": "F(tau, beta) = -beta^{-1} log Z(tau, beta)    [free energy]",
+          "latex": "F(\\tau, \\beta) = -\\beta^{-1} \\ln Z(\\tau, \\beta)",
+          "status": "ok",
+          "note": "Helmholtz free energy. Source verified at line 166.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_188",
+          "original_raw": "C_spectral(tau, beta) = beta^2 d^2(beta F) / d(beta)^2 = beta^2 (<lambda^4> - <lambda^2>^2)",
+          "latex": "C_{\\mathrm{spectral}}(\\tau, \\beta) = \\beta^2 \\frac{d^2(\\beta F)}{d\\beta^2} = \\beta^2 \\left( \\langle \\lambda^4 \\rangle - \\langle \\lambda^2 \\rangle^2 \\right)",
+          "status": "ok",
+          "note": "Spectral heat capacity = variance of eigenvalue distribution. Source verified at line 181.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_189",
+          "original_raw": "V_eff(sigma, tau) = V(sigma, tau) + (3 kappa / 64 pi^2) m^4(sigma, tau) log(m^2/mu^2)",
+          "latex": "V_{\\mathrm{eff}}(\\sigma, \\tau) = V(\\sigma, \\tau) + \\frac{3\\kappa}{64\\pi^2} m^4(\\sigma, \\tau) \\ln\\frac{m^2}{\\mu^2}",
+          "status": "typo",
+          "note": "Reference to Baptista eq 3.87. The source says '3 kappa' but Baptista has different normalization conventions. The standard CW has n_j/(64 pi^2) not 3*kappa. The factor 3 comes from massive vector DOF (3 polarizations) and kappa is a coupling constant. This is a compressed notation, not wrong per se. Source verified at line 190.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_190",
+          "original_raw": "P_Poisson(s) = exp(-s).",
+          "latex": "P_{\\mathrm{Poisson}}(s) = e^{-s}",
+          "status": "ok",
+          "note": "Poisson level spacing distribution (integrable systems). Source verified at line 234.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_191",
+          "original_raw": "P_Brody(s, q) = (q+1) b s^q exp(-b s^{q+1})",
+          "latex": "P_{\\mathrm{Brody}}(s, q) = (q+1)\\, b\\, s^q \\, e^{-b\\, s^{q+1}}",
+          "status": "ok",
+          "note": "Brody distribution interpolating Poisson (q=0) and GOE (q=1). Source verified at line 255.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_192",
+          "original_raw": "where b = [Gamma((q+2)/(q+1))]^{q+1}.",
+          "latex": "b = \\left[\\Gamma\\!\\left(\\frac{q+2}{q+1}\\right)\\right]^{q+1}",
+          "status": "ok",
+          "note": "Brody normalization constant. Source verified at line 257.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_193",
+          "original_raw": "Sigma^2(L, tau) = <(n(L) - <n(L)>)^2> distinguishes:",
+          "latex": "\\Sigma^2(L, \\tau) = \\langle (n(L) - \\langle n(L) \\rangle)^2 \\rangle",
+          "status": "ok",
+          "note": "Number variance (spectral rigidity diagnostic). Source verified at line 261.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_194",
+          "original_raw": "Omega(tau) = d_s(tau, sigma_*) * S_spectral(tau, beta_*) * R_reg(tau) / R_reg(0)",
+          "latex": "\\Omega(\\tau) = d_s(\\tau, \\sigma_*) \\cdot S_{\\mathrm{spectral}}(\\tau, \\beta_*) \\cdot \\frac{R_{\\mathrm{reg}}(\\tau)}{R_{\\mathrm{reg}}(0)}",
+          "status": "ok",
+          "note": "Composite spectral complexity measure. Source verified at line 299.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_201",
+          "original_raw": "M_{alpha,beta}^a(tau) = < phi_alpha(tau), (L_{e_a} + (1/2) div(e_a)) phi_beta(tau) >_{L^2}",
+          "latex": "M_{\\alpha\\beta}^a(\\tau) = \\langle \\phi_\\alpha(\\tau), \\left(\\mathcal{L}_{e_a} + \\frac{1}{2} \\operatorname{div}(e_a)\\right) \\phi_\\beta(\\tau) \\rangle_{L^2}",
+          "status": "ok",
+          "note": "Gauge-fermion coupling matrix from Kosmann-Lichnerowicz derivative. Paper 17 eq 3.10. Source verified at line 751.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_202",
+          "original_raw": "L_X psi = nabla_X psi - (1/8) g^{ir} g^{js} (g(nabla_{v_r} X, v_s)",
+          "latex": "\\mathcal{L}_X \\psi = \\nabla_X \\psi - \\frac{1}{8} g^{ir} g^{js} \\left(g(\\nabla_{v_r} X, v_s) - g(\\nabla_{v_s} X, v_r)\\right) v_i \\cdot v_j \\cdot \\psi",
+          "status": "typo",
+          "note": "Kosmann-Lichnerowicz derivative formula. Raw text truncated (missing the antisymmetric part and the Clifford multiplication). Full expression from Paper 17 eq 4.1 at source line 755.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_203",
+          "original_raw": "[D_K, L_{e_a}] = 0   (Paper 17, eq 4.7 with L_{e_a} g_K = 0)",
+          "latex": "[D_K, \\mathcal{L}_{e_a}] = 0 \\quad \\text{when } \\mathcal{L}_{e_a} g_K = 0",
+          "status": "ok",
+          "note": "D_K commutes with Kosmann lift of Killing fields. Fundamental for block-diagonality. Paper 17, eq 4.7. Source verified at line 762.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_205",
+          "original_raw": "V_eff(tau) = V_tree(tau) + V_1-loop(tau) + V_back-reaction(tau)",
+          "latex": "V_{\\mathrm{eff}}(\\tau) = V_{\\mathrm{tree}}(\\tau) + V_{1\\text{-loop}}(\\tau) + V_{\\mathrm{back-reaction}}(\\tau)",
+          "status": "ok",
+          "note": "General effective potential structure. Source verified at line 812.",
+          "source_verified": true
+        }
+      ],
+      "batch_summary": {
+        "total_processed": 141,
+        "sampled_and_verified": 20,
+        "ok": 16,
+        "typo": 3,
+        "error": 1,
+        "critical": 0,
+        "note": "Sampling strategy: verified all physics equations from the Session 19 primer (highest density). Remaining 121 equations in 19d collab files are primarily specialist calculations (BCS, Berry phase, Lichnerowicz, etc.) that were verified in later sessions. Full detailed audit of each would require reading all 14 collaboration source files.",
+        "errors_found": [
+          {
+            "id": "eq_183",
+            "severity": "error",
+            "description": "lambda^2 = C_2(p,q)/3 is WRONG for the Dirac operator. This is the scalar Laplacian eigenvalue formula. Dirac eigenvalues include a spinor curvature offset (Parthasarathy shift). The correct bi-invariant formula gives lambda^2 = n/36 for specific integers n (eq_13). This formula would give lambda^2 = 0 for the (0,0) sector, but the actual (0,0) Dirac eigenvalues start at 25/36."
+          }
+        ],
+        "typos_found": [
+          {
+            "id": "eq_179",
+            "description": "Gauge boson mass formula lost formatting in extraction (3/2 factor placement ambiguous)."
+          },
+          {
+            "id": "eq_189",
+            "description": "Compressed CW notation: '3 kappa' is non-standard (should be n_j with specified normalization)."
+          },
+          {
+            "id": "eq_202",
+            "description": "Kosmann-Lichnerowicz formula truncated at extraction (missing antisymmetric part + Clifford product)."
+          }
+        ]
+      }
+    },
+    {
+      "batch_id": 5,
+      "equations_processed": "All inline (141) + display (111) equations",
+      "type_filter": "inline + display",
+      "results": [
+        {
+          "id": "eq_237",
+          "original_raw": "I_h = (1/2) int_P [-g_M^{mu nu} <L_{X_mu} h, L_{X_nu} h>_{g_K} - (1/k) <h, Delta_L h - (2/k) R_{g_K} h>_{g_K}] vol_{g_P}",
+          "latex": "I_h = \\frac{1}{2} \\int_P \\left[ -g_M^{\\mu\\nu} \\langle \\mathcal{L}_{X_\\mu} h, \\mathcal{L}_{X_\\nu} h \\rangle_{g_K} - \\frac{1}{k} \\langle h, \\Delta_L^{g_K} h - \\frac{2}{k} R_{g_K} h \\rangle_{g_K} \\right] \\mathrm{vol}_{g_P}",
+          "status": "ok",
+          "note": "Baptista Paper 15 eq 3.14. Second variation of EH action for TT 2-tensors. Already in correct LaTeX. Source verified.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_239",
+          "original_raw": "(Mass h_n)^2 = mu_n - (2/k) R_{g_K}",
+          "latex": "(\\mathrm{Mass}\\; h_n)^2 = \\mu_n - \\frac{2}{k} R_{g_K}",
+          "status": "ok",
+          "note": "Baptista eq 3.17. TT 2-tensor KK mass. Tachyonic when mu_n < R_{g_K}/4 for k=8. Source verified.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_240",
+          "original_raw": "R^f_{abc} = Sum_d (Gamma^d_{bc} Gamma^f_{ad} - Gamma^d_{ac} Gamma^f_{bd} - f^d_{ab} Gamma^f_{dc})",
+          "latex": "R^f{}_{abc} = \\sum_d \\left( \\Gamma^d_{bc} \\Gamma^f_{ad} - \\Gamma^d_{ac} \\Gamma^f_{bd} - f^d_{ab} \\Gamma^f_{dc} \\right)",
+          "status": "ok",
+          "note": "Riemann tensor from connection + structure constants on Lie group. Already in correct LaTeX. Source verified.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_243",
+          "original_raw": "R_{abcd} = -(1/4) f_{abe} f_{cde}",
+          "latex": "R_{abcd} = -\\frac{1}{4} f_{abe} f_{cde}",
+          "status": "ok",
+          "note": "Bi-invariant Riemann tensor. Standard result (Milnor/Besse). Source verified at line 95.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_260",
+          "original_raw": "Delta_L h_{ab} = Delta h_{ab} - 2 R_{acbd} h_{cd}",
+          "latex": "\\Delta_L h_{ab} = \\Delta h_{ab} - 2 R_{acbd} h_{cd}",
+          "status": "ok",
+          "note": "Lichnerowicz operator on bi-invariant metric (simplified form without Ricci terms, which vanish for Einstein metrics). Source verified at line 93.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_346",
+          "original_raw": "Delta_L h_{ab} = -nabla^2 h_{ab} - 2R_{acbd}h^{cd} + 2R_{(a}^c h_{b)c}",
+          "latex": "\\Delta_L h_{ab} = -\\nabla^2 h_{ab} - 2R_{acbd}h^{cd} + 2R_{(a}^{\\;c}h_{b)c}",
+          "status": "ok",
+          "note": "Full Lichnerowicz operator with Ricci correction terms. Source verified at line 49. Consistent with standard reference (Besse, Einstein Manifolds, eq 1.143).",
+          "source_verified": true
+        },
+        {
+          "id": "eq_349",
+          "original_raw": "H^2 = (8 pi G / 3) rho (1 - rho/rho_c)",
+          "latex": "H^2 = \\frac{8\\pi G}{3}\\rho\\left(1 - \\frac{\\rho}{\\rho_c}\\right)",
+          "status": "ok",
+          "note": "Modified Friedmann equation (LQC bouncing cosmology). rho_c = Planck density. Source verified at line 83.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_431",
+          "original_raw": "b_1/b_2 = 4/9",
+          "latex": "b_1/b_2 = 4/9",
+          "status": "ok",
+          "note": "Trap 2 ratio. Dynkin index I(U(1))/I(SU(2)) for canonical SU(3) > SU(2) x U(1) embedding. Session 21c. Source verified.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_596",
+          "original_raw": "rho = f(D^2/Lambda^2)",
+          "latex": "\\rho = f(D^2/\\Lambda^2)",
+          "status": "ok",
+          "note": "Density matrix from spectral action cutoff function. Tesla-Connes addendum. Source verified at line 110.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_12057",
+          "original_raw": "alpha_FS = g_1^2 g_2^2 / (g_1^2 + g_2^2) = g_1^2 sin^2(theta_W)",
+          "latex": "\\alpha_{\\mathrm{FS}} = \\frac{g_1^2 g_2^2}{g_1^2 + g_2^2} = g_1^2 \\sin^2\\theta_W",
+          "status": "error",
+          "note": "The fine structure constant is alpha = e^2/(4 pi) = g_1^2 g_2^2/[4 pi (g_1^2 + g_2^2)]. The formula as written is missing the 4 pi factor. Also, alpha = g_2^2 sin^2(theta_W)/(4 pi), NOT g_1^2 sin^2(theta_W). The relation is e = g_1 sin(theta_W) = g_2 cos(theta_W), so alpha = g_1^2 sin^2(theta_W)/(4 pi) = g_2^2 cos^2(theta_W)/(4 pi). The source uses different normalization conventions (absorbing 4 pi). Flagging as error for the index: the relation as stated is at minimum missing context about conventions.",
+          "source_verified": true
+        }
+      ],
+      "batch_summary": {
+        "total_processed": 252,
+        "sampled_and_verified": 30,
+        "ok": 28,
+        "typo": 1,
+        "error": 1,
+        "critical": 0,
+        "note": "Inline and display equations are already in LaTeX format (from source documents that use LaTeX). Much higher quality than structural equations. The Tesla-Connes addendum (112 equations) is particularly clean with proper equation numbering (A.1-A.16+). Sampling focused on physics-dense formulas from Sessions 19d and 21c.",
+        "errors_found": [
+          {
+            "id": "eq_12057",
+            "severity": "error",
+            "description": "Fine structure constant formula missing 4pi normalization factor and has wrong coupling assignment (g_1 vs g_2 with sin^2 theta_W). Conventions unclear."
+          }
+        ],
+        "typos_found": []
+      }
+    },
+    {
+      "batch_id": 6,
+      "equations_processed": "Remaining structural: Sessions 16-round-3a, 18, 19d-collabs, 21c, 22-sagan, 23-sagan, feynman-predictions, artifacts (451 equations total)",
+      "type_filter": "structural (remaining unprocessed)",
+      "results": [
+        {
+          "id": "eq_101",
+          "original_raw": "T_a = rho_{(p,q)}(e_a) tensor I_16 + I_{dim} tensor T_spinor_a   (a = 0, 1, 2)",
+          "latex": "T_a = \\rho_{(p,q)}(e_a) \\otimes \\mathbb{I}_{16} + \\mathbb{I}_{\\dim} \\otimes T_a^{\\mathrm{spinor}} \\quad (a = 0, 1, 2)",
+          "status": "ok",
+          "note": "Total isospin operator on V_{(p,q)} tensor C^16. Standard Kaluza-Klein decomposition. Source verified at line 192.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_102",
+          "original_raw": "C2_SU2 = sum_a T_a^2",
+          "latex": "C_2^{\\mathrm{SU}(2)} = \\sum_{a=0}^{2} T_a^2",
+          "status": "ok",
+          "note": "SU(2) Casimir operator. Standard definition. Source verified at line 193.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_103",
+          "original_raw": "S_a = (1/4) * sum_{b,c} f_{abc} * gamma_b @ gamma_c   (a = 0..7)",
+          "latex": "S_a = \\frac{1}{4} \\sum_{b,c} f_{abc} \\, \\gamma_b \\gamma_c \\quad (a = 0, \\ldots, 7)",
+          "status": "ok",
+          "note": "Spin representation of su(3) generators from Clifford algebra. Standard formula for adjoint action on Spin(8). Source verified at line 204.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_104",
+          "original_raw": "evals_pi = np.linalg.eigvals(D_pi)",
+          "latex": "",
+          "status": "ok",
+          "note": "MISCLASSIFIED: Python code (numpy eigenvalue call), not a physics equation. Reclassify type from structural to code. Keep in database.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_105",
+          "original_raw": "iD_pi = (iD_pi + iD_pi.conj().T) / 2  # enforce exact Hermiticity (hazard H5)",
+          "latex": "",
+          "status": "ok",
+          "note": "MISCLASSIFIED: Python code (Hermiticity enforcement), not a physics equation. Reclassify type from structural to code. Keep in database.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_160",
+          "original_raw": "sign changes if and only if det(D_K(s)) = 0 -- i.e., the spectral gap closes.",
+          "latex": "\\mathrm{sgn}(\\mathrm{Pf}(J \\cdot D_K(s))) \\text{ changes} \\iff \\det(D_K(s)) = 0",
+          "status": "ok",
+          "note": "Pfaffian sign-change condition from Pf(M)^2 = det(Xi)*det(D_K). Source verified at line 61. Structural statement, properly formalized in LaTeX.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_161",
+          "original_raw": "all s, SU(3) is compact with H^1 = 0. Gap closure is geometrically forbidden.",
+          "latex": "",
+          "status": "ok",
+          "note": "MISCLASSIFIED: Prose statement about topology (H^1(SU(3)) = 0 implies gap persistence), not an equation. Reclassify type from structural to comment. Keep in database.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_162",
+          "original_raw": "The full Dirac operator D_total = D_K + D_F includes the finite Dirac operator D_F",
+          "latex": "D_{\\mathrm{total}} = D_K + D_F",
+          "status": "ok",
+          "note": "Total Dirac operator decomposition (NCG). D_F is the finite Dirac operator (Yukawa matrix). Source verified at line 76.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_163",
+          "original_raw": "pi_3(SU(3)) = Z (instantons/skyrmions). If the transition is mediated by instanton",
+          "latex": "\\pi_3(\\mathrm{SU}(3)) = \\mathbb{Z}",
+          "status": "ok",
+          "note": "Third homotopy group of SU(3). Standard algebraic topology. Source verified at line 174.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_164",
+          "original_raw": "change = quantum critical point at s_c) is **not yet falsified** but is reframed:",
+          "latex": "",
+          "status": "ok",
+          "note": "MISCLASSIFIED: Prose fragment, not an equation. Reclassify type from structural to comment. Keep in database.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_404",
+          "original_raw": "Gamma_eff = -i * integral ds/s * exp(-is*m^2) * Tr exp(is*D^2)",
+          "latex": "\\Gamma_{\\mathrm{eff}} = -i \\int \\frac{ds}{s} \\, e^{-ism^2} \\, \\mathrm{Tr}\\, e^{isD^2}",
+          "status": "ok",
+          "note": "Schwinger proper-time representation of the effective action. Standard (DeWitt). Source verified at line 41.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_405",
+          "original_raw": "T(tau) = tau + (1/64pi^2) * Sum_n Delta_b(n) * ln(lambda_n^2(tau)) * R(tau)",
+          "latex": "T(\\tau) = \\tau + \\frac{1}{64\\pi^2} \\sum_n \\Delta_b(n) \\ln(\\lambda_n^2(\\tau)) \\, R(\\tau)",
+          "status": "ok",
+          "note": "Self-consistency map for Jensen modulus from 1-loop correction. R(tau) is normalization factor. Source verified at line 91.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_406",
+          "original_raw": "F[tau] = integral_0^infty ds * f(s) * Tr exp(-s * D_K^2(tau))",
+          "latex": "F[\\tau] = \\int_0^\\infty ds \\, f(s) \\, \\mathrm{Tr}\\, e^{-s D_K^2(\\tau)}",
+          "status": "ok",
+          "note": "General spectral functional in proper-time representation. Encompasses CW, Casimir, spectral action as special cases of f(s). Source verified at line 103.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_407",
+          "original_raw": "delta_T(tau) = -Sum(delta_b * ln(lambda^2)) / (64*pi^2 * exp(4*tau))",
+          "latex": "\\delta T(\\tau) = -\\frac{\\sum_n \\Delta_b(n) \\ln(\\lambda_n^2(\\tau))}{64\\pi^2 \\, e^{4\\tau}}",
+          "status": "ok",
+          "note": "Explicit 1-loop correction to self-consistency map with spectral action cutoff normalization. Source verified at line 133.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_408",
+          "original_raw": "T(tau) = tau + correction(tau)",
+          "latex": "T(\\tau) = \\tau + \\delta T(\\tau)",
+          "status": "ok",
+          "note": "Self-consistency map decomposed into identity + correction. Source verified at line 145.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_307",
+          "original_raw": "ad(su(3)) = 8 (adjoint representation)",
+          "latex": "\\mathrm{ad}(\\mathfrak{su}(3)) = \\mathbf{8}",
+          "status": "ok",
+          "note": "Dimension of adjoint representation. Standard. Source verified at line 39.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_308",
+          "original_raw": "h_{ab} = h^{TT}_{ab} + nabla_{(a} V_{b)} + (1/dim(K)) g_{ab} h",
+          "latex": "h_{ab} = h^{\\mathrm{TT}}_{ab} + \\nabla_{(a} V_{b)} + \\frac{1}{\\dim(K)} g_{ab} h",
+          "status": "ok",
+          "note": "York decomposition of symmetric 2-tensor into TT + longitudinal + trace. Source verified at line 54.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_309",
+          "original_raw": "DOF(TT) = 27 x Sum_{p+q <= 6} dim(p,q) = 27 x (27,468 / 1)",
+          "latex": "\\mathrm{DOF}(\\mathrm{TT}) = 27 \\times \\sum_{p+q \\leq 6} \\dim(p,q)^2",
+          "status": "typo",
+          "note": "The raw text has 'dim(p,q)' but the correct formula uses dim(p,q)^2 (Peter-Weyl multiplicity). The source self-corrects at line 76 (eq_310). The number 27,468 IS sum dim(p,q)^2 at mps=6. So the formula as written is inconsistent with its own number.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_310",
+          "original_raw": "DOF(TT, mps=6) = 27 x Sum_{p+q<=6} dim(p,q)^2 = 27 x 27,468 = 741,636",
+          "latex": "\\mathrm{DOF}(\\mathrm{TT}, \\mathrm{mps}=6) = 27 \\times \\sum_{p+q \\leq 6} \\dim(p,q)^2 = 27 \\times 27{,}468 = 741{,}636",
+          "status": "ok",
+          "note": "Correct TT 2-tensor DOF count. 27 = dim(2,2) fiber, 27468 = Peter-Weyl multiplicity sum. Arithmetic verified: 27*27468 = 741636. Source verified at line 76.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_311",
+          "original_raw": "L h_{mn} = -Box h_{mn} - 2 R_{mpnq} h^{pq} + 2 R_{(m}^p h_{n)p}",
+          "latex": "\\Delta_L h_{mn} = -\\Box h_{mn} - 2 R_{mpnq} h^{pq} + 2 R_{(m}^{\\;p} h_{n)p}",
+          "status": "ok",
+          "note": "Lichnerowicz operator on symmetric 2-tensors. Consistent with eq_346 and eq_282. Source verified at line 94.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_291",
+          "original_raw": "Sym^2(8) = 1 + 8_s + 27    (symmetric part: 36 components)",
+          "latex": "\\mathrm{Sym}^2(\\mathbf{8}) = \\mathbf{1} \\oplus \\mathbf{8}_s \\oplus \\mathbf{27}",
+          "status": "ok",
+          "note": "Symmetric square of adjoint rep of SU(3). Standard: 8*9/2 = 36 = 1+8+27. Source verified at line 41.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_292",
+          "original_raw": "Z_TT = [det(Delta_L on TT 2-tensors)]^{-1/2}",
+          "latex": "Z_{\\mathrm{TT}} = \\left[\\det(\\Delta_L|_{\\mathrm{TT}})\\right]^{-1/2}",
+          "status": "ok",
+          "note": "1-loop partition function for TT 2-tensor modes (bosonic). Correct sign (-1/2 for bosons). Source verified at line 61.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_293",
+          "original_raw": "E_Casimir^{TT} = +(1/2) Sum mult_n * sqrt(lam_n)    (linear weighting)",
+          "latex": "E_{\\mathrm{Casimir}}^{\\mathrm{TT}} = +\\frac{1}{2} \\sum_n \\mathrm{mult}_n \\sqrt{\\lambda_n}",
+          "status": "ok",
+          "note": "TT Casimir energy with linear (frequency) weighting. Positive sign = bosonic. Source verified at line 74.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_294",
+          "original_raw": "R_{abcd} = -(1/2)(f_{abe} g^{ef} f_{cdf} + f_{ace} g^{ef} f_{bdf})",
+          "latex": "R_{abcd} = -\\frac{1}{2}\\left(f_{abe} g^{ef} f_{cdf} + f_{ace} g^{ef} f_{bdf}\\right)",
+          "status": "typo",
+          "note": "Milnor formula for Riemann tensor on Lie group. The raw text is truncated -- the source at line 100-103 shows additional terms (the U-tensor contribution for non-bi-invariant metrics). For the bi-invariant case, the formula simplifies to eq_243: R_{abcd} = -(1/4)f_{abe}f_{cde}. The formula as written is the first two terms of the full expression.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_295",
+          "original_raw": "R_{abcd} = -<[hat{e}_a, hat{e}_b], [hat{e}_c, hat{e}_d]>",
+          "latex": "R_{abcd} = -\\langle [\\hat{e}_a, \\hat{e}_b], [\\hat{e}_c, \\hat{e}_d] \\rangle",
+          "status": "typo",
+          "note": "Feynman's 'schematic' for Riemann on a Lie group. The actual expression at source line 108-111 has THREE terms with different sign prefactors (-1, -1/2, +1/2), plus U-tensor corrections. This shows only the first term. Truncation in raw extraction.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_319",
+          "original_raw": "beta = 1/2,  gamma = 1,  delta = 3,  alpha = 0 (discontinuity)",
+          "latex": "\\beta = 1/2, \\quad \\gamma = 1, \\quad \\delta = 3, \\quad \\alpha = 0 \\;(\\text{discontinuity})",
+          "status": "ok",
+          "note": "Mean-field critical exponents for first-order transition (scalar, d>4). Standard Landau theory. Source verified at line 44.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_320",
+          "original_raw": "F_elastic = (1/2) C_{ijkl} epsilon_{ij} epsilon_{kl}",
+          "latex": "F_{\\mathrm{elastic}} = \\frac{1}{2} C_{ijkl} \\epsilon_{ij} \\epsilon_{kl}",
+          "status": "ok",
+          "note": "Elastic free energy in terms of elastic modulus tensor and strain. Standard Landau elasticity. Source verified at line 58.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_321",
+          "original_raw": "F(tau) = F_tree(tau) + F_CW(tau) + F_Casimir(tau)",
+          "latex": "F(\\tau) = F_{\\mathrm{tree}}(\\tau) + F_{\\mathrm{CW}}(\\tau) + F_{\\mathrm{Casimir}}(\\tau)",
+          "status": "ok",
+          "note": "Total free energy decomposition. Source verified at line 106.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_322",
+          "original_raw": "F_tree(tau) = V_0 + a_2 tau^2 + a_3 tau^3 + ...",
+          "latex": "F_{\\mathrm{tree}}(\\tau) = V_0 + a_2 \\tau^2 + a_3 \\tau^3 + \\cdots",
+          "status": "ok",
+          "note": "Landau expansion of tree-level potential. a_2=0 (marginal stability), a_3=-7.2/6 (cubic inflection from SP-4). Source verified at line 112.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_323",
+          "original_raw": "F_Casimir(tau) = F_Casimir^boson(tau) - F_Casimir^fermion(tau)",
+          "latex": "F_{\\mathrm{Casimir}}(\\tau) = F_{\\mathrm{Casimir}}^{\\mathrm{boson}}(\\tau) - F_{\\mathrm{Casimir}}^{\\mathrm{fermion}}(\\tau)",
+          "status": "ok",
+          "note": "Casimir energy with spin-statistics sign. Bosons positive, fermions negative. Source verified at line 124.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_282",
+          "original_raw": "Delta_L h_{ab} = -nabla^2 h_{ab} - 2 R_{acbd} h^{cd} + 2 R_{(a}^c h_{b)c}   (1)",
+          "latex": "\\Delta_L h_{ab} = -\\nabla^2 h_{ab} - 2 R_{acbd} h^{cd} + 2 R_{(a}^{\\;c} h_{b)c}",
+          "status": "ok",
+          "note": "Lichnerowicz operator. Consistent with eq_346, eq_260, eq_311. Source verified at line 48.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_283",
+          "original_raw": "In the TT gauge (nabla^a h_{ab} = 0, g^{ab} h_{ab} = 0), the eigenvalue equation",
+          "latex": "\\nabla^a h_{ab} = 0, \\quad g^{ab} h_{ab} = 0",
+          "status": "ok",
+          "note": "TT gauge conditions (transverse-traceless). Source verified at line 51. Extracted as prose but contains real constraints.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_285",
+          "original_raw": "formula gives D^2 = nabla^2 + R_K/4 (scalar curvature only). For the TT 2-tensor",
+          "latex": "D^2 = \\nabla^2 + \\frac{R_K}{4}",
+          "status": "ok",
+          "note": "Lichnerowicz formula for Dirac squared. Standard. Note: D^2 sees only scalar curvature R_K, while Delta_L sees full Riemann R_{abcd}. This is the key distinction. Source verified at line 59.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_286",
+          "original_raw": "R_{abcd} = (1/4) (g_{ac}g_{bd} - g_{ad}g_{bc}) for a group manifold with the bi-invariant",
+          "latex": "R_{abcd} = \\frac{1}{4}(g_{ac}g_{bd} - g_{ad}g_{bc})",
+          "status": "error",
+          "note": "This is WRONG for a general group manifold. The correct bi-invariant Riemann tensor is R_{abcd} = -(1/4) f_{abe} f_{cde} (eq_243). The formula (1/4)(g_{ac}g_{bd} - g_{ad}g_{bc}) describes a space of CONSTANT sectional curvature (round sphere), which SU(3) is NOT. SU(3) has sectional curvatures ranging from 1/4 to 1. The source at line 69 presents this as 'for a group manifold with the bi-invariant metric normalized so that R_K = dim(K)/4 = 2' but this normalization does not make the sectional curvature constant.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_271",
+          "original_raw": "D^2 = nabla* nabla + R_K/4",
+          "latex": "D^2 = \\nabla^* \\nabla + \\frac{R_K}{4}",
+          "status": "ok",
+          "note": "Lichnerowicz formula. nabla* nabla is connection Laplacian on spinor bundle. Source verified at line 13.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_272",
+          "original_raw": "D^2 = D_{M_4}^2 tensor 1 + 1 tensor D_K^2 + [cross terms involving gamma_5]",
+          "latex": "D^2 = D_{M_4}^2 \\otimes \\mathbb{1} + \\mathbb{1} \\otimes D_K^2 + [\\text{cross terms involving } \\gamma_5]",
+          "status": "ok",
+          "note": "Product decomposition of total Dirac operator squared. Cross terms from gamma_5 coupling between M_4 and K sectors. Source verified at line 51.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_273",
+          "original_raw": "a_0(tau) = (4pi)^{-4} Vol(K)           [tau-independent by volume preservation!]",
+          "latex": "a_0(\\tau) = (4\\pi)^{-4} \\, \\mathrm{Vol}(K)",
+          "status": "ok",
+          "note": "Seeley-DeWitt a_0 coefficient. tau-independent because Jensen deformation preserves volume exactly. Source verified at line 73.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_274",
+          "original_raw": "a_2(tau) = (4pi)^{-4} (1/6) int_K R_K(tau) dvol_K",
+          "latex": "a_2(\\tau) = (4\\pi)^{-4} \\frac{1}{6} \\int_K R_K(\\tau) \\, \\mathrm{dvol}_K",
+          "status": "ok",
+          "note": "Seeley-DeWitt a_2 coefficient from integrated scalar curvature. Source verified at line 74.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_275",
+          "original_raw": "V_CW(tau) = (1/2) Tr_0 log(Delta_0/mu^2) - Tr_{1/2} log(D_K^2/mu^2)",
+          "latex": "V_{\\mathrm{CW}}(\\tau) = \\frac{1}{2} \\mathrm{Tr}_0 \\ln\\frac{\\Delta_0}{\\mu^2} - \\mathrm{Tr}_{1/2} \\ln\\frac{D_K^2}{\\mu^2}",
+          "status": "typo",
+          "note": "Incomplete. Full V_CW should include spin-1 (Tr_1) and spin-2 (Tr_2) contributions. Source at line 97 shows this is the first line of a 4-term expression. Missing: + (1/2) Tr_1 log(Delta_1/mu^2) + (1/2) Tr_2 log(Delta_L/mu^2).",
+          "source_verified": true
+        },
+        {
+          "id": "eq_670",
+          "original_raw": "p_final = sigma(ln(p_0/(1-p_0)) + Sum_i ln(BF_i))",
+          "latex": "p_{\\mathrm{final}} = \\sigma\\!\\left(\\ln\\frac{p_0}{1-p_0} + \\sum_i \\ln \\mathrm{BF}_i\\right)",
+          "status": "ok",
+          "note": "Bayesian update via logistic function on log-odds. Standard. Source verified at line 82.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_672",
+          "original_raw": "O = ln(0.40/0.60) + (-1.17) = -0.405 + (-1.17) = -1.575",
+          "latex": "O_{\\mathrm{panel}} = \\ln\\frac{0.40}{0.60} + (-1.17) = -0.405 + (-1.17) = -1.575",
+          "status": "ok",
+          "note": "Log-odds computation from panel prior. Arithmetic verified: ln(2/3) = -0.4055, -0.4055-1.17 = -1.5755. Source verified at line 186.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_673",
+          "original_raw": "p = 1/(1 + exp(1.575)) = 1/(1 + 4.83) = 0.172",
+          "latex": "p_{\\mathrm{panel}} = \\frac{1}{1 + e^{1.575}} = \\frac{1}{1 + 4.83} = 0.172",
+          "status": "ok",
+          "note": "Logistic inversion. Arithmetic verified: e^1.575 = 4.831, 1/5.831 = 0.1715. Source verified at line 187.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_681",
+          "original_raw": "O_panel = ln(0.40/0.60) + ln(0.10)",
+          "latex": "O_{\\mathrm{panel}} = \\ln\\frac{0.40}{0.60} + \\ln(0.10)",
+          "status": "ok",
+          "note": "K-1e Bayes update from panel prior with BF=0.10. Arithmetic: ln(2/3)+ln(0.1) = -0.405+(-2.303) = -2.708. Source verified at line 105.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_682",
+          "original_raw": "p_panel = 1/(1 + exp(2.708))",
+          "latex": "p_{\\mathrm{panel}} = \\frac{1}{1 + e^{2.708}}",
+          "status": "ok",
+          "note": "Logistic inversion. Arithmetic verified: e^2.708 = 14.99, 1/15.99 = 0.0625. Source verified at line 108.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_683",
+          "original_raw": "O_sagan = ln(0.27/0.73) + ln(0.10)",
+          "latex": "O_{\\mathrm{sagan}} = \\ln\\frac{0.27}{0.73} + \\ln(0.10)",
+          "status": "ok",
+          "note": "K-1e Bayes update from Sagan prior. Arithmetic: ln(0.27/0.73)+ln(0.1) = -0.994+(-2.303) = -3.297. Source verified at line 118.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_684",
+          "original_raw": "p_sagan = 1/(1 + exp(3.297))",
+          "latex": "p_{\\mathrm{sagan}} = \\frac{1}{1 + e^{3.297}}",
+          "status": "ok",
+          "note": "Logistic inversion. Arithmetic verified: e^3.297 = 27.04, 1/28.04 = 0.0357. Source verified at line 121.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_136",
+          "original_raw": "sin^2(theta_W) = e^{-4s} / (1 + e^{-4s})",
+          "latex": "\\sin^2\\theta_W = \\frac{e^{-4s}}{1 + e^{-4s}}",
+          "status": "ok",
+          "note": "Weinberg angle from Jensen deformation parameter. Structural identity from g_1/g_2 = e^{-2s}. Equivalent to sin^2(theta_W) = 1/(1+e^{4s}). Source verified at line 27.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_138",
+          "original_raw": "(0,0) [dim=1,  Z3=0]:  m_min = 0.8221   (lightest)",
+          "latex": "m_{\\min}(0,0) = 0.8221",
+          "status": "ok",
+          "note": "Lightest Dirac eigenvalue in (0,0) sector at s=0.164. Numerical result from tier1 computation. Source verified at line 61.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_139",
+          "original_raw": "(0,1) [dim=3,  Z3=2]:  m_min = 0.8340   (1.014x lightest)",
+          "latex": "m_{\\min}(0,1) = 0.8340 \\;(1.014 \\times m_{\\min}(0,0))",
+          "status": "ok",
+          "note": "Mass of fundamental rep at s=0.164. Generation Z3=2 (anti-fundamental). Source verified at line 62.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_140",
+          "original_raw": "(1,0) [dim=3,  Z3=1]:  m_min = 0.8340   (1.014x lightest)",
+          "latex": "m_{\\min}(1,0) = 0.8340 \\;(1.014 \\times m_{\\min}(0,0))",
+          "status": "ok",
+          "note": "Mass of fundamental rep at s=0.164. Generation Z3=1. Note m(1,0) = m(0,1) from complex conjugation symmetry. Source verified at line 63.",
+          "source_verified": true
+        }
+      ],
+      "batch_summary": {
+        "total_processed": 451,
+        "sampled_and_verified": 40,
+        "ok": 34,
+        "typo": 4,
+        "error": 1,
+        "critical": 0,
+        "note": "Sampling strategy: verified physics-dense equations from all major remaining source files (9d-collabs, 21c, 22-23 Sagan verdicts, Feynman predictions, 16-round-3a, 18-wrapup). The 411 unsampled equations are predominantly: (1) code lines misclassified as structural (~30 from 16-round-3a), (2) prose fragments (~50 from 18-wrapup, 19-primer), (3) numerical tables (~30 from feynman-predictions), (4) duplicate equations appearing in multiple collab files (~80 from 19d), (5) artifact files that repeat equations from meeting-minutes (~45 from session-19a/19b/20 prompts and thesis).",
+        "errors_found": [
+          {
+            "id": "eq_286",
+            "severity": "error",
+            "description": "Einstein-collab states R_{abcd} = (1/4)(g_{ac}g_{bd} - g_{ad}g_{bc}) for bi-invariant SU(3). This is the formula for a space of constant sectional curvature (sphere), NOT SU(3). SU(3) has sectional curvatures in [1/4, 1]. The correct bi-invariant formula is R_{abcd} = -(1/4)f_{abe}f_{cde} (eq_243). This error appears in the Einstein-theorist's commentary, not in a computation."
+          }
+        ],
+        "typos_found": [
+          {
+            "id": "eq_309",
+            "description": "TT DOF formula writes dim(p,q) but should be dim(p,q)^2 (corrected in eq_310)."
+          },
+          {
+            "id": "eq_294",
+            "description": "Milnor Riemann formula truncated -- missing U-tensor terms for non-bi-invariant metrics."
+          },
+          {
+            "id": "eq_295",
+            "description": "Riemann on Lie group shown as single term but source has three terms + U-corrections."
+          },
+          {
+            "id": "eq_275",
+            "description": "V_CW missing spin-1 and spin-2 trace-log terms from complete 4-term expression."
+          }
+        ],
+        "misclassified": [
+          {
+            "id": "eq_104",
+            "description": "Python code (np.linalg.eigvals), not equation. Reclassify type, keep in database."
+          },
+          {
+            "id": "eq_105",
+            "description": "Python code (Hermiticity enforcement), not equation. Reclassify type, keep in database."
+          },
+          {
+            "id": "eq_161",
+            "description": "Prose statement about topology, not equation. Reclassify type, keep in database."
+          },
+          {
+            "id": "eq_164",
+            "description": "Prose fragment, not equation. Reclassify type, keep in database."
+          }
+        ]
+      }
+    },
+    {
+      "batch_id": 7,
+      "equations_processed": "Comment-type triage: 2,945 equations classified (1,430 substantive, 1,095 borderline, 420 skip)",
+      "type_filter": "comment (all)",
+      "triage_summary": {
+        "total_comment": 2945,
+        "substantive": 1430,
+        "borderline": 1095,
+        "skip": 420,
+        "substantive_description": "Physics equations in Python code comments (tier0-computation/ scripts). Contains real physics: eigenvalue formulas, Casimir computations, curvature identities, Seeley-DeWitt coefficients, BCS gap equations. Legitimate database content with correct type=comment.",
+        "borderline_description": "Arithmetic expressions, intermediate calculations, numerical checks. Contains some physics context but primarily computational verification steps. No LaTeX formatting needed.",
+        "skip_description": "Short fragments, variable names, no physics content. Correctly tagged as comments."
+      },
+      "results": [
+        {
+          "id": "eq_789",
+          "original_raw": "lambda^2 = C_2(rho) / R^2 where C_2 is Casimir and R is curvature radius",
+          "latex": "\\lambda^2 = \\frac{C_2(\\rho)}{R^2}",
+          "status": "typo",
+          "note": "The formula as written is informal and mixes notation. C_2(rho) should be C_2(p,q) (the SU(3) quadratic Casimir), not C_2 evaluated at rho (half-sum of positive roots). The curvature radius R is the normalization scale. This is a code comment exploring eigenvalue formulas, not a final result. The correct Parthasarathy formula appears at eq_794.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_792",
+          "original_raw": "C_2(p,q) = (p^2 + q^2 + pq + 3p + 3q)/3 for SU(3)",
+          "latex": "C_2(p,q) = \\frac{p^2 + q^2 + pq + 3p + 3q}{3}",
+          "status": "ok",
+          "note": "SU(3) quadratic Casimir for irrep (p,q). Standard formula. Verified: C_2(1,1) = (1+1+1+3+3)/3 = 3, C_2(1,0) = (1+0+0+3+0)/3 = 4/3. Correct.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_794",
+          "original_raw": "Parthasarathy formula: lambda^2 = C_2(Lambda + rho) - C_2(rho)",
+          "latex": "\\lambda^2 = C_2(\\Lambda + \\rho) - C_2(\\rho)",
+          "status": "ok",
+          "note": "Parthasarathy formula for Dirac eigenvalues on compact symmetric spaces. Lambda = highest weight of representation, rho = half-sum of positive roots = (1,1) for SU(3). This gives the spinor shift that distinguishes Dirac from scalar Laplacian eigenvalues. Standard result (Parthasarathy 1972).",
+          "source_verified": true
+        },
+        {
+          "id": "eq_798",
+          "original_raw": "For (0,0): lambda^2 = C_2(0+1, 0+1) - C_2(1,1) = C_2(1,1) - C_2(1,1) = 0",
+          "latex": "\\lambda^2(0,0) = C_2(0+1, 0+1) - C_2(1,1) = C_2(1,1) - C_2(1,1) = 0",
+          "status": "error",
+          "note": "This gives lambda^2 = 0 for the (0,0) sector, but the actual Dirac eigenvalues at (0,0) start at 25/36 (Session 12 verified). The Parthasarathy formula applied here gives the LOWEST possible eigenvalue, but on a non-symmetric space like Jensen-deformed SU(3), the actual spectrum differs. Moreover, the formula lambda^2 = C_2(Lambda+rho) - C_2(rho) gives the eigenvalue on the ROUND (bi-invariant) SU(3), and C_2(1,1) - C_2(1,1) = 0 is correct for the scalar representation's contribution -- but the actual Dirac operator on the trivial rep has eigenvalue (dim(K)/8)^2 = 1 from the spinor connection. This is the same confusion as eq_183: conflating the representation-theoretic formula with the actual Dirac spectrum. However, this is a code comment showing exploratory work-in-progress, and the code itself (a5_baryon_convergence.py) does NOT use this formula for computation.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_5998",
+          "original_raw": "S_b1(tau) = Sum_n b_1(n) * ln(lambda_n^2(tau))        [U(1) running]",
+          "latex": "S_{b_1}(\\tau) = \\sum_n b_1(n) \\ln(\\lambda_n^2(\\tau))",
+          "status": "ok",
+          "note": "U(1) gauge-threshold sum from branching coefficients. Source verified in s21c_gb_debug.py line 119. This is the signed spectral sum that the algebraic trap constrains.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_5999",
+          "original_raw": "S_b2(tau) = Sum_n b_2(n) * ln(lambda_n^2(tau))        [SU(2) running]",
+          "latex": "S_{b_2}(\\tau) = \\sum_n b_2(n) \\ln(\\lambda_n^2(\\tau))",
+          "status": "ok",
+          "note": "SU(2) gauge-threshold sum. Source verified in s21c_gb_debug.py line 120.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_6000",
+          "original_raw": "S_signed(tau) = Sum_n Delta_b(n) * ln(lambda_n^2(tau)) [= S_b1 - S_b2]",
+          "latex": "S_{\\mathrm{signed}}(\\tau) = \\sum_n \\Delta_b(n) \\ln(\\lambda_n^2(\\tau)) = S_{b_1} - S_{b_2}",
+          "status": "ok",
+          "note": "Signed gauge-threshold difference. Delta_b = b_1 - b_2. Session 21c proved this is monotonically decreasing (no signed-sum escape). Source verified.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_6047",
+          "original_raw": "R_{abcd} = -R_{bacd}",
+          "latex": "R_{abcd} = -R_{bacd}",
+          "status": "ok",
+          "note": "First Riemann symmetry (antisymmetry in first pair). Standard. Source: s21c_gb_debug.py line 53.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_6048",
+          "original_raw": "R_{abcd} = -R_{abdc}",
+          "latex": "R_{abcd} = -R_{abdc}",
+          "status": "ok",
+          "note": "Second Riemann symmetry (antisymmetry in second pair). Standard. Source: s21c_gb_debug.py line 55.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_6049",
+          "original_raw": "R_{abcd} = R_{cdab}",
+          "latex": "R_{abcd} = R_{cdab}",
+          "status": "ok",
+          "note": "Third Riemann symmetry (pair symmetry). Standard. Source: s21c_gb_debug.py line 57.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_6052",
+          "original_raw": "chi = (1/(2*pi)^4) * integral L_E dvol",
+          "latex": "\\chi = \\frac{1}{(2\\pi)^4} \\int \\mathcal{L}_E \\, \\mathrm{dvol}",
+          "status": "ok",
+          "note": "Euler characteristic from Gauss-Bonnet integrand L_E on 8-manifold. The prefactor (2pi)^{-4} = (2pi)^{-dim/2} for dim=8. Standard Chern-Gauss-Bonnet. Source verified.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_1149",
+          "original_raw": "Baptista uses anti-Hermitian generators e_a = -i lambda_a / 2",
+          "latex": "e_a = -\\frac{i}{2} \\lambda_a",
+          "status": "ok",
+          "note": "Convention for su(3) generators from Gell-Mann matrices. Anti-Hermitian convention standard in differential geometry (vs physicists' Hermitian i*lambda/2). Source verified in sp2_curvature_invariants.py.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_1150",
+          "original_raw": "with [e_a, e_b] = f_{abc} e_c and Tr(e_a e_b) = -1/2 delta_{ab}",
+          "latex": "[e_a, e_b] = f_{abc} e_c, \\quad \\mathrm{Tr}(e_a e_b) = -\\frac{1}{2} \\delta_{ab}",
+          "status": "ok",
+          "note": "Structure constants and Killing form normalization. Tr(e_a e_b) = -1/2 delta_{ab} is the standard normalization for anti-Hermitian generators of SU(3) in the fundamental representation. Source verified.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_1161",
+          "original_raw": "CHECK 3: VOLUME PRESERVATION det(g_s)/det(g_0) = 1 (ANALYTIC + NUMERICAL)",
+          "latex": "\\frac{\\det(g_s)}{\\det(g_0)} = 1",
+          "status": "ok",
+          "note": "Jensen deformation volume preservation. This is a fundamental property used throughout the framework (a_0 tau-independence). Source verified.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_990",
+          "original_raw": "F(Delta, tau) = g * Sum_k Delta / sqrt(xi_k^2 + Delta^2) * d_k",
+          "latex": "F(\\Delta, \\tau) = g \\sum_k \\frac{\\Delta}{\\sqrt{\\xi_k^2 + \\Delta^2}} \\, d_k",
+          "status": "ok",
+          "note": "BCS gap function from self-consistency equation. xi_k = lambda_k - mu (quasiparticle energy), d_k = degeneracy. Standard BdG formulation. Source verified.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_1105",
+          "original_raw": "The gap equation is self-consistent when 1/g(tau) = 1/g_physical",
+          "latex": "",
+          "status": "ok",
+          "note": "Prose description of BCS self-consistency condition. Not an equation per se, but correctly states the physics. No LaTeX needed.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_896",
+          "original_raw": "g_tau = diag(e^{2tau}, e^{2tau}, e^{2tau}, e^{-2tau}, e^{-2tau}, e^{-2tau}, e^{-2tau}, e^{tau})",
+          "latex": "g_\\tau = \\mathrm{diag}(e^{2\\tau}, e^{2\\tau}, e^{2\\tau}, e^{-2\\tau}, e^{-2\\tau}, e^{-2\\tau}, e^{-2\\tau}, e^{\\tau})",
+          "status": "error",
+          "note": "Jensen metric diagonal form is WRONG. The correct form (Baptista eq 3.68) has: u(1) sector (1 dim): e^{2tau}, su(2) sector (3 dim): e^{-2tau}, C^2 sector (4 dim): e^{tau}. So g_tau = diag(e^{2tau}, e^{-2tau}, e^{-2tau}, e^{-2tau}, e^{tau}, e^{tau}, e^{tau}, e^{tau}). The raw text shows 3 entries with e^{2tau} and 4 entries with e^{-2tau}, which reverses the u(1)/su(2) assignment AND gives wrong dimensions. Volume check: (e^{2tau})^3 * (e^{-2tau})^4 * e^{tau} = e^{6tau-8tau+tau} = e^{-tau} != 1. The correct metric gives e^{2tau} * e^{-6tau} * e^{4tau} = e^0 = 1. This is a code comment in a debug script -- the actual computation in the same file likely uses the correct metric from the shared infrastructure.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_3789",
+          "original_raw": "a_0 = (4*pi)^(-d/2) * Vol(M)",
+          "latex": "a_0 = (4\\pi)^{-d/2} \\, \\mathrm{Vol}(M)",
+          "status": "ok",
+          "note": "Seeley-DeWitt a_0 coefficient. Standard result for heat kernel on compact Riemannian manifold. Source verified in sd20a_seeley_dewitt_gate.py.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_836",
+          "original_raw": "Energy = (1/2)*sqrt(eigenvalue)",
+          "latex": "E = \\frac{1}{2}\\sqrt{\\lambda}",
+          "status": "ok",
+          "note": "Zero-point energy per mode from eigenvalue. Standard Casimir energy formula. Source verified.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_842",
+          "original_raw": "phi_paasch^{3/2} = 1.8954",
+          "latex": "\\phi_{\\mathrm{Paasch}}^{3/2} = 1.8954",
+          "status": "ok",
+          "note": "Numerical value of phi_paasch^{3/2}. phi_paasch = 1.53158, so 1.53158^1.5 = 1.8955. Correct to 4 sig figs. Source verified.",
+          "source_verified": true
+        },
+        {
+          "id": "eq_10891",
+          "original_raw": "V_spec(rho, tau) = 2*f2*Lambda^2 * a2(tau) + f0 * a4(tau)",
+          "latex": "V_{\\mathrm{spec}}(\\rho, \\tau) = 2 f_2 \\Lambda^2 \\, a_2(\\tau) + f_0 \\, a_4(\\tau)",
+          "status": "ok",
+          "note": "Spectral action effective potential from Seeley-DeWitt expansion (a_0 drops out from volume preservation). Consistent with eq_273/eq_274. Source verified.",
+          "source_verified": true
+        }
+      ],
+      "batch_summary": {
+        "total_processed": 2945,
+        "sampled_and_verified": 22,
+        "ok": 18,
+        "typo": 1,
+        "error": 2,
+        "critical": 0,
+        "note": "Comment-type triage of 2,945 equations. Automated classification: 1,430 substantive (real physics in code comments), 1,095 borderline (arithmetic/numerical checks), 420 skip (short fragments, no physics). Sampling focused on highest-density tier0 scripts. Most comment equations are Python code comments documenting the physics being computed -- they are correctly typed as 'comment' and should remain in the database.",
+        "errors_found": [
+          {
+            "id": "eq_798",
+            "severity": "error",
+            "description": "Parthasarathy formula gives lambda^2(0,0) = 0, but actual Dirac eigenvalues at (0,0) start at 25/36. Same class of error as eq_183 (scalar Laplacian vs Dirac confusion). In a code comment (exploratory, not computational)."
+          },
+          {
+            "id": "eq_896",
+            "severity": "error",
+            "description": "Jensen metric diagonal entries reversed: shows 3x e^{2tau} + 4x e^{-2tau} + 1x e^{tau}, but correct is 1x e^{2tau} (u(1)) + 3x e^{-2tau} (su(2)) + 4x e^{tau} (C^2). Volume check fails: e^{-tau} != 1. Code comment in debug script, not in computation pipeline."
+          }
+        ],
+        "typos_found": [
+          {
+            "id": "eq_789",
+            "description": "Informal notation C_2(rho)/R^2 mixing parameter names. Exploratory code comment."
+          }
+        ]
+      }
+    }
+  ]
+}

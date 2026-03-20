@@ -1,0 +1,163 @@
+SESSION 29Aa GATE VERDICTS
+==========================
+Date: 2026-02-28
+Computations: 29a-1 (T-matrix extension), 29a-2 (self-consistent drive), 29a-3 (entropy balance), 29a-4 (inter-sector coupling)
+Agents: phonon-exflation-sim (29a-1, 29a-2, 29a-4), hawking-theorist (29a-3)
+Classifier: coordinator
+
+Pre-session probability: 7-8% panel / 4-5% Sagan (Synthesis B consensus)
+
+==========================
+HARD CLOSE GATES
+==========================
+
+GATE: K-29a
+Type: Hard close (KC-3 FAIL if fired)
+Computation: 29a-1 (T-matrix extension to tau=0.40, 0.45, 0.50)
+Pre-registered threshold: W/Gamma_inject < 0.1 at tau >= 0.50
+Consequence if fired: KC-3 FAIL, Constraint Chain closed, framework drops to 3%
+
+RESULT:
+  W/Gamma_inject at tau=0.50 = 0.148
+  W_max range across tau=0.15-0.50: 3.3e3 to 5.7e3 (stable)
+  Gamma_inject growth: ~6x from tau=0.15 to 0.50 (drives ratio down)
+  Non-monotonic: local minimum at tau=0.50 (0.148), dip at tau=0.25 (0.194)
+  Extrapolated hard-close crossing: tau~0.65-0.70
+
+VERDICT: PASS
+  Threshold (0.100) not breached. Margin: 48% above floor.
+  Note: P-29a (positive signal threshold 0.5) also NOT reached (0.148 < 0.5).
+  Session 29Ab proceeds.
+
+Output files: s29a_tmatrix_extension.npz, s29a_tmatrix_extension.png
+
+---
+
+GATE: K-29b
+Type: Hard close (tau evolution thermodynamically forbidden if fired)
+Computation: 29a-3 (entropy balance)
+Pre-registered threshold: dS_particles/dtau < |dS_spec/dtau| at any tau in [0, 0.50]
+Consequence if fired: All mechanisms closed, Session 29A terminates
+
+RESULT (corrected — first report retracted, used wrong entropy quantity):
+  tau  | |dS_spec/dtau| | dS_part/dtau | R = ratio
+  0.00 |        368.08 |     1351.10  |   3.6706
+  0.10 |        734.57 |     1222.80  |   1.6647
+  0.20 |       1448.64 |     2221.59  |   1.5336
+  0.30 |       2104.68 |     3446.02  |   1.6373
+  0.40 |       2665.68 |     4648.74  |   1.7439
+  0.50 |       2911.78 |     5889.64  |   2.0227
+
+  R_min = 1.53 at tau=0.20 (53% above threshold of 1.0)
+  Delta S_total at tau=0.50: +660 (net entropy gain)
+  S_spec uses Bose-Einstein at T=1.0 (~4,700 at tau=0); NOT S_ferm (~115,000, retracted)
+
+VERDICT: CLEAN PASS
+  R >= 1.53 everywhere in [0, 0.50]. Threshold (R < 1) not breached at any tau.
+  Second law satisfied with 53% margin at tightest point (tau=0.20).
+  Framing note: GSL does not apply (no horizon on SU(3); Einstein correction, Synthesis B C-6).
+  Ordinary second law is the correct frame. Satisfied unconditionally.
+  Session 29Ab proceeds.
+
+Output files: s29a_entropy_balance.npz, s29a_entropy_balance.png
+
+==========================
+SOFT GATES
+==========================
+
+GATE: G-29a
+Type: Soft gate (fine-tuning concern if fired, mechanism weakened but not closed)
+Computation: 29a-2 (self-consistent drive rate)
+Pre-registered threshold: d(tau)/dt < 1 at tau=0.50 for E_total in natural range
+Consequence if fired: Drive rate requires fine-tuning
+
+RESULT:
+  E_crit/V(0) = 1.52 at tau=0.50 (52% KE excess above V_eff(0) needed for n_gap=20)
+  At E=2*V(0): n_gap = 37.3 at tau=0.50 (87% above KC-3 threshold of 20)
+  n_gap crosses threshold at tau~0.407 for E=2*V(0)
+  B_gap increase tau=0.15 to 0.50: ~70x (dominant factor in KC-3 resolution)
+
+VERDICT: PASS
+  E_crit/V(0) = 1.52 is naturally available from DNP-driven modulus rolling.
+  Factor of ~2 energy overshoot is within dynamically generated budget (DNP instability, SP-5).
+  No fine-tuning required. Drive rate is dynamically natural.
+
+SUBSIDIARY POSITIVE SIGNAL P-29b:
+  n_gap = 37.3 >> 20 at tau=0.50 for E=2*V(0).
+  P-29b FIRES: self-consistent drive rate reaches KC-3 threshold with 87% margin.
+  KC-3 CONDITIONAL (Session 28c) is now RESOLVED: PASS.
+
+Output files: s29a_derived_drive_rate.npz, s29a_derived_drive_rate.png
+
+---
+
+GATE: G-29b
+Type: Soft gate (Mermin-Wagner applies, pseudogap, if fired)
+Computation: 29a-4 (inter-sector coupling J_perp)
+Pre-registered threshold: J_perp/Delta_BCS < 1
+Consequence if fired: Gap is pseudogap, quantitative predictions unreliable
+
+RESULT:
+  J_perp = 1/3 exactly (Schur orthogonality identity: 1/dim(1,0) = 1/3)
+    - Tau-independent (structural identity, not computed numerically)
+  J_perp/Delta_BCS = 1.39 at tau=0.50 (most conservative)
+  J_perp/Delta_BCS = 3.02 at tau=0.00
+  J_perp > J_intra by factor 1.7-5.3x across tau range
+
+VERDICT: MODERATE_COUPLING (above threshold, Mermin-Wagner relaxed)
+  J_perp/Delta_BCS = 1.39 > 1.0 even at the most conservative tau.
+  Mean-field BCS is justified. Gap is a true gap, not a pseudogap.
+  Structural note: J_perp = 1/3 is exact by Schur's lemma — not a free parameter.
+  Multi-sector BCS is structurally enforced by group theory.
+
+Output files: s29a_inter_sector_coupling.npz, s29a_inter_sector_coupling.png
+
+==========================
+POSITIVE SIGNALS SUMMARY
+==========================
+
+P-29a: DOES NOT FIRE
+  W/Gamma = 0.148 at tau=0.50. Threshold 0.5 not reached.
+  Comfortable margin not achieved; KC-3 survives but without large scattering headroom.
+
+P-29b: FIRES
+  n_gap = 37.3 >> 20 at tau=0.50 for E=2*V(0).
+  Drive rate dynamically natural. KC-3 RESOLVED from CONDITIONAL to PASS.
+
+==========================
+KC-3 VERDICT (COMPOSITE)
+==========================
+
+KC-3 (Steady-state mu_eff) status: CONDITIONAL (Session 28c) -> PASS (Session 29Aa)
+
+Evidence chain:
+  KC-2 (28c): W/Gamma=0.52 at tau=0.15 -> scattering validated at tau<=0.35
+  K-29a (29a-1): W/Gamma=0.148 at tau=0.50 -> scattering validated at tau<=0.50 (margin 48%)
+  G-29a / P-29b (29a-2): n_gap=37.3 at tau=0.50 with natural E_total -> gap filling confirmed
+
+Constraint Chain final status:
+  KC-1 (28a): PASS  -- B_k(gap)=0.023, Gamma=29,643
+  KC-2 (28c): PASS  -- W/Gamma=0.52 at tau=0.15
+  KC-3 (29a): PASS  -- n_gap=37.3 at tau=0.50, W/Gamma=0.148 (above 0.1 floor)
+  KC-4 (28c): PASS  -- K<1 in 21/24 combinations
+  KC-5 (28c): PASS  -- Delta/lambda_min=0.84, van Hove 43-51x
+
+THE CONSTRAINT CHAIN IS COMPLETE: KC-1 through KC-5 ALL PASS.
+
+==========================
+SESSION TERMINATION STATUS
+==========================
+
+K-29a: PASS -> no termination
+K-29b: PASS -> no termination
+Early termination: NOT triggered
+
+SESSION 29Ab PROCEEDS.
+
+Conditional probability update (per Section VIII of prompt):
+  Scenario: KC-3 PASS + entropy PASS -> 10-14% panel (pre-registered)
+  Note: Sagan assessment required at next checkpoint before adopting posterior.
+
+==========================
+END GATE VERDICTS
+==========================
