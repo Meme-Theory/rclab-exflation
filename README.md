@@ -151,12 +151,11 @@ Skills provide structured workflows invoked via slash commands.
 
 | Skill | Function |
 |:------|:---------|
-| `/collab-plan` | Structured multi-agent planning — reads MEMORY.md, latest syntheses, builds context package |
-| `/collab-team` | Team coordination scaffolding — agent spawning, wave execution, working paper management |
-| `/collab-review` | Parallel agent reviews on same prompt |
-| `/collab-synthesis` | Master synthesis across parallel outputs |
+| `/rclab-plan` | Structured multi-agent planning — reads MEMORY.md, latest syntheses, builds context package |
+| `/rclab-team` | Team coordination scaffolding — agent spawning, wave execution, working paper management |
+| `/rclab-review` | Parallel agent reviews on same prompt |
+| `/rclab-synthesis` | Master synthesis across parallel outputs |
 | `/weave` | Knowledge index queries and visualization generation |
-| `/latex` | LaTeX formatting expertise with journal-specific requirements |
 | `/librarian` | Research folder search and paper location |
 | `/new-researcher` | Create new researcher folder with index |
 | `/paper` | Paper transcription and structured extraction |
@@ -376,9 +375,8 @@ Per-agent persistent memory across sessions. Includes institutional knowledge, w
 
 | Tier | Location | Contents |
 |:-----|:---------|:---------|
-| Tier 0 Archive | `/tier0-archive/` | 630 archived computation scripts + output data from Sessions 1-51 |
-| Tier 0 Active | `/tier0-computation/` | Current computation scripts, `canonical_constants.py`, spectral action and Coleman-Weinberg solvers |
-| Tier 1 Simulation | `/phonon-exflation-sim/` | GPE solver codebase — `backend.py`, `gpe_solver.py`, `expansion.py`, `defect_census.py`, `vortex_detection.py` |
+| Tier 0 Active | `/computations/` | Current computation scripts, `canonical_constants.py`, spectral action and Coleman-Weinberg solvers |
+| Tier 1 Simulation | `/computations/phonon-exflation-sim/` | GPE solver codebase — `backend.py`, `gpe_solver.py`, `expansion.py`, `defect_census.py`, `vortex_detection.py` |
 
 ### Performance
 
@@ -405,19 +403,17 @@ rclab-exflation/
 │   ├── skills/                      # 12 skill definitions
 │   └── rules/                       # Session standards, output rules
 │
-├── tier0-archive/                   # Sessions 1-51 scripts + data (630 files)
-├── tier0-computation/               # Active computation scripts
+├── computations/               # Active computation scripts
 │   ├── canonical_constants.py       # Authoritative constants
 │   ├── tier1_dirac_spectrum.py
 │   ├── tier1_spectral_action.py
 │   ├── tier1_coleman_weinberg.py
-│   └── ...
-│
-├── phonon-exflation-sim/            # GPE solver codebase
-│   ├── src/                         # Core simulation code
-│   ├── scripts/                     # Run scripts
-│   ├── data/                        # Simulation output
-│   └── figures/                     # Generated plots
+│   ├──  ...
+    └── phonon-exflation-sim/            # GPE solver codebase
+│     ├── src/                         # Core simulation code
+│     ├── scripts/                     # Run scripts
+│     ├── data/                        # Simulation output
+│     └── figures/                     # Generated plots
 │
 ├── researchers/                     # 33 domain-specific paper folders
 │   ├── Einstein/ Feynman/ Hawking/ Sagan/
@@ -426,9 +422,8 @@ rclab-exflation/
 │   └── ...                          # 22 more domains
 │
 ├── sessions/
-│   ├── archive/session-01..51/      # Per-session subdirectories
-│   ├── session-plan/                # Active session plans
-│   └── framework/                   # Framework mechanism discussions
+│   ├── session-[#]
+│   └── session-plan/                # Active session plans
 │
 ├── summary/                         # Project atlases + per-session finals
 ├── tools/                           # Knowledge infrastructure
@@ -440,8 +435,8 @@ rclab-exflation/
 │   └── mcp-servers/                 # MCP integrations (astro-mcp, etc.)
 │
 ├── papers/                          # Working paper directories
-├── artifacts/                       # Project documentation artifacts
-└── agent-requests/                  # Agent request templates
+└── framework/                   # Framework mechanism discussions
+
 ```
 
 ---
