@@ -1,0 +1,64 @@
+Session 21c P0-5: Gauss-Bonnet Topological Check
+============================================================
+
+Date: 2026-02-19
+Data file: tier0-computation/r20a_riemann_tensor.npz
+Manifold: SU(3) with Jensen TT-deformation (volume-preserving)
+Dimension: 8
+Expected chi(SU(3)): 0 (compact Lie group)
+Method: Brute-force double-epsilon tensor contraction
+
+Riemann Tensor Symmetry Verification:
+  Max |R_abcd + R_bacd|: 0.00e+00
+  Max |R_abcd + R_abdc|: 0.00e+00
+  Max |R_abcd - R_cdab|: 6.94e-18
+  Max |1st Bianchi|:     5.55e-17
+
+8D Double-Epsilon Contraction S(tau):
+--------------------------------------------------
+   tau                          S
+--------------------------------------------------
+  0.00     -2.963861288607768e-16
+  0.10      4.542807102714264e-17
+  0.20     -1.846396299742814e-16
+  0.30     -3.308985030425760e-16
+  0.40      3.301395615218361e-16
+  0.50     -6.172905069046219e-16
+  0.60     -2.845488601688206e-16
+  0.70     -1.034383082659796e-15
+  0.80     -9.334438604013950e-16
+  0.90     -3.629908873481469e-16
+  1.00     -9.874371285911732e-17
+  1.10     -7.003132882626995e-16
+  1.20      9.493680798097759e-16
+  1.30     -5.851981225990510e-17
+  1.40     -1.633486098120973e-16
+  1.50     -1.242183981543798e-15
+  1.60      3.033191102799759e-16
+  1.70      8.227264897998909e-16
+  1.80     -6.249171915616997e-16
+  1.90      5.197055351173485e-17
+  2.00      8.691642241001607e-16
+--------------------------------------------------
+
+Max |S(tau)|:            1.242183981543798e-15
+Max |S(tau) - S(0)|:     1.245754208670553e-15
+Machine epsilon:         2.22e-16
+Tolerance (1000*eps):    2.22e-13
+
+Cross-checks:
+  chi(S^8) = 2.000000 (expected 2)
+  S(SU(3) analytic) = -2.32e-16 (expected 0)
+  Kretschner consistency: max diff = 4.26e-13
+
+VERDICT: PASS
+Reason: All S(tau) values are < 2.22e-13 (machine epsilon level).
+
+Interpretation:
+  The Euler density is zero to machine epsilon at all tau values.
+  This confirms chi(SU(3)) = 0 and validates the Riemann tensor data.
+  ALL Phase A computations can proceed.
+
+  Note: The original pair-partition formula had a combinatorial error
+  for n >= 4 pairs. The brute-force double-epsilon contraction is the
+  correct and definitive computation.

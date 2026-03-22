@@ -1,0 +1,253 @@
+Session 31Aa Gate Verdicts
+==========================
+Date: 2026-03-02
+Classifier: coordinator (coord)
+Validators: baptista (baptista-spacetime-analyst), sim (phonon-exflation-sim)
+Source: Baptista adversarial review (session-30-master-synthesis-baptista-collab.md)
+Plan: session-31-baptista-plan.md (7 investigations, 6 unique gates + 1 shared)
+Computation: sim (phonon-exflation-sim)
+Interpretation: baptista (baptista-spacetime-analyst)
+
+DIAGNOSTIC
+----------
+
+BA-31-ds: GENERIC
+  Condition: DISTINGUISH if d_s(t = lambda_min^{-2}) < 7.2 at any tau.
+             GENERIC if d_s = 8 for all t < lambda_min^{-2}.
+  Result: d_s at gap scale:
+          tau=0.00: 8.048 (Weyl)
+          tau=0.15: 8.205 (Weyl)
+          tau=0.21: 8.165 (Weyl)
+          tau=0.50: 7.300 (near threshold, above)
+          All tau show standard Weyl behavior d_s ~ 8 at the gap scale.
+          439,488 eigenvalues per tau (N_max=6, all PW sectors with multiplicities).
+          No intermediate plateaus. No non-trivial dimensional reduction.
+          Total d_s with CDT M4: 10.4 - 11.4 at gap scale (not distinguishing).
+  Verdict: GENERIC. Standard Weyl behavior. No UV modification.
+           No zero-parameter distinguishing prediction.
+  Note: tau=0.50 at d_s=7.300 is closest to threshold but above it.
+        The deviation is from the spectral gap (gapped spectrum flows d_s -> 0
+        at large t), not from UV modification.
+  Consequence: The framework's internal Dirac operator has standard UV behavior.
+               No distinguishing prediction differentiates this from generic KK.
+  Pre-registered: YES (session-31-baptista-plan.md, Section III, BA-31-1)
+  Source data: s31alt_spectral_dimension.npz, s31alt_spectral_dimension.png
+
+EXISTENTIAL
+-----------
+
+BA-31-cc: INTERMEDIATE (neither CRISIS nor SUPPRESSION)
+  Condition: CRISIS CONFIRMED if a_0/a_2 > 10 at tau~0.21.
+             UNEXPECTED SUPPRESSION if a_0/a_2 < 0.01 at any tau.
+  Result: a_0/a_2 = 0.494 at tau=0.21, eps=0 (Jensen curve).
+          a_0/a_2 range on full grid: [0.387, 0.502].
+          On Jensen curve: monotonically decreasing from 0.500 (tau=0) to 0.402 (tau=0.60).
+          a_0 = Vol(K) = 1.000 everywhere (volume-preserving constraint).
+          a_2 = R_K ranges from 1.99 to 2.58 across grid.
+          Fine-tuning index FT = log10(a_0/a_2) = -0.31 at tau=0.21.
+  Verdict: INTERMEDIATE. Neither threshold fires.
+           O(1) ratio means SU(3) geometry provides ZERO CC suppression.
+           Framework inherits the standard 122-order cosmological constant problem.
+           No worse, no better than any other compact KK compactification.
+  Note: Volume-preserving constraint forces a_0 = const = 1.0, structurally
+        eliminating any path to geometric CC suppression on the Jensen curve.
+        Confirms adversarial review Attack 1 quantitatively.
+  Consequence: Eliminates the optimistic scenario that SU(3) internal geometry
+               provides natural CC cancellation. The CC problem requires external
+               mechanism (SUSY, anthropic, f_4 tuning) none of which the framework provides.
+  Pre-registered: YES (session-31-baptista-plan.md, Section III, BA-31-2)
+  Source data: s31alt_cc_ratio.npz, s31alt_cc_ratio.png
+
+STRUCTURAL
+----------
+
+BA-31-or: INSENSITIVE
+  Condition: INSENSITIVE if D_K eigenvalue spectra identical to machine epsilon
+             at all tested tau.
+             DEPENDENT if any eigenvalue differs by > 10^{-10}.
+  Result: Max |lambda| difference at all 4 tau values:
+          tau=0.00: 2.66e-14
+          tau=0.15: 5.51e-14
+          tau=0.21: 6.00e-14
+          tau=0.50: 5.95e-14
+          All differences < 6.0e-14 (machine epsilon).
+          11,424 eigenvalues compared per tau (28 sectors, N_max=6).
+          Per-sector max difference: all < 6.5e-14.
+  Verdict: INSENSITIVE. D_K spectrum is orientation-invariant.
+           Framework need NOT justify orientation choice.
+  Mechanism: General spectral pairing theorem. D_K anticommutes with gamma_9
+             on even-dimensional manifolds: if lambda is eigenvalue, so is -lambda.
+             The set {|lambda|} is automatically invariant under gamma_9 -> -gamma_9.
+             NOT specific to SU(3) -- holds for ANY even-dim Riemannian spin manifold.
+  Caveat: Eigenvectors DO differ between orientations (chiral sector permutation).
+          Quantities depending on eigenvector pairing (Pfaffian, Kosmann matrix
+          elements, BCS V(m,m')) could in principle differ. Untested.
+  Pre-registered: YES (session-31-baptista-plan.md, Section III, BA-31-3)
+  Source data: s31alt_orientation_test.npz
+
+NOVEL CHANNEL
+-------------
+
+BA-31-fr: FAIL (Freund-Rubin escape route CLOSED)
+  Condition: STABILIZATION POSSIBLE if dV_FR/dtau < 0 for tau in [0.05, 0.50]
+             (V_FR decreasing where V_spec increasing, enabling competition).
+             FAIL if V_FR also monotonically increasing.
+  Result: |omega_3|^2(tau=0) = 0.889 (bi-invariant).
+          |omega_3|^2(tau=0.60) = 8.497 (9.56x growth).
+          V_FR monotonically INCREASING at all tau.
+          V_FR grows 6x FASTER than V_spec.
+          Vol(K) = 81.0 exactly constant on Jensen curve.
+          No minimum in V_spec + alpha*V_FR for alpha in [0.01, 1000].
+          Round metric (tau=0) is global minimum for all positive alpha.
+  Verdict: FAIL. Freund-Rubin form-field stabilization CLOSED on Jensen curve.
+           The standard supergravity stabilization mechanism does not apply.
+  Structural significance: Extends Wall 4 (monotonicity) to the 3-form sector.
+           Both V_spec and V_FR increase monotonically under Jensen deformation.
+           They COOPERATE to destabilize any deformation from the round metric.
+           The most natural stabilization mechanism from the KK literature
+           (Freund-Rubin, 1980) is now explicitly excluded.
+  Note: This is the most consequential new result of Session 31Aa. The novel
+        stabilization channel identified by the adversarial review (Sections
+        2.1, 4.1, 7.4) is closed. The mechanism that works in supergravity
+        (flux competing with curvature) fails here because both |omega_3|^2
+        and R_K increase together under Jensen deformation.
+  Pre-registered: YES (session-31-baptista-plan.md, Section III, BA-31-4)
+  Source data: s31alt_3form_potential.npz, s31alt_3form_potential.png
+
+THEORETICAL
+-----------
+
+BA-31-kb: ASSESSMENT COMPLETE (No Goldstone mode in 4D)
+  Condition: Theoretical assessment, no binary gate.
+             Key question: does a BCS Goldstone mode exist in 4D?
+  Result: NO. BCS on SU(3) breaks a discrete Z_2 symmetry (fermion parity),
+          NOT a continuous symmetry. Goldstone's theorem requires continuous
+          symmetry breaking. No massless mode emerges.
+          PE "phonons" are massive and confined to the internal space.
+          Zero overlapping predictions with Khoury-Berezhiani across all
+          10+ observable channels. 25 orders of magnitude separation in
+          every comparable quantity.
+  Verdict: ASSESSMENT COMPLETE. No sub-GUT observational consequences
+           beyond frozen SM parameters. The word "phonon" in phonon-exflation
+           is a metaphor (phonon-like excitations of the internal geometry),
+           not a physical identification (massless Goldstone modes mediating
+           observable forces).
+  Three structural reasons for PE observational vacuum vs BK success:
+    (a) Gapped spectrum (W3) vs gapless superfluid
+    (b) Discrete vs continuous symmetry breaking
+    (c) Inaccessible energy scale (10^16 GeV vs meV)
+  Constraint impact: Interpretation closed (PE phonons != BK phonons).
+           No mechanism closed. Probability unaffected.
+  Pre-registered: YES (session-31-baptista-plan.md, Section III, BA-31-5)
+  Source document: sessions/session-31/session-31-khoury-comparison.md
+
+STRUCTURAL (NCG AXIOM)
+----------------------
+
+BA-31-oo: SEVERE (pre-registered metric) / NATURAL (structured metric)
+  Condition: SEVERE if violation 4.000 > 95th percentile of random expectation.
+             NATURAL if within random distribution.
+  Result: TWO different violation measures tested:
+          1. cliff_max_32dim = 4.000 (pure Clifford space, C^32):
+             General random: mean=2.99, 95th=3.10 (100 trials).
+             Framework 4.000 > ALL 100 trial maxima.
+             Verdict on this measure: SEVERE.
+          2. Adjoint sector violation = 1.95 (tau=0), 2.14 (tau=0.15), 2.39 (tau=0.30):
+             Structured random (matching D_K form, 128-dim): mean=1.89, 95th=2.00.
+             Framework 1.95 WITHIN structured distribution at tau=0.
+             Verdict on this measure: NATURAL.
+  Verdict: SEVERE by pre-registered criterion (cliff_max_32dim > 95th percentile).
+           NATURAL mitigating context on physically relevant adjoint sector.
+  Mechanism: 4.000 is a Cl(8) algebraic constant, tau-independent, universal
+             for ANY Dirac operator on ANY 8-dimensional spin manifold. It is
+             likely the identity 2*||gamma||^2 = 4. Not specific to SU(3) or
+             the Jensen deformation.
+  NCG consequence: Without Axiom 5, NCG inner fluctuations generate Pati-Salam
+             gauge group SU(2)_L x SU(2)_R x SU(4)_C (larger than SM).
+             But the framework uses KK isometries (U(1) x SU(3)), making
+             the NCG classification theorem inapplicable in either case.
+  Constraint impact: NCG-KK incompatibility elevated from "catalogued anomaly"
+             (Session 28c C-6) to "structural wall" on the formal criterion.
+             The NCG label is now harder to defend. However, no mechanism is
+             closed: KO-dim=6, block-diagonality, SM quantum numbers, all walls
+             W1-W4, and all gates are unaffected by the order-one violation.
+  Pre-registered: YES (session-31-baptista-plan.md, Section III, BA-31-6)
+  Source data: s31alt_order_one_severity.npz
+  Source document: sessions/session-31/session-31-order-one-assessment.md
+
+HARD CLOSE (SHARED WITH STANDARD PLAN)
+---------------------------------------
+
+B-31nck: FAIL (NCG-KK irreconcilable at tau~0.21)
+  Condition: PASS if Lambda_SA/M_KK in [10^{-3}, 10^3] at tau~0.21 for M_KK ~ 10^16 GeV.
+             FAIL if outside this range.
+  Result: Lambda_SA/M_KK = 1.02e+06 at M_KK = 10^16 GeV, tau=0.21.
+          Lambda_SA = 1.02e+22 GeV (fixed, independent of M_KK).
+          log10(Lambda_SA/M_KK) = 6.0, outside [-3, 3] by 3 orders.
+          sin^2_B at tau=0.21 = 0.564 (Formula B).
+          g1/g2 at tau=0.21 = 0.657.
+          alpha_1/alpha_2 at M_KK: framework 0.432, SM RGE 0.689 (discrepancy 0.257).
+  Comparison to Session 30Bb:
+          tau=0.57: Lambda_SA/M_KK = 2.0e15 (FAIL by 12 orders)
+          tau=0.21: Lambda_SA/M_KK = 1.0e6  (FAIL by 3 orders)
+          Improvement: 10^9, but still insufficient.
+  Verdict: FAIL. NCG-KK irreconcilable at tau~0.21.
+  Structural cause: Lambda_SA ~ 10^22 GeV is determined by SM coupling evolution,
+           independent of M_KK placement. The only way to achieve Lambda_SA/M_KK ~ 1
+           is M_KK ~ 10^22 GeV, conflicting with the GUT scale constraint.
+  Consequence: B-30nck elevated from tau~0.57-specific constraint to STRUCTURAL WALL.
+           NCG spectral action unification and KK dimensional reduction are
+           irreconcilable at ALL tested tau values (tau=0.21 and tau=0.57).
+           The hybrid NCG-KK approach is structurally inconsistent everywhere tested.
+  Surviving escape routes: (a) Threshold corrections at M_KK modifying the running,
+           (b) M_KK != 10^16 GeV (non-standard GUT scale), (c) abandon the
+           identification Lambda_SA = Lambda_NCG entirely.
+  Pre-registered: YES (session-31-baptista-plan.md, Section III, BA-31-7;
+                  also session-31B-plan.md, Section III, 31A-3)
+  Source data: s31a_nck_tau021.npz
+
+========================================================================
+
+AGGREGATE SUMMARY (Session 31Aa)
+================================
+
+Total gates classified:           7/7
+Positive signals:                 0/7
+Reassuring (framework-safe):      1/7 (BA-31-or INSENSITIVE)
+Neutral (expected/intermediate):  2/7 (BA-31-ds GENERIC, BA-31-cc INTERMEDIATE)
+Negative (gate fires/fails):     2/7 (BA-31-fr FAIL, B-31nck FAIL)
+Structurally concerning:          1/7 (BA-31-oo SEVERE)
+Interpretive (no binary gate):   1/7 (BA-31-kb ASSESSMENT)
+
+New constraints established:
+  - Wall 4 extended to 3-form sector (BA-31-fr)
+  - NCG-KK irreconcilability elevated to structural wall (B-31nck at all tested tau)
+  - NCG-KK incompatibility (order-one) elevated from anomaly to wall (BA-31-oo SEVERE)
+
+New interpretive results:
+  - CC problem inherited with no geometric amelioration (BA-31-cc)
+  - No distinguishing spectral prediction (BA-31-ds)
+  - "Phonon" is metaphor, not physics (BA-31-kb)
+  - Orientation choice does not affect eigenvalue spectrum (BA-31-or)
+
+Mechanisms closed this session:     1 (Freund-Rubin 3-form stabilization on Jensen curve)
+Mechanisms opened this session:     0
+Positive predictions generated:     0
+
+Computation inventory:
+  s31alt_spectral_dimension.npz     (BA-31-1, 40.8s)
+  s31alt_spectral_dimension.png     (BA-31-1, diagnostic plot)
+  s31alt_cc_ratio.npz               (BA-31-2, 0.2s)
+  s31alt_cc_ratio.png               (BA-31-2, diagnostic plot)
+  s31alt_orientation_test.npz       (BA-31-3, 57.8s)
+  s31alt_3form_potential.npz        (BA-31-4, 0.2s)
+  s31alt_3form_potential.png        (BA-31-4, diagnostic plot)
+  s31alt_order_one_severity.npz     (BA-31-6, 314.6s)
+  s31a_nck_tau021.npz               (BA-31-7, <1s)
+  Total runtime: ~7 minutes
+
+Document inventory:
+  sessions/session-31/session-31-khoury-comparison.md       (BA-31-5, baptista)
+  sessions/session-31/session-31-order-one-assessment.md    (BA-31-6, baptista)
+  tier0-computation/s31Aa_gate_verdicts.txt                 (this file, coord)
+  sessions/session-31/session-31Aa-synthesis.md             (synthesis, coord)
