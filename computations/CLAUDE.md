@@ -1,0 +1,1 @@
+ALL scripts MUST `from canonical_constants import *` and use those symbols — never hardcode framework constants (M_KK, E_cond, tau_fold, Vol_SU3, Delta_B2, rho_s, T_acoustic, J_C2, etc). If a constant you need isn't in canonical_constants.py, ADD it there first, then import.

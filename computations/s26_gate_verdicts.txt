@@ -1,0 +1,110 @@
+SESSION 26 GATE VERDICTS (PRE-REGISTERED)
+Date: 2026-02-22
+Classifier: baptista-spacetime-analyst (pre-plan)
+Baseline: Panel 12-18%, Sagan 8-12% -- post-Session 25 Sagan Redux
+
+============================================================
+PRE-REGISTERED CONSTRAINT/PASS GATES
+============================================================
+
+GATE T-1: Torsion Gap Gate -- PENDING
+  Condition: min|lambda_T(tau)| < min|lambda_K(tau)| at some tau in [0, 0.5]
+  Closes if: Torsion weakens spectral gap (contorsion cross-terms overcome |T|^2)
+  Closure if: min|lambda_T| >= min|lambda_K| for all tau (torsion strengthens gap everywhere)
+  Input: f^a_bc (Gell-Mann structure constants), g_ab(tau) (Jensen metric, 9 tau values)
+  Algorithm: D_T = D_K + (1/4)*K_abc*gamma^a*gamma^b*gamma^c
+  P(success): 10-15%
+  P(closure): 85-90%
+  BF if success: 5-15
+  Agent: phonon-exflation-sim
+  Time estimate: ~5 hrs
+  Source: Tesla Q-4 (Session 25), Baptista Paper 14 Section 3.3, Paper 15 line 3127
+  VERDICT: **PENDING** -- awaiting computation
+
+GATE B-1: V_Baptista Kerner Bridge -- PENDING
+  Condition: kappa_12D > 100 (from 12D Seeley-DeWitt a_4 coefficient)
+  Closes if: 12D spectral action derives kappa near required value (~772)
+  Closure if: kappa_12D < 30 (bridge fails, V_Baptista remains accommodation)
+  Input: s25_baptista_results.npz (R_K), s23c_fiber_integrals.npz (|F|^2, a_4)
+  Algorithm: R_P = R_K + (1/4)|F|^2, extract kappa from a_4^12D / (a_2^12D * Lambda_eff^2)
+  P(success): 15-25%
+  P(closure): 75-85%
+  BF if success: 3-8
+  Agent: phonon-exflation-sim
+  Time estimate: ~2 hrs
+  Source: Baptista Paper 13 eq 1.5, KK Session 25 Kerner decomposition
+  VERDICT: **PENDING** -- awaiting computation
+
+GATE RB-1: Route B Self-Consistent Solution -- PENDING
+  Condition: Self-consistent Delta > 0 at some tau_0 in [0, 0.5]
+  Closes if: Twisted spectral triple / KMS state / Planck backreaction yields BCS condensate
+  Closure if: System provably has NO solution with Delta > 0
+  Input: Connes-Moscovici 2008 formalism, D_K spectrum, Kosmann coupling
+  Algorithm: Solve coupled gap equation + modulus equation + number conservation
+  P(success): 5-10%
+  P(closure): 50-60% (theoretical obstruction may be identified before computation)
+  BF if success: 10-25
+  Agent: baptista-spacetime-analyst (theoretical)
+  Time estimate: 2-4 weeks
+  Source: Route B (Session 23a K-1e established coupling M~11 at mu=lambda_min)
+  VERDICT: **PENDING** -- awaiting theoretical development
+
+GATE H-1: Hubble Prediction Chain -- PENDING
+  Condition: H_0 in [67, 73] km/s/Mpc from zero-parameter prediction
+  Closes if: tau_0 from RB-1 produces H_0 in the Hubble tension gap
+  Closure if: H_0 outside [60, 80] or trivially matches Lambda-CDM (67.4)
+  Input: Conditional on RB-1 PASS (requires tau_0)
+  Algorithm: tau_0 -> g1/g2 = e^{-2*tau_0} -> mass spectrum -> recombination -> H_0
+  P(success): Conditional on RB-1
+  BF if success: 20-50
+  Agent: any (conditional computation)
+  Time estimate: ~1 hr (conditional on tau_0)
+  Source: Session 25 Investigation-Framework Section 6.2
+  VERDICT: **PENDING** -- conditional on RB-1
+
+============================================================
+INFRASTRUCTURE (no closure/pass gate)
+============================================================
+
+COMPUTATION DP-1: 12D Dirac Operator (Singlet Sector) -- PENDING
+  Goal: Construct D_P on M^4 x SU(3)_Jensen for (0,0) singlet sector
+  Enables: PMNS matrix (blocked by W2 without base-fiber mixing), Route B implementation
+  Input: tier1_dirac_spectrum.py, Baptista Paper 14 eq 3.9
+  P(completion): 80%
+  Agent: phonon-exflation-sim
+  Time estimate: ~8 hrs
+  Source: Baptista Paper 14 (12D spinor structure)
+  VERDICT: **PENDING** -- infrastructure computation
+
+============================================================
+DEPENDENCIES
+============================================================
+
+T-1 (Torsion) --> [IF PASS] --> Re-run K-1e BCS with torsion-modified spectrum
+B-1 (Kerner)  --> [IF PASS] --> V_Baptista bridge closes; tau_0 from 12D
+RB-1 (Route B)--> [IF PASS] --> H-1 (Hubble chain) becomes computable
+DP-1 (12D)    --> [INDEPENDENT] --> Enables PMNS, Route B implementation
+
+T-1 and B-1 are independent of each other and of RB-1.
+H-1 depends on RB-1.
+DP-1 is infrastructure for all subsequent sessions.
+
+============================================================
+CONDITIONAL PROBABILITY TABLE
+============================================================
+
+Current:                    Panel 12-18%, Sagan 8-12%
+T-1 PASS:                  Panel 15-25%, Sagan 10-18%
+T-1 CLOSED:                  Panel 11-16%, Sagan 7-11%
+B-1 PASS (kappa > 100):    Panel 15-22%, Sagan 10-16%
+B-1 FAIL (kappa < 30):     Panel 11-16%, Sagan 7-11%
+RB-1 PASS (Delta > 0):     Panel 25-50%, Sagan 20-40%
+RB-1 CLOSED (no solution):   Panel 4-7%, Sagan 3-5%
+T-1 PASS + RB-1 PASS:      Panel 35-55%, Sagan 25-45%
+All three CLOSED:             Panel 3-5%, Sagan 2-4%
+RB-1 PASS + H-1 match:     Panel 40-65%, Sagan 30-55%
+
+============================================================
+DATA FILES
+============================================================
+s26_gate_verdicts.txt                                (baptista, pre-registered)

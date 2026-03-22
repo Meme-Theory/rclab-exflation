@@ -1,0 +1,176 @@
+Session 32b Gate Verdicts (RPA-1 Stage 2, WALL-1, PARAM-B2)
+========================================================================
+Date: 2026-03-03
+Classifier: coord (coordinator)
+Computation agent: sim (phonon-exflation-sim)
+Review: baptista (baptista-spacetime-analyst) -- RPA-1 formula correction
+Interpretation: tesla (tesla-resonance) -- mechanism chain, Trap 5, van Hove
+Source data: s23a_kosmann_singlet.npz, s23a_gap_equation.npz,
+             s23a_eigenvectors_extended.npz, s31Ba_instanton_kapitza.npz
+Pre-session context: Session 32a (U-32a PASS, AH-32a PASS conditional,
+                     A-32a PASS, FL-32a ZERO structural)
+
+DECISIVE GATES (2)
+==================
+
+DECISIVE GATE
+-------------
+
+RPA-32b: PASS -- d^2(sum|lambda_k|)/dtau^2 = 20.43 at tau = 0.20.
+  Threshold: 0.54 (PASS), 0.27 (FAIL boundary). Margin: 38x.
+
+  DECOMPOSITION (sim, confirmed by baptista):
+  - Bare curvature (diagonal): 16.19 (79.3%)
+  - Signed off-diagonal B2 contribution: 4.24 (20.7%)
+  - Lindhard screening: -1.059 (subtractive, 6.5%)
+  - Total: 20.43
+  chi_sep = 0.728 (Lindhard susceptibility, supplementary quantity).
+
+  FORMULA CORRECTION (baptista, confirmed by sim): sim initially computed
+  d^2(Tr D_K)/dtau^2, which is identically zero by tracelessness of the
+  Dirac operator (spectral pairing: Tr D_K = 0 at all tau). The correct
+  gate quantity is d^2(sum|lambda_k|)/dtau^2 -- the spectral action
+  curvature. The absolute value breaks the spectral pairing symmetry,
+  yielding a nonzero and large second derivative.
+
+  STRUCTURAL DISCOVERY -- V matrix block-diagonality at RPA level:
+  The perturbation matrix V_{mn} = <psi_m|dD_K/dtau|psi_n> is exactly
+  block-diagonal on the Jensen curve:
+  - B3-to-B3+ particle-hole coupling: ZERO (< 1e-14)
+  - B1-to-B1+ particle-hole coupling: ZERO (< 1e-14)
+  - B2-to-B2+ particle-hole coupling: NONZERO (up to 0.632)
+  - All inter-branch coupling: ZERO (FL-32a / Trap 4)
+
+  TRAP 5 (J-reality selection rule, tesla): Particle-hole matrix elements
+  of U(2)-invariant perturbations vanish for REAL representations (B1
+  trivial, B3 adjoint) by the real structure J with J^2=+1 and [J,D]=0.
+  Nonzero only for COMPLEX representations (B2 fundamental). Extends
+  Trap 4 (Schur orthogonality between branches) to a selection rule
+  WITHIN branches. Structural, exact, holds for any U(2)-invariant
+  deformation of D_K on any compact group with KO-dim 6 real structure.
+
+  AH-32a CONDITIONAL CHECK: Gamma_B3/omega_B3 = 0.0003 at tau=0.20.
+  No broadening correction needed. Standard threshold 0.54 stands.
+
+  FIRST DEMONSTRATION that the SU(3) Dirac sea's collective response
+  to tau perturbations exceeds the threshold for vacuum polarization
+  stabilization of the KK modulus. Wall 4 (spectral action monotonicity
+  at uniform tau) is circumvented at the quantum level.
+
+  Pre-registered: YES (Workshop R3 unanimous, Session 32 plan 32b-1)
+  Output: s32b_rpa1_thouless.{py,npz,png}
+
+DECISIVE GATE
+-------------
+
+W-32b: PASS -- rho_wall exceeds threshold 6.7 at ALL three domain wall
+  configurations:
+  Wall (tau_1=0.10, tau_2=0.25): rho_wall = 12.5 (1.87x threshold)
+  Wall (tau_1=0.10, tau_2=0.20): rho_wall = 17.7 (2.64x threshold)
+  Wall (tau_1=0.15, tau_2=0.25): rho_wall = 21.6 (3.22x threshold)
+
+  MECHANISM: Van Hove singularity (continuum 1/(pi*v) enhancement from
+  slow B2 modes), NOT discrete Jackiw-Rebbi bound states. This is
+  physically more robust than discrete CdGM -- requires no topological
+  protection, no sign change in effective mass, produces a continuum of
+  enhanced states (finite measure, better for BCS gap equation integration).
+
+  TRAPPING DETAIL: 0/4 B2 modes meet the strict bound-state criterion
+  (|v| < delta, where delta = eigenvalue mismatch across wall). All
+  B2 modes contribute to the van Hove LDOS because their group velocities
+  are small (v ~ 0.06-0.10). Enhancement is kinematic, not topological.
+
+  CdGM SPACING: Actual = 0.817, tesla R3 prediction = 0.545. Ratio 1.5.
+  Discrepancy: E_F for B2 sector is the B2 eigenvalue at wall center
+  (~1.24), not the global gap edge (0.822). Correct order of magnitude.
+
+  B2 EIGENVECTOR OVERLAPS: 0.21-0.87 across widest wall. Strong mode
+  mixing -- B2 modes are NOT adiabatically transported. Full scattering
+  theory required and computed.
+
+  FIRST POSITIVE BOUNDARY GATE in 32 sessions. Demonstrates that spectral
+  gap (Wall 3) blocking BCS in the bulk is IRRELEVANT at domain walls.
+  B2 flat-band quartet provides sufficient spectral weight for condensation
+  at any spatial boundary where tau varies.
+
+  Pre-registered: YES (Workshop R3 #3, Session 32 plan 32b-2)
+  Output: s32b_wall_dos.{py,npz,png}
+
+CONDITIONAL GATE (1)
+====================
+
+CONDITIONAL GATE
+----------------
+
+PB-32b: FAIL (at physical coupling ratios) -- Only r=5.0 falls in Mathieu
+  unstable tongue 3 (a=10.3, q=5.25). Physical coupling ratios r=0.1-2.0
+  are ALL in the stable region (a < 0.5, q < 0.35).
+
+  ANTI-CORRELATION: r=5.0 is the coupling ratio where I-1 FAILED
+  (Gamma_inst/omega_tau = 0.71, below threshold 3). Parametric instability
+  and instanton dynamical relevance are mutually exclusive on the coupling
+  ratio axis. Same structural anti-correlation as IK-31Ca (Kapitza minimum
+  at r=5.0 only).
+
+  STRUCTURAL ORIGIN (tesla): B2 flatness (d^2(lambda_B2)/dtau^2 = 1.18,
+  small) simultaneously ENABLES wall trapping (low v -> van Hove
+  enhancement) and DISABLES parametric amplification (weak coupling to
+  periodic tau drive). This is the U(2) fundamental representation
+  protecting B2 from the U(2)-invariant Jensen drive -- same algebraic
+  property producing three consequences (Trap 4 family).
+
+  IMPACT ON MECHANISM CHAIN: PB-32b was always an optional amplification
+  channel, not a necessary link. WALL-1 operates via kinematic trapping
+  alone with 1.9-3.2x margin above BCS threshold. No parametric
+  enhancement required.
+
+  Pre-registered: YES (Workshop R3 #9, Session 32 plan 32b-3)
+  Conditional: On U-32a positive (SATISFIED -- U-32a PASS, vertex +0.049)
+  Output: s32b_param_b2_mathieu.{py,npz,png}
+
+========================================================================
+
+AGGREGATE SUMMARY (Session 32b)
+==============================================
+
+Total gates classified:              3/3
+Decisive gates PASS:                 2/2 (RPA-32b, W-32b)
+Conditional gates:                   1/1 (PB-32b FAIL at physical r)
+Unconditional PASS:                  2/3
+FAIL:                                1/3 (PB-32b, optional channel)
+
+Decisive gate outcomes:
+  RPA-32b (collective stabilization): PASS -- chi = 20.43, 38x threshold
+  W-32b (boundary condensation):      PASS -- rho_wall = 12.5-21.6, 1.9-3.2x
+
+New structural results:
+  - Trap 5: J-reality particle-hole selection rule (permanent mathematics)
+  - V matrix block-diagonal at RPA level on Jensen (extends Trap 4)
+  - Van Hove mechanism for domain-wall BCS (kinematic, not topological)
+  - B2 flatness trade-off: trapping vs parametric immunity (one algebraic root)
+
+New constraints:
+  - PB-32b: Parametric B2 amplification closed at physical coupling ratios
+  - Anti-correlation between parametric instability and instanton relevance
+    persists (same structure as IK-31Ca r=5.0 tension)
+
+Mechanism chain status (updated):
+  I-1 (instanton gas):            PASS (3.2-9.6x, Session 31Ba)
+  RPA-32b (collective oscillation): PASS (38x, this session)
+  U-32a (domain formation):       PASS (vertex positive, Session 32a)
+  W-32b (flat-band trapping):     PASS (1.9-3.2x, this session)
+  PB-32b (parametric amplification): FAIL (optional, this session)
+  BCS at walls:                   INFERRED (follows from W-32b > 6.7)
+
+  4 gates PASS, 1 gate FAIL (optional amplification), 1 step INFERRED.
+  First viable mechanism chain in 32 sessions.
+
+========================================================================
+
+DATA FILES (9 total: 3 scripts, 3 data archives, 3 plots)
+==============================================
+tier0-computation/s32b_rpa1_thouless.{py,npz,png}      (sim, RPA-32b)
+tier0-computation/s32b_wall_dos.{py,npz,png}            (sim, W-32b)
+tier0-computation/s32b_param_b2_mathieu.{py,npz,png}    (sim, PB-32b)
+tier0-computation/s32b_gate_verdicts.txt                 (coord)
+sessions/session-32/session-32b-synthesis.md             (coord)

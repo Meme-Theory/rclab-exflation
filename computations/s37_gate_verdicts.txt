@@ -1,0 +1,104 @@
+Session 37 Gate Verdicts
+========================
+Date: 2026-03-08
+Master Gate: CUTOFF-SA-37
+
+DECISIVE GATES
+--------------
+
+CUTOFF-SA-37: FAIL (PERMANENT)
+  Computation: S_f(tau) = sum dim(p,q)^2 * sum_k f(lambda_k^2/Lambda^2)
+  Grid: 10 cutoffs x 6 Lambda x 16 tau = 960 evaluations + continuous scans
+  Result: S_f(tau) monotonic for ALL smooth cutoffs, ALL Lambda in [0.3, 20.0]
+  Structural: <lambda^2>(tau) increases monotonically. All 10 sectors same direction.
+  Sub-gates: CC-CANCELLATION-37 FAIL, CC-SCALE-37 FAIL
+  Closes: Cutoff spectral action tau stabilization (entire category)
+
+CC-ARITH-37 REINTERPRETATION:
+  The "41% restoring gradient" was real but misleading.
+  Full 16-point scan: Gaussian SA decreases at ALL tau, not specifically at fold.
+  The fold is invisible to any spectral action functional.
+
+F.5 ONE-LOOP SA: FAIL
+  Computation: delta_F_RPA(tau) = (1/2) sum ln(1 - m_k(tau)) at 9 tau values
+  Result: RPA depth = 0.713, kinetic threshold = 1.76 (2.5x short)
+  alpha_crit = 1000 (would need 1000x amplification)
+  Closes: One-loop pair fluctuation self-trapping ("hidden nugget")
+
+STRUCTURAL GATES
+----------------
+
+K7-G1-37: FAIL (ALGEBRAIC, PERMANENT)
+  Computation: q_7 charge of lowest (1,0) eigenmode at fold
+  Result: q_7(G1) = +0.0447, but ALGEBRAICALLY all weights of (1,0) have q_7 != 0
+  The fundamental of SU(3) has no trivial U(1)_7 component (weight space fact)
+  Only self-conjugate reps (p=q) have q_7=0 weights; adjoint (1,1) gives R~0.42
+  Closes: (B1, B3_0, G1) PMNS triad. PMNS classified Level 5
+
+PHYSICS GATES (INFORMATIVE)
+----------------------------
+
+F.1 INSTANTON ACTION: PASS — DENSE GAS
+  Computation: S_inst from GL parameters (a, b from Thouless + ED)
+  Result: S_inst = 0.069 (best), 0.115 (full 8-mode), 0.287 (direct GL)
+  All values < 0.5 threshold for dense instanton gas
+  Tunneling rate: 93.4% of attempt frequency
+  xi_BCS/BW = 13.95 (coherence length >> bandwidth)
+  Physical: Z_2 symmetry effectively restored. Gap fluctuates rapidly between +/- Delta_0
+
+F.2 PAIR SUSCEPTIBILITY: NEAR-CLOSURE REGIME
+  Computation: chi_pair(omega) from Lehmann representation, 256 eigenstates
+  Result: Giant Pair Vibration at omega = 0.792, carrying 85.5% of P^dag strength
+  Pole/continuum ratio = 0.855 (nuclear benchmark: 0.3-0.7 mid-shell, >0.9 closures)
+  Coherent enhancement factor = 6.32 (all 8 modes constructive)
+  Nuclear analog: Giant pairing vibration in few-pair systems (e.g., 210Pb)
+
+F.3 VACUUM POLARIZATION: BCS-BEC CROSSOVER
+  Computation: E_vac = -(1/2pi) integral Im chi * omega d_omega
+  Result: E_vac = 3.935, |E_vac|/|E_cond| = 28.8
+  190x above nuclear benchmark (0.05-0.15)
+  Physical: System is deep in BCS-BEC crossover at g*N(E_F) = 2.18
+  Mean-field BCS is INSUFFICIENT — fluctuations dominate by factor 29
+
+CANCELLED GATES
+---------------
+
+W3-A CASCADE DYNAMICS: CANCELLED (CUTOFF-SA-37 FAIL)
+W3-B OFF-JENSEN RECON: CANCELLED (K7-G1-37 FAIL)
+W3-C INSTANTON MC: SKIPPED (F.1 already conclusive at S=0.069)
+REV F.5 CROSS-CHECK: SKIPPED (F.5 gate already FAIL)
+
+CLOSURES (cumulative: 21 + 3 = 24 total)
+-----------------------------------------
+
+19. Cutoff spectral action stabilization (CUTOFF-SA-37) — structural monotonicity theorem
+20. One-loop RPA self-trapping (F.5-37) — depth 1000x insufficient
+21. (B1,B3,G1) PMNS triad (K7-G1-37) — algebraic, representation-theoretic
+
+PERMANENT RESULTS
+-----------------
+
+1. Structural Monotonicity Theorem: <lambda^2>(tau) increases monotonically under
+   volume-preserving Jensen deformation on SU(3). For any monotone cutoff f,
+   S_f(tau) inherits monotonicity sector-by-sector. No minimum possible.
+
+2. Dense instanton gas: S_inst = 0.069, tunneling 93%. BCS condensate is NOT
+   conventional mean-field. Gap fluctuates rapidly between +/- Delta_0.
+
+3. Giant Pair Vibration: Single collective mode at omega = 0.792 exhausts 85.5%
+   of pair-addition strength. Coherent enhancement 6.3x. Nuclear GPV analog.
+
+4. BCS-BEC crossover confirmed: E_vac/E_cond = 28.8. Pair fluctuations dominate
+   condensation energy by factor 29. g*N(E_F) = 2.18.
+
+5. q_7 charge structure of (1,0): ALL weights nonzero under U(1)_7.
+   Only self-conjugate representations (p=q) have q_7=0 weights.
+
+DATA FILES
+----------
+
+s37_cutoff_sa.py / .npz / .png          — CUTOFF-SA-37 (spectral-geometer)
+s37_k7_g1.py / .npz                      — K7-G1-37 (neutrino)
+s37_instanton_action.py / .npz / .png    — F.1 instanton action (nazarewicz)
+s37_pair_susceptibility.py / .npz / .png — F.2/F.3 pair susceptibility (nazarewicz)
+s37_oneloop_sa.py / .npz / .png          — F.5 one-loop SA (nazarewicz)

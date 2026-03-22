@@ -1,0 +1,103 @@
+Session 29Ac Gate Verdicts (REVISED after scrutiny)
+=====================================================
+Date: 2026-02-28
+Revision: v2 (corrected CDL bounce, corrected T_GH formula interpretation)
+
+29c-1: GIBBONS-HAWKING TEMPERATURE (s29c_gibbons_hawking_temperature.py)
+  Verdict: FAIL
+  T_eff/T_GH ratio: 1.47 (tau=0) to 569 (tau=2.0) -- diverges monotonically
+  R^2 of thermal fit: mean -72.3 (NEGATIVE -- poor Bose-Einstein fit)
+  Physics: Bogoliubov |beta_k|^2 spectrum is NOT thermal. The B_k adiabaticity
+    parameter follows B_k ~ (domega/dtau)^2 / omega^2, which has power-law
+    omega-dependence (exponent varies 0.46 to 3.29 with tau), fundamentally
+    incompatible with Bose-Einstein exp(-omega/T).
+  SELF-CORRECTION: The T_GH formula T_GH = e^{-2tau}/pi was WRONG. The correct
+    Gibbons-Hawking analog is T = H_internal/(2*pi) = (4/3)*dtau_dt/(2*pi),
+    which depends on dtau/dt (not just tau). At dtau/dt ~ 2.19 (crossing velocity
+    from 29b), T_GH ~ 0.465, close to T_eff ~ 0.469 at tau=0. However, the
+    spectrum SHAPE is still non-thermal (R^2 deeply negative), so the temperature
+    "match" at a single tau is not meaningful. The fitted T_eff is dominated by
+    high-omega modes and does not represent a thermal distribution.
+  Constraint: GH-1 -- Bogoliubov spectrum non-thermal at all tau. The particle
+    production mechanism is parametric amplification (Parker effect), not
+    equilibrium radiation.
+
+29c-2: TRANSITION SCALE k_transition (s29c_k_transition.py)
+  Verdict: FAIL (STRUCTURAL)
+  k_transition: 9.4e21 -- 9.4e25 h/Mpc (all M_KK)
+  Observable range: 0.001 -- 0.5 h/Mpc (Euclid), 0.02 -- 0.3 h/Mpc (DESI)
+  Gap: 20+ orders of magnitude above observable range.
+  Scaling: k ~ M_KK^1.0 (exact, dimensional analysis).
+  STRUCTURAL RESULT: k_transition = H_BCS * T_CMB/T_BCS ~ (M_KK * T_CMB / M_Pl)
+    in natural units. For k ~ 0.1 h/Mpc, would need M_KK ~ 1 eV (sub-eV KK mass,
+    physically absurd). The inaccessibility is INHERENT to any KK compactification
+    at M_KK >> keV. Not a model choice — dimensional analysis.
+  Constraint: KT-1 -- BCS transition scale inaccessible to LSS/CMB surveys
+    for any physical M_KK.
+
+29c-3: CDL BOUNCE ACTION (s29c_cdl_bounce.py) -- **REVISED**
+  Verdict: DIAGNOSTIC (was incorrectly PASS before scrutiny)
+
+  **BUG IDENTIFIED AND FIXED**: Original computation used S_LC_total_sharp[Lambda=10]
+  for V_normal, which is FLAT (all 11424 eigenvalues below cutoff at all tau).
+  This produced an artificial barrier and B ~ 0.016 (meaningless). Corrected to
+  use S_LC_total_heat[Lambda=1], matching the 29b F_normal.
+
+  CORRECTED RESULTS:
+  - V_normal = S_spectral(tau) is monotonically DECREASING (14999 to 10237)
+  - V_BCS = V_normal + F_BCS is ALSO monotonically decreasing (no local minimum)
+  - There is NO barrier between a false vacuum and true vacuum
+  - B_numerical = 1.5e11 (effectively infinite -- no tunneling)
+  - Thin-wall scenario 2: B = 75705 >> 400 (no tunneling)
+  - CDL bounce formalism DOES NOT APPLY: there is no metastable state to tunnel from
+
+  Physics: The V_eff = S_spectral + F_BCS is monotonically decreasing. The BCS
+    condensation lowers V by 5-18 spectral units, but the spectral action slope
+    (-2300 to -15000) dominates. There is NO potential well, NO barrier, and
+    NO CDL tunneling. The ONLY trapping mechanism is L-9 first-order:
+    latent heat extraction from modulus kinetic energy at the BCS onset.
+
+  Classical trapping (from 29b, unchanged):
+    E_mult=1.5: KE=3.16 < L=5.63 => TRAPPED
+    E_mult=2.0: KE=12.01 > L=5.63 => OVERSHOOT (NOT recaptured)
+    E_mult=5.0: KE=65.11 > L=5.63 => OVERSHOOT (NOT recaptured)
+
+  IMPLICATION: Trapping is MARGINAL. Only the lowest-energy trajectories
+    (E_total <= ~1.5 * V(0)) are trapped. Higher-energy trajectories escape.
+    Whether the DNP instability launches the modulus with E_total in [1.0, 1.5]*V(0)
+    or higher is not determined by 29A computations.
+
+29c-4: GRAVITATIONAL WAVE SPECTRUM (s29c_gw_spectrum.py)
+  Verdict: DIAGNOSTIC (STRUCTURAL)
+  alpha: 0.0091 (M_KK-independent: set by dimensionless L=5.63 and g_*=106.75)
+  beta/H: 7.8 (M_KK=1e18) to 7.8e4 (M_KK=1e14)
+  f_peak (sound waves): ~1.3e12 Hz (ALL M_KK -- M_KK-independent)
+  h^2 Omega_peak (SW): 6.4e-16 to 6.4e-12
+  STRUCTURAL: f_peak ~ M_Pl (NOT M_KK) because beta/H * T_* = const * M_Pl.
+    For ANY KK-scale transition where the modulus dynamics set beta,
+    f_peak ~ 10^12 Hz. This is Planck-scale physics, not model-specific.
+  alpha ~ L / (4*pi^4 * g_*) is set entirely by the dimensionless latent heat.
+    Weak transition (alpha ~ 0.01) is inherent to L=5.63.
+  Constraint: GW-1 -- BCS gravitational waves at ultra-high frequency, unobservable
+    by ANY current or planned detector.
+
+Summary (REVISED):
+  29c-1 (GH Temperature):     FAIL       -- non-thermal spectrum (confirmed)
+  29c-2 (k_transition):       FAIL       -- structurally inaccessible
+  29c-3 (CDL Bounce):         DIAGNOSTIC -- CDL inapplicable (V_eff monotone, no barrier)
+  29c-4 (GW Spectrum):        DIAGNOSTIC -- f_peak ~ M_Pl, unobservable
+
+  Hard closes: 0
+  Positive signals: 0/4 (CDL PASS RETRACTED)
+  Constraints established: 4 (GH-1, KT-1, CDL-1, GW-1)
+
+  CDL-1 (NEW): No CDL barrier exists. V_eff monotonically decreasing.
+    Trapping is purely classical L-9 (KE < latent heat). No quantum
+    tunneling backup for overshooting trajectories.
+
+CRITICAL REVISION COMPARED TO ORIGINAL:
+  The CDL bounce PASS is RETRACTED. The original computation used a flat
+  V_normal (wrong Lambda cutoff), creating an artificial barrier. With the
+  correct spectral action, V_eff is monotone and CDL does not apply.
+  This WEAKENS the trapping narrative: overshooting trajectories (E_mult >= 2.0)
+  are NOT recaptured. The trapping window is narrow (E_mult <= ~1.5).

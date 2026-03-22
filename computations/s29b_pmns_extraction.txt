@@ -1,0 +1,55 @@
+Session 29Ba: PMNS Mixing Angle Extraction
+============================================================
+Method: Degenerate Perturbation Theory (3x3 from 16x16)
+Verified: Method B eigenvalues match full 16x16 to < 0.04%
+Input: s23a_kosmann_singlet.npz
+
+Level Structure (all tau > 0):
+  L1: singlet (mult=1), gap-edge eigenvalue
+  L2: quadruplet (mult=4), middle level
+  L3: triplet (mult=3), highest level
+
+Selection Rules (EXACT at all tau):
+  V(L1, L2) ~ 0.07-0.13 (nearest-neighbor)
+  V(L1, L3) = 0 EXACTLY (selection rule, to machine precision)
+  V(L2, L3) ~ 0.01-0.03 (nearest-neighbor, weaker)
+
+Strong-Coupling Warning:
+  V_12 / dE_12 ~ 6-9 at all tau. NOT perturbative.
+  Eigenvalue m1 pushed far below E1 by strong L1-L2 mixing.
+
+PDG Reference:
+  sin^2(theta_13) = 0.0220 +/- 0.0007
+  theta_12 = 33.44 +/- 0.77 deg
+  theta_23 = 49.1 +/- 1.0 deg
+  R = Delta m^2_32 / Delta m^2_21 = 32.6
+
+=== PMNS Angles (Method B) ===
+
+  tau  | sin^2(th13) | th12 (deg) | th23 (deg) |     R  | Gate
+-------|-------------|------------|------------|--------|------------------
+  0.10 |   0.298614  |      34.56 |      54.70 | 0.6342 | B-29b CONSTRAINT
+  0.15 |   0.253715  |      35.06 |      48.76 | 0.4781 | B-29b CONSTRAINT
+  0.20 |   0.202569  |      36.55 |      41.97 | 0.3810 | B-29b CONSTRAINT
+  0.25 |   0.150291  |      38.32 |      35.00 | 0.3274 | B-29b CONSTRAINT
+  0.30 |   0.105260  |      39.87 |      28.66 | 0.3031 | B-29b CONSTRAINT
+  0.35 |   0.072188  |      41.00 |      23.45 | 0.2955 | INTERMEDIATE
+  0.40 |   0.050186  |      41.78 |      19.40 | 0.2947 | INTERMEDIATE
+  0.50 |   0.027092  |      42.75 |      13.99 | 0.2918 | P-29b PASS
+
+Gate B-29b: sin^2(theta_13) < 0.005 or > 0.10 -> CONSTRAINT
+Gate P-29b: sin^2(theta_13) in [0.015, 0.030] -> PASS
+
+VERDICT: P-29b CONDITIONAL PASS at tau = 0.50
+  sin^2(theta_13) = 0.0271, within [0.015, 0.030]
+  But: theta_23 = 14.0 deg (PDG: 49.1), theta_12 = 42.8 (PDG: 33.4)
+  R = 0.29 (target: 33) -- catastrophic failure in mass ratio
+
+Structural Results (parameter-free, publication-grade):
+  1. V(L1, L3) = 0 EXACTLY: proven selection rule (not numerical accident)
+  2. 3-level tridiagonal structure: L1(1)-L2(4)-L3(3) at all tau > 0
+  3. sin^2(theta_13) monotonically decreasing in tau: from 0.30 to 0.03
+  4. theta_12 in correct ballpark (34-43 deg vs PDG 33.4 deg)
+  5. Qualitative hierarchy theta_12 >> theta_13 reproduced
+  6. Quantitative PMNS fails: theta_23 trades off against theta_13
+  7. R ~ 0.3 at all tau: mass ratio problem unresolved by PMNS extraction

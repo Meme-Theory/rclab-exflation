@@ -1,0 +1,110 @@
+SESSION 24a GATE VERDICTS
+Date: 2026-02-21
+Classifier: coordinator (gen-physicist)
+Baseline: Panel 8% (6-10%), Sagan 5% (3-7%) — post-Session 23
+
+============================================================
+PRE-REGISTERED CONSTRAINT/PASS GATES
+============================================================
+
+GATE V-1: V_spec Monotone — Constraint Condition: V_spec(tau) monotonically decreasing or flat for ALL rho
+  Closes if: No minimum found at any rho
+  Result: V_spec monotonically INCREASING for all rho in [0.001, 0.5]
+           No minimum at any rho in primary scan (5 values) or secondary scan (9 values)
+           Round metric (tau=0) is the global minimum of V_spec
+           a_4 curvature-squared terms grow exponentially and dominate -R_K at all tau > 0
+  VERDICT: **CLOSED**
+
+GATE V-3: V_spec Minimum in [0.20, 0.40] — PASS
+  Condition: tau_min in [0.20, 0.40] for some rho in [0.001, 10]
+  Result: No minimum exists at any tau for any rho
+  VERDICT: **FAIL** (not met)
+
+GATE R-1: Neutrino R in [17, 66] — PASS
+  Condition: R = (m3^2 - m2^2)/(m2^2 - m1^2) in [17, 66]
+  Result: R ~ 10^14 at all tau (Kramers degeneracy barely lifted)
+           tau=0.15: R = 1.38e15
+           tau=0.20: R = 2.17e14
+           tau=0.25: R = 1.93e14
+           tau=0.30: R = 5.44e14
+           tau=0.35: R = 2.55e14
+           Cross-check (K_a-derived V_nm at tau=0.30): R = 5.68 (below [17,66])
+  VERDICT: **FAIL** (not met)
+
+GATE AC-1: A/C Inconsistency — FAIL
+  Condition: Inconsistent by factor > 5 for all scale assumptions
+  Result: g1/g2 = exp(-2*tau) = 0.549 at tau=0.30
+           g1^2/g2^2 = 0.301 (SM-compatible at GUT scale)
+           tr(g_unit(0.30)) = 9.8125
+           No factor-5 inconsistency observed in gauge sector
+           However: g1/g2 = exp(-2*tau) is the Session 17a structural identity,
+           not an independent prediction. Full A/C check (kappa^2/(2*g_avg^2))
+           requires compactification-scale input not computed here.
+  VERDICT: **DOES NOT CLOSE** (no gross inconsistency; INCONCLUSIVE on independent content)
+
+============================================================
+DIAGNOSTICS (no PRE-REGISTERED CONSTRAINT/pass gates)
+============================================================
+
+BERRY CURVATURE (P24-2):
+  Gap-edge Kramers pair B_n(tau):
+    tau=0.00: B = 0.000
+    tau=0.10: B = 982.49 (PEAK)
+    tau=0.15: B = 600.58
+    tau=0.20: B = 468.21
+    tau=0.25: B = 418.02
+    tau=0.30: B = 407.15 (local minimum)
+    tau=0.35: B = 421.28
+    tau=0.40: B = 455.56
+    tau=0.50: B = 583.66
+  Both gap-edge states identical (Kramers symmetry)
+  Gap-edge B >> all other states at all tau
+  Peak at tau=0.10, local minimum at tau=0.30
+  Magnitude ~1000x above pre-session estimate of ~0.05
+  VERDICT: DIAGNOSTIC — notable structure, deferred to 24b
+
+EUCLIDEAN ACTION (P24-6):
+  I_E(tau) = -V_spec(tau) at three monopoles (tau = 0, 0.10, 1.58):
+    rho=0.001: I_E = {+0.030, +0.028, -57.38}
+    rho=0.010: I_E = {-17.70, -17.75, -681.62}
+    rho=0.100: I_E = {-195.0, -195.52, -6924.03}
+  I_E decreases (more negative) with tau at all rho >= 0.01
+  Round metric has highest I_E — dominates path integral
+  No bounce solution evident
+  VERDICT: DIAGNOSTIC UNFAVORABLE
+
+EIGENVALUE RATIO MAP (P24-8):
+  (0,0) singlet: 16 eigenvalues split into 3 groups (2 + 8 + 6)
+  Only 2 non-trivial inter-group ratios:
+    r_1 (gap to middle): 1.020 (tau=0.10) to 1.034 (tau=0.50)
+    r_9 (middle to upper): 1.077 (tau=0.10) to 1.376 (tau=0.50)
+  phi_paasch crossings (within 0.1%): ZERO
+  phi_paasch crossings (within 1.0%): ZERO
+  Closest approach: r_9 at tau=0.50 = 1.376 (10.1% below phi=1.53158)
+  Session 12 phi result (m_{(3,0)}/m_{(0,0)} = 1.53158) is inter-sector, not intra-sector
+  VERDICT: DIAGNOSTIC — no phi structure in (0,0) singlet
+
+============================================================
+SUMMARY
+============================================================
+
+Pre-registered gates:  V-1 CLOSED, V-3 FAIL, R-1 FAIL, AC-1 DOES NOT CLOSE
+Diagnostics:           Berry NOTABLE, Euclidean UNFAVORABLE, Ratios NULL
+
+Outcome row: "V_spec monotone (V-1 closes)"
+Probability: Panel 5-7%, Sagan 2-3%
+
+R-1 FAIL compounds V-1 CLOSED but does not reduce probability further
+(already in lowest pre-registered scenario).
+
+AC-1 not firing provides no uplift (gauge consistency is necessary
+but not sufficient when V_spec has no minimum).
+
+============================================================
+DATA FILES
+============================================================
+s24a_vspec.py, s24a_vspec.npz, s24a_vspec.png       (phonon-sim)
+s24a_berry.py, s24a_berry.npz, s24a_berry.png        (phonon-sim)
+s24a_neutrino.py, s24a_neutrino.txt                  (phonon-sim)
+s24a_eigenvalue_ratios.py, s24a_eigenvalue_ratios.npz, s24a_eigenvalue_ratios.png (phonon-sim)
+s24a_gate_verdicts.txt                                (coordinator)
