@@ -1,5 +1,7 @@
 # rclab-exflation
 
+**Full framework can be built from: https://github.com/Meme-Theory/meme-engine.
+
 **Phonon-Exflation Cosmology** — A multi-agent AI-accelerated theoretical physics research system investigating whether spacetime is fundamentally a vibrating phononic crystal, where particles are standing wave excitations of an internal quantum geometry.
 
 Built over ~10 weeks across 51 structured research sessions using Claude Code's agent orchestration. 28 specialized AI agents, 12 skills, 33 research domains, 630+ computation scripts, 12 proven theorems at machine epsilon, 21 closed stabilization mechanisms, and an honest probability assessment: **2-4%** that the framework describes reality.
