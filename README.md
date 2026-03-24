@@ -23,7 +23,7 @@ The subject was not picked for feasiblity or accuracy, but for the very fertile 
 
 ---
 
-## The Framework
+## The Test Case
 
 ### Core Ontology
 
