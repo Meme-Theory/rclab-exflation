@@ -19,7 +19,7 @@
 	- Effective 4D UV cutoff constrained: Λ_eff ~ 10×M_KK ~ 7.4e17 GeV
 	- BONUS PASS: functionals agree for G_N. S43 "~13 orders from wrong functional" applies to CC (quartic), not G_N (quadratic)
 	- Naz cross-check: endorsed wrong formula (numbers correct, formula error undetected). M_Pl_eff = 198 GeV not 99 GeV (transcription error flagged)
-	- Audit script: `tier0-computation/s44_sakharov_gn_audit.py` with 6 formula variants
+	- Audit script: `computations/s44_sakharov_gn_audit.py` with 6 formula variants
 
 ### W1-2: CDM by Construction (CDM-CONSTRUCT-44) — volovik [WP:166]
 - **PASS** — T^{0i}_4D = 0 exact, v_eff = 3.48e-6 c (287× below CDM threshold)
@@ -350,7 +350,7 @@
 
 Extracted from 9 collab reviews, 7 correction addenda, 2 workshop exchanges (Connes ↔ SP, 2 rounds), 1 Sagan assessment, 1 Landau framework document, 1 master synthesis. **42 distinct suggestions, 6 convergence clusters.**
 
-### TIER 1: CRITICAL PATH (session-defining)
+### LEVEL 1: CRITICAL PATH (session-defining)
 
 | Gate | Convergence | Agent | Computation | PASS criterion |
 |:-----|:------------|:------|:------------|:---------------|
@@ -360,7 +360,7 @@ Extracted from 9 collab reviews, 7 correction addenda, 2 workshop exchanges (Con
 **Landau prediction**: KZ-NS-45 will FAIL (n_s too red from d=3 KZ universality). If correct → OCC-SPEC-45 is sole survivor.
 **Sagan assessment**: Both PASS → P = 60-75%. Both FAIL → P = 3-8%.
 
-### TIER 2: HIGH PRIORITY (CC + DM/DE)
+### LEVEL 2: HIGH PRIORITY (CC + DM/DE)
 
 | Gate | Convergence | Agent | Computation | PASS criterion |
 |:-----|:------------|:------|:------------|:---------------|
@@ -368,7 +368,7 @@ Extracted from 9 collab reviews, 7 correction addenda, 2 workshop exchanges (Con
 | **ALPHA-EFF-45** | 5/7 | volovik, landau | Non-equilibrium C_V^{GGE} from 8 temperatures | α_eff in [0.3, 0.5] |
 | **Q-THEORY-KK-45** | 5/7 | volovik, hawking | q-theory with trace-log + EIH + discrete KK tower | Zero-crossing in [0.10, 0.25] |
 
-### TIER 3: MEDIUM PRIORITY (diagnostics + infrastructure)
+### LEVEL 3: MEDIUM PRIORITY (diagnostics + infrastructure)
 
 | Gate | Agent | Computation |
 |:-----|:------|:------------|
@@ -381,7 +381,7 @@ Extracted from 9 collab reviews, 7 correction addenda, 2 workshop exchanges (Con
 | KRETSCHNER-12D-45 | SP, Connes (joint) | R_{abcd}R^{abcd} on M⁴×SU(3) at fold |
 | FORMULA-AUDIT-PROTOCOL | all agents | State formula with units, dimensional check, limiting case, cite derivation (4/7 convergence) |
 
-### TIER 4: SPECIALIST
+### LEVEL 4: SPECIALIST
 
 | Gate | Agent | Computation |
 |:-----|:------|:------------|

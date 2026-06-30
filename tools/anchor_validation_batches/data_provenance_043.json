@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 43,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_421",
+      "anchor_type": "data_provenance",
+      "name": "peter_weyl_censorship",
+      "script_path": "session-45/s45_peter_weyl_censorship.py",
+      "session": "s45",
+      "inputs": "computations/session-44/s44_eih_grav.npz, computations/session-44/s44_dissolution_scaling.npz",
+      "outputs": "",
+      "source_file": "computations/session-45/s45_peter_weyl_censorship.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s45_peter_weyl_censorship.py -- PETER-WEYL-CENSORSHIP-45\n    4: =========================================================\n    5: \n    6: Tests whether the 17,594x EIH singlet suppression (Peter-Weyl censorship)\n    7: survives perturbations at the dissolution scale epsilon_c ~ 1/sqrt(N).\n    8: \n    9: === PHYSICS ===\n   10: \n   11: The block-diagonal D_K decomposes by SU(3) representation via Peter-Weyl."
+    },
+    {
+      "anchor_id": "prov_422",
+      "anchor_type": "data_provenance",
+      "name": "qnm_ns",
+      "script_path": "session-45/s45_qnm_ns.py",
+      "session": "s45",
+      "inputs": "computations/session-43/s43_friedmann_bcs.npz, computations/session-36/s36_sfull_tau_stabilization.npz, computations/ses...",
+      "outputs": "session-45/s45_qnm_ns.npz, session-45/s45_qnm_ns.png",
+      "source_file": "computations/session-45/s45_qnm_ns.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s45_qnm_ns.py — Linearized Friedmann-Modulus QNM Spectrum (QNM-NS-45)\n    4: =====================================================================\n    5: \n    6: GATE: QNM-NS-45\n    7:   INFO: Diagnostic, comparing QNM route to Bogoliubov route for n_s\n    8: \n    9: Physics:\n   10: --------\n   11: The coupled Friedmann-modulus system is:"
+    },
+    {
+      "anchor_id": "prov_423",
+      "anchor_type": "data_provenance",
+      "name": "qtheory_bcs",
+      "script_path": "session-45/s45_qtheory_bcs.py",
+      "session": "s45",
+      "inputs": "computations/session-36/s36_sfull_tau_stabilization.npz, computations/session-45/s45_qtheory_kk.npz, computations/sessio...",
+      "outputs": "session-45/s45_qtheory_bcs.npz, session-45/s45_qtheory_bcs.png",
+      "source_file": "computations/session-45/s45_qtheory_bcs.py",
+      "source_context_30_lines": " 1068:     'E_cond_over_TL': np.float64(abs(E_cond_contribution / TL_results['UNIFORM'][4])),\n 1069: \n 1070:     # Convexity\n 1071:     'convex_vacuum': np.bool_(results_GD['VACUUM']['convex']),\n 1072:     'convex_uniform': np.bool_(results_GD['UNIFORM']['convex']),\n 1073:     'convex_multi': np.bool_(results_GD['MULTI']['convex']),\n 1074: }\n 1075: \n 1076: np.savez('computations/session-45/s45_qtheory_bcs.npz', **save_dict)\n 1077: print(\"Saved: computations/session-45/s45_qtheory_bcs.npz\")\n 1078: \n 1079: # ============================================================================\n 1080: # STEP 12: Generate plot\n 1081: # ============================================================================\n 1082: print(\"\\n--- Generating plot ---\")\n 1083: \n 1084: fig, axes = plt.subplots(2, 2, figsize=(14, 10))"
+    },
+    {
+      "anchor_id": "prov_424",
+      "anchor_type": "data_provenance",
+      "name": "qtheory_kk",
+      "script_path": "session-45/s45_qtheory_kk.py",
+      "session": "s45",
+      "inputs": "computations/session-36/s36_sfull_tau_stabilization.npz, computations/session-43/s43_qtheory_selftune.npz, computations/...",
+      "outputs": "session-45/s45_qtheory_kk.npz, session-45/s45_qtheory_kk.png",
+      "source_file": "computations/session-45/s45_qtheory_kk.py",
+      "source_context_30_lines": " 1062:     \"  Q-theory + EIH changes curvature\",\n 1063:     \"  CC problem = residual at fold\",\n 1064: ]\n 1065: ax.text(0.03, 0.97, '\\n'.join(summary_lines), transform=ax.transAxes,\n 1066:         fontsize=8.5, verticalalignment='top', fontfamily='monospace',\n 1067:         bbox=dict(boxstyle='round', facecolor='lightyellow', alpha=0.8))\n 1068: \n 1069: plt.tight_layout()\n 1070: plt.savefig('computations/session-45/s45_qtheory_kk.png', dpi=150, bbox_inches='tight')\n 1071: print(\"Plot saved: computations/session-45/s45_qtheory_kk.png\")\n 1072: \n 1073: # ============================================================================\n 1074: # SAVE DATA\n 1075: # ============================================================================\n 1076: print(\"\\nSaving data...\")\n 1077: \n 1078: save_dict = {"
+    },
+    {
+      "anchor_id": "prov_425",
+      "anchor_type": "data_provenance",
+      "name": "running_gn",
+      "script_path": "session-45/s45_running_gn.py",
+      "session": "s45",
+      "inputs": "",
+      "outputs": "session-45/s45_running_gn.npz, session-45/s45_running_gn.png",
+      "source_file": "computations/session-45/s45_running_gn.py",
+      "source_context_30_lines": "   27:   Sakharov induced gravity is the condensed-matter route to Newton's constant.\n   28:   In superfluid 3He-A, the inverse Newton constant is:\n   29:     1/G ~ N_F * p_F^2 / m* ~ (number of Fermi-point species) * (Fermi momentum)^2\n   30:   The KK analog: species = PW modes, Fermi momentum = eigenvalue * M_KK.\n   31:   The tau-dependence of G_N tracks how the effective species count changes\n   32:   as the Jensen deformation varies the internal geometry.\n   33: \n   34: Gate: RUNNING-GN-45 = INFO\n   35: Output: s45_running_gn.{npz, png}\n   36: \"\"\"\n   37: \n   38: import numpy as np\n   39: import matplotlib\n   40: matplotlib.use('Agg')\n   41: import matplotlib.pyplot as plt\n   42: from pathlib import Path\n   43: import sys"
+    },
+    {
+      "anchor_id": "prov_426",
+      "anchor_type": "data_provenance",
+      "name": "sakharov_dissolution",
+      "script_path": "session-45/s45_sakharov_dissolution.py",
+      "session": "s45",
+      "inputs": "",
+      "outputs": "session-45/s45_sakharov_dissolution.npz, session-45/s45_sakharov_dissolution.png",
+      "source_file": "computations/session-45/s45_sakharov_dissolution.py",
+      "source_context_30_lines": "  847: print(f\"    {detail}\")\n  848: \n  849: \n  850: # ===========================================================================\n  851: # Step 12: Save data\n  852: # ===========================================================================\n  853: print(f\"\\n--- Saving results ---\")\n  854: \n  855: np.savez(DATA_DIR / 's45_sakharov_dissolution.npz',\n  856:     # Input parameters\n  857:     tau_fold=TAU_FOLD,\n  858:     M_KK_GN=M_KK_GN,\n  859:     M_PL_RED=M_PL_RED,\n  860:     a_fit=a_fit,\n  861:     alpha_fit=alpha_fit,\n  862:     R2_power=R2_power,\n  863: "
+    },
+    {
+      "anchor_id": "prov_427",
+      "anchor_type": "data_provenance",
+      "name": "sigma_select",
+      "script_path": "session-45/s45_sigma_select.py",
+      "session": "s45",
+      "inputs": "",
+      "outputs": "session-45/s45_sigma_select.npz, session-45/s45_sigma_select.png",
+      "source_file": "computations/session-45/s45_sigma_select.py",
+      "source_context_30_lines": "   62:     M_Pl_reduced, H_0_GeV, k_B, a2_fold, a4_fold\n   63: )\n   64: \n   65: # ═══════════════════════════════════════════════════════════════════════\n   66: # CONFIGURATION\n   67: # ═══════════════════════════════════════════════════════════════════════\n   68: \n   69: data_dir = Path(__file__).parent\n   70: output_npz = data_dir / \"s45_sigma_select.npz\"\n   71: output_png = data_dir / \"s45_sigma_select.png\"\n   72: \n   73: SECTORS = [(0,0),(1,0),(0,1),(1,1),(2,0),(0,2),(3,0),(0,3),(2,1),(1,2)]\n   74: \n   75: def dim_pq(p, q):\n   76:     \"\"\"Dimension of SU(3) irrep (p,q).\"\"\"\n   77:     return (p + 1) * (q + 1) * (p + q + 2) // 2\n   78: "
+    },
+    {
+      "anchor_id": "prov_428",
+      "anchor_type": "data_provenance",
+      "name": "spectral_penrose",
+      "script_path": "session-45/s45_spectral_penrose.py",
+      "session": "s45",
+      "inputs": "s41_spectral_refinement.npz, s44_vanhove_track.npz, s42_hauser_feshbach.npz, s35_sector_10_spectrum.npz, s44_bcs_tensor_...",
+      "outputs": "session-45/s45_spectral_penrose.npz, session-45/s45_spectral_penrose.png",
+      "source_file": "computations/session-45/s45_spectral_penrose.py",
+      "source_context_30_lines": "   29: \n   30: Input data:\n   31:   - s41_spectral_refinement.npz (tau grid, spectral range, gap statistics)\n   32:   - s44_vanhove_track.npz (12 van Hove trajectories, VH singularities)\n   33:   - s42_hauser_feshbach.npz (BCS gap, compound nucleus T, sector branching)\n   34:   - s35_sector_10_spectrum.npz (eigenvalue tracks for sectors (0,0), (1,0))\n   35: \n   36: Output:\n   37:   - s45_spectral_penrose.png\n   38:   - s45_spectral_penrose.npz\n   39: \n   40: Author: schwarzschild-penrose-geometer\n   41: Session: 45\n   42: \"\"\"\n   43: \n   44: import numpy as np\n   45: import matplotlib"
+    },
+    {
+      "anchor_id": "prov_429",
+      "anchor_type": "data_provenance",
+      "name": "truncated_torsion",
+      "script_path": "session-45/s45_truncated_torsion.py",
+      "session": "s45",
+      "inputs": "",
+      "outputs": "session-45/s45_truncated_torsion.npz, session-45/s45_truncated_torsion.png",
+      "source_file": "computations/session-45/s45_truncated_torsion.py",
+      "source_context_30_lines": "   30:   T = exp(-zeta'(0)/2) = exp(sum_k d_k ln(lambda_k)) = prod lambda_k^{d_k}.\n   31:   This is EXACT for the truncated spectrum (no analytic continuation needed).\n   32: \n   33: Author: Spectral-Geometer (Session 45, TRUNCATED-TORSION-45)\n   34: Date: 2026-03-15\n   35: \n   36: Input: s45_analytic_torsion.npz, s44_eih_grav.npz, s44_dos_tau.npz,\n   37:        s36_sfull_tau_stabilization.npz\n   38: Output: s45_truncated_torsion.npz, s45_truncated_torsion.png\n   39: \"\"\"\n   40: \n   41: import sys\n   42: import os\n   43: import numpy as np\n   44: import matplotlib\n   45: matplotlib.use('Agg')\n   46: import matplotlib.pyplot as plt"
+    },
+    {
+      "anchor_id": "prov_430",
+      "anchor_type": "data_provenance",
+      "name": "two_fluid_desi",
+      "script_path": "session-45/s45_two_fluid_desi.py",
+      "session": "s45",
+      "inputs": "",
+      "outputs": "session-45/s45_two_fluid_desi.npz, session-45/s45_two_fluid_desi.png",
+      "source_file": "computations/session-45/s45_two_fluid_desi.py",
+      "source_context_30_lines": "  893:     'delta_w_general': delta_w_general,\n  894: \n  895:     # Key structural\n  896:     'w0_from_alpha': -1.0 / (1.0 + alpha_entropy),\n  897:     'alpha_desi_implied': alpha_desi,\n  898:     'omega_q_over_H': 1e60,  # approximate\n  899: }\n  900: \n  901: out_path = base / \"s45_two_fluid_desi.npz\"\n  902: np.savez(out_path, **out)\n  903: print(f\"\\nData saved: {out_path}\")\n  904: \n  905: # ---------- PLOT ----------\n  906: fig, axes = plt.subplots(2, 2, figsize=(16, 12))\n  907: \n  908: # Panel 1: w(z) for different models\n  909: ax1 = axes[0, 0]"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+T3-S38-ATTEMPT-FREQ: PASS -- value=1.4299612309 scheme=BCS_numerical_curvature convention=m_eff=1 L_max=n/a sha256=7efa9c25926f34357fba3a8cae9e3aa86ea3d5d695bd67dc97834c3d702722ce
+  # target            = 1.430 (MCP theorem "BCS attempt frequency", session-38-naz-tesla-workshop.md; mapped to omega_att_BCS = sqrt(F_BCS''(Delta_0)))
+  # pre-fix head16    = 9adca11c299158c5 (matches prep block line 732)
+  # fix               = (1) added `sys.path.insert(...)` + `from canonical_constants import *`; (2) swapped literal `0.190` -> canonical symbol `tau_fold` on line 114; (3) tagged 6 intermediates `# (local)`: omega_tau_fold, F_pp_GL, width, delta_inst, delta_inst_GL, n_inst_dilute, n_inst_dense (line 114 also tagged)
+  # reproduced        = 1.4299612309 (stdout "omega_att (BCS numerical)" & npz key 'omega_att_BCS')
+  # rel_err vs MCP    = |1.4299612309 - 1.430| / 1.430 = 2.711129e-05
+  # tolerance (RATIO) = 5.0e-3 (0.5%) -- rel_err << tol -> PASS
+  # closure           = SHA-256 of JSON-sorted input-pin map {s37_instanton_action.npz, s37_pair_susceptibility.npz, s31Ba_instanton_kapitza.npz, s38_cc_instanton.npz, s31Ch_instanton_eff_freq.npz, canonical_constants.py} = 7efa9c25926f34357fba3a8cae9e3aa86ea3d5d695bd67dc97834c3d702722ce
+  # post-fix SHA-256  = 01cdaa6be6795d45946380924d9172eafa4ccdc85cef08548c6ee796ea8eccb9 (head16: 01cdaa6be6795d45)
+  # input SHAs (head16):
+  #   s37_instanton_action.npz      = b0b19cc9f2694ef4
+  #   s37_pair_susceptibility.npz   = a21910055a772ce7
+  #   s31Ba_instanton_kapitza.npz   = fff04615f60e90c3
+  #   s38_cc_instanton.npz          = db1e7eb13a3c4fb1
+  #   s31Ch_instanton_eff_freq.npz  = 9b2ec7a97d7e2cc2
+  #   canonical_constants.py        = 68b50cd325d2cc8c
+  # direction note    = tau_fold swap 0.190 -> 0.19 is IEEE 754 identical (both parse to 0x3FC851EB851EB852); omega_att_BCS does not depend on tau_fold (only idx_fold for omega_tau_fold diagnostic); zero numerical shift as predicted
+  # upstream loaders  = a_GL, b_GL, Delta_0, S_inst, F_BCS, delta_scan, omega_PV, omega_tau, E_8, V_8x8, Delta_OES, B2_bw, rho_B2, d2E_fold, v_F, M_max, xi_BCS, xi_GL, E_cond, barrier_0d, barrier_A, L loaded from upstream .npz (NOT literals; not replaced)

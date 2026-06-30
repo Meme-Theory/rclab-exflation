@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 54,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_531",
+      "anchor_type": "data_provenance",
+      "name": "anomalous_dispersion",
+      "script_path": "session-50/s50_anomalous_dispersion.py",
+      "session": "s50",
+      "inputs": "",
+      "outputs": "session-50/s50_anomalous_dispersion.npz, session-50/s50_anomalous_dispersion.png",
+      "source_file": "computations/session-50/s50_anomalous_dispersion.py",
+      "source_context_30_lines": " 1297:     print(f\"    2. The anisotropy ratio J_C2/J_su2 = {J_C2/J_su2:.1f} is extreme\")\n 1298:     print(f\"    3. Domain wall fraction {n_cross_xy/n_total_xy:.2f} is large\")\n 1299: \n 1300: # =============================================================================\n 1301: # STEP 16: Save\n 1302: # =============================================================================\n 1303: print(\"\\n--- Step 16: Save ---\")\n 1304: \n 1305: out_file = os.path.join(SCRIPT_DIR, 's50_anomalous_dispersion.npz')\n 1306: np.savez(out_file,\n 1307:     # Gate\n 1308:     gate_name='ANOMALOUS-DISPERSION-50',\n 1309:     gate_verdict=verdict,\n 1310:     gate_detail=detail,\n 1311: \n 1312:     # Key results\n 1313:     alpha_eff_z3_global=alpha_z3_global,"
+    },
+    {
+      "anchor_id": "prov_532",
+      "anchor_type": "data_provenance",
+      "name": "bogoliubov_imprint",
+      "script_path": "session-50/s50_bogoliubov_imprint.py",
+      "session": "s50",
+      "inputs": "",
+      "outputs": "session-50/s50_bogoliubov_imprint.npz, session-50/s50_bogoliubov_imprint.png",
+      "source_file": "computations/session-50/s50_bogoliubov_imprint.py",
+      "source_context_30_lines": "   48: Input data:\n   49:   - s49_leggett_transit.npz (transit dynamics, P_exc=1)\n   50:   - s49_kz_3component.npz (per-mode P_LZ, sector decomposition)\n   51:   - s49_dipolar_catalog.npz (Leggett coupling data)\n   52:   - s48_leggett_mode.npz (omega_L, J_ij, rho_i scans)\n   53:   - canonical_constants.py\n   54: \n   55: Output:\n   56:   - s50_bogoliubov_imprint.npz\n   57:   - s50_bogoliubov_imprint.png\n   58: \n   59: Author: Volovik-Superfluid-Universe-Theorist (Session 50, W1-C)\n   60: Date: 2026-03-20\n   61: \n   62: References:\n   63:   Volovik (2013) Paper 27: Superfluids as Non-Equilibrium Quantum Vacua\n   64:   Volovik (2003) Paper 01: Universe in a Helium Droplet, Ch. 28-29"
+    },
+    {
+      "anchor_id": "prov_533",
+      "anchor_type": "data_provenance",
+      "name": "crossdomain_routes",
+      "script_path": "session-50/s50_crossdomain_routes.py",
+      "session": "s50",
+      "inputs": "s44_dos_tau.npz",
+      "outputs": "",
+      "source_file": "computations/session-50/s50_crossdomain_routes.py",
+      "source_context_30_lines": "<name 'crossdomain_routes' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: S50 Cross-Domain Routes: R-G integrals, broken FDT, spectral dimension flow\n    3: Tests three untested correlators for the O-Z investigation\n    4: \"\"\"\n    5: import numpy as np\n    6: import sys\n    7: sys.path.insert(0, '.')\n    8: from canonical_constants import *\n    9: \n   10: d = np.load('s44_dos_tau.npz', allow_pickle=True)\n   11: \n   12: # =========================================================================\n   13: print(\"=\" * 70)\n   14: print(\"ROUTE 2: RICHARDSON-GAUDIN INTEGRAL VARIATION\")\n   15: print(\"=\" * 70)\n   16: \n   17: # BCS mode energies at fold\n   18: E_B2 = E_B2_mean  # (local)\n   19: E_B1 = 1.125   # NOTE: intentional override, differs from canonical E_B1 (0.819)\n   20: E_B3 = 1.245   # NOTE: intentional override, differs from canonical E_B3_mean (0.978)  # (local)\n   21: V_B2B2 = 0.1557  # (local)\n   22: \n   23: epsilon = np.array([E_B2]*4 + [E_B1] + [E_B3]*3)\n   24: g_BCS = V_B2B2\n   25: N = len(epsilon)\n   26: \n   27: # R-G integrals\n   28: I_RG = np.zeros(N)\n   29: for alpha in range(N):\n   30:     I_RG[alpha] = epsilon[alpha]"
+    },
+    {
+      "anchor_id": "prov_534",
+      "anchor_type": "data_provenance",
+      "name": "desi_dr3_joint",
+      "script_path": "session-50/s50_desi_dr3_joint.py",
+      "session": "s50",
+      "inputs": "s49_multi_t_friedmann.npz, s49_desi_dr3_prep.npz",
+      "outputs": "session-50/s50_desi_dr3_joint.npz, session-50/s50_desi_dr3_joint.png",
+      "source_file": "computations/session-50/s50_desi_dr3_joint.py",
+      "source_context_30_lines": "  605:     'B_dr3_scan': B_dr3_scan,\n  606:     'err_scale_dr2': err_scale_dr2,\n  607:     'err_scale_dr3': err_scale_dr3,\n  608:     # Gate\n  609:     'gate_name': np.array(['DESI-DR3-JOINT-50']),\n  610:     'gate_verdict': np.array([gate_verdict]),\n  611: }\n  612: \n  613: np.savez('s50_desi_dr3_joint.npz', **results)\n  614: print(f\"  Saved: s50_desi_dr3_joint.npz\")\n  615: \n  616: # =============================================================================\n  617: # Step 14: Diagnostic plot\n  618: # =============================================================================\n  619: \n  620: fig, axes = plt.subplots(2, 2, figsize=(14, 10))\n  621: fig.suptitle('DESI-DR3-JOINT-50: BAO Distance Constraints', fontsize=14)"
+    },
+    {
+      "anchor_id": "prov_535",
+      "anchor_type": "data_provenance",
+      "name": "eikonal_damping",
+      "script_path": "session-50/s50_eikonal_damping.py",
+      "session": "s50",
+      "inputs": "",
+      "outputs": "session-50/s50_eikonal_damping.npz, session-50/s50_eikonal_damping.png",
+      "source_file": "computations/session-50/s50_eikonal_damping.py",
+      "source_context_30_lines": "   35:   INFO: 0.01 < ratio < 0.1\n   36: \n   37: Input:\n   38:   - s47_condensate_torus.npz (Delta field on T^2)\n   39:   - s49_cavity_resonance.npz (c_BdG, cavity geometry)\n   40:   - s49_dipolar_catalog.npz (m_G = omega_L1)\n   41: \n   42: Output:\n   43:   - s50_eikonal_damping.npz\n   44:   - s50_eikonal_damping.png\n   45: \n   46: Author: quantum-acoustics-theorist (Session 50)\n   47: \"\"\"\n   48: \n   49: import sys\n   50: import os\n   51: sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))"
+    },
+    {
+      "anchor_id": "prov_536",
+      "anchor_type": "data_provenance",
+      "name": "fabric_rpa",
+      "script_path": "session-50/s50_fabric_rpa.py",
+      "session": "s50",
+      "inputs": "",
+      "outputs": "session-50/s50_fabric_rpa.npz, session-50/s50_fabric_rpa.png",
+      "source_file": "computations/session-50/s50_fabric_rpa.py",
+      "source_context_30_lines": "  999: print(f\"    The analogy breaks: nuclear effective charge is a MATRIX ELEMENT effect,\")\n 1000: print(f\"    not a PROPAGATOR effect. The mass hierarchy has no nuclear analog.\")\n 1001: \n 1002: # =============================================================================\n 1003: # STEP 15: Save\n 1004: # =============================================================================\n 1005: print(\"\\n--- Step 15: Save ---\")\n 1006: \n 1007: out_file = os.path.join(SCRIPT_DIR, 's50_fabric_rpa.npz')\n 1008: np.savez(out_file,\n 1009:     # Gate\n 1010:     gate_name='FABRIC-RPA-50',\n 1011:     gate_verdict=verdict,\n 1012:     gate_detail=detail,\n 1013: \n 1014:     # Key results\n 1015:     n_s_RPA=n_s_final,"
+    },
+    {
+      "anchor_id": "prov_537",
+      "anchor_type": "data_provenance",
+      "name": "jpair_calibrate",
+      "script_path": "session-50/s50_jpair_calibrate.py",
+      "session": "s50",
+      "inputs": "",
+      "outputs": "session-50/s50_jpair_calibrate.npz",
+      "source_file": "computations/session-50/s50_jpair_calibrate.py",
+      "source_context_30_lines": " 1123:     'J_over_EC_nuclear': float(J_over_EC_nuc),\n 1124:     'Delta_over_E_fw': float(Delta_over_E_fw),\n 1125:     'Delta_over_E_nuc': float(Delta_over_E_nuc),\n 1126: \n 1127:     # Metadata\n 1128:     'elapsed_s': float(elapsed),\n 1129: }\n 1130: \n 1131: out_npz = os.path.join(SCRIPT_DIR, 's50_jpair_calibrate.npz')\n 1132: np.savez_compressed(out_npz, **save_dict)\n 1133: print(f\"\\nSaved: {out_npz}\")\n 1134: print(f\"File size: {os.path.getsize(out_npz) / 1024:.1f} KB\")\n 1135: print(f\"Runtime: {elapsed:.1f}s\")\n 1136: print(\"=\" * 78)"
+    },
+    {
+      "anchor_id": "prov_538",
+      "anchor_type": "data_provenance",
+      "name": "kz_spatial",
+      "script_path": "session-50/s50_kz_spatial.py",
+      "session": "s50",
+      "inputs": "",
+      "outputs": "session-50/s50_kz_spatial.npz, session-50/s50_kz_spatial.png",
+      "source_file": "computations/session-50/s50_kz_spatial.py",
+      "source_context_30_lines": "   26:   reciprocal lattice vectors of the 4x4x2 lattice.\n   27: \n   28:   From P(K), extract n_s = 1 + d ln P / d ln K.\n   29: \n   30:   Sensitivity analysis: vary cell-volume distribution (+/-5%, 10%, 20%)\n   31:   and domain-wall modification factor.\n   32: \n   33: Input: canonical_constants.py, s49_kz_3component.npz, s47_texture_corr.npz\n   34: Output: s50_kz_spatial.npz, s50_kz_spatial.png\n   35: \n   36: Agent: Volovik (Session 50 W2-C)\n   37: Date: 2026-03-20\n   38: \"\"\"\n   39: \n   40: import numpy as np\n   41: import matplotlib\n   42: matplotlib.use('Agg')"
+    },
+    {
+      "anchor_id": "prov_539",
+      "anchor_type": "data_provenance",
+      "name": "leggett_damping",
+      "script_path": "session-50/s50_leggett_damping.py",
+      "session": "s50",
+      "inputs": "",
+      "outputs": "session-50/s50_leggett_damping.npz, session-50/s50_leggett_damping.png",
+      "source_file": "computations/session-50/s50_leggett_damping.py",
+      "source_context_30_lines": "  808: \n  809: # =============================================================================\n  810: # SECTION 12: Save Data\n  811: # =============================================================================\n  812: print(f\"\\n{'='*78}\")\n  813: print(\"SECTION 12: Save Data\")\n  814: print(f\"{'='*78}\")\n  815: \n  816: save_path = os.path.join(SCRIPT_DIR, 's50_leggett_damping.npz')\n  817: np.savez(save_path,\n  818:     # Gate\n  819:     gate_name='LEGGETT-DAMPING-50',\n  820:     gate_verdict=gate_verdict,\n  821:     gate_detail=gate_detail,\n  822:     # Leggett mode parameters\n  823:     omega_L1=omega_L1_fold,\n  824:     omega_L2=omega_L2_fold,"
+    },
+    {
+      "anchor_id": "prov_540",
+      "anchor_type": "data_provenance",
+      "name": "leggett_phi_confirm",
+      "script_path": "session-50/s50_leggett_phi_confirm.py",
+      "session": "s50",
+      "inputs": "",
+      "outputs": "session-50/s50_leggett_phi_confirm.npz, session-50/s50_leggett_phi_confirm.png",
+      "source_file": "computations/session-50/s50_leggett_phi_confirm.py",
+      "source_context_30_lines": "  407:     'tau_crossing_s49_spline': 0.211686,\n  408: \n  409:     # Validation\n  410:     'validation_pass': validation_pass,\n  411:     'max_rel_err_L1': max_rel_err_L1,\n  412:     'max_rel_err_L2': max_rel_err_L2,\n  413: }\n  414: \n  415: outpath = os.path.join(SCRIPT_DIR, 's50_leggett_phi_confirm.npz')\n  416: np.savez(outpath, **save_dict)\n  417: print(f\"\\nSaved: {outpath}\")\n  418: \n  419: \n  420: # =============================================================================\n  421: #  PLOT\n  422: # =============================================================================\n  423: "
+    }
+  ]
+}

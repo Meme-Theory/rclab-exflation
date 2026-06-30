@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 46,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_451",
+      "anchor_type": "data_provenance",
+      "name": "nonsinglet_dissipation",
+      "script_path": "session-46/s46_nonsinglet_dissipation.py",
+      "session": "s46",
+      "inputs": "computations/session-44/s44_dos_tau.npz, computations/session-45/s45_kz_ns.npz",
+      "outputs": "session-46/s46_nonsinglet_dissipation.npz, session-46/s46_nonsinglet_dissipation.png",
+      "source_file": "computations/session-46/s46_nonsinglet_dissipation.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s46_nonsinglet_dissipation.py — Non-Singlet One-Body Dissipation on Tau Modulus\n    4: ================================================================================\n    5: Gate: NONSINGLET-DISSIPATION-46 (diagnostic)\n    6: Agent: hawking-theorist\n    7: \n    8: Physics: W3-3 (GGE-FRICTION-46) found that the 8 BCS-active singlet modes\n    9: provide gamma_CL / gamma_H = 0.007 (1,700x shortfall). But the full D_K\n   10: spectrum has 992 modes, of which 976 are non-singlet. These carry 101,968\n   11: weighted states (sum of dim^2). Each non-singlet mode couples to the tau"
+    },
+    {
+      "anchor_id": "prov_452",
+      "anchor_type": "data_provenance",
+      "name": "number_projected_bcs",
+      "script_path": "session-46/s46_number_projected_bcs.py",
+      "session": "s46",
+      "inputs": "computations/session-43/s43_lifshitz_class.npz, computations/session-46/s46_qtheory_selfconsistent.npz, computations/ses...",
+      "outputs": "session-46/s46_number_projected_bcs.npz, session-46/s46_number_projected_bcs.png",
+      "source_file": "computations/session-46/s46_number_projected_bcs.py",
+      "source_context_30_lines": "   44:   broken by BCS.\n   45: \n   46:   Paper 08 (Pairing collapse): At high angular momentum, pairing collapses\n   47:   when the Coriolis anti-pairing effect exceeds the pairing gap. The\n   48:   transition from paired to unpaired is a crossover in BCS but a sharp\n   49:   transition in number-projected theory.\n   50: \n   51: Gate: INFO (PBCS correction to q-theory trace-log)\n   52: Output: s46_number_projected_bcs.{py,npz}\n   53: \n   54: Author: nazarewicz-nuclear-structure-theorist (S46 W2-5)\n   55: \"\"\"\n   56: \n   57: import numpy as np\n   58: from scipy.interpolate import CubicSpline\n   59: from scipy.optimize import brentq\n   60: from itertools import product as iproduct"
+    },
+    {
+      "anchor_id": "prov_453",
+      "anchor_type": "data_provenance",
+      "name": "omega_classify",
+      "script_path": "session-46/s46_omega_classify.py",
+      "session": "s46",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-46/s46_omega_classify.py",
+      "source_context_30_lines": "  641:     print(\"=\" * 78)\n  642:     print(\"OMEGA-CLASSIFY-46: Inner Fluctuation Module Classification (re-run)\")\n  643:     print(\"=\" * 78)\n  644:     print()\n  645: \n  646:     # ---- S81 SHA-256 INPUT PINS (first 20 lines of stdout per gate-verdicts.md) ----\n  647:     import hashlib\n  648:     _input_pins = {\n  649:         \"t3-intake/s46_omega_classify.py\": \"fdb95e8df0955ae067a0e631f4bed00e880bb975b4052e04fc0997d1230c5667\",\n  650:         \"canonical_constants.py\":              \"68b50cd325d2cc8c63b775da3b6b92f538da582bee44c5d906c81259f24dd12f\",\n  651:         \"dirac_spectrum.py\":             \"eee1b6fdcbb86847385130b3b3467c76fe1b5b73573d7dac4baf428cf4ff163f\",\n  652:     }\n  653:     print(\"INPUT SHA-256 PINS:\")\n  654:     _concat = \"\"  # (local) ordered concat for closure\n  655:     for _k, _v in _input_pins.items():\n  656:         print(f\"  {_v}  {_k}\")\n  657:         _concat += f\"{_k}={_v};\""
+    },
+    {
+      "anchor_id": "prov_454",
+      "anchor_type": "data_provenance",
+      "name": "omega_classify_legacy",
+      "script_path": "session-46/s46_omega_classify_legacy.py",
+      "session": "s46",
+      "inputs": "",
+      "outputs": "session-46/s46_omega_classify_legacy.npz",
+      "source_file": "computations/session-46/s46_omega_classify_legacy.py",
+      "source_context_30_lines": "<name 'omega_classify_legacy' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: OMEGA-CLASSIFY-46: Inner Fluctuation Module Classification\n    3: ============================================================\n    4: \n    5: Classifies the 342 directions in Omega^1_D(A_F) from the S45 WEAK-ORDER-ONE\n    6: computation. Decomposes into:\n    7:   - 173 linear (gauge + standard Higgs)\n    8:   - 169 quadratic (CCS 2013, Paper 23 mechanism)\n    9: \n   10: For the scalar subspace, computes the mass-squared matrix M^2 from the\n   11: spectral action second variation and determines whether any directions\n   12: are tachyonic at the fold but not at round SU(3).\n   13: \n   14: MATHEMATICAL FRAMEWORK\n   15: -----------------------\n   16: \n   17: The inner fluctuation module is:\n   18:     Omega^1_D(A) = span{ sum_i a_i [D, b_i] : a_i, b_i in A_F }\n   19: \n   20: When order-one holds, Omega^1_D = A [D, A] (linear module).\n   21: When order-one fails (as here, at 4.000 for (H,H)):\n   22:     Omega^1_D = A [D, A] + [D, A] [D, A]  (linear + quadratic)\n   23: \n   24: The module elements decompose under the Z_2 grading gamma_F:\n   25:     - Even (gamma_F = +1): gauge connections (A_mu type)\n   26:     - Odd  (gamma_F = -1): Higgs-like scalars (phi type)\n   27: \n   28: The mass-squared matrix for the scalar directions is:\n   29:     M^2_{ij} = Tr(phi_i D^2 phi_j) / Tr(phi_i phi_j)\n   30: "
+    },
+    {
+      "anchor_id": "prov_455",
+      "anchor_type": "data_provenance",
+      "name": "omega_verify",
+      "script_path": "session-46/s46_omega_verify.py",
+      "session": "s46",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-46/s46_omega_verify.py",
+      "source_context_30_lines": "<name 'omega_verify' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: OMEGA-CLASSIFY-46 VERIFICATION: Spectral Action Hessian with cutoff functions\n    3: ==============================================================================\n    4: \n    5: Computes the PHYSICAL mass-squared matrix from the spectral action\n    6: Tr f(D_phys^2/Lambda^2) second variation, with multiple cutoff functions.\n    7: \n    8: The kinetic mass Tr([D,phi]^dag [D,phi]) is positive definite (Gram matrix).\n    9: The spectral action Hessian includes the cutoff function and can in principle\n   10: be negative (tachyonic), providing the Higgs mechanism.\n   11: \n   12: This script verifies whether any tachyonic direction exists in the spectral\n   13: action Hessian when evaluated on the Omega^1_D scalar directions.\n   14: \"\"\"\n   15: \n   16: import numpy as np\n   17: import sys, os, time\n   18: sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))\n   19: \n   20: from dirac_spectrum import (\n   21:     su3_generators, compute_structure_constants, compute_killing_form,\n   22:     jensen_metric, orthonormal_frame, frame_structure_constants,\n   23:     connection_coefficients, spinor_connection_offset, build_cliff8,\n   24:     get_irrep, dirac_operator_on_irrep, _irrep_cache,\n   25: )\n   26: from s46_omega_classify import (\n   27:     build_AF_generators, build_DK, compute_omega1_full,\n   28:     decompose_by_grading,\n   29: )\n   30: "
+    },
+    {
+      "anchor_id": "prov_456",
+      "anchor_type": "data_provenance",
+      "name": "peter_weyl_censorship",
+      "script_path": "session-46/s46_peter_weyl_censorship.py",
+      "session": "s46",
+      "inputs": "computations/session-44/s44_eih_grav.npz, computations/session-44/s44_dissolution_scaling.npz, computations/session-42/s...",
+      "outputs": "session-46/s46_peter_weyl_censorship.npz, session-46/s46_peter_weyl_censorship.png",
+      "source_file": "computations/session-46/s46_peter_weyl_censorship.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s46_peter_weyl_censorship.py -- PETER-WEYL-CENSORSHIP-46\n    4: =========================================================\n    5: \n    6: Retry of S45 killed computation. Tests whether the 17,594x EIH singlet\n    7: suppression survives random GOE perturbations at the dissolution scale.\n    8: \n    9: === PHYSICS ===\n   10: \n   11: The block-diagonal D_K decomposes by SU(3) representation (Peter-Weyl)."
+    },
+    {
+      "anchor_id": "prov_457",
+      "anchor_type": "data_provenance",
+      "name": "phonon_magnetic_moment",
+      "script_path": "session-46/s46_phonon_magnetic_moment.py",
+      "session": "s46",
+      "inputs": "",
+      "outputs": "session-46/s46_phonon_magnetic_moment.npz, session-46/s46_phonon_magnetic_moment.png",
+      "source_file": "computations/session-46/s46_phonon_magnetic_moment.py",
+      "source_context_30_lines": "   90:     Paper 08 (Pelinovsky 2010): acoustic Dirac cones, Berry phase in phononic crystals\n   91:     Paper 35 (Ni 2023): topological metamaterials, Chern number, bulk-edge\n   92:     Paper 10 (Volovik 2003): Berry phase -> effective gauge fields\n   93: \n   94: Gate: PHONON-MAGNETIC-MOMENT-46 (Diagnostic/INFO)\n   95:     Report: kappa_xy, mu_phonon, Z_2 Hall number, sector decomposition\n   96: \n   97: Input:  s46_berry_phase.npz, s42_hauser_feshbach.npz, canonical_constants.py\n   98: Output: s46_phonon_magnetic_moment.{npz,png}\n   99: \n  100: Author: tesla-resonance (Session 46 W4-17)\n  101: Date: 2026-03-15\n  102: \"\"\"\n  103: \n  104: import sys\n  105: import os\n  106: import numpy as np"
+    },
+    {
+      "anchor_id": "prov_458",
+      "anchor_type": "data_provenance",
+      "name": "pseudo_riemannian",
+      "script_path": "session-46/s46_pseudo_riemannian.py",
+      "session": "s46",
+      "inputs": "",
+      "outputs": "session-46/s46_pseudo_riemannian.npz, session-46/s46_pseudo_riemannian.md",
+      "source_file": "computations/session-46/s46_pseudo_riemannian.py",
+      "source_context_30_lines": " 1463:         'gate_verdict': gate,\n 1464:         'n_axioms_surviving': total_surviving,\n 1465:         'B_kk_eigvals': np.sort(eigvalsh(B_kk)),\n 1466:         'B_pp_eigvals': np.sort(eigvalsh(B_pp)),\n 1467:         'Omega_norm': norm(Omega),\n 1468:         'su3_Omega_norm': norm(Omega_su3),\n 1469:     }\n 1470: \n 1471:     outfile = os.path.join(OUTDIR, 's46_pseudo_riemannian.npz')\n 1472:     np.savez(outfile, **{k: np.array(v) if not isinstance(v, (str, bool, tuple, dict)) else np.array(str(v)) for k, v in results.items()})\n 1473:     print(f\"  Saved: {outfile}\")\n 1474: \n 1475:     elapsed = time.time() - t0\n 1476:     print(f\"\\n  Total time: {elapsed:.1f}s\")\n 1477:     print(\"=\" * 80)\n 1478: \n 1479:     return results"
+    },
+    {
+      "anchor_id": "prov_459",
+      "anchor_type": "data_provenance",
+      "name": "qtheory_selfconsistent",
+      "script_path": "session-46/s46_qtheory_selfconsistent.py",
+      "session": "s46",
+      "inputs": "computations/session-43/s43_lifshitz_class.npz, computations/session-45/s45_qtheory_bcs.npz, computations/session-42/s42...",
+      "outputs": "session-46/s46_qtheory_selfconsistent.npz, session-46/s46_qtheory_selfconsistent.png",
+      "source_file": "computations/session-46/s46_qtheory_selfconsistent.py",
+      "source_context_30_lines": "  743:     'Delta_B3_fold': np.float64(Delta_const_fold[2]),\n  744: \n  745:     'ec_factors': ec_factors,\n  746:     'tau_star_ec_scan': tau_star_ec_scan,\n  747:     'alpha_ec_scan': alpha_ec_scan,\n  748:     'Delta_B2_ec_scan': Delta_B2_ec_scan,\n  749: }\n  750: \n  751: np.savez('computations/session-46/s46_qtheory_selfconsistent.npz', **save_dict)\n  752: print(\"Saved: computations/session-46/s46_qtheory_selfconsistent.npz\")\n  753: \n  754: # ============================================================================\n  755: # STEP 13: Plots\n  756: # ============================================================================\n  757: print(\"Generating plots...\")\n  758: \n  759: fig, axes = plt.subplots(2, 3, figsize=(18, 10))"
+    },
+    {
+      "anchor_id": "prov_460",
+      "anchor_type": "data_provenance",
+      "name": "quasistatic_ns",
+      "script_path": "session-46/s46_quasistatic_ns.py",
+      "session": "s46",
+      "inputs": "computations/session-45/s45_qnm_ns.npz, computations/session-46/s46_qtheory_selfconsistent.npz, computations/session-36/...",
+      "outputs": "session-46/s46_quasistatic_ns.npz, session-46/s46_quasistatic_ns.png",
+      "source_file": "computations/session-46/s46_quasistatic_ns.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s46_quasistatic_ns.py — Quasi-Static Phase at q-Theory Equilibrium (QUASISTATIC-NS-46)\n    4: =======================================================================================\n    5: \n    6: GATE: QUASISTATIC-NS-46\n    7:   PASS: N_e > 10 during dwell at tau*\n    8:   FAIL: N_e < 0.1\n    9: \n   10: Physics:\n   11: --------"
+    }
+  ]
+}

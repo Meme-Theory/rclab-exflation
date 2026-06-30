@@ -1,0 +1,280 @@
+========================================================================
+S53 PHONON-EOS-53: Phonon Equation of State + Exflationary History
+========================================================================
+
+--- Section 1: Load GL dispersion ---
+  K range: [0, 0.7163] M_KK, 51 points
+  Branches: [np.str_('Goldstone'), np.str_('Leggett-1'), np.str_('Leggett-2'), np.str_('Branch-3'), np.str_('Branch-4'), np.str_('Higgs-1')]
+  T_acoustic = 0.112 M_KK (GGE relic temperature)
+  Goldstone: omega = [0.000000, 0.507249]
+  Leggett-1: omega = [0.137695, 0.529396]
+  Leggett-2: omega = [0.192077, 0.985985]
+  Branch-3: omega = [0.378194, 1.455554]
+  Branch-4: omega = [1.409507, 2.792890]
+  Higgs-1: omega = [11.465307, 11.467704]
+
+--- Section 2: Phonon equation of state ---
+  Computing energy density and pressure from Bose-Einstein statistics
+  3D BZ integration: rho = int d^3K/(2pi)^3 omega*n_BE
+  Pressure: p = int d^3K/(2pi)^3 (1/3)*K*(d omega/dK)*n_BE
+  where n_BE = 1/(exp(omega/T) - 1)
+
+  T = 0.112 M_KK:
+  Branch              rho_i          p_i      w_i
+  Goldstone        0.000078     0.000020   0.2583
+  Leggett-1        0.000042     0.000004   0.1004
+  Leggett-2        0.000009     0.000002   0.2012
+  Branch-3         0.000000     0.000000   0.2050
+  Branch-4         0.000000     0.000000   0.0781
+  Higgs-1          0.000000     0.000000   0.0000
+
+  rho_total = 0.000129 M_KK^4
+  p_total   = 0.000026 M_KK^4
+  w_phonon  = 0.202392
+
+  T = 0 (zero-point quantum pressure):
+  Branch             rho_zp         p_zp     w_zp
+  Goldstone        0.001286     0.000288   0.2241
+  Leggett-1        0.001504     0.000139   0.0921
+  Leggett-2        0.002517     0.000543   0.2155
+  Branch-3         0.004404     0.000113   0.0256
+  Branch-4         0.007152     0.001516   0.2119
+  Higgs-1          0.035587     0.000002   0.0001
+
+  rho_zp_total = 0.052451 M_KK^4
+  p_zp_total   = 0.002600 M_KK^4
+  w_zp         = 0.049572
+
+--- Section 3: w(T) — temperature scan ---
+    T (M_KK)          w            rho              p
+       0.001   0.331696       0.000000       0.000000
+       0.005   0.330526       0.000000       0.000000
+       0.010   0.325687       0.000000       0.000000
+       0.020   0.317889       0.000000       0.000000
+       0.050   0.279777       0.000004       0.000001
+       0.080   0.227362       0.000032       0.000007
+       0.100   0.209195       0.000083       0.000017
+       0.112   0.202392       0.000129       0.000026
+       0.150   0.190628       0.000350       0.000067
+       0.200   0.183961       0.000797       0.000147
+       0.300   0.176839       0.002106       0.000372
+       0.500   0.168076       0.005834       0.000981
+       0.800   0.162370       0.013000       0.002111
+       1.000   0.160698       0.018335       0.002946
+       2.000   0.157408       0.047622       0.007496
+       5.000   0.148721       0.147184       0.021889
+      10.000   0.141135       0.327060       0.046160
+      50.000   0.132988       1.811041       0.240846
+     100.000   0.131869       3.672360       0.484271
+
+  Analytic limits:
+  T -> 0:   w -> w_zp = 0.049572
+  T -> inf: w -> 1/3   (radiation, all modes relativistic)
+  At T_acoustic: w = 0.202392
+
+--- Section 4: Branch multiplicities ---
+  The 6 GL branches describe COLLECTIVE modes of the 3-sector condensate.
+  In the full fabric, each cell has these 6 modes. On the 32-cell tessellation:
+  N_cells = 32
+  Total phonon modes = 6 * 32 = 192
+  But the EOS per cell is what enters the local Friedmann equation.
+  The multiplicities affect the total energy density but NOT w.
+  w = p/rho is intensive (per cell).
+
+--- Section 5: Exflationary expansion history ---
+  The Jensen TT-deformation is EXACTLY volume-preserving:
+  V_int(tau) = Vol_SU3_Haar * det(g(tau)/g(0))^{1/2} = const
+  L1^1 * L2^3 * L3^4 = e^{2s-6s+4s} = 1
+  So V_int does NOT change. There is NO KK volume-driven expansion.
+
+  The expansion is from the ACOUSTIC METRIC (BLV-CONFORMAL-53):
+  a_acoustic = a_geom * sqrt(rho_s / c_s)
+  N_e^acoustic = N_e^geom + (1/2)*ln(rho_f/rho_i) - (1/2)*ln(c_sf/c_si)
+
+  Three contributions:
+  1. Geometric: N_e^geom = 0.1734 (EFOLD-MAPPING-52)
+  2. Sound speed: (1/2)*ln(c_fabric/c_Gold) = (1/2)*ln(229.48)
+     = 2.7179 e-folds
+
+  Superfluid density rho_s(tau) = sum_alpha rho_alpha * Delta_alpha^2:
+    tau = 0.01: rho_s = 7.930074
+    tau = 0.03: rho_s = 7.958799
+    tau = 0.05: rho_s = 8.064709
+    tau = 0.07: rho_s = 8.156296
+    tau = 0.10: rho_s = 8.266961
+    tau = 0.12: rho_s = 8.322998
+    tau = 0.14: rho_s = 8.364878
+    tau = 0.16: rho_s = 8.392616
+    tau = 0.18: rho_s = 8.406207
+    tau = 0.19: rho_s = 8.407693
+    tau = 0.20: rho_s = 8.405632
+    tau = 0.22: rho_s = 8.390854
+    tau = 0.25: rho_s = 8.341931
+    tau = 0.30: rho_s = 8.188336
+    tau = 0.35: rho_s = 7.943033
+
+  rho_s(tau=0.01) = 7.930074
+  rho_s(fold)     = 8.407693
+  rho_s max       = 8.407693 at tau = 0.19
+  rho_s max/min   = 1.0602
+
+  3. Density: (1/2)*ln(rho_f/rho_i) = 0.0292
+
+  N_e^total = 0.1734 + 2.7179 + 0.0292 = 2.9205
+
+--- Section 6: Acoustic Hubble parameter H_acoustic(tau) ---
+  a_acoustic(tau) = sqrt(rho_s / c_Gold) * a_geom [relative]
+     tau      rho_s     c_Gold  a_acous/a_0
+    0.01   7.930074   0.913604     1.000000
+    0.03   7.958799   0.913722     1.001745
+    0.05   8.064709   0.914151     1.008151
+    0.07   8.156296   0.914517     1.013657
+    0.10   8.266961   0.914949     1.020269
+    0.12   8.322998   0.915160     1.023603
+    0.14   8.364878   0.915313     1.026090
+    0.16   8.392616   0.915406     1.027737
+    0.18   8.406207   0.915442     1.028549
+    0.19   8.407693   0.915439     1.028642
+    0.20   8.405632   0.915421     1.028526
+    0.22   8.390854   0.915343     1.027665
+    0.25   8.341931   0.915122     1.024788
+    0.30   8.188336   0.914474     1.015670
+    0.35   7.943033   0.913475     1.000887
+
+  H_geom at fold = 586.53 M_KK (S38 KZ)
+
+  Acoustic Hubble parameter H_acoustic(tau):
+     tau   H_acoustic H_acous/H_geom
+    0.01       216.45         0.3690
+    0.03       220.08         0.3752
+    0.05       219.11         0.3736
+    0.07       217.12         0.3702
+    0.10       215.06         0.3667
+    0.12       213.88         0.3647
+    0.14       212.94         0.3630
+    0.16       212.18         0.3618
+    0.18       211.62         0.3608
+    0.19       211.40         0.3604
+    0.20       211.24         0.3601
+    0.22       211.04         0.3598
+    0.25       211.08         0.3599
+    0.30       212.07         0.3616
+    0.35       214.25         0.3653
+
+  H_acoustic at fold = 211.40 M_KK
+  Ratio H_acoustic/H_geom = 0.3604
+
+--- Section 7: Phonon stress-energy on acoustic metric ---
+  rho_phonon = 0.000129 M_KK^4
+  p_phonon   = 0.000026 M_KK^4
+  w_phonon   = 0.202392
+
+  rho_geom (from H_fold) = 3*M_p^2*H^2 = 1108852800.49 M_KK^4
+  rho_phonon / rho_geom = 1.164047e-13
+  Phonon stress-energy is NEGLIGIBLE compared to geometric (modulus) energy.
+  The expansion is entirely GEOMETRIC during the transit epoch.
+
+--- Section 8: Integrated expansion history ---
+  E-folds at fold (tau=0.19):
+  N_e^acoustic_only = 0.0282
+  N_e^geom         = 0.1734
+  N_e^full         = 0.2015
+
+  Including c_fabric -> c_Gold transition (ONSET):
+  N_e^sound (onset) = 2.7179
+  N_e^GL_internal   = 0.0282
+  N_e^geom          = 0.1734
+  N_e^total         = 2.9195
+
+--- Section 9: Cross-checks ---
+  W1-5 prior: w = 0.158, bracket [0.050, 0.222]
+  This computation: w = 0.202392
+
+  Goldstone-only EOS:
+    w_Goldstone = 0.258284 (expect ~1/3 = 0.333333)
+  Higgs-only EOS (massive, gap = 11.47):
+    w_Higgs = 0.000000 (expect ~0 for gap >> T)
+    rho_Higgs = 2.441489e-46 (Boltzmann-suppressed)
+
+  Energy-weighted decomposition:
+    Goldstone   : frac=0.6023, w_i=0.2583, frac*w_i=0.1556
+    Leggett-1   : frac=0.3292, w_i=0.1004, frac*w_i=0.0330
+    Leggett-2   : frac=0.0663, w_i=0.2012, frac*w_i=0.0133
+    Branch-3    : frac=0.0023, w_i=0.2050, frac*w_i=0.0005
+    Branch-4    : frac=0.0000, w_i=0.0781, frac*w_i=0.0000
+    Higgs-1     : frac=0.0000, w_i=0.0000, frac*w_i=0.0000
+
+  Sum of frac*w_i = 0.202392 = w_total (consistency check)
+
+--- Section 10: High-T (equipartition) limit ---
+  T = 1000 M_KK: w = 0.130848
+  Expected: w -> 1/3 = 0.333333 (all modes classical/relativistic)
+  Deviation from 1/3: 0.202485
+
+========================================================================
+GATE: PHONON-EOS-53
+========================================================================
+
+  w_phonon at T_acoustic = 0.112 M_KK:
+    w = 0.202392
+    rho = 0.000129 M_KK^4
+    p = 0.000026 M_KK^4
+
+  w_zp (T=0): 0.049572
+  w_highT (T=1000): 0.130848
+
+  Expansion history:
+    N_e^geom    = 0.1734
+    N_e^sound   = 2.7179
+    N_e^density = 0.0292
+    N_e^total   = 2.9205
+
+  H_acoustic at fold = 211.40 M_KK
+  rho_phonon/rho_geom = 1.16e-13
+
+  Verdict: INFO
+  Detail: w_phonon = 0.2024 at T_acoustic = 0.112. Bracket: [0.050, 0.333] (T=0 to T=inf). N_e^acoustic = 2.92. Phonon stress-energy negligible vs geometric: rho_ph/rho_geom = 1.2e-13. Expansion driven by acoustic metric (c_fabric/c_Gold = 229x), not vacuum energy.
+
+--- Section 12: Saving data ---
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s53_phonon_eos.npz
+
+--- Section 13: Plotting ---
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s53_phonon_eos.png
+
+========================================================================
+SUMMARY: PHONON-EOS-53
+========================================================================
+
+  EQUATION OF STATE:
+    w_phonon = 0.202392 at T_acoustic = 0.112 M_KK
+    Bracket: w in [0.0496, 0.3333] (T=0 to T=inf)
+    At T_acoustic, w = 0.2024: radiation-like (gap < T for 3/6 branches)
+    Goldstone-only: w = 0.2583 (linear dispersion -> radiation)
+    Massive modes suppressed: Higgs rho/total = 1.89e-42
+
+  EXFLATIONARY EXPANSION HISTORY:
+    Jensen metric: EXACTLY volume-preserving (det(g) = const)
+    Expansion mechanism: ACOUSTIC METRIC (BLV)
+      a_acoustic = a_geom * sqrt(rho_s / c_s)
+      N_e^geom    = 0.1734 (KK geometric ceiling)
+      N_e^sound   = 2.7179 (c_fabric/c_Gold = 229x)
+      N_e^density = 0.0292 (GL internal rho_s variation)
+      N_e^total   = 2.9205
+    H_acoustic at fold = 211.40 M_KK
+    H_acous/H_geom = 0.3604
+
+  PHONON STRESS-ENERGY vs GEOMETRIC:
+    rho_phonon / rho_geom = 1.16e-13
+    Phonon gas is ENERGETICALLY IRRELEVANT to the expansion.
+    Exflation is driven by the ACOUSTIC METRIC, not by w_phonon.
+
+  CRITICAL DISTINCTION:
+    In inflation, w < -1/3 drives accelerated expansion (vacuum energy).
+    In exflation, expansion comes from the acoustic metric scale factor:
+    the 229x c_fabric/c_Gold hierarchy means phononic observers see
+    a MUCH LARGER universe than geometric observers, regardless of w.
+    The phonon w = 0.202 does NOT need to be negative.
+
+  Gate: PHONON-EOS-53 = INFO
+  w_phonon = 0.2024 at T_acoustic = 0.112. Bracket: [0.050, 0.333] (T=0 to T=inf). N_e^acoustic = 2.92. Phonon stress-energy negligible vs geometric: rho_ph/rho_geom = 1.2e-13. Expansion driven by acoustic metric (c_fabric/c_Gold = 229x), not vacuum energy.
+========================================================================

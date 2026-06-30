@@ -1,0 +1,183 @@
+======================================================================
+S53 ACOUSTIC-CASIMIR-GL-53: Lattice Casimir from Tight-Binding Bands
+======================================================================
+
+--- Section 1: Load upstream data ---
+  K_BZ = 0.716319 M_KK
+  a_BCC = 4.3857 M_KK^{-1}
+  N_K grid points = 51 (K=0 to K_BZ)
+  Branches: [np.str_('Goldstone'), np.str_('Leggett-1'), np.str_('Leggett-2'), np.str_('Branch-3'), np.str_('Branch-4'), np.str_('Higgs-1')]
+  Tau values (15): [0.01 0.03 0.05 0.07 0.1  0.12 0.14 0.16 0.18 0.19 0.2  0.22 0.25 0.3
+ 0.35]
+  omega_full shape: (15, 51, 6)
+
+--- Section 2: Physical K-point sampling ---
+  N_cells = 32
+  L_system = N_cells * a_BCC = 140.3438 M_KK^{-1}
+  1D DOS factor = L/(2*pi) = 22.3364
+  K_BZ = pi/a = 0.716319
+
+  Physical K-points (N=32, 17 unique):
+    K_phys = [0.         0.04476994 0.08953988 0.13430982 0.17907976]...[0.62677917 0.67154911 0.71631905]
+    K_phys[-1] = 0.716319 vs K_BZ = 0.716319
+    Match: True
+
+--- Section 3: Interpolation to physical K-points ---
+  Interpolated dispersion at fold (tau=0.19):
+    Goldstone   : omega_min=0.000000, omega_max=0.507249
+    Leggett-1   : omega_min=0.137695, omega_max=0.529396
+    Leggett-2   : omega_min=0.192077, omega_max=0.985985
+    Branch-3    : omega_min=0.378194, omega_max=1.455554
+    Branch-4    : omega_min=1.409507, omega_max=2.792890
+    Higgs-1     : omega_min=11.465307, omega_max=11.467704
+
+--- Section 4: Casimir energy computation ---
+
+  Method A (trapezoidal, continuous BZ):
+    Per branch:
+      Goldstone   : E_zp = 4.631724 M_KK
+      Leggett-1   : E_zp = 6.400704 M_KK
+      Leggett-2   : E_zp = 9.818951 M_KK
+      Branch-3    : E_zp = 18.742733 M_KK
+      Branch-4    : E_zp = 29.953968 M_KK
+      Higgs-1     : E_zp = 183.460643 M_KK
+    Total E_Casimir = 253.008723 M_KK
+
+  Method B (discrete, 32 physical K-points):
+    Per branch:
+      Goldstone   : E_zp = 4.629617 M_KK
+      Leggett-1   : E_zp = 6.403424 M_KK
+      Leggett-2   : E_zp = 9.811628 M_KK
+      Branch-3    : E_zp = 18.743539 M_KK
+      Branch-4    : E_zp = 29.967560 M_KK
+      Higgs-1     : E_zp = 183.460654 M_KK
+    Total E_Casimir = 253.016423 M_KK
+
+  Agreement: 0.00%
+
+  E_Casimir / (6 * N_cells) = 1.317794 M_KK per mode
+
+  Goldstone (acoustic) zero-point energy:
+    Discrete:     E_Gold = 4.629617 M_KK
+    Trapezoidal:  E_Gold = 4.631724 M_KK
+    Fraction:     E_Gold/E_total = 0.0183
+
+--- Section 5: Energy scale comparison ---
+  E_Casimir = 253.016423 M_KK
+  E_cond    = -0.136851 M_KK
+  |E_Cas/E_cond| = 1848.8519
+  a0_fold   = 6440.0 (spectral action volume term)
+  E_Cas/a0_fold = 3.928826e-02
+  S_fold    = 250360.68 (full spectral action)
+  E_Cas/S_fold = 1.010608e-03
+
+  V_KK scale ~ a0_fold = 6440.0
+  E_Cas / V_KK = 3.928826e-02
+
+--- Section 6: E_Casimir(tau) — tau sweep ---
+     tau   E_total(disc)      E_Gold  E_total(trapz)
+   0.010      234.939102    4.625311      234.931754
+   0.030      235.367648    4.625602      235.360289
+   0.050      237.157874    4.626664      237.150474
+   0.070      239.068840    4.627560      239.061398
+   0.100      242.159257    4.628600      242.151751
+   0.120      244.367447    4.629094      244.359899
+   0.140      246.693020    4.629433      246.685429
+   0.160      249.135311    4.629619      249.127676
+   0.180      251.693768    4.629655      251.686090
+   0.190      253.016423    4.629617      253.008723
+   0.200      254.367969    4.629543      254.360247
+   0.220      257.157601    4.629288      257.149835
+   0.250      261.558079    4.628640      261.550248
+   0.300      269.468105    4.626875      269.460164
+   0.350      278.100266    4.624285      278.092219
+
+--- Section 7: Monotonicity analysis ---
+  E_total range: [234.939102, 278.100266] M_KK
+  Delta_E = E_max - E_min = 43.161165 M_KK
+  Relative variation: 17.2449%
+
+  dE/dtau values:
+    tau ~ 0.020: dE/dtau = +21.427298 (+)
+    tau ~ 0.040: dE/dtau = +89.511298 (+)
+    tau ~ 0.060: dE/dtau = +95.548339 (+)
+    tau ~ 0.085: dE/dtau = +103.013879 (+)
+    tau ~ 0.110: dE/dtau = +110.409533 (+)
+    tau ~ 0.130: dE/dtau = +116.278651 (+)
+    tau ~ 0.150: dE/dtau = +122.114510 (+)
+    tau ~ 0.170: dE/dtau = +127.922886 (+)
+    tau ~ 0.185: dE/dtau = +132.265442 (+)
+    tau ~ 0.195: dE/dtau = +135.154586 (+)
+    tau ~ 0.210: dE/dtau = +139.481607 (+)
+    tau ~ 0.235: dE/dtau = +146.682619 (+)
+    tau ~ 0.275: dE/dtau = +158.200509 (+)
+    tau ~ 0.325: dE/dtau = +172.643232 (+)
+
+  MONOTONE INCREASING across [0.01, 0.35]
+
+  Per-branch monotonicity:
+    Goldstone   : E=[4.624285, 4.629655], NON-MONOTONE (1 sign change(s))
+    Leggett-1   : E=[6.339232, 6.403790], NON-MONOTONE (1 sign change(s))
+    Leggett-2   : E=[9.809143, 9.902779], NON-MONOTONE (1 sign change(s))
+    Branch-3    : E=[18.734961, 19.079750], NON-MONOTONE (1 sign change(s))
+    Branch-4    : E=[29.270821, 31.292317], INCREASING
+    Higgs-1     : E=[165.882504, 206.925599], INCREASING
+
+--- Section 8: Goldstone (acoustic) zero-point energy ---
+  tau=0.010: c_Gold=0.913604, E_Gold(analytic)=5.235455, E_Gold(computed)=4.625311, ratio=0.883459
+  tau=0.190: c_Gold=0.915439, E_Gold(analytic)=5.245969, E_Gold(computed)=4.629617, ratio=0.882509
+  tau=0.350: c_Gold=0.913475, E_Gold(analytic)=5.234717, E_Gold(computed)=4.624285, ratio=0.883388
+
+--- Section 9: Stabilization assessment ---
+  E_Casimir is MONOTONE across the tau range.
+  No stabilization from lattice Casimir effect.
+
+  Mean gradient dE_Cas/dtau = 126.9446 M_KK per unit tau
+  Spectral action gradient dS/dtau|_fold = 58672.80
+  Ratio = 2.163602e-03
+
+--- Section 10: Energy decomposition ---
+
+  Energy decomposition at tau = 0.19 (fold):
+  Branch         E_zp (M_KK)    Fraction  Character 
+  Goldstone         4.629617      0.0183  acoustic  
+  Leggett-1         6.403424      0.0253  optical   
+  Leggett-2         9.811628      0.0388  optical   
+  Branch-3         18.743539      0.0741  gapped    
+  Branch-4         29.967560      0.1184  gapped    
+  Higgs-1         183.460654      0.7251  gapped    
+  TOTAL           253.016423
+
+  Phase modes (0-2):     20.844669 M_KK (0.0824)
+  Amplitude modes (3-5): 232.171753 M_KK (0.9176)
+
+--- Section 11: Gate ACOUSTIC-CASIMIR-GL-53 ---
+  Gate: ACOUSTIC-CASIMIR-GL-53
+  Verdict: INFO
+  Detail: E_Casimir = 253.0164 M_KK at fold. |E_Cas/E_cond| = 1848.9. E_Cas/a0 = 3.93e-02. E_Casimir(tau) is MONOTONE. NO STABILIZATION. Goldstone fraction = 0.0183.
+
+--- Section 12: Plotting ---
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s53_acoustic_casimir.png
+
+--- Section 13: Saving data ---
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s53_acoustic_casimir.npz
+
+======================================================================
+SUMMARY: ACOUSTIC-CASIMIR-GL-53
+======================================================================
+  Lattice: BCC, a = 4.3857, K_BZ = 0.7163, N_cells = 32
+  6 branches, 192 = 192 physical modes
+  15 tau values: [0.01, 0.35]
+
+  E_Casimir at fold = 253.0164 M_KK
+    |E_Cas/E_cond| = 1848.9
+    E_Cas/a0_fold = 3.93e-02
+    Goldstone fraction: 0.0183
+    Higgs-1 fraction: 0.7251
+
+  E_Casimir(tau): MONOTONE
+    Variation: 43.1612 M_KK (17.24%)
+
+  Gate: ACOUSTIC-CASIMIR-GL-53 — INFO
+  E_Casimir = 253.0164 M_KK at fold. |E_Cas/E_cond| = 1848.9. E_Cas/a0 = 3.93e-02. E_Casimir(tau) is MONOTONE. NO STABILIZATION. Goldstone fraction = 0.0183.
+======================================================================

@@ -1,0 +1,107 @@
+{
+  "table": "gates",
+  "batch_id": 11,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "gate_LEGGETT-PHI-CONFIRM-50",
+      "anchor_type": "gates",
+      "name": "LEGGETT-PHI-CONFIRM-50",
+      "session": "50",
+      "condition": "PASS",
+      "verdict": "= 0.0609% < 0.1%",
+      "source_file": "sessions\\archive\\session-50\\session-50-results-workingpaper.md",
+      "source_context_30_lines": "  264: **Virtual mass renormalization**: Off-shell pair creation gives Re[Sigma] = -9.24e-6, shifting omega_L by -0.096%. The renormalized frequency is 0.06949 M_KK (negligible correction).\n  265: \n  266: **Consequence for DIPOLAR-CATALOG-49**: The Leggett mass m_G = omega_L1 = 0.070 M_KK is a well-defined collective mode mass. The mass concept is VALID. The 18% overshoot from the n_s requirement (m_req = 0.059) persists as a quantitative tension but is not invalidated by damping.\n  267: \n  268: **Files**: `computations/s50_leggett_damping.py`, `s50_leggett_damping.npz`, `s50_leggett_damping.png`\n  269: \n  270: ---\n  271: \n  272: ### W1-E: Leggett Phi Confirmation (LEGGETT-PHI-CONFIRM-50) — tesla-resonance\n  273: \n  274: **Status**: COMPLETE\n  275: **Gate**: LEGGETT-PHI-CONFIRM-50. PASS if |R(0.21)/phi - 1| < 0.1%. FAIL if > 1%.\n  276: \n  277: **Results**:\n  278: \n  279: **VERDICT: PASS** -- |R(0.21)/phi_paasch - 1| = 0.0609% < 0.1% threshold.\n  280: "
+    },
+    {
+      "anchor_id": "gate_RUNNING-MASS-50",
+      "anchor_type": "gates",
+      "name": "RUNNING-MASS-50",
+      "session": "50",
+      "condition": "FAIL",
+      "verdict": "Structural theorem: gamma < 1-n_s = 0.035. Algebraic bound.",
+      "source_file": "sessions\\archive\\session-50\\session-50-results-workingpaper.md",
+      "source_context_30_lines": "  308: \n  309: **Files**:\n  310: - Script: `computations/s50_leggett_phi_confirm.py`\n  311: - Data: `computations/s50_leggett_phi_confirm.npz`\n  312: - Plot: `computations/s50_leggett_phi_confirm.png`\n  313: \n  314: ---\n  315: \n  316: ### W1-F: Running Mass from Anomalous Dimension (RUNNING-MASS-50) — landau-condensed-matter-theorist\n  317: \n  318: **Status**: COMPLETE\n  319: **Gate**: RUNNING-MASS-50. PASS if gamma > 1.7 AND alpha_s shifts within 2σ Planck. FAIL if gamma < 0.5.\n  320: \n  321: **Verdict: FAIL** (structural exclusion: gamma > 1.7 is algebraically impossible for n_s = 0.965)\n  322: \n  323: **Results**:\n  324: "
+    },
+    {
+      "anchor_id": "gate_EIKONAL-DAMPING-50",
+      "anchor_type": "gates",
+      "name": "EIKONAL-DAMPING-50",
+      "session": "50",
+      "condition": "FAIL",
+      "verdict": "Zero-mode protection: Goldstone is KK n=0, <V>=0 on T².",
+      "source_file": "sessions\\archive\\session-50\\session-50-results-workingpaper.md",
+      "source_context_30_lines": "  443: | Runtime | 19.4s | 5 tau values, ~450 null dirs each |\n  444: \n  445: **Script**: `computations/s50_lorentzian_cmpp.py`\n  446: **Data**: `computations/s50_lorentzian_cmpp.npz`\n  447: **Plot**: `computations/s50_lorentzian_cmpp.png`\n  448: \n  449: ---\n  450: \n  451: ### W1-H: Eikonal Damping in Fabric Propagator (EIKONAL-DAMPING-50) — quantum-acoustics-theorist\n  452: \n  453: **Status**: COMPLETE\n  454: **Gate**: EIKONAL-DAMPING-50. PASS if Gamma/m² > 0.1. FAIL if < 0.01.\n  455: \n  456: **Results**:\n  457: \n  458: **VERDICT: FAIL** — Gamma(K_pivot) / m_G^2 = 0 (exact). Eikonal damping does NOT modify the Goldstone propagator.\n  459: "
+    },
+    {
+      "anchor_id": "gate_ANOMALOUS-DISPERSION-50",
+      "anchor_type": "gates",
+      "name": "ANOMALOUS-DISPERSION-50",
+      "session": "50",
+      "condition": "FAIL",
+      "verdict": "Z₃ softens coupling (m² renorm) but dispersion stays K².",
+      "source_file": "sessions\\archive\\session-50\\session-50-results-workingpaper.md",
+      "source_context_30_lines": "  822: **Broken nuclear analogy**: The deep-dive (Section 3.6, 3.8) hypothesized that nuclear effective charges (which correct B(E2) by factors of 2-5 via RPA) might analogously correct alpha_s. This analogy BREAKS for a specific structural reason: nuclear effective charges correct MATRIX ELEMENTS |<f|O|i>|^2, which do not have a mass hierarchy in the denominator. The framework's propagator D(K) = T/(J K^2 + m^2) has m^2 >> J K^2 in the denominator, which kills the RPA correction. The g^2 chi_0 = 0.51 (comparable to nuclear ~1) confirms the COUPLING is nuclear-scale, but the OBSERVABLE (propagator slope) is insensitive because of the mass hierarchy. This is a broken analogy to add to the registry.\n  823: \n  824: **Self-correction**: The deep-dive estimated g^2 chi_0 ~ 1.54. The actual computation gives 0.51 -- a factor of 3 lower. The discrepancy: the deep-dive used chi_0 = rho_B2 F_transfer^2 = 14.02 x 2.13^2 = 63.5, which OMITTED the energy denominator 2 E_qp in the susceptibility. Including it reduces chi_0 by a factor of ~3 (from 63.5 to 21.1). This reinforces the FAIL: even the corrected g^2 chi_0 = 0.51 produces negligible RPA correction.\n  825: \n  826: **Data files**: `computations/s50_fabric_rpa.py`, `computations/s50_fabric_rpa.npz`, `computations/s50_fabric_rpa.png`\n  827: \n  828: ---\n  829: \n  830: ### W2-G: Anomalous Dispersion on Disordered Fabric (ANOMALOUS-DISPERSION-50) — landau-condensed-matter-theorist\n  831: \n  832: **Status**: COMPLETE\n  833: **Gate**: ANO\n... [truncated]"
+    },
+    {
+      "anchor_id": "gate_SIGMA8-OZ-50",
+      "anchor_type": "gates",
+      "name": "SIGMA8-OZ-50",
+      "session": "50",
+      "condition": "PASS",
+      "verdict": "In [0.740, 0.820]. S49 \"21% shift\" was 14× overestimate.",
+      "source_file": "sessions\\archive\\session-50\\session-50-results-workingpaper.md",
+      "source_context_30_lines": "  705: 1. Leaving the sudden-quench regime (slower transit -- but v_terminal = 26.5 M_KK is set by the gradient energy)\n  706: 2. A mechanism beyond single-mode Landau-Zener (multi-mode interference, collective effects)\n  707: 3. A completely different origin for the power spectrum (order parameter texture, spectral function)\n  708: \n  709: **Data files**: `computations/s50_kz_spatial.py`, `computations/s50_kz_spatial.npz`, `computations/s50_kz_spatial.png`\n  710: \n  711: ---\n  712: \n  713: ### W2-F: sigma_8 from O-Z Rigid Prediction (SIGMA8-OZ-50) — gen-physicist\n  714: \n  715: **Status**: COMPLETE\n  716: **Gate**: SIGMA8-OZ-50. PASS if sigma_8 in [0.740, 0.820]. FAIL if outside [0.640, 0.920].\n  717: \n  718: **Gate Verdict: PASS**\n  719: \n  720: The rigid O-Z prediction alpha_s = n_s^2 - 1 = -0.069 produces sigma_8 = 0.799, a -1.50% shift from the no-running LCDM baseline. This lands inside the pass band [0.740, 0.820] and sits between Planck and lensing measurements.\n  721: "
+    },
+    {
+      "anchor_id": "gate_FABRIC-RPA-50",
+      "anchor_type": "gates",
+      "name": "FABRIC-RPA-50",
+      "session": "50",
+      "condition": "FAIL",
+      "verdict": "χ₀(K) too flat + mass hierarchy. Nuclear analogy breaks.",
+      "source_file": "sessions\\archive\\session-50\\session-50-results-workingpaper.md",
+      "source_context_30_lines": "  774: \n  775: **Files:**\n  776: - Script: `computations/s50_sigma8_oz.py`\n  777: - Data: `computations/s50_sigma8_oz.npz`\n  778: - Plot: `computations/s50_sigma8_oz.png`\n  779: \n  780: ---\n  781: \n  782: ### W2-B: Fabric RPA (FABRIC-RPA-50) — nazarewicz-nuclear-structure-theorist\n  783: \n  784: **Status**: COMPLETE\n  785: **Gate**: FABRIC-RPA-50. PASS if alpha_s(RPA) in [-0.040, 0]. FAIL if alpha_s(RPA) = n_s^2 - 1 (identity survives RPA).\n  786: \n  787: **Gate Verdict: FAIL** -- RPA correction to alpha_s is 1.1e-5. Identity survives. 8.4 sigma tension unchanged.\n  788: \n  789: **Method**: Compute the static pair susceptibility chi_0(K) on the 32-cell fabric from the 8-mode BdG quasiparticle spectrum (S48 ED), then solve the RPA Dyson equation D_RPA(K) = D_0(K) / [1 - g^2 chi_0(K) D_0(K)] with g = V(B2,B2) = 0.1557. Extract n_s(RPA) and alpha_s(RPA) from log-derivative fitting of D_RPA.\n  790: "
+    },
+    {
+      "anchor_id": "gate_DESI-DR3-JOINT-50",
+      "anchor_type": "gates",
+      "name": "DESI-DR3-JOINT-50",
+      "session": "50",
+      "condition": "FAIL",
+      "verdict": "Δχ² = +241 vs LCDM. BAO distances exclude w_0 = -0.51.",
+      "source_file": "sessions\\archive\\session-50\\session-50-results-workingpaper.md",
+      "source_context_30_lines": "  527: **Gate**: NS-ALPHAS-3POLE-50. Cross-check: agrees with W1-A to < 5%.\n  528: \n  529: **Results**:\n  530: \n  531: *(Agent writes here)*\n  532: \n  533: ---\n  534: \n  535: ### W2-C: DESI DR3 Joint Constraint Update (DESI-DR3-JOINT-50) — cosmic-web-theorist\n  536: \n  537: **Status**: COMPLETE\n  538: **Gate**: DESI-DR3-JOINT-50. PASS if chi^2/N < 2 against DESI BAO. FAIL if > 4.\n  539: \n  540: **GATE VERDICT: FAIL**\n  541: \n  542: The framework's w_0 = -0.509 (band midpoint) produces BAO distances 6-15% discrepant from DESI DR1 data across all redshift bins. chi^2/N = 23.2, far exceeding the FAIL threshold of 4. The framework is excluded by BAO distances at overwhelming confidence (Delta_chi^2 = +241 vs LCDM).\n  543: "
+    },
+    {
+      "anchor_id": "gate_W_A-SOURCE-50",
+      "anchor_type": "gates",
+      "name": "W_A-SOURCE-50",
+      "session": "50",
+      "condition": "FAIL",
+      "verdict": "Triple-locked: trapping + integrability + frozen modulus.",
+      "source_file": "sessions\\archive\\session-50\\session-50-results-workingpaper.md",
+      "source_context_30_lines": "  606: \n  607: **Files:**\n  608: - Script: `computations/s50_desi_dr3_joint.py`\n  609: - Data: `computations/s50_desi_dr3_joint.npz`\n  610: - Plot: `computations/s50_desi_dr3_joint.png`\n  611: \n  612: ---\n  613: \n  614: ### W2-D: What Breaks w_a = 0? (W_A-SOURCE-50) — einstein-theorist\n  615: \n  616: **Status**: COMPLETE\n  617: **Gate**: W_A-SOURCE-50. PASS if |w_a| > 0.1 from identified mechanism.\n  618: \n  619: **Gate Verdict: FAIL**\n  620: \n  621: All four candidate mechanisms produce w_a = 0 exactly under physical assumptions. The framework prediction w_a = 0 is structural and cannot be broken without abandoning core framework features.\n  622: "
+    },
+    {
+      "anchor_id": "gate_KZ-SPATIAL-50",
+      "anchor_type": "gates",
+      "name": "KZ-SPATIAL-50",
+      "session": "50",
+      "condition": "FAIL",
+      "verdict": "Sudden-quench universality. All cells identical to 0.059%.",
+      "source_file": "sessions\\archive\\session-50\\session-50-results-workingpaper.md",
+      "source_context_30_lines": "  652: Breaking any one: trapping -> fine-tuning; integrability -> wrong direction; modulus -> excluded.\n  653: \n  654: **Implication**: The S49 2D Bayes factor B = 0.073 is driven by w_a. This computation confirms no mechanism generates w_a != 0. If DESI DR3 confirms |w_a| > 0.3 at 3-sigma, framework is EXCLUDED at the w_a level.\n  655: \n  656: **Files**: `computations/s50_wa_source.py`, `s50_wa_source.npz`, `s50_wa_source.png`\n  657: \n  658: ---\n  659: \n  660: ### W2-E: Spatial KZ Pair Creation (KZ-SPATIAL-50) — volovik-superfluid-universe-theorist\n  661: \n  662: **Status**: COMPLETE\n  663: **Gate**: KZ-SPATIAL-50. PASS if n_s in [0.950, 0.980]. FAIL if n_s = 1.000 +/- 0.001 (featureless).\n  664: \n  665: **Results**:\n  666: \n  667: **GATE KZ-SPATIAL-50: FAIL** -- Spectrum featureless. 13th n_s route CLOSED.\n  668: "
+    },
+    {
+      "anchor_id": "gate_POLARITON-51",
+      "anchor_type": "gates",
+      "name": "POLARITON-51",
+      "session": "51",
+      "condition": "FAIL",
+      "verdict": "alpha-2",
+      "source_file": "sessions\\archive\\session-51\\session-51-results-workingpaper.md",
+      "source_context_30_lines": "   31: 8. **Im(Σ) = 0 ≠ Re(Σ) = 0**: Zero-mode protection prevents damping but NOT mass renormalization (QA finding).\n   32: 9. **Anderson-Higgs**: Sole surviving Goldstone theorem loophole (Landau). Requires U(1)_7 gauging.\n   33: 10. **Phi crossing real**: τ = 0.211686, confirmed 6 sig figs. Q = 670,000.\n   34: \n   35: ---\n   36: \n   37: ## Wave 1 — Quick Checks & Foundation (all LOW cost)\n   38: \n   39: ### W1-A: Polariton/Hopfield Model (POLARITON-51) — landau-condensed-matter-theorist\n   40: \n   41: **Status**: COMPLETE\n   42: **Gate**: POLARITON-51. PASS if lower polariton alpha_eff differs from 2.0 by > 0.1.\n   43: \n   44: **Results**:\n   45: \n   46: **VERDICT: FAIL** -- Coupling too weak. Maximum |alpha_eff - 2| = 0.0038 (26x below threshold). Gate threshold UNREACHABLE within the stable regime of the Hopfield model.\n   47: "
+    }
+  ]
+}

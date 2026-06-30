@@ -161,9 +161,9 @@ Session 29 completes a paradigm shift in what "observational prediction" means f
 **Before Session 29**: Search for dynamical signatures — rolling quintessence, parametric amplification imprints, GW spectra.
 **After Session 29**: All dynamical signatures structurally inaccessible. The framework's testable content is the frozen Standard Model itself — derived SM parameters that either match measurements or don't.
 
-### V.2 Tiered Prediction Table
+### V.2 Leveled Prediction Table
 
-**TIER 1 — Pre-registerable now, testable within 5 years**
+**LEVEL 1 — Pre-registerable now, testable within 5 years**
 
 | Test | Type | Free Parameters | Instrument | Criterion |
 |:-----|:-----|:---------------|:-----------|:----------|
@@ -171,7 +171,7 @@ Session 29 completes a paradigm shift in what "observational prediction" means f
 | sin^2(theta_W) at off-Jensen | Internal consistency | 0 | Computation (P-30w) | [0.20, 0.25] |
 | Proton lifetime | Positive prediction | 1 (M_KK) | Hyper-K (~2027) | tau_p in [10^34, 10^38] yr |
 
-**TIER 2 — Testable with existing data, requires framework computation**
+**LEVEL 2 — Testable with existing data, requires framework computation**
 
 | Test | Type | Free Parameters | Prerequisite |
 |:-----|:-----|:---------------|:-------------|
@@ -179,7 +179,7 @@ Session 29 completes a paradigm shift in what "observational prediction" means f
 | RGE consistency (absolute) | Gate | 1 (M_KK) | Spectral action normalization |
 | BAO as M_KK constraint | Consistency | 1 (M_KK) | Baryogenesis model |
 
-**TIER 3 — Directional, not yet quantitative**
+**LEVEL 3 — Directional, not yet quantitative**
 
 | Test | Prediction | Instrument | Timeline |
 |:-----|:-----------|:-----------|:---------|
@@ -187,7 +187,7 @@ Session 29 completes a paradigm shift in what "observational prediction" means f
 | dalpha/alpha = 0 | Null at all z | ELT-ANDES | Future |
 | dG/dt = 0 | Null | Binary pulsars / LLR | Ongoing |
 
-**TIER 4 — Theoretical, requires new computation**
+**LEVEL 4 — Theoretical, requires new computation**
 
 | Test | Prerequisite | Status |
 |:-----|:-------------|:-------|
@@ -247,7 +247,7 @@ Two parts:
 
 **Method**: Compute Res_W(D_K(tau_frozen)^{-8}) from Peter-Weyl expansion. Cutoff-independent definition, alternative to divergent L-8 sector sum.
 
-**Advantage**: Resolves ambiguity in Tier 4 cosmological constant prediction.
+**Advantage**: Resolves ambiguity in Level 4 cosmological constant prediction.
 
 **Cost**: Low (single number from leading symbol of D_K^{-8}).
 
@@ -286,7 +286,7 @@ Two parts:
 | **P-30w** | Existential | sin^2(theta_W) in [0.20, 0.25] at off-Jensen minimum | ~1 hr (Dirac spectrum) or ~20 sec (Seeley-DeWitt shortcut) | ALL quantitative predictions depend on this |
 | **P-30phi** | Existential | m_{(3,0)}/m_{(0,0)} in [1.524, 1.539] at off-Jensen minimum | Same grid as P-30w | Zero-parameter mass ratio test |
 | **RGE-A** | Existential | g_1/g_2 at M_Z matches tan(theta_W) = 0.553 | Zero cost (analytic from P-30w output) | If fails, framework done |
-| **RGE-B** | Gate | g_1(M_Z), g_2(M_Z) individually match PDG | One parameter (M_KK) | Tier 2, weaker than Part A |
+| **RGE-B** | Gate | g_1(M_Z), g_2(M_Z) individually match PDG | One parameter (M_KK) | Level 2, weaker than Part A |
 | **OO-1** | Structural | Order-one violation at off-Jensen minimum | ~1 hr | Determines whether derived gauge group = SM |
 | **DBCS-1** | Exploratory | D_BCS reduces order-one violation | Medium | Validates geometric mechanism selection |
 
@@ -346,7 +346,7 @@ Everything depends on this. The grid search (tau, eps_T2) on the 20x20 U(2)-inva
 
 ### IX.2 Priority Stack for Session 30
 
-**Tier 1 — Must Do (determines framework viability)**
+**Level 1 — Must Do (determines framework viability)**
 
 | Priority | Computation | Cost | Output | Gate |
 |:---------|:-----------|:-----|:-------|:-----|
@@ -354,7 +354,7 @@ Everything depends on this. The grid search (tau, eps_T2) on the 20x20 U(2)-inva
 | 2 | Full Dirac spectrum at grid minimum | ~5-10 min | Eigenvalues, BCS gap, phi_paasch, PMNS | P-30phi, P-29b upgrade |
 | 3 | RGE running from minimum | Zero (analytic) | g_1/g_2 at M_Z | RGE-A (existential) |
 
-**Tier 2 — Should Do (high value, zero or low marginal cost)**
+**Level 2 — Should Do (high value, zero or low marginal cost)**
 
 | Priority | Computation | Cost | Output | Gate |
 |:---------|:-----------|:-----|:-------|:-----|
@@ -362,7 +362,7 @@ Everything depends on this. The grid search (tau, eps_T2) on the 20x20 U(2)-inva
 | 5 | Avoided crossing census near minimum | Zero (from grid data) | Whether Berry curvature reappears off-Jensen | C11/C12 extension |
 | 6 | NCG-regularized F_BCS cutoff independence | Zero (from grid data) | Stability of BCS against Lambda variation | Connes diagnostic |
 
-**Tier 3 — Nice to Have (medium cost, significant insight)**
+**Level 3 — Nice to Have (medium cost, significant insight)**
 
 | Priority | Computation | Cost | Output |
 |:---------|:-----------|:-----|:-------|
@@ -371,7 +371,7 @@ Everything depends on this. The grid search (tau, eps_T2) on the 20x20 U(2)-inva
 | 9 | Quantum metric on U(2)-invariant surface | ~1 hr | Topological classification of frozen state |
 | 10 | D_BCS axiom verification | Medium | Whether BCS condensation is geometric (DBCS-1) |
 
-**Tier 4 — Exploratory (longer-term, theoretical development)**
+**Level 4 — Exploratory (longer-term, theoretical development)**
 
 | Priority | Computation | Status |
 |:---------|:-----------|:-------|

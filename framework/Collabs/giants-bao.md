@@ -786,7 +786,7 @@ If BAO are acoustic fossils of the photon-baryon plasma phase transition at T ~ 
 
 ## Action Items / Follow-ups
 
-### Tier 1: Concrete Calculations (Months)
+### Level 1: Concrete Calculations (Months)
 
 1. **Compute metric noise spectrum P_metric(k)** (Einstein's challenge to Feynman)
    - Predict the thermal noise floor from metric Brownian motion
@@ -808,7 +808,7 @@ If BAO are acoustic fossils of the photon-baryon plasma phase transition at T ~ 
    - Overlap with NANOGrav signal? Amplitude, frequency, spectral index
    - Distinguishing tests from SMBH binary background
 
-### Tier 2: Theoretical Framework (Years)
+### Level 2: Theoretical Framework (Years)
 
 5. **Define and extract N_grav from data** (Einstein's framework)
    - Formalize N_grav as observable: effective gravitational DOF per BAO mode
@@ -829,7 +829,7 @@ If BAO are acoustic fossils of the photon-baryon plasma phase transition at T ~ 
    - Make the He-II mapping precise: is there a quantitative relationship between c_2/c_1 in He-II and c_GW/c_s in emergent spacetime?
    - Gravitational wave polarization structure vs second sound modes
 
-### Tier 3: Observational Programs (Decades)
+### Level 3: Observational Programs (Decades)
 
 9. **Systematic echo search — Dark Acoustic Oscillations (DAO)** (Sagan)
    - Catalog all cosmic phase transitions and their expected acoustic fossils
@@ -850,7 +850,7 @@ If BAO are acoustic fossils of the photon-baryon plasma phase transition at T ~ 
 
 This discussion produced several results directly relevant to the phonon-exflation cosmology framework:
 
-1. **c_s = c/sqrt(3) as second sound**: The coincidence with the He-II two-fluid formula is structural, not accidental, if particles are phononic excitations of M4 x SU(3). The substrate (internal space SU(3) with Jensen deformation) must be conformally invariant at recombination — testable against the Tier 1 Dirac spectrum results (Session 12: phi_paasch found at 0.12 ppm).
+1. **c_s = c/sqrt(3) as second sound**: The coincidence with the He-II two-fluid formula is structural, not accidental, if particles are phononic excitations of M4 x SU(3). The substrate (internal space SU(3) with Jensen deformation) must be conformally invariant at recombination — testable against the Level 1 Dirac spectrum results (Session 12: phi_paasch found at 0.12 ppm).
 
 2. **BAO constrain substrate parameters**: The transfer function T(k) measured to <1% across 2500 multipoles constrains any substrate model. The phonon-exflation simulation (Phase 2B-3) must reproduce T(k), not just D/H.
 

@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 128,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1271",
+      "anchor_type": "data_provenance",
+      "name": "bcs_dressed_sa_v2",
+      "script_path": "session-72/s72_bcs_dressed_sa_v2.py",
+      "session": "s72",
+      "inputs": "s72_kappa_delta.npz, s72_bcs_dressed_sa.npz, s68_bcs_dressed_mode.npz, s71_chirp_universality.npz",
+      "outputs": "session-72/s72_bcs_dressed_sa_v2.npz, session-72/s72_bcs_dressed_sa_v2.png",
+      "source_file": "computations/session-72/s72_bcs_dressed_sa_v2.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s72_bcs_dressed_sa_v2.py -- BCS-DRESSED-SA-72 (MODE-SELECTIVE): Corrected BCS Dressing\n    4: ========================================================================================\n    5: \n    6: Gate: BCS-DRESSED-SA-72 (corrected computation, supersedes s72_bcs_dressed_sa.py)\n    7:   PASS: |n_s^{BCS} - 0.9649| < 0.005 (within 1.2 sigma of Planck)\n    8:   INFO: |n_s^{BCS} - 0.9649| in [0.005, 0.010] (within 2.4 sigma)\n    9:   FAIL: |n_s^{BCS} - 0.9649| > 0.010 (more than 2.4 sigma from Planck)\n   10: \n   11: Physics"
+    },
+    {
+      "anchor_id": "prov_1272",
+      "anchor_type": "data_provenance",
+      "name": "blueshift_tilt",
+      "script_path": "session-72/s72_blueshift_tilt.py",
+      "session": "s72",
+      "inputs": "",
+      "outputs": "session-72/s72_blueshift_tilt.npz",
+      "source_file": "computations/session-72/s72_blueshift_tilt.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s72_blueshift_tilt.py — Blueshift Tilt at Entry Sonic Horizon (BLUESHIFT-TILT-72)\n    4: \n    5: Computes the spectral tilt correction to n_s from differential pair creation\n    6: at the entry sonic horizon (tau ~ 0.22).\n    7: \n    8: Physics:\n    9:   The entry horizon at T_entry = 72.8 M_KK creates mode-dependent Bogoliubov\n   10:   coefficients via the Hawking/Unruh mechanism:\n   11:     |beta_k|^2 / |alpha_k|^2 = exp(-2*pi*omega_k / kappa)"
+    },
+    {
+      "anchor_id": "prov_1273",
+      "anchor_type": "data_provenance",
+      "name": "cauchy_schwarz_w0",
+      "script_path": "session-72/s72_cauchy_schwarz_w0.py",
+      "session": "s72",
+      "inputs": "",
+      "outputs": "session-72/s72_cauchy_schwarz_w0.npz",
+      "source_file": "computations/session-72/s72_cauchy_schwarz_w0.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s72_cauchy_schwarz_w0.py — Cauchy-Schwarz w_0 Bound Verification\n    4: ================================================================\n    5: Gate: CAUCHY-SCHWARZ-W0-72\n    6: Session: S72, Wave 1, Entry W1-D\n    7: Agent: mack-cosmic-bridge\n    8: \n    9: Tests the claim that the Cauchy-Schwarz inequality on spectral moment\n   10: ratios forces w_0 <= -0.908 for all smooth spectral functionals,\n   11: creating a one-sided attractor toward LCDM."
+    },
+    {
+      "anchor_id": "prov_1274",
+      "anchor_type": "data_provenance",
+      "name": "cg24_gge_entropy",
+      "script_path": "session-72/s72_cg24_gge_entropy.py",
+      "session": "s72",
+      "inputs": "",
+      "outputs": "session-72/s72_cg24_gge_entropy.npz",
+      "source_file": "computations/session-72/s72_cg24_gge_entropy.py",
+      "source_context_30_lines": "   59: from canonical_constants import (\n   60:     tau_fold, J_C2, J_su2, J_u1, Delta_BCS, Delta_0_GL,\n   61:     N_dof_BCS, n_pairs, T_acoustic, T_compound,\n   62:     E_B1, E_B2_mean, E_B3_mean, E_cond, E_exc,\n   63:     PI, N_cells as N_cells_canon, n_Bog, dt_transit,\n   64: )\n   65: \n   66: SCRIPT_DIR = Path(__file__).parent\n   67: OUT_NPZ = SCRIPT_DIR / \"s72_cg24_gge_entropy.npz\"\n   68: \n   69: print(\"=\" * 78)\n   70: print(\"  CG24-GGE-ENTROPY-72: Per-Cell GGE Entropy on Full CG(24) Fabric\")\n   71: print(\"=\" * 78)\n   72: \n   73: # ==========================================================================\n   74: # Section 1: CG(24) Graph Construction\n   75: # =========================================================================="
+    },
+    {
+      "anchor_id": "prov_1275",
+      "anchor_type": "data_provenance",
+      "name": "cv_scaling",
+      "script_path": "session-72/s72_cv_scaling.py",
+      "session": "s72",
+      "inputs": "",
+      "outputs": "session-72/s72_cv_scaling.npz",
+      "source_file": "computations/session-72/s72_cv_scaling.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s72_cv_scaling.py — GGE Heat Capacity Scaling with Mode Number\n    4: ==============================================================\n    5: \n    6: Gate: CV-SCALING-72\n    7: Session: S72, Wave 4-B\n    8: \n    9: Physics:\n   10:   S71 GGE-HAWKING-ANALOG-71 found C_V^{GGE}/C_V^{thermal} = 1/430 for the\n   11:   8-mode BCS sector. The WS3 R2 dissent (D2) established that this ratio"
+    },
+    {
+      "anchor_id": "prov_1276",
+      "anchor_type": "data_provenance",
+      "name": "decoherence_bispectrum",
+      "script_path": "session-72/s72_decoherence_bispectrum.py",
+      "session": "s72",
+      "inputs": "",
+      "outputs": "session-72/s72_decoherence_bispectrum.npz, session-72/s72_decoherence_bispectrum.png",
+      "source_file": "computations/session-72/s72_decoherence_bispectrum.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s72_decoherence_bispectrum.py — DECOHERENCE-BISPECTRUM-72\n    4: ==========================================================\n    5: \n    6: Computes non-Gaussianity parameters f_NL(equilateral) and f_NL(folded)\n    7: as functions of t_dec/t_transit, providing a cross-constraint on the\n    8: decoherence timescale independent of A_s.\n    9: \n   10: Physics:\n   11: --------"
+    },
+    {
+      "anchor_id": "prov_1277",
+      "anchor_type": "data_provenance",
+      "name": "dual_decoherence",
+      "script_path": "session-72/s72_dual_decoherence.py",
+      "session": "s72",
+      "inputs": "",
+      "outputs": "session-72/s72_dual_decoherence.npz, session-72/s72_dual_decoherence.png",
+      "source_file": "computations/session-72/s72_dual_decoherence.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s72_dual_decoherence.py — Dual-Timescale Decoherence Model (DUAL-DECOHERENCE-72)\n    4: \n    5: Resolves the 7.7x A_s overcorrection by separating:\n    6:   - BCS channel: FAST phase decoherence at exit sonic horizon (tau ~ 0.16)\n    7:   - Spatial channel: SLOW decoherence (t_deph/t_transit ~ 139,729)\n    8:   - Leggett channel: SLOW decoherence (intermediate, set by Leggett period)\n    9: \n   10: W1-A finding: Gap-amplitude decoherence is DEAD (t_dec/t_transit ~ 5.5e9).\n   11: BCS decoherence comes from PHASE scrambling at exit horizon, not amplitude variation."
+    },
+    {
+      "anchor_id": "prov_1278",
+      "anchor_type": "data_provenance",
+      "name": "frustration_schmidt",
+      "script_path": "session-72/s72_frustration_schmidt.py",
+      "session": "s72",
+      "inputs": "",
+      "outputs": "session-72/s72_frustration_schmidt.npz, session-72/s72_frustration_schmidt.png",
+      "source_file": "computations/session-72/s72_frustration_schmidt.py",
+      "source_context_30_lines": "  715:                  f'{marker}-', color=color, label=label, markersize=4, alpha=0.8)\n  716: \n  717: ax3.set_xlabel('Eigenvalue index')\n  718: ax3.set_ylabel('$\\\\lambda_i$ (Schmidt coefficients)')\n  719: ax3.set_title('Entanglement spectrum (cell 0)')\n  720: ax3.legend(fontsize=7)\n  721: \n  722: plt.tight_layout()\n  723: fig.savefig(os.path.join(SCRIPT_DIR, 's72_frustration_schmidt.png'), dpi=150)\n  724: print(f\"  Plot saved: s72_frustration_schmidt.png\")\n  725: \n  726: \n  727: # ============================================================================\n  728: # SECTION 10: SAVE DATA\n  729: # ============================================================================\n  730: print(\"\\n--- Section 10: Save data ---\")\n  731: "
+    },
+    {
+      "anchor_id": "prov_1279",
+      "anchor_type": "data_provenance",
+      "name": "g2_constancy",
+      "script_path": "session-72/s72_g2_constancy.py",
+      "session": "s72",
+      "inputs": "s66_zeta_sa.npz",
+      "outputs": "session-72/s72_g2_constancy.npz, session-72/s72_g2_constancy.png",
+      "source_file": "computations/session-72/s72_g2_constancy.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s72_g2_constancy.py -- G2-CONSTANCY-72: a_2/a_4 ratio constancy on G_2\n    4: =======================================================================\n    5: Gate: G2-CONSTANCY-72\n    6:   PASS:  G_2 variation > 8.8% (near-constancy is SU(3)-specific)\n    7:   INFO:  G_2 variation in [2.921%, 8.8%]\n    8:   FAIL:  G_2 variation < 2.921% (G_2 MORE constant, contradicting specificity)\n    9: \n   10: PHYSICS:\n   11: --------"
+    },
+    {
+      "anchor_id": "prov_1280",
+      "anchor_type": "data_provenance",
+      "name": "gilkey_reeval",
+      "script_path": "session-72/s72_gilkey_reeval.py",
+      "session": "s72",
+      "inputs": "",
+      "outputs": "session-72/s72_gilkey_reeval.npz",
+      "source_file": "computations/session-72/s72_gilkey_reeval.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s72_gilkey_reeval.py — GILKEY-REEVAL-72\n    4: Re-evaluate the S71 HIGHER-ORDER-CCM-71 gate verdict using the geometric\n    5: Gilkey ratio a_6/a_4 = 0.25 instead of the spectral zeta ratio 0.567.\n    6: \n    7: Physics\n    8: -------\n    9: S71 W1-B found delta(lambda_CCM)/lambda_CCM = 26.9% using the spectral zeta\n   10: ratio a_6^z/a_4^z = 0.567 from the L_max=7 truncated spectrum. The\n   11: Landau-Baptista workshop (WS3) established that this ratio is contaminated"
+    }
+  ]
+}

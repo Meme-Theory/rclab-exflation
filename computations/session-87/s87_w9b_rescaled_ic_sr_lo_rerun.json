@@ -1,0 +1,127 @@
+{
+  "gate_id": "S87-RESCALED-IC-SR-LO-RERUN",
+  "session": "S87",
+  "wave": "W9b-1",
+  "scheme": "SR-LO-Mukhanov-Sasaki",
+  "convention": "substrate-natural-xi-E-GGE-class-projected",
+  "L_max": "N/A-SR-LO",
+  "machinery_pin_map": {
+    "L_max": "N/A-SR-LO",
+    "n_eval": 10001,
+    "N_span": [
+      0.0,
+      100.0
+    ],
+    "scheme": "SR-LO-Mukhanov-Sasaki",
+    "convention": "substrate-natural-xi-E-GGE-class-projected",
+    "cutoff_axis": "spectral",
+    "numerical_method_primary": "LSODA",
+    "rtol": 1e-09,
+    "atol": 1e-11,
+    "max_step": 0.01,
+    "dN_fine": 0.01,
+    "dN_crosscheck": 0.005,
+    "GPU_path": "CPU OMP_NUM_THREADS=8",
+    "PASS_band_ratio": 0.05,
+    "INFO_band_ratio": 0.005,
+    "eps_breakdown_thresh": 0.5,
+    "eps_regime_breakdown": 1.0,
+    "eps_regime_marginal": 0.3,
+    "random_seed": 42,
+    "eps_0": 0.02,
+    "eta_0": 0.005,
+    "alpha_s_0": 0.0,
+    "alpha_source": "FALLBACK-W9-EM-CN-R3-1-DUAL-PRIOR",
+    "alpha_R": [
+      1.0,
+      1.0954451150103321,
+      0.8944271909999159,
+      1.224744871391589
+    ],
+    "xi_E_GGE_inv_used": 13.642473425595973
+  },
+  "input_pin_map": {
+    "computations/_shared/canonical_constants.py": "d56d57c12e706167f482cb2029d7e1154bde0672303d26a8348a5404aedac672",
+    "computations/session-87/s87_w9b_rescaled_ic_sr_lo_rerun.py": "a8bf2e8240fb62b967bb806dbfaf5d7b279f46b6f7b744ec6d1132312bb13ca3"
+  },
+  "results": {
+    "R_labels": [
+      "C_1_e",
+      "C_2_a",
+      "C_3_b",
+      "C_4_ab"
+    ],
+    "alpha_R": [
+      1.0,
+      1.0954451150103321,
+      0.8944271909999159,
+      1.224744871391589
+    ],
+    "xi2_0_per_R": [
+      13.642473425595973,
+      16.370968110715165,
+      10.913978740476777,
+      20.463710138393957
+    ],
+    "xi2_0_canonical": 13.642473425595973,
+    "N_breakdown_per_R": [
+      0.01457768168620787,
+      0.012132263375416159,
+      0.01853106274316138,
+      0.009915791264885475
+    ],
+    "N_breakdown_canonical": 0.01457768168620787,
+    "deviations_per_R": [
+      0.0,
+      0.16775083743976607,
+      0.27119408572995896,
+      0.3197964204234936
+    ],
+    "max_R_deviation_observable": 0.3197964204234936,
+    "argmax_R_label": "C_4_ab",
+    "regime_per_R": [
+      "VALID",
+      "VALID",
+      "VALID",
+      "VALID"
+    ],
+    "regime_canonical": "VALID",
+    "crossing_clean_per_R": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "crossing_clean_canonical": true
+  },
+  "cross_checks": {
+    "CC1_IC_fidelity_max_dev": 1.7763568394002505e-15,
+    "CC1_PASS": true,
+    "CC2_eps_monotone_min_diff": 0.0,
+    "CC2_PASS": true,
+    "CC3_canonical_dN_robustness": 0.000330463655447949,
+    "CC3_PASS": true,
+    "CC4_all_ODE_success": true,
+    "CC5_all_crossings_clean": true
+  },
+  "verdict_tuple": {
+    "sign_verdict": "PASS",
+    "magnitude_verdict": "PASS",
+    "regime_verdict_per_R": [
+      "VALID",
+      "VALID",
+      "VALID",
+      "VALID"
+    ],
+    "regime_verdict_aggregate": "VALID",
+    "composite": "PASS"
+  },
+  "analytic_pre_registration": {
+    "predicted_sign": "POSITIVE (Reading_A direction)",
+    "predicted_magnitude": "~0.7% (W-12-prior 1.5 factor \u2192 INFO band)",
+    "predicted_composite": "INFO",
+    "note": "Plan \u00a79 Step 4 analytic estimate; numerical verdict above replaces it."
+  },
+  "audit_sha256": "42a79bfb069103120664b4938ca24efe36b30d1d7a3784abbe46652368ccdd41",
+  "content_sha256": "a8bf2e8240fb62b967bb806dbfaf5d7b279f46b6f7b744ec6d1132312bb13ca3"
+}

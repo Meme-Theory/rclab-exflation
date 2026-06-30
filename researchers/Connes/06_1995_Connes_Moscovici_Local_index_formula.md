@@ -337,7 +337,7 @@ curvature data on SU(3). Session 14 found r = 0.96 correlation between the
 spectral action and Baptista's V_eff -- the local index formula explains WHY:
 both compute the same Seeley-DeWitt coefficients via different routes. The
 expansion is ASYMPTOTIC (not convergent), so convergence at finite Lambda
-(comparable to the compactification scale) is a Tier 1.5 open question.
+(comparable to the compactification scale) is a Level 1.5 open question.
 
 ### 7.3 Phonon Free Energy and Physical Constants
 

@@ -1,0 +1,68 @@
+{
+  "gate_id": "S84-S80-HEADER-REPAIR",
+  "verdict": "INFO",
+  "verdict_value": 6,
+  "verdict_reason": "PRE-REG-INCOMPLETE-PATTERN: plan pattern `## W1-N <slug> \u2014 <status>` matched 0 of 6 expected; actual S80 file uses `### W1-N: <SLUG> \u2014 EVOI ...` with status carried on the line below. Derivative reconciliation diff produced: 6 status-line repairs queued, 0 headers PRE-REG-INCOMPLETE (no extractable body verdict).",
+  "plan_pattern_matches": 0,
+  "actual_blocks_found": 6,
+  "repaired_count": 6,
+  "incomplete_count": 0,
+  "repair_log": [
+    {
+      "id": 1,
+      "action": "STATUS_REPAIR_FROM_NOT_STARTED",
+      "old_status": "NOT STARTED",
+      "new_status": "PASS",
+      "line_idx_1based": 1734
+    },
+    {
+      "id": 2,
+      "action": "STATUS_REPAIR_FROM_NOT_STARTED",
+      "old_status": "NOT STARTED",
+      "new_status": "PASS",
+      "line_idx_1based": 1914
+    },
+    {
+      "id": 3,
+      "action": "STATUS_LIFT_FROM_DONE",
+      "old_status": "DONE (primary + consult)",
+      "new_status": "FAIL",
+      "line_idx_1based": 2131
+    },
+    {
+      "id": 4,
+      "action": "STATUS_REPAIR_FROM_NOT_STARTED",
+      "old_status": "NOT STARTED",
+      "new_status": "PASS",
+      "line_idx_1based": 2272
+    },
+    {
+      "id": 5,
+      "action": "STATUS_LIFT_FROM_DONE",
+      "old_status": "COMPLETE (elevated [VERIFY] per W1-3 convergent-FAIL redirection)",
+      "new_status": "INFO",
+      "line_idx_1based": 2574
+    },
+    {
+      "id": 6,
+      "action": "STATUS_LIFT_FROM_DONE",
+      "old_status": "COMPLETE",
+      "new_status": "PASS",
+      "line_idx_1based": 2658
+    }
+  ],
+  "input_pins": {
+    "s80_workingpaper_sha256": "435f61d2765ae462c55da7a56e3b3d96994e06468815cc49c250e240f0dd059d",
+    "s80_gate_verdicts_sha256": "d54007d2075eb6e319198667ae78f37cb65585d71e0a4d545f8e96ca9e79f336",
+    "canonical_constants_sha256": "ff05c3d64375d9efcd6164210b00746ca1d1756e5b0a945554a6af642ea40e07",
+    "script_sha256": "8ac907f697f1b2b572f4a8903bb40a8d007e9b1ac5c3691c445167945e208b47",
+    "gate_id": "S84-S80-HEADER-REPAIR",
+    "scheme": "header_body_consistency",
+    "convention": "s80_w1_only",
+    "verdict_value": 6,
+    "verdict": "INFO"
+  },
+  "audit_sha256": "0d4a087319e02aef94b05dcbed98e7280a75408077fb321ec6daf75169a1104d",
+  "content_sha256": "fe7bde51642c0edf993e034e1c1de3a337b19a220bc995f6a4a17a33422f0b51",
+  "schema_version": "S84+"
+}

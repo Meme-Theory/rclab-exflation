@@ -1,0 +1,60 @@
+# DESI/SDSS VIDE/ZOBOV void-catalog number counts — FETCHED literature values
+# =============================================================================
+# Primary source: Mao, Berlind, Scherrer, Neyrinck, Scoccimarro, Tinker et al. 2016,
+#   "A Cosmic Void Catalog of SDSS DR12 BOSS Galaxies", arXiv:1602.02771v2
+#   (fetched via paper-search MCP 2026-06-15; PDF at researchers/Cosmic-Web/1602.02771v2.pdf)
+#   ZOBOV (Voronoi-tessellation watershed; Neyrinck 2008) on BOSS DR12 CMASS+LOWZ,
+#   z = 0.2-0.7. 10,643 voids pre-cut; 1,228 voids after quality cuts (>2 sigma signif.,
+#   min Voronoi density < mean). Effective radii R_eff = (3 V/4 pi)^(1/3) span 15-130 h^-1 Mpc;
+#   MAJORITY 30-80 h^-1 Mpc. Mock (1000 QPM) VSF agrees with BOSS within 10-20% amplitude.
+# Supporting: Nadathur 2016, arXiv:1602.04752v2 (BOSS DR11 LOWZ+CMASS, 8956 voids; ZOBOV;
+#   VSF deviation from LCDM < 6% for 8 < R_v < 60 h^-1 Mpc, z=0.15-0.7; 3% false-positive rate;
+#   deepest-void deficit at >3 sigma).
+#   Nadathur+ 2014, arXiv:1407.1295 (ZOBOV void density-profile self-similarity, SDSS LRG).
+#   Sutter+ 2014 MNRAS 442,3127 (ZOBOV CMASS, comparable R_eff range).
+#
+# COSMOLOGY of the catalogs: flat LCDM Omega_m=0.3 (Mao tessellation), QPM mocks
+#   Omega_m=0.29, h=0.7, n_s=0.97, sigma_8=0.8. Units: void effective radii reported
+#   in h^-1 Mpc; convert to Mpc with h=0.674 (canonical) => R_Mpc = R_hMpc / 0.674.
+#
+# DECISIVE OBSERVATIONAL FACT for INV7-W1-2:
+#   The first-sound-ring scale r1 = 325.3 Mpc = 219.3 h^-1 Mpc (h=0.674) lies FAR ABOVE
+#   the entire observed void-effective-radius support. The LARGEST catalogued individual
+#   void (Mao Table 1, ID 4407, CMASS-N, z=0.463) has R_eff = 63.467 h^-1 Mpc = 94.2 Mpc.
+#   The catalog MAXIMUM is R_eff = 130 h^-1 Mpc = 192.9 Mpc. NO void of effective radius
+#   ~325 Mpc (a ~650 Mpc-diameter underdensity) has ever been catalogued. A VSF feature
+#   at r_void ~ 325 Mpc is therefore observationally UNREACHABLE with current catalogs —
+#   the discriminator sits in an empty region of the data. (This is independent of whether
+#   the framework feature is intrinsically strong: even the canonical A_FS=0.204 ring would
+#   land beyond the void-size support.)
+#
+# Number-count table: number of quality-cut voids per effective-radius bin.
+# Mao 2016 reports the size distribution (their Fig. 2) over the four BOSS regions
+# (CMASS-N 584, CMASS-S 190, LOWZ-N 319, LOWZ-S 135 = 1228 total quality voids).
+# The per-bin counts below are read off the published size-distribution histogram
+# (Fig. 2, combined CMASS+LOWZ); they are approximate bin populations for the VSF shape,
+# NOT a re-derivation. The largest-void tail is the load-bearing comparison region.
+#
+# R_eff_lo  R_eff_hi  N_voids   note
+# (h^-1Mpc) (h^-1Mpc) (count)
+15.0       20.0      30        # small-void deficit (mean galaxy sep ~30 h^-1 Mpc limits detection)
+20.0       30.0      150       # rising
+30.0       40.0      340       # near peak of the size distribution
+40.0       50.0      330       # peak region (most voids 30-80 h^-1 Mpc)
+50.0       60.0      210       # declining
+60.0       70.0      95        # large-void tail; ID 4407 R_eff=63.5 h^-1 Mpc lives here
+70.0       80.0      45        #
+80.0       90.0      18        #
+90.0       100.0     7         # rare large voids
+100.0      130.0     3         # catalog MAXIMUM tail (R_eff up to 130 h^-1 Mpc = 192.9 Mpc)
+130.0      400.0     0         # EMPTY — NO catalogued void of R_eff > 130 h^-1 Mpc.
+                               #   r1 = 219.3 h^-1 Mpc (325.3 Mpc) lies in THIS empty bin.
+#
+# Catalog-edge summary (for the gate's observational-reach assessment):
+R_eff_max_individual_hMpc   63.467    # Mao Table 1 ID 4407 (most significant single void)
+R_eff_max_catalog_hMpc      130.0     # Mao conclusions: "effective radii spanning 15 to 130 h^-1 Mpc"
+N_voids_total_qualitycut    1228      # Mao 2016 quality-cut total (CMASS+LOWZ, N+S)
+VSF_LCDM_deviation_bound    0.06      # Nadathur 2016: |VSF - VSF_LCDM| < 6% for 8<R_v<60 h^-1 Mpc
+r1_in_hMpc                  219.25    # 1 h^-1 Mpc = (1/h) Mpc, so D[h^-1 Mpc] = D[Mpc] * h.
+                                      #   r1 = 325.3 Mpc * 0.674 = 219.25 h^-1 Mpc. Catalog max 130 h^-1 Mpc
+                                      #   = 192.9 Mpc; r1 (325.3 Mpc / 219.25 h^-1 Mpc) lies beyond it either way.

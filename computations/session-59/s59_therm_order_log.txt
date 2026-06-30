@@ -1,0 +1,136 @@
+======================================================================
+S59 W4G-1: N_pair = 4 Exact Diagonalization — THERM-ORDER-59
+======================================================================
+tau_fold = 0.193878
+E_J_fold = 3.3969 M_KK
+N_modes/cell = 8, N_cells = 2, N_pair = 4
+eps_fold = [-1.18413693e-16  1.77061960e-01  3.29405571e-01  5.22910373e-01
+  7.26154925e-01  1.00439566e+00  1.07857332e+00  1.17000260e+00]
+Prior data: <r>_even(N=2) = 0.441799, <r>_even(N=3) = 0.412076
+
+Fock space: C(16,4) = 1820 four-pair states
+
+--- Building Hamiltonian (1820x1820) ---
+H_fold_full: (1820, 1820), Hermiticity = 0.00e+00, build time = 0.06s
+H_fold_noJ:  (1820, 1820), Hermiticity = 0.00e+00
+
+--- Diagonalizing (1820x1820) ---
+Diagonalization time = 2.17s
+E_GS(fold, full J) = -39.78014581 M_KK
+E_GS(fold, no J)   = 0.53522735 M_KK
+E_GS(tau=0, full J) = -120.11317088 M_KK
+Spectrum range (fold): [-39.7801, 48.0690]
+
+======================================================================
+Z_2 CELL-EXCHANGE SYMMETRY DECOMPOSITION
+======================================================================
+P^2 = I check: max|P^2 - I| = 0.00e+00
+[H_fold, P] = 0 check: max|[H,P]| = 1.78e-15
+Z_2 sectors: even = 924, odd = 896, total = 1820
+
+<r>_even (N=4, 924 levels, 877 gaps): 0.419173 +/- 0.0093
+<r>_odd  (N=4, 896 levels, 812 gaps):  0.408986 +/- 0.0094
+<r>_combined: 0.414275 +/- 0.0066
+Raw (no unfolding): even=0.418299, odd=0.406280
+
+--- Unfolding robustness check ---
+  poly deg 3: <r>_even = 0.4176, <r>_odd = 0.4047, combined = 0.4114
+  poly deg 5: <r>_even = 0.4192, <r>_odd = 0.4090, combined = 0.4143
+  poly deg 7: <r>_even = 0.4247, <r>_odd = 0.4044, combined = 0.4149
+  poly deg 9: <r>_even = 0.4183, <r>_odd = 0.4085, combined = 0.4136
+
+Control (E_J = 0): <r>_even = 0.224787, <r>_odd = 0.221262, combined = 0.223051
+
+======================================================================
+QUENCH DYNAMICS: tau=0 -> tau_fold
+======================================================================
+Sum |c_n|^2 = 1.0000000000
+E_DE = -39.765439, E_GS = -39.780146
+E_exc = 0.014707
+P_exc = 0.00103966
+S_DE = 0.009761, S_max = 7.506592, S_DE/S_max = 0.001300
+
+GGE occupations: Sum = 4.000000 (should be 4)
+GS occupations:  Sum = 4.000000
+||delta_n|| = 0.00006777
+
+----------------------------------------------------------------------
+OCCUPATION NUMBER SCALING: ||delta_n|| vs N_pair
+----------------------------------------------------------------------
+||delta_n||: N=1: 0.00006361, N=2: 0.00006361, N=3: 0.00006774, N=4: 0.00006777
+Power law exponent: alpha = 0.0522
+
+======================================================================
+ENTANGLEMENT ENTROPY
+======================================================================
+Cell-0 sub-basis: 163, Cell-1 sub-basis: 163
+S_ent(GS, fold) = 1.396556
+S_ent(DE avg)   = 1.397122
+S_ent(initial)  = 1.398296
+S_max = log(min(163,163)) = 5.093750
+
+======================================================================
+PARTICIPATION RATIOS
+======================================================================
+Mean PR (full J): 157.10 / 1820
+Mean PR (no J):   1.56 / 1820
+PR ratio: 100.600
+
+======================================================================
+COMMUTATOR ANALYSIS
+======================================================================
+[H, n_k] / ||H|| (cell 0): [0.30453725 0.30453781 0.30452238 0.30451949 0.30461627 0.30449348
+ 0.30449276 0.3045272 ]
+[H, n_k] / ||H|| (cell 1): [0.30453725 0.30453781 0.30452238 0.30451949 0.30461627 0.30449348
+ 0.30449276 0.3045272 ]
+Max commutator / ||H||: 0.304616
+Surviving integrals (||[H,n_k]||/||H|| < 0.01): 0 / 16
+
+======================================================================
+CROSSOVER FIT: <r>(N) = r_GOE - (r_GOE - r_Poi) * exp(-N/N_c)
+======================================================================
+
+Data points:
+  N=2: <r>_even = 0.441799 +/- 0.0432
+  N=3: <r>_even = 0.412076 +/- 0.0173
+  N=4: <r>_even = 0.419173 +/- 0.0093
+
+Trend: N=2->3: DECREASE (-0.0297)
+Trend: N=3->4: INCREASE (+0.0071)
+
+Standard crossover fit: N_c = 15.01 +/- 2.67
+  chi^2 = 0.7612 (dof = 2)
+General crossover fit: N_c = 0.10, r_inf = 0.4184
+
+======================================================================
+V_FOLD SEPARABILITY ANALYSIS
+======================================================================
+V_fold SVD values: [0.27576637 0.13296188 0.10388024 0.07224027 0.07057041 0.0421548
+ 0.04187485 0.00706239]
+Rank-1 fraction: 0.3694
+||H_pair|| = 11.004145
+||H_pair_rk1|| = 9.112817
+||residual|| = 5.584177
+Separability fraction (N=4): 0.4925
+
+======================================================================
+GATE VERDICT: THERM-ORDER-59
+======================================================================
+
+--- Crossover data ---
+  N=2: <r>_even = 0.4418 +/- 0.0432
+  N=3: <r>_even = 0.4121 +/- 0.0173
+  N=4: <r>_even = 0.4192 +/- 0.0093
+  Trend 2->3: -0.0297
+  Trend 3->4: +0.0071
+
+  Crossover scale N_c = 15.01 +/- 2.67
+
+  Poisson = 0.3863, GOE = 0.5307
+
+>>> VERDICT: FAIL
+>>> N_c = 15.01 > 10. Poisson regime persists to large N_pair
+
+Total runtime: 17.3s
+Data saved to C:\sandbox\Ainulindale Exflation\tier0-computation\s59_therm_order.npz
+Plot saved to C:\sandbox\Ainulindale Exflation\tier0-computation\s59_therm_order.png

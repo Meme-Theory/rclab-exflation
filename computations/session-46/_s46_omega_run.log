@@ -1,0 +1,335 @@
+==============================================================================
+OMEGA-CLASSIFY-46: Inner Fluctuation Module Classification (T3 re-run)
+==============================================================================
+
+INPUT SHA-256 PINS:
+  59248d1f9a4c9e9127ced6865ef93b85f0f21eaee5db71e77ff6e2797c753299  t3-intake/s46_omega_classify_t3.py
+  68b50cd325d2cc8c63b775da3b6b92f538da582bee44c5d906c81259f24dd12f  canonical_constants.py
+  eee1b6fdcbb86847385130b3b3467c76fe1b5b73573d7dac4baf428cf4ff163f  tier1_dirac_spectrum.py
+CLOSURE_SHA: e3873b9478b6b99fb3926a24293b3a1929c7eee6991bfaaa3c0a6b08ad43edfb
+TAU_FOLD_CANON: 0.19
+
+  gamma_9^2 = I check: error = 0.00e+00
+  A_F generators: 24
+  Gauge generators: 19
+  Scalar generators: 5
+
+==============================================================================
+STEP 1: BUILD D_K AT ROUND (tau=0) AND FOLD (tau=0.19)
+==============================================================================
+
+  D_K at round: shape = (48, 48), dim_rho = 3
+  Hermiticity error: 1.44e+00
+  D_K at fold:  shape = (48, 48)
+  Hermiticity error: 1.75e+00
+
+  Eigenvalue range (round): [-1.7793, 1.7793]
+  Eigenvalue range (fold):  [-1.7723, 1.7723]
+
+==============================================================================
+STEP 2: COMPUTE Omega^1_D(A_F) MODULE
+==============================================================================
+
+  FOLD (tau=0.19):
+    Linear module dim:     173
+    Quadratic module dim:  169
+    Combined module dim:   342
+    Extra directions:      169
+    Computed in 3.2s
+
+  ROUND (tau=0):
+    Linear module dim:     173
+    Quadratic module dim:  169
+    Combined module dim:   342
+    Extra directions:      169
+    Computed in 3.4s
+
+  Singular value spectra (top 10):
+    Linear (fold):    [61.8815888759 34.7235432535 26.2417615362 22.5580780215 21.8054127432 21.0099457224 19.8982960915 19.6569703323 19.2354509915
+ 18.4296550058]
+    Quadratic (fold): [91.5760300653 52.6488735791 38.4015830205 35.1128214936 33.9171727531 31.6628932187 30.506369325  29.5356980507 27.7803139999
+ 26.5131787181]
+    Extra (fold):     [1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+
+==============================================================================
+STEP 3: Z_2 GRADING DECOMPOSITION (GAUGE vs SCALAR)
+==============================================================================
+
+  LINEAR MODULE (fold):
+    Even (gauge) dim:  126
+    Odd  (scalar) dim: 139
+    Total:             265
+    (Expected: gauge ~ 12 SM bosons, scalar ~ Higgs components)
+
+  EXTRA (CCS 2013 quadratic) MODULE (fold):
+    Even (gauge) dim:  169
+    Odd  (scalar) dim: 169
+    Total:             338
+
+  COMBINED MODULE (fold):
+    Even (gauge) dim:  275
+    Odd  (scalar) dim: 279
+    Total:             554
+
+  LINEAR MODULE (round):
+    Even (gauge) dim:  126
+    Odd  (scalar) dim: 139
+
+  EXTRA MODULE (round):
+    Even (gauge) dim:  169
+    Odd  (scalar) dim: 169
+
+  Grading eigenvalue distribution (fold, combined):
+    Mean:   -0.010879
+    Std:    0.173636
+    Min:    -0.976289
+    Max:    0.976665
+    Pure even (|g-1|<0.01):  0
+    Pure odd  (|g+1|<0.01):  0
+    Mixed grading:           342
+
+==============================================================================
+STEP 4: MASS-SQUARED MATRIX FOR SCALAR DIRECTIONS
+==============================================================================
+
+  Computing M^2 for 279 scalar directions at fold...
+  Computed in 11.9s
+
+  Cross-check (commutator vs direct): max eigenvalue diff = 8.55e+00
+
+  FOLD MASS SPECTRUM:
+    Tachyonic (m^2 < 0):   0
+    Massless  (m^2 = 0):   0
+    Massive   (m^2 > 0):   279
+    Total:                 279
+
+  Eigenvalue spectrum (lowest 20):
+    m^2_  0 =    +0.000870  [massive]
+    m^2_  1 =    +0.001250  [massive]
+    m^2_  2 =    +0.001402  [massive]
+    m^2_  3 =    +0.002118  [massive]
+    m^2_  4 =    +0.002452  [massive]
+    m^2_  5 =    +0.003054  [massive]
+    m^2_  6 =    +0.003537  [massive]
+    m^2_  7 =    +0.003902  [massive]
+    m^2_  8 =    +0.004037  [massive]
+    m^2_  9 =    +0.004276  [massive]
+    m^2_ 10 =    +0.005466  [massive]
+    m^2_ 11 =    +0.005676  [massive]
+    m^2_ 12 =    +0.005860  [massive]
+    m^2_ 13 =    +0.006003  [massive]
+    m^2_ 14 =    +0.006592  [massive]
+    m^2_ 15 =    +0.007197  [massive]
+    m^2_ 16 =    +0.007867  [massive]
+    m^2_ 17 =    +0.008378  [massive]
+    m^2_ 18 =    +0.008918  [massive]
+    m^2_ 19 =    +0.009662  [massive]
+    ...
+    m^2_274 =    +7.672572  [massive]
+    m^2_275 =    +7.795553  [massive]
+    m^2_276 =    +7.863208  [massive]
+    m^2_277 =    +8.143685  [massive]
+    m^2_278 =    +8.550865  [massive]
+
+==============================================================================
+STEP 5: MASS-SQUARED MATRIX AT ROUND (tau=0)
+==============================================================================
+
+  Computing M^2 for 279 scalar directions at round...
+  Computed in 1.7s
+  ROUND MASS SPECTRUM:
+    Tachyonic (m^2 < 0):   0
+    Massless  (m^2 = 0):   0
+    Massive   (m^2 > 0):   279
+
+  Eigenvalue spectrum (lowest 20):
+    m^2_  0 =    +0.000649  [massive]
+    m^2_  1 =    +0.000738  [massive]
+    m^2_  2 =    +0.000834  [massive]
+    m^2_  3 =    +0.001123  [massive]
+    m^2_  4 =    +0.001199  [massive]
+    m^2_  5 =    +0.001496  [massive]
+    m^2_  6 =    +0.002114  [massive]
+    m^2_  7 =    +0.002143  [massive]
+    m^2_  8 =    +0.002268  [massive]
+    m^2_  9 =    +0.002373  [massive]
+    m^2_ 10 =    +0.003126  [massive]
+    m^2_ 11 =    +0.003340  [massive]
+    m^2_ 12 =    +0.003743  [massive]
+    m^2_ 13 =    +0.004035  [massive]
+    m^2_ 14 =    +0.004514  [massive]
+    m^2_ 15 =    +0.004746  [massive]
+    m^2_ 16 =    +0.004844  [massive]
+    m^2_ 17 =    +0.005396  [massive]
+    m^2_ 18 =    +0.005693  [massive]
+    m^2_ 19 =    +0.006706  [massive]
+
+==============================================================================
+STEP 6: TAU SCAN OF LIGHTEST SCALAR MASS
+==============================================================================
+
+  tau=0.00: m^2_min =    +0.000649, n_tach = 0, n_zero = 0
+  tau=0.05: m^2_min =    +0.000333, n_tach = 0, n_zero = 0
+  tau=0.10: m^2_min =    +0.000258, n_tach = 0, n_zero = 0
+  tau=0.15: m^2_min =    +0.000326, n_tach = 0, n_zero = 0
+  tau=0.19: m^2_min =    +0.000870, n_tach = 0, n_zero = 0
+  tau=0.20: m^2_min =    +0.000362, n_tach = 0, n_zero = 0
+  tau=0.25: m^2_min =    +0.000498, n_tach = 0, n_zero = 0
+  tau=0.30: m^2_min =    +0.000372, n_tach = 0, n_zero = 0
+
+  Tachyonic at fold but not round: False
+
+==============================================================================
+STEP 7: QUARTIC POTENTIAL FOR LIGHTEST SCALARS
+==============================================================================
+
+  Quartic coefficients for 10 lightest scalar modes at fold:
+    Mode     Tr(phi^4)    Tr([D,phi]^2)   Tr(phi^2 [D,phi]^2)           m^2
+       0      0.049180         2.331013              0.081686     +0.000870
+       1      0.048932         2.011766              0.071117     +0.001250
+       2      0.048584         1.945710              0.063977     +0.001402
+       3      0.041812         3.572439              0.147764     +0.002118
+       4      0.054304         1.990291              0.077818     +0.002452
+       5      0.057187         0.295681              0.008627     +0.003054
+       6      0.046037         2.158294              0.076324     +0.003537
+       7      0.052314         2.112766              0.070159     +0.003902
+       8      0.044607         1.727616              0.050685     +0.004037
+       9      0.042692         2.015379              0.066712     +0.004276
+
+==============================================================================
+STEP 8: ALGEBRA ORIGIN OF LIGHT SCALAR DIRECTIONS
+==============================================================================
+
+  Lightest 10 scalar eigenvectors — dominant generator pairs:
+
+  Mode 0 (m^2 = +0.000870, massive):
+    Q:(M3_E12_Im,H_i)                         weight = 1.5040
+    Q:(M3_E12_Re,H_i)                         weight = 1.5040
+    Q:(H_i,M3_E21_Re)                         weight = 1.1946
+    Q:(H_i,M3_E21_Im)                         weight = 1.1946
+    L:(M3_E22_Im,M3_E01_Re)                   weight = 1.1017
+
+  Mode 1 (m^2 = +0.001250, massive):
+    L:(H_i,H_i)                               weight = 2.3714
+    L:(H_1,M3_E11_Im)                         weight = 1.7998
+    L:(C_Im,H_i)                              weight = 1.6978
+    L:(M3_E11_Re,M3_E22_Im)                   weight = 1.6217
+    L:(M3_E10_Re,M3_E01_Re)                   weight = 1.6029
+
+  Mode 2 (m^2 = +0.001402, massive):
+    Q:(H_k,M3_E12_Re)                         weight = 0.5727
+    L:(M3_E01_Im,H_i)                         weight = 0.5295
+    Q:(H_i,M3_E02_Im)                         weight = 0.4989
+    Q:(H_i,M3_E02_Re)                         weight = 0.4989
+    L:(C_Im,H_i)                              weight = 0.4717
+
+  Mode 3 (m^2 = +0.002118, massive):
+    L:(C_Im,H_i)                              weight = 4.1670
+    L:(H_i,H_i)                               weight = 2.6623
+    L:(M3_E00_Im,M3_E01_Re)                   weight = 1.8893
+    L:(H_i,C_Im)                              weight = 1.8530
+    L:(M3_E00_Im,M3_E22_Im)                   weight = 1.8299
+
+  Mode 4 (m^2 = +0.002452, massive):
+    Q:(M3_E12_Im,H_i)                         weight = 2.0222
+    Q:(M3_E12_Re,H_i)                         weight = 2.0222
+    Q:(H_i,M3_E21_Re)                         weight = 1.2241
+    Q:(H_i,M3_E21_Im)                         weight = 1.2241
+    L:(H_i,C_Im)                              weight = 1.1641
+
+  Mode 5 (m^2 = +0.003054, massive):
+    L:(M3_E00_Im,M3_E22_Im)                   weight = 0.8821
+    L:(C_Im,M3_E01_Re)                        weight = 0.8763
+    L:(M3_E00_Im,M3_E01_Re)                   weight = 0.8449
+    L:(M3_E00_Im,M3_E22_Re)                   weight = 0.8364
+    Q:(M3_E10_Im,M3_E02_Im)                   weight = 0.7866
+
+  Mode 6 (m^2 = +0.003537, massive):
+    Q:(H_i,M3_E12_Re)                         weight = 1.0117
+    Q:(H_i,M3_E12_Im)                         weight = 1.0117
+    L:(M3_E10_Im,H_i)                         weight = 0.9464
+    Q:(M3_E12_Re,M3_E22_Im)                   weight = 0.9269
+    Q:(M3_E12_Im,M3_E22_Im)                   weight = 0.9269
+
+  Mode 7 (m^2 = +0.003902, massive):
+    L:(H_i,H_i)                               weight = 3.2662
+    Q:(H_i,H_k)                               weight = 1.2760
+    Q:(H_k,H_i)                               weight = 1.0915
+    L:(M3_E11_Im,M3_E10_Re)                   weight = 1.0458
+    L:(M3_E11_Im,M3_E10_Im)                   weight = 1.0103
+
+  Mode 8 (m^2 = +0.004037, massive):
+    L:(M3_E00_Im,M3_E01_Re)                   weight = 1.9866
+    L:(M3_E00_Re,M3_E01_Re)                   weight = 1.7354
+    L:(H_1,M3_E01_Re)                         weight = 1.6128
+    L:(M3_E00_Re,M3_E01_Im)                   weight = 1.5864
+    L:(H_1,M3_E10_Re)                         weight = 1.5229
+
+  Mode 9 (m^2 = +0.004276, massive):
+    L:(M3_E01_Re,M3_E10_Re)                   weight = 1.5645
+    Q:(H_i,H_k)                               weight = 1.1742
+    L:(M3_E01_Re,M3_E10_Im)                   weight = 1.1654
+    Q:(M3_E10_Im,M3_E02_Re)                   weight = 0.8505
+    Q:(M3_E10_Im,M3_E02_Im)                   weight = 0.8403
+
+==============================================================================
+STEP 9: EXTRA DIRECTIONS BY ALGEBRA FACTOR
+==============================================================================
+
+  169 extra directions:
+    Even (gauge-like): 169
+    Odd  (scalar-like): 169
+
+==============================================================================
+OMEGA-CLASSIFY-46 VERDICT
+==============================================================================
+
+  MODULE DIMENSIONS:
+    Linear (standard):        173
+    Quadratic (CCS 2013):     169
+    Combined:                 342
+    Extra (combined \ linear): 169
+
+  GRADING DECOMPOSITION (combined):
+    Even (gauge):  275
+    Odd (scalar):  279
+
+  LINEAR GRADING:
+    Even (gauge):  126
+    Odd (scalar):  139
+
+  EXTRA GRADING:
+    Even (gauge):  169
+    Odd (scalar):  169
+
+  SCALAR MASS SPECTRUM AT FOLD (tau=0.19):
+    Tachyonic (m^2 < 0): 0
+    Massless  (m^2 = 0): 0
+    Massive   (m^2 > 0): 279
+    Lightest m^2:        +0.000870
+    Heaviest m^2:        +8.550865
+
+  SCALAR MASS SPECTRUM AT ROUND (tau=0):
+    Tachyonic (m^2 < 0): 0
+    Massless  (m^2 = 0): 0
+    Lightest m^2:        +0.000649
+
+  GATE: OMEGA-CLASSIFY-46 = FAIL
+  All scalar directions are massive at all tau. No tachyonic instability. The Omega^1_D scalar sector does not provide a tau-stabilization mechanism.
+
+  TAU SCAN SUMMARY:
+     tau        m2_min    n_tach    n_zero
+    0.00     +0.000649         0         0
+    0.05     +0.000333         0         0
+    0.10     +0.000258         0         0
+    0.15     +0.000326         0         0
+    0.19     +0.000870         0         0
+    0.20     +0.000362         0         0
+    0.25     +0.000498         0         0
+    0.30     +0.000372         0         0
+
+  Data saved to: C:\sandbox\Ainulindale Exflation\tier0-computation\t3-intake\s46_omega_classify.npz
+  Total runtime: 69.2s
+
+OMEGA-CLASSIFY-46 COMPUTATION COMPLETE
+==============================================================================

@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 179,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1781",
+      "anchor_type": "data_provenance",
+      "name": "w8a_alpha_s_cc_cross_check",
+      "script_path": "session-84/s84_w8a_alpha_s_cc_cross_check.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w8a_alpha_s_cc_cross_check.npz",
+      "source_file": "computations/session-84/s84_w8a_alpha_s_cc_cross_check.py",
+      "source_context_30_lines": "  443: print(f\"VERDICT: {verdict} ({verdict_label})\")\n  444: print(\"\")\n  445: print(f\"CONTENT_SHA256: {content_sha}\")\n  446: print(f\"AUDIT_SHA256:   {audit_sha}\")\n  447: \n  448: # -----------------------------------------------------------------------------\n  449: # Step H. Persist NPZ + JSON artifacts\n  450: # -----------------------------------------------------------------------------\n  451: npz_path  = script_dir / \"s84_w8a_alpha_s_cc_cross_check.npz\"\n  452: json_path = script_dir / \"s84_w8a_alpha_s_cc_cross_check.json\"\n  453: \n  454: np.savez(\n  455:     npz_path,\n  456:     tau_pinned=np.array(TAU_PINNED),\n  457:     a_0=np.array(a_0_value),\n  458:     d_a0_d_tau_analytic=np.array(d_a0_d_tau_analytic),\n  459:     f0_gaussian    = np.array(f0_per_regulator[\"Gaussian\"]),"
+    },
+    {
+      "anchor_id": "prov_1782",
+      "anchor_type": "data_provenance",
+      "name": "w8a_alpha_s_single_parameter_derivation",
+      "script_path": "session-84/s84_w8a_alpha_s_single_parameter_derivation.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w8a_alpha_s_single_parameter_derivation.npz, session-84/s84_w8a_alpha_s_single_parameter_derivation.png",
+      "source_file": "computations/session-84/s84_w8a_alpha_s_single_parameter_derivation.py",
+      "source_context_30_lines": "  117: \n  118: # Pre-registered pass/fail thresholds\n  119: TOL_IDENTITY_MACHINE = 1e-10                                        # (local) PASS threshold (machine eps)\n  120: TOL_IDENTITY_PCT = 1e-2                                             # (local) FAIL threshold (1% rel-err)\n  121: N_S_CANONICAL = 0.9649                                              # (local) Planck 2018 central\n  122: ALPHA_S_EXPECTED = N_S_CANONICAL**2 - 1.0                           # (local) = -0.06896799\n  123: \n  124: # Output destinations\n  125: OUT_NPZ = resolve_output(84, 's84_w8a_alpha_s_single_parameter_derivation.npz')\n  126: OUT_PNG = resolve_output(84, 's84_w8a_alpha_s_single_parameter_derivation.png')\n  127: VERDICT_TXT = resolve_output(84, 's84_gate_verdicts.txt')\n  128: \n  129: INPUT_FILES = [\n  130:     resolve_script(None, 'canonical_constants.py'),\n  131: ]\n  132: \n  133: # ---------------------------------------------------------------------------"
+    },
+    {
+      "anchor_id": "prov_1783",
+      "anchor_type": "data_provenance",
+      "name": "w8a_audit_sign_check",
+      "script_path": "session-84/s84_w8a_audit_sign_check.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-84/s84_w8a_audit_sign_check.py",
+      "source_context_30_lines": "<name 'w8a_audit_sign_check' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: S84-W8A-AUDIT-SG: sign-chain verification for spectral-geometer audit of W8-85.\n    3: \n    4: Substitution chain under examination (Eq. 85.1 of plan):\n    5:   dS/dtau = 4 * sum_n c_n * f'(x_n) * x_n    with x_n = lambda_n^2 / Lambda^2\n    6: \n    7: For a POSITIVE decreasing regulator f (e.g. Gaussian f(x) = exp(-x/2)),\n    8: f'(x) < 0 everywhere, so f'(x)*x < 0 for x > 0.\n    9: \n   10: For a POSITIVE increasing regulator f (e.g. sqrt-cutoff f(x) = sqrt(x),\n   11: which is S42's |lambda|), f'(x) = 1/(2*sqrt(x)) > 0.\n   12: \n   13: HYPOTHESIS: the sign of dS/dtau and d^2S/dtau^2 is regulator-family-dependent\n   14: because f'(x) has DIFFERENT SIGNS for decreasing vs increasing regulators.\n   15: \n   16: This script:\n   17: (a) Confirms the signs of f'(x) for the two canonical regulator choices,\n   18: (b) Writes the substitution chain explicitly for a 2-mode toy model,\n   19: (c) Verifies numerically that sign(dS/dtau_gauss) = -sign(dS/dtau_abs) GENERICALLY,\n   20:     independent of Jensen-ansatz correctness.\n   21: \"\"\"\n   22: import numpy as np\n   23: \n   24: print(\"=\" * 72)\n   25: print(\"SIGN-CHAIN VERIFICATION (SG AUDIT)\")\n   26: print(\"=\" * 72)\n   27: \n   28: # -----------------------------------------------------------------------\n   29: # Step 1: Definitions\n   30: # -----------------------------------------------------------------------"
+    },
+    {
+      "anchor_id": "prov_1784",
+      "anchor_type": "data_provenance",
+      "name": "w8a_mellin_cone_theorem_universality",
+      "script_path": "session-84/s84_w8a_mellin_cone_theorem_universality.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w8a_mellin_cone_theorem_universality.npz, session-84/s84_w8a_mellin_cone_theorem_universality.png",
+      "source_file": "computations/session-84/s84_w8a_mellin_cone_theorem_universality.py",
+      "source_context_30_lines": "  161: \n  162: SESSION = \"S84\"                                                    # (local)\n  163: GATE_ID = \"S84-MELLIN-CONE-THEOREM-UNIVERSALITY\"                   # (local)\n  164: SCHEME = \"abstract_positive_measure\"                                # (local)\n  165: CONVENTION = \"5-regulator-cluster\"                                  # (local)\n  166: L_MAX = 10                                                          # (local) primary\n  167: L_MAX_CROSSCHECK = 5                                                # (local) NC torus crosscheck\n  168: \n  169: OUT_NPZ = SCRIPT_DIR / \"s84_w8a_mellin_cone_theorem_universality.npz\"\n  170: OUT_PNG = SCRIPT_DIR / \"s84_w8a_mellin_cone_theorem_universality.png\"\n  171: VERDICT_TXT = SCRIPT_DIR / \"s84_gate_verdicts.txt\"\n  172: \n  173: INPUT_FILES = [\n  174:     SCRIPT_DIR / \"canonical_constants.py\",\n  175:     SCRIPT_DIR / \"s83_w3_g34_cc_ratio_cluster_universality.py\",\n  176:     SCRIPT_DIR / \"s84_w8a_mellin_cone_theorem_universality.py\",\n  177: ]"
+    },
+    {
+      "anchor_id": "prov_1785",
+      "anchor_type": "data_provenance",
+      "name": "w8a_stationary_point_verification_tau_fold",
+      "script_path": "session-84/s84_w8a_stationary_point_verification_tau_fold.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w8a_stationary_point_verification_tau_fold.npz, session-84/s84_w8a_stationary_point_verification_tau_fold...",
+      "source_file": "computations/session-84/s84_w8a_stationary_point_verification_tau_fold.py",
+      "source_context_30_lines": "   87:                              's36_sfull_tau_stabilization.npz')\n   88: SPECTRUM_NPZ = os.path.normpath(SPECTRUM_NPZ)\n   89: \n   90: CANON_PY = os.path.join(SCRIPT_DIR, 'canonical_constants.py')\n   91: \n   92: print(\"=\" * 78)\n   93: print(\"S84-STATIONARY-POINT-VERIFICATION-TAU-FOLD (§W8a-85)\")\n   94: print(\"=\" * 78)\n   95: print(f\"Script: s84_w8a_stationary_point_verification_tau_fold.py\")\n   96: print(f\"Date: 2026-04-19\")\n   97: print()\n   98: print(\"INPUT SHA-256 PINS:\")\n   99: sha_canon = sha256_file(CANON_PY)\n  100: sha_spec = sha256_file(SPECTRUM_NPZ)\n  101: print(f\"  canonical_constants.py : {sha_canon}\")\n  102: print(f\"  s36_sfull_tau_stabilization.npz : {sha_spec}\")\n  103: print()"
+    },
+    {
+      "anchor_id": "prov_1786",
+      "anchor_type": "data_provenance",
+      "name": "w8a_variational_principle_reformulation",
+      "script_path": "session-84/s84_w8a_variational_principle_reformulation.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-84/s84_w8a_variational_principle_reformulation.py",
+      "source_context_30_lines": "  111:         'convention': '5-regulator-cluster',\n  112:         'sha256': '95d6158242080da95e43f86d566e4a5da5bbe9472a5d3ef75c6342193ae176a0',\n  113:     },\n  114: }\n  115: \n  116: print(\"=\" * 78)\n  117: print(\"S84-VARIATIONAL-PRINCIPLE-REFORMULATION (§W8a-90) -- SYNTHESIZER\")\n  118: print(\"=\" * 78)\n  119: print(f\"Script: s84_w8a_variational_principle_reformulation.py\")\n  120: print(f\"Date: 2026-04-19\")\n  121: print()\n  122: print(\"INPUT SHA-256 PINS:\")\n  123: sha_canon = sha256_file(CANON_PY)\n  124: sha_spec = sha256_file(SPECTRUM_NPZ)\n  125: sha_plan = sha256_file(PLAN_FILE)\n  126: print(f\"  canonical_constants.py                    : {sha_canon}\")\n  127: print(f\"  computations/session-36/s36_sfull_tau_stabilization : {sha_spec}\")"
+    },
+    {
+      "anchor_id": "prov_1787",
+      "anchor_type": "data_provenance",
+      "name": "w8b_cmpp_petrov_type_invariance",
+      "script_path": "session-84/s84_w8b_cmpp_petrov_type_invariance.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w8b_cmpp_petrov_type_invariance.npz, session-84/s84_w8b_cmpp_petrov_type_invariance.png",
+      "source_file": "computations/session-84/s84_w8b_cmpp_petrov_type_invariance.py",
+      "source_context_30_lines": "  664: print(f\"    closure_sha256 = {closure_sha}\")\n  665: \n  666: \n  667: # =============================================================================\n  668: # SAVE ARTIFACTS\n  669: # =============================================================================\n  670: \n  671: script_dir = os.path.dirname(os.path.abspath(__file__))  # (local)\n  672: npz_path = os.path.join(script_dir, 's84_w8b_cmpp_petrov_type_invariance.npz')  # (local)\n  673: \n  674: np.savez(\n  675:     npz_path,\n  676:     tau_full=np.array(TAU_FULL),\n  677:     tau_new=np.array(TAU_NEW),\n  678:     static_types=np.array([static_types[t] for t in TAU_FULL]),\n  679:     dynamic_types=np.array([dynamic_types[t] for t in TAU_FULL]),\n  680:     static_min_bw2=np.array([static_meta[t]['min_bw2'] for t in TAU_FULL]),"
+    },
+    {
+      "anchor_id": "prov_1788",
+      "anchor_type": "data_provenance",
+      "name": "w8b_constraint_layer_audit",
+      "script_path": "session-84/s84_w8b_constraint_layer_audit.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-84/s84_w8b_constraint_layer_audit.py",
+      "source_context_30_lines": "<name 'w8b_constraint_layer_audit' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S84-W8B-91-CONSTRAINT-LAYER-AUDIT\n    4: ==================================\n    5: \n    6: Gate: S84-W8B-91-CONSTRAINT-LAYER-AUDIT\n    7: Plan: sessions/session-plan/session-84-plan-w8b.md §W8b-91\n    8: Agent: schwarzschild-penrose-geometer\n    9: \n   10: Method:\n   11:   Deterministic per-row primary-tag layer assignment of the 53 §VII-A + §VII-B\n   12:   identities from sessions/permanent-results-registry.md (read-only).\n   13: \n   14:   Five-layer taxonomy (plan §9):\n   15:     ALGEBRAIC     — equality/inequality of spectral moments a_k, Mellin\n   16:                     integrals, propagation exponents p_i, or exact rational\n   17:                     identities on Jensen parameter tau.\n   18:     TOPOLOGICAL   — pi_n(G), K-theory class, KO-dim, Euler characteristic,\n   19:                     mode-count-by-dimension.\n   20:     CAUSAL        — Killing vectors, light-cones, sound speed, Mach number,\n   21:                     e-folds, horizon formation, conformal boundaries.\n   22:     ENERGETIC     — NEC/DEC/SEC, stress-energy, spectral-action gradient /\n   23:                     Hessian convexity, Casimir energy, energy-dissipation ratio.\n   24:     THERMODYNAMIC — entropy, temperature, free energy, chemical potential,\n   25:                     condensate/gap, Josephson E_J/E_C, density-of-states coupling.\n   26: \n   27:   Secondary-class check: a row is JOINT only if a distinct mathematical root\n   28:   (not linguistic borrow) forces a second dominant class. If the \"secondary\"\n   29:   meaning is linguistic / downstream-derived, the row remains primary-tag only.\n   30: "
+    },
+    {
+      "anchor_id": "prov_1789",
+      "anchor_type": "data_provenance",
+      "name": "w8b_dynamical_regime_boundaries_cross_ref",
+      "script_path": "session-84/s84_w8b_dynamical_regime_boundaries_cross_ref.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w8b_dynamical_regime_boundaries_cross_ref.npz",
+      "source_file": "computations/session-84/s84_w8b_dynamical_regime_boundaries_cross_ref.py",
+      "source_context_30_lines": "  484: print(\"Verdict line appended:\")\n  485: print(f\"  -> {verdict_path}\")\n  486: print(f\"  {verdict_line}\")\n  487: print()\n  488: \n  489: # ------------------------------------------------------------------------------\n  490: # Persist data for downstream /weave audit\n  491: # ------------------------------------------------------------------------------\n  492: out_npz = PROJECT_ROOT / \"computations\" / \"session-84\" / \"s84_w8b_dynamical_regime_boundaries_cross_ref.npz\"\n  493: np.savez(\n  494:     out_npz,\n  495:     boundary_labels=np.array([r[\"boundary\"] for r in boundary_derivations]),\n  496:     boundary_tau=np.array([r[\"tau_value\"] for r in boundary_derivations]),\n  497:     conservative_set_sizes=np.array(conservative_sizes),\n  498:     optimistic_set_sizes=np.array(optimistic_sizes),\n  499:     max_conservative=max_conservative,\n  500:     max_optimistic=max_optimistic,"
+    },
+    {
+      "anchor_id": "prov_1790",
+      "anchor_type": "data_provenance",
+      "name": "w8b_gear_censorship",
+      "script_path": "session-84/s84_w8b_gear_censorship.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-84/s84_w8b_gear_censorship.py",
+      "source_context_30_lines": "<name 'w8b_gear_censorship' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S84-W8B-96-GEAR-CENSORSHIP\n    4: ==========================\n    5: \n    6: Gate: S84-W8B-96-GEAR-CENSORSHIP\n    7: Plan: sessions/session-plan/session-84-plan-w8b.md §W8b-96\n    8: Agent: schwarzschild-penrose-geometer\n    9: \n   10: Method:\n   11:   THEOREM-type evaluation of whether the algebraic uniqueness of tau_fold=0.190\n   12:   as the closure of (Gamma1' ∧ Gamma5' ∧ Gamma6) on [0.10, 0.30] (S83 W1-8 R3.3)\n   13:   admits a cosmic-censorship analog.\n   14: \n   15:   Four analog candidates (plan §W8b-96.6):\n   16:     (A) Acoustic-white-hole pre/post-causal disconnection (S70)\n   17:     (B) Extremal-horizon kappa=0 at BCS freeze (MEMORY, S69)\n   18:     (C) Topological censorship pi_1(SU(3)) = 0 (S60, S63)\n   19:     (D) Seven-layer censorship stack (MEMORY)\n   20: \n   21:   Coordinate-artifact test: for monotone bijection g: [0, 2] -> g([0, 2]),\n   22:   tau' = g(tau). The identity set (Gamma1', Gamma5', Gamma6) transforms\n   23:   covariantly. Uniqueness of the closure point must survive under any such\n   24:   reparametrization; only the numerical value of tau_fold changes.\n   25: \n   26: Threshold (THEOREM-type):\n   27:   PASS  - at least one of A or B supplies a formal argument linking\n   28:           gear-rigidity to causal-observer inaccessibility of perturbations\n   29:           delta_tau.\n   30:   INFO  - gear-rigidity and causal-censorship are independent."
+    }
+  ]
+}

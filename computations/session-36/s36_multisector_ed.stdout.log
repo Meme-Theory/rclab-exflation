@@ -1,0 +1,555 @@
+==============================================================================
+Session 36: ED-CONV-36 -- Multi-Sector ED Convergence (S81 re-run)
+==============================================================================
+
+S81 INPUT PINS (SHA-256):
+  script                 : 93a46aab3dcb2dade45b0e558f7b2ffad0566e541d0c238d9fff6ce96462c346
+  canonical_constants    : 68b50cd325d2cc8c63b775da3b6b92f538da582bee44c5d906c81259f24dd12f
+  s23a_kosmann           : ef547e583cf73e91b3f0d26e1ba14ee74c28d3718ee08dde12e0f17ad2775214
+  s34a_dphys_kosmann     : c5fbb8770a27b4ed39e9c04a512f4373f71fefc7fb1cbc591ad88c9f0b97a6f9
+  s35a_vh_arbiter        : 410c4835f23e5064712338853f57b3ac13370c6e7ef3dfd43ffe6fb13ce7a34d
+  s35_ed_corrected       : ab38ce337a4545eedbe9df2aef699c04b283216f1531954c95b7d657e3bcb6d2
+  closure_inputs (SHA-256 of sorted pin map): ecbc6771b14160ee3f0a2a708e4e60d390cef598c083a908457d7ed98607c153
+  tau_fold (canonical) = 0.19
+  E_cond_ED_8mode target  = -0.13685055970476342
+  E_cond_ED_5mode (legacy target) = -0.11507660716341951
+
+Full 8-mode positive sector:
+  Eigenvalues E_8 = [0.84526909 0.84526909 0.84526909 0.84526909 0.81914    0.97822388
+ 0.97822388 0.97822388]
+  Branch labels: ['B2[0]', 'B2[1]', 'B2[2]', 'B2[3]', 'B1', 'B3[0]', 'B3[1]', 'B3[2]']
+
+  V_8x8 matrix:
+     B2[0]:    0.02550  0.05715  0.02366  0.04943  0.07991  0.01214  0.01983  0.01905
+     B2[1]:    0.05715  0.03108  0.05162  0.01589  0.07991  0.00629  0.02654  0.01819
+     B2[2]:    0.02366  0.05162  0.05280  0.02766  0.07991  0.02312  0.01228  0.01561
+     B2[3]:    0.04943  0.01589  0.02766  0.06276  0.07991  0.02648  0.00938  0.01516
+        B1:    0.07991  0.07991  0.07991  0.07991  0.00000  0.00000  0.00000  0.00000
+     B3[0]:    0.01214  0.00629  0.02312  0.02648  0.00000  0.06799  0.00733  0.07379
+     B3[1]:    0.01983  0.02654  0.01228  0.00938  0.00000  0.00733  0.06814  0.07364
+     B3[2]:    0.01905  0.01819  0.01561  0.01516  0.00000  0.07379  0.07364  0.00168
+
+  Selection rule checks:
+    V(B1,B1) = 3.44e-29 (Trap 1, should be ~0)
+    V(B1,B3) max = 5.78e-30 (should be ~0)
+    V(B2,B2) off-diag max = 0.057153
+    V(B2,B3) max = 0.026537
+    V(B3,B3) off-diag max = 0.073789
+
+  DOS: rho_smooth = 14.0233 per B2 mode
+  B1 and B3 get rho = 1.0 (away from van Hove fold)
+
+
+##############################################################################
+# CONFIG: B2-only (4 modes)
+# N_modes=4, N_states=16
+##############################################################################
+
+==============================================================================
+EXACT DIAGONALIZATION: B2-only (4 modes)
+  N_modes = 4, N_states = 16
+==============================================================================
+  M_max (MF) = 1.2918771143
+  epsilon = 1 - M_max = -0.2918771143
+  *** M_max > 1: MEAN-FIELD BCS INSTABILITY ***
+  L = 1/|epsilon| = 3.4261
+  Expansion parameter M^2*L/N_eff = 1.4295
+
+  Ground state energy E_0 = 0.0000000000
+  Vacuum energy           = 0.0
+  Condensation energy E_cond = E_0 - E_vac = 0.0000000000
+  Pairing NOT favorable: vacuum is ground state
+
+  Pair occupations:
+    <n_0> (B2[0]) = 0.0000000000
+    <n_1> (B2[1]) = 0.0000000000
+    <n_2> (B2[2]) = 0.0000000000
+    <n_3> (B2[3]) = 0.0000000000
+  |<vacuum|GS>|^2 = 1.0000000000
+  Pair content     = 0.0000000000
+  N_pair distribution: [1. 0. 0. 0. 0.]
+  GS lives in N_pair = 0 sector (prob = 1.000000)
+
+  Pair Hamiltonian spectrum (first 15):
+    E[ 0] = 0.0000000000
+    E[ 1] = 0.0871026509
+    E[ 2] = 1.2360210240
+    E[ 3] = 1.7982506015
+    E[ 4] = 2.1123925946
+    E[ 5] = 2.7644068545
+    E[ 6] = 2.9449823596
+    E[ 7] = 3.3961436678
+    E[ 8] = 3.4681790016
+    E[ 9] = 3.8021030247
+    E[10] = 3.9254169768
+    E[11] = 4.9817910514
+    E[12] = 5.1793269522
+    E[13] = 5.4934689453
+    E[14] = 6.1454832052
+
+  Pair-pair correlator <b_n^dag b_m>:
+    Off-diagonal max = 0.000000
+    B2-B2 block (modes 0-3):
+      0.0000 0.0000 0.0000 0.0000
+      0.0000 0.0000 0.0000 0.0000
+      0.0000 0.0000 0.0000 0.0000
+      0.0000 0.0000 0.0000 0.0000
+
+
+##############################################################################
+# CONFIG: S35 baseline (5 modes: 4B2+1B1)
+# N_modes=5, N_states=32
+##############################################################################
+
+==============================================================================
+EXACT DIAGONALIZATION: S35 baseline (5 modes: 4B2+1B1)
+  N_modes = 5, N_states = 32
+==============================================================================
+  M_max (MF) = 1.3852468342
+  epsilon = 1 - M_max = -0.3852468342
+  *** M_max > 1: MEAN-FIELD BCS INSTABILITY ***
+  L = 1/|epsilon| = 2.5957
+  Expansion parameter M^2*L/N_eff = 1.2452
+
+  Ground state energy E_0 = -0.1150766072
+  Vacuum energy           = 0.0
+  Condensation energy E_cond = E_0 - E_vac = -0.1150766072
+  *** PAIRING IS ENERGETICALLY FAVORABLE ***
+
+  Pair occupations:
+    <n_0> (B2[0]) = 0.2699454596
+    <n_1> (B2[1]) = 0.2620837682
+    <n_2> (B2[2]) = 0.1956154357
+    <n_3> (B2[3]) = 0.1688776587
+    <n_4> (B1) = 0.1034776779
+  |<vacuum|GS>|^2 = 0.0000000000
+  Pair content     = 1.0000000000
+  N_pair distribution: [0.00000000e+00 1.00000000e+00 2.36443803e-34 6.42456908e-67
+ 0.00000000e+00 0.00000000e+00]
+  GS lives in N_pair = 1 sector (prob = 1.000000)
+
+  Pair Hamiltonian spectrum (first 15):
+    E[ 0] = -0.1150766072
+    E[ 1] = 0.0000000000
+    E[ 2] = 0.7136964285
+    E[ 3] = 1.7881598296
+    E[ 4] = 1.8391514734
+    E[ 5] = 2.1236624288
+    E[ 6] = 2.2400167708
+    E[ 7] = 2.3859802335
+    E[ 8] = 2.7278675250
+    E[ 9] = 2.7645355821
+    E[10] = 3.1236110490
+    E[11] = 3.4078373199
+    E[12] = 3.8377063500
+    E[13] = 3.9260579777
+    E[14] = 3.9486193193
+
+  Pair-pair correlator <b_n^dag b_m>:
+    Off-diagonal max = 0.265986
+    B2-B2 block (modes 0-3):
+      0.2699 0.2660 0.2298 0.2135
+      0.2660 0.2621 0.2264 0.2104
+      0.2298 0.2264 0.1956 0.1818
+      0.2135 0.2104 0.1818 0.1689
+
+  Anomalous correlator |<b_m>| (number-conserving => expect ~0):
+    |<b_0>| (B2[0]) = 0.0000000000
+    |<b_1>| (B2[1]) = 0.0000000000
+    |<b_2>| (B2[2]) = 0.0000000000
+    |<b_3>| (B2[3]) = 0.0000000000
+    |<b_4>| (B1) = 0.0000000000
+
+
+##############################################################################
+# CONFIG: 6 modes: 4B2+1B1+1B3
+# N_modes=6, N_states=64
+##############################################################################
+
+==============================================================================
+EXACT DIAGONALIZATION: 6 modes: 4B2+1B1+1B3
+  N_modes = 6, N_states = 64
+==============================================================================
+  M_max (MF) = 1.3886431518
+  epsilon = 1 - M_max = -0.3886431518
+  *** M_max > 1: MEAN-FIELD BCS INSTABILITY ***
+  L = 1/|epsilon| = 2.5731
+  Expansion parameter M^2*L/N_eff = 1.2404
+
+  Ground state energy E_0 = -0.1214177979
+  Vacuum energy           = 0.0
+  Condensation energy E_cond = E_0 - E_vac = -0.1214177979
+  *** PAIRING IS ENERGETICALLY FAVORABLE ***
+
+  Pair occupations:
+    <n_0> (B2[0]) = 0.2688033169
+    <n_1> (B2[1]) = 0.2603897989
+    <n_2> (B2[2]) = 0.1957409174
+    <n_3> (B2[3]) = 0.1694896248
+    <n_4> (B1) = 0.1025292996
+    <n_5> (B3[0]) = 0.0030470424
+  |<vacuum|GS>|^2 = 0.0000000000
+  Pair content     = 1.0000000000
+  N_pair distribution: [0.00000000e+00 1.00000000e+00 1.71415181e-32 3.52850510e-55
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00]
+  GS lives in N_pair = 1 sector (prob = 1.000000)
+
+  Pair Hamiltonian spectrum (first 15):
+    E[ 0] = -0.1214177979
+    E[ 1] = 0.0000000000
+    E[ 2] = 0.6954066344
+    E[ 3] = 1.7866106954
+    E[ 4] = 1.8288676651
+    E[ 5] = 1.8497091397
+    E[ 6] = 1.9460202412
+    E[ 7] = 2.1522259105
+    E[ 8] = 2.2394126096
+    E[ 9] = 2.3217311301
+    E[10] = 2.7259141194
+    E[11] = 2.7295904455
+    E[12] = 2.7645737499
+    E[13] = 3.1156587419
+    E[14] = 3.4001285285
+
+  Pair-pair correlator <b_n^dag b_m>:
+    Off-diagonal max = 0.264563
+    B2-B2 block (modes 0-3):
+      0.2688 0.2646 0.2294 0.2134
+      0.2646 0.2604 0.2258 0.2101
+      0.2294 0.2258 0.1957 0.1821
+      0.2134 0.2101 0.1821 0.1695
+    B2-B3 block (modes 0-3 vs 5+):
+      0.0286
+      0.0282
+      0.0244
+      0.0227
+    B3-B3 block:
+      0.0030
+
+  Anomalous correlator |<b_m>| (number-conserving => expect ~0):
+    |<b_0>| (B2[0]) = 0.0000000000
+    |<b_1>| (B2[1]) = 0.0000000000
+    |<b_2>| (B2[2]) = 0.0000000000
+    |<b_3>| (B2[3]) = 0.0000000000
+    |<b_4>| (B1) = 0.0000000000
+    |<b_5>| (B3[0]) = 0.0000000000
+
+
+##############################################################################
+# CONFIG: 7 modes: 4B2+1B1+2B3
+# N_modes=7, N_states=128
+##############################################################################
+
+==============================================================================
+EXACT DIAGONALIZATION: 7 modes: 4B2+1B1+2B3
+  N_modes = 7, N_states = 128
+==============================================================================
+  M_max (MF) = 1.3920379326
+  epsilon = 1 - M_max = -0.3920379326
+  *** M_max > 1: MEAN-FIELD BCS INSTABILITY ***
+  L = 1/|epsilon| = 2.5508
+  Expansion parameter M^2*L/N_eff = 1.2357
+
+  Ground state energy E_0 = -0.1288456707
+  Vacuum energy           = 0.0
+  Condensation energy E_cond = E_0 - E_vac = -0.1288456707
+  *** PAIRING IS ENERGETICALLY FAVORABLE ***
+
+  Pair occupations:
+    <n_0> (B2[0]) = 0.2681874785
+    <n_1> (B2[1]) = 0.2604760654
+    <n_2> (B2[2]) = 0.1949079529
+    <n_3> (B2[3]) = 0.1684624258
+    <n_4> (B1) = 0.1013776356
+    <n_5> (B3[0]) = 0.0030362852
+    <n_6> (B3[1]) = 0.0035521566
+  |<vacuum|GS>|^2 = 0.0000000000
+  Pair content     = 1.0000000000
+  N_pair distribution: [0.00000000e+00 1.00000000e+00 1.73357505e-32 1.12156010e-44
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00]
+  GS lives in N_pair = 1 sector (prob = 1.000000)
+
+  Pair Hamiltonian spectrum (first 15):
+    E[ 0] = -0.1288456707
+    E[ 1] = 0.0000000000
+    E[ 2] = 0.6772092371
+    E[ 3] = 1.7784963254
+    E[ 4] = 1.8220536064
+    E[ 5] = 1.8411480187
+    E[ 6] = 1.8461661941
+    E[ 7] = 1.9406864038
+    E[ 8] = 1.9816217243
+    E[ 9] = 2.1545108815
+    E[10] = 2.2342110779
+    E[11] = 2.2669972763
+    E[12] = 2.6763402955
+    E[13] = 2.7166990893
+    E[14] = 2.7360889318
+
+  Pair-pair correlator <b_n^dag b_m>:
+    Off-diagonal max = 0.264304
+    B2-B2 block (modes 0-3):
+      0.2682 0.2643 0.2286 0.2126
+      0.2643 0.2605 0.2253 0.2095
+      0.2286 0.2253 0.1949 0.1812
+      0.2126 0.2095 0.1812 0.1685
+    B2-B3 block (modes 0-3 vs 5+):
+      0.0285 0.0309
+      0.0281 0.0304
+      0.0243 0.0263
+      0.0226 0.0245
+    B3-B3 block:
+      0.0030 0.0033
+      0.0033 0.0036
+
+  Anomalous correlator |<b_m>| (number-conserving => expect ~0):
+    |<b_0>| (B2[0]) = 0.0000000000
+    |<b_1>| (B2[1]) = 0.0000000000
+    |<b_2>| (B2[2]) = 0.0000000000
+    |<b_3>| (B2[3]) = 0.0000000000
+    |<b_4>| (B1) = 0.0000000000
+    |<b_5>| (B3[0]) = 0.0000000000
+    |<b_6>| (B3[1]) = 0.0000000000
+
+
+##############################################################################
+# CONFIG: 8 modes: 4B2+1B1+3B3 (FULL)
+# N_modes=8, N_states=256
+##############################################################################
+
+==============================================================================
+EXACT DIAGONALIZATION: 8 modes: 4B2+1B1+3B3 (FULL)
+  N_modes = 8, N_states = 256
+==============================================================================
+  M_max (MF) = 1.3956976805
+  epsilon = 1 - M_max = -0.3956976805
+  *** M_max > 1: MEAN-FIELD BCS INSTABILITY ***
+  L = 1/|epsilon| = 2.5272
+  Expansion parameter M^2*L/N_eff = 1.2307
+
+  Ground state energy E_0 = -0.1368505597
+  Vacuum energy           = 0.0
+  Condensation energy E_cond = E_0 - E_vac = -0.1368505597
+  *** PAIRING IS ENERGETICALLY FAVORABLE ***
+
+  Pair occupations:
+    <n_0> (B2[0]) = 0.2673210859
+    <n_1> (B2[1]) = 0.2595702842
+    <n_2> (B2[2]) = 0.1942141554
+    <n_3> (B2[3]) = 0.1679247756
+    <n_4> (B1) = 0.1001271816
+    <n_5> (B3[0]) = 0.0032472766
+    <n_6> (B3[1]) = 0.0037763910
+    <n_7> (B3[2]) = 0.0038188498
+  |<vacuum|GS>|^2 = 0.0000000000
+  Pair content     = 1.0000000000
+  N_pair distribution: [0.00000000e+00 1.00000000e+00 1.47012323e-32 1.75457301e-47
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00]
+  GS lives in N_pair = 1 sector (prob = 1.000000)
+
+  Pair Hamiltonian spectrum (first 15):
+    E[ 0] = -0.1368505597
+    E[ 1] = 0.0000000000
+    E[ 2] = 0.6548083596
+    E[ 3] = 1.7458558423
+    E[ 4] = 1.7699110110
+    E[ 5] = 1.7982235421
+    E[ 6] = 1.8386284709
+    E[ 7] = 1.9128111229
+    E[ 8] = 1.9348005473
+    E[ 9] = 1.9510923492
+    E[10] = 2.0547127441
+    E[11] = 2.1550704753
+    E[12] = 2.1846947449
+    E[13] = 2.2253953261
+    E[14] = 2.6580342210
+
+  Pair-pair correlator <b_n^dag b_m>:
+    Off-diagonal max = 0.263417
+    B2-B2 block (modes 0-3):
+      0.2673 0.2634 0.2279 0.2119
+      0.2634 0.2596 0.2245 0.2088
+      0.2279 0.2245 0.1942 0.1806
+      0.2119 0.2088 0.1806 0.1679
+    B2-B3 block (modes 0-3 vs 5+):
+      0.0295 0.0318 0.0320
+      0.0290 0.0313 0.0315
+      0.0251 0.0271 0.0272
+      0.0234 0.0252 0.0253
+    B3-B3 block:
+      0.0032 0.0035 0.0035
+      0.0035 0.0038 0.0038
+      0.0035 0.0038 0.0038
+
+  Anomalous correlator |<b_m>| (number-conserving => expect ~0):
+    |<b_0>| (B2[0]) = 0.0000000000
+    |<b_1>| (B2[1]) = 0.0000000000
+    |<b_2>| (B2[2]) = 0.0000000000
+    |<b_3>| (B2[3]) = 0.0000000000
+    |<b_4>| (B1) = 0.0000000000
+    |<b_5>| (B3[0]) = 0.0000000000
+    |<b_6>| (B3[1]) = 0.0000000000
+    |<b_7>| (B3[2]) = 0.0000000000
+
+
+##############################################################################
+# CONFIG: B2+B3 only (7 modes, no B1)
+# N_modes=7, N_states=128
+##############################################################################
+
+==============================================================================
+EXACT DIAGONALIZATION: B2+B3 only (7 modes, no B1)
+  N_modes = 7, N_states = 128
+==============================================================================
+  M_max (MF) = 1.3038612000
+  epsilon = 1 - M_max = -0.3038612000
+  *** M_max > 1: MEAN-FIELD BCS INSTABILITY ***
+  L = 1/|epsilon| = 3.2910
+  Expansion parameter M^2*L/N_eff = 1.3987
+
+  Ground state energy E_0 = 0.0000000000
+  Vacuum energy           = 0.0
+  Condensation energy E_cond = E_0 - E_vac = 0.0000000000
+  Pairing NOT favorable: vacuum is ground state
+
+  Pair occupations:
+    <n_0> (B2[0]) = 0.0000000000
+    <n_1> (B2[1]) = 0.0000000000
+    <n_2> (B2[2]) = 0.0000000000
+    <n_3> (B2[3]) = 0.0000000000
+    <n_4> (B3[0]) = 0.0000000000
+    <n_5> (B3[1]) = 0.0000000000
+    <n_6> (B3[2]) = 0.0000000000
+  |<vacuum|GS>|^2 = 1.0000000000
+  Pair content     = 0.0000000000
+  N_pair distribution: [1. 0. 0. 0. 0. 0. 0. 0.]
+  GS lives in N_pair = 0 sector (prob = 1.000000)
+
+  Pair Hamiltonian spectrum (first 15):
+    E[ 0] = 0.0000000000
+    E[ 1] = 0.0602251020
+    E[ 2] = 1.1428332589
+    E[ 3] = 1.7897402477
+    E[ 4] = 1.8738726083
+    E[ 5] = 1.9441038188
+    E[ 6] = 1.9918476270
+    E[ 7] = 2.0396734170
+    E[ 8] = 2.0547123386
+    E[ 9] = 2.1371178917
+    E[10] = 2.1441692431
+    E[11] = 2.7646726155
+    E[12] = 2.8714936081
+    E[13] = 2.9145781169
+    E[14] = 3.1703767276
+
+  Pair-pair correlator <b_n^dag b_m>:
+    Off-diagonal max = 0.000000
+    B2-B2 block (modes 0-3):
+      0.0000 0.0000 0.0000 0.0000
+      0.0000 0.0000 0.0000 0.0000
+      0.0000 0.0000 0.0000 0.0000
+      0.0000 0.0000 0.0000 0.0000
+    B2-B3 block (modes 0-3 vs 5+):
+      0.0000 0.0000
+      0.0000 0.0000
+      0.0000 0.0000
+      0.0000 0.0000
+    B3-B3 block:
+      0.0000 0.0000
+      0.0000 0.0000
+
+
+==============================================================================
+CROSS-CHECK: Reproduce S35 ED-CORRECTED-35
+==============================================================================
+  S35 stored E_cond  = -0.1150766072
+  Our 5-mode E_cond  = -0.1150766072
+  Difference         = 0.00e+00
+  V matrix match     = True
+  E_vec match        = True
+  E_cond match (1e-6)= True
+
+
+==============================================================================
+CONVERGENCE ANALYSIS
+==============================================================================
+
+  Config                                 N   States   M_max(MF)        E_cond   Paired   Pair content
+  -----------------------------------  ---  -------  ----------  ------------  -------  -------------
+  B2-only (4 modes)                      4       16    1.291877      0.000000       NO       0.000000
+  S35 baseline (5 modes: 4B2+1B1)        5       32    1.385247     -0.115077      YES       1.000000
+  6 modes: 4B2+1B1+1B3                   6       64    1.388643     -0.121418      YES       1.000000
+  7 modes: 4B2+1B1+2B3                   7      128    1.392038     -0.128846      YES       1.000000
+  8 modes: 4B2+1B1+3B3 (FULL)            8      256    1.395698     -0.136851      YES       1.000000
+  B2+B3 only (7 modes, no B1)            7      128    1.303861      0.000000       NO       0.000000
+
+  Convergence (S35 -> Full):
+    E_cond(S35, 5 modes) = -0.1150766072
+    E_cond(full, 8 modes) = -0.1368505597
+    |Delta E_cond|        = 0.0217739525
+    |Delta E_cond|/|E_cond(S35)| = 0.189213 = 18.92%
+
+  Step-by-step convergence:
+    4 -> 5 modes: E_cond = -0.115077 (previous was zero)
+    5 -> 6 modes: Delta E_cond = -0.006341 (DEEPER, |Delta|/|E_prev| = 0.0551 = 5.51%)
+    6 -> 7 modes: Delta E_cond = -0.007428 (DEEPER, |Delta|/|E_prev| = 0.0612 = 6.12%)
+    7 -> 8 modes: Delta E_cond = -0.008005 (DEEPER, |Delta|/|E_prev| = 0.0621 = 6.21%)
+
+  B3 contribution analysis:
+    E_cond(B2 only, 4 modes)  = 0.0000000000
+    E_cond(B2+B3, 7 modes)    = 0.0000000000
+    E_cond(B2+B1, 5 modes)    = -0.1150766072
+    E_cond(full, 8 modes)     = -0.1368505597
+
+  Off-diagonal pair-pair correlator max:
+    B2-only (4 modes): 0.000000
+    S35 baseline (5 modes: 4B2+1B1): 0.265986
+    6 modes: 4B2+1B1+1B3: 0.264563
+    7 modes: 4B2+1B1+2B3: 0.264304
+    8 modes: 4B2+1B1+3B3 (FULL): 0.263417
+
+
+==============================================================================
+GATE ED-CONV-36
+==============================================================================
+
+  Pre-registered criteria:
+    E_cond(N=8, full) = -0.1368505597
+    E_cond(N=5, S35)  = -0.1150766072
+    Paired at N=8?    = True
+    Fractional change = 0.189213 = 18.92%
+    Enhanced?         = True (|E_cond| grew)
+
+  *** ED-CONV-36: ENHANCED ***
+  |E_cond(N=8)| = 0.136851 > |E_cond(N=5)| = 0.115077. Multi-band B3 modes ENHANCE pairing.
+
+  CONSTRAINT MAP UPDATE:
+    ED pairing SURVIVES full positive-sector treatment (8 modes, 256 states).
+    B3 modes do NOT screen the BCS instability.
+    B3 modes actively ENHANCE pairing (multi-band effect).
+    E_cond convergence: 18.92% from N=5 to N=8.
+    The ED result is robust against Hilbert space enlargement.
+
+Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s36_multisector_ed.npz
+File size: 24.5 KB
+Plot saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s36_multisector_ed.png
+
+==============================================================================
+ED-CONV-36 FINAL: ENHANCED
+==============================================================================
+
+  Main convergence sequence:
+    B2-only (4 modes)                  : E_cond=0.000000, M_max(MF)=1.2919, paired=False, corr_max=0.0000
+    S35 baseline (5 modes: 4B2+1B1)    : E_cond=-0.115077, M_max(MF)=1.3852, paired=True, corr_max=0.2660
+    6 modes: 4B2+1B1+1B3               : E_cond=-0.121418, M_max(MF)=1.3886, paired=True, corr_max=0.2646
+    7 modes: 4B2+1B1+2B3               : E_cond=-0.128846, M_max(MF)=1.3920, paired=True, corr_max=0.2643
+    8 modes: 4B2+1B1+3B3 (FULL)        : E_cond=-0.136851, M_max(MF)=1.3957, paired=True, corr_max=0.2634
+
+  B2+B3 (no B1): E_cond=0.000000, M_max=1.3039
+
+  S35 cross-check: E_cond match = True
+  Fractional change (S35->Full) = 18.92%
+
+  Runtime: 0.6s
+==============================================================================

@@ -90,7 +90,7 @@ The drift from the PI's phononic-first chain to the agents' NCG-first chain was 
 
 1. **Session 1-6 (Foundations):** The PI laid out the phononic hypothesis, the exflation mechanism, and the connection to Baptista's mathematics. The agents received this and translated it into their training vocabulary: spectral triples, KO-dimension, first-order condition. The translation was accurate at this stage.
 
-2. **Sessions 7-14 (Tier 0 Computation):** The computation phase necessarily operated in the NCG/spectral geometry language. The eigenvalue calculations, Peter-Weyl decomposition, and Gilkey coefficients are all NCG machinery. The agents optimized for internal consistency within spectral geometry. The phononic interpretation receded into background context.
+2. **Sessions 7-14 (computation Computation):** The computation phase necessarily operated in the NCG/spectral geometry language. The eigenvalue calculations, Peter-Weyl decomposition, and Gilkey coefficients are all NCG machinery. The agents optimized for internal consistency within spectral geometry. The phononic interpretation receded into background context.
 
 3. **Sessions 17-20 (Constraint Gates):** The pre-registered gates were framed in spectral-action language: "does $V_{\text{spec}}(\tau; \rho)$ have a minimum?" This is the NCG-first question. The PI's question -- "does the substrate condense?" -- was never the gate criterion because it cannot be phrased in the agents' formalism.
 
@@ -484,7 +484,7 @@ This document does not change the framework's probability. The Sagan Redux poste
 - **Corrected estimate for RB-1 Phase 3 (cooling trajectory):** Days.
 - **Total for corrected RB-1:** 1-2 weeks (with existing computational infrastructure).
 
-The probability updates remain as pre-registered in the Session 26 preplan gate verdicts (`tier0-archive/s26_gate_verdicts.txt`):
+The probability updates remain as pre-registered in the Session 26 preplan gate verdicts (`computations/s26_gate_verdicts.txt`):
 - RB-1 PASS ($\Delta > 0$ at some $\tau_0$): Panel 25-50%, Sagan 20-40%.
 - RB-1 CLOSED (no solution): Panel 4-7%, Sagan 3-5%.
 

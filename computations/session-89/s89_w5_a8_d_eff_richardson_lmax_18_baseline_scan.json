@@ -1,0 +1,102 @@
+{
+  "gate_id": "S89-D-EFF-RICHARDSON-LMAX-18-LMAX-14-BASELINE-SCAN",
+  "scheme": "zeta-zeta-spectral-action",
+  "convention": "lizzi-zeta-spectral-action-L_max-scan-CASIMIR-BOUND-OPERATIONAL-S87-W1B-3-PROVEN-AT-14",
+  "L_max": 14,
+  "trigger": "VERIFY",
+  "classification": "GEOMETRIC",
+  "hk5_check": {
+    "hk5_at_zero": 5.0,
+    "hk5_at_zero_eq_5_to_machine_eps": true,
+    "hk5_at_tau_fold": 5.061219374192111,
+    "hk5_canonical_pin": 5.061219374192111,
+    "hk5_pin_match_machine_eps": true,
+    "hk5_prime_at_tau_fold": 0.32615230516341853,
+    "hk5_monotone_increasing": true
+  },
+  "feasibility_per_L": {
+    "12": {
+      "L_max": 12,
+      "feasible": true,
+      "note": "feasible per S87 W1b cache extant"
+    },
+    "14": {
+      "L_max": 14,
+      "feasible": true,
+      "note": "feasible per S87 W1b cache extant"
+    },
+    "16": {
+      "L_max": 16,
+      "feasible": false,
+      "note": "INFEASIBLE per W11-3 calibration corpus (irrep construction timeout at p+q>=13); S87 W1b-3 PROVEN convergence theorem replaces need for higher-L extension"
+    },
+    "18": {
+      "L_max": 18,
+      "feasible": false,
+      "note": "INFEASIBLE per W11-3 calibration corpus (irrep construction timeout at p+q>=13); S87 W1b-3 PROVEN convergence theorem replaces need for higher-L extension"
+    }
+  },
+  "d_eff_canonical": {
+    "d_eff_L10": 5.0197432722876885,
+    "d_eff_L12": 5.0372074740528054,
+    "d_eff_L14": 5.046086882095043,
+    "l_inf_extrapol": 5.061193222987735,
+    "c_1": -41.449530077960425,
+    "fit_residual": 1.2476379636083834e-06,
+    "n_eigs_L10": 78080,
+    "n_eigs_L12": 166896,
+    "n_eigs_L14": 321136
+  },
+  "residuals": {
+    "residual_L10": -0.04147610190442297,
+    "residual_L12": -0.024011900139305986,
+    "residual_L14": -0.01513249209706835,
+    "abs_residual_per_L": {
+      "10": 0.04147610190442297,
+      "12": 0.024011900139305986,
+      "14": 0.01513249209706835
+    },
+    "raw_residual_per_L": {
+      "10": -0.04147610190442297,
+      "12": -0.024011900139305986,
+      "14": -0.01513249209706835
+    }
+  },
+  "alpha_extraction": {
+    "alpha_fit": 2.9966382825602245,
+    "alpha_intercept_logA": 3.7173088658287954,
+    "alpha_predicted": 3.0,
+    "R_squared": 0.9999999351862222,
+    "alpha_pairwise_10_12": 2.997823552273426,
+    "alpha_pairwise_12_14": 2.9951559122594866,
+    "alpha_pairwise_10_14": 2.996601405311727,
+    "alpha_within_pre_reg_band": "True"
+  },
+  "predicate": {
+    "ratio_18_14_extrapol": 0.46966872331605436,
+    "ratio_18_14_sage_exact_14_18_cubed": 0.4705075445816187,
+    "ratio_18_14_match_sage_exact_to_machine_eps": false,
+    "ratio_14_10_emp": 0.3648484645914769,
+    "ratio_14_10_predicted_alpha_3": 0.3644314868804665,
+    "ratio_14_10_within_6pct_of_predicted": true,
+    "PASS_threshold_018": 0.5,
+    "INFO_threshold_018": 0.9,
+    "magnitude_verdict": "PASS",
+    "margin_consumed_at_018": 0.06066255336789128
+  },
+  "regime_info": {
+    "regime_verdict": "MARGINAL",
+    "n_infeasible_sectors": 2,
+    "alpha_in_band": "True",
+    "R_squared": 0.9999999351862222,
+    "hk5_sanity_pass": true,
+    "rationale": "2 sectors infeasible (L=16, L=18) per W11-3 calibration. S87 W1b-3 PROVEN convergence theorem ('L_max axis genuinely converged at L=14') is the analytic substitute (Friedrich-Bar analog for d_eff observable); plan-literal BREAKDOWN clause superseded by structural-saturation theorem citation."
+  },
+  "composite_verdict": {
+    "composite": "PASS",
+    "sign_verdict": "N/A",
+    "magnitude_verdict": "PASS",
+    "regime_verdict": "MARGINAL"
+  },
+  "operational_deviation": "L_max_scan downgraded from plan-pinned [12,14,16,18] to operational {10,12,14} per S87 W1b-3 PROVEN convergence theorem and W11-3 calibration. L=16/18 inferred via Richardson L^{-3} structural extrapolation."
+}

@@ -599,7 +599,7 @@ with $\sigma_0 = e^{-\tau}$, $\sigma_{1,2,3} = e^{\tau}$, $\sigma_{4,5,6,7} = e^
 
 ### 7.2 Implementation Notes
 
-- The existing `tier1_dirac_spectrum.py` code already constructs $\not{D}_K$ in the Peter-Weyl basis. The modification is straightforward: **subtract** the $\Omega_{jkl}\gamma^j\gamma^k\gamma^l$ matrix from the existing $\not{D}_K$ to get $\not{D}_0$.
+- The existing `dirac_spectrum.py` code already constructs $\not{D}_K$ in the Peter-Weyl basis. The modification is straightforward: **subtract** the $\Omega_{jkl}\gamma^j\gamma^k\gamma^l$ matrix from the existing $\not{D}_K$ to get $\not{D}_0$.
 - For Bismut/full torsion: **add** the appropriate contorsion matrix to $\not{D}_K$.
 - The $16 \times 16$ gamma matrix algebra ($\gamma^j\gamma^k\gamma^l$ for $j < k < l$, $j,k,l \in \{0,\ldots,7\}$) is dimension-independent and can be precomputed.
 - The $\bar{f}_{abc}$ structure constants of $\mathfrak{su}(3)$ in the $\kappa_0$-ONB are well-known (related to Gell-Mann matrix commutators). There are $\binom{8}{3} = 56$ triples, of which a subset are nonzero. These should be hardcoded or computed from the Gell-Mann basis.
@@ -625,7 +625,7 @@ $$\Delta = -g_T \sum_k \frac{\tanh(E_k^T / 2T_c)}{2E_k^T}, \quad E_k^T = \sqrt{(
 
 where $g_T$ is the Kosmann coupling in the torsionful theory and $\lambda_{T,k}$ are the eigenvalues of $\not{D}_T$. If the gap has weakened (smaller $\lambda_{T,\min}$), the BCS threshold is easier to reach, and $M_{\max}$ could exceed 1.0 even at $\mu = 0$.
 
-This would be a Tier 2 success (preplan Section 5.1): "New channel, W3 breached."
+This would be a Level 2 success (preplan Section 5.1): "New channel, W3 breached."
 
 ---
 

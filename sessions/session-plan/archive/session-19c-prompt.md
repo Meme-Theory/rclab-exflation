@@ -16,7 +16,7 @@ Sessions 19a and 19b tested two independent hypotheses about the monotonic V_eff
 
 **This session** builds the infrastructure that BOTH surviving paths need going forward, synthesizes all results, and plans Session 20.
 
-**Why these agents**: phonon-exflation-sim owns the eigenvalue code (tier1_dirac_spectrum.py) and will modify collect_spectrum() for eigenvector extraction. connes-ncg-theorist brings NCG spectral triple expertise essential for the D_total Pfaffian route — understanding how D_F(s) is constructed from D_K eigenvectors, how the order-one condition works, and what the Pfaffian sign change physically means in the NCG framework.
+**Why these agents**: phonon-exflation-sim owns the eigenvalue code (dirac_spectrum.py) and will modify collect_spectrum() for eigenvector extraction. connes-ncg-theorist brings NCG spectral triple expertise essential for the D_total Pfaffian route — understanding how D_F(s) is constructed from D_K eigenvectors, how the order-one condition works, and what the Pfaffian sign change physically means in the NCG framework.
 
 ---
 
@@ -24,13 +24,13 @@ Sessions 19a and 19b tested two independent hypotheses about the monotonic V_eff
 
 ## For phonon-exflation-sim:
 
-1. **tier1_dirac_spectrum.py**: `tier0-computation/tier1_dirac_spectrum.py` — The main eigenvalue infrastructure. Focus on collect_spectrum() — currently calls np.linalg.eigh and DISCARDS eigenvectors. Your task is to make eigenvector return optional.
+1. **dirac_spectrum.py**: `computations/dirac_spectrum.py` — The main eigenvalue infrastructure. Focus on collect_spectrum() — currently calls np.linalg.eigh and DISCARDS eigenvectors. Your task is to make eigenvector return optional.
 
 2. **Session 18 wrapup, Section XI**: `sessions/session-18/session-18-wrapup.md` (lines 401-416) — Einstein's recommendation for Session 19: eigenvector extraction, Yukawa integrals, D_F(s) assembly, Pfaffian phase diagram.
 
 3. **Session 19 primer, Section VI item 6**: `sessions/session-19/session-19-primer.md` — Eigenvector extraction identified as dual-purpose gate.
 
-4. **Session 19a results**: Check `tier0-computation/s19a_*.py` output — what did the spectral diagnostics find?
+4. **Session 19a results**: Check `computations/s19a_*.py` output — what did the spectral diagnostics find?
 
 5. **Your agent memory**: `.claude/agent-memory/phonon-exflation-sim/`
 
@@ -44,7 +44,7 @@ Sessions 19a and 19b tested two independent hypotheses about the monotonic V_eff
 
 9. **Baptista Paper 18**: `researchers/Baptista/18_2026_Spectral_geometry_from_compact_Lie_groups.md` — Appendix E (Z_3 generations), the full spectral geometry construction.
 
-10. **Session 19b results**: Check `tier0-computation/r19b_*.py` output — what did the rolling modulus find?
+10. **Session 19b results**: Check `computations/r19b_*.py` output — what did the rolling modulus find?
 
 11. **Your agent memory**: `.claude/agent-memory/connes-ncg-theorist/`
 
@@ -68,7 +68,7 @@ Sessions 19a and 19b tested two independent hypotheses about the monotonic V_eff
 
 #### Background
 
-collect_spectrum() in tier1_dirac_spectrum.py currently:
+collect_spectrum() in dirac_spectrum.py currently:
 1. Builds the Dirac matrix D_{(p,q)} for each irrep sector
 2. Calls eigenvalues = np.linalg.eigh(D_matrix) (or equivalent)
 3. Returns eigenvalues with sector labels and multiplicities
@@ -241,7 +241,7 @@ This session's primary output is INFRASTRUCTURE (E-1, E-2) and PLANNING (E-3, E-
 
 **5 deliverables from 2 agents over 1-2 days.**
 
-All scripts go in `tier0-computation/`. Naming: `e19c_eigenvector_extraction.py`, `e19c_eigenvector_validation.py`.
+All scripts go in `computations/`. Naming: `e19c_eigenvector_extraction.py`, `e19c_eigenvector_validation.py`.
 
 **Environment**: System Python (`python`). numpy + scipy. No GPU.
 

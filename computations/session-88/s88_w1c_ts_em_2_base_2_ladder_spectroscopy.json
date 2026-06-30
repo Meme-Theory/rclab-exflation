@@ -1,0 +1,248 @@
+{
+  "gate_id": "S88-CF-CURV-14-TS-EM-2-BASE-2-LADDER-SPECTROSCOPY",
+  "session": "S88",
+  "scheme": "JWST-NIRSpec-MIRI-spectroscopy-CCF-base-2-ladder-rank-2-Klein-V4-discriminator",
+  "convention": "TS-EM-2-base-2-energy-ladder-protocol-preregistration-S88-cycle-3-Q3-2026",
+  "L_max": "N/A_observational",
+  "trigger": "VERIFY",
+  "classification": "NON-PHONONIC",
+  "agent": "little-red-dots-jwst-analyst",
+  "co_authors": [
+    "hawking-theorist",
+    "mack-cosmic-bridge"
+  ],
+  "plan_reference": "sessions/session-plan/session-88-plan-w1c.md \u00a7W1c-67",
+  "substrate_prediction": {
+    "M_0_cascade_tail_kg": 10000000000000.0,
+    "T_H_cascade_tail_K": 12269006698.422716,
+    "E_0_thermal_keV": 1057.2611951580009,
+    "E_0_thermal_MeV": 1.0572611951580009,
+    "E0_keV_anchor": 0.94,
+    "ladder_keV_rest_frame": [
+      0.94,
+      1.88,
+      3.76,
+      7.52,
+      15.04
+    ],
+    "k_steps_thermal_to_anchor": 10.135383459657852,
+    "ladder_formula": "E_n = E_0 * 2^n; rank-2 Klein-V_4 mass-halving cascade",
+    "T_H_formula": "T_H = hbar*c^3 / (8*pi*G*M*k_B)",
+    "Hawking_T_mass_relation_pin": "T_H(M_0=1e13 kg) = 1.227e10 K (Carr+10 \u00a73 calibration)",
+    "rank2_Klein_V4_cascade_provenance": "S87 W11-1 V_4 monodromy + W1b2-64/65 cascade-tail Page non-activation theorem"
+  },
+  "pipeline_spec": {
+    "NIRSpec_MSA_medium_resolution": {
+      "G140M": {
+        "wavelength_um": [
+          1.0,
+          1.8
+        ],
+        "resolving_power": 1000
+      },
+      "G235M": {
+        "wavelength_um": [
+          1.7,
+          3.2
+        ],
+        "resolving_power": 1000
+      },
+      "G395M": {
+        "wavelength_um": [
+          2.9,
+          5.1
+        ],
+        "resolving_power": 1000
+      },
+      "rest_frame_at_z6": "0.143-0.729 micron rest-frame coverage at z=6 LRD",
+      "instrument_path": "MSA dispersion onto microshutter array + detector"
+    },
+    "MIRI_MRS_medium_resolution": {
+      "Channel_1": {
+        "wavelength_um": [
+          4.9,
+          7.65
+        ],
+        "resolving_power": 3000
+      },
+      "Channel_2": {
+        "wavelength_um": [
+          7.51,
+          11.71
+        ],
+        "resolving_power": 2700
+      },
+      "Channel_3": {
+        "wavelength_um": [
+          11.55,
+          17.98
+        ],
+        "resolving_power": 2400
+      },
+      "rest_frame_at_z6": "0.700-2.569 micron rest-frame coverage at z=6 LRD",
+      "instrument_path": "IFU optics + spectrograph + detector"
+    },
+    "continuum_subtraction_calibration": "Greene+24 \u00a74.2 stellar + AGN continuum model",
+    "joint_pipeline": "NIRSpec + MIRI joint continuum + line-feature extraction"
+  },
+  "cross_correlation_spec": {
+    "delta_log2_E_grid": [
+      0.5,
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0,
+      3.5,
+      4.0
+    ],
+    "integer_deltas": [
+      1.0,
+      2.0,
+      3.0,
+      4.0
+    ],
+    "half_integer_deltas": [
+      0.5,
+      1.5,
+      2.5,
+      3.5
+    ],
+    "n_bootstrap": 1000,
+    "n_pixels": 2000,
+    "random_seed": 137,
+    "sigma_CCF_null_per_delta": [
+      0.02417236221174345,
+      0.023919660540445514,
+      0.024986839474902236,
+      0.026549022435748124,
+      0.02974449317465548,
+      0.03187343797455796,
+      0.03578041274700464,
+      0.038895223258978394
+    ],
+    "mean_CCF_null_per_delta": [
+      -0.0004203324996156752,
+      0.00021805558263907098,
+      -0.0012984369346336277,
+      0.0006909322063819021,
+      0.0005980002430959391,
+      -0.0009554613190707003,
+      7.929100879409376e-05,
+      -0.0001539584285356005
+    ],
+    "mean_CCF_signal_per_delta": [
+      0.000330521415026638,
+      0.0013886327373634788,
+      0.0018186174886590174,
+      0.0011899136066694592,
+      9.024390296438884e-05,
+      0.0005660968407687938,
+      0.0007824064175539192,
+      0.00034832865913134555
+    ],
+    "interleaving_metric_signal_int_minus_half": 0.0001177956549322784,
+    "test_statistic_definition": "max-over-Delta-integer of |CCF| / sigma_CCF_null",
+    "PASS_DETECT_band": "max-test-stat >= 3 sigma at any Delta_log2(E) in {1,2,3,4} for >= 1 of {NIRSpec, MIRI}",
+    "PASS_NULL_band": "max-test-stat < 3 sigma at all integer Delta_log2(E)",
+    "FAIL_band": "max-test-stat >= 3 sigma at any non-integer Delta_log2(E) in {0.5,1.5,2.5,3.5}"
+  },
+  "competing_PBH_discriminator": {
+    "DCBH_direct_collapse": {
+      "spectrum": "smooth thermal Hawking continuum",
+      "base2_correlated_power": false,
+      "discriminator_outcome_under_PASS_DETECT_FUTURE": "STRUCTURALLY_FALSIFIES"
+    },
+    "PopIII_heavy_seed_Madau14": {
+      "spectrum": "smooth thermal Hawking + Pop-III stellar absorption features",
+      "base2_correlated_power": false,
+      "discriminator_outcome_under_PASS_DETECT_FUTURE": "STRUCTURALLY_FALSIFIES"
+    },
+    "super_Eddington_direct_collapse": {
+      "spectrum": "smooth thermal Hawking + Eddington-limited photospheric features",
+      "base2_correlated_power": false,
+      "discriminator_outcome_under_PASS_DETECT_FUTURE": "STRUCTURALLY_FALSIFIES"
+    },
+    "TS_EM_2_substrate_rank2_Klein_V4": {
+      "spectrum": "thermal Hawking continuum + base-2 ladder correlated power",
+      "base2_correlated_power": true,
+      "discriminator_outcome_under_PASS_DETECT_FUTURE": "UNIQUELY_CONFIRMED"
+    }
+  },
+  "sn_forecast": {
+    "continuum_fraction_grid": [
+      0.01,
+      0.05,
+      0.1
+    ],
+    "n_sources_grid": [
+      200,
+      300,
+      400
+    ],
+    "per_source_SNR_per_fc": [
+      0.447213595499958,
+      2.23606797749979,
+      4.47213595499958
+    ],
+    "stacked_SNR_matrix_rows_fc_cols_nsrc": [
+      [
+        6.32455532033676,
+        7.745966692414835,
+        8.94427190999916
+      ],
+      [
+        31.622776601683796,
+        38.729833462074176,
+        44.721359549995796
+      ],
+      [
+        63.24555320336759,
+        77.45966692414835,
+        89.44271909999159
+      ]
+    ],
+    "baseline_5pct_N300_sigma": 38.729833462074176,
+    "conservative_1pct_N200_sigma": 6.32455532033676,
+    "optimistic_10pct_N400_sigma": 89.44271909999159,
+    "PASS_DETECT_floor_sigma": 3.0,
+    "PASS_DETECT_at_baseline": true,
+    "PASS_DETECT_at_conservative_baseline": true
+  },
+  "detector_horizons": {
+    "JWST_cycle_3_NIRSpec_MSA": "Q3 2026 - Q3 2027 (~200 additional confirmed LRDs)",
+    "JWST_MIRI_MRS": "ongoing through cycle-3+ for rest-frame mid-IR coverage at z=4-8",
+    "Greene_2024_archive_baseline": "88 spectroscopically confirmed LRDs at z=4-8",
+    "joint_NIRSpec_MIRI_target": ">= 200 LRDs with both medium-resolution datasets",
+    "z_range": "z = 4-8 (LRD-progenitor environments)"
+  },
+  "falsifier_master_inventory_row_update_prepared": {
+    "row_label": "TS-EM-2 base-2 energy ladder JWST NIRSpec+MIRI cross-correlation discriminator",
+    "substrate_prediction": "E_n = E_0 * 2^n; rank-2 Klein-V_4 cascade UNIQUE among PBH-formation channels",
+    "PASS_DETECT_observable": "stacked CCF >= 3sigma at integer Delta_log2(E) AND no non-integer signal",
+    "PASS_DETECT_falsifies": "DCBH-only formation channel; Pop-III heavy-seed; super-Eddington direct-collapse",
+    "FAIL_falsifies": "rank-2 Klein-V_4 cascade structure (peak at non-integer Delta indicates alt cascade or non-cascade)",
+    "PASS_NULL_meaning": "consistent with EM-1; carry-forward as observational watchlist",
+    "detector_horizon": "JWST cycle-3 NIRSpec MSA (Q3 2026 - Q3 2027); MIRI MRS ongoing",
+    "writer_directive": "mack-cosmic-bridge sole writer per feedback_mack-bridge-role.md"
+  },
+  "cross_link_W1c_69": "Cascade-tail Hawking spectrum E_0 anchor derivation: see S88 W1c-69 (CF-CURV-16) U1-BBN chunky-Hawking metallicity for the substrate-physics derivation of n_PBH at cascade-tail BBN-mass M ~ 10^13 kg providing the E_0 anchor pin used here.",
+  "cross_link_W11_1_V4_monodromy": "Rank-2 Klein-V_4 cascade structure: see S87 W11-1 S87-MONODROMY-V_4-EXPLICIT verdict establishing V_4 = (Z_2)^2 with Cartan-toral character (sigma_M=(-1)^p, sigma_C=(-1)^q) and PRU Class 8.2 supersession of Z_4 alternative via element-order signature mismatch ([1,2,2,2] vs [1,2,4,4]).",
+  "preregistered_outcome_bands_FUTURE_horizon": {
+    "PASS_DETECT_FUTURE": "max-test-stat >= 3sigma at any Delta_log2(E) in {1,2,3,4} for >=1 of {NIRSpec, MIRI}",
+    "PASS_NULL_FUTURE": "max-test-stat < 3sigma at all integer Delta_log2(E)",
+    "FAIL_FUTURE": "max-test-stat >= 3sigma at any non-integer Delta_log2(E) ({0.5,1.5,2.5,3.5})",
+    "horizon": "multi-year (JWST cycle-3+ NIRSpec MSA + MIRI MRS at z=4-8 LRDs)",
+    "S88_verdict_scope": "protocol pre-registration ONLY; observational verdict deferred"
+  },
+  "artifact_check": {
+    "delta_log2_grid_includes_integer": true,
+    "delta_log2_grid_includes_half_integer": true,
+    "n_bootstrap_executed": 1000,
+    "competing_pbh_models_preregistered": 4,
+    "sn_forecast_grid_points": 9,
+    "stacked_SNR_at_conservative_baseline_geq_3sigma": true,
+    "stacked_SNR_at_baseline_geq_3sigma": true
+  },
+  "substrate_framing": "The substrate IS the cascade. JWST NIRSpec + MIRI measure photon energies IN the spectrograph; the cascade-tail Hawking spectrum at LRD-progenitor environments IS the substrate's pixelation-lock end-state radiation. The base-2 ladder is NOT a structure imposed onto a thermal Hawking continuum; it IS the substrate's intrinsic rank-2 Klein-V_4 cascade footprint at the photon-energy level. Direction of explanation: substrate cascade physics -> emergent Hawking + base-2-ladder correlated power -> JWST/MIRI observable spectrum."
+}

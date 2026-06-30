@@ -1,0 +1,63 @@
+{
+  "bucket": "pixie",
+  "clusters": [
+    {
+      "cluster_id": "pixie_mu_endpoint_prereg",
+      "representative_title": "PIXIE mu-distortion K-endpoint pre-registration (W5-57: mu=8.69e-5 at K=3.56e5, gamma=1 lockout)",
+      "quantity": "PIXIE mu-distortion endpoint mu_max = 8.69e-5 at K = 3.56e5, with gamma=1 exact linearity across 5.24 decades and FIRAS edge constraint",
+      "member_raw_indices": [80, 81, 126],
+      "members": [
+        {
+          "raw_index": 80,
+          "title": "PIXIE mu-distortion endpoint pre-registration** (from W5-57)",
+          "origins": ["mack"],
+          "sources": ["session-84-mack-synthesis.md"],
+          "role": "core pre-registration: max mu=8.69e-5 at K=3.56e5 vs PIXIE sensitivity; gamma=1 exact to 1e-15; FIRAS upper bound"
+        },
+        {
+          "raw_index": 81,
+          "gate_id": "CF-M10",
+          "title": "PIXIE mu-distortion K-endpoint pre-registration: write up W5-57 K=3.56e5 en",
+          "origins": ["mack"],
+          "sources": ["session-84-s4-mack-falsifier-synthesis.md"],
+          "role": "write-up instance of the same pre-registration (same W5-57 endpoint, same mu=8.69e-5, same gamma=1 lockout)"
+        },
+        {
+          "raw_index": 126,
+          "gate_id": "PIXIE-MU-INDEPENDENCE-AUGMENT",
+          "title": "S85-PIXIE-MU-INDEPENDENCE-AUGMENT",
+          "origins": ["little-red-dots"],
+          "sources": ["session-84-s4-lrd-falsifier-synthesis.md"],
+          "role": "augmentation of the same Mack pre-registration with explicit N_det=1 single-detector note and BF-class adjustment; references identical W5-57 INFO data"
+        }
+      ],
+      "merge_rationale": "All three items reference the same W5-57 endpoint (K=3.56e5, mu=8.69e-5) and constitute one pre-registration action with one augmentation. 80 and 81 are the same Mack pre-registration in two synthesis documents (mack-synthesis + s4-mack-falsifier-synthesis). 126 is an explicit extension of that Mack pre-registration (item labeled 'Extend Mack V.13 PIXIE mu pre-registration'), not an independent quantity. Conservative merge preserves the single-detector augmentation as a sub-note within the same cluster rather than splitting it."
+    }
+  ],
+  "singletons": [
+    {
+      "raw_index": 21,
+      "title": "`K_FIRAS = S_IC^cap` coincidence at 3.5% — test for hidden 1-parameter closed form",
+      "quantity": "algebraic vs numerical character of the 3.50% residual between K_FIRAS=3.6808e5 and S_IC^cap=3.5563e5",
+      "origins": ["volovik"],
+      "reason_singleton": "Tests a distinct quantity: the coincidence/residual between two specific K values, seeking a closed-form relation in framework constants. Not the mu-endpoint pre-registration; uses mu value (4.9759e-10 at K=2.035) only as input. No co-bucket item computes the same residual."
+    },
+    {
+      "raw_index": 59,
+      "gate_id": "MUKHANOV-SASAKI-63",
+      "title": "Inflationary sub-corridor audit: reclassify W5 results with `K >= K_crit`",
+      "quantity": "K_crit = 91.5 boundary classification of W5 K-corridor points into inflationary-physical vs kinetic-artifact categories",
+      "origins": ["volovik"],
+      "reason_singleton": "Formalizes a classification boundary (K_crit=91.5) and audits which W5 points cross it. Distinct quantity from the mu-distortion endpoint; while it touches W5-57 K=3.56e5 and W5-65 K_FIRAS=3.68e5, the computed object is the sub-corridor taxonomy, not the mu observable. Conservative merge: keep separate from the pre-registration cluster."
+    }
+  ],
+  "summary": {
+    "input_count": 5,
+    "cluster_count": 1,
+    "clustered_items": 3,
+    "singleton_count": 2,
+    "accounted_total": 5,
+    "every_item_exactly_once": true,
+    "merge_policy": "conservative"
+  }
+}

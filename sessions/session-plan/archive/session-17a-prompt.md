@@ -36,19 +36,19 @@ Your job is not to review, assess, or debate the framework. Your job is to **cal
 
 5. **Baptista's KK papers**: `Kaluza-Klein/` — especially Papers 15-16 (2024: Jensen TT-deformation, eq 3.68 for the metric, eq 3.70 for scalar curvature, eq 3.80 for V_eff)
 
-6. **`tier0-computation/tier1_spectral_action.py`** (~900 lines) — Existing spectral action computation. Contains scalar curvature R(s), gauge boson mass pattern, heat kernel coefficients.
+6. **`computations/spectral_action.py`** (~900 lines) — Existing spectral action computation. Contains scalar curvature R(s), gauge boson mass pattern, heat kernel coefficients.
 
 ## For Dirac-Antimatter-Theorist — ADDITIONALLY:
 
 7. **`/Antimatter/`** (14 papers, from Dirac 1928 through NCG charge conjugation)
 
 8. **Session 11 chirality resolution**:
-   - `tier0-computation/session11_gamma_F_correction.py` — The corrected gamma_F = gamma_PA x gamma_CHI
+   - `computations/session11_gamma_F_correction.py` — The corrected gamma_F = gamma_PA x gamma_CHI
    - Key result: J² = +I, JD = DJ, J*gamma = -gamma*J. BdG class DIII.
 
-9. **`tier0-computation/branching_computation_32dim.py`** (~1200 lines) — H_F = C^32, J construction, KO-dimension verification
+9. **`computations/branching_computation_32dim.py`** (~1200 lines) — H_F = C^32, J construction, KO-dimension verification
 
-10. **`tier0-computation/tier1_dirac_spectrum.py`** (~1580 lines) — D_K eigenvalues on (SU(3), g_s). ALL 8 validations pass. You will use this for J-compatibility and mass spectrum checks.
+10. **`computations/dirac_spectrum.py`** (~1580 lines) — D_K eigenvalues on (SU(3), g_s). ALL 8 validations pass. You will use this for J-compatibility and mass spectrum checks.
 
 ## For Baptista-Spacetime-Analyst — ADDITIONALLY:
 
@@ -58,7 +58,7 @@ Your job is not to review, assess, or debate the framework. Your job is to **cal
 
 12. **Your agent memory**: `.claude/agent-memory/baptista-spacetime-analyst/`
 
-13. **`tier0-computation/tier1_dirac_spectrum.py`** (~1580 lines) — D_K eigenvalues on (SU(3), g_s). You need this for B-4 (eigenvalue data by irrep sector for Z₃ triality analysis).
+13. **`computations/dirac_spectrum.py`** (~1580 lines) — D_K eigenvalues on (SU(3), g_s). You need this for B-4 (eigenvalue data by irrep sector for Z₃ triality analysis).
 
 14. **`sessions/session-16-round-2b-dk-generations.md`** — Your joint work with KK-theorist on D_K correctness and Z₃ two-layer structure. Directly relevant to B-4.
 
@@ -68,9 +68,9 @@ Your job is not to review, assess, or debate the framework. Your job is to **cal
 
 16. **Your agent memory**: `.claude/agent-memory/hawking-theorist/` — Your Session 16 contributions (DOF inversion 45B:16F, V_CW = Helmholtz, Pfaffian = Hawking-Page, neutrino mass from topological proximity). Build on them.
 
-17. **`tier0-computation/tier1_spectral_action.py`** (~900 lines) — Contains R(s), gauge boson masses, heat kernel coefficients. YOUR starting point for V_eff.
+17. **`computations/spectral_action.py`** (~900 lines) — Contains R(s), gauge boson masses, heat kernel coefficients. YOUR starting point for V_eff.
 
-18. **`tier0-computation/tier1_dirac_spectrum.py`** (~1580 lines) — D_K eigenvalues. You need the full eigenvalue tower for the fermionic CW contribution.
+18. **`computations/dirac_spectrum.py`** (~1580 lines) — D_K eigenvalues. You need the full eigenvalue tower for the fermionic CW contribution.
 
 ---
 
@@ -92,7 +92,7 @@ The formula $g_1/g_2 = e^{-2s_0}$ was STATED in Session 16 but never DERIVED fro
 
 **WHY THIS MATTERS**: This is the ONLY Level 3 test we can run. If $e^{-2s_0} = 0.55$ and $s_0$ independently comes from V_eff, we have physics.
 
-### Assignment B-4: Z₃ Triality Labeling (Priority: MEDIUM — Tier 1.5 test)
+### Assignment B-4: Z₃ Triality Labeling (Priority: MEDIUM — Level 1.5 test)
 
 From Session 16 Round 3b: LEFT Z₃ = (p-q) mod 3 commutes with D_K (conserved label).
 
@@ -101,7 +101,7 @@ From Session 16 Round 3b: LEFT Z₃ = (p-q) mod 3 commutes with D_K (conserved l
 2. Verify that eigenvalues within the same Z₃ class show structural relationships (same Casimir shifts, related by phi, etc.)
 3. Confirm dim(p,q)-fold degeneracy for each eigenvalue (the right Z₃ factor is invisible at this level)
 
-**DELIVERABLE**: Table of 28 irreps sorted by Z₃ class, with eigenvalue counts and degeneracy verification. This is the foundation for the Tier 2 generation test.
+**DELIVERABLE**: Table of 28 irreps sorted by Z₃ class, with eigenvalue counts and degeneracy verification. This is the foundation for the Level 2 generation test.
 
 ---
 
@@ -115,7 +115,7 @@ This is THE decisive computation. ALL four Giants converged on it. The tree-leve
 
 $$V_{\text{eff}}(s) = V_{\text{tree}}(s) + V_{\text{CW}}^{\text{boson}}(s) + V_{\text{CW}}^{\text{fermion}}(s)$$
 
-Using the eigenvalue data from `tier1_dirac_spectrum.py` and `tier1_spectral_action.py`:
+Using the eigenvalue data from `dirac_spectrum.py` and `spectral_action.py`:
 
 1. **V_tree(s)** = $-R(s) \cdot \text{Vol}$ (already computed, verify)
 2. **V_CW^{boson}(s)** = $+\frac{n_b}{64\pi^2} m_{\mathbb{C}^2}^4(s) [\ln(m_{\mathbb{C}^2}^2/\mu^2) - c_b]$ with $n_b = 12$ (4 real C² modes × 3 from... where? DERIVE the DOF count)
@@ -156,7 +156,7 @@ The tree-level effective potential is $V_{\mathrm{tree}}(s) = -R(s) \cdot \mathr
 
 **COMPUTE**: $V_{\mathrm{tree}}(s)$ exactly, using the Schwarzschild method — no perturbation theory, no expansion. This is an exact result on a compact homogeneous space. The scalar curvature is a rational function of exponentials $(e^{2s},\, e^{-2s},\, e^s)$. Write the exact analytic expression.
 
-**THEN**: Verify that this matches the existing numerical computation in `tier1_spectral_action.py` at machine epsilon.
+**THEN**: Verify that this matches the existing numerical computation in `spectral_action.py` at machine epsilon.
 
 **WHY THIS MATTERS**: Einstein's Gap 1 — the $M^4 \times K$ separation. If you have the exact tree-level potential, you can characterize its monotonicity analytically. The Coleman-Weinberg correction (Hawking's H-1) adds quantum effects to an exactly-known classical background.
 
@@ -233,7 +233,7 @@ Do NOT produce:
 
 ### Schwarzschild-Penrose-Geometer
 - [ ] SP-1: Explicit metric $g_s$ in coordinates (8×8 matrix or block-reduced form)
-- [ ] SP-4: Exact analytic $V_{\text{tree}}(s)$, verified against `tier1_spectral_action.py`
+- [ ] SP-4: Exact analytic $V_{\text{tree}}(s)$, verified against `spectral_action.py`
 
 ### Dirac-Antimatter-Theorist
 - [ ] D-1: $\|[J, D_K(s)]\|$ at 50+ $s$-values (CPT test)
@@ -245,11 +245,11 @@ That is **7 concrete numerical deliverables** from **4 agents**, all running in 
 
 # VI. EXISTING INFRASTRUCTURE
 
-## Scripts You Will Use (in `tier0-computation/`):
+## Scripts You Will Use (in `computations/`):
 | Script | Lines | What It Does | Who Needs It |
 |:-------|:-----:|:-------------|:-------------|
-| `tier1_dirac_spectrum.py` | ~1580 | D_K eigenvalues on (SU(3), g_s), Peter-Weyl, 8 validations | ALL agents |
-| `tier1_spectral_action.py` | ~900 | Spectral action, heat kernel, R(s), gauge masses | SP-4, H-1 |
+| `dirac_spectrum.py` | ~1580 | D_K eigenvalues on (SU(3), g_s), Peter-Weyl, 8 validations | ALL agents |
+| `spectral_action.py` | ~900 | Spectral action, heat kernel, R(s), gauge masses | SP-4, H-1 |
 | `branching_computation_32dim.py` | ~1200 | H_F = C^32, J operator, KO-dim verification | D-1, D-3 |
 | `session11_gamma_F_correction.py` | ~300 | Corrected gamma_F = gamma_PA x gamma_CHI | D-1 |
 
@@ -257,11 +257,11 @@ That is **7 concrete numerical deliverables** from **4 agents**, all running in 
 | Result | Value | Script |
 |:-------|:------|:-------|
 | KO-dimension | $6 \bmod 8$ | branching_computation_32dim.py |
-| $R(0)$ | $+2.000000$ (exact for bi-invariant SU(3)) | tier1_spectral_action.py |
-| $R(s)/R(0)$ | matches eq 3.70 at $5 \times 10^{-15}$ | tier1_spectral_action.py |
-| $\det(g_s)/\det(g_0)$ | $1.0000000000$ | tier1_dirac_spectrum.py |
-| $\phi$ ratio at $s=1.14$ | $1.53157981$ (0.12 ppm from $\phi$) | tier1_dirac_spectrum.py |
-| Sector ratio $m_{(3,0)}/m_{(0,0)}$ at $s=0.15$ | $1.531588$ (0.0005% from $\phi$) | tier1_dirac_spectrum.py |
+| $R(0)$ | $+2.000000$ (exact for bi-invariant SU(3)) | spectral_action.py |
+| $R(s)/R(0)$ | matches eq 3.70 at $5 \times 10^{-15}$ | spectral_action.py |
+| $\det(g_s)/\det(g_0)$ | $1.0000000000$ | dirac_spectrum.py |
+| $\phi$ ratio at $s=1.14$ | $1.53157981$ (0.12 ppm from $\phi$) | dirac_spectrum.py |
+| Sector ratio $m_{(3,0)}/m_{(0,0)}$ at $s=0.15$ | $1.531588$ (0.0005% from $\phi$) | dirac_spectrum.py |
 | $J^2$ | $+\mathbb{I}$ (verified) | branching_computation_32dim.py |
 | $J\gamma_F$ | $-\gamma_F J$ (verified, corrected) | session11_gamma_F_correction.py |
 

@@ -1,0 +1,117 @@
+{
+  "gate_id": "S88-CF-CURV-13-JWST-ROMAN-ATHENA-89-PEAK-DETECTION",
+  "session": "S88",
+  "wave": "W1c",
+  "trigger": "[VERIFY]",
+  "classification": "NON-PHONONIC",
+  "scheme": "multi-method-mass-estimator-NIRSpec-RM-dynamical-bayesian-hierarchical-89-peak-anderson-darling",
+  "convention": "J7-89-element-cascade-spectrum-NLRDgeq1000-sigmaMBHleq0.15dex-protocol-preregistration-S88",
+  "L_max_tag": "N/A_observational",
+  "agent_primary": "little-red-dots-jwst-analyst",
+  "agent_co_authors": [
+    "mack-cosmic-bridge",
+    "hawking-theorist"
+  ],
+  "blacklisted_agents": [
+    "gen-physicist"
+  ],
+  "substrate_physics_pin": {
+    "cascade_depth_generations_exact": 383.68269495949033,
+    "cascade_depth_provenance": "CC_OOM (115.5 from S66 W1-A PASS) * log_2(10)",
+    "spacing_dex_exact": 0.3010299956639812,
+    "spacing_provenance": "log_10(2) EXACT - cascade halving per generation",
+    "f_pix_cycles_per_dex": 3.321928094887362,
+    "N_PEAKS_J7_pre_registered": 89,
+    "klein_v4_chiral_pair_doubling": true
+  },
+  "multi_method_pipeline": {
+    "JWST_NIRSpec_MSA": {
+      "calibration": "Reines+13 single-epoch virial Halpha",
+      "sigma_dex_intrinsic": 0.4,
+      "N_sources_cycle3_estimate": "300-400",
+      "instrument": "NIRSpec MSA medium-resolution"
+    },
+    "Roman_reverberation_mapping": {
+      "calibration": "Edelson+19 RM photometric variability + emission-line response delay",
+      "sigma_dex": 0.1,
+      "N_sources_estimate": "500-1000",
+      "instrument": "Roman Wide-Field Survey",
+      "launch_horizon": "2027 Q4 +/- 6mo"
+    },
+    "Athena_dynamical": {
+      "calibration": "Konig+18 NLR/BLR kinematics + Hbeta resolved profile",
+      "sigma_dex": 0.1,
+      "N_sources_estimate": "100-200",
+      "instrument": "Athena Wide-Field Imager",
+      "launch_horizon": "2037 Q1 +/- 12mo"
+    },
+    "bayesian_hierarchical_combination": {
+      "method": "Shen+23 Section 3 multi-method-mass-estimator hierarchical model averaging",
+      "formula": "1 / sqrt(sum_methods sigma_method^-2)",
+      "combined_sigma_baseline_dex": 0.06963106238227913,
+      "Nyquist_sigma_floor_dex": 0.15
+    }
+  },
+  "anderson_darling_test": {
+    "implementation": "scipy.stats.anderson + bootstrap Monte Carlo H_0 vs H_1",
+    "null_hypothesis": "smooth log-normal M_BH histogram (no preferred spacing)",
+    "alternative_hypothesis": "M_BH peaks at log_10(M_0) + n * 0.301030 dex; n in {0, ..., 88}",
+    "test_statistic": "max-A^2 over phase scan; FFT-power at f_pix = 3.32 cycles/dex",
+    "p_value_threshold_pass_detect": 0.0027,
+    "p_value_threshold_provenance": "3-sigma two-sided pre-registered floor",
+    "f_pix_localization_band_lo": 3.3,
+    "f_pix_localization_band_hi": 3.34,
+    "f_pix_localization_band_pct": "+/- 0.6%",
+    "n_bootstrap_null": 10000,
+    "n_bootstrap_alt": 1000,
+    "rejection_rate_at_baseline": 1.0,
+    "f_pix_localized_frac_at_baseline": 0.0,
+    "threshold_A2_3sigma": 1.232172214827764
+  },
+  "PASS_DETECT_band": {
+    "criterion_a": "A^2 corresponds to p-value <= 0.0027 (>3 sigma rejection of H_0)",
+    "criterion_b": "peak frequency localizes to f_pix in [3.3, 3.34] cycles/dex"
+  },
+  "PASS_NULL_band": {
+    "criterion_a": "A^2 corresponds to p-value > 0.0027",
+    "criterion_b": "per-peak SNR < 2.0 (consistent with EM-1 pre-registration)"
+  },
+  "FAIL_band": {
+    "criterion_a": "A^2 corresponds to p-value <= 0.0027",
+    "criterion_b": "peak frequency OUTSIDE [3.3, 3.34] cycles/dex (SHIFTED spacing)",
+    "structural_falsification": "rejects 0.301030 dex log_10(2) cascade halving structure"
+  },
+  "snr_forecast_grid": {
+    "N_LRD=500_sigma_M_BH=0.1": 6.366005051718238,
+    "N_LRD=500_sigma_M_BH=0.15": 5.941740377072881,
+    "N_LRD=500_sigma_M_BH=0.2": 5.394845865337048,
+    "N_LRD=1000_sigma_M_BH=0.1": 6.366005051718239,
+    "N_LRD=1000_sigma_M_BH=0.15": 5.941740377072882,
+    "N_LRD=1000_sigma_M_BH=0.2": 5.394845865337049,
+    "N_LRD=2000_sigma_M_BH=0.1": 6.366005051718238,
+    "N_LRD=2000_sigma_M_BH=0.15": 5.941740377072881,
+    "N_LRD=2000_sigma_M_BH=0.2": 5.394845865337048
+  },
+  "snr_forecast_baseline_NLRD1000_sigma010": 6.366005051718239,
+  "snr_forecast_pass_floor_sigma": 5.0,
+  "snr_forecast_info_floor_sigma": 3.0,
+  "detector_horizon_timeline": {
+    "JWST_cycle3_open": "2026 Q3",
+    "JWST_cycle3_close": "2027 Q3",
+    "Roman_launch": "2027 Q4 +/- 6mo",
+    "Athena_launch": "2037 Q1 +/- 12mo"
+  },
+  "falsifier_master_inventory_row_prepared": {
+    "row_label": "S88-CF-CURV-13-89-PEAK-DETECTION",
+    "watch_window": "JWST cycle-3 (2026 Q3 - 2027 Q3); Roman (2027 Q4 +/- 6mo); Athena (2037 Q1 +/- 12mo)",
+    "PASS_DETECT_band": "A^2 -> p <= 0.0027; f_pix in [3.3, 3.34]",
+    "PASS_NULL_band": "A^2 -> p > 0.0027; per-peak SNR < 2.0",
+    "FAIL_band": "A^2 -> p <= 0.0027; f_pix outside [3.3, 3.34]",
+    "writer_protocol": "mack-cosmic-bridge sole-writer per feedback_mack-bridge-role.md",
+    "row_status": "PREPARED-FOR-MACK-LANDING"
+  },
+  "audit_sha256": "6f104220049bfcca72fb764be92a9895491dca8361a0c38c4fb1c7f942a521cd",
+  "content_sha256": "8c68e5817f72e4c441c3d91ad0ab6e97f9774b3ce8ce6e6e3f7a48a700d2ab5a",
+  "schema_version": "S87+",
+  "random_seed": 42
+}

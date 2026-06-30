@@ -339,7 +339,7 @@ The physical program is not formally over until 24c determines whether any rescu
 | File | Role |
 |:-----|:-----|
 | `sessions/archive/session-24/session-24a-synthesis.md` | Primary input (24a gate results) |
-| `tier0-computation/s24a_gate_verdicts.txt` | Gate classifications |
+| `computations/s24a_gate_verdicts.txt` | Gate classifications |
 | `sessions/archive/session-23/session-23b-synthesis.md` | Template for synthesis format |
 | `sessions/archive/session-23/session-23-sagan-verdict.md` | Previous Sagan verdict (template) |
 | `sessions/archive/session-23/session-23-tesla-take-master-collab.md` | 15-reviewer probability table, pre-registered conditionals |

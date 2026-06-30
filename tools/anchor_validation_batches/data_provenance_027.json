@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 27,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_261",
+      "anchor_type": "data_provenance",
+      "name": "b2_integrability",
+      "script_path": "session-40/s40_b2_integrability.py",
+      "session": "s40",
+      "inputs": "computations/session-39/s39_integrability_check.npz, computations/session-39/s39_richardson_gaudin.npz",
+      "outputs": "session-40/s40_b2_integrability.npz, session-40/s40_b2_integrability.png",
+      "source_file": "computations/session-40/s40_b2_integrability.py",
+      "source_context_30_lines": " 1004: ax.set_title('(d) V_phys Block Structure')\n 1005: \n 1006: # Add text annotation for B2 block\n 1007: ax.annotate('B2', xy=(1.5, 1.5), fontsize=14, color='white', fontweight='bold', ha='center', va='center')\n 1008: ax.annotate('B1', xy=(4, 4), fontsize=10, color='white', fontweight='bold', ha='center', va='center')\n 1009: ax.annotate('B3', xy=(6, 6), fontsize=10, color='white', fontweight='bold', ha='center', va='center')\n 1010: \n 1011: plt.tight_layout()\n 1012: plt.savefig('computations/session-40/s40_b2_integrability.png', dpi=150, bbox_inches='tight')\n 1013: print(\"Plot saved: computations/session-40/s40_b2_integrability.png\")\n 1014: \n 1015: # ============================================================\n 1016: # 14. SAVE DATA\n 1017: # ============================================================\n 1018: print(\"\\n\" + \"=\" * 70)\n 1019: print(\"14. Saving Data\")\n 1020: print(\"=\" * 70)"
+    },
+    {
+      "anchor_id": "prov_262",
+      "anchor_type": "data_provenance",
+      "name": "cc_transit",
+      "script_path": "session-40/s40_cc_transit.py",
+      "session": "s40",
+      "inputs": "",
+      "outputs": "session-40/s40_cc_transit.npz",
+      "source_file": "computations/session-40/s40_cc_transit.py",
+      "source_context_30_lines": "   16: \n   17: Input:\n   18:   - computations/session-39/s39_kk_mass.npz (MASS-39)\n   19:   - computations/session-39/s39_richardson_gaudin.npz (RG-39)\n   20:   - computations/session-39/s39_gge_lambdas.npz (GGE-39)\n   21:   - computations/session-36/s36_sfull_tau_stabilization.npz (S_full at fold)\n   22: \n   23: Output:\n   24:   - computations/session-40/s40_cc_transit.npz\n   25: \n   26: Author: Gen-Physicist (Session 40)\n   27: \"\"\"\n   28: \n   29: import numpy as np\n   30: import os\n   31: \n   32: # ============================================================"
+    },
+    {
+      "anchor_id": "prov_263",
+      "anchor_type": "data_provenance",
+      "name": "collective_inertia",
+      "script_path": "session-40/s40_collective_inertia.py",
+      "session": "s40",
+      "inputs": "computations/session-39/s39_cascade_spectroscopy.npz, computations/session-39/s39_fubini_study.npz, computations/session...",
+      "outputs": "session-40/s40_collective_inertia.npz, session-40/s40_collective_inertia.png",
+      "source_file": "computations/session-40/s40_collective_inertia.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s40_collective_inertia.py  --  ATDHFB Collective Inertia at the Fold (M-COLL-40)\n    4: \n    5: Computes the cranking-model collective inertia M_coll(tau) for the BCS condensate\n    6: on the deformed SU(3) internal space.\n    7: \n    8: The Inglis-Belyaev (IB) and ATDHFB cranking masses are:\n    9:   M_IB     = 2 * sum_{k,k'} |F_{kk'}|^2 / (E_k + E_{k'})^2\n   10:   M_ATDHFB = 2 * sum_{k,k'} |F_{kk'}|^2 / (E_k + E_{k'})^3\n   11: "
+    },
+    {
+      "anchor_id": "prov_264",
+      "anchor_type": "data_provenance",
+      "name": "gsl_transit",
+      "script_path": "session-40/s40_gsl_transit.py",
+      "session": "s40",
+      "inputs": "",
+      "outputs": "session-40/s40_gsl_transit.npz, session-40/s40_gsl_transit.png",
+      "source_file": "computations/session-40/s40_gsl_transit.py",
+      "source_context_30_lines": "  789: \n  790: # ======================================================================\n  791: #  Step 11: Save data\n  792: # ======================================================================\n  793: print(\"\\n\" + \"=\" * 78)\n  794: print(\"STEP 11: SAVE DATA\")\n  795: print(\"=\" * 78)\n  796: \n  797: save_path = os.path.join(SCRIPT_DIR, 's40_gsl_transit.npz')\n  798: np.savez(save_path,\n  799:     # Regime A: Sudden quench\n  800:     tau_A=tau_full,\n  801:     t_A=t_full,\n  802:     S_particles_A=S_particles_A,\n  803:     S_condensate_A=S_condensate_A,\n  804:     S_spectral_A=S_spectral_A,\n  805:     S_total_A=S_total_A,"
+    },
+    {
+      "anchor_id": "prov_265",
+      "anchor_type": "data_provenance",
+      "name": "hessian_offjensen",
+      "script_path": "session-40/s40_hessian_offjensen.py",
+      "session": "s40",
+      "inputs": "",
+      "outputs": "session-40/s40_hessian_offjensen.npz, session-40/s40_hessian_offjensen.png",
+      "source_file": "computations/session-40/s40_hessian_offjensen.py",
+      "source_context_30_lines": " 1007:     print(\"\\n--- Saving Data ---\")\n 1008:     outdir = os.path.dirname(os.path.abspath(__file__))\n 1009: \n 1010:     # Collect all Hessian values\n 1011:     all_H = np.concatenate([[H_jensen], H_transverse])\n 1012:     all_labels = ['Jensen'] + [f'T{i+1}' for i in range(len(H_transverse))]\n 1013:     all_sigmas = np.vstack([sigma_J] + list(ortho_trans))\n 1014: \n 1015:     np.savez(os.path.join(outdir, 's40_hessian_offjensen.npz'),\n 1016:              tau_fold=TAU_FOLD,\n 1017:              S_jensen=S_jensen,\n 1018:              base_scale_factors=base_sf,\n 1019:              H_jensen=H_jensen,\n 1020:              H_transverse=H_transverse,\n 1021:              H_offdiag=H_offdiag,\n 1022:              H_all_transverse=H_all_transverse,\n 1023:              all_H=all_H,"
+    },
+    {
+      "anchor_id": "prov_266",
+      "anchor_type": "data_provenance",
+      "name": "internal_page_curve",
+      "script_path": "session-40/s40_internal_page_curve.py",
+      "session": "s40",
+      "inputs": "computations/session-38/s38_otoc_bcs.npz, computations/session-39/s39_richardson_gaudin.npz",
+      "outputs": "session-40/s40_internal_page_curve.npz, session-40/s40_internal_page_curve.png",
+      "source_file": "computations/session-40/s40_internal_page_curve.py",
+      "source_context_30_lines": "  749: ax.axvline(x=t_therm, color='orange', linestyle='-.', linewidth=0.8, alpha=0.7)\n  750: ax.set_xlabel('t (natural units)')\n  751: ax.set_ylabel('Delta S_ent (bits)')\n  752: ax.set_title('Entanglement Generated: S(t) - S(0)')\n  753: ax.legend(fontsize=8, loc='best')\n  754: ax.set_xlim(0, t_max)\n  755: \n  756: plt.tight_layout()\n  757: plt.savefig('computations/session-40/s40_internal_page_curve.png', dpi=150, bbox_inches='tight')\n  758: print(\"  Saved: computations/session-40/s40_internal_page_curve.png\")\n  759: \n  760: # ============================================================\n  761: # 12. Save data\n  762: # ============================================================\n  763: np.savez('computations/session-40/s40_internal_page_curve.npz',\n  764:     # Gate\n  765:     gate_id='PAGE-40',"
+    },
+    {
+      "anchor_id": "prov_267",
+      "anchor_type": "data_provenance",
+      "name": "nohair_sensitivity",
+      "script_path": "session-40/s40_nohair_sensitivity.py",
+      "session": "s40",
+      "inputs": "",
+      "outputs": "session-40/s40_nohair_sensitivity.npz, session-40/s40_nohair_sensitivity.png",
+      "source_file": "computations/session-40/s40_nohair_sensitivity.py",
+      "source_context_30_lines": "   29:     p_k(v) = p_k^sudden * P_exc(k; v) + p_k^adiabatic * (1 - P_exc_system(v))\n   30:   where P_exc_system is the probability of ANY excitation occurring.\n   31: \n   32: Input:\n   33:   - computations/session-39/s39_richardson_gaudin.npz\n   34:   - computations/session-39/s39_kk_mass.npz\n   35: \n   36: Output:\n   37:   - computations/session-40/s40_nohair_sensitivity.npz\n   38:   - computations/session-40/s40_nohair_sensitivity.png\n   39: \"\"\"\n   40: \n   41: import numpy as np\n   42: import os\n   43: import sys\n   44: from scipy.optimize import brentq\n   45: "
+    },
+    {
+      "anchor_id": "prov_268",
+      "anchor_type": "data_provenance",
+      "name": "qrpa_modes",
+      "script_path": "session-40/s40_qrpa_modes.py",
+      "session": "s40",
+      "inputs": "computations/session-39/s39_richardson_gaudin.npz, computations/session-37/s37_pair_susceptibility.npz",
+      "outputs": "session-40/s40_qrpa_modes.npz, session-40/s40_qrpa_modes.png",
+      "source_file": "computations/session-40/s40_qrpa_modes.py",
+      "source_context_30_lines": "   19:     [A   B ] [X]       [X]\n   20:     [-B -A ] [Y] = E_n [Y]\n   21: \n   22:   where A, B are constructed from the residual interaction V_rem in the\n   23:   quasiparticle basis using the BCS coherence factors u_k, v_k.\n   24: \n   25: Input: computations/session-39/s39_richardson_gaudin.npz\n   26:        computations/session-37/s37_pair_susceptibility.npz\n   27: Output: computations/session-40/s40_qrpa_modes.npz\n   28:         computations/session-40/s40_qrpa_modes.png\n   29: \"\"\"\n   30: \n   31: import numpy as np\n   32: from scipy import linalg\n   33: import matplotlib\n   34: matplotlib.use('Agg')\n   35: import matplotlib.pyplot as plt"
+    },
+    {
+      "anchor_id": "prov_269",
+      "anchor_type": "data_provenance",
+      "name": "self_consistent_ode",
+      "script_path": "session-40/s40_self_consistent_ode.py",
+      "session": "s40",
+      "inputs": "",
+      "outputs": "session-40/s40_self_consistent_ode.npz, session-40/s40_self_consistent_ode.png",
+      "source_file": "computations/session-40/s40_self_consistent_ode.py",
+      "source_context_30_lines": "  497:           f\"{results[2][0]:12.6e} {results[2][1]:12.4f}\")\n  498: \n  499: print()\n  500: \n  501: # ============================================================\n  502: # 14. SAVE DATA\n  503: # ============================================================\n  504: \n  505: outfile = base + 's40_self_consistent_ode.npz'\n  506: np.savez(outfile,\n  507:     # Trajectories\n  508:     t_SC=sol_sc.t, tau_SC=sol_sc.y[0], v_SC=sol_sc.y[1],\n  509:     t_UC=sol_uc.t, tau_UC=sol_uc.y[0], v_UC=sol_uc.y[1],\n  510:     t_CM=sol_cm.t, tau_CM=sol_cm.y[0], v_CM=sol_cm.y[1],\n  511:     # Key results\n  512:     dwell_SC=dwell_sc, dwell_UC=dwell_uc, dwell_CM=dwell_cm,\n  513:     dwell_FRIED39=dwell_fried39,"
+    },
+    {
+      "anchor_id": "prov_270",
+      "anchor_type": "data_provenance",
+      "name": "constants_vs_tau",
+      "script_path": "session-41/s41_constants_vs_tau.py",
+      "session": "s41",
+      "inputs": "",
+      "outputs": "session-41/s41_constants_vs_tau.npz, session-41/s41_constants_vs_tau.png",
+      "source_file": "computations/session-41/s41_constants_vs_tau.py",
+      "source_context_30_lines": "  372:     a0_arr = np.array([results[cutoff][tau]['a0'] for tau in all_taus])\n  373:     a2_arr = np.array([results[cutoff][tau]['a2'] for tau in all_taus])\n  374:     a4_arr = np.array([results[cutoff][tau]['a4'] for tau in all_taus])\n  375: \n  376:     save_dict[f'a0_cutoff{ci}'] = a0_arr\n  377:     save_dict[f'a2_cutoff{ci}'] = a2_arr\n  378:     save_dict[f'a4_cutoff{ci}'] = a4_arr\n  379: \n  380: np.savez(DATA_DIR / 's41_constants_vs_tau.npz', **save_dict)\n  381: print(f\"\\nSaved: {DATA_DIR / 's41_constants_vs_tau.npz'}\")\n  382: \n  383: # ──────────────────────────────────────────────────────────────────────\n  384: # Plotting\n  385: # ──────────────────────────────────────────────────────────────────────\n  386: \n  387: fig, axes = plt.subplots(2, 2, figsize=(14, 10))\n  388: fig.suptitle('Session 41: Seeley-DeWitt Coefficients & Physical Constants vs $\\\\tau$',"
+    }
+  ]
+}

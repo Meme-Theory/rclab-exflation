@@ -5,10 +5,10 @@
 **Depends on**: Session 30Aa (D_F construction must succeed — B-30b did NOT fire)
 **Prerequisite**: 30Aa must complete with B-30b NOT firing. D_F(tau) matrices available in `s30a_df_construction.npz`. Chirality check documented.
 **Input data**:
-- `tier0-computation/s30a_df_construction.npz` (D_F(tau) matrices, eigenvectors, chirality norms) — FROM 30Aa
-- `tier0-computation/d2_pfaffian_computation.py` (Parlett-Reid Pfaffian algorithm, (0,0) sector framework — to be adapted)
-- `tier0-computation/branching_computation_32dim.py` (Xi, G5, gamma_F, particle identification)
-- `tier0-computation/tier1_dirac_spectrum.py` (D_K eigenvalues per sector)
+- `computations/s30a_df_construction.npz` (D_F(tau) matrices, eigenvectors, chirality norms) — FROM 30Aa
+- `computations/d2_pfaffian_computation.py` (Parlett-Reid Pfaffian algorithm, (0,0) sector framework — to be adapted)
+- `computations/branching_computation_32dim.py` (Xi, G5, gamma_F, particle identification)
+- `computations/dirac_spectrum.py` (D_K eigenvalues per sector)
 
 ## Motivation
 
@@ -63,13 +63,13 @@ If $D_{\text{total}}$ has a Pfaffian sign change at some $\tau_c$, it produces:
 Every result classified against its pre-registered gate BEFORE any interpretation. Report the number first. Classify second. Interpret third.
 
 **Python environment**: `"phonon-exflation-sim/.venv312/Scripts/python.exe"`
-**Output directory**: `tier0-computation/`
+**Output directory**: `computations/`
 **Script prefix**: `s30a_`
 
 ## PRE-SESSION GATE CHECK (MANDATORY FIRST ACTION)
 
 Before any computation, verify:
-1. Read `tier0-computation/s30a_gate_verdicts.txt` — B-30b must NOT have fired
+1. Read `computations/s30a_gate_verdicts.txt` — B-30b must NOT have fired
 2. Confirm `s30a_df_construction.npz` exists and loads correctly
 3. Review chirality norms from 30Aa — document severity if $\|D_F \gamma_F + \gamma_F D_F\| > 10^{-10}$
 
@@ -85,7 +85,7 @@ Session ends ONLY when user approves shutdown explicitly. Idle agents are not fi
 
 ## ALL agents (MANDATORY):
 
-1. **Session 30Aa output**: `tier0-computation/s30a_df_construction.npz` and `s30a_gate_verdicts.txt` — D_F construction results and B-30b verdict.
+1. **Session 30Aa output**: `computations/s30a_df_construction.npz` and `s30a_gate_verdicts.txt` — D_F construction results and B-30b verdict.
 2. **Session 29B plan Section III (29B-7)**: `sessions/session-plan/session-29B-plan.md` — The full 29B-7 specification.
 3. **Session 17c results**: `sessions/session-17/session-17c-results.md` — Original D_K Pfaffian computation. Z_2 = +1 for all tau. Parlett-Reid implementation.
 4. **Session 22b results**: `sessions/session-22/session-22b-results.md` — D_K block-diagonality theorem.
@@ -95,7 +95,7 @@ Session ends ONLY when user approves shutdown explicitly. Idle agents are not fi
 
 | Agent | Additional Reading |
 |:------|:-------------------|
-| phonon-exflation-sim | `tier0-computation/d2_pfaffian_computation.py` (Parlett-Reid algorithm to adapt for 864-dim), `tier0-computation/s30a_df_construction.py` (30Aa script for D_F loading) |
+| phonon-exflation-sim | `computations/d2_pfaffian_computation.py` (Parlett-Reid algorithm to adapt for 864-dim), `computations/s30a_df_construction.py` (30Aa script for D_F loading) |
 | coordinator | This prompt gate conditions (Section III). Memorize ALL thresholds before first computation completes |
 
 ---
@@ -162,7 +162,7 @@ Even B-30a (no sign change) produces valuable diagnostics:
 | `s30a_dtotal_pfaffian.npz` | `tau_values` (scan grid), `pf_values` (Pfaffian at each tau), `pf_signs` (sign(Re(Pf))), `min_gap_dtotal` (min eigenvalue of D_total), `D_F_norm` (Frobenius norm of D_F), `order_one_norm` (order-one violation), `sign_change_tau` (tau values where sign changes, empty if none) |
 | `s30a_dtotal_pfaffian.py` | Complete script |
 
-Gate verdicts appended to: `tier0-computation/s30a_gate_verdicts.txt`
+Gate verdicts appended to: `computations/s30a_gate_verdicts.txt`
 
 ---
 

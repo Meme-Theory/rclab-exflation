@@ -18,7 +18,7 @@ The 1-loop Coleman-Weinberg effective potential has NO minimum. Fermionic DOF (4
 
 **The spectral complexity hypothesis** (Session 19 Primer): The vacuum is NOT a point in tau-space but a PHASE of the spectral statistics. As the Jensen deformation parameter tau increases from 0, the Dirac operator D_K(tau) undergoes a transition from integrable (Poisson level statistics, bi-invariant symmetry) to chaotic (GOE level statistics, broken symmetry). The critical point tau_c of this transition — the Anderson transition of the internal Dirac operator — selects the vacuum without any potential minimum.
 
-**Why these agents**: phonon-exflation-sim owns the eigenvalue computation infrastructure (tier1_dirac_spectrum.py) and handles heavy numerical work. tesla-resonance co-authored the Session 19 primer, has deep expertise in resonance phenomena, spectral analysis, Anderson localization, and the Berry-Tabor/BGS conjecture chain that underpins the entire analysis.
+**Why these agents**: phonon-exflation-sim owns the eigenvalue computation infrastructure (dirac_spectrum.py) and handles heavy numerical work. tesla-resonance co-authored the Session 19 primer, has deep expertise in resonance phenomena, spectral analysis, Anderson localization, and the Berry-Tabor/BGS conjecture chain that underpins the entire analysis.
 
 ---
 
@@ -26,7 +26,7 @@ The 1-loop Coleman-Weinberg effective potential has NO minimum. Fermionic DOF (4
 
 ## For phonon-exflation-sim:
 
-1. **Tier 1 Dirac spectrum script**: `tier0-computation/tier1_dirac_spectrum.py` — You wrote/maintained this. Functions: collect_spectrum(), sweep_s(), jensen_metric(), get_irrep_matrices(). This is the eigenvalue infrastructure.
+1. **Level 1 Dirac spectrum script**: `computations/dirac_spectrum.py` — You wrote/maintained this. Functions: collect_spectrum(), sweep_s(), jensen_metric(), get_irrep_matrices(). This is the eigenvalue infrastructure.
 
 2. **Session 18 V_eff convergence**: `sessions/session-18/session-18-veff-convergence.md` — The monotonicity result. DOF counts. Convergence between mps=5 and mps=6.
 
@@ -59,7 +59,7 @@ All diagnostics use the **same eigenvalue data**. Generate it ONCE.
 
 | Source | What | How to Access |
 |:-------|:-----|:-------------|
-| sweep_s output | Eigenvalues at 21 tau-values (0 to 2.0, step 0.1), 28 irreps (max_pq_sum=6) | Call sweep_s() from tier1_dirac_spectrum.py |
+| sweep_s output | Eigenvalues at 21 tau-values (0 to 2.0, step 0.1), 28 irreps (max_pq_sum=6) | Call sweep_s() from dirac_spectrum.py |
 | Per-tau spectrum | ~1400 distinct eigenvalues per tau, with (p,q) sector labels and multiplicities | collect_spectrum() returns (eigenvalues, sector_labels, multiplicities) |
 | Multiplicities | dim(p,q)^2 * 16 for each eigenvalue | Computed from irrep dimensions |
 
@@ -278,7 +278,7 @@ If gap > 0 everywhere: fermion condensate route (Banks-Casher) is CLOSED on comp
 
 **5 deliverables. All from existing data. All computable in hours.**
 
-All scripts go in `tier0-computation/`. Naming: `s19a_level_statistics.py`, `s19a_spectral_dimension.py`, `s19a_entropy_capacity.py`, `s19a_spectral_gap.py`, `s19a_complexity_functional.py`.
+All scripts go in `computations/`. Naming: `s19a_level_statistics.py`, `s19a_spectral_dimension.py`, `s19a_entropy_capacity.py`, `s19a_spectral_gap.py`, `s19a_complexity_functional.py`.
 
 **Environment**: System Python (`python`). numpy + scipy + matplotlib. No GPU.
 

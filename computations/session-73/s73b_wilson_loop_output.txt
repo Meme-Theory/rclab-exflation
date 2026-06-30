@@ -1,0 +1,250 @@
+==============================================================================
+S73B WILSON-LOOP-73B: Non-Abelian Berry Phase Wilson Loop on BCS Ground State
+==============================================================================
+
+==============================================================================
+SECTION 1: LOAD DIRAC SPECTRUM AND PAIRING MATRICES
+==============================================================================
+  Source: s23a_kosmann_singlet.npz
+  Available tau values: [0.   0.1  0.15 0.2  0.25 0.3  0.35 0.4  0.5 ]
+
+  S48 V_bare shape: (8, 8)
+  E_sp at fold: [0.84526909 0.84526909 0.84526909 0.84526909 0.81914    0.97822388
+ 0.97822388 0.97822388]
+  tau=0.00: B1=0.866025, B2=0.866025, B3=0.866025
+  tau=0.10: B1=0.833074, B2=0.849944, B3=0.915762
+  tau=0.15: B1=0.823873, B2=0.846156, B3=0.945410
+  tau=0.20: B1=0.819140, B2=0.845269, B3=0.978224
+  tau=0.25: B1=0.818635, B2=0.847330, B3=1.014211
+  tau=0.30: B1=0.822148, B2=0.852382, B3=1.053391
+  tau=0.35: B1=0.829502, B2=0.860463, B3=1.095800
+  tau=0.40: B1=0.840544, B2=0.871608, B3=1.141487
+  tau=0.50: B1=0.873214, B2=0.903206, B3=1.242961
+
+  Spline interpolants constructed for B1, B2, B3 vs tau
+  E8 at fold (spline): [0.84521202 0.84521202 0.84521202 0.84521202 0.81974116 0.9714078
+ 0.9714078  0.9714078 ]
+  E8 at fold (S48):    [0.84526909 0.84526909 0.84526909 0.84526909 0.81914    0.97822388
+ 0.97822388 0.97822388]
+  Relative error: 4.67e-03
+
+==============================================================================
+SECTION 2: PAIRING INTERACTION V_bare(tau)
+==============================================================================
+  Using S48 V_bare at fold (constant along path)
+  Cross-check: Wilson loop with scaled V_bare
+
+==============================================================================
+SECTION 3: BCS HAMILTONIAN CONSTRUCTION
+==============================================================================
+  Fock subspace dimension: 8 (C(8,1) = 8)
+  E_gs at fold: 1.439842 M_KK
+  E_cond at fold (S36): -0.136851 M_KK
+  Spectrum at fold: [1.43984169 1.6975685  1.71663982 1.757831   1.7674332  1.86756331
+ 1.96555284 2.05734562]
+  Hermiticity check: max|H - H^T| = 4.16e-17
+
+==============================================================================
+SECTION 4: WILSON LOOP ON BCS GROUND STATE MANIFOLD
+==============================================================================
+  Loop: tau = [0.15 -> 0.25 -> 0.15]
+  N_tau per half = 200, total loop points = 400
+
+  Diagonalizing BCS Hamiltonian at each tau...
+  Fixing parallel transport gauge...
+
+  --- Part A: Abelian Berry phase (ground state only) ---
+  W_abelian = 0.999988596226+0.000000000000j
+  |W_abelian| = 0.999988596226
+  Berry phase gamma = -0.000000000000 rad
+  gamma / pi = -0.000000000000
+  min overlap in chain: 0.999999945076
+  mean overlap in chain: 0.999999971490
+
+  CF6 check: |W_abelian - 1| = 1.14e-05
+  CF6 check: |W_abelian + 1| = 2.00e+00
+
+  --- Part B: Non-Abelian Wilson loop ---
+
+  N_occ = 1:
+    W shape: (1, 1)
+    |W - I| = 1.14e-05
+    det(W) = 0.999988596226
+    Eigenvalues of W: [0.9999886]
+    Phases / pi: [0.]
+    |eigenvalues|: [0.9999886]
+    Pi-phases (|phase - pi| < 0.1): 0
+    Zero-phases (|phase| < 0.1): 1
+
+  N_occ = 2:
+    W shape: (2, 2)
+    |W - I| = 1.26e-05
+    det(W) = 0.999983863416
+    Eigenvalues of W: [0.99998823 0.99999564]
+    Phases / pi: [0. 0.]
+    |eigenvalues|: [0.99998823 0.99999564]
+    Pi-phases (|phase - pi| < 0.1): 0
+    Zero-phases (|phase| < 0.1): 2
+
+  N_occ = 3:
+    W shape: (3, 3)
+    |W - I| = 3.81e-05
+    det(W) = 0.999955525723
+    Eigenvalues of W: [0.99996246 0.99999364 0.99999943]
+    Phases / pi: [0. 0. 0.]
+    |eigenvalues|: [0.99996246 0.99999364 0.99999943]
+    Pi-phases (|phase - pi| < 0.1): 0
+    Zero-phases (|phase| < 0.1): 3
+
+  N_occ = 4:
+    W shape: (4, 4)
+    |W - I| = 1.74e-03
+    det(W) = 0.998248257009
+    Eigenvalues of W: [0.99826281 0.99998708 0.99999842 0.99999993]
+    Phases / pi: [0. 0. 0. 0.]
+    |eigenvalues|: [0.99826281 0.99998708 0.99999842 0.99999993]
+    Pi-phases (|phase - pi| < 0.1): 0
+    Zero-phases (|phase| < 0.1): 4
+
+  N_occ = 8:
+    W shape: (8, 8)
+    |W - I| = 6.60e-14
+    det(W) = 1.000000000000
+    Eigenvalues of W: [1. 1. 1. 1. 1. 1. 1. 1.]
+    Phases / pi: [0. 0. 0. 0. 0. 0. 0. 0.]
+    |eigenvalues|: [1. 1. 1. 1. 1. 1. 1. 1.]
+    Pi-phases (|phase - pi| < 0.1): 0
+    Zero-phases (|phase| < 0.1): 8
+
+==============================================================================
+SECTION 5: STRUCTURAL ANALYSIS
+==============================================================================
+
+  Verifying H(tau) is real symmetric at every tau...
+  max|Im(H)|: 0.00e+00
+  max|H - H^T|: 4.16e-17
+  max|Im(eigvecs)|: 0.00e+00
+
+  Orthogonality check on Wilson loops:
+    N_occ=1: |W*W^T - I| = 2.28e-05, det(W) = 0.999988596226
+    N_occ=2: |W*W^T - I| = 2.51e-05, det(W) = 0.999983863416
+    N_occ=3: |W*W^T - I| = 7.62e-05, det(W) = 0.999955525723
+    N_occ=4: |W*W^T - I| = 3.47e-03, det(W) = 0.998248257009
+    N_occ=8: |W*W^T - I| = 1.32e-13, det(W) = 1.000000000000
+
+==============================================================================
+SECTION 6: BERRY CONNECTION A_mn(tau)
+==============================================================================
+  max|A_nn(tau)|: 2.50e-02 (diagonal = 0 for real evecs)
+  mean symmetric fraction: 1.37e-03
+  mean antisymmetric fraction: 0.999999
+  ||A||_F range: [3.012222, 14.429145]
+
+==============================================================================
+SECTION 7: SPECTRUM GAP AND ADIABATIC PARAMETER
+==============================================================================
+  Ground-state gap range: [0.255676, 0.259110] M_KK
+  Gap at tau=0.15: 0.255676
+  Gap at tau=0.20: 0.259100
+  Gap at tau=0.25: 0.259110
+  Level crossings (gap < 1e-06): 0
+  max|dE_gs/dtau|: 0.137086
+  Adiabatic parameter: 2.097066
+  (<<1 means adiabatic transport is valid)
+
+==============================================================================
+SECTION 8: CONVERGENCE CHECK (DOUBLE RESOLUTION)
+==============================================================================
+  N_tau = 800 (doubled)
+  |W - I| = 1.22e-13
+  Pi-phases: 0
+  Phases/pi: [0. 0. 0. 0. 0. 0. 0. 0.]
+  Convergence: |W_200 - W_400| = 7.28e-14
+
+==============================================================================
+SECTION 9: OPEN PATH WILSON LINE (tau: 0.15 -> 0.25)
+==============================================================================
+
+  N_occ = 1:
+    |W_line eigenvalues|: [0.99999431]
+    Phases/pi: [0.]
+    det(W_line): 0.999994310981
+
+  N_occ = 4:
+    |W_line eigenvalues|: [0.99959242 0.99959242 0.9999696  0.9999696 ]
+    Phases/pi: [-0.0137156  -0.00522729  0.00522729  0.0137156 ]
+    det(W_line): 0.999124259455
+
+  N_occ = 8:
+    |W_line eigenvalues|: [1. 1. 1. 1. 1. 1. 1. 1.]
+    Phases/pi: [-0.17310232 -0.01737979 -0.00447581 -0.00053671  0.00053671  0.00447581
+  0.01737979  0.17310232]
+    det(W_line): 1.000000000000
+
+==============================================================================
+SECTION 10: GATE VERDICT
+==============================================================================
+
+  WILSON LOOP RESULTS (N_occ = 8, N_tau = 400):
+    W eigenvalues: [1. 1. 1. 1. 1. 1. 1. 1.]
+    Phases / pi: [0. 0. 0. 0. 0. 0. 0. 0.]
+    |W - I| = 6.60e-14
+    det(W) = 1.000000000000
+    Pi-phase count: 0
+    Zero-phase count: 8
+
+  GATE THRESHOLDS:
+    PASS: pi-phase count in [13, 50] AND |W - I| < 0.01
+    FAIL: pi-phase count = 0 OR |W - I| > 0.1
+
+  Gate WILSON-LOOP-73B: FAIL
+    Pi-phase count = 0 (trivial topology). |W - I| = 6.60e-14 < 0.01 (CF6 PASS). The Wilson loop is trivial: W = I within numerical precision. Structural reason: H(tau) is real symmetric at all tau, so Berry curvature = 0 identically (S48 retraction confirmed).
+
+==============================================================================
+SECTION 11: STRUCTURAL THEOREM
+==============================================================================
+
+  THEOREM (Wilson loop triviality on BCS ground state manifold):
+
+    Let H(tau) = 2*diag(eps(tau)) - V be the BCS Hamiltonian in the
+    N_pair=1 canonical Fock subspace, with eps_k(tau) the Jensen-deformed
+    Dirac eigenvalues and V the time-reversal-invariant pairing matrix.
+
+    Then H(tau) is REAL SYMMETRIC for all tau, which implies:
+      (i)   All eigenvectors can be chosen real
+      (ii)  Im(QGT) = Berry curvature = 0 identically
+      (iii) The Berry connection A_mn is real and antisymmetric
+      (iv)  The Wilson loop W for any contractible loop is W = +I
+      (v)   No pi-phases exist (pi-phase count = 0)
+
+    Proof sketch:
+      - eps_k(tau) are eigenvalues of D_K^2, hence real and positive
+      - V_bare is the Kosmann pairing kernel, real and symmetric
+      - H = real symmetric => eigenvectors real (up to gauge choice)
+      - A_mn = <u_m|du_n/dtau> = d/dtau(<u_m|u_n>) - <du_m/dtau|u_n>
+             = -<du_m/dtau|u_n> = -A_nm (antisymmetric, real)
+      - A_mm = 0 for real eigenstates (diagonal Berry connection vanishes)
+      - Parallel transport preserves real frame => W in O(N_occ)
+      - For contractible loop on 1D parameter space: W = +I (trivial)
+
+    This extends the topological triviality chain:
+      S25: Berry curvature = 0 (single-particle D_K)
+      S36: BDI winding number = 0
+      S46: Zak phase = artifact (RETRACTED S48)
+      S48: Wilson loop = trivial (single-particle)
+      S55: Berry phase around fold = 0
+      S73B: Non-Abelian Wilson loop on BCS ground state = trivial (THIS RESULT)
+
+    The framework is metrically rich (quantum metric g = 982.5) but
+    topologically trivial at every level tested.
+
+==============================================================================
+SECTION 12: SAVING RESULTS
+==============================================================================
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s73b_wilson_loop.npz
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s73b_wilson_loop.png
+
+  Elapsed: 0.7s
+==============================================================================
+DONE
+==============================================================================

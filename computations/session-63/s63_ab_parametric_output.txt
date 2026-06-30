@@ -1,0 +1,257 @@
+==============================================================================
+S63 AB-PARAMETRIC-63: Parametric Amplification Reheating via A-B Conversion
+==============================================================================
+
+--- Section 1: Load data ---
+Pump mode at k=0:
+  omega_pump = -2.521236 M_KK
+  |omega_pump| = 2.521236 M_KK
+  Sector weights: A = 0.3335, B = 0.6665, C = 0.0000
+  A-B hybrid: 1.0000 total
+
+Hybridization gap:
+  delta_AB = 0.247512 M_KK (tightest crossing)
+  Coupled gap = 0.260425 M_KK
+  Detuning = 0.012914
+
+A-tensor: |A_coset|^2 = 2.200
+  |A_coset| = 1.483240
+
+Transit parameters:
+  H_fold = 586.5268 M_KK (Hubble during transit)
+  v_terminal = 26.5450 M_KK
+  dt_transit = 1.130158e-03 M_KK^-1
+
+==============================================================================
+--- Section 2: Mathieu instability (exponential growth rate) ---
+==============================================================================
+
+Pump amplitude estimates:
+  E_exc = 60.625 M_KK (total excitation energy)
+  n_pairs = 59.8 (Bogoliubov pairs)
+  Conservative (E_pump = E_exc / 2n_pairs):
+    E_pump = 0.5069 M_KK
+    phi_pump = 0.634115 sqrt(M_KK)
+  Liberal (E_pump = E_exc):
+    E_pump = 60.6248 M_KK
+    phi_pump = 6.934791 sqrt(M_KK)
+
+Primary parametric resonance: omega_target = |omega_pump|/2 = 1.2606 M_KK
+Positive modes closest to 1.2606 M_KK at k=0:
+  mode 8: omega = 1.110852, detuning = -0.149766, w_A = 0.0000, w_B = 1.0000
+  mode 7: omega = 1.059616, detuning = -0.201002, w_A = 0.0004, w_B = 0.9996
+  mode 6: omega = 0.895636, detuning = -0.364982, w_A = 0.0011, w_B = 0.9989
+  mode 5: omega = 0.556280, detuning = -0.704339, w_A = 0.0002, w_B = 0.9998
+  mode 4: omega = 0.390766, detuning = -0.869852, w_A = 0.0006, w_B = 0.9994
+
+--- Trilinear coupling vertices ---
+Found 21 resonant pairs within 0.5 M_KK of energy conservation
+Top-10 by coupling strength:
+  1. k=0.5436, omega_s=1.1819, omega_i=1.1819, mismatch=0.1575, g=3.117993
+  2. k=0.5641, omega_s=1.3564, omega_i=1.3564, mismatch=0.1915, g=3.060215
+  3. k=0.6719, omega_s=0.2139, omega_i=2.1510, mismatch=0.1563, g=0.012316
+  4. k=0.6865, omega_s=0.2183, omega_i=2.2415, mismatch=0.0614, g=0.011745
+  5. k=0.7220, omega_s=0.2290, omega_i=2.4440, mismatch=0.1518, g=0.010617
+  6. k=0.7877, omega_s=0.2490, omega_i=2.7604, mismatch=0.4881, g=0.009161
+  7. k=0.2165, omega_s=1.2172, omega_i=1.5938, mismatch=0.2898, g=0.003074
+  8. k=0.2165, omega_s=1.2172, omega_i=1.2172, mismatch=0.0869, g=0.003022
+  9. k=0.0000, omega_s=1.0596, omega_i=1.0596, mismatch=0.4020, g=0.002048
+  10. k=0.2165, omega_s=1.2172, omega_i=1.7599, mismatch=0.4558, g=0.001484
+
+Coupling statistics:
+  g_max = 3.117993 M_KK
+  g_mean = 0.296904 M_KK
+  g_rms = 0.953373 M_KK
+
+Direct V_AB statistics:
+  max|V_AB| = 0.989391 M_KK
+  rms(V_AB) = 0.300117 M_KK
+
+==============================================================================
+--- Section 3: Mathieu instability band and growth rate ---
+==============================================================================
+
+Scan for modes in primary Mathieu band across all k-points:
+Found 10 modes in band [0.76, 1.76] M_KK
+  k=0.0000, mode=6, omega=0.895636, w_A=0.0011, w_B=0.9989
+  k=0.0000, mode=7, omega=1.059616, w_A=0.0004, w_B=0.9996
+  k=0.0000, mode=8, omega=1.110852, w_A=0.0000, w_B=1.0000
+  k=0.2165, mode=2, omega=1.217172, w_A=0.0005, w_B=0.9995
+  k=0.2165, mode=3, omega=1.399821, w_A=0.0000, w_B=1.0000
+  k=0.2165, mode=4, omega=1.593825, w_A=0.0006, w_B=0.9994
+  k=0.2165, mode=5, omega=1.759907, w_A=0.0001, w_B=0.9999
+  k=0.5236, mode=1, omega=1.004612, w_A=0.6657, w_B=0.3342
+  k=0.5436, mode=1, omega=1.181892, w_A=0.6885, w_B=0.3115
+  k=0.5641, mode=1, omega=1.356393, w_A=0.7112, w_B=0.2888
+
+Mathieu growth rates:
+  k=0.0000, omega=0.8956: g=0.210138, h_cons=0.1488, h_lib=1.6271, mu_cons=0.0000, mu_lib=0.0000
+  k=0.0000, omega=1.0596: g=0.128131, h_cons=0.0767, h_lib=0.8386, mu_cons=0.0000, mu_lib=0.0946
+  k=0.0000, omega=1.1109: g=0.002020, h_cons=0.0012, h_lib=0.0126, mu_cons=0.0000, mu_lib=0.0000
+  k=0.2165, omega=1.2172: g=0.139703, h_cons=0.0728, h_lib=0.7960, mu_cons=0.0000, mu_lib=0.2383
+  k=0.2165, omega=1.3998: g=0.020299, h_cons=0.0092, h_lib=0.1006, mu_cons=0.0000, mu_lib=0.0000
+  k=0.2165, omega=1.5938: g=0.143272, h_cons=0.0570, h_lib=0.6234, mu_cons=0.0000, mu_lib=0.0000
+  k=0.2165, omega=1.7599: g=0.069345, h_cons=0.0250, h_lib=0.2732, mu_cons=0.0000, mu_lib=0.0000
+  k=0.5236, omega=1.0046: g=5.048274, h_cons=3.1865, h_lib=34.8480, mu_cons=0.7582, mu_lib=8.7484
+  k=0.5436, omega=1.1819: g=5.043328, h_cons=2.7059, h_lib=29.5919, mu_cons=0.7956, mu_lib=8.7433
+  k=0.5641, omega=1.3564: g=5.034591, h_cons=2.3537, h_lib=25.7402, mu_cons=0.7924, mu_lib=8.7279
+
+Maximum Mathieu growth rates:
+  mu_max (conservative) = 0.795627 M_KK
+  mu_max (liberal)      = 8.748435 M_KK
+  H_fold                = 586.5268 M_KK
+  mu_cons / H_fold      = 1.356505e-03
+  mu_lib / H_fold       = 1.491566e-02
+
+==============================================================================
+--- Section 4: Fermi Golden Rule decay rate ---
+==============================================================================
+Pair decay channels (|omega_s + omega_i - |omega_pump|| < 0.3):
+  Total channels: 12
+  Top-10 by |g|^2:
+    1. k=0.5641, omega_s=1.3564, omega_i=1.3564, mismatch=0.1915, |g|^2=3.772323e+00
+    2. k=0.5436, omega_s=1.1819, omega_i=1.1819, mismatch=0.1575, |g|^2=3.760187e+00
+    3. k=0.6719, omega_s=0.2139, omega_i=2.1510, mismatch=0.1563, |g|^2=8.448830e-05
+    4. k=0.6865, omega_s=0.2183, omega_i=2.2415, mismatch=0.0614, |g|^2=7.939673e-05
+    5. k=0.7220, omega_s=0.2290, omega_i=2.4440, mismatch=0.1518, |g|^2=6.986483e-05
+    6. k=0.2165, omega_s=1.2172, omega_i=1.5938, mismatch=0.2898, |g|^2=3.300510e-06
+    7. k=0.2165, omega_s=1.2172, omega_i=1.2172, mismatch=0.0869, |g|^2=3.137945e-06
+    8. k=0.3024, omega_s=0.1058, omega_i=2.3619, mismatch=0.0536, |g|^2=1.445089e-07
+    9. k=0.2165, omega_s=1.2172, omega_i=1.3998, mismatch=0.0958, |g|^2=6.616345e-08
+    10. k=0.2165, omega_s=0.0831, omega_i=2.2629, mismatch=0.1752, |g|^2=3.054940e-08
+
+  |g|^2 statistics:
+    max |g|^2 = 3.772323e+00 M_KK^2
+    mean |g|^2 = 6.277293e-01 M_KK^2
+    rho_eff = 40.00 M_KK^-1
+    Transit broadening: eta = 1/dt_transit = 884.83 M_KK
+
+Fermi Golden Rule rates:
+  Gamma_FGR (transit broadening, eta = 884.8 M_KK)
+    Gamma = 0.017026 M_KK
+    Gamma / H_fold = 2.902918e-05
+  Gamma_FGR (narrow broadening, eta = 0.2475 M_KK)
+    Gamma = 40.696098 M_KK
+    Gamma / H_fold = 6.938489e-02
+
+==============================================================================
+--- Section 5: Landau-Zener transition probability ---
+==============================================================================
+Landau-Zener parameters:
+  delta_AB = 0.247512 M_KK (hybridization gap)
+  v_terminal = 26.5450 M_KK (modulus roll velocity)
+  d(detuning)/d(tau) = 7.0415 M_KK/tau
+  d(detuning)/dt = v * d(det)/d(tau) = 186.9167 M_KK^2
+  gamma_LZ = pi * delta^2 / (2 * |d(det)/dt|) = 0.000515
+  P_LZ (non-adiabatic) = exp(-gamma_LZ) = 9.994853e-01
+  P_adiabatic = 1 - P_LZ = 0.000515
+
+Landau-Zener reheating rate:
+  Gamma_LZ = P_adiabatic * |omega_pump| / (2*pi)
+           = 0.000515 * 2.5212 / 6.2832
+           = 0.000207 M_KK
+  Gamma_LZ / H_fold = 3.521252e-07
+  N_crossings per transit = |omega_pump| * dt_transit / (2*pi)
+                          = 4.534952e-04
+
+==============================================================================
+--- Section 6: Broad-resonance (non-perturbative) estimate ---
+==============================================================================
+Coupling estimates:
+  g_cross (rms) = sqrt(2.2) * 0.300117 = 0.445146 M_KK
+  g_cross (max) = sqrt(2.2) * 0.989391 = 1.467504 M_KK
+
+Mathieu q-parameter (broad-resonance diagnostic):
+  q (rms coupling, conservative pump)  = 3.133665e-03
+  q (rms coupling, liberal pump)       = 3.747864e-01
+  q (max coupling, conservative pump)  = 3.405706e-02
+  q (max coupling, liberal pump)       = 4.073224e+00
+  -> BROAD RESONANCE regime (q_max_liberal = 4.07 > 1)
+
+Non-perturbative growth rate:
+  mu_broad = 1.790887 M_KK
+  mu_broad / H_fold = 3.053376e-03
+
+==============================================================================
+--- Section 7: Direct A-B mode conversion rate (the decisive computation) ---
+==============================================================================
+Direct A-B mode conversion:
+  V_AB_eff = delta/2 = 0.123756 M_KK
+  Omega_Rabi = delta_AB = 0.247512 M_KK
+  P_adiabatic = 0.000515
+  d(detuning)/dt = 186.9167 M_KK^2
+  Gamma_conversion = P_adiab * (d(det)/dt) / delta
+                   = 0.0005 * 186.9167 / 0.2475
+                   = 0.3887 M_KK
+  Gamma_conversion / H_fold = 6.626984e-04
+
+==============================================================================
+--- Section 8: Summary and Gate Verdict ---
+==============================================================================
+
+All parametric amplification / mode conversion rates (M_KK units):
+Method                         Rate            Rate/H_fold     > H?  
+------------------------------------------------------------------
+FGR_narrow                     40.696098       6.938489e-02    NO    
+Mathieu_liberal                8.748435        1.491566e-02    NO    
+Broad_resonance                1.790887        3.053376e-03    NO    
+Mathieu_conservative           0.795627        1.356505e-03    NO    
+LZ_conversion                  0.388690        6.626984e-04    NO    
+Rabi_frequency                 0.247512        4.219955e-04    NO    
+FGR_transit                    0.017026        2.902918e-05    NO    
+LZ_rate                        0.000207        3.521252e-07    NO    
+H_fold (threshold)             586.5268        1.000           ---   
+
+Decisive rate: Gamma = 0.3887 M_KK (LZ_conversion)
+Upper bound: Gamma = 0.2475 M_KK (Rabi frequency)
+H_fold = 586.5268 M_KK
+
+========================================
+GATE: AB-PARAMETRIC-63
+VERDICT: FAIL
+  Gamma_conversion = 0.3887 M_KK < H_fold = 586.5268 M_KK
+  Shortfall: 1508.98x
+========================================
+
+==============================================================================
+--- Section 9: Cross-checks ---
+==============================================================================
+
+1. Energy conservation:
+   |omega_pump| = 2.521236 M_KK
+   Modes available for pair production at |omega_pump| = 2.5212:
+   N_pairs in energy window: 22
+
+2. Dimensional analysis:
+   [V_AB] = M_KK (dimensionless coupling in M_KK units) [OK]
+   [delta_AB] = M_KK (energy gap) [OK]
+   [d(det)/dt] = M_KK^2 (rate of energy change) [OK]
+   [Gamma] = M_KK (inverse time in M_KK units) [OK]
+   [H_fold] = M_KK (Hubble rate) [OK]
+
+3. Adiabaticity parameter gamma = delta^2 / |d(det)/dt|:
+   gamma = 0.2475^2 / 186.9167 = 3.277504e-04
+   gamma << 1: fully non-adiabatic (impulsive transition)
+   gamma >> 1: fully adiabatic (smooth conversion)
+   gamma = 3.2775e-04: NON-ADIABATIC
+
+4. E-folds of Mathieu growth during transit:
+   n_efold = mu_max_liberal * dt_transit = 8.7484 * 1.130158e-03
+           = 9.887110e-03
+
+5. Condensed matter analog:
+   The A-B hybridization gap delta = 0.2475 M_KK is the analog
+   of the avoided crossing in a driven two-level system (Jaynes-Cummings).
+   The modulus roll is the analog of a swept magnetic field through a
+   spin resonance. P_adiabatic = 0.000515 is the LZ probability.
+   In superfluid He-3: this is the analog of the A-B transition driving
+   pair-breaking at the gap edge, creating quasiparticle excitations.
+
+==============================================================================
+--- Section 10: Save data and plot ---
+==============================================================================
+Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s63_ab_parametric.npz
+Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s63_ab_parametric.png
+
+Total runtime: 0.6s
+DONE

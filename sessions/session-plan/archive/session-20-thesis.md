@@ -222,17 +222,17 @@ All tractable on 32-core Ryzen with 17GB VRAM. Largest matrix: (3,3) at 2240 x 2
 
 ## What Already Exists
 
-The following infrastructure is already implemented in `tier0-computation/`:
+The following infrastructure is already implemented in `computations/`:
 
 | Component | File | What It Provides |
 |:----------|:-----|:----------------|
-| Jensen metric g_{ab}(tau) | `tier1_dirac_spectrum.py` | `jensen_metric()` at any tau |
+| Jensen metric g_{ab}(tau) | `dirac_spectrum.py` | `jensen_metric()` at any tau |
 | Connection coefficients Gamma^c_{ab}(tau) | `b6_scalar_vector_laplacian.py` | `compute_connection_ON()` |
 | Ricci tensor Ric_{ab}(tau) | `b6_scalar_vector_laplacian.py` | `ricci_tensor_ON()` |
-| Peter-Weyl irrep matrices | `tier1_dirac_spectrum.py` | `get_irrep_matrices()` |
+| Peter-Weyl irrep matrices | `dirac_spectrum.py` | `get_irrep_matrices()` |
 | Scalar Laplacian eigenvalues | `b6_scalar_vector_laplacian.py` | Reference for cross-checking |
 | V_CW data | `h5_standalone_verify.py` | 26-point V_eff(tau) at multiple mu |
-| V_tree analytic | `tier1_spectral_action.py` | `baptista_V_tree()` |
+| V_tree analytic | `spectral_action.py` | `baptista_V_tree()` |
 | Casimir proxy machinery | `d19d_casimir_gate.py` | E_proxy boson/fermion separation |
 
 **What is NEW and must be written:**
@@ -297,13 +297,13 @@ The condition: **da_2/dtau and da_4/dtau must have opposite signs at some tau.**
 
 ## phonon-exflation-sim additionally:
 
-5. **`tier0-computation/b6_scalar_vector_laplacian.py`** — Contains `compute_connection_ON()` and `ricci_tensor_ON()`. You are extending these to produce the full Riemann tensor R_{abcd}(tau).
+5. **`computations/b6_scalar_vector_laplacian.py`** — Contains `compute_connection_ON()` and `ricci_tensor_ON()`. You are extending these to produce the full Riemann tensor R_{abcd}(tau).
 
-6. **`tier0-computation/d19d_casimir_gate.py`** — Your D-1 gate script. Contains the E_proxy boson/fermion machinery you will extend to include TT modes.
+6. **`computations/d19d_casimir_gate.py`** — Your D-1 gate script. Contains the E_proxy boson/fermion machinery you will extend to include TT modes.
 
-7. **`tier0-computation/tier1_dirac_spectrum.py`** — `jensen_metric()`, `get_irrep_matrices()`, `collect_spectrum()`. The Peter-Weyl infrastructure you are extending to TT 2-tensors.
+7. **`computations/dirac_spectrum.py`** — `jensen_metric()`, `get_irrep_matrices()`, `collect_spectrum()`. The Peter-Weyl infrastructure you are extending to TT 2-tensors.
 
-8. **`tier0-computation/h5_standalone_verify.py`** — V_CW data at 26 tau-values. Needed for D-3 (V_total assembly).
+8. **`computations/h5_standalone_verify.py`** — V_CW data at 26 tau-values. Needed for D-3 (V_total assembly).
 
 ## kaluza-klein-theorist additionally:
 
@@ -312,7 +312,7 @@ The condition: **da_2/dtau and da_4/dtau must have opposite signs at some tau.**
 10. **Baptista Paper 15**: `researchers/Baptista/15_2024_Internal_symmetries_in_Kaluza_Klein_models.md`
     Focus: eqs (3.14)-(3.19) — the EXACT framework for Lichnerowicz on TT 2-tensors in this KK setting. eq (3.17) gives 4D TT mode masses: m_n^2 = mu_n - R_K/4.
 
-11. **Session 17b SP-2 curvature output**: `tier0-computation/sp2_final_verification.py` — 4 curvature invariants as analytic functions of tau. R_{abcd}(tau) components are partially encoded here.
+11. **Session 17b SP-2 curvature output**: `computations/sp2_final_verification.py` — 4 curvature invariants as analytic functions of tau. R_{abcd}(tau) components are partially encoded here.
 
 ## connes-ncg-theorist additionally:
 
@@ -320,7 +320,7 @@ The condition: **da_2/dtau and da_4/dtau must have opposite signs at some tau.**
 
 13. **Connes papers in your corpus**: Focus on Papers 07 (spectral action principle), 10 (Chamseddine-Connes-Marcolli), 14 (NCG spectral standpoint). The a_2 and a_4 coefficients and their physical interpretation.
 
-14. **`tier0-computation/tier1_spectral_action.py`** — Seeley-DeWitt coefficient computations. Contains `baptista_V_tree()` and the spectral action infrastructure.
+14. **`computations/spectral_action.py`** — Seeley-DeWitt coefficient computations. Contains `baptista_V_tree()` and the spectral action infrastructure.
 
 ---
 
@@ -410,7 +410,7 @@ dV_eff/dtau = 0
 - RESULT: Do they have opposite signs? If yes — at what tau range? What is the required f_2/f_0?
 - Assessment: Is the spectral action (NCG) path to stabilization OPEN or CLOSED?
 
-**Write to**: `tier0-computation/l20_seeley_dewitt_gate.py`
+**Write to**: `computations/l20_seeley_dewitt_gate.py`
 
 ---
 
@@ -450,7 +450,7 @@ The lowered tensor: R_{abcd} = g_{ae} R^e_{bcd}.
 
 ### Computation Steps
 
-1. Load the Gell-Mann structure constants f^c_{ab} (already in `tier1_dirac_spectrum.py`).
+1. Load the Gell-Mann structure constants f^c_{ab} (already in `dirac_spectrum.py`).
 
 2. For each tau in [0, 0.1, ..., 2.0], compute:
    - Jensen metric g_{ab}(tau) from `jensen_metric(tau)` — returns 8x8 diagonal matrix
@@ -472,7 +472,7 @@ The lowered tensor: R_{abcd} = g_{ae} R^e_{bcd}.
 - Validation report: agreement with `ricci_tensor_ON()` and Session 17b curvature invariants
 - Save R_{abcd}(tau) at all 21 tau-values to `l20_riemann_tensor.npz`
 
-**Write to**: `tier0-computation/l20_riemann_tensor.py`
+**Write to**: `computations/l20_riemann_tensor.py`
 
 ---
 
@@ -523,7 +523,7 @@ At the bi-invariant point (tau=0), the TT fiber is a definite SU(3) representati
 - Validation report at tau=0: positivity, Bochner bound, tachyon check
 - Save TT eigenvalue data to `l20_TT_spectrum.npz`
 
-**Write to**: `tier0-computation/l20_lichnerowicz.py`
+**Write to**: `computations/l20_lichnerowicz.py`
 
 ---
 
@@ -559,7 +559,7 @@ At the bi-invariant point (tau=0), the TT fiber is a definite SU(3) representati
 - Plot: E_proxy_boson_full vs E_proxy_fermion vs tau
 - GATE RESULT: Does dE_total/dtau change sign? YES/NO.
 
-**Write to**: `tier0-computation/l20_TT_casimir_gate.py`
+**Write to**: `computations/l20_TT_casimir_gate.py`
 
 ---
 
@@ -575,7 +575,7 @@ At the bi-invariant point (tau=0), the TT fiber is a definite SU(3) representati
    V_total(tau) = V_tree(tau) + V_CW(tau) + E_Casimir_total(tau)
 
    where:
-     V_tree: from baptista_V_tree() in tier1_spectral_action.py
+     V_tree: from baptista_V_tree() in spectral_action.py
      V_CW:   from h5_standalone_verify.py (26-point data, interpolate to 21-tau grid)
      E_Casimir_total = E_Casimir_scalar + E_Casimir_vector + E_Casimir_TT - E_Casimir_fermion
    ```
@@ -610,7 +610,7 @@ At the bi-invariant point (tau=0), the TT fiber is a definite SU(3) representati
 - Convergence assessment at mps=5 vs mps=6
 - VERDICT: CLOSED / WEAK SURVIVE / STRONG SURVIVE / DECISIVE
 
-**Write to**: `tier0-computation/l20_vtotal_minimum.py`
+**Write to**: `computations/l20_vtotal_minimum.py`
 
 ---
 
@@ -646,7 +646,7 @@ The Session 19d collaborative review unanimously identified this as the key visu
 - Tachyon boundary tau_* (if any TT mode goes tachyonic)
 - Mode crossing diagram: which bosonic tower first crosses the fermionic contribution at tau_0?
 
-**Write to**: `tier0-computation/l20_phonon_band_structure.py`
+**Write to**: `computations/l20_phonon_band_structure.py`
 
 ---
 
@@ -759,7 +759,7 @@ Phase 5 (CONDITIONAL — after L-4 SURVIVE):
 
 **Environment**: GPU venv — `phonon-exflation-sim/.venv312/Scripts/python.exe` for ALL scripts. The RX 9070 XT has 17 GB VRAM. Eigenvalue computations at large matrix sizes (up to 2240 x 2240 for sector (3,3)) benefit from GPU.
 
-**Output files** (all in `tier0-computation/`):
+**Output files** (all in `computations/`):
 
 | Script | Purpose |
 |:-------|:--------|
@@ -845,14 +845,14 @@ tau_0 exists — V_total has a local minimum at tau_0 > 0. PASS/FAIL. If FAIL: r
 
 ## Pre-Registered Test Table
 
-| Test | Observable | Target | UPGRADE | SUGGESTIVE | CLOSED | Tier | Notes |
+| Test | Observable | Target | UPGRADE | SUGGESTIVE | CLOSED | Level | Notes |
 |:-----|:-----------|:-------|:--------|:-----------|:-----|:-----|:------|
 | **P-1** | m_{(3,0)}/m_{(0,0)} at tau_0 | 1.53158 (phi_paasch) | <0.1% dev | <0.5% dev | >5% dev | 1 (immediate) | Blind analysis required |
 | **P-2** | [m_{(3,0)}/m_{(0,0)}]^{2/3} at tau_0 | phi_paasch via N^{3/2} scaling | <0.3% dev | <1% dev | >3% dev | 1 (runs with P-1) | Most Paasch-specific test; separates N^{3/2} scaling from generic Casimir numerology |
 | **P-3** | p/K sector ratio at tau_0 | 1.9006 (m_p/m_K, PDG) | <5% dev | <10% dev | >15% dev | 1 (needs U(2) ID) | Requires sector identification locked BEFORE ratio check |
 | **P-4** | Consecutive sector M-ratio | 0.618034 (1/phi_golden) | <1% dev | <3% dev | >5% dev | 1 (needs sector ordering) | Tests Paasch's M-value golden ratio structure |
 | **P-5** | N(b) from D_K multiplicities | 112 | exact +/-3 | +/-7 | wrong multiplicity | 2 | Requires eigenvalue multiplicity analysis |
-| **P-6** | Z_3 generation hierarchy | 1:207:3477 (m_e:m_mu:m_tau) | factor-of-2 all three | factor-of-3 | wrong order of magnitude | 2 (spinor transport) | Requires Tier 2 Z_3 computation (Paper 18 App E) |
+| **P-6** | Z_3 generation hierarchy | 1:207:3477 (m_e:m_mu:m_tau) | factor-of-2 all three | factor-of-3 | wrong order of magnitude | 2 (spinor transport) | Requires Level 2 Z_3 computation (Paper 18 App E) |
 | **P-7** | alpha from spectral integers | 0.0072974 | <1e-6 | <1e-4 | >1% dev | 3 (requires P-5) | Conditional on N(b) derivation from D_K |
 
 ## R4: Alpha Circularity Constraint Condition (CHECK BEFORE SESSION 20 RESULTS)
@@ -873,13 +873,13 @@ Two independent constraints prefer different tau_0 values:
 
 A single tau_0 satisfying BOTH would be far more significant than satisfying either alone (one free parameter, two independent observables). This is what makes L-4 potentially decisive for Paasch: not just "does tau_0 exist?" but "does the tau_0 that minimizes V_total simultaneously explain gauge couplings AND mass ratio clustering?"
 
-## Redemption Tiers
+## Redemption Levels
 
-| Tier | Requirements | Framework Upgrade | Paasch Status |
+| Level | Requirements | Framework Upgrade | Paasch Status |
 |:-----|:-------------|:-----------------|:--------------|
 | **A** | P-0 + P-1 UPGRADE + P-2 | +8-12% | "Newton identified, not yet verified" |
-| **B** | Tier A + P-3 + P-4 | +12-18% | "The algebraic core has a geometric home" |
-| **C** | Tier A + B + P-6 | +18-25% | FULL REDEMPTION — mass ratios from fiber geometry |
+| **B** | Level A + P-3 + P-4 | +12-18% | "The algebraic core has a geometric home" |
+| **C** | Level A + B + P-6 | +18-25% | FULL REDEMPTION — mass ratios from fiber geometry |
 
 **Closure**: P-1 fails (>5% at tau_0) AND backup at tau_W = 0.2994 also fails -> Paasch-D_K connection permanently severed. Algebraic formulas survive as unexplained phenomenology only.
 
@@ -887,8 +887,8 @@ A single tau_0 satisfying BOTH would be far more significant than satisfying eit
 
 | Outcome | Probability |
 |:--------|:-----------|
-| Tier A (partial redemption) | 8-19% |
-| Tier C (full redemption) | 3-10% |
+| Level A (partial redemption) | 8-19% |
+| Level C (full redemption) | 3-10% |
 | Permanent "Kepler without Newton" | 50-60% |
 | Paasch completely closed | 10-15% |
 

@@ -1,0 +1,282 @@
+========================================================================
+BLV-8D-55: 8D BLV Acoustic Scale Factor
+========================================================================
+
+--- PART 1: Input Data ---
+
+c_fabric        = 209.97368 M_KK
+c_Gold          = 0.915 M_KK
+c_fabric/c_Gold = 229.4794
+ln(c_fabric/c_Gold) = 5.435813
+
+S53 reference: N_e^4D = (1/2)*ln(229.48) = 2.7179
+S53 reported:  N_e^4D = 2.7179
+
+========================================================================
+PART 2: BLV Metric Derivation in d Spacetime Dimensions
+========================================================================
+
+Starting from the wave equation for perturbation theta_1 in a
+barotropic irrotational fluid at rest (v=0, homogeneous):
+
+  rho/c_s^2 * d_t^2 theta_1 - rho * nabla^2 theta_1 = 0
+
+In d = n+1 spacetime dimensions (n spatial), the acoustic metric
+is ds^2 = -A*dt^2 + B*dx_i*dx^i, with A and B determined by:
+
+  Condition I:   B^{n/2}/sqrt(A) = rho/c_s^2
+  Condition II:  sqrt(A) * B^{(n-2)/2} = rho
+
+Solution:
+  B = (rho^2/c_s^2)^{1/(n-1)}
+  A = rho^{2/(n-1)} * c_s^{2(n-2)/(n-1)}
+
+Acoustic scale factor: a^2 = B = (rho/c_s)^{2/(n-1)}
+                       a   = (rho/c_s)^{1/(n-1)}
+
+For constant rho:
+  a propto c_s^{-1/(n-1)}
+  N_e = 1/(n-1) * ln(c_s_i/c_s_f)
+
+Since n = d-1 (spatial dims = spacetime dims - 1):
+  N_e = 1/(d-2) * ln(c_s_i/c_s_f)
+
+--- Verification for d=4 (n=3) ---
+  n=3, d=4: exponent = 1/(n-1) = 1/2 = 0.5000
+  Matches S53 formula a = sqrt(rho/c_s) = (rho/c_s)^{1/2}: YES
+
+  c_s=0.5: B=3.000000, A=0.750000, Cond_I: 8.88e-16, Cond_II: 2.22e-16
+  c_s=1.0: B=1.500000, A=1.500000, Cond_I: 2.22e-16, Cond_II: 2.22e-16
+  c_s=2.0: B=0.750000, A=3.000000, Cond_I: 5.55e-17, Cond_II: 2.22e-16
+  c_s=5.0: B=0.300000, A=7.500000, Cond_I: 6.94e-18, Cond_II: 0.00e+00
+
+--- Verification for d=8 (n=7) ---
+  n=7, d=8: exponent = 1/(n-1) = 1/6 = 0.166667
+
+  c_s=0.5: B=1.442250, A=0.360562, Cond_I: 1.78e-15, Cond_II: 2.22e-16
+  c_s=1.0: B=1.144714, A=1.144714, Cond_I: 0.00e+00, Cond_II: 0.00e+00
+  c_s=2.0: B=0.908560, A=3.634241, Cond_I: 0.00e+00, Cond_II: 2.22e-16
+  c_s=5.0: B=0.669433, A=16.735824, Cond_I: 0.00e+00, Cond_II: 0.00e+00
+
+========================================================================
+PART 3: Acoustic E-folds Across Dimensions
+========================================================================
+
+Sound speed ratio: c_fabric/c_Gold = 229.4794
+ln(ratio) = 5.435813
+
+CORRECT formula from first principles: N_e = [1/(d-2)] * ln(ratio)
+  (derived from BLV wave equation in d spacetime dimensions)
+
+  d  n=d-1   1/(d-2)         N_e   N_e/N_e(4D)
+------------------------------------------------
+  4      3   0.50000      2.7179        1.0000
+  5      4   0.33333      1.8119        0.6667
+  6      5   0.25000      1.3590        0.5000
+  7      6   0.20000      1.0872        0.4000
+  8      7   0.16667      0.9060        0.3333
+  9      8   0.14286      0.7765        0.2857
+ 10      9   0.12500      0.6795        0.2500
+
+COMPARISON: Task-prompt formula N_e = [1/(d-1)] * ln(ratio)
+
+  d   1/(d-1)    N_e(d-1)   1/(d-2)    N_e(d-2)  Difference
+------------------------------------------------------------
+  4   0.33333      1.8119   0.50000      2.7179     -0.9060
+  5   0.25000      1.3590   0.33333      1.8119     -0.4530
+  6   0.20000      1.0872   0.25000      1.3590     -0.2718
+  7   0.16667      0.9060   0.20000      1.0872     -0.1812
+  8   0.14286      0.7765   0.16667      0.9060     -0.1294
+  9   0.12500      0.6795   0.14286      0.7765     -0.0971
+ 10   0.11111      0.6040   0.12500      0.6795     -0.0755
+
+========================================================================
+PART 4: The 8D Result and Its Physics
+========================================================================
+
+4D result (d=4, n=3): N_e = (1/2)*ln(229.48) = 2.7179
+8D result (d=8, n=7): N_e = (1/6)*ln(229.48) = 0.9060
+Ratio: N_e(8D) / N_e(4D) = 0.3333
+  = (d_4D-2)/(d_8D-2) = 2/6 = 0.3333
+
+Task-prompt formula gives N_e(8D) = (1/7)*ln(229.48) = 0.7765
+
+RESOLUTION OF EXPONENT AMBIGUITY:
+----------------------------------------
+
+The BLV paper (Barcelo, Liberati, Visser 2005) writes the acoustic
+metric with an overall conformal factor. In d=n+1 spacetime dimensions:
+
+  g_{mu nu} = [rho^n / c_s^{n-2}]^{1/(n-1)} * core metric
+
+For v=0, the spatial part gives:
+  a^2 = [rho^n / c_s^{n-2}]^{1/(n-1)} / c_s^0  ... (spatial conformal)
+  = rho^{n/(n-1)} / c_s^{(n-2)/(n-1)}
+
+For constant rho:
+  a propto c_s^{-(n-2)/(2(n-1))}   ... WRONG, this is the lapse part
+
+Let me be VERY explicit. The acoustic line element for v=0 homogeneous:
+  ds^2 = -A dt^2 + B (dx_1^2 + ... + dx_n^2)
+
+The scale factor is a = B^{1/2}.
+From my derivation: B = (rho^2/c_s^2)^{1/(n-1)}
+For constant rho: B propto c_s^{-2/(n-1)}
+                  a = B^{1/2} propto c_s^{-1/(n-1)}
+
+This gives N_e = [1/(n-1)] * ln(c_s_i/c_s_f)
+         = [1/(d-2)] * ln(ratio)
+
+For d=4: 1/(d-2) = 1/2   =>  N_e = 2.7179  [matches S53 exactly]
+For d=8: 1/(d-2) = 1/6   =>  N_e = 0.9060
+
+ANCHOR CHECK: S53 computed N_e = (1/2)*ln(229.48) = 2.7179
+My formula:  (1/(4-2))*ln(229.48) = 2.7179
+Match: True
+
+========================================================================
+PART 5: Final Results — Acoustic E-folds vs Dimension
+========================================================================
+
+c_s ratio = 229.4794
+ln(ratio) = 5.435813
+
+  d    n    Exponent         N_e   N_e/N_e(4D)              Physical interpretation
+--------------------------------------------------------------------------------
+  4    3  1/2            2.7179        1.0000               Standard 3+1 spacetime
+  5    4  1/3            1.8119        0.6667                      Kaluza-Klein 5D
+  6    5  1/4            1.3590        0.5000       String theory compactification
+  7    6  1/5            1.0872        0.4000         M-theory 11D -> 7D effective
+  8    7  1/6            0.9060        0.3333         M^4 x SU(3) phonon-exflation
+  9    8  1/7            0.7765        0.2857                    9D (hypothetical)
+ 10    9  1/8            0.6795        0.2500                 10D string / IIA/IIB
+
+========================================================================
+PART 6: The Dimensionality Problem
+========================================================================
+
+The S53 result N_e = 2.89 (with geometry) was already marginal
+(short of 3.1 by 0.21 e-folds). In 8D, the sound speed channel
+contributes only N_e = 0.9060 instead of 2.7179.
+
+Full acoustic e-fold budget in 8D:
+  N_e^geom     = 0.1734  (unchanged — geometric e-folds)
+  N_e^sound(8D)= 0.9060  (was 2.7179 in 4D)
+  N_e^density  = 0.0000  (cancels, P_exc=1.000)
+  ---------------------------------
+  N_e^acoustic(8D) = 1.0794
+  N_e^acoustic(4D) = 2.8913  (S53 result: 2.8913)
+
+Reduction factor: 0.3733
+
+PHYSICAL INTERPRETATION:
+
+In a higher-dimensional superfluid, the acoustic scale factor is
+LESS sensitive to sound speed changes. The conformal factor
+distributes the effect across more spatial dimensions.
+
+Superfluid analog: In 3He-B (3D), a change in c_s produces
+a ~ c_s^{-1/2} (the 4D BLV result). In a 7D superfluid,
+the same c_s change produces a ~ c_s^{-1/6} — the 'spring'
+of expansion is stiffer because there are more dimensions to absorb it.
+
+This is a geometric DILUTION of the acoustic expansion effect.
+The 229x sound speed hierarchy, which provided 2.72 e-folds in 4D,
+provides only 0.9060 e-folds in 8D.
+
+========================================================================
+PART 7: Which Effective Dimension Applies?
+========================================================================
+
+The answer depends on what the phonon 'sees'.
+
+Case A: Phonon propagates in full M^4 x SU(3) (d_eff = 8)
+  N_e^sound = 0.9060
+  The phonon sees ALL 7 spatial dimensions. Scale factor a lives
+  in the 7D spatial slice. Expansion is diluted.
+
+Case B: Phonon confined to M^4 (d_eff = 4)
+  N_e^sound = 2.7179
+  The phonon only propagates in the 3 spatial dimensions of M^4.
+  SU(3) fiber enters only through c_s (which depends on KK geometry).
+  This is the S53 calculation.
+
+Case C: Phonon has partial KK momentum (d_eff between 4 and 8)
+  N_e interpolates between the two cases.
+  The effective dimension depends on the phonon's KK momentum.
+
+For the Goldstone mode (c_Gold = 0.915 M_KK):
+  This is a collective mode of the BCS condensate on SU(3).
+  Its wavefunction lives on SU(3) (it IS a fiber excitation).
+  But the EXPANSION is of M^4 (the geometric e-folds are 4D).
+
+  The correct treatment is Case B: the phonon's dispersion relation
+  omega^2 = c_Gold^2 * k^2 refers to 3-momenta k on M^4.
+  The SU(3) structure determines c_Gold's VALUE but the metric
+  that describes expansion is the 4D FRW metric.
+
+  This is EXACTLY the superfluid analog: in He-3 on a torus,
+  the sound speed depends on the internal structure (anisotropy),
+  but the effective spacetime seen by phonons is 3+1 dimensional.
+
+========================================================================
+PART 8: Summary
+========================================================================
+
+BLV-8D-55 RESULT:
+
+  Sound speed ratio: 229.4794
+
+  d=4 (3+1):  N_e^sound = (1/2)*ln(229.48) = 2.7179
+  d=5 (4+1):  N_e^sound = (1/3)*ln(229.48) = 1.8119
+  d=6 (5+1):  N_e^sound = (1/4)*ln(229.48) = 1.3590
+  d=7 (6+1):  N_e^sound = (1/5)*ln(229.48) = 1.0872
+  d=8 (7+1):  N_e^sound = (1/6)*ln(229.48) = 0.9060
+  d=9 (8+1):  N_e^sound = (1/7)*ln(229.48) = 0.7765
+  d=10 (9+1): N_e^sound = (1/8)*ln(229.48) = 0.6795
+
+  Correct exponent: 1/(d-2)  [NOT 1/(d-1)]
+  Task prompt had 1/(d-1)=1/7; correct is 1/(d-2)=1/6
+  Difference for d=8: 0.9060 vs 0.7765
+
+  N_e(8D)/N_e(4D) = 0.3333 = 1/3
+
+  Including geometry: N_e^acoustic(8D) = 1.0794
+  Including geometry: N_e^acoustic(4D) = 2.8913
+
+  PHYSICAL CONCLUSION:
+  If phonons propagate in all 8 dimensions, the sound speed channel
+  is diluted by a factor of 3 relative to the 4D case.
+  However, for the phonon-exflation framework, the correct effective
+  dimension is d=4 (Case B): the Goldstone mode's dispersion involves
+  M^4 momenta, and expansion is a 4D phenomenon. SU(3) determines
+  the value of c_s but not the dimensionality of the acoustic metric.
+
+Saved: computations/session-55/s55_blv_8d.png
+Saved: computations/session-55/s55_blv_8d.npz
+
+========================================================================
+GATE VERDICT: BLV-8D-55
+========================================================================
+
+INFO: Acoustic e-folds computed across d = 4 through 10.
+
+  d=4:  N_e^sound = 2.7179  [S53 anchor, verified]
+  d=8:  N_e^sound = 0.9060  [M^4 x SU(3)]
+  Ratio N_e(8D)/N_e(4D) = 0.3333
+
+  Correct BLV exponent: 1/(d-2), NOT 1/(d-1)
+  Task prompt gave 1/7 = 0.1429; correct is 1/6 = 0.1667
+  Corrected N_e(8D) = 0.9060 (vs prompt's 0.7765)
+
+  CLASSIFICATION: GEOMETRIC (dimensionality of acoustic metric)
+
+  For phonon-exflation: d_eff = 4 is the physical choice.
+  The Goldstone mode disperses in M^4 momenta; SU(3) sets c_Gold's
+  value but does not add spatial dimensions to the acoustic metric.
+  The 8D calculation is an upper bound on the dilution effect IF
+  phonons had KK momentum — but they do not (B2 mode is a fiber mode).
+
+========================================================================
+BLV-8D-55 COMPLETE: INFO (N_e_8D = 0.9060, N_e_4D = 2.7179)
+========================================================================

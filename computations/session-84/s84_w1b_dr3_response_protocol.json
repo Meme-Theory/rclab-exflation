@@ -1,0 +1,159 @@
+{
+  "gate_id": "S84-DR3-RESPONSE-PROTOCOL",
+  "session": 84,
+  "wave": "W1b-9",
+  "date_pre_registered": "2026-04-19",
+  "dr3_window_opens": "2026-04-23",
+  "rectangle": {
+    "name": "R_842",
+    "w_0_range": [
+      -0.942,
+      -0.742
+    ],
+    "w_a_range": [
+      -0.2,
+      0.2
+    ],
+    "center_w_0": -0.842,
+    "center_w_a": 0.0,
+    "half_width_w_0": 0.09999999999999998,
+    "half_width_w_a": 0.2,
+    "supersedes": "R_918",
+    "R_918_w_0_range": [
+      -1.05,
+      -0.85
+    ],
+    "R_918_w_a_range": [
+      -0.2,
+      0.2
+    ],
+    "R_918_historical_sha": "7f23a7c603522a105dffe271584cc22d7a25c6c22a0cccf09fe180954af5c140",
+    "R_918_retention": "permanent-results-registry/superseded (forward-pointer to R_842)",
+    "migration_reason": "Post-S83 (iv) canonical w_0_pred = -0.842454 lies +0.007546 OUTSIDE the R_918 upper edge -0.85 -- R_918 was a self-falsifier of its own central prediction. R_842 centered on -0.842 with same 0.100 half-width restores self-consistency (offset 0.454% of half-width)."
+  },
+  "framework_prediction": {
+    "w_0_pred": -0.842454,
+    "w_a_pred": 0.0,
+    "branch": "(iv)",
+    "canonical_constants_source": "branch-(iv) promotion (W0-workshop, S83); pending canonical_constants update post-DR3 PASS/FAIL. canonical_constants.py currently pins w0_FW = -0.918 (S58 four-fold lock); branch-(iv) override = -0.842454 is the prediction under test by SV1-SV4.",
+    "offset_from_rectangle_center_w_0": 0.00045400000000006546,
+    "offset_relative_pct_of_half_width": 0.4540000000000656,
+    "self_consistency_check": "CC1 PASS: w_0_pred inside R_842"
+  },
+  "covariance_DR3_projected": {
+    "sigma_w0": 0.046,
+    "sigma_wa": 0.177,
+    "rho_w0_wa": -0.85,
+    "matrix_exact": [
+      [
+        0.002116,
+        -0.006920699999999999
+      ],
+      [
+        -0.006920699999999999,
+        0.031328999999999996
+      ]
+    ],
+    "matrix_plan_rounded_6dp": [
+      [
+        0.002116,
+        -0.006919
+      ],
+      [
+        -0.006919,
+        0.031329
+      ]
+    ],
+    "matrix_diff_offdiag_exact_minus_rounded": -1.699999999999445e-06,
+    "eigenvalues": [
+      0.0005593960054078718,
+      0.03288560399459212
+    ],
+    "determinant": 1.8396075510000008e-05,
+    "source_pin": "sigma_w0=0.046|sigma_wa=0.177|rho=-0.85|source=DESI-2024-Y3-forecast|S71-DESI-DR3-SCENARIO-B-PRECISE",
+    "source_pin_sha256": "1e24001a0d9dd00f9ef708f980f79188bcd1b63ad967c1cf728fa28199cff678"
+  },
+  "decision_rule": {
+    "PASS": "DR3_central in R_842",
+    "FAIL": "DR3_central NOT in R_842 -> branch (iv) REFUTED at rectangle-containment confidence",
+    "INFO_margin": "DR3_central within margin region OR one component inside + one outside -> escalate to S84-DR3-CONTINGENCY-FINE-GRAINED (CF #44, 7-scenario sub-tree)"
+  },
+  "scorecard_on_fail": {
+    "REQUIRED": true,
+    "section": "refutations",
+    "linked_sha_field": "content_sha256",
+    "instruction": "If DR3 central lies outside R_842, append a refutation entry to the permanent-results-registry under \u00a7VII.M.scorecard.refutations linking this payload's content_sha256. NO retreat permitted (LOCKOUTS A-F)."
+  },
+  "lockouts": [
+    "LOCKOUT-A: NO retreat to dual-pin (branch (iv)-only is the framework commitment).",
+    "LOCKOUT-B: NO scheme-shopping post-data (convention is the one pinned here).",
+    "LOCKOUT-C: NO rectangle-resizing (R_842 is locked at 0.10-half-width in w_0).",
+    "LOCKOUT-D: NO w_a axis migration (w_a rectangle [-0.2, 0.2] is locked).",
+    "LOCKOUT-E: NO post-2026-04-23 redefinition of branch (iv) canonical w_0_pred.",
+    "LOCKOUT-F: NO post-2026-04-23 tau_fold relocation that shifts w_0_pred."
+  ],
+  "audit_flow_schedule": {
+    "W1": "2026-04-20",
+    "W2": "2026-04-21",
+    "W3": "2026-04-22",
+    "DR3_window_opens": "2026-04-23"
+  },
+  "audit_flow_canonical": "[\"2026-04-20\",\"2026-04-21\",\"2026-04-22\",\"2026-04-23\"]",
+  "audit_flow_sha_payload": "2471488993b0dbca1c0e03d503608028138a53f1742891c6a10939be0789b876",
+  "input_pins": {
+    "canonical_constants_py_sha256": "d49412402ad9e732a7a7270ee042e857e6899bdbc191de8237b7b96762fb28ec",
+    "s83_gate_verdicts_G42_line": "S83-DR3-LIVE-WATCH: PENDING-EVENT -- value='PENDING-EVENT_w0_pred=-0.918_wa_pred=0.0_rect_w0=(-1.05, -0.85)_rect_wa=(-0.2, 0.2)' scheme=DESI-DR3-live-watch convention=S59-pred-w0=-0.918 L_max=N/A sha256=7f23a7c603522a105dffe271584cc22d7a25c6c22a0cccf09fe180954af5c140",
+    "s83_gate_verdicts_G42_line_sha256": "2545a82ee95a4e558a73eb620cd81278ee59370d3d8a4460798854f0a2000df8",
+    "DR3_projection_pin": "sigma_w0=0.046|sigma_wa=0.177|rho=-0.85|source=DESI-2024-Y3-forecast|S71-DESI-DR3-SCENARIO-B-PRECISE",
+    "DR3_projection_pin_sha256": "1e24001a0d9dd00f9ef708f980f79188bcd1b63ad967c1cf728fa28199cff678",
+    "R_918_historical_sha": "7f23a7c603522a105dffe271584cc22d7a25c6c22a0cccf09fe180954af5c140"
+  },
+  "cross_checks": {
+    "CC1_rectangle_self_consistency": {
+      "w_0_pred_in_R_842": true,
+      "w_a_pred_in_R_842": true,
+      "left_margin_w_0": 0.09954599999999991,
+      "right_margin_w_0": 0.10045400000000004,
+      "verdict": "PASS"
+    },
+    "CC1_prime_R918_retrospective": {
+      "w_0_pred_minus_R918_upper_edge": 0.007545999999999942,
+      "verdict": "R_918 self-falsifier confirmed; migration justified"
+    },
+    "CC2_w_a_axis": {
+      "w_a_pred_implicit": 0.0,
+      "w_a_range": [
+        -0.2,
+        0.2
+      ],
+      "verdict": "PASS (w_a=0 inside [-0.2, 0.2]; conservative tolerance unchanged from R_918)"
+    },
+    "CC3_sigma_extent_vs_half_width": {
+      "ratio_sigma_w0_over_half_width": 0.4600000000000001,
+      "sigma_to_nearest_edge": 2.1640434782608677,
+      "interpretation": "1-sigma DR3 ellipse fits inside R_842; ~2.17-sigma central shift to exit nearest edge"
+    },
+    "CC4_lockout_count": {
+      "required": 6,
+      "present": 6,
+      "verdict": "PASS"
+    },
+    "CC5_schedule_sha": {
+      "canonical_form": "[\"2026-04-20\",\"2026-04-21\",\"2026-04-22\",\"2026-04-23\"]",
+      "method": "sha256(json.dumps(list, separators=(',', ':')))",
+      "sha256": "2471488993b0dbca1c0e03d503608028138a53f1742891c6a10939be0789b876",
+      "verdict": "PASS (recomputed from schedule tuple)"
+    }
+  },
+  "fourtuple_tag": {
+    "value": "R_842_locked",
+    "scheme": "CPL-w_0_w_a",
+    "convention": "branch-(iv)-canonical",
+    "L_max": "N/A"
+  },
+  "carry_forward_pointers": {
+    "CF_44": "S84-DR3-CONTINGENCY-FINE-GRAINED (7-scenario sub-tree for INFO/margin cases)"
+  },
+  "content_sha256": "9cc7f47e3dedc978de50947914ebca073663c172fb9d5e45268bca4e74b79d9f",
+  "audit_sha256": "e325e13e9dfe3b297a230fb510ef980c8fd184e5c99394708e75af0c04838e1f"
+}

@@ -1,0 +1,219 @@
+========================================================================
+DESI-DR3-FORECAST-68: Fisher Matrix w_0-w_a Forecast
+========================================================================
+
+Cosmological parameters (Planck 2018):
+  Omega_m  = 0.315
+  Omega_b  = 0.0493
+  Omega_r  = 9.15e-05
+  Omega_DE = 0.684909
+  h        = 0.674
+
+========================================================================
+Loading Upstream Data
+========================================================================
+
+  Framework (DESI-VOLOVIK-67):  w_0 = -0.9180, w_a = 0.000000
+  DESI DR2 best-fit:           w_0 = -0.752 +/- 0.057
+                               w_a = -0.73 +/- 0.25
+  DESI DR2 correlation:        rho = -0.85
+  Framework theory error:      sigma(w_0) = 0.0366, sigma(w_a) = 0.000273
+  LCDM:                        w_0 = -1.0, w_a = 0.0
+
+  Sound horizon: r_d = 147.024 Mpc (E&H 1998)
+
+========================================================================
+DR3 Projected Sensitivities
+========================================================================
+  sigma(w_0) = 0.0403  (DR2: 0.057)
+  sigma(w_a) = 0.1768  (DR2: 0.250)
+  rho (DESI) = -0.85
+  rho (task) = 0.45
+  D_V/r_d fractional errors: DR3 = DR2/sqrt(2)
+    z=0.295 (         BGS): DR2 1.9% -> DR3 1.34%
+    z=0.510 (        LRG1): DR2 1.3% -> DR3 0.92%
+    z=0.706 (        LRG2): DR2 0.9% -> DR3 0.64%
+    z=0.934 (   LRG3+ELG1): DR2 0.8% -> DR3 0.57%
+    z=1.321 (        ELG2): DR2 1.0% -> DR3 0.71%
+    z=1.484 (         QSO): DR2 1.5% -> DR3 1.06%
+    z=2.330 (         Lya): DR2 1.5% -> DR3 1.06%
+
+========================================================================
+Fisher Matrix / Covariance Construction
+========================================================================
+
+  DR3 Covariance (rho = -0.85):
+    [[ 0.0016245  -0.00605625]
+ [-0.00605625  0.03125   ]]
+  Fisher (rho = -0.85):
+    [[2218.28476676  429.9035878 ]
+ [ 429.9035878   115.31531532]]
+
+  DR3 Covariance (rho = 0.45):
+    [[0.0016245  0.00320625]
+ [0.00320625 0.03125   ]]
+  Fisher (rho = 0.45):
+    [[771.87965238 -79.19485233]
+ [-79.19485233  40.12539185]]
+
+  Framework Covariance:
+    [[1.34299523e-03 0.00000000e+00]
+ [0.00000000e+00 7.47089468e-08]]
+    (effectively a delta function in the w_0-w_a plane)
+
+========================================================================
+SCENARIO ANALYSIS
+========================================================================
+
+--- Scenario A: DR3 confirms DR2 ---
+  Center: w_0 = -0.750, w_a = -0.730
+  sigma(w_0) = 0.0403, sigma(w_a) = 0.1768, rho = -0.85
+
+  Framework (w_0=-0.918, w_a=0):
+    chi^2 = 18.614  -->  3.91-sigma exclusion (rho=-0.85)
+    chi^2 = 62.593  -->  7.62-sigma exclusion (rho=0.45)
+    95% contour overlap = 0.0000%
+
+  LCDM (w_0=-1, w_a=0):
+    chi^2 = 43.180  -->  6.25-sigma exclusion (rho=-0.85)
+    chi^2 = 98.531  -->  37.07-sigma exclusion (rho=0.45)
+    95% contour overlap = 0.0000%
+
+  Framework classification: EXCLUDED (> 3-sigma)
+
+--- Scenario B: DR3 shifts toward LCDM ---
+  Center: w_0 = -0.900, w_a = -0.300
+  sigma(w_0) = 0.0403, sigma(w_a) = 0.1768, rho = -0.85
+
+  Framework (w_0=-0.918, w_a=0):
+    chi^2 = 6.454  -->  2.06-sigma exclusion (rho=-0.85)
+    chi^2 = 4.717  -->  1.67-sigma exclusion (rho=0.45)
+    95% contour overlap = 0.0554%
+
+  LCDM (w_0=-1, w_a=0):
+    chi^2 = 6.767  -->  2.12-sigma exclusion (rho=-0.85)
+    chi^2 = 16.082  -->  3.60-sigma exclusion (rho=0.45)
+    95% contour overlap = 0.0590%
+
+  Framework classification: TENSION (2-3 sigma)
+
+--- Scenario C: DR3 increases dynamical DE ---
+  Center: w_0 = -0.650, w_a = -1.000
+  sigma(w_0) = 0.0403, sigma(w_a) = 0.1768, rho = -0.85
+
+  Framework (w_0=-0.918, w_a=0):
+    chi^2 = 44.213  -->  6.33-sigma exclusion (rho=-0.85)
+    chi^2 = 138.013  -->  37.07-sigma exclusion (rho=0.45)
+    95% contour overlap = 0.0000%
+
+  LCDM (w_0=-1, w_a=0):
+    chi^2 = 86.123  -->  37.07-sigma exclusion (rho=-0.85)
+    chi^2 = 190.117  -->  37.07-sigma exclusion (rho=0.45)
+    95% contour overlap = 0.0000%
+
+  Framework classification: EXCLUDED (> 3-sigma)
+
+========================================================================
+D_V(z)/r_d Predictions at DESI Bins (DR3 Error Bars)
+========================================================================
+
+       z       LCDM  Framework   DESI DR2       Sc.A       Sc.B       Sc.C    DR3 err
+  ------  ---------  ---------  ---------  ---------  ---------  ---------  ---------
+   0.295     8.0566     7.9645     7.8572     7.8549     7.9773     7.7706  +/- 0.108
+   0.510    12.8335    12.6391    12.4968    12.4919    12.7012    12.3437  +/- 0.118
+   0.706    16.4623    16.1888    16.0716    16.0647    16.3103    15.8865  +/- 0.105
+   0.934    19.9488    19.6088    19.5545    19.5461    19.7969    19.3595  +/- 0.113
+   1.321    24.4704    24.0697    24.1280    24.1183    24.3406    23.9466  +/- 0.173
+   1.484    25.9732    25.5604    25.6562    25.6464    25.8541    25.4836  +/- 0.275
+   2.330    31.3543    30.9350    31.1263    31.1169    31.2730    30.9869  +/- 0.333
+
+  Framework fractional deviation from LCDM (DR3 sigma):
+       z  (FW-LCDM)/LCDM   DR3 n-sigma
+   0.295       -1.1436%        0.85
+   0.510       -1.5148%        1.65
+   0.706       -1.6614%        2.61
+   0.934       -1.7043%        3.01
+   1.321       -1.6374%        2.32
+   1.484       -1.5893%        1.50
+   2.330       -1.3371%        1.26
+
+  Multi-bin chi^2 (FW vs LCDM, 7 bins, DR3): 28.53
+  sqrt(chi^2) = 5.34-sigma
+
+  Framework vs ScA BAO chi^2 (7 bins): 5.00  (sqrt = 2.24-sigma)
+
+  Framework vs ScB BAO chi^2 (7 bins): 9.15  (sqrt = 3.03-sigma)
+
+  Framework vs ScC BAO chi^2 (7 bins): 24.98  (sqrt = 5.00-sigma)
+
+========================================================================
+DECISION TABLE: Framework Status Under Each DR3 Scenario
+========================================================================
+
+  Pre-registered thresholds (S60 DR3-PREREGISTER-60):
+    w_a < -0.530  =>  framework excluded at >= 3-sigma
+    w_a > -0.350  =>  framework consistent at <= 2-sigma
+    -0.530 <= w_a <= -0.350  =>  tension zone (2-3 sigma)
+
+    Scenario      w_0      w_a    FW sig   LCDM sig   FW overlap        Classification
+  ----------  -------  -------  --------  ---------  -----------  --------------------
+  Scenario A   -0.750   -0.730     3.91s      6.25s     0.0000%  EXCLUDED (> 3-sigma)
+  Scenario B   -0.900   -0.300     2.06s      2.12s     0.0554%   TENSION (2-3 sigma)
+  Scenario C   -0.650   -1.000     6.33s     37.07s     0.0000%  EXCLUDED (> 3-sigma)
+
+  Framework confirmed if: DR3 w_a > -0.35 (consistent at < 2-sigma)
+  Framework in tension if: -0.53 < DR3 w_a < -0.35 (2-3 sigma)
+  Framework excluded if: DR3 w_a < -0.53 (> 3-sigma)
+
+  Under Scenario A (w_a=-0.73): EXCLUDED (> 3-sigma)
+  Under Scenario B (w_a=-0.3): TENSION (2-3 sigma)
+  Under Scenario C (w_a=-1.0): EXCLUDED (> 3-sigma)
+
+========================================================================
+CROSS-CHECKS
+========================================================================
+
+  [1] S59 WA-ERROR-PROP-59 reported: sigma_2d(FW vs DR3 center) = 4.29
+      This computation (Scenario A, rho=-0.85): 3.91
+      S59 assumed DR3 center = DR2 center. Scenario A uses (w_0=-0.75, w_a=-0.73).
+      With exact DR2 center (w_0=-0.752, w_a=-0.73): 3.89
+      S59 value: 4.29  =>  Discrepancy: 0.40 sigma
+      (Differences arise from covariance construction method -- S59 used full MC error propagation.)
+
+  [2] S60 DR3-PREREGISTER-60 scenario results:
+      Scenario A: FW at 3.62-sigma (S60) vs 3.91-sigma (this)
+      Scenario B: FW at 1.04-sigma (S60) vs 2.06-sigma (this)
+      (S60 used w_a=-0.70 for A and w_a=-0.30 for B; this uses -0.73 and -0.30.)
+
+  [3] S66 WA-REASSESS-66 confirmed: substrate compaction w_a = +1.121 (wrong sign).
+      Pure FW (w_0=-0.918, w_a=0) remains the best DE prediction.
+      Compaction CLOSED as cosmological prediction. This forecast uses pure FW only.
+
+  [4] Fisher matrix eigenvalues (positive definite check):
+      rho=-0.85: [  30.82591139 2302.77417069]
+      rho=0.45: [ 31.65255339 780.35249085]
+      Both positive: True
+
+  [5] DESI-VOLOVIK-67 reported:
+      1D tension (w_a direction): 2.91-sigma
+      2D tension:                 4.12-sigma
+      These are DR2 values. DR3 Scenario A (confirming DR2): 3.91-sigma.
+
+========================================================================
+GATE VERDICT: DESI-DR3-FORECAST-68
+========================================================================
+
+  Gate: DESI-DR3-FORECAST-68
+  Verdict: INFO
+  Detail: Fisher forecast for FW (w_0=-0.918, w_a=0) vs DR3. Scenario A (confirms DR2): FW 3.91-sig, LCDM 6.25-sig. Scenario B (toward LCDM): FW 2.06-sig, LCDM 2.12-sig. Scenario C (more dyn DE): FW 6.33-sig, LCDM 37.07-sig. Pure FW best. w_a=0 confirmed/excluded by DR3 w_a threshold -0.53.
+
+========================================================================
+Generating Plot
+========================================================================
+  Plot saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s68_desi_dr3_forecast.png
+
+  Data saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s68_desi_dr3_forecast.npz
+
+========================================================================
+DESI-DR3-FORECAST-68 COMPLETE
+========================================================================

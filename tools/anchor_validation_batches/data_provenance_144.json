@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 144,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1431",
+      "anchor_type": "data_provenance",
+      "name": "cross_spectral_moment_moduli",
+      "script_path": "session-75/s75_cross_spectral_moment_moduli.py",
+      "session": "s75",
+      "inputs": "s61_heat_kernel_a4.npz, s74_moduli_stabilization.npz, s63_cutoff_meissner.npz",
+      "outputs": "session-75/s75_cross_spectral_moment_moduli.npz, session-75/s75_cross_spectral_moment_moduli.png",
+      "source_file": "computations/session-75/s75_cross_spectral_moment_moduli.py",
+      "source_context_30_lines": "   39: CRITICAL DISTINCTION (S46, HEAT-KERNEL-AUDIT-45):\n   40:   - Gilkey geometric a_2 = (4pi)^{-4} * (20R/3) * Vol = 0.728 at fold\n   41:   - Spectral sum a_2_fold = zeta_D(1) = 2776.17 (canonical)\n   42:   - These are DIFFERENT objects (ratio 3812). The CC formula uses the Gilkey coefficients.\n   43: \n   44: Input: s61_heat_kernel_a4.npz (Gilkey a_2(tau), a_4(tau) arrays)\n   45:        s74_moduli_stabilization.npz (V_bare, tau grids)\n   46:        canonical_constants.py\n   47: Output: s75_cross_spectral_moment_moduli.npz, .png\n   48: \"\"\"\n   49: \n   50: import numpy as np\n   51: import sys\n   52: import os\n   53: import time\n   54: import matplotlib\n   55: matplotlib.use('Agg')"
+    },
+    {
+      "anchor_id": "prov_1432",
+      "anchor_type": "data_provenance",
+      "name": "dc_permanence",
+      "script_path": "session-75/s75_dc_permanence.py",
+      "session": "s75",
+      "inputs": "",
+      "outputs": "session-75/s75_dc_permanence.npz, session-75/s75_dc_permanence.png",
+      "source_file": "computations/session-75/s75_dc_permanence.py",
+      "source_context_30_lines": "   36:   5. DC extraction: late-time average |<delta_n>| / |delta_n(0)|.\n   37: \n   38: Input files:\n   39:   computations/_shared/canonical_constants.py\n   40:   computations/session-56/s56_gge_fabric.npz   (eps_fold, V_fold, E_J_fold)\n   41:   computations/session-64/s64_local_entangle.npz  (CG(24) adjacency)\n   42: \n   43: Output files:\n   44:   computations/session-75/s75_dc_permanence.npz\n   45:   computations/session-75/s75_dc_permanence.png\n   46: \n   47: Session: S75 W3-N\n   48: Agent: quantum-acoustics-theorist\n   49: \"\"\"\n   50: \n   51: import os\n   52: import sys"
+    },
+    {
+      "anchor_id": "prov_1433",
+      "anchor_type": "data_provenance",
+      "name": "dimer_z2_pair_production",
+      "script_path": "session-75/s75_dimer_z2_pair_production.py",
+      "session": "s75",
+      "inputs": "",
+      "outputs": "session-75/s75_dimer_z2_pair_production.npz",
+      "source_file": "computations/session-75/s75_dimer_z2_pair_production.py",
+      "source_context_30_lines": "  549: # ============================================================================\n  550: # 14. Save results\n  551: # ============================================================================\n  552: print(\"\\n\" + \"=\" * 60)\n  553: print(\"Saving results...\")\n  554: print(\"=\" * 60)\n  555: \n  556: np.savez(\n  557:     os.path.join(SCRIPT_DIR, 's75_dimer_z2_pair_production.npz'),\n  558:     # Z_2 structure\n  559:     n_even=n_even,\n  560:     n_odd=n_odd,\n  561:     P2_err=P2_err,\n  562:     comm_HP_norm=comm_HP_norm,\n  563:     z2_expectation=z2_expectation,\n  564:     z2_label=z2_label,\n  565:     z2_well_defined=z2_well_defined,"
+    },
+    {
+      "anchor_id": "prov_1434",
+      "anchor_type": "data_provenance",
+      "name": "ec_observable_mapping",
+      "script_path": "session-75/s75_ec_observable_mapping.py",
+      "session": "s75",
+      "inputs": "",
+      "outputs": "session-75/s75_ec_observable_mapping.npz, session-75/s75_ec_observable_mapping.png",
+      "source_file": "computations/session-75/s75_ec_observable_mapping.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s75_ec_observable_mapping.py -- A_s as function of E_C (condensation energy)\n    4: ===========================================================================\n    5: \n    6: Gate: S75-A7-EC-MAP  (Session 75 Wave 2, W2-G)\n    7:   PASS: Monotone AND |delta_A_s| < 0.05 OOM for +/- 5% E_C shift\n    8:   INFO: Monotone but |delta_A_s| in [0.05, 0.20] OOM\n    9:   FAIL: Non-monotone OR |delta_A_s| > 0.20 OOM\n   10: \n   11: PHYSICS (substrate framing):"
+    },
+    {
+      "anchor_id": "prov_1435",
+      "anchor_type": "data_provenance",
+      "name": "effacement_rebuild",
+      "script_path": "session-75/s75_effacement_rebuild.py",
+      "session": "s75",
+      "inputs": "",
+      "outputs": "session-75/s75_effacement_rebuild.npz",
+      "source_file": "computations/session-75/s75_effacement_rebuild.py",
+      "source_context_30_lines": "  379: print(\"  The CC is bounded in [0.34, 1.32] rho_obs across all\")\n  380: print(\"  surviving routes. Width = 0.59 OOM. This is the\")\n  381: print(\"  remaining constraint surface for the CC problem.\")\n  382: \n  383: # ==============================================================================\n  384: # SAVE\n  385: # ==============================================================================\n  386: \n  387: np.savez(\"computations/session-75/s75_effacement_rebuild.npz\",\n  388:     # Channel values\n  389:     chi_2=chi_2,\n  390:     rho_chi2=rho_chi2,\n  391:     Omega_chi2=Omega_chi2,\n  392:     F_GGE_abs=F_GGE_abs,\n  393:     rho_Jacobson=rho_Jacobson,\n  394:     Omega_Jacobson=Omega_Jacobson,\n  395:     delta_F_volovik=delta_F_volovik,"
+    },
+    {
+      "anchor_id": "prov_1436",
+      "anchor_type": "data_provenance",
+      "name": "emergent_lorentz",
+      "script_path": "session-75/s75_emergent_lorentz.py",
+      "session": "s75",
+      "inputs": "",
+      "outputs": "session-75/s75_emergent_lorentz.npz, session-75/s75_emergent_lorentz.png",
+      "source_file": "computations/session-75/s75_emergent_lorentz.py",
+      "source_context_30_lines": "  532:   Structural bracket: [0.622, 1.732] M_KK (Pippard lower, bi-invariant upper)\n  533: \"\"\")\n  534: \n  535: # ============================================================================\n  536: #  SECTION 13: Save Data\n  537: # ============================================================================\n  538: print(\"--- SECTION 13: Saving Data ---\")\n  539: \n  540: outpath = os.path.join(SCRIPT_DIR, 's75_emergent_lorentz.npz')  # (local)\n  541: \n  542: np.savez(\n  543:     outpath,\n  544:     # Gate\n  545:     gate_id='S75-K1-EMERGENT-LORENTZ',\n  546:     verdict=verdict,\n  547:     # Speeds\n  548:     c_Gold=c_Gold_canonical,"
+    },
+    {
+      "anchor_id": "prov_1437",
+      "anchor_type": "data_provenance",
+      "name": "f_conv_spectral",
+      "script_path": "session-75/s75_f_conv_spectral.py",
+      "session": "s75",
+      "inputs": "",
+      "outputs": "session-75/s75_f_conv_spectral.npz, session-75/s75_f_conv_spectral.png",
+      "source_file": "computations/session-75/s75_f_conv_spectral.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s75_f_conv_spectral.py -- Conversion factor f_conv: fiber-level A_s -> 4D scalar amplitude\n    4: ============================================================================================\n    5: \n    6: Gate: S75-A5-F-CONV (Session 75 Wave 1, W1-E)\n    7:   PASS: f_conv from first principles and |log10(f_conv) - (-9.47)| < 1.5\n    8:   INFO: f_conv derivable but off by 1.5-3.0 OOM\n    9:   FAIL: f_conv > 0.01 (< 2 OOM suppression) OR f_conv not derivable\n   10: \n   11: PHYSICS (substrate framing):"
+    },
+    {
+      "anchor_id": "prov_1438",
+      "anchor_type": "data_provenance",
+      "name": "fold_stiffness_renorm",
+      "script_path": "session-75/s75_fold_stiffness_renorm.py",
+      "session": "s75",
+      "inputs": "",
+      "outputs": "session-75/s75_fold_stiffness_renorm.npz, session-75/s75_fold_stiffness_renorm.png",
+      "source_file": "computations/session-75/s75_fold_stiffness_renorm.py",
+      "source_context_30_lines": "  576: print(f\"  CHK1 (M > 0):              {'PASS' if chk1_pass else 'FAIL'}\")\n  577: print(f\"  CHK2 (1/Delta^5 scaling):   {'PASS' if chk2_pass else 'FAIL'}\")\n  578: print(f\"  CHK3 (Energy conservation): {'PASS' if chk3_pass else 'FAIL'} (err={E_conserv_err:.2e})\")\n  579: \n  580: # ============================================================================\n  581: #  SECTION 10: Save Data\n  582: # ============================================================================\n  583: \n  584: save_path = os.path.join(base_dir, 's75_fold_stiffness_renorm.npz')\n  585: \n  586: np.savez(save_path,\n  587:     gate_name='S75-B3-FOLD-STIFFNESS',\n  588:     gate_verdict=verdict,\n  589:     tau_turn=tau_turn_best,\n  590:     M_fold_ATDHFB=M_fold_total,\n  591:     M_diag=M_diag,\n  592:     M_offdiag=M_offdiag,"
+    },
+    {
+      "anchor_id": "prov_1439",
+      "anchor_type": "data_provenance",
+      "name": "foundational_audit",
+      "script_path": "session-75/s75_foundational_audit.py",
+      "session": "s75",
+      "inputs": "",
+      "outputs": "session-75/s75_foundational_audit.npz, session-75/s75_foundational_audit.png",
+      "source_file": "computations/session-75/s75_foundational_audit.py",
+      "source_context_30_lines": "  910:         f\"{verdict}: {n_robust} ROBUST, {n_quasi} QUASI-ROBUST, {n_fragile} FRAGILE\"\n  911:     )\n  912:     print()\n  913:     print(\"=\" * 78)\n  914:     print(f\"GATE S75-F1-FOUNDATIONAL-AUDIT = {verdict_str}\")\n  915:     print(\"=\" * 78)\n  916: \n  917:     # Heatmap\n  918:     plot_path = os.path.join(_THIS_DIR, \"s75_foundational_audit.png\")  # (local)\n  919:     plot_heatmap(matrix, theorem_names, classifications, verdict_str, plot_path)\n  920: \n  921:     # Save data\n  922:     data_path = os.path.join(_THIS_DIR, \"s75_foundational_audit.npz\")  # (local)\n  923:     np.savez(\n  924:         data_path,\n  925:         # Full matrix (22 x 7)\n  926:         matrix=matrix,"
+    },
+    {
+      "anchor_id": "prov_1440",
+      "anchor_type": "data_provenance",
+      "name": "gge_transfer_cl",
+      "script_path": "session-75/s75_gge_transfer_cl.py",
+      "session": "s75",
+      "inputs": "",
+      "outputs": "session-75/s75_gge_transfer_cl.npz, session-75/s75_gge_transfer_cl.png",
+      "source_file": "computations/session-75/s75_gge_transfer_cl.py",
+      "source_context_30_lines": " 1072: # ==============================================================================\n 1073: #  SECTION 11: Save data and plot\n 1074: # ==============================================================================\n 1075: \n 1076: print(\"SECTION 11: Save results and generate plot\")\n 1077: print(\"-\" * 78)\n 1078: \n 1079: # Save to npz\n 1080: outfile = os.path.join(data_dir, 's75_gge_transfer_cl.npz')  # (local)\n 1081: np.savez(outfile,\n 1082:     # Input parameters\n 1083:     n_s_GGE=n_s_GGE,\n 1084:     n_s_Planck=n_s_Planck,\n 1085:     n_s_BCS_CW=n_s_BCS_CW,\n 1086:     A_s_CMB=A_s_CMB,\n 1087:     # Cosmological parameters\n 1088:     r_dec=r_dec,"
+    }
+  ]
+}

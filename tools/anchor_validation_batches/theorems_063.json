@@ -1,0 +1,107 @@
+{
+  "table": "theorems",
+  "batch_id": 63,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "proven_621",
+      "anchor_type": "theorems",
+      "name": "Artifacts on disk**: `computations/_shared/_mellin_moment_pin_provenance_audit.py` (217 lines, 22c40961); verdict line +",
+      "status": "PROVEN",
+      "sessions": "",
+      "statement": "Artifacts on disk**: `computations/_shared/_mellin_moment_pin_provenance_audit.py` (217 lines, 22c40961); verdict line + dual-SHA companion + 3-tuple companion at `computations/session-89/s89_gate_ver",
+      "source_file": "sessions\\session-89\\session-89-w6-workingpaper.md",
+      "source_context_30_lines": "   64: - **Live audit run** against §VII.AN-cited target `computations/session-87/s82_w3_9_as_adjacent_obs.py`: target FILE DOES NOT EXIST on disk (`script_exists=false`). The audit's structural finding: **registry-anchor dangling-reference** — the §VII.AN registry text cites a producing-side script that has not been authored (or was renamed/moved/deleted post-cite).\n   65: - **classification = SCRIPT-NOT-FOUND** (special case; not Route-A nor Route-B; AST-parse cannot complete on a missing file).\n   66: - **conflation_detected = True** (declared_route='Route-A' ≠ actual_route='SCRIPT-NOT-FOUND'); **severity = MANDATORY**.\n   67: - **4-tuple**: scheme=AST-parse-signature-set-classification, convention=orchestrator-direct-write-METHODOLOGY-CLASS, L_max=N/A, value as above.\n   68: - **Substitution chain (plan §10)** for the threshold direction: a_score and b_score are integer counts of signature matches (function_calls + imports + docstring_keywords); the dominance threshold `a_score > 2*b_score AND a_score >= 3` enforces both ratio and absolute floor; classification monotonically transitions AMBIGUOUS → Route-A as a_score increases relative to b_score (symmetric for Route-B). Direction validated structurally; the SCRIPT-NOT-FOUND case sits OUTSIDE the substitution chain (preconditions violated) and routes directly to FAIL via the early-return guard in `audit_provenance`.\n   69: - **Dual-SHA**: content_sha256 = SHA-256 over `_mellin_moment_pin_provenance_audit.py` body; audit_s\n... [truncated]"
+    },
+    {
+      "anchor_id": "proven_622",
+      "anchor_type": "theorems",
+      "name": "Carry-forward seed**: `CF-W6-2: §VII.AN-registry-anchor reconciliation`. mack-cosmic-bridge to either restore producing ",
+      "status": "PROVEN",
+      "sessions": "",
+      "statement": "Carry-forward seed**: `CF-W6-2: §VII.AN-registry-anchor reconciliation`. mack-cosmic-bridge to either restore producing script or update anchor text; cross-link Class-(g) audit (built at W6-3 sub-item",
+      "source_file": "sessions\\session-89\\session-89-w6-workingpaper.md",
+      "source_context_30_lines": "   65: - **classification = SCRIPT-NOT-FOUND** (special case; not Route-A nor Route-B; AST-parse cannot complete on a missing file).\n   66: - **conflation_detected = True** (declared_route='Route-A' ≠ actual_route='SCRIPT-NOT-FOUND'); **severity = MANDATORY**.\n   67: - **4-tuple**: scheme=AST-parse-signature-set-classification, convention=orchestrator-direct-write-METHODOLOGY-CLASS, L_max=N/A, value as above.\n   68: - **Substitution chain (plan §10)** for the threshold direction: a_score and b_score are integer counts of signature matches (function_calls + imports + docstring_keywords); the dominance threshold `a_score > 2*b_score AND a_score >= 3` enforces both ratio and absolute floor; classification monotonically transitions AMBIGUOUS → Route-A as a_score increases relative to b_score (symmetric for Route-B). Direction validated structurally; the SCRIPT-NOT-FOUND case sits OUTSIDE the substitution chain (preconditions violated) and routes directly to FAIL via the early-return guard in `audit_provenance`.\n   69: - **Dual-SHA**: content_sha256 = SHA-256 over `_mellin_moment_pin_provenance_audit.py` body; audit_sha256 = closure_hash over input-pin map (registry_md=bf609582…, ast_parse_target=MISSING, W5a_44_audit_sha=c092fe1b…, substrate_first_canonical_sourcing_md=73735ab1…). Closure SHA = 9f7a203d….\n   70: - **Remediation routing per plan §11**: route to `mack-cosmic-bridge` sole-writer (per `feedback_mack-bridge-role.md`) for §VII.AN registry-text reconciliation. Two paths\n... [truncated]"
+    },
+    {
+      "anchor_id": "proven_623",
+      "anchor_type": "theorems",
+      "name": "Knowledge MCP queries",
+      "status": "PROVEN",
+      "sessions": "3 search_knowledge / trace_entity calls; no PRE-CLOSED hit",
+      "statement": "Logged in MCP Pre-Compute Audit table above",
+      "source_file": "sessions\\session-90\\session-90-w2-workingpaper.md",
+      "source_context_30_lines": "  140: \n  141: ##### (j) Artifacts on disk (all 4 verified)\n  142: \n  143: | Artifact | Path | Verification |\n  144: |:---------|:-----|:-------------|\n  145: | Producing script | `computations/session-90/s90_w2_vii_aau_vii_av_withdrawn_in_favor_of_cleanup.py` | Written + executed (wall 0.0s) |\n  146: | Registry edits (3 slots) | `sessions/permanent-results-registry.md` lines 17174 / 17261 / 17350 | Grep-verified post-write |\n  147: | Verdict line + companion row | `computations/session-90/s90_gate_verdicts.txt` (last 2 lines) | tail-verified; SHA-unique |\n  148: | Knowledge MCP queries | 3 search_knowledge / trace_entity calls; no PRE-CLOSED hit | Logged in MCP Pre-Compute Audit table above |\n  149: \n  150: ##### (k) Input-pin SHAs (S84+ dual-SHA closure)\n  151: \n  152: - `computations/_shared/canonical_constants.py` SHA-256: `fe3b14d5268ec312…` (input-pin map entry)\n  153: - `sessions/permanent-results-registry.md` (pre-edit) SHA-256: `83ef6638ca90302e…` (input-pin map entry; computed before write_atomic_with_fsync)\n  154: - `computations/session-89/s89_gate_verdicts.txt` SHA-256: `b98cb57f2261eaf5…` (input-pin map entry; supplies W7c emission cross-reference)\n  155: - **audit_sha256** (full 64-char): `b11aa86295cc973169eba137a6b1e26a27ddf13315aa778cb77d0348a25bf7a1` = SHA-256(script_bytes ‖ canonical_constants_bytes ‖ pinmap_json_canonical)\n  156: - **content_sha256** (full 64-char): `af1d66304fdc138233af962d83ca80053e57f6b1bcaa57dfe55669b560dff99e` = SHA-256(script_bytes)"
+    },
+    {
+      "anchor_id": "proven_624",
+      "anchor_type": "theorems",
+      "name": "MCP audit queries",
+      "status": "PROVEN",
+      "sessions": "3 queries logged above (trace + search + get_constant)",
+      "statement": "Pre-compute hygiene per `knowledge-index-usage.md`",
+      "source_file": "sessions\\session-90\\session-90-w2-workingpaper.md",
+      "source_context_30_lines": "  351: \n  352: ##### (j) Artifacts on disk (all 4 verified)\n  353: \n  354: | Artifact | Path | Verification |\n  355: |:---------|:-----|:-------------|\n  356: | Producing script (V.1 with window fix + supersedes) | `computations/session-90/s90_w2_vii_next_substrate_clock_uniqueness_theorem_stage_1_landing.py` | Written + executed (2 runs: V.0 + V.1) |\n  357: | Registry entry (§VII.AW.OP-PROJ block) | `sessions/permanent-results-registry.md` line 17435 (~140 lines block) | Heading grep at 17435; 4 clauses at relative lines 41/45/50/62; idempotency-guarded under re-run |\n  358: | Verdict file (V.0 FAIL + V.1 PASS supersedes chain) | `computations/session-90/s90_gate_verdicts.txt` (4 lines: V.0 canonical + V.0 companion + V.1 canonical + V.1 companion) | tail-verified; gate-ID grep count = 2; Option-A pattern verified |\n  359: | MCP audit queries | 3 queries logged in §\"MCP Pre-Compute Audit\" above | Pre-compute hygiene per `knowledge-index-usage.md` |\n  360: \n  361: ##### (k) Input-pin SHAs (S84+ dual-SHA closure)\n  362: \n  363: V.1 dual-SHA:\n  364: - **audit_sha256** (full 64-char): `86d4414497f82dbd30d2ad6bc03299e09dfb9beddc497b0ab2b8c8c71622de85` = SHA-256(V.1_script_bytes ‖ canonical_constants_bytes ‖ pinmap_json_canonical)\n  365: - **content_sha256** (full 64-char): `e1d2cc0761a606a6d3787fcf5e9186b94496f60406b5e30dbd6e3cf75fe78f7c` = SHA-256(V.1_script_bytes)\n  366: \n  367: V.0 dual-SHA (retained on disk per absolute verdict permanence):"
+    },
+    {
+      "anchor_id": "proven_625",
+      "anchor_type": "theorems",
+      "name": "audit_sha256** (full 64-char): `b11aa86295cc973169eba137a6b1e26a27ddf13315aa778cb77d0348a25bf7a1` = SHA-256",
+      "status": "PROVEN",
+      "sessions": "",
+      "statement": "audit_sha256** (full 64-char): `b11aa86295cc973169eba137a6b1e26a27ddf13315aa778cb77d0348a25bf7a1` = SHA-256",
+      "source_file": "sessions\\session-90\\session-90-w2-workingpaper.md",
+      "source_context_30_lines": "  147: | Verdict line + companion row | `computations/session-90/s90_gate_verdicts.txt` (last 2 lines) | tail-verified; SHA-unique |\n  148: | Knowledge MCP queries | 3 search_knowledge / trace_entity calls; no PRE-CLOSED hit | Logged in MCP Pre-Compute Audit table above |\n  149: \n  150: ##### (k) Input-pin SHAs (S84+ dual-SHA closure)\n  151: \n  152: - `computations/_shared/canonical_constants.py` SHA-256: `fe3b14d5268ec312…` (input-pin map entry)\n  153: - `sessions/permanent-results-registry.md` (pre-edit) SHA-256: `83ef6638ca90302e…` (input-pin map entry; computed before write_atomic_with_fsync)\n  154: - `computations/session-89/s89_gate_verdicts.txt` SHA-256: `b98cb57f2261eaf5…` (input-pin map entry; supplies W7c emission cross-reference)\n  155: - **audit_sha256** (full 64-char): `b11aa86295cc973169eba137a6b1e26a27ddf13315aa778cb77d0348a25bf7a1` = SHA-256(script_bytes ‖ canonical_constants_bytes ‖ pinmap_json_canonical)\n  156: - **content_sha256** (full 64-char): `af1d66304fdc138233af962d83ca80053e57f6b1bcaa57dfe55669b560dff99e` = SHA-256(script_bytes)\n  157: \n  158: ##### (l) Self-assessment\n  159: \n  160: - **Structural position**: registry-hygiene gate at the AUDIT-TRAIL layer. Resolves the W7c three-emission supersedes-chain ambiguity by canonicalizing §VII.AU as the bridge content host and tagging §VII.AAU/§VII.AV as WITHDRAWN-IN-FAVOR-OF. No substrate-physics moved; only the registry-slot identity audit trail is reconciled.\n  161: - **Substitution-chain canonicality**\n... [truncated]"
+    },
+    {
+      "anchor_id": "proven_626",
+      "anchor_type": "theorems",
+      "name": "content_sha256** (full 64-char): `af1d66304fdc138233af962d83ca80053e57f6b1bcaa57dfe55669b560dff99e` = SHA-256",
+      "status": "PROVEN",
+      "sessions": "",
+      "statement": "content_sha256** (full 64-char): `af1d66304fdc138233af962d83ca80053e57f6b1bcaa57dfe55669b560dff99e` = SHA-256",
+      "source_file": "sessions\\session-90\\session-90-w2-workingpaper.md",
+      "source_context_30_lines": "  148: | Knowledge MCP queries | 3 search_knowledge / trace_entity calls; no PRE-CLOSED hit | Logged in MCP Pre-Compute Audit table above |\n  149: \n  150: ##### (k) Input-pin SHAs (S84+ dual-SHA closure)\n  151: \n  152: - `computations/_shared/canonical_constants.py` SHA-256: `fe3b14d5268ec312…` (input-pin map entry)\n  153: - `sessions/permanent-results-registry.md` (pre-edit) SHA-256: `83ef6638ca90302e…` (input-pin map entry; computed before write_atomic_with_fsync)\n  154: - `computations/session-89/s89_gate_verdicts.txt` SHA-256: `b98cb57f2261eaf5…` (input-pin map entry; supplies W7c emission cross-reference)\n  155: - **audit_sha256** (full 64-char): `b11aa86295cc973169eba137a6b1e26a27ddf13315aa778cb77d0348a25bf7a1` = SHA-256(script_bytes ‖ canonical_constants_bytes ‖ pinmap_json_canonical)\n  156: - **content_sha256** (full 64-char): `af1d66304fdc138233af962d83ca80053e57f6b1bcaa57dfe55669b560dff99e` = SHA-256(script_bytes)\n  157: \n  158: ##### (l) Self-assessment\n  159: \n  160: - **Structural position**: registry-hygiene gate at the AUDIT-TRAIL layer. Resolves the W7c three-emission supersedes-chain ambiguity by canonicalizing §VII.AU as the bridge content host and tagging §VII.AAU/§VII.AV as WITHDRAWN-IN-FAVOR-OF. No substrate-physics moved; only the registry-slot identity audit trail is reconciled.\n  161: - **Substitution-chain canonicality**: 6 anchor-text-matching checks (CC1a/b through CC3a/b) stated explicitly and Python-verified post-write. The 6/6 verify result is th\n... [truncated]"
+    },
+    {
+      "anchor_id": "proven_627",
+      "anchor_type": "theorems",
+      "name": "Structural position**: registry-hygiene gate at the AUDIT-TRAIL layer. Resolves the W7c three-emission supersedes-chain ",
+      "status": "PROVEN",
+      "sessions": "",
+      "statement": "Structural position**: registry-hygiene gate at the AUDIT-TRAIL layer. Resolves the W7c three-emission supersedes-chain ambiguity by canonicalizing §VII.AU as the bridge content host and tagging §VII.",
+      "source_file": "sessions\\session-90\\session-90-w2-workingpaper.md",
+      "source_context_30_lines": "  152: - `computations/_shared/canonical_constants.py` SHA-256: `fe3b14d5268ec312…` (input-pin map entry)\n  153: - `sessions/permanent-results-registry.md` (pre-edit) SHA-256: `83ef6638ca90302e…` (input-pin map entry; computed before write_atomic_with_fsync)\n  154: - `computations/session-89/s89_gate_verdicts.txt` SHA-256: `b98cb57f2261eaf5…` (input-pin map entry; supplies W7c emission cross-reference)\n  155: - **audit_sha256** (full 64-char): `b11aa86295cc973169eba137a6b1e26a27ddf13315aa778cb77d0348a25bf7a1` = SHA-256(script_bytes ‖ canonical_constants_bytes ‖ pinmap_json_canonical)\n  156: - **content_sha256** (full 64-char): `af1d66304fdc138233af962d83ca80053e57f6b1bcaa57dfe55669b560dff99e` = SHA-256(script_bytes)\n  157: \n  158: ##### (l) Self-assessment\n  159: \n  160: - **Structural position**: registry-hygiene gate at the AUDIT-TRAIL layer. Resolves the W7c three-emission supersedes-chain ambiguity by canonicalizing §VII.AU as the bridge content host and tagging §VII.AAU/§VII.AV as WITHDRAWN-IN-FAVOR-OF. No substrate-physics moved; only the registry-slot identity audit trail is reconciled.\n  161: - **Substitution-chain canonicality**: 6 anchor-text-matching checks (CC1a/b through CC3a/b) stated explicitly and Python-verified post-write. The 6/6 verify result is the artifact-existence boolean that drives the composite PASS verdict.\n  162: - **L_max robustness**: N/A. Registry-text edit; no spectral content.\n  163: - **Plan-defect handling**: line-number drift (plan 17165/1\n... [truncated]"
+    },
+    {
+      "anchor_id": "proven_628",
+      "anchor_type": "theorems",
+      "name": "Substitution-chain canonicality**: 6 anchor-text-matching checks (CC1a/b through CC3a/b) stated explicitly and Python-ve",
+      "status": "PROVEN",
+      "sessions": "",
+      "statement": "Substitution-chain canonicality**: 6 anchor-text-matching checks (CC1a/b through CC3a/b) stated explicitly and Python-verified post-write. The 6/6 verify result is the artifact-existence boolean that ",
+      "source_file": "sessions\\session-90\\session-90-w2-workingpaper.md",
+      "source_context_30_lines": "  153: - `sessions/permanent-results-registry.md` (pre-edit) SHA-256: `83ef6638ca90302e…` (input-pin map entry; computed before write_atomic_with_fsync)\n  154: - `computations/session-89/s89_gate_verdicts.txt` SHA-256: `b98cb57f2261eaf5…` (input-pin map entry; supplies W7c emission cross-reference)\n  155: - **audit_sha256** (full 64-char): `b11aa86295cc973169eba137a6b1e26a27ddf13315aa778cb77d0348a25bf7a1` = SHA-256(script_bytes ‖ canonical_constants_bytes ‖ pinmap_json_canonical)\n  156: - **content_sha256** (full 64-char): `af1d66304fdc138233af962d83ca80053e57f6b1bcaa57dfe55669b560dff99e` = SHA-256(script_bytes)\n  157: \n  158: ##### (l) Self-assessment\n  159: \n  160: - **Structural position**: registry-hygiene gate at the AUDIT-TRAIL layer. Resolves the W7c three-emission supersedes-chain ambiguity by canonicalizing §VII.AU as the bridge content host and tagging §VII.AAU/§VII.AV as WITHDRAWN-IN-FAVOR-OF. No substrate-physics moved; only the registry-slot identity audit trail is reconciled.\n  161: - **Substitution-chain canonicality**: 6 anchor-text-matching checks (CC1a/b through CC3a/b) stated explicitly and Python-verified post-write. The 6/6 verify result is the artifact-existence boolean that drives the composite PASS verdict.\n  162: - **L_max robustness**: N/A. Registry-text edit; no spectral content.\n  163: - **Plan-defect handling**: line-number drift (plan 17165/17250/17335 → reality 17172/17257/17344) handled in-script via anchor-text matching, NOT deferred as a carr\n... [truncated]"
+    },
+    {
+      "anchor_id": "proven_629",
+      "anchor_type": "theorems",
+      "name": "Plan-defect handling**: line-number drift (plan 17165/17250/17335 → reality 17172/17257/17344) handled in-script via anc",
+      "status": "PROVEN",
+      "sessions": "",
+      "statement": "Plan-defect handling**: line-number drift (plan 17165/17250/17335 → reality 17172/17257/17344) handled in-script via anchor-text matching, NOT deferred as a carry-forward. Per `feedback_fix-in-session",
+      "source_file": "sessions\\session-90\\session-90-w2-workingpaper.md",
+      "source_context_30_lines": "  155: - **audit_sha256** (full 64-char): `b11aa86295cc973169eba137a6b1e26a27ddf13315aa778cb77d0348a25bf7a1` = SHA-256(script_bytes ‖ canonical_constants_bytes ‖ pinmap_json_canonical)\n  156: - **content_sha256** (full 64-char): `af1d66304fdc138233af962d83ca80053e57f6b1bcaa57dfe55669b560dff99e` = SHA-256(script_bytes)\n  157: \n  158: ##### (l) Self-assessment\n  159: \n  160: - **Structural position**: registry-hygiene gate at the AUDIT-TRAIL layer. Resolves the W7c three-emission supersedes-chain ambiguity by canonicalizing §VII.AU as the bridge content host and tagging §VII.AAU/§VII.AV as WITHDRAWN-IN-FAVOR-OF. No substrate-physics moved; only the registry-slot identity audit trail is reconciled.\n  161: - **Substitution-chain canonicality**: 6 anchor-text-matching checks (CC1a/b through CC3a/b) stated explicitly and Python-verified post-write. The 6/6 verify result is the artifact-existence boolean that drives the composite PASS verdict.\n  162: - **L_max robustness**: N/A. Registry-text edit; no spectral content.\n  163: - **Plan-defect handling**: line-number drift (plan 17165/17250/17335 → reality 17172/17257/17344) handled in-script via anchor-text matching, NOT deferred as a carry-forward. Per `feedback_fix-in-session-never-defer.md`: drift fixed by structural-substitution rather than passed forward as a hygiene CF.\n  164: - **Downstream triggers**: §VII.AU is now canonically identified as the FWD-C1 content host; CF-64 (W8 single-shot retry) can land its lexical-form retry\n... [truncated]"
+    },
+    {
+      "anchor_id": "proven_630",
+      "anchor_type": "theorems",
+      "name": "Downstream triggers**: §VII.AU is now canonically identified as the FWD-C1 content host; CF-64 (W8 single-shot retry) ca",
+      "status": "PROVEN",
+      "sessions": "",
+      "statement": "Downstream triggers**: §VII.AU is now canonically identified as the FWD-C1 content host; CF-64 (W8 single-shot retry) can land its lexical-form retry into §VII.AU directly without re-traversing the §V",
+      "source_file": "sessions\\session-90\\session-90-w2-workingpaper.md",
+      "source_context_30_lines": "  156: - **content_sha256** (full 64-char): `af1d66304fdc138233af962d83ca80053e57f6b1bcaa57dfe55669b560dff99e` = SHA-256(script_bytes)\n  157: \n  158: ##### (l) Self-assessment\n  159: \n  160: - **Structural position**: registry-hygiene gate at the AUDIT-TRAIL layer. Resolves the W7c three-emission supersedes-chain ambiguity by canonicalizing §VII.AU as the bridge content host and tagging §VII.AAU/§VII.AV as WITHDRAWN-IN-FAVOR-OF. No substrate-physics moved; only the registry-slot identity audit trail is reconciled.\n  161: - **Substitution-chain canonicality**: 6 anchor-text-matching checks (CC1a/b through CC3a/b) stated explicitly and Python-verified post-write. The 6/6 verify result is the artifact-existence boolean that drives the composite PASS verdict.\n  162: - **L_max robustness**: N/A. Registry-text edit; no spectral content.\n  163: - **Plan-defect handling**: line-number drift (plan 17165/17250/17335 → reality 17172/17257/17344) handled in-script via anchor-text matching, NOT deferred as a carry-forward. Per `feedback_fix-in-session-never-defer.md`: drift fixed by structural-substitution rather than passed forward as a hygiene CF.\n  164: - **Downstream triggers**: §VII.AU is now canonically identified as the FWD-C1 content host; CF-64 (W8 single-shot retry) can land its lexical-form retry into §VII.AU directly without re-traversing the §VII.AAU/§VII.AV detours. The CF-18 verdict's `value` field carries `allowlist_row=pending;instances_row=pending` markers that defer the\n... [truncated]"
+    }
+  ]
+}

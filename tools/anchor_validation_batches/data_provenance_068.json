@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 68,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_671",
+      "anchor_type": "data_provenance",
+      "name": "pl_dual_connes",
+      "script_path": "session-55/s55_pl_dual_connes.py",
+      "session": "s55",
+      "inputs": "",
+      "outputs": "session-55/s55_pl_dual_connes.npz, session-55/s55_pl_dual_connes.png",
+      "source_file": "computations/session-55/s55_pl_dual_connes.py",
+      "source_context_30_lines": "   46: \n   47: sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))\n   48: from canonical_constants import tau_fold\n   49: \n   50: # ── Paths ──────────────────────────────────────────────────────────────\n   51: PROJ = os.path.dirname(os.path.abspath(__file__))\n   52: CG_FILE = os.path.join(PROJ, \"s54_connes_latt.npz\")\n   53: TB_FILE = os.path.join(PROJ, \"s54_tb_hamiltonian.npz\")\n   54: OUTPUT_NPZ = os.path.join(PROJ, \"s55_pl_dual_connes.npz\")\n   55: OUTPUT_PNG = os.path.join(PROJ, \"s55_pl_dual_connes.png\")\n   56: \n   57: \n   58: # ======================================================================\n   59: # SECTION 1: BUILD THE PL DUAL GRAPH\n   60: # ======================================================================\n   61: \n   62: def build_pl_dual(adj):"
+    },
+    {
+      "anchor_id": "prov_672",
+      "anchor_type": "data_provenance",
+      "name": "self_consistent",
+      "script_path": "session-55/s55_self_consistent.py",
+      "session": "s55",
+      "inputs": "computations/session-54/s54_scale_factor.npz, computations/session-55/s55_euclid_continuum.npz, computations/session-44/...",
+      "outputs": "session-55/s55_self_consistent.npz, session-55/s55_self_consistent.png",
+      "source_file": "computations/session-55/s55_self_consistent.py",
+      "source_context_30_lines": "  427:         save_dict[f'{tag}_F'] = r['F_sc']\n  428:         save_dict[f'{tag}_H'] = r['H_sc']\n  429:         save_dict[f'{tag}_dF'] = r['dF']\n  430:         save_dict[f'{tag}_dH_frac'] = r['dH_frac']\n  431: \n  432: save_dict['kappa_values'] = kappa_values\n  433: save_dict['n_kappa'] = len(kappa_values)\n  434: \n  435: np.savez('computations/session-55/s55_self_consistent.npz', **save_dict)\n  436: print(\"\\nSaved: computations/session-55/s55_self_consistent.npz\")\n  437: \n  438: # ============================================================\n  439: # 11. PLOT\n  440: # ============================================================\n  441: \n  442: fig, axes = plt.subplots(2, 3, figsize=(18, 10))\n  443: fig.suptitle('SELF-CONSISTENT-55: Self-Consistent Fixed Point Analysis\\n'"
+    },
+    {
+      "anchor_id": "prov_673",
+      "anchor_type": "data_provenance",
+      "name": "sf_sign",
+      "script_path": "session-55/s55_sf_sign.py",
+      "session": "s55",
+      "inputs": "computations/session-44/s44_dos_tau.npz, computations/session-27/s27_multisector_bcs.npz, computations/session-54/s54_sa...",
+      "outputs": "session-55/s55_sf_sign.npz, session-55/s55_sf_sign.png",
+      "source_file": "computations/session-55/s55_sf_sign.py",
+      "source_context_30_lines": "  381:     total = dSb[i] + dSf_w[i]\n  382:     s = \"+\" if total > 0 else \"-\"\n  383:     print(f\"{tau_mid[i]:8.3f}  {dSb[i]:14.4f}  {dSf_w[i]:14.4f}  {total:16.4f}  {s:>6s}\")\n  384: \n  385: # ============================================================================\n  386: #  9. Save results\n  387: # ============================================================================\n  388: \n  389: np.savez('computations/session-55/s55_sf_sign.npz',\n  390:     # Tau arrays\n  391:     tau_all=tau_arr,\n  392:     tau_mid=tau_mid,\n  393: \n  394:     # Spectral action values\n  395:     S_f_unweighted=S_f_unw_arr,\n  396:     S_f_weighted=S_f_w_arr,\n  397:     S_b=S_b_arr,"
+    },
+    {
+      "anchor_id": "prov_674",
+      "anchor_type": "data_provenance",
+      "name": "socc_64cell",
+      "script_path": "session-55/s55_socc_64cell.py",
+      "session": "s55",
+      "inputs": "",
+      "outputs": "session-55/s55_socc_64cell.npz, session-55/s55_socc_64cell.png",
+      "source_file": "computations/session-55/s55_socc_64cell.py",
+      "source_context_30_lines": "   45: from matplotlib.gridspec import GridSpec\n   46: \n   47: from canonical_constants import (\n   48:     J_C2, J_su2, J_u1, tau_fold,\n   49:     Delta_0_OES, Delta_0_GL,\n   50: )\n   51: \n   52: SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))\n   53: OUT_NPZ = os.path.join(SCRIPT_DIR, \"s55_socc_64cell.npz\")\n   54: OUT_PNG = os.path.join(SCRIPT_DIR, \"s55_socc_64cell.png\")\n   55: OUT_TXT = os.path.join(SCRIPT_DIR, \"s55_socc_64cell_output.txt\")\n   56: \n   57: # ============================================================\n   58: # Output tee (console + file)\n   59: # ============================================================\n   60: class Tee:\n   61:     def __init__(self, filename):"
+    },
+    {
+      "anchor_id": "prov_675",
+      "anchor_type": "data_provenance",
+      "name": "strutinsky_992",
+      "script_path": "session-55/s55_strutinsky_992.py",
+      "session": "s55",
+      "inputs": "",
+      "outputs": "session-55/s55_strutinsky_992.npz, session-55/s55_strutinsky_992.png",
+      "source_file": "computations/session-55/s55_strutinsky_992.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s55_strutinsky_992.py — Strutinsky Decomposition on 992-Mode Continuum Spectrum\n    4: ================================================================================\n    5: \n    6: Gate: STRUTINSKY-992-55 (INFO)\n    7: Session: 55, Wave 2-5\n    8: Agent: nazarewicz-nuclear-structure-theorist\n    9: \n   10: Purpose:\n   11:     First Strutinsky decomposition in its regime of validity."
+    },
+    {
+      "anchor_id": "prov_676",
+      "anchor_type": "data_provenance",
+      "name": "theta_w_valley",
+      "script_path": "session-55/s55_theta_w_valley.py",
+      "session": "s55",
+      "inputs": "",
+      "outputs": "session-55/s55_theta_w_valley.npz, session-55/s55_theta_w_valley.png",
+      "source_file": "computations/session-55/s55_theta_w_valley.py",
+      "source_context_30_lines": "   43: Cross-check with canonical constant: sin2_thetaW_fold = 0.58385 at tau=0.19, sigma=0:\n   44:   3/(e^{0.76}+3) = 3/5.138 = 0.5839 (matches to 5 digits).\n   45: \n   46: Paper 13 eq (5.25) gives MZ/MW = sqrt(1 + 3*lambda_2/lambda_1), which yields\n   47: sin^2(theta_W) = 1 - MW^2/MZ^2 = 3*(lambda_2/lambda_1)/(1 + 3*(lambda_2/lambda_1))\n   48: confirming the same formula via the mass ratio route.\n   49: \n   50: Gate: THETA-W-VALLEY-55 — INFO: corrected sin^2(theta_W) at valley floor.\n   51: Output: s55_theta_w_valley.npz, s55_theta_w_valley.png\n   52: \n   53: Author: Baptista-Spacetime-Analyst (Session 55)\n   54: Date: 2026-03-22\n   55: \"\"\"\n   56: \n   57: import sys\n   58: import os\n   59: sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))"
+    },
+    {
+      "anchor_id": "prov_677",
+      "anchor_type": "data_provenance",
+      "name": "transit_velocity",
+      "script_path": "session-55/s55_transit_velocity.py",
+      "session": "s55",
+      "inputs": "",
+      "outputs": "session-55/s55_transit_velocity.npz, session-55/s55_transit_velocity.png",
+      "source_file": "computations/session-55/s55_transit_velocity.py",
+      "source_context_30_lines": "   28:   2. Identify avoided crossings between adjacent levels\n   29:   3. Compute P_LZ at each crossing for omega_tau in {4.135, 8.27, 16.54, 41.35}\n   30:   4. Propagate occupations through the LZ cascade\n   31:   5. Compute GGE temperatures from post-cascade occupations\n   32:   6. Measure non-equilibrium departure delta_eq\n   33: \n   34: Gate: TRANSIT-VELOCITY-55 (INFO)\n   35: Input: computations/session-54/s54_ed_sweep.npz\n   36: Output: computations/session-55/s55_transit_velocity.{py,npz,png}\n   37: \n   38: Author: Volovik Superfluid Universe Theorist, Session 55\n   39: Date: 2026-03-22\n   40: \"\"\"\n   41: \n   42: import os\n   43: import sys\n   44: import time"
+    },
+    {
+      "anchor_id": "prov_678",
+      "anchor_type": "data_provenance",
+      "name": "trunc_ratio",
+      "script_path": "session-55/s55_trunc_ratio.py",
+      "session": "s55",
+      "inputs": "",
+      "outputs": "session-55/s55_trunc_ratio.npz, session-55/s55_trunc_ratio.png",
+      "source_file": "computations/session-55/s55_trunc_ratio.py",
+      "source_context_30_lines": "  404:         sector_S_b_at_fold.append(sb_sector)\n  405:         sector_S_f_at_fold.append(sf_sector)\n  406:         sector_labels.append(f\"({p},{q})\")\n  407: \n  408:     save_dict['fold_sector_S_b'] = np.array(sector_S_b_at_fold)\n  409:     save_dict['fold_sector_S_f'] = np.array(sector_S_f_at_fold)\n  410:     save_dict['fold_sector_labels'] = np.array(sector_labels)\n  411: \n  412:     outpath = os.path.join(os.path.dirname(os.path.abspath(__file__)), 's55_trunc_ratio.npz')\n  413:     np.savez(outpath, **save_dict)\n  414:     print(f\"\\nSaved: {outpath}\")\n  415: \n  416:     # =========================================================================\n  417:     # Plot\n  418:     # =========================================================================\n  419:     fig, axes = plt.subplots(2, 3, figsize=(18, 10))\n  420:     fig.suptitle('TRUNC-RATIO-55: Fermionic/Bosonic Spectral Action at Higher Truncation',"
+    },
+    {
+      "anchor_id": "prov_679",
+      "anchor_type": "data_provenance",
+      "name": "trunc_ratio_mu_median",
+      "script_path": "session-55/s55_trunc_ratio_mu_median.py",
+      "session": "s55",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-55/s55_trunc_ratio_mu_median.py",
+      "source_context_30_lines": "<name 'trunc_ratio_mu_median' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S55 TRUNC-RATIO-55 — Supplementary: mu=median check\n    4: =====================================================\n    5: \n    6: SF-SIGN-55 used mu=median (half-filling), which produced dS_f/dtau > 0.\n    7: The main TRUNC-RATIO script used mu=0 (theoretically correct per S34).\n    8: This supplementary checks whether the non-monotonicity from mu=median\n    9: also disappears at higher truncation.\n   10: \n   11: Author: Spectral-Geometer (S55)\n   12: Date: 2026-03-22\n   13: \"\"\"\n   14: \n   15: import sys\n   16: import os\n   17: import numpy as np\n   18: from time import time\n   19: # === Phase 2b X2 transform bootstrap (auto-inserted by tools/_x2_transform_copies.py) ===\n   20: import sys as _x2_sys\n   21: import pathlib as _x2_pathlib\n   22: import re as _x2_re\n   23: def _x2_locate_tools():\n   24:     p = _x2_pathlib.Path(__file__).resolve()\n   25:     for _ in range(8):\n   26:         if (p / \"tools\" / \"computation_root.py\").is_file():\n   27:             return p / \"tools\"\n   28:         p = p.parent\n   29:     raise RuntimeError(\n   30:         \"Phase 2b bootstrap: tools/computation_root.py not found in any \""
+    },
+    {
+      "anchor_id": "prov_680",
+      "anchor_type": "data_provenance",
+      "name": "volovik_identity",
+      "script_path": "session-55/s55_volovik_identity.py",
+      "session": "s55",
+      "inputs": "",
+      "outputs": "session-55/s55_volovik_identity.npz",
+      "source_file": "computations/session-55/s55_volovik_identity.py",
+      "source_context_30_lines": "  637: elapsed = time.time() - t0\n  638: print(f\"Runtime: {elapsed:.2f} s\")\n  639: \n  640: # ============================================================================\n  641: # Save results\n  642: # ============================================================================\n  643: \n  644: np.savez(\n  645:     os.path.join(SCRIPT_DIR, 's55_volovik_identity.npz'),\n  646:     # Headline\n  647:     delta_eq_mode=delta_eq_mode,\n  648:     delta_eq_branch=delta_eq_branch,\n  649:     delta_eq_therm=delta_eq_therm,\n  650:     # Temperatures\n  651:     T_k=T_k,\n  652:     T_mean_mode=T_mean_mode,\n  653:     T_B2=T_B2, T_B1=T_B1, T_B3=T_B3,"
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "table": "gates",
+  "batch_id": 269,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "gate_S77-B8-BCS-TIMING",
+      "anchor_type": "gates",
+      "name": "S77-B8-BCS-TIMING",
+      "session": "77",
+      "condition": "PASS",
+      "verdict": "Gap absent during squeeze by 4 OOM. GGE construction validated.",
+      "source_file": "sessions\\session-77\\session-77-transit-synthesis.md",
+      "source_context_30_lines": "   61: The physical picture is unambiguous: the modulus completes its impulsive transit in 0.08 e-folds, reaches tau_max = 1.614 where the potential gradient reverses it, then rolls back through the fold at terminal velocity set by the friction-gradient balance 3H * (dtau/dt) ~ -dV/dtau. There are no oscillations because there is no restoring potential minimum. The \"modulus oscillation\" picture from standard moduli cosmology does not apply.\n   62: \n   63: The damping is severe: exp(-F) = 6.3e-27 means any perturbation about the trajectory is erased in ~14 e-folds. The field is critically damped at the fold (3H/2 vs m_tau gives ratio 0.71, marginally underdamped) and overdamped at late times. Even if a minimum were created by BCS dressing, the hypothetical oscillation would be at most 4 cycles before damping below 1% amplitude.\n   64: \n   65: **For the five-phase picture**: Phase D is eliminated entirely. The post-fold dynamics are: impulsive transit (A), free-stream overshoot to tau_max (B), friction-dominated turnaround (C), terminal-velocity slide back through fold (B'), runaway or decay (E). The near-dS epoch (63 e-folds, w ~ -0.997) is governed by a monotonically drifting modulus, not an oscillating one.\n   66: \n   67: ### 3. BCS Timing: Gap Absent During Squeeze (W2-H PASS)\n   68: \n   69: **Gate**: S77-B8-BCS-TIMING. **Verdict: PASS.** t_BCS/dt_transit in [102, 160].\n   70: \n   71: Three independent arguments establish the temporal ordering:\n   72: \n   73: **(a) BCS osci\n... [truncated]"
+    },
+    {
+      "anchor_id": "gate_S77-C2-MULTI-CELL",
+      "anchor_type": "gates",
+      "name": "S77-C2-MULTI-CELL",
+      "session": "77",
+      "condition": "PASS",
+      "verdict": "Coherent amplifier. Now contextually an overproduction contributor.",
+      "source_file": "sessions\\session-77\\session-77-transit-synthesis.md",
+      "source_context_30_lines": "  143: **Gate**: S77-D5-TRANS-PBH. **Verdict: INFO.**\n  144: \n  145: P_zeta(k_trans, phys) = 8.9e-2, exceeding the 10^{-2} PBH threshold by 0.95 OOM. The PBH mass scale at k_trans = 3.4e-3 Mpc^{-1} corresponds to M_PBH ~ 45 M_sun. The mu-distortion also exceeds the COBE/FIRAS bound.\n  146: \n  147: Both findings are **contingent on the initial-state assumption**. The plane-wave BD at the fold is not the physical initial state -- it is a computational starting point. The pre-fold vacuum state, determined by the dynamics of the phase transition that creates the fold, could dramatically suppress these numbers. The P_zeta overproduction at all scales (not just k_trans) is the fundamental issue that must be addressed before PBH constraints become physically meaningful.\n  148: \n  149: ### 6. Multi-Cell Coherence (W3-B PASS) and Parker Production\n  150: \n  151: **Gate**: S77-C2-MULTI-CELL. **Verdict: PASS.** E = 29.42 (1.47 OOM enhancement).\n  152: \n  153: The 32 Voronoi cells behave as a single coherent Bogoliubov amplifier in the deep superfluid regime (E_J/E_c = 194). Phase variance <(phi_i - phi_j)^2> = 0.158 rad^2, well within the coherent regime (sigma << pi). Josephson phase locking regenerates coherence 28x faster than decoherence destroys it (Gamma_deph / omega_J_gap = 0.035).\n  154: \n  155: **Impact on A_s**: The multi-cell coherence delivers E = 29.42 ~ N_cells = 32, closing 1.47 OOM of the A_s gap. However, this was computed under the underproduction framing. In the overp\n... [truncated]"
+    },
+    {
+      "anchor_id": "gate_S77-C3-SPECTRAL-Z",
+      "anchor_type": "gates",
+      "name": "S77-C3-SPECTRAL-Z",
+      "session": "77",
+      "condition": "FAIL",
+      "verdict": "R^2 corrections negligible. z-modification channel CLOSED.",
+      "source_file": "sessions\\session-77\\session-77-transit-synthesis.md",
+      "source_context_30_lines": "  173: | S77-B5-ROUTE-C | PASS | S76 values confirmed to < 0.01 OOM | Factor-3 Friedmann placement is sole physics question. |\n  174: | S77-B6-R1-TRAJECTORY | INFO | R_1 monotone increasing, dR_1/dtau = +0.203 | NOT stationary at fold. L_max protection and tau-dependence are independent. |\n  175: | S77-B7-MEAN-EIGEN | INFO | dS/dt* = +764 (anti-restoring) | Consistent with transit picture. System driven THROUGH transition. |\n  176: | S77-B8-BCS-TIMING | PASS | t_BCS/dt_transit in [102, 160] | Gap absent during squeeze by 4 OOM. GGE construction validated. |\n  177: | S77-B9-FRICTION | INFO | N_osc = 0, F = 60.33, exp(-F) = 6.3e-27 | No oscillation phase. Friction dominates decay 48x. Terminal slide. |\n  178: | S77-B10-V-TAU-VALID | INFO | Reliable to tau = 2.0 | Premise \"data only covers [0, 0.5]\" is false. No overshoot flags needed. |\n  179: | S77-B11-SA-TRUNC | INFO | 3-term residual = 3.76% of a_4 | SDW adequate. NOT source of sin^2 problem. |\n  180: | S77-C2-MULTI-CELL | PASS | E = 29.42, 1.47 OOM | Coherent amplifier. Now contextually an overproduction contributor. |\n  181: | S77-C3-SPECTRAL-Z | FAIL | z_fw/z_GR = 1.014 | R^2 corrections negligible. z-modification channel CLOSED. |\n  182: | S77-C5-HESSIAN-OVERSHOOT | PASS | 35/35 negative at tau = 1.614 | Jensen ridge persists through full overshoot. Modulus confined. |\n  183: | S77-C7-GGE-OCC | FAIL | |delta_chi_2| = 9.63e-6 | 8 modes in 408M. GGE correction 150,000x too small. CLOSED. |\n  184: | S77-C8-DW-GW | FAIL | Om\n... [truncated]"
+    },
+    {
+      "anchor_id": "gate_S77-C5-HESSIAN-OVERSHOOT",
+      "anchor_type": "gates",
+      "name": "S77-C5-HESSIAN-OVERSHOOT",
+      "session": "77",
+      "condition": "PASS",
+      "verdict": "Jensen ridge persists through full overshoot. Modulus confined.",
+      "source_file": "sessions\\session-77\\session-77-transit-synthesis.md",
+      "source_context_30_lines": "  174: | S77-B6-R1-TRAJECTORY | INFO | R_1 monotone increasing, dR_1/dtau = +0.203 | NOT stationary at fold. L_max protection and tau-dependence are independent. |\n  175: | S77-B7-MEAN-EIGEN | INFO | dS/dt* = +764 (anti-restoring) | Consistent with transit picture. System driven THROUGH transition. |\n  176: | S77-B8-BCS-TIMING | PASS | t_BCS/dt_transit in [102, 160] | Gap absent during squeeze by 4 OOM. GGE construction validated. |\n  177: | S77-B9-FRICTION | INFO | N_osc = 0, F = 60.33, exp(-F) = 6.3e-27 | No oscillation phase. Friction dominates decay 48x. Terminal slide. |\n  178: | S77-B10-V-TAU-VALID | INFO | Reliable to tau = 2.0 | Premise \"data only covers [0, 0.5]\" is false. No overshoot flags needed. |\n  179: | S77-B11-SA-TRUNC | INFO | 3-term residual = 3.76% of a_4 | SDW adequate. NOT source of sin^2 problem. |\n  180: | S77-C2-MULTI-CELL | PASS | E = 29.42, 1.47 OOM | Coherent amplifier. Now contextually an overproduction contributor. |\n  181: | S77-C3-SPECTRAL-Z | FAIL | z_fw/z_GR = 1.014 | R^2 corrections negligible. z-modification channel CLOSED. |\n  182: | S77-C5-HESSIAN-OVERSHOOT | PASS | 35/35 negative at tau = 1.614 | Jensen ridge persists through full overshoot. Modulus confined. |\n  183: | S77-C7-GGE-OCC | FAIL | |delta_chi_2| = 9.63e-6 | 8 modes in 408M. GGE correction 150,000x too small. CLOSED. |\n  184: | S77-C8-DW-GW | FAIL | Omega_GW(LISA) = 5e-45 | S65 LISA prediction RETRACTED. Josephson bias kills walls. |\n  185: | S77-D5-TRANS-PBH | INFO | F_amp(pi\n... [truncated]"
+    },
+    {
+      "anchor_id": "gate_S77-C8-DW-GW",
+      "anchor_type": "gates",
+      "name": "S77-C8-DW-GW",
+      "session": "77",
+      "condition": "FAIL",
+      "verdict": "S65 LISA prediction RETRACTED. Josephson bias kills walls.",
+      "source_file": "sessions\\session-77\\session-77-transit-synthesis.md",
+      "source_context_30_lines": "  176: | S77-B8-BCS-TIMING | PASS | t_BCS/dt_transit in [102, 160] | Gap absent during squeeze by 4 OOM. GGE construction validated. |\n  177: | S77-B9-FRICTION | INFO | N_osc = 0, F = 60.33, exp(-F) = 6.3e-27 | No oscillation phase. Friction dominates decay 48x. Terminal slide. |\n  178: | S77-B10-V-TAU-VALID | INFO | Reliable to tau = 2.0 | Premise \"data only covers [0, 0.5]\" is false. No overshoot flags needed. |\n  179: | S77-B11-SA-TRUNC | INFO | 3-term residual = 3.76% of a_4 | SDW adequate. NOT source of sin^2 problem. |\n  180: | S77-C2-MULTI-CELL | PASS | E = 29.42, 1.47 OOM | Coherent amplifier. Now contextually an overproduction contributor. |\n  181: | S77-C3-SPECTRAL-Z | FAIL | z_fw/z_GR = 1.014 | R^2 corrections negligible. z-modification channel CLOSED. |\n  182: | S77-C5-HESSIAN-OVERSHOOT | PASS | 35/35 negative at tau = 1.614 | Jensen ridge persists through full overshoot. Modulus confined. |\n  183: | S77-C7-GGE-OCC | FAIL | |delta_chi_2| = 9.63e-6 | 8 modes in 408M. GGE correction 150,000x too small. CLOSED. |\n  184: | S77-C8-DW-GW | FAIL | Omega_GW(LISA) = 5e-45 | S65 LISA prediction RETRACTED. Josephson bias kills walls. |\n  185: | S77-D5-TRANS-PBH | INFO | F_amp(pivot) = 6858, gap = -9.5 OOM | A_s is OVERPRODUCTION. Pre-fold vacuum undetermined. |\n  186: \n  187: ---\n  188: \n  189: ## Structural Implications (Transit-Dynamics Perspective)\n  190: \n  191: ### The Five-Phase Picture Is Replaced by a Three-Phase Picture\n  192: "
+    },
+    {
+      "anchor_id": "gate_S82-UNIFIED-BACKREACT-79 (W2-2)",
+      "anchor_type": "gates",
+      "name": "S82-UNIFIED-BACKREACT-79 (W2-2)",
+      "session": "82",
+      "condition": "FAIL",
+      "verdict": "PASS: r ≤ 0.1; FAIL: r > 1.0",
+      "source_file": "sessions\\session-82\\session-82-gen-physicist-synthesis.md",
+      "source_context_30_lines": "  161: Surviving: **{N=1 Cooper-pair kinematics as the sole condensation-energy channel at τ_fold}**.\n  162: \n  163: ---\n  164: \n  165: ## III. Gate Verdicts Table\n  166: \n  167: | Gate | Verdict | Value | Threshold | Evidence class | Status |\n  168: |:-----|:-------:|:------|:----------|:--------------:|:-------|\n  169: | S82-UNIFIED-BACKREACT-79 (W2-2) | **FAIL** | r_max = 1.3323e+04 (τ grid) / 2.0481e+04 (full η) | PASS: r ≤ 0.1; FAIL: r > 1.0 | PERTURBATIVE breakdown | Resolved by W3-5 |\n  170: | S82-A2-CLUSTER-TEST (W2-8) | **FAIL** | var(f_0)/⟨f_0⟩² = 68.5451%; var(f_2)/⟨f_2⟩² = 60.3494% | PASS: var_a0 < 1% AND var_a2 > 5% | METHODOLOGICAL redirect | Carry-forward S83-F-CONV-CLUSTER-TEST |\n  171: | S82-MULTIPAIR-ECOND (W2-9) | **FAIL** | E_cond ratio N=2/N=1 = 1.600992 | PASS: ≥ 10; INFO: [3,10]; FAIL: < 3 | ALGEBRAIC theorem | Permanent wall |\n  172: | S82-FAMP-SC-3PI (W3-5) | **PASS** | F_amp^{3PI} = 47.9177 (rel_dev vs S78 bound = 3.49e-5) | PASS band [0.8 × 47.919, 1.2 × 47.919] = [38.34, 57.50] | Self-consistent NLO 1/N closure | Resolves W2-2 |\n  173: \n  174: ### Carry-forwards inherited from sources (structured specs in §V)\n  175: \n  176: See §V. Carry-Forward Computations below — every entry expanded to the mandatory 4-field structure.\n  177: "
+    },
+    {
+      "anchor_id": "gate_S82-A2-CLUSTER-TEST (W2-8)",
+      "anchor_type": "gates",
+      "name": "S82-A2-CLUSTER-TEST (W2-8)",
+      "session": "82",
+      "condition": "FAIL",
+      "verdict": "PASS: var_a0 < 1% AND var_a2 > 5%",
+      "source_file": "sessions\\session-82\\session-82-gen-physicist-synthesis.md",
+      "source_context_30_lines": "  162: \n  163: ---\n  164: \n  165: ## III. Gate Verdicts Table\n  166: \n  167: | Gate | Verdict | Value | Threshold | Evidence class | Status |\n  168: |:-----|:-------:|:------|:----------|:--------------:|:-------|\n  169: | S82-UNIFIED-BACKREACT-79 (W2-2) | **FAIL** | r_max = 1.3323e+04 (τ grid) / 2.0481e+04 (full η) | PASS: r ≤ 0.1; FAIL: r > 1.0 | PERTURBATIVE breakdown | Resolved by W3-5 |\n  170: | S82-A2-CLUSTER-TEST (W2-8) | **FAIL** | var(f_0)/⟨f_0⟩² = 68.5451%; var(f_2)/⟨f_2⟩² = 60.3494% | PASS: var_a0 < 1% AND var_a2 > 5% | METHODOLOGICAL redirect | Carry-forward S83-F-CONV-CLUSTER-TEST |\n  171: | S82-MULTIPAIR-ECOND (W2-9) | **FAIL** | E_cond ratio N=2/N=1 = 1.600992 | PASS: ≥ 10; INFO: [3,10]; FAIL: < 3 | ALGEBRAIC theorem | Permanent wall |\n  172: | S82-FAMP-SC-3PI (W3-5) | **PASS** | F_amp^{3PI} = 47.9177 (rel_dev vs S78 bound = 3.49e-5) | PASS band [0.8 × 47.919, 1.2 × 47.919] = [38.34, 57.50] | Self-consistent NLO 1/N closure | Resolves W2-2 |\n  173: \n  174: ### Carry-forwards inherited from sources (structured specs in §V)\n  175: \n  176: See §V. Carry-Forward Computations below — every entry expanded to the mandatory 4-field structure.\n  177: \n  178: ---"
+    },
+    {
+      "anchor_id": "gate_S82-MULTIPAIR-ECOND (W2-9)",
+      "anchor_type": "gates",
+      "name": "S82-MULTIPAIR-ECOND (W2-9)",
+      "session": "82",
+      "condition": "FAIL",
+      "verdict": "PASS: ≥ 10; INFO: [3,10]; FAIL: < 3",
+      "source_file": "sessions\\session-82\\session-82-gen-physicist-synthesis.md",
+      "source_context_30_lines": "  163: ---\n  164: \n  165: ## III. Gate Verdicts Table\n  166: \n  167: | Gate | Verdict | Value | Threshold | Evidence class | Status |\n  168: |:-----|:-------:|:------|:----------|:--------------:|:-------|\n  169: | S82-UNIFIED-BACKREACT-79 (W2-2) | **FAIL** | r_max = 1.3323e+04 (τ grid) / 2.0481e+04 (full η) | PASS: r ≤ 0.1; FAIL: r > 1.0 | PERTURBATIVE breakdown | Resolved by W3-5 |\n  170: | S82-A2-CLUSTER-TEST (W2-8) | **FAIL** | var(f_0)/⟨f_0⟩² = 68.5451%; var(f_2)/⟨f_2⟩² = 60.3494% | PASS: var_a0 < 1% AND var_a2 > 5% | METHODOLOGICAL redirect | Carry-forward S83-F-CONV-CLUSTER-TEST |\n  171: | S82-MULTIPAIR-ECOND (W2-9) | **FAIL** | E_cond ratio N=2/N=1 = 1.600992 | PASS: ≥ 10; INFO: [3,10]; FAIL: < 3 | ALGEBRAIC theorem | Permanent wall |\n  172: | S82-FAMP-SC-3PI (W3-5) | **PASS** | F_amp^{3PI} = 47.9177 (rel_dev vs S78 bound = 3.49e-5) | PASS band [0.8 × 47.919, 1.2 × 47.919] = [38.34, 57.50] | Self-consistent NLO 1/N closure | Resolves W2-2 |\n  173: \n  174: ### Carry-forwards inherited from sources (structured specs in §V)\n  175: \n  176: See §V. Carry-Forward Computations below — every entry expanded to the mandatory 4-field structure.\n  177: \n  178: ---\n  179: "
+    },
+    {
+      "anchor_id": "gate_S82-FAMP-SC-3PI (W3-5)",
+      "anchor_type": "gates",
+      "name": "S82-FAMP-SC-3PI (W3-5)",
+      "session": "82",
+      "condition": "PASS",
+      "verdict": "PASS band [0.8 × 47.919, 1.2 × 47.919] = [38.34, 57.50]",
+      "source_file": "sessions\\session-82\\session-82-gen-physicist-synthesis.md",
+      "source_context_30_lines": "  164: \n  165: ## III. Gate Verdicts Table\n  166: \n  167: | Gate | Verdict | Value | Threshold | Evidence class | Status |\n  168: |:-----|:-------:|:------|:----------|:--------------:|:-------|\n  169: | S82-UNIFIED-BACKREACT-79 (W2-2) | **FAIL** | r_max = 1.3323e+04 (τ grid) / 2.0481e+04 (full η) | PASS: r ≤ 0.1; FAIL: r > 1.0 | PERTURBATIVE breakdown | Resolved by W3-5 |\n  170: | S82-A2-CLUSTER-TEST (W2-8) | **FAIL** | var(f_0)/⟨f_0⟩² = 68.5451%; var(f_2)/⟨f_2⟩² = 60.3494% | PASS: var_a0 < 1% AND var_a2 > 5% | METHODOLOGICAL redirect | Carry-forward S83-F-CONV-CLUSTER-TEST |\n  171: | S82-MULTIPAIR-ECOND (W2-9) | **FAIL** | E_cond ratio N=2/N=1 = 1.600992 | PASS: ≥ 10; INFO: [3,10]; FAIL: < 3 | ALGEBRAIC theorem | Permanent wall |\n  172: | S82-FAMP-SC-3PI (W3-5) | **PASS** | F_amp^{3PI} = 47.9177 (rel_dev vs S78 bound = 3.49e-5) | PASS band [0.8 × 47.919, 1.2 × 47.919] = [38.34, 57.50] | Self-consistent NLO 1/N closure | Resolves W2-2 |\n  173: \n  174: ### Carry-forwards inherited from sources (structured specs in §V)\n  175: \n  176: See §V. Carry-Forward Computations below — every entry expanded to the mandatory 4-field structure.\n  177: \n  178: ---\n  179: \n  180: ## IV. Constraint-Map Structural Implications"
+    },
+    {
+      "anchor_id": "gate_R-protected",
+      "anchor_type": "gates",
+      "name": "R-protected",
+      "session": "83",
+      "condition": "| W3-G28 S83-F-CONV-CLUSTER-TEST",
+      "verdict": "cluster=1766.162324",
+      "source_file": "sessions\\session-83\\session-83-gen-physicist-synthesis.md",
+      "source_context_30_lines": "    2: \n    3: **Date**: 2026-04-18\n    4: **Agent**: gen-physicist (Gen)\n    5: **Source Documents**:\n    6: - `sessions/session-83/session-83-results-workingpaper.md`\n    7: - `sessions/session-82/workshops/s82-regulator-dressing-taxonomy.md`\n    8: - `sessions/permanent-results-registry.md`\n    9: \n   10: **Companion synthesis role**: Part (b) of three-solo convergence on a single canonical §VII.K-PROP registry entry. This document narrows the constraint surface at the propagation layer: I tabulate the linear-response exponent `p` of every S83 NOT-R-protected observable against its regulator-sensitive substrate input, and verify the resulting span/cluster identities to machine precision.\n   11: \n   12: ---\n   13: \n   14: ## I. Session Outcome\n   15: \n   16: A single linear identity governs four S83 gate results (G15 k_a2 FAIL; G16 A_s PASS with 5-regulator scan; G28 f_conv cluster FAIL at 1766; G34 CC-ratio FAIL at max_span=42): every NOT-R-protected observable `O^R` is a pure power `x^R^p` of a single upstream regulator-sensitive substrate moment `x^R` (specifically `k_a2^R` or `M_0^R`), with all other ledger factors R-independent at fixed branch. Therefore `span(O) = span(x)^|p|` holds exactly (machine-precision, verified to relative tolerance <1e-10 for every identity listed in §VI). The observed S83 span inflation is not a pathology — it is *the* mechanism by which the regulator-dependence of the a_2 Mellin slot propagates through the UNIFIED-AS-79 ledger and the f_con\n... [truncated]"
+    }
+  ]
+}

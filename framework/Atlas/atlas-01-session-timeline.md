@@ -1,7 +1,10 @@
 # Atlas D01: Session Timeline
 
-**Scope**: Sessions 1-51 (Feb 2026 — Mar 2026)
-**Total**: 51 sessions, ~300 computations, 244 closures, 392 theorems
+**Scope**: Sessions 1-88 (Feb 2026 — May 2026)
+**Updated**: 2026-05-09 (S67-S88 uplift; Era IX substrate-compaction-mature + Era X methodology-floor with sub-eras X-a foundation / X-b mature)
+**Total**: 88 sessions, ~1500+ computations, 287+ mechanism closures, ~150+ permanent + STAGE-1-CANDIDATE registry landings
+
+> **Note on era-label collision**: The two "Era VII" headers below (lines for S47-S51 "Fabric, O-Z, and the Scale Mapping" and S61-S62 "Spectral Action Triad and n_s Recovery") are a pre-existing label-collision in the atlas. Per `feedback_fix-in-session-never-defer.md`, the second has been renamed to "Era VII-bis" for indexing disambiguation; content is unchanged. The pre-existing S52-S60 gap (no per-session rows; sessions consolidate into atlas-00 line 80 references) remains as a separate backfill carry-forward not addressed by this S67-S88 uplift.
 
 ---
 
@@ -37,7 +40,7 @@
 - **Answer**: CG product route is WRONG (Lie algebra, not associative). All four agents independently converged on the correct route: commutant algebra End_{U(2)}(Delta_8). This is automatically associative and computable by pure branching rules.
 - **Changed**: Computational roadmap defined (4 phases). Baptista eq 2.62-2.65 identified as containing the commutant structure independently of Connes.
 
-### Session 7: Tier 0 Phase 1 — KO-dim = 6 and SM Quantum Numbers
+### Session 7: computation Phase 1 — KO-dim = 6 and SM Quantum Numbers
 - **Question**: Does the branching computation on Psi_+ = C^16 reproduce SM quantum numbers?
 - **Answer**: KO-dimension = 6 (the SM value) proven at machine epsilon. All 16 Weyl fermion quantum numbers match SM assignments exactly. L-homomorphism failure on C^2 directions = Connes' order-one condition.
 - **Changed**: Three machine-epsilon results established: KO-dim, SM quantum numbers, order-one condition. Framework probability ~55-65%.
@@ -288,6 +291,175 @@
 
 ---
 
+## Era VII-bis: Spectral Action Triad and n_s Recovery (S61-S62) -- 8 closures, 112 computations
+
+### Session 61: The Substrate Proven Stable
+- **Question**: Is the M^4 x SU(3) substrate mathematically complete? Can the NCG verification chain close? What is the Higgs mass from first principles?
+- **Answer**: 91 computations across 6 waves. a_2 = 0.728235 (exact 10-digit S46 match). NCG verification chain 7/7 (A-tensor, K-homology, spectral flow, gauge module, Kasparov product, BdG SA, block-diagonal). SM gauge group 13/13 generators recovered. m_H = 134 GeV tree-level (7% from observed). 36D moduli Hessian ALL 36 eigenvalues negative (fold is SA nexus). GGE 9/9 PASS. Type-I superconductor (kappa = 0.49). Baryogenesis within 3.2x via UV completion. 6 Lost Treasures evaluated (5 NO-GO, 1 CONDITIONAL GO: filter moment constraint). Berry CP CLOSED (structural). PW spectral route formally CLOSED (truncation wall).
+- **Changed**: Substrate stability established permanently. NCG chain complete. Higgs mass from zero geometric parameters. Spectral action triad {f_0, f_2 = 2.34, f_4} opened as the core parametric structure. Filter moment problem (LT-6) is the sole new channel from speculative assessment.
+
+### Session 62: n_s = 0.9567, Filter Independence, and the Phononic Crystal
+- **Question**: Can the spectral action at the fold produce the CMB spectral index? Is the Higgs mass filter-dependent? What constrains the cutoff function?
+- **Answer**: 21 gates, all complete. n_s = 0.9567 (Hubble SA method, 1.9 sigma from Planck, zero free parameters). Peter-Weyl selection rule: 16/136,480 modes couple to 4D. CF-9 algebraic identity verified at machine epsilon (Berry = NCG = KK A-tensor, PERMANENT). Meissner survives transit at 98.85% (D_s(GGE) = 6.283 M_KK^2). Higgs mass filter-independent: m_H = 134 GeV tree-level for ALL 6 cutoff families (structural theorem from CCM). 2-loop RG pushes to 160 GeV; KK threshold corrections needed (delta_BCS = 0.27 for 125 GeV). Cauchy-Schwarz formal proof: F_2 >= F_1^2/F_0 (PERMANENT, cutoff-independent). CC q-theory CLOSED (monotonicity theorem: dE_ZP/dq > 0 for all q, no interior equilibrium). BCS sigma stabilization CLOSED (delta too small by 4 OOM), but dilaton stabilization WORKS (m_sigma^2(eff) > 0 across [0.1, 10] M_*/M_KK). Phononic crystal confirmed: 16 hybridization gaps, max 0.260 M_KK. Bounce action equivalent to CC problem (structural). f_0 = 4.258, alpha_GUT = 1/10.8 (2.3x tension with standard 1/25).
+- **Changed**: First viable n_s prediction in project history (12+ prior mechanisms closed). Filter-independence theorem simplifies the cutoff problem to a single geometric ratio a_4/a_2 = 0.414. Meissner permanence under GGE confirmed. CC q-theory route permanently closed (monotonicity). Phononic crystal picture validated with quantitative hybridization gaps. The spectral action triad narrows to Gaussian as the unique Cauchy-Schwarz saturating cutoff. alpha_GUT tension (1/10.8 vs 1/25) identified as new structural question.
+
+---
+
+## Era VIII: Spectral Operations and CC Reframe (Sessions 63-66) -- 25+ closures, 170+ computations
+
+### Session 63: Spectral Operations Precursor — 70 Scripts, 17 Permanent Theorems
+- **Question**: Can the infrastructure scale to simultaneous multi-agent computation? What structural theorems emerge from systematic spectral operations?
+- **Answer**: 70 scripts, 69 gates (31 PASS, 7 FAIL, 31 INFO). 17 permanent theorems T1-T17 established: zero first-order tensor (T1), breathing mode exclusion (T2), scalar-tensor Kasparov decoupling (T3), exflation tensor theorem (T4), volume-preserving no-trapping (T5), constant-epsilon theorem (T6), n_s gauge invariance (T7), Hessian cluster structure (T8), mixed B-F q-theory exclusion T9 (9th CC closure), Cartan trace identity (T10), nonlocal form factor inheritance T11 (IDG CC closed), transfer function factorization (T12), MaxEnt Gaussian uniqueness (T13), kinetic normalization identity (T14), Casimir sigma scaling (T15), S_3 subgroup edge-weight (T16), proton decay tree-level zero (T17). Two workshops: VdD x Hawking (tensor sector, r=16epsilon INAPPLICABLE by 5 independent arguments) and Phonon x Mack (observational scorecard). Fabric-space inversion paradigm established.
+- **Changed**: 9+ new closures (Starobinsky frozen, multi-field cos(alpha)=0, isocurvature frozen, mixed B-F q-theory, IDG nonlocality, others). r=16epsilon declared INAPPLICABLE. Infrastructure scaled to 70 concurrent scripts. 17 permanent theorems in a single session.
+
+### Session 64: CC-COMBO-64 FAIL and R-Monotonicity — 33 Gates
+- **Question**: Can any combination of stackable CC corrections close the 114 OOM gap? What is the physical N_e?
+- **Answer**: 33 gates (8 PASS, 9 FAIL, 16 INFO). CC-COMBO-64 FAIL: no combination of known corrections bridges the gap. R-monotonicity PERMANENT: dR/dtau >= 0 by AM-GM on volume-preserving Jensen, making a_2 diverge exponentially. r = 0.033 PASS (below BICEP/Keck r < 0.036). N_e = 3.73e-3 physical transit e-folds. BdG heat kernel factorization K_BdG(t) = exp(-Delta^2 t) K_bare(t). 8 new closures: CC Path C (Jensen transit, R monotone), CC Path B (Gaudin, 94.6% outside), CC category-error (spectral moment decoupling F_{-1} vs F_{+1}), Jacobson multi-T, Jacobson-Kasparov, M-S applicability, Peotta-Torma, skyrmion baryogenesis (M_skyrm 22 OOM above proton). Chirality antisymmetry {gamma_9, dD_K/dtau}=0 (chiral pairs ADD). H2 theorem pi_ij=0 from DeWitt tracelessness.
+- **Changed**: CC stackable route exhausted. R-monotonicity and a_0/a_2 trap established as candidate walls. r prediction confirmed viable. Physical N_e quantified. Subsonic transit claim retracted within session (Mach 13.8).
+
+### Session 65: CC Budget Accounting and BCS-Dressed n_s — 37 Gates
+- **Question**: What is the full CC budget after all stackable corrections? Does BCS dressing improve n_s?
+- **Answer**: 37 gates (11 PASS, 11 FAIL, 12 INFO, 1 CONDITIONAL). CC budget: 114 OOM raw -> 107.7 after Level A structural -> 102.7 after zeta functional (scheme change). BCS-dressed n_s: +0.0206 correction toward Planck, giving n_s = 0.9595 (BCS+CW). B/F spectral asymmetry = 0 EXACTLY on pure Riemannian triple (PERMANENT). 8 CC closures: B/F asymmetry, nonlocal SA (all increase a_0/a_2), theta-vacuum (a_3=0 by Gilkey), Jensen relaxation, EIH effacement (monotonic, wrong direction), U(1) collapse, Mott transition (E_J/E_C=194, 571x above critical), swampland. BdG heat kernel factorization verified. Bogoliubov Gaussianity preservation f_NL=O(epsilon). EIH Casimir monotonicity. DESI DR3 pre-registered.
+- **Changed**: CC budget accounting complete (102.7 OOM remaining after all known corrections). n_s improved to 0.9595 (BCS+CW). 8 CC mechanisms closed. Mott transition structurally inaccessible.
+
+### Session 66: Volovik CC Reframe, Spectral Functional Crisis, and Protection Cascade — 37 Tasks + 5 Workshops + 10 Collabs
+- **Question**: Can Volovik thermodynamic relaxation solve the CC? Is n_s a prediction or accommodation? What selects the spectral functional?
+- **Answer**: DILUTION-CC-66 PASS (Scenario B): Volovik q-theory relaxation rho_vac ~ M_Pl^2 H^2 lands at rho_vac(today)/rho_obs = 1.032 (0.01 OOM from observation). The 114 OOM gap IS exflation (the expansion history), not a fine-tuning problem. ZETA-SA-66 INFO: eps_H sign reversal between cutoff families (sqrt(x): +0.022 red tilt vs zeta/exponential: negative blue tilt). n_s spread across functionals: 0.164 (39x Planck error). Anomaly + conservation hierarchy -> one-parameter dilaton family c_k(phi)=(−1)^k phi^k/k. Bayesian evidence collapses model space: exp(-x) excluded at 15.5 sigma, compact at 36.9 sigma. Only sqrt(x) and anomaly(phi) survive. Higgs mass discriminant: m_H^zeta~174 vs m_H^cutoff~127.5 GeV. Leggett DM: Omega_DM h^2 = 0.120 (0.6% from Planck). alpha_s = -0.038 at 5.0 sigma (falsification threat, but slow-roll formula suspect at Mach 13.8). Volovik Gibbs-Duhem (functional-independent). Chebyshev monotonicity theorem. BCS-Sakharov decoupling. KO-dimension degeneracy at d=8.
+- **Changed**: CC PARADIGM SHIFT: Volovik relaxation replaces all prior CC mechanisms. Spectral functional crisis identified as the existential question. Protection cascade (Workshop 1) links Chebyshev monotonicity -> Gibbs-Duhem -> eps_H sign control. Conservation hierarchy (Workshop 2) provides functional selection mechanism. Three S67 CRITICAL gates: TRANSIT-PS-67, FUNCTIONAL-SELECT-67, BBN-VOLOVIK-67.
+
+---
+
+## Era IX: Substrate-Compaction Mature (Sessions 67-81) — ~52 distinct closures, post-Volovik consolidation
+
+> **Era boundary justification**: S67 opens the era. The S66 close pinned the spectral functional crisis (eps_H sign reversal between cutoff families) as the existential question; S67 W1-C `FUNCTIONAL-SELECT-67` excludes the entire anomaly family with a structural theorem (n_s > 1 for all phi > 0); W3-A `JOINT-FALSIFICATION-67` PASS isolates the Chamseddine-Connes sqrt cutoff as the unique surviving spectral functional. The same session locks Leggett DM stability, reducing the A_s amplitude gap from 15.1 OOM to 0.80 OOM. This is a paradigm shift away from CC-stabilization questions (which dominated S38-S66) toward A_s closure, observational falsifiability, and 3He-B inheritance correspondence as the framework's organizing program. The era closes at S81 because S82 introduces the workshop-schedule and rule-file methodology (a different paradigm shift).
+
+### Session 67: Spectral Functional Selected
+- **Question**: Which spectral functional family survives joint constraint? Does the Leggett DM channel lock?
+- **Answer**: 32 parallel single-agent computations across 7 waves (14 PASS, 8 FAIL, 10 INFO). The Chamseddine-Connes f(x) = sqrt(x) cutoff is selected as the unique spectral functional surviving 4-constraint joint test (`JOINT-FALSIFICATION-67` PASS). The Leggett DM channel locks Omega_DM h² = 0.120 (0.6% from Planck) via 4 independent protection mechanisms; A_s gap reduced from 15.1 to 0.80 OOM via multifield delta-N. 8 permanent theorems landed (Z_2 Leggett parity, anomaly family excluded, Chebyshev tilt, alpha_c=1.4314 critical exponent, a_0 Euler subtraction, no preheating, Brundobler-Elser multi-level, Delta functional-independent).
+- **Changed**: Spectral functional crisis resolved (sqrt sole survivor). Anomaly family excluded structurally. Three S67 carry-forwards opened: TRANSIT-PS-67, FUNCTIONAL-SELECT-67 (refinement loop), BBN-VOLOVIK-67.
+
+### Session 68: Acoustic Transfer + BCS Mode Dressing
+- **Question**: Does acoustic transfer alter n_s/alpha_s across 54 decades? Can A_s gap close at the transfer level?
+- **Answer**: 14 gates over 4 waves. Master gate `ACOUSTIC-TRANSFER-68` FAILed: |alpha_s(CMB)| = 0.039 > 0.019 threshold; A_s gap = 0.80 OOM persists after transfer. Structural finding: scalar acoustic transfer is trivial |T(k)|² = 1 by Weinberg superhorizon conservation, so n_s and alpha_s are determined entirely by S(tau) at horizon-crossing. AS-CLOSURE-68, NS-COMBINED-68, DESI-DR3-FORECAST-68, R-CMB-TRANSFER-68, SECOND-SOUND-OBS-68 all INFO; second sound c_2 = 0.058 M_KK leaves no detectable cosmological imprint (13 OOM below lensing floor).
+- **Changed**: Transfer-level closure FAIL. n_s + alpha_s determined entirely by S(tau) at horizon-crossing. Second-sound observability ruled out at 13 OOM.
+
+### Session 69: Observational Compatibility Check
+- **Question**: Does the framework survive 17-paper observational data tests (Planck/Vera/DESI)?
+- **Answer**: 39 computations over 6 waves including squeeze-phase determination, observational discriminant pre-registrations, and PVD data tests. Headline: 11 PASS gates against existing Planck/DESI data with chi²/dof < 1.5 across f_sigma_8, SNe, D_A, C_l, sigma_8 cluster. Pre-registered CMB-S4 n_s window [0.955, 0.963] (CMB-S4-NS-69 PASS); ISW Boltzmann anomaly Delta = 7.60% PASS; sonic-Penrose A_s upper bound 1.16e+12 (20.7 OOM above observed) PASS.
+- **Changed**: Observational compatibility broadly confirmed. No new structural closures.
+
+### Session 70: c_s² = 0 + LEGGETT-MOMENT
+- **Question**: How does the framework's transit physics differ structurally from inflation? What anchors the Leggett DM mass?
+- **Answer**: 46 computations across 5 waves. Decisive structural result: c_s² = 0 from algebraic q-variable derived from spectral-action structure, fundamentally distinct from inflation's c_s as free parameter (Q-SOUND-70 PASS). LEGGETT-VACUUM-70 PASS: r_L = 0.617, A_s gap closes to 0.267 OOM. F0-ALPHA-S-70 FAIL: CCM matching couples Higgs quartic and gauge coupling through single g_3²(M_KK) DOF (sharpest open particle-physics gap). PARAMETRIC-GGE-70 FAIL via three independent obstructions; reheating proceeds via single-pass Bogoliubov GGE formation, not oscillatory inflaton dynamics. LEGGETT-MOMENT-70 INFO: dark-matter mass anchored on Δ_BCS scale at Mass_LeggettDM/Δ_BCS = 11.97.
+- **Changed**: Structural distinction from inflation locked via c_s² = 0 (algebraic, not parametric). LEGGETT-MOMENT-70 anchors Mechanism C dark-matter prediction. Parametric resonance reheating mechanism CLOSED.
+
+### Session 71: Spectral-Zeta Threshold + Decoherence Band
+- **Question**: Does the framework survive joint zeta-spectral threshold + decoherence-band tests?
+- **Answer**: 20 gates across 4 waves; 6 PASS, 11 INFO, 3 FAIL. Decoherence-band (W1-D PASS): SU(1,1) exact, delta_OOM in [0.568, 1.970]. CHIRP-UNIVERSALITY-71 PASS frame-invariant to 8.1e-10. THREE-CELL-GSL-71 PASS: S_gen monotone across all 4 stages. WEYL-TWO-LOOP-71 FAIL marginal at 0.1%; BH-THIRD-LAW-71 FAIL category-error. DESI-DR3-SCENARIO-B-71 INFO: 2.88-sigma tension, w_a as decisive discriminant pre-registered.
+- **Changed**: Decoherence band confirmed. Frame-invariant chirp universality. DESI DR3 w_a as decisive discriminator pre-registered.
+
+### Session 72: A_s Amplitude Budget + Laminar-Flow Workshop
+- **Question**: Can the A_s amplitude budget close via spectral-functional fit + dispersive blueshift tilt?
+- **Answer**: 20 computations across 4 waves. KAPPA-DELTA-72 INFO: gap-amplitude decoherence channel dead (t_dec/t_transit = 5.5e9). CAUCHY-SCHWARZ-W0-72 FAIL: w_0 from spectral-moment-ratios returns -0.687 vs canonical -0.918 (Volovik-partition is structural). SPECTRAL-FUNCTIONAL-FIT-72 PASS: f*(x) = 0.912·sqrt + 0.088·exp; observation selects spectral functional non-perturbatively. BLUESHIFT-TILT-72 PASS: O(1) tilt correction at deeply thermal entry horizon. S71 PASS-rates downgraded by GILKEY-REEVAL-72 (delta = 13.3% scheme-dependent).
+- **Changed**: Spectral functional admits 91:9 sqrt:exp non-perturbative mix. Workshop maps transit dynamics to superfluid laminar flow. WEINBERG-72, MODULAR-CHIRP-72, G2-CONSTANCY-72 all CLOSED.
+
+### Session 73a: Cavity-Without-Exit + Parametric Amplifier
+- **Question**: Does the BCS-gap fold create a sonic exit horizon? Can the cavity picture close A_s?
+- **Answer**: 18 computations; 4 PASS, 5 FAIL, 9 INFO. Decisive: there is NO exit sonic horizon (W1-A confirms Ma_BA in [20.71, 20.76] across BCS gap profile range). FABRY-PEROT-73a missed gate band [0.57, 0.88] by 6.2% on low side; cavity picture collapses, replaced by **one-sided entry-horizon dispersive amplifier** mechanism. Compound squeeze-amplified inter-branch phase spread + Mott charge noise (W1-E, 0.336 OOM) formally close A_s budget at 0.486 OOM.
+- **Changed**: Cavity model retired; entry-horizon dispersive amplifier replaces it. A_s budget formally at 0.486 OOM.
+
+### Session 73b: "What the Cavity Is NOT"
+- **Question**: Which adjacent mechanisms are inapplicable to the post-cavity picture?
+- **Answer**: 22 computations. Five potential resonance channels closed: alpha_s FAIL is not truncation artifact (W5-B); three-phonon Beliaev decay not a dissipation channel (W5-D); Wilson loop not a topological phase (W3-C); virtual particles not decoherent (W4-A); graph heat kernel not a 4D spectral dimension (W4-B). What survives: Volovik q-theory chi_2 = M_1/(N_modes · lam_max) = 0.747 — a dimensionless spectral-fill-factor analogous to a cavity Q-factor on D_K, L_max-stable across L=3..7. EFOLD-MAPPING-73b: 132.4 e-folds total, transit contributes 3.73e-3; modulus overshoots to tau=1.614 and runs away. TRANSIT-PS FAIL (125 sigma) and FUNCTIONAL-SELECT FAIL diagnose two algebraically independent resonance channels.
+- **Changed**: Five adjacent mechanisms structurally inapplicable. Volovik q-theory chi_2 = 0.747 emerges as the dimensionless spectral-fill-factor. Modulus overshoot identified as carry-forward.
+
+### Session 74: Volovik Superfluid-Universe Review + Three-Route CC Convergence
+- **Question**: Do independent CC-route normalizations converge? What is the L_max stability of DILUTION-CC?
+- **Answer**: 84 computations across 4 waves. Three independent gravity-normalised CC routes (S66 dilution, W2-K HP^4, W2-Q sqrt-moment) converge within 1.0 OOM of rho_obs on the same dimensionless chi_2 ~ <|lambda|>/lam_max ~ 0.74. Three-channel GGE partition (W1-F) FAILs by 2425x on effacement channel; Leggett ZPE route (W2-N) FAILs by 1.67 OOM under canonical omega_L1. **S66 DILUTION-CC PASS downgraded to INFO** under W4-W L_max audit (a_0-scheme drifts +1.87 OOM L=3→7; chi_2 = M_1/(N·lam_max) f*-scheme L_max-stable at -0.47 OOM). Q-theory equilibrium-CC framework structurally survives but numerical PASS now scheme-locked to gravity-normalised chi_2 route.
+- **Changed**: DILUTION-CC PASS scheme-locked to chi_2 route (a_0-scheme drifts at L_max). Three-route convergence on chi_2 = 0.74 dimensionless invariant. CC framework structurally survives.
+
+### Session 75: Transit Dynamics — f_conv Closes A_s Gap
+- **Question**: Does a closed-form conversion factor close A_s? Can BCS-CW dressing land n_s in Planck band?
+- **Answer**: 57 computations across 4 waves. f_conv = (M_KK/M_Pl)⁴ × (a_2/a_0)² = 2.547e-10 (W1-E PASS), predicts A_s = 1.58e-9 (75% of Planck) from zero free parameters via KK hierarchy (8.86 OOM) and spectral-weight projection (0.73 OOM) — both derivable from the spectral triple. Two independent n_s routes to Planck band: BCS-dressed CW gives n_s = 0.9595 (1.28σ); isocurvature transfer from non-power-law H(tau) gives n_s = 0.9649 (Planck central) with mu_eff = 0.0102. Frozen spectrum theorem unbreakable at CMB scales. **S75-G3-ZETA-NOT-PHYSICAL PASS** 3/3 routes — first explicit UV-regulator conflation closure (basis for W13 candidate wall).
+- **Changed**: A_s gap closes to 0.12 OOM residual via f_conv (zero free parameters from spectral triple). Two n_s routes both within Planck band. Three moduli stabilization mechanisms closed/insufficient.
+
+### Session 76: Transit Mode Equation + 5D Moduli Closure
+- **Question**: Do transit mode predictions confirm? Is reheating mechanism identified? Does off-Jensen 5D moduli close?
+- **Answer**: 26 computations. TRANSIT-FNL W1-C PASS: max |f_NL| = 1.505, all shapes within Planck 2018 bounds; multi-mode squeezed vacuum is structurally Gaussian by Wick. MODULI-DECAY PASS: tau_decay = 1.63e-37 s, T_RH = 1.70e15 GeV via gravitational coupling (SM channel only 0.8% post-canonical-normalization). ALPHA-S W2-C PASS: alpha_s(CMB) = -0.0143 (1.46σ from Planck) via temporal ordering reconciliation. MU-EFF FAIL. **W2-J Off-Jensen 5D moduli substantially closed**: 35D restoring potential, ridge dynamics; Mechanism D resolved. W3-I Cassini bound, W3-D instanton liquid, W2-I alpha_s sensitivity, W1-C non-Gaussianity all CLOSED.
+- **Changed**: Mechanism D substantially closed via 5D restoring potential. f_NL bound max=1 locks canonical f_NL_FW. alpha_s = -0.0143 within Planck.
+
+### Session 77: Equilibrium-Tau Crisis + A_s Inversion
+- **Question**: Does bare spectral action have a tau equilibrium? Does S73B normalization correction invert A_s?
+- **Answer**: 4 waves. EQUIL-TAU FAIL: bare spectral action S_f*(tau) is monotonically increasing in [0.01, 1.99]; no minimum exists, BCS dressing 72× too weak. Five-phase post-fold picture revised — Phase D (oscillation) does not exist; modulus monotonically slides at terminal velocity under Hubble friction. **Major discovery**: a normalization error propagating since S73B inverts the entire A_s gap from underproduction to overproduction. F_amp ~ 10^{3.8} from deeply nonadiabatic stiff-to-dS transition makes observed A_s a *suppression* problem, not an enhancement problem (structural inversion of the framework's A_s problem statement since S66). W2-K SDW-zeta-HK confounding identified as class-error methodology.
+- **Changed**: A_s problem inverts: suppression, not enhancement. Phase D oscillation absent; modulus terminal-velocity slide. Bare spectral action has no tau equilibrium (BCS dressing 72× too weak). Class-error methodology identified.
+
+### Session 78: Scrubbed Re-Run Shell + Methodology-Discipline Pivot
+- **Question**: Can the S78 results be re-validated under a scrubbed plan with structural prevention of execution-property failures?
+- **Answer**: The previous S78 output was DELETED after audit found ≥7 integrity failures: convention-shopping, ansatz-forced PASSes, vacuous-margin gates, load-and-compare-to-self, linear-rescale-as-cross-check, iterate-until-PASS, false cross-checks. The shell sets up a re-run under a scrubbed plan with mandatory dual-SHA closure, plan-wide convention pins, 5 user-decision blocks for structural choices. **UNIFIED-AS-79 A_s ledger canonical landed**: F_amp_3PI vs F_amp_slot 122× discrepancy locked. **Methodology-discipline pivot** — first explicit acknowledgment that execution-property failures (Class 1-7) require structural prevention, not retrospective audit.
+- **Changed**: Methodology floor begins. Class 1-7 PROHIBITED_ACTIONS taxonomy emerges from S78 calibration corpus. UNIFIED-AS-79 ledger canonical.
+
+### Session 79: S78 Synthesis + 13-Workshop Carry-Forward
+- **Question**: How does the W1-A PASS-vs-composed-chain dissonance resolve?
+- **Answer**: qa × gen-physicist 2-agent iterative workshop (4 turns) populates S78 §VI/§VII verdict tables and resolves the W1-A PASS-vs-composed-chain dissonance (W1-A's symbolic S_IC=1 ledger gives 1.71e-9 PASS, but composed W1-C+W1-E gives ≈ 2e-6 = +3 OOM). Branch selection from 4 pre-registered alternatives. Multi-band bootstrap, pre-fold suppression channel, instanton-mediated reheating, and CMPP Type D as Weyl symmetry advance to permanent-structural-contributions catalog. **C12 frozen spectrum theorem CLOSED PROVEN** (10^-113 through fold). Pattern 1/3/3'/PRU 4-class integrity failure catalog identified.
+- **Changed**: PASS-vs-composed dissonance resolved via branch selection. Frozen spectrum theorem (W11 candidate wall). PRU as Class-8 of v3 ladder identified.
+
+### Session 80: A_s Narrative Resolution + §VII.I Promotions
+- **Question**: How does the A_s narrative resolve under PRDR enforcement?
+- **Answer**: S79 carry-forward execution — A_s narrative resolution + §VII.I theorem promotions. Wave-based parallel format with PRDR enforcement: every numerical output carries (value, scheme, convention, L_max) 4-tuple, unspecified convention triggers automatic PRU Class-8 flag. Trigger-phrase discipline gates [SIGN], [VERIFY], [AUDIT], [VERIFY-THEOREM], [CHAIN] require visible substitution chain + Python verification. Session stalled mid-Wave-1; the stall surfaced 1,681-script computational-provenance-graph audit need.
+- **Changed**: PRDR enforcement deployed. Trigger-phrase discipline established. Session stalled — surfaces provenance-graph audit need.
+
+### Session 81: PRU-ZERO Infrastructure Pass
+- **Question**: Can the v3 ladder be fully closed (a=0, b=0, c=0)?
+- **Answer**: Verdict: **PRU-ZERO** — (a=0, b=0, c=0) across all three audit metrics (a_unregistered, b_untagged, c_unpinned). Full computation/archive SHA-pinned and entity-indexed; every script → gate → verdict → constant → theorem → mechanism edge materialized in the schema. 50+ agent dispatches across 7 researcher types, 11-snapshot append-only PRU trendline JSONL ledger.
+- **Changed**: First session to close v3 ladder fully (PRU=0). Infrastructure-discipline floor for S82+ disciplined dispatch.
+
+---
+
+## Era X: Methodology-Floor (Sessions 82-88) — ~40 distinct closures + ~25 sub-rule landings
+
+> **Era boundary justification**: S82 opens the era. The defining shift is the introduction of the workshop schedule + per-wave WPs + verdict-file dual-SHA closure + plan-freeze PRU/PRDR audit pipeline. Concretely: S82 introduces the substrate-IC corridor classification with K-corridor positivity wall + energy-conservation ceiling, the regulator-dressing FI/RD/MIXED taxonomy (S82 W-3 lizzi×connes), and the completion-verification methodology (S82 W-4 kitaev×sagan). Subsequent S86 hardens these into permanent rule files (rule-file-v3 union, cross-pillar-bridge-anatomy, joint-theorem-promotion, registry-landing); S87 advances algebra-axis orthogonality K-counter to MANDATORY at K=3; S88 advances cross-pillar-bridge-anatomy K-counter to MANDATORY at K=3. The era splits into sub-eras X-a (foundation S82-S85) and X-b (mature S86-S88) at the rule-file-v3 landing (S86 W0a-1, 2026-04-26).
+
+### Era X-a: Methodology-Foundation (Sessions 82-85)
+
+#### Session 82: Substrate-IC Corridor + Workshop-Schedule Format
+- **Question**: Does the substrate-IC corridor with K-corridor walls organize the A_s phenomenology?
+- **Answer**: Substrate-IC corridor introduced as 5.55-OOM phenomenology; **workshop-schedule format introduced** — the canonical S82+ pattern of workshop schedule + per-wave WPs + verdict-file dual-SHA closure + plan-freeze PRU/PRDR audit pipeline. K_substrate = 2.035 places A_s at 6.72e-9 = 3.20× A_s^Planck inside the corridor [S_IC^GGE ≥ 1, S_IC^cap = 3.556e+5] bounded below by positivity (W2-4) and above by energy-conservation equipartition (W3-6 R-SF-B3). 3He-B inheritance correspondence formalized: substrate post-fold excitation spectrum IS a generalized-Gibbs projection of the Volovik BCS vacuum across three bands. Workshops introduced (W-1 H-tilde divergence chase; W-2 A_s ledger 3PI-vs-slot; W-3 regulator-dressing FI/RD/MIXED taxonomy; W-4 completion-verification methodology). S82/S84 task-complete-lie failure mode documented and mitigated.
+- **Changed**: Workshop-schedule paradigm shift. K-corridor [positivity wall, energy-conservation ceiling] established. Lizzi FI/RD/MIXED 42-row atlas published as §VII.K registry slot. Four-speed provenance pin canonicalized at 0.0258. S82-W2 A_s ledger 3PI-vs-slot adjudication landed.
+
+#### Session 83: K-Corridor 3He-B Correspondence + R4 Reclassification
+- **Question**: Does any cross-class application bring A_s within Planck band?
+- **Answer**: G38 S83-K-MATCHING-5-CONVENTIONS FAIL: K_match_need = 0.6366 unreachable. G39 S83-LEGGETT-BOGOLIUBOV-PARTITION PASS: strict-monotone decreasing R(K) across 6 K values. G40 S83-TAU-GGE-AT-K PASS: 5-OOM tau_GGE separation. R4 FAIL classified as category-error from cross-class application. **Framework amplitude floor A_s_floor = 6.34e-9 = 3.02× Planck is permanent structural-position wall**; not remediable at substrate-IC layer. The only available rescue is dynamics-layer F_amp suppression. S83-G47 sin²θ_W ACCOMMODATION-FLAGGED at μ_BC = 188.44 GeV (honest signal; ZFP not achieved). S83-W2-G24 vdd §VI absent → Cartan-flat R\|_{Cartan⁴} = 0.
+- **Changed**: A_s amplitude floor at 3.02× Planck = permanent wall at substrate-IC layer. Honest accommodation flag for sin²θ_W. Substrate-first canonical-sourcing rule basis identified.
+
+#### Session 84: Rate-Limiter Relocation + Branch-(iv) Retraction
+- **Question**: Where does the A_s rate-limiter live post-S83? Is branch-(iv) (R_JE) a survivor?
+- **Answer**: Wave-1 jointly executes both sides of post-S83 A_s rate-limiter map: F_supp_max = 1.043783 vs 1.10 threshold (FAIL by 56 ppt, structural not numerical); H-tilde [4.599e-3, 4.830e-3] PASS-1.05 window opens at 0.8901% log-measure inside [0.80%, 1.05%] band. **The A_s closure problem is moved, not solved** — rate-limiter relocates from dynamics to baseline; **TD/LI divergence chase** (TD-canonical 5.9076e-3 vs LI-endpoint 2.464e-5, 4.56-OOM gap) becomes the rate-limiting open question. **Branch-(iv) RETRACTED at SV2** (R_JE drift +129% by L=8; CC-v Cauchy-decay non-monotone); reversion protocol triggered, w_0 canonical declared UNSPECIFIED pending S85 re-audit. alpha_s = n_s² − 1 = -0.069 formally pre-registered as event-driven framework-binding prediction (9.62σ from Planck; 34.48σ vs CMB-S4 null) with 6 lockouts. 7 working papers, 17 syntheses, R_842 DESI rectangle pre-registered. S84-W4 falsifier-rigor-registry (8-column unified schema). S84-DR3-RESPONSE-PROTOCOL LANDED.
+- **Changed**: A_s rate-limiter moved (not solved); TD/LI divergence chase = new rate-limiting open question. Branch-(iv) retracted; w_0 UNSPECIFIED pending S85. Falsifier-rigor-registry replaces ad-hoc falsifier list.
+
+#### Session 85: Permanent §VII Theorem Promotions + AMRI Migration
+- **Question**: Can carry-forward syntheses + Mellin-cone toolkit ratify multiple permanent theorems?
+- **Answer**: 24 carry-forward items ratified by ≥2 S84 reviewers; 14 wave WPs, 42 verdict lines. **Dual-SHA schema (audit_sha256 + content_sha256) becomes mandatory** (S84+ schema). Permanent registrations: §VII.P Borel-Summability Floor Theorem (W9-1, S_inst/Borel_thr = 5.58e+4); §VII.Q F_amp^3PI Factorization-Invariance Theorem (W9-2, machine-epsilon identity 2.22e-16 across 5-regulator atlas); §VII.W tau_fold = 0.190 promoted to van-Hove-cusp non-stationarity uniqueness (W10-3). beta_s CMB-S4 pre-registration: 60.5σ discriminator (W0-1 PASS). 16/16 Mellin-balance closures. **PRU-Class-8 taxonomy v2 sub-diff B (machinery-feasibility audit)** lands. S85-W4-AMRI-MIGRATION promotes 6-channel LRD watchlist + closed-GW-channels + falsifier-watchlist from agent memory to sessions/framework/registry/. S85-W2-7 PARITY-BLINDNESS theorem (even Seeley-DeWitt regulator-weighted Mellin moments parity-blind to HP^1 content). S85-W12-4 CANON-REGULATOR-PIN-DISCIPLINE (a_n^{regulator} tagging). α_s canonical re-pinned RUNNING-NS-63 from -0.069 to +0.00117 (was 6.0σ from CMB-S4 LCDM, now +2.70σ).
+- **Changed**: Dual-SHA mandatory. PRU Class 8.x taxonomy hardened. AMRI cleanup completes; agent-memory-registry-inversion closed across 4 channels. α_s canonical sharpens prediction by 2.2× (6.0σ → 2.70σ vs CMB-S4 LCDM). Even Seeley-DeWitt parity-blindness theorem (W17 candidate wall).
+
+### Era X-b: Methodology-Mature (Sessions 86-88)
+
+#### Session 86: Rule-File-v3 Union Landing
+- **Question**: Can S82-S85 methodology corrections be hardened into permanent rule files?
+- **Answer**: Rule-file-v3 union landing — methodology-foundation → methodology-mature transition. 15+ workshop closures across W0a-W15. **Permanent rule-files installed**: cross-pillar-bridge-anatomy.md (W-5 RULE-1+2+3, 5-IS-not-IN anatomy + 3-level confidence ladder); joint-theorem-promotion.md (W-9 RULE-1, 4-stage Stage-0..Stage-3 pathway with cross-axis Stage-2 PASS-AND); registry-landing.md (W-3 RULE-1, SOURCE-DOUBLE-CITE-CO-PRIMARY for sequential V+C chains); inheritance-falsifier-protocol.md (W-5 RULE-3, Class A kernel-signature + Class B cohomology-asymmetry tests for rank-≥2 ker(ι_*)); methodology-wave-allowlist.md (W-13 RULE-3, append-only orchestrator-only-edit M4 substrate). **§VII.W first cross-pillar bridge theorem** registered (Pillar III↔IV; HKR map; 0.0095% F_4 strict at L_max=10; canonical 5-anatomy + 3-level ladder calibration). §VII.AB α_s 11.31σ tension + S50-S51 sign-lock 7-row theorem family (mack+volovik+connes co-signed). Rule-file-v3 condenses S78 Class-1..7 PROHIBITED_ACTIONS + Class-8 PRU 8.0-8.3 sub-classes. **§VII.U.1 Mellin-Dirichlet identity** PASS rel_diff = 0e+00 at L_max=12. **§VII.U.6 T5 Mellin-Strip / Convergence-Cone Theorem** PASS max_rel_err = 8.066e-28. Layer-functor F PAIR-VERIFIED at S86 R3 (substrate ↔ methodology). S86-W12-4 CANON-REGULATOR-DISCIPLINE-DR3-CLASS lockdown.
+- **Changed**: Rule-file-v3 landed (5 permanent rule files). First registered cross-pillar bridge (§VII.W). FINITE-VECTOR + INFINITE-VECTOR Mellin-class identities. Layer-functor F PAIR-VERIFIED.
+
+#### Session 87: Algebra-Axis K=3 MANDATORY Promotion
+- **Question**: Can the algebra-axis orthogonality K-counter advance to K=3 MANDATORY?
+- **Answer**: 81 carry-forward computations from S86 W-1..W-13 syntheses + 2 Path-B precursor items, partitioned across 17 reviewer-origin-specialty waves. §VII.U.6 Mellin-Strip / Convergence-Cone Theorem strengthened with 5-element IS-not-IN anatomy + 3-level ladder (W1a-1 PASS, max_rel_err 8.07e-28 at L_max=10). **Algebra-axis orthogonality K-counter advanced K=2 → K=3 MANDATORY at S87 W-2 R3 close** (algebra-INVARIANT vs algebra-DEPENDENT functional families STRUCTURALLY ORTHOGONAL; lizzi PRIMARY + connes axiomatic + mack observational discrimination). Class 8.3 publication-precision pre-registration MANDATORY at K=4 (W1c-8 n_s + W2-4 cluster-span + W8-2 max_pair_ratio_A_5 + W8-8 gv_canonical_difference). Pole-Scope sub-clause MANDATORY at K=4 (W7-1 IC-axis s=−1 + W7-3 integer-graded n_c at s=4 + W9b-2 |ρ_S(s=4)|=1.000). §VII.AF.1 Pillar III↔IV bridge LANDED at PASS Level-3=0.0095% < Level-2 envelope 0.10%. §VII.AG.1 T7↔S67 cyclic-fold isomorphism LANDED STAGE-1-CANDIDATE. §VII.AH joint F_2-class Path-(c) theorem LANDED STAGE-1-CANDIDATE Corrigendum-2. Methodology-wave-allowlist accumulates W9a-1, W9a-2, W11-meta-1..3.
+- **Changed**: Algebra-axis orthogonality K=3 MANDATORY (W12 candidate wall). Class 8.3 publication-precision MANDATORY at K=4. First two cross-pillar-bridge calibration corpus instances (§VII.AF.1 LANDED, §VII.AG.1 STAGE-1-CANDIDATE).
+
+#### Session 88: Cross-Pillar-Bridge K=3 MANDATORY + Methodology-Mature K=3 Wave
+- **Question**: Can the cross-pillar-bridge K-counter advance to K=3 MANDATORY? Do additional structural disciplines reach K=3?
+- **Answer**: Compute carry-forward execution + workshop schedule + methodology-mature K=3 promotions; 24 wave WPs spanning W1a..W13. **Cross-pillar-bridge-anatomy K-counter advanced K=2 → K=3 MANDATORY at S88 W4a-17 close** (calibration #3 §VII.W-3.LAB STAGE-1-CANDIDATE). Calibration corpus formally satisfies Hybrid Independence Test (i ∨ ii ∨ iii) ∧ iv across 3 instances spanning Pillar III↔IV + Pillar V↔IV + lab-side. §VII.U.2 four-corner classification LANDED STAGE-1-CANDIDATE; K=3 MANDATORY enforcement at registry layer. **§VII.AJ.OP-PROJ + §VII.AJ.STATE-PROJ orthogonal companion split** closes the W11-5 (a−b)/(a+b) vs (c−2d)/d structural shape mismatch. **§VII.AM Universal Lock Condition STAGE-1** (3-clause: pixelation lock / effacement lock / Page-time lock; second STAGE-1 instance for joint-theorem-promotion 4-stage). §VII.AE moduli-deformation τ-asymmetry (Level-2 substrate-IS); §VII.AD Δ_0 LOCALIZATION FORMULA (Level-1 substrate-IS calibration #1); §VII.AF.1.OP-PROJ suffix-retrofit. §VII.K-PROP-HK-2-WINDOWED-PV-AS-SD-REFINEMENT. **Three K=3+ MANDATORY methodology promotions**: Reading-A naming hygiene (W8-92, K=3); SCHEMATIC level pin (W7b-83, K=4); Pole-Scope (W7a-72, K=4). Mechanical-closure-discipline layer-separability carve-out (W8-89). Substrate-input-orthogonality clause (W7c-167 K=1). PRU 8.4/8.5/8.6 sub-classes opened (advisory K=1). **Layer-functor F triplet-verified** via synthetic SHA-hardcoding-attack triggering v3 ladder sig_5. Methodology-wave-allowlist 51-row append. 181 verdict-line dispatches: 101 PASS, 51 FAIL, 29 INFO.
+- **Changed**: Cross-pillar-bridge K=3 MANDATORY (W14 candidate wall). Reading-A naming hygiene K=3 MANDATORY (W15 candidate wall). SCHEMATIC level pin K=4 MANDATORY. Pole-Scope K=4 MANDATORY. Layer-functor F TRIPLET-VERIFIED (substrate ↔ methodology ↔ audit). Universal Lock Condition STAGE-1 unifies BH-horizon + fold-effacement + Page-time. PRU sub-class taxonomy extends to 8.4/8.5/8.6 advisory.
+
+---
+
 ## Probability Trajectory
 
 | Session | Event | Panel | Sagan |
@@ -306,13 +478,35 @@
 | S42 | Geometric LCDM, n_s crisis | 18% | — |
 | S44 | Sakharov G_N, CDM by construction | 23% | — |
 | S49-S51 | alpha_s identity, SA mixing conditional | TBD | — |
+| S61 | NCG 7/7, m_H=134 GeV, substrate stable, GGE 9/9 | TBD | — |
+| S62 | n_s=0.9567 (1.9sigma), filter-independent, CC q-theory CLOSED | TBD | — |
+| S63 | 17 theorems, 9+ closures, r=16eps INAPPLICABLE, fabric-space inversion | MIXED | — |
+| S64 | R-monotonicity, r=0.033 PASS, CC-COMBO FAIL, 8 closures | MIXED | — |
+| S65 | CC budget 102.7 OOM, BCS n_s +0.0206, B/F=0 permanent, 8 CC closures | NEUTRAL | — |
+| S66 | Volovik CC PASS 0.01 OOM, eps_H sign reversal, Leggett DM 0.6% | UP (net) | — |
+| S67 | Spectral functional sole-survivor (Chamseddine-Connes sqrt); Leggett DM lock-down; 8 permanent theorems | UP-tick (structural) | TBD (frozen since S66) |
+| S70 | LEGGETT-MOMENT mass anchor; c_s²=0 algebraic distinction from inflation | UP-tick (structural distinction) | TBD |
+| S74 | Three-route CC convergence on chi_2=0.74 dimensionless; DILUTION-CC PASS scheme-locked | UP (structural) but PASS scheme-locked | TBD |
+| S75 | f_conv closes A_s gap to 0.12 OOM (zero free parameters); BCS-CW n_s=0.9595 + isocurvature n_s=0.9649 | UP (observational + structural) | TBD |
+| S77 | A_s problem inverts: suppression not enhancement; bare spectral action no tau equilibrium | PARADIGM-SHIFT (no net direction) | TBD |
+| S78-S81 | Methodology-discipline pivot; PRU-ZERO infrastructure floor | FLAT (process improvement) | TBD |
+| S82 | Workshop-schedule format; substrate-IC corridor; FI/RD/MIXED 42-row atlas | UP (structural infrastructure) | TBD |
+| S83 | A_s_floor = 6.34e-9 = 3.02× Planck permanent structural-position wall at substrate-IC layer | DOWN-tick (substrate-IC layer wall) | TBD |
+| S84 | Branch-(iv) retracted; w_0 UNSPECIFIED pending S85; α_s pre-registered as event-driven framework-binding (9.62σ) | NEUTRAL (rate-limiter relocates) | TBD |
+| S85 | Dual-SHA mandatory; 3 permanent §VII theorems (P/Q/W); AMRI cleanup; α_s re-pin sharpens 6.0σ → 2.70σ | UP (structural + observational sharpening) | TBD |
+| S86 | Rule-file-v3 union; 5 permanent rule files; FIRST cross-pillar bridge (§VII.W); §VII.U.1 + §VII.U.6 Mellin classes | UP (cross-pillar bridge canonical) | TBD |
+| S87 | Algebra-axis orthogonality K=3 MANDATORY; Class 8.3 publication-precision K=4 MANDATORY; §VII.AF.1 LANDED, §VII.AG.1 STAGE-1 | UP (structural-orthogonality wall canonicalized) | TBD |
+| S88 | Cross-pillar-bridge K=3 MANDATORY; Reading-A naming K=3 MANDATORY; §VII.U.2 four-corner LANDED; §VII.AM Universal Lock STAGE-1; layer-functor F TRIPLET-VERIFIED | UP (3 K=3+ MANDATORY methodology promotions) | TBD |
+
+**Note**: per `feedback_framework-hygiene.md`, the EVOI / probability assessment has been formally frozen since S66 (no Sagan adjudication S67-S88). Directional language ("UP-tick" / "DOWN-tick" / "FLAT" / "PARADIGM-SHIFT") above is descriptive of structural-evidence movement, NOT numerical probability assignment. The atlas-06 packet recommends a S89 Sagan workshop to formally re-anchor the trajectory against post-S66 evidence weighting (Mack-cosmic-bridge + sagan-empiricist co-dispatch).
 
 ---
 
 ## Cumulative Statistics
 
-- **Proven at machine epsilon**: KO-dim=6, SM quantum numbers, [J,D_K]=0, g1/g2=e^{-2tau}, 67/67 Baptista checks, block-diagonal theorem, BDI class, Pfaffian sgn=-1
-- **Major closures (selected)**: V_tree (S17), CW (S18), Casimir (S19-S20), SD balance (S20), BCS at mu=0 (S23), V_spec monotone (S24), spectral action all orders (S26), rolling quintessence (S22d), Friedmann-BCS (S39), HESS full moduli (S40), alpha_s identity (S50)
+- **Proven at machine epsilon**: KO-dim=6, SM quantum numbers, [J,D_K]=0, g1/g2=e^{-2tau}, 67/67 Baptista checks, block-diagonal theorem, BDI class, Pfaffian sgn=-1, CF-9 identity (Berry=NCG=KK), Cauchy-Schwarz spectral moment bound, block-diagonal for ALL compact Lie groups (S61), R-monotonicity (S64), B/F asymmetry=0 (S65), **Frozen Spectrum Theorem (S79 C12, 10^{-113} through fold)**, **Mellin-Dirichlet identity §VII.U.1 (S86, rel_diff = 0e+00 at L_max=12 across 31.9M weighted eigenvalue contributions)**, **Mellin-Strip / Convergence-Cone §VII.U.6 (S86, max_rel_err 8.066e-28)**, **§VII.AJ.partition-stability 4-stratum (2,4,8,6) (S87)**, **§VII.AD Δ_0 localization formula (S88)**, **algebra-axis orthogonality K=3 MANDATORY (S87 W-2)**, **§VII.AF.1.OP-PROJ Pillar III↔IV bridge calibration (S87, 0.0095% F_4 strict at L_max=10; 10× inside L^{-3} envelope)**, **cross-pillar-bridge anatomy K=3 MANDATORY (S88 W4a-17)**
+- **Major closures (selected, S17-S88)**: V_tree (S17), CW (S18), Casimir (S19-S20), SD balance (S20), BCS at mu=0 (S23), V_spec monotone (S24), spectral action all orders (S26), rolling quintessence (S22d), Friedmann-BCS (S39), HESS full moduli (S40), alpha_s identity (S50), Berry CP (S61 structural), PW spectral route (S61 truncation wall), CC q-theory monotonicity (S62 PERMANENT), BCS sigma stabilization (S62), mixed B-F q-theory T9 (S63), IDG nonlocality T11 (S63), CC Path C (S64), CC Gaudin (S64), B/F asymmetry (S65), Mott transition (S65), theta-vacuum (S65), **anomaly family for n_s (S67 T2 — anomaly family excluded structurally)**, **off-Jensen 5D moduli (S76 W2-J, 35D restoring potential — Mechanism D substantially closed)**, **UV-regulator conflation closure (S75-G3-ZETA-NOT-PHYSICAL, basis for W13 candidate wall)**, **even Seeley-DeWitt parity-blindness (S85 W2-7)**, **bare spectral action no tau equilibrium (S77)**, **WEINBERG-72 / MODULAR-CHIRP-72 / G2-CONSTANCY-72 residual CC channels (S72)**, **PARAMETRIC-GGE-70 (no parametric resonance reheating, three independent obstructions)**
 - **Unconditional chain**: I-1 -> RPA -> Turing -> WALL -> BCS (5/5 PASS, S35)
-- **Paradigm shifts**: Perturbative exhaustion (S20), BCS as only route (S22), Instanton gas (S37), Ordered Veil (S38), Fabric (S41), Geometric LCDM (S42), O-Z propagator (S47-S49), SA-Goldstone mixing (S51)
-- **Open**: K_pivot scale mapping (S52 master gate), CC 120-order gap, n_s from multi-correlator mixing
+- **Paradigm shifts**: Perturbative exhaustion (S20), BCS as only route (S22), Instanton gas (S37), Ordered Veil (S38), Fabric (S41), Geometric LCDM (S42), O-Z propagator (S47-S49), SA-Goldstone mixing (S51), Hubble SA n_s recovery (S62), Filter-independence theorem (S62), Volovik CC reframe (S66), Spectral functional crisis (S66), **A_s problem inverts to suppression (S77)**, **Methodology-discipline pivot (S78)**, **PRU-ZERO infrastructure floor (S81)**, **Workshop-schedule format introduced (S82)**, **A_s_floor = 3.02× Planck as permanent substrate-IC structural wall (S83)**, **Rule-file-v3 union landing (S86)**, **First cross-pillar bridge §VII.W (S86)**, **Algebra-axis orthogonality MANDATORY at K=3 (S87)**, **Cross-pillar-bridge anatomy MANDATORY at K=3 (S88)**, **Layer-functor F TRIPLET-VERIFIED (S88)**, **3-clause Universal Lock Condition unifying BH-horizon + fold-effacement + Page-time (S88)**
+- **Observational predictions (S88-current)**: n_s = 0.9567-0.9649 (1.3-1.9 sigma, scheme-dependent across the surviving sqrt cutoff family); m_H = 127.5-134 GeV (Aitken/tree, 1.9-7% from observed); sigma_8 = 0.799; Omega_DM h² = 0.120 (0.6%); r = 0.024-0.033; CC Scenario B 0.01 OOM (DILUTION-CC PASS, scheme-locked to chi_2 route post-S74); α_s framework re-pinned to +0.00117 (S85 RUNNING-NS-63; current LCDM tension +2.70σ at CMB-S4, was 6.0σ pre-S85); LEGGETT-MOMENT mass anchor Mass_LeggettDM/Δ_BCS = 11.97 (S70); 9-row 3He-B lab-falsifier suite (LAB-FALSIFIER-A 2026-2031 horizon); LiteBIRD n_T = -3.024e-3 STRUCTURAL-FLOOR pre-registered (S85); LISA Companion-null Ω_GW = 8.299e-58 at 2035; DESI DR3 R_842 binding-event-pending (2027 horizon); MUSR cocycle ratio 7.3250 substrate-derived (S86 W-5)
+- **Open (S88-current)**: Spectral functional selection (FUNCTIONAL-SELECT-67, OPEN since S67 — 22-session horizon-stagnation flagged); BBN constraint on Volovik (BBN-VOLOVIK-67, partial PASS at S72; xcorr cross-channel OPEN since S85 W4); transit power spectrum (TRANSIT-PS-67); LEGGETT-GRAV-DECAY-67 (Γ_grav < H_0 survival predicate); TD/LI H̃-divergence (S82 W-1, 4.56-OOM gap on same observable); Stage-2 cross-axis verify for §VII.W-3.LAB STAGE-1-CANDIDATE (S88 W4a-17 carry-forward); Stage-2 verify for §VII.AM Universal Lock Condition (S88 W1b2-65); §VII.AJ.STATE-PROJ NEEDS-COMPUTATION pending S89 landau-path BCS-physics-grounded derivation; W11 §VII.AT slot allocation for Volovik CC Tracking (atlas-05 W11 promotion gap); D3 audit knowledge.db round-trip gap (~37/66 §VII slots missing direct slot-card entries; /weave --update + entity-extractor refinement queued); S52-S60 atlas-01 backfill (pre-existing gap, separate from S67-S88 uplift); W13-149 wave-classification rule validation NOT-STARTED; W13-150 MCP pre-check hook implementation NOT-STARTED; Sagan workshop S89 to re-anchor probability trajectory (frozen since S66 per `feedback_framework-hygiene.md`); PRU 8.4/8.5/8.6 sub-class K=1→K=3 promotion (advisory pending corpus accumulation)

@@ -1,0 +1,71 @@
+{
+  "gate_id": "S90-FWD-C2-SUBSTRATE-IS-DISAMBIGUATION",
+  "scheme": "FWD-C2-anatomy-disambiguation",
+  "convention": "substrate-IS-canonical-K-window-log-derivative",
+  "L_max": "10",
+  "verdict_value_summary": "disambiguation_complete; element1=K-window-log-derivative; bridge_BEFORE=Pillar-II\u2194Pillar-V; bridge_AFTER=Pillar-III-IV\u2194Pillar-V; candidate_A_type=Type-S; candidate_B_type=Type-F; level=Level-1-single-tau-slice-at-tau-fold=0.19; hit_predicate_post_disambig=PASS-via-ii-and-iii-disjunction; k_counter_unchanged=True; 6_clauses_pass=True; supersedes=2eeb881b16b66298f87e486debd7e91d2d070c1ffe9bdb41a7bf54e51c623db5",
+  "audit_sha256": "8b4bfdee600fceb771caf30fe0c8ce99a1c4c210264a9e738edf67e12d328b58",
+  "content_sha256": "51ba3c12d16aaab8976c70f49ebb70161a6d0d92ac0aa1c75604253934fffdc4",
+  "supersedes_audit_sha_full_64": "2eeb881b16b66298f87e486debd7e91d2d070c1ffe9bdb41a7bf54e51c623db5",
+  "supersedes_content_sha_full_64": "03d68ddc7fac5045a07912030b537770bc093cf047502a6213c059bff73f1aa1",
+  "supersedes_gate_id_prior": "S89-FWD-C2-OBSERVABLE-DISAMBIGUATION",
+  "candidate_A": {
+    "name": "Mellin-Barnes residue (Pillar II)",
+    "source_line_in_W5_4": 898,
+    "type": "Type-S",
+    "admissibility": "FAIL",
+    "verdict": "INADMISSIBLE_AS_CANONICAL_ELEMENT_1",
+    "failure_reason": "Element-1 anatomy element 1 specifies 'finite-L spectral-triple observable on (A^{<=L}, H^{<=L}, D^{<=L})'; Mellin-Barnes residue is on the Mellin-cone state space, NOT a single-summand-projection trace on the finite-L algebra",
+    "demoted_to": "derived-proxy (laboratory-IN side under bridge map)",
+    "internally_consistent": false,
+    "internal_inconsistency_reason": "Element-1 names Mellin-Barnes residue (Type-S) while Element-5 empirical anchor was computed via K-window log-derivative (Type-F) \u2014 the same workingpaper section specifies inconsistent observables across its anatomy elements; the candidate is admissible as a derived-proxy ONLY, not as canonical Element-1"
+  },
+  "candidate_B": {
+    "name": "K-window log-derivative (BdG sub-algebra M_2(C) \u2282 A_K)",
+    "source_line_in_W5_4": 1011,
+    "type": "Type-F",
+    "admissibility": "PASS",
+    "verdict": "ADMISSIBLE_AS_CANONICAL_ELEMENT_1",
+    "pass_reason": "Element 1 of the 5-anatomy specifies a finite-L spectral-triple observable on (A^{<=L}, H^{<=L}, D^{<=L}); K-window log-derivative on M_2(\u2102) sub-algebra IS such an observable at the operator-algebra layer",
+    "internally_consistent": true
+  },
+  "bridge_classification": {
+    "BEFORE": "Pillar II \u2194 Pillar V",
+    "AFTER": "Pillar III/IV \u2194 Pillar V",
+    "AFTER_substrate_IS_pillar": "Pillar III/IV (BdG-spectral-triple K-window log-derivative on M_2(\u2102) \u2282 A_K at the substrate's operator-algebra layer)",
+    "AFTER_laboratory_IN_pillar": "Pillar V (BdG spectral triple continuum)",
+    "BEFORE_status_per_W6_Fork_B": "MIS-SPECIFIED",
+    "AFTER_status_per_W6_Fork_B": "CANONICAL",
+    "rationale": "5-anatomy IS-not-IN audit (Element 1): Candidate A (Mellin-Barnes) FAILS \u2014 Type-S state-pair functional NOT on finite-L spectral triple algebra; Candidate B (K-window log-derivative) PASSES \u2014 Type-F single-summand-projection trace on M_2(\u2102) \u2282 A_K. Per layer-separability carve-out (SUGGESTION K=1 since S88 W8-89), Type-F is the canonical Element-1 admissibility class; Type-S is admissible ONLY as derived-proxy."
+  },
+  "vii_av_registry_anchor_framing_update_note": "\u00a7VII.AV registry-anchor framing routes to mack-cosmic-bridge sole-writer at S90 \u00a7W8-5 (S90-VII-AV-VII-AU-DEFERRED-PENDING-MACK-LANDING). Per W-6 \u00a7EMERGENCE #3 line 1459, \u00a7VII.AV may be re-anchored as FWD-C2.bdg (substrate-IS K-window log-derivative on BdG sub-algebra; closer to FWD-C3 substrate cocycle \u2194 3He-B/3He-A spec per cross-pillar-bridge-corpus.md \u00a74) OR a re-spec of FWD-C2 with the substrate-IS observable updated from Mellin-Barnes residue to K-window log-derivative. The \u00a7VII.AV registry text MUST cite the K-window log-derivative as substrate-IS Element-1; the Mellin-Barnes residue may be cited as a derived-proxy at the laboratory-IN side under bridge map composition.",
+  "substrate_level_tag": "Level-1 single-\u03c4-slice substrate-IS at \u03c4_fold = 0.19; the K-window log-derivative IS intrinsic to the spectral triple (A_K, H_K, D_K(\u03c4_fold)) at the fixed \u03c4-slice; moduli-deformation behavior (Level 2) is a separate question per phononic-framing.md \u00a7'Single-\u03c4-slice vs moduli-deformation substrate-IS levels' MANDATORY-K=2 since S88 W-7 V.4",
+  "hit_re_evaluation": {
+    "comparator_entry": "\u00a7VII.AF.1.OP-PROJ (Pillar III \u2194 Pillar IV; HKR; L^{-3} d=4)",
+    "clause_i_pre_disambig": "TRUE (Pillar II \u2260 Pillar III)",
+    "clause_i_post_disambig": "STRUCTURALLY INTERMEDIATE \u2014 substrate-IS Pillar III/IV overlaps with \u00a7VII.AF.1.OP-PROJ substrate-IS Pillar III; the BdG sub-algebra layer (Pillar III/IV operator-algebra) is structurally distinct from the HP^1 Hochschild cocycle layer (Pillar III cohomology) at the cocycle-class layer but shares the substrate-IS pillar label at the family level. Per W-6 \u00a7IV.3 row 7, the canonical reading is that the disambiguated FWD-C2 is a structurally-new bridge candidate at the Pillar III/IV \u2194 Pillar V family \u2014 structurally distinct from FWD-C1 (Pillar I \u2194 Pillar II) AND from \u00a7VII.AF.1.OP-PROJ (Pillar III \u2194 Pillar IV) at the laboratory-IN pillar (Pillar V \u2260 Pillar IV).",
+    "clause_ii_post_disambig": "TRUE (Pillar V \u2260 Pillar IV; preserved through disambiguation)",
+    "clause_iii_post_disambig": "TRUE (Connes-Karoubi \u2260 HKR; preserved through disambiguation)",
+    "clause_iv_post_disambig": "TRUE (per-observable Level-2 envelope extraction at K-window log-derivative cocycle class is distinct from W-5 \u00a7VII.AF.1.OP-PROJ HKR-image envelope per W-6 \u00a7DISSENT #1 + EMERGENCE #2)",
+    "predicate_post_disambig": "(STRUCTURALLY-INTERMEDIATE \u2228 TRUE \u2228 TRUE) \u2227 TRUE = TRUE via disjunction clauses (ii) + (iii). HIT PASSES post-disambiguation; the disambiguated FWD-C2 remains a structurally-independent calibration instance toward HIT K-counter advancement (currently K=1 SUGGESTION; K=2 path preserved per W-6 EMERGENCE #2 line 1444).",
+    "k_counter_status_unchanged_by_disambiguation": true,
+    "k_counter_advancement_path": "K=1 \u2192 K=2 on CF-W5-3 (CF-65) full BdG re-derivation PASS in S90 \u00a7W8-3 + this disambiguation gate's pre-condition resolution; K=2 \u2192 K=3 with dual PASS of CF-W5-3 + CF-W5-6-EXTENSION (CF-66) per W-6 \u00a7EMERGENCE #2 single-dispatch K-counter advancement path"
+  },
+  "pass_clauses": {
+    "i_element_1_disambig_complete_with_K_window_selected": true,
+    "ii_bridge_class_updated_to_Pillar_III_IV_to_Pillar_V": true,
+    "iii_VII_AV_registry_anchor_framing_update_emitted_for_mack": true,
+    "iv_HIT_substitution_chain_re_evaluated": true,
+    "v_SUPERSEDES_tagged_corrective_canonical_line_planned": true,
+    "vi_dual_sha_closure_complete": true
+  },
+  "composite_pass": true,
+  "plan_reference": "sessions/session-plan/session-90-plan-w8.md \u00a7W8-4 (CF-62)",
+  "rule_anchors": [
+    ".claude/rules/cross-pillar-bridge-anatomy.md \u00a7'IS-not-IN Anatomy (5 elements)'",
+    ".claude/rules/mechanical-closure-discipline.md \u00a7'Layer-separability carve-out (admissible-with-conditions)'",
+    ".claude/rules/v3-closure-recovery.md \u00a7'Stage 1: Automatic re-dispatch' sig_5",
+    ".claude/rules/gate-verdicts.md \u00a7'Option A \u2014 sig_5 remediation pathway under absolute verdict permanence'",
+    ".claude/rules/phononic-framing.md \u00a7'Single-\u03c4-slice vs moduli-deformation substrate-IS levels' MANDATORY-K=2"
+  ]
+}

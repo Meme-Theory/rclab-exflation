@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 133,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1321",
+      "anchor_type": "data_provenance",
+      "name": "signed_bf_log",
+      "script_path": "session-73/s73b_signed_bf_log.py",
+      "session": "s73b",
+      "inputs": "",
+      "outputs": "session-73/s73b_signed_bf_log.npz, session-73/s73b_signed_bf_log.png",
+      "source_file": "computations/session-73/s73b_signed_bf_log.py",
+      "source_context_30_lines": "  709: axes[2].semilogy(taus_plot, ac_plot, 'ko-', markersize=6)\n  710: axes[2].set_xlabel('tau')\n  711: axes[2].set_ylabel('max ||{gamma_9, D_K}||')\n  712: axes[2].set_title('Chirality Anticommutator Error')\n  713: axes[2].axhline(1e-13, color='green', linewidth=0.5, linestyle='--', label='machine eps')\n  714: axes[2].legend(fontsize=8)\n  715: \n  716: plt.tight_layout()\n  717: plt.savefig('s73b_signed_bf_log.png', dpi=150)\n  718: print(\"\\nPlot saved to s73b_signed_bf_log.png\")\n  719: \n  720: # =============================================================================\n  721: # SAVE DATA\n  722: # =============================================================================\n  723: save_data = {\n  724:     'tau_fold': tau_fold,\n  725:     'tau_grid': np.array(tau_grid),"
+    },
+    {
+      "anchor_id": "prov_1322",
+      "anchor_type": "data_provenance",
+      "name": "six_sequence",
+      "script_path": "session-73/s73b_six_sequence.py",
+      "session": "s73b",
+      "inputs": "",
+      "outputs": "session-73/s73b_six_sequence.npz, session-73/s73b_six_sequence.png",
+      "source_file": "computations/session-73/s73b_six_sequence.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s73b_six_sequence.py -- SIX-SEQUENCE-73B\n    4: Six-Sequence Convergence Test (CF13, deferred since S47)\n    5: \n    6: STRUCTURAL CONTEXT\n    7: ------------------\n    8: CF13 requires that six independent numerical sequences derived from D_K\n    9: eigenvalue data all converge as L_max increases:\n   10: \n   11:   1. a_2/a_0 ratio vs L_max"
+    },
+    {
+      "anchor_id": "prov_1323",
+      "anchor_type": "data_provenance",
+      "name": "three_phonon",
+      "script_path": "session-73/s73b_three_phonon.py",
+      "session": "s73b",
+      "inputs": "",
+      "outputs": "session-73/s73b_three_phonon.npz, session-73/s73b_three_phonon.png",
+      "source_file": "computations/session-73/s73b_three_phonon.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s73b_three_phonon.py -- THREE-PHONON-73B: Beliaev Vertex B2 -> B1 + B1\n    4: =======================================================================\n    5: \n    6: Gate: THREE-PHONON-73B\n    7:   PASS: Gamma/H(fold) > 0.1 (three-phonon process operative, friction significant)\n    8:   FAIL: Gamma/H(fold) < 10^{-3} (inoperative)\n    9:   INFO: Otherwise\n   10: \n   11: Physics"
+    },
+    {
+      "anchor_id": "prov_1324",
+      "anchor_type": "data_provenance",
+      "name": "three_phonon_lmax7",
+      "script_path": "session-73/s73b_three_phonon_lmax7.py",
+      "session": "s73b",
+      "inputs": "",
+      "outputs": "session-73/s73b_three_phonon_lmax7.npz, session-73/s73b_three_phonon_lmax7.png",
+      "source_file": "computations/session-73/s73b_three_phonon_lmax7.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s73b_three_phonon_lmax7.py -- THREE-PHONON-L7-FLIP\n    4: ====================================================\n    5: \n    6: Re-run THREE-PHONON-73B at L_max=7 to test whether the W3-E FAIL\n    7: (Gamma/H = 8.17e-7, particle-hole protected) is an L_max=3 truncation\n    8: artifact or a STRUCTURAL property of the (0,0) sector.\n    9: \n   10: Gate: THREE-PHONON-L7-FLIP\n   11:   FLIPPED-PASS:          Gamma/H > 0.1 at L_max=7"
+    },
+    {
+      "anchor_id": "prov_1325",
+      "anchor_type": "data_provenance",
+      "name": "transit_power_spectrum",
+      "script_path": "session-73/s73b_transit_power_spectrum.py",
+      "session": "s73b",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-73/s73b_transit_power_spectrum.py",
+      "source_context_30_lines": "<name 'transit_power_spectrum' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: TRANSIT-PS-73B: Full Bogoliubov Power Spectrum Through Fold\n    4: =============================================================\n    5: \n    6: EVOI P1 (22.5%) — highest-priority computation, frozen since S66.\n    7: \n    8: Computes the full mode-resolved power spectrum P(k) from the Bogoliubov\n    9: transformation through the van Hove fold transit, then extracts alpha_s\n   10: (the running of the spectral tilt) from the numerical P(k).\n   11: \n   12: Physical picture:\n   13:   The modulus tau traverses the fold at tau=0.190 with velocity v_tau=8.27 M_KK\n   14:   (Mach 20.7 relative to BCS sound speed). This is IMPULSIVE — WKB is\n   15:   inapplicable (S70 PERMANENT: gamma > 1 for 93.4% of modes). The slow-roll\n   16:   alpha_s formula is INAPPLICABLE (S64 PERMANENT: N_e=7.75, eta_H=0.96).\n   17: \n   18:   The power spectrum arises from the compound Bogoliubov transformation:\n   19:     S_total = S_exit * S_fold * S_entry\n   20:   where each S_i is a 2x2 SU(1,1) matrix per mode k.\n   21: \n   22:   alpha_s = d^2(ln P) / d(ln k)^2 at the CMB pivot scale.\n   23: \n   24: Method:\n   25:   1. Dense tau grid (2000 points) around fold in [0.150, 0.230]\n   26:   2. 8 BCS modes: omega_k(tau) = sqrt(eps_k(tau)^2 + Delta(tau)^2)\n   27:   3. Bogoliubov ODE integration (Radau, stiff solver) for each mode\n   28:   4. Compound S_total = S_exit * S_fold * S_entry via matrix product\n   29:   5. Power spectrum: P(k) = sum_branches d_{pq}^2 * |beta_k|^2 * (2*omega_k)\n   30:   6. alpha_s from numerical second derivative of ln P vs ln k"
+    },
+    {
+      "anchor_id": "prov_1326",
+      "anchor_type": "data_provenance",
+      "name": "transit_ps_lmax7",
+      "script_path": "session-73/s73b_transit_ps_lmax7.py",
+      "session": "s73b",
+      "inputs": "",
+      "outputs": "session-73/s73b_transit_ps_lmax7.npz, session-73/s73b_transit_ps_lmax7.png",
+      "source_file": "computations/session-73/s73b_transit_ps_lmax7.py",
+      "source_context_30_lines": "  938: # =============================================================================\n  939: # SECTION 12: Save data\n  940: # =============================================================================\n  941: \n  942: print(\"=\" * 78)\n  943: print(\"SECTION 12: Saving Data\")\n  944: print(\"=\" * 78)\n  945: \n  946: outpath = os.path.join(data_dir, 's73b_transit_ps_lmax7.npz')  # (local)\n  947: np.savez(outpath,\n  948:     # Gate metadata\n  949:     gate_name='TRANSIT-PS-L7-FLIP',\n  950:     gate_verdict=gate_verdict,\n  951:     gate_detail=gate_detail,\n  952: \n  953:     # L_max=7 mode structure\n  954:     B1_track_L7=B1_track,"
+    },
+    {
+      "anchor_id": "prov_1327",
+      "anchor_type": "data_provenance",
+      "name": "virtual_particle",
+      "script_path": "session-73/s73b_virtual_particle.py",
+      "session": "s73b",
+      "inputs": "",
+      "outputs": "session-73/s73b_virtual_particle.npz, session-73/s73b_virtual_particle.png",
+      "source_file": "computations/session-73/s73b_virtual_particle.py",
+      "source_context_30_lines": "   66: \n   67: Input files:\n   68:   computations/_shared/canonical_constants.py\n   69:   computations/session-64/s64_local_entangle.npz  (CG(24) adjacency)\n   70:   computations/session-56/s56_gge_fabric.npz      (eps_fold, V_fold, E_J_fold)\n   71:   computations/session-73/s73a_luttinger_supersonic.npz (sector weights)\n   72: \n   73: Output files:\n   74:   computations/session-73/s73b_virtual_particle.npz\n   75:   computations/session-73/s73b_virtual_particle.png\n   76: \n   77: Session: S73B W4-A\n   78: Agent: phonon-first-cosmologist\n   79: \"\"\"\n   80: \n   81: import os\n   82: import sys"
+    },
+    {
+      "anchor_id": "prov_1328",
+      "anchor_type": "data_provenance",
+      "name": "wilson_loop",
+      "script_path": "session-73/s73b_wilson_loop.py",
+      "session": "s73b",
+      "inputs": "",
+      "outputs": "session-73/s73b_wilson_loop.npz, session-73/s73b_wilson_loop.png",
+      "source_file": "computations/session-73/s73b_wilson_loop.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s73b_wilson_loop.py — Non-Abelian Berry Phase Wilson Loop on BCS Ground State\n    4: ==============================================================================\n    5: \n    6: Gate: WILSON-LOOP-73B\n    7:     PASS: pi-phase count in [13, 50] AND |W - I| < 0.01 for contractible loop\n    8:     FAIL: pi-phase count = 0 (trivial topology) or |W - I| > 0.1\n    9:     INFO: otherwise\n   10: \n   11: Physics:"
+    },
+    {
+      "anchor_id": "prov_1329",
+      "anchor_type": "data_provenance",
+      "name": "a_tensor_correction",
+      "script_path": "session-74/s74_a_tensor_correction.py",
+      "session": "s74",
+      "inputs": "s74_spectrum_cache_L9_tau019.npz",
+      "outputs": "session-74/s74_a_tensor_correction.npz, session-74/s74_a_tensor_correction.png",
+      "source_file": "computations/session-74/s74_a_tensor_correction.py",
+      "source_context_30_lines": "  101: \n  102: Inputs\n  103: ------\n  104: - computations/_shared/canonical_constants.py\n  105: - computations/session-74/s74_spectrum_cache_L9_tau019.npz  (W1-C)\n  106: \n  107: Outputs\n  108: -------\n  109: - computations/session-74/s74_a_tensor_correction.npz\n  110: - computations/session-74/s74_a_tensor_correction.png\n  111: - Section W2-P of the working paper\n  112: \"\"\"\n  113: \n  114: from __future__ import annotations\n  115: \n  116: import os\n  117: import sys"
+    },
+    {
+      "anchor_id": "prov_1330",
+      "anchor_type": "data_provenance",
+      "name": "as_budget_closure",
+      "script_path": "session-74/s74_as_budget_closure.py",
+      "session": "s74",
+      "inputs": "s74_transfer_function.npz, s74_as_from_bogoliubov.npz, s74_phase_covariance_3x3.npz, s74_mott_refined_cg24.npz, s74_bkt_...",
+      "outputs": "session-74/s74_as_budget_closure.npz, session-74/s74_as_budget_closure.png",
+      "source_file": "computations/session-74/s74_as_budget_closure.py",
+      "source_context_30_lines": "  371: \n  372: base_ids = np.array([b[0] for b in baseline_rows])\n  373: base_names = np.array([b[1] for b in baseline_rows])\n  374: base_values = np.array([b[2] for b in baseline_rows], dtype=float)\n  375: base_provenance = np.array([b[3] for b in baseline_rows])\n  376: base_statuses = np.array([b[4] for b in baseline_rows])\n  377: \n  378: np.savez(\n  379:     os.path.join(HERE, 's74_as_budget_closure.npz'),\n  380:     gate_name='A-S-BUDGET-CLOSURE-74',\n  381:     gate_verdict=gate_verdict,\n  382:     gate_detail=gate_detail,\n  383:     gate_lo=GATE_LO,\n  384:     gate_hi=GATE_HI,\n  385:     target_dOOM=target_dOOM_closure,\n  386:     # baselines\n  387:     baseline_s73b_OOM=baseline_s73b_OOM,"
+    }
+  ]
+}

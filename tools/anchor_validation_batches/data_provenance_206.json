@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 206,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_2051",
+      "anchor_type": "data_provenance",
+      "name": "w1b_ps_af_recalibration_diagnostic",
+      "script_path": "session-87/s87_w1b_ps_af_recalibration_diagnostic.py",
+      "session": "s87",
+      "inputs": "",
+      "outputs": "session-87/s87_w1b_ps_af_recalibration_diagnostic.npz, session-87/s87_w1b_ps_af_recalibration_diagnostic.png",
+      "source_file": "computations/session-87/s87_w1b_ps_af_recalibration_diagnostic.py",
+      "source_context_30_lines": "  117: SHIFT_NONTRIV = 0.01                                               # (local) 1%\n  118: \n  119: # SM anchor (CF-12 / S86 mellin-cone-repair-or-no-go workshop §966)\n  120: GROWTH_SM_ZETA_ANCHOR = 238.7                                      # (local) M_0^ζ(L=10)/M_0^ζ(L=5) under SM A_F\n  121: M0_SM_L5_ANCHOR = 3.93e5                                           # (local) cited\n  122: M0_SM_L10_ANCHOR = 9.38e7                                          # (local) cited\n  123: \n  124: # Output destinations\n  125: OUT_NPZ = resolve_output(87, 's87_w1b_ps_af_recalibration_diagnostic.npz')\n  126: OUT_PNG = resolve_output(87, 's87_w1b_ps_af_recalibration_diagnostic.png')\n  127: VERDICT_TXT = resolve_output(87, 's87_gate_verdicts.txt')\n  128: SPECTRUM_CACHE = resolve_output(84, 's84_spectrum_cache_L12_tau019.npz')\n  129: \n  130: INPUT_FILES = [\n  131:     resolve_script(None, 'canonical_constants.py'),\n  132:     SPECTRUM_CACHE,\n  133: ]"
+    },
+    {
+      "anchor_id": "prov_2052",
+      "anchor_type": "data_provenance",
+      "name": "w1b_pv_subtraction_recalibration",
+      "script_path": "session-87/s87_w1b_pv_subtraction_recalibration.py",
+      "session": "s87",
+      "inputs": "",
+      "outputs": "session-87/s87_w1b_pv_subtraction_recalibration.npz, session-87/s87_w1b_pv_subtraction_recalibration.png",
+      "source_file": "computations/session-87/s87_w1b_pv_subtraction_recalibration.py",
+      "source_context_30_lines": "  151: # Pre-registered thresholds (frozen at plan-freeze; DO NOT EDIT)\n  152: RATIO_PASS_REL_ERR = 1e-12          # (local) max_rel_err PASS ceiling\n  153: RATIO_INFO_REL_ERR = 1e-9           # (local) max_rel_err INFO ceiling\n  154: ABS_PASS_PV_SD = 1e-6               # (local) |R_PV - R_SD| PASS floor\n  155: ABS_INFO_PV_SD = 1e-9               # (local) |R_PV - R_SD| INFO floor\n  156: SIGN_PRED = +1                      # (local) plan-pinned predicted direction\n  157: \n  158: CACHE_L12 = resolve_output(84, 's84_spectrum_cache_L12_tau019.npz')\n  159: OUT_NPZ = resolve_output(87, 's87_w1b_pv_subtraction_recalibration.npz')\n  160: OUT_PNG = resolve_output(87, 's87_w1b_pv_subtraction_recalibration.png')\n  161: VERDICT_TXT = resolve_output(87, 's87_gate_verdicts.txt')\n  162: \n  163: # Regulator-pin tag in regulator-pin-discipline.md form for any a_n citation:\n  164: REGULATOR_TAG = \"Pauli-Villars\"     # (local) -> a_n^{Pauli-Villars}\n  165: \n  166: # PV mass scale: substrate dimensionless M_KK = 1 by convention (eigenvalues\n  167: # in M_KK units already; canonical_constants.M_KK = 7.428660e+16 GeV is the"
+    },
+    {
+      "anchor_id": "prov_2053",
+      "anchor_type": "data_provenance",
+      "name": "w2_3he_b_alpha_s_paper_audit",
+      "script_path": "session-87/s87_w2_3he_b_alpha_s_paper_audit.py",
+      "session": "s87",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-87/s87_w2_3he_b_alpha_s_paper_audit.py",
+      "source_context_30_lines": "<name 'w2_3he_b_alpha_s_paper_audit' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S87 W2-1 — paper-mode artifact-existence audit for the\n    4: 3He-B inheritance image of the framework's substrate-IS alpha_s prediction.\n    5: \n    6: Gate: S87-LAB-3HE-B-ALPHA-S-EQUIVALENT  ([VERIFY], paper-mode)\n    7: \n    8: Pre-registered threshold (per session-87-plan-w2.md §W2-1.5):\n    9:   PASS  iff  papers/s87-3he-b-alpha-s-equivalent.md exists AND\n   10:              contains the five required sub-sections, each with at\n   11:              least N_LINES_PASS = 15 substantive lines:\n   12:               (i)   \"Framework substrate-IS prediction\"\n   13:               (ii)  \"Inheritance morphism to 3He-B BdG\"\n   14:               (iii) \"Class A + Class B falsifier protocol\"\n   15:               (iv)  \"Predicted Aalto LTL spin-tilt running magnitude\"\n   16:               (v)   \"Falsifier-master-inventory landing rows\"\n   17:   INFO  iff  paper exists with all five sub-sections present, but at\n   18:              least one is below the 15-line substantive-content threshold\n   19:              (stub-form). INFO carries a next-session paper-finish carry-forward.\n   20:   FAIL  iff  paper missing OR one of the five required sub-sections is absent.\n   21: \n   22:   Tolerance rule: ARTIFACT-EXISTENCE-WITH-SUBSTANTIVE-CONTENT (per\n   23:                   .claude/rules/agent-standards.md §\"Completion Verification\"\n   24:                   + .claude/rules/wave-classification.md §M1).\n   25: \n   26: Inputs (SHA-256 dual-pinned at runtime):\n   27:   - papers/s87-3he-b-alpha-s-equivalent.md   (paper artifact under audit)\n   28:   - computations/_shared/canonical_constants.py\n   29:   - sessions/session-plan/session-87-plan-w2.md  (plan source)\n   30:   - .claude/rules/inheritance-falsifier-protocol.md"
+    },
+    {
+      "anchor_id": "prov_2054",
+      "anchor_type": "data_provenance",
+      "name": "w2_5_sr_events_fix_in_session",
+      "script_path": "session-87/s87_w2_5_sr_events_fix_in_session.py",
+      "session": "s87",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-87/s87_w2_5_sr_events_fix_in_session.py",
+      "source_context_30_lines": "<name 'w2_5_sr_events_fix_in_session' not found in source>\n--- file head ---\n    1: \"\"\"S87 W2-5 SR-EVENTS FIX-IN-SESSION\n    2: \n    3: Gate: S87-W2-5-SR-EVENTS-FIX-IN-SESSION\n    4: Owner: gen-physicist (cross-domain workhorse)\n    5: Plan-trigger: closes the two SOURCE-RECONCILIATION carry-forwards from W2-5\n    6:               (S87-A4-A2-PIVOT-STATIONARITY-PIN, mack-cosmic-bridge, 2026-04-28)\n    7:               under the .claude/rules/CLAUDE.md \"No Technical Debt\" rule.\n    8: \n    9: Hypothesis (artifact-existence composite):\n   10:   PASS iff (a) zero remaining stale `s62_a4_a2_ratio` references in\n   11:               computations/_shared/ post-migration AND\n   12:           (b) `tau_pivot` returns canonical via mcp__knowledge__.get_constant\n   13:               with non-empty PROVENANCE block.\n   14:   INFO iff exactly one of (a), (b) is satisfied.\n   15:   FAIL iff neither is satisfied OR the substrate-canonical S62 file\n   16:           `s62_sector_energy_ratio.npz` is absent on disk.\n   17: \n   18: SOURCE-RECON events being closed:\n   19:   Class-(c) PIN-DRIFT-FROM-STALE-SOURCE on plan §W2-5.7 input filename\n   20:             `s62_a4_a2_ratio.npz`; substrate-canonical is\n   21:             `s62_sector_energy_ratio.npz` (verified S62-CUTOFF artifact).\n   22:   Class-(f) PIN-PLACEHOLDER-PENDING-SUBSTRATE-CANONICAL on plan §W2-5.6\n   23:             placeholder `tau_pivot ≈ 0.198`; W2-5 verdict PASS at\n   24:             |R_residual| = 5.748782e-04 < 0.001 confirms substrate-IS\n   25:             consistency at this value; promoted to canonical_constants.py.\n   26: \n   27: Substrate framing:\n   28:   tau_pivot is the τ on the Jensen flow at which the substrate-IS\n   29:   Seeley-DeWitt moment ratio a_4^{Mellin}/a_2^{Mellin} satisfies the\n   30:   pivot-stationarity condition d(ratio_42)/dτ ≈ 0 evaluated against the"
+    },
+    {
+      "anchor_id": "prov_2055",
+      "anchor_type": "data_provenance",
+      "name": "w2_a4_a2_pivot_stationarity_pin",
+      "script_path": "session-87/s87_w2_a4_a2_pivot_stationarity_pin.py",
+      "session": "s87",
+      "inputs": "",
+      "outputs": "session-87/s87_w2_a4_a2_pivot_stationarity_pin.npz, session-87/s87_w2_a4_a2_pivot_stationarity_pin.png",
+      "source_file": "computations/session-87/s87_w2_a4_a2_pivot_stationarity_pin.py",
+      "source_context_30_lines": "   41:       substrate-first S61 trace-formula data (tau_arr 36-pt + R_arr) plus the\n   42:       s84 cache fold-point spectrum as the cross-check anchor. The Gilkey\n   43:       identity a_2/a_0 = (5/12)*R(tau) (S61 PASS, machine-eps exact) supplies\n   44:       a_2(tau) directly; a_4(tau) derives from Mellin-substrate-distance-1\n   45:       under TWO conventions (TIER-1 Mellin direct, and Gilkey/S70 ratio-anchor\n   46:       cross-check).\n   47: \n   48: Outputs:\n   49:   - s87_w2_a4_a2_pivot_stationarity_pin.npz : ratio_42(tau) trajectory,\n   50:     d(ratio_42)/dtau trajectory, R_residual numerical (both conventions)\n   51:   - s87_w2_a4_a2_pivot_stationarity_pin.png : a_4/a_2 vs tau across window\n   52:     with tau_fold + tau_pivot annotated\n   53:   - Verdict line: appended to computations/session-87/s87_gate_verdicts.txt\n   54:     canonical S81+ form + W9a-99 dual-SHA companion + S87 v2 3-tuple companion\n   55: \n   56: PASS/FAIL/INFO threshold (ABSOLUTE):\n   57:   PASS: |R| < 0.001"
+    },
+    {
+      "anchor_id": "prov_2056",
+      "anchor_type": "data_provenance",
+      "name": "w2_alpha_s_cmb_s4_watch",
+      "script_path": "session-87/s87_w2_alpha_s_cmb_s4_watch.py",
+      "session": "s87",
+      "inputs": "",
+      "outputs": "session-87/s87_w2_alpha_s_cmb_s4_watch.npz, session-87/s87_w2_alpha_s_cmb_s4_watch.png",
+      "source_file": "computations/session-87/s87_w2_alpha_s_cmb_s4_watch.py",
+      "source_context_30_lines": "   69:   - sessions/framework/registry/alpha-s-structural-protection.md (sister)\n   70: \n   71: Output 4-tuple:\n   72:   (value=quarterly_poll_logged, scheme=external-publication-poll,\n   73:    convention=cmb-s4-publication-stream + cmb-hd-macinnis-companion,\n   74:    L_max=N/A)\n   75: \n   76: Output file inventory:\n   77:   - computations/session-87/s87_w2_alpha_s_cmb_s4_watch.npz   (poll metadata)\n   78:   - computations/session-87/s87_w2_alpha_s_cmb_s4_watch.png   (status plot)\n   79:   - computations/session-87/s87_gate_verdicts.txt              (verdict line +\n   80:                                                           W9a-99 dual-SHA\n   81:                                                           companion row)\n   82:   - sessions/framework/registry/alpha-s-watchlist.md     (already authored\n   83:                                                           alongside this script;\n   84:                                                           PRESENCE checked here)\n   85: "
+    },
+    {
+      "anchor_id": "prov_2057",
+      "anchor_type": "data_provenance",
+      "name": "w2_alpha_s_direct_moment_independent_route",
+      "script_path": "session-87/s87_w2_alpha_s_direct_moment_independent_route.py",
+      "session": "s87",
+      "inputs": "",
+      "outputs": "session-87/s87_w2_alpha_s_direct_moment_independent_route.npz, session-87/s87_w2_alpha_s_direct_moment_independent_route...",
+      "source_file": "computations/session-87/s87_w2_alpha_s_direct_moment_independent_route.py",
+      "source_context_30_lines": "   71:                            8-mode B1+B2+B3 branch index)\n   72: - s84_spectrum_cache_L12_tau019.npz  (D_K eigenvalue cache, L_max=12; truncated to\n   73:                                        L_max=10 for the canonical-pin sub-block)\n   74: - s82_w3_9_alpha_s_scheme_identity_pin.npz  (canonical pin; soft-prereq — fall back\n   75:                                               to direct n_s_framework**2 - 1 if absent)\n   76: - s86_w11_eta_gv_residual.npz  (CF-65 anchor; soft-prereq — bypass if absent)\n   77: \n   78: ==== OUTPUTS ====\n   79: - s87_w2_alpha_s_direct_moment_independent_route.npz  (alpha_s_route_3 trajectory,\n   80:                                                         n_a^GGE(K) trajectory,\n   81:                                                         delta_alpha_s)\n   82: - s87_w2_alpha_s_direct_moment_independent_route.png  (alpha_s_route_3 vs K + canonical pin)\n   83: - canonical verdict line + W9a-99 dual-SHA companion + S87+ schema-v2 3-tuple\n   84:   annotation row appended to computations/session-87/s87_gate_verdicts.txt\n   85: - working-paper section sessions/session-87/session-87-results-workingpaper.md §W2-3\n   86: \n   87: Author: mack-cosmic-bridge (S87 W2-3)"
+    },
+    {
+      "anchor_id": "prov_2058",
+      "anchor_type": "data_provenance",
+      "name": "w2_alpha_s_k_running_near_k_sat",
+      "script_path": "session-87/s87_w2_alpha_s_k_running_near_k_sat.py",
+      "session": "s87",
+      "inputs": "",
+      "outputs": "session-87/s87_w2_alpha_s_k_running_near_k_sat.npz, session-87/s87_w2_alpha_s_k_running_near_k_sat.png",
+      "source_file": "computations/session-87/s87_w2_alpha_s_k_running_near_k_sat.py",
+      "source_context_30_lines": "   38:   s52_bogoliubov_amp.npz             (Bogoliubov amplitudes; J effective stiffness pin)\n   39:   s38_gge_permanence_theorem.npz     (S38 GGE permanence; soft prereq -- absent at dispatch;\n   40:                                       fallback to analytical GGE-permanence pin per CF-32 protocol)\n   41:   s86_w11_c5_lab_falsifier.npz       (Volovik 3He-B cross-check; soft prereq -- absent;\n   42:                                       fallback to S52+S38-only path per plan §W2-4.7)\n   43:   canonical_constants.py             (K_base, n_s_framework, M_KK_gravity)\n   44: \n   45: Outputs:\n   46:   s87_w2_alpha_s_k_running_near_k_sat.npz\n   47:   s87_w2_alpha_s_k_running_near_k_sat.png\n   48:   Verdict line + dual-SHA companion + S87-v2 3-tuple annotation in\n   49:     computations/session-87/s87_gate_verdicts.txt\n   50: \"\"\"\n   51: \n   52: # Cap CPU thread count BEFORE numpy import\n   53: import os\n   54: os.environ.setdefault('OMP_NUM_THREADS', '8')"
+    },
+    {
+      "anchor_id": "prov_2059",
+      "anchor_type": "data_provenance",
+      "name": "w2_path_h_path_c_interpolation_paper_audit",
+      "script_path": "session-87/s87_w2_path_h_path_c_interpolation_paper_audit.py",
+      "session": "s87",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-87/s87_w2_path_h_path_c_interpolation_paper_audit.py",
+      "source_context_30_lines": "   21:      `computations/session-87/s87_gate_verdicts.txt`.\n   22: \n   23: No numerical thresholds, no GPU work, no eigenvalues. The \"value\" emitted\n   24: in the verdict line is the artifact-existence-with-substantive-content\n   25: predicate string per plan §8 expected output 4-tuple.\n   26: \n   27: Owner: mack-cosmic-bridge.\n   28: Run:  \"phonon-exflation-sim/.venv312/Scripts/python.exe\" \\\n   29:       \"computations/session-87/s87_w2_path_h_path_c_interpolation_paper_audit.py\"\n   30: \"\"\"\n   31: \n   32: from __future__ import annotations\n   33: \n   34: import hashlib\n   35: import json\n   36: import re\n   37: import sys"
+    },
+    {
+      "anchor_id": "prov_2060",
+      "anchor_type": "data_provenance",
+      "name": "w3_3a_litebird_n_T_discriminator",
+      "script_path": "session-87/s87_w3_3a_litebird_n_T_discriminator.py",
+      "session": "s87",
+      "inputs": "",
+      "outputs": "session-87/s87_w3_3a_litebird_n_T_discriminator.npz, session-87/s87_w3_3a_litebird_n_T_discriminator.png",
+      "source_file": "computations/session-87/s87_w3_3a_litebird_n_T_discriminator.py",
+      "source_context_30_lines": "   94: GATE_ID = \"S87-W3-3A-LITEBIRD-N-T-PATH-H-PATH-C-DISCRIMINATOR\"  # (local)\n   95: SCHEME = \"LiteBIRD-n_T\"  # (local)\n   96: CONVENTION = \"Path-H-vs-Path-C-block-axis\"  # (local)\n   97: L_MAX = \"N/A\"  # (local)\n   98: \n   99: PASS_THRESHOLD = 1.0  # (local) margin_sigma >= 1.0 PASSes\n  100: INFO_FLOOR = 0.5  # (local) margin_sigma in [0.5, 1.0) is INFO\n  101: \n  102: OUT_NPZ = resolve_output(87, 's87_w3_3a_litebird_n_T_discriminator.npz')\n  103: OUT_PNG = resolve_output(87, 's87_w3_3a_litebird_n_T_discriminator.png')\n  104: OUT_JSON = resolve_output(87, 's87_w3_3a_litebird_n_T_discriminator.json')\n  105: VERDICT_TXT = resolve_output(87, 's87_gate_verdicts.txt')\n  106: \n  107: INPUT_FILES = [resolve_script(None, 'canonical_constants.py')]\n  108: \n  109: \n  110: # Section 4 — SHA-256 input-pin block"
+    }
+  ]
+}

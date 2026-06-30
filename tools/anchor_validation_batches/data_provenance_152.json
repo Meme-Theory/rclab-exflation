@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 152,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1511",
+      "anchor_type": "data_provenance",
+      "name": "hessian_overshoot",
+      "script_path": "session-77/s77_hessian_overshoot.py",
+      "session": "s77",
+      "inputs": "",
+      "outputs": "session-77/s77_hessian_overshoot.npz, session-77/s77_hessian_overshoot.png",
+      "source_file": "computations/session-77/s77_hessian_overshoot.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s77_hessian_overshoot.py -- S77-C5-HESSIAN-OVERSHOOT: Off-Jensen Hessian at tau = 1.614\n    4: ========================================================================================\n    5: \n    6: Gate: S77-C5-HESSIAN-OVERSHOOT\n    7:   PASS: All 35 eigenvalues negative at tau = 1.614 (Jensen ridge persists at turnaround)\n    8:   FAIL: Any positive eigenvalue at tau = 1.614 (tachyonic direction; modulus could roll off)\n    9:   INFO: Partial computation, subset of directions analyzed\n   10: \n   11: Background:"
+    },
+    {
+      "anchor_id": "prov_1512",
+      "anchor_type": "data_provenance",
+      "name": "inter_sector_yukawa",
+      "script_path": "session-77/s77_inter_sector_yukawa.py",
+      "session": "s77",
+      "inputs": "",
+      "outputs": "session-77/s77_inter_sector_yukawa.npz",
+      "source_file": "computations/session-77/s77_inter_sector_yukawa.py",
+      "source_context_30_lines": "  889: print()\n  890: print(f\"  Elapsed time: {t_elapsed:.2f}s\")\n  891: \n  892: # ============================================================================\n  893: # SAVE RESULTS\n  894: # ============================================================================\n  895: \n  896: print()\n  897: print(\"Saving results to s77_inter_sector_yukawa.npz\")\n  898: \n  899: np.savez(\"s77_inter_sector_yukawa.npz\",\n  900:     # Configuration\n  901:     tau=TAU,\n  902:     # Block-diagonality verification\n  903:     offdiag_norm_10_11=offdiag_norm_10_11,\n  904:     offdiag_norm_01_11=offdiag_norm_01_11,\n  905:     offdiag_norm_10_01=offdiag_norm_10_01,"
+    },
+    {
+      "anchor_id": "prov_1513",
+      "anchor_type": "data_provenance",
+      "name": "lr_threshold",
+      "script_path": "session-77/s77_lr_threshold.py",
+      "session": "s77",
+      "inputs": "",
+      "outputs": "session-77/s77_lr_threshold.npz, session-77/s77_lr_threshold.png",
+      "source_file": "computations/session-77/s77_lr_threshold.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s77_lr_threshold.py — S77-B4-LR-THRESHOLD: L-R Corrected Weinberg Angle\n    4: =========================================================================\n    5: \n    6: Compute sin^2(theta_W) at M_Z from the Left-Right threshold correction\n    7: in the KK submersion formalism on M^4 x SU(3).\n    8: \n    9: GOVERNING STRUCTURE\n   10: -------------------\n   11: Paper 13 eq (3.41) establishes the fundamental L-R asymmetry:"
+    },
+    {
+      "anchor_id": "prov_1514",
+      "anchor_type": "data_provenance",
+      "name": "mean_eigenvalue",
+      "script_path": "session-77/s77_mean_eigenvalue.py",
+      "session": "s77",
+      "inputs": "",
+      "outputs": "session-77/s77_mean_eigenvalue.npz",
+      "source_file": "computations/session-77/s77_mean_eigenvalue.py",
+      "source_context_30_lines": "  294:     dim_pq = (p + 1) * (q + 1) * (p + q + 2) // 2  # (local)\n  295:     abs_ev = np.abs(evals_raw)  # (local)\n  296:     print(f\"  ({p},{q}){'':<4s}  {dim_pq:5d}  {len(evals_raw):8d}  {np.mean(abs_ev):10.4f}  {np.max(abs_ev):10.4f}  {np.min(abs_ev):10.4f}\")\n  297: \n  298: # ============================================================\n  299: # Save data\n  300: # ============================================================\n  301: print(\"\\nSaving results...\")\n  302: outpath = os.path.join(os.path.dirname(os.path.abspath(__file__)), \"s77_mean_eigenvalue.npz\")  # (local)\n  303: np.savez(\n  304:     outpath,\n  305:     tau_fold=tau_fold,\n  306:     L_max=L_MAX,\n  307:     t_star=T_STAR,\n  308:     mean_abs_lambda=mean_abs_lambda,\n  309:     mean_abs_lambda_unweighted=mean_abs_lambda_unweighted,\n  310:     mean_lambda_sq=mean_lambda_sq,"
+    },
+    {
+      "anchor_id": "prov_1515",
+      "anchor_type": "data_provenance",
+      "name": "mode_threshold",
+      "script_path": "session-77/s77_mode_threshold.py",
+      "session": "s77",
+      "inputs": "",
+      "outputs": "session-77/s77_mode_threshold.npz, session-77/s77_mode_threshold.png",
+      "source_file": "computations/session-77/s77_mode_threshold.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s77_mode_threshold.py — S77-C6-MODE-THRESHOLD: Full Eigenvalue Threshold Sum\n    4: =============================================================================\n    5: \n    6: Compute the threshold correction ratio Delta_2/Delta_3 using the ACTUAL\n    7: D_K eigenvalue spectrum at tau_fold, decomposed by Peter-Weyl sector (p,q)\n    8: and branched into SM representations under SU(3) -> SU(2) x U(1).\n    9: \n   10: MOTIVATION\n   11: ----------"
+    },
+    {
+      "anchor_id": "prov_1516",
+      "anchor_type": "data_provenance",
+      "name": "mu_eff_b2_mediated",
+      "script_path": "session-77/s77_mu_eff_b2_mediated.py",
+      "session": "s77",
+      "inputs": "",
+      "outputs": "session-77/s77_mu_eff_b2_mediated.npz, session-77/s77_mu_eff_b2_mediated.png",
+      "source_file": "computations/session-77/s77_mu_eff_b2_mediated.py",
+      "source_context_30_lines": "  800:           f\"B1={np.real(evec_norm[1]):.3f}, \"\n  801:           f\"B3={np.real(evec_norm[2]):.3f}\")\n  802: \n  803: # ============================================================================\n  804: #  STEP 15: Save data\n  805: # ============================================================================\n  806: \n  807: output_path = os.path.join(os.path.dirname(os.path.abspath(__file__)),\n  808:                            's77_mu_eff_b2_mediated.npz')\n  809: \n  810: np.savez(output_path,\n  811:     # Gate\n  812:     gate_name='S77-A3-MU-EFF-B2',\n  813:     gate_verdict=gate_verdict,\n  814:     gate_reason=gate_reason,\n  815:     # Canonical result\n  816:     mu_eff_canonical=mu_eff_canonical,"
+    },
+    {
+      "anchor_id": "prov_1517",
+      "anchor_type": "data_provenance",
+      "name": "multi_cell_coherence",
+      "script_path": "session-77/s77_multi_cell_coherence.py",
+      "session": "s77",
+      "inputs": "",
+      "outputs": "session-77/s77_multi_cell_coherence.npz, session-77/s77_multi_cell_coherence.png",
+      "source_file": "computations/session-77/s77_multi_cell_coherence.py",
+      "source_context_30_lines": "   76:     # Spectral action\n   77:     tau_fold,\n   78:     # Cosmological\n   79:     A_s_CMB,\n   80:     # Math\n   81:     PI,\n   82: )\n   83: \n   84: OUT_NPZ = os.path.join(SCRIPT_DIR, \"s77_multi_cell_coherence.npz\")\n   85: OUT_PNG = os.path.join(SCRIPT_DIR, \"s77_multi_cell_coherence.png\")\n   86: \n   87: t_start = time.time()  # (local)\n   88: log_lines = []  # (local)\n   89: \n   90: \n   91: def log(msg=\"\"):\n   92:     print(msg)"
+    },
+    {
+      "anchor_id": "prov_1518",
+      "anchor_type": "data_provenance",
+      "name": "n_pivot_map",
+      "script_path": "session-77/s77_n_pivot_map.py",
+      "session": "s77",
+      "inputs": "computations/session-73/s73b_efold_mapping.npz",
+      "outputs": "session-77/s77_n_pivot_map.npz, session-77/s77_n_pivot_map.png",
+      "source_file": "computations/session-77/s77_n_pivot_map.py",
+      "source_context_30_lines": "   24: Method:\n   25:   1. Load a(N) and H(N) from s73b_efold_mapping.npz\n   26:   2. Convert k_pivot to fold-normalization comoving M_KK units\n   27:   3. Find N_pivot where a(N) * H(N) = k_com (horizon exit)\n   28:   4. Repeat for BBN, recombination, and today's horizon scales\n   29:   5. Cross-check against standard N_* formula\n   30: \n   31: Input: computations/session-73/s73b_efold_mapping.npz\n   32: Output: computations/session-77/s77_n_pivot_map.npz, s77_n_pivot_map.png\n   33: \"\"\"\n   34: \n   35: import sys\n   36: sys.path.insert(0, \"computations\")\n   37: from canonical_constants import (\n   38:     M_KK, M_KK_gravity, Mpc_to_GeV_inv, H_fold, H_0_GeV, H_0_inv_s,\n   39:     T_CMB_GeV, T_BBN_GeV, T_recomb_GeV, z_BBN,\n   40:     hbar_c_GeV_m, Mpc_to_m, GeV_inv_to_Mpc, GeV_to_inv_s,"
+    },
+    {
+      "anchor_id": "prov_1519",
+      "anchor_type": "data_provenance",
+      "name": "p_from_friedmann_ode",
+      "script_path": "session-77/s77_p_from_friedmann_ode.py",
+      "session": "s77",
+      "inputs": "",
+      "outputs": "session-77/s77_p_from_friedmann_ode.npz, session-77/s77_p_from_friedmann_ode.png",
+      "source_file": "computations/session-77/s77_p_from_friedmann_ode.py",
+      "source_context_30_lines": "  773: # ==============================================================================\n  774: \n  775: print(\"SECTION 9: Save results\")\n  776: print(\"-\" * 78)\n  777: \n  778: elapsed = time.time() - t_start  # (local)\n  779: \n  780: # Save NPZ\n  781: out_path = os.path.join(data_dir, 's77_p_from_friedmann_ode.npz')  # (local)\n  782: np.savez(out_path,\n  783:          # Gate\n  784:          gate_name='S77-B2-P-FRIEDMANN',\n  785:          gate_verdict=gate_verdict,\n  786:          gate_detail=gate_detail,\n  787:          # Fold values\n  788:          w_fold=w_fold_ode,\n  789:          eps_H_fold=eps_fold_s73b,"
+    },
+    {
+      "anchor_id": "prov_1520",
+      "anchor_type": "data_provenance",
+      "name": "pati_salam_embed",
+      "script_path": "session-77/s77_pati_salam_embed.py",
+      "session": "s77",
+      "inputs": "",
+      "outputs": "session-77/s77_pati_salam_embed.npz",
+      "source_file": "computations/session-77/s77_pati_salam_embed.py",
+      "source_context_30_lines": "  368: print(\"  symmetry between M_KK and M_Z — the gauge group is fixed by geometry\")\n  369: print(\"  at the moment tau departs from zero.\")\n  370: print()\n  371: \n  372: # =============================================================================\n  373: #  Save data\n  374: # =============================================================================\n  375: \n  376: npz_path = r\"C:\\sandbox\\Ainulindale Exflation\\computations\\s77_pati_salam_embed.npz\"  # (local)\n  377: \n  378: np.savez(npz_path,\n  379:          tau_arr=tau_arr,\n  380:          L1_arr=L1_arr,\n  381:          L2_arr=L2_arr,\n  382:          L3_arr=L3_arr,\n  383:          r12=r12,\n  384:          r13=r13,"
+    }
+  ]
+}

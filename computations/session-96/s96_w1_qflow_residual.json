@@ -1,0 +1,59 @@
+{
+  "gate_id": "S96-W1-QFLOW-RESIDUAL",
+  "verdict": "PASS",
+  "value": "residual_free_normalization_count_RESOLVED=0_from_W3-2_count=2_trackA=1_trackB=2_form_independent=True_Z_norm==G_DeWitt=5.0_kinetic_FIXED_tau-flow_redundant-alias_no-canonical-write_V0=tau-flat_CC-offset_8pi2V0_over_Lam2f2_FIXED_by_q-flow_EQUILIBRIUM-CC-WARRANT_W5-3_rho_Lambda_eq=0_EXACT_V0_equilibrium=0.0_CC-is-SUBTRACTION-not-SELECTION_kaku_s1.3a_trackA(1)=q-flow-scalar_trackB(2)=bare-tau-flow_fixed-vs-free_across_q-flow(CC)_tau-flow(transit)_DISTINCT-axes_tau-flow-vs-q-flow-note_S95-W5-6_explained=True_count_2to1to0_W3-2_genre_route_to_a(t)_UNBLOCKED_split_reproduces_W3-2_npz_BIT-EXACT_rel<1e-10_max_rel=8.05e-16_Sage-exact_(K)kinetic_(P)potential_identities_matrix_model_class=True_no_THIRD_free_scalar_IKKT_genre_exactly_kinetic+potential",
+  "scheme": "IKKT-matrix-model-genre",
+  "convention": "EMERGENT-H-READOUT",
+  "L_max": "N/A",
+  "audit_sha256": "b79d80b9185d5fed1720d4f46a02c8adfdb3d2e135f8303665be6d6828225981",
+  "content_sha256": "1a7a17ce48250da73bb141185305c97fb144157ca938fa8a6a42984cb5831551",
+  "task": "kaku-matrix-theorist S96-W1-QFLOW-RESIDUAL: reconcile residual_free_normalization_count=2 ({Z_norm,V0}) vs the q-flow/tau-flow accounting in the IKKT-matrix-model genre; resolve the track-A(1)/track-B(2) discrepancy.",
+  "structural_finding": {
+    "kinetic_identity_K": "H2_kin(tau,taudot) = 16 pi^2 G_DW taudot^2 e^{4tau}/(Lam^2 f2 D(tau)); linear in G_DW, V0-FREE; the taudot^2 coefficient IS G_DeWitt -> Z_norm == G_DeWitt = 5.0 (substrate-FIXED, not an independent symbol).",
+    "potential_identity_P": "the V0 numerator factors as 8 pi^2 V0 * D(tau) [SAME polynomial as the denominator; Sage pot_poly/den_poly == 1] -> H2_pot = 8 pi^2 V0/(Lam^2 f2), tau-INDEPENDENT additive CC offset; linear in V0, G_DW-free.",
+    "D_poly": "D(tau) = 2 e^{6tau} - e^{4tau} + 8 e^{3tau} - 1 (denominator polynomial in u=e^{tau})",
+    "split_reproduces_W3_2_bit_exact": true,
+    "max_rel_reproduction_error": 8.048533226055912e-16,
+    "full_form_vs_split_max_abs": 8.407790785948902e-45
+  },
+  "Z_norm_resolution": {
+    "fixed": true,
+    "value": 5.0,
+    "source": "G_DeWitt = 5.0 (S42 DeWitt moduli kinetic coefficient); tau-flow kinetic term",
+    "is_redundant_alias": true,
+    "canonical_write": "NONE -- Z_norm is STRUCTURALLY IDENTICAL to G_DeWitt; pinning a redundant alias would be canonical-clutter (W6-4 no-clutter lesson)."
+  },
+  "V0_resolution": {
+    "is_cc_offset": true,
+    "structure": "tau-INDEPENDENT additive constant H2_pot = 8 pi^2 V0/(Lam^2 f2) (a CC offset to H^2)",
+    "fixed_by_qflow": true,
+    "qflow_warrant": "EQUILIBRIUM-CC-WARRANT (S95 W5-3, PASS): rho_Lambda(equilibrium) = eps(q_eq) - q_eq*mu|_{P=0} = 0 EXACT (rho_vac_equilibrium=0 EXACT, chain_zero_exact=True, representative_independent=True, residual_rational=0). The CC layer rests on the q-flow (S62 #19), NOT the tau-ramp (tau-flow-vs-q-flow-note, S95 W5-6).",
+    "V0_equilibrium": 0.0,
+    "cc_is_subtraction_not_selection": true,
+    "kaku_reading": "kaku ss1.3a: in the matrix-model (IKKT) genre the CC is a SUBTRACTION, not a landscape SELECTION among 10^500 vacua. The bare a0 vacuum is subtracted so the equilibrium CC vanishes; V0_equilibrium = 0 (= the W3-2 V0_lo bracket).",
+    "canonical_write": "NONE -- V0_equilibrium=0 is the q-flow equilibrium OUTPUT (W5-3), not a new scalar."
+  },
+  "count_reconciliation": {
+    "bare_tauflow_count_trackB": 2,
+    "qflow_scalar_count_trackA": 1,
+    "qflow_completed_count": 0,
+    "resolved": 0,
+    "trackAB_explained": true,
+    "explanation": "track-A(1) counts the SINGLE CC scalar (V0) on the q-flow axis (Z_norm absorbed into G_DeWitt); track-B(2) counts both {Z_norm,V0} on the BARE tau-flow transit form. The discrepancy is a FIXED-vs-FREE accounting difference across the two DISTINCT axes (q-flow=CC, tau-flow=transit), NOT a structural contradiction. Applying the q-flow CC-warrant pins V0 -> count 2 -> 1 -> 0.",
+    "third_scalar_needed": false,
+    "third_scalar_note": "the IKKT-matrix-model genre has EXACTLY {kinetic normalization, potential offset}; no THIRD genuinely-free scalar is required (would be the FAIL outcome)."
+  },
+  "qflow_tauflow_axes": {
+    "tau_flow_E7": "dS_SA/dtau > 0; tau = geometric modulus (order-parameter texture); NOT conserved; drives the transit; fixes the KINETIC structure (Z_norm = G_DeWitt).",
+    "q_flow_S62_19": "dE_ZP/dq > 0, no interior q-equilibrium; q = N_pair (conserved microscopic charge); the CC layer rests on this axis (fixes V0 via the equilibrium warrant).",
+    "distinct_axes_authority": "sessions/framework/correspondence/tau-flow-vs-q-flow-note.md (S95 W5-6 PASS)"
+  },
+  "substrate_framing": "The closed-form emergent H^2(tau,taudot) is NOT a Friedmann equation populating a pre-existing FRW container -- it is the IKKT-matrix-model-genre readout of the substrate's modulus dynamics (S95-W3-2: no T-duality, no Hagedorn, matrix_model_class=True). Its two scalars are the substrate's own kinetic normalization (Z_norm = G_DeWitt, the DeWitt modulus-space metric coefficient, tau-flow) and its vacuum subtraction (V0, a tau-flat CC offset fixed by the q-flow equilibrium to zero residual CC -- a SUBTRACTION, not a landscape selection). Reconciling their 2-vs-3 accounting across the q-flow/tau-flow distinct axes is the last blocker on the closed-form genre route to a(t). Arrow: D_K -> spectral-action moments (a0 sets the bare vacuum, q-flow subtracts it) + modulus kinetic term (G_DeWitt sets Z_norm) -> closed-form H^2(tau,taudot) -> emergent a(t). The substrate determines its own emergent expansion law up to a vacuum subtraction the q-flow then pins.",
+  "no_directional_3tuple": "[VERIFY] adjudication of a free-scalar COUNT; quantitative checks are Sage-exact structural identities + bit-exact W3-2 reproduction (equality checks), NOT a sign/direction prediction. schema_v2_3tuple_required: false.",
+  "dual_prior_reallocation": {
+    "prior_track_A": 0.5,
+    "prior_track_B": 0.5,
+    "discriminator": "Z_norm=G_DeWitt fixed AND V0 fixed by q-flow CC-warrant (rho_Lambda(eq)=0) -> 0.85 to Track A (count->0); V0 genuinely free -> 0.85 to Track B (count=1, convention declared).",
+    "posterior": "Track A (count->0): ~0.85. V0 IS fixed -- by the q-flow EQUILIBRIUM-CC-WARRANT (W5-3, a proven theorem), not as the plan-chain's a0-offset guess; the cleaner principled fix. Residual Track-B mass (~0.15) covers the honest caveat that the closed form in ISOLATION (tau-flow form) leaves V0 as the one additive CC offset the transit alone does not fix; the q-flow (a SEPARATE theorem) pins it."
+  }
+}

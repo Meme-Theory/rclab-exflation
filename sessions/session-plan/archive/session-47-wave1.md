@@ -18,7 +18,7 @@ You are classifying each of the 13 unweighted (131 PW-weighted) pi-phase states 
 
 **Verified data locations** (all keys confirmed to exist):
 
-- `tier0-computation/s46_berry_phase.npz`:
+- `computations/s46_berry_phase.npz`:
   - `sXY_berry_phases: shape=(N,)` — berry phase per spinor eigenvalue for rep (X,Y)
   - `sXY_evals: shape=(40, N)` — eigenvalue trajectory, 40 tau values × N spinor components
   - `sXY_n_pi` — integer count of pi-phases in rep (X,Y)
@@ -26,14 +26,14 @@ You are classifying each of the 13 unweighted (131 PW-weighted) pi-phase states 
   - Reps with pi-phases: s01(1), s02(1), s03(2), s10(1), s11(1), s20(1), s21(5), s30(1)
   - Reps with zero pi-phases: s00(0)
 
-- `tier0-computation/s44_dos_tau.npz`:
+- `computations/s44_dos_tau.npz`:
   - `tau0.19_all_omega: shape=(992,)` — full eigenvalue spectrum at fold (for cluster boundary calibration)
   - `tau0.19_all_dim2: shape=(992,)` — PW degeneracies per eigenvalue
 
-- `tier0-computation/s35_k7_dphys.npz`:
+- `computations/s35_k7_dphys.npz`:
   - `evals_DK: shape=(16,)` — (0,0) rep eigenvalues at fold. Unique |values|: 0.8197 (B1), 0.8452 (B2), 0.9714 (B3)
 
-- `tier0-computation/s46_rg_pair_transfer.npz`:
+- `computations/s46_rg_pair_transfer.npz`:
   - `mode_eps: shape=(8,)` — 8-mode eigenvalues: [0.819, 0.833, 0.841, 0.849, 0.857, 0.973, 0.978, 0.983]
   - `mode_sector: shape=(8,)` — ['B1','B2','B2','B2','B2','B3','B3','B3']
 
@@ -61,8 +61,8 @@ You are classifying each of the 13 unweighted (131 PW-weighted) pi-phase states 
 - FAIL: Any pi-phase eigenvalue falls in a gap between clusters (ambiguous assignment).
 
 **Output files**:
-- Script: `tier0-computation/s47_pi_sector.py`
-- Data: `tier0-computation/s47_pi_sector.npz`
+- Script: `computations/s47_pi_sector.py`
+- Data: `computations/s47_pi_sector.npz`
 
 **Working paper section**: W1-1
 
@@ -94,14 +94,14 @@ The question: for the pi-phase states classified as B2 and B3 in W1-1, do their 
 
 **Verified data locations**:
 
-- `tier0-computation/s47_pi_sector.npz` (from W1-1): sector assignments per pi-phase state
-- `tier0-computation/s35_k7_thouless.npz`:
+- `computations/s47_pi_sector.npz` (from W1-1): sector assignments per pi-phase state
+- `computations/s35_k7_thouless.npz`:
   - `q_vals_pos_all: shape=(9,4)` — K₇ charges for positive eigenvalues at 9 tau values. At tau > 0: all ±0.25
   - `q_vals_neg_all: shape=(9,4)` — same for negative eigenvalues
   - `V_pm_max: shape=(9,)` — cross-charge V. Machine zero (~10⁻²⁹) at tau > 0
   - `V_B2_charge_all: shape=(9,4,4)` — V matrix resolved by K₇ charge
   - `q7_conserved_through_fold: True`
-- `tier0-computation/s35_k7_dphys.npz`:
+- `computations/s35_k7_dphys.npz`:
   - `evals_DK: shape=(16,)` — eigenvalues for (0,0) rep
   - K₇ charge data is for (0,0) rep ONLY
 
@@ -133,8 +133,8 @@ The question: for the pi-phase states classified as B2 and B3 in W1-1, do their 
 - KILL: If structural argument fails and K₇ charges cannot be determined, flag data gap.
 
 **Output files**:
-- Script: `tier0-computation/s47_k7_filter.py`
-- Data: `tier0-computation/s47_k7_filter.npz`
+- Script: `computations/s47_k7_filter.py`
+- Data: `computations/s47_k7_filter.npz`
 
 **Working paper section**: W1-2
 
@@ -158,18 +158,18 @@ You are constructing the corrected ratio using BCS-accessible pi-phase counts fr
 
 **Verified data locations**:
 
-- `tier0-computation/s47_pi_sector.npz` (from W1-1): sector-resolved PW-weighted pi-phase counts
-- `tier0-computation/s47_k7_filter.npz` (from W1-2): BCS-accessible PW-weighted count
-- `tier0-computation/s46_number_projected_bcs.npz`:
+- `computations/s47_pi_sector.npz` (from W1-1): sector-resolved PW-weighted pi-phase counts
+- `computations/s47_k7_filter.npz` (from W1-2): BCS-accessible PW-weighted count
+- `computations/s46_number_projected_bcs.npz`:
   - `v2_bcs: shape=(3,)` — [0.045, 0.122, 0.002] BCS v² per sector (B1, B2, B3)
   - `n_sector_ed_N1: shape=(3,)` — [0.094, 0.224, 0.003] ED sector occupations
   - `Delta_bcs_fold: shape=(3,)` — [0.372, 0.732, 0.084] BCS gaps
   - `V_mat_constrained: shape=(3,3)` — sector V matrix
-- `tier0-computation/s46_rg_pair_transfer.npz`:
+- `computations/s46_rg_pair_transfer.npz`:
   - `n_pairs_gs: 1.0` — total pairs in 8-mode ED
   - `n_occ: shape=(8,)` — per-mode occupation [0.494, 0.126, 0.124, 0.122, 0.120, 0.005, 0.005, 0.005]
   - `mode_sector: ['B1','B2','B2','B2','B2','B3','B3','B3']`
-- `tier0-computation/s38_cc_instanton.npz`:
+- `computations/s38_cc_instanton.npz`:
   - `mult_k: shape=(3,)` — [1, 4, 3] sector multiplicities in 992-mode system
 
 **Computation Steps**:
@@ -207,8 +207,8 @@ You are constructing the corrected ratio using BCS-accessible pi-phase counts fr
 - ESCALATE: If R_B2 > 5 or < 0.1, the topology-dynamics relationship needs reexamination.
 
 **Output files**:
-- Script: `tier0-computation/s47_ratio_correct.py`
-- Data: `tier0-computation/s47_ratio_correct.npz`
+- Script: `computations/s47_ratio_correct.py`
+- Data: `computations/s47_ratio_correct.npz`
 
 **Working paper section**: W1-3
 

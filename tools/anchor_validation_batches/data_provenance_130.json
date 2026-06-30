@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 130,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1291",
+      "anchor_type": "data_provenance",
+      "name": "bbn_volovik",
+      "script_path": "session-73/s73a_bbn_volovik.py",
+      "session": "s73a",
+      "inputs": "",
+      "outputs": "session-73/s73a_bbn_volovik.npz, session-73/s73a_bbn_volovik.png",
+      "source_file": "computations/session-73/s73a_bbn_volovik.py",
+      "source_context_30_lines": "  680: Yp_arr = np.array([r['Y_p'] for r in results])  # (local)\n  681: DH_arr = np.array([r['DH'] for r in results])  # (local)\n  682: Tf_arr = np.array([r['T_f_MeV'] for r in results])  # (local)\n  683: dNeff_arr = np.array([r['dN_eff'] for r in results])  # (local)\n  684: sigYp_arr = np.array([r['sig_Yp'] for r in results])  # (local)\n  685: sigDH_arr = np.array([r['sig_DH'] for r in results])  # (local)\n  686: \n  687: outfile = os.path.join(os.path.dirname(os.path.abspath(__file__)),\n  688:                        \"s73a_bbn_volovik.npz\")  # (local)\n  689: np.savez(outfile,\n  690:          alpha_track=alpha_arr,\n  691:          Y_p=Yp_arr,\n  692:          DH=DH_arr,\n  693:          T_f_MeV=Tf_arr,\n  694:          delta_N_eff=dNeff_arr,\n  695:          sig_Yp=sigYp_arr,\n  696:          sig_DH=sigDH_arr,"
+    },
+    {
+      "anchor_id": "prov_1292",
+      "anchor_type": "data_provenance",
+      "name": "blv_compound",
+      "script_path": "session-73/s73a_blv_compound.py",
+      "session": "s73a",
+      "inputs": "",
+      "outputs": "session-73/s73a_blv_compound.npz, session-73/s73a_blv_compound.png",
+      "source_file": "computations/session-73/s73a_blv_compound.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s73a_blv_compound.py — BLV Compound Transfer Matrix (BLV-COMPOUND-73a)\n    4: \n    5: Computes the compound Bogoliubov transformation through the full transit\n    6: (entry + fold + exit) using the Barcelo-Liberati-Visser acoustic metric\n    7: transfer matrix formalism, with the modified BCS dispersion relation.\n    8: \n    9: Physics:\n   10:   The BLV acoustic metric for the substrate transit is\n   11:     ds^2 = (rho/c_s) * [-(c_s^2 - v^2) dtau^2 + 2 v dtau dx + dx^2]"
+    },
+    {
+      "anchor_id": "prov_1293",
+      "anchor_type": "data_provenance",
+      "name": "compound_ns",
+      "script_path": "session-73/s73a_compound_ns.py",
+      "session": "s73a",
+      "inputs": "",
+      "outputs": "session-73/s73a_compound_ns.npz, session-73/s73a_compound_ns.png",
+      "source_file": "computations/session-73/s73a_compound_ns.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s73a_compound_ns.py — Compound n_s from Ordered Bogoliubov Product (COMPOUND-NS-73a)\n    4: \n    5: Computes the compound spectral tilt n_s from the full ordered Bogoliubov product:\n    6:   S_total = S_exit * S_fold * S_entry\n    7: \n    8: where each S_i is the 2x2 Bogoliubov matrix for each mode k.\n    9: \n   10: This resolves the S72 Mack-VdD Workshop carry-forward RE-COMPOUND-TILT-73:\n   11:   \"The additive approximation n_s_total = n_s_fold + delta_n_s_entry is structurally"
+    },
+    {
+      "anchor_id": "prov_1294",
+      "anchor_type": "data_provenance",
+      "name": "dos_threshold",
+      "script_path": "session-73/s73a_dos_threshold.py",
+      "session": "s73a",
+      "inputs": "",
+      "outputs": "session-73/s73a_dos_threshold.npz, session-73/s73a_dos_threshold.png",
+      "source_file": "computations/session-73/s73a_dos_threshold.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s73a_dos_threshold.py — DOS-THRESHOLD-73a\n    4: ==========================================\n    5: \n    6: Van Hove DOS-weighted threshold corrections: does spectral weighting\n    7: from the van Hove singularity at the fold modify the EFFECTIVE threshold\n    8: ratios delta_1/delta_3 and delta_2/delta_3?\n    9: \n   10: STRUCTURAL CONTEXT\n   11: ------------------"
+    },
+    {
+      "anchor_id": "prov_1295",
+      "anchor_type": "data_provenance",
+      "name": "entropy_fstar",
+      "script_path": "session-73/s73a_entropy_fstar.py",
+      "session": "s73a",
+      "inputs": "s66_cutoff_ns.npz, s72_spectral_functional_fit.npz",
+      "outputs": "session-73/s73a_entropy_fstar.npz, session-73/s73a_entropy_fstar.png",
+      "source_file": "computations/session-73/s73a_entropy_fstar.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s73a_entropy_fstar.py -- ENTROPY-FSTAR-73a\n    4: =============================================\n    5: \n    6: Gate: ENTROPY-FSTAR-73a\n    7:   PASS: |n_s^{entropy} - n_s^{f*}| < 0.003\n    8:   INFO: n_s^{entropy} computed but differs from n_s^{f*} by > 0.003\n    9:   FAIL: f_S(x) is not positive on the D_K spectrum, or computation diverges\n   10: \n   11: Physics:"
+    },
+    {
+      "anchor_id": "prov_1296",
+      "anchor_type": "data_provenance",
+      "name": "exit_horizon_bog",
+      "script_path": "session-73/s73a_exit_horizon_bog.py",
+      "session": "s73a",
+      "inputs": "",
+      "outputs": "session-73/s73a_exit_horizon_bog.npz, session-73/s73a_exit_horizon_bog.png",
+      "source_file": "computations/session-73/s73a_exit_horizon_bog.py",
+      "source_context_30_lines": "  640: print(f\"Gate {gate_name}: {gate_verdict}\")\n  641: print(f\"  {gate_detail}\")\n  642: print()\n  643: \n  644: # ==============================================================================\n  645: #  SECTION 12: Save data\n  646: # ==============================================================================\n  647: \n  648: output_npz = os.path.join(data_dir, 's73a_exit_horizon_bog.npz')  # (local)\n  649: \n  650: np.savez(output_npz,\n  651:     # Gate\n  652:     gate_name=gate_name,\n  653:     gate_verdict=gate_verdict,\n  654:     gate_detail=gate_detail,\n  655: \n  656:     # Physical finding: no exit sonic horizon"
+    },
+    {
+      "anchor_id": "prov_1297",
+      "anchor_type": "data_provenance",
+      "name": "fabry_perot_cavity",
+      "script_path": "session-73/s73a_fabry_perot_cavity.py",
+      "session": "s73a",
+      "inputs": "",
+      "outputs": "session-73/s73a_fabry_perot_cavity.npz",
+      "source_file": "computations/session-73/s73a_fabry_perot_cavity.py",
+      "source_context_30_lines": "  884:     \"c_BA\": c_BA_val,\n  885:     \"c_L\": c_L_val,\n  886:     \"v_tau\": v_tau,\n  887: \n  888:     # Timing\n  889:     \"total_time\": t_end - t_start,\n  890: }\n  891: \n  892: outpath = os.path.join(os.path.dirname(__file__), \"s73a_fabry_perot_cavity.npz\")\n  893: np.savez(outpath, **save_dict)\n  894: print(f\"Data saved to {outpath}\")\n  895: print(f\"Total runtime: {t_end - t_start:.3f} s\")"
+    },
+    {
+      "anchor_id": "prov_1298",
+      "anchor_type": "data_provenance",
+      "name": "graph_spectral_decoherence",
+      "script_path": "session-73/s73a_graph_spectral_decoherence.py",
+      "session": "s73a",
+      "inputs": "",
+      "outputs": "session-73/s73a_graph_spectral_decoherence.npz",
+      "source_file": "computations/session-73/s73a_graph_spectral_decoherence.py",
+      "source_context_30_lines": "  672:     else:\n  673:         print(f\"Graph diffusion irrelevant: t_dec/t_transit > 5.0.\")\n  674: print(f\"{'='*70}\")\n  675: \n  676: # ============================================================================\n  677: #  SECTION 11: Save data\n  678: # ============================================================================\n  679: \n  680: output_path = os.path.join(os.path.dirname(__file__), 's73a_graph_spectral_decoherence.npz')  # (local)\n  681: \n  682: np.savez(output_path,\n  683:     # Gate\n  684:     gate_name='GRAPH-SPECTRAL-DECOHERENCE-73a',\n  685:     gate_verdict=verdict,\n  686:     gate_detail=f\"t_dec/t_transit = {primary_ratio:.4f} (aniso single-mode). \"\n  687:                 f\"Agg aniso: {ratio_agg_aniso:.4f}. Iso: {ratio_primary:.4f}. \"\n  688:                 f\"Mix: {ratio_mix:.4f}. CG(24) lambda_1={lambda_1:.1f}, \""
+    },
+    {
+      "anchor_id": "prov_1299",
+      "anchor_type": "data_provenance",
+      "name": "instanton_landscape",
+      "script_path": "session-73/s73a_instanton_landscape.py",
+      "session": "s73a",
+      "inputs": "",
+      "outputs": "session-73/s73a_instanton_landscape.npz, session-73/s73a_instanton_landscape.png",
+      "source_file": "computations/session-73/s73a_instanton_landscape.py",
+      "source_context_30_lines": "  548: # ===========================================================================\n  549: #  SECTION 8: Save data and plot\n  550: # ===========================================================================\n  551: \n  552: print(f\"\\n{'='*72}\")\n  553: print(\"  STEP 8: Saving data and generating plot\")\n  554: print(f\"{'='*72}\")\n  555: \n  556: outfile = os.path.join(data_dir, \"s73a_instanton_landscape.npz\")  # (local)\n  557: np.savez(outfile,\n  558:     # Scan parameters\n  559:     tau_scan=tau_scan,\n  560:     rho_physical=np.float64(rho_physical),\n  561:     MAX_PQ=np.int32(MAX_PQ),\n  562:     # Spectral gaps\n  563:     gap_DK_array=gap_DK_array,\n  564:     gap_00_array=gap_00_array,"
+    },
+    {
+      "anchor_id": "prov_1300",
+      "anchor_type": "data_provenance",
+      "name": "jj_kappa_map",
+      "script_path": "session-73/s73a_jj_kappa_map.py",
+      "session": "s73a",
+      "inputs": "",
+      "outputs": "session-73/s73a_jj_kappa_map.npz, session-73/s73a_jj_kappa_map.png",
+      "source_file": "computations/session-73/s73a_jj_kappa_map.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s73a_jj_kappa_map.py — Josephson Phase Diagram Map: kappa=1 contour (JJ-KAPPA-MAP-73a)\n    4: =======================================================================================\n    5: \n    6: Gate: JJ-KAPPA-MAP-73a\n    7:   INFO: tau_Mott and tau_critical computed; report whether they coincide (within 20%).\n    8:   FAIL: No tau_Mott exists in [0.19, 1.0] (system never reaches Mott regime).\n    9: \n   10: Physics:\n   11:   The CG(24) Josephson array (32 cells on Jensen-deformed SU(3)) has inter-cell"
+    }
+  ]
+}

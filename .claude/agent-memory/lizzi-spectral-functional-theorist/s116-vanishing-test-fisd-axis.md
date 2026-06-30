@@ -1,0 +1,29 @@
+---
+name: s116-vanishing-test-fisd-axis
+description: The W7 vanishing test is a 1-axis substrate-commitment gate, ORTHOGONAL to my FI/SD regulator axis; STATE-PROJ Track-A needs BOTH; §VII.AV PASSES G1 but its B(R) magnitude is regulator-class-SD-open
+metadata:
+  type: project
+---
+
+S116 W7 minted the **vanishing test**: an algebra-DEPENDENT STATE-PROJ observable is VALUE-physical (Track-A) iff it returns NONZERO on the UNDIFFERENTIATED substrate (all laboratory-IN params at their symmetric point); diagnostic = provenance of the residual AFTER the scale-cancellation (a LAB ratio = FAIL/Track-B-HELD; a SUBSTRATE DOS/occupation ratio = PASS). The scale-cancellation is GENERIC to ratio/log-derivative functionals — it is NOT the diagnostic; the residual's provenance is.
+
+**Key methodological lens (re-use for ALL future Corner-III/IV STATE-PROJ adjudications):** the vanishing test resolves ONLY the substrate-vs-lab axis (substrate-COMMITMENT, "G1"). It is ORTHOGONAL to my FI/SD axis (regulator/functional-invariance, "G2"). A vanishing-PASS observable can still carry a SCHEME-DEPENDENT magnitude. Track-A registry-PASS needs BOTH G1 ∧ G2 (W7 already pairs them). Map: vanishing test = the Track-A/B provenance annotation made executable; my FI/SD classification = the regulator-class axis that the vanishing test does NOT probe.
+
+**S116 cross-check verdict (W7↔W8 coherence):**
+- §VII.AJ.STATE-PROJ (Corner-III, s=3, W7-STATEPROJ-BCS INFO): FAILS vanishing — `R_STATE=(a−b)/(a+b)` cross-vacuum 3He-A/B contrast; residual after Δ_BCS-cancel = LAB `SC_A/SC_B` (Serene-Rainer 1983/Greywall 1986); bit-tautology of `R_3HeB_lit`, 0 substrate bits; HELD Track-B (single BDI N_3=0, no A-sector). CORRECT.
+- §VII.AV.STATE-PROJ (Cell-IV, s=4, W8-FWDC2-LANDING PASS): PASSES vanishing — `L_emp=d²ln Var_a(|v_a(K)|²)/d(lnK)²=−7.046336 M_KK²`, a single-vacuum variance over 8 substrate s52 BdG modes at COMMON Δ_BCS. All 3 candidate legs clean: PV weight cancels (MULTIPLICATIVE-NORMALIZATION-CANCELLATION — my math-scripts.md K=3 rule; the §VII.AV analog of §VII.AJ's Δ_BCS-cancel), Casimir-bound proxy discharged to FULL (rel 7.33e-11), s52 amplitudes are D_K-derived. Passes TRIVIALLY like OP-PROJ (R_∞=−1.892). CORRECT.
+- The two gates AGREE; W8 substrate-natural-binding = W7 substrate-commitment, two operational faces. The "different credentials no cross-check" concern is resolved COHERENT. Resolution (a)-with-refinement.
+
+**FI/SD classification of §VII.AV's L_emp (permanent):**
+- substrate-commitment: **FUNCTIONAL-INDEPENDENT** (vanishing-PASS holds regardless of regulator — it is the lab-vs-substrate axis).
+- L_max-stability: **FI by STRUCTURAL IDENTITY** (mult.-norm.-cancellation), NOT empirical regulator-class evidence — per my own rule the discriminating content is the plateau VALUE B(R)=−7.046, which is regulator-class-KEYED.
+- PV application-LAYER (Reading A s=4-spectral-moment −7.046 vs Reading B per-mode-dispersion −527.97, 75×): **SD**, but adjudicated at S91 W4 as orthogonal F-images (settled, not convention-shopping).
+- UV-regulator-class (PV vs zeta vs Mellin) plateau B(R): **SD-OPEN** — the one genuine CF. The existing CF-S117-FWDC2-LEMP-BULKGAP-PROTECTION covers only the {APS,CS,BC} SECONDARY-class axis (degree-0 ∧ PH-even-VARIANCE — see W-4 below, NOT "sign-blind"; FORCED on its own axis), a DIFFERENT axis per regulator-pin-discipline.md 4/5-axis orthogonality. Proposed gate `S117-FWDC2-LEMP-REGULATOR-CLASS-FISD`: zeta + Mellin plateau vs PV −7.046; PASS(FI) iff agree ≤0.05 AND alt weights K-independent; my K=3 rule EXPECTS regulator-class-keyed (SD), so EVOI-positive.
+
+**S116 W-4 (connes×lizzi, L_emp FORCED vs EARNED) — adversarial sharpening of the two-axis classification (permanent):**
+- connes's `{APS,CS,BC}` FORCED reason CORRECTED: NOT "sign-blind |v|²" (he conceded; the per-mode `|v|²=(1−ξ/E)/2` AND the mean reference sign(ξ), mean PH-ODD-affine mean_v+mean_u=1) but **PH-even centered VARIANCE** `Var(1−X)=Var(X)`. Sage-QQ verified on the actual s52 set {B1=0×1, B2=0.7704×4, B3=0.176×3}: `Var(|v|²)=Var(|u|²)=327477/3125000`; PH-CLOSED?=False yet equal ⇒ **closure IRRELEVANT** (affine identity, weight-for-weight). CONCEDE C1/C2.
+- The pairing splits `⟨Var_a, β_{APS,CS,BC}⟩ = ⟨even,β^{odd}⟩ + ⟨even,β^{even}⟩ = 0 + Term2`. **Term 1 (odd) = 0 by parity — FORCED, conceded** (S90-AQ-SECONDARY-CLASS precedent: even η=0 observable → delta_scheme=0, GV_APS=GV_CS). **Term 2 (even) is the leak**: to evaluate L_emp the {APS,CS,BC} schemes UV-regularize a DIVERGENT s=4 trace (APS ζ-reg of η(s) / BC heat-kernel / CS Chern-Weil), inheriting an EVEN Seeley-DeWitt counterterm Var (even) does NOT annihilate.
+- **n=0 = a₀ grade**: s=4,d=8 ⇒ curvature-grade n=8−2·4=0 = the cosmological-constant grade — MAXIMAL regulator-class spread (S_zeta=ζ_D(0)=a_4 has a₀ ABSENT; cutoff a₀ DOMINANT). So Term 2 is hardest to vanish exactly at L_emp's pole. **parity is NOT "the SOLE discriminator"** (connes C4): B(R)=R_KW^R(L→∞) is regulator-class-keyed at degree-0 INDEPENDENT of parity (a 2nd, parity-orthogonal discriminator). C acts as D→−D (spectral) but trivially on the regulator INDEX R.
+- **Verdict (R1 position): {APS,CS,BC} secondary-class FORCED but axis-local & automatic-for-an-even-object (vacuous robustness); UV-regulator {zeta,PV,Mellin} EARNED/SD-OPEN at n=0.** registry:18817 §A8.1(i) guard needs an axis-scope re-tag (route to mack); CF-S117's real gate is the 3-regulator B(R) cert, not odd-channel re-confirmation. L3-Q1: do the {APS,CS,BC} representatives inherit β^{even} at the divergent pole? (open).
+
+Synthesis: `sessions/session-116/session-116-w7w8-vanishing-test-synthesis.md`. Related: [[permanent_theorems]] (zeta-not-physical, FI-within/SD-across), [[s114-taufold-three-functional-distinction]] (non-fungible functional readings of one substrate object).

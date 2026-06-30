@@ -51,9 +51,9 @@ Spectral flow is different. It asks: "as the BdG spectrum evolves adiabatically,
 ### What to Read First
 
 1. `sessions/session-47/session-47-ns-reassessment.md` — your own reassessment (just written)
-2. `tier0-computation/s47_rhos_tensor.npz` — ρ_s at 16 tau values (the spectrum DOES change with tau)
-3. `tier0-computation/s46_qtheory_selfconsistent.npz` — gaps Δ(τ) and eigenvalues λ²(τ) at 60 tau values
-4. `tier0-computation/s44_dos_tau.npz` — full 992-mode spectrum at 5 tau values
+2. `computations/s47_rhos_tensor.npz` — ρ_s at 16 tau values (the spectrum DOES change with tau)
+3. `computations/s46_qtheory_selfconsistent.npz` — gaps Δ(τ) and eigenvalues λ²(τ) at 60 tau values
+4. `computations/s44_dos_tau.npz` — full 992-mode spectrum at 5 tau values
 5. Your papers:
    - **Paper 09** (`researchers/Volovik/09_1998_Volovik_Axial_Anomaly_3He_A_Baryogenesis.md`): spectral flow + chiral anomaly in 3He-A
    - **Paper 04** (`researchers/Volovik/04_2008_Volovik_Emergent_Physics_Fermi_Point_Scenario.md`): N₃ invariant, Fermi point topology
@@ -97,9 +97,9 @@ Spectral flow is different. It asks: "as the BdG spectrum evolves adiabatically,
 - **FAIL**: Spectral flow is k-independent (α ≈ 0, flat spectrum) or the mechanism is structurally inapplicable
 
 ### Output files
-- Script: `tier0-computation/s47_spectral_flow_ns.py`
-- Data: `tier0-computation/s47_spectral_flow_ns.npz`
-- Plot: `tier0-computation/s47_spectral_flow_ns.png`
+- Script: `computations/s47_spectral_flow_ns.py`
+- Data: `computations/s47_spectral_flow_ns.npz`
+- Plot: `computations/s47_spectral_flow_ns.png`
 
 ### Working paper section: W4-3
 

@@ -1,0 +1,125 @@
+{
+  "gate_id": "S89-SUBSTRATE-CLOCK-PINNING-UNIQUENESS-DERIVATION",
+  "scheme": "substrate-clock-pinning-uniqueness-derivation-5-criteria",
+  "convention": "L-pix-canonical-vs-mode-density-vs-GGE-anchored-candidate-space",
+  "L_max": 10,
+  "trigger": "VERIFY-THEOREM",
+  "classification": "PHONONIC",
+  "candidates": [
+    {
+      "candidate_id": "P_1",
+      "definition": "a_substrate(g) = L_pix(g) (Pinning-A pixel-volume; 3-color SU(3) lock-cascade)",
+      "C1_regulator_class_invariance": true,
+      "C2_Level1_substrate_IS": true,
+      "C3_Level2_substrate_IS_via_F": true,
+      "C4_minimality": true,
+      "C5_cancellation_discriminating": true,
+      "free_parameters": [
+        "a_baseline",
+        "3\u00b7log10(2) lock-cascade rate (substrate-canonical)"
+      ],
+      "free_parameters_in_canonical_set": true,
+      "satisfaction_count": 5
+    },
+    {
+      "candidate_id": "P_2",
+      "definition": "a_mode(g) = \u03c1_mode(g)^(-1/3) = N_eigs^(-1/3)\u00b7V_K^(1/3) (Pinning-B mode-density)",
+      "C1_regulator_class_invariance": true,
+      "C2_Level1_substrate_IS": true,
+      "C3_Level2_substrate_IS_via_F": true,
+      "C4_minimality": true,
+      "C5_cancellation_discriminating": false,
+      "free_parameters": [
+        "N_eigs=78080 (regulator-truncation-fixed)",
+        "d_eff=HK-5(\u03c4_fold)"
+      ],
+      "free_parameters_in_canonical_set": true,
+      "C5_failure_reason": "\u00a7W3-5 PASS confirms Pinning-B FAILS cancellation predicate at g=322 (\u0394_B \u2248 0 saturates while \u0394_A = 290.80 OOM; discriminating ratio = 1.000)",
+      "satisfaction_count": 4
+    },
+    {
+      "candidate_id": "P_3",
+      "definition": "a_GGE(g) = xi_E_GGE_inv \u00b7 (1 + g/G_critical) (GGE-anchored)",
+      "C1_regulator_class_invariance": true,
+      "C2_Level1_substrate_IS": true,
+      "C3_Level2_substrate_IS_via_F": false,
+      "C4_minimality": false,
+      "C5_cancellation_discriminating": false,
+      "free_parameters": [
+        "xi_E_GGE_inv (canonical)",
+        "G_critical (FREE; NOT in canonical set)"
+      ],
+      "free_parameters_in_canonical_set": false,
+      "C4_failure_reason": "G_critical is a free parameter NOT in canonical constants set {'M_KK', 'tau_fold', 'xi_E_GGE_inv', 'Delta_BCS'}; minimality violated.",
+      "satisfaction_count": 2
+    }
+  ],
+  "criterion_satisfaction_matrix": [
+    [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      1,
+      1,
+      0
+    ],
+    [
+      1,
+      1,
+      0,
+      0,
+      0
+    ]
+  ],
+  "uniqueness": {
+    "P_uniqueness_verdict": "P_1_UNIQUE",
+    "p1_satisfies_5": true,
+    "others_satisfying_5_of_5_count": 0,
+    "ranking_top3": [
+      [
+        "P_1",
+        5
+      ],
+      [
+        "P_2",
+        4
+      ],
+      [
+        "P_3",
+        2
+      ]
+    ],
+    "p_1_satisfaction_count": 5
+  },
+  "cross_wave_inputs": {
+    "A14_W3_3": {
+      "regulator_class_invariant": true,
+      "spread_across_regulators": 0.0,
+      "C1_evidence_for_P1": true
+    },
+    "A16_W3_4": {
+      "delta_0_cover_C": 16,
+      "m_bot20_invariant": true,
+      "C3_evidence_for_P1": true
+    },
+    "A17_W3_5": {
+      "delta_A_322": 290.79497581140583,
+      "discriminating_pass": true,
+      "C5_evidence_for_P1": true,
+      "C5_evidence_for_P2_FAIL": true
+    }
+  },
+  "composite_verdict": {
+    "composite": "PASS",
+    "sign_verdict": "N/A",
+    "magnitude_verdict": "PASS",
+    "regime_verdict": "VALID"
+  },
+  "framework_extension": "Substrate-clock canonical Pinning-A IS unique substrate-natural clock for the lock cascade (5/5 criteria PASS; no competing candidate at 5/5). Extends framework's PROVEN structural results list (KO-dim=6, [J,D_K]=0 CPT, etc.) with the lock-cascade temporal-coordinate uniqueness theorem."
+}

@@ -28,9 +28,9 @@ This session takes stock. What survived? What died? What's next?
 
 ## For gen-physicist:
 
-1. **Session 20a results**: `tier0-computation/sd20a_seeley_dewitt_gate.py` — SD-1 verdict (OPEN/CLOSED), da_2/dtau and da_4/dtau data.
+1. **Session 20a results**: `computations/sd20a_seeley_dewitt_gate.py` — SD-1 verdict (OPEN/CLOSED), da_2/dtau and da_4/dtau data.
 
-2. **Session 20b results**: `tier0-computation/l20b_lichnerowicz_sweep.py` — L-3 verdict (Closure/Suggestive/Compelling/Decisive), E_total(tau), tau_0 if exists.
+2. **Session 20b results**: `computations/l20b_lichnerowicz_sweep.py` — L-3 verdict (Closure/Suggestive/Compelling/Decisive), E_total(tau), tau_0 if exists.
 
 3. **Session 15 formalization**: `sessions/session-15/session-15-formalization.md` — The proven/suggestive/null/refuted ledger from 14 sessions.
 
@@ -42,7 +42,7 @@ This session takes stock. What survived? What died? What's next?
 
 ## For sagan-empiricist:
 
-7. **Sagan's pre-registered thresholds**: From Session 19d master collaboration (`sessions/session-19/session-19d-master-collab.md`, Section V). Three-tier criteria: Suggestive/Compelling/Decisive.
+7. **Sagan's pre-registered thresholds**: From Session 19d master collaboration (`sessions/session-19/session-19d-master-collab.md`, Section V). three-level criteria: Suggestive/Compelling/Decisive.
 
 8. **Feynman predictions session**: `memory/sessions-feynman-predictions.md` — 6 pre-registered Constraint Conditions. Joint probability ~43-45%.
 
@@ -117,7 +117,7 @@ This is the laundry list. Every unresolved task from Sessions 1-19, evaluated ag
 | 4 | A_F bimodule extraction via order-one with D_K | 10 | OPEN (commutant route exhausted) | ? |
 | 5 | QM dynamical postulates (not just kinematic) | 4 | OPEN | ? |
 
-**From Sessions 7-11 (Tier 0 Computation):**
+**From Sessions 7-11 (computation Computation):**
 
 | # | Task | Session | Current Status | Post-20 Status |
 |:--|:-----|:--------|:--------------|:---------------|
@@ -126,7 +126,7 @@ This is the laundry list. Every unresolved task from Sessions 1-19, evaluated ag
 | 8 | -2y structural factor in C+H order-one obstruction | 11 | Needs actual D_K matrix elements | ? |
 | 9 | Z_3 x Z_3 three generations (Baptista Paper 18 App E) | 11 | OPEN (theoretical framework exists) | ? |
 
-**From Sessions 12-14 (Tier 1 Dirac Spectrum):**
+**From Sessions 12-14 (Level 1 Dirac Spectrum):**
 
 | # | Task | Session | Current Status | Post-20 Status |
 |:--|:-----|:--------|:--------------|:---------------|
@@ -172,8 +172,8 @@ This is the laundry list. Every unresolved task from Sessions 1-19, evaluated ag
 
 | # | Task | Session | Current Status | Post-20 Status |
 |:--|:-----|:--------|:--------------|:---------------|
-| 27 | No-boundary 12D proposal (Hawking) | G3 | OPEN (Tier 3) | ? |
-| 28 | CDT product manifold connection | G3 | OPEN (Tier 3) | ? |
+| 27 | No-boundary 12D proposal (Hawking) | G3 | OPEN (Level 3) | ? |
+| 28 | CDT product manifold connection | G3 | OPEN (Level 3) | ? |
 
 **From Feynman Predictions Session:**
 

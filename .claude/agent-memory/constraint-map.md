@@ -382,6 +382,15 @@ Last updated: Session 28 (2026-02-27). Fused from 14 specialist constraint maps.
 
 ---
 
+## O-GW: Gravitational-Wave Channel Constraints
+
+### O-GW-01: Channel 5 (GW alpha-vs-gamma @ 1 mHz) — CONSTRAINT-MAP WALL (Sessions 82, 83 W3-G52)
+- **Constraint**: S82 W2-6 establishes Omega_GW(gamma) / Omega_GW(alpha) at f = 1 mHz = 4.25e29 (29.63 OOM), forced by T_rh^(13/3) scaling under the Parker-spectrum f^3 rising-regime formula. PASS verdict at 27.6 OOM above the 2-OOM pre-registered threshold. Relabeled from "falsifier" to WALL at S83-W3-G52 (sagan-empiricist) per S82 sagan synthesis §V.5 directive.
+- **Implication**: The gamma/alpha ratio is a THEOREM about modulus-decay GW scaling, not a measurement outcome. Route gamma (gravity-only, Weinberg-1965 soft-graviton floor) sits 47 OOM below LISA sensitivity at 1 mHz; route alpha (instanton-mediated sub-dominant) sits 77 OOM below LISA. No proposed detector in 2026 roadmaps (LISA, DECIGO, BBO, levitated-sensor UHF, CAST-magnetic-conversion) reaches either route. The classification is therefore a permanent structural identity of the T_rh^(13/3) scaling law, not a near-term pre-registered falsifier.
+- **Surviving space**: (i) Theoretical-lever status preserved — the 29.6 OOM ratio arbitrates alpha-vs-gamma in any future non-equilibrium observable that probes the f^3 rising tail or the f_peak regime (10^6-10^8 Hz). (ii) The W2-6 PASS verdict is authoritative as a structural theorem. (iii) Route labels alpha (instanton-mediated) and gamma (gravity-only) inside W2-6 physics are preserved intact; only the channel-level classification label is reclassified. (iv) If a future ultra-high-frequency instrument reaches Omega_GW < 1e-40 at 1 mHz (20 OOM concession above framework prediction), this WALL would migrate back to falsifier status — but no 2026-published proposal does.
+
+---
+
 ## O-PREM: Paasch Premise Constraints
 
 ### O-PREM-01: Dirac Large Number Hypothesis excluded
@@ -395,7 +404,7 @@ Last updated: Session 28 (2026-02-27). Fused from 14 specialist constraint maps.
 
 ### O-GEN-01: Z_3 uniform perturbatively (Session 21c)
 - **Constraint**: All three triality classes contribute ~1/3 each (0.3324-0.3338) in delta_T.
-- **Implication**: No Z_3 symmetry breaking perturbatively. Koide shortcut pushed to Tier 2.
+- **Implication**: No Z_3 symmetry breaking perturbatively. Koide shortcut deferred.
 - **Surviving space**: Non-perturbative Z_3 breaking.
 
 ### O-GEN-02: Nearest-neighbor selection rules (Session 23a)

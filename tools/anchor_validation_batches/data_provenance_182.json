@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 182,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1811",
+      "anchor_type": "data_provenance",
+      "name": "w0_hp1_dim_twisted",
+      "script_path": "session-85/s85_w0_hp1_dim_twisted.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w0_hp1_dim_twisted.npz",
+      "source_file": "computations/session-85/s85_w0_hp1_dim_twisted.py",
+      "source_context_30_lines": "   62: SCHEME = \"HP-cohomology\"                                          # (local)\n   63: CONVENTION = \"CM-2008\"                                            # (local)\n   64: L_MAX = 8                                                         # (local)\n   65: \n   66: DIM_UNTWISTED_CLASSICAL = 3                                       # (local) CM-2008 Table 2\n   67: EPS_H_HP1_NORM = 16.197719                                        # (local) S84 W10-114 lizzi\n   68: TWIST_SHIFT_ALLOWED = {-1, 0, +1}                                 # (local) plan §W0-16 bounded shift\n   69: \n   70: OUT_NPZ = resolve_output(85, 's85_w0_hp1_dim_twisted.npz')\n   71: VERDICT_TXT = resolve_output(85, 's85_gate_verdicts.txt')\n   72: \n   73: INPUT_FILES = [resolve_script(None, 'canonical_constants.py')]\n   74: \n   75: \n   76: def sha256_of(p):\n   77:     try:\n   78:         return hashlib.sha256(p.read_bytes()).hexdigest()"
+    },
+    {
+      "anchor_id": "prov_1812",
+      "anchor_type": "data_provenance",
+      "name": "w0_k_floor_wall_registry_landing",
+      "script_path": "session-85/s85_w0_k_floor_wall_registry_landing.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w0_k_floor_wall_registry_landing.npz",
+      "source_file": "computations/session-85/s85_w0_k_floor_wall_registry_landing.py",
+      "source_context_30_lines": "   52: GATE_ID = \"S85-K-FLOOR-WALL-JOINT-REGISTRY-LANDING\"             # (local)\n   53: SCHEME = \"permanent-registry\"                                   # (local)\n   54: CONVENTION = \"W5-D.4\"                                           # (local)\n   55: L_MAX = 8                                                       # (local)\n   56: \n   57: REGISTRY = PROJECT_ROOT / \"summary\" / \"permanent-results-registry.md\"\n   58: CC_PY = resolve_script(None, 'canonical_constants.py')\n   59: \n   60: OUT_NPZ = resolve_output(85, 's85_w0_k_floor_wall_registry_landing.npz')\n   61: VERDICT_TXT = resolve_output(85, 's85_gate_verdicts.txt')\n   62: \n   63: INPUT_FILES = [CC_PY]\n   64: \n   65: \n   66: def sha256_of(p):\n   67:     try:\n   68:         return hashlib.sha256(p.read_bytes()).hexdigest()"
+    },
+    {
+      "anchor_id": "prov_1813",
+      "anchor_type": "data_provenance",
+      "name": "w0_litebird_lsst_rescue",
+      "script_path": "session-85/s85_w0_litebird_lsst_rescue.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w0_litebird_lsst_rescue.npz",
+      "source_file": "computations/session-85/s85_w0_litebird_lsst_rescue.py",
+      "source_context_30_lines": "   64: SIGMA_NT_BASELINE = 0.02                                           # (local) Hazumi 2020 Table 5\n   65: N_T_FRAMEWORK = -0.02                                              # (local) S84 W4-41 mid-bracket; absolute value used\n   66: LSST_A_LENS_IMPROVEMENT = 1.3                                      # (local) improvement factor\n   67: EXT_MISSION_FACTOR = np.sqrt(3.0 / 2.0)                            # (local) √(3/2)\n   68: DELENSING_FACTOR = 0.7                                             # (local) Simons Obs fiducial\n   69: PULL_PASS_THRESHOLD = 3.0                                          # (local)\n   70: PULL_INFO_THRESHOLD = 1.0                                          # (local)\n   71: \n   72: OUT_NPZ = resolve_output(85, 's85_w0_litebird_lsst_rescue.npz')\n   73: VERDICT_TXT = resolve_output(85, 's85_gate_verdicts.txt')\n   74: \n   75: INPUT_FILES = [resolve_script(None, 'canonical_constants.py')]\n   76: \n   77: \n   78: def sha256_of(p):\n   79:     try:\n   80:         return hashlib.sha256(p.read_bytes()).hexdigest()"
+    },
+    {
+      "anchor_id": "prov_1814",
+      "anchor_type": "data_provenance",
+      "name": "w0_mellin_cone_s3_residue",
+      "script_path": "session-85/s85_w0_mellin_cone_s3_residue.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w0_mellin_cone_s3_residue.npz",
+      "source_file": "computations/session-85/s85_w0_mellin_cone_s3_residue.py",
+      "source_context_30_lines": "   64: SCHEME = \"Connes-Moscovici-Mellin-cone\"\n   65: CONVENTION = \"s*=3\"\n   66: L_MAX = 12\n   67: \n   68: L_GRID = [8, 9, 10, 11, 12]                                      # (local) sweep\n   69: S_STAR = 3                                                        # (local) primary s*\n   70: PASS_ABS = 1e-3                                                   # (local) fit residual tol\n   71: \n   72: OUT_NPZ = resolve_output(85, 's85_w0_mellin_cone_s3_residue.npz')\n   73: OUT_PNG = resolve_output(85, 's85_w0_mellin_cone_s3_residue.png')\n   74: VERDICT_TXT = resolve_output(85, 's85_gate_verdicts.txt')\n   75: \n   76: INPUT_FILES = [resolve_script(None, 'canonical_constants.py'),\n   77:                resolve_output(84, 's84_spectrum_cache_L12_tau019.npz')]\n   78: \n   79: \n   80: def sha256_of(p):"
+    },
+    {
+      "anchor_id": "prov_1815",
+      "anchor_type": "data_provenance",
+      "name": "w0_mellin_template_compliance_lift",
+      "script_path": "session-85/s85_w0_mellin_template_compliance_lift.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w0_mellin_template_compliance_lift.npz",
+      "source_file": "computations/session-85/s85_w0_mellin_template_compliance_lift.py",
+      "source_context_30_lines": "   62: SCHEME = \"template-audit\"                                        # (local)\n   63: CONVENTION = \"Mellin-balance-W6-71\"                              # (local)\n   64: L_MAX = \"NA\"                                                     # (local)\n   65: \n   66: TARGET_COUNT = 16                                                # (local) plan expected\n   67: PASS_MIN = 16                                                    # (local)\n   68: INFO_MIN = 13                                                    # (local)\n   69: \n   70: OUT_NPZ = resolve_output(85, 's85_w0_mellin_template_compliance_lift.npz')\n   71: VERDICT_TXT = resolve_output(85, 's85_gate_verdicts.txt')\n   72: \n   73: \n   74: def sha256_of(p):\n   75:     try:\n   76:         return hashlib.sha256(p.read_bytes()).hexdigest()\n   77:     except OSError:\n   78:         return \"\""
+    },
+    {
+      "anchor_id": "prov_1816",
+      "anchor_type": "data_provenance",
+      "name": "w0_n_t_two_speed_readjudication",
+      "script_path": "session-85/s85_w0_n_t_two_speed_readjudication.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w0_n_t_two_speed_readjudication.npz",
+      "source_file": "computations/session-85/s85_w0_n_t_two_speed_readjudication.py",
+      "source_context_30_lines": "   60: SHIFT_PASS = 0.10                                                 # (local) 10% shift tol\n   61: PULL_PASS = 2.0                                                   # (local)\n   62: PULL_INFO = 1.0                                                   # (local)\n   63: \n   64: # Detector Fisher (plan §W0-21 machinery pin)\n   65: SIGMA_CMBS4 = 0.01                                                # (local)\n   66: SIGMA_LITEBIRD_POST_RESCUE = 0.02                                 # (local) post-W0-18 rescue\n   67: \n   68: OUT_NPZ = resolve_output(85, 's85_w0_n_t_two_speed_readjudication.npz')\n   69: VERDICT_TXT = resolve_output(85, 's85_gate_verdicts.txt')\n   70: \n   71: \n   72: def sha256_of(p):\n   73:     try:\n   74:         return hashlib.sha256(p.read_bytes()).hexdigest()\n   75:     except OSError:\n   76:         return \"\""
+    },
+    {
+      "anchor_id": "prov_1817",
+      "anchor_type": "data_provenance",
+      "name": "w0_pixie_mu_k_endpoint_prereg",
+      "script_path": "session-85/s85_w0_pixie_mu_k_endpoint_prereg.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w0_pixie_mu_k_endpoint_prereg.npz, session-85/s85_w0_pixie_mu_k_endpoint_prereg.png",
+      "source_file": "computations/session-85/s85_w0_pixie_mu_k_endpoint_prereg.py",
+      "source_context_30_lines": "  107: L_MAX = 8                                                    # (local)\n  108: \n  109: # Pre-registered thresholds (plan §W0-8)\n  110: PASS_PULL_THRESHOLD = 100.0                                  # (local) plan §W0-8 PASS\n  111: INFO_PULL_LOWER = 10.0                                       # (local) plan §W0-8 INFO band lower\n  112: GAMMA_TOLERANCE = 1e-6                                       # (local) |gamma_fit - 1| < 1e-6\n  113: \n  114: # Output destinations\n  115: OUT_NPZ = resolve_output(85, 's85_w0_pixie_mu_k_endpoint_prereg.npz')\n  116: OUT_PNG = resolve_output(85, 's85_w0_pixie_mu_k_endpoint_prereg.png')\n  117: VERDICT_TXT = resolve_output(85, 's85_gate_verdicts.txt')\n  118: \n  119: W5_57_NPZ = resolve_output(84, 's84_w5_57_data.npz')\n  120: \n  121: INPUT_FILES = [\n  122:     resolve_script(None, 'canonical_constants.py'),\n  123:     W5_57_NPZ,"
+    },
+    {
+      "anchor_id": "prov_1818",
+      "anchor_type": "data_provenance",
+      "name": "w0_plan_discipline_vh_check",
+      "script_path": "session-85/s85_w0_plan_discipline_vh_check.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w0_plan_discipline_vh_check.npz",
+      "source_file": "computations/session-85/s85_w0_plan_discipline_vh_check.py",
+      "source_context_30_lines": "   52: GATE_ID = \"S85-PLAN-DISCIPLINE-VAN-HOVE-CHECK\"                   # (local)\n   53: SCHEME = \"plan-PRDR\"                                             # (local)\n   54: CONVENTION = \"stationarity-claim\"                                # (local)\n   55: L_MAX = \"NA\"                                                     # (local)\n   56: \n   57: STATIONARITY_REGEX = re.compile(r\"stationary|extremum|cusp|τ_fold|tau_fold|van hove\", re.IGNORECASE)\n   58: SUCCESSOR_TAG_REGEX = re.compile(r\"DEFERRED-TO-S86-|DEFERRED[- ]TO[- ]S\\d+|successor[_ ]tag\", re.IGNORECASE)\n   59: \n   60: OUT_NPZ = resolve_output(85, 's85_w0_plan_discipline_vh_check.npz')\n   61: VERDICT_TXT = resolve_output(85, 's85_gate_verdicts.txt')\n   62: \n   63: \n   64: def sha256_of(p):\n   65:     try:\n   66:         return hashlib.sha256(p.read_bytes()).hexdigest()\n   67:     except OSError:\n   68:         return \"\""
+    },
+    {
+      "anchor_id": "prov_1819",
+      "anchor_type": "data_provenance",
+      "name": "w0_van_hove_cusp_theorem",
+      "script_path": "session-85/s85_w0_van_hove_cusp_theorem.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w0_van_hove_cusp_theorem.npz, session-85/s85_w0_van_hove_cusp_theorem.png",
+      "source_file": "computations/session-85/s85_w0_van_hove_cusp_theorem.py",
+      "source_context_30_lines": "  199: DOS_BIN_WIDTH = 0.01                                           # (local) in M_KK units\n  200: SHARPNESS_THRESHOLD = 1000.0                                   # (local) dp/dE > 1000 criterion\n  201: \n  202: # Gate thresholds (ratio)\n  203: PASS_RATIO = 0.005                                             # (local) 0.5% deviation -> PASS\n  204: FAIL_RATIO = 0.02                                              # (local) 2% deviation -> FAIL\n  205: \n  206: # Output destinations\n  207: OUT_NPZ = resolve_output(85, 's85_w0_van_hove_cusp_theorem.npz')\n  208: OUT_PNG = resolve_output(85, 's85_w0_van_hove_cusp_theorem.png')\n  209: VERDICT_TXT = resolve_output(85, 's85_gate_verdicts.txt')\n  210: \n  211: INPUT_FILES = [\n  212:     resolve_script(None, 'canonical_constants.py'),\n  213:     resolve_script(None, 'dirac_spectrum.py'),\n  214: ]\n  215: "
+    },
+    {
+      "anchor_id": "prov_1820",
+      "anchor_type": "data_provenance",
+      "name": "w0_zubarev_lmax_convergence_to_minus_one",
+      "script_path": "session-85/s85_w0_zubarev_lmax_convergence_to_minus_one.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w0_zubarev_lmax_convergence_to_minus_one.npz, session-85/s85_w0_zubarev_lmax_convergence_to_minus_one.png",
+      "source_file": "computations/session-85/s85_w0_zubarev_lmax_convergence_to_minus_one.py",
+      "source_context_30_lines": "  159: \n  160: SESSION = \"S85\"                                                    # (local)\n  161: GATE_ID = \"S85-ZUBAREV-LMAX-CONVERGENCE-TO-MINUS-ONE\"              # (local)\n  162: SCHEME = \"Zubarev-Mellin\"                                          # (local)\n  163: CONVENTION = \"Jensen-deformed\"                                     # (local)\n  164: L_MAX_PRIMARY = 12                                                 # (local) L_max slot in 4-tuple\n  165: L_MAX_SCAN = [8, 9, 10, 11, 12]                                    # (local) per PRDR pin\n  166: \n  167: OUT_NPZ = SCRIPT_DIR / \"s85_w0_zubarev_lmax_convergence_to_minus_one.npz\"\n  168: OUT_PNG = SCRIPT_DIR / \"s85_w0_zubarev_lmax_convergence_to_minus_one.png\"\n  169: VERDICT_TXT = SCRIPT_DIR / \"s85_gate_verdicts.txt\"\n  170: \n  171: SPECTRUM_CACHE = SCRIPT_DIR / \"s84_spectrum_cache_L12_tau019.npz\"  # (local)\n  172: \n  173: INPUT_FILES = [\n  174:     SCRIPT_DIR / \"canonical_constants.py\",\n  175:     SPECTRUM_CACHE,"
+    }
+  ]
+}

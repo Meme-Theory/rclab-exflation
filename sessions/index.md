@@ -33,7 +33,7 @@ Rebuilt the quantum mechanics section from VERY LOW ("indefensible") to MEDIUM t
 
 ---
 
-### Phase III: Tier 0 NCG Computation (Sessions 8-11)
+### Phase III: computation NCG Computation (Sessions 8-11)
 
 Executed the commutant computation on the full 32-dimensional Hilbert space H_F. KO-dimension = 6 (the Standard Model value) emerged parameter-free. All algebraic routes to extracting A_F were systematically exhausted — the commutant captures C + M_3(C) but not H, which acts as a bimodule requiring the actual Dirac operator D_K. Session 11 resolved the chirality catch-22 (wrong gamma_F identification) with 5/5 unanimous agreement, converging all paths onto a single decisive computation: D_K on (SU(3), g_s). Framework probability: 55-75%.
 
@@ -42,7 +42,7 @@ Executed the commutant computation on the full 32-dimensional Hilbert space H_F.
 | `session-8-phase2-32dim.md` | Session 8 | KO-dim = 6 parameter-free; R_{u(2)} uniquely gives center=5, 3 factors |
 | `session-9-synthesis.md` | Session 9 | R_{u(2)} = opposite algebra; factor structure identified with known NCG reductions |
 | `session-10-phase2b-2.5.md` | Session 10 | Commutant route exhausted at 40 dims; A_F is bimodule; order-one gives C+M_3(C) only |
-| `session-11-chirality.md` | Session 11 | Chirality resolved (wrong gamma_F); 5/5 thumbs up; Tier 1 feasible in 3-5 days |
+| `session-11-chirality.md` | Session 11 | Chirality resolved (wrong gamma_F); 5/5 thumbs up; Level 1 feasible in 3-5 days |
 
 ---
 
@@ -175,7 +175,7 @@ Session 17 executed 18 numerical deliverables across four phases with four agent
 | Phonon-NCG dictionary (17 entries, avg B) | Session 16: 1c, 2c, 3b, Final |
 | Session 16 outcome scenarios (ALPHA-EPSILON) | Session 16: 3c, Final |
 | Session 16 agent behavior / orchestration | Session 16: Orchestration State |
-| Einstein-Feynman hidden gaps / Tier classification | Session 16: E-F Review |
+| Einstein-Feynman hidden gaps / Level classification | Session 16: E-F Review |
 | 11 proven results / 5 refuted claims inventory | Session 16: Final |
 | Session 17 seeds / next computation steps | Session 16: Final, E-F Review |
 | Session 16 probability consensus | Session 16: 3c, Final, E-F Review |

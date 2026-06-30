@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 114,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1131",
+      "anchor_type": "data_provenance",
+      "name": "fold_curvature_ratio",
+      "script_path": "session-67/s67_fold_curvature_ratio.py",
+      "session": "s67",
+      "inputs": "",
+      "outputs": "session-67/s67_fold_curvature_ratio.npz, session-67/s67_fold_curvature_ratio.png",
+      "source_file": "computations/session-67/s67_fold_curvature_ratio.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s67_fold_curvature_ratio.py -- FOLD-CURVATURE-RATIO-67: Fold-Local Universality Test\n    4: =====================================================================================\n    5: \n    6: Gate: FOLD-CURVATURE-RATIO-67\n    7:   PASS: Variation < 10% across functionals (fold-local universality)\n    8:   FAIL: Variation > 30%\n    9:   INFO: 10% < Variation < 30% (borderline)\n   10: \n   11: Physics:"
+    },
+    {
+      "anchor_id": "prov_1132",
+      "anchor_type": "data_provenance",
+      "name": "functional_select",
+      "script_path": "session-67/s67_functional_select.py",
+      "session": "s67",
+      "inputs": "",
+      "outputs": "session-67/s67_functional_select.npz, session-67/s67_functional_select.png",
+      "source_file": "computations/session-67/s67_functional_select.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s67_functional_select.py -- FUNCTIONAL-SELECT-67\n    4: =================================================\n    5: \n    6: Gate: FUNCTIONAL-SELECT-67\n    7:   PASS: Unique phi_* with n_s in [0.955, 0.975] AND m_H in [122, 130] GeV\n    8:   FAIL: No phi satisfies both constraints simultaneously\n    9:   INFO: Multiple phi satisfy constraints (underdetermined)\n   10:   Null hypothesis: The frustration triangle persists; no single functional\n   11:                    satisfies all observables."
+    },
+    {
+      "anchor_id": "prov_1133",
+      "anchor_type": "data_provenance",
+      "name": "gge_bispectrum",
+      "script_path": "session-67/s67_gge_bispectrum.py",
+      "session": "s67",
+      "inputs": "",
+      "outputs": "session-67/s67_gge_bispectrum.npz, session-67/s67_gge_bispectrum.png",
+      "source_file": "computations/session-67/s67_gge_bispectrum.py",
+      "source_context_30_lines": "  718: # ============================================================================\n  719: #  SECTION 8: Save Data\n  720: # ============================================================================\n  721: \n  722: print(\"\\n\" + \"=\" * 72)\n  723: print(\"SAVING DATA\")\n  724: print(\"=\" * 72)\n  725: \n  726: outpath = os.path.join(os.path.dirname(__file__), 's67_gge_bispectrum.npz')\n  727: \n  728: np.savez(outpath,\n  729:     # Channel amplitudes\n  730:     f_NL_equil=f_NL_equil,\n  731:     f_NL_equil_NLO=f_NL_equil_NLO,\n  732:     f_NL_DBI=f_NL_DBI,\n  733:     f_NL_Maldacena=f_NL_Maldacena,\n  734:     f_NL_diag_CLT=f_NL_diag_CLT,"
+    },
+    {
+      "anchor_id": "prov_1134",
+      "anchor_type": "data_provenance",
+      "name": "gge_two_fluid",
+      "script_path": "session-67/s67_gge_two_fluid.py",
+      "session": "s67",
+      "inputs": "",
+      "outputs": "session-67/s67_gge_two_fluid.npz",
+      "source_file": "computations/session-67/s67_gge_two_fluid.py",
+      "source_context_30_lines": "  832: print(f\"  │  Gate: GGE-TWO-FLUID-67 (INFO)                                   │\")\n  833: print(f\"  │  Status: Two sound modes COMPUTED. Mutual friction NEGLIGIBLE.    │\")\n  834: print(f\"  │  Second sound is unique prediction (no standard cosmo analog).    │\")\n  835: print(f\"  │  Normal-superfluid components effectively DECOUPLED               │\")\n  836: print(f\"  │  (Gamma_L << H at all epochs). Consistent with GGE integrability.│\")\n  837: print(f\"  └───────────────────────────────────────────────────────────────────┘\")\n  838: \n  839: # Save to npz\n  840: save_path = os.path.join(SCRIPT_DIR, 's67_gge_two_fluid.npz')\n  841: \n  842: np.savez(save_path,\n  843:     # Gate metadata\n  844:     gate_name='GGE-TWO-FLUID-67',\n  845:     gate_verdict='INFO',\n  846:     gate_detail=(\n  847:         f'Two-fluid hydrodynamics COMPUTED. '\n  848:         f'rho_n/rho={rho_n_frac:.6f}, rho_s/rho={rho_s_frac:.6f}. '"
+    },
+    {
+      "anchor_id": "prov_1135",
+      "anchor_type": "data_provenance",
+      "name": "gge_volovik_relax",
+      "script_path": "session-67/s67_gge_volovik_relax.py",
+      "session": "s67",
+      "inputs": "",
+      "outputs": "session-67/s67_gge_volovik_relax.npz, session-67/s67_gge_volovik_relax.png",
+      "source_file": "computations/session-67/s67_gge_volovik_relax.py",
+      "source_context_30_lines": "  766: ax = axes[1, 2]\n  767: ax.plot(sol_large.t, delta_E_large / delta_E_0_large, 'r-', linewidth=0.5)\n  768: ax.axhline(0, color='gray', linestyle='-', alpha=0.3)\n  769: ax.set_xlabel('t (M$_{KK}^{-1}$)')\n  770: ax.set_ylabel('$\\\\delta E_{vac}(t) / \\\\delta E_{vac}(0)$')\n  771: ax.set_title(f'(f) Nonlinear regime ($\\\\delta = {delta_large}$)')\n  772: \n  773: plt.tight_layout()\n  774: plot_path = Path(__file__).parent / \"s67_gge_volovik_relax.png\"\n  775: plt.savefig(str(plot_path), dpi=150, bbox_inches='tight')\n  776: plt.close()\n  777: print(f\"\\nPlot saved to {plot_path}\")\n  778: \n  779: # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n  780: # SECTION 13: Save data\n  781: # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n  782: "
+    },
+    {
+      "anchor_id": "prov_1136",
+      "anchor_type": "data_provenance",
+      "name": "higgs_zeta",
+      "script_path": "session-67/s67_higgs_zeta.py",
+      "session": "s67",
+      "inputs": "",
+      "outputs": "session-67/s67_higgs_zeta.npz, session-67/s67_higgs_zeta.png",
+      "source_file": "computations/session-67/s67_higgs_zeta.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s67_higgs_zeta.py -- HIGGS-ZETA-67\n    4: Higgs mass in the zeta spectral action vs cutoff spectral action.\n    5: \n    6: PHYSICAL DERIVATION\n    7: -------------------\n    8: In the Chamseddine-Connes spectral action Tr f(D^2/Lambda^2), the bosonic\n    9: Lagrangian is a sum over Seeley-DeWitt coefficients a_{2n} weighted by\n   10: spectral moments f_n of the cutoff function f:\n   11: "
+    },
+    {
+      "anchor_id": "prov_1137",
+      "anchor_type": "data_provenance",
+      "name": "isocurvature",
+      "script_path": "session-67/s67_isocurvature.py",
+      "session": "s67",
+      "inputs": "",
+      "outputs": "session-67/s67_isocurvature.npz",
+      "source_file": "computations/session-67/s67_isocurvature.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s67_isocurvature.py — Non-Adiabatic Fraction from Leggett Channel\n    4: ====================================================================\n    5: \n    6: Gate: ISOCURVATURE-67\n    7:   PASS: beta_iso < 1.7%  (Planck 2018 bound)\n    8:   FAIL: beta_iso > 5%\n    9:   INFO: intermediate (1.7-5%)\n   10: \n   11: Physics:"
+    },
+    {
+      "anchor_id": "prov_1138",
+      "anchor_type": "data_provenance",
+      "name": "joint_falsification",
+      "script_path": "session-67/s67_joint_falsification.py",
+      "session": "s67",
+      "inputs": "",
+      "outputs": "session-67/s67_joint_falsification.npz",
+      "source_file": "computations/session-67/s67_joint_falsification.py",
+      "source_context_30_lines": "  925: pass_ns_arr = np.array([functionals[f]['pass_ns'] for f in func_names])\n  926: pass_DM_arr = np.array([functionals[f]['pass_DM'] for f in func_names])\n  927: pass_subgap_arr = np.array([functionals[f]['pass_subgap'] for f in func_names])\n  928: pass_CC_arr = np.array([functionals[f]['pass_CC'] for f in func_names])\n  929: pass_all_arr = np.array([all([functionals[f]['pass_ns'], functionals[f]['pass_DM'],\n  930:                               functionals[f]['pass_subgap'], functionals[f]['pass_CC']])\n  931:                          for f in func_names])\n  932: \n  933: outfile = os.path.join(os.path.dirname(__file__), 's67_joint_falsification.npz')\n  934: np.savez(outfile,\n  935:     # Gate metadata\n  936:     gate_name='JOINT-FALSIFICATION-67',\n  937:     gate_verdict=gate_verdict,\n  938:     gate_detail=f'{n_joint_pass}/5 functionals pass all 4 constraints. Sole survivor: CC cutoff sqrt(x).',\n  939: \n  940:     # Per-functional results\n  941:     functional_names=np.array(func_names),"
+    },
+    {
+      "anchor_id": "prov_1139",
+      "anchor_type": "data_provenance",
+      "name": "leggett_grav_decay",
+      "script_path": "session-67/s67_leggett_grav_decay.py",
+      "session": "s67",
+      "inputs": "",
+      "outputs": "session-67/s67_leggett_grav_decay.npz",
+      "source_file": "computations/session-67/s67_leggett_grav_decay.py",
+      "source_context_30_lines": "  720:     'xi_eff_S52': np.float64(results['S52_GL']['xi_eff']),\n  721:     'xi_eff_S59': np.float64(results['S59_Vbare']['xi_eff']),\n  722: \n  723:     # a_2(phi) numerical profile (for verification)\n  724:     'phi_test': phi_test,\n  725:     'a2_model_phi': a2_model,\n  726: }\n  727: \n  728: save_path = os.path.join(data_dir, 's67_leggett_grav_decay.npz')\n  729: np.savez(save_path, **save_data)\n  730: print(f\"  Saved: {save_path}\")\n  731: \n  732: print(\"\\n\" + \"=\" * 80)\n  733: print(\"COMPUTATION COMPLETE: LEGGETT-GRAV-DECAY-67\")\n  734: print(\"=\" * 80)"
+    },
+    {
+      "anchor_id": "prov_1140",
+      "anchor_type": "data_provenance",
+      "name": "multi_level_lz",
+      "script_path": "session-67/s67_multi_level_lz.py",
+      "session": "s67",
+      "inputs": "",
+      "outputs": "session-67/s67_multi_level_lz.npz",
+      "source_file": "computations/session-67/s67_multi_level_lz.py",
+      "source_context_30_lines": "  823:     'gate_name': 'MULTI-LEVEL-LZ-67',\n  824:     'gate_verdict': 'INFO',\n  825:     'min_P_exc_physical': min_physical,\n  826:     'min_P_exc_consec': min_consec,\n  827:     'mean_P_exc_consec': mean_consec,\n  828:     'gamma_physical': gamma_physical,\n  829: }\n  830: \n  831: outfile = os.path.join(data_dir, 's67_multi_level_lz.npz')\n  832: np.savez(outfile, **save_dict)\n  833: print(f\"  Saved: {outfile}\")\n  834: print(f\"  Keys: {list(save_dict.keys())}\")\n  835: print(\"\\nDONE.\")"
+    }
+  ]
+}

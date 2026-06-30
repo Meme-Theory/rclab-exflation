@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 145,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1441",
+      "anchor_type": "data_provenance",
+      "name": "h_phys_reduction",
+      "script_path": "session-75/s75_h_phys_reduction.py",
+      "session": "s75",
+      "inputs": "",
+      "outputs": "session-75/s75_h_phys_reduction.npz, session-75/s75_h_phys_reduction.png",
+      "source_file": "computations/session-75/s75_h_phys_reduction.py",
+      "source_context_30_lines": "  645: ax4.set_xticks(x_pos)\n  646: ax4.set_xticklabels(branches)\n  647: ax4.set_ylabel('Residual A_s gap (OOM)')\n  648: ax4.set_title('Residual Gap After H-Reduction')\n  649: ax4.legend(fontsize=9)\n  650: ax4.grid(True, alpha=0.3, axis='y')\n  651: \n  652: plt.tight_layout()\n  653: plot_path = os.path.join(data_dir, 's75_h_phys_reduction.png')\n  654: plt.savefig(plot_path, dpi=150, bbox_inches='tight')\n  655: log(f\"  Plot saved: {plot_path}\")\n  656: \n  657: # ============================================================================\n  658: #  SECTION 10: Save Results\n  659: # ============================================================================\n  660: \n  661: log(\"\\n--- SECTION 10: Saving results ---\")"
+    },
+    {
+      "anchor_id": "prov_1442",
+      "anchor_type": "data_provenance",
+      "name": "jacobson_lambda",
+      "script_path": "session-75/s75_jacobson_lambda.py",
+      "session": "s75",
+      "inputs": "",
+      "outputs": "session-75/s75_jacobson_lambda.npz",
+      "source_file": "computations/session-75/s75_jacobson_lambda.py",
+      "source_context_30_lines": "  570: # ============================================================================\n  571: # 10. Save Results\n  572: # ============================================================================\n  573: print(\"\\n\" + \"=\" * 78)\n  574: print(\"10. SAVING RESULTS\")\n  575: print(\"=\" * 78)\n  576: \n  577: np.savez(\n  578:     os.path.join(SCRIPT_DIR, 's75_jacobson_lambda.npz'),\n  579:     # GGE partition function\n  580:     ln_Z_total=ln_Z_total,\n  581:     ln_Z_k=ln_Z_k,\n  582:     f_k=f_k,\n  583:     F_GGE=F_GGE,\n  584:     E_GGE=E_GGE,\n  585:     S_GGE_check=S_GGE_check,\n  586:     # Sector decomposition"
+    },
+    {
+      "anchor_id": "prov_1443",
+      "anchor_type": "data_provenance",
+      "name": "kappa_definition",
+      "script_path": "session-75/s75_kappa_definition.py",
+      "session": "s75",
+      "inputs": "",
+      "outputs": "session-75/s75_kappa_definition.npz",
+      "source_file": "computations/session-75/s75_kappa_definition.py",
+      "source_context_30_lines": "  455:     kappa_v_canonical / (2 * PI),\n  456:     kappa_curv_canonical / (2 * PI)))\n  457: print()\n  458: \n  459: # =========================================================================\n  460: #  SECTION 8:  Save outputs\n  461: # =========================================================================\n  462: \n  463: NPZ_PATH = os.path.join(HERE, \"s75_kappa_definition.npz\")\n  464: np.savez(\n  465:     NPZ_PATH,\n  466:     # Gate\n  467:     gate_name=\"S75-I2-KAPPA-DEF\",\n  468:     gate_verdict=gate_verdict,\n  469:     gate_detail=gate_detail,\n  470:     # Definition 1: kappa_geom\n  471:     kappa_geom=kappa_geom_canonical,"
+    },
+    {
+      "anchor_id": "prov_1444",
+      "anchor_type": "data_provenance",
+      "name": "kosmann_kernel",
+      "script_path": "session-75/s75_kosmann_kernel.py",
+      "session": "s75",
+      "inputs": "",
+      "outputs": "session-75/s75_kosmann_kernel.npz",
+      "source_file": "computations/session-75/s75_kosmann_kernel.py",
+      "source_context_30_lines": "   22:       derivative of the Jensen-deformed metric. Its kernel may change with tau.\n   23: \n   24: Pre-registered Gate S75-M1-KOSMANN:\n   25:     PASS: dim Ker(K_a) constant across all 5 tau (topological invariant)\n   26:     INFO: Changes but systematic pattern\n   27:     FAIL: Erratic\n   28: \n   29: Output:\n   30:     s75_kosmann_kernel.npz: kernel dimensions, singular values, operator norms\n   31:     Section W4-I of session-75-results-workingpaper.md\n   32: \n   33: Author: Baptista Spacetime Analyst (S75)\n   34: Date: 2026-04-12\n   35: \"\"\"\n   36: \n   37: import sys\n   38: import os"
+    },
+    {
+      "anchor_id": "prov_1445",
+      "anchor_type": "data_provenance",
+      "name": "layer_diff",
+      "script_path": "session-75/s75_layer_diff.py",
+      "session": "s75",
+      "inputs": "",
+      "outputs": "session-75/s75_layer_diff.npz",
+      "source_file": "computations/session-75/s75_layer_diff.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s75_layer_diff.py — Layer 1 vs Layer 2 BCS Sound Speed Comparison\n    4: ===================================================================\n    5: \n    6: Gate: S75-C3-LAYER-DIFF\n    7:   PASS: max(delta_c_b) < 0.01 (layers agree)\n    8:   INFO: 0.01 < max(delta_c_b) < 0.10\n    9:   FAIL: max(delta_c_b) > 0.10 (significant discrepancy)\n   10: \n   11: Physics:"
+    },
+    {
+      "anchor_id": "prov_1446",
+      "anchor_type": "data_provenance",
+      "name": "lefschetz_permanent",
+      "script_path": "session-75/s75_lefschetz_permanent.py",
+      "session": "s75",
+      "inputs": "",
+      "outputs": "session-75/s75_lefschetz_permanent.npz, session-75/s75_lefschetz_permanent.png",
+      "source_file": "computations/session-75/s75_lefschetz_permanent.py",
+      "source_context_30_lines": "   82:     The suppression factor kappa_H/(2*T_eff) may shift by ~1.4% due to\n   83:     dt_transit changes, but this affects only the MAGNITUDE of suppression,\n   84:     not the LOCATION of the dominant winding.\n   85: \n   86: This computation VERIFIES the structural argument numerically.\n   87: \n   88: Outputs\n   89: -------\n   90:     s75_lefschetz_permanent.npz\n   91:     s75_lefschetz_permanent.png\n   92: \"\"\"\n   93: \n   94: import os\n   95: import sys\n   96: import time\n   97: import numpy as np\n   98: import matplotlib"
+    },
+    {
+      "anchor_id": "prov_1447",
+      "anchor_type": "data_provenance",
+      "name": "lizzi_observable",
+      "script_path": "session-75/s75_lizzi_observable.py",
+      "session": "s75",
+      "inputs": "",
+      "outputs": "session-75/s75_lizzi_observable.npz",
+      "source_file": "computations/session-75/s75_lizzi_observable.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s75_lizzi_observable.py -- W2-C LIZZI-OBSERVABLE-EMPIRICAL-75\n    4: =============================================================\n    5: \n    6: Gate: S75-G5-LIZZI-OBS\n    7:   Test the Lizzi observable relation:\n    8:     (m_H/v_EW)^2 * (Lambda_CC/M_Pl^2) = R_1\n    9:   where R_1 = a_0 * a_4 / a_2^2 is the spectral ratio-of-ratios\n   10:   from the D_K eigenvalue distribution at the Jensen fold.\n   11: "
+    },
+    {
+      "anchor_id": "prov_1448",
+      "anchor_type": "data_provenance",
+      "name": "lmax_bidirectional",
+      "script_path": "session-75/s75_lmax_bidirectional.py",
+      "session": "s75",
+      "inputs": "",
+      "outputs": "session-75/s75_lmax_bidirectional.npz",
+      "source_file": "computations/session-75/s75_lmax_bidirectional.py",
+      "source_context_30_lines": "  464: print(\"  spectrum or Seeley-DeWitt coefficients enter the construction.\")\n  465: print(\"  V_FR has zero L_max dependence at source.\")\n  466: print()\n  467: \n  468: # ============================================================================\n  469: #  SAVE DATA\n  470: # ============================================================================\n  471: \n  472: out_npz = os.path.join(SCRIPT_DIR, \"s75_lmax_bidirectional.npz\")\n  473: \n  474: # Build sector arrays for saving\n  475: dnp_keys_L5 = np.array([f\"{p},{q}\" for (p,q) in dnp_results[5][\"sector_lambda_min\"].keys()])  # (local)\n  476: dnp_vals_L5 = np.array([dnp_results[5][\"sector_lambda_min\"][(p,q)] for (p,q) in dnp_results[5][\"sector_lambda_min\"].keys()])  # (local)\n  477: dnp_keys_L7 = np.array([f\"{p},{q}\" for (p,q) in dnp_results[7][\"sector_lambda_min\"].keys()])  # (local)\n  478: dnp_vals_L7 = np.array([dnp_results[7][\"sector_lambda_min\"][(p,q)] for (p,q) in dnp_results[7][\"sector_lambda_min\"].keys()])  # (local)\n  479: \n  480: np.savez("
+    },
+    {
+      "anchor_id": "prov_1449",
+      "anchor_type": "data_provenance",
+      "name": "m1_l11_convergence",
+      "script_path": "session-75/s75_m1_l11_convergence.py",
+      "session": "s75",
+      "inputs": "s74_spectrum_cache_L9_tau019.npz, s74_hp4_pairing.npz",
+      "outputs": "session-75/s75_m1_l11_convergence.npz, session-75/s75_m1_l11_convergence.png",
+      "source_file": "computations/session-75/s75_m1_l11_convergence.py",
+      "source_context_30_lines": "  438: print(f\"    FAIL threshold: drift > {FAIL_THRESHOLD*100:.0f}%\")\n  439: print(f\"    Measured drift (L=10 -> L=11): {drift_10_11*100:.2f}%\")\n  440: print(f\"    Verdict: {verdict}\")\n  441: \n  442: # =============================================================================\n  443: # 10. SAVE NPZ\n  444: # =============================================================================\n  445: \n  446: out_npz = os.path.join(SCRIPT_DIR, 's75_m1_l11_convergence.npz')\n  447: np.savez(\n  448:     out_npz,\n  449:     gate_id=GATE_ID,\n  450:     gate_verdict=verdict,\n  451:     L_list=np.array(L_range),\n  452:     lam_avg_arr=np.array([results[L]['lam_avg'] for L in L_range]),\n  453:     chi_2_arr=np.array([results[L]['chi_2'] for L in L_range]),\n  454:     M1_arr=np.array([results[L]['M1'] for L in L_range]),"
+    },
+    {
+      "anchor_id": "prov_1450",
+      "anchor_type": "data_provenance",
+      "name": "mach_sharpness_scaling",
+      "script_path": "session-75/s75_mach_sharpness_scaling.py",
+      "session": "s75",
+      "inputs": "",
+      "outputs": "session-75/s75_mach_sharpness_scaling.npz, session-75/s75_mach_sharpness_scaling.png",
+      "source_file": "computations/session-75/s75_mach_sharpness_scaling.py",
+      "source_context_30_lines": "  547: log(f\"           = {Ma2 * M_over_Delta**2 * N_geom_modes:.1f}\")\n  548: log(f\"  Actual F_total = {F_total_s75:.2f}\")\n  549: log(f\"  Ratio: {F_total_s75 / (Ma2 * M_over_Delta**2 * N_geom_modes):.4f}\")\n  550: \n  551: # =====================================================================\n  552: # SECTION 8: Save Data and Plot\n  553: # =====================================================================\n  554: \n  555: outpath = os.path.join(HERE, \"s75_mach_sharpness_scaling.npz\")\n  556: np.savez(outpath,\n  557:          gate_name=\"S75-I4-MACH-SCALING\",\n  558:          gate_verdict=verdict,\n  559:          gate_detail=detail,\n  560:          Ma_scan=Ma_scan,\n  561:          kappa_arr=kappa_arr,\n  562:          T_H_arr=T_H_arr,\n  563:          T_eff_arr=T_eff_arr,"
+    }
+  ]
+}

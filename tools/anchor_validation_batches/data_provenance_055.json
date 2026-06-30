@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 55,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_541",
+      "anchor_type": "data_provenance",
+      "name": "leggett_propagator",
+      "script_path": "session-50/s50_leggett_propagator.py",
+      "session": "s50",
+      "inputs": "",
+      "outputs": "session-50/s50_leggett_propagator.npz, session-50/s50_leggett_propagator.png",
+      "source_file": "computations/session-50/s50_leggett_propagator.py",
+      "source_context_30_lines": "  527: print(f\"    Planck: 0 +/- {sigma_planck}\")\n  528: print(f\"    Tension: {tension_3p:.1f} sigma (unchanged from S49 O-Z)\")\n  529: \n  530: # =============================================================================\n  531: # STEP 13: Save\n  532: # =============================================================================\n  533: print(\"\\n--- Step 13: Save ---\")\n  534: \n  535: out_file = os.path.join(SCRIPT_DIR, 's50_leggett_propagator.npz')\n  536: np.savez(out_file,\n  537:     # Gate\n  538:     gate_name='LEGGETT-PROPAGATOR-50',\n  539:     gate_verdict=verdict,\n  540:     gate_detail=detail,\n  541: \n  542:     # Key results\n  543:     n_s_3pole=n_s_3p,"
+    },
+    {
+      "anchor_id": "prov_542",
+      "anchor_type": "data_provenance",
+      "name": "lorentzian_cmpp",
+      "script_path": "session-50/s50_lorentzian_cmpp.py",
+      "session": "s50",
+      "inputs": "",
+      "outputs": "session-50/s50_lorentzian_cmpp.npz, session-50/s50_lorentzian_cmpp.png",
+      "source_file": "computations/session-50/s50_lorentzian_cmpp.py",
+      "source_context_30_lines": "  780: bw_d = np.zeros((len(tau_values), 5))\n  781: for i, tau in enumerate(tau_values):\n  782:     for case, bw_arr in [(results_static, bw_s), (results_dynamic, bw_d)]:\n  783:         bd = case[tau]['best_decomp']\n  784:         if bd is not None and bd['total'] > 0:\n  785:             for j, w in enumerate([+2,+1,0,-1,-2]):\n  786:                 bw_arr[i, j] = bd['bw_norms'][w] / bd['total']\n  787: \n  788: out_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 's50_lorentzian_cmpp.npz')\n  789: np.savez_compressed(out_path,\n  790:     tau_values=tau_arr,\n  791:     static_cmpp_types=np.array(static_types),\n  792:     dynamic_cmpp_types=np.array(dynamic_types),\n  793:     bw_fracs_static=bw_s,\n  794:     bw_fracs_dynamic=bw_d,\n  795:     C12_sq_static=np.array([results_static[t]['C12_sq'] for t in tau_values]),\n  796:     C12_sq_dynamic=np.array([results_dynamic[t]['C12_sq'] for t in tau_values]),"
+    },
+    {
+      "anchor_id": "prov_543",
+      "anchor_type": "data_provenance",
+      "name": "resonance_lever",
+      "script_path": "session-50/s50_resonance_lever.py",
+      "session": "s50",
+      "inputs": "s44_dos_tau.npz",
+      "outputs": "session-50/s50_resonance_lever.npz",
+      "source_file": "computations/session-50/s50_resonance_lever.py",
+      "source_context_30_lines": "  384: \n  385: # Key diagnostic: is the required coupling physically achievable?\n  386: print(f\"Required coupling / Model B: {alpha_ns / alpha_B:.2f}\")\n  387: print(f\"Required coupling / Model C: {alpha_ns / alpha_C:.2f}\")\n  388: print(f\"Required coupling / epsilon_inner^2: {alpha_ns / epsilon_inner**2:.2f}\")\n  389: print(f\"Required coupling / epsilon_inner: {alpha_ns / epsilon_inner:.2f}\")\n  390: \n  391: # Save results\n  392: np.savez('s50_resonance_lever.npz',\n  393:     K_values=K_values,\n  394:     P_G=P_G, P_A=P_A, P_B=P_B, P_C=P_C,\n  395:     chi_SA_norm=chi_SA_norm, f_SA=f_SA,\n  396:     n_s_scan=n_s_scan, alpha_s_scan=alpha_s_scan, alpha_scan=alpha_scan,\n  397:     alpha_ns=alpha_ns, as_at_ns=as_at_ns,\n  398:     Q_Leggett=Q_Leggett, delta_tau_res=delta_tau_res,\n  399:     g_0=g_0_use, epsilon_inner=epsilon_inner,\n  400:     tau_phi=tau_phi, tau_fold=tau_fold"
+    },
+    {
+      "anchor_id": "prov_544",
+      "anchor_type": "data_provenance",
+      "name": "running_mass",
+      "script_path": "session-50/s50_running_mass.py",
+      "session": "s50",
+      "inputs": "",
+      "outputs": "session-50/s50_running_mass.npz, session-50/s50_running_mass.png",
+      "source_file": "computations/session-50/s50_running_mass.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s50_running_mass.py — Running Mass from Anomalous Dimension (RUNNING-MASS-50)\n    4: ================================================================================\n    5: \n    6: Physics:\n    7:   S49 proved alpha_s = n_s^2 - 1 = -0.069 is EXACT for the O-Z propagator with\n    8:   CONSTANT mass. This script asks: if the Goldstone mass runs with wavevector\n    9:   m(K)^2 = m_0^2 + Sigma(K) - Sigma(0), does the correction to alpha_s bring it\n   10:   within 2-sigma of Planck?\n   11: "
+    },
+    {
+      "anchor_id": "prov_545",
+      "anchor_type": "data_provenance",
+      "name": "sigma8_oz",
+      "script_path": "session-50/s50_sigma8_oz.py",
+      "session": "s50",
+      "inputs": "",
+      "outputs": "session-50/s50_sigma8_oz.npz, session-50/s50_sigma8_oz.png",
+      "source_file": "computations/session-50/s50_sigma8_oz.py",
+      "source_context_30_lines": "  403: print(f\"  (c) alpha_s = {alpha_s_lattice}:  sigma_8_raw = {sigma8_raw_lat:.8f}\")\n  404: \n  405: # Normalize: alpha_s = 0 should give Planck sigma_8 = 0.811\n  406: # The normalization factor accounts for all the physics we computed proportionally\n  407: norm = sigma_8_planck_val / sigma8_raw_norun\n  408: print(f\"\\n  Normalization: sigma_8(Planck) / sigma_8_raw(alpha_s=0) = {norm:.8f}\")\n  409: \n  410: sigma8_norun = sigma8_raw_norun * norm\n  411: sigma8_oz = sigma8_raw_oz * norm\n  412: sigma8_lat = sigma8_raw_lat * norm\n  413: \n  414: print(f\"\\n  NORMALIZED sigma_8 VALUES:\")\n  415: print(f\"  {'Case':<35s} {'alpha_s':>10s} {'sigma_8':>10s} {'Delta':>10s} {'Shift':>10s}\")\n  416: print(f\"  {'-'*75}\")\n  417: print(f\"  {'(a) LCDM (no running)':<35s} {alpha_s_zero:>10.4f} {sigma8_norun:>10.6f} {'(ref)':>10s} {'---':>10s}\")\n  418: print(f\"  {'(b) O-Z rigid (n_s^2 - 1)':<35s} {alpha_s_oz:>10.4f} {sigma8_oz:>10.6f} {sigma8_oz - sigma8_norun:>+10.6f} {100*(sigma8_oz/sigma8_norun - 1):>+9.2f}%\")\n  419: print(f\"  {'(c) S48 lattice (superseded)':<35s} {alpha_s_lattice:>10.4f} {sigma8_lat:>10.6f} {sigma8_lat - sigma8_norun:>+10.6f} {100*(sigma8_lat/sigma8_norun - 1):>+9.2f}%\")"
+    },
+    {
+      "anchor_id": "prov_546",
+      "anchor_type": "data_provenance",
+      "name": "wa_source",
+      "script_path": "session-50/s50_wa_source.py",
+      "session": "s50",
+      "inputs": "s49_multi_t_friedmann.npz, s49_desi_dr3_prep.npz, s49_dipolar_catalog.npz, s39_richardson_gaudin.npz, s48_dmde_refine.np...",
+      "outputs": "session-50/s50_wa_source.npz, session-50/s50_wa_source.png",
+      "source_file": "computations/session-50/s50_wa_source.py",
+      "source_context_30_lines": " 1000: print(f\"  This is the MOST FALSIFIABLE prediction of the framework.\")\n 1001: \n 1002: # =============================================================================\n 1003: # SAVE DATA\n 1004: # =============================================================================\n 1005: \n 1006: print(f\"\\n--- Saving data ---\")\n 1007: \n 1008: np.savez('s50_wa_source.npz',\n 1009:     # Mechanism (a): inter-cell coupling\n 1010:     wa_a=wa_a,\n 1011:     MKK_over_MPl_sq=MKK_over_MPl_sq,\n 1012:     tau_dot_SR=tau_dot_SR,\n 1013:     Delta_tau_physical=Delta_tau_physical,\n 1014:     epsilon_vs_tau=epsilon_vs_tau,\n 1015:     d_epsilon_dtau=d_epsilon_dtau,\n 1016:     # Mechanism (b): integrability breaking"
+    },
+    {
+      "anchor_id": "prov_547",
+      "anchor_type": "data_provenance",
+      "name": "critical_scaling",
+      "script_path": "session-51/s51_critical_scaling.py",
+      "session": "s51",
+      "inputs": "",
+      "outputs": "session-51/s51_critical_scaling.npz, session-51/s51_critical_scaling.png",
+      "source_file": "computations/session-51/s51_critical_scaling.py",
+      "source_context_30_lines": "  248: # MODULE 4: CRITICAL SCALING ANALYSIS\n  249: # =============================================================================\n  250: \n  251: def power_law(tau, A, tau_c, nu):\n  252:     \"\"\"f(tau) = A * |tau - tau_c|^nu\"\"\"\n  253:     return A * np.abs(tau - tau_c)**nu\n  254: \n  255: \n  256: def analyze_critical_scaling(scan_result, data):\n  257:     \"\"\"\n  258:     Analyze whether m_L(tau) shows critical scaling behavior.\n  259: \n  260:     Three questions:\n  261:     1. Does omega_L1(tau) vanish at any tau?\n  262:     2. Does J_eff(tau) = V * Delta^2 show power-law behavior?\n  263:     3. What is the effective exponent?\n  264:     \"\"\""
+    },
+    {
+      "anchor_id": "prov_548",
+      "anchor_type": "data_provenance",
+      "name": "crossover_sound",
+      "script_path": "session-51/s51_crossover_sound.py",
+      "session": "s51",
+      "inputs": "",
+      "outputs": "session-51/s51_crossover_sound.npz",
+      "source_file": "computations/session-51/s51_crossover_sound.py",
+      "source_context_30_lines": "  727: print(f\"  Im(c) = 0 (all modes below pair-breaking threshold)\")\n  728: \n  729: # ============================================================================\n  730: #  SAVE DATA\n  731: # ============================================================================\n  732: print(\"\\n\" + \"-\" * 78)\n  733: print(\"Saving results...\")\n  734: \n  735: outpath = os.path.join(DATA_DIR, 's51_crossover_sound.npz')\n  736: np.savez(outpath,\n  737:     # Input parameters\n  738:     gN_EF=gN_EF,\n  739:     inv_kFa=inv_kFa,\n  740:     E_B2_mean=E_B2_mean,\n  741:     v_F=v_F,\n  742:     c_BdG=c_BdG,\n  743:     ratio_Evac_Econd=ratio_Evac_Econd,"
+    },
+    {
+      "anchor_id": "prov_549",
+      "anchor_type": "data_provenance",
+      "name": "cutoff_conv",
+      "script_path": "session-51/s51_cutoff_conv.py",
+      "session": "s51",
+      "inputs": "s44_dos_tau.npz",
+      "outputs": "session-51/s51_cutoff_conv.npz, session-51/s51_cutoff_conv.png",
+      "source_file": "computations/session-51/s51_cutoff_conv.py",
+      "source_context_30_lines": "  527:   it reflects the fundamental ambiguity of the NCG spectral action: the\n  528:   Lagrangian (from Seeley-DeWitt) is cutoff-universal, but functionals\n  529:   involving f' (like chi_SA) are not.\n  530: \"\"\")\n  531: \n  532: # =====================================================================\n  533: # SAVE RESULTS\n  534: # =====================================================================\n  535: np.savez('s51_cutoff_conv.npz',\n  536:     # Spectrum data\n  537:     omega_19=omega_19,\n  538:     dim2_19=dim2_19,\n  539:     domega_dtau=domega_dtau,\n  540:     unique_dim2=np.array(unique_dim2),\n  541:     # Cutoff comparison at Lambda=3\n  542:     cutoff_names=np.array(cutoff_names),\n  543:     Lambda_ref=Lambda_ref,"
+    },
+    {
+      "anchor_id": "prov_550",
+      "anchor_type": "data_provenance",
+      "name": "efold_mapping",
+      "script_path": "session-51/s51_efold_mapping.py",
+      "session": "s51",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-51/s51_efold_mapping.py",
+      "source_context_30_lines": "  664:     if K_fabric_horizon < K_star:\n  665:         print(f\"\\n*** K_fabric < K* ***\")\n  666:         print(f\"*** THE CMB PIVOT IS IN THE SA-GOLDSTONE MIXING REGIME ***\")\n  667:     else:\n  668:         print(f\"\\nK_fabric > K*. The CMB is above the mixing threshold.\")\n  669: else:\n  670:     print(\"CMB mode is OUTSIDE Hubble radius at fold — needs horizon crossing analysis\")\n  671: \n  672: np.savez('s51_efold_mapping.npz',\n  673:     M_KK_gravity=M_KK_gravity, K_star=K_star, k_CMB_GeV=k_CMB_GeV,\n  674:     K_fabric_direct=k_CMB_MKK, H_fold_GeV=H_fold_GeV,\n  675:     a_ratio_stiff=a_ratio_stiff, N_stiff_total=N_stiff_total,\n  676:     k_comoving=k_comoving, K_fabric_horizon=K_fabric_horizon if 'K_fabric_horizon' in dir() else 0)\n  677: print(\"\\nData saved to s51_efold_mapping.npz\")"
+    }
+  ]
+}

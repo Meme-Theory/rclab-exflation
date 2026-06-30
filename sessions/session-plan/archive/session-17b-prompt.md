@@ -39,9 +39,9 @@ Your job is still to **calculate**, not to review or discuss. But now the calcul
 
 5. **`sessions/session-16-round-2b-dk-generations.md`** — Your joint work with KK-theorist on D_K correctness and Z₃ two-layer structure. Directly relevant to B-3.
 
-6. **`tier0-computation/tier1_dirac_spectrum.py`** (~1580 lines) — The D_K implementation you are auditing (for B-3).
+6. **`computations/dirac_spectrum.py`** (~1580 lines) — The D_K implementation you are auditing (for B-3).
 
-7. **`tier0-computation/tier1_spectral_action.py`** (~900 lines) — Contains R(s) and V_tree you are cross-checking (for B-2).
+7. **`computations/spectral_action.py`** (~900 lines) — Contains R(s) and V_tree you are cross-checking (for B-2).
 
 ## For Schwarzschild-Penrose-Geometer — ADDITIONALLY:
 
@@ -49,7 +49,7 @@ Your job is still to **calculate**, not to review or discuss. But now the calcul
 
 9. **`Kaluza-Klein/`** — Papers 15-16 (for curvature computation conventions).
 
-10. **`tier0-computation/tier1_spectral_action.py`** — Contains R(s) you will independently verify.
+10. **`computations/spectral_action.py`** — Contains R(s) you will independently verify.
 
 11. **Your own SP-1 output from Session 17a** — The explicit metric you wrote. You now use it for curvature.
 
@@ -89,7 +89,7 @@ These results were computed in Session 17a. Reference them but VERIFY independen
 
 2. **Verify SP-4's $R(s)$** matches Baptista eq 3.70:
 $$\frac{R(s)}{R(0)} = \frac{2e^{2s} - 1 + 8e^{-s} - e^{-4s}}{8}$$
-   where the bracket evaluates to $8$ at $s=0$ (tautological check). Compute at $s = \{0, 0.15, 0.30, 0.50, 1.0, 1.14, 2.0\}$ and compare to `tier1_spectral_action.py` values. Agreement must be $< 10^{-14}$.
+   where the bracket evaluates to $8$ at $s=0$ (tautological check). Compute at $s = \{0, 0.15, 0.30, 0.50, 1.0, 1.14, 2.0\}$ and compare to `spectral_action.py` values. Agreement must be $< 10^{-14}$.
 
 3. **Verify SP-4's $V_{\text{tree}}(s)$** matches eq 3.80: $V_{\text{tree}} = -R(s) \cdot \text{Vol}(g_s)$
 
@@ -101,7 +101,7 @@ $$\frac{R(s)}{R(0)} = \frac{2e^{2s} - 1 + 8e^{-s} - e^{-4s}}{8}$$
 
 The Pfaffian computation (Session 17c, Assignment D-2) is the ONLY Level 4 test in the entire program. It MUST use the correct Dirac operator. You must sign off before Dirac proceeds.
 
-**YOUR TASK**: Verify the D_K in `tier1_dirac_spectrum.py`:
+**YOUR TASK**: Verify the D_K in `dirac_spectrum.py`:
 
 1. **Corollary 3.4 (Paper 17)**: Does the code implement
 $$D_K = \sum_a e_a \cdot \nabla^S_{e_a}$$
@@ -156,7 +156,7 @@ This phase has a simple sequential dependency:
 ```
   SP-1 (from 17a) ─→ B-2 (Baptista verifies metric) ─→ SP-2 (curvature using verified metric)
   SP-4 (from 17a) ─→ B-2 (Baptista verifies V_tree)
-  tier1_dirac_spectrum.py ─→ B-3 (Baptista audits D_K) ─→ [GATES Session 17c D-2 Pfaffian]
+  dirac_spectrum.py ─→ B-3 (Baptista audits D_K) ─→ [GATES Session 17c D-2 Pfaffian]
 ```
 
 **Interaction rules**:
@@ -185,8 +185,8 @@ That is **3 deliverables** from **2 agents**. The critical output is Baptista's 
 Same scripts as Session 17a:
 | Script | Lines | Who Needs It |
 |:-------|:-----:|:-------------|
-| `tier1_dirac_spectrum.py` | ~1580 | B-3 (D_K audit) |
-| `tier1_spectral_action.py` | ~900 | B-2 (R(s) cross-check), SP-2 (curvature) |
+| `dirac_spectrum.py` | ~1580 | B-3 (D_K audit) |
+| `spectral_action.py` | ~900 | B-2 (R(s) cross-check), SP-2 (curvature) |
 | `branching_computation_32dim.py` | ~1200 | B-3 (Killing isometry check, representation matrices) |
 
 ---

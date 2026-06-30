@@ -1,0 +1,85 @@
+{
+  "branches": [
+    {
+      "branch": "A",
+      "confidence": "framework +~3-sigma confirmation on r",
+      "diagnostic_sigma": {
+        "lower_offset_in_sigma_theory": 0.910507392004809,
+        "upper_offset_in_sigma_theory": 1.089492607995191
+      },
+      "explanation": "Central r_BK in [0.009, 0.015] brackets the framework value r_FW = 0.01173 to within ~+/-1 sigma_theory (0.003). Direct confirmation of G46 tensor-transfer.",
+      "label": "CONFIRMATION",
+      "rule": "r_BK central in window AND r_BK within experimental 1-sigma of framework",
+      "threshold_lower": 0.009,
+      "threshold_upper": 0.015,
+      "verdict_on_trigger": "PASS"
+    },
+    {
+      "branch": "B",
+      "confidence": "consistent with framework; no discrimination vs slow-roll r>0",
+      "diagnostic_sigma": {
+        "upper_offset_in_sigma_exp": 1.6536955647971148
+      },
+      "explanation": "Upper limit r_BK < 0.020 lies 1.65 sigma_exp above r_FW, not excluding framework at 2-sigma. Verdict: INFO (no new discrimination).",
+      "label": "CONSISTENCY",
+      "rule": "r_BK 95%CL upper < 0.020 (1-sided)",
+      "threshold_lower": null,
+      "threshold_upper": 0.02,
+      "verdict_on_trigger": "INFO"
+    },
+    {
+      "branch": "C",
+      "confidence": "framework disfavored at 2-3 sigma combined",
+      "diagnostic_sigma": {
+        "lower_offset_in_sigma_comb": 2.2755251738082807
+      },
+      "explanation": "Central r_BK > 0.025 lies 2.28 sigma_comb above r_FW (sigma_comb = 0.00583). Verdict: FAIL.",
+      "label": "DISFAVORED",
+      "rule": "r_BK central > 0.025",
+      "threshold_lower": 0.025,
+      "threshold_upper": null,
+      "verdict_on_trigger": "FAIL"
+    },
+    {
+      "branch": "D",
+      "confidence": "framework ruled out at 2+ sigma (FW above 95%CL upper)",
+      "diagnostic_sigma": {
+        "upper_offset_in_sigma_comb": 0.6399507736143699
+      },
+      "explanation": "If the BK 95%CL upper is below 0.008, r_FW = 0.01173 lies 0.64 sigma_comb above the limit. Framework prediction is above the exclusion; verdict: FAIL.",
+      "label": "RULED-OUT",
+      "rule": "r_BK 95%CL upper < 0.008",
+      "threshold_lower": null,
+      "threshold_upper": 0.008,
+      "verdict_on_trigger": "FAIL"
+    }
+  ],
+  "canonical_constants_used": {
+    "r_CMB_framework": 0.011731522176014426,
+    "sigma_r_BK_2026": 0.005,
+    "sigma_theory_G46_local_nominal": 0.003
+  },
+  "experiment": {
+    "citation": "Ade+ 2025 preprint (projected Q2-Q3 2026 release)",
+    "name": "BICEP/Keck Array 2026 release",
+    "pivot_scale_Mpc_inv": 0.05,
+    "sigma_r_forecast": 0.005
+  },
+  "framework_prediction": {
+    "observable": "r(k_CMB)",
+    "sigma_theory_nominal": 0.003,
+    "source_file": "s83_w3_g46_tensor_transfer.npz",
+    "source_gate": "S83-W3-G46-TENSOR-TRANSFER",
+    "value": 0.011731522176014426
+  },
+  "frozen_date": "2026-04-18",
+  "gate_id": "S84-BICEP-KECK-2026-PRE-REGISTER",
+  "generated_utc": "2026-04-19T15:22:48.084510+00:00",
+  "input_sha": {
+    "Ade+ 2025 preprint forecast": "external-literature-no-file-SHA",
+    "canonical_constants.py": "0590ce9b7d05a39a80ebfe47656db00f25aad169396643ddae37e4a19ac1f499",
+    "s83_w3_g46_tensor_transfer.npz": "3f004c9a57948780ebd55aba5fefd0b6dd5b9dda51ded9900043ad8a2ad9e8ce"
+  },
+  "no_post_release_reregistration": true,
+  "single_authority": "mack-cosmic-bridge"
+}

@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 78,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_771",
+      "anchor_type": "data_provenance",
+      "name": "inspect_v2",
+      "script_path": "session-59/s59_inspect_v2.py",
+      "session": "s59",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-59/s59_inspect_v2.py",
+      "source_context_30_lines": "<name 'inspect_v2' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"Inspect input .npz files for PENROSE-ACCESS-59 - v2.\"\"\"\n    3: import numpy as np\n    4: import os\n    5: \n    6: outlines = []\n    7: \n    8: def inspect(path, label):\n    9:     outlines.append(f\"\\n=== {label}: {path} ===\")\n   10:     if not os.path.exists(path):\n   11:         outlines.append(f\"  FILE NOT FOUND\")\n   12:         return None\n   13:     outlines.append(f\"  FILE EXISTS, size={os.path.getsize(path)} bytes\")\n   14:     f = np.load(path, allow_pickle=True)\n   15:     outlines.append(f\"  Arrays: {f.files}\")\n   16:     for k in sorted(f.files):\n   17:         v = f[k]\n   18:         outlines.append(f\"  {k}: shape={v.shape}, dtype={v.dtype}\")\n   19:         if v.ndim == 0:\n   20:             outlines.append(f\"    scalar value: {v.item()}\")\n   21:         elif v.size <= 30:\n   22:             outlines.append(f\"    values: {v}\")\n   23:         else:\n   24:             outlines.append(f\"    first 10: {v.flat[:10]}\")\n   25:             outlines.append(f\"    last 5:  {v.flat[-5:]}\")\n   26:     return f\n   27: \n   28: os.chdir(\"C:/sandbox/Ainulindale Exflation\")\n   29: \n   30: inspect(\"computations/session-59/s59_npair3_integ.npz\", \"N_pair=3 integrability (W0-2)\")"
+    },
+    {
+      "anchor_id": "prov_772",
+      "anchor_type": "data_provenance",
+      "name": "josephson_phase",
+      "script_path": "session-59/s59_josephson_phase.py",
+      "session": "s59",
+      "inputs": "computations/session-58/s58_bkt_kubo.npz, computations/session-57/s57_domain_wall.npz, computations/session-54/s54_tb_ha...",
+      "outputs": "session-59/s59_josephson_phase.npz, session-59/s59_josephson_phase.png",
+      "source_file": "computations/session-59/s59_josephson_phase.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s59_josephson_phase.py — JOSEPHSON-PHASE-59\n    4: ============================================\n    5: \n    6: Determines whether Josephson phases on CG(24) are ordered or disordered\n    7: at the fold, deciding between Interpretation A (w_0 = -0.918) and\n    8: Interpretation B (w_0 = -0.408).\n    9: \n   10: Physics:\n   11:   XY model H = -sum_{<ij>} J_{ij} cos(theta_i - theta_j) on the 32-cell"
+    },
+    {
+      "anchor_id": "prov_773",
+      "anchor_type": "data_provenance",
+      "name": "neff_ba",
+      "script_path": "session-59/s59_neff_ba.py",
+      "session": "s59",
+      "inputs": "",
+      "outputs": "session-59/s59_neff_ba.npz, session-59/s59_neff_ba.png",
+      "source_file": "computations/session-59/s59_neff_ba.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s59_neff_ba.py — NEFF-BA-59 (W4E-3)\n    4: ====================================\n    5: Gate: Delta_N_eff from Bogoliubov-Anderson phonons at BBN.\n    6: \n    7: Physics:\n    8:   BA phonons are gapless Goldstone modes from spontaneous U(1)_7 breaking\n    9:   (confirmed GLOBAL by W3-9). Their energy at the Shattering is F_BA = 7.021\n   10:   M_KK (from s57_leggett_partition). Being massless, they redshift as a^{-4}.\n   11: "
+    },
+    {
+      "anchor_id": "prov_774",
+      "anchor_type": "data_provenance",
+      "name": "neff_ba_extract",
+      "script_path": "session-59/s59_neff_ba_extract.py",
+      "session": "s59",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-59/s59_neff_ba_extract.py",
+      "source_context_30_lines": "<name 'neff_ba_extract' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"Extract key results from s59_neff_ba.npz to text file.\"\"\"\n    3: import numpy as np\n    4: import os\n    5: \n    6: data_dir = os.path.dirname(__file__)\n    7: d = np.load(os.path.join(data_dir, 's59_neff_ba.npz'), allow_pickle=True)\n    8: \n    9: out = os.path.join(data_dir, 's59_neff_ba_results.txt')\n   10: with open(out, 'w') as f:\n   11:     f.write(\"=== NEFF-BA-59 Results Extraction ===\\n\\n\")\n   12:     f.write(\"All keys in npz:\\n\")\n   13:     for k in sorted(d.files):\n   14:         v = d[k]\n   15:         try:\n   16:             val = float(v)\n   17:             f.write(f\"  {k} = {val}\\n\")\n   18:         except (TypeError, ValueError):\n   19:             if hasattr(v, 'shape'):\n   20:                 f.write(f\"  {k} = array shape {v.shape}, dtype {v.dtype}\\n\")\n   21:                 if v.size < 50:\n   22:                     f.write(f\"    values: {v}\\n\")\n   23:             else:\n   24:                 f.write(f\"  {k} = {v}\\n\")\n   25: \n   26:     f.write(\"\\n=== Key Gate Results ===\\n\")\n   27:     # Extract gate-critical values\n   28:     for key in ['Delta_Neff_conservative', 'Delta_Neff_aggressive',\n   29:                 'Delta_Neff_CMB_conservative', 'Delta_Neff_CMB_aggressive',\n   30:                 'Delta_Neff_BBN_conservative', 'Delta_Neff_BBN_aggressive',"
+    },
+    {
+      "anchor_id": "prov_775",
+      "anchor_type": "data_provenance",
+      "name": "neff_read",
+      "script_path": "session-59/s59_neff_read.py",
+      "session": "s59",
+      "inputs": "computations/session-59/s59_neff_ba.npz",
+      "outputs": "",
+      "source_file": "computations/session-59/s59_neff_read.py",
+      "source_context_30_lines": "    1: import numpy as np\n    2: d = np.load('computations/session-59/s59_neff_ba.npz', allow_pickle=True)\n    3: f = open('computations/session-59/s59_neff_read.txt', 'w')\n    4: for k in ['Delta_N_eff_conservative', 'Delta_N_eff_aggressive', 'g_BA_conservative',\n    5:            'g_BA_aggressive', 'gate_verdict', 'gate_detail', 'dilution_factor_CMB',\n    6:            'rho_1nu_over_rho_gamma', 'F_BA', 'E_matter_Volovik', 'M_KK',\n    7:            'g_star_Shattering', 'g_star_S_post_ee', 'g_star_S_Shattering',\n    8:            'N_eff_Planck_2018', 'sigma_N_eff_Planck_2018', 'n_BA_modes']:\n    9:     v = d[k]\n   10:     f.write(f'{k} = {v.item() if v.ndim == 0 else v}\\n')\n   11: f.close()"
+    },
+    {
+      "anchor_id": "prov_776",
+      "anchor_type": "data_provenance",
+      "name": "neff_test",
+      "script_path": "session-59/s59_neff_test.py",
+      "session": "s59",
+      "inputs": "computations/session-58/s58_volovik_partition.npz, computations/session-58/s58_sq_omega_gge.npz, computations/session-57...",
+      "outputs": "",
+      "source_file": "computations/session-59/s59_neff_test.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"Quick test script to debug s59_neff_ba.py imports.\"\"\"\n    3: import sys\n    4: import traceback\n    5: \n    6: sys.path.insert(0, 'computations')\n    7: \n    8: outfile = 'computations/session-59/s59_neff_test_output.txt'\n    9: \n   10: try:\n   11:     with open(outfile, 'w') as f:\n   12:         f.write(\"Starting import test...\\n\")\n   13: \n   14:         from canonical_constants import (\n   15:             M_KK, T_BBN_GeV, PI, rho_crit_GeV4,\n   16:             Omega_r, H_0_km_s_Mpc, T_CMB, k_B,"
+    },
+    {
+      "anchor_id": "prov_777",
+      "anchor_type": "data_provenance",
+      "name": "neff_verify",
+      "script_path": "session-59/s59_neff_verify.py",
+      "session": "s59",
+      "inputs": "computations/session-59/s59_neff_ba.npz",
+      "outputs": "",
+      "source_file": "computations/session-59/s59_neff_verify.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"Verify s59_neff_ba.npz output.\"\"\"\n    3: import numpy as np\n    4: \n    5: d = np.load('computations/session-59/s59_neff_ba.npz', allow_pickle=True)\n    6: with open('computations/session-59/s59_neff_verify.txt', 'w') as f:\n    7:     f.write(\"=== s59_neff_ba.npz verification ===\\n\\n\")\n    8:     for k in sorted(d.keys()):\n    9:         v = d[k]\n   10:         if v.ndim == 0:\n   11:             f.write(f\"{k}: {v.item()}\\n\")\n   12:         elif v.size < 20:\n   13:             f.write(f\"{k}: {v}\\n\")\n   14:         else:"
+    },
+    {
+      "anchor_id": "prov_778",
+      "anchor_type": "data_provenance",
+      "name": "npair3_integ",
+      "script_path": "session-59/s59_npair3_integ.py",
+      "session": "s59",
+      "inputs": "",
+      "outputs": "session-59/s59_npair3_integ.npz, session-59/s59_npair3_integ.png",
+      "source_file": "computations/session-59/s59_npair3_integ.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s59_npair3_integ.py — N_pair = 3 Exact Diagonalization on 2-Cell System\n    4: =========================================================================\n    5: \n    6: Gate: NPAIR3-INTEG-59\n    7:   PASS: <r>_even > 0.50 (GOE regime -- integrability broken)\n    8:   FAIL: <r>_even < 0.42 (approximate integrability persists)\n    9:   INFO: <r>_even in [0.42, 0.50]\n   10: \n   11: Physics: At N_pair = 2, S58 found <r>_even = 0.442, in the intermediate regime."
+    },
+    {
+      "anchor_id": "prov_779",
+      "anchor_type": "data_provenance",
+      "name": "npz_probe",
+      "script_path": "session-59/s59_npz_probe.py",
+      "session": "s59",
+      "inputs": "",
+      "outputs": "session-59/s59_npz_probe.txt",
+      "source_file": "computations/session-59/s59_npz_probe.py",
+      "source_context_30_lines": "   12:         v = d[k]\n   13:         if v.ndim == 0:\n   14:             lines.append(f'  {k}: scalar = {v.item()}')\n   15:         elif v.size < 30:\n   16:             lines.append(f'  {k}: shape={v.shape}, dtype={v.dtype}, values={v}')\n   17:         else:\n   18:             lines.append(f'  {k}: shape={v.shape}, dtype={v.dtype}, min={v.min():.6e}, max={v.max():.6e}')\n   19: \n   20: with open('computations/session-59/s59_npz_probe.txt', 'w') as f:\n   21:     f.write('\\n'.join(lines))"
+    },
+    {
+      "anchor_id": "prov_780",
+      "anchor_type": "data_provenance",
+      "name": "obs_discriminant",
+      "script_path": "session-59/s59_obs_discriminant.py",
+      "session": "s59",
+      "inputs": "",
+      "outputs": "session-59/s59_obs_discriminant.npz, session-59/s59_obs_discriminant.png",
+      "source_file": "computations/session-59/s59_obs_discriminant.py",
+      "source_context_30_lines": "  671: print(f\"\\nCRITICAL CONTEXT (from WA-ERROR-PROP-59):\")\n  672: print(f\"  DESI DR3 will test w_a = 0 at 4.3 sigma\")\n  673: print(f\"  If confirmed: BOTH framework (w_a ~ 0) and LCDM (w_a = 0) face exclusion\")\n  674: print(f\"  The FW-vs-LCDM discriminant becomes moot if both are excluded by w_a != 0\")\n  675: \n  676: # ===========================================================================\n  677: # 11. Save outputs\n  678: # ===========================================================================\n  679: outpath = os.path.join(os.path.dirname(__file__), 's59_obs_discriminant.npz')\n  680: np.savez(outpath,\n  681:     # Framework parameters\n  682:     w0_fw=w0_fw, wa_fw=wa_fw,\n  683:     w0_lcdm=w0_lcdm, wa_lcdm=wa_lcdm,\n  684:     Om_m=Om_m, Om_b=Om_b, h=h_val, sigma_8=sig8,\n  685: \n  686:     # Growth rate discriminant\n  687:     z_desi=z_desi,"
+    }
+  ]
+}

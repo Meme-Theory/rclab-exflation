@@ -5,12 +5,12 @@
 **Depends on**: Session 29B complete. B-29d FIRED (Jensen saddle, 2/4 eigenvalues negative). The true BCS minimum lives in the U(2)-invariant family, not on the 1D Jensen curve.
 **Prerequisite**: None beyond existing Session 29 data. All inputs in current `.npz` files.
 **Input data**:
-- `tier0-computation/tier1_dirac_spectrum.py` (core Dirac code)
-- `tier0-computation/s29b_jensen_transverse.npz` (Jensen saddle verdict, B-29d)
-- `tier0-computation/s29b_3sector_fbcs.npz` (3-sector free energy, B-29a)
-- `tier0-computation/s29b_bogoliubov_bcs.npz` (Bogoliubov BCS gap)
-- `tier0-computation/s29b_josephson_coupling.npz` (Josephson J_perp)
-- `tier0-computation/s29b_pmns_extraction.npz` (PMNS tridiagonal extraction)
+- `computations/dirac_spectrum.py` (core Dirac code)
+- `computations/s29b_jensen_transverse.npz` (Jensen saddle verdict, B-29d)
+- `computations/s29b_3sector_fbcs.npz` (3-sector free energy, B-29a)
+- `computations/s29b_bogoliubov_bcs.npz` (Bogoliubov BCS gap)
+- `computations/s29b_josephson_coupling.npz` (Josephson J_perp)
+- `computations/s29b_pmns_extraction.npz` (PMNS tridiagonal extraction)
 - Baptista Paper 15 eq 3.58-3.68: U(2)-invariant metric parameterization on SU(3)
 - Baptista Paper 15 eq 3.79-3.80: Scalar curvature and V_eff on the moduli space
 - Baptista Paper 17 eq 1.3-1.4: $[D_K, \mathcal{L}_X]$ formula for gauge boson masses
@@ -129,15 +129,15 @@ These sessions are independent. 30A requires its own prerequisite (off-Jensen mi
 Every result classified against its pre-registered gate BEFORE any interpretation. Report the number first. Classify second. Interpret third.
 
 **Python environment**: `"phonon-exflation-sim/.venv312/Scripts/python.exe"`
-**Output directory**: `tier0-computation/`
+**Output directory**: `computations/`
 **Script prefix**: `s30b_`
 
 ## PRE-SESSION GATE CHECK (MANDATORY FIRST ACTION)
 
 Before any computation, verify:
-1. Read `tier0-computation/s29b_gate_verdicts.txt` -- confirm B-29d FIRED (Jensen saddle)
-2. Read `tier0-computation/s29b_jensen_transverse.npz` -- confirm eigenvalues and eigenvectors available for T1, T2 directions
-3. Confirm existing Dirac spectrum code (`tier1_dirac_spectrum.py`) can accept general U(2)-invariant metric parameters $(\lambda_1, \lambda_2, \lambda_3)$, not just Jensen $\tau$
+1. Read `computations/s29b_gate_verdicts.txt` -- confirm B-29d FIRED (Jensen saddle)
+2. Read `computations/s29b_jensen_transverse.npz` -- confirm eigenvalues and eigenvectors available for T1, T2 directions
+3. Confirm existing Dirac spectrum code (`dirac_spectrum.py`) can accept general U(2)-invariant metric parameters $(\lambda_1, \lambda_2, \lambda_3)$, not just Jensen $\tau$
 4. If the Dirac code only accepts Jensen $\tau$, the FIRST computation is modifying it to accept general U(2)-invariant metrics (Step 0 below)
 
 ## COMPLETION SIGNAL
@@ -161,7 +161,7 @@ Session ends ONLY when user approves shutdown explicitly. Idle agents are not fi
 
 | Agent | Additional Reading |
 |:------|:-------------------|
-| phonon-exflation-sim | `tier0-computation/tier1_dirac_spectrum.py` (Dirac code to generalize), `tier0-computation/s29b_3sector_fbcs.py` (3-sector F_BCS computation to extend), `tier0-computation/s29b_jensen_transverse.py` (transverse Hessian code with T1/T2 parametrization) |
+| phonon-exflation-sim | `computations/dirac_spectrum.py` (Dirac code to generalize), `computations/s29b_3sector_fbcs.py` (3-sector F_BCS computation to extend), `computations/s29b_jensen_transverse.py` (transverse Hessian code with T1/T2 parametrization) |
 | einstein-theorist | Connes Papers 07, 10 (spectral action coefficients, GUT-scale coupling relations). Session 29 Connes Excursion. Assess NCG-KK coupling tension (XS-2) at the off-Jensen minimum. |
 | baptista-spacetime-analyst | `researchers/Baptista/` -- Paper 15 Section 3.5-3.7 (U(2)-invariant moduli space, scalar curvature, Lagrangian), Paper 17 eq 1.3-1.4 ($[D_K, \mathcal{L}_X]$), Paper 18 Section 6-7 (mass mixing, CKM/PMNS). Validate the off-Jensen Dirac spectrum against Baptista's geometric expectations. |
 | coordinator | This prompt Section IV (gate conditions). Memorize ALL thresholds before first computation completes. |
@@ -258,7 +258,7 @@ The AZ class is determined by $T^2$ and $C^2$, both of which are algebraic (repr
 
 ## Step 0: Generalize Dirac Code to U(2)-Invariant Metrics
 
-**Status**: The existing `tier1_dirac_spectrum.py` parameterizes the metric by a single Jensen parameter $\tau$ via $(\lambda_1, \lambda_2, \lambda_3) = (e^{2\tau}, e^{-2\tau}, e^{\tau})$. Generalize to accept $(\lambda_1, \lambda_2, \lambda_3)$ directly.
+**Status**: The existing `dirac_spectrum.py` parameterizes the metric by a single Jensen parameter $\tau$ via $(\lambda_1, \lambda_2, \lambda_3) = (e^{2\tau}, e^{-2\tau}, e^{\tau})$. Generalize to accept $(\lambda_1, \lambda_2, \lambda_3)$ directly.
 
 **What changes**: The metric tensor construction in `dirac_operator_on_irrep()` must replace the Jensen parametrization with direct $\lambda_a$ scaling. The structure constants and Clifford algebra are basis-dependent, not metric-dependent -- only the metric tensor $g_{ab}$ and its inverse change. The spin connection $\omega_{abc}$ is recomputed from $g_{ab}$ and the structure constants $f^c_{ab}$.
 
@@ -385,7 +385,7 @@ with $b_1 = 41/10$, $b_2 = -19/6$, $b_3 = -7$ (SM one-loop). The ratio $\alpha_1
 
 ## Step 5: Diagnostics at the Minimum (Zero Marginal Cost)
 
-**Fusion Priority**: 4-6 (Session 29 Fusion Section IX.2, Tier 2)
+**Fusion Priority**: 4-6 (Session 29 Fusion Section IX.2, Level 2)
 **Cost**: Zero (from Step 3 output)
 
 From the full spectrum at the minimum, extract:
@@ -405,7 +405,7 @@ From the full spectrum at the minimum, extract:
 
 ## Step 5b (Contingent): Order-One Condition at the Minimum (OO-1)
 
-**Fusion Priority**: 7 (Session 29 Fusion Section IX.2, Tier 3)
+**Fusion Priority**: 7 (Session 29 Fusion Section IX.2, Level 3)
 **Cost**: ~5-10 minutes at a single point
 **Condition**: Runs after Step 3 delivers the minimum spectrum. Triggers if P-30w PASSES (otherwise the gauge sector is already wrong and OO-1 is moot).
 
@@ -541,7 +541,7 @@ Even if all existential gates fail, the grid search produces:
 | `s30b_fbcs_landscape.png` | Heatmap of $F_{\text{BCS}}^{3\text{-sector}}$ alone (without spectral action) on the $(\tau, \epsilon)$ grid |
 | `s30b_dos_landscape.png` | Heatmap of $N(E_F)$ across the $(\tau, \epsilon)$ grid |
 
-Gate verdicts appended to: `tier0-computation/s30b_gate_verdicts.txt`
+Gate verdicts appended to: `computations/s30b_gate_verdicts.txt`
 
 ---
 
@@ -623,8 +623,8 @@ The following computations were considered for 30B and deliberately deferred. Th
 | Acoustic impedance at BCS transition boundary | Medium | Trapping margin improvement. Downstream of minimum location. | QA S29 collab |
 | DNP launch energy distribution | Medium | Resolves trapping margin (20% sensitivity window) | Fusion IX.4, Priority 14 |
 
-**30C recommended scope**: OO-1 + DBCS-1 + mode-dependent PMNS dressing. These are the Tier 3 items from Fusion IX.2 that become actionable once 30B delivers the minimum.
+**30C recommended scope**: OO-1 + DBCS-1 + mode-dependent PMNS dressing. These are the Level 3 items from Fusion IX.2 that become actionable once 30B delivers the minimum.
 
 ---
 
-*Session 30B: The Decisive Grid. Covers Session 29 Fusion Synthesis Priorities 1-3 (Tier 1) plus zero-cost Tier 2 diagnostics and contingent OO-1 from Tier 3. First computation to directly test whether the off-Jensen BCS minimum produces the Standard Model. ~455 lines new code. ~2-3 hours total compute time. Three existential gates (P-30w, P-30phi, RGE-A). Five hard closes (B-30w, B-30phi, B-30min, B-30rge, B-30nck). Five positive signals (P-30a, P-30b, P-30pmns, P-30conv, P-30golden). Five diagnostic gates (DOS-1, AZ-1, HM-1, and primes). If Scenario A: framework derives SM from geometry with zero parameters. If Scenario C: framework closes with dignity and publishable structural mathematics. 30B gates 30A: the Pfaffian computation cannot proceed without the minimum location and AZ classification this session delivers.*
+*Session 30B: The Decisive Grid. Covers Session 29 Fusion Synthesis Priorities 1-3 (Level 1) plus zero-cost Level 2 diagnostics and contingent OO-1 from Level 3. First computation to directly test whether the off-Jensen BCS minimum produces the Standard Model. ~455 lines new code. ~2-3 hours total compute time. Three existential gates (P-30w, P-30phi, RGE-A). Five hard closes (B-30w, B-30phi, B-30min, B-30rge, B-30nck). Five positive signals (P-30a, P-30b, P-30pmns, P-30conv, P-30golden). Five diagnostic gates (DOS-1, AZ-1, HM-1, and primes). If Scenario A: framework derives SM from geometry with zero parameters. If Scenario C: framework closes with dignity and publishable structural mathematics. 30B gates 30A: the Pfaffian computation cannot proceed without the minimum location and AZ classification this session delivers.*

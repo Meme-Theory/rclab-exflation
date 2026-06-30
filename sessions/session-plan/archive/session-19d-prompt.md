@@ -59,15 +59,15 @@ NONE
 
 ## For phonon-exflation-sim:
 
-1. **Session 19a sweep data**: `tier0-computation/s19a_sweep_data.py` + `s19a_sweep_data.npz` — The eigenvalue sweep at 21 tau values (0.0 to 2.0). Contains eigenvalues, multiplicities (pw_mult = dim(p,q)), sector labels.
+1. **Session 19a sweep data**: `computations/s19a_sweep_data.py` + `s19a_sweep_data.npz` — The eigenvalue sweep at 21 tau values (0.0 to 2.0). Contains eigenvalues, multiplicities (pw_mult = dim(p,q)), sector labels.
 
-2. **Session 19a false vacuum script**: `tier0-computation/s19a_false_vacuum_analysis.py` — Lines 93-94 already compute E_zeropoint and E_vacuum. Reuse the data loading but apply proper zeta regularization.
+2. **Session 19a false vacuum script**: `computations/s19a_false_vacuum_analysis.py` — Lines 93-94 already compute E_zeropoint and E_vacuum. Reuse the data loading but apply proper zeta regularization.
 
-3. **Session 18 bosonic spectrum**: `tier0-computation/kk1_bosonic_tower.py` + `kk1_bosonic_spectrum.npz` — Bosonic eigenvalues (scalar + vector Laplacians) needed for Step 0 boson/fermion separation.
+3. **Session 18 bosonic spectrum**: `computations/kk1_bosonic_tower.py` + `kk1_bosonic_spectrum.npz` — Bosonic eigenvalues (scalar + vector Laplacians) needed for Step 0 boson/fermion separation.
 
-4. **Session 18 V_eff data**: `tier0-computation/h5_standalone_verify.py` — The independently verified V_CW values at 26 tau-points. Needed for Step 3 comparison.
+4. **Session 18 V_eff data**: `computations/h5_standalone_verify.py` — The independently verified V_CW values at 26 tau-points. Needed for Step 3 comparison.
 
-5. **Tier 1 Dirac spectrum**: `tier0-computation/tier1_dirac_spectrum.py` — The `collect_spectrum()` function (lines 1245-1348) for understanding what the eigenvalue data contains.
+5. **Level 1 Dirac spectrum**: `computations/dirac_spectrum.py` — The `collect_spectrum()` function (lines 1245-1348) for understanding what the eigenvalue data contains.
 
 6. **Your agent memory**: `.claude/agent-memory/phonon-exflation-sim/`
 
@@ -132,7 +132,7 @@ IR-dominated (linear weight). Shape (tau-dependence) probably correct; absolute 
 | Fermionic eigenvalues at 21 tau-values | |lam_n(tau)| with mult_n for 28 irreps | s19a_sweep_data.npz |
 | Bosonic eigenvalues (scalar + vector) | Laplacian eigenvalues with multiplicities | kk1_bosonic_spectrum.npz |
 | V_CW at 26 tau-values | Independently verified to 4 sig figs | h5_standalone_verify.py |
-| V_tree(tau) | Exact analytic function | tier1_spectral_action.py: baptista_V_tree() |
+| V_tree(tau) | Exact analytic function | spectral_action.py: baptista_V_tree() |
 | R_K(tau) | Scalar curvature | sp2_final_verification.py |
 
 ---
@@ -343,7 +343,7 @@ All eigenvalue data comes from max_pq_sum=6 (28 irreps, ~1400 eigenvalues). The 
 
 **2-5 deliverables from 2 agents over 1 day** (2 if D-1 closes early, 5 if full pipeline).
 
-All scripts go in `tier0-computation/`. Naming: `d19d_bug_fixes.py` (or inline edits), `d19d_casimir_gate.py` (D-1), `d19d_spectral_zeta.py` (D-2), `d19d_vtotal_minimum.py` (D-3), `d19d_convergence.py` (D-4).
+All scripts go in `computations/`. Naming: `d19d_bug_fixes.py` (or inline edits), `d19d_casimir_gate.py` (D-1), `d19d_spectral_zeta.py` (D-2), `d19d_vtotal_minimum.py` (D-3), `d19d_convergence.py` (D-4).
 
 **Environment**: Venv Python (`phonon-exflation-sim/.venv312/Scripts/python.exe`). numpy + scipy + matplotlib. GPU optional (eigenvalue regeneration at mps=5 benefits from it).
 

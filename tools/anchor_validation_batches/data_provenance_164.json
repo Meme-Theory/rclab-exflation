@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 164,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1631",
+      "anchor_type": "data_provenance",
+      "name": "w2_g16_unified_as79_3pi_subst",
+      "script_path": "session-83/s83_w2_g16_unified_as79_3pi_subst.py",
+      "session": "s83",
+      "inputs": "",
+      "outputs": "session-83/s83_w2_g16_unified_as79_3pi_subst.npz, session-83/s83_w2_g16_unified_as79_3pi_subst.png",
+      "source_file": "computations/session-83/s83_w2_g16_unified_as79_3pi_subst.py",
+      "source_context_30_lines": "  375:     f'scheme={SCHEME} convention={CONVENTION} L_max={L_MAX} sha256={closure_sha}'\n  376: )\n  377: print(verdict_line)\n  378: \n  379: # =============================================================================\n  380: # SECTION 7 — SAVE\n  381: # =============================================================================\n  382: \n  383: out_npz = SCRIPT_DIR / 's83_w2_g16_unified_as79_3pi_subst.npz'\n  384: out_png = SCRIPT_DIR / 's83_w2_g16_unified_as79_3pi_subst.png'\n  385: \n  386: np.savez(\n  387:     out_npz,\n  388:     # Inputs\n  389:     H_tilde_TD=H_tilde_TD,\n  390:     H_tilde_LI=H_tilde_LI,\n  391:     eps_H=eps_H,"
+    },
+    {
+      "anchor_id": "prov_1632",
+      "anchor_type": "data_provenance",
+      "name": "w2_g17_cartan_spin8_sanity",
+      "script_path": "session-83/s83_w2_g17_cartan_spin8_sanity.py",
+      "session": "s83",
+      "inputs": "",
+      "outputs": "session-83/s83_w2_g17_cartan_spin8_sanity.npz, session-83/s83_w2_g17_cartan_spin8_sanity.png",
+      "source_file": "computations/session-83/s83_w2_g17_cartan_spin8_sanity.py",
+      "source_context_30_lines": "   68: Step 7 (direction): PASS if deviation < 10%; INFO if 10-20%; FAIL if >20%.\n   69: \n   70: The direction of the verdict is DERIVED from the absolute-value inequality\n   71: (deviation >= 0 always), so the PASS band is a closed interval\n   72: [|D_family_interp| * 0.9, |D_family_interp| * 1.1] and the drift_Spin8_L8\n   73: value is measured against this interval.\n   74: \n   75: Outputs:\n   76:   computations/session-83/s83_w2_g17_cartan_spin8_sanity.py    (this script)\n   77:   computations/session-83/s83_w2_g17_cartan_spin8_sanity.npz   (data)\n   78:   computations/session-83/s83_w2_g17_cartan_spin8_sanity.png   (plot)\n   79:   Append 64-char closure SHA verdict line to s83_gate_verdicts.txt\n   80: \"\"\"\n   81: \n   82: from __future__ import annotations\n   83: \n   84: import os"
+    },
+    {
+      "anchor_id": "prov_1633",
+      "anchor_type": "data_provenance",
+      "name": "w2_g18_cartan_exceptional_falsifier",
+      "script_path": "session-83/s83_w2_g18_cartan_exceptional_falsifier.py",
+      "session": "s83",
+      "inputs": "",
+      "outputs": "session-83/s83_w2_g18_cartan_exceptional_falsifier.npz, session-83/s83_w2_g18_cartan_exceptional_falsifier.png",
+      "source_file": "computations/session-83/s83_w2_g18_cartan_exceptional_falsifier.py",
+      "source_context_30_lines": "   74:   of 0.5 + 0.5/sqrt(L*(L+1)).\n   75: \n   76:   IMPORTANT DISTINCTION from S80 u1 drift: here we test the FALSIFIER\n   77:   prediction. If G_2 h-drift is WITHIN the predicted CLT band at all 3 L,\n   78:   the L2 Cartan-exclusion theorem CANDIDATE is consistent (PASS). If G_2\n   79:   h-drift DEVIATES beyond 15%, the theorem is FALSIFIED (FAIL).\n   80: \n   81: OUTPUTS:\n   82:   computations/session-83/s83_w2_g18_cartan_exceptional_falsifier.py\n   83:   computations/session-83/s83_w2_g18_cartan_exceptional_falsifier.npz\n   84:   computations/session-83/s83_w2_g18_cartan_exceptional_falsifier.png\n   85:   Append verdict to computations/session-83/s83_gate_verdicts.txt\n   86:   Write section §W2-G18 to session-83-results-workingpaper.md\n   87: \n   88: Session: S83 W2-G18. Agent: connes-ncg-theorist.\n   89: \"\"\"\n   90: "
+    },
+    {
+      "anchor_id": "prov_1634",
+      "anchor_type": "data_provenance",
+      "name": "w2_g19_cartan_nonsimple_countertest",
+      "script_path": "session-83/s83_w2_g19_cartan_nonsimple_countertest.py",
+      "session": "s83",
+      "inputs": "",
+      "outputs": "session-83/s83_w2_g19_cartan_nonsimple_countertest.npz, session-83/s83_w2_g19_cartan_nonsimple_countertest.png",
+      "source_file": "computations/session-83/s83_w2_g19_cartan_nonsimple_countertest.py",
+      "source_context_30_lines": "   44: \n   45:   Step 4 (Direction / verdict):\n   46:     dev < 10%            -> PASS   (Kunneth factorization holds)\n   47:     10% <= dev < 20%     -> INFO   (mild factorization breaking)\n   48:     dev >= 20%           -> FAIL   (factorization broken; non-trivial\n   49:                                     Kasparov product correction required)\n   50: \n   51: Outputs (all required before termination):\n   52:   * Script:    s83_w2_g19_cartan_nonsimple_countertest.py\n   53:   * Data:      s83_w2_g19_cartan_nonsimple_countertest.npz\n   54:   * Plot:      s83_w2_g19_cartan_nonsimple_countertest.png\n   55:   * Verdict:   line appended to s83_gate_verdicts.txt (64-char SHA)\n   56:   * Paper:     session-83-results-workingpaper.md  §W2-G19\n   57: \"\"\"\n   58: \n   59: # =============================================================================\n   60: # IMPORTS & ENVIRONMENT"
+    },
+    {
+      "anchor_id": "prov_1635",
+      "anchor_type": "data_provenance",
+      "name": "w2_g20_quantum_cartan_protection",
+      "script_path": "session-83/s83_w2_g20_quantum_cartan_protection.py",
+      "session": "s83",
+      "inputs": "",
+      "outputs": "session-83/s83_w2_g20_quantum_cartan_protection.npz, session-83/s83_w2_g20_quantum_cartan_protection.png",
+      "source_file": "computations/session-83/s83_w2_g20_quantum_cartan_protection.py",
+      "source_context_30_lines": "   99:       (a) Direct: compute H^2_dR(S^1) from simplicial model of S^1.\n  100:       (b) Smith normal form on Hochschild differential b: C^2 -> C^1\n  101:           for Laurent polynomial algebra with deformation parameter q.\n  102:       (c) Scan q_irrational in {0.3, 0.5, 0.7, sqrt(2)/2, 1/pi} — generic\n  103:           q sweep; verify HC^2_primary = 0 uniformly.\n  104: \n  105: Inputs (SHA-256 pinned at runtime):\n  106:   - canonical_constants.py        (closure hash)\n  107:   - s83_w2_g20_quantum_cartan_protection.py  (self-hash)\n  108: \n  109: Output 4-tuple:\n  110:   (HC2_dim=<d>, scheme=noncomm-torus-q-generic,\n  111:    convention=U_q(su(2))_Cartan-subfactor-pullback, L_max=N/A)\n  112: \"\"\"\n  113: from __future__ import annotations\n  114: \n  115: # ---------------------------------------------------------------------------"
+    },
+    {
+      "anchor_id": "prov_1636",
+      "anchor_type": "data_provenance",
+      "name": "w2_g21_cartan_level3_higher",
+      "script_path": "session-83/s83_w2_g21_cartan_level3_higher.py",
+      "session": "s83",
+      "inputs": "",
+      "outputs": "session-83/s83_w2_g21_cartan_level3_higher.npz, session-83/s83_w2_g21_cartan_level3_higher.png",
+      "source_file": "computations/session-83/s83_w2_g21_cartan_level3_higher.py",
+      "source_context_30_lines": "  114: G21 is the STRUCTURAL companion — it demonstrates that the\n  115: cocycle-obstruction vanishing PERSISTS to degree 4 on the\n  116: Pontryagin-dual DISCRETE-lattice Cartan target. This closes the\n  117: even-degree protection hierarchy for Level-3+ via the discrete-lattice\n  118: additivity identity, rather than by regularity constraints.\n  119: \n  120: Inputs (SHA-256 pinned at runtime):\n  121:   - canonical_constants.py       (closure hash)\n  122:   - s83_w2_g21_cartan_level3_higher.py  (self-pin)\n  123: \n  124: Output 4-tuple:\n  125:   (HC4_dim=<d>, scheme=C_0(Z^2)-discrete,\n  126:    convention=cyclic-cohomology-direct-sum, L_max=N/A)\n  127: \"\"\"\n  128: from __future__ import annotations\n  129: \n  130: # ---------------------------------------------------------------------------"
+    },
+    {
+      "anchor_id": "prov_1637",
+      "anchor_type": "data_provenance",
+      "name": "w2_g22_nonabelian_su2_protection",
+      "script_path": "session-83/s83_w2_g22_nonabelian_su2_protection.py",
+      "session": "s83",
+      "inputs": "",
+      "outputs": "session-83/s83_w2_g22_nonabelian_su2_protection.npz, session-83/s83_w2_g22_nonabelian_su2_protection.png",
+      "source_file": "computations/session-83/s83_w2_g22_nonabelian_su2_protection.py",
+      "source_context_30_lines": "  113:           because dim(T^1) = 1 < 2 (no room for a 2-form).\n  114:       (d) SUBFACTOR test: the inclusion SU(2) \\hookrightarrow SU(3) as\n  115:           upper-left block factors through the Cartan; the image of any\n  116:           cocycle on SU(3) Cartan under restriction to SU(2) Cartan\n  117:           is in the SBI image (HC^0 lift), so primary vanishes.\n  118: \n  119: Inputs (SHA-256 pinned at runtime):\n  120:   - canonical_constants.py        (closure hash)\n  121:   - s83_w2_g22_nonabelian_su2_protection.py  (self-hash)\n  122: \n  123: Output 4-tuple:\n  124:   (HC2_SU2=<d>, scheme=SU2-Cartan-U1-sub,\n  125:    convention=restriction-from-SU3, L_max=N/A)\n  126: \"\"\"\n  127: from __future__ import annotations\n  128: \n  129: # ---------------------------------------------------------------------------"
+    },
+    {
+      "anchor_id": "prov_1638",
+      "anchor_type": "data_provenance",
+      "name": "w2_g23_gauge_dressed_protection",
+      "script_path": "session-83/s83_w2_g23_gauge_dressed_protection.py",
+      "session": "s83",
+      "inputs": "",
+      "outputs": "session-83/s83_w2_g23_gauge_dressed_protection.npz, session-83/s83_w2_g23_gauge_dressed_protection.png",
+      "source_file": "computations/session-83/s83_w2_g23_gauge_dressed_protection.py",
+      "source_context_30_lines": "  142:     [A, h] != 0, so [D', h] != [D, h] = 0 -- the commutator shifts.\n  143:     This is the anti-Cartan deformation direction, which is NOT\n  144:     the theorem's scope. We verify numerically that generic A\n  145:     breaks [D', h], confirming the Cartan-commuting restriction\n  146:     is strict but non-vacuous.\n  147: \n  148: Inputs (SHA-256 pinned at runtime):\n  149:   - canonical_constants.py\n  150:   - s83_w2_g23_gauge_dressed_protection.py (self-pin)\n  151: \n  152: Output 4-tuple:\n  153:   (preservation=<bool>, scheme=Kasparov-product-inner-fluct,\n  154:    convention=Cartan-commuting-1form, L_max=N/A)\n  155: \"\"\"\n  156: from __future__ import annotations\n  157: \n  158: # ---------------------------------------------------------------------------"
+    },
+    {
+      "anchor_id": "prov_1639",
+      "anchor_type": "data_provenance",
+      "name": "w2_g24_nonflat_t_correction_l2",
+      "script_path": "session-83/s83_w2_g24_nonflat_t_correction_l2.py",
+      "session": "s83",
+      "inputs": "",
+      "outputs": "session-83/s83_w2_g24_nonflat_t_correction_l2.npz, session-83/s83_w2_g24_nonflat_t_correction_l2.png",
+      "source_file": "computations/session-83/s83_w2_g24_nonflat_t_correction_l2.py",
+      "source_context_30_lines": "   86:   INFO: 10-20%.\n   87:   FAIL: >20%.\n   88:   Expected (from Step 3): ratio ~ 1e-15 (machine epsilon) -> PASS.\n   89: \n   90: Step 5 (Python verification): this script.\n   91: \n   92: Inputs (SHA-256 pinned at runtime):\n   93:   - canonical_constants.py\n   94:   - s83_w2_g24_nonflat_t_correction_l2.py (self-hash)\n   95: \n   96: Output 4-tuple:\n   97:   (ratio=<r>, scheme=first-Pontryagin,\n   98:    convention=Jensen-deformed-T, L_max=N/A)\n   99: \"\"\"\n  100: from __future__ import annotations\n  101: \n  102: # ---------------------------------------------------------------------------"
+    },
+    {
+      "anchor_id": "prov_1640",
+      "anchor_type": "data_provenance",
+      "name": "w2_g25_exceptional_rank_cartan",
+      "script_path": "session-83/s83_w2_g25_exceptional_rank_cartan.py",
+      "session": "s83",
+      "inputs": "",
+      "outputs": "session-83/s83_w2_g25_exceptional_rank_cartan.npz, session-83/s83_w2_g25_exceptional_rank_cartan.png",
+      "source_file": "computations/session-83/s83_w2_g25_exceptional_rank_cartan.py",
+      "source_context_30_lines": "   73:   (1) SHA-256 content-hash of all positive-root systems (fixed Bourbaki basis).\n   74:   (2) SHA-256 import-closure hash.\n   75:   (3) CLT formula pin: drift^CLT(G,L) = 0.5 + 0.5/sqrt(dim_H_pi(G,L))\n   76:   (4) Single run per (G, L) -- no iteration.\n   77:   (5) rho(lambda) = sum of Dynkin labels (height, G18 convention).\n   78:   (6) tau = tau_fold (canonical_constants.py).\n   79: \n   80: OUTPUTS:\n   81:   computations/session-83/s83_w2_g25_exceptional_rank_cartan.py    (this script)\n   82:   computations/session-83/s83_w2_g25_exceptional_rank_cartan.npz   (data)\n   83:   computations/session-83/s83_w2_g25_exceptional_rank_cartan.png   (plot)\n   84:   Append verdict to computations/session-83/s83_gate_verdicts.txt\n   85: \"\"\"\n   86: \n   87: from __future__ import annotations\n   88: \n   89: import os"
+    }
+  ]
+}

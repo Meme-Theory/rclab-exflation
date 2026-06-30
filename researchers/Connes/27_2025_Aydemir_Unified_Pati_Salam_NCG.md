@@ -240,7 +240,7 @@ The paper demonstrated that NCG unification, far from being abstract, produces e
 
 ## Connection to Phonon-Exflation Framework
 
-**RELEVANCE (Tier 1, unification pathway)**.
+**RELEVANCE (Level 1, unification pathway)**.
 
 The phonon-exflation framework currently uses SU(3)_C but may extend to SU(4)_C Pati-Salam (Session 33a discussion, Session 34 order-one violation). Aydemir's phenomenology is directly applicable:
 

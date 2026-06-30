@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 110,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1091",
+      "anchor_type": "data_provenance",
+      "name": "dilaton_potential",
+      "script_path": "session-66/s66_dilaton_potential.py",
+      "session": "s66",
+      "inputs": "",
+      "outputs": "session-66/s66_dilaton_potential.npz, session-66/s66_dilaton_potential.png",
+      "source_file": "computations/session-66/s66_dilaton_potential.py",
+      "source_context_30_lines": "  491: \n  492: print(\"\\n\" + \"=\"*70)\n  493: print(\"Saving outputs\")\n  494: print(\"=\"*70)\n  495: \n  496: script_dir = os.path.dirname(os.path.abspath(__file__))\n  497: \n  498: # Save .npz\n  499: npz_path = os.path.join(script_dir, \"s66_dilaton_potential.npz\")\n  500: np.savez(npz_path,\n  501:     phi_grid=phi_grid,\n  502:     V_grid=V_grid,\n  503:     dV_grid=dV_grid,\n  504:     d2V_grid=d2V_grid,\n  505:     # Constants used\n  506:     a0_fold=a0_fold,\n  507:     a2_fold=a2_fold,"
+    },
+    {
+      "anchor_id": "prov_1092",
+      "anchor_type": "data_provenance",
+      "name": "dilution_cc",
+      "script_path": "session-66/s66_dilution_cc.py",
+      "session": "s66",
+      "inputs": "",
+      "outputs": "session-66/s66_dilution_cc.npz, session-66/s66_dilution_cc.png",
+      "source_file": "computations/session-66/s66_dilution_cc.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s66_dilution_cc.py — Vacuum Energy Through Cosmic Expansion (DILUTION-CC-66)\n    4: =============================================================================\n    5: \n    6: Volovik Superfluid-Universe Theorist computation, Session 66 Wave 1-A.\n    7: \n    8: Physics:\n    9:   The CC budget after S64-S65 corrections: 102.7 OOM (conservative 107.7 + zeta -5).\n   10:   Starting point: q-theory formulation Lambda_CC = E_ZP(q_GGE) - E_ZP(q_eq)\n   11:   = 0.838 M_KK^4 = 2.56e67 GeV^4 (S62 CC-13)."
+    },
+    {
+      "anchor_id": "prov_1093",
+      "anchor_type": "data_provenance",
+      "name": "entropy_sa",
+      "script_path": "session-66/s66_entropy_sa.py",
+      "session": "s66",
+      "inputs": "",
+      "outputs": "session-66/s66_entropy_sa.npz, session-66/s66_entropy_sa.png",
+      "source_file": "computations/session-66/s66_entropy_sa.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s66_entropy_sa.py — ENTROPY-SA-CC-66: Thermodynamic Entropy Cutoff on SU(3)\n    4: =============================================================================\n    5: \n    6: Gate: ENTROPY-SA-CC-66\n    7: Pre-registered criterion:\n    8:   PASS  if a_0^S / a_2^S < 0.1 * bare_ratio  (threshold = 0.023)\n    9:   FAIL  if a_0^S / a_2^S >= bare_ratio  (entropy cutoff makes it worse)\n   10:   INFO  if 0.1 < (a_0^S / a_2^S) / bare_ratio < 1.0  (some improvement, not dramatic)\n   11: "
+    },
+    {
+      "anchor_id": "prov_1094",
+      "anchor_type": "data_provenance",
+      "name": "finite_mu_sa",
+      "script_path": "session-66/s66_finite_mu_sa.py",
+      "session": "s66",
+      "inputs": "",
+      "outputs": "session-66/s66_finite_mu_sa.npz, session-66/s66_finite_mu_sa.png",
+      "source_file": "computations/session-66/s66_finite_mu_sa.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s66_finite_mu_sa.py -- FINITE-MU-SA-66: Spectral Action at Finite Chemical Potential\n    4: =====================================================================================\n    5: \n    6: Gate: FINITE-MU-SA-66\n    7:   PASS: Q(mu) < 0.9 * Q_bare (= 2.088, meaningful CC improvement)\n    8:   FAIL: Q(mu) > Q_bare (chemical potential worsens CC)\n    9:   INFO: 0.9 < Q(mu)/Q_bare < 1.0 (marginal)\n   10: \n   11: where Q = a_0/a_2 with a_0, a_2 the spectral zeta moments."
+    },
+    {
+      "anchor_id": "prov_1095",
+      "anchor_type": "data_provenance",
+      "name": "gge_vacuum_energy",
+      "script_path": "session-66/s66_gge_vacuum_energy.py",
+      "session": "s66",
+      "inputs": "",
+      "outputs": "session-66/s66_gge_vacuum_energy.npz, session-66/s66_gge_vacuum_energy.png",
+      "source_file": "computations/session-66/s66_gge_vacuum_energy.py",
+      "source_context_30_lines": "   35: \n   36: Inputs:\n   37:   - s52_n_pair_full.npz (BCS pair data)\n   38:   - s54_ed_sweep.npz (exact diagonalization spectrum)\n   39:   - s53_q_theory_gge.npz (prior GGE analysis)\n   40:   - canonical_constants.py\n   41: \n   42: Outputs:\n   43:   - s66_gge_vacuum_energy.npz\n   44:   - s66_gge_vacuum_energy.png\n   45: \"\"\"\n   46: \n   47: import sys\n   48: import os\n   49: sys.path.insert(0, os.path.dirname(__file__))\n   50: \n   51: import numpy as np"
+    },
+    {
+      "anchor_id": "prov_1096",
+      "anchor_type": "data_provenance",
+      "name": "goldstone_gap",
+      "script_path": "session-66/s66_goldstone_gap.py",
+      "session": "s66",
+      "inputs": "",
+      "outputs": "session-66/s66_goldstone_gap.npz, session-66/s66_goldstone_gap.png",
+      "source_file": "computations/session-66/s66_goldstone_gap.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s66_goldstone_gap.py -- GOLDSTONE-GAP-SCALING: Thermodynamic Limit of BA Phonon Mass Gap\n    4: ========================================================================================\n    5: \n    6: Sagan falsification challenge #3: does the BA phonon mass gap (which provides\n    7: f_DM ~ 0.947 on the 32-cell fabric) survive the thermodynamic limit?\n    8: \n    9: The fabric graph is the SU(3) representation graph: vertices are irreps (p,q)\n   10: sorted by Casimir, edges connect irreps differing by Clebsch-Gordan steps:\n   11:   - C^2 coset:  (+-1, 0), (0, +-1)  [4 directions, coupling J_C2]"
+    },
+    {
+      "anchor_id": "prov_1097",
+      "anchor_type": "data_provenance",
+      "name": "hessian_cutoff",
+      "script_path": "session-66/s66_hessian_cutoff.py",
+      "session": "s66",
+      "inputs": "",
+      "outputs": "session-66/s66_hessian_cutoff.npz, session-66/s66_hessian_cutoff.png",
+      "source_file": "computations/session-66/s66_hessian_cutoff.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s66_hessian_cutoff.py — HESSIAN-CUTOFF-66: One-Loop Hessian at Finite Lambda\n    4: ==============================================================================\n    5: Gate: HESSIAN-CUTOFF-66\n    6:   PASS: (36+, 0-) signature preserved at ALL Lambda values\n    7:   FAIL: Negative eigenvalues appear at some Lambda\n    8:   INFO: Marginal eigenvalues near zero but no sign change\n    9: \n   10: Motivation:\n   11:   The one-loop Hessian H_{ij} = d^2 S / dtau_i dtau_j at the fold determines"
+    },
+    {
+      "anchor_id": "prov_1098",
+      "anchor_type": "data_provenance",
+      "name": "ir_bf_splitting",
+      "script_path": "session-66/s66_ir_bf_splitting.py",
+      "session": "s66",
+      "inputs": "",
+      "outputs": "session-66/s66_ir_bf_splitting.npz, session-66/s66_ir_bf_splitting.png",
+      "source_file": "computations/session-66/s66_ir_bf_splitting.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s66_ir_bf_splitting.py -- IR-BF-SPLITTING-66: IR B/F Spectral Splitting from BCS\n    4: ==================================================================================\n    5: \n    6: Gate: IR-BF-SPLITTING-66\n    7:   PASS:  A_IR > 10% of total spectral weight (CC channel open)\n    8:   FAIL:  A_IR = 0 or < 1% (BCS does not break B/F symmetry in IR)\n    9:   INFO:  1% < A_IR < 10% (small but nonzero)\n   10: \n   11: Physics"
+    },
+    {
+      "anchor_id": "prov_1099",
+      "anchor_type": "data_provenance",
+      "name": "kk_threshold_l5",
+      "script_path": "session-66/s66_kk_threshold_l5.py",
+      "session": "s66",
+      "inputs": "",
+      "outputs": "session-66/s66_kk_threshold_l5.npz, session-66/s66_kk_threshold_l5.png",
+      "source_file": "computations/session-66/s66_kk_threshold_l5.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s66_kk_threshold_l5.py — KK-THRESHOLD-L5-66\n    4: Gaussian-cutoff KK threshold corrections: convergence at L_max = 5.\n    5: \n    6: STRUCTURAL CONTEXT\n    7: ------------------\n    8: S64 (KK-THRESHOLD-64) established:\n    9:   - Formula C is correct: delta(1/g_3^2) = SUM_{(p,q)} T(p,q)/(8pi^2) * ln(Lambda^2/omega_min^2)\n   10:     where omega_min is the smallest positive D_K eigenvalue in sector (p,q).\n   11:   - Gaussian regulation: multiply by exp(-omega_min^2 / Lambda^2)"
+    },
+    {
+      "anchor_id": "prov_1100",
+      "anchor_type": "data_provenance",
+      "name": "leggett_spectral",
+      "script_path": "session-66/s66_leggett_spectral.py",
+      "session": "s66",
+      "inputs": "",
+      "outputs": "session-66/s66_leggett_spectral.npz, session-66/s66_leggett_spectral.png",
+      "source_file": "computations/session-66/s66_leggett_spectral.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s66_leggett_spectral.py — Spectral Function A(k, omega) for the Leggett Mode\n    4: =============================================================================\n    5: \n    6: Gate: LEGGETT-SPECTRAL-66\n    7:   PASS: Lorentzian fit with Q > 10\n    8:   FAIL: Fano fit dominant with Q < 3\n    9:   INFO: Lorentzian but Q < 10\n   10: \n   11: Physics:"
+    }
+  ]
+}

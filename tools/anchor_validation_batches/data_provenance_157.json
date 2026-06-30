@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 157,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1561",
+      "anchor_type": "data_provenance",
+      "name": "chi_N_ward_dual",
+      "script_path": "session-80/s80_chi_N_ward_dual.py",
+      "session": "s80",
+      "inputs": "",
+      "outputs": "session-80/s80_chi_N_ward_dual.npz, session-80/s80_chi_N_ward_dual.png",
+      "source_file": "computations/session-80/s80_chi_N_ward_dual.py",
+      "source_context_30_lines": "  525: # ---------------------------------------------------------------\n  526: # STEP 8: SAVE NPZ\n  527: # ---------------------------------------------------------------\n  528: \n  529: print(\"=\" * 78)\n  530: print(\"STEP 8: SAVE OUTPUTS\")\n  531: print(\"=\" * 78)\n  532: \n  533: out_npz = os.path.join(SCRIPT_DIR, \"s80_chi_N_ward_dual.npz\")\n  534: np.savez(\n  535:     out_npz,\n  536:     tau_all=tau_arr_full,\n  537:     a0=a0_arr,\n  538:     a2=a2_arr,\n  539:     a4=a4_arr,\n  540:     g_U1_sq=g_U1_sq_arr,\n  541:     sqrt_a4_over_a2=sqrt_ratio,"
+    },
+    {
+      "anchor_id": "prov_1562",
+      "anchor_type": "data_provenance",
+      "name": "csub_sign",
+      "script_path": "session-80/s80_csub_sign.py",
+      "session": "s80",
+      "inputs": "",
+      "outputs": "session-80/s80_csub_sign.npz",
+      "source_file": "computations/session-80/s80_csub_sign.py",
+      "source_context_30_lines": "  213: print()\n  214: print(f\"VERDICT: {verdict}\")\n  215: print(f\"Direction: c_sub UP => A_s DOWN (SUPPRESSION, UNIFIED-AS-79 convention confirmed)\")\n  216: print(\"=\"*78)\n  217: \n  218: # =============================================================================\n  219: # STEP 6: Save .npz\n  220: # =============================================================================\n  221: out_path = SCRIPT_DIR / \"s80_csub_sign.npz\"\n  222: np.savez(\n  223:     out_path,\n  224:     # Gate 4-tuple\n  225:     d_ln_A_s_d_ln_c_sub=d_ln_A_d_ln_c,\n  226:     scheme=\"UNIFIED-AS-79\",\n  227:     convention=\"central-difference-log-derivative\",\n  228:     L_max=\"N/A\",\n  229:     # Inputs"
+    },
+    {
+      "anchor_id": "prov_1563",
+      "anchor_type": "data_provenance",
+      "name": "fold_inst_gradient",
+      "script_path": "session-80/s80_fold_inst_gradient.py",
+      "session": "s80",
+      "inputs": "",
+      "outputs": "session-80/s80_fold_inst_gradient.npz, session-80/s80_fold_inst_gradient.png",
+      "source_file": "computations/session-80/s80_fold_inst_gradient.py",
+      "source_context_30_lines": "  327:            label=f'all-pts peak tau={tau_peak_all}')\n  328: ax.set_xlabel('tau (Jensen deformation)')\n  329: ax.set_ylabel('dS_inst/dtau')\n  330: ax.set_title(f'Gradient dS_inst/dtau: MONOTONE, peak at boundary tau={tau_peak_all}')\n  331: ax.legend(loc='best', fontsize=8)\n  332: ax.grid(True, alpha=0.3)\n  333: \n  334: plt.tight_layout()\n  335: plot_path = os.path.join(SCRIPT_DIR, 's80_fold_inst_gradient.png')\n  336: plt.savefig(plot_path, dpi=140)\n  337: print(f\"Plot saved: {plot_path}\")\n  338: plt.close()\n  339: \n  340: # -----------------------------------------------------------------------\n  341: # Save NPZ\n  342: # -----------------------------------------------------------------------\n  343: npz_path = os.path.join(SCRIPT_DIR, 's80_fold_inst_gradient.npz')  # (local)"
+    },
+    {
+      "anchor_id": "prov_1564",
+      "anchor_type": "data_provenance",
+      "name": "fold_inst_gradient_feynman",
+      "script_path": "session-80/s80_fold_inst_gradient_feynman.py",
+      "session": "s80",
+      "inputs": "",
+      "outputs": "session-80/s80_fold_inst_gradient_feynman.npz, session-80/s80_fold_inst_gradient_feynman.png",
+      "source_file": "computations/session-80/s80_fold_inst_gradient_feynman.py",
+      "source_context_30_lines": "   43: \n   44: The gate PASSES iff kappa's tau-derivative generates a narrow peak at tau_fold\n   45: via Z(tau) = d^2 S_total/dtau^2.\n   46: \n   47: NOTE: The Feynman-Hellmann theorem says (at a saddle) that only the EXPLICIT\n   48: tau-dependence contributes -- the implicit Phi_inst(tau) dependence drops out.\n   49: \n   50: Output:\n   51:     computations/session-80/s80_fold_inst_gradient_feynman.npz\n   52:     computations/session-80/s80_fold_inst_gradient_feynman.png\n   53:     4-tuple (dS_inst_dtau_peak, scheme=path-integral, convention=Euclidean, L_max=5)\n   54: \n   55: Author: feynman-theorist (S80 W1-3 consult)\n   56: Date: 2026-04-17\n   57: \"\"\"\n   58: import os\n   59: os.environ.setdefault('OMP_NUM_THREADS', '8')                  # (local) CPU cap for 8-tau grid"
+    },
+    {
+      "anchor_id": "prov_1565",
+      "anchor_type": "data_provenance",
+      "name": "h_tilde_epoch_lizzi",
+      "script_path": "session-80/s80_h_tilde_epoch_lizzi.py",
+      "session": "s80",
+      "inputs": "",
+      "outputs": "session-80/s80_h_tilde_epoch_lizzi.npz, session-80/s80_h_tilde_epoch_lizzi.png",
+      "source_file": "computations/session-80/s80_h_tilde_epoch_lizzi.py",
+      "source_context_30_lines": "  213: epochs = np.array([\"fold (τ=0.190)\", \"horizon-exit (UNIFIED-AS-79)\"])\n  214: a2_at_epoch = np.array([a2_fold, a2_fold])   # pinned constant post-fold under external pin\n  215: a0_at_epoch = np.array([a0_fold, a0_fold])   # (kept as baseline ref; HE ρ effectively reshaped)\n  216: H_tilde_at_epoch = np.array([H_tilde_B_spectral, H_tilde_A_spectral])\n  217: \n  218: # ---------------------------------------------------------------------------\n  219: # Plot: a_2(τ) and H̃(τ) schematic with fold + HE epochs marked\n  220: # ---------------------------------------------------------------------------\n  221: out_npz = Path(__file__).parent / \"s80_h_tilde_epoch_lizzi.npz\"\n  222: out_png = Path(__file__).parent / \"s80_h_tilde_epoch_lizzi.png\"\n  223: \n  224: np.savez(\n  225:     out_npz,\n  226:     epochs=epochs,\n  227:     a2_at_epoch=a2_at_epoch,\n  228:     a0_at_epoch=a0_at_epoch,\n  229:     H_tilde_at_epoch=H_tilde_at_epoch,"
+    },
+    {
+      "anchor_id": "prov_1566",
+      "anchor_type": "data_provenance",
+      "name": "h_tilde_epoch_td",
+      "script_path": "session-80/s80_h_tilde_epoch_td.py",
+      "session": "s80",
+      "inputs": "",
+      "outputs": "session-80/s80_h_tilde_epoch_td.npz, session-80/s80_h_tilde_epoch_td.png",
+      "source_file": "computations/session-80/s80_h_tilde_epoch_td.py",
+      "source_context_30_lines": "   12:   rho_substrate(tau) = (2/pi^2) * a_0(tau) * M_KK^4   (zeta-scheme, canonical)\n   13: \n   14: For H̃_A: solve k_pivot = a(tau_HE) * H(tau_HE) via the substrate's own\n   15: Friedmann evolution from fold epoch forward. Inflaton-like mode crossing\n   16: condition is imported here as the *convention* Path A defines, not as a\n   17: commitment to slow-roll dynamics.\n   18: \n   19: Outputs:\n   20:   - computations/session-80/s80_h_tilde_epoch_td.npz\n   21:   - computations/session-80/s80_h_tilde_epoch_td.png\n   22:   - Verdict line in gate_verdicts.txt\n   23: \n   24: Gate: S80-H-TILDE-EPOCH (CF-1, [VERIFY]).\n   25:   PASS Factor-2: |delta_OOM| < 0.3 on best branch.\n   26:   INFO 2-10: delta_OOM in [0.3, 1.0] OOM.\n   27:   FAIL: > 1.0 OOM under best branch.\n   28: "
+    },
+    {
+      "anchor_id": "prov_1567",
+      "anchor_type": "data_provenance",
+      "name": "pru_audit",
+      "script_path": "session-80/s80_pru_audit.py",
+      "session": "s80",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-80/s80_pru_audit.py",
+      "source_context_30_lines": "   33:    (Output-heuristic B.)\n   34: 6. Parse `s*_gate_verdicts.txt` — check each PASS/FAIL/INFO verdict line for a\n   35:    SHA-256 input-pin annotation (40+ hex chars).\n   36:    (Output-heuristic C.)\n   37: 7. Emit machine-readable JSON report + human summary.\n   38: \n   39: OUTPUTS\n   40: -------\n   41: - `computations/session-80/s80_pru_audit_report.json`   — structured, machine-readable.\n   42: - Stdout — human summary with baseline counts for (a), (b), (c).\n   43: \n   44: DISCIPLINE\n   45: ----------\n   46: - Imports canonical_constants (meta-ironic but mandated).\n   47: - NON-PHONONIC classification — pure infrastructure audit.\n   48: - This tool MUST NOT modify canonical_constants.py or the knowledge index.\n   49: - All intermediate tallies tagged `# (local)` per math-scripts.md."
+    },
+    {
+      "anchor_id": "prov_1568",
+      "anchor_type": "data_provenance",
+      "name": "pru_trendline",
+      "script_path": "session-80/s80_pru_trendline.py",
+      "session": "s80",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-80/s80_pru_trendline.py",
+      "source_context_30_lines": "   11: Append one snapshot of the three PRU baseline counts from the latest\n   12: `s80_pru_audit_report.json` to a JSONL ledger. The ledger is the\n   13: session-over-session trendline:\n   14: \n   15:   baseline counts over time  =  did we drive unpinned gates to 0?\n   16: \n   17: FORMAT\n   18: ------\n   19: `computations/session-80/s80_pru_trendline.jsonl`\n   20: \n   21: Each line is a JSON object:\n   22: {\n   23:   \"timestamp_utc\":   \"<ISO-8601>\",\n   24:   \"session\":         \"<auto-detected tag, e.g., S81>\",\n   25:   \"git_head\":        \"<short sha>\",\n   26:   \"canon_sha\":       \"<sha256 of canonical_constants.py>\",\n   27:   \"a_unregistered\":  <int>,    # unregistered constants >= threshold"
+    },
+    {
+      "anchor_id": "prov_1569",
+      "anchor_type": "data_provenance",
+      "name": "unified_as_79_full",
+      "script_path": "session-80/s80_unified_as_79_full.py",
+      "session": "s80",
+      "inputs": "",
+      "outputs": "session-80/s80_unified_as_79_full.npz, session-80/s80_unified_as_79_full.png",
+      "source_file": "computations/session-80/s80_unified_as_79_full.py",
+      "source_context_30_lines": "  188: print(f\"  Verdict: {divergence_chase_verdict}\")\n  189: print(f\"  Interpretation: {dc_interpretation}\")\n  190: \n  191: # =============================================================================\n  192: # SAVE RESULTS\n  193: # =============================================================================\n  194: \n  195: np.savez(\n  196:     'computations/session-80/s80_unified_as_79_full.npz',\n  197:     H_tilde_LI=H_tilde_LI,\n  198:     H_tilde_TD_framework=H_tilde_TD_framework,\n  199:     H_tilde_TD_pathB=H_tilde_TD_pathB,\n  200:     H_tilde_LI_obs=H_tilde_LI_obs,\n  201:     eps_H=eps_H,\n  202:     c_sub=c_sub,\n  203:     f_conv=f_conv,\n  204:     k_a2=k_a2,"
+    },
+    {
+      "anchor_id": "prov_1570",
+      "anchor_type": "data_provenance",
+      "name": "unified_as_79_mode_eqn",
+      "script_path": "session-80/s80_unified_as_79_mode_eqn.py",
+      "session": "s80",
+      "inputs": "",
+      "outputs": "session-80/s80_unified_as_79_mode_eqn.npz, session-80/s80_unified_as_79_mode_eqn.png",
+      "source_file": "computations/session-80/s80_unified_as_79_mode_eqn.py",
+      "source_context_30_lines": "  415: \n  416: print(cross_check_note)\n  417: \n  418: \n  419: # =============================================================================\n  420: # STEP 6: Save results and diagnostics\n  421: # =============================================================================\n  422: \n  423: out_npz = SCRIPT_DIR / 's80_unified_as_79_mode_eqn.npz'\n  424: np.savez(str(out_npz),\n  425:     # Input H_tilde values (dual-branch)\n  426:     H_tilde_A_obs=H_tilde_A_obs,\n  427:     H_tilde_A_framework=H_tilde_A_framework,\n  428:     H_tilde_A_LI=H_tilde_A_LI,\n  429:     H_tilde_B_TD=H_tilde_B_TD,\n  430:     H_tilde_B_LI=H_tilde_B_LI,\n  431:     # UNIFIED-AS-79 correction factors"
+    }
+  ]
+}

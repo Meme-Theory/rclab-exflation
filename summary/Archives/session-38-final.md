@@ -23,7 +23,7 @@ A throwaway computation (W0) confirmed CC-INST-38 CLOSED with 76x margin, as exp
 
 ## I. Results Hierarchy
 
-### Tier 1: Framework-Decisive Discoveries
+### Level 1: Framework-Decisive Discoveries
 
 **1. The Ordered Veil -- substrate is integrable but invisible through the quench**
 
@@ -95,7 +95,7 @@ The barrier height (0.0047) is 0.4% of one oscillation quantum. WKB is invalid (
 
 Revised language: the instanton at S = 0.069 is a **large-amplitude pair vibration at a quantum critical point** where Z_2 symmetry is restored. The "instanton gas" is the Z_2-restored phase of a pair vibrator.
 
-### Tier 2: Structural Results
+### Level 2: Structural Results
 
 **5. BCS four-scale frequency architecture (universal)**
 
@@ -159,7 +159,7 @@ Initial ^16O identification refined to ^24Mg because inter-sector gaps (B2-B1 = 
 
 Nazarewicz: "The input is exotic. The output is conventional nuclear BCS, in the sd-shell / ^24Mg regime."
 
-### Tier 3: Diagnostic Results
+### Level 3: Diagnostic Results
 
 **10. CC-INST-38 CLOSED (76x margin) -- expected closure, not session focus**
 
@@ -360,18 +360,18 @@ The probability assessment is Sagan's domain. The constraint map is the assessme
 
 | File | Content | Agent |
 |:-----|:--------|:------|
-| `tier0-computation/s38_cc_instanton.py` | CC-INST-38 computation | nazarewicz |
-| `tier0-computation/s38_cc_instanton.npz` | <Delta^2>, BdG shifts, T-sweep | nazarewicz |
-| `tier0-computation/s38_level_spacing.py` | CHAOS-1 analysis | kitaev |
-| `tier0-computation/s38_level_spacing.npz` | All <r> values per sector/tau | kitaev |
-| `tier0-computation/s38_level_spacing.png` | 8-panel diagnostic plot | kitaev |
-| `tier0-computation/s38_otoc_bcs.py` | CHAOS-2 OTOC computation | kitaev |
-| `tier0-computation/s38_otoc_bcs.npz` | OTOC, spectra, SFF, level stats | kitaev |
-| `tier0-computation/s38_otoc_bcs.png` | 9-panel diagnostic plot | kitaev |
-| `tier0-computation/s38_attempt_freq.py` | Attempt frequency (C-3) | nazarewicz |
-| `tier0-computation/s38_attempt_freq.npz` | All frequencies, ratios, instanton params | nazarewicz |
-| `tier0-computation/s38_kz_defects.py` | KZ defect density (C-4) | gen-physicist |
-| `tier0-computation/s38_kz_defects.npz` | Transit params, KZ, excitation probs | gen-physicist |
+| `computations/s38_cc_instanton.py` | CC-INST-38 computation | nazarewicz |
+| `computations/s38_cc_instanton.npz` | <Delta^2>, BdG shifts, T-sweep | nazarewicz |
+| `computations/s38_level_spacing.py` | CHAOS-1 analysis | kitaev |
+| `computations/s38_level_spacing.npz` | All <r> values per sector/tau | kitaev |
+| `computations/s38_level_spacing.png` | 8-panel diagnostic plot | kitaev |
+| `computations/s38_otoc_bcs.py` | CHAOS-2 OTOC computation | kitaev |
+| `computations/s38_otoc_bcs.npz` | OTOC, spectra, SFF, level stats | kitaev |
+| `computations/s38_otoc_bcs.png` | 9-panel diagnostic plot | kitaev |
+| `computations/s38_attempt_freq.py` | Attempt frequency (C-3) | nazarewicz |
+| `computations/s38_attempt_freq.npz` | All frequencies, ratios, instanton params | nazarewicz |
+| `computations/s38_kz_defects.py` | KZ defect density (C-4) | gen-physicist |
+| `computations/s38_kz_defects.npz` | Transit params, KZ, excitation probs | gen-physicist |
 | `sessions/archive/session-38/session-38-results-workingpaper.md` | Results working paper | team-lead |
 | `sessions/archive/session-38/session-38-einstein-naz-workshop.md` | W0: CC-Through-Instanton | einstein + nazarewicz |
 | `sessions/archive/session-38/session-38-naz-qa-workshop.md` | W1: Pair Vibrator as Phonon | nazarewicz + QA |

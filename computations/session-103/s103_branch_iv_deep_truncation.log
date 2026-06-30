@@ -1,0 +1,69 @@
+=== S103-BRANCH-IV-DEEP-TRUNCATION — input SHA-256 pins ===
+  computations/_shared/canonical_constants.py: 9cd89e612fcdbb17...
+  computations/session-102/s102_branch_iv_canonical_eval.npz: cf563941e06a72f9...
+  computations/session-84/s84_spectrum_cache_L12_tau019.npz: 9e6d9cf7fd6a6949...
+  computations/_shared/dirac_spectrum.py: dadba674e950fad9...
+  closure: da6705ab7e0c10db... (legacy closure, informational)
+  audit_sha256:   d9ee4f0d069e39fb... (script+canonical+pinmap)
+  content_sha256: ae5a45b81336f296... (script only)
+  [PLAN-DRIFT-1] L12 cache resolved session-102->session-84 at runtime (ground truth on disk)
+  [PLAN-DRIFT-2] dirac_spectrum.py resolved phonon-exflation-sim/src->computations/_shared at runtime
+  Jensen s = tau_fold = 0.19  | Lambda_Z = 1.0
+
+  --- MANDATORY feasibility pre-check (math-scripts.md D_K Block-Diagonality) ---
+Ainulindale: Unknown command line argument 'Exflation\phonon-exflation-sim\.venv312\Lib\site-packages\_rocm_sdk_core\lib\llvm\bin\offload-arch.exe'.  Try: 'C:\sandbox\Ainulindale --help'
+  feas-probe Sym^8 dim=45 build=19.5s (empty-cache; CPU)
+  feas-probe Sym^9 dim=55 build=200.9s (empty-cache; CPU)
+  feas-probe: Sym^9 build 200.9s > 120s per-sector budget => construction WALL (level-13/14 need Sym^13)
+  feasibility: worst_single=200.9s (<= 120s budget), projected_total=5826.6s (<= 480s budget) => DIRECT=False
+
+=== S103-BRANCH-IV-DEEP-TRUNCATION — results ===
+  branch (feasibility pre-check)    = FRIEDRICH-BAR-INFO  (DIRECT=False; device=cuda:0)
+  feas worst single Sym^p build      = 200.9s (budget 120s); wall_hit_at_p=9
+  feas projected full set (LB)       = 5826.6s (budget 480s; true cost far larger — Sym^13 required)
+  feas Sym^p timings (empty-cache)   = {'8': 19.48172402381897, '9': 200.9168462753296}
+  cache max level (p+q)             = 12  (L=13,14 are NEW sectors)
+  w_0_B (branch-iv target)          = -0.842454
+  rho_B(L=8)  recomputed            = -0.504465997912  (W5-2 -0.504465997912; d=1.11e-16)
+  rho_B(L=10) recomputed            = -0.577172580512  (W5-2 -0.577172580512; d=0.00e+00)
+  rho_B(L=12) recomputed            = -0.634885419265  (W5-2 -0.634885419265; d=0.00e+00)
+  rho_Zubarev reproduction OK       = True  (max diff 1.11e-16 <= 1e-12)
+  rho_B(L=13) [FRIEDRICH-BAR-INFO]       = -0.646653396124
+  rho_B(L=14) [FRIEDRICH-BAR-INFO]       = -0.657019662174
+  offset_B = w_0_B - rho_B(L=10)     = -0.265281419488  (DERIVED; zero free normalization)
+     matches plan -0.265281419488   = True
+     matches W5-2 npz offset_B       = True
+  w_0^CAC(L=12)                      = -0.900166838753
+  w_0^CAC(L=13)                      = -0.911934815612
+  w_0^CAC(L=14)                      = -0.922301081662
+  reproduction residual @L=10        = 0.000e+00  -> PASS
+  CAC effacement preserved @L=10     = True
+
+  CAC spread over {12,13,14}        = 0.02213424  (FB-envelope midpoint)
+  spread (rho-only cross-check)      = 0.02213424  (offset-cancel resid 0.00e+00)
+  W5-2 spread over {8,10,12}        = 0.13041942  (the input FAIL this gate re-tests)
+  Friedrich-Bar spread ENVELOPE      = [-0.000062, 0.044330]
+  FB upper-bound < 0.05 band?     = True  (envelope-bounded-PASS NOTE (top-line INFO))
+  PASS band: spread < 0.05  -> spread_pass = False
+
+  [SIGN] decrement 12->13            = -0.01176798
+  [SIGN] decrement 13->14            = -0.01036627
+  [SIGN] avg decrement 12->14        = -0.01106712  (ref 10->12 = -0.02885642)
+  [SIGN] decrement sign NEGATIVE      = True  (pre-registered direction)
+  [SIGN] decelerating vs 10->12       = True
+
+  Friedrich-Bar eta_FB min (L12)     = 0.436488  (FB predicate licensed=True; floor 0.4)
+  offset_FW cross-check              = -0.340827  (S86 -0.340827; ok=True)
+  internally consistent (finite)     = True
+  COMPOSITE VERDICT                  = INFO  (sign=PASS, magnitude=PASS, regime=VALID)
+
+  plot -> computations\session-103\s103_branch_iv_deep_truncation.png
+  data -> computations\session-103\s103_branch_iv_deep_truncation.npz
+
+<<<EMIT_VERDICT_PAYLOAD>>>
+{"audit_sha256":"d9ee4f0d069e39fbf3a8000391f7138f0554a0246f76bf407c1dd44ff87e8ec1","content_sha256":"ae5a45b81336f296c1154d306ef03bb0b5e6aea06f29a8ebc4e8d8fe70bc1f89","convention":"CAC-branch-iv-anchored-L10-DERIVED-OFFSET","extra_rows":["# regulator_pin=a_4^{Mellin} # S103-BRANCH-IV-DEEP-TRUNCATION branch-iv R-slot Mellin-cone a_4 residue (regulator-pin-discipline.md)","# convention_axis=CAC-branch-iv-anchored-L10-DERIVED-OFFSET (regulator-convention-lockdown.md; RDC FORBIDDEN); offset_B=-0.265281=w_0_B-rho_B(L=10); spectral-triple-direct rho_Zubarev(L)","# feasibility=INFO-Friedrich-Bar: irrep-CONSTRUCTION wall (NOT diagonalization) \u2014 empty-cache Sym^p builds {'8': 19.48172402381897, '9': 200.9168462753296} blow 120s/sector budget at p=9; level-13/14 need Sym^13 (super-polynomial CPU); GPU eigvalsh(i*D) is NOT the bottleneck (math-scripts.md D_K Block-Diagonality recursive-Casimir-projection wall); eta_FB_min=0.4365 (FB predicate licensed=True, floor 0.4)","# plan-drift=cache-pinned-session-102-on-disk-session-84-runtime-corrected; dirac_spectrum.py-pinned-phonon-exflation-sim-src-on-disk-computations-_shared-runtime-corrected (substrate-first-canonical-sourcing.md \u00a7(ii.B)); pinned SHA binds CONTENT","# fb_backward=falsifier-master-inventory.md Row#1 branch-iv sub-row: deep-truncation {12,13,14} => branch-iv DE object Friedrich-Bar-envelope-bounded (FB upper-bound < 0.05 => envelope-bounded-PASS NOTE; top-line INFO, no direct L>=13 spectra); w0_FW_R842 promotion fires on PASS ONLY (Step-2), NOT on this INFO; NO inventory row minted by THIS gate (gen-physicist compute; mack DR3-readiness annotation in WP only)"],"gate_id":"S103-BRANCH-IV-DEEP-TRUNCATION","l_max":"{12,13,14}","magnitude_verdict":"PASS","regime_verdict":"VALID","schema_version":"S84+","scheme":"zeta","session":103,"sign_verdict":"PASS","value":"INFO-branch=FRIEDRICH-BAR-INFO-FEASIBLE=False_FRIEDRICH-BAR-INFO-spread-ENVELOPE[-0.000062,0.044330]_FBupperbound<0.05-band_envelope-bounded-PASS-NOTE-toplineINFO_W52spread{8,10,12}=0.130419-FAIL-input_rhoB13=-0.646653_rhoB14=-0.657020-FBmidpoint_offset_B=-0.265281-DERIVED-zero-free-norm-cancels-in-span_rho-reproduction-of-W52-at-1.1e-16<=1e-12_decrement-sign-NEGATIVE=True-decelerating=True_irrep-construction-WALL-Sym^9=200.9168462753296s_etaFBmin=0.4365_offsetFW-xcheck=-0.340827=S86-canonical_cache-drift-102to84-CORRECTED_dirac-drift-src-to-shared-CORRECTED_LAITEH-UNTRUSTED-UPSTREAM-cache-lineage","verdict":"INFO"}
+<<<END_EMIT_VERDICT_PAYLOAD>>>
+
+  4-tuple: (value=INFO-spread=0.022134, scheme=zeta, convention=CAC-branch-iv-anchored-L10-DERIVED-OFFSET, L_max={12,13,14})
+  elapsed: 221.83s
+EXIT_CODE=0

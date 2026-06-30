@@ -1,0 +1,92 @@
+{
+  "gate_id_base": "S86-SECTOR-1-SR-FLOW-Z-FACTOR",
+  "session": "S86",
+  "wave": "W5a",
+  "scheme": "SR-LO-Mukhanov-Sasaki",
+  "convention": "substrate-first-xi2(0)-IC",
+  "L_max": 10,
+  "machinery_pin_map": {
+    "L_max": 10,
+    "n_eval": 6001,
+    "N_span": [
+      0.0,
+      60.0
+    ],
+    "scheme": "SR-LO-Mukhanov-Sasaki",
+    "convention": "substrate-first-xi2(0)-IC",
+    "cutoff_axis": "spectral",
+    "numerical_method_primary": "LSODA",
+    "numerical_method_crosscheck": "RK45",
+    "rtol": 1e-08,
+    "atol": 1e-10,
+    "max_step": 0.01,
+    "GPU_path": "CPU OMP_NUM_THREADS=8",
+    "PASS_band_abs": 0.05,
+    "INFO_band_abs": 0.1,
+    "lsoda_rk45_rel_tol": 0.0001,
+    "eps_0": 0.02,
+    "eta_0": 0.005,
+    "alpha_s_0": 0.0,
+    "xi2_0_substrate": 13.642473425595973,
+    "xi2_0_lcdm": 0.0,
+    "xi_E_GGE_inv_used": 13.642473425595973
+  },
+  "input_pin_map": {
+    "computations/_shared/canonical_constants.py": "e62797b73a0b558a3bf1da4ca03bb8f68bb5d37c436b15e676935635bb919d03",
+    "computations/session-86/s86_w5a_p3_sector_1_sr_flow.py": "de0f11e18f3df340cf34c7c617ce95aaa3af3c369e2030f882d810169c99e656"
+  },
+  "z_results": {
+    "MS_canonical": {
+      "N_pivot": 55.0,
+      "Z_substrate_LSODA": 5.208352208514228e+23,
+      "Z_LCDM_LSODA": 3.6287949615722695e+23,
+      "Z_substrate_RK45": 5.208352208156075e+23,
+      "Z_ratio": 1.4352842372382413,
+      "lsoda_rk45_rel_dev": 6.876505483010128e-11,
+      "verdict": "FAIL",
+      "abs_dev_from_unity": 0.4352842372382413
+    },
+    "substrate_native_zeta": {
+      "N_pivot": 3.12,
+      "Z_substrate_LSODA": 67.70093001892582,
+      "Z_LCDM_LSODA": 20.530332806114384,
+      "Z_substrate_RK45": 67.70092997189728,
+      "Z_ratio": 3.2976050928294254,
+      "lsoda_rk45_rel_dev": 6.946512510124313e-10,
+      "verdict": "FAIL",
+      "abs_dev_from_unity": 2.2976050928294254
+    }
+  },
+  "cross_checks": {
+    "CC1_IC_fidelity_at_N0": {
+      "eps_dev": 0.0,
+      "xi2_dev": 0.0,
+      "PASS": true
+    },
+    "CC2_eps_monotone_window": {
+      "min_diff": 0.006250958199660744,
+      "window_upper": 0.13,
+      "PASS": true
+    },
+    "CC3_LSODA_RK45_max_rel_dev": {
+      "max_rel_dev": 6.946512510124313e-10,
+      "tol": 0.0001,
+      "PASS": true
+    }
+  },
+  "ODE_breakdown_N": 0.13,
+  "ODE_success": {
+    "substrate_LSODA": true,
+    "lcdm_LSODA": true,
+    "substrate_RK45": true
+  },
+  "analytic_pre_registration": {
+    "PIVOT55_expected_dev": 0.22,
+    "PIVOT55_expected_verdict": "FAIL",
+    "PIVOT312_expected_dev": 0.025,
+    "PIVOT312_expected_verdict": "PASS",
+    "note": "Plan \u00a710 analytic estimate; numerical verdict above replaces it."
+  },
+  "audit_sha256": "7d904527ccb2652c85873809f1599858f6d579d9a69803786cddb3e3cccb1b67",
+  "content_sha256": "de0f11e18f3df340cf34c7c617ce95aaa3af3c369e2030f882d810169c99e656"
+}

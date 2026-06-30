@@ -1,0 +1,258 @@
+==============================================================================
+SKYRMION-BARYON-64: Skyrmion Physics on Jensen-Deformed SU(3) Fiber
+==============================================================================
+
+==============================================================================
+SECTION 1: SU(3) Geometry with Jensen Deformation at tau_fold
+==============================================================================
+
+tau_fold = 0.19
+Scale factor (Cartan, 2 dirs): 1.462285
+Scale factor (Root, 6 dirs):   0.881027
+Volume check: exp(2*2*tau + 6*(-2*tau/3)) = 1.000000000000000
+
+R_0 (Killing normalization) = 1.000000
+R_phys = 1/M_KK = 1.0 M_KK^{-1}
+R_cartan = 1.209250 M_KK^{-1}
+R_root = 0.938631 M_KK^{-1}
+R_scalar (normalized) = 2.018144
+a_2(fold) = 2776.1654
+a_4(fold) = 1350.7216
+
+==============================================================================
+SECTION 2: Mapping Skyrme Parameters to Spectral Action
+==============================================================================
+
+f_pi^2 = a_2(fold) = 2776.1654 M_KK^2
+1/e^2 = a_4(fold) = 1350.7216 M_KK^{-2}
+f_pi = sqrt(a_2) = 52.6893 M_KK
+e = 1/sqrt(a_4) = 0.0272
+f_pi / e = sqrt(a_2 * a_4) = 1.4336 M_KK (NOT USED)
+f_pi * e = sqrt(a_2 / a_4) = 1936.4469 M_KK (NOT USED)
+
+==============================================================================
+SECTION 3: Topological Charge and Winding Number
+==============================================================================
+
+Baryon number B = 1 (topological, exact)
+pi_3(SU(3)) = Z
+H_3(SU(3); Z) = Z
+The 3-cycle is the embedded SU(2) subgroup.
+
+==============================================================================
+SECTION 4: Skyrmion Mass on Compact SU(3)
+==============================================================================
+
+Faddeev-Bogomolny coefficient (flat R^3): C_flat = 12*pi^2 = 118.4353
+
+SU(2) embedding (isospin):
+  2 root dirs: scale = 0.881027
+  1 Cartan dir: scale = 1.462285
+  Volume factor: 1.065382
+  R_eff = 1.043126 R_0
+  Vol(SU(2)) = 22.4048 (in M_KK^{-3} units)
+
+--- Isotropic S^3 hedgehog (F = pi - chi) ---
+I_sigma  = 4.712389  (exact: 4.712389, err: 0.00e+00)
+I_skyrme = 2.356194  (exact: 2.356194, err: 0.00e+00)
+
+Optimal skyrmion radius (flat space): R_opt = 0.697526 M_KK^{-1}
+  = 0.6975 / M_KK
+
+E_skyrmion(R=1 M_KK^{-1}) = 122192.2272 M_KK
+E_skyrmion(R_opt) = 114671.7902 M_KK  (minimum, flat-space analogue)
+Bogomolny bound (flat): 229343.5804 M_KK
+
+==============================================================================
+SECTION 5: Anisotropic Correction from Jensen Deformation
+==============================================================================
+
+Anisotropic S^3 radii:
+  a (root, 2 dirs) = 0.938631 M_KK^{-1}
+  b (Cartan, 1 dir) = 1.209250 M_KK^{-1}
+  Vol(SU(2)_aniso) = 21.029796 M_KK^{-3}
+
+--- Anisotropic skyrmion energy ---
+E_sigma  = 86228.7054 M_KK
+E_skyrme = 40346.0487 M_KK
+E_total  = 126574.7541 M_KK
+Anisotropy factor E_aniso/E_iso = 1.035866
+  (Jensen deformation at tau=0.19 gives 3.59% correction)
+
+==============================================================================
+SECTION 6: Physical Skyrmion Mass
+==============================================================================
+
+M_skyrmion (gravity route) = 126574.7541 * 7.4287e+16 GeV
+                           = 9.4028e+21 GeV
+M_skyrmion (Kerner route)  = 126574.7541 * 5.0417e+17 GeV
+                           = 6.3815e+22 GeV
+
+M_proton = 0.938 GeV
+
+log10(M_skyrm_grav / M_proton) = 22.00
+log10(M_skyrm_kern / M_proton) = 22.83
+
+Gate criterion 1 (mass within 2 OOM): FAIL
+  |log10(M_skyrm/M_proton)| = 22.00 (threshold: 2.0)
+
+==============================================================================
+SECTION 7: Skyrmion Size
+==============================================================================
+
+Skyrmion size = SU(2) sub-3-sphere radius ~ 1/M_KK
+R_skyrm (gravity) = 2.6519e-03 fm
+R_skyrm (Kerner)  = 3.9074e-04 fm
+R_proton = 0.84 fm
+
+log10(R_skyrm/R_proton) = -2.50 (gravity)
+
+==============================================================================
+SECTION 8: Kibble-Zurek Defect Production During Transit
+==============================================================================
+
+--- Transit parameters ---
+dt_transit = 1.130158e-03 M_KK^{-1}
+omega_tau = 8.27 M_KK
+Delta_BCS = 0.4643 M_KK
+Adiabaticity: omega_tau/Delta = 17.81 (>>1 => sudden)
+
+--- Kibble-Zurek correlation lengths ---
+xi_0 = xi_BCS = 0.8083 M_KK^{-1}
+tau_Q = 1.130158e-03 M_KK^{-1}
+tau_0 = 1/(2*Delta) = 1.0770 M_KK^{-1}
+tau_Q/tau_0 = 1.049362e-03
+
+Dissipative (z=2, nu=1/2):
+  KZ exponent = 0.2500
+  xi_KZ = 1.454886e-01 M_KK^{-1}
+Ballistic (z=1, nu=1/2):
+  KZ exponent = 0.3333
+  xi_KZ = 8.214344e-02 M_KK^{-1}
+
+--- Skyrmion production per fiber ---
+Vol(SU(2)_aniso) = 21.0298 M_KK^{-3}
+Dissipative: N_skyrm/fiber = 6.8289e+03
+Ballistic:   N_skyrm/fiber = 3.7942e+04
+
+==============================================================================
+SECTION 9: Baryon Asymmetry Estimate
+==============================================================================
+
+CP violation sources:
+  phi_CP (structural) = 0.0 (exact zero)
+  delta_CP_UV = 1/sqrt(IBO) = 0.029907
+  [J, D_K] = 0 (CPT exact)
+
+--- Baryon asymmetry ---
+N_skyrm (ballistic) = 3.7942e+04 per fiber
+delta_CP (UV) = 0.029907
+B = 1
+S_per_fiber = n_pairs * N_dof = 478.4
+
+Net baryons per fiber = 1.1347e+03
+eta_B = n_B_net / S = 2.3719e+00
+
+Observed eta_B = 6.1200e-10
+log10(eta_B / eta_obs) = 9.59
+
+--- Alternative (dissipative z=2) ---
+N_skyrm (dissipative) = 6.8289e+03 per fiber
+eta_B = 4.2691e-01
+log10(eta_B / eta_obs) = 8.84
+
+==============================================================================
+SECTION 10: Skyrmion Stability on Compact Fiber
+==============================================================================
+
+Skyrmion-antiskyrmion annihilation:
+  M_pi_eff * d (ballistic) = 8.214344e-02
+  M_pi_eff * d (dissipative) = 1.454886e-01
+  exp(-M*d) suppression (ball.) = 9.211398e-01
+  exp(-M*d) suppression (diss.) = 8.645997e-01
+
+CRITICAL: xi_KZ << 1/M_KK => barrier is negligible
+Skyrmion-antiskyrmion annihilation is UNSUPPRESSED
+The initial asymmetry eta_B will be WASHED OUT by annihilation
+unless a separation mechanism exists.
+
+Topological protection: NET B is conserved by pi_3(SU(3)) = Z
+Annihilation removes pairs, not net charge.
+Surviving eta_B = delta_CP * (N_total * B) / S_total
+This is EXACTLY what we computed: eta_B = 2.3719e+00
+
+==============================================================================
+SECTION 11: GATE VERDICT — SKYRMION-BARYON-64
+==============================================================================
+
+--- Gate Criteria ---
+1. M_skyrm within 2 OOM of M_proton (0.938 GeV)
+   M_skyrm = 126574.7541 M_KK = 9.4028e+21 GeV (gravity)
+   log10(M_skyrm/M_proton) = 22.00
+   VERDICT: FAIL (threshold: 2 OOM, actual: 22.00)
+
+2. eta_B within 3 OOM of 6e-10
+   eta_B = 2.3719e+00 (ballistic KZ)
+   eta_B = 4.2691e-01 (dissipative KZ)
+   log10(eta_B/eta_obs) = 9.59 (ballistic)
+   VERDICT: FAIL (threshold: 3 OOM, actual: 9.59)
+
+========================================
+GATE SKYRMION-BARYON-64: FAIL
+========================================
+  FAIL reason: M_skyrm 22.0 OOM from proton mass (> 5)
+
+==============================================================================
+SECTION 12: Structural Assessment
+==============================================================================
+
+SKYRMION BARYOGENESIS ASSESSMENT:
+
+1. TOPOLOGY: pi_3(SU(3)) = Z provides a well-defined integer baryon number.
+   This is EXACT and metric-independent. B is conserved by topology.
+
+2. MASS: M_skyrm = 126574.7541 M_KK = 9.40e+21 GeV.
+   This is 22.0 orders of magnitude ABOVE M_proton.
+   The skyrmion is a GUT-scale object, not a QCD-scale baryon.
+   This is EXPECTED: the fiber scale IS the KK scale ~ 10^{16-17} GeV.
+   The Skyrme model on the FIBER gives KK-scale solitons.
+   QCD baryons would require the Skyrme model on the EMERGENT 4D space,
+   not on the internal fiber.
+
+3. CP VIOLATION: phi_CP = 0 structurally (S52). UV completion provides
+   delta_CP ~ 0.030 (S61 VOL-7). This is the ONLY CP source.
+
+4. KZ PRODUCTION: The transit is extremely sudden (Mach 13.75).
+   Many skyrmion-antiskyrmion pairs are produced (3.8e+04 per fiber).
+   But xi_KZ << 1/M_KK, so annihilation is unsuppressed.
+   NET baryon number survives by topological protection.
+
+5. eta_B: The baryon asymmetry eta_B = 2.37e+00 is 9.6 OOM
+   from the observed value 6.12e-10.
+
+6. KEY DISTINCTION: Fiber skyrmions are NOT QCD baryons.
+   They are topological solitons at the KK scale.
+   They could be:
+   (a) DARK baryons (heavy, topologically stable, non-annihilating)
+   (b) Progenitors of QCD baryons (if a decay/fragmentation channel exists)
+   (c) Irrelevant (if they annihilate completely during cosmological evolution)
+
+7. COMPARISON WITH PRIOR BARYOGENESIS ATTEMPTS:
+   - S52 ETA-B-52: phi_CP = 0 exactly (structural, CLOSED)
+   - S59 BARYON-DIAGNOSTIC: N_3 = 0 (BDI class, no spectral flow)
+   - S60 LEPTO-CP: NCG forces real M_R (leptogenesis CLOSED)
+   - S61 TRANSIT-BARYOGEN: Berry CP channel CLOSED
+   - This computation: fiber skyrmions have correct topology but wrong scale
+
+
+==============================================================================
+SECTION 13: Saving data
+==============================================================================
+Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s64_skyrmion_baryon.npz
+
+Generating diagnostic plot...
+Saved plot: C:\sandbox\Ainulindale Exflation\tier0-computation\s64_skyrmion_baryon.png
+
+Total runtime: 0.39 s
+
+Done.

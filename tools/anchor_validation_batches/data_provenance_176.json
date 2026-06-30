@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 176,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1751",
+      "anchor_type": "data_provenance",
+      "name": "w5_landau_symmetry_class",
+      "script_path": "session-84/s84_w5_landau_symmetry_class.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-84/s84_w5_landau_symmetry_class.py",
+      "source_context_30_lines": "    1: \"\"\"\n    2: s84_w5_landau_symmetry_class.py\n    3: \n    4: W5-66 GATE-LANDAU-SYMMETRY-CLASS: Landau symmetry-classification of the K-corridor.\n    5: \n    6: Method (analytical, representation-theoretic):\n    7:   1) Enumerate the substrate symmetry group G (unbroken at K -> infinity).\n    8:   2) Identify the residual stabilizer H under K-finite band-weighting B1/B2/B3 = {3,3,2}.\n    9:   3) Compute dim(G/H) = N_OP (full coset) and compare with 3He-B N_OP = 5\n   10:      (Volovik 2003 Ch. 7: SO(3)_L x SO(3)_S x U(1)/SO(3)_{L+S} + gap modulus)."
+    },
+    {
+      "anchor_id": "prov_1752",
+      "anchor_type": "data_provenance",
+      "name": "w5_mu_k_corridor",
+      "script_path": "session-84/s84_w5_mu_k_corridor.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-84/s84_w5_mu_k_corridor.py",
+      "source_context_30_lines": "<name 'w5_mu_k_corridor' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S84 W5-57: MU-K-CORRIDOR  (mu-distortion across K-corridor vs FIRAS)\n    4: =====================================================================\n    5: \n    6: Gate: S84-MU-K-CORRIDOR  [VERIFY]\n    7: Classification: PHONONIC\n    8: Owner: volovik-superfluid-universe-theorist\n    9: Pre-reg anchor: sessions/session-plan/session-84-plan-w5.md §W5-57\n   10: \n   11: Phononic framing:\n   12:   The mu-distortion is the residual thermal signature of the GGE relic's\n   13:   acoustic dissipation, Chluba-kernel-weighted across the Silk-diffusion\n   14:   window k ~ 46-1e4 Mpc^-1.  Under the K-corridor parameterization\n   15:   (S82 W2-4 band-weighted GGE-Wightman IC), the initial-condition\n   16:   squeezing S_IC(k) is anchored at the corridor value K = S_IC^GGE\n   17:   (R3 multiplicity-weighted band average).  At fixed Chluba kernel and\n   18:   envelope UV slope alpha_S_IC, the mu integral is LINEAR in K:\n   19:       mu(K) / mu(K_base) = K / K_base   (gamma = 1 exactly).\n   20:   This is a structural consequence of pulling S_IC_0 out of the integral\n   21:   as a K-dependent amplitude with fixed shape.  The K-corridor then maps\n   22:   onto the FIRAS bound as a monotone single-parameter scan; the corridor\n   23:   endpoint K_max = 3.556e5 tests whether the GGE amplification saturates\n   24:   below 9e-5 at the structural upper edge.\n   25: \n   26: Substitution chain (MANDATORY):\n   27: \n   28:   Step 1 (definitions):\n   29:     Chluba 2012 ApJ 758 76 Eq. 10:\n   30:       W_mu(k) = exp(-k^2/k_D_th^2) - exp(-k^2/k_D_mu^2),"
+    },
+    {
+      "anchor_id": "prov_1753",
+      "anchor_type": "data_provenance",
+      "name": "w5_nnlo_delta_famp",
+      "script_path": "session-84/s84_w5_nnlo_delta_famp.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-84/s84_w5_nnlo_delta_famp.py",
+      "source_context_30_lines": "<name 'w5_nnlo_delta_famp' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S84 W5-53 -- NNLO->N3LO 1/N scan F_amp convergence at K=2.035\n    4: =============================================================\n    5: \n    6: Gate: S84-DYNAMICS-LAYER-RESCUE-3-02X / GATE-NNLO-DELTA-FAMP  [CHAIN][VERIFY]\n    7: Classification: PHONONIC (dynamics-layer F_amp suppression chain at K=2.035\n    8:                 GGE-Wightman pivot)\n    9: Owner:  volovik-superfluid-universe-theorist\n   10: Write-target:  sessions/session-84/session-84-w5-workingpaper.md, section\n   11:                §W5-53\n   12: \n   13: Pre-registration  (session-plan/session-84-plan-w5.md §W5-53, VERBATIM):\n   14: \n   15:     HYPOTHESIS:\n   16:         The NNLO 1/N scan (S83 G11) produced Delta_F_amp ~ 1e-4, ~250x short\n   17:         of the 2.876x suppression required at F_amp_target <= 0.4454.\n   18:         Extending to N3LO via a systematic 1/N expansion at K=2.035 either\n   19:         (a) approaches the 0.4454 target asymptotically, confirming\n   20:             dynamics-layer rescue is accessible by higher-order 1/N,\n   21:         (b) the 1/N series saturates below the target, promoting S83 G11\n   22:             FAIL to a permanent \"dynamics-WALL-at-2.035\" theorem candidate.\n   23: \n   24:     PASS:  F_amp(N3LO, K=2.035) <= 0.4454 AND\n   25:            |Delta(N3LO)-Delta(NNLO)| / |Delta(NNLO)| >= 10x\n   26:            (monotonic convergence).\n   27:     FAIL:  F_amp(N3LO, K=2.035) >= 0.4454 AND\n   28:            |a_{N3LO}/a_NNLO| >= 0.75  (series saturating).\n   29:     INFO:  F_amp < 0.4454 but ratio >= 0.75  (numerical PASS, structural\n   30:            stagnation)."
+    },
+    {
+      "anchor_id": "prov_1754",
+      "anchor_type": "data_provenance",
+      "name": "w5_ns_k_corridor_response",
+      "script_path": "session-84/s84_w5_ns_k_corridor_response.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-84/s84_w5_ns_k_corridor_response.py",
+      "source_context_30_lines": "<name 'w5_ns_k_corridor_response' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S84 W5-55: S84-NS-K-CORRIDOR-RESPONSE\n    4: ==============================================================================\n    5: \n    6: Gate: S84-NS-K-CORRIDOR-RESPONSE  [SIGN] + [VERIFY]\n    7: Classification: PHONONIC\n    8: Owner: volovik-superfluid-universe-theorist (this run)\n    9: Pre-reg anchor: sessions/session-plan/session-84-plan-w5.md §W5-55 L134-L178\n   10: \n   11: Pre-registered hypothesis (verbatim):\n   12:   n_s(K) is monotone (either strictly-red-increasing or strictly-red-\n   13:   decreasing) across 6 K-values {1.1, 2.035, 10, 100, 1000, 3.56e5} --\n   14:   i.e., K-corridor response is diffeomorphic to a 1D order-parameter\n   15:   axis, not a folded or re-entrant manifold.\n   16: \n   17: Pre-registered thresholds (verbatim):\n   18:   PASS: n_s(Ki) strictly monotone in i (all sign(dn_s) identical, 5/5).\n   19:   FAIL: non-monotone (any sign flip), OR\n   20:         |n_s(K=2.035) - 0.9565| > 0.01 (pivot drift).\n   21:   INFO: single-step sign flip with |dn_s| < 1e-3 (numerical noise).\n   22:   Tolerance: ABSOLUTE 0.001 on n_s diffs.\n   23: \n   24: -----------------------------------------------------------------------------\n   25: SUBSTITUTION CHAIN (pre-asserted direction under [SIGN] trigger)\n   26: -----------------------------------------------------------------------------\n   27: \n   28: Step 1 (DEFINITIONS):\n   29:   - n_s(K) := 1 + d ln P_zeta(k; K) / d ln k  |_{k=k_pivot}\n   30:   - P_zeta(k; K) = |v_k(K)|^2 / z(N,k)^2     (Mukhanov variable)"
+    },
+    {
+      "anchor_id": "prov_1755",
+      "anchor_type": "data_provenance",
+      "name": "w5_r4_cross_class_control",
+      "script_path": "session-84/s84_w5_r4_cross_class_control.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-84/s84_w5_r4_cross_class_control.py",
+      "source_context_30_lines": "<name 'w5_r4_cross_class_control' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S84 W5-56 -- S84-R4-CROSS-CLASS-CONTROL\n    4: =======================================\n    5: \n    6: Gate: W5-56 (GEOMETRIC / [AUDIT] [VERIFY])\n    7: Agent: volovik-superfluid-universe-theorist\n    8: \n    9: Pre-registered hypothesis (from session-84-plan-w5.md section W5-56):\n   10:   The R4 FAIL at K=15.95 (S82 OOM ladder; S83 II.C \"BCS-dimensional-inconsistency\")\n   11:   is a property SPECIFIC to the 3He-B universality class (BDI, N_3=0, fully gapped\n   12:   topological superfluid). Recomputing R4 in an A-phase analog (AIII chiral class,\n   13:   Weyl points with N_3=2) either (a) confirms the FAIL is class-specific and the\n   14:   framework's 3He-B inheritance is preserved [PASS], or (b) confirms the FAIL is\n   15:   a cross-class universal dimensional error that the framework inherits regardless\n   16:   of topology [FAIL].\n   17: \n   18: PASS/FAIL/INFO thresholds (verbatim from plan):\n   19:   PASS (class-specific, inheritance preserved): R4(AIII) < 3.0 (O(1), dimensionally\n   20:         consistent) while R4(3He-B)=15.95 preserved.\n   21:   FAIL (cross-class error): R4(AIII) >= 10 (same 15.95 regime); forces R4-ERROR\n   22:         global tag + convention-recount \"5 -> 3 physical + 2 dim-error\".\n   23:   INFO:  3 <= R4(AIII) < 10 (intermediate; class-dependent but not cleanly separated).\n   24:   Tolerance: ABSOLUTE (factor-of-3 threshold on R4).\n   25: \n   26: Substitution chain (per plan Step 1-4):\n   27:   Step 1 (definitions):\n   28:     R4 := 1 + 2 * (n_pairs / N_modes) -- legacy naive Bogoliubov squeeze reading\n   29:           where n_pairs is a Fock-space integer and N_modes is a single-particle\n   30:           Hilbert-space dimension. The dimensional-grade mismatch (many-body"
+    },
+    {
+      "anchor_id": "prov_1756",
+      "anchor_type": "data_provenance",
+      "name": "w5_r4_discard_audit",
+      "script_path": "session-84/s84_w5_r4_discard_audit.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-84/s84_w5_r4_discard_audit.py",
+      "source_context_30_lines": "<name 'w5_r4_discard_audit' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python\n    2: # -*- coding: utf-8 -*-\n    3: \"\"\"\n    4: S84 W5-61 — GATE-R4-DISCARD-AUDIT\n    5: ==================================\n    6: \n    7: Bookkeeping audit for Session 84 Wave 5 — flags and counts all\n    8: occurrences of R4 (K-corridor reading convention, Landau V.1\n    9: R1-R5 reading set, K_R4 = n_pairs / N_modes = 59.8 / 8 = 15.95)\n   10: and the corresponding \"5 physical conventions\" / \"5-convention\"\n   11: / \"Landau-V.1-R1-R5\" / \"R1-R5\" / \"R1..R5\" language in\n   12:     sessions/session-82/session-82-results-workingpaper.md\n   13:     sessions/session-82/session-82-OOM.md\n   14:     sessions/session-83/session-83-results-workingpaper.md\n   15: \n   16: Produces a PASS/FAIL verdict against the pre-registered rule:\n   17: \n   18:     PASS iff every in-scope file either (a) contains no R4-K-corridor\n   19:     occurrence at all, or (b) contains a \"DIMENSIONAL-ERROR-CROSS-CLASS\"\n   20:     audit-tag line appended at the end-of-file (anywhere in the final\n   21:     50 lines, case-sensitive).\n   22: \n   23:     value := count of in-scope files with R4-K-corridor hits that\n   24:     lack the audit tag (post-edit).\n   25: \n   26:     PASS iff value == 0.\n   27: \n   28: Input pins are SHA-256 hashed; the closure hash is the SHA-256 of the\n   29: ordered input-pin map.  The audit deliberately EXCLUDES:\n   30:   - R4 = c_L / c_BA from s82_w3_13_four_speed_provenance.py"
+    },
+    {
+      "anchor_id": "prov_1757",
+      "anchor_type": "data_provenance",
+      "name": "w5_t_s_partition_consistency",
+      "script_path": "session-84/s84_w5_t_s_partition_consistency.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-84/s84_w5_t_s_partition_consistency.py",
+      "source_context_30_lines": "   50: # =========================================================================\n   51: # 2. INPUT-PIN MAP (SHA-256 of every upstream file — mandatory per S81+)\n   52: # =========================================================================\n   53: INPUT_FILES = [\n   54:     'canonical_constants.py',\n   55:     's83_w3_g39_leggett_bogoliubov.npz',\n   56:     's83_w3_g50_nT_bogoliubov.npz',\n   57:     's83_w3_g46_tensor_transfer.npz',\n   58:     's84_w5_t_s_partition_consistency.py',\n   59: ]                                                                  # (local)\n   60: \n   61: def _sha256_of(path: str) -> str:\n   62:     p = Path(__file__).parent / path\n   63:     h = hashlib.sha256()\n   64:     with open(p, 'rb') as f:\n   65:         for chunk in iter(lambda: f.read(1 << 16), b''):\n   66:             h.update(chunk)"
+    },
+    {
+      "anchor_id": "prov_1758",
+      "anchor_type": "data_provenance",
+      "name": "w6_alpha_s_cmb_s4_refinement",
+      "script_path": "session-84/s84_w6_alpha_s_cmb_s4_refinement.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w6_alpha_s_cmb_s4_refinement.npz",
+      "source_file": "computations/session-84/s84_w6_alpha_s_cmb_s4_refinement.py",
+      "source_context_30_lines": "   65:   - L_max: N/A (scalar literature synthesis)\n   66:   - Detector list: {CMB-S4, CMB-S4+delensing, CMB-HD, LiteBIRD, SO/S4-joint}\n   67:   - Tolerance: 10% on per-detector sigma(alpha_s) readings\n   68:   - Scheme: canonical sigma = sqrt(Fisher^-1) as reported in source forecasts\n   69:   - Convention: alpha_s = n_s^2 - 1 from S50 permanent\n   70:   - GPU path: N/A\n   71: \n   72: Output files:\n   73:   - computations/session-84/s84_w6_alpha_s_cmb_s4_refinement.py\n   74:   - computations/session-84/s84_w6_alpha_s_cmb_s4_refinement.npz\n   75:   - computations/session-84/s84_w6_alpha_s_cmb_s4_refinement.csv\n   76: \"\"\"\n   77: \n   78: import os\n   79: os.environ.setdefault('OMP_NUM_THREADS', '8')\n   80: os.environ.setdefault('MKL_NUM_THREADS', '8')\n   81: "
+    },
+    {
+      "anchor_id": "prov_1759",
+      "anchor_type": "data_provenance",
+      "name": "w6_cgwb_absolute_pt",
+      "script_path": "session-84/s84_w6_cgwb_absolute_pt.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w6_cgwb_absolute_pt.npz, session-84/s84_w6_cgwb_absolute_pt.png",
+      "source_file": "computations/session-84/s84_w6_cgwb_absolute_pt.py",
+      "source_context_30_lines": "   47:   n_t             = +0.4676      (S83 G50 BLUE at fold)\n   48:   eps_H           = 0.02163      (S82 one-loop SR)\n   49:   Gamma_phi       = 1.6e-37 s^-1 (S76 modulus SM decay rate)\n   50:   M_Pl_reduced    = 2.435e18 GeV (CODATA 2018, canonical)\n   51:   H0_Planck       = 2.184e-18 s^-1 (Planck 2018)\n   52:   LISA floor h_LISA(3 mHz) = 1e-21 / sqrt(Hz) (LISA-L3 design)\n   53: \n   54: Outputs:\n   55:   computations/session-84/s84_w6_cgwb_absolute_pt.npz\n   56:   computations/session-84/s84_w6_cgwb_absolute_pt.png\n   57: Verdict line appended to computations/session-84/s84_gate_verdicts.txt with\n   58: full 64-char SHA-256 closure.\n   59: \"\"\"\n   60: from __future__ import annotations\n   61: \n   62: import hashlib\n   63: import json"
+    },
+    {
+      "anchor_id": "prov_1760",
+      "anchor_type": "data_provenance",
+      "name": "w6_f_amp_3pi_fi_chain",
+      "script_path": "session-84/s84_w6_f_amp_3pi_fi_chain.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w6_f_amp_3pi_fi_chain.npz, session-84/s84_w6_f_amp_3pi_fi_chain.png",
+      "source_file": "computations/session-84/s84_w6_f_amp_3pi_fi_chain.py",
+      "source_context_30_lines": "  323: ax.set_xlabel(r\"$\\varepsilon_H$\")\n  324: ax.set_ylabel(r\"$F_{amp}^{Hankel}(\\varepsilon_H)$\")\n  325: ax.set_title(f\"T4 Hankel residual = {hankel_residual:.4e}\\n(threshold < {PASS_HANKEL_RESIDUAL})\")\n  326: ax.legend(loc=\"best\")\n  327: ax.grid(True, alpha=0.3)\n  328: \n  329: plt.suptitle(\"W6-69: F_amp^3PI is clause-(b) FI via z_R cancellation\", fontsize=11)\n  330: plt.tight_layout()\n  331: plot_path = os.path.join(ROOT, \"s84_w6_f_amp_3pi_fi_chain.png\")\n  332: plt.savefig(plot_path, dpi=120)\n  333: plt.close()\n  334: print(f\"PLOT_SAVED {plot_path}\")\n  335: \n  336: \n  337: # --------------------------------------------------------------\n  338: # 9. SAVE NPZ\n  339: # --------------------------------------------------------------"
+    }
+  ]
+}

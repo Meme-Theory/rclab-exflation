@@ -137,7 +137,7 @@ All computations use existing data files. No new eigenvalue computations needed.
 **IMPORTANT**: Also compute V_IR using Schwinger-regulated sum: V_IR^Λ(τ) = Σ √λ_n · exp(−λ_n/Λ²) for Λ = 1, 2, 5, 10, 20. The IR physics lives at Λ ≤ 5 (Session 21a showed Schwinger action DECREASES for Λ ≤ 5).
 
 **Constraint Gates** (from 21b B-5, Computation 1):
-| Tier | Criterion | BF | Prob shift |
+| Level | Criterion | BF | Prob shift |
 |:-----|:----------|:---|:-----------|
 | INTERESTING | Interior extremum exists but shallow | 3 | +3 pp |
 | COMPELLING | Minimum at τ ∈ [0.15, 0.35] with depth > 5% | 10 | +8–10 pp |
@@ -145,7 +145,7 @@ All computations use existing data files. No new eigenvalue computations needed.
 | CLOSED | Monotonic for all p+q ≤ 2 sectors at all N | 0.3 | −8–10 pp |
 | STRUCTURAL CLOSURE | Monotonic AND low-mode F/B = 0.55 (trap extends to IR) | 0.1 | −12–15 pp |
 
-**Output**: `tier0-computation/s21c_V_IR.npz`, `tier0-computation/s21c_V_IR.png`
+**Output**: `computations/s21c_V_IR.npz`, `computations/s21c_V_IR.png`
 
 ---
 
@@ -179,14 +179,14 @@ where:
 - Check sign
 
 **Constraint Gates** (from 21b B-5, Computation 2):
-| Tier | Criterion | BF | Prob shift |
+| Level | Criterion | BF | Prob shift |
 |:-----|:----------|:---|:-----------|
 | INTERESTING | T''(0) > 0 but T''(0)/T'(0) < 0.1 | 2 | +2 pp |
 | COMPELLING | T''(0) > 0 AND T''(0)/T'(0) > 0.5 | 8 | +5–8 pp |
 | DECISIVE | T''(0) > 0 AND fixed point at τ ∈ [0.15, 0.35] | 30 | +12–15 pp |
 | CLOSED | T''(0) ≤ 0 | 0.2 | −10–12 pp |
 
-**Output**: `tier0-computation/s21c_T_double_prime.py`, `tier0-computation/s21c_T_double_prime_result.txt`
+**Output**: `computations/s21c_T_double_prime.py`, `computations/s21c_T_double_prime_result.txt`
 
 ---
 
@@ -215,14 +215,14 @@ where b₁, b₂ are the same branching coefficients as in T''(0).
 - Check: is S_signed non-monotonic? Where is the minimum?
 
 **Constraint Gates** (from 21b B-5, Computation 7):
-| Tier | Criterion | BF | Prob shift |
+| Level | Criterion | BF | Prob shift |
 |:-----|:----------|:---|:-----------|
 | INTERESTING | S_signed non-monotonic in τ | 5 | +3–5 pp |
 | COMPELLING | S_signed minimum at τ ∈ [0.08, 0.20] (near prediction 0.12) | 12 | +8–10 pp |
 | DECISIVE | Minimum at τ ∈ [0.10, 0.15] AND depth > 10% | 30 | +12–15 pp |
 | CLOSED | S_signed monotonic (signed sum also trapped) | 0.3 | −5–8 pp |
 
-**Output**: `tier0-computation/s21c_S_signed.npz`, `tier0-computation/s21c_S_signed.png`
+**Output**: `computations/s21c_S_signed.npz`, `computations/s21c_S_signed.png`
 
 ---
 
@@ -238,7 +238,7 @@ where b₁, b₂ are the same branching coefficients as in T''(0).
 - Also check convergence: recompute at max_pq_sum = 7 and 8 (vs default 6)
 
 **Constraint Gates** (from 21b B-5, Computation 5):
-| Tier | Criterion | BF | Prob shift |
+| Level | Criterion | BF | Prob shift |
 |:-----|:----------|:---|:-----------|
 | PASS | R_max > 32.6 at fine grid + higher max_pq | 2.5 | +2–3 pp |
 | SOFT MISS | R_max ∈ [30, 32.6] at converged grid | 1.2 | ±0 pp |
@@ -246,7 +246,7 @@ where b₁, b₂ are the same branching coefficients as in T''(0).
 
 **Note on structural tension**: Even if R passes, τ_ν ≈ 1.60 ≠ τ_W ≈ 0.30. Resolution requires D_F (see-saw). This is a necessary-but-not-sufficient test.
 
-**Output**: `tier0-computation/s21c_neutrino_fine_grid.npz`, `tier0-computation/s21c_neutrino_R.png`
+**Output**: `computations/s21c_neutrino_fine_grid.npz`, `computations/s21c_neutrino_R.png`
 
 ---
 
@@ -261,7 +261,7 @@ where b₁, b₂ are the same branching coefficients as in T''(0).
 
 **Constraint Gate**: PASS/FAIL only. Failure invalidates Session 20a Riemann data.
 
-**Output**: `tier0-computation/s21c_gauss_bonnet.txt`
+**Output**: `computations/s21c_gauss_bonnet.txt`
 
 ---
 
@@ -376,11 +376,11 @@ Answer these AFTER Phase A results are in, not before. Your answer must referenc
 8. **Cross-Pollination Log**: Timestamped record of inter-agent messages during Stage 2 (coordinator maintains this)
 
 ## Secondary output files:
-- `tier0-computation/s21c_V_IR.npz` + `.png`
-- `tier0-computation/s21c_T_double_prime_result.txt`
-- `tier0-computation/s21c_S_signed.npz` + `.png`
-- `tier0-computation/s21c_neutrino_fine_grid.npz` + `.png`
-- `tier0-computation/s21c_gauss_bonnet.txt`
+- `computations/s21c_V_IR.npz` + `.png`
+- `computations/s21c_T_double_prime_result.txt`
+- `computations/s21c_S_signed.npz` + `.png`
+- `computations/s21c_neutrino_fine_grid.npz` + `.png`
+- `computations/s21c_gauss_bonnet.txt`
 
 ---
 

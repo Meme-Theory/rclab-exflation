@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 162,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1611",
+      "anchor_type": "data_provenance",
+      "name": "w3_5_famp_sc_3pi",
+      "script_path": "session-82/s82_w3_5_famp_sc_3pi.py",
+      "session": "s82",
+      "inputs": "",
+      "outputs": "session-82/s82_w3_5_famp_sc_3pi.npz, session-82/s82_w3_5_famp_sc_3pi.png",
+      "source_file": "computations/session-82/s82_w3_5_famp_sc_3pi.py",
+      "source_context_30_lines": "  106: \n  107: INPUTS (SHA-256 pins MANDATORY — first 20 stdout lines):\n  108:   - canonical_constants.py\n  109:   - s78_backreaction_selfconsistent.npz\n  110:   - s82_w2_2_unified_backreact_79.npz\n  111:   - s77_transition_scale_pbh.npz\n  112: \n  113: OUTPUTS:\n  114:   - s82_w3_5_famp_sc_3pi.npz  (3PI F_amp, diagnostic interpretations)\n  115:   - s82_w3_5_famp_sc_3pi.png  (3PI closure landscape)\n  116:   - Verdict line to s82_gate_verdicts.txt\n  117: \"\"\"\n  118: \n  119: import os\n  120: # CPU thread cap (per .claude/rules/computation-environment.md)\n  121: os.environ.setdefault('OMP_NUM_THREADS', '8')\n  122: os.environ.setdefault('MKL_NUM_THREADS', '8')"
+    },
+    {
+      "anchor_id": "prov_1612",
+      "anchor_type": "data_provenance",
+      "name": "w3_6_sic_physical_cap",
+      "script_path": "session-82/s82_w3_6_sic_physical_cap.py",
+      "session": "s82",
+      "inputs": "",
+      "outputs": "session-82/s82_w3_6_sic_physical_cap.npz, session-82/s82_w3_6_sic_physical_cap.png",
+      "source_file": "computations/session-82/s82_w3_6_sic_physical_cap.py",
+      "source_context_30_lines": "  406:                 f\"L_max=GGE-BAND-MULT-3-3-2 sha256={closure_sha}\")  # (local)\n  407: print(f\"\\n[VERDICT LINE] {verdict_line}\")\n  408: \n  409: # ============================================================\n  410: # SECTION 9: Save NPZ + plot\n  411: # ============================================================\n  412: print(\"\\n[SEC 9] Save outputs\")\n  413: \n  414: npz_path = os.path.join(HERE, 's82_w3_6_sic_physical_cap.npz')     # (local)\n  415: np.savez(npz_path,\n  416:          # Energy budgets\n  417:          E_budget_WD=E_budget_WD,\n  418:          E_budget_SF=E_budget_SF,\n  419:          # Frequencies\n  420:          omega_B2=omega_B2, omega_B1=omega_B1, omega_B3=omega_B3,\n  421:          # Multiplicities\n  422:          mult_B2=mult_B2, mult_B1=mult_B1, mult_B3=mult_B3,"
+    },
+    {
+      "anchor_id": "prov_1613",
+      "anchor_type": "data_provenance",
+      "name": "w3_7_ej_convention_audit",
+      "script_path": "session-82/s82_w3_7_ej_convention_audit.py",
+      "session": "s82",
+      "inputs": "",
+      "outputs": "session-82/s82_w3_7_ej_convention_audit.npz",
+      "source_file": "computations/session-82/s82_w3_7_ej_convention_audit.py",
+      "source_context_30_lines": "  116: # X2-removed: alias 'SCRIPT_DIR' = ... 'computations' (replaced by tools.computation_root.resolve_*)\n  117: \n  118: SESSION = \"S82\"              # (local)\n  119: GATE_ID = \"S82-EJ-CONVENTION-AUDIT\"  # (local)\n  120: SCHEME = \"AUDIT\"             # (local)\n  121: CONVENTION = \"EJ-INVENTORY\"  # (local)\n  122: L_MAX = \"N/A\"                # (local) audit across sites, no L_max dependence\n  123: \n  124: OUT_NPZ = resolve_output(82, 's82_w3_7_ej_convention_audit.npz')\n  125: VERDICT_TXT = resolve_output(82, 's82_gate_verdicts.txt')\n  126: \n  127: INPUT_FILES = [\n  128:     resolve_script(None, 'canonical_constants.py'),\n  129: ]\n  130: \n  131: \n  132: # ---------------------------------------------------------------------------"
+    },
+    {
+      "anchor_id": "prov_1614",
+      "anchor_type": "data_provenance",
+      "name": "w3_8_mu_eff_lk",
+      "script_path": "session-82/s82_w3_8_mu_eff_lk.py",
+      "session": "s82",
+      "inputs": "",
+      "outputs": "session-82/s82_w3_8_mu_eff_lk.npz, session-82/s82_w3_8_mu_eff_lk.png",
+      "source_file": "computations/session-82/s82_w3_8_mu_eff_lk.py",
+      "source_context_30_lines": "  155: # X2-removed: alias 'SCRIPT_DIR' = ... 'computations' (replaced by tools.computation_root.resolve_*)\n  156: \n  157: SESSION = \"S82\"                 # (local)\n  158: GATE_ID = \"S82-MU-EFF-LK\"       # (local)\n  159: SCHEME = \"LINDBLAD-KELDYSH\"     # (local)\n  160: CONVENTION = \"BORN-MARKOV\"      # (local)\n  161: L_MAX = \"3\"                     # (local) N_branches\n  162: \n  163: OUT_NPZ = resolve_output(82, 's82_w3_8_mu_eff_lk.npz')\n  164: OUT_PNG = resolve_output(82, 's82_w3_8_mu_eff_lk.png')\n  165: VERDICT_TXT = resolve_output(82, 's82_gate_verdicts.txt')\n  166: \n  167: INPUT_FILES = [\n  168:     resolve_script(None, 'canonical_constants.py'),\n  169:     resolve_script(77, 's77_mu_eff_b2_mediated.py'),  # reference Fermi-golden baseline\n  170: ]\n  171: "
+    },
+    {
+      "anchor_id": "prov_1615",
+      "anchor_type": "data_provenance",
+      "name": "w3_9_as_adjacent_obs",
+      "script_path": "session-82/s82_w3_9_as_adjacent_obs.py",
+      "session": "s82",
+      "inputs": "",
+      "outputs": "session-82/s82_w3_9_as_adjacent_obs.npz, session-82/s82_w3_9_as_adjacent_obs.png",
+      "source_file": "computations/session-82/s82_w3_9_as_adjacent_obs.py",
+      "source_context_30_lines": "  160: \n  161: _here = os.path.dirname(os.path.abspath(__file__))\n  162: _cc_path = os.path.join(_here, \"canonical_constants.py\")\n  163: _self_path = os.path.abspath(__file__)\n  164: _w1_2_npz_path = os.path.join(_here, \"s82_w1_2_unified_as_79_full.npz\")\n  165: \n  166: INPUT_SHAS = {\n  167:     \"canonical_constants.py\": _sha256_of(_cc_path),\n  168:     \"s82_w3_9_as_adjacent_obs.py (self)\": _sha256_of(_self_path),\n  169:     \"s82_w1_2_unified_as_79_full.npz\": _sha256_of(_w1_2_npz_path),\n  170: }\n  171: \n  172: # Print input pins (first 20 lines of stdout per gate-verdicts.md requirement)\n  173: print(\"=\" * 78)\n  174: print(\"S82 W3-9: AS-ADJACENT-OBS — input SHA-256 pins\")\n  175: print(\"=\" * 78)\n  176: for k, v in INPUT_SHAS.items():"
+    },
+    {
+      "anchor_id": "prov_1616",
+      "anchor_type": "data_provenance",
+      "name": "mack_w0_adjudication_verify",
+      "script_path": "session-83/s83_mack_w0_adjudication_verify.py",
+      "session": "s83",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-83/s83_mack_w0_adjudication_verify.py",
+      "source_context_30_lines": "<name 'mack_w0_adjudication_verify' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: S83 mack (workshop) verification calculations for w_0 regulator adjudication.\n    3: \n    4: This script numerically verifies three things referenced in the Round 1 Mack sections:\n    5: \n    6: (1) Rectangle-containment probabilities for the two candidate framework predictions\n    7:     w_0_pred_A = -0.918 (zeta baseline, S58 canonical, W3-G42 pre-registered)\n    8:     w_0_pred_B = -0.998 (Zubarev-E-weighted, W3-G51 substrate-canonical)\n    9:     under each of the three DR3 scenarios (A=LCDM-null, B=Liu+ Scenario-B-like, C=evolving)\n   10:     using the projected DR3 covariance sigma(w_0)=0.046, sigma(w_a)=0.177, rho=-0.85.\n   11: \n   12: (2) Half-widths of the pre-registered rectangle R = [-1.05, -0.85] x [-0.2, 0.2]\n   13:     in units of projected DR3 1-sigma; distance-from-framework offsets for each prediction.\n   14: \n   15: (3) Falsifiability rank -- i.e., under how many of the 3 DR3 scenarios the rectangle\n   16:     would FAIL given the framework point. A prediction that FAILs more often under the\n   17:     plausible DR3 scenarios is MORE falsifiable. A prediction that PASSes in all three\n   18:     regardless is NOT falsifiable.\n   19: \n   20: All three DR3 scenario centrals are PRE-REGISTERED from S60 / S71:\n   21:     Scenario A (null/LCDM):     (-1.000, 0.000)     (LCDM fiducial)\n   22:     Scenario B (Liu+ hardening): (-0.827, -0.300)    (per prompt spec)\n   23:     Scenario C (evolving):      (-0.752, -0.730)    (DESI DR2 ~ central extrapolated)\n   24: \n   25: Projected covariance (S83 W3-G42):\n   26:     sigma(w_0) = 0.046\n   27:     sigma(w_a) = 0.177\n   28:     rho(w_0, w_a) = -0.85\n   29: \n   30: NO framework constants are hardcoded -- we import from canonical_constants."
+    },
+    {
+      "anchor_id": "prov_1617",
+      "anchor_type": "data_provenance",
+      "name": "mack_w0_adjudication_verify_pt2",
+      "script_path": "session-83/s83_mack_w0_adjudication_verify_pt2.py",
+      "session": "s83",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-83/s83_mack_w0_adjudication_verify_pt2.py",
+      "source_context_30_lines": "<name 'mack_w0_adjudication_verify_pt2' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: S83 mack workshop pt.2 -- verify:\n    3:   (a) LCDM-discriminability under each candidate (Cand A=-0.918 vs LCDM -1.000,\n    4:       Cand B=-0.998 vs LCDM -1.000) using sigma(w_0)_DR3 = 0.046.\n    5:   (b) Pre-registered rectangle asymmetry: offset of each candidate from rectangle midpoint.\n    6:   (c) If the rectangle were resized to KEEP w_a half-width at 0.2 but widen to catch Scen B,\n    7:       what half-width in w_0 would be needed? (Quantifies the asymmetry cost.)\n    8:   (d) Sign substitution chain for 'candidate B is LESS falsifiable vs LCDM Scenario A':\n    9:        step 1: tension_LCDM(cand) = |w_0_cand - (-1)| / sigma(w_0)_DR3\n   10:        step 2: Cand A: |−0.918 − (−1)| / 0.046 = 0.082 / 0.046\n   11:        step 3: Cand B: |−0.998 − (−1)| / 0.046 = 0.002 / 0.046\n   12:        step 4: Cand A tension ~ 1.78 sig, Cand B tension ~ 0.04 sig\n   13:        step 5: direction: Cand B is ~44x LESS discriminable from LCDM -> LESS falsifiable\n   14: \"\"\"\n   15: import numpy as np\n   16: \n   17: # Constants (all local)\n   18: sig_w0 = 0.046                                    # (local) DR3 projected sigma(w_0)\n   19: w0_cand_A = -0.918                                # (local) zeta baseline\n   20: w0_cand_B = -0.998                                # (local) Zubarev substrate-canonical\n   21: w0_LCDM   = -1.000                                # (local) LCDM fiducial\n   22: \n   23: # (a) LCDM discriminability\n   24: tens_A_vs_LCDM = abs(w0_cand_A - w0_LCDM) / sig_w0  # (local)\n   25: tens_B_vs_LCDM = abs(w0_cand_B - w0_LCDM) / sig_w0  # (local)\n   26: ratio = tens_A_vs_LCDM / tens_B_vs_LCDM             # (local)\n   27: \n   28: print(f\"(a) LCDM-discriminability (1D in w_0, using sigma_DR3={sig_w0}):\")\n   29: print(f\"    Candidate A (-0.918) vs LCDM (-1.000): {tens_A_vs_LCDM:.4f} sigma\")\n   30: print(f\"    Candidate B (-0.998) vs LCDM (-1.000): {tens_B_vs_LCDM:.4f} sigma\")"
+    },
+    {
+      "anchor_id": "prov_1618",
+      "anchor_type": "data_provenance",
+      "name": "sagan_rho_j_audit",
+      "script_path": "session-83/s83_sagan_rho_j_audit.py",
+      "session": "s83",
+      "inputs": "",
+      "outputs": "session-83/s83_sagan_rho_j_audit.npz",
+      "source_file": "computations/session-83/s83_sagan_rho_j_audit.py",
+      "source_context_30_lines": "   20:  1. Reproduces F_Josephson = -336.641 M_KK under zeta scheme (validates pipeline).\n   21:  2. Computes F_Josephson under Zubarev f_R(lam_k) = exp(-lam_k^2/M_KK^2) applied\n   22:     to the TB eigenvalue spectrum (the correct location for a spectral regulator).\n   23:  3. Compares xi_J = F_J_Zub/F_J_zeta against xi_E_GGE = 0.019646 from W3-G51.\n   24:  4. Computes w_0 under the \"full Zubarev\" scheme (both layers dressed) for\n   25:     adjudication of resolution (i)/(ii)/(iii).\n   26: \n   27: PRE-REGISTRATION: not a gate; this is an audit computation for the S83 workshop.\n   28: Output: s83_sagan_rho_j_audit.npz (saved for reference).\n   29: \"\"\"\n   30: import sys\n   31: import os\n   32: os.environ.setdefault('OMP_NUM_THREADS', '8')\n   33: os.environ.setdefault('MKL_NUM_THREADS', '8')\n   34: import numpy as np\n   35: from pathlib import Path\n   36: "
+    },
+    {
+      "anchor_id": "prov_1619",
+      "anchor_type": "data_provenance",
+      "name": "w1_g1_ic_scheme_derivation",
+      "script_path": "session-83/s83_w1_g1_ic_scheme_derivation.py",
+      "session": "s83",
+      "inputs": "",
+      "outputs": "session-83/s83_w1_g1_ic_scheme_derivation.npz, session-83/s83_w1_g1_ic_scheme_derivation.png",
+      "source_file": "computations/session-83/s83_w1_g1_ic_scheme_derivation.py",
+      "source_context_30_lines": "   69:     if not Path(path).exists():\n   70:         return \"FILE_MISSING\"\n   71:     with open(path, 'rb') as f:\n   72:         return hashlib.sha256(f.read()).hexdigest()\n   73: \n   74: INPUT_PINS = {\n   75:     \"spectrum_cache\":  SCRIPT_DIR / \"s74_spectrum_cache_L9_tau019.npz\",\n   76:     \"canonical_const\": SCRIPT_DIR / \"canonical_constants.py\",\n   77:     \"self_script\":     SCRIPT_DIR / \"s83_w1_g1_ic_scheme_derivation.py\",\n   78: }\n   79: \n   80: print(\"=\" * 78)\n   81: print(\"S83 W1-G1 — IC-SCHEME-DERIVATION\")\n   82: print(\"=\" * 78)\n   83: print(\"\\nInput pins:\")\n   84: pin_hashes = {}\n   85: for name, path in INPUT_PINS.items():"
+    },
+    {
+      "anchor_id": "prov_1620",
+      "anchor_type": "data_provenance",
+      "name": "w1_g2_epsilon_h_promotion",
+      "script_path": "session-83/s83_w1_g2_epsilon_h_promotion.py",
+      "session": "s83",
+      "inputs": "",
+      "outputs": "session-83/s83_w1_g2_epsilon_h_promotion.npz, session-83/s83_w1_g2_epsilon_h_promotion.png",
+      "source_file": "computations/session-83/s83_w1_g2_epsilon_h_promotion.py",
+      "source_context_30_lines": "  587: print(\"=\" * 78)\n  588: \n  589: \n  590: # -----------------------------------------------------------------------------\n  591: # STEP 7 — Save data and plot\n  592: # -----------------------------------------------------------------------------\n  593: \n  594: script_dir = Path(__file__).parent\n  595: out_npz = script_dir / \"s83_w1_g2_epsilon_h_promotion.npz\"\n  596: out_png = script_dir / \"s83_w1_g2_epsilon_h_promotion.png\"\n  597: \n  598: np.savez_compressed(\n  599:     out_npz,\n  600:     evals=evals,\n  601:     cocycle_value=cocycle_value,\n  602:     cocycle_plus=primary_test['cocycle_plus'],\n  603:     cocycle_minus=primary_test['cocycle_minus'],"
+    }
+  ]
+}

@@ -39,7 +39,7 @@ Session 23 is a two-or-three-phase pipeline with conditional branching:
 Every result must be classified against its pre-registered Constraint Gate BEFORE any interpretation is attempted. Report the number first. Classify second. Interpret third.
 
 **Python environment**: `"phonon-exflation-sim/.venv312/Scripts/python.exe"`
-**Output directory**: `tier0-computation/`
+**Output directory**: `computations/`
 **Script prefix**: `s23a_` for Phase 23a, `s23b_` for Phase 23b
 
 ---
@@ -107,8 +107,8 @@ The analogy to superfluid He-3 is a universality class statement, not metaphor. 
 
 | Agent | Additional Reading |
 |:------|:------------------|
-| phonon-exflation-sim | `tier0-computation/s22b_eigenvector_extraction.py` (eigenvector infrastructure), `tier0-computation/s22b_kosmann_matrix.py` (Kosmann matrix element computation), `tier0-computation/s22c_bcs_channel_scan.py` (BCS channel scan from Session 22c F-1) |
-| landau-condensed-matter-theorist | `sessions/session-22/session-22c-PertubativeExhaustionTheorem.md` (L-3 formalization), `tier0-computation/s22c_landau_classification.py` (Landau classification computation) |
+| phonon-exflation-sim | `computations/s22b_eigenvector_extraction.py` (eigenvector infrastructure), `computations/s22b_kosmann_matrix.py` (Kosmann matrix element computation), `computations/s22c_bcs_channel_scan.py` (BCS channel scan from Session 22c F-1) |
+| landau-condensed-matter-theorist | `sessions/session-22/session-22c-PertubativeExhaustionTheorem.md` (L-3 formalization), `computations/s22c_landau_classification.py` (Landau classification computation) |
 | einstein-theorist (Phase 23b) | `sessions/session-22/session-22-einstein-collab.md` (zero-cost checks 3.1-3.5 specification) |
 | sagan-empiricist (Phase 23b) | `sessions/session-22/session-22-sagan-verdict.md` (full Sagan verdict with conditional structure) |
 
@@ -132,7 +132,7 @@ The analogy to superfluid He-3 is a universality class statement, not metaphor. 
 
 **Background**: Session 22b eigenvectors (s22b_eigenvectors.npz) cover p+q <= 3 only, with 1232 modes per tau value at 9 tau values [0.0, 0.10, 0.15, 0.20, 0.25, 0.30, 0.35, 0.40, 0.50]. The gap equation requires eigenvectors at higher sectors for convergence testing.
 
-**Task**: Extend the eigenvector extraction to p+q <= 6 using the existing s22b_eigenvector_extraction.py infrastructure. The code from Session 22b (tier1_dirac_spectrum.py) already supports arbitrary (p,q) sectors. Run at the same 9 tau values.
+**Task**: Extend the eigenvector extraction to p+q <= 6 using the existing s22b_eigenvector_extraction.py infrastructure. The code from Session 22b (dirac_spectrum.py) already supports arbitrary (p,q) sectors. Run at the same 9 tau values.
 
 **Sectors to add** (p+q = 4, 5, 6):
 
@@ -159,7 +159,7 @@ The analogy to superfluid He-3 is a universality class statement, not metaphor. 
 
 **Note on memory**: The largest matrix (3,3) at 1024x1024 complex requires ~16 MB for eigenvectors. Total memory for p+q <= 6 at 9 tau values: ~2-4 GB. Well within the 17 GB VRAM and 128 GB RAM.
 
-**Output**: `tier0-computation/s23a_eigenvectors_extended.npz` with same key structure as s22b_eigenvectors.npz but expanded to p+q <= 6.
+**Output**: `computations/s23a_eigenvectors_extended.npz` with same key structure as s22b_eigenvectors.npz but expanded to p+q <= 6.
 
 **Runtime estimate**: ~30-60 minutes for the full extension at 9 tau values.
 
@@ -180,7 +180,7 @@ The analogy to superfluid He-3 is a universality class statement, not metaphor. 
 
 **Note on Killing directions**: For the Jensen metric, frame vectors e_0, e_1, e_2, e_7 (the u(2) directions) are Killing at all tau. Their metric Lie derivatives vanish identically: (L_{e_a} g) = 0 for a in {0,1,2,7}. Only the C^2 directions a in {3,4,5,6} contribute nonzero Kosmann corrections. This reduces the effective sum from 8 to 4 generators.
 
-**Output**: `tier0-computation/s23a_kosmann_singlet.npz` containing K_a^{nm}(tau) for a = 3,4,5,6 (non-Killing directions) at 9 tau values.
+**Output**: `computations/s23a_kosmann_singlet.npz` containing K_a^{nm}(tau) for a = 3,4,5,6 (non-Killing directions) at 9 tau values.
 
 ### Step 3: Zero-Cost Pre-Checks (landau or phonon-sim)
 
@@ -204,13 +204,13 @@ Method: Monte Carlo simulation. Draw 7 independent uniform values in [0, 2.0]. C
 
 **Note on correlations**: Indicators 3, 4, and (partially) 5 are correlated — they are projections of the (0,0) singlet instability. The effective number of independent indicators is ~5 (not 7). Use bootstrapping on the correlation structure from the existing eigenvector data to determine the effective DOF.
 
-**Output**: p-value and effective DOF. Append to `tier0-computation/s23a_kosmann_singlet.npz` or report inline.
+**Output**: p-value and effective DOF. Append to `computations/s23a_kosmann_singlet.npz` or report inline.
 
 **3b. N=50 V_IR'' Sign Diagnostic**
 
 The master synthesis flags an anomaly: V_IR'' > 0 at N=50 when N=10, 20, 100 all show V_IR'' < 0 at tau = 0.30. Investigate.
 
-Load `tier0-computation/s22c_landau_classification.npz`. Extract V_IR(tau, N) for N = 10, 20, 30, 40, 50, 60, 70, 80, 90, 100. Plot V_IR''(tau=0.30) vs N. Is the sign change at N=50 a smooth crossover or a sharp jump? If smooth crossover: identifies a physical scale where UV modes begin dominating (expected from the constant-ratio trap). If sharp jump: numerical artifact requiring investigation.
+Load `computations/s22c_landau_classification.npz`. Extract V_IR(tau, N) for N = 10, 20, 30, 40, 50, 60, 70, 80, 90, 100. Plot V_IR''(tau=0.30) vs N. Is the sign change at N=50 a smooth crossover or a sharp jump? If smooth crossover: identifies a physical scale where UV modes begin dominating (expected from the constant-ratio trap). If sharp jump: numerical artifact requiring investigation.
 
 **Output**: Inline report or append to synthesis.
 
@@ -303,7 +303,7 @@ Compare Delta values. Convergence criterion: if |Delta(B) - Delta(A)| / |Delta(B
 
 ### Step 6: Mandatory Outputs
 
-Record ALL of the following in `tier0-computation/s23a_gap_equation.npz` and `s23a_gap_equation.txt`:
+Record ALL of the following in `computations/s23a_gap_equation.npz` and `s23a_gap_equation.txt`:
 
 | Output | Description | Units |
 |:-------|:-----------|:------|
@@ -317,7 +317,7 @@ Record ALL of the following in `tier0-computation/s23a_gap_equation.npz` and `s2
 | Convergence test | Delta(p+q<=6) vs Delta(p+q<=4) | Dimensionless ratio |
 | F_cond(tau) | Condensate free energy at all tau | KK^4 |
 
-Also produce a plot: `tier0-computation/s23a_gap_equation.png` showing Delta(tau) and F_cond(tau) vs tau with the physical window [0.15, 0.35] marked.
+Also produce a plot: `computations/s23a_gap_equation.png` showing Delta(tau) and F_cond(tau) vs tau with the physical window [0.15, 0.35] marked.
 
 ---
 
@@ -333,7 +333,7 @@ Classification must occur BEFORE interpretation. Report numbers first. Classify 
 
 ## K-1 through ARTIFACT: Gap Equation Outcomes (Phase 23a Step 5)
 
-| Tier | Criterion | BF | Posterior (from 40% panel / 27% Sagan) |
+| Level | Criterion | BF | Posterior (from 40% panel / 27% Sagan) |
 |:-----|:----------|:---|:---------------------------------------|
 | **DECISIVE PASS** | Delta/lambda_min > 0.3, tau_0 in [0.25, 0.35] | 15-20 | **52-58%** panel / **45-55%** Sagan |
 | **INTERESTING** | Delta/lambda_min in [0.1, 0.3], tau_0 in [0.20, 0.40] | 3-5 | **42-48%** panel / **30-38%** Sagan |
@@ -414,7 +414,7 @@ If P1 identifies tau_0 (the condensate minimum), extract D_K eigenvalues at tau_
 
 **Pre-registered P3 Constraint Gates**:
 
-| Tier | Criterion | BF | Additional prob shift |
+| Level | Criterion | BF | Additional prob shift |
 |:-----|:----------|:---|:---------------------|
 | **DECISIVE** | Ratio at tau_0 within 0.1% of phi_paasch = 1.53158 (zero free params) | 20-50 | +15-20 pp |
 | **COMPELLING** | Ratio within 1% of phi_paasch | 5-10 | +5-10 pp |
@@ -458,7 +458,7 @@ If P1 closes: **Phase 23c is triggered** (see Section VII).
 # VI. SAGAN STANDARD (Applied to Session 23)
 
 1. **Pre-registered**: All Constraint Gates stated in this document BEFORE computation. No post-hoc accommodation.
-2. **Falsifiable**: The gap equation has a clean trivial solution (Delta = 0). The DECISIVE CLOSURE tier is unambiguous.
+2. **Falsifiable**: The gap equation has a clean trivial solution (Delta = 0). The DECISIVE CLOSURE level is unambiguous.
 3. **Non-accommodating**: The gap equation was identified as the decisive next step in Session 22. This session executes that computation, not a rescue mechanism invented after the fact.
 4. **Computable**: All inputs exist (22b eigenvectors, 22b Kosmann infrastructure, 22c BCS channel scan formulas).
 5. **Honest**: CLOSED means CLOSED. If Delta = 0, the BCS condensate is closed. The result will be honored.
@@ -516,7 +516,7 @@ alpha = integral_{SU(3)} a_2(x, K) dvol_K
 beta = integral_{SU(3)} a_4(x, K)|_{F^2 term} dvol_K
 ```
 
-These integrals are over the Jensen-deformed SU(3) fiber. They involve the Riemann tensor (computed in Session 20a, 147/147 checks), the connection (from tier1_dirac_spectrum.py), and the spectral action coefficients.
+These integrals are over the Jensen-deformed SU(3) fiber. They involve the Riemann tensor (computed in Session 20a, 147/147 checks), the connection (from dirac_spectrum.py), and the spectral action coefficients.
 
 **Step 4**: Compare beta/alpha to 0.28.
 
@@ -530,8 +530,8 @@ The value beta/alpha = 0.28 was FITTED in Session 22d so that the Freund-Rubin p
 - Baptista Paper 17: Dirac operator and Kosmann derivative (Corollary 3.4)
 - Baptista Paper 18: Corrected spectral geometry (eq 1.4, 5.11)
 - Kaluza-Klein Papers 01-12: Classical KK literature for cross-reference
-- tier0-computation/r20a_riemann_tensor.npz: Full Riemann tensor on Jensen-deformed SU(3)
-- tier0-computation/s22b_block_diagonal_results.npz: Block-diagonality data
+- computations/r20a_riemann_tensor.npz: Full Riemann tensor on Jensen-deformed SU(3)
+- computations/s22b_block_diagonal_results.npz: Block-diagonality data
 
 ---
 
@@ -541,21 +541,21 @@ The value beta/alpha = 0.28 was FITTED in Session 22d so that the Freund-Rubin p
 
 | File | Producer | Content |
 |:-----|:---------|:--------|
-| `tier0-computation/s23a_eigenvectors_extended.npz` | phonon-sim | Extended eigenvectors at p+q <= 6 |
-| `tier0-computation/s23a_kosmann_singlet.npz` | phonon-sim | Kosmann matrix elements in (0,0) singlet + pairing kernel |
-| `tier0-computation/s23a_gap_equation.py` | phonon-sim | Gap equation solver script |
-| `tier0-computation/s23a_gap_equation.npz` | phonon-sim | Gap equation results (Delta, tau_0, V_eff, convergence) |
-| `tier0-computation/s23a_gap_equation.txt` | phonon-sim | Full tabular output |
-| `tier0-computation/s23a_gap_equation.png` | phonon-sim | Delta(tau) and F_cond(tau) plots |
+| `computations/s23a_eigenvectors_extended.npz` | phonon-sim | Extended eigenvectors at p+q <= 6 |
+| `computations/s23a_kosmann_singlet.npz` | phonon-sim | Kosmann matrix elements in (0,0) singlet + pairing kernel |
+| `computations/s23a_gap_equation.py` | phonon-sim | Gap equation solver script |
+| `computations/s23a_gap_equation.npz` | phonon-sim | Gap equation results (Delta, tau_0, V_eff, convergence) |
+| `computations/s23a_gap_equation.txt` | phonon-sim | Full tabular output |
+| `computations/s23a_gap_equation.png` | phonon-sim | Delta(tau) and F_cond(tau) plots |
 | `sessions/2026-02-XX-session-23a-synthesis.md` | coordinator | Phase 23a synthesis with Constraint Gate verdicts |
 
 ## Phase 23b outputs:
 
 | File | Producer | Content |
 |:-----|:---------|:--------|
-| `tier0-computation/s23b_output_checks.py` | einstein | Bianchi, redshift, CC ratio, block-diag breaking checks |
-| `tier0-computation/s23b_output_checks.txt` | einstein | Check results |
-| `tier0-computation/s23b_mass_predictions.npz` | einstein | Mass ratios from D_K(tau_0) if P1 passes |
+| `computations/s23b_output_checks.py` | einstein | Bianchi, redshift, CC ratio, block-diag breaking checks |
+| `computations/s23b_output_checks.txt` | einstein | Check results |
+| `computations/s23b_mass_predictions.npz` | einstein | Mass ratios from D_K(tau_0) if P1 passes |
 | `sessions/2026-02-XX-session-23b-synthesis.md` | coordinator | Phase 23b synthesis with final verdict |
 | `sessions/2026-02-XX-session-23-sagan-verdict.md` | sagan | Full Sagan Standard verdict on P1 |
 
@@ -563,8 +563,8 @@ The value beta/alpha = 0.28 was FITTED in Session 22d so that the Freund-Rubin p
 
 | File | Producer | Content |
 |:-----|:---------|:--------|
-| `tier0-computation/s23c_12d_action_framework.py` | kk + baptista | 12D spectral action fiber integration framework |
-| `tier0-computation/s23c_12d_action_framework.txt` | kk + baptista | Mathematical framework documentation |
+| `computations/s23c_12d_action_framework.py` | kk + baptista | 12D spectral action fiber integration framework |
+| `computations/s23c_12d_action_framework.txt` | kk + baptista | Mathematical framework documentation |
 | `sessions/2026-02-XX-session-23c-synthesis.md` | coordinator | P2 initiation synthesis |
 
 ---

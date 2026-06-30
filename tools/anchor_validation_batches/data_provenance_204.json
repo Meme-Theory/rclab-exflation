@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 204,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_2031",
+      "anchor_type": "data_provenance",
+      "name": "w11_v4_monodromy_explicit",
+      "script_path": "session-87/s87_w11_v4_monodromy_explicit.py",
+      "session": "s87",
+      "inputs": "",
+      "outputs": "session-87/s87_w11_v4_monodromy_explicit.npz, session-87/s87_w11_v4_monodromy_explicit.png",
+      "source_file": "computations/session-87/s87_w11_v4_monodromy_explicit.py",
+      "source_context_30_lines": "  160: \n  161: # Pre-registered pass/fail thresholds (per plan §5)\n  162: PASS_THRESHOLD = 1e-12                                                        # (local) PASS band ceiling\n  163: INFO_THRESHOLD = 1e-9                                                         # (local) INFO band ceiling\n  164: N_MOMENTS = (0, 2, 4)                                                         # (local) Seeley-DeWitt moment indices\n  165: COSET_LABELS = (\"e\", \"a\", \"b\", \"ab\")                                          # (local) V_4 coset labels (g_0..g_3)\n  166: \n  167: # Output destinations\n  168: OUT_NPZ = resolve_output(87, 's87_w11_v4_monodromy_explicit.npz')\n  169: OUT_PNG = resolve_output(87, 's87_w11_v4_monodromy_explicit.png')\n  170: VERDICT_TXT = resolve_output(87, 's87_gate_verdicts.txt')\n  171: \n  172: # Script + spectrum-cache + canonical_constants are pinned for SHA closure\n  173: SPECTRUM_CACHE = resolve_output(84, 's84_spectrum_cache_L12_tau019.npz')\n  174: REGULATOR_MOD = resolve_script(None, '_spectral_action_regulators.py')\n  175: \n  176: INPUT_FILES = ["
+    },
+    {
+      "anchor_id": "prov_2032",
+      "anchor_type": "data_provenance",
+      "name": "w11_vii_aj_partition_stability_landing",
+      "script_path": "session-87/s87_w11_vii_aj_partition_stability_landing.py",
+      "session": "s87",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-87/s87_w11_vii_aj_partition_stability_landing.py",
+      "source_context_30_lines": "<name 'w11_vii_aj_partition_stability_landing' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: S87 §VII.AJ.partition-stability sub-row landing — mack-cosmic-bridge sole writer\n    3: per `feedback_mack-bridge-role.md`.\n    4: \n    5: Joint registry-write closure consuming W11-2 (CF-67, INFO) + W11-3 (CF-68, PASS):\n    6: the OPEN sub-slot `§VII.AJ.partition-stability` in `sessions/permanent-results-\n    7: registry.md` (line 105 summary table) is landed under the SOURCE-DOUBLE-CITE-CO-\n    8: PRIMARY anchor structure per `.claude/rules/registry-landing.md`. The W11-2\n    9: τ-axis stability premise (V_input layer) and the W11-3 L_max-axis structural-\n   10: saturation theorem (C_output layer) form a sequential V+C derivation chain;\n   11: neither anchor alone fixes the conclusion that the W-12 §VII.K-PROP 4-stratum\n   12: partition (2, 4, 8, 6) is a substrate-physical observable.\n   13: \n   14: Per `.claude/rules/epistemic-discipline.md` §\"Registry-Write Hygiene under\n   15: Parallel-Writer Race\": one-shot Python writer (NOT Edit-tool round-trip).\n   16: Per `.claude/rules/gate-verdicts.md`: dual-SHA verdict line + companion row\n   17: written to canonical `computations/session-87/s87_gate_verdicts.txt`.\n   18: \n   19: Substrate framing per `.claude/rules/phononic-framing.md`: the 4-stratum\n   20: partition IS a structural property of the substrate's spectral triple at\n   21: τ_fold. Direction substrate -> bridge -> laboratory:\n   22:   D_K(τ_fold) eigenvalues\n   23:     -> Peter-Weyl decomposition into (0,0) / (0,1) / (1,0) lowest sectors\n   24:     -> 3He-B analog chiral-pair condensation signature at first-order\n   25:        Bogoliubov cusp (W-12 §SUBSTRATE-FRAMING; stratum-3 multiplicity 8).\n   26: \"\"\"\n   27: from __future__ import annotations\n   28: \n   29: import hashlib\n   30: import sys"
+    },
+    {
+      "anchor_id": "prov_2033",
+      "anchor_type": "data_provenance",
+      "name": "w1_workshop2_m2c_panel",
+      "script_path": "session-87/s87_w1_workshop2_m2c_panel.py",
+      "session": "s87",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-87/s87_w1_workshop2_m2c_panel.py",
+      "source_context_30_lines": "<name 'w1_workshop2_m2c_panel' not found in source>\n--- file head ---\n    1: \"\"\"S87 W-1 (Workshop 2) — M_2(C) 4-perturbation panel.\n    2: \n    3: R1 numerical verification for the connes-ncg-theorist Reading-A defender position\n    4: in the A0-R-protection <==> M2 biconditional sufficiency workshop.\n    5: \n    6: Test bed: A_F = M_2(C) (smallest non-abelian; complex-rank-2 *NCG* algebra).\n    7: The substrate-faithful representation pi: A_F --> B(H) acts on H = C^4 = C^2 (x) C^2\n    8: (left-action of M_2(C) on the bimodule E = C^2). This makes the algebra act\n    9: NON-DIAGONALLY in the eigenbasis of generic D, so the 'kernel-degenerate escape'\n   10: of W1a-5's P4 is testable structurally.\n   11: \n   12: Four perturbations (analog of W1a-5's P1..P4):\n   13:   P1: small diagonal pure perturbation (M2 trivially holds; baseline).\n   14:   P2: matrix-block perturbation that COMMUTES with the M_2(C) action\n   15:       (left-mult by a fixed M_2(C) element on the bimodule slot).\n   16:   P3: substrate-faithful perturbation (D --> D + V where V is the off-diagonal\n   17:       generator of su(2) on the bimodule slot; FORWARD-direction test).\n   18:   P4: nilpotent-extension perturbation (D --> D (+) N where N: C^2 --> C^2\n   19:       satisfies N^2 = 0 and N COMMUTES with the M_2(C) representation, OR\n   20:       N anticommutes -- both cases tested). BACKWARD-direction test.\n   21: \n   22: Reading-A (connes) prediction:\n   23:   P3 -- M2 fails AND R-protection breaks (forward-direction PASSes).\n   24:   P4 -- M2 fails AND R-protection survives (backward-direction breaks)\n   25:        PROVIDED the nilpotent block lies in ker(D) and the M_2(C) action\n   26:        restricts to the kernel as a SUB-REPRESENTATION (this is the\n   27:        structural mechanism: a_0^zeta excludes the kernel by analytic\n   28:        continuation; the M_2(C) action on the kernel adds K_max contributions\n   29:        from the nilpotent commutator that DO NOT propagate to a_0^zeta).\n   30:   Verdict: FAIL-broken (BACKWARD direction breaks even on smallest non-"
+    },
+    {
+      "anchor_id": "prov_2034",
+      "anchor_type": "data_provenance",
+      "name": "w1a_a0_r_protection_iff_m2_axiom_failure",
+      "script_path": "session-87/s87_w1a_a0_r_protection_iff_m2_axiom_failure.py",
+      "session": "s87",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-87/s87_w1a_a0_r_protection_iff_m2_axiom_failure.py",
+      "source_context_30_lines": "  100: \n  101: ROOT = Path(\"C:/sandbox/Ainulindale Exflation\")\n  102: # X2-removed: alias 'SCRIPT_DIR' = ... 'computations' (replaced by tools.computation_root.resolve_*)\n  103: NPZ_PATH = resolve_output(87, 's87_w1a_a0_m2_biconditional.npz')\n  104: PNG_PATH = resolve_output(87, 's87_w1a_a0_m2_biconditional.png')\n  105: VERDICTS_PATH = resolve_output(87, 's87_gate_verdicts.txt')\n  106: REGISTRY_PATH = ROOT / \"sessions/permanent-results-registry.md\"\n  107: WP_PATH = ROOT / \"sessions/session-87/session-87-results-workingpaper.md\"\n  108: SCRIPT_PATH = resolve_script(87, 's87_w1a_a0_r_protection_iff_m2_axiom_failure.py')\n  109: PLAN_PATH = ROOT / \"sessions/session-plan/session-87-plan-w1a.md\"\n  110: \n  111: # §VII.W slot status (verified at runtime via grep)\n  112: SLOT_TARGET = \"§VII.W-2\"  # rerouted from §VII.W (occupied by S86 1a-S7)\n  113: SLOT_REROUTE_TRIGGER = True  # forces FAIL-with-remediation in verdict line\n  114: \n  115: \n  116: # ---------------------------------------------------------------------------"
+    },
+    {
+      "anchor_id": "prov_2035",
+      "anchor_type": "data_provenance",
+      "name": "w1a_cm_1995_no_go_theorem_landing",
+      "script_path": "session-87/s87_w1a_cm_1995_no_go_theorem_landing.py",
+      "session": "s87",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-87/s87_w1a_cm_1995_no_go_theorem_landing.py",
+      "source_context_30_lines": "<name 'w1a_cm_1995_no_go_theorem_landing' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: S87 W1a-2 — S87-MELLIN-CONE-NO-GO-THEOREM-LANDING\n    3: \n    4: Land the CM-1995-INADMISSIBILITY-AT-FINITE-L theorem at\n    5: sessions/permanent-results-registry.md §VII.V (RESERVED slot per S86 W-1\n    6: RULE-1 lockfile; verified OPEN at runtime), with WEYL-NON-ASYMP-F_4-MB-NO-GO\n    7: Corollary A as sub-row §VII.V.A.\n    8: \n    9: Synthetic 4-eigenvalue toy: λ ∈ {1, 2, 3, 4}, A_F = C ⊕ H ⊕ M_3(C)\n   10: projector cocycle (axiom-3+5+6 conjunction); compute the finite-L\n   11: Mellin moment M_4(L) at substrate-distance-2 pole s=4 for L ∈\n   12: {6, 7, 8, 9, 10, 12} for three NCG axiom subsets {3} / {3,5} / {3,5,6};\n   13: verify the no-go: M_4(L) → +∞ as L → ∞ at L^4 rate (Weyl-non-asymp\n   14: F_4-MB structural divergence).\n   15: \n   16: Per `.claude/rules/regulator-pin-discipline.md`: regulator pin tag is\n   17: a_4^{Mellin} (substrate-distance-2 pole at s=4).\n   18: \n   19: Per `.claude/rules/registry-landing.md` SOURCE-DOUBLE-CITE-CO-PRIMARY:\n   20: both V_input (Connes-Moscovici 1995 §5 dimension-spectrum theorem) and\n   21: C_output (NCG axioms 3+5+6 + Schur orthogonality on A_F = C ⊕ H ⊕ M_3(C)\n   22: per Connes 1996 reconstruction) are co-primary anchors.\n   23: \n   24: Per `.claude/rules/epistemic-discipline.md` §\"Verifier-Rubric Pre-\n   25: Registration\": the literal threshold (line 274 of plan §W1a-2) \"ratio\n   26: > 2 for ≥4 consecutive L\" is INCONSISTENT with the substitution-chain\n   27: Step 4 (line 322-325 of plan §W1a-2) which switches to absolute\n   28: divergence. Substitution chain binds; magnitude_verdict = PASS under\n   29: absolute test (15.0000 > 10).\n   30: "
+    },
+    {
+      "anchor_id": "prov_2036",
+      "anchor_type": "data_provenance",
+      "name": "w1a_finite_spectrum_mellin_dirichlet_identity_landing",
+      "script_path": "session-87/s87_w1a_finite_spectrum_mellin_dirichlet_identity_landing.py",
+      "session": "s87",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-87/s87_w1a_finite_spectrum_mellin_dirichlet_identity_landing.py",
+      "source_context_30_lines": "   95: \n   96: # ---------------------------------------------------------------- paths\n   97: \n   98: PROJECT_ROOT = Path(r\"C:\\sandbox\\Ainulindale Exflation\")\n   99: # X2-removed: alias 'T0' = ... 'computations' (replaced by tools.computation_root.resolve_*)\n  100: CACHE_PATH   = resolve_output(84, 's84_spectrum_cache_L12_tau019.npz')\n  101: JSON_OUT     = resolve_output(87, 's87_w1a_mellin_dirichlet_id.json')\n  102: VERDICT_OUT  = resolve_output(87, 's87_gate_verdicts.txt')\n  103: SCRIPT_PATH  = resolve_script(87, 's87_w1a_finite_spectrum_mellin_dirichlet_identity_landing.py')\n  104: REGISTRY     = PROJECT_ROOT / \"sessions\" / \"permanent-results-registry.md\"\n  105: WP           = PROJECT_ROOT / \"sessions\" / \"session-87\" / \"session-87-results-workingpaper.md\"\n  106: \n  107: GATE_ID    = \"S87-FINITE-SPECTRUM-MELLIN-DIRICHLET-IDENTITY-LANDING\"\n  108: S_VALUES   = (3, 4, 5)\n  109: TOLERANCE  = 1.0e-15  # (local) THEOREM tolerance (plan §W1a-4 line 508)\n  110: L_MAX      = 12       # (local) sanity-check cache L_max (plan §W1a-4 line 505)\n  111: SCHEME     = \"Mellin-Dirichlet-finite-spectrum\""
+    },
+    {
+      "anchor_id": "prov_2037",
+      "anchor_type": "data_provenance",
+      "name": "w1a_m2_structural_source_lambda_sa_residual_landing",
+      "script_path": "session-87/s87_w1a_m2_structural_source_lambda_sa_residual_landing.py",
+      "session": "s87",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-87/s87_w1a_m2_structural_source_lambda_sa_residual_landing.py",
+      "source_context_30_lines": "  582: - `S88-LAMBDA-SA-S65-CONTINUUM-CONVERSE-WITNESS-EMISSION` — emit continuum a_0/a_2 = C/R universal verdict\n  583: - `S88-LAMBDA-SA-S77-A0-R-PROTECTION-SUCCESSOR-EMISSION` — re-emit S77 R-protection-fails-at-a_0 as computation verdict\n  584: - `S88-LAMBDA-SA-C9-S86-W1-RATIO-EMISSION` — emit C9 9.46x a_0/Λ_CC ratio as computation verdict (currently workshop intermediate only)\n  585: - `S88-VII-X-2-NECESSITY-PROMOTE-STAGE-3` — re-run the necessity-table verification once 6/6 anchor SHAs available; promote STAGE-1-CANDIDATE → STAGE-3-PERMANENT\n  586: \n  587: **Closure SHAs (S87 W1a-6 landing)**:\n  588: - audit_sha256: {{AUDIT_SHA}}\n  589: - content_sha256: {{CONTENT_SHA}}\n  590: - producing script: computations/session-87/s87_w1a_m2_structural_source_lambda_sa_residual_landing.py\n  591: - truth-table sidecar: computations/session-87/s87_w1a_m2_necessity_truth_table.json\n  592: - verdict line: computations/session-87/s87_gate_verdicts.txt :: S87-M2-STRUCTURAL-SOURCE-FOR-LAMBDA-SA-FINITE-L-RESIDUAL-LANDING\n  593: \n  594: **STAGE-1-CANDIDATE qualifier (per `.claude/rules/joint-theorem-promotion.md` Stage-1 schema)**: this meta-theorem joins distinct methodological axes (axiom-side M2 + spectral-action-side Λ_SA finite-L observable). Stage-2 cross-axis independent verification queued for S88+ via per-anchor successor-emission gates above.\n  595: \n  596: ---\n  597: \"\"\"\n  598: "
+    },
+    {
+      "anchor_id": "prov_2038",
+      "anchor_type": "data_provenance",
+      "name": "w1a_vii_prop_two_principle_landing",
+      "script_path": "session-87/s87_w1a_vii_prop_two_principle_landing.py",
+      "session": "s87",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-87/s87_w1a_vii_prop_two_principle_landing.py",
+      "source_context_30_lines": "<name 'w1a_vii_prop_two_principle_landing' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: S87 W1a §W1a-7 — S87-VII-PROP-LANDING\n    3: \n    4: TWO orthogonal routing-layer principles at sessions/permanent-results-registry.md\n    5: §VII.PROP:\n    6:   §VII.PROP.A — P_MB / P_CM un-bundling (Mellin-Barnes vs Connes-Moscovici)\n    7:   §VII.PROP.B — Lens vs Prescription distinction\n    8: \n    9: Method\n   10: ------\n   11: Build a 4x4 Boolean pin matrix over {zeta, Pauli-Villars, Mellin-Barnes,\n   12: Connes-Moscovici} x {P_MB-flag, P_CM-flag, Lens-flag, Prescription-flag}\n   13: in TWO forms:\n   14: \n   15:   (i)  SCHEMA-NAIVE matrix: encodes the historical S52..S85 confusion\n   16:        that bundled \"MB-routing\" with \"MB-lens\". Yields rho ~ 0.7071\n   17:        (orthogonality FAIL).\n   18:   (ii) UN-BUNDLED matrix: re-distinguishes regulator-MECHANISM\n   19:        (MB-routing vs CM-routing) from observable-RELATION (Lens vs\n   20:        Prescription). Yields rho = 0 EXACT (orthogonality PASS).\n   21: \n   22: The PASS criterion for THE GATE (per plan threshold |rho|<0.1) is on the\n   23: UN-BUNDLED matrix; the schema-naive matrix is reported as the \"what the\n   24: historical bundling implies\" diagnostic.\n   25: \n   26: Both matrices, both Pearson correlations, the un-bundled-vs-naive comparison,\n   27: the input-pin map, and the dual SHA-256 hashes are emitted to the JSON\n   28: sidecar `s87_w1a_vii_prop_orthogonality.json`. The verdict file gets ONE\n   29: canonical line per sub-row (§VII.PROP.A and §VII.PROP.B) with its own\n   30: audit_sha256 per the plan PASS criterion (line 885)."
+    },
+    {
+      "anchor_id": "prov_2039",
+      "anchor_type": "data_provenance",
+      "name": "w1a_w1b_t5_mellin_strip_landing",
+      "script_path": "session-87/s87_w1a_w1b_t5_mellin_strip_landing.py",
+      "session": "s87",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-87/s87_w1a_w1b_t5_mellin_strip_landing.py",
+      "source_context_30_lines": "  333: \n  334: ##### Provenance\n  335: \n  336: - **Landing gate**: `{GATE_ID}` (S87 W1a §W1a-1).\n  337: - **Landing date**: 2026-04-28.\n  338: - **Landing agent**: lizzi-spectral-functional-theorist.\n  339: - **Plan reference**: `sessions/session-plan/session-87-plan-w1a.md` §W1a-1\n  340:   (lines 49-211).\n  341: - **Producing script**: `computations/session-87/s87_w1a_w1b_t5_mellin_strip_landing.py`.\n  342: - **JSON sidecar**: `computations/session-87/s87_w1a_w1b_t5_landing.json`.\n  343: - **Verdict file**: `computations/session-87/s87_gate_verdicts.txt`.\n  344: - **Landing audit_sha256**: `{audit_sha_landing}`.\n  345: - **Regulator-pin tag**: `{REGULATOR_PIN_TAG}` (per\n  346:   `.claude/rules/regulator-pin-discipline.md`).\n  347: \n  348: ##### Cross-references\n  349: "
+    },
+    {
+      "anchor_id": "prov_2040",
+      "anchor_type": "data_provenance",
+      "name": "w1a_w3_per_eval_finiteness_pre_reg",
+      "script_path": "session-87/s87_w1a_w3_per_eval_finiteness_pre_reg.py",
+      "session": "s87",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-87/s87_w1a_w3_per_eval_finiteness_pre_reg.py",
+      "source_context_30_lines": "    1: \"\"\"\n    2: s87_w1a_w3_per_eval_finiteness_pre_reg.py\n    3: \n    4: S87 W1a-3: S87-W3-PER-EVAL-FINITENESS-PRE-REG\n    5: =============================================\n    6: \n    7: Re-pre-register the W0-20 (s=3 off-pole apex) and W0-7-MB (rho-fit on\n    8: s in [2.5, 3.5]) results as PASS-evidence-on-disk for per-eval\n    9: finiteness of the Mellin-cone evaluator at substrate-distance-1\n   10: (d_spec=8 NCG; s=3 the canonical apex pole isolated to that point)."
+    }
+  ]
+}

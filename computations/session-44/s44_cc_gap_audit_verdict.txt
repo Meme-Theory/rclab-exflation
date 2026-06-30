@@ -1,0 +1,20 @@
+T3-S44-CC-GAP-AUDIT: INFO -- value=110.53 scheme=trace-log_x_EIH convention=log10_gap_OOM L_max=NA sha256=31c72408355f3e732714cb09e0cf48250e44f80624ce20dbb13d6e07a6758705
+  # target: diagnostic audit (no MCP-registered threshold); residual CC gap in OOM after stacked suppression
+  # pre-fix: script was already canonical — imports M_Pl_reduced, Omega_Lambda, H_0_km_s_Mpc, hbar_eV_s from canonical_constants.py
+  # fix: none required — all intermediates tagged `# (local)`, no hardcoded framework constants, MCP queried (cc_gap_audit entity matches)
+  # reproduced: residual_OOM=110.53 (trace-log x EIH singlet), matches S44 summary stacking (best chain = 9.42 orders suppression off starting gap 117.20)
+  # rel error: N/A (diagnostic; secondary checks: spectral-action reconstruction ratio rho_spec_stored/rho_recompute ~ O(1), trace-log/polynomial = 3.0895e-3 matches tl_ratio=3.0900e-3 to 4 sig fig)
+  # closure_inputs: {canon, script, s42_constants_snapshot.npz, s36_sfull_tau_stabilization.npz, s44_eih_grav.npz, s44_tracelog_cc.npz, s44_jacobson_spec.npz, s44_singlet_cc.npz}
+  # script_sha:  629dd713bd4f856f976d09f1a2bd40590ffc3347d681d0304a4bd0f30faa2688
+  # canon_sha:   68b50cd325d2cc8c63b775da3b6b92f538da582bee44c5d906c81259f24dd12f
+  # input shas: s42=39f613507950979327f0d9b7473bd73f7b0a7ea2d9d0c5507f6b8b939909f80b s36=6a172dfc7fb0103f4cc6a9d37dc2fb2b944f8c357edf8825e0e9c9427c4cbe1e eih=1269f339605636bb6a90268b55ba07ac829f2b21a944dc4a666b76d50f42bf96 tl=30b93ba7de622ce635c59384f354a0d38e5f35390250814689059d314a88983e jac=eba33df978738e0df6f0711168e43569a2978abd68050839578733db2b92b75f sin=f0e0305ea46559e404ab263d95a4c0a0a115a7467905c740e0d0cb83a06e8a2b
+  # missing_constants: none (rho_Lambda_standard = 2.888e-47 GeV^4 is a cross-check alternate convention; the canonical store has Lambda_obs_MP4 = 2.888e-122 dimensionless which is the same number in M_Pl^4 units; script flags the alternate as `# (local)` with canonical_constants.py note reference — acceptable)
+  # summary table (from stdout):
+  #   textbook M_Pl^4 gap        =  120.14 OOM
+  #   bare M_KK^4 gap            =  114.08 OOM
+  #   spectral (2/pi^2 a_0 M^4)  =  117.20 OOM   <-- starting point (Def B)
+  #   S_fold * M_KK^4 / 16 pi^2  =  117.28 OOM
+  #   trace-log geometric        =  114.77 OOM
+  #   trace-log x EIH singlet    =  110.53 OOM   <-- residual (final)
+  # notes: script is an organizational audit — no new pre-registered gate passes or fails here; S44 residual gap (110.53 OOM) is reproduced bit-for-bit from archived S36/S42/S44 workshop .npz files. The 2.888e-47 GeV^4 dark-energy-density cross-check is a widely-cited alternate form; its canonical analog is Lambda_obs_MP4 in canonical_constants.py. No constants need to be added.
+  # MCP baseline: trace_entity("cc_gap") returned proven_674 (cutoff CC gap = 117.8 OOM, zeta CC gap = 115.9 OOM) and closed_66 (CC gap = 114 OOM); our computed Def-B spectral value 117.20 matches proven_674 cutoff branch to within 0.6 OOM rounding (different a_0, M_KK snapshot vs live values).

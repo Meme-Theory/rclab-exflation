@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 241,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_2401",
+      "anchor_type": "data_provenance",
+      "name": "s31Aa_nck_tau021",
+      "script_path": "session-31/s31Aa_nck_tau021.py",
+      "session": "",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-31/s31Aa_nck_tau021.py",
+      "source_context_30_lines": "<name 's31Aa_nck_tau021' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: BA-31-7: B-31nck at tau~0.21 (NCG-KK Compatibility Test)\n    3: ==========================================================\n    4: \n    5: Computes Lambda_SA / M_KK at the RGE-compatible tau ~ 0.21.\n    6: \n    7: Lambda_SA is the unification scale where alpha_1 = alpha_2 when running\n    8: upward from M_KK using SM one-loop beta functions. The ratio Lambda_SA/M_KK\n    9: measures the NCG-KK tension: if the spectral action cutoff must equal the\n   10: unification scale, then Lambda_SA/M_KK >> 1 means NCG and KK are\n   11: irreconcilable.\n   12: \n   13: Session 30Bb found Lambda_SA/M_KK ~ 2.0e15 at tau~0.57, eps~0.135.\n   14: This computation checks tau~0.21 on the Jensen curve (eps=0).\n   15: \n   16: Gate B-31nck:\n   17:   PASS if Lambda_SA/M_KK in [10^{-3}, 10^3] at M_KK ~ 10^16 GeV\n   18:   FAIL if outside this range\n   19: \n   20: Author: sim (phonon-exflation-sim), Session 31Aa\n   21: Date: 2026-03-02\n   22: \"\"\"\n   23: \n   24: import numpy as np\n   25: import time\n   26: \n   27: # SM one-loop beta function coefficients\n   28: B1 = 41.0 / 10.0   # U(1)_Y\n   29: B2 = -19.0 / 6.0    # SU(2)_L\n   30: "
+    },
+    {
+      "anchor_id": "prov_2402",
+      "anchor_type": "data_provenance",
+      "name": "s31alt_3form_potential",
+      "script_path": "session-31/s31alt_3form_potential.py",
+      "session": "",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-31/s31alt_3form_potential.py",
+      "source_context_30_lines": "  208:         else:\n  209:             verdict = \"FAIL\"\n  210:             print(f\"  V_FR monotonically increasing in tau (same sign as V_spec).\")\n  211:         print(f\"  --> BA-31-fr: {verdict}\")\n  212: \n  213:     # ========================================================================\n  214:     # Save\n  215:     # ========================================================================\n  216:     np.savez('computations/session-31/s31alt_3form_potential.npz',\n  217:              tau_values=tau_values,\n  218:              omega_3_sq=omega_sq,\n  219:              vol_K=vol_K,\n  220:              V_FR=V_FR,\n  221:              V_spec_interp=V_spec_interp,\n  222:              V_FR_norm=V_FR_norm,\n  223:              V_spec_norm=V_spec_norm,\n  224:              dV_FR_dtau=dV_FR,"
+    },
+    {
+      "anchor_id": "prov_2403",
+      "anchor_type": "data_provenance",
+      "name": "s31alt_cc_ratio",
+      "script_path": "session-31/s31alt_cc_ratio.py",
+      "session": "",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-31/s31alt_cc_ratio.py",
+      "source_context_30_lines": "  180:             verdict = \"CRISIS\"\n  181:             print(f\"  --> BA-31-cc: CRISIS (a_0/a_2 > 1, CC dominates)\")\n  182:         else:\n  183:             print(f\"  --> BA-31-cc: INTERMEDIATE (neither crisis nor suppression)\")\n  184: \n  185:     # ========================================================================\n  186:     # 7. Save\n  187:     # ========================================================================\n  188:     np.savez('computations/session-31/s31alt_cc_ratio.npz',\n  189:              tau_grid=tau_grid, eps_grid=eps_grid,\n  190:              a_0=a_0, a_2=a2, ratio=ratio,\n  191:              vol=vol, R=R,\n  192:              tau_021=tau_021, ratio_021=ratio_021,\n  193:              V_spec=V_spec, F_BCS=F_BCS_1p00,\n  194:              verdict=np.array(verdict))\n  195:     print(f\"\\nSaved: computations/session-31/s31alt_cc_ratio.npz\")\n  196: "
+    },
+    {
+      "anchor_id": "prov_2404",
+      "anchor_type": "data_provenance",
+      "name": "s31alt_order_one_severity",
+      "script_path": "session-31/s31alt_order_one_severity.py",
+      "session": "",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-31/s31alt_order_one_severity.py",
+      "source_context_30_lines": "  249:     # Also report general comparison\n  250:     pct_gen = np.mean(viol_gen <= framework_violation) * 100\n  251:     p95_gen = np.percentile(viol_gen, 95)\n  252:     print(f\"\\n  General random comparison: {pct_gen:.1f}% percentile, 95th = {p95_gen:.3f}\")\n  253: \n  254:     # ========================================================================\n  255:     # Save\n  256:     # ========================================================================\n  257:     np.savez('computations/session-31/s31alt_order_one_severity.npz',\n  258:              framework_violation=framework_violation,\n  259:              viol_general=viol_gen,\n  260:              viol_structured=viol_struct,\n  261:              pct_general=pct_gen,\n  262:              pct_structured=pct_struct,\n  263:              p95_general=p95_gen,\n  264:              p95_structured=p95_struct,\n  265:              n_trials=n_trials,"
+    },
+    {
+      "anchor_id": "prov_2405",
+      "anchor_type": "data_provenance",
+      "name": "s31alt_orientation_test",
+      "script_path": "session-31/s31alt_orientation_test.py",
+      "session": "",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-31/s31alt_orientation_test.py",
+      "source_context_30_lines": "  208:     for tau in tau_values:\n  209:         prefix = f'tau_{tau:.2f}_'.replace('.', 'p')\n  210:         r = results[tau]\n  211:         save_dict[prefix + 'full_diff'] = np.array(r['full_diff'])\n  212:         save_dict[prefix + 'max_sector_diff'] = np.array(r['max_sector_diff'])\n  213:         save_dict[prefix + 'abs_std'] = r['abs_all_std']\n  214:         save_dict[prefix + 'abs_rev'] = r['abs_all_rev']\n  215: \n  216:     np.savez('computations/session-31/s31alt_orientation_test.npz', **save_dict)\n  217:     print(f\"\\nSaved: computations/session-31/s31alt_orientation_test.npz\")\n  218: \n  219:     elapsed = time.time() - t_start\n  220:     print(f\"Total runtime: {elapsed:.1f}s\")\n  221:     print(f\"\\nGATE BA-31-or: {verdict}\")\n  222: \n  223:     return verdict\n  224: "
+    },
+    {
+      "anchor_id": "prov_2406",
+      "anchor_type": "data_provenance",
+      "name": "s31alt_spectral_dimension",
+      "script_path": "session-31/s31alt_spectral_dimension.py",
+      "session": "",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-31/s31alt_spectral_dimension.py",
+      "source_context_30_lines": "  282:         save_dict[prefix + 'log_P'] = r['log_P']\n  283:         save_dict[prefix + 'd_s'] = r['d_s']\n  284:         save_dict[prefix + 'ds_total'] = r['ds_total']\n  285:         save_dict[prefix + 'lambda_min'] = np.array(r['lambda_min'])\n  286:         save_dict[prefix + 't_gap'] = np.array(r['t_gap'])\n  287:         save_dict[prefix + 'ds_at_gap'] = np.array(r['ds_at_gap'])\n  288:         save_dict[prefix + 'n_total'] = np.array(r['n_total'])\n  289: \n  290:     np.savez('computations/session-31/s31alt_spectral_dimension.npz', **save_dict)\n  291:     print(f\"\\nSaved: computations/session-31/s31alt_spectral_dimension.npz\")\n  292: \n  293:     # ========================================================================\n  294:     # 5. Plot\n  295:     # ========================================================================\n  296:     fig, axes = plt.subplots(2, 2, figsize=(14, 10))\n  297: \n  298:     colors = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728']"
+    },
+    {
+      "anchor_id": "prov_2407",
+      "anchor_type": "data_provenance",
+      "name": "s31Ba_instanton_kapitza",
+      "script_path": "session-31/s31Ba_instanton_kapitza.py",
+      "session": "",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-31/s31Ba_instanton_kapitza.py",
+      "source_context_30_lines": "<name 's31Ba_instanton_kapitza' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: Session 31A — I-1: Instanton-Kapitza Frequency Ratio\n    4: \n    5: Computes the instanton tunneling rate Gamma_inst(tau) and compares it\n    6: to the modulus rolling frequency omega_tau = sqrt(|d^2V/dtau^2|).\n    7: \n    8: The instanton action on Jensen-deformed SU(3):\n    9:   S_inst(tau) = alpha_grav * (-R(tau)) + alpha_YM * K(tau)\n   10: \n   11: where R(tau) is the scalar curvature and K(tau) is the Kretschner scalar\n   12: (exact analytic formulas from Permanent Results Registry Section III).\n   13: \n   14: The tunneling rate:\n   15:   Gamma_inst(tau) ~ exp(-S_inst(tau))\n   16: \n   17: Gate I-1: PASS if Gamma_inst/omega_tau > 3 at some tau in [0.05, 0.55]\n   18:           for any coupling ratio alpha_YM/alpha_grav.\n   19: \n   20: Inputs:\n   21:   - Analytic curvature formulas (R, K from Session 17b)\n   22:   - s30b_grid_bcs.npz (V_total for omega_tau)\n   23: \n   24: Outputs:\n   25:   - s31a_instanton_kapitza.npz\n   26:   - s31a_instanton_kapitza.png\n   27: \n   28: Author: phonon-exflation-sim agent (Session 31A)\n   29: Date: 2026-03-02\n   30: \"\"\""
+    },
+    {
+      "anchor_id": "prov_2408",
+      "anchor_type": "data_provenance",
+      "name": "s31Ba_kapitza_gate",
+      "script_path": "session-31/s31Ba_kapitza_gate.py",
+      "session": "",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-31/s31Ba_kapitza_gate.py",
+      "source_context_30_lines": "<name 's31Ba_kapitza_gate' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: Session 31A — K-1: Kapitza Effective Potential on U(2)-Invariant Surface\n    4: \n    5: Computes V_Kapitza(tau; A) for the modulus tau, where epsilon oscillates\n    6: rapidly with amplitude A along the T2 direction. Uses arcsine-weighted\n    7: averaging (natural measure for sinusoidal oscillation).\n    8: \n    9: V_Kapitza(tau; A) = (1/pi) * integral_{-A}^{A} V_total(tau, eps) / sqrt(A^2 - eps^2) deps\n   10:                   + (1/(4*omega_perp^2)) * (1/pi) * integral_{-A}^{A} (dV/deps)^2 / sqrt(A^2 - eps^2) deps\n   11: \n   12: Gate K-1: PASS if V_Kapitza has interior minimum at tau_* in (0.05, 0.55)\n   13:           for ANY amplitude A with d^2 V_Kapitza / dtau^2 > 0.\n   14: \n   15: Inputs:\n   16:   - s30b_grid_bcs.npz  (V_total on 21x21 grid)\n   17:   - s30b_5d_stability.npz  (T3/T4 eigenvalues for omega_perp)\n   18:   - s30b_sdw_grid.npz  (L1, L2 for Formula B sin^2 evaluation)\n   19: \n   20: Outputs:\n   21:   - s31a_kapitza_gate.npz\n   22:   - s31a_kapitza_gate.png\n   23: \n   24: Author: phonon-exflation-sim agent (Session 31A)\n   25: Date: 2026-03-02\n   26: \"\"\"\n   27: \n   28: import numpy as np\n   29: from scipy.interpolate import RectBivariateSpline, interp1d\n   30: from scipy.integrate import quad"
+    },
+    {
+      "anchor_id": "prov_2409",
+      "anchor_type": "data_provenance",
+      "name": "s31Ba_nck_tau021",
+      "script_path": "session-31/s31Ba_nck_tau021.py",
+      "session": "",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-31/s31Ba_nck_tau021.py",
+      "source_context_30_lines": "<name 's31Ba_nck_tau021' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: BA-31-7: B-31nck at tau~0.21 (NCG-KK Compatibility Test)\n    3: ==========================================================\n    4: \n    5: Computes Lambda_SA / M_KK at the RGE-compatible tau ~ 0.21.\n    6: \n    7: Lambda_SA is the unification scale where alpha_1 = alpha_2 when running\n    8: upward from M_KK using SM one-loop beta functions. The ratio Lambda_SA/M_KK\n    9: measures the NCG-KK tension: if the spectral action cutoff must equal the\n   10: unification scale, then Lambda_SA/M_KK >> 1 means NCG and KK are\n   11: irreconcilable.\n   12: \n   13: Session 30Bb found Lambda_SA/M_KK ~ 2.0e15 at tau~0.57, eps~0.135.\n   14: This computation checks tau~0.21 on the Jensen curve (eps=0).\n   15: \n   16: Gate B-31nck:\n   17:   PASS if Lambda_SA/M_KK in [10^{-3}, 10^3] at M_KK ~ 10^16 GeV\n   18:   FAIL if outside this range\n   19: \n   20: Author: sim (phonon-exflation-sim), Session 31Aa\n   21: Date: 2026-03-02\n   22: \"\"\"\n   23: \n   24: import numpy as np\n   25: import time\n   26: \n   27: # SM one-loop beta function coefficients\n   28: B1 = 41.0 / 10.0   # U(1)_Y\n   29: B2 = -19.0 / 6.0    # SU(2)_L\n   30: "
+    },
+    {
+      "anchor_id": "prov_2410",
+      "anchor_type": "data_provenance",
+      "name": "s31Ca_density_dep_pairing",
+      "script_path": "session-31/s31Ca_density_dep_pairing.py",
+      "session": "",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-31/s31Ca_density_dep_pairing.py",
+      "source_context_30_lines": "   51:   - Exponential: f(x) = exp(-alpha*(x-1)), alpha in {1, 2, 5, 10}\n   52:   - Gaussian:    f(x) = exp(-beta*(x-1)^2), beta in {1, 5, 10}\n   53:   - Hard window: f(x) = 1 if x < x_cut else 0, x_cut in {1.5, 2, 3, 5}\n   54: \n   55: Gate N-31Ca-G: PASS if M_max(V_eff) at mu=0 exceeds 1.0 for any envelope,\n   56: or if mu_crit (smallest mu where BdG M_max > 1) < 0.7 * lambda_min.\n   57: \n   58: Input: s23a_gap_equation.npz\n   59: Output: s31Ca_density_dep_pairing.{npz,png}\n   60: \"\"\"\n   61: \n   62: import numpy as np\n   63: from numpy.linalg import eigvalsh, eigvals, svd\n   64: import matplotlib\n   65: matplotlib.use('Agg')\n   66: import matplotlib.pyplot as plt\n   67: import os, time"
+    }
+  ]
+}

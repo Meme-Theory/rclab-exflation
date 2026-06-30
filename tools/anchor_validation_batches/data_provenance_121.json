@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 121,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1201",
+      "anchor_type": "data_provenance",
+      "name": "transit_gw",
+      "script_path": "session-69/s69_transit_gw.py",
+      "session": "s69",
+      "inputs": "",
+      "outputs": "session-69/s69_transit_gw.npz, session-69/s69_transit_gw.png",
+      "source_file": "computations/session-69/s69_transit_gw.py",
+      "source_context_30_lines": "  741: print(f\"  Detail: {gate_detail}\")\n  742: \n  743: # ============================================================================\n  744: #  SECTION 11: Save data\n  745: # ============================================================================\n  746: \n  747: print(\"\\n--- Saving data ---\")\n  748: \n  749: outfile = os.path.join(os.path.dirname(__file__), 's69_transit_gw.npz')\n  750: np.savez(outfile,\n  751:     # Frequency grid and spectrum\n  752:     f_grid=f_grid,\n  753:     Omega_GW_f=Omega_GW_f,\n  754:     Omega_GW_dw=Omega_GW_dw,\n  755:     # Peak values\n  756:     f_peak_today=f_peak_today,\n  757:     f_peak_transit_today=f_peak_transit_today,"
+    },
+    {
+      "anchor_id": "prov_1202",
+      "anchor_type": "data_provenance",
+      "name": "z2_baw",
+      "script_path": "session-69/s69_z2_baw.py",
+      "session": "s69",
+      "inputs": "",
+      "outputs": "session-69/s69_z2_baw.npz",
+      "source_file": "computations/session-69/s69_z2_baw.py",
+      "source_context_30_lines": "   22: \n   23: The Z_2 parity of the breathing mode under x_A -> -x_A guarantees that\n   24: the coupling H_int = g * x_A^2 * x_B changes Leggett number by 0 or +-2,\n   25: never by 1. Single breathing-phonon decay is FORBIDDEN.\n   26: \n   27: Platform: Chu et al. 2017 (Science 358, 199) HBAR + transmon qubit.\n   28: Sapphire substrate, AlN piezoelectric transducer.\n   29: \n   30: Output: s69_z2_baw.npz\n   31: \"\"\"\n   32: \n   33: import sys\n   34: import os\n   35: import numpy as np\n   36: \n   37: # Add computations to path for canonical_constants\n   38: sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))"
+    },
+    {
+      "anchor_id": "prov_1203",
+      "anchor_type": "data_provenance",
+      "name": "3_mode_baw",
+      "script_path": "session-70/s70_3_mode_baw.py",
+      "session": "s70",
+      "inputs": "",
+      "outputs": "session-70/s70_3_mode_baw.npz",
+      "source_file": "computations/session-70/s70_3_mode_baw.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s70_3_mode_baw.py -- 3-MODE-BAW-70 (W5-J)\n    4: =============================================\n    5: Design study: Multi-mode BAW resonator matching the framework's 3-branch\n    6: squeeze distribution (B1/B2/B3) for enhanced non-BD detection.\n    7: \n    8: Physical scenario:\n    9:   The single-mode BAW design (S69 BAW-ANALOG-69) requires N_shots = 71 for\n   10:   3-sigma squeeze detection at r_eff = 0.555. The framework predicts THREE\n   11:   distinct squeeze parameters for the three BCS branches:"
+    },
+    {
+      "anchor_id": "prov_1204",
+      "anchor_type": "data_provenance",
+      "name": "annihilation_time",
+      "script_path": "session-70/s70_annihilation_time.py",
+      "session": "s70",
+      "inputs": "",
+      "outputs": "session-70/s70_annihilation_time.npz",
+      "source_file": "computations/session-70/s70_annihilation_time.py",
+      "source_context_30_lines": "  384: \n  385: print(f\"\\n  VERDICT: {gate_verdict}\")\n  386: print(f\"  Detail:  {gate_detail}\")\n  387: \n  388: # ============================================================================\n  389: #  SECTION 9: Save results\n  390: # ============================================================================\n  391: \n  392: output_path = Path(__file__).resolve().parent / 's70_annihilation_time.npz'\n  393: \n  394: np.savez(\n  395:     str(output_path),\n  396:     # Primary results\n  397:     t_ann_s=t_ann_s,\n  398:     t_ann_nat=t_ann_nat,\n  399:     t_BA_s=t_BA_s,\n  400:     t_BA_nat=t_BA_nat,"
+    },
+    {
+      "anchor_id": "prov_1205",
+      "anchor_type": "data_provenance",
+      "name": "ap_void",
+      "script_path": "session-70/s70_ap_void.py",
+      "session": "s70",
+      "inputs": "",
+      "outputs": "session-70/s70_ap_void.npz, session-70/s70_ap_void.png",
+      "source_file": "computations/session-70/s70_ap_void.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s70_ap_void.py -- AP-VOID-70: Alcock-Paczynski Test from Void Stacking\n    4: =======================================================================\n    5: Gate: AP-VOID-70\n    6:   INFO: Report F_AP(z) for both models and chi^2 against void stacking data.\n    7: \n    8: Physics:\n    9:   The Alcock-Paczynski (AP) test measures the dimensionless combination\n   10:   F_AP(z) = D_A(z) * H(z) / c from the geometric distortion of stacked\n   11:   void shapes. In redshift space, voids identified assuming a fiducial"
+    },
+    {
+      "anchor_id": "prov_1206",
+      "anchor_type": "data_provenance",
+      "name": "bao_peak_damp",
+      "script_path": "session-70/s70_bao_peak_damp.py",
+      "session": "s70",
+      "inputs": "",
+      "outputs": "session-70/s70_bao_peak_damp.npz, session-70/s70_bao_peak_damp.png",
+      "source_file": "computations/session-70/s70_bao_peak_damp.py",
+      "source_context_30_lines": "  725: \n  726: # ============================================================================\n  727: #  Save data\n  728: # ============================================================================\n  729: \n  730: print(\"\\n--- Saving Data ---\")\n  731: \n  732: output_path = os.path.join(os.path.dirname(os.path.abspath(__file__)),\n  733:                            's70_bao_peak_damp.npz')\n  734: \n  735: # Build redshift-resolved arrays\n  736: z_arr = np.array(z_desi)\n  737: H21_LCDM_arr = np.array([results_by_z[z]['LCDM']['ratio_21_obs'] for z in z_desi])\n  738: H21_FW_arr = np.array([results_by_z[z]['FW']['ratio_21_obs'] for z in z_desi])\n  739: H31_LCDM_arr = np.array([results_by_z[z]['LCDM']['ratio_31_obs'] for z in z_desi])\n  740: H31_FW_arr = np.array([results_by_z[z]['FW']['ratio_31_obs'] for z in z_desi])\n  741: "
+    },
+    {
+      "anchor_id": "prov_1207",
+      "anchor_type": "data_provenance",
+      "name": "bcs_gap_canonical",
+      "script_path": "session-70/s70_bcs_gap_canonical.py",
+      "session": "s70",
+      "inputs": "",
+      "outputs": "session-70/s70_bcs_gap_canonical.npz",
+      "source_file": "computations/session-70/s70_bcs_gap_canonical.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s70_bcs_gap_canonical.py — BCS-GAP-CANONICAL-70\n    4: =================================================\n    5: \n    6: Gate: BCS-GAP-CANONICAL-70 (INFO, housekeeping)\n    7: Agent: van-den-dungen-bridge-theorist\n    8: Session: S70, Wave 1-D\n    9: \n   10: Purpose: Audit all Delta values across the codebase, resolve the 0.464 vs 0.52\n   11: discrepancy, verify the new Delta_BCS canonical alias, and document provenance."
+    },
+    {
+      "anchor_id": "prov_1208",
+      "anchor_type": "data_provenance",
+      "name": "bcs_proximity",
+      "script_path": "session-70/s70_bcs_proximity.py",
+      "session": "s70",
+      "inputs": "",
+      "outputs": "session-70/s70_bcs_proximity.npz",
+      "source_file": "computations/session-70/s70_bcs_proximity.py",
+      "source_context_30_lines": "   31:   length makes proximity weaker.\n   32: \n   33: INPUT:\n   34:   computations/_shared/canonical_constants.py\n   35:   computations/session-30/s30b_full_spectrum.npz        (per-sector eigenvalues)\n   36:   computations/session-56/s56_gge_fabric.npz            (V_fold, eps_fold)\n   37: \n   38: OUTPUT:\n   39:   computations/session-70/s70_bcs_proximity.npz\n   40:   Section W4-I of session-70 working paper\n   41: \n   42: GATE: BCS-PROXIMITY-70\n   43:   INFO: Report Delta_ind for modes 9-16.\n   44:   Flag if Delta_ind > 0.01 * Delta_BCS (8/992 counting incomplete).\n   45: \"\"\"\n   46: \n   47: import sys"
+    },
+    {
+      "anchor_id": "prov_1209",
+      "anchor_type": "data_provenance",
+      "name": "bell_gge",
+      "script_path": "session-70/s70_bell_gge.py",
+      "session": "s70",
+      "inputs": "s52_bogoliubov_amp.npz, s56_gge_fabric.npz, s69_bell_gge.npz",
+      "outputs": "session-70/s70_bell_gge.npz, session-70/s70_bell_gge.png",
+      "source_file": "computations/session-70/s70_bell_gge.py",
+      "source_context_30_lines": "  303: # ======================================================================\n  304: # 8. Comparison: S69 (wrong) vs S70 (correct)\n  305: # ======================================================================\n  306: \n  307: print(f\"\\n{'='*72}\")\n  308: print(\"COMPARISON: S69 (WRONG CV FORMULA) vs S70 (CORRECT 2-QUBIT)\")\n  309: print(f\"{'='*72}\")\n  310: \n  311: d69 = np.load('s69_bell_gge.npz', allow_pickle=True)\n  312: print(f\"\\nS69 used: S = 2*sqrt(2)*tanh(r)/sqrt(1+tanh^2(r))\")\n  313: print(f\"  This is the bosonic CV homodyne formula.\")\n  314: print(f\"  Maximum: S -> 2 as r -> inf (NEVER violates Bell).\")\n  315: print(f\"  S69 B2: S = {d69['S_B2'].item():.4f} (below 2)\")\n  316: print(f\"  S69 B3: S = {d69['S_B3'].item():.4f} (below 2)\")\n  317: print(f\"\\nS70 uses: S_max = 2*sqrt(1 + C^2), C = 2|u||v| (Horodecki)\")\n  318: print(f\"  This is the correct fermionic 2-qubit formula.\")\n  319: print(f\"  S > 2 whenever C > 0 (any nonzero pairing).\")"
+    },
+    {
+      "anchor_id": "prov_1210",
+      "anchor_type": "data_provenance",
+      "name": "berry_dennis_gge",
+      "script_path": "session-70/s70_berry_dennis_gge.py",
+      "session": "s70",
+      "inputs": "",
+      "outputs": "session-70/s70_berry_dennis_gge.npz, session-70/s70_berry_dennis_gge.png",
+      "source_file": "computations/session-70/s70_berry_dennis_gge.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s70_berry_dennis_gge.py — Berry-Dennis Velocity Distribution for GGE on CG(24)\n    4: ================================================================================\n    5: \n    6: Gate: BERRY-DENNIS-GGE-70 (Bucher Test 1)\n    7:     PASS: chi^2/ndof < 2 across all three channels, <v> consistent to 30%\n    8:     FAIL: chi^2/ndof > 5 in ANY channel\n    9:     INFO: partial agreement\n   10: \n   11: Physics:"
+    }
+  ]
+}

@@ -21,7 +21,7 @@ You are computing the spectral current j(lambda, tau) and extracting the effecti
 
 **Computation Steps**:
 
-1. **Load data.** Eigenvalues lambda_k(tau) from `tier0-computation/s44_dos_tau.npz` and `tier0-computation/s44_vanhove_track.npz` (van Hove singularity tracking). Import from `tier0-computation/canonical_constants.py`: tau_fold, a2_fold.
+1. **Load data.** Eigenvalues lambda_k(tau) from `computations/s44_dos_tau.npz` and `computations/s44_vanhove_track.npz` (van Hove singularity tracking). Import from `computations/canonical_constants.py`: tau_fold, a2_fold.
 
 2. **Compute eigenvalue velocities.** For each of the 992 eigenvalues, compute the spectral velocity:
 
@@ -33,7 +33,7 @@ You are computing the spectral current j(lambda, tau) and extracting the effecti
 
    j(k, tau) = sum_{k' in sector(k)} d_{k'} * |v_{k'}(tau)| * |beta_{k'}|^2
 
-   where |beta_{k'}|^2 is the Bogoliubov pair creation coefficient from `tier0-computation/s45_kz_ns.npz` and d_{k'} is the Peter-Weyl degeneracy. The spectral current measures the TOTAL pair creation flux at each Casimir wavenumber, weighted by spectral velocity.
+   where |beta_{k'}|^2 is the Bogoliubov pair creation coefficient from `computations/s45_kz_ns.npz` and d_{k'} is the Peter-Weyl degeneracy. The spectral current measures the TOTAL pair creation flux at each Casimir wavenumber, weighted by spectral velocity.
 
 4. **Extract alpha.** Plot j(k) vs k on log-log axes. Fit j(k) ~ k^{alpha_flow}. The velocity weighting |v_k| suppresses van Hove modes (v_k = 0) and enhances fast-moving modes, tilting alpha from the Weyl value of 6 toward a lower value. Report alpha_flow and the goodness of fit.
 
@@ -47,7 +47,7 @@ You are computing the spectral current j(lambda, tau) and extracting the effecti
 
    J(k_lambda, tau) = integral j(lambda, tau) * exp(i k_lambda lambda) d(lambda)
 
-   The power spectrum |J(k_lambda)|^2 at the fold gives the spectral distribution of pair creation in the eigenvalue-frequency domain. This is a Tier 1 quantity (computed from eigenvalues and their derivatives, no model assumptions).
+   The power spectrum |J(k_lambda)|^2 at the fold gives the spectral distribution of pair creation in the eigenvalue-frequency domain. This is a Level 1 quantity (computed from eigenvalues and their derivatives, no model assumptions).
 
 7. **Van Hove correlation.** At the fold, which fraction of the total spectral current comes from modes within 10% of a van Hove singularity? If this fraction is > 50%, the van Hove structure dominates the spectral flow and alpha_flow is determined by the distribution of van Hove singularities across Casimir wavenumbers.
 
@@ -62,16 +62,16 @@ You are computing the spectral current j(lambda, tau) and extracting the effecti
 - FAIL: alpha_flow outside [0.5, 2.0]
 
 **Input files**:
-- `tier0-computation/s44_dos_tau.npz` — eigenvalue evolution
-- `tier0-computation/s44_vanhove_track.npz` — van Hove singularity tracking
-- `tier0-computation/s45_kz_ns.npz` — Bogoliubov beta coefficients
-- `tier0-computation/s42_hauser_feshbach.npz` — sector labels, Casimir values
-- `tier0-computation/canonical_constants.py`
+- `computations/s44_dos_tau.npz` — eigenvalue evolution
+- `computations/s44_vanhove_track.npz` — van Hove singularity tracking
+- `computations/s45_kz_ns.npz` — Bogoliubov beta coefficients
+- `computations/s42_hauser_feshbach.npz` — sector labels, Casimir values
+- `computations/canonical_constants.py`
 
 **Output files**:
-- Script: `tier0-computation/s46_spectral_flow_ns.py`
-- Data: `tier0-computation/s46_spectral_flow_ns.npz`
-- Plot: `tier0-computation/s46_spectral_flow_ns.png`
+- Script: `computations/s46_spectral_flow_ns.py`
+- Data: `computations/s46_spectral_flow_ns.npz`
+- Plot: `computations/s46_spectral_flow_ns.png`
 
 **Working paper section**: W2-R1
 
@@ -108,7 +108,7 @@ where z_a are the Richardson parameters (pair rapidities) and epsilon_k are the 
 
 **Computation Steps**:
 
-1. **Load data.** From `tier0-computation/s42_gge_energy.npz`: GGE occupation numbers, energies, Richardson-Gaudin parameters. From `tier0-computation/s42_hauser_feshbach.npz`: eigenvalues, pairing interaction V_{kl}, sector labels, K_7 charges.
+1. **Load data.** From `computations/s42_gge_energy.npz`: GGE occupation numbers, energies, Richardson-Gaudin parameters. From `computations/s42_hauser_feshbach.npz`: eigenvalues, pairing interaction V_{kl}, sector labels, K_7 charges.
 
 2. **Construct the Richardson-Gaudin Hamiltonian.** For the 8-mode system (4 B2 + 1 B1 + 3 B3):
 
@@ -143,16 +143,16 @@ where z_a are the Richardson parameters (pair rapidities) and epsilon_k are the 
 **Pre-registered gate**: Subsumes HOSE-COUNT-46 (same alpha counting, different method). Same criteria: alpha in [0.8, 1.2].
 
 **Input files**:
-- `tier0-computation/s42_gge_energy.npz` — GGE state, occupations, temperatures
-- `tier0-computation/s42_hauser_feshbach.npz` — eigenvalues, V matrix, sector labels
-- `tier0-computation/canonical_constants.py`
+- `computations/s42_gge_energy.npz` — GGE state, occupations, temperatures
+- `computations/s42_hauser_feshbach.npz` — eigenvalues, V matrix, sector labels
+- `computations/canonical_constants.py`
 - `researchers/Landau/16_1963_Richardson_Exact_Eigenstates_Pairing_Hamiltonian.md`
 - `researchers/Landau/17_2004_Dukelsky_Pittel_Sierra_Richardson_Gaudin_Review.md`
 
 **Output files**:
-- Script: `tier0-computation/s46_rg_pair_transfer.py`
-- Data: `tier0-computation/s46_rg_pair_transfer.npz`
-- Plot: `tier0-computation/s46_rg_pair_transfer.png`
+- Script: `computations/s46_rg_pair_transfer.py`
+- Data: `computations/s46_rg_pair_transfer.npz`
+- Plot: `computations/s46_rg_pair_transfer.png`
 
 **Working paper section**: W2-R2
 
@@ -182,7 +182,7 @@ The key S45 result: epsilon_V = 0.016 at the q-theory equilibrium (from QNM-NS-4
 
 **Computation Steps**:
 
-1. **Load data.** From `tier0-computation/s45_qnm_ns.npz`: epsilon_V at tau* = 0.209, potential landscape. From `tier0-computation/s45_qtheory_bcs.npz`: q-theory crossing profile rho_gs(tau). From `tier0-computation/s44_friedmann_bcs_audit.npz`: Friedmann equation parameters, H(tau), v(tau). Import from `tier0-computation/canonical_constants.py`: H_fold, v_terminal, tau_fold, G_DeWitt.
+1. **Load data.** From `computations/s45_qnm_ns.npz`: epsilon_V at tau* = 0.209, potential landscape. From `computations/s45_qtheory_bcs.npz`: q-theory crossing profile rho_gs(tau). From `computations/s44_friedmann_bcs_audit.npz`: Friedmann equation parameters, H(tau), v(tau). Import from `computations/canonical_constants.py`: H_fold, v_terminal, tau_fold, G_DeWitt.
 
 2. **Equation of motion near tau*.** The modulus tau obeys the Klein-Gordon equation in the FRW background:
 
@@ -238,15 +238,15 @@ The key S45 result: epsilon_V = 0.016 at the q-theory equilibrium (from QNM-NS-4
 - FAIL: N_e < 0.1
 
 **Input files**:
-- `tier0-computation/s45_qnm_ns.npz` — epsilon_V at tau*
-- `tier0-computation/s45_qtheory_bcs.npz` — rho_gs(tau) profile
-- `tier0-computation/s44_friedmann_bcs_audit.npz` — Friedmann parameters
-- `tier0-computation/canonical_constants.py`
+- `computations/s45_qnm_ns.npz` — epsilon_V at tau*
+- `computations/s45_qtheory_bcs.npz` — rho_gs(tau) profile
+- `computations/s44_friedmann_bcs_audit.npz` — Friedmann parameters
+- `computations/canonical_constants.py`
 
 **Output files**:
-- Script: `tier0-computation/s46_quasistatic_ns.py`
-- Data: `tier0-computation/s46_quasistatic_ns.npz`
-- Plot: `tier0-computation/s46_quasistatic_ns.png`
+- Script: `computations/s46_quasistatic_ns.py`
+- Data: `computations/s46_quasistatic_ns.npz`
+- Plot: `computations/s46_quasistatic_ns.png`
 
 **Working paper section**: W2-R3
 
@@ -286,7 +286,7 @@ Each direction corresponds to a scalar field. The spectral action S(D + A) expan
 
 **Computation Steps**:
 
-1. **Load data.** From `tier0-computation/s42_hauser_feshbach.npz`: eigenvalues, commutant structure, algebra generators. From `tier0-computation/s45_weak_order_one.npz`: order-one violation data, Omega^1_D dimension count. Import from `tier0-computation/canonical_constants.py`.
+1. **Load data.** From `computations/s42_hauser_feshbach.npz`: eigenvalues, commutant structure, algebra generators. From `computations/s45_weak_order_one.npz`: order-one violation data, Omega^1_D dimension count. Import from `computations/canonical_constants.py`.
 
 2. **Construct the algebra A_F and its inner fluctuations.** The finite algebra is A_F = C(SU(3)/Ad, M_16(C)) (the algebra of 16x16 matrix-valued functions on SU(3) modulo adjoint action). The inner fluctuations at the (1,0) representation are:
 
@@ -324,17 +324,17 @@ Each direction corresponds to a scalar field. The spectral action S(D + A) expan
 - FAIL: All directions massive at all tau
 
 **Input files**:
-- `tier0-computation/s42_hauser_feshbach.npz` — eigenvalues, algebra structure
-- `tier0-computation/s45_weak_order_one.npz` — order-one violation data
-- `tier0-computation/canonical_constants.py`
+- `computations/s42_hauser_feshbach.npz` — eigenvalues, algebra structure
+- `computations/s45_weak_order_one.npz` — order-one violation data
+- `computations/canonical_constants.py`
 - `researchers/Connes/23_2013_Chamseddine_Connes_vSuijlekom_Inner_Fluctuations.md`
 - `researchers/Connes/24_2013_Chamseddine_Connes_vSuijlekom_Pati_Salam.md`
 - `researchers/Connes/25_2021_Bochniak_Sitarz_Weak_Order_One.md`
 
 **Output files**:
-- Script: `tier0-computation/s46_omega_classify.py`
-- Data: `tier0-computation/s46_omega_classify.npz`
-- Plot: `tier0-computation/s46_omega_classify.png`
+- Script: `computations/s46_omega_classify.py`
+- Data: `computations/s46_omega_classify.npz`
+- Plot: `computations/s46_omega_classify.png`
 
 **Working paper section**: W2-R4
 
@@ -370,7 +370,7 @@ For the Richardson-Gaudin integrable model (which this system is, by S38), the e
 
 **Computation Steps**:
 
-1. **Load data.** From `tier0-computation/s42_hauser_feshbach.npz`: eigenvalues, V matrix, BCS coherence factors (u_k, v_k). From `tier0-computation/s42_gge_energy.npz`: exact occupation numbers from ED. Import from `tier0-computation/canonical_constants.py`: E_cond, E_cond_ED_8mode, Delta_0_GL.
+1. **Load data.** From `computations/s42_hauser_feshbach.npz`: eigenvalues, V matrix, BCS coherence factors (u_k, v_k). From `computations/s42_gge_energy.npz`: exact occupation numbers from ED. Import from `computations/canonical_constants.py`: E_cond, E_cond_ED_8mode, Delta_0_GL.
 
 2. **BCS solution.** At the fold (tau = 0.19), solve the BCS gap equation for the 8-mode system (4 B2 + 1 B1 + 3 B3). Record the BCS coherence factors (u_k, v_k), gap Delta_BCS, and condensation energy E_cond_BCS.
 
@@ -407,15 +407,15 @@ For the Richardson-Gaudin integrable model (which this system is, by S38), the e
 **Pre-registered gate**: No explicit gate. Diagnostic: report delta_tau and whether tau* shifts toward tau_fold = 0.190.
 
 **Input files**:
-- `tier0-computation/s42_hauser_feshbach.npz` — eigenvalues, V matrix
-- `tier0-computation/s42_gge_energy.npz` — ED occupations for comparison
-- `tier0-computation/s45_qtheory_bcs.npz` — BCS crossing at 0.209
-- `tier0-computation/canonical_constants.py`
+- `computations/s42_hauser_feshbach.npz` — eigenvalues, V matrix
+- `computations/s42_gge_energy.npz` — ED occupations for comparison
+- `computations/s45_qtheory_bcs.npz` — BCS crossing at 0.209
+- `computations/canonical_constants.py`
 
 **Output files**:
-- Script: `tier0-computation/s46_number_projected_bcs.py`
-- Data: `tier0-computation/s46_number_projected_bcs.npz`
-- Plot: `tier0-computation/s46_number_projected_bcs.png`
+- Script: `computations/s46_number_projected_bcs.py`
+- Data: `computations/s46_number_projected_bcs.npz`
+- Plot: `computations/s46_number_projected_bcs.png`
 
 **Working paper section**: W2-R5
 

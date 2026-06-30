@@ -1,0 +1,70 @@
+T3-S24A-EIGENVALUE-RATIOS: FAIL -- value=10.147pct_dev scheme=closest_ratio_vs_phi_paasch convention=ascending_sorted_adjacent_ratios L_max=3 sha256=9581cff300a7b239dd07720009935a92fed0d31c590f43a5fa3f72dfdd1ac37f
+
+S81-CANONICAL  gate=T3-S24A-EIGENVALUE-RATIOS  verdict=FAIL  script_sha256=9581cff300a7b239dd07720009935a92fed0d31c590f43a5fa3f72dfdd1ac37f
+
+Gate            : T3-S24A-EIGENVALUE-RATIOS
+Upstream gate   : R-1 (24a prompt IV; "R in [17, 66] from H_eff diagonalization")
+Session origin  : S24a (2026-02-21) — CLOSED as FAIL (no phi_paasch crossings)
+Re-run session  : S81 (T3 canonical)
+
+Verdict         : FAIL (reproduces S24a R-1)
+Evidence (pre-registered)
+  tight crossings dev < 0.1% : 0
+  loose crossings dev < 1.0% : 0
+  closest ratio              : tau=0.500  n=9  r=1.376166  dev=10.147%
+
+Substitution chain (direction claim: phi_paasch crossings)
+  Step 1 def   : r_n(tau) = |lambda_{n+1}(tau)| / |lambda_n(tau)|,
+                 with |lambda_0| <= |lambda_1| <= ... <= |lambda_15|
+  Step 2 sub   : monotone-ascending sort ==> r_n >= 1 for all n,tau
+                 (verified: min r = 1.000 at tau=0 where first 5 |lambda| = sqrt(3)/2)
+  Step 3 simp  : CROSS_{n,tau} := 1 iff |r_n(tau) - phi_paasch|/phi_paasch < 0.001
+  Step 4 dir   : verdict = PASS if any(CROSS) else FAIL
+  Numerical    : sum(CROSS) = 0  ==>  FAIL
+
+Inputs (SHA-256, 64-char)
+  s23a_kosmann_singlet.npz  : ef547e583cf73e91b3f0d26e1ba14ee74c28d3718ee08dde12e0f17ad2775214
+  canonical_constants.py    : 68b50cd325d2cc8c63b775da3b6b92f538da582bee44c5d906c81259f24dd12f
+  orig s24a_eigenvalue_ratios.py (tier0-archive) :
+                              64240ef8ad9c37122dfa650068486e364de1c6c57cf8cce1accc9ee1a585c85d
+
+Outputs (SHA-256, 64-char)
+  s24a_eigenvalue_ratios_t3.py  : 9581cff300a7b239dd07720009935a92fed0d31c590f43a5fa3f72dfdd1ac37f
+  s24a_eigenvalue_ratios_t3.npz : 2e6929adf3f06fdcf07f7477d53ae1df26213e3ba9d1ebff6123fd0b6f3c41c6
+  s24a_eigenvalue_ratios_t3.png : 910a6f3716876d24b83d178d5c666830a9462e81a8659d0d8eec35cb459266eb
+
+Pins
+  phi_paasch     : 1.531580                (canonical, PROVEN S12 machine epsilon)
+  tau_fold       : 0.19                    (canonical, S42 constants_snapshot)
+  tau grid       : {0, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.5}  (from s23a npz)
+  L_max          : 3 (structural — inherited from s23a singlet projection;
+                      16 eigenvalues = dim(singlet sector) at L_max=3)
+  TOL_RATIO      : 0.001 (0.1%, gate threshold)
+  TOL_LOOSE      : 0.01  (1.0%, diagnostic only)
+
+Compute environment
+  python         : phonon-exflation-sim/.venv312/Scripts/python.exe (3.12)
+  heavy linalg   : NONE — post-process of pre-computed 16x9 eigenvalue table
+  GPU            : not used (no matrix diagonalization in this script)
+  OMP_NUM_THREADS: 8
+
+Canonical-constants compliance
+  Framework constants imported : phi_paasch, tau_fold
+  Hardcodes                    : none (all computed intermediates tagged # (local))
+
+Cross-check vs prior S24a run
+  Same input NPZ SHA            : YES (ef547e...5214)
+  Same gate outcome             : YES (FAIL; no crossings at 0.1% or 1%)
+  Prior closest ratio (S24a)    : not archived in numeric form; this run
+                                  records tau=0.5, n=9, r=1.376166, dev=10.15%
+  Smallest ratios (abs-sorted)  : r_0..r_4 = 1.000 at tau=0 (5-fold degeneracy
+                                  of |lambda| = sqrt(3)/2 confirms singlet-sector
+                                  structure).
+
+Structural interpretation (not a gate claim)
+  phi_paasch = 1.531580 does NOT appear as a neighbor-ratio in the 16-dim
+  singlet sector of the Kosmann pairing eigenstructure at any tau on the
+  S23a grid. The Paasch mass ratio is a property of the spectral zeta
+  moment ratios (PROVEN S12), not of raw neighbor-ratios in |eigenvalue|
+  on this sector. FAIL here is therefore STRUCTURALLY EXPECTED and
+  consistent with the S24a R-1 classification.

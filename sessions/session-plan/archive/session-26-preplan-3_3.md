@@ -3,9 +3,9 @@
 **Date**: 2026-02-22
 **Author**: Baptista Spacetime Analyst
 **Branch**: Valar-1
-**Computation Script**: `tier0-computation/s26_baptista_bridge.py`
-**Data Output**: `tier0-computation/s26_baptista_bridge.npz`
-**Diagnostic Plot**: `tier0-computation/s26_baptista_bridge.png`
+**Computation Script**: `computations/s26_baptista_bridge.py`
+**Data Output**: `computations/s26_baptista_bridge.npz`
+**Diagnostic Plot**: `computations/s26_baptista_bridge.png`
 
 ---
 
@@ -358,7 +358,7 @@ Coefficients from Gilkey's theorem with $E = R/4$ (Lichnerowicz), $\dim_S = 16$,
 - (5R^2 - 2|Ric|^2 + 2K) * 16 = 80R^2 - 32|Ric|^2 + 32K
 - Total: 500R^2 - 32|Ric|^2 - 28K
 
-Ref: Derived in `tier0-computation/s23c_fiber_integrals.py` (Session 23c), lines 382-429
+Ref: Derived in `computations/s23c_fiber_integrals.py` (Session 23c), lines 382-429
 
 ### A.6 Spectral Action Modulus Potential
 

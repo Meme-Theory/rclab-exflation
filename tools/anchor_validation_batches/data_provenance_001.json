@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 1,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1",
+      "anchor_type": "data_provenance",
+      "name": "kosmann_singlet",
+      "script_path": "session-23/s23a_kosmann_singlet.py",
+      "session": "s23a",
+      "inputs": "",
+      "outputs": "session-23/s23a_kosmann_singlet.npz",
+      "source_file": "computations/session-23/s23a_kosmann_singlet.py",
+      "source_context_30_lines": "    1: \"\"\"\n    2: S23A-KOSMANN-SINGLET:  re-run of s23a_kosmann_singlet.py\n    3: ================================================================\n    4: \n    5: Original: computations/session-23/s23a_kosmann_singlet.py (SHA-256 head 16: 412f8b65afaa0b60)\n    6: \n    7: Purpose\n    8: -------\n    9: Reproduce the S23a Kosmann spinorial correction K_a in the (0,0) singlet\n   10: sector of the Jensen-deformed SU(3) under S81 canonical discipline:"
+    },
+    {
+      "anchor_id": "prov_2",
+      "anchor_type": "data_provenance",
+      "name": "pfaffian_corrected_j",
+      "script_path": "session-35/s35_pfaffian_corrected_j.py",
+      "session": "s35",
+      "inputs": "",
+      "outputs": "session-35/s35_pfaffian_corrected_j.npz",
+      "source_file": "computations/session-35/s35_pfaffian_corrected_j.py",
+      "source_context_30_lines": "    1: \"\"\"\n    2: S35-PFAFFIAN-CORRECTED-J:  re-run of s35_pfaffian_corrected_j.py\n    3: ========================================================================\n    4: \n    5: Original: computations/session-35/s35_pfaffian_corrected_j.py\n    6:   SHA-256: f2317ea9ac5053e7d5159afa4b55cb2a0064014e67be05610deb409060df7138\n    7: \n    8: Purpose\n    9: -------\n   10: Reproduce the S35 Pfaffian with corrected real-structure J (Cliff(8) ON"
+    },
+    {
+      "anchor_id": "prov_3",
+      "anchor_type": "data_provenance",
+      "name": "w1_13_element_2_oe_form_calibration_entry",
+      "script_path": "_shared/s90_w1_13_element_2_oe_form_calibration_entry.py",
+      "session": "s90",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/_shared/s90_w1_13_element_2_oe_form_calibration_entry.py",
+      "source_context_30_lines": "<name 'w1_13_element_2_oe_form_calibration_entry' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"S90 W1-13 — Cross-pillar bridge corpus §2 Element-2 OE-form K=3 calibration entry.\n    3: \n    4: Per `sessions/session-plan/session-90-plan-w1.md` §W1-13.\n    5: \n    6: This script performs the artifact-existence + regex-match verification for the\n    7: S90 W1-13 METHODOLOGY-class landing:\n    8: \n    9:   1. Verifies that orchestrator-direct-edit of `cross-pillar-bridge-corpus.md §2`\n   10:      has landed row #3 (W7c emission #3 lexical + audit-pattern-documentation\n   11:      paragraph + K=2 → K=3 header advancement).\n   12:   2. Applies the [VERIFY] trigger — regex match of the W7c emission #3 lexical\n   13:      `∫_BZ d^d k Tr(P_n-s-substrate-distance-1) · ρ_BZ(k; τ_fold)` against the\n   14:      positive-match regex `(?:\\\\int|∫|\\\\sum|∑).*?(?:d.*?)?Tr.*?\\\\([ΠP][_^].*?\\\\)`\n   15:      (audit-script implementation; F-image of the rule's canonical pattern\n   16:      `\\\\int.*d.*Tr.*\\\\([ΠP]_[a-z0-9_-]+\\\\)`).\n   17:   3. Appends W1-13 row to `methodology-wave-allowlist.md`.\n   18:   4. Appends W1-13 rationale to `methodology-wave-instances.md`.\n   19:   5. Emits canonical verdict line + dual-SHA companion row at\n   20:      `computations/session-90/s90_gate_verdicts.txt`.\n   21: \n   22: Per `wave-classification.md §\"Dual-SHA closure for METHODOLOGY-class\"`:\n   23:   - audit_sha256 = SHA-256 over JSON-serialized input-pin map (sorted keys).\n   24:   - content_sha256 = SHA-256 over post-edit `cross-pillar-bridge-corpus.md`\n   25:     (the rule-file diff target).\n   26: \"\"\"\n   27: from __future__ import annotations\n   28: \n   29: import hashlib\n   30: import json"
+    },
+    {
+      "anchor_id": "prov_4",
+      "anchor_type": "data_provenance",
+      "name": "w1_14_deferred_pending_clause_landing",
+      "script_path": "_shared/s90_w1_14_deferred_pending_clause_landing.py",
+      "session": "s90",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/_shared/s90_w1_14_deferred_pending_clause_landing.py",
+      "source_context_30_lines": "<name 'w1_14_deferred_pending_clause_landing' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"S90 W1-14 — Deferred-pending rule-file enforcement clause extension.\n    3: \n    4: Per `sessions/session-plan/session-90-plan-w1.md` §W1-14.\n    5: \n    6: This script performs the artifact-existence verification + 3 atomic appends\n    7: for the S90 W1-14 METHODOLOGY-class landing:\n    8: \n    9:   1. Verifies that orchestrator-direct-edits of:\n   10:        - `.claude/rules/cross-pillar-bridge-anatomy.md §\"Level-2 sub-class\"`\n   11:        - `computations/_shared/_cross_pillar_bridge_audit.py`\n   12:        - `sessions/framework/registry/cross-pillar-bridge-corpus.md §1`\n   13:      have all landed with required markers.\n   14:   2. Runs the self-test driver `s90_w1_deferred_pending_audit_test.py`\n   15:      (T1+T2+T3 positive, T4 negative; all 4 must PASS).\n   16:   3. Appends W1-14 row to `methodology-wave-allowlist.md`.\n   17:   4. Appends W1-14 rationale to `methodology-wave-instances.md`.\n   18:   5. Emits canonical verdict line + dual-SHA companion row at\n   19:      `computations/session-90/s90_gate_verdicts.txt`.\n   20: \n   21: Per `wave-classification.md §\"Dual-SHA closure for METHODOLOGY-class\"`:\n   22:   - audit_sha256 = SHA-256 over JSON-serialized input-pin map (sorted keys).\n   23:   - content_sha256 = SHA-256 over post-edit `cross-pillar-bridge-anatomy.md`\n   24:     (the primary rule-file diff target).\n   25: \"\"\"\n   26: from __future__ import annotations\n   27: \n   28: import hashlib\n   29: import json\n   30: import subprocess"
+    },
+    {
+      "anchor_id": "prov_5",
+      "anchor_type": "data_provenance",
+      "name": "w1_15_fwd_c1_template_inherited_retrofit",
+      "script_path": "_shared/s90_w1_15_fwd_c1_template_inherited_retrofit.py",
+      "session": "s90",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/_shared/s90_w1_15_fwd_c1_template_inherited_retrofit.py",
+      "source_context_30_lines": "<name 'w1_15_fwd_c1_template_inherited_retrofit' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"S90 W1-15 — FWD-C1 convention-tag retrofit via Option A SUPERSEDES protocol.\n    3: \n    4: Per `sessions/session-plan/session-90-plan-w1.md` §W1-15 (CF-15, W-6 CF-4).\n    5: \n    6: This script performs the artifact-existence verification + Option A SUPERSEDES\n    7: verdict-line emission for the S90 W1-15 METHODOLOGY-class landing:\n    8: \n    9:   1. Verifies the post-edit registry state has the deferred-pending re-tag\n   10:      annotation on §VII.AU.OP-PROJ.\n   11:   2. Verifies the post-edit S89 W5 WP §W5-6 has the retrofit disclosure\n   12:      paragraph appended.\n   13:   3. Verifies CF-14 PASS prereq (deferred-pending sub-class taxonomy must be\n   14:      defined before CF-15 can route §VII.AU into it).\n   15:   4. Appends W1-15 row to `methodology-wave-allowlist.md`.\n   16:   5. Appends W1-15 rationale to `methodology-wave-instances.md`.\n   17:   6. Emits corrective canonical verdict line + dual-SHA companion row at\n   18:      `computations/session-90/s90_gate_verdicts.txt` per Option A SUPERSEDES\n   19:      protocol of `gate-verdicts.md §\"Option A — sig_5 remediation pathway\n   20:      under absolute verdict permanence\"`:\n   21:        - GATE_ID: `S89-W5-6-FWD-C1-RETRY-PARAMETERIZED-SLOPE-A-CANONICAL-RETROFIT`\n   22:        - composite verdict: INFO (same as §W5-6 original — DO NOT alter\n   23:          scientific verdict)\n   24:        - convention: `lizzi-fwd-c1-retry-parameterized-slope-A-canonical-\n   25:          TEMPLATE-INHERITED-FROM-W-5` (NEW suffix indicating substrate-IS\n   26:          Element-1 inheritance from §VII.AF.1.OP-PROJ W-5 calibration baseline)\n   27:        - supersedes: `273efb4b4e24e07bc372812cd53537a95afef9d268e41590109966ee5284cc67`\n   28:          (full 64-char original §W5-6 audit_sha256 at `s89_gate_verdicts.txt:122`)\n   29:        - audit_sha256: NEW (recomputed under new convention tag + new input-pin map)\n   30:        - content_sha256: post-edit `permanent-results-registry.md` (rule-file"
+    },
+    {
+      "anchor_id": "prov_6",
+      "anchor_type": "data_provenance",
+      "name": "w1_16_provisional_k3_tagging_vii_ar",
+      "script_path": "_shared/s90_w1_16_provisional_k3_tagging_vii_ar.py",
+      "session": "s90",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/_shared/s90_w1_16_provisional_k3_tagging_vii_ar.py",
+      "source_context_30_lines": "<name 'w1_16_provisional_k3_tagging_vii_ar' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"S90 W1-16 — PROVISIONAL K=3 tagging of §VII.AR pending CF-W5-2 cross-tier confirmation.\n    3: \n    4: Per `sessions/session-plan/session-90-plan-w1.md` §W1-16 (CF-16; CONNES V.4).\n    5: \n    6: This script performs the artifact-existence verification + [VERIFY] structural-\n    7: precision check + 3 atomic appends + dual-SHA verdict emission for the\n    8: S90 W1-16 METHODOLOGY-class landing:\n    9: \n   10:   1. Verifies the post-edit registry §VII.AR has the PROVISIONAL re-tag\n   11:      paragraph + 3-branch conditional re-audit clause.\n   12:   2. Applies the [VERIFY] structural-precision check on the 3-branch\n   13:      conditional re-audit predicate per plan §W1-16 #10.\n   14:   3. Appends W1-16 row to `methodology-wave-allowlist.md`.\n   15:   4. Appends W1-16 rationale to `methodology-wave-instances.md`.\n   16:   5. Emits canonical verdict line + dual-SHA companion row at\n   17:      `computations/session-90/s90_gate_verdicts.txt`.\n   18: \n   19: Per `wave-classification.md §\"Dual-SHA closure for METHODOLOGY-class\"`:\n   20:   - audit_sha256 = SHA-256 over JSON-serialized input-pin map (sorted keys).\n   21:   - content_sha256 = SHA-256 over post-edit `permanent-results-registry.md`\n   22:     (primary rule-file diff target where §VII.AR was re-tagged).\n   23: \"\"\"\n   24: from __future__ import annotations\n   25: \n   26: import json\n   27: import sys\n   28: from pathlib import Path\n   29: \n   30: ROOT = Path(__file__).resolve().parents[2]"
+    },
+    {
+      "anchor_id": "prov_7",
+      "anchor_type": "data_provenance",
+      "name": "w1_17_vii_ah_stage_2_orthogonality_k2_rule_update",
+      "script_path": "_shared/s90_w1_17_vii_ah_stage_2_orthogonality_k2_rule_update.py",
+      "session": "s90",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/_shared/s90_w1_17_vii_ah_stage_2_orthogonality_k2_rule_update.py",
+      "source_context_30_lines": "<name 'w1_17_vii_ah_stage_2_orthogonality_k2_rule_update' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"S90 W1-17 — §VII.AH Stage-2 substrate-input-orthogonality K-counter K=1 → K=2 rule update.\n    3: \n    4: Per `sessions/session-plan/session-90-plan-w1.md` §W1-17 (CF-17 / CF-W4-7-ORTHOGONALITY-K2).\n    5: \n    6: This script performs the artifact-existence verification + [VERIFY] structural-\n    7: precision check + 3 atomic appends + dual-SHA verdict emission for the\n    8: S90 W1-17 METHODOLOGY-class landing:\n    9: \n   10:   1. Verifies the post-edit `joint-theorem-promotion.md §\"Substrate-input-\n   11:      orthogonality clause\"` reflects K=2 advancement (status \"SUGGESTION at K=2\"\n   12:      + W4-7 §VII.AH audit_sha256 cited).\n   13:   2. Verifies the post-edit `pru-class-corpus.md §15` K-counter table has the\n   14:      K=2 row populated (S89 W4-7 §VII.AH at structural ceiling; FIRST INSTANCE\n   15:      WITHOUT substrate-input-overlap caveat).\n   16:   3. [VERIFY] substitution chain: K_substrate_input_orthogonality = 1 + 1 = 2\n   17:      at structural ceiling.\n   18:   4. Appends W1-17 row to `methodology-wave-allowlist.md`.\n   19:   5. Appends W1-17 rationale to `methodology-wave-instances.md`.\n   20:   6. Emits canonical verdict line + dual-SHA companion row at\n   21:      `computations/session-90/s90_gate_verdicts.txt`.\n   22: \n   23: Per `wave-classification.md §\"Dual-SHA closure for METHODOLOGY-class\"`:\n   24:   - audit_sha256 = SHA-256 over JSON-serialized input-pin map (sorted keys).\n   25:   - content_sha256 = SHA-256 over post-edit `joint-theorem-promotion.md`\n   26:     (primary rule-file diff target where the K-counter status was updated).\n   27: \"\"\"\n   28: from __future__ import annotations\n   29: \n   30: import json"
+    },
+    {
+      "anchor_id": "prov_8",
+      "anchor_type": "data_provenance",
+      "name": "w1_7_observable_naming_history_landing",
+      "script_path": "_shared/s90_w1_7_observable_naming_history_landing.py",
+      "session": "s90",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/_shared/s90_w1_7_observable_naming_history_landing.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s90_w1_7_observable_naming_history_landing.py — S90 W1-7 substantive landing.\n    4: \n    5: Gate: S90-OBSERVABLE-NAMING-HISTORY-VS-STRUCTURAL-RULE-SUB-CLAUSE (CF-LZ-5)\n    6: \n    7: Lands the 4-element sub-clause \"Observable-Naming-History vs Parse-Tree-Structure\"\n    8: under .claude/rules/cross-pillar-bridge-anatomy.md §\"Algebra-axis orthogonality\n    9: K-counter\" + appends a new §17 to sessions/framework/registry/pru-class-corpus.md\n   10: tracking the K=2 calibration corpus.\n   11: "
+    },
+    {
+      "anchor_id": "prov_9",
+      "anchor_type": "data_provenance",
+      "name": "w1_deferred_pending_audit_test",
+      "script_path": "_shared/s90_w1_deferred_pending_audit_test.py",
+      "session": "s90",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/_shared/s90_w1_deferred_pending_audit_test.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"S90 W1-14 — Self-test driver for `detect_deferred_pending_sub_class()`.\n    3: \n    4: Per `sessions/session-plan/session-90-plan-w1.md` §W1-14 #6 output files:\n    5:     `computations/_shared/s90_w1_deferred_pending_audit_test.py`\n    6:     (self-test against §VII.AV + §VII.AU as positive instances after CF-63\n    7:     W6 lands them).\n    8: \n    9: Since §VII.AV / §VII.AU registry entries are CF-63 W6 carry-forwards (NOT\n   10: yet landed at S90 W1-14 close), this self-test uses synthetic-stub\n   11: fixtures emulating the post-CF-63 entry-text shape with the sub-class\n   12: tags present. T1-T3 are positive tests (one tag / other tag / both);\n   13: T4 is negative test (no tag, e.g., the existing W-5 §VII.AF.1 baseline)."
+    },
+    {
+      "anchor_id": "prov_10",
+      "anchor_type": "data_provenance",
+      "name": "w1_eg1_k_counter_regex_test",
+      "script_path": "_shared/s90_w1_eg1_k_counter_regex_test.py",
+      "session": "s90",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/_shared/s90_w1_eg1_k_counter_regex_test.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s90_w1_eg1_k_counter_regex_test.py — S90 W1-4 self-test + verdict emitter\n    4: ==========================================================================\n    5: \n    6: Verifies the S90 W1-4 K-letter K-counter regex extension to\n    7: `_w25_closing_paragraph_coherence_sweep_audit.py`:\n    8:   - Pre-S90 regex matched ONLY count-keyed semantic patterns:\n    9:       `count\\\\s*[≥>=]\\\\s*\\\\d|threshold\\\\s*=\\\\s*\\\\d|\n   10:        covered_count\\\\s*[≥>=]\\\\s*\\\\d|N_PLANNING_DEFECT_THRESHOLD`\n   11:   - S90 W1-4 extension adds the K-letter K-counter form:"
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 200,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1991",
+      "anchor_type": "data_provenance",
+      "name": "w1c_final_cleanup_vii_slot_allocation",
+      "script_path": "session-86/s86_w1c_final_cleanup_vii_slot_allocation.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-86/s86_w1c_final_cleanup_vii_slot_allocation.py",
+      "source_context_30_lines": "<name 'w1c_final_cleanup_vii_slot_allocation' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S86 W1c-final-cleanup — §VII slot-allocation FINAL CLEANUP verification\n    4: =======================================================================\n    5: \n    6: Gate: S86-VII-SLOT-ALLOCATION-FINAL-CLEANUP ([VERIFY])\n    7: \n    8: Purpose\n    9: -------\n   10: Verify that the central §VII Slot Allocation Table at the top of\n   11: `sessions/permanent-results-registry.md` reflects the §VII.Y → §VII.S.C-eta\n   12: + §VII.S.C-theta sub-row migration applied during S86 W1c Task #13. After\n   13: the prior reconciliation gate (S86-VII-SLOT-ALLOCATION-RECONCILIATION,\n   14: verdict line 87, audit_sha256=ea640d42baa94898) drove `_vii_slot_allocation_audit.py`\n   15: from FAIL value=2 to PASS value=0, this gate is the post-Task-#13 mirror\n   16: sweep verifier: the audit must remain at PASS value=0 after the §VII.Y\n   17: header was DEPRECATED-redirected and §VII.S.C-eta + §VII.S.C-theta sub-row\n   18: headers were promoted to canonical.\n   19: \n   20: Spawn-prompt premise vs observed state\n   21: --------------------------------------\n   22: The Task #14 spawn prompt anticipated value=8 (table out-of-sync with\n   23: post-Task-#13 registry). The live audit re-run shows value=0 (4 Class-A\n   24: matches; no Class B/C/D/E defects). Investigation: Task #13 (the §VII.Y\n   25: reconciliation) already mirrored the four required entries into the\n   26: central allocation table:\n   27: \n   28:   - line 67: §VII.Y deprecated-stub redirect entry (THM)\n   29:   - line 68: §VII.S.C-eta sub-row entry (THM)\n   30:   - line 69: §VII.S.C-theta sub-row entry (CAT)"
+    },
+    {
+      "anchor_id": "prov_1992",
+      "anchor_type": "data_provenance",
+      "name": "w1c_followup_vii_slot_reconciliation",
+      "script_path": "session-86/s86_w1c_followup_vii_slot_reconciliation.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-86/s86_w1c_followup_vii_slot_reconciliation.py",
+      "source_context_30_lines": "  112: L_MAX = \"N/A\"  # (local)\n  113: \n  114: REGISTRY_PATH = PROJECT_ROOT / \"sessions\" / \"permanent-results-registry.md\"  # (local)\n  115: PLAN_W1A = PROJECT_ROOT / \"sessions\" / \"session-plan\" / \"session-86-plan-w1a.md\"  # (local)\n  116: PLAN_W1C = PROJECT_ROOT / \"sessions\" / \"session-plan\" / \"session-86-plan-w1c.md\"  # (local)\n  117: AUDIT_SCRIPT = resolve_script(None, '_vii_slot_allocation_audit.py')  # (local)\n  118: VENV_PYTHON = PROJECT_ROOT / \"phonon-exflation-sim\" / \".venv312\" / \"Scripts\" / \"python.exe\"  # (local)\n  119: VERDICT_TXT = resolve_output(86, f's86_gate_verdicts.txt')  # (local)\n  120: JSON_OUT = resolve_output(86, f's86_w1c_followup_vii_slot_reconciliation.json')  # (local)\n  121: CANONICAL_PATH = resolve_script(None, 'canonical_constants.py')  # (local)\n  122: \n  123: INPUT_FILES = [  # (local)\n  124:     REGISTRY_PATH,\n  125:     PLAN_W1A,\n  126:     PLAN_W1C,\n  127:     AUDIT_SCRIPT,\n  128:     CANONICAL_PATH,"
+    },
+    {
+      "anchor_id": "prov_1993",
+      "anchor_type": "data_provenance",
+      "name": "w1c_t10_fi_rd_atlas",
+      "script_path": "session-86/s86_w1c_t10_fi_rd_atlas.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-86/s86_w1c_t10_fi_rd_atlas.py",
+      "source_context_30_lines": "<name 'w1c_t10_fi_rd_atlas' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S86 W1c-T10 — FI/RD Permanent-Registry Composite (60-row atlas)\n    4: ================================================================\n    5: \n    6: Gate: S86-FI-RD-PERMANENT-REGISTRY ([VERIFY])\n    7: \n    8: Pre-registered threshold (plan §W1c-1):\n    9:   PASS: 60-row composite atlas exists at §VII.K-META AND M_connes\n   10:         conflict-check returns 0 unresolved CONFLICT rows\n   11:         (DUAL-CITATION and M_LIZZI-EXCLUSIVE are PASS-compatible).\n   12:   FAIL: any unresolved CONFLICT row (R7 routing did not apply OR\n   13:         produced inconsistent ownership).\n   14:   INFO: composite landed but with N CONFLICT rows that R7 routes\n   15:         deterministically (mapping is well-defined, just non-trivial).\n   16:   Tolerance rule: ABSOLUTE — registry rows are discrete.\n   17: \n   18: Inputs (SHA-256 dual-pinned at runtime):\n   19:   - sessions/session-85/session-85-s7-combined-landscape-lizzi.md  (lizzi S-7 §II.1)\n   20:   - sessions/permanent-results-registry.md                         (S82 §VII.K + §VII.K-DUAL.LAYER)\n   21:   - canonical_constants.py                                         (K_crit, K_crit_BdG)\n   22:   - sessions/session-plan/session-86-plan-w1c.md                   (gate spec)\n   23:   - script bytes (feeds BOTH audit_sha256 and content_sha256)\n   24: \n   25: Output 4-tuple:\n   26:   (value=60_rows_landed_with_<N>_unresolved_conflicts,\n   27:    scheme=registry-write,\n   28:    convention=R7-single-name-conflation,\n   29:    L_max=N/A)\n   30: "
+    },
+    {
+      "anchor_id": "prov_1994",
+      "anchor_type": "data_provenance",
+      "name": "w2_c10_analytic_zeta_test",
+      "script_path": "session-86/s86_w2_c10_analytic_zeta_test.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-86/s86_w2_c10_analytic_zeta_test.py",
+      "source_context_30_lines": "<name 'w2_c10_analytic_zeta_test' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S86 W2 C10 — S86-MELLIN-CONE-RESIDUE-INFRASTRUCTURE ([VERIFY])\n    4: \n    5: Verification driver for the new analytic_zeta(s, L_max) API\n    6: (see computations/_shared/_analytic_zeta.py).\n    7: \n    8: PASS criteria (plan §W2-2 §9, both must hold):\n    9:   (a) analytic_zeta(s=3, L_max=10) finite (no NaN, no overflow, |result| < 1e10)\n   10:   (b) chi^2/dof <= 5 against direct subtraction across the 5-point sweep\n   11:       s in {2.5, 2.75, 3.0, 3.25, 3.5}, dof = 5 - 1 = 4\n   12: \n   13: INFO: finite at s=3 but chi^2/dof in (5, 20] OR L_max=8 unstable >5% vs L_max=10\n   14: FAIL: non-finite OR chi^2/dof > 20\n   15: \n   16: Cross-checks (plan §6 step 6):\n   17:   (i)   L_max=8 within 5% of L_max=10 value (truncation-stability)\n   18:   (ii)  s=3+0.001i continuous w/ s=3+0i (analyticity)\n   19:   (iii) self-test: analytic_zeta(s = 4 - 0.01, L_max=10) does NOT diverge\n   20:         but is large (near-pole asymptote of the SD residue at s=4)\n   21: \n   22: Classification: GEOMETRIC (the analytic continuation is intrinsic to the\n   23: spectral triple's heat-kernel / zeta-function correspondence; off-pole\n   24: evaluation is a property of D_K's spectral measure).\n   25: \"\"\"\n   26: \n   27: from __future__ import annotations\n   28: import os\n   29: # === Phase 2b X2 transform bootstrap (auto-inserted by tools/_x2_transform_copies.py) ===\n   30: import sys as _x2_sys"
+    },
+    {
+      "anchor_id": "prov_1995",
+      "anchor_type": "data_provenance",
+      "name": "w2_c11_mellin_multiplier_infinite_vector",
+      "script_path": "session-86/s86_w2_c11_mellin_multiplier_infinite_vector.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-86/s86_w2_c11_mellin_multiplier_infinite_vector.py",
+      "source_context_30_lines": "<name 'w2_c11_mellin_multiplier_infinite_vector' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S86 W2-C11 — Mellin Multiplier INFINITE-VECTOR Extension\n    4: ========================================================\n    5: \n    6: Gate: S86-MELLIN-MULTIPLIER-INFINITE-VECTOR-EXTENSION ([VERIFY])\n    7: \n    8: Pre-registered threshold:\n    9:   PASS iff max_rel_err <= 1e-12 across all 8 sample points\n   10:         s in {0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0}\n   11:         AND framework note exists with §1-§4 substantive content (>= 25 lines)\n   12:   FAIL iff any rel_err > 1e-12 OR framework note absent / stub\n   13:   NO INFO band (closed-form analytic identity).\n   14: \n   15: Inputs (SHA-256 dual-pinned at runtime):\n   16:   - canonical_constants.py\n   17:   - script bytes\n   18:   (No D_K cache; no upstream .npz; closed-form symbolic verification.)\n   19: \n   20: Output 4-tuple:\n   21:   (value=max_rel_err, scheme=analytic-Mellin, convention=closed-form-verification, L_max=NA)\n   22: \n   23: Classification: GEOMETRIC\n   24: \n   25: METHODOLOGY\n   26: -----------\n   27: Computes the analytic Mellin transform of the Zubarev kernel\n   28: f_Z(x) = exp(-x / Lambda_Z^2) at 8 sample points s in {0.5, 1.0, ..., 4.0}\n   29: via mp.quad at workdps=50, and compares against the closed-form identity\n   30: M[f_Z](s) = Lambda_Z^{2s} * Gamma(s) (Erdelyi 1953; substitution u = x/Lambda_Z^2)."
+    },
+    {
+      "anchor_id": "prov_1996",
+      "anchor_type": "data_provenance",
+      "name": "w2_c12_cluster_span_self_test",
+      "script_path": "session-86/s86_w2_c12_cluster_span_self_test.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-86/s86_w2_c12_cluster_span_self_test.py",
+      "source_context_30_lines": "   88: # Pre-registered tolerance (plan §10)\n   89: PASS_REL_ERR_TOL = 1e-15                                           # (local) machine-epsilon floor\n   90: W0_3_REPRODUCE_TOL = 1e-15                                         # (local) cross-check (i)\n   91: \n   92: INPUT_FILES = [\n   93:     SCRIPT_DIR / \"canonical_constants.py\",\n   94:     SCRIPT_DIR / \"_cluster_span_extract.py\",\n   95:     SCRIPT_DIR / \"s84_spectrum_cache_L12_tau019.npz\",\n   96:     SCRIPT_DIR / \"s86_w2_c12_cluster_span_self_test.py\",\n   97:     SCRIPT_DIR / \"s85_w0_cc5_lmax_asymptotic_refit.py\",\n   98: ]\n   99: \n  100: \n  101: # -----------------------------------------------------------------\n  102: # Section 2 - SHA-256 input pins + closure hash\n  103: # -----------------------------------------------------------------\n  104: def sha256_of(path: Path) -> str:"
+    },
+    {
+      "anchor_id": "prov_1997",
+      "anchor_type": "data_provenance",
+      "name": "w2_c9_mellin_heat_kernel_infra",
+      "script_path": "session-86/s86_w2_c9_mellin_heat_kernel_infra.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-86/s86_w2_c9_mellin_heat_kernel_infra.py",
+      "source_context_30_lines": "  173: PASS_CHI2_MAX  = 5.0                            # (local)\n  174: INFO_CHI2_MAX  = 20.0                           # (local)\n  175: \n  176: # Cross-checks (plan §6)\n  177: CC_TOL_A2_F4    = 1e-3                          # (local) CC1\n  178: CC_TOL_CONTOUR  = 1e-12                         # (local) CC3\n  179: \n  180: # Output paths\n  181: OUT_SCRIPT  = resolve_script(86, 's86_w2_c9_mellin_heat_kernel_infra.py')\n  182: OUT_NPZ     = resolve_output(86, 's86_w2_c9_residues.npz')\n  183: OUT_PNG     = resolve_output(86, 's86_w2_c9_compare.png')\n  184: VERDICT_TXT = resolve_output(86, 's86_gate_verdicts.txt')\n  185: \n  186: # Inputs to pin\n  187: CACHE_PATH = resolve_output(84, 's84_spectrum_cache_L12_tau019.npz')\n  188: INPUT_FILES = [\n  189:     resolve_script(None, 'canonical_constants.py'),"
+    },
+    {
+      "anchor_id": "prov_1998",
+      "anchor_type": "data_provenance",
+      "name": "w3_pre_reg_inc_closure.frozen-9252e6710fca3f7c",
+      "script_path": "session-86/s86_w3_pre_reg_inc_closure.frozen-9252e6710fca3f7c.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-86/s86_w3_pre_reg_inc_closure.frozen-9252e6710fca3f7c.py",
+      "source_context_30_lines": "<name 'w3_pre_reg_inc_closure.frozen-9252e6710fca3f7c' not found in source>\n--- file head ---\n    1: # ============================================================================\n    2: # FROZEN SNAPSHOT (post-drift) of s86_w3_pre_reg_inc_closure.py\n    3: # ============================================================================\n    4: #\n    5: # This snapshot pins the CURRENT bytes of s86_w3_pre_reg_inc_closure.py at\n    6: # the time of in-session housekeeping install (S86 1b S-13 follow-up,\n    7: # 2026-04-27).\n    8: #\n    9: # Snapshot tag: frozen-9252e6710fca3f7c\n   10: #   short16 of sha256(s86_w3_pre_reg_inc_closure.py bytes-at-snapshot-time).\n   11: #\n   12: # IMPORTANT -- these are NOT the W3-emission-time bytes.\n   13: #\n   14: #   sha256(snapshot-source-bytes, 2026-04-27) =\n   15: #     9252e6710fca3f7c0617536cdaffdd2ccc436bb12bf440f60ac96fa58ba4c9b0\n   16: #\n   17: #   content_sha256 recorded in the 6 W3 verdict lines of\n   18: #   tier0-computation/s86_gate_verdicts.txt (W3-emission-time, 2026-04-26) =\n   19: #     05071d10327d7f32fe88eb9d63278f3a4f737ca1f87280a3c51a5f8266c01686\n   20: #\n   21: # Per S86 1b S-13 gen-physicist synthesis II.3\n   22: # (sessions/session-86/session-86-1b-s13-gen-physicist.md, lines 106-110), the\n   23: # closure script bytes were edited AFTER the W3 verdicts were emitted. The\n   24: # W3-emission-time bytes are UNRECOVERABLE -- this snapshot pins the\n   25: # script-bytes-at-snapshot-time only.\n   26: #\n   27: # This snapshot purpose:\n   28: #   (1) Preserve the post-drift current state for future audit-reproducibility.\n   29: #   (2) Halt further drift on the s86_w3_pre_reg_inc_closure.py audit trail.\n   30: #   (3) Exemplify the .claude/rules/mechanical-closure-discipline.md"
+    },
+    {
+      "anchor_id": "prov_1999",
+      "anchor_type": "data_provenance",
+      "name": "w3_pre_reg_inc_closure",
+      "script_path": "session-86/s86_w3_pre_reg_inc_closure.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-86/s86_w3_pre_reg_inc_closure.py",
+      "source_context_30_lines": "  218: \n  219: def make_companion_row(gate: dict, value_str: str, audit_sha: str, content_sha: str) -> str:\n  220:     req = \", \".join(gate[\"required\"])                           # (local)\n  221:     return (\n  222:         f\"# audit_sha256 companion row: {gate['gate_id']} \"\n  223:         f\"audit={audit_sha[:16]} content={content_sha[:16]} \"\n  224:         f\"# PRE-REG-INC per session-86-plan-w3.md §X; deferred to S87; \"\n  225:         f\"required prereqs: [{req}]; \"\n  226:         f\"closure_script=computations/session-86/s86_w3_pre_reg_inc_closure.py\\n\"\n  227:     )\n  228: \n  229: \n  230: def update_wp_section(\n  231:     wp_text: str,\n  232:     gate: dict,\n  233:     states: dict[str, tuple[str, str]],\n  234:     value_str: str,"
+    },
+    {
+      "anchor_id": "prov_2000",
+      "anchor_type": "data_provenance",
+      "name": "w4_c28_cutoff_sqrt_adjudication",
+      "script_path": "session-86/s86_w4_c28_cutoff_sqrt_adjudication.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-86/s86_w4_c28_cutoff_sqrt_adjudication.py",
+      "source_context_30_lines": "  171:     a(f\"**Atlas-cardinality cascade outcome**: A_5 PENDING with `cutoff_sqrt` PENDING-EVENT\")\n  172:     a(\"\")\n  173:     a(\"**Provenance**: This file lands the S85 W4 connes x lizzi 3-round workshop\")\n  174:     a(\"convergence on cutoff_sqrt status into a framework-canonical adjudication record.\")\n  175:     a(\"It pre-registers three S86+ numerical gates (A, B, C) at PRDR-grade machinery-\")\n  176:     a(\"pin specs sufficient for any S86+ wave-planner to dispatch without re-deriving.\")\n  177:     a(\"\")\n  178:     a(\"**Input-pin SHAs** (computed at runtime by\")\n  179:     a(\"`computations/session-86/s86_w4_c28_cutoff_sqrt_adjudication.py`):\")\n  180:     a(f\"- workshop_sha (sessions/session-85/workshops/s85-w4-cutoff-sqrt-status.md): `{workshop_sha}`\")\n  181:     a(f\"- registry_sha (sessions/permanent-results-registry.md): `{registry_sha}`\")\n  182:     a(\"\")\n  183:     a(\"---\")\n  184:     a(\"\")\n  185:     # ----------------------------------------------------------------- §1\n  186:     a(\"## §1. Workshop convergence (S85 W4)\")\n  187:     a(\"\")"
+    }
+  ]
+}

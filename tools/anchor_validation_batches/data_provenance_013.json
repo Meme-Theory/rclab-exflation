@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 13,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_121",
+      "anchor_type": "data_provenance",
+      "name": "order_one",
+      "script_path": "session-28/s28b_order_one.py",
+      "session": "s28b",
+      "inputs": "",
+      "outputs": "session-28/s28b_order_one.npz, session-28/s28b_order_one.txt",
+      "source_file": "computations/session-28/s28b_order_one.py",
+      "source_context_30_lines": "   49:     1. Pure spinor 32-dim test: [[gamma_a_32, pi(a_F)_32], o(b_F)_32]\n   50:        (tau-independent, same as s22c Clifford part)\n   51:     2. Full sector test: [[M_Lie, I (x) a_16], I (x) o(b_16)]\n   52:        at tau = 0, 0.15, 0.30 for sectors (0,0), (1,0), (0,1), (1,1)\n   53:     3. Factor-by-factor analysis: which A_F factors contribute to violation\n   54: \n   55: Author: phonon-exflation-sim agent (Session 28b)\n   56: Date: 2026-02-27\n   57: Depends on: s22c_order_one.py (A_F infrastructure), s27_torsion_gap_gate.py (M_Lie builder)\n   58: \"\"\"\n   59: \n   60: import numpy as np\n   61: from numpy.linalg import norm as la_norm\n   62: import sys\n   63: import os\n   64: import time\n   65: "
+    },
+    {
+      "anchor_id": "prov_122",
+      "anchor_type": "data_provenance",
+      "name": "pomeranchuk",
+      "script_path": "session-28/s28b_pomeranchuk.py",
+      "session": "s28b",
+      "inputs": "",
+      "outputs": "session-28/s28b_pomeranchuk.npz, session-28/s28b_pomeranchuk.png",
+      "source_file": "computations/session-28/s28b_pomeranchuk.py",
+      "source_context_30_lines": "   30: DATA SOURCES:\n   31:     - s27_multisector_bcs.npz: 9 sectors, 9 tau values (D_K eigenbasis)\n   32:     - s28a_torsionful_bcs.npz: 8 sectors (no singlet), 10 tau values\n   33:       (both D_can and D_K eigenbases)\n   34: \n   35:     We compute f_0 for BOTH bases to compare the effect of torsion.\n   36: \n   37: OUTPUT:\n   38:     - s28b_pomeranchuk.npz: per-sector f_0 maps\n   39:     - s28b_pomeranchuk.png: heatmap visualization\n   40: \n   41: GATE L-5: Diagnostic. Deepest instability in (3,0)+(0,3) at tau~0.30-0.35\n   42:     would be consistent with BCS interior minimum. Deepest in (2,1) would\n   43:     indicate high-multiplicity drives physics.\n   44: \n   45: Author: phonon-exflation-sim\n   46: Date: 2026-02-27"
+    },
+    {
+      "anchor_id": "prov_123",
+      "anchor_type": "data_provenance",
+      "name": "quasiparticle_weight",
+      "script_path": "session-28/s28b_quasiparticle_weight.py",
+      "session": "s28b",
+      "inputs": "",
+      "outputs": "session-28/s28b_quasiparticle_weight.npz, session-28/s28b_quasiparticle_weight.png",
+      "source_file": "computations/session-28/s28b_quasiparticle_weight.py",
+      "source_context_30_lines": "   37:             contribute to one can-mode)\n   38:     - Spectral distance: ||evals_can - sort(evals_K)||_2 as a sanity check\n   39: \n   40: DATA SOURCE:\n   41:     Reconstructed from dirac_spectrum.py + s27_torsion_gap_gate.py\n   42:     (same infrastructure used in s28a_torsionful_bcs.py)\n   43: \n   44: OUTPUT:\n   45:     - s28b_quasiparticle_weight.npz\n   46:     - s28b_quasiparticle_weight.png\n   47: \n   48: GATE L-6: Diagnostic. Z_min < 0.5 at any tau would indicate strong\n   49:     torsion mixing.\n   50: \n   51: Author: phonon-exflation-sim\n   52: Date: 2026-02-27\n   53: Session: 28b, Computation 4"
+    },
+    {
+      "anchor_id": "prov_124",
+      "anchor_type": "data_provenance",
+      "name": "relaxation_times",
+      "script_path": "session-28/s28b_relaxation_times.py",
+      "session": "s28b",
+      "inputs": "",
+      "outputs": "session-28/s28b_relaxation_times.npz, session-28/s28b_relaxation_times.png",
+      "source_file": "computations/session-28/s28b_relaxation_times.py",
+      "source_context_30_lines": "   35: matplotlib.use('Agg')\n   36: import matplotlib.pyplot as plt\n   37: from pathlib import Path\n   38: \n   39: # ─── Configuration ───────────────────────────────────────────────────────────\n   40: DATA_DIR = Path(__file__).parent\n   41: S27_FILE = DATA_DIR / 's27_multisector_bcs.npz'\n   42: S28A_FILE = DATA_DIR / 's28a_torsionful_bcs.npz'\n   43: OUT_NPZ = DATA_DIR / 's28b_relaxation_times.npz'\n   44: OUT_PNG = DATA_DIR / 's28b_relaxation_times.png'\n   45: \n   46: # Fine tau grid for interpolation\n   47: TAU_FINE = np.linspace(0.0, 0.50, 500)\n   48: \n   49: \n   50: def find_crossings(tau_arr: np.ndarray, mmax_arr: np.ndarray, threshold: float = 1.0):\n   51:     \"\"\""
+    },
+    {
+      "anchor_id": "prov_125",
+      "anchor_type": "data_provenance",
+      "name": "self_consistent_tau_T",
+      "script_path": "session-28/s28b_self_consistent_tau_T.py",
+      "session": "s28b",
+      "inputs": "",
+      "outputs": "session-28/s28b_self_consistent_tau_T.npz, session-28/s28b_self_consistent_tau_T.png",
+      "source_file": "computations/session-28/s28b_self_consistent_tau_T.py",
+      "source_context_30_lines": "  607:     # 4. Gate verdict\n  608:     print(\"\\n\" + \"=\" * 78)\n  609:     verdict, verdict_lines = compute_verdict(analysis, s28a)\n  610:     for line in verdict_lines:\n  611:         print(f\"  {line}\")\n  612:     print(\"=\" * 78)\n  613: \n  614:     # 5. Save data\n  615:     npz_path = os.path.join(SCRIPT_DIR, \"s28b_self_consistent_tau_T.npz\")\n  616:     np.savez_compressed(\n  617:         npz_path,\n  618:         tau_values=s27['tau_values'],\n  619:         mu_ratios=s27['mu_ratios'],\n  620:         F_total=s27['F_total'],\n  621:         any_condensate=analysis['any_condensate'],\n  622:         n_condensed_sectors=analysis['n_condensed_sectors'],\n  623:         n_interior_minima=len(interior_neg),"
+    },
+    {
+      "anchor_id": "prov_126",
+      "anchor_type": "data_provenance",
+      "name": "12d_axioms",
+      "script_path": "session-28/s28c_12d_axioms.py",
+      "session": "s28c",
+      "inputs": "",
+      "outputs": "session-28/s28c_12d_axioms.npz, session-28/s28c_12d_axioms.txt",
+      "source_file": "computations/session-28/s28c_12d_axioms.py",
+      "source_context_30_lines": " 1122:         # Axiom 5\n 1123:         'a5_max_norm': np.array(results['axiom5']['max_norm']),\n 1124:         'a5_axiom5_pass': np.array(results['axiom5']['axiom5_pass']),\n 1125:         # Axiom 7\n 1126:         'a7_betti': np.array([results['axiom7']['betti'][k] for k in range(9)]),\n 1127:         'a7_euler': np.array(results['axiom7']['euler']),\n 1128:     }\n 1129: \n 1130:     npz_path = os.path.join(OUTDIR, 's28c_12d_axioms.npz')\n 1131:     np.savez(npz_path, **save_data)\n 1132:     print(f\"\\n  Data saved: {npz_path}\")\n 1133: \n 1134:     # ==========================================================================\n 1135:     # WRITE VERDICT TEXT\n 1136:     # ==========================================================================\n 1137:     txt_path = os.path.join(OUTDIR, 's28c_12d_axioms.txt')\n 1138:     with open(txt_path, 'w') as f:"
+    },
+    {
+      "anchor_id": "prov_127",
+      "anchor_type": "data_provenance",
+      "name": "bcs_van_hove",
+      "script_path": "session-28/s28c_bcs_van_hove.py",
+      "session": "s28c",
+      "inputs": "",
+      "outputs": "session-28/s28c_bcs_van_hove.npz, session-28/s28c_bcs_van_hove.png, session-28/s28c_bcs_van_hove.txt",
+      "source_file": "computations/session-28/s28c_bcs_van_hove.py",
+      "source_context_30_lines": "   61: # Suppress expected scipy.integrate warnings at tiny Delta during bisection\n   62: warnings.filterwarnings('ignore', category=integrate.IntegrationWarning)\n   63: \n   64: # ============================================================================\n   65: # Configuration\n   66: # ============================================================================\n   67: \n   68: DATA_DIR = Path(r\"C:\\sandbox\\Ainulindale Exflation\\computations\")\n   69: OUTPUT_PREFIX = DATA_DIR / \"s28c_bcs_van_hove\"\n   70: \n   71: # Tau values to analyze (from KC-3 where mu_eff is meaningful)\n   72: TAU_TARGETS = [0.15, 0.25, 0.35, 0.50]\n   73: \n   74: # mu/lambda_min ratios to scan\n   75: MU_RATIOS = np.array([0.0, 0.5, 0.8, 0.9, 0.95, 1.0, 1.05, 1.10, 1.20, 1.50])\n   76: \n   77: # V_eff scan (dimensionless coupling strength)"
+    },
+    {
+      "anchor_id": "prov_128",
+      "anchor_type": "data_provenance",
+      "name": "berry_bcs",
+      "script_path": "session-28/s28c_berry_bcs.py",
+      "session": "s28c",
+      "inputs": "",
+      "outputs": "session-28/s28c_berry_bcs.npz, session-28/s28c_berry_bcs.png",
+      "source_file": "computations/session-28/s28c_berry_bcs.py",
+      "source_context_30_lines": "   47: INPUTS\n   48: ======\n   49: - s27_multisector_bcs.npz: eigenvalues, pairing matrices V, M_max per sector\n   50: - s28a_torsionful_bcs.npz: torsionful BCS data (D_can basis)\n   51: - s28b_relaxation_times.npz: precise tau_c crossing values\n   52: \n   53: OUTPUTS\n   54: =======\n   55: - s28c_berry_bcs.npz: Berry phase per sector, Berry curvature profiles\n   56: - s28c_berry_bcs.png: visualization\n   57: \n   58: Author: phonon-exflation-sim agent\n   59: Date: 2026-02-27\n   60: \"\"\"\n   61: \n   62: import numpy as np\n   63: from scipy.linalg import eigvalsh, eigh"
+    },
+    {
+      "anchor_id": "prov_129",
+      "anchor_type": "data_provenance",
+      "name": "luttinger",
+      "script_path": "session-28/s28c_luttinger.py",
+      "session": "s28c",
+      "inputs": "",
+      "outputs": "session-28/s28c_luttinger.npz, session-28/s28c_luttinger.png, session-28/s28c_luttinger.txt",
+      "source_file": "computations/session-28/s28c_luttinger.py",
+      "source_context_30_lines": "   46: \n   47: Gate KC-4:\n   48:     PASS:  K < 1  (attractive, fermionization possible)\n   49:     CLOSED:  K > 3  (weakly repulsive, no Fermi surface)\n   50: \n   51: Input: computations/session-28/s28c_phonon_tmatrix.npz  (KC-2 output)\n   52:        computations/session-28/s28a_bogoliubov_coefficients.npz  (KC-1 output)\n   53:        computations/session-28/s28b_pomeranchuk.npz  (Pomeranchuk data)\n   54: Output: computations/session-28/s28c_luttinger.npz\n   55:         computations/session-28/s28c_luttinger.txt\n   56: \n   57: Author: phonon-exflation-sim agent\n   58: Date: 2026-02-27\n   59: \"\"\"\n   60: \n   61: import numpy as np\n   62: import matplotlib"
+    },
+    {
+      "anchor_id": "prov_130",
+      "anchor_type": "data_provenance",
+      "name": "periodic_orbits",
+      "script_path": "session-28/s28c_periodic_orbits.py",
+      "session": "s28c",
+      "inputs": "",
+      "outputs": "session-28/s28c_periodic_orbits.npz, session-28/s28c_periodic_orbits.png",
+      "source_file": "computations/session-28/s28c_periodic_orbits.py",
+      "source_context_30_lines": "  991: \n  992:     return multiplicity * A * f_hat\n  993: \n  994: \n  995: # =============================================================================\n  996: # MODULE 9: COMPLETE COMPUTATION\n  997: # =============================================================================\n  998: \n  999: def compute_all_periodic_orbits(tau_values: np.ndarray, f_abc: np.ndarray,\n 1000:                                 verbose: bool = True) -> dict:\n 1001:     \"\"\"\n 1002:     Complete computation of periodic orbits and DG corrections.\n 1003: \n 1004:     1. Find closed geodesics at tau=0 (bi-invariant)\n 1005:     2. Track their deformation to tau > 0\n 1006:     3. Compute stability and Maslov index\n 1007:     4. Evaluate DG corrections to spectral action"
+    }
+  ]
+}

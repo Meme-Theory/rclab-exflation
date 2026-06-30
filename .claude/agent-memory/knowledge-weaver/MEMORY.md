@@ -11,7 +11,7 @@
 2. Synthesis files (`*synthesis*.md`) — canonical PROVEN/CLOSED/OPEN registries
 3. Gate verdict text files (`s*_gate_verdicts.txt`) — raw classifications
 4. Other session minutes — metadata, agent rosters
-5. Tier0 filesystem — provenance triples
+5. Computation filesystem — provenance triples
 
 ## Extraction Patterns (Key Lessons)
 - Gate tables: use section-restricted matching; unrestricted table regex captures hundreds of false positives

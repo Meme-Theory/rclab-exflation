@@ -1,0 +1,107 @@
+{
+  "table": "gates",
+  "batch_id": 7,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "gate_POLARITON-42",
+      "anchor_type": "gates",
+      "name": "POLARITON-42",
+      "session": "42",
+      "condition": "Structural",
+      "verdict": "FAIL",
+      "source_file": "sessions\\archive\\session-42\\session-42-results-workingpaper.md",
+      "source_context_30_lines": " 1963: - Script: `computations/s42_s8_tension.py`\n 1964: - Data: `computations/s42_s8_tension.npz`\n 1965: - Plot: `computations/s42_s8_tension.png`\n 1966: \n 1967: ---\n 1968: \n 1969: ## W5-4: Digamma-polariton\n 1970: \n 1971: **Agent**: quantum-acoustics-theorist | **Gate**: POLARITON-42\n 1972: **Status**: COMPLETE | **Verdict**: FAIL (INTERMEDIATE by threshold, FAIL by physics)\n 1973: \n 1974: ### Question\n 1975: \n 1976: Does the B2 collective mode (GPV at omega = 0.792 M_KK) hybridize with KK gauge bosons near the gap edge to form a polariton, and can the polariton gap be identified with the Higgs mass?\n 1977: \n 1978: ### Method\n 1979: "
+    },
+    {
+      "anchor_id": "gate_FNL-42",
+      "anchor_type": "gates",
+      "name": "FNL-42",
+      "session": "42",
+      "condition": "Observational",
+      "verdict": "f_NL=0.014 (below 0.5 threshold). Three scale separations kill NG: m_tau/H=2522, xi_KZ*H=9.2e-4, N_d",
+      "source_file": "sessions\\archive\\session-42\\session-42-results-workingpaper.md",
+      "source_context_30_lines": " 2045: - Script: `computations/s42_polariton.py`\n 2046: - Data: `computations/s42_polariton.npz`\n 2047: - Plot: `computations/s42_polariton.png`\n 2048: \n 2049: ---\n 2050: \n 2051: ## W5-5: KZ Defects and f_NL\n 2052: \n 2053: **Agent**: gen-physicist | **Gate**: FNL-42\n 2054: **Status**: MARGINAL (|f_NL| = 0.014 — below detection threshold, consistent with Planck, indistinguishable from LCDM)\n 2055: \n 2056: ### Setup\n 2057: \n 2058: The BCS transition at the fold is second-order with Z_2 universality (GL-CUBIC-36). The Kibble-Zurek mechanism predicts that a phase transition traversed at finite speed produces topological defects. However, S38 established that BDI winding = 0 and U(1)_7 is restored post-transit, so NO persistent BCS topological defects survive. The relevant defects are in the **tau field**: spatial regions where different parts of space crossed the fold at different times. These are modulus domain walls in the geometric fabric.\n 2059: \n 2060: **Critical exponents** (3D Ising / Z_2 universality):\n 2061: - nu = 0.6301, z_dyn = 2.02"
+    },
+    {
+      "anchor_id": "gate_HOMOG-42",
+      "anchor_type": "gates",
+      "name": "HOMOG-42",
+      "session": "42",
+      "condition": "Consistency",
+      "verdict": "Gravity: 1.75e-6 PASS (1.7x below). Gauge: 3.11e-5 FAIL (10.4x above). M_KK < 1.07e17 GeV from FIRAS",
+      "source_file": "sessions\\archive\\session-42\\session-42-results-workingpaper.md",
+      "source_context_30_lines": " 2168: - Script: `computations/s42_kz_fnl.py`\n 2169: - Data: `computations/s42_kz_fnl.npz`\n 2170: - Plot: `computations/s42_kz_fnl.png`\n 2171: \n 2172: ---\n 2173: \n 2174: ## W5-6: Spatial Homogeneity\n 2175: \n 2176: **Agent**: einstein-theorist | **Gate**: HOMOG-42\n 2177: **Status**: INTERMEDIATE\n 2178: \n 2179: ### Gate Definition\n 2180: \n 2181: **HOMOG-42**: Is the fabric's transit through the fold spatially homogeneous to FIRAS precision?\n 2182: - PASS: delta_tau/tau < 3e-6 AND L_corr > 100 Mpc\n 2183: - FAIL: delta_tau/tau > 1e-3 (catastrophic inhomogeneity)\n 2184: - INTERMEDIATE: 3e-6 < delta_tau/tau < 1e-3"
+    },
+    {
+      "anchor_id": "gate_HF-CASCADE-43",
+      "anchor_type": "gates",
+      "name": "HF-CASCADE-43",
+      "session": "43",
+      "condition": "0.55",
+      "verdict": "Gate PASSES. S42 eta retraction is a correction, not additional negative evidence",
+      "source_file": "sessions\\archive\\session-43\\session-43-results-workingpaper.md",
+      "source_context_30_lines": " 3079: \n 3080: **Files**: `computations/s43_sidm_nfw.py` (script), `.npz` (data), `.png` (4-panel figure: density profiles, circular velocity, sigma_los, discrimination S/N).\n 3081: \n 3082: ---\n 3083: \n 3084: ### W5-11: Angular-Momentum-Coupled HF Cascade (nazarewicz-nuclear-structure-theorist)\n 3085: \n 3086: **Status**: COMPLETE (REVISED -- corrected cascade model with cooling temperature)\n 3087: **Gate**: HF-CASCADE-43 -- **PASS** (n_eff sigma = 0.107 < 0.5)\n 3088: - **PASS**: n_eff (continuous Boltzmann exponent) determined to sigma = 0.107 < 0.5\n 3089: - **FAIL condition**: sigma > 1 -- NOT triggered\n 3090: - **NOTE**: n_baryon (integer count) has sigma = 1.50. This is Poisson statistics for ~2.3 events, not computational failure. The physically relevant quantity is the continuous n_eff.\n 3091: \n 3092: **Context**: S42 Naz Sugg 1. Dominant eta uncertainty is integer n_breaks. S42 matched n_breaks = 2.18 using fixed T = T_acoustic. This computation resolves the ambiguity by running a proper evaporation cascade with microcanonical cooling.\n 3093: \n 3094: **Input files**: `s42_hauser_feshbach.npz`, `s43_pair_form_factor.npz`, `s38_attempt_freq.npz`\n 3095: **Output**: `computations/s43_hf_cascade.{py,npz,png}`"
+    },
+    {
+      "anchor_id": "gate_MOD-REHEAT-43",
+      "anchor_type": "gates",
+      "name": "MOD-REHEAT-43",
+      "session": "43",
+      "condition": "0.85",
+      "verdict": "Closes one route. BCS tensors r ~ 10^{-9} survives",
+      "source_file": "sessions\\archive\\session-43\\session-43-results-workingpaper.md",
+      "source_context_30_lines": " 5479: \n 5480: *(Workshop output: `sessions/session-43/s43_cc_113_workshop.md`)*\n 5481: \n 5482: ---\n 5483: \n 5484: ### W7-5: Full Modulated Reheating — Beyond Linear delta-N (tesla-resonance)\n 5485: \n 5486: **Status**: COMPLETE\n 5487: **Gate**: MOD-REHEAT-43 (INFO)\n 5488: \n 5489: **Context**: W3-5 used linear delta-N: P_R = (dN/dtau)^2 * P_tau(k). The r-n_s tension (r=0.281 vs BICEP 0.036) requires going beyond single-field linear order. Second-order delta-N gives f_NL. Multi-field effects (off-Jensen Z_{ij}) give trajectory curvature that breaks r = 16*epsilon.\n 5490: \n 5491: **Input files**: `s43_kz_transfer.npz` (W3-5), `s42_gradient_stiffness.npz` (S42), `s43_offjensen_z_matrix.npz` (W4-1).\n 5492: \n 5493: **Output**: `computations/s43_mod_reheating.{py,npz,png}`\n 5494: \n 5495: **Results**:"
+    },
+    {
+      "anchor_id": "gate_W1-1",
+      "anchor_type": "gates",
+      "name": "W1-1",
+      "session": "44",
+      "condition": "Sakharov Induced Gravity (SAKHAROV-GN-44)",
+      "verdict": "PASS",
+      "source_file": "sessions\\archive\\session-44\\session-44-quicklook-einstein-collab.md",
+      "source_context_30_lines": "    6: **Reference corpus**: Papers 01-34 in `/researchers/Einstein/`\n    7: \n    8: ---\n    9: \n   10: ## 1. Key Observations (GR/Equivalence Principle Lens)\n   11: \n   12: Session 44 produced 31 computations across 6 waves. From the standpoint of general relativity and the equivalence principle, four structural results stand out as permanent additions to the constraint map, and two closures deserve careful examination.\n   13: \n   14: **The EIH program is now quantitatively complete within the framework.** My computations W2-3 (EIH-GRAV-44) and W2-4 (SINGLET-CC-44), together with the Sakharov audit W1-1 and the epsilon_H theorem W4-3, establish a self-consistent chain from the Dirac spectrum to 4D gravitational observables. The chain is: D_K eigenvalues -> Peter-Weyl decomposition -> singlet projection (4.25 orders) -> Sakharov induced gravity (G_N to factor 2.3) -> Friedmann dynamics (epsilon_H invariant under projection). Every link in this chain is structural -- proven to machine epsilon or derived from representation theory.\n   15: \n   16: **The equivalence principle manifests as spectral effacement.** Paper 10 (Einstein-Infeld-Hoffmann, 1938) demonstrated that the motion of a gravitating body follows from the vacuum field equations alone, with internal structure invisible at leading post-Newtonian order. The spectral-geometric realization is exact: 99.994% of the spectral action resides in non-singlet representations that do not couple to 4D gravity. The effacement rati\n... [truncated]"
+    },
+    {
+      "anchor_id": "gate_W4-3",
+      "anchor_type": "gates",
+      "name": "W4-3",
+      "session": "44",
+      "condition": "Friedmann-BCS epsilon_H Theorem (FRIEDMANN-BCS-AUDIT-44)",
+      "verdict": "FAIL",
+      "source_file": "sessions\\archive\\session-44\\session-44-quicklook-einstein-collab.md",
+      "source_context_30_lines": "    6: **Reference corpus**: Papers 01-34 in `/researchers/Einstein/`\n    7: \n    8: ---\n    9: \n   10: ## 1. Key Observations (GR/Equivalence Principle Lens)\n   11: \n   12: Session 44 produced 31 computations across 6 waves. From the standpoint of general relativity and the equivalence principle, four structural results stand out as permanent additions to the constraint map, and two closures deserve careful examination.\n   13: \n   14: **The EIH program is now quantitatively complete within the framework.** My computations W2-3 (EIH-GRAV-44) and W2-4 (SINGLET-CC-44), together with the Sakharov audit W1-1 and the epsilon_H theorem W4-3, establish a self-consistent chain from the Dirac spectrum to 4D gravitational observables. The chain is: D_K eigenvalues -> Peter-Weyl decomposition -> singlet projection (4.25 orders) -> Sakharov induced gravity (G_N to factor 2.3) -> Friedmann dynamics (epsilon_H invariant under projection). Every link in this chain is structural -- proven to machine epsilon or derived from representation theory.\n   15: \n   16: **The equivalence principle manifests as spectral effacement.** Paper 10 (Einstein-Infeld-Hoffmann, 1938) demonstrated that the motion of a gravitating body follows from the vacuum field equations alone, with internal structure invisible at leading post-Newtonian order. The spectral-geometric realization is exact: 99.994% of the spectral action resides in non-singlet representations that do not couple to 4D gravity. The effacement rati\n... [truncated]"
+    },
+    {
+      "anchor_id": "gate_W1-5",
+      "anchor_type": "gates",
+      "name": "W1-5",
+      "session": "44",
+      "condition": "First-Sound Imprint Mechanism (FIRST-SOUND-IMPRINT-44)",
+      "verdict": "PASS",
+      "source_file": "sessions\\archive\\session-44\\session-44-quicklook-quantum-acoustics-collab.md",
+      "source_context_30_lines": "    1: # Quantum Acoustics — Collaborative Feedback on Session 44\n    2: \n    3: **Date**: 2026-03-15\n    4: **Reviewer**: quantum-acoustics-theorist\n    5: **Scope**: All 31 completed S44 computations, with focus on W1-5 (first-sound imprint), W3-1 (Fisher forecast), W3-2 (Bragg transfer), W5-3 (DOS evolution), W6-2 (second-sound attenuation)\n    6: \n    7: ---\n    8: \n    9: ## 1. Key Observations Through the Phonon/Acoustic Lens\n   10: \n   11: Session 44 is the most acoustically productive session since S41 established that SU(3) under Jensen IS a phononic crystal. Five of my own computations landed, and the results from other agents intersect acoustic physics at multiple points. The overall picture that emerges:\n   12: \n   13: **The substrate is an acoustically perfect medium.** Four independent results converge on this:"
+    },
+    {
+      "anchor_id": "gate_W3-1",
+      "anchor_type": "gates",
+      "name": "W3-1",
+      "session": "44",
+      "condition": "Fisher Forecast (FIRST-SOUND-44)",
+      "verdict": "FAIL",
+      "source_file": "sessions\\archive\\session-44\\session-44-quicklook-quantum-acoustics-collab.md",
+      "source_context_30_lines": "    1: # Quantum Acoustics — Collaborative Feedback on Session 44\n    2: \n    3: **Date**: 2026-03-15\n    4: **Reviewer**: quantum-acoustics-theorist\n    5: **Scope**: All 31 completed S44 computations, with focus on W1-5 (first-sound imprint), W3-1 (Fisher forecast), W3-2 (Bragg transfer), W5-3 (DOS evolution), W6-2 (second-sound attenuation)\n    6: \n    7: ---\n    8: \n    9: ## 1. Key Observations Through the Phonon/Acoustic Lens\n   10: \n   11: Session 44 is the most acoustically productive session since S41 established that SU(3) under Jensen IS a phononic crystal. Five of my own computations landed, and the results from other agents intersect acoustic physics at multiple points. The overall picture that emerges:\n   12: \n   13: **The substrate is an acoustically perfect medium.** Four independent results converge on this:"
+    },
+    {
+      "anchor_id": "gate_W3-2",
+      "anchor_type": "gates",
+      "name": "W3-2",
+      "session": "44",
+      "condition": "Multi-Wall Bragg Transfer (COHERENT-WALL-44)",
+      "verdict": "PASS",
+      "source_file": "sessions\\archive\\session-44\\session-44-quicklook-quantum-acoustics-collab.md",
+      "source_context_30_lines": "    1: # Quantum Acoustics — Collaborative Feedback on Session 44\n    2: \n    3: **Date**: 2026-03-15\n    4: **Reviewer**: quantum-acoustics-theorist\n    5: **Scope**: All 31 completed S44 computations, with focus on W1-5 (first-sound imprint), W3-1 (Fisher forecast), W3-2 (Bragg transfer), W5-3 (DOS evolution), W6-2 (second-sound attenuation)\n    6: \n    7: ---\n    8: \n    9: ## 1. Key Observations Through the Phonon/Acoustic Lens\n   10: \n   11: Session 44 is the most acoustically productive session since S41 established that SU(3) under Jensen IS a phononic crystal. Five of my own computations landed, and the results from other agents intersect acoustic physics at multiple points. The overall picture that emerges:\n   12: \n   13: **The substrate is an acoustically perfect medium.** Four independent results converge on this:"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "gate": "S110-CF-W33-THEOREM",
+  "registry_slot": "§VII.CE",
+  "theorem": "dq/da Two-q-Distinctness (inv-12 W3-3, sharpens S95-W4-4)",
+  "stage": "Stage-2 cross-axis independent verify (joint-theorem-promotion.md)",
+  "axis": "Axis-B (cosmological-dynamics / effective-Friedmann)",
+  "reviewer": "einstein-theorist",
+  "reviewer_role": "NON-author (original-author-excluded, no-workshop-context, axis-distinct from Axis-A)",
+  "method": "blind first-principles re-derivation: Sage-exact flat-FRW deceleration parameter for (diluting positive-energy relic + constant Lambda); independent reconstruction of relic q from npz rho_relic_tau + Lambda_eff/G_eff; independent monotonicity checks on stored q54 (Connes proxy) and q_eff (relic Friedmann)",
+  "clauses": {
+    "c": {
+      "verdict": "PASS",
+      "statement": "q-as-observable distinction: relic-Friedmann q (monotone-non-increasing) vs SCALE-FACTOR-54 Connes-distance-proxy q (rising) are DIFFERENT observables (opposite monotonicity).",
+      "reasoning": "Independently confirmed opposite signs: d(relic q)/da < 0 everywhere (max positive diff = -9.8e-05, i.e. strictly non-increasing; q_eff -0.854 -> -0.97), while d(Connes-proxy q)/da > 0 everywhere (q54 strictly increasing, -0.973 -> +0.814). Opposite monotonicity over the same band => cannot be one container-level observable read twice. Range-non-overlap reinforces: Connes upper edge +0.81 lies OUTSIDE the relic-Friedmann dust image (-1, +1/2], so the two q's cannot coincide at the top of the band.",
+      "substrate_framing": "two distinct functionals of the same spectral content (relic occupation vs Connes distance), not one observable read twice"
+    },
+    "d": {
+      "verdict": "PASS",
+      "statement": "monotone-non-increasing: -(n1-n2)^2 <= 0 for all real n1,n2 => dq/da <= 0 (perfect-square sign-lock), from the effective-Friedmann side.",
+      "reasoning": "Sage-exact derivation: q(a) = -(1/2)(2 B a^(3w+3) - A(3w+1))/(B a^(3w+3) + A); dq/da factors EXACTLY to -(9/2) A B a^(3w+2) (w+1)^2 / (B a^(3w+3) + A)^2. Substitution chain: A>0 (relic), B>0 (Lambda), a^(3w+2)>0 (a>0), (w+1)^2 >= 0 (PERFECT SQUARE = sign-lock), denominator (...)^2 > 0, prefactor -(9/2) < 0 => dq/da <= 0 for ALL parameter values. The framework's -(n1-n2)^2 sign-lock is the algebraic image of the (w_r+1)^2 deviation-from-Lambda-eos perfect square; both are non-negative perfect squares carrying a leading minus sign. Verified independent of stored q_eff via direct reconstruction (q_recon monotone non-increasing). The relic here is dust (w_r_eff = 0.0); the dust q has hard ceiling +1/2 (Sage: lim_{x->oo} q_dust = 1/2, dq/dx = (3/2)/(x+1)^2 > 0), confirming q <= +1/2 < +0.81.",
+      "substrate_framing": "the perfect-square sign-lock is a structural constraint (necessary, parameter-independent), not a contingent numerical value"
+    },
+    "JOINT": {
+      "verdict": "PASS",
+      "statement": "two-q-distinctness requires BOTH the relic-Friedmann sign (Axis-A) AND the Connes-proxy rising reading (Axis-B); opposite monotonicity is the structural proof they cannot be the same observable.",
+      "reasoning": "Axis-B side of the PASS-AND independently verified: the SCALE-FACTOR-54 Connes-proxy q RISES strictly over the full band (q54 diffs all positive: 0.0105...0.7461; -0.973 -> +0.814, matching theorem -0.97 -> +0.81 to <5e-3). Combined with the relic-Friedmann q falling (clause d sign-lock, my Axis-B derivation), the two have OPPOSITE monotonicity. Independent inclusion argument: Connes max q = 0.814 > dust ceiling +0.5, so +0.81 is structurally unreachable for any Omega_relic <= 1 dust+Lambda universe (Sage-exact: relic dust image = (-1, +1/2]); the relic reproduces only band_span_reproduced = 6.5% of the Connes band. Two observables whose images do not overlap at the top edge AND whose monotonicities are opposite cannot be the same observable. PASS on the Axis-B half of the JOINT PASS-AND.",
+      "substrate_framing": "distinctness forced by inclusion violation + opposite sign (structural), not by numerical coincidence"
+    }
+  },
+  "substrate_input": {
+    "data_file": "computations/investigation-12/inv12_w3_3_back_reaction_closure_hsq.npz",
+    "axisB_loaded_keys": ["q54", "a54", "tau54", "q_eff", "a_grid", "rho_relic_tau", "Lambda_eff", "G_eff", "w_r_eff", "q_dust_cap", "band_span_reproduced", "q_eff_start", "q_eff_end"],
+    "note_on_independence": "Axis-B re-derived dq/da and the dust q-ceiling SYMBOLICALLY (Sage) without consuming the stored sign_verdict/composite strings; the npz floats served only as cross-checks. Stage-2 substrate-input-orthogonality caveat: this reviewer loaded the same npz that Axis-A may load (shared data file); independence here is structural-OUTPUT-type (independent symbolic decision pipeline), not structural-INPUT (data is shared). Per joint-theorem-promotion.md substrate-input-orthogonality clause, this PASS-AND carries the substrate-input-overlap caveat."
+  },
+  "npz_stored_verdict_reconciliation": {
+    "stored_composite": "INFO (sign=PASS, magnitude=INFO, regime=MARGINAL)",
+    "interpretation": "The INFO/MARGINAL tags concern whether the relic-Friedmann q can REPRODUCE the full SCALE-FACTOR-54 band (it reproduces only 6.5%). This is NOT in tension with clauses c/d/JOINT — it is the SAME finding that PROVES distinctness (the relic q cannot span the band the Connes proxy spans). My assigned clauses concern monotonicity DIRECTIONS and range-NON-overlap, which are sign-locked structural results: all PASS. The theorem as stated (two-q-distinctness) is exactly what the INFO band-non-reproduction supports."
+  },
+  "overall_axisB_verdict": "PASS on all assigned clauses (c, d) AND the Axis-B half of JOINT PASS-AND, with substrate-input-overlap caveat."
+}

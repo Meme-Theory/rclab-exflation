@@ -1,0 +1,162 @@
+==============================================================================
+EUCLID-ISW-RSD-JOINT-69: Combined Fisher Forecast
+Gate: EUCLID-JOINT-69 (INFO)
+==============================================================================
+
+Survey parameters:
+  Euclid f_sky = 0.3636
+  Euclid n_g = 30.0 arcmin^{-2} = 3.545e+08 sr^{-1}
+  CMB-S4 noise = 1.0 muK-arcmin, beam = 1.0 arcmin
+
+========================================================================
+SECTION 1: ISW FISHER MATRIX
+========================================================================
+Loaded ISW data: 99 multipoles, l = [2, 100]
+  Mean C_l^Tg ratios (l < 30):
+    FW/LCDM  = 1.1230
+    FW/Quint = 1.0760
+
+  ISW derivatives at fiducial (w_0=-0.918, c_s^2=0.0):
+    delta_w0 = 0.082, delta_c_s^2 = 1.000
+    Mean |dCl/dw0| (l<30)  = 9.2786e-11
+    Mean |dCl/dcs2| (l<30) = 5.3738e-12
+
+  ISW amplitudes (relative to LCDM):
+    A_FW   = 1.1230 (w_0=-0.918, c_s^2=0)
+    A_Quint = 1.0440 (w_0=-0.918, c_s^2=1)
+    A_LCDM = 1.0000
+
+  ISW amplitude derivatives:
+    dA/dw_0    = 1.5000
+    dA/dc_s^2  = -0.0790
+    sigma_A(Planck) = 0.250
+    sigma_A(Euclid) = 0.0500
+
+  ISW Fisher matrix:
+    F_ISW[w0,w0]     = 899.9779
+    F_ISW[w0,cs2]    = -47.4160
+    F_ISW[cs2,cs2]   = 2.4981
+
+========================================================================
+SECTION 2: RSD FISHER MATRIX
+========================================================================
+
+  Computing growth rates for fiducial and shifted models...
+
+  Euclid spectroscopic bins:
+      z |  f*sig8(fid) |     df/dw0 |    df/dcs2 |    sigma
+  ------+--------------+------------+------------+---------
+   0.90 |     0.099942 |  -0.035981 |  -0.004798 |   0.0100
+   1.10 |     0.086402 |  -0.027867 |  -0.004169 |   0.0120
+   1.30 |     0.075285 |  -0.021340 |  -0.003644 |   0.0140
+   1.50 |     0.066154 |  -0.016285 |  -0.003204 |   0.0170
+   1.80 |     0.055366 |  -0.010875 |  -0.002672 |   0.0200
+
+  RSD Fisher matrix:
+    F_RSD[w0,w0]     = 21.8763
+    F_RSD[w0,cs2]    = 3.1830
+    F_RSD[cs2,cs2]   = 0.4720
+
+========================================================================
+SECTION 3: CMB LENSING FISHER MATRIX
+========================================================================
+  chi(z*=1100) = 13866 Mpc
+  P(k) normalization: P_0 = 2.8574e+05 Mpc^3
+  P(0.1 Mpc^-1, z=0) = 10240 Mpc^3 (expect ~5000)
+  P(0.01 Mpc^-1, z=0) = 37135 Mpc^3 (expect ~10000)
+  Computing lensing power spectra...
+  Lensing derivatives computed for l = [100, 500]
+    Mean C_l^kk(fid) = 2.1713e-13
+    Mean dCl/dw0     = 1.5971e-14
+    Mean dCl/dcs2    = 4.4003e-15
+    Cl^kk(cs2=1)/Cl^kk(cs2=0) - 1 = 0.0203
+
+  Lensing Fisher matrix:
+    F_lens[w0,w0]     = 3.7986e-08
+    F_lens[w0,cs2]    = 1.3672e-10
+    F_lens[cs2,cs2]   = 1.1275e-08
+
+========================================================================
+SECTION 4: COMBINED FISHER MATRIX
+========================================================================
+
+  Individual Fisher matrices (diagonal entries: 1/sigma^2):
+         Probe |     F[w0,w0] |    F[w0,cs2] |   F[cs2,cs2]
+  -------------+--------------+--------------+-------------
+           ISW |     899.9779 |     -47.4160 |       2.4981
+           RSD |      21.8763 |       3.1830 |       0.4720
+       Lensing |   3.7986e-08 |   1.3672e-10 |   1.1275e-08
+      COMBINED |     921.8542 |     -44.2330 |       2.9702
+
+  Marginalized constraints:
+    sigma(w_0)    = 0.0616
+    sigma(c_s^2)  = 1.0861
+    correlation   = 0.8453
+
+  Probe-by-probe marginalized constraints:
+         Probe |   sigma(w_0) | sigma(c_s^2) |     corr
+  -------------+--------------+--------------+---------
+           ISW |       0.0333 |       0.6327 |   0.0000
+           RSD |       1.5597 |      10.6185 |  -0.9906
+       Lensing |    5130.9241 |    9417.8561 |  -0.0066
+       ISW+RSD |       0.0616 |       1.0861 |   0.8453
+      COMBINED |       0.0616 |       1.0861 |   0.8453
+
+========================================================================
+SECTION 5: DISCRIMINATION SIGNIFICANCE
+========================================================================
+
+  Discrimination significance (combined Euclid + CMB-S4):
+    FW vs LCDM         : 4.05-sigma  (Delta_theta = [0.082, -1.000])
+    FW vs Quintessence  : 1.72-sigma  (Delta_theta = [0.000, -1.000])
+    c_s^2 = 0 vs 1     : 0.92-sigma  (marginalized 1D)
+
+  Probe-by-probe discrimination (FW vs LCDM):
+             ISW: 4.04-sigma
+             RSD: 0.31-sigma
+         Lensing: 0.00-sigma
+         ISW+RSD: 4.05-sigma
+        COMBINED: 4.05-sigma
+
+  Probe-by-probe discrimination (FW vs Quintessence):
+             ISW: 1.58-sigma
+             RSD: 0.69-sigma
+         Lensing: 0.00-sigma
+         ISW+RSD: 1.72-sigma
+        COMBINED: 1.72-sigma
+
+  Future with 21cm (replacing Euclid ISW):
+    FW vs LCDM         : 20.21-sigma
+    FW vs Quintessence  : 7.93-sigma
+
+========================================================================
+SECTION 6: FIGURE OF MERIT
+========================================================================
+  FoM(w_0, c_s^2) = 27.96
+  Ellipse area (95%) = 0.6733
+
+========================================================================
+GATE VERDICT: EUCLID-JOINT-69
+========================================================================
+
+  Gate type: INFO (report combined discrimination)
+  sigma(w_0) = 0.0616
+  sigma(c_s^2) = 1.0861
+  FW vs LCDM: 4.05-sigma (Euclid + CMB-S4)
+  FW vs Quintessence: 1.72-sigma (Euclid + CMB-S4)
+  FW vs LCDM (with 21cm): 20.21-sigma
+  Assessment: Strong discrimination expected
+
+  Verdict: INFO
+
+========================================================================
+SAVING RESULTS
+========================================================================
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s69_euclid_joint.npz
+
+  Generating plot...
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s69_euclid_joint.png
+
+========================================================================
+COMPUTATION COMPLETE
+========================================================================

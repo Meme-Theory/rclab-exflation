@@ -1,0 +1,52 @@
+{
+  "gate_id": "S96-CONSOL-HYGIENE-GATE",
+  "scheme": "STANDING-CAPSTONE-HYGIENE-GATE-5-QUESTION-CHECKLIST",
+  "convention": "DIRECTIVE-only-rule-PLUS-Q1-Q5-regex-audit-hook-PLUS-self-test-PLUS-housekeeping-routing",
+  "classification": "NON-PHONONIC",
+  "five_question_checklist": {
+    "Q1": "Does this session's work alter the \u00a76.3 a(t) / effective-Friedmann gap status? (YES -> update \u00a76.3 + reconcile Atlas D04 C1/C2)",
+    "Q2": "Does this session's work alter a \u00a77 falsifier-anchor row (value / \u03c3-distance / detector horizon / status tag)? (YES -> mack-cosmic-bridge updates \u00a77.1/\u00a77.2 + falsifier-master-inventory.md)",
+    "Q3": "Does this session's work change a PROVEN / CONDITIONAL / BROKEN / INFO status of any capstone claim? (YES -> reconcile capstone prose tag against Atlas D04 + retraction-log)",
+    "Q4": "Is the change to a PROSE claim, not merely a ledger/registry row? (YES -> curated-doc designated-writer reviewed patch, NOT a bulk append)",
+    "Q5": "Does this session's work add or invalidate a citation in the capstone? (YES -> update the \u00a7-citation anchor per the citation-anchoring discipline)"
+  },
+  "deliverables": {
+    "rule_file": {
+      "path": ".claude/rules/capstone-hygiene-gate.md",
+      "present_on_disk": false,
+      "substantive_line_count": 0,
+      "must_contain_markers": {},
+      "must_contain_ok": false,
+      "directive_only_clean": false,
+      "directive_only_hits": []
+    },
+    "audit_hook": {
+      "path": "computations/_shared/_capstone_hygiene_gate_audit.py",
+      "present_on_disk": true,
+      "self_test": {
+        "ran": true,
+        "overall": "PASS",
+        "positive_status": "PASS",
+        "negative_status": "PASS",
+        "no_touch_status": "PASS",
+        "has_q1_q5_detector": true,
+        "has_self_test_marker": true
+      }
+    },
+    "crosslinks": {
+      "housekeeping_crosslink": true,
+      "capstone_s0_crosslink": true,
+      "both": true
+    }
+  },
+  "conditions": {
+    "cond_a_rule": false,
+    "cond_b_hook": true,
+    "cond_c_crosslinks": true
+  },
+  "verdict": "INFO",
+  "promotion_contract": "SUGGESTION-at-K=1 -> MANDATORY-at-K=3 (feedback_rules-compensate-missing-structure.md)",
+  "rule_file_write_note": "subagent write-denied on .claude/rules/** + curated capstone; when (a)/(c) unmet ONLY due to write-denial, rule + \u00a70 cross-link are STAGED verbatim in the W8 WP for orchestrator application; verdict is INFO (staged), NOT FAIL",
+  "audit_sha256": "df0ac305ef3829e7ce5a85e8a00f4cdce37656adf4f84895b011057cb8688540",
+  "content_sha256": "c1bfd31e0b870c5506f24a0faefdb3e225c7935d813167de3014f4a263ae3f69"
+}

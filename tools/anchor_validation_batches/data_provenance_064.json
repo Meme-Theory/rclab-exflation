@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 64,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_631",
+      "anchor_type": "data_provenance",
+      "name": "half_filling_shell",
+      "script_path": "session-54/s54_half_filling_shell.py",
+      "session": "s54",
+      "inputs": "",
+      "outputs": "session-54/s54_half_filling_shell.npz, session-54/s54_half_filling_shell.png",
+      "source_file": "computations/session-54/s54_half_filling_shell.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s54_half_filling_shell.py — Shell Correction Scaling with N_pair\n    4: ================================================================\n    5: Session 54, W3-9: HALF-FILLING-SHELL-54\n    6: \n    7: Tests the Connes x Nazarewicz prediction (S53 workshop) that Strutinsky\n    8: shell correction amplitude grows as ~sqrt(N_pair) toward half-filling.\n    9: \n   10: Method:\n   11:   1. Load lattice single-particle energies E_k(tau) from W0-1"
+    },
+    {
+      "anchor_id": "prov_632",
+      "anchor_type": "data_provenance",
+      "name": "higgs_modulus",
+      "script_path": "session-54/s54_higgs_modulus.py",
+      "session": "s54",
+      "inputs": "",
+      "outputs": "session-54/s54_higgs_modulus.npz, session-54/s54_higgs_modulus.png",
+      "source_file": "computations/session-54/s54_higgs_modulus.py",
+      "source_context_30_lines": "  779: \n  780:   GATE VERDICT: INFO — dimensionless mixing xi = {xi_mix:.2e}.\n  781:   Modulus dynamics UNAFFECTED by Higgs sector at quadratic order.\n  782: \"\"\")\n  783: \n  784: # ============================================================================\n  785: #  Save data\n  786: # ============================================================================\n  787: out_file = os.path.join(DATA_DIR, 's54_higgs_modulus.npz')\n  788: np.savez(out_file,\n  789:     # Seeley-DeWitt derivatives\n  790:     da2_dtau=da2_dtau,\n  791:     da4_dtau=da4_dtau,\n  792:     d2a2_dtau2=d2a2_dtau2,\n  793:     d2a4_dtau2=d2a4_dtau2,\n  794:     ratio_a2_a4=ratio_a2_a4,\n  795:     dratio_dtau=dratio_dtau,"
+    },
+    {
+      "anchor_id": "prov_633",
+      "anchor_type": "data_provenance",
+      "name": "level_crossing",
+      "script_path": "session-54/s54_level_crossing.py",
+      "session": "s54",
+      "inputs": "",
+      "outputs": "session-54/s54_level_crossing.npz, session-54/s54_level_crossing.png",
+      "source_file": "computations/session-54/s54_level_crossing.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s54_level_crossing.py — Seniority Crossing Search in 256-State Fock Space\n    4: =========================================================================\n    5: Session 54, W3-10: LEVEL-CROSSING-FOCK-54\n    6: \n    7: Searches for level crossings where a seniority-2 state drops below the\n    8: seniority-0 ground state at any tau in [0, 0.35].\n    9: \n   10: Physics (Paper 03, Bogoliubov; Paper 08, pairing collapse):\n   11:   - The 256-state Fock space from ED-SWEEP-54 contains ONLY seniority-0"
+    },
+    {
+      "anchor_id": "prov_634",
+      "anchor_type": "data_provenance",
+      "name": "massey_fold",
+      "script_path": "session-54/s54_massey_fold.py",
+      "session": "s54",
+      "inputs": "",
+      "outputs": "session-54/s54_massey_fold.npz",
+      "source_file": "computations/session-54/s54_massey_fold.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s54_massey_fold.py — MASSEY-FOLD-54\n    4: ====================================\n    5: Extract the Massey (Landau-Zener) adiabaticity parameter at every avoided\n    6: crossing in the 256-state Fock spectrum from ED-SWEEP-54.\n    7: \n    8: Gate: MASSEY-FOLD-54  (INFO — classification only)\n    9: \n   10: Physics\n   11: -------"
+    },
+    {
+      "anchor_id": "prov_635",
+      "anchor_type": "data_provenance",
+      "name": "modulus_fluct",
+      "script_path": "session-54/s54_modulus_fluct.py",
+      "session": "s54",
+      "inputs": "",
+      "outputs": "session-54/s54_modulus_fluct.npz, session-54/s54_modulus_fluct.png",
+      "source_file": "computations/session-54/s54_modulus_fluct.py",
+      "source_context_30_lines": "  531: print(f\"\\n*** GATE VERDICT: {verdict}\")\n  532: print(f\"*** Detail: {detail}\")\n  533: \n  534: # ============================================================================\n  535: # 12. SAVE DATA\n  536: # ============================================================================\n  537: \n  538: out_path = os.path.join(os.path.dirname(os.path.abspath(__file__)),\n  539:                         's54_modulus_fluct.npz')\n  540: \n  541: np.savez(out_path,\n  542:     # Graph structure\n  543:     lap_eigenvalues=lap_eigs,\n  544:     lap_eigenvectors=lap_vecs,\n  545:     graph_distances=dist_matrix,\n  546: \n  547:     # Method A: susceptibility"
+    },
+    {
+      "anchor_id": "prov_636",
+      "anchor_type": "data_provenance",
+      "name": "off_jensen",
+      "script_path": "session-54/s54_off_jensen.py",
+      "session": "s54",
+      "inputs": "",
+      "outputs": "session-54/s54_off_jensen.npz, session-54/s54_off_jensen.png",
+      "source_file": "computations/session-54/s54_off_jensen.py",
+      "source_context_30_lines": "   20:   alpha_3(s, sigma) = e^{s + 8*sigma}\n   21: \n   22: Volume preservation check: 1*(-11) + 3*(-7) + 4*8 = -11 - 21 + 32 = 0.\n   23: \n   24: The scalar curvature is computed from Milnor's formula (Paper 15 eq 3.55)\n   25: using the explicit structure constants of su(3) in the orthonormal basis.\n   26: \n   27: Gate: OFF-JENSEN-T2-54 — INFO: 2D landscape topology at speed bump.\n   28: Output: s54_off_jensen_t2.npz, s54_off_jensen_t2.png\n   29: \n   30: Author: Baptista-Spacetime-Analyst (Session 54)\n   31: Date: 2026-03-21\n   32: \"\"\"\n   33: \n   34: import sys\n   35: import os\n   36: sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))"
+    },
+    {
+      "anchor_id": "prov_637",
+      "anchor_type": "data_provenance",
+      "name": "pl_dual_sa",
+      "script_path": "session-54/s54_pl_dual_sa.py",
+      "session": "s54",
+      "inputs": "",
+      "outputs": "session-54/s54_pl_dual_sa.npz, session-54/s54_pl_dual_sa.png",
+      "source_file": "computations/session-54/s54_pl_dual_sa.py",
+      "source_context_30_lines": " 1023:     ax.set_xlabel('$\\\\Lambda$ / $M_{KK}$')\n 1024:     ax.set_ylabel('Depth of minimum')\n 1025:     ax.set_title('Minimum depth vs UV cutoff')\n 1026:     ax.legend()\n 1027:     ax.grid(True, alpha=0.3)\n 1028: \n 1029:     plt.tight_layout()\n 1030:     plot_path = os.path.join(os.path.dirname(os.path.abspath(__file__)),\n 1031:                              's54_pl_dual_sa.png')\n 1032:     plt.savefig(plot_path, dpi=150)\n 1033:     plt.close()\n 1034:     return plot_path\n 1035: \n 1036: \n 1037: # ===========================================================================\n 1038: # MAIN\n 1039: # ==========================================================================="
+    },
+    {
+      "anchor_id": "prov_638",
+      "anchor_type": "data_provenance",
+      "name": "q_raychaudhuri",
+      "script_path": "session-54/s54_q_raychaudhuri.py",
+      "session": "s54",
+      "inputs": "s54_ed_sweep.npz",
+      "outputs": "session-54/s54_q_raychaudhuri.png",
+      "source_file": "computations/session-54/s54_q_raychaudhuri.py",
+      "source_context_30_lines": "  317: ax.axhline(0, color='gray', linestyle='-', alpha=0.3)\n  318: ax.set_xlabel(r'$\\tau$', fontsize=12)\n  319: ax.set_ylabel('Energy curvature', fontsize=12)\n  320: ax.set_title(r'(D) Energy Curvature & Bohm Potential', fontsize=12)\n  321: ax.legend(fontsize=10)\n  322: ax.grid(True, alpha=0.3)\n  323: \n  324: plt.tight_layout()\n  325: plt.savefig('s54_q_raychaudhuri.png', dpi=150, bbox_inches='tight')\n  326: print(f\"\\nPlot saved: s54_q_raychaudhuri.png\")\n  327: \n  328: # ===================================================================\n  329: # 11. GATE VERDICT\n  330: # ===================================================================\n  331: print(\"\\n\" + \"=\"*70)\n  332: print(\"GATE: Q-RAYCHAUDHURI-54\")\n  333: print(\"=\"*70)"
+    },
+    {
+      "anchor_id": "prov_639",
+      "anchor_type": "data_provenance",
+      "name": "sa_latt_occ",
+      "script_path": "session-54/s54_sa_latt_occ.py",
+      "session": "s54",
+      "inputs": "",
+      "outputs": "session-54/s54_sa_latt_occ.npz, session-54/s54_sa_latt_occ.png",
+      "source_file": "computations/session-54/s54_sa_latt_occ.py",
+      "source_context_30_lines": "  539: if pass_details:\n  540:     for d in pass_details:\n  541:         print(f\"  {d}\")\n  542: print(f\"{'='*70}\")\n  543: \n  544: # =============================================================================\n  545: # 10. Save results\n  546: # =============================================================================\n  547: outpath = os.path.join(os.path.dirname(__file__), 's54_sa_latt_occ.npz')\n  548: np.savez(outpath,\n  549:     # Core results\n  550:     tau_values=tau_values,\n  551:     S_occ=S_occ,                          # (3, 3, 50)\n  552:     S_vac=S_vac,                          # (3, 3, 50)\n  553:     occupations=occupations,               # (50, 32)\n  554:     has_minimum=has_minimum,               # (3, 3)\n  555:     minimum_locations=minimum_locations,   # (3, 3)"
+    },
+    {
+      "anchor_id": "prov_640",
+      "anchor_type": "data_provenance",
+      "name": "scale_factor",
+      "script_path": "session-54/s54_scale_factor.py",
+      "session": "s54",
+      "inputs": "s54_connes_latt.npz",
+      "outputs": "session-54/s54_scale_factor.npz, session-54/s54_scale_factor.png",
+      "source_file": "computations/session-54/s54_scale_factor.py",
+      "source_context_30_lines": "  284: ax.axvline(tau_fold, color=\"green\", ls=\"--\", alpha=0.5)\n  285: ax.set_xlabel(r\"$\\tau$\")\n  286: ax.set_ylabel(r\"$a(\\tau)$ (various statistics)\")\n  287: ax.set_title(\"(d) Scale Factor Consistency\")\n  288: ax.legend(fontsize=8)\n  289: ax.grid(True, alpha=0.3)\n  290: \n  291: plt.tight_layout()\n  292: plt.savefig(\"s54_scale_factor.png\", dpi=150, bbox_inches=\"tight\")\n  293: print(f\"\\nPlot saved: s54_scale_factor.png\")\n  294: \n  295: # =========================================================================\n  296: # 10. Final summary\n  297: # =========================================================================\n  298: print(\"\\n\" + \"=\"*70)\n  299: print(\"SCALE-FACTOR-54 FINAL SUMMARY\")\n  300: print(\"=\"*70)"
+    }
+  ]
+}

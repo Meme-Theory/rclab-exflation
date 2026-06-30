@@ -1,0 +1,66 @@
+S84 W5-61 -- R4-DISCARD-AUDIT REPORT
+====================================
+
+Tag variant applied: DIMENSIONAL-ERROR-CROSS-CLASS
+Source: W5-56 volovik agent memory r4-cross-class-84-result.md
+R4 dim-error persists across BDI (3He-B, N_3=0) and AIII (Weyl, N_3=2).
+Formula-level mistake, NOT universality-class-specific. 3He-B inheritance uncontaminated.
+
+Convention inventory (post-audit):
+  5 -> 4 physical + 1 cross-class dim-error
+  physical cluster: {R1, R2, R3, R5}
+  dim-error slot   : R4 (K_R4 = 59.8/8 = 15.95)
+
+Input SHA-256 pins:
+  session-82-results-workingpaper.md  69535032cafb0d13ddb4355552cf829b0dcb107620fc492013af11db998b3432
+  session-82-OOM.md  d5524d9e02d5f07c16ce1f42d24fd4a5309c49bc0497208d610d2f2a6a5bbcad
+  session-83-results-workingpaper.md  9232f86090f0abaf3b491d1f0b684f27bea04c75d2434513c4b0de616ab21bca
+
+Per-file counts:
+
+  session-82-results-workingpaper.md:
+    R4-K-corridor hits : 5
+    5-convention hits  : 3
+    audit tag present  : True
+      L1739  [\bR4\b.*15\.95]  | R4 | Legacy naive n_pairs=59.8/8 bands | 15.9500 | +1.2028 | FAIL |
+      L1742  [\bR4\b.*naive]  **R3 is the PRIMARY reading** because it is the documented S43 gge-temp-43 band structure (3/3/2 multiplicity of B2/B1/B3). R4 (naive total/
+      L1751  [\bR4\b.*15\.95]  | R4 | 15.95 | 5.263 × 10⁻⁸ | 15.95 | 25.06 | 1.203 | FAIL |
+      L1784  [R1[- ]R5]  - Plot: `computations/session-82/s82_w2_4_ps_substrate_matched_ic.png` (left: per-band n_k and S_IC = 1+2n; right: K_substrate across R1-R5 with P
+      L6170  [\bK_?R4\b]  The R4 reading convention used throughout this working paper (K_R4 = n_pairs / N_modes = 59.8 / 8 = 15.95, "Legacy naive" row at L1739 and L
+
+  session-82-OOM.md:
+    R4-K-corridor hits : 2
+    5-convention hits  : 2
+    audit tag present  : True
+      L120  [\bR4\s*\(.*n_?pairs.*\)]  **W2-4 substrate-IC structural result**: The Volovik 3He-B-correspondence Wightman IC — uniquely admissible after S79 P2-B axiomatic closure
+      L463  [\bR4\s*\(.*n_?pairs.*\)]  The L120 reference "Four of five reading conventions PASS at factor-3; R4 (legacy naive n_pairs/8) FAILs at 15.95" is retroactively labeled 
+
+  session-83-results-workingpaper.md:
+    R4-K-corridor hits : 10
+    5-convention hits  : 12
+    audit tag present  : True
+      L4709  [Landau-V\.1-R1-R5]  **4-tuple slot**: `(min_rel_err=2.0194, scheme=Landau-V.1-R1-R5, convention=A_s_Planck=2.10e-9, L_max=N/A)`
+      L4717  [Landau-V\.1-R1-R5]  S83-K-MATCHING-5-CONVENTIONS: FAIL -- value=min_rel_err=2.0194_at=R5_K=1.922_A_s_min=6.3407e-09_A_s_max=5.2619e-08_max_rel_err=24.0567_at=R4
+      L4722  [Landau-V\.1-R1-R5]  - scheme = `Landau-V.1-R1-R5`
+      L4733  [\bK_?R4\b]  - 5 convention K-values from Landau S82 §V.1 L242: `K_R1=2.185, K_R2=2.049, K_R3=2.035, K_R4=15.95, K_R5=1.922`
+      L4736  [R1\.\.R5]  - `A_s_R = A_s_W1_2_TD · K_R` for R ∈ {R1..R5}
+      L4756  [\bR4\b.*15\.95]  | R4: n_pairs/N_modes = 59.8/8     | 15.95   | 5.262e-8   | 24.0567 | +1.3989             |
+      L4760  [\bR4\b.*Fock[- ]count]  - Worst convention: R4 with `rel_err = 24.06` (Fock-counting reading, +1.399 OOM — Landau V.1 table 6 notes R4 is the sole reading failing t
+      L4770  [\bR4\b.*BCS[- ]dimensional]  2. **S82 V.1 summary table items 6 & 11** (L300, L305): item 6 states "K_match = 0.637 < 1 (UNREACHABLE)"; item 11 states "R4's FAIL is BCS-
+      L4782  [R1[- ]R5]  **Classification**: PHONONIC. A_s is sourced by GGE occupation of BCS quasiparticles on the 3/3/2 B1/B2/B3 fiber bands. K is the unique dial
+      L7541  [\bK_?R4\b]  S83 G38 (S83-K-MATCHING-5-CONVENTIONS, §W3-G38 L4704–L4798, SHA `8b18900aa990d72dfc8a81bedb4051136602fcef55c075bbdbe5e4fece213eff`) scans th
+
+Aggregate:
+  total R4-K-corridor hits : 17
+  total 5-convention hits  : 17
+  files with R4 hits       : 3
+  files w/R4 no tag        : 0
+
+Gate result:
+  value = 0
+  verdict = PASS
+  4-tuple = (value=0, scheme=R4-audit, convention=4+1, L_max=N/A)
+  sha256 closure = 2b00b919461970a8fff0a5a3bb495c5efdac2e243f1ce5e5057d4e228e40180c
+
+Verdict line:
+  W5-61: PASS -- value=0 scheme=R4-audit convention=4+1 L_max=N/A sha256=2b00b919461970a8fff0a5a3bb495c5efdac2e243f1ce5e5057d4e228e40180c

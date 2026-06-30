@@ -1,0 +1,111 @@
+{
+  "gate": "S101-SCHUR-RIGIDITY-STAGE2-VERIFY",
+  "entry": "§VII.BR",
+  "axis": "B",
+  "reviewer": "landau-condensed-matter-theorist",
+  "role": "Axis-B primary (condensed-matter / band-geometry)",
+  "stage0_excluded_authors": ["berry-geometric-phase-theorist", "all-successor-berry-spawns"],
+  "read_discipline": "registered §VII.BR entry text + s100b_nonabelian_metric_fraction.npz ONLY; no Stage-0 synthesis / workshop transcript read",
+  "substrate_input_overlap": true,
+  "substrate_input_overlap_note": "Both reviewers (kaluza-klein Axis-A + landau Axis-B) load s100b_nonabelian_metric_fraction.npz for the witness-table re-check (clause g) by BINDING design; PASS-AND establishes output-TYPE independence (distinct methodologies on shared data), NOT structural-INPUT independence; overlap caveat carried per joint-theorem-promotion.md §'Substrate-input-orthogonality clause'",
+  "lineage": "LC-lineage-conditional; W1-1 L4 caveat-lift HAS landed -> witness values cited CLEAN, no A19 UNTRUSTED-UPSTREAM extra-row; the W6-2 numbers are operator-CONDITIONAL at the Lai-Teh t=1/2 torsion point but the L0/T1/T2/P/U/R structural arguments are operator-INDEPENDENT (transfer under either branch of the tau=0 canonicity adjudication)",
+  "npz_audit_sha256_short": "4a03497c43a97335",
+  "clauses": {
+    "L0": {
+      "verdict": "PASS",
+      "reading": "Gauge-free band-QGT evaluator identity Tr[(d_a P)(1-P)(d_b P)] = sum_n <d_a u_n|(1-P)|d_b u_n>. From P=P^2: d_a P = (d_a P)P + P(d_a P), so (d_a P)(1-P) keeps only sum_n |u_n><d_a u_n|(1-P) and orthonormality collapses the double sum to the band diagonal. This is the Provost-Vallee / Resta quantum-geometric tensor in projector form: basis-free, phase-free, immune to the largest-component phase-pin pi-jumps.",
+      "basis": "operator-independent algebra; textbook QGT projector identity; transfers under either torsion-branch",
+      "witness_support": "L0 is the script-header LEMMA gauge-pin; verified consistency of frozen-slot QGT floor I_NA_excl=2.602e-24 (no spurious phase content)"
+    },
+    "T1": {
+      "verdict": "PASS",
+      "reading": "Multiplicity-one isotypic band is a frozen eigenbundle. By Schur, H(b) restricted to a multiplicity-one isotypic component E_alpha is scalar nu_alpha(b)*E_alpha; the eigenSPACE is E_alpha (built from rho alone, b-independent) even as the eigenVALUE nu_alpha(b) moves. d P = d E_alpha = 0 -> Q_ab = 0 via L0. Condensed-matter statement: a symmetry-protected band whose entire support is one irrep cannot acquire Berry curvature under a G-invariant deformation. Crossings with OTHER isotypic characters move only the |lambda|-sort label (tracking artifact), not the slot projector.",
+      "basis": "Schur's lemma on a multiplicity-one component + S22b block-diagonality (PROVEN input) for the C^16 (0,0) fiber realization",
+      "witness_recheck": {
+        "pair(B1+-)_dPF": 7.94180490e-14,
+        "B3-_dPF": 1.43465434e-14,
+        "B3+_dPF": 1.56654150e-14,
+        "B2-_dPF_moving": 2.27943321e-01,
+        "B2+_dPF_moving": 2.27943321e-01,
+        "frozen_floor_le_1e-13": true,
+        "frozen_slot_QGT_I_NA_excl": 2.602481148870118e-24,
+        "match_registered": "MATCH (all values reproduce registered table to stated precision)"
+      }
+    },
+    "T2": {
+      "verdict": "PASS",
+      "reading": "Moving-slot invariant band-matrix is Schur-scalar. [rho(g),H]=0 -> [rho(g),P]=0 (functional calculus on an isolated eigenvalue); rho constant by (H1) -> [rho(g),d_a P]=0; hence M_ab is a G-equivariant endomorphism of ran P =~ V_alpha irreducible -> by Schur M_ab in End_G(V_alpha) = C*1 (complex type), i.e. M_ab = c_ab * 1_{d_alpha} with NO band-index anisotropy. Tensor route P = 1_{V_alpha} (x) pi (pi rank-1) gives M_ab = c_ab*(1_{V_alpha}(x)pi) directly. d_alpha = 4 (B2 PH-doubled quadruplet).",
+      "basis": "Schur on irreducible G-space; commutant remark (real/quaternionic -> block-scalar) noted but B2 witness certifies FULL complex-type scalarity",
+      "witness_recheck": {
+        "b2_scalar_dev_ttmm_per_node": [[1.73136577e-13, 5.95746807e-13], [1.02230466e-13, 1.28232518e-12], [2.49617296e-13, 7.36801413e-13], [1.69893080e-13, 6.73928194e-13], [1.30076169e-13, 7.39782775e-13]],
+        "scalarity_band": "tt-column ~1-2.5e-13; mm-column ~6e-13 to 1.28e-12; ALL sit 11-13 decades BELOW the matrix norm -> M_ab proportional to 1_4 certified",
+        "registered_~1e-13_reading": "order-band not a tight gate; the registered commutant-remark phrasing 'to thirteen decades' is the relative-deviation floor; structural scalarity holds",
+        "moving_slot_content_I_NA_b2_excl": 0.025907652395944922,
+        "match_registered_2.591e-2": "MATCH",
+        "band_selectivity_22OOM": "I_NA_b2_excl / I_NA_excl = 9.955e+21 (log10 = 22.00) -> 22 OOM, MATCHES registered"
+      }
+    },
+    "P": {
+      "verdict": "PASS",
+      "reading": "Double protection of the chirality pair. {gamma,H}=0 forall b -> {gamma,d_a H}=0; with u+ = gamma u- (real-positive phase, |<u+|gamma|u->|=1): m_a = <u+|d_a H|u-> = -m_a* (purely imaginary, gamma channel). Reality structure (H6) makes d_a H real-symmetric and u+- real -> m_a real. A number both imaginary and real is 0. The Wilczek-Zee inter-band channel is killed TWICE by two independent structures (no fine-tuning).",
+      "basis": "constant Hermitian-unitary gamma_9 (Cl(8) gamma product) + S25 reality-mechanism class (PROVEN input)",
+      "witness_recheck": {
+        "chir_anticomm_max_abs": 0.0,
+        "chir_lock": 1.0000000000000007,
+        "A_prot_median_WZ": 1.2969047915204528e-17,
+        "frac_prot_nodes_below_1e-12": 0.9996155324875048,
+        "f_nonAb_pair_CKH": 2.960594732333743e-15,
+        "numerator_float_floor": -4.440892098500626e-15,
+        "match_registered": "MATCH (median 1.297e-17, 99.96% of 2601 nodes < 1e-12, f_nonAb 2.960595e-15)"
+      }
+    },
+    "U": {
+      "verdict": "PASS",
+      "reading": "Symmetry-undecidability of Abelian-vs-non-Abelian band geometry. The CKH discriminator requires either (i) invariant band-matrix anisotropy (excluded by T2: M_ab proportional to 1) or (ii) a canonical band-member frame (excluded: ran P is an irreducible G-space, no G-invariant frame exists, any frame choice is gauge, and inside an exactly degenerate eigenspace per-member projectors are not finite-difference-stable). Every invariant therefore factors through {nu(b), c_ab(b)} = exactly the invariant data of d_alpha independent Abelian channels with identical metric. The two models are observationally identical on a G-invariant base.",
+      "basis": "T2 (no anisotropy) AND the no-G-invariant-frame argument; condensed-matter: non-Abelian Wilczek-Zee vs d_alpha-fold-degenerate Abelian are indistinguishable by any gauge-invariant probe on a symmetric family",
+      "witness_recheck": {
+        "orbit_I_Ab_min_to_max": [141.86388403, 1006.94332057],
+        "orbit_rel_670x": 670.295547048228,
+        "I_NA_invariance_under_U2_rotation": 1.67e-16,
+        "I_Ab_b2_pinned_frame_artifact": 5773.892244379512,
+        "I_NA_b2_invariant": 0.7759177756598141,
+        "conclusion": "Abelian sum spans 670x over the U(2) Haar gauge orbit while the non-Abelian trace is invariant to 1.67e-16 -> the discriminator IS gauge; undecidability confirmed"
+      }
+    },
+    "witness": {
+      "verdict": "PASS",
+      "reading": "Independent row-by-row re-check of the registered witness table from s100b_nonabelian_metric_fraction.npz. ALL rows reproduce to the stated precision.",
+      "f_nonAb_frame_dependent_REPORT_not_gate": "CONFIRMED: f_nonAb is frame-DEPENDENT (eigh arbitrary intra-eigenspace rotation); f_nonAb(pair)=2.96e-15 at floor but f_nonAb_b2=7.44e+03 in the pinned frame is the eigh-rotation artifact (I_Ab_b2 pinned = 5773.9 vs I_NA_b2 invariant = 0.776). REPORTED, not a PASS/FAIL gate.",
+      "rows": {
+        "T1_pair_frozen": {"reg": "7.94e-14", "npz": 7.94180490e-14, "status": "MATCH"},
+        "T1_B3mp_frozen": {"reg": "1.44e-14 / 1.57e-14", "npz": [1.43465434e-14, 1.56654150e-14], "status": "MATCH"},
+        "T1_moving_B2": {"reg": "2.279e-01", "npz": 2.27943321e-01, "status": "MATCH"},
+        "T1_frozen_QGT_floor": {"reg": "2.602e-24", "npz": 2.602481148870118e-24, "status": "MATCH"},
+        "T2_schur_scalar": {"reg": "~1e-13", "npz_tt_max": 2.496e-13, "npz_mm_max": 1.282e-12, "status": "MATCH (order-band; all 11-13 decades below norm)"},
+        "T2_moving_content": {"reg": "2.591e-02 (22 OOM)", "npz": 0.025907652395944922, "ratio_log10": 22.00, "status": "MATCH"},
+        "P_chirality_lock": {"reg": "0.0 exactly; 1.000000000", "npz_anticomm": 0.0, "npz_lock": 1.0000000000000007, "status": "MATCH"},
+        "P_double_protection": {"reg": "1.297e-17; 99.96%", "npz_median": 1.2969047915204528e-17, "npz_frac": 0.9996155324875048, "status": "MATCH"},
+        "P_CKH_floor": {"reg": "2.960595e-15; -4.44e-15", "npz_f": 2.960594732333743e-15, "npz_num": -4.440892098500626e-15, "status": "MATCH"},
+        "U_frame_dependence": {"reg": "141.9->1006.9 (670x) vs 1.67e-16", "npz_orbit": [141.86388403, 1006.94332057], "npz_rel": 670.295547048228, "status": "MATCH"},
+        "H3_corner_defect": {"reg": "n_defect=3; C_fhs=-0.5", "npz_ndef": 3, "npz_cfhs": -0.49999999999999023, "status": "MATCH"},
+        "metric_not_curvature": {"reg": "6.124613e-18 < 1e-12", "npz": 6.124613030518766e-18, "status": "MATCH"}
+      }
+    },
+    "JOINT": {
+      "verdict": "PASS",
+      "reading": "Band-selective Schur-rigidity structural identity: under a fixed G=U(2) fiber representation on a G-invariant deformation family, multiplicity-one isotypic bands (the B1 chirality pair + B3-/B3+) are FROZEN eigenbundles (T1: dP=0, zero QGT) while the irreducible moving slot (B2 quadruplet, d_alpha=4) carries Schur-SCALAR band geometry (T2: M_ab = c_ab*1_4, no band-index anisotropy). The selectivity is intrinsic, not all-or-nothing: structural_reading = BAND-SELECTIVE-RIGIDITY-PAIR-B3-FROZEN-B2-CARRIES-GEOMETRY, all_frozen=False. The two facts together force Corollary U: on this base the non-Abelian Wilczek-Zee B2 band is symmetry-undecidable from d_alpha=4 identical Abelian channels (every invariant factors through {nu, c_ab}). The chirality pair is doubly protected (P), so its CKH content sits at the float floor.",
+      "quantitative_anchor": {
+        "frozen_floor": "max ||DeltaP||_F over (pair,B3-,B3+) = 7.94e-14",
+        "moving": "||DeltaP||_F over (B2-,B2+) = 2.279e-01",
+        "selectivity_gap_OOM": 12.5,
+        "QGT_separation_OOM": 22.0,
+        "schur_scalarity_decades_below_norm": "11-13",
+        "frame_invariance_nonAbelian_trace": 1.67e-16,
+        "abelian_sum_gauge_spread": "670x over U(2) Haar orbit"
+      },
+      "basis": "T1 + T2 + U conjunction, each PASS independently from my Axis-B band-geometry reading; substrate-input-overlap caveat carried (npz shared with Axis-A for clause g)"
+    }
+  },
+  "composite_verdict": "PASS",
+  "composite_note": "All 5 own-axis structural clauses (L0/T1/T2/P/U) re-derived from the registered §VII.BR text + the witness-table re-check (every row MATCH) + the JOINT band-selective rigidity identity all PASS on the Axis-B (condensed-matter band-geometry) reading. f_nonAb frame-dependence REPORTED not gated. Substrate-input-overlap caveat applies (shared npz). Recommendation routes to gen-physicist aggregator for PASS-AND with Axis-A; Stage-3 flip is the aggregator's + session-end synthesis's call, NOT mine. I emit NO verdict line."
+}

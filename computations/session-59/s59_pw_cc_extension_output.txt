@@ -1,0 +1,197 @@
+==============================================================================
+PW-CC-59: Peter-Weyl CC Extension — Does R_cancel Decrease With More Modes?
+==============================================================================
+
+--- Section 1: Loading Dirac Spectrum Infrastructure ---
+
+--- Section 2: Load S58 Reference Data ---
+S58 R_cancel at fold: 0.004441
+S58 Lambda_eff at fold: 0.001417
+S58 V_8x8 norm: 0.343942
+S58 E_8 at fold: [0.84526909 0.84526909 0.84526909 0.84526909 0.81914    0.97822388
+ 0.97822388 0.97822388]
+S58 GGE occupations at fold: [0.26732102 0.25957039 0.1942141  0.16792473 0.10003652 0.00327425
+ 0.00380765 0.00385135]
+S35 rho_smooth (van Hove B2 DOS): 14.023250
+
+--- Section 3: Enumerate Peter-Weyl Sectors ---
+  max_pq_sum=0: 1 irreps, 16 total eigenvalues, ~8 positive, largest D_pi = 16x16
+  max_pq_sum=1: 3 irreps, 112 total eigenvalues, ~56 positive, largest D_pi = 48x48
+  max_pq_sum=2: 6 irreps, 432 total eigenvalues, ~216 positive, largest D_pi = 128x128
+  max_pq_sum=3: 10 irreps, 1232 total eigenvalues, ~616 positive, largest D_pi = 240x240
+  max_pq_sum=4: 15 irreps, 2912 total eigenvalues, ~1456 positive, largest D_pi = 432x432
+  max_pq_sum=5: 21 irreps, 6048 total eigenvalues, ~3024 positive, largest D_pi = 672x672
+  max_pq_sum=6: 28 irreps, 11424 total eigenvalues, ~5712 positive, largest D_pi = 1024x1024
+
+--- Section 4: Dirac Spectrum at Each Level ---
+
+  Computing spectrum at max_pq_sum=0, tau=0.1900...
+    8 distinct positive eigenvalues, total PW multiplicity = 8
+    Energy range: [0.819741, 0.971408]
+    Sectors: [(0, 0, 8)]
+    Time: 0.0s
+
+  Computing spectrum at max_pq_sum=1, tau=0.1900...
+    56 distinct positive eigenvalues, total PW multiplicity = 152
+    Energy range: [0.819741, 1.327661]
+    Sectors: [(0, 0, 8), (0, 1, 24), (1, 0, 24)]
+    Time: 0.0s
+
+  Computing spectrum at max_pq_sum=2, tau=0.1900...
+    216 distinct positive eigenvalues, total PW multiplicity = 1240
+    Energy range: [0.819741, 1.692171]
+    Sectors: [(0, 0, 8), (0, 1, 24), (1, 0, 24), (1, 1, 64), (0, 2, 48), (2, 0, 48)]
+    Time: 0.1s
+
+  Computing spectrum at max_pq_sum=3, tau=0.1900...
+    616 distinct positive eigenvalues, total PW multiplicity = 6440
+    Energy range: [0.819741, 2.060560]
+    Sectors: [(0, 0, 8), (0, 1, 24), (1, 0, 24), (1, 1, 64), (0, 2, 48), (2, 0, 48), (1, 2, 120), (2, 1, 120), (0, 3, 80), (3, 0, 80)]
+    Time: 0.3s
+
+  Computing spectrum at max_pq_sum=4, tau=0.1900...
+    1456 distinct positive eigenvalues, total PW multiplicity = 25088
+    Energy range: [0.819741, 2.431065]
+    Sectors: [(0, 0, 8), (0, 1, 24), (1, 0, 24), (1, 1, 64), (0, 2, 48), (2, 0, 48), (1, 2, 120), (2, 1, 120), (0, 3, 80), (3, 0, 80), (2, 2, 216), (1, 3, 192), (3, 1, 192), (0, 4, 120), (4, 0, 120)]
+    Time: 0.9s
+
+--- Section 5: BCS Mean-Field at Each Level ---
+
+--- Section 6: CC at Each Peter-Weyl Level ---
+
+  === max_pq_sum = 0: 8 positive modes ===
+    ED: E_BCS = -0.136980, <n> = [0.26732141 0.25957087 0.19421433 0.16792491 0.09997721 0.0032915
+ 0.00382764 0.00387214]
+    MF: E_BCS = -2.344035, Delta = [0.78905918 0.78905918 0.78905918 0.78905918 1.52947269 0.35077866
+ 0.35077866 0.35077866], converged=True
+    Lambda_eff = +0.00139563
+    B2=+0.321233, B1=-0.166211, B3=-0.153626
+    R_cancel = 0.00434459
+    S58 cross-check: R_cancel_fold = 0.00444108
+
+  === max_pq_sum = 1: 56 positive modes ===
+    V_ext: 56x56, avg = 0.027868
+    Sector Casimirs: [0.         1.33333333]
+    DOS weights: min=1.00, max=14.02
+    Gap equation converged in 58 iterations
+    E_BCS = -86.600590, max(Delta) = 2.508351
+    Lambda_eff = -22.49856007
+    R_cancel = 1.00000000
+    T_eq = 0.889136
+    Pos part = +0.000000, Neg part = -22.498560
+      Sector (0,0): Lambda = -2.89264083
+      Sector (0,1): Lambda = -10.21147761
+      Sector (1,0): Lambda = -9.39444163
+
+  === max_pq_sum = 2: 216 positive modes ===
+    V_ext: 216x216, avg = 0.021983
+    Sector Casimirs: [0.         1.33333333 3.         3.33333333]
+    DOS weights: min=1.00, max=14.02
+    Gap equation converged in 47 iterations
+    E_BCS = -2885.418503, max(Delta) = 16.744487
+    Lambda_eff = -51870.79681174
+    R_cancel = 1.00000000
+    T_eq = 99.999998
+    Pos part = +0.000000, Neg part = -51870.796812
+      Sector (0,0): Lambda = -1830.65728333
+      Sector (0,1): Lambda = -5659.52389955
+      Sector (0,2): Lambda = -11637.73083338
+      Sector (1,0): Lambda = -5577.68180053
+      Sector (1,1): Lambda = -15657.51490121
+      Sector (2,0): Lambda = -11507.68809373
+
+  === max_pq_sum = 3: 616 positive modes ===
+    V_ext: 616x616, avg = 0.017984
+    Sector Casimirs: [0.         1.33333333 3.         3.33333333 5.33333333 6.        ]
+    DOS weights: min=1.00, max=15.00
+    Gap equation converged in 48 iterations
+    E_BCS = -37637.793270, max(Delta) = 81.526088
+    Lambda_eff = -191032.40905628
+    R_cancel = 1.00000000
+    T_eq = 99.999997
+    Pos part = +0.000000, Neg part = -191032.409056
+      Sector (0,0): Lambda = -2437.70667325
+      Sector (0,1): Lambda = -7349.45683620
+      Sector (0,2): Lambda = -14822.51448940
+      Sector (0,3): Lambda = -24814.18956991
+      Sector (1,0): Lambda = -7315.17063870
+      Sector (1,1): Lambda = -19774.82173295
+      Sector (1,2): Lambda = -37515.30860348
+      Sector (2,0): Lambda = -14799.45372264
+      Sector (2,1): Lambda = -37453.82909636
+      Sector (3,0): Lambda = -24749.95769339
+
+  === max_pq_sum = 4: 1456 positive modes ===
+    V_ext: 1456x1456, avg = 0.014784
+    Sector Casimirs: [0.         1.33333333 3.         3.33333333 5.33333333 6.
+ 8.         8.33333333 9.33333333]
+    DOS weights: min=1.00, max=27.00
+    Gap equation converged in 50 iterations
+    E_BCS = -291356.776707, max(Delta) = 280.376685
+    Lambda_eff = -521841.04378472
+    R_cancel = 1.00000000
+    T_eq = 99.999997
+    Pos part = +0.000000, Neg part = -521841.043785
+      Sector (0,0): Lambda = -2848.49127464
+      Sector (0,1): Lambda = -8550.66916698
+      Sector (0,2): Lambda = -17125.48196825
+      Sector (0,3): Lambda = -28650.77240596
+      Sector (0,4): Lambda = -42961.41406605
+      Sector (1,0): Lambda = -8535.02324133
+      Sector (1,1): Lambda = -22841.94745408
+      Sector (1,2): Lambda = -43016.19266401
+      Sector (1,3): Lambda = -69013.86908113
+      Sector (2,0): Lambda = -17113.93941711
+      Sector (2,1): Lambda = -42991.26595158
+      Sector (2,2): Lambda = -77640.24153185
+      Sector (3,0): Lambda = -28641.02876237
+      Sector (3,1): Lambda = -68986.37664455
+      Sector (4,0): Lambda = -42924.33015483
+
+--- Section 7: Attempting max_pq_sum = 5 ---
+  Computing spectrum at max_pq_sum=5, tau=0.1900...
+    3024 modes, computed in 3.9s
+    Lambda_eff = -1199931.20620908
+    R_cancel = 1.00000000
+    Conv=True, niter=51
+
+--- Section 8: Scaling Analysis ---
+
+ Level  N_modes     Lambda_eff     R_cancel   Method
+------------------------------------------------------------
+     0        8    +0.00139563   0.00434459       ED
+     1       56   -22.49856007   1.00000000   BCS-MF
+     2      216 -51870.79681174   1.00000000   BCS-MF
+     3      616 -191032.40905628   1.00000000   BCS-MF
+     4     1456 -521841.04378472   1.00000000   BCS-MF
+     5     3024 -1199931.20620908   1.00000000   BCS-MF
+
+Power law fit: R_cancel = 0.0205 * (level+1)^(--2.7164)
+  alpha = -2.7164
+Exponential fit: R_cancel = 0.0579 * exp(--0.7770 * level)
+  beta = -0.7770
+
+Projection to Lambda_obs:
+  M_KK = 7.4287e+16 GeV
+  rho_Lambda_obs = 2.7000e-47 GeV^4
+  M_KK^4 = 3.0454e+67 GeV^4
+  R_target = rho_obs / M_KK^4 = 8.8659e-115
+
+--- Section 9: Gate Verdict ---
+
+Gate: PW-CC-59
+  Verdict: INFO
+  Reason: Not monotone decreasing. Saturates or oscillates
+  Criterion: PASS if R_cancel ~ level^(-alpha), alpha > 2
+
+--- Section 10: Save Results ---
+Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s59_pw_cc_extension.npz
+
+--- Section 11: Plot ---
+Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s59_pw_cc_extension.png
+
+Total time: 251.4s
+
+==============================================================================
+PW-CC-59 COMPLETE
+==============================================================================

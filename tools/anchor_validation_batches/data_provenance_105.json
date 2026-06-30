@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 105,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1041",
+      "anchor_type": "data_provenance",
+      "name": "transfer_bogoliubov",
+      "script_path": "session-64/s64_transfer_bogoliubov.py",
+      "session": "s64",
+      "inputs": "",
+      "outputs": "session-64/s64_transfer_bogoliubov.npz, session-64/s64_transfer_bogoliubov.png",
+      "source_file": "computations/session-64/s64_transfer_bogoliubov.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s64_transfer_bogoliubov.py — A_s Transfer Function via Bogoliubov Projection\n    4: =============================================================================\n    5: \n    6: Gate: TRANSFER-BOGOLIUBOV-64\n    7:   PASS: |beta_proj|^2 varies by < factor 2 across cutoff choices (trans-Planckian universality)\n    8:   FAIL: > factor 10 variation (cutoff-sensitive)\n    9: \n   10: PHYSICS:\n   11:     The scalar amplitude A_s at the CMB scale derives from spectral action"
+    },
+    {
+      "anchor_id": "prov_1042",
+      "anchor_type": "data_provenance",
+      "name": "vab_rank",
+      "script_path": "session-64/s64_vab_rank.py",
+      "session": "s64",
+      "inputs": "",
+      "outputs": "session-64/s64_vab_rank.npz, session-64/s64_vab_rank.png",
+      "source_file": "computations/session-64/s64_vab_rank.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s64_vab_rank.py — VAB-RANK-64: Spectral Action Second Variation Rank\n    4: ======================================================================\n    5: Gate: VAB-RANK-64\n    6:   PASS if rank >= 3. FAIL if rank < 3.\n    7: \n    8: Background:\n    9:   The spectral action S[g_K] = Tr f(D_K^2 / Lambda^2) is a functional on Met(SU(3)),\n   10:   the 36-dimensional space of left-invariant metrics on SU(3). Its second variation\n   11:   V_{AB} = d^2 S / dg^a dg^b at the fold metric g_fold is a 36x36 symmetric matrix."
+    },
+    {
+      "anchor_id": "prov_1043",
+      "anchor_type": "data_provenance",
+      "name": "ab_mode_as",
+      "script_path": "session-65/s65_ab_mode_as.py",
+      "session": "s65",
+      "inputs": "",
+      "outputs": "session-65/s65_ab_mode_as.npz, session-65/s65_ab_mode_as.png",
+      "source_file": "computations/session-65/s65_ab_mode_as.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s65_ab_mode_as.py — Anderson-Bogoliubov Mode A_s Normalization\n    4: ===============================================================\n    5: \n    6: Gate: AB-AS-65\n    7:   PASS: |log10(A_s^{AB}/A_s^{obs})| < 1.0 (within 1 OOM)\n    8:   FAIL: |log10(A_s^{AB}/A_s^{obs})| > 3.0 (no improvement over 3.16 OOM)\n    9:   INFO: 1.0 < gap < 3.0 (partial improvement)\n   10: \n   11: PHYSICS:"
+    },
+    {
+      "anchor_id": "prov_1044",
+      "anchor_type": "data_provenance",
+      "name": "bcs_dressed_sa",
+      "script_path": "session-65/s65_bcs_dressed_sa.py",
+      "session": "s65",
+      "inputs": "",
+      "outputs": "session-65/s65_bcs_dressed_sa.npz, session-65/s65_bcs_dressed_sa.png",
+      "source_file": "computations/session-65/s65_bcs_dressed_sa.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s65_bcs_dressed_sa.py -- BCS-DRESSED-65: BCS-Dressed Spectral Action\n    4: ======================================================================\n    5: \n    6: Gate: BCS-DRESSED-65\n    7:   PASS: |delta(eps_H)/eps_H| > 0.01, AND delta(n_s) moves n_s toward Planck 0.9649\n    8:   FAIL: |delta(eps_H)/eps_H| < 0.01 (BCS dressing negligible at tree level)\n    9:   INFO: BCS correction is large (> 0.01) but moves n_s AWAY from Planck\n   10: \n   11: Physics:"
+    },
+    {
+      "anchor_id": "prov_1045",
+      "anchor_type": "data_provenance",
+      "name": "bcs_ns_oneloop",
+      "script_path": "session-65/s65_bcs_ns_oneloop.py",
+      "session": "s65",
+      "inputs": "",
+      "outputs": "session-65/s65_bcs_ns_oneloop.npz, session-65/s65_bcs_ns_oneloop.png",
+      "source_file": "computations/session-65/s65_bcs_ns_oneloop.py",
+      "source_context_30_lines": "   45: \n   46: Inputs:\n   47:   - computations/session-36/s36_sfull_tau_stabilization.npz: eigenvalues at 7 tau\n   48:   - computations/session-65/s65_bcs_dressed_sa.npz: BCS-dressed tree-level (W1-A)\n   49:   - computations/session-63/s63_oneloop_ns.npz: one-loop correction (S63)\n   50:   - computations/session-63/s63_oneloop_epsilon.npz: one-loop S_eff profile (S63)\n   51: \n   52: Output:\n   53:   - s65_bcs_ns_oneloop.npz\n   54:   - s65_bcs_ns_oneloop.png\n   55: \n   56: Agent: Connes-NCG-Theorist (Session 65, Wave 3)\n   57: \"\"\"\n   58: \n   59: import numpy as np\n   60: import sys\n   61: import os"
+    },
+    {
+      "anchor_id": "prov_1046",
+      "anchor_type": "data_provenance",
+      "name": "bf_spectral_asymmetry",
+      "script_path": "session-65/s65_bf_spectral_asymmetry.py",
+      "session": "s65",
+      "inputs": "",
+      "outputs": "session-65/s65_bf_spectral_asymmetry.npz, session-65/s65_bf_spectral_asymmetry.png",
+      "source_file": "computations/session-65/s65_bf_spectral_asymmetry.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s65_bf_spectral_asymmetry.py -- BF-SPLIT-65: B/F Spectral Asymmetry via KO Grading\n    4: ===================================================================================\n    5: \n    6: Gate: BF-SPLIT-65\n    7:   PASS:  |A| > 0.01 (B/F asymmetry > 1%) AND F_{-1}^B - F_{-1}^F differs\n    8:          significantly from F_{+1}^B - F_{+1}^F (decoupling physically realized)\n    9:   FAIL:  |A| < 0.001 (B/F sectors effectively identical for CC)\n   10:   INFO:  0.001 < |A| < 0.01 (small but nonzero asymmetry)\n   11: "
+    },
+    {
+      "anchor_id": "prov_1047",
+      "anchor_type": "data_provenance",
+      "name": "bispectrum_phase",
+      "script_path": "session-65/s65_bispectrum_phase.py",
+      "session": "s65",
+      "inputs": "",
+      "outputs": "session-65/s65_bispectrum_phase.npz, session-65/s65_bispectrum_phase.png",
+      "source_file": "computations/session-65/s65_bispectrum_phase.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s65_bispectrum_phase.py — f_NL from Sudden-Quench Bogoliubov Coherence (BISPECTRUM-65)\n    4: =======================================================================================\n    5: \n    6: Gate: BISPECTRUM-65 (INFO)\n    7:     Report f_NL^{local}, f_NL^{equil}, f_NL^{fold}, and f_NL^{ortho} from the\n    8:     Bogoliubov-excited initial state established in S64 PHASE-BOGOLIUBOV-64.\n    9: \n   10: GOVERNING FRAMEWORK: Excited-state bispectrum\n   11: ----------------------------------------------"
+    },
+    {
+      "anchor_id": "prov_1048",
+      "anchor_type": "data_provenance",
+      "name": "blue_tensor_tilt",
+      "script_path": "session-65/s65_blue_tensor_tilt.py",
+      "session": "s65",
+      "inputs": "s64_epsilon_profile.npz, s64_sound_speed.npz, s64_transfer_bogoliubov.npz, s64_tensor_scalar.npz, s65_bcs_dressed_sa.npz",
+      "outputs": "session-65/s65_blue_tensor_tilt.npz, session-65/s65_blue_tensor_tilt.png",
+      "source_file": "computations/session-65/s65_blue_tensor_tilt.py",
+      "source_context_30_lines": "   53: INPUTS:\n   54:   - computations/session-64/s64_epsilon_profile.npz\n   55:   - computations/session-64/s64_sound_speed.npz\n   56:   - computations/session-64/s64_transfer_bogoliubov.npz\n   57:   - computations/session-64/s64_tensor_scalar.npz\n   58:   - computations/_shared/canonical_constants.py\n   59: \n   60: OUTPUTS:\n   61:   - computations/session-65/s65_blue_tensor_tilt.npz\n   62:   - computations/session-65/s65_blue_tensor_tilt.png\n   63: \n   64: Author: mack-cosmic-bridge (Session 65)\n   65: Date: 2026-04-02\n   66: \"\"\"\n   67: \n   68: import sys\n   69: import os"
+    },
+    {
+      "anchor_id": "prov_1049",
+      "anchor_type": "data_provenance",
+      "name": "bounce_36d",
+      "script_path": "session-65/s65_bounce_36d.py",
+      "session": "s65",
+      "inputs": "",
+      "outputs": "session-65/s65_bounce_36d.npz, session-65/s65_bounce_36d.png",
+      "source_file": "computations/session-65/s65_bounce_36d.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s65_bounce_36d.py — Multi-Field Bounce Action in 36D Moduli Space (BOUNCE-36D-65)\n    4: ==================================================================================\n    5: \n    6: Task: W8-D of Session 65.\n    7: \n    8: Computes the multi-field Coleman bounce action for vacuum decay from the fold\n    9: at tau=0.19 in the full 35-dimensional volume-preserving moduli space of the\n   10: Jensen-deformed SU(3) fiber.\n   11: "
+    },
+    {
+      "anchor_id": "prov_1050",
+      "anchor_type": "data_provenance",
+      "name": "desi_dr3_prep",
+      "script_path": "session-65/s65_desi_dr3_prep.py",
+      "session": "s65",
+      "inputs": "",
+      "outputs": "session-65/s65_desi_dr3_prep.npz, session-65/s65_desi_dr3_prep.png",
+      "source_file": "computations/session-65/s65_desi_dr3_prep.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s65_desi_dr3_prep.py — DESI-DR3-65: Pre-Registered DR3 Predictions\n    4: ====================================================================\n    5: Gate: DESI-DR3-65 (to be resolved when DR3 data arrives)\n    6:   Pre-registered: framework chi^2(DR3) < LCDM chi^2(DR3)\n    7:   STRONG PASS:   delta_chi^2 > 4  (framework favored at > 2-sigma)\n    8:   MARGINAL PASS: 0 < delta_chi^2 < 4\n    9:   FAIL:          delta_chi^2 < 0  (LCDM closer)\n   10: \n   11: Physics:"
+    }
+  ]
+}

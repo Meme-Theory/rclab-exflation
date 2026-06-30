@@ -1,0 +1,1911 @@
+Prepared for submission to JHEPIFT-UAM/CSIC-24-140, YITP-SB-2024-24,
+IPPP/24/64
+NuFit-6.0: Updated global analysis of three-flavor
+neutrino oscillations
+Ivan Esteban, a,b M. C. Gonzalez-Garcia, c,d,e Michele Maltoni, f Ivan Martinez-Soler, g
+João Paulo Pinheiro, c Thomas Schwetz h
+aDepartment of Physics, University of the Basque Country UPV/EHU, PO Box 644, 48080 Bilbao,
+Spain
+bEHU Quantum Center, University of the Basque Country UPV/EHU, PO Box 644, 48080 Bilbao,
+Spain
+cDepartament de Física Quàntica i Astrofísica and Institut de Ciencies del Cosmos, Universitat
+de Barcelona, Diagonal 647, E-08028 Barcelona, Spain
+dInstitució Catalana de Recerca i Estudis Avançats (ICREA), Pg. Lluis Companys 23, 08010
+Barcelona, Spain.
+eC.N. Yang Institute for Theoretical Physics, State University of New York at Stony Brook, Stony
+Brook, NY 11794-3840, USA
+fInstituto de Física Teórica UAM/CSIC, Calle de Nicolás Cabrera 13–15, Universidad Autónoma
+de Madrid, Cantoblanco, E-28049 Madrid, Spain
+gInstitute for Particle Physics Phenomenology, Durham University, South Road, DH1 3LE, Durham,
+UK
+hInstitut für Astroteilchenphysik, Karlsruher Institut für Technologie (KIT), 76021 Karlsruhe, Ger-
+many
+E-mail:ivan.esteban@ehu.eus,concha.gonzalez-garcia@stonybrook.edu,
+michele.maltoni@csic.es,ivan.j.martinez-soler@durham.ac.uk,
+joaopaulo.pinheiro@fqa.ub.edu,schwetz@kit.edu
+arXiv:2410.05380v2  [hep-ph]  28 Oct 2025
+
+=== PAGE BREAK pg%d ===
+
+Abstract:WepresentanupdatedglobalanalysisofneutrinooscillationdataasofSeptem-
+ber 2024. The parametersθ12,θ 13,∆m 2
+21, and|∆m 2
+3ℓ|(ℓ= 1,2) are well-determined with
+relative precision at3σof about 13%, 8%, 15%, and 6%, respectively. The third mixing
+angleθ 23 still suffers from the octant ambiguity, with no clear indication of whether it
+is larger or smaller than45 ◦. The determination of the leptonic CP phaseδCP depends
+on the neutrino mass ordering: for normal ordering the global fit is consistent with CP
+conservation within1σ, whereas for inverted ordering CP-violating values ofδCP around
+270◦ are favored against CP conservation at more than3.6σ. While the present data has
+in principle2.5–3σsensitivity to the neutrino mass ordering, there are different tendencies
+in the global data that reduce the discrimination power: T2K and NOvA appearance data
+individually favor normal ordering, but they are more consistent with each other for in-
+verted ordering. Conversely, the joint determination of|∆m2
+3ℓ|from global disappearance
+data prefers normal ordering. Altogether, the global fit including long-baseline, reactor and
+IceCube atmospheric data results into an almost equally good fit for both orderings. Only
+when theχ 2 table for atmospheric neutrino data from Super-Kamiokande is added to our
+χ2, the global fit prefers normal ordering with∆χ2 = 6.1. We provide also updated ranges
+and correlations for the effective parameters sensitive to the absolute neutrino mass from
+β-decay, neutrinoless double-beta decay, and cosmology.
+Keywords:neutrino oscillations, solar and atmospheric neutrinos
+
+=== PAGE BREAK pg%d ===
+
+Contents
+1 Introduction 1
+2 Global analysis 2
+3 Status of neutrino mass ordering, leptonic CP violation, andθ23 7
+3.1 Updates from T2K and NOvA 7
+3.2 Effects fromν µ/¯νµ versus¯νe disappearance 12
+3.3 Sensitivity to the neutrino mass ordering 15
+4 Updates in the “12” sector 18
+5 Projections on neutrino mass scale observables 19
+6 Summary 22
+A List of data used in the analysis 23
+B IceCube 2019 25
+C Assumed true values for the MO test 26
+1 Introduction
+The global analysis of neutrino oscillation data provides us with the unique comprehensive
+description of the non-trivial flavor structure of leptons. Although in the last years some
+efforts are being put forward by the experimental collaborations for combined analysis of
+their results [1–3], the main task still falls on the work of phenomenological groups [4–6].
+Over the last decade these global analyses have provided consistent results with very good
+quantitative agreement on the dominant effects. In a nutshell, it is found that mass-driven
+oscillations between three neutrino states of different mass and three different mixing angles
+account for the vast majority of the results. And, when redundant, the results from different
+experiments on the dominant effects in this picture are statistically compatible.
+In addition, three-neutrino oscillation effects which are subdominant or quantitatively
+smallinpresentexperimentsincludethemassordering(MO)ofthethreestates, thepossible
+maximality of one of the mixing angles (θ23 in the standard parametrization), and the
+amount of leptonic CP violation. They remain open questions in the present experimental
+landscape and constitute the main goal of the upcoming generation of experiments [7–
+9]. The phenomenological analysis finds minor differences in these subdominant effects,
+and their statistical significance has been varying with time as the running experiments
+– 1 –
+
+=== PAGE BREAK pg%d ===
+
+accumulate more statistics and update their analyses. This, in fact, is one of the main
+motivations for the redundancy of the global phenomenological analysis, providing unbiased
+tests for the consistency over time of the emerging picture.
+In this effort, this work contains the latest analysis within the NuFIT program, Nu-
+FIT 6.0, which incorporates a number of changes and updates since our last published
+analysis in 2020 [4]. In the solar neutrino sector, the new generation of Standard Solar
+Models [10] are now used for the predictions, and the full day-night spectrum from the
+phase-IV of Super-Kamiokande [11] together with the final spectra from Borexino phases-
+II [12] and III [13] are included. For the long baseline (LBL) reactor data, we have updated
+the reactor antineutrino fluxes used for the predictions to the latest Daya-Bay measure-
+ments [14], and results from SNO+ [15–17] are included in the global analysis for the first
+time. From reactors at medium baseline (MBL), we include the most up-to-date Daya-Bay
+spectral data [18]. Updates in the LBL accelerator analysis include incorporating the latest
+samples and simulation updates of T2K [2], and the doubled statistics of NOvA neutrino
+samples [3]. A new independent analysis of atmospheric neutrinos from 3 years of Ice-
+Cube/DeepCore data [19, 20] has been incorporated. Finally, the effect of the updated
+χ2 maps provided by the collaborations for the analysis of the latest atmospheric neutrino
+samples in Super-Kamiokande [21, 22] and IceCube/DeepCore [23, 24] is accounted for.
+The outline of the paper is as follows. In Sec. 2 we present the results of our global
+analysis, providing best-fit values and 1-dimensional and 2-dimensional confidence regions
+for the 6 oscillation parameters, and we discuss the global determination of leptonic CP
+violation. In Sec. 3 we discuss in some detail the various tendencies in the global data,
+focusing on experiments sensitive to the large mass splitting∆m2
+3ℓ (ℓ= 1,2). In Sec. 3.1
+wediscussthecompatibilityamongT2KandNOvAappearancedata, whereasinSec.3.2we
+consider the global combination of disappearance data (which includes accelerator, reactor
+andatmosphericneutrinos), presentingadetailedstudyofthecompatibilityamongdifferent
+combinations of datasets. In Sec. 3.3 we discuss in detail the sensitivity to the neutrino mass
+orderingintermsofaproperhypothesistest. Section4focusesonthe“solarsector” governed
+by∆m 2
+21, especially in light of the latest developments in solar models. In Sec. 5 we provide
+the relevant correlations between absolute neutrino mass observables. We summarize our
+results in Section 6, and provide a list of all the used data in Appendix A. In Appendix B
+we describe our analysis of IceCube data, and in Appendix C we provide more details on
+the mass ordering test.
+2 Global analysis
+We start by presenting the results of the NuFIT 6.0 global fit. Parametrization conventions
+and technical details on our global analysis can be found in Ref. [25]. In particular, we use
+the standard parametrization of the3×3unitary leptonic mixing matrix [26, 27]
+U=
+
+
+1 0 0
+0c 23 s23
+0−s 23 c23
+
+ ·
+
+
+c13 0s 13e−iδCP
+0 1 0
+−s13eiδCP 0c 13
+
+ ·
+
+
+c12 s12 0
+−s12 c12 0
+0 0 1
+
+ · P,(2.1)
+– 2 –
+
+=== PAGE BREAK pg%d ===
+
+wherec ij ≡cosθ ij ands ij ≡sinθ ij, with anglesθij ∈[0, π/2]and phaseδ CP ∈[0,2π], such
+thatδ CP ̸= 0, πimplies CP violation in neutrino oscillations in vacuum [28–30]. HereP=I
+for Dirac neutrinos andP= diag(e iα1, eiα2,1)for Majorana neutrinos, a matrix that plays
+no role in neutrino oscillations [29, 31]. In this convention, there are two non-equivalent
+orderings for the neutrino masses, namely normal ordering (NO) withm1 < m 2 < m 3,
+and inverted ordering (IO) withm3 < m1 < m2. In particular, in what follows we use the
+definition
+∆m2
+3ℓ with
+(
+ℓ= 1for∆m 2
+3ℓ >0: normal ordering (NO),
+ℓ= 2for∆m 2
+3ℓ <0: inverted ordering (IO).
+(2.2)
+The analysis includes all data available up to September 2024 which, for convenience,
+we list in Appendix A with the corresponding references. As is customary in the NuFIT
+analysis since v4.0 [25], we show two versions of the analysis. These versions differ in the
+inclusion of atmospheric neutrino results, for which there is not enough information for
+us to make an independent analysis comparable to that performed by the collaborations.
+In NuFIT 6.0, this is the case for the atmospheric neutrino data from Super-Kamiokande
+phases 1-5 (SK-atm) and from the latest 9.3-year result from IceCube/DeepCore (IC24).
+For those, we use their tabulatedχ2 maps provided in Refs. [22] and [24], respectively,
+which we can combine with our global analysis for the solar, reactor and LBL experiments.
+We note that for IceCube/DeepCore we have performed an independent analysis of their
+previous 3-year atmospheric neutrino data sample [19, 20], which we do include in the
+version of the analysis without tabulatedχ2 maps. In what follows, we refer as «IC19 w/o
+SK-atm» to our independent analysis variant without tabulatedχ2 maps, and as «IC24
+with SK-atm» to the comprehensive analysis variant that includes the tabulated SK-atm
+and IC24χ 2 maps instead of our 3-year IceCube/DeepCore analysis.
+A selection of the results of our global fit are displayed in Fig. 1 (one-dimensional∆χ2
+curves) and Fig. 2 (two-dimensional projections of confidence regions). In Table 1 we give
+the best-fit values as well as1σand3σconfidence intervals for the oscillation parameters in
+both mass orderings, relative to the local best-fit points in each ordering. Additional figures
+and tables corresponding to this global analysis can be found in the NuFIT webpage [32].
+With these results, we obtain the following3σrelative precision of each parameterx,
+defined as2(xup −x low)/(xup +x low), wherexup (xlow) is the upper (lower) bound onxat
+the3σlevel:
+θ12 : 13%, θ 13 :
+(
+NO8.1% [8.2%],
+IO7.8% [7.9%], θ23 :
+(
+NO21% [19%],
+IO20% [18%],
+∆m2
+21 : 15%,|∆m 2
+3ℓ|:
+(
+NO5.6% [5.1%],
+IO5.8% [5.1%], δCP :
+(
+NO100% [98%],
+IO54% [55%],
+(2.3)
+where the numbers between brackets show the impact of including IC24 and SK-atm. We
+note that given the non-Gaussianity of∆χ2(δCP), the above estimated precision forδCP
+can only be taken as indicative, in particular for NO.
+– 3 –
+
+=== PAGE BREAK pg%d ===
+
+0.2 0.25 0.3 0.35 0.4
+sin
+2
+θ12
+0
+5
+10
+15∆χ
+2
+6.5 7 7.5 8 8.5
+∆m
+2
+21 [10
+-5
+ eV
+2
+]
+0.4 0.45 0.5 0.55 0.6 0.65
+sin
+2
+θ23
+0
+5
+10
+15∆χ
+2
+-2.6 -2.5 -2.4
+∆m
+2
+32   [10
+-3
+ eV
+2
+]   ∆m
+2
+31
+2.4 2.5 2.6
+0.018 0.02 0.022 0.024 0.026
+sin
+2
+θ13
+0
+5
+10
+15∆χ
+2
+0 90 180 270 360
+δCP
+NO, IO (IC19 w/o SK-atm)
+NO, IO (IC24 with SK-atm) NuFIT 6.0 (2024)
+Figure 1. Global3νoscillation analysis. We show∆χ 2 profiles minimized with respect to all
+undisplayed parameters. The red (blue) curves correspond to Normal (Inverted) Ordering. Solid
+and dashed curves correspond to the two variants of the analysis as described in the labels (notice
+that in the upper two panels the red-dashed and blue-solid lines almost completely overlap).
+– 4 –
+
+=== PAGE BREAK pg%d ===
+
+★
+0.26 0.28 0.3 0.32 0.34 0.36
+sin
+2
+θ12
+6.5
+7
+7.5
+8
+∆m
+2
+21 [10
+-5
+ eV
+2
+]
+★
+0.018 0.02 0.022 0.024 0.026
+sin
+2
+θ13
+★
+0.3 0.4 0.5 0.6 0.7
+sin
+2
+θ23
+0
+90
+180
+270
+360
+δCP
+★
+★
+-2.6
+-2.5
+-2.4
+2.4
+2.5
+2.6
+∆m
+2
+32    [10
+-3
+ eV
+2
+]    ∆m
+2
+31
+★
+NuFIT 6.0 (2024)
+Figure 2. Global3νoscillation analysis. Each panel shows the two-dimensional projection of
+the allowed six-dimensional region after minimization with respect to the undisplayed parameters.
+The regions in the four lower panels are obtained from∆χ2 minimized with respect to the mass
+ordering. The different contours correspond to1σ, 90%,2σ, 99%,3σCL (2 dof). Colored regions
+(black contours) correspond to the variant with IC19 and without SK-atm (with IC24 and with
+SK-atm).
+– 5 –
+
+=== PAGE BREAK pg%d ===
+
+IC19 without SK atmospheric data
+Normal Ordering (∆χ2 = 0.6) Inverted Ordering (best fit)
+bfp±1σ3σrange bfp±1σ3σrange
+sin2 θ12 0.307+0.012
+−0.011 0.275→0.345 0.308+0.012
+−0.011 0.275→0.345
+θ12/◦ 33.68+0.73
+−0.70 31.63→35.95 33.68+0.73
+−0.70 31.63→35.95
+sin2 θ23 0.561+0.012
+−0.015 0.430→0.596 0.562+0.012
+−0.015 0.437→0.597
+θ23/◦ 48.5+0.7
+−0.9 41.0→50.5 48.6+0.7
+−0.9 41.4→50.6
+sin2 θ13 0.02195+0.00054
+−0.00058 0.02023→0.02376 0.02224+0.00056
+−0.00057 0.02053→0.02397
+θ13/◦ 8.52+0.11
+−0.11 8.18→8.87 8.58+0.11
+−0.11 8.24→8.91
+δCP/◦ 177+19
+−20 96→422 285+25
+−28 201→348
+∆m2
+21
+10−5 eV2 7.49+0.19
+−0.19 6.92→8.05 7.49+0.19
+−0.19 6.92→8.05
+∆m2
+3ℓ
+10−3 eV2 +2.534+0.025
+−0.023 +2.463→+2.606 −2.510+0.024
+−0.025 −2.584→ −2.438
+IC24 with SK atmospheric data
+Normal Ordering (best fit) Inverted Ordering (∆χ2 = 6.1)
+bfp±1σ3σrange bfp±1σ3σrange
+sin2 θ12 0.308+0.012
+−0.011 0.275→0.345 0.308+0.012
+−0.011 0.275→0.345
+θ12/◦ 33.68+0.73
+−0.70 31.63→35.95 33.68+0.73
+−0.70 31.63→35.95
+sin2 θ23 0.470+0.017
+−0.013 0.435→0.585 0.550+0.012
+−0.015 0.440→0.584
+θ23/◦ 43.3+1.0
+−0.8 41.3→49.9 47.9+0.7
+−0.9 41.5→49.8
+sin2 θ13 0.02215+0.00056
+−0.00058 0.02030→0.02388 0.02231+0.00056
+−0.00056 0.02060→0.02409
+θ13/◦ 8.56+0.11
+−0.11 8.19→8.89 8.59+0.11
+−0.11 8.25→8.93
+δCP/◦ 212+26
+−41 124→364 274+22
+−25 201→335
+∆m2
+21
+10−5 eV2 7.49+0.19
+−0.19 6.92→8.05 7.49+0.19
+−0.19 6.92→8.05
+∆m2
+3ℓ
+10−3 eV2 +2.513+0.021
+−0.019 +2.451→+2.578 −2.484+0.020
+−0.020 −2.547→ −2.421
+T able 1. Three-flavor oscillation parameters from our fit to global data for the two variants of
+the analysis described in the text. The numbers in the 1st (2nd) column are obtained assuming
+NO (IO),i.e., relative to the respective local minimum. Note that∆m2
+3ℓ ≡∆m 2
+31 >0for NO and
+∆m2
+3ℓ ≡∆m 2
+32 <0for IO.
+– 6 –
+
+=== PAGE BREAK pg%d ===
+
+0.03 0.032 0.034 0.036
+JCP
+max
+ = c12 s12 c23 s23 c
+2
+13 s13
+0
+5
+10
+15∆χ
+2
+-0.04 -0.02 0 0.02 0.04
+JCP = JCP
+max
+ sinδCP
+NO, IO (IC19 w/o SK-atm)
+NO, IO (IC24 with SK-atm) NuFIT 6.0 (2024)
+Figure 3. Dependence of the global∆χ2 function on the Jarlskog invariant. The red (blue) curves
+are for NO (IO). Solid (dashed) curves are for the «IC19 w/o SK-atm» («IC24 with SK-atm»)∆χ2.
+We quantify the presence of leptonic CP violation in neutrino propagation in vacuum
+in a convention-independent form in terms of the leptonic Jarslkog invariant [34]:
+JCP ≡Im
+
+UαiU ∗
+αjU ∗
+βiUβj
+
+≡J max
+CP sinδCP = cosθ 12 sinθ 12 cosθ 23 sinθ 23 cos2 θ13 sinθ 13 sinδCP .
+(2.5)
+Its present determination is shown in Fig. 3, from which we read its maximum value
+Jmax
+CP = 0.0333±0.0007 (±0.0017).(2.6)
+at1σ(3σ) for both orderings.J CP is totally analogous to the invariant introduced in
+Ref. [35] for the description of CP-violating effects in the quark sector, presently determined
+to beJ quarks
+CP = (3.12+0.13
+−0.12)×10 −5 [36].
+Figure 3 also shows that in NO the best-fit valueJbest
+CP = 0.0017 (−0.018)(where the
+value in parenthesis corresponds to the analysis with IC24 and SK-atm) is only favored over
+CP conservationJ CP = 0with∆χ 2 = 0.02 (0.55). In contrast, in IO CP conservation is
+disfavored with respect toJbest
+CP =−0.032with∆χ 2 = 13 (16), which corresponds to3.6σ
+(4σ) when evaluated for 1 dof.
+3 Status of neutrino mass ordering, leptonic CP violation, andθ23
+3.1 Updates from T2K and NOvA
+We start by discussing the implications of the latest data from the T2K and NOvA long-
+baseline accelerator experiments, presented at the Neutrino 2024 conference. Although our
+analysis includes the full spectral information provided by the collaborations, qualitative
+understanding of the results can be obtained from the study of the total number of events
+in the different appearance samples. To this end, we show in Fig. 4 the predicted number
+– 7 –
+
+=== PAGE BREAK pg%d ===
+
+60
+80
+100
+120Number of events
+νe CCQE
+15
+20
+25Number of events
+¯νe CCQE
+T2K
+0 π 2π
+δCP
+5
+10
+15Number of events
+νe CC1π 0 π 2π
+δCP
+150
+200
+250 νe
+25
+30
+35
+40
+45 ¯νe
+NOνA
+Observed ±1σ
+NO, sin2 θ23 ∈ [0.44, 0.58]
+IO, sin2 θ23 ∈ [0.44, 0.58]
+Figure 4. Predicted number of events as a function ofδCP for the T2K (left) and NOvA (right)
+appearance data sets.sin 2 θ23 varies between 0.44 and 0.58, where the lower-light (upper-dark)
+bound of the colored bands corresponds to 0.44 (0.58). Red (blue) bands correspond to NO (IO).
+For the other oscillation parameters we have adoptedsin2 θ13 = 0.0222,|∆m 2
+3ℓ|= 2.5×10 −3 eV2,
+sin2 θ12 = 0.32,∆m 2
+21 = 7.5×10 −5 eV2. The horizontal dashed lines show the observed number of
+events, with the±1σstatistical error indicated by the gray shaded band.
+of events for these samples as a function ofδCP, for varying values ofsin2 θ23, as well as the
+mass ordering, compared to the observations.
+The predictions in Fig. 4 are calculated using our simulations of the experiments, that
+include numerically-computed oscillation probabilities. However, the general behaviour of
+the curves is well-described by the approximate expressions derived in Refs. [25, 37]. These
+expand the relevant oscillation probabilities in the small parameterssinθ13,∆m 2
+21L/Eν,
+andA≡ |2E νV /∆m2
+3ℓ|(whereLis the baseline,E ν the neutrino energy andVthe effective
+matter potential [38]), resulting in the following expressions for the expected number of
+events:
+Nνe ≈ N ν
+
+2s2
+23(1 + 2oA)−C ′ sinδCP(1 +oA)
+
+,(3.1)
+– 8 –
+
+=== PAGE BREAK pg%d ===
+
+T2K (ν) T2K (¯ν) NOvA (ν) NOvA (¯ν)
+CCQE CC1πSum
+N 54 5 59 13 104 23
+Nobs 102 15 117 16 181 33
+Nobs −N bck 81.6 12.5 94.2 10 117.3 19
+r= Nobs−Nbck
+N 1.5 (1.6) 2.5 (2.4) 1.59 (1.65) 0.77 (0.61) 1.13 (1.14) 0.83 (0.83)
+T able 2. Normalization coefficientsNν andN ¯νin eqs. (3.1) and (3.2) for approximations used to
+qualitatively describe the appearance event samples for T2K and NOvA. Numbers in parentheses
+are the corresponding values for the data set used for NuFIT 5.0.
+N¯νe ≈ N ¯ν
+
+2s2
+23(1−2oA) +C ′ sinδCP(1−oA)
+
+,(3.2)
+whereo≡sgn(∆m 2
+3ℓ). For T2K the mean neutrino energy givesA≈0.05, whereas for
+NOvA we find that the approximation works best with theempiricalvalue ofA= 0.1.
+Furthermore, taking all of the well-determined parametersθ13,θ 12,∆m 2
+21,|∆m 2
+3ℓ|at their
+global best-fit points, we obtain numericallyC′ ≈0.28with negligible dependence onθ 23.
+The normalization constantsN ν,¯νcalculated from our re-analysis of T2K and NOvA are
+given for the various appearance samples in Table 2, along with the corresponding observed
+event numbers and expected backgrounds. We can obtain insight on the results of the fit
+by considering the ratior≡(N obs −N bck)/N.
+From the numbers in the table we observe the following:
+•T2K data hasr >1for neutrinos andr <1for antineutrinos, so the square-bracket
+in Eq. (3.1) has to be enhanced and the one in Eq. (3.2) suppressed. This can be
+achieved withδCP ≃3π/2, with a better fit in NO. This preference has been present
+since the first T2K results onνe appearance. As can be seen in the last line of Table 2,
+although the preference is somewhat weaker in NuFIT 6.0 than it was in NuFIT 5.0,
+it is still significant; and the strongest observed effect remains in the lower-statistics
+CC1πsample.
+•NOvA antineutrino results have not changed since NuFIT 5.0. They haver <1and
+can be accommodated with either NO andδCP ≃π/2, or IO andδCP ≃3π/2, with a
+slightly better fit in NO.
+•NOvA neutrino results have now 60% more statistics than in NuFIT 5.0, and they still
+result inr∼1. This can also be accommodated with either NO andδCP ≃π/2, or IO
+andδ CP ≃3π/2, totally compatible with the NOvA antineutrino results. Altogether,
+the results from NOvA only show a very mild preference for NO.
+•The favored values ofδCP in NO by T2K and NOvA do not agree. Consequently, the
+combination of both experiments is better described in IO withδCP ≃3π/2. This was
+already the case in NuFIT 5.0, and the tendency has strengthened with the updated
+results.
+– 9 –
+
+=== PAGE BREAK pg%d ===
+
+0
+5
+10
+15∆χ
+2
+NOvA ν
+NOvA ν  
+T2K
+LBL-comb
+IC15
+R + LBL/IC
+R + LBL
+0 90 180 270 360
+δCP
+0
+5
+10
+15∆χ
+2
+0 90 180 270 360
+δCP
+NOvA ν
+NOvA ν  
+T2K
+LBL-comb
+IC19
+R + LBL/IC
+R + LBL
+NuFIT 5.0 (2020)IO NO
+NuFIT 6.0 (2024)
+Figure 5.∆χ 2 profiles as a function ofδCP for different data sets and combinations as labeled in
+the figure. In the curves where the reactorsRare not included in the combination we have fixed
+sin2 θ13 = 0.0222as well as the solar parameters and minimized with respect toθ23 and|∆m 2
+3ℓ|.
+When the reactors are includedθ13 is also marginalized. Left (right) panels are for IO (NO) and
+∆χ2 is shown with respect to the global best-fit point for each curve. Upper panels are for the
+NuFIT 5.0 data set, whereas lower panels correspond to the current update.
+This is further illustrated in Fig. 5, which shows the∆χ2 profiles as a function ofδCP for
+the LBL experiments T2K and NOvA and their combination (we also add the information
+from MBL reactors and from the IC atmospheric samples which we independently analyzed
+in NuFIT 5.0 and NuFIT 6.0, and will discuss in Sec. 3.2). Comparing the curves of T2K
+and NOvA in the upper and lower panels, we see that the main difference is in the NOvA
+neutrino results. Just by themselves, they disfavor NO andδCP ≃3π/2by about 6 units in
+χ2 (versus 3 units in NuFIT 5.0), whereas comparing the corresponding curves in the left
+panels we see that for IO the consistent preference of T2K and NOvA forδCP ≃3π/2is now
+statistically more significant. Altogether, this drives the preference of the LBL combination
+for IO, with∆χ2(NO−IO)≈3.2versus 1.5 in NuFIT 5.0.
+The two-dimensional regions for T2K and NOvA in the (δCP,sin 2 θ23) plane for fixed
+θ13 are shown in Figure 6. The better consistency for IO is apparent. For NO we find that,
+unlike in NuFIT 5.0, the1σregions do not overlap. The 2-dimensional projections in the
+– 10 –
+
+=== PAGE BREAK pg%d ===
+
+0 90 180 270 360
+δCP
+0.35
+0.40
+0.45
+0.50
+0.55
+0.60
+0.65
+sin2 θ23
+IO
+NOνA
+T2K
+NOνA + T2K
+0 90 180 270 360
+δCP
+NO
+Figure 6.1σand2σallowed regions (2 dof) for T2K (red shading), NOvA (blue shading) and
+their combination (black curves). Contours are defined with respect to the local minimum for IO
+(left) or NO (right). We fixsin2 θ13 = 0.0222,sin 2 θ12 = 0.31,∆m 2
+21 = 7.5×10 −5 eV2 and minimize
+with respect to|∆m2
+3ℓ|.
+(δCP,sin 2 θ23) plane from the global analysis of all data are shown in Fig. 7, which resemble
+to a large extent the features from the combination among T2K and NOvA discussed above.
+We observe, in particular, non-trivial correlations between these two parameters and the
+MO. For IO, the preference forδCP ≃270 ◦ is highly significant, whereas for NO a more
+complicated structure in the (δCP,sin 2 θ23) plane, with several local minima, emerges. The
+octant degeneracy forθ23 is present with∆χ2 <4for both mass orderings and both data
+variants, showing local minima aroundsin2 θ23 ≈0.56and 0.47.
+An obvious question to address is whether T2K and NOvA are in tension with each
+other at a worrisome level. Consistency among different data sets can be quantified with
+the parameter goodness-of-fit (PG) [39]. For a numberNof different data setsi, each
+depending onn i model parameters, and globally depending onnglob parameters, it can be
+shown that the test statistic
+χ2
+PG ≡χ 2
+min,glob −
+NX
+i
+χ2
+min,i = min
+ NX
+i
+χ2
+i
+
+−
+X
+i
+χ2
+min,i ,(3.3)
+follows aχ 2 distribution withn≡ P
+i ni −n glob degrees of freedom [39].
+Applying this test to the full NOvA and T2K samples (including both appearance and
+disappearance data for neutrinos and antineutrinos) we obtain the values in Table 3. We
+carry out the analysis separately for each mass ordering, in all cases fixing∆m2
+21 andθ 12
+to their best fit. In the results reported in the upper part of the tableθ13 is varied in the
+minimization, sonT2K =n NOvA =n glob=T2K+NOvA = 4(i.e.,∆m 2
+3ℓ,θ 23,δ CP, andθ 13). In
+the lower partθ 13 is kept fixed to its best fit sonT2K =n NOvA =n glob=T2K+NOvA = 3.
+From the table we read that, as expected, agreement is better in IO, where irrespective
+onθ 13 the samples are compatible at the0.5σlevel or better. In NO, compatibility arises
+– 11 –
+
+=== PAGE BREAK pg%d ===
+
+★
+0 90 180 270 360
+δCP
+0.35
+0.4
+0.45
+0.5
+0.55
+0.6
+0.65sin
+2
+θ23
+0 90 180 270 360
+δCP
+NO IO NuFIT 6.0 (2024)
+Figure 7. Two-dimensional projection of the allowed six-dimensional region from global data in
+the plane of (δCP,sin 2 θ23) for IO (left) and NO (right) after minimization with respect to the
+undisplayed parameters. Regions for both orderings are defined with respect to the global best-fit
+point. The different contours correspond to1σ, 90%,2σ, 99%,3σCL (2 dof). Colored regions
+(black contours) correspond to the variant with IC19 and without SK-atm (with IC24 and with
+SK-atm).
+at1.7σ(2.0σ) for free (fixed)θ 13. This is to be compared with the NuFIT 5.0 results of
+1.4σ(1.7σ) respectively. We conclude that the tension between T2K and NOvA in NO has
+slightly strengthened with the new results, reaching at most the2σlevel.
+3.2 Effects fromν µ/¯νµ versus¯νe disappearance
+Figure 8 shows the combined determination of the parameterssin2 θ23,sin 2 θ13, and∆m 2
+3ℓ
+by the interplay of different data samples, namelyνµ/¯νµ disappearance from long-baseline
+accelerator and atmospheric neutrino data (left panel) and¯νe disappearance from medium
+baseline reactor experiments (right panel). We observe significant synergy from the combi-
+nation of different data sets (global regions are clearly smaller than individual ones) as well
+as appealing consistency. This is also reflected by the many compatibility tests reported in
+Table 3, which all show very good consistency typically well below2σ.
+As in previous analyses, the combination ofνµ and¯νµ disappearance data (dominated
+by LBL accelerator experiments) with¯νe disappearance from reactors provides complemen-
+tary information, which is especially relevant for the MO discrimination [40, 41]. In short,
+the effective mass-squared difference relevant for each survival probability depends on the
+mass ordering, so a global combination allows in principle to determine it. This effect can
+be seen in 1-dimensionalχ2 projections on the parameter∆m2
+3ℓ, as shown in Fig. 9.
+In the upper panels we show the profiles for various individual data sets. We observe
+that, individually, the considered data are either insensitive to the MO (∆χ2 <1) or show
+– 12 –
+
+=== PAGE BREAK pg%d ===
+
+Data sets Normal Ordering Inverted Ordering
+χ2
+PG/n p-value#σ χ2
+PG/n p-value#σ
+T2K vs NOvA 7.9/4 0.093 1.7 2.3/4 0.67 0.42
+T2K vs React 0.23/2 0.89 0.14 1.7/2 0.43 0.79
+NOvA vs React 1.1/2 0.58 0.56 4.3/2 0.12 1.6
+T2K vs NOvA vs React 8.6/6 0.20 1.3 6.0/6 0.42 0.80
+(T2K & NOvA) vs React 0.76/2 0.68 0.41 3.4/2 0.18 1.3
+T2K vs IC19 2.7/4 0.61 0.51 1.2/4 0.88 0.15
+NOvA vs IC19 3.3/4 0.51 0.66 2.3/4 0.68 0.41
+Reac vs IC19 2.1/2 0.35 0.93 0.88/2 0.64 0.84
+NOvA vs T2K vs IC19 11/8 0.20 1.3 4.3/8 0.83 0.21
+NOvA vs T2K vs React vs IC1911.5/10 0.33 0.96 7.2/10 0.71 0.38
+T2K vs NOvA 8.0/3 0.045 2.0 1.8/3 0.61 0.50
+T2K vs NOvA vs React 8.3/4 0.081 1.7 4.1/4 0.39 0.85
+(T2K & NOvA) vs React 0.25/1 0.62 0.50 2.0/1 0.16 1.4
+T2K vs IC19 0.72/3 0.86 0.16 0.2/3 0.98 0.028
+NOvA vs IC19 1.5/3 0.68 0.41 1.0/3 0.80 0.25
+NOvA vs T2K vs IC19 9.3/6 0.16 1.4 2.4/6 0.88 0.15
+NOvA vs T2K vs React vs IC19 9.4/7 0.22 1.2 4.5/7 0.72 0.36
+NOvA vs T2K vs IC24 9.5/6 0.15 1.4 4.4/6 0.62 0.49
+NOvA vs T2K vs React vs IC24 10/7 0.19 1.3 8.2/7 0.27 1.1
+T able 3. Consistency test among different data sets, shown in the first column, assuming either
+normal or inverted ordering. “React” includes Daya-Bay, RENO and Double-Chooz. In the analyses
+above the horizontal line,θ13 is a free parameter, whereas below the line we have fixedsin2 θ13 =
+0.0222. See text for more details.
+a slight preference for NO. The only exception is the LBL/IC combination, which prefers
+IO due to the T2K/NOvA tension discussed above. However, by comparing the LBL and
+reactor results, we observe that the determination of|∆m 2
+3ℓ|is in better agreement for
+NO than for IO. Hence, combining reactor and LBL data (bottom-left panels) increases
+the value of∆χ2
+IO,NO ≡χ 2
+min,IO −χ 2
+min,NO in favor of NO. As a result, the preference for
+IO from the T2K/NOvA combination (dominated by appearance data) is nearly exactly
+compensated by the effects of disappearance data in the LBL/reactor combination, leading
+to a global result of∆χ2
+IO,NO =−0.6.
+The preference for NO from the accelerator/reactor combination is also visible in the
+PG tests in Table 3, by considering the consistency among the combined T2K & NOvA
+sample and reactors. For bothθ13 free and fixed, there is slightly better compatibility for
+NO than IO (although even for IO consistency is very good,1.3σor1.4σ). This preference
+is only visible when combining T2K and NOvAbeforetesting the consistency (i.e., the rows
+labeled «(T2K & NOvA) vs React»). Otherwise, if they are kept separate (i.e., the rows
+labeled «T2K vs NOvA vs React») the opposite trend from the combination among T2K
+and NOvA appearance samples compensates for the tendency from disappearance data.
+– 13 –
+
+=== PAGE BREAK pg%d ===
+
+2.2
+2.4
+2.6
+2.8
+3
+∆m
+2
+32    [10
+-3
+ eV
+2
+]    ∆m
+2
+31NOvA
+T2K
+MINOS
+IC19SuperK
+IC24
+0.3 0.4 0.5 0.6 0.7
+sin
+2
+θ23
+-3
+-2.8
+-2.6
+-2.4
+-2.2
+Reno
+DayaBay
+Dbl-Chooz
+0.015 0.02 0.025 0.03
+sin
+2
+θ13
+[2σ]
+NuFIT 6.0 (2024)
+Figure 8. Confidence regions at 95.45% CL (2 dof) in the plane ofsin2 θ23 (sin2 θ13) and∆m 2
+3ℓ)
+in the left (right) panels. For the left panels we use both appearance and disappearance data from
+MINOS (green), NOvA (purple) and T2K (red), as well as atmospheric data from IC (orange)
+and Super-Kamiokande (light-brown); the colored region corresponds to the combination of these
+accelerator data with IC19, whereas the black-dashed contour corresponds to the combination with
+IC24 and Super-Kamiokande. A prior onθ 13 is included to account for the reactor constraint.
+The right panels show regions using data from Daya-Bay (pink), Double-Chooz (magenta), RENO
+(violet), and their combination (black regions). In all panels solar, KamLAND and SNO+ data are
+included to constrain∆m2
+21 andθ 12. Contours are defined with respect to the global minimum of
+the two orderings for each data set.
+In the right half of Fig. 9, we show the impact of the different IceCube data samples.
+It is clear from the figure that the IC19 3-year data sample [19, 20] plays very little role in
+theν µ/νe disappearance complementarity due to its relatively weak constraint on|∆m2
+3ℓ|.
+However, when combining the IC24χ2 table corresponding to 9.3 years of data [23, 24]
+with reactor data, this complementarity [42] already provides a preference for NO, with
+∆χ2
+IO,NO ≈4.5. The result is entirely driven by the|∆m2
+3ℓ|determination, as theχ 2 tables
+provided by the collaboration contain no information on the IceCube MO sensitivity (they
+only provide relative∆χ 2 values with respect to the best fitin each ordering). Let us
+remark, however, that the∆χ2
+IO,NO = 4.5contribution from combining IC24 and reactors
+does not simply add up to the value∆χ2
+IO,NO =−0.6from combining LBL and reactors.
+– 14 –
+
+=== PAGE BREAK pg%d ===
+
+0
+5
+10
+15∆χ
+2
+Reactors
+Minos
+NOvA
+T2K
+LBL-comb
+-3 -2.8 -2.6 -2.4 -2.2
+∆m
+2
+32 [10
+-3
+ eV
+2
+]
+0
+5
+10
+15∆χ
+2
+2.2 2.4 2.6 2.8 3
+∆m
+2
+31 [10
+-3
+ eV
+2
+]
+Reactors
+R + Minos
+R + NOvA
+R + T2K
+R + LBL-comb
+NuFIT 6.0 (2024)
+0
+5
+10
+15∆χ
+2
+Reactors
+LBL-comb
+IceCube
+Global
+-3 -2.8 -2.6 -2.4 -2.2
+∆m
+2
+32 [10
+-3
+ eV
+2
+]
+0
+5
+10
+15∆χ
+2
+2.2 2.4 2.6 2.8 3
+∆m
+2
+31 [10
+-3
+ eV
+2
+]
+Reactors
+R + LBL-comb
+R + IceCube
+R + Global
+NuFIT 6.0 (2024)solid = IC19, dashed = IC24
+Figure 9.∆χ 2 profiles as a function of∆m2
+3ℓ for different data sets and combinations as labeled in
+the figures. In the curves where the reactorsRare not included in the combination we have fixed
+sin2 θ13 = 0.0222as well as the solar parameters and minimized with respect toθ23 andδ CP. When
+the reactors are includedθ13 is also marginalized.∆χ2 is shown with respect to the global best-fit
+point (IO or NO) for each curve. The left set of panels visualizes the reactor/LBL combination,
+whereas in the right set of panels we are illustrating the impact of the IC19 or IC24 data sets.
+Instead, combining LBL and IC24 leads to a shift in|∆m2
+3ℓ|that, when adding reactor
+data, leads to∆χ2
+IO,NO ≈1.5.
+Different to the IC24 data table, the latest Super-Kamiokande atmospheric data [22]
+alone shows a preference for NO with∆χ2
+IO,NO ≈5.7. We note, however, that this result
+seems to emerge from a large statistical fluctuation. Indeed, the probability of obtaining
+the data is relatively low for both mass orderings, and considering the distribution of the
+relevant test statistic, the SK collaboration determines a preference for NO over IO at the
+92.3% CL [21]. When combining the IC24 and SK atmospheric neutrinoχ2 tables with our
+global fit of the remaining data, we find an overall preference for NO with∆χ2
+IO,NO ≈6.1,
+see Sec. 2.
+3.3 Sensitivity to the neutrino mass ordering
+Given the different trends among several determinations of the mass ordering, we now
+study in more detail the sensitivity of current global data to it. To do so, we follow the
+methodology in Ref. [43]. As customary, a useful test statistic for this purpose is theχ2
+difference among the best-fit points for the two orderings. Following Ref. [43], we denote it
+in this Section asT,
+T≡∆χ 2
+IO,NO ≡χ 2
+min,IO −χ 2
+min,NO .(3.4)
+Hence, positivevaluesofTfavorNO,andnegativevaluesfavorIO.Asshowninrefs.[43,44],
+under certain conditionsTwill follow a Gaussian distribution with mean±T0 and standard
+deviation2 √T0, whereT0 is obtained as follows. Ifpi(o, θ)is the expected number of events
+– 15 –
+
+=== PAGE BREAK pg%d ===
+
+in bini(whereo∈ {NO,IO}is the mass ordering andθare the remaining oscillation
+parameters),d i is the observed number of events in that bin, and the globalχ2 is given by
+χ2 =χ 2
+pi(o, θ);d i
+
+, then
+TNO
+0 ≡min θ
+n
+χ2
+pi(IO, θ);p i(NO, θtrue)
+o
+,
+TIO
+0 ≡min θ
+n
+χ2
+pi(NO, θ);p i(IO, θtrue)
+o
+.
+(3.5)
+That is,T 0 is determined by replacing the data by the prediction for the opposite mass
+ordering, given some assumed true values of oscillation parameters. Defined this way,To
+0
+is always positive. Hence, for true NO (IO) the expected value ofTis+TNO
+0 (−TIO
+0 ). The
+conditions under which the aforementioned Gaussian approximation holds are discussed
+in detail in the Appendix of Ref. [43], and they are similar to the conditions for Wilks’
+theorem. In the following, we will study the results of the global fit under the assumption
+thatTis indeed Gaussian-distributed. In addition, the values ofT o
+0 defined in Eq. (3.5)
+depend on the (unknown) true values of the oscillation parametersθtrue. In the following,
+we will take them to be the best-fit points of our analysis as given in Table 1; we comment
+on this assumption in Appendix C.
+This analysis cannot be carried out for the atmospheric neutrino data samples IC24
+and Super-Kamiokande, which are included in our global comprehensive fit as numericalχ2
+tables. Therefore, in what follows we only consider the data sample denoted by «IC19 w/o
+SK-atm».1 For the global data combination, we find
+TNO
+0 = 6.47, T IO
+0 = 4.85.(3.6)
+The corresponding normal distributions forTare shown in the bottom panel of Fig. 10.
+For an observed valueTobs, we compute thep-value for a given mass ordering as usual: the
+p-value for IO (NO) is the probability to obtain a value ofTlarger (smaller) thanTobs if
+the true ordering is IO (NO). Given the observed value for the global fit,Tobs =−0.6, the
+correspondingp-values are indicated by shaded areas in the lower panel of Fig. 10 and can
+be read off from the intersection of the red and blue curves with theTobs value in the upper
+panel:
+NO:p NO = 8.2%,91.8%CL,1.7σ ,
+IO:p IO = 16.7%,83.3%CL,1.4σ .
+(3.7)
+As expected for|T obs|<1, thep-values for both orderings are similar and we cannot
+significantly favor one over the other. Indeed, none of the orderings can be rejected at
+relevant significance; we obtainp-values below2σfor both orderings, with a slightly smaller
+p-value for NO due to the negative value ofTobs.
+Given the distribution forT, we can estimate the sensitivity of the considered data set.
+In particular, the median sensitivity is obtained by assuming thatTobs is given by the mean
+value ofTfor a given mass ordering. Hence, the median p-value is given by the intersection
+1This is unfortunate, as the IC24 and SK samples provide relevant sensitivity to the MO (see above).
+– 16 –
+
+=== PAGE BREAK pg%d ===
+
+15
+ 10
+ 5
+ 0 5 10 1510 4
+10 3
+10 2
+10 1
+100
+p-value
+IO
+NO
+median
+observed value
+15
+ 10
+ 5
+ 0 5 10 15
+T = 2
+IO, min
+2
+NO, min
+0.00
+0.02
+0.04
+0.06
+0.08
+0.10T distribution
+Figure 10.p-values (top) and distributions (bottom) for the test statisticT=χ 2
+IO,min −χ 2
+NO,min
+corresponding to the «IC19 w/o SK-atm» analysis, assuming true NO (red) or true IO (blue).
+The observed valueT obs =−0.6is shown by the solid vertical black line. The corresponding
+median values are shown by the dashed vertical lines. The green and yellow bands in the top panel
+—vertically displaced to avoid graphical overlap— correspond to the1σand2σintervals forT
+assuming NO (upwards displaced bands) and IO (downwards displaced bands).
+of the dashed lines with the corresponding red or blue curves in the top panel of Fig. 10,
+NO:p med
+NO = 1.3%,98.7%CL,2.5σ ,
+IO:p med
+IO = 0.51%,99.49%CL,2.8σ .
+(3.8)
+We conclude that current data has a nominal sensitivity above2.5σto the mass ordering.
+The weak rejection we obtain for both orderings is a result of the opposite trends in the data
+discussed in previous subsections, resulting in an observed value forTobs right in between
+the peaks of the distributions. A natural question is how unlikely this result is. To assess
+it, we show in the top panel of Fig. 10 the intervals whereTobs is expected to lie with
+probability of 68.27% (green) and 95.45% (yellow) for the two mass orderings. We see that
+the obtained valueTobs =−0.6is not particularly unlikely for both orderings, being located
+within the1σ(2σ) ranges for IO (NO).
+– 17 –
+
+=== PAGE BREAK pg%d ===
+
+4 Updates in the “12” sector
+The analyses of the solar experiments and of reactor experiments atO(100km)distance
+(which we refer to as LBL reactor experiments) give the dominant contribution to the
+determination of∆m 2
+21 andθ 12. We show in Fig. 11 the present determination of these
+parameters from the global solar analysis in comparison with that of LBL reactor data.
+In the solar neutrino sector, new data included since NuFIT 5.0 are the full day-night
+spectrum from the phase-IV of Super-Kamiokande [45], and the final spectra from Borexino
+phases-II [12] and III [13]. As for the predictions required for the solar neutrino analysis, the
+main update is that we have employed the new generation of Standard Solar Models [10].
+In brief, for the last two decades solar modeling has suffered from the so-called solar com-
+position problem, associated with the choice of the input for heavy element abundances.
+They were either taken from the older results from Ref. [46] (GS98), which implied a higher
+metallicity and predicted solar properties in good agreement with helioseismology observa-
+tions, or the newer abundances (obtained with more modern methodology and techniques)
+summarized in Ref. [47] (AGSS09), which implied a lower metallicity and did not agree
+with helioseismology. Consequently, two different sets of Standard Solar Models were built,
+each based on the corresponding set of solar abundances [48–50]. On this front, an update
+of the AGSS09 results was presented by the same group (AAG21) [51], leading only to a
+slight increase of the solar metallicity. On top of that, a new set of results (MB22) [52]
+— based on similar methodologies and techniques but with different atomic input data for
+the critical oxygen lines, among other differences — led to a substantial change in solar
+element abundances with respect to AGSS09, more in agreement with those from GS98.
+Therefore, the models built following MB22 provide a good description of helioseismology
+results.
+In Fig. 11 we show the present determination of∆m2
+21 andθ 12 from the global solar
+analysis performed with the two extreme versions of the Standard Solar Model, namely
+the one based on the AAG21 abundances and the one based on the MB22-met abundances.
+From the figure, we see that the determination of the parameters is robust under the changes
+in the modeling, though the allowed ranges — particularly at higher CL — is different for
+the two models. In this respect, it is important to point out that the latest Standard-Solar-
+Model-independent determination of the solar fluxes performed in Ref. [53] shows better
+agreement with the predictions of the MB22 models. For this reason, we adopt the MB22
+as the reference model employed for the results reported in NuFIT 6.0.
+In what respects the relevant data from reactor experiments, we have updated the
+antineutrino fluxes used for the predictions to the latest Daya-Bay measurements [14].
+Furthermore, we have included in the fit our analysis of the first results reported by the
+SNO+ collaboration, which combines the 114 ton-yr of data gathered during the partial-fill
+phase reported in Ref. [15] and the first 286 ton-yr of data of the full-fill phase presented
+at Neutrino 2024 [16, 17]. We show in the right panel of Fig. 11 the∆χ2 dependence on
+∆m2
+21 after marginalizing overθ 12 (fixingsin 2 θ13 = 0.0222). Although the precision of
+SNO+ is still far from that of KamLAND, it is interesting to note that its present best
+fit is slightly higher than that of KamLAND, though the impact in the combination is
+– 18 –
+
+=== PAGE BREAK pg%d ===
+
+★
+★
+0.2 0.25 0.3 0.35 0.4
+sin
+2
+θ12
+0
+2
+4
+6
+8
+10
+12
+14∆m
+2
+21 [10
+−5
+ eV
+2
+]
+sin
+2
+θ13 = 0.0222
+2 4 6 8 10
+∆m
+2
+21 [10
+−5
+ eV
+2
+]
+0
+2
+4
+6
+8
+10
+12∆χ
+2
+MB22m w/o D/N from SK
+MB22m
+AAG21
+KamLAND
+SNO+
+KL & SNO+
+NuFIT 6.0 (2024)
+Figure 11. Left: Allowed parameter regions (at1σ, 90%,2σ, 99%, and3σCL for 2 dof) from the
+combined analysis of solar data for MB22-met model (full regions with best fit marked by black star)
+and AAG21 model (dashed void contours with best fit marked by a white dot), and for the analysis
+of the combination of KamLAND and SNO+ data (solid green contours with best fit marked by
+a green star) for fixedsin 2 θ13 = 0.0222. For comparison we also show as orange contours the
+results obtained with the MB22-met model without including the results of the day-night variation
+in SK. Right:∆χ 2 dependence on∆m 2
+21 for the same four analyses after marginalizing overθ12.
+In addition we show separately the results from KamLAND and SNO+.
+still very marginal as seen in the figure. Nevertheless, the results from SNO+ and the
+expected statistics increase will be interesting to follow due to their potential impact in the
+tension/agreement between the solar and reactor determination of∆m2
+21. In that respect,
+from the figure we read that the present best-fit value of∆m2
+21 for the reactor results
+lies at∆χ 2
+solar,MB22 = 2.5, which represent a slight increase over the∆χ2
+solar,GS98 = 1.3
+reported in NuFIT 5.0. For comparison, we show in orange the results of the solar analysis
+without including the Day-Night variation information from Super-Kamiokande. As seen
+in the figure, removing that information brings the agreement further down to∆χ2 ∼1.5.
+Altogether the latest updates lead to very mild changes in the determination of “solar”
+parameters (∼1%shift up in the best-fit value and∼10%improvement in the precision)
+reassuring the robustness of the results.
+5 Projections on neutrino mass scale observables
+Because of its quantum-interference nature, mass-induced flavor oscillations are sensitive
+to the phase differences induced by the mass-squared splittings∆m2
+ij and to misalignment
+between the detection and propagation eigenstates,i.e., to the leptonic mixing matrix
+elementsU αj. They are, however, insensitive to overall shifts of the energy levels, and hence
+– 19 –
+
+=== PAGE BREAK pg%d ===
+
+10
+-3
+10
+-2
+10
+-1
+10
+0
+mlight [eV]
+10
+-1
+10
+0
+Σmν [eV]
+NO
+IO
+10
+-3
+10
+-2
+10
+-1
+10
+0
+mlight [eV]
+10
+-2
+10
+-1
+10
+0
+mνe
+ [eV]
+NO
+IO
+10
+-3
+10
+-2
+10
+-1
+10
+0
+mlight [eV]
+10
+-4
+10
+-3
+10
+-2
+10
+-1
+10
+0
+mee [eV]
+NO
+IO
+10
+-1
+10
+0
+Σmν [eV]
+10
+-2
+10
+-1
+10
+0
+mνe
+ [eV]
+NO
+IO
+10
+-1
+10
+0
+Σmν [eV]
+10
+-4
+10
+-3
+10
+-2
+10
+-1
+10
+0
+mee [eV]
+NO
+IO
+10
+-2
+10
+-1
+10
+0
+mνe
+ [eV]
+10
+-4
+10
+-3
+10
+-2
+10
+-1
+10
+0
+mee [eV]
+NO
+IO
+NuFIT 6.0 (2024)
+Figure 12. Upper: 95% CL allowed ranges of the three probes of the absolute neutrino massPmν,
+mνe,m ee as a function of the mass of the lightest neutrino obtained from projecting the results
+of the global analysis of oscillation data. The regions are defined with respect to the minimum
+for each ordering. Lower: Corresponding 95% CL allowed regions (for 2 dof) in the planes (mνe,Pmν), (mee,Pmν), and (mνe,m ee).
+they cannot provide information on the absolute mass scale of the neutrinos other than the
+obvious lower bound on the masses of the heaviest states involved in the oscillations.
+The most model-independent information on the neutrino mass, rather than on mass
+differences, is obtained from kinematic studies of reactions in which a neutrino or an an-
+tineutrino is involved. In the presence of mixing, the most relevant constraint comes from
+the study of the end point (E∼E 0) of the electron spectrum in Tritium beta decay
+3H→ 3He+e − + ¯νe. This spectrum can be effectively described by a single parameter,
+mνe, if for all neutrino statesE0 −E≫m i:
+m2
+νe ≡
+P
+i m2
+i |Uei|2
+P
+i |Uei|2 =
+X
+i
+m2
+i |Uei|2 ,(5.1)
+where the second equality holds if unitarity is assumed. The most recent result on the
+kinematic search for neutrino mass in tritium decay is from KATRIN [54], which sets an
+upper limitm νe <0.45eV at 90% CL.
+– 20 –
+
+=== PAGE BREAK pg%d ===
+
+Direct information on neutrino masses can also be obtained from neutrinoless double
+beta decay(A, Z)→(A, Z+ 2) +e − +e −. This process violates lepton number by two
+units, hence in order to induce the0νββdecay, neutrinos must be Majorana particles. In
+particular, if the only effective lepton number violation at low energies is induced by a
+Majorana mass term for neutrinos, the rate of0νββdecay is proportional to theeffective
+Majorana mass ofνe:
+mee =
+
+X
+i
+miU 2
+ei
+ .(5.2)
+Currently the strongest bound on0νββdecay lifetimes are obtained with Germanium
+(T 0ν
+1/2 >1.8×10 26 yr) by GERDA [55] and with Xenon (T0ν
+1/2 >3.8×10 26 yr) by KamLAND-
+Zen [56]. Depending on the assumed nuclear matrix elements, these correspond to 90% CL
+limits ofm ee ≲0.079–0.180eV [55] andmee ≲0.028–0.122eV [56], respectively.
+Finally, neutrino masses also have effects in cosmology. In general, cosmological data
+mostly gives information on the sum of the neutrino masses,Pmν, while it has very little
+to say on their mixing structure and on the ordering of the mass states. At present, no
+positive evidence of the cosmological effect of a non-zero neutrino mass has been observed,
+which results into upper bounds onPmν in the range ofPmν ≲0.04–0.3eV (see,e.g.,
+Refs. [57, 58] and references therein for post-DESI [59] global analyses) depending on,e.g.,
+the cosmological data included in the analysis, assumptions on the cosmological model, the
+statistical approach, the treatment of systematics, or parameter priors.
+Within the3ν-mixing scenario, for each mass ordering, the values of these observables
+can be directly predicted in terms of the parameters determined in the global oscillation
+analysis and a single mass scale, which is usually taken to be the lightest neutrino mass
+m0. In addition, the prediction formee also depends on the unknown Majorana phases:
+mνe =
+q
+m2
+1 c2
+13c2
+12 +m 2
+2 c2
+13s2
+12 +m 2
+3 s2
+13 ,(5.3)
+mee =
+m1 c2
+13c2
+12 e2i(α1−δCP) +m 2 c2
+13s2
+12 e2i(α2−δCP) +m 3 s2
+13
+ ,(5.4)
+Pmν =m 1 +m 2 +m 3 ,(5.5)
+with
+
+
+
+NO:m 1 =m 0 , m 2 =
+q
+m2
+0 + ∆m2
+21 , m 3 =
+q
+m2
+0 + ∆m2
+3ℓ ,
+IO:m 3 =m 0 m2 =
+q
+m2
+0 −∆m 2
+3ℓ , m 1 =
+q
+m2
+0 −∆m 2
+3ℓ −∆m 2
+21 ,
+(5.6)
+WeshowintheupperpanelsinFig.12the95%CLallowedrangesforthesethreeprobes
+obtained from the projection of the results of the NuFIT 6.0 global oscillation analysis as
+a function ofm 0. The larger width of the regions for them ee predictions is due to the
+unknown Majorana phases. The regions are shown including only the information from
+the oscillation data (void regions) and also in combination with the results from KATRIN
+(filled regions). For the latter, we build aχ2 function trivially based on their quoted result
+m2
+νe =−0.14 +0.13
+−0.15 eV under the assumptions of Gaussianity, applicability of Wilks’ theorem
+(despite the physical boundarym2
+νe ≥0), and quadratic systematics.2
+2Under these assumptions,χ2(mνe) = (m2
+νe + 0.14)2/0.132 yields a 90% CL upper boundmνe ≤0.35eV
+which lies in between the boundsmνe ≤0.45eV andm νe ≤0.31eV obtained by the collaboration with the
+Lokhov-Tkachov and Feldman-Cousins methods, respectively.
+– 21 –
+
+=== PAGE BREAK pg%d ===
+
+Using the above expressions, one can substitutem0 by any of the three probes in the
+expressions of the other two. Thus, within the three-neutrino mixing scenario the predicted
+values for these three probes are strongly correlated. We show in the lower panels in Fig. 12
+the present status of these correlations. As those panels show, with a positive determination
+of two of these probes one can in principle obtain information on the value of the Majorana
+phases and/or the mass ordering [60, 61]. Furthermore, a sufficiently strong upper bound
+can provide information about the ordering of the states [62].
+Quantitatively, the global analysis of oscillation data together with the bound from the
+KATRIN experiment implies that at 95% CL
+0.0085eV≤m νe ≤0.4eV for NO,0.048eV≤m νe ≤0.4eV for IO,(5.7)
+0.058eV≤ Pmν ≤1.2eV for NO,0.098eV≤ Pmν ≤1.2eV for IO (5.8)
+and for Majorana neutrinos also
+0≤m ee ≤0.41eV for NO,0.015eV≤m ee ≤0.41eV for IO.(5.9)
+6 Summary
+We have presented an updated global analysis of world oscillation data up to September
+2024aslistedinAppendixA.Ourresultsarepresentedintwoversions: «IC19w/oSK-atm»
+including all the data for which enough information is available to perform an independent
+accurate fit, and «IC24 with SK-atm» which includesχ2 data tables provided by the Ice-
+Cube and Super Kamiokande collaborations that we add to our ownχ2. The global best-fit
+values as well as1σand3σranges for all parameters are given in Table 1. The main results
+can be summarized as follows:
+•The determination of the parametersθ 12,θ 13,∆m 2
+21, and|∆m 2
+3ℓ|is very stable, with
+Gaussianχ 2 profiles up to high CL. The relative precision at3σfor these parameters
+is about 13%, 8%, 16%, (5–6)%, respectively.
+•Forθ 23 the precision at3σis still about 20%, and the determination suffers from the
+octantambiguity. Thereisaslight preferenceforthe second octant,θ 23 >45 ◦, (except
+for NO and the «IC24 with SK-atm» data) but for all combinations of datasets and
+mass orderings, the local minimum in the other octant always has∆χ2 <4.
+•The determination of the leptonic CP phaseδ CP strongly depends on the mass or-
+dering. For NO the best-fit point is very close to the CP-conserving value of180◦
+(with∆χ 2 <1), and theχ 2 profile is highly non-Gaussian, with some dependence on
+the two data variants and on the octant ofθ23. For IO, the best fit points for both
+data variants are close to maximal CP violationδCP = 270◦ (within1σ), disfavoring
+CP conservation at3.6σ(4σ) for the «IC19 w/o SK-atm» («IC24 with SK-atm»)
+analysis.
+– 22 –
+
+=== PAGE BREAK pg%d ===
+
+•Concerning the mass ordering, we find∆χ 2
+IO,NO =−0.6 (6.1)for the «IC19 w/o
+SK-atm» («IC24 with SK-atm») analysis. The indecisive result for the «IC19 w/o
+SK-atm» analysis emerges from opposite trends in the long-baseline accelerator ap-
+pearance data from T2K and NOvA on the one hand, and in the combination of the
+disappearance channels from accelerator and reactor experiments on the other hand.
+In the former case, the tension between T2K and NOvA for NO has reached2σwith
+the latest NOvA update, whereas they are perfectly consistent for IO. Conversely, the
+determination of|∆m 2
+3ℓ|fromν µ andν e disappearance agrees better for NO than for
+IO. While a sensitivity analysis suggests that global «IC19 w/o SK-atm» data has
+a median sensitivity of2.5σ(2.8σ) to reject NO (IO), the actual result is only1.7σ
+(1.4σ) for NO (IO) because of the opposite trends in the data. The addition of IC24
+and SK-atm data provides additional preference for NO leading to the above quoted
+result of∆χ 2
+IO,NO = 6.1.
+We provide also updated ranges and correlations for the effective parameters sensitive to the
+absolute neutrino mass fromβ-decay, neutrinoless double-beta decay, and cosmology. All
+results and supplementary material such as additional figures and data tables are provided
+at the NuFit webpage [32].
+Acknowledgments
+We would like to thank Tetiana Kozynets and Philipp Eller for useful discussions about
+the IceCube simulation. This project is funded by USA-NSF grant PHY-2210533 and
+by the European Union’s through the Horizon 2020 research and innovation program
+(Marie Skłodowska-Curie grant agreement 860881-HIDDeN) and the Horizon Europe re-
+search and innovation programme (Marie Skłodowska-Curie Staff Exchange grant agree-
+ment 101086085-ASYMMETRY), and by ERDF “A way of making Europe”. It also re-
+ceives support from grants PID2022-126224NB-C21, PID2022-136510NB-C33, PID2022-
+142545NB-C21, PID2021-123703NB-C21, “Unit of Excellence Maria de Maeztu 2020-2023”
+award to the ICC-UB CEX2019-000918-M, grant IFT “Centro de Excelencia Severo Ochoa”
+CEX2020-001007-S funded by MCIN/AEI/10.13039/501100011033, as well as from grants
+2021-SGR-249 (Generalitat de Catalunya) and from Basque Government (IT1628-22) grant.
+IMS is supported by the STFC under Grant No. ST/X003167/1. Part of this work used
+the Solaris cluster, acquired through the Basque Government IT1628-22 grant.
+A List of data used in the analysis
+Solar experiments
+⇒External information: Standard Solar Models [10].
+•Chlorine total rate [63], 1 data point.
+•Gallex & GNO total rates [64], 2 data points.
+– 23 –
+
+=== PAGE BREAK pg%d ===
+
+•SAGE total rate [65], 1 data point.
+•SK1 1496-day energy and zenith spectrum [66], 44 data points.
+•SK2 791-day energy and day/night spectrum [45], 33 data points.
+•SK3 548-day energy and day/night spectrum [67], 42 data points.
+⇒SK4 2970-day energy and day/night spectrum [11], 46 data points.
+•SNO combined analysis [68], 7 data points.
+•Borexino Phase-I 741-day low-energy data [69], 33 data points.
+•Borexino Phase-I 246-day high-energy data [70], 6 data points.
+⇒Borexino Phase-II 1292-day low-energy data [12], 192 data points.
+⇒Borexino Phase-III 1432-day low-energy data [13], 120 data points.
+Atmospheric experiments
+•External information: Atmospheric neutrino fluxes [71].
+⇒IC19 IceCube/DeepCore 3-year data (2012-2015) [19, 20], 140 data points.
+⇒IC24 IceCube/DeepCore 9.3-year data (2012-2021)χ 2 map [23, 24] added to our
+global analysis.
+⇒SK1-5 484.2 kiloton-year data [21],χ 2 map [22] added to our global analysis.
+Reactor experiments
+⇒KamLAND separate DS1, DS2, DS3 spectra [72] with Daya Bay reactorνfluxes [14],
+69 data points.
+⇒SNO+ spectrum from partial fill 114 ton-yr [15] data and full fill 286 ton-yr data [16,
+17], 17 data points.
+•Double-ChoozFD/NDspectralratio, with1276-day(FD),587-day(ND)exposures[73],
+26 data points.
+⇒Daya Bay 3158-day separate EH1, EH2, EH3 spectra [18], 78 data points.
+•Reno 2908-day FD/ND spectral ratio [74], 45 data points.
+– 24 –
+
+=== PAGE BREAK pg%d ===
+
+Accelerator experiments
+•MINOS10.71×10 20 potν µ-disappearance data [75], 39 data points.
+•MINOS3.36×10 20 pot¯νµ-disappearance data [75], 14 data points.
+•MINOS10.6×10 20 potν e-appearance data [76], 5 data points.
+•MINOS3.3×10 20 pot¯νe-appearance data [76], 5 data points.
+⇒T2K21.4×10 20 potν µ-disappearance data [2], 28 data points.
+⇒T2K21.4×10 20 potν e-appearance data [2], 9 data points for the CCQE and 7 data
+points for the CC1πsamples.
+⇒T2K16.3×10 20 pot¯νµ-disappearance data [77], 19 data points.
+⇒T2K16.3×10 20 pot¯νe-appearance data [78], 9 data points.
+⇒NOvA26.6×10 20 potν µ-disappearance data [3], 22 data points.
+⇒NOvA26.6×10 20 potν e-appearance data [3], 15 data points.
+•NOvA12.5×10 20 pot¯νµ-disappearance data [79], 76 data points.
+•NOvA12.5×10 20 pot¯νe-appearance data [79], 13 data points.
+B IceCube 2019
+The IceCube analysis (IC19) is based on Analysis A from Refs. [19, 20]. This analysis
+uses data collected over 3-years, from April 2012 to May 2015. Following the public data
+release [80], we computed the expected number of events for each bin, where the recon-
+structed energy is logarithmically distributed between5.6GeV and56GeV across eight
+bins, and the reconstructed cosine of zenith angle is distributed between−1and+1across
+ten bins. The events are categorized into two particle identification (PID) types: tracks
+and cascades. The expected number of events in each bin is given by
+Ni =T
+X
+α
+X
+MC
+ϕatm
+α (Eν,cosθ)P αβ(Eν,cosθ)A eff
+β (B.1)
+where the sum is performed over all the Monte Carlo simulated events that contribute to
+thei-th bin and over all initial flavor states, corresponding to electron and muon neutrinos
+in the case of atmospheric neutrinos. For the atmospheric neutrino flux, we used the Honda
+flux tables [71] with the energy spectra modified by a factor of(Eν
+
+5GeV) −0.05. Both the
+flux and the oscillation probabilities are evaluated at the true energy and zenith of the
+simulated events. The constantTdenotes the total data-taking time. In addition to the
+expected event distribution, each bin includes a contribution from the atmospheric muon
+background, determined by binning the simulated muon background events provided in the
+public release.
+– 25 –
+
+=== PAGE BREAK pg%d ===
+
+The event distribution in each bin is modified by the detector systematics, which ac-
+count for the uncertainties in the detector response. These uncertainties include factors such
+as optical absorption, photon scattering in the ice, DOM efficiency, and the coincidence in
+reconstruction between neutrinos and atmospheric muons. The systematics are applied to
+the event distribution as multiplicative reweighting factors for each bin. We have incor-
+porated these uncertainties into our analysis using the information provided in the data
+release and taking the variable calledreco_coszenas the negative of the reconstructed
+zenith angle (−cosθ rec). These systematics apply to both the event and background dis-
+tributions. For the uncertainties, we used the values specified in the data release. For the
+nominal prediction, we assumed that the event distribution is corrected by the offset plus
+5×opt_eff_lateral.
+In addition to detector-related systematics, the analysis incorporates uncertainties as-
+sociated with the atmospheric neutrino flux. These uncertainties are accounted for as
+follows:
+•Normalization: An uncertainty of 100% was assumed, although the results remain
+consistent when this parameter is left free.
+•Initial flavor composition: A 18% uncertainty was included to account for variations
+in the initial composition of electron and muon neutrinos.
+•Neutrino to antineutrino ratio: An uncertainty of 25% was applied to account for
+variations in the relative flux of neutrinos and antineutrinos.
+•Energy dependence of the flux: This uncertainty is parameterized using the factor
+(Eν/E0)γ, withE 0 = 5GeV. The central value ofγis set to zero, and an uncertainty
+of 5% is applied.
+•Upward vs. horizontal flux ratio: A 10% uncertainty was assumed to account for
+directional asymmetries in the atmospheric neutrino flux.
+Assuming a Gaussianχ2 distribution and noting that the variablereco_coszenin the
+data corresponds to the negative ofreco_coszenin the simulated events, we have computed
+IceCube’s sensitivity to∆m2
+32 andsin 2 θ23. The results are presented in Fig. 13, alongside
+a comparison with the findings from Analysis A of [20]. By comparing the best-fit points
+for the two neutrino mass orderings we obtain a non-significant preference for the normal
+ordering with a difference of0.7units inχ2, in excellent agreement with the corresponding
+result0.738reported in ref. [19].
+C Assumed true values for the MO test
+As mentioned in Sec. 3.3, the values ofTo
+0 — and therefore the distribution ofT— depend
+on the unknown true value of the oscillation parameters, see Eq. (3.5). In principle, one
+needs to consider the distribution ofTfor all possible values ofθtrue and the finalp-value
+of a MO hypothesis will be given by the largest one among all choices ofθtrue,i.e., by the
+– 26 –
+
+=== PAGE BREAK pg%d ===
+
+0.35 0.40 0.45 0.50 0.55 0.60 0.65
+1
+2
+3
+4
+2
+0.35 0.4 0.45 0.5 0.55 0.6 0.65
+sin2 23
+2.3
+2.4
+2.5
+2.6
+2.7
+2.8
+2.9
+m2
+32[10 3 eV2]
+1 2 3 4
+2
+Figure 13. Our fit to IceCube Analysis A (blue dashed lines) is compared to the results from
+IceCube [20] (black lines).
+weakest rejection (see the discussion in Ref. [43]). In the main text, we have assumed that
+the best fit of the real data is representative of theT-distribution at the unknown true value
+ofθ. Indeed, given the allowed regions of the oscillation parameters, we do not expectT0
+to change significantly if we varyθtrue within the allowed regions at reasonable confidence
+level. The only exception may be the sensitivity of LBL data as a function ofδCP, which
+is known to affect the MO sensitivity, especially for NOvA as shown in Fig. 4.
+For IO, the global fit constrainsδCP reasonably well, so that we do not expect strong
+variations ofT IO
+0 for true values ofδCP in its allowed range for IO. However, for NO, a
+significantly larger range ofδCP is allowed, in particular in correlation withθ23, see Fig. 7.
+Therefore, the question arises, whether the MO test would give largely different results
+when considering true values forδCP andθ 23 within the allowed region for NO.
+From Fig. 4, we see that forδCP ≈270 ◦ and NO, the number ofνe events in NOvA is
+maximal, and its value cannot be obtained by any parameter choice in IO. Therefore, we
+expect best sensitivity to NO for this value ofδCP. In contrast, values around 0 or180◦ can
+be easily accommodated within IO, and we expect that the sensitivity to NO is weakest
+around CP-conserving values. We have confirmed this expectation, as we obtain
+TNO
+0
+ 
+δtrue
+CP = 270◦,sin 2 θtrue
+23 = 0.46
+
+= 12.38,(C.1)
+with all other oscillation parameters kept at their best-fit values. This value is significantly
+– 27 –
+
+=== PAGE BREAK pg%d ===
+
+larger than the value in Eq. (3.6) for the best-fit point withδCP = 177◦, implying higher
+sensitivity to reject NO. Actually, for the value in Eq. (C.1) the observed valueTobs =−0.6
+would imply ap-value for NO of 3.2%. Since values ofδ CP around90 ◦ are significantly
+disfavored also for NO, we do not consider them relevant for the MO test.
+To summarize, for relevant choices of the oscillation parameters, the sensitivity to the
+NO is weakest for values ofδCP around180 ◦. In turn, for IO,δCP is sufficiently constrained,
+and we expect only minor variations ofT0 within the relevant range around270◦. Therefore,
+it is appropriate to consider the current best fit points to quote the finalp-values for both
+orderings.
+References
+[1]T2K, Super-Kamiokandecollaboration,First joint oscillation analysis of
+Super-Kamiokande atmospheric and T2K accelerator neutrino data,2405.12488.
+[2]T2Kcollaboration, “T2K experiment status and plans.” Talk given at theXXXI
+International Conference on Neutrino Physics and Astrophysics, Milan, Italy, June 16–22,
+2024.
+[3]NOvAcollaboration,New NOvA Results with 10 Years of Data, .
+[4] I. Esteban, M.C. Gonzalez-Garcia, M. Maltoni, T. Schwetz and A. Zhou,The fate of hints:
+updated global analysis of three-flavor neutrino oscillations,JHEP09(2020) 178
+[2007.14792].
+[5] P. de Salas, D. Forero, S. Gariazzo, P. Martinez-Mirave, O. Mena, C. Ternes et al.,2020
+Global Reassessment of the Neutrino Oscillation Picture,2006.11237.
+[6] F. Capozzi, E. Lisi, A. Marrone and A. Palazzo,Current Unknowns in the Three Neutrino
+Framework,Prog. Part. Nucl. Phys.102(2018) 48 [1804.09678].
+[7]JUNOcollaboration,Potential to Identify the Neutrino Mass Ordering with Reactor
+Antineutrinos in JUNO,2405.18008.
+[8]DUNEcollaboration,Long-baseline neutrino oscillation physics potential of the DUNE
+experiment,Eur. Phys. J. C80(2020) 978 [2006.16043].
+[9]Hyper-Kamiokandecollaboration,Hyper-Kamiokande Design Report,1805.04163.
+[10] Y. Herrera and A. Serenelli,Standard Solar Models B23 / SF-III, 2023. ZENODO,
+https://doi.org/10.5281/zenodo.10174170.
+[11]Super-Kamiokandecollaboration,Solar neutrino measurements using the full data period
+of Super-Kamiokande-IV,2312.12907.
+[12]Borexinocollaboration,First Simultaneous Precision Spectroscopy ofpp, 7Be, andpep
+Solar Neutrinos with Borexino Phase-II,Phys. Rev. D100(2019) 082004 [1707.09279].
+[13]BOREXINOcollaboration,Improved Measurement of Solar Neutrinos from the
+Carbon-Nitrogen-Oxygen Cycle by Borexino and Its Implications for the Standard Solar
+Model,Phys. Rev. Lett.129(2022) 252701 [2205.15975].
+[14]Daya Baycollaboration,Antineutrino energy spectrum unfolding based on the Daya Bay
+measurement and its applications,Chin. Phys. C45(2021) 073001 [2102.04614].
+– 28 –
+
+=== PAGE BREAK pg%d ===
+
+[15]SNO+collaboration,Initial measurement of reactor antineutrino oscillation at SNO+,
+2405.19700.
+[16]SNO+collaboration, “Reactor Antineutrino Oscillations and Geoneutrinos in SNO+.”
+Poster 525 at theXXXI International Conference on Neutrino Physics and Astrophysics,
+Milan, Italy, June 16–22, 2024.
+[17]SNO+collaboration, “Solar Neutrinos: Recent Results and Propspects.” Talk given at the
+XXXI International Conference on Neutrino Physics and Astrophysics, Milan, Italy, June
+16–22, 2024.
+[18]Daya Baycollaboration,Precision measurement of reactor antineutrino oscillation at
+kilometer-scale baselines by Daya Bay,2211.14988.
+[19]IceCubecollaboration,Development of an analysis to probe the neutrino mass ordering with
+atmospheric neutrinos using three years of IceCube DeepCore data,Eur. Phys. J. C80
+(2020) 9 [1902.07771].
+[20]IceCubecollaboration,Measurement of Atmospheric Tau Neutrino Appearance with
+IceCube DeepCore,Phys. Rev. D99(2019) 032007 [1901.05366].
+[21]Super-Kamiokandecollaboration,Atmospheric neutrino oscillation analysis with neutron
+tagging and an expanded fiducial volume in Super-Kamiokande I-V,2311.05105.
+[22]SuperKamiokandecollaboration,Atmospheric neutrino oscillation analysis with neutron
+tagging and an expanded fiducial volume in Super-Kamiokande I-V, 2024. ZENODO,
+https://doi.org/0.5281/zenodo.8401262.
+[23]IceCubecollaboration,Measurement of atmospheric neutrino oscillation parameters using
+convolutional neural networks with 9.3 years of data in IceCube DeepCore,2405.02163.
+[24]ICECUBEcollaboration,Data release for neutrino oscillation parameters using
+convolutional neural networks with 9.3 years of data in icecube deepcore, 2024. .
+[25] I. Esteban, M.C. Gonzalez-Garcia, A. Hernandez-Cabezudo, M. Maltoni and T. Schwetz,
+Global analysis of three-flavour neutrino oscillations: synergies and tensions in the
+determination ofθ 23,δ CP, and the mass ordering,JHEP01(2019) 106 [1811.05487].
+[26] Z. Maki, M. Nakagawa and S. Sakata,Remarks on the unified model of elementary particles,
+Prog. Theor. Phys.28(1962) 870.
+[27] M. Kobayashi and T. Maskawa,CP Violation in the Renormalizable Theory of Weak
+Interaction,Prog. Theor. Phys.49(1973) 652.
+[28] N. Cabibbo,Time Reversal Violation in Neutrino Oscillation,Phys. Lett.72B(1978) 333.
+[29] S.M. Bilenky, J. Hosek and S.T. Petcov,On Oscillations of Neutrinos with Dirac and
+Majorana Masses,Phys. Lett.B94(1980) 495.
+[30] V.D. Barger, K. Whisnant and R.J.N. Phillips,CP Violation in Three Neutrino Oscillations,
+Phys. Rev. Lett.45(1980) 2084.
+[31] P. Langacker, S.T. Petcov, G. Steigman and S. Toshev,On the Mikheev-Smirnov-Wolfenstein
+(MSW) Mechanism of Amplification of Neutrino Oscillations in Matter,Nucl. Phys.B282
+(1987) 589.
+[32] “NuFit webpage.”http://www.nu-fit.org.
+[33] M.C. Gonzalez-Garcia and C. Pena-Garay,Three neutrino mixing after the first results from
+K2K and KamLAND,Phys. Rev.D68(2003) 093003 [hep-ph/0306001].
+– 29 –
+
+=== PAGE BREAK pg%d ===
+
+[34] P.I. Krastev and S.T. Petcov,Resonance Amplification and t Violation Effects in Three
+Neutrino Oscillations in the Earth,Phys. Lett.B205(1988) 84.
+[35] C. Jarlskog,Commutator of the Quark Mass Matrices in the Standard Electroweak Model
+and a Measure of Maximal CP Violation,Phys.Rev.Lett.55(1985) 1039.
+[36]Particle Data Groupcollaboration,Review of particle physics,Phys. Rev. D110(2024)
+030001.
+[37] J. Elevant and T. Schwetz,On the determination of the leptonic CP phase,JHEP09(2015)
+016 [1506.07685].
+[38] L. Wolfenstein,Neutrino oscillations in matter,Phys. Rev.D17(1978) 2369.
+[39] M. Maltoni and T. Schwetz,Testing the Statistical Compatibility of Independent Data Sets,
+Phys. Rev.D68(2003) 033020 [hep-ph/0304176].
+[40] H. Nunokawa, S.J. Parke and R. Zukanovich Funchal,Another Possible Way to Determine
+the Neutrino Mass Hierarchy,Phys. Rev.D72(2005) 013009 [hep-ph/0503283].
+[41] H. Minakata, H. Nunokawa, S.J. Parke and R. Zukanovich Funchal,Determining Neutrino
+Mass Hierarchy by Precision Measurements in Electron and Muon Neutrino Disappearance
+Experiments,Phys. Rev.D74(2006) 053008 [hep-ph/0607284].
+[42] M. Blennow and T. Schwetz,Determination of the Neutrino Mass Ordering by Combining
+Pingu and Daya Bay II,JHEP09(2013) 089 [1306.3988].
+[43] M. Blennow, P. Coloma, P. Huber and T. Schwetz,Quantifying the sensitivity of oscillation
+experiments to the neutrino mass ordering,JHEP03(2014) 028 [1311.1822].
+[44] X. Qian, A. Tan, W. Wang, J.J. Ling, R.D. McKeown and C. Zhang,Statistical Evaluation
+of Experimental Determinations of Neutrino Mass Hierarchy,Phys. Rev. D86(2012) 113011
+[1210.3651].
+[45]Super-Kamiokandecollaboration,Solar neutrino measurements in Super-Kamiokande-II,
+Phys. Rev.D78(2008) 032002 [0803.4312].
+[46] N. Grevesse and A.J. Sauval,Standard Solar Composition,Space Sci. Rev.85(1998) 161.
+[47] M. Asplund, N. Grevesse, A.J. Sauval and P. Scott,The Chemical Composition of the Sun,
+ARA&A47(2009) 481 [0909.0948].
+[48] A. Serenelli, S. Basu, J.W. Ferguson and M. Asplund,New Solar Composition: The Problem
+With Solar Models Revisited,Astrophys. J.705(2009) L123 [0909.2668].
+[49] A.M. Serenelli, W.C. Haxton and C. Pena-Garay,Solar models with accretion. I. Application
+to the solar abundance problem,Astrophys. J.743(2011) 24 [1104.1639].
+[50] N. Vinyoles, A.M. Serenelli, F.L. Villante, S. Basu, J. Bergström, M.C. Gonzalez-Garcia
+et al.,A new Generation of Standard Solar Models,Astrophys. J.835(2017) 202
+[1611.09867].
+[51] M. Asplund, A.M. Amarsi and N. Grevesse,The chemical make-up of the Sun: A 2020
+vision,arXiv e-prints(2021) arXiv:2105.01661 [2105.01661].
+[52] E. Magg et al.,Observational constraints on the origin of the elements - IV. Standard
+composition of the Sun,Astron. Astrophys.661(2023) A140 [2203.02255].
+[53] M.C. Gonzalez-Garcia, M. Maltoni, J.a.P. Pinheiro and A.M. Serenelli,Status of direct
+determination of solar neutrino fluxes after Borexino,JHEP02(2024) 064 [2311.16226].
+– 30 –
+
+=== PAGE BREAK pg%d ===
+
+[54]Katrincollaboration,Direct neutrino-mass measurement based on 259 days of KATRIN
+data,2406.13516.
+[55]GERDAcollaboration,Final Results of GERDA on the Search for Neutrinoless Double-β
+Decay,Phys. Rev. Lett.125(2020) 252502 [2009.06079].
+[56]KamLAND-Zencollaboration,Search for Majorana Neutrinos with the Complete
+KamLAND-Zen Dataset,2406.11438.
+[57] J.-Q. Jiang, W. Giarè, S. Gariazzo, M.G. Dainotti, E. Di Valentino, O. Mena et al.,Neutrino
+cosmology after DESI: tightest mass upper limits, preference for the normal ordering, and
+tension with terrestrial observations,2407.18047.
+[58] D. Naredo-Tuero, M. Escudero, E. Fernández-Martínez, X. Marcano and V. Poulin,Living at
+the Edge: A Critical Look at the Cosmological Neutrino Mass Bound,2407.13831.
+[59]DESIcollaboration,DESI 2024 VI: Cosmological Constraints from the Measurements of
+Baryon Acoustic Oscillations,2404.03002.
+[60] G.L. Fogli, E. Lisi, A. Marrone, A. Melchiorri, A. Palazzo, P. Serra et al.,Observables
+sensitive to absolute neutrino masses: Constraints and correlations from world neutrino data,
+Phys. Rev.D70(2004) 113003 [hep-ph/0408045].
+[61] S. Pascoli, S.T. Petcov and T. Schwetz,The Absolute Neutrino Mass Scale, Neutrino Mass
+Spectrum, Majorana Cp-Violation and Neutrinoless Double-Beta Decay,Nucl. Phys.B734
+(2006) 24 [hep-ph/0505226].
+[62] S. Gariazzo et al.,Neutrino mass and mass ordering: no conclusive evidence for normal
+ordering,JCAP10(2022) 010 [2205.02195].
+[63] B.T. Cleveland et al.,Measurement of the solar electron neutrino flux with the Homestake
+chlorine detector,Astrophys. J.496(1998) 505.
+[64] F. Kaether, W. Hampel, G. Heusser, J. Kiko and T. Kirsten,Reanalysis of the GALLEX
+solar neutrino flux and source experiments,Phys. Lett.B685(2010) 47 [1001.2731].
+[65]SAGEcollaboration,Measurement of the solar neutrino capture rate with gallium metal. III:
+Results for the 2002–2007 data-taking period,Phys. Rev.C80(2009) 015807 [0901.2200].
+[66]Super-Kamiokandecollaboration,Solar neutrino measurements in Super-Kamiokande-I,
+Phys. Rev.D73(2006) 112001 [hep-ex/0508053].
+[67]Super-Kamiokandecollaboration,Solar neutrino results in Super-Kamiokande-III,Phys.
+Rev.D83(2011) 052010 [1010.0118].
+[68]SNOcollaboration,Combined Analysis of All Three Phases of Solar Neutrino Data from the
+Sudbury Neutrino Observatory,Phys. Rev.C88(2013) 025501 [1109.0763].
+[69]Borexinocollaboration,Precision measurement of the 7Be solar neutrino interaction rate
+in Borexino,Phys. Rev. Lett.107(2011) 141302 [1104.1816].
+[70]Borexinocollaboration,Measurement of the solar 8B neutrino rate with a liquid scintillator
+target and 3 MeV energy threshold in the Borexino detector,Phys. Rev.D82(2010) 033006
+[0808.2868].
+[71] M. Honda, M. Sajjad Athar, T. Kajita, K. Kasahara and S. Midorikawa,Atmospheric
+Neutrino Flux Calculation Using the Nrlmsise-00 Atmospheric Model,Phys. Rev.D92
+(2015) 023004 [1502.03916].
+– 31 –
+
+=== PAGE BREAK pg%d ===
+
+[72]KamLANDcollaboration,Reactor On-Off Antineutrino Measurement with Kamland,Phys.
+Rev.D88(2013) 033001 [1303.4667].
+[73] T. Bezerra, “New Results from the Double Chooz Experiment.” Talk given at theXXIX
+International Conference on Neutrino Physics and Astrophysics, Chicago, USA, June
+22–July 2, 2020 (online conference) doi.org/10.5281/zenodo.3959542.
+[74] J. Yoo, “RENO.” Talk given at theXXIX International Conference on Neutrino Physics and
+Astrophysics, Chicago, USA, June 22–July 2, 2020 (online conference)
+doi.org/10.5281/zenodo.3959698.
+[75]MINOScollaboration,Measurement of Neutrino and Antineutrino Oscillations Using Beam
+and Atmospheric Data in MINOS,Phys. Rev. Lett.110(2013) 251801 [1304.6335].
+[76]MINOScollaboration,Electron neutrino and antineutrino appearance in the full MINOS
+data sample,Phys. Rev. Lett.(2013) [1301.4581].
+[77]T2Kcollaboration,Updated T2K measurements of muon neutrino and antineutrino
+disappearance using 3.6×1021 protons on target,Phys. Rev. D108(2023) 072011
+[2305.09916].
+[78]T2Kcollaboration,Measurements of neutrino oscillation parameters from the T2K
+experiment using3.6×10 21 protons on target,Eur. Phys. J. C83(2023) 782 [2303.03222].
+[79] A. Himmel, “New Oscillation Results from the NOvA Experiment.” Talk given at theXXIX
+International Conference on Neutrino Physics and Astrophysics, Chicago, USA, June
+22–July 2, 2020 (online conference) doi.org/10.5281/zenodo.3959581.
+[80]IceCubecollaboration,IceCube 3 year high statistics neutrino oscillation samples, 2019.
+10.21234/AC23-RA43.
+– 32 –

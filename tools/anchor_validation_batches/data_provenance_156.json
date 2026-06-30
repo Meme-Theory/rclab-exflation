@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 156,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1551",
+      "anchor_type": "data_provenance",
+      "name": "sdw_zeta_dict_audit",
+      "script_path": "session-78/s78_sdw_zeta_dict_audit.py",
+      "session": "s78",
+      "inputs": "",
+      "outputs": "session-78/s78_sdw_zeta_dict_audit.npz",
+      "source_file": "computations/session-78/s78_sdw_zeta_dict_audit.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s78_sdw_zeta_dict_audit.py  --  S78-W3-L-SDW-ZETA-DICT\n    4: ========================================================================\n    5: Gate: S78-W3-L-SDW-ZETA-DICT (Lizzi, spectral-functional-theorist, S78 W3)\n    6: \n    7: Purpose\n    8: -------\n    9: Substantive dictionary audit. Reads canonical_constants.py, classifies every\n   10: a_n and R-family entry by scheme (SDW / zeta / f* / anomaly / SCHEME-\n   11: INDEPENDENT / HK-TAYLOR), records per-branch / cross-branch scope for every"
+    },
+    {
+      "anchor_id": "prov_1552",
+      "anchor_type": "data_provenance",
+      "name": "sin2_w_non_tree",
+      "script_path": "session-78/s78_sin2_w_non_tree.py",
+      "session": "s78",
+      "inputs": "",
+      "outputs": "session-78/s78_sin2_w_non_tree.npz, session-78/s78_sin2_w_non_tree.png",
+      "source_file": "computations/session-78/s78_sin2_w_non_tree.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s78_sin2_w_non_tree.py -- S78-W3-J-SIN2-W-NON-TREE\n    4: ================================================================================\n    5: \n    6: Gate: S78-W3-J-SIN2-W-NON-TREE\n    7: Owner: einstein-theorist\n    8: Classification: PARTICLE (gauge coupling RG)\n    9: Scheme tag: MS-bar (primary), on-shell (cross-check)\n   10: Convention tag: GUT-normalized g_1 = sqrt(5/3) g_Y\n   11: L_max tag: N/A (RG is EFT-level, not spectral-triple-level)"
+    },
+    {
+      "anchor_id": "prov_1553",
+      "anchor_type": "data_provenance",
+      "name": "tensor_famp",
+      "script_path": "session-78/s78_tensor_famp.py",
+      "session": "s78",
+      "inputs": "",
+      "outputs": "session-78/s78_tensor_famp.npz, session-78/s78_tensor_famp.png",
+      "source_file": "computations/session-78/s78_tensor_famp.py",
+      "source_context_30_lines": "   80: from scipy.integrate import solve_ivp\n   81: from scipy.interpolate import interp1d\n   82: import matplotlib\n   83: matplotlib.use('Agg')\n   84: import matplotlib.pyplot as plt\n   85: \n   86: \n   87: SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))\n   88: OUT_NPZ = os.path.join(SCRIPT_DIR, 's78_tensor_famp.npz')\n   89: OUT_PNG = os.path.join(SCRIPT_DIR, 's78_tensor_famp.png')\n   90: OUT_TXT = os.path.join(SCRIPT_DIR, 's78_tensor_famp_output.txt')\n   91: VERDICT_FILE = os.path.join(SCRIPT_DIR, 's78_gate_verdicts.txt')\n   92: \n   93: _log_lines = []  # (local)\n   94: \n   95: \n   96: def log(msg=\"\"):"
+    },
+    {
+      "anchor_id": "prov_1554",
+      "anchor_type": "data_provenance",
+      "name": "zeta_josephson",
+      "script_path": "session-78/s78_zeta_josephson.py",
+      "session": "s78",
+      "inputs": "",
+      "outputs": "session-78/s78_zeta_josephson.npz, session-78/s78_zeta_josephson.png",
+      "source_file": "computations/session-78/s78_zeta_josephson.py",
+      "source_context_30_lines": "   52:      at phi=0 via a 5-point central finite-difference stencil.\n   53:   4. Report:\n   54:        (a) Per-branch ratio J_i^{zeta} / J_i^{SDW} for i in {C2, su2, u1}.\n   55:        (b) Direct-zeta-vs-R-protection-prediction comparison per branch.\n   56:        (c) Cross-branch ratios (tagged Level 3 SD, NOT R-protected).\n   57:        (d) Four cross-checks.\n   58: \n   59: Outputs:\n   60:   computations/session-78/s78_zeta_josephson.py   (this script)\n   61:   computations/session-78/s78_zeta_josephson.npz  (numerical data)\n   62:   computations/session-78/s78_zeta_josephson.png  (diagnostic panels)\n   63:   Append verdict line to computations/session-78/s78_gate_verdicts.txt\n   64: \n   65: Author: Lizzi Spectral Functional Theorist\n   66: Session: S78 scrubbed re-run, Branch D (scheme audit)\n   67: \"\"\"\n   68: "
+    },
+    {
+      "anchor_id": "prov_1555",
+      "anchor_type": "data_provenance",
+      "name": "w1e_k_scan",
+      "script_path": "session-79/s79_w1e_k_scan.py",
+      "session": "s79",
+      "inputs": "s78_pre_fold_vacuum.npz",
+      "outputs": "session-79/s79_w1e_k_scan.npz",
+      "source_file": "computations/session-79/s79_w1e_k_scan.py",
+      "source_context_30_lines": "  287: # Unitarity diagnostic\n  288: print(f\"\\nUNITARITY DIAGNOSTICS:\")\n  289: print(f\"  max |unitarity - 1| = {np.max(np.abs(uni_arr - 1.0)):.3e} (target: < 1e-3)\")\n  290: \n  291: # -----------------------------------------------------------------------------\n  292: # Save all data\n  293: # -----------------------------------------------------------------------------\n  294: np.savez(\n  295:     's79_w1e_k_scan.npz',\n  296:     k=k_arr, k_ratio=k_arr/k_pivot_fold,\n  297:     k_sq=np.array([r['k_sq'] for r in results]),\n  298:     eta_end=np.array([r['eta_end'] for r in results]),\n  299:     alpha_re=np.array([r['alpha_re'] for r in results]),\n  300:     alpha_im=np.array([r['alpha_im'] for r in results]),\n  301:     beta_re=np.array([r['beta_re'] for r in results]),\n  302:     beta_im=np.array([r['beta_im'] for r in results]),\n  303:     alpha_sq=alpha_sq_arr, beta_sq=beta_sq_arr,"
+    },
+    {
+      "anchor_id": "prov_1556",
+      "anchor_type": "data_provenance",
+      "name": "w1e_k_scan_fixed_eta",
+      "script_path": "session-79/s79_w1e_k_scan_fixed_eta.py",
+      "session": "s79",
+      "inputs": "s78_pre_fold_vacuum.npz",
+      "outputs": "session-79/s79_w1e_k_scan_fixed_eta.npz",
+      "source_file": "computations/session-79/s79_w1e_k_scan_fixed_eta.py",
+      "source_context_30_lines": "  222:     print(f\"  Deep UV (k/k_pivot >= 3) |β|² slope = {slope_deep:+.3f}\")\n  223:     # If slope < -2, |β|² decays fast → physical cap at S_IC=1 at some k\n  224:     # Crossover: |β|² = 1 at what k/k_pivot?\n  225:     k_cross_ratio = np.exp((-intercept_deep) / slope_deep) / k_pivot_fold if slope_deep < 0 else np.inf  # (local)\n  226:     print(f\"  |β|² = 1 at k/k_pivot ≈ {k_cross_ratio:.2e} (extrapolation; unreliable beyond factor ~10)\")\n  227: \n  228: # Save\n  229: np.savez(\n  230:     's79_w1e_k_scan_fixed_eta.npz',\n  231:     k=k_arr, k_ratio=k_arr/k_pivot_fold,\n  232:     alpha_re=np.array([r['alpha_re'] for r in results]),\n  233:     alpha_im=np.array([r['alpha_im'] for r in results]),\n  234:     beta_re=np.array([r['beta_re'] for r in results]),\n  235:     beta_im=np.array([r['beta_im'] for r in results]),\n  236:     alpha_sq=alpha_sq_arr, beta_sq=beta_sq_arr,\n  237:     S_IC=S_IC_arr,\n  238:     eta_end_fixed=eta_end_W1E,"
+    },
+    {
+      "anchor_id": "prov_1557",
+      "anchor_type": "data_provenance",
+      "name": "branch_count",
+      "script_path": "session-80/s80_branch_count.py",
+      "session": "s80",
+      "inputs": "",
+      "outputs": "session-80/s80_branch_count.npz, session-80/s80_branch_count.png",
+      "source_file": "computations/session-80/s80_branch_count.py",
+      "source_context_30_lines": "  248: \n  249: # Annotate verdict\n  250: fig.suptitle(f\"S80-PHONONIC-LENGTH-OFF-BY-2-BRANCH-COUNT  |  \"\n  251:              f\"Scenario: {scenario}  |  Verdict: {verdict}\",\n  252:              fontsize=12, y=1.00)\n  253: \n  254: plt.tight_layout()\n  255: png_path = os.path.join(os.path.dirname(os.path.abspath(__file__)),\n  256:                         \"s80_branch_count.png\")\n  257: plt.savefig(png_path, dpi=135, bbox_inches='tight')\n  258: plt.close(fig)\n  259: print(f\"\\n  Plot saved: {os.path.basename(png_path)}\")\n  260: \n  261: # =============================================================================\n  262: # STEP 7: Save npz + append verdict to gate-verdicts\n  263: # =============================================================================\n  264: "
+    },
+    {
+      "anchor_id": "prov_1558",
+      "anchor_type": "data_provenance",
+      "name": "branch_shortfall_baptista",
+      "script_path": "session-80/s80_branch_shortfall_baptista.py",
+      "session": "s80",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-80/s80_branch_shortfall_baptista.py",
+      "source_context_30_lines": "<name 'branch_shortfall_baptista' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S80 W0-15-FOLLOWUP: Rank-Universality Branch-Shortfall Determination\n    4: ======================================================================\n    5: \n    6: Task:\n    7:   The phonon-first-cosmologist (W0-15 primary) predicted 7 branches for SU(3)\n    8:   rank-universality:\n    9:     count = (N^2-1) - 2(N-1) + (N-1) + 1 = N^2 - N + 1 = 7 for N=3\n   10:     Decomposition: 8 generators - 4 Goldstones + 2 Cartan moduli + 1 photon.\n   11:   The s52 model returned 6 branches. Phonon-first diagnosed this as \"1D K-cut\n   12:   absorbs one of two Cartan moduli\".\n   13: \n   14:   This script makes a definitive determination of which rank-universality slot\n   15:   is absent from the 6 s52 branches.\n   16: \n   17: Method (Baptista / fiber-integration):\n   18:   1. Re-read s52_gl_josephson.npz eigenvectors at K=0\n   19:   2. Decompose each of the 6 branches into the 7 rank-universality slot basis:\n   20:        slot A: photon / c_mod  (overall U(1)_{EM}, residual gauge)\n   21:        slot B: Cartan-1 (h_1 direction, diagonal in (lambda_3))\n   22:        slot C: Cartan-2 (h_2 direction, diagonal in (lambda_8))\n   23:        slot D/E: Leggett-1, Leggett-2 (relative-phase modes between 3 BCS sectors)\n   24:        slot F: Higgs amplitude mode(s)\n   25:        slot G: anomalous (non-Killing C^2 or pair-breaking)\n   26:   3. Identify which rank-universality slot has NO match among the 6.\n   27:   4. Cross-check via the SU(3) algebra in s52 Cartan basis\n   28: \n   29: Key structural fact:\n   30:   s52 is a 3-sector phase/amplitude model (B1, B2, B3) with 6 DOF = 3 phase"
+    },
+    {
+      "anchor_id": "prov_1559",
+      "anchor_type": "data_provenance",
+      "name": "cc_ratios_only_sanity",
+      "script_path": "session-80/s80_cc_ratios_only_sanity.py",
+      "session": "s80",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-80/s80_cc_ratios_only_sanity.py",
+      "source_context_30_lines": "<name 'cc_ratios_only_sanity' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: S80 W1-4 CC-RATIOS-ONLY-THEOREM — Python sanity check (spectral-geometer alt).\n    3: \n    4: PURPOSE\n    5: -------\n    6: Numerically verify:\n    7:  (i) WEIGHT-BALANCED ratio (a_m f_m) / (a_n f_n) with m, n sharing the same\n    8:      Mellin power p = (d - k) / 2 under f_k ≡ ∫_0^∞ f(u) u^{k/2 - 1} du.\n    9:      Expected direction: f CANCELS in the ratio.\n   10:  (ii) WEIGHT-UNBALANCED ratio (different k): f RETAINS dependence on the regulator.\n   11: \n   12: CC96 eq 2.11 convention (4D):\n   13:     Tr f(D^2/Λ^2) ~ Σ_{k ∈ Sd} f_k · Λ^k · a_{d-k}[D^2] / Γ(k/2)\n   14: Our \"weight label\" is k (the Λ^k power). f_k is a single Mellin moment of f.\n   15: If m, n share the same k (= \"integer power of t\" label), the ratio a_m/a_n · f_n/f_m\n   16: is structurally independent of f.\n   17: \n   18: We test three regulators:\n   19:     f_A(u) = exp(-u)                         (Gaussian on λ)\n   20:     f_B(u) = 1/(1+u)^2                       (polynomial cutoff)\n   21:     f_C(u) = exp(-u^0.7)                     (stretched exponential)\n   22: \n   23: We compute f_k numerically via the Mellin moment definition and check the\n   24: claimed identity across regulators.\n   25: \n   26: GATE sanity (not the proof itself): for WEIGHT-BALANCED (same k) pair, the\n   27: ratio f_k^(A)/f_k^(B) = 1 structurally because it's the SAME moment; for an\n   28: UNBALANCED (different k) pair, f_k/f_k' generically varies.\n   29: \n   30: (Not load-bearing: the theorem is analytic. This is just a sanity probe.)"
+    },
+    {
+      "anchor_id": "prov_1560",
+      "anchor_type": "data_provenance",
+      "name": "cc_ratios_proof_sanity",
+      "script_path": "session-80/s80_cc_ratios_proof_sanity.py",
+      "session": "s80",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-80/s80_cc_ratios_proof_sanity.py",
+      "source_context_30_lines": "<name 'cc_ratios_proof_sanity' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: S80 W1-4 — CC-Ratios-Only Theorem: Python sanity check.\n    3: \n    4: This script is NOT the proof. It is a numerical verification that:\n    5:   1. Pure a-ratios (a_m/a_n) are regulator-independent at finite L_max\n    6:      (up to numerical epsilon), as required by the analytic theorem.\n    7:   2. Weighted ratios (Q_m/Q_n with Q_m = f_{d-m} * a_m) carry the full\n    8:      f-dependence across three distinct regulator families.\n    9:   3. The compensated ratio R_{m,n} = (a_m/a_n) * (f_n/f_m) that the task\n   10:      prompt defines equals a_m/a_n identically (algebraic identity),\n   11:      hence is regulator-independent whenever the pure ratio is.\n   12: \n   13: Test uses the S37-era canonical values a_0, a_2, a_4 at tau_fold. No new\n   14: geometry computed here; this is purely the regulator-cancellation identity.\n   15: \n   16: Classification: GEOMETRIC (spectral-triple invariant of D_K spectrum).\n   17: \n   18: Author: connes-ncg-theorist\n   19: Session: S80 W1-4\n   20: Related: P4-D CN-EM1, sessions/session-79/workshops/p4-d-ratios-vs-absolutes-meta.md\n   21: \"\"\"\n   22: import os\n   23: import sys\n   24: sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))\n   25: from canonical_constants import *\n   26: import numpy as np\n   27: \n   28: # -----------------------------------------------------------------\n   29: # SECTION 1. Canonical Seeley-DeWitt coefficients at tau_fold (from\n   30: # permanent-results-registry §VII-B, S37+). These are the PURE"
+    }
+  ]
+}

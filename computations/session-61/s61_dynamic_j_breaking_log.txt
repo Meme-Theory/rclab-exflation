@@ -1,0 +1,229 @@
+========================================================================
+J-DYNAMIC-61: Berry Phase CP Violation During Transit
+========================================================================
+  tau_fold = 0.19
+  omega_tau = 8.27 M_KK
+  dt_transit = 0.0011301575037571713 M_KK^{-1}
+  Gate: PASS if max||[J,A_tau]|| > 0.01
+
+  N_tau = 50, tau in [0.0, 0.25]
+  dtau = 0.005102
+  max_pq_sum = 3
+
+========================================================================
+SECTION 1: LIE ALGEBRA + CLIFFORD INFRASTRUCTURE
+========================================================================
+  Clifford error: 0.00e+00
+  C2^2 = I check: 0.00e+00
+  C2 unitary check: 0.00e+00
+  C2 gamma conjugation: all PASS (err < 1e-12)
+
+========================================================================
+SECTION 2: DIRAC OPERATOR ACROSS TAU GRID
+========================================================================
+  Building H(tau) at 50 points...
+    tau[0]=0.0000 done (0.1s)
+    tau[9]=0.0459 done (1.5s)
+    tau[19]=0.0969 done (2.9s)
+    tau[29]=0.1480 done (4.4s)
+    tau[39]=0.1990 done (5.8s)
+    tau[49]=0.2500 done (7.3s)
+  Done in 7.3s. 10 sectors per tau.
+    (0,0): dim=16, n_evals=16
+    (0,1): dim=48, n_evals=48
+    (1,0): dim=48, n_evals=48
+    (1,1): dim=128, n_evals=128
+    (0,2): dim=96, n_evals=96
+    (2,0): dim=96, n_evals=96
+    (1,2): dim=240, n_evals=240
+    (2,1): dim=240, n_evals=240
+    (0,3): dim=160, n_evals=160
+    (3,0): dim=160, n_evals=160
+
+========================================================================
+SECTION 3: GAUGE-INVARIANT DIAGNOSTIC
+========================================================================
+  STRUCTURAL ARGUMENT:
+  [J, H(tau)] = 0 for all tau (T11, S43, PROVEN)
+  => d/dtau [J, H] = [J, dH/dtau] = 0
+  => Berry connection A_tau respects J-symmetry
+  => [J, A_tau] = 0 (gauge-invariantly)
+
+  VERIFICATION: Compute [J, dH/dtau] numerically.
+
+  --- (0,0) sector: J = C2*K on 16-dim spinor space ---
+  max ||C2*H^**C2i + H|| over tau grid: 0.00e+00
+  mean: 0.00e+00
+  => [J, H] = 0 (antilinear) VERIFIED to machine precision at all tau.
+
+  Computing dH/dtau and checking [J, dH/dtau]...
+  max ||[J, dH/dtau]||: 0.00e+00
+  mean ||[J, dH/dtau]||: 0.00e+00
+  max ||dH/dtau||: 2.6535
+  max relative ||[J, dH/dtau]|| / ||dH/dtau||: 0.00e+00
+
+  tau-profile:
+    tau=0.0000: ||[J,dH]||=0.0000e+00, ||dH||=2.2373, ratio=0.0000e+00
+    tau=0.0255: ||[J,dH]||=0.0000e+00, ||dH||=2.2514, ratio=0.0000e+00
+    tau=0.0510: ||[J,dH]||=0.0000e+00, ||dH||=2.2744, ratio=0.0000e+00
+    tau=0.0816: ||[J,dH]||=0.0000e+00, ||dH||=2.3113, ratio=0.0000e+00
+    tau=0.1071: ||[J,dH]||=0.0000e+00, ||dH||=2.3491, ratio=0.0000e+00
+    tau=0.1378: ||[J,dH]||=0.0000e+00, ||dH||=2.4025, ratio=0.0000e+00
+    tau=0.1633: ||[J,dH]||=0.0000e+00, ||dH||=2.4530, ratio=0.0000e+00
+    tau=0.1939: ||[J,dH]||=0.0000e+00, ||dH||=2.5202, ratio=0.0000e+00
+    tau=0.2194: ||[J,dH]||=0.0000e+00, ||dH||=2.5813, ratio=0.0000e+00
+    tau=0.2500: ||[J,dH]||=0.0000e+00, ||dH||=2.6535, ratio=0.0000e+00
+
+========================================================================
+SECTION 4: ALL SELF-CONJUGATE SECTORS
+========================================================================
+  Eigenvalue pairing between (p,q) and (q,p) sectors:
+    (0,0) <-> (0,0): max eigenvalue pairing error = 3.77e-15
+    (0,1) <-> (1,0): max eigenvalue pairing error = 9.55e-15
+    (1,1) <-> (1,1): max eigenvalue pairing error = 8.88e-15
+    (0,2) <-> (2,0): max eigenvalue pairing error = 9.33e-15
+    (1,2) <-> (2,1): max eigenvalue pairing error = 9.55e-15
+    (0,3) <-> (3,0): max eigenvalue pairing error = 1.47e-14
+
+========================================================================
+SECTION 5: NON-ADIABATIC TRANSITION AMPLITUDES
+========================================================================
+  Computing non-adiabatic transition amplitudes at fold...
+  ||dH/dtau|| at fold = 2.5085
+  ||V_trans|| (eigenbasis) = 2.5085
+
+  J-partner transition amplitudes <Jn|dH|n> / (2*E_n)^2:
+     n       mu_n   Jn      mu_Jn    |<Jn|dH|n>|    |c_{n->Jn}|
+     0  -0.970582   13  +0.970582   2.103471e-16   4.616554e-16
+     1  -0.970582   14  +0.970582   9.026791e-17   1.981138e-16
+     2  -0.970582   15  +0.970582   5.171128e-16   1.134923e-15
+     3  -0.845213    9  +0.845213   2.932199e-01   8.486067e-01
+     4  -0.845213   10  +0.845213   1.480595e-01   4.284983e-01
+     5  -0.845213   11  +0.845213   6.083566e-01   1.760643e+00
+     6  -0.845213   12  +0.845213   3.536817e-01   1.023589e+00
+     7  -0.819826    8  +0.819826   8.487806e-17   2.610941e-16
+
+  max |c_{n->Jn}| = 1.760643e+00
+
+  CP asymmetry check (|c_forward|^2 - |c_backward|^2):
+  max |c_fwd|^2 - |c_bwd|^2 = 5.55e-17
+  => CP asymmetry is ZERO to machine precision.
+
+========================================================================
+SECTION 6: STRUCTURAL PROOF AND CONSTRAINT MAP
+========================================================================
+
+  THEOREM (Dynamic J-Symmetry Preservation):
+
+  If J is an antilinear operator independent of the parameter tau, and
+  [J, H(tau)] = 0 for all tau in [0, tau_max], then:
+
+  1. [J, d^n H/dtau^n] = 0 for all n >= 0
+     (Proof: differentiate [J, H] = 0 n times; J is tau-independent.)
+
+  2. The Berry connection A_tau satisfies [J, A_tau] = 0
+     in every non-degenerate subspace.
+     (Proof: A_{nm} = <n|dH/dtau|m>/(E_m - E_n). Since [J, dH/dtau] = 0,
+      the matrix elements transform correctly under J. The energy
+      denominator is J-symmetric since E_{Jm} = -E_m and J maps
+      the pair (n,m) to (Jn,Jm) with identical |E_m - E_n|.)
+
+  3. Within degenerate subspaces, the non-abelian Berry connection
+     respects J-symmetry.
+     (Proof: The degenerate perturbation theory matrix <n|dH/dtau|m>
+      restricted to the degenerate subspace commutes with J restricted
+      to that subspace, by (1).)
+
+  4. The non-adiabatic transition amplitudes satisfy
+     |c_{n->Jn}|^2 = |c_{Jn->n}|^2 for all n, at all orders
+     of adiabatic perturbation theory.
+     (Proof: by induction on the order, using (1).)
+
+  COROLLARY: The transit tau(t) with [J, H(tau)] = 0 for all tau
+  CANNOT produce CP violation through Berry phase effects.
+
+  PHYSICAL INTERPRETATION:
+  J-symmetry is a property of the GEOMETRY (the manifold M4 x SU(3) with
+  left-invariant metrics). It holds for ALL left-invariant metrics, not just
+  the Jensen family. Therefore it holds along ANY smooth path through the
+  space of left-invariant metrics, and in particular along the transit
+  trajectory tau(t). The transit merely traverses a family of J-symmetric
+  Dirac operators. The "velocity" of traversal (omega_tau) cannot break a
+  symmetry that is preserved at every point.
+
+  CONDENSED MATTER ANALOG:
+  This is like asking whether time-reversal symmetry can be broken by
+  slowly sweeping a parameter in a time-reversal-invariant Hamiltonian.
+  The answer is no: if T commutes with H(lambda) for all lambda, then
+  T commutes with the adiabatic evolution operator exp(-i integral H dt).
+  The Z_2 invariant is preserved throughout the sweep.
+
+  CONSTRAINT MAP UPDATE:
+  - Berry phase CP violation during transit: CLOSED (structural theorem)
+  - CP violation requires EXPLICIT J-breaking, not just parameter evolution
+  - Surviving routes for baryogenesis:
+    * Non-left-invariant metric perturbations (gravitational waves)
+    * Instanton-mediated topology change (different J sectors)
+    * Thermal/quantum fluctuations breaking adiabaticity beyond LZ
+    * External fields coupling differently to particles/antiparticles
+
+========================================================================
+SECTION 7: NUMERICAL VERIFICATION
+========================================================================
+
+  (0,0) SECTOR VERIFICATION (antilinear J = C2*K):
+    ||C2*H^**C2i + H|| = 0: max err = 0.00e+00
+    ||C2*(dH)^**C2i + dH|| = 0: max err = 0.00e+00
+    relative ||[J, dH/dtau]|| / ||dH/dtau|| = 0.00e+00
+    max CP asymmetry = 5.55e-17 (machine eps)
+    max non-adiabatic |c_{n->Jn}| = 1.760643e+00
+
+  CROSS-SECTOR VERIFICATION:
+    (1,1): max +/- pair err = 8.88e-15
+
+  CONJUGATE SECTOR EIGENVALUE VERIFICATION:
+    (0,1) vs (1,0): max|mu_pq - (-mu_qp)| = 9.55e-15
+    (0,2) vs (2,0): max|mu_pq - (-mu_qp)| = 9.33e-15
+    (1,2) vs (2,1): max|mu_pq - (-mu_qp)| = 9.55e-15
+    (0,3) vs (3,0): max|mu_pq - (-mu_qp)| = 1.47e-14
+
+========================================================================
+SECTION 8: GATE VERDICT
+========================================================================
+  Gauge-invariant ||[J, dH/dtau]||: 0.00e+00
+  Relative ||[J,dH/dtau]||/||dH/dtau||: 0.00e+00
+  CP asymmetry |c_fwd|^2 - |c_bwd|^2: 5.55e-17
+
+  GATE J-DYNAMIC-61: FAIL
+  ||[J,dH/dtau]|| = 0.00e+00 = 0 to machine precision. Structural theorem: [J,H]=0 for all tau => [J,dH/dtau]=0 => Berry phase CP violation is CLOSED. Transit cannot break J-symmetry dynamically.
+
+========================================================================
+SECTION 9: SAVE DATA
+========================================================================
+  Saved to C:\sandbox\Ainulindale Exflation\tier0-computation\s61_dynamic_j_breaking.npz
+
+========================================================================
+SECTION 10: PLOT
+========================================================================
+  Plot saved to C:\sandbox\Ainulindale Exflation\tier0-computation\s61_dynamic_j_breaking.png
+
+========================================================================
+FINAL SUMMARY
+========================================================================
+  Runtime: 7.6s
+  Sectors: 10, tau grid: 50 points in [0.0, 0.25]
+  max_pq_sum: 3
+
+  KEY RESULT:
+    ||[J, H(tau)]|| = 0 to machine precision for all tau [VERIFIED]
+    ||[J, dH/dtau]|| = 0 to machine precision for all tau [VERIFIED]
+    CP asymmetry |c_fwd|^2 - |c_bwd|^2 = 0 to machine precision [VERIFIED]
+
+  STRUCTURAL THEOREM:
+    [J, H(tau)] = 0 for all tau (PROVEN, T11)
+    => [J, d^n H/dtau^n] = 0 for all n (differentiation)
+    => Berry connection A_tau respects J-symmetry
+    => Transit CANNOT break CP via Berry phase mechanism
+
+  GATE J-DYNAMIC-61: FAIL
+  ||[J,dH/dtau]|| = 0.00e+00 = 0 to machine precision. Structural theorem: [J,H]=0 for all tau => [J,dH/dtau]=0 => Berry phase CP violation is CLOSED. Transit cannot break J-symmetry dynamically.

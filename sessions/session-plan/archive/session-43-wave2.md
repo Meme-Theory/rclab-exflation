@@ -18,7 +18,7 @@ Two-source budget: GGE quasiparticles (internal-space, w=0) + q-field perturbati
 
 **Computation Steps**:
 
-1. **Load W1-1 results** from `tier0-computation/s43_qtheory_selftune.npz`. Also load `tier0-computation/s42_gradient_stiffness.npz` and `tier0-computation/s42_gge_energy.npz`.
+1. **Load W1-1 results** from `computations/s43_qtheory_selftune.npz`. Also load `computations/s42_gradient_stiffness.npz` and `computations/s42_gge_energy.npz`.
 
 2. **Q-field perturbation spectrum.** Following Paper 35:
 
@@ -41,8 +41,8 @@ Two-source budget: GGE quasiparticles (internal-space, w=0) + q-field perturbati
 - FAIL: < 0.001
 - INTERMEDIATE: 0.001 to 0.03
 
-**Input**: W1-1 output + `tier0-computation/s42_gradient_stiffness.npz`, `s42_gge_energy.npz`, `s42_dm_profile.npz`, `s42_constants_snapshot.npz`
-**Output**: `tier0-computation/s43_gge_dm_abundance.{py,npz,png}`
+**Input**: W1-1 output + `computations/s42_gradient_stiffness.npz`, `s42_gge_energy.npz`, `s42_dm_profile.npz`, `s42_constants_snapshot.npz`
+**Output**: `computations/s43_gge_dm_abundance.{py,npz,png}`
 
 ---
 
@@ -91,8 +91,8 @@ S42 Nazarewicz W3-1 review: 5 mechanisms ALL defeated by effacement. Breathing m
 - FAIL: |w_0+1| < 10^{-6}
 - INTERMEDIATE: 10^{-6} to 0.001
 
-**Input**: S42 computation files + `tier0-computation/s38_attempt_freq.npz` + `researchers/Volovik/37_2024_Volovik_Landau_Khalatnikov_Two_Fluid_de_Sitter.md`
-**Output**: `tier0-computation/s43_twofluid_wz.{py,npz,png}`
+**Input**: S42 computation files + `computations/s38_attempt_freq.npz` + `researchers/Volovik/37_2024_Volovik_Landau_Khalatnikov_Two_Fluid_de_Sitter.md`
+**Output**: `computations/s43_twofluid_wz.{py,npz,png}`
 
 ---
 
@@ -141,8 +141,8 @@ The framework provides Lambda_internal. Carlip provides the suppression through 
 - FAIL: No L produces Lambda_eff near Lambda_obs, OR required L is sub-Planckian
 - INFO: Computation completed but depends critically on which Carlip formula is used
 
-**Input**: `tier0-computation/s42_constants_snapshot.npz`, `tier0-computation/s42_gradient_stiffness.npz`, Carlip papers in `researchers/Quantum-Foam/`
-**Output**: `tier0-computation/s43_carlip_cc.{py,npz,png}`
+**Input**: `computations/s42_constants_snapshot.npz`, `computations/s42_gradient_stiffness.npz`, Carlip papers in `researchers/Quantum-Foam/`
+**Output**: `computations/s43_carlip_cc.{py,npz,png}`
 
 ---
 
@@ -160,7 +160,7 @@ Compute the transmission coefficient T(m, delta_tau) for KK quasiparticles cross
 
 **Computation Steps**:
 
-1. Load BdG quasiparticle masses M*(tau) from `tier0-computation/s42_fabric_dispersion.npz` and eigenvalue derivatives from `tier0-computation/s42_gradient_stiffness.npz`.
+1. Load BdG quasiparticle masses M*(tau) from `computations/s42_fabric_dispersion.npz` and eigenvalue derivatives from `computations/s42_gradient_stiffness.npz`.
 
 2. Acoustic impedance at each tau: Z_acoustic(tau) = M*(tau) * v_g(tau), where v_g = k/omega = k/sqrt(M*^2 + k^2).
 
@@ -184,8 +184,8 @@ Compute the transmission coefficient T(m, delta_tau) for KK quasiparticles cross
 - FAIL: DR < 2 decades for all delta_tau
 - INFO: DR between 2-3 decades
 
-**Input**: `tier0-computation/s42_fabric_dispersion.npz`, `tier0-computation/s42_gradient_stiffness.npz`, `tier0-computation/s42_hauser_feshbach.npz`
-**Output**: `tier0-computation/s43_impedance_mismatch.{py,npz,png}`
+**Input**: `computations/s42_fabric_dispersion.npz`, `computations/s42_gradient_stiffness.npz`, `computations/s42_hauser_feshbach.npz`
+**Output**: `computations/s43_impedance_mismatch.{py,npz,png}`
 
 ---
 

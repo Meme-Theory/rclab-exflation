@@ -1,0 +1,87 @@
+{
+  "gate_id": "S84-W1G6-LAYER-DIAGNOSIS",
+  "audit_sha256": "fced0e8a3e38b5f32255af30caa1f1b91433c3dce74e7e42dea8e62bee87d394",
+  "content_sha256": "2d8c83e2f27639be559f4f9409b8ab9ca81fa46f388837b948887c826a27aaa3",
+  "input_pins": {
+    "computations/session-83/s83_w1_g6_fi_duality_theorem.npz": "e1d4f653b2167d0be3eba4ecf05cd37af311d3957ee1730ff16ae4860a4933cb",
+    "computations/session-83/s83_w1_g6_fi_duality_theorem.py": "0ad4d4ca8903cd2377535311898885e5a1e9938d56f1177370f0d578d76662ec",
+    ".claude/agent-memory/lizzi-spectral-functional-theorist/project_s83_three_layer_synthesis.md": "b28a642ffea2fb19297931515b6a8bf9526b6d3047d5d1b430f062de017f3d55",
+    "computations/_shared/canonical_constants.py": "ff05c3d64375d9efcd6164210b00746ca1d1756e5b0a945554a6af642ea40e07"
+  },
+  "failing_composite_index": 1,
+  "failing_composite_name": "A_s Branch B (row #5)",
+  "factor_A_layer": "L1-AX",
+  "factor_B_layer": "L1-AX",
+  "all_factor_layers": [
+    "L1-AX",
+    "L1-AX",
+    "L3-OB",
+    "L3-OB"
+  ],
+  "tagged_factors": [
+    {
+      "factor_name": "H~_B",
+      "factor_class": "RD",
+      "origin_row": 2,
+      "layer_tag": "L1-AX",
+      "layer_provenance": "\u00a7VII.K row #2 layer pin"
+    },
+    {
+      "factor_name": "F_amp",
+      "factor_class": "MIXED",
+      "origin_row": 33,
+      "layer_tag": "L1-AX",
+      "layer_provenance": "\u00a7VII.K row #33 layer pin"
+    },
+    {
+      "factor_name": "c_sub",
+      "factor_class": "RD",
+      "origin_row": null,
+      "layer_tag": "L3-OB",
+      "layer_provenance": "three-layer synthesis L3-OB ingredient"
+    },
+    {
+      "factor_name": "f_conv",
+      "factor_class": "RD",
+      "origin_row": null,
+      "layer_tag": "L3-OB",
+      "layer_provenance": "three-layer synthesis L3-OB ingredient"
+    }
+  ],
+  "aggregator_layer": "L2-SA",
+  "functoriality_residual": {
+    "F_compose_factors": "MIXED",
+    "F_atlas_aggregator": "RD",
+    "residual_bool": true,
+    "residual_description": "F(A o B)=RD (atlas aggregator at L2-SA Zubarev pin); F(A) o F(B)=MIXED (lattice-join over factor classes); residual = True"
+  },
+  "is_L1_L2_cross_pin_strict": false,
+  "is_L1_L2_cross_pin_extended": true,
+  "is_L1_L2_cross_pin": true,
+  "diagnosis": {
+    "factor_layer_counts": {
+      "L0-INT": 0,
+      "L1-AX": 2,
+      "L2-SA": 0,
+      "L3-OB": 2,
+      "UNPINNED": 0
+    },
+    "intra_layer": false,
+    "strict_L1_L2_factor_cross": false,
+    "extended_L1_L2_aggregator_cross": true,
+    "any_unpinned": false,
+    "aggregator_layer": "L2-SA",
+    "verdict": "INFO",
+    "rationale": "cross-layer composite (factor layer counts L0=0 L1=2 L2=0 L3=2 UNPINNED=0) does NOT match strict L1+L2 PASS predicate but IS cross-layer in extended form: aggregator at L2-SA, factors include 2 L1-AX -- three-layer theorem accommodates via the hierarchy MAX rule but the strict gate predicate is not met"
+  },
+  "three_layer_theorem_consistency": {
+    "theorem_consistent": true,
+    "consistency_grade": "EXTENDED",
+    "explanation": "INFO: aggregator-vs-factor L1-L2 cross present; theorem's MAX-hierarchy rule accommodates the gap. Strict predicate (exactly 1 L1 + 1 L2 factor) not met because Branch B has 2 L1-AX factors (H~_B, F_amp) plus 2 L3-OB sub-ingredients (c_sub, f_conv) and the L2-SA pin lives at the composite row #5 aggregator layer rather than at the factor layer."
+  },
+  "verdict": "INFO",
+  "rationale": "cross-layer composite (factor layer counts L0=0 L1=2 L2=0 L3=2 UNPINNED=0) does NOT match strict L1+L2 PASS predicate but IS cross-layer in extended form: aggregator at L2-SA, factors include 2 L1-AX -- three-layer theorem accommodates via the hierarchy MAX rule but the strict gate predicate is not met",
+  "scheme": "three_layer_diagnosis",
+  "convention": "vii_k_dual_layer_pin",
+  "L_max": 5
+}

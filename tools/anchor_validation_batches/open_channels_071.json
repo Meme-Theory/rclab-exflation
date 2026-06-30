@@ -1,0 +1,107 @@
+{
+  "table": "open_channels",
+  "batch_id": 71,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "open_701",
+      "anchor_type": "open_channels",
+      "name": "CMB-HD alpha_s",
+      "detail_1": null,
+      "detail_2": null,
+      "session": "S4",
+      "source_file": "sessions/framework/correspondence/cross-channel-correlation-matrix.md",
+      "source_context_30_lines": "   22: \n   23: ## Summary table — diagonal (substrate-moment probes)\n   24: \n   25: | i | Channel | Substrate-moment probed |\n   26: |:-:|:--------|:------------------------|\n   27: | 0 | **CMB-S4 alpha_s** | d^2 S_transfer/dk^2 at k_pivot (scalar 2-pt 2nd derivative of spectral tilt; phononic: running of the fold-imprinted n_s at CMB acoustic horizon) |\n   28: | 1 | **DESI DR3 w_0** | a_0 Volovik-partition (zeroth spectral moment; late-time effacement residual; phononic: 0.03% impedance leakage, Gamma=0.99970) |\n   29: | 2 | **LiteBIRD n_T** | tensor-sector Dirac spectrum (B-mode polarization; phononic: r=16*epsilon RELATION IS INAPPLICABLE per phononic-framing.md rule; n_T is BLUE at transit, RED at CMB via 14.3x suppression, S66 TENSOR-TRANSFER) |\n   30: | 3 | **CMB-HD alpha_s** | d^2 S_transfer/dk^2 at k_pivot (SAME moment as CMB-S4 alpha_s; different detector; phononic: redundant substrate-sensitivity channel; common-mode when paired with CMB-S4) |\n   31: | 4 | **21-cm folded bispec** | 3-point spectral moment (non-Gaussianity; equilateral/folded shapes; phononic: GGE-relic 3-pt correlation, folded f_NL=0.056 from S82 W3-4 GGE-FNL) |\n   32: \n   33: ---\n   34: \n   35: ## Summary table — off-diagonal (10 pairs of C(5,2))\n   36: \n   37: | Pair | Channels | Classification | Source | Citation / Justification |\n   38: |:----:|:---------|:--------------:|:------:|:-------------------------|"
+    },
+    {
+      "anchor_id": "open_702",
+      "anchor_type": "open_channels",
+      "name": "21-cm folded bispec",
+      "detail_1": null,
+      "detail_2": null,
+      "session": "S82",
+      "source_file": "sessions/framework/correspondence/cross-channel-correlation-matrix.md",
+      "source_context_30_lines": "    9: **Owner agent(s)**: `mack-cosmic-bridge` (primary), `little-red-dots-jwst-analyst` (consumer)\n   10: **Last updated**: `2026-04-23, S85-W4-2-XCORR-MATRIX`\n   11: **Ingestion**: `/weave --update` picks up this file; `knowledge.db` stores one row per pair entry in the `open` entity table (live observational-pipeline metadata).\n   12: \n   13: ---\n   14: \n   15: ## Scope\n   16: \n   17: This registry holds the canonical 5×5 correlation matrix for the W4-introduced 5-channel detector-correlation roster: CMB-S4 α_s, DESI DR3 w_0, LiteBIRD n_T, CMB-HD α_s, 21-cm folded bispectrum. It is distinct from `sessions/framework/registry/falsifier-watchlist.md`, which holds the S58-established 6-channel LRD watchlist (w_0, w_a, g_1/g_2, α_s, proton lifetime, H_0). The two registries overlap on `w_0` and `α_s` but use different roster frames — this file binds DETECTOR pairs; falsifier-watchlist.md binds OBSERVABLE-to-detector rows.\n   18: \n   19: Consumer gates cite each pair's tag rather than re-deriving it. Not in agent memory because AMRI tests (a) and (c) both fire: other gates (§W4-4, §W4-6, §W4-7, §W4-8) name this file as an Input-SHA pin, and two or more agents (mack, LRD) would otherwise overlap on the same detector-pair entries.\n   20: \n   21: ---\n   22: \n   23: ## Summary table — diagonal (substrate-moment probes)\n   24: \n   25: | i | Channel | Substrate-moment probed |"
+    },
+    {
+      "anchor_id": "open_703",
+      "anchor_type": "open_channels",
+      "name": "n_s",
+      "detail_1": null,
+      "detail_2": null,
+      "session": "S65",
+      "source_file": "sessions/framework/registry/falsifier-rigor-registry.md",
+      "source_context_30_lines": "   30:   - ACCOMMODATION: **2**\n   31:   - SCHEME-DEPENDENT: **2**\n   32:   - DETECTOR-STERILE: **3**\n   33: \n   34: ## Channel Table\n   35: \n   36: | # | Channel | Flag | Prediction | Observational | Tension | Dependent Gates | Registry |\n   37: |:-:|:--------|:-----|:-----------|:--------------|:--------|:----------------|:---------|\n   38: | 1 | **n_s** | `ZERO-FREE-PARAMETER` | 0.9590 (S65 collab, Bogoliubov-inversion triple) | 0.9649 +/- 0.0042 (Planck 2018) | 1.40 sigma | S63-RUNNING-NS-63, S65-collab, S83-G48 | pre-registered-observations.md (CMB-S4) |\n   39: | 2 | **r** | `ZERO-FREE-PARAMETER` | 0.01173 (S83 G46 tensor-transfer) | < 0.036 (95% CL, BK18) | PASS (headroom 3.07x below 95% CL) | S83-G46-TENSOR-TRANSFER, S84-BICEP-KECK-2026-PRE-REGISTER | pre-registered-observations.md (LiteBIRD/BK) |\n   40: | 3 | **n_T (transit, k ~ M_KK)** | `ZERO-FREE-PARAMETER` | +0.468 (BLUE, S65/S83 G50) | inaccessible (k_transit 54 decades above CMB) | N/A (no detector reach 2026-2040) | S65-NT-BLUE-65, S83-G50, S84-BLUE-TRANSIT-TILT-INACCESSIBILITY | pre-registered-observations.md (LiteBIRD/BK) |\n   41: | 4 | **n_T (CMB, k = 0.05 Mpc^-1)** | `ZERO-FREE-PARAMETER` | -3.024e-3 (S84 W4-39) | not yet measured; sigma_LB_3yr = 0.0654 (S84 W4-37) | DETECTOR-STERILE for discrimination; PREDICTION is ZFP | S68-LITEB-R-FORECAST-68, S66-TENSOR-TRANSFER-66, S84-N_T-CMB-TRANSFER, S83-G46 | pre-registered-observations.md (LiteBIRD) |\n   42: | 5 | **alpha_s** | `ZERO-FREE-PARAMETER` | -0.0690 (S8\n... [truncated]"
+    },
+    {
+      "anchor_id": "open_704",
+      "anchor_type": "open_channels",
+      "name": "n_T (CMB, k = 0.05 Mpc^-1)",
+      "detail_1": null,
+      "detail_2": null,
+      "session": "S84",
+      "source_file": "sessions/framework/registry/falsifier-rigor-registry.md",
+      "source_context_30_lines": "   33: \n   34: ## Channel Table\n   35: \n   36: | # | Channel | Flag | Prediction | Observational | Tension | Dependent Gates | Registry |\n   37: |:-:|:--------|:-----|:-----------|:--------------|:--------|:----------------|:---------|\n   38: | 1 | **n_s** | `ZERO-FREE-PARAMETER` | 0.9590 (S65 collab, Bogoliubov-inversion triple) | 0.9649 +/- 0.0042 (Planck 2018) | 1.40 sigma | S63-RUNNING-NS-63, S65-collab, S83-G48 | pre-registered-observations.md (CMB-S4) |\n   39: | 2 | **r** | `ZERO-FREE-PARAMETER` | 0.01173 (S83 G46 tensor-transfer) | < 0.036 (95% CL, BK18) | PASS (headroom 3.07x below 95% CL) | S83-G46-TENSOR-TRANSFER, S84-BICEP-KECK-2026-PRE-REGISTER | pre-registered-observations.md (LiteBIRD/BK) |\n   40: | 3 | **n_T (transit, k ~ M_KK)** | `ZERO-FREE-PARAMETER` | +0.468 (BLUE, S65/S83 G50) | inaccessible (k_transit 54 decades above CMB) | N/A (no detector reach 2026-2040) | S65-NT-BLUE-65, S83-G50, S84-BLUE-TRANSIT-TILT-INACCESSIBILITY | pre-registered-observations.md (LiteBIRD/BK) |\n   41: | 4 | **n_T (CMB, k = 0.05 Mpc^-1)** | `ZERO-FREE-PARAMETER` | -3.024e-3 (S84 W4-39) | not yet measured; sigma_LB_3yr = 0.0654 (S84 W4-37) | DETECTOR-STERILE for discrimination; PREDICTION is ZFP | S68-LITEB-R-FORECAST-68, S66-TENSOR-TRANSFER-66, S84-N_T-CMB-TRANSFER, S83-G46 | pre-registered-observations.md (LiteBIRD) |\n   42: | 5 | **alpha_s** | `ZERO-FREE-PARAMETER` | -0.0690 (S84 ALPHA-S-PRE-REGISTRATION) | -0.0045 +/- 0.0067 (Planck 2018) | TENSION (framework is off central by \n... [truncated]"
+    },
+    {
+      "anchor_id": "open_705",
+      "anchor_type": "open_channels",
+      "name": "alpha_s",
+      "detail_1": null,
+      "detail_2": null,
+      "session": "S84",
+      "source_file": "sessions/framework/registry/falsifier-rigor-registry.md",
+      "source_context_30_lines": "   34: ## Channel Table\n   35: \n   36: | # | Channel | Flag | Prediction | Observational | Tension | Dependent Gates | Registry |\n   37: |:-:|:--------|:-----|:-----------|:--------------|:--------|:----------------|:---------|\n   38: | 1 | **n_s** | `ZERO-FREE-PARAMETER` | 0.9590 (S65 collab, Bogoliubov-inversion triple) | 0.9649 +/- 0.0042 (Planck 2018) | 1.40 sigma | S63-RUNNING-NS-63, S65-collab, S83-G48 | pre-registered-observations.md (CMB-S4) |\n   39: | 2 | **r** | `ZERO-FREE-PARAMETER` | 0.01173 (S83 G46 tensor-transfer) | < 0.036 (95% CL, BK18) | PASS (headroom 3.07x below 95% CL) | S83-G46-TENSOR-TRANSFER, S84-BICEP-KECK-2026-PRE-REGISTER | pre-registered-observations.md (LiteBIRD/BK) |\n   40: | 3 | **n_T (transit, k ~ M_KK)** | `ZERO-FREE-PARAMETER` | +0.468 (BLUE, S65/S83 G50) | inaccessible (k_transit 54 decades above CMB) | N/A (no detector reach 2026-2040) | S65-NT-BLUE-65, S83-G50, S84-BLUE-TRANSIT-TILT-INACCESSIBILITY | pre-registered-observations.md (LiteBIRD/BK) |\n   41: | 4 | **n_T (CMB, k = 0.05 Mpc^-1)** | `ZERO-FREE-PARAMETER` | -3.024e-3 (S84 W4-39) | not yet measured; sigma_LB_3yr = 0.0654 (S84 W4-37) | DETECTOR-STERILE for discrimination; PREDICTION is ZFP | S68-LITEB-R-FORECAST-68, S66-TENSOR-TRANSFER-66, S84-N_T-CMB-TRANSFER, S83-G46 | pre-registered-observations.md (LiteBIRD) |\n   42: | 5 | **alpha_s** | `ZERO-FREE-PARAMETER` | -0.0690 (S84 ALPHA-S-PRE-REGISTRATION) | -0.0045 +/- 0.0067 (Planck 2018) | TENSION (framework is off central by 9.6 sigm\n... [truncated]"
+    },
+    {
+      "anchor_id": "open_706",
+      "anchor_type": "open_channels",
+      "name": "m_H (Higgs mass)",
+      "detail_1": null,
+      "detail_2": null,
+      "session": "S84",
+      "source_file": "sessions/framework/registry/falsifier-rigor-registry.md",
+      "source_context_30_lines": "   35: \n   36: | # | Channel | Flag | Prediction | Observational | Tension | Dependent Gates | Registry |\n   37: |:-:|:--------|:-----|:-----------|:--------------|:--------|:----------------|:---------|\n   38: | 1 | **n_s** | `ZERO-FREE-PARAMETER` | 0.9590 (S65 collab, Bogoliubov-inversion triple) | 0.9649 +/- 0.0042 (Planck 2018) | 1.40 sigma | S63-RUNNING-NS-63, S65-collab, S83-G48 | pre-registered-observations.md (CMB-S4) |\n   39: | 2 | **r** | `ZERO-FREE-PARAMETER` | 0.01173 (S83 G46 tensor-transfer) | < 0.036 (95% CL, BK18) | PASS (headroom 3.07x below 95% CL) | S83-G46-TENSOR-TRANSFER, S84-BICEP-KECK-2026-PRE-REGISTER | pre-registered-observations.md (LiteBIRD/BK) |\n   40: | 3 | **n_T (transit, k ~ M_KK)** | `ZERO-FREE-PARAMETER` | +0.468 (BLUE, S65/S83 G50) | inaccessible (k_transit 54 decades above CMB) | N/A (no detector reach 2026-2040) | S65-NT-BLUE-65, S83-G50, S84-BLUE-TRANSIT-TILT-INACCESSIBILITY | pre-registered-observations.md (LiteBIRD/BK) |\n   41: | 4 | **n_T (CMB, k = 0.05 Mpc^-1)** | `ZERO-FREE-PARAMETER` | -3.024e-3 (S84 W4-39) | not yet measured; sigma_LB_3yr = 0.0654 (S84 W4-37) | DETECTOR-STERILE for discrimination; PREDICTION is ZFP | S68-LITEB-R-FORECAST-68, S66-TENSOR-TRANSFER-66, S84-N_T-CMB-TRANSFER, S83-G46 | pre-registered-observations.md (LiteBIRD) |\n   42: | 5 | **alpha_s** | `ZERO-FREE-PARAMETER` | -0.0690 (S84 ALPHA-S-PRE-REGISTRATION) | -0.0045 +/- 0.0067 (Planck 2018) | TENSION (framework is off central by 9.6 sigma using Planck err only;\n... [truncated]"
+    },
+    {
+      "anchor_id": "open_707",
+      "anchor_type": "open_channels",
+      "name": "sin^2(theta_W)",
+      "detail_1": null,
+      "detail_2": null,
+      "session": "S83",
+      "source_file": "sessions/framework/registry/falsifier-rigor-registry.md",
+      "source_context_30_lines": "   36: | # | Channel | Flag | Prediction | Observational | Tension | Dependent Gates | Registry |\n   37: |:-:|:--------|:-----|:-----------|:--------------|:--------|:----------------|:---------|\n   38: | 1 | **n_s** | `ZERO-FREE-PARAMETER` | 0.9590 (S65 collab, Bogoliubov-inversion triple) | 0.9649 +/- 0.0042 (Planck 2018) | 1.40 sigma | S63-RUNNING-NS-63, S65-collab, S83-G48 | pre-registered-observations.md (CMB-S4) |\n   39: | 2 | **r** | `ZERO-FREE-PARAMETER` | 0.01173 (S83 G46 tensor-transfer) | < 0.036 (95% CL, BK18) | PASS (headroom 3.07x below 95% CL) | S83-G46-TENSOR-TRANSFER, S84-BICEP-KECK-2026-PRE-REGISTER | pre-registered-observations.md (LiteBIRD/BK) |\n   40: | 3 | **n_T (transit, k ~ M_KK)** | `ZERO-FREE-PARAMETER` | +0.468 (BLUE, S65/S83 G50) | inaccessible (k_transit 54 decades above CMB) | N/A (no detector reach 2026-2040) | S65-NT-BLUE-65, S83-G50, S84-BLUE-TRANSIT-TILT-INACCESSIBILITY | pre-registered-observations.md (LiteBIRD/BK) |\n   41: | 4 | **n_T (CMB, k = 0.05 Mpc^-1)** | `ZERO-FREE-PARAMETER` | -3.024e-3 (S84 W4-39) | not yet measured; sigma_LB_3yr = 0.0654 (S84 W4-37) | DETECTOR-STERILE for discrimination; PREDICTION is ZFP | S68-LITEB-R-FORECAST-68, S66-TENSOR-TRANSFER-66, S84-N_T-CMB-TRANSFER, S83-G46 | pre-registered-observations.md (LiteBIRD) |\n   42: | 5 | **alpha_s** | `ZERO-FREE-PARAMETER` | -0.0690 (S84 ALPHA-S-PRE-REGISTRATION) | -0.0045 +/- 0.0067 (Planck 2018) | TENSION (framework is off central by 9.6 sigma using Planck err only; CMB-S4 \n... [truncated]"
+    },
+    {
+      "anchor_id": "open_708",
+      "anchor_type": "open_channels",
+      "name": "A_s",
+      "detail_1": null,
+      "detail_2": null,
+      "session": "S84",
+      "source_file": "sessions/framework/registry/falsifier-rigor-registry.md",
+      "source_context_30_lines": "   37: |:-:|:--------|:-----|:-----------|:--------------|:--------|:----------------|:---------|\n   38: | 1 | **n_s** | `ZERO-FREE-PARAMETER` | 0.9590 (S65 collab, Bogoliubov-inversion triple) | 0.9649 +/- 0.0042 (Planck 2018) | 1.40 sigma | S63-RUNNING-NS-63, S65-collab, S83-G48 | pre-registered-observations.md (CMB-S4) |\n   39: | 2 | **r** | `ZERO-FREE-PARAMETER` | 0.01173 (S83 G46 tensor-transfer) | < 0.036 (95% CL, BK18) | PASS (headroom 3.07x below 95% CL) | S83-G46-TENSOR-TRANSFER, S84-BICEP-KECK-2026-PRE-REGISTER | pre-registered-observations.md (LiteBIRD/BK) |\n   40: | 3 | **n_T (transit, k ~ M_KK)** | `ZERO-FREE-PARAMETER` | +0.468 (BLUE, S65/S83 G50) | inaccessible (k_transit 54 decades above CMB) | N/A (no detector reach 2026-2040) | S65-NT-BLUE-65, S83-G50, S84-BLUE-TRANSIT-TILT-INACCESSIBILITY | pre-registered-observations.md (LiteBIRD/BK) |\n   41: | 4 | **n_T (CMB, k = 0.05 Mpc^-1)** | `ZERO-FREE-PARAMETER` | -3.024e-3 (S84 W4-39) | not yet measured; sigma_LB_3yr = 0.0654 (S84 W4-37) | DETECTOR-STERILE for discrimination; PREDICTION is ZFP | S68-LITEB-R-FORECAST-68, S66-TENSOR-TRANSFER-66, S84-N_T-CMB-TRANSFER, S83-G46 | pre-registered-observations.md (LiteBIRD) |\n   42: | 5 | **alpha_s** | `ZERO-FREE-PARAMETER` | -0.0690 (S84 ALPHA-S-PRE-REGISTRATION) | -0.0045 +/- 0.0067 (Planck 2018) | TENSION (framework is off central by 9.6 sigma using Planck err only; CMB-S4 projected sigma ~ 0.003 => 22 sigma) | S50 permanent, S84-ALPHA-S-PRE-REGISTRATION | pre-registere\n... [truncated]"
+    },
+    {
+      "anchor_id": "open_709",
+      "anchor_type": "open_channels",
+      "name": "f_NL (total, with folded-shape template)",
+      "detail_1": null,
+      "detail_2": null,
+      "session": "S67",
+      "source_file": "sessions/framework/registry/falsifier-rigor-registry.md",
+      "source_context_30_lines": "   38: | 1 | **n_s** | `ZERO-FREE-PARAMETER` | 0.9590 (S65 collab, Bogoliubov-inversion triple) | 0.9649 +/- 0.0042 (Planck 2018) | 1.40 sigma | S63-RUNNING-NS-63, S65-collab, S83-G48 | pre-registered-observations.md (CMB-S4) |\n   39: | 2 | **r** | `ZERO-FREE-PARAMETER` | 0.01173 (S83 G46 tensor-transfer) | < 0.036 (95% CL, BK18) | PASS (headroom 3.07x below 95% CL) | S83-G46-TENSOR-TRANSFER, S84-BICEP-KECK-2026-PRE-REGISTER | pre-registered-observations.md (LiteBIRD/BK) |\n   40: | 3 | **n_T (transit, k ~ M_KK)** | `ZERO-FREE-PARAMETER` | +0.468 (BLUE, S65/S83 G50) | inaccessible (k_transit 54 decades above CMB) | N/A (no detector reach 2026-2040) | S65-NT-BLUE-65, S83-G50, S84-BLUE-TRANSIT-TILT-INACCESSIBILITY | pre-registered-observations.md (LiteBIRD/BK) |\n   41: | 4 | **n_T (CMB, k = 0.05 Mpc^-1)** | `ZERO-FREE-PARAMETER` | -3.024e-3 (S84 W4-39) | not yet measured; sigma_LB_3yr = 0.0654 (S84 W4-37) | DETECTOR-STERILE for discrimination; PREDICTION is ZFP | S68-LITEB-R-FORECAST-68, S66-TENSOR-TRANSFER-66, S84-N_T-CMB-TRANSFER, S83-G46 | pre-registered-observations.md (LiteBIRD) |\n   42: | 5 | **alpha_s** | `ZERO-FREE-PARAMETER` | -0.0690 (S84 ALPHA-S-PRE-REGISTRATION) | -0.0045 +/- 0.0067 (Planck 2018) | TENSION (framework is off central by 9.6 sigma using Planck err only; CMB-S4 projected sigma ~ 0.003 => 22 sigma) | S50 permanent, S84-ALPHA-S-PRE-REGISTRATION | pre-registered-observations.md (CMB-S4) |\n   43: | 6 | **m_H (Higgs mass)** | `ACCOMMODATION` | 188.19 GeV at m\n... [truncated]"
+    },
+    {
+      "anchor_id": "open_710",
+      "anchor_type": "open_channels",
+      "name": "alpha_f_NL (bispectrum amplitude running)",
+      "detail_1": null,
+      "detail_2": null,
+      "session": "S84",
+      "source_file": "sessions/framework/registry/falsifier-rigor-registry.md",
+      "source_context_30_lines": "   39: | 2 | **r** | `ZERO-FREE-PARAMETER` | 0.01173 (S83 G46 tensor-transfer) | < 0.036 (95% CL, BK18) | PASS (headroom 3.07x below 95% CL) | S83-G46-TENSOR-TRANSFER, S84-BICEP-KECK-2026-PRE-REGISTER | pre-registered-observations.md (LiteBIRD/BK) |\n   40: | 3 | **n_T (transit, k ~ M_KK)** | `ZERO-FREE-PARAMETER` | +0.468 (BLUE, S65/S83 G50) | inaccessible (k_transit 54 decades above CMB) | N/A (no detector reach 2026-2040) | S65-NT-BLUE-65, S83-G50, S84-BLUE-TRANSIT-TILT-INACCESSIBILITY | pre-registered-observations.md (LiteBIRD/BK) |\n   41: | 4 | **n_T (CMB, k = 0.05 Mpc^-1)** | `ZERO-FREE-PARAMETER` | -3.024e-3 (S84 W4-39) | not yet measured; sigma_LB_3yr = 0.0654 (S84 W4-37) | DETECTOR-STERILE for discrimination; PREDICTION is ZFP | S68-LITEB-R-FORECAST-68, S66-TENSOR-TRANSFER-66, S84-N_T-CMB-TRANSFER, S83-G46 | pre-registered-observations.md (LiteBIRD) |\n   42: | 5 | **alpha_s** | `ZERO-FREE-PARAMETER` | -0.0690 (S84 ALPHA-S-PRE-REGISTRATION) | -0.0045 +/- 0.0067 (Planck 2018) | TENSION (framework is off central by 9.6 sigma using Planck err only; CMB-S4 projected sigma ~ 0.003 => 22 sigma) | S50 permanent, S84-ALPHA-S-PRE-REGISTRATION | pre-registered-observations.md (CMB-S4) |\n   43: | 6 | **m_H (Higgs mass)** | `ACCOMMODATION` | 188.19 GeV at mu_BC from S84-MU-BC-GEOMETRIC PASS (via bi-criterion mu_BC fit; earlier S83 quote 132 GeV) | 125.25 +/- 0.17 GeV (PDG) | ACCOMMODATION-FLAGGED (mu_BC fit pins the scale) | S83-W3-G47-sin2-thetaW-2loop-mu-BC, S84-MU-BC-GEOMETRIC,\n... [truncated]"
+    }
+  ]
+}

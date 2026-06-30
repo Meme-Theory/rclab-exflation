@@ -1,0 +1,801 @@
+#!/usr/bin/env python3
+"""
+S100a W1-1 SF54-MAPPING — frame-corrected Connes-distance proxy deceleration-band map
+======================================================================================
+
+Gate: S100a-W1-1-SF54-MAPPING ([SIGN], PHONONIC)
+
+Pre-registered operator (plan §W1-1):
+  band_frac_corrected = (1/N) * sum_tau 1[ q_corrected(tau) in [-0.97, +0.81] ]
+  q_corrected(tau) = map_correct(q_bare(tau); Omega_BA_fold, a_2-channel frame factor)
+  PASS  iff band_frac_corrected >= 0.90  (SF54 IS the right band after frame correction)
+  INFO  iff band_frac_corrected <  0.90 AND map well-defined AND median(q_corrected) < 0
+        (substrate structurally mostly-accelerating post-fold; SF54 is the WRONG band;
+         the S99 W1-1 band-miss is a genuine substrate prediction — Track B)
+  FAIL  iff map_correct is ill-defined (non-bijective / sign-ambiguous / NaN on the grid)
+
+GOVERNING STRUCTURE (the frame-map theorem — derived, every step visible)
+-------------------------------------------------------------------------
+For two scale-factor histories related by a conformal reframing
+    a_tilde(tau) = omega(tau) * a(tau),
+define h = a'/a (bare log-rate) and w = omega'/omega (conformal log-rate). Then
+
+  (1)  H_tilde = a_tilde'/a_tilde = h + w                       [log-rates ADD]
+  (2)  q_tilde = -1 - H_tilde'/H_tilde^2 = -1 - (h'+w')/(h+w)^2  [definition]
+  (3)  q_bare  = -1 - h'/h^2  ==>  h' = -(1+q_bare) h^2          [inversion]
+  (4)  substitute (3) into (2):
+       q_tilde = -1 + (1+q_bare) h^2/(h+w)^2 - w'/(h+w)^2
+               = A(tau) * q_bare + B(tau)                        [EXACT affine map]
+       A(tau)  = h^2/(h+w)^2 = (H_bare/H_tilde)^2  > 0  wherever H_tilde != 0
+       B(tau)  = -1 + A(tau) - w'/(h+w)^2
+
+So the frame correction IS the plan's "positive multiplicative + additive shift",
+pointwise in tau, with dq_corrected/dq_bare = A(tau) = (H_bare/H_tilde)^2.
+
+COROLLARY (map_0 — constant-normalization invariance THEOREM):
+  For a CONSTANT conformal factor C (e.g. the canonical Omega_BA_fold = 2.241353):
+  w = d ln C / d tau = 0 and w' = 0  ==>  A = 1, B = -1 + 1 - 0 = 0
+  ==>  q_corrected == q_bare  EXACTLY.
+  q = -a*addot/adot^2 is a logarithmic-derivative observable; EVERY constant
+  amplitude/normalization factor cancels identically. No constant frame correction
+  can move the deceleration history or its band fraction AT ALL.
+
+THE THREE-MAP LADDER (which correction is THE corrected map):
+  map_0  constant Omega_BA_fold normalization  -> IDENTITY on q (theorem above).
+         This is the gate's canonical map: the plan's Definition 3 pins the
+         correction on (Omega_BA_fold, a_2-channel) — both canonical CONSTANTS.
+  map_1  full AOFT Omega(tau) transport into the acoustic frame a_eff:
+         H_tilde = H_A ~ 0 (a_eff conformally STATIONARY, relvar 1.8e-7; S98
+         route-reconciliation FAIL + S99 W1-1) ==> A_1 = (H_bare/H_A)^2 explodes
+         (median ~1e7+), sign-ambiguous across 18 H_A=0 crossings ==> ILL-DEFINED.
+         S98-PROVEN exclusion — this 0/0 is exactly why S99 built the bare frame.
+  map_2  inter-proxy transport into the Connes-distance (SF54) frame:
+         w_CB = d ln(a_CD/a_bare)/dtau, H_tilde = H_CD ~ 2.6-3.95 >> H_bare ~
+         0.07-0.31 ==> A_2 = (H_bare/H_CD)^2 ~ 1e-3: positive-slope but
+         comparison-DEGENERATE — the bare-history content is suppressed ~10^3 x
+         and the exact transport reproduces q_CD identically (h + w_CB = H_CD),
+         i.e. the corrected observable degenerates to the band's own generator
+         (circular). Also only ~60% of the S99 grid is S54-data-supported.
+
+  ==> The unique non-degenerate, well-defined frame correction is map_0, under
+      which q_corrected = q_bare EXACTLY. The band-miss is FRAME-ROBUST.
+
+Inputs (SHA-256 dual-pinned at runtime; S84+ schema):
+  - computations/_shared/canonical_constants.py                 (audit pin)
+  - computations/session-99/s99_w1_q_nonratio_observable.npz    (arr_q_bare_t /
+    arr_H_bare_t / arr_tau + frame arrays; the S99 W1-1 INFO ground truth)
+  - sessions/framework/equation-collab/little-red-dots-synthesis.md (the pinned
+    SF54 derivation source carrying the band [-0.97, +0.81])
+  - computations/session-54/s54_scale_factor.npz                (OPERATIONAL
+    ENRICHMENT, honestly disclosed: the canonical DATA behind the LRD SF54
+    derivation — a_CD = <d_D>/<d_D>(0), q_CD, H_CD on the 10-pt S54 grid; needed
+    for the genuine band re-derivation + the frame measurement. The plan's
+    input_files block lists 3 files; this 4th pin ENRICHES the audit set
+    (more pins, band edges/threshold/criteria unchanged) per math-scripts.md
+    plan-authorship discipline item 4 — disclosed in verdict extra row + WP.)
+
+Output 4-tuple:
+  (value=<band_frac_corrected + map summary>, scheme=FW,
+   convention=CONNES-DISTANCE-PROXY-FRAME-CORRECTED, L_max=N/A)
+
+Classification: PHONONIC.
+  The deceleration history IS the curvature of the emergent-FRW scale factor
+  a_eff(tau) generated by the a_2 Seeley-DeWitt moment (a_2^{zeta} =
+  2776.165389) of D_K^2. Arrow: D_K eigenvalues -> a_2 spectral moment ->
+  emergent g_M -> a_eff(tau)/a_bare(tau) -> q(tau). SF54 is a deceleration band
+  swept by the Connes-distance proxy <d_D>(tau) — a DIFFERENT conformal frame of
+  the same substrate. The frame correction is the Connes-distance bridge map; a
+  band-miss under a well-defined map is the substrate predicting a different
+  deceleration history than the SF54 comparison object. Exflation, not inflation.
+
+DISCIPLINE
+----------
+- `from canonical_constants import *`; every computed intermediate tagged # (local)
+- CPU-correct (999-pt 1D arrays, spline + gradient; no eigvals/SVD/FFT);
+  OMP_NUM_THREADS=8 set BEFORE import numpy (machinery pin GPU_path=cpu-cap-OMP8)
+- SHA-256 of all inputs logged in first 20 lines of stdout
+- audit_sha256 + content_sha256 emitted (S84+ dual-SHA)
+- Verdict via emit_verdict knowledge-MCP tool: this script PRINTS the payload
+  (print_verdict_payload), never writes the verdict file directly
+- NUMBERS first, gate second, interpretation third
+"""
+
+from __future__ import annotations
+
+# ---------------------------------------------------------------------------
+# Section 0 — CPU thread cap (BEFORE numpy import; machinery pin cpu-cap-OMP8)
+# ---------------------------------------------------------------------------
+import os
+
+os.environ.setdefault("OMP_NUM_THREADS", "8")
+os.environ.setdefault("MKL_NUM_THREADS", "8")
+
+# ---------------------------------------------------------------------------
+# Section 1 — Canonical constants (MANDATORY first framework import)
+# ---------------------------------------------------------------------------
+import sys
+from pathlib import Path as _Path
+
+sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "_shared"))
+from canonical_constants import *  # noqa: F401,F403,E402
+from canonical_constants import a_2_FW_zeta, Omega_BA_fold, tau_fold  # noqa: E402  explicit provenance anchors
+
+# ---------------------------------------------------------------------------
+# Section 2 — Standard imports
+# ---------------------------------------------------------------------------
+import hashlib
+import json
+import re
+import time
+from pathlib import Path
+
+import numpy as np
+from scipy.interpolate import UnivariateSpline
+from scipy.stats import spearmanr
+import matplotlib
+
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
+
+# ---------------------------------------------------------------------------
+# Section 3 — Paths + pre-registration
+# ---------------------------------------------------------------------------
+SESSION_DIR = Path(__file__).resolve().parent
+COMPUTATIONS_DIR = SESSION_DIR.parent
+SHARED_DIR = COMPUTATIONS_DIR / "_shared"
+PROJECT_ROOT = COMPUTATIONS_DIR.parent
+
+SESSION = "100a"                                                   # (local) letter-suffixed sub-session
+GATE_ID = "S100a-W1-1-SF54-MAPPING"                                # (local)
+SCHEME = "FW"                                                      # (local)
+CONVENTION = "CONNES-DISTANCE-PROXY-FRAME-CORRECTED"               # (local) plan machinery pin
+L_MAX = "N/A"                                                      # (local) 1D post-processing, no truncation
+
+# Pre-registered pins (§W1-1 machinery_pin_map + operator)
+BAND_FRAC_THR = 0.90                                               # (local) strict_PASS_boundary, direction >=
+PUB_PREC = 4                                                       # (local) publication precision (sig figs)
+# SF54 band edges — EXACT closed inequalities, no tol slack (plan tolerance pin).
+# Externally-derived band (SCALE-FACTOR-54 Connes-distance proxy; carried by the
+# pinned LRD synthesis + S96/S99 precedent) -> NOT framework constants.
+q_lo_SF54 = -0.97                                                  # (local)
+q_hi_SF54 = 0.81                                                   # (local)
+EPS_MACHINE_BAND = 1e-9                                            # (local) machine-precision claim band for exact identities
+
+OUT_NPZ = SESSION_DIR / "s100a_w1_sf54_mapping.npz"
+OUT_PNG = SESSION_DIR / "s100a_w1_sf54_mapping.png"
+
+CANON = SHARED_DIR / "canonical_constants.py"
+S99_NPZ = COMPUTATIONS_DIR / "session-99" / "s99_w1_q_nonratio_observable.npz"
+LRD_MD = PROJECT_ROOT / "sessions" / "framework" / "equation-collab" / "little-red-dots-synthesis.md"
+S54_NPZ = COMPUTATIONS_DIR / "session-54" / "s54_scale_factor.npz"
+
+INPUT_FILES = [CANON, S99_NPZ, LRD_MD, S54_NPZ]
+
+
+# ---------------------------------------------------------------------------
+# Section 4 — SHA-256 input-pin block (S84+ dual-SHA schema)
+# ---------------------------------------------------------------------------
+
+def sha256_of(path: Path) -> str:
+    h = hashlib.sha256()  # (local)
+    try:
+        h.update(path.read_bytes())
+    except OSError:
+        return ""
+    return h.hexdigest()
+
+
+def log_input_pins(inputs: list[Path]) -> dict[str, str]:
+    print(f"=== {GATE_ID} — input SHA-256 pins ===")
+    pins: dict[str, str] = {}  # (local)
+    for p in inputs:
+        sha = sha256_of(p)  # (local)
+        rel = str(p.relative_to(PROJECT_ROOT)).replace("\\", "/")  # (local)
+        print(f"  {rel}: {sha[:16]}...")
+        pins[rel] = sha
+    return pins
+
+
+def compute_dual_sha(script_path: Path, canonical_path: Path,
+                     pins: dict[str, str]) -> tuple[str, str]:
+    script_bytes = script_path.read_bytes()  # (local)
+    canonical_bytes = canonical_path.read_bytes()  # (local)
+    pinmap_json = json.dumps(dict(sorted(pins.items())),
+                             separators=(",", ":"), sort_keys=True).encode("utf-8")  # (local)
+    h_audit = hashlib.sha256()  # (local)
+    h_audit.update(script_bytes)
+    h_audit.update(canonical_bytes)
+    h_audit.update(pinmap_json)
+    h_content = hashlib.sha256()  # (local)
+    h_content.update(script_bytes)
+    return h_audit.hexdigest(), h_content.hexdigest()
+
+
+# ---------------------------------------------------------------------------
+# Section 5 — Compute
+# ---------------------------------------------------------------------------
+
+def q_pipeline(a_arr: np.ndarray, tau_arr: np.ndarray):
+    """The exact S99 W1-1 gradient pipeline: a -> (adot, H, Hdot, q).
+    q = -1 - Hdot/H^2 (identical to -a*addot/adot^2 for H != 0)."""
+    adot = np.gradient(a_arr, tau_arr)            # (local)
+    H = adot / a_arr                              # (local)
+    Hdot = np.gradient(H, tau_arr)                # (local)
+    with np.errstate(divide="ignore", invalid="ignore"):
+        q = -1.0 - Hdot / (H ** 2)                # (local)
+    return adot, H, Hdot, q
+
+
+def compute() -> dict:
+    res: dict = {}  # (local)
+
+    # ====================================================================
+    # (A) Load the S99 W1-1 npz — the bare-frame ground truth
+    # ====================================================================
+    z99 = np.load(S99_NPZ, allow_pickle=True)
+    tau = np.asarray(z99["arr_tau"], dtype=np.float64)            # (local) 999-pt post-fold grid
+    q_bare = np.asarray(z99["arr_q_bare_t"], dtype=np.float64)    # (local) the W1-1 history
+    H_bare = np.asarray(z99["arr_H_bare_t"], dtype=np.float64)    # (local) bare-frame Hubble backbone
+    Hdot_bare = np.asarray(z99["arr_Hdot_bare_t"], dtype=np.float64)  # (local)
+    a_bare = np.asarray(z99["arr_a_bare_t"], dtype=np.float64)    # (local)
+    a_eff = np.asarray(z99["arr_a_eff_t"], dtype=np.float64)      # (local) acoustic frame (stationary)
+    H_A = np.asarray(z99["arr_H_A_t"], dtype=np.float64)          # (local) acoustic Hubble (~0)
+    Omega_t = np.asarray(z99["arr_Omega_t"], dtype=np.float64)    # (local) AOFT Omega(tau)
+
+    N = int(tau.size)                                             # (local) N_eval pin: runtime-read
+    res["N_eval"] = N
+    res["tau_min"] = float(tau.min())
+    res["tau_max"] = float(tau.max())
+
+    # stored S99 ground-truth scalars (replication anchors)
+    s99_band_frac_primary = float(z99["band_frac_primary"])       # (local) 0.490196 (primary protocol)
+    s99_band_frac_qbare = float(z99["band_frac_qbare"])           # (local) 0.501502 (raw q_bare protocol)
+    s99_q_bare_median = float(z99["q_bare_median"])               # (local) -0.866166
+    s99_accel_frac = float(z99["accel_frac"])                     # (local)
+    res.update(s99_band_frac_primary=s99_band_frac_primary,
+               s99_band_frac_qbare=s99_band_frac_qbare,
+               s99_q_bare_median=s99_q_bare_median,
+               s99_accel_frac=s99_accel_frac)
+
+    # --- CC-1: pipeline replication (cached arrays -> cached q_bare, bit-level) ---
+    _, H_re, _, q_re = q_pipeline(a_bare, tau)                    # (local)
+    cc1_pipeline_maxdev = float(np.max(np.abs(q_re - q_bare) / (1.0 + np.abs(q_bare))))  # (local)
+    res["cc1_pipeline_maxdev"] = cc1_pipeline_maxdev
+
+    # --- CC-2: ground-truth replication (median + raw band frac vs stored) ---
+    q_bare_median = float(np.nanmedian(q_bare))                   # (local)
+    finite_q = np.isfinite(q_bare)                                # (local)
+    n_finite = int(finite_q.sum())                                # (local)
+    in_band_raw = (q_bare >= q_lo_SF54) & (q_bare <= q_hi_SF54)   # (local) closed inequalities, no tol
+    band_frac_raw = float((in_band_raw & finite_q).sum() / N)     # (local)
+    cc2_median_dev = abs(q_bare_median - s99_q_bare_median)       # (local)
+    cc2_bandfrac_dev = abs(band_frac_raw - s99_band_frac_qbare)   # (local)
+    res.update(q_bare_median=q_bare_median, n_finite=n_finite,
+               band_frac_raw=band_frac_raw,
+               cc2_median_dev=cc2_median_dev, cc2_bandfrac_dev=cc2_bandfrac_dev)
+
+    # --- CC-3: Omega(tau) left edge vs canonical Omega_BA_fold ---
+    omega_edge = float(Omega_t[0])                                # (local) Omega at tau=0.190261 (nearest fold)
+    cc3_omega_reldev = abs(omega_edge / Omega_BA_fold - 1.0)      # (local)
+    res.update(omega_edge=omega_edge, cc3_omega_reldev=cc3_omega_reldev)
+
+    # ====================================================================
+    # (B) Re-derive the SF54 band from its derivation sources
+    # ====================================================================
+    # (B.1) pinned LRD synthesis: verify it carries the band edges (provenance parse)
+    lrd_text = LRD_MD.read_bytes().decode("utf-8", errors="replace")  # (local)
+    has_lo = bool(re.search(r"[−-]0\.97", lrd_text))              # (local) Unicode minus or ASCII
+    has_hi = bool(re.search(r"\+0\.81", lrd_text))                # (local)
+    lrd_carries_band = bool(has_lo and has_hi)                    # (local)
+    res["lrd_carries_band"] = lrd_carries_band
+    if not lrd_carries_band:
+        raise ValueError("PINNED-INPUT-DEFECT: little-red-dots-synthesis.md does not carry "
+                         "the SF54 band edges [-0.97, +0.81] — provenance parse failed")
+
+    # (B.2) S54 data: re-derive a_CD, q_CD and the band
+    z54 = np.load(S54_NPZ, allow_pickle=True)
+    t54 = np.asarray(z54["tau"], dtype=np.float64)                # (local) 10-pt grid [0, 0.34694]
+    a54 = np.asarray(z54["a"], dtype=np.float64)                  # (local) a_CD = <d_D>/<d_D>(0)
+    q54_stored = np.asarray(z54["q"], dtype=np.float64)           # (local)
+    H54_stored = np.asarray(z54["H"], dtype=np.float64)           # (local)
+    d_mean = np.asarray(z54["d_mean"], dtype=np.float64)          # (local) raw Connes distances
+
+    # re-derive a_CD from the raw distances (the SF54 definition)
+    a54_re = d_mean / d_mean[0]                                   # (local)
+    cc4_a54_maxdev = float(np.max(np.abs(a54_re - a54)))          # (local)
+
+    # re-derive q_CD via the exact S54 spline pipeline (UnivariateSpline k=3 s=0)
+    spl = UnivariateSpline(t54, a54, k=3, s=0)                    # (local) interpolating cubic
+    a1_n = spl.derivative(1)(t54)                                 # (local)
+    a2_n = spl.derivative(2)(t54)                                 # (local)
+    with np.errstate(divide="ignore", invalid="ignore"):
+        q54_re = -a54 * a2_n / a1_n**2                            # (local) q = -a a''/(a')^2 at the nodes
+    cc4_q54_maxdev = float(np.max(np.abs(q54_re - q54_stored)))   # (local)
+
+    q54_min = float(np.nanmin(q54_stored))                        # (local) -0.9732...
+    q54_max = float(np.nanmax(q54_stored))                        # (local) +0.8144...
+    band_round_match = (round(q54_min, 2) == q_lo_SF54) and (round(q54_max, 2) == q_hi_SF54)  # (local)
+    tau_edge_lo = float(t54[int(np.nanargmin(q54_stored))])       # (local) where the -0.97 edge lives
+    tau_edge_hi = float(t54[int(np.nanargmax(q54_stored))])       # (local) where the +0.81 edge lives
+    edge_lo_prefold = bool(tau_edge_lo < tau_fold)                # (local)
+    edge_hi_prefold = bool(tau_edge_hi < tau_fold)                # (local)
+    # post-fold-restricted SF54 q-range (diagnostic: where SF54's own q lives on the S99 window)
+    postfold_54 = t54 >= tau_fold                                 # (local)
+    q54_postfold_min = float(np.nanmin(q54_stored[postfold_54]))  # (local)
+    q54_postfold_max = float(np.nanmax(q54_stored[postfold_54]))  # (local)
+    res.update(t54=t54, a54=a54, q54_stored=q54_stored, H54_stored=H54_stored,
+               q54_re=q54_re, cc4_a54_maxdev=cc4_a54_maxdev, cc4_q54_maxdev=cc4_q54_maxdev,
+               q54_min=q54_min, q54_max=q54_max, band_round_match=band_round_match,
+               tau_edge_lo=tau_edge_lo, tau_edge_hi=tau_edge_hi,
+               edge_lo_prefold=edge_lo_prefold, edge_hi_prefold=edge_hi_prefold,
+               q54_postfold_min=q54_postfold_min, q54_postfold_max=q54_postfold_max)
+
+    # ====================================================================
+    # (C) Frame measurement on the overlap window
+    # ====================================================================
+    ov = tau <= (t54.max() + 1e-12)                               # (local) S54-data-supported sub-window
+    n_ov = int(ov.sum())                                          # (local)
+    overlap_frac = float(n_ov / N)                                # (local)
+    tau_ov = tau[ov]                                              # (local)
+
+    a_CD_ov = spl(tau_ov)                                         # (local) splined a_CD on S99 grid
+    a1_ov = spl.derivative(1)(tau_ov)                             # (local)
+    a2_ov = spl.derivative(2)(tau_ov)                             # (local)
+    H_CD = a1_ov / a_CD_ov                                        # (local) Connes-distance-frame Hubble
+    HCDdot = a2_ov / a_CD_ov - H_CD**2                            # (local) dH_CD/dtau
+    with np.errstate(divide="ignore", invalid="ignore"):
+        q_CD = -1.0 - HCDdot / H_CD**2                            # (local) CD-frame deceleration
+        q_CD_direct = -a_CD_ov * a2_ov / a1_ov**2                 # (local) two-route internal check
+    cc5_qcd_tworoute_maxdev = float(np.max(np.abs(q_CD - q_CD_direct) / (1.0 + np.abs(q_CD))))  # (local)
+
+    # frame-mismatch ratio: the CD frame vs the bare frame
+    ratio_HCD_Hbare = H_CD / H_bare[ov]                           # (local)
+    frame_ratio_median = float(np.median(ratio_HCD_Hbare))        # (local)
+    frame_ratio_min = float(np.min(ratio_HCD_Hbare))              # (local)
+    frame_ratio_max = float(np.max(ratio_HCD_Hbare))              # (local)
+    # conformal-distinctness: rel-var of inter-proxy ratios (const ratio <=> same frame)
+    r_CB = a_CD_ov / a_bare[ov]                                   # (local) CD/bare ratio
+    r_CA = a_CD_ov / a_eff[ov]                                    # (local) CD/acoustic ratio
+    relvar_CB = float(np.std(r_CB) / np.mean(r_CB))               # (local)
+    relvar_CA = float(np.std(r_CA) / np.mean(r_CA))               # (local)
+    res.update(n_ov=n_ov, overlap_frac=overlap_frac,
+               cc5_qcd_tworoute_maxdev=cc5_qcd_tworoute_maxdev,
+               frame_ratio_median=frame_ratio_median,
+               frame_ratio_min=frame_ratio_min, frame_ratio_max=frame_ratio_max,
+               relvar_CB=relvar_CB, relvar_CA=relvar_CA)
+
+    # ====================================================================
+    # (D) THE THREE-MAP LADDER
+    # ====================================================================
+    # ---- map_0: constant Omega_BA_fold normalization (THE CANONICAL MAP) ----
+    # THEOREM: q invariant under a -> C*a. Numerical verification at C = Omega_BA_fold:
+    _, _, _, q_C = q_pipeline(Omega_BA_fold * a_bare, tau)        # (local) same pipeline on C*a_bare
+    map0_const_invariance_maxdev = float(np.max(np.abs(q_C - q_re) / (1.0 + np.abs(q_re))))  # (local)
+    A0 = np.ones(N)                                               # (local) dq_corrected/dq_bare = 1 > 0
+    B0 = 0.0                                                      # (local) additive shift exactly zero
+    q_corrected = q_bare.copy()                                   # (local) THE corrected history (identity)
+
+    # ---- map_1: AOFT Omega(tau) -> acoustic frame (S98-PROVEN ILL-DEFINED) ----
+    with np.errstate(divide="ignore", invalid="ignore"):
+        A1 = (H_bare / H_A) ** 2                                  # (local) explodes: H_A ~ 0
+    A1_median = float(np.nanmedian(np.abs(A1)))                   # (local)
+    A1_max = float(np.nanmax(np.abs(A1[np.isfinite(A1)])))        # (local)
+    n_HA_cross = int((np.diff(np.sign(H_A)) != 0).sum())          # (local) sign crossings (S99: 18)
+    map1_ill_defined = bool((n_HA_cross > 0) or (A1_median > 1e3))  # (local) sign-ambiguous + exploding
+
+    # ---- map_2: inter-proxy -> Connes-distance frame (DEGENERATE / circular) ----
+    h_ov = H_bare[ov]                                             # (local)
+    hdot_ov = Hdot_bare[ov]                                       # (local)
+    w_CB = H_CD - h_ov                                            # (local) inter-proxy conformal rate
+    wdot_CB = HCDdot - hdot_ov                                    # (local)
+    A2 = (h_ov / H_CD) ** 2                                       # (local) slope = (H_bare/H_CD)^2
+    B2 = -1.0 + A2 - wdot_CB / H_CD**2                            # (local)
+    q_aff2 = A2 * q_bare[ov] + B2                                 # (local) affine transport
+    # CC-6: affine identity — exact algebra: A2*q_bare + B2 == q_CD (float roundoff only)
+    cc6_affine_identity_maxdev = float(np.max(np.abs(q_aff2 - q_CD) / (1.0 + np.abs(q_CD))))  # (local)
+    A2_median = float(np.median(A2))                              # (local) ~1e-3: slope suppression
+    A2_min = float(np.min(A2))                                    # (local)
+    A2_max = float(np.max(A2))                                    # (local)
+    A2_all_positive = bool(np.all(A2 > 0))                        # (local) positive-slope (Step A check)
+    q_CD_median_ov = float(np.median(q_CD))                       # (local) CD-frame median on overlap
+    q_CD_inband_frac_ov = float(np.mean((q_CD >= q_lo_SF54) & (q_CD <= q_hi_SF54)))  # (local) diagnostic
+    map2_degenerate = bool(A2_median < 0.05)                      # (local) slope suppression >= 20x => bare history erased
+    res.update(map0_const_invariance_maxdev=map0_const_invariance_maxdev,
+               A1_median=A1_median, A1_max=A1_max, n_HA_cross=n_HA_cross,
+               map1_ill_defined=map1_ill_defined,
+               A2_median=A2_median, A2_min=A2_min, A2_max=A2_max,
+               A2_all_positive=A2_all_positive,
+               cc6_affine_identity_maxdev=cc6_affine_identity_maxdev,
+               q_CD_median_ov=q_CD_median_ov, q_CD_inband_frac_ov=q_CD_inband_frac_ov,
+               map2_degenerate=map2_degenerate,
+               tau_ov=tau_ov, q_CD=q_CD, H_CD=H_CD, A2=A2, B2=B2, w_CB=w_CB, A1=A1)
+
+    # ====================================================================
+    # (E) The gate observable under the canonical corrected map (map_0)
+    # ====================================================================
+    in_band_corr = (q_corrected >= q_lo_SF54) & (q_corrected <= q_hi_SF54)  # (local)
+    finite_corr = np.isfinite(q_corrected)                        # (local)
+    band_frac_corrected = float((in_band_corr & finite_corr).sum() / N)  # (local) THE operator
+    q_corrected_median = float(np.nanmedian(q_corrected))         # (local)
+    miss_below_frac = float(np.mean(q_corrected < q_lo_SF54))     # (local) accelerating-harder-than-band tail
+    miss_above_frac = float(np.mean(q_corrected > q_hi_SF54))     # (local)
+    accel_frac_corr = float(np.mean(q_corrected < 0))             # (local)
+
+    # ---- well-definedness (the FAIL-branch test) ----
+    wd_finite = bool(np.all(finite_corr))                         # (local) no NaN/Inf on grid
+    wd_positive_slope = bool(np.all(A0 > 0))                      # (local) sign(dq_corr/dq_bare)=A0=1>0
+    rho_s, _ = spearmanr(q_bare, q_corrected)                     # (local) monotone-order preservation
+    wd_bijective = bool(abs(float(rho_s) - 1.0) < 1e-12)          # (local) identity affine map
+    sign_median_preserved = bool(np.sign(q_corrected_median) == np.sign(q_bare_median))  # (local)
+    map_well_defined = bool(wd_finite and wd_positive_slope and wd_bijective)  # (local)
+    domain_used_frac = float(n_finite / N)                        # (local) no pole exclusion needed
+
+    res.update(band_frac_corrected=band_frac_corrected,
+               q_corrected_median=q_corrected_median,
+               miss_below_frac=miss_below_frac, miss_above_frac=miss_above_frac,
+               accel_frac_corr=accel_frac_corr,
+               wd_finite=wd_finite, wd_positive_slope=wd_positive_slope,
+               spearman_rho=float(rho_s), wd_bijective=wd_bijective,
+               sign_median_preserved=sign_median_preserved,
+               map_well_defined=map_well_defined,
+               domain_used_frac=domain_used_frac,
+               tau=tau, q_bare=q_bare, q_corrected=q_corrected, H_bare=H_bare,
+               H_A=H_A, Omega_t=Omega_t, A0=A0, B0=B0)
+
+    # ====================================================================
+    # (F) 3-tuple verdict assembly (schema-v2 [SIGN])
+    # ====================================================================
+    # sign_verdict (plan: "tests sign(median q_corrected) = sign(median q_bare)";
+    #   chain prediction: both NEGATIVE — accelerating)
+    sign_verdict = "PASS" if sign_median_preserved else "FAIL"    # (local)
+
+    # magnitude_verdict: PASS iff band_frac_corrected >= 0.90; FAIL iff map
+    #   ill-defined (the rubric's FAIL branch); INFO otherwise (<0.90, well-defined)
+    if not map_well_defined:
+        magnitude_verdict = "FAIL"                                # (local)
+    elif band_frac_corrected >= BAND_FRAC_THR:
+        magnitude_verdict = "PASS"                                # (local)
+    else:
+        magnitude_verdict = "INFO"                                # (local)
+
+    # regime_verdict: corrected map defined on the full grid? (auto-shortening bands)
+    if domain_used_frac >= 0.95:
+        regime_verdict = "VALID"                                  # (local)
+    elif domain_used_frac >= 0.50:
+        regime_verdict = "MARGINAL"                               # (local)
+    else:
+        regime_verdict = "BREAKDOWN"                              # (local)
+
+    res.update(sign_verdict=sign_verdict, magnitude_verdict=magnitude_verdict,
+               regime_verdict=regime_verdict)
+    res["value"] = band_frac_corrected
+    return res
+
+
+# ---------------------------------------------------------------------------
+# Section 5b — plot
+# ---------------------------------------------------------------------------
+
+def make_plot(r: dict) -> None:
+    tau = r["tau"]                                                # (local)
+    fig, axes = plt.subplots(2, 2, figsize=(13, 9.5), constrained_layout=True)
+
+    # (a) corrected q history vs the SF54 band, with the band's generator overlaid
+    ax = axes[0, 0]
+    ax.plot(tau, r["q_corrected"], color="C0", lw=0.9,
+            label=r"$q_{\rm corrected}=q_{\rm bare}$ (map$_0$: const $\Omega_{BA}$ = identity on $q$)")
+    ax.plot(r["tau_ov"], r["q_CD"], color="C3", lw=1.4, ls="--",
+            label=r"$q_{\rm CD}(\tau)$ — SF54 band generator (splined S54)")
+    ax.plot(r["t54"], r["q54_stored"], "k^", ms=6, label="S54 nodes $q_{CD}$")
+    ax.axhspan(q_lo_SF54, q_hi_SF54, color="C1", alpha=0.18,
+               label=f"SF54 band [{q_lo_SF54}, {q_hi_SF54}]")
+    ax.axhline(0.0, color="k", lw=0.6, ls=":")
+    ax.axvline(tau_fold, color="green", lw=0.8, ls="--", alpha=0.6, label=r"$\tau_{\rm fold}$")
+    ax.set_ylim(-3.0, 1.4)
+    ax.set_xlabel(r"$\tau$"); ax.set_ylabel(r"$q$")
+    ax.set_title(f"(a) corrected history vs SF54 band — band_frac={r['band_frac_corrected']:.4f} "
+                 f"(min $q$={np.min(r['q_corrected']):.0f} off-scale)")
+    ax.legend(loc="lower right", fontsize=7)
+
+    # (b) three-frame Hubble ladder (the frame-mismatch diagnosis)
+    ax = axes[0, 1]
+    ax.semilogy(tau, np.abs(r["H_bare"]), color="C0", lw=1.2, label=r"$H_{\rm bare}$ (bare frame)")
+    ax.semilogy(r["tau_ov"], np.abs(r["H_CD"]), color="C3", lw=1.2, ls="--",
+                label=r"$H_{\rm CD}$ (Connes-distance frame)")
+    ax.semilogy(tau, np.abs(r["H_A"]) + 1e-300, color="C7", lw=0.8, alpha=0.8,
+                label=r"$|H_A|$ (acoustic frame, stationary $\approx 0$)")
+    ax.set_xlabel(r"$\tau$"); ax.set_ylabel(r"$|H|$ (log)")
+    ax.set_title(f"(b) three conformal frames: median $H_{{CD}}/H_{{bare}}$={r['frame_ratio_median']:.1f}")
+    ax.legend(loc="center right", fontsize=7.5)
+
+    # (c) the map ladder: slope A(tau) = dq_corrected/dq_bare per candidate map
+    ax = axes[1, 0]
+    ax.semilogy(tau, r["A0"], color="C0", lw=1.6, label=r"map$_0$ const-$\Omega_{BA}$: $A_0=1$ (IDENTITY)")
+    ax.semilogy(r["tau_ov"], r["A2"], color="C3", lw=1.2, ls="--",
+                label=rf"map$_2$ CD-frame: $A_2$ median={r['A2_median']:.1e} (DEGENERATE)")
+    A1_plot = np.abs(r["A1"]); A1_plot[~np.isfinite(A1_plot)] = np.nan  # (local)
+    ax.semilogy(tau, A1_plot, color="C7", lw=0.7, alpha=0.7,
+                label=rf"map$_1$ acoustic: $|A_1|$ median={r['A1_median']:.1e} (ILL-DEFINED, S98)")
+    ax.set_xlabel(r"$\tau$"); ax.set_ylabel(r"$A(\tau)=\partial q_{\rm corr}/\partial q_{\rm bare}$ (log)")
+    ax.set_title("(c) three-map ladder: only map$_0$ is non-degenerate + well-defined")
+    ax.legend(loc="center right", fontsize=7)
+
+    # (d) distribution of the corrected q vs the band
+    ax = axes[1, 1]
+    qc = np.clip(r["q_corrected"], -5.0, 1.5)                     # (local) display clip
+    ax.hist(qc, bins=80, color="C0", alpha=0.75)
+    ax.axvspan(q_lo_SF54, q_hi_SF54, color="C1", alpha=0.18)
+    ax.axvline(r["q_corrected_median"], color="C3", lw=1.4,
+               label=f"median={r['q_corrected_median']:.4f} (ACCELERATING)")
+    ax.axvline(q_lo_SF54, color="C1", lw=1.0); ax.axvline(q_hi_SF54, color="C1", lw=1.0)
+    ax.set_xlabel(r"$q_{\rm corrected}$ (clipped at $-5$ for display)")
+    ax.set_ylabel("count")
+    ax.set_title(f"(d) miss is one-sided: below-band {r['miss_below_frac']:.3f}, "
+                 f"above-band {r['miss_above_frac']:.3f}")
+    ax.legend(fontsize=8)
+
+    fig.suptitle(f"{GATE_ID} — frame-corrected SF54 deceleration-band map "
+                 f"(Ω_BA_fold={Omega_BA_fold}; a_2^ζ={a_2_FW_zeta}; q invariant under const conformal factors)",
+                 fontsize=10)
+    fig.savefig(OUT_PNG, dpi=130)
+    plt.close(fig)
+
+
+# ---------------------------------------------------------------------------
+# Section 6 — verdict payload + composite collapse
+# ---------------------------------------------------------------------------
+
+def emit_4tuple(value, scheme: str, convention: str, L_max) -> str:
+    return f"(value={value!r}, scheme={scheme}, convention={convention}, L_max={L_max})"
+
+
+def print_verdict_payload(verdict, value, audit_sha, content_sha,
+                          sign_verdict=None, magnitude_verdict=None,
+                          regime_verdict=None, companion_note="", extra_rows=None) -> dict:
+    payload: dict = {
+        "session": SESSION,
+        "gate_id": GATE_ID,
+        "verdict": verdict,
+        "value": str(value),
+        "scheme": SCHEME,
+        "convention": CONVENTION,
+        "l_max": str(L_MAX),
+        "audit_sha256": audit_sha,
+        "content_sha256": content_sha,
+        "schema_version": "S84+",
+    }
+    if companion_note:
+        payload["companion_note"] = companion_note
+    if not (sign_verdict is None and magnitude_verdict is None and regime_verdict is None):
+        payload["sign_verdict"] = sign_verdict
+        payload["magnitude_verdict"] = magnitude_verdict
+        payload["regime_verdict"] = regime_verdict
+    if extra_rows:
+        payload["extra_rows"] = list(extra_rows)
+    print("<<<EMIT_VERDICT_PAYLOAD>>>")
+    print(json.dumps(payload, separators=(",", ":"), sort_keys=True))
+    print("<<<END_EMIT_VERDICT_PAYLOAD>>>")
+    return payload
+
+
+def collapse_composite(sign_v: str, mag_v: str, regime_v: str) -> str:
+    """Deterministic composite collapse per gate-verdicts.md (pre-registered)."""
+    if regime_v == "BREAKDOWN":
+        return "FAIL"
+    if sign_v == "FAIL":
+        return "FAIL"
+    if mag_v == "FAIL" and regime_v == "VALID":
+        return "FAIL"
+    if mag_v == "FAIL" and regime_v == "MARGINAL":
+        return "INFO"
+    if mag_v == "INFO":
+        return "INFO"
+    return "PASS"
+
+
+# ---------------------------------------------------------------------------
+# Section 7 — Main
+# ---------------------------------------------------------------------------
+
+def main() -> int:
+    t0 = time.time()  # (local)
+
+    pins = log_input_pins(INPUT_FILES)
+    script_path = Path(__file__).resolve()  # (local)
+    audit_sha, content_sha = compute_dual_sha(script_path, CANON, pins)
+    print(f"  audit_sha256:   {audit_sha[:16]}... (script+canonical+pinmap)")
+    print(f"  content_sha256: {content_sha[:16]}... (script only)")
+    print(f"  canonical anchors: Omega_BA_fold={Omega_BA_fold}  a_2_FW_zeta={a_2_FW_zeta}  tau_fold={tau_fold}")
+    print()
+
+    r = compute()
+
+    # ---------------- NUMBERS FIRST ----------------
+    print("=== NUMBERS ===")
+    print(f"  N_eval={r['N_eval']}  tau in [{r['tau_min']:.6f}, {r['tau_max']:.6f}]  (runtime-read)")
+    print(f"  --- S99 ground-truth replication ---")
+    print(f"  CC-1 pipeline replication maxdev (rel) = {r['cc1_pipeline_maxdev']:.3e}")
+    print(f"  CC-2 q_bare_median = {r['q_bare_median']:.6f}  (stored {r['s99_q_bare_median']:.6f}; dev {r['cc2_median_dev']:.3e})")
+    print(f"  CC-2 band_frac_raw = {r['band_frac_raw']:.6f}  (stored band_frac_qbare {r['s99_band_frac_qbare']:.6f}; dev {r['cc2_bandfrac_dev']:.3e})")
+    print(f"        [S99 primary-protocol band_frac_primary = {r['s99_band_frac_primary']:.6f} cited as anchor]")
+    print(f"  CC-3 Omega(grid edge) = {r['omega_edge']:.6f} vs canonical {Omega_BA_fold} (rel dev {r['cc3_omega_reldev']:.3e})")
+    print(f"  --- SF54 band re-derivation (S54 Connes-distance proxy) ---")
+    print(f"  LRD synthesis carries band edges: {r['lrd_carries_band']}")
+    print(f"  CC-4 a_CD = <d_D>/<d_D>(0) replication maxdev = {r['cc4_a54_maxdev']:.3e}")
+    print(f"  CC-4 q_CD node re-derivation maxdev = {r['cc4_q54_maxdev']:.3e}")
+    print(f"  q_54 range = [{r['q54_min']:.4f}, {r['q54_max']:.4f}]  -> rounds to [{q_lo_SF54}, {q_hi_SF54}]: {r['band_round_match']}")
+    print(f"  band edge locations: lo at tau={r['tau_edge_lo']:.4f} (pre-fold={r['edge_lo_prefold']}), "
+          f"hi at tau={r['tau_edge_hi']:.4f} (pre-fold={r['edge_hi_prefold']})")
+    print(f"  SF54 post-fold-restricted q range = [{r['q54_postfold_min']:.4f}, {r['q54_postfold_max']:.4f}]")
+    print(f"  --- frame measurement (overlap window, {r['n_ov']}/{r['N_eval']} pts = {r['overlap_frac']:.4f}) ---")
+    print(f"  CC-5 q_CD two-route internal maxdev (rel) = {r['cc5_qcd_tworoute_maxdev']:.3e}")
+    print(f"  H_CD/H_bare: median={r['frame_ratio_median']:.2f}  range=[{r['frame_ratio_min']:.2f}, {r['frame_ratio_max']:.2f}]")
+    print(f"  inter-proxy ratio rel-var: a_CD/a_bare={r['relvar_CB']:.3e}  a_CD/a_eff={r['relvar_CA']:.3e}  (const <=> same frame)")
+    print(f"  --- THREE-MAP LADDER ---")
+    print(f"  map_0 (const Omega_BA): const-invariance maxdev (rel) = {r['map0_const_invariance_maxdev']:.3e}  "
+          f"[THEOREM: q invariant under a -> C*a]  A_0=1, B_0=0")
+    print(f"  map_1 (acoustic Omega(tau)): |A_1| median={r['A1_median']:.3e} max={r['A1_max']:.3e}  "
+          f"n_HA_crossings={r['n_HA_cross']}  ILL-DEFINED={r['map1_ill_defined']}  [S98-PROVEN 0/0]")
+    print(f"  map_2 (CD frame): A_2 median={r['A2_median']:.3e} range=[{r['A2_min']:.3e}, {r['A2_max']:.3e}]  "
+          f"all_positive={r['A2_all_positive']}  DEGENERATE={r['map2_degenerate']}")
+    print(f"  CC-6 affine identity A_2*q_bare+B_2 == q_CD maxdev (rel) = {r['cc6_affine_identity_maxdev']:.3e}")
+    print(f"  map_2 diagnostics: q_CD median (overlap) = {r['q_CD_median_ov']:.4f}; q_CD in-band frac = {r['q_CD_inband_frac_ov']:.4f}")
+    print(f"  --- GATE OBSERVABLE (canonical map_0) ---")
+    print(f"  band_frac_corrected = {r['band_frac_corrected']:.6f}  (4sf: {r['band_frac_corrected']:.4f})  thr={BAND_FRAC_THR}")
+    print(f"  q_corrected_median = {r['q_corrected_median']:.6f}  (4sf: {r['q_corrected_median']:.4f})  "
+          f"sign preserved vs q_bare_median: {r['sign_median_preserved']}")
+    print(f"  miss structure: below-band frac={r['miss_below_frac']:.6f}  above-band frac={r['miss_above_frac']:.6f}  "
+          f"(one-sided: ALL misses on the deep-acceleration side)")
+    print(f"  accelerating fraction (q_corrected<0) = {r['accel_frac_corr']:.4f}")
+    print(f"  well-definedness: finite={r['wd_finite']} ({r['n_finite']}/{r['N_eval']})  "
+          f"positive-slope={r['wd_positive_slope']}  bijective(spearman={r['spearman_rho']:.6f})={r['wd_bijective']}")
+    print(f"  map_well_defined={r['map_well_defined']}  domain_used_frac={r['domain_used_frac']:.6f}")
+    print()
+
+    # ---------------- GATE SECOND ----------------
+    sign_v = r["sign_verdict"]      # (local)
+    mag_v = r["magnitude_verdict"]  # (local)
+    regime_v = r["regime_verdict"]  # (local)
+    verdict = collapse_composite(sign_v, mag_v, regime_v)  # (local)
+    print(f"=== 3-TUPLE: sign={sign_v} magnitude={mag_v} regime={regime_v} -> composite={verdict} ===")
+    print()
+
+    # ---- npz save ----
+    np.savez(
+        OUT_NPZ,
+        # gate observable arrays
+        arr_tau=r["tau"],
+        arr_q_bare_t=r["q_bare"],
+        arr_q_corrected_t=r["q_corrected"],
+        arr_H_bare_t=r["H_bare"],
+        arr_H_A_t=r["H_A"],
+        arr_Omega_t=r["Omega_t"],
+        arr_A0_t=r["A0"],
+        B0=r["B0"],
+        # map ladder arrays
+        arr_A1_t=r["A1"],
+        arr_tau_overlap=r["tau_ov"],
+        arr_q_CD_t=r["q_CD"],
+        arr_H_CD_t=r["H_CD"],
+        arr_A2_t=r["A2"],
+        arr_B2_t=r["B2"],
+        arr_w_CB_t=r["w_CB"],
+        # SF54 re-derivation
+        tau_54=r["t54"], a_54=r["a54"], q_54_stored=r["q54_stored"],
+        H_54_stored=r["H54_stored"], q_54_rederived=r["q54_re"],
+        q54_min=r["q54_min"], q54_max=r["q54_max"],
+        band_round_match=r["band_round_match"],
+        tau_edge_lo=r["tau_edge_lo"], tau_edge_hi=r["tau_edge_hi"],
+        edge_lo_prefold=r["edge_lo_prefold"], edge_hi_prefold=r["edge_hi_prefold"],
+        q54_postfold_min=r["q54_postfold_min"], q54_postfold_max=r["q54_postfold_max"],
+        lrd_carries_band=r["lrd_carries_band"],
+        # gate scalars
+        N_eval=r["N_eval"], n_finite=r["n_finite"],
+        band_frac_corrected=r["band_frac_corrected"],
+        q_corrected_median=r["q_corrected_median"],
+        q_bare_median=r["q_bare_median"],
+        band_frac_raw=r["band_frac_raw"],
+        miss_below_frac=r["miss_below_frac"], miss_above_frac=r["miss_above_frac"],
+        accel_frac_corr=r["accel_frac_corr"],
+        sign_median_preserved=r["sign_median_preserved"],
+        map_well_defined=r["map_well_defined"],
+        wd_finite=r["wd_finite"], wd_positive_slope=r["wd_positive_slope"],
+        wd_bijective=r["wd_bijective"], spearman_rho=r["spearman_rho"],
+        domain_used_frac=r["domain_used_frac"],
+        # cross-checks
+        cc1_pipeline_maxdev=r["cc1_pipeline_maxdev"],
+        cc2_median_dev=r["cc2_median_dev"], cc2_bandfrac_dev=r["cc2_bandfrac_dev"],
+        cc3_omega_reldev=r["cc3_omega_reldev"], omega_edge=r["omega_edge"],
+        cc4_a54_maxdev=r["cc4_a54_maxdev"], cc4_q54_maxdev=r["cc4_q54_maxdev"],
+        cc5_qcd_tworoute_maxdev=r["cc5_qcd_tworoute_maxdev"],
+        cc6_affine_identity_maxdev=r["cc6_affine_identity_maxdev"],
+        # frame + ladder scalars
+        overlap_frac=r["overlap_frac"], n_ov=r["n_ov"],
+        frame_ratio_median=r["frame_ratio_median"],
+        frame_ratio_min=r["frame_ratio_min"], frame_ratio_max=r["frame_ratio_max"],
+        relvar_CB=r["relvar_CB"], relvar_CA=r["relvar_CA"],
+        map0_const_invariance_maxdev=r["map0_const_invariance_maxdev"],
+        A1_median=r["A1_median"], A1_max=r["A1_max"], n_HA_cross=r["n_HA_cross"],
+        map1_ill_defined=r["map1_ill_defined"],
+        A2_median=r["A2_median"], A2_min=r["A2_min"], A2_max=r["A2_max"],
+        A2_all_positive=r["A2_all_positive"], map2_degenerate=r["map2_degenerate"],
+        q_CD_median_ov=r["q_CD_median_ov"], q_CD_inband_frac_ov=r["q_CD_inband_frac_ov"],
+        # S99 anchors
+        s99_band_frac_primary=r["s99_band_frac_primary"],
+        s99_band_frac_qbare=r["s99_band_frac_qbare"],
+        s99_q_bare_median=r["s99_q_bare_median"],
+        s99_accel_frac=r["s99_accel_frac"],
+        # band + pins
+        sf54_band_lo=q_lo_SF54, sf54_band_hi=q_hi_SF54,
+        band_membership_fraction_thr=BAND_FRAC_THR,
+        a_2_FW_zeta=a_2_FW_zeta, Omega_BA_fold=Omega_BA_fold, tau_fold_pin=tau_fold,
+        # verdicts
+        sign_verdict=sign_v, magnitude_verdict=mag_v, regime_verdict=regime_v,
+        composite=verdict, gate_id=GATE_ID, scheme=SCHEME, convention=CONVENTION,
+        audit_sha256=audit_sha, content_sha256=content_sha,
+    )
+    print(f"  npz -> {OUT_NPZ}")
+
+    make_plot(r)
+    print(f"  png -> {OUT_PNG}")
+
+    # ---- value payload (no single-quote chars; tool wraps value='...') ----
+    value_payload = (
+        f"composite={verdict};sign={sign_v};magnitude={mag_v};regime={regime_v};"
+        f"band_frac_corrected={r['band_frac_corrected']:.6f};band_frac_corrected_4sf={r['band_frac_corrected']:.4f};"
+        f"band_thr={BAND_FRAC_THR};"
+        f"q_corrected_median={r['q_corrected_median']:.4f};q_bare_median={r['q_bare_median']:.4f};"
+        f"sign_median_preserved={r['sign_median_preserved']};"
+        f"map=map0-const-OmegaBA-IDENTITY-ON-Q;A0=1;B0=0;"
+        f"const_invariance_maxdev={r['map0_const_invariance_maxdev']:.3e};"
+        f"map_well_defined={r['map_well_defined']};bijective={r['wd_bijective']};spearman={r['spearman_rho']:.6f};"
+        f"n_finite={r['n_finite']}/{r['N_eval']};domain_used_frac={r['domain_used_frac']:.6f};"
+        f"miss_below_band={r['miss_below_frac']:.6f};miss_above_band={r['miss_above_frac']:.6f};"
+        f"sf54_band_rederived=[{r['q54_min']:.4f},{r['q54_max']:.4f}];band_round_match={r['band_round_match']};"
+        f"edge_lo_tau={r['tau_edge_lo']:.4f}_PREFOLD;edge_hi_tau={r['tau_edge_hi']:.4f}_POSTFOLD;"
+        f"H_CD_over_H_bare_median={r['frame_ratio_median']:.2f};overlap_frac={r['overlap_frac']:.4f};"
+        f"map1_A1_median={r['A1_median']:.3e}_ILL-DEFINED-S98;map2_A2_median={r['A2_median']:.3e}_DEGENERATE;"
+        f"affine_identity_maxdev={r['cc6_affine_identity_maxdev']:.3e};"
+        f"groundtruth_replication_dev={r['cc2_bandfrac_dev']:.1e}"
+    )  # (local)
+
+    tag = emit_4tuple(value_payload, SCHEME, CONVENTION, L_MAX)  # (local)
+    print(tag)
+    extra = [
+        f"# regulator_pin=a_2^{{zeta}} # {GATE_ID} (a_eff propto sqrt(a_2) channel provenance; "
+        f"a_2_FW_zeta={a_2_FW_zeta}; enters as frame label, not a regulated numerical input)",
+        f"# map_ladder: map0-const-OmegaBA=IDENTITY-ON-Q (THEOREM: q invariant under const conformal factor); "
+        f"map1-AOFT-Omega(tau)=ILL-DEFINED (S98-PROVEN 0/0, n_HA_cross={r['n_HA_cross']}); "
+        f"map2-interproxy-CD=DEGENERATE (A2~{r['A2_median']:.1e} slope suppression, circular: reproduces band generator) # {GATE_ID}",
+        f"# operational_enrichment: s54_scale_factor.npz consumed as 4th pinned input (canonical data behind "
+        f"the LRD SF54 derivation; band re-derivation + frame measurement); plan input_files listed 3; "
+        f"honest-disclosure per math-scripts.md plan-authorship item 4 # {GATE_ID}",
+    ]  # (local)
+    print_verdict_payload(verdict, value_payload, audit_sha, content_sha,
+                          sign_verdict=sign_v, magnitude_verdict=mag_v,
+                          regime_verdict=regime_v, extra_rows=extra)
+
+    # ---------------- INTERPRETATION THIRD ----------------
+    print()
+    print("=== INTERPRETATION (solution-space) ===")
+    print("  The canonical frame correction (constant Omega_BA_fold + a_2-channel normalization)")
+    print("  is the IDENTITY on q: the deceleration parameter is a logarithmic-derivative")
+    print("  observable and every constant conformal normalization cancels exactly. The")
+    print("  tau-DEPENDENT alternatives are excluded: the acoustic-frame transport (map_1) is")
+    print("  the S98-PROVEN 0/0 (stationary a_eff), and the full Connes-distance transport")
+    print("  (map_2) is comparison-degenerate (slope ~1e-3 — it erases the bare history and")
+    print("  reproduces the band generator). The band-miss is therefore FRAME-ROBUST:")
+    print("  band_frac_corrected < 0.90 with a well-defined map and a negative median means")
+    print("  the substrate is structurally mostly-accelerating post-fold and SF54 — a band")
+    print("  generated by a proxy living in a conformal frame with H_CD ~ 12-50x H_bare,")
+    print("  whose lower edge is a PRE-fold quasi-de-Sitter value — is the WRONG comparison")
+    print("  band for the post-fold bare history. The S99 W1-1 miss is a genuine substrate")
+    print("  prediction (Track B), not a mapping defect.")
+
+    wall = time.time() - t0  # (local)
+    print(f"\n=== {GATE_ID}: {verdict} (wall {wall:.1f}s) ===")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

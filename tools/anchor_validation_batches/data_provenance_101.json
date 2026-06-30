@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 101,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1001",
+      "anchor_type": "data_provenance",
+      "name": "sakharov_hybrid",
+      "script_path": "session-63/s63_sakharov_hybrid.py",
+      "session": "s63",
+      "inputs": "",
+      "outputs": "session-63/s63_sakharov_hybrid.npz",
+      "source_file": "computations/session-63/s63_sakharov_hybrid.py",
+      "source_context_30_lines": "  547: print(f\"    A-sector (Dirac) dominates ({A_frac:.0f}%). Phonon corrections subleading.\")\n  548: print(f\"    Consistent with Volovik (1998, Paper 06): 1/G ~ N_species * Lambda^2.\")\n  549: print(f\"    S44 Dirac-tower result (0.36 OOM) remains the primary G_N computation.\")\n  550: print()\n  551: \n  552: # =============================================================================\n  553: # Save .npz\n  554: # =============================================================================\n  555: npz_path = os.path.join(base_dir, \"s63_sakharov_hybrid.npz\")\n  556: np.savez(npz_path,\n  557:     # Spectrum metadata\n  558:     N_k=N_k,\n  559:     N_modes=N_modes,\n  560:     N_A=N_A,\n  561:     N_B=N_B,\n  562:     N_C=N_C,\n  563:     Lambda_UV=Lambda_UV,"
+    },
+    {
+      "anchor_id": "prov_1002",
+      "anchor_type": "data_provenance",
+      "name": "shell_hessian",
+      "script_path": "session-63/s63_shell_hessian.py",
+      "session": "s63",
+      "inputs": "",
+      "outputs": "session-63/s63_shell_hessian.npz, session-63/s63_shell_hessian.png",
+      "source_file": "computations/session-63/s63_shell_hessian.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s63_shell_hessian.py — SHELL-HESSIAN-63: Shell-by-Shell FRG Proxy\n    4: ===================================================================\n    5: Gate: SHELL-HESSIAN-63\n    6:   PASS if all 36 eigenvalues of H_eff(L) are positive at EVERY PW shell L.\n    7:   FAIL if any eigenvalue crosses zero at any shell.\n    8: \n    9: Background:\n   10:   S62 HESSIAN-ONELOOP-62 found all 36 eigenvalues positive with ratio 3.47.\n   11:   The SP-Phonon workshop proposed removing shells from the UV end to trace"
+    },
+    {
+      "anchor_id": "prov_1003",
+      "anchor_type": "data_provenance",
+      "name": "sigma_stabilize",
+      "script_path": "session-63/s63_sigma_stabilize.py",
+      "session": "s63",
+      "inputs": "",
+      "outputs": "session-63/s63_sigma_stabilize.npz, session-63/s63_sigma_stabilize.png",
+      "source_file": "computations/session-63/s63_sigma_stabilize.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s63_sigma_stabilize.py — SIGMA-STABILIZE-63\n    4: Sigma mass from full one-loop effective potential on moduli space,\n    5: WITHOUT the dilaton portal hierarchy.\n    6: \n    7: Physics\n    8: -------\n    9: The sigma field is the ANGULAR direction in C^2 within the moduli space\n   10: of Jensen-deformed SU(3) metrics.  The fiber deformation is parametrized\n   11: by tau = |phi|^2, where phi in C^2 is the Baptista scalar."
+    },
+    {
+      "anchor_id": "prov_1004",
+      "anchor_type": "data_provenance",
+      "name": "sound_speed",
+      "script_path": "session-63/s63_sound_speed.py",
+      "session": "s63",
+      "inputs": "",
+      "outputs": "session-63/s63_sound_speed.npz, session-63/s63_sound_speed.png",
+      "source_file": "computations/session-63/s63_sound_speed.py",
+      "source_context_30_lines": "   53: \n   54: Inputs:\n   55:     computations/session-62/s62_kz_ns.npz\n   56:     computations/session-62/s62_hessian_oneloop.npz\n   57:     computations/session-61/s61_trace_formula_geometric.npz\n   58:     computations/session-42/s42_gradient_stiffness.npz\n   59: \n   60: Outputs:\n   61:     computations/session-63/s63_sound_speed.npz\n   62:     computations/session-63/s63_sound_speed.png\n   63: \"\"\"\n   64: \n   65: import sys\n   66: import os\n   67: \n   68: SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))\n   69: PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)"
+    },
+    {
+      "anchor_id": "prov_1005",
+      "anchor_type": "data_provenance",
+      "name": "species_scale",
+      "script_path": "session-63/s63_species_scale.py",
+      "session": "s63",
+      "inputs": "",
+      "outputs": "session-63/s63_species_scale.npz, session-63/s63_species_scale.png",
+      "source_file": "computations/session-63/s63_species_scale.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s63_species_scale.py — SPECIES-SCALE-63: EFT Validity Check\n    4: ============================================================\n    5: \n    6: Physics\n    7: -------\n    8: The species scale (Dvali 2007, Dvali-Gomez 2009; formalized in the swampland\n    9: program by van de Heisteeg et al. 2023, Montero-Vafa 2022) sets the energy\n   10: scale at which gravity becomes strongly coupled due to the large number of\n   11: particle species coupling to it. Below this scale, the EFT is perturbatively"
+    },
+    {
+      "anchor_id": "prov_1006",
+      "anchor_type": "data_provenance",
+      "name": "spectral_dimension",
+      "script_path": "session-63/s63_spectral_dimension.py",
+      "session": "s63",
+      "inputs": "",
+      "outputs": "session-63/s63_spectral_dimension.npz, session-63/s63_spectral_dimension.png",
+      "source_file": "computations/session-63/s63_spectral_dimension.py",
+      "source_context_30_lines": "   23: There is no zero eigenvalue (omega_min > 0), so no constant-K regime at large t.\n   24: \n   25: Inputs:\n   26:   computations/session-44/s44_dos_tau.npz (992 KK eigenvalues at fold)\n   27:   computations/session-61/s61_trace_formula_geometric.npz (Weyl counting, Seeley-DeWitt)\n   28:   computations/session-62/s62_phonon_dispersion_full.npz (coupled spectrum)\n   29: \n   30: Output:\n   31:   computations/session-63/s63_spectral_dimension.npz\n   32: \n   33: Gate: SPECTRAL-DIMENSION-63 (INFO: report d_s flow)\n   34: \n   35: Author: phonon-first-cosmologist\n   36: Session: S63 W3-02\n   37: \"\"\"\n   38: \n   39: import sys"
+    },
+    {
+      "anchor_id": "prov_1007",
+      "anchor_type": "data_provenance",
+      "name": "starobinsky_r2",
+      "script_path": "session-63/s63_starobinsky_r2.py",
+      "session": "s63",
+      "inputs": "s63_mukhanov_sasaki.npz, s63_tensor_scalar.npz, s63_efold_count.npz, s63_oneloop_ns.npz, s54_starobinsky_r2.npz, s63_kk_...",
+      "outputs": "session-63/s63_starobinsky_r2.npz, session-63/s63_starobinsky_r2.png",
+      "source_file": "computations/session-63/s63_starobinsky_r2.py",
+      "source_context_30_lines": "   98: eta_H_ef = float(d_ef['eta_H_SA'])\n   99: \n  100: # One-loop corrections\n  101: d_ol = np.load('s63_oneloop_ns.npz', allow_pickle=True)\n  102: ns_1loop = float(d_ol['ns_1loop'])\n  103: eps_1loop = float(d_ol['epsilon_1loop'])\n  104: \n  105: # S54 Starobinsky data (prior computation)\n  106: d_s54 = np.load('s54_starobinsky_r2.npz', allow_pickle=True)\n  107: alpha_R2_S54 = float(d_s54['alpha_R2'])\n  108: M_s_precise_S54 = float(d_s54['M_Staro_precise'])\n  109: N_KK = float(d_s54['N_KK'])\n  110: \n  111: # KK CMB transfer\n  112: d_kk = np.load('s63_kk_cmb_transfer.npz', allow_pickle=True)\n  113: ns_hubble = float(d_kk['ns_hubble'])\n  114: "
+    },
+    {
+      "anchor_id": "prov_1008",
+      "anchor_type": "data_provenance",
+      "name": "strutinsky_shell",
+      "script_path": "session-63/s63_strutinsky_shell.py",
+      "session": "s63",
+      "inputs": "",
+      "outputs": "session-63/s63_strutinsky_shell.npz, session-63/s63_strutinsky_shell.png",
+      "source_file": "computations/session-63/s63_strutinsky_shell.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s63_strutinsky_shell.py — Nuclear-Regime Strutinsky Shell Structure\n    4: ====================================================================\n    5: \n    6: Gate: STRUTINSKY-SHELL-63 (W6-09)\n    7: Session: 63, Wave 6\n    8: Agent: nazarewicz-nuclear-structure-theorist\n    9: \n   10: Purpose:\n   11:     Apply Strutinsky smoothing at the nuclear-analog convolution width gamma/d = 5.5"
+    },
+    {
+      "anchor_id": "prov_1009",
+      "anchor_type": "data_provenance",
+      "name": "swampland_oneloop",
+      "script_path": "session-63/s63_swampland_oneloop.py",
+      "session": "s63",
+      "inputs": "computations/session-62/s62_hessian_oneloop.npz, computations/session-62/s62_kz_ns.npz",
+      "outputs": "session-63/s63_swampland_oneloop.npz",
+      "source_file": "computations/session-63/s63_swampland_oneloop.py",
+      "source_context_30_lines": "   29:   moduli space, not a metastable dS vacuum. The swampland conjecture applies\n   30:   to STATIC or METASTABLE dS vacua, not to dynamical transit configurations.\n   31: \n   32: Input:\n   33:   computations/session-62/s62_hessian_oneloop.npz\n   34:   computations/session-62/s62_kz_ns.npz\n   35: \n   36: Output:\n   37:   computations/session-63/s63_swampland_oneloop.npz\n   38: \"\"\"\n   39: \n   40: import numpy as np\n   41: import sys, os\n   42: \n   43: sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))\n   44: from canonical_constants import (\n   45:     tau_fold, M_KK, M_Pl_reduced, G_DeWitt,"
+    },
+    {
+      "anchor_id": "prov_1010",
+      "anchor_type": "data_provenance",
+      "name": "tensor_scalar",
+      "script_path": "session-63/s63_tensor_scalar.py",
+      "session": "s63",
+      "inputs": "s62_hessian_oneloop.npz, s62_kz_ns.npz, s63_sound_speed.npz, s54_starobinsky_r2.npz",
+      "outputs": "session-63/s63_tensor_scalar.npz, session-63/s63_tensor_scalar.png",
+      "source_file": "computations/session-63/s63_tensor_scalar.py",
+      "source_context_30_lines": "   30: Inputs:\n   31:   - computations/session-62/s62_hessian_oneloop.npz\n   32:   - computations/session-62/s62_kz_ns.npz\n   33:   - computations/session-62/s62_cutoff_london.npz\n   34:   - computations/session-63/s63_sound_speed.npz\n   35:   - computations/session-54/s54_starobinsky_r2.npz\n   36: \n   37: Outputs:\n   38:   - computations/session-63/s63_tensor_scalar.npz\n   39:   - computations/session-63/s63_tensor_scalar.png\n   40: \n   41: Author: schwarzschild-penrose-geometer (Session 63)\n   42: Date: 2026-03-30\n   43: \"\"\"\n   44: \n   45: import sys\n   46: import os"
+    }
+  ]
+}

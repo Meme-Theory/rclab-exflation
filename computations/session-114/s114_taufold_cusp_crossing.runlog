@@ -1,0 +1,59 @@
+=== CF-S114-TAUFOLD-CUSP-CROSSING — input SHA-256 pins ===
+  computations/_shared/canonical_constants.py: a4b8b679442de533...
+  computations/_shared/dirac_spectrum.py: dadba674e950fad9...
+  computations/session-84/s84_spectrum_cache_L12_tau019.npz: 9e6d9cf7fd6a6949...
+  closure (legacy): 27540ab07e7ac957...  (full: 27540ab07e7ac957b8009e4ec41be68d4293fea1c535a152647ee42e3b3161a7)
+  audit_sha256:   7b637db142d9bea7da77be5cf4cfc49b486f65aa3a39f59c197ba0fb3ff43b09
+  content_sha256: ab6f935ccc431c56e6ad4771eae4280abbd19529c06ccfaf47d967dc5f649d8f
+
+Anti-rescue fence: 0.190 is NOT a cusp-finder seed/target/initial-guess.
+  tau_fold (canonical_constants.py) = 0.19  [READ POST-HOC ONLY as PASS-comparison target]
+  dS_fold = 58672.80 > 0 (monotone flow; the crossing is a flank, dS/dtau != 0, NOT a critical point)
+
+--- Section 7: from-scratch cusp-CROSSING L-scan (NO injected 0.190) ---
+  bracket: tau in [0.18, 0.23]  (0.190 INSIDE bracket but NOT a finder seed)
+  L_max scan: [5, 8, 10, 12]
+  crossing pair: T3=(0, 0)-max  T5=[(2, 0), (0, 2)]-min  (S44/S45 band-edge near-crossing)
+  DOS-peak contrast at L_max=8 (S85-VAN-HOVE-CUSP-THEOREM)
+
+  [irrep cache crossing T3/T5: 3 sectors [(0, 0), (0, 2), (2, 0)] built in 0.0s]
+  [L_max= 5] coarse argmin tau=0.19100 (gap=3.268e-05); fine+parabolic tau_cross=0.191038 (gap_min=8.495e-06); T3/T5-at-min=True (frac 1.00); 4.3s
+  [L_max= 8] coarse argmin tau=0.19100 (gap=3.268e-05); fine+parabolic tau_cross=0.191038 (gap_min=8.495e-06); T3/T5-at-min=True (frac 1.00); 5.3s
+  [L_max=10] coarse argmin tau=0.19100 (gap=3.268e-05); fine+parabolic tau_cross=0.191038 (gap_min=8.495e-06); T3/T5-at-min=True (frac 1.00); 4.9s
+  [L_max=12] coarse argmin tau=0.19100 (gap=3.268e-05); fine+parabolic tau_cross=0.191038 (gap_min=8.495e-06); T3/T5-at-min=True (frac 1.00); 5.0s
+
+--- mesh-robustness arm (tau_mesh_1e_4_step = 1e-4) ---
+  alt-mesh re-bracket center = 0.191038 (from-scratch L12); alt-mesh tau_cross = 0.191039 (gap_min=1.948e-06)
+
+--- DOS-peak contrast (distinct observable; S85-VAN-HOVE-CUSP-THEOREM canon=0.221) ---
+  [irrep cache DOS-shape L<=4: 15 sectors [(0, 0), (0, 1), (0, 2), (0, 3), (0, 4), (1, 0), (1, 1), (1, 2), (1, 3), (2, 0), (2, 1), (2, 2), (3, 0), (3, 1), (4, 0)] built in 0.0s]
+  DOS-peak (authoritative, S85 L=8 canonical) = 0.2210
+  DOS-shape low-L_dos=4 peak (diagnostic only, L-truncation-sensitive) = 0.1820 (refine 0.1823)
+
+--- L12 master-cache overlap cross-check (tau=0.19) ---
+  cache  : T3_max=0.971408 T5_min=0.972246 gap=8.387e-04
+  scratch: T3_max=0.971408 T5_min=0.972246 gap=8.387e-04
+  |dT3|=0.00e+00 |dT5|=2.22e-16  truncation_consistent=True
+
+--- Section 8: convergence-trend assessment (saturation-limit + monotone) ---
+  tau_cross(L=5)  = 0.191038   |.-0.190|=0.001038
+  tau_cross(L=8)  = 0.191038   |.-0.190|=0.001038
+  tau_cross(L=10) = 0.191038   |.-0.190|=0.001038
+  tau_cross(L=12) = 0.191038   |.-0.190|=0.001038
+  saturation-limit tau_cross(sat=L12) = 0.191038
+  Friedrich-Bar band half-width (|L12-L10|) = 0.000000e+00  (saturation band = 5.000000e-04)
+  dev_sat = |tau_cross(sat) - 0.190| = 0.001038  (rel 0.5464%)  PASS_band=0.00095
+  monotone_converging([8, 10, 12]) = True   already_saturated = True
+  mesh_robust = True  (alt-mesh 0.191039 vs sat 0.191038)
+  coarse-L breach: 0/4 outside FB band -> breach_frac=0.000
+  DOS-peak (contrast) = 0.2210  |DOS-peak - 0.190|=0.0310  (crossing is 30x closer to 0.190 than the peak)
+
+(value=0.19103812125290104, scheme=VAN-HOVE-CUSP-CROSSING-FROM-SCRATCH-NO-INJECTED-0.190, convention=FLANK-dSdtau-NONZERO-CROSSING-not-DOS-PEAK, L_max=12)
+  3-tuple: sign=PASS magnitude=INFO regime=VALID -> composite=INFO
+<<<EMIT_VERDICT_PAYLOAD>>>
+{"audit_sha256":"7b637db142d9bea7da77be5cf4cfc49b486f65aa3a39f59c197ba0fb3ff43b09","companion_note":"crossing tau=0.191038 vs DOS-peak 0.221 (distinct functional); S45 TRUE-crossing 0.19104 reproduced; NO 0.190 injected (argmin band-edge gap finder)","content_sha256":"ab6f935ccc431c56e6ad4771eae4280abbd19529c06ccfaf47d967dc5f649d8f","convention":"FLANK-dSdtau-NONZERO-CROSSING-not-DOS-PEAK","gate_id":"CF-S114-TAUFOLD-CUSP-CROSSING","l_max":"12","magnitude_verdict":"INFO","regime_verdict":"VALID","schema_version":"S84+","scheme":"VAN-HOVE-CUSP-CROSSING-FROM-SCRATCH-NO-INJECTED-0.190","session":114,"sign_verdict":"PASS","value":"tau_cross=0.191038","verdict":"INFO"}
+<<<END_EMIT_VERDICT_PAYLOAD>>>
+
+=== CF-S114-TAUFOLD-CUSP-CROSSING: INFO  (wall 42.8s) ===
+NPZ:  s114_taufold_cusp_crossing.npz
+PNG:  s114_taufold_cusp_crossing.png

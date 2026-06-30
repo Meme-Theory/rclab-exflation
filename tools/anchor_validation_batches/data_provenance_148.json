@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 148,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1471",
+      "anchor_type": "data_provenance",
+      "name": "two_manifold_nemb",
+      "script_path": "session-75/s75_two_manifold_nemb.py",
+      "session": "s75",
+      "inputs": "",
+      "outputs": "session-75/s75_two_manifold_nemb.npz",
+      "source_file": "computations/session-75/s75_two_manifold_nemb.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s75_two_manifold_nemb.py — S75-M5-TWO-MANIFOLD: Two-Manifold Non-Embedding Theorem\n    4: ===================================================================================\n    5: \n    6: Einstein-Theorist computation, Session 75 Wave 4.\n    7: \n    8: PRINCIPLE-THEORETIC REASONING\n    9: ------------------------------\n   10: The spectral triple (A, H, D) with A = C^inf(M^4) x A_F generates emergent 4D\n   11: gravity via the a_2 Seeley-DeWitt coefficient. The pre-fold and post-fold"
+    },
+    {
+      "anchor_id": "prov_1472",
+      "anchor_type": "data_provenance",
+      "name": "zeta_not_physical",
+      "script_path": "session-75/s75_zeta_not_physical.py",
+      "session": "s75",
+      "inputs": "",
+      "outputs": "session-75/s75_zeta_not_physical.npz",
+      "source_file": "computations/session-75/s75_zeta_not_physical.py",
+      "source_context_30_lines": "  693:   Common obstruction: {common_obstruction}\n  694:   Routes converging: {n_pass}/3\n  695: \"\"\")\n  696: \n  697: # ============================================================================\n  698: # SAVE RESULTS\n  699: # ============================================================================\n  700: output_path = os.path.join(os.path.dirname(os.path.abspath(__file__)),\n  701:                            \"s75_zeta_not_physical.npz\")  # (local)\n  702: \n  703: np.savez(output_path,\n  704:          # Route 1\n  705:          zeta_mhalf_flat=zeta_minus_half_A,\n  706:          zeta_mhalf_lognormal=zeta_minus_half_B,\n  707:          zeta_mhalf_delta=zeta_minus_half_C,\n  708:          spread_zeta_mhalf=spread_zeta_mhalf,\n  709:          rho_vac_A=rho_vac_A,"
+    },
+    {
+      "anchor_id": "prov_1473",
+      "anchor_type": "data_provenance",
+      "name": "alpha_s_first_principles",
+      "script_path": "session-76/s76_alpha_s_first_principles.py",
+      "session": "s76",
+      "inputs": "",
+      "outputs": "session-76/s76_alpha_s_first_principles.npz, session-76/s76_alpha_s_first_principles.png",
+      "source_file": "computations/session-76/s76_alpha_s_first_principles.py",
+      "source_context_30_lines": "  868: ax6.set_ylabel('alpha_s(pivot)')\n  869: ax6.set_title('Model comparison')\n  870: ax6.legend(fontsize=7)\n  871: \n  872: fig.suptitle(f'S76-B9-ALPHA-S-FP: alpha_s First Principles | '\n  873:              f'Gate: {gate_verdict}',\n  874:              fontsize=14, fontweight='bold')\n  875: \n  876: plot_path = os.path.join(data_dir, 's76_alpha_s_first_principles.png')  # (local)\n  877: plt.savefig(plot_path, dpi=150, bbox_inches='tight')\n  878: plt.close()\n  879: print(f\"  Plot saved: {plot_path}\")\n  880: print()\n  881: \n  882: # ==============================================================================\n  883: #  SECTION 11: Save results\n  884: # =============================================================================="
+    },
+    {
+      "anchor_id": "prov_1474",
+      "anchor_type": "data_provenance",
+      "name": "alpha_s_reconciliation",
+      "script_path": "session-76/s76_alpha_s_reconciliation.py",
+      "session": "s76",
+      "inputs": "",
+      "outputs": "session-76/s76_alpha_s_reconciliation.npz",
+      "source_file": "computations/session-76/s76_alpha_s_reconciliation.py",
+      "source_context_30_lines": "  524: print(f\"{'CHK3: All routes < 2-sigma':.<30} {'Yes' if chk3_pass else 'No':>15} {'PASS' if chk3_pass else 'FAIL':>8}\")\n  525: print(f\"{'CW/iso ratio':.<30} {f'{ratio_CW_to_iso:.2f} < 2':>15} {'OK':>8}\")\n  526: \n  527: # ============================================================================\n  528: # Save results\n  529: # ============================================================================\n  530: \n  531: output_path = os.path.join(os.path.dirname(os.path.abspath(__file__)),\n  532:                            's76_alpha_s_reconciliation.npz')\n  533: \n  534: np.savez(output_path,\n  535:     # Gate\n  536:     gate_name='S76-B3-ALPHA-S-RECON',\n  537:     gate_verdict=gate_verdict,\n  538:     gate_reason=gate_reason,\n  539:     # Central result\n  540:     alpha_s_CMB=alpha_s_CMB,"
+    },
+    {
+      "anchor_id": "prov_1475",
+      "anchor_type": "data_provenance",
+      "name": "bcs_dressing_a2",
+      "script_path": "session-76/s76_bcs_dressing_a2.py",
+      "session": "s76",
+      "inputs": "s72_bcs_dressed_sa_v2.npz",
+      "outputs": "session-76/s76_bcs_dressing_a2.npz, session-76/s76_bcs_dressing_a2.png",
+      "source_file": "computations/session-76/s76_bcs_dressing_a2.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s76_bcs_dressing_a2.py -- BCS-DRESSING-OF-A2-76: BCS Correction to a_2/a_0 Ratio\n    4: ==================================================================================\n    5: \n    6: Gate: S76-B4-BCS-DRESS\n    7:   PASS: A_s(BCS-corrected) in [1.8e-9, 2.4e-9]\n    8:   FAIL: |delta_a_2/a_2| < 0.001 (BCS correction negligible)\n    9:   INFO: correction has right sign but wrong magnitude\n   10: \n   11: Physics"
+    },
+    {
+      "anchor_id": "prov_1476",
+      "anchor_type": "data_provenance",
+      "name": "cassini_secular_bound",
+      "script_path": "session-76/s76_cassini_secular_bound.py",
+      "session": "s76",
+      "inputs": "",
+      "outputs": "session-76/s76_cassini_secular_bound.npz",
+      "source_file": "computations/session-76/s76_cassini_secular_bound.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s76_cassini_secular_bound.py -- Cassini Secular Variation Bound (S76-C9-CASSINI)\n    4: =================================================================================\n    5: \n    6: Einstein-Theorist computation, Session 76 Wave 3.\n    7: \n    8: Tests whether the framework's modulus evolution produces a secular drift\n    9: in Newton's constant that violates the Cassini mission bound:\n   10: \n   11:     |dG/dt| / G < 2e-13 yr^{-1}   (Genova et al. 2018)"
+    },
+    {
+      "anchor_id": "prov_1477",
+      "anchor_type": "data_provenance",
+      "name": "cmpp_type_gge_transit",
+      "script_path": "session-76/s76_cmpp_type_gge_transit.py",
+      "session": "s76",
+      "inputs": "",
+      "outputs": "session-76/s76_cmpp_type_gge_transit.npz",
+      "source_file": "computations/session-76/s76_cmpp_type_gge_transit.py",
+      "source_context_30_lines": "  827: # Weyl operator eigenvalues\n  828: for case_tag, case_dict in [('static', static_results), ('dynamic', dynamic_results)]:\n  829:     for tau in TAU_VALUES:\n  830:         wo = case_dict[tau]['weyl_op']\n  831:         save_data[f'{case_tag}_weyl_eigs_tau{tau:.2f}'] = np.array(wo['unique_eigs'])\n  832:         save_data[f'{case_tag}_weyl_mults_tau{tau:.2f}'] = np.array(wo['multiplicities'])\n  833: \n  834: out_path = os.path.join(os.path.dirname(os.path.abspath(__file__)),\n  835:                         's76_cmpp_type_gge_transit.npz')\n  836: np.savez(out_path, **save_data)\n  837: \n  838: elapsed = time.time() - t_start  # (local)\n  839: print(f\"\\n\\nTotal runtime: {elapsed:.1f}s\")\n  840: print(f\"Data saved to: {out_path}\")\n  841: print(\"=\" * 80)"
+    },
+    {
+      "anchor_id": "prov_1478",
+      "anchor_type": "data_provenance",
+      "name": "cubic_weinberg",
+      "script_path": "session-76/s76_cubic_weinberg.py",
+      "session": "s76",
+      "inputs": "",
+      "outputs": "session-76/s76_cubic_weinberg.npz",
+      "source_file": "computations/session-76/s76_cubic_weinberg.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s76_cubic_weinberg.py — sin^2(theta_W) from Cubic Fiber Volume Integration\n    4: ===========================================================================\n    5: \n    6: Gate: S76-B7-CUBIC-WEINBERG\n    7:   PASS: sin^2 from cubic formula matches fold value 0.584 to < 5%.\n    8:   FAIL: sin^2 differs from 0.584 by > 20%.\n    9:   INFO: sin^2 in (0.3, 0.7) but differs by 5-20%.\n   10: \n   11: Physics:"
+    },
+    {
+      "anchor_id": "prov_1479",
+      "anchor_type": "data_provenance",
+      "name": "f_conv_a4_normalization",
+      "script_path": "session-76/s76_f_conv_a4_normalization.py",
+      "session": "s76",
+      "inputs": "",
+      "outputs": "session-76/s76_f_conv_a4_normalization.npz, session-76/s76_f_conv_a4_normalization.png",
+      "source_file": "computations/session-76/s76_f_conv_a4_normalization.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s76_f_conv_a4_normalization.py -- f_conv^{(4)} for gauge kinetic (a_4) channel\n    4: =================================================================================\n    5: \n    6: Gate: S76-B2-FCONV-A4 (Session 76 Wave 2, W2-B)\n    7:   PASS: f_conv^{(4)} derived and consistent with a_4 row of family.\n    8:   FAIL: f_conv^{(4)} inconsistent (> factor 100 discrepancy between normalizations).\n    9:   INFO: Partial result, normalization ambiguity persists.\n   10: \n   11: PHYSICS (substrate framing):"
+    },
+    {
+      "anchor_id": "prov_1480",
+      "anchor_type": "data_provenance",
+      "name": "friedmann_bcs_exact",
+      "script_path": "session-76/s76_friedmann_bcs_exact.py",
+      "session": "s76",
+      "inputs": "s76_post_fold_h_tau.npz, s75_f_conv_spectral.npz",
+      "outputs": "session-76/s76_friedmann_bcs_exact.npz",
+      "source_file": "computations/session-76/s76_friedmann_bcs_exact.py",
+      "source_context_30_lines": "  420: \n  421: print(f\"\\n*** VERDICT: {verdict} ***\")\n  422: print(f\"Detail: {detail}\")\n  423: \n  424: # ==============================================================================\n  425: # SAVE RESULTS\n  426: # ==============================================================================\n  427: \n  428: np.savez('s76_friedmann_bcs_exact.npz',\n  429:     # Gate\n  430:     gate_name='S76-C2-FRIEDMANN-BCS',\n  431:     gate_verdict=verdict,\n  432:     gate_detail=detail,\n  433:     # Key numbers\n  434:     H_BCS_MKK=H_BCS_MKK,\n  435:     H_fold_transit=H_fold,\n  436:     H_fold_friedmann=H_fold_friedmann,"
+    }
+  ]
+}

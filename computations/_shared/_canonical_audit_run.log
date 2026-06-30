@@ -1,0 +1,73 @@
+C:\sandbox\Ainulindale Exflation\tier0-computation\s52_pl_tduality.py:39: SyntaxWarning: invalid escape sequence '\B'
+  5. Constructs a REGULARIZED dual: compact quotient Gamma\B_+ or truncation
+C:\sandbox\Ainulindale Exflation\tier0-computation\s52_pl_tduality.py:449: SyntaxWarning: invalid escape sequence '\A'
+  (Auslander's theorem), but the resulting manifold Gamma\AN may not
+C:\sandbox\Ainulindale Exflation\tier0-computation\s56_mass_variation.py:11: SyntaxWarning: invalid escape sequence '\d'
+  c^2 d(m^2)/ds = - (d_A g_K)_{\dot{M}} (p_V, p_V)
+C:\sandbox\Ainulindale Exflation\tier0-archive\s44_sakharov_gn.py:778: SyntaxWarning: invalid escape sequence '\L'
+  ax.set_title(f'Per-mode contribution to Sakharov $G_N$ ($\Lambda=M_{{Pl}}$)')
+==============================================================================
+TIER 0 REVIEW — TIER 1 ORCHESTRATOR  (tier0_review_tier1.py)
+==============================================================================
+
+[0] Parsing computations/_shared/canonical_constants.py ...
+    Canonical constants registered: 184
+
+[1] Discovering tier0 scripts ...
+    tier0-computation/: 1054 .py
+    tier0-archive/:     630 .py
+
+[2] Per-script static scan (canonical + hardcodes + AST imports) ...
+    scanned 200/1684
+    scanned 400/1684
+    scanned 600/1684
+    scanned 800/1684
+    scanned 1000/1684
+    scanned 1200/1684
+    scanned 1400/1684
+    scanned 1600/1684
+    scanned 1684 scripts in 10.3s
+
+[3] Ruff check (select=E,F,W,I,UP,B) ...
+    total issues: 82582   wall: 1.62s
+
+[4] Vulture dead-code (min_confidence=80) ...
+    total findings: 146   wall: 16.28s
+
+[5] Building local import graph ...
+    edges: 471   scripts with importers: 27
+
+[6] Cross-referencing registry + canonical_constants provenance ...
+    scripts cited in registry: 1
+    scripts cited in canonical_constants.py: 25
+
+[7] SHA-256 verdict-pin ledger ...
+    pinned verdict entries: 0
+    matched to current source: 0
+    unmatched (stale or foreign hash): 0
+
+[8] Knowledge DB cross-reference (tools/knowledge.db) ...
+    theorems=241  gates=118  closed=211  prov_rows=194
+    scripts cited via data_provenance: 132
+
+[9] Synthesizing live review sets + priority ranking ...
+    narrow (cited):   181
+    broad  (S52+):    1187
+    anchor (Tier 3):  155
+    archive-dead:     467
+    orphan:           30
+
+[10] Wrote report: computations/_shared/tier0_review_tier1_report.json  (5770 KB)
+[11] Wrote summary: computations/_shared/tier0-python-review-tier1-summary.md
+
+==============================================================================
+Gate S80-TIER0-REVIEW-TIER1: PASS
+  Scripts scanned total: 1684
+  Narrow live set:       181  (Tier 2 input)
+  Broad  live set:       1187  (S52+ backdrop)
+  Anchor set:            155  (Tier 3 input)
+  Archive-dead:          467
+  Orphan:                30
+  Wall seconds:          30.0
+  (value=(narrow=181,broad=1187,anchor=155,dead=467,orphan=30), scheme=STATIC-ANALYSIS, convention=TIER1-REVIEW, L_max=N/A)
+==============================================================================

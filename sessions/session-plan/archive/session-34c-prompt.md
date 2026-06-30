@@ -4,7 +4,7 @@
 **Mode**: compute
 **Depends on**: Session 34b complete, RPA-34a not CHALLENGE
 **Source plan**: `sessions/session-plan/session-34-plan.md`
-**Prerequisite**: `tier0-computation/s34b_dphys_kosmann.npz` and `tier0-computation/s34a_dphys_fold.npz` must exist. Read `tier0-computation/s34a_gate_verdicts.txt` and `tier0-computation/s34b_gate_verdicts.txt` to confirm all prior gates PASS.
+**Prerequisite**: `computations/s34b_dphys_kosmann.npz` and `computations/s34a_dphys_fold.npz` must exist. Read `computations/s34a_gate_verdicts.txt` and `computations/s34b_gate_verdicts.txt` to confirm all prior gates PASS.
 
 This is Wave 3 of 3. The decisive gate: does M_max > 1 survive under the physical Dirac operator?
 
@@ -22,24 +22,24 @@ This is Wave 3 of 3. The decisive gate: does M_max > 1 survive under the physica
 ## REQUIRED READING (LEAN)
 
 ### All agents
-- `tier0-computation/s34a_gate_verdicts.txt` — DPHYS-34a-1, TRAP1-34a verdicts
-- `tier0-computation/s34b_gate_verdicts.txt` — RPA-34a verdict, Kosmann diagnostic
+- `computations/s34a_gate_verdicts.txt` — DPHYS-34a-1, TRAP1-34a verdicts
+- `computations/s34b_gate_verdicts.txt` — RPA-34a verdict, Kosmann diagnostic
 
 ### bap (baptista)
-- `tier0-computation/s33b_trap1_wall_bcs.py` — template for Thouless computation (lines 214-249: Thouless matrix, lines 260-310: self-consistent BdG)
+- `computations/s33b_trap1_wall_bcs.py` — template for Thouless computation (lines 214-249: Thouless matrix, lines 260-310: self-consistent BdG)
 - `sessions/session-34/session-34a-synthesis.md` — 34a fold survival details
 
 ### coord
 - `sessions/session-plan/session-34-plan.md` — Section VIII (W1 predictions table) for final assessment
-- `tier0-computation/s33b_gate_verdicts.txt` — TRAP-33b baseline (M_max = 2.062) for comparison
+- `computations/s33b_gate_verdicts.txt` — TRAP-33b baseline (M_max = 2.062) for comparison
 
 ---
 
 ## PRE-SESSION GATE CHECK (MANDATORY FIRST ACTION)
 
 Before any computation:
-1. Read `tier0-computation/s34a_gate_verdicts.txt` — confirm DPHYS-34a-1 = PASS
-2. Read `tier0-computation/s34b_gate_verdicts.txt` — confirm RPA-34a = CONSISTENT (or at minimum not CHALLENGE)
+1. Read `computations/s34a_gate_verdicts.txt` — confirm DPHYS-34a-1 = PASS
+2. Read `computations/s34b_gate_verdicts.txt` — confirm RPA-34a = CONSISTENT (or at minimum not CHALLENGE)
 3. Verify `s34a_dphys_fold.npz`, `s34b_dphys_kosmann.npz`, `s32b_wall_dos.npz` all load
 4. If any prerequisite fails, STOP and report
 
@@ -84,8 +84,8 @@ The wall DOS rho_m from W-32b is UNCHANGED by phi (wall structure set by spatial
 
 **MANDATORY CROSS-CHECK**: At phi=0, M_max must reproduce 2.062 (TRAP-33b). If discrepancy > 1%, STOP and debug.
 
-**Script**: `tier0-computation/s34c_dphys_thouless.py` (~250 lines)
-**Output**: `tier0-computation/s34c_dphys_thouless.{py,npz,png}`
+**Script**: `computations/s34c_dphys_thouless.py` (~250 lines)
+**Output**: `computations/s34c_dphys_thouless.{py,npz,png}`
 **Python**: `"phonon-exflation-sim/.venv312/Scripts/python.exe"`
 
 **Gate DPHYS-34a-3** (pre-registered, EXISTENTIAL):
@@ -110,7 +110,7 @@ The wall DOS rho_m from W-32b is UNCHANGED by phi (wall structure set by spatial
 ## SYNTHESIS & OUTPUT
 
 **Designated writer**: coord
-**Gate verdicts file**: `tier0-computation/s34c_gate_verdicts.txt`
+**Gate verdicts file**: `computations/s34c_gate_verdicts.txt`
 **Final synthesis**: `sessions/session-34/session-34c-synthesis.md`
 
 The final synthesis must contain:
@@ -132,7 +132,7 @@ DPHYS-34a-3: [PASS/STRONG PASS/FAIL] -- M_max = [value] at phi = [value] for Wal
 ## OPERATIONAL RULES
 
 - Python: `"phonon-exflation-sim/.venv312/Scripts/python.exe"`
-- Output directory: `tier0-computation/`
+- Output directory: `computations/`
 - Script prefix: `s34c_`
 - NUMBERS first. Gate classification second. Interpretation third.
 - Check inbox between computation blocks.

@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 168,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1671",
+      "anchor_type": "data_provenance",
+      "name": "w3_g53_vii_k_landing",
+      "script_path": "session-83/s83_w3_g53_vii_k_landing.py",
+      "session": "s83",
+      "inputs": "",
+      "outputs": "session-83/s83_w3_g53_vii_k_landing.npz, session-83/s83_w3_g53_vii_k_landing.png",
+      "source_file": "computations/session-83/s83_w3_g53_vii_k_landing.py",
+      "source_context_30_lines": "   41: SCRIPT_DIR = Path(__file__).parent\n   42: PROJECT_ROOT = SCRIPT_DIR.parent  # C:\\sandbox\\Ainulindale Exflation\n   43: \n   44: # --- Input file pins ---\n   45: REGISTRY_PATH = PROJECT_ROOT / \"sessions\" / \"permanent-results-registry.md\"\n   46: INDEX_PATH = PROJECT_ROOT / \"tools\" / \"knowledge-index.json\"\n   47: DB_PATH = PROJECT_ROOT / \"tools\" / \"knowledge.db\"\n   48: \n   49: OUT_NPZ = SCRIPT_DIR / \"s83_w3_g53_vii_k_landing.npz\"\n   50: OUT_PNG = SCRIPT_DIR / \"s83_w3_g53_vii_k_landing.png\"\n   51: \n   52: def sha256_file(path):\n   53:     \"\"\"Compute SHA-256 of a file.\"\"\"\n   54:     h = hashlib.sha256()\n   55:     with open(path, 'rb') as f:\n   56:         for chunk in iter(lambda: f.read(65536), b''):\n   57:             h.update(chunk)"
+    },
+    {
+      "anchor_id": "prov_1672",
+      "anchor_type": "data_provenance",
+      "name": "w3_g54_hp_even_completeness_audit_vii",
+      "script_path": "session-83/s83_w3_g54_hp_even_completeness_audit_vii.py",
+      "session": "s83",
+      "inputs": "",
+      "outputs": "session-83/s83_w3_g54_hp_even_completeness_audit_vii.npz, session-83/s83_w3_g54_hp_even_completeness_audit_vii.png",
+      "source_file": "computations/session-83/s83_w3_g54_hp_even_completeness_audit_vii.py",
+      "source_context_30_lines": "   73:            {P, CM, M, GV}, and the total coverage is 100%.\n   74: \n   75: Inputs\n   76: ------\n   77:   REGISTRY_MD = C:/sandbox/Ainulindale Exflation/sessions/permanent-results-registry.md\n   78: \n   79: Outputs\n   80: -------\n   81:   s83_w3_g54_hp_even_completeness_audit_vii.py   [this file]\n   82:   s83_w3_g54_hp_even_completeness_audit_vii.npz  [data]\n   83:   s83_w3_g54_hp_even_completeness_audit_vii.png  [plot]\n   84:   s83_gate_verdicts.txt                          [single-line append]\n   85: \n   86: Environment\n   87: -----------\n   88:   python = phonon-exflation-sim/.venv312/Scripts/python.exe\n   89:   OMP_NUM_THREADS = 8 (CPU fallback; no GPU needed for a registry audit)"
+    },
+    {
+      "anchor_id": "prov_1673",
+      "anchor_type": "data_provenance",
+      "name": "w3_g55_mixed_sub_tag_per_row",
+      "script_path": "session-83/s83_w3_g55_mixed_sub_tag_per_row.py",
+      "session": "s83",
+      "inputs": "",
+      "outputs": "session-83/s83_w3_g55_mixed_sub_tag_per_row.npz, session-83/s83_w3_g55_mixed_sub_tag_per_row.png",
+      "source_file": "computations/session-83/s83_w3_g55_mixed_sub_tag_per_row.py",
+      "source_context_30_lines": "   75: INPUTS\n   76: ------\n   77:     S82 workshop taxonomy file (SHA-pinned input).\n   78:     Canonical row numbers from S82 L3 table.\n   79:     Canonical sub-tag labels from S82 C3 partition.\n   80: \n   81: OUTPUTS\n   82: -------\n   83:     s83_w3_g55_mixed_sub_tag_per_row.npz : per-row validity + sub-tags\n   84:     s83_w3_g55_mixed_sub_tag_per_row.png : 8-row sub-tag distribution bar chart\n   85:     Verdict line appended to s83_gate_verdicts.txt\n   86: \n   87: ENVIRONMENT\n   88: -----------\n   89:     CPU only; thread cap 8; no heavy linear algebra.\n   90: \"\"\"\n   91: from __future__ import annotations"
+    },
+    {
+      "anchor_id": "prov_1674",
+      "anchor_type": "data_provenance",
+      "name": "w3_g56_godbillon_vey_jensen_deform",
+      "script_path": "session-83/s83_w3_g56_godbillon_vey_jensen_deform.py",
+      "session": "s83",
+      "inputs": "",
+      "outputs": "session-83/s83_w3_g56_godbillon_vey_jensen_deform.npz, session-83/s83_w3_g56_godbillon_vey_jensen_deform.png",
+      "source_file": "computations/session-83/s83_w3_g56_godbillon_vey_jensen_deform.py",
+      "source_context_30_lines": "  133:   canonical_constants: tau_fold, H_fold, M_KK, Vol_SU3_Haar,\n  134:                        Delta_BCS, S_fold, dS_fold, d2S_fold\n  135:   Canonical Jensen spectrum construction (same as W1-G2):\n  136:     lambda(p, q, tau) = sqrt(C_2(p,q)) * exp(-tau * (p+q))\n  137:   L_max = 5 (pinned, matches W1-G2 and W3-G54)\n  138: \n  139: Outputs\n  140: -------\n  141:   NPZ: s83_w3_g56_godbillon_vey_jensen_deform.npz\n  142:   PNG: s83_w3_g56_godbillon_vey_jensen_deform.png\n  143:   Verdict line appended to s83_gate_verdicts.txt\n  144:   §W3-G56 Results block in session-83-results-workingpaper.md\n  145: \n  146: 4-tuple output tag\n  147: ------------------\n  148:   (gv_response=<v1>, primary_response=<v2>,\n  149:    scheme=Heitsch-variation-test,"
+    },
+    {
+      "anchor_id": "prov_1675",
+      "anchor_type": "data_provenance",
+      "name": "w3_g57_pinning_audit",
+      "script_path": "session-83/s83_w3_g57_pinning_audit.py",
+      "session": "s83",
+      "inputs": "",
+      "outputs": "session-83/s83_w3_g57_pinning_audit.npz, session-83/s83_w3_g57_pinning_audit.png",
+      "source_file": "computations/session-83/s83_w3_g57_pinning_audit.py",
+      "source_context_30_lines": "   80: INPUTS\n   81: ------\n   82:     Prior gate verdicts (S66-S83 verdict files for pinning provenance).\n   83:     Canonical constants for observational pinning values.\n   84:     S82 VII.K atlas row assignments from G55.\n   85: \n   86: OUTPUTS\n   87: -------\n   88:     s83_w3_g57_pinning_audit.npz : per-observable pinning record\n   89:     s83_w3_g57_pinning_audit.png : 11-row sub-tag distribution + validity\n   90:     Verdict line appended to s83_gate_verdicts.txt\n   91: \n   92: ENVIRONMENT\n   93: -----------\n   94:     CPU only; thread cap 8; no heavy linear algebra.\n   95: \"\"\"\n   96: from __future__ import annotations"
+    },
+    {
+      "anchor_id": "prov_1676",
+      "anchor_type": "data_provenance",
+      "name": "w3_g58_meta_landing",
+      "script_path": "session-83/s83_w3_g58_meta_landing.py",
+      "session": "s83",
+      "inputs": "",
+      "outputs": "session-83/s83_w3_g58_meta_landing.npz, session-83/s83_w3_g58_meta_landing.png",
+      "source_file": "computations/session-83/s83_w3_g58_meta_landing.py",
+      "source_context_30_lines": "   96:     label = \"PASS\" if val else \"FAIL\"\n   97:     ax.text(bar.get_x() + bar.get_width() / 2, bar.get_height() + 0.05,\n   98:             label, ha='center', va='bottom', fontsize=10, fontweight='bold')\n   99: \n  100: verdict_text = \"GATE: PASS\" if landing_verified else \"GATE: FAIL\"\n  101: verdict_color = '#27ae60' if landing_verified else '#c0392b'\n  102: fig.text(0.5, 0.01, verdict_text, ha='center', fontsize=12, fontweight='bold', color=verdict_color)\n  103: plt.tight_layout(rect=[0, 0.05, 1, 1])\n  104: plt.savefig(OUT_DIR / \"s83_w3_g58_meta_landing.png\", dpi=120, bbox_inches='tight')\n  105: plt.close()\n  106: print(\"Plot saved: s83_w3_g58_meta_landing.png\")\n  107: \n  108: # ---------------------------------------------------------------------------\n  109: # Save .npz\n  110: # ---------------------------------------------------------------------------\n  111: np.savez(\n  112:     OUT_DIR / \"s83_w3_g58_meta_landing.npz\","
+    },
+    {
+      "anchor_id": "prov_1677",
+      "anchor_type": "data_provenance",
+      "name": "w3_g59_sha_collision_audit",
+      "script_path": "session-83/s83_w3_g59_sha_collision_audit.py",
+      "session": "s83",
+      "inputs": "",
+      "outputs": "session-83/s83_w3_g59_sha_collision_audit.npz, session-83/s83_w3_g59_sha_collision_audit.png",
+      "source_file": "computations/session-83/s83_w3_g59_sha_collision_audit.py",
+      "source_context_30_lines": "  142: \n  143: # Pre-registered gate\n  144: # PASS : all 3 recompute AND distinct\n  145: # INFO : all 3 recompute but share identical input-pin map (legit collision)\n  146: # FAIL : any recomputation mismatch (copy-paste signature)\n  147: # (per S81+ audit protocol, gate-verdicts.md rules)\n  148: \n  149: # Input/output paths\n  150: OUT_NPZ = resolve_output(83, 's83_w3_g59_sha_collision_audit.npz')\n  151: OUT_PNG = resolve_output(83, 's83_w3_g59_sha_collision_audit.png')\n  152: VERDICT_TXT = resolve_output(83, 's83_gate_verdicts.txt')\n  153: S82_VERDICTS = resolve_output(82, 's82_gate_verdicts.txt')\n  154: \n  155: # The three triplet gates + their producing scripts (S82)\n  156: TRIPLET = [                                                   # (local)\n  157:     {\n  158:         \"label\": \"W1-1-TD\","
+    },
+    {
+      "anchor_id": "prov_1678",
+      "anchor_type": "data_provenance",
+      "name": "w3_g60_epoch_headroom",
+      "script_path": "session-83/s83_w3_g60_epoch_headroom.py",
+      "session": "s83",
+      "inputs": "",
+      "outputs": "session-83/s83_w3_g60_epoch_headroom.npz, session-83/s83_w3_g60_epoch_headroom.png",
+      "source_file": "computations/session-83/s83_w3_g60_epoch_headroom.py",
+      "source_context_30_lines": "  208:     \"err_narrow_pct\": float(err_narrow * 100),\n  209:     \"identity_line1\": identity_line1,\n  210:     \"identity_line2\": identity_line2,\n  211:     \"source\": \"s82-as-ledger-self-consistent.md §Wrap-Up #8 (CR4/DS3)\",\n  212:     \"session\": \"S82/S83\",\n  213: }\n  214: \n  215: outdir = pathlib.Path(__file__).parent\n  216: npz_path = outdir / \"s83_w3_g60_epoch_headroom.npz\"\n  217: np.savez(str(npz_path), **{k: str(v) if isinstance(v, str) else v for k, v in results.items()})\n  218: print(f\"Saved: {npz_path}\")\n  219: \n  220: # ---------------------------------------------------------------------------\n  221: # PNG — bar chart comparing headroom values\n  222: # ---------------------------------------------------------------------------\n  223: try:\n  224:     import matplotlib"
+    },
+    {
+      "anchor_id": "prov_1679",
+      "anchor_type": "data_provenance",
+      "name": "w3_g61_n_pivot_canonicalization",
+      "script_path": "session-83/s83_w3_g61_n_pivot_canonicalization.py",
+      "session": "s83",
+      "inputs": "",
+      "outputs": "session-83/s83_w3_g61_n_pivot_canonicalization.npz, session-83/s83_w3_g61_n_pivot_canonicalization.png",
+      "source_file": "computations/session-83/s83_w3_g61_n_pivot_canonicalization.py",
+      "source_context_30_lines": "  224: print(verdict_line)\n  225: print(\"=\" * 78)\n  226: \n  227: # -----------------------------------------------------------------------------\n  228: # STEP F — Save data + plot\n  229: # -----------------------------------------------------------------------------\n  230: \n  231: script_dir = Path(__file__).parent\n  232: out_npz = script_dir / \"s83_w3_g61_n_pivot_canonicalization.npz\"\n  233: out_png = script_dir / \"s83_w3_g61_n_pivot_canonicalization.png\"\n  234: \n  235: np.savez_compressed(\n  236:     out_npz,\n  237:     N_pivot_live=float(N_pivot),\n  238:     N_pivot_expected=N_pivot_expected,\n  239:     N_pivot_derived=N_pivot_derived,\n  240:     N_LCDM=N_LCDM,"
+    },
+    {
+      "anchor_id": "prov_1680",
+      "anchor_type": "data_provenance",
+      "name": "w3_g62_cartan_vii_j",
+      "script_path": "session-83/s83_w3_g62_cartan_vii_j.py",
+      "session": "s83",
+      "inputs": "",
+      "outputs": "session-83/s83_w3_g62_cartan_vii_j.npz, session-83/s83_w3_g62_cartan_vii_j.png",
+      "source_file": "computations/session-83/s83_w3_g62_cartan_vii_j.py",
+      "source_context_30_lines": "   71: Step 4 (direction):\n   72:     PASS if landing condition holds AND all 8 carry-forward gates\n   73:     (G17, G18, G19, G20, G21, G22, G23, G24) have verdict lines in the\n   74:     s83 ledger. INFO if landing holds but one or more carry-forward\n   75:     verdicts are absent (typically a clean-up issue, not a landing\n   76:     blocker). FAIL if any required anchor is missing.\n   77: \n   78: Outputs:\n   79:   * Script:   s83_w3_g62_cartan_vii_j.py\n   80:   * Data:     s83_w3_g62_cartan_vii_j.npz\n   81:   * Plot:     s83_w3_g62_cartan_vii_j.png\n   82:   * Verdict:  line appended to s83_gate_verdicts.txt (64-char SHA)\n   83:   * Paper:    session-83-results-workingpaper.md  §W3-G62\n   84: \"\"\"\n   85: \n   86: # =============================================================================\n   87: # IMPORTS & ENVIRONMENT"
+    }
+  ]
+}

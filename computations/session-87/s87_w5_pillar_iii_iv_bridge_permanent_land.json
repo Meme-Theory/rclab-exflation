@@ -1,0 +1,174 @@
+{
+  "gate_id": "S87-PILLAR-III-IV-BRIDGE-PERMANENT-LAND",
+  "verdict": "PASS",
+  "value": 0.095,
+  "sage_exact_ratio": "19/200",
+  "scheme": "zeta-regulated-Hochschild-pairing-HKR-bridge",
+  "convention": "substrate-distance-1-Connes-Karoubi-pairing",
+  "L_max": 10,
+  "schema_version": "S87+",
+  "audit_sha256": "5775770d2e01617ee5efeec96413508bb3a66f97616466b36bf1fd1c9b24b0eb",
+  "content_sha256": "1a321c5bb2c04e8d1e85939e5a7aa346ea6065d6db37a77ebd00f0ee56a55a69",
+  "sign_verdict": "PASS",
+  "magnitude_verdict": "PASS",
+  "regime_verdict": "VALID",
+  "substitution_chain": {
+    "step_1_definition": "Envelope_Tier2(L) = C * L^{-3}; Anchor_Tier3(L) = empirical W-5 atlas-match",
+    "step_2_substitute": {
+      "tier2_envelope_pct_at_Lmax10": 0.1,
+      "tier3_anchor_pct_at_Lmax10": 0.0095
+    },
+    "step_3_form_ratio": "r = 0.0095/0.1 = 0.09499999999999999",
+    "step_4_sage_exact": "r = 19/200 = 0.095",
+    "step_5_direction": {
+      "r_lt_1": true,
+      "r_le_pass_band": true,
+      "margin_inside_envelope": 10.526315789473685
+    }
+  },
+  "five_anatomy_elements": {
+    "1_substrate_IS_observable": "finite-L Hochschild pairing R_universal = <[phi_g^{sym}], [Ch(P_0(tau_fold))]> on (A_K^{<=10}, H_K^{<=10}, D_K^{<=10})",
+    "2_laboratory_IN_observable": "Pillar IV continuum BZ-trace R_geom(tau_fold) = int_BZ Tr g_ab^{(P_0)}(k; tau_fold) d^d k (Peotta-Toerma superfluid-stiffness / quantum-metric integrated trace)",
+    "3_bridge_map": "Hochschild-Kostant-Rosenberg L_max -> infinity HKR map (Connes-Karoubi pairing)",
+    "4_algebraic_envelope": "L^{-3} algebraic envelope at d=4 (predicted 0.10% at L_max=10)",
+    "5_empirical_anchor": "0.0095% F_4 strict at L_max=10 (10x margin inside Tier-2 envelope; Atlas_5 loose 0.0000% exactly)"
+  },
+  "three_tier_ladder": {
+    "Tier_1": {
+      "anatomy": "Substrate-IS structural identity (cohomology-class level, regulator-invariant, L-independent)",
+      "status": "STRUCTURAL THEOREM (proven; holds at every L_max)",
+      "form": "||[eps_H]||_{HP^1, r} = |f_4^r| * R_universal",
+      "source": "Connes-Moscovici (1995) \u00a7III.4 finite-spectral-triple residue formula"
+    },
+    "Tier_2": {
+      "anatomy": "Algebraic convergence envelope L^{-3} at d=4 (L_max-dependent rate to continuum)",
+      "status": "STRUCTURAL PREDICTION (algebraically derived; refines with L-scan)",
+      "value_at_Lmax10": "0.1%"
+    },
+    "Tier_3": {
+      "anatomy": "Empirical anchor at L_max=10",
+      "status": "EMPIRICAL CONFIRMATION (satisfies Tier-2 envelope by 10x margin)",
+      "value_at_Lmax10": "0.0095% F_4 strict (0.0000% Atlas_5 loose)",
+      "source_audit_sha256": "92d022ff56df893ef9eee82e0dd0500d08600bc0a3a64455400b9e8bf080437b"
+    }
+  },
+  "structure_tag": "SOURCE-DOUBLE-CITE-CO-PRIMARY",
+  "anchor_V_input": {
+    "label": "V (volovik) \u2014 3He-B BdG side / substrate-IS observable",
+    "content": "Finite-L Hochschild pairing R_universal on (A_K^{<=10}, H_K^{<=10}, D_K^{<=10}); substrate's cohomology-class identity at the spectral-triple axiom level; regulator-invariant via Connes-Moscovici 1995 \u00a7III.4 residue formula. The substrate's BdG sector inherits via inheritance morphism iota: A_K -> M_2(C); BDI universality class."
+  },
+  "anchor_C_output": {
+    "label": "C (connes) \u2014 NCG-axiomatic / HKR map side / Hochschild pairing",
+    "content": "Connes-Karoubi pairing R_universal = <[phi_g^{sym}], [Ch(P_0(tau_fold))]>; HKR (Hochschild-Kostant-Rosenberg) L_max -> infinity bridge map identifies the substrate-IS finite-L Hochschild pairing with the laboratory-IN continuum BZ-trace. Without C, the V-side ratio r_substrate has no laboratory-mapped image; without V, C's HKR map has no finite-L domain."
+  },
+  "tier3_lt_tier2_check": {
+    "lhs_tier3": 9.499999999999999e-05,
+    "rhs_tier2": 0.001,
+    "ratio": 0.095,
+    "ratio_sage_exact": "19/200",
+    "pass_direction": true,
+    "pass_band": true,
+    "margin_inside_envelope": 10.526315789473685
+  },
+  "input_pins": {
+    "registry_path": "C:\\sandbox\\Ainulindale Exflation\\sessions\\permanent-results-registry.md",
+    "registry_sha256": "92302acb11950610ec75f7958d562f67bbe21e0ec88e29ccb23f097e62f6d519",
+    "canonical_constants_sha256": "03a5c5fcd8d616095b0fe761f27e82d35c80282837721ba7d9df60672aea8ec8",
+    "rule_bridge_anatomy_sha256": "6ace11007ef6a128c1367e86e779a6fdbb94ed16fc172b48efb4a621ea0a14d2",
+    "rule_regulator_pin_sha256": "1748273aa534fe7f5fa1087649569c017162db2b66769e4af4939b31851e235c",
+    "s86_verdicts_sha256": "745d893fca5d756d296615db70f8268c7010990b5811f3ee693e3092bb76585d",
+    "s85_verdicts_sha256": "9c6d8090a9ca5cc10c84da57769aaca5262fbc228738881c28dc8b9df05308c6",
+    "empirical_anchor_audit_sha256": "92d022ff56df893ef9eee82e0dd0500d08600bc0a3a64455400b9e8bf080437b",
+    "hp1_landing_audit_sha256": "06fa0cb4d2f5d6456b718c69a6baea6e878627b80f7e4fefbaa25402774dda06"
+  },
+  "anatomy_audit": {
+    "n_anatomy_present": 5,
+    "n_anatomy_required": 5,
+    "n_tier_present": 3,
+    "n_tier_required": 3,
+    "anatomy_check": {
+      "1_substrate_IS_observable": {
+        "present": true,
+        "matched": [
+          "substrate-is",
+          "finite-l hochschild pairing"
+        ]
+      },
+      "2_laboratory_IN_observable": {
+        "present": true,
+        "matched": [
+          "laboratory-in observable",
+          "continuum bz-trace",
+          "bz-trace",
+          "peotta"
+        ]
+      },
+      "3_bridge_map": {
+        "present": true,
+        "matched": [
+          "bridge map",
+          "hochschild-kostant-rosenberg",
+          "hkr",
+          "connes-karoubi pairing"
+        ]
+      },
+      "4_algebraic_envelope": {
+        "present": true,
+        "matched": [
+          "algebraic envelope",
+          "l^{-3}",
+          "convergence rate"
+        ]
+      },
+      "5_empirical_anchor": {
+        "present": true,
+        "matched": [
+          "empirical anchor",
+          "0.0095%",
+          "f_4 strict",
+          "atlas_5"
+        ]
+      }
+    },
+    "tier_check": {
+      "Tier_1_substrate_IS_identity": {
+        "present": true,
+        "matched": [
+          "tier 1",
+          "structural theorem",
+          "regulator-invariant",
+          "cohomology-class identity"
+        ]
+      },
+      "Tier_2_algebraic_envelope": {
+        "present": true,
+        "matched": [
+          "tier 2",
+          "algebraic convergence envelope",
+          "structural prediction",
+          "l_max-dependent"
+        ]
+      },
+      "Tier_3_empirical_anchor": {
+        "present": true,
+        "matched": [
+          "tier 3",
+          "empirical anchor",
+          "empirical confirmation",
+          "0.0095%"
+        ]
+      }
+    },
+    "structure_tag_pass": true,
+    "regulator_tag_pass": true
+  },
+  "cocycle_ratio_cross_check": {
+    "phi67_norm_M_KK2": 0.793346,
+    "phi88_norm_M_KK2": 0.108307,
+    "float64_quotient": 7.3249743783873615,
+    "canonical_sage_exact_pin": 7.324992,
+    "publication_precision_residual": 1.762161263840767e-05,
+    "regulator_tag": "a_n^{zeta}"
+  },
+  "timestamp_utc": "2026-04-29T22:52:02.486395+00:00"
+}

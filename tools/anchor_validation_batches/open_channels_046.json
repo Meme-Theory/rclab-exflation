@@ -1,0 +1,107 @@
+{
+  "table": "open_channels",
+  "batch_id": 46,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "open_451",
+      "anchor_type": "open_channels",
+      "name": "`s84_spectrum_cache_L12_tau019.npz`",
+      "detail_1": "`9e6d9cf7fd6a6949d622441b26fb9c2fa568654a22dc802e99898c326ca0f8d9`",
+      "detail_2": "",
+      "session": "87",
+      "source_file": "sessions\\session-87\\session-87-results-workingpaper.md",
+      "source_context_30_lines": "  204: **Agent**: `lizzi-spectral-functional-theorist`\n  205: **Hypothesis**: The W0-20 (s=3 off-pole apex) and W0-7-MB lower-half (ρ-fit on s ∈ [2.5, 3.5]) results are PASS-evidence-on-disk for per-eval finiteness of the Mellin-cone evaluator at substrate-distance-1, formally re-pre-registered as gate-grade outputs.\n  206: **Plan reference**: `sessions/session-plan/session-87-plan-w1a.md` §W1a-3.\n  207: \n  208: **MCP Pre-Compute Audit**:\n  209: - `mcp__knowledge__search_knowledge(\"W0-20 apex evaluation s=3\")` → returned theorem `Apex universal at s=3 with deviation 0 (Connes-Moscovici 1995)` (PROVEN; W7-DRESSED-VP) — confirms apex universality but NOT per-eval finiteness on the L_max=10 cache; gate is NOT PRE-CLOSED.\n  210: - `mcp__knowledge__search_knowledge(\"W0-7-MB rho-fit lower-half\")` → returned the S86-W0-7-MB-RE-EMIT PRE-REG-INC verdict + the workshop note that an `[2.5, 3.5]`-only fit \"gives a partial ρ\"; confirms regeneration is required.\n  211: - `mcp__knowledge__get_constant(\"L_MAX_DEFAULT\")` → not found; closest match `L_max_canonical = 10.0` resolved as canonical L_max via `from canonical_constants import L_max_canonical`.\n  212: - `mcp__knowledge__search_knowledge(\"D_K eigenvalues spectrum cache L_max=10\")` → returned `s84_spectrum_cache_L12_tau019.npz` as canonical L_max=10 source (78,080 unique-sector non-zero |λ|); cache SHA-256 verified as `9e6d9cf7fd6a6949d622441b26fb9c2fa568654a22dc802e99898c326ca0f8d9`.\n  213: \n  214: **Input-file regeneration provenance\n... [truncated]"
+    },
+    {
+      "anchor_id": "open_452",
+      "anchor_type": "open_channels",
+      "name": "`canonical_constants.py`",
+      "detail_1": "`d56d57c12e706167f482cb2029d7e1154bde0672303d26a8348a5404aedac672`",
+      "detail_2": "",
+      "session": "87",
+      "source_file": "sessions\\session-87\\session-87-results-workingpaper.md",
+      "source_context_30_lines": " 1058: **Trigger**: `VERIFY-AUDIT`\n 1059: **Classification**: **GEOMETRIC** (substrate effective-dimension audit on the finite-L spectrum)\n 1060: **Agent**: `gen-physicist`\n 1061: **Hypothesis**: The single-d_eff anchor `d_eff = 8` (W-1 carry-forward CF-9) HOLDS as a per-slot threshold ordering on the L_max=12 master spectrum cache, in the sense that for each of the 4-stratum V_4-monodromy partition slots {stratum-0, stratum-1, stratum-2, stratum-3} the empirical Weyl-counting-function-derived effective dimension `d_eff,k` lies in a band consistent with `d_eff = 8` (`max_k |d_eff_k − 8| < 0.10`) AND the per-stratum ordering is monotone (`d_eff_0 ≤ d_eff_1 ≤ d_eff_2 ≤ d_eff_3`).\n 1062: **Plan reference**: `sessions/session-plan/session-87-plan-w1b.md` §W1b-2 (lines 284-471).\n 1063: \n 1064: **MCP Pre-Compute Audit**:\n 1065: - `search_knowledge(\"d_eff anchor spectral-action substrate\")` → 20 hits; structural row `d_eff = 8 (continuum)` from `s86-mellin-cone-repair-or-no-go.md` confirms d_eff=8 is the SU(3) Jensen-deformed substrate's continuum target. `spectral_action.py` Weyl-law-check uses `d_eff = coeffs[0]` (slope-direct convention); `s28c_12d_axioms.py` comment `N(Lambda) ~ C * Lambda^8` confirms d_eff=8 leading-asymptotic exponent at the **D_K-eigenvalue** convention (where d_eff = slope, not 2·slope). The plan-pinned PRDR convention (`d_eff = 2·slope`) treats |λ| as |D_K|-eigenvalue with the squared-operator factor of 2 absorbed into the exponent — distinct from the s28c \n... [truncated]"
+    },
+    {
+      "anchor_id": "open_453",
+      "anchor_type": "open_channels",
+      "name": "`elimination-bulletins.md`",
+      "detail_1": "`ebce7b558cff0a51b6482e3552d61b5659b208d70ff48bdf8f5706d629cef155`",
+      "detail_2": "",
+      "session": "87",
+      "source_file": "sessions\\session-87\\session-87-results-workingpaper.md",
+      "source_context_30_lines": " 1465: | `permanent-results-registry.md` | 6828 | §VII.K-PROP body (out-of-scope) |\n 1466: | `permanent-results-registry.md` | 6830 | §VII.K-PROP body (out-of-scope) |\n 1467: | `permanent-results-registry.md` | 6836 | §VII.K-PROP body (out-of-scope) |\n 1468: | `permanent-results-registry.md` | 6858 | §VII.K-PROP body (out-of-scope) |\n 1469: | `permanent-results-registry.md` | 6862 | §VII.K-PROP body (out-of-scope) |\n 1470: | `permanent-results-registry.md` | 6874 | §VII.K-PROP body (out-of-scope) |\n 1471: | `permanent-results-registry.md` | 14603 | §VII.Z body (F_4-MB Structural Wall Family; out-of-scope) |\n 1472: | `permanent-results-registry.md` | 14612 | §VII.Z body (out-of-scope) |\n 1473: | `elimination-bulletins.md` | 307 | Gate-name bibliographic reference (not d_spec=8 claim) |\n 1474: | `elimination-bulletins.md` | 347 | Gate-name bibliographic reference |\n 1475: | `elimination-bulletins.md` | 348 | Gate-name bibliographic reference |\n 1476: | `elimination-bulletins.md` | 349 | Gate-name bibliographic reference |\n 1477: | `session-87-results-workingpaper.md` | 745 | d_spec=4 (different value; substrate-distance-1 pole at SD slot) |\n 1478: | `session-87-results-workingpaper.md` | 866 | §W1b-3 body — SOURCE of falsification, not a downstream citation |\n 1479: | `session-87-results-workingpaper.md` | 868 | §W1b-2 method discussion |\n 1480: | `session-87-results-workingpaper.md` | 889 | §W1b-2 results table |\n 1481: | `session-87-results-workingpaper.md` | 897 | §W1b-2 res\n... [truncated]"
+    },
+    {
+      "anchor_id": "open_454",
+      "anchor_type": "open_channels",
+      "name": "`permanent-results-registry.md`",
+      "detail_1": "`5a38f1756c34d2c25169183c8bfe216c0c1875b382ed6ff0d85915cf863cdabc`",
+      "detail_2": "",
+      "session": "87",
+      "source_file": "sessions\\session-87\\session-87-results-workingpaper.md",
+      "source_context_30_lines": "  252: - Coefficients `ρ_k` (k=0..4): `[410.42, -337.97, 292.65, -190.17, 96.26]`.\n  253: - Normalised residual: RMS / mean|V| = **1.19e-04**.\n  254: - This sits in the pre-registered `[1e-6, 1e-3]` INFO band (NOT FAIL: 1.19e-04 << 1e-3).\n  255: - The deg-4 cap intentionally neglects finite-L corrections (deg=5 would give 1.11e-05 PASS; deg=6 gives 9.24e-07 PASS). The pre-registered cap captures the asymptotic L → ∞ Mellin-Barnes lower-half order, NOT finite-L tails — the INFO outcome is the structurally honest verdict at the pre-registered cap.\n  256: \n  257: **Cross-checks**:\n  258: - **CC1 (apex finiteness vs algebraic floor)**: numerical apex `4.138e+02` is `~3` OOM tighter than the algebraic upper bound `2.573e+05`; both `< 1e+50` by 48-50 OOM. Direction PASS.\n  259: - **CC2 (V(s) analyticity at s=3)**: direct evaluation V(3.0) = 4.104e+02 finite; `(s-3)·V(s) → 0` linearly through s=3 with slope ≈ V(3.0). Confirms V is entire at finite L_max=10 (the pole is the L → ∞ analytic-continuation feature; Connes-Moscovici 1995 finite-spectral-triple residue formula extracts the residue as a regulated trace from the finite-L data).\n  260: - **CC3 (registry pointer)**: §VII.U.7 row landed at line 15367 of `permanent-results-registry.md`, citing full-64-char SHAs of both upstream W0-20 and W0-7-MB verdicts AND the regeneration cache SHA.\n  261: \n  262: **Substitution chain** (plan §W1a-3 lines 415-440; verified Python):\n  263: - **Step 1 — Definition**: `V(s) := Tr[(D_K^{≤10})^{-2s\n... [truncated]"
+    },
+    {
+      "anchor_id": "open_455",
+      "anchor_type": "open_channels",
+      "name": "`s86-cluster-results.md` (memory)",
+      "detail_1": "`3f56eb944edf4862d7934848380932607b71ffe56d30e013c34ca6cb379599d6`",
+      "detail_2": "",
+      "session": "87",
+      "source_file": "sessions\\session-87\\session-87-results-workingpaper.md",
+      "source_context_30_lines": " 8555: - Composite-collapse: regime=VALID + sign=FAIL ⇒ composite **FAIL** (sign-failure branch dominates per gate-verdicts.md §\"S87+ canonical form\").\n 8556: - Verdict file: `computations/s87_gate_verdicts.txt` (canonical line + dual-SHA companion + 3-tuple companion all appended).\n 8557: \n 8558: **Input SHA-256 pins (computed at runtime, embedded in .npz `input_pin_map_json` field):**\n 8559: - `s84_spectrum_cache_L12_tau019.npz`: `9e6d9cf7fd6a6949d622441b26fb9c2fa568654a22dc802e99898c326ca0f8d9`\n 8560: - `canonical_constants.py`: `d56d57c12e706167f482cb2029d7e1154bde0672303d26a8348a5404aedac672`\n 8561: - `elimination-bulletins.md`: `ebce7b558cff0a51b6482e3552d61b5659b208d70ff48bdf8f5706d629cef155`\n 8562: - `permanent-results-registry.md`: `5a38f1756c34d2c25169183c8bfe216c0c1875b382ed6ff0d85915cf863cdabc`\n 8563: - `s86-cluster-results.md` (memory): `3f56eb944edf4862d7934848380932607b71ffe56d30e013c34ca6cb379599d6`\n 8564: \n 8565: **Artifacts (all on disk, verified):**\n 8566: - Script: `computations/s87_w10_bulletin_3_rescue_residual.py` (25,081 bytes)\n 8567: - Data: `computations/s87_w10_bulletin_3_rescue_residual.npz` (12,008 bytes; full input-pin-map JSON embedded for closure-hash audit)\n 8568: - Plot: `computations/s87_w10_bulletin_3_rescue_residual.png` (69,308 bytes; left panel L_max-convergence vs r_anchor; right panel NROY-cascade composition residual at L=12)\n 8569: - Verdict-line: `computations/s87_gate_verdicts.txt` (canonical + dual-SHA companion + schema-v2 3-tupl\n... [truncated]"
+    },
+    {
+      "anchor_id": "open_456",
+      "anchor_type": "open_channels",
+      "name": "Verdict-line",
+      "detail_1": "`computations/s87_gate_verdicts.txt` (canonical + dual-SHA companion + schema-v2 3-tuple companion)",
+      "detail_2": "",
+      "session": "87",
+      "source_file": "sessions\\session-87\\session-87-results-workingpaper.md",
+      "source_context_30_lines": " 8561: - `elimination-bulletins.md`: `ebce7b558cff0a51b6482e3552d61b5659b208d70ff48bdf8f5706d629cef155`\n 8562: - `permanent-results-registry.md`: `5a38f1756c34d2c25169183c8bfe216c0c1875b382ed6ff0d85915cf863cdabc`\n 8563: - `s86-cluster-results.md` (memory): `3f56eb944edf4862d7934848380932607b71ffe56d30e013c34ca6cb379599d6`\n 8564: \n 8565: **Artifacts (all on disk, verified):**\n 8566: - Script: `computations/s87_w10_bulletin_3_rescue_residual.py` (25,081 bytes)\n 8567: - Data: `computations/s87_w10_bulletin_3_rescue_residual.npz` (12,008 bytes; full input-pin-map JSON embedded for closure-hash audit)\n 8568: - Plot: `computations/s87_w10_bulletin_3_rescue_residual.png` (69,308 bytes; left panel L_max-convergence vs r_anchor; right panel NROY-cascade composition residual at L=12)\n 8569: - Verdict-line: `computations/s87_gate_verdicts.txt` (canonical + dual-SHA companion + schema-v2 3-tuple companion)\n 8570: \n 8571: #### Co-sign considerations (Mellin-anchor side)\n 8572: \n 8573: The following claims belong to the **Mellin-anchor side** of this gate's epistemics. lizzi-spectral-functional-theorist would have used these for §W10-3 promotion; per plan §\"Wave 10 Decision Point Prerequisites\" item 8 line 44 (CF-63 conditional-trigger predicate), §W10-3 now routes to **mechanical closure** (orchestrator-authored, no lizzi dispatch) — but the residual interpretive content remains active as a sourcing pin for the S88 SOURCE-RECON carry-forward.\n 8574: \n 8575: - **(i) s_eff = 11/2 as Mellin-\n... [truncated]"
+    },
+    {
+      "anchor_id": "open_457",
+      "anchor_type": "open_channels",
+      "name": "Stratum",
+      "detail_1": "Indices",
+      "detail_2": "Cardinality",
+      "session": "88",
+      "source_file": "sessions\\session-88\\session-88-w2-workingpaper.md",
+      "source_context_30_lines": "   33: **4-tuple**: `(value=5 PASS extensions, scheme=Cartan-toral-rejected-V4-strata-tested-via-stratum-Z2-product-d3hypercube, convention=(Z_2)^d-Schur-tensor-product-factored-identity-extension-from-W11-4, L_max=6)` — verdict_kind = `PASS-d=2-exact` per plan §W2-1.9.\n   34: \n   35: **Results**:\n   36: \n   37: ##### (a) Substrate-physical context\n   38: \n   39: Bottom-20 D_K eigenvalues at τ_fold=0.19 (loaded from `s87_w11_partition_stability_4stratum.npz`, W11-2 cache, idx_tau_fold=5) partition into 4 strata via the W11-2 eigenvalue-degeneracy equivalence relation (ULP_TOL=1e-14):\n   40: \n   41: | Stratum | Indices | Cardinality | |λ| value |\n   42: |:--------|:--------|:------------|:---------|\n   43: | 1 | [0, 2)   | 2 | 0.81974111 |\n   44: | 2 | [2, 6)   | 4 | 0.83589351 |\n   45: | 3 | [6, 14)  | 8 | 0.84086383 |\n   46: | 4 | [14, 20) | 6 | 0.84521210 |\n   47: \n   48: The substrate IS this 4-stratum partition; the cardinality vector (2, 4, 8, 6) is the substrate's intrinsic bot20 multiplicity profile at the Jensen-fold τ=0.19. Not a partition imposed onto the substrate — it IS the substrate's own structure at L_max_op=6 (Casimir-bound truncation per `math-scripts.md §\"D_K Block-Diagonality\"`; L_max_plan=10 redundant under W11-3 Friedrich-Bär saturation).\n   49: "
+    },
+    {
+      "anchor_id": "open_458",
+      "anchor_type": "open_channels",
+      "name": "Extension",
+      "detail_1": "d",
+      "detail_2": "max_n",
+      "session": "88",
+      "source_file": "sessions\\session-88\\session-88-w2-workingpaper.md",
+      "source_context_30_lines": "   85: | A | 3 | parity_mod2 × low_vs_high × adjacent_pair |\n   86: | B | 4 | parity_mod2 × low_vs_high × isolate_0 × isolate_3 |\n   87: | C | 3 | low_vs_high × parity_mod2 × isolate_2 (alt grouping) |\n   88: | D | 3 | adjacent_pair × parity_mod2 × low_vs_high (re-order of A) |\n   89: | E | 3 | isolate_0 × isolate_1 × isolate_2 |\n   90: \n   91: ##### (d) Numerical results\n   92: \n   93: | Extension | d | max_n |Δ_n^(d)| | hypercube PASS | non-degen axes | extension PASS |\n   94: |:----------|:-:|:----------------:|:--------------:|:--------------:|:--------------:|\n   95: | A | 3 | 0.000e+00 | True | [T, T, T]      | **True** |\n   96: | B | 4 | 1.421e-14 | True | [T, T, T, T]   | **True** |\n   97: | C | 3 | 1.066e-14 | True | [T, T, T]      | **True** |\n   98: | D | 3 | 0.000e+00 | True | [T, T, T]      | **True** |\n   99: | E | 3 | 7.105e-15 | True | [T, T, T]      | **True** |\n  100: \n  101: `count_PASS_extensions = 5 / 5`; `count_PASS_d_geq_3 = 5 / 5`."
+    },
+    {
+      "anchor_id": "open_459",
+      "anchor_type": "open_channels",
+      "name": "Class-(c) PIN-DRIFT detected at plan-freeze",
+      "detail_1": "plan cites `s87_w11_2_partition_stability_4stratum.npz` (with `_2`) → actual file is `s87_w11_partition_stability_4strat...",
+      "detail_2": "",
+      "session": "88",
+      "source_file": "sessions\\session-88\\session-88-w2-workingpaper.md",
+      "source_context_30_lines": "   15: **Plan reference**: `sessions/session-plan/session-88-plan-w2.md` §W2-1.\n   16: \n   17: **MCP Pre-Compute Audit**:\n   18: - `mcp__knowledge__get_constant(\"tau_fold\")` → 0.19 (S12/S42 CONST-FREEZE-42, R-PROTECTED) — matches plan pin.\n   19: - `mcp__knowledge__get_constant(\"M_KK\")` → 7.428660036284456e+16 (S42 spectral zeta route) — matches plan pin (PROVENANCE entry missing but value canonical).\n   20: - `mcp__knowledge__get_constant(\"Delta_BCS\")` → 0.4642547394830737 (S70 BCS-GAP-CANONICAL-70, R-PROTECTED) — matches plan pin.\n   21: - `mcp__knowledge__search_knowledge(\"V_4 monodromy depth extension surviving Klein\")` → 8 hits; W11-1 already promoted V_4 from candidate via S87-MONODROMY-V_4-EXPLICIT (substrate falsification of Cartan-toral V_4 with max_dev=1.19); no closure pre-empts §W2-1 depth-extension question.\n   22: - `mcp__knowledge__search_knowledge(\"Delta_0 LOCALIZATION formula 4-stratum partition Schur\")` → 8 hits; no closure on Δ_0 LOCALIZATION FORMULA (§W2-8 candidate); §W2-1 is independent of this.\n   23: - Class-(c) PIN-DRIFT detected at plan-freeze: plan cites `s87_w11_2_partition_stability_4stratum.npz` (with `_2`) → actual file is `s87_w11_partition_stability_4stratum.npz`; plan cites `s87_w11_4_v4_schur_identity.npz` → actual file is `s87_w11_hypercube_vertex_identity.npz`. Both re-pinned to actual filenames in input-pin map per `.claude/rules/epistemic-discipline.md` Class-(c) remediation.\n   24: \n   25: **Verdict**:\n   26: \n   27: ```\n   28: S88-MONO\n... [truncated]"
+    },
+    {
+      "anchor_id": "open_460",
+      "anchor_type": "open_channels",
+      "name": "ℝ ⊕ ℂ",
+      "detail_1": "A.1",
+      "detail_2": "(ℝ, n=1) + (ℂ, n=1)",
+      "session": "88",
+      "source_file": "sessions\\session-88\\session-88-w4a-workingpaper.md",
+      "source_context_30_lines": "   73: Conclusion: The Wedderburn-Artin Frobenius Rescue Class characterizes the\n   74:             simultaneous A0 ∧ M2 satisfiers up to χ-kernel choice. QED.\n   75: ```\n   76: \n   77: **4-algebra verification table** (Sage-compatible QQ-exact arithmetic via sympy; bit-deterministic):\n   78: \n   79: | Algebra | Part | Wedderburn-Artin blocks | Rescue clauses | A0 axiom | M2 axiom | Commutator residual (QQ) | Match prediction |\n   80: |:--------|:-----|:------------------------|:---------------|:---------|:---------|:-------------------------|:----------------|\n   81: | ℝ ⊕ ℂ | A.1 | (ℝ, n=1) + (ℂ, n=1) | i + i | PASS | PASS | 0 | ✓ |\n   82: | ℂ ⊕ M_2(ℂ)_χ-killed | A.2 | (ℂ, n=1) + (ℂ, n=2, χ=0) | i + ii | PASS | PASS | 0 | ✓ |\n   83: | ℍ ⊕ ℍ | A.3 | (ℍ, n=1) + (ℍ, n=1) | i + i | PASS | PASS | 0 | ✓ |\n   84: | ℝ ⊕ M_2(ℝ)_identity-χ | B.4 | (ℝ, n=1) + (M_2(ℝ), n=2, χ=id) | i + NEITHER | PASS | **FAIL** | **2** | ✓ |\n   85: | **A_F = ℂ ⊕ ℍ ⊕ M_3(ℂ)** | C | (ℂ, n=1) + (ℍ, n=1) + (M_3(ℂ), n=3, χ=0) | i + i + ii | PASS | PASS | 0 | ✓ |\n   86: \n   87: **4-tuple**: `(value=\"theorem_verdict=PASS;part_a=PASS+PASS+PASS;part_b=PASS_residual_QQ=2;part_c=PASS_substrate_clauses=i+i+ii;stage1_of_4_workshop_precedent_S87_W1a-5_R3_Prompt-3\", scheme=\"wedderburn-artin-frobenius-rescue-class-verification\", convention=\"division-algebra-or-chi-killed-block\", L_max=\"N/A\")`.\n   88: \n   89: **CC1 — A0 axiom (KO-dim=6 chirality-fiber consistency per algebra, Step 4)**: For every block (D_i, n_i) in th\n... [truncated]"
+    }
+  ]
+}

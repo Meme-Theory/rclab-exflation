@@ -1,186 +1,80 @@
 # Spectral Geometer Agent Memory
 
-## Project Structure
-- Research papers: `researchers/Spectral-Geometry/` (35 papers, fully indexed 2026-03-14)
-- Index: `researchers/Spectral-Geometry/INDEX.md` (416 lines, 8 topic groups, 35 entries)
-- Tier0 computations: `tier0-computation/` (all .py/.npz/.png files)
-- Sessions: `sessions/session-NN/` for results, `sessions/session-plan/` for prompts
-- Python venv: `phonon-exflation-sim/.venv312/Scripts/python.exe`
+Project Python venv: `phonon-exflation-sim/.venv312/Scripts/python.exe`. Research papers in `researchers/Spectral-Geometry/` (35 papers, INDEX.md). Computation in `computations/`. Canonical constants live in `computations/_shared/canonical_constants.py` -- ALWAYS check there before re-citing numerical values; never hardcode.
 
-## Library Status (Post-S43 Index Rebuild, 2026-03-14)
-- All 21 priority papers from S42 meta-analysis NOW PRESENT (15-35)
-- Index covers: Gilkey (5), Berger (3), Mueller (3), Lott (1), Connes (3), applied HK (5), rigidity (3), NCG physics (7), CDT (2), propagator (1), bounds (1)
-- KEY NEW PAPER: Arias-Marco 2025 (#31) -- natural reductivity INAUDIBLE (structural tension with rigidity results)
-- See `meta-analysis-gaps.md` for historical gap analysis (now resolved)
+## Critical Theorems & Identities
 
-## Key Spectral Results (Post-Session 47)
-- **PI-SECTOR-47 PASS**: 13 pi-phases: B1=1(PW=15), B2=9(PW=81), B3=3(PW=35). See `pi-sector-s47.md`
-- **[iK_7, D_K] = 0 is (0,0)-ONLY**: Higher PW sectors have ||[I⊗iK7,DK]||/||DK||=7.5% for (0,1). Spinor sectors MIX in entangled eigenstates.
-- **TRAP-33b RETRACTED**: Frame V=0.287 was wrong vector space. Spinor V(B2,B2)=0.057
-- **Schur on B2**: Casimir=0.1557, irreducible. V basis-independent (10k U(4) + optimization)
-- **V(B1,B1) = 0 exact**: U(2) singlet selection rule. All 8 generators, all tau. PERMANENT
-- **[iK_7, D_K] = 0**: SU(3)->U(1)_7 exact at ALL tau IN (0,0) SECTOR. B2=+/-1/4, B1=0, B3=0
-- **J corrected**: C2 = gamma_1*gamma_3*gamma_5*gamma_7 (product of real gammas)
-- **Van Hove**: rho_smooth=14.02/mode (2.6x over step 5.40). v_min=0.012
-- **mu=0 forced**: Both canonical (PH) and grand canonical (Helmholtz convex). PERMANENT
-- **D_phys fold survives**: d2=1.226 at phi=gap (STABILIZED vs bare 1.176)
-- **Kosmann enhanced under D_phys**: V(B2,B2)=0.086 at phi=gap (+50% over bare 0.057)
-- **RPA enhanced**: d2S=180.09 at phi=gap (333x margin, up from 38x bare)
+- **Heat kernel validity tiers (S45-S46)**: Level 1 (exact on truncation) = spectral action / heat trace / spectral zeta moments. Level 2 (DIFFERENT objects) = "spectral a_2" = zeta_D(1) = 2776.17 is NOT SD a_2^{SD} = 0.728 (factor 3812; pole at s=1 for d=8). Level 3 (artifact) = d_s in UV (-> 0 not 8), analytic torsion T (truncation-divergent). CC routes via d_s and torsion: CLOSED.
 
-## Key Eigenvalue Data (SU(3) Jensen-deformed)
-- B1 (trivial, 1-fold): lambda = 0.819 at tau=0.20
-- B2 (U(2) fund, 4-fold): lambda = 0.845 at tau=0.20, minimum at tau=0.190158
-- B3 (SU(2) adj, 3-fold): lambda = 0.978 at tau=0.20
-- Shell gap B2-B1 = 0.026, B3-B2 = 0.133 at tau=0.20
-- phi_paasch = m_{(3,0)}/m_{(0,0)} = 1.531580 at tau=0.15
+- **Spectral-dimension d_s(sigma) Weyl-window vs literal sigma->0 (INV8-W3-3, investigation-8, INFO, audit_sha `6b6484a1159f3f90...6029f0b5`, supersedes `33c753d1...`)**: REFINES the "d_s in UV -> 0 not 8" tier note. On a FINITE gapped D_K spectrum the LITERAL sigma->0 limit gives d_s->0 (heat trace SATURATES flat for sigma<<1/lambda_max^2; all exp(-sigma lambda^2)->1) -- an artifact, NOT the Weyl regime. The Weyl d_s->8 is recovered ONLY in the GENUINE Weyl window 1/lambda_max^2 << sigma << 1/lambda_min^2 (=[0.034,1.49] at L12 tau_fold), where Gaussian cutoff sigma^{-1/2} sweeps bulk count N~lambda^8. There d_s CROSSES 8 cleanly: crossing value 8.0202, max 8.5518 ("crossings not plateaus", S52/S92 confirmed numerically at converged L12). Windowed d_s(sigma_*=1.4005)=8.5184 (cf S93 anchor 8.4851). **CDT comparison MADE on matched functional (K=2 same-functional-different-scale, phononic-framing.md): substrate windowed d_s(sigma_*)=8.5 NOT ~2 => NO CDT dimensional-reduction reproduced; R-1 resolved, resonance was a scale-type mismatch** (substrate sigma->0 Weyl=8 vs CDT intermediate-window~2; once (observable,window) matched on both sides, substrate stays ~8). Energy-axis gamma_E=0.4834 (cf S93 0.4807) => n_vH=1/(1-gamma_E)=1.94~=2 => SQUARE-ROOT band edge (KK reading), NOT infinite-order van-Hove (n->inf=>gamma_E->1). **gamma_E + d_s(sigma_*) are L_max-SATURATED**: identical across L{10,11,12,12+pL13} (|dgamma|=0.00000, reproduces S93 d_gamma_L12_L10=0.0000 from independent data) because Casimir law |lambda|=sqrt(C2)exp(-tau(p+q)) sends new sectors to |lambda|>=2.41 >> fold ceiling E0+2w_fit=0.873 -- new sectors land ABOVE the fold, add ZERO resolution below it. => the gate's premise "high-L_max escapes the narrow-band artifact for the fold edge" is STRUCTURALLY REFUTED (fold is one-sided-starved, intrinsic not truncation-removable). Mult-norm pre-flight (math-scripts K=3 MANDATORY): Sage `d/ds[P_{N+1}/P_N]=-0.00581!=0` => P(sigma) NOT w(L_max)*g(sigma) (additive-new-sector), d_s genuine L_max-dependent. FEASIBILITY: L_max_plan=16 INFEASIBLE (irrep_symmetric_power(13) times out >160s; GT cache s104_sym_p_chain_cache_L1314.npz status=IN_PROGRESS, only 12/14 L13 CENTER sectors, (0,13)/(13,0) extremes MISSING, 0 L14); L_max_operational=12 full (90 cached + (4,4) reconstructed dim125 block2000) + partial L13.
 
-## Proven Structural Results
-- KO-dim = 6, SM quantum numbers from Psi_+ = C^16
-- [J, D_K(tau)] = 0 -- CPT hardwired (J = C2 = prod real gammas)
-- D_K block-diagonal in Peter-Weyl sectors (W2)
-- Trap 1: V(B1,B1) = 0 exact (U(2) singlet selection rule)
-- Trap 4: inter-branch decoupling on U(2) submanifold (Schur)
-- Trap 5: M_ph purely imaginary for all branches (anti-Hermiticity theorem)
-- A_2 catastrophe classification of B2 fold, destruction bound 0.42
-- Schur on B2: Casimir=0.1557, V basis-independent within degenerate subspace
-- [iK_7, D_K] = 0 at all tau: SU(3)->U(1)_7 exact symmetry breaking
-- PH x U(1)_7 = full symmetry algebra of D_K for tau > 0
+- **Finite-L pole NO-GO (INV8-W1-4, investigation-8, PASS, audit_sha `0f62c5d50f825d1d...398e0e0f6`)**: residue-subtracted analytic-continuation value g_M = a_2_FW_zeta = 2776.165389 (the §VII.CB Hadamard finite part = zeta_D(s=3), pole convention A-double, curvature grade n=2, s=3 < d/2=4) is UNREACHABLE by any finite-L truncation FROM BOTH SIDES. Mechanism = the rank-r-vs-full-d Weyl-counting split (THE reusable structural insight): (i) zeta-NATIVE truncation (full PW multiplicity, Weyl N(lambda)~lambda^d=lambda^8) has missing tail ~lambda^{d-2s}=lambda^{+2} (POSITIVE power d-2s>0 for s<d/2) -> DIVERGES FROM ABOVE (S109 cross-anchor 39619->109123->280743 over L{6,8,10}, is_weyl_divergent=True); (ii) bare BLOCK shell-sum sum_{(p,q)<=L}|lambda_(p,q)|^{-2s} (one eval per rank-r=2 PW cone point, cone counting ~x^r) has tail x^{r-1-2s}=x^{1-2s} -> at s=3 = x^{-5}<-1 CONVERGES FROM BELOW (requires s>r/2=1) but to a multiplicity-stripped value 4.27x short of g_M (S108 Z(inf)~=650.70; gap factor exact Sage-QQ = 120702843000000/28291325042357 = 4.266425938668019). g_M sits strictly between -> recovered by NEITHER. CONTRAST (REACHABLE): an INTEGER-topological anchor (winding/K-theory pairing) is L_max-SATURATED (Friedrich-Bar, sectors above L* contribute identically 0) -> EXACT at finite L (S94 §VII.AU Level3_integer_anchor=2, envelope_residual=0.0). DICHOTOMY: continuous-residue-subtracted-pole UNREACHABLE; integer-cohomology-class REACHABLE. Block-tail per-pole: s=0 tail +1 (diverges both), s=1 tail -1 (boundary/log), s=2 tail -3 (conv), s=3 tail -5 (conv, the clean g_M two-sided case). Implication: Level-3 finite-L numerical anchor is the WRONG test for residue-subtracted-continuation observables (registry-PASS Level3<Level2 carve-out). Distinct from S87-MELLIN-CONE-NO-GO (a divergence-RATE statement, abs_div_356=15, NOT the two-sided + reachability dichotomy). L12 cache = computations/session-84/s84_spectrum_cache_L12_tau019.npz (plan path computations/_shared/... is a doc bug); 90/91 sectors, (4,4) MISSING but irrelevant (no-go is L_max-SCALING not single-sector).
 
-## Mechanism Chain Status (Post-40)
-- Chain: UNCONDITIONAL(S35) -> BROKEN at tau-stabilization (S36-S40)
-- Structural Monotonicity Theorem: <lambda^2>(tau) monotonic => S_f(tau) monotonic for any monotone f
-- **HESS-40: 22/22 transverse positive**, min H=+1572 (g_73), margin 1.57e7. Jensen fold = 28D local min of S_full
-- Hessian hierarchy: diagonal u(2) H~20000, complement H~14000, off-diag u(1)-complement H~1572
-- Condition number 12.87 (well-conditioned)
-- **27 total equilibrium closures**: spectral action cannot stabilize tau in ANY direction
-- FRIED-39 shortfall worsens to ~114,000x with M_ATDHFB=1.695 (SELF-CONSIST-40)
+- **R-Protection Theorem (S76)**: For compact simple G of dim d, rank r, R_n = a_0 * a_{2n} / a_n^2 has alpha_net = 0 (intensive, R-protected, O(L^{-r}) drift). Individual a_k extensive, alpha_k = d+r+k (R-fragile, O(L^{d+r+k})). Generic compact simple Lie group result. Pre-asymptotic at L=3-9 (a_0 effective 5.23 vs asymptotic 8).
 
-## BdG Spectral Triple (S35, R3 COMPLETE)
-- C3/C4 PASS, eta=0, spectral flow=0, Goldstone pinning by J (most novel), KO-dim convention issue OPEN
-- Publishable JNCG: first BdG spectral triple on compact Lie group. Lichnerowicz bound RETRACTED.
+- **a_4 EXTENSIVE L_max-axis DIVERGES, NOT a tail (INV5-W3-1, investigation-5, INFO-physical, audit_sha `9673cfffe9faec06...0c674cc`)**: extracted heat-trace a_4^{zeta} (the a_4_FW_zeta=1350.72 lineage, extract_seeley_dewitt_robust) at FIXED tau_fold scanned over max_pq_sum={3,4,5,6} is monotone-INCREASING: a_4={-258.6,-62.7,+1535,+5902}, Delta a_4={+196,+1597,+4367} all >0 (even sign-flips -258->+5902). tail_fraction=|a4(6)-a4(3)|/|a4(6)|=1.044 (NOT in band [0.0268,0.0804]); +5.36% m_H residual is NOT an a_4 truncation tail (PHYSICAL, routes to W2-3 self-energy). QUANTITATIVE confirmation of R-Protection at the individual-coeff level (alpha_4=d+r+4=14>0): the spectral-sum a_4 has NO finite continuum (diverges UV-dominated); the finite Gilkey curvature-integral a_4 is a DIFFERENT object (session-60-bap-collab). L_max-axis (magnitude convergence) is structurally DISTINCT from tau-axis (S77 R_1: a_4 varies 28.65% across tau) AND from INV3-W2-2 (multiset isospectral rigidity). spectral-geometer C4/R4 conflated tau-axis variation with an L_max tail -- corrected here. Heat-kernel polynomial-fit residual degrades L=3->6 (2.25e-3 -> 5.74e-3; regime MARGINAL at L=6).
 
-## Session 37/40/45 Key Results (compressed)
-- **CUTOFF-SA-37: FAIL**. S_f(tau) monotonic ALL cutoffs. da_6/dtau = -1058 dominates. CLOSED.
-- **T-ACOUSTIC-40 PASS**, B2-INTEG-40 PASS, QRPA-40 FAIL(STABLE), GSL-40 PASS, CC-TRANSIT-40 PASS
-- **Analytic torsion CLOSED**: T~10^{20301} is truncation artifact. Singlet T=0.147 (physical, O(1)).
+- **CC-Ratios-Only Theorem (S80, S82 SG-validated, closure SHA `8a5678ba2a411cee...4ae9464211`)**: weight-balanced SDW ratios a_m/a_n with w(a_n) = d-n = k matched are f-INDEPENDENT under CC96 eq 2.11 via Mellin-Laplace duality. Cancellation identity-level (f_k, Lambda^k, Gamma(k/2) factor identically). Unbalanced ratios RETAIN f. Subtlety: monomial balance requires MULTISET equality, NOT sum equality (P4-D CN-EM1 sum-form sufficient ONLY in binary case).
 
-## Heat Kernel Validity Tiers (HEAT-KERNEL-AUDIT-45, UPDATED S46)
-- See `heat-kernel-audit-s45.md` for full classification
-- **Tier 1 (exact)**: spectral action, heat trace, spectral zeta moments
-- **Tier 2 RECLASSIFIED (S46)**: "spectral a_2" = zeta_D(1) is NOT the SD coefficient a_2
-  - SD a_2 = (4pi)^{-4} * (20R/3) * Vol = 0.728 (geometric, exact)
-  - zeta_D(1) = sum d_k/lambda_k^2 = 2776.17 (spectral sum, pole at s=1 for d=8)
-  - Ratio = 3812 (structural, not truncation error)
-  - M_KK extraction uses zeta_D(1) correctly; the formula implicitly accounts for this
-- **Tier 3 (artifact)**: d_s in UV, analytic torsion, anything needing zeta poles
-- d_s -> 0 as sigma -> 0 (not 8). Correct dim probe: Weyl counting d_Weyl = 6.81
+- **FB-A vs FB-B scope distinction (S117 W6-3 CF-S117-FB-EDGE-VS-BOTTOM, INFO, audit_sha `fe53b2c522b27f1c...ecd8ba3d`)**: "Friedrich-Bär saturation" is TWO distinct theorems, NOT one. **FB-A** = bottom-K exact-saturation: new sectors land ABOVE the bottom-K ceiling by the Casimir bound |λ|_min >= η√(C2+1), so an IR / lowest-N observable is L_max-EXACT (the [[finite-L pole NO-GO]] integer-anchor mechanism). **FB-B** = Level-2 convergence envelope L^{-α}: a UV-pole moment RATIO converges as its divergent tails cancel. A UV-pole Seeley-DeWitt moment (a_2 at s=3, n=d-2s=8-6=2) is **FB-A-INELIGIBLE** by heat-kernel locality (a_2 = small-σ UV residue Res_{s=3}ζ_D=a_2/Γ(3); bottom of spectrum sets large-σ/IR tail = λ_min, NEVER a_n): its truncation drift is 100% λ_max-EDGE. NUMERICAL (L12 s84 / L14 s87 τ=0.19 caches, NO new diag; PV-subtracted M_FULL via `_pauli_villars_subtraction` PRIMARY, bit-exact vs S116 FWDC1): bottom_frac = |ΔM_FULL^{bottom |λ|≤0.845}|/|ΔM_FULL| = **0.000e+00 EXACT** (bottom-K region moment L12=L14=109.659 INVARIANT; the 29 NEW p+q∈{13,14} sectors carry ALL of ΔM_FULL=+5990.3 to rel 1.1e-15; n_new_in_bottom=0, min new |λ|=3.71 >> 0.845). Per-mode g_PV(λ;s) is L_max-INDEPENDENT ⇒ moment additive over mode-sets ⇒ shared bottom modes cancel in the drift. ⇒ the S116 W8-1 "-friedrich-bar-saturation" label on the FWD-C1 s=3 envelope is **MIS-SCOPED** (mechanism is FB-B, not FB-A) → §VII.AU.OP-PROJ Element-3 Level-2-envelope scope annotation (mack-routed, registry:18347); **UV-pole-family (a_2,a_4,...) FB-A-ineligibility is a methodological wall**. **Convergence RATE α is SCHEME-DEPENDENT**: PV-ratio rho_FULL(s=3)=M_FULL/M_BARE CONVERGES α_PV=2.6926 (monotone-decr 1.01960→1.00769 over L8-14); bare zeta ζ_D(s=3)=Σ m_k λ^{-6} DIVERGES (s=3 < d/2=4, zeta-native Weyl tail λ^{d-2s}=λ^{+2}; monotone-incr 8302→23810, growth β=+1.882 ⇒ α_zeta=-1.882, NO positive exponent) ⇒ alpha_rel=|−1.882−2.6926|/2.6926=1.699 SD. **Mis-scope FUNCTIONAL-INDEPENDENT; rate SCHEME-DEPENDENT.** Sign cross-check PASS (drift_PV=+5990.3, drift_zeta=+5987.0, both +). Caches s84_L12/s87_L14 mutually bit-consistent on level≤12 (M_BARE rel_dev 0.0). Reusable: for ANY FB-scoping question, IR/lowest-N → FB-A; UV-pole a_n moment → FB-B (FB-A-ineligible). Consistent with [[finite-L pole NO-GO]] rank-r-vs-full-d Weyl split + S87-MELLIN-CONE-NO-GO.
 
-## Uncomputed Priority Gates (Post-45 Collab Review)
-1. ~~Analytic torsion T(tau)~~: CLOSED (artifact of truncation)
-2. ~~Truncated torsion~~: COMPUTED S45. T_singlet = 0.147
-3. epsilon'' sign convention: re-run Sessions 7-8 with corrected C2
-4. Spectral rigidity of fold: is Jensen SU(3) at tau=0.190 spectrally rigid?
-5. **Spectral zeta at nonzero s**: zeta(s,tau) for s>4 suppresses UV, may reveal fold structure (Tier 1)
-6. **Eta invariant under transverse deformation** (g_73 direction)
-7. ~~BdG spectral dimension~~: CLOSED (artifact per audit)
-8. ~~Lichnerowicz bound check~~: COMPUTED S46. lambda_1=0.820 >= sqrt(2R/7)=0.759. SATISFIED, 8% margin.
-9. **Van Hove on other Lie groups**: SU(4), Sp(2), G_2 -- does fold exist?
-10. ~~Independent geometric a_2~~: COMPUTED S46. a_2^{SD}=0.728 vs zeta_D(1)=2776.17. Different objects (factor 3812).
-11. **Q-THEORY-T3T5-46**: T3-T5 crossing at tau=0.19104 may lock q-theory crossing (tau*=0.209) to fold
-12. ~~Spectral current j(lambda,tau)~~: COMPUTED S46. alpha_j=4.03 (FAIL). alpha_v=0.62 (INFO). UV-dominated.
-13. **max_pq_sum=6**: test d_Weyl convergence, M_KK tension, moment ratios
-14. **Connes distance on truncated Jensen SU(3)**: finite crystal metric geometry
-15. ~~Spectral form factor K(t)~~: COMPUTED S46. Poisson class (HIGH). No ramp. <r>=0.439. t_H=748
+- **R-Protected-Fold Convention Split (S74 W2-O FAIL)**: TWO inequivalent conventions for R = a_0 * a_4 / a_2^2 at fold:
+  - `R_protected_fold_partialsum = 1.128655` (S73B L_max=3 partial-sum ratio, canonical L=7 = 1.140699, drift 1.067%)
+  - `R_protected_fold_gilkey = 0.492288` (Gilkey heat-kernel curvature polynomial, exact closed form `(500 - 32|Ric|^2/R^2 - 28K/R^2)/1000` at fold)
+  - Routes A/C agree to 1.06%; differ from Route B by factor ~2.33. Downstream usage MUST specify scheme.
 
-## S45 Collab Review: Ways Forward (8 identified)
-- See `sessions/archive/session-45/session-45-quicklook-spectral-collab.md`
-- Finite crystal is noncommutative geometry in its own right, not truncated manifold
-- Connes distance, spectral form factor, eigenvalue current are correct tools
-- Continuum limit restores zeta poles, asymptotic SD, genuine torsion -- last open door for CC hierarchy
-- T3-T5 crossing (tau=0.19104) may lock q-theory to fold via BCS gap feedback
+- **f_conv = pi^4/(9216 * a_0^2)** EXACT (S76 INFO). a_2 cancellation structural. Planck-implied L_max* = 2.92.
 
-## Normalization Conventions
-- Seeley-DeWitt: a_k with (4*pi)^{-d/2} prefactor, d=8 for SU(3)
-- Spinor rank: 2^4 = 16 for 8-dimensional SU(3)
-- Volume-preserving Jensen deformation (TT constraint)
-- Kosmann pairing: V_nm = sum_{a=0..7} |<n|K_a|m>|^2 (SPINOR basis, not frame)
-- K_a = (1/8) sum_{rs} A^a_{rs} gamma_r gamma_s (Kosmann from frame structure constants)
-- Connes 15/16: finite-density spectral action exists (van Suijlekom, JNCG 2022)
+- **Intensive/Extensive partition (S76)**: alpha_net = (d+r)*sum(n_k) + sum(k*n_k). n_s intensive (R-protected); CC, A_s extensive (R-fragile, functional-dependent). Spectral functional = ensemble (t* = 0.088). chi_2 IS the CC prediction under f*. A_s gap 0.12 OOM is one-sided lower bound under any truncation including all L_max=3 modes.
 
-## Session 36 Results
-- **W6-SPECIES-36 PASS (THIN)**: Lambda_sp/M_KK = 2.06 (d=4) or 8.06 (d=8) at fold
-- C_Weyl = 42.80 at fold. Converged by L_max=4. d_eff = 8.1 confirms Weyl law
-- **GL-CUBIC-36**: Second order. U(1)_7 charges +/-1/2 forbid cubic GL. Z_2 universality
-- **ANOM-KK-36**: 150/150 anomaly coefficients = 0 exactly. Structural (pi_1(SU(3))=0)
-- **COLL-36**: Vibrational chi/chi_sp = 12.1 W.u. Moderate multi-mode coherence
-- **ED-CONV-36**: E_cond enhanced -0.115 -> -0.137. B1 is proximity catalyst
-- **INTER-SECTOR-PMNS-36**: All PMNS routes CLOSED on Jensen (Schur's lemma, 5 proofs)
-- **WIND-36**: BDI winding nu=0. E_B2/Delta=33.4. Deep trivial. Edge modes CLOSED
-- **BBN-LITHIUM-36**: delta_H/H = -6.6e-5 (500x below threshold). UV dominance structural
-- **TAU-STAB-36**: S_full monotonic. Level 3 = 91.4% of gradient. Fold invisible to linear sum
-- **TAU-DYN-36**: Overdamped. 38,600x shortfall. BCS back-reaction negligible (6.7e-7)
-- **CRITICAL INSIGHT (S36)**: Linear sum reads a_0 (volume). Fold lives in a_2/a_4 (curvature). Cutoff shifts weighting from a_0 to a_2/a_4.
-- **S37 RESOLUTION**: The shift from a_0 to a_2/a_4 does NOT help. a_2(tau) and a_4(tau) are themselves monotonic. The a_6 term (da_6/dtau = -1058) dominates and ensures all smooth cutoffs give monotonically DECREASING S_f. The "needle hole" is CLOSED.
+- **Eta(D_K) = 0** EXACT at all tau (pair_err 2.22e-14). Spectral flow = 0. STRUCTURAL: Clifford dim-8 pairing + conjugate sector bijection.
 
-## Session 46 Results (A2-GEOMETRIC-46)
-- **R(tau=0.19) = 2.018**: verified to machine epsilon (analytic vs Riemann tensor)
-- **a_2^{SD} = 0.728**: exact geometric Seeley-DeWitt coefficient
-- **zeta_D(1) = 2776.17**: spectral sum, structurally different from a_2^{SD}
-- Ratio 3812 is structural (pole at s=1 for d=8), not truncation error
-- **Lichnerowicz SATISFIED**: lambda_1 = 0.820, bound = 0.759, ratio = 1.080
-- Ricci eigenvalues at fold: {0.230 x4, 0.250 x1, 0.283 x3}
-- |Ric|^2 = 0.514, Kretschner = 0.535, |Weyl|^2 = 0.386
-- a_2^{SD} variation tau=0->fold: 0.91% (tracks R linearly, Vol constant)
-- Gate: INFO (structural finding, not pass/fail applicable)
-- Files: s46_geometric_a2.py/.npz/.png
+## Eigenvalues & Bounds
 
-## Session 46 Results (SPECTRAL-FLOW-NS-46)
-- **SPECTRAL-FLOW-NS-46: FAIL**. alpha_j = 4.03 +/- 0.34 (Casimir k). Outside [0.5, 2.0].
-- **alpha decomposition**: alpha_j = alpha_N(1.53) + alpha_d(1.88) + alpha_v(0.62) = 4.03
-- alpha_v (velocity only) = 0.62 +/- 0.08 (R^2=0.956). INFO range [0.5, 2.0]
-- Eigenvalue-k proxy: alpha_ev = 6.49 (inflated by eigenvalue-wavenumber conflation)
-- 992/992 modes matched to fine-scan eigenvalue trajectories (4th-order forward diff, h=0.005)
-- v > 0: 712 modes, v < 0: 280 modes. Net flow expanding. 34.5% cancellation
-- Near-VH modes: 12 (1.2%), carrying 0.002% of spectral current. VH suppression 794x
-- B3 carries 99.95% of total spectral current
-- **Velocity-weighted Bogoliubov**: n_s correction delta = -1.18 (right direction, insufficient)
-- **STRUCTURAL**: spectral current is UV-dominated (Weyl + dimension + velocity all reinforce)
-- Any observable that SUMS over modes inherits Weyl counting alpha >> 1
-- Pair creation controlled by BLOCK membership (B1/B2/B3), not Casimir k (confirms W2-2)
-- Files: s46_spectral_flow_ns.py/.npz/.png
+- B1: lambda = 0.819. B2: lambda = 0.845 (min at tau=0.190, fold). B3: lambda = 0.978
+- phi_paasch = 1.531580 at tau=0.15 (-> canonical_constants.py)
+- Friedrich-Kirchberg: 5R/16 = 0.631 tightest bound at fold. Actual lambda_1^2 = 0.672 (tightness 1.065, 6.5% gap). All FK/Lichnerowicz SATISFIED.
+- a_2^{SD}(fold) = 0.728235 (Gilkey, exact). Vol(SU(3))(fold) = 1349.74. C_8 = 1/(384*pi^4)
+- Spinor rank: 2^4 = 16 for d=8. SD prefactor (4*pi)^{-d/2}
+- **tau=0 bi-invariant Dirac closed form (S105 W7-1 PASS, S102 W3-validated 8.9e-15)**: |lambda(p,q,mu)|^2 = (1/6)[C2(mu)+C2(p,q)] + 1/4, where mu runs over irreps of V_{(p,q)}(x)S, S|_SU(3)=8(+)8 (16-dim Spin(8) Dirac module restricts to TWO SU(3) adjoints -- forced by trivial sector |l|^2=3/4 x16=2*dim(8)). c_off=1/4=R_scalar/8 EXACT (R_scalar(g_biinv)=2.0). NOT a scalar C2+c_off per sector -- each sector has a NON-degenerate |l|^2 multiset (e.g. (1,1):{3/4,5/4,7/4,25/12}). Examples: (1,0)={25/36(x6),37/36(x12),49/36(x30)}. casimir_pq=(p^2+q^2+pq+3p+3q)/3. CG via Brauer/Klimyk Weyl-shift (3x8=3+6bar+15; 8x8=1+2*8+10+10bar+27).
+- **tau=0 EXACT two-sided trace formula (S105 W7-1 PASS, max_rel=2.34e-29)**: Dirac controlling theta Theta_S(t)=2*Sum_{nu in wt(8)} Sum_Lambda exp(-(t/6)|Lambda+rho+nu|^2_M), spectral (weight-lattice) side = geometric (coroot Poisson dual) side to <1e-10 at t in {0.02,0.1,0.5,2.0}. Weight Gram in Casimir metric M=(2/3)A^{-1} (A=SU(3) Cartan): C2(Lambda)=|Lambda+rho|^2_M-|rho|^2_M EXACT, |rho|^2_M=4, rho=(1,1) Dynkin, lambda_min(M)=2/9. rank-2 Poisson (P): Sum_Lambda e^{-s|Lambda+x|^2_M}=(pi/s)^{r/2}/sqrt(detM) Sum_{coroot} e^{-(pi^2/s)|nu|^2_{M^{-1}}}e^{2pi i<nu,x>}, r=2. Genuinely independent sides (different lattices). The LITERAL full PW trace Sum dim(p,q)Sum_mu dim(mu)e^{-t|l|^2} carries Plancherel poly weight -> NO clean single coroot dual (Poisson gives derivative-of-theta); torus theta (T) IS the dualizable object, conjugate var = coroot/winding lattice (sets closed-geodesic LENGTHS for W7-2). PLAN PREMISE |l|^2=C2+c_off was geometrically WRONG; corrected in-session.
+- Spin-curv ratio K/(20R) < 2% for all U(2)-invariant SU(3) metrics. Simplified scalar-only a_2 valid to 1.3% at fold.
+- EP band-differential (frontier #8, acoustic B1 C2=0 vs color B3 C2=4/3): Delta_kappa = kappa_EP(B1)-kappa_EP(B3) = Delta_C2*(sum of order-by-order C2-cross-term coeffs). NLO (a_4 R^1): =0 (C2 annihilated by universal 1/4 Bochner). NNLO (a_6 R^2, S96): -0.00839709 (=-(16/3)g0, g0=C_R_OMEGA2*(a_6/a_4)/8, C_R_OMEGA2=1/45), FI. N3LO (a_8 R^3, S97-EP-N3LO-CASIMIR PASS): -0.0109607 = NNLO + Delta_delta_a8(-2.564e-3, REINFORCING same sign); adds h0*C2*R_K^2, h0=C_R2_OMEGA2*(a_8/a_4)/8. SIGN-STABLE (-1 both), resolvable (>1e-4), FI (a_8^Mellin=a_8^zeta=521.183 to 1.14e-13). a_8_FW_zeta=521.183178, a_6_FW_zeta=765.593826, a_4_FW_zeta=1350.7216 (per-branch L_max=3). Sign set by curvature-order-INDEPENDENT C2-ordering (Casimir-trace identity Tr_Vb(Omega^2)/dim=(C2/dim_adj)Tr(F^2), Tr(F^2)>0).
+- Gilkey heat-kernel pure-scalar lead family scales EXACTLY 1/9 per curvature order: a_4 R^2 lead 1/144 -> a_6 R^3 lead 1/1296 -> a_8 R^4 lead 1/11664 (=108^2). Cross-term family inherits: C_R_OMEGA2=1/45 -> C_R2_OMEGA2=1/405. (Sage-verified, S97.)
+- Mult-norm cancellation (math-scripts K=3): a BAND-CONTRAST kappa(B1)-kappa(B3) on shared L_max is LINEAR in moment-coeffs => w(L_max) is overall factor, NOT annihilated like a single-moment log-deriv. Dk(C2,C2')=4(2 R_K h0+g0)(C2-C2')w; Dk/w w-free => NOT trivial-cancellation, L_max-stability informative.
 
-## Session 46 Results (SPECTRAL-FORM-FACTOR-46)
-- **SPECTRAL-FORM-FACTOR-46: INFO**. Universality class: POISSON (HIGH confidence)
-- K(t) shows NO ramp (R^2=0.0002). Smoothed K sits at 1/N from dip onward
-- <r> = 0.439 (Poisson 0.386, GOE 0.531). Closer to Poisson. S38 CHAOS-1 discrepancy resolved (degeneracy dilution)
-- Sigma^2(L) sub-Poisson (GOE-like): arithmetical spectrum from Peter-Weyl structure
-- t_H(system, unfolded) = 747.7; t_H(raw) = 203.6
-- K_plateau/(1/N) = 1.04 (Poisson confirmed)
-- Consistent with block-diagonal theorem, integrability, [iK_7,D_K]=0
-- SFF EXCLUDES quantum chaos in single-particle Dirac spectrum. PERMANENT
-- Files: s46_spectral_form_factor.py/.npz/.png
+## Proven Structural (PERMANENT)
 
-## Session 48-49 TT Lichnerowicz Results
-- **TT-LICH-48: PASS**. 31 singlet TT modes, ALL positive. See `tt-lichnerowicz-s48.md`
-- **NON-LI-TT-49: PASS**. 81 TT modes per (1,0)/(0,1) sector, ALL positive [0, 0.78]. See `non-li-tt-s49.md`
-- Casimir gap C_2(p,q)/3 provides structural positive floor for non-singlet modes
-- Non-LI modes 3.26x MORE stable than singlet at fold (min 1.047 vs 0.322)
-- KK graviton tower positive-definite at fold. PERMANENT
+- KO-dim=6, SM quantum numbers, [J,D_K]=0 (CPT), D_K block-diagonal (PW), Trap 1/4/5
+- [iK_7, D_K]=0 at all tau. PH x U(1)_7 = full symmetry algebra for tau>0
+- Geodesic flow INTEGRABLE (Berry-Tabor). Fabric integrability preserved (Richardson-Gaudin)
+- TT-Lichnerowicz: 31 singlet + 81-per-sector non-LI all positive. KK graviton tower stable
+- S56: PH of D_K does NOT extend to H_TB (fabric non-bipartite, mu_eff = -0.201 at fold)
+- S56: Josephson hierarchy inverts SD: J_C2(tau)^2 controls F_fabric; F_anom is 15% correction
+- S56: d_s as CC probe CLOSED (kinematic, not dynamical)
+- BdG spectral triple (S35 R3): C3/C4 PASS, eta=0, Goldstone pinning by J. Lichnerowicz bound RETRACTED
+- Mechanism chain UNCONDITIONAL (S35); 27 equilibrium closures (S36-S40) -- spectral action cannot stabilize tau in any direction
 
-## Session 51 Results (CUTOFF-CONV-51)
-- **CUTOFF-CONV-51: FAIL**. SA correlator sector weights NOT cutoff-universal at Lambda=3
-- Smooth cutoffs (Gaussian, Poly, SmComp): dim2=64 [(1,1)] has 55.7% rel. variation (FAIL threshold 50%)
-- dim2=225 (dominant, >50% weight): STABLE at 4.7%. dim2=100: INFO at 17.2%
-- Sharp cutoff pathological: projects 100% weight to single sector near Lambda
-- alpha_eff = 0.860 +/- 0.02 (4.7% variation across smooth cutoffs) -- STABLE
-- Identity deviation = 0.066 +/- 0.011 (33% variation) -- NOT STABLE
-- S50 alpha_eff=1.21 was for P_G*eta_SA product, not standalone SA correlator (alpha=0.86)
-- **STRUCTURAL**: chi_SA involves f'(x), not f-moments. Cutoff non-universality is permanent.
-- Lambda->infinity converges (all cutoffs agree), but finite Lambda introduces shape dependence
-- dim2=225 MIXES (2,1)+(1,2) [C2=5.33] with (4,0)+(0,4) [C2=9.33] -- S50 bug
-- Files: s51_cutoff_conv.py/.npz/.png
+## Conventions (load-bearing for re-derivations)
 
-## Detailed Notes
-- See `spectral-results.md` for computation details
-- See `tt-lichnerowicz-s48.md` for S48 TT analysis
-- See `non-li-tt-s49.md` for S49 non-left-invariant extension
+- Spin rep via adjoint: rho_spin(e_a) = (1/4) sum_{bc} ad(e_a)_{bc} gamma_b gamma_c where ad(e_a)_{bc} = -f_{a,b,c} (sign matters: ad(e_a)_{cb} = f_{abc} but ad(e_a)_{bc} = -f_{abc}). Use matrix entries directly, not f with index-matched gammas.
+- Kosmann pairing: V_nm = sum_{a=0..7} |<n|K_a|m>|^2 (SPINOR basis, NOT frame). K_a = (1/8) sum_{rs} A^a_{rs} gamma_r gamma_s.
+- Volume-preserving Jensen deformation (TT constraint).
+- Per .claude/rules/regulator-pin-discipline.md, post-S86 NEW citations of a_n MUST tag regulator: a_n^{zeta} / a_n^{Pauli-Villars} / a_n^{Mellin} / a_n^{lattice} / a_n^{cutoff}. Bare a_n forbidden going forward.
+- Connes 15/16: finite-density spectral action exists (van Suijlekom, JNCG 2022).
+- Pole-label DUAL LINEAGE in canon (S100b W3 plan-freeze): S88 §W12-148 uses Conv. B single-power (WP substitutes "n=3 (s=5)", n=8-s); S95 SU(4)_PS residue work uses Conv. A double-power (shell-sum L^{8-2s}, threshold s>9/2). Same numerals {5,6,7}, DIFFERENT poles. Under B: s=6 IS the a_2 pole; s=5/7 odd grades n=3/1 (classically absent, closed manifold). Abscissae: zeta_B diverges s<d=8; zeta_A converges s>d/2=4. Higher-pole gates MUST scan both readings or pin one. Lai-Teh map: u=p+1, v=q+1; u^2+uv+v^2 = 3*C_2+3; 2u^2v^2(u+v)^2 = 8*dim^2 (exact identities).
+- s84_spectrum_cache_L12_tau019.npz: single key `sector_evals` = {(p,q): {'dim','level','abs_evals'}}, 90 sectors, max p+q=12, sector (4,4) MISSING; abs_evals are BLOCK-level (PW x dim factor NOT applied). Consumers reconstruct (4,4) (dim 125, block 2000x2000, feasible) or bound its contribution.
+- R_{(30,0)}=12.05 is the HIGH-PW-51 fit max|lambda|=0.633*sqrt(C_2)+0.555 at tau_FOLD=0.19 (+-5%, atlas-spectral-geometer-collab §3 eq 1) — NOT a tau=0 anchor. Genuine tau=0 anchors: lambda^2=n/36 algebraic + Lai-Teh cubic point (D^2_{1/3}=1xCas+3; whole 16*dim block collapses to ONE |lambda|).
+
+- **Cubic-point exact-theta theorem (S100b W3-1, CF28 canonical PASS)**: zeta_A = 4*Sum u^2v^2(u+v)^2 (u^2+uv+v^2)^{-s} has a SINGLE pole (s_A=4, Res=0.1791406779 exact rational; a_0^{Mellin}=1.074844068=Weyl integral to float64); Res(s_A=2)=Res(s_A=1)=0 EXACT, s_A=3 zero candidate terms; exotic locus s_A in {0,-1,-2,-3} Pochhammer-annihilated (no Fucci-Stanfill log on closed substrate); K(t)t^4 = a_0 to 2.6e-16 at t<=1e-2. {5,6,7}-mapped orders log-free under BOTH poleconvs (c_-2 ratio <= 3.7e-46). S_j(N)=Sum u^k(N-u)^k is odd-degree-only (j<=50). E58 S_d={0,2,4,6,8} = pole LOCATIONS; cubic point = degenerate-residue corner. CAUTION (W3-2 STRUCTURED-LC): framework tau=0 operator = LEVI-CIVITA t=1/2, NOT cubic t=1/3 (machine-eps); lambda^2=n/36 still holds at LC. Detail: `s100b-cf28-pole-order.md`
+
+## Detailed Notes (pointer file index)
+
+- `s100b-cf28-pole-order.md` -- S100b CF28 full detail: exact-theta theorem, mpmath complex-Hurwitz absolute-noise pitfall + EM fix, Faulhaber-monomial cancellation + Hurwitz-split fix, pre-asymptotic shell-window numbers (L in [6,12] devs +0.58/+0.96/+1.34 for the IDEAL lattice), (4,4) reconstruction lineage
+- `key-results.md` -- consolidated heat-kernel tiers, R-protection, CC-Ratios-Only Theorem (with substitution chain), R-protected convention split, f_conv identity, normalization conventions
+- `spectral-results.md` -- per-session compressed log S33-S84 (Strutinsky, Kosmann, van Hove, mu_eff, FK, TT, eta, pi-sector, SFF, Weyl verify, fabric, spec dim)
+- `s74-r-protected-triple.md` -- full S74 W2-O FAIL detail (5 cross-checks, closed form, recommendation)
+- `s80-cc-ratios-only.md` -- full S80 alt proof (substitution chain, counterexample, multiset subtlety)
+- `gt-builder-high-L.md` -- Gelfand-Tsetlin/bosonic-ladder (p,0)=Sym^p(C^3) DIRECT builder (lifts the 3^p wall; EXACT factor sqrt((n_a+1)*n_b), NOT multinomial-ratio; bit-exact vs cache); S105 branch-iv spread_CAC=0.0443091 INFO
+- `inv13-a4-qnm-tidal.md` -- INV13-W1-2 [SIGN] INFO: a_4 -> emergent higher-curvature BH QNM ringdown (delta_omega/omega) + NS tidal Love (delta_k2/k2). DEFINITE-POSITIVE sign chain (c_W=+2/360 Gilkey Riem^2 -> blue-shift); m~1.3e-76 ~73 OOM << D_thr (universal (ell_KK/r_S)^2 suppression). Reusable sign+OOM for a_4 strong-field falsifiers
+- `s110-cv2b-gauge-a4-fork.md` -- S110 CV2B Question-B M_KK fork FAIL=Fork-C: gauge-a_4 channel does NOT independently fix M_KK (no root in [1e15,1e18] GeV, mu*=4.42e13; 167-OOM scheme-spread). STRUCTURAL reusable reason: a_4 Tr F^2 dimensionless => no power-law lever on the dimensionful keystone, unlike a_2 gravity M_Pl^2=f2*M_KK^2*a2 (power law). Confirms ONE-ROUTE-DOMINATES + rank-1 VII.BS NNU + inner-fluct-impotence. 1/g^2_sub norms: a_4/(8pi^3 f0)=5.4454 [S70 line 28], a_4/(2pi^2)=68.43 [CC Paper19]

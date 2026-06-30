@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 103,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1021",
+      "anchor_type": "data_provenance",
+      "name": "epsilon_profile",
+      "script_path": "session-64/s64_epsilon_profile.py",
+      "session": "s64",
+      "inputs": "",
+      "outputs": "session-64/s64_epsilon_profile.npz, session-64/s64_epsilon_profile.png",
+      "source_file": "computations/session-64/s64_epsilon_profile.py",
+      "source_context_30_lines": "  492:     ax.axvline(tc, color='orange', linestyle='--', alpha=0.8, label=f'sonic crossing')\n  493: ax.set_xlabel(r'$\\tau$', fontsize=12)\n  494: ax.set_ylabel(r'Mach number $\\mathcal{M}$', fontsize=12)\n  495: ax.set_title(r'(d) Mach Number Through Transit', fontsize=12)\n  496: ax.legend(fontsize=9)\n  497: ax.grid(True, alpha=0.3)\n  498: \n  499: plt.tight_layout()\n  500: plt.savefig(os.path.join(SCRIPT_DIR, 's64_epsilon_profile.png'), dpi=150, bbox_inches='tight')\n  501: print(f\"\\n  Plot saved: s64_epsilon_profile.png\")\n  502: \n  503: # ============================================================================\n  504: #  10. SAVE DATA\n  505: # ============================================================================\n  506: \n  507: np.savez(os.path.join(SCRIPT_DIR, 's64_epsilon_profile.npz'),\n  508:          # Requested 6-point data"
+    },
+    {
+      "anchor_id": "prov_1022",
+      "anchor_type": "data_provenance",
+      "name": "finite_size_vac",
+      "script_path": "session-64/s64_finite_size_vac.py",
+      "session": "s64",
+      "inputs": "",
+      "outputs": "session-64/s64_finite_size_vac.npz, session-64/s64_finite_size_vac.png",
+      "source_file": "computations/session-64/s64_finite_size_vac.py",
+      "source_context_30_lines": "   25: \n   26: Additional: compare to S_occ (occupied-state spectral action from\n   27: OCC-SPEC-64) which gives the N_pair ~ 60 regime.\n   28: \n   29: Gate: FINITE-SIZE-VACUUM-ENERGY-64\n   30:   INFO: Verify consistency and report gap\n   31: \n   32: Input: S_fold, N_cells, E_cond, rho_Lambda_obs from canonical_constants\n   33: Output: s64_finite_size_vac.{npz,png}\n   34: \n   35: Session 64, Gen-Physicist agent\n   36: \"\"\"\n   37: \n   38: import numpy as np\n   39: import matplotlib.pyplot as plt\n   40: import os\n   41: import sys"
+    },
+    {
+      "anchor_id": "prov_1023",
+      "anchor_type": "data_provenance",
+      "name": "gsl_entropy",
+      "script_path": "session-64/s64_gsl_entropy.py",
+      "session": "s64",
+      "inputs": "",
+      "outputs": "session-64/s64_gsl_entropy.npz, session-64/s64_gsl_entropy.png",
+      "source_file": "computations/session-64/s64_gsl_entropy.py",
+      "source_context_30_lines": "  744: print(f\"    GGE:   {S_GGE_total:.4f} nats ({S_GGE_total/np.log(2):.4f} bits)\")\n  745: print(f\"    Gibbs: {S_Gibbs_for_GSL:.4f} nats ({S_Gibbs_for_GSL/np.log(2):.4f} bits)\")\n  746: print(f\"    Total Delta S: {dS_full:.4f} nats = {dS_full/np.log(2):.4f} bits\")\n  747: \n  748: # ===========================================================================\n  749: # Section 11: Save Data\n  750: # ===========================================================================\n  751: \n  752: output_path = Path(__file__).parent / \"s64_gsl_entropy.npz\"\n  753: np.savez(output_path,\n  754:     # Stage entropies\n  755:     S_BCS=S_BCS,\n  756:     S_transit_total=S_transit_total,\n  757:     S_GGE_total=S_GGE_total,\n  758:     S_Gibbs_exact=S_Gibbs_for_GSL,\n  759:     S_Gibbs_modal=S_Gibbs_total,\n  760:     S_max=S_max,"
+    },
+    {
+      "anchor_id": "prov_1024",
+      "anchor_type": "data_provenance",
+      "name": "hessian_descent",
+      "script_path": "session-64/s64_hessian_descent.py",
+      "session": "s64",
+      "inputs": "",
+      "outputs": "session-64/s64_hessian_descent.npz, session-64/s64_hessian_descent.png",
+      "source_file": "computations/session-64/s64_hessian_descent.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s64_hessian_descent.py — HESSIAN-DESCENT-64: a_2 Along 36D Principal Eigenvector\n    4: ==================================================================================\n    5: \n    6: Gate: HESSIAN-DESCENT-64\n    7:   PASS: At least one volume-preserving direction in 36D has da_2/dm < 0 at the fold.\n    8:   FAIL: ALL volume-preserving directions have da_2/dm >= 0 (a_2 minimum in transverse).\n    9:   INFO: Some directions decrease a_2 but insufficiently (asymptotes to nonzero).\n   10: \n   11: Context:"
+    },
+    {
+      "anchor_id": "prov_1025",
+      "anchor_type": "data_provenance",
+      "name": "kk_threshold",
+      "script_path": "session-64/s64_kk_threshold.py",
+      "session": "s64",
+      "inputs": "",
+      "outputs": "session-64/s64_kk_threshold.npz, session-64/s64_kk_threshold.png",
+      "source_file": "computations/session-64/s64_kk_threshold.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s64_kk_threshold.py — KK-THRESHOLD-64\n    4: KK threshold corrections to gauge coupling g_3 at M_KK from PW tower (L=6).\n    5: \n    6: S62 CARRY-FORWARD (MANDATORY).\n    7: S62 flagged: \"The L=3 result delta g_3^{-2} = 1.41 cannot be quoted as a\n    8: prediction until convergence is established.\"\n    9: \n   10: STRUCTURAL AUDIT OF S63\n   11: -----------------------"
+    },
+    {
+      "anchor_id": "prov_1026",
+      "anchor_type": "data_provenance",
+      "name": "linewidth_hierarchy",
+      "script_path": "session-64/s64_linewidth_hierarchy.py",
+      "session": "s64",
+      "inputs": "",
+      "outputs": "session-64/s64_linewidth_hierarchy.npz, session-64/s64_linewidth_hierarchy.png",
+      "source_file": "computations/session-64/s64_linewidth_hierarchy.py",
+      "source_context_30_lines": "   43: is kinematically immune to perturbation, reinforcing Gamma_{B2} minimal.\n   44: \n   45: Gate: LINEWIDTH-HIERARCHY-64\n   46:     PASS: Gamma_{B3} > Gamma_{B1} > Gamma_{B2}\n   47:     FAIL: Different ordering\n   48: \n   49: Input: s63_integ_break_fabric.npz, s64_sector_selective.npz, s54_ed_sweep.npz,\n   50:        s62_meissner_gge.npz, canonical_constants.py\n   51: Output: s64_linewidth_hierarchy.npz, s64_linewidth_hierarchy.png\n   52:         Section W3-C of session-64-results-workingpaper.md\n   53: \n   54: Session: S64 W3-C\n   55: Author: Quantum-Acoustics Theorist\n   56: \"\"\"\n   57: \n   58: import numpy as np\n   59: from scipy.linalg import eigh"
+    },
+    {
+      "anchor_id": "prov_1027",
+      "anchor_type": "data_provenance",
+      "name": "local_entangle",
+      "script_path": "session-64/s64_local_entangle.py",
+      "session": "s64",
+      "inputs": "",
+      "outputs": "session-64/s64_local_entangle.npz, session-64/s64_local_entangle.png",
+      "source_file": "computations/session-64/s64_local_entangle.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s64_local_entangle.py — Local Entanglement Entropy of GGE on CG(24) Fabric\n    4: ============================================================================\n    5: \n    6: Session 64, Gate: LOCAL-ENTANGLE-64\n    7:   INFO: Report S_ent value and scaling law.\n    8:         If S_ent = 0 → Jacobson Lambda = 0 (no entanglement contribution to CC).\n    9:         If S_ent > 0 → magnitude, area/volume scaling, connection to spectral action.\n   10: \n   11: Physics:"
+    },
+    {
+      "anchor_id": "prov_1028",
+      "anchor_type": "data_provenance",
+      "name": "mukhanov_sasaki",
+      "script_path": "session-64/s64_mukhanov_sasaki.py",
+      "session": "s64",
+      "inputs": "",
+      "outputs": "session-64/s64_mukhanov_sasaki.npz, session-64/s64_mukhanov_sasaki.png",
+      "source_file": "computations/session-64/s64_mukhanov_sasaki.py",
+      "source_context_30_lines": "  610: print(f\"from mode evolution. The M-S equation is the wrong tool for this system.\")\n  611: \n  612: # ============================================================================\n  613: #  SECTION 12: Save data\n  614: # ============================================================================\n  615: \n  616: print(f\"\\n--- Saving data ---\")\n  617: \n  618: outfile = os.path.join(os.path.dirname(__file__), 's64_mukhanov_sasaki.npz')\n  619: np.savez(outfile,\n  620:     # Mode equation results\n  621:     k_modes=k_modes,\n  622:     P_S=P_S,\n  623:     k_valid=k_valid,\n  624:     PS_valid=PS_valid,\n  625:     # Spectral index\n  626:     ns_exact=ns_exact,"
+    },
+    {
+      "anchor_id": "prov_1029",
+      "anchor_type": "data_provenance",
+      "name": "ne_selfconsist",
+      "script_path": "session-64/s64_ne_selfconsist.py",
+      "session": "s64",
+      "inputs": "",
+      "outputs": "session-64/s64_ne_selfconsist.npz, session-64/s64_ne_selfconsist.png",
+      "source_file": "computations/session-64/s64_ne_selfconsist.py",
+      "source_context_30_lines": "  560: # ============================================================================\n  561: #  12. SAVE DATA\n  562: # ============================================================================\n  563: \n  564: print(\"\\n\" + \"-\" * 72)\n  565: print(\"12. SAVING OUTPUT\")\n  566: print(\"-\" * 72)\n  567: \n  568: outpath = os.path.join(SCRIPT_DIR, 's64_ne_selfconsist.npz')\n  569: np.savez(\n  570:     outpath,\n  571:     # Primary result\n  572:     Ne_primary=Ne_primary,\n  573:     Ne_range_lo=Ne_range_lo,\n  574:     Ne_range_hi=Ne_range_hi,\n  575:     # All methods\n  576:     Ne_A_narrow=Ne_A_narrow,"
+    },
+    {
+      "anchor_id": "prov_1030",
+      "anchor_type": "data_provenance",
+      "name": "npair3_rg",
+      "script_path": "session-64/s64_npair3_rg.py",
+      "session": "s64",
+      "inputs": "",
+      "outputs": "session-64/s64_npair3_rg.npz, session-64/s64_npair3_rg.png",
+      "source_file": "computations/session-64/s64_npair3_rg.py",
+      "source_context_30_lines": "  760:     save_dict[f'{prefix}_r_RG_lifted_std'] = rl['r_RG_std']\n  761:     save_dict[f'{prefix}_r_full_lifted_mean'] = rl['r_full_mean']\n  762:     save_dict[f'{prefix}_r_full_lifted_std'] = rl['r_full_std']\n  763: \n  764: # Save perturbation norms\n  765: save_dict['norm_H_perp_over_H_RG'] = norm_H_perp / norm_H_RG\n  766: save_dict['norm_comm_over_H_RG2'] = norm_comm / norm_H_RG**2\n  767: \n  768: outpath = os.path.join(data_dir, 's64_npair3_rg.npz')\n  769: np.savez(outpath, **save_dict)\n  770: print(f\"  Saved: {outpath}\")\n  771: \n  772: # =====================================================================\n  773: #  13. PLOTTING\n  774: # =====================================================================\n  775: \n  776: print(\"\\n\" + \"=\" * 72)"
+    }
+  ]
+}

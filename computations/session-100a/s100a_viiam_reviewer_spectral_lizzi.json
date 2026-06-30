@@ -1,0 +1,81 @@
+{
+  "reviewer": "lizzi-spectral-functional-theorist",
+  "axis": "spectral-functional / NCG-axiomatic",
+  "theorem": "VII.AM",
+  "stage": "Stage-2 cross-axis independent verify (joint-theorem-promotion.md, extended to three axes)",
+  "entry_source": "sessions/permanent-results-registry.md lines 16700-16812 (STAGE-1-CANDIDATE entry, S88 W1b2-65)",
+  "clauses": {
+    "a": {
+      "verdict": "PASS",
+      "rationale": "FULL spectral audit, verified from first principles without workshop context. (1) Well-posedness on the spectral triple: a 'substrate eigenvalue-spectrum-reorganization region R subset (A_K, H_K, D_K)' is NCG-formalizable as a region projection/hereditary-subalgebra chi_R, with the trapping surface as the support locus of [D_K, chi_R]; 'mode-mixing rate diverges in the semiclassical limit' is the structurally correct FINITE-triple statement -- at every finite L_max all functionals are bounded (truncation regularizes the horizon), and the trapping surface is defined by the L-growth law of the mode-mixing rate, consistent with the Level-1 'holds at every L_max' claim. (2) Finite-area-on-spectral-metric: the Connes metric d_D(phi,psi) = sup{|phi(a)-psi(a)| : ||[D,a]|| <= 1} is built from (A,H,D) alone; the boundary-area functional is the NCG perimeter Tr|[D, chi_R]| (Dixmier-class at codimension 1). I verified the structural claim numerically on a truncated first-order spectral geometry: [D, chi_R] is (i) finite at every truncation, (ii) supported EXACTLY on the boundary locus, (iii) scales as codimension-1 (log-log slope 1.0000 vs Weyl prediction d-1=1 at d=2, with exact per-boundary-site area density 0.5), while bulk dim(H) scales as L^d. Pixelation = finite pixel count N_pix = A(dR)/(4 G_N) at every L_max -- exactly the quantity clause (b) consumes, so clauses (a)->(b) compose coherently. (3) Functional-pluralism audit (my signature test): the trigger statement involves ONLY the Connes metric, [D, chi_R] boundedness/boundary support, and finiteness of the perimeter functional -- no spectral-action weight f enters anywhere. The clause's spectral content is FUNCTIONAL-INDEPENDENT (the strongest status on my axis); only the area's normalization VALUE is scheme-dependent (HK vs zeta, 16*pi^2 at d=4), and the clause claims only finiteness/localization, not a value. (4) Provenance caveat (non-blocking): the J3 calibration anchor is the only one of the three anchors that is workshop-internal (Stage-0) with no on-disk verdict-line/constant pin quoted in-entry; my PASS rests on the first-principles structural verification above, with J3 taken as the entry's cited substrate-level Level-3 instance. The transit-dynamics half of the clause (lock invariance under cascade transit) is outside my axis and is the transit reviewer's to verify.",
+      "key_numbers": {
+        "codim1_loglog_slope": 1.0,
+        "weyl_prediction_d_minus_1": 1.0,
+        "per_boundary_site_area_density": 0.5,
+        "demo_truncations_L": [8, 12, 16, 20, 24],
+        "Tr_abs_commutator_at_L": [16.0, 24.0, 32.0, 40.0, 48.0],
+        "boundary_support_exact": true,
+        "spectral_action_weight_f_enters": false,
+        "functional_classification": "FUNCTIONAL-INDEPENDENT (finiteness/localization claim); area VALUE normalization SD (16*pi^2 HK-vs-zeta at d=4) but not claimed"
+      }
+    },
+    "b_spectral_half": {
+      "verdict": "PASS",
+      "rationale": "SPECTRAL HALF: well-definedness, dimensional consistency, and area-quantization tie of the bound Gamma_eff(R) = 1 - A(dR)/(4 G_N * A_universal). (1) Dimensional audit (natural units, [A(dR)]=L^2, [G_N]=L^2): of the two candidate readings of A_universal, 'A_universal an area (L^2)' gives X ~ L^-2 (INCONSISTENT), while 'A_universal dimensionless = count of 4*G_N area quanta' gives X dimensionless (CONSISTENT). Exactly ONE consistent reading exists, and the entry's own Element-3 bridge map (Bekenstein-Hawking S = A/(4 G_N), named explicitly) selects it: the deficit 1 - Gamma_eff = [A(dR)/(4 G_N)] / A_universal = N_pix(dR)/N_universal, the boundary's share of the universal area-quanta budget. Under this forced reading the bound is dimensionally coherent and Gamma_eff = 1 - X is well-formed. PROVISO (exposition hygiene, non-blocking): the phrase 'A_universal is the substrate-area normalization' under-specifies the dimension; Stage-3 text should pin A_universal explicitly as the dimensionless universal area count in 4*G_N quanta. (2) Area-quantization tie: 4*G_N IS the Bekenstein area quantum in the S = A/(4 G_N) identification; the denominator is (area quantum) x (universal count); the minimal nonzero deficit is one quantum, 1/A_universal -- the suppression is correctly quantized at the area-quantization scale as claimed. (3) Well-definedness on the spectral triple: the numerator A(dR) is finite by clause (a) (codimension-1 perimeter functional, verified), so the deficit is a well-defined finite ratio in (0,1) on the finite substrate; Gamma_eff < 1 is a finite-substrate (truncation) effect refining per the Level-2 envelope -- structurally consistent with spectral-geometry-with-cutoff behavior. (4) Functional-pluralism: the deficit is a RATIO of areas sharing one normalization, so the regularization-scheme factor cancels; G_N alone is scheme-dependent (f_2-weighted a_2 moment differs cutoff-vs-zeta) but enters only as the shared quantization unit -- the ratio is FUNCTIONAL-INDEPENDENT in form. (5) Arithmetic anchor: 1 - 0.99970 = 3.000000e-4, exact match to the registered correspondence (residual < 1e-12); evaluable Level-2 check passes (deficit 3e-4 < L_max^-alpha = 0.1 at L_max=10, alpha=1). (6) Registry-anatomy note (non-blocking): the Level-2 envelope sub-class (binding vs non-binding) is not declared -- a SUGGESTION-status discipline at landing time, not retroactively invalidating; the entry has the binding INGREDIENTS (named bridge map, defined continuum reference, relative-deviation envelope) and should declare Level-2-binding when alpha is pinned at the already-registered S89+ carry-forward. The dynamical pin of Gamma_eff itself (Volovik partition) is the transit reviewer's half; I reasoned only from the value as quoted in the registered entry text.",
+      "key_numbers": {
+        "Gamma_eff_quoted_in_entry": 0.9997,
+        "deficit_computed": 3.0e-4,
+        "deficit_registered": 3.0e-4,
+        "arithmetic_residual": 0.0,
+        "dimensional_readings_tested": 2,
+        "dimensional_readings_consistent": 1,
+        "unique_consistent_reading": "A_universal dimensionless (count of 4*G_N area quanta); denominator = universal area with 4*G_N the Bekenstein quantum",
+        "level2_check_L10_alpha1": "3e-4 < 0.1 PASS",
+        "functional_classification": "ratio FORM FI (scheme factor cancels top/bottom); G_N magnitude alone SD (f_2-weighted a_2) but enters only as shared unit"
+      }
+    },
+    "c_spectral_half": {
+      "verdict": "PASS",
+      "rationale": "SPECTRAL HALF: the substrate-IS half-spectrum-reorganization timescale and its registered lower bound. (1) Well-definedness: on the FINITE spectral triple the region R has a finite mode count, so 'half the spectrum reorganized' is exactly defined (better-posed on the truncated substrate than in any continuum) -- t_Page(R) as the substrate-IS half-spectrum-reorganization timescale is a legitimate spectral observable at every L_max. (2) Structural soundness of the lower bound t_Page(R) >= t_cascade-localization: a composition/ordering argument -- the half-reorganization clock of a LOCALIZED region cannot terminate before the cascade-localization that creates the region (and its trapping surface) completes; half-reorganization presupposes localization. Orderings of timescales computed from the same spectrum at the same truncation are truncation- and scheme-robust, consistent with the Level-1 'holds at every L_max' claim being carried by the ORDERING (magnitudes live at Level-3). The 'equivalently ... outside the immediate substrate observation window' restatement is internally coherent under the definitional identification window := [0, t_cascade-localization]. (3) Independent anchor verification: from the entry's OWN laboratory formula t_Page = (1/2) t_evap = (5120*pi/2) G^2 M^3/(hbar c^4) with CODATA G, hbar, c and the canonical knowledge-MCP pin t_universe_s = 4.35e17 s, I recompute t_Page(1e13 kg) = 4.205739e22 s and ratio = 9.668365e4 vs registered ratio_anchor = 9.6684e4 -- relative deviation 3.578e-6 (reproduced to quoted precision); log10 = 4.9854, so the '~5 OOM' tag is honest. (4) Convention robustness (my functional-sensitivity discipline applied to the time axis): under any Page-crossover convention f in {0.5 (entry), 0.54 (Page 1993 entropy-production), 0.6464 (naive half-entropy)} the ratio spans only [9.67e4, 1.25e5] -- the ~5-OOM verdict is convention-INVARIANT; the precise number is convention-dependent at O(1) and the entry properly pins f = 1/2 explicitly. (5) A-fortiori coherence of the exposition's denominator usage: Instance-3 text quotes the ratio against the 'substrate cascade window' while clause (c) and Level-3 quote it against t_universe; since any substrate cascade-localization timescale that has already completed satisfies t_casc-loc <= t_universe, t_Page >= 9.67e4 * t_universe implies t_Page >= 9.67e4 * t_casc-loc -- the inequality direction is safe and the registered bound is satisfied at the anchor with >= 4.99 OOM margin (vastly more against t_casc-loc proper). NON-BLOCKING NOTE for Stage-3 text: pin the ratio denominator explicitly as t_universe (the cascade-window phrasing in Instance 3 is a-fortiori-safe but loose). The laboratory-IN Page formula itself (Hawking evaporation derivation, Page 1993 crossover) is the semiclassical reviewer's half; I used it only as the entry-registered bridge image to reproduce the anchor number.",
+      "key_numbers": {
+        "M_anchor_kg": 1.0e13,
+        "t_evap_s": 8.411478e22,
+        "t_Page_s": 4.205739e22,
+        "t_universe_s_canonical_pin": 4.35e17,
+        "ratio_recomputed": 9.668365e4,
+        "ratio_registered": 9.6684e4,
+        "relative_deviation": 3.578e-6,
+        "log10_ratio": 4.9854,
+        "oom_tag_honest": true,
+        "convention_scan_ratio": {"f=0.5_entry": 9.6684e4, "f=0.54_Page1993": 1.0442e5, "f=0.6464_half_entropy": 1.25e5},
+        "verdict_convention_invariant": true,
+        "functional_classification": "ORDERING t_Page >= t_casc-loc is FI (same-spectrum timescale ordering, truncation-robust); ratio MAGNITUDE convention-dependent at O(1), verdict invariant"
+      }
+    }
+  },
+  "cross_clause_consistency": "The three clauses compose coherently on the spectral axis: (a) supplies finiteness of A(dR) via the codimension-1 perimeter functional; (b) consumes exactly that quantity as the 4*G_N-quantized pixel-count fraction; (c) supplies the timescale ordering for the reorganization the trigger localizes. The 3-level ladder is correctly stratified: Level-1 carries the regulator-invariant structural content (Connes-metric finiteness, ratio form, timescale ordering -- all FI), Level-2 carries the truncation envelope (alpha-pin honestly deferred by the entry's own text to the registered S89+ carry-forward), Level-3 carries the three anchors (S58 arithmetic exact; W1b2-64 ratio independently reproduced to 3.6e-6; J3 workshop-internal, structurally verified here from first principles).",
+  "non_blocking_notes_for_stage3_text": [
+    "Pin A_universal explicitly as the dimensionless universal area count in 4*G_N quanta (unique dimensionally consistent reading, currently implicit via Element-3 S = A/(4 G_N))",
+    "Declare the Level-2 envelope sub-class (Level-2-binding expected) when alpha is pinned at the S89+ L_max-scan carry-forward",
+    "Pin the clause-(c) ratio denominator as t_universe (Instance-3 'substrate cascade window' phrasing is a-fortiori-safe but conflates two scales)",
+    "Registry-PASS sentence 'ratio >> Level-2 envelope upper bound 1/alpha-scaled' is evaluable only for the S58/clause-(b) layer (3e-4 < 0.1 at L_max=10, alpha=1, PASS); the J3 and W1b2-64 layer comparisons are structural as registered -- consistent with the entry's self-declared PASS-CONDITIONAL status pending this Stage-2"
+  ],
+  "inputs_read": [
+    "sessions/permanent-results-registry.md lines 16700-16812 (§VII.AM STAGE-1-CANDIDATE entry -- sole theorem source)",
+    ".claude/rules/joint-theorem-promotion.md (Stage-2 protocol; in-context)",
+    ".claude/rules/cross-pillar-bridge-anatomy.md (3-level ladder + 5-anatomy; in-context)",
+    "knowledge MCP get_constant('t_universe_s') = 4.35e17 s (canonical pin for ratio verification)",
+    "CODATA G, hbar, c via scipy.constants (laboratory-formula constants for the entry-registered bridge image)",
+    "inline Python verification runs (3 parts: clause-b arithmetic/dimensions, clause-c anchor recompute + convention scan, clause-a codimension-1 perimeter scaling demo); no script/npz/plot files created per dispatch"
+  ],
+  "inputs_explicitly_not_read": [
+    "sessions/session-87/workshops/s87-pixelation-lock-hawking-transit.md (forbidden: workshop transcript)",
+    "S88 W1b2 session/working-paper files (forbidden: session files)",
+    "sessions/session-plan/*, sessions/session-100a/* plan documents (forbidden)",
+    "computations/session-88/s88_w1b2_page_time_cascade_tail.npz (semiclassical reviewer's exclusive input; substrate-input orthogonality)",
+    "canonical Gamma_effacement pin via canonical_constants.py or MCP (transit reviewer's exclusive primary anchor; reasoned only from the 0.99970 value quoted inside the registered entry text)",
+    "computations/s88_gate_verdicts.txt (anchor reasoned from in-entry quotation; ratio independently recomputed instead of re-read)"
+  ],
+  "reviewer_exclusion_attestation": "lizzi-spectral-functional-theorist is NOT a §VII.AM sponsor (sponsors: hawking-theorist, transit-dynamics-theorist, connes-ncg-theorist); the entry's own reviewer roster anticipates lizzi as the protocol-compliant spectral-axis alternative to the co-authoring connes-ncg-theorist. Reviewer memory contains no S87 pixelation-lock or S88 W1b2 reading-path entries (downstream-inheritance reach test passes).",
+  "no_workshop_context_attestation": true
+}

@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 167,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1661",
+      "anchor_type": "data_provenance",
+      "name": "w3_g43_litebird_sigma_nT_reach",
+      "script_path": "session-83/s83_w3_g43_litebird_sigma_nT_reach.py",
+      "session": "s83",
+      "inputs": "computations/session-66/s66_tensor_transfer.npz",
+      "outputs": "session-83/s83_w3_g43_litebird_sigma_nT_reach.npz, session-83/s83_w3_g43_litebird_sigma_nT_reach.png",
+      "source_file": "computations/session-83/s83_w3_g43_litebird_sigma_nT_reach.py",
+      "source_context_30_lines": "   34:   - Combined post-component-separation BB noise ≈ 2.16 μK-arcmin at 1 yr\n   35:   - Effective beam ~30 arcmin for tensor analysis (CMB-scale l<200)\n   36:   - f_sky = 0.7 after Galactic mask\n   37:   - Residual lensing ~50% after internal + Planck delensing\n   38: - l-range: 2–200 (tensor BB dominated by recombination bump l~80 + reion l<10)\n   39: \n   40: Outputs\n   41: -------\n   42: - computations/session-83/s83_w3_g43_litebird_sigma_nT_reach.npz\n   43: - computations/session-83/s83_w3_g43_litebird_sigma_nT_reach.png\n   44: - Verdict line appended to s83_gate_verdicts.txt\n   45: \"\"\"\n   46: import sys\n   47: import os\n   48: import hashlib\n   49: import json\n   50: "
+    },
+    {
+      "anchor_id": "prov_1662",
+      "anchor_type": "data_provenance",
+      "name": "w3_g44_cmb_s4_ccons",
+      "script_path": "session-83/s83_w3_g44_cmb_s4_ccons.py",
+      "session": "s83",
+      "inputs": "",
+      "outputs": "session-83/s83_w3_g44_cmb_s4_ccons.npz, session-83/s83_w3_g44_cmb_s4_ccons.png",
+      "source_file": "computations/session-83/s83_w3_g44_cmb_s4_ccons.py",
+      "source_context_30_lines": "  419: ax.clabel(CS, inline=True, fontsize=9, fmt='%.3f')\n  420: ax.set_xlabel('Integration time (years)')\n  421: ax.set_ylabel('f_sky')\n  422: ax.set_title('sigma(C_cons) heatmap (Nf=1.0)')\n  423: \n  424: fig.suptitle(f\"CMB-S4 sigma(C_cons) sensitivity — S83-W3-G44 — headline = {sigma_Ccons_headline:.4f} ({verdict})\",\n  425:              fontsize=11, y=1.02)\n  426: plt.tight_layout()\n  427: outpng = os.path.join(data_dir, 's83_w3_g44_cmb_s4_ccons.png')\n  428: plt.savefig(outpng, dpi=110, bbox_inches='tight')\n  429: print(f\"Plot written: {outpng}\")\n  430: \n  431: # =============================================================================\n  432: # SECTION 8: Closure SHA\n  433: # =============================================================================\n  434: # 4-tuple output tag:\n  435: output_tag = f\"(value={sigma_Ccons_headline:.6f}, scheme=Fisher-BB-joint-LB-S4, convention=Abazajian-2022-CMB-S4-SciBk, L_max=N/A)\""
+    },
+    {
+      "anchor_id": "prov_1663",
+      "anchor_type": "data_provenance",
+      "name": "w3_g45_ska_alpha_fnl",
+      "script_path": "session-83/s83_w3_g45_ska_alpha_fnl.py",
+      "session": "s83",
+      "inputs": "",
+      "outputs": "session-83/s83_w3_g45_ska_alpha_fnl.npz, session-83/s83_w3_g45_ska_alpha_fnl.png",
+      "source_file": "computations/session-83/s83_w3_g45_ska_alpha_fnl.py",
+      "source_context_30_lines": "  573:     'inputs': input_shas,\n  574:     's1_marginalized': f\"{s1:.6e}\",\n  575:     's2_marginalized': f\"{s2:.6e}\",\n  576:     'threshold_PASS': 10.0,\n  577:     'threshold_INFO': 20.0,\n  578:     'verdict': verdict,\n  579:     'scheme': 'SKA-21cm-bispectrum-Fisher',\n  580:     'convention': 'phase-2-full-survey',\n  581:     'script': 's83_w3_g45_ska_alpha_fnl.py',\n  582: }\n  583: closure_str = '|'.join(f\"{k}={v}\" for k, v in sorted(closure_map.items(), key=lambda x: x[0]))\n  584: closure_sha = hashlib.sha256(closure_str.encode('utf-8')).hexdigest()\n  585: \n  586: # 4-tuple tag\n  587: FOUR_TUPLE = (f\"value={s2:.4f}, scheme=SKA-21cm-bispectrum-Fisher, \"\n  588:               f\"convention=phase-2-full-survey, L_max=N/A\")\n  589: print(f\"\\n4-tuple: ({FOUR_TUPLE})\")"
+    },
+    {
+      "anchor_id": "prov_1664",
+      "anchor_type": "data_provenance",
+      "name": "w3_g46_tensor_transfer_k_transit_cmb",
+      "script_path": "session-83/s83_w3_g46_tensor_transfer_k_transit_cmb.py",
+      "session": "s83",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-83/s83_w3_g46_tensor_transfer_k_transit_cmb.py",
+      "source_context_30_lines": "  152: VERDICT_TXT = SCRIPT_DIR / \"s83_gate_verdicts.txt\"\n  153: S67_DATA = SCRIPT_DIR / \"s67_acoustic_tensor.npz\"                   # (local)\n  154: S64_EPS = SCRIPT_DIR / \"s64_epsilon_profile.npz\"                    # (local)\n  155: \n  156: INPUT_FILES = [\n  157:     SCRIPT_DIR / \"canonical_constants.py\",\n  158:     S67_DATA,\n  159:     S64_EPS,\n  160:     SCRIPT_DIR / \"s83_w3_g46_tensor_transfer_k_transit_cmb.py\",\n  161: ]\n  162: \n  163: # Pre-registered threshold (plan L2711, L2730, L2740)\n  164: R_BICEP_KECK_95CL = 0.036           # (local) BICEP/Keck 2021 95% CL upper bound\n  165: \n  166: # CMB horizon-exit tau for k_CMB modes (far from fold)\n  167: # S66 canonical: tau_CMB ~ 0.05 is the slow-roll sampling epoch for CMB modes\n  168: TAU_CMB_EXIT = 0.05                 # (local) CMB horizon-exit tau (S66 canon)"
+    },
+    {
+      "anchor_id": "prov_1665",
+      "anchor_type": "data_provenance",
+      "name": "w3_g47_sin2_thetaW_2loop_mu_BC",
+      "script_path": "session-83/s83_w3_g47_sin2_thetaW_2loop_mu_BC.py",
+      "session": "s83",
+      "inputs": "",
+      "outputs": "session-83/s83_w3_g47_sin2_thetaW_2loop_mu_BC.npz, session-83/s83_w3_g47_sin2_thetaW_2loop_mu_BC.png",
+      "source_file": "computations/session-83/s83_w3_g47_sin2_thetaW_2loop_mu_BC.py",
+      "source_context_30_lines": "  525: # SECTION 12: Closure SHA + 4-tuple emit\n  526: # =============================================================================\n  527: print()\n  528: print(\"-\" * 78)\n  529: print(\"[SEC 12] Closure SHA and 4-tuple emit\")\n  530: print(\"-\" * 78)\n  531: \n  532: closure_map = {                               # (local) ordered input-pin map\n  533:     'script': 's83_w3_g47_sin2_thetaW_2loop_mu_BC.py',\n  534:     'gate_id': 'S83-SIN2-THETA-W-2-LOOP-PLUS-MU-BC',\n  535:     'scheme': '2-loop-RGE-plus-mu_BC',\n  536:     'convention': 'PDG-0.23122',\n  537:     'L_max': 'N/A',\n  538:     'mu_BC_primary_GeV': float(mu_BC_mu_crit),\n  539:     'mu_BC_baseline_GeV': float(mu_BC_2MZ),\n  540:     'cubic_value_at_tau_fold': float(sin2_cubic_tau_fold),\n  541:     'sin2_MZ_pred_mucrit_2loop_gauge': float(sin2_mucrit_gauge),"
+    },
+    {
+      "anchor_id": "prov_1666",
+      "anchor_type": "data_provenance",
+      "name": "w3_g48_p_obs_aligned",
+      "script_path": "session-83/s83_w3_g48_p_obs_aligned.py",
+      "session": "s83",
+      "inputs": "",
+      "outputs": "session-83/s83_w3_g48_p_obs_aligned.npz, session-83/s83_w3_g48_p_obs_aligned.png",
+      "source_file": "computations/session-83/s83_w3_g48_p_obs_aligned.py",
+      "source_context_30_lines": "  320:     print(f\"          gate_status                       = {verdict}\")\n  321: \n  322:     # Closure SHA\n  323:     sha = closure_sha256(per_channel_new, P_new)\n  324:     print(f\"\\nClosure SHA-256: {sha}\")\n  325: \n  326:     # Save .npz + .png\n  327:     out_dir = Path(__file__).resolve().parent  # (local)\n  328:     npz_path = out_dir / \"s83_w3_g48_p_obs_aligned.npz\"  # (local)\n  329:     png_path = out_dir / \"s83_w3_g48_p_obs_aligned.png\"  # (local)\n  330: \n  331:     np.savez(\n  332:         npz_path,\n  333:         channels=np.array([n for (n, _, _) in CHANNEL_CATALOG_S80]),\n  334:         baseline_classes=np.array([c for (_, c, _) in CHANNEL_CATALOG_S80]),\n  335:         updated_classes=np.array(list(per_channel_new.values())),\n  336:         P_obs_aligned_baseline=np.float64(P_base),"
+    },
+    {
+      "anchor_id": "prov_1667",
+      "anchor_type": "data_provenance",
+      "name": "w3_g49_evoi_refresh",
+      "script_path": "session-83/s83_w3_g49_evoi_refresh.py",
+      "session": "s83",
+      "inputs": "",
+      "outputs": "session-83/s83_w3_g49_evoi_refresh.npz, session-83/s83_w3_g49_evoi_refresh.png, session-83/s83_w3_g49_evoi_refresh.txt",
+      "source_file": "computations/session-83/s83_w3_g49_evoi_refresh.py",
+      "source_context_30_lines": "   31:     Step 2 (S83 delta mapping -- stated per item in S83_IMPACTS below;\n   32:       each mapping cites the S83 verdict line from s83_gate_verdicts.txt).\n   33: \n   34:     Step 3 (simplify): compute EVOI_new directly.\n   35: \n   36:     Step 4 (direction): sort items by EVOI_new descending.\n   37: \n   38: Outputs:\n   39:     computations/session-83/s83_w3_g49_evoi_refresh.npz\n   40:     computations/session-83/s83_w3_g49_evoi_refresh.png\n   41:     computations/session-83/s83_w3_g49_evoi_refresh.txt (table markdown fragment)\n   42: \n   43: The refreshed table is also emitted as a markdown fragment for insertion\n   44: into sessions/evoi-framework.md under the \"S83 Stamp\" sub-header.\n   45: \"\"\"\n   46: \n   47: import os"
+    },
+    {
+      "anchor_id": "prov_1668",
+      "anchor_type": "data_provenance",
+      "name": "w3_g50_nT_bogoliubov",
+      "script_path": "session-83/s83_w3_g50_nT_bogoliubov.py",
+      "session": "s83",
+      "inputs": "",
+      "outputs": "session-83/s83_w3_g50_nT_bogoliubov.npz, session-83/s83_w3_g50_nT_bogoliubov.png",
+      "source_file": "computations/session-83/s83_w3_g50_nT_bogoliubov.py",
+      "source_context_30_lines": "  134: PROJECT_ROOT = SCRIPT_DIR.parent\n  135: \n  136: SESSION = \"S83\"                                                      # (local)\n  137: GATE_ID = \"S83-N_T-MAGNITUDE-FROM-BOGOLIUBOV\"                        # (local)\n  138: SCHEME = \"Bogoliubov-squeezing-at-fold\"                              # (local)\n  139: CONVENTION = \"d(ln|beta|^2)/d(ln k)\"                                 # (local)\n  140: L_MAX = \"N/A\"                                                        # (local)\n  141: \n  142: OUT_NPZ = SCRIPT_DIR / \"s83_w3_g50_nT_bogoliubov.npz\"                # (local)\n  143: OUT_PNG = SCRIPT_DIR / \"s83_w3_g50_nT_bogoliubov.png\"                # (local)\n  144: VERDICTS_FILE = SCRIPT_DIR / \"s83_gate_verdicts.txt\"                 # (local)\n  145: \n  146: CCONS_THRESHOLD = 0.033                                              # (local) task threshold\n  147: \n  148: # ---------------------------------------------------------------------------\n  149: # Section 4 -- Input pin SHA-256 map (recorded in verdict for audit)\n  150: # ---------------------------------------------------------------------------"
+    },
+    {
+      "anchor_id": "prov_1669",
+      "anchor_type": "data_provenance",
+      "name": "w3_g51_w0_regulator",
+      "script_path": "session-83/s83_w3_g51_w0_regulator.py",
+      "session": "s83",
+      "inputs": "",
+      "outputs": "session-83/s83_w3_g51_w0_regulator.npz, session-83/s83_w3_g51_w0_regulator.png",
+      "source_file": "computations/session-83/s83_w3_g51_w0_regulator.py",
+      "source_context_30_lines": "   89: \n   90:     PASS if |w_0(Zub) - (-0.918)| < 0.02\n   91:     INFO if 0.02 <= |w_0(Zub) - (-0.918)| < 0.05\n   92:     FAIL if |w_0(Zub) - (-0.918)| >= 0.05\n   93: \n   94:   Step 5 (Python verification): See Section 4 below.\n   95: \n   96: Outputs:\n   97:   - computations/session-83/s83_w3_g51_w0_regulator.npz\n   98:   - computations/session-83/s83_w3_g51_w0_regulator.png\n   99:   - Verdict line appended to computations/session-83/s83_gate_verdicts.txt\n  100: \"\"\"\n  101: \n  102: import os\n  103: # CPU fallback cap (prior to numpy import)\n  104: os.environ.setdefault('OMP_NUM_THREADS', '8')\n  105: os.environ.setdefault('MKL_NUM_THREADS', '8')"
+    },
+    {
+      "anchor_id": "prov_1670",
+      "anchor_type": "data_provenance",
+      "name": "w3_g52_channel5_relabel",
+      "script_path": "session-83/s83_w3_g52_channel5_relabel.py",
+      "session": "s83",
+      "inputs": "",
+      "outputs": "session-83/s83_w3_g52_channel5_relabel.npz, session-83/s83_w3_g52_channel5_relabel.png",
+      "source_file": "computations/session-83/s83_w3_g52_channel5_relabel.py",
+      "source_context_30_lines": "  214:     resolve_script(None, 'canonical_constants.py'),\n  215:     S82_SAGAN_FILE,\n  216:     S82_WP_FILE,\n  217:     S82_OOM_FILE,\n  218:     S83_PLAN_FILE,\n  219: ]\n  220: \n  221: # Output destinations\n  222: OUT_NPZ = resolve_output(83, 's83_w3_g52_channel5_relabel.npz')\n  223: OUT_PNG = resolve_output(83, 's83_w3_g52_channel5_relabel.png')\n  224: VERDICT_TXT = resolve_output(83, 's83_gate_verdicts.txt')\n  225: \n  226: # Per-route OOM floors at 1 mHz (from S82 V.F L2087; LISA sens ~1e-12)\n  227: OMEGA_GW_ALPHA_1MHZ = 4.235e-89                                  # (local) route-alpha instanton-mediated\n  228: OMEGA_GW_GAMMA_1MHZ = 1.800e-59                                  # (local) route-gamma gravity-only\n  229: LISA_SENSITIVITY_1MHZ = 1.0e-12                                  # (local) canonical LISA at 1 mHz\n  230: RATIO_GAMMA_OVER_ALPHA = OMEGA_GW_GAMMA_1MHZ / OMEGA_GW_ALPHA_1MHZ  # (local) = 4.25e29"
+    }
+  ]
+}

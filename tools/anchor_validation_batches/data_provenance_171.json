@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 171,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1701",
+      "anchor_type": "data_provenance",
+      "name": "w1b_alpha_s_pre_registration",
+      "script_path": "session-84/s84_w1b_alpha_s_pre_registration.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w1b_alpha_s_pre_registration.npz, session-84/s84_w1b_alpha_s_pre_registration.png",
+      "source_file": "computations/session-84/s84_w1b_alpha_s_pre_registration.py",
+      "source_context_30_lines": "   21:   independent spectral moments.\n   22: \n   23: This is an INFRASTRUCTURAL pre-registration: the script writes the payload\n   24: (JSON), the data vectors (NPZ), the visualization (PNG), and a verdict line\n   25: with dual SHA-256 closure. PASS-at-registration tolerance is THEOREM\n   26: (algebraic identity).\n   27: \n   28: Outputs (all in computations/_shared/):\n   29:   - s84_w1b_alpha_s_pre_registration.json   (SHA-pinned payload)\n   30:   - s84_w1b_alpha_s_pre_registration.npz    (n_s, alpha_s vectors, separations)\n   31:   - s84_w1b_alpha_s_pre_registration.png    (alpha_s(n_s) curve + bands)\n   32:   - verdict line appended to s84_gate_verdicts.txt\n   33:   - registry entry written to sessions/framework/permanent-results-registry.md\n   34:     under \"Event-driven pre-registrations\"\n   35: \n   36: Author: mack-cosmic-bridge (S84, 2026-04-19)\n   37: \"\"\""
+    },
+    {
+      "anchor_id": "prov_1702",
+      "anchor_type": "data_provenance",
+      "name": "w1b_dr3_response_protocol",
+      "script_path": "session-84/s84_w1b_dr3_response_protocol.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w1b_dr3_response_protocol.npz, session-84/s84_w1b_dr3_response_protocol.png",
+      "source_file": "computations/session-84/s84_w1b_dr3_response_protocol.py",
+      "source_context_30_lines": "  444: \n  445: # Sanity: content and audit SHAs MUST be distinct\n  446: assert CONTENT_SHA != AUDIT_SHA, \"Content and audit SHA collision -- payload pathological\"\n  447: \n  448: # ----------------------------------------------------------------------------\n  449: # Write JSON payload\n  450: # ----------------------------------------------------------------------------\n  451: \n  452: json_path = OUT_DIR / \"s84_w1b_dr3_response_protocol.json\"\n  453: with open(json_path, 'w', encoding='utf-8') as f:\n  454:     json.dump(payload, f, indent=2, sort_keys=False)\n  455: print(f\"[{GATE_ID}] JSON payload written: {json_path}\")\n  456: print(f\"[{GATE_ID}] content_sha256 = {CONTENT_SHA}\")\n  457: print(f\"[{GATE_ID}] audit_sha256   = {AUDIT_SHA}\")\n  458: \n  459: # ----------------------------------------------------------------------------\n  460: # Write NPZ (cov matrix + rectangle corners + framework point + DR3 pin)"
+    },
+    {
+      "anchor_id": "prov_1703",
+      "anchor_type": "data_provenance",
+      "name": "w1b_mu_bc_geometric",
+      "script_path": "session-84/s84_w1b_mu_bc_geometric.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w1b_mu_bc_geometric.npz, session-84/s84_w1b_mu_bc_geometric.png",
+      "source_file": "computations/session-84/s84_w1b_mu_bc_geometric.py",
+      "source_context_30_lines": "  675: # ==========================================================================\n  676: # Section 12 -- write artifacts (.npz, .json, .png)\n  677: # ==========================================================================\n  678: print(\"=\" * 78)\n  679: print(\"Writing artifacts\")\n  680: print(\"=\" * 78)\n  681: \n  682: # .npz\n  683: npz_path = _HERE / \"s84_w1b_mu_bc_geometric.npz\"\n  684: np.savez(\n  685:     str(npz_path),\n  686:     F_fold=F_fold,\n  687:     F_fold_residual=F_fold_residual,\n  688:     mu_BC_K3=mu_BC_K3,\n  689:     mu_BC_PRIMARY_S83=mu_BC_PRIMARY_S83,\n  690:     mu_BC_CHK1_S83=mu_BC_CHK1_S83,\n  691:     residual_A_PRIMARY_pct=residual_A_PRIMARY,"
+    },
+    {
+      "anchor_id": "prov_1704",
+      "anchor_type": "data_provenance",
+      "name": "w1b_theorem_registration",
+      "script_path": "session-84/s84_w1b_theorem_registration.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-84/s84_w1b_theorem_registration.py",
+      "source_context_30_lines": "    7: Theorems registered:\n    8:   T1. W2-EPOCH-GATING — F_3PI(N_transit) = F_3PI(N_pivot) up to delta_sat = 1/r_max.\n    9:   T2. W2-HARMONIC-NOT-INSTANTON — S_harm = 0.203 is Gaussian quadratic measure,\n   10:        NOT WKB tunneling action.\n   11: \n   12: Tasks:\n   13:   1. Assemble theorem payloads (statements, proof sketches, anchors, scope, structural position)\n   14:   2. Compute dual SHA-256 (content_sha256 + audit_sha256) for each\n   15:   3. Serialize to JSON payload at computations/session-84/s84_w1b_theorem_registration.json\n   16:   4. Print verdict line for s84_gate_verdicts.txt (dual-SHA, full 64-char each)\n   17:   5. Print closure SHA-256 of the input-pin map\n   18: \n   19: NO numpy/scipy needed; pure stdlib. CPU scalar.\n   20: \"\"\"\n   21: \n   22: from __future__ import annotations\n   23: "
+    },
+    {
+      "anchor_id": "prov_1705",
+      "anchor_type": "data_provenance",
+      "name": "w2a_l1_l2_projection",
+      "script_path": "session-84/s84_w2a_l1_l2_projection.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w2a_l1_l2_projection.npz, session-84/s84_w2a_l1_l2_projection.png",
+      "source_file": "computations/session-84/s84_w2a_l1_l2_projection.py",
+      "source_context_30_lines": "   72:     if not Path(path).exists():\n   73:         return \"FILE_MISSING\"\n   74:     with open(path, 'rb') as f:\n   75:         return hashlib.sha256(f.read()).hexdigest()\n   76: \n   77: INPUT_PINS = {\n   78:     \"spectrum_cache\":  SCRIPT_DIR / \"s74_spectrum_cache_L9_tau019.npz\",\n   79:     \"canonical_const\": SCRIPT_DIR / \"canonical_constants.py\",\n   80:     \"self_script\":     SCRIPT_DIR / \"s84_w2a_l1_l2_projection.py\",\n   81:     # Anchor verdict SHAs (from S83 / S82 verdict files)\n   82:     \"anchor_W1_G1_sha\":  \"227a591307f88d2cfdb1c505c6ab4a040f873db4656116c5948ae7ba3c96dcdd\",\n   83:     \"anchor_W1_G3_sha\":  \"2343920a4c2a807a26bb9740ad6ede1c9d3465bb722d548dbefa978578c99ab5\",\n   84:     \"anchor_G46_sha\":    \"e6926a04356c97424dad1f7e95420d31aa9eac8b3caa8afb5f8674395df1c765\",\n   85:     \"anchor_G51_sha\":    \"224b7b5648f5fdf2dfe2f0ff6c1733dfcdb260d2d5515dbc9307fcee43768d07\",\n   86:     \"anchor_S82_AS_sha\": \"25c3643f7c0c2e949d3d7617957a3cb384e443ba313ec1df359fab1bc2fdbaea\",\n   87:     \"anchor_S82_FIRAS_sha\": \"dea8a6c73b961acb72ce9122b7306226aadd9d6b319e3b904e1956d68026b7ed\",\n   88: }"
+    },
+    {
+      "anchor_id": "prov_1706",
+      "anchor_type": "data_provenance",
+      "name": "w2a_layer_ordering_falsifier",
+      "script_path": "session-84/s84_w2a_layer_ordering_falsifier.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w2a_layer_ordering_falsifier.npz, session-84/s84_w2a_layer_ordering_falsifier.png",
+      "source_file": "computations/session-84/s84_w2a_layer_ordering_falsifier.py",
+      "source_context_30_lines": "  801: print(f\"  CC2 PASS: {CC2_pass}\")\n  802: print(f\"  CC3 PASS: {CC3_pass}\")\n  803: \n  804: # ------------------------------------------------------------------\n  805: # 8. Save artifacts\n  806: # ------------------------------------------------------------------\n  807: \n  808: OUT_DIR = _here\n  809: npz_path = OUT_DIR / \"s84_w2a_layer_ordering_falsifier.npz\"\n  810: png_path = OUT_DIR / \"s84_w2a_layer_ordering_falsifier.png\"\n  811: log_path = OUT_DIR / \"s84_w2a_layer_ordering_falsifier.log\"\n  812: summary_path = OUT_DIR / \"s84_w2a_layer_ordering_falsifier_summary.md\"\n  813: \n  814: # Build per-regulator truth table arrays for npz: shape (4 families, 5 regs, 4 booleans)\n  815: # booleans = (passes_i, passes_ii, passes_iii, passes_all)\n  816: truth_table = np.zeros((4, 5, 4), dtype=np.int8)  # (local) audit array\n  817: chi_table = np.zeros((4, 5), dtype=np.float64)  # (local) χ values per (fam, reg)"
+    },
+    {
+      "anchor_id": "prov_1707",
+      "anchor_type": "data_provenance",
+      "name": "w2a_layer_pin_registry_landing",
+      "script_path": "session-84/s84_w2a_layer_pin_registry_landing.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w2a_layer_pin_registry_landing.npz",
+      "source_file": "computations/session-84/s84_w2a_layer_pin_registry_landing.py",
+      "source_context_30_lines": "  187: ANCHOR_G58_SHA = (\n  188:     \"b941613aa8ae91fcebf4ecadb0da74ad37d9382c7cbd2413a14f9b91729d24f2\"\n  189: )                                                                    # (local) meta-principle\n  190: ANCHOR_G62_SHA = (\n  191:     \"711a0be75ff7cebba2651e2c7fe9bf181d48421cccf7b82227bcad160d13d1ac\"\n  192: )                                                                    # (local) Cartan VII.J\n  193: \n  194: # Output destinations\n  195: OUT_NPZ = resolve_output(84, 's84_w2a_layer_pin_registry_landing.npz')\n  196: OUT_PNG = resolve_output(84, 's84_w2a_layer_pin_histogram.png')\n  197: OUT_LOG = resolve_output(84, 's84_w2a_layer_pin_registry_landing.log')\n  198: OUT_BLOCK_MD = resolve_script(84, 's84_w2a_layer_pin_atlas_block.md')\n  199: VERDICT_TXT = resolve_output(84, 's84_gate_verdicts.txt')\n  200: \n  201: # Input files (registry, atlas source, S83 anchors, canonical_constants)\n  202: ATLAS_SRC = (\n  203:     SESSIONS_DIR"
+    },
+    {
+      "anchor_id": "prov_1708",
+      "anchor_type": "data_provenance",
+      "name": "w2a_vii_m_landing",
+      "script_path": "session-84/s84_w2a_vii_m_landing.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-84/s84_w2a_vii_m_landing.py",
+      "source_context_30_lines": "   27:   (2) Verify each anchor SHA is full 64-char hexdigest (reject on shorter).\n   28:   (3) Inspect sessions/permanent-results-registry.md: check §VII.M slot.\n   29:       If occupied, route landing to next available §VII.<next-letter> slot\n   30:       and flag FAIL-with-remediation per plan §9 (§VII.M-occupied FAIL clause)\n   31:       while preserving theorem content.\n   32:   (4) Render the full §VII.M theorem landing block (complete text, all three\n   33:       layer statements, corollaries, three-solo convergence attribution).\n   34:   (5) Compute landing-block SHA-256 and overall closure SHA from ordered pin-map.\n   35:   (6) Write landing block to s84_w2a_vii_m_landing_block.md.\n   36:   (7) Emit verdict line (PASS / FAIL) to log.\n   37: \n   38: Environment:\n   39:   Python: \"phonon-exflation-sim/.venv312/Scripts/python.exe\"\n   40:   from canonical_constants import *  (MANDATORY)\n   41:   GPU not required (string + SHA operations).\n   42: \"\"\"\n   43: "
+    },
+    {
+      "anchor_id": "prov_1709",
+      "anchor_type": "data_provenance",
+      "name": "w2b_l1_l2_cocycle_census",
+      "script_path": "session-84/s84_w2b_l1_l2_cocycle_census.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w2b_l1_l2_cocycle_census.npz, session-84/s84_w2b_l1_l2_cocycle_census.md",
+      "source_file": "computations/session-84/s84_w2b_l1_l2_cocycle_census.py",
+      "source_context_30_lines": "   83:           substrate-action evaluation to produce a finite number?\n   84:           (Two sub-tests: continuum-limit divergence, finite-L_max\n   85:           convergence.)\n   86:   Step 4  Layer assignment with substrate-reason.\n   87:   Step 5  Cross-check: R-protection consistency.\n   88: \n   89: Outputs\n   90: -------\n   91: - s84_w2b_l1_l2_cocycle_census.npz   (53-row classification table)\n   92: - s84_w2b_l1_l2_cocycle_census.md    (per-row reason citation)\n   93: - Verdict line appended to s84_gate_verdicts.txt\n   94: \n   95: Author: connes-ncg-theorist, S84 W2b\n   96: Date  : 2026-04-19\n   97: \"\"\"\n   98: \n   99: from __future__ import annotations"
+    },
+    {
+      "anchor_id": "prov_1710",
+      "anchor_type": "data_provenance",
+      "name": "w2b_mp_layer_audit",
+      "script_path": "session-84/s84_w2b_mp_layer_audit.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w2b_mp_layer_audit.npz, session-84/s84_w2b_mp_layer_audit.md",
+      "source_file": "computations/session-84/s84_w2b_mp_layer_audit.py",
+      "source_context_30_lines": "  825: )\n  826: print(f\"Closure SHA-256 (64 chars): {closure_sha}\")\n  827: print(f\"Verdict line: {verdict_line}\")\n  828: print()\n  829: \n  830: # ============================================================\n  831: # SECTION 11: Save .npz\n  832: # ============================================================\n  833: out_npz = HERE / 's84_w2b_mp_layer_audit.npz'                    # (local)\n  834: \n  835: # Build flat arrays for storage\n  836: regulator_names = list(REGULATORS.keys())                        # (local)\n  837: cell_matrix = np.zeros((5, 3), dtype=np.int8)                    # (local) 5 regs x 3 cells, 1=occupied\n  838: cells = ['L1-admissible', 'L2-admissible', 'inadmissible-everywhere']  # (local)\n  839: for i, name in enumerate(regulator_names):\n  840:     pc = CELL_TABLE[name]['primary_cell']\n  841:     j = cells.index(pc)"
+    }
+  ]
+}

@@ -179,20 +179,20 @@ You are computing the single most important quantity remaining in the phonon-exf
 - **BONUS**: tau* within 10% of tau_fold = 0.190
 
 **Input files**:
-- `tier0-computation/s43_qtheory_selftune.npz`
-- `tier0-computation/s44_tracelog_cc.npz`
-- `tier0-computation/s44_eih_grav.npz`
-- `tier0-computation/s42_hauser_feshbach.npz`
-- `tier0-computation/s41_spectral_refinement.npz`
-- `tier0-computation/s42_constants_snapshot.npz`
-- `tier0-computation/canonical_constants.py`
+- `computations/s43_qtheory_selftune.npz`
+- `computations/s44_tracelog_cc.npz`
+- `computations/s44_eih_grav.npz`
+- `computations/s42_hauser_feshbach.npz`
+- `computations/s41_spectral_refinement.npz`
+- `computations/s42_constants_snapshot.npz`
+- `computations/canonical_constants.py`
 - `researchers/Volovik/15_2009_Volovik_Topology_Vacuum_Energy.md`
 - `researchers/Volovik/16_2008_Volovik_q_Theory_Cosmological_Constant.md`
 
 **Output files**:
-- Script: `tier0-computation/s45_qtheory_kk.py`
-- Data: `tier0-computation/s45_qtheory_kk.npz`
-- Plot: `tier0-computation/s45_qtheory_kk.png`
+- Script: `computations/s45_qtheory_kk.py`
+- Data: `computations/s45_qtheory_kk.npz`
+- Plot: `computations/s45_qtheory_kk.png`
 
 **Working paper section**: W1-R
 
@@ -200,7 +200,7 @@ You are computing the single most important quantity remaining in the phonon-exf
 - Independent Gibbs-Duhem verification at tau*
 - Check whether the zero-crossing is an artifact of the singlet projection
 - Test the Carlip foam mechanism as an alternative route to rho = 0
-- Report: `tier0-computation/s45_qtheory_kk_crosscheck.py`
+- Report: `computations/s45_qtheory_kk_crosscheck.py`
 
 ---
 
@@ -217,7 +217,7 @@ Compute alpha_eff from the 8-temperature GGE for DM/DE ratio. S44 W6-4 found bes
 
 **Gate ALPHA-EFF-45**: PASS if alpha_eff in [0.3, 0.5]. FAIL if alpha_eff > 2.0. INFO if computed but model-dependent.
 
-**Input files**: `tier0-computation/s44_multi_t_jacobson.npz`, `tier0-computation/s42_gge_energy.npz`, `tier0-computation/s44_dm_de_ratio.npz`
+**Input files**: `computations/s44_multi_t_jacobson.npz`, `computations/s42_gge_energy.npz`, `computations/s44_dm_de_ratio.npz`
 **Output**: Script `s45_alpha_eff.py`, Data `.npz`, Plot `.png`
 **Working paper section**: W2-R1
 
@@ -241,7 +241,7 @@ The S44 master synthesis Section VI identified a critical gap: "the unexpanded s
 
 **Gate UNEXPANDED-SA-45**: INFO (does the full functional contain CC information the expansion discards?). PASS if any O(1)-width f produces f_4/f_2 < 10^{-50}. FAIL if polynomial expansion captures all content.
 
-**Input files**: `tier0-computation/s42_hauser_feshbach.npz`, `tier0-computation/s41_spectral_refinement.npz`
+**Input files**: `computations/s42_hauser_feshbach.npz`, `computations/s41_spectral_refinement.npz`
 **Output**: Script `s45_unexpanded_sa.py`, Data `.npz`
 **Working paper section**: W2-R2
 
@@ -257,7 +257,7 @@ Compute the Ray-Singer analytic torsion T(SU(3), g_fold). The post-transit CC is
 
 **Gate ANALYTIC-TORSION-45**: PASS if log10(T) < -50. FAIL if T = O(1). INFO if computed but interpretation unclear.
 
-**Input files**: `tier0-computation/s42_hauser_feshbach.npz`, `tier0-computation/s41_spectral_refinement.npz`
+**Input files**: `computations/s42_hauser_feshbach.npz`, `computations/s41_spectral_refinement.npz`
 **Output**: Script `s45_analytic_torsion.py`, Data `.npz`, Plot `.png`
 **Working paper section**: W2-R3
 
@@ -304,7 +304,7 @@ S44 W2-2 found n_s = 0.961 at sigma = 1.10 but sigma is unfixed. With all three 
 
 **Gate SIGMA-SELECT-45**: PASS if self-consistent sigma yields n_s in [0.955, 0.975]. FAIL if no fixed point. INFO if sigma found but n_s outside window.
 
-**Input files**: `tier0-computation/s44_dimflow.npz`, `tier0-computation/s42_constants_snapshot.npz`
+**Input files**: `computations/s44_dimflow.npz`, `computations/s42_constants_snapshot.npz`
 **Output**: Script `s45_sigma_select.py`
 **Working paper section**: W3-R1
 
@@ -319,7 +319,7 @@ S44 W7-1 confirmed 0.83-decade M_KK tension is real and Vol-independent. Definit
 
 **Gate MKK-TENSION-45**: PASS if tension < 0.2 decades. FAIL if structural. INFO if partial.
 
-**Input files**: `tier0-computation/s44_mkk_reconcile.npz`, `tier0-computation/s44_constants_corrected.npz`
+**Input files**: `computations/s44_mkk_reconcile.npz`, `computations/s44_constants_corrected.npz`
 **Output**: Script `s45_mkk_tension.py`, Data `.npz`
 **Working paper section**: W3-R2
 
@@ -349,7 +349,7 @@ Fine scan at 20 tau values in [0.19, 0.21]. Track T3-T5 trajectories: do they CR
 
 **Gate DOS-FINE-SCAN-45**: INFO (structural diagnostic).
 
-**Input files**: `tier0-computation/s44_vanhove_track.npz`, `tier0-computation/tier1_dirac_spectrum.py`
+**Input files**: `computations/s44_vanhove_track.npz`, `computations/dirac_spectrum.py`
 **Output**: Script `s45_dos_fine_scan.py`, Data `.npz`, Plot `.png`
 **Working paper section**: W3-R4
 
@@ -542,8 +542,8 @@ Evaluate ALL S45 results. W1 FAIL-FAIL already establishes P in 3-8% range. If q
 1. ALL physics agents use opus
 2. Script prefix: `s45_`
 3. Python: `"phonon-exflation-sim/.venv312/Scripts/python.exe"`
-4. Output directory: `tier0-computation/`
+4. Output directory: `computations/`
 5. Working paper: `sessions/session-45/session-45-results-workingpaper.md`
-6. Import constants from `tier0-computation/canonical_constants.py`
+6. Import constants from `computations/canonical_constants.py`
 7. Formula audit protocol mandatory (S44 Section VII, #7)
 8. Path quoting: ALL bash paths with "Ainulindale Exflation" double-quoted

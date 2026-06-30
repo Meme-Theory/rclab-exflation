@@ -1,157 +1,85 @@
 # Schwarzschild-Penrose-Geometer: Agent Memory
 
-## Active Context
-
-### Epistemic Rules
-- No probability estimation (only Sagan). State structural facts.
-- Constraints, not closes: each closure = Constraint / Implication / Surviving space.
+## 1. Epistemic Rules
+- No probability estimation. State structural facts (constraints / implications / surviving space).
 - Pre-registered gates only. Bookkeeping is reference, not argument.
+- Penrose diagrams: use `/penrose-diagram` skill for canonical TikZ output. Save to `figures/penrose/` or session-figures dir.
+- Definitive Penrose diagrams: `sessions/framework/Phononic-Penrose-Diagrams.md` (canonical set). [path corrected S95-equation-collab; was mis-cited as Penrose-Diagrams.md]
 
-### Mechanism Chain Status (Post-48) -- 37 CLOSURES
-Chain links PASS individually: I-1, RPA(chi=20.43), Turing(W=1.9-3.2x), Wall(rho=14.02), BCS(M_max=[1.351,1.674])
-- 37 mechanisms closed (10 new in S48). No equilibrium tau-stabilization or Goldstone mass.
-- Transit is ballistic, classical (sigma_ZP=0.026, M_ATDHFB=1.695=0.34x G_mod).
-- Post-transit: GGE (S=3.54 bits), Leggett modes (0.070, 0.107 M_KK), N_pair=1 exact.
-
-### Modulus Space Organizational Diagram (reclassified S44)
+## 2. Modulus Space Organizational Diagram
 ```
-tau->inf: Curvature singularity K~exp(4tau) (censored by BCS at 0.22)
-  - Direction-dependent: TIMELIKE in SU(2), SPACELIKE in C2/U(1) [S49]
-tau=1.382: NEC violation boundary (C2 Ricci eigenvalue = 0) [CORRECTED S49, was 0.78]
-tau~0.537: GEOMETRIC PHASE TRANSITION (deg-4 C^2 sectional K crosses zero) [S48]
-  - SPACELIKE boundary, topology change of positive curvature cone [S49]
-tau~0.35: BCS well (Jensen SADDLE, true min off-Jensen)
-tau~0.285: DNP crossing
-tau~0.22: POST-TRANSIT FREEZE (physical universe lives here) [S49]
-tau~0.19: DUMP POINT (B2 min, K=0.535, |C|^2=0.386, NEC HOLDS)
-tau=0: Round metric (K=0.5, |C|^2=5/14, NEC HOLDS, WCH minimum)
+tau->inf: K~exp(4tau) singularity. Direction-dependent: TIMELIKE in SU(2), SPACELIKE in C2/U(1) [S49]
+tau=1.614:  OVERSHOOT TURNAROUND (K=53.35, |C|^2=35.07, R=12.76, cond=636, Type D static) [S77]
+tau=1.382:  NEC violation boundary (C2 Ricci=0)
+tau=1.340:  Weyl eig re-zero (branch 27)
+tau~0.895:  Weyl eig zero-crossing (branch 27); signature change on Lambda^2 (NOT Petrov) [S52]
+tau~0.537:  GEOMETRIC PHASE TRANSITION (C^2 sectional K=0). CMPP Type D FRAGILE under eps=0.01 perturbation
+tau~0.35:   BCS well (Jensen SADDLE; true min off-Jensen)
+tau~0.285:  DNP crossing
+tau~0.22:   POST-TRANSIT FREEZE (physical universe)
+tau~0.19:   DUMP POINT (B2 min, K=0.535, |C|^2=0.386, NEC HOLDS)
+tau=0:      Round metric (K=0.5, |C|^2=5/14, NEC HOLDS, WCH minimum)
 ```
 
-### SP Structural Theorems (Proven)
-- Block-diagonality = Birkhoff rigidity (left-invariance -> block-diagonal)
-- Constant-ratio trap = Weyl's law (F/B=0.55)
-- Clock constraint = cosmic censorship (frozen modulus hides internal dynamics)
-- L-3 PET isomorphic to Penrose 1965 singularity theorem
-- BCS transition = "horizon" in modulus space; CDL INAPPLICABLE (V_eff monotone)
-- WCH consistent: tau=0 minimal |C|^2, monotone increase confirmed through tau=2.0 [S49 extended]
-- Dump point = extremal horizon (T_H=0, kappa=0, BPS saturation)
-- Petrov D -> II at dump; K(tau) monotonic K'>0 all tau>0
-- Geodesic completeness through walls; Wall = Jacobi geodesic = spectral lens
-- **Trace theorem** = Birkhoff uniqueness (S[UDU^dag]=S[D], any U,D,f) [S48]
-- **Transversality theorem**: TT dim jumps 35->31 at tau=0+ (4 C^2 constraints activate) [S48]
-- **Jensen line topologically trivial**: Berry curv=0, holonomy=0, Zak pi=artifact [S48, retracts S46]
+## 3. Critical Theorems & Constants
 
-### Session 48 Key Results
-- TT-LICH-48 PASS: 31 modes, all positive, lambda_min=+0.322 (local max at fold), hard/soft=1.23
-- GOLDSTONE-MASS-48 FAIL: Trace theorem permanent. Spectral action blind to U(1)_7 phase.
-- Q-THEORY-GOLD-48 FAIL: Self-tuning runaway (no finite fixed point). m=0 or m=inf only.
-- DISSOLUTION-48 FAIL: 0/10 pi-phases survive at eps=1e-4. S46 Zak RETRACTED.
-- Geometric phase transition: tau=0.537, negative curvature onset. Precursor to NEC violation at 0.78.
-- Analog horizons: Mach_max=54.3 on T^2, kappa=414, T_H=66 M_KK. Subsonic tau-direction.
-- Leggett mode: omega_L1=0.070 M_KK (sharp, below pair-breaking). Lowest BCS excitation.
-- Swampland PASS: c_max=52.8>>O(1). Permanent structural result.
-- SAKHAROV-GN-48 FAIL: 0.354 OOM gap, 6 milli-OOM from curvature. a_0 species-counting locked.
-- alpha_s = -0.038 (N=32 lattice), 4.9 sigma from Planck. Structural O-Z prediction.
-- w_0 band [-0.465,-0.589], 2.8 sigma from DESI DR2.
-- 10 closures this session (see session-48-detail.md)
+### Structural Theorems (Proven; Geometric Analogs)
+- Block-diagonality = Birkhoff rigidity | Constant-ratio trap = Weyl's law (F/B=0.55)
+- Clock constraint = cosmic censorship | L-3 PET isomorphic to Penrose 1965
+- BCS = "horizon" in modulus space (CDL INAPPLICABLE) | WCH: tau=0 minimal |C|^2, monotone
+- Dump = extremal horizon (kappa=0, T_H=0) | Petrov D->II at dump; K(tau) monotonic
+- Trace theorem = Birkhoff uniqueness [S48] | TT 35->31 at tau=0+ [S48] | Jensen line topologically trivial
+- Off-Jensen gradient=0: Schur's lemma [S69] | Petrov type BCS-invariant [S69]
+- 35D off-Jensen Hessian ALL NEGATIVE [-148.69, -17.35]: Jensen = maximal ridge [S76]
+- NP Psi_2-only (4D) = Type D all cases [S70] | bw+/-1=0 from diagonal K
+- Acoustic |Psi_4/Psi_2|=2739 = radiative white hole [S70]
+- CS moment bound F_0*F_2>=F_1^2 [S62] | Sigma monotonicity | CC monotonicity
+- CMPP TRANSIT-INVARIANT [S76,S77,S84-W8B-95]: Static D, Dynamic G at 8 tau pts. Permanent #50.
+- Volume-preserving Jensen = no trapped surfaces [S49] | 12D trapped surface STRUCTURALLY impossible [S63]
+- 12D SINGULARITY CENSOR [S95-W4-5 PASS]: exact 12D product ds2=-dt2+a(t)2dx3^2+g_ab(tau)dy^a dy^b (Bianchi-I/Kasner). LIFTS CONFORMAL-TRANSITION-49 + COSMIC-CENSORSHIP-49 fiber->full-spacetime. K12~e^{4tau} (slope 3.99999). Per-block conformal dist: SU(2)->inf TIMELIKE i+; C2=2*sqrt(5/3)=2.581989, U(1)=sqrt(5/3)=1.290994 SPACELIKE r=0 (Sage-exact, match S49 <1e-9). 12D-null-cone NEC = INTRINSIC fiber Ric_min(tau) [NOT kinetic rho+p]; Ric_min(0.19)=+0.230021, crosses 0 at tau=1.3831=tau_NEC. Censoring barrier tau=0.19143 (modulus blocked << tau_NEC). Weak-cosmic-censorship (Penrose 1965 analog) on 12D metric. LESSON: 12D NEC = block-diagonal product Ricci, fiber Ric_min DOMINANT; warping W~tau_dot^2 subdominant at substrate Mach 13.75 (NOT raw-potential free-fall Mach 10^7).
 
-### Sessions 39-45 Key Results (consolidated)
-- S39: FRIED-39 FAIL (26th), dwell=3e-4. N_pair=1 exact. GGE thermalizes ~6 nat units.
-- S40: HESS-40 FAIL (27th), 28D min H=+1572. T_acoustic=0.993 T_Gibbs. GSL v_min=0.
-- S44: Sakharov G_N 0.36 OOM. r=3.86e-10 PASS. CDM-CONSTRUCT PASS. 7 closures.
-- S45: KRETSCHNER-12D: K_internal(fold)=0.535, K'(0)=0 (Schur), sub-Planckian by 9 orders.
-- S45: eps_V=0.0162 (flat!) vs eps_H=3.0 (ballistic). No QNM trapping (z''/z<0).
-- See [session-detail.md](session-detail.md) for S28-S36 consolidated numbers.
-
-### Open Questions (Updated Post-49, CONFORMAL-TRANSITION)
-1. ~~Conformal structure at tau=0.537~~ **RESOLVED S49**: Spacelike, pos-K cone topology change
-2. ~~Trapped surfaces in analog acoustic metric~~ **RESOLVED S49**: No. phi=0, static spacetime.
-3. ~~Gauss-Codazzi K_cross at tau=0.537~~ **RESOLVED S49 W1-K**: K_cross=-4983 (1.76x fold), K_ab continuous, no junction
-4. ~~Transit overshoot past 0.537~~ **RESOLVED S49 W1-P**: COMPUTED. tau_max=0.088 (free from 0), 0.218 (free from fold). Energy deficit 6426%. v_crit=219 (8.3x). TRIPLE CENSORSHIP.
-5. ~~Higher-D CMPP classification at tau=0.537~~ **RESOLVED S50 W1-G**: 12D Lorentzian = EXACT Type D (all tau). S49 Type II was Riemannian signature artifact. Dynamic (tau_dot>0) = Type G. No type change at 0.537.
-6. ~~Non-left-invariant TT modes stability~~ **RESOLVED S49 W1-R**: PASS. All positive [0, 0.78]. min=1.047 at fold.
-7. Leggett mode as QNM of Lichnerowicz operator
-8. Petrov type at g_FS peak(0.280) vs DNP crossing(0.285)
-9. **NEW**: Direction-dependent singularity type at tau->inf (SU2 timelike vs C2/U1 spacelike)
-
-## Reference Index
-- [session-detail.md](session-detail.md) -- Sessions 28-36 consolidated
-- [session-48-detail.md](session-48-detail.md) -- Session 48 full results, closures, interpretations
-- [session-49-conformal.md](session-49-conformal.md) -- S49 conformal transition Penrose diagram (NEC corrected to 1.382)
-- [constraint-map.md](constraint-map.md) -- Redirect to shared constraint map
-- [meta-analysis-s42.md](meta-analysis-s42.md) -- Library gaps, S42 causal connections
-- Collab reviews: sessions/session-{22,23,25,28,29,32,36,39,40,44,48,49}/session-*-sp-collab.md
-- **Penrose diagrams**: sessions/archive/session-39/session-39-penrose-diagrams.md (8 diagrams)
-
-## Key Constants & Equations
+- 12D GL BUBBLE TRANSIENT [S111-CF-CO34A-12D-BUBBLE INFO]: full-12D Gregory-Laflamme lift CONFIRMS S110 reduced transient. N_efold_12D=0.2129 < 1 (factor 4.69 below maturation); white-hole transit leaves NO permanent KK-bubble, internal-space topology PRESERVED through fold (consistent w/ S63 12D-trapped-impossible + S95-W4-5 12D-censor). 3-tuple sign=PASS/mag=INFO/regime=VALID. KEY STRUCTURAL: GL op block-diagonal D_K=⊕_{(p,q)}; per-sector ω²_{(p,q)}(k)=min_eig(M0(τ,τ̇))+k²+Λ²_{(p,q)} (Λ²=min|λ|²_{(p,q)}−min|λ|²_{(0,0)}≥0, from L12 cache; shift-equivariance of eig makes it EXACT). superset_eq_const=True, max|growth_12D−growth_(0,0)|=0.0 EXACT — argmin sector=(0,0) at every τ. LESSON (inverts naive "more sectors=more instability"): GL is LONG-WAVELENGTH (small-k/low-floor); higher Peter-Weyl sectors carry LARGER Casimir floors Λ²→ω² UP→MORE stable, so superset-max pinned to constant mode (already in reduced set). Mode-coupling dropped sectors adds ZERO growth. Reduced anchor 0.2324 (S110, 31-mode cached) vs my 0.2129 (35-mode recomputed) = TT-projector-dim sensitivity NOT dropped growth (S110 exact-array repro = 0.23240; both ≪1). FAIL band=script-error sentinel keyed on dropped-growth (NOT literal anchor compare); did NOT fire. τ̇²-gating from Mach-13.75 impulsive transit forecloses maturation regardless of sector count. Method-continuous w/ inv4 GL Lichnerowicz op (Sym²(8)=36→TT35, ΔK=−α τ̇² k_SU2² W_SU2_TT, α=0.25). audit_sha256=da313d78…
+- r=16ε LAYER-OBSTRUCTION [S111 W1-4, §VII.CG STAGE-1-CANDIDATE, PASS]: r=16ε (≡r=−8n_T) has NO substrate image — a LAYER-TYPE no-go, EXACT not parametric. No Level-1 functional ε[φ] exists (φ=config field over g_M slaving H to its kinetic energy) because the H-rate's clock is the **Level-2** Jensen modulus τ (the param {D_K(τ)} is indexed BY, upstream of a₀/a₂/a₄ grading), NOT a Level-1 field. Substrate kinetic energy = a₂-trace-free shear σ²=5τ̇² (tensor mode), potential = V_spec (a₀/a₄); clock one layer up ⇒ a Level-2 deformation param cannot enter a Level-1 single-field consistency relation. 3 clauses [(a) Level-2-clock typing/Axis-A causal-structure, (b) ε[φ] Level-1-field req/Axis-B semiclassical, (c) JOINT layer no-go]. DISTINCTNESS (load-bearing): structural-ROOT subsuming the 5 VdD-Hawking args [V1 category-error, H2/V7.3 β_T=0+Weyl, duty-cycle N_e≈0.17, H3 c_s=0.485, H7.1 vol-preserving-Jensen] — each PRESUPPOSES the layer split; ws-clockloc.md:469,481 "exact-solution statement OF the 5-arg result" = ROOT not sibling. Dual-prior 6th-INDEP 0.40/ROOT 0.60. Source: S110 WS-CLOCKLOC EMERGENCE-2/3 + CF-3. Stage-2 = CF-S112-CLOCKLOC3-STAGE2 (Axis-A einstein/kaku, Axis-B feynman/transit, BOTH non-author NOT SP/hawking). This is the exact-solution form of why exflation≠inflation (transit of deformation param, not slow-roll of field). audit_sha256=cff5618e…
+- CCC OBSTRUCTION [S96-GEOM-CCC-WEYL PASS]: substrate is WCH-consistent at GENESIS but is NOT a Penrose CCC cycle. (i) |C|^2(tau) STRICTLY monotone-INCREASING from genesis min 5/14 (0 dec steps over 201-pt grid [0,2.0]; anchor err 5.55e-17); WCH-analog="minimal Weyl" (5/14), Type O |C|^2=0 impossible (SU(3) struct consts). REFINEMENT of S49: |C|^2/K is NET-decreasing (0.7143->0.4770) but NOT globally monotone -- RISES to peak 0.721952 at tau=0.20 (the fold) then Ricci tail drives down (TT shear seeds Weyl faster than Ricci pre-fold). (ii) CCC conformal-rescaling map OBSTRUCTED, 4 over-determined reasons: O1 K~e^{4tau}->inf genuine curvature sing (not smooth bdy); O2 |C|^2 GROWS->inf (Friedrich Psi->0 at I+ FAILS, opposite); O3 |C|^2/K NET-decreases = RICCI-dominated (CCC needs Weyl-dom GWE C>>E,S, reverse); O4 ANISOTROPIC Kasner (SU(2) timelike eta~6.6e25, C2/U(1) spacelike finite 2.582/1.291) = no single spacelike crossover X. Bianchi route |C|^2=K-(2/3)|Ric|^2+(1/21)R^2 (n=8); K,R exact closed-form, |Ric|^2 numeric from r20a builder. Two ends of modulus flow != two ends of CCC aeon.
 
 ### Exact Solutions
 - SP-1: g_tau = 3*diag(e^{-2tau}x3, e^{tau}x4, e^{2tau}x1)
 - SP-2: K(tau) = (23/96)e^{-8tau} - e^{-5tau} + ... + (1/12)e^{4tau}
 - SP-4: V_tree(tau) = 1 - f(tau)/10
-- SP-5: DNP bound violated for tau in [0, 0.285]
+- SP-5: DNP violated for tau in [0, 0.285]
 
-### Key Numbers
-- R(0)=2.0, K(0)=0.5, |Weyl|^2(0)=5/14, |Ric|^2(0)=0.5
+### Key Numerical Values
+- R(0)=2.0, K(0)=0.5, |C|^2(0)=5/14, |Ric|^2(0)=0.5
 - K(0.190)=0.5346, |C|^2(0.190)=0.3859
 - Ricci at fold: su(2)=0.230(x3), C2_mixed=0.230(x1), u(1)=0.250(x1), C2=0.283(x3)
-- tau_NEC=1.382334 (C2 Ric=0, CORRECTED from 0.78), DNP crossing: tau=0.285, Dump: tau=0.19
-- Geometric phase transition: tau=0.53723065 (K_C2_cross=0, bisection to 1e-14)
-- Gauss-Codazzi at trans: K_cross=-4983, C_ext_sq=20.6M, K_Gauss=20.6M, w=1.001
-- tau_star_C2(inf)=2.582 (finite!), tau_star_U1(inf)=1.291 (finite!), tau_star_SU2(inf)=divergent
-- TT eigenvalues at fold: 8 branches in [0.322, 0.939], 31 modes total
-- Analog: Mach_max=54.3, c_BdG=0.751, T_H=66 M_KK
-- Censorship: tau_turn(free,0)=0.088, tau_turn(free,fold)=0.218, v_crit=219.3, V(0.537)/T_0=65.2
-- w range: [+1,-1], SEC fails at tau=0.070 (V>T), Gamma_fric=4424
-- 8D Riem CMPP: Type II at all tau [0,1]. bw+/-1 = 2.4%(round)->0.10%(deep). WAND = SU2-SU2 pair (0,1)
-- **12D Lor CMPP (S50)**: EXACT Type D (static, all tau). bw+/-1,+/-2 = 10^{-67}. WAND = time+SU2 (alpha=pi/2)
-- **12D Lor CMPP dynamic**: Type G (all tau). bw+2 = 0.83%. |C|^2 = 2.27e7 (K^2 dominates by 10^7x)
-- Weyl operator 8D: 2 distinct eigs at tau=0 (mult 8+20 = Lambda^2(8)=8+20), 8 distinct at tau>0
-- Weyl operator 12D: 6 distinct at tau=0 (Lambda^2(R^{12})=6+32+28), 16 distinct at tau>0
-- Weyl eig zero-cross: tau=0.8948 (C2-C2 sector, bivectors (3,4)+(5,6))
+- tau_NEC=1.382334, DNP=0.285, Dump=0.19, Phase trans=0.53723065
+- tau_star: C2(inf)=2.582, U1(inf)=1.291, SU2(inf)=divergent
+- Analog: Mach_max=54.3, c_BdG=0.751, T_H=66 M_KK, sonic horizons {0.160, 0.220}
+- Censorship: tau_turn(free,0)=0.088, tau_turn(free,fold)=0.218, v_crit=219.3
+- w range [+1,-1], SEC fails at tau=0.070, Gamma_fric=4424
+- CMPP: 8D Type II all tau; 12D static EXACT Type D; 12D dynamic Type G
+- 4D NP: Psi_2 only nonzero. Static bare 0.0184, dynamic 80.05. Acoustic Psi_4/Psi_2=2739
+- Weyl op: 8D 2 eigs(0)->8(>0); 12D 6->16. Zero-cross branch 27: tau={0.895, 1.340}
+- |C|^2 NEVER zero: min=3.468 at tau=0. Monotone increasing. Type O impossible.
+- BCS: kappa=4.019, T_BCS=0.640, T_c=0.083, S(0)=0, alpha_eff->inf
+- S72: T_entry=72.84, |beta|^2~85, r_entry~2.9, Ma=331, Re=0, gamma_topo=-5.835
+- S73a: r_BLV=[0.058,0.065], delta_n_total=-0.96%, 5/5 CC PASS
+- S76: tau_decay=1.63e-37s, T_RH=1.70e15GeV, Omega_GW=2.25e-25@231MHz
+- S77: tau overshoot to 1.614 at t=0.09 M_KK^{-1}; A_s INVERTED (overproduction); k_pivot=14.31 M_KK SUBHORIZON
 
-### Conventions
+### Conventions (Critical for Computation)
 - Anti-Hermitian generators: e_a = -i lambda_a / 2
 - g_0 = 3*I_8, SU2={0,1,2}, C2={3,4,5,6}, U1={7}
 - Jensen: u(1)->e^{2tau}, su(2)->e^{-2tau}, C^2->e^{tau}
-- Riemann: R[a,b,c,d] = R^a_{bcd}, Ric[a,c] = sum_b R[a,b,b,c]
-- Bianchi: K = |C|^2 + (4/6)|S|^2 + (1/28)R^2 for n=8
+- Riemann: R[a,b,c,d]=R^d_{abc}. Ric_{bc}=einsum('abca->bc',R). NOTE: 'abad->bd' gives NEGATIVE.
+- Bianchi: K=|C|^2+(4/(n-2))|Ric|^2-(2/((n-1)(n-2)))R^2. n=8: K=|C|^2+(2/3)|S|^2+(1/28)R^2.
+- WARNING: Direct Weyl C=R-Schouten fails (Ricci sign). Use Bianchi identity always.
 
-## Synthesis Lessons (Geometric Analogs)
-- Wall circumvention = Kruskal extension (restricted patch -> full manifold)
-- Van Hove 1/(pi*v) = blueshift at Cauchy horizon
-- Passive van Hove -> active BCS = apparent horizon -> event horizon
-- Dump = max DECOUPLING (DOS~1/v diverges, coupling~v vanishes)
-- Swallowtail vertex = extremal horizon (kappa=0, BPS, T_H=0)
-- Schur on B2 = Birkhoff rigidity (irreducibility -> unique V)
-- [iK_7,D_K]=0 = conformal invariance analog
-- PH forcing mu=0 = cosmic censorship (self-organized)
-- S_full monotonicity = no stable orbits (Birkhoff rigidity in 28D)
-- GGE-to-Gibbs = information loss through spectral Cauchy horizon (3.159 bits)
-- B2 dephasing = porous Cauchy horizon (89% retained, t=0.922)
-- KRETSCHNER K'(0)=0 = Schur forces round to be critical point of all invariants
-- epsilon_H ratio invariance = conformal invariance of Penrose diagram
-- **Trace theorem = Birkhoff uniqueness** (cyclic invariance => phase-blind) [S48]
-- **TT lambda_min local max at fold = Regge-Wheeler peak analog** [S48]
-- **Self-tuning runaway = no stable ISCO in mass space** [S48]
-- **Zak phase = coordinate singularity, not curvature singularity** [S48]
-- **Geometric phase transition 0.537 = precursor to NEC violation 1.382** [S48/S49 corrected]
-- **Analog Mach contour = 1D sonic surface, not 2D trapped surface** [S48]
-- **S48 analog horizon ARTIFACT** [S49]: phi=0 (no superflow), amplitude gradient != phase gradient. Static spacetime. Eikonal breakdown at 78.3% of T^2.
-- **Volume-preserving Jensen = no trapped surfaces** [S49]: SU(2) contracts, C2/U(1) expand -> opposite-sign expansions prevent trapping
-- **BCS censorship = cosmic censorship** [S49]: transit freezes at 0.22, singularity/NEC/transition all inaccessible
-- **Direction-dependent singularity** [S49]: SU(2) timelike (infinite tau*), C2/U(1) spacelike (finite tau*) -- anisotropy of Jensen deformation
-- **|C|^2/K decreasing = Ricci dominance** [S49]: opposite of 4D gravitational collapse where Weyl dominates
-- **Extrinsic >> intrinsic at fold** [S49 GC]: 21Mx ratio. Transit curvature = pure kinetic. Static geometry negligible.
-- **K_ab traceless = no trapped surface** [S49 GC]: volume-preserving => shear-only => one expansion always positive
-- **w = 1 + O(10^{-3})** [S49 GC]: stiff matter throughout [0,1]. V/T = 0.06%. Transition invisible to 4D observer.
-- **K_cross monotonically decreasing** [S49 GC]: smooth function, no discontinuity at 0.537. Grows as tau increases.
-- **Triple-layered censorship** [S49 W1-P]: (1) Energy budget (V(0.537)/T_0=65x), (2) BCS friction (gamma=4424), (3) No trapped surfaces. v_crit/v_terminal=8.3x.
-- **Potential barrier = primary censor** [S49 W1-P]: Even without BCS, V(tau) too steep. Turnaround at 0.088 from tau=0, 0.218 from fold. w traverses [+1,-1].
-- **All 4D EC hold except SEC** [S49 W1-P]: NEC/WEC/DEC structural for scalar+V>=0. SEC transient at turnaround (V>T, w<-1/3). Standard inflaton analog.
-- **CMPP Type II locked by Riemannian signature** [S49 W1-Q]: Complex null frame in definite metric always gives nonzero bw+/-1. Type D impossible in Riemannian CMPP. **CONFIRMED S50**: Lorentzian 12D gives exact Type D with real null frames.
-- **Static product = exact CMPP Type D** [S50 W1-G]: M^{3,1}_flat x K^n is Type D for ANY K^n. WAND in flat factor. Product topology, not curvature, determines algebraic type. Structural theorem.
-- **Riemannian CMPP = signature artifact** [S50 W1-G]: 8D Riem Type II (S49) was complexification artifact. Physical classification is 12D Lor Type D.
-- **Transit D->G->D** [S50 W1-G]: During active transit (v=26.5), extrinsic curvature K^2 dominates internal Weyl by 10^7x. Type G (generic). Post-freeze: Type D restored. Transition is kinetic, not geometric.
-- **Curvature sign hierarchy** [S49 W1-Q]: K_sect(0.537) -> lambda_Weyl(0.895) -> Ric(1.382) -> singularity(inf). Weyl buffers sectional curvature sign change by 0.358 in tau.
-- **Lambda^2(adj(SU(3))) = 8 + 20** [S49 W1-Q]: Representation decomposition explains tau=0 eigenvalue multiplicities. D->II (S39) is this splitting, not CMPP change.
+## 4. Reference Pointers
+- **S110 WS-CLOCKLOC clock-layer resolution** [s110-ws-clockloc-layer-resolution.md]: cosmological clock = τ (Level-2 Jensen-modulus coord), NOT a Seeley-DeWitt grade. a₀-vs-a₂ rate-primacy was a Level-1(grade)/Level-2(coord) conflation. Minisuperspace (C)-constraint symmetric/(E)-EOM picks τ on substrate-naturalness (dS/dτ one-signed). Reparam: Λ=3H² invariant scalar, H slicing-dependent. a₄ DOMINATED (V_spec + my |C|² monotone). CF-1=MONOTONE over-determined orthogonal to primacy. Decisive gate CF-2=(C,E,D)-triple, (D)=Level-2→Level-1 projection, well-posed on transit corridor [0,0.19] (scope: turnaround τ=1.614). White-hole N_zeros=1 = monotone-Level-2-clock Penrose image. r=16ε inapplicable = LAYER obstruction (CF-3 registry cand). atlas-04 C1 annotated `:66`.
+- **S111 CLOCKLOC2 monotone-corridor PASS** [s111-clockloc2-monotone-corridor.md]: closes the [[s110-ws-clockloc-layer-resolution]] CF-2 corridor leg. tau strictly monotone on [0,0.19] (min tau_dot=1.814>0), first turning point tau_overshoot=1.614 NEC-censored => [0,0.19] interior, (D)-deparametrization well-posed. EOM-NORMALIZATION LESSON: dimensionless modulus => force is LOG gradient -(1/G_DeWitt)d ln V/dtau=0.234 (O(1)), NOT raw dV/dtau=58672 (4-OOM over-drive => spurious turnaround). audit_sha 62619fb3.
+- **S110 WS-CO-1 Reading-STERILE** [s110-ws-co-1-transport-sterility.md]: compact-object anchor-free-falsifier adjudication vs mack. Transport-pincer no-go: non-scalar deg(T_{BZ->pivot})=+2 (S93-W7-1, alpha_s_sub=-0.0859 vs alpha_s_pivot=0) preserves a ratio O_1/O_2 only if SAME substrate scale; content-bearing ratios (echo omega_n/omega_0, R/M, tidal/compactness) are different-scale BY CONSTRUCTION->corrupted. **R2 UPDATE**: mack conceded 4/5 (echo-spacing via T(f)=C*f^{1+s} residual (f_n/f_0)^s; R/M; tidal/compactness; area-slope) but found a SAME-SCALE survivor RR=(δω/ω)_{l=2}/(δω/ω)_{l=3} that IS transport-invariant (per-mode factor m_l cancels WITHIN each fraction, any s). I CONCEDED transport-invariance + corrected my over-claim ("non-scalar => nothing survives" is FALSE; Inv(T) non-trivial, e.g. f_WZ holonomy curv_nonscalar=1.0, shape_inv/d2_inv printed in S93-W7-1 line). CONTENT-COLLAPSE (the new STERILE closure): inv-13 W1-2 a4 op is a SINGLE SCALAR Weyl^2 (alpha_HC=c_W*(a4/a2)*M_KK^-2=3.433e-66 m^2, ℓ-FLAT). (δω/ω)_l = alpha_HC*kappa_QNM(l)/(2 Re ω_l^2); RR = alpha_HC cancels => g_2/g_3 = PURE-GR Teukolsky ratio = Kerr value at leading EFT order. The cancellation giving transport-invariance IS the cancellation erasing the framework imprint. Kerr-discrimination needs a MULTIPOLE-DEPENDENT coupling (parity-odd RR̃ Pontryagin, or ∇Weyl·∇Weyl) which the Weyl^2-only build lacks. KEY STRUCTURAL OBJECT: discriminating content lives in Inv(T)_fw \ Inv(T)_Kerr (difference set); g_2/g_3 ∈ intersection (transport-safe AND Kerr-degenerate = empty); signs ∈ difference set but ride ω_GR (M_KK-set, not a ratio). Sector pinched: framework-specific-but-sign-only-M_KK-riding vs ratio-clean-but-Kerr-degenerate. 5th confirmation on SHARPENED Inv(T)-partition axis. **R3 FINAL (CLOSED): STERILE-confirmed.** mack CONCEDED — could not name a multipole-dependent a4 coupling, brought substrate-side double-foreclosure: (1) parity-odd Pontryagin RR̃ FORBIDDEN by parity-even grading J γ_F=−γ_F J, [J,D_K]=0 (KO-dim-6; S85 TENSOR-61 base-parity-preserve; OBSERVABLE = Row #91 β_iso=0° EXACT, verified falsifier-master-inventory.md:2188) — ALL-ORDERS; (2) parity-even deriv ∇Weyl·∇Weyl/□R COLLAPSES to single scalar Weyl²=Kretschmann on Ricci-flat vacuum exterior (R=Ric=0) — leading-order/background-contingent. SCOPE: STERILE at leading EFT order on Weyl²-only build; O(α_HC²) difference-set deviation ~146 OOM (=73×2) sub-detectable. CF-CO-2 does-NOT-fire = CLOSED-NOT-RUN (not a math CF). CROSS-PILLAR IDENTITY (the deep emergence): single [J,D_K]=0 forces BOTH β_iso=0° (Row #91 CMB null) AND compact-object QNM-parity foreclosure — ONE substrate fact (parity-even all the way down) from two pillars; a framework that could mint an echo-parity falsifier would fail its own CMB parity prediction. Sign-built/falsifier-sterile row routed to mack (sole writer). Verdict table + Open Qs (4 closed corridors) + Wrap-Up filled in ws-co-1.md.
+- **Definitive Penrose diagrams**: `sessions/framework/Phononic-Penrose-Diagrams.md` (canonical set) [path corrected S95]
+- **Collab reviews**: `sessions/session-{22,23,25,28,29,32,36,39,40,44,48,49,54,56,60}/session-*-sp-collab.md`
+- **Mechanism Chain (37 closures post-S48)**: I-1, RPA(chi=20.43), Turing(W=1.9-3.2x), Wall(rho=14.02), BCS(M_max=[1.351,1.674])
+- **Knowledge MCP**: query first for closures + canonical constants (S87+ discipline)

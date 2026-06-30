@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 192,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1911",
+      "anchor_type": "data_provenance",
+      "name": "w6_mellin_cone_universality",
+      "script_path": "session-85/s85_w6_mellin_cone_universality.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w6_mellin_cone_universality.npz, session-85/s85_w6_mellin_cone_universality.png",
+      "source_file": "computations/session-85/s85_w6_mellin_cone_universality.py",
+      "source_context_30_lines": "  113:     \"A_F_Hoch\": 3,   # Hochschild-extended algebra dimension\n  114: }\n  115: \n  116: DIM_SPEC_POINTS = [3, 2, 1, 0, -1, -2, -3, -4]         # (local) 8 dim-spec poles\n  117: TOL_APEX_RATIO = 0.01                                  # (local) 1% apex match\n  118: TOL_RESIDUE_ABS = 1e-10                                # (local) absolute tol on residues\n  119: \n  120: PROJECT_ROOT = Path(__file__).resolve().parent.parent\n  121: OUT_NPZ = Path(__file__).resolve().parent / \"s85_w6_mellin_cone_universality.npz\"\n  122: OUT_PNG = Path(__file__).resolve().parent / \"s85_w6_mellin_cone_universality.png\"\n  123: VERDICT_TXT = Path(__file__).resolve().parent / \"s85_gate_verdicts.txt\"\n  124: \n  125: INPUT_FILES = [  # (local)\n  126:     'computations/_shared/canonical_constants.py',\n  127: ]\n  128: \n  129: def sha256_of_file(path):"
+    },
+    {
+      "anchor_id": "prov_1912",
+      "anchor_type": "data_provenance",
+      "name": "w6_penrose_catalog_update",
+      "script_path": "session-85/s85_w6_penrose_catalog_update.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w6_penrose_catalog_update.npz",
+      "source_file": "computations/session-85/s85_w6_penrose_catalog_update.py",
+      "source_context_30_lines": "   63: SCHEME = \"penrose_diagram_skill\"                       # (local)\n   64: CONVENTION = \"conformal_45deg_null\"                    # (local)\n   65: L_MAX = \"NA\"                                           # (local)\n   66: \n   67: PROJECT_ROOT = Path(__file__).resolve().parent.parent\n   68: FRAMEWORK_DIR = PROJECT_ROOT / \"sessions\" / \"framework\"\n   69: CATALOG_MD = FRAMEWORK_DIR / \"Phononic-Penrose-Diagrams.md\"\n   70: \n   71: OUT_NPZ = Path(__file__).resolve().parent / \"s85_w6_penrose_catalog_update.npz\"\n   72: VERDICT_TXT = Path(__file__).resolve().parent / \"s85_gate_verdicts.txt\"\n   73: \n   74: INPUT_FILES = [  # (local)\n   75:     'computations/_shared/canonical_constants.py',\n   76:     'sessions/framework/Phononic-Penrose-Diagrams.md',\n   77:     '.claude/skills/penrose-diagram/SKILL.md',\n   78:     'computations/session-85/s85_w6_acoustic_white_hole_formal.npz',\n   79:     'computations/session-85/s85_w6_cmpp_dense_grid.npz',"
+    },
+    {
+      "anchor_id": "prov_1913",
+      "anchor_type": "data_provenance",
+      "name": "w6_petrov_non_bd_perturbation",
+      "script_path": "session-85/s85_w6_petrov_non_bd_perturbation.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w6_petrov_non_bd_perturbation.npz, session-85/s85_w6_petrov_non_bd_perturbation.png",
+      "source_file": "computations/session-85/s85_w6_petrov_non_bd_perturbation.py",
+      "source_context_30_lines": "  106: TOL_BW = 1e-12                                            # (local) ABSOLUTE bw threshold\n  107: TOL_TYPE = 1e-10                                          # (local) CMPP classify tolerance\n  108: \n  109: # S78-W3-H checkpoint reproduction target\n  110: CHECK_TAU = 0.537                                         # (local)\n  111: CHECK_EPS = 0.01                                          # (local)\n  112: \n  113: PROJECT_ROOT = Path(__file__).resolve().parent.parent\n  114: OUT_NPZ = Path(__file__).resolve().parent / \"s85_w6_petrov_non_bd_perturbation.npz\"\n  115: OUT_PNG = Path(__file__).resolve().parent / \"s85_w6_petrov_non_bd_perturbation.png\"\n  116: VERDICT_TXT = Path(__file__).resolve().parent / \"s85_gate_verdicts.txt\"\n  117: \n  118: INPUT_FILES = [\n  119:     'computations/_shared/canonical_constants.py',\n  120:     'computations/_shared/dirac_spectrum.py',\n  121:     'computations/session-84/s84_w8b_cmpp_petrov_type_invariance.py',\n  122:     'computations/session-85/s85_w6_cmpp_dense_grid.py',"
+    },
+    {
+      "anchor_id": "prov_1914",
+      "anchor_type": "data_provenance",
+      "name": "w7_baseline_htilde",
+      "script_path": "session-85/s85_w7_baseline_htilde.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w7_baseline_htilde.npz, session-85/s85_w7_baseline_htilde.png",
+      "source_file": "computations/session-85/s85_w7_baseline_htilde.py",
+      "source_context_30_lines": "   48:   INFO   : [1] fails AND 0.5 < [3] <= 1.0 (partial reconciliation)\n   49: \n   50: Machinery pins (plan §7):\n   51:   L_max=10, scheme=Zubarev, convention=W1-G1-Branch-B,\n   52:   N_eval=1024, scan_range=[4.599e-3, 4.829e-3], step_size=1e-5,\n   53:   tolerance=0.91% log-DC, random_seed=42.\n   54: \n   55: Outputs:\n   56:   computations/session-85/s85_w7_baseline_htilde.npz\n   57:   computations/session-85/s85_w7_baseline_htilde.png\n   58: Verdict appended to computations/session-85/s85_gate_verdicts.txt with\n   59: S85+ dual-SHA (content_sha256 + audit_sha256).\n   60: \"\"\"\n   61: from __future__ import annotations\n   62: \n   63: import hashlib\n   64: import json"
+    },
+    {
+      "anchor_id": "prov_1915",
+      "anchor_type": "data_provenance",
+      "name": "w7_cc6_parker_residue",
+      "script_path": "session-85/s85_w7_cc6_parker_residue.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w7_cc6_parker_residue.npz, session-85/s85_w7_cc6_parker_residue.png",
+      "source_file": "computations/session-85/s85_w7_cc6_parker_residue.py",
+      "source_context_30_lines": "   56: \n   57: Machinery pin (plan §7):\n   58:   L_max=10, scheme=zeta-regularization (Hawking-Ford; NOT dim-reg),\n   59:   convention=Parker-Hawking-1974, N_k=4096 log-spaced on [1e-4 M_KK,\n   60:   M_KK], UV_cutoff=van-Hove-dispersion-cutoff (ω_cusp), |β_k|²\n   61:   tabulated from S78 W1-E, tolerance=1.0 OOM RATIO, random_seed=42.\n   62: \n   63: Outputs:\n   64:   computations/session-85/s85_w7_cc6_parker_residue.npz\n   65:   computations/session-85/s85_w7_cc6_parker_residue.png\n   66: Verdict appended to computations/session-85/s85_gate_verdicts.txt with\n   67: S85+ dual-SHA.\n   68: \"\"\"\n   69: from __future__ import annotations\n   70: \n   71: import hashlib\n   72: import json"
+    },
+    {
+      "anchor_id": "prov_1916",
+      "anchor_type": "data_provenance",
+      "name": "w7_cc_gamma_dm_de_ratio",
+      "script_path": "session-85/s85_w7_cc_gamma_dm_de_ratio.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w7_cc_gamma_dm_de_ratio.npz, session-85/s85_w7_cc_gamma_dm_de_ratio.png",
+      "source_file": "computations/session-85/s85_w7_cc_gamma_dm_de_ratio.py",
+      "source_context_30_lines": "   41:   INFO: 0.15 < |residual|/0.385 ≤ 0.50\n   42: \n   43: Machinery pin (plan §7):\n   44:   L_max=10, scheme=S37-effacement-canonical, convention=Planck-2020-DR2,\n   45:   Γ=0.99970 (DO NOT recompute), tolerance=15% RATIO, random_seed=42,\n   46:   GPU path=N/A (scalar).\n   47: \n   48: Outputs:\n   49:   computations/session-85/s85_w7_cc_gamma_dm_de_ratio.npz\n   50:   computations/session-85/s85_w7_cc_gamma_dm_de_ratio.png\n   51: Verdict appended to computations/session-85/s85_gate_verdicts.txt with\n   52: S85+ dual-SHA.\n   53: \"\"\"\n   54: from __future__ import annotations\n   55: \n   56: import hashlib\n   57: import json"
+    },
+    {
+      "anchor_id": "prov_1917",
+      "anchor_type": "data_provenance",
+      "name": "w7_cusp_bogoliubov",
+      "script_path": "session-85/s85_w7_cusp_bogoliubov.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w7_cusp_bogoliubov.npz, session-85/s85_w7_cusp_bogoliubov.png",
+      "source_file": "computations/session-85/s85_w7_cusp_bogoliubov.py",
+      "source_context_30_lines": "   42: \n   43: Machinery pin (plan §7):\n   44:   L_max=10, scheme=transfer-matrix, convention=BD-in-out,\n   45:   alpha_cusp=1.0 (2D van Hove generic), N_k=4096 (reduced to 256 on\n   46:   CPU with L_max-REDUCED flag), N_t=1e5 (reduced to 4000), tolerance\n   47:   0.05 ABSOLUTE exponent, random_seed=42.\n   48: \n   49: Outputs:\n   50:   computations/session-85/s85_w7_cusp_bogoliubov.npz\n   51:   computations/session-85/s85_w7_cusp_bogoliubov.png\n   52: Verdict to computations/session-85/s85_gate_verdicts.txt with dual-SHA.\n   53: \"\"\"\n   54: from __future__ import annotations\n   55: \n   56: import hashlib\n   57: import json\n   58: import os"
+    },
+    {
+      "anchor_id": "prov_1918",
+      "anchor_type": "data_provenance",
+      "name": "w7_dressed_vp",
+      "script_path": "session-85/s85_w7_dressed_vp.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w7_dressed_vp.npz, session-85/s85_w7_dressed_vp.png",
+      "source_file": "computations/session-85/s85_w7_dressed_vp.py",
+      "source_context_30_lines": "   44:   INFO: sign(δa_2) = + AND |δS/S_bare| > 0.5 (non-perturbative regime)\n   45: \n   46: Machinery pin (plan §7):\n   47:   L_max=10, scheme=Chamseddine-Connes smooth cutoff, convention=matter-φ-\n   48:   S46-canonical, N_phi_samples=1024, cutoff_Lambda=M_KK (no freedom),\n   49:   tolerance: sign verdict + RATIO 0.5 on |δS/S_bare|, random_seed=42.\n   50: \n   51: Outputs:\n   52:   computations/session-85/s85_w7_dressed_vp.npz\n   53:   computations/session-85/s85_w7_dressed_vp.png\n   54: Verdict: computations/session-85/s85_gate_verdicts.txt with dual-SHA.\n   55: \"\"\"\n   56: from __future__ import annotations\n   57: \n   58: import hashlib\n   59: import json\n   60: import os"
+    },
+    {
+      "anchor_id": "prov_1919",
+      "anchor_type": "data_provenance",
+      "name": "w7_k_corridor_mukhanov_validity",
+      "script_path": "session-85/s85_w7_k_corridor_mukhanov_validity.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w7_k_corridor_mukhanov_validity.npz, session-85/s85_w7_k_corridor_mukhanov_validity.png",
+      "source_file": "computations/session-85/s85_w7_k_corridor_mukhanov_validity.py",
+      "source_context_30_lines": "   48:   INFO: K_crit VALID (no inversion at corridor endpoint — re-audit)\n   49: \n   50: Machinery pin (plan §7):\n   51:   L_max=10, scheme=z-gauge-MS, convention=M_Pl_eff-canonical,\n   52:   K_grid=64 points log-spaced on [K_R5, K_crit+0.5], random_seed=42,\n   53:   GPU path=scalar arithmetic (not required at this gate).\n   54: \n   55: Outputs:\n   56:   computations/session-85/s85_w7_k_corridor_mukhanov_validity.npz\n   57:   computations/session-85/s85_w7_k_corridor_mukhanov_validity.png\n   58: Verdict: computations/session-85/s85_gate_verdicts.txt with dual-SHA.\n   59: \"\"\"\n   60: from __future__ import annotations\n   61: \n   62: import hashlib\n   63: import json\n   64: import os"
+    },
+    {
+      "anchor_id": "prov_1920",
+      "anchor_type": "data_provenance",
+      "name": "w7_w0_reaudit_l8",
+      "script_path": "session-85/s85_w7_w0_reaudit_l8.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w7_w0_reaudit_l8.npz, session-85/s85_w7_w0_reaudit_l8.png",
+      "source_file": "computations/session-85/s85_w7_w0_reaudit_l8.py",
+      "source_context_30_lines": "   67:   INFO: 5% < max_L_sensitivity ≤ 15%\n   68: \n   69: Machinery pin (plan §7):\n   70:   L_max ∈ {8, 10} (dual sweep), scheme=Zubarev (W1-G1 canonical),\n   71:   convention=inverted-Josephson-dominance-post-retraction (3 branches),\n   72:   N_constants=8, tolerance=5% RATIO PASS / 15% RATIO FAIL, seed=42.\n   73: \n   74: Outputs:\n   75:   computations/session-85/s85_w7_w0_reaudit_l8.npz\n   76:   computations/session-85/s85_w7_w0_reaudit_l8.png\n   77: Verdict: computations/session-85/s85_gate_verdicts.txt with dual-SHA.\n   78: \"\"\"\n   79: from __future__ import annotations\n   80: \n   81: import hashlib\n   82: import json\n   83: import os"
+    }
+  ]
+}

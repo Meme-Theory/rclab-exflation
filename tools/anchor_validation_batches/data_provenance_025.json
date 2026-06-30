@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 25,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_241",
+      "anchor_type": "data_provenance",
+      "name": "bayes_gge_thermal",
+      "script_path": "session-39/s39_bayes_gge_thermal.py",
+      "session": "s39",
+      "inputs": "computations/session-39/s39_gge_lambdas.npz, computations/session-39/s39_kk_mass.npz, computations/session-38/s38_otoc_b...",
+      "outputs": "session-39/s39_bayes_gge_thermal.npz",
+      "source_file": "computations/session-39/s39_bayes_gge_thermal.py",
+      "source_context_30_lines": "  670: \n  671: # ============================================================\n  672: # 10. Save results\n  673: # ============================================================\n  674: print(\"\\n\" + \"=\" * 70)\n  675: print(\"10. Saving results\")\n  676: print(\"=\" * 70)\n  677: \n  678: np.savez('computations/session-39/s39_bayes_gge_thermal.npz',\n  679:     # Gate\n  680:     gate_verdict=np.array(['INFO']),\n  681:     gate_detail=np.array([gate_status]),\n  682: \n  683:     # KL divergences\n  684:     DKL_gge_gibbs_opt=DKL_opt,\n  685:     DKL_gge_gibbs_stored=DKL_gge_gibbs_free,\n  686:     DKL_gibbs_gge=DKL_gibbs_free_gge,"
+    },
+    {
+      "anchor_id": "prov_242",
+      "anchor_type": "data_provenance",
+      "name": "bdg_simulation",
+      "script_path": "session-39/s39_bdg_simulation.py",
+      "session": "s39",
+      "inputs": "",
+      "outputs": "session-39/s39_bdg_simulation.npz, session-39/s39_bdg_simulation.png",
+      "source_file": "computations/session-39/s39_bdg_simulation.py",
+      "source_context_30_lines": "  744: \n  745: # ======================================================================\n  746: #  Step 11: Save data\n  747: # ======================================================================\n  748: print(\"\\n\" + \"=\" * 78)\n  749: print(\"STEP 11: SAVE DATA\")\n  750: print(\"=\" * 78)\n  751: \n  752: save_path = os.path.join(SCRIPT_DIR, 's39_bdg_simulation.npz')\n  753: np.savez(save_path,\n  754:     # Time series\n  755:     t=t_arr,\n  756:     tau_of_t=tau_t_arr,\n  757:     Delta_sq=Delta_sq,\n  758:     Delta_scalar=Delta_scalar,\n  759:     Delta_B2_sq=Delta_B2_sq,\n  760:     Delta_B1_sq=Delta_B1_sq,"
+    },
+    {
+      "anchor_id": "prov_243",
+      "anchor_type": "data_provenance",
+      "name": "cascade_spectroscopy",
+      "script_path": "session-39/s39_cascade_spectroscopy.py",
+      "session": "s39",
+      "inputs": "",
+      "outputs": "session-39/s39_cascade_spectroscopy.npz, session-39/s39_cascade_spectroscopy.png",
+      "source_file": "computations/session-39/s39_cascade_spectroscopy.py",
+      "source_context_30_lines": "  573:     ax8.plot(TAU_GRID, V_B1B2_avg, 'r-', lw=2, label='V(B1,B2)')\n  574:     ax8.set_xlabel('tau'); ax8.set_ylabel('V')\n  575:     ax8.set_title('Pairing Interaction V(tau)')\n  576:     ax8.legend(fontsize=8); ax8.grid(True, alpha=0.3)\n  577: \n  578:     plt.suptitle('CASCADE-39: Singlet Cascade Spectroscopy (50 tau, 3 branches)',\n  579:                  fontsize=13, fontweight='bold', y=1.01)\n  580: \n  581:     save_path = os.path.join(SCRIPT_DIR, 's39_cascade_spectroscopy.png')\n  582:     plt.savefig(save_path, dpi=150, bbox_inches='tight')\n  583:     print(f\"\\n  Plot saved: {save_path}\")\n  584:     plt.close()\n  585: \n  586: \n  587: # ======================================================================\n  588: #  Main\n  589: # ======================================================================"
+    },
+    {
+      "anchor_id": "prov_244",
+      "anchor_type": "data_provenance",
+      "name": "entanglement_entropy",
+      "script_path": "session-39/s39_entanglement_entropy.py",
+      "session": "s39",
+      "inputs": "computations/session-39/s39_gge_lambdas.npz, computations/session-38/s38_otoc_bcs.npz",
+      "outputs": "session-39/s39_entanglement_entropy.npz",
+      "source_file": "computations/session-39/s39_entanglement_entropy.py",
+      "source_context_30_lines": "    1: \"\"\"\n    2: s39_entanglement_entropy.py — ENT-39: Entanglement Entropy of Post-Transit GGE\n    3: \n    4: Computes entanglement entropy between B2 quartet (subsystem A, modes 0-3) and\n    5: B1+B3 (subsystem B, modes 4-7) for the post-transit GGE state.\n    6: \n    7: The GGE density matrix in the 2^8 = 256-dim Fock space is:\n    8:     rho_GGE = (1/Z) exp(-sum_k lambda_k Q_k)\n    9: \n   10: where Q_k are the Richardson-Gaudin conserved charges (quasiparticle number operators"
+    },
+    {
+      "anchor_id": "prov_245",
+      "anchor_type": "data_provenance",
+      "name": "friedmann_bcs",
+      "script_path": "session-39/s39_friedmann_bcs.py",
+      "session": "s39",
+      "inputs": "",
+      "outputs": "session-39/s39_friedmann_bcs.npz, session-39/s39_friedmann_bcs.png",
+      "source_file": "computations/session-39/s39_friedmann_bcs.py",
+      "source_context_30_lines": "  389: # Save a few trajectories\n  390: for H0_s in [0.0, 1.0, 1e4]:\n  391:     r = res_A.get(H0_s, {})\n  392:     if 't' in r:\n  393:         tag = f\"{H0_s:.0e}\".replace('+','').replace('.','p')\n  394:         save[f'traj_A_{tag}_t'] = r['t']\n  395:         save[f'traj_A_{tag}_tau'] = r['tau']\n  396: \n  397: npz = os.path.join(base, 's39_friedmann_bcs.npz')\n  398: np.savez(npz, **save)\n  399: print(f\"\\nData: {npz}\")\n  400: \n  401: # ============================================================\n  402: # 12. Plot\n  403: # ============================================================\n  404: fig, axes = plt.subplots(2, 3, figsize=(18, 10))\n  405: fig.suptitle(f'FRIED-39: Friedmann-BCS — {verdict}, '"
+    },
+    {
+      "anchor_id": "prov_246",
+      "anchor_type": "data_provenance",
+      "name": "fubini_study",
+      "script_path": "session-39/s39_fubini_study.py",
+      "session": "s39",
+      "inputs": "",
+      "outputs": "session-39/s39_fubini_study.npz, session-39/s39_fubini_study.png",
+      "source_file": "computations/session-39/s39_fubini_study.py",
+      "source_context_30_lines": "  227: \n  228:     return evecs_fixed\n  229: \n  230: \n  231: # =============================================================================\n  232: # MODULE 3: FUBINI-STUDY QUANTUM METRIC COMPUTATION\n  233: # =============================================================================\n  234: \n  235: def compute_fubini_study(tau_values, gens, f_abc, gammas, dtau=None):\n  236:     \"\"\"\n  237:     Compute the Fubini-Study quantum metric g_FS(tau) and Berry curvature\n  238:     F_Berry(tau) on the B2 eigenspace across a range of tau values.\n  239: \n  240:     Method:\n  241:         1. At each tau, compute Omega and diagonalize to get eigenstates.\n  242:         2. Gauge-fix by parallel transport.\n  243:         3. Compute |d_tau psi_i> via central finite differences."
+    },
+    {
+      "anchor_id": "prov_247",
+      "anchor_type": "data_provenance",
+      "name": "geodesic_mass",
+      "script_path": "session-39/s39_geodesic_mass.py",
+      "session": "s39",
+      "inputs": "computations/session-39/s39_kk_mass.npz, computations/session-27/s27_multisector_bcs.npz, computations/session-36/s36_ta...",
+      "outputs": "session-39/s39_geodesic_mass.npz",
+      "source_file": "computations/session-39/s39_geodesic_mass.py",
+      "source_context_30_lines": "   23:     5. Estimates pair creation from classical mass variation rate\n   24: \n   25: Input:\n   26:   - computations/session-39/s39_kk_mass.npz (W3-1 BdG masses)\n   27:   - computations/session-27/s27_multisector_bcs.npz (Dirac eigenvalues vs tau)\n   28:   - computations/session-36/s36_tau_dynamics.npz (terminal velocity)\n   29: \n   30: Output:\n   31:   - computations/session-39/s39_geodesic_mass.npz\n   32: \n   33: Gate: GEOD-39 (INFO cross-check, agreement within 50%)\n   34: \"\"\"\n   35: \n   36: import numpy as np\n   37: from scipy.interpolate import CubicSpline\n   38: \n   39: # ============================================================"
+    },
+    {
+      "anchor_id": "prov_248",
+      "anchor_type": "data_provenance",
+      "name": "gge_geodesic_constants",
+      "script_path": "session-39/s39_gge_geodesic_constants.py",
+      "session": "s39",
+      "inputs": "s39_gge_lambdas.npz, s39_richardson_gaudin.npz, s23a_kosmann_singlet.npz, s35_k7_thouless.npz",
+      "outputs": "session-39/s39_gge_geodesic_constants.npz",
+      "source_file": "computations/session-39/s39_gge_geodesic_constants.py",
+      "source_context_30_lines": "  593:     ]),\n  594: \n  595:     # Structural\n  596:     onebody_diagonal_in_Npair1=np.array(True),\n  597:     geodesic_constants_express_Qk=np.array(False),\n  598:     gge_degeneracy_from_branches=np.array(True),\n  599: )\n  600: \n  601: np.savez('s39_gge_geodesic_constants.npz', **save_dict)\n  602: \n  603: print(\"=\" * 78)\n  604: print(\"Data saved to s39_gge_geodesic_constants.npz\")\n  605: print(\"=\" * 78)"
+    },
+    {
+      "anchor_id": "prov_249",
+      "anchor_type": "data_provenance",
+      "name": "gge_lambdas",
+      "script_path": "session-39/s39_gge_lambdas.py",
+      "session": "s39",
+      "inputs": "",
+      "outputs": "session-39/s39_gge_lambdas.npz, session-39/s39_gge_lambdas.png",
+      "source_file": "computations/session-39/s39_gge_lambdas.py",
+      "source_context_30_lines": "  734:     'svd_singular_values': sigma_svd,\n  735: \n  736:     # Bogoliubov at fold\n  737:     'v_k_fold': v_k_fold,\n  738:     'u_k_fold': u_k_fold,\n  739:     'n_k_fold': n_k_fold,\n  740: }\n  741: \n  742: np.savez(os.path.join(SCRIPT_DIR, 's39_gge_lambdas.npz'), **save_dict)\n  743: print(f\"  Saved: computations/session-39/s39_gge_lambdas.npz\")\n  744: \n  745: # ======================================================================\n  746: #  STEP 15: Plot\n  747: # ======================================================================\n  748: \n  749: print(\"\\n--- Step 15: Generate plots ---\")\n  750: "
+    },
+    {
+      "anchor_id": "prov_250",
+      "anchor_type": "data_provenance",
+      "name": "integrability_check",
+      "script_path": "session-39/s39_integrability_check.py",
+      "session": "s39",
+      "inputs": "computations/session-37/s37_pair_susceptibility.npz, computations/session-38/s38_otoc_bcs.npz, computations/session-39/s...",
+      "outputs": "session-39/s39_integrability_check.npz",
+      "source_file": "computations/session-39/s39_integrability_check.py",
+      "source_context_30_lines": "  979: \n  980: print(f\"GATE INTEG-39: {gate_verdict}\")\n  981: print(f\"  {gate_detail}\")\n  982: print(f\"{'='*70}\")\n  983: \n  984: # ============================================================\n  985: # Save\n  986: # ============================================================\n  987: np.savez('computations/session-39/s39_integrability_check.npz',\n  988:     # Gate verdict\n  989:     gate_verdict=np.array([gate_verdict]),\n  990: \n  991:     # Level statistics\n  992:     r_global=r_global,\n  993:     beta_brody=beta_global,\n  994:     r_sectors=np.array(all_r),\n  995:     r_weights=np.array(all_weights),"
+    }
+  ]
+}

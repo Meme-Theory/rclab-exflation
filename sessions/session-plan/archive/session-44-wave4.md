@@ -16,7 +16,7 @@ In nuclear physics (Paper 13 in `researchers/Nazarewicz/`), the Strutinsky presc
 
 **Computation Steps**:
 
-1. Load all 992 eigenvalues from `tier0-computation/s42_hauser_feshbach.npz` with multiplicities.
+1. Load all 992 eigenvalues from `computations/s42_hauser_feshbach.npz` with multiplicities.
 
 2. **Construct the discrete level density.** g(E) = sum_k d_k delta(E - |lambda_k|). Use binning with bin width 0.01 M_KK.
 
@@ -42,14 +42,14 @@ In nuclear physics (Paper 13 in `researchers/Nazarewicz/`), the Strutinsky presc
 - INFO: Narrow plateau (<0.5 decade) with marginal agreement
 
 **Input files**:
-- `tier0-computation/s42_hauser_feshbach.npz`
-- `tier0-computation/s36_sfull_tau_stabilization.npz`
-- `tier0-computation/s42_constants_snapshot.npz`
+- `computations/s42_hauser_feshbach.npz`
+- `computations/s36_sfull_tau_stabilization.npz`
+- `computations/s42_constants_snapshot.npz`
 
 **Output files**:
-- Script: `tier0-computation/s44_strutinsky_diag.py`
-- Data: `tier0-computation/s44_strutinsky_diag.npz`
-- Plot: `tier0-computation/s44_strutinsky_diag.png`
+- Script: `computations/s44_strutinsky_diag.py`
+- Data: `computations/s44_strutinsky_diag.npz`
+- Plot: `computations/s44_strutinsky_diag.png`
 
 **Working paper section**: W4-1
 
@@ -75,7 +75,7 @@ where R_K is the Ricci scalar of K and F_A is the gauge field strength.
 
 **Computation Steps**:
 
-1. Load constants from `tier0-computation/s42_constants_snapshot.npz` and metric data.
+1. Load constants from `computations/s42_constants_snapshot.npz` and metric data.
 
 2. **Bosonic a_2.** The bosonic contributions to G_N come from: graviton fluctuations on K (symmetric TT tensors), gauge field fluctuations (connection 1-forms), and scalar fluctuations (conformal factor). For each:
    - TT tensors: a_2^{TT} from Lichnerowicz Laplacian on symmetric 2-tensors
@@ -104,15 +104,15 @@ where R_K is the Ricci scalar of K and F_A is the gauge field strength.
 - INFO: intermediate
 
 **Input files**:
-- `tier0-computation/s42_constants_snapshot.npz`
-- `tier0-computation/s42_hauser_feshbach.npz`
-- `tier0-computation/s43_lichnerowicz.npz`
+- `computations/s42_constants_snapshot.npz`
+- `computations/s42_hauser_feshbach.npz`
+- `computations/s43_lichnerowicz.npz`
 - Papers 40, 55 in `researchers/Baptista/`
 
 **Output files**:
-- Script: `tier0-computation/s44_induced_g.py`
-- Data: `tier0-computation/s44_induced_g.npz`
-- Plot: `tier0-computation/s44_induced_g.png`
+- Script: `computations/s44_induced_g.py`
+- Data: `computations/s44_induced_g.npz`
+- Plot: `computations/s44_induced_g.png`
 
 **Working paper section**: W4-2
 
@@ -134,7 +134,7 @@ S43 FRIEDMANN-BCS-43: n_s constraint surface EMPTY. epsilon_H = 1.4e-6 (BCS-only
 
 **Computation Steps**:
 
-1. Load from `tier0-computation/s43_friedmann_bcs.npz` (if exists, otherwise from source data: `s36_sfull_tau_stabilization.npz`, `s42_gradient_stiffness.npz`, `s38_cc_instanton.npz`).
+1. Load from `computations/s43_friedmann_bcs.npz` (if exists, otherwise from source data: `s36_sfull_tau_stabilization.npz`, `s42_gradient_stiffness.npz`, `s38_cc_instanton.npz`).
 
 2. **E-vs-F correction factor.** The correction is f = E/S where E = S - sum_k T_k (dS/dT_k). Since dS/dT_k is uncomputed, estimate the correction:
    - Lower bound: f = 1 (no correction, E = S)
@@ -155,15 +155,15 @@ S43 FRIEDMANN-BCS-43: n_s constraint surface EMPTY. epsilon_H = 1.4e-6 (BCS-only
 - INFO: correction computed, shortfall changed but surface still empty
 
 **Input files**:
-- `tier0-computation/s36_sfull_tau_stabilization.npz`
-- `tier0-computation/s42_gradient_stiffness.npz`
-- `tier0-computation/s38_cc_instanton.npz`
-- `tier0-computation/s42_gge_energy.npz`
+- `computations/s36_sfull_tau_stabilization.npz`
+- `computations/s42_gradient_stiffness.npz`
+- `computations/s38_cc_instanton.npz`
+- `computations/s42_gge_energy.npz`
 
 **Output files**:
-- Script: `tier0-computation/s44_friedmann_bcs_audit.py`
-- Data: `tier0-computation/s44_friedmann_bcs_audit.npz`
-- Plot: `tier0-computation/s44_friedmann_bcs_audit.png`
+- Script: `computations/s44_friedmann_bcs_audit.py`
+- Data: `computations/s44_friedmann_bcs_audit.npz`
+- Plot: `computations/s44_friedmann_bcs_audit.png`
 
 **Working paper section**: W4-3
 
@@ -191,7 +191,7 @@ where gamma parametrizes foam strength. For alpha > 2, f_eff is NON-monotone (ri
 
 **Computation Steps**:
 
-1. Load eigenvalue data from `tier0-computation/s42_hauser_feshbach.npz` and spectral action from `tier0-computation/s36_sfull_tau_stabilization.npz`.
+1. Load eigenvalue data from `computations/s42_hauser_feshbach.npz` and spectral action from `computations/s36_sfull_tau_stabilization.npz`.
 
 2. **Foam-modified spectral action.** Compute:
 
@@ -213,15 +213,15 @@ where gamma parametrizes foam strength. For alpha > 2, f_eff is NON-monotone (ri
 - INFO: minimum found but gamma > epsilon_crossover (requires foam stronger than dissolution threshold)
 
 **Input files**:
-- `tier0-computation/s42_hauser_feshbach.npz`
-- `tier0-computation/s36_sfull_tau_stabilization.npz`
-- `tier0-computation/s43_dissolution.npz`
-- `tier0-computation/s43_foam_gge.npz`
+- `computations/s42_hauser_feshbach.npz`
+- `computations/s36_sfull_tau_stabilization.npz`
+- `computations/s43_dissolution.npz`
+- `computations/s43_foam_gge.npz`
 
 **Output files**:
-- Script: `tier0-computation/s44_foam_cutoff.py`
-- Data: `tier0-computation/s44_foam_cutoff.npz`
-- Plot: `tier0-computation/s44_foam_cutoff.png`
+- Script: `computations/s44_foam_cutoff.py`
+- Data: `computations/s44_foam_cutoff.npz`
+- Plot: `computations/s44_foam_cutoff.png`
 
 **Working paper section**: W4-4
 

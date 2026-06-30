@@ -1,0 +1,53 @@
+=== S106-W1-HIGHL-CACHE-L1416 :: build L14 & L16 D_K spectrum caches @ tau_fold via GT + Casimir ===
+[const] tau_fold=0.19  Jensen_s=0.19  sentinel_tol=1e-10
+[drift] cache plan-pin C:\sa=== S106-W1-HIGHL-CACHE-L1416 :: build L14 & L16 D_K spectrum caches @ tau_fold via GT + Casimir ===
+[const] tau_fold=0.19  Jensen_s=0.19  sentinel_tol=1e-10
+[drift] cache plan-pin C:\sandbox\Ainulindale Exflation\computations\_shared\s84_spectrum_cache_L12_tau019.npz ABSENT; resolved to C:\sandbox\Ainulindale Exflation\computations\session-84\s84_spectrum_cache_L12_tau019.npz (substrate-first-canonical-sourcing.md §(ii.B))
+=== S106-W1-HIGHL-CACHE-L1416 — input SHA-256 pins ===
+  computations/_shared/canonical_constants.py: 82dd16e2ed496379...
+  computations/session-84/s84_spectrum_cache_L12_tau019.npz: 9e6d9cf7fd6a6949...
+  computations/session-104/s104_sym_p_chain_cache_L1314.npz: e555a0dead81768b...
+  computations/session-105/s105_branch_iv_l1314_sectors_resume.npz: e7daa72a1a821622...
+  computations/_shared/dirac_spectrum.py: dadba674e950fad9...
+  closure_hash:   82170c9fa07e36f4...
+  audit_sha256:   5af2b7cd09d86349... (script+canonical+pinmap)
+  content_sha256: 468bd1dcf58e3406... (script only)
+[cache] s84 master: 90 sectors, max_level=12
+[pipeline] device=cuda:0  GT builder substituted for dense symmetric-power
+  --- PHASE 1 (VALIDATION GATE): GT-vs-cache bit-exact sentinel on cached (p,0)/(0,q) p+q<=12 ---
+[sentinel] GT-vs-cache max|lambda diff| over 24 (p,0)/(0,q) sectors = 7.505e-14  ok(< 1e-10)=True (2.7s)
+[s104] mixed-13: 12 sectors complete(1..12,12..1)=True
+[s105] resume: top=4 (complete=True) mixed14=13 (complete=True) top_herr=0.00e+00 mixed_herr=1.13e-15
+[newbuild] target NEW sectors: (4,4) + level15 (16) + level16 (17) = 34 total
+    (4,4) [gap-fill]: dim=125 D=2000 |lam|=[2.4120,3.7640] herr=6.8e-16 (0.6s)
+  --- PHASE 2b: building level 15 (2 GT pure + 14 Casimir mixed) ---
+    (0,15) [GT]: dim=136 D=2176 |lam|=[4.4983,6.5428] herr=0.0e+00 (0.6s)
+    (15,0) [GT]: dim=136 D=2176 |lam|=[4.4983,6.5428] herr=0.0e+00 (0.6s)
+    (1,14) [Casimir]: dim=255 D=4080 |lam|=[4.3599,6.4610] herr=5.7e-16 (3.8s)
+    (14,1) [Casimir]: dim=255 D=4080 |lam|=[4.3599,6.4610] herr=5.7e-16 (3.7s)
+    (2,13) [Casimir]: dim=357 D=5712 |lam|=[4.2798,6.3901] herr=5.9e-16 (12.1s)
+    (13,2) [Casimir]: dim=357 D=5712 |lam|=[4.2798,6.3901] herr=5.9e-16 (11.8s)
+    (3,12) [Casimir]: dim=442 D=7072 |lam|=[4.2314,6.3303] herr=4.4e-16 (71.1s)
+    (12,3) [Casimir]: dim=442 D=7072 |lam|=[4.2314,6.3303] herr=4.4e-16 (84.1s)
+    (4,11) [Casimir]: dim=510 D=8160 |lam|=[4.2160,6.2821] herr=6.7e-16 (158.5s)
+    (11,4) [Casimir]: dim=510 D=8160 |lam|=[4.2160,6.2821] herr=6.7e-16 (178.7s)
+    (5,10) [Casimir]: dim=561 D=8976 |lam|=[4.2331,6.2457] herr=4.6e-16 (215.5s)
+    (10,5) [Casimir]: dim=561 D=8976 |lam|=[4.2331,6.2457] herr=4.6e-16 (223.0s)
+    (6,9) [Casimir]: dim=595 D=9520 |lam|=[4.2455,6.2214] herr=4.5e-16 (244.7s)
+    (9,6) [Casimir]: dim=595 D=9520 |lam|=[4.2455,6.2214] herr=4.5e-16 (248.3s)
+    (7,8) [Casimir]: dim=612 D=9792 |lam|=[4.2417,6.2091] herr=3.4e-16 (304.8s)
+    (8,7) [Casimir]: dim=612 D=9792 |lam|=[4.2417,6.2091] herr=3.4e-16 (312.2s)
+  --- PHASE 2b: building level 16 (2 GT pure + 15 Casimir mixed) ---
+  [time-budget] 1800s exceeded at (0,16); switching to Friedrich-Bar PARTIAL disposition (ii)
+[resume] saved 17 new sectors to s106_w1_highl_new_sectors_resume.npz (build_herr=6.75e-16, complete=False, 2073.9s)
+[herm-guard] D_max_block=9792 -> floor=max(1e-15, sqrt(D)*eps)=2.20e-14  herm_err_max=1.13e-15 (<= : True)
+[xcheck-conj] |lambda(p,q)|==|lambda(q,p)| over 8 NEW conjugate pairs: max|diff|=1.261e-13
+[FB] eta_FB empirical floor on L12 = 0.436488; eta_FB_lower (10% below) = 0.392839
+[L14] sectors=120 (full triangle=120) complete=True max_level=14 missing=[]
+[L16] explicit sectors=136 (full triangle=153) FB-bounded=17 FULL=False max_level=15
+[L_max_op] L14_operational=14 (truncation_consistent=True) L16_operational=15 (truncation_consistent=False)
+[VERDICT] sentinel=7.505e-14(<1e-10:True) L14_complete=True L16_full=False l16_determinable=True herm_ok=True partial=True => PASS
+[npz] wrote s106_w1_highl_cache_l1416.npz (L14=120 sectors, L16=136 explicit + 17 FB-bounded)
+<<<EMIT_VERDICT_PAYLOAD>>>
+{"session": 106, "gate_id": "S106-W1-HIGHL-CACHE-L1416", "verdict": "PASS", "value": "L14_sectors=120(complete=True) L16_sectors=136_explicit+17_FB(full=False) sentinel=7.505e-14<1e-10 conj_pair=1.261e-13 herr=1.13e-15 L14_op=14 L16_op=15 cache_path_drift=True", "scheme": "GT-BOSONIC-LADDER+CASIMIR-PROJECTION-MIXED-PARTIAL-FRIEDRICH-BAR", "convention": "JENSEN-BLOCK-SPLIT-L1=e^{2tau}-L2=e^{-2tau}-L3=e^{tau}", "l_max": "[14,16]", "audit_sha256": "5af2b7cd09d863491cd30872384f9bc9adc7b0a580c2b7089f28ce9bfda3fcbb", "content_sha256": "468bd1dcf58e34069a21b081bf46f15494a3cc957e186df393edb86e32171329", "schema_version": "S84+", "extra_rows": ["# GT(p,0)-bosonic-ladder-builder + Casimir-projection-mixed; VALIDATION-GATE sentinel(GT-vs-cache)=7.505e-14 < 1e-10 on 24 cached (p,0)/(0,q) p+q<=12 sectors; conj-pair |lam(p,q)|==|lam(q,p)| max=1.261e-13 over 8 NEW pairs; herm_err_max=1.13e-15 <= floor 2.20e-14", "# cache_path_drift=True: plan-pin computations/_shared/ ABSENT, resolved to computations/session-84/s84_spectrum_cache_L12_tau019.npz (substrate-first-canonical-sourcing.md \u00a7(ii.B)); L_max_operational: L14=14(consistent=True) L16=15(consistent=False); disposition=PARTIAL-FRIEDRICH-BAR-(ii)"]}
+<<<END_EMIT_VERDICT_PAYLOAD>>>

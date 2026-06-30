@@ -56,7 +56,7 @@ with RMS residual 0.046, where $C_2 = (p^2+q^2+pq+3p+3q)/3$ is the quadratic Cas
 
 **The answer is: the $\sqrt{C_2}$ scaling is exactly what Weyl's law predicts, and the coefficient admits a representation-theoretic derivation.**
 
-The Dirac operator on sector $(p,q)$ has the form (from the tier1 code):
+The Dirac operator on sector $(p,q)$ has the form (from the code):
 $$D_\pi = \sum_{a=0}^{7} E_{ab}\, \rho_\pi(X_b) \otimes \gamma_a + I \otimes \Omega(\tau) \quad (2)$$
 
 where $\rho_\pi$ is the representation $(p,q)$ acting on $V_\pi$ (dimension $d_{p,q}$), $E_{ab}$ is the orthonormal frame, and $\Omega$ is the spin connection (a fixed $16 \times 16$ matrix). The operator norm of $\rho_\pi(X_b)$ scales as $\sqrt{C_2}$ for the highest-weight state -- this is the Casimir scaling of representation theory (Paper 04, Gilkey; Paper 25, Show).
@@ -150,4 +150,4 @@ The mathematics is stronger than the cosmology. That is the honest spectral geom
 
 ---
 
-*Grounded in: Papers 01-35 (Spectral-Geometry corpus), Atlas D00-D08, tier0 scripts s51_strutinsky.py, s51_high_pw.py, canonical_constants.py. All eigenvalue bounds checked against Lichnerowicz (R >= 12, lambda^2 >= 3), Weyl's law (verified C_Weyl = 42.80, S36), and exact curvature invariants (147/147 Riemann, S20a).*
+*Grounded in: Papers 01-35 (Spectral-Geometry corpus), Atlas D00-D08, computation scripts s51_strutinsky.py, s51_high_pw.py, canonical_constants.py. All eigenvalue bounds checked against Lichnerowicz (R >= 12, lambda^2 >= 3), Weyl's law (verified C_Weyl = 42.80, S36), and exact curvature invariants (147/147 Riemann, S20a).*

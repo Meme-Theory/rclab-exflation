@@ -158,7 +158,7 @@ The paper influenced:
 
 ## Connection to Phonon-Exflation Framework
 
-**CRITICAL RELEVANCE (Tier 1, unification pathway)**.
+**CRITICAL RELEVANCE (Level 1, unification pathway)**.
 
 The phonon-exflation framework currently uses SU(3)_C as the internal gauge group. This paper shows that if the framework's order-one condition is violated (which Session 34 confirmed: [[D_K,a],b] = 4.000), then Pati-Salam naturally emerges.
 

@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 123,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1221",
+      "anchor_type": "data_provenance",
+      "name": "f0_alpha_s",
+      "script_path": "session-70/s70_f0_alpha_s.py",
+      "session": "s70",
+      "inputs": "",
+      "outputs": "session-70/s70_f0_alpha_s.npz, session-70/s70_f0_alpha_s.png",
+      "source_file": "computations/session-70/s70_f0_alpha_s.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s70_f0_alpha_s.py — F0-ALPHA-S-70\n    4: Spectral function normalization scan for alpha_s.\n    5: \n    6: Physics\n    7: -------\n    8: The framework extracts alpha_s(M_Z) = 0.022 from the spectral action, a factor\n    9: 5.4x below the observed 0.1180. The extraction uses:\n   10: \n   11:     alpha_3(M_KK) = 2 * pi^2 * f_0 / a_4"
+    },
+    {
+      "anchor_id": "prov_1222",
+      "anchor_type": "data_provenance",
+      "name": "full_cov_pantheon",
+      "script_path": "session-70/s70_full_cov_pantheon.py",
+      "session": "s70",
+      "inputs": "",
+      "outputs": "session-70/s70_full_cov_pantheon.npz, session-70/s70_full_cov_pantheon.png",
+      "source_file": "computations/session-70/s70_full_cov_pantheon.py",
+      "source_context_30_lines": "   21:   - Off-diagonal correlations between SNe sharing calibration, host properties\n   22: \n   23: Framework predicts flat wCDM with:\n   24:   w_0 = -0.918, w_a = 0, Omega_m = 0.315, H_0 = 67.4 km/s/Mpc\n   25: \n   26: Gate: FULL-COV-PANTHEON-70\n   27:   INFO: Report Delta_chi^2(full cov) and compare to Delta_chi^2(diag) = -4.47\n   28: \n   29: Output: s70_full_cov_pantheon.npz, s70_full_cov_pantheon.png\n   30: \"\"\"\n   31: \n   32: import numpy as np\n   33: from scipy import integrate, linalg\n   34: import matplotlib\n   35: matplotlib.use('Agg')\n   36: import matplotlib.pyplot as plt\n   37: from pathlib import Path"
+    },
+    {
+      "anchor_id": "prov_1223",
+      "anchor_type": "data_provenance",
+      "name": "full_cov_rsd",
+      "script_path": "session-70/s70_full_cov_rsd.py",
+      "session": "s70",
+      "inputs": "",
+      "outputs": "session-70/s70_full_cov_rsd.npz, session-70/s70_full_cov_rsd.png",
+      "source_file": "computations/session-70/s70_full_cov_rsd.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s70_full_cov_rsd.py -- FULL-COV-RSD-70: Full Covariance DESI RSD Reanalysis\n    4: =============================================================================\n    5: Gate: FULL-COV-RSD-70\n    6:   INFO: Report Delta_chi^2(full cov) with full covariance\n    7: \n    8: Physics:\n    9:   The S69 PVD-FSIG8-69 fit used independent per-bin errors, giving\n   10:   chi^2/dof = 0.761 (FW) vs 0.893 (LCDM), Delta(chi^2) = -1.187.\n   11: "
+    },
+    {
+      "anchor_id": "prov_1224",
+      "anchor_type": "data_provenance",
+      "name": "geodesic_moduli",
+      "script_path": "session-70/s70_geodesic_moduli.py",
+      "session": "s70",
+      "inputs": "computations/session-69/s69_off_jensen_gradient.npz, computations/session-69/s69_swampland.npz, computations/session-70/...",
+      "outputs": "session-70/s70_geodesic_moduli.npz, session-70/s70_geodesic_moduli.png",
+      "source_file": "computations/session-70/s70_geodesic_moduli.py",
+      "source_context_30_lines": "   34: \n   35: Input:\n   36:   computations/_shared/canonical_constants.py\n   37:   computations/session-69/s69_off_jensen_gradient.npz\n   38:   computations/session-69/s69_swampland.npz\n   39:   computations/session-70/s70_off_jensen_hess.npz\n   40: \n   41: Output:\n   42:   computations/session-70/s70_geodesic_moduli.npz\n   43:   computations/session-70/s70_geodesic_moduli.png\n   44: \n   45: Author: baptista-spacetime-analyst (Session 70, W5-L)\n   46: Date: 2026-04-05\n   47: \"\"\"\n   48: \n   49: import numpy as np\n   50: import sys"
+    },
+    {
+      "anchor_id": "prov_1225",
+      "anchor_type": "data_provenance",
+      "name": "gge_pair_correlation",
+      "script_path": "session-70/s70_gge_pair_correlation.py",
+      "session": "s70",
+      "inputs": "",
+      "outputs": "session-70/s70_gge_pair_correlation.npz",
+      "source_file": "computations/session-70/s70_gge_pair_correlation.py",
+      "source_context_30_lines": "  799: # 14. Save results\n  800: # ===========================================================================\n  801: \n  802: print(\"=\" * 70)\n  803: print(\"14. Saving results\")\n  804: print(\"=\" * 70)\n  805: \n  806: outfile = os.path.join(os.path.dirname(os.path.abspath(__file__)),\n  807:                        \"s70_gge_pair_correlation.npz\")\n  808: \n  809: np.savez(outfile,\n  810:          # Graph structure\n  811:          adj_cg24=adj_cg24,\n  812:          dist_matrix=dist_matrix,\n  813:          diameter=diameter,\n  814:          n_4cycles=n_cycles,\n  815:          evals_laplacian=evals_L,"
+    },
+    {
+      "anchor_id": "prov_1226",
+      "anchor_type": "data_provenance",
+      "name": "hydrostatic_cluster",
+      "script_path": "session-70/s70_hydrostatic_cluster.py",
+      "session": "s70",
+      "inputs": "",
+      "outputs": "session-70/s70_hydrostatic_cluster.npz, session-70/s70_hydrostatic_cluster.png",
+      "source_file": "computations/session-70/s70_hydrostatic_cluster.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s70_hydrostatic_cluster.py -- HYDROSTATIC-CLUSTER-70: Cluster Mass Function\n    4: with Hydrostatic Mass Bias Calibration\n    5: ========================================================================\n    6: Gate: HYDROSTATIC-CLUSTER-70\n    7:   INFO: Report chi^2/dof at three bias calibrations; identify crossover\n    8:         with LCDM.\n    9: \n   10: Physics:\n   11:   PVD-CLUST-69 found chi^2/dof = 4.11 (FW) vs 3.69 (LCDM), with the"
+    },
+    {
+      "anchor_id": "prov_1227",
+      "anchor_type": "data_provenance",
+      "name": "kretschner_bcs",
+      "script_path": "session-70/s70_kretschner_bcs.py",
+      "session": "s70",
+      "inputs": "",
+      "outputs": "session-70/s70_kretschner_bcs.npz, session-70/s70_kretschner_bcs.png",
+      "source_file": "computations/session-70/s70_kretschner_bcs.py",
+      "source_context_30_lines": "  589: print(\"  condensate is a Ricci perturbation, not a Weyl (tidal) perturbation.\")\n  590: \n  591: # ==============================================================================\n  592: # SECTION 8: Save Data\n  593: # ==============================================================================\n  594: \n  595: elapsed = time.time() - t_start\n  596: \n  597: save_path = os.path.join(script_dir, 's70_kretschner_bcs.npz')\n  598: np.savez(save_path,\n  599:     # Gate metadata\n  600:     gate_name='KRETSCHNER-BCS-70',\n  601:     gate_verdict='INFO',\n  602:     gate_detail=(\n  603:         'K finite at all tau in [0.01,0.50]. delta(K)/K=%.6e at fold. '\n  604:         'Weyl preserved (Ricci-only backreaction). No BCS-induced singularity.'\n  605:         % delta_K_frac[fold_idx]"
+    },
+    {
+      "anchor_id": "prov_1228",
+      "anchor_type": "data_provenance",
+      "name": "kuramoto_sync",
+      "script_path": "session-70/s70_kuramoto_sync.py",
+      "session": "s70",
+      "inputs": "",
+      "outputs": "session-70/s70_kuramoto_sync.npz, session-70/s70_kuramoto_sync.png",
+      "source_file": "computations/session-70/s70_kuramoto_sync.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s70_kuramoto_sync.py — KURAMOTO-SYNC-70: CG(24) Josephson as Kuramoto Model\n    4: ============================================================================\n    5: \n    6: Gate: KURAMOTO-SYNC-70\n    7:   PASS: K_c < 3.60 (system synchronized; collective phase coherence)\n    8:   FAIL: K_c > 3.60 (no synchronization at GGE temperature)\n    9:   INFO: K_c near 3.60 (marginal synchronization)\n   10: \n   11: The 24-cell Josephson junction array on CG(24) is mapped to a Kuramoto model"
+    },
+    {
+      "anchor_id": "prov_1229",
+      "anchor_type": "data_provenance",
+      "name": "leggett_moment",
+      "script_path": "session-70/s70_leggett_moment.py",
+      "session": "s70",
+      "inputs": "",
+      "outputs": "session-70/s70_leggett_moment.npz, session-70/s70_leggett_moment.png",
+      "source_file": "computations/session-70/s70_leggett_moment.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s70_leggett_moment.py -- LEGGETT-MOMENT-70: Which Spectral Moment Controls the Leggett Gap\n    4: ===========================================================================================\n    5: \n    6: Gate: LEGGETT-MOMENT-70\n    7:   INFO: Report which a_{2k} dominates the Leggett gap. Flag if a_6-dominated.\n    8: \n    9: Physics:\n   10: --------\n   11: The Leggett gap omega_L = 0.138 M_KK (Leggett-1) and 0.192 M_KK (Leggett-2) emerge"
+    },
+    {
+      "anchor_id": "prov_1230",
+      "anchor_type": "data_provenance",
+      "name": "leggett_vacuum",
+      "script_path": "session-70/s70_leggett_vacuum.py",
+      "session": "s70",
+      "inputs": "",
+      "outputs": "session-70/s70_leggett_vacuum.npz, session-70/s70_leggett_vacuum.png",
+      "source_file": "computations/session-70/s70_leggett_vacuum.py",
+      "source_context_30_lines": "  871: \n  872:     # Numerical scan\n  873:     'dt_BCS_scan': dt_BCS_scan,\n  874:     'r_L_numeric': r_L_numeric,\n  875:     'beta_sq_numeric': beta_sq_numeric,\n  876:     'r_L_analytic_scan': r_L_analytic_scan,\n  877: }\n  878: \n  879: outpath = os.path.join(os.path.dirname(os.path.abspath(__file__)), 's70_leggett_vacuum.npz')\n  880: np.savez(outpath, **save_dict)\n  881: print(f\"  Saved to: {outpath}\")\n  882: \n  883: # ============================================================================\n  884: # PLOTS\n  885: # ============================================================================\n  886: \n  887: fig, axes = plt.subplots(2, 2, figsize=(14, 10))"
+    }
+  ]
+}

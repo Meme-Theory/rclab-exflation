@@ -5,11 +5,11 @@
 **Depends on**: Session 30Ab (Pfaffian scan at N_max = 2 complete — either P-30a or B-30a fired)
 **Prerequisite**: 30Ab must complete. Both outcomes (sign change found OR no sign change) lead to this sub-session, but with different execution paths.
 **Input data**:
-- `tier0-computation/s30a_dtotal_pfaffian.npz` (N_max=2 Pfaffian scan results) — FROM 30Ab
-- `tier0-computation/s30a_df_construction.npz` (D_F(tau) matrices) — FROM 30Aa
-- `tier0-computation/s30a_gate_verdicts.txt` (B-30a / P-30a verdicts) — FROM 30Ab
-- `tier0-computation/d2_pfaffian_computation.py` (Parlett-Reid Pfaffian algorithm)
-- `tier0-computation/tier1_dirac_spectrum.py` (D_K eigenvalues per sector)
+- `computations/s30a_dtotal_pfaffian.npz` (N_max=2 Pfaffian scan results) — FROM 30Ab
+- `computations/s30a_df_construction.npz` (D_F(tau) matrices) — FROM 30Aa
+- `computations/s30a_gate_verdicts.txt` (B-30a / P-30a verdicts) — FROM 30Ab
+- `computations/d2_pfaffian_computation.py` (Parlett-Reid Pfaffian algorithm)
+- `computations/dirac_spectrum.py` (D_K eigenvalues per sector)
 
 ## Motivation
 
@@ -64,13 +64,13 @@ Session 30Ab delivered the N_max = 2 Pfaffian verdict. Session 30Ac provides the
 Every result classified against its pre-registered gate BEFORE any interpretation. Report the number first. Classify second. Interpret third.
 
 **Python environment**: `"phonon-exflation-sim/.venv312/Scripts/python.exe"`
-**Output directory**: `tier0-computation/`
+**Output directory**: `computations/`
 **Script prefix**: `s30a_`
 
 ## PRE-SESSION GATE CHECK (MANDATORY FIRST ACTION)
 
 Before any computation, verify:
-1. Read `tier0-computation/s30a_gate_verdicts.txt` — determine whether P-30a or B-30a fired
+1. Read `computations/s30a_gate_verdicts.txt` — determine whether P-30a or B-30a fired
 2. Load `s30a_dtotal_pfaffian.npz` — review the N_max=2 scan results
 3. **Branch execution path**:
    - If P-30a fired → execute Steps 6 AND 7
@@ -86,8 +86,8 @@ Session ends ONLY when user approves shutdown explicitly. Idle agents are not fi
 
 ## ALL agents (MANDATORY):
 
-1. **Session 30Ab output**: `tier0-computation/s30a_dtotal_pfaffian.npz` and `s30a_gate_verdicts.txt` — N_max=2 Pfaffian results and P-30a/B-30a verdict.
-2. **Session 30Aa output**: `tier0-computation/s30a_df_construction.npz` — D_F(tau) matrices for re-computation at N_max=3.
+1. **Session 30Ab output**: `computations/s30a_dtotal_pfaffian.npz` and `s30a_gate_verdicts.txt` — N_max=2 Pfaffian results and P-30a/B-30a verdict.
+2. **Session 30Aa output**: `computations/s30a_df_construction.npz` — D_F(tau) matrices for re-computation at N_max=3.
 3. **Session 17c results**: `sessions/session-17/session-17c-results.md` — Original D_K Pfaffian for comparison.
 4. **Your agent memory**: `.claude/agent-memory/{your-agent}/`
 
@@ -157,7 +157,7 @@ Steps required for N_max = 3:
 | `s30a_pfaffian_nmax3.npz` | `tau_values_n3` (N_max=3 scan grid), `pf_values_n3`, `pf_signs_n3`, `min_gap_n3`, `tau_c_refined` (bisection result, if applicable), `critical_exponent_nu` (if applicable), `tau_c_vs_tau_cross` (P-30b comparison, if applicable) |
 | `s30a_pfaffian_nmax3.py` | Complete Steps 6-7 script |
 
-Gate verdicts appended to: `tier0-computation/s30a_gate_verdicts.txt`
+Gate verdicts appended to: `computations/s30a_gate_verdicts.txt`
 
 ---
 

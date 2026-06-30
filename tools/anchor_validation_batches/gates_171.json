@@ -1,0 +1,107 @@
+{
+  "table": "gates",
+  "batch_id": 171,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "gate_T3-S44-CC-GAP-AUDIT",
+      "anchor_type": "gates",
+      "name": "T3-S44-CC-GAP-AUDIT",
+      "session": "81",
+      "condition": "",
+      "verdict": "INFO",
+      "source_file": "computations\\session-81\\s81_gate_verdicts.txt",
+      "source_context_30_lines": "   65: ## Tier 3 intake consolidation\n   66: \n   67: T3-S38-KZ-DEFECTS: PASS -- value=1.000000 scheme=BCS_meanfield_KZ convention=0D_pair_reformulated L_max=N/A_KZ sha256=bb80a4c851e21cacee304e05b4e85b6805d7287c707ff8d0b3b631578c2e38d2\n   68: \n   69: T3-S42-CONSTANTS-SNAPSHOT: PASS -- value=0.831665 scheme=Kerner-vs-SpectralZeta-OOM convention=KK-SU3-Jensen-tau_fold L_max=NA sha256=9704d62b2d3a3af99b19cddaa418f8918b30bffc6dd3538427797e13486a4b7d\n   70: \n   71: T3-S42-FABRIC-WZ: PASS -- value=2.499672e-59 scheme=fabric-collective convention=M_KK=1e9GeV_FIRAS L_max=NA sha256=20c133b52d094f1ac4b3fab6dd52e5ecbc2e02cec1c9f1fdb58db6a70146cb13\n   72: \n   73: T3-S44-CC-GAP-AUDIT: INFO -- value=110.53 scheme=trace-log_x_EIH convention=log10_gap_OOM L_max=NA sha256=31c72408355f3e732714cb09e0cf48250e44f80624ce20dbb13d6e07a6758705\n   74:   # target: diagnostic audit (no MCP-registered threshold); residual CC gap in OOM after stacked suppression\n   75:   # pre-fix: script was already canonical — imports M_Pl_reduced, Omega_Lambda, H_0_km_s_Mpc, hbar_eV_s from canonical_constants.py\n   76:   # fix: none required — all intermediates tagged `# (local)`, no hardcoded framework constants, MCP queried (cc_gap_audit entity matches)\n   77:   # reproduced: residual_OOM=110.53 (trace-log x EIH singlet), matches S44 summary stacking (best chain = 9.42 orders suppression off starting gap 117.20)\n   78:   # rel error: N/A (diagnostic; secondary checks: spectral-action reconstruction ratio rho_spec_sto\n... [truncated]"
+    },
+    {
+      "anchor_id": "gate_T3-S44-CONSTANTS-CORRECTED",
+      "anchor_type": "gates",
+      "name": "T3-S44-CONSTANTS-CORRECTED",
+      "session": "81",
+      "condition": "",
+      "verdict": "PASS",
+      "source_file": "computations\\session-81\\s81_gate_verdicts.txt",
+      "source_context_30_lines": "   86:   #   bare M_KK^4 gap            =  114.08 OOM\n   87:   #   spectral (2/pi^2 a_0 M^4)  =  117.20 OOM   <-- starting point (Def B)\n   88:   #   S_fold * M_KK^4 / 16 pi^2  =  117.28 OOM\n   89:   #   trace-log geometric        =  114.77 OOM\n   90:   #   trace-log x EIH singlet    =  110.53 OOM   <-- residual (final)\n   91:   # notes: script is an organizational audit — no new pre-registered gate passes or fails here; S44 residual gap (110.53 OOM) is reproduced bit-for-bit from archived S36/S42/S44 workshop .npz files. The 2.888e-47 GeV^4 dark-energy-density cross-check is a widely-cited alternate form; its canonical analog is Lambda_obs_MP4 in canonical_constants.py. No constants need to be added.\n   92:   # MCP baseline: trace_entity(\"cc_gap\") returned proven_674 (cutoff CC gap = 117.8 OOM, zeta CC gap = 115.9 OOM) and closed_66 (CC gap = 114 OOM); our computed Def-B spectral value 117.20 matches proven_674 cutoff branch to within 0.6 OOM rounding (different a_0, M_KK snapshot vs live values).\n   93: \n   94: T3-S44-CONSTANTS-CORRECTED: PASS -- value=1349.739958 scheme=Weyl-integration-formula convention=SU3-Haar-8D L_max=NA sha256=41f9d398e6878c32d6ee54c9d1ea349072b986e918357b4834a74ccb0fed20d4\n   95: \n   96: T3-S52-QM-DISPERSION: PASS -- value=-5.794598e-01 scheme=poly_fit_omega_sq_vs_K_sq convention=GoldstoneBranch_G->X_small_K_cut=0.5 L_max=N/A sha256=8803552f031bc1d3b0ce7aec148723d64a5c7c58140871de995d287937568540\n   97:   # target: -0.579 (MCP canonical alpha_QM, QM\n... [truncated]"
+    },
+    {
+      "anchor_id": "gate_T3-S52-QM-DISPERSION",
+      "anchor_type": "gates",
+      "name": "T3-S52-QM-DISPERSION",
+      "session": "81",
+      "condition": "",
+      "verdict": "PASS",
+      "source_file": "computations\\session-81\\s81_gate_verdicts.txt",
+      "source_context_30_lines": "   88:   #   S_fold * M_KK^4 / 16 pi^2  =  117.28 OOM\n   89:   #   trace-log geometric        =  114.77 OOM\n   90:   #   trace-log x EIH singlet    =  110.53 OOM   <-- residual (final)\n   91:   # notes: script is an organizational audit — no new pre-registered gate passes or fails here; S44 residual gap (110.53 OOM) is reproduced bit-for-bit from archived S36/S42/S44 workshop .npz files. The 2.888e-47 GeV^4 dark-energy-density cross-check is a widely-cited alternate form; its canonical analog is Lambda_obs_MP4 in canonical_constants.py. No constants need to be added.\n   92:   # MCP baseline: trace_entity(\"cc_gap\") returned proven_674 (cutoff CC gap = 117.8 OOM, zeta CC gap = 115.9 OOM) and closed_66 (CC gap = 114 OOM); our computed Def-B spectral value 117.20 matches proven_674 cutoff branch to within 0.6 OOM rounding (different a_0, M_KK snapshot vs live values).\n   93: \n   94: T3-S44-CONSTANTS-CORRECTED: PASS -- value=1349.739958 scheme=Weyl-integration-formula convention=SU3-Haar-8D L_max=NA sha256=41f9d398e6878c32d6ee54c9d1ea349072b986e918357b4834a74ccb0fed20d4\n   95: \n   96: T3-S52-QM-DISPERSION: PASS -- value=-5.794598e-01 scheme=poly_fit_omega_sq_vs_K_sq convention=GoldstoneBranch_G->X_small_K_cut=0.5 L_max=N/A sha256=8803552f031bc1d3b0ce7aec148723d64a5c7c58140871de995d287937568540\n   97:   # target: -0.579 (MCP canonical alpha_QM, QM-DISPERSION-52 PASS)\n   98:   # pre-fix: script already T3-compliant — `from canonical_constants import *` at line 76, all framework cons\n... [truncated]"
+    },
+    {
+      "anchor_id": "gate_T3-S38-ATTEMPT-FREQ",
+      "anchor_type": "gates",
+      "name": "T3-S38-ATTEMPT-FREQ",
+      "session": "81",
+      "condition": "",
+      "verdict": "PASS",
+      "source_file": "computations\\session-81\\s81_gate_verdicts.txt",
+      "source_context_30_lines": "  102:   # closure_inputs: script=4b4464b2e9cd93e1 canon=68b50cd325d2cc8c npz_s48=14f806285bd25ddf\n  103:   # script_sha=4b4464b2e9cd93e131dc956e651944f90a7aa38f554478eba798f350978452ea  canon_sha=68b50cd325d2cc8c63b775da3b6b92f538da582bee44c5d906c81259f24dd12f\n  104:   # note: s35_thouless_multiband.npz not present -> script took fallback branch for J_12/J_13/J_23 (lines 150-152, approximate Leggett couplings from omega_L1/L2 back-extraction). This is the INTENDED behavior encoded in the script; rho_B1/B2/B3 used the rho_B2_per_mode canonical-derived fallback. Result (-0.579) matches MCP canonical value to 3 decimal places.\n  105:   # GPU path: N/A — Bloch Hamiltonian is 3x3, QGT scan is 16^3 = 4096 points, runtime 1.3s on CPU. No matrix >= 100x100 encountered; GPU would add data-transfer overhead for no benefit.\n  106:   # missing canonical constants flagged: none. alpha_QM itself (value -0.579) IS registered canonical but has no PROVENANCE row — recommend update_constant(alpha_QM, -0.579, \"S52\", \"s52_qm_dispersion.py\", \"QM-DISPERSION-52 gate PASS W1-G\") to close that provenance gap.\n  107: \n  108: ## Tier 3 intake consolidation\n  109: \n  110: T3-S38-ATTEMPT-FREQ: PASS -- value=1.4299612309 scheme=BCS_numerical_curvature convention=m_eff=1 L_max=n/a sha256=7efa9c25926f34357fba3a8cae9e3aa86ea3d5d695bd67dc97834c3d702722ce\n  111:   # target            = 1.430 (MCP theorem \"BCS attempt frequency\", session-38-naz-tesla-workshop.md; mapped to omega_att_BCS = sqrt(F_BCS''(Delta_0)\n... [truncated]"
+    },
+    {
+      "anchor_id": "gate_T3-S23A-KOSMANN-SINGLET",
+      "anchor_type": "gates",
+      "name": "T3-S23A-KOSMANN-SINGLET",
+      "session": "81",
+      "condition": "",
+      "verdict": "PASS",
+      "source_file": "computations\\session-81\\s81_gate_verdicts.txt",
+      "source_context_30_lines": "  123:   #   s38_cc_instanton.npz          = db1e7eb13a3c4fb1\n  124:   #   s31Ch_instanton_eff_freq.npz  = 9b2ec7a97d7e2cc2\n  125:   #   canonical_constants.py        = 68b50cd325d2cc8c\n  126:   # direction note    = tau_fold swap 0.190 -> 0.19 is IEEE 754 identical (both parse to 0x3FC851EB851EB852); omega_att_BCS does not depend on tau_fold (only idx_fold for omega_tau_fold diagnostic); zero numerical shift as predicted\n  127:   # upstream loaders  = a_GL, b_GL, Delta_0, S_inst, F_BCS, delta_scan, omega_PV, omega_tau, E_8, V_8x8, Delta_OES, B2_bw, rho_B2, d2E_fold, v_F, M_max, xi_BCS, xi_GL, E_cond, barrier_0d, barrier_A, L loaded from upstream .npz (NOT literals; not replaced)\n  128: \n  129: ## Tier 3 intake consolidation\n  130: \n  131: T3-S23A-KOSMANN-SINGLET: PASS -- value=2.765999e-01 scheme=Kosmann_antisym_Baptista_P17_eq4.1 convention=KO-dim=6_Cliff8_ON-frame L_max=L_max=0_singlet_(0,0) sha256=aab0852822a14e1495ab9859a5a2929406bb1de55fb98733b36ef5fe57a14c22\n  132: \n  133: T3-S32C-PMNS-FINE-GRID: PASS -- value=sin2_13_fold=0.213138,theta12_fold=36.205deg,theta23_fold=43.370deg,R_fold=0.3965 scheme=MethodB_degenerate_PT_cubic_spline convention=U[alpha,i]_ascending_mass_flavor_basis L_max=singlet_L1L2L3_subspace_(0..15)_from_L_max>=1_D_K sha256=a2ceaa2794bd8d79e7c1bc6d5d55b2b67c7e41eae655a692fb3ce2ad8a7b4b1a\n  134: \n  135: T3-S36-MULTISECTOR-ED: PASS -- value=-0.13685055970476256 scheme=exact-diagonalization convention=BCS-pair-occupation-Fock L_max=N_POS_MAX=8 sha256=ec\n... [truncated]"
+    },
+    {
+      "anchor_id": "gate_T3-S32C-PMNS-FINE-GRID",
+      "anchor_type": "gates",
+      "name": "T3-S32C-PMNS-FINE-GRID",
+      "session": "81",
+      "condition": "",
+      "verdict": "PASS",
+      "source_file": "computations\\session-81\\s81_gate_verdicts.txt",
+      "source_context_30_lines": "  125:   #   canonical_constants.py        = 68b50cd325d2cc8c\n  126:   # direction note    = tau_fold swap 0.190 -> 0.19 is IEEE 754 identical (both parse to 0x3FC851EB851EB852); omega_att_BCS does not depend on tau_fold (only idx_fold for omega_tau_fold diagnostic); zero numerical shift as predicted\n  127:   # upstream loaders  = a_GL, b_GL, Delta_0, S_inst, F_BCS, delta_scan, omega_PV, omega_tau, E_8, V_8x8, Delta_OES, B2_bw, rho_B2, d2E_fold, v_F, M_max, xi_BCS, xi_GL, E_cond, barrier_0d, barrier_A, L loaded from upstream .npz (NOT literals; not replaced)\n  128: \n  129: ## Tier 3 intake consolidation\n  130: \n  131: T3-S23A-KOSMANN-SINGLET: PASS -- value=2.765999e-01 scheme=Kosmann_antisym_Baptista_P17_eq4.1 convention=KO-dim=6_Cliff8_ON-frame L_max=L_max=0_singlet_(0,0) sha256=aab0852822a14e1495ab9859a5a2929406bb1de55fb98733b36ef5fe57a14c22\n  132: \n  133: T3-S32C-PMNS-FINE-GRID: PASS -- value=sin2_13_fold=0.213138,theta12_fold=36.205deg,theta23_fold=43.370deg,R_fold=0.3965 scheme=MethodB_degenerate_PT_cubic_spline convention=U[alpha,i]_ascending_mass_flavor_basis L_max=singlet_L1L2L3_subspace_(0..15)_from_L_max>=1_D_K sha256=a2ceaa2794bd8d79e7c1bc6d5d55b2b67c7e41eae655a692fb3ce2ad8a7b4b1a\n  134: \n  135: T3-S36-MULTISECTOR-ED: PASS -- value=-0.13685055970476256 scheme=exact-diagonalization convention=BCS-pair-occupation-Fock L_max=N_POS_MAX=8 sha256=ecbc6771b14160ee3f0a2a708e4e60d390cef598c083a908457d7ed98607c153\n  136: \n  137: T3-S37-INSTANTON-ACTION: PASS -- value=0.06860\n... [truncated]"
+    },
+    {
+      "anchor_id": "gate_T3-S36-MULTISECTOR-ED",
+      "anchor_type": "gates",
+      "name": "T3-S36-MULTISECTOR-ED",
+      "session": "81",
+      "condition": "",
+      "verdict": "PASS",
+      "source_file": "computations\\session-81\\s81_gate_verdicts.txt",
+      "source_context_30_lines": "  127:   # upstream loaders  = a_GL, b_GL, Delta_0, S_inst, F_BCS, delta_scan, omega_PV, omega_tau, E_8, V_8x8, Delta_OES, B2_bw, rho_B2, d2E_fold, v_F, M_max, xi_BCS, xi_GL, E_cond, barrier_0d, barrier_A, L loaded from upstream .npz (NOT literals; not replaced)\n  128: \n  129: ## Tier 3 intake consolidation\n  130: \n  131: T3-S23A-KOSMANN-SINGLET: PASS -- value=2.765999e-01 scheme=Kosmann_antisym_Baptista_P17_eq4.1 convention=KO-dim=6_Cliff8_ON-frame L_max=L_max=0_singlet_(0,0) sha256=aab0852822a14e1495ab9859a5a2929406bb1de55fb98733b36ef5fe57a14c22\n  132: \n  133: T3-S32C-PMNS-FINE-GRID: PASS -- value=sin2_13_fold=0.213138,theta12_fold=36.205deg,theta23_fold=43.370deg,R_fold=0.3965 scheme=MethodB_degenerate_PT_cubic_spline convention=U[alpha,i]_ascending_mass_flavor_basis L_max=singlet_L1L2L3_subspace_(0..15)_from_L_max>=1_D_K sha256=a2ceaa2794bd8d79e7c1bc6d5d55b2b67c7e41eae655a692fb3ce2ad8a7b4b1a\n  134: \n  135: T3-S36-MULTISECTOR-ED: PASS -- value=-0.13685055970476256 scheme=exact-diagonalization convention=BCS-pair-occupation-Fock L_max=N_POS_MAX=8 sha256=ecbc6771b14160ee3f0a2a708e4e60d390cef598c083a908457d7ed98607c153\n  136: \n  137: T3-S37-INSTANTON-ACTION: PASS -- value=0.06860372 scheme=BCS_GL_quartic convention=discrete_mode_B2 L_max=N/A sha256=dc8e8d7f833dbe0ad1e24cbd6836f3eeb173dce2cf434f69928a2de9a1ef5d4f\n  138: \n  139: T3-S37-PAIR-SUSCEPTIBILITY: PASS -- value=0.8545396590 scheme=Lehmann_256state_ED_pair_susc convention=largest_gap_split_P^dag_channel L_max=N/A_ED_8mo\n... [truncated]"
+    },
+    {
+      "anchor_id": "gate_T3-S37-INSTANTON-ACTION",
+      "anchor_type": "gates",
+      "name": "T3-S37-INSTANTON-ACTION",
+      "session": "81",
+      "condition": "",
+      "verdict": "PASS",
+      "source_file": "computations\\session-81\\s81_gate_verdicts.txt",
+      "source_context_30_lines": "  129: ## Tier 3 intake consolidation\n  130: \n  131: T3-S23A-KOSMANN-SINGLET: PASS -- value=2.765999e-01 scheme=Kosmann_antisym_Baptista_P17_eq4.1 convention=KO-dim=6_Cliff8_ON-frame L_max=L_max=0_singlet_(0,0) sha256=aab0852822a14e1495ab9859a5a2929406bb1de55fb98733b36ef5fe57a14c22\n  132: \n  133: T3-S32C-PMNS-FINE-GRID: PASS -- value=sin2_13_fold=0.213138,theta12_fold=36.205deg,theta23_fold=43.370deg,R_fold=0.3965 scheme=MethodB_degenerate_PT_cubic_spline convention=U[alpha,i]_ascending_mass_flavor_basis L_max=singlet_L1L2L3_subspace_(0..15)_from_L_max>=1_D_K sha256=a2ceaa2794bd8d79e7c1bc6d5d55b2b67c7e41eae655a692fb3ce2ad8a7b4b1a\n  134: \n  135: T3-S36-MULTISECTOR-ED: PASS -- value=-0.13685055970476256 scheme=exact-diagonalization convention=BCS-pair-occupation-Fock L_max=N_POS_MAX=8 sha256=ecbc6771b14160ee3f0a2a708e4e60d390cef598c083a908457d7ed98607c153\n  136: \n  137: T3-S37-INSTANTON-ACTION: PASS -- value=0.06860372 scheme=BCS_GL_quartic convention=discrete_mode_B2 L_max=N/A sha256=dc8e8d7f833dbe0ad1e24cbd6836f3eeb173dce2cf434f69928a2de9a1ef5d4f\n  138: \n  139: T3-S37-PAIR-SUSCEPTIBILITY: PASS -- value=0.8545396590 scheme=Lehmann_256state_ED_pair_susc convention=largest_gap_split_P^dag_channel L_max=N/A_ED_8mode sha256=3b8111d7ea217dd79047160d985e53beeb90d7d6ad40fc85b58c52e5537eb714\n  140:   # target: Delta_OES == canonical Delta_0_OES = 0.4642547394830737 (R-PROTECTED, BCS-GAP-CANONICAL-70); E_gs == canonical E_cond_ED_8mode = -0.13685055970476342; primary_ratio & ratio_Evac\n... [truncated]"
+    },
+    {
+      "anchor_id": "gate_T3-S37-PAIR-SUSCEPTIBILITY",
+      "anchor_type": "gates",
+      "name": "T3-S37-PAIR-SUSCEPTIBILITY",
+      "session": "81",
+      "condition": "",
+      "verdict": "PASS",
+      "source_file": "computations\\session-81\\s81_gate_verdicts.txt",
+      "source_context_30_lines": "  131: T3-S23A-KOSMANN-SINGLET: PASS -- value=2.765999e-01 scheme=Kosmann_antisym_Baptista_P17_eq4.1 convention=KO-dim=6_Cliff8_ON-frame L_max=L_max=0_singlet_(0,0) sha256=aab0852822a14e1495ab9859a5a2929406bb1de55fb98733b36ef5fe57a14c22\n  132: \n  133: T3-S32C-PMNS-FINE-GRID: PASS -- value=sin2_13_fold=0.213138,theta12_fold=36.205deg,theta23_fold=43.370deg,R_fold=0.3965 scheme=MethodB_degenerate_PT_cubic_spline convention=U[alpha,i]_ascending_mass_flavor_basis L_max=singlet_L1L2L3_subspace_(0..15)_from_L_max>=1_D_K sha256=a2ceaa2794bd8d79e7c1bc6d5d55b2b67c7e41eae655a692fb3ce2ad8a7b4b1a\n  134: \n  135: T3-S36-MULTISECTOR-ED: PASS -- value=-0.13685055970476256 scheme=exact-diagonalization convention=BCS-pair-occupation-Fock L_max=N_POS_MAX=8 sha256=ecbc6771b14160ee3f0a2a708e4e60d390cef598c083a908457d7ed98607c153\n  136: \n  137: T3-S37-INSTANTON-ACTION: PASS -- value=0.06860372 scheme=BCS_GL_quartic convention=discrete_mode_B2 L_max=N/A sha256=dc8e8d7f833dbe0ad1e24cbd6836f3eeb173dce2cf434f69928a2de9a1ef5d4f\n  138: \n  139: T3-S37-PAIR-SUSCEPTIBILITY: PASS -- value=0.8545396590 scheme=Lehmann_256state_ED_pair_susc convention=largest_gap_split_P^dag_channel L_max=N/A_ED_8mode sha256=3b8111d7ea217dd79047160d985e53beeb90d7d6ad40fc85b58c52e5537eb714\n  140:   # target: Delta_OES == canonical Delta_0_OES = 0.4642547394830737 (R-PROTECTED, BCS-GAP-CANONICAL-70); E_gs == canonical E_cond_ED_8mode = -0.13685055970476342; primary_ratio & ratio_Evac_Econd reproduce archive bit-for-bit\n  141:   \n... [truncated]"
+    },
+    {
+      "anchor_id": "gate_T3-S29C-K-TRANSITION",
+      "anchor_type": "gates",
+      "name": "T3-S29C-K-TRANSITION",
+      "session": "81",
+      "condition": "",
+      "verdict": "FAIL",
+      "source_file": "computations\\session-81\\s81_gate_verdicts.txt",
+      "source_context_30_lines": "  175:   #   Direction: chi_pair diverges NEGATIVELY at each pair-creation pole from below, POSITIVELY from above. Thouless-criterion Cooper instability: 1 + V * chi_pair(0) = 0 crossed when Sum_n (B+_n - B-_n) / omega_n > 1/V; attractive V shifts weight to smaller omega_n, driving the sum up, T_c upward.\n  176:   # F.2 gate context: primary_ratio = 0.855 > 0.9 would indicate \"near closure\" (all strength in lowest pole); 0.3-0.7 mid-shell; here 0.855 is intermediate — strong single-pole dominance but not exhausted (14.5% leaked to higher poles). This is the N_pair=1 single-Cooper-pair regime of the 8-mode fabric cell, not a closed-shell nucleus.\n  177:   # F.3 gate context: ratio_Evac_Econd = 28.76 far exceeds the nuclear 0.05-0.15 benchmark. This is EXPECTED for the phononic system: the \"virtual pair\" regime here is the entire B2-quartet + mixed-sector manifold, not just nucleonic sub-gap fluctuations. The cutoff 2*Delta_OES sits BELOW the VH-amplified B2 excitation band, so the numerator captures the huge VH-boosted pair-rearrangement strength while the denominator is the small N=1 condensation energy. This is a framework feature, not a deviation.\n  178:   # notes: the script is a Tier-1 `NEEDS-CANONICAL-MIGRATION` (24 untagged assignments per Tier-1 scan). The T3 migration rewrote the script with explicit `# (local)` tags on every intermediate (grid parameters, loop accumulators, matrix-element arrays, pole catalog, verdict ratios) and added canonical cross-checks on Delta\n... [truncated]"
+    }
+  ]
+}

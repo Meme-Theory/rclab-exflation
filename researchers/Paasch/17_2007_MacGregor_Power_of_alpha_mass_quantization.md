@@ -205,7 +205,7 @@ The phonon-exflation framework connects to MacGregor's patterns in several ways:
    be a GEOMETRIC quantity -- the electron mass divided by a coupling constant derived from
    the internal space geometry.
 
-2. **Integer eigenvalues**: The Tier 1 computation (Session 12) found $D_K^2$ eigenvalues
+2. **Integer eigenvalues**: The Level 1 computation (Session 12) found $D_K^2$ eigenvalues
    at $s=0$ of the form $n/36$ (integer $n$). If these eigenvalue ratios at $s_0$
    approximate integer multiples of some base value, this would reproduce MacGregor's
    integer mass quantum pattern from geometry.
@@ -218,5 +218,5 @@ The phonon-exflation framework connects to MacGregor's patterns in several ways:
 4. **Unification of $\alpha$ and phi_paasch**: The phonon-exflation framework might UNIFY
    MacGregor's alpha-based and Paasch's phi_paasch-based patterns if both $\alpha$ and phi_paasch
    emerge from the same geometric structure (the Dirac spectrum on deformed SU(3)). The
-   Tier 1 computation found phi_paasch at specific $s$ values while $\alpha$ is determined
+   Level 1 computation found phi_paasch at specific $s$ values while $\alpha$ is determined
    by the spectral action coefficients. Both arise from the SAME operator $D_K$.

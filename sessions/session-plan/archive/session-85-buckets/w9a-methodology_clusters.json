@@ -1,0 +1,63 @@
+{
+  "bucket": "w9a-methodology",
+  "clusters": [
+    {
+      "cluster_id": "w9a-methodology-C1",
+      "theme": "V3 methodology-closure ladder remediation in S85 (sig_1 PRU + sig_2 dual-SHA + sig_3 hook log + sig_4 R3 YAML)",
+      "rationale": "All four items implement the same v3 ladder closure tool. Items 149 and 150 explicitly bundle the full ladder (sig_1 + sig_2/3 + sig_4), citing the same W9a-97 / W9a-98 / W9a-100 inputs. Items 116 (HOOK-WIRING) and 128 (PLAN-PRU-REMEDIATION) are subcomponents independently pre-registered by the same origin (mack): 128 is the sig_1 tagging step (89 unpinned gates -> D_PRU_raw=0) and 116 is the sig_3/sig_4 step (settings.json PostToolUse + Stop matchers per s84-w9a-98-settings-diff.md, plus R3 YAML normalization of 87 non-compliant gates). Same infrastructure, same W9a carry-forward inputs, same output (ladder -> CLOSED). Conservative merge is justified: these are not distinct tools but the same ladder remediated via its constituent signals.",
+      "member_raw_indices": [116, 128, 149, 150],
+      "members": [
+        {
+          "raw_index": 116,
+          "gate_id": "HOOK-WIRING",
+          "title": "S85-HOOK-WIRING + R3 YAML normalization** (W9 carry-forward)",
+          "origins": ["mack"]
+        },
+        {
+          "raw_index": 128,
+          "gate_id": "PLAN-PRU-REMEDIATION",
+          "title": "S85-PLAN-PRU-REMEDIATION** (drive D_PRU_raw to 0; W9 carry-forward)",
+          "origins": ["mack"]
+        },
+        {
+          "raw_index": 149,
+          "gate_id": "",
+          "title": "V3 ladder closure in S85 (PRU + R3 + hooks remediation)",
+          "origins": ["tesla"]
+        },
+        {
+          "raw_index": 150,
+          "gate_id": "NON-COMPLIANT",
+          "title": "v3 methodology-closure ladder S85 re-evaluation** (from W9 V3-NON-COMPLIANT)",
+          "origins": ["mack"]
+        }
+      ],
+      "merged_origins": ["mack", "tesla"],
+      "convergence": 2
+    }
+  ],
+  "singletons": [
+    {
+      "raw_index": 26,
+      "gate_id": "ALT-D-SPEC-PROBE",
+      "title": "Alternative d_spec probe at fiber-transition scale** (W9 carry-forward)",
+      "rationale": "Physics/derivation computation, not methodology infrastructure. Seeks an alternative route (heat-kernel expansion, noncommutative Laplacian zeta, rep-theoretic decomposition) to derive the exp(12 tau_fold) exponent for mu_BC. Does not implement or extend PRDR, PRU audit, v3 ladder, recovery controller, or plan-layer integrity tooling.",
+      "origins": ["mack"]
+    },
+    {
+      "raw_index": 82,
+      "gate_id": "ELIM-6",
+      "title": "Plan-layer PRDR consistency audit tool (hypothesis IMPLIES or CONTRADICTS each cross-check)",
+      "rationale": "New tool at plan-write time that audits hypothesis -> cross-check logical consistency (IMPLIES/CONTRADICTS semantics over plan text). Distinct from PLAN-PRU-REMEDIATION (raw_index 128), which is execution-time remediation of unpinned machinery parameters via `# (local)` tagging or canonical_constants.py promotion. PRDR at plan-write time != PRU cardinality audit at execution time (per bucket instruction's key distinction). Cites W9a-97 PRU infrastructure as leverage, not as the same tool. Conservative merge rule requires treating these as separate tools.",
+      "origins": ["gen-physicist"]
+    }
+  ],
+  "summary": {
+    "input_count": 6,
+    "cluster_count": 1,
+    "singleton_count": 2,
+    "clustered_item_count": 4,
+    "total_accounted": 6,
+    "verification": "4 clustered + 2 singletons = 6 == input_count"
+  }
+}

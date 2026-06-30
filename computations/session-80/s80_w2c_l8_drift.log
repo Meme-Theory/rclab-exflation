@@ -1,0 +1,98 @@
+Ainulindale: Unknown command line argument 'Exflation\phonon-exflation-sim\.venv312\Lib\site-packages\_rocm_sdk_core\lib\llvm\bin\offload-arch.exe'.  Try: 'C:\sandbox\Ainulindale --help'
+==============================================================================
+S80-W0-2 (B) drift_u1(L=8) vs CLT 1/√N
+==============================================================================
+  Compute backend: GPU (torch.linalg.eigvalsh on AMD Radeon RX 9070 XT)
+
+  Pre-registered substitution chain:
+    Step 1: drift_u1(L) = |<α_1>^L − <α_1>^exact| / |<α_1>^exact|
+    Step 2: drift^CLT(N) = 0.5 + 0.5/√N
+    Step 3: drift^CLT(8) = 0.5 + 0.5/√8
+                          = 0.5 + 0.1767766952966369
+                          = 0.6767766952966369
+    Step 4: pre-reg band = [0.56, 0.76]  (±15% of 0.6768)
+    Step 5: Python-computed drift_u1(8) below → classify.
+
+  Verdict thresholds:
+    PASS-CLT   : drift ∈ [0.56, 0.76]
+    FAIL Sc.1  : drift < 0.4
+    FAIL Sc.2  : drift > 0.8
+    INFO       : otherwise
+
+  PRU pins:
+    Import-closure SHA-256  = f1f56388838682068eeb253961779f4a8dbff88a4f6002de8c7d60bcfa37c425
+    Hankel order pin        = 2^(2ν-3) = 2
+    Single-run discipline   = True (one run per L_max)
+
+  Scan range: L_max ∈ [4, 5, 6, 7, 8] (for CLT-curve overlay; ε-scan ONLY at L=8)
+
+  Frame/connection built in 0.00s
+
+==============================================================================
+STEP 2: Per-L drift_u1 scan (single run per L_max)
+==============================================================================
+
+  Building L=4 infrastructure and computing J...
+    L=4: N_sec=15, N_eig=2912, drift_u1=73.6741%  [3.2s]  eig_sha=be55d490706fe703
+
+  Building L=5 infrastructure and computing J...
+    L=5: N_sec=21, N_eig=6048, drift_u1=79.7450%  [7.0s]  eig_sha=40f114559aeee447
+
+  Building L=6 infrastructure and computing J...
+    L=6: N_sec=28, N_eig=11424, drift_u1=83.7462%  [17.4s]  eig_sha=0b86b8f5c1b3a261
+
+  Building L=7 infrastructure and computing J...
+    L=7: N_sec=36, N_eig=20064, drift_u1=86.5265%  [42.8s]  eig_sha=8d7285dcf48fc04e
+
+  Building L=8 infrastructure and computing J...
+    L=8: N_sec=45, N_eig=33264, drift_u1=88.5390%  [253.5s]  eig_sha=3f4e8f50b76a3c3f
+
+==============================================================================
+STEP 3: CLT prediction curve and ε-scan diagnostic at L=8
+==============================================================================
+
+  CLT model drift^CLT(N) = 0.5 + 0.5/√N:
+    L=4: CLT=0.7500, observed drift_u1=73.6741%, obs/CLT=0.982
+    L=5: CLT=0.7236, observed drift_u1=79.7450%, obs/CLT=1.102
+    L=6: CLT=0.7041, observed drift_u1=83.7462%, obs/CLT=1.189
+    L=7: CLT=0.6890, observed drift_u1=86.5265%, obs/CLT=1.256
+    L=8: CLT=0.6768, observed drift_u1=88.5390%, obs/CLT=1.308
+
+  ε-scan at L=8 (h ∈ [0.0001, 1e-05, 1e-06] dimensionless M_KK units):
+  Branch Func          J(1e-4)        J(1e-5)        J(1e-6)   rel spread
+  su2    SDW        2.7098e+06     2.7098e+06     2.7109e+06       0.04%
+  su2    zeta2      7.2571e+05     7.2571e+05     7.2570e+05       0.00%
+  su2    zeta4      3.8466e+05     3.8466e+05     3.8466e+05       0.00%
+  u1     SDW        1.7350e+06     1.7350e+06     1.7353e+06       0.02%
+  u1     zeta2      3.5676e+04     3.5676e+04     3.5695e+04       0.05%
+  u1     zeta4      6.3836e+04     6.3836e+04     6.3837e+04       0.00%
+  C2     SDW        4.5387e+06     4.5387e+06     4.5394e+06       0.02%
+  C2     zeta2      1.1341e+06     1.1341e+06     1.1341e+06       0.00%
+  C2     zeta4      7.3286e+05     7.3286e+05     7.3287e+05       0.00%
+
+  Stencil-converged at L=8: True
+
+==============================================================================
+STEP 4: Gate verdict — S80-W2C-L8-DRIFT
+==============================================================================
+
+  Substitution chain re-verified:
+    drift^CLT(8) = 0.5 + 0.5/√8 = 0.6767766953
+    Pre-reg band           = [0.56, 0.76]
+    Computed drift_u1(L=8) = 0.885390 = 88.5390%
+
+  VERDICT: FAIL-Sc2
+  reason : drift_u1(L=8)=88.5390% > 80.00%  → stronger-than-CLT abelian-failure; Kasparov proof needs stronger integrability constraint.
+
+==============================================================================
+STEP 5: Plot drift_u1 vs L with CLT band
+==============================================================================
+  Plot saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s80_w2c_l8_drift.png
+
+  NPZ saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s80_w2c_l8_drift.npz
+  Verdict appended: C:\sandbox\Ainulindale Exflation\tier0-computation\s80_gate_verdicts.txt
+    S80-W2C-L8-DRIFT: FAIL-Sc2 -- drift_u1(L=8)=88.5390% vs CLT(0.6768) band [0.56,0.76], scan=[L4:0.7367,L5:0.7975,L6:0.8375,L7:0.8653,L8:0.8854], (value=0.885390,scheme=zeta2_over_SDW,conv='Phi_J=1e-4*M_KK, 5pt central FD, step=1e-5*M_KK, Hankel-order=2^(2nu-3)=2',L_max=8), import_closure_sha256=f1f5638883868206, eigenvalue_sha256_L8=3f4e8f50b76a3c3f, hankel_order=2^(2nu-3)=2
+
+==============================================================================
+DONE. Verdict: FAIL-Sc2  |  drift_u1(L=8) = 88.5390%
+==============================================================================

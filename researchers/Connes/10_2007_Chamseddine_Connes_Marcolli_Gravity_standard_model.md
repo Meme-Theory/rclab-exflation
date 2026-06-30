@@ -375,7 +375,7 @@ A key computational check: the Seeley-DeWitt coefficients computed from D_K
 eigenvalues at max_pq_sum = 5-6 must show CONVERGENCE as higher irreps are
 included. Session 14 found that a_4 had not yet converged at p+q <= 3. The
 extension to p+q <= 6 improved convergence but full convergence has not been
-demonstrated. This is a Tier 1.5 priority item.
+demonstrated. This is a Level 1.5 priority item.
 
 ---
 

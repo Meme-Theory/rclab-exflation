@@ -1,0 +1,168 @@
+==============================================================================
+BULK-FLOW-70: Bulk Flow Amplitude at FW Cosmology
+==============================================================================
+
+Cosmological parameters:
+  Omega_m = 0.315
+  Omega_b = 0.0493
+  Omega_DE = 0.685
+  h = 0.674
+  n_s = 0.965
+  sigma_8 (LCDM) = 0.811
+  sigma_8 (FW)   = 0.793167
+  w_0 (FW) = -0.918087
+  Growth ratio D_FW/D_LCDM at z=0: 0.978011
+
+sigma_8 (unnormalized integral) = 4.765886e-04
+  A_LCDM (norm) = 2.895706e+06
+  A_FW   (norm) = 2.769760e+06
+  Verification: sigma_8(LCDM) = 0.811000 (target 0.811)
+  Verification: sigma_8(FW)   = 0.793167 (target 0.793167)
+
+Growth rate at z=0:
+  f_LCDM  = 0.527130
+  f_FW    = 0.525492
+  f*sig8 (LCDM) = 0.427503
+  f*sig8 (FW)   = 0.416803
+  Ratio FW/LCDM = 0.974971
+
+==============================================================================
+Bulk Flow V_rms(R) at z = 0
+==============================================================================
+
+V_rms = sqrt(<|V|^2>) = sqrt(<Vx^2+Vy^2+Vz^2>) [3D RMS]
+sigma_1D = V_rms / sqrt(3) [per-component RMS]
+<|V|> = sigma_1D * sqrt(8/pi) [mean of chi_3 distribution]
+
+   R [Mpc/h]    V_rms_L   V_rms_FW    sig1D_L   sig1D_FW    <|V|>_L   <|V|>_FW    Ratio
+-------------------------------------------------------------------------------------
+          50      297.7      290.3      171.9      167.6      274.3      267.4   0.9750
+         100      211.3      206.0      122.0      118.9      194.6      189.8   0.9750
+         150      163.8      159.7       94.6       92.2      150.9      147.2   0.9750
+         200      133.4      130.1       77.0       75.1      122.9      119.9   0.9750
+         300       96.9       94.5       55.9       54.5       89.3       87.0   0.9750
+
+==============================================================================
+Comparison with Observational Data
+==============================================================================
+
+Statistical comparison using chi_3 distribution:
+  |V| follows chi distribution with 3 dof, parameter sigma_1D
+  P(|V| > V_obs) computed directly; converted to equivalent Gaussian sigma
+  Cosmic variance is included through the chi_3 distribution
+
+                  Source  R_eff  V_obs   err  V_rms_L V_rms_FW    P_L(>V)  sig_L   P_FW(>V) sig_FW       Note
+-------------------------------------------------------------------------------------------------------------------
+           Qin+19 (2MTF)    100    292    57    211.3    206.0 1.2545e-01   1.15 1.1020e-01   1.23      solid
+        Hoffman+15 (CF2)    125    259    15    184.3    179.7 1.1522e-01   1.20 1.0072e-01   1.28      solid
+        Watkins+23 (CF4)    150    252    11    163.8    159.7 6.8835e-02   1.48 5.8406e-02   1.57      solid
+     Kashlinsky+10 (kSZ)    300    600   150     96.9     94.5 0.0000e+00   8.00 0.0000e+00   8.00   disputed
+
+==============================================================================
+Detailed Analysis: Watkins et al. (2023) at R = 150 Mpc/h
+==============================================================================
+
+  Observed |V| = 252.0 +/- 11.0 km/s (measurement uncertainty)
+  LCDM:  V_rms = 163.8 km/s, sigma_1D = 94.6 km/s
+  FW:    V_rms = 159.7 km/s, sigma_1D = 92.2 km/s
+
+  chi_3 distribution (LCDM):
+    Mean:     150.9 km/s
+    Mode:     133.8 km/s
+    Std dev:  63.7 km/s (cosmic variance)
+    V_rms:    163.8 km/s
+
+  P(|V| > 252 km/s | LCDM):      6.8835e-02  (1.48 sigma)
+  P(|V| > 252 km/s | Framework):  5.8406e-02  (1.57 sigma)
+  Framework delta_sigma = +0.08 (worsens tension)
+
+  Gaussian approx pull (LCDM): (252 - 150.9) / sqrt(63.7^2 + 11.0^2) = 1.56 sigma
+
+==============================================================================
+Scaling Analysis
+==============================================================================
+
+V_rms propto f * sigma_8 (shape of P(k) unchanged)
+  Expected ratio from f*sigma_8: 0.974971
+  Actual mean V_FW/V_LCDM:       0.974971
+  Match validates computation.
+  Framework reduces bulk flow by 2.50%
+
+  Decomposition:
+    f ratio:      0.996891 (0.31% reduction)
+    sigma_8 ratio: 0.978011 (2.20% reduction)
+    Product:       0.974971
+
+==============================================================================
+Discriminating Power: FW vs LCDM
+==============================================================================
+
+|V_rms(LCDM) - V_rms(FW)| at R=150: 4.10 km/s
+Measurement error (Watkins+23): 11.0 km/s
+Cosmic variance (chi_3 std): 63.7 km/s
+
+SNR_meas = 4.10 / 11.0 = 0.373
+SNR_total = 4.10 / sqrt(11.0^2 + 63.7^2) = 0.0634
+
+Cosmic variance DOMINATES the error budget.
+The 2.5% FW/LCDM difference is 4.1 km/s,
+while cosmic variance alone is 63.7 km/s.
+Bulk flow cannot discriminate FW from LCDM.
+
+Future surveys (DESI peculiar velocities, Rubin LSST, SKA):
+  Even with zero measurement error, cosmic variance sets a floor:
+  SNR_max = |delta_V| / sigma_cosmic = 0.0644
+  Bulk flow is NOT a viable discriminator for a 2.5% effect.
+
+  To reach SNR=1, would need |delta_V| ~ 64 km/s,
+  requiring delta(sigma_8) ~ 0.315
+  (i.e., sigma_8 difference of ~39%)
+
+==============================================================================
+Extended: V_rms(R) on fine grid
+==============================================================================
+Computed on 80 points from R=10 to 400 Mpc/h
+
+==============================================================================
+Bulk Flow Anomaly Context
+==============================================================================
+
+The observed bulk flow at R ~ 150 Mpc/h (Watkins+23: 252 +/- 11 km/s) is
+higher than the LCDM RMS prediction (163.8 km/s) at 1.5 sigma
+(including cosmic variance via the chi_3 distribution).
+
+Framework prediction (159.7 km/s) is 2.5% lower than LCDM, making
+the tension marginally worse (1.6 sigma).
+
+Key finding: The bulk flow anomaly is a ~1.5-sigma tension in BOTH
+LCDM and the framework. The framework's lower sigma_8 (0.793 vs 0.811)
+reduces V_rms by only 4.1 km/s, far below the cosmic variance
+of 63.7 km/s.
+
+Bulk flow measurements cannot discriminate between FW and LCDM.
+The anomaly, if real, points to something beyond both models
+(e.g., super-horizon modes, local void, survey systematics).
+
+
+Plot saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s70_bulk_flow.png
+
+==============================================================================
+GATE VERDICT
+==============================================================================
+
+Gate BULK-FLOW-70: INFO
+  Criterion: Report V_bulk(R) for FW and LCDM
+  Result: V_rms computed at R = [ 50. 100. 150. 200. 300.] Mpc/h (3D RMS)
+  LCDM V_rms:  [297.7, 211.3, 163.8, 133.4, 96.9] km/s
+  FW   V_rms:  [290.3, 206.0, 159.7, 130.1, 94.5] km/s
+  Ratio FW/LCDM: 0.9750 (= f*sigma_8 ratio: 0.9750)
+  Framework reduces bulk flow by 2.50%
+  At R=150 Mpc/h: LCDM 1.48 sigma, FW 1.57 sigma tension
+  Discrimination SNR (cosmic var floor): 0.0644
+  Verdict: INFO -- Bulk flow cannot discriminate FW from LCDM
+
+Data saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s70_bulk_flow.npz
+
+==============================================================================
+COMPUTATION COMPLETE
+==============================================================================

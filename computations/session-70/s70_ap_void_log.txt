@@ -1,0 +1,163 @@
+========================================================================
+AP-VOID-70: Alcock-Paczynski Test from Void Stacking
+========================================================================
+
+Cosmological parameters (Planck 2018):
+  Omega_m  = 0.315
+  Omega_b  = 0.0493
+  Omega_r  = 9.15e-05
+  Omega_DE = 0.684909
+  h        = 0.674
+  H_0      = 67.4 km/s/Mpc
+
+Models:
+  LCDM:      w_0 = -1.000, w_a = 0.000
+  Framework: w_0 = -0.918, w_a = 0.000
+
+========================================================================
+Computing F_AP(z) = D_A(z) * H(z) / c
+========================================================================
+
+--- F_AP at plan redshifts z = [0.2, 0.4, 0.6, 0.8] ---
+       z |   D_A^LCDM     H^LCDM  F_AP^LCDM |     D_A^FW       H^FW    F_AP^FW |   dF/F [%]
+  -------+----------------------------------+----------------------------------+-----------
+   0.200 |     705.28      74.73   0.175814 |     700.47      75.68   0.176830 |    +0.5777
+   0.400 |    1146.09      83.90   0.320752 |    1133.34      85.49   0.323177 |    +0.7561
+   0.600 |    1423.51      94.74   0.449847 |    1404.03      96.73   0.453020 |    +0.7054
+   0.800 |    1596.27     107.06   0.570033 |    1572.12     109.29   0.573142 |    +0.5453
+
+--- F_AP at DESI DR2 redshifts ---
+       z        Tracer |  F_AP^LCDM    F_AP^FW |   dF/F [%]
+  ------  -------------+-----------------------+-----------
+   0.295           BGS |   0.247319   0.249052 |    +0.7007
+   0.510          LRG1 |   0.393152   0.396092 |    +0.7476
+   0.706          LRG2 |   0.514394   0.517627 |    +0.6286
+   0.934     LRG3+ELG1 |   0.647277   0.649958 |    +0.4141
+   1.321          ELG2 |   0.860179   0.860493 |    +0.0365
+   1.484           QSO |   0.946243   0.945271 |    -0.1028
+   2.330           Lya |   1.365626   1.357488 |    -0.5959
+
+========================================================================
+BOSS Void AP Data (Hamaus et al. 2020, JCAP 12, 023)
+========================================================================
+
+  Observational constraints (LCDM fiducial):
+   z_eff           Bin    eps_AP     sigma
+  ------  ------------  --------  --------
+    0.36          LOWZ      1.01      0.06
+    0.51     CMASS-low      0.99      0.05
+    0.57    CMASS-high      1.00      0.04
+
+--- AP Distortion Predictions ---
+
+  If LCDM is the fiducial cosmology:
+
+       z           Bin |  F_AP^LCDM    F_AP^FW |   eps_LCDM     eps_FW   (FW-1) [%]
+  ------  -------------+-----------------------+-----------------------------------
+    0.36          LOWZ |   0.293355   0.295537 |   1.000000   0.992620      -0.7380
+    0.51     CMASS-low |   0.393152   0.396092 |   1.000000   0.992579      -0.7421
+    0.57    CMASS-high |   0.431165   0.434279 |   1.000000   0.992829      -0.7171
+
+========================================================================
+Chi-squared Analysis
+========================================================================
+
+  LCDM predictions vs data:
+       z    eps_pred    eps_obs    sigma     pull
+    0.36      1.0000     1.0100   0.0600   -0.167
+    0.51      1.0000     0.9900   0.0500   +0.200
+    0.57      1.0000     1.0000   0.0400   +0.000
+  chi^2 (LCDM) = 0.0678  (N = 3, chi^2/N = 0.0226)
+
+  Framework predictions vs data:
+       z    eps_pred    eps_obs    sigma     pull
+    0.36      0.9926     1.0100   0.0600   -0.290
+    0.51      0.9926     0.9900   0.0500   +0.052
+    0.57      0.9928     1.0000   0.0400   -0.179
+  chi^2 (FW)   = 0.1187  (N = 3, chi^2/N = 0.0396)
+
+  Delta chi^2 (FW - LCDM) = +0.0509
+  --> LCDM PREFERRED over Framework by void AP data
+
+========================================================================
+Discriminability: Can current void AP data distinguish FW from LCDM?
+========================================================================
+
+  Fractional difference (F_AP^FW - F_AP^LCDM) / F_AP^LCDM:
+  At BOSS void redshifts:
+    z = 0.36: dF_AP/F_AP = +0.7435%, |eps-1|/sigma = 0.123 sigma
+    z = 0.51: dF_AP/F_AP = +0.7476%, |eps-1|/sigma = 0.148 sigma
+    z = 0.57: dF_AP/F_AP = +0.7223%, |eps-1|/sigma = 0.179 sigma
+
+  At plan redshifts z = [0.2, 0.4, 0.6, 0.8]:
+    z = 0.2: dF_AP/F_AP = +0.5777%
+    z = 0.4: dF_AP/F_AP = +0.7561%
+    z = 0.6: dF_AP/F_AP = +0.7054%
+    z = 0.8: dF_AP/F_AP = +0.5453%
+
+  Mean fractional shift:
+    BOSS redshifts: +0.7378%
+    Plan redshifts: +0.6461%
+
+  DESI Y5 forecast (Salcedo et al. 2025, Hamaus et al. 2023):
+    Expected void AP precision: ~2-3% per bin (factor ~2 improvement over BOSS)
+    FW-LCDM shift at z~0.5: ~0.74% (sub-percent)
+    --> Even DESI Y5 voids will NOT resolve a 0.74% AP shift
+    --> Void AP is NOT a discriminating test between FW and LCDM
+
+========================================================================
+Cross-check: Consistency with s69_pvd13_da.npz
+========================================================================
+
+  Comparing D_A(z) at DESI redshifts:
+       z |   D_A this    D_A S69 |   diff [%]
+   0.295 |     940.10     940.10 |    +0.0000
+   0.510 |    1314.46    1314.46 |    +0.0000
+   0.706 |    1525.43    1525.43 |    +0.0000
+   0.934 |    1672.05    1672.05 |    +0.0000
+   1.321 |    1778.86    1778.86 |    +0.0000
+   1.484 |    1792.00    1792.00 |    +0.0000
+   2.330 |    1730.01    1730.01 |    +0.0000
+
+  Maximum D_A difference: 0.0000% -- CONSISTENT
+
+Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s70_ap_void.npz
+Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s70_ap_void.png
+
+========================================================================
+GATE VERDICT: AP-VOID-70
+========================================================================
+
+  Gate ID:     AP-VOID-70
+  Type:        INFO (no pass/fail threshold)
+  Observable:  F_AP(z) = D_A(z) H(z) / c from void stacking
+
+  F_AP(z) at plan redshifts:
+    z = 0.2: LCDM = 0.175814, FW = 0.176830, diff = +0.5777%
+    z = 0.4: LCDM = 0.320752, FW = 0.323177, diff = +0.7561%
+    z = 0.6: LCDM = 0.449847, FW = 0.453020, diff = +0.7054%
+    z = 0.8: LCDM = 0.570033, FW = 0.573142, diff = +0.5453%
+
+  BOSS void AP chi^2 (3 bins):
+    LCDM: chi^2 = 0.0678, chi^2/N = 0.0226
+    FW:   chi^2 = 0.1187, chi^2/N = 0.0396
+    Delta chi^2 (FW - LCDM) = +0.0509
+
+  FW void shape distortion: max |eps_FW - 1| = 0.00742 (0.742%)
+  BOSS precision: min sigma_eps = 0.04 (4%)
+  Detection significance: 0.186 sigma
+
+  Verdict: INFO
+  Both LCDM and FW pass void AP data comfortably.
+  The FW-LCDM difference in F_AP is sub-percent (<1%),
+  far below current void AP precision (4-6% per bin).
+  Void AP is NOT a discriminating test between FW (w_0=-0.918) and LCDM.
+  Even DESI Y5 void stacking (forecast ~2-3%) will not resolve this shift.
+
+  Physical interpretation:
+  w_0 = -0.918 vs -1.0 produces a ~0.5-1% shift in F_AP.
+  This is because F_AP = D_A * H/c involves a partial cancellation:
+  D_A decreases (less acceleration) but H increases (more matter-like DE),
+  resulting in a smaller net effect than either D_A or H alone.
+
+Log written to: C:\sandbox\Ainulindale Exflation\tier0-computation\s70_ap_void_log.txt

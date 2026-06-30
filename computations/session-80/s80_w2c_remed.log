@@ -1,0 +1,103 @@
+Ainulindale: Unknown command line argument 'Exflation\phonon-exflation-sim\.venv312\Lib\site-packages\_rocm_sdk_core\lib\llvm\bin\offload-arch.exe'.  Try: 'C:\sandbox\Ainulindale --help'
+==============================================================================
+S80-W0-2 (A) W2-C REMED: zeta-Josephson clean re-run under PRU discipline
+==============================================================================
+  Compute backend: GPU (torch.linalg.eigvalsh on AMD Radeon RX 9070 XT)
+
+  PRU pins:
+    Import-closure SHA-256 = f8387359ac5b315f3e180e3a065386c224ec44e5882e494f9a716c7eab0a2948
+    Files in closure       = ['s80_w2c_remed.py', 'canonical_constants.py', 'tier1_dirac_spectrum.py', 'tier1_spectral_action.py']
+    Hankel order pin       = 2^(2ν-3) = 2 (ν=2, 5-pt central O(h^4))
+    ε-scan                 = [0.0001, 1e-05, 1e-06]
+    Primary step           = 1e-05
+    Single-run discipline  = True (no iteration)
+
+  Conventions:
+    tau_fold               = 0.19
+    max_pq_sum (L_max)     = 6
+    Phi_J amplitude        = 1.0000e-04 (dimensionless, M_KK units)
+    M_KK                   = 7.4287e+16 GeV (reference only; D_K eigenvalues M_KK units)
+
+  Branch decomposition (Baptista su(3) = su(2) + u(1) + C²):
+    BRANCH_SU2             = [0, 1, 2] (3 bonds)
+    BRANCH_U1              = [7] (1 bond, dim H_π = 1 abelian)
+    BRANCH_C2              = [3, 4, 5, 6] (4 bonds)
+
+  Built frame/connection; irrep sectors: 28
+  Eigenvalue list SHA-256 (L=6): 0b86b8f5c1b3a261bd20c519d2166a73107a5120c9a3ae471ee0fea12262bf73
+  Total eigenvalues: 11424
+  Frame+spectrum build time: 2.62s
+
+==============================================================================
+STEP 4: Single J-compute at PRIMARY_STEP (no iteration)
+==============================================================================
+  Computing branch su2 primary J...
+    J_su2^{SDW} = 3.962527e+05
+    J_su2^{zeta2} = 1.908583e+05
+    J_su2^{zeta4} = 1.563688e+05
+  Computing branch u1 primary J...
+    J_u1^{SDW} = 2.407833e+05
+    J_u1^{zeta2} = 1.292001e+04
+    J_u1^{zeta4} = 2.720148e+04
+  Computing branch C2 primary J...
+    J_C2^{SDW} = 6.528467e+05
+    J_C2^{zeta2} = 2.970866e+05
+    J_C2^{zeta4} = 2.916286e+05
+  Primary J compute time: 15.29s
+
+==============================================================================
+STEP 5: ε-scan convergence diagnostic
+==============================================================================
+  Branch su2 ε-scan done
+  Branch u1 ε-scan done
+  Branch C2 ε-scan done
+  ε-scan compute time: 30.17s
+
+  Branch Func          J(1e-4)        J(1e-5)        J(1e-6)   rel spread
+  su2    SDW        3.9625e+05     3.9625e+05     3.9628e+05       0.01%
+  su2    zeta2      1.9086e+05     1.9086e+05     1.9085e+05       0.01%
+  su2    zeta4      1.5637e+05     1.5637e+05     1.5637e+05       0.00%
+  u1     SDW        2.4078e+05     2.4078e+05     2.4058e+05       0.09%
+  u1     zeta2      1.2920e+04     1.2920e+04     1.2923e+04       0.03%
+  u1     zeta4      2.7201e+04     2.7201e+04     2.7199e+04       0.01%
+  C2     SDW        6.5285e+05     6.5285e+05     6.5285e+05       0.00%
+  C2     zeta2      2.9709e+05     2.9709e+05     2.9708e+05       0.00%
+  C2     zeta4      2.9163e+05     2.9163e+05     2.9163e+05       0.00%
+
+  Stencil-converged: True
+
+==============================================================================
+STEP 6: drift_u1(L=6) per P4-B definition
+==============================================================================
+  <α_1>^L per branch:
+    C2  : 4.550634e-01
+    su2 : 4.816579e-01
+    u1  : 5.365825e-02
+  <α_1>^exact = cross-branch mean = 3.301265e-01
+  drift per branch:
+    C2  : 37.8451%
+    su2 : 45.9010%
+    u1  : 83.7462%
+
+  HEADLINE: drift_u1(L=6) = 83.7462%
+  4-tuple tag = (0.837462, 'zeta2_over_SDW', 'Phi_J=1e-4*M_KK, 5pt central FD, step=1e-5*M_KK, Hankel-order=2^(2nu-3)=2', L_max=6)
+
+  S78 W2-C reference drift_u1(L=6) = 83.7500%
+  REMED-to-S78 relative delta     = -0.00%
+
+==============================================================================
+STEP 7: Gate verdict — S80-W2-C-REMED
+==============================================================================
+  VERDICT: PASS
+  reason : All 5 PRU pins stamped; drift_u1(L=6)=83.7462% under closure hash f8387359ac5b315f...
+  PRU pins stamped: {'import_closure_sha256': True, 'eigenvalue_list_sha256': True, 'hankel_order_pin': True, 'eps_scan_pre_registered': True, 'single_run_discipline': True}
+
+  Plot saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s80_w2c_remed.png
+  NPZ saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s80_w2c_remed.npz
+
+  Verdict appended: C:\sandbox\Ainulindale Exflation\tier0-computation\s80_gate_verdicts.txt
+    S80-W2-C-REMED: PASS -- drift_u1(L=6)=83.7462%, (value=0.837462,scheme=zeta2_over_SDW,conv='Phi_J=1e-4*M_KK, 5pt central FD, step=1e-5*M_KK, Hankel-order=2^(2nu-3)=2',L_max=6), import_closure_sha256=f8387359ac5b315f, eigenvalue_sha256=0b86b8f5c1b3a261, hankel_order=2^(2nu-3)=2
+
+==============================================================================
+DONE. Verdict: PASS  |  drift_u1(L=6) = 83.7462%
+==============================================================================

@@ -1,0 +1,238 @@
+==============================================================================
+Session 52: N-PAIR-FULL-52 — Full-Spectrum BCS (992 modes)
+==============================================================================
+
+==============================================================================
+PART 0: Load input data
+==============================================================================
+  Total eigenvalues at fold: 992
+  VH DOS enhancement: 14.023
+
+==============================================================================
+PART 1: Sector Decomposition
+==============================================================================
+
+  Sector d2=1 ((0,0) singlet):
+    Eigenvalues: 16, Kramers pairs: 8, Unique energies: 3
+    omega range: [0.819741, 0.971408]
+
+  Sector d2=9 ((1,0)+(0,1) fund):
+    Eigenvalues: 96, Kramers pairs: 48, Unique energies: 11
+    omega range: [0.835894, 1.327661]
+
+  Sector d2=36 ((2,0)+(0,2)):
+    Eigenvalues: 192, Kramers pairs: 96, Unique energies: 19
+    omega range: [0.972246, 1.692171]
+
+  Sector d2=64 ((1,1) adjoint):
+    Eigenvalues: 128, Kramers pairs: 64, Unique energies: 18
+    omega range: [0.872975, 1.669568]
+
+  Sector d2=100 ((3,0)+(0,3)):
+    Eigenvalues: 320, Kramers pairs: 160, Unique energies: 27
+    omega range: [1.248264, 2.060560]
+
+  Sector d2=225 ((2,1)+(1,2)):
+    Eigenvalues: 240, Kramers pairs: 120, Unique energies: 42
+    omega range: [1.123757, 2.023348]
+
+==============================================================================
+PART 2: Singlet Sector (reproduce S48 exactly)
+==============================================================================
+  BCS singlet: N_pair = 0.175787, Delta_max = 0.389886
+  ED singlet (S48): N_pair = 1.0, E_cond = -0.1368505597
+  PBCS/BCS ratio: 5.689
+  Match S48 N_pair_BCS: True
+
+  v_k^2 per mode:
+       B1: v^2=0.01863198, Delta=0.23010515
+    B2[0]: v^2=0.04597167, Delta=0.38988616
+    B2[1]: v^2=0.04463906, Delta=0.38333675
+    B2[2]: v^2=0.03436503, Delta=0.33068480
+    B2[3]: v^2=0.03008632, Delta=0.30727553
+    B3[0]: v^2=0.00063346, Delta=0.04928803
+    B3[1]: v^2=0.00072205, Delta=0.05262882
+    B3[2]: v^2=0.00073762, Delta=0.05319420
+
+==============================================================================
+PART 3: Coupling Constant Analysis
+==============================================================================
+  Singlet V matrix:
+    V_mean (off-diag, nonzero) = 0.036155
+    V_max (off-diag) = 0.079913
+    V eigenvalues: [ 0.27576637  0.13296188  0.07057041  0.04187485  0.00706239 -0.0421548
+ -0.07224027 -0.10388024]
+    Leading eigenvalue: 0.275766 (ratio to g*(N-1)=0.253084: 1.090)
+
+  Thouless M_max (rho=1):
+    Real V: 0.161524 (S48 value: 0.161524)
+    Separable V: 0.142577
+    Real/Separable ratio: 1.1329
+
+  V suppression factor (real vs separable): 1.1329
+  Interpretation: selection rules in singlet do NOT suppress the leading
+  eigenvalue of the Thouless matrix significantly.
+
+==============================================================================
+PART 4: Full 992-Mode BCS (separable V = g_bare)
+==============================================================================
+
+  d2=1 (singlet): ED N_pair = 1.0 [EXACT]
+
+  d2=9 ((1,0)+(0,1) fun): N=48, M_max=0.7767, trivial=True, N_pair=0.0000, Delta_max=0.0000
+
+  d2=36 ((2,0)+(0,2)): N=96, M_max=1.2592, trivial=False, N_pair=9.6255, Delta_max=1.0273
+
+  d2=64 ((1,1) adjoint): N=64, M_max=0.8613, trivial=True, N_pair=0.0000, Delta_max=0.0000
+
+  d2=100 ((3,0)+(0,3)): N=160, M_max=1.7283, trivial=False, N_pair=33.2531, Delta_max=2.3279
+
+  d2=225 ((2,1)+(1,2)): N=120, M_max=1.3499, trivial=False, N_pair=15.2443, Delta_max=1.4283
+
+  TOTAL (separable V): N_pair = 59.1230, E_cond = -237.002021
+
+==============================================================================
+PART 5: PBCS Correction Estimate
+==============================================================================
+  d2=1: PBCS/BCS = 5.689, N_pair_PBCS = 1.0
+  d2=9: trivial, N_pair_PBCS = 0.0
+  d2=36: PBCS/BCS = 1.391, N_pair_PBCS = 13.3864 (BCS: 9.6255)
+  d2=64: trivial, N_pair_PBCS = 0.0
+  d2=100: PBCS/BCS = 1.234, N_pair_PBCS = 41.0488 (BCS: 33.2531)
+  d2=225: PBCS/BCS = 1.313, N_pair_PBCS = 20.0094 (BCS: 15.2443)
+
+  TOTAL (with PBCS correction): N_pair = 75.4446
+
+==============================================================================
+PART 6: V Matrix Normalization Diagnostic
+==============================================================================
+  Diagnostic for singlet (rho=1):
+    sum 1/(2*xi): 4.5099
+    g * sum = 0.1631
+    M_max (separable, computed): 0.142577
+    M_max (real V, computed): 0.161524
+
+  d2=9: N=48, BW=0.492, sum 1/(2*xi)=21.95, g*sum=0.794
+    N_0 (modes/energy) = 97.6
+
+  d2=36: N=96, BW=0.720, sum 1/(2*xi)=35.20, g*sum=1.273
+    N_0 (modes/energy) = 133.3
+
+  d2=64: N=64, BW=0.797, sum 1/(2*xi)=24.21, g*sum=0.875
+    N_0 (modes/energy) = 80.3
+
+  d2=100: N=160, BW=0.812, sum 1/(2*xi)=48.11, g*sum=1.739
+    N_0 (modes/energy) = 197.0
+
+  d2=225: N=120, BW=0.900, sum 1/(2*xi)=37.66, g*sum=1.361
+    N_0 (modes/energy) = 133.4
+
+==============================================================================
+PART 7: Singlet-Calibrated Analysis
+==============================================================================
+  Calibration against singlet:
+    M_max (real V, rho=1) = 0.161524
+    M_naive (N*g/(2*xi)) = 0.162155
+    Calibration ratio: 0.9961
+    (Real V is 1.00x the naive estimate)
+
+  Calibrated M_max for non-singlet sectors:
+    d2=9: M_sep=0.7767, M_calibrated=0.7737 (NO PAIR)
+    d2=36: M_sep=1.2592, M_calibrated=1.2543 (PAIRS)
+    d2=64: M_sep=0.8613, M_calibrated=0.8579 (NO PAIR)
+    d2=100: M_sep=1.7283, M_calibrated=1.7216 (PAIRS)
+    d2=225: M_sep=1.3499, M_calibrated=1.3447 (PAIRS)
+
+==============================================================================
+PART 8: Lower Bound (V with Selection Rules)
+==============================================================================
+  Scenario: selection rules fragment V into dim(irrep) independent blocks
+  Each block has N_eff = N_kramers / dim independent modes
+  d2=9: dim=3, N_eff=16, M_max=0.2858, N_pair=0.0000 [NO PAIR]
+  d2=36: dim=6, N_eff=16, M_max=0.2447, N_pair=0.0000 [NO PAIR]
+  d2=64: dim=8, N_eff=8, M_max=0.1205, N_pair=0.0000 [NO PAIR]
+  d2=100: dim=10, N_eff=16, M_max=0.2048, N_pair=0.0000 [NO PAIR]
+  d2=225: dim=15, N_eff=8, M_max=0.1023, N_pair=0.0000 [NO PAIR]
+
+  Lower bound total: N_pair = 1.0000
+
+==============================================================================
+SUMMARY AND GATE VERDICT
+==============================================================================
+
+  Per-sector results (separable V = g_bare = 0.0362):
+  Sector                  N_kr   M_max     Dmax    N_BCS   N_PBCS    N_low
+  ---------------------- ----- ------- -------- -------- -------- --------
+  d2=1 ((0,0) single)        8   1.396    0.390    1.000    1.000    1.000
+  d2=9 ((1,0)+(0,1) )       48   0.777    0.000    0.000    0.000    0.000
+  d2=36 ((2,0)+(0,2))       96   1.259    1.027    9.626   13.386    0.000
+  d2=64 ((1,1) adjoin)      64   0.861    0.000    0.000    0.000    0.000
+  d2=100 ((3,0)+(0,3))     160   1.728    2.328   33.253   41.049    0.000
+  d2=225 ((2,1)+(1,2))     120   1.350    1.428   15.244   20.009    0.000
+
+  UNCERTAINTY BRACKET:
+    Upper bound (separable V, PBCS correction): N_pair = 75.44
+    Central (separable V, BCS): N_pair = 59.12
+    Lower bound (selection-rule fragmented V): N_pair = 1.00
+
+  SINGLET (EXACT, S48):
+    N_pair = 1.000 (ED), E_cond = -0.136851
+    This is STRUCTURALLY locked (block-diagonal theorem + VH specificity)
+
+  NON-SINGLET (APPROXIMATE):
+    Upper: 74.44 pairs
+    Central: 58.12 pairs
+    Lower: 0.00 pairs
+
+  PHYSICS ANALYSIS:
+    1. For separable V = g_bare = 0.0362 (uniform contact coupling):
+       M_Thouless > 1 when N * g / (2*xi_mean) > 1
+       This occurs for N > 2*xi/g ~ 48 modes
+       Three sectors exceed this: d2=36 (96), d2=100 (160), d2=225 (120)
+    2. The N-scaling is PHYSICAL for a contact interaction (Paper 03 analog:
+       pairing enhances with more j-shells in nuclear sd-shell)
+    3. HOWEVER: the actual Kosmann V for non-singlet is UNKNOWN
+       Selection rules could fragment V into dim(irrep) independent blocks
+       reducing effective N by factors of 6-15x
+    4. Singlet calibration: real/separable ratio = 1.133
+       (selection rules do NOT suppress singlet; unclear for non-singlet)
+    5. Without VH: singlet M_max = 0.16 with 8 modes -> no pairing
+       Non-singlet M_max > 1 requires N > 48 modes (satisfied by 3/5 sectors)
+
+  *** N-PAIR-FULL-52: INFO ***
+  N_pair in [1.00, 59.12]. Separable V gives N >> 2, but fragmented V gives N ~ 1. DECISIVE: compute Kosmann V for non-singlet sectors.
+
+  COMPARISON WITH S48 N-PAIR-FULL-48:
+    S48 (singlet only, ED): N_pair = 1 [FAIL]
+    S52 (992 modes, BCS, separable V): N_pair = 59.12
+    S52 (992 modes, BCS, fragmented V): N_pair = 1.00
+    S48 result CONFIRMED for singlet sector
+    NEW FINDING: non-singlet sectors CAN pair if V is unfragmented
+
+  WHAT WAS COMPUTED:
+    BCS gap equation solved self-consistently in all 6 sectors
+    496 Kramers pairs total (8 singlet + 488 non-singlet)
+    3 V-matrix assumptions: separable, PBCS-corrected, fragmented
+    Singlet cross-check: matches S48 to 10^-6
+
+  WHAT REGION OF SOLUTION SPACE THIS CONSTRAINS:
+    Singlet N_pair = 1 CONFIRMED (structural, exact)
+    Non-singlet contribution DEPENDS on V matrix structure:
+      - Unfragmented (contact-like): N_pair ~ 59 (strong pairing)
+      - Fragmented (selection rules): N_pair ~ 1 (singlet only)
+    OPEN: Kosmann V for non-singlet sectors (DECISIVE)
+
+  WHAT REMAINS UNCOMPUTED:
+    1. Kosmann V matrices for (1,0), (2,0), (1,1), (3,0), (2,1) sectors
+       This is the SINGLE computation that resolves the ambiguity
+    2. ED for sectors with M_max near 1 (BCS unreliable near threshold)
+    3. Multi-cell fabric N_pair (Josephson coupling between cells)
+
+  Saving data...
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s52_n_pair_full.npz (4.2 KB)
+
+  Generating plot...
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s52_n_pair_full.png
+
+  Runtime: 2.0s
+==============================================================================

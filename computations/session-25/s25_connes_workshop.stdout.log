@@ -1,0 +1,280 @@
+======================================================================
+T3-S25-CONNES-WORKSHOP — Input pins (SHA-256):
+  s19a_sweep_data.npz: ad2a0da375f516aa24430db6630c733300428fa9682b0986a70b9b766aec1f5a
+  s23a_kosmann_singlet.npz: ef547e583cf73e91b3f0d26e1ba14ee74c28d3718ee08dde12e0f17ad2775214
+  r20a_riemann_tensor.npz: fc256a9b4791b1d6e1416f93cabbb0e28fe0c858bf2aeb04414b7767a7351fe9
+======================================================================
+Loaded sweep data: 21 tau values [0.00, 2.00]
+Loaded singlet data: 9 tau values: [0.   0.1  0.15 0.2  0.25 0.3  0.35 0.4  0.5 ]
+Loaded Riemann data: 21 tau values
+
+======================================================================
+C1: DIXMIER TRACE RATIO [Connes Q-4]
+  Tr_omega(|D_K(tau)|^{-8}) / Tr_omega(|D_K(0)|^{-8})
+  NCG volume ratio = shape diagnostic at finite N
+======================================================================
+  tau=0: Tr_w = 2.699989e+01
+  N = 11424, log(N) = 9.3435
+
+  tau       Dixmier ratio
+  ------------------------------
+   0.000     1.00000000
+   0.100     0.98983532
+   0.200     0.95260085
+   0.300     0.88065829
+   0.400     0.77536619
+   0.500     0.64792990
+   0.600     0.51422288
+   0.700     0.38857385
+   0.800     0.28027009
+   0.900     0.19321974
+   1.000     0.12733035
+   1.100     0.08016431
+   1.200     0.04821002
+   1.300     0.02772549
+   1.400     0.01528820
+   1.500     0.00811515
+   1.600     0.00416665
+   1.700     0.00207989
+   1.800     0.00101439
+   1.900     0.00048554
+   2.000     0.00022898
+  MONOTONE DECREASING
+
+======================================================================
+C2: RANDOM NCG JACOBIAN [Connes S-4 / Priority P5]
+  J(tau) = prod_n |d(lambda_n)/dtau|  (matrix-truncated)
+  Paper 14, Section 8.2: Z = int dD exp(-S[D])
+  Entropic stabilization if J(tau) peaks at tau_0 > 0
+======================================================================
+
+  Singlet sector (16 eigenvalues, central differences):
+  tau       log|J|      J/J(0.15)
+  ----------------------------------------
+   0.100     -22.5284   6250.710286
+   0.150     -31.2688     1.000000
+   0.200     -43.7008     0.000004
+   0.250     -29.8666     4.064324
+   0.300     -21.8999   11718.544438
+   0.350     -17.3376   1122680.999758
+   0.400     -12.6242   125092639.723828
+  Singlet Jacobian: NON-MONOTONE (no interior peak)
+
+  Full spectrum (11424 eigenvalues, central differences):
+  tau       log|J_full|
+  ------------------------------
+   0.100     -2665.8772
+   0.200      -175.6719
+   0.300      2990.0792
+   0.400      5651.3516
+   0.500      7946.9519
+   0.600     10024.9101
+   0.700     11837.7752
+   0.800     13543.0330
+   0.900     14949.3952
+   1.000     16508.3227
+   1.100     17703.8585
+   1.200     18523.9225
+   1.300     20106.6298
+   1.400     21388.7958
+   1.500     22172.1885
+   1.600     23351.8298
+   1.700     24346.9338
+   1.800     25248.5114
+   1.900     26463.5776
+  Full-spectrum Jacobian: INCREASING
+
+  Effective NCG measure: mu(tau) = J(tau) * exp(-S_b[D_K(tau)])
+  (S_b = spectral action, monotone increasing)
+  If J increases faster than S_b, entropic stabilization possible.
+
+======================================================================
+C3: SPECTRAL FLOW / ZERO CROSSINGS [Connes S-1 / Goal 4]
+  Verify Baptista: Lichnerowicz => no eigenvalue crosses zero
+======================================================================
+  tau    min|lambda|   sqrt(R/4)   Lichnerowicz satisfied?
+  ------------------------------------------------------------
+   0.00     0.833333     0.707107       YES
+   0.20     0.819140     0.710817       YES
+   0.40     0.840544     0.733644       YES
+   0.60     0.919422     0.788194       YES
+   0.80     1.051111     0.882466       YES
+   1.00     1.235652     1.021727       YES
+   1.20     1.476935     1.210570       YES
+   1.40     1.782285     1.454699       YES
+   1.60     2.162260     1.762076       YES
+   1.80     2.630581     2.143568       YES
+   2.00     3.206419     2.613411       YES
+
+  Total sign changes across all 11424 eigenvalues x 21 tau: 0
+  Spectral flow = 0. CONFIRMED by Lichnerowicz bound.
+
+======================================================================
+C4: TRUNCATED ETA INVARIANT [Connes S-5]
+  eta_N(s) = sum_{n=1}^{N} sign(lambda_n) |lambda_n|^{-s}
+  BDI => eta = 0 identically. Verify at finite truncation.
+======================================================================
+  Checking at selected tau values and s values:
+  tau     eta(s=0.5)      eta(s=1)        eta(s=2)        eta(s=4)
+  ----------------------------------------------------------------------
+   0.00     7.814786e+03    5.400417e+03    2.675821e+03    8.075248e+02
+   0.40     7.513354e+03    5.017861e+03    2.357197e+03    6.718077e+02
+   0.80     6.727679e+03    4.073520e+03    1.633338e+03    3.820620e+02
+   1.20     5.737677e+03    2.997196e+03    9.300360e+02    1.480192e+02
+   1.60     4.770986e+03    2.085471e+03    4.638872e+02    4.110880e+01
+   2.00     3.926420e+03    1.415980e+03    2.164714e+02    9.375702e+00
+
+  max|eta| (sampled): 7.814786e+03
+  APS boundary correction: (1/2)[eta(D_K(0)) - eta(D_K(tau))] ~ 0 at machine precision
+  Chern-Simons boundary term: ZERO (trivial by BDI spectral pairing)
+
+======================================================================
+C5: SPECTRAL ACTION WITH 4D-INTEGRATED TEST FUNCTION [Connes S-2]
+  For f(x)=xe^{-x} on M^4 x K:
+    g(Y) = exp(-Y) * (2 + Y)  where Y = lambda_m^2/Lambda^2
+  This is the PROPERLY dimensionally-reduced test function.
+======================================================================
+
+  Comparison: V_f (internal only) vs V_g (4D-integrated)
+
+  Lambda = 1.0:
+    V_f: [0.000254, 1.000000] (MONO)
+    V_g: [0.000172, 1.000000] (MONO)
+    Ratio V_g(0)/V_f(0) = 1.7548
+    tau    V_f/V_f(0)   V_g/V_g(0)   V_g/V_f
+     0.00    1.000000     1.000000       1.7548
+     0.20    0.948082     0.950218       1.7587
+     0.40    0.811432     0.817521       1.7679
+     0.60    0.631393     0.639171       1.7764
+     0.80    0.449310     0.454325       1.7744
+     1.00    0.293284     0.291789       1.7458
+     1.50    0.053601     0.044607       1.4603
+     2.00    0.000254     0.000172       1.1887
+    Max |V_f_normalized - V_g_normalized| = 0.010896
+
+  Lambda = 2.0:
+    V_f: [0.036054, 1.000000] (MONO)
+    V_g: [0.021837, 1.000000] (MONO)
+    Ratio V_g(0)/V_f(0) = 2.8441
+    Max |V_f_normalized - V_g_normalized| = 0.079785
+
+  Lambda = 5.0:
+    V_f: [0.888519, 1.871843] (NON-MONO)
+    V_g: [0.203747, 1.000000] (MONO)
+    Ratio V_g(0)/V_f(0) = 11.3134
+    Max |V_f_normalized - V_g_normalized| = 1.243372
+
+  Lambda = 10.0:
+    V_f: [1.000000, 6.263089] (MONO)
+    V_g: [0.595210, 1.000000] (MONO)
+    Ratio V_g(0)/V_f(0) = 41.6707
+    Max |V_f_normalized - V_g_normalized| = 5.667879
+
+======================================================================
+C6: SEELEY-DEWITT COEFFICIENTS [Connes Q-1]
+  a_2^red = (20/3)*R,  a_4^red = (1/90)*(125R^2 - 8|Ric|^2 + 2K)
+  From Session 20a SD-1 derivation, verified trace identity
+======================================================================
+
+  tau      R        a_2        a_4         a_4/a_2      a_4/R
+  ----------------------------------------------------------------------
+   0.00     2.000      13.333           5.5        0.41        2.76
+   0.20     2.021      13.474           5.6        0.42        2.79
+   0.40     2.153      14.353           6.4        0.45        2.97
+   0.60     2.485      16.567           8.5        0.51        3.42
+   0.80     3.115      20.767          13.3        0.64        4.28
+   1.00     4.176      27.838          23.9        0.86        5.73
+   1.20     5.862      39.079          47.0        1.20        8.03
+   1.40     8.465      56.431          98.0        1.74       11.58
+   1.60    12.420      82.798         210.9        2.55       16.98
+   1.80    18.380     122.530         461.7        3.77       25.12
+   2.00    27.320     182.131        1020.1        5.60       37.34
+
+  Derivative analysis (da_k/dtau):
+  tau    da_2/dtau    da_4/dtau    Signs
+  --------------------------------------------------
+   0.00         0.186           0.2     +  +
+   0.20         2.153           1.8     +  +
+   0.40         7.366           6.6     +  +
+   0.60        15.573          16.1     +  +
+   0.80        27.519          35.8     +  +
+   1.00        44.802          78.2     +  +
+   1.20        70.012         171.5     +  +
+   1.40       107.095         379.0     +  +
+   1.60       161.958         841.1     +  +
+   1.80       243.416        1871.0     +  +
+   2.00       328.004        3342.9     +  +
+
+  SAME SIGN (both positive) for ALL tau >= 0
+  => No Starobinsky-type minimum from SD coefficient competition
+
+  R^2 dominance in a_4:
+    tau=0: 99.40%
+    tau=1: 98.75%
+    tau=2: 98.43%
+  Conclusion: R^2 term dominates a_4 at >99% at all tau.
+
+  Estimated |a_6|/|a_4| (using factorial growth ~ 2*R):
+    tau=0.00: |a_6|/|a_4| ~ 4.0
+    tau=0.50: |a_6|/|a_4| ~ 4.6
+    tau=1.00: |a_6|/|a_4| ~ 8.4
+    tau=1.50: |a_6|/|a_4| ~ 20.5
+    tau=2.00: |a_6|/|a_4| ~ 54.6
+  Conclusion: Expansion diverges factorially. NOT convergent at any tau.
+
+======================================================================
+C7: INDEX PAIRING TOPOLOGICAL PHASE DIAGRAM [Connes S-3]
+  <[D_K(tau)], [e_{(p,q)}]> per sector
+  = #(positive eigenvalues) - #(negative eigenvalues) in (p,q)
+======================================================================
+  28 distinct sectors found
+
+  Sector     N_evals   Index(0)  Index(1.0)  Index(2.0)  Constant
+  -----------------------------------------------------------------
+  (0,0)        16        16        16          16       YES
+  (0,1)        48        48        48          48       YES
+  (0,2)        96        96        96          96       YES
+  (0,3)       160       160       160         160       YES
+  (0,4)       240       240       240         240       YES
+  (0,5)       336       336       336         336       YES
+  (0,6)       448       448       448         448       YES
+  (1,0)        48        48        48          48       YES
+  (1,1)       128       128       128         128       YES
+  (1,2)       240       240       240         240       YES
+  (1,3)       384       384       384         384       YES
+  (1,4)       560       560       560         560       YES
+  (1,5)       768       768       768         768       YES
+  (2,0)        96        96        96          96       YES
+  (2,1)       240       240       240         240       YES
+
+  Non-zero index count across all (sector, tau) pairs: 588
+  Topological phase diagram: NON-TRIVIAL
+  BDI eigenvalue pairing (lambda, -lambda) => index = 0 for all sectors.
+  Lichnerowicz bound => no eigenvalue crosses zero => index is constant.
+  Phase diagram has NO transitions. Geometry is topologically inert under Jensen.
+
+======================================================================
+SAVING T3 RESULTS (side-car)
+======================================================================
+  Saved to C:/sandbox/Ainulindale Exflation/computations/_shared/t3-intake/s25_connes_workshop_t3.npz
+
+======================================================================
+CLOSURE
+======================================================================
+  Input-pin JSON (sorted, compact): {"r20a_riemann_tensor.npz":"fc256a9b4791b1d6e1416f93cabbb0e28fe0c858bf2aeb04414b7767a7351fe9","s19a_sweep_data.npz":"ad2a0da375f516aa24430db6630c733300428fa9682b0986a70b9b766aec1f5a","s23a_kosmann_singlet.npz":"ef547e583cf73e91b3f0d26e1ba14ee74c28d3718ee08dde12e0f17ad2775214"}
+  Closure SHA-256: f21c36e6a68c818ed5f04cda3332fd4e3564bcb04a2f67ca49f9e52b3f879059
+
+======================================================================
+4-TUPLE SUMMARY
+======================================================================
+  value      = 7.814786e+03  (max|eta_N(s)| over sampled s in {0.5,1,2,4} and tau_indices {0,4,8,12,16,20})
+  scheme     = truncated_eta_zeta_reg_signed_power_sum
+  convention = BDI_lambda_minus_lambda_pairing_KOdim6
+  L_max      = 11424_eigenvalues_s19a_sweep_21tau_grid
+  sha256     = f21c36e6a68c818ed5f04cda3332fd4e3564bcb04a2f67ca49f9e52b3f879059
+
+JSON_SUMMARY:{"L_max": "11424_eigenvalues_s19a_sweep_21tau_grid", "convention": "BDI_lambda_minus_lambda_pairing_KOdim6", "derived": {"dixmier_monotone_decreasing": true, "dixmier_monotone_increasing": false, "lich_bound_tau0": 0.7071067811865475, "max_abs_lambda_over_tau_floor": 3.2064187295483997, "min_abs_lambda_at_tau0": 0.8333333333333323, "n_sectors": 28, "n_sign_changes_in_spectral_flow": 0, "non_zero_index_count": 588}, "gate": "T3-S25-CONNES-WORKSHOP", "input_pins": {"r20a_riemann_tensor.npz": "fc256a9b4791b1d6e1416f93cabbb0e28fe0c858bf2aeb04414b7767a7351fe9", "s19a_sweep_data.npz": "ad2a0da375f516aa24430db6630c733300428fa9682b0986a70b9b766aec1f5a", "s23a_kosmann_singlet.npz": "ef547e583cf73e91b3f0d26e1ba14ee74c28d3718ee08dde12e0f17ad2775214"}, "scheme": "truncated_eta_zeta_reg_signed_power_sum", "sha256": "f21c36e6a68c818ed5f04cda3332fd4e3564bcb04a2f67ca49f9e52b3f879059", "value": 7814.786393839198}
+
+======================================================================
+ALL T3 COMPUTATIONS COMPLETE
+======================================================================

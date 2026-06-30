@@ -47,7 +47,7 @@ You proposed this test in your substrate reframe document. Now you execute it.
 **s47_condensate_torus.npz** — W2-1 output at the fold:
 - Contains the character computation setup, BCS weights, grid
 
-**tier0-computation/canonical_constants.py**
+**computations/canonical_constants.py**
 
 ### Computation Steps
 
@@ -91,9 +91,9 @@ You proposed this test in your substrate reframe document. Now you execute it.
 This is a decisive, pre-registered test with quantitative thresholds. No post-hoc interpretation.
 
 ### Output files
-- Script: `tier0-computation/s47_coherence_response.py`
-- Data: `tier0-computation/s47_coherence_response.npz`
-- Plot: `tier0-computation/s47_coherence_response.png`
+- Script: `computations/s47_coherence_response.py`
+- Data: `computations/s47_coherence_response.npz`
+- Plot: `computations/s47_coherence_response.png`
 
 ### Working paper section: W3-3
 

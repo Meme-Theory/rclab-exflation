@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 109,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1081",
+      "anchor_type": "data_provenance",
+      "name": "amplitude_norm",
+      "script_path": "session-66/s66_amplitude_norm.py",
+      "session": "s66",
+      "inputs": "",
+      "outputs": "session-66/s66_amplitude_norm.npz, session-66/s66_amplitude_norm.png",
+      "source_file": "computations/session-66/s66_amplitude_norm.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s66_amplitude_norm.py — Rigorous A_s from GGE Graph-Mode Occupation\n    4: ====================================================================\n    5: \n    6: Gate: AMPLITUDE-NORM-66\n    7:   PASS: |log10(A_s / 2.1e-9)| < 1.0 (within 1 OOM of Planck)\n    8:   FAIL: |log10(A_s / 2.1e-9)| > 3.0 (gap not reduced from S65 preliminary)\n    9:   INFO: 1.0 < |log10(A_s / 2.1e-9)| < 3.0 (partial improvement)\n   10: \n   11: PHYSICS:"
+    },
+    {
+      "anchor_id": "prov_1082",
+      "anchor_type": "data_provenance",
+      "name": "anomaly_constraint",
+      "script_path": "session-66/s66_anomaly_constraint.py",
+      "session": "s66",
+      "inputs": "",
+      "outputs": "session-66/s66_anomaly_constraint.npz, session-66/s66_anomaly_constraint.png",
+      "source_file": "computations/session-66/s66_anomaly_constraint.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s66_anomaly_constraint.py -- ANOMALY-CONSTRAINT-66\n    4: ===================================================\n    5: \n    6: Gate: ANOMALY-CONSTRAINT-66\n    7:   PASS: phi_critical exists with |phi_critical| < 1 AND V(phi) has minimum\n    8:         within 0.1 of phi_critical\n    9:   FAIL: phi_critical requires |phi| > 10 OR V(phi) has no minimum (unstable)\n   10:   INFO: phi_critical exists but V(phi) minimum is far from it (fine-tuning)\n   11: "
+    },
+    {
+      "anchor_id": "prov_1083",
+      "anchor_type": "data_provenance",
+      "name": "ba_weight_refine",
+      "script_path": "session-66/s66_ba_weight_refine.py",
+      "session": "s66",
+      "inputs": "",
+      "outputs": "session-66/s66_ba_weight_refine.npz, session-66/s66_ba_weight_refine.png",
+      "source_file": "computations/session-66/s66_ba_weight_refine.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s66_ba_weight_refine.py — Collective Projection of BA Energy for Omega_DM h^2\n    4: ==============================================================================\n    5: \n    6: BA-WEIGHT-REFINE-66: Refines the S65 DM abundance prediction (Omega_DM h^2 = 0.400,\n    7: 3.3x overprediction) by computing E_BA from explicit collective projection over\n    8: BA phonon branches on CG(24), rather than using the S57 mode-counting estimate.\n    9: \n   10: DIAGNOSIS OF S65 OVERPREDICTION:\n   11:   S65 used F_BA = 7.021 M_KK from the S56 channel energy budget. But F_BA is a"
+    },
+    {
+      "anchor_id": "prov_1084",
+      "anchor_type": "data_provenance",
+      "name": "bcs_cw",
+      "script_path": "session-66/s66_bcs_cw.py",
+      "session": "s66",
+      "inputs": "",
+      "outputs": "session-66/s66_bcs_cw.npz, session-66/s66_bcs_cw.png",
+      "source_file": "computations/session-66/s66_bcs_cw.py",
+      "source_context_30_lines": "  685: \n  686: # =============================================================================\n  687: # STEP 11: SAVE DATA\n  688: # =============================================================================\n  689: print(\"\\n\" + \"=\" * 78)\n  690: print(\"STEP 11: Saving\")\n  691: print(\"=\" * 78)\n  692: \n  693: outpath = os.path.join(SCRIPT_DIR, 's66_bcs_cw.npz')\n  694: np.savez(\n  695:     outpath,\n  696:     # Gate\n  697:     gate_name='BCS-CW-SELFCONSISTENT-66',\n  698:     gate_verdict=verdict,\n  699:     gate_detail=gate_detail,\n  700: \n  701:     # Main results"
+    },
+    {
+      "anchor_id": "prov_1085",
+      "anchor_type": "data_provenance",
+      "name": "bcs_sakharov_loop",
+      "script_path": "session-66/s66_bcs_sakharov_loop.py",
+      "session": "s66",
+      "inputs": "",
+      "outputs": "session-66/s66_bcs_sakharov_loop.npz, session-66/s66_bcs_sakharov_loop.png",
+      "source_file": "computations/session-66/s66_bcs_sakharov_loop.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s66_bcs_sakharov_loop.py -- BCS-SAKHAROV-LOOP-66: Self-Consistent Delta-a_2-G_N Loop\n    4: =====================================================================================\n    5: \n    6: Gate: BCS-SAKHAROV-LOOP-66\n    7:   PASS: Loop converges within 10 iterations to Delta within 5% of 0.464 M_KK\n    8:   FAIL: Loop does not converge (oscillates or diverges)\n    9:   INFO: Converges but Delta shifted by > 20% (substantial change)\n   10: \n   11: Physics:"
+    },
+    {
+      "anchor_id": "prov_1086",
+      "anchor_type": "data_provenance",
+      "name": "bertini_essler",
+      "script_path": "session-66/s66_bertini_essler.py",
+      "session": "s66",
+      "inputs": "",
+      "outputs": "session-66/s66_bertini_essler.npz, session-66/s66_bertini_essler.png",
+      "source_file": "computations/session-66/s66_bertini_essler.py",
+      "source_context_30_lines": "  737: \"\"\")\n  738: \n  739: # =====================================================================\n  740: #  11. SAVE DATA AND PLOT\n  741: # =====================================================================\n  742: \n  743: print(\"--- 11. Saving Data ---\")\n  744: \n  745: save_path = os.path.join(data_dir, 's66_bertini_essler.npz')\n  746: np.savez(save_path,\n  747:     # Gate\n  748:     gate_name='BERTINI-ESSLER-66',\n  749:     gate_verdict=verdict,\n  750:     gate_detail=detail,\n  751:     gate_ratio=gate_ratio,\n  752:     # BE timescales (power-law)\n  753:     t_BE_freq=t_BE_primary,"
+    },
+    {
+      "anchor_id": "prov_1087",
+      "anchor_type": "data_provenance",
+      "name": "bf_split_finite",
+      "script_path": "session-66/s66_bf_split_finite.py",
+      "session": "s66",
+      "inputs": "",
+      "outputs": "session-66/s66_bf_split_finite.npz, session-66/s66_bf_split_finite.png",
+      "source_file": "computations/session-66/s66_bf_split_finite.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s66_bf_split_finite.py -- BF-SPLIT-FINITE-66: B/F Splitting in Finite Spectral Triple\n    4: ======================================================================================\n    5: \n    6: Gate: BF-SPLIT-FINITE-66\n    7:   PASS:  A_F != 0 with |A_F| * a_0/a_2 giving > 10% CC correction\n    8:   FAIL:  A_F = 0 identically\n    9:   INFO:  A_F != 0 but correction < 10%\n   10: \n   11: Physics"
+    },
+    {
+      "anchor_id": "prov_1088",
+      "anchor_type": "data_provenance",
+      "name": "casimir_smooth_running",
+      "script_path": "session-66/s66_casimir_smooth_running.py",
+      "session": "s66",
+      "inputs": "",
+      "outputs": "session-66/s66_casimir_smooth_running.npz, session-66/s66_casimir_smooth_running.png",
+      "source_file": "computations/session-66/s66_casimir_smooth_running.py",
+      "source_context_30_lines": "  739: ax4.legend(fontsize=8, loc='upper left')\n  740: ax4.grid(True, alpha=0.3)\n  741: \n  742: fig.suptitle(f'CASIMIR-SMOOTH-RUNNING-66: Verdict = {verdict}\\n'\n  743:              f'Raw |alpha_s| = {abs(alpha_raw):.4f}, '\n  744:              f'Min smoothed |alpha_s| = {min_abs_alpha:.4f}',\n  745:              fontsize=14, fontweight='bold', y=0.98)\n  746: \n  747: plt.savefig(os.path.join(SCRIPT_DIR, 's66_casimir_smooth_running.png'),\n  748:             dpi=150, bbox_inches='tight')\n  749: plt.close()\n  750: print(f\"  Plot saved: s66_casimir_smooth_running.png\")\n  751: \n  752: \n  753: # =============================================================================\n  754: # STEP 9: SAVE DATA\n  755: # ============================================================================="
+    },
+    {
+      "anchor_id": "prov_1089",
+      "anchor_type": "data_provenance",
+      "name": "color_singlet_cc",
+      "script_path": "session-66/s66_color_singlet_cc.py",
+      "session": "s66",
+      "inputs": "",
+      "outputs": "session-66/s66_color_singlet_cc.npz, session-66/s66_color_singlet_cc.png",
+      "source_file": "computations/session-66/s66_color_singlet_cc.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s66_color_singlet_cc.py — COLOR-SINGLET-CC-66\n    4: a_0/a_2 ratio restricted to color-singlet Peter-Weyl sectors.\n    5: \n    6: Physics\n    7: -------\n    8: The spectral action on M4 x SU(3) generates the cosmological constant (a_0 term)\n    9: and Newton's constant (a_2 term). The Seeley-DeWitt coefficients in the spectral\n   10: zeta convention are:\n   11: "
+    },
+    {
+      "anchor_id": "prov_1090",
+      "anchor_type": "data_provenance",
+      "name": "cutoff_ns",
+      "script_path": "session-66/s66_cutoff_ns.py",
+      "session": "s66",
+      "inputs": "",
+      "outputs": "session-66/s66_cutoff_ns.npz, session-66/s66_cutoff_ns.png",
+      "source_file": "computations/session-66/s66_cutoff_ns.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s66_cutoff_ns.py -- CUTOFF-NS-66: n_s for Three Cutoff Functions\n    4: =================================================================\n    5: \n    6: Gate: CUTOFF-NS-66\n    7:   PASS: Range of n_s across 3 cutoffs < 0.005 (prediction robust)\n    8:   FAIL: Range > 0.02 (n_s is accommodation; cutoff is free parameter)\n    9:   INFO: Range 0.005-0.02 (partial scheme dependence)\n   10: \n   11: Physics:"
+    }
+  ]
+}

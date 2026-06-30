@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 194,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1931",
+      "anchor_type": "data_provenance",
+      "name": "w9_mellin_balance_16_of_16",
+      "script_path": "session-85/s85_w9_mellin_balance_16_of_16.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w9_mellin_balance_16_of_16.npz, session-85/s85_w9_mellin_balance_16_of_16.png",
+      "source_file": "computations/session-85/s85_w9_mellin_balance_16_of_16.py",
+      "source_context_30_lines": "  125: }\n  126: \n  127: # Input artifacts\n  128: TEMPLATE_MD = PROJECT_ROOT / \".claude\" / \"templates\" / \"mellin-balance-pre-declaration.md\"\n  129: W6_71_CSV = resolve_output(84, 's84_w6_mellin_balance_template_audit.csv')\n  130: CANONICAL_PY = resolve_script(None, 'canonical_constants.py')\n  131: \n  132: # Output artifacts\n  133: OUT_CSV = resolve_output(85, 's85_w9_mellin_balance_16_of_16.csv')\n  134: OUT_PNG = resolve_output(85, 's85_w9_mellin_balance_16_of_16.png')\n  135: OUT_NPZ = resolve_output(85, 's85_w9_mellin_balance_16_of_16.npz')\n  136: VERDICT_TXT = resolve_output(85, 's85_gate_verdicts.txt')\n  137: \n  138: INPUT_FILES = [CANONICAL_PY, TEMPLATE_MD, W6_71_CSV]\n  139: \n  140: \n  141: # --------------------------------------------------------------------"
+    },
+    {
+      "anchor_id": "prov_1932",
+      "anchor_type": "data_provenance",
+      "name": "w9_yukawa_mw_taucs_reopen",
+      "script_path": "session-85/s85_w9_yukawa_mw_taucs_reopen.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w9_yukawa_mw_taucs_reopen.npz, session-85/s85_w9_yukawa_mw_taucs_reopen.png",
+      "source_file": "computations/session-85/s85_w9_yukawa_mw_taucs_reopen.py",
+      "source_context_30_lines": "  145: \n  146: # RG flow schematic (1-loop MS-bar)\n  147: GAMMA_M_SCHEMATIC = 2.0                                     # (local) schematic scalar-mass anomalous dimension (reproduces plan §10 direction)\n  148: RG_N_POINTS = 1024                                          # (local) log-spaced sampling between M_Z and M_Planck\n  149: \n  150: CANONICAL_PY = resolve_script(None, 'canonical_constants.py')\n  151: S85_VERDICTS = resolve_output(85, 's85_gate_verdicts.txt')\n  152: \n  153: OUT_NPZ = resolve_output(85, 's85_w9_yukawa_mw_taucs_reopen.npz')\n  154: OUT_PNG = resolve_output(85, 's85_w9_yukawa_mw_taucs_reopen.png')\n  155: VERDICT_TXT = resolve_output(85, 's85_gate_verdicts.txt')\n  156: \n  157: INPUT_FILES = [CANONICAL_PY, S85_VERDICTS]\n  158: \n  159: \n  160: # --------------------------------------------------------------------\n  161: # Section 4 — SHA-256 utilities + dual-SHA closure"
+    },
+    {
+      "anchor_id": "prov_1933",
+      "anchor_type": "data_provenance",
+      "name": "bk_array_2026_classifier",
+      "script_path": "session-86/s86_bk_array_2026_classifier.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-86/s86_bk_array_2026_classifier.py",
+      "source_context_30_lines": "  140: B1_B2 = 0.005                                               # (local) branch-1 / branch-2 split (below Path-H)\n  141: B2_B3 = 0.015                                               # (local) branch-2 / branch-3 split (above Path-H, below Path-C tail)\n  142: B3_B4 = 0.030                                               # (local) branch-3 / branch-4 split (falsifier edge above Path-C tail)\n  143: \n  144: # Synthetic test inputs and expected branches (closed sets, plan §7):\n  145: SYNTHETIC_CASES = [(0.003, 1), (0.012, 2), (0.025, 3), (0.040, 4)]  # (local) (r_obs, expected_branch)\n  146: \n  147: # Output paths\n  148: OUT_JSON = SCRIPT_DIR / \"s86_bk_array_2026_classifier.json\"\n  149: VERDICT_TXT = SCRIPT_DIR / \"s86_gate_verdicts.txt\"\n  150: CANON_PY = SCRIPT_DIR / \"canonical_constants.py\"\n  151: \n  152: \n  153: def classify_bk_array_r(r_observed: float) -> int:\n  154:     \"\"\"\n  155:     4-branch BK-Array 2026 response classifier.\n  156: "
+    },
+    {
+      "anchor_id": "prov_1934",
+      "anchor_type": "data_provenance",
+      "name": "w0b_canonical_phrasing_audit",
+      "script_path": "session-86/s86_w0b_canonical_phrasing_audit.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-86/s86_w0b_canonical_phrasing_audit.py",
+      "source_context_30_lines": "<name 'w0b_canonical_phrasing_audit' not found in source>\n--- file head ---\n    1: \"\"\"S86-CANONICAL-PHRASING-AUDIT — W0b-1 producing script.\n    2: \n    3: Audits two paths for the forbidden phrasing pattern that conflates the\n    4: substrate sound speed `c_fabric` with a momentum cutoff `Λ_eff`:\n    5: \n    6:   forbidden ::= (?i)(Λ|Lambda)_eff\\\\s*=\\\\s*c_fabric\n    7: \n    8: Targets:\n    9:   1. computations/_shared/ (recursive)\n   10:   2. sessions/session-plan/session-86-plan-w3.md\n   11: \n   12: PASS iff: post-edit grep count == 0  AND  canonical_constants.py c_fabric\n   13: docstring contains the substrate-sound-speed qualification verbatim.\n   14: \n   15: Verdict line appended to computations/session-86/s86_gate_verdicts.txt per\n   16: .claude/rules/gate-verdicts.md (S81+ canonical form + W9a-99 dual-SHA\n   17: companion row).\n   18: \n   19: Per .claude/rules/math-scripts.md exit-code discipline: exit 0 on PASS or\n   20: FAIL; non-zero only on script error.\n   21: \"\"\"\n   22: \n   23: from canonical_constants import c_fabric  # noqa: F401  (import enforces compliance audit)\n   24: import hashlib\n   25: import os\n   26: import pathlib\n   27: import re\n   28: import sys\n   29: # === Phase 2b X2 transform bootstrap (auto-inserted by tools/_x2_transform_copies.py) ===\n   30: import sys as _x2_sys"
+    },
+    {
+      "anchor_id": "prov_1935",
+      "anchor_type": "data_provenance",
+      "name": "w0b_dual_sha_infrastructure",
+      "script_path": "session-86/s86_w0b_dual_sha_infrastructure.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-86/s86_w0b_dual_sha_infrastructure.py",
+      "source_context_30_lines": "<name 'w0b_dual_sha_infrastructure' not found in source>\n--- file head ---\n    1: \"\"\"S86-DUAL-SHA-INFRASTRUCTURE — W0b-5 producing script.\n    2: \n    3: Verifies the 4 conjuncts (a)-(d) of the plan §W0b-5 §9 PASS criterion:\n    4:   S = boolean: computations/_shared/_dual_sha_uniqueness_audit.py exists + executable\n    5:   A = boolean: computations/_shared/_dual_sha_allowlist.json exists with exactly 3 patterns\n    6:   H = boolean: .claude/hooks/post-session/v3-closure-audit.sh contains the new invocation\n    7:   N_fp = false_positive_count from the synthetic test\n    8: \n    9:   PASS_predicate = S AND A AND H AND (N_fp == 0)\n   10: \n   11: Per .claude/rules/math-scripts.md exit-code discipline: PASS/FAIL/INFO all exit 0.\n   12: \"\"\"\n   13: \n   14: from canonical_constants import c_fabric  # noqa: F401  (compliance audit per computations/_shared/CLAUDE.md)\n   15: import hashlib\n   16: import json\n   17: import pathlib\n   18: import subprocess\n   19: import sys\n   20: import tempfile\n   21: \n   22: \n   23: REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent\n   24: PYTHON = REPO_ROOT / \"phonon-exflation-sim\" / \".venv312\" / \"Scripts\" / \"python.exe\"\n   25: SCRIPT_PATH = REPO_ROOT / \"computations\" / \"_shared\" / \"_dual_sha_uniqueness_audit.py\"\n   26: ALLOWLIST_PATH = REPO_ROOT / \"computations\" / \"_shared\" / \"_dual_sha_allowlist.json\"\n   27: HOOK_PATH = REPO_ROOT / \".claude\" / \"hooks\" / \"post-session\" / \"v3-closure-audit.sh\"\n   28: TEST_PATH = REPO_ROOT / \"computations\" / \"_shared\" / \"test_dual_sha_uniqueness_audit.py\"\n   29: S86_VERDICT = REPO_ROOT / \"computations\" / \"session-86\" / \"s86_gate_verdicts.txt\"\n   30: "
+    },
+    {
+      "anchor_id": "prov_1936",
+      "anchor_type": "data_provenance",
+      "name": "w0b_dual_sha_regen",
+      "script_path": "session-86/s86_w0b_dual_sha_regen.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-86/s86_w0b_dual_sha_regen.py",
+      "source_context_30_lines": "<name 'w0b_dual_sha_regen' not found in source>\n--- file head ---\n    1: \"\"\"S86-W7-SIG2-DUAL-SHA-REGEN + S86-S85-VERDICT-FILE-COMPANION-ROW-CANONICALIZATION.\n    2: \n    3: W0b-4 producing script. Sweeps computations/session-85/s85_gate_verdicts.txt for\n    4: canonical verdict lines that lack a matching W9a-99 companion comment row,\n    5: extracts content_sha256 and audit_sha256 from the canonical line itself, and\n    6: appends NEW canonicalized companion rows at the end of the file.\n    7: \n    8: W9a-99 form (per .claude/rules/gate-verdicts.md S81+ + W9a-99 template):\n    9:   # GATE_ID: audit_sha256_short=<16hex> content_sha256=<64hex> audit_sha256=<64hex>\n   10: \n   11: Existing schema-1.5 companion form (kept for back-compat, re-emitted in W9a-99):\n   12:   # audit_sha256 companion row: <GATE_ID> audit=<16hex> content=<16hex>\n   13: \n   14: Per .claude/rules/gate-verdicts.md \"verdicts are permanent — no retroactive\n   15: changes\": this script APPENDS new companion rows; it never edits or deletes\n   16: historical lines.\n   17: \n   18: Plan §W0b-4 §6 names target=24 (7 W7 + 17 schema-1.5) but lizzi 9A §4.4 line\n   19: 295-297 reports 17 missing companions in current state. The script honors\n   20: the actual filesystem count, not the plan's wished-for 24.\n   21: \"\"\"\n   22: \n   23: from canonical_constants import c_fabric  # noqa: F401\n   24: import hashlib\n   25: import pathlib\n   26: import re\n   27: import sys\n   28: \n   29: \n   30: REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent"
+    },
+    {
+      "anchor_id": "prov_1937",
+      "anchor_type": "data_provenance",
+      "name": "w0b_single_name_conflation_entry",
+      "script_path": "session-86/s86_w0b_single_name_conflation_entry.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-86/s86_w0b_single_name_conflation_entry.py",
+      "source_context_30_lines": "<name 'w0b_single_name_conflation_entry' not found in source>\n--- file head ---\n    1: \"\"\"S86-SINGLE-NAME-CONFLATION-METHODOLOGY-ENTRY — W0b-2 producing script.\n    2: \n    3: Verifies the §VII.R methodology entry was landed with all 4 required witness\n    4: citations + keyword + R8 cross-reference, then emits the verdict line per\n    5: .claude/rules/gate-verdicts.md.\n    6: \n    7: PASS iff:\n    8:   W = {\"2A\", \"2B\", \"6A\", \"W12-2\"}     (4 witness IDs present in §VII.R block)\n    9:   K = \"single-name conflation\"          (keyword present)\n   10:   X = cross-reference to R8 (§VII.S)    (cross-reference present)\n   11: \n   12:   PASS_predicate = (W == W_required) AND K AND X\n   13: \"\"\"\n   14: \n   15: from canonical_constants import c_fabric  # noqa: F401\n   16: import hashlib\n   17: import pathlib\n   18: import re\n   19: import sys\n   20: \n   21: \n   22: REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent\n   23: REGISTRY = REPO_ROOT / \"sessions\" / \"permanent-results-registry.md\"\n   24: VERDICT_FILE = REPO_ROOT / \"computations\" / \"session-86\" / \"s86_gate_verdicts.txt\"\n   25: \n   26: GATE_ID = \"S86-SINGLE-NAME-CONFLATION-METHODOLOGY-ENTRY\"\n   27: \n   28: SECTION_ANCHOR = \"§VII.R\"\n   29: KEYWORD = \"single-name conflation\"\n   30: WITNESS_REQUIRED = {\"2A\", \"2B\", \"6A\", \"W12-2\"}"
+    },
+    {
+      "anchor_id": "prov_1938",
+      "anchor_type": "data_provenance",
+      "name": "w0b_three_layer_adjudication_entry",
+      "script_path": "session-86/s86_w0b_three_layer_adjudication_entry.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-86/s86_w0b_three_layer_adjudication_entry.py",
+      "source_context_30_lines": "<name 'w0b_three_layer_adjudication_entry' not found in source>\n--- file head ---\n    1: \"\"\"S86-PRR-THREE-LAYER-ADJUDICATION — W0b-3 producing script.\n    2: \n    3: Verifies the §VII.S methodology entry was landed with keyword + 3 layers +\n    4: generalization-clause substring + R7 cross-reference, then emits the verdict\n    5: line per .claude/rules/gate-verdicts.md.\n    6: \n    7: PASS iff:\n    8:   K = \"three-layer adjudication for joint-channel ρ verdicts\"  (keyword present)\n    9:   G = \"joint-channel gate quoting ρ between two observables sharing a substrate parameter\"  (generalization clause)\n   10:   L = {\"LAYER-1\", \"LAYER-2\", \"LAYER-3\"}  (all three layer names present)\n   11:   X = \"§VII.R\" cross-reference present\n   12: \n   13:   PASS_predicate = K AND G AND (L == L_required) AND X\n   14: \"\"\"\n   15: \n   16: from canonical_constants import c_fabric  # noqa: F401\n   17: import hashlib\n   18: import pathlib\n   19: import re\n   20: import sys\n   21: \n   22: \n   23: REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent\n   24: REGISTRY = REPO_ROOT / \"sessions\" / \"permanent-results-registry.md\"\n   25: VERDICT_FILE = REPO_ROOT / \"computations\" / \"session-86\" / \"s86_gate_verdicts.txt\"\n   26: \n   27: GATE_ID = \"S86-PRR-THREE-LAYER-ADJUDICATION\"\n   28: \n   29: SECTION_ANCHOR = \"§VII.S\"\n   30: KEYWORD = \"three-layer adjudication for joint-channel ρ verdicts\""
+    },
+    {
+      "anchor_id": "prov_1939",
+      "anchor_type": "data_provenance",
+      "name": "w0c_a_n_regulator_pin_discipline",
+      "script_path": "session-86/s86_w0c_a_n_regulator_pin_discipline.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-86/s86_w0c_a_n_regulator_pin_discipline.py",
+      "source_context_30_lines": "<name 'w0c_a_n_regulator_pin_discipline' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S86 W0c-7 — S86-W12-4-A_N-REGULATOR-PIN-DISCIPLINE\n    4: ====================================================\n    5: \n    6: Gate: S86-W12-4-A_N-REGULATOR-PIN-DISCIPLINE ([AUDIT])\n    7: Classification: META\n    8: \n    9: Pre-registered threshold (plan §W0c-7.9):\n   10:   PASS iff post-pass `bare_a_n_count == 0` (every citation either auto-tagged\n   11:   via inference or manually tagged in the same pass).\n   12:   FAIL iff `bare_a_n_count > 0 AND manual_review_required > 0` (auto-inference\n   13:   failed and manual tagging deferred).\n   14:   INFO iff `bare_a_n_count == 0 pre-pass` (no violations existed; rule lands\n   15:   but retrofit was a no-op).\n   16: \n   17: Strategy (per plan §W0c-7.6 + epistemic discipline):\n   18:   Step 1: confirm rule-file landed at .claude/rules/regulator-pin-discipline.md\n   19:   Step 2: confirm audit-script landed at computations/_shared/_a_n_regulator_pin_audit.py\n   20:   Step 3: run audit (no auto-retrofit — see PROHIBITED_ACTIONS rationale below)\n   21:   Step 4: record FAIL with diagnostic; queue Level-3 manual review for S87+\n   22: \n   23: PROHIBITED_ACTIONS rationale: the audit's regex `\\\\ba_(\\\\d+)\\\\b(?!\\\\^)` matches\n   24: ANY `a_n` token, not just Seeley-DeWitt coefficients. Pre-existing computation\n   25: codebase contains ~20k bare-a_n hits across ~638 files; the majority are\n   26: NON-Seeley-DeWitt (lattice spacings, plain variable names, string literals,\n   27: generic indices). Auto-tagging all 20k as Seeley-DeWitt would be ansatz-\n   28: forced PASS via false-positive labeling. The honest path is FAIL +\n   29: forward-looking rule + queued semantic-review carry-forward.\n   30: "
+    },
+    {
+      "anchor_id": "prov_1940",
+      "anchor_type": "data_provenance",
+      "name": "w0c_canonical_consolidation",
+      "script_path": "session-86/s86_w0c_canonical_consolidation.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-86/s86_w0c_canonical_consolidation.py",
+      "source_context_30_lines": "<name 'w0c_canonical_consolidation' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S86 W0c-3 — S86-CANONICAL-ENTRY-CONSOLIDATION\n    4: ==============================================\n    5: \n    6: Gate: S86-CANONICAL-ENTRY-CONSOLIDATION ([VERIFY])\n    7: Classification: META\n    8: \n    9: Pre-registered threshold (plan §W0c-3.9):\n   10:   PASS iff all 5 entries (eps_H_HP1_norm, HP1_dim, FI_parity_exclusion,\n   11:   rank_exclusion, nonflat_T_correction_L2) exist in canonical_constants.py\n   12:   with provenance blocks AND import test prints \"OK\".\n   13:   FAIL iff any 1+ entry absent or import test fails.\n   14:   INFO iff vdd paper §VI cannot be parsed for nonflat_T_correction_L2 (4\n   15:   entries land; 5th defers).\n   16: \n   17: Inputs (S84+ dual-SHA):\n   18:   - computations/_shared/canonical_constants.py (pre-edit)\n   19:   - computations/session-84/s84_w10a_114_eps_h_hp1_cocycle.npz (eps_H source)\n   20:   - computations/session-84/s84_w10a_117_r_protection_classification.csv (rank source)\n   21:   - computations/session-83/s83_w2_g24_nonflat_t_correction_l2.npz (T-correction source)\n   22:   - script bytes (this file)\n   23: \n   24: Output 4-tuple:\n   25:   (value=5_entries_landed, scheme=canonical_constants_register,\n   26:    convention=mixed, L_max=mixed)\n   27: \"\"\"\n   28: from __future__ import annotations\n   29: \n   30: from canonical_constants import M_KK  # noqa: F401 — framework-import discipline"
+    }
+  ]
+}

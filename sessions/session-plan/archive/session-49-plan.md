@@ -13,7 +13,7 @@
 
 S48's 4 collaborative reviews converged on a single structural conclusion: the Goldstone mass problem and the CC problem are the same problem, and the solution lives at the fabric-cosmological interface, not at the single-cell BCS level. The trace theorem makes all on-site mass sources vanish. The self-tuning runaway has no fixed point. The mass must emerge from the 32-cell fabric coupling to 4D Friedmann dynamics.
 
-S49 executes 20 parallel computations that test this conclusion. Tier 1 (5 computations) attacks the central questions: Friedmann-Goldstone coupling with GGE initial conditions, fabric-level pair number, Bragg gap from tessellation, geometric breaking from phase mismatch, and multi-temperature Friedmann equation. Tier 2 (6 computations) characterizes the tau=0.537 geometric phase transition and tests cavity resonance unification. Tier 3 (4 computations) refines observational predictions. Tier 4 (5 computations) completes the geometric characterization and catalogs symmetry-breaking interactions.
+S49 executes 20 parallel computations that test this conclusion. Level 1 (5 computations) attacks the central questions: Friedmann-Goldstone coupling with GGE initial conditions, fabric-level pair number, Bragg gap from tessellation, geometric breaking from phase mismatch, and multi-temperature Friedmann equation. Level 2 (6 computations) characterizes the tau=0.537 geometric phase transition and tests cavity resonance unification. Level 3 (4 computations) refines observational predictions. Level 4 (5 computations) completes the geometric characterization and catalogs symmetry-breaking interactions.
 
 All 20 computations use existing S47/S48 data as input. No inter-dependencies. Single wave.
 
@@ -41,8 +41,8 @@ You are computing the Goldstone mass that emerges when the fabric phase field is
 **Context**: S48 proved that all single-cell equilibrium mass sources vanish (trace theorem, self-tuning runaway). The Volovik review identified an 84-order scale crisis: the Josephson coupling J * K_pivot^2 ~ 3.7 M_KK^2 overwhelms m_G^2 ~ 10^{-84} M_KK^2. Even the correct mass (m ~ H_0) is drowned by the KK-scale coupling. The Einstein review requires this computation to be parameter-free: the mass must be determined entirely by rho_s, J, N_cells, and GGE initial conditions (EIH constraint). No tunable parameters.
 
 **Method**:
-1. Load the superfluid density tensor from `tier0-computation/s47_rhos_tensor.npz` and the texture correlation function from `tier0-computation/s47_texture_corr.npz`.
-2. Load GGE data: Richardson-Gaudin conserved quantities from `tier0-computation/s39_richardson_gaudin.npz` and GGE Lagrange multipliers from `tier0-computation/s39_gge_lambdas.npz`.
+1. Load the superfluid density tensor from `computations/s47_rhos_tensor.npz` and the texture correlation function from `computations/s47_texture_corr.npz`.
+2. Load GGE data: Richardson-Gaudin conserved quantities from `computations/s39_richardson_gaudin.npz` and GGE Lagrange multipliers from `computations/s39_gge_lambdas.npz`.
 3. Construct the Goldstone effective action on the 32-cell Josephson network: S_eff[phi] = sum_{<ij>} J_ij * rho_s * [1 - cos(phi_i - phi_j)] + kinetic terms from Friedmann coupling.
 4. The Friedmann equation H^2 = (8*pi*G/3)*rho sources a damping term for the phase field. Compute the effective mass from the linearized equation of motion: m_G^2 = (rho_s * J_eff) / (M_Pl^2 * H^2) evaluated at the fold.
 5. Address the 84-order crisis: the ratio J * K_pivot^2 / m_G^2 must be explained. Does the Friedmann coupling screen the Josephson energy? Does the GGE initial condition (P_exc=1, non-thermal) change the effective J?
@@ -51,11 +51,11 @@ You are computing the Goldstone mass that emerges when the fabric phase field is
 Use `from canonical_constants import *` for all constants.
 
 **Inputs**:
-- `tier0-computation/s47_rhos_tensor.npz` (rho_s tensor, C^2 = 7.962)
-- `tier0-computation/s47_texture_corr.npz` (Josephson phase correlations, 32-cell)
-- `tier0-computation/s39_richardson_gaudin.npz` (8 conserved quantities)
-- `tier0-computation/s39_gge_lambdas.npz` (GGE Lagrange multipliers)
-- `tier0-computation/canonical_constants.py`
+- `computations/s47_rhos_tensor.npz` (rho_s tensor, C^2 = 7.962)
+- `computations/s47_texture_corr.npz` (Josephson phase correlations, 32-cell)
+- `computations/s39_richardson_gaudin.npz` (8 conserved quantities)
+- `computations/s39_gge_lambdas.npz` (GGE Lagrange multipliers)
+- `computations/canonical_constants.py`
 
 **Gate**: FRIEDMANN-GOLDSTONE-49
 - PASS: m_G/M_KK in [10^{-60}, 10^{-30}] with no free parameters
@@ -63,9 +63,9 @@ Use `from canonical_constants import *` for all constants.
 - FAIL: m_G = 0 or computation breaks down
 
 **Output**:
-- Script: `tier0-computation/s49_friedmann_goldstone.py`
-- Data: `tier0-computation/s49_friedmann_goldstone.npz`
-- Plot: `tier0-computation/s49_friedmann_goldstone.png`
+- Script: `computations/s49_friedmann_goldstone.py`
+- Data: `computations/s49_friedmann_goldstone.npz`
+- Plot: `computations/s49_friedmann_goldstone.png`
 - Working paper section: W1-A
 
 ---
@@ -82,9 +82,9 @@ You are computing the effective Cooper pair number for the 32-cell Josephson net
 **Context**: S48 N-PAIR-FULL confirmed N=1 exactly in the 8-mode singlet (s48_npair_full.npz). The CC crossing at tau*=0.170 requires N >= 2. The Nazarewicz review identified that the BCS-BEC crossover (N=1 per cell) transitions to weak-coupling BCS (N=32 effective) at the fabric level. The PBCS/BCS ratio improves from 0.63 (N=1) to ~0.9 (N=32). The q-theory CC crossing shortfall shrinks from 2.5x to 1.7x. Compute this quantitatively.
 
 **Method**:
-1. Load S48 pair number results from `tier0-computation/s48_npair_full.npz`.
-2. Load texture correlations from `tier0-computation/s47_texture_corr.npz` (Josephson coupling matrix J_ij).
-3. Load q-theory self-consistent data from `tier0-computation/s46_qtheory_selfconsistent.npz`.
+1. Load S48 pair number results from `computations/s48_npair_full.npz`.
+2. Load texture correlations from `computations/s47_texture_corr.npz` (Josephson coupling matrix J_ij).
+3. Load q-theory self-consistent data from `computations/s46_qtheory_selfconsistent.npz`.
 4. Construct the 32-cell BCS problem: each cell has N=1 pair, cells are Josephson-coupled. Compute the effective N_pair from the fabric-level BCS wavefunction (product of cell wavefunctions with inter-cell coherence).
 5. Evaluate PBCS/BCS ratio at N_eff = 32. Compare to N_eff = 1 (ratio 0.63 from S48).
 6. Recompute the q-theory CC crossing condition rho_q(tau*) = rho_Lambda at fabric-level N_eff. Does the crossing occur? At what tau*?
@@ -93,10 +93,10 @@ You are computing the effective Cooper pair number for the 32-cell Josephson net
 Use `from canonical_constants import *` for all constants.
 
 **Inputs**:
-- `tier0-computation/s48_npair_full.npz` (N=1 singlet result)
-- `tier0-computation/s47_texture_corr.npz` (J_ij matrix, 32 cells)
-- `tier0-computation/s46_qtheory_selfconsistent.npz` (q-theory self-consistent solution)
-- `tier0-computation/canonical_constants.py`
+- `computations/s48_npair_full.npz` (N=1 singlet result)
+- `computations/s47_texture_corr.npz` (J_ij matrix, 32 cells)
+- `computations/s46_qtheory_selfconsistent.npz` (q-theory self-consistent solution)
+- `computations/canonical_constants.py`
 
 **Gate**: FABRIC-NPAIR-49
 - PASS: N_eff >= 2 at fabric level AND CC crossing shortfall < 1.5x
@@ -104,9 +104,9 @@ Use `from canonical_constants import *` for all constants.
 - FAIL: N_eff = 1 persists at fabric level
 
 **Output**:
-- Script: `tier0-computation/s49_fabric_npair.py`
-- Data: `tier0-computation/s49_fabric_npair.npz`
-- Plot: `tier0-computation/s49_fabric_npair.png`
+- Script: `computations/s49_fabric_npair.py`
+- Data: `computations/s49_fabric_npair.npz`
+- Plot: `computations/s49_fabric_npair.png`
 - Working paper section: W1-B
 
 ---
@@ -123,9 +123,9 @@ You are computing the Goldstone dispersion on the 32-cell phononic crystal forme
 **Context**: The Tesla review identified that the 32-cell tessellation is a phononic crystal for Goldstone waves. The Z_3 domain walls have impedance contrast sigma = 4.50 M_KK (from s48_aniso_oz.npz). In any 1D phononic crystal, impedance mismatch at periodic boundaries opens a Bragg gap at k = pi/a (Brillouin zone boundary). If the Goldstone mode has a Bragg gap, the effective mass is m_G = sqrt(omega_gap) without requiring explicit symmetry breaking.
 
 **Method**:
-1. Load the curvature extension data from `tier0-computation/s48_curv_extend.npz` (sectional curvatures across tau).
-2. Load the texture correlations from `tier0-computation/s47_texture_corr.npz` (cell geometry, Josephson couplings).
-3. Load the anisotropic Ornstein-Zernike data from `tier0-computation/s48_aniso_oz.npz` (wall impedance sigma = 4.50 M_KK, correlation lengths).
+1. Load the curvature extension data from `computations/s48_curv_extend.npz` (sectional curvatures across tau).
+2. Load the texture correlations from `computations/s47_texture_corr.npz` (cell geometry, Josephson couplings).
+3. Load the anisotropic Ornstein-Zernike data from `computations/s48_aniso_oz.npz` (wall impedance sigma = 4.50 M_KK, correlation lengths).
 4. Construct the 1D transfer matrix for Goldstone wave propagation through the periodic cell structure. Each cell has phase velocity c_in, walls have impedance Z_wall = sigma * Z_bulk.
 5. Compute the dispersion relation omega(k) by diagonalizing the Bloch Hamiltonian across the 1D Brillouin zone.
 6. Extract the Bragg gap: Delta_omega at k = pi/a. Convert to effective mass: m_Bragg = Delta_omega / (2 * c_Goldstone).
@@ -135,10 +135,10 @@ You are computing the Goldstone dispersion on the 32-cell phononic crystal forme
 Use `from canonical_constants import *` for all constants.
 
 **Inputs**:
-- `tier0-computation/s48_curv_extend.npz` (curvature data, Z_3 wall structure)
-- `tier0-computation/s47_texture_corr.npz` (cell geometry)
-- `tier0-computation/s48_aniso_oz.npz` (wall impedance sigma=4.50, O-Z correlation)
-- `tier0-computation/canonical_constants.py`
+- `computations/s48_curv_extend.npz` (curvature data, Z_3 wall structure)
+- `computations/s47_texture_corr.npz` (cell geometry)
+- `computations/s48_aniso_oz.npz` (wall impedance sigma=4.50, O-Z correlation)
+- `computations/canonical_constants.py`
 
 **Gate**: BRAGG-GOLDSTONE-49
 - PASS: Bragg gap produces m_Bragg/M_KK in [10^{-60}, 10^{-30}]
@@ -146,9 +146,9 @@ Use `from canonical_constants import *` for all constants.
 - FAIL: no gap (impedance contrast too weak) or gap at KK scale (too large)
 
 **Output**:
-- Script: `tier0-computation/s49_bragg_goldstone.py`
-- Data: `tier0-computation/s49_bragg_goldstone.npz`
-- Plot: `tier0-computation/s49_bragg_goldstone.png` (dispersion relation with gap)
+- Script: `computations/s49_bragg_goldstone.py`
+- Data: `computations/s49_bragg_goldstone.npz`
+- Plot: `computations/s49_bragg_goldstone.png` (dispersion relation with gap)
 - Working paper section: W1-C
 
 ---
@@ -165,9 +165,9 @@ You are computing the explicit U(1)_7 breaking parameter epsilon from WKB tunnel
 **Context**: The Nazarewicz review proposed a new mass mechanism: if two vacua exist (fold at tau=0.19 and post-transition at tau > 0.537), their BCS condensate phases are independent. The phase mismatch is an explicit breaking of U(1)_7 (the global phase rotation is not a symmetry when two disconnected vacua are present). The breaking parameter epsilon comes from WKB tunneling through the curvature barrier between the two regimes. Nuclear analog: proton-neutron phase mismatch at high spin (proton and neutron superfluids decouple at the backbending point).
 
 **Method**:
-1. Load curvature data from `tier0-computation/s48_curv_extend.npz` (sectional curvatures, Ricci eigenvalues across tau in [0, 1]).
-2. Load the off-Jensen Hessian from `tier0-computation/s40_hessian_offjensen.npz` (curvature barrier height and width).
-3. Load GCM zero-point energy from `tier0-computation/s46_gcm_zero_point.npz` (quantum corrections to barrier).
+1. Load curvature data from `computations/s48_curv_extend.npz` (sectional curvatures, Ricci eigenvalues across tau in [0, 1]).
+2. Load the off-Jensen Hessian from `computations/s40_hessian_offjensen.npz` (curvature barrier height and width).
+3. Load GCM zero-point energy from `computations/s46_gcm_zero_point.npz` (quantum corrections to barrier).
 4. Identify the curvature barrier between tau=0.19 (fold) and tau=0.537 (geometric phase transition). Extract barrier height V_barrier and width Delta_tau.
 5. Compute the WKB tunneling amplitude: T = exp(-2 * integral[sqrt(2*M*V(tau))] dtau) where M is the ATDHFB collective mass from canonical_constants (M_ATDHFB = 1.695).
 6. The explicit breaking parameter: epsilon = T * Delta_phi where Delta_phi is the phase mismatch (maximum pi for completely independent condensates).
@@ -177,10 +177,10 @@ You are computing the explicit U(1)_7 breaking parameter epsilon from WKB tunnel
 Use `from canonical_constants import *` for all constants.
 
 **Inputs**:
-- `tier0-computation/s48_curv_extend.npz` (curvature across tau, transition at 0.537)
-- `tier0-computation/s40_hessian_offjensen.npz` (barrier structure)
-- `tier0-computation/s46_gcm_zero_point.npz` (quantum corrections)
-- `tier0-computation/canonical_constants.py`
+- `computations/s48_curv_extend.npz` (curvature across tau, transition at 0.537)
+- `computations/s40_hessian_offjensen.npz` (barrier structure)
+- `computations/s46_gcm_zero_point.npz` (quantum corrections)
+- `computations/canonical_constants.py`
 
 **Gate**: GEOMETRIC-BREAKING-49
 - PASS: epsilon > 0 and m_G/M_KK in [10^{-60}, 10^{-30}]
@@ -188,9 +188,9 @@ Use `from canonical_constants import *` for all constants.
 - FAIL: barrier is zero (no tunneling suppression) or epsilon = 0
 
 **Output**:
-- Script: `tier0-computation/s49_geometric_breaking.py`
-- Data: `tier0-computation/s49_geometric_breaking.npz`
-- Plot: `tier0-computation/s49_geometric_breaking.png` (barrier profile + tunneling amplitude)
+- Script: `computations/s49_geometric_breaking.py`
+- Data: `computations/s49_geometric_breaking.npz`
+- Plot: `computations/s49_geometric_breaking.png` (barrier profile + tunneling amplitude)
 - Working paper section: W1-D
 
 ---
@@ -207,9 +207,9 @@ You are computing the modified Friedmann equation for the 8-temperature GGE reli
 **Context**: The Einstein review identified that the post-transit state is a GGE with 8 distinct temperatures (Richardson-Gaudin conserved quantities). Standard Friedmann assumes a single-temperature thermal bath with w = p/rho. The GGE has 8 independent Lagrange multipliers, and the Euler relation p = T*s - rho + mu*n fails for multi-temperature systems (negative Euler pressure, S48 W5-C). This means the standard equation of state w(z) = p(z)/rho(z) is not well-defined. The question: does the non-standard GGE thermodynamics shift w_0 from the Z-K prediction [-0.47, -0.59] toward DESI DR2?
 
 **Method**:
-1. Load the dark matter / dark energy refinement from `tier0-computation/s48_dmde_refine.npz` (w_0, w_a predictions, Z-K decomposition).
-2. Load Richardson-Gaudin data from `tier0-computation/s39_richardson_gaudin.npz` (8 conserved quantities, their values).
-3. Load chi-q phase data from `tier0-computation/s48_chi_q_phase.npz` (q-theory response function).
+1. Load the dark matter / dark energy refinement from `computations/s48_dmde_refine.npz` (w_0, w_a predictions, Z-K decomposition).
+2. Load Richardson-Gaudin data from `computations/s39_richardson_gaudin.npz` (8 conserved quantities, their values).
+3. Load chi-q phase data from `computations/s48_chi_q_phase.npz` (q-theory response function).
 4. Construct the GGE energy-momentum tensor: T^{mu nu} = sum_{alpha=1}^{8} T^{mu nu}_alpha where each sector has its own temperature beta_alpha and energy density rho_alpha.
 5. The effective pressure: p_eff = sum_alpha p_alpha(beta_alpha). Compute p_alpha for each Richardson-Gaudin sector.
 6. Solve the modified Friedmann equation: H^2 = (8*pi*G/3) * sum_alpha rho_alpha(a) with sector-specific scale factor dependence rho_alpha(a) ~ a^{-3(1+w_alpha)}.
@@ -218,10 +218,10 @@ You are computing the modified Friedmann equation for the 8-temperature GGE reli
 Use `from canonical_constants import *` for all constants.
 
 **Inputs**:
-- `tier0-computation/s48_dmde_refine.npz` (current w_0, w_a predictions)
-- `tier0-computation/s39_richardson_gaudin.npz` (8 conserved quantities)
-- `tier0-computation/s48_chi_q_phase.npz` (q-theory chi response)
-- `tier0-computation/canonical_constants.py`
+- `computations/s48_dmde_refine.npz` (current w_0, w_a predictions)
+- `computations/s39_richardson_gaudin.npz` (8 conserved quantities)
+- `computations/s48_chi_q_phase.npz` (q-theory chi response)
+- `computations/canonical_constants.py`
 
 **Gate**: MULTI-T-FRIEDMANN-49
 - PASS: |w_0(GGE) - w_0(DESI)| < |w_0(single-T) - w_0(DESI)| (GGE moves prediction toward data)
@@ -229,9 +229,9 @@ Use `from canonical_constants import *` for all constants.
 - FAIL: GGE thermodynamics moves w_0 away from data
 
 **Output**:
-- Script: `tier0-computation/s49_multi_t_friedmann.py`
-- Data: `tier0-computation/s49_multi_t_friedmann.npz`
-- Plot: `tier0-computation/s49_multi_t_friedmann.png` (w(z) comparison: single-T vs GGE vs DESI)
+- Script: `computations/s49_multi_t_friedmann.py`
+- Data: `computations/s49_multi_t_friedmann.npz`
+- Plot: `computations/s49_multi_t_friedmann.png` (w(z) comparison: single-T vs GGE vs DESI)
 - Working paper section: W1-E
 
 ---
@@ -248,7 +248,7 @@ You are constructing the Penrose diagram of the internal SU(3) manifold through 
 **Context**: The Schwarzschild-Penrose review elevated the tau=0.537 transition to "most geometrically significant new discovery" of S48. At this tau, the minimum sectional curvature crosses zero (positive to negative). The [0.537, 0.78] window has mixed-sign sectional curvature but the SEC still holds. The Penrose diagram of the internal manifold changes topology at this point. The analog horizon analysis (s48_volovik_string.npz, Mach 54) shows 1D sonic surfaces on T^2, not 2D trapped surfaces.
 
 **Method**:
-1. Load curvature data from `tier0-computation/s48_curv_extend.npz` (all sectional curvatures, Ricci eigenvalues, scalar curvature for tau in [0, 1]).
+1. Load curvature data from `computations/s48_curv_extend.npz` (all sectional curvatures, Ricci eigenvalues, scalar curvature for tau in [0, 1]).
 2. Extract the conformal structure of the (tau, theta) plane where theta parametrizes the internal direction with minimum sectional curvature.
 3. Compute the conformal factor Omega(tau) such that the internal metric ds^2 = Omega^2 * ds^2_flat has the correct causal structure.
 4. Identify: (a) the tau=0.537 boundary where kappa_min = 0, (b) any conformal infinity or singularity, (c) the topology change (simply connected to multiply connected?).
@@ -258,8 +258,8 @@ You are constructing the Penrose diagram of the internal SU(3) manifold through 
 Use `from canonical_constants import *` for all constants.
 
 **Inputs**:
-- `tier0-computation/s48_curv_extend.npz`
-- `tier0-computation/canonical_constants.py`
+- `computations/s48_curv_extend.npz`
+- `computations/canonical_constants.py`
 
 **Gate**: CONFORMAL-TRANSITION-49
 - PASS: Penrose diagram constructed with clear conformal boundary classification at tau=0.537
@@ -267,9 +267,9 @@ Use `from canonical_constants import *` for all constants.
 - FAIL: conformal structure is trivial (no topology change)
 
 **Output**:
-- Script: `tier0-computation/s49_conformal_transition.py`
-- Data: `tier0-computation/s49_conformal_transition.npz`
-- Plot: `tier0-computation/s49_conformal_transition.png` (Penrose diagram)
+- Script: `computations/s49_conformal_transition.py`
+- Data: `computations/s49_conformal_transition.npz`
+- Plot: `computations/s49_conformal_transition.png` (Penrose diagram)
 - Working paper section: W1-F
 
 ---
@@ -286,7 +286,7 @@ You are classifying the theta_+/theta_- expansions at the Mach-1 contour on T^2 
 **Context**: S48 found Mach 54 analog horizons on the maximal torus T^2 of SU(3) (s48_volovik_string.npz). The SP review classified these as 1D sonic surfaces, not 2D trapped surfaces, but this must be verified by computing the null expansion scalars theta_+/- in the Akama-Diakonov formalism.
 
 **Method**:
-1. Load the Volovik string data from `tier0-computation/s48_volovik_string.npz` (Mach number profile on T^2, Akama-Diakonov acoustic metric).
+1. Load the Volovik string data from `computations/s48_volovik_string.npz` (Mach number profile on T^2, Akama-Diakonov acoustic metric).
 2. At each point on the Mach-1 contour, compute the outgoing and ingoing null expansions theta_+ and theta_- using the acoustic metric g_{mu nu}^{acoustic}.
 3. Classification: (a) trapped surface if theta_+ < 0 AND theta_- < 0, (b) marginally trapped if theta_+ = 0 AND theta_- < 0, (c) sonic surface (untrapped) if theta_+ = 0 but theta_- > 0 or theta_+*theta_- < 0.
 4. Compute the surface gravity kappa at the Mach-1 contour: kappa = |d(Mach)/dn| * c_s where n is the normal direction.
@@ -296,8 +296,8 @@ You are classifying the theta_+/theta_- expansions at the Mach-1 contour on T^2 
 Use `from canonical_constants import *` for all constants.
 
 **Inputs**:
-- `tier0-computation/s48_volovik_string.npz` (Mach number, acoustic metric on T^2)
-- `tier0-computation/canonical_constants.py`
+- `computations/s48_volovik_string.npz` (Mach number, acoustic metric on T^2)
+- `computations/canonical_constants.py`
 
 **Gate**: ANALOG-TRAPPED-49
 - PASS: classification unambiguous (trapped OR sonic, with theta_+/- computed)
@@ -305,9 +305,9 @@ Use `from canonical_constants import *` for all constants.
 - FAIL: Mach-1 contour not well-defined
 
 **Output**:
-- Script: `tier0-computation/s49_analog_trapped.py`
-- Data: `tier0-computation/s49_analog_trapped.npz`
-- Plot: `tier0-computation/s49_analog_trapped.png` (theta_+/- along Mach-1 contour)
+- Script: `computations/s49_analog_trapped.py`
+- Data: `computations/s49_analog_trapped.npz`
+- Plot: `computations/s49_analog_trapped.png` (theta_+/- along Mach-1 contour)
 - Working paper section: W1-G
 
 ---
@@ -324,8 +324,8 @@ You are coupling the Leggett equation of motion to the modulus dynamics tau(t) d
 **Context**: S48 found sharp Leggett modes at omega_L = {0.070, 0.107} M_KK (s48_leggett_mode.npz). The Nazarewicz review recognized these as multi-band pairing vibrations (Broglia analog) and proposed that the relative phase between B2 and B3 sectors may add a 9th conserved integral to the 8-integral GGE. During the transit (dt_transit ~ 0.0011 M_KK^{-1}), the Leggett mode is driven by the time-dependent gap.
 
 **Method**:
-1. Load Leggett mode data from `tier0-computation/s48_leggett_mode.npz` (omega_L1, omega_L2, mode structure, coupling constants).
-2. Load integrability check from `tier0-computation/s39_integrability_check.npz` (8 Richardson-Gaudin conserved quantities).
+1. Load Leggett mode data from `computations/s48_leggett_mode.npz` (omega_L1, omega_L2, mode structure, coupling constants).
+2. Load integrability check from `computations/s39_integrability_check.npz` (8 Richardson-Gaudin conserved quantities).
 3. Write the coupled equations: (a) Leggett EOM: d^2(phi_rel)/dt^2 + gamma * d(phi_rel)/dt + omega_L^2(tau(t)) * sin(phi_rel) = driving(tau(t)), (b) tau(t) follows the ballistic transit from S38 (v_terminal, dt_transit from canonical_constants).
 4. Integrate from pre-transit (phi_rel = 0, condensate phase locked) through the transit to post-transit.
 5. Compute the post-transit Leggett amplitude A_L = max|phi_rel(t > t_transit)|.
@@ -335,9 +335,9 @@ You are coupling the Leggett equation of motion to the modulus dynamics tau(t) d
 Use `from canonical_constants import *` for all constants.
 
 **Inputs**:
-- `tier0-computation/s48_leggett_mode.npz` (Leggett frequencies, coupling)
-- `tier0-computation/s39_integrability_check.npz` (8 conserved quantities)
-- `tier0-computation/canonical_constants.py`
+- `computations/s48_leggett_mode.npz` (Leggett frequencies, coupling)
+- `computations/s39_integrability_check.npz` (8 conserved quantities)
+- `computations/canonical_constants.py`
 
 **Gate**: LEGGETT-TRANSIT-49
 - PASS: post-transit amplitude A_L > 0.01 AND 9th integral approximately conserved ({I_9, H}/|E_cond| < 0.1)
@@ -345,9 +345,9 @@ Use `from canonical_constants import *` for all constants.
 - FAIL: Leggett mode is trivially zero post-transit
 
 **Output**:
-- Script: `tier0-computation/s49_leggett_transit.py`
-- Data: `tier0-computation/s49_leggett_transit.npz`
-- Plot: `tier0-computation/s49_leggett_transit.png` (phi_rel(t) through transit)
+- Script: `computations/s49_leggett_transit.py`
+- Data: `computations/s49_leggett_transit.npz`
+- Plot: `computations/s49_leggett_transit.png` (phi_rel(t) through transit)
 - Working paper section: W1-H
 
 ---
@@ -364,9 +364,9 @@ You are computing the fully self-consistent Dirac-BCS iteration where the pairin
 **Context**: S48 established that HFB converges (s48_hfb_selfconsist.npz) and BCS is a 5% perturbation on geometry. The backreaction was estimated at 3.7% (S38). This computation closes the loop: Delta(tau) modifies the Dirac spectrum eigenvalues, which modifies the DOS, which modifies the BCS gap equation solution, which modifies Delta.
 
 **Method**:
-1. Load the HFB self-consistency data from `tier0-computation/s48_hfb_selfconsist.npz` (converged gap, iteration count, convergence history).
-2. Load the DOS at multiple tau from `tier0-computation/s44_dos_tau.npz`.
-3. Load the Dirac spectrum construction from `tier0-computation/tier1_dirac_spectrum.py` (or reconstruct eigenvalues from s44_dos_tau.npz).
+1. Load the HFB self-consistency data from `computations/s48_hfb_selfconsist.npz` (converged gap, iteration count, convergence history).
+2. Load the DOS at multiple tau from `computations/s44_dos_tau.npz`.
+3. Load the Dirac spectrum construction from `computations/dirac_spectrum.py` (or reconstruct eigenvalues from s44_dos_tau.npz).
 4. Implement the full self-consistent loop:
    - Start with Delta_0 from BCS (no backreaction)
    - Compute D_K(Delta) = D_K + Delta * (pairing field in Peter-Weyl)
@@ -379,9 +379,9 @@ You are computing the fully self-consistent Dirac-BCS iteration where the pairin
 Use `from canonical_constants import *` for all constants.
 
 **Inputs**:
-- `tier0-computation/s48_hfb_selfconsist.npz` (HFB convergence data)
-- `tier0-computation/s44_dos_tau.npz` (Dirac spectrum at multiple tau)
-- `tier0-computation/canonical_constants.py`
+- `computations/s48_hfb_selfconsist.npz` (HFB convergence data)
+- `computations/s44_dos_tau.npz` (Dirac spectrum at multiple tau)
+- `computations/canonical_constants.py`
 
 **Gate**: HFB-BACKREACTION-49
 - PASS: self-consistent iteration converges AND backreaction < 10% on all observables (E_cond, M_max, tau*)
@@ -389,9 +389,9 @@ Use `from canonical_constants import *` for all constants.
 - FAIL: iteration does not converge
 
 **Output**:
-- Script: `tier0-computation/s49_hfb_backreaction.py`
-- Data: `tier0-computation/s49_hfb_backreaction.npz`
-- Plot: `tier0-computation/s49_hfb_backreaction.png` (convergence history + observable shifts)
+- Script: `computations/s49_hfb_backreaction.py`
+- Data: `computations/s49_hfb_backreaction.npz`
+- Plot: `computations/s49_hfb_backreaction.png` (convergence history + observable shifts)
 - Working paper section: W1-I
 
 ---
@@ -408,8 +408,8 @@ You are computing the normal modes of the analog cavity bounded by the Mach-1 ho
 **Context**: The Tesla review proposed cavity resonance unification: if the analog horizon (Mach 54 on T^2, from s48_volovik_string.npz) confines quasiparticles, the normal modes of this cavity should be determined by the cavity geometry alone. If the Leggett frequencies omega_L = {0.070, 0.107} M_KK match cavity normal modes, the Leggett modes are cavity resonances of the internal analog spacetime.
 
 **Method**:
-1. Load the Volovik string data from `tier0-computation/s48_volovik_string.npz` (Mach number profile, cavity geometry on T^2).
-2. Load Leggett mode data from `tier0-computation/s48_leggett_mode.npz` (omega_L1, omega_L2).
+1. Load the Volovik string data from `computations/s48_volovik_string.npz` (Mach number profile, cavity geometry on T^2).
+2. Load Leggett mode data from `computations/s48_leggett_mode.npz` (omega_L1, omega_L2).
 3. Extract the cavity geometry: the region where Mach > 1 defines the acoustic black hole interior. The boundary (Mach = 1) is the cavity wall.
 4. Compute the normal modes of a scalar field in the cavity with Dirichlet boundary conditions at the Mach-1 surface: -nabla^2 phi = omega_n^2 phi, where nabla^2 is the Laplacian in the acoustic metric restricted to the cavity.
 5. Compare omega_n to omega_L1 and omega_L2. Compute the matching ratio: R = omega_cavity / omega_Leggett for the closest modes.
@@ -419,9 +419,9 @@ You are computing the normal modes of the analog cavity bounded by the Mach-1 ho
 Use `from canonical_constants import *` for all constants.
 
 **Inputs**:
-- `tier0-computation/s48_volovik_string.npz` (Mach profile, acoustic metric)
-- `tier0-computation/s48_leggett_mode.npz` (Leggett frequencies)
-- `tier0-computation/canonical_constants.py`
+- `computations/s48_volovik_string.npz` (Mach profile, acoustic metric)
+- `computations/s48_leggett_mode.npz` (Leggett frequencies)
+- `computations/canonical_constants.py`
 
 **Gate**: CAVITY-RESONANCE-49
 - PASS: |omega_cavity - omega_Leggett| / omega_Leggett < 0.10 for at least one mode pair
@@ -429,9 +429,9 @@ Use `from canonical_constants import *` for all constants.
 - FAIL: no confined modes (cavity is open or does not support standing waves)
 
 **Output**:
-- Script: `tier0-computation/s49_cavity_resonance.py`
-- Data: `tier0-computation/s49_cavity_resonance.npz`
-- Plot: `tier0-computation/s49_cavity_resonance.png` (cavity mode spectrum vs Leggett lines)
+- Script: `computations/s49_cavity_resonance.py`
+- Data: `computations/s49_cavity_resonance.npz`
+- Plot: `computations/s49_cavity_resonance.png` (cavity mode spectrum vs Leggett lines)
 - Working paper section: W1-J
 
 ---
@@ -448,8 +448,8 @@ You are computing the extrinsic curvature K_ij at the tau=0.537 transition hyper
 **Context**: The geometric phase transition at tau=0.537 changes the sign of minimum sectional curvature. The Gauss-Codazzi equations relate the internal curvature change to the 4D Einstein tensor. If the extrinsic curvature K_ij is discontinuous at tau=0.537, there is a distributional stress-energy on the transition hypersurface (Israel junction conditions).
 
 **Method**:
-1. Load curvature data from `tier0-computation/s48_curv_extend.npz` (all curvature invariants across tau).
-2. Load Kretschner scalar from `tier0-computation/s45_kretschner.npz`.
+1. Load curvature data from `computations/s48_curv_extend.npz` (all curvature invariants across tau).
+2. Load Kretschner scalar from `computations/s45_kretschner.npz`.
 3. Compute the extrinsic curvature K_ij of the tau=0.537 hypersurface embedded in the 10D product M^4 x SU(3).
 4. Apply the Gauss-Codazzi equations: G^{(4)}_{mu nu} = ... + K^2 terms + projection of internal Riemann tensor.
 5. Evaluate the jump [K_ij] across tau=0.537. If nonzero, compute the surface stress-energy S_{ij} from Israel junction conditions: S_{ij} = -(1/8*pi*G) * ([K_ij] - [K]*h_ij).
@@ -458,9 +458,9 @@ You are computing the extrinsic curvature K_ij at the tau=0.537 transition hyper
 Use `from canonical_constants import *` for all constants.
 
 **Inputs**:
-- `tier0-computation/s48_curv_extend.npz`
-- `tier0-computation/s45_kretschner.npz`
-- `tier0-computation/canonical_constants.py`
+- `computations/s48_curv_extend.npz`
+- `computations/s45_kretschner.npz`
+- `computations/canonical_constants.py`
 
 **Gate**: GAUSS-CODAZZI-TRANSITION-49
 - PASS: K_ij computed, [K_ij] jump quantified, 4D backreaction characterized
@@ -468,9 +468,9 @@ Use `from canonical_constants import *` for all constants.
 - FAIL: computation ill-defined at transition point
 
 **Output**:
-- Script: `tier0-computation/s49_gauss_codazzi.py`
-- Data: `tier0-computation/s49_gauss_codazzi.npz`
-- Plot: `tier0-computation/s49_gauss_codazzi.png` (K_ij components across transition)
+- Script: `computations/s49_gauss_codazzi.py`
+- Data: `computations/s49_gauss_codazzi.npz`
+- Plot: `computations/s49_gauss_codazzi.png` (K_ij components across transition)
 - Working paper section: W1-K
 
 ---
@@ -487,8 +487,8 @@ You are computing the Bayesian uncertainty on the spectral tilt alpha_s = -0.038
 **Context**: The framework predicts alpha_s = -0.038 (running of spectral tilt), which is 4.9 sigma from Planck (alpha_s = 0.0 +/- 0.008). The Nazarewicz review proposed that the J_ij Josephson couplings carry uncertainties from the BCS solution and the tessellation geometry. Propagating these uncertainties through the alpha_s prediction may broaden the error band enough to reduce the tension with Planck.
 
 **Method**:
-1. Load anisotropic O-Z data from `tier0-computation/s48_aniso_oz.npz` (J_ij values, correlation lengths, alpha_s prediction).
-2. Load the Bayesian GP posterior from `tier0-computation/s46_bayesian_gp.npz` (Gaussian process fit to n_s(tau), uncertainty bands).
+1. Load anisotropic O-Z data from `computations/s48_aniso_oz.npz` (J_ij values, correlation lengths, alpha_s prediction).
+2. Load the Bayesian GP posterior from `computations/s46_bayesian_gp.npz` (Gaussian process fit to n_s(tau), uncertainty bands).
 3. Construct the J_ij error model: each J_ij has uncertainty delta_J from (a) BCS gap uncertainty, (b) tessellation geometry uncertainty, (c) finite-size effects.
 4. Monte Carlo propagation: sample J_ij from their posterior distributions (N=10000 samples), compute alpha_s for each sample, build the posterior P(alpha_s | data).
 5. Report: (a) median alpha_s, (b) 68% credible interval, (c) 95% credible interval.
@@ -498,9 +498,9 @@ You are computing the Bayesian uncertainty on the spectral tilt alpha_s = -0.038
 Use `from canonical_constants import *` for all constants.
 
 **Inputs**:
-- `tier0-computation/s48_aniso_oz.npz` (J_ij, alpha_s = -0.038)
-- `tier0-computation/s46_bayesian_gp.npz` (GP posterior on n_s)
-- `tier0-computation/canonical_constants.py`
+- `computations/s48_aniso_oz.npz` (J_ij, alpha_s = -0.038)
+- `computations/s46_bayesian_gp.npz` (GP posterior on n_s)
+- `computations/canonical_constants.py`
 
 **Gate**: ALPHA-S-BAYES-49
 - PASS: 95% credible interval includes alpha_s = 0 (compatible with Planck)
@@ -508,9 +508,9 @@ Use `from canonical_constants import *` for all constants.
 - FAIL: error band negligible, tension unchanged at 4.9 sigma
 
 **Output**:
-- Script: `tier0-computation/s49_alpha_s_bayes.py`
-- Data: `tier0-computation/s49_alpha_s_bayes.npz`
-- Plot: `tier0-computation/s49_alpha_s_bayes.png` (posterior P(alpha_s) vs Planck band)
+- Script: `computations/s49_alpha_s_bayes.py`
+- Data: `computations/s49_alpha_s_bayes.npz`
+- Plot: `computations/s49_alpha_s_bayes.png` (posterior P(alpha_s) vs Planck band)
 - Working paper section: W1-L
 
 ---
@@ -527,7 +527,7 @@ You are sharpening the KZ defect density prediction by using the 3-component for
 **Context**: S48 confirmed the KZ-aniso match to S38 at 6.5% (s48_curv_extend.npz). The Tesla review noted that the standard KZ formula treats all 8 BCS modes identically. The physical system has u(1)_7 (1 mode) and su(2) (remaining modes). Their critical exponents may differ. The 3-component formula: n_KZ = n_{u(1)} + n_{su(2)_1} + n_{su(2)_2} with separate tau_Q and nu for each component.
 
 **Method**:
-1. Load KZ data from `tier0-computation/s48_curv_extend.npz` (curvature-derived quench rates, defect density prediction).
+1. Load KZ data from `computations/s48_curv_extend.npz` (curvature-derived quench rates, defect density prediction).
 2. Separate the 8 BCS modes into: 1 u(1)_7 mode (B1, K_7 charge) and 7 remaining modes (4 B2 + 3 B3).
 3. For each component, compute the critical exponents: nu (correlation length), z (dynamic), from the spectral gap closing rate near tau_fold.
 4. 3-component KZ formula: n_i = (tau_Q_i)^{-d*nu_i/(1+z_i*nu_i)} for each component i.
@@ -538,8 +538,8 @@ You are sharpening the KZ defect density prediction by using the 3-component for
 Use `from canonical_constants import *` for all constants.
 
 **Inputs**:
-- `tier0-computation/s48_curv_extend.npz` (KZ data, curvature, quench rates)
-- `tier0-computation/canonical_constants.py`
+- `computations/s48_curv_extend.npz` (KZ data, curvature, quench rates)
+- `computations/canonical_constants.py`
 
 **Gate**: KZ-3COMPONENT-49
 - PASS: 3-component match to S38 < 3%
@@ -547,9 +547,9 @@ Use `from canonical_constants import *` for all constants.
 - FAIL: 3-component prediction worse than 1-component
 
 **Output**:
-- Script: `tier0-computation/s49_kz_3component.py`
-- Data: `tier0-computation/s49_kz_3component.npz`
-- Plot: `tier0-computation/s49_kz_3component.png` (component-resolved KZ vs total)
+- Script: `computations/s49_kz_3component.py`
+- Data: `computations/s49_kz_3component.npz`
+- Plot: `computations/s49_kz_3component.png` (component-resolved KZ vs total)
 - Working paper section: W1-M
 
 ---
@@ -566,7 +566,7 @@ You are scanning the Leggett frequency ratio omega_L2/omega_L1 across tau to tes
 **Context**: S48 found omega_L2/omega_L1 = 1.529, which is 0.17% from phi_paasch. The Tesla review flagged this as likely coincidence given V-matrix uncertainties, but proposed a decisive test: scan the ratio across tau. If it converges to phi_paasch at some tau (not necessarily the fold), there is a structural connection. If the ratio varies smoothly and 1.529 is just the fold value, it is a coincidence.
 
 **Method**:
-1. Load Leggett mode data from `tier0-computation/s48_leggett_mode.npz` (omega_L1, omega_L2 at the fold, mode structure, V-matrix elements).
+1. Load Leggett mode data from `computations/s48_leggett_mode.npz` (omega_L1, omega_L2 at the fold, mode structure, V-matrix elements).
 2. Reconstruct the Leggett mode calculation at tau = {0.05, 0.10, 0.15, 0.19, 0.25, 0.30, 0.35, 0.40, 0.45, 0.50} using the tau-dependent Dirac spectrum and V-matrix.
 3. At each tau, compute omega_L1, omega_L2, and the ratio R(tau) = omega_L2/omega_L1.
 4. Compare R(tau) to phi_paasch = 1.531580 at each tau. Find the minimum |R(tau) - phi_paasch|.
@@ -575,8 +575,8 @@ You are scanning the Leggett frequency ratio omega_L2/omega_L1 across tau to tes
 Use `from canonical_constants import *` for all constants.
 
 **Inputs**:
-- `tier0-computation/s48_leggett_mode.npz` (Leggett mode data at fold)
-- `tier0-computation/canonical_constants.py`
+- `computations/s48_leggett_mode.npz` (Leggett mode data at fold)
+- `computations/canonical_constants.py`
 
 **Gate**: LEGGETT-PHI-SCAN-49
 - PASS: R(tau) = phi_paasch to within 0.1% at some tau (structural connection)
@@ -584,9 +584,9 @@ Use `from canonical_constants import *` for all constants.
 - FAIL: R(tau) varies smoothly, no special relationship to phi_paasch
 
 **Output**:
-- Script: `tier0-computation/s49_leggett_phi_scan.py`
-- Data: `tier0-computation/s49_leggett_phi_scan.npz`
-- Plot: `tier0-computation/s49_leggett_phi_scan.png` (R(tau) vs phi_paasch horizontal line)
+- Script: `computations/s49_leggett_phi_scan.py`
+- Data: `computations/s49_leggett_phi_scan.npz`
+- Plot: `computations/s49_leggett_phi_scan.png` (R(tau) vs phi_paasch horizontal line)
 - Working paper section: W1-N
 
 ---
@@ -603,7 +603,7 @@ You are computing the Bayes factor for the framework vs LCDM at the corrected al
 **Context**: S48 refined the dark energy prediction (s48_dmde_refine.npz): w_0 in [-0.47, -0.59] with the Z-K decomposition discrepancy at 39.4%. DESI DR2 reports w_0 = -0.727 +/- 0.067. The framework prediction is 2.8 sigma from DESI. DR3 data (expected 2026-2027) will sharpen the constraint. Compute the Bayes factor B_{framework/LCDM} to quantify whether the data already excludes the framework or is still compatible.
 
 **Method**:
-1. Load the dark energy prediction from `tier0-computation/s48_dmde_refine.npz` (w_0, w_a, uncertainty bands from Z-K discrepancy).
+1. Load the dark energy prediction from `computations/s48_dmde_refine.npz` (w_0, w_a, uncertainty bands from Z-K discrepancy).
 2. Construct the framework likelihood: P(data | framework) where data = DESI DR2 w_0 = -0.727 +/- 0.067 and the framework prediction is w_0 = -0.53 +/- 0.06 (midpoint of [-0.47, -0.59] with Z-K spread as uncertainty).
 3. LCDM likelihood: P(data | LCDM) where LCDM predicts w_0 = -1.0 exactly.
 4. Bayes factor: B = P(data | framework) / P(data | LCDM). Also compute B against w_0w_a CDM (DESI best fit).
@@ -613,8 +613,8 @@ You are computing the Bayes factor for the framework vs LCDM at the corrected al
 Use `from canonical_constants import *` for all constants.
 
 **Inputs**:
-- `tier0-computation/s48_dmde_refine.npz` (w_0, w_a predictions)
-- `tier0-computation/canonical_constants.py`
+- `computations/s48_dmde_refine.npz` (w_0, w_a predictions)
+- `computations/canonical_constants.py`
 
 **Gate**: DESI-DR3-PREP-49
 - PASS: B_{framework/LCDM} > 1 (framework currently preferred over LCDM by DESI data)
@@ -622,9 +622,9 @@ Use `from canonical_constants import *` for all constants.
 - FAIL: B < 1/10 (framework already disfavored by DR2)
 
 **Output**:
-- Script: `tier0-computation/s49_desi_dr3_prep.py`
-- Data: `tier0-computation/s49_desi_dr3_prep.npz`
-- Plot: `tier0-computation/s49_desi_dr3_prep.png` (Bayes factor vs sigma_w forecast)
+- Script: `computations/s49_desi_dr3_prep.py`
+- Data: `computations/s49_desi_dr3_prep.npz`
+- Plot: `computations/s49_desi_dr3_prep.png` (Bayes factor vs sigma_w forecast)
 - Working paper section: W1-O
 
 ---
@@ -641,8 +641,8 @@ You are testing whether the ballistic transit overshoots tau=0.537 (negative cur
 **Context**: The transit is ballistic with v_terminal = 26.5 M_KK (S38). The fold is at tau=0.19, the geometric phase transition at tau=0.537. If the transit overshoots to tau > 0.537, the internal manifold enters the negative-curvature regime. The 4D stress-energy tensor T_{mu nu} from the negative-curvature internal space may violate the dominant energy condition (DEC), which would be a cosmic censorship issue.
 
 **Method**:
-1. Load collective inertia from `tier0-computation/s40_collective_inertia.npz` (M_ATDHFB, potential landscape).
-2. Load curvature data from `tier0-computation/s48_curv_extend.npz` (curvature across tau, especially tau > 0.537).
+1. Load collective inertia from `computations/s40_collective_inertia.npz` (M_ATDHFB, potential landscape).
+2. Load curvature data from `computations/s48_curv_extend.npz` (curvature across tau, especially tau > 0.537).
 3. Compute the ballistic trajectory: M_ATDHFB * d^2(tau)/dt^2 = -dV/dtau with initial conditions from the transit (v = v_terminal at tau = 0.19).
 4. Does tau(t) reach 0.537? If so, at what t? Does it overshoot or turn around?
 5. At each tau along the trajectory, compute T_{mu nu}^{(4D)} from the KK reduction. In the negative-curvature regime, which energy conditions hold? NEC, WEC, SEC, DEC?
@@ -652,9 +652,9 @@ You are testing whether the ballistic transit overshoots tau=0.537 (negative cur
 Use `from canonical_constants import *` for all constants.
 
 **Inputs**:
-- `tier0-computation/s40_collective_inertia.npz` (collective mass, potential)
-- `tier0-computation/s48_curv_extend.npz` (curvature in negative regime)
-- `tier0-computation/canonical_constants.py`
+- `computations/s40_collective_inertia.npz` (collective mass, potential)
+- `computations/s48_curv_extend.npz` (curvature in negative regime)
+- `computations/canonical_constants.py`
 
 **Gate**: COSMIC-CENSORSHIP-49
 - PASS: transit does NOT overshoot to tau > 0.537, or overshoots but all energy conditions hold
@@ -662,9 +662,9 @@ Use `from canonical_constants import *` for all constants.
 - FAIL: permanent DEC violation or naked singularity formed
 
 **Output**:
-- Script: `tier0-computation/s49_cosmic_censorship.py`
-- Data: `tier0-computation/s49_cosmic_censorship.npz`
-- Plot: `tier0-computation/s49_cosmic_censorship.png` (tau(t) trajectory + energy condition status)
+- Script: `computations/s49_cosmic_censorship.py`
+- Data: `computations/s49_cosmic_censorship.npz`
+- Plot: `computations/s49_cosmic_censorship.png` (tau(t) trajectory + energy condition status)
 - Working paper section: W1-P
 
 ---
@@ -681,8 +681,8 @@ You are computing the CMPP (Coley-Milson-Pravda-Pravdova) higher-dimensional Pet
 **Context**: The 4D Petrov classification (Type I, D, O, etc.) generalizes to higher dimensions via the CMPP scheme. At tau=0.537, the internal curvature changes sign. The Weyl tensor of the 10D product space M^4 x SU(3) may change CMPP type at this point, analogous to the Petrov type change at a black hole horizon.
 
 **Method**:
-1. Load curvature data from `tier0-computation/s48_curv_extend.npz` (Riemann tensor components, Weyl tensor).
-2. Load curvature anatomy from `tier0-computation/s47_curvature_anatomy.npz` (detailed decomposition of Riemann into Weyl + Ricci + scalar parts).
+1. Load curvature data from `computations/s48_curv_extend.npz` (Riemann tensor components, Weyl tensor).
+2. Load curvature anatomy from `computations/s47_curvature_anatomy.npz` (detailed decomposition of Riemann into Weyl + Ricci + scalar parts).
 3. At tau = {0.50, 0.53, 0.537, 0.54, 0.55, 0.60}, compute the 10D Weyl tensor C_{abcd} from the product metric.
 4. Compute the CMPP invariants: the boost weight decomposition of C_{abcd} along a null frame. Classify into CMPP types: G (general), I_i, I, D, II_i, II, III_i, III, N, O.
 5. Does the CMPP type change at tau=0.537? If so, from what to what?
@@ -691,9 +691,9 @@ You are computing the CMPP (Coley-Milson-Pravda-Pravdova) higher-dimensional Pet
 Use `from canonical_constants import *` for all constants.
 
 **Inputs**:
-- `tier0-computation/s48_curv_extend.npz`
-- `tier0-computation/s47_curvature_anatomy.npz`
-- `tier0-computation/canonical_constants.py`
+- `computations/s48_curv_extend.npz`
+- `computations/s47_curvature_anatomy.npz`
+- `computations/canonical_constants.py`
 
 **Gate**: CMPP-TRANSITION-49
 - PASS: CMPP type changes at tau=0.537 (clear classification on both sides)
@@ -701,9 +701,9 @@ Use `from canonical_constants import *` for all constants.
 - FAIL: CMPP type is constant across the transition
 
 **Output**:
-- Script: `tier0-computation/s49_cmpp_transition.py`
-- Data: `tier0-computation/s49_cmpp_transition.npz`
-- Plot: `tier0-computation/s49_cmpp_transition.png` (CMPP invariants across transition)
+- Script: `computations/s49_cmpp_transition.py`
+- Data: `computations/s49_cmpp_transition.npz`
+- Plot: `computations/s49_cmpp_transition.png` (CMPP invariants across transition)
 - Working paper section: W1-Q
 
 ---
@@ -720,7 +720,7 @@ You are computing the spectrum of non-left-invariant transverse-traceless (TT) m
 **Context**: S48 computed the TT Lichnerowicz operator for left-invariant modes (s48_tt_lichnerowicz.npz) and found stability (no negative eigenvalues). However, non-left-invariant modes are a larger space. The question: does the first negative eigenvalue of the Lichnerowicz operator on the full (non-LI) TT space appear at some tau, and if so, is it before or after the fold?
 
 **Method**:
-1. Load the TT Lichnerowicz data from `tier0-computation/s48_tt_lichnerowicz.npz` (left-invariant eigenvalues, operator construction).
+1. Load the TT Lichnerowicz data from `computations/s48_tt_lichnerowicz.npz` (left-invariant eigenvalues, operator construction).
 2. Extend the computation to non-left-invariant TT modes. On SU(3), these are sections of the TT bundle that transform non-trivially under left multiplication. They can be expanded in the Peter-Weyl basis with (p,q) != (0,0).
 3. For tau = {0.05, 0.10, 0.15, 0.19, 0.25, 0.30, 0.35, 0.40, 0.45, 0.50, 0.537, 0.60, 0.70, 0.78}, compute the Lichnerowicz eigenvalues for the lowest non-LI TT modes (at least the (1,0) and (0,1) representations).
 4. Find tau_critical: the first tau at which a Lichnerowicz eigenvalue becomes negative.
@@ -730,8 +730,8 @@ You are computing the spectrum of non-left-invariant transverse-traceless (TT) m
 Use `from canonical_constants import *` for all constants.
 
 **Inputs**:
-- `tier0-computation/s48_tt_lichnerowicz.npz` (LI TT eigenvalues, operator)
-- `tier0-computation/canonical_constants.py`
+- `computations/s48_tt_lichnerowicz.npz` (LI TT eigenvalues, operator)
+- `computations/canonical_constants.py`
 
 **Gate**: NON-LI-TT-49
 - PASS: first negative eigenvalue at tau > tau_fold (stability at the fold preserved)
@@ -739,9 +739,9 @@ Use `from canonical_constants import *` for all constants.
 - FAIL: first negative eigenvalue at tau < tau_fold (instability before the fold)
 
 **Output**:
-- Script: `tier0-computation/s49_non_li_tt.py`
-- Data: `tier0-computation/s49_non_li_tt.npz`
-- Plot: `tier0-computation/s49_non_li_tt.png` (lowest eigenvalue vs tau for LI and non-LI)
+- Script: `computations/s49_non_li_tt.py`
+- Data: `computations/s49_non_li_tt.npz`
+- Plot: `computations/s49_non_li_tt.png` (lowest eigenvalue vs tau for LI and non-LI)
 - Working paper section: W1-R
 
 ---
@@ -759,7 +759,7 @@ You are cataloging all interactions external to the BCS Hamiltonian on SU(3) and
 
 **Method**:
 1. Read the Volovik paper index at `researchers/Volovik/index.md` for structural templates (especially papers on dipolar interaction in 3He, q-theory, and symmetry breaking).
-2. Load the Goldstone mass data from `tier0-computation/s48_goldstone_mass.npz` (confirming m=0 from spectral action).
+2. Load the Goldstone mass data from `computations/s48_goldstone_mass.npz` (confirming m=0 from spectral action).
 3. Catalog all interactions on Jensen-deformed SU(3) beyond the BCS Hamiltonian:
    - (a) Gravitational backreaction: does the Einstein equation couple to K_7 charge? Does gravity break U(1)_7?
    - (b) Torsion: if the connection has torsion (from the parallelizing structure of SU(3)), does it couple differently to K_7-charged vs K_7-neutral modes?
@@ -774,8 +774,8 @@ Use `from canonical_constants import *` for all constants.
 
 **Inputs**:
 - `researchers/Volovik/index.md` (Volovik paper catalog for structural templates)
-- `tier0-computation/s48_goldstone_mass.npz` (m=0 confirmation)
-- `tier0-computation/canonical_constants.py`
+- `computations/s48_goldstone_mass.npz` (m=0 confirmation)
+- `computations/canonical_constants.py`
 
 **Gate**: DIPOLAR-CATALOG-49
 - PASS: at least one interaction breaks U(1)_7 with computable epsilon
@@ -783,9 +783,9 @@ Use `from canonical_constants import *` for all constants.
 - FAIL: all interactions preserve U(1)_7
 
 **Output**:
-- Script: `tier0-computation/s49_dipolar_catalog.py`
-- Data: `tier0-computation/s49_dipolar_catalog.npz`
-- Plot: `tier0-computation/s49_dipolar_catalog.png` (catalog table visualization)
+- Script: `computations/s49_dipolar_catalog.py`
+- Data: `computations/s49_dipolar_catalog.npz`
+- Plot: `computations/s49_dipolar_catalog.png` (catalog table visualization)
 - Working paper section: W1-S
 
 ---
@@ -802,8 +802,8 @@ You are testing whether the Leggett relative phase survives as a conserved quant
 **Context**: The S38 transit produces P_exc = 1.000 (all Cooper pairs broken). The post-transit state is a GGE with 8 Richardson-Gaudin conserved quantities. The Leggett mode is a relative phase oscillation between B2 and B3 pairing gaps. In the nuclear analog, pair vibrations survive above the pairing phase transition as enhanced pair-transfer strength (Broglia-type fluctuations). Does the Leggett relative phase survive in the broken-pair GGE?
 
 **Method**:
-1. Load S38 quench data: use `tier0-computation/s38_kz_defects.npz` for the transit dynamics and `tier0-computation/s38_otoc_bcs.npz` for the post-quench state.
-2. Load Leggett mode data from `tier0-computation/s48_leggett_mode.npz`.
+1. Load S38 quench data: use `computations/s38_kz_defects.npz` for the transit dynamics and `computations/s38_otoc_bcs.npz` for the post-quench state.
+2. Load Leggett mode data from `computations/s48_leggett_mode.npz`.
 3. Construct the GGE density matrix: rho_GGE = exp(-sum_alpha lambda_alpha * I_alpha) / Z where I_alpha are the 8 Richardson-Gaudin integrals.
 4. Compute the Leggett correlation function in the GGE: C_L(t) = <phi_rel(t) * phi_rel(0)>_GGE where phi_rel is the B2-B3 relative phase.
 5. If C_L(t) oscillates with a well-defined frequency, the Leggett mode survives. If C_L(t) decays to zero, the Leggett mode is destroyed.
@@ -813,10 +813,10 @@ You are testing whether the Leggett relative phase survives as a conserved quant
 Use `from canonical_constants import *` for all constants.
 
 **Inputs**:
-- `tier0-computation/s38_kz_defects.npz` (transit dynamics)
-- `tier0-computation/s38_otoc_bcs.npz` (post-quench state)
-- `tier0-computation/s48_leggett_mode.npz` (Leggett mode structure)
-- `tier0-computation/canonical_constants.py`
+- `computations/s38_kz_defects.npz` (transit dynamics)
+- `computations/s38_otoc_bcs.npz` (post-quench state)
+- `computations/s48_leggett_mode.npz` (Leggett mode structure)
+- `computations/canonical_constants.py`
 
 **Gate**: LEGGETT-GGE-49
 - PASS: C_L(t) oscillates at omega_L for t >> 1/omega_L (Leggett survives in GGE) AND phi_rel independent of the 8 I_alpha
@@ -824,16 +824,16 @@ Use `from canonical_constants import *` for all constants.
 - FAIL: C_L(t) decays monotonically (Leggett mode destroyed)
 
 **Output**:
-- Script: `tier0-computation/s49_leggett_gge.py`
-- Data: `tier0-computation/s49_leggett_gge.npz`
-- Plot: `tier0-computation/s49_leggett_gge.png` (C_L(t) correlation function)
+- Script: `computations/s49_leggett_gge.py`
+- Data: `computations/s49_leggett_gge.npz`
+- Plot: `computations/s49_leggett_gge.png` (C_L(t) correlation function)
 - Working paper section: W1-T
 
 ---
 
 ## IV. Constraint Gates Summary
 
-| Gate ID | Computation | Agent | Tier | Pass Criterion |
+| Gate ID | Computation | Agent | Level | Pass Criterion |
 |:--------|:-----------|:------|:-----|:---------------|
 | FRIEDMANN-GOLDSTONE-49 | Friedmann-Goldstone coupling | volovik | 1 | m_G/M_KK in [10^{-60}, 10^{-30}], no free parameters |
 | FABRIC-NPAIR-49 | Fabric pair number | nazarewicz | 1 | N_eff >= 2, CC shortfall < 1.5x |
@@ -877,7 +877,7 @@ Use `from canonical_constants import *` for all constants.
 
 - **Python**: `"phonon-exflation-sim/.venv312/Scripts/python.exe"`
 - **Script prefix**: `s49_`
-- **Output directory**: `tier0-computation/`
+- **Output directory**: `computations/`
 - **Constants**: `from canonical_constants import *` -- NEVER hardcode framework constants
 - **All agents**: opus model
 - **All computations**: independent, single-wave parallel execution

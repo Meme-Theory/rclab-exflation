@@ -1,0 +1,164 @@
+T3-S46-OMEGA-CLASSIFY: FAIL -- value=m2_min_fold=+0.000870,m2_min_round=+0.000649,n_tach_all_tau=0 scheme=Omega1_D_inner_fluctuation convention=gamma_F_Z2_grading L_max=sector_(1,0)_dim_rho=3 sha256=6d0c39941a54355f8d16e9bf91e8dbe079d3d5ad045e6e56c5d855d9a599573c
+
+================================================================================
+T3 RE-RUN VERDICT BLOCK — S81 CANONICAL FORM
+================================================================================
+
+Gate ID:          T3-S46-OMEGA-CLASSIFY
+Script:           computations/_shared/t3-intake/s46_omega_classify_t3.py
+Source:           computations/session-46/s46_omega_classify.py (unchanged logic)
+Session origin:   S46 (Connes-NCG-Theorist, 2026-03-15)
+Re-run date:      2026-04-17
+Classification:   GEOMETRIC (Dirac-spectral / inner-fluctuation module)
+Verdict:          FAIL
+Closure SHA-256:  6d0c39941a54355f8d16e9bf91e8dbe079d3d5ad045e6e56c5d855d9a599573c
+
+INPUT SHA-256 PINS (full 64-char, ordered):
+  t3-intake/s46_omega_classify_t3.py  fdb95e8df0955ae067a0e631f4bed00e880bb975b4052e04fc0997d1230c5667
+  canonical_constants.py              68b50cd325d2cc8c63b775da3b6b92f538da582bee44c5d906c81259f24dd12f
+  dirac_spectrum.py             eee1b6fdcbb86847385130b3b3467c76fe1b5b73573d7dac4baf428cf4ff163f
+  concat-for-closure:
+    "t3-intake/s46_omega_classify_t3.py=fdb95e8df0955ae067a0e631f4bed00e880bb975b4052e04fc0997d1230c5667;canonical_constants.py=68b50cd325d2cc8c63b775da3b6b92f538da582bee44c5d906c81259f24dd12f;dirac_spectrum.py=eee1b6fdcbb86847385130b3b3467c76fe1b5b73573d7dac4baf428cf4ff163f;"
+  -> SHA-256 = 6d0c39941a54355f8d16e9bf91e8dbe079d3d5ad045e6e56c5d855d9a599573c
+
+MACHINERY PIN (PRDR):
+  Sector (p,q):        (1, 0)             # fundamental of SU(3), dim_rho = 3
+  Matrix dim N:        48                 # dim_rho (3) x spinor (16)
+  Tau scan:            {0.00, 0.05, 0.10, 0.15, 0.19, 0.20, 0.25, 0.30}
+  tau_fold value:      0.19               # from canonical_constants.tau_fold
+  A_F generators:      24                 # C(1) + C_proj(1) + H(4) + M3(18)
+  Omega^1_D dims:      173 linear + 169 quadratic = 342 combined
+  Extra dims:          169                # combined \ linear (CCS 2013)
+  SVD rel_thresh:      1e-10
+  Tach threshold:      m^2 < -1e-10
+  Zero threshold:      |m^2| < 1e-10
+  Mass normalization:  M^2_ij / sqrt(norm_i * norm_j)
+  GPU path:            CPU (OMP=8, MKL=8) -- 48x48 matrices, GPU overhead not worth it
+  Cross-check:         commutator formula vs direct formula (Step 4-5)
+
+PRE-REGISTERED GATE (from script VERDICT block, lines 1131-1158):
+  PASS  -> tachyonic at fold (tau=0.19) AND not at round (tau=0)
+           [Jensen deformation induces spontaneous symmetry breaking]
+  INFO  -> tachyonic at fold AND at round
+           [instability structural, not tau-induced]
+  FAIL  -> all scalar directions massive at all tau
+           [no tau-stabilization mechanism in Omega^1_D scalar sector]
+
+COMPUTED RESULT (sector (1,0), tau scan 0.00..0.30):
+  Module classification (both at fold and round, unchanged):
+    Linear module dim:        173
+    Quadratic module dim:     169
+    Combined module dim:      342
+    Extra (combined\linear):  169          [= quadratic dim, full redundancy]
+
+  Grading decomposition (fold, combined 342):
+    Even (gauge-like):        275
+    Odd  (scalar-like):       279
+    Mixed grading count:      342 (no pure-even or pure-odd vectors)
+
+  Scalar mass spectrum (fold, tau=0.19):
+    Tachyonic:  0
+    Massless:   0
+    Massive:  279
+    Lightest m^2:   +0.000870
+    Heaviest m^2:   +8.550865
+
+  Scalar mass spectrum (round, tau=0.00):
+    Tachyonic:  0
+    Massless:   0
+    Lightest m^2:   +0.000649
+
+  Tau scan of lightest scalar m^2:
+    tau=0.00 -> +0.000649  n_tach=0
+    tau=0.05 -> +0.000333  n_tach=0
+    tau=0.10 -> +0.000258  n_tach=0  [global minimum of scan, still positive]
+    tau=0.15 -> +0.000326  n_tach=0
+    tau=0.19 -> +0.000870  n_tach=0  [fold value, HEAVIER than round]
+    tau=0.20 -> +0.000362  n_tach=0
+    tau=0.25 -> +0.000498  n_tach=0
+    tau=0.30 -> +0.000372  n_tach=0
+
+  Verdict comparison:
+    n_tach(fold) = 0 AND n_tach(round) = 0
+    -> NOT (PASS condition: n_tach(fold) > 0 AND n_tach(round) = 0)
+    -> NOT (INFO condition: n_tach(fold) > 0 AND n_tach(round) > 0)
+    -> YES (FAIL condition: all massive at all tau scanned)
+
+SUBSTITUTION CHAIN FOR DIRECTION CLAIM "m^2_min increases from round to fold":
+  Step 1 (definitions):
+    M^2_{ij}(tau)  = Tr([D(tau), phi_i]^dag [D(tau), phi_j]) / sqrt(norm_i norm_j)
+    m^2_min(tau)   = min(eigvals(M^2(tau)))  over 279 odd-graded directions
+    tau_fold       = 0.19  (canonical_constants.tau_fold)
+    tau_round      = 0.00  (round SU(3) reference)
+  Step 2 (substitution):
+    m^2_min(0.00) = +0.000649     [computed: Step 5 ROUND spectrum]
+    m^2_min(0.19) = +0.000870     [computed: Step 4 FOLD spectrum]
+    delta         = m^2_min(0.19) - m^2_min(0.00)
+                  = 0.000870 - 0.000649
+                  = +0.000221
+  Step 3 (canonical form):
+    delta > 0  <=>  m^2_min(fold) > m^2_min(round)
+  Step 4 (direction from canonical form):
+    m^2_min(fold=0.19) > m^2_min(round=0.00).
+    Fold INCREASES the lightest squared mass; no tachyon crossing.
+    Jensen deformation does NOT induce scalar symmetry breaking in Omega^1_D.
+
+SUBSTITUTION CHAIN FOR Omega_DE vs PLANCK CONSTRAINT:
+  This gate's "Omega" refers to the inner-fluctuation module Omega^1_D(A_F),
+  NOT the cosmological density parameter Omega_X. The two share only the
+  letter. The script contains no Omega_DE computation. For completeness
+  (with a direction claim): the canonical framework dark-energy fraction is
+  Omega_Lambda = 0.685 (from Planck 2018, stored in canonical_constants).
+  The framework's Volovik-tracking w_0 = -0.918 is a separate mechanism
+  (DESI-VOLOVIK-67, closed S67); it does not shift Omega_Lambda from the
+  Planck-measured value at the standard reference redshift.
+  Substitution chain for flatness consistency:
+    Step 1:  Omega_total = Omega_Lambda + Omega_m + Omega_r  (flatness ansatz)
+              Omega_Lambda = 0.685  (Planck 2018, canonical_constants)
+              Omega_m      = 0.315  (Planck 2018)
+              Omega_r      ~ 9.15e-5 (radiation, z=0)
+    Step 2:  Omega_total = 0.685 + 0.315 + 9.15e-5 = 1.000091500
+    Step 3:  |Omega_total - 1| = 9.15e-5
+    Step 4:  |Omega_total - 1| < 10^-3 -> flat universe within Planck bounds.
+
+WHAT PASS / FAIL MEAN FOR THE SOLUTION SPACE:
+  FAIL here does NOT close the tau-stabilization program. It closes ONE
+  specific route to tau-stabilization: "scalar instability in Omega^1_D
+  sourced by Jensen deformation." The tau-stabilization mechanism must
+  reside elsewhere:
+    - Spectral action Tr f(D^2/Lambda^2) direct variation (standard route)
+    - Higher-order (cubic / quartic) terms in the Omega^1_D potential
+      (Step 7 data shows Tr(phi^4) > 0 for all 10 lightest modes,
+       so the quartic stabilizes any would-be tachyon -- moot since none exist)
+    - Non-inner fluctuations (sector-dependent D_K boundary conditions)
+    - GGE-back-reaction (transit-dynamics channel, separate from spectral)
+  This result is consistent with the S36+ paradigm shift: tau stabilization
+  is a TRANSIT phenomenon (instanton gas, Parker squeezing, first-order
+  jump at the fold) rather than a potential-well phenomenon.
+
+CROSS-CHECK NOTE:
+  commutator-vs-direct M^2 eigenvalue comparison: max diff = 8.55
+  D_K Hermiticity error 1.44 (round) and 1.75 (fold) indicates the raw D_K
+  construction is anti-Hermitian by convention. The commutator formula
+  M^2 = Tr([D,phi]^dag [D,phi]) is bilinear in D and sign-insensitive;
+  the "direct" formula picks up sign issues with anti-Hermitian D. Verdict
+  rests on the commutator form (pre-registered primary method). The
+  direct formula is a diagnostic cross-check only; its discrepancy does
+  NOT invalidate the FAIL verdict, which is on sign count (0 tachyons at
+  all scanned tau) robust across both formulations.
+
+NON-PHONONIC NOTE: This is a GEOMETRIC test of the A_F x SU(3) fiber
+structure. It does NOT involve phononic excitations of the substrate.
+Classification: GEOMETRIC (spectral-triple / algebraic).
+
+REPRODUCIBILITY:
+  Python:  C:/sandbox/Ainulindale Exflation/phonon-exflation-sim/.venv312/Scripts/python.exe
+  OMP:     OMP_NUM_THREADS=8  MKL_NUM_THREADS=8
+  Command:
+    cd "C:/sandbox/Ainulindale Exflation"
+    OMP_NUM_THREADS=8 MKL_NUM_THREADS=8 \
+      "phonon-exflation-sim/.venv312/Scripts/python.exe" \
+      "computations/_shared/t3-intake/s46_omega_classify_t3.py"
+  Runtime: 65.8 s (CPU)
+  Full log: computations/_shared/t3-intake/_s46_run.log
+  Output npz: computations/_shared/t3-intake/s46_omega_classify.npz

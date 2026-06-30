@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 75,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_741",
+      "anchor_type": "data_provenance",
+      "name": "gap_cg",
+      "script_path": "session-58/s58_gap_cg.py",
+      "session": "s58",
+      "inputs": "",
+      "outputs": "session-58/s58_gap_cg.npz, session-58/s58_gap_cg.png",
+      "source_file": "computations/session-58/s58_gap_cg.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s58_gap_cg.py — Many-Body Gap Scaling on the Physical CG(24) Cayley Graph\n    4: ===========================================================================\n    5: Session 58, W2-1: GAP-CG-58\n    6: \n    7: S57 found Delta_N ~ N^{-1.84} on a LINEAR CHAIN (degree 2, uniform J_C2).\n    8: This script tests whether the same exponent transfers to the physical\n    9: Cayley graph CG(24) of SU(3), which has:\n   10:   - 32 cells (irreps up to p+q <= 6)\n   11:   - 93 bonds (50 C2, 24 su2, 19 u1) with bond-type-dependent J"
+    },
+    {
+      "anchor_id": "prov_742",
+      "anchor_type": "data_provenance",
+      "name": "gw_frequency_check",
+      "script_path": "session-58/s58_gw_frequency_check.py",
+      "session": "s58",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-58/s58_gw_frequency_check.py",
+      "source_context_30_lines": "<name 'gw_frequency_check' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: S58 — Independent verification: peak GW frequency from first-order phase transitions.\n    3: \n    4: Three methods:\n    5:   M1: Direct redshift of Hubble rate H(T_*) to today\n    6:   M2: Caprini et al. (2016/2020) simulation-calibrated envelope formula\n    7:   M3: Dimensional analysis T_* * T_0 / M_Pl\n    8: \n    9: Three GW source mechanisms at each temperature:\n   10:   Bubble collisions (envelope), sound waves, MHD turbulence\n   11: \n   12: Gen-Physicist standalone computation. No session files read.\n   13: \n   14: Conventions:\n   15:   - Reduced Planck mass M_Pl = 1/sqrt(8*pi*G) = 2.435e18 GeV\n   16:     (Caprini et al. use this convention in their Friedmann equation)\n   17:   - Metric signature (-,+,+,+), natural units hbar = c = k_B = 1\n   18:   - Ordinary frequency f = omega/(2*pi), conversion: f[Hz] = E[GeV] / h\n   19: \"\"\"\n   20: \n   21: import sys\n   22: import numpy as np\n   23: \n   24: sys.path.insert(0, 'computations')\n   25: from canonical_constants import M_Pl_reduced as M_Pl  # GeV, reduced Planck mass\n   26: \n   27: # ============================================================\n   28: # Constants\n   29: # ============================================================\n   30: k_B = 8.617333262e-14      # GeV/K"
+    },
+    {
+      "anchor_id": "prov_743",
+      "anchor_type": "data_provenance",
+      "name": "impedance_boundary",
+      "script_path": "session-58/s58_impedance_boundary.py",
+      "session": "s58",
+      "inputs": "computations/session-56/s56_ba_spectrum.npz, computations/session-54/s54_tb_hamiltonian.npz, computations/session-57/s57...",
+      "outputs": "session-58/s58_impedance_boundary.npz, session-58/s58_impedance_boundary.png",
+      "source_file": "computations/session-58/s58_impedance_boundary.py",
+      "source_context_30_lines": "   12:   Criterion: T > 0.5 (transparent) or T < 0.5 (trapped)?\n   13: \n   14: Input:\n   15:   - s56_ba_spectrum.npz: BA sound speeds c_BA(tau), E_J(tau), E_c(tau)\n   16:   - s54_tb_hamiltonian.npz: graph structure, adjacency, cell properties\n   17:   - s57_percolation_cc.npz: per-bond Josephson energies, percolation data\n   18: \n   19: Output:\n   20:   - s58_impedance_boundary.npz\n   21: \"\"\"\n   22: \n   23: import sys\n   24: import os\n   25: sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))\n   26: \n   27: import numpy as np\n   28: import matplotlib"
+    },
+    {
+      "anchor_id": "prov_744",
+      "anchor_type": "data_provenance",
+      "name": "mass_variation",
+      "script_path": "session-58/s58_mass_variation.py",
+      "session": "s58",
+      "inputs": "",
+      "outputs": "session-58/s58_mass_variation.npz, session-58/s58_mass_variation.png",
+      "source_file": "computations/session-58/s58_mass_variation.py",
+      "source_context_30_lines": "  592: ax.axvline(0.10, color='orange', linestyle=':', label='+10%')\n  593: ax.axvline(-0.10, color='orange', linestyle=':', label='-10%')\n  594: ax.set_xlabel('delta_m / m  (tau: 0 -> 0.5)')\n  595: ax.set_title('Mass Variation All Cells')\n  596: ax.legend(fontsize=8)\n  597: ax.grid(True, alpha=0.3, axis='x')\n  598: \n  599: plt.tight_layout()\n  600: plt.savefig(os.path.join(os.path.dirname(__file__), 's58_mass_variation.png'), dpi=150)\n  601: print(f\"\\n  Plot saved: s58_mass_variation.png\")\n  602: \n  603: # =============================================================================\n  604: # SAVE DATA\n  605: # =============================================================================\n  606: \n  607: output_path = os.path.join(os.path.dirname(__file__), 's58_mass_variation.npz')\n  608: np.savez(output_path,"
+    },
+    {
+      "anchor_id": "prov_745",
+      "anchor_type": "data_provenance",
+      "name": "multimode_resonance",
+      "script_path": "session-58/s58_multimode_resonance.py",
+      "session": "s58",
+      "inputs": "computations/session-56/s56_ba_spectrum.npz, computations/session-56/s56_leggett_fabric.npz, computations/session-57/s57...",
+      "outputs": "session-58/s58_multimode_resonance.npz",
+      "source_file": "computations/session-58/s58_multimode_resonance.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s58_multimode_resonance.py — Three-Mode Resonance Census (MULTIMODE-RESONANCE-58)\n    4: ==================================================================================\n    5: \n    6: Gate: MULTIMODE-RESONANCE-58 (INFO)\n    7: Question: Do multi-mode resonances have sufficient coupling for energy transfer?\n    8: \n    9: The 32-cell fabric has 63 collective modes at the fold:\n   10:   - 31 Bogoliubov-Anderson (BA): omega in [0.209, 1.368] M_KK\n   11:   - 31 Leggett: omega in [0.089, 0.365] M_KK"
+    },
+    {
+      "anchor_id": "prov_746",
+      "anchor_type": "data_provenance",
+      "name": "npair2_integ",
+      "script_path": "session-58/s58_npair2_integ.py",
+      "session": "s58",
+      "inputs": "",
+      "outputs": "session-58/s58_npair2_integ.npz, session-58/s58_npair2_integ.png",
+      "source_file": "computations/session-58/s58_npair2_integ.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s58_npair2_integ.py — N_pair = 2 Exact Diagonalization on 2-Cell System\n    4: =========================================================================\n    5: \n    6: Gate: NPAIR2-INTEG-58\n    7:   PASS: <r> > 0.45 (integrability broken; CC solution path opens)\n    8:   FAIL: <r> < 0.40 (integrability persists; CC remains locked)\n    9:   INFO: <r> in [0.40, 0.45] (intermediate; N_pair = 3 needed)\n   10: \n   11: Physics: At N_pair = 1, a single Cooper pair in a 2-cell Josephson array"
+    },
+    {
+      "anchor_id": "prov_747",
+      "anchor_type": "data_provenance",
+      "name": "off_jensen_bcs",
+      "script_path": "session-58/s58_off_jensen_bcs.py",
+      "session": "s58",
+      "inputs": "",
+      "outputs": "session-58/s58_off_jensen_bcs.npz, session-58/s58_off_jensen_bcs.png",
+      "source_file": "computations/session-58/s58_off_jensen_bcs.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s58_off_jensen_bcs.py — OFF-JENSEN-BCS-58 (W3-12)\n    4: ====================================================\n    5: Gate: OFF-JENSEN-BCS-58 (INFO)\n    6: Criterion: Delta_BCS(sigma=0.01) vs Delta_BCS(sigma=0) differ by > 5%?\n    7: \n    8: Method:\n    9:   1. Load Dirac eigenvalues from s54_ed_sweep.npz (8 BCS-active modes at fold).\n   10:   2. Load off-Jensen landscape from s57_off_jensen_ej.npz (V, R vs sigma).\n   11:   3. Construct sigma-dependent eigenvalue shifts from the metric deformation:"
+    },
+    {
+      "anchor_id": "prov_748",
+      "anchor_type": "data_provenance",
+      "name": "off_jensen_dw",
+      "script_path": "session-58/s58_off_jensen_dw.py",
+      "session": "s58",
+      "inputs": "computations/session-57/s57_off_jensen_ej.npz, computations/session-54/s54_tb_hamiltonian.npz",
+      "outputs": "session-58/s58_off_jensen_dw.npz",
+      "source_file": "computations/session-58/s58_off_jensen_dw.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s58_off_jensen_dw.py — OFF-JENSEN-DW-58 (W3-9)\n    4: ================================================\n    5: Gate: E_DW(delta_sigma) > 0?   (INFO)\n    6: \n    7: Physics:\n    8:   The 32-cell Voronoi tessellation of SU(3) has cells connected by Josephson\n    9:   bonds. S57 computed E_J(tau, sigma) where sigma parametrizes the T^2\n   10:   deformation breaking the Jensen line. When ALL cells share the same sigma,\n   11:   the fabric is uniform — no domain walls."
+    },
+    {
+      "anchor_id": "prov_749",
+      "anchor_type": "data_provenance",
+      "name": "off_jensen_transit",
+      "script_path": "session-58/s58_off_jensen_transit.py",
+      "session": "s58",
+      "inputs": "",
+      "outputs": "session-58/s58_off_jensen_transit.npz, session-58/s58_off_jensen_transit.png",
+      "source_file": "computations/session-58/s58_off_jensen_transit.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s58_off_jensen_transit.py — OFF-JENSEN-TRANSIT-58\n    4: =================================================\n    5: Solve the 2D equations of motion for (tau(t), sigma(t)) in the off-Jensen\n    6: potential landscape E_J(tau, sigma).\n    7: \n    8: Gate: OFF-JENSEN-TRANSIT-58 (INFO)\n    9: Criterion: sigma(tau_fold) > 0.01?\n   10: \n   11: Method:"
+    },
+    {
+      "anchor_id": "prov_750",
+      "anchor_type": "data_provenance",
+      "name": "omega_j_sweep",
+      "script_path": "session-58/s58_omega_j_sweep.py",
+      "session": "s58",
+      "inputs": "computations/session-56/s56_ba_spectrum.npz, computations/session-54/s54_tb_hamiltonian.npz, computations/session-54/s54...",
+      "outputs": "session-58/s58_omega_j_sweep.npz, session-58/s58_omega_j_sweep.png",
+      "source_file": "computations/session-58/s58_omega_j_sweep.py",
+      "source_context_30_lines": "   13: \n   14: Input:\n   15:   - s54_tb_hamiltonian.npz: E_J(tau) from J_C2_tau\n   16:   - s54_ed_sweep.npz: eigenvalues at 50 tau\n   17:   - s56_ba_spectrum.npz: E_J(tau), E_c(tau), omega_J_single(tau)\n   18:   - canonical_constants: omega_att, E_B1, E_B3_mean\n   19: \n   20: Output:\n   21:   - s58_omega_j_sweep.npz\n   22:   - s58_omega_j_sweep.png\n   23: \"\"\"\n   24: \n   25: import sys\n   26: import os\n   27: sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))\n   28: \n   29: import numpy as np"
+    }
+  ]
+}

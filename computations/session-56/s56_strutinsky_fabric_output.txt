@@ -1,0 +1,210 @@
+==============================================================================
+S56 STRUTINSKY-FABRIC-56: Strutinsky Decomposition on Fabric Hamiltonian
+==============================================================================
+
+--- Section 1: Load s54_tb_hamiltonian.npz ---
+  N_cells = 32, N_fill = 16
+  N_tau = 50, tau range = [0.0000, 0.5000]
+  Bonds: C2=50, su2=24, u1=19, total=93
+  Eigenvalue range at fold: [0.000000, 2.620399] M_KK
+  Gap at fold: E[16] - E[15] = 0.102662 M_KK
+
+--- Section 2: Polynomial Strutinsky on TB levels ---
+
+--- Section 3: Strutinsky decomposition at all 50 tau values ---
+
+   tau |    E_exact |       p=3       p=4       p=5       p=6 |  mean(3-5)    sigma
+------------------------------------------------------------------------------------------
+ 0.000 |    48.1879 |   +2.9912   +3.4040   +3.1612   +3.2455 |    +3.1855   0.1694
+ 0.051 |    39.5740 |   +2.4430   +2.7905   +2.5891   +2.6618 |    +2.6075   0.1425
+ 0.102 |    32.6184 |   +1.9990   +2.2945   +2.1273   +2.1902 |    +2.1403   0.1210
+ 0.153 |    27.0414 |   +1.6417   +1.8965   +1.7585   +1.8123 |    +1.7656   0.1041
+ 0.204 |    22.6229 |   +1.3585   +1.5819   +1.4712   +1.5149 |    +1.4705   0.0912
+ 0.255 |    19.1912 |   +1.1442   +1.3396   +1.2583   +1.2870 |    +1.2474   0.0802
+ 0.306 |    16.6014 |   +0.9855   +1.1484   +1.1009   +1.1080 |    +1.0783   0.0684
+ 0.357 |    14.6869 |   +0.8117   +0.9240   +0.9104   +0.8974 |    +0.8821   0.0500
+ 0.408 |    13.4416 |   +0.7841   +0.8231   +0.8197   +0.7948 |    +0.8089   0.0176
+ 0.459 |    12.7419 |   +0.8605   +0.8617   +0.8338   +0.7708 |    +0.8520   0.0129
+ 0.500 |    12.3035 |   +0.8065   +0.8163   +0.7754   +0.7282 |    +0.7994   0.0174
+
+--- p-convergence check ---
+  tau=0.000: p=2:+4.7215 p=3:+2.9912 p=4:+3.4040 p=5:+3.1612 p=6:+3.2455 p=7:+3.0706
+  tau=0.122: p=2:+2.9528 p=3:+1.8466 p=4:+2.1245 p=5:+1.9694 p=6:+2.0286 p=7:+1.9191
+  tau=0.245: p=2:+1.9073 p=3:+1.1818 p=4:+1.3829 p=5:+1.2953 p=6:+1.3276 p=7:+1.2834
+  tau=0.367: p=2:+1.1502 p=3:+0.7901 p=4:+0.8890 p=5:+0.8808 p=6:+0.8655 p=7:+0.8905
+  tau=0.500: p=2:+0.8871 p=3:+0.8065 p=4:+0.8163 p=5:+0.7754 p=6:+0.7282 p=7:+0.7364
+
+
+--- Section 4: Bogoliubov-Anderson phonon zero-point energy ---
+
+Physics: The BA phonon spectrum arises from phase fluctuations of the BCS
+condensate on the 32-cell graph. The TB Hamiltonian IS the graph Laplacian
+(by construction in S54), so its eigenvalues give the phonon normal modes.
+
+The BA dispersion for a Josephson junction array in the Mott regime is:
+  omega_n = sqrt(E_c * E_J_eff * lambda_n)
+
+where:
+  E_c = charging energy = (eps[16] - eps[15])/2  (half the single-pair gap)
+  E_J_eff = effective Josephson energy (mean coupling * connectivity)
+  lambda_n = eps_n / max(eps_k)  (normalized TB eigenvalue, n=1..31)
+
+The n=0 mode is the zero mode (global phase, Goldstone). It carries no ZPE.
+
+Nuclear analog: this is the QRPA phonon vacuum with 31 modes, each
+contributing hbar*omega/2 to the ground-state energy.
+
+
+BA phonon ZPE summary:
+   tau |      E_c |  E_J_eff |  omega_min  omega_max |   E_BA_ZPE
+----------------------------------------------------------------------
+ 0.000 |   0.1089 |   2.3192 |     0.0774     0.5025 |     4.9093
+ 0.122 |   0.0593 |   1.4405 |     0.0460     0.2924 |     2.8765
+ 0.245 |   0.0217 |   0.9177 |     0.0236     0.1410 |     1.4156
+ 0.367 |   0.0428 |   0.6312 |     0.0323     0.1644 |     1.7449
+ 0.500 |   0.0513 |   0.5264 |     0.0344     0.1644 |     1.8320
+
+
+--- Section 5: Josephson ground-state energy ---
+
+The Josephson energy for a junction array with all phases aligned is:
+  E_J_ground = -N_bonds * <E_J> * m
+
+where m is the order parameter (m ~ 0.99) and <E_J> is the mean
+Josephson coupling per bond. The negative sign reflects the energy
+gain from phase coherence across the fabric.
+
+This is the single largest energy scale in the fabric.
+
+   tau |   E_J_ground |   E_J_mean
+----------------------------------------
+ 0.000 |    -100.2466 |     1.0888
+ 0.122 |     -62.2640 |     0.6763
+ 0.245 |     -39.6674 |     0.4308
+ 0.367 |     -27.2839 |     0.2963
+ 0.500 |     -22.7543 |     0.2471
+
+
+--- Section 6: Total fabric energy ---
+
+   tau |       E_TB    E_BA_ZP      E_J_gnd |     E_fabric   dE_shell
+------------------------------------------------------------------------------
+ 0.000 |    48.1879     4.9093    -100.2466 |     -47.1494    +3.1855
+ 0.061 |    38.0601     3.7909     -78.8745 |     -37.0235    +2.5059
+ 0.122 |    30.2357     2.8765     -62.2640 |     -29.1517    +1.9801
+ 0.184 |    24.2632     2.1040     -49.4406 |     -23.0734    +1.5795
+ 0.245 |    19.8055     1.4156     -39.6674 |     -18.4463    +1.2867
+ 0.306 |    16.6014     0.8467     -32.4047 |     -14.9565    +1.0783
+ 0.367 |    14.3851     1.7449     -27.2839 |     -11.1538    +0.8533
+ 0.429 |    13.1210     1.6748     -24.0945 |      -9.2987    +0.8275
+ 0.500 |    12.3035     1.8320     -22.7543 |      -8.6188    +0.7994
+
+
+--- Section 7: Gradient analysis (DECISIVE) ---
+
+The gradient ratio measures whether shell corrections can drive a minimum:
+  R_grad = |d(delta_E_shell)/dtau| / |d(E_smooth_fabric)/dtau|
+
+If R_grad > 1 at some tau, the shell correction slope exceeds the smooth
+background slope, and a minimum is POSSIBLE (necessary but not sufficient).
+If R_grad < 1 everywhere, the smooth background dominates and shell
+corrections CANNOT produce a minimum by themselves.
+
+S55 single-cell result: R_grad = 0.71 at fold.
+
+Nuclear context: In nuclei, R_grad is typically 0.1-0.3 for medium-mass
+nuclei (shell corrections are a small perturbation on the LDM). R_grad > 1
+occurs only at doubly-magic nuclei (^208Pb, ^132Sn) where deep shell gaps
+create large shell corrections. The question is whether the fabric
+connectivity pushes the framework into the doubly-magic regime.
+
+
+Gradient decomposition (units: M_KK per unit tau):
+   tau |   dE_TB/dt   dE_BA/dt    dE_J/dt |   dE_sm/dt d(dEsh)/dt |   R_TB  R_fab
+-----------------------------------------------------------------------------------------------
+ 0.000 |   -183.373   -19.9349    386.355 |    195.343   -12.2968 |  0.072  0.063
+ 0.061 |   -145.242   -16.4294    307.258 |    155.341    -9.7543 |  0.072  0.063
+ 0.122 |   -111.644   -13.6170    238.136 |    120.377    -7.5014 |  0.072  0.062
+ 0.184 |    -84.419   -11.7885    182.866 |     92.290    -5.6312 |  0.071  0.061
+ 0.245 |    -61.913   -10.7389    137.936 |     69.260    -3.9754 |  0.069  0.057
+ 0.306 |    -43.899     5.1916    100.370 |     65.274    -3.6120 |  0.090  0.055
+ 0.367 |    -28.260     8.2253     67.515 |     49.988    -2.5075 |  0.097  0.050
+ 0.429 |    -13.391   -20.3027     36.826 |      1.333    +1.7992 |  0.118  1.350
+ 0.500 |     -8.589    -6.0319      2.932 |    -11.877    +0.1879 |  0.021  0.016
+
+==============================================================================
+KEY GRADIENT RATIOS:
+==============================================================================
+  At fold (tau=0.500):
+    TB-only gradient ratio:  0.0214
+    Fabric gradient ratio:   0.0158
+  At tau=0.19 (S55 reference):
+    TB-only gradient ratio:  0.0712
+    Fabric gradient ratio:   0.0606
+  S55 single-cell (992-mode): 0.711
+  Maximum grad ratio (fabric): 1.3498 at tau=0.429
+  Maximum grad ratio (TB-only): 0.2197 at tau=0.459
+
+  Mean gradient ratio for tau >= 0.15:
+    TB-only:  0.0862
+    Fabric:   0.0958
+
+  Shell correction sign changes: 0
+  E_fabric gradient sign changes: 3
+    maximum near tau=0.429, E_fabric=-9.3382
+    minimum near tau=0.446, E_fabric=-9.8074
+    maximum near tau=0.483, E_fabric=-8.4784
+
+
+--- Section 8: Energy scale comparison ---
+
+Energy scales at fold (tau=0.500):
+  E_exact_TB:         12.3035 M_KK
+  E_BA_ZPE:            1.8320 M_KK
+  E_J_ground:        -22.7543 M_KK
+  E_fabric:           -8.6188 M_KK
+  delta_E_shell:      +0.7994 M_KK
+  E_smooth_fab:       -9.4182 M_KK
+  |dE_shell|/|E_fabric|: 9.2751e-02
+
+Gradient magnitudes at fold:
+  |dE_TB/dtau|:       8.5894
+  |dE_BA_ZPE/dtau|:   6.0319
+  |dE_J_ground/dtau|: 2.9325
+  |d(dE_shell)/dtau|: 0.1879
+  |dE_smooth/dtau|:   11.8767
+
+  Dominant gradient term: TB_exact (8.5894)
+
+
+--- Section 9: Comparison with S55 single-cell ---
+
+   tau | S55 R_grad   S56 R_TB  S56 R_fab |  S55 dE_sh  S56 dE_sh
+-----------------------------------------------------------------
+  0.00 |      1.110      0.072      0.063 |     15.656     3.1855
+  0.05 |      0.986      0.072      0.063 |     10.355     2.6075
+  0.10 |      0.419      0.072      0.063 |      7.974     2.1403
+  0.15 |      0.502      0.072      0.062 |      8.366     1.7656
+  0.19 |      0.711      0.071      0.061 |      9.398     1.5236
+
+
+==============================================================================
+GATE VERDICT: STRUTINSKY-FABRIC-56
+==============================================================================
+
+  Verdict: INFO
+  Detail: Fabric Strutinsky on 32-cell TB Hamiltonian. R_grad(fold) = 0.016 (fabric), 0.021 (TB-only). R_max = 1.350 at tau=0.429. S55 single-cell: 0.71. Fabric DECREASES gradient ratio. Shell corrections SUFFICIENT for minimum.
+
+  Key constraint: gradient ratio > 1.0
+  Shell correction can DRIVE a minimum at tau ~ 0.429
+
+
+--- Section 11: Saving results ---
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s56_strutinsky_fabric.npz
+
+--- Section 12: Generating plot ---
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s56_strutinsky_fabric.png
+
+==============================================================================
+COMPUTATION COMPLETE
+==============================================================================

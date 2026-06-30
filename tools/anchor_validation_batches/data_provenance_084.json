@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 84,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_831",
+      "anchor_type": "data_provenance",
+      "name": "staircase_ext",
+      "script_path": "session-60/s60_staircase_ext.py",
+      "session": "s60",
+      "inputs": "",
+      "outputs": "session-60/s60_staircase_ext.npz, session-60/s60_staircase_ext.png",
+      "source_file": "computations/session-60/s60_staircase_ext.py",
+      "source_context_30_lines": "  491: ax4.set_xlabel('N_pair', fontsize=12)\n  492: ax4.set_ylabel('|Lambda_residual| (M_KK)', fontsize=12)\n  493: ax4.set_title('|Lambda_residual| vs N (log scale)', fontsize=12)\n  494: ax4.legend(fontsize=9)\n  495: ax4.grid(True, alpha=0.3, which='both')\n  496: ax4.set_xticks(N_Lambda)\n  497: \n  498: plt.tight_layout()\n  499: plt.savefig(os.path.join(data_dir, 's60_staircase_ext.png'), dpi=150, bbox_inches='tight')\n  500: print(f\"\\nPlot saved: s60_staircase_ext.png\")\n  501: \n  502: \n  503: # =====================================================================\n  504: #  10. SAVE DATA\n  505: # =====================================================================\n  506: \n  507: # Convention B staircase quantities"
+    },
+    {
+      "anchor_id": "prov_832",
+      "anchor_type": "data_provenance",
+      "name": "strutinsky_pw",
+      "script_path": "session-60/s60_strutinsky_pw.py",
+      "session": "s60",
+      "inputs": "",
+      "outputs": "session-60/s60_strutinsky_pw.npz, session-60/s60_strutinsky_pw.png",
+      "source_file": "computations/session-60/s60_strutinsky_pw.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s60_strutinsky_pw.py — STRUTINSKY-PW-60\n    4: =========================================\n    5: \n    6: Strutinsky smoothing of the Peter-Weyl CC extension.\n    7: \n    8: Physics:\n    9:   PW-CC-59 showed Lambda_eff jumping from +0.0014 M_KK^4 at L=0 to -22.5 M_KK^4\n   10:   at L=1 — a UV catastrophe from unrenormalized BCS mean-field contributions at\n   11:   higher Peter-Weyl levels. The total Lambda_eff diverges as L increases."
+    },
+    {
+      "anchor_id": "prov_833",
+      "anchor_type": "data_provenance",
+      "name": "transplanckian_bogo",
+      "script_path": "session-60/s60_transplanckian_bogo.py",
+      "session": "s60",
+      "inputs": "",
+      "outputs": "session-60/s60_transplanckian_bogo.npz, session-60/s60_transplanckian_bogo.png",
+      "source_file": "computations/session-60/s60_transplanckian_bogo.py",
+      "source_context_30_lines": "   41:   The gate is evaluated on Method B (physically correct), with Method A as a diagnostic.\n   42: \n   43: Gate: TRANSPLANCKIAN-BOGO-60\n   44:   PASS if delta_beta_k < 1% for all modes and modifications (UV-robust)\n   45:   FAIL if delta_beta_k > 10% for any mode (UV-sensitive)\n   46:   INFO if delta_beta_k in [1%, 10%] (mild UV sensitivity)\n   47: \n   48: Input: computations/session-59/s59_bogoliubov_coeff.npz\n   49: Output: computations/session-60/s60_transplanckian_bogo.npz\n   50: \n   51: Author: Hawking-Theorist (Session 60)\n   52: \"\"\"\n   53: \n   54: import sys\n   55: import os\n   56: sys.path.insert(0, os.path.dirname(__file__))\n   57: from canonical_constants import *"
+    },
+    {
+      "anchor_id": "prov_834",
+      "anchor_type": "data_provenance",
+      "name": "unimod_grav",
+      "script_path": "session-60/s60_unimod_grav.py",
+      "session": "s60",
+      "inputs": "",
+      "outputs": "session-60/s60_unimod_grav.npz",
+      "source_file": "computations/session-60/s60_unimod_grav.py",
+      "source_context_30_lines": "  662:     print(\"\\n  Key numbers:\")\n  663:     for k, v in key_numbers.items():\n  664:         print(f\"    {k}: {v}\")\n  665: \n  666:     # =================================================================\n  667:     # SAVE RESULTS\n  668:     # =================================================================\n  669:     save_path = os.path.join(os.path.dirname(os.path.abspath(__file__)),\n  670:                              's60_unimod_grav.npz')\n  671: \n  672:     np.savez(save_path,\n  673:         # Gate verdict\n  674:         gate_name='UNIMOD-GRAV-60',\n  675:         gate_verdict=gate_verdict,\n  676:         gate_detail=gate_detail,\n  677:         CC_suppression_OOM=cc_suppression,\n  678: "
+    },
+    {
+      "anchor_id": "prov_835",
+      "anchor_type": "data_provenance",
+      "name": "a2_tau_derivative",
+      "script_path": "session-61/s61_a2_tau_derivative.py",
+      "session": "s61",
+      "inputs": "",
+      "outputs": "session-61/s61_a2_tau_derivative.npz, session-61/s61_a2_tau_derivative.png",
+      "source_file": "computations/session-61/s61_a2_tau_derivative.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s61_a2_tau_derivative.py — Heat Kernel a_2 Tau Derivative (A2-TRANSIT-61)\n    4: =========================================================================\n    5: \n    6: Hawking-Theorist computation, Session 61 Wave 2.\n    7: \n    8: Computes d(a_2)/d(tau) along the transit path tau in [0, 0.25].\n    9: Determines whether G_eff evolves during transit.\n   10: \n   11: Physics:"
+    },
+    {
+      "anchor_id": "prov_836",
+      "anchor_type": "data_provenance",
+      "name": "a4_qtheory_compound",
+      "script_path": "session-61/s61_a4_qtheory_compound.py",
+      "session": "s61",
+      "inputs": "",
+      "outputs": "session-61/s61_a4_qtheory_compound.npz",
+      "source_file": "computations/session-61/s61_a4_qtheory_compound.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s61_a4_qtheory_compound.py — a_4-Dominated Spectral Action with q-Theory Vacuum\n    4: ==================================================================================\n    5: \n    6: Task: A4-QT-COMPOUND-61\n    7: Agent: Phonon-First Cosmologist\n    8: \n    9: PHYSICS:\n   10:   The spectral action on M^4 x K has the heat-kernel expansion:\n   11: "
+    },
+    {
+      "anchor_id": "prov_837",
+      "anchor_type": "data_provenance",
+      "name": "acoustic_metric",
+      "script_path": "session-61/s61_acoustic_metric.py",
+      "session": "s61",
+      "inputs": "",
+      "outputs": "session-61/s61_acoustic_metric.npz, session-61/s61_acoustic_metric.png",
+      "source_file": "computations/session-61/s61_acoustic_metric.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s61_acoustic_metric.py — Acoustic Metric in Unruh Form for the BCS Transit\n    4: ===========================================================================\n    5: \n    6: Gate: ACOUSTIC-METRIC-61\n    7:   PASS if T_Parker ~ T_squeeze within 3x.\n    8:   FAIL if > 10x discrepancy.\n    9:   INFO if no sonic horizon.\n   10: \n   11: Physics:"
+    },
+    {
+      "anchor_id": "prov_838",
+      "anchor_type": "data_provenance",
+      "name": "alpha_crit_conformal",
+      "script_path": "session-61/s61_alpha_crit_conformal.py",
+      "session": "s61",
+      "inputs": "s60_hessian_3d.npz, s61_heat_kernel_a4.npz",
+      "outputs": "session-61/s61_alpha_crit_conformal.npz, session-61/s61_alpha_crit_conformal.png",
+      "source_file": "computations/session-61/s61_alpha_crit_conformal.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s61_alpha_crit_conformal.py — ALPHA-CRIT-CONFORMAL-61\n    4: =====================================================\n    5: \n    6: Gate: ALPHA-CRIT-CONFORMAL-61\n    7:   PASS if alpha_crit has conformal invariance origin\n    8:   FAIL if accidental (no geometric explanation)\n    9:   INFO if known geometric ratio but not conformal\n   10: \n   11: Physics:"
+    },
+    {
+      "anchor_id": "prov_839",
+      "anchor_type": "data_provenance",
+      "name": "alpha_physical",
+      "script_path": "session-61/s61_alpha_physical.py",
+      "session": "s61",
+      "inputs": "computations/session-60/s60_hessian_3d.npz",
+      "outputs": "session-61/s61_alpha_physical.npz, session-61/s61_alpha_physical.png",
+      "source_file": "computations/session-61/s61_alpha_physical.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s61_alpha_physical.py — ALPHA-REGIME-61: Physical Alpha Parameter on Jensen Metric\n    4: ===================================================================================\n    5: Gate: ALPHA-REGIME-61\n    6:   PASS if alpha < 55 for any standard cutoff at Lambda <= M_KK\n    7:   FAIL if > 55 for ALL standard cutoffs\n    8:   INFO if within factor 2 of 55 (i.e., alpha in [27.5, 110])\n    9: \n   10: Definition (from S60 HESSIAN-3D-60):\n   11:   The spectral action Hessian decomposes as:"
+    },
+    {
+      "anchor_id": "prov_840",
+      "anchor_type": "data_provenance",
+      "name": "b2_fabric_bandwidth",
+      "script_path": "session-61/s61_b2_fabric_bandwidth.py",
+      "session": "s61",
+      "inputs": "",
+      "outputs": "session-61/s61_b2_fabric_bandwidth.npz, session-61/s61_b2_fabric_bandwidth.png",
+      "source_file": "computations/session-61/s61_b2_fabric_bandwidth.py",
+      "source_context_30_lines": "   29: \n   30: Data inputs:\n   31:   - s60_rg_integrals.npz: eps_fold (single-cell mode energies), E_J_fold, V_fold\n   32:   - s54_tb_hamiltonian.npz: adjacency matrix (32-cell CG graph), J couplings\n   33:   - s56_leggett_fabric.npz: Leggett parameters, laplacian eigenvalues\n   34:   - canonical_constants.py: omega_tau, dt_transit, tau_fold, etc.\n   35: \n   36: Outputs:\n   37:   - s61_b2_fabric_bandwidth.npz\n   38:   - s61_b2_fabric_bandwidth.png\n   39: \"\"\"\n   40: \n   41: import sys\n   42: import os\n   43: sys.path.insert(0, os.path.dirname(__file__))\n   44: \n   45: import numpy as np"
+    }
+  ]
+}

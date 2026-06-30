@@ -1,0 +1,161 @@
+{
+  "L_max": "N/A",
+  "audit_sha256": "8893fbc2ee44af27585268b01481eff5560817013ec3e60ae47ee0821ccaaf0a",
+  "candidates": {
+    "A": {
+      "ZFP_TD": "ZFP",
+      "anchor_gate": "S85-S5-CONVERGENCE-AUDIT",
+      "audit_sha256_anchor": "6920eaefe192f72d399ba7185224b6a0cc1aa50ad2fabdca0310551a865a24d8",
+      "method": "Volovik-partition projection of spectral-action gradient at fold",
+      "registry_sessions": "28+",
+      "source": "S5 row #1 (Volovik partition)",
+      "value": -0.918
+    },
+    "B": {
+      "ZFP_TD": "ZFP",
+      "anchor_gate": "S85-W10-R842-PHYSICAL-ANCHOR-REAUDIT",
+      "audit_sha256_anchor": "8de72cde7d635949f45716191288da6656f8a9fe05411532ab848fdb93fd04e8",
+      "method": "substrate-compaction-derived w(z=0) via fiber-tau density tracking",
+      "registry_sessions": "0-1",
+      "source": "S85 W10-2 branch-(iv) (substrate-compaction)",
+      "value": -0.842454
+    }
+  },
+  "checks": {
+    "arithmetic_correct": true,
+    "both_cross_referenced": true,
+    "primary_designated": true,
+    "reversibility_documented": true,
+    "six_sections_ok": true
+  },
+  "content_sha256": "51b5584d5d807bc3bdb1b73954f2dcf36768f50b094fc34e50b078f46ffa5f7e",
+  "convention": "registry-history-priority",
+  "decision_rule": "PRIMARY = candidate that satisfies (registry-history-priority AND DR3-rectangle-membership) = CANDIDATE A unless and until a structural argument promotes B.",
+  "four_criterion_table": {
+    "criterion_1_theoretical_priority": {
+      "rationale": "Both are first-principles substrate derivations. Volovik-partition averages over the post-fold expansion history (integrates a substrate-internal gradient). Substrate-compaction pinpoints w(z=0) directly from fiber-tau density tracking (no post-fold averaging). Neither preempts the other on theoretical priority.",
+      "verdict": "tie"
+    },
+    "criterion_2_DR3_rectangle_membership": {
+      "A_offset_from_center": 0.07600000000000007,
+      "A_offset_from_center_pct_of_hw": 76.00000000000007,
+      "B_offset_from_center": 0.00045400000000006546,
+      "B_offset_from_center_pct_of_hw": 0.45400000000006546,
+      "rationale": "Under the canonical mack-9A rectangle R_842 = [-0.942, -0.742] (center -0.842, hw 0.100), both candidates are inside.  A sits at 76.0% of half-width; B sits at 0.45% of half-width (centered). Neither candidate is excluded by the current registration.",
+      "verdict": "both_inside_mack_canonical"
+    },
+    "criterion_3_falsifiability": {
+      "d_A": 0.08199999999999996,
+      "d_B": 0.15754599999999996,
+      "delta_d": 0.075546,
+      "delta_n_sigma": 3.02184,
+      "n_sigma_A": 3.2799999999999985,
+      "n_sigma_B": 6.3018399999999986,
+      "rationale": "Under DR3 fiducial sigma(w_0) = 0.025 (S69 master), B is +3.022 sigma further from LCDM than A. This is a falsifiability advantage for B: a DR3 measurement that returns w_0 = -1.0 would constitute a +6.30-sigma exclusion of B vs only a +3.28-sigma exclusion of A. Higher sigma = stronger exclusion = more discriminable.",
+      "verdict": "B_more_discriminable"
+    },
+    "criterion_4_registry_history": {
+      "A_first_registered": "S5 (per S58 Volovik partition; canonical_constants.py current pin w0_FW=-0.918)",
+      "A_session_count_since_registration": "28+ sessions (S58 -> S85 = approx 28 sessions of citation history)",
+      "B_first_registered": "S85 W10-2 (branch-(iv) substrate-compaction; new contender)",
+      "B_session_count_since_registration": "0-1 sessions (S85 W10-2 -> S86 W13)",
+      "rationale": "A has citation-history priority (28+ sessions of canonical use across the W4-7 NULL-ELIM-MAP at +3.28-sigma vs LCDM, the falsifier-master-inventory Row #1 as the +3.28-sigma framework entry, and the canonical_constants.py w0_FW pin). B is the recent contender from S85 W10-2 branch-(iv). A wins this criterion by registry-history.",
+      "verdict": "A_long_standing_canonical"
+    },
+    "decision_rule": {
+      "designation": "PRIMARY = A (w_0 = -0.918, Volovik partition)",
+      "non_primary_preserved": "Both candidates are documented in the registry as cross-referenced predictions; the non-PRIMARY candidate (B at S86 W13) is preserved against future re-pin.",
+      "reversibility": "PRIMARY designation is REVERSIBLE upon DR3 publication. If DR3 returns w_0 in [-0.86, -0.83], the substrate-compaction branch (B) BECOMES PRIMARY by pre-registered re-pin protocol (per S84 R_842 lockout protocol; W1b-9 DR3-RESPONSE-PROTOCOL).",
+      "rule": "PRIMARY = candidate that satisfies (registry-history-priority AND DR3-rectangle-membership) = CANDIDATE A unless and until a structural argument promotes B."
+    }
+  },
+  "gate_id": "S86-W0-PRIMARY-VALUE-RESOLVE",
+  "input_pins": {
+    "sessions/framework/registry/falsifier-master-inventory.md": "088668f68b04d811b5fdfef0290be91a7e4fbbefd37e0fc06ed551d405a97c08",
+    "sessions/session-85/session-85-mack-synthesis-w6-13.md": "2ef734a24b17855812c5f535771a5a8828972d94235837c8f3b0f87f5efeaf75",
+    "sessions/session-85/session-85-s5-falsifier-inventory-mack.md": "1fc215a0321870141ec05a454211a8d923c38babd47cc114bb90d35a63521a63",
+    "sessions/session-85/session-85-w10-workingpaper.md": "0f77561f03a49575d5db22754ae958e4bb5ac4c5c0659c900f0a5b67ebf4b945",
+    "sessions/session-plan/session-86-plan-w13.md": "e73dde4c388e2353ba98d74350725190ac0f4fbe23161fc6e2c0be2be753d17b",
+    "computations/_shared/canonical_constants.py": "ebd4d3264680e17e9ca3813b226d8a272e6a9615494e0b3bbecc72d68145a259",
+    "computations/session-85/s85_gate_verdicts.txt": "1993c0e6ec6aeaef79721d4f7ad11c1bb60b06f8f3a5598d8a8d1f051ee67223"
+  },
+  "primary_designation": {
+    "label": "A",
+    "source": "Volovik partition (S5 row #1)",
+    "value": -0.918
+  },
+  "reversibility_trigger": {
+    "action": "PRIMARY flips A \u2192 B by pre-registered re-pin protocol",
+    "condition": "DR3 returns w_0 \u2208 [-0.86, -0.83]",
+    "provenance": "S84 W1b-9 DR3-RESPONSE-PROTOCOL R_842 lockout"
+  },
+  "scheme": "4-criterion-adjudication",
+  "secondary_with_reversibility": {
+    "label": "B",
+    "source": "substrate-compaction (S85 W10-2 branch-(iv))",
+    "value": -0.842454
+  },
+  "session": "S86",
+  "substitution_chain": {
+    "R_842_membership": {
+      "A_in_mack_canonical": true,
+      "A_in_plan": true,
+      "B_in_mack_canonical": true,
+      "B_in_plan": false,
+      "mack_9A_canonical_rectangle": [
+        -0.942,
+        -0.742
+      ],
+      "note": "Plan \u00a7W13-3.6 narrative (line 430) asserts both candidates inside R_842; this is consistent with the mack-9A canonical rectangle [-0.942,-0.742] (center -0.842, hw 0.100). The input-pin field [-1.05, -0.85] is a wider envelope used for boundary-testing; B sits 0.0075 outside its upper edge.",
+      "plan_prompt_rectangle": [
+        -1.05,
+        -0.85
+      ],
+      "primary_reference": "mack_9A_canonical"
+    },
+    "definitions": {
+      "sigma_w0_DR3": 0.025,
+      "w_0_A": -0.918,
+      "w_0_B": -0.842454,
+      "w_0_LCDM": -1.0
+    },
+    "scenarios": {
+      "A_LCDM": {
+        "n_sigma_A": 3.2799999999999985,
+        "n_sigma_B": 6.3018399999999986,
+        "w_obs": -1.0
+      },
+      "B_precise_w091": {
+        "n_sigma_A": 0.3200000000000003,
+        "n_sigma_B": 2.70184,
+        "w_obs": -0.91
+      },
+      "B_w095": {
+        "n_sigma_A": 1.2799999999999967,
+        "n_sigma_B": 4.301839999999997,
+        "w_obs": -0.95
+      },
+      "C_w086": {
+        "n_sigma_A": 2.320000000000002,
+        "n_sigma_B": 0.701839999999998,
+        "w_obs": -0.86
+      }
+    },
+    "step2_substitute": {
+      "d_A": 0.08199999999999996,
+      "d_B": 0.15754599999999996
+    },
+    "step3_simplify": {
+      "delta_d": 0.075546
+    },
+    "step4_direction": {
+      "B_further_from_LCDM": true,
+      "B_more_discriminable_by_DR3": true,
+      "delta_d_positive": true,
+      "delta_n_sigma": 3.02184,
+      "delta_n_sigma_positive": true,
+      "n_sigma_A": 3.2799999999999985,
+      "n_sigma_B": 6.3018399999999986
+    }
+  }
+}

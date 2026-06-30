@@ -29,7 +29,7 @@ Read `sessions/session-22/session-22a-synthesis.md` before beginning.
 
 **Python**: `"phonon-exflation-sim/.venv312/Scripts/python.exe"`
 **GPU**: AMD RX 9070 XT, 17 GB VRAM, ROCm 7.2. USE IT for eigenvector extraction.
-**Output directory**: `tier0-computation/`
+**Output directory**: `computations/`
 **Script prefix**: `s22b_`
 **Expected total runtime**: 2-8 hours depending on eigenvector extraction method.
 
@@ -84,7 +84,7 @@ This uncertainty range reflects the genuine open question. The computation answe
    — Section XI.5 (1/sqrt(dim) correction), Section XI.6 (flux-coupling-condensate chain), Section V (B-4 off-diagonal coupling escape route).
 
 3. **R2 master collab**: `sessions/session-21/session-21c-r2-master-collab.md`
-   — Section VIII (Tier 1 priority: coupled V_IR and coupled delta_T as items 1 and by-product), Section X (conditional probability structure).
+   — Section VIII (Level 1 priority: coupled V_IR and coupled delta_T as items 1 and by-product), Section X (conditional probability structure).
 
 4. **Session 22a synthesis**: `sessions/session-22/session-22a-synthesis.md` (**READ FIRST — dependency**)
 
@@ -94,7 +94,7 @@ This uncertainty range reflects the genuine open question. The computation answe
 
 | Agent | Additional Reading |
 |:------|:------------------|
-| phonon-exflation-sim | `tier0-computation/tier1_dirac_spectrum.py` — existing Dirac spectrum infrastructure. Section with `compute_dirac_matrix()` and eigenvalue solvers. `tier0-computation/s21c_kk_verify.py` — partial delta_T code (starting point). |
+| phonon-exflation-sim | `computations/dirac_spectrum.py` — existing Dirac spectrum infrastructure. Section with `compute_dirac_matrix()` and eigenvalue solvers. `computations/s21c_kk_verify.py` — partial delta_T code (starting point). |
 | baptista | `researchers/Baptista/17_2024_Non_isometric_Killing_spinors.md` Sec 4.1 — Kosmann-Lichnerowicz derivative formula. `researchers/Baptista/18_2024_Frame_bundle.md` eq 1.4 — L_tilde correction. Session 21c synthesis Section IV, CP-2, for Wigner-Eckart theorem statement. |
 
 ---
@@ -106,7 +106,7 @@ This uncertainty range reflects the genuine open question. The computation answe
 
 ## PA-1: Infrastructure Modification
 
-The existing `tier1_dirac_spectrum.py` computes eigenvalues of D_K at each tau. Modify it to also return eigenvectors.
+The existing `dirac_spectrum.py` computes eigenvalues of D_K at each tau. Modify it to also return eigenvectors.
 
 **Modification specification**:
 
@@ -124,11 +124,11 @@ The existing `tier1_dirac_spectrum.py` computes eigenvalues of D_K at each tau. 
 
 3. Run at tau values: 0.10, 0.15, 0.20, 0.25, 0.30, 0.35, 0.40, 0.50 (8 values in the physical window, plus 0.0 for normalization).
 
-**Script**: `tier0-computation/s22b_eigenvector_extraction.py`
+**Script**: `computations/s22b_eigenvector_extraction.py`
 
 **Expected runtime**: ~10-30 minutes at max_pq_sum=4-5 for gap-edge sectors. GPU should accelerate this significantly.
 
-**Output**: `tier0-computation/s22b_eigenvectors.npz`
+**Output**: `computations/s22b_eigenvectors.npz`
 - Keys: `tau_values`, `eigenvalues_{i}`, `eigenvectors_{i}`, `sector_p_{i}`, `sector_q_{i}`, `multiplicities_{i}` for i=0..8 (the 9 tau values)
 
 ---
@@ -182,8 +182,8 @@ This must be summed over the coset directions a (4 directions in C^2 subspace of
 
 **NOTE on L_tilde vs L_X** (Baptista R2 collab, eq 1.4 of Paper 18): Baptista identified a correction L_tilde that differs from L_X at O(0.3) at tau=0.30. Run the computation twice: once with L_X (standard) and once with L_tilde (correct). If they differ qualitatively, the L_tilde result is the physically correct one.
 
-**Script**: `tier0-computation/s22b_kosmann_matrix.py`
-**Output**: `tier0-computation/s22b_kosmann_matrix.npz`
+**Script**: `computations/s22b_kosmann_matrix.py`
+**Output**: `computations/s22b_kosmann_matrix.npz`
 
 ---
 
@@ -215,8 +215,8 @@ where C_offdiag contains the Kosmann-Lichnerowicz coupling matrix elements C_{nm
 
 5. At tau=0.30, the block-diagonal gives: lambda_{(0,0)} ~ 0.822, coupling/gap ~ 4-5x. The coupled eigenvalue should shift by O(100%) from the block-diagonal value. **This shift is the signal**.
 
-**Script**: `tier0-computation/s22b_coupled_diagonalization.py`
-**Output**: `tier0-computation/s22b_coupled_eigenvalues.npz`
+**Script**: `computations/s22b_coupled_diagonalization.py`
+**Output**: `computations/s22b_coupled_eigenvalues.npz`
 
 ---
 
@@ -246,15 +246,15 @@ The key question: does the coupling CREATE or DESTROY the shallow minimum seen a
    - ABSENT (coupling destroys it, block-diagonal minimum was artifact) -> CLOSED
 **Pre-registered Constraint Gates** (Baptista R2 collab, updated from 21b B-5 Computation 6):
 
-| Tier | Criterion | BF | Prob shift |
+| Level | Criterion | BF | Prob shift |
 |:-----|:----------|:---|:-----------|
 | DECISIVE | Coupled V_IR minimum at tau in [0.15, 0.35], depth > 20% | 50 | +15-20 pp |
 | COMPELLING | Coupled V_IR minimum at tau in [0.10, 0.45], depth > 5% | 15 | +10-12 pp |
 | INTERESTING | Coupled V_IR minimum exists but at depth < 5% or tau outside [0.10, 0.45] | 4 | +3-5 pp |
 | CLOSED | Coupled V_IR monotonic for all N (block-diagonal was qualitatively right) | 0.2 | -8-12 pp |
 
-**Script**: `tier0-computation/s22b_coupled_V_IR.py`
-**Output**: `tier0-computation/s22b_coupled_V_IR.npz`, `tier0-computation/s22b_coupled_V_IR.png`
+**Script**: `computations/s22b_coupled_V_IR.py`
+**Output**: `computations/s22b_coupled_V_IR.npz`, `computations/s22b_coupled_V_IR.png`
 
 ---
 
@@ -285,9 +285,9 @@ This is where the coupled computation can qualitatively change the result: the s
 4. Check for sign change / zero crossing.
 5. **Compare to block-diagonal**: At tau=0.30, block-diagonal delta_T = 1081. The coupling must produce a correction of order -1081 or more for a zero crossing. This requires the effective Delta_b to change sign for the gap-edge modes.
 
-**Pre-registered Constraint Gates** (15/15 R2 reviewers, Section VIII Tier 1 item 1):
+**Pre-registered Constraint Gates** (15/15 R2 reviewers, Section VIII Level 1 item 1):
 
-| Tier | Criterion | BF | Prob shift |
+| Level | Criterion | BF | Prob shift |
 |:-----|:----------|:---|:-----------|
 | DECISIVE | Coupled delta_T zero crossing in [0.15, 0.35] | 30 | +15-20 pp |
 | COMPELLING | Coupled delta_T zero crossing at some tau in [0.0, 1.0] | 12 | +8-12 pp |
@@ -295,8 +295,8 @@ This is where the coupled computation can qualitatively change the result: the s
 | CLOSED | Coupled delta_T positive throughout [0, 2.0] with same order of magnitude as uncoupled | 0.2 | -6-10 pp |
 | NEUTRAL | Coupled delta_T positive but significantly reduced (100-500 at tau=0.30) | 1 | 0 pp |
 
-**Script**: `tier0-computation/s22b_coupled_delta_T.py`
-**Output**: `tier0-computation/s22b_coupled_delta_T.npz`, `tier0-computation/s22b_coupled_delta_T.png`
+**Script**: `computations/s22b_coupled_delta_T.py`
+**Output**: `computations/s22b_coupled_delta_T.npz`, `computations/s22b_coupled_delta_T.png`
 
 ---
 
@@ -316,7 +316,7 @@ The neutrino gate was INCONCLUSIVE in the block-diagonal treatment because the R
 
 **Pre-registered gate** (Neutrino R2 collab):
 
-| Tier | Criterion | BF | Prob shift |
+| Level | Criterion | BF | Prob shift |
 |:-----|:----------|:---|:-----------|
 | PASS | Smooth R = 32.6 crossing in [0.15, 0.55] (neutrino gate reopens) | 3 | +3-5 pp |
 | SOFT PASS | Smooth R crossing in [0.5, 2.0] but not in physical window | 1.5 | +1 pp |

@@ -1,0 +1,100 @@
+{
+  "axis": "B",
+  "reviewer": "landau-condensed-matter-theorist",
+  "role": "Stage-2 Axis-B cross-reviewer (pinned fallback; primary volovik excluded as Stage-0 author)",
+  "gate": "S101-CONNES-STATEPROJ-STAGE2-VERIFY",
+  "registry_slot": "VII.BO.STATE-PROJ",
+  "data_file": "computations/session-100a/s100a_connes_distance_ladder.npz",
+  "data_audit_sha256": "5e24db72e3e5121b445477e2433a3c50084a4c5951111297c439a2da9b63491a",
+  "independence_attestation": "Verified numerical clauses from the npz ALONE. Did NOT read the S-1 connes-machinery synthesis (Stage-0 text). Read only the registered VII.BO.STATE-PROJ entry to know the claimed values; all verification recomputed from npz raw arrays.",
+  "substrate_input_overlap": false,
+  "substrate_input_overlap_note": "Sole W7-1 npz-loader; Axis-A (van-den-dungen) loads no data file. Structural-INPUT independence established by construction.",
+  "clauses": {
+    "d_ladder": {
+      "verdict": "PASS",
+      "value": {
+        "d_tau": 0.6987179564910044,
+        "d_mu": 0.7620854097587851,
+        "d_e": 1.5581633433648787,
+        "claimed_triple_tau_mu_e": [0.698718, 0.762085, 1.558163],
+        "max_abs_claim_minus_npz": 4.098e-07,
+        "strict_ladder_tau_lt_mu_lt_e": true,
+        "e_sector": [3, 0],
+        "e_is_most_distant": true,
+        "rel_spread": 0.5515759246510628,
+        "rel_spread_definition": "(max-min)/max == 1 - min/max",
+        "claimed_rel_spread": 0.5516
+      },
+      "rationale": "Re-computed from npz d_tau/d_mu/d_e (== omega_D2_floors for sectors (1,0)/(1,1)/(3,0)). Strict ordering d_tau=0.698718 < d_mu=0.762085 < d_e=1.558163 confirmed; e=(3,0) is the maximum (most-distant, least-transmitted) channel. Claimed triple matches to rounding (max |claim-npz| = 4.10e-7, a 6-figure presentation round). Rel spread 0.5516 reverse-engineered to (max-min)/max = 1-min/max = 0.5515759247 (NOT (max-min)/mean=0.854 nor std/mean=0.389); the (max-min)/max normalization reproduces the npz degen_rel_spread field and the claimed value exactly. Nondegenerate flag True, spread >> degen_floor_rel 1e-6."
+    },
+    "R_sweep": {
+      "verdict": "PASS",
+      "value": {
+        "rsweep_factors": [10.0, 100.0, 1000.0],
+        "rsweep_d_values": [1.5581633461490292, 1.558163345702713, 1.5581633447469954],
+        "npz_rsweep_max_reldev": 1.786816e-09,
+        "recomp_max_min_over_mean": 8.99799e-10,
+        "recomp_max_dev_over_mean": 5.043867e-10,
+        "solver_tol": 1e-08,
+        "reldev_below_tol": true
+      },
+      "rationale": "R-sweep over 3 decades (R = 10, 100, 1000 x omega_max). Re-computed max relative deviation across the sweep = 9.0e-10 ((max-min)/mean); npz pins rsweep_max_reldev = 1.787e-9. Both sit at/below the solver tolerance 1e-8 -- the echo of an exactly-flat (regulator-free) quantity, consistent with the Theorem-A exact-regulator-freeness claim. Order-of-magnitude match to the claimed 1.79e-9 (the npz value 1.787e-9 rounds to it)."
+    },
+    "KO_signs": {
+      "verdict": "PASS",
+      "value": {
+        "ko_J2_dev": 0.0,
+        "ko_JD_comm": 1.5543122344752192e-15,
+        "ko_Jgamma_anti": 0.0,
+        "ko_gammaD_anti": 0.0,
+        "ko_dim6_ok": true,
+        "bdi_conj_floor_reldev": 1.2451789593708164e-15,
+        "machine_zero_threshold": 2.3e-15
+      },
+      "rationale": "All four real-structure / grading sign checks at machine zero: J^2 deviation 0.0 (eps=+1), [J,D] commutator 1.55e-15 (CPT), J-gamma anticommutator 0.0 (eps'=+1), gamma-D anticommutator 0.0 (eps''=-1). KO-dimension-6 (BDI, sign triple (+1,+1,-1)) confirmed. BDI conjugate-floor equality 1.25e-15 confirms isospectral J-doubling leaves the distance exact. From a Fermi-liquid / BdG standpoint this is the correct AZ-class-BDI reality signature (T^2=+1, KO-dim 6) the framework's permanent wall requires."
+    },
+    "SDP_doubling": {
+      "verdict": "PASS",
+      "value": {
+        "npz_max_sdp_closed_reldev": 2.492022e-09,
+        "recomp_max_sdp_minus_closed_over_closed": 1.94056e-09,
+        "npz_doubling_invariance_dev": 1.79267e-09,
+        "d_pair_em_reldev": 6.15e-10,
+        "d_pair_mt_reldev": 2.49e-09,
+        "sdp_statuses_all_optimal": true,
+        "n_sdp_solves": 22,
+        "n_optimal_inaccurate": 0,
+        "sdp_tol": 1e-08
+      },
+      "rationale": "SDP solution (vacuum + pairwise distances) reproduces the closed-form star-metric values: re-computed max |sdp-closed|/closed = 1.94e-9 (npz pins 2.49e-9); both within the SDP tolerance 1e-8. Doubling-invariance deviation 1.79e-9 (J-doubling onto conjugate sectors leaves d exact). Pairwise reldevs (e,mu)=6.15e-10, (mu,tau)=2.49e-9. All 22 SDP solves returned 'optimal', 0 inaccurate -- the dual program is healthy; the closed forms (eq 7/8) and the variational Connes-distance SDP agree to solver precision."
+    },
+    "residual": {
+      "verdict": "PASS",
+      "value": {
+        "first_order_residual": 2.0450024933772317,
+        "claimed": 2.045,
+        "rounds_to_claim": true,
+        "overall_npz_verdict": "INFO",
+        "sign_verdict": "PASS",
+        "magnitude_verdict": "INFO",
+        "regime_verdict": "VALID"
+      },
+      "rationale": "first_order_residual max||[[D_F,a],b-degree]|| = 2.0450; rounds to the claimed 2.0450. It is REPORTED, not gated to zero: the overall npz verdict is INFO with magnitude_verdict=INFO (the KO signs alone are PASS). This is the correct Scope-C posture -- the Connes state-pair distance is an (A,H,D)-level functional needing only D=D-dagger and bounded commutators; the nonzero order-one residual disqualifies the axiom-complete-spectral-triple / operator-side claims (which §VII.BL already obstructs) and disqualifies NOTHING the state-pair distance observable consumes. Verified it is carried as a reported number, not asserted-zero."
+    },
+    "J1": {
+      "verdict": "PASS",
+      "value": {
+        "nondegenerate": true,
+        "strict_ladder": true,
+        "three_distinct_distances": [0.6987179564910044, 0.7620854097587851, 1.5581633433648787],
+        "rel_spread": 0.5515759246510628,
+        "degen_floor_rel": 1e-06,
+        "item6_e_sector": [3, 0],
+        "item6_e_sector_match": true,
+        "operator_side_residual_nonzero": 2.0450024933772317
+      },
+      "rationale": "Numerical-ladder side of the JOINT clause: the algebra-DEPENDENT state-pair (Connes) metric on the commutative channel algebra produces THREE distinct, strictly-ordered, nondegenerate generation distances (rel spread 0.55 >> degenerate floor 1e-6) -- i.e. the ladder IS the state-pair metric resolving the three generations. The e=(3,0) channel that is most-distant in the metric matches the independent S100a-YUKAWA-OVERLAP-OFFDIAG item-6 e-sector (two-route consistent: the fabric transmits the electron channel LEAST). The operator-side residual is nonzero (2.0450), so generation resolution lives on the state side WHILE the operator side stays §VII.BL-obstructed -- the algebra-axis orthogonality (Corner IV state-pair POSITIVE vs Corner I operator NEGATIVE) made concrete on the numbers. PASS from the Axis-B / state-pair side."
+    }
+  },
+  "composite_axisB_verdict": "PASS (all 5 own-axis clauses + JOINT J1 PASS from the npz alone)"
+}

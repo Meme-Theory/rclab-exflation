@@ -1,0 +1,154 @@
+{
+  "session": "S84",
+  "gate_id": "S84-SHA-COLLISION-REGEN",
+  "scheme": "canonical_pin_ordering",
+  "convention": "S84_dual_sha",
+  "L_max": "N/A",
+  "verdict": "INFO",
+  "reason": "PRE-REG-INCOMPLETE (PRU Class 8): one or more s82_w{N}_*_inputs.json source artifacts absent. The S82 producing scripts did not write the inputs.json schema this gate presupposes. Canonical regen FROM inputs.json cannot proceed; deferred to W10b with reconstruction protocol below.",
+  "value_bool_all_distinct": false,
+  "schema_version": "S84+",
+  "dual_sha": {
+    "content_sha256": "8b60b4921a8ad75cfbf84f9d356bcd7f79db8c012b462601ec855bd66ca4891a",
+    "audit_sha256": "c6e78ce9e572dd79f4cf3c720ae122bec8479959f9c459c2e6f90758deae5ba4"
+  },
+  "inputs_json_status": {
+    "W1-1-TD": "ABSENT",
+    "W2-13": "ABSENT",
+    "W3-7": "ABSENT"
+  },
+  "any_inputs_absent": true,
+  "primary_regen": {
+    "source": "sessions/session-82/computation-artifacts/s82_w{N}_*_inputs.json",
+    "all_distinct": false,
+    "all_64_char": true,
+    "all_round_trip_ok": false,
+    "shas": [
+      "",
+      "",
+      ""
+    ],
+    "distinct_count": 0
+  },
+  "secondary_regen_informational": {
+    "source": "INPUT_FILES declaration parsed from each producing script",
+    "all_distinct": false,
+    "all_64_char": true,
+    "all_round_trip_ok": true,
+    "shas": [
+      "d57c08ef1db03d103b91072f5983f3c8a91cf75452b7189daa5e39e10479b7a0",
+      "d57c08ef1db03d103b91072f5983f3c8a91cf75452b7189daa5e39e10479b7a0",
+      "d57c08ef1db03d103b91072f5983f3c8a91cf75452b7189daa5e39e10479b7a0"
+    ],
+    "distinct_count": 1,
+    "interpretation": "Reproduces S82 collision byte-for-byte; confirms the collision is a legitimate input-map coincidence (all 3 scripts declare INPUT_FILES = [canonical_constants.py]) and not a copy-paste or cryptographic anomaly."
+  },
+  "content_sha_dual_component": {
+    "source": "sha256 of each producing script's bytes",
+    "all_distinct": true,
+    "all_64_char": true,
+    "shas": [
+      "79506c812d9f9bcd0a61e73a684c9d2657cb9794e471abeb02a4c762e12a198c",
+      "efe8a6c2bd1299ad0d59632cf7f7264dc486836d96f1d240f231136125d10717",
+      "ca6a7f624444732e037d04bab6742e964ee03932f99eedd29c47c025866f3a1b"
+    ],
+    "interpretation": "The dual-SHA schema's content_sha256 component is trivially distinct because the three producing scripts have different bytes. This proves dual-SHA breaks the single-input-collision pathology by construction."
+  },
+  "recorded_s82_shas": {
+    "source": "computations/session-82/s82_gate_verdicts.txt",
+    "shas": [
+      "5aef2c400b60d7baef10961b030d21d9b5a113cf506e8fa5e569ec90212e56d8",
+      "5aef2c400b60d7baef10961b030d21d9b5a113cf506e8fa5e569ec90212e56d8",
+      "5aef2c400b60d7baef10961b030d21d9b5a113cf506e8fa5e569ec90212e56d8"
+    ],
+    "distinct_count": 1
+  },
+  "per_verdict_records": [
+    {
+      "label": "W1-1-TD",
+      "gate_s82": "S82-H-TILDE-EPOCH-TD",
+      "script": "computations/session-82/s82_w1_1_h_tilde_td.py",
+      "inputs_json_path": "sessions/session-82/computation-artifacts/s82_w1_1_td_inputs.json",
+      "inputs_json_status": "ABSENT",
+      "recorded_audit_sha256": "5aef2c400b60d7baef10961b030d21d9b5a113cf506e8fa5e569ec90212e56d8",
+      "primary_audit_sha256": "",
+      "primary_pin_map": {},
+      "primary_round_trip_ok": false,
+      "secondary_audit_sha256": "d57c08ef1db03d103b91072f5983f3c8a91cf75452b7189daa5e39e10479b7a0",
+      "secondary_pin_map": {
+        "computations/_shared/canonical_constants.py": "ff05c3d64375d9efcd6164210b00746ca1d1756e5b0a945554a6af642ea40e07"
+      },
+      "secondary_declared_input_files": [
+        "computations/_shared/canonical_constants.py"
+      ],
+      "secondary_round_trip_ok": true,
+      "content_sha256_of_producing_script": "79506c812d9f9bcd0a61e73a684c9d2657cb9794e471abeb02a4c762e12a198c"
+    },
+    {
+      "label": "W2-13",
+      "gate_s82": "S82-F0-CONVENTION-AUDIT",
+      "script": "computations/session-82/s82_w2_13_f0_convention_audit.py",
+      "inputs_json_path": "sessions/session-82/computation-artifacts/s82_w2_13_inputs.json",
+      "inputs_json_status": "ABSENT",
+      "recorded_audit_sha256": "5aef2c400b60d7baef10961b030d21d9b5a113cf506e8fa5e569ec90212e56d8",
+      "primary_audit_sha256": "",
+      "primary_pin_map": {},
+      "primary_round_trip_ok": false,
+      "secondary_audit_sha256": "d57c08ef1db03d103b91072f5983f3c8a91cf75452b7189daa5e39e10479b7a0",
+      "secondary_pin_map": {
+        "computations/_shared/canonical_constants.py": "ff05c3d64375d9efcd6164210b00746ca1d1756e5b0a945554a6af642ea40e07"
+      },
+      "secondary_declared_input_files": [
+        "computations/_shared/canonical_constants.py"
+      ],
+      "secondary_round_trip_ok": true,
+      "content_sha256_of_producing_script": "efe8a6c2bd1299ad0d59632cf7f7264dc486836d96f1d240f231136125d10717"
+    },
+    {
+      "label": "W3-7",
+      "gate_s82": "S82-EJ-CONVENTION-AUDIT",
+      "script": "computations/session-82/s82_w3_7_ej_convention_audit.py",
+      "inputs_json_path": "sessions/session-82/computation-artifacts/s82_w3_7_inputs.json",
+      "inputs_json_status": "ABSENT",
+      "recorded_audit_sha256": "5aef2c400b60d7baef10961b030d21d9b5a113cf506e8fa5e569ec90212e56d8",
+      "primary_audit_sha256": "",
+      "primary_pin_map": {},
+      "primary_round_trip_ok": false,
+      "secondary_audit_sha256": "d57c08ef1db03d103b91072f5983f3c8a91cf75452b7189daa5e39e10479b7a0",
+      "secondary_pin_map": {
+        "computations/_shared/canonical_constants.py": "ff05c3d64375d9efcd6164210b00746ca1d1756e5b0a945554a6af642ea40e07"
+      },
+      "secondary_declared_input_files": [
+        "computations/_shared/canonical_constants.py"
+      ],
+      "secondary_round_trip_ok": true,
+      "content_sha256_of_producing_script": "ca6a7f624444732e037d04bab6742e964ee03932f99eedd29c47c025866f3a1b"
+    }
+  ],
+  "reconstruction_protocol_for_W10b": [
+    "STEP A: For each S82 producing script (w1_1, w2_13, w3_7):",
+    "        re-run with an instrumented wrapper that emits",
+    "        sessions/session-82/computation-artifacts/s82_w{N}_{slug}_inputs.json",
+    "        with schema { rel_path : sha256_hex } for every file read",
+    "        (including transitively-imported modules detected via importlib).",
+    "STEP B: Re-dispatch S84-SHA-COLLISION-REGEN with the new artifacts.",
+    "        Under dual-SHA schema, content_sha256 is per-script and is",
+    "        already distinct (proven this run); the audit_sha256 should",
+    "        also become distinct iff the inputs.json captures more than",
+    "        canonical_constants.py (e.g., the producing script itself,",
+    "        its transitively-imported modules, or a per-gate scheme tag).",
+    "STEP C: If after STEP A the audit_sha256 are STILL identical, the",
+    "        inputs.json schema must be extended to include the producing-",
+    "        script's own SHA as a pinned input. This is the documented",
+    "        S83 recommendation ('pin producing-script SHA into INPUT_FILES",
+    "        so single-input audits differentiate by script')."
+  ],
+  "input_files_for_this_audit": [
+    "computations/session-82/s82_gate_verdicts.txt",
+    "computations/session-82/s82_w1_1_h_tilde_td.py",
+    "computations/session-82/s82_w2_13_f0_convention_audit.py",
+    "computations/session-82/s82_w3_7_ej_convention_audit.py",
+    "computations/_shared/canonical_constants.py"
+  ],
+  "wall_time_s": 0.002997159957885742
+}

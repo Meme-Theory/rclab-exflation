@@ -1,0 +1,126 @@
+{
+  "gate_id": "S93-W3-6-VII-AV-STAGE-2-CROSS-AXIS-VERIFY-PER-SUB-SLOT",
+  "axis": "Axis-A",
+  "reviewer": "van-den-dungen-bridge-theorist",
+  "axis_domain": "NCG-submersion / spectral-functional",
+  "stage": "Stage-2 cross-axis independent-verify (per joint-theorem-promotion.md)",
+  "independence_protocol": {
+    "audited_targets": [
+      "sessions/permanent-results-registry.md §VII.AV.OP-PROJ (Cell-I STAGE-1-CANDIDATE, lines ~18445-18496)",
+      "sessions/permanent-results-registry.md §VII.AV.STATE-PROJ (Cell-IV STAGE-1-CANDIDATE-PENDING-STAGE-2, lines ~18499-18553)"
+    ],
+    "workshop_transcript_read": false,
+    "workshop_transcript_note": "W-3 / S91 / S92 §VII.AV workshop transcripts NOT read; audit from registered Stage-1 entries + cited inputs only (first-principles on spectral-functional axis).",
+    "OAA_exclusion_satisfied": true,
+    "OAA_exclusion_note": "vdd is NOT in {connes-ncg, phonon-first, volovik}; vdd was NOT a W-3 author; no downstream-inheritance reach (no reference_*.md citation of W-3 R1/R2/R3 transcript).",
+    "substrate_input_orthogonality": {
+      "axis_A_loaded": "computations/session-91/s91_w5_1_full_bdg_pv.npz (key L_emp_canonical) — STATE-PROJ anchor",
+      "axis_A_did_NOT_load": "computations/session-92/s92_w3_9_vii_av_layer_attribution_disambiguation.npz (OP-PROJ residue cache — Axis-B orthogonal input)",
+      "orthogonality_held": true,
+      "ceiling": "structural ceiling (NO substrate-input-overlap caveat); STATE-PROJ npz loaded by exactly ONE reviewer (Axis-A vdd)"
+    }
+  },
+  "canonical_inputs_verified": {
+    "Delta_BCS": 0.4642547394830737,
+    "Delta_BCS_provenance": "canonical_constants.py (R-PROTECTED; matches registry STATE-PROJ Level-1 |Delta_a| IR scale)",
+    "tau_fold": 0.19,
+    "tau_fold_provenance": "canonical_constants.py (matches single-tau-slice tag both sub-slots)"
+  },
+  "independent_rederivation": {
+    "STATE_PROJ_L_emp_canonical_registry": -7.046336474406761,
+    "STATE_PROJ_L_emp_AxisA_5pt_FD_at_K_horizon": -7.046336,
+    "STATE_PROJ_L_emp_AxisA_global_quadratic_fit": -7.040661,
+    "STATE_PROJ_L_emp_AxisA_quadratic_reldiff": 8.054e-04,
+    "STATE_PROJ_L_emp_PV_registry": -527.966919,
+    "STATE_PROJ_L_emp_PV_AxisA_5pt_FD": -527.966919,
+    "Level2B_separation_ratio_PV_over_canonical": 74.9279,
+    "anchor_consistency": false,
+    "L_max_saturation_spread_L6_to_L12": 5.616e-09,
+    "P_GGE_bare_finite_range": [0.00520988, 0.00801723],
+    "method": "AXIS-A independent: 5-point centered finite-difference + global quadratic fit of d^2 ln P_GGE / d(ln K)^2 from the orthogonal STATE-PROJ npz; NO use of OP-PROJ residue cache."
+  },
+  "VII_AV_U_2_corner_partition_canonical": {
+    "Cell_I": "INVARIANT x s=3",
+    "Cell_II": "INVARIANT x s=4",
+    "Cell_III": "DEPENDENT x s=3",
+    "Cell_IV": "DEPENDENT x s=4",
+    "source": "sessions/permanent-results-registry.md §VII.U.2 4-corner table (lines ~12996-13001)",
+    "Cell_IV_canonical_instance": "alpha_s_route_3 = d^2 ln P_GGE/d(ln K)^2 = -7.046336 (IDENTICAL observable to STATE-PROJ anchor)"
+  },
+  "sub_slots": {
+    "OP-PROJ": {
+      "corner_cell_claimed": "Cell I (INVARIANT spectrum-only) x substrate-distance-2 pole s=4",
+      "single_axis_clauses_axis_A": {
+        "substrate_IS_observable_identity": {
+          "verdict": "PASS",
+          "rationale": "B_LAYER_A = Tr_{A_K}(P_a |D_K|^{-2s}) at s=4 over PW sectors {(0,2),(1,1),(2,0)} is a well-formed algebra-INVARIANT spectrum-only functional of D_K; parse-tree terminus Tr forces INVARIANT (no state-pair). Substrate-physics identity sound. (Value ~375 NOT re-derived here: OP-PROJ residue cache is Axis-B orthogonal input per substrate-input-orthogonality pin.)"
+        },
+        "parse_tree_INVARIANT_classification": {
+          "verdict": "PASS",
+          "rationale": "Parse-tree expansion B_LAYER_A := Tr_{A_K}(P_a |D_K|^{-2s}) reduces to Sigma_k m_k |lambda_k|^{-2s}; Tr-terminus, no pi(a), no [D,pi(a)], no state-pair sup => algebra-INVARIANT family. Correct per cross-pillar-bridge-anatomy Observable-Naming-History vs Parse-Tree-Structure."
+        },
+        "Level_1_single_tau_slice_tag": {
+          "verdict": "PASS",
+          "rationale": "Level-1 single-tau-slice at tau_fold=0.19 tag present and correct (canonical tau_fold=0.19 confirmed); Level-1 STRUCTURAL THEOREM status pending W3-3 Class-8.7 witness (regulator-sensitivity gating Level-3 eligibility) is correctly scoped."
+        },
+        "corner_cell_classification": {
+          "verdict": "FAIL",
+          "rationale": "MIS-TAG. The entry claims 'Cell I x substrate-distance-2 pole s=4' but cites §VII.U.2 as authority, where Cell I = INVARIANT x s=3 and INVARIANT x s=4 = Cell II. An algebra-INVARIANT functional at s=4 is Cell II by the canonical 4-corner partition. Both prior OP-PROJ precedents (§VII.AF.1.OP-PROJ, §VII.AU.OP-PROJ) are Cell I x s=3. No registry redefinition makes Cell I = s=4. The corner-cell LABEL should read Cell II. NB: the algebra-axis (INVARIANT) and pole (s=4) sub-claims are each correct; only the I-vs-II cell terminus is wrong."
+        }
+      },
+      "joint_clauses_axis_A_view": {
+        "structural_orthogonal_companion_cross_corner_FORBIDDEN": {
+          "verdict": "PASS-conditional",
+          "axis_A_position": "The STRUCTURAL-ORTHOGONAL-COMPANION (NOT cross-corner co-primary) declaration is structurally CORRECT: OP-PROJ (algebra-INVARIANT) and STATE-PROJ (algebra-DEPENDENT) live on orthogonal algebra-axes, so cross-corner co-primary is correctly FORBIDDEN per registry-landing Detection criterion (4) + algebra-axis orthogonality K-counter. The orthogonality holds on the algebra-axis REGARDLESS of the I-vs-II mis-tag (INVARIANT != DEPENDENT is the load-bearing fact). However the JOINT clause's cell-pair statement 'Cell I vs Cell IV' is corrupted by the OP-PROJ mis-tag; the correct cell-pair is 'Cell II vs Cell IV'. PASS on orthogonality SUBSTANCE; the cell-pair LABEL inherits the OP-PROJ Cell-I FAIL. Net: PASS-AND on this JOINT clause must be conditioned on the corner-cell remediation (Cell I -> Cell II) being applied before STAGE-3.",
+          "pass_and_pending": "Aggregation (mack Axis-B) must reconcile this with Axis-B's view; vdd flags the cell-pair label defect."
+        },
+        "bridge_map_HKR_substrate_self_consistent": {
+          "verdict": "PASS",
+          "axis_A_position": "Element 3 bridge map (HKR L_max->inf at d=4 pole s=4; CM-1995 §III.4 finite-spectral-triple residue formula on A_K; type (i) substrate-self-consistent) is correctly stated and is the right map class for an algebra-INVARIANT spectrum-only residue. JOINT because it couples spectral-functional substrate-IS to the continuum spectral-action moment laboratory-IN; vdd PASSes the spectral-functional leg."
+        }
+      },
+      "sub_slot_axis_A_summary": "FAIL — substrate-physics identity + parse-tree + Level-1 tag + bridge map all PASS, but the corner-cell classification is mis-tagged (Cell I should be Cell II for INVARIANT x s=4 per §VII.U.2). Per joint-theorem-promotion Stage-2, a per-clause FAIL on Axis-A blocks Stage-2->3 for this sub-slot until remediated. The fix is a 1-token registry edit (Cell I -> Cell II, with corresponding cell-pair update in the orthogonal-companion declaration); the substrate-IS theorem content is otherwise sound."
+    },
+    "STATE-PROJ": {
+      "corner_cell_claimed": "Cell IV (DEPENDENT state-pair) x substrate-distance-2 pole s=4",
+      "single_axis_clauses_axis_A": {
+        "substrate_IS_observable_identity": {
+          "verdict": "PASS",
+          "rationale": "Cell-IV K-window log-derivative L_emp = d^2 ln Var_a(|v_a(K)|^2)/d(ln K)^2 on BdG sub-algebra M_2(C) subset A_K reproduced INDEPENDENTLY at machine precision: 5-pt centered FD at K_horizon gives -7.046336 == registry L_emp_canonical -7.046336474406761; global quadratic fit -7.040661 (reldiff 8e-4, expected local-vs-global curvature offset). Re-derived from orthogonal npz (s91_w5_1_full_bdg_pv.npz) ONLY."
+        },
+        "parse_tree_DEPENDENT_classification": {
+          "verdict": "PASS",
+          "rationale": "Parse-tree terminus Var_a / d(ln .)/d(ln K) over gapped occupation distribution => state-pair functional on A => algebra-DEPENDENT (Cell IV). Correct. NOT a spectrum-only Tr (that is the OP-PROJ companion)."
+        },
+        "Level_1_regulator_invariant_gap_IR_saturated": {
+          "verdict": "PASS",
+          "rationale": "Verified: (a) L_max-SATURATED — R_KW_PV flat across L_max in {6..12}, spread 5.6e-9 (machine-level; consistent with S61 Friedrich-Bar saturation). (b) gap-IR-self-regularized — P_GGE_bare finite in [5.2e-3, 8.0e-3], IR scale = canonical Delta_BCS=0.4642547 (R-PROTECTED). Matches cross-pillar-bridge-corpus §22 regulator-behavior sibling discriminator (gapped state-pair => regulator-INVARIANT)."
+        },
+        "Level_3_anchor_singleness": {
+          "verdict": "PASS",
+          "rationale": "Single-pinned Level-3 anchor L_emp(L_max=12) = -7.046336474406761; FULL-PV -527.97 correctly filed as Level-2-B regulator-class DIAGNOSTIC sub-row NOT a Level-3 co-primary. Verified: |L_PV/L_canonical| = 74.93, anchor_consistency=False, anchor_rel_err=73.93 => the two are distinct regulator-class F-images, not a tolerance-consistent co-primary pair. Level-3-anchor singleness sub-clause honored."
+        },
+        "corner_cell_classification": {
+          "verdict": "PASS",
+          "rationale": "Cell IV (DEPENDENT x s=4) is EXACTLY the canonical §VII.U.2 Corner-IV calibration instance: alpha_s_route_3 = d^2 ln P_GGE/d(ln K)^2 = -7.046336 IS the SAME observable as L_emp. Corner-cell label correct and canonically anchored (unlike OP-PROJ)."
+        }
+      },
+      "joint_clauses_axis_A_view": {
+        "structural_orthogonal_companion_cross_corner_FORBIDDEN": {
+          "verdict": "PASS",
+          "axis_A_position": "STATE-PROJ side of the orthogonal-companion declaration is correct: Cell IV (DEPENDENT) is orthogonal to OP-PROJ's algebra-INVARIANT family; cross-corner co-primary correctly FORBIDDEN. The within-Cell-IV regulator-class diagnostic separation (-7.046 substrate-natural vs -527.97 FULL-PV as TWO F-images of ONE Cell-IV observable, Hybrid Independence Test FAILS for any split) is correctly distinguished from the cross-corner OP-PROJ/STATE-PROJ split. STATE-PROJ leg PASS; the cell-pair label defect is on the OP-PROJ side only."
+        },
+        "bridge_map_HKR_substrate_natural_binding": {
+          "verdict": "PASS",
+          "axis_A_position": "Element 3 bridge map (HKR L_max->inf at d=4 pole s=4; CM-1995 §III.4 residue formula on M_2(C) subset A_K; type (i) substrate-self-consistent; substrate-natural-binding NOT canonical-import) correctly stated: L_emp computed directly on the substrate BdG sub-algebra (verified — npz anchor IS the substrate's own value, no canonical-import pin). Level-2-binding (L^{-3} HKR-image binding Level-1 to Pillar-V continuum BdG observable) is correctly scoped as PROXY-REFINEMENT deferred-pending CF-61 / W3-4 Connes-Karoubi discharge. vdd PASSes the spectral-functional leg of this JOINT clause."
+        }
+      },
+      "sub_slot_axis_A_summary": "PASS — all Axis-A single-axis clauses PASS (substrate-IS identity reproduced at machine precision, parse-tree Cell-IV, Level-1 regulator-invariant gap-IR-saturated + L_max-saturated, Level-3 singleness) AND both JOINT clauses PASS on the spectral-functional leg. STATE-PROJ is Axis-A-ready for STAGE-3-PERMANENT eligibility pending Axis-B PASS-AND."
+    }
+  },
+  "axis_A_overall": {
+    "OP-PROJ": "FAIL (corner-cell mis-tag Cell I -> should be Cell II per §VII.U.2 INVARIANT x s=4; substrate-physics content otherwise sound; 1-token registry remediation)",
+    "STATE-PROJ": "PASS (all single-axis + JOINT-leg clauses PASS; machine-precision re-derivation of L_emp from orthogonal npz)",
+    "note": "Per joint-theorem-promotion Stage-2, the OP-PROJ Axis-A FAIL blocks OP-PROJ Stage-2->3 promotion (sub-slot stays STAGE-1-CANDIDATE; FAILing clause = corner-cell classification routes to S94 remediation OR in-session fix). STATE-PROJ is independently Axis-A-PASS and may proceed to STAGE-3 eligibility on Axis-A PASS-AND with mack. This is NOT the aggregate W3-6 verdict — PASS-AND aggregation + verdict-line emission is the separate mack Axis-B step."
+  }
+}

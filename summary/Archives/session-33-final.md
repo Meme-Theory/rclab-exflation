@@ -20,7 +20,7 @@
 | Structural gate | NUC-33b (nucleation barrier at generic eta) |
 | Key input from 33a | SECT-33a UNIVERSAL (multi-sector DOS boost) |
 | Computation files | `s33b_trap1_wall_bcs.{py,npz,png}`, `s33b_nuc1_nucleation.{py,npz}` |
-| Gate verdicts | `tier0-computation/s33b_gate_verdicts.txt` |
+| Gate verdicts | `computations/s33b_gate_verdicts.txt` |
 
 ---
 
@@ -394,11 +394,11 @@ Trap 1 is flagged for re-evaluation: the original statement "V(gap,gap) = 0 EXAC
 
 | File | Agent | Contents |
 |:-----|:------|:---------|
-| `tier0-computation/s33b_trap1_wall_bcs.{py,npz,png}` | bap | TRAP-33b computation |
-| `tier0-computation/s33b_nuc1_nucleation.{py,npz}` | bap | NUC-33b computation |
-| `tier0-computation/s33b_gate_verdicts.txt` | coord | Gate verdicts (this session) |
+| `computations/s33b_trap1_wall_bcs.{py,npz,png}` | bap | TRAP-33b computation |
+| `computations/s33b_nuc1_nucleation.{py,npz}` | bap | NUC-33b computation |
+| `computations/s33b_gate_verdicts.txt` | coord | Gate verdicts (this session) |
 | `sessions/archive/session-33/session-33b-synthesis.md` | coord | This synthesis |
 
 ---
 
-*Session 33b synthesis written by coord (gen-physicist). Integrates: bap's two computation results (TRAP-33b PASS M_max = 2.062, NUC-33b FAIL swallowtail-only), K-1e retraction (C^2-generator subset artifact, full kernel V_B2B2 = 0.287), sagan's formal probability checkpoint (18%, 8-30%, BF~7, largest upward revision in project history). All gate verdicts classified against pre-registered thresholds from Session 33 plan and prior workshops. Gate verdict file: `tier0-computation/s33b_gate_verdicts.txt`.*
+*Session 33b synthesis written by coord (gen-physicist). Integrates: bap's two computation results (TRAP-33b PASS M_max = 2.062, NUC-33b FAIL swallowtail-only), K-1e retraction (C^2-generator subset artifact, full kernel V_B2B2 = 0.287), sagan's formal probability checkpoint (18%, 8-30%, BF~7, largest upward revision in project history). All gate verdicts classified against pre-registered thresholds from Session 33 plan and prior workshops. Gate verdict file: `computations/s33b_gate_verdicts.txt`.*

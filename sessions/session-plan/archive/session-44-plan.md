@@ -196,7 +196,7 @@ The S43 E-vs-F audit identified 9 AFFECTED, 3 PARTIALLY AFFECTED, and 4 UNAFFECT
 1. **ALL physics agents use opus.** Sonnet only for knowledge-weaver bookkeeping.
 2. **Script prefix**: `s44_`
 3. **Python**: `"phonon-exflation-sim/.venv312/Scripts/python.exe"`
-4. **Output directory**: `tier0-computation/`
+4. **Output directory**: `computations/`
 5. **Gate IDs**: as specified in each wave prompt
 6. **Working paper**: `sessions/session-44/session-44-results-workingpaper.md`
 7. **One writer per output file.** Other agents contribute via SendMessage.

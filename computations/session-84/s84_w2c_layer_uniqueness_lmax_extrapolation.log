@@ -1,0 +1,108 @@
+==============================================================================
+S84 W2c-20  --  S84-LAYER-UNIQUENESS-LMAX-EXTRAPOLATION
+==============================================================================
+
+Input pins:
+  spectrum_cache         = s74_spectrum_cache_L9_tau019.npz                  sha256=3ce853809c61f79d...
+  canonical_constants    = canonical_constants.py                            sha256=d49412402ad9e732...
+  self_script            = s84_w2c_layer_uniqueness_lmax_extrapolation.py    sha256=3469c8dd68f52ad3...
+  anchor_w1_g1_script    = s83_w1_g1_ic_scheme_derivation.py                 sha256=acc34154c3b42a5b...
+  s83_verdicts           = s83_gate_verdicts.txt                             sha256=7bebad7da7c57b4d...
+
+==============================================================================
+Per-L_max measurement summary
+==============================================================================
+
+L_max = 5  (sectors=21, flat=6048, modes_mult=159936)
+  regulator                S_R   A          dx   B  chi   C            curv  intersect
+  zeta              1.5994e+05   T    3.74e+03   T   +1   F     +0.0000e+00  F
+  Zubarev           3.8057e+03   T    4.06e+02   T   +1   T     +1.1556e+05  T
+  SDW               3.0497e+05   T    5.73e+03   F   -1   T     +3.1485e+05  F
+  dim-reg                 ----   F        ----   F   --   F            ----  F
+  lattice-BR              ----   F        ----   F   --   F            ----  F
+  intersect_passes (A and B and C) = ['Zubarev']
+
+L_max = 7  (sectors=36, flat=20064, modes_mult=1077120)
+  regulator                S_R   A          dx   B  chi   C            curv  intersect
+  zeta              1.0771e+06   T    6.83e+03   T   +1   F     +0.0000e+00  F
+  Zubarev           5.4389e+03   T    4.18e+02   T   +1   T     +2.8687e+05  T
+  SDW               2.5625e+06   T    1.28e+04   F   -1   T     +2.5873e+06  F
+  dim-reg                 ----   F        ----   F   --   F            ----  F
+  lattice-BR              ----   F        ----   F   --   F            ----  F
+  intersect_passes (A and B and C) = ['Zubarev']
+
+L_max = 9  (sectors=52, flat=45344, modes_mult=3887232)
+  regulator                S_R   A          dx   B  chi   C            curv  intersect
+  zeta              3.8872e+06   T    9.60e+03   T   +1   F     +0.0000e+00  F
+  Zubarev           5.7418e+03   T    4.19e+02   T   +1   T     +3.5482e+05  T
+  SDW               1.0996e+07   T    2.06e+04   F   -1   T     +1.1027e+07  F
+  dim-reg                 ----   F        ----   F   --   F            ----  F
+  lattice-BR              ----   F        ----   F   --   F            ----  F
+  intersect_passes (A and B and C) = ['Zubarev']
+
+==============================================================================
+Cross-check (1):  L=5 anchor reproduction vs SecVII.M anchors
+==============================================================================
+  measured curv_Zubarev[L=5] = +1.155646e+05
+  anchor   curv_Zubarev[L=5] = +1.160000e+05
+  rel err = 3.7535e-03      (tol 0.01)
+  measured chi_KK[Zubarev][L=5] = +1
+  anchor   chi_KK[Zubarev][L=5] = +1   match: True
+  measured S_zeta/S_Zubarev[L=5] = 42.0257
+  anchor   S_zeta/S_Zubarev[L=5] = 42.0300
+  rel err = 1.0150e-04      (tol 0.01)
+  L=5 anchor reproduction: PASS
+
+==============================================================================
+Cross-check (2,3):  monotonic extrapolation + alpha log-log fit
+==============================================================================
+  L_max  curv_Zubarev      S_zeta/S_Zubarev
+      5  +1.155646e+05      42.0257
+      7  +2.868652e+05     198.0392
+      9  +3.548207e+05     677.0083
+
+  curv_Zubarev monotone increasing in L_max: True
+
+  log-log fit  log(curv_Zubarev) = alpha * log(L_max) + log(C_0)
+    alpha           = 1.952060
+    log(C_0)        = 8.591451      C_0 = 5.3854e+03
+    R^2             = 0.933519      (decisive >= 0.95)
+    Seeley-DeWitt prediction: alpha ~ 2 (a_2 trace-scaling)
+    PASS band       = [1.5, 2.5]
+    INFO band       = [0.5, 1.5] U [2.5, 4.0]
+
+  S_zeta/S_Zubarev ratio drift from L=5 anchor:
+    L=7 drift = 4.712  (INFO trip if > 1.5)
+    L=9 drift = 16.109  (INFO trip if > 1.5)
+    INFO ratio-drift trip: True
+
+==============================================================================
+Uniqueness verdict per L_max
+==============================================================================
+  L_max=5:  intersect_passes = ['Zubarev']  A-passes = ['SDW', 'Zubarev', 'zeta']
+  L_max=7:  intersect_passes = ['Zubarev']  A-passes = ['SDW', 'Zubarev', 'zeta']
+  L_max=9:  intersect_passes = ['Zubarev']  A-passes = ['SDW', 'Zubarev', 'zeta']
+
+  L=7  Zubarev unique at A and B and C : True
+  L=9  Zubarev unique at A and B and C : True
+  L1 zeta unique under A1-A6 (atlas inheritance from SecVII.K-META): True
+
+==============================================================================
+Decision  (plan SecW2c-20)
+==============================================================================
+  FAIL conditions: inversion=False  alpha<0=False
+  PASS conditions: pass_uniq=True  alpha in band=True
+  INFO trips: alpha info band=False  ratio drift>1.5=True
+
+  FINAL VERDICT: INFO
+  Reason: Zubarev uniqueness preserved at L=7 and L=9; alpha = 1.952 in PASS band [1.5,2.5]; BUT S_zeta/S_Zubarev ratio drifts by factor 16.11 (>1.5) - ratio is L_max-sensitive, theorem holds, ratio is not structural
+
+  closure SHA-256 (full 64-char) = e1e0a9cdd5152fb0abe2cee0b8386a80b07ace4feb3494927f7308778a653f26
+
+  npz written: s84_w2c_layer_uniqueness_lmax_extrapolation.npz
+
+  verdict appended: s84_gate_verdicts.txt
+  >>> S84-LAYER-UNIQUENESS-LMAX-EXTRAPOLATION: INFO -- value=1.9521 scheme=multi-regulator convention=3-criterion L_max=9 sha256=e1e0a9cdd5152fb0abe2cee0b8386a80b07ace4feb3494927f7308778a653f26
+
+[done at 2026-04-19T13:34:33Z]
+==============================================================================

@@ -1,0 +1,107 @@
+{
+  "table": "open_channels",
+  "batch_id": 41,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "open_401",
+      "anchor_type": "open_channels",
+      "name": "random_seed",
+      "detail_1": "None",
+      "detail_2": "deterministic analytic",
+      "session": "85",
+      "source_file": "sessions\\session-85\\session-85-w9-workingpaper.md",
+      "source_context_30_lines": "   29: | tau_scan_range | [0.05, 0.35] | [0.05, 0.35] | matches |\n   30: | tau_step | 0.005 | 0.001 | plan stated 61-pt grid; npz has 301-pt; strict superset |\n   31: | n_tau | 61 | 301 | PASS on 301 ⟹ PASS on any 61-pt subsample |\n   32: | L_max | 10 | 5 | W10-121's original eigenvalue cache at L=5; re-audit inherits |\n   33: | scheme (verdict 4-tuple) | W10-121-original | W10-121-original | matches (npz internal label `hessian_eigendirection_scan`) |\n   34: | convention (verdict 4-tuple) | Borel-disk-pointwise | Borel-disk-pointwise | matches (npz internal label `jensen_tau_wide_mesh`) |\n   35: | Borel_threshold | 4.34 | 4.34 | matches; promoted to `canonical_constants.Borel_threshold_S_inst` |\n   36: | S_inst_min_reference | 2.42×10^5 | 242091.449 | 0.0378% rel dev vs reference anchor |\n   37: | random_seed | None | 42 | W10-121 deterministic seed |\n   38: | GPU_path | CPU-only | CPU-only (OMP=4) | audit-class re-read |\n   39: | registry_file | sessions/framework/permanent-results-registry.md | sessions/permanent-results-registry.md | canonical-path rule (gate-verdicts.md) |\n   40: | upstream_artifact | s84_w10_121_borel_floor.npz | sessions/session-84/computations-artifacts/s84_w10a_121_saddle_inventory.npz | slug resolved at runtime |\n   41: \n   42: PRU check: 12/12 parameters pinned (plan values preserved for audit trail; actual values from npz take precedence for scientific verdict).\n   43: \n   44: **Expected output 4-tuple**: `(value=fraction_tau_above_threshold, sche\n... [truncated]"
+    },
+    {
+      "anchor_id": "open_402",
+      "anchor_type": "open_channels",
+      "name": "GPU path",
+      "detail_1": "CPU-only",
+      "detail_2": "analytic RG; no large eig",
+      "session": "85",
+      "source_file": "sessions\\session-85\\session-85-w9-workingpaper.md",
+      "source_context_30_lines": "  245: | product_ratio tolerance | 2.22e-16 (machine ε float64) | 2.220446049250313e-16 | equality (tight) |\n  246: | T4_residual_threshold | 1e-3 | 1e-3 | matches |\n  247: | NLO_margin_required | 1000× | 1000× | matches |\n  248: | eps_H | 0.02163 | W6-69: 0.02163; W6-70: 0.02163; promoted to `canonical_constants.eps_H_W6` | matches |\n  249: | L_max | 10 | W6-69: 3; W6-70: 3 | plan-authoring documentation bug; re-audit inherits npz ground truth |\n  250: | scheme (verdict 4-tuple) | W6-69-atlas | W6-69-atlas | matches |\n  251: | convention (verdict 4-tuple) | MS-z_R-pair | MS-z_R-pair | matches |\n  252: | random_seed | None | W6-69/W6-70 both deterministic | matches |\n  253: | GPU path | CPU-only | CPU-only (OMP=4) | matches |\n  254: | upstream_artifact (plan §5 merged) | W6-69 only | Actually W6-69 AND W6-70 (distinct npz files) | plan §5 hypothesis-line conflation; re-audit reads both |\n  255: | registry_target | sessions/framework/permanent-results-registry.md | sessions/permanent-results-registry.md §VII.Q | canonical-path rule |\n  256: \n  257: PRU check: 12/12 parameters pinned. Plan value preserved for audit trail where it differed from npz ground truth; npz takes precedence for scientific verdict.\n  258: \n  259: **Expected output 4-tuple**: `(value=product_ratio_max_dev, scheme=W6-69-atlas, convention=MS-z_R-pair, L_max=3)`. Target value = 2.22e-16 (machine ε). Registry-landing dual-SHA emitted as auxiliary pins.\n  260: \n  261: **PASS / FAIL / INFO thresholds**:"
+    },
+    {
+      "anchor_id": "open_403",
+      "anchor_type": "open_channels",
+      "name": "The C11 3-class partition (F_4 / F_4-INF / M) supplies the structural reason corridor A is non-trivial",
+      "detail_1": "M is genuinely distinct from F_4 at the multiplier-algebra dimension, not just at the slot-support level.",
+      "detail_2": "",
+      "session": "86",
+      "source_file": "sessions\\session-86\\workshops\\session-86-1a-s1-gen-physicist.md",
+      "source_context_30_lines": "  166: - Corridor B passes the constraint check by construction: the strip-edge limit `lim_{s → 0+} s · analytic_zeta(s, L_max)` does not factor through the F_4 multiplier algebra. T5 evaluates the analytic continuation directly through the C11 closed-form Mellin profile, not through the SD-subtraction prescription.\n  167: - Corridor C passes the constraint check by mechanism class: dilution, Friedmann two-layer, and q-theory are non-spectral-functional mechanisms. They do not invoke any F_4 regulator and do not perform Mellin-Barnes residue extraction. The F_4 ∘ MB ∘ SD-subtraction lens is irrelevant to their evaluation.\n  168: \n  169: All three corridors survive the spawn-prompt constraint check.\n  170: \n  171: ### IV.3 What W2 also gives the surviving corridors\n  172: \n  173: - The C10 `analytic_zeta(s, L_max)` API is the analytic anchor for corridor B's strip-edge probe and is consulted by corridor A's CC1 dispersion proxy (extended to M).\n  174: - The C11 3-class partition (F_4 / F_4-INF / M) supplies the structural reason corridor A is non-trivial: M is genuinely distinct from F_4 at the multiplier-algebra dimension, not just at the slot-support level.\n  175: - The C12 `cluster_span(L_max)` module is callable for the K-corridor probe in any of the three corridors that wants to test cluster identities at their own evaluation points.\n  176: \n  177: ### IV.4 What did NOT advance\n  178: \n  179: - W3 was 6/6 PRE-REG-INC mechanical closure — no physics in W3. The W3 plan-bloc\n... [truncated]"
+    },
+    {
+      "anchor_id": "open_404",
+      "anchor_type": "open_channels",
+      "name": "Removes competitor",
+      "detail_1": "the F_4 ∘ MB ∘ SD-subtraction analytic-continuation route (and its three S85 truncation-hypothesis FAILs converted to ST...",
+      "detail_2": "",
+      "session": "86",
+      "source_file": "sessions\\session-86\\workshops\\session-86-1a-s1-volovik.md",
+      "source_context_30_lines": "  208: \n  209: All three corridors satisfy the joint requirement vacuously,\n  210: because their derivation graphs do not include any F_4 ∘ MB ∘\n  211: SD-subtraction node.\n  212: ```\n  213: \n  214: **EVOI-shift attribution post-C9 (does the C9 closure increase EVOI of substrate-density mechanisms or only remove competitor?)**:\n  215: \n  216: - **Removes competitor**: the F_4 ∘ MB ∘ SD-subtraction analytic-continuation route (and its three S85 truncation-hypothesis FAILs converted to STRUCTURAL) is NO LONGER a candidate CC suppression mechanism. This is corridor elimination, not direct evidence for substrate-density.\n  217: - **Increases EVOI conditionally**: the EVOI of substrate-density corridors goes UP only to the extent that the CC-suppression corridor map is now narrower. If the framework's CC closure must come from one of {C-Q, C-D, C-2L, M-class outside F_4, T5 Mellin-Strip}, then each corridor's prior weight reweights upward by the standard Bayesian denominator shrinkage. The prior weights on C-Q, C-D, C-2L benefit because three of those five remaining slots are substrate-density.\n  218: - **Does NOT increase the absolute probability of any single mechanism PASSing** — the validation evidence required is independent of C9. C-Q still requires resolving the q-equilibrium boundary problem (S66 QTHEORY-NPAIR-66 FAIL at 113.5 OOM stands until either equilibrium is reached or a boundary mechanism is identified). C-D's PASS already holds. C-2L requires the active-layer ρ_va\n... [truncated]"
+    },
+    {
+      "anchor_id": "open_405",
+      "anchor_type": "open_channels",
+      "name": "Increases EVOI conditionally",
+      "detail_1": "the EVOI of substrate-density corridors goes UP only to the extent that the CC-suppression corridor map is now narrower....",
+      "detail_2": "",
+      "session": "86",
+      "source_file": "sessions\\session-86\\workshops\\session-86-1a-s1-volovik.md",
+      "source_context_30_lines": "  209: All three corridors satisfy the joint requirement vacuously,\n  210: because their derivation graphs do not include any F_4 ∘ MB ∘\n  211: SD-subtraction node.\n  212: ```\n  213: \n  214: **EVOI-shift attribution post-C9 (does the C9 closure increase EVOI of substrate-density mechanisms or only remove competitor?)**:\n  215: \n  216: - **Removes competitor**: the F_4 ∘ MB ∘ SD-subtraction analytic-continuation route (and its three S85 truncation-hypothesis FAILs converted to STRUCTURAL) is NO LONGER a candidate CC suppression mechanism. This is corridor elimination, not direct evidence for substrate-density.\n  217: - **Increases EVOI conditionally**: the EVOI of substrate-density corridors goes UP only to the extent that the CC-suppression corridor map is now narrower. If the framework's CC closure must come from one of {C-Q, C-D, C-2L, M-class outside F_4, T5 Mellin-Strip}, then each corridor's prior weight reweights upward by the standard Bayesian denominator shrinkage. The prior weights on C-Q, C-D, C-2L benefit because three of those five remaining slots are substrate-density.\n  218: - **Does NOT increase the absolute probability of any single mechanism PASSing** — the validation evidence required is independent of C9. C-Q still requires resolving the q-equilibrium boundary problem (S66 QTHEORY-NPAIR-66 FAIL at 113.5 OOM stands until either equilibrium is reached or a boundary mechanism is identified). C-D's PASS already holds. C-2L requires the active-layer ρ_vac dynami\n... [truncated]"
+    },
+    {
+      "anchor_id": "open_406",
+      "anchor_type": "open_channels",
+      "name": "Q-theory's structural position in the CC corridor map",
+      "detail_1": "from \"sole CC survivor of competing perturbative mechanisms\" (memory `s60-collab-review`, `cc-gge-residual-71`) to \"sole...",
+      "detail_2": "",
+      "session": "86",
+      "source_file": "sessions\\session-86\\workshops\\session-86-1a-s1-volovik.md",
+      "source_context_30_lines": "  281: - F_4 ∘ MB ∘ SD-subtraction CC suppression at L_max=10 — the entire family of analytic-continuation strategies built on {ζ, Zubarev, SDW} multiplier algebra with Mellin-Barnes residue extraction and explicit Connes-Moscovici 1995 SD counter-term subtraction. This forecloses the spectral-functional analytic-continuation route to CC suppression as it was hypothesized at S85.\n  282: \n  283: **OPENED** (or sharpened to high priority):\n  284: - M-class regulator atlas extension — {cutoff_sqrt, anomaly} regulators outside F_4 (per S86 plan-w14 §1 Atlas_5 = F_4 ∪ M decomposition). The W-4-CUTOFF-SQRT-ADJUDICATION INFO at line 106 of the verdict file marks this as REQUIRES-S86-GATE; with C9 closure, the M-class adjudication is now first-rank for S87.\n  285: - Mellin-Strip / Convergence-Cone Theorem boundary T5 (W1b) — a different analytic-continuation mechanism that does NOT rely on F_4. The C11 PASS provides the analytic anchor (closed-form Λ_Z^{2s}·Γ(s) Mellin transform of the Zubarev kernel); T5 can land in S87 W1b.\n  286: - Active-layer ρ_vac dynamics in the Friedmann two-layer construction — the GGE relic layer is established (CDM-CONSTRUCT-44 PASS); the active-layer CC-suppression dynamics need first computation at S87.\n  287: \n  288: **SHIFTED**:\n  289: - Q-theory's structural position in the CC corridor map: from \"sole CC survivor of competing perturbative mechanisms\" (memory `s60-collab-review`, `cc-gge-residual-71`) to \"sole CC survivor on axis_substrate_density afte\n... [truncated]"
+    },
+    {
+      "anchor_id": "open_407",
+      "anchor_type": "open_channels",
+      "name": "Carry-forward gate ID",
+      "detail_1": "Source",
+      "detail_2": "Required action",
+      "session": "86",
+      "source_file": "sessions\\session-86\\session-86-w0c-workingpaper.md",
+      "source_context_30_lines": "  594: \n  595: Per plan §W0c-4.11 FAIL clause: \"Level-3 escalation: re-derive W5 D.4 OR re-derive K_crit_BdG. Solution-space impact: BdG corridor framing is provisional pending reconciliation.\"\n  596: \n  597: K_crit_BdG = 2.035 is now canonical (W0c-2 PASS); the unresolved branch is the W5 D.4 derivation. Concrete remediation:\n  598: \n  599: 1. **Run S84 W5 producer scripts**: invoke `s84_w5_k_floor_reachable.py` and `s84_w5_k_floor_regulator_invariance.py` to regenerate npz outputs with substrate-derived K_floor / K_wall.\n  600: 2. **Verify ordering K_floor < 2.035 < K_wall** post-derivation; the corridor framing is self-consistent only if this holds.\n  601: 3. **Land in canonical_constants.py + permanent-results-registry.md** via a re-run of `s86_w0c_kfloor_kwall_land.py` (which detects the new npz outputs and proceeds through the PASS path — currently inert, requires fleshing out the PASS-path edit logic).\n  602: 4. **Carry-forward gate ID**: `S86-W0c-4-RERUN` or `S87-K-FLOOR-K-WALL-LAND` depending on session boundary.\n  603: \n  604: ##### (g) Substrate framing\n  605: \n  606: K_floor and K_wall are intended to be substrate-corridor brackets — they bracket the coupling-space region in which BdG-channel quasiparticle excitations propagate without re-entering the inflationary corridor (K > K_wall) or collapsing into the BdG-condensate (K < K_floor). The corridor IS the substrate-region in coupling-space where BdG-channel propagation modes are stable; it is not an externally-i\n... [truncated]"
+    },
+    {
+      "anchor_id": "open_408",
+      "anchor_type": "open_channels",
+      "name": "`S87-LAMBDA-TOP-DIRECT-EXTRACTION-RERUN`",
+      "detail_1": "W0c-1 FAIL: cache lacks raw eigvals",
+      "detail_2": "Regenerate L=10 D_K spectral cache with raw eigvals storage",
+      "session": "86",
+      "source_file": "sessions\\session-86\\session-86-w0c-workingpaper.md",
+      "source_context_30_lines": " 1363: Wave W0c is the canonical-constants and methodology-infrastructure foundation for S86. It executed nine independent edits / extractions / lifts. The 5 PASS results land permanent infrastructure: `K_crit_BdG = 2.035` canonical (W0c-2); 5 missing canonical entries `eps_H_HP1_norm`, `HP1_dim`, `FI_parity_exclusion`, `rank_exclusion`, `nonflat_T_correction_L2 = 0` (W0c-3); 7 active Mellin scripts retrofitted with the W6-71 5-marker boilerplate (W0c-6); the external-clock 11-session 2026-2030 scaffold (W0c-8); the W3-7 PASS clause re-pinned from `< 0.10` to `< 0.125` to match the substrate's 12.5% scheme floor (W0c-9). The 4 FAIL results map walls in the substrate-data layer or the methodology-pipeline layer; each carries a documented Level-3 carry-forward route to S87+.\n 1364: \n 1365: The wave's verdict tally (5/4/0/0 for PASS/FAIL/INFO/ABORTED) is structurally informative: the FAILs are not the framework's physics failing — they are the methodology infrastructure surfacing **gaps in upstream substrate data and in plan-vs-validator alignment** that were latent in the S85 closeout. Per `.claude/rules/epistemic-discipline.md` \"All Results Are Good Results\", FAIL is constraint-mapping, not session-quality. Each FAIL closes a specific corridor in the methodology constraint map.\n 1366: \n 1367: ### 2. The four FAILs by carry-forward class\n 1368: \n 1369: | Gate | FAIL cause | Carry-forward route | Effort |\n 1370: |:-----|:-----------|:--------------------|:-------|\n 1371: | W0c-1\n... [truncated]"
+    },
+    {
+      "anchor_id": "open_409",
+      "anchor_type": "open_channels",
+      "name": "`S87-K-FLOOR-K-WALL-LAND`",
+      "detail_1": "W0c-4 FAIL: upstream W5 D.4 derivation absent",
+      "detail_2": "Run S84 W5 producer scripts; re-attempt W0c-4 land",
+      "session": "86",
+      "source_file": "sessions\\session-86\\session-86-w0c-workingpaper.md",
+      "source_context_30_lines": "  594: \n  595: Per plan §W0c-4.11 FAIL clause: \"Level-3 escalation: re-derive W5 D.4 OR re-derive K_crit_BdG. Solution-space impact: BdG corridor framing is provisional pending reconciliation.\"\n  596: \n  597: K_crit_BdG = 2.035 is now canonical (W0c-2 PASS); the unresolved branch is the W5 D.4 derivation. Concrete remediation:\n  598: \n  599: 1. **Run S84 W5 producer scripts**: invoke `s84_w5_k_floor_reachable.py` and `s84_w5_k_floor_regulator_invariance.py` to regenerate npz outputs with substrate-derived K_floor / K_wall.\n  600: 2. **Verify ordering K_floor < 2.035 < K_wall** post-derivation; the corridor framing is self-consistent only if this holds.\n  601: 3. **Land in canonical_constants.py + permanent-results-registry.md** via a re-run of `s86_w0c_kfloor_kwall_land.py` (which detects the new npz outputs and proceeds through the PASS path — currently inert, requires fleshing out the PASS-path edit logic).\n  602: 4. **Carry-forward gate ID**: `S86-W0c-4-RERUN` or `S87-K-FLOOR-K-WALL-LAND` depending on session boundary.\n  603: \n  604: ##### (g) Substrate framing\n  605: \n  606: K_floor and K_wall are intended to be substrate-corridor brackets — they bracket the coupling-space region in which BdG-channel quasiparticle excitations propagate without re-entering the inflationary corridor (K > K_wall) or collapsing into the BdG-condensate (K < K_floor). The corridor IS the substrate-region in coupling-space where BdG-channel propagation modes are stable; it is not an externally-i\n... [truncated]"
+    },
+    {
+      "anchor_id": "open_410",
+      "anchor_type": "open_channels",
+      "name": "`S87-R3-COVERAGE-LIFT-STRUCTURED`",
+      "detail_1": "W0c-5 FAIL: plan-format drift; 8-key checklist missing on 112/136 gates",
+      "detail_2": "Structurally complete PRDR checklist for S85 plan-blocks",
+      "session": "86",
+      "source_file": "sessions\\session-86\\session-86-w0c-workingpaper.md",
+      "source_context_30_lines": "  758: \n  759: ##### (g) Level-3 remediation route (carry-forward to S87+)\n  760: \n  761: Per the validator's actual criterion (8-item PRDR checklist), to lift sig_4 to ≥0.90:\n  762: 1. **For each non-compliant gate (112 of 136)**: ensure the plan-file gate block populates all 8 PRDR keys with non-empty content (either as `### <Subsection>` markdown headings or `**<Field>**:` bold-field labels).\n  763: 2. **Add `schema_version: R3` to gate-block headers** as a documentation tag (cosmetic, but signals R3 compliance to readers).\n  764: 3. **Re-run validator**; coverage should rise to ≥0.90 if the 8-item content is genuinely present per gate.\n  765: \n  766: This is a structural plan-revision effort, not a mechanical regex substitution. Out of scope for W0c (METHODOLOGY-only wave) but a viable S87+ task. Carry-forward gate ID: `S87-R3-COVERAGE-LIFT-STRUCTURED`.\n  767: \n  768: ##### (h) Substrate framing\n  769: \n  770: META gate; no substrate physics. The R3 schema is a methodology-pin discipline (it pins gate-block format, not substrate observables). The FAIL signals an incompleteness in plan-write hygiene, not a defect in the substrate's eigenvalue structure.\n  771: \n  772: ##### (i) Downstream impact\n  773: \n  774: - **S86 closeout v3-ladder**: sig_4 will FAIL post-W0c-5 closure. v3-closure-recovery enters Stage-1 remediation per the procedure; if remediation cannot bring sig_4 above 0.90 within the 2-iteration cap, S86 closes with status `V3-NON-COMPLIANT` (handoff §1 records \n... [truncated]"
+    }
+  ]
+}

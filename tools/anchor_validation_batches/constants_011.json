@@ -1,0 +1,107 @@
+{
+  "table": "constants",
+  "batch_id": 11,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "const_reduction_ratio",
+      "anchor_type": "constants",
+      "name": "reduction_ratio",
+      "value": "0.5228512852862325",
+      "session": "S86",
+      "source_citation": "W-3 R3-B Convergence #1 lock-in; W-3 CAN-8",
+      "source_file": "computations/_shared/canonical_constants.py",
+      "source_context_30_lines": "  531: u_pivot = 19649/351  # u_pivot = 19649/351 = 55.9800569800570 exact rational; derived from planck_ns = 9649/10000 per V1 Step 3. (S86)\n  532: gamma_pivot = 4.4e-5  # Substrate-physical residue prefactor at pivot scale; ~4.4e-5; estimate-pinned per W-2 R3-B EMERGENCE (i). (S86)\n  533: w_optical_over_acoustic_pivot = 1e-4  # Optical-vs-acoustic ratio at pivot ~ (k_pivot/omega_L1)^2 ~ 1e-4. Suppression of w_optical contribution to alpha_s. (S86)\n  534: Omega_GW_Companion_null = 8.299e-58  # Companion-null Omega_GW Sage-exact value. Promoted per UD-5 (3+ scripts cite this). (S86)\n  535: sigma_HypB = 16577/7460  # sigma_HypB = 16577/7460 = 2.222118 Sage-exact rational; per W-3 R2-B Convergence #2. (S86)\n  536: sigma_naive = 17/4  # sigma_naive = 17/4 = 4.250000 (mnemonic-naive form); contrasts with sigma_HypB Sage-exact form. (S86)\n  537: sigma_band_low = 49731/29840  # sigma_band_low = 49731/29840 = 1.666588 Sage-exact rational lower edge of sigma band per W-3 R3-A. (S86)\n  538: sigma_band_high = 16577/5968  # sigma_band_high = 16577/5968 = 2.777647 Sage-exact rational upper edge of sigma band per W-3 R3-A. (S86)\n  539: reduction_ratio = 16577/31705  # reduction_ratio = 16577/31705 = 0.522851 Sage-exact rational. Per T1-2 mnemonic-vs-exact discipline: this is structurally exact, replacing mnemonic 1/c_sub=0.4468 (14.54% understatement). (S86)\n  540: OOM_split_AC_regulator_class = 47.081  # Order-of-magnitude split between (A) and (C) regulator classes for Path-H/Path-C Ome\n... [truncated]"
+    },
+    {
+      "anchor_id": "const_rho_B2_per_mode",
+      "anchor_type": "constants",
+      "name": "rho_B2_per_mode",
+      "value": "14.023250234055",
+      "session": "S37",
+      "source_citation": "s37_instanton_action.npz",
+      "source_file": "computations/_shared/canonical_constants.py",
+      "source_context_30_lines": "  578: # Josephson couplings (S47 TEXTURE-CORR-48, s47_texture_corr.npz)\n  579: # Directional phase stiffness on 32-cell tessellation\n  580: J_C2 = 0.933                   # C^2 coset directions (4 bonds, dominant) M_KK\n  581: J_su2 = 0.059                  # su(2) stabilizer directions (3 bonds) M_KK\n  582: J_u1 = 0.038                   # u(1) direction (1 bond, softest) M_KK\n  583: T_acoustic = 0.112              # GGE acoustic temperature (S42/S47) M_KK\n  584: \n  585: # Mode spectrum at fold (s37_instanton_action)\n  586: rho_B2_per_mode = 14.023250234055  # B2 DOS per mode at fold\n  587: E_B1 = 0.8191400026759529     # B1 mode energy at fold (M_KK)\n  588: E_B2_mean = 0.845269087679269 # Mean B2 energy at fold (M_KK)\n  589: E_B3_mean = 0.9782238787713764  # Mean B3 energy at fold (M_KK)\n  590: \n  591: # ==============================================================================\n  592: #  SECTION E2: S52 Phonon & Structural Results\n  593: # ==============================================================================\n  594: "
+    },
+    {
+      "anchor_id": "const_rho_Lambda_obs",
+      "anchor_type": "constants",
+      "name": "rho_Lambda_obs",
+      "value": "2.7e-47",
+      "session": "S42",
+      "source_citation": "Planck 2018",
+      "source_file": "computations/_shared/canonical_constants.py",
+      "source_context_30_lines": "   68: t_Planck = 5.391247e-44       # s (Planck time)\n   69: \n   70: # Cosmological\n   71: H_0_km_s_Mpc = 67.4           # km/s/Mpc (Planck 2018)\n   72: H_0_inv_s = 2.184e-18         # s^{-1}\n   73: H_0_GeV = 1.438e-42           # GeV\n   74: T_CMB = 2.7255                # K (COBE/FIRAS)\n   75: T_CMB_GeV = 2.7255 * 8.617333262e-5 / 1e9  # = 2.348e-13 GeV\n   76: rho_Lambda_obs = 2.7e-47      # GeV^4 (observed CC, conventional rounding — see NOTE below)\n   77: # NOTE: Precise Planck 2018 value is 2.52e-47 GeV^4 (Omega_L=0.685, H_0=67.36).\n   78: # The 2.7e-47 rounding is widely used in the literature and across this codebase.\n   79: # The 2.888e-47 in some scripts uses a different density convention.\n   80: # All CC-gap calculations use ratios (rho_spectral / rho_obs), so the ~7% difference\n   81: # changes the gap by <0.03 orders out of 120 — negligible for all gate verdicts.\n   82: Lambda_obs_MP4 = 2.888e-122   # Lambda / M_Pl^4 (widely used convention in codebase)\n   83: A_s_CMB = 2.1e-9              # CMB scalar amplitude (Planck 2018)\n   84: A_s_Planck = A_s_CMB          # Alias per S85 W13 plan line 677 (Planck 2018 VI provenance)"
+    },
+    {
+      "anchor_id": "const_rho_inf_FW",
+      "anchor_type": "constants",
+      "name": "rho_inf_FW",
+      "value": "-0.8103647022669215",
+      "session": "S87",
+      "source_citation": "S87-BULLETIN-#4-IRRATIONAL-RHO-PERMANENT-WALL-LANDING",
+      "source_file": "computations/_shared/canonical_constants.py",
+      "source_context_30_lines": "  852: # ==============================================================================\n  853: #  SECTION F: PROVENANCE Dictionary\n  854: # ==============================================================================\n  855: \n  856: \n  857: # === SECTION F — S87 ===\n  858: \n  859: # --- S87 W10-2 (Bulletin #4 PERMANENT-WALL) ---\n  860: rho_inf_FW = -0.8103647022669215  # rho_inf full float64 from S87 W10-2 simple-pole fit on L=8..12 cache; L2-IRRATIONAL FERMIONIC-SIGNED-RESIDUE per Bulletin #4 closure; canonical pin -0.810369 (6 sig figs); presentation precision 10 sig figs; rho_inf approx -0.8104 (4-sig-fig presentation only). (S87)\n  861: \n  862: PROVENANCE = {\n  863:     # Section A — PDG/CODATA\n  864:     \"M_Pl_reduced\":      {\"session\": \"S7\",  \"source\": \"CODATA 2018\", \"gate\": None, \"superseded\": False},\n  865:     \"M_Pl_unreduced\":    {\"session\": \"S7\",  \"source\": \"CODATA 2018\", \"gate\": None, \"superseded\": False},\n  866:     \"alpha_em_MZ_inv\":   {\"session\": \"S42\", \"source\": \"PDG 2024\",    \"gate\": None, \"superseded\": False},\n  867:     \"M_Z\":               {\"session\": \"S42\", \"source\": \"PDG 2024\",    \"gate\": None, \"superseded\": False},\n  868:     \"rho_Lambda_obs\":    {\"session\": \"S42\", \"source\": \"Planck 2018\", \"gate\": None, \"superseded\": False},"
+    },
+    {
+      "anchor_id": "const_rho_inf_zubarev_canonical",
+      "anchor_type": "constants",
+      "name": "rho_inf_zubarev_canonical",
+      "value": "-0.810369",
+      "session": "S86",
+      "source_citation": "W-10 CM-1995 audit Bulletin #4 PERMANENT-WALL; L=8..12 simple-pole fit R^2=0.999945",
+      "source_file": "computations/_shared/canonical_constants.py",
+      "source_context_30_lines": "  536: sigma_naive = 17/4  # sigma_naive = 17/4 = 4.250000 (mnemonic-naive form); contrasts with sigma_HypB Sage-exact form. (S86)\n  537: sigma_band_low = 49731/29840  # sigma_band_low = 49731/29840 = 1.666588 Sage-exact rational lower edge of sigma band per W-3 R3-A. (S86)\n  538: sigma_band_high = 16577/5968  # sigma_band_high = 16577/5968 = 2.777647 Sage-exact rational upper edge of sigma band per W-3 R3-A. (S86)\n  539: reduction_ratio = 16577/31705  # reduction_ratio = 16577/31705 = 0.522851 Sage-exact rational. Per T1-2 mnemonic-vs-exact discipline: this is structurally exact, replacing mnemonic 1/c_sub=0.4468 (14.54% understatement). (S86)\n  540: OOM_split_AC_regulator_class = 47.081  # Order-of-magnitude split between (A) and (C) regulator classes for Path-H/Path-C Omega_GW: 47.081 OOM. Promoted per UD-5. (S86)\n  541: xi_sq_0_crit_SR_LO_breakdown_N1 = 2.2256  # Critical xi^2_0 for SR-LO breakdown at N=1 e-fold; brentq solution per W-9 transit T1. (S86)\n  542: xi_sq_0_lin_crit_SR_LO_N55 = 0.395  # Linear-regime critical xi^2_0 for SR-LO at N=55 e-folds; per W-9 transit Q-L2.1+T2. (S86)\n  543: xi_sq_0_SR_LO_valid_crit_N55 = 1.7  # Critical xi^2_0 above which SR-LO regime invalid for full N=55 e-fold integration; ~1.7. (S86)\n  544: rho_inf_zubarev_canonical = -0.810369  # rho_inf for Zubarev convergence sequence under simple-pole fit on L=8..12 cache; canonical extrapolation per W-10 CM-1995 audit Bulletin #4. (S86)\n  545: rho_inf_zubarev_deep_ir = -0.918  # rho_inf for Zu\n... [truncated]"
+    },
+    {
+      "anchor_id": "const_rho_inf_zubarev_deep_ir",
+      "anchor_type": "constants",
+      "name": "rho_inf_zubarev_deep_ir",
+      "value": "-0.918",
+      "session": "S86",
+      "source_citation": "W-10 CM-1995 audit Level 2 band-estimate at Lambda_Z = 0.05; per UD-7 R2-B answer (register rho_inf canonical, NOT lam_min directly)",
+      "source_file": "computations/_shared/canonical_constants.py",
+      "source_context_30_lines": "  537: sigma_band_low = 49731/29840  # sigma_band_low = 49731/29840 = 1.666588 Sage-exact rational lower edge of sigma band per W-3 R3-A. (S86)\n  538: sigma_band_high = 16577/5968  # sigma_band_high = 16577/5968 = 2.777647 Sage-exact rational upper edge of sigma band per W-3 R3-A. (S86)\n  539: reduction_ratio = 16577/31705  # reduction_ratio = 16577/31705 = 0.522851 Sage-exact rational. Per T1-2 mnemonic-vs-exact discipline: this is structurally exact, replacing mnemonic 1/c_sub=0.4468 (14.54% understatement). (S86)\n  540: OOM_split_AC_regulator_class = 47.081  # Order-of-magnitude split between (A) and (C) regulator classes for Path-H/Path-C Omega_GW: 47.081 OOM. Promoted per UD-5. (S86)\n  541: xi_sq_0_crit_SR_LO_breakdown_N1 = 2.2256  # Critical xi^2_0 for SR-LO breakdown at N=1 e-fold; brentq solution per W-9 transit T1. (S86)\n  542: xi_sq_0_lin_crit_SR_LO_N55 = 0.395  # Linear-regime critical xi^2_0 for SR-LO at N=55 e-folds; per W-9 transit Q-L2.1+T2. (S86)\n  543: xi_sq_0_SR_LO_valid_crit_N55 = 1.7  # Critical xi^2_0 above which SR-LO regime invalid for full N=55 e-fold integration; ~1.7. (S86)\n  544: rho_inf_zubarev_canonical = -0.810369  # rho_inf for Zubarev convergence sequence under simple-pole fit on L=8..12 cache; canonical extrapolation per W-10 CM-1995 audit Bulletin #4. (S86)\n  545: rho_inf_zubarev_deep_ir = -0.918  # rho_inf for Zubarev convergence in deep-IR limit Lambda_Z -> 0+; band-estimate -0.918 with gap=0.082 from canonical extrapolation. lam_min = 1 - \n... [truncated]"
+    },
+    {
+      "anchor_id": "const_sigma_HypB",
+      "anchor_type": "constants",
+      "name": "sigma_HypB",
+      "value": "2.2221179624664877",
+      "session": "S86",
+      "source_citation": "W-3 R2-B Convergence #2 Sage QQ verification; W-3 CAN-8",
+      "source_file": "computations/_shared/canonical_constants.py",
+      "source_context_30_lines": "  527: ns_canon_Fairbairn = 0.97101  # PARALLEL PIN to planck_ns=0.9649 (does NOT supersede; per UD-3 decision). External-paper canonical for cross-check; central 0.97101 sigma=0.00390. Framework-canonical n_s remains planck_ns. (S86)\n  528: beta_s_canon_Fairbairn = -0.00755  # External-paper canonical for cross-check beta_s = d alpha_s / d ln k; central -0.00755 sigma=0.00347. (S86)\n  529: alpha_s_canon_RogersPoulin = -0.01080  # Per UD-4 accept Fairbairn-cited form. External-paper canonical for cross-check; central -0.01080 sigma=0.00220. Direct Rogers-Poulin paper cite TBD if needed for downstream gate. (S86)\n  530: substrate_residue_floor_alpha_s = 8.65e-5  # Substrate residue floor for alpha_s (absolute = 8.65e-5; relative = 1.25e-3 to alpha_s_FW). Derived via R3-FINAL Verdict row 4 from gamma_pivot=4.4e-5 and u_pivot. (S86)\n  531: u_pivot = 19649/351  # u_pivot = 19649/351 = 55.9800569800570 exact rational; derived from planck_ns = 9649/10000 per V1 Step 3. (S86)\n  532: gamma_pivot = 4.4e-5  # Substrate-physical residue prefactor at pivot scale; ~4.4e-5; estimate-pinned per W-2 R3-B EMERGENCE (i). (S86)\n  533: w_optical_over_acoustic_pivot = 1e-4  # Optical-vs-acoustic ratio at pivot ~ (k_pivot/omega_L1)^2 ~ 1e-4. Suppression of w_optical contribution to alpha_s. (S86)\n  534: Omega_GW_Companion_null = 8.299e-58  # Companion-null Omega_GW Sage-exact value. Promoted per UD-5 (3+ scripts cite this). (S86)\n  535: sigma_HypB = 16577/7460  # sigma_HypB = 16577/7460 = 2.222118\n... [truncated]"
+    },
+    {
+      "anchor_id": "const_sigma_alpha_SKA1",
+      "anchor_type": "constants",
+      "name": "sigma_alpha_SKA1",
+      "value": "5.118",
+      "session": "S83",
+      "source_citation": "s83_w3_g45_ska_alpha_fnl.npz",
+      "source_file": "computations/_shared/canonical_constants.py",
+      "source_context_30_lines": "  501: # f*(x) = 0.912*sqrt(x) + 0.088*exp(-x); CC/NCG convention:\n  502: #   f_0 = f*(0);   f_2 = int_0^{50} f*(x) dx;   f_4 = int_0^{50} x*f*(x) dx\n  503: # Sharp-cutoff (Andrianov-Lizzi arXiv:1001.2036) FORCES f_0=1/2, f_2=1, f_4=1.\n  504: mellin_f_star_f0 = 0.0883200000   # Mellin moment f_0 of f*(x)=0.912sqrt(x)+0.088exp(-x) (S78 W2-D)\n  505: mellin_f_star_f2 = 214.97335676   # Mellin moment f_2 of f* (X_MAX=50 regulator) (S78 W2-D)\n  506: mellin_f_star_f4 = 6446.63942272   # Mellin moment f_4 of f* (X_MAX=50 regulator) (S78 W2-D)\n  507: \n  508: # ==============================================================================\n  509: sigma_alpha_SKA1 = 5.118  # SKA-1 Phase-1 Fisher sigma(alpha_fNL); G45 canonical; used by S84 W4-43 SNR (S83)\n  510: sigma_alpha_SKA2 = 0.80  # SKA-2 full Fisher sigma(alpha_fNL); G45 PASS threshold for framework alpha detection (S83)\n  511: beta_s = -0.1331  # Second spectral moment of D_K at tau_fold slice, Jensen flow (running-of-running from W8-86 3rd Taylor coefficient) (S84)\n  512: sigma_beta_s_CMB_S4 = 2.2e-3  # CMB-S4 projected 1-sigma forecast on beta_s = running-of-running; used as LCDM-null pull denominator for S85-BETA-S-CMB-S4-PREREG (S85)\n  513: b_DK = 0.006241291005766653  # Dirac-operator-determined dimensionless constant for Weyl-rescaling weak-form parametric bound. b_DK = (1/8 pi^2) * Tr_F[(Y†Y)^2] / Tr_F[Y†Y] = (1/8 pi^2) * y_t^2, with y_t = m_t_pole/v_ew = 0.7020. Used in W6-3 C-gamma-WEAK gate (L_max=10, FAIL: tree-level \n... [truncated]"
+    },
+    {
+      "anchor_id": "const_sigma_alpha_SKA2",
+      "anchor_type": "constants",
+      "name": "sigma_alpha_SKA2",
+      "value": "0.8",
+      "session": "S83",
+      "source_citation": "s83_w3_g45_ska_alpha_fnl.npz",
+      "source_file": "computations/_shared/canonical_constants.py",
+      "source_context_30_lines": "  502: #   f_0 = f*(0);   f_2 = int_0^{50} f*(x) dx;   f_4 = int_0^{50} x*f*(x) dx\n  503: # Sharp-cutoff (Andrianov-Lizzi arXiv:1001.2036) FORCES f_0=1/2, f_2=1, f_4=1.\n  504: mellin_f_star_f0 = 0.0883200000   # Mellin moment f_0 of f*(x)=0.912sqrt(x)+0.088exp(-x) (S78 W2-D)\n  505: mellin_f_star_f2 = 214.97335676   # Mellin moment f_2 of f* (X_MAX=50 regulator) (S78 W2-D)\n  506: mellin_f_star_f4 = 6446.63942272   # Mellin moment f_4 of f* (X_MAX=50 regulator) (S78 W2-D)\n  507: \n  508: # ==============================================================================\n  509: sigma_alpha_SKA1 = 5.118  # SKA-1 Phase-1 Fisher sigma(alpha_fNL); G45 canonical; used by S84 W4-43 SNR (S83)\n  510: sigma_alpha_SKA2 = 0.80  # SKA-2 full Fisher sigma(alpha_fNL); G45 PASS threshold for framework alpha detection (S83)\n  511: beta_s = -0.1331  # Second spectral moment of D_K at tau_fold slice, Jensen flow (running-of-running from W8-86 3rd Taylor coefficient) (S84)\n  512: sigma_beta_s_CMB_S4 = 2.2e-3  # CMB-S4 projected 1-sigma forecast on beta_s = running-of-running; used as LCDM-null pull denominator for S85-BETA-S-CMB-S4-PREREG (S85)\n  513: b_DK = 0.006241291005766653  # Dirac-operator-determined dimensionless constant for Weyl-rescaling weak-form parametric bound. b_DK = (1/8 pi^2) * Tr_F[(Y†Y)^2] / Tr_F[Y†Y] = (1/8 pi^2) * y_t^2, with y_t = m_t_pole/v_ew = 0.7020. Used in W6-3 C-gamma-WEAK gate (L_max=10, FAIL: tree-level dominates anomaly at this regulator class). (S86)\n  514: HP0_conten\n... [truncated]"
+    },
+    {
+      "anchor_id": "const_sigma_band_high",
+      "anchor_type": "constants",
+      "name": "sigma_band_high",
+      "value": "2.77764745308311",
+      "session": "S86",
+      "source_citation": "W-3 R3-A Convergence #1; W-3 CAN-8",
+      "source_file": "computations/_shared/canonical_constants.py",
+      "source_context_30_lines": "  530: substrate_residue_floor_alpha_s = 8.65e-5  # Substrate residue floor for alpha_s (absolute = 8.65e-5; relative = 1.25e-3 to alpha_s_FW). Derived via R3-FINAL Verdict row 4 from gamma_pivot=4.4e-5 and u_pivot. (S86)\n  531: u_pivot = 19649/351  # u_pivot = 19649/351 = 55.9800569800570 exact rational; derived from planck_ns = 9649/10000 per V1 Step 3. (S86)\n  532: gamma_pivot = 4.4e-5  # Substrate-physical residue prefactor at pivot scale; ~4.4e-5; estimate-pinned per W-2 R3-B EMERGENCE (i). (S86)\n  533: w_optical_over_acoustic_pivot = 1e-4  # Optical-vs-acoustic ratio at pivot ~ (k_pivot/omega_L1)^2 ~ 1e-4. Suppression of w_optical contribution to alpha_s. (S86)\n  534: Omega_GW_Companion_null = 8.299e-58  # Companion-null Omega_GW Sage-exact value. Promoted per UD-5 (3+ scripts cite this). (S86)\n  535: sigma_HypB = 16577/7460  # sigma_HypB = 16577/7460 = 2.222118 Sage-exact rational; per W-3 R2-B Convergence #2. (S86)\n  536: sigma_naive = 17/4  # sigma_naive = 17/4 = 4.250000 (mnemonic-naive form); contrasts with sigma_HypB Sage-exact form. (S86)\n  537: sigma_band_low = 49731/29840  # sigma_band_low = 49731/29840 = 1.666588 Sage-exact rational lower edge of sigma band per W-3 R3-A. (S86)\n  538: sigma_band_high = 16577/5968  # sigma_band_high = 16577/5968 = 2.777647 Sage-exact rational upper edge of sigma band per W-3 R3-A. (S86)\n  539: reduction_ratio = 16577/31705  # reduction_ratio = 16577/31705 = 0.522851 Sage-exact rational. Per T1-2 mnemonic-vs-exact discipline: thi\n... [truncated]"
+    }
+  ]
+}

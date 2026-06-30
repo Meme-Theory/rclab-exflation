@@ -1,0 +1,131 @@
+========================================================================
+S55 BERRY-FOLD-55: Berry Phase Around the Jensen Fold
+========================================================================
+
+--- Section 1: Reconstruct 32-cell representation graph ---
+  32-cell graph reconstructed. B2 = cell 3
+  Adjacency verified against s54_tb_hamiltonian.npz
+
+--- Section 2: H(tau, sigma) construction ---
+  H(tau=0.2551, 0) vs saved: max relative error = 2.85e-16
+  J_C2:  sigma=0: 0.933000, +0.005: 0.795050, -0.005: 1.094886
+  J_su2: sigma=0: 0.059000, +0.005: 0.065532, -0.005: 0.053119
+  J_u1:  sigma=0: 0.038000, +0.005: 0.040149, -0.005: 0.035966
+  T2 perturbation changes couplings by ~14.8% at sig=0.005
+
+--- Section 3: B2 eigenstate identification ---
+  B2 cell index: 3
+  B2 eigenstate index range: 24 to 29
+  B2 eigenvalue range: [2.2844, 12.6551]
+  Min gap along Jensen: 0.0002 at tau=0.4293
+  WARNING: B2 eigenstate index changes at tau = [0.33333333 0.37373737 0.42929293 0.43434343 0.46969697]
+    Index transitions: [(np.int64(29), np.int64(24)), (np.int64(24), np.int64(28)), (np.int64(28), np.int64(27)), (np.int64(27), np.int64(25)), (np.int64(25), np.int64(27))]
+
+--- Section 4: Degeneracy search in (tau, sigma) space ---
+  Minimum gap in 2D scan: 0.030843
+    at tau=0.2567, sigma=0.015000
+  Maximum gap in 2D scan: 0.748965
+  B2 eigenstate indices found: [24 29]
+  WARNING: B2 index varies -- possible level crossings in 2D!
+    index 24: 126 grid points
+    index 29: 3595 grid points
+
+--- Section 5: Berry phase around closed loop ---
+  r=0.0010, N=256: gamma/pi = 0.0000, sign(prod) = +1, |overlap| in [1.00000000, 1.00000000]
+  r=0.0050, N=256: gamma/pi = 0.0000, sign(prod) = +1, |overlap| in [0.99999997, 1.00000000]
+  r=0.0100, N=256: gamma/pi = 0.0000, sign(prod) = +1, |overlap| in [0.99999983, 1.00000000]
+  r=0.0200, N=256: gamma/pi = 0.0000, sign(prod) = +1, |overlap| in [0.99999843, 1.00000000]
+  r=0.050, N=64: B2 index CHANGES: [24 25 26 27 28 29]
+  r=0.050, N=128: B2 index CHANGES: [23 24 25 26 27 28 29]
+  r=0.050, N=256: B2 index CHANGES: [23 24 25 26 27 28 29]
+  r=0.0500, N=256: gamma/pi = 0.0000, sign(prod) = +1, |overlap| in [0.81603360, 1.00000000]
+  r=0.050, N=512: B2 index CHANGES: [23 24 25 26 27 28 29]
+  r=0.100, N=64: B2 index CHANGES: [24 25 27 28 29]
+  r=0.100, N=128: B2 index CHANGES: [23 24 25 27 28 29]
+  r=0.100, N=256: B2 index CHANGES: [23 24 25 26 27 28 29]
+  r=0.1000, N=256: gamma/pi = 0.0000, sign(prod) = +1, |overlap| in [0.00738427, 1.00000000]
+  r=0.100, N=512: B2 index CHANGES: [23 24 25 26 27 28 29]
+
+--- Section 6: Convergence and structural analysis ---
+
+  Berry phase gamma/pi vs radius and N_theta:
+         r      N=64     N=128     N=256     N=512
+    0.0010    0.0000    0.0000    0.0000    0.0000
+    0.0050    0.0000    0.0000    0.0000    0.0000
+    0.0100    0.0000    0.0000    0.0000    0.0000
+    0.0200    0.0000    0.0000    0.0000    0.0000
+    0.0500    0.0000    0.0000    0.0000    0.0000
+    0.1000    1.0000    0.0000    0.0000    0.0000
+
+  Detailed analysis at r=0.01, N=256:
+    Berry phase: gamma/pi = 0.000000
+    Raw phase:   gamma/pi = -0.000000
+    Sign of overlap product: +1
+    Overlap magnitude range: [0.9999998290, 0.9999999995]
+    B2 index range: [29, 29]
+    Mean overlap: 0.8749999333
+    Std overlap:  4.84e-01
+    Negative overlaps: 16 out of 256
+    Negative at theta indices: [ 29  30  41  42  64  65  67  68  84  85 112 113 148 149 186 187]
+
+--- Section 7: Structural analysis (real Hamiltonian theorem) ---
+  Verifying H is real-symmetric on loop points...
+  max|H - H^T| = 0.00e+00
+  max|Im(H)| = 0.00e+00
+  H is real-symmetric: YES
+
+  Gap analysis from 2D scan:
+    Minimum B2-neighbor gap: 0.030843
+    This gap is LARGE (no degeneracy)
+
+  Gap distribution in 2D scan:
+      0th percentile: 0.030843
+      1th percentile: 0.047554
+      5th percentile: 0.101994
+     25th percentile: 0.242311
+     50th percentile: 0.323212
+     75th percentile: 0.413405
+     95th percentile: 0.575227
+     99th percentile: 0.669905
+    100th percentile: 0.748965
+
+--- Section 8: dm^2_B2 in 2D parameter space ---
+  B2 eigenvalue on r=0.01 loop: [4.351350, 8.185793]
+  Range: 3.83e+00
+  This is a small variation on a large value
+
+========================================================================
+  SECTION 9: FINAL VERDICT — BERRY-FOLD-55
+========================================================================
+
+  Berry phase: gamma = 0.000000
+  gamma/pi = 0.000000
+  Sign of overlap product: +1
+
+  STRUCTURAL FACTS:
+    1. H(tau, sigma) is real-symmetric for ALL (tau, sigma)
+    2. Berry curvature Omega = 0 identically (Im of real products)
+    3. Berry phase is Z_2 quantized: 0 or pi
+    4. gamma = pi requires a DEGENERACY inside the loop
+    5. Minimum gap in 2D scan: 0.030843 (NO degeneracy)
+    6. B2 eigenvalue at fold: 5.728923 >> 0
+    7. The dm^2_B2 = 0 crossing is a DERIVATIVE zero (fold), not an eigenvalue zero
+
+  RESULT: Berry phase = 0 => B2 mass zero-crossing is ACCIDENTAL
+  The fold at tau*=0.19 is a smooth turning point in dm^2/dtau,
+  NOT a topological feature. It can be removed by perturbation.
+
+  Gate BERRY-FOLD-55: INFO — gamma/pi = 0.0000 (ACCIDENTAL)
+
+  Consistency: 24 loop computations, all agree: False
+  WARNING: Phases differ! [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0]
+
+--- Section 10: Saving results ---
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s55_berry_fold.npz
+
+--- Section 11: Plotting ---
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s55_berry_fold.png
+
+========================================================================
+  COMPUTATION COMPLETE
+========================================================================

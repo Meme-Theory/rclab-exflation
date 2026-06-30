@@ -40,4 +40,4 @@ The KO-dim preservation is the structural surprise. It means the NCG classificat
 
 **How to apply:** When evaluating Lorentzian extensions or signature-change mechanisms, check p-q mod 8, not individual p,q. The KO-dimension is insensitive to balanced signature changes.
 
-**Data**: `tier0-archive/s46_pseudo_riemannian.{py,npz,md}`
+**Data**: `computations/s46_pseudo_riemannian.{py,npz,md}`

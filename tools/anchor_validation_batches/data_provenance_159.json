@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 159,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1581",
+      "anchor_type": "data_provenance",
+      "name": "w1_2_unified_as_79_full",
+      "script_path": "session-82/s82_w1_2_unified_as_79_full.py",
+      "session": "s82",
+      "inputs": "",
+      "outputs": "session-82/s82_w1_2_unified_as_79_full.npz, session-82/s82_w1_2_unified_as_79_full.png",
+      "source_file": "computations/session-82/s82_w1_2_unified_as_79_full.py",
+      "source_context_30_lines": "  389: print(f\"  Branch B: 4-tuple = {four_tuple_B}\")\n  390: print(f\"            closure_sha = {closure_sha_B}\")\n  391: print(f\"            verdict = {res_B['verdict']}\")\n  392: \n  393: # ============================================================\n  394: # SECTION 7: Save .npz (data artifacts)\n  395: # ============================================================\n  396: print(\"\\n[SEC 7] Saving .npz\")\n  397: out_npz = os.path.join(HERE, 's82_w1_2_unified_as_79_full.npz')    # (local)\n  398: np.savez(\n  399:     out_npz,\n  400:     # Branch inputs\n  401:     H_tilde_A=H_tilde_A,\n  402:     H_tilde_B=H_tilde_B,\n  403:     H_tilde_TD_pathB_ref=H_tilde_TD_pathB_ref,\n  404:     H_tilde_LI_obsinv_ref=H_tilde_LI_obsinv_ref,\n  405:     # Common factors"
+    },
+    {
+      "anchor_id": "prov_1582",
+      "anchor_type": "data_provenance",
+      "name": "w1_3_cc_ratios_sg",
+      "script_path": "session-82/s82_w1_3_cc_ratios_sg.py",
+      "session": "s82",
+      "inputs": "",
+      "outputs": "session-82/s82_w1_3_cc_ratios_sg.npz",
+      "source_file": "computations/session-82/s82_w1_3_cc_ratios_sg.py",
+      "source_context_30_lines": "  313: print(f\"  -> verdict:       {verdict}\")\n  314: print(f\"  -> reason:        {reason}\")\n  315: \n  316: # ============================================================\n  317: # SECTION 9: Closure SHA + 4-tuple emit\n  318: # ============================================================\n  319: print(\"\\n[SEC 9] Closure SHA and 4-tuple emit\")\n  320: closure_map = {                                             # (local) ordered input-pin map\n  321:     'script': 's82_w1_3_cc_ratios_sg.py',\n  322:     'd_total': D_TOTAL,\n  323:     'k_values': K_VALUES,\n  324:     'regulators': list(REGULATORS.keys()),\n  325:     'Lambda_test': Lambda_test,\n  326:     'a_4_I': a_4_I,\n  327:     'a_4_II': a_4_II,\n  328:     'a_6': a_6,\n  329:     'a_4': a_4,"
+    },
+    {
+      "anchor_id": "prov_1583",
+      "anchor_type": "data_provenance",
+      "name": "w1_4_chi_n_ward_dual",
+      "script_path": "session-82/s82_w1_4_chi_n_ward_dual.py",
+      "session": "s82",
+      "inputs": "",
+      "outputs": "session-82/s82_w1_4_chi_n_ward_dual.npz, session-82/s82_w1_4_chi_n_ward_dual.png",
+      "source_file": "computations/session-82/s82_w1_4_chi_n_ward_dual.py",
+      "source_context_30_lines": "  418:       f\"|dtau|<={VAN_HOVE_DTAU} of fold): {van_hove_qualify}\")\n  419: print()\n  420: \n  421: # ============================================================\n  422: # SECTION 13: Closure SHA + 4-tuple (S82 canonical emit)\n  423: # ============================================================\n  424: print(\"[SEC 11] Closure SHA-256 and 4-tuple emit\")\n  425: closure_map = {                                                     # (local) ordered input-pin map\n  426:     'script': 's82_w1_4_chi_n_ward_dual.py',\n  427:     'MAX_PQ_SUM': MAX_PQ_SUM,\n  428:     'EVAL_CUTOFF': EVAL_CUTOFF,\n  429:     'TAU_COARSE': TAU_COARSE.tolist(),\n  430:     'TAU_FINE': TAU_FINE.tolist(),\n  431:     'PASS_THRESH': PASS_THRESH,\n  432:     'INFO_THRESH': INFO_THRESH,\n  433:     'scheme': 'WARD-DUAL',\n  434:     'convention': 'EUCLIDEAN',"
+    },
+    {
+      "anchor_id": "prov_1584",
+      "anchor_type": "data_provenance",
+      "name": "w1_5_csub_sign",
+      "script_path": "session-82/s82_w1_5_csub_sign.py",
+      "session": "s82",
+      "inputs": "",
+      "outputs": "session-82/s82_w1_5_csub_sign.npz, session-82/s82_w1_5_csub_sign.png",
+      "source_file": "computations/session-82/s82_w1_5_csub_sign.py",
+      "source_context_30_lines": "  339: # SECTION 9: Closure SHA + 4-tuple emit\n  340: # =============================================================================\n  341: print()\n  342: print(\"-\" * 72)\n  343: print(\"[SEC 8] Closure SHA and 4-tuple emit\")\n  344: print(\"-\" * 72)\n  345: \n  346: closure_map = {                                                        # (local) ordered input-pin map\n  347:     'script': 's82_w1_5_csub_sign.py',\n  348:     'gate_id': 'S82-UNIFIED-AS-79-CSUB-SIGN',\n  349:     'scheme': 'CENTRAL-DIFFERENCE',\n  350:     'convention': 'UNIFIED-AS-79',\n  351:     'L_max': 5,\n  352:     'delta': delta,\n  353:     'c_sub_0': c_sub_0,\n  354:     'H_tilde': H_tilde,\n  355:     'eps_H': eps_H,"
+    },
+    {
+      "anchor_id": "prov_1585",
+      "anchor_type": "data_provenance",
+      "name": "w2_10_b1_jensen_scan",
+      "script_path": "session-82/s82_w2_10_b1_jensen_scan.py",
+      "session": "s82",
+      "inputs": "",
+      "outputs": "session-82/s82_w2_10_b1_jensen_scan.npz, session-82/s82_w2_10_b1_jensen_scan.png",
+      "source_file": "computations/session-82/s82_w2_10_b1_jensen_scan.py",
+      "source_context_30_lines": "  127: SCHEME = \"B1-ACOUSTIC\"                                             # (local)\n  128: CONVENTION = \"JENSEN-TAU-SCAN\"                                     # (local)\n  129: L_MAX = 5                                                          # (local) 5 tau points\n  130: \n  131: # Pre-registered scan per S80 L1532\n  132: TAU_SCAN = [0.15, 0.17, 0.19, 0.21, 0.25]                          # (local)\n  133: \n  134: # Output destinations\n  135: OUT_NPZ = resolve_output(82, 's82_w2_10_b1_jensen_scan.npz')\n  136: OUT_PNG = resolve_output(82, 's82_w2_10_b1_jensen_scan.png')\n  137: VERDICT_TXT = resolve_output(82, 's82_gate_verdicts.txt')\n  138: \n  139: INPUT_FILES = [\n  140:     resolve_script(None, 'canonical_constants.py'),\n  141:     resolve_script(54, 's54_tb_hamiltonian.py'),\n  142: ]\n  143: "
+    },
+    {
+      "anchor_id": "prov_1586",
+      "anchor_type": "data_provenance",
+      "name": "w2_11_s_pp_full_ed",
+      "script_path": "session-82/s82_w2_11_s_pp_full_ed.py",
+      "session": "s82",
+      "inputs": "",
+      "outputs": "session-82/s82_w2_11_s_pp_full_ed.npz, session-82/s82_w2_11_s_pp_full_ed.png",
+      "source_file": "computations/session-82/s82_w2_11_s_pp_full_ed.py",
+      "source_context_30_lines": "  115:     N_cells, J_C2, J_su2, J_u1, T_acoustic,\n  116:     Delta_BCS, Delta_0_OES, Delta_B3, xi_BCS,\n  117:     omega_L1, omega_L2,\n  118:     M_KK_gravity, M_KK,\n  119:     A_s_CMB,\n  120: )\n  121: \n  122: # -------------- paths --------------\n  123: OUT_NPZ = os.path.join(SCRIPT_DIR, \"s82_w2_11_s_pp_full_ed.npz\")\n  124: OUT_PNG = os.path.join(SCRIPT_DIR, \"s82_w2_11_s_pp_full_ed.png\")\n  125: OUT_TXT = os.path.join(SCRIPT_DIR, \"s82_w2_11_s_pp_full_ed_output.txt\")\n  126: VERDICT_FILE = os.path.join(SCRIPT_DIR, \"s82_gate_verdicts.txt\")\n  127: SPECTRUM_CACHE = os.path.join(SCRIPT_DIR, \"s74_spectrum_cache_L9_tau019.npz\")\n  128: S78_NPZ = os.path.join(SCRIPT_DIR, \"s78_multi_band_econd.npz\")\n  129: \n  130: \n  131: def sha256_of(path):"
+    },
+    {
+      "anchor_id": "prov_1587",
+      "anchor_type": "data_provenance",
+      "name": "w2_12_cushion_audit",
+      "script_path": "session-82/s82_w2_12_cushion_audit.py",
+      "session": "s82",
+      "inputs": "",
+      "outputs": "session-82/s82_w2_12_cushion_audit.npz",
+      "source_file": "computations/session-82/s82_w2_12_cushion_audit.py",
+      "source_context_30_lines": "   23: (lines 417, 443, 459, 461-475, 527-531, 722-733, 787-823)\n   24: \n   25: PRE-REGISTERED GATE (S80 plan L1605-L1610):\n   26:   GATE: [AUDIT] S82-CUSHION-DERIVATION-PIN\n   27:   PASS: All citations corrected (as drafts)\n   28:   FAIL: Any citation still uses 13 OOM (uncorrected in draft set)\n   29: \n   30: This script emits:\n   31:   - s82_w2_12_cushion_audit.npz (citation inventory)\n   32:   - verdict line appended to s82_gate_verdicts.txt\n   33:   - working-paper §V.L table prepared separately.\n   34: \"\"\"\n   35: \n   36: import hashlib\n   37: import json\n   38: import os\n   39: import re"
+    },
+    {
+      "anchor_id": "prov_1588",
+      "anchor_type": "data_provenance",
+      "name": "w2_13_f0_convention_audit",
+      "script_path": "session-82/s82_w2_13_f0_convention_audit.py",
+      "session": "s82",
+      "inputs": "",
+      "outputs": "session-82/s82_w2_13_f0_convention_audit.npz",
+      "source_file": "computations/session-82/s82_w2_13_f0_convention_audit.py",
+      "source_context_30_lines": "  103: BAND_WIDTH_PREREG = BAND_HIGH_PREREG - BAND_LOW_PREREG  # (local) = 2.2\n  104: \n  105: # Gate decision rule\n  106: PASS_WIDTH_MIN = 2.0        # (local) OOM; band closes within [2.0, 2.4]\n  107: PASS_WIDTH_MAX = 2.4        # (local) OOM\n  108: FACTOR_2_MAX = 2.0 * BAND_WIDTH_PREREG  # (local) = 4.4 OOM\n  109: \n  110: # Output destinations\n  111: OUT_NPZ = resolve_output(82, 's82_w2_13_f0_convention_audit.npz')\n  112: VERDICT_TXT = resolve_output(82, 's82_gate_verdicts.txt')\n  113: \n  114: INPUT_FILES = [\n  115:     resolve_script(None, 'canonical_constants.py'),\n  116: ]\n  117: \n  118: \n  119: # ---------------------------------------------------------------------------"
+    },
+    {
+      "anchor_id": "prov_1589",
+      "anchor_type": "data_provenance",
+      "name": "w2_14_firas_chluba_full",
+      "script_path": "session-82/s82_w2_14_firas_chluba_full.py",
+      "session": "s82",
+      "inputs": "",
+      "outputs": "session-82/s82_w2_14_firas_chluba_full.npz, session-82/s82_w2_14_firas_chluba_full.png",
+      "source_file": "computations/session-82/s82_w2_14_firas_chluba_full.py",
+      "source_context_30_lines": "  300: print(f\"  FIRAS margin (OOM)         = {firas_margin_oom:.2f}  \"\n  301:       f\"(mu is {firas_margin_oom:.2f} decades below bound)\")\n  302: \n  303: # ============================================================\n  304: # SECTION 6: Save NPZ + generate plot\n  305: # ============================================================\n  306: print(\"\\n[SEC 6] Save NPZ + plot\")\n  307: \n  308: npz_path = os.path.join(HERE, 's82_w2_14_firas_chluba_full.npz')             # (local)\n  309: np.savez(npz_path,\n  310:          # Kernel\n  311:          k_D_mu=k_D_mu,\n  312:          k_D_th=k_D_th,\n  313:          k_peak=k_peak,\n  314:          W_peak=W_peak,\n  315:          # Envelopes (anchors)\n  316:          k_pivot=k_pivot,"
+    },
+    {
+      "anchor_id": "prov_1590",
+      "anchor_type": "data_provenance",
+      "name": "w2_15_phase_alignment_k_scan",
+      "script_path": "session-82/s82_w2_15_phase_alignment_k_scan.py",
+      "session": "s82",
+      "inputs": "",
+      "outputs": "session-82/s82_w2_15_phase_alignment_k_scan.npz, session-82/s82_w2_15_phase_alignment_k_scan.png",
+      "source_file": "computations/session-82/s82_w2_15_phase_alignment_k_scan.py",
+      "source_context_30_lines": "  159: # Pre-registered gate bands per S80 L1697-L1699\n  160: PASS_PCT = 10.0    # (local) PASS if variation <= 10%\n  161: INFO_PCT = 30.0    # (local) INFO if variation in (10%, 30%]\n  162: \n  163: # Sound horizon at CMB decoupling (Planck 2018: r_s(z_*) = 147.78 Mpc)\n  164: R_S_DEC_MPC = 147.78                                          # (local)\n  165: \n  166: # Output destinations\n  167: OUT_NPZ = resolve_output(82, 's82_w2_15_phase_alignment_k_scan.npz')\n  168: OUT_PNG = resolve_output(82, 's82_w2_15_phase_alignment_k_scan.png')\n  169: VERDICT_TXT = resolve_output(82, 's82_gate_verdicts.txt')\n  170: \n  171: INPUT_FILES = [\n  172:     resolve_script(None, 'canonical_constants.py'),\n  173:     resolve_output(75, 's75_phases_bd.npz'),\n  174:     resolve_output(78, 's78_fnl_coherence.npz'),\n  175: ]"
+    }
+  ]
+}

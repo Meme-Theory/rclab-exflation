@@ -17,7 +17,7 @@ Compute whether KK Schwinger pair production rate differs for particles vs antip
 
 **Computation Steps**:
 
-1. Load `tier0-computation/s38_cc_instanton.npz` (S_inst, gap data), `tier0-computation/s35_pfaffian_corrected_j.npz` (J matrix), and Dirac infrastructure from `tier0-computation/tier1_dirac_spectrum.py`.
+1. Load `computations/s38_cc_instanton.npz` (S_inst, gap data), `computations/s35_pfaffian_corrected_j.npz` (J matrix), and Dirac infrastructure from `computations/dirac_spectrum.py`.
 
 2. Separate the Schwinger pair production integral into chiral sectors. The pair production rate per unit volume per unit time is:
 
@@ -37,8 +37,8 @@ Compute whether KK Schwinger pair production rate differs for particles vs antip
 
 **Pre-registered gate SCHWINGER-CP-43**: INFO. If epsilon_CP > 10^{-6}: baryogenesis channel from Schwinger duality. If epsilon_CP = 0 exactly: chiral sectors produce equal matter/antimatter (CP-symmetric).
 
-**Input**: `s38_cc_instanton.npz`, `s35_pfaffian_corrected_j.npz`, `tier1_dirac_spectrum.py`
-**Output**: `tier0-computation/s43_schwinger_cp.{py,npz,png}`
+**Input**: `s38_cc_instanton.npz`, `s35_pfaffian_corrected_j.npz`, `dirac_spectrum.py`
+**Output**: `computations/s43_schwinger_cp.{py,npz,png}`
 
 ### W6-2: Quality Factor Spectrum Q_i for 8 BdG Modes
 
@@ -55,7 +55,7 @@ Extend S41 Q_B2 ~ 10 (struck drum) to all 8 BdG modes. The quality factor Q_i = 
 
 **Computation Steps**:
 
-1. Load V_8x8_full from `tier0-computation/s36_mmax_authoritative.npz` and BdG spectrum from S40 QRPA data.
+1. Load V_8x8_full from `computations/s36_mmax_authoritative.npz` and BdG spectrum from S40 QRPA data.
 
 2. For each mode i (B2×4, B1×1, B3×3): compute the self-energy imaginary part:
 
@@ -74,7 +74,7 @@ Extend S41 Q_B2 ~ 10 (struck drum) to all 8 BdG modes. The quality factor Q_i = 
 **Pre-registered gate Q-SPECTRUM-43**: INFO.
 
 **Input**: `s36_mmax_authoritative.npz`, S40 QRPA data
-**Output**: `tier0-computation/s43_quality_factors.{py,npz,png}`
+**Output**: `computations/s43_quality_factors.{py,npz,png}`
 
 ### W6-3: BG Spinor Overlap Correction to Polariton Gap
 
@@ -103,8 +103,8 @@ Compute the Bourguignon-Gauduchon spinor comparison map correction to the POLARI
 
 **Pre-registered gate BG-POL-43**: INFO.
 
-**Input**: Paper 18 in `researchers/Baptista/`, `s42_polariton.npz`, `tier1_dirac_spectrum.py`
-**Output**: `tier0-computation/s43_bg_spinor_polariton.{py,npz,png}`
+**Input**: Paper 18 in `researchers/Baptista/`, `s42_polariton.npz`, `dirac_spectrum.py`
+**Output**: `computations/s43_bg_spinor_polariton.{py,npz,png}`
 
 ### W6-4: Relic Modulus Fluctuation as Spatial Alpha Pattern
 
@@ -136,7 +136,7 @@ Compute the spatial power spectrum of delta_alpha/alpha from KZ domain structure
 **Pre-registered gate ALPHA-PATTERN-43**: INFO. If amplitude > 10^{-6}: detectable with current instruments.
 
 **Input**: `s42_homogeneity.npz`, `s42_gradient_stiffness.npz`, `s42_constants_snapshot.npz`
-**Output**: `tier0-computation/s43_alpha_pattern.{py,npz,png}`
+**Output**: `computations/s43_alpha_pattern.{py,npz,png}`
 
 ### W6-5: Generalized Second Law for Fabric Transit
 
@@ -166,7 +166,7 @@ Extend GSL-40 to the fabric picture with 32-cell spatial structure. Verify dS_ge
 **Pre-registered gate GSL-43**: INFO. FAIL if dS_gen/dt < 0 at any epoch (GSL violated).
 
 **Input**: `s42_gradient_stiffness.npz`, `s42_gge_energy.npz`, `s42_kz_fnl.npz`
-**Output**: `tier0-computation/s43_gsl_transit.{py,npz,png}`
+**Output**: `computations/s43_gsl_transit.{py,npz,png}`
 
 ### W6-6: Internal First Law with Fabric EOS
 
@@ -184,7 +184,7 @@ Verify the analog first law numerically at the fold: dE = T_a dS_GGE + X_tau dta
 **Pre-registered gate FIRSTLAW-43**: INFO. FAIL if sum deviates from dE by > 1%.
 
 **Input**: `s42_gradient_stiffness.npz`, `s42_gge_energy.npz`, `s42_fabric_wz_v2.npz`, `s42_kz_fnl.npz`
-**Output**: `tier0-computation/s43_first_law.{py,npz,png}`
+**Output**: `computations/s43_first_law.{py,npz,png}`
 
 ---
 
@@ -199,12 +199,12 @@ Verify the analog first law numerically at the fold: dE = T_a dS_GGE + X_tau dta
 
 Test whether f_NL = 0.014 (FNL-42) and xi_KZ = 0.152 M_KK^{-1} are insensitive to the KK tower truncation level max_pq_sum. If critical exponents (nu=0.63, z=2.02) are truly universal (infrared properties), xi_KZ should converge as truncation increases. This is the trans-Planckian universality argument (Hawking Paper 05) applied to KZ defects.
 
-**Computation**: Recompute M_max and BCS gap at max_pq_sum = 4, 5, 6, 7 using `tier1_dirac_spectrum.py`. Derive xi_KZ at each truncation. Report convergence. Variation > 10% = universality violated.
+**Computation**: Recompute M_max and BCS gap at max_pq_sum = 4, 5, 6, 7 using `dirac_spectrum.py`. Derive xi_KZ at each truncation. Report convergence. Variation > 10% = universality violated.
 
 **Pre-registered gate TRANSP-43**: INFO. Report convergence rate.
 
-**Input**: `tier1_dirac_spectrum.py`, `s42_kz_fnl.npz`
-**Output**: `tier0-computation/s43_transplanckian.{py,npz,png}`
+**Input**: `dirac_spectrum.py`, `s42_kz_fnl.npz`
+**Output**: `computations/s43_transplanckian.{py,npz,png}`
 
 ---
 
@@ -224,7 +224,7 @@ Compute the greybody factor Gamma(omega) for BdG quasiparticle modes propagating
 **Pre-registered gate GREYBODY-43**: INFO. PASS if computed Gamma reproduces 0.71 ± 10%.
 
 **Input**: S40 QRPA data, `s42_fabric_dispersion.npz`
-**Output**: `tier0-computation/s43_greybody.{py,npz,png}`
+**Output**: `computations/s43_greybody.{py,npz,png}`
 
 ---
 
@@ -244,7 +244,7 @@ Map all 8 dressed bands omega_i(k) for k in [0, pi/a_KK]. POLARITON-42 found B2-
 **Pre-registered gate POL-BZ-43**: INFO.
 
 **Input**: `s42_polariton.npz`, `s36_mmax_authoritative.npz` (V_8x8_full)
-**Output**: `tier0-computation/s43_polariton_bz.{py,npz,png}`
+**Output**: `computations/s43_polariton_bz.{py,npz,png}`
 
 ---
 
@@ -264,7 +264,7 @@ Compute the multi-metric structure where each BdG branch sees a different effect
 **Pre-registered gate ACOUS-METRIC-43**: INFO.
 
 **Input**: `s42_fabric_dispersion.npz`, `s42_polariton.npz`
-**Output**: `tier0-computation/s43_acoustic_metric.{py,npz,png}`
+**Output**: `computations/s43_acoustic_metric.{py,npz,png}`
 
 ---
 
@@ -286,7 +286,7 @@ Test whether the omega_B2/omega_B1 = 1.988 near-resonance (0.6% from exact 2:1) 
 **Pre-registered gate PARAM-RES-43**: INFO. If any mode unstable: GGE permanence challenged.
 
 **Input**: `s42_fabric_dispersion.npz`, `s42_gradient_stiffness.npz`, `s37_pair_susceptibility.npz`
-**Output**: `tier0-computation/s43_parametric_resonance.{py,npz,png}`
+**Output**: `computations/s43_parametric_resonance.{py,npz,png}`
 
 ### W6-12: Persistent Homology at Sub-Cell Scales
 
@@ -304,7 +304,7 @@ Test whether 32-cell tessellation imprints on persistent Betti numbers of the ma
 **Pre-registered gate PERS-HOM-43**: INFO. Report whether any beta excess detected.
 
 **Input**: LCDM N-body mocks, Papers 27, 28 in `researchers/Cosmic-Web/`
-**Output**: `tier0-computation/s43_persistent_homology.{py,npz,png}`
+**Output**: `computations/s43_persistent_homology.{py,npz,png}`
 
 ---
 
@@ -323,8 +323,8 @@ Determine at what metric fluctuation amplitude the Dirac operator D_K transition
 
 **Pre-registered gate DISSOLUTION-43**: INFO. Report epsilon_crossover.
 
-**Input**: `tier1_dirac_spectrum.py`
-**Output**: `tier0-computation/s43_spectral_dissolution.{py,npz,png}`
+**Input**: `dirac_spectrum.py`
+**Output**: `computations/s43_spectral_dissolution.{py,npz,png}`
 
 ---
 
@@ -344,7 +344,7 @@ If transit occurs through foamy external metric (Hawking), stochastic gravitatio
 **Pre-registered gate FOAM-GGE-43**: INFO.
 
 **Input**: `s42_gge_energy.npz`, `s38_cc_instanton.npz`, `s37_pair_susceptibility.npz`
-**Output**: `tier0-computation/s43_foam_gge.{py,npz,png}`
+**Output**: `computations/s43_foam_gge.{py,npz,png}`
 
 ---
 
@@ -364,7 +364,7 @@ Pre-register: framework predicts ZERO pixellon noise at GQuEST (Paper 17 in `res
 **Pre-registered gate GQUEST-43**: INFO (pre-registration document).
 
 **Input**: `s42_fabric_dispersion.npz` (m_tau), Paper 17 in `researchers/Quantum-Foam/`
-**Output**: `tier0-computation/s43_gquest_prereg.{py,npz,png}`
+**Output**: `computations/s43_gquest_prereg.{py,npz,png}`
 
 ---
 
@@ -384,7 +384,7 @@ Document the structural comparison between Dowker-Sorkin everpresent Lambda (Pap
 **Pre-registered gate DS-LAMBDA-43**: INFO.
 
 **Input**: Paper 19 in `researchers/Quantum-Foam/`, `s42_fabric_wz_v2.npz`
-**Output**: `tier0-computation/s43_dowker_sorkin.{py,npz,png}`
+**Output**: `computations/s43_dowker_sorkin.{py,npz,png}`
 
 ---
 
@@ -399,12 +399,12 @@ Document the structural comparison between Dowker-Sorkin everpresent Lambda (Pap
 
 Determine whether the B2 sector at the fold is in the flat-band BCS regime (Paper 18 in `researchers/Volovik/`: T_c ~ g, linear) or conventional BCS (T_c ~ exp(-1/gN)). Currently W/Delta ~ 0.9 (crossover, not deep flat-band). Even moderate flattening produces linear-in-g scaling (Paper 18 central result).
 
-**Computation**: Map eigenvalue dispersion lambda_k(tau) across full BCS window [0.15, 0.25] using `tier1_dirac_spectrum.py`. Compute effective bandwidth W(tau) of the B2 gap-edge modes at each tau. Flat-band criterion: W << Delta_pair (Delta = 0.464 M_KK from S37). Compute T_c(g) scaling from actual DOS: is it exponential or linear in g? Report W/Delta ratio, T_c scaling, and whether flat-band enhancement is operative.
+**Computation**: Map eigenvalue dispersion lambda_k(tau) across full BCS window [0.15, 0.25] using `dirac_spectrum.py`. Compute effective bandwidth W(tau) of the B2 gap-edge modes at each tau. Flat-band criterion: W << Delta_pair (Delta = 0.464 M_KK from S37). Compute T_c(g) scaling from actual DOS: is it exponential or linear in g? Report W/Delta ratio, T_c scaling, and whether flat-band enhancement is operative.
 
 **Pre-registered gate FLATBAND-43**: INFO.
 
-**Input**: `tier1_dirac_spectrum.py`, `s35_ed_corrected_dos.npz`, Paper 18 in `researchers/Volovik/`
-**Output**: `tier0-computation/s43_flat_band.{py,npz,png}`
+**Input**: `dirac_spectrum.py`, `s35_ed_corrected_dos.npz`, Paper 18 in `researchers/Volovik/`
+**Output**: `computations/s43_flat_band.{py,npz,png}`
 
 ### W6-18: Elasticity Tetrad Derivation of Z(tau)
 
@@ -438,7 +438,7 @@ S42 Baptista collab: Z_spectral is the spectral pullback of the DeWitt supermetr
 **Pre-registered gate ELAST-Z-43**: INFO. Report Z_tetrad and Z_tetrad/Z_spectral ratio.
 
 **Input**: `s42_gradient_stiffness.npz`, Papers 22, 23 in `researchers/Volovik/`
-**Output**: `tier0-computation/s43_elasticity_tetrad.{py,npz,png}`
+**Output**: `computations/s43_elasticity_tetrad.{py,npz,png}`
 
 ---
 
@@ -470,7 +470,7 @@ Resolve the factor 36 discrepancy between S_Schwinger computed from the PG horiz
 **Pre-registered gate SCHWINGER-36-43**: INFO. Report whether factor 36 is resolved.
 
 **Input**: `s38_cc_instanton.npz`, `s42_gradient_stiffness.npz`, Paper 29 in `researchers/Volovik/`
-**Output**: `tier0-computation/s43_schwinger_factor36.{py,npz,png}`
+**Output**: `computations/s43_schwinger_factor36.{py,npz,png}`
 
 ---
 
@@ -489,7 +489,7 @@ Compute all 8 GGE effective temperatures beta_k^{-1} from the Richardson-Gaudin 
 
 **Computation Steps**:
 
-1. Load Richardson-Gaudin eigenvalues from `tier0-computation/s37_pair_susceptibility.npz`.
+1. Load Richardson-Gaudin eigenvalues from `computations/s37_pair_susceptibility.npz`.
 
 2. The GGE density matrix is rho_GGE = (1/Z_GGE) * exp(-sum_k beta_k I_k).
 
@@ -504,7 +504,7 @@ Compute all 8 GGE effective temperatures beta_k^{-1} from the Richardson-Gaudin 
 **Pre-registered gate GGE-TEMP-43**: INFO.
 
 **Input**: `s37_pair_susceptibility.npz`, `s38_cc_instanton.npz`, Paper 34 in `researchers/Volovik/`
-**Output**: `tier0-computation/s43_gge_temperatures.{py,npz,png}`
+**Output**: `computations/s43_gge_temperatures.{py,npz,png}`
 
 ---
 
@@ -536,7 +536,7 @@ Test multiple N_cell values to determine which (if any) discrete mode count from
 **Pre-registered gate KZ-CELL-43**: INFO. Report which N (if any) matches Giant Arc scale.
 
 **Input**: `s42_giant_voronoi.py` (methodology), N_eff values from S41
-**Output**: `tier0-computation/s43_kz_cell_variants.{py,npz,png}`
+**Output**: `computations/s43_kz_cell_variants.{py,npz,png}`
 
 ---
 
@@ -568,7 +568,7 @@ Formalize all 5 pre-registerable predictions from the S42 cosmic web addendum as
 **Pre-registered gate CW-PREREG-43**: INFO (5 pre-registration documents).
 
 **Input**: `sessions/session-42/session-42-cosmic-web-addendum.md`, Papers in `researchers/Cosmic-Web/`
-**Output**: `tier0-computation/s43_cw_preregistrations.{py,npz,png}`
+**Output**: `computations/s43_cw_preregistrations.{py,npz,png}`
 
 ---
 

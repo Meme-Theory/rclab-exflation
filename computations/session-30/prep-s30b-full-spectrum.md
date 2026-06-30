@@ -1,0 +1,20 @@
+### S30B-FULL-SPECTRUM
+- Session: S30
+- Path: computations/session-30/s30b_full_spectrum.py
+- Current SHA head: db571af8f37d55
+- MCP baseline: lambda_min_grad=0.83498966 (gradient-balance tau=0.180, eps=-0.135); phi_30=1.52060698; DOS_grad=62 vs DOS_jensen=46; provenance s30b_full_spectrum_results.txt + Session 30Bb synthesis (trace_entity full_spectrum returns 1 session + 3 provenance + 10 equation hits)
+- Classification: GEOMETRIC (spectral triple eigenvalue problem on U(2)-invariant SU(3) metric; Dirac operator construction via orthonormal frame, spinor connection offset, Cliff8 gammas; results are metric eigenvalues, not phononic observables)
+- Tolerance: THEOREM machine-epsilon (eigenvalues of deterministic dense matrices; anti-Hermiticity 0 to 8.9e-16; no stochasticity)
+- Input pin list: s30b_full_spectrum.py (script), dirac_spectrum.py (su3_generators, compute_structure_constants, compute_killing_form, u2_invariant_metric, orthonormal_frame, frame_structure_constants, connection_coefficients, spinor_connection_offset, build_cliff8, get_irrep, dirac_operator_on_irrep), s23a_kosmann_singlet.py (kosmann_operator_antisymmetric for PMNS path), canonical_constants.py (unused but pinned for audit lineage)
+- PRU machinery:
+  - L_max (MAX_PQ_SUM): pinned = 6 (all (p,q) with p+q <= 6, 28 sectors, max dim 64 -> 1024x1024 matrix)
+  - N_eval: dense spectrum, no truncation within sectors (full eigvals per sector)
+  - Candidates (gate-defined, not free): gradient_balance (tau=0.180, eps=-0.135), sm_weinberg (tau=0.575, eps=-0.005), jensen_ref (tau=0.35, eps=0.0)
+  - T2 direction: pinned = np.array([-11.0, -7.0, 8.0]) (volume-preserving U(2)-invariant off-diagonal, T2-norm sqrt(234))
+  - RHO_SPEC: pinned = 0.01 (spectral action cutoff, Lambda^2 = 1/rho^2 = 1e4)
+  - DELTA_E_DOS: pinned = 0.05 (gap-edge window for DOS gate)
+  - LOAD_BEARING: pinned = [(0,0), (3,0), (0,3)] (F_BCS 3-sector reduction)
+  - PHI_PAASCH_TARGET: pinned = 1.53158 (Paasch m30/m00 reference)
+  - Gate thresholds (pre-registered): P-30phi [1.52, 1.54], P-30golden [1.610, 1.626], P-30pmns (sin2_13 [0.015,0.030] AND theta_23 [40,55] deg), AZ-1 class=BDI, DOS-1 cand>jensen
+  - Seed: none (deterministic dense eigvals)
+  - Compute path: numpy.linalg.eigvals on CPU (1024x1024 max, acceptable per env rules for dense eigvals without Hermitian form; scipy_eigh for PMNS H_eff Hermitian path)

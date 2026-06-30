@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 40,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_391",
+      "anchor_type": "data_provenance",
+      "name": "tracelog_cc",
+      "script_path": "session-44/s44_tracelog_cc.py",
+      "session": "s44",
+      "inputs": "",
+      "outputs": "session-44/s44_tracelog_cc.npz, session-44/s44_tracelog_cc.png",
+      "source_file": "computations/session-44/s44_tracelog_cc.py",
+      "source_context_30_lines": " 1080:     'CC_ratio_log': CC_ratio_log,\n 1081:     'log10_CC_log': log10_CC_ratio_log,\n 1082: \n 1083:     # Gate\n 1084:     'gate_verdict': np.array([gate_verdict]),\n 1085:     'gate_name': np.array(['TRACE-LOG-CC-44']),\n 1086: }\n 1087: \n 1088: outpath = base / \"s44_tracelog_cc.npz\"\n 1089: np.savez(outpath, **results)\n 1090: print(f\"  Saved: {outpath}\")\n 1091: \n 1092: # =============================================================================\n 1093: # 15. PLOT\n 1094: # =============================================================================\n 1095: \n 1096: fig, axes = plt.subplots(2, 2, figsize=(14, 10))"
+    },
+    {
+      "anchor_id": "prov_392",
+      "anchor_type": "data_provenance",
+      "name": "vanhove_track",
+      "script_path": "session-44/s44_vanhove_track.py",
+      "session": "s44",
+      "inputs": "",
+      "outputs": "session-44/s44_vanhove_track.npz, session-44/s44_vanhove_track.png",
+      "source_file": "computations/session-44/s44_vanhove_track.py",
+      "source_context_30_lines": "   14:   - Interior singularities are M_1 (saddle, rho diverges) or M_3 (local max)\n   15: \n   16: Van Hove classification in 1D (discrete spectrum -> 0D effective):\n   17:   M_0: band bottom (rho -> 0, onset)\n   18:   M_1: saddle point (rho has kink/cusp)\n   19:   M_2: band top (rho -> 0, cutoff)\n   20:   M_3: local maximum in DOS (peak)\n   21: \n   22: Output: s44_vanhove_track.npz, s44_vanhove_track.png\n   23: Gate: INFO (diagnostic)\n   24: \"\"\"\n   25: \n   26: import numpy as np\n   27: import matplotlib\n   28: matplotlib.use('Agg')\n   29: import matplotlib.pyplot as plt\n   30: from matplotlib.lines import Line2D"
+    },
+    {
+      "anchor_id": "prov_393",
+      "anchor_type": "data_provenance",
+      "name": "voronoi_fnl",
+      "script_path": "session-44/s44_voronoi_fnl.py",
+      "session": "s44",
+      "inputs": "",
+      "outputs": "session-44/s44_voronoi_fnl.npz, session-44/s44_voronoi_fnl.png",
+      "source_file": "computations/session-44/s44_voronoi_fnl.py",
+      "source_context_30_lines": "    1: \"\"\"\n    2: s44_voronoi_fnl.py — f_NL from 32-cell Voronoi tessellation on S^2\n    3: \n    4: Gate: VORONOI-FNL-44\n    5:   PASS: |f_NL| < 5 (Planck bound satisfied)\n    6:   FAIL: |f_NL| > 5\n    7: \n    8: Physics:\n    9:   The 32-cell Voronoi tessellation of SU(3) imprints temperature anisotropy\n   10:   at cell boundaries: delta_T/T ~ delta_tau/tau ~ 1.75e-6 (gravity route)."
+    },
+    {
+      "anchor_id": "prov_394",
+      "anchor_type": "data_provenance",
+      "name": "acoustic_casimir",
+      "script_path": "session-45/s45_acoustic_casimir.py",
+      "session": "s45",
+      "inputs": "computations/session-44/s44_coherent_wall.npz, computations/session-44/s44_dos_tau.npz, computations/session-43/s43_impe...",
+      "outputs": "session-45/s45_acoustic_casimir.npz, session-45/s45_acoustic_casimir.png",
+      "source_file": "computations/session-45/s45_acoustic_casimir.py",
+      "source_context_30_lines": " 1070:     'E_B2_frac': np.array([E_B2_frac]),\n 1071: \n 1072:     # Parameters\n 1073:     'N_modes': np.array([N_modes]),\n 1074:     'N_domains': np.array([N_domains]),\n 1075:     'L_sep': np.array([L_sep]),\n 1076: }\n 1077: \n 1078: np.savez('computations/session-45/s45_acoustic_casimir.npz', **save_dict)\n 1079: print(\"\\n  Data saved to computations/session-45/s45_acoustic_casimir.npz\")\n 1080: \n 1081: \n 1082: # ============================================================\n 1083: # 12. PLOT\n 1084: # ============================================================\n 1085: \n 1086: fig, axes = plt.subplots(2, 3, figsize=(18, 11))"
+    },
+    {
+      "anchor_id": "prov_395",
+      "anchor_type": "data_provenance",
+      "name": "acoustic_ns",
+      "script_path": "session-45/s45_acoustic_ns.py",
+      "session": "s45",
+      "inputs": "",
+      "outputs": "session-45/s45_acoustic_ns.npz, session-45/s45_acoustic_ns.png",
+      "source_file": "computations/session-45/s45_acoustic_ns.py",
+      "source_context_30_lines": "   34: \n   35: Input:\n   36:     computations/session-27/s27_multisector_bcs.npz (eigenvalues at tau=0.0, 0.10, 0.15)\n   37:     computations/session-36/s36_sfull_tau_stabilization.npz (eigenvalues at tau=0.05, 0.19)\n   38:     computations/session-45/s45_dos_fine_scan.npz (fine scan near fold)\n   39:     computations/_shared/canonical_constants.py\n   40: \n   41: Output:\n   42:     computations/session-45/s45_acoustic_ns.npz\n   43:     computations/session-45/s45_acoustic_ns.png\n   44: \n   45: Author: Tesla-Resonance (Session 45)\n   46: Date: 2026-03-15\n   47: \"\"\"\n   48: \n   49: import sys\n   50: import os"
+    },
+    {
+      "anchor_id": "prov_396",
+      "anchor_type": "data_provenance",
+      "name": "alpha_eff",
+      "script_path": "session-45/s45_alpha_eff.py",
+      "session": "s45",
+      "inputs": "",
+      "outputs": "session-45/s45_alpha_eff.npz, session-45/s45_alpha_eff.png",
+      "source_file": "computations/session-45/s45_alpha_eff.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: ALPHA-EFF-45: Non-Equilibrium Specific Heat Exponent for DM/DE Ratio\n    4: =====================================================================\n    5: \n    6: Compute alpha_eff from the 8-temperature GGE to close the DM/DE factor 2.7.\n    7: \n    8: Physics (Volovik Paper 05 + Paper 27):\n    9:     In any quantum liquid with known microscopic Hamiltonian, the vacuum\n   10:     energy response to a perturbation is:\n   11: \n   12:         rho_vac = -rho_perturbation / alpha\n   13: \n   14:     where alpha = d(ln C_V) / d(ln T) is the specific heat exponent."
+    },
+    {
+      "anchor_id": "prov_397",
+      "anchor_type": "data_provenance",
+      "name": "analytic_torsion",
+      "script_path": "session-45/s45_analytic_torsion.py",
+      "session": "s45",
+      "inputs": "",
+      "outputs": "session-45/s45_analytic_torsion.npz, session-45/s45_analytic_torsion.png",
+      "source_file": "computations/session-45/s45_analytic_torsion.py",
+      "source_context_30_lines": "  615:         print(f\"  zeta'(0) > 0 means T = exp(-(1/2)zeta'(0)) < 1.\")\n  616:         print(f\"  log10 T = {log10_T_fold:.1f}.\")\n  617: \n  618:     # ------------------------------------------------------------------\n  619:     # SAVE\n  620:     # ------------------------------------------------------------------\n  621:     print(\"\\n--- Saving results ---\")\n  622: \n  623:     save_path = os.path.join(os.path.dirname(__file__), 's45_analytic_torsion.npz')\n  624:     np.savez(save_path,\n  625:              # Core torsion results\n  626:              zeta_0_fold=z0_fold,\n  627:              zeta_0_round=z0_round,\n  628:              zeta_prime_0_fold=zp0_fold,\n  629:              zeta_prime_0_round=zp0_round,\n  630:              log10_T_fold=log10_T_fold,\n  631:              log10_T_round=log10_T_round,"
+    },
+    {
+      "anchor_id": "prov_398",
+      "anchor_type": "data_provenance",
+      "name": "cc_gap_update",
+      "script_path": "session-45/s45_cc_gap_update.py",
+      "session": "s45",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-45/s45_cc_gap_update.py",
+      "source_context_30_lines": "    1: \"\"\"\n    2: s45_cc_gap_update.py — CC Gap Update with ALL S45 Results (CC-GAP-UPDATE-45)\n    3: \n    4: Consolidates all S45 CC-relevant computations into an updated gap picture.\n    5: Inputs: 10 NPZ files from S44-S45 + canonical_constants.py.\n    6: Output: Summary to stdout (written into W5-R1 of working paper).\n    7: \n    8: Author: Gen-Physicist\n    9: Session: 45\n   10: \"\"\""
+    },
+    {
+      "anchor_id": "prov_399",
+      "anchor_type": "data_provenance",
+      "name": "cc_hierarchy_cubed",
+      "script_path": "session-45/s45_cc_hierarchy_cubed.py",
+      "session": "s45",
+      "inputs": "",
+      "outputs": "session-45/s45_cc_hierarchy_cubed.npz",
+      "source_file": "computations/session-45/s45_cc_hierarchy_cubed.py",
+      "source_context_30_lines": "   30: - Gilkey (1975): heat kernel expansion\n   31: - canonical_constants.py: M_KK, rho_Lambda_obs\n   32: \n   33: Input files:\n   34:   - computations/session-45/s45_unexpanded_sa.npz (forward moments, eigenvalues)\n   35:   - computations/session-44/s44_eih_grav.npz (singlet fractions)\n   36:   - computations/_shared/canonical_constants.py\n   37: \n   38: Output: computations/session-45/s45_cc_hierarchy_cubed.npz\n   39: \"\"\"\n   40: \n   41: import sys\n   42: import os\n   43: \n   44: # Ensure project root for imports\n   45: sys.path.insert(0, os.path.join(os.path.dirname(__file__)))\n   46: "
+    },
+    {
+      "anchor_id": "prov_400",
+      "anchor_type": "data_provenance",
+      "name": "collective_ns",
+      "script_path": "session-45/s45_collective_ns.py",
+      "session": "s45",
+      "inputs": "computations/session-45/s45_acoustic_ns.npz, computations/session-38/s38_cc_instanton.npz",
+      "outputs": "session-45/s45_collective_ns.npz, session-45/s45_collective_ns.png",
+      "source_file": "computations/session-45/s45_collective_ns.py",
+      "source_context_30_lines": "  197: ax = axes[1, 2]\n  198: vg = mean_gap > 0\n  199: ax.plot(k_vals[vg], np.abs(ratio_k[vg]), 'mo-', ms=6)\n  200: ax.set_xlabel('k')\n  201: ax.set_ylabel('|delta_gap / mean_gap|')\n  202: ax.set_title('Gap Change Ratio')\n  203: \n  204: plt.tight_layout()\n  205: plt.savefig('computations/session-45/s45_collective_ns.png', dpi=150)\n  206: print(\"\\nPlot saved.\")\n  207: \n  208: # Save\n  209: np.savez('computations/session-45/s45_collective_ns.npz',\n  210:     k_values=k_vals,\n  211:     omega_ac_pre=omega_ac_pre, omega_ac_post=omega_ac_post,\n  212:     omega_op_pre=omega_op_pre, omega_op_post=omega_op_post,\n  213:     gap_pre=gap_pre, gap_post=gap_post,"
+    }
+  ]
+}

@@ -12,9 +12,9 @@
 
 Do NOT begin this session until the following files exist:
 - `sessions/session-23/session-23a-synthesis.md` (required)
-- `tier0-computation/s23a_gap_equation.npz` (required)
-- `tier0-computation/s23a_kosmann_singlet.npz` (required)
-- `tier0-computation/s23a_einstein_validation_report.md` (required — Einstein's independent validation)
+- `computations/s23a_gap_equation.npz` (required)
+- `computations/s23a_kosmann_singlet.npz` (required)
+- `computations/s23a_einstein_validation_report.md` (required — Einstein's independent validation)
 
 If any are missing, STOP. Do not proceed on partial information. Notify the team lead.
 
@@ -26,7 +26,7 @@ Estimated runtime: 1.5-2 hours (down from 3-4.5 hours with full Section III).
 
 ## EINSTEIN VALIDATION: CLEAN INPUT
 
-Einstein has independently validated all core numerical claims in the 23a synthesis (see `tier0-computation/s23a_einstein_validation_report.md`). Key findings:
+Einstein has independently validated all core numerical claims in the 23a synthesis (see `computations/s23a_einstein_validation_report.md`). Key findings:
 - M_max = 0.077-0.149: **CONFIRMED** (reconstructed from raw .npz data)
 - V(gap,gap) = 0 selection rule: **CONFIRMED** as genuine representation-theoretic (not numerical)
 - Antisymmetric vs symmetric Kosmann: **CONFIRMED** closure is uncontaminated by s22b formula error
@@ -49,7 +49,7 @@ Only coordinator writes the final synthesis. Sagan contributes via SendMessage.
 No heavy computation in this session (synthesis only). If scripts are needed for spot-checks:
 
 **Python**: `"phonon-exflation-sim/.venv312/Scripts/python.exe"`
-**Output directory**: `tier0-computation/`
+**Output directory**: `computations/`
 **Script prefix**: `s23b_`
 
 ---
@@ -82,7 +82,7 @@ Read `sessions/session-23/session-23a-synthesis.md` completely. Key results:
 1. **Session 23a synthesis**: `sessions/session-23/session-23a-synthesis.md`
    Read completely. This is the primary input document.
 
-2. **Einstein validation report**: `tier0-computation/s23a_einstein_validation_report.md`
+2. **Einstein validation report**: `computations/s23a_einstein_validation_report.md`
    Confirms all core numbers. Sagan need not re-derive.
 
 3. **Session 22 master synthesis**: `sessions/session-22/session-22-master-synthesis.md`
@@ -108,7 +108,7 @@ The original 23b/23c prompts and the 23a synthesis use "P2" to refer to TWO DIFF
 
 - **Source**: Session 22d (Freund-Rubin analysis), original 23b/23c prompts
 - **Computation**: Derive beta/alpha from the 12D spectral action on M^4 x (SU(3), g_Jensen(tau)) using heat kernel coefficients a_2 and a_4. Compare to the fitted value 0.28.
-- **Status**: COMPUTABLE. Infrastructure exists (Riemann tensor 147/147 verified, connection, frame, metric all in tier1_dirac_spectrum.py). Requires fiber integrals of Seeley-DeWitt coefficients over Jensen-deformed SU(3).
+- **Status**: COMPUTABLE. Infrastructure exists (Riemann tensor 147/147 verified, connection, frame, metric all in dirac_spectrum.py). Requires fiber integrals of Seeley-DeWitt coefficients over Jensen-deformed SU(3).
 - **BF if successful**: 50-100 (zero free parameters, specific numerical prediction matching experiment)
 - **Posterior from 6-10% base**: ~35-55%
 - **What it provides**: A prediction of WHERE the modulus minimum should be (tau_0 = 0.30, reproducing sin^2(theta_W) = 0.231), but NO mechanism to hold it there.
@@ -191,7 +191,7 @@ BCS trivial at mu = 0 AND no perturbative mechanism AND rolling quintessence clo
 
 Apply the full Sagan Standard in CLOSED mode:
 
-1. **Pre-registration**: All gates stated before computation (Session 23 master prompt). K-1e was pre-registered as DECISIVE CLOSURE tier.
+1. **Pre-registration**: All gates stated before computation (Session 23 master prompt). K-1e was pre-registered as DECISIVE CLOSURE level.
 2. **Venus Rule**: The prediction (BCS condensate exists at tau_0 ~ 0.30 with mu = 0) was stated. The result (M_max 6.5-12.9x below threshold) is honored. No accommodation.
 3. **Parameter counting**: The gap equation had zero free parameters (V_nm from Kosmann, mu = 0 from spectral action self-consistency, tau grid from existing data).
 4. **Alternative explanations**: The trivial solution is not ambiguous — it is a clean closure, not a marginal result.
@@ -200,7 +200,7 @@ Apply the full Sagan Standard in CLOSED mode:
 ## Posterior Computation
 
 From baselines (panel 40%, Sagan 27%):
-- Apply the K-1e Bayes factor (pre-registered DECISIVE CLOSURE tier)
+- Apply the K-1e Bayes factor (pre-registered DECISIVE CLOSURE level)
 - Compute updated posteriors for panel and Sagan independently
 - State ranges
 

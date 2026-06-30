@@ -1,0 +1,203 @@
+========================================================================
+DESI-DR3-SCENARIO-B-PRECISE-71: Fisher Forecast for Scenario B
+========================================================================
+
+Cosmological parameters (Planck 2018, from canonical_constants):
+  Omega_m  = 0.315
+  Omega_b  = 0.0493
+  Omega_r  = 9.15e-05
+  Omega_DE = 0.684909
+  h        = 0.674
+
+========================================================================
+Loading Upstream Data
+========================================================================
+
+  Framework prediction:
+    w_0 = -0.9180
+    w_a = 0.0000 (canonical, Volovik protection)
+    w_a = 0.0660 (Scenario B, task-specified)
+
+  DESI DR2 measurement (task values):
+    w_0 = -0.752 +/- 0.065
+    w_a = -0.73 +/- 0.25
+    rho(w_0, w_a) = -0.85
+
+  LCDM: w_0 = -1.0, w_a = 0.0
+
+  Scenario B (DR3 center):
+    w_0 = -0.9, w_a = -0.3
+
+  S70 DR3 projections (cross-check):
+    sigma(w_0)_5x = 0.0360
+    sigma(w_a)_5x = 0.1581
+    sigma(w_0)_s68 = 0.0403
+    sigma(w_a)_s68 = 0.1768
+
+========================================================================
+DR3 Fisher Matrix Construction
+========================================================================
+
+  Volume ratio V_DR3/V_DR2 = 2.0
+  sigma(w_0)_DR3 = 0.065 / sqrt(2.0) = 0.0460
+  sigma(w_a)_DR3 = 0.250 / sqrt(2.0) = 0.1768
+  rho = -0.85 (assumed unchanged)
+
+  DR2 Covariance:
+    [[4.225000e-03, -1.381250e-02],
+     [-1.381250e-02, 6.250000e-02]]
+  DR2 Fisher:
+    [[852.9239, 188.4962],
+     [188.4962, 57.6577]]
+
+  DR3 Covariance:
+    [[2.112500e-03, -6.906250e-03],
+     [-6.906250e-03, 3.125000e-02]]
+  DR3 Fisher:
+    [[1705.8479, 376.9924],
+     [376.9924, 115.3153]]
+
+  Cross-check: F_DR3 / F_DR2 ratios:
+    F_DR3[0,0] / F_DR2[0,0] = 2.0000 (expect 2.0)
+    F_DR3[0,1] / F_DR2[0,1] = 2.0000 (expect 2.0)
+    F_DR3[1,0] / F_DR2[1,0] = 2.0000 (expect 2.0)
+    F_DR3[1,1] / F_DR2[1,1] = 2.0000 (expect 2.0)
+
+========================================================================
+SCENARIO B: Framework Tension Forecast
+========================================================================
+
+  If DR3 center = DR2 center (-0.752, -0.73):
+    FW (-0.918, 0.066): chi^2 = 20.443, 4.13-sigma
+
+  Scenario B center (-0.9, -0.3) with DR3 errors:
+    FW (w_a = 0.066):
+      chi^2 = 11.033, tension = 2.88-sigma
+    FW (w_a = 0.0, canonical):
+      chi^2 = 6.860, tension = 2.14-sigma
+    LCDM:
+      chi^2 = 4.817, tension = 1.70-sigma
+
+  1D marginal tensions (Scenario B center):
+    w_0: |-0.918 - (-0.9)| / 0.0460 = 0.39-sigma
+    w_a (ScB): |0.066 - (-0.3)| / 0.1768 = 2.07-sigma
+    w_a (canon): |0.0 - (-0.3)| / 0.1768 = 1.70-sigma
+
+  Task cross-check:
+    |(-0.918) - (-0.752)| / 0.046 = 3.61-sigma (1D, DR2 center)
+
+========================================================================
+DR3 Center-Shift Sensitivity Analysis
+========================================================================
+
+  Observed DR1 -> DR2 shifts:
+    delta(w_0) = -0.025 per release
+    delta(w_a) = +0.320 per release
+  Extrapolated DR3 center (if trend continues):
+    w_0 = -0.777, w_a = -0.410
+
+  P(framework within 2-sigma of DR3) as function of DR3 center shift:
+    delta_w0    w0_DR3   w_0 1D tension  P(<2sig, 1D)
+  ----------  --------  ---------------  ------------
+      -0.050    -0.802             2.52        0.3002
+      -0.025    -0.777             3.07        0.1428
+      +0.000    -0.752             3.61        0.0535
+      +0.025    -0.727             4.16        0.0156
+      +0.050    -0.702             4.70        0.0035
+      +0.075    -0.677             5.24        0.0006
+      +0.100    -0.652             5.79        0.0001
+
+========================================================================
+2D Sensitivity: Framework Tension vs DR3 Center
+========================================================================
+
+  2D scan: 51x51 grid over w_0 in [-1.05, -0.65], w_a in [-1.20, 0.20]
+  Framework viable (< 2-sigma): 264/2601 = 10.1%
+  Framework excluded (> 3-sigma): 2139/2601 = 82.2%
+  FW preferred over LCDM: 1108/2601 = 42.6%
+
+========================================================================
+w_a Discrimination Forecast
+========================================================================
+
+  w_a discrimination (1D):
+    FW (w_a=0) vs Scenario B center (w_a=-0.30): |0 - (-0.30)| / 0.1768 = 1.70-sigma
+    FW (w_a=0.066) vs Scenario B center (w_a=-0.30): |0.066 - (-0.30)| / 0.1768 = 2.07-sigma
+    FW (w_a=0.066) vs DR2 (w_a=-0.73): |0.066 - (-0.73)| / 0.250 = 3.18-sigma (current)
+
+  Cross-reference: DESI DR2 w_a = -0.73 (actual), not -1.0 (task text)
+    Using actual DR2 value for tension calculation.
+
+========================================================================
+Posterior Probability P(framework | DR3 Scenario B)
+========================================================================
+
+  Prior: flat over w_0 x w_a = [1.0] x [4.0]
+  Prior density = 0.2500
+  |Sigma_DR3| = 1.831934e-05
+
+  Savage-Dickey at Scenario B center (w_0=-0.9, w_a=-0.3):
+    Framework (w_a=0.066):
+      chi^2 = 11.033
+      posterior density = 1.495071e-01
+      Bayes factor B_01 = 0.5980
+      P(FW | DR3, ScB) = 0.3742
+    Framework (w_a=0, canonical):
+      chi^2 = 6.860
+      posterior density = 1.204569e+00
+      Bayes factor B_01 = 4.8183
+      P(FW_canon | DR3, ScB) = 0.8281
+    LCDM:
+      chi^2 = 4.817
+      posterior density = 3.344250e+00
+      Bayes factor B_01 = 13.3770
+      P(LCDM | DR3, ScB) = 0.9304
+
+========================================================================
+Cross-Check: Framework Tension Across All Three Scenarios
+========================================================================
+
+                   Scenario     w_0     w_a    FW sig  FW_c sig   LCDM sig      FW class
+  -------------------------  ------  ------  --------  --------  ---------  ------------
+           A (confirms DR2)   -0.75   -0.73      4.12      3.73       5.16      EXCLUDED
+            B (toward LCDM)   -0.90   -0.30      2.88      2.14       1.70       TENSION
+            C (more dyn DE)   -0.65   -1.00      5.84      5.64       7.48      EXCLUDED
+
+  S70 values for reference (5x DR1 volume, different scaling):
+    Sc.A (confirms DR2): FW 4.44-sig (S70), LCDM 7.04-sig (S70)
+    Sc.B (toward LCDM): FW 2.37-sig (S70), LCDM 2.44-sig (S70)
+    Sc.C (more dyn DE): FW 7.13-sig (S70), LCDM 37.07-sig (S70)
+
+========================================================================
+SUMMARY: DESI-DR3-SCENARIO-B-PRECISE-71
+========================================================================
+
+  DESI DR3 Fisher Forecast (2x DR2 volume):
+    sigma(w_0)_DR3 = 0.0460
+    sigma(w_a)_DR3 = 0.1768
+    rho(w_0, w_a)  = -0.85
+
+  Scenario B Tension (DR3 center = (-0.90, -0.30)):
+    FW (w_a=0.066):   2.88-sigma (2D)
+    FW (w_a=0):       2.14-sigma (2D)
+    LCDM:             1.70-sigma (2D)
+
+  1D w_0 tension (FW vs DR2 center):
+    |(-0.918) - (-0.752)| / 0.046 = 3.61-sigma
+
+  w_a discrimination (1D, Scenario B center):
+    FW (w_a=0) vs -0.30:     1.70-sigma
+    FW (w_a=0.066) vs -0.30: 2.07-sigma
+
+  Posterior probability P(model | DR3, Scenario B):
+    P(FW, w_a=0.066)  = 0.3742  (BF = 0.5980)
+    P(FW, w_a=0)      = 0.8281  (BF = 4.8183)
+    P(LCDM)           = 0.9304  (BF = 13.3770)
+
+  Gate classification: Scenario B creates TENSION with framework (2-3 sigma)
+
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s71_desi_dr3_scenario_b.npz
+  Keys: 35
+  Plot: C:\sandbox\Ainulindale Exflation\tier0-computation\s71_desi_dr3_scenario_b.png
+
+Done.

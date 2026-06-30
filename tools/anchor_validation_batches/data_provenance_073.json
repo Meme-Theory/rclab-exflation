@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 73,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_721",
+      "anchor_type": "data_provenance",
+      "name": "leggett_tau_profile",
+      "script_path": "session-57/s57_leggett_tau_profile.py",
+      "session": "s57",
+      "inputs": "s56_leggett_fabric.npz, s54_scale_factor.npz, s53_hfb_spectral.npz, s44_dos_tau.npz",
+      "outputs": "session-57/s57_leggett_tau_profile.npz, session-57/s57_leggett_tau_profile.png",
+      "source_file": "computations/session-57/s57_leggett_tau_profile.py",
+      "source_context_30_lines": "  491: print(hdr)\n  492: for i in range(0, 50, 5):\n  493:     print(f\"  {tau_50[i]:8.4f}  {omega_L0_tau[i]:10.6f}  {Delta_B1_50[i]:10.6f}  {Delta_B2_50[i]:10.6f}  {E_J_50[i]:10.4f}  {gamma_LZ[i]:12.4e}  {ratio_omegaL0_H[i]:10.4e}  {P_LZ_exc[i]:8.6f}\")\n  494: \n  495: # ===========================================================================\n  496: #  SECTION 13: Save results\n  497: # ===========================================================================\n  498: \n  499: np.savez('s57_leggett_tau_profile.npz',\n  500:     # Grid\n  501:     tau_values=tau_50,\n  502:     fold_idx=fold_idx,\n  503: \n  504:     # Leggett gap profile (MAIN RESULT)\n  505:     omega_L0=omega_L0_tau,\n  506:     omega_L0_const_gap=omega_L0_const_gap,\n  507:     omega_L0_smooth=omega_L0_smooth,"
+    },
+    {
+      "anchor_id": "prov_722",
+      "anchor_type": "data_provenance",
+      "name": "ns_mapping",
+      "script_path": "session-57/s57_ns_mapping.py",
+      "session": "s57",
+      "inputs": "computations/session-57/s57_finite_rate_transit.npz, computations/session-57/s57_leggett_partition.npz, computations/ses...",
+      "outputs": "session-57/s57_ns_mapping.npz",
+      "source_file": "computations/session-57/s57_ns_mapping.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s57_ns_mapping.py — NS-MAPPING-57 (W3-8)\n    4: =========================================\n    5: Transfer function: KK-scale DM properties → cosmological observables.\n    6: \n    7: Gate: INFO — map GGE quasiparticle DM to observable signatures.\n    8: \n    9: Method:\n   10:   1. Mass spectrum: m_DM = E_k * M_KK for each GGE branch\n   11:   2. Self-scattering cross-section: sigma/m from scattering length and quasiparticle mass"
+    },
+    {
+      "anchor_id": "prov_723",
+      "anchor_type": "data_provenance",
+      "name": "off_jensen_ej",
+      "script_path": "session-57/s57_off_jensen_ej.py",
+      "session": "s57",
+      "inputs": "computations/session-54/s54_off_jensen_t2.npz, computations/session-54/s54_tb_hamiltonian.npz",
+      "outputs": "session-57/s57_off_jensen_ej.npz",
+      "source_file": "computations/session-57/s57_off_jensen_ej.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s57_off_jensen_ej.py — OFF-JENSEN-EJ-57 (W3-4)\n    4: =================================================\n    5: Gate: Is E_J(tau, sigma) non-monotonic off-Jensen?\n    6: \n    7: Method:\n    8:   1. Load s54_off_jensen_t2.npz for 2D landscape V(tau, sigma)\n    9:   2. Load s54_tb_hamiltonian.npz for J_C2(tau) on-Jensen\n   10:   3. Construct J_C2(tau, sigma) by interpolating off-Jensen metric effects\n   11:   4. F_anom(tau, sigma) from spectral action anomalous dimension"
+    },
+    {
+      "anchor_id": "prov_724",
+      "anchor_type": "data_provenance",
+      "name": "omega_l_tau_sweep",
+      "script_path": "session-57/s57_omega_l_tau_sweep.py",
+      "session": "s57",
+      "inputs": "s56_leggett_fabric.npz, s54_scale_factor.npz, s53_hfb_spectral.npz, s44_dos_tau.npz, s57_leggett_tau_profile.npz",
+      "outputs": "session-57/s57_omega_l_tau_sweep.npz, session-57/s57_omega_l_tau_sweep.png",
+      "source_file": "computations/session-57/s57_omega_l_tau_sweep.py",
+      "source_context_30_lines": "  489: ax.tick_params(axis='y', labelcolor='blue')\n  490: ax2.tick_params(axis='y', labelcolor='red')\n  491: lns = [ln1, ln2]\n  492: labs = [l.get_label() for l in lns]\n  493: ax.legend(lns, labs, fontsize=8)\n  494: ax.grid(True, alpha=0.3)\n  495: \n  496: plt.tight_layout()\n  497: plt.savefig('s57_omega_l_tau_sweep.png', dpi=150, bbox_inches='tight')\n  498: print(f\"\\nPlot saved: s57_omega_l_tau_sweep.png\")\n  499: \n  500: # ===========================================================================\n  501: #  SECTION 16: Save .npz\n  502: # ===========================================================================\n  503: np.savez('s57_omega_l_tau_sweep.npz',\n  504:     # Grid\n  505:     tau_values=tau_100,"
+    },
+    {
+      "anchor_id": "prov_725",
+      "anchor_type": "data_provenance",
+      "name": "parker_ba",
+      "script_path": "session-57/s57_parker_ba.py",
+      "session": "s57",
+      "inputs": "",
+      "outputs": "session-57/s57_parker_ba.npz",
+      "source_file": "computations/session-57/s57_parker_ba.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s57_parker_ba.py — Parker (cosmological) particle creation for 31 BA phonon modes\n    4: ==================================================================================\n    5: \n    6: Gate: PARKER-BA-57\n    7:   PASS: <n> > 1 for any BA mode at any tau in [0.10, 0.30]\n    8:   FAIL: <n> < 0.01 at all tau\n    9: \n   10: Physics:\n   11:   The BA (Bogoliubov-Anderson) modes are dispersive phonons on the 32-cell fabric."
+    },
+    {
+      "anchor_id": "prov_726",
+      "anchor_type": "data_provenance",
+      "name": "percolation_cc",
+      "script_path": "session-57/s57_percolation_cc.py",
+      "session": "s57",
+      "inputs": "s54_tb_hamiltonian.npz, s56_post_transit_coh.npz, s54_scale_factor.npz",
+      "outputs": "session-57/s57_percolation_cc.npz",
+      "source_file": "computations/session-57/s57_percolation_cc.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s57_percolation_cc.py — Percolation Threshold on the 32-Cell Tessellation Graph\n    4: ================================================================================\n    5: Gate: PERCOLATION-CC-57 (INFO)\n    6: \n    7: Computes the bond percolation structure of the 32-cell CG graph as a function\n    8: of modulus tau. At each tau, bonds with E_J(tau)/H(tau) > 1 are \"coherent\"\n    9: (connected); the rest are \"broken\". We track:\n   10:   1. Connected component structure vs tau\n   11:   2. Largest connected component size"
+    },
+    {
+      "anchor_id": "prov_727",
+      "anchor_type": "data_provenance",
+      "name": "phase_diagram",
+      "script_path": "session-57/s57_phase_diagram.py",
+      "session": "s57",
+      "inputs": "computations/session-56/s56_ba_spectrum.npz, computations/session-56/s56_bkt_test.npz, computations/session-54/s54_tb_ha...",
+      "outputs": "session-57/s57_phase_diagram.npz, session-57/s57_phase_diagram.png",
+      "source_file": "computations/session-57/s57_phase_diagram.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s57_phase_diagram.py — PHASE-DIAGRAM-57 (W3-12)\n    4: =================================================\n    5: \n    6: Full E_J/E_c vs T_GH/T_BKT phase diagram of the Josephson array\n    7: as the transit evolves through tau in [0, 0.5].\n    8: \n    9: Physics (Landau framing):\n   10:     The order parameter is the macroscopic phase phi of the condensate.\n   11:     The symmetry group is U(1), broken in the superfluid phase."
+    },
+    {
+      "anchor_id": "prov_728",
+      "anchor_type": "data_provenance",
+      "name": "stuckelberg_dm",
+      "script_path": "session-57/s57_stuckelberg_dm.py",
+      "session": "s57",
+      "inputs": "",
+      "outputs": "session-57/s57_stuckelberg_dm.npz",
+      "source_file": "computations/session-57/s57_stuckelberg_dm.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s57_stuckelberg_dm.py — STUCKELBERG-DM-57 (W3-10)\n    4: ====================================================\n    5: Gate: INFO — does Stuckelberg interference at intermediate tau\n    6: produce a new DM channel?\n    7: \n    8: Method:\n    9:   1. Load 2-cell TB eigenvalues (32 levels, 50 tau points)\n   10:   2. Identify all level quasi-crossings in [0.10, 0.40]\n   11:   3. For consecutive quasi-crossings on same level pair:"
+    },
+    {
+      "anchor_id": "prov_729",
+      "anchor_type": "data_provenance",
+      "name": "sub_gap_partition",
+      "script_path": "session-57/s57_sub_gap_partition.py",
+      "session": "s57",
+      "inputs": "",
+      "outputs": "session-57/s57_sub_gap_partition.npz",
+      "source_file": "computations/session-57/s57_sub_gap_partition.py",
+      "source_context_30_lines": "  504: print(f\"    QPs SURVIVE transit (Gamma*dt << 1)\")\n  505: print(f\"  T-4 (BLV exponent): (d-1)/(2*(d-1)) = 1/2 for ALL d. INFO.\")\n  506: print(f\"  T-6 (Plasma line): omega_J NOT a discrete peak in g(omega).\")\n  507: print(f\"    It is a collective mode (contrast {contrast:.2f}x at resolution {sigma_resolution})\")\n  508: \n  509: # ============================================================\n  510: # Save\n  511: # ============================================================\n  512: save_path = r\"C:\\sandbox\\Ainulindale Exflation\\computations\\s57_sub_gap_partition.npz\"\n  513: np.savez(save_path,\n  514:     # Grid\n  515:     tau_values=tau_vals,\n  516:     # BA spectrum\n  517:     omega_BA=omega_BA,\n  518:     N_modes=np.int64(N_modes),\n  519:     # Gap thresholds\n  520:     gap_thresh_GL=np.float64(gap_thresh_GL),"
+    },
+    {
+      "anchor_id": "prov_730",
+      "anchor_type": "data_provenance",
+      "name": "topology_transition",
+      "script_path": "session-57/s57_topology_transition.py",
+      "session": "s57",
+      "inputs": "",
+      "outputs": "session-57/s57_topology_transition.npz",
+      "source_file": "computations/session-57/s57_topology_transition.py",
+      "source_context_30_lines": "  519:     # Gate info\n  520:     'gate_name': 'TOPOLOGY-TRANSITION-57',\n  521:     'gate_verdict': verdict,\n  522:     'gate_detail': (f'Quasi-crossing at tau={tau_at_target:.4f}: '\n  523:                     f'gap={gap_at_target:.2e}, {n_swaps} character swaps, '\n  524:                     f'Z_2 constant, AVOIDED CROSSING (not topological)'),\n  525: }\n  526: \n  527: out_npz = os.path.join(SCRIPT_DIR, 's57_topology_transition.npz')\n  528: np.savez(out_npz, **save_dict)\n  529: print(f\"\\n  Saved: {out_npz}\")\n  530: \n  531: elapsed = time.time() - t0\n  532: print(f\"  Runtime: {elapsed:.1f}s\")\n  533: print(f\"\\nDONE\")\n  534: print(\"=\" * 78)"
+    }
+  ]
+}

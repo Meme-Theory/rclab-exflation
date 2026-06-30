@@ -66,14 +66,14 @@ Session 27 corrects these by running the computations that should have been run.
 - Omega_T should be anti-Hermitian (same as Omega_LC).
 - D_T should have purely imaginary eigenvalues at all tau.
 
-**Script**: `tier0-computation/s27_torsion_gap_gate.py`
-**Output**: `tier0-computation/s27_torsion_gap_gate.npz`
+**Script**: `computations/s27_torsion_gap_gate.py`
+**Output**: `computations/s27_torsion_gap_gate.npz`
 **Time estimate**: ~2 hrs (21 tau values × 4 sectors × eigenvalue solve)
 
 **Files to modify/create**:
-- NEW: `tier0-computation/s27_torsion_gap_gate.py`
-- READ: `tier0-computation/tier1_dirac_spectrum.py` (import infrastructure)
-- READ: `tier0-computation/s26_torsion_diagnostics.py` (reuse `compute_torsion_from_code()`)
+- NEW: `computations/s27_torsion_gap_gate.py`
+- READ: `computations/dirac_spectrum.py` (import infrastructure)
+- READ: `computations/s26_torsion_diagnostics.py` (reuse `compute_torsion_from_code()`)
 
 ---
 
@@ -128,7 +128,7 @@ Session 27 corrects these by running the computations that should have been run.
    — NOTE: (1,2) is conjugate to (2,1) and will have identical |F_cond|. Compute (2,1) only, note symmetry.
 
    For each sector:
-   - Load D_K eigenvalues from existing tier1 data (or compute fresh)
+   - Load D_K eigenvalues from existing data (or compute fresh)
    - Compute Kosmann K_a matrices in that sector (extending s23a methodology)
    - Build V_nm pairing matrix: V_nm = sum_{a=3,4,5,6} |<n|K_a|m>|²
    - Run BCS self-consistent iteration at mu = {0, 0.5, 0.8, 0.9, 0.95, 1.0, 1.05, 1.1, 1.2, 1.5, 2.0, 3.0} × lambda_min
@@ -145,19 +145,19 @@ Session 27 corrects these by running the computations that should have been run.
 **Gate**: If F_total has a minimum at tau_0 ∈ (0, 0.5]: **RESCUE** (multi-sector BCS locks tau).
 If F_total is monotonically decreasing from tau=0: **CLOSED** (multi-sector BCS doesn't help).
 
-**Prerequisite**: Need Kosmann matrices per sector. The s23a computation only generated them for (0,0). The `tier1_dirac_spectrum.py` infrastructure supports arbitrary (p,q) via `get_irrep()` and `dirac_operator_on_irrep()`, but the Kosmann derivative computation needs to be extended.
+**Prerequisite**: Need Kosmann matrices per sector. The s23a computation only generated them for (0,0). The `dirac_spectrum.py` infrastructure supports arbitrary (p,q) via `get_irrep()` and `dirac_operator_on_irrep()`, but the Kosmann derivative computation needs to be extended.
 
 **Key consideration for large sectors**: (2,1) has 240 modes → 240×240 BCS kernel. Self-consistent iteration may need 10-50k steps. Budget ~30 min per sector per tau value for the largest sectors.
 
-**Script**: `tier0-computation/s27_multisector_bcs.py`
-**Output**: `tier0-computation/s27_multisector_bcs.npz`
+**Script**: `computations/s27_multisector_bcs.py`
+**Output**: `computations/s27_multisector_bcs.npz`
 **Time estimate**: ~12-20 hrs (9 sectors × 9 tau × 12 mu values, sector sizes 16-240 modes)
 
 **Files to modify/create**:
-- NEW: `tier0-computation/s27_multisector_bcs.py`
-- READ: `tier0-computation/s26_multimode_bcs.py` (reuse BCS iteration logic)
-- READ: `tier0-computation/s23a_kosmann_singlet.npz` (reference for (0,0) validation)
-- READ: `tier0-computation/tier1_dirac_spectrum.py` (sector infrastructure)
+- NEW: `computations/s27_multisector_bcs.py`
+- READ: `computations/s26_multimode_bcs.py` (reuse BCS iteration logic)
+- READ: `computations/s23a_kosmann_singlet.npz` (reference for (0,0) validation)
+- READ: `computations/dirac_spectrum.py` (sector infrastructure)
 
 ---
 
@@ -180,7 +180,7 @@ If F_total is monotonically decreasing from tau=0: **CLOSED** (multi-sector BCS 
 2. **P2 (a₆ correction)** — Documentation only. Write after P1 finishes. ~30 min.
 3. **P3 (multi-sector BCS)** — Largest computation. 9 sectors, p+q ≤ 3. Start after P1 validates infrastructure. ~12-20 hrs.
 
-P1 and P3 are independent and can run in parallel. P1 uses the Dirac operator infrastructure for torsion; P3 uses it for Kosmann matrices per sector. No shared state beyond tier1_dirac_spectrum.py imports.
+P1 and P3 are independent and can run in parallel. P1 uses the Dirac operator infrastructure for torsion; P3 uses it for Kosmann matrices per sector. No shared state beyond dirac_spectrum.py imports.
 
 **If P1 reveals torsion weakens the gap**: Re-run P3 with torsion-modified spectrum (D_T eigenvalues as BCS input instead of D_K). This is a contingent P3b that only triggers on T-1 PASS.
 

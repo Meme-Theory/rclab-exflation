@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 35,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_341",
+      "anchor_type": "data_provenance",
+      "name": "qfluc_tau0",
+      "script_path": "session-43/s43_qfluc_tau0.py",
+      "session": "s43",
+      "inputs": "computations/session-36/s36_sfull_tau_stabilization.npz, computations/session-42/s42_gradient_stiffness.npz, computation...",
+      "outputs": "session-43/s43_qfluc_tau0.npz, session-43/s43_qfluc_tau0.png",
+      "source_file": "computations/session-43/s43_qfluc_tau0.py",
+      "source_context_30_lines": "  774:     print(f\"  M_KK ({label}) = {mkk:.2e} GeV:\")\n  775:     print(f\"    P_R = {PR_mkk:.3e}, log10(P_R/A_s) = {np.log10(PR_mkk/A_s_obs):.2f}\")\n  776:     print(f\"    m_tau/H = {mH_mkk:.1f}, N_e = {Ne_mkk:.3e}\")\n  777:     print(f\"    epsilon = {eps_mkk:.3e}, eta = {M_Pl_reduced**2 * d2S_dtau2_0 * mkk**2/(16*np.pi**2*Z_0) / V_mkk:.3e}\")\n  778: \n  779: # ============================================================\n  780: # 12. Save results\n  781: # ============================================================\n  782: np.savez('computations/session-43/s43_qfluc_tau0.npz',\n  783:     # tau=0 characterization\n  784:     S_0=S_0,\n  785:     dS_dtau_0=dS_dtau_0,\n  786:     d2S_dtau2_0=d2S_dtau2_0,\n  787:     Z_0=Z_0,\n  788:     # Effective mass\n  789:     m_tau_MKK=m_tau_MKK,\n  790:     m_tau_GeV=m_tau_GeV,"
+    },
+    {
+      "anchor_id": "prov_342",
+      "anchor_type": "data_provenance",
+      "name": "qtheory_selftune",
+      "script_path": "session-43/s43_qtheory_selftune.py",
+      "session": "s43",
+      "inputs": "computations/session-36/s36_sfull_tau_stabilization.npz, computations/session-42/s42_gradient_stiffness.npz, computation...",
+      "outputs": "session-43/s43_qtheory_selftune.npz, session-43/s43_qtheory_selftune.png",
+      "source_file": "computations/session-43/s43_qtheory_selftune.py",
+      "source_context_30_lines": "  754:     f\"  S_fold -> Delta_S: {np.log10(S_fold_val/Delta_S_fold):.2f} orders\",\n  755:     f\"  (removes ground-state energy)\",\n  756: ]\n  757: ax.text(0.05, 0.95, '\\n'.join(summary_lines), transform=ax.transAxes,\n  758:         fontsize=9, verticalalignment='top', fontfamily='monospace',\n  759:         bbox=dict(boxstyle='round', facecolor='lightyellow', alpha=0.8))\n  760: \n  761: plt.tight_layout()\n  762: plt.savefig('computations/session-43/s43_qtheory_selftune.png', dpi=150, bbox_inches='tight')\n  763: print(\"Plot saved: computations/session-43/s43_qtheory_selftune.png\")\n  764: \n  765: # ===========================================================================\n  766: # SAVE DATA\n  767: # ===========================================================================\n  768: print(\"\\nSaving data...\")\n  769: \n  770: save_dict = {"
+    },
+    {
+      "anchor_id": "prov_343",
+      "anchor_type": "data_provenance",
+      "name": "quality_factors",
+      "script_path": "session-43/s43_quality_factors.py",
+      "session": "s43",
+      "inputs": "",
+      "outputs": "session-43/s43_quality_factors.npz, session-43/s43_quality_factors.png",
+      "source_file": "computations/session-43/s43_quality_factors.py",
+      "source_context_30_lines": "  490: for i in range(8):\n  491:     lbl = str(labels[i])\n  492:     analog, damp = analogs[lbl]\n  493:     print(f\"{lbl:<10} {Q_canonical[i]:8.1f} {analog:>25} {damp:>20}\")\n  494: \n  495: # ============================================================\n  496: # 11. Save results\n  497: # ============================================================\n  498: out = base / \"s43_quality_factors.npz\"\n  499: np.savez(out,\n  500:     # Canonical Q spectrum\n  501:     Q_canonical=Q_canonical,\n  502:     Q_method=np.array(Q_method),\n  503:     labels=labels,\n  504:     E_qp=E_qp,\n  505:     branch=branch,\n  506:     # FGR data (valid for B1, B3)"
+    },
+    {
+      "anchor_id": "prov_344",
+      "anchor_type": "data_provenance",
+      "name": "schwinger_cp",
+      "script_path": "session-43/s43_schwinger_cp.py",
+      "session": "s43",
+      "inputs": "",
+      "outputs": "session-43/s43_schwinger_cp.npz, session-43/s43_schwinger_cp.png",
+      "source_file": "computations/session-43/s43_schwinger_cp.py",
+      "source_context_30_lines": "  546: # =============================================================================\n  547: #  SAVE DATA\n  548: # =============================================================================\n  549: print()\n  550: print(\"=\" * 78)\n  551: print(\"SAVING DATA\")\n  552: print(\"=\" * 78)\n  553: \n  554: save_path = os.path.join(SCRIPT_DIR, 's43_schwinger_cp.npz')\n  555: np.savez(save_path,\n  556:     # Gate\n  557:     gate='SCHWINGER-CP-43',\n  558:     verdict=verdict,\n  559:     max_epsilon_cp=max_eps_global,\n  560:     # (0,0) singlet scan\n  561:     tau_values=tau_values,\n  562:     evals_all=evals_all,"
+    },
+    {
+      "anchor_id": "prov_345",
+      "anchor_type": "data_provenance",
+      "name": "schwinger_factor36",
+      "script_path": "session-43/s43_schwinger_factor36.py",
+      "session": "s43",
+      "inputs": "computations/session-38/s38_cc_instanton.npz, computations/session-42/s42_gradient_stiffness.npz",
+      "outputs": "session-43/s43_schwinger_factor36.npz, session-43/s43_schwinger_factor36.png",
+      "source_file": "computations/session-43/s43_schwinger_factor36.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s43_schwinger_factor36.py -- SCHWINGER-36-43: Resolve factor-36 discrepancy\n    4: between S_Schwinger from PG horizon formula (S42) and S_inst = 0.069 (S37).\n    5: \n    6: Gate: SCHWINGER-36-43 (INFO)\n    7: Agent: volovik-superfluid-universe-theorist\n    8: \n    9: RESOLUTION: The \"factor 36\" is a formula error, not a physics discrepancy.\n   10: The S42 Volovik review used a PG-horizon analog formula with three wrong\n   11: ingredients (kappa_eff from gradient stiffness, E_cond instead of Delta_0,"
+    },
+    {
+      "anchor_id": "prov_346",
+      "anchor_type": "data_provenance",
+      "name": "sidm_nfw",
+      "script_path": "session-43/s43_sidm_nfw.py",
+      "session": "s43",
+      "inputs": "",
+      "outputs": "session-43/s43_sidm_nfw.npz, session-43/s43_sidm_nfw.png",
+      "source_file": "computations/session-43/s43_sidm_nfw.py",
+      "source_context_30_lines": "  521: \n  522: if result2[0] is not None:\n  523:     print(f\"NFW vs FDM:  DISTINGUISHABLE at R = {result2[0]:.0f}-{result2[1]:.0f} pc \"\n  524:           f\"(peak {result2[2]:.1f}-sigma, optimistic)\")\n  525: else:\n  526:     print(f\"NFW vs FDM:  NOT distinguishable with current JWST+mu={mu:.0f}\")\n  527: \n  528: # Save NPZ\n  529: np.savez('computations/session-43/s43_sidm_nfw.npz',\n  530:     # Gate\n  531:     gate_id=np.array(['SIDM-NFW-43']),\n  532:     gate_verdict=np.array(['INFO']),\n  533: \n  534:     # Parameters\n  535:     M_BH=np.array([M_BH]),\n  536:     M_BH_err=np.array([M_BH_err]),\n  537:     M_h=np.array([M_h]),"
+    },
+    {
+      "anchor_id": "prov_347",
+      "anchor_type": "data_provenance",
+      "name": "simons_prereg",
+      "script_path": "session-43/s43_simons_prereg.py",
+      "session": "s43",
+      "inputs": "",
+      "outputs": "session-43/s43_simons_prereg.npz, session-43/s43_simons_prereg.png",
+      "source_file": "computations/session-43/s43_simons_prereg.py",
+      "source_context_30_lines": "  481: print(f\"\")\n  482: print(f\"  Timeline: SO first light 2024, design sensitivity ~2027-2028\")\n  483: print(f\"  Expected resolution by ~2028\")\n  484: \n  485: # ============================================================\n  486: # Save data\n  487: # ============================================================\n  488: np.savez(\n  489:     \"computations/session-43/s43_simons_prereg.npz\",\n  490:     ell_values=ell_values,\n  491:     Cl_kk=Cl_kk,\n  492:     l_band_centers=l_band_centers,\n  493:     Cl_bands=Cl_bands,\n  494:     Nl_bands=Nl_bands,\n  495:     sigma_Cl=sigma_Cl,\n  496:     snr_per_band=snr_per_band,\n  497:     total_snr=total_snr,"
+    },
+    {
+      "anchor_id": "prov_348",
+      "anchor_type": "data_provenance",
+      "name": "spectral_dissolution",
+      "script_path": "session-43/s43_spectral_dissolution.py",
+      "session": "s43",
+      "inputs": "",
+      "outputs": "session-43/s43_spectral_dissolution.npz, session-43/s43_spectral_dissolution.png",
+      "source_file": "computations/session-43/s43_spectral_dissolution.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s43_spectral_dissolution.py -- DISSOLUTION-43: Spectral Triple Dissolution Threshold\n    4: \n    5: Determine at what metric fluctuation amplitude the block-diagonal theorem\n    6: for D_K on Jensen-deformed SU(3) dissolves (Poisson -> GOE level statistics).\n    7: \n    8: === PHYSICS ===\n    9: \n   10: The block-diagonal theorem (Session 22b) states: D_K is exactly block-diagonal\n   11: in the Peter-Weyl decomposition for ANY left-invariant metric on SU(3). This is"
+    },
+    {
+      "anchor_id": "prov_349",
+      "anchor_type": "data_provenance",
+      "name": "thermal_conductivity",
+      "script_path": "session-43/s43_thermal_conductivity.py",
+      "session": "s43",
+      "inputs": "computations/session-40/s40_qrpa_modes.npz, computations/session-36/s36_mmax_authoritative.npz, computations/session-42/...",
+      "outputs": "session-43/s43_thermal_conductivity.npz, session-43/s43_thermal_conductivity.png",
+      "source_file": "computations/session-43/s43_thermal_conductivity.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s43_thermal_conductivity.py — THERM-COND-43\n    4: \n    5: 3-phonon decay rate from B2 ~ 2*B1 near-resonance and fabric thermal conductivity.\n    6: \n    7: Physics:\n    8:   - omega_B2_coll = 3.245 (QRPA collective mode, 97.5% EWSR)\n    9:   - omega_B1_low  = 1.632 (lowest QRPA mode)\n   10:   - 2*omega_B1 = 3.265, detuning delta = -0.020 (0.61%)\n   11:   - Decay channel: B2 -> B1 + B1 (down-conversion)"
+    },
+    {
+      "anchor_id": "prov_350",
+      "anchor_type": "data_provenance",
+      "name": "transplanckian",
+      "script_path": "session-43/s43_transplanckian.py",
+      "session": "s43",
+      "inputs": "",
+      "outputs": "session-43/s43_transplanckian.npz, session-43/s43_transplanckian.png",
+      "source_file": "computations/session-43/s43_transplanckian.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s43_transplanckian.py — Trans-Planckian Universality for KZ Spectrum\n    4: ====================================================================\n    5: \n    6: Gate: TRANSP-43 (INFO)\n    7: PASS: |variation| < 10% for xi_KZ and f_NL across max_pq_sum = 4,5,6,7\n    8: FAIL: |variation| > 10% — UV sensitivity detected, universality violated\n    9: \n   10: Physics:\n   11: --------"
+    }
+  ]
+}

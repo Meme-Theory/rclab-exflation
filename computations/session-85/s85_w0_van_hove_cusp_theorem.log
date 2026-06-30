@@ -1,0 +1,79 @@
+=== S85-VAN-HOVE-CUSP-THEOREM - input SHA-256 pins ===
+  computations/_shared/canonical_constants.py: 84aaa1e07dff5add...
+  computations/_shared/tier1_dirac_spectrum.py: eee1b6fdcbb86847...
+  closure (legacy): efeb97a60ac620dd...  (full: efeb97a60ac620dd3ff5be1fc65d6f28abe33dc84ef5c7f17b8472d530e4b945)
+  audit_sha256:   9786c53949b776f3a94391e27256023cf26388bd9fd31bf15b79faba5ecc4e39
+  content_sha256: 32e19ef52151b546c29ff438c18b305b995fb68ec83eb2df46308166b38d6979
+
+Canonical inputs:
+  tau_fold (canonical_constants.py) = 0.19
+  tau_grid = linspace(0.15, 0.25, 101)
+  L_max (max_pq_sum) = 8
+  DOS bin_width = 0.01 (M_KK)
+
+--- Section 7: D_K spectrum tau-sweep ---
+  tau_grid: linspace(0.15, 0.25, 101)
+  L_max (max_pq_sum) = 8
+  DOS bin_width = 0.01 (M_KK)
+  sharpness threshold = 1000.0
+
+  Building irrep cache for p+q <= 8 (45 sectors)...
+    cache (3,3): dim=64
+    cache (2,4): dim=60
+    cache (4,2): dim=60
+    cache (3,4): dim=90
+    cache (4,3): dim=90
+    cache (2,5): dim=81
+    cache (5,2): dim=81
+    cache (1,6): dim=63
+    cache (6,1): dim=63
+    cache (4,4): dim=125
+    cache (3,5): dim=120
+    cache (5,3): dim=120
+    cache (2,6): dim=105
+    cache (6,2): dim=105
+    cache (1,7): dim=80
+    cache (7,1): dim=80
+  [irrep cache built: 45.2s, 45 sectors]
+  [total setup (cache + structures): 45.2s]
+
+  [reference tau=0.19: N_PW_evs=33264, |E| range 0..4.3144, 27.9s]
+
+  tau[  0]=0.1500: N_evs=33264, |E|_max=3.8057, S(tau)=47.786, wall=27.9s, 1.0% done, ETA=46.4min
+  tau[  5]=0.1550: N_evs=33264, |E|_max=3.8198, S(tau)=39.634, wall=27.4s, 5.9% done, ETA=43.7min
+  tau[ 10]=0.1600: N_evs=33264, |E|_max=3.8340, S(tau)=52.864, wall=27.6s, 10.9% done, ETA=41.8min
+  tau[ 15]=0.1650: N_evs=33264, |E|_max=3.8484, S(tau)=62.510, wall=28.3s, 15.8% done, ETA=40.7min
+  tau[ 20]=0.1700: N_evs=33264, |E|_max=3.8629, S(tau)=56.524, wall=27.7s, 20.8% done, ETA=38.0min
+  tau[ 25]=0.1750: N_evs=33264, |E|_max=3.8775, S(tau)=48.471, wall=27.8s, 25.7% done, ETA=35.5min
+  tau[ 30]=0.1800: N_evs=33264, |E|_max=3.8923, S(tau)=49.728, wall=28.2s, 30.7% done, ETA=33.0min
+  tau[ 35]=0.1850: N_evs=33264, |E|_max=3.9072, S(tau)=46.981, wall=27.5s, 35.6% done, ETA=30.5min
+  tau[ 40]=0.1900: N_evs=33264, |E|_max=3.9222, S(tau)=41.654, wall=27.1s, 40.6% done, ETA=28.0min
+  tau[ 45]=0.1950: N_evs=33264, |E|_max=3.9374, S(tau)=49.703, wall=27.4s, 45.5% done, ETA=25.6min
+  tau[ 50]=0.2000: N_evs=33264, |E|_max=3.9527, S(tau)=57.847, wall=27.4s, 50.5% done, ETA=23.3min
+  tau[ 55]=0.2050: N_evs=33264, |E|_max=3.9681, S(tau)=46.894, wall=27.7s, 55.4% done, ETA=20.9min
+  tau[ 60]=0.2100: N_evs=33264, |E|_max=3.9836, S(tau)=44.293, wall=27.6s, 60.4% done, ETA=18.6min
+  tau[ 65]=0.2150: N_evs=33264, |E|_max=3.9993, S(tau)=54.968, wall=27.6s, 65.3% done, ETA=16.2min
+  tau[ 70]=0.2200: N_evs=33264, |E|_max=4.0151, S(tau)=70.655, wall=27.8s, 70.3% done, ETA=13.9min
+  tau[ 75]=0.2250: N_evs=33264, |E|_max=4.0311, S(tau)=52.815, wall=27.3s, 75.2% done, ETA=11.6min
+  tau[ 80]=0.2300: N_evs=33264, |E|_max=4.0472, S(tau)=61.282, wall=27.1s, 80.2% done, ETA=9.3min
+  tau[ 85]=0.2350: N_evs=33264, |E|_max=4.0634, S(tau)=52.458, wall=28.2s, 85.1% done, ETA=6.9min
+  tau[ 90]=0.2400: N_evs=33264, |E|_max=4.0797, S(tau)=46.089, wall=27.5s, 90.1% done, ETA=4.6min
+  tau[ 95]=0.2450: N_evs=33264, |E|_max=4.0962, S(tau)=42.891, wall=26.8s, 95.0% done, ETA=2.3min
+  tau[100]=0.2500: N_evs=33264, |E|_max=4.1128, S(tau)=45.803, wall=27.2s, 100.0% done, ETA=0.0min
+  [sweep complete: 2797.0s total]
+
+--- Section 8: Cusp detection ---
+  tau_cusp (grid)            = 0.221000
+  tau_cusp (parabolic refine)= 0.220896
+  tau_fold_canonical         = 0.190000
+  relative deviation (grid)   = 0.163158 (16.3158%)
+  relative deviation (refined)= 0.162609 (16.2609%)
+  S(tau_cusp)                 = 74.6374
+  #{tau : S(tau) > 1000.0} = 0
+  unique_on_grid              = False
+
+(value=0.221, scheme=DOS-cusp, convention=Baptista-sign, L_max=8)
+
+=== S85-VAN-HOVE-CUSP-THEOREM: FAIL  (wall 2870.4s) ===
+NPZ:  s85_w0_van_hove_cusp_theorem.npz
+PNG:  s85_w0_van_hove_cusp_theorem.png

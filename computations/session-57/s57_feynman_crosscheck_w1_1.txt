@@ -1,0 +1,104 @@
+======================================================================
+FEYNMAN CROSS-CHECK: W1-1 FINITE-RATE-TRANSIT-57
+======================================================================
+
+Naz P_exc_final = 8.069844e-02
+Naz P_exc_quench_tauf = 8.069888e-02
+Naz P_exc_quench_fold = 6.614126e-04
+Naz P_exc_adiabatic = 9.957414e-03
+
+======================================================================
+CHECK 1: Independent Hamiltonian Construction
+======================================================================
+  E_J at tau=0: 10.028550
+  E_J at tau=0.5: 0.407316
+
+  |<GS(0)|GS(0.5)>|^2 = 0.9193011183
+  P_exc from overlap = 8.069888e-02
+  Naz P_exc_quench_tauf = 8.069888e-02
+  Difference: 2.22e-16
+  CONFIRMED: Independent overlap matches Naz to < 1e-6
+
+  E_GS(tau=0): Feynman=-70.5860985364, gap=38.721668
+  E_GS(tau=0.5): Feynman=-2.3611069661, gap=1.485350
+
+======================================================================
+CHECK 2: Sudden Quench Benchmark Consistency
+======================================================================
+  P_exc(quench 0->fold): Feynman=6.614126e-04, Naz=6.614126e-04
+  S56 reference: 6.614126e-04
+  Match ratio (Feynman/S56): 1.000000
+
+  Adiabatic P_exc (rate=0.1): 9.957414e-03
+  Is < 0.05? YES
+  Is < 0.01? YES
+
+======================================================================
+CHECK 3: Channel Decomposition Sum Rule
+======================================================================
+  P(2,0) + P(0,2) + P(1,1) = 1.0000000000
+  Deviation from 1: 2.22e-15
+  w_bond + w_anti = 1.0000000000
+  Deviation from 1: 2.22e-15
+
+  delta_w_anti = -1.133906e-02
+  P_exc = 8.069844e-02
+  f_Leggett = |delta_w_anti|/P_exc = 0.1405
+  Naz f_Leggett = 0.1405
+  Difference: 0.00e+00
+  f_BCS (intra-cell) = 0.8595
+  f_Leggett + f_BCS = 1.000000
+
+======================================================================
+CHECK 4: Norm Conservation
+======================================================================
+  Sector probability sum = 1.000000000000002 (should be 1)
+  Bond/anti probability sum = 1.000000000000002 (should be 1)
+  sum(nk) at t=0: 2.0000000000 (should be N_pair_total=2)
+  sum(nk) at t=final: 2.0000000000 (should be 2)
+  Max |sum(nk) - 2| over trajectory: 4.44e-15
+  Norm conservation: CONFIRMED
+
+======================================================================
+CHECK 5: Energy Conservation (Ehrenfest)
+======================================================================
+  E_exc(t=0) = 0.00e+00 (should be 0)
+  E_exc(final) = 1.597033e-01
+  min(E_exc) = 0.00e+00 (should be >= 0)
+  max(E_exc) = 1.597033e-01
+  P_exc non-monotone steps: 0/200
+  (Non-monotonicity is physical -- oscillations from coherent dynamics)
+  <E_exc per unit P_exc> = 1.9790 M_KK (effective excitation energy)
+  E_exc >= 0 everywhere: CONFIRMED
+
+======================================================================
+CHECK 6: Rate Scan Consistency
+======================================================================
+  Rate scan: 35 points from 0.10 to 100000
+  P_exc range: [9.957414e-03, 8.069888e-02]
+  Monotonicity violations (P_exc should increase with rate): 0
+  Sudden plateau (rate > 100): spread = 5.35e-06, mean = 8.069834e-02
+  Plateau matches quench? |mean - P_quench_tauf| = 5.43e-07
+
+======================================================================
+CHECK 7: Sudden Quench Ceiling
+======================================================================
+  P_exc(physical, td) = 8.069844e-02
+  P_exc(sudden quench 0->0.5) = 8.069888e-02
+  Ratio physical/quench = 0.999995
+  Physical rate is 442.4 M_KK
+  Critical rate (P=0.01): 0.10 M_KK
+  Rate/Rate_crit = 4409x (>> 1 confirms sudden regime)
+  CONFIRMED: Physical transit = sudden quench to < 1%
+
+======================================================================
+CROSS-CHECK SUMMARY
+======================================================================
+
+ALL CHECKS PASSED. ENDORSED.
+
+Key numbers verified independently:
+  P_exc(quench 0->0.5) = 8.069888e-02 (Feynman) vs 8.069888e-02 (Naz)
+  P_exc(quench 0->fold) = 6.614126e-04 (Feynman) vs 6.614126e-04 (Naz)
+  Sector sum = 1.000000000000002
+  Bond+anti sum = 1.000000000000002

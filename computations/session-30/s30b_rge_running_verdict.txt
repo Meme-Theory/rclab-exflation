@@ -1,0 +1,95 @@
+T3-S30B-RGE-RUNNING: FAIL -- value=no_crossing scheme=SM_one_loop convention=GUT_normalized L_max=NA sha256=815aa927ac8518d5b74ccdf50e271ef4204476cf725fd9a656115586bc56a4b5
+
+=== T3-S30B-RGE-RUNNING gate verdict (S81 canonical) ===
+
+Script:       computations/_shared/s30b_rge_running.py  (rebuild: computations/_shared/t3-intake/s30b_rge_running_t3.py)
+Inputs:       s30b_grid_bcs.npz  (sha256 5efa5c10ba24310b1efb0a37713d74ecde4b9367221f1965a0934bbf7c3ae4e6)
+Closure SHA:  815aa927ac8518d5b74ccdf50e271ef4204476cf725fd9a656115586bc56a4b5  (full 64-char)
+Verdict:      FAIL (RGE-A) + FAIL (RGE-B, skipped) + B-30nck FIRES
+
+--- RGE-A (zero-parameter ratio test) ---
+  Input at best Weinberg contour point:
+    tau_best   = 0.5700
+    eps_best   = 0.1350
+    g1/g2_code = sqrt(L2/L1) = 0.325514
+    L2/L1      = 0.105959
+    alpha_1_GUT/alpha_2 at M_KK = 5 * L2/L1 = 0.529797   (GUT-normalized)
+
+  Scan: M_KK in [10^4, 10^19] GeV, 3001 log-uniform points
+    sin^2(theta_W)(M_Z) range = [0.130096, 0.218830]
+    Target                    = 0.23122  (PDG 2024 MSbar)
+    Target in range?          = False
+    Closest approach          = 0.218830 at M_KK = 10^4.00 GeV
+
+  Pre-registered gate (RGE-A, B-30rge):
+    pass iff sin^2(theta_W)(M_Z) = 0.23122 achievable for some M_KK in [10^10, 10^18] GeV
+    Restricted gate range:  sin^2 in [0.133711, 0.171925]
+    Target 0.23122 NOT in restricted range
+    VERDICT: FAIL
+
+  Substitution chain (b_i sign convention, SM one-loop):
+    Step 1 (def):    1/alpha_i(mu) = 1/alpha_i(M_KK) + b_i/(2*pi) * ln(M_KK/mu)
+    Step 2 (signs):  b_1 = +41/10 > 0  (U(1)_Y not asymptotically free)
+                     b_2 = -19/6  < 0  (SU(2)_L asymptotically free)
+                     b_3 = -7     < 0  (SU(3)_c asymptotically free)
+    Step 3 (down):   For M_KK > mu (running DOWN), ln(M_KK/mu) > 0
+                     => 1/alpha_1(mu) > 1/alpha_1(M_KK) when b_1 > 0
+                     => alpha_1(mu)   < alpha_1(M_KK)   [U(1) decreases at low energy]
+                     => 1/alpha_2(mu) < 1/alpha_2(M_KK) when b_2 < 0
+                     => alpha_2(mu)   > alpha_2(M_KK)   [SU(2) asymptotic freedom]
+    Step 4 (Weinberg):
+                     sin^2(theta_W) = alpha_Y / (alpha_Y + alpha_2)
+                     alpha_Y = (3/5) * alpha_1_GUT
+                     At M_KK: alpha_Y/alpha_2 = 3 * L2/L1 = 0.317878
+                              sin^2(theta_W)_KK = 3r/(1+3r) = 0.241205  (Formula B)
+                     Running DOWN: alpha_Y decreases (b_Y > 0), alpha_2 increases (b_2 < 0)
+                     => sin^2(theta_W)(M_Z) < sin^2(theta_W)(M_KK)
+    Step 5 (conclusion):
+                     Starting from 0.241205 and DECREASING, sin^2(theta_W)(M_Z) cannot
+                     reach 0.23122 via this particular grid point's g1/g2 — BUT, 0.23122
+                     < 0.241205, so naively it COULD hit 0.23122 somewhere. The actual
+                     scan shows max sin^2(M_Z) = 0.218830 at M_KK = 10^4 GeV. The
+                     Weinberg-angle VALUE AT KK = 0.241205 is close to 0.23122 but the
+                     running OVERSHOOTS: by M_Z the angle has dropped below 0.23122 for
+                     every M_KK in [10^10, 10^18]. Direction confirmed; crossing absent.
+
+--- RGE-B (individual coupling test) ---
+  SKIPPED: no M_KK crossing found in RGE-A.
+  VERDICT: FAIL (or SKIPPED)
+
+--- B-30nck (NCG-KK tension, XS-2) ---
+  Reference M_KK = 10^16 GeV
+  alpha_1_GUT(M_KK) = 0.011539
+  alpha_2(M_KK)     = 0.021780
+  Lambda_SA         = 10^31.30 GeV  (unification of alpha_1 and alpha_2)
+  Lambda_SA / M_KK  = 2.00e+15
+  Gate threshold:   1e-3 <= ratio <= 1e3
+  VERDICT:          B-30nck FIRES (15 orders-of-magnitude above gate ceiling)
+
+--- Gate Summary ---
+  RGE-A:   FAIL   (sin^2 running misses 0.23122 over M_KK in [10^10, 10^18])
+  RGE-B:   FAIL   (skipped — dependent on RGE-A)
+  B-30rge: DOES NOT FIRE (sin^2 range [0.134, 0.172] overlaps [0.15, 0.30])
+  B-30nck: FIRES         (Lambda_SA / M_KK = 2e+15, far outside [1e-3, 1e3])
+
+--- Output 4-tuple ---
+  value      = no_crossing (sin^2(M_Z) never hits 0.23122 for any M_KK scanned)
+  scheme     = SM_one_loop
+  convention = GUT_normalized (g_1 = sqrt(5/3) * g_Y, b_1 = 41/10)
+  L_max      = NA (RGE integration, no spectral truncation)
+
+--- Constraint-Surface Update ---
+  The single-parameter metric-ratio ansatz g1/g2 = sqrt(L2/L1) from the s30b
+  BCS grid (Formula B for sin^2_W) DOES NOT RECONNECT to the PDG Weinberg angle
+  at M_Z under SM one-loop RGE. Running direction is correct (sin^2 decreases
+  with decreasing mu due to b_1 > 0 vs b_2 < 0 hierarchy), but the magnitude
+  undershoots by ~20-30% in sin^2 across the full GUT-scale window.
+
+  Region eliminated:  RGE-A ansatz under Formula B + single-contour-point pick.
+  Remaining freedom:  (i) two-loop RGE + threshold corrections, (ii) extended
+                      matter content between M_Z and M_KK, (iii) alternative
+                      formula normalizations, (iv) KK tower contributions to
+                      the running.
+
+  Closure:  the result stands as a pre-registered gate FAIL at one-loop SM
+            RGE with PDG inputs and Formula B normalization.

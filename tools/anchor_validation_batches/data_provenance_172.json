@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 172,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1711",
+      "anchor_type": "data_provenance",
+      "name": "w2b_pin_derivation_census",
+      "script_path": "session-84/s84_w2b_pin_derivation_census.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w2b_pin_derivation_census.npz, session-84/s84_w2b_pin_derivation_census.md",
+      "source_file": "computations/session-84/s84_w2b_pin_derivation_census.py",
+      "source_context_30_lines": "  772: s83_gates = np.array([rec[\"s83_gate\"] for rec in derivation_records])\n  773: s83_shas = np.array([rec[\"s83_sha\"] for rec in derivation_records])\n  774: s83_values = np.array([rec[\"s83_value\"] for rec in derivation_records])\n  775: layers = np.array([rec[\"layer\"] for rec in derivation_records])\n  776: layer_tags = np.array([rec[\"layer_tag\"] for rec in derivation_records])\n  777: complete_flags = np.array([bool(rec[\"complete_verified\"]) for rec in derivation_records])\n  778: substrate_flags = np.array([bool(rec[\"substrate_structural\"]) for rec in derivation_records])\n  779: \n  780: npz_path = ROOT / \"s84_w2b_pin_derivation_census.npz\"\n  781: np.savez(\n  782:     npz_path,\n  783:     obs_names=obs_names,\n  784:     s83_gates=s83_gates,\n  785:     s83_shas=s83_shas,\n  786:     s83_values=s83_values,\n  787:     layers=layers,\n  788:     layer_tags=layer_tags,"
+    },
+    {
+      "anchor_id": "prov_1712",
+      "anchor_type": "data_provenance",
+      "name": "w2c_g_audit",
+      "script_path": "session-84/s84_w2c_g_audit.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w2c_g_audit.npz, session-84/s84_w2c_g_audit.png",
+      "source_file": "computations/session-84/s84_w2c_g_audit.py",
+      "source_context_30_lines": "   71: s82_w2_5_heat_kernel_mp.npz (continuum-limit heat-kernel MP integrability)\n   72: s83_w3_g57_pinning_audit.py (closure structure reference)\n   73: s83_gate_verdicts.txt (S83 verdict ledger)\n   74: s60_pw_h0_conv.npz (PW^2-weighted a_2 L-scan L=0..7)\n   75: s66_cutoff_ns.npz (PW^2-weighted a_2 at MAX_PQ_SUM=3 = \"L_max=10\")\n   76: \n   77: OUTPUTS\n   78: -------\n   79: s84_w2c_g_audit.npz  : route x scheme x L_max table, R = G_pred/G_obs\n   80: s84_w2c_g_audit.png  : convergence plot + ratio matrix visualization\n   81: verdict line appended to s84_gate_verdicts.txt\n   82: \n   83: ENVIRONMENT\n   84: -----------\n   85: CPU only; thread cap 8; no heavy linear algebra (a_2 already cached).\n   86: \"\"\"\n   87: from __future__ import annotations"
+    },
+    {
+      "anchor_id": "prov_1713",
+      "anchor_type": "data_provenance",
+      "name": "w2c_layer_transport_audit",
+      "script_path": "session-84/s84_w2c_layer_transport_audit.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w2c_layer_transport_audit.npz, session-84/s84_w2c_layer_transport_audit.md",
+      "source_file": "computations/session-84/s84_w2c_layer_transport_audit.py",
+      "source_context_30_lines": "  116: \n  117: # Pre-registered sub-tag centroid bands (from W2c-18 spec; factor-1.5 tolerance)\n  118: FI_PIN_LO, FI_PIN_HI = 0.8, 1.5              # (local)\n  119: MOSTLY_RD_HI = 0.5                           # (local)\n  120: PROMOTABLE_LO = 2.0                          # (local)\n  121: RATIO_FACTOR = 1.5                           # (local) PASS factor-1.5 band\n  122: INFO_FACTOR = 3.0                            # (local) INFO factor-1.5..3 band\n  123: \n  124: OUT_NPZ = resolve_output(84, 's84_w2c_layer_transport_audit.npz')\n  125: VERDICT_TXT = resolve_output(84, 's84_gate_verdicts.txt')\n  126: \n  127: INPUT_FILES = [\n  128:     resolve_script(None, 'canonical_constants.py'),\n  129:     resolve_output(83, 's83_w3_g54_hp_even_completeness_audit_vii.npz'),\n  130:     resolve_output(83, 's83_w1_g1_ic_scheme_derivation.npz'),\n  131:     resolve_output(83, 's83_w3_g55_mixed_sub_tag_per_row.npz'),\n  132:     resolve_output(83, 's83_w3_g34_cc_ratio_cluster_universality.npz'),"
+    },
+    {
+      "anchor_id": "prov_1714",
+      "anchor_type": "data_provenance",
+      "name": "w2c_layer_uniqueness_lmax_extrapolation",
+      "script_path": "session-84/s84_w2c_layer_uniqueness_lmax_extrapolation.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w2c_layer_uniqueness_lmax_extrapolation.npz, session-84/s84_w2c_layer_uniqueness_lmax_extrapolation.md",
+      "source_file": "computations/session-84/s84_w2c_layer_uniqueness_lmax_extrapolation.py",
+      "source_context_30_lines": "   75: FAIL:  uniqueness inversion at higher L_max\n   76:        OR alpha < 0.\n   77: INFO:  alpha in [0.5, 1.5] union [2.5, 4]  (sign correct, magnitude off)\n   78:        OR S_zeta/S_Zubarev ratio drifts by factor > 1.5 at L=7 or L=9\n   79:           while uniqueness is preserved.\n   80: \n   81: Outputs\n   82: -------\n   83:     s84_w2c_layer_uniqueness_lmax_extrapolation.npz\n   84:     s84_w2c_layer_uniqueness_lmax_extrapolation.md\n   85:     s84_w2c_layer_uniqueness_lmax_extrapolation.log\n   86:     s84_gate_verdicts.txt    (verdict line appended)\n   87: \n   88: Environment\n   89: -----------\n   90: Python:  \"phonon-exflation-sim/.venv312/Scripts/python.exe\"\n   91: GPU:     not required for L=5/7/9 because the spectrum cache is"
+    },
+    {
+      "anchor_id": "prov_1715",
+      "anchor_type": "data_provenance",
+      "name": "w2c_unpinned_l2_audit",
+      "script_path": "session-84/s84_w2c_unpinned_l2_audit.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w2c_unpinned_l2_audit.npz, session-84/s84_w2c_unpinned_l2_audit.md",
+      "source_file": "computations/session-84/s84_w2c_unpinned_l2_audit.py",
+      "source_context_30_lines": "  367:     cc3_pred = 0.918 / 0.998  # (local) 0.9198\n  368:     cc3_err = abs(cc3_ratio - cc3_pred) / cc3_pred  # (local) relative\n  369:     print(f\"Cross-check #3: |w_0_L1|/|w_0_L2|={cc3_ratio:.4f} \"\n  370:           f\"vs predicted {cc3_pred:.4f}  rel_err={cc3_err:.2e}\")\n  371: \n  372:     # =====================================================================\n  373:     # Build output npz + closure SHA\n  374:     # =====================================================================\n  375:     out_path = SCRIPT_DIR / \"s84_w2c_unpinned_l2_audit.npz\"\n  376:     np.savez(\n  377:         out_path,\n  378:         row_ids=np.array([r[0] for r in rows]),\n  379:         row_names=np.array([r[1] for r in rows]),\n  380:         O_L1=np.array([r[2] for r in rows], dtype=float),\n  381:         O_L2=np.array([r[3] for r in rows], dtype=float),\n  382:         shift_factor=shifts,\n  383:         classification=np.array([r[5] for r in rows]),"
+    },
+    {
+      "anchor_id": "prov_1716",
+      "anchor_type": "data_provenance",
+      "name": "w3_as_pin_map_commit",
+      "script_path": "session-84/s84_w3_as_pin_map_commit.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w3_as_pin_map_commit.npz",
+      "source_file": "computations/session-84/s84_w3_as_pin_map_commit.py",
+      "source_context_30_lines": "  394: print('SECTION 6  Verdict line')\n  395: print('=' * 78)\n  396: print(verdict_line)\n  397: \n  398: # =============================================================================\n  399: # SECTION 7 — SAVE NPZ + APPEND VERDICT\n  400: # =============================================================================\n  401: \n  402: out_npz = SCRIPT_DIR / 's84_w3_as_pin_map_commit.npz'\n  403: \n  404: np.savez(\n  405:     out_npz,\n  406:     # Ledger inputs\n  407:     H_tilde_TD=H_tilde_TD,\n  408:     eps_H=eps_H,\n  409:     c_sub=c_sub,\n  410:     f_conv=f_conv,"
+    },
+    {
+      "anchor_id": "prov_1717",
+      "anchor_type": "data_provenance",
+      "name": "w3_balanced_ratio_universality",
+      "script_path": "session-84/s84_w3_balanced_ratio_universality.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-84/s84_w3_balanced_ratio_universality.py",
+      "source_context_30_lines": "   34: \n   35: # ---------- SHA pins ----------\n   36: def sha(p):\n   37:     return hashlib.sha256(Path(p).read_bytes()).hexdigest()\n   38: \n   39: pins = {\n   40:     \"s84_w3_vii_k_prop_atlas.json\": sha(ATLAS_IN),\n   41:     \"canonical_constants.py\": sha(CC),\n   42:     \"s84_w3_balanced_ratio_universality.py\": sha(SCRIPT),\n   43: }\n   44: print(\"== INPUT SHA-256 PINS ==\")\n   45: for k, v in pins.items():\n   46:     print(f\"  {k}: {v}\")\n   47: \n   48: # ---------- Slot spans (from W3-21) ----------\n   49: with open(ATLAS_IN) as f:\n   50:     prior = json.load(f)"
+    },
+    {
+      "anchor_id": "prov_1718",
+      "anchor_type": "data_provenance",
+      "name": "w3_cc5_adjacent_validation",
+      "script_path": "session-84/s84_w3_cc5_adjacent_validation.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w3_cc5_adjacent_validation.npz, session-84/s84_w3_cc5_adjacent_validation.png",
+      "source_file": "computations/session-84/s84_w3_cc5_adjacent_validation.py",
+      "source_context_30_lines": "  159: direct = [span_direct_mH, span_direct_sin2thW, span_direct_alpha_s]\n  160: for ax, lab, p, d in zip(axes, labels, preds, direct):\n  161:     ax.bar([\"CC-5 predicted\", \"direct sweep\"], [p, d],\n  162:            color=[\"#3b7bbf\", \"#bf5b3b\"])\n  163:     ax.set_title(lab)\n  164:     ax.set_ylabel(\"span across 5 regulators\")\n  165:     ax.axhline(1.0, color=\"gray\", linestyle=\":\", alpha=0.5)\n  166: plt.tight_layout()\n  167: plt.savefig(os.path.join(ROOT, \"s84_w3_cc5_adjacent_validation.png\"), dpi=120)\n  168: plt.close()\n  169: \n  170: # ---------------------------------------------------------------\n  171: # 7. SAVE NPZ + VERDICT\n  172: # ---------------------------------------------------------------\n  173: np.savez(os.path.join(ROOT, \"s84_w3_cc5_adjacent_validation.npz\"),\n  174:          slot_span=json.dumps(slot_span),\n  175:          p_mH=json.dumps(p_mH),"
+    },
+    {
+      "anchor_id": "prov_1719",
+      "anchor_type": "data_provenance",
+      "name": "w3_cc5_l_max_asymptotic",
+      "script_path": "session-84/s84_w3_cc5_l_max_asymptotic.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w3_cc5_l_max_asymptotic.npz, session-84/s84_w3_cc5_l_max_asymptotic.png",
+      "source_file": "computations/session-84/s84_w3_cc5_l_max_asymptotic.py",
+      "source_context_30_lines": "  114:     \"c_exp_span_2\": fits[\"span_2_As_mu\"][\"c_exp\"],\n  115:     \"b_pow_span_1\": fits[\"span_1_ns_alphas\"][\"b_pow\"],\n  116:     \"b_pow_span_3\": fits[\"span_3_fNL_r\"][\"b_pow\"],\n  117: }\n  118: print(f\"diagnostic: c_exp(span_2)={diag['c_exp_span_2']:.4f}  \"\n  119:       f\"b_pow(span_1)={diag['b_pow_span_1']:.4f}  b_pow(span_3)={diag['b_pow_span_3']:.4f}\")\n  120: \n  121: # --- save artifacts ---\n  122: out_npz = \"computations/session-84/s84_w3_cc5_l_max_asymptotic.npz\"\n  123: np.savez(out_npz,\n  124:          L_max_scan=L, span_1=span_1, span_2=span_2, span_3=span_3,\n  125:          fit_span_1=np.array(json.dumps(fits[\"span_1_ns_alphas\"])),\n  126:          fit_span_2=np.array(json.dumps(fits[\"span_2_As_mu\"])),\n  127:          fit_span_3=np.array(json.dumps(fits[\"span_3_fNL_r\"])),\n  128:          predicted_classes=np.array(json.dumps(predicted)),\n  129:          matches=matches, verdict=verdict, pins=np.array(json.dumps(pins)))\n  130: print(f\"wrote {out_npz}\")"
+    },
+    {
+      "anchor_id": "prov_1720",
+      "anchor_type": "data_provenance",
+      "name": "w3_conv_b_propagation_atlas",
+      "script_path": "session-84/s84_w3_conv_b_propagation_atlas.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w3_conv_b_propagation_atlas.npz, session-84/s84_w3_conv_b_propagation_atlas.png",
+      "source_file": "computations/session-84/s84_w3_conv_b_propagation_atlas.py",
+      "source_context_30_lines": "   72: ATLAS_A = HERE / \"s84_w3_vii_k_prop_atlas.json\"  # (local) W3-21 landing\n   73: SYNTH = HERE.parent / \"sessions\" / \"session-83\" / \"session-83-lizzi-cc5-synthesis.md\"  # (local)\n   74: CC_PY = HERE / \"canonical_constants.py\"  # (local)\n   75: G15 = HERE / \"s83_w2_g15_k_a2_canonical_range.npz\"  # (local)\n   76: G16 = HERE / \"s83_w2_g16_unified_as79_3pi_subst.npz\"  # (local)\n   77: G28 = HERE / \"s83_w3_g28_f_conv_cluster_test.npz\"  # (local)\n   78: G34 = HERE / \"s83_w3_g34_cc_ratio_cluster_universality.npz\"  # (local)\n   79: \n   80: OUT_NPZ = HERE / \"s84_w3_conv_b_propagation_atlas.npz\"  # (local)\n   81: OUT_PNG = HERE / \"s84_w3_conv_b_propagation_atlas.png\"  # (local)\n   82: OUT_JSON = HERE / \"s84_w3_conv_b_propagation_atlas.json\"  # (local)\n   83: \n   84: PASS_THRESH = 0.02  # (local) 2% rel_err threshold\n   85: INFO_UPPER = 0.05   # (local) INFO ceiling\n   86: \n   87: # -------------------------------------------------------------------\n   88: #  SHA pinning"
+    }
+  ]
+}

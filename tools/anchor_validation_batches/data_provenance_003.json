@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 3,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_21",
+      "anchor_type": "data_provenance",
+      "name": "w0_r3_class_h_scan",
+      "script_path": "_shared/s91_w0_r3_class_h_scan.py",
+      "session": "s91",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/_shared/s91_w0_r3_class_h_scan.py",
+      "source_context_30_lines": "   38: from _registry_landing_audit import (\n   39:     detect_class_h_missing_parse_tree_expansion,\n   40:     STATE_HISTORY_LABEL_PATTERNS,\n   41:     PARSE_TREE_EXPANSION_RE,\n   42: )\n   43: \n   44: REPO_ROOT = Path(__file__).resolve().parents[2]  # (local) project root\n   45: REGISTRY_FILE = REPO_ROOT / \"sessions\" / \"permanent-results-registry.md\"  # (local)\n   46: OUTPUT_JSON = REPO_ROOT / \"computations\" / \"_shared\" / \"s91_w0_r3_class_h_scan.json\"  # (local)\n   47: \n   48: # Match either `## §VII.X[.suffix]` or `### §VII.X[.suffix]` heading\n   49: SLOT_HEADING_RE = re.compile(r\"^(##|###|####) §VII\\.[A-Z]+(?:\\.[A-Z0-9-]+)*\", re.MULTILINE)  # (local)\n   50: \n   51: \n   52: def extract_all_slots(registry_text: str) -> list[dict]:\n   53:     \"\"\"Extract every §VII.X[.suffix] block (## OR ###) and return as list.\n   54: "
+    },
+    {
+      "anchor_id": "prov_22",
+      "anchor_type": "data_provenance",
+      "name": "w0_r3_parse_tree_retrofit",
+      "script_path": "_shared/s91_w0_r3_parse_tree_retrofit.py",
+      "session": "s91",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/_shared/s91_w0_r3_parse_tree_retrofit.py",
+      "source_context_30_lines": "<name 'w0_r3_parse_tree_retrofit' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"S91 W0 R3 — Parse-tree expansion batch retrofit for 9 pre-S90 §VII entries.\n    3: \n    4: Per `.claude/rules/registry-landing.md §\"Parse-Tree Expansion Pre-Registration\n    5: for new §VII entries (S90 W-3 CF-R1-3)\"`: pre-S90 §VII entries citing observables\n    6: with state-historic labels per `_registry_landing_audit.py STATE_HISTORY_LABEL_PATTERNS`\n    7: (11 patterns post-W1-8) MUST be retrofitted with parse-tree expansion blocks at\n    8: next-session plan-freeze.\n    9: \n   10: This retrofit:\n   11:   1. Identifies 9 retrofit candidates from `s91_w0_r3_class_h_scan.json`\n   12:   2. For each, inserts a parse-tree expansion block at a stable tail-of-block\n   13:      position (BEFORE the next §VII slot heading; or BEFORE the next-section\n   14:      boundary if the slot is the last one)\n   15:   3. Uses the canonical template from §VII.AU.OP-PROJ landing-confirmation row\n   16:      at registry line 18022 (which already PASSes Class-(h))\n   17: \n   18: Canonical templates:\n   19:   α_s_canonical observable:\n   20:     α_s_canonical → (n_s_FW_exact² − 1) → (Mellin-residue at substrate-distance-1 pole s=3)² − 1\n   21:                   where  n_s_FW_exact = Fraction(9561, 10000)  [canonical_constants.py]\n   22:                   and    Mellin-residue at substrate-distance-1 pole s=3 IS the substrate-IS\n   23:                          spectrum-only functional Tr(D_K^{−2s})|_{s→3} on (A_K, H_K, D_K)\n   24: \n   25:   n_a^GGE observable:\n   26:     n_a^GGE → ⟨ψ_GGE | n_a | ψ_GGE⟩ → |v_a|² → Δ_BCS² / (2(λ_a² + Δ_BCS²))\n   27:             where  ψ_GGE  = post-transit Generalized Gibbs Ensemble state\n   28:             and    n_a    = a-th occupation operator on substrate Bogoliubov algebra\n   29:             and    v_a    = a-th Bogoliubov v-amplitude per S52 BdG canonical form\n   30:             and    λ_a    = a-th eigenvalue of D_K"
+    },
+    {
+      "anchor_id": "prov_23",
+      "anchor_type": "data_provenance",
+      "name": "w0_r5_vii_ax_append",
+      "script_path": "_shared/s91_w0_r5_vii_ax_append.py",
+      "session": "s91",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/_shared/s91_w0_r5_vii_ax_append.py",
+      "source_context_30_lines": "<name 'w0_r5_vii_ax_append' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"S91 W0 R5 — Append §VII.AX entry to permanent-results-registry.md.\n    3: \n    4: NEW §VII slot landing for CF-37 option (v) pre-registration: substrate-axis\n    5: canonicalizer at (substrate-distance-2, cross-axis-converged) cell per S90 W-2\n    6: §EMERGENCE EV1 (D1-Reading-B confirmed; option (v) admitted as 5th\n    7: pre-registered structural verdict).\n    8: \n    9: Sub-class tag: REGISTRY-INCOMPLETE-PENDING-PROXY-REFINEMENT per\n   10: `.claude/rules/cross-pillar-bridge-anatomy.md §\"Deferred-pending intermediate\n   11: verdict-class\"`. Forward refinement pathway: S91+ FULL CM-1995 §III.4\n   12: substrate-distance-2 evaluation under three regulator-class conventions\n   13: ({ζ, Pauli-Villars, Mellin}).\n   14: \n   15: Cross-link to S91 context file §\"REMAINING substantive items\" R5 (T2.32).\n   16: Per `feedback_no-asking-just-execute.md` housekeeping discipline +\n   17: `feedback_fix-in-session-never-defer.md` no-deferral rule, S91 W0 R5 lands\n   18: this pre-registration in-session at orchestrator-direct-write.\n   19: \"\"\"\n   20: import sys\n   21: from pathlib import Path\n   22: \n   23: # Canonical-constants import per `computations/_shared/CLAUDE.md` MANDATORY discipline.\n   24: _SHARED_DIR = Path(__file__).resolve().parent  # (local)\n   25: sys.path.insert(0, str(_SHARED_DIR))\n   26: try:\n   27:     from canonical_constants import *  # noqa: F401,F403,E402\n   28: except Exception as _e:\n   29:     print(f\"WARNING: canonical_constants.py import failed: {_e}\", file=sys.stderr)\n   30: "
+    },
+    {
+      "anchor_id": "prov_24",
+      "anchor_type": "data_provenance",
+      "name": "w0_r6_supersession_test",
+      "script_path": "_shared/s91_w0_r6_supersession_test.py",
+      "session": "s91",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/_shared/s91_w0_r6_supersession_test.py",
+      "source_context_30_lines": "<name 'w0_r6_supersession_test' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"S91 W0 R6 — Self-test for supersession-chain consumer adoption.\n    3: \n    4: Verifies resolve_supersession_chains() against the S88 W8-100 calibration\n    5: corpus (3 corrective trios) AND the S90 W2 corpus instances (W2-2 + W2-7\n    6: correctives), using the actual verdict files on disk as test data.\n    7: \n    8: Cross-link: `.claude/rules/gate-verdicts.md §\"Option A — sig_5 remediation\n    9: pathway under absolute verdict permanence\"` §\"Calibration corpus (N=3 from\n   10: S88 Wave 8)\".\n   11: \"\"\"\n   12: import sys\n   13: from pathlib import Path\n   14: \n   15: _SHARED_DIR = Path(__file__).resolve().parent  # (local)\n   16: sys.path.insert(0, str(_SHARED_DIR))\n   17: try:\n   18:     from canonical_constants import *  # noqa: F401,F403,E402\n   19: except Exception as _e:\n   20:     print(f\"WARNING: canonical_constants.py import failed: {_e}\", file=sys.stderr)\n   21: \n   22: from _consolidate_intake import (\n   23:     scan_verdict_file,\n   24:     resolve_supersession_chains,\n   25:     extract_supersedes_pointers,\n   26: )\n   27: \n   28: REPO_ROOT = Path(__file__).resolve().parents[2]  # (local)\n   29: \n   30: "
+    },
+    {
+      "anchor_id": "prov_25",
+      "anchor_type": "data_provenance",
+      "name": "w4a_a0_m2_backward_rescue_theorem",
+      "script_path": "s88_w4a_a0_m2_backward_rescue_theorem.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "s88_w4a_a0_m2_backward_rescue_theorem.npz, s88_w4a_a0_m2_backward_rescue_theorem.png",
+      "source_file": "computations/s88_w4a_a0_m2_backward_rescue_theorem.py",
+      "source_context_30_lines": "  114: # Canonical pins (per plan §W4a-16 PRDR machinery)\n  115: # ---------------------------------------------------------------------------\n  116: GATE_ID = \"S88-A0-M2-BACKWARD-RESCUE-CHARACTERIZATION-FOR-DIVISION-ALGEBRA-CLASS\"\n  117: SCHEME = \"wedderburn-artin-frobenius-rescue-class-verification\"\n  118: CONVENTION = \"division-algebra-or-chi-killed-block\"\n  119: L_MAX_TAG = \"N/A\"  # (local) METHODOLOGY/theorem-proof; no L_max\n  120: SCHEMA_VERSION = \"S87+\"\n  121: \n  122: NPZ_PATH = ROOT / \"computations\" / \"s88_w4a_a0_m2_backward_rescue_theorem.npz\"\n  123: PNG_PATH = ROOT / \"computations\" / \"s88_w4a_a0_m2_backward_rescue_theorem.png\"\n  124: JSON_PATH = ROOT / \"computations\" / \"s88_w4a_a0_m2_backward_rescue_theorem.json\"\n  125: VERDICTS_PATH = ROOT / \"computations\" / \"_shared\" / \"s88_gate_verdicts.txt\"\n  126: SCRIPT_PATH = ROOT / \"computations\" / \"s88_w4a_a0_m2_backward_rescue_theorem.py\"\n  127: PLAN_PATH = ROOT / \"sessions\" / \"session-plan\" / \"session-88-plan-w4a.md\"\n  128: WORKSHOP_PATH = ROOT / \"sessions\" / \"session-87\" / \"workshops\" / \"s87-a0-r-protection-m2-biconditional.md\"\n  129: \n  130: "
+    },
+    {
+      "anchor_id": "prov_26",
+      "anchor_type": "data_provenance",
+      "name": "w4a_falsifier_inventory_writer",
+      "script_path": "s88_w4a_falsifier_inventory_writer.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/s88_w4a_falsifier_inventory_writer.py",
+      "source_context_30_lines": "   59: # Pins\n   60: # ---------------------------------------------------------------------------\n   61: GATE_ID = \"S88-FALSIFIER-INVENTORY-WRITE-LANDING\"\n   62: SCHEME = \"falsifier-inventory-rows-47-to-54b-write-landing-PRE-CLOSED-by-S87-W5\"\n   63: CONVENTION = \"verifier-style-cross-row-ratio-consistency-check-on-existing-landing\"\n   64: L_MAX_TAG = \"N/A\"  # (local)\n   65: SCHEMA_VERSION = \"S87+\"\n   66: \n   67: JSON_PATH = ROOT / \"computations\" / \"s88_w4a_falsifier_inventory_writer.json\"\n   68: VERDICTS_PATH = ROOT / \"computations\" / \"_shared\" / \"s88_gate_verdicts.txt\"\n   69: SCRIPT_PATH = ROOT / \"computations\" / \"s88_w4a_falsifier_inventory_writer.py\"\n   70: PLAN_PATH = ROOT / \"sessions\" / \"session-plan\" / \"session-88-plan-w4a.md\"\n   71: INVENTORY_PATH = ROOT / \"sessions\" / \"framework\" / \"registry\" / \"falsifier-master-inventory.md\"\n   72: S87_WRITER_PATH = ROOT / \"computations\" / \"session-87\" / \"s87_w5_falsifier_inventory_consolidation_writer.py\"\n   73: W5_2_JSON = ROOT / \"computations\" / \"session-87\" / \"s87_w5_w11_c5_lab_falsifier.json\"\n   74: W5_3_JSON = ROOT / \"computations\" / \"session-87\" / \"s87_w5_w11_c6_musr_falsifier.json\"\n   75: "
+    },
+    {
+      "anchor_id": "prov_27",
+      "anchor_type": "data_provenance",
+      "name": "w4a_split_registry_writer",
+      "script_path": "s88_w4a_split_registry_writer.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/s88_w4a_split_registry_writer.py",
+      "source_context_30_lines": "   49: # Pins\n   50: # ---------------------------------------------------------------------------\n   51: GATE_ID = \"S88-A0-M2-BICONDITIONAL-SPLIT-REGISTRY-LANDING\"\n   52: SCHEME = \"vii-w-3-three-row-split-landing\"\n   53: CONVENTION = \"algebraic-substrate-lab-with-stage-1-candidate-on-lab-rerouted-from-vii-w-2\"\n   54: L_MAX_TAG = \"N/A\"  # (local) registry-write gate; no L_max\n   55: SCHEMA_VERSION = \"S87+\"\n   56: \n   57: JSON_PATH = ROOT / \"computations\" / \"s88_w4a_split_registry_writer.json\"\n   58: VERDICTS_PATH = ROOT / \"computations\" / \"_shared\" / \"s88_gate_verdicts.txt\"\n   59: SCRIPT_PATH = ROOT / \"computations\" / \"s88_w4a_split_registry_writer.py\"\n   60: PLAN_PATH = ROOT / \"sessions\" / \"session-plan\" / \"session-88-plan-w4a.md\"\n   61: W4A_16_VERDICT_PATH = ROOT / \"computations\" / \"_shared\" / \"s88_gate_verdicts.txt\"\n   62: W4A_16_NPZ_PATH = ROOT / \"computations\" / \"s88_w4a_a0_m2_backward_rescue_theorem.npz\"\n   63: W4A_16_JSON_PATH = ROOT / \"computations\" / \"s88_w4a_a0_m2_backward_rescue_theorem.json\"\n   64: WORKSHOP_PATH = ROOT / \"sessions\" / \"session-87\" / \"workshops\" / \"s87-a0-r-protection-m2-biconditional.md\"\n   65: W5_PAIRING_NPZ = ROOT / \"computations\" / \"session-86\" / \"s86_w5_r_universal_pairing.npz\"  # may not exist; informational"
+    },
+    {
+      "anchor_id": "prov_28",
+      "anchor_type": "data_provenance",
+      "name": "complexity_functional",
+      "script_path": "session-19/s19a_complexity_functional.py",
+      "session": "s19a",
+      "inputs": "",
+      "outputs": "session-19/s19a_complexity_functional.png",
+      "source_file": "computations/session-19/s19a_complexity_functional.py",
+      "source_context_30_lines": "  269: \n  270:     return S, Z\n  271: \n  272: \n  273: # =============================================================================\n  274: # SECTION 4: COMPLEXITY FUNCTIONAL Omega(tau)\n  275: # =============================================================================\n  276: \n  277: def compute_complexity_functional(data, sigma_star=1.0, beta_star=1.0):\n  278:     \"\"\"\n  279:     Compute the Spectral Complexity Functional across all tau-values:\n  280: \n  281:         Omega(tau) = d_s(tau, sigma_*) * S(tau, beta_*) * R_reg(tau) / R_reg(0)\n  282: \n  283:     IMPORTANT: epsilon for R_reg is computed ONCE from the tau=0 spectrum\n  284:     and held FIXED across all tau-values. This prevents the regularization\n  285:     from dominating the tau-dependence of R_reg."
+    },
+    {
+      "anchor_id": "prov_29",
+      "anchor_type": "data_provenance",
+      "name": "entropy_capacity",
+      "script_path": "session-19/s19a_entropy_capacity.py",
+      "session": "s19a",
+      "inputs": "",
+      "outputs": "session-19/s19a_entropy_capacity.png",
+      "source_file": "computations/session-19/s19a_entropy_capacity.py",
+      "source_context_30_lines": "   88: \n   89:     return Z, S, C, lam2_mean, lam4_mean\n   90: \n   91: \n   92: # =============================================================================\n   93: # MAIN ANALYSIS\n   94: # =============================================================================\n   95: \n   96: def analyze_entropy_capacity(data):\n   97:     \"\"\"\n   98:     Full entropy + heat capacity analysis over (tau, beta) grid.\n   99:     \"\"\"\n  100:     tau_values = data['tau_values']\n  101:     n_tau = len(tau_values)\n  102: \n  103:     # Beta range\n  104:     beta_values = np.logspace(-2, 2, 50)"
+    },
+    {
+      "anchor_id": "prov_30",
+      "anchor_type": "data_provenance",
+      "name": "false_vacuum_analysis",
+      "script_path": "session-19/s19a_false_vacuum_analysis.py",
+      "session": "s19a",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-19/s19a_false_vacuum_analysis.py",
+      "source_context_30_lines": "<name 'false_vacuum_analysis' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: Session 19a -- S-5 Extension: False Vacuum Analysis\n    3: =====================================================\n    4: \n    5: The user asked \"False Vacuum?\" about the d_s > 8 behavior at large tau.\n    6: \n    7: Key observation: V_eff(tau) is monotonically DECREASING (Session 18 closure).\n    8: The system wants to roll to tau -> infinity. But the spectral data says:\n    9: \n   10: 1. Spectral gap GROWS with tau (lambda_min: 0.833 -> 3.206)\n   11: 2. Vacuum energy <lambda^2> grows exponentially (~e^{1.77*tau})\n   12: 3. d_s exceeds topological dimension 8 at tau > ~1.0\n   13: 4. Spectral entropy DECREASES monotonically\n   14: \n   15: This is the structure of a FALSE VACUUM: energetically favored by V_eff\n   16: but creating a spectral desert where excitations are too expensive for\n   17: any physics to exist.\n   18: \n   19: The TRUE vacuum must be at intermediate tau where:\n   20: - The spectrum still supports particle-like excitations\n   21: - The spectral gap is not too large\n   22: - The d_s is close to physical values (4-8)\n   23: \n   24: This script computes:\n   25: 1. Spectral gap evolution\n   26: 2. Vacuum energy density evolution\n   27: 3. Excitation cost: energy to create the lightest mode\n   28: 4. \"Habitability\" metric: where can the universe support particles?\n   29: 5. The spectral false vacuum boundary\n   30: "
+    }
+  ]
+}

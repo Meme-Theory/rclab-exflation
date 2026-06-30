@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 147,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1461",
+      "anchor_type": "data_provenance",
+      "name": "pck_large_n_pair",
+      "script_path": "session-75/s75_pck_large_n_pair.py",
+      "session": "s75",
+      "inputs": "",
+      "outputs": "session-75/s75_pck_large_n_pair.npz, session-75/s75_pck_large_n_pair.png",
+      "source_file": "computations/session-75/s75_pck_large_n_pair.py",
+      "source_context_30_lines": "  809: # Method 3 results\n  810: for nu in fillings:\n  811:     r = results_method3[nu]\n  812:     prefix = f'm3_nu{int(nu*100):03d}'  # (local)\n  813:     for k2, v2 in r.items():\n  814:         if isinstance(v2, (int, float, np.floating)):\n  815:             save_dict[f'{prefix}_{k2}'] = v2\n  816: \n  817: out_path = os.path.join(data_dir, 's75_pck_large_n_pair.npz')\n  818: np.savez(out_path, **save_dict)\n  819: print(f\"\\nSaved: {out_path}\")\n  820: \n  821: # =====================================================================\n  822: #  10. FIGURE\n  823: # =====================================================================\n  824: \n  825: fig, axes = plt.subplots(1, 3, figsize=(15, 5))"
+    },
+    {
+      "anchor_id": "prov_1462",
+      "anchor_type": "data_provenance",
+      "name": "phases_bd",
+      "script_path": "session-75/s75_phases_bd.py",
+      "session": "s75",
+      "inputs": "",
+      "outputs": "session-75/s75_phases_bd.npz, session-75/s75_phases_bd.png",
+      "source_file": "computations/session-75/s75_phases_bd.py",
+      "source_context_30_lines": "  891: # SECTION 12: Save results\n  892: # =============================================================================\n  893: \n  894: print(\"=\" * 78)\n  895: print(\"SECTION 12: Saving results\")\n  896: print(\"=\" * 78)\n  897: print()\n  898: \n  899: outfile = os.path.join(SCRIPT_DIR, 's75_phases_bd.npz')  # (local)\n  900: np.savez(outfile,\n  901:     # Gate metadata\n  902:     gate_name='S75-C4-PHASES-BD',\n  903:     gate_verdict=gate_verdict,\n  904:     gate_detail=gate_detail,\n  905: \n  906:     # Mode labels\n  907:     labels=labels,"
+    },
+    {
+      "anchor_id": "prov_1463",
+      "anchor_type": "data_provenance",
+      "name": "pomeran_n_scan",
+      "script_path": "session-75/s75_pomeran_n_scan.py",
+      "session": "s75",
+      "inputs": "",
+      "outputs": "session-75/s75_pomeran_n_scan.npz",
+      "source_file": "computations/session-75/s75_pomeran_n_scan.py",
+      "source_context_30_lines": "  628:      phonon-exflation fabric, independent of N_cells. The quasiparticle\n  629:      description is self-consistent at all scales.\n  630: \"\"\")\n  631: \n  632: # =============================================================================\n  633: # Section 10: Save Data\n  634: # =============================================================================\n  635: \n  636: save_path = os.path.join(script_dir, 's75_pomeran_n_scan.npz')  # (local)\n  637: \n  638: # Collect F_0^s values for clean output\n  639: F0s_pert = {N: results[(N, 'z6_approx')]['worst_F0'] for N in N_scan}  # (local)\n  640: F0s_sc = {N: results_sc[(N, 'z6_approx')]['worst_F0'] for N in N_scan}  # (local)\n  641: min_stab_pert = {N: results[(N, 'z6_approx')]['min_stability'] for N in N_scan}  # (local)\n  642: min_stab_sc = {N: results_sc[(N, 'z6_approx')]['min_stability'] for N in N_scan}  # (local)\n  643: \n  644: np.savez(save_path,"
+    },
+    {
+      "anchor_id": "prov_1464",
+      "anchor_type": "data_provenance",
+      "name": "r_b_k_running",
+      "script_path": "session-75/s75_r_b_k_running.py",
+      "session": "s75",
+      "inputs": "s74_transfer_function.npz, s73b_transit_ps.npz, s56_gge_fabric.npz",
+      "outputs": "session-75/s75_r_b_k_running.npz, session-75/s75_r_b_k_running.png",
+      "source_file": "computations/session-75/s75_r_b_k_running.py",
+      "source_context_30_lines": "  773: print(f\"{'n_s^disp (pivot)':<25} {ns_total_at_pivot:<20.10f}\")\n  774: print(f\"{'A_s ratio (disp/S74)':<25} {A_s_ratio:<20.15f}\")\n  775: print(f\"{'Suppression factor':<25} {'(k_CMB/k_fold)^2 ~ 10^{-110}':<20}\")\n  776: \n  777: # ============================================================================\n  778: #  12. Save data\n  779: # ============================================================================\n  780: \n  781: np.savez(\"s75_r_b_k_running.npz\",\n  782:     # k arrays (CMB scale)\n  783:     k_Mpc=k_Mpc,\n  784:     k_MKK=k_MKK,\n  785:     k_pivot_Mpc=k_pivot_Mpc,\n  786:     k_scale_factor=k_scale_factor,\n  787: \n  788:     # Per-branch results at CMB scale\n  789:     r_B1_k=results[\"B1\"][\"r_k\"],"
+    },
+    {
+      "anchor_id": "prov_1465",
+      "anchor_type": "data_provenance",
+      "name": "registry_entry_48",
+      "script_path": "session-75/s75_registry_entry_48.py",
+      "session": "s75",
+      "inputs": "",
+      "outputs": "session-75/s75_registry_entry_48.npz",
+      "source_file": "computations/session-75/s75_registry_entry_48.py",
+      "source_context_30_lines": "  362:     # Step 3: Build and print registry entry\n  363:     print(\"Step 2: Constructing registry entry...\")\n  364:     print()\n  365:     report = build_full_report(data)  # (local)\n  366:     print(report)\n  367: \n  368:     # Step 4: Save output\n  369:     here = os.path.dirname(os.path.abspath(__file__))  # (local)\n  370:     out_path = os.path.join(here, \"s75_registry_entry_48.npz\")  # (local)\n  371:     np.savez(\n  372:         out_path,\n  373:         registry_number=REGISTRY_NUMBER,\n  374:         result_statement=build_registry_entry(),\n  375:         session_provenance=SOURCE_SESSION,\n  376:         status=\"PERMANENT (COMPOSITE)\",\n  377:         n_layers=N_LAYERS_REQUIRED,\n  378:         composite_proven=True,"
+    },
+    {
+      "anchor_id": "prov_1466",
+      "anchor_type": "data_provenance",
+      "name": "sin2_lr_normalization",
+      "script_path": "session-75/s75_sin2_lr_normalization.py",
+      "session": "s75",
+      "inputs": "",
+      "outputs": "session-75/s75_sin2_lr_normalization.npz, session-75/s75_sin2_lr_normalization.png",
+      "source_file": "computations/session-75/s75_sin2_lr_normalization.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s75_sin2_lr_normalization.py -- SIN2-LR-NORMALIZATION-75 (W2-D)\n    4: =================================================================\n    5: \n    6: Compute sin^2(theta_W) from the Baptista eq 3.41 left-right asymmetry\n    7: on SU(3) with Jensen deformation at tau_fold.\n    8: \n    9: PHYSICAL FRAMEWORK\n   10: ------------------\n   11: Paper 13, Section 3 (eq 3.39-3.41): After fiber integration of the"
+    },
+    {
+      "anchor_id": "prov_1467",
+      "anchor_type": "data_provenance",
+      "name": "soft_hair_de",
+      "script_path": "session-75/s75_soft_hair_de.py",
+      "session": "s75",
+      "inputs": "",
+      "outputs": "session-75/s75_soft_hair_de.npz, session-75/s75_soft_hair_de.png",
+      "source_file": "computations/session-75/s75_soft_hair_de.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s75_soft_hair_de.py -- S75-D9-SOFT-HAIR-DE (W4-D)\n    4: \n    5: Compute f_DE = (soft-hair vacuum energy) / (total DE) using the a_2-weighted\n    6: soft-hair contribution.\n    7: \n    8: SUBSTRATE FRAMING\n    9: -----------------\n   10: The spectral action has distinct channels weighted by Seeley-DeWitt coefficients:\n   11: "
+    },
+    {
+      "anchor_id": "prov_1468",
+      "anchor_type": "data_provenance",
+      "name": "soft_hair_leggett_filter",
+      "script_path": "session-75/s75_soft_hair_leggett_filter.py",
+      "session": "s75",
+      "inputs": "",
+      "outputs": "session-75/s75_soft_hair_leggett_filter.npz",
+      "source_file": "computations/session-75/s75_soft_hair_leggett_filter.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s75_soft_hair_leggett_filter.py -- S75-E1-LEGGETT-FILTER (W1-L)\n    4: \n    5: CPT-Parity Surviving Fraction of the 196.2 Richardson-Gaudin Sectors\n    6: for the Dark Matter Channel.\n    7: \n    8: SUBSTRATE FRAMING\n    9: -----------------\n   10: The Leggett branch is the inter-band coherence mode of the BCS condensate on\n   11: Jensen-deformed SU(3). It is CPT-neutral and non-annihilating because:"
+    },
+    {
+      "anchor_id": "prov_1469",
+      "anchor_type": "data_provenance",
+      "name": "spectral_decoupling_cert",
+      "script_path": "session-75/s75_spectral_decoupling_cert.py",
+      "session": "s75",
+      "inputs": "",
+      "outputs": "session-75/s75_spectral_decoupling_cert.npz",
+      "source_file": "computations/session-75/s75_spectral_decoupling_cert.py",
+      "source_context_30_lines": "  679: # -------------------------------------------------------------------------\n  680: #  Save data\n  681: # -------------------------------------------------------------------------\n  682: \n  683: elapsed = time.time() - t_start  # (local)\n  684: print(f\"  Elapsed: {elapsed:.2f}s\")\n  685: print()\n  686: \n  687: output_path = os.path.join(SCRIPT_DIR, \"s75_spectral_decoupling_cert.npz\")  # (local)\n  688: \n  689: np.savez(output_path,\n  690:          # Theorem identification\n  691:          gate_id=\"S75-K2-DECOUPLING-CERT\",\n  692:          verdict=\"PASS\" if all_pass else \"FAIL\",\n  693:          # Fold values\n  694:          tau_fold=tau_fold,\n  695:          a0_fold_gilkey=a0_val,"
+    },
+    {
+      "anchor_id": "prov_1470",
+      "anchor_type": "data_provenance",
+      "name": "swampland_substrate",
+      "script_path": "session-75/s75_swampland_substrate.py",
+      "session": "s75",
+      "inputs": "",
+      "outputs": "session-75/s75_swampland_substrate.npz",
+      "source_file": "computations/session-75/s75_swampland_substrate.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s75_swampland_substrate.py — de Sitter Swampland Conjecture Test\n    4: ================================================================\n    5: \n    6: Gate: S75-H5-SWAMPLAND\n    7:   PASS: |V'|/V >= 0.5 for all tau in [0.19, 1.70] (Planck units)\n    8:   INFO: |V'|/V >= 0.1 but < 0.5\n    9:   FAIL: |V'|/V < 0.1 at some tau\n   10: \n   11: Tests the Vafa (2018) de Sitter swampland conjecture against the spectral"
+    }
+  ]
+}

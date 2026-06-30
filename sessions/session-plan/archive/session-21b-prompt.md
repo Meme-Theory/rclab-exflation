@@ -332,7 +332,7 @@ Every computation in the Session 21 program must have a pre-registered Constrain
 
 #### Deliverable
 
-The Complete Closure gate registry: a table where every row is a computation and every column is an outcome tier (INTERESTING/COMPELLING/DECISIVE/CLOSED/STRUCTURAL CLOSURE) with Bayesian weights. The accommodation audit (P vs A for each mechanism). The publication decision matrix.
+The Complete Closure gate registry: a table where every row is a computation and every column is an outcome level (INTERESTING/COMPELLING/DECISIVE/CLOSED/STRUCTURAL CLOSURE) with Bayesian weights. The accommodation audit (P vs A for each mechanism). The publication decision matrix.
 
 ---
 

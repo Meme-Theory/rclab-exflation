@@ -16,7 +16,7 @@ The Jacobson approach gives rho_grav as the heat flux through a Rindler horizon,
 
 **Computation Steps**:
 
-1. Load GGE temperatures from `tier0-computation/s43_gge_temp.npz` (T_B2 = 0.668, T_B1 = 0.435, T_B3 = 0.178) and entropy data from `tier0-computation/s43_gsl_transit.npz`.
+1. Load GGE temperatures from `computations/s43_gge_temp.npz` (T_B2 = 0.668, T_B1 = 0.435, T_B3 = 0.178) and entropy data from `computations/s43_gsl_transit.npz`.
 
 2. **Jacobson heat flux.** At a local Rindler horizon with acceleration a:
 
@@ -46,16 +46,16 @@ The Jacobson approach gives rho_grav as the heat flux through a Rindler horizon,
 - INFO: intermediate
 
 **Input files**:
-- `tier0-computation/s43_gge_temp.npz`
-- `tier0-computation/s43_gsl_transit.npz`
-- `tier0-computation/s43_first_law.npz`
-- `tier0-computation/s42_constants_snapshot.npz`
+- `computations/s43_gge_temp.npz`
+- `computations/s43_gsl_transit.npz`
+- `computations/s43_first_law.npz`
+- `computations/s42_constants_snapshot.npz`
 - `researchers/Hawking/17_2019_Jacobson_Thermodynamic_Einstein_Equation.md`
 
 **Output files**:
-- Script: `tier0-computation/s44_jacobson_spec.py`
-- Data: `tier0-computation/s44_jacobson_spec.npz`
-- Plot: `tier0-computation/s44_jacobson_spec.png`
+- Script: `computations/s44_jacobson_spec.py`
+- Data: `computations/s44_jacobson_spec.npz`
+- Plot: `computations/s44_jacobson_spec.png`
 
 **Working paper section**: W5-1
 
@@ -95,13 +95,13 @@ You are computing the non-Gaussianity parameter f_NL produced by Voronoi tessell
 - INFO: f_NL computed but dominated by cosmic variance
 
 **Input files**:
-- `tier0-computation/s42_homogeneity.npz` (delta_tau/tau)
+- `computations/s42_homogeneity.npz` (delta_tau/tau)
 - Standard Planck LCDM C_l
 
 **Output files**:
-- Script: `tier0-computation/s44_voronoi_fnl.py`
-- Data: `tier0-computation/s44_voronoi_fnl.npz`
-- Plot: `tier0-computation/s44_voronoi_fnl.png`
+- Script: `computations/s44_voronoi_fnl.py`
+- Data: `computations/s44_voronoi_fnl.npz`
+- Plot: `computations/s44_voronoi_fnl.png`
 
 **Working paper section**: W5-2
 
@@ -119,7 +119,7 @@ You are computing the phonon density of states at 5 tau values across the transi
 
 **Computation Steps**:
 
-1. Use `tier0-computation/tier1_dirac_spectrum.py` to compute D_K eigenvalues at tau = 0.00, 0.05, 0.10, 0.15, 0.19 for sectors up to max_pq_sum = 6. (~8.7s per tau per sector, ~5 min total.)
+1. Use `computations/dirac_spectrum.py` to compute D_K eigenvalues at tau = 0.00, 0.05, 0.10, 0.15, 0.19 for sectors up to max_pq_sum = 6. (~8.7s per tau per sector, ~5 min total.)
 
 2. Construct multiplicity-weighted histogram rho(omega, tau) at each tau with bins 0.02 M_KK.
 
@@ -130,13 +130,13 @@ You are computing the phonon density of states at 5 tau values across the transi
 **Pre-registered gate DOS-TAU-44**: INFO (diagnostic, feeds LIFSHITZ-ETA-44 and STRUTINSKY-DIAG-44).
 
 **Input files**:
-- `tier0-computation/tier1_dirac_spectrum.py`
-- `tier0-computation/s43_phonon_dos.npz`
+- `computations/dirac_spectrum.py`
+- `computations/s43_phonon_dos.npz`
 
 **Output files**:
-- Script: `tier0-computation/s44_dos_tau.py`
-- Data: `tier0-computation/s44_dos_tau.npz`
-- Plot: `tier0-computation/s44_dos_tau.png`
+- Script: `computations/s44_dos_tau.py`
+- Data: `computations/s44_dos_tau.npz`
+- Plot: `computations/s44_dos_tau.png`
 
 **Working paper section**: W5-3
 
@@ -162,7 +162,7 @@ where t = ln(k/Lambda), Gamma_k^{(2)} is the second functional derivative, and R
 
 **Computation Steps**:
 
-1. Load gap-edge eigenvalues from `tier0-computation/s36_mmax_authoritative.npz` and BCS data from `tier0-computation/s38_cc_instanton.npz`.
+1. Load gap-edge eigenvalues from `computations/s36_mmax_authoritative.npz` and BCS data from `computations/s38_cc_instanton.npz`.
 
 2. **Truncation.** Restrict to the 8 gap-edge modes. The effective action:
 
@@ -186,14 +186,14 @@ where t = ln(k/Lambda), Gamma_k^{(2)} is the second functional derivative, and R
 - INFO: intermediate
 
 **Input files**:
-- `tier0-computation/s36_mmax_authoritative.npz`
-- `tier0-computation/s38_cc_instanton.npz`
-- `tier0-computation/s42_hauser_feshbach.npz`
+- `computations/s36_mmax_authoritative.npz`
+- `computations/s38_cc_instanton.npz`
+- `computations/s42_hauser_feshbach.npz`
 
 **Output files**:
-- Script: `tier0-computation/s44_frg_pilot.py`
-- Data: `tier0-computation/s44_frg_pilot.npz`
-- Plot: `tier0-computation/s44_frg_pilot.png`
+- Script: `computations/s44_frg_pilot.py`
+- Data: `computations/s44_frg_pilot.npz`
+- Plot: `computations/s44_frg_pilot.png`
 
 **Working paper section**: W5-4
 
@@ -215,7 +215,7 @@ S43 UV/IR workshop (Nazarewicz R1 Section 4): The one-parameter family f_alpha(x
 
 **Computation Steps**:
 
-1. Load W1-1 results from `tier0-computation/s44_sakharov_gn.npz`.
+1. Load W1-1 results from `computations/s44_sakharov_gn.npz`.
 
 2. **Extract f_2 from matching.** From W1-1:
 
@@ -245,13 +245,13 @@ S43 UV/IR workshop (Nazarewicz R1 Section 4): The one-parameter family f_alpha(x
 - INFO: f constrained but not uniquely determined
 
 **Input files**:
-- `tier0-computation/s44_sakharov_gn.npz` (W1-1 output)
-- `tier0-computation/s42_constants_snapshot.npz`
+- `computations/s44_sakharov_gn.npz` (W1-1 output)
+- `computations/s42_constants_snapshot.npz`
 
 **Output files**:
-- Script: `tier0-computation/s44_cutoff_f.py`
-- Data: `tier0-computation/s44_cutoff_f.npz`
-- Plot: `tier0-computation/s44_cutoff_f.png`
+- Script: `computations/s44_cutoff_f.py`
+- Data: `computations/s44_cutoff_f.npz`
+- Plot: `computations/s44_cutoff_f.png`
 
 **Working paper section**: W5-5
 
@@ -273,7 +273,7 @@ Since TRACE-LOG-CC-44 (W1-4) may provide the correction factor f = E/S, this com
 
 **Computation Steps**:
 
-1. Load original HOMOG-42 script and results from `tier0-computation/s42_homogeneity.py` and `tier0-computation/s42_homogeneity.npz`.
+1. Load original HOMOG-42 script and results from `computations/s42_homogeneity.py` and `computations/s42_homogeneity.npz`.
 
 2. **E-vs-F correction factor.** If W1-4 (TRACE-LOG-CC-44) results are available, use the computed f = E/S. Otherwise, parametrize: f = 1 (baseline), f = 2, f = 5, f = 10.
 
@@ -291,14 +291,14 @@ Since TRACE-LOG-CC-44 (W1-4) may provide the correction factor f = E/S, this com
 - INFO: f from W1-4 gives marginal result
 
 **Input files**:
-- `tier0-computation/s42_homogeneity.py`
-- `tier0-computation/s42_homogeneity.npz`
+- `computations/s42_homogeneity.py`
+- `computations/s42_homogeneity.npz`
 - W1-4 results (if available)
 
 **Output files**:
-- Script: `tier0-computation/s44_homog_recompute.py`
-- Data: `tier0-computation/s44_homog_recompute.npz`
-- Plot: `tier0-computation/s44_homog_recompute.png`
+- Script: `computations/s44_homog_recompute.py`
+- Data: `computations/s44_homog_recompute.npz`
+- Plot: `computations/s44_homog_recompute.png`
 
 **Working paper section**: W5-6
 

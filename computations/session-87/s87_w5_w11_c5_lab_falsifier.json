@@ -1,0 +1,365 @@
+{
+  "gate_id": "S87-W11-C5-LAB-FALSIFIER",
+  "session": "S87",
+  "wave": "W5-2",
+  "carry_forward": "CF-32",
+  "trigger": [
+    "VERIFY",
+    "SIGN"
+  ],
+  "classification": "PHONONIC",
+  "schema_version": "S87+",
+  "owner": "volovik-superfluid-universe-theorist",
+  "co_author": "connes-ncg-theorist",
+  "executed_at_utc": "2026-04-29T23:15:18.214055+00:00",
+  "output_4tuple": {
+    "value": 7.324992,
+    "scheme": "Sage-exact-zeta-regulated-Hochschild-pairing-cancellation-theorem",
+    "convention": "3He-B-BDI-vortex-core-Caroli-Matricon",
+    "L_max": 10
+  },
+  "input_pin_map": {
+    "GATE_ID": "S87-W11-C5-LAB-FALSIFIER",
+    "SCHEME": "Sage-exact-zeta-regulated-Hochschild-pairing-cancellation-theorem",
+    "CONVENTION": "3He-B-BDI-vortex-core-Caroli-Matricon",
+    "L_MAX": 10,
+    "GATE2_RATIO_NOMINAL": 7.325,
+    "GATE2_TOLERANCE_PCT": 0.001,
+    "GATE2_BAND_LOWER": 7.317675,
+    "GATE2_BAND_UPPER": 7.332324999999999,
+    "GATE1_NULL_MARGIN_M_KK_SQ": 0.573193,
+    "GATE4_SLOPE_DISCRIMINATION_SIGMA": 3.0,
+    "substrate_cocycle_ratio_67_88": 7.324992,
+    "cocycle_norm_phi67": 0.793346,
+    "cocycle_norm_phi88": 0.108307,
+    "M_KK": 7.428660036284456e+16,
+    "PRIMARY_PLATFORM": "Lancaster MCT-3 vortex-core spectroscopy (Pickett group)",
+    "SECONDARY_PLATFORM": "RHUL Royal Holloway 3He-B nanofluidic cells",
+    "TERTIARY_PLATFORM": "Helsinki ROTA / Aalto LTL polycritical 3He-B cells",
+    "CF31_AUDIT_SHA": "5775770d2e01617ee5efeec96413508bb3a66f97616466b36bf1fd1c9b24b0eb",
+    "CF31_CONTENT_SHA": "1a321c5bb2c04e8d1e85939e5a7aa346ea6065d6db37a77ebd00f0ee56a55a69",
+    "sha256_canonical_constants": "03a5c5fcd8d616095b0fe761f27e82d35c80282837721ba7d9df60672aea8ec8",
+    "sha256_inheritance_falsifier_rule": "0021fd22305d40e21d2c100d95f2b9fd7881ebf57459be3f6aa9ff89e793341e",
+    "sha256_cross_pillar_bridge_anatomy_rule": "2b8ed4d344314b3b9a0b7fe0955ef6269656c1d76cb1cba4202529a1cb8239b0",
+    "sha256_permanent_results_registry": "839e5c283445e1bd7b655964f667e5356b6986a045e7557491fe4a2cb71b4658",
+    "sha256_falsifier_master_inventory": "082eb58e30b36c8f0ab4a4a4e9e7f65a8d87bd947b658f112f0b44390a9dbca5",
+    "sha256_s86_gate_verdicts": "745d893fca5d756d296615db70f8268c7010990b5811f3ee693e3092bb76585d",
+    "schema_version": "S87+"
+  },
+  "audit_sha256": "d40a8d26588a0d207ddb6adaad1f26149512e940c659ade32766054d33031a8b",
+  "verdict_top_line": "PASS",
+  "sign_verdict": "PASS",
+  "magnitude_verdict": "PASS",
+  "regime_verdict": "VALID",
+  "sign_pre_registered_direction": "ratio > 0; band [7.318, 7.332] inclusive of canonical 7.324992",
+  "audit_checks": {
+    "1_kernel_rank_declared": true,
+    "2_all_4_gates_pre_registered": true,
+    "3_gate2_ratio_substrate_value_with_band": true,
+    "4_cancellation_theorem_applicability": true,
+    "5_per_row_substrate_predictions": true
+  },
+  "all_audit_pass": true,
+  "substitution_chain": {
+    "step1_definitions": "||phi_67|| := <[phi_67^{sym}], [Ch(P_0(tau_fold))]> on (A_K^<=10, ...); ||phi_88|| := <[phi_88^{sym}], [Ch(P_0(tau_fold))]> ; lab(F_i) := ||phi_a|| * f_i * (Delta_B/Delta_A)^{p_i}",
+    "step2_substitution": "lab(F_1)/lab(F_5) = [||phi_67|| * f_1 * (Delta_B/Delta_A)^{p_1}] / [||phi_88|| * f_5 * (Delta_B/Delta_A)^{p_5}]",
+    "step3_simplification": "common p_1 = p_5 = 2 => (Delta_B/Delta_A)^0 = 1 EXACTLY ; lab(F_1)/lab(F_5) = (||phi_67||/||phi_88||) * (f_1/f_5) = r_substrate * (f_1/f_5)",
+    "step4_direction": "r_substrate = 7.324992 > 0 ; magnitude fixed by substrate cohomology, INDEPENDENT of (Delta_B/Delta_A) and p",
+    "step5_falsification_predicate": "if measured lab(F_1)/lab(F_5) NOT in [7.3177, 7.3323] AND common-p verified, => substrate cohomology-asymmetry prediction FALSIFIED. (Delta_B/Delta_A)^p cancellation makes the test substrate-falsifying.",
+    "conclusion": "r_substrate * (f_1/f_5) = 7.3250 +/- 0.1% is the substrate-derived ratio prediction; PRESERVED-INTACT under inheritance."
+  },
+  "inheritance_kernel_structure": {
+    "morphism": "iota : (A_K, H_K, D_K) -> 3He-B BdG sector",
+    "algebra_projection": "chi : C (+) H (+) M_3(C) -> M_2(C); chi sends M_3(C) -> 0",
+    "parent_algebra": "A_K = C (+) H (+) M_3(C)",
+    "child_algebra": "M_2(C) (3He-B BdG sector)",
+    "parent_symmetry_class": "BDI universality (KO-dim=6, J*D_K=0 CPT)",
+    "kernel_rank": 2,
+    "kernel_generators": [
+      {
+        "generator": "[phi_67]",
+        "description": "chiral-pair Hochschild cocycle on lambda_6/lambda_7 off-diagonal sector",
+        "norm_M_KK_sq": 0.793346,
+        "norm_source": "canonical_constants.py:235 (S86 W-5 CANONICAL-3)"
+      },
+      {
+        "generator": "[phi_88]",
+        "description": "Cartan hypercharge cocycle on lambda_8 angular-diagonal sector",
+        "norm_M_KK_sq": 0.108307,
+        "norm_source": "canonical_constants.py:236 (S86 W-5 CANONICAL-4)"
+      }
+    ],
+    "inheritance_outcome": "Both [phi_67] and [phi_88] are STRUCTURALLY-NON-INHERITED into the 3He-B BdG sector under chi-projection. The substrate's BDI-protected parent inheritance predicts NULL on every F-row probing either generator (Gate 1 + Gate 3); the substrate's COHOMOLOGY-CLASS RATIO ||phi_67||/||phi_88|| = 7.324992 is PRESERVED INTACT in the laboratory measurement under (Delta_B/Delta_A)^p cancellation (Gate 2).",
+    "rank2_saturation_note": "F6 testing combined (phi_67 (x) phi_88) bilinear is structurally redundant; bilinear lives in HC^4 with no K_0 partner under Hodgkin rank-2; iota_*([phi_67] cup [phi_88]) = 0 cup 0 = 0 vacuously. The 5-row F1-F5 table SATURATES rank-2 ker(iota_*) Hochschild cohomology.",
+    "source": ".claude/rules/inheritance-falsifier-protocol.md \u00a71-\u00a72 + W-5 R2-B EMERGENCE #2 + S86 W-5 CANONICAL-3 / CANONICAL-4 / CANONICAL-5; co-authored by connes-ncg-theorist for the NCG-axiomatic kernel-rank assertion (rank 2, generators [phi_67], [phi_88])."
+  },
+  "f_row_table": [
+    {
+      "row_id": "F1",
+      "name": "Vortex-core Caroli-Matricon ladder asymmetry",
+      "cocycle_probed": "phi_67 (chiral pair Hochschild cocycle)",
+      "decisiveness": "DECISIVE",
+      "framework_prediction": "NULL",
+      "substrate_S_N_margin_M_KK_sq": 0.573193,
+      "lab_platform": "Lancaster MCT-3 vortex-core spectroscopy (Pickett group)",
+      "falsifier_signature": "phi_67-style off-diagonal coupling between Im/Re Bogoliubov branches at vortex-core ladder spacing Delta^2/E_F ~ 30 nK * (Delta/T_c)",
+      "gate_membership": [
+        "Gate-1 (decisive NULL)",
+        "Gate-2 (ratio numerator)"
+      ],
+      "common_p_class": "p=2 (NMR longitudinal Delta^2 leading order)",
+      "row_type": "decisive cocycle-clean phi_67"
+    },
+    {
+      "row_id": "F2",
+      "name": "SABS axial-equatorial off-diagonal pair correlation",
+      "cocycle_probed": "phi_67",
+      "decisiveness": "DECISIVE",
+      "framework_prediction": "NULL",
+      "substrate_S_N_margin_M_KK_sq": 0.573193,
+      "lab_platform": "TKK / Lancaster / RHUL nanofluidic cells with specular wall (4He-coated 131Xe surface; arXiv:1005.0546 protocol)",
+      "falsifier_signature": "OFF-DIAGONAL SABS coupling between two axes at Delta_B/2 ~ 100 MHz (Delta_B ~ 200 MHz at p ~ 0)",
+      "gate_membership": [
+        "Gate-1 (decisive NULL)"
+      ],
+      "common_p_class": "p=2 (NMR longitudinal)",
+      "row_type": "decisive cocycle-clean phi_67 (second-cleanest)"
+    },
+    {
+      "row_id": "F3",
+      "name": "Half-quantum vortex (HQV) splitting in restricted geometry",
+      "cocycle_probed": "phi_67 via dipolar-locking lift",
+      "decisiveness": "SUPPORTING",
+      "framework_prediction": "NULL",
+      "substrate_S_N_margin_M_KK_sq": 0.4,
+      "lab_platform": "RHUL / Helsinki restricted-slab cells (D < xi_B); muSR or NMR-frequency comb",
+      "falsifier_signature": "extra splitting Delta_omega_split ~ (tau_fold-analog) * Delta_B/E_F at substrate magnitude 1.7267 (matches SW1/XA1 substrate value, Row #13/#16)",
+      "gate_membership": [
+        "Gate-3 (supporting NULL)"
+      ],
+      "common_p_class": "p=2 (dipolar-locked NMR)",
+      "row_type": "supporting cocycle-clean phi_67"
+    },
+    {
+      "row_id": "F4",
+      "name": "Hypercharge-twist Larmor-frequency anomaly under combined (p, T) sweep",
+      "cocycle_probed": "phi_88 (with Jacobi-mediated phi_67 contamination at order unity)",
+      "decisiveness": "SUPPORTING (cocycle-degenerate at fixed (p,T))",
+      "framework_prediction": "NULL",
+      "substrate_S_N_margin_M_KK_sq": 0.3,
+      "lab_platform": "Helsinki ROTA / Lancaster cells; NMR Larmor sweep at p = 0-34 bar",
+      "falsifier_signature": "delta_omega_L^twist with (T/T_c)*(p/p_melt)*Delta_B scaling at 0.0709 * nu_Delta ~ 2.4205 MHz",
+      "gate_membership": [
+        "Gate-3 (supporting NULL)",
+        "Gate-4 (multi-pressure slope discrimination)"
+      ],
+      "gate4_slope_discrimination": "if non-NULL: slope cubic in p => phi_67 contamination FALSIFIES phi_88 cleanness; slope linear in p => phi_88 cleanness preserved (supporting evidence). Discrimination band > 3-sigma over 0-34 bar (4-bar increments).",
+      "common_p_class": "p=2 (NMR Larmor)",
+      "row_type": "supporting cocycle-degenerate phi_88"
+    },
+    {
+      "row_id": "F5",
+      "name": "Acoustic-mode dispersion offset under Jensen-modulus quench",
+      "cocycle_probed": "phi_88 (clean Jensen-direction probe)",
+      "decisiveness": "DECISIVE",
+      "framework_prediction": "NULL",
+      "substrate_S_N_margin_M_KK_sq": 0.573193,
+      "lab_platform": "Lancaster / RHUL pulse-NMR cells; KZ-quench protocols (Bunkov+Volovik 1999); pre-registerable via fast-thermal-quench through T_c",
+      "falsifier_signature": "quench-induced sound-speed offset Delta_c_s/c_s ~ (tau_fold-analog) * (Delta_B/Delta_A) ~ 5-10% at Goldstone mode frequency, peaked just after KZ defect-formation timescale ~ Delta_B^{-1}",
+      "gate_membership": [
+        "Gate-1 (decisive NULL)",
+        "Gate-2 (ratio denominator)"
+      ],
+      "common_p_class": "p=2 (acoustic-mode dispersion via Bogoliubov)",
+      "row_type": "decisive cocycle-clean phi_88"
+    }
+  ],
+  "cancellation_theorem_applicability": {
+    "applicable": true,
+    "F1_p_class_string": "p=2 (NMR longitudinal Delta^2 leading order)",
+    "F5_p_class_string": "p=2 (acoustic-mode dispersion via Bogoliubov)",
+    "F1_p_value": 2,
+    "F5_p_value": 2,
+    "common_p_holds": true,
+    "ratio_falsifying": true,
+    "verification_residual": "0.0e+00 (W-5 DONE-5 Python identity at machine precision)",
+    "theorem_form": "lab(F_i)/lab(F_j) = ||phi_a||/||phi_b|| * (f_i/f_j) when p_i = p_j = p",
+    "source": "S86 W-5 DONE-5; .claude/rules/inheritance-falsifier-protocol.md \u00a7'(Delta_B/Delta_A)^p Cancellation Theorem'"
+  },
+  "ratio_verification_sage_exact": {
+    "canonical_value": 7.324992,
+    "canonical_source": "canonical_constants.py:237 (S86 W-5 CANONICAL-5; W-5 R2-B Convergence #3 + R2-A EMERGENCE #2)",
+    "sage_QQ_from_published_norms_6sigfig": 7.3249743783873615,
+    "sage_QQ_form": "QQ(793346)/QQ(108307)",
+    "absolute_diff_canonical_vs_sageQQ": 1.762161263840767e-05,
+    "publication_precision_band_4sigfig": {
+      "nominal": 7.325,
+      "tolerance_pct": 0.001,
+      "lower": 7.317675,
+      "upper": 7.332324999999999
+    },
+    "canonical_inside_band": true,
+    "sage_QQ_inside_band": true,
+    "publication_precision_note": "Canonical 7.324992 (6 sig fig) and Sage QQ 7.32497438 (from 6 sig fig norms) agree to 1.76e-5 (publication-precision artifact per .claude/rules/epistemic-discipline.md Publication-Precision Pre-Registration). Both values are inside the [7.3177, 7.3323] +/-0.1% Gate-2 band."
+  },
+  "four_gate_structure": {
+    "Gate_1_decisive_NULL": {
+      "F_rows": [
+        "F1",
+        "F2",
+        "F5"
+      ],
+      "S_N_margin_M_KK_sq": 0.573193,
+      "PASS_predicate": "no signal at >3-sigma_lab on any of F1/F2/F5",
+      "FAIL_predicate": "any decisive row returns non-NULL detection at >3-sigma_lab"
+    },
+    "Gate_2_cohomology_asymmetry_ratio": {
+      "F_rows_cross": [
+        "F1",
+        "F5"
+      ],
+      "ratio_value": 7.324992,
+      "tolerance_band": [
+        7.317675,
+        7.332324999999999
+      ],
+      "tolerance_pct": 0.001,
+      "PASS_predicate": "|ratio_lab - 7.3250|/7.3250 < 0.001",
+      "FAIL_predicate": "|ratio_lab - 7.3250|/7.3250 >= 0.01",
+      "common_p_class": "p=2 (NMR longitudinal / acoustic Bogoliubov)"
+    },
+    "Gate_3_supporting_NULL": {
+      "F_rows": [
+        "F3",
+        "F4"
+      ],
+      "PASS_predicate": "no signal at >3-sigma_lab on F3 (supporting); F4 deferred to Gate-4",
+      "FAIL_predicate": "supporting row returns non-NULL at >3-sigma_lab"
+    },
+    "Gate_4_multi_pressure_slope": {
+      "F_row": "F4",
+      "scan_range_bar": [
+        0,
+        34
+      ],
+      "step_size_bar": 4,
+      "discrimination_threshold_sigma": 3.0,
+      "PASS_predicate": "Jacobi-cubic vs phi_88-linear discrimination > 3-sigma",
+      "FAIL_predicate": "no slope discrimination achievable at lab precision"
+    }
+  },
+  "lab_platform_pin_table": {
+    "PRIMARY": "Lancaster MCT-3 vortex-core spectroscopy (Pickett group)",
+    "SECONDARY": "RHUL Royal Holloway 3He-B nanofluidic cells",
+    "TERTIARY": "Helsinki ROTA / Aalto LTL polycritical 3He-B cells"
+  },
+  "draft_inventory_rows": {
+    "mack_writer_target": "sessions/framework/registry/falsifier-master-inventory.md",
+    "writer_protocol": "feedback_mack-bridge-role.md sole-writer; this gate stages the rows; mack-cosmic-bridge appends to the inventory in a follow-up dispatch",
+    "section_header": "## NEW Rows #47 + #48 + #49 + #50 -- 3He-B vortex-core W11-C5 lab falsifier (S87 W5-2 LAB-FALSIFIER-A class)\n\n> **Origin**: S87 W5-2 `S87-W11-C5-LAB-FALSIFIER` (volovik PRIMARY; connes-ncg co-author per plan \u00a7156). Pre-registers the 4-gate Lancaster MCT-3 / RHUL / Helsinki ROTA vortex-core spectroscopy falsifier protocol on 3He-B for the rank-2 ker(iota_*) cocycle pair (phi_67, phi_88). 4-gate structure per `.claude/rules/inheritance-falsifier-protocol.md` W-5 W11-C5 calibration corpus.\n\n> **Substrate framing (PHONONIC)**: Each row is a substrate excitation channel inheriting through chi : C (+) H (+) M_3(C) -> M_2(C) (chi-projection killing M_3(C)) into the 3He-B BdG sector. Rank-2 ker(iota_*) generators [phi_67] and [phi_88] carry substrate degrees-of-freedom that DO NOT inherit; their cohomology-class ratio survives intact under (Delta_B/Delta_A)^p cancellation (S86 W-5 DONE-5; 0.0e+00 Python residual; common-p=2 verified for F1/F5 pair).\n\n> **Inheritance protocol**: `.claude/rules/inheritance-falsifier-protocol.md` 4-gate template; W-5 W11-C5/C6 calibration corpus.\n\n> **Cross-pillar bridge anatomy**: `.claude/rules/cross-pillar-bridge-anatomy.md` 5-element IS-not-IN + 3-level ladder; substrate-IS = rank-2 cocycle pair on (A_K^<=10, H_K^<=10, D_K^<=10); laboratory-IN = Lancaster vortex-core Caroli-Matricon ladder spectrometer.\n\n> **EVOI tier**: LAB-FALSIFIER-A (decisive); 5-yr horizon = Lancaster MCT-3 2027-2030 PRIMARY / RHUL secondary / Aalto LTL-Helsinki ROTA tertiary.\n",
+    "rows": [
+      {
+        "row_number": 47,
+        "observable": "3He-B vortex-core W11-C5 kernel-signature NULL (Class A; F1 + F2 + F5 decisive triplet)",
+        "falsifier_function": "inheritance-morphism falsifier on rank-2 ker(iota_*); substrate predicts NULL on phi_67-clean and phi_88-clean decisive rows up to S/N margin 0.573193 M_KK^2",
+        "channels": "Lancaster MCT-3 vortex-core spectroscopy (PRIMARY; F1) + RHUL specular-wall SABS (F2) + Lancaster pulse-NMR Jensen-quench (F5)",
+        "prediction_values": "NULL on F1+F2+F5; substrate-derived lab S/N margin 0.573193 M_KK^2 each at decisive-triplet level (||phi_67|| at decisive-row angular-factor-unity collapse)",
+        "live_watch_envelope": "PASS if no signal at >3-sigma_lab on any of F1/F2/F5; FAIL if any decisive row returns non-NULL detection at >3-sigma_lab",
+        "internal_consistency_split": "rank-2 ker(iota_*) generators [phi_67]+[phi_88] do not inherit through chi; BDI-protected parent inheritance",
+        "detector_horizon": "Lancaster MCT-3 2027-2030 PRIMARY / RHUL secondary / Helsinki ROTA tertiary",
+        "scheme": "Sage-exact-zeta-regulated-Hochschild-pairing-cancellation-theorem",
+        "convention": "rank-2-ker-iota-substrate-distance-1",
+        "L_max": 10,
+        "notes": "NEW S87-W11-C5 LAB-FALSIFIER-A; W-5 W11-C5 4-gate template Class A (Gates 1+3 collapsed onto decisive triplet F1+F2+F5; supporting pair F3+F4 in Row #49)",
+        "gate_membership": [
+          "Gate-1 (decisive NULL)"
+        ],
+        "EVOI_tier": "LAB-FALSIFIER-A"
+      },
+      {
+        "row_number": 48,
+        "observable": "3He-B vortex-core W11-C5 cohomology-asymmetry ratio (Class B; ||phi_67||/||phi_88||)",
+        "falsifier_function": "inheritance-morphism falsifier; substrate predicts ratio 7.3250 +/- 0.1% via (Delta_B/Delta_A)^p cancellation theorem",
+        "channels": "Lancaster MCT-3 F1 vortex-core / F5 acoustic-quench cross-row ratio measurement under common p=2 NMR exponent",
+        "prediction_values": "r_substrate = 7.324992 (canonical S86 W-5 CANONICAL-5); Sage QQ form 7.32497438 from 6-sig-fig norms; 4-sig-fig publication 7.3250; tolerance band [7.317675, 7.332324999999999]",
+        "live_watch_envelope": "PASS if |ratio_lab - 7.3250|/7.3250 < 0.001 (+/-0.1%); INFO if 0.001 <= dev < 0.01 (band-edge); FAIL if dev >= 0.01",
+        "internal_consistency_split": "substrate cohomology-class ratio preserved INTACT under (Delta_B/Delta_A)^p cancellation (S86 W-5 DONE-5 0.0e+00 residual); INDEPENDENT of precise Delta_B/Delta_A or p; common-p=2 holds for F1+F5 pair",
+        "detector_horizon": "Lancaster MCT-3 2027-2030 / RHUL / Helsinki ROTA cells horizon",
+        "scheme": "Sage-exact-zeta-regulated-Hochschild-pairing-cancellation-theorem",
+        "convention": "rank-2-ker-iota-cohomology-asymmetry-common-p2",
+        "L_max": 10,
+        "notes": "NEW S87-W11-C5 LAB-FALSIFIER-A; W-5 W11-C5 4-gate template Class B (Gate 2); (Delta_B/Delta_A)^p cancellation per inheritance-falsifier-protocol.md \u00a7'(Delta_B/Delta_A)^p Cancellation Theorem'",
+        "gate_membership": [
+          "Gate-2 (cohomology-asymmetry ratio)"
+        ],
+        "EVOI_tier": "LAB-FALSIFIER-A"
+      },
+      {
+        "row_number": 49,
+        "observable": "3He-B vortex-core W11-C5 supporting kernel-signature NULL (Class A Gate-3; F3 + F4 supporting pair)",
+        "falsifier_function": "inheritance-morphism supporting falsifier; substrate predicts NULL on supporting cocycle-clean rows F3 (phi_67 dipolar-locking) + F4 (phi_88 cocycle-degenerate)",
+        "channels": "RHUL/Helsinki HQV restricted-slab muSR/NMR-comb (F3) + Helsinki ROTA / Lancaster Larmor multi-pressure NMR sweep (F4)",
+        "prediction_values": "NULL on F3 (S/N margin 0.40 M_KK^2; dipolar-locked) and F4 (S/N margin 0.30 M_KK^2; cocycle-degenerate, Gate-4 multi-p slope follow-up)",
+        "live_watch_envelope": "PASS if no signal at >3-sigma_lab on F3 (supporting); F4 supporting role deferred to Gate-4 slope discrimination",
+        "internal_consistency_split": "supporting cocycle-clean rows; lower S/N margin than decisive triplet but structurally non-redundant per Class-A specification",
+        "detector_horizon": "RHUL 2028+ / Helsinki ROTA / Lancaster lab-time-sharing 2028-2032",
+        "scheme": "Sage-exact-zeta-regulated-Hochschild-pairing-cancellation-theorem",
+        "convention": "rank-2-ker-iota-supporting-pair",
+        "L_max": 10,
+        "notes": "NEW S87-W11-C5 LAB-FALSIFIER-A; W-5 W11-C5 4-gate template Class A Gate-3 (supporting pair F3+F4)",
+        "gate_membership": [
+          "Gate-3 (supporting NULL)"
+        ],
+        "EVOI_tier": "LAB-FALSIFIER-A (supporting tier)"
+      },
+      {
+        "row_number": 50,
+        "observable": "3He-B vortex-core W11-C5 multi-pressure slope discrimination (F4 cocycle-degenerate Larmor anomaly)",
+        "falsifier_function": "Gate-4 cocycle-degenerate-row slope-discrimination falsifier; if F4 returns non-NULL, multi-pressure slope discriminates Jacobi-cubic (phi_67 contamination) vs phi_88-linear contributions",
+        "channels": "Helsinki ROTA / Lancaster cells; NMR Larmor sweep at p = 0-34 bar in 4-bar increments (~5x integration time per decisive row)",
+        "prediction_values": "if non-NULL on F4: slope cubic in p => phi_67 contamination FALSIFIES phi_88 cleanness; slope linear in p => phi_88 cleanness preserved (supporting evidence); discrimination >3-sigma over 0-34 bar",
+        "live_watch_envelope": "PASS if multi-pressure slope discrimination > 3-sigma resolves Jacobi-cubic vs phi_88-linear; INFO if 1.5-sigma < discrimination <= 3-sigma; FAIL if no discrimination achievable at lab precision",
+        "internal_consistency_split": "F4 alone is supporting; F4 + F5 jointly resolve the phi_88 cocycle group (F5 cocycle-clean decisive in Row #47, F4 multi-p slope here)",
+        "detector_horizon": "Helsinki ROTA dynamic-pressure scan commitment window S87-S88 (R3 CF2 reserved item); Lancaster fallback if Helsinki does not commit",
+        "scheme": "Sage-exact-zeta-regulated-Hochschild-pairing-cancellation-theorem",
+        "convention": "rank-2-ker-iota-multi-p-slope-discrimination",
+        "L_max": 10,
+        "notes": "NEW S87-W11-C5 LAB-FALSIFIER-A; W-5 W11-C5 4-gate template Gate-4 (slope discrimination on cocycle-degenerate F4 row)",
+        "gate_membership": [
+          "Gate-4 (multi-pressure slope discrimination)"
+        ],
+        "EVOI_tier": "LAB-FALSIFIER-A (slope-discrimination tier)"
+      }
+    ],
+    "row_count": 4,
+    "suite_level_cancellation_theorem_note": "All 4 staged rows share common exponent p=2 for F1/F5 cross-row ratio (Row #48 Gate-2). Cancellation operationally verified at 0.0e+00 Python residual per S86 W-5 DONE-5; substrate-derived ratio survives any laboratory-conversion shopping (Greywall vs Halperin-Hammel vs Volovik q-theory gap-extraction methods).",
+    "platform_pin_table": {
+      "PRIMARY": "Lancaster MCT-3 vortex-core spectroscopy (Pickett group)",
+      "SECONDARY": "RHUL Royal Holloway 3He-B nanofluidic cells",
+      "TERTIARY": "Helsinki ROTA / Aalto LTL polycritical 3He-B cells"
+    },
+    "follow_up_dispatch": "Mack-cosmic-bridge follow-up (~2h, S87 plan-freeze finalization): writes Rows #47-#50 + section header to falsifier-master-inventory.md; stages audit-pin sub-rows referencing this script's audit_sha256 + content_sha256."
+  },
+  "upstream_dependency": {
+    "gate_id": "S87-PILLAR-III-IV-BRIDGE-PERMANENT-LAND",
+    "verdict": "PASS",
+    "audit_sha256": "5775770d2e01617ee5efeec96413508bb3a66f97616466b36bf1fd1c9b24b0eb",
+    "content_sha256": "1a321c5bb2c04e8d1e85939e5a7aa346ea6065d6db37a77ebd00f0ee56a55a69",
+    "verdict_file_line": 152,
+    "purpose": "Establishes substrate-IS Hochschild-pairing observable inherited by W5-2"
+  },
+  "substrate_framing": "The substrate IS the rank-2 cocycle pair ([phi_67], [phi_88]) in ker(iota_*) of the inheritance morphism iota: (A_K, H_K, D_K) -> 3He-B BdG sector. Lancaster MCT-3's vortex-core spectrometer measures the Caroli-Matricon ladder asymmetry IN the laboratory frame. Substrate's prediction (NULL on F1+F2+F5 decisively + ratio 7.3250 on F1/F5 cross) flows FROM substrate cohomology TOWARD the laboratory observable; the platform reads the substrate's signature. Container-thinking inversion (treating the lab platform as fundamental and the substrate cocycle as a derived 'signal') is FORBIDDEN per phononic-framing.md IS-not-IN convention.",
+  "carry_forward_lab_execution": {
+    "horizon_years": [
+      2027,
+      2030
+    ],
+    "primary_platform": "Lancaster MCT-3 vortex-core spectroscopy (Pickett group)",
+    "secondary_platform": "RHUL Royal Holloway 3He-B nanofluidic cells",
+    "tertiary_platform": "Helsinki ROTA / Aalto LTL polycritical 3He-B cells",
+    "estimated_lab_time_decisive_triplet": "2-3 yr full Lancaster MCT-3 dilution-fridge campaign",
+    "estimated_lab_time_full_4_gate": "5-7 yr (including Helsinki ROTA Gate-4 multi-pressure window)",
+    "what_remains_uncomputed": "Lab execution itself: this gate is pre-registration only; the substrate's predictions are deterministic Sage-exact. Lab-side execution is platform-side carry-forward; 4-gate measurement campaign completion is not a S87 deliverable.",
+    "next_session_dispatch": "S87+ follow-up: mack-cosmic-bridge writes Rows #47-#50 + section header to sessions/framework/registry/falsifier-master-inventory.md (sole-writer protocol)."
+  }
+}

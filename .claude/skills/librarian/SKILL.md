@@ -26,7 +26,7 @@ If `$ARGUMENTS` is `--help`, show this usage summary and stop:
 /librarian Baptista                     -- index all papers in researchers/Baptista/
 /librarian Baptista 13-18               -- index only papers 13-18 (merge into existing index)
 /librarian meeting-minutes session-16   -- index files matching "session-16"
-/librarian tier0-computation            -- index tier0 scripts and data
+/librarian computations                 -- index computation scripts and data
 ```
 
 ## Context
@@ -41,7 +41,7 @@ Discover folders and agents dynamically at runtime:
 ## Mode Detection
 
 1. If `<folder>` matches a subfolder of `researchers/` -> **Mode A: Researcher Index**
-2. If `<folder>` matches a top-level folder (e.g., `sessions`, `tier0-computation`) -> **Mode B: General Folder Index**
+2. If `<folder>` matches a top-level folder (e.g., `sessions`, `computations`) -> **Mode B: General Folder Index**
 3. If ambiguous, ask the user
 
 ---
@@ -222,7 +222,7 @@ Papers: NN, NN
 
 | Paper | Equation/Result | Verified? | Where |
 |:---|:---|:---|:---|
-| NN | <result> | Yes/No/Partial | <tier0 script if applicable> |
+| NN | <result> | Yes/No/Partial | <computation script if applicable> |
 ```
 
 ## Rules
@@ -327,7 +327,7 @@ Use the Write tool to create the file. Follow this template EXACTLY:
 **PHASE GROUPING RULES:**
 - Group files by natural project phases, NOT by date or session number alone
 - A phase = a contiguous span of sessions/files that share a common objective
-- Name each phase by its objective ("Foundation Review", "Tier 0 Computation", "Two-Team Workshop")
+- Name each phase by its objective ("Foundation Review", "Computation", "Two-Team Workshop")
 - Some sessions span multiple files -- keep them in one phase group
 
 **ONE-LINE SUMMARY RULES:**

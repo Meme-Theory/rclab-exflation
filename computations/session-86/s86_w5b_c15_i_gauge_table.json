@@ -1,0 +1,41 @@
+{
+  "schema": "S86-W5B-C15-i-GAUGE pivot-selection table v1",
+  "gate_id": "S86-W5B-C15-i-GAUGE",
+  "selection_rule": "pre-reg-both",
+  "scheme": "mellin_zeta_substrate",
+  "convention": "both",
+  "L_max": 10,
+  "rows": [
+    {
+      "Pivot": "substrate-zeta",
+      "N_e_folds": 3.12,
+      "Source": "S77 transit-synthesis.md L103 ('exits the horizon at N_pivot = 3.12 e-folds after the fold'); substrate Mellin-zeta moment at tau_fold=0.19 evaluated at L_max=10. Cross-ref S77 transit-einstein-workshop L976 (c_s sensitivity: 3.12 -> ~2.0 at c_s=0.485).",
+      "Used_by_gates": [
+        "S86-W5A-P3-SECTOR-1 (PRE-REG-BOTH branch reports Z(N=3.12))",
+        "S86-W4-P5-SECTOR-2 (substrate tau pre-image of N=3.12)",
+        "Late-S86 falsifier registry (substrate-side r prediction)"
+      ],
+      "Convention_class": "substrate-native (axiom-trace diagnostic)"
+    },
+    {
+      "Pivot": "MS",
+      "N_e_folds": 55,
+      "Source": "Standard Mukhanov-Sasaki gauge-invariant comoving-mode horizon-exit count (Planck pivot k=0.05 Mpc^-1); S82 W1-1 divergence-chase L52-L77 (TD reading at N=55 horizon-exit), L77 ('only the horizon-exit H survives in the frozen spectrum', Mukhanov-Sasaki 1980s). Birrell-Davies \u00a73.4, \u00a75.6; Parker 1969.",
+      "Used_by_gates": [
+        "S86-W5A-P3-SECTOR-1 (PRE-REG-BOTH branch reports Z(N=55))",
+        "S86-W5B-C15-ii-BASELINE (forward integration target N_initial = N_pivot + 55)",
+        "S82 W1-1 H_TILDE_TD PASS-F2 (canonical observational pivot)",
+        "Late-S86 falsifier registry (observation-side r prediction)"
+      ],
+      "Convention_class": "observation-native (Planck-pivot observable)"
+    }
+  ],
+  "substitution_chain": {
+    "step_1_definitions": "N_substrate_zeta(tau_fold) = substrate Mellin-zeta moment at tau_fold=0.19, L_max=10 (canonical numerical value 3.12 e-folds, S77 L103). N_MS(k_pivot) = log[a_end/a(k_pivot exits horizon)] = 55 (Planck pivot k=0.05 Mpc^-1). H(N) = H_initial * exp(-int_0^N eps_H(N') dN') [SR-LO trajectory].",
+    "step_2_substitute": "H(N_pivot)|_substrate_zeta = H_initial * exp(-3.12 * eps_H_W6); H(N_pivot)|_MS = H_initial * exp(-55 * eps_H_W6); eps_H_W6 = 0.02163 (canonical S80 dS/dtau-fold pin).",
+    "step_3_simplify": "Ratio = H_zeta/H_MS = exp((55 - 3.12) * eps_H_W6) = exp(51.88 * 0.02163) = exp(1.1222) = 3.0715.",
+    "step_4_direction": "eps_H = +0.02163 > 0; DeltaN = +51.88 > 0; product log_ratio = +1.1222 > 0; exp(positive) = ratio = 3.0715 > 1; ==> H_substrate_zeta(N_pivot) > H_MS(N_pivot) under same H_initial. Bookkeeping consequence of convention disparity, not physical claim."
+  },
+  "downstream_consequence": "Per W5a P3 plan \u00a70.5 SOFT-prereq: SECTOR-1 reports BOTH columns Z(N_pivot=3.12) and Z(N_pivot=55) through S86 close. canonical commit deferred to W-2 workshop. Both columns flow into late-S86 falsifier registry as Path-H-substrate-zeta and Path-H-MS.",
+  "phononic_framing_note": "Both N=3.12 and N=55 are substrate properties under different gauges, NOT external observational impositions. Direction of explanation: substrate spectral-zeta evolution -> Mellin-zeta moment -> either pivot bookkeeping convention. NOT 'N e-folds elapsed in spacetime' (container thinking, forbidden per .claude/rules/phononic-framing.md)."
+}

@@ -1,64 +1,34 @@
 # Gen-Physicist Agent Memory
 
-## Session 49 Results
+Your niche: cross-domain workhorse. Tasks you take that specialists don't. The patterns worth recording are the ones that repeat across sub-fields — pipeline-compliance lessons, cross-domain sanity-check recipes, convention-reconciliation moves. (Lines here are HOOKS; the load-bearing detail is in each topic file — open it before applying.)
 
-### KZ-3COMPONENT-49 (completed)
-- Gate: **PASS** (n=59.82 vs target 59.8, dev=0.04%)
-- 3-component additive Landau-Zener: n = sum_i d_i * rho_i * P_LZ_i
-- Sector decomposition: u(1) 0.996 + su(2) 2.983 + C^2 55.843 = 59.821
-- C^2/B2 dominates (93.3%) via van Hove DOS (rho=14.023)
-- 163x improvement over S48 2-component geometric mean (6.54%)
-- Key insight: pair creation is ADDITIVE (modes create pairs independently), not geometric
-- All sectors in sudden-quench regime (tau_Q/tau_0 < 4.4e-4)
-- Files: tier0-archive/s49_kz_3component.{py,npz,png}
+## Cross-domain recipes
+- [Stage-2 PASS-AND aggregation closeout](stage2_pass_and_aggregation_closeout.md) — procedural-owner gate over reviewer clause-verdict JSONs: protocol pre-flight + orthogonality from inputs_read + 3-route sub-check RE-computed + anchor-extracted entry-block in audit SHA + letter-suffixed session STRING in payload; Stage-3 tag in value/WP only (registry edit = orchestrator-direct).
+- [Stage-2 PASS-AND mechanism-divergence → INFO + forward-route](stage2_passand_mechanism_divergence_info_closeout.md) — reviewers AGREE on the JOINT conclusion (both PASS) but DIVERGE on the MECHANISM (one single-leg INFO): one INFO no FAIL ⇒ composite INFO (pre-registered, not forced PASS/FAIL); INFO disposition = NO stage-flip + idempotent STATUS-pointer on the UNIQUE tail-anchor of EACH affected block + contested-text RETAINED + forward-route the adjudication to a CF (Investigating-Workshops Q1); do NOT apply the dissenter's corrigendum yourself, do NOT touch the sibling PERMANENT clause; `no_unconditional_landed` guards the BOLD `**STAGE TAG:` not bare-prose mentions; byte-exact backtick anchors (dry-run first); Section-0 `_shared` sys.path bootstrap before the canonical import. S115 W2-1 §VII.CK D4.
+- [Stage-2 companion-slot dependency planning](stage2_companion_slot_dependency_planning.md) — Stage-2 verify flipping a 2nd clause on a slot a SIBLING same-session gate also flips: shared-slot dep = verdict-file-read + mechanical-closure PRE-REG-INC branch (registry SHA `<computed-at-runtime>`, 1-gate wave ⇒ closure ≠ planning-defect); reviewer-exclusion via COMPANION-THEOREM inheritance (exclude co-author of the orthogonal-companion sharing the mechanism; `--check-reviewers` can't see it → manual `excluded_authors` + ∅-table). S115 W2-1.
+- [Stage-2 plan w/ mid-session landings](stage2_plan_midsession_landings.md) — same-session Stage-1→Stage-2 edge: static exclusion leg = W(N)→W(N+1) boundary check; slot runtime-resolved from landing verdict value; memory-as-inheritance-witness ≠ Input-SHA pin (AMRI); orthogonality two-branch (SATISFIED-by-construction vs binding-design OVERLAP-CAVEAT).
+- [Cross-layer shared-input covariance](cross_layer_shared_input_covariance.md) — joint-evidence product borrowing a shared external input (H(t)/transport/fiducial) across a₀/a₂/a₄: residual `∂/∂lnH` ⇒ rank-1 cov ⇒ `Corr=±1` PRE-REGISTERED not artifact; same-sign ⇒ FAIL ⇒ restrict joint-BF to zero-parameter spine; band literal in BOTH verdict `value=` and WP.
+- [Register-sourced gate machinery recovery](register_sourced_gate_machinery_recovery.md) — register-sourced gate (no prior WP CF): machinery is NOT placeholder — recover from prior session's on-disk producing `.py` via `search_knowledge→trace_entity→query_entity(provenance)`→Read its docstring; pin prior data files (static SHA at freeze); only external pin = the laboratory-IN falsifier threshold. S99 W3-2 Σm_ν.
+- [Joint-theorem clause-formalization landing](joint_theorem_clause_formalization_landing.md) — STAGE-1 JOINT theorem from a frozen workshop chain (source = plan-block Steps not disk LaTeX); f-STRING BRACE TRAP (plain body + sentinel replace, `python -c` dry-run first); EDIT-TOOL MTIME-RACE on shared WP → single-shot Python RMW on a UNIQUE anchor; STATIC slot pre-alloc; TWO-SURFACE rule (body EOF-LF append AND master-index CRLF row, char-vs-byte `len(.encode())+2` trap). S111 W1-5 §VII.CH.
+- [S114 §VII.CK SHAPE-wall VERIFY-THEOREM landing](s114_w33_shapewall_vii_landing_perblock_identity.md) — D1 `Tr[γ₉D_K^odd]≡0` PER-BLOCK exact-zero ⇒ L_max enum FAITHFUL under truncation; recursive-Casimir wall = PURE-SYMMETRIC (n,0)/(0,n) only → corner-skip guard + operational-L disclosure; Bash 5-min waiter ceiling ≠ background-script ceiling (verify via ps/npz/registry-SHA); VERIFY-THEOREM ⇒ NO 3-tuple; auditor `FAIL [legitimately-pending]` ≠ HARD-HALT for intra-pillar obstruction. S114 W3-3.
+- [Verbatim-extraction §VII registry landing](verbatim_extraction_registry_landing.md) — single-shot AFTER-pattern landing of a frozen Stage-0 candidate: source-SHA→plan-pin; extract spans by literal-substring anchors + HARD-assert SHA+len; HEADER-ANCHOR SYMMETRY (on-disk `### §VII.X` not plan's `## §VII.X` → empty-SHA spurious FAIL); binary-append `'ab'`; idempotent via FROZEN POST-SHA; script-bug FAIL ⇒ byte-restore (Class-1 honest-disclosure). S101 W6-6 §VII.BR.
+- [Tier-2-dimensionful registry landing → INFO](tier2_dimensionful_landing_info.md) — plan pre-registers Level-3 = DIMENSIONFUL magnitude (M_KK²) vs Level-2 = DIMENSIONLESS L^-α ⇒ literal L3<L2 dim-inconsistent ⇒ INFO not FAIL (HELD NOT-SATISFIED-PENDING, Tier-2-dimensionful, dimensionful-slot-collision); STRUCTURE-complete still LANDS; compute the Tier-1 re-anchor as PASS-pathway but NEVER swap into the pre-registered Level-3 (comparator-shopping). S102 W2-3 §VII.BT.
+- [Reviewed annotation on a frozen-immune §VII entry](reviewed_annotation_frozen_immune_entry.md) — scope-narrowing ANNOTATION on an already-landed entry (not a new landing): frozen Stage-0 blockquote byte-IMMUNE (recover FULL 64-char span SHA incl. `> ` marker); annotation surfaces ONLY (header/index/clause-inline + new out-of-frozen-block per §VII.BP); idempotent NO-OP re-run; grade-UNCHANGED Q3=NO; must_contain wants literal `print_verdict_payload` name (miss ⇒ Option-A `supersedes=`). S103 W1-6 §VII.BS.
+- [Feasibility fallback on dense-3^p irrep wall](feasibility_fallback_dense_irrep_wall.md) — deep-truncation spectral-moment gate needing DIRECT D_K sectors p+q≥13: `irrep_symmetric_power` dense 3^p (Sym^13=40.7TB INFEASIBLE; mixed (p,q) FAST via Casimir-proj); PRE-REG-INC fallback NOT FAIL, background incremental builder seeds next session (`.npz`-append quirk → `OUT[:-4]+"_tmp"`), moment-sentinel bit-exact before consuming new sectors. S104 W1-3.
+- [Stage-3 promotion-cohort plan wave](stage3_promotion_cohort_planning.md) — parallel-compute Q3 cohort (N INDEPENDENT registry-landing gates, NO wave-AND): VERIFY each entry's CURRENT Status via trace_entity (CF spec's "→STAGE-3" may be stale); "N of 6 anchors" diagnostic usually STALE (harvest by grep `audit_sha256=[0-9a-f]{64}`); Mellin poleconv = Sage-exact chain (unique (d,conv)); block-level Element-2 PASS ≠ per-cell completeness. S108 W2.
+- [MED-tier + §B Stage-2 plan wave (W4a/W4b)](s110_w4_med_tier_and_stage2_plan.md) — mixed wave split (compute / §B theorem-promotions) in ONE file: shared `deg(T_BZ→pivot)=+2 NON-SCALAR` DERIVED ONCE in W3, CONSUMED `<computed-at-runtime>` (dedup-iii); §B gates `gate_type=compute` but the compute IS the Stage-2 two-reviewer dispatch; Stage-1 registration FIRST then Stage-2; anti-rescue fence (no post-hoc σ rescue, Class-1); path-drift caught at freeze. S110 W4.
+- [Scale-origin decider gate planning](scale_origin_decider_gate_planning.md) — compute wave closing a workshop Reading-A-vs-B fork: LOAD-BEARING = anti-injection / OPEN-output foreclosure pinned in BOTH `machinery_pin_map` AND `audit_discriminators` (import/seed-to-answer = detectable violation). Shapes: OPEN-output degree (KPIVOT); no-injected-target from-scratch finder on bracketing grid (TAUFOLD, decide on SATURATION+MONOTONE); RATIO-on-fraction+OOM-fork (CCRESID). All [SIGN]/[CHAIN]⇒3-tuple. S114 W2.
+- [Investigation-distillation hygiene batch (12 HK-* patches)](s110_w0b_investigation_distillation_hygiene_batch.md) — W0 designated-writer prose batch (NO verdict line, NO new physics): per-patch BOUNDARY = sole-writer fence FIRST (land CC in ADJACENT non-mack home; capstone §7=mack FLAG don't edit); already-current no-padding (re-read + record "verified"); verified-absent → add-as-new SUPERSEDES the scrape; investigation-track NUMBER ≠ register FACT (cite as track-sourced, "scope not status"). Closure = artifact-existence grep. S110 W0b.
+- [Stage-0 hygiene-backfill WAVE planning](stage0_hygiene_backfill_wave_planning.md) — author a Wave-0 backfill PLAN as COMPUTE-class artifact-existence gates (NOT methodology: M4 forbids when gate-IDs unallowlisted; r3 S95 non-compute ⇒ PRDR(2)(3)(4)=N/A). Canon-const promote: premise = get_constant not-found AND grep .py ABSENT (two surfaces); value-source npz STATIC SHA, canonical_constants.py MUTATE-TARGET runtime+snapshot, update_constant mechanism, +publication_precision if cited downstream, substitution_chain=false. Mack falsifier sub-row: verifier imports NO canon const ⇒ relax script must_contain to print_verdict_payload only; anchor audit_sha verified-present FIRST; single-observable filter ⇒ sub-row not dup row; [AUDIT]+chain but no [SIGN] 3-tuple. Wave-0 usually INDEPENDENT. Self-QA: yaml.safe_load; block scalars for Greek/apostrophe fields. S117 W0.
+- [Canon-const promotion gate EXECUTION](canon_const_promotion_gate_execution.md) — EXECUTING a `CF-*-PROMOTE` npz→canonical_constants landing (companion to [[stage0_hygiene_backfill_wave_planning]]): `update_constant` is an AGENT MCP call (script CAN'T call it) ⇒ land FIRST, THEN run the verify script ONCE (AFTER-pattern: land-first ⇒ single PASS line, not a FAIL-then-supersede pair); premise = `get_constant` not-found AND grep ABSENT (two surfaces); bit-exact via `float.hex` not `==`; `audit_sha` pins POST-landing canonical bytes (not the ABSENT-precondition snapshot); co-writer shared-WP edit needs a gate-ID-specific `old_string` + `awk`-isolate the section for the must_contain checklist. S117 W0-1 rho_s_C2=7.962.
 
-### DESI-DR3-PREP-49 (completed)
-- Gate: PASS (1D), INFO (2D)
-- Framework predicts w_0 in [-0.430, -0.589], w_a ~ -0.009
-- DESI DR2: w_0 = -0.752 +/- 0.058, w_a = -0.73 +/- 0.28
-- 1D Bayes factor B = 20.9 (framework 21x preferred over LCDM in w_0)
-- 2D Bayes factor B = 0.073 (framework disfavored 14x when including w_a)
-- Discrepancy: DESI w_0-w_a anti-correlation (rho=-0.75) puts LCDM ON degeneracy line, framework OFF it
-- DR3 forecast: if w_0 stays at -0.752 with sigma=0.035, B = 6.5e8 (LCDM 7.1 sigma, catastrophic)
-- Exclusion: B < 1/100 only if DR3 w_0 < -0.883 (3.7 sigma from current)
-- Pre-registered: w_0 = -0.509 +/- 0.079, w_a = -0.009 +/- 0.02
-- Files: tier0-archive/s49_desi_dr3_prep.{py,npz,png}
-
-## S48 Completed Gates (by this agent)
-- VOLOVIK-STRING-48: INFO (batch 8/8). 3 PASS, 5 INFO. Swampland PASS permanent
-- CURV-EXTEND-48: INFO (batch 6/6). K_low crosses ZERO at tau=0.537
-- CHI-Q-PHASE-48: INFO. chi_phi/|chi_tau| = 0.0141 (< 0.1 threshold)
-- CURV-GAP-CORR-48: INFO. Anti-correlation r in [-0.922, -0.891] structural
-
-## Key Framework Constants
-- w_0(Zubarev GGE, multi-T) = -0.430 (S49 MULTI-T-FRIEDMANN)
-- w_0(Keldysh sigma) = -0.589 (S48)
-- Z-K discrepancy = 39.4% (structural, definitional)
-- E_cond = -0.137 (canonical, 8-mode ED)
-- tau_fold = 0.19
-
-## Proven Structure (machine-epsilon, permanent)
-- KO-dim=6, SM quantum numbers from Psi_+=C^16 (S7-8)
-- [J, D_K(tau)] = 0 identically -- CPT hardwired (17a)
-- D_K block-diagonal in Peter-Weyl (22b, 8.4e-15)
-- AZ class BDI, T^2=+1 (17c)
-- Jensen fold is 28D local minimum of S_full (HESS-40)
-- Spectral action monotone along Jensen (CUTOFF-SA-37)
-- BCS robust under off-Jensen deformation (B2-OFFJ-41)
-- Swampland PASS: c=52.8 (S48, permanent)
-
-## Operational Disciplines
-- I do NOT state, estimate, or update probabilities (Sagan's job)
-- Constraint counts are lookup data, not arguments
-- Evidence = pre-registered computation against gates only
-
-## Project Conventions
-- Metric: (-,+,+,+) unless research papers use different convention
-- Natural units unless specified
-- Python venv: "phonon-exflation-sim/.venv312/Scripts/python.exe"
-- Constants: from canonical_constants import *
-- Path has space: always quote in bash
-
-## Debugging Notes
-- CDF ordering bug: scipy.stats.norm.cdf requires lo < hi numerically. Use min/max on band bounds
-- V-MATRIX IDENTITY (S34): A_antisym != K_a_matrix. Factor ~5x from Clifford embedding
+## Pipeline-compliance lessons
+- [S115 W1 Stage-2-verify + forced-corridor-residue paired planning](s115_w1_stage2_verify_plus_forced_corridor_residue_planning.md) — wave pairing (W1-1) a Stage-2 blind cross-axis VERIFY of a STAGE-1-CANDIDATE §VII obstruction with (W1-2) a COMPUTE of the SAME theorem's external-corridor residue (INDEPENDENT not sequenced): W1-1 `gate_type=compute` but PASS=artifact-existence-of-2-PASS-AND (PRDR numerics N/A); pin exact body anchor + workshop-WITHHELD SHA + axis-distinct NON-AUTHOR reviewers + substrate-input-orthogonality; `--check-reviewers` parser-unreliable → encode guard in plan. W1-2: external `J_PMNS` NOT canonical (`# (local)` NuFIT/PDG), neg-control M₃(ℂ) quark⇒identity, `[SIGN]`⇒3-tuple. S115 W1.
+- [Stage-2 verify-cohort reviewer-exclusion audit gap](stage2_verify_reviewer_exclusion_audit_gap.md) — Stage-2 verify wave over CG-CJ §VII entries: `_joint_theorem_independent_verify_audit.py --check-reviewers` UNRELIABLE (author-parser misses "Math-owners / Stage-0 authors" idiom; naive regex fix over-catches co-located reviewer-candidate names → revert); encode guard IN plan (`excluded_authors:` per gate + ∅-intersection table); exclusion per-theorem so cross-gate reuse across DIFFERENT theorems is fine.
+- [WP shell generation](wp_shell_generation.md) — live template supersedes frozen example (Output Artifacts pending block); ONE `*(pending — include:)*` per gate; heading prefix-matches plan `section_anchor`; carry plan's EXPECTED-verdict/INFO-by-design into the hypothesis line.
+- [Plan-authoring R3 YAML](plan_authoring_r3_yaml.md) — per-wave plan files: NO nested double-quotes in quoted YAML scalars (use `>` block scalar for `§"..."` names); `_yaml_gate_validator.py` double-counts (markdown FAIL + yaml PASS EXPECTED); validate with absolute paths + no `cd`/`&&`; match the sibling fanout plan's gate-block shape.
+- [S110 W2 investigation-promotion planning](s110_w2_investigation_promotion_planning.md) — compute wave SESSION-PROMOTING investigation builds (inv{n}_*.npz→s110): inv npz = STATIC input-SHA pin; GROUND thresholds in the npz not rollup prose (CCDARK1 `bbn_bound=0.2271`); non-canonical pins (get_constant=NULL) cite session source never hardcode; apply dedup i-iv; `deg(T_BZ→pivot)=+2 NON-SCALAR` canonical; CF1 cite `V_spec monotone` S24a in chain.
+- [Status-aware registry audit](pipeline_status_aware_registry_audit.md) — completeness audit pending-vs-defective: read status from HEADER + first `**Status**:` line ONLY (whole-body scan sees cross-ref tags); literal-PASS FIRST in precedence; self-non-bridge + superseded = scoping rescues for false-FAILs; parent→sub-section anatomy inheritance only from a PASSing parent; gate verdict TRACKS live state; SUM-check the partition.
+- [Capstone status-sync gate](capstone_status_sync_gate.md) — curated-doc prose vs Atlas D04/D09 tags: tags READ not derived; apply reviewed patch BEFORE verify script; content_sha256 over script||applied-diff; forbidden-pattern re-grep LINE-SCOPED (reconciliation clause quotes BROKEN phrasing); sole-writer boundary (prose=gen-physicist, §7.2 table=mack); INFO not forced-PASS when dissonance is a Q1-YES physics adjudication → forward-route.
+- [Reproducer-bundle honest manifest](repro_bundle_honest_manifest.md) — one-command reproducer: `_shared/`-resident script ⇒ explicit OUT_DIR=session-N (verdict canonical there NOT _shared); honest provenance partition (RESOLVED-CANONICAL/-GATE-REGISTER/STRUCTURAL/BAND-VALUED/UNRESOLVED) — refuse fabricated clean rows over non-importable values; INFO not PASS when band/register rows exist even at 12/12; plan-SHA-drift resolved at runtime; ROCm offload-arch stderr probe benign.
+- [Plan W4 robustness/determinacy](plan_w4_robustness_determinacy.md) — re-read-existing-observable wave: gate is a CONTINUATION (prior npz holds the metric — pin it, don't re-derive); within-family L_max drift INFO→PASS (survival LABEL regulator-invariant so FAIL=RD-structural NOT survival-retraction); L_max≥13 = find existing cache FIRST (cache-existence IS the Casimir cross-check); full-PV `_analytic_zeta.py` CLASS=FULL; WATCH the flat-grid trap (scan the COMPLEMENT of the closed axis). S? W4.

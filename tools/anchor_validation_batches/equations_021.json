@@ -1,0 +1,117 @@
+{
+  "table": "equations",
+  "batch_id": 21,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "eq_6951",
+      "anchor_type": "equations",
+      "name": "f_conv           = 9.30e-4",
+      "eq_type": "structural",
+      "file": "",
+      "line": 321,
+      "context_snippet": "F_amp_slot       = F_amp_canonical * k_a2 = 0.388544 c_sub            = 2.238",
+      "source_file": "sessions\\session-85\\workshops\\s85-w2-as-band-authority.md",
+      "source_context_30_lines": "  313: ```\n  314: Definition (W3-7 line 297-301 + S82 W1-2):\n  315:   H_tilde_TD       = 5.90760e-3\n  316:   eps_H            = 2.163e-2\n  317:   F_amp_canonical  = 1.0166\n  318:   k_a2             = 0.3822\n  319:   F_amp_slot       = F_amp_canonical * k_a2 = 0.388544\n  320:   c_sub            = 2.238\n  321:   f_conv           = 9.30e-4\n  322:   A_s_Planck       = 2.10e-9\n  323: \n  324: Substitution:\n  325:   Step-a: H_tilde^2/(8 pi^2)              = (5.9076e-3)^2 / 78.957  = 4.42010e-7\n  326:   Step-b: * 1/eps_H                       = 4.42010e-7 / 0.02163   = 2.04351e-5\n  327:   Step-c: * F_amp_slot (= 0.388544)       = 2.04351e-5 * 0.388544  = 7.93993e-6\n  328:   Step-d: * 1/c_sub (= 0.4468)            = 7.93993e-6 * 0.4468    = 3.54778e-6\n  329:   Step-e: * f_conv (= 9.30e-4)            = 3.54778e-6 * 9.30e-4   = 3.29944e-9"
+    },
+    {
+      "anchor_id": "eq_17682",
+      "anchor_type": "equations",
+      "name": "DUAL_SHA_ALLOWLIST=\"${PROJECT_ROOT}/computations/_dual_sha_allowlist.json\"",
+      "eq_type": "code",
+      "file": "",
+      "line": 298,
+      "context_snippet": "------------ Signal 5 — allowlist-aware refinement (S86 W0b-5) ------------ DUAL_SHA_AUDIT_SCRIPT=\"${PROJECT_ROOT}/computations/_dual_sha_uniqueness_audit.py\"",
+      "source_file": "sessions\\session-86\\session-86-w0b-workingpaper.md",
+      "source_context_30_lines": "  290: **Substrate-vs-emergent analog** (per plan §13): the audit script distinguishes \"two emergent observations of the same substrate computation\" (intentional duplicate; mathematical-identity at input-pin level — REFRAME / logspace_fix / regex_fix) from \"two emergent labels on the same fabricated artifact\" (SHA-hardcoding bug). Only the former is allowed. The substrate-side analog is that two distinct measurement projections of the same physical state produce identical observables iff the projections are mathematically equivalent — the audit polices the same invariance at the audit-trail level.\n  291: \n  292: **4-tuple**: `(value=0, scheme=dual_sha_uniqueness_audit, convention=sig_5_allowlist_v1, L_max=N/A)`. value=0 = false_positive_count from synthetic test.\n  293: \n  294: **Hook diff (key invocation block, 19 lines)**:\n  295: ```bash\n  296: # ------------ Signal 5 — allowlist-aware refinement (S86 W0b-5) ------------\n  297: DUAL_SHA_AUDIT_SCRIPT=\"${PROJECT_ROOT}/computations/_dual_sha_uniqueness_audit.py\"\n  298: DUAL_SHA_ALLOWLIST=\"${PROJECT_ROOT}/computations/_dual_sha_allowlist.json\"\n  299: DUAL_SHA_OUT=\"${SESSION_DIR}/sig_5_audit.json\"\n  300: sig_5_allowlist_overall=\"not-checked\"\n  301: sig_5_allowed=0\n  302: sig_5_forbidden=0\n  303: if [ -f \"${DUAL_SHA_AUDIT_SCRIPT}\" ] && [ -f \"${DUAL_SHA_ALLOWLIST}\" ] && [ -f \"${VERDICT_FILE}\" ]; then\n  304:   \"${PYBIN}\" \"${DUAL_SHA_AUDIT_SCRIPT}\" \\\n  305:     --session \"${SESSION_N}\" \\\n  306:     --verdict-file \"${VERDICT_FILE}\" \\"
+    },
+    {
+      "anchor_id": "eq_6602",
+      "anchor_type": "equations",
+      "name": "Sign of n_T at τ = 0.10 (Γ5' curvature lock):",
+      "eq_type": "structural",
+      "file": "",
+      "line": 1084,
+      "context_snippet": "- Step 4 (direction): the cubic-BC output at τ = 0.10 is +102.2% off the PDG-RGE target. The mesh JAMS — no RGE descent from any natural high scale can bring sin²(θ_W)|_{M_Z} = 0.47 down to 0.2312. Th",
+      "source_file": "sessions\\session-83\\workshops\\s83-gear-machine-thought-experiment.md",
+      "source_context_30_lines": " 1076: **At τ = 0.10 (9-hundredths-off-fold, toward pre-transit):**\n 1077: \n 1078: Substitution chain (Γ1' mesh jam):\n 1079: - Step 1 (definition): the cubic-BC identity is sin²(μ_BC) = 3/(3 + e^{12τ}).\n 1080: - Step 2 (substitution): at τ = 0.10, e^{12·0.10} = e^{1.2} ≈ 3.320; 3/(3 + 3.320) = 0.4747.\n 1081: - Step 3 (simplification): sin²(μ_BC) at τ=0.10 / sin²(μ_BC) at τ=0.19 = 0.4747 / 0.2348 = 2.02.\n 1082: - Step 4 (direction): the cubic-BC output at τ = 0.10 is **+102.2% off the PDG-RGE target**. The mesh JAMS — no RGE descent from any natural high scale can bring sin²(θ_W)|_{M_Z} = 0.47 down to 0.2312. The Γ1' gear does not close at τ = 0.10.\n 1083: \n 1084: Sign of n_T at τ = 0.10 (Γ5' curvature lock):\n 1085: - Step 1 (definition): sign(n_T) = sign(d²S/dτ²) in the squeezing framework.\n 1086: - Step 2 (substitution): d²S/dτ² stays positive across the window τ ∈ [0.10, 0.30] (S65 scan; convexity is a fold property, not a point property).\n 1087: - Step 3 (simplification): positive convexity ⇒ positive n_T throughout [0.10, 0.30].\n 1088: - Step 4 (direction): S65 measured n_T = +0.289 at τ = 0.10. **The blue lock HOLDS.**\n 1089: \n 1090: Γ2' R-protection block at τ = 0.10: unaffected. The regulator-weight cancellation is a statement about Mellin-moment algebra, not about τ. The block rotates rigidly at any fold location.\n 1091: \n 1092: Γ6 frequency comb at τ = 0.10: magnitudes shift but the three-band structure (Josephson / Gap / Breathing at ~10× separation) survives as a p\n... [truncated]"
+    },
+    {
+      "anchor_id": "eq_10225",
+      "anchor_type": "equations",
+      "name": "c_s^2 = 3\\lambda\\rho^2",
+      "eq_type": "inline",
+      "file": "",
+      "line": 137,
+      "context_snippet": "| Lagrangian | DBI-type: $\\mathcal{L} \\sim (\\mu - m\\Phi - (\\nabla\\theta)^2/(2m))^{3/2}$ | Not derived (condensate does not exist at $\\mu = 0$) | | Dispersion | $\\omega = c_s k$ at low $k$ (acoustic), ",
+      "source_file": "sessions\\archive\\session-31\\session-31-khoury-comparison.md",
+      "source_context_30_lines": "  129: \n  130: ### 4.1 Phonon Lagrangians\n  131: \n  132: | Feature | BK | PE |\n  133: |:--------|:---|:---|\n  134: | **Phonon type** | Bogoliubov quasiparticles of scalar condensate | Hypothetical collective modes of unconfirmed BCS condensate |\n  135: | **Lagrangian** | DBI-type: $\\mathcal{L} \\sim (\\mu - m\\Phi - (\\nabla\\theta)^2/(2m))^{3/2}$ | Not derived (condensate does not exist at $\\mu = 0$) |\n  136: | **Dispersion** | $\\omega = c_s k$ at low $k$ (acoustic), $\\omega \\sim k^2/(2m)$ at high $k$ | Unknown (would be set by BCS gap and Hessian of $V_{\\text{eff}}$) |\n  137: | **Sound speed** | $c_s \\sim 10$ km/s (galactic), from $c_s^2 = 3\\lambda\\rho^2$ | Unknown (if condensate formed, $v_s^2 \\sim d^2 V_{\\text{eff}} / d\\tau^2$) |\n  138: | **Number of species** | 1 (DM phonon) | Unknown (BCS on $C^{16}$ spinor space could produce multiple modes) |\n  139: | **Derivation status** | Complete from Lagrangian | No Lagrangian derived; BCS does not form at $\\mu = 0$ |\n  140: \n  141: ### 4.2 Energy Scales\n  142: \n  143: | Scale | BK | PE |\n  144: |:------|:---|:---|\n  145: | **Particle mass** | $m_\\phi \\sim$ eV (axion-like) | $M_{\\text{KK}} \\sim 10^{16}$ GeV (compactification scale) |"
+    },
+    {
+      "anchor_id": "eq_13085",
+      "anchor_type": "equations",
+      "name": "\\mu \\sim \\eta^2, \\quad Gmu \\sim (eta/M_{Pl})^2",
+      "eq_type": "display",
+      "file": "",
+      "line": 141,
+      "context_snippet": "The user claims Gmu ~ 10^{-4} is computed from F_J and M_KK with zero free parameters. The standard formula for cosmic string tension from a symmetry-breaking phase transition at scale eta is:",
+      "source_file": "sessions\\session-58\\session-58-lrd-collab.md",
+      "source_context_30_lines": "  133: ## Section 3: Collaborative Suggestions -- Computations That Would Test the Connection\n  134: \n  135: Despite the exclusion of Gmu ~ 10^{-4}, the string-PBH-LRD connection merits precise quantification. I recommend:\n  136: \n  137: ### 3.1 Verify the Gmu computation\n  138: \n  139: The user claims Gmu ~ 10^{-4} is computed from F_J and M_KK with zero free parameters. The standard formula for cosmic string tension from a symmetry-breaking phase transition at scale eta is:\n  140: \n  141: $$\\mu \\sim \\eta^2, \\quad Gmu \\sim (eta/M_{Pl})^2$$\n  142: \n  143: For U(1)_7 breaking at eta ~ M_KK ~ 7.5 x 10^16 GeV:\n  144: \n  145: $$Gmu \\sim \\left(\\frac{7.5 \\times 10^{16}}{2.4 \\times 10^{18}}\\right)^2 \\sim \\left(\\frac{1}{32}\\right)^2 \\sim 10^{-3}$$\n  146: \n  147: This naive estimate gives Gmu ~ 10^{-3}, even larger than claimed. However, the effective string tension depends on whether the strings are local (gauged U(1)) or global. For the framework's U(1)_7, which is NOT a gauge symmetry but arises from the Jensen deformation of the Killing field (S34: [iK_7, D_K] = 0 at all tau), the strings would be GLOBAL strings with logarithmically divergent energy per unit length:\n  148: \n  149: $$\\mu_{global} \\sim \\eta^2 \\ln(L/\\delta)$$"
+    },
+    {
+      "anchor_id": "eq_22049",
+      "anchor_type": "equations",
+      "name": "E = \\Delta_0/2",
+      "eq_type": "inline",
+      "file": "",
+      "line": 137,
+      "context_snippet": "- Input: wall width $L$ from `s33w3_modulus_equation.npz`, $\\Delta_0$ from TRAP-1",
+      "source_file": "sessions\\framework\\Collabs\\framework-paasch-potential-landau-collab.md",
+      "source_context_30_lines": "  129: \n  130: I propose a specific computation:\n  131: \n  132: **ANDREEV-Z3**: Solve the 1D BdG equation for a B2 quasiparticle at a Z_3 domain wall with:\n  133: - $\\Delta(x) = \\Delta_0 \\tanh(x/L) e^{i\\pi/3 \\cdot \\text{sgn}(x)}$ (simplest Z_3 wall profile with $\\delta\\phi = 2\\pi/3$)\n  134: - $H_0$ = B2 Dirac eigenvalue at the fold, with the Poschl-Teller effective mass from the fold curvature\n  135: - Input: wall width $L$ from `s33w3_modulus_equation.npz`, $\\Delta_0$ from TRAP-1\n  136: \n  137: **Pre-registered gate**: Andreev bound state spectrum has at least one state at $E = \\Delta_0/2$ (the $\\cos(\\pi/3)$ prediction for a clean junction).\n  138: \n  139: This computation is more physically grounded than the pure Poschl-Teller analysis because it incorporates the BCS order parameter structure. The Poschl-Teller bound states are the NORMAL-STATE analog (no pairing); the Andreev bound states are the SUPERCONDUCTING analog (with pairing). Since the wall separates two BCS vacua with different phases, the Andreev mechanism dominates.\n  140: \n  141: ### 3.2 The BdG Equation at an Inhomogeneous Order Parameter\n  142: \n  143: In standard condensed matter, the Bogoliubov-de Gennes equation in the presence of a spatially varying order parameter $\\Delta(\\mathbf{r})$ is solved self-consistently:\n  144: \n  145: 1. Assume a trial $\\Delta(\\mathbf{r})$"
+    },
+    {
+      "anchor_id": "eq_12247",
+      "anchor_type": "equations",
+      "name": "At n_s = 0.965, K_pivot = 0.05 Mpc^{-1}:",
+      "eq_type": "structural",
+      "file": "",
+      "line": 1391,
+      "context_snippet": "P(K) = A / (K^2 + 1/xi^2) n_s - 1 = -2K^2 / (K^2 + 1/xi^2)",
+      "source_file": "sessions\\archive\\session-47\\session-47-wave1-workingpaper.md",
+      "source_context_30_lines": " 1383: No framework scale within a factor of 100 of the corrected target (2.67 Mpc) exists with a physical mechanism. Full analysis in `sessions/session-47/session-47-scale-bridge.md`.\n 1384: \n 1385: ### Algebra Error in Source\n 1386: \n 1387: The task target of 151 Mpc originates from Volovik's wave5-texture plan (line 225), which inverts the Ornstein-Zernike formula. The correct derivation:\n 1388: \n 1389:     P(K) = A / (K^2 + 1/xi^2)\n 1390:     n_s - 1 = -2K^2 / (K^2 + 1/xi^2)\n 1391:     At n_s = 0.965, K_pivot = 0.05 Mpc^{-1}:\n 1392:     (K*xi)^2 = (1-n_s)/(1+n_s) = 0.035/1.965 = 0.01781\n 1393:     xi = sqrt(0.01781) / 0.05 = 2.669 Mpc   (NOT 1/(0.05*sqrt(0.0175)) = 151 Mpc)\n 1394: \n 1395: Verification: n_s(xi=2.67) = 0.965 (correct). n_s(xi=151) = -113.3 (wrong).\n 1396: \n 1397: The inverted value 151 Mpc is within 2.7% of the BAO sound horizon r_s = 147 Mpc. This near-coincidence is an artifact of the algebra error, not a physical connection.\n 1398: \n 1399: ### Scale Enumeration Summary"
+    },
+    {
+      "anchor_id": "eq_14366",
+      "anchor_type": "equations",
+      "name": "N_resonances = 0 (3 above-barrier oscillations, not Fabry-Perot)",
+      "eq_type": "structural",
+      "file": "",
+      "line": 2261,
+      "context_snippet": "BCS/geometric ratio at fold: 5.89e-08 (negligible) k_crit = 10,453 M_KK (geo+BCS) / 16,244 M_KK (full)",
+      "source_file": "sessions\\session-70\\session-70-results-workingpaper.md",
+      "source_context_30_lines": " 2253: \n 2254: #### Gate Verdict\n 2255: \n 2256: ```\n 2257: Gate CAVITY-BCS-HORIZON-70: INFO\n 2258:   Barrier topology: monotonic (no cavity)\n 2259:   BCS/geometric ratio at fold: 5.89e-08 (negligible)\n 2260:   k_crit = 10,453 M_KK (geo+BCS) / 16,244 M_KK (full)\n 2261:   N_resonances = 0 (3 above-barrier oscillations, not Fabry-Perot)\n 2262:   T_max = 1.0000 (unitarity preserved)\n 2263:   WKB/TM agreement: 0.986 +/- 0.062\n 2264: ```\n 2265: \n 2266: **The compound barrier does NOT produce spectral features.** The BCS gap is perturbatively irrelevant (10^-8 of geometric). The barrier is monotonic with no cavity for resonant enhancement. The dominant correction is the conformal factor (2.67x), not BCS. Above-barrier transmission is near-unity with weak gradient oscillations that average out over CMB-scale k-modes.\n 2267: \n 2268: **Script**: `computations/s70_cavity_bcs_horizon.py`\n 2269: **Data**: `computations/s70_cavity_bcs_horizon.npz`"
+    },
+    {
+      "anchor_id": "eq_16970",
+      "anchor_type": "equations",
+      "name": "eps_H^Zubarev      drift = 11.86%",
+      "eq_type": "structural",
+      "file": "",
+      "line": 1214,
+      "context_snippet": "``` eps_H^zeta         drift = |1.000 - 0.894|/0.894 = 11.86%",
+      "source_file": "sessions\\session-85\\session-85-w5-workingpaper.md",
+      "source_context_30_lines": " 1206: (The 2-loop counterterm is regulator-class agnostic at this level; the scheme-variance enters globally, not per-regulator-atlas member.)\n 1207: \n 1208: **Step 3 — Substitute ε_H HP^1 drift per regulator (§W5-6):**\n 1209: \n 1210: From §W5-6: f_4^r values (1.0, 1.0, 0.970, 0.5, 1.0), mean = 0.8940. Per-regulator drift from mean:\n 1211: \n 1212: ```\n 1213: eps_H^zeta         drift = |1.000 - 0.894|/0.894 = 11.86%\n 1214: eps_H^Zubarev      drift = 11.86%\n 1215: eps_H^SDW          drift = |0.970 - 0.894|/0.894 =  8.50%\n 1216: eps_H^cutoff_sqrt  drift = |0.500 - 0.894|/0.894 = 44.07%\n 1217: eps_H^anomaly      drift = 11.86%\n 1218: ```\n 1219: \n 1220: **Step 4 — Simplify: apply 5% threshold per regulator:**\n 1221: \n 1222: ```"
+    },
+    {
+      "anchor_id": "eq_14805",
+      "anchor_type": "equations",
+      "name": "T_rh = (90 / (pi^2 g_*))^{1/4} * sqrt(Gamma_mod * M_Pl_reduced) = 1.374e+10 GeV,",
+      "eq_type": "structural",
+      "file": "",
+      "line": 5926,
+      "context_snippet": "5. Reheating temperature from standard radiation-era matching:",
+      "source_file": "sessions\\session-74\\session-74-results-workingpaper.md",
+      "source_context_30_lines": " 5918:    m_mod^2 = M_KK^2 * [(dS/dtau)^2 - d^2 S/dtau^2] * exp(-S_inst) = (2.535e15 GeV)^2.\n 5919:    Note that the exp(-S_inst) = 1.80e-6 factor is what brings m_mod below M_KK by a factor ~30.\n 5920: \n 5921: 4. The modulus-to-two-gauge-boson rate is the standard one:\n 5922:    Gamma(phi_mod -> g g) = N_G * m_mod^3 / (64 pi f_mod^2) = 8.255e13 GeV (bare),\n 5923:    where N_G = 8 for the SU(3) gluon octet on the fiber. Instanton mediation suppresses this at the rate level by exp(-2 S_inst) = 3.22e-12, yielding Gamma_mod = 2.654e+02 GeV.\n 5924: \n 5925: 5. Reheating temperature from standard radiation-era matching:\n 5926:    T_rh = (90 / (pi^2 g_*))^{1/4} * sqrt(Gamma_mod * M_Pl_reduced) = 1.374e+10 GeV,\n 5927:    with g_* = 106.75 (SM dof) and M_Pl_reduced = 2.435e+18 GeV.\n 5928: \n 5929: **Cross-checks**:\n 5930: \n 5931: - **Dimensional analysis**: [Gamma_mod] = [m_mod^3] / [f_mod^2] = GeV^3 / GeV^2 = GeV. [T_rh] = sqrt(GeV * GeV) = GeV. Both correct.\n 5932: - **Sub-Planckian decay constant**: f_mod = 2.80e15 GeV < M_Pl_reduced = 2.44e18 GeV. Ratio 1.15e-3. Passes the EFT cutoff.\n 5933: - **Sub-M_KK modulus mass**: m_mod = 2.54e15 GeV < M_KK = 7.43e16 GeV. Ratio 0.034. The exponential suppression from exp(-S_inst) enforces this automatically -- modulus is a light excitation on the substrate.\n 5934: - **Kinematic threshold open**: m_mod > 0 for massless gauge final state. Decay is kinematically allowed."
+    }
+  ]
+}

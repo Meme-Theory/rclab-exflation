@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 12,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_111",
+      "anchor_type": "data_provenance",
+      "name": "bogoliubov_coefficients",
+      "script_path": "session-28/s28a_bogoliubov_coefficients.py",
+      "session": "s28a",
+      "inputs": "",
+      "outputs": "session-28/s28a_bogoliubov_coefficients.npz, session-28/s28a_bogoliubov_coefficients.png",
+      "source_file": "computations/session-28/s28a_bogoliubov_coefficients.py",
+      "source_context_30_lines": "   22: \n   23: This is the \"adiabaticity parameter\" -- if B_k >> 1, the adiabatic approximation\n   24: breaks down and copious particle creation occurs. If B_k << 1, the evolution is\n   25: adiabatic and particles are NOT created.\n   26: \n   27: The physical injection rate is: |beta_k|^2 = B_k * (d(tau)/dt)^2.\n   28: \n   29: Input: computations/session-19/s19a_sweep_data.npz (21 tau values, 11424 modes)\n   30: Output: computations/session-28/s28a_bogoliubov_coefficients.npz\n   31:         computations/session-28/s28a_bogoliubov_coefficients.png\n   32: \n   33: Gate KC-1:\n   34:     PASS: B_k > 0.01 for modes near the gap edge at any tau in [0.10, 0.40]\n   35:     CLOSED: B_k < 10^{-4} for ALL modes at ALL tau -- no parametric amplification\n   36:     INCONCLUSIVE: B_k in [10^{-4}, 0.01] -- marginal injection\n   37: \n   38: Author: phonon-exflation-sim agent"
+    },
+    {
+      "anchor_id": "prov_112",
+      "anchor_type": "data_provenance",
+      "name": "lichnerowicz_decomposition",
+      "script_path": "session-28/s28a_lichnerowicz_decomposition.py",
+      "session": "s28a",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-28/s28a_lichnerowicz_decomposition.py",
+      "source_context_30_lines": "   93:     ratio = (2 * np.exp(2 * tau) - 1 + 8 * np.exp(-tau) - np.exp(-4 * tau)) / 8\n   94:     return 2.0 * ratio\n   95: \n   96: \n   97: # =============================================================================\n   98: # LICHNEROWICZ DECOMPOSITION\n   99: # =============================================================================\n  100: \n  101: def lichnerowicz_decomposition(gap_K: np.ndarray, gap_T: np.ndarray,\n  102:                                 tau_values: np.ndarray) -> dict:\n  103:     \"\"\"\n  104:     Decompose gap_K^2 into curvature and algebraic contributions.\n  105: \n  106:     The Lichnerowicz formula D_K^2 = nabla*nabla + R/4 gives:\n  107:         gap_K^2 >= R_K/4\n  108: \n  109:     For D_can (flat connection): gap_T comes from pure algebra (M_Lie)."
+    },
+    {
+      "anchor_id": "prov_113",
+      "anchor_type": "data_provenance",
+      "name": "mmax_dispersion",
+      "script_path": "session-28/s28a_mmax_dispersion.py",
+      "session": "s28a",
+      "inputs": "",
+      "outputs": "session-28/s28a_mmax_dispersion.npz, session-28/s28a_mmax_dispersion.png",
+      "source_file": "computations/session-28/s28a_mmax_dispersion.py",
+      "source_context_30_lines": "   24: \n   25:   The M_max = 1 threshold separates supercritical (condensation) from\n   26:   subcritical (no condensation) sectors.\n   27: \n   28: Input:\n   29:   computations/session-27/s27_multisector_bcs.npz (M_max, sectors, tau, mu)\n   30: \n   31: Output:\n   32:   computations/session-28/s28a_mmax_dispersion.npz\n   33:   computations/session-28/s28a_mmax_dispersion.png\n   34: \n   35: Gate S-2: DIAGNOSTIC\n   36:   A phonon-like dispersion (M_max decreasing with C_2) is consistent\n   37:   with the phonon interpretation. An acoustic branch would be direct\n   38:   evidence of phononic structure. Anti-phononic (M_max increasing) or\n   39:   flat (no C_2 dependence) would argue against phonon picture.\n   40: "
+    },
+    {
+      "anchor_id": "prov_114",
+      "anchor_type": "data_provenance",
+      "name": "spectral_action_comparison",
+      "script_path": "session-28/s28a_spectral_action_comparison.py",
+      "session": "s28a",
+      "inputs": "",
+      "outputs": "session-28/s28a_spectral_action_comparison.npz, session-28/s28a_spectral_action_comparison.png",
+      "source_file": "computations/session-28/s28a_spectral_action_comparison.py",
+      "source_context_30_lines": "   33:   3. Apply spectral action with sharp cutoff (eigenvalue counting) at\n   34:      Lambda = {1, 2, 5, 10} and smooth cutoffs (heat kernel).\n   35:   4. Include Peter-Weyl multiplicities: mult(p,q) = dim(p,q)^2.\n   36:   5. Plot S_can(tau) and S_LC(tau). Analyze Delta_S = S_can - S_LC.\n   37: \n   38: Input:  computations/session-27/s27_torsion_gap_gate.npz (for tau grid reference)\n   39:         Infrastructure from dirac_spectrum.py (geometry, irreps, Dirac)\n   40: \n   41: Output: computations/session-28/s28a_spectral_action_comparison.npz\n   42:         computations/session-28/s28a_spectral_action_comparison.png\n   43: \n   44: Gate C-1: DIAGNOSTIC. If S_can(tau) is non-monotonic, V-1/SD-1 closes\n   45:           do not transfer. Framework reopens.\n   46: \n   47: Author: phonon-exflation-sim agent (Session 28a)\n   48: Date: 2026-02-27\n   49: \"\"\""
+    },
+    {
+      "anchor_id": "prov_115",
+      "anchor_type": "data_provenance",
+      "name": "spectral_correlations",
+      "script_path": "session-28/s28a_spectral_correlations.py",
+      "session": "s28a",
+      "inputs": "",
+      "outputs": "session-28/s28a_spectral_correlations.npz, session-28/s28a_spectral_correlations.png",
+      "source_file": "computations/session-28/s28a_spectral_correlations.py",
+      "source_context_30_lines": "   35:   4. Nearest-neighbor spacing distribution P(s) and number variance\n   36:   5. Brody distribution fit: P(s) = A*s^q*exp(-c*s^{q+1}), report q\n   37:   6. Compare D_can vs D_K at each tau\n   38: \n   39: Input:\n   40:   computations/session-27/s27_multisector_bcs.npz (D_K eigenvalues, 9 sectors, 9 tau)\n   41: \n   42: Output:\n   43:   computations/session-28/s28a_spectral_correlations.npz\n   44:   computations/session-28/s28a_spectral_correlations.png\n   45: \n   46: Gate C-4: DIAGNOSTIC\n   47:   Wigner-Dyson in D_can but Poisson in D_K at the same tau would indicate\n   48:   torsion induces spectral chaos. Conversely, GOE in D_K but Poisson in\n   49:   D_can would mean spin connection drives level repulsion.\n   50: \n   51: Author: phonon-exflation-sim agent (Session 28a)"
+    },
+    {
+      "anchor_id": "prov_116",
+      "anchor_type": "data_provenance",
+      "name": "thermal_spectral_action",
+      "script_path": "session-28/s28a_thermal_spectral_action.py",
+      "session": "s28a",
+      "inputs": "",
+      "outputs": "session-28/s28a_thermal_spectral_action.npz, session-28/s28a_thermal_spectral_action.png",
+      "source_file": "computations/session-28/s28a_thermal_spectral_action.py",
+      "source_context_30_lines": "   33: \n   34: We also compute the bosonic version for comparison:\n   35:     F_bos(tau; T) = +T * sum_n ln(1 - exp(-|lambda_n(tau)| / T))\n   36: \n   37: (Note: bosonic partition function requires |lambda| > 0 for all modes.)\n   38: \n   39: Input: computations/session-19/s19a_sweep_data.npz (full spectrum at 21 tau values)\n   40:        computations/session-27/s27_multisector_bcs.npz (eigenvalues per sector)\n   41: Output: computations/session-28/s28a_thermal_spectral_action.npz\n   42:         computations/session-28/s28a_thermal_spectral_action.png\n   43: \n   44: Gate L-1:\n   45:     PASS: F(tau; T) has a minimum at tau > 0 for some T -- thermal stabilization exists\n   46:     CLOSED: F(tau; T) monotonically decreasing at all T -- thermal correction does not help\n   47:     INCONCLUSIVE: Minimum exists but is shallow (F'' < 0.01)\n   48: \n   49: Author: phonon-exflation-sim agent"
+    },
+    {
+      "anchor_id": "prov_117",
+      "anchor_type": "data_provenance",
+      "name": "torsionful_bcs",
+      "script_path": "session-28/s28a_torsionful_bcs.py",
+      "session": "s28a",
+      "inputs": "",
+      "outputs": "session-28/s28a_torsionful_bcs.npz, session-28/s28a_torsionful_bcs.png",
+      "source_file": "computations/session-28/s28a_torsionful_bcs.py",
+      "source_context_30_lines": "   39: INPUT:\n   40:     - s27_torsion_gap_gate.npz: D_can gap data (21 tau values, 4 sectors)\n   41:     - s27_multisector_bcs.npz: D_K BCS reference data (9 tau, 9 sectors)\n   42:     - dirac_spectrum.py: geometry infrastructure\n   43:     - s23a_kosmann_singlet.py: Kosmann operator formula\n   44:     - s26_multimode_bcs.py: BCS solver (sector-agnostic)\n   45: \n   46: OUTPUT:\n   47:     - s28a_torsionful_bcs.npz\n   48:     - s28a_torsionful_bcs.png\n   49: \n   50: Author: phonon-exflation-sim\n   51: Date: 2026-02-27\n   52: Session: 28a, Computation 7 (Group D)\n   53: \"\"\"\n   54: \n   55: import sys"
+    },
+    {
+      "anchor_id": "prov_118",
+      "anchor_type": "data_provenance",
+      "name": "cubic_invariant",
+      "script_path": "session-28/s28b_cubic_invariant.py",
+      "session": "s28b",
+      "inputs": "",
+      "outputs": "session-28/s28b_cubic_invariant.npz, session-28/s28b_cubic_invariant.png",
+      "source_file": "computations/session-28/s28b_cubic_invariant.py",
+      "source_context_30_lines": "   32: import matplotlib\n   33: matplotlib.use('Agg')\n   34: import matplotlib.pyplot as plt\n   35: from pathlib import Path\n   36: \n   37: # ─── Configuration ───────────────────────────────────────────────────────────\n   38: DATA_DIR = Path(__file__).parent\n   39: S27_FILE = DATA_DIR / 's27_multisector_bcs.npz'\n   40: OUT_NPZ = DATA_DIR / 's28b_cubic_invariant.npz'\n   41: OUT_PNG = DATA_DIR / 's28b_cubic_invariant.png'\n   42: \n   43: \n   44: def finite_diff_derivatives(tau_arr, f_arr):\n   45:     \"\"\"\n   46:     Compute 1st, 2nd, 3rd derivatives of f(tau) via central finite differences.\n   47:     Uses non-uniform spacing formulas at endpoints.\n   48: "
+    },
+    {
+      "anchor_id": "prov_119",
+      "anchor_type": "data_provenance",
+      "name": "hessian",
+      "script_path": "session-28/s28b_hessian.py",
+      "session": "s28b",
+      "inputs": "",
+      "outputs": "session-28/s28b_hessian.npz, session-28/s28b_hessian.png, session-28/s28b_hessian.txt",
+      "source_file": "computations/session-28/s28b_hessian.py",
+      "source_context_30_lines": "   30: import matplotlib\n   31: matplotlib.use('Agg')\n   32: import matplotlib.pyplot as plt\n   33: from pathlib import Path\n   34: \n   35: # ─── Configuration ───────────────────────────────────────────────────────────\n   36: DATA_DIR = Path(__file__).parent\n   37: S27_FILE = DATA_DIR / 's27_multisector_bcs.npz'\n   38: OUT_NPZ = DATA_DIR / 's28b_hessian.npz'\n   39: OUT_TXT = DATA_DIR / 's28b_hessian.txt'\n   40: OUT_PNG = DATA_DIR / 's28b_hessian.png'\n   41: \n   42: \n   43: def compute_hessian_2d(F: np.ndarray, tau_arr: np.ndarray, mu_arr: np.ndarray,\n   44:                         ti: int, mi: int) -> np.ndarray:\n   45:     \"\"\"\n   46:     Compute the 2x2 Hessian of F(tau, mu) at grid point (ti, mi)"
+    },
+    {
+      "anchor_id": "prov_120",
+      "anchor_type": "data_provenance",
+      "name": "lambda_eff",
+      "script_path": "session-28/s28b_lambda_eff.py",
+      "session": "s28b",
+      "inputs": "",
+      "outputs": "session-28/s28b_lambda_eff.txt",
+      "source_file": "computations/session-28/s28b_lambda_eff.py",
+      "source_context_30_lines": "   84:     O(M_KK^4) to the vacuum energy. The factor F_total/N_modes gives the\n   85:     BCS suppression.\n   86: \n   87: DATA:\n   88:     - S27: F_total(tau=0.35, mu/lmin=1.20) = -18.56 (code units)\n   89:     - Interior minimum value from s28b computation 6\n   90: \n   91: OUTPUT:\n   92:     s28b_lambda_eff.txt: order-of-magnitude comparison table\n   93: \n   94: GATE E-5: Diagnostic only. Reports the CC problem severity.\n   95: \n   96: Author: phonon-exflation-sim\n   97: Date: 2026-02-27\n   98: Session: 28b, Computation 8\n   99: \"\"\"\n  100: "
+    }
+  ]
+}

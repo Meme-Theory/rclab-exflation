@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 60,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_591",
+      "anchor_type": "data_provenance",
+      "name": "7dof_saddles",
+      "script_path": "session-53/s53_7dof_saddles.py",
+      "session": "s53",
+      "inputs": "",
+      "outputs": "session-53/s53_7dof_saddles.npz, session-53/s53_7dof_saddles.png",
+      "source_file": "computations/session-53/s53_7dof_saddles.py",
+      "source_context_30_lines": "   14:   V_KK(tau) = -(M_p^2/2) R_K(tau)  [geometric/gravitational sector]\n   15:   E_cond(tau) = ED ground state energy at N_pair=1\n   16: \n   17: The BCS Hamiltonian uses single-particle energies RELATIVE to the Fermi\n   18: level eps_F = mean(E_B2). This is the convention in which E_cond < 0\n   19: represents bound-state energy gain from pairing.\n   20: \n   21: Gate: 7-DOF-SADDLES-53 — INFO (saddle enumeration)\n   22: Output: s53_7dof_saddles.npz, s53_7dof_saddles.png, text\n   23: \n   24: Author: Feynman-Theorist (Session 53)\n   25: Date: 2026-03-21\n   26: \"\"\"\n   27: \n   28: import sys\n   29: import os\n   30: sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))"
+    },
+    {
+      "anchor_id": "prov_592",
+      "anchor_type": "data_provenance",
+      "name": "acoustic_casimir",
+      "script_path": "session-53/s53_acoustic_casimir.py",
+      "session": "s53",
+      "inputs": "",
+      "outputs": "session-53/s53_acoustic_casimir.npz, session-53/s53_acoustic_casimir.png",
+      "source_file": "computations/session-53/s53_acoustic_casimir.py",
+      "source_context_30_lines": "  548: ax.axvline(tau_fold, color='r', ls=':', alpha=0.5, label=f'fold')\n  549: ax.set_xlabel('tau')\n  550: ax.set_ylabel('dE_Casimir / dtau')\n  551: ax.set_title('Casimir energy gradient')\n  552: ax.legend(fontsize=8)\n  553: ax.grid(True, alpha=0.3)\n  554: \n  555: plt.tight_layout()\n  556: outpng = os.path.join(os.path.dirname(__file__), \"s53_acoustic_casimir.png\")\n  557: plt.savefig(outpng, dpi=150)\n  558: print(f\"  Saved: {outpng}\")\n  559: \n  560: # ============================================================\n  561: # Section 13: Save data\n  562: # ============================================================\n  563: print(\"\\n--- Section 13: Saving data ---\")\n  564: "
+    },
+    {
+      "anchor_id": "prov_593",
+      "anchor_type": "data_provenance",
+      "name": "acoustic_efold",
+      "script_path": "session-53/s53_acoustic_efold.py",
+      "session": "s53",
+      "inputs": "computations/session-53/s53_gl_sweep.npz, computations/session-53/s53_hfb_spectral.npz",
+      "outputs": "session-53/s53_acoustic_efold.npz, session-53/s53_acoustic_efold.png",
+      "source_file": "computations/session-53/s53_acoustic_efold.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s53_acoustic_efold.py -- BLV Acoustic Metric E-folds\n    4: =====================================================\n    5: \n    6: Gate: ACOUSTIC-EFOLD-53\n    7:   PASS: N_e^acoustic > 3.1\n    8:   INFO: 0.1734 < N_e^acoustic < 3.1\n    9:   FAIL: N_e^acoustic <= 0.1734\n   10: \n   11: Purpose: Compute the full acoustic e-fold count from the BLV acoustic metric"
+    },
+    {
+      "anchor_id": "prov_594",
+      "anchor_type": "data_provenance",
+      "name": "b1_soft_mode",
+      "script_path": "session-53/s53_b1_soft_mode.py",
+      "session": "s53",
+      "inputs": "",
+      "outputs": "session-53/s53_b1_soft_mode.npz, session-53/s53_b1_soft_mode.png",
+      "source_file": "computations/session-53/s53_b1_soft_mode.py",
+      "source_context_30_lines": "   25:   (a) log sum: sum of sign(lambda) * log(lambda^2)  [as in LOG-SIGNED-52]\n   26:   (b) heat kernel: sum of sign(lambda) * exp(-lambda^2/Lambda^2)\n   27: \n   28: Data sources:\n   29:   computations/session-36/s36_sfull_tau_stabilization.npz (7 tau: 0.05, 0.16-0.22)\n   30:   computations/session-27/s27_multisector_bcs.npz (9 tau: 0.0, 0.10, 0.15, 0.20-0.50)\n   31: \n   32: Gate: B1-SOFT-MODE-53 (INFO)\n   33: Output: s53_b1_soft_mode.npz, s53_b1_soft_mode.png\n   34: \"\"\"\n   35: \n   36: import numpy as np\n   37: from pathlib import Path\n   38: import sys\n   39: \n   40: # Canonical constants\n   41: sys.path.insert(0, str(Path(\"computations\").resolve()))"
+    },
+    {
+      "anchor_id": "prov_595",
+      "anchor_type": "data_provenance",
+      "name": "bdg_spectral_det",
+      "script_path": "session-53/s53_bdg_spectral_det.py",
+      "session": "s53",
+      "inputs": "",
+      "outputs": "session-53/s53_bdg_spectral_det.npz, session-53/s53_bdg_spectral_det.png",
+      "source_file": "computations/session-53/s53_bdg_spectral_det.py",
+      "source_context_30_lines": "   46:                      = [geometric piece] + [pairing piece]\n   47: \n   48: The geometric piece is monotone (W4). The pairing piece depends on the\n   49: ratio Delta_k/eps_k, which depends on the BCS solution at each tau.\n   50: \n   51: GATE: BDG-SPECTRAL-DET-53, INFO\n   52: INPUT: s23a_kosmann_singlet.npz (Dirac eigenvalues at 9 tau values)\n   53:        s52_eta_b.npz (BdG data at fold), canonical_constants\n   54: OUTPUT: s53_bdg_spectral_det.npz, s53_bdg_spectral_det.png\n   55: \n   56: Author: feynman-theorist, Session 53\n   57: Date: 2026-03-21\n   58: \"\"\"\n   59: \n   60: import os\n   61: import sys\n   62: import time"
+    },
+    {
+      "anchor_id": "prov_596",
+      "anchor_type": "data_provenance",
+      "name": "bdi_w_phonon",
+      "script_path": "session-53/s53_bdi_w_phonon.py",
+      "session": "s53",
+      "inputs": "",
+      "outputs": "session-53/s53_bdi_w_phonon.npz, session-53/s53_bdi_w_phonon.png",
+      "source_file": "computations/session-53/s53_bdi_w_phonon.py",
+      "source_context_30_lines": "  698: ax.axhline(phase_detq[0], color='gray', ls='--', lw=0.5)\n  699: ax.axhline(phase_detq[-1], color='gray', ls='--', lw=0.5)\n  700: ax.text(0.02, 0.95, f'Phase change = {delta_phase:.4f}\\nW = {W_detq:.4f}',\n  701:         transform=ax.transAxes, va='top', fontsize=9)\n  702: \n  703: plt.suptitle('BDI-W-PHONON-53: BDI does NOT protect c_Gold',\n  704:              fontsize=13, fontweight='bold')\n  705: plt.tight_layout()\n  706: plt.savefig(os.path.join(SCRIPT_DIR, 's53_bdi_w_phonon.png'), dpi=150)\n  707: print(f\"  Saved: s53_bdi_w_phonon.png\")\n  708: \n  709: # ======================================================================\n  710: #  Section 13: Save\n  711: # ======================================================================\n  712: np.savez(os.path.join(SCRIPT_DIR, 's53_bdi_w_phonon.npz'),\n  713:          # W(tau) trajectory\n  714:          tau_traj=tau_traj,"
+    },
+    {
+      "anchor_id": "prov_597",
+      "anchor_type": "data_provenance",
+      "name": "berry_anticrossing",
+      "script_path": "session-53/s53_berry_anticrossing.py",
+      "session": "s53",
+      "inputs": "",
+      "outputs": "session-53/s53_berry_anticrossing.npz, session-53/s53_berry_anticrossing.png",
+      "source_file": "computations/session-53/s53_berry_anticrossing.py",
+      "source_context_30_lines": "  625:     \"- Zak phases: all 0\\n\"\n  626:     \"- Topology: DOUBLY TRIVIAL\"\n  627: )\n  628: ax_s.text(5, 0.8, summary_text, ha='center', va='bottom', fontsize=8,\n  629:           bbox=dict(boxstyle='round', facecolor='lightyellow', alpha=0.9),\n  630:           family='monospace')\n  631: \n  632: plt.tight_layout()\n  633: plot_path = os.path.join(data_dir, \"s53_berry_anticrossing.png\")\n  634: plt.savefig(plot_path, dpi=150, bbox_inches='tight')\n  635: print(f\"  Plot saved: {plot_path}\")\n  636: plt.close()\n  637: \n  638: # ============================================================\n  639: # Section 12: Save data\n  640: # ============================================================\n  641: print(\"\\n--- Section 12: Save results ---\")"
+    },
+    {
+      "anchor_id": "prov_598",
+      "anchor_type": "data_provenance",
+      "name": "blv_conformal",
+      "script_path": "session-53/s53_blv_conformal.py",
+      "session": "s53",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-53/s53_blv_conformal.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s53_blv_conformal.py -- BLV Conformal Exponent Verification\n    4: =============================================================\n    5: \n    6: Gate: BLV-CONFORMAL-53\n    7: Purpose: Verify the analytic derivation of the conformal exponent alpha\n    8:          in H_acoustic = H_geometric * c_s^alpha by direct computation\n    9:          from the BLV acoustic metric.\n   10: \n   11: The BLV (Barcelo-Liberati-Visser, gr-qc/0505065) acoustic metric for"
+    },
+    {
+      "anchor_id": "prov_599",
+      "anchor_type": "data_provenance",
+      "name": "brody_parameter",
+      "script_path": "session-53/s53_brody_parameter.py",
+      "session": "s53",
+      "inputs": "",
+      "outputs": "session-53/s53_brody_parameter.npz, session-53/s53_brody_parameter.png",
+      "source_file": "computations/session-53/s53_brody_parameter.py",
+      "source_context_30_lines": "    1: \"\"\"\n    2: s53_brody_parameter.py — BRODY-PARAMETER-53\n    3: Level spacing statistics for the full 992-mode Dirac spectrum on SU(3).\n    4: \n    5: Computes:\n    6:   1. Brody parameter beta per sector and pooled\n    7:   2. Mean ratio statistic <r> per sector and pooled\n    8:   3. KS test against Poisson and Wigner-Dyson\n    9:   4. Monte Carlo calibration for small-sample bias\n   10:   5. Comparison to S38/S52 results"
+    },
+    {
+      "anchor_id": "prov_600",
+      "anchor_type": "data_provenance",
+      "name": "condensed_ds",
+      "script_path": "session-53/s53_condensed_ds.py",
+      "session": "s53",
+      "inputs": "",
+      "outputs": "session-53/s53_condensed_ds.npz, session-53/s53_condensed_ds.png",
+      "source_file": "computations/session-53/s53_condensed_ds.py",
+      "source_context_30_lines": "  572: \n  573: ax.set_xlabel('$\\\\lambda$ (eigenvalue)', fontsize=10)\n  574: ax.set_ylabel('$N(\\\\lambda)$', fontsize=11)\n  575: ax.set_title('(D) Eigenvalue Counting (Weyl Law)', fontsize=11)\n  576: ax.legend(fontsize=7, loc='best')\n  577: ax.grid(True, alpha=0.3)\n  578: \n  579: plt.tight_layout()\n  580: plot_path = os.path.join(os.path.dirname(__file__), \"s53_condensed_ds.png\")\n  581: plt.savefig(plot_path, dpi=150, bbox_inches='tight')\n  582: print(f\"  Plot saved: {plot_path}\")\n  583: \n  584: # ============================================================\n  585: # Section 11: Summary table\n  586: # ============================================================\n  587: print(\"\\n--- Section 11: Summary Table ---\")\n  588: print(f\"\\n  =============== CONDENSED-DS-53 SUMMARY ===============\")"
+    }
+  ]
+}

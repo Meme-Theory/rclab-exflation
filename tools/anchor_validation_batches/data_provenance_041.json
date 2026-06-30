@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 41,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_401",
+      "anchor_type": "data_provenance",
+      "name": "collective_ns_rpa",
+      "script_path": "session-45/s45_collective_ns_rpa.py",
+      "session": "s45",
+      "inputs": "computations/session-38/s38_cc_instanton.npz, computations/session-42/s42_hauser_feshbach.npz, computations/session-43/s...",
+      "outputs": "session-45/s45_collective_ns_rpa.npz, session-45/s45_collective_ns_rpa.png",
+      "source_file": "computations/session-45/s45_collective_ns_rpa.py",
+      "source_context_30_lines": "  744: ax.axvline(1.0, color='r', ls='--', alpha=0.5, label=r'$\\Delta_0$')\n  745: ax.fill_between([0, 2.5], 0.955, 0.975, alpha=0.1, color='g')\n  746: ax.set_xlabel(r'Gap scale factor ($\\Delta / \\Delta_0$)')\n  747: ax.set_ylabel('$n_s$')\n  748: ax.set_title('Sensitivity to BCS gap magnitude')\n  749: ax.legend(fontsize=8)\n  750: \n  751: plt.tight_layout()\n  752: plt.savefig('computations/session-45/s45_collective_ns_rpa.png', dpi=150, bbox_inches='tight')\n  753: print(\"\\nPlot saved: computations/session-45/s45_collective_ns_rpa.png\")\n  754: \n  755: # ============================================================\n  756: # 16. SAVE DATA\n  757: # ============================================================\n  758: np.savez('computations/session-45/s45_collective_ns_rpa.npz',\n  759:     # Input\n  760:     xi_8_fold=xi_8_fold,"
+    },
+    {
+      "anchor_id": "prov_402",
+      "anchor_type": "data_provenance",
+      "name": "collective_ns_v2",
+      "script_path": "session-45/s45_collective_ns_v2.py",
+      "session": "s45",
+      "inputs": "computations/session-45/s45_occ_spectral.npz, computations/session-38/s38_cc_instanton.npz, computations/session-45/s45_...",
+      "outputs": "session-45/s45_collective_ns_v2.npz, session-45/s45_collective_ns_v2.png",
+      "source_file": "computations/session-45/s45_collective_ns_v2.py",
+      "source_context_30_lines": "  323: ax.fill_between([0.1, 2.0], 0.955, 0.975, alpha=0.1, color='g')\n  324: ax.set_xlabel(r'$\\Delta$ (M_KK)')\n  325: ax.set_ylabel('n_s')\n  326: ax.set_title('n_s sensitivity to BCS gap')\n  327: ax.legend(fontsize=7)\n  328: ax.set_ylim([0.5, 2.5])\n  329: \n  330: plt.tight_layout()\n  331: plt.savefig('computations/session-45/s45_collective_ns_v2.png', dpi=150)\n  332: print(\"\\nPlot saved to s45_collective_ns_v2.png\")\n  333: \n  334: # Save\n  335: np.savez('computations/session-45/s45_collective_ns_v2.npz',\n  336:     lambda_k=lambda_k, d_k=d_k, Delta=Delta,\n  337:     beta2=beta2, E_dressed=E_dressed, E_undressed=E_undressed,\n  338:     k_4d=k_4d, unique_k=unique_k, P_k=P_k,\n  339:     N_modes=N_modes, beta2_mean_k=beta2_mean_k,"
+    },
+    {
+      "anchor_id": "prov_403",
+      "anchor_type": "data_provenance",
+      "name": "debye_waller",
+      "script_path": "session-45/s45_debye_waller.py",
+      "session": "s45",
+      "inputs": "",
+      "outputs": "session-45/s45_debye_waller.npz, session-45/s45_debye_waller.png",
+      "source_file": "computations/session-45/s45_debye_waller.py",
+      "source_context_30_lines": "  649:     'W2_at_mean_vs_tau': np.array([dw_evolution[t]['W2_at_mean'] for t in tau_values]),\n  650:     'DW_at_mean_vs_tau': np.array([dw_evolution[t]['DW_at_mean'] for t in tau_values]),\n  651: \n  652:     # Gate\n  653:     'gate_name': np.array(['DEBYE-WALLER-45']),\n  654:     'gate_verdict': np.array(['INFO']),\n  655: }\n  656: \n  657: out_path = os.path.join(SCRIPT_DIR, \"s45_debye_waller.npz\")\n  658: np.savez_compressed(out_path, **output)\n  659: print(f\"  Saved: {out_path}\")\n  660: \n  661: # ================================================================\n  662: # 11. PLOTS\n  663: # ================================================================\n  664: \n  665: print(f\"\\nGenerating plots...\")"
+    },
+    {
+      "anchor_id": "prov_404",
+      "anchor_type": "data_provenance",
+      "name": "dissolution_entropy",
+      "script_path": "session-45/s45_dissolution_entropy.py",
+      "session": "s45",
+      "inputs": "",
+      "outputs": "session-45/s45_dissolution_entropy.npz, session-45/s45_dissolution_entropy.png",
+      "source_file": "computations/session-45/s45_dissolution_entropy.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s45_dissolution_entropy.py -- DISSOLUTION-ENTROPY-45\n    4: =====================================================\n    5: \n    6: Compute entanglement entropy across the Poisson->GOE level statistics\n    7: transition as a function of perturbation strength epsilon.\n    8: \n    9: === PHYSICS ===\n   10: \n   11: S44 W6-7 found epsilon_c ~ N^{-0.457} for the dissolution crossover in"
+    },
+    {
+      "anchor_id": "prov_405",
+      "anchor_type": "data_provenance",
+      "name": "dos_fine_scan",
+      "script_path": "session-45/s45_dos_fine_scan.py",
+      "session": "s45",
+      "inputs": "",
+      "outputs": "session-45/s45_dos_fine_scan.npz, session-45/s45_dos_fine_scan.png",
+      "source_file": "computations/session-45/s45_dos_fine_scan.py",
+      "source_context_30_lines": "   21:   (c) tau=0: 9 VH points; tau>0: 12 points\n   22:   (d) Cite: Van Hove (1953), S44 W5-3 (DOS-TAU-44), S44 W6 (VAN-HOVE-TRACK-44)\n   23: \n   24: Gate: DOS-FINE-SCAN-45 (INFO -- structural diagnostic)\n   25: \n   26: Input: dirac_spectrum.py (Dirac eigenvalue computation),\n   27:        s44_vanhove_track.npz (trajectory catalog from S44)\n   28: \n   29: Output: s45_dos_fine_scan.npz, s45_dos_fine_scan.png\n   30: \n   31: Author: quantum-acoustics-theorist (Session 45)\n   32: Date: 2026-03-15\n   33: \"\"\"\n   34: \n   35: import sys\n   36: import os\n   37: import time"
+    },
+    {
+      "anchor_id": "prov_406",
+      "anchor_type": "data_provenance",
+      "name": "econd_reconcile",
+      "script_path": "session-45/s45_econd_reconcile.py",
+      "session": "s45",
+      "inputs": "",
+      "outputs": "session-45/s45_econd_reconcile.npz",
+      "source_file": "computations/session-45/s45_econd_reconcile.py",
+      "source_context_30_lines": "  320: \n  321:   GATE VERDICT: ECOND-RECONCILE-45 = INFO (no discrepancy in stored data)\n  322: \"\"\")\n  323: \n  324: # ============================================================================\n  325: # 8. SAVE\n  326: # ============================================================================\n  327: \n  328: np.savez(base / \"s45_econd_reconcile.npz\",\n  329:     # Authoritative value\n  330:     E_cond_ED=E_cond_ED,\n  331:     E_cond_ED_abs=abs(E_cond_ED),\n  332:     source_ED=\"s37_pair_susceptibility.npz (256-state exact diagonalization)\",\n  333:     n_states=n_states_ED,\n  334: \n  335:     # Spurious value\n  336:     E_cond_spurious=E_cond_spurious,"
+    },
+    {
+      "anchor_id": "prov_407",
+      "anchor_type": "data_provenance",
+      "name": "euler_deficit",
+      "script_path": "session-45/s45_euler_deficit.py",
+      "session": "s45",
+      "inputs": "",
+      "outputs": "session-45/s45_euler_deficit.npz, session-45/s45_euler_deficit.png",
+      "source_file": "computations/session-45/s45_euler_deficit.py",
+      "source_context_30_lines": "  537: print(f\"    The deficit is an artifact of using FD entropy in canonical N=1 ensemble\")\n  538: print(f\"  - 'sum T_k S_k / E_GGE = 0.932' => CORRECT but misleading\")\n  539: print(f\"    With Shannon entropy: sum T_k S_k = 1.000 (exact)\")\n  540: \n  541: # ======================================================================\n  542: #  Step 12: Save\n  543: # ======================================================================\n  544: \n  545: np.savez(os.path.join(SCRIPT_DIR, 's45_euler_deficit.npz'),\n  546:     # Gate\n  547:     gate_name=np.array([gate_name]),\n  548:     gate_verdict=np.array([verdict]),\n  549: \n  550:     # Occupation probabilities\n  551:     f_k=f_k,\n  552:     xi_k=xi_k,\n  553:     labels=labels,"
+    },
+    {
+      "anchor_id": "prov_408",
+      "anchor_type": "data_provenance",
+      "name": "fwd_bwd_ns",
+      "script_path": "session-45/s45_fwd_bwd_ns.py",
+      "session": "s45",
+      "inputs": "",
+      "outputs": "session-45/s45_fwd_bwd_ns.npz, session-45/s45_fwd_bwd_ns.png",
+      "source_file": "computations/session-45/s45_fwd_bwd_ns.py",
+      "source_context_30_lines": "   58:     E_B1, E_B2_mean, E_B3_mean,\n   59: )\n   60: \n   61: import matplotlib\n   62: matplotlib.use('Agg')\n   63: import matplotlib.pyplot as plt\n   64: \n   65: DATA_DIR = Path(__file__).parent\n   66: OUT_PREFIX = \"s45_fwd_bwd_ns\"\n   67: \n   68: # ==============================================================================\n   69: # SECTION 1: Load eigenvalue data at multiple tau\n   70: # ==============================================================================\n   71: print(\"=\" * 78)\n   72: print(\"FWD-BWD-NS-45: Forward/Backward Pair Creation Asymmetry for n_s\")\n   73: print(\"=\" * 78)\n   74: "
+    },
+    {
+      "anchor_id": "prov_409",
+      "anchor_type": "data_provenance",
+      "name": "gge_beating",
+      "script_path": "session-45/s45_gge_beating.py",
+      "session": "s45",
+      "inputs": "",
+      "outputs": "session-45/s45_gge_beating.npz, session-45/s45_gge_beating.png",
+      "source_file": "computations/session-45/s45_gge_beating.py",
+      "source_context_30_lines": "  747: deg_beats = np.array([bd['n_pairs'] for bd in sorted(beat_data, key=lambda x: x['omega']) if bd['omega'] > tol])\n  748: \n  749: # G_kl beat amplitudes\n  750: amp_G_beats = np.array([gbd['amplitude'] for gbd in sorted(G_beat_data, key=lambda x: x['omega']) if gbd['omega'] > tol])\n  751: \n  752: # Energy beat amplitudes\n  753: amp_E_beats = np.array([cebd['amplitude'] for cebd in sorted(C_E_beat_data, key=lambda x: x['omega']) if cebd['omega'] > tol])\n  754: \n  755: np.savez(os.path.join(SCRIPT_DIR, 's45_gge_beating.npz'),\n  756:     # Gate\n  757:     gate_name=np.array(['GGE-BEATING-45']),\n  758:     gate_verdict=np.array(['INFO']),\n  759: \n  760:     # Mode data\n  761:     labels=np.array(labels),\n  762:     E_k=E_k,\n  763:     n_k=n_k,"
+    },
+    {
+      "anchor_id": "prov_410",
+      "anchor_type": "data_provenance",
+      "name": "gl_gge",
+      "script_path": "session-45/s45_gl_gge.py",
+      "session": "s45",
+      "inputs": "",
+      "outputs": "session-45/s45_gl_gge.npz, session-45/s45_gl_gge.png",
+      "source_file": "computations/session-45/s45_gl_gge.py",
+      "source_context_30_lines": "   39:     e_2: intra-B2 redistribution  (eigenvalue  -2.7)\n   40: \n   41: All three require changing the conserved occupations n_k and are therefore\n   42: DYNAMICALLY INACCESSIBLE due to integrability.  The GGE is a constrained\n   43: saddle point -- thermodynamically metastable but kinetically frozen by the\n   44: 8 conservation laws.\n   45: \n   46: Input:  s44_multi_t_jacobson.npz, s42_gge_energy.npz, canonical_constants.py\n   47: Output: s45_gl_gge.{npz,png}\n   48: \"\"\"\n   49: \n   50: import numpy as np\n   51: import matplotlib\n   52: matplotlib.use('Agg')\n   53: import matplotlib.pyplot as plt\n   54: from matplotlib.gridspec import GridSpec\n   55: from pathlib import Path"
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 47,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_461",
+      "anchor_type": "data_provenance",
+      "name": "rg_pair_transfer",
+      "script_path": "session-46/s46_rg_pair_transfer.py",
+      "session": "s46",
+      "inputs": "s43_flat_band.npz, s42_hauser_feshbach.npz, s46_hose_count.npz",
+      "outputs": "session-46/s46_rg_pair_transfer.npz, session-46/s46_rg_pair_transfer.png",
+      "source_file": "computations/session-46/s46_rg_pair_transfer.py",
+      "source_context_30_lines": "  996: # Block data\n  997: block_names = np.array(['B1', 'B2', 'B3'])\n  998: block_centroids = np.array([S_block[b]['centroid'] for b in ['B1', 'B2', 'B3']])\n  999: block_widths = np.array([S_block[b]['width'] for b in ['B1', 'B2', 'B3']])\n 1000: block_totals = np.array([S_block[b]['total_strength'] for b in ['B1', 'B2', 'B3']])\n 1001: block_max_fracs = np.array([S_block[b]['max_frac'] for b in ['B1', 'B2', 'B3']])\n 1002: block_n_above_1e = np.array([S_block[b]['n_above_1e'] for b in ['B1', 'B2', 'B3']])\n 1003: \n 1004: outfile = 's46_rg_pair_transfer.npz'\n 1005: np.savez(outfile,\n 1006:     # Gate\n 1007:     gate_verdict=np.array([gate_verdict]),\n 1008:     gate_detail=np.array([gate_detail]),\n 1009:     # Model parameters\n 1010:     mode_eps=mode_eps,\n 1011:     mode_sector=np.array(mode_sector),\n 1012:     alpha_star=alpha_star,"
+    },
+    {
+      "anchor_id": "prov_462",
+      "anchor_type": "data_provenance",
+      "name": "sa_omega_tau",
+      "script_path": "session-46/s46_sa_omega_tau.py",
+      "session": "s46",
+      "inputs": "",
+      "outputs": "session-46/s46_sa_omega_tau.npz, session-46/s46_sa_omega_tau.png",
+      "source_file": "computations/session-46/s46_sa_omega_tau.py",
+      "source_context_30_lines": "   22:   This is computed EXACTLY for the finite spectrum (no heat kernel approx).\n   23: \n   24:   The lightest scalar v_0(tau) is the eigenvector of the kinetic mass matrix\n   25:   M^2_{ij} = Tr([D, phi_i]^dag [D, phi_j]) with smallest eigenvalue.\n   26:   It is tracked across tau by maximizing overlap with the previous tau's\n   27:   eigenvector (adiabatic continuation).\n   28: \n   29: Input: s46_omega_classify.npz, s42_hauser_feshbach.npz, canonical_constants.py\n   30: Output: s46_sa_omega_tau.{npz,png}\n   31: \n   32: Author: Connes-NCG-Theorist (Session 46 W4-SA)\n   33: Date: 2026-03-15\n   34: \"\"\"\n   35: \n   36: import numpy as np\n   37: from numpy.linalg import norm as la_norm, svd, eigh, eigvalsh, eig\n   38: import sys"
+    },
+    {
+      "anchor_id": "prov_463",
+      "anchor_type": "data_provenance",
+      "name": "spectral_flow_ns",
+      "script_path": "session-46/s46_spectral_flow_ns.py",
+      "session": "s46",
+      "inputs": "",
+      "outputs": "session-46/s46_spectral_flow_ns.npz, session-46/s46_spectral_flow_ns.png",
+      "source_file": "computations/session-46/s46_spectral_flow_ns.py",
+      "source_context_30_lines": "   60: sys.path.insert(0, str(Path(__file__).parent))\n   61: from canonical_constants import tau_fold, M_KK, PI\n   62: \n   63: import matplotlib\n   64: matplotlib.use('Agg')\n   65: import matplotlib.pyplot as plt\n   66: \n   67: DATA_DIR = Path(__file__).parent\n   68: OUT_PREFIX = \"s46_spectral_flow_ns\"\n   69: \n   70: # ==============================================================================\n   71: # SECTION 1: Load eigenvalue data\n   72: # ==============================================================================\n   73: print(\"=\" * 78)\n   74: print(\"SPECTRAL-FLOW-NS-46: Spectral Current from Eigenvalue Velocities\")\n   75: print(\"=\" * 78)\n   76: "
+    },
+    {
+      "anchor_id": "prov_464",
+      "anchor_type": "data_provenance",
+      "name": "spectral_form_factor",
+      "script_path": "session-46/s46_spectral_form_factor.py",
+      "session": "s46",
+      "inputs": "",
+      "outputs": "session-46/s46_spectral_form_factor.npz, session-46/s46_spectral_form_factor.png",
+      "source_file": "computations/session-46/s46_spectral_form_factor.py",
+      "source_context_30_lines": "  448: print(f\"\\n  Dirac SFF (signed eigenvalues, Z real):\")\n  449: print(f\"    K_Dirac(0+) = {K_dirac[0]:.6f}\")\n  450: print(f\"    K_Dirac(t_H) = {K_dirac[N_t//3]:.6f}\")\n  451: \n  452: # ============================================================================\n  453: #  Save data\n  454: # ============================================================================\n  455: \n  456: save_path = Path(__file__).parent / 's46_spectral_form_factor.npz'\n  457: np.savez(save_path,\n  458:     # Spectrum\n  459:     E_unique=E_unique,\n  460:     E_unfolded=E_unfolded,\n  461:     unique_masses=unique_masses,\n  462:     multiplicities=multiplicities,\n  463:     N_unique=N_unique,\n  464:     N_total=N_total,"
+    },
+    {
+      "anchor_id": "prov_465",
+      "anchor_type": "data_provenance",
+      "name": "spectral_zeta_nonint",
+      "script_path": "session-46/s46_spectral_zeta_nonint.py",
+      "session": "s46",
+      "inputs": "",
+      "outputs": "session-46/s46_spectral_zeta_nonint.npz, session-46/s46_spectral_zeta_nonint.png",
+      "source_file": "computations/session-46/s46_spectral_zeta_nonint.py",
+      "source_context_30_lines": "   29:     provides the integrand for the q-theory vacuum energy at general s:\n   30:         zeta_D(s, tau) = sum_k d_k |lambda_k(tau)|^{-2s}\n   31:     The RATIO zeta_D(s, fold) / zeta_D(s, round) measures how much the\n   32:     Jensen deformation shifts the vacuum energy at each spectral moment.\n   33:     Non-integer s probes interpolating behavior between the integer moments\n   34:     a_0, a_2, a_4, a_6 that appear in the Seeley-DeWitt expansion.\n   35: \n   36: Input:  s42_hauser_feshbach.npz (for cross-check), canonical_constants.py\n   37: Output: s46_spectral_zeta_nonint.{npz,png}\n   38: \n   39: Author: Spectral-Geometer (Session 46)\n   40: \"\"\"\n   41: \n   42: import sys\n   43: import os\n   44: import numpy as np\n   45: import matplotlib"
+    },
+    {
+      "anchor_id": "prov_466",
+      "anchor_type": "data_provenance",
+      "name": "three_freq_universe",
+      "script_path": "session-46/s46_three_freq_universe.py",
+      "session": "s46",
+      "inputs": "",
+      "outputs": "session-46/s46_three_freq_universe.npz, session-46/s46_three_freq_universe.png",
+      "source_file": "computations/session-46/s46_three_freq_universe.py",
+      "source_context_30_lines": "   54: \n   55: Input\n   56: -----\n   57: - computations/session-45/s45_gge_beating.npz\n   58: - computations/_shared/canonical_constants.py\n   59: \n   60: Output\n   61: ------\n   62: - computations/session-46/s46_three_freq_universe.{npz,png}\n   63: \"\"\"\n   64: \n   65: import sys, os\n   66: sys.path.insert(0, os.path.join(os.path.dirname(__file__)))\n   67: \n   68: import numpy as np\n   69: import matplotlib.pyplot as plt\n   70: from canonical_constants import ("
+    },
+    {
+      "anchor_id": "prov_467",
+      "anchor_type": "data_provenance",
+      "name": "transfer_function",
+      "script_path": "session-46/s46_transfer_function.py",
+      "session": "s46",
+      "inputs": "computations/session-45/s45_gge_beating.npz, computations/session-44/s44_eih_grav.npz, computations/session-42/s42_const...",
+      "outputs": "session-46/s46_transfer_function.npz, session-46/s46_transfer_function.png",
+      "source_file": "computations/session-46/s46_transfer_function.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s46_transfer_function.py — GGE Beat-to-4D Transfer Function (TRANSFER-FUNCTION-46)\n    4: ===================================================================================\n    5: \n    6: GATE: DIAGNOSTIC (INFO) — report n_s from the full convolution.\n    7: \n    8: Computes the transfer function T(k) mapping internal GGE beat structure to the\n    9: 4D CMB power spectrum. The GGE has exactly 3 incommensurate beat frequencies:\n   10:     omega_1 = B2-B1 = 0.053 M_KK  (slow beat, period 120.8 t_KK)\n   11:     omega_2 = B2-B3 = 0.266 M_KK  (medium beat, period 23.6 t_KK)"
+    },
+    {
+      "anchor_id": "prov_468",
+      "anchor_type": "data_provenance",
+      "name": "transplanckian",
+      "script_path": "session-46/s46_transplanckian.py",
+      "session": "s46",
+      "inputs": "",
+      "outputs": "session-46/s46_transplanckian.npz, session-46/s46_transplanckian.png",
+      "source_file": "computations/session-46/s46_transplanckian.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s46_transplanckian.py — Trans-Planckian Problem in the Framework Transit\n    4: =========================================================================\n    5: \n    6: Gate: TRANSPLANCKIAN-46\n    7: Pre-registered criteria:\n    8:   PASS if lambda_phys(k*) > l_Planck at transit start (no trans-Planckian problem)\n    9:   INFO if sub-Planckian but dissolution scaling epsilon_c ~ 1/sqrt(N) provides\n   10:        controlled regime (ratio lambda_phys / l_dissolution > 1)\n   11:   FAIL if sub-Planckian with no controlled UV regime"
+    },
+    {
+      "anchor_id": "prov_469",
+      "anchor_type": "data_provenance",
+      "name": "twist_bdg",
+      "script_path": "session-46/s46_twist_bdg.py",
+      "session": "s46",
+      "inputs": "computations/session-44/s44_n3_bdg.npz, computations/session-39/s39_bdg_simulation.npz, computations/session-45/s45_occ_...",
+      "outputs": "session-46/s46_twist_bdg.npz, session-46/s46_twist_bdg.png",
+      "source_file": "computations/session-46/s46_twist_bdg.py",
+      "source_context_30_lines": "  675:     'ko_preserved': ko_preserved,\n  676: \n  677:     # Gate\n  678:     'verdict': np.array([verdict]),\n  679:     'runtime': runtime,\n  680:     'Delta_fold': Delta_fold,\n  681: }\n  682: \n  683: np.savez('computations/session-46/s46_twist_bdg.npz', **results)\n  684: print(f\"Saved: computations/session-46/s46_twist_bdg.npz\")\n  685: \n  686: # =============================================================================\n  687: # 12. DIAGNOSTIC PLOT\n  688: # =============================================================================\n  689: \n  690: import matplotlib\n  691: matplotlib.use('Agg')"
+    },
+    {
+      "anchor_id": "prov_470",
+      "anchor_type": "data_provenance",
+      "name": "v_b3b3",
+      "script_path": "session-46/s46_v_b3b3.py",
+      "session": "s46",
+      "inputs": "",
+      "outputs": "session-46/s46_v_b3b3.npz, session-46/s46_v_b3b3.png",
+      "source_file": "computations/session-46/s46_v_b3b3.py",
+      "source_context_30_lines": "  760:     'labels': labels,\n  761: \n  762:     # Gate\n  763:     'gate_verdict': np.array([gate_verdict]),\n  764:     'gate_detail': np.array([gate_detail]),\n  765:     'Delta_threshold': Delta_threshold,\n  766: }\n  767: \n  768: output_path = os.path.join(SCRIPT_DIR, 's46_v_b3b3.npz')\n  769: np.savez_compressed(output_path, **output_data)\n  770: print(f\"\\nSaved: {output_path}\")\n  771: \n  772: # ==============================================================================\n  773: # SECTION 11: Plots\n  774: # ==============================================================================\n  775: \n  776: fig, axes = plt.subplots(2, 2, figsize=(14, 10))"
+    }
+  ]
+}

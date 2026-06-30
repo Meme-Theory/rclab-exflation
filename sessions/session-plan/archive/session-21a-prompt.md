@@ -160,7 +160,7 @@ The Tesla Framework (Section 4A, post-Session 20 note) suggests: "From inside th
 
 3. **Evaluate Tesla's 20b computation A5** (low-mode TT Casimir): E_TT for lowest 50/100/200 eigenvalues only. If the low modes show different tau-dependence from the Weyl average, the resonance picture predicts this — the low modes ARE the shape modes that couple to the boundary.
 
-4. **The 27 drums as shape modes.** The TT fiber is 27-dimensional = dim(J_3(O)). In the resonance picture, these are not generic oscillators — they are the shape modes of an octonionic cavity. Does the Lichnerowicz eigenvalue structure at tau=0 show algebraic structure compatible with J_3(O)? (Data exists in `tier0-computation/l20_TT_spectrum.npz`.)
+4. **The 27 drums as shape modes.** The TT fiber is 27-dimensional = dim(J_3(O)). In the resonance picture, these are not generic oscillators — they are the shape modes of an octonionic cavity. Does the Lichnerowicz eigenvalue structure at tau=0 show algebraic structure compatible with J_3(O)? (Data exists in `computations/l20_TT_spectrum.npz`.)
 
 #### Deliverable
 

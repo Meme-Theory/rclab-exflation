@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 76,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_751",
+      "anchor_type": "data_provenance",
+      "name": "pomeranchuk_gge",
+      "script_path": "session-58/s58_pomeranchuk_gge.py",
+      "session": "s58",
+      "inputs": "",
+      "outputs": "session-58/s58_pomeranchuk_gge.npz",
+      "source_file": "computations/session-58/s58_pomeranchuk_gge.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s58_pomeranchuk_gge.py — Pomeranchuk Stability of the GGE\n    4: ==========================================================\n    5: \n    6: Gate: POMERANCHUK-GGE-58\n    7:   PASS: Any F_l violates -(2l+1) bound (spontaneous deformation)\n    8:   FAIL: All F_l satisfy bounds (Pomeranchuk-stable)\n    9: \n   10: Physics:\n   11:   The GGE has non-thermal occupations across 8 modes (4 B2 + 1 B1 + 3 B3)."
+    },
+    {
+      "anchor_id": "prov_752",
+      "anchor_type": "data_provenance",
+      "name": "rg_hessian",
+      "script_path": "session-58/s58_rg_hessian.py",
+      "session": "s58",
+      "inputs": "",
+      "outputs": "session-58/s58_rg_hessian.npz",
+      "source_file": "computations/session-58/s58_rg_hessian.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s58_rg_hessian.py — RG-HESSIAN-58: Richardson-Gaudin Hessian in Integral Space I^8\n    4: ====================================================================================\n    5: \n    6: Gate: RG-HESSIAN-58\n    7:   PASS: At least one negative eigenvalue (Penrose process direction exists)\n    8:   FAIL: All eigenvalues positive (GGE is stable minimum; CC locked by integrability)\n    9: \n   10: Physics:\n   11:   The GGE departs from equilibrium by ||delta_n||/N = 0.195 (S57 W0-3)."
+    },
+    {
+      "anchor_id": "prov_753",
+      "anchor_type": "data_provenance",
+      "name": "sa_saddle",
+      "script_path": "session-58/s58_sa_saddle.py",
+      "session": "s58",
+      "inputs": "computations/session-54/s54_ed_sweep.npz, computations/session-57/s57_off_jensen_ej.npz, computations/session-54/s54_off...",
+      "outputs": "session-58/s58_sa_saddle.npz",
+      "source_file": "computations/session-58/s58_sa_saddle.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s58_sa_saddle.py — SA-SADDLE-58: Spectral Action Hessian at the Fold\n    4: =====================================================================\n    5: Gate: SA-SADDLE-58 (INFO) — det(H_S) < 0?\n    6: \n    7: Method:\n    8:   1. Load Dirac spectrum at the fold from s54_ed_sweep.npz\n    9:   2. Load off-Jensen E_J data from s57_off_jensen_ej.npz for comparison\n   10:   3. Compute Seeley-DeWitt coefficients a_0, a_2, a_4 as functions of (tau, sigma)\n   11:      using the EXACT analytic curvature formulas (sd20a) extended off-Jensen"
+    },
+    {
+      "anchor_id": "prov_754",
+      "anchor_type": "data_provenance",
+      "name": "sq_omega_gge",
+      "script_path": "session-58/s58_sq_omega_gge.py",
+      "session": "s58",
+      "inputs": "",
+      "outputs": "session-58/s58_sq_omega_gge.npz, session-58/s58_sq_omega_gge.png",
+      "source_file": "computations/session-58/s58_sq_omega_gge.py",
+      "source_context_30_lines": "  375: E_grid_dos = np.linspace(Delta + 0.001, 2.5, 200)\n  376: N_bcs = np.abs(E_grid_dos) / np.sqrt(E_grid_dos**2 - Delta**2)\n  377: print(f\"BCS DoS: van Hove singularity at E = Delta = {Delta:.4f}\")\n  378: print(f\"BCS DoS peak (at E=Delta+0.01): {np.max(N_bcs):.2f} * N(0)\")\n  379: \n  380: # =============================================================================\n  381: # 6. Save results\n  382: # =============================================================================\n  383: outpath = os.path.join(data_dir, 's58_sq_omega_gge.npz')\n  384: np.savez(outpath,\n  385:     # Grid\n  386:     q_values=q_values,\n  387:     omega_grid=omega_grid,\n  388:     laplacian_eigs=lap_eigs,\n  389:     # S(q, omega)\n  390:     S_gge=S_gge,\n  391:     S_eq=S_eq,"
+    },
+    {
+      "anchor_id": "prov_755",
+      "anchor_type": "data_provenance",
+      "name": "squeezing_covariance",
+      "script_path": "session-58/s58_squeezing_covariance.py",
+      "session": "s58",
+      "inputs": "s57_leggett_partition.npz, s56_leggett_fabric.npz",
+      "outputs": "session-58/s58_squeezing_covariance.npz, session-58/s58_squeezing_covariance.png",
+      "source_file": "computations/session-58/s58_squeezing_covariance.py",
+      "source_context_30_lines": "  428: ax.set_yscale('log')\n  429: ax.legend(fontsize=8)\n  430: \n  431: plt.suptitle('S58 SQUEEZING-COVARIANCE-58: Multi-Mode Covariance Matrix\\n'\n  432:              r'$\\|C_{\\rm off}\\|/\\|C_{\\rm diag}\\| = 0$ (exact, harmonic) '\n  433:              r'$\\Rightarrow$ independent modes, no correction',\n  434:              fontsize=13, fontweight='bold')\n  435: plt.tight_layout()\n  436: plt.savefig('s58_squeezing_covariance.png', dpi=150, bbox_inches='tight')\n  437: print(f\"\\nPlot saved: s58_squeezing_covariance.png\")\n  438: \n  439: # ======================================================================\n  440: # 11. Save output\n  441: # ======================================================================\n  442: \n  443: np.savez('s58_squeezing_covariance.npz',\n  444:          # Independent covariance (the physical answer)"
+    },
+    {
+      "anchor_id": "prov_756",
+      "anchor_type": "data_provenance",
+      "name": "transfer_function",
+      "script_path": "session-58/s58_transfer_function.py",
+      "session": "s58",
+      "inputs": "s58_sq_omega_gge.npz, s58_impedance_boundary.npz, s54_tb_hamiltonian.npz",
+      "outputs": "session-58/s58_transfer_function.npz, session-58/s58_transfer_function.png",
+      "source_file": "computations/session-58/s58_transfer_function.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s58_transfer_function.py — Phononic DM Transfer Function T(k)\n    4: =============================================================\n    5: \n    6: Gate: TRANSFER-FUNCTION-58\n    7:   PASS: WDM mass equivalent > 5.3 keV (Lyman-alpha compatible)\n    8:   FAIL: < 2.0 keV (excluded)\n    9:   INFO: [2.0, 5.3] keV (marginal)\n   10: \n   11: Method (following Paper 15: Ganjoo-Erickcek-Lin-Mack 2022, and"
+    },
+    {
+      "anchor_id": "prov_757",
+      "anchor_type": "data_provenance",
+      "name": "volovik_partition",
+      "script_path": "session-58/s58_volovik_partition.py",
+      "session": "s58",
+      "inputs": "computations/session-57/s57_finite_rate_transit.npz, computations/session-57/s57_leggett_partition.npz, computations/ses...",
+      "outputs": "session-58/s58_volovik_partition.npz, session-58/s58_volovik_partition.png",
+      "source_file": "computations/session-58/s58_volovik_partition.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s58_volovik_partition.py — VOLOVIK-PARTITION-58 (W0-1)\n    4: ======================================================\n    5: Gate: PASS/FAIL — Does the Volovik partition produce NROY > 5%?\n    6: \n    7: Physics: Under the Volovik partition (Paper 05 eq 3.1; Paper 15 sec 3),\n    8: ground-state superfluid stiffness does NOT gravitate. Only quasiparticle\n    9: excitations contribute to gravitational mass. Therefore:\n   10:   - F_Josephson = -336.6 M_KK goes to VACUUM sector (not matter)\n   11:   - E_matter = |E_BCS| + E_BA + E_Leggett (excitations only)"
+    },
+    {
+      "anchor_id": "prov_758",
+      "anchor_type": "data_provenance",
+      "name": "w_desi",
+      "script_path": "session-58/s58_w_desi.py",
+      "session": "s58",
+      "inputs": "",
+      "outputs": "session-58/s58_w_desi.npz",
+      "source_file": "computations/session-58/s58_w_desi.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s58_w_desi.py — W-DESI-58: Equation of State Under Volovik Partition\n    4: ====================================================================\n    5: Gate: W-DESI-58\n    6:   PASS: |w_0(Volovik) - w_0(DESI DR2)| < 3-sigma\n    7:   FAIL: |w_0(Volovik) - w_0(DESI DR2)| > 5-sigma\n    8:   INFO: tension between 3-sigma and 5-sigma\n    9: \n   10: Physics: Under the Volovik partition, the vacuum sector has two components:\n   11:   1. Josephson ground-state stiffness F_J = -336.6 M_KK (pure cosmological constant, w=-1)"
+    },
+    {
+      "anchor_id": "prov_759",
+      "anchor_type": "data_provenance",
+      "name": "baryon_diagnostic",
+      "script_path": "session-59/s59_baryon_diagnostic.py",
+      "session": "s59",
+      "inputs": "",
+      "outputs": "session-59/s59_baryon_diagnostic.npz, session-59/s59_baryon_diagnostic.png",
+      "source_file": "computations/session-59/s59_baryon_diagnostic.py",
+      "source_context_30_lines": "   40: # ---------------------------------------------------------------\n   41: # Setup\n   42: # ---------------------------------------------------------------\n   43: PROJECT_ROOT = r'C:\\sandbox\\Ainulindale Exflation'\n   44: SCRIPT_DIR = os.path.join(PROJECT_ROOT, 'computations')\n   45: ARCHIVE_DIR = os.path.join(PROJECT_ROOT, \"computations\", \"_shared\")\n   46: sys.path.insert(0, SCRIPT_DIR)\n   47: \n   48: _LOG_PATH = os.path.join(SCRIPT_DIR, 's59_baryon_diagnostic_log.txt')\n   49: class _Tee:\n   50:     def __init__(self, *streams):\n   51:         self.streams = streams\n   52:     def write(self, data):\n   53:         for s in self.streams:\n   54:             s.write(data)\n   55:             s.flush()\n   56:     def flush(self):"
+    },
+    {
+      "anchor_id": "prov_760",
+      "anchor_type": "data_provenance",
+      "name": "bogoliubov_coeff",
+      "script_path": "session-59/s59_bogoliubov_coeff.py",
+      "session": "s59",
+      "inputs": "",
+      "outputs": "session-59/s59_bogoliubov_coeff.npz, session-59/s59_bogoliubov_coeff.png",
+      "source_file": "computations/session-59/s59_bogoliubov_coeff.py",
+      "source_context_30_lines": "   24: \n   25: Input:\n   26:   - computations/session-58/s58_npair2_integ.npz (BCS Hamiltonian, GGE occupations)\n   27:   - computations/session-58/s58_acoustic_metric.npz (acoustic metric, T_Parker)\n   28:   - computations/session-58/s58_squeezing_covariance.npz (31-mode Bogoliubov coefficients)\n   29:   - computations/session-57/s57_parker_ba.npz (Parker Bogoliubov from time-dependent mode eqn)\n   30: \n   31: Output:\n   32:   - computations/session-59/s59_bogoliubov_coeff.npz\n   33:   - computations/session-59/s59_bogoliubov_coeff.png\n   34: \n   35: Author: Hawking-Theorist (Session 59)\n   36: \"\"\"\n   37: \n   38: import sys\n   39: import os\n   40: sys.path.insert(0, os.path.dirname(__file__))"
+    }
+  ]
+}

@@ -1,0 +1,275 @@
+=== S105-W7-6-S3-ZETA-ASYMPTOTICS — input SHA-256 pins ===
+  computations/_shared/canonical_constants.py: 38e23ad271d795c2...
+  computations/offsession-riemann/_rh_substrate_sanity.py: 50bff0546125df02...
+  audit_sha256:   cfd3d2bd5b721ef2... (script+canonical+pinmap)
+  content_sha256: 3edf255ad48779ae... (script only)
+  tau_fold (cache-pin witness, unused by closed form) = 0.19; PI = 3.141592653589793
+
+=== Closed-form verification (S^3 Dirac zeta), reproduced in-script ===
+  s =          5.0:  |direct sum - closed| = 1.38e-30
+  s =          6.3:  |direct sum - closed| = 2.5e-14
+  s =     (3.7 + 2.0j):  |Hurwitz combo - closed| = 5.27e-32
+  s =    (0.3 + 14.0j):  |Hurwitz combo - closed| = 3.94e-31
+  s =    (-1.2 + 5.0j):  |Hurwitz combo - closed| = 4.93e-32
+  s =   (2.5 + 120.0j):  |Hurwitz combo - closed| = 1.97e-31
+  residue @ s=3: (1.0 + 0.0j) (expect 1);  @ s=1: (-0.25 + 0.0j) (expect -0.25)
+  worst Hurwitz-reduction residual = 3.94e-31 (closed form bit-tight to ~1e-22)
+
+=== Certified zero census: Im in [36,300], three panels ===
+  [panel 1] Re[-4.53,5.47] x Im[36.07,100.13]: certified Z = 20 (raw winding 20.0, residual 8.13e-20)
+    [panel 1 strip 1/26] Im[36.07,38.55627]: Z_strip = 1 (located 1; 4s, 933 evals)
+    [panel 1 strip 2/26] Im[38.55627,41.02011]: Z_strip = 0 (located 0; 4s, 1060 evals)
+    [panel 1 strip 3/26] Im[41.02011,43.48396]: Z_strip = 1 (located 1; 7s, 1250 evals)
+    [panel 1 strip 4/26] Im[43.48396,45.94781]: Z_strip = 1 (located 1; 10s, 1440 evals)
+    [panel 1 strip 5/26] Im[45.94781,48.41165]: Z_strip = 0 (located 0; 10s, 1567 evals)
+    [panel 1 strip 6/26] Im[48.41165,50.8755]: Z_strip = 1 (located 1; 13s, 1757 evals)
+    [panel 1 strip 7/26] Im[50.8755,53.33934]: Z_strip = 0 (located 0; 13s, 1884 evals)
+    [panel 1 strip 8/26] Im[53.33934,55.80319]: Z_strip = 2 (located 2; 16s, 2075 evals)
+    [panel 1 strip 9/26] Im[55.80319,58.26704]: Z_strip = 0 (located 0; 16s, 2203 evals)
+    [panel 1 strip 10/26] Im[58.26704,60.73088]: Z_strip = 1 (located 1; 20s, 2393 evals)
+    [panel 1 strip 11/26] Im[60.73088,63.19473]: Z_strip = 0 (located 0; 20s, 2520 evals)
+    [panel 1 strip 12/26] Im[63.19473,65.65857]: Z_strip = 1 (located 1; 23s, 2710 evals)
+    [panel 1 strip 13/26] Im[65.65857,68.12242]: Z_strip = 1 (located 1; 27s, 2900 evals)
+    [panel 1 strip 14/26] Im[68.12242,70.58627]: Z_strip = 1 (located 1; 30s, 3090 evals)
+    [panel 1 strip 15/26] Im[70.58627,73.05011]: Z_strip = 1 (located 1; 34s, 3280 evals)
+    [panel 1 strip 16/26] Im[73.05011,75.51396]: Z_strip = 0 (located 0; 34s, 3407 evals)
+    [panel 1 strip 17/26] Im[75.51396,77.97781]: Z_strip = 1 (located 1; 38s, 3597 evals)
+    [panel 1 strip 18/26] Im[77.97781,80.44165]: Z_strip = 1 (located 1; 42s, 3787 evals)
+    [panel 1 strip 19/26] Im[80.44165,82.9055]: Z_strip = 1 (located 1; 46s, 3977 evals)
+    [panel 1 strip 20/26] Im[82.9055,85.36934]: Z_strip = 1 (located 1; 50s, 4167 evals)
+    [panel 1 strip 21/26] Im[85.36934,87.83319]: Z_strip = 0 (located 0; 51s, 4294 evals)
+    [panel 1 strip 22/26] Im[87.83319,90.29704]: Z_strip = 1 (located 1; 55s, 4484 evals)
+    [panel 1 strip 23/26] Im[90.29704,92.76088]: Z_strip = 1 (located 1; 59s, 4675 evals)
+    [panel 1 strip 24/26] Im[92.76088,95.22473]: Z_strip = 1 (located 1; 63s, 4867 evals)
+    [panel 1 strip 25/26] Im[95.22473,97.68857]: Z_strip = 1 (located 1; 68s, 5058 evals)
+    [panel 1 strip 26/26] Im[97.68857,100.13]: Z_strip = 1 (located 1; 73s, 5248 evals)
+  [panel 1] located + polished 20/20 zeros; strip-sum cross-check 20==20 OK (73s elapsed, 5248 cumulative evals)
+  [panel 2] Re[-4.53,5.47] x Im[100.13,200.11]: certified Z = 44 (raw winding 44.0, residual 3.25e-19)
+    [panel 2 strip 1/40] Im[100.13,102.6522]: Z_strip = 1 (located 1; 81s, 6539 evals)
+    [panel 2 strip 2/40] Im[102.6522,105.1517]: Z_strip = 1 (located 1; 85s, 6729 evals)
+    [panel 2 strip 3/40] Im[105.1517,107.6512]: Z_strip = 1 (located 1; 90s, 6919 evals)
+    [panel 2 strip 4/40] Im[107.6512,110.1507]: Z_strip = 1 (located 1; 94s, 7109 evals)
+    [panel 2 strip 5/40] Im[110.1507,112.6502]: Z_strip = 1 (located 1; 99s, 7299 evals)
+    [panel 2 strip 6/40] Im[112.6502,115.1497]: Z_strip = 1 (located 1; 104s, 7489 evals)
+    [panel 2 strip 7/40] Im[115.1497,117.6492]: Z_strip = 1 (located 1; 109s, 7679 evals)
+    [panel 2 strip 8/40] Im[117.6492,120.1487]: Z_strip = 1 (located 1; 114s, 7869 evals)
+    [panel 2 strip 9/40] Im[120.1487,122.6482]: Z_strip = 1 (located 1; 118s, 8059 evals)
+    [panel 2 strip 10/40] Im[122.6482,125.1477]: Z_strip = 1 (located 1; 123s, 8249 evals)
+    [panel 2 strip 11/40] Im[125.1477,127.6472]: Z_strip = 1 (located 1; 128s, 8439 evals)
+    [panel 2 strip 12/40] Im[127.6472,130.1467]: Z_strip = 1 (located 1; 133s, 8629 evals)
+    [panel 2 strip 13/40] Im[130.1467,132.6462]: Z_strip = 1 (located 1; 138s, 8819 evals)
+    [panel 2 strip 14/40] Im[132.6462,135.1457]: Z_strip = 1 (located 1; 143s, 9009 evals)
+    [panel 2 strip 15/40] Im[135.1457,137.6452]: Z_strip = 1 (located 1; 148s, 9199 evals)
+    [panel 2 strip 16/40] Im[137.6452,140.1447]: Z_strip = 1 (located 1; 153s, 9389 evals)
+    [panel 2 strip 17/40] Im[140.1447,142.6442]: Z_strip = 1 (located 1; 158s, 9579 evals)
+    [panel 2 strip 18/40] Im[142.6442,145.1437]: Z_strip = 1 (located 1; 164s, 9771 evals)
+    [panel 2 strip 19/40] Im[145.1437,147.6432]: Z_strip = 2 (located 2; 169s, 9963 evals)
+    [panel 2 strip 20/40] Im[147.6432,150.1427]: Z_strip = 0 (located 0; 170s, 10090 evals)
+    [panel 2 strip 21/40] Im[150.1427,152.6422]: Z_strip = 2 (located 2; 175s, 10280 evals)
+    [panel 2 strip 22/40] Im[152.6422,155.1417]: Z_strip = 1 (located 1; 182s, 10470 evals)
+    [panel 2 strip 23/40] Im[155.1417,157.6412]: Z_strip = 1 (located 1; 192s, 10660 evals)
+    [panel 2 strip 24/40] Im[157.6412,160.1407]: Z_strip = 1 (located 1; 203s, 10850 evals)
+    [panel 2 strip 25/40] Im[160.1407,162.6402]: Z_strip = 1 (located 1; 213s, 11040 evals)
+    [panel 2 strip 26/40] Im[162.6402,165.1397]: Z_strip = 1 (located 1; 260s, 11451 evals)
+    [panel 2 strip 27/40] Im[165.1397,167.6392]: Z_strip = 2 (located 2; 270s, 11641 evals)
+    [panel 2 strip 28/40] Im[167.6392,170.1387]: Z_strip = 1 (located 1; 281s, 11831 evals)
+    [panel 2 strip 29/40] Im[170.1387,172.6382]: Z_strip = 1 (located 1; 292s, 12021 evals)
+    [panel 2 strip 30/40] Im[172.6382,175.1377]: Z_strip = 1 (located 1; 303s, 12211 evals)
+    [panel 2 strip 31/40] Im[175.1377,177.6372]: Z_strip = 1 (located 1; 314s, 12401 evals)
+    [panel 2 strip 32/40] Im[177.6372,180.1367]: Z_strip = 1 (located 1; 325s, 12591 evals)
+    [panel 2 strip 33/40] Im[180.1367,182.6362]: Z_strip = 2 (located 2; 335s, 12781 evals)
+    [panel 2 strip 34/40] Im[182.6362,185.1357]: Z_strip = 0 (located 0; 336s, 12912 evals)
+    [panel 2 strip 35/40] Im[185.1357,187.6352]: Z_strip = 2 (located 2; 347s, 13106 evals)
+    [panel 2 strip 36/40] Im[187.6352,190.1347]: Z_strip = 0 (located 0; 347s, 13236 evals)
+    [panel 2 strip 37/40] Im[190.1347,192.6342]: Z_strip = 2 (located 2; 358s, 13433 evals)
+    [panel 2 strip 38/40] Im[192.6342,195.1337]: Z_strip = 1 (located 1; 369s, 13627 evals)
+    [panel 2 strip 39/40] Im[195.1337,197.6332]: Z_strip = 2 (located 2; 416s, 14038 evals)
+    [panel 2 strip 40/40] Im[197.6332,200.11]: Z_strip = 1 (located 1; 427s, 14228 evals)
+  [panel 2] located + polished 44/44 zeros; strip-sum cross-check 44==44 OK (427s elapsed, 14228 cumulative evals)
+  [panel 3] Re[-4.53,5.47] x Im[200.11,300.17]: certified Z = 52 (raw winding 52.0, residual 0.0)
+    [panel 3 strip 1/41] Im[200.11,202.5727]: Z_strip = 1 (located 1; 443s, 15521 evals)
+    [panel 3 strip 2/41] Im[202.5727,205.0132]: Z_strip = 2 (located 2; 454s, 15713 evals)
+    [panel 3 strip 3/41] Im[205.0132,207.4537]: Z_strip = 0 (located 0; 455s, 15842 evals)
+    [panel 3 strip 4/41] Im[207.4537,209.8942]: Z_strip = 2 (located 2; 466s, 16032 evals)
+    [panel 3 strip 5/41] Im[209.8942,212.3346]: Z_strip = 1 (located 1; 478s, 16222 evals)
+    [panel 3 strip 6/41] Im[212.3346,214.7751]: Z_strip = 1 (located 1; 489s, 16412 evals)
+    [panel 3 strip 7/41] Im[214.7751,217.2156]: Z_strip = 1 (located 1; 501s, 16602 evals)
+    [panel 3 strip 8/41] Im[217.2156,219.6561]: Z_strip = 2 (located 2; 512s, 16793 evals)
+    [panel 3 strip 9/41] Im[219.6561,222.0966]: Z_strip = 1 (located 1; 524s, 16984 evals)
+    [panel 3 strip 10/41] Im[222.0966,224.5371]: Z_strip = 1 (located 1; 535s, 17174 evals)
+    [panel 3 strip 11/41] Im[224.5371,226.9776]: Z_strip = 2 (located 2; 547s, 17364 evals)
+    [panel 3 strip 12/41] Im[226.9776,229.4181]: Z_strip = 1 (located 1; 559s, 17557 evals)
+    [panel 3 strip 13/41] Im[229.4181,231.8585]: Z_strip = 1 (located 1; 570s, 17750 evals)
+    [panel 3 strip 14/41] Im[231.8585,234.299]: Z_strip = 1 (located 1; 582s, 17940 evals)
+    [panel 3 strip 15/41] Im[234.299,236.7395]: Z_strip = 1 (located 1; 594s, 18130 evals)
+    [panel 3 strip 16/41] Im[236.7395,239.18]: Z_strip = 1 (located 1; 607s, 18320 evals)
+    [panel 3 strip 17/41] Im[239.18,241.6205]: Z_strip = 2 (located 2; 619s, 18510 evals)
+    [panel 3 strip 18/41] Im[241.6205,244.061]: Z_strip = 1 (located 1; 632s, 18700 evals)
+    [panel 3 strip 19/41] Im[244.061,246.5015]: Z_strip = 1 (located 1; 645s, 18890 evals)
+    [panel 3 strip 20/41] Im[246.5015,248.942]: Z_strip = 1 (located 1; 658s, 19081 evals)
+    [panel 3 strip 21/41] Im[248.942,251.3825]: Z_strip = 2 (located 2; 671s, 19272 evals)
+    [panel 3 strip 22/41] Im[251.3825,253.8229]: Z_strip = 1 (located 1; 685s, 19462 evals)
+    [panel 3 strip 23/41] Im[253.8229,256.2634]: Z_strip = 2 (located 2; 698s, 19652 evals)
+    [panel 3 strip 24/41] Im[256.2634,258.7039]: Z_strip = 0 (located 0; 699s, 19779 evals)
+    [panel 3 strip 25/41] Im[258.7039,261.1444]: Z_strip = 2 (located 2; 712s, 19969 evals)
+    [panel 3 strip 26/41] Im[261.1444,263.5849]: Z_strip = 1 (located 1; 726s, 20159 evals)
+    [panel 3 strip 27/41] Im[263.5849,266.0254]: Z_strip = 2 (located 2; 741s, 20359 evals)
+    [panel 3 strip 28/41] Im[266.0254,268.4659]: Z_strip = 1 (located 1; 756s, 20559 evals)
+    [panel 3 strip 29/41] Im[268.4659,270.9064]: Z_strip = 1 (located 1; 771s, 20749 evals)
+    [panel 3 strip 30/41] Im[270.9064,273.3468]: Z_strip = 2 (located 2; 786s, 20939 evals)
+    [panel 3 strip 31/41] Im[273.3468,275.7873]: Z_strip = 0 (located 0; 787s, 21067 evals)
+    [panel 3 strip 32/41] Im[275.7873,278.2278]: Z_strip = 2 (located 2; 802s, 21258 evals)
+    [panel 3 strip 33/41] Im[278.2278,280.6683]: Z_strip = 1 (located 1; 818s, 21448 evals)
+    [panel 3 strip 34/41] Im[280.6683,283.1088]: Z_strip = 2 (located 2; 833s, 21638 evals)
+    [panel 3 strip 35/41] Im[283.1088,285.5493]: Z_strip = 1 (located 1; 849s, 21828 evals)
+    [panel 3 strip 36/41] Im[285.5493,287.9898]: Z_strip = 1 (located 1; 865s, 22018 evals)
+    [panel 3 strip 37/41] Im[287.9898,290.4303]: Z_strip = 2 (located 2; 881s, 22208 evals)
+    [panel 3 strip 38/41] Im[290.4303,292.8707]: Z_strip = 1 (located 1; 897s, 22398 evals)
+    [panel 3 strip 39/41] Im[292.8707,295.3112]: Z_strip = 1 (located 1; 914s, 22591 evals)
+    [panel 3 strip 40/41] Im[295.3112,297.7517]: Z_strip = 1 (located 1; 930s, 22784 evals)
+    [panel 3 strip 41/41] Im[297.7517,300.17]: Z_strip = 2 (located 2; 947s, 22974 evals)
+  [panel 3] located + polished 52/52 zeros; strip-sum cross-check 52==52 OK (947s elapsed, 22974 cumulative evals)
+
+=== ZERO CENSUS (Im in [36,300]) ===
+  total certified zeros: 116  (panel counts: [20, 44, 52])
+    s = +2.0166760562 + 36.6716562897 i   |Re - 5/2| = 0.483324
+    s = +3.3745475400 + 41.6912889702 i   |Re - 5/2| = 0.874548
+    s = +2.3788199467 + 45.0773935782 i   |Re - 5/2| = 0.121180
+    s = +2.6859983646 + 48.9679276809 i   |Re - 5/2| = 0.185998
+    s = +2.2279357102 + 53.9990883711 i   |Re - 5/2| = 0.272064
+    s = +3.3696405015 + 55.6129908921 i   |Re - 5/2| = 0.869641
+    s = +2.5172843179 + 60.0674531860 i   |Re - 5/2| = 0.017284
+    s = +2.2232934021 + 63.6777142275 i   |Re - 5/2| = 0.276707
+    s = +3.0164505983 + 66.3651322403 i   |Re - 5/2| = 0.516451
+    s = +3.2831746829 + 69.9240946880 i   |Re - 5/2| = 0.783175
+    s = +1.8321556138 + 72.4044667502 i   |Re - 5/2| = 0.667844
+    s = +2.5689181660 + 76.3470235360 i   |Re - 5/2| = 0.068918
+    s = +3.3591523139 + 78.9875337068 i   |Re - 5/2| = 0.859152
+    s = +2.1167312334 + 81.8160867707 i   |Re - 5/2| = 0.383269
+    s = +2.8456968558 + 84.1751309636 i   |Re - 5/2| = 0.345697
+    s = +2.5223183314 + 88.0133629302 i   |Re - 5/2| = 0.022318
+    s = +2.2596626219 + 90.5881658301 i   |Re - 5/2| = 0.240337
+    s = +3.4234711364 + 92.8887375268 i   |Re - 5/2| = 0.923471
+    s = +2.4588738155 + 95.3357029672 i   |Re - 5/2| = 0.041126
+    s = +2.0492294314 + 99.4359100852 i   |Re - 5/2| = 0.450771
+    s = +2.7982683913 + 100.5645930818 i   |Re - 5/2| = 0.298268
+    s = +2.9747242735 + 104.2038213766 i   |Re - 5/2| = 0.474724
+    s = +2.9849971610 + 106.3573998922 i   |Re - 5/2| = 0.484997
+    s = +2.1878619042 + 108.6868065368 i   |Re - 5/2| = 0.312138
+    s = +2.2632903959 + 111.4693301631 i   |Re - 5/2| = 0.236710
+    s = +3.0799499979 + 114.5399973603 i   |Re - 5/2| = 0.579950
+    s = +3.0322936151 + 117.1604714001 i   |Re - 5/2| = 0.532294
+    s = +2.1088840329 + 118.0897775727 i   |Re - 5/2| = 0.391116
+    s = +2.7636331227 + 121.8440983046 i   |Re - 5/2| = 0.263633
+    s = +2.5604691462 + 123.7352447301 i   |Re - 5/2| = 0.060469
+    s = +1.9107368231 + 127.0331065153 i   |Re - 5/2| = 0.589263
+    s = +3.3911423887 + 128.8422757762 i   |Re - 5/2| = 0.891142
+    s = +2.8394976311 + 130.6151993446 i   |Re - 5/2| = 0.339498
+    s = +2.4760828915 + 133.9897082534 i   |Re - 5/2| = 0.023917
+    s = +2.0562111803 + 135.8145493667 i   |Re - 5/2| = 0.443789
+    s = +2.8920233715 + 138.5895220604 i   |Re - 5/2| = 0.392023
+    s = +2.7080526911 + 140.5384705771 i   |Re - 5/2| = 0.208053
+    s = +3.1739736866 + 143.1292808320 i   |Re - 5/2| = 0.673974
+    s = +2.0140700450 + 145.2031324439 i   |Re - 5/2| = 0.485930
+    s = +2.5754165759 + 146.9703906929 i   |Re - 5/2| = 0.075417
+    s = +2.3325557055 + 150.4325185430 i   |Re - 5/2| = 0.167444
+    s = +3.5056983020 + 152.4634427744 i   |Re - 5/2| = 1.005698
+    s = +2.0770833638 + 153.9525469498 i   |Re - 5/2| = 0.422917
+    s = +2.7607142470 + 156.6455659524 i   |Re - 5/2| = 0.260714
+    s = +2.5708903710 + 158.3957341477 i   |Re - 5/2| = 0.070890
+    s = +2.7458419278 + 161.6185755956 i   |Re - 5/2| = 0.245842
+    s = +1.8666017834 + 163.1500506551 i   |Re - 5/2| = 0.633398
+    s = +3.1316541068 + 165.6566671272 i   |Re - 5/2| = 0.631654
+    s = +3.1430464675 + 167.4160843817 i   |Re - 5/2| = 0.643046
+    s = +2.3098570475 + 169.5354721628 i   |Re - 5/2| = 0.190143
+    s = +2.0552370528 + 172.3545020623 i   |Re - 5/2| = 0.444763
+    s = +2.6224315282 + 174.1375106520 i   |Re - 5/2| = 0.122432
+    s = +2.9509436268 + 176.1755821145 i   |Re - 5/2| = 0.450944
+    s = +2.8540543760 + 178.8047354313 i   |Re - 5/2| = 0.354054
+    s = +2.8306324634 + 181.0913045727 i   |Re - 5/2| = 0.330632
+    s = +2.1880730101 + 181.4733280456 i   |Re - 5/2| = 0.311927
+    s = +2.2834532903 + 185.1759452007 i   |Re - 5/2| = 0.216547
+    s = +2.7768168338 + 186.8663046014 i   |Re - 5/2| = 0.276817
+    s = +2.1251950942 + 190.2157768083 i   |Re - 5/2| = 0.374805
+    s = +3.3566196306 + 190.2885575698 i   |Re - 5/2| = 0.856620
+    s = +2.4498502748 + 192.6510444078 i   |Re - 5/2| = 0.050150
+    s = +2.8172705311 + 195.5496961959 i   |Re - 5/2| = 0.317271
+    s = +2.4897025232 + 197.4329044078 i   |Re - 5/2| = 0.010297
+    s = +2.1064873258 + 199.3475023425 i   |Re - 5/2| = 0.393513
+    s = +2.6317803808 + 201.7921029497 i   |Re - 5/2| = 0.131780
+    s = +3.3475019854 + 203.4903038519 i   |Re - 5/2| = 0.847502
+    s = +2.6396070450 + 204.9620576989 i   |Re - 5/2| = 0.139607
+    s = +2.0224309346 + 208.2838352052 i   |Re - 5/2| = 0.477569
+    s = +2.3929635642 + 209.0218525828 i   |Re - 5/2| = 0.107036
+    s = +2.9104634353 + 211.8587406563 i   |Re - 5/2| = 0.410463
+    s = +2.6254279720 + 213.8867749973 i   |Re - 5/2| = 0.125428
+    s = +3.0475359160 + 215.6965882788 i   |Re - 5/2| = 0.547536
+    s = +2.1369815490 + 217.5336406998 i   |Re - 5/2| = 0.363018
+    s = +2.8780527915 + 219.5309535631 i   |Re - 5/2| = 0.378053
+    s = +2.3008975314 + 221.1481393905 i   |Re - 5/2| = 0.199102
+    s = +2.4246134417 + 224.3760075657 i   |Re - 5/2| = 0.075387
+    s = +3.3365714744 + 226.3254639792 i   |Re - 5/2| = 0.836571
+    s = +2.0662567643 + 226.7654268685 i   |Re - 5/2| = 0.433743
+    s = +2.9382993925 + 229.3865860899 i   |Re - 5/2| = 0.438299
+    s = +2.3129000991 + 231.5993145930 i   |Re - 5/2| = 0.187100
+    s = +2.8469038854 + 233.4309671268 i   |Re - 5/2| = 0.346904
+    s = +1.9850132611 + 235.7941630623 i   |Re - 5/2| = 0.514987
+    s = +2.5521220008 + 237.2722798114 i   |Re - 5/2| = 0.052122
+    s = +3.0618625599 + 239.5415606521 i   |Re - 5/2| = 0.561863
+    s = +3.0667020891 + 241.1058751353 i   |Re - 5/2| = 0.566702
+    s = +2.5288173666 + 243.3250677523 i   |Re - 5/2| = 0.028817
+    s = +1.9441700849 + 244.6605500927 i   |Re - 5/2| = 0.555830
+    s = +2.4391169511 + 247.5135711769 i   |Re - 5/2| = 0.060883
+    s = +2.8903556237 + 249.0767147795 i   |Re - 5/2| = 0.390356
+    s = +2.8772307649 + 250.7389305517 i   |Re - 5/2| = 0.377231
+    s = +2.0661000606 + 253.6659732323 i   |Re - 5/2| = 0.433900
+    s = +3.0866141385 + 254.1378000350 i   |Re - 5/2| = 0.586614
+    s = +2.5013133817 + 256.0005892352 i   |Re - 5/2| = 0.001313
+    s = +2.5829708635 + 258.9504221157 i   |Re - 5/2| = 0.082971
+    s = +2.4032729330 + 260.4125112784 i   |Re - 5/2| = 0.096727
+    s = +1.9950205658 + 262.9888331093 i   |Re - 5/2| = 0.504979
+    s = +3.5336990812 + 263.7697625711 i   |Re - 5/2| = 1.033699
+    s = +2.5192788617 + 266.0236017487 i   |Re - 5/2| = 0.019279
+    s = +2.6663193920 + 267.5818872355 i   |Re - 5/2| = 0.166319
+    s = +2.6714450910 + 270.3251291863 i   |Re - 5/2| = 0.171445
+    s = +1.9349692819 + 271.8444799772 i   |Re - 5/2| = 0.565031
+    s = +2.7642647845 + 273.1044085723 i   |Re - 5/2| = 0.264265
+    s = +2.4197412037 + 275.9603706243 i   |Re - 5/2| = 0.080259
+    s = +3.5661474280 + 277.3533514683 i   |Re - 5/2| = 1.066147
+    s = +2.4778000574 + 278.7864452423 i   |Re - 5/2| = 0.022200
+    s = +2.0832406757 + 281.0593641392 i   |Re - 5/2| = 0.416759
+    s = +2.3069131930 + 282.8413157566 i   |Re - 5/2| = 0.193087
+    s = +2.7933188780 + 284.6016865082 i   |Re - 5/2| = 0.293319
+    s = +2.7243359543 + 287.0445576009 i   |Re - 5/2| = 0.224336
+    s = +3.0605043228 + 288.5302844195 i   |Re - 5/2| = 0.560504
+    s = +1.9419150049 + 289.9846344907 i   |Re - 5/2| = 0.558085
+    s = +2.9586945957 + 291.8189281869 i   |Re - 5/2| = 0.458695
+    s = +2.6863364463 + 293.9327814768 i   |Re - 5/2| = 0.186336
+    s = +2.2829182933 + 295.3401040854 i   |Re - 5/2| = 0.217082
+    s = +2.6473685375 + 298.4370197006 i   |Re - 5/2| = 0.147369
+    s = +2.0376389934 + 299.2747856320 i   |Re - 5/2| = 0.462361
+
+  Re spread: [1.832156, 3.566147]  width = 1.733992
+  Re median = 2.579194; Re mean = 2.608526
+  ON A COMMON VERTICAL LINE? NO (common-line PASS structurally inapplicable to F(s): no Euler product)
+  mean |Re - 5/2 ghost| = 0.369914
+
+  Re=5/2 ghost-proximity trend: d(|Re-5/2|)/d(Im) slope = -4.164162e-04
+    low-height (<= median Im) mean |Re-5/2| = 0.395525; high-height mean = 0.344304
+    => scatter DRIFTS TOWARD the Re=5/2 ghost line over Im in [36,300]
+
+=== DENSITY FIT ===
+  cumulative zero count N(T_top=299.27) = 116
+  Riemann-style windowed expectation N(T)-N(36) at T_top = 132.099
+  observed / Riemann-log expectation (at T_top) = 0.8781
+  free power-law fit: N ~ 0.003972 * T^1.8257
+  (Riemann log-corrected count grows ~ T log T, i.e. super-linear slope -> 1+; a sub-linear power-law exponent => sparser-than-arithmetic zero density)
+
+plot -> C:\sandbox\Ainulindale Exflation\computations\session-105\s105_w7_6_s3_zeta_asymptotics.png
+data -> C:\sandbox\Ainulindale Exflation\computations\session-105\s105_w7_6_s3_zeta_asymptotics.npz   (947s total)
+(value='n_zeros=116_panels=[20, 44, 52]_Re_spread=1.7340_Re_median=2.5792_Re_mean=2.6085_common_line=NO_mean_dist_ghost52=0.3699_ghost_trend_slope=-4.1642e-04_lowImg_meandist=0.3955_highImg_meandist=0.3443_powerlaw_exp=1.8257_riemann_ratio_top=0.8781_maxwind_resid=3.25e-19_closedform_resid=3.94e-31', scheme=CLOSED-FORM-S3-DIRAC-ZETA, convention=single-power-ConvB-poleconv-B-single_F(s)=(2^{s-2}-1)zeta(s-2)-(2^{s-2}-1/4)zeta(s)_Re=5/2-ghost-ref, L_max=NA-closed-form)
+<<<EMIT_VERDICT_PAYLOAD>>>
+{"audit_sha256":"cfd3d2bd5b721ef2aac034686309f5d6302fb41b5fc6f333a13d943aec07254f","content_sha256":"3edf255ad48779ae30d9037e98e63d9f557d39ae0cc2c1e5cd3fe173d5113367","convention":"single-power-ConvB-poleconv-B-single_F(s)=(2^{s-2}-1)zeta(s-2)-(2^{s-2}-1/4)zeta(s)_Re=5/2-ghost-ref","extra_rows":["# composite-precedence: \u00a7W7-6 (generic schema-v2 collapse overridden \u2014 INFO-by-construction; FAIL only on non-integer winding after refinement)","# census: 116 certified zeros Im in [36,300]; panel_counts=[20, 44, 52]; Re_spread=1.7340 on_common_line=NO; mean|Re-5/2|=0.3699; ghost_trend_slope=-4.164e-04; closes off-session caveat #5 (window-finite certification, Im<=36.13 -> Im<=300)","# convention: single-power Conv. B poleconv-B-single; F(s)=(2^{s-2}-1)zeta(s-2)-(2^{s-2}-1/4)zeta(s); Re=5/2 = shifted-mirror ghost of zeta(s-2) [Re(s-2)=1/2]; poles s=3,s=1 on real axis (P=0 in every Im>=36 panel); NO regulator_pin (exact closed form), NO CLASS pin (no SCHEMATIC helper)"],"gate_id":"S105-W7-6-S3-ZETA-ASYMPTOTICS","l_max":"NA-closed-form","schema_version":"S84+","scheme":"CLOSED-FORM-S3-DIRAC-ZETA","session":105,"value":"n_zeros=116_panels=[20, 44, 52]_Re_spread=1.7340_Re_median=2.5792_Re_mean=2.6085_common_line=NO_mean_dist_ghost52=0.3699_ghost_trend_slope=-4.1642e-04_lowImg_meandist=0.3955_highImg_meandist=0.3443_powerlaw_exp=1.8257_riemann_ratio_top=0.8781_maxwind_resid=3.25e-19_closedform_resid=3.94e-31","verdict":"INFO"}
+<<<END_EMIT_VERDICT_PAYLOAD>>>
+
+=== S105-W7-6-S3-ZETA-ASYMPTOTICS: INFO (wall 946.8s) ===

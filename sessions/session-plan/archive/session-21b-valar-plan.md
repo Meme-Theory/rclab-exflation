@@ -302,11 +302,11 @@ The mechanism was proposed from Baptista's theoretical framework (Papers 15+17) 
 
 ### VI.1 Complete Closure Gate Registry
 
-For every proposed computation, the five-tier classification:
+For every proposed computation, the five-level classification:
 
 #### Computation 1: V_IR(tau) for p+q <= 2 (A5)
 
-| Tier | Criterion | BF | Prob shift |
+| Level | Criterion | BF | Prob shift |
 |:-----|:----------|:---|:-----------|
 | INTERESTING | Interior extremum exists but shallow | 3 | +3 pp |
 | COMPELLING | Minimum at tau in [0.15, 0.35] with depth > 5% | 10 | +8-10 pp |
@@ -316,7 +316,7 @@ For every proposed computation, the five-tier classification:
 
 #### Computation 2: T''(0) Sign Gate (A6, Feynman formula)
 
-| Tier | Criterion | BF | Prob shift |
+| Level | Criterion | BF | Prob shift |
 |:-----|:----------|:---|:-----------|
 | INTERESTING | T''(0) > 0 but T''(0)/T'(0) < 0.1 (weak self-consistency) | 2 | +2 pp |
 | COMPELLING | T''(0) > 0 AND T''(0)/T'(0) > 0.5 (strong self-consistency) | 8 | +5-8 pp |
@@ -325,7 +325,7 @@ For every proposed computation, the five-tier classification:
 
 #### Computation 3: Freund-Rubin beta/alpha from 12D Action
 
-| Tier | Criterion | BF | Prob shift |
+| Level | Criterion | BF | Prob shift |
 |:-----|:----------|:---|:-----------|
 | INTERESTING | beta/alpha < 0.313 (double-well exists) with n=1 | 5 | +3-5 pp |
 | COMPELLING | beta/alpha in [0.20, 0.35] giving tau_0 in [0.25, 0.35] | 15 | +10-15 pp |
@@ -335,7 +335,7 @@ For every proposed computation, the five-tier classification:
 
 #### Computation 4: Rolling Modulus w(z) vs DESI
 
-| Tier | Criterion | BF | Prob shift |
+| Level | Criterion | BF | Prob shift |
 |:-----|:----------|:---|:-----------|
 | INTERESTING | w_0 in [-0.9, -0.6] (3-sigma overlap) | 3-5 | +3-5 pp |
 | COMPELLING | w_0 in [-0.8, -0.6], w_a in [-1.2, -0.3] (2-sigma core) | 10-15 | +10-15 pp |
@@ -345,7 +345,7 @@ For every proposed computation, the five-tier classification:
 
 #### Computation 5: Neutrino Fine-Grid R(tau) near tau = 1.6
 
-| Tier | Criterion | BF | Prob shift |
+| Level | Criterion | BF | Prob shift |
 |:-----|:----------|:---|:-----------|
 | PASS | R_max > 32.6 at fine grid + higher max_pq | 2.5 | +2-3 pp |
 | SOFT MISS | R_max in [30, 32.6] at converged grid | 1.2 | +/-0 pp |
@@ -353,7 +353,7 @@ For every proposed computation, the five-tier classification:
 
 #### Computation 6: Off-Diagonal Coupling (full eigenvector computation)
 
-| Tier | Criterion | BF | Prob shift |
+| Level | Criterion | BF | Prob shift |
 |:-----|:----------|:---|:-----------|
 | INTERESTING | Coupling shifts lowest eigenvalues by > 5% | 3 | +2-3 pp |
 | COMPELLING | Coupled V_IR has interior minimum absent in block-diagonal | 15 | +10-12 pp |
@@ -363,7 +363,7 @@ For every proposed computation, the five-tier classification:
 
 #### Computation 7: S_signed(tau) -- Gauge-Charge-Weighted Spectral Sum
 
-| Tier | Criterion | BF | Prob shift |
+| Level | Criterion | BF | Prob shift |
 |:-----|:----------|:---|:-----------|
 | INTERESTING | S_signed non-monotonic in tau | 5 | +3-5 pp |
 | COMPELLING | S_signed minimum at tau in [0.15, 0.35] | 12 | +8-10 pp |
@@ -371,7 +371,7 @@ For every proposed computation, the five-tier classification:
 
 #### Computation 8: 2D (phi, sigma) Scan
 
-| Tier | Criterion | BF | Prob shift |
+| Level | Criterion | BF | Prob shift |
 |:-----|:----------|:---|:-----------|
 | INTERESTING | BCS transition line passes through physical region | 3 | +2-3 pp |
 | COMPELLING | Transition at (phi, sigma) consistent with modulus trajectory | 10 | +5-8 pp |
@@ -379,14 +379,14 @@ For every proposed computation, the five-tier classification:
 
 #### Computation 9: Gauss-Bonnet Topological Check (kk, zero-cost)
 
-| Tier | Criterion | BF | Prob shift |
+| Level | Criterion | BF | Prob shift |
 |:-----|:----------|:---|:-----------|
 | PASS | E_4 is tau-independent (validates Riemann data) | 1 | 0 pp |
 | FAIL | E_4 varies with tau (BUG in Riemann data) | -- | invalidates 20a |
 
 #### Computation 10: Gravitational Instanton Action (kk, deferred)
 
-| Tier | Criterion | BF | Prob shift |
+| Level | Criterion | BF | Prob shift |
 |:-----|:----------|:---|:-----------|
 | INTERESTING | exp(-I_E) varies by > factor 2 across tau in [0, 2] | 2 | +1-2 pp |
 | CLOSED | exp(-I_E) variation < 10% | 0.5 | -1 pp |
@@ -514,14 +514,14 @@ Pre-registered now, before any computation runs.
 
 **All scripts use**: `"phonon-exflation-sim/.venv312/Scripts/python.exe"`
 
-**Phase 0 script** (`tier0-computation/s21b_phase0_diagnostics.py`, ~300 lines):
+**Phase 0 script** (`computations/s21b_phase0_diagnostics.py`, ~300 lines):
 - Load s19a_sweep_data.npz (Dirac eigenvalues)
 - Load kk1_bosonic_spectrum.npz (bosonic modes)
 - Load s21a_low_mode_TT.npz (TT data)
 - Compute: V_IR(tau), T''(0), R(tau) fine-grid, Gauss-Bonnet, S_signed
 - Output: .npz data + diagnostic plots + pass/fail verdicts
 
-**Phase 1 script** (`tier0-computation/s21b_rolling_modulus.py`, ~250 lines):
+**Phase 1 script** (`computations/s21b_rolling_modulus.py`, ~250 lines):
 - Load l20_vtotal_minimum.npz (V_total and gradient)
 - Add V_FR(tau) from kk's exact formula
 - Solve ODE for three scenarios
@@ -971,7 +971,7 @@ where C_{nm} = <psi_n | (1/4)(L_{e_a} g)^{jk} gamma_j gamma_k | psi_m> (no 1/sqr
 
 **Estimated g_eff from Section V.2**: |coupling|/|gap| ~ 3.9 at tau = 0.30 → g_eff ~ 3.9 * gap / V_K. The comparison g_eff vs g_c requires the eigenvector extraction (Phase 2).
 
-| Tier | Criterion | BF | Prob shift |
+| Level | Criterion | BF | Prob shift |
 |:-----|:----------|:---|:-----------|
 | CONDENSATE | g_eff > g_c at tau_0 = 0.30 | 3 | +3-5 pp (BCS confirmed, but w=-1 tension) |
 | MARGINAL | g_eff / g_c in [0.5, 1.0] | 1.5 | +1-2 pp |
@@ -991,7 +991,7 @@ Note on condensate + DESI tension: A CONDENSATE result (g_eff > g_c) is POSITIVE
 - **Kinked w(z)**: BCS transition crossing → condensate forms → latent heat → kink in w at z = z_BCS → first-order dark energy transition
 - The kink amplitude is proportional to the latent heat: Delta_w ~ g_eff^2 / (H^2 G_ττ * Delta_tau) where Delta_tau is the jump in modulus at the first-order transition
 
-| Tier | Criterion | BF | Prob shift |
+| Level | Criterion | BF | Prob shift |
 |:-----|:----------|:---|:-----------|
 | DESI kink | w(z) has first-order kink at z_BCS in [0.5, 2.0] and w_0 in DESI range | 10 | +8-12 pp |
 | SMOOTH DESI | w(z) smooth quintessence in DESI range | 5 | +3-5 pp |

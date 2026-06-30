@@ -129,13 +129,13 @@ This has been on my open questions list since Session 29 (MEMORY.md, item 2) and
 
 This produces a curvature landscape K(tau, eps) that can be overlaid with the V_total landscape. Physical content: regions of high curvature are regions where the semiclassical approximation breaks down. If the Kapitza minimum sits in a low-curvature region, the effective field theory is self-consistent. If it sits in a high-curvature region, higher-derivative corrections become important.
 
-### 3.6 Petrov Classification Along the Limit Cycle [TIER 2, Blocked on K-1]
+### 3.6 Petrov Classification Along the Limit Cycle [LEVEL 2, Blocked on K-1]
 
 The Petrov classification of the Jensen-deformed SU(3) was computed at Session 25: Type D at tau = 0, algebraically general with 8 distinct Weyl eigenvalues at tau > 0. If the Kapitza limit cycle has the modulus oscillating between tau_* - delta and tau_* + delta, the Petrov type oscillates as well. In the NP formalism (Paper 08), the Weyl scalars Psi_0 through Psi_4 depend on the null tetrad adapted to the SU(3) geometry. As tau oscillates, the Petrov type could pass through algebraically special types (D, II, III, N) at discrete phases of the oscillation.
 
 This would be a novel prediction: the Petrov type of the internal manifold is TIME-DEPENDENT (oscillating with the Kapitza frequency). The physical consequence is that the effective 4D gravitational radiation content varies periodically. At Petrov type D, the spacetime is "Coulomb-like" (no gravitational radiation). At general type, it radiates. The oscillation between Type D and general type would produce a periodic gravitational wave signal in the internal space -- a "phonon heartbeat."
 
-This is a Tier 2 computation, blocked on K-1 passing and identifying the specific oscillation trajectory.
+This is a Level 2 computation, blocked on K-1 passing and identifying the specific oscillation trajectory.
 
 ---
 

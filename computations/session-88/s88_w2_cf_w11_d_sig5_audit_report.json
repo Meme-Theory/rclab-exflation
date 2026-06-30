@@ -1,0 +1,28 @@
+{
+  "gate_id": "S88-CF-W11-D-SIG5-DUPLICATE-AUDIT",
+  "n_duplicates_audited": 2,
+  "count_Class1_violations": 0,
+  "count_POSSIBLE_Class1": 0,
+  "count_benign_content_collision": 1,
+  "classifications": [
+    {
+      "duplicate_sha": "74c16f36e83643f121948b969da1e1a4270a982c0974a94e39442c96710ad3bb",
+      "gates": [
+        "S87-W1B-T5-LANDING"
+      ],
+      "n_gates": 1,
+      "classification": "ANOMALY",
+      "evidence": "Only 1 gates found; expected \u22652 for a duplicate"
+    },
+    {
+      "duplicate_sha": "9fe27a159784ff834202a8b5a424ce876e997b7e12f80617945730be829f29d8",
+      "gates": [
+        "S87-W3-PER-EVAL-FINITENESS-PRE-REG",
+        "S87-W3-PER-EVAL-FINITENESS-PRE-REG"
+      ],
+      "n_gates": 2,
+      "classification": "benign-content-collision",
+      "evidence": "No hardcoded SHA in 2 producing scripts; likely deterministic-equivalent input pin maps (sub-gate sequence within same script run)"
+    }
+  ]
+}

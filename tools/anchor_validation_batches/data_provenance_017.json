@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 17,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_161",
+      "anchor_type": "data_provenance",
+      "name": "anharmonic_vertices",
+      "script_path": "session-32/s32a_anharmonic_vertices.py",
+      "session": "s32a",
+      "inputs": "",
+      "outputs": "session-32/s32a_anharmonic_vertices.npz, session-32/s32a_anharmonic_vertices.png",
+      "source_file": "computations/session-32/s32a_anharmonic_vertices.py",
+      "source_context_30_lines": "   17:   (B3 -> B2 + B1, etc.). V_4 is the quartic vertex governing four-phonon scattering.\n   18: \n   19:   The B3 lifetime from three-phonon decay (Fermi golden rule):\n   20:     Gamma_B3 ~ |V_3|^2 / (16 pi omega_B3^3)\n   21:   where omega_B3 is the B3 eigenvalue (energy scale). If Gamma_B3/omega_B3 < 0.1,\n   22:   standard RPA with delta-function spectral weight is valid.\n   23: \n   24: Input: computations/session-23/s23a_gap_equation.npz, s30b_sdw_grid.npz (cross-check)\n   25: Output: computations/session-32/s32a_anharmonic_vertices.npz, .png\n   26: Gate: AH-32a (Gamma_B3/omega_B3 threshold)\n   27: \n   28: Author: phonon-exflation-sim agent, Session 32a\n   29: Date: 2026-03-02\n   30: \"\"\"\n   31: \n   32: import numpy as np\n   33: import matplotlib"
+    },
+    {
+      "anchor_id": "prov_162",
+      "anchor_type": "data_provenance",
+      "name": "flat_b2_interaction",
+      "script_path": "session-32/s32a_flat_b2_interaction.py",
+      "session": "s32a",
+      "inputs": "",
+      "outputs": "session-32/s32a_flat_b2_interaction.npz, session-32/s32a_flat_b2_interaction.png",
+      "source_file": "computations/session-32/s32a_flat_b2_interaction.py",
+      "source_context_30_lines": "   17:   The off-diagonal matrix elements <m|dD/dtau|n> are extracted from the\n   18:   eigenvector evolution: since D(tau)|psi_n(tau)> = lambda_n(tau)|psi_n(tau)>,\n   19:   differentiating gives for m != n:\n   20:     <psi_m|dD/dtau|psi_n> = (dlambda_n/dtau * delta_{mn}) + (lambda_n - lambda_m) * <psi_m|dpsi_n/dtau>\n   21:   Therefore for m != n:\n   22:     <psi_m|dD/dtau|psi_n> = (lambda_n - lambda_m) * <psi_m|dpsi_n/dtau>\n   23: \n   24: Input: computations/session-23/s23a_kosmann_singlet.npz, s32a_umklapp_vertex.npz\n   25: Output: computations/session-32/s32a_flat_b2_interaction.npz, .png\n   26: Gate: FL-32a (V_eff sign)\n   27: \n   28: Author: phonon-exflation-sim agent, Session 32a\n   29: Date: 2026-03-02\n   30: \"\"\"\n   31: \n   32: import numpy as np\n   33: import matplotlib"
+    },
+    {
+      "anchor_id": "prov_163",
+      "anchor_type": "data_provenance",
+      "name": "umklapp_vertex",
+      "script_path": "session-32/s32a_umklapp_vertex.py",
+      "session": "s32a",
+      "inputs": "",
+      "outputs": "session-32/s32a_umklapp_vertex.npz, session-32/s32a_umklapp_vertex.png",
+      "source_file": "computations/session-32/s32a_umklapp_vertex.py",
+      "source_context_30_lines": "   14:   At tau=0, the (0,0) singlet sector of D_K on SU(3) with bi-invariant metric has\n   15:   8-fold degeneracy at lambda = sqrt(3)/2. Jensen deformation (tau > 0) lifts this\n   16:   into B1(1) + B2(4) + B3(3) under residual U(2) symmetry:\n   17:     B3 (adjoint, 3 modes): largest |dlambda/dtau| ~ 0.75\n   18:     B2 (fundamental, 4 modes): smallest |dlambda/dtau| ~ -0.02 to +0.08\n   19:     B1 (trivial, 1 mode): intermediate |dlambda/dtau| ~ -0.33\n   20: \n   21: Input: computations/session-23/s23a_gap_equation.npz\n   22: Output: computations/session-32/s32a_umklapp_vertex.npz, .png\n   23: Gates: U-32a (vertex sign), A-32a (v=0 in instanton orbit)\n   24: \n   25: Author: phonon-exflation-sim agent, Session 32a\n   26: Date: 2026-03-02\n   27: \"\"\"\n   28: \n   29: import numpy as np\n   30: import matplotlib"
+    },
+    {
+      "anchor_id": "prov_164",
+      "anchor_type": "data_provenance",
+      "name": "param_b2_mathieu",
+      "script_path": "session-32/s32b_param_b2_mathieu.py",
+      "session": "s32b",
+      "inputs": "",
+      "outputs": "session-32/s32b_param_b2_mathieu.npz, session-32/s32b_param_b2_mathieu.png",
+      "source_file": "computations/session-32/s32b_param_b2_mathieu.py",
+      "source_context_30_lines": "   31: from pathlib import Path\n   32: \n   33: # ============================================================\n   34: # Configuration\n   35: # ============================================================\n   36: DATA_DIR = Path(r\"C:\\sandbox\\Ainulindale Exflation\\computations\")\n   37: INSTANTON_FILE = DATA_DIR / \"s31Ba_instanton_kapitza.npz\"\n   38: UMKLAPP_FILE = DATA_DIR / \"s32a_umklapp_vertex.npz\"\n   39: OUTPUT_NPZ = DATA_DIR / \"s32b_param_b2_mathieu.npz\"\n   40: OUTPUT_PNG = DATA_DIR / \"s32b_param_b2_mathieu.png\"\n   41: \n   42: \n   43: # ============================================================\n   44: # Module 1: Mathieu Stability Boundaries\n   45: # ============================================================\n   46: def compute_mathieu_boundaries(q_max=5.0, n_q=500, n_orders=6):\n   47:     \"\"\"Compute the Mathieu stability boundaries a_n(q) and b_n(q)."
+    },
+    {
+      "anchor_id": "prov_165",
+      "anchor_type": "data_provenance",
+      "name": "rpa1_thouless",
+      "script_path": "session-32/s32b_rpa1_thouless.py",
+      "session": "s32b",
+      "inputs": "",
+      "outputs": "session-32/s32b_rpa1_thouless.npz, session-32/s32b_rpa1_thouless.png",
+      "source_file": "computations/session-32/s32b_rpa1_thouless.py",
+      "source_context_30_lines": "   36: \n   37: # ============================================================\n   38: # Configuration\n   39: # ============================================================\n   40: DATA_DIR = Path(r\"C:\\sandbox\\Ainulindale Exflation\\computations\")\n   41: SINGLET_FILE = DATA_DIR / \"s23a_kosmann_singlet.npz\"\n   42: EXTENDED_FILE = DATA_DIR / \"s23a_eigenvectors_extended.npz\"\n   43: UMKLAPP_FILE = DATA_DIR / \"s32a_umklapp_vertex.npz\"\n   44: OUTPUT_NPZ = DATA_DIR / \"s32b_rpa1_thouless.npz\"\n   45: OUTPUT_PNG = DATA_DIR / \"s32b_rpa1_thouless.png\"\n   46: \n   47: # Gate thresholds\n   48: CHI_PASS = 0.54\n   49: CHI_MARGINAL = 0.27\n   50: \n   51: # ============================================================\n   52: # Module 1: Data Loading"
+    },
+    {
+      "anchor_id": "prov_166",
+      "anchor_type": "data_provenance",
+      "name": "wall_dos",
+      "script_path": "session-32/s32b_wall_dos.py",
+      "session": "s32b",
+      "inputs": "",
+      "outputs": "session-32/s32b_wall_dos.npz, session-32/s32b_wall_dos.png",
+      "source_file": "computations/session-32/s32b_wall_dos.py",
+      "source_context_30_lines": "   32: from pathlib import Path\n   33: \n   34: # ============================================================\n   35: # Configuration\n   36: # ============================================================\n   37: DATA_DIR = Path(r\"C:\\sandbox\\Ainulindale Exflation\\computations\")\n   38: SINGLET_FILE = DATA_DIR / \"s23a_kosmann_singlet.npz\"\n   39: UMKLAPP_FILE = DATA_DIR / \"s32a_umklapp_vertex.npz\"\n   40: OUTPUT_NPZ = DATA_DIR / \"s32b_wall_dos.npz\"\n   41: OUTPUT_PNG = DATA_DIR / \"s32b_wall_dos.png\"\n   42: \n   43: # Gate threshold\n   44: RHO_CRIT = 6.7\n   45: \n   46: # Domain wall configurations to test\n   47: WALL_CONFIGS = [\n   48:     (0.10, 0.25),  # Wide wall straddling gradient-balance"
+    },
+    {
+      "anchor_id": "prov_167",
+      "anchor_type": "data_provenance",
+      "name": "pmns_fine_grid",
+      "script_path": "session-32/s32c_pmns_fine_grid.py",
+      "session": "s32c",
+      "inputs": "",
+      "outputs": "session-32/s32c_pmns_fine_grid.npz, session-32/s32c_pmns_fine_grid.png",
+      "source_file": "computations/session-32/s32c_pmns_fine_grid.py",
+      "source_context_30_lines": "   24: from canonical_constants import *  # noqa: F401,F403 (canonical discipline)\n   25: \n   26: # =====================================================================\n   27: # SHA-256 INPUT PINS (log first, as required by S81+ discipline)\n   28: # =====================================================================\n   29: BASE = \"C:/sandbox/Ainulindale Exflation/computations\"                                                   # (local)\n   30: ARCHIVE = \"C:/sandbox/Ainulindale Exflation/computations/_shared\"                                                    # (local)\n   31: INPUT_NPZ = f\"{ARCHIVE}/s23a_kosmann_singlet.npz\"                                                             # (local)\n   32: SOURCE_PY = f\"{ARCHIVE}/s32c_pmns_fine_grid.py\"                                                               # (local) original source for SHA\n   33: \n   34: \n   35: def _sha256(path: str) -> str:\n   36:     with open(path, 'rb') as f:\n   37:         return hashlib.sha256(f.read()).hexdigest()\n   38: \n   39: \n   40: INPUT_SHA = _sha256(INPUT_NPZ)                                                                                # (local)"
+    },
+    {
+      "anchor_id": "prov_168",
+      "anchor_type": "data_provenance",
+      "name": "pmns_fine_grid_legacy",
+      "script_path": "session-32/s32c_pmns_fine_grid_legacy.py",
+      "session": "s32c",
+      "inputs": "",
+      "outputs": "session-32/s32c_pmns_fine_grid_legacy.npz, session-32/s32c_pmns_fine_grid_legacy.png",
+      "source_file": "computations/session-32/s32c_pmns_fine_grid_legacy.py",
+      "source_context_30_lines": "<name 'pmns_fine_grid_legacy' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: Session 32c: PMNS Fine-Grid Extraction (Method B) at tau in [0.15, 0.22]\n    3: ========================================================================\n    4: \n    5: Runs the Method B (degenerate perturbation theory) PMNS extraction at a\n    6: fine tau grid: 0.15, 0.16, 0.17, 0.18, 0.19, 0.20, 0.21, 0.22.\n    7: \n    8: The coarse grid (Session 29b) had tau = {0.10, 0.15, 0.20, 0.25, ...}.\n    9: The fine grid fills in the gap around the dump point tau ~ 0.190.\n   10: \n   11: Method: Cubic spline interpolation of the 5 smooth quantities\n   12:   {E1(tau), E2(tau), E3(tau), norm_12(tau), norm_23(tau)}\n   13: from the 8 available coarse-grid points (tau = 0.10 ... 0.50).\n   14: \n   15: Justification for interpolation:\n   16:   - L2_eff = [0.5, 0.5, 0.5, 0.5] EXACTLY at all tau (structural symmetry).\n   17:   - v_eff_L3 is uniform across the triplet at all tau.\n   18:   - All 5 quantities are smooth, monotonic functions of tau.\n   19:   - The interpolation interval [0.15, 0.22] is well inside the data range.\n   20:   - Cross-check: spline at tau=0.15 and tau=0.20 must reproduce coarse-grid results.\n   21: \n   22: Input: computations/session-23/s23a_kosmann_singlet.npz\n   23: Output: computations/session-32/s32c_pmns_fine_grid.npz\n   24:         computations/session-32/s32c_pmns_fine_grid.png\n   25: \n   26: PDG targets:\n   27:   sin^2(theta_13): [0.020, 0.024] (best fit 0.0218)\n   28:   theta_12: [31.3, 35.9] deg (best fit 33.4)\n   29:   theta_23: [40.1, 51.7] deg (best fit 42.2 or 49.2)\n   30:   R = Delta m^2_21 / Delta m^2_32: [0.028, 0.034] (best fit 0.030)"
+    },
+    {
+      "anchor_id": "prov_169",
+      "anchor_type": "data_provenance",
+      "name": "topo_t2_scan",
+      "script_path": "session-32/s32c_topo_t2_scan.py",
+      "session": "s32c",
+      "inputs": "",
+      "outputs": "session-32/s32c_topo_t2_scan.npz, session-32/s32c_topo_t2_scan.png",
+      "source_file": "computations/session-32/s32c_topo_t2_scan.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s32c_topo_t2_scan.py — TOPO-T2: B2-B3 Gap Along T2 Direction\n    4: =============================================================\n    5: \n    6: Session 32c: Scan the B2-B3 eigenvalue gap along the T2 direction\n    7: (maximum U(2) symmetry-breaking) at fixed tau = 0.18.\n    8: \n    9: T2 parametrization (from Session 29Bb, s30b_grid_bcs.py):\n   10:   log L1 = 2*tau - 11*eps/N_T2\n   11:   log L2 = -2*tau - 7*eps/N_T2"
+    },
+    {
+      "anchor_id": "prov_170",
+      "anchor_type": "data_provenance",
+      "name": "landau_sector",
+      "script_path": "session-33/s33a_landau_sector.py",
+      "session": "s33a",
+      "inputs": "computations/session-27/s27_multisector_bcs.npz, computations/session-28/s28c_sector_convergence.npz",
+      "outputs": "session-33/s33a_landau_sector.npz, session-33/s33a_landau_sector.png",
+      "source_file": "computations/session-33/s33a_landau_sector.py",
+      "source_context_30_lines": "  365: ax.set_title('Group Velocity: (0,0) B2 vs (1,0) Analog')\n  366: ax.legend(fontsize=8)\n  367: ax.grid(True, alpha=0.3)\n  368: ax.set_ylim(-1.5, 1.5)\n  369: \n  370: plt.suptitle(f'Session 33a: LANDAU-SECTOR Diagnostic -- SECT-33a: {verdict}',\n  371:              fontsize=14, fontweight='bold')\n  372: plt.tight_layout()\n  373: plt.savefig('computations/session-33/s33a_landau_sector.png', dpi=150, bbox_inches='tight')\n  374: print(\"\\nPlot saved: computations/session-33/s33a_landau_sector.png\")\n  375: \n  376: # ─────────────────────────────────────────────────────────────\n  377: # 7. Save results\n  378: # ─────────────────────────────────────────────────────────────\n  379: \n  380: save_data = {\n  381:     'tau_values': tau_vals,"
+    }
+  ]
+}

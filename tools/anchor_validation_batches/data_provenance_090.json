@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 90,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_891",
+      "anchor_type": "data_provenance",
+      "name": "pair_transfer_fabric",
+      "script_path": "session-61/s61_pair_transfer_fabric.py",
+      "session": "s61",
+      "inputs": "",
+      "outputs": "session-61/s61_pair_transfer_fabric.npz, session-61/s61_pair_transfer_fabric.png",
+      "source_file": "computations/session-61/s61_pair_transfer_fabric.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s61_pair_transfer_fabric.py — Pair-Transfer Scaling on Multi-Cell Fabrics\n    4: =========================================================================\n    5: \n    6: Gate: PAIR-FABRIC-61\n    7:   PASS: bosonic scaling S_+(N) = (N+1)(1 - N/(2*N_slots))/2 holds < 10% at 8 cells\n    8:   FAIL: S_+(N) suppressed below (N+1)/2 at 8 cells\n    9:   INFO: intermediate (> (N+1)/2 but > 10% deviation from bosonic)\n   10: \n   11: Physics:"
+    },
+    {
+      "anchor_id": "prov_892",
+      "anchor_type": "data_provenance",
+      "name": "pairing_chain",
+      "script_path": "session-61/s61_pairing_chain.py",
+      "session": "s61",
+      "inputs": "",
+      "outputs": "session-61/s61_pairing_chain.npz, session-61/s61_pairing_chain.png",
+      "source_file": "computations/session-61/s61_pairing_chain.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s61_pairing_chain.py — Nuclear Pairing Chain Attenuation (PAIRING-CHAIN-61)\n    4: ===========================================================================\n    5: \n    6: Gate: PAIRING-CHAIN-61 (INFO)\n    7: Pre-registered criterion: Monotonic decrease of Delta/E_F across inheritance\n    8:     levels = inheritance support. Non-monotonic = no pattern.\n    9: \n   10: Computes Delta/E_F at three inheritance levels:\n   11:     Level 0: Substrate (M4 x SU(3) BCS, 8-mode system)"
+    },
+    {
+      "anchor_id": "prov_893",
+      "anchor_type": "data_provenance",
+      "name": "pbcs_fabric",
+      "script_path": "session-61/s61_pbcs_fabric.py",
+      "session": "s61",
+      "inputs": "s61_proj_a2.npz, s52_hfb_full.npz, s60_rg_integrals.npz",
+      "outputs": "session-61/s61_pbcs_fabric.npz, session-61/s61_pbcs_fabric.png",
+      "source_file": "computations/session-61/s61_pbcs_fabric.py",
+      "source_context_30_lines": " 1091:         save_dict[prefix + 'fabric_2m'] = r['fabric_2m']\n 1092:     if 'ratio_2m' in r:\n 1093:         save_dict[prefix + 'ratio_2m'] = r['ratio_2m']\n 1094: \n 1095: # Scaling exponent\n 1096: if not np.isnan(alpha_fit):\n 1097:     save_dict['alpha_fit'] = alpha_fit\n 1098: \n 1099: np.savez('s61_pbcs_fabric.npz', **save_dict)\n 1100: print(f\"  Saved: s61_pbcs_fabric.npz\")\n 1101: \n 1102: \n 1103: # ==============================================================================\n 1104: #  SECTION 15: Summary Figure\n 1105: # ==============================================================================\n 1106: \n 1107: fig, axes = plt.subplots(2, 2, figsize=(14, 10))"
+    },
+    {
+      "anchor_id": "prov_894",
+      "anchor_type": "data_provenance",
+      "name": "penrose_ineq_bcs",
+      "script_path": "session-61/s61_penrose_ineq_bcs.py",
+      "session": "s61",
+      "inputs": "",
+      "outputs": "session-61/s61_penrose_ineq_bcs.npz",
+      "source_file": "computations/session-61/s61_penrose_ineq_bcs.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s61_penrose_ineq_bcs.py — Penrose Inequality Analog for BCS Sector\n    4: ===================================================================\n    5: Session 61, Wave 5, Task SP-4.\n    6: \n    7: Tests E_BCS >= C * sqrt(S_BCS) as a Penrose inequality analog.\n    8: \n    9: In black hole physics, the Penrose inequality states:\n   10:     M_ADM >= sqrt(A / (16*pi*G))\n   11: i.e. the total mass-energy bounds below by the horizon area."
+    },
+    {
+      "anchor_id": "prov_895",
+      "anchor_type": "data_provenance",
+      "name": "perturbation_bound",
+      "script_path": "session-61/s61_perturbation_bound.py",
+      "session": "s61",
+      "inputs": "",
+      "outputs": "session-61/s61_perturbation_bound.npz, session-61/s61_perturbation_bound.png",
+      "source_file": "computations/session-61/s61_perturbation_bound.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s61_perturbation_bound.py — K-Homology Stability of D_K(tau) via Bounded Perturbation\n    4: ======================================================================================\n    5: \n    6: Gate: K-HOMOLOGY-STABILITY-61\n    7:   PASS if C(tau) finite for all tau in [0, 0.19]\n    8:   FAIL if unbounded\n    9:   INFO if C > 100\n   10: \n   11: Physics:"
+    },
+    {
+      "anchor_id": "prov_896",
+      "anchor_type": "data_provenance",
+      "name": "proj_a2",
+      "script_path": "session-61/s61_proj_a2.py",
+      "session": "s61",
+      "inputs": "s52_hfb_full.npz",
+      "outputs": "session-61/s61_proj_a2.npz, session-61/s61_proj_a2.png",
+      "source_file": "computations/session-61/s61_proj_a2.py",
+      "source_context_30_lines": "  882:     save_dict[prefix + 'frac_proj_vs_ed'] = gate_results[N]['frac_proj_vs_ed']\n  883:     save_dict[prefix + 'n_proj'] = proj_results[N]['n_k_proj']\n  884:     save_dict[prefix + 'kappa_proj'] = proj_results[N]['kappa_proj']\n  885:     save_dict[prefix + 'dN2'] = proj_results[N]['dN2']\n  886:     save_dict[prefix + 'Delta_sq_ed'] = Delta_eff_sq[N]['ed']\n  887:     save_dict[prefix + 'Delta_sq_hfb'] = Delta_eff_sq[N]['hfb']\n  888:     save_dict[prefix + 'Delta_sq_pbcs'] = Delta_eff_sq[N]['pbcs']\n  889: \n  890: np.savez('s61_proj_a2.npz', **save_dict)\n  891: print(f\"  Saved: s61_proj_a2.npz\")\n  892: print(f\"  Keys: {sorted(save_dict.keys())}\")\n  893: \n  894: \n  895: # ==============================================================================\n  896: #  SECTION 14: Summary Figure\n  897: # ==============================================================================\n  898: "
+    },
+    {
+      "anchor_id": "prov_897",
+      "anchor_type": "data_provenance",
+      "name": "ps_regime",
+      "script_path": "session-61/s61_ps_regime.py",
+      "session": "s61",
+      "inputs": "computations/session-61/s61_alpha_physical.npz",
+      "outputs": "session-61/s61_ps_regime.npz",
+      "source_file": "computations/session-61/s61_ps_regime.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s61_ps_regime.py — PS-REGIME-61: Pati-Salam Spectral Action Regime at GUT Scale\n    4: ================================================================================\n    5: Gate: PS-REGIME-61\n    6:   INFO classification: which side of alpha_crit = 52.4 does alpha_PS land?\n    7: \n    8: Physics:\n    9:   PHONON-2 (s61_alpha_physical) showed alpha/alpha_crit = 0.038 at Lambda = M_KK.\n   10:   The Pati-Salam model SU(4) x SU(2)_L x SU(2)_R unifies at a HIGHER scale.\n   11: "
+    },
+    {
+      "anchor_id": "prov_898",
+      "anchor_type": "data_provenance",
+      "name": "pw_audit",
+      "script_path": "session-61/s61_pw_audit.py",
+      "session": "s61",
+      "inputs": "",
+      "outputs": "session-61/s61_pw_audit.md",
+      "source_file": "computations/session-61/s61_pw_audit.py",
+      "source_context_30_lines": "<name 'pw_audit' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: Session 61 BAP-5: PW Data Audit — (1,2) Irrep Contamination Scanner\n    3: ====================================================================\n    4: \n    5: Scans computations/_shared/ and computations/_shared/ for scripts that reference\n    6: s44_dos_tau.npz eigenvalue data and classifies each as SAFE or\n    7: CONTAMINATED based on whether it uses cross-sector PW sums that are\n    8: missing the (1,2) irrep contribution.\n    9: \n   10: Background:\n   11:     s44_dos_tau.py builds its sector list from s27_multisector_bcs.py,\n   12:     which uses 9 sectors with p+q <= 3:\n   13:         (0,0), (1,0), (0,1), (1,1), (2,0), (0,2), (3,0), (0,3), (2,1)\n   14: \n   15:     The (1,2) irrep (dim=15, dim^2=225, CPT-conjugate of (2,1)) is\n   16:     MISSING. s27 documents this explicitly and defines MULT_21_EFFECTIVE=450\n   17:     for its internal F_total computation. But s44_dos_tau.py does NOT\n   18:     propagate this doubling — it stores dim2=225 for (2,1) modes.\n   19: \n   20:     Impact: 54,000 physical modes missing out of correct total 155,984\n   21:     (fraction = 54000/101984 = 52.95% undercount).\n   22: \n   23: Contamination classification:\n   24:     CONTAMINATED: Script uses s44 dim2 weights in cross-sector sums\n   25:         (spectral action coefficients, total particle number, weighted\n   26:         averages, DOS histograms, etc.)\n   27:     SAFE: Script uses only raw eigenvalues, per-sector calculations,\n   28:         eigenvalue positions (gaps, maxima), or dim2 only as sector labels.\n   29:     UTILITY: Inspection/debug scripts with no physics output.\n   30: "
+    },
+    {
+      "anchor_id": "prov_899",
+      "anchor_type": "data_provenance",
+      "name": "pw_conformal_zeta",
+      "script_path": "session-61/s61_pw_conformal_zeta.py",
+      "session": "s61",
+      "inputs": "",
+      "outputs": "session-61/s61_pw_conformal_zeta.npz, session-61/s61_pw_conformal_zeta.png",
+      "source_file": "computations/session-61/s61_pw_conformal_zeta.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s61_pw_conformal_zeta.py — Conformal Interpretation of PW Spectral Sum Divergence\n    4: ==================================================================================\n    5: \n    6: Gate: PW-CONFORMAL-ZETA-61\n    7:   PASS if zeta-regularized sum agrees with geometric a_2 to <10%.\n    8:   FAIL if >100% or fails to converge.\n    9:   INFO if 10-100% or truncation-limited.\n   10: \n   11: Method:"
+    },
+    {
+      "anchor_id": "prov_900",
+      "anchor_type": "data_provenance",
+      "name": "regularized_spectral_sum",
+      "script_path": "session-61/s61_regularized_spectral_sum.py",
+      "session": "s61",
+      "inputs": "",
+      "outputs": "session-61/s61_regularized_spectral_sum.npz, session-61/s61_regularized_spectral_sum.png",
+      "source_file": "computations/session-61/s61_regularized_spectral_sum.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s61_regularized_spectral_sum.py — REG-SPECTRAL-61\n    4: Heat-Kernel Regularized Spectral Sum: The Debye Cutoff Approach\n    5: \n    6: The raw PW spectral sum Tr(|D_K|) diverges as L^{6.2} (S60). This script\n    7: replaces it with the heat-kernel-regulated trace:\n    8: \n    9:     K(t, L) = sum_{p+q<=L} dim(p,q)^2 * sum_i exp(-lambda_i^2 * t)\n   10: \n   11: and extracts Seeley-DeWitt coefficients by fitting the KNOWN asymptotic form."
+    }
+  ]
+}

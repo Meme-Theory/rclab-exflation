@@ -1,0 +1,125 @@
+==============================================================================
+S100b-NONABELIAN-METRIC-FRACTION  --  non-Abelian quantum-metric trace fraction
+  on the degenerate lowest D_K multiplet over the (tau,mu) U(2)-inv TT surface
+  [VII.AF.1.OP-PROJ structural confirmation; Chen-Karki-Hosur regime]
+==============================================================================
+  UNTRUSTED-UPSTREAM: s84 cache lineage flagged (LC t=1/2 vs Kostant t=1/3
+  canonicity OPEN, numerics control-verified); results conditional on the
+  LC-operator lineage being canonical (pre-registered orchestrator triage).
+  INPUT-PIN  canonical_constants: computations\_shared\canonical_constants.py  sha256=a13dddb1365b35f2...
+  INPUT-PIN  dirac_spectrum: computations\_shared\dirac_spectrum.py  sha256=dadba674e950fad9...  [PLAN-PIN MATCH]
+  INPUT-PIN  s96_scaffold: computations\session-96\s96_geom_offjensen_chern.py  sha256=3da9e6336567957d...  [PLAN-PIN MATCH]
+  INPUT-PIN  s84_spectrum_cache: computations\session-84\s84_spectrum_cache_L12_tau019.npz  sha256=9e6d9cf7fd6a6949...  [PLAN-PIN MATCH]
+  audit_sha256   = 4a03497c43a97335144bad80f60e16d00097829ca4310f25315dfe4c9c926818
+  content_sha256 = 03c7532340767a9932e6cbb487ddb65f7f56a596e466a6d7f1b1db505340192a
+  GEOMETRY: v_J=(2,-2,1), v_mu=(11,7,-8)=n x v_J; vol-preserving, perp-Jensen OK
+  grid: tau in [0.1,0.3] x mu in [-0.1,0.1] (51x51 nodes); Delta=0.0040; fold tau=0.19 on mu=0
+
+  [STAGE 1] eigh sweep over 51x51 nodes (16x16 singlet; cpu-cap-OMP8;
+            below the 100x100 GPU threshold per math-scripts.md)
+    signed layout 8-/8+ everywhere: True;  max|lam_7 + lam_8| = 2.442e-15 (PH symmetry)
+    anchor (tau_fold,0): |lam|_min=0.819741112 deg=2 (plan-expected 2)
+    B2 |lambda|-group deg=8 (= 4+4 signed; plan-expected 4 = signed quadruplet,
+       DEVIATION DECLARED: B2 arm = +lambda signed 4-dim eigenspace, cols 9..12)
+    B1/B2 gap12: min=0.000000 at node (np.int64(0), np.int64(50)); breach fraction (gap<0.005) = 1.38%
+
+  [STAGE 2] PRIMARY pair {u_-, u_+} (signed cols 7,8): projector QGT
+    I_NA  = 1.500000000e+00   (int Sum_a Tr_band R_aa)
+    I_Ab  = 1.500000000e+00   (int Sum_a Sum_n g^(n)_aa, rank-1 projector form)
+    I_Ab - I_NA = -4.440892e-15   (within-multiplet WZ content)
+    f_nonAb = 2.960595e-15   vs floor 1e-10
+    Im_int  = 6.124613e-18   vs bound 1e-12; max|Im Tr Q_tm| = 1.531e-12
+
+  [e1] corner-defect anatomy: 3 defect node(s) (integrand > 1e+03)
+       node (0,49) (tau=0.100, mu=+0.096): na=3.125000e+04  weight*value=0.250000
+       node (0,50) (tau=0.100, mu=+0.100): na=2.500000e+05  weight*value=1.000000
+       node (1,50) (tau=0.104, mu=+0.100): na=3.125000e+04  weight*value=0.250000
+       defect contribution to I_NA = 1.500000000 of 1.500000000 (100.0000%)
+       EXCLUDED companions: I_NA_excl = 2.602481e-24; I_Ab_excl = 2.602777e-24; num_excl = 2.955e-28
+       (interior integrand ceiling = 1.638e-21 -- the bundle is
+        at the projector-FD round-off floor away from the crossing => FROZEN candidate)
+
+  [CC-2] plan-literal state-FD arm (pinned gauge: signed order + phase pin)
+    I_NA(state-FD) = 1.500000000e+00  (projector: 1.500000000e+00)
+    I_Ab(state-FD) = 1.500000000e+00  (rank-1 projector: 1.500000000e+00)
+    Im_int(state)  = -2.181666e-14
+    nodes with rel dev(state vs proj, NA trace) > 1e-2: 94.35%
+    (pi-jumps of the largest-|component| phase pin pollute the state arm
+     at isolated nodes; PASS quantities use the gauge-free projector forms)
+
+  [STAGE 3] det-U(2) Wilczek-Zee FHS Chern (pair) + naive negative control
+    C_FHS(pair) = -5.000000e-01; round=0; |C-round|=5.00e-01; max|F|=3.142e+00
+    plaquettes with |F| > 1e-6: 1/2500 (any nonzero F localizes at the B1/B2 corner-crossing tracking defect;
+     CC-3: S96 baseline 9.777563e-15 used |lambda|-argsort blocks whose
+     near-singular corner overlaps fell below the det-link guard -> identity links;
+     the punctured-surface topology statement is the F-field away from the defect)
+    d3 NEGATIVE CONTROL: naive single-band U(1) C = -7.342112 (expected ~0.78-class gauge noise per S96; non-quantized => control fires)
+
+  [STAGE 4] d1: gauge-orbit spread, N_gauge=8 global Haar U(2), seed=100615
+    sample 0: I_Ab(W) = 8.986982e+02; max|P_M(rot)-P_M| = 1.11e-16
+    sample 1: I_Ab(W) = 6.482918e+02; max|P_M(rot)-P_M| = 1.11e-16
+    sample 2: I_Ab(W) = 9.222659e+02; max|P_M(rot)-P_M| = 1.67e-16
+    sample 3: I_Ab(W) = 7.070435e+02; max|P_M(rot)-P_M| = 9.31e-17
+    sample 4: I_Ab(W) = 5.453604e+02; max|P_M(rot)-P_M| = 8.57e-17
+    sample 5: I_Ab(W) = 1.006943e+03; max|P_M(rot)-P_M| = 1.11e-16
+    sample 6: I_Ab(W) = 2.930665e+02; max|P_M(rot)-P_M| = 7.08e-17
+    sample 7: I_Ab(W) = 1.418639e+02; max|P_M(rot)-P_M| = 9.77e-17
+    orbit spread of I_Ab = 1.005443e+03 (6.703e+02 of I_NA); I_NA exactly frame-invariant (max P_M dev 1.67e-16)
+
+  [STAGE 5] d2: B2 flat multiplet (signed +lambda quadruplet, deg=4)
+    I_NA(B2)  = 7.759178e-01;  I_Ab(B2, pinned frame) = 5.773892e+03
+    f_nonAb(B2) = 7.440371e+03  (> 1e-10 => CKH content on the flat multiplet)
+    Im_int(B2) = -6.701e-18;  C_FHS(B2) = -1.699447e-02
+    holonomy witness 1-|Tr W|/deg: pair max=7.824e-04 mean=3.130e-07; B2 max=1.068e-03 mean=4.272e-07
+    (witness > 0 = genuinely non-Abelian transport; = 0 = Abelian-reducible)
+    [e1-B2] B2 defect nodes: 3; I_NA(B2) excluded-companion = 2.590765e-02 (defect carries 96.6610%)
+    [e3] B2 scalar-deviation at node (25,25): tau-tau=1.731e-13, mu-mu=5.957e-13
+    [e3] B2 scalar-deviation at node (40,10): tau-tau=1.022e-13, mu-mu=1.282e-12
+    [e3] B2 scalar-deviation at node (10,40): tau-tau=2.496e-13, mu-mu=7.368e-13
+    [e3] B2 scalar-deviation at node (22,25): tau-tau=1.699e-13, mu-mu=6.739e-13
+    [e3] B2 scalar-deviation at node (45,45): tau-tau=1.301e-13, mu-mu=7.398e-13
+    flatness: std(lam_B1)=7.3888e-03 vs std(lam_B2)=2.2981e-03 (B1/B2 dispersion ratio = 3.2x; B2 is the flat band)
+
+  [STAGE 5b] e2: Schur-rigidity -- max pairwise ||P_X(n_i)-P_X(n_j)||_F
+    pair(B1+-): max ||Delta P||_F = 7.942e-14  -> FROZEN (constant eigenbundle)
+    B3-: max ||Delta P||_F = 1.435e-14  -> FROZEN (constant eigenbundle)
+    B2-: max ||Delta P||_F = 2.279e-01  -> moving
+    B2+: max ||Delta P||_F = 2.279e-01  -> moving
+    B3+: max ||Delta P||_F = 1.567e-14  -> FROZEN (constant eigenbundle)
+    rigidity_max over all band groups = 2.279e-01; ALL FROZEN = False
+    (a FROZEN band group = multiplicity/direction-locked isotypic slot: the
+     U(2)-invariant TT deformation cannot rotate it => its QGT is zero on THIS
+     base and its CKH non-additivity is 0/0-vacuous; a MOVING group carries
+     genuine quantum geometry over the surface)
+
+  [STAGE 6] d4: J/PH-pair protection mechanism
+    chirality gamma9: |gamma9^2 - 1| ~ 0 (normalized); max|{H,gamma9}| = 0.000e+00
+    |<u_+|gamma9|u_->| = 1.000000000  (1 => pair chirality-locked)
+    first-order |A^WZ_(+-),a| over surface: median = 1.297e-17; 99.96% of nodes < 1e-12; max = 1.551e-01
+    (max localizes at the corner tracking defect where the pair identity swaps;
+     AWAY from the defect the cross-QGT channel of the J/PH pair is structurally
+     PROTECTED at machine zero: gamma9 maps the element to minus its conjugate
+     [imaginary-only], and the substrate J reality kills the imaginary part)
+
+  [CC-1] (0,0)-block |lambda| at exact (tau_fold, 0) vs s84 L12 cache
+    max|builder - cache| over 16 |lambda| values = 9.992e-16
+    tied nearest mesh nodes: |lam|_min(0.188,0)=0.819881773; |lam|_min(0.192,0)=0.819607284  (cache at tau=0.19: 0.819741112)
+
+==============================================================================
+  VERDICT
+==============================================================================
+  f_nonAb       = 2.960595e-15  (floor 1e-10)  -> clause False
+  Im_int        = 6.124613e-18  (bound 1e-12)  -> clause True
+  C_FHS         = -5.000000e-01  (|C| < 0.001 companion: False)
+  B2 arm        : f_nonAb(B2) = 7.440371e+03; holonomy witness max = 1.068e-03
+  structural    : BAND-SELECTIVE-RIGIDITY-PAIR-B3-FROZEN-B2-CARRIES-GEOMETRY (rigidity_max = 2.279e-01)
+  3-tuple       : sign=PASS magnitude=FAIL regime=VALID
+  >>> S100b-NONABELIAN-METRIC-FRACTION: FAIL  [FAIL-a-JPH-protected-B2-carries-CKH]
+
+  Saved data: C:\sandbox\Ainulindale Exflation\computations\session-100b\s100b_nonabelian_metric_fraction.npz
+  Saved plot: C:\sandbox\Ainulindale Exflation\computations\session-100b\s100b_nonabelian_metric_fraction.png
+<<<EMIT_VERDICT_PAYLOAD>>>
+{"audit_sha256":"4a03497c43a97335144bad80f60e16d00097829ca4310f25315dfe4c9c926818","companion_note":"[VERIFY] non-Abelian QGT trace vs per-band Abelian sum on the degenerate lowest D_K multiplet, (tau,mu) U(2)-inv TT surface; VII.AF.1.OP-PROJ structural confirmation arm (NOT VII.W); Chen-Karki-Hosur regime check (metric-not-curvature)","content_sha256":"03c7532340767a9932e6cbb487ddb65f7f56a596e466a6d7f1b1db505340192a","convention":"RATIO","extra_rows":["# UNTRUSTED-UPSTREAM caveat: consumes s84 cache lineage flagged by S100b-TAU0-LAITEH-REDUCTION ESCALATION (STRUCTURED LC t=1/2; eigensolver control-verified; canonicity adjudication pending) -- dispatched per pre-registered orchestrator triage","# regulator_pin: none -- the quantum-geometric tensor is a property of the D_K eigenbundle over the modulus base, not a Seeley-DeWitt a_n (plan W6-2 pin; mirrors s96_geom_offjensen_chern.py:261); CLASS=FULL (dirac_spectrum full builder; no SCHEMATIC helper)","# gauge_pin: signed-eigh-ascending member order + largest-|component| real-positive phase (pi-jump defects recorded); PASS quantities evaluated via the exact gauge-free projector identity Tr_band Q_ab = Tr[(d_a P)(1-P)(d_b P)] (header LEMMA); plan-literal state-FD arm reported as CC-2","# anatomy: pinned-mesh I_NA/I_Ab are 100.00%-carried by 3 FD-defect node(s) at the B1/B2 symmetry-allowed corner crossing (excluded companions I_NA_excl=2.602e-24); band-selective rigidity: pair ||DeltaP||=7.9e-14 + B3 FROZEN (Schur/direction-locked isotypic slots, QGT=0 on this base) while B2 quadruplets MOVE (||DeltaP||=0.228; genuine defect-excluded I_NA(B2)=2.591e-02); C_FHS=-0.500 is the single corner pi-plaquette (2499/2500 plaquettes |F|<1e-6), tracking artifact NOT topology"],"gate_id":"S100b-NONABELIAN-METRIC-FRACTION","l_max":"10","magnitude_verdict":"FAIL","regime_verdict":"VALID","schema_version":"S84+","scheme":"WILCZEK-ZEE-FHS-DETU2","session":"100b","sign_verdict":"PASS","value":"f_nonAb=2.960595e-15_I_NA=1.500000e+00_I_NA_excl=2.602e-24_Im_int=6.125e-18_C_FHS=-5.000e-01_branch=FAIL-a-JPH-protected-B2-carries-CKH_structural=BAND-SELECTIVE-RIGIDITY-PAIR-B3-FROZEN-B2-CARRIES-GEOMETRY_rigidity_max=2.279e-01_B2_f_nonAb=7.440371e+03_negctrl_C=-7.3421_Aprot_median=1.297e-17_deg_detected=2_breach_frac=0.0138_ndefect=3","verdict":"FAIL"}
+<<<END_EMIT_VERDICT_PAYLOAD>>>
+
+  4-tuple: (value=f_nonAb=2.960595e-15_I_NA=1.500000e+00_I_NA_excl=2.602e-24_I..., scheme=WILCZEK-ZEE-FHS-DETU2, convention=RATIO, L_max=10)

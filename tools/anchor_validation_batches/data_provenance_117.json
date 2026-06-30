@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 117,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1161",
+      "anchor_type": "data_provenance",
+      "name": "r_cmb_transfer",
+      "script_path": "session-68/s68_r_cmb_transfer.py",
+      "session": "s68",
+      "inputs": "s67_acoustic_tensor.npz, s67_transit_ps.npz, s68_acoustic_transfer.npz, s64_epsilon_profile.npz",
+      "outputs": "session-68/s68_r_cmb_transfer.npz, session-68/s68_r_cmb_transfer.png",
+      "source_file": "computations/session-68/s68_r_cmb_transfer.py",
+      "source_context_30_lines": "   55: \n   56: INPUTS:\n   57:   - computations/session-67/s67_acoustic_tensor.npz\n   58:   - computations/session-68/s68_acoustic_transfer.npz\n   59:   - computations/session-67/s67_transit_ps.npz\n   60:   - computations/session-64/s64_epsilon_profile.npz\n   61: \n   62: OUTPUTS:\n   63:   - computations/session-68/s68_r_cmb_transfer.npz\n   64:   - computations/session-68/s68_r_cmb_transfer.png\n   65: \n   66: Author: quantum-acoustics-theorist (Session 68)\n   67: Date: 2026-04-04\n   68: \"\"\"\n   69: \n   70: import sys\n   71: import os"
+    },
+    {
+      "anchor_id": "prov_1162",
+      "anchor_type": "data_provenance",
+      "name": "rg_a2_mode_prop",
+      "script_path": "session-68/s68_rg_a2_mode_prop.py",
+      "session": "s68",
+      "inputs": "",
+      "outputs": "session-68/s68_rg_a2_mode_prop.npz, session-68/s68_rg_a2_mode_prop.png",
+      "source_file": "computations/session-68/s68_rg_a2_mode_prop.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s68_rg_a2_mode_prop.py -- RG-A2-MODE-PROP-68: RG Correction Propagation\n    4: =========================================================================\n    5: \n    6: Gate: RG-A2-MODE-PROP-68\n    7:   PASS: RG correction to A_s > 0.1 OOM (meaningful contribution)\n    8:   FAIL: RG correction to A_s < 0.01 OOM (negligible)\n    9:   INFO: correction between 0.01 and 0.1 OOM, or sign-dependent\n   10: \n   11: Physics:"
+    },
+    {
+      "anchor_id": "prov_1163",
+      "anchor_type": "data_provenance",
+      "name": "second_sound_obs",
+      "script_path": "session-68/s68_second_sound_obs.py",
+      "session": "s68",
+      "inputs": "",
+      "outputs": "session-68/s68_second_sound_obs.npz, session-68/s68_second_sound_obs.png",
+      "source_file": "computations/session-68/s68_second_sound_obs.py",
+      "source_context_30_lines": "  747: print(f\"  │  Structural origin: ordered veil (99% superfluid) decouples      │\")\n  748: print(f\"  │  entropy sector from photon temperature.                         │\")\n  749: print(f\"  └──────��───────────────────────────���────────────────────────────────┘\")\n  750: \n  751: # ============================================================================\n  752: #  SECTION 12: Save and Plot\n  753: # ============================================================================\n  754: \n  755: save_path = os.path.join(SCRIPT_DIR, 's68_second_sound_obs.npz')\n  756: \n  757: np.savez(save_path,\n  758:     # Gate metadata\n  759:     gate_name='SECOND-SOUND-OBS-68',\n  760:     gate_verdict='INFO',\n  761:     gate_detail=gate_detail,\n  762: \n  763:     # Upstream (from S67)"
+    },
+    {
+      "anchor_id": "prov_1164",
+      "anchor_type": "data_provenance",
+      "name": "as_normalization",
+      "script_path": "session-69/s69_as_normalization.py",
+      "session": "s69",
+      "inputs": "",
+      "outputs": "session-69/s69_as_normalization.npz",
+      "source_file": "computations/session-69/s69_as_normalization.py",
+      "source_context_30_lines": "   18:   Mack: INFO (diagnostic)\n   19: \n   20: Inputs:\n   21:   s67_transit_ps.npz        — Bogoliubov power spectrum P_zeta(k)\n   22:   s67_multifield_delta_n.npz — delta-N conversion coefficients\n   23:   s68_acoustic_transfer.npz — acoustic transfer chain results\n   24: \n   25: Output:\n   26:   s69_as_normalization.npz  — all diagnostic quantities\n   27: \"\"\"\n   28: \n   29: import sys\n   30: import os\n   31: sys.path.insert(0, os.path.join(os.path.dirname(__file__)))\n   32: \n   33: import numpy as np\n   34: "
+    },
+    {
+      "anchor_id": "prov_1165",
+      "anchor_type": "data_provenance",
+      "name": "baw_analog",
+      "script_path": "session-69/s69_baw_analog.py",
+      "session": "s69",
+      "inputs": "",
+      "outputs": "session-69/s69_baw_analog.npz",
+      "source_file": "computations/session-69/s69_baw_analog.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s69_baw_analog.py -- BAW-SQUEEZE-ANALOG-69 (W5-B)\n    4: =====================================================\n    5: Design study: Bulk Acoustic Wave resonator experiment to measure\n    6: the non-Bunch-Davies squeeze parameter r_eff via phonon counting.\n    7: \n    8: Physical scenario:\n    9:   The phonon-exflation framework predicts a BCS condensate on the\n   10:   M4 x SU(3) substrate that produces a squeezed vacuum initial state.\n   11:   The squeeze parameter r_eff = 0.555 (canonical, S69 reconciliation)"
+    },
+    {
+      "anchor_id": "prov_1166",
+      "anchor_type": "data_provenance",
+      "name": "bcs_hessian",
+      "script_path": "session-69/s69_bcs_hessian.py",
+      "session": "s69",
+      "inputs": "",
+      "outputs": "session-69/s69_bcs_hessian.npz, session-69/s69_bcs_hessian.png",
+      "source_file": "computations/session-69/s69_bcs_hessian.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s69_bcs_hessian.py — BCS-DRESSED-HESSIAN-69: Fold Stability Under BCS\n    4: =======================================================================\n    5: Gate: BCS-HESS-69\n    6:   PASS: All 36 eigenvalues positive at Lambda = 2.048 M_KK\n    7:   FAIL: Any eigenvalue negative (BCS destabilizes fold)\n    8:   INFO: All positive but margin < 5x\n    9: \n   10: Motivation:\n   11:   The S62/S64/S66 one-loop Hessian found all 36 eigenvalues positive at the"
+    },
+    {
+      "anchor_id": "prov_1167",
+      "anchor_type": "data_provenance",
+      "name": "bcs_surface_gravity",
+      "script_path": "session-69/s69_bcs_surface_gravity.py",
+      "session": "s69",
+      "inputs": "",
+      "outputs": "session-69/s69_bcs_surface_gravity.npz, session-69/s69_bcs_surface_gravity.png",
+      "source_file": "computations/session-69/s69_bcs_surface_gravity.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s69_bcs_surface_gravity.py — BCS-SURFACE-GRAVITY-69\n    4: Surface Gravity of the BCS Spectral Gap\n    5: ================================================================\n    6: \n    7: Compute the analog surface gravity kappa_BCS of the BCS spectral gap\n    8: and the associated temperature T_BCS = kappa_BCS / (2*pi).\n    9: \n   10: Physical Picture\n   11: ----------------"
+    },
+    {
+      "anchor_id": "prov_1168",
+      "anchor_type": "data_provenance",
+      "name": "bec_analog",
+      "script_path": "session-69/s69_bec_analog.py",
+      "session": "s69",
+      "inputs": "",
+      "outputs": "session-69/s69_bec_analog.npz, session-69/s69_bec_analog.png",
+      "source_file": "computations/session-69/s69_bec_analog.py",
+      "source_context_30_lines": "  864: ax.set_title(r'(d) Squeezed vs Thermal: $g^{(2)}$ Discriminant', fontsize=12)\n  865: ax.legend(fontsize=10, loc='upper right')\n  866: ax.set_ylim(1.9, 3.5)\n  867: \n  868: plt.suptitle('BEC-IMPEDANCE-ANALOG-69: BEC Feshbach Quench Analog of Substrate Transit',\n  869:              fontsize=13, fontweight='bold', y=0.995)\n  870: plt.tight_layout(rect=[0, 0, 1, 0.97])\n  871: \n  872: plot_path = os.path.join(OUTDIR, 's69_bec_analog.png')\n  873: plt.savefig(plot_path, dpi=150, bbox_inches='tight')\n  874: print(f\"Plot saved: {plot_path}\")\n  875: plt.close()\n  876: \n  877: # ============================================================================\n  878: #  SECTION 11: Gate Verdict and Save\n  879: # ============================================================================\n  880: "
+    },
+    {
+      "anchor_id": "prov_1169",
+      "anchor_type": "data_provenance",
+      "name": "bell_gge",
+      "script_path": "session-69/s69_bell_gge.py",
+      "session": "s69",
+      "inputs": "s52_bogoliubov_amp.npz, s58_squeezing_covariance.npz, s67_multifield_delta_n.npz",
+      "outputs": "session-69/s69_bell_gge.npz, session-69/s69_bell_gge.png",
+      "source_file": "computations/session-69/s69_bell_gge.py",
+      "source_context_30_lines": "   30: \n   31: Inputs:\n   32:     s52_bogoliubov_amp.npz  (BCS u_k, v_k for 8 modes)\n   33:     s58_squeezing_covariance.npz  (31 Leggett squeezing parameters)\n   34:     s67_multifield_delta_n.npz  (branch energy fractions, group structure)\n   35:     canonical_constants.py\n   36: \n   37: Output:\n   38:     s69_bell_gge.npz\n   39:     s69_bell_gge.png\n   40: \n   41: Author: Einstein-Theorist (Session 69, W5-E)\n   42: \"\"\"\n   43: \n   44: import sys\n   45: import os\n   46: "
+    },
+    {
+      "anchor_id": "prov_1170",
+      "anchor_type": "data_provenance",
+      "name": "c2_degeneracy_lift",
+      "script_path": "session-69/s69_c2_degeneracy_lift.py",
+      "session": "s69",
+      "inputs": "s69_off_jensen_sa.npz",
+      "outputs": "session-69/s69_c2_degeneracy_lift.npz",
+      "source_file": "computations/session-69/s69_c2_degeneracy_lift.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s69_c2_degeneracy_lift.py — C2 Degeneracy Lifting A_s Channel\n    4: ================================================================\n    5: \n    6: Gate: C2-LIFT-69 (INFO)\n    7: Task: Isolate the A_s impact from degeneracy lifting when the Jensen\n    8:       metric is deformed off-Jensen (eps=0 -> eps=0.05).\n    9: \n   10: Physics:\n   11:   D_K on the Jensen SU(3) has representation-theoretic degeneracies:"
+    }
+  ]
+}

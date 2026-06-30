@@ -1,0 +1,392 @@
+#!/usr/bin/env python3
+"""
+S86 W3 mechanical PRE-REG-INC closure
+=====================================
+
+All 6 W3 gates have ≥1 unsatisfied upstream prerequisite per plan §0.5
+(session-86-plan-w3.md).  Per plan §X downstream decision-point table,
+the documented outcome for prereq-block is "PRE-REG-INC, deferred to S87".
+
+Per `.claude/rules/gate-verdicts.md` and S86 precedent (lines 19 + 24 of
+s86_gate_verdicts.txt), upstream-blocked gates emit FAIL verdicts with
+descriptive `value='upstream_<reason>'` strings.  This script follows
+the same convention with `value='PRE-REG-INC_blocked_by_<prereq_states>'`.
+
+Dual-SHA per `.claude/templates/script-template.py` §4:
+    audit_sha256   = sha256(script_bytes || canonical_bytes || pinmap_json)
+    content_sha256 = sha256(script_bytes)
+
+This is a metadata-closure script: NO physics is computed.  The 6 emitted
+verdict lines record that each gate was structurally untestable at S86
+because at least one upstream prerequisite has status ≠ PASS.
+"""
+
+from __future__ import annotations
+
+# canonical_constants import retained for audit compliance (no constants used;
+# this script emits metadata closures only — no framework computation)
+from canonical_constants import *  # noqa: F401,F403
+
+import hashlib
+import json
+import sys
+from pathlib import Path
+# === Phase 2b X2 transform bootstrap (auto-inserted by tools/_x2_transform_copies.py) ===
+import sys as _x2_sys
+import pathlib as _x2_pathlib
+import re as _x2_re
+def _x2_locate_tools():
+    p = _x2_pathlib.Path(__file__).resolve()
+    for _ in range(8):
+        if (p / "tools" / "computation_root.py").is_file():
+            return p / "tools"
+        p = p.parent
+    raise RuntimeError(
+        "Phase 2b bootstrap: tools/computation_root.py not found in any "
+        "ancestor of " + str(__file__))
+_x2_sys.path.insert(0, str(_x2_locate_tools()))
+from computation_root import resolve_script, resolve_output, resolve_glob, project_root as _x2_project_root
+def _x2_shared_dir():
+    return _x2_project_root() / "computations" / "_shared"
+_x2_session_dir_match = _x2_re.match(r"^session-(\d+)$",
+    _x2_pathlib.Path(__file__).resolve().parent.name)
+_x2_self_session = int(_x2_session_dir_match.group(1)) if _x2_session_dir_match else None
+# === End X2 bootstrap ===
+
+
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+# X2-removed: alias 'SCRIPT_DIR' = ... 'computations' (replaced by tools.computation_root.resolve_*)
+VERDICT_TXT = resolve_output(86, 's86_gate_verdicts.txt')
+CANONICAL_PY = resolve_script(None, 'canonical_constants.py')
+WP_PATH = PROJECT_ROOT / "sessions" / "session-86" / "session-86-w3-workingpaper.md"
+
+# Carry-forward symbol → canonical S86 gate ID for prereq lookup
+PREREQ_GATE_IDS = {
+    "C9":  "S86-MELLIN-HEAT-KERNEL-INFRA",
+    "C10": "S86-MELLIN-CONE-RESIDUE-INFRASTRUCTURE",
+    "C12": "S86-CLUSTER-SPAN-EXTRACTOR-BUILD",
+    "C14": "S86-LAMBDA-TOP-DIRECT-EXTRACTION",
+    "C17": "S86-K_CRIT_BDG-CANONICAL-CONSTANTS-REGISTRATION",
+    "C19": "S86-K-FLOOR-K-WALL-LAND",
+}
+
+# W3 gate metadata + required-prereq map (per plan §0.5 + §0.10)
+W3_GATES = [
+    {
+        "gate_id":   "S86-ZETA-REGULATOR-STABILIZATION-THEOREM-LANDING",
+        "wp_id":     "W3-1",
+        "carry_id":  "T9",
+        "scheme":    "zeta",
+        "convention": "s4_leading_residue_d8",
+        "L_max":     10,
+        "required":  ["C9", "C10"],
+        "agent":     "lizzi-spectral-functional-theorist",
+    },
+    {
+        "gate_id":   "S86-W0-7-MB-RE-EMIT",
+        "wp_id":     "W3-2",
+        "carry_id":  "W0-7-MB",
+        "scheme":    "Jensen-Zubarev",
+        "convention": "Mellin-Barnes-continued",
+        "L_max":     10,
+        "required":  ["C10"],
+        "agent":     "lizzi-spectral-functional-theorist",
+    },
+    {
+        "gate_id":   "S86-W0-11-MB-RE-EMIT",
+        "wp_id":     "W3-3",
+        "carry_id":  "W0-11-MB",
+        "scheme":    "heat-kernel",
+        "convention": "Mellin-Barnes-with-SD-subtraction",
+        "L_max":     10,
+        "required":  ["C9"],
+        "agent":     "lizzi-spectral-functional-theorist",
+    },
+    {
+        "gate_id":   "S86-W0-20-MB-RE-EMIT",
+        "wp_id":     "W3-4",
+        "carry_id":  "W0-20-MB",
+        "scheme":    "zeta",
+        "convention": "Mellin-cone-s3-off-pole-d8",
+        "L_max":     10,
+        "required":  ["C10"],
+        "agent":     "lizzi-spectral-functional-theorist",
+    },
+    {
+        "gate_id":   "S86-CLUSTER-SPAN-K-CORRIDOR-EXTENSION",
+        "wp_id":     "W3-5",
+        "carry_id":  "C13",
+        "scheme":    "NCG-CCM-cluster-span",
+        "convention": "K-corridor-plus-Riemann-cover-sheet-by-sheet",
+        "L_max":     10,
+        "required":  ["C12", "C17", "C19"],
+        "agent":     "connes-ncg-theorist",
+    },
+    {
+        "gate_id":   "S86-W3-11-LAMBDA-CONVENTION-RESOLUTION",
+        "wp_id":     "W3-6",
+        "carry_id":  "C43",
+        "scheme":    "Lambda_actual_empirical",
+        "convention": "lambda_max_DK_cache",
+        "L_max":     10,
+        "required":  ["C14"],
+        "agent":     "lizzi-spectral-functional-theorist",
+    },
+]
+
+
+def parse_prereq_verdicts() -> dict[str, tuple[str, str]]:
+    """Read s86_gate_verdicts.txt; return {symbol: (status, value_chunk)} for prereqs.
+
+    For each prereq, the LAST verdict line in the file (most-recent canonical
+    state) is taken as the operative one.
+    """
+    states: dict[str, tuple[str, str]] = {}                     # (local)
+    text = VERDICT_TXT.read_text(encoding="utf-8")              # (local)
+    for sym, gate_id in PREREQ_GATE_IDS.items():
+        prefix = gate_id + ":"                                  # (local)
+        lines = [ln for ln in text.splitlines() if ln.startswith(prefix)]  # (local)
+        if not lines:
+            states[sym] = ("MISSING", "no_verdict_line")
+            continue
+        last = lines[-1]                                        # (local)
+        body = last.split(":", 1)[1].strip()                    # (local)
+        status = body.split()[0].rstrip(",")                    # (local)
+        if "value=" in last:
+            v_start = last.index("value=") + len("value=")      # (local)
+            v_chunk = last[v_start:].split()[0]                 # (local)
+        else:
+            v_chunk = "unknown"                                 # (local)
+        states[sym] = (status, v_chunk)
+    return states
+
+
+def compute_dual_sha(pinmap: dict[str, str]) -> tuple[str, str]:
+    """Per .claude/templates/script-template.py §4 dual-SHA schema."""
+    script_bytes = Path(__file__).read_bytes()                  # (local)
+    canonical_bytes = CANONICAL_PY.read_bytes()                 # (local)
+    pinmap_json = json.dumps(
+        dict(sorted(pinmap.items())),
+        separators=(",", ":"),
+        sort_keys=True,
+    ).encode("utf-8")                                           # (local)
+    h_audit = hashlib.sha256()                                  # (local)
+    h_audit.update(script_bytes)
+    h_audit.update(canonical_bytes)
+    h_audit.update(pinmap_json)
+    audit = h_audit.hexdigest()                                 # (local)
+    h_content = hashlib.sha256()                                # (local)
+    h_content.update(script_bytes)
+    content = h_content.hexdigest()                             # (local)
+    return audit, content
+
+
+def build_value_string(gate: dict, states: dict[str, tuple[str, str]]) -> tuple[str, dict[str, str]]:
+    """Build (value_str, pinmap) for the given W3 gate.
+
+    The pinmap embeds the gate's own ID under "_gate_id" so that two W3 gates
+    sharing the same prereq set (e.g. W3-2 and W3-4 both depending only on C10)
+    produce DISTINCT audit_sha256 closures — preserving sig_5 audit uniqueness
+    per `.claude/rules/v3-closure-recovery.md`.
+    """
+    pinmap: dict[str, str] = {"_gate_id": gate["gate_id"],
+                              "_wp_id":   gate["wp_id"],
+                              "_scheme":  gate["scheme"],
+                              "_convention": gate["convention"]}     # (local)
+    block_parts: list[str] = []                                 # (local)
+    blocked = False                                             # (local)
+    for sym in gate["required"]:
+        stat, _ = states[sym]
+        pinmap[sym] = f"{PREREQ_GATE_IDS[sym]}={stat}"
+        if stat != "PASS":
+            blocked = True
+            block_parts.append(f"{sym}_{stat}")
+    if not blocked:
+        return ("", pinmap)
+    return (f"PRE-REG-INC_blocked_by_{'_'.join(block_parts)}", pinmap)
+
+
+def make_verdict_line(gate: dict, value_str: str, audit_sha: str, content_sha: str) -> str:
+    return (
+        f"{gate['gate_id']}: FAIL -- value={value_str!r} "
+        f"scheme={gate['scheme']} convention={gate['convention']} "
+        f"L_max={gate['L_max']} "
+        f"audit_sha256={audit_sha} content_sha256={content_sha} "
+        f"schema_version=S84+\n"
+    )
+
+
+def make_companion_row(gate: dict, value_str: str, audit_sha: str, content_sha: str) -> str:
+    req = ", ".join(gate["required"])                           # (local)
+    return (
+        f"# audit_sha256 companion row: {gate['gate_id']} "
+        f"audit={audit_sha[:16]} content={content_sha[:16]} "
+        f"# PRE-REG-INC per session-86-plan-w3.md §X; deferred to S87; "
+        f"required prereqs: [{req}]; "
+        f"closure_script=computations/session-86/s86_w3_pre_reg_inc_closure.py\n"
+    )
+
+
+def update_wp_section(
+    wp_text: str,
+    gate: dict,
+    states: dict[str, tuple[str, str]],
+    value_str: str,
+    pinmap: dict[str, str],
+    audit_sha: str,
+    content_sha: str,
+) -> str:
+    """Replace the placeholder Verdict / Results / Status content in this gate's section."""
+    sect_marker = f"### §{gate['wp_id']}."                      # (local)
+    sect_start = wp_text.index(sect_marker)                     # (local)
+    sect_end = wp_text.index("\n---\n", sect_start)             # (local)
+    old_section = wp_text[sect_start:sect_end]                  # (local)
+    new_section = old_section                                   # (local)
+
+    # Status line
+    new_section = new_section.replace(
+        "**Status**: NOT STARTED",
+        "**Status**: PRE-REG-INCOMPLETE (mechanical closure 2026-04-26 per plan §X; deferred to S87)",
+    )
+
+    # MCP Pre-Compute Audit block
+    new_section = new_section.replace(
+        "**MCP Pre-Compute Audit**:\n*(pending — list `mcp__knowledge__*` queries; PRE-CLOSED if a closure covers.)*",
+        "**MCP Pre-Compute Audit**: N/A — no physics compute performed; gate is structurally untestable until upstream prereq lands.",
+    )
+
+    # Verdict block
+    prereq_lines = []                                            # (local)
+    for sym in gate["required"]:
+        stat, val = states[sym]
+        gid = PREREQ_GATE_IDS[sym]
+        if stat == "PASS":
+            prereq_lines.append(f"  - {sym} (`{gid}`): **PASS** — does not block this gate")
+        else:
+            prereq_lines.append(f"  - {sym} (`{gid}`): **{stat}** (value={val}) — BLOCKING")
+
+    verdict_old = "**Verdict**:\n*(pending agent execution)*"
+    verdict_new = (
+        f"**Verdict**: FAIL (PRE-REG-INC) — value={value_str!r}\n\n"
+        "Mechanical PRE-REG-INC closure: this gate's required upstream prerequisites "
+        "(per `sessions/session-plan/session-86-plan-w3.md` §0.5) have not all PASSed in "
+        "`computations/session-86/s86_gate_verdicts.txt`; per plan §X downstream decision-point "
+        "table, the documented outcome for upstream-block is **PRE-REG-INC, deferred to S87**. "
+        "FAIL verdict + descriptive value-string follows S86 precedent for upstream-blocked "
+        "gates (lines 19 + 24 of `s86_gate_verdicts.txt`: `S86-LAMBDA-TOP-DIRECT-EXTRACTION` "
+        "and `S86-K-FLOOR-K-WALL-LAND` use the same `value='upstream_...'` pattern).\n\n"
+        "**Required prerequisites and observed states**:\n"
+        + "\n".join(prereq_lines) + "\n\n"
+        f"**4-tuple**: `(value={value_str!r}, scheme={gate['scheme']}, "
+        f"convention={gate['convention']}, L_max={gate['L_max']})`\n\n"
+        f"**Dual-SHA**:\n"
+        f"  - `audit_sha256`: `{audit_sha}`\n"
+        f"  - `content_sha256`: `{content_sha}`\n\n"
+        "**Closure mechanism**: `computations/session-86/s86_w3_pre_reg_inc_closure.py` "
+        "(orchestrator-authored mechanical closure, NOT specialist-agent dispatch). "
+        "No physics computation was performed; the verdict line records that the gate "
+        "could not be evaluated due to upstream prerequisite block."
+    )
+    new_section = new_section.replace(verdict_old, verdict_new)
+
+    # Results block — find by start-marker, terminate at the next `)*` close
+    # (placeholder format is `*(pending — ... )*`, so closing token is `)*`)
+    res_start_marker = "**Results**:\n*(pending"                # (local)
+    if res_start_marker in new_section:
+        rs = new_section.index(res_start_marker)                # (local)
+        re_close = new_section.index(")*", rs) + 2              # (local)
+        results_old = new_section[rs:re_close]                  # (local)
+        results_new = (
+            "**Results**: NONE — gate not executed; PRE-REG-INC closure only.\n\n"
+            "**Solution-space interpretation**: The W3 gate corridor remains UNTESTED at "
+            "this session; this is a no-information outcome (not a corridor closure). The "
+            "plan-§11 PASS / FAIL / INFO consequence states are deferred to S87 conditional "
+            "on the blocking prerequisite landing. The gate ID + dual-SHA + 4-tuple are "
+            "recorded so the S87 re-emission can be audit-traced back to this PRE-REG-INC "
+            "entry.\n\n"
+            "**Substrate framing**: The substrate's spectral content this gate would have "
+            "interrogated remains uncharacterized at the W3 entry-point; the gate does not "
+            "report on the substrate's structural state, only on the audit trail's "
+            "block-by-prerequisite topology."
+        )
+        new_section = new_section.replace(results_old, results_new)
+
+    return wp_text[:sect_start] + new_section + wp_text[sect_end:]
+
+
+def main() -> int:
+    states = parse_prereq_verdicts()
+    print("=== W3 prerequisite verdict states (most-recent line per gate) ===")
+    for sym, (status, value) in states.items():
+        gid = PREREQ_GATE_IDS[sym]
+        print(f"  {sym:5} = {gid:55} : {status:5} (value={value})")
+    print()
+
+    # Recover any pre-existing W3 verdict lines (for idempotency on re-runs).
+    # If a gate already has a verdict line, we PARSE its dual-SHA pair from the
+    # file rather than re-computing — this keeps the WP-update SHAs consistent
+    # with the verdict file even across re-runs after a partial-failure crash.
+    verdict_text = VERDICT_TXT.read_text(encoding="utf-8")       # (local)
+    existing: dict[str, tuple[str, str, str]] = {}               # (local)  gate_id -> (audit, content, value)
+    for gate in W3_GATES:
+        prefix = gate["gate_id"] + ":"                           # (local)
+        ms = [ln for ln in verdict_text.splitlines()
+              if ln.startswith(prefix)
+              and "audit_sha256=" in ln
+              and "content_sha256=" in ln]                       # (local)
+        if not ms:
+            continue
+        last = ms[-1]                                            # (local)
+        audit_sha = last.split("audit_sha256=", 1)[1].split()[0] # (local)
+        content_sha = last.split("content_sha256=", 1)[1].split()[0]  # (local)
+        v_chunk = last.split("value=", 1)[1].split()[0].strip("'\"")  # (local)
+        existing[gate["gate_id"]] = (audit_sha, content_sha, v_chunk)
+
+    emitted: list[tuple] = []                                    # (local)
+    to_append: list[tuple] = []                                  # (local)
+    for gate in W3_GATES:
+        value_str, pinmap = build_value_string(gate, states)
+        if not value_str:
+            print(f"[NOT-BLOCKED] {gate['gate_id']} — all prereqs PASS; skipping closure")
+            continue
+        if gate["gate_id"] in existing:
+            audit_sha, content_sha, _existing_value = existing[gate["gate_id"]]
+            print(f"[ALREADY-EMITTED] {gate['wp_id']:5} {gate['gate_id']:55}")
+            print(f"          recovered audit: {audit_sha[:16]}...  content: {content_sha[:16]}...")
+        else:
+            audit_sha, content_sha = compute_dual_sha(pinmap)
+            print(f"[BLOCKED] {gate['wp_id']:5} {gate['gate_id']:55}")
+            print(f"          value: {value_str}")
+            print(f"          audit: {audit_sha[:16]}...  content: {content_sha[:16]}...")
+            to_append.append((gate, value_str, audit_sha, content_sha))
+        emitted.append((gate, value_str, pinmap, audit_sha, content_sha))
+
+    if not emitted:
+        print("\nNo W3 gates were blocked; nothing to close.")
+        return 0
+
+    # Append NEW verdict lines (only those not yet in the file).
+    if to_append:
+        print(f"\n=== Appending {len(to_append)} verdict + companion-row pairs ===")
+        with VERDICT_TXT.open("a", encoding="utf-8") as fp:
+            for gate, value_str, audit_sha, content_sha in to_append:
+                fp.write(make_verdict_line(gate, value_str, audit_sha, content_sha))
+                fp.write(make_companion_row(gate, value_str, audit_sha, content_sha))
+    else:
+        print("\n=== All blocked W3 verdicts already in verdict file; no appends needed ===")
+
+    # Update WP sections
+    print("\n=== Updating W3 working-paper sections ===")
+    wp_text = WP_PATH.read_text(encoding="utf-8")
+    for gate, value_str, pinmap, audit_sha, content_sha in emitted:
+        wp_text = update_wp_section(wp_text, gate, states, value_str, pinmap, audit_sha, content_sha)
+        print(f"  updated WP §{gate['wp_id']} ({gate['gate_id']})")
+    WP_PATH.write_text(wp_text, encoding="utf-8")
+    print(f"\n=== Wrote {WP_PATH.relative_to(PROJECT_ROOT)} ===")
+
+    print(f"\n=== S86-W3-PRE-REG-INC-CLOSURE: {len(emitted)} gates closed PRE-REG-INC ===")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

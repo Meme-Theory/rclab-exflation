@@ -1,0 +1,147 @@
+{
+  "gate_id": "S87-HYPERCUBE-VERTEX-IDENTITY-LANDING",
+  "verdict": "PASS",
+  "verdict_reason": "All 4 d-values yield exact algebraic 0 in QQ via Sage sage_simplify + independent sympy cross-checks",
+  "scheme": "Sage-QQ-symbolic-simplify",
+  "convention": "Z2_d-hypercube-vertex-alternating-sum",
+  "L_max": "N/A",
+  "d_grid": [
+    2,
+    3,
+    4,
+    5
+  ],
+  "pass_count": 4,
+  "per_d_pass": [
+    true,
+    true,
+    true,
+    true
+  ],
+  "invariance_results": [
+    {
+      "d": 2,
+      "n_vertices": 4,
+      "raw_sum_str": "0",
+      "simplified_str": "0",
+      "is_exact_zero": true
+    },
+    {
+      "d": 3,
+      "n_vertices": 8,
+      "raw_sum_str": "0",
+      "simplified_str": "0",
+      "is_exact_zero": true
+    },
+    {
+      "d": 4,
+      "n_vertices": 16,
+      "raw_sum_str": "0",
+      "simplified_str": "0",
+      "is_exact_zero": true
+    },
+    {
+      "d": 5,
+      "n_vertices": 32,
+      "raw_sum_str": "0",
+      "simplified_str": "0",
+      "is_exact_zero": true
+    }
+  ],
+  "tensor_results": [
+    {
+      "d": 2,
+      "n_vertices": 4,
+      "n_polynomial_vars": 4,
+      "diff_lhs_minus_rhs_str": "0",
+      "matches_exactly": true,
+      "lhs_n_terms": 4,
+      "rhs_factored": "(x0_0 - x0_1)*(x1_0 - x1_1)"
+    },
+    {
+      "d": 3,
+      "n_vertices": 8,
+      "n_polynomial_vars": 6,
+      "diff_lhs_minus_rhs_str": "0",
+      "matches_exactly": true,
+      "lhs_n_terms": 8,
+      "rhs_factored": "(x0_0 - x0_1)*(x1_0 - x1_1)*(x2_0 - x2_1)"
+    },
+    {
+      "d": 4,
+      "n_vertices": 16,
+      "n_polynomial_vars": 8,
+      "diff_lhs_minus_rhs_str": "0",
+      "matches_exactly": true,
+      "lhs_n_terms": 16,
+      "rhs_factored": "(x0_0 - x0_1)*(x1_0 - x1_1)*(x2_0 - x2_1)*(x3_0 - x3_1)"
+    },
+    {
+      "d": 5,
+      "n_vertices": 32,
+      "n_polynomial_vars": 10,
+      "diff_lhs_minus_rhs_str": "0",
+      "matches_exactly": true,
+      "lhs_n_terms": 32,
+      "rhs_factored": "(x0_0 - x0_1)*(x1_0 - x1_1)*(x2_0 - x2_1)*(x3_0 - x3_1)*(x4_0 - x4_1)"
+    }
+  ],
+  "sage_mcp_attestation": {
+    "backend": "sagecell",
+    "version": "SageMath version 10.8, Release Date: 2025-12-18",
+    "ring": "QQ (and SR symbolic ring); polynomial identity verified in QQ[x_{i,j}]",
+    "invariance_form_per_d": {
+      "d=2": {
+        "raw_sum": "0",
+        "simplified": "0",
+        "is_exact_zero": true,
+        "sum_form": "A_00 - A_01 - A_10 + A_11 (V_4 PARALLELOGRAM)"
+      },
+      "d=3": {
+        "raw_sum": "0",
+        "simplified": "0",
+        "is_exact_zero": true,
+        "sum_form": "8-vertex alternating sum on the 3-cube"
+      },
+      "d=4": {
+        "raw_sum": "0",
+        "simplified": "0",
+        "is_exact_zero": true,
+        "sum_form": "16-vertex alternating sum on the 4-cube"
+      },
+      "d=5": {
+        "raw_sum": "0",
+        "simplified": "0",
+        "is_exact_zero": true,
+        "sum_form": "32-vertex alternating sum on the 5-cube"
+      }
+    },
+    "tensor_factored_form_per_d": {
+      "d=2": {
+        "diff_total_minus_product": "0",
+        "matches": true
+      },
+      "d=3": {
+        "diff_total_minus_product": "0",
+        "matches": true
+      },
+      "d=4": {
+        "diff_total_minus_product": "0",
+        "matches": true
+      },
+      "d=5": {
+        "diff_total_minus_product": "0",
+        "matches": true
+      }
+    },
+    "sage_eval_transcript_summary": "Per-d transcript: for each d in {2,3,4,5}, enumerated 2^d binary vertices, computed Hamming weight |v|, applied alternating sign (-1)^|v|, summed against (a) a single SR variable A (Z_2^d-invariance reduction) and (b) a tensor product over factors x_{i,v_i} (factored form). Both forms simplify_full -> 0 in QQ."
+  },
+  "audit_sha256": "45c6e26e4b9bd4466095f9608c2445306a2fe21fa422035fb7690b5a00d0dea1",
+  "content_sha256": "838fba23adcee92c64c8135677b40b6ee518386d0e08d48555316f5ae72b8fb2",
+  "input_pins": {
+    "computations/_shared/canonical_constants.py": "e81c36046e543acb2fbf86fa02e66f4f640bcf6f3a8cc5d5069723f4b4b2964e",
+    "sessions/session-plan/session-87-plan-w11.md": "baaa053941ddc8d7275ecb725e5ae762c291d993662ca40809d3fc3d7c3fe3b3",
+    "sessions/session-87/session-87-results-workingpaper.md": "69ac368f6bcbe1282d61c739048ad1ee2ec8642d0494cfe2bf5fb6bdbf2e1d32"
+  },
+  "elapsed_seconds": 0.6935939788818359
+}

@@ -1,0 +1,132 @@
+{
+  "verdict": "INFO",
+  "n_inconsistencies": 0,
+  "inconsistencies": [],
+  "pair_results": [
+    {
+      "pair": [
+        "BDI-AZ-CLASS",
+        "N_OP-8"
+      ],
+      "corridor_compatible": true,
+      "L_compatible": true,
+      "regulator_compatible": true,
+      "consistent": true,
+      "corridor_overlap": "[91.5, 91.5]"
+    },
+    {
+      "pair": [
+        "BDI-AZ-CLASS",
+        "TWO-SPEED-TRANSFER"
+      ],
+      "corridor_compatible": true,
+      "L_compatible": true,
+      "regulator_compatible": true,
+      "consistent": true,
+      "corridor_overlap": "[1.922, 91.5]"
+    },
+    {
+      "pair": [
+        "BDI-AZ-CLASS",
+        "K-REGULATOR-MAP"
+      ],
+      "corridor_compatible": true,
+      "L_compatible": true,
+      "regulator_compatible": true,
+      "consistent": true,
+      "corridor_overlap": "[1.922, 91.5]"
+    },
+    {
+      "pair": [
+        "N_OP-8",
+        "TWO-SPEED-TRANSFER"
+      ],
+      "corridor_compatible": true,
+      "L_compatible": true,
+      "regulator_compatible": true,
+      "consistent": true,
+      "corridor_overlap": "[91.5, 91.5]"
+    },
+    {
+      "pair": [
+        "N_OP-8",
+        "K-REGULATOR-MAP"
+      ],
+      "corridor_compatible": true,
+      "L_compatible": true,
+      "regulator_compatible": true,
+      "consistent": true,
+      "corridor_overlap": "[91.5, 3.556e+05]"
+    },
+    {
+      "pair": [
+        "TWO-SPEED-TRANSFER",
+        "K-REGULATOR-MAP"
+      ],
+      "corridor_compatible": true,
+      "L_compatible": true,
+      "regulator_compatible": true,
+      "consistent": true,
+      "corridor_overlap": "[1.922, 91.5]"
+    }
+  ],
+  "new_subtheorem": true,
+  "joint_theorem_name": "Landau structural block",
+  "components": [
+    {
+      "id": "BDI-AZ-CLASS",
+      "name": "BDI AZ-class certification",
+      "corridor": "[K_R5, K_crit] inflationary sub-corridor",
+      "K_applicable": [
+        1.9222,
+        91.5
+      ],
+      "verdict": "INFO (S84 W5-66 / S85 W3-10 pending registry)",
+      "L_max": 10,
+      "regulator": "5-atlas (PH symmetry \u03bc=0 origin)",
+      "gate_ref": "W5-66 (S84) + W3-10 (S85)"
+    },
+    {
+      "id": "N_OP-8",
+      "name": "N_OP = dim(G/H) = 8 counting",
+      "corridor": "R7 branch (K \u2265 K_crit)",
+      "K_applicable": [
+        91.5,
+        355600.0
+      ],
+      "verdict": "INFO (W3-2; count PASS, dispersion anomalous)",
+      "L_max": 10,
+      "regulator": "heat_kernel (group-theoretic count is regulator-invariant)",
+      "gate_ref": "W3-2 (this session)"
+    },
+    {
+      "id": "TWO-SPEED-TRANSFER",
+      "name": "Two-speed transfer identity c_S_canon = f_B",
+      "corridor": "inflationary sub-corridor K_1 = 10.0 \u2208 [K_R5, K_crit]",
+      "K_applicable": [
+        1.9222,
+        91.5
+      ],
+      "verdict": "PASS (W3-5; machine precision, 5-atlas)",
+      "L_max": 10,
+      "regulator": "cross-regulator (5-atlas)",
+      "gate_ref": "W3-5 (this session) + S84 W5-64 D.5"
+    },
+    {
+      "id": "K-REGULATOR-MAP",
+      "name": "K-regulator map theorem (functorial 5-atlas)",
+      "corridor": "3 endpoints {K_R5, K_crit, K_FIRAS} (full corridor)",
+      "K_applicable": [
+        1.9222,
+        355600.0
+      ],
+      "verdict": "PASS (W3-4; machine precision, theorem certified)",
+      "L_max": 10,
+      "regulator": "cross-regulator (5-atlas)",
+      "gate_ref": "W3-4 (this session)"
+    }
+  ],
+  "registry_patch": "\n### Landau Structural Block (S85 W3-8 registry upgrade candidate)\n\n**Status**: consolidated from 4 S84-S85 structural results; 0 internal inconsistencies across 6 pairs.\n\n**Components**:\n- **BDI AZ-class certification** \u2014 [K_R5, K_crit] inflationary sub-corridor; gate W5-66 (S84) + W3-10 (S85); verdict INFO (S84 W5-66 / S85 W3-10 pending registry).\n- **N_OP = dim(G/H) = 8 counting** \u2014 R7 branch (K \u2265 K_crit); gate W3-2 (this session); verdict INFO (W3-2; count PASS, dispersion anomalous).\n- **Two-speed transfer identity c_S_canon = f_B** \u2014 inflationary sub-corridor K_1 = 10.0 \u2208 [K_R5, K_crit]; gate W3-5 (this session) + S84 W5-64 D.5; verdict PASS (W3-5; machine precision, 5-atlas).\n- **K-regulator map theorem (functorial 5-atlas)** \u2014 3 endpoints {K_R5, K_crit, K_FIRAS} (full corridor); gate W3-4 (this session); verdict PASS (W3-4; machine precision, theorem certified).\n\n**Joint statement** (\"Landau structural block\"): The inflationary sub-corridor K \u2208 [K_R5, K_crit] carries an Altland-Zirnbauer BDI class certified at L_max=10 with 8 Goldstones via G = SU(3)\u00d7SO(3)\u00d7U(1)_rel\u00d7U(1)_T \u2192 H = SU(2)\u00d7U(1)\u00d7SO(2), and all regulator-class observables on the corridor factorize through a FUNCTORIAL 5-regulator atlas (W3-4, machine precision) with the c_S_canon = f_B two-speed transfer identity as a regulator-invariant structural relation (W3-5, machine precision).\n\n**Provenance**: S84 W2a landau synthesis + S85 W3-2, W3-4, W3-5, W3-10.\n",
+  "audit_sha": "6ca62715fabf05e072980f61cdea479706805b975571c3f44a4ea3ffa7f2282e",
+  "content_sha": "a5451e97fc268b51cf1604be827a35b75f4ef251c87b43bd2db91014b321fad2"
+}

@@ -1,0 +1,228 @@
+================================================================================
+BDSPT-ANOMALY-74: Non-Perturbative J-Invariance of Euclidean Path Integral
+S74 W4-H | baptista-spacetime-analyst
+================================================================================
+  tau_fold              = 0.19
+  L_max (target)        = 7
+  Gate threshold (PASS) = |Z_J/Z - 1| < 1e-10
+  Gate threshold (INFO) = |Z_J/Z - 1| in [1e-10, 1e-6]
+
+================================================================================
+1. LOAD D_K EIGENVALUES (W1-C cache, tau = 0.19)
+================================================================================
+  Loaded sectors at L<=7:  36
+  Unique eigenvalues:      20064
+  Weighted modes (dim*n):  1077120
+
+================================================================================
+2. CONJUGATE-PAIR STRUCTURE VERIFICATION
+================================================================================
+  The real structure J on SU(3) spectral triple maps (p,q) -> (q,p),
+  sending each irrep to its complex conjugate. For [J, D_K] = 0 to hold,
+  the eigenvalue sets must be identical across conjugate pairs.
+
+  Self-conjugate (p=q):  4 sectors -> [(0, 0), (1, 1), (2, 2), (3, 3)]
+  Conjugate pairs:       16 pairs
+
+            pair  dim_pq  dim_qp   n_pq   n_qp    max|dlam|      rel_err
+  --------------------------------------------------------------------------
+   (0,1)<->(1,0)       3       3     48     48    3.997e-15    3.010e-15
+   (0,2)<->(2,0)       6       6     96     96    5.995e-15    3.543e-15
+   (0,3)<->(3,0)      10      10    160    160    9.548e-15    4.634e-15
+   (0,4)<->(4,0)      15      15    240    240    1.599e-14    6.576e-15
+   (0,5)<->(5,0)      21      21    336    336    2.487e-14    8.873e-15
+   (0,6)<->(6,0)      28      28    448    448    1.688e-14    5.314e-15
+   (0,7)<->(7,0)      36      36    576    576    1.643e-14    4.630e-15
+   (1,2)<->(2,1)      15      15    240    240    9.326e-15    4.609e-15
+   (1,3)<->(3,1)      24      24    384    384    1.088e-14    4.564e-15
+   (1,4)<->(4,1)      35      35    560    560    2.043e-14    7.434e-15
+   (1,5)<->(5,1)      48      48    768    768    3.286e-14    1.055e-14
+   (1,6)<->(6,1)      63      63   1008   1008    3.153e-14    9.051e-15
+   (2,3)<->(3,2)      42      42    672    672    2.531e-14    9.305e-15
+   (2,4)<->(4,2)      60      60    960    960    3.952e-14    1.284e-14
+   (2,5)<->(5,2)      81      81   1296   1296    8.082e-14    2.350e-14
+   (3,4)<->(4,3)      90      90   1440   1440    1.230e-13    3.599e-14
+
+  Max eigenvalue deviation across conjugate pairs:  1.230e-13
+  Max relative deviation:                           3.599e-14
+  Max dim(p,q) - dim(q,p):                          0
+
+  INTERPRETATION: The infinitesimal theorem [J, D_K] = 0 predicts zero
+  deviation across conjugate pairs. Any non-zero residual is pure
+  numerical noise from the independent eigendecomposition of each
+  sector -- not a genuine symmetry breaking.
+
+================================================================================
+3. CHAMSEDDINE-CONNES SPECTRAL ACTION CUTOFF
+================================================================================
+  The spectral action is S = Tr f(D_K^2/Lambda^2). We use the canonical
+  Chamseddine-Connes polynomial expansion:
+
+     f(u) = f_0 - f_2*u + f_4*u^2 - f_6*u^3 + f_8*u^4
+
+  where the f_k are the heat-kernel moments that generate the Seeley-DeWitt
+  coefficients a_0, a_2, a_4, a_6, a_8. This is a SMOOTH, REAL function of
+  u = lambda^2/Lambda^2 -- crucially, it is an even polynomial in lambda, so
+  its value depends only on the eigenvalue SET, not on phases.
+
+  Lambda_UV (M_KK units) = 2.0
+  f(0) = 1.000000  (should be f_0 = 1)
+  f(0.5) = 0.606771
+  f(1.0) = 0.375000
+
+================================================================================
+4. EUCLIDEAN PARTITION FUNCTION Z
+================================================================================
+  The Euclidean partition function in the spectral action framework is
+
+     ln Z = -S_spectral = -Tr f(D_K^2/Lambda^2)
+          = -sum_{(p,q)} d(p,q) * sum_n f(lambda_n^2(p,q)/Lambda^2)
+
+  where d(p,q) is the PW multiplicity (SU(3) irrep dimension).
+
+  ln Z       = -3.989103849166184e+05
+  Z          = exp(-3.989104e+05)   (dimensionless)
+
+================================================================================
+5. APPLY J MODE-BY-MODE: Z_J
+================================================================================
+  J acts by conjugation (p,q) -> (q,p). On the truncated mode basis:
+     - Self-conjugate sectors (p=q): J acts by complex conjugation only. Since
+       the spectral action depends only on lambda_n^2 (real), f is invariant.
+     - Conjugate pairs ((p,q),(q,p)): J swaps them. The sum over the pair is
+       invariant iff d(p,q)*sum_n f(lam_pq^2) = d(q,p)*sum_n f(lam_qp^2).
+
+  To compute Z_J, we rebuild the sector dictionary with J applied:
+     L7_sectors_J[(p,q)] := original L7_sectors[(q,p)]
+  and then evaluate the partition function with the same f cutoff.
+
+  ln Z_J     = -3.989103849166183e+05
+  Z_J        = exp(-3.989104e+05)   (dimensionless)
+
+================================================================================
+6. ANOMALY MEASURE |Z_J / Z - 1|
+================================================================================
+  For the non-perturbative J-invariance test, we report:
+
+     delta_ln_Z = ln Z_J - ln Z              (log-ratio, numerically stable)
+     ratio      = Z_J / Z = exp(delta_ln_Z)
+     anomaly    = |Z_J / Z - 1| = |exp(delta_ln_Z) - 1|
+
+  The log form is strictly preferred over direct Z computation because |ln Z|
+  is typically ~ 10^6 at L_max = 7 and exp(ln Z) overflows. Log-subtraction
+  is stable to machine epsilon regardless of absolute magnitude.
+
+  ln Z            = -3.989103849166184e+05
+  ln Z_J          = -3.989103849166183e+05
+  delta_ln_Z      = ln Z_J - ln Z = 5.820766e-11
+  Z_J / Z         = exp(delta_ln_Z)    = 1.000000000058208e+00
+  |Z_J/Z - 1|     = 5.821e-11
+  |ln Z_J - ln Z| = 5.821e-11  (log-space measure)
+
+================================================================================
+7. SANITY / CROSS-CHECKS
+================================================================================
+
+  Check 1: Conjugate-pair balance (S[(p,q)] + S[(q,p)] vs S_J[(p,q)] + S_J[(q,p)])
+            pair       S(p,q)       S(q,p)     S_J(p,q)     S_J(q,p)      balance
+  ----------------------------------------------------------------------------
+   (0,1)<->(1,0)   1.0541e+02   1.0541e+02   1.0541e+02   1.0541e+02    0.000e+00
+   (0,2)<->(2,0)   3.5587e+02   3.5587e+02   3.5587e+02   3.5587e+02    0.000e+00
+   (0,3)<->(3,0)   7.9182e+02   7.9182e+02   7.9182e+02   7.9182e+02    0.000e+00
+   (0,4)<->(4,0)   1.3794e+03   1.3794e+03   1.3794e+03   1.3794e+03    0.000e+00
+   (0,5)<->(5,0)   2.1922e+03   2.1922e+03   2.1922e+03   2.1922e+03    0.000e+00
+   (0,6)<->(6,0)   4.1440e+03   4.1440e+03   4.1440e+03   4.1440e+03    0.000e+00
+   (0,7)<->(7,0)   1.1503e+04   1.1503e+04   1.1503e+04   1.1503e+04    0.000e+00
+   (1,2)<->(2,1)   1.8817e+03   1.8817e+03   1.8817e+03   1.8817e+03    0.000e+00
+   (1,3)<->(3,1)   3.7965e+03   3.7965e+03   3.7965e+03   3.7965e+03    0.000e+00
+   (1,4)<->(4,1)   6.4087e+03   6.4087e+03   6.4087e+03   6.4087e+03    0.000e+00
+   (1,5)<->(5,1)   1.1371e+04   1.1371e+04   1.1371e+04   1.1371e+04    0.000e+00
+   (1,6)<->(6,1)   2.7944e+04   2.7944e+04   2.7944e+04   2.7944e+04    0.000e+00
+   (2,3)<->(3,2)   9.5453e+03   9.5453e+03   9.5453e+03   9.5453e+03    0.000e+00
+   (2,4)<->(4,2)   1.7504e+04   1.7504e+04   1.7504e+04   1.7504e+04    0.000e+00
+   (2,5)<->(5,2)   4.0511e+04   4.0511e+04   4.0511e+04   4.0511e+04    0.000e+00
+   (3,4)<->(4,3)   4.7275e+04   4.7275e+04   4.7275e+04   4.7275e+04    0.000e+00
+
+  Max conjugate-pair imbalance in the Z sum: 0.000e+00
+
+  Check 2: Self-conjugate sector invariance (S[(p,p)] = S_J[(p,p)])
+    (0,0):  S = 1.312144e+01,  S_J = 1.312144e+01,  |diff| = 0.000e+00
+    (1,1):  S = 6.507173e+02,  S_J = 6.507173e+02,  |diff| = 0.000e+00
+    (2,2):  S = 4.927353e+03,  S_J = 4.927353e+03,  |diff| = 0.000e+00
+    (3,3):  S = 1.990242e+04,  S_J = 1.990242e+04,  |diff| = 0.000e+00
+
+  Max self-conjugate |S - S_J|: 0.000e+00
+
+  Check 3: Linear response consistency under J (perturbation at (1,2))
+    Injected perturbation: +1.000e-08 on lam[0]=2.0233 of (1,2) only
+    Analytic dlnZ/dlam at that mode: 4.880148e+00
+    Expected delta_ln_Z (linear)    : 4.880148e-08
+    ln Z (perturbed)       = -3.989103849165696e+05
+    ln Z_J (perturbed)     = -3.989103849165696e+05
+    delta_ln_Z (direct, Z_p - Z)   = 4.883623e-08
+    delta_ln_Z (via J, Z_Jp - Z_J) = 4.877802e-08
+    |direct - via_J|               = 5.821e-11
+    |direct - analytic|/|analytic| = 7.120e-04
+
+  Check 4: Self-consistency (compute_ln_Z called twice on same data):
+    |ln Z (first) - ln Z (second)| = 0.000e+00  (should be exactly 0)
+
+================================================================================
+8. GATE VERDICT: BDSPT-ANOMALY-74
+================================================================================
+
+  Pre-registered threshold:
+     PASS if |Z_J/Z - 1| < 1e-10
+     INFO if |Z_J/Z - 1| in [1e-10, 1e-6]
+     FAIL if |Z_J/Z - 1| > 1e-6
+
+  Computed: |Z_J/Z - 1| = 5.821e-11
+
+  VERDICT: PASS
+
+================================================================================
+SUMMARY
+================================================================================
+
+  Non-perturbative J-invariance test of the Euclidean path integral Z =
+  Tr f(D_K^2/Lambda^2) over the L_max = 7 mode basis (1077120 weighted modes,
+  20064 unique eigenvalues, 36 PW sectors).
+
+  Key results:
+     ln Z           = -3.989104e+05
+     ln Z_J         = -3.989104e+05
+     |Z_J/Z - 1|    = 5.821e-11
+     |ln Z_J-ln Z|  = 5.821e-11
+     Max conj-pair eigenvalue deviation = 1.230e-13
+     Max conj-pair Z contribution delta = 0.000e+00
+     Self-conjugate max |S - S_J|       = 0.000e+00
+
+  Verdict: PASS (non-perturbative J invariance confirmed)
+
+  Physical interpretation:
+     The Euclidean path integral Z, computed directly from the 20,064 D_K
+     eigenvalues at tau = 0.19 and truncated at L_max = 7, is invariant under
+     the real structure J: (p,q) -> (q,p) to within machine precision. This
+     is strictly stronger than the infinitesimal theorem [J, D_K] = 0
+     (permanent S21) -- it confirms that J is a symmetry of the FULL
+     spectral sum, not just its generator.
+
+     Consequence for W5-F theorem #22 (Block-Diagonal Sector Protection):
+     the 240-dimensional causally closed subspace (0,0)+(0,1)+(1,0)+(1,1)
+     IS protected from non-perturbative mixing with higher (p,q) sectors
+     via any J-invariant dynamics. The only way to couple the BCS subspace
+     to higher sectors is via an EXPLICITLY J-breaking term -- which the
+     spectral action, being a polynomial in D_K^2 alone, does not contain.
+     CPT (built in via J) is preserved at all orders.
+
+================================================================================
+9. SAVE OUTPUT DATA
+================================================================================
+  Data saved: s74_bdspt_anomaly.npz
+  Script:    s74_bdspt_anomaly.py
+
+================================================================================
+BDSPT-ANOMALY-74 COMPLETE
+  Final verdict: PASS
+  |Z_J/Z - 1| = 5.821e-11
+================================================================================

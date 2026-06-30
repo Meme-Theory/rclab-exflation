@@ -1,0 +1,162 @@
+========================================================================
+LK-STALLING-53: Landau-Khalatnikov Critical Slowing Modifier
+========================================================================
+
+--- Section 1: Dynamic Universality Classification ---
+Order parameter: BCS gap Delta (complex scalar, non-conserved)
+Dynamic universality class: Model A (Hohenberg-Halperin)
+Justification: Delta is NOT conserved (particles pair/unpair freely)
+  z = 2  (diffusive/relaxational)
+  nu = 0.5  (mean-field BCS)
+  nu*z = 1.0  (governs tau_LK divergence exponent)
+
+Note: Model B (z=4) would apply if particle number N were the order
+parameter, but N is conserved by a DIFFERENT mechanism. The pairing
+gap Delta fluctuates freely => Model A is correct.
+
+--- Section 2: Microscopic Relaxation Time ---
+omega_att = 1.430 M_KK  (fully geometric, S38)
+tau_0 = 1/omega_att = 0.6993 M_KK^{-1}
+omega_PV = 0.7917 M_KK  (pair vibration, S37)
+tau_0_PV = 1/omega_PV = 1.2632 M_KK^{-1}
+Gamma_Langer = 0.2497 M_KK  (Langer decay, S38)
+tau_0_Langer = 1/Gamma_Langer = 4.0042 M_KK^{-1}
+
+Canonical choice: tau_0 = 0.6993 M_KK^{-1} (from omega_att)
+
+--- Section 3: GL Free Energy & Spinodal ---
+a_GL = -0.5245 M_KK^2
+b_GL = 0.4419 M_KK^0
+Delta_eq = sqrt(-a/(2b)) = 0.7704 M_KK
+Delta_0_GL (canonical) = 0.7704 M_KK
+Consistency: Delta_eq/Delta_0_GL = 1.0000
+d^2F/d(Delta^2) at equilibrium = -4*a_GL = 2.0982 M_KK^2
+
+Barrier height (GL): a^2/(4b) = 0.155678 M_KK
+barrier_0d (canonical) = 0.004670 M_KK
+Ratio = 33.333
+
+--- Section 4: tau_LK vs tau_transit ---
+Transit duration: dt_transit = 0.001130 M_KK^{-1}
+Transit velocity: v_terminal = 26.5450 M_KK
+
+tau_LK at equilibrium (fold): tau_0/(-4*a_GL) = 0.333288 M_KK^{-1}
+Ratio tau_transit / tau_LK_eq = 0.0034
+
+Estimated |da_GL/dtau| = 5.245 M_KK^2 (per unit tau)
+tau_LK(delta_tau) = 0.066658 / delta_tau  (M_KK^{-1})
+
+--- Section 5: Kibble-Zurek Freeze-Out ---
+KZ freeze-out scale: delta_tau* = 1.330196
+Freeze-out time: t* = delta_tau*/v_terminal = 0.050111 M_KK^{-1}
+tau_LK at freeze-out: 0.050111 M_KK^{-1}
+Consistency check: tau_LK_freeze / t_freeze = 1.0000 (should be 1.0)
+
+Frozen correlation length: xi_freeze ~ 0.2677 M_KK^{-1}
+(using xi_0 = xi_GL * delta_tau_fold^nu = 0.3087)
+
+--- Section 6: Effective Velocity Reduction ---
+Stalling window: |delta_tau| < 58.9807
+  (region where tau_LK > dt_transit)
+Free passage time through stalling window: 4.443834 M_KK^{-1}
+
+Condensate overshoot time: 0.050111 M_KK^{-1}
+dt_transit = 0.001130 M_KK^{-1}
+Dwell time amplification (overshoot): 45.3399
+
+--- Section 7: TDGL Integral — Proper Amplification ---
+|d(Delta_eq)/dtau| = 3.8522 M_KK per unit tau
+|d(ln Delta_eq)/dt| = v_terminal * |dDelta_dtau| / Delta_eq = 132.7249 M_KK
+
+Adiabaticity parameter at fold:
+  epsilon = drive_rate * tau_LK_eq = 44.235545
+  epsilon << 1 means adiabatic (OP tracks geometry)
+  epsilon >> 1 means non-adiabatic (OP frozen, KZ regime)
+  => NON-ADIABATIC at the fold center
+
+--- Section 8: Amplification Factor ---
+CRITICAL DISTINCTION: First-order vs. second-order transition
+  barrier_0d = 0.004670 M_KK
+  S_inst = 0.068604 (quantum critical point regime)
+  barrier_0d / omega_PV = 0.0059
+  (barrier is 0.6% of one pair vibration quantum)
+
+Since barrier_0d << omega_PV, the transition is 'weakly first-order'
+and the LK critical slowing analysis is applicable.
+
+--- Numerical TDGL integration ---
+Spinodal: tau_sp = 0.2900
+a(t) = a_slope * t,  a_slope = 139.2410 M_KK^3
+
+Time-integrated condensate density:
+  TDGL (with LK slowing): 0.029973
+  Adiabatic (instant equilibrium): 0.007878
+  Amplification factor (TDGL/adiabatic): 3.8046
+
+Decay time (Delta drops to 1% of initial):
+  TDGL: t_decay = 0.010000 M_KK^{-1}
+  Equilibrium: t_decay = -0.000001 M_KK^{-1} (at spinodal)
+  Overshoot: 0.010001 M_KK^{-1}
+  Overshoot / dt_transit = 8.8491
+
+--- Section 9: First-Order Transition Correction ---
+Nucleation timescale: tau_nuc = (1/omega_att)*exp(S_inst)
+  = 0.748959 M_KK^{-1}
+  tau_nuc / dt_transit = 662.7034
+
+exp(S_inst) = 1.0710  (barrier nearly transparent)
+Conclusion: First-order correction is negligible (7.1% increase in tau_0)
+
+--- Section 10: Physical Interpretation & Modifier ---
+dt_transit = 0.001130 M_KK^{-1}
+dt_eff_stalled = 0.011131 M_KK^{-1}
+Amplification factor = 9.8491
+
+========================================================================
+SUMMARY: LK-STALLING-53 RESULTS
+========================================================================
+
+1. Dynamic universality: Model A, z=2, nu=1/2, nu*z=1
+2. Microscopic relaxation: tau_0 = 0.6993 M_KK^{-1} (from omega_att)
+3. KZ freeze-out scale: delta_tau* = 1.330196
+4. KZ freeze-out time: t* = 0.050111 M_KK^{-1}
+5. tau_LK at freeze-out: 0.050111 M_KK^{-1}
+6. tau_transit / tau_LK_eq = 0.0034
+   (transit is 0.0x the equilibrium relaxation time)
+7. TDGL overshoot time: 0.010001 M_KK^{-1}
+8. TDGL amplification factor: 3.8046
+9. First-order correction: exp(S_inst)=1.0710 (negligible)
+10. Effective amplification: 9.8491
+
+GATE VERDICT: LK-STALLING-53 = INFO
+  tau_transit/tau_LK_eq = 0.0034
+  Amplification factor = 9.8491
+
+PHYSICAL ASSESSMENT:
+  The adiabaticity parameter epsilon = 44.24 >> 1 confirms that
+  the condensate is DEEPLY NON-ADIABATIC throughout the transit.
+  The OP CANNOT track the rapidly evolving geometry (IBO regime).
+
+  The KZ freeze-out scale delta_tau* = 1.3302 exceeds the
+  pairing region width (~0.10), meaning freeze-out occurs OUTSIDE
+  the physical tau range. The condensate is frozen at its initial
+  value from the start of the transit and only decays AFTER the
+  geometric drive ceases (or the curvature becomes large enough).
+
+  The TDGL integration gives the definitive answer: the condensate
+  persists 8.8x longer than the geometric transit.
+  Time-integrated condensate density is 3.80x the adiabatic value.
+
+  The effective amplification factor = 9.85x applies as a
+  multiplier to ALL condensate-dependent routes (P1, P2, P4).
+
+  CRITICAL PHYSICAL INSIGHT: In the inverted Born-Oppenheimer
+  regime (IBO ratio = 1118, S52), the geometry is the fast variable
+  and the pairing is the slow variable. LK slowing is the MECHANISM
+  underlying IBO. This computation quantifies the overshoot beyond
+  the geometric transit window.
+
+  PHONONIC CLASSIFICATION: PARTICLE
+  (Modifies quasiparticle condensate lifetime near a phase boundary)
+
+Data saved to s53_lk_stalling.npz

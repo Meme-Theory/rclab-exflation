@@ -24,9 +24,9 @@ CW Q1: Does Volovik Gibbs-Duhem spectral analog exist? This is what W1-1 tests.
 
 **Computation Steps**:
 
-1. Load spectral action data from `tier0-computation/s36_sfull_tau_stabilization.npz` (fields: `tau_combined`, `S_full`) and gradient stiffness from `tier0-computation/s42_gradient_stiffness.npz` (fields: `tau_grid`, `Z_spectral`, `dS_dtau`, `d2S_dtau2`, `S_total`).
+1. Load spectral action data from `computations/s36_sfull_tau_stabilization.npz` (fields: `tau_combined`, `S_full`) and gradient stiffness from `computations/s42_gradient_stiffness.npz` (fields: `tau_grid`, `Z_spectral`, `dS_dtau`, `d2S_dtau2`, `S_total`).
 
-2. **Identify the q-variable.** Following Paper 15 (Section "Vacuum Variable Framework") and Paper 23 (Section "Volume-Preserving Deformations as Fundamental"): the vacuum variable q for the framework is NOT tau itself but the thermodynamic potential. In a condensed matter system, q is the conserved charge of the equilibrium. For the BCS condensate on SU(3), q is the vacuum charge density — proportional to the pair density. Following Paper 16 (gluonic vacuum), q is analogous to the gluon condensate magnitude. In the framework, this maps to |Delta|^2 (BCS gap squared), computable from `tier0-computation/s38_cc_instanton.npz`.
+2. **Identify the q-variable.** Following Paper 15 (Section "Vacuum Variable Framework") and Paper 23 (Section "Volume-Preserving Deformations as Fundamental"): the vacuum variable q for the framework is NOT tau itself but the thermodynamic potential. In a condensed matter system, q is the conserved charge of the equilibrium. For the BCS condensate on SU(3), q is the vacuum charge density — proportional to the pair density. Following Paper 16 (gluonic vacuum), q is analogous to the gluon condensate magnitude. In the framework, this maps to |Delta|^2 (BCS gap squared), computable from `computations/s38_cc_instanton.npz`.
 
 3. **Construct rho(q).** The vacuum energy density entering the gravitational field equations is (Paper 05, Section "Four Sources"):
 
@@ -62,20 +62,20 @@ CW Q1: Does Volovik Gibbs-Duhem spectral analog exist? This is what W1-1 tests.
 - Null: rho monotonic positive for all identifications. Framework inherits CC.
 
 **Input files**:
-- `tier0-computation/s36_sfull_tau_stabilization.npz` — S_full(tau) at 16 tau points
-- `tier0-computation/s42_gradient_stiffness.npz` — Z(tau), dS/dtau, d2S/dtau2, S_total
-- `tier0-computation/s38_cc_instanton.npz` — instanton gas parameters, gap data
-- `tier0-computation/s42_gge_energy.npz` — GGE energy budget (E_exc = 50.9 M_KK)
-- `tier0-computation/s42_constants_snapshot.npz` — M_KK routes (gravity 7.4e16, gauge 5.0e17)
+- `computations/s36_sfull_tau_stabilization.npz` — S_full(tau) at 16 tau points
+- `computations/s42_gradient_stiffness.npz` — Z(tau), dS/dtau, d2S/dtau2, S_total
+- `computations/s38_cc_instanton.npz` — instanton gas parameters, gap data
+- `computations/s42_gge_energy.npz` — GGE energy budget (E_exc = 50.9 M_KK)
+- `computations/s42_constants_snapshot.npz` — M_KK routes (gravity 7.4e16, gauge 5.0e17)
 - `researchers/Volovik/05_2005_Volovik_Vacuum_Energy_Cosmological_Constant.md`
 - `researchers/Volovik/15_2008_Klinkhamer_Volovik_Self_Tuning_Vacuum.md`
 - `researchers/Volovik/16_2009_Klinkhamer_Volovik_Gluonic_Vacuum_Q_Theory.md`
 - `researchers/Volovik/23_2023_Nissinen_Volovik_Tetrads_q_Theory_Volume_Preserving.md`
 
 **Output files**:
-- Script: `tier0-computation/s43_qtheory_selftune.py`
-- Data: `tier0-computation/s43_qtheory_selftune.npz`
-- Plot: `tier0-computation/s43_qtheory_selftune.png`
+- Script: `computations/s43_qtheory_selftune.py`
+- Data: `computations/s43_qtheory_selftune.npz`
+- Plot: `computations/s43_qtheory_selftune.png`
 
 **Critical notes**:
 - Use `"phonon-exflation-sim/.venv312/Scripts/python.exe"` for execution.
@@ -116,9 +116,9 @@ W1-4 (phonon DOS) provides the raw eigenvalue histogram that feeds this computat
 
 **Computation Steps**:
 
-1. Load eigenvalue data from `tier0-computation/s41_spectral_refinement.npz` and `tier0-computation/s36_sfull_tau_stabilization.npz`. Also load BCS data from `tier0-computation/s35_ed_corrected_dos.npz` and `tier0-computation/s36_mmax_authoritative.npz`.
+1. Load eigenvalue data from `computations/s41_spectral_refinement.npz` and `computations/s36_sfull_tau_stabilization.npz`. Also load BCS data from `computations/s35_ed_corrected_dos.npz` and `computations/s36_mmax_authoritative.npz`.
 
-2. **Extract eigenvalue trajectories lambda_i(tau)** for i=1,...,16 in the (0,0) singlet sector across a dense tau grid (at least 20 points from 0.05 to 0.30). Use `tier0-computation/tier1_dirac_spectrum.py` to recompute if needed.
+2. **Extract eigenvalue trajectories lambda_i(tau)** for i=1,...,16 in the (0,0) singlet sector across a dense tau grid (at least 20 points from 0.05 to 0.30). Use `computations/dirac_spectrum.py` to recompute if needed.
 
 3. **Identify the gap-edge eigenvalues** (closest to zero, participating in BCS pairing). Track trajectories through the fold.
 
@@ -147,23 +147,23 @@ W1-4 (phonon DOS) provides the raw eigenvalue histogram that feeds this computat
 - Null: Standard Type I, gamma=1/2, z=1, nu=1/2 → n_s ~ 0.67 (WORSE than S42)
 
 **Input files**:
-- `tier0-computation/tier1_dirac_spectrum.py`
-- `tier0-computation/s41_spectral_refinement.npz`
-- `tier0-computation/s36_sfull_tau_stabilization.npz`
-- `tier0-computation/s36_mmax_authoritative.npz`
-- `tier0-computation/s35_ed_corrected_dos.npz`
+- `computations/dirac_spectrum.py`
+- `computations/s41_spectral_refinement.npz`
+- `computations/s36_sfull_tau_stabilization.npz`
+- `computations/s36_mmax_authoritative.npz`
+- `computations/s35_ed_corrected_dos.npz`
 - `researchers/Volovik/24_2016_Volovik_Zhang_Type_II_Weyl_Lifshitz_Transition.md`
 - `researchers/Volovik/33_2017_Volovik_Exotic_Lifshitz_Transitions_Topological_Materials.md`
 
 **Output files**:
-- Script: `tier0-computation/s43_lifshitz_class.py`
-- Data: `tier0-computation/s43_lifshitz_class.npz`
-- Plot: `tier0-computation/s43_lifshitz_class.png`
+- Script: `computations/s43_lifshitz_class.py`
+- Data: `computations/s43_lifshitz_class.npz`
+- Plot: `computations/s43_lifshitz_class.png`
 
 **Critical notes**:
 - Read BOTH Volovik papers first. Paper 24 defines the tilting parameter. Paper 33 gives the 5-type classification with examples.
 - The spectral flow (eigenvalue sign changes) connects to W1-3 baryogenesis. Share eigenvalue trajectory data.
-- If eigenvalue trajectories need recomputation at denser tau grid, use tier1_dirac_spectrum.py (~8.7s per tau point per sector).
+- If eigenvalue trajectories need recomputation at denser tau grid, use dirac_spectrum.py (~8.7s per tau point per sector).
 
 ---
 
@@ -193,7 +193,7 @@ This is DIAGNOSTIC. Full J-odd at wall (W3-3) and chiral eta (W3-4) follow in Wa
 
 **Computation Steps**:
 
-1. Load Dirac infrastructure from `tier0-computation/tier1_dirac_spectrum.py` and Kosmann matrices from `tier0-computation/s23a_kosmann_singlet.py`.
+1. Load Dirac infrastructure from `computations/dirac_spectrum.py` and Kosmann matrices from `computations/s23a_kosmann_singlet.py`.
 
 2. **Compute K_7 matrix in B2 sector.** Load K_7 generator (index 6 in SU(3) generators from `su3_generators()`). Construct iK_7 in 16×16 spinor representation. Verify [iK_7, D_K(tau)] = 0 at tau=0.190.
 
@@ -226,13 +226,13 @@ This is DIAGNOSTIC. Full J-odd at wall (W3-3) and chiral eta (W3-4) follow in Wa
 - Null: J and K_7 both diagonal → no CP violation
 
 **Input files**:
-- `tier0-computation/tier1_dirac_spectrum.py`
-- `tier0-computation/s23a_kosmann_singlet.py`
-- `tier0-computation/s35_k7_dphys.npz`
-- `tier0-computation/s35_pfaffian_corrected_j.npz`
+- `computations/dirac_spectrum.py`
+- `computations/s23a_kosmann_singlet.py`
+- `computations/s35_k7_dphys.npz`
+- `computations/s35_pfaffian_corrected_j.npz`
 - `researchers/Volovik/09_1998_Volovik_Axial_Anomaly_3He_A_Baryogenesis.md`
 
-**Output**: `tier0-computation/s43_baryo_k7.{py,npz,png}`
+**Output**: `computations/s43_baryo_k7.{py,npz,png}`
 
 ---
 
@@ -250,7 +250,7 @@ Compute the phonon density of states at the fold from all 992 D_K eigenvalues wi
 
 **Computation Steps**:
 
-1. Load eigenvalue data from `tier0-computation/s42_hauser_feshbach.npz` (contains all 992 eigenvalues at fold with sector labels and multiplicities).
+1. Load eigenvalue data from `computations/s42_hauser_feshbach.npz` (contains all 992 eigenvalues at fold with sector labels and multiplicities).
 
 2. Construct multiplicity-weighted histogram rho(omega) with bins of width 0.02 M_KK across [0.8, 2.1] M_KK.
 
@@ -264,8 +264,8 @@ Compute the phonon density of states at the fold from all 992 D_K eigenvalues wi
 
 **Pre-registered gate DOS-43**: INFO (diagnostic, no PASS/FAIL — feeds W1-2).
 
-**Input**: `tier0-computation/s42_hauser_feshbach.npz`
-**Output**: `tier0-computation/s43_phonon_dos.{py,npz,png}`
+**Input**: `computations/s42_hauser_feshbach.npz`
+**Output**: `computations/s43_phonon_dos.{py,npz,png}`
 
 ---
 
@@ -297,8 +297,8 @@ Verify that random-walk modulus fluctuations coupled through the spectral action
 
 **Pre-registered gate PERLMAN-43**: INFO.
 
-**Input**: `tier0-computation/s42_homogeneity.npz`, `tier0-computation/s42_gradient_stiffness.npz`
-**Output**: `tier0-computation/s43_perlman_blur.{py,npz,png}`
+**Input**: `computations/s42_homogeneity.npz`, `computations/s42_gradient_stiffness.npz`
+**Output**: `computations/s43_perlman_blur.{py,npz,png}`
 
 ---
 
@@ -316,7 +316,7 @@ Compute |d ln lambda/dtau| * |dtau/dt| vs lambda at the fold. Independent confir
 
 **Computation Steps**:
 
-1. Load eigenvalue derivatives from `tier0-computation/s42_gradient_stiffness.npz` (d_lambda/d_tau per eigenvalue).
+1. Load eigenvalue derivatives from `computations/s42_gradient_stiffness.npz` (d_lambda/d_tau per eigenvalue).
 
 2. Transit velocity dtau/dt ~ dS/dtau / M_ATDHFB = 58,673 / 1.695 = 34,615.
 
@@ -330,8 +330,8 @@ Compute |d ln lambda/dtau| * |dtau/dt| vs lambda at the fold. Independent confir
 
 **Pre-registered gate ADIAB-43**: INFO (independent TAU-DYN cross-check).
 
-**Input**: `tier0-computation/s42_gradient_stiffness.npz`, `tier0-computation/s42_hauser_feshbach.npz`
-**Output**: `tier0-computation/s43_adiabaticity.{py,npz,png}`
+**Input**: `computations/s42_gradient_stiffness.npz`, `computations/s42_hauser_feshbach.npz`
+**Output**: `computations/s43_adiabaticity.{py,npz,png}`
 
 ---
 
@@ -349,7 +349,7 @@ Compute the pair transfer form factor F(q) = <GGE| P^+(q) |GGE> where P^+(q) is 
 
 **Computation Steps**:
 
-1. Load BdG amplitudes from `tier0-computation/s37_pair_susceptibility.npz` (u_k, v_k for 8 modes).
+1. Load BdG amplitudes from `computations/s37_pair_susceptibility.npz` (u_k, v_k for 8 modes).
 
 2. Construct pair creation operator P^+(q) = sum_k u_k(q) * v_k(-q) * c^+_k * c^+_{-k} in momentum space.
 
@@ -361,8 +361,8 @@ Compute the pair transfer form factor F(q) = <GGE| P^+(q) |GGE> where P^+(q) is 
 
 **Pre-registered gate PAIR-FF-43**: INFO.
 
-**Input**: `tier0-computation/s37_pair_susceptibility.npz`
-**Output**: `tier0-computation/s43_pair_form_factor.{py,npz,png}`
+**Input**: `computations/s37_pair_susceptibility.npz`
+**Output**: `computations/s43_pair_form_factor.{py,npz,png}`
 
 ---
 
@@ -396,8 +396,8 @@ Determine whether the spectral action S_fold = 250,361 includes or excludes the 
 
 **Pre-registered gate GCM-ZP-43**: INFO (feeds W1-1).
 
-**Input**: `tier0-computation/s42_gradient_stiffness.npz`, `tier0-computation/s40_collective_inertia.npz`
-**Output**: `tier0-computation/s43_gcm_zeropoint.{py,npz,png}`
+**Input**: `computations/s42_gradient_stiffness.npz`, `computations/s40_collective_inertia.npz`
+**Output**: `computations/s43_gcm_zeropoint.{py,npz,png}`
 
 ---
 

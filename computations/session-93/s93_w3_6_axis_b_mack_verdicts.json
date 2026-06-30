@@ -1,0 +1,111 @@
+{
+  "gate_id": "S93-W3-6-VII-AV-STAGE-2-CROSS-AXIS-VERIFY-PER-SUB-SLOT",
+  "axis": "Axis-B",
+  "reviewer": "mack-cosmic-bridge",
+  "axis_domain": "cosmological-bridge / substrate side",
+  "independence_protocol": {
+    "audited_only_registered_stage_1_entries": true,
+    "read_W3_workshop_transcript": false,
+    "read_axis_A_vdd_verdict_during_audit": false,
+    "axis_A_json_existed_at_audit_time_but_NOT_opened": true,
+    "substrate_input_loaded_BY_AXIS_B_ONLY": [
+      "computations/session-93/s93_w3_3_vii_av_op_proj_class_8_7_witness.npz",
+      "computations/session-92/s92_w3_9_vii_av_layer_attribution_disambiguation.npz"
+    ],
+    "substrate_input_NOT_loaded_reserved_for_axis_A": "computations/session-91/s91_w5_1_full_bdg_pv.npz",
+    "substrate_input_orthogonality_axis_B_side_satisfied": true,
+    "oaa_self_admissibility": "mack is the W3-1+W3-5 registry sole-writer (transcribed the workshop VERDICT), NOT a W-3 workshop AUTHOR; the OAA exclusion set {connes-ncg, phonon-first, volovik} excludes the actual authors; mack is admissible as Axis-B"
+  },
+  "canonical_constants_used": {
+    "M_KK": 7.428660036284456e16,
+    "tau_fold": 0.19,
+    "substrate_cocycle_ratio_67_88": 7.324992
+  },
+  "knowledge_mcp_queries": [
+    {"query": "VII.AV OP-PROJ STATE-PROJ Cell I Cell IV slot split", "return": "confirms B_LAYER_A=375.227 Cell I, B_LAYER_B=-7.046336 Cell IV; cross-corner co-primary FORBIDDEN; structural-orthogonal-companion"},
+    {"query": "VII.AV STATE-PROJ L_emp K-window log-derivative substrate-distance-2 pole s=4", "return": "L_emp=-7.046336474406761 M_KK^2; S89-CORNER-IV-K-WINDOW-LOG-DERIVATIVE-RECOMPUTE PASS (sign=PASS mag=PASS reg=VALID)"},
+    {"query": "trace_entity B_LAYER_A layer attribution disambiguation", "return": "S92-W3-CF-S92-W5-1-C gate: B_LAYER_A=3.752271e+02, B_LAYER_B=-7.046336, F_image=7.046336, Phi_consistency_ratio=52.2514"},
+    {"query": "get_constant tau_fold / M_KK", "return": "tau_fold=0.19 (S12/S42 CONST-FREEZE-42); M_KK=7.428660036284456e16 (gravity route)"}
+  ],
+  "OP_PROJ": {
+    "sub_slot": "§VII.AV.OP-PROJ",
+    "corner_cell": "Cell I (algebra-INVARIANT spectrum-only × substrate-distance-2 pole s=4)",
+    "axis_B_single_axis_clauses": {
+      "AxisB-OP-1_substrate_IS_cosmological_bridge_identity": {
+        "verdict": "PASS",
+        "basis": "The OP-PROJ trace-residue Tr_{A_K}(P_a * |D_K|^{-2s}) at s=4 over PW sectors {(0,2),(1,1),(2,0)} is the algebra-INVARIANT spectrum-only image of the finite spectral triple at tau_fold=0.19 — i.e. the substrate's KK-tower spectral structure. On the cosmological-bridge axis this is the Casimir/KK-spectrum family (Greene compactification heritage: Casimir stabilization of extra dimensions [Mack-corpus 19], KK-tower splitting [22]). Substrate-IS identity is sound: NO state-pair dependence, spectrum-only Tr terminus, single-tau-slice tagged at tau_fold=0.19 per phononic-framing single-tau-slice level. Direction-of-explanation flows substrate -> bridge -> laboratory (not inverted)."
+      },
+      "AxisB-OP-2_laboratory_IN_OE_form": {
+        "verdict": "PASS",
+        "basis": "Element-2 OE-form: int_BZ d^d k Tr_{A_K}(P_a * rho_BZ(k;tau_fold)) — integration domain int over BZ, trace Tr over A_K, named central projection P_a. Satisfies the OE-form positive regex (integration domain + trace + named projector). The continuum spectral-action moment image is the laboratory-IN container the substrate residue maps to under HKR. Lab measures the integrated moment IN the continuum; substrate IS the finite-L residue."
+      },
+      "AxisB-OP-5_empirical_anchor": {
+        "verdict": "PASS",
+        "basis": "B_LAYER_A = 3.752271e+02 M_KK^2 at L_max=12. INDEPENDENTLY RE-DERIVED on Axis-B from my orthogonal substrate input: per-sector contributions (0,2)=85.48551 + (1,1)=204.25607 + (2,0)=85.48551 sum to 375.2270869158 (matches recorded B_LAYER_A to <1e-6). The conjugate pair (0,2) and (2,0) contributions coincide to <1e-6 (Class-8.7 degeneracy witness: n_degenerate_roots=1, max_root_mult=2), and the (d)compose(b) K_0-rank-layer corridor disambiguates the residue under that degeneracy. Anchor re-derivable from first principles on the substrate side."
+      },
+      "AxisB-OP-L3_eligibility_gated_by_W3_3": {
+        "verdict": "PASS",
+        "basis": "Level-3 eligibility of the ~375 anchor is GATED by the W3-3 Class-8.7 degeneracy-witness confirming the residue is genuine regulator-sensitive analytic content, NOT a finite-cardinality direct-sum tautology under canonical Gamma(s). W3-3 verdict = PASS (s93_gate_verdicts.txt:47): cross_reg_spread_rel=0.190765 (~19%, within heat-kernel-moment-ratio ub=0.30), NOT_direct_sum_tautology=True. The Cell-I regulator-DEPENDENT spread (R_zeta=141.44, R_PV=114.46, R_Mellin=141.44; PV-vs-zeta swing 19%) is the algebra-INVARIANT family signature per cross-pillar-bridge-corpus.md section 22. Level-3 anchor is ELIGIBLE."
+      }
+    },
+    "joint_clauses": {
+      "JOINT-OP-3_bridge_map": {
+        "verdict": "PASS",
+        "joint": true,
+        "basis": "Element-3 bridge map: HKR (Hochschild-Kostant-Rosenberg) L_max -> infinity image at d=4 substrate-distance-2 pole s=4; Connes-Moscovici 1995 section III.4 finite-spectral-triple residue formula on A_K. Element-3 fiducial-anchor binding declared type (i) substrate-self-consistent (bridge composes through the substrate-IS pin B_LAYER_A at the same algebra-INVARIANT family). On the substrate/cosmological-bridge axis the bridge map is explicitly named (NOT 'analogous to'), the binding incarnation is declared, and the map carries the substrate's own KK-spectral structure into the continuum moment. JOINT clause PASSES on Axis-B; PASS-AND with Axis-A pending aggregation."
+      },
+      "JOINT-OP-ORTHO_structural_orthogonal_companion": {
+        "verdict": "PASS",
+        "joint": true,
+        "basis": "Cross-corner co-primary FORBIDDEN: corner_cell(OP-PROJ)=Cell I != Cell IV=corner_cell(STATE-PROJ). INDEPENDENTLY CONFIRMED on Axis-B: the Phi-correspondence consistency metric |ratio-1| = |375.2271/7.046336 - 1| = 52.2514 (re-derived; matches recorded 52.25137). This metric >> phi_info_ceiling=0.3 by >2 OOM => F_IMAGE_INCONSISTENT => the two observables are NOT two regulator-class F-images of ONE observable; they are genuinely distinct objects on orthogonal algebra-axis cells. The split verdict is robust to the exact metric definition (bare ratio 53.25 OR deviation 52.25, both >> 0.3). STRUCTURAL-ORTHOGONAL-COMPANION (not SOURCE-DOUBLE-CITE-CO-PRIMARY) is the correct anchor structure. JOINT clause PASSES on Axis-B."
+      }
+    },
+    "axis_B_sub_slot_verdict": "PASS",
+    "axis_B_sub_slot_verdict_basis": "All Axis-B single-axis clauses (OP-1, OP-2, OP-5, OP-L3) PASS + both JOINT clauses (OP-3, OP-ORTHO) PASS on the Axis-B side. The OP-PROJ Cell-I trace-residue is a substrate-IS algebra-INVARIANT observable with a re-derivable anchor, an explicit HKR bridge map, and a structurally-confirmed orthogonality to the STATE-PROJ companion."
+  },
+  "STATE_PROJ": {
+    "sub_slot": "§VII.AV.STATE-PROJ",
+    "corner_cell": "Cell IV (algebra-DEPENDENT state-pair × substrate-distance-2 pole s=4)",
+    "axis_B_single_axis_clauses": {
+      "AxisB-SP-1_substrate_IS_cosmological_bridge_identity": {
+        "verdict": "PASS",
+        "basis": "The Corner-IV K-window log-derivative R_KW = d ln(Tr_{M_2(C)}(P_BdG * D_K^{-2s}))/d ln(K_window) on the BdG sub-algebra M_2(C) subset A_K is a substrate-IS state-pair observable — the Leggett-channel GGE quasiparticle (gapped, CPT-neutral, non-annihilating inter-band coherence mode). On the cosmological-bridge axis this is the framework's hidden-sector dark-matter analog (Mack-corpus hidden-sector DM heritage: papers 15/16 hidden-sector particles, gapped occupation); the gap |Delta_a|=0.4642547 M_KK is the hidden-sector mass gap that IR-self-regularizes the observable. Substrate-IS identity sound: state-pair functional (Var_a / d(ln)/d(ln K)) on a gapped occupation distribution, Cell-IV terminus, single-tau-slice tagged at tau_fold=0.19. The underlying s52 8-mode Bogoliubov amplitude vector v_a is the Bogoliubov-particle-production family (Mack/Greene corpus 25/26: Bogoliubov production as brane transits a wall)."
+      },
+      "AxisB-SP-2_laboratory_IN_OE_form": {
+        "verdict": "PASS",
+        "basis": "Element-2 OE-form: int_{BZ-BdG} d^d k Tr_{M_2(C)}(P_BdG * rho_BZ(k;tau_fold)) * (d ln /d ln K) — integration domain int over BZ-BdG, trace Tr_{M_2(C)} over the BdG sub-algebra, named projector P_BdG. Satisfies the OE-form positive regex. The laboratory-IN observable is the Pillar V continuum 3He-B BdG-sector mutual-friction measurement. On the cosmological-bridge axis, the 3He-B BdG sector is the canonical laboratory realization of the substrate's CPT-neutral gapped quasiparticle (the 3He-B inheritance morphism). Lab measures the mutual-friction coefficient IN the cryostat; substrate IS the K-window log-derivative."
+      },
+      "AxisB-SP-5_empirical_anchor": {
+        "verdict": "PASS",
+        "basis": "Substrate-natural anchor L_emp(L_max=12) = -7.046336474406761 M_KK^2 (SOLE Corner-IV calibration source). Verified from the registered entry + cited input (s92_w3_9 L_emp_canonical key = -7.046336474406761; I did NOT load the s91_w5_1 runtime BdG npz — that is Axis-A's orthogonal input). Anchor is substrate-natural-binding (computed directly on the substrate BdG sub-algebra, NOT a canonical-import pin from a parallel pillar). Knowledge MCP confirms S89-CORNER-IV-K-WINDOW-LOG-DERIVATIVE-RECOMPUTE PASS reproduced L_emp at the canonical value (rel_diff 0.0000). Sign negative by BdG curvature (gapped occupation curvature at K_horizon) — physically correct for the state-pair second-log-derivative."
+      },
+      "AxisB-SP-SINGLE_level_3_singleness_guard": {
+        "verdict": "PASS",
+        "basis": "Level-3-anchor singleness guard satisfied: the FULL-PV value -527.966919 M_KK^2 (m_PV=M_KK) is filed as a Level-2-B regulator-class DIAGNOSTIC sub-row on the m_PV-flow, NOT a Level-3 co-primary. On the substrate axis this is correct: -527.97 and -7.046336 are TWO regulator-class F-images of the SAME Cell-IV observable (identical substrate-IS pillar, identical laboratory-IN pillar V, identical HKR bridge-map class => Hybrid Independence Test FAILS for any split of THIS pair), so they cannot both be Level-3 co-primaries — the singleness guard correctly forbids it. This WITHIN-Cell-IV regulator divergence is structurally DISTINCT from the cross-corner OP-PROJ/STATE-PROJ split."
+      }
+    },
+    "joint_clauses": {
+      "JOINT-SP-3_bridge_map_Level_2_binding": {
+        "verdict": "PASS",
+        "joint": true,
+        "basis": "Element-3 bridge map: HKR L_max -> infinity image at d=4 substrate-distance-2 pole s=4; Connes-Moscovici 1995 section III.4 residue formula on M_2(C) subset A_K; Level-2 envelope L^{-3} Level-2-BINDING via the Connes-Karoubi chi'-K0 pairing. Element-3 binding type (i) substrate-self-consistent, substrate-natural-binding. The Level-2-binding sub-class (HKR image BINDS Level-1 to laboratory-IN c_continuum) is independently certified by W3-4 (s93_gate_verdicts.txt:52): Level-2-binding=1, L_CK_12=-7.046054397904, residual_L12=2.820765e-04 < tol=1e-03, prefactor 8/9 exact, c_continuum=L_emp, bridge=Connes-Karoubi-chi-prime-K0-pairing. The envelope predictor reproduces L_emp to 2.8e-04 — the bridge map binds. On the substrate/cosmological-bridge axis the bridge is explicitly named, the binding declared, and the c_continuum reference quantity present (NOT a non-binding bare-decomposition rate). JOINT clause PASSES on Axis-B; PASS-AND with Axis-A pending aggregation."
+      },
+      "JOINT-SP-ORTHO_structural_orthogonal_companion": {
+        "verdict": "PASS",
+        "joint": true,
+        "basis": "Cross-corner co-primary FORBIDDEN: corner_cell(STATE-PROJ)=Cell IV != Cell I=corner_cell(OP-PROJ). Same Phi-correspondence discriminator as JOINT-OP-ORTHO (consistency metric 52.25 >> phi_info_ceiling 0.3) confirms the STATE-PROJ Cell-IV observable is genuinely distinct from the OP-PROJ Cell-I observable, NOT a regulator-class reading of it. The K-window log-derivative is a state-pair functional on the BdG sub-algebra, NOT a spectrum-only-functional image. STRUCTURAL-ORTHOGONAL-COMPANION is the correct anchor structure. Sibling-object caveat independently verified: substrate_cocycle_ratio_67_88=7.324992 (VII.AY) != |L_emp|=7.046336 (VII.AV) — distinct objects (different number, different slot, different sign), shared cohomology-class character only. JOINT clause PASSES on Axis-B."
+      }
+    },
+    "axis_B_sub_slot_verdict": "PASS",
+    "axis_B_sub_slot_verdict_basis": "All Axis-B single-axis clauses (SP-1, SP-2, SP-5, SP-SINGLE) PASS + both JOINT clauses (SP-3, SP-ORTHO) PASS on the Axis-B side. The STATE-PROJ Cell-IV K-window log-derivative is a substrate-IS algebra-DEPENDENT state-pair observable (the Leggett-channel GGE quasiparticle / hidden-sector-DM analog) with a substrate-natural anchor, an explicit Connes-Karoubi Level-2-binding bridge map (W3-4 certified), a satisfied singleness guard, and a structurally-confirmed orthogonality to the OP-PROJ companion."
+  },
+  "axis_B_summary": {
+    "OP_PROJ_axis_B": "PASS",
+    "STATE_PROJ_axis_B": "PASS",
+    "JOINT_clauses_axis_B_side": "PASS (OP-3, OP-ORTHO, SP-3, SP-ORTHO all PASS on Axis-B; PASS-AND with Axis-A computed at aggregation step)",
+    "substrate_input_orthogonality_axis_B_contribution": "Axis-B loaded ONLY the OP-PROJ residue cache (s93_w3_3 witness + s92_w3_9 disambiguation); did NOT load the STATE-PROJ s91_w5_1_full_bdg_pv.npz runtime npz (reserved for Axis-A). Structural-ceiling orthogonality on the Axis-B side satisfied.",
+    "oaa_exclusion_axis_B": "mack NOT in {connes-ncg, phonon-first, volovik}; mack is the registry sole-writer (transcribed the workshop verdict) NOT a workshop author; no downstream-inheritance reach to the W-3 R1/R2/R3 transcript (did not read it).",
+    "convention_suffix_FULL": "Axis-B audited the registered ladder whose CLASS pins are FULL (W3-3 CLASS_pin=FULL; W3-4 CLASS=FULL); convention ends -FULL on aggregation.",
+    "note_NOT_emitted": "This dispatch wrote ONLY the Axis-B verdict JSON + producing script + WP Axis-B subsection. The final W3-6 verdict line was NOT emitted; the orchestrator triggers the aggregation/emission step (re-invoking mack) once BOTH axes' verdict JSONs are on disk."
+  }
+}

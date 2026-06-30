@@ -1,0 +1,99 @@
+## S81 Curated Edges (hand-seeded by orchestrator)
+## Cross-verdict and cross-theorem topology edges observed while
+## consolidating the 37-anchor Tier 3 queue. These complement the
+## machine-harvested edges in s81_harvested_edges.txt with the structural
+## relations that regex-harvesting cannot reliably extract from prose.
+## Source: orchestrator read of each verdict's notes + cross-references.
+
+## --- CONSTANT reproductions (Tier 3 confirms canonical value) ---
+
+[EDGE:reproduces] gates:T3-S69-BCS-SURFACE-GRAVITY -> constants:Delta_BCS  # R-Protected BCS gap reproduced byte-identical after canonical migration (S70 BCS-GAP-CANONICAL-70)
+[EDGE:reproduces] gates:T3-S43-SPECTRAL-DISSOLUTION -> constants:tau_fold  # tau=0.19 reproduced after swapping hardcode for canonical import
+[EDGE:reproduces] gates:T3-S43-SPECTRAL-DISSOLUTION -> constants:M_Pl_unreduced  # Planck mass canonical migration, 0.008% shift absorbed
+[EDGE:reproduces] gates:T3-S44-CONSTANTS-CORRECTED -> constants:Vol_SU3_Haar  # 8*sqrt(3)*pi^4 = 1349.739958 to machine epsilon
+[EDGE:reproduces] gates:T3-S44-CONSTANTS-CORRECTED -> constants:E_cond_ED_8mode  # canonical value preserved post-migration
+[EDGE:reproduces] gates:T3-S52-QM-DISPERSION -> constants:alpha_QM  # -0.579 reproduced to 0.08% RATIO
+[EDGE:reproduces] gates:T3-S37-INSTANTON-ACTION -> constants:S_inst  # 0.06860372 reproduced to 8 decimals
+[EDGE:reproduces] gates:T3-S36-MULTISECTOR-ED -> constants:E_cond_ED_8mode  # -0.13685055970476256 vs canonical -0.13685055970476342 (machine-eps)
+[EDGE:reproduces] gates:T3-S36-MULTISECTOR-ED -> constants:E_cond_ED_5mode  # bit-exact allclose@1e-12
+[EDGE:reproduces] gates:T3-S37-PAIR-SUSCEPTIBILITY -> constants:Delta_BCS  # Delta_OES = Delta_BCS = 0.4642547394830737 asserted |diff|=0
+[EDGE:reproduces] gates:T3-S37-PAIR-SUSCEPTIBILITY -> constants:E_cond_ED_8mode  # E_gs = canonical E_cond to |diff|=0
+[EDGE:reproduces] gates:T3-S22A-PAASCH-CURVE -> constants:phi_paasch  # 1.531580 reproduced byte-identical (PERMANENT structural result)
+[EDGE:reproduces] gates:T3-S42-CONSTANTS-SNAPSHOT -> constants:M_KK_kerner  # M_KK_kerner vs M_KK_gravity OOM_diff = 0.831665 (CONST-FREEZE-42 PASS iff < 1)
+[EDGE:reproduces] gates:T3-S22C-HIGGS-SIGMA -> constants:lambda_H_sigma  # pi^2/32 = 0.30842514 exactly tau-independent
+[EDGE:reproduces] gates:T3-S38-ATTEMPT-FREQ -> constants:omega_att_BCS  # 1.4299612309 vs MCP 1.430, rel_err 2.71e-05
+
+## --- THEOREM reproductions (Tier 3 confirms proven result) ---
+
+[EDGE:confirms] gates:T3-S22A-PAASCH-CURVE -> theorems:phi_paasch_S12  # S12 s=0.15 machine-epsilon proof re-validated via brentq crossing at tau=0.14987825
+[EDGE:confirms] gates:T3-S22A-DNP-BOUND -> theorems:DNP_instability  # permanent DNP-instability structural theorem reproduced (tau_c = 0.282265 vs MCP 0.285)
+[EDGE:confirms] gates:T3-S22B-BLOCK-DIAGONAL-RESULTS -> theorems:D_K_block_diagonal  # off-diagonal Frobenius = 0.000e+00 exact (stronger than proven_116 unitarity drift 8.4e-15)
+[EDGE:confirms] gates:T3-S30A-DTOTAL-PFAFFIAN -> theorems:KO_dim_6  # Pf real per-sector, Z_2 = +1 identically across 75 tau values in [0, 2.5]
+[EDGE:confirms] gates:T3-S28C-12D-AXIOMS -> theorems:KO_dim_6  # KO_F = 6 mod 8 reproduced, KO_total = 6 (eps'_K=+1, eps'_F=+1, eps''_F=-1)
+[EDGE:confirms] gates:T3-S23A-KOSMANN-SINGLET -> theorems:K_a_anti_hermitian  # ah_err = 0.0e+00 at all 72 runs (9 tau x 8 directions)
+[EDGE:confirms] gates:T3-S22B-KOSMANN-MATRIX -> theorems:D_K_block_diagonal  # inter-sector coupling C_eig = exactly zero for all connected (p,q) pairs
+
+## --- CLOSED MECHANISM reproductions ---
+
+[EDGE:closed_by] open:DISSOLUTION-43 -> gates:T3-S43-SPECTRAL-DISSOLUTION  # epsilon_crossover 0.02 <= foam 0.18, verdict unchanged
+[EDGE:reproduces] gates:T3-S22C-HIGGS-SIGMA -> closed_mechanisms:Higgs_sigma_Trap_3  # Mechanism 381/455 — CCM portal exactly constant
+[EDGE:reproduces] gates:T3-S24A-EIGENVALUE-RATIOS -> closed_mechanisms:Eigenvalue_ratios_no_Paasch  # S24a R-1 FAIL reproduced (0 phi_paasch crossings)
+[EDGE:reproduces] gates:T3-S46-OMEGA-CLASSIFY -> closed_mechanisms:Jensen_SSB_tau_stabilization  # 279 scalar directions all m^2 > 0, m^2_min heavier at fold
+
+## --- CROSS-VALIDATION (two independent verdicts agree on same quantity) ---
+
+[EDGE:cross_validates] gates:T3-S29B-PMNS-EXTRACTION -> gates:T3-S32C-PMNS-FINE-GRID  # both report sin^2 theta_13 above PDG at fold (0.2026 at tau=0.20 vs 0.2131 at tau_fold)
+[EDGE:cross_validates] gates:T3-S30A-DTOTAL-PFAFFIAN -> gates:T3-S22B-BLOCK-DIAGONAL-RESULTS  # both confirm D_K block-diagonality is exact
+[EDGE:cross_validates] gates:T3-S22B-KOSMANN-MATRIX -> gates:T3-S23A-KOSMANN-SINGLET  # both confirm anti-Hermitian K_a structure
+[EDGE:cross_validates] gates:T3-S36-MULTISECTOR-ED -> gates:T3-S37-PAIR-SUSCEPTIBILITY  # both reproduce E_cond_ED_8mode = -0.13685055970476342 to machine epsilon
+[EDGE:cross_validates] gates:T3-S21C-GB-DEBUG6 -> gates:T3-S21C-GB-DEBUG4  # both debug scripts address the same chi(SU(3))=0 computation (4 was the runnability fix, 6 is the clean analytic verification)
+
+## --- FEEDS_INTO (output used as input by downstream) ---
+
+[EDGE:feeds_into] gates:T3-S19A-FALSE-VACUUM-ANALYSIS -> data_provenance:s63_fermionic_qtheory.py  # N_F_S19=439488, N_B_S19=52556 consumed via sweep_data.npz
+[EDGE:feeds_into] data_provenance:s38_kz_defects.py -> gates:T3-S37-INSTANTON-MC  # KZ defect density informs instanton MC reference
+[EDGE:feeds_into] data_provenance:s35_thouless_multiband.npz -> gates:T3-S52-QM-DISPERSION  # script used fallback path when input absent; note logged
+
+## --- CONTRADICTS / REFUTES prior claim ---
+
+[EDGE:refutes] gates:T3-S25-CONNES-WORKSHOP -> sessions:25  # original S25 "max|eta|=machine-zero" claim was spurious (archive stores |lambda|, signs trivially +1)
+[EDGE:refutes] gates:T3-S34A-DPHYS-KOSMANN -> sessions:W1  # W1 prediction "B3 channel opens" refuted: V(B3,B2) ratio 0.828 < 1.05 threshold
+
+## --- SUPERSEDES (Tier 3 replaces prior finding) ---
+
+[EDGE:supersedes] gates:T3-S25-CONNES-WORKSHOP -> sessions:25  # real max|eta_N(s)| = 7.814786e+03 supersedes the spurious machine-zero claim
+
+## --- GROUNDS (provides numerical basis for a downstream result) ---
+
+[EDGE:grounds] constants:phi_paasch -> gates:T3-S22A-PAASCH-CURVE  # S12 proven theorem provides the canonical target the gate reproduces
+[EDGE:grounds] constants:Delta_BCS -> gates:T3-S69-BCS-SURFACE-GRAVITY  # R-Protected BCS gap canonical value is the gate's reproduction target
+[EDGE:grounds] constants:Delta_BCS -> gates:T3-S37-PAIR-SUSCEPTIBILITY  # Delta_OES reproduction grounded in canonical Delta_BCS
+
+## --- BOUNDS (Tier 3 establishes constraint on a quantity) ---
+
+[EDGE:bounds] gates:T3-S26-P2-COOLING-TRAJECTORY -> open:moduli_stabilization  # BCS-induced stabilization closed; surviving routes must operate through the fold, not in dilute window
+[EDGE:bounds] gates:T3-S46-OMEGA-CLASSIFY -> open:moduli_stabilization  # Jensen-SSB in Omega^1_D sector closed; stabilization must live in spectral action variation or transit dynamics
+[EDGE:bounds] gates:T3-S38-KZ-DEFECTS -> open:defect_density  # 0D regime confirmed (L/xi_GL = 0.031), no topological domain walls
+
+## --- ENABLES (gate opens a follow-up investigation) ---
+
+[EDGE:enables] gates:T3-S22B-BLOCK-DIAGONAL-RESULTS -> gates:T3-S30A-DTOTAL-PFAFFIAN  # exact block-diagonality means per-sector Pfaffian product is the authoritative Z_2 diagnostic
+[EDGE:enables] gates:T3-S22B-KOSMANN-MATRIX -> gates:T3-S34A-DPHYS-KOSMANN  # Kosmann-matrix structure feeds into D_phys construction
+## S81 Harvested Edges (generated by _harvest_edges.py)
+## These edges are machine-extracted from verdict-file prose and
+## are subject to the conservative-harvest discipline: prefer miss
+## over false-positive. Re-run after each new batch of verdicts.
+
+[EDGE:reproduces] gates:T3-S22A-PAASCH-CURVE -> sessions:22a  # harvested: session-level reproduction
+[EDGE:reproduces] gates:T3-S24A-EIGENVALUE-RATIOS -> sessions:24a  # harvested: session-level reproduction (sub-gate R-1)
+[EDGE:depends_on] gates:T3-S25-EINSTEIN-RESULTS -> data_provenance:s25_kk_workshop.npz  # harvested: SHA-pinned input data
+[EDGE:depends_on] gates:T3-S29A-DERIVED-DRIVE-RATE -> data_provenance:s29a_derived_drive_rate.py  # harvested: SHA-pinned input script
+[EDGE:depends_on] gates:T3-S29A-DERIVED-DRIVE-RATE -> data_provenance:s24a_vspec.npz  # harvested: SHA-pinned input data
+[EDGE:depends_on] gates:T3-S29A-DERIVED-DRIVE-RATE -> data_provenance:s28c_steady_state_mu.npz  # harvested: SHA-pinned input data
+[EDGE:depends_on] gates:T3-S29A-DERIVED-DRIVE-RATE -> data_provenance:s22d_rolling_trajectories.npz  # harvested: SHA-pinned input data
+[EDGE:depends_on] gates:T3-S29A-DERIVED-DRIVE-RATE -> data_provenance:s26_multimode_bcs.npz  # harvested: SHA-pinned input data
+[EDGE:implies] gates:T3-S29B-FREE-ENERGY-COMPARISON -> gates:P-29e-FIRES  # harvested: sub-gate FIRES signal
+[EDGE:implies] gates:T3-S29B-FREE-ENERGY-COMPARISON -> gates:K-29c-DOES-NOT-FIRE  # harvested: sub-gate DOES-NOT-FIRE signal
+[EDGE:reproduces] gates:T3-S30A-DTOTAL-PFAFFIAN -> sessions:30A  # harvested: session-level reproduction
+[EDGE:reproduces] gates:T3-S52-QM-DISPERSION -> constants:alpha_QM_omega_sq  # harvested: reproduction claim
+[EDGE:reproduces] gates:T3-TIER1-SPECTRAL-ACTION -> sessions:35  # harvested: session-level reproduction

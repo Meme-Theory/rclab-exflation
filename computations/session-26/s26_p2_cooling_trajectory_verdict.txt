@@ -1,0 +1,65 @@
+T3-S26-P2-COOLING-TRAJECTORY: FAIL -- value=P2-LOCK:_CLOSED|sustained=0|raw=59|max_ratio=203.4801 scheme=LSODA_ODE convention=G_DeWitt L_max=fiducial sha256=b773a3d8d61814c44f5bc98f1e578eb376067802b96442396c1a54a752c785e5
+
+# T3-S26-P2-COOLING-TRAJECTORY full verdict body
+# closure-sha = b773a3d8d61814c44f5bc98f1e578eb376067802b96442396c1a54a752c785e5
+# Inputs:
+#   s22a_slow_roll.npz: 57af53bbe9aa7287437562c0704a90151b9b1f89c1f15966c7d58dc231ba11ca
+#   s24a_vspec.npz: 2880f8274d57d22336101766222457d367887114d6fec868f1b894d75a5a3790
+#   s26_multimode_bcs.npz: 868f8e817f6c1472dfc2a1113809ab3ecf82c742a00160af7af88a9c00a2eea8
+#   s26_p2_cooling_trajectory.py: af9976d3dc7cd261797f4cc0004bfae8920b30290b451a22a75e10649616bc25
+#   canonical_constants.py: 68b50cd325d2cc8c63b775da3b6b92f538da582bee44c5d906c81259f24dd12f
+
+======================================================================
+T3-S26-P2-COOLING-TRAJECTORY -- VERDICT (v2, canonical import)
+======================================================================
+
+--- ADIABATIC ANALYSIS (DIAGNOSTIC) ---
+Static lock points: 45
+  V_spec artifacts (tau<0.025): 28
+  BCS-influenced (tau>=0.025): 17
+
+--- ODE SCANS (determines verdict) ---
+mu_0 scan (n=20): NO LOCK  r_min range [1.8419, 43.4684]  in_win=0/20
+H_0 coarse (n=9): locked=0, in_win=4
+H_0 fine   (n=30): locked=0, in_win=21
+Window accessed for H_0 >= 0.4175
+2D scan: NO LOCK
+
+--- GRADIENT ANALYSIS ---
+At tau=0.15, r=1.0: dV_spec=3.2578  dV_BCS=2.7724  |dV_BCS/dV_spec|=0.8510
+Max |dV_BCS/dV_spec| = 203.4801 at tau=0.015, r=0.997
+PASSES gradient competition (need > 1)
+
+--- TEMPERATURE SHOW-STOPPER ---
+  Tf=0.5: locked=0 in_win=21 Dmax_max=0.1843
+  Tf=0.9: locked=0 in_win=21 Dmax_max=0.1842
+
+** VERDICT: P2-LOCK: CLOSED ** (sustained=0 raw=59)
+No modulus lock in any ODE configuration.
+
+Adiabatic static locks (45) dynamically inaccessible
+(tau settles to ~0.018 before mu enters window).
+
+Finite-T: no lock at Tf=0.5, 0.9. Show-stopper confirmed.
+======================================================================
+
+# Full numeric summary:
+{
+  "H0f_n_locked": 0,
+  "H0sc_n_locked": 0,
+  "Tf05_n_locked": 0,
+  "Tf09_n_locked": 0,
+  "adiab_n_static_locks": 45,
+  "any_win": true,
+  "fid_in_win": false,
+  "fid_locked": false,
+  "fid_r_min": 8.980470479574324,
+  "fid_tau_f": 0.017956532631017198,
+  "max_ratio": 203.48005331574126,
+  "musc_n_locked": 0,
+  "raw_crossings": 59,
+  "s2d_n_locked": 0,
+  "sustained": 0,
+  "tau_settled": 0.0,
+  "verdict": "P2-LOCK: CLOSED"
+}

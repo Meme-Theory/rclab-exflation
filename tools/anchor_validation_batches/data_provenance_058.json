@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 58,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_571",
+      "anchor_type": "data_provenance",
+      "name": "jacobson_multi_t",
+      "script_path": "session-52/s52_jacobson_multi_t.py",
+      "session": "s52",
+      "inputs": "",
+      "outputs": "session-52/s52_jacobson_multi_t.npz, session-52/s52_jacobson_multi_t.png",
+      "source_file": "computations/session-52/s52_jacobson_multi_t.py",
+      "source_context_30_lines": " 1223:            g_ratio=g_ratio, G_Fisher_corrected=G_Fisher_corrected,\n 1224:            ratio_corrected=ratio_corrected))\n 1225: \n 1226: # ============================================================================\n 1227: #  STEP 14: Save data\n 1228: # ============================================================================\n 1229: print(\"\\n--- STEP 14: Save Data ---\")\n 1230: \n 1231: np.savez(base / 's52_jacobson_multi_t.npz',\n 1232:     # Gate\n 1233:     gate_name=np.array(['JACOBSON-MULTI-T-52']),\n 1234:     gate_verdict=np.array([verdict]),\n 1235:     gate_detail=np.array([detail]),\n 1236: \n 1237:     # Input parameters\n 1238:     tau_fold=tau_fold,\n 1239:     G_DeWitt=G_DeWitt,"
+    },
+    {
+      "anchor_id": "prov_572",
+      "anchor_type": "data_provenance",
+      "name": "liouvillian",
+      "script_path": "session-52/s52_liouvillian.py",
+      "session": "s52",
+      "inputs": "",
+      "outputs": "session-52/s52_liouvillian.npz, session-52/s52_liouvillian.png",
+      "source_file": "computations/session-52/s52_liouvillian.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s52_liouvillian.py -- Liouvillian Spectral Gap (LIOUVILLIAN-52)\n    4: ================================================================\n    5: \n    6: Construct L[rho] = -i[H, rho] for the 8-mode BCS Hamiltonian restricted\n    7: to the N_pair = 1 sector.  Extract the Ruelle-Pollicott (RP) gap and\n    8: level-spacing statistics.\n    9: \n   10: METHOD\n   11: ------"
+    },
+    {
+      "anchor_id": "prov_573",
+      "anchor_type": "data_provenance",
+      "name": "log_signed",
+      "script_path": "session-52/s52_log_signed.py",
+      "session": "s52",
+      "inputs": "",
+      "outputs": "session-52/s52_log_signed.npz, session-52/s52_log_signed.png",
+      "source_file": "computations/session-52/s52_log_signed.py",
+      "source_context_30_lines": "   16:   (4) CHIRALITY:    (p>=q) - (p<q) sector sign              [parameter-free]\n   17:   (5) K_7 CHARGE:   (q_7>0) - (q_7<0) Jensen grading        [~chirality]\n   18:   (6) NEW: LOG-RATIO L_ratio = log(det_B2 / det_{B1+B3})    [parameter-free, per-sector]\n   19:   (7) NEW: DERIVATIVE dL/dtau decomposition                  [tests curvature]\n   20:   (8) NEW: NORMALIZED signed sum L/N vs tau                  [per-eigenvalue]\n   21: \n   22: Gate: INFO (does the signed sum have a zero crossing in [0, 0.50]?)\n   23: \n   24: Input:  computations/session-41/s41_log_signed.npz (16 tau, pre-computed)\n   25:         computations/session-36/s36_sfull_tau_stabilization.npz (eigenvalues, 7 tau)\n   26:         computations/session-27/s27_multisector_bcs.npz (eigenvalues, 9 tau)\n   27:         computations/session-44/s44_dos_tau.npz (5 tau, multiplicity-expanded)\n   28: Output: computations/session-52/s52_log_signed.npz\n   29:         computations/session-52/s52_log_signed.png\n   30: \"\"\"\n   31: \n   32: import numpy as np"
+    },
+    {
+      "anchor_id": "prov_574",
+      "anchor_type": "data_provenance",
+      "name": "metric_noise",
+      "script_path": "session-52/s52_metric_noise.py",
+      "session": "s52",
+      "inputs": "",
+      "outputs": "session-52/s52_metric_noise.npz, session-52/s52_metric_noise.png",
+      "source_file": "computations/session-52/s52_metric_noise.py",
+      "source_context_30_lines": "  928: ax2.set_title('Detector-Band Comparison: Framework vs Standard Foam', fontsize=14)\n  929: ax2.set_xlim(1e-4, 1e9)\n  930: ax2.set_ylim(1e-80, 1e-20)\n  931: ax2.legend(fontsize=9, loc='upper right')\n  932: ax2.grid(True, alpha=0.3)\n  933: \n  934: plt.tight_layout()\n  935: plt.savefig(os.path.join(os.path.dirname(os.path.abspath(__file__)),\n  936:             's52_metric_noise.png'), dpi=150, bbox_inches='tight')\n  937: print(\"Plot saved: s52_metric_noise.png\")\n  938: \n  939: # Save data\n  940: np.savez(os.path.join(os.path.dirname(os.path.abspath(__file__)),\n  941:          's52_metric_noise.npz'),\n  942:     # Cell geometry\n  943:     L_cell_MKK=L_cell_MKK,\n  944:     L_cell_m=L_cell_m,"
+    },
+    {
+      "anchor_id": "prov_575",
+      "anchor_type": "data_provenance",
+      "name": "msw_transit",
+      "script_path": "session-52/s52_msw_transit.py",
+      "session": "s52",
+      "inputs": "",
+      "outputs": "session-52/s52_msw_transit.npz, session-52/s52_msw_transit.png",
+      "source_file": "computations/session-52/s52_msw_transit.py",
+      "source_context_30_lines": "  785: ax.set_xlabel(r'$\\tau$')\n  786: ax.set_ylabel(r'$E_i(\\tau)$ [$M_{KK}$]')\n  787: ax.set_title('Mass ordering transition during transit')\n  788: ax.legend(fontsize=7, loc='upper right')\n  789: ax.set_xlim(0, 0.20)\n  790: ax.set_ylim(0.81, 0.90)\n  791: \n  792: plt.tight_layout()\n  793: outpng = os.path.join(os.path.dirname(os.path.abspath(__file__)), 's52_msw_transit.png')\n  794: plt.savefig(outpng, dpi=150, bbox_inches='tight')\n  795: print(f\"Saved: {outpng}\")\n  796: print()\n  797: \n  798: # ============================================================================\n  799: # SECTION 14: SAVE DATA\n  800: # ============================================================================\n  801: "
+    },
+    {
+      "anchor_id": "prov_576",
+      "anchor_type": "data_provenance",
+      "name": "n_pair_full",
+      "script_path": "session-52/s52_n_pair_full.py",
+      "session": "s52",
+      "inputs": "",
+      "outputs": "session-52/s52_n_pair_full.npz, session-52/s52_n_pair_full.png",
+      "source_file": "computations/session-52/s52_n_pair_full.py",
+      "source_context_30_lines": "  735:     'sector_M_max': np.array([results_sep[d2]['M_max']\n  736:                                for d2 in sorted(results_sep.keys())]),\n  737:     'sector_N_pair_sep': np.array([results_sep[d2].get('N_pair_ED', results_sep[d2]['N_pair_BCS'])\n  738:                                     for d2 in sorted(results_sep.keys())]),\n  739:     'sector_N_pair_lower': np.array([results_lower[d2]['N_pair']\n  740:                                       for d2 in sorted(results_lower.keys())]),\n  741: }\n  742: \n  743: out_npz = os.path.join(SCRIPT_DIR, 's52_n_pair_full.npz')\n  744: np.savez_compressed(out_npz, **save_dict)\n  745: print(f\"  Saved: {out_npz} ({os.path.getsize(out_npz) / 1024:.1f} KB)\")\n  746: \n  747: # ======================================================================\n  748: #  PLOT\n  749: # ======================================================================\n  750: print(\"\\n  Generating plot...\")\n  751: "
+    },
+    {
+      "anchor_id": "prov_577",
+      "anchor_type": "data_provenance",
+      "name": "offjensen_analysis",
+      "script_path": "session-52/s52_offjensen_analysis.py",
+      "session": "s52",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-52/s52_offjensen_analysis.py",
+      "source_context_30_lines": "<name 'offjensen_analysis' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S52 OFFJENSEN supplementary analysis:\n    4: 1. Verify the Z_3 selection rule blocking B2 mixing\n    5: 2. Scan sin2_13 as a function of C^2 split parameter\n    6: 3. Find the split parameter that reproduces measured sin2_13 = 0.0222\n    7: 4. Compute condition for R = 33 and matching sin2_13 simultaneously\n    8: \"\"\"\n    9: \n   10: import numpy as np\n   11: import sys, os, time\n   12: # === Phase 2b X2 transform bootstrap (auto-inserted by tools/_x2_transform_copies.py) ===\n   13: import sys as _x2_sys\n   14: import pathlib as _x2_pathlib\n   15: import re as _x2_re\n   16: def _x2_locate_tools():\n   17:     p = _x2_pathlib.Path(__file__).resolve()\n   18:     for _ in range(8):\n   19:         if (p / \"tools\" / \"computation_root.py\").is_file():\n   20:             return p / \"tools\"\n   21:         p = p.parent\n   22:     raise RuntimeError(\n   23:         \"Phase 2b bootstrap: tools/computation_root.py not found in any \"\n   24:         \"ancestor of \" + str(__file__))\n   25: _x2_sys.path.insert(0, str(_x2_locate_tools()))\n   26: from computation_root import resolve_script, resolve_output, resolve_glob, project_root as _x2_project_root\n   27: def _x2_shared_dir():\n   28:     return _x2_project_root() / \"computations\" / \"_shared\"\n   29: _x2_session_dir_match = _x2_re.match(r\"^session-(\\d+)$\",\n   30:     _x2_pathlib.Path(__file__).resolve().parent.name)"
+    },
+    {
+      "anchor_id": "prov_578",
+      "anchor_type": "data_provenance",
+      "name": "offjensen_pmns",
+      "script_path": "session-52/s52_offjensen_pmns.py",
+      "session": "s52",
+      "inputs": "",
+      "outputs": "session-52/s52_offjensen_pmns.npz, session-52/s52_offjensen_pmns.png",
+      "source_file": "computations/session-52/s52_offjensen_pmns.py",
+      "source_context_30_lines": " 1058:     O_matrices = []\n 1059:     for r in results:\n 1060:         if 'O' in r:\n 1061:             O_matrices.append(r['O'])\n 1062:         else:\n 1063:             O_matrices.append(np.full((3,3), np.nan))\n 1064:     O_matrices = np.array(O_matrices)\n 1065: \n 1066:     np.savez(\"computations/session-52/s52_offjensen_pmns.npz\",\n 1067:         tau_ref=tau_ref,\n 1068:         n_points=len(results),\n 1069:         names=names_arr,\n 1070:         types=types_arr,\n 1071:         sin2_12=sin2_12_arr,\n 1072:         sin2_13=sin2_13_arr,\n 1073:         sin2_23=sin2_23_arr,\n 1074:         R_values=R_arr,"
+    },
+    {
+      "anchor_id": "prov_579",
+      "anchor_type": "data_provenance",
+      "name": "petrov_transition",
+      "script_path": "session-52/s52_petrov_transition.py",
+      "session": "s52",
+      "inputs": "",
+      "outputs": "session-52/s52_petrov_transition.npz, session-52/s52_petrov_transition.png",
+      "source_file": "computations/session-52/s52_petrov_transition.py",
+      "source_context_30_lines": "  600:         print(f\"    8D |C|^2 at crossing: {d['C_sq_8d']:.10f} (far from zero)\")\n  601:         print(f\"    12D |C|^2 at crossing: {d['C12_sq']:.10f}\")\n  602:         print(f\"    12D CMPP type: {d['cmpp_type']}\")\n  603:         print(f\"    8D Weyl operator: {d['n_neg']} negative, {d['n_pos']} positive eigs\")\n  604: \n  605: # -------------------------------------------------------------------\n  606: # SAVE DATA\n  607: # -------------------------------------------------------------------\n  608: out_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 's52_petrov_transition.npz')\n  609: \n  610: save_dict = {\n  611:     'tau_coarse': tau_coarse,\n  612:     'all_eigs_coarse': all_eigs,\n  613:     'all_C_sq_coarse': all_C_sq,\n  614:     'all_K_coarse': all_K,\n  615:     'all_R_coarse': all_R,\n  616:     'n_crossings': np.array(n_crossings),"
+    },
+    {
+      "anchor_id": "prov_580",
+      "anchor_type": "data_provenance",
+      "name": "ping",
+      "script_path": "session-52/s52_ping.py",
+      "session": "s52",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-52/s52_ping.py",
+      "source_context_30_lines": "    1: with open(\"C:/sandbox/Ainulindale Exflation/computations/session-52/s52_ping_out.txt\", \"w\") as f:\n    2:     f.write(\"PING OK\\n\")"
+    }
+  ]
+}

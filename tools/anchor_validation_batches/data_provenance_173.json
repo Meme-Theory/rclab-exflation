@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 173,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1721",
+      "anchor_type": "data_provenance",
+      "name": "w3_f_traj_mellin_atlas",
+      "script_path": "session-84/s84_w3_f_traj_mellin_atlas.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w3_f_traj_mellin_atlas.npz, session-84/s84_w3_f_traj_mellin_atlas.png",
+      "source_file": "computations/session-84/s84_w3_f_traj_mellin_atlas.py",
+      "source_context_30_lines": "  163:     \"closure_sha256\":   closure_sha,\n  164:     \"input_shas\": {\n  165:         \"s83_w1_g4_epsilon_h_trajectory_fi.npz\": sha_anchor,\n  166:         \"canonical_constants.py\": sha_canon,\n  167:     },\n  168:     \"closed_form\": \"F_traj(k) = (k+1)/2\",\n  169: }\n  170: \n  171: out_json = os.path.join(HERE, \"s84_w3_f_traj_mellin_atlas.json\")\n  172: out_npz  = os.path.join(HERE, \"s84_w3_f_traj_mellin_atlas.npz\")\n  173: out_png  = os.path.join(HERE, \"s84_w3_f_traj_mellin_atlas.png\")\n  174: \n  175: with open(out_json, \"w\") as fh:\n  176:     json.dump(atlas, fh, indent=2)\n  177: np.savez(out_npz,\n  178:          k_slots=k_slots, F_traj_main=F_traj_main,\n  179:          F_zub_sdw=F_zub_sdw, F_dim_sdw=F_dim_sdw, F_lat_sdw=F_lat_sdw,"
+    },
+    {
+      "anchor_id": "prov_1722",
+      "anchor_type": "data_provenance",
+      "name": "w3_k_a4_canonical_range",
+      "script_path": "session-84/s84_w3_k_a4_canonical_range.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w3_k_a4_canonical_range.npz, session-84/s84_w3_k_a4_canonical_range.png",
+      "source_file": "computations/session-84/s84_w3_k_a4_canonical_range.py",
+      "source_context_30_lines": "   99: \n  100: SESSION = \"S84\"                                       # (local)\n  101: GATE_ID = \"S84-K-A4-CANONICAL-RANGE\"                  # (local)\n  102: SCHEME = \"5-regulators\"                               # (local)\n  103: CONVENTION = \"Lambda_Z-M_KK-headline\"                 # (local)\n  104: L_MAX = 5                                             # (local) task-pinned\n  105: L_MAX_CROSSCHECK = 7                                  # (local) plan cross-check\n  106: \n  107: OUT_NPZ = SCRIPT_DIR / \"s84_w3_k_a4_canonical_range.npz\"\n  108: OUT_PNG = SCRIPT_DIR / \"s84_w3_k_a4_canonical_range.png\"\n  109: VERDICT_TXT = SCRIPT_DIR / \"s84_gate_verdicts.txt\"\n  110: SPECTRUM_CACHE = SCRIPT_DIR / \"s74_spectrum_cache_L9_tau019.npz\"  # (local)\n  111: \n  112: INPUT_FILES = [\n  113:     SCRIPT_DIR / \"canonical_constants.py\",\n  114:     SPECTRUM_CACHE,\n  115:     SCRIPT_DIR / \"s84_w3_k_a4_canonical_range.py\","
+    },
+    {
+      "anchor_id": "prov_1723",
+      "anchor_type": "data_provenance",
+      "name": "w3_ledger_linearity_atlas",
+      "script_path": "session-84/s84_w3_ledger_linearity_atlas.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w3_ledger_linearity_atlas.npz, session-84/s84_w3_ledger_linearity_atlas.png",
+      "source_file": "computations/session-84/s84_w3_ledger_linearity_atlas.py",
+      "source_context_30_lines": "  260: print(f'  pass_halfint (max_dev < {PASS_HALFINT_TOL})   = {pass_halfint}  (max_dev={max_dev:.2e})')\n  261: print(f'  pass_span    (max_rel_err < {PASS_SPAN_REL})   = {pass_span}  (max_rel_err={max_span_err:.2e})')\n  262: print(f'  VERDICT = {VERDICT}')\n  263: \n  264: # =============================================================================\n  265: # SECTION 6 — OUTPUT: NPZ + JSON + PLOT\n  266: # =============================================================================\n  267: np.savez_compressed(\n  268:     SCRIPT_DIR / 's84_w3_ledger_linearity_atlas.npz',\n  269:     p_matrix=p_matrix,\n  270:     dev_matrix=dev_matrix,\n  271:     span_pred_arr=span_pred_arr,\n  272:     span_direct_arr=span_direct_arr,\n  273:     span_rel_err=span_rel_err,\n  274:     factor_names=np.array([n for n, _, _ in factors]),\n  275:     observable_names=np.array([n for n, _ in observables]),\n  276:     factor_spans=factor_spans,"
+    },
+    {
+      "anchor_id": "prov_1724",
+      "anchor_type": "data_provenance",
+      "name": "w3_m0_fconv_back_identity",
+      "script_path": "session-84/s84_w3_m0_fconv_back_identity.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w3_m0_fconv_back_identity.npz, session-84/s84_w3_m0_fconv_back_identity.png",
+      "source_file": "computations/session-84/s84_w3_m0_fconv_back_identity.py",
+      "source_context_30_lines": "  101: PROJECT_ROOT = SCRIPT_DIR.parent\n  102: \n  103: SESSION = \"S84\"                                                    # (local)\n  104: GATE_ID = \"S84-M0-FCONV-BACK-IDENTITY-EXTENDED\"                    # (local)\n  105: SCHEME = \"5-regulator-atlas\"                                       # (local)\n  106: CONVENTION = \"Conv-A\"                                              # (local)\n  107: L_MAX_SCAN = [7, 9, 11]                                            # (local) task-pinned\n  108: \n  109: OUT_NPZ = SCRIPT_DIR / \"s84_w3_m0_fconv_back_identity.npz\"\n  110: OUT_PNG = SCRIPT_DIR / \"s84_w3_m0_fconv_back_identity.png\"\n  111: VERDICT_TXT = SCRIPT_DIR / \"s84_gate_verdicts.txt\"\n  112: SPECTRUM_CACHE = SCRIPT_DIR / \"s74_spectrum_cache_L9_tau019.npz\"   # (local)\n  113: \n  114: INPUT_FILES = [\n  115:     SCRIPT_DIR / \"canonical_constants.py\",\n  116:     SPECTRUM_CACHE,\n  117:     SCRIPT_DIR / \"s83_w3_g28_f_conv_cluster_test.py\","
+    },
+    {
+      "anchor_id": "prov_1725",
+      "anchor_type": "data_provenance",
+      "name": "w3_m_h_propagation_class",
+      "script_path": "session-84/s84_w3_m_h_propagation_class.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w3_m_h_propagation_class.npz, session-84/s84_w3_m_h_propagation_class.png",
+      "source_file": "computations/session-84/s84_w3_m_h_propagation_class.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s84_w3_m_h_propagation_class.py -- S84-M-H-PROPAGATION-CLASS (W3-27)\n    4: \n    5: Classify m_H by CC-5 propagation class (R-protected vs NOT-R-protected).\n    6: \n    7: CC-5 theorem (W3-21 landing):  span_R(O) = prod_k span_R(f_k)^{|p_k|}\n    8: \n    9: m_H derivation:\n   10:   m_H^2 = 2 * lambda_H * v_ew^2\n   11:   lambda_H = (pi^2 / 2) * a_4 / a_2^2   [Kasparov, S75]"
+    },
+    {
+      "anchor_id": "prov_1726",
+      "anchor_type": "data_provenance",
+      "name": "w3_meta_composition_rule",
+      "script_path": "session-84/s84_w3_meta_composition_rule.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w3_meta_composition_rule.npz, session-84/s84_w3_meta_composition_rule.png",
+      "source_file": "computations/session-84/s84_w3_meta_composition_rule.py",
+      "source_context_30_lines": "  327: elif primary_match == n_total - 1:       # 7/8 borderline\n  328:     verdict = \"INFO\"\n  329: else:\n  330:     verdict = \"FAIL\"\n  331: \n  332: # ---------------------------------------------------------------------------\n  333: # Step D. Persist outputs\n  334: # ---------------------------------------------------------------------------\n  335: out_stem = SCRIPT_DIR / \"s84_w3_meta_composition_rule\"                         # (local)\n  336: \n  337: # NPZ (structured data)\n  338: names       = np.array([r[\"name\"]          for r in records], dtype=object)\n  339: rows_arr    = np.array([r[\"row\"]           for r in records], dtype=np.int64)\n  340: pred_cls    = np.array([r[\"pred_class\"]    for r in records], dtype=object)\n  341: pred_buck   = np.array([r[\"pred_bucket\"]   for r in records], dtype=object)\n  342: direct_c    = np.array([r[\"direct_class\"]  for r in records], dtype=object)\n  343: direct_b    = np.array([r[\"direct_bucket\"] for r in records], dtype=object)"
+    },
+    {
+      "anchor_id": "prov_1727",
+      "anchor_type": "data_provenance",
+      "name": "w3_n_s_propagation_class",
+      "script_path": "session-84/s84_w3_n_s_propagation_class.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w3_n_s_propagation_class.npz, session-84/s84_w3_n_s_propagation_class.png",
+      "source_file": "computations/session-84/s84_w3_n_s_propagation_class.py",
+      "source_context_30_lines": "    1: \"\"\"\n    2: s84_w3_n_s_propagation_class.py -- S84-N-S-PROPAGATION-CLASS (W3-28)\n    3: \n    4: Classify n_s by its CC-5 signature. Propagate 5-regulator f_n weights\n    5: through n_s-1 = -6 eps_H + 2 eta_H, where eps_H ~ (f_4/f_2)^2 and\n    6: eta_H ~ (f_4/f_2). Measure span(n_s) across {zeta, Zubarev, SDW,\n    7: dim-reg, lattice-BR} at L_max=5 with L_max=7 cross-check.\n    8: \n    9: Substitution chain (no shortcuts):\n   10:   Step 1: n_s - 1 = -6 eps_H + 2 eta_H         (slow-roll, Mukhanov-Sasaki)"
+    },
+    {
+      "anchor_id": "prov_1728",
+      "anchor_type": "data_provenance",
+      "name": "w3_slot_span_scaling",
+      "script_path": "session-84/s84_w3_slot_span_scaling.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w3_slot_span_scaling.npz, session-84/s84_w3_slot_span_scaling.png",
+      "source_file": "computations/session-84/s84_w3_slot_span_scaling.py",
+      "source_context_30_lines": "  207:       f\"(alphas = {['%.3f' % a for a in alpha_list]})\")\n  208: \n  209: # ---------------------------------------------------------------------------\n  210: # Section 6. CLOSURE SHA  (unique pin-map -- includes gate_id to avoid\n  211: #                         sibling-gate collisions per S84 audit)\n  212: # ---------------------------------------------------------------------------\n  213: pin_map = {\n  214:     \"gate_id\": \"S84-SLOT-SPAN-SCALING\",\n  215:     \"script_path\": \"computations/session-84/s84_w3_slot_span_scaling.py\",\n  216:     \"canonical_constants.py\": sha_canon,\n  217:     \"s84_w3_vii_k_prop_atlas.json\": sha_atlas,\n  218:     \"s84_w3_f_traj_mellin_atlas.npz\": sha_ftraj,\n  219:     \"L_max_scan\": L_max_scan.tolist(),\n  220:     \"k_slots\": k_slots.tolist(),\n  221:     \"F_KK\": F_KK,\n  222:     \"eps_dim\": eps_dim,\n  223:     \"span_table\": span_table.tolist(),"
+    },
+    {
+      "anchor_id": "prov_1729",
+      "anchor_type": "data_provenance",
+      "name": "w3_vii_k_prop_landing",
+      "script_path": "session-84/s84_w3_vii_k_prop_landing.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w3_vii_k_prop_landing.npz, session-84/s84_w3_vii_k_prop_landing.png",
+      "source_file": "computations/session-84/s84_w3_vii_k_prop_landing.py",
+      "source_context_30_lines": "   11:   - computations/session-83/s83_w2_g15_k_a2_canonical_range.npz        (k_a2 span axis)\n   12:   - computations/session-83/s83_w2_g16_unified_as79_3pi_subst.npz      (A_s single-axis span = k_a2 span)\n   13:   - computations/session-83/s83_w3_g28_f_conv_cluster_test.npz         (f_conv axis = M_0^2)\n   14:   - computations/session-83/s83_w3_g34_cc_ratio_cluster_universality.npz (3-channel)\n   15:   - computations/_shared/canonical_constants.py                     (M_KK, L_max canonical)\n   16:   - sessions/session-83/session-83-lizzi-cc5-synthesis.md        (42-row class partition)\n   17: \n   18: Output atlas JSON: s84_w3_vii_k_prop_atlas.json\n   19: Output NPZ:        s84_w3_vii_k_prop_landing.npz\n   20: Output PNG:        s84_w3_vii_k_prop_landing.png  (log-log scatter span_predicted vs span_direct)\n   21: \n   22: Gate thresholds (pre-registered):\n   23:   PASS : max_rel_err < 1e-6\n   24:   INFO : 1e-6 <= max_rel_err < 1e-3\n   25:   FAIL : max_rel_err >= 1e-3\n   26: \"\"\"\n   27: "
+    },
+    {
+      "anchor_id": "prov_1730",
+      "anchor_type": "data_provenance",
+      "name": "w3_zubarev_removal_universality",
+      "script_path": "session-84/s84_w3_zubarev_removal_universality.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w3_zubarev_removal_universality.npz, session-84/s84_w3_zubarev_removal_universality.png",
+      "source_file": "computations/session-84/s84_w3_zubarev_removal_universality.py",
+      "source_context_30_lines": "  108:     print(f\"max_span (full,     5-reg) = {max_span_full:.4f}\")\n  109:     print(f\"max_span (reduced,  4-reg) = {max_span_reduced:.4f}\")\n  110:     print(f\"PASS threshold = {PASS_TH} | INFO threshold = {INFO_TH}\")\n  111:     print(f\"Verdict: {verdict}\")\n  112:     print(f\"Closure SHA: {closure}\")\n  113:     print(f\"Elapsed: {time.time()-t0:.2f}s\")\n  114: \n  115:     # Save\n  116:     np.savez(\"computations/session-84/s84_w3_zubarev_removal_universality.npz\",\n  117:              L_max=5,\n  118:              F_KK_full=np.array(full),\n  119:              F_KK_reduced=np.array(reduced),\n  120:              spans_full_ns_alphas=spans_full[\"ns_over_alphas\"],\n  121:              spans_full_As_mu=spans_full[\"As_over_mu\"],\n  122:              spans_full_fNL_r=spans_full[\"fNL_over_r\"],\n  123:              spans_reduced_ns_alphas=spans_reduced[\"ns_over_alphas\"],\n  124:              spans_reduced_As_mu=spans_reduced[\"As_over_mu\"],"
+    }
+  ]
+}

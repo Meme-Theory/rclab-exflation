@@ -2,9 +2,9 @@
 
 **Author**: Tesla-Resonance
 **Date**: 2026-02-22
-**Script**: `tier0-computation/s26_torsion_diagnostics.py`
-**Data**: `tier0-computation/s26_torsion_diagnostics.npz`
-**Plots**: `tier0-computation/s26_torsion_*.png`, `s26_contorsion_*.png`, `s26_eigenvalue_flow.png`
+**Script**: `computations/s26_torsion_diagnostics.py`
+**Data**: `computations/s26_torsion_diagnostics.npz`
+**Plots**: `computations/s26_torsion_*.png`, `s26_contorsion_*.png`, `s26_eigenvalue_flow.png`
 
 ---
 
@@ -239,14 +239,14 @@ These are permanent facts about Jensen-deformed SU(3), independent of gate outco
 
 | File | Contents |
 |:-----|:---------|
-| `tier0-computation/s26_torsion_diagnostics.py` | Full computation script |
-| `tier0-computation/s26_torsion_diagnostics.npz` | Numerical data |
-| `tier0-computation/s26_torsion_norms.png` | C-1: Torsion decomposition by bracket type |
-| `tier0-computation/s26_torsion_ratio.png` | C-2: Decomposition ratio |
-| `tier0-computation/s26_contorsion_resonance.png` | C-3: Min eigenvalue vs contorsion |
-| `tier0-computation/s26_eigenvalue_flow.png` | C-3: Full eigenvalue flow |
-| `tier0-computation/s26_contorsion_flow_detailed.png` | C-3: Detailed 4-sector flow |
-| `tier0-computation/s26_torsion_curvature_balance.png` | C-4: Balance ratio |
+| `computations/s26_torsion_diagnostics.py` | Full computation script |
+| `computations/s26_torsion_diagnostics.npz` | Numerical data |
+| `computations/s26_torsion_norms.png` | C-1: Torsion decomposition by bracket type |
+| `computations/s26_torsion_ratio.png` | C-2: Decomposition ratio |
+| `computations/s26_contorsion_resonance.png` | C-3: Min eigenvalue vs contorsion |
+| `computations/s26_eigenvalue_flow.png` | C-3: Full eigenvalue flow |
+| `computations/s26_contorsion_flow_detailed.png` | C-3: Detailed 4-sector flow |
+| `computations/s26_torsion_curvature_balance.png` | C-4: Balance ratio |
 
 ---
 

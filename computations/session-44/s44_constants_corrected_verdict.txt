@@ -1,0 +1,90 @@
+Gate T3-S44-CONSTANTS-CORRECTED — Tier 3 re-run of s44_constants_corrected.py
+================================================================================
+
+Trigger:            [VERIFY-THEOREM] (reproducibility under PRU+GPU)
+Classification:     GEOMETRIC (SU(3) Haar volume is a spectral-geometric constant)
+Producing script:   computations/session-44/s44_constants_corrected.py (migrated)
+Original script:    computations/session-44/s44_constants_corrected.py
+Session:            S81 (Tier 3 re-run wave)
+Input data:         computations/session-42/s42_constants_snapshot.npz
+
+--------------------------------------------------------------------------------
+PRIMARY GATE VALUE: Vol_SU3_Haar = 8 * sqrt(3) * pi^4
+--------------------------------------------------------------------------------
+
+target                : 1349.7399577099878           (MCP-registered, canonical_constants.py L130)
+pre_fix               : 1349.74                      (4 sig-fig in archived script, identical formula)
+fix                   : canonical-constants imports; locals tagged; S81 verdict block added
+reproduced            : 1349.739958                  (full precision, this run)
+rel_error             : 0.00e+00                     (machine epsilon, identical symbolic formula)
+tolerance             : THEOREM -> machine epsilon
+verdict               : PASS
+
+--------------------------------------------------------------------------------
+SECONDARY REPRODUCED QUANTITIES (all identical to archived script to display precision)
+--------------------------------------------------------------------------------
+
+Vol(SU(3)) code        : 109328.936624   (= g0_diag^4 * Vol_SU3_Haar)
+Vol ratio correct/wrong: 0.151982        (= 1.5/pi^2, analytic)
+M_* new                : 2.1651e+17 GeV
+V_phys new             : 2.6190e-137 GeV^-8
+R_KK new               : 8.4580e-18 GeV^-1
+rho_Lambda             : 8.4317e+73 GeV^4 (UNCHANGED by corrections)
+CC_ratio               : 3.1229e+120      (UNCHANGED)
+1/alpha_EM(M_KK)       : 218.405093 (EXACT agreement with stored)
+Effacement |E|/S       : 5.47e-07 (robust, ~10^-6)
+
+--------------------------------------------------------------------------------
+CANONICALITY IMPROVEMENT (NOT A REGRESSION)
+--------------------------------------------------------------------------------
+
+The archived script used E_cond_new = 0.137 (3 sig-fig). The migrated version
+imports canonical |E_cond_ED_8mode| = 0.13685055970476342 (machine-epsilon).
+This yields:
+
+  E_exc: 60.691 (archived)  ->  60.625 (migrated, canonical)  [rel-err 1.1e-3]
+  T_compound: 7.586         ->  7.578                         [rel-err 1.1e-3]
+
+Both deltas are SMALLER than the THEOREM tolerance on downstream observables
+and represent IMPROVED canonical consistency, not a reproduction failure.
+
+--------------------------------------------------------------------------------
+INPUT PINS (SHA-256)
+--------------------------------------------------------------------------------
+
+script_sha    : f9bb06b567d1acfcab6372bea97aa504c70e15ff48d248af05ff0a9b8c456e96
+original_sha  : 15c6057348c3eab746f9e5831bef3f9d4f5d3d959163ff75db65e387af103023
+canon_sha     : 68b50cd325d2cc8c63b775da3b6b92f538da582bee44c5d906c81259f24dd12f
+input_npz_sha : 39f613507950979327f0d9b7473bd73f7b0a7ea2d9d0c5507f6b8b939909f80b
+closure_inputs: 41f9d398e6878c32d6ee54c9d1ea349072b986e918357b4834a74ccb0fed20d4
+  (SHA-256 of JSON-serialized sorted {script, canonical_constants, s42_snapshot_npz} pin map)
+
+--------------------------------------------------------------------------------
+S81 CANONICAL VERDICT LINE
+--------------------------------------------------------------------------------
+
+T3-S44-CONSTANTS-CORRECTED: PASS -- value=1349.739958 scheme=Weyl-integration-formula convention=SU3-Haar-8D L_max=NA sha256=41f9d398e6878c32d6ee54c9d1ea349072b986e918357b4834a74ccb0fed20d4
+
+--------------------------------------------------------------------------------
+CONSTANTS FLAGGED FOR POTENTIAL PROMOTION TO canonical_constants.py
+--------------------------------------------------------------------------------
+
+All constants required by this script are ALREADY in canonical_constants.py.
+No new promotions required. The following were re-confirmed against MCP:
+
+  PI                -> canonical_constants.py L26
+  M_Pl_reduced      -> L33
+  M_Z               -> L49
+  alpha_em_MZ_inv   -> L47
+  rho_Lambda_obs    -> L73
+  Vol_SU3_Haar      -> L130  (target of this re-run; PASS)
+  Vol_SU3_WRONG     -> L131  (kept for audit reference)
+  g0_diag           -> L134
+  M_KK_kerner       -> L138
+  E_cond            -> L153  (= E_cond_ED_8mode)
+  E_exc_ratio       -> L156
+  S_fold            -> L239
+
+Local-tagged diagnostics preserved:
+  E_cond_old = 0.115        (S36 pre-correction magnitude; audit reference)
+  S_fold_approx = 250000    (S36 historical approximation; audit reference)

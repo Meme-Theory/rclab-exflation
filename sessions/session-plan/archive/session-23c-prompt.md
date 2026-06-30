@@ -49,7 +49,7 @@ P2 is a multi-week computation. **Session 23c establishes the mathematical frame
 ## COMPUTATION ENVIRONMENT
 
 **Python**: `"phonon-exflation-sim/.venv312/Scripts/python.exe"`
-**Output directory**: `tier0-computation/`
+**Output directory**: `computations/`
 **Script prefix**: `s23c_`
 
 ---
@@ -87,7 +87,7 @@ The Kosmann-BCS gap equation yielded Delta = 0. The non-perturbative BCS condens
 **Qualified "only remaining"**: The following non-perturbative mechanisms remain partially unexplored but are assessed as low-probability rescues:
 - Instanton-mediated stabilization with fermionic zero modes (Session 22c F-2 explored gravitational/YM instantons only — fermionic zero mode structure was not computed)
 - Topological stabilization from the fiber bundle structure itself (not Coleman-Weinberg, not BCS, but something intrinsically geometric — unexplored)
-- Full regularized Casimir energy s-dependence (tier1_cw_regularized.py showed UV divergence; the finite s-dependent part may contain information)
+- Full regularized Casimir energy s-dependence (cw_regularized.py showed UV divergence; the finite s-dependent part may contain information)
 
 These are acknowledged as open but are not prioritized over P2 due to lower estimated BF and higher computational cost.
 
@@ -127,9 +127,9 @@ However, beta/alpha alone does not provide a stabilization mechanism. The framew
 
 ## Computational data references:
 
-- `tier0-computation/r20a_riemann_tensor.npz`: Full Riemann tensor on Jensen-deformed SU(3)
-- `tier0-computation/s22b_block_diagonal_results.npz`: Block-diagonality data
-- `tier0-computation/tier1_dirac_spectrum.py`: Dirac spectrum infrastructure (connection, frame, metric)
+- `computations/r20a_riemann_tensor.npz`: Full Riemann tensor on Jensen-deformed SU(3)
+- `computations/s22b_block_diagonal_results.npz`: Block-diagonality data
+- `computations/dirac_spectrum.py`: Dirac spectrum infrastructure (connection, frame, metric)
 
 ---
 
@@ -176,7 +176,7 @@ beta = integral_{SU(3)} a_4(x, K)|_{F^2 term} dvol_K
 
 These integrals are over the Jensen-deformed SU(3) fiber. They involve:
 - The Riemann tensor (computed in Session 20a, 147/147 checks)
-- The connection (from tier1_dirac_spectrum.py)
+- The connection (from dirac_spectrum.py)
 - The spectral action coefficients from the heat kernel expansion
 
 **Deliverable**: Explicit integral formulas for alpha and beta as functions of tau, using the existing computational infrastructure. Identify which integrals can be computed analytically vs. numerically.
@@ -203,8 +203,8 @@ The value beta/alpha = 0.28 was FITTED in Session 22d so that the Freund-Rubin p
 - Baptista Paper 17: Dirac operator and Kosmann derivative (Corollary 3.4)
 - Baptista Paper 18: Corrected spectral geometry (eq 1.4, 5.11)
 - Kaluza-Klein Papers 01-12: Classical KK literature for cross-reference
-- `tier0-computation/r20a_riemann_tensor.npz`: Full Riemann tensor on Jensen-deformed SU(3)
-- `tier0-computation/s22b_block_diagonal_results.npz`: Block-diagonality data
+- `computations/r20a_riemann_tensor.npz`: Full Riemann tensor on Jensen-deformed SU(3)
+- `computations/s22b_block_diagonal_results.npz`: Block-diagonality data
 
 ---
 
@@ -212,8 +212,8 @@ The value beta/alpha = 0.28 was FITTED in Session 22d so that the Freund-Rubin p
 
 | File | Producer | Content |
 |:-----|:---------|:--------|
-| `tier0-computation/s23c_12d_action_framework.py` | kk + baptista | 12D spectral action fiber integration framework |
-| `tier0-computation/s23c_12d_action_framework.txt` | kk + baptista | Mathematical framework documentation |
+| `computations/s23c_12d_action_framework.py` | kk + baptista | 12D spectral action fiber integration framework |
+| `computations/s23c_12d_action_framework.txt` | kk + baptista | Mathematical framework documentation |
 | `sessions/session-23/session-23c-synthesis.md` | coordinator | P2 initiation synthesis |
 
 ---

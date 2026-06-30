@@ -4,14 +4,14 @@
 **Author**: Hawking (hawking-theorist), dissected by team-lead
 **Depends on**: Session 28 (all sub-sessions: 28a KC-1 PASS, 28b self-consistent tau-T, 28c phonon T-matrix + van Hove BCS + Luttinger + steady-state mu)
 **Input data**:
-- `tier0-computation/s28a_bogoliubov_coefficients.npz` (B_k(tau) for all sectors)
-- `tier0-computation/s28c_phonon_tmatrix.npz` (T-matrix at tau = 0.15, 0.35)
-- `tier0-computation/s28c_bcs_van_hove.npz` (Van Hove BCS gap Delta(tau))
-- `tier0-computation/s28c_luttinger.npz` (Luttinger K(tau) per sector)
-- `tier0-computation/s28c_steady_state_mu.npz` (n_gap(tau, d(tau)/dt))
-- `tier0-computation/s28a_spectral_action_comparison.npz` (I_E(tau) for D_K and D_can)
-- `tier0-computation/s28b_self_consistent_tau_T.npz` (F_total(tau, mu) landscape)
-- `tier0-computation/s23a_eigenvectors_extended.npz` (D_K eigenvectors for all sectors)
+- `computations/s28a_bogoliubov_coefficients.npz` (B_k(tau) for all sectors)
+- `computations/s28c_phonon_tmatrix.npz` (T-matrix at tau = 0.15, 0.35)
+- `computations/s28c_bcs_van_hove.npz` (Van Hove BCS gap Delta(tau))
+- `computations/s28c_luttinger.npz` (Luttinger K(tau) per sector)
+- `computations/s28c_steady_state_mu.npz` (n_gap(tau, d(tau)/dt))
+- `computations/s28a_spectral_action_comparison.npz` (I_E(tau) for D_K and D_can)
+- `computations/s28b_self_consistent_tau_T.npz` (F_total(tau, mu) landscape)
+- `computations/s23a_eigenvectors_extended.npz` (D_K eigenvectors for all sectors)
 - Session 25 spectral entropy data (`s25_hawking_computations.py` outputs)
 
 ## Motivation
@@ -49,7 +49,7 @@ All four require the backreaction computation (29Ab). This sub-session produces 
 Every result classified against its pre-registered gate BEFORE any interpretation. Report the number first. Classify second. Interpret third.
 
 **Python environment**: `"phonon-exflation-sim/.venv312/Scripts/python.exe"`
-**Output directory**: `tier0-computation/`
+**Output directory**: `computations/`
 **Script prefix**: `s29a_`
 
 ## PRE-SESSION GATE
@@ -77,7 +77,7 @@ Session ends ONLY when user approves shutdown explicitly. Idle agents are not fi
 
 | Agent | Additional Reading |
 |:------|:-------------------|
-| phonon-exflation-sim | `tier0-computation/s28c_phonon_tmatrix.py` (T-matrix infrastructure to extend), `tier0-computation/s28c_steady_state_mu.py` (n_gap interpolation) |
+| phonon-exflation-sim | `computations/s28c_phonon_tmatrix.py` (T-matrix infrastructure to extend), `computations/s28c_steady_state_mu.py` (n_gap interpolation) |
 | hawking-theorist | `researchers/Hawking/index.md` Papers 03 (Four Laws), 07 (Gibbons-Hawking), 11 (Bekenstein Entropy). `s25_hawking_computations.py` (spectral entropy data) |
 | coordinator | This prompt Section V (pre-registered Constraint Gates). Memorize ALL thresholds before first computation completes |
 
@@ -288,19 +288,19 @@ Results from 29Aa that feed into 29Ab:
 
 | File | Computation | Producer |
 |:-----|:-----------|:---------|
-| `tier0-computation/s29a_tmatrix_extension.py` | 29a-1 | phonon-sim |
-| `tier0-computation/s29a_tmatrix_extension.npz` | 29a-1 data | phonon-sim |
-| `tier0-computation/s29a_tmatrix_extension.png` | 29a-1 plot | phonon-sim |
-| `tier0-computation/s29a_derived_drive_rate.py` | 29a-2 | phonon-sim |
-| `tier0-computation/s29a_derived_drive_rate.npz` | 29a-2 data | phonon-sim |
-| `tier0-computation/s29a_derived_drive_rate.png` | 29a-2 plot | phonon-sim |
-| `tier0-computation/s29a_entropy_balance.py` | 29a-3 | hawking or phonon-sim |
-| `tier0-computation/s29a_entropy_balance.npz` | 29a-3 data | hawking or phonon-sim |
-| `tier0-computation/s29a_entropy_balance.png` | 29a-3 plot | hawking or phonon-sim |
-| `tier0-computation/s29a_inter_sector_coupling.py` | 29a-4 | phonon-sim |
-| `tier0-computation/s29a_inter_sector_coupling.npz` | 29a-4 data | phonon-sim |
-| `tier0-computation/s29a_inter_sector_coupling.png` | 29a-4 plot | phonon-sim |
-| `tier0-computation/s29a_gate_verdicts.txt` | All gate verdicts | coordinator |
+| `computations/s29a_tmatrix_extension.py` | 29a-1 | phonon-sim |
+| `computations/s29a_tmatrix_extension.npz` | 29a-1 data | phonon-sim |
+| `computations/s29a_tmatrix_extension.png` | 29a-1 plot | phonon-sim |
+| `computations/s29a_derived_drive_rate.py` | 29a-2 | phonon-sim |
+| `computations/s29a_derived_drive_rate.npz` | 29a-2 data | phonon-sim |
+| `computations/s29a_derived_drive_rate.png` | 29a-2 plot | phonon-sim |
+| `computations/s29a_entropy_balance.py` | 29a-3 | hawking or phonon-sim |
+| `computations/s29a_entropy_balance.npz` | 29a-3 data | hawking or phonon-sim |
+| `computations/s29a_entropy_balance.png` | 29a-3 plot | hawking or phonon-sim |
+| `computations/s29a_inter_sector_coupling.py` | 29a-4 | phonon-sim |
+| `computations/s29a_inter_sector_coupling.npz` | 29a-4 data | phonon-sim |
+| `computations/s29a_inter_sector_coupling.png` | 29a-4 plot | phonon-sim |
+| `computations/s29a_gate_verdicts.txt` | All gate verdicts | coordinator |
 | `sessions/session-29/session-29Aa-synthesis.md` | Synthesis | coordinator |
 
 ---

@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 183,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1821",
+      "anchor_type": "data_provenance",
+      "name": "w10_anti_correspondence_30_registry",
+      "script_path": "session-85/s85_w10_anti_correspondence_30_registry.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-85/s85_w10_anti_correspondence_30_registry.py",
+      "source_context_30_lines": "   76: EXP_K0_RANK = 3                                                  # (local)\n   77: EXP_KO6_TORSION = 2                                              # (local) Z/2 torsion encoded as 2\n   78: EXP_K0_TORSION = 0                                               # (local) framework K_0 torsion-free\n   79: EXP_WITTEN_INTEGRAL = 16.0                                       # (local)\n   80: EXP_WITTEN_REQUIRED = 1.0                                        # (local)\n   81: EXP_MOD_8_KO = 0                                                 # (local) 16 mod 8 = 0, not 1\n   82: EXP_MOD_2_K = 0                                                  # (local) 16 mod 2 = 0, not 1\n   83: \n   84: OUT_JSON = resolve_output(85, 's85_w10_anti_correspondence_30_registry.json')\n   85: OUT_MEMORY_PATCH = resolve_script(85, 's85_w10_anti_correspondence_30_MEMORY_PATCH.md')\n   86: OUT_REGISTRY_PATCH = resolve_script(85, 's85_w10_anti_correspondence_30_REGISTRY_PATCH.md')\n   87: VERDICT_TXT = resolve_output(85, 's85_gate_verdicts.txt')\n   88: \n   89: \n   90: def sha256_of(p: Path) -> str:\n   91:     try:\n   92:         return hashlib.sha256(p.read_bytes()).hexdigest()"
+    },
+    {
+      "anchor_id": "prov_1822",
+      "anchor_type": "data_provenance",
+      "name": "w10_r842_physical_anchor_reaudit",
+      "script_path": "session-85/s85_w10_r842_physical_anchor_reaudit.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-85/s85_w10_r842_physical_anchor_reaudit.py",
+      "source_context_30_lines": "<name 'w10_r842_physical_anchor_reaudit' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S85 W10-2 — S85-W10-R842-PHYSICAL-ANCHOR-REAUDIT ([AUDIT])\n    4: ===========================================================\n    5: \n    6: LOCKOUT-C rectangle-anchor audit for R_842 in the DESI DR3 (w_0, w_a)\n    7: plane. Per plan §W10-2, the audit verifies:\n    8: \n    9:   (1) LOCKOUT-C rectangle unchanged — R_842 canonical = [-0.942,-0.742]\n   10:       × [-0.2, 0.2]; center (-0.842, 0); half-widths (0.100, 0.200).\n   11:   (2) DR3 2026-04-23 response wiring still references R_842 by its\n   12:       canonical SHA and does not attempt to resize the rectangle.\n   13:   (3) V.1 regulator-conditional branch table (if W6 V.1 has landed\n   14:       in the plan-expected schema; otherwise mark pin\n   15:       `<pending-W6-V.1>` per dispatch-not-halt discipline).\n   16: \n   17: Pre-registered threshold (plan session-85-plan-w10.md §W10-2):\n   18:   PASS iff LOCKOUT-C verified unchanged AND (addendum lands canonically\n   19:     with V.1 branch table if V.1 is available, OR V.1-agnostic portion\n   20:     lands and addendum carries a `<pending-W6-V.1>` flag).\n   21:   FAIL iff ANY rectangle resize attempted OR LOCKOUT-C violated OR DR3\n   22:     wiring no longer references the canonical R_842 geometry.\n   23:   INFO iff V.1 available but branch-table row count is not exactly 2\n   24:     (schema change needing upstream adjudication).\n   25: \n   26: Classification: GEOMETRIC (R_842 is a rectangle in (w_0, w_a); the\n   27: physical anchor ties it to the substrate's DeWitt-superspace structure\n   28: through the late-time Penrose-diagram class).\n   29: \"\"\"\n   30: "
+    },
+    {
+      "anchor_id": "prov_1823",
+      "anchor_type": "data_provenance",
+      "name": "w10_tau_fold_van_hove_theorem",
+      "script_path": "session-85/s85_w10_tau_fold_van_hove_theorem.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-85/s85_w10_tau_fold_van_hove_theorem.py",
+      "source_context_30_lines": "  124: EXP_dS_FOLD = 58672.80241318                                     # (local)\n  125: EXP_S_FOLD = 250360.67696101                                     # (local)\n  126: EXP_d2S_FOLD = 317862.84898132                                   # (local)\n  127: \n  128: # Tolerance thresholds\n  129: PASS_ABS_TOL = 1e-10                                             # (local) strict\n  130: INFO_REL_TOL = 0.005                                             # (local) 0.5%\n  131: \n  132: OUT_JSON = resolve_output(85, 's85_w10_tau_fold_van_hove_theorem.json')\n  133: OUT_REGISTRY_PATCH = resolve_script(85, 's85_w10_tau_fold_REGISTRY_PATCH.md')\n  134: VERDICT_TXT = resolve_output(85, 's85_gate_verdicts.txt')\n  135: \n  136: \n  137: def sha256_of(p: Path) -> str:\n  138:     try:\n  139:         return hashlib.sha256(p.read_bytes()).hexdigest()\n  140:     except OSError:"
+    },
+    {
+      "anchor_id": "prov_1824",
+      "anchor_type": "data_provenance",
+      "name": "w10_w0_inverted_branch_enumeration",
+      "script_path": "session-85/s85_w10_w0_inverted_branch_enumeration.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w10_w0_inverted_branch_enumeration.npz, session-85/s85_w10_w0_inverted_branch_enumeration.png",
+      "source_file": "computations/session-85/s85_w10_w0_inverted_branch_enumeration.py",
+      "source_context_30_lines": "  115: CONVENTION = \"CM-2008-s3-Mellin-cone\"\n  116: L_MAX = 12                                                       # (local)\n  117: \n  118: # Pre-registered thresholds\n  119: STABILITY_BAND = 0.10                                            # (local) 10% RATIO\n  120: XI_J = 0.008911                                                  # (local) TB-pinned, L-indep\n  121: TARGET_L = [8, 10, 12]                                           # (local) plan-pinned\n  122: \n  123: OUT_NPZ = resolve_output(85, 's85_w10_w0_inverted_branch_enumeration.npz')\n  124: OUT_JSON = resolve_output(85, 's85_w10_w0_inverted_branch_enumeration.json')\n  125: OUT_PNG = resolve_output(85, 's85_w10_w0_inverted_branch_enumeration.png')\n  126: VERDICT_TXT = resolve_output(85, 's85_gate_verdicts.txt')\n  127: \n  128: \n  129: def sha256_of(p: Path) -> str:\n  130:     try:\n  131:         return hashlib.sha256(p.read_bytes()).hexdigest()"
+    },
+    {
+      "anchor_id": "prov_1825",
+      "anchor_type": "data_provenance",
+      "name": "w10_witten_alternative_parents",
+      "script_path": "session-85/s85_w10_witten_alternative_parents.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w10_witten_alternative_parents.png",
+      "source_file": "computations/session-85/s85_w10_witten_alternative_parents.py",
+      "source_context_30_lines": "  108: # Framework obstruction targets (from S84-W7-74 NPZ, kaku agent memory)\n  109: FW_K0_RANK = 3                                                   # (local) rank K_0(A_F) = 3\n  110: FW_TORSION_CLASS = \"Z/2\"                                         # (local) KO^6(pt)\n  111: FW_WITTEN_INTEGRAL = 16                                          # (local) ch_0·A-roof = 16\n  112: WITTEN_REQUIRED_INTEGRAL = 1                                     # (local) single brane\n  113: WITTEN_KO_BOTT_PERIOD = 8                                        # (local)\n  114: WITTEN_K_BOTT_PERIOD = 2                                         # (local)\n  115: \n  116: OUT_JSON = resolve_output(85, 's85_w10_witten_alternative_parents.json')\n  117: OUT_PNG = resolve_output(85, 's85_w10_witten_alternative_parents.png')\n  118: VERDICT_TXT = resolve_output(85, 's85_gate_verdicts.txt')\n  119: \n  120: \n  121: def sha256_of(p: Path) -> str:\n  122:     try:\n  123:         return hashlib.sha256(p.read_bytes()).hexdigest()\n  124:     except OSError:"
+    },
+    {
+      "anchor_id": "prov_1826",
+      "anchor_type": "data_provenance",
+      "name": "w11_base_pontryagin_parity_preserve",
+      "script_path": "session-85/s85_w11_base_pontryagin_parity_preserve.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w11_base_pontryagin_parity_preserve.npz, session-85/s85_w11_base_pontryagin_parity_preserve.png",
+      "source_file": "computations/session-85/s85_w11_base_pontryagin_parity_preserve.py",
+      "source_context_30_lines": "  367: existing = VERDICT_FILE.read_text(encoding=\"utf-8\") if VERDICT_FILE.exists() else \"\"\n  368: if f\"content_sha256={content_sha}\" in existing:\n  369:     print(f\"Verdict line already present (content_sha256={content_sha[:16]}...); skipping append.\")\n  370: else:\n  371:     with open(VERDICT_FILE, \"a\", encoding=\"utf-8\") as f:\n  372:         f.write(verdict_line + \"\\n\")\n  373:     print(f\"Verdict line appended to: {VERDICT_FILE}\")\n  374: \n  375: out_npz = Path(__file__).parent / \"s85_w11_base_pontryagin_parity_preserve.npz\"\n  376: np.savez_compressed(\n  377:     out_npz,\n  378:     scan_points=SCAN_POINTS,\n  379:     delta_parities=delta_parities,\n  380:     p1_densities=p1_densities,\n  381:     max_delta_parity=max_delta_parity,\n  382:     flat_delta=flat_delta,\n  383:     A_tensor_pin=A_TENSOR_NORM_SQ_S61,"
+    },
+    {
+      "anchor_id": "prov_1827",
+      "anchor_type": "data_provenance",
+      "name": "w11_epsh_jensen_survival",
+      "script_path": "session-85/s85_w11_epsh_jensen_survival.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w11_epsh_jensen_survival.npz, session-85/s85_w11_epsh_jensen_survival.png",
+      "source_file": "computations/session-85/s85_w11_epsh_jensen_survival.py",
+      "source_context_30_lines": "  437: existing = VERDICT_FILE.read_text(encoding=\"utf-8\") if VERDICT_FILE.exists() else \"\"\n  438: if f\"content_sha256={content_sha}\" in existing:\n  439:     print(f\"Verdict line already present (content_sha256={content_sha[:16]}...); skipping append.\")\n  440: else:\n  441:     with open(VERDICT_FILE, \"a\", encoding=\"utf-8\") as f:\n  442:         f.write(verdict_line + \"\\n\")\n  443:     print(f\"Verdict line appended to: {VERDICT_FILE}\")\n  444: \n  445: out_npz = Path(__file__).parent / \"s85_w11_epsh_jensen_survival.npz\"\n  446: np.savez_compressed(\n  447:     out_npz,\n  448:     tau_grid=tau_grid,\n  449:     h_ratios=h_ratios,\n  450:     cocycles=cocycles,\n  451:     delta_GV=dGVs,\n  452:     dixmiers=dixmiers,\n  453:     dh_dtau=dh_dtau,"
+    },
+    {
+      "anchor_id": "prov_1828",
+      "anchor_type": "data_provenance",
+      "name": "w11_fiber_group_parity_classify",
+      "script_path": "session-85/s85_w11_fiber_group_parity_classify.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w11_fiber_group_parity_classify.npz",
+      "source_file": "computations/session-85/s85_w11_fiber_group_parity_classify.py",
+      "source_context_30_lines": "  345: existing = VERDICT_FILE.read_text(encoding=\"utf-8\") if VERDICT_FILE.exists() else \"\"\n  346: if f\"content_sha256={content_sha}\" in existing:\n  347:     print(f\"Verdict line already present (content_sha256={content_sha[:16]}...); skipping append.\")\n  348: else:\n  349:     with open(VERDICT_FILE, \"a\", encoding=\"utf-8\") as f:\n  350:         f.write(verdict_line + \"\\n\")\n  351:     print(f\"Verdict line appended to: {VERDICT_FILE}\")\n  352: \n  353: out_npz = Path(__file__).parent / \"s85_w11_fiber_group_parity_classify.npz\"\n  354: np.savez_compressed(\n  355:     out_npz,\n  356:     group_names=np.array([r[\"name\"] for r in classification]),\n  357:     dim_R=np.array([r[\"dim_R\"] for r in classification]),\n  358:     parities=np.array([r[\"dim_mod_2\"] for r in classification]),\n  359:     labels=np.array([r[\"label\"] for r in classification]),\n  360:     n_preserve=n_preserve,\n  361:     n_flip=n_flip,"
+    },
+    {
+      "anchor_id": "prov_1829",
+      "anchor_type": "data_provenance",
+      "name": "w11_ncg_meta_exclusion_certify",
+      "script_path": "session-85/s85_w11_ncg_meta_exclusion_certify.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w11_ncg_meta_exclusion_certify.npz",
+      "source_file": "computations/session-85/s85_w11_ncg_meta_exclusion_certify.py",
+      "source_context_30_lines": "  421: existing = VERDICT_FILE.read_text(encoding=\"utf-8\") if VERDICT_FILE.exists() else \"\"\n  422: if f\"content_sha256={content_sha}\" in existing:\n  423:     print(f\"Verdict line already present (content_sha256={content_sha[:16]}...); skipping append.\")\n  424: else:\n  425:     with open(VERDICT_FILE, \"a\", encoding=\"utf-8\") as f:\n  426:         f.write(verdict_line + \"\\n\")\n  427:     print(f\"Verdict line appended to: {VERDICT_FILE}\")\n  428: \n  429: out_npz = Path(__file__).parent / \"s85_w11_ncg_meta_exclusion_certify.npz\"\n  430: np.savez_compressed(\n  431:     out_npz,\n  432:     n_corollaries_derived=n_corollaries_derived,\n  433:     n_corollaries_tested=n_corollaries_tested,\n  434:     parity_derives=corollary_P[\"derives_cleanly\"],\n  435:     rank_derives=corollary_R[\"derives_cleanly\"],\n  436:     w0_classification=w0_candidate[\"classification\"],\n  437:     lemmas_independent=lemmas_independent,"
+    },
+    {
+      "anchor_id": "prov_1830",
+      "anchor_type": "data_provenance",
+      "name": "w11_s5_convergence_audit",
+      "script_path": "session-85/s85_w11_s5_convergence_audit.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w11_s5_convergence_audit.npz",
+      "source_file": "computations/session-85/s85_w11_s5_convergence_audit.py",
+      "source_context_30_lines": "  479: if f\"content_sha256={content_sha}\" in existing:\n  480:     print(f\"Verdict line already present (content_sha256={content_sha[:16]}...); skipping append.\")\n  481: else:\n  482:     with open(VERDICT_FILE, \"a\", encoding=\"utf-8\") as f:\n  483:         f.write(verdict_line + \"\\n\")\n  484:     print(f\"Verdict line appended to: {VERDICT_FILE}\")\n  485: \n  486: # Reconciliation table as .md\n  487: out_md = Path(__file__).parent / \"s85_w11_s5_convergence_audit_table.md\"\n  488: md_lines = []\n  489: md_lines.append(\"# S85 W11-2 Reconciliation Table\")\n  490: md_lines.append(\"\")\n  491: md_lines.append(f\"**Verdict**: {verdict}\")\n  492: md_lines.append(f\"**n_substantive_disagreements**: {n_substantive_disagreements}\")\n  493: md_lines.append(f\"**Delta-class counts**: (a)={n_a}, (b)={n_b}, (c-reconciled)={n_c_rec}, (c-unreconciled)={n_c_unr}, (d)={n_d}\")\n  494: md_lines.append(\"\")\n  495: md_lines.append(\"| # | Claim | Connes | Lizzi | VdD | Δ-class | Reconciliation |\")"
+    }
+  ]
+}

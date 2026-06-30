@@ -1,0 +1,289 @@
+{
+  "_gate_id": "S88-CF-CURV-15-CARDOSO-PANI-ECHO-LISA-RINGDOWN",
+  "_wp_id": "S88-W1c-68",
+  "_scheme": "LISA-Kerr-quasinormal-mode-Cardoso-Pani-echo-search-asymmetric-falsifier-J3-lock-exact",
+  "_convention": "LISA-primary-mission-LRD-mass-range-10E5-10E8-Msun-Cardoso-Pani-echo-protocol-preregistration-S88-launch-2035",
+  "_L_max": "N/A_observational",
+  "_random_seed": 271828,
+  "_classification": "NON-PHONONIC (observational protocols)",
+  "_substrate_framing": "The substrate IS the horizon. LISA measures gravitational-wave strain IN the spacecraft constellation; the horizon at lock-exact IS the substrate spectral cell with NO sub-pixel structure. Cardoso-Pani echoes ARE the predicted absence of sub-pixel reflection under J3 lock-exact (or the predicted presence under lock-approximate alternatives). Direction: substrate spectral cell at horizon IS lock-exact -> emergent ringdown = pure Kerr-quasinormal-mode -> LISA observable strain. Inverting (treating horizon as external geometry) is a container-thinking violation per phononic-framing.md.",
+  "step_1_j3_lock_exact_prediction": {
+    "lock_condition_equation": "r_s = L_pix(t_form)",
+    "schwarzschild_radius_form": "r_s = 2 G M / c^2",
+    "lock_exact_reflection": "R(omega) = 0 identically",
+    "lock_exact_echo_amplitude": "A_echo = 0",
+    "asymmetric_falsifier": true,
+    "pass_null_meaning": "consistent with lock-exact; does NOT confirm (structurally weak)",
+    "fail_meaning": "falsifies lock-exact (structurally strong)",
+    "info_meaning": "3sigma <= SNR < 5sigma; marginal; extended-mission stacking required",
+    "j3_workshop_cite": "S87 pixelation-lock workshop \u00a7J3 (BH-horizon-pixelation-lock; PROVEN substrate level)",
+    "cardoso_pani_2019_ack": "\u00a75 acknowledged limitation: PASS-NULL does not confirm exact-zero reflection"
+  },
+  "step_2_ringdown_template": {
+    "kerr_qnm_modes": [
+      "(l,m,n)=(2,2,0) dominant",
+      "(l,m,n)=(3,3,0) sub-dominant"
+    ],
+    "berti_09_calibration": "Berti+09 Phys. Rev. D 79, 064031; tabulated dimensionless QNM frequencies + damping times",
+    "spin_grid_a_over_M": [
+      0.0,
+      0.5,
+      0.9,
+      0.998
+    ],
+    "Mw_R_220_grid": [
+      0.3737,
+      0.4641,
+      0.6716,
+      0.9466
+    ],
+    "Mw_I_220_grid": [
+      -0.089,
+      -0.0846,
+      -0.0649,
+      -0.022
+    ],
+    "Mw_R_330_grid": [
+      0.5994,
+      0.7505,
+      1.0936,
+      1.5325
+    ],
+    "Mw_I_330_grid": [
+      -0.0927,
+      -0.0883,
+      -0.0686,
+      -0.0252
+    ],
+    "interpolation": "linear in a/M",
+    "fiducial": {
+      "M_Msun": 10000000.0,
+      "a_over_M": 0.7,
+      "f_220_Hz": 0.0018343948901711762,
+      "tau_220_s": 659.0976039003309,
+      "f_330_Hz": 0.002978610211292301,
+      "tau_330_s": 628.0120572536614
+    }
+  },
+  "step_3_cardoso_pani_echo_template": {
+    "echo_train_formula": "h_n(t) = A_echo * R_eff^n * exp(-(t - n*t_echo)/tau_220) * cos(2*pi*f_220*(t - n*t_echo))",
+    "reflection_coefficient": "R(omega) = exp(-omega^2 / Lambda_echo^2)",
+    "spectral_average": "R_eff = exp(-(f_220 / Lambda_echo)^2)",
+    "echo_delay_formula": "t_echo = factor * M * log(M / M_Pl) * G / c^3",
+    "echo_count_per_train": 5,
+    "primary_cite": "Cardoso+16 Phys. Rev. D 94 084031",
+    "secondary_cite": "Cardoso-Pani 2019 Living Rev. Rel. 22 \u00a75",
+    "asymmetric_falsifier_acknowledged_limitation": "Cardoso-Pani 2019 \u00a75: PASS-NULL does not confirm exact-zero reflection; only FAIL falsifies lock-exact"
+  },
+  "step_4_lisa_sensitivity": {
+    "sensitivity_curve_id": "LISA SciRD v1 (2021)",
+    "primary_cite": "Amaro-Seoane+22 yellow-book \u00a73.1",
+    "arm_length_L_m": 2500000000.0,
+    "transfer_freq_f_star_Hz": 0.01909,
+    "P_OMS_m2_per_Hz": 1e-22,
+    "P_acc_m2_per_s4_per_Hz": 9e-30,
+    "form_used": "S_0 * [(f/f_star)^(-4/3) + (f/f_star)^(4/3) + 1]; analytic protocol-pre-registration approximation; full SciRD v1 in pipeline implementation",
+    "S_0_Hz_inv": 1e-41,
+    "f_star_Hz": 0.005,
+    "freq_range_Hz": [
+      0.0001,
+      1.0
+    ]
+  },
+  "step_5_matched_filter_pipeline": {
+    "inner_product": "(h|h) = 4 * Re int_0^inf h_tilde*(f) * h_tilde(f) / S_n(f) df",
+    "fft_method": "numpy.fft.rfft (real signals) at 4096 samples * dt",
+    "snr_definition": "rho = sqrt((data - Kerr-template | echo-template))",
+    "null_hypothesis_H0": "post-ringdown LISA strain = pure Kerr QNM template + Poisson noise (lock-exact)",
+    "alt_hypothesis_H1": "post-ringdown LISA strain has frequency-dependent residual matching Cardoso-Pani echo template at A_echo > 0",
+    "test_statistic": "matched-filter SNR of (data - Kerr-template) against echo template at (t_echo, Lambda_echo) grid",
+    "bonferroni_correction": "applied across 12 (t_echo, Lambda_echo) grid points",
+    "single_event_fid_snrs": {
+      "snr_pure_template_vs_pure": 2.961845916820546e+21,
+      "snr_pure_template_vs_lock": 2.961845916820546e+21,
+      "snr_pure_template_vs_fw": 2.961845916820546e+21,
+      "snr_echo_template_vs_resid_lock": 0.0,
+      "snr_echo_template_vs_resid_fw": 0.0
+    }
+  },
+  "step_6_t_echo_Lambda_echo_grid": {
+    "t_echo_factors": [
+      1.0,
+      2.0,
+      5.0,
+      10.0
+    ],
+    "Lambda_echo_factors": [
+      0.1,
+      1.0,
+      10.0
+    ],
+    "grid_size": 12,
+    "echo_delay_formula": "t_echo = factor * M * log(M/M_Pl) * G / c^3",
+    "lambda_formula": "Lambda_echo = factor * M_BH (geometric units; in Hz, divide by 2*pi*M_seconds)",
+    "grid_max_snr_h0": 0.0,
+    "grid_max_snr_h1": 0.0
+  },
+  "step_7_pass_fail_info_bands": {
+    "PASS_NULL_FUTURE": {
+      "criterion": "matched-filter SNR < 5sigma at all (t_echo, Lambda_echo) grid points across N_events >= 10",
+      "structural_meaning": "consistent with J3 lock-exact; preserves substrate's pixelation-lock cascade structure",
+      "asymmetry_caveat": "structurally weak: does NOT confirm lock-exact (a finite reflection below LISA SNR floor is also consistent)",
+      "framework_prediction_under_lock_exact": "rho_stack = 0 at all grid pts; PASS-NULL is the framework's prediction"
+    },
+    "FAIL_FUTURE": {
+      "criterion": "matched-filter SNR >= 5sigma at any (t_echo, Lambda_echo) grid point in any single ringdown event",
+      "structural_meaning": "FALSIFIES J3 lock-exact (sub-pixel reflection at grid point directly contradicts R(omega)=0)",
+      "asymmetry_strength": "structurally strong: HIGH-LEVERAGE FAIL of lock-exact; opens reanalysis for lock-approximate at specific Lambda_echo"
+    },
+    "INFO_FUTURE": {
+      "criterion": "3sigma <= matched-filter SNR < 5sigma at any (t_echo, Lambda_echo) grid point",
+      "structural_meaning": "marginal; primary mission inconclusive; carry-forward to extended-mission stacking"
+    },
+    "asymmetric_falsifier_discipline_PRE_REGISTERED": true,
+    "asymmetric_falsifier_explicit_statement": "PASS-NULL is consistent with lock-exact but does NOT confirm it (structurally weak); FAIL falsifies lock-exact (structurally strong). This asymmetry is intrinsic to the lock-exact null hypothesis and is the canonical observational-falsifier shape for substrate-cohomological-lock predictions. Cardoso-Pani 2019 \u00a75 acknowledged limitation."
+  },
+  "step_8_sn_forecast": {
+    "grid_points": [
+      {
+        "A_echo": 0.01,
+        "N_events": 10,
+        "rho_1_single_event": 10.0,
+        "rho_echo_single": 0.1,
+        "rho_stack": 0.316227766016838,
+        "band": "PASS_NULL_<3sigma_lock_exact_consistent",
+        "tag": "marginal_low"
+      },
+      {
+        "A_echo": 0.05,
+        "N_events": 30,
+        "rho_1_single_event": 30.0,
+        "rho_echo_single": 1.5,
+        "rho_stack": 8.215838362577491,
+        "band": "FAIL_FUTURE_>=5sigma",
+        "tag": "fail_future_band_firewall_realistic"
+      },
+      {
+        "A_echo": 0.1,
+        "N_events": 50,
+        "rho_1_single_event": 50.0,
+        "rho_echo_single": 5.0,
+        "rho_stack": 35.35533905932738,
+        "band": "FAIL_FUTURE_>=5sigma",
+        "tag": "fail_future_band_firewall_strong"
+      }
+    ],
+    "single_event_rho_range": [
+      10.0,
+      100.0
+    ],
+    "echo_amplitude_range": [
+      0.01,
+      0.1
+    ],
+    "stacking_floor_N_events": 10,
+    "stacking_ceiling": 50,
+    "five_sigma_floor": 5.0,
+    "three_sigma_floor": 3.0,
+    "lock_exact_prediction": "rho_stack = 0 at all grid points (PASS-NULL)",
+    "firewall_prediction": "rho_stack > 5sigma at A_echo>=0.05 with N>=30 (FAIL-FUTURE)"
+  },
+  "step_9_detector_horizon": {
+    "lisa_launch": "Q4 2035 \u00b1 12 months (LISA Consortium 2017 SP-L3-RFP-CDF-022)",
+    "commissioning": "L+0.5 yr",
+    "primary_mission_duration_yr": 4,
+    "extended_mission_duration_yr": 6,
+    "first_ringdown_analysis": "~Q4 2036",
+    "primary_close": "~2040",
+    "extended_close": "~2046+",
+    "expected_event_rate_per_yr": [
+      5,
+      50
+    ],
+    "expected_redshift_range_z": [
+      0,
+      3
+    ]
+  },
+  "step_10_j3_workshop_cross_link": {
+    "workshop_path": "sessions\\session-87\\workshops\\s87-pixelation-lock-hawking-transit.md",
+    "workshop_sha256": "7b07e77a9cb894ef7b396b77a08899df3a2ef4621990be58ddb5ebb6fa1cae14",
+    "workshop_section": "\u00a7J3 BH-horizon-pixelation-lock; PROVEN at substrate level (Stage-0 workshop-internal); PROMOTED Stage-1-CANDIDATE at \u00a7VII.AM (S88 W1b2-65)",
+    "registry_pointer": "sessions/permanent-results-registry.md \u00a7VII.AM Universal Lock Condition (Substrate Horizon-Trigger Theorem) STAGE-1-CANDIDATE"
+  },
+  "step_11_falsifier_inventory_row_prepared": {
+    "row_label": "S88-CF-CURV-15-Cardoso-Pani-echo-LISA-ringdown",
+    "row_text": "| LISA primary-mission ringdown waveform-template echo-search across 10^5-10^8 M_sun BH ringdowns | substrate J3 lock-exact \u21d2 A_echo = 0 (rho_stack=0 at all (t_echo, Lambda_echo) grid points across N_events>=10) | SUBSTRATE-IS: substrate spectral cell at horizon IS lock-exact (no sub-pixel structure to reflect); LABORATORY-IN: LISA gravitational-wave strain matched-filter SNR (data - Kerr-template) vs Cardoso-Pani echo template at 12-pt (t_echo, Lambda_echo) grid + 3-pt (A_echo, N_events) forecast grid | ASYMMETRIC FALSIFIER: PASS-NULL=weak; FAIL-FUTURE>=5sigma=strong falsification of lock-exact | LISA primary mission ~2036+ first ringdown candidate; primary close ~2040; extended ~2046+ |",
+    "writer": "mack-cosmic-bridge (sole writer per feedback_mack-bridge-role.md)",
+    "writer_dispatch_target": "S88+ wave (mack consolidation pass)",
+    "row_inputs_for_mack": {
+      "predicted_value": "rho_stack=0 at A_echo=0 (J3 lock-exact); rho_stack ranges per forecast grid",
+      "asymmetric_band": "PASS-NULL <3sigma; INFO 3-5sigma; FAIL >=5sigma",
+      "detector": "LISA primary mission (3-spacecraft 2.5 Gm interferometer; 4-yr primary + 6-yr extended)",
+      "source_population": "10^5 - 10^8 M_sun BH ringdowns (LRD-mass range; Greene+24 + Akins+24 fallback if \u00a7W1a-58 not landed)",
+      "rate": "5-50 events/yr at z=0-3 (Amaro-Seoane+22 \u00a76.2)",
+      "horizon": "first ringdown candidate analysis ~Q4 2036; primary close ~2040; extended ~2046+"
+    }
+  },
+  "step_12_lrd_mass_range": {
+    "M_min_Msun": 100000.0,
+    "M_max_Msun": 100000000.0,
+    "M_grid_Msun": [
+      100000.0,
+      1000000.0,
+      10000000.0,
+      100000000.0
+    ],
+    "primary_source": "\u00a7W1a-58 if landed-before-dispatch",
+    "fallback_source": "Greene+24 + Akins+24 LRD population pins",
+    "fallback_used": true,
+    "lrd_population_cite_greene_24": "Greene+24 Astron. Astrophys. 'JWST overmassive BHs in LRDs'",
+    "lrd_population_cite_akins_24": "Akins+24 'JWST LRDs at z>4: BH-mass forecast'",
+    "redshift_range_z": [
+      4,
+      8
+    ]
+  },
+  "step_13_substitution_chain": {
+    "Step_1_definitions": [
+      "J3 lock condition: r_s = L_pix(t_form), r_s = 2GM/c^2",
+      "Under lock-exact: R(omega) = 0 (no sub-pixel structure)",
+      "Cardoso-Pani echo amplitude A_echo ~ R(omega) in firewall models",
+      "Single-event ringdown SNR rho_1 ~ 10-100 at z=1 (Amaro-Seoane+22)",
+      "Echo amplitude A_echo ~ 1e-2 - 1e-1 in firewall (Cardoso+16)",
+      "Echo single-event SNR rho_echo,1 = A_echo * rho_1 ~ 0.1-10",
+      "Stacked SNR: rho_stack = sqrt(N_events) * rho_echo,1"
+    ],
+    "Step_2_substitution_at_three_grid_points": [
+      "(0.01, 10) at rho_1=10: rho_stack = sqrt(10) * 0.01 * 10 = 0.316",
+      "(0.05, 30) at rho_1=30: rho_stack = sqrt(30) * 0.05 * 30 = 8.216",
+      "(0.10, 50) at rho_1=50: rho_stack = sqrt(50) * 0.10 * 50 = 35.355"
+    ],
+    "Step_3_simplify": [
+      "Under lock-exact (A_echo = 0): rho_stack = 0 at all grid pts -> PASS-NULL",
+      "Under firewall (A_echo >= 0.05) at N_events >= 30: rho_stack > 5sigma -> FAIL-FUTURE"
+    ],
+    "Step_4_direction": [
+      "PASS-NULL (rho < 5sigma everywhere): consistent with lock-exact but NOT confirmation (asymmetric, structurally weak)",
+      "FAIL (rho >= 5sigma at any grid point): falsifies lock-exact (structurally strong)",
+      "INFO: 3sigma <= rho < 5sigma at any grid pt (marginal; extended-mission stacking required)"
+    ],
+    "Conclusion": "Pipeline is structurally adequate at A_echo>=0.05 with N_events>=30; marginal at (A_echo=0.01, N_events=10). The asymmetric-falsifier discipline is intrinsic to the lock-exact null hypothesis."
+  },
+  "input_pins": {
+    "canonical_constants_py_sha256": "1ed312f415caa1ddbffb76c560f982ca10dac8c210905c89018f8542984c5c52",
+    "session_88_plan_w1c_md_sha256": "b6279a612dc09d26fe017c136acdcb03c79899093bd18dd721e54f8095d017b9",
+    "phononic_framing_md_sha256": "d40c9ff843c1e2a863b503c863d4b6db7bc3af22468edfefb63d7e7de857aff3",
+    "falsifier_master_inventory_md_sha256": "9524e0808462bd3218cafb743a28359ad0a2047bb46bf1d65a51f01fc43b3db6",
+    "j3_workshop_md_sha256": "7b07e77a9cb894ef7b396b77a08899df3a2ef4621990be58ddb5ebb6fa1cae14",
+    "this_script_sha256": "219fa198875a2ff865a6558e157ce9d9da6310d2f8c1fad71958afb741ffb584"
+  },
+  "canonical_pin_cross_validation": {
+    "M_KK_GeV": 7.428660036284456e+16,
+    "tau_fold": 0.19,
+    "Delta_BCS": 0.4642547394830737,
+    "G_N_SI": 6.6743e-11,
+    "c_light_SI": 299792458.0,
+    "hbar_SI": 1.054571817e-34
+  }
+}

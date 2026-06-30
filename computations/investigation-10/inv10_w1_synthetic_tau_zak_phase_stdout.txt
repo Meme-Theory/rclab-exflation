@@ -1,0 +1,62 @@
+Ainulindale: Unknown command line argument 'Exflation\phonon-exflation-sim\.venv312\Lib\site-packages\_rocm_sdk_core\lib\llvm\bin\offload-arch.exe'.  Try: 'C:\sandbox\Ainulindale --help'
+=== INV10-W1-4-SYNTHETIC-TAU-ZAK-PHASE — input SHA-256 pins ===
+  computations/_shared/canonical_constants.py: ef6243dba5784ba9...
+  computations/_shared/dirac_spectrum.py: dadba674e950fad9...
+  audit_sha256   = 569daa2edfd1ee7b0d5e57222687e19ebeb97d69aa001c840c780a5c97c5b0a5
+  content_sha256 = 3710ad7df263911dba4f6cadc4021eeafdb0630de80a1b6d9c8b8ee1cf6eea47
+==============================================================================
+INV10-W1-4-SYNTHETIC-TAU-ZAK-PHASE: Synthetic-(tau) Zak-phase winding around the tau_fold touching
+==============================================================================
+  tau-loop: [0.15, 0.25] enclosing tau_fold=0.19, N_tau=200
+  L_max=10 (max_pq_sum=3); scheme=SA; convention=MIXED
+  GPU available: True
+  eps-sweep (S46-dissolving): [0.01, 0.001, 0.0001], N_real=8, seed=173410
+  fold index in grid: 80 (tau=0.19020)
+  sector (0, 0): min zero-straddle gap over probe = 1.637270e+00
+  sector (1, 0): min zero-straddle gap over probe = 1.666313e+00
+  sector (0, 1): min zero-straddle gap over probe = 1.666313e+00
+  sector (1, 1): min zero-straddle gap over probe = 1.740178e+00
+
+  TOUCHING SECTOR (minimal gap near fold): (0, 0)
+
+------------------------------------------------------------------------------
+  SECTOR (0, 0): building D_K(tau) band structure over the tau-loop
+------------------------------------------------------------------------------
+    sector dim = 16 (block-diagonal Peter-Weyl block)
+    band-touching pair (sorted idx): [7, 8], gap at fold = 1.639455e+00
+    [Wilson product, non-Abelian det, pair [7, 8]]
+      gamma_closed/pi = -0.000000   det(W_closed)=1.000000+0.000000j
+      gamma_open/pi   = +1.000000   det(W_open)  =-1.000000-0.000000j
+    [Wilson product, Abelian single band 7]
+      gamma_ab_closed/pi = +0.000000  det=1.000000-0.000000j
+      gamma_ab_open/pi   = -0.000000  det=1.000000+0.000000j
+    [S48-pathology finite-difference estimator, CONTRAST]
+      gamma_fd_closed/pi = +0.000000
+      gamma_fd_open/pi   = -0.000000
+    [W5 distinctness] max|Im(QGT)| (local Berry curvature witness) = 2.441e+00
+    [reality] max|Im(eigvec)| after global-phase fix = 4.690e-01
+    eps=1e-02: Wilson gamma_closed/pi mean=+0.0021 std=0.0347; gamma_open/pi mean=-0.2130 std=0.5927; [FD-pathology gamma/pi std=0.0260]
+    eps=1e-03: Wilson gamma_closed/pi mean=+0.0003 std=0.0005; gamma_open/pi mean=+0.2467 std=0.8239; [FD-pathology gamma/pi std=0.0003]
+    eps=1e-04: Wilson gamma_closed/pi mean=-0.0000 std=0.0000; gamma_open/pi mean=+0.1253 std=0.7800; [FD-pathology gamma/pi std=0.0000]
+
+==============================================================================
+  VERDICT LOGIC (set-membership PROTECTED)
+==============================================================================
+  primary winding (OPEN forward holonomy across fold), sector (0, 0): gamma/pi = +1.000000
+    nearest integer*pi = 1; quant deviation = 0.0000 (win 0.05) -> quantized=True
+    nonzero (~pi)? True
+    eps-sweep max drift = 1.2130*pi, max within-eps spread = 0.8239*pi (win 0.05) -> eps_stable=False
+    [contrast] S48-pathology FD estimator eps-spread = 0.0260*pi
+  PROTECTED = quantized AND eps_stable = False
+  W5 distinctness: local Berry curvature max|Im(QGT)| = 2.441e+00 (~0 => GLOBAL winding is a DIFFERENT object)
+
+  GATE INV10-W1-4-SYNTHETIC-TAU-ZAK-PHASE: FAIL
+    value = DISSOLVES_under_eps-sweep_drift=1.213pi_spread=0.824pi
+
+  elapsed: 23.2s
+  saved plot: C:\sandbox\Ainulindale Exflation\computations\investigation-10\inv10_w1_synthetic_tau_zak_phase.png
+  saved data: C:\sandbox\Ainulindale Exflation\computations\investigation-10\inv10_w1_synthetic_tau_zak_phase.npz
+(value='DISSOLVES_under_eps-sweep_drift=1.213pi_spread=0.824pi', scheme=SA, convention=MIXED, L_max=10)
+<<<EMIT_VERDICT_PAYLOAD>>>
+{"audit_sha256":"569daa2edfd1ee7b0d5e57222687e19ebeb97d69aa001c840c780a5c97c5b0a5","companion_note":"synthetic-(tau) Zak winding gamma/pi=+1.0000 sector (0, 0); PROTECTED=False (quantized=True, eps-stable=False); distinct from W5(Omega=0 local) & S46/S48(k-space FD, retracted)","content_sha256":"3710ad7df263911dba4f6cadc4021eeafdb0630de80a1b6d9c8b8ee1cf6eea47","convention":"MIXED","extra_rows":["# INV10-W1-4 distinctness: synthetic-(tau) Wilson product != S46/S48 k-space FD Zak (trace_entity 'synthetic tau Zak phase'=No-trace); local Berry curvature max|Im(QGT)|=2.44e+00 confirms W5 Omega~0 (GLOBAL winding is a distinct observable)","# INV10-W1-4 eps-protection: Wilson gamma/pi open=+1.0000 max-drift=1.2130pi max-spread=0.8239pi vs S48-FD-pathology spread=0.026pi over eps[0.01, 0.001, 0.0001]"],"gate_id":"INV10-W1-4-SYNTHETIC-TAU-ZAK-PHASE","l_max":"10","schema_version":"S84+","scheme":"SA","session":10,"value":"DISSOLVES_under_eps-sweep_drift=1.213pi_spread=0.824pi","verdict":"FAIL"}
+<<<END_EMIT_VERDICT_PAYLOAD>>>

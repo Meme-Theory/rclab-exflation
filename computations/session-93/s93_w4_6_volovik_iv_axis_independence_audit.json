@@ -1,0 +1,97 @@
+{
+  "gate_id": "S93-W4-6-FWD-C5-K2-SUBSTRATE-DISTANCE-3-POLE-S5-CARDINALITY-CASCADE-SHOULDER",
+  "audit_role": "CO-AUTHOR (volovik-superfluid-universe-theorist) — (iv) algebraic-envelope-axis independence audit",
+  "audit_scope": "Hybrid Independence Test clause (iv) ONLY (the load-bearing independence clause): is the FWD-C5 K=2 cardinality-cascade-SHOULDER envelope (substrate-distance-3 pole s=5, rising-shoulder regime g in [80,143)) an INDEPENDENT algebraic envelope, NOT a numerical refinement of the K=1 baseline §VII.AX.OP-PROJ envelope (substrate-distance-2 pole s=4, saturated-tail regime g >= 143)?",
+  "clause_iv_definition": "per cross-pillar-bridge-anatomy.md §'Hybrid Independence Test' clause (iv): 'independent algebraic envelope — not a numerical refinement of an existing K-instance's envelope.'",
+  "audit_axis": "substrate / superfluid-universe (the cascade-generation edge-density physics + the per-pole regulator-invariant envelope structure)",
+
+  "verdict_clause_iv": "PASS",
+  "verdict_summary": "Clause (iv) PASS. The substrate-distance-3 pole s=5 cascade-shoulder envelope is structurally DISTINCT from the substrate-distance-2 pole s=4 §VII.AX.OP-PROJ baseline envelope on THREE independent regulator-invariant structural grounds; it is NOT a numerical refinement.",
+
+  "structural_distinctness_grounds": {
+    "ground_1_per_pole_envelope_exponent": {
+      "description": "Canonical regulator-invariant per-pole Hochschild/Wodzicki asymptotic envelope exponent alpha(s). The convergence rate L^{-alpha(s)} differs by pole.",
+      "alpha_s4_canonical": 4.0,
+      "alpha_s4_provenance": "knowledge-MCP get_constant('alpha_HH1_per_pole_FW_s4') = 4.0; gate S92-W7-CF-W9-10-B-SUBSTRATE-IS-ALPHA-S-PER-POLE-EXPONENT-TABLE-M3C; Superseded=False",
+      "alpha_s5_canonical": 6.0,
+      "alpha_s5_provenance": "knowledge-MCP get_constant('alpha_HH1_per_pole_FW_s5') = 6.0; gate S92-W7-CF-W9-10-B-SUBSTRATE-IS-ALPHA-S-PER-POLE-EXPONENT-TABLE-M3C; §VII.BB STAGE-1-CANDIDATE per S91 §W9; Superseded=False",
+      "closed_form_law": "alpha(s) = 2*(s-2); Sage-verified against canonical anchors alpha(s=2)=0, alpha(s=4)=4, alpha(s=5)=6, alpha(s=6)=8 (all match)",
+      "exponent_gap": 2,
+      "envelope_form_s4": "L^{-4}",
+      "envelope_form_s5": "L^{-6}",
+      "regulator_invariant": true,
+      "finding": "alpha(s=5)=6 != alpha(s=4)=4. The s=5 envelope L^{-6} is NOT the s=4 envelope L^{-4} at finer numerical resolution — it is a DIFFERENT convergence rate. A numerical refinement holds alpha FIXED and improves the numerical anchor; this CHANGES alpha by an integer 2."
+    },
+    "ground_2_wodzicki_homogeneity_degree": {
+      "description": "Wodzicki-residue homogeneity degree deg(s) = -2s (per cross-pillar-bridge-anatomy.md §'Composite Bridge-Map Dimensional-Class Admissibility'). deg is an index-type invariant, non-deformable in moduli (Wodzicki uniqueness; Connes 1994 §2.3).",
+      "deg_s4": -8,
+      "deg_s5": -10,
+      "finding": "deg(s=4)=-8 != deg(s=5)=-10. Distinct index-type invariants. No continuous (numerical-refinement) deformation connects s=4 and s=5 — the homogeneity degree is non-deformable in moduli, so the two envelopes inhabit structurally distinct dimensional classes."
+    },
+    "ground_3_g_functional_form": {
+      "description": "Functional dependence of the edge-count on cascade-generation g. The shoulder regime and the saturated tail have DIFFERENT functional forms of g, not the same form at finer resolution.",
+      "shoulder_edge_count": "n_edge(g) = 2^g (rising; g in [80,143))",
+      "saturated_edge_count": "n_edge = C(N_eigs, 2) = N_eigs*(N_eigs-1)/2 (g-INDEPENDENT; g >= 143)",
+      "d_shoulder_dg": "2^g * log(2)  (nonzero -> rising)",
+      "d_saturated_dg": "0  (flat -> saturated)",
+      "finding": "The shoulder cardinality functional 2^g is rising (d/dg != 0); the saturated-tail functional C(N_eigs,2) is g-independent (d/dg = 0). A numerical refinement PRESERVES functional form; the shoulder->tail transition CHANGES it. The shoulder is the PRE-saturation regime where the cascade is still doubling; the tail is the POST-saturation regime where the spectral cardinality has filled. These are physically distinct cascade phases, not the same observable at two resolutions."
+    }
+  },
+
+  "deterministic_restriction_tension_resolved": {
+    "tension": "knowledge-MCP (session-92-plan-w6.md equation) describes the shoulder as 'a deterministic restriction of the saturated form to g < g_saturate=143'. If the shoulder is a 'restriction' of the SAME saturated closed form, could its envelope be a numerical refinement?",
+    "resolution": "NO. 'Deterministic restriction' refers to the DOMAIN of g (the shoulder is the g<143 sub-domain), NOT to the envelope's structural class. The envelope is governed by the per-pole exponent alpha(s) and the Wodzicki degree deg(s), which are pole-keyed (s=5 vs s=4), regulator-invariant, and integer-distinct (grounds 1 + 2). The functional form of the cardinality is ALSO distinct (ground 3: 2^g rising vs C(N,2) flat). A domain restriction does not make the envelope a numerical refinement: the numerical-refinement test asks whether two envelopes have the SAME structural class (same alpha, same deg) at different numerical precision; here both the structural class AND the functional form differ. The 'restriction' framing is a parametrization-of-domain statement, orthogonal to the (iv) independence determination."
+  },
+
+  "hybrid_independence_test_context": {
+    "clause_i_distinct_substrate_IS_subpillar": "YES — rising-shoulder regime (pre-saturation cascade, s=5) vs saturated-tail (s=4); distinct pole + distinct regime",
+    "clause_ii_distinct_laboratory_IN_pillar": "NO — same Pillar IX (CMB/LISA/PTA PBH detection)",
+    "clause_iii_distinct_bridge_map_class": "NO — same FWD-C5 cardinality-cascade bridge family",
+    "clause_iv_independent_algebraic_envelope": "YES — THIS audit; substrate-distance-3 pole s=5 envelope (alpha=6, deg=-10) structurally distinct from substrate-distance-2 pole s=4 envelope (alpha=4, deg=-8)",
+    "predicate": "(i=YES OR ii=NO OR iii=NO) AND iv=YES = (YES) AND (YES) = YES",
+    "note": "clause (iv) is the LOAD-BEARING conjunct: the predicate is (i OR ii OR iii) AND iv. Even with i=YES carrying the disjunction, iv MUST independently PASS for the K=2 advancement. This audit confirms iv=YES."
+  },
+
+  "scope_caveat_intra_vs_cross_pillar": {
+    "observation": "The cross-pillar-bridge-corpus.md §4 FWD-C5 baseline block (lines 200-206) already declared FWD-C5 clause (iv)=YES at the CROSS-PILLAR level (FWD-C5 vs FWD-C1/C2/C3: distinct lab-IN pillar, distinct bridge-map). That is a DIFFERENT and weaker (iv) determination.",
+    "this_audit": "The W4-6 (iv) audit is the INTRA-FWD-C5 independence: the s=5 shoulder envelope vs the s=4 saturated-tail envelope, WITHIN the FWD-C5 family. This is a STRONGER claim (same bridge-map family, same lab-pillar; the envelope must be distinct on POLE grounds alone).",
+    "both_hold": "Both the cross-pillar (iv) [§4 baseline] and the intra-FWD-C5 (iv) [this audit] are PASS. The W4-6 corpus §4 K=2 row mack lands MUST scope its (iv)=YES to the intra-FWD-C5 pole-distinctness (s=5 vs s=4), so the K=2 advancement is unambiguously the substrate-distance-3-pole shoulder instance, NOT a re-statement of the cross-pillar baseline."
+  },
+
+  "anti_double_count_cross_check": {
+    "w4_6_corpus_axis": "FWD-C5 corpus §4 (substrate-distance-3 pole s=5 shoulder)",
+    "w4_2_corpus_axis": "§VII.AX.MULTI-PIN-ATLAS bridge-map-scheme axis (corpus §3/§10/§17; substrate-distance-2 pole s=4 chi' restriction)",
+    "distinct": true,
+    "finding": "W4-6 (s=5 FWD-C5 §4) and W4-2 (s=4 MULTI-PIN-ATLAS §3/§10/§17) advance DIFFERENT corpus K-counters on STRUCTURALLY DISTINCT axes (distinct pole s=5 vs s=4; distinct corpus section). No double-count against a single K-counter, per mack §V.2 anti-inflation cross-check and the Hybrid Independence Test."
+  },
+
+  "knowledge_mcp_queries": [
+    {"query": "search_knowledge('FWD-C5 cardinality cascade PBH substrate-distance pole Hybrid Independence Test')", "salient_return": "FWD-C5 landed K=1->K=2 cross-PILLAR; shoulder n_PBH_shoulder(g) is 'deterministic restriction of saturated form to g<143' (session-92-plan-w6.md)"},
+    {"query": "trace_entity('FWD-C5')", "salient_return": "FWD-C5 bridge family registered at corpus §4; STAGE-2 verify queued; S92 forward-calibration-instances gate closed PRE-REG-INC (axis_a E2 FAIL — now re-emitted by W4-1)"},
+    {"query": "search_knowledge('substrate-distance pole s=4 s=5 Mellin residue Casimir-bound envelope distinct alpha per-pole')", "salient_return": "canonical edges: alpha_HH1_per_pole_FW_s4 (alpha=4, sd-2 pole), alpha_HH1_per_pole_FW_s5 (alpha=6, sd-3 pole, §VII.BB); per-pole exponents are regulator-invariant Wodzicki/Connes-derived"},
+    {"query": "get_constant('alpha_HH1_per_pole_FW_s4')", "salient_return": "4.0; gate S92-W7-CF-W9-10-B; Superseded=False"},
+    {"query": "get_constant('alpha_HH1_per_pole_FW_s5')", "salient_return": "6.0; gate S92-W7-CF-W9-10-B; §VII.BB STAGE-1-CANDIDATE; Superseded=False"}
+  ],
+
+  "sage_cross_check": {
+    "backend": "sagecell",
+    "alpha_law": "alpha(s)=2*(s-2) matches all canonical anchors {s2:0, s4:4, s5:6, s6:8}",
+    "alpha_s4": 4,
+    "alpha_s5": 6,
+    "alpha_equal": false,
+    "deg_s4": -8,
+    "deg_s5": -10,
+    "deg_equal": false,
+    "shoulder_form": "2^g (d/dg = 2^g*log(2), nonzero)",
+    "saturated_form": "1/2*(N-1)*N (d/dg = 0)"
+  },
+
+  "rationale_one_line": "(iv) PASS: the s=5 cascade-shoulder envelope (L^{-6}, Wodzicki deg -10, edge-count 2^g rising) is regulator-invariantly distinct from the s=4 saturated-tail envelope (L^{-4}, Wodzicki deg -8, edge-count C(N_eigs,2) flat) on three independent structural grounds — a distinct Mellin-cone pole, not a numerical refinement of the K=1 baseline.",
+
+  "rules_cited": [
+    ".claude/rules/cross-pillar-bridge-anatomy.md §'Hybrid Independence Test' (clause iv definition)",
+    ".claude/rules/cross-pillar-bridge-anatomy.md §'Composite Bridge-Map Dimensional-Class Admissibility' (Wodzicki degree -2s, index-type invariant non-deformable in moduli)",
+    ".claude/rules/cross-pillar-bridge-anatomy.md §'Per-Bulletin-per-pole Level-1 wall classification' (distinct substrate-distance pole index => distinct Level-2 envelope alpha(s))",
+    ".claude/rules/phononic-framing.md §'IS Space, Not IN Space' (substrate IS the spectral triple; the per-pole envelope is intrinsic)"
+  ]
+}

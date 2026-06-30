@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 143,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1421",
+      "anchor_type": "data_provenance",
+      "name": "b1_tensor_mixing",
+      "script_path": "session-75/s75_b1_tensor_mixing.py",
+      "session": "s75",
+      "inputs": "",
+      "outputs": "session-75/s75_b1_tensor_mixing.npz, session-75/s75_b1_tensor_mixing.png",
+      "source_file": "computations/session-75/s75_b1_tensor_mixing.py",
+      "source_context_30_lines": "   20:   - S63 T2: Breathing mode exclusion (delta g^K_ab = h(x) g^K_ab -> 4D scalar)\n   21:   - S63 T3: Kasparov decoupling (beta_T = 0 at linear order)\n   22:   - Volume-preserving Jensen flow: det(g_K) = const\n   23: \n   24: The computation determines P_scalar(B1), P_tensor(B1), P_vector(B1) from\n   25: representation theory and the KK reduction, then recomputes A_s with the\n   26: corrected projection.\n   27: \n   28: Output: s75_b1_tensor_mixing.npz, s75_b1_tensor_mixing.png\n   29: \"\"\"\n   30: \n   31: import sys\n   32: import os\n   33: sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))\n   34: \n   35: import numpy as np\n   36: import matplotlib"
+    },
+    {
+      "anchor_id": "prov_1422",
+      "anchor_type": "data_provenance",
+      "name": "bdi_all_tau",
+      "script_path": "session-75/s75_bdi_all_tau.py",
+      "session": "s75",
+      "inputs": "",
+      "outputs": "session-75/s75_bdi_all_tau.npz",
+      "source_file": "computations/session-75/s75_bdi_all_tau.py",
+      "source_context_30_lines": "  392:     else:\n  393:         verdict = \"FAIL\"\n  394:         print(f\"\\n  VERDICT: FAIL\")\n  395:         print(f\"  Pfaffian computation produced unexpected result.\")\n  396: \n  397:     # ======================================================================\n  398:     #  Save results\n  399:     # ======================================================================\n  400:     npz_path = os.path.join(SCRIPT_DIR, 's75_bdi_all_tau.npz')  # (local)\n  401:     np.savez(\n  402:         npz_path,\n  403:         tau_values=np.array(results['tau']),\n  404:         sgn_pf=np.array(results['sgn_pf']),\n  405:         pf_real=np.array(results['pf_real']),\n  406:         pf_imag=np.array(results['pf_imag']),\n  407:         asym_rel=np.array(results['asym_rel']),\n  408:         pf_sq_det_err=np.array(results['pf_sq_det_err']),"
+    },
+    {
+      "anchor_id": "prov_1423",
+      "anchor_type": "data_provenance",
+      "name": "bdspt_tau_scan",
+      "script_path": "session-75/s75_bdspt_tau_scan.py",
+      "session": "s75",
+      "inputs": "",
+      "outputs": "session-75/s75_bdspt_tau_scan.npz",
+      "source_file": "computations/session-75/s75_bdspt_tau_scan.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s75_bdspt_tau_scan.py -- S75-F5-BDSPT-TAU-SCAN (S75 Wave 3)\n    4: ================================================================================\n    5: \n    6: Tau Scan of Non-Perturbative J-Invariance of Euclidean Path Integral\n    7: ====================================================================\n    8: \n    9: Extends S74 W4-H (BDSPT-ANOMALY-74, |Z_J/Z - 1| = 5.82e-11 at tau=0.19)\n   10: to five tau values: {0.00, 0.10, 0.190, 0.25, 0.30}. Tests whether\n   11: non-perturbative J-invariance is tau-independent."
+    },
+    {
+      "anchor_id": "prov_1424",
+      "anchor_type": "data_provenance",
+      "name": "bma_ec_choice",
+      "script_path": "session-75/s75_bma_ec_choice.py",
+      "session": "s75",
+      "inputs": "s74_ec_resolution.npz",
+      "outputs": "session-75/s75_bma_ec_choice.npz",
+      "source_file": "computations/session-75/s75_bma_ec_choice.py",
+      "source_context_30_lines": "  644: print(\"  in both cases: the OES pair-addition gap (Method A) is the canonical\")\n  645: print(\"  observable for the charging energy budget.\")\n  646: print()\n  647: \n  648: # ============================================================================\n  649: #  Section 14: Save Data\n  650: # ============================================================================\n  651: \n  652: np.savez(\"s75_bma_ec_choice.npz\",\n  653:     # Gate metadata\n  654:     gate_name=\"S75-J1-BMA-EC\",\n  655:     gate_verdict_raw=gate_verdict,\n  656:     gate_verdict_corrected=gate_verdict_corr,\n  657:     gate_detail_raw=gate_detail,\n  658:     gate_detail_corrected=gate_detail_corr,\n  659:     gate_verdict_adopted=gate_verdict_corr,\n  660: "
+    },
+    {
+      "anchor_id": "prov_1425",
+      "anchor_type": "data_provenance",
+      "name": "boundary_bogoliubov",
+      "script_path": "session-75/s75_boundary_bogoliubov.py",
+      "session": "s75",
+      "inputs": "",
+      "outputs": "session-75/s75_boundary_bogoliubov.npz, session-75/s75_boundary_bogoliubov.png",
+      "source_file": "computations/session-75/s75_boundary_bogoliubov.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s75_boundary_bogoliubov.py -- S75-P5-BOUNDARY-BOG\n    4: ====================================================\n    5: \n    6: Gate: S75-P5-BOUNDARY-BOG\n    7:   PASS: Cross-channel production ratio computable and finite\n    8:   INFO: Ratio computable but regime-dependent\n    9:   FAIL: Channels do not mix at boundary\n   10: \n   11: Physics"
+    },
+    {
+      "anchor_id": "prov_1426",
+      "anchor_type": "data_provenance",
+      "name": "cc_double_index",
+      "script_path": "session-75/s75_cc_double_index.py",
+      "session": "s75",
+      "inputs": "",
+      "outputs": "session-75/s75_cc_double_index.npz",
+      "source_file": "computations/session-75/s75_cc_double_index.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s75_cc_double_index.py -- CC-DOUBLE-INDEX-75 (S75-D7-CC-DBL-IDX)\n    4: Joint (chi_2, n_b/n_f) Index for the Cosmological Constant at L_max = {5, 7, 10}\n    5: \n    6: STRUCTURAL CONTEXT\n    7: ------------------\n    8: The cosmological constant in the spectral action framework is:\n    9:     Lambda_CC ~ a_0 * M_KK^4\n   10: where a_0 is the zeroth Seeley-DeWitt coefficient (volume term).\n   11: "
+    },
+    {
+      "anchor_id": "prov_1427",
+      "anchor_type": "data_provenance",
+      "name": "cc_m2_spectral",
+      "script_path": "session-75/s75_cc_m2_spectral.py",
+      "session": "s75",
+      "inputs": "",
+      "outputs": "session-75/s75_cc_m2_spectral.npz, session-75/s75_cc_m2_spectral.png",
+      "source_file": "computations/session-75/s75_cc_m2_spectral.py",
+      "source_context_30_lines": "  530: print(\"     spectral invariants give the correct CC order of magnitude.\")\n  531: print(\"     This is the CC MECHANISM -- not any particular spectral moment.\")\n  532: print()\n  533: \n  534: # =============================================================================\n  535: # PART 9 -- Save results\n  536: # =============================================================================\n  537: \n  538: save_path = os.path.join(SCRIPT_DIR, \"s75_cc_m2_spectral.npz\")\n  539: \n  540: np.savez(save_path,\n  541:     # Key results at L=9\n  542:     chi_exp=chi_exp_L9,\n  543:     chi_exp_hk=chi_exp_hk_L9,\n  544:     chi_2=chi_2_L9,\n  545:     chi_2_ref=CHI_2_REF,\n  546:     ratio_exp_to_chi2=ratio_exp_to_chi2,"
+    },
+    {
+      "anchor_id": "prov_1428",
+      "anchor_type": "data_provenance",
+      "name": "cc_scheme_report",
+      "script_path": "session-75/s75_cc_scheme_report.py",
+      "session": "s75",
+      "inputs": "",
+      "outputs": "session-75/s75_cc_scheme_report.npz",
+      "source_file": "computations/session-75/s75_cc_scheme_report.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s75_cc_scheme_report.py — CC Scheme Comparison Report (S75-D5-CC-REPORT)\n    4: ========================================================================\n    5: \n    6: Documents the scheme comparison for the cosmological constant prediction:\n    7:   - a_0-scheme (S66 DILUTION-CC-66): L_max-sensitive, demoted PASS -> INFO\n    8:   - f*-scheme (chi_2 route, S74 HP4-PAIRING-74): L_max-robust, sole survivor\n    9: \n   10: Gate: S75-D5-CC-REPORT — PASS if documentation generated consistently.\n   11: "
+    },
+    {
+      "anchor_id": "prov_1429",
+      "anchor_type": "data_provenance",
+      "name": "cc_variance",
+      "script_path": "session-75/s75_cc_variance.py",
+      "session": "s75",
+      "inputs": "",
+      "outputs": "session-75/s75_cc_variance.npz, session-75/s75_cc_variance.png",
+      "source_file": "computations/session-75/s75_cc_variance.py",
+      "source_context_30_lines": "  484: print(f\"    tightly packed. This is a CONFIRMATION of the HP4 mechanism,\")\n  485: print(f\"    not an independent measurement.\")\n  486: print()\n  487: \n  488: # =============================================================================\n  489: # PART 8 -- Save and plot\n  490: # =============================================================================\n  491: \n  492: output_path = os.path.join(SCRIPT_DIR, \"s75_cc_variance.npz\")\n  493: np.savez(output_path,\n  494:     # Moments at each L_max (no cutoff)\n  495:     L_list=np.array(L_list),\n  496:     sigma2_arr=np.array([results_nocut[L][\"sigma2\"] for L in L_list]),\n  497:     mean_lam_arr=np.array([results_nocut[L][\"mean_lam\"] for L in L_list]),\n  498:     mean_lam2_arr=np.array([results_nocut[L][\"mean_lam2\"] for L in L_list]),\n  499:     cv_arr=np.array([results_nocut[L][\"cv\"] for L in L_list]),\n  500:     N_modes_arr=np.array([results_nocut[L][\"M0\"] for L in L_list]),"
+    },
+    {
+      "anchor_id": "prov_1430",
+      "anchor_type": "data_provenance",
+      "name": "cg24_tiling",
+      "script_path": "session-75/s75_cg24_tiling.py",
+      "session": "s75",
+      "inputs": "",
+      "outputs": "session-75/s75_cg24_tiling.npz",
+      "source_file": "computations/session-75/s75_cg24_tiling.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s75_cg24_tiling.py — CG(24) Cosmological Tiling Rule\n    4: =====================================================\n    5: Task: S75-N1-CG24-TILING (Task #54)\n    6: Agent: landau-condensed-matter-theorist\n    7: \n    8: Question: How does the CG(24) cell replicate in cosmological tiling?\n    9: Gate: Exactly 1 candidate tiling rule (PASS), 2-3 (INFO), >3 or 0 (FAIL).\n   10: \n   11: Physics:"
+    }
+  ]
+}

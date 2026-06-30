@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 33,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_321",
+      "anchor_type": "data_provenance",
+      "name": "higher_sector_crossings",
+      "script_path": "session-43/s43_higher_sector_crossings.py",
+      "session": "s43",
+      "inputs": "",
+      "outputs": "session-43/s43_higher_sector_crossings.npz, session-43/s43_higher_sector_crossings.png",
+      "source_file": "computations/session-43/s43_higher_sector_crossings.py",
+      "source_context_30_lines": "  306: \n  307: # =========================================================================\n  308: # STEP 7: Save data\n  309: # =========================================================================\n  310: print(\"\\n\" + \"-\" * 70)\n  311: print(\"STEP 7: Saving data\")\n  312: print(\"-\" * 70)\n  313: \n  314: save_path = os.path.join(base, 's43_higher_sector_crossings.npz')\n  315: \n  316: # Pack sector eigenvalues into a dict-friendly format\n  317: save_dict = {\n  318:     'tau_values': tau_values,\n  319:     'total_sign_crossings': total_sign_crossings,\n  320:     'global_min_abs_lambda': all_abs_min,\n  321:     'w12_gap': w12_gap,\n  322:     'verdict': verdict,"
+    },
+    {
+      "anchor_id": "prov_322",
+      "anchor_type": "data_provenance",
+      "name": "impedance_mismatch",
+      "script_path": "session-43/s43_impedance_mismatch.py",
+      "session": "s43",
+      "inputs": "",
+      "outputs": "session-43/s43_impedance_mismatch.npz, session-43/s43_impedance_mismatch.png",
+      "source_file": "computations/session-43/s43_impedance_mismatch.py",
+      "source_context_30_lines": "  856: print(f\"{'DR (cum, N=30, dtau=0.05, k=1)':<45} {DR_cum_30:>15.4f} {'decades':<15}\")\n  857: print(f\"{'HF-KK-42 sector DR':<45} {1.51:>15.2f} {'decades':<15}\")\n  858: print(f\"{'Combined HF + impedance':<45} {1.51+DR_analytic:>15.2f} {'decades':<15}\")\n  859: print(f\"{'Gate verdict':<45} {verdict:>15} {'':<15}\")\n  860: \n  861: # ============================================================\n  862: # 17. SAVE DATA\n  863: # ============================================================\n  864: outfile = base / \"s43_impedance_mismatch.npz\"\n  865: np.savez(outfile,\n  866:     # Gate\n  867:     verdict=np.array([verdict]),\n  868:     gate_DR_propagating=np.array([DR_analytic]),\n  869:     gate_DR_max_tunnel=np.array([max_DR]),\n  870:     gate_DR_max_sharp=np.array([max_DR_sharp]),\n  871:     gate_dtau_at_max=np.array([dtau_best]),\n  872:     gate_HF_DR=np.array([1.51]),"
+    },
+    {
+      "anchor_id": "prov_323",
+      "anchor_type": "data_provenance",
+      "name": "jodd_wall",
+      "script_path": "session-43/s43_jodd_wall.py",
+      "session": "s43",
+      "inputs": "",
+      "outputs": "session-43/s43_jodd_wall.npz, session-43/s43_jodd_wall.png",
+      "source_file": "computations/session-43/s43_jodd_wall.py",
+      "source_context_30_lines": "  511:     # Part 8: epsilon_CP\n  512:     'eps_CP_antilinear': eps_CP_antilinear,\n  513:     'eps_CP_eff_antilinear': eps_CP_eff_antilinear,\n  514: \n  515:     # Verdict\n  516:     'verdict': np.array(verdict),\n  517: }\n  518: \n  519: outpath = os.path.join(SCRIPT_DIR, \"s43_jodd_wall.npz\")\n  520: np.savez_compressed(outpath, **npz_data)\n  521: print(f\"\\n  Saved: {outpath}\")\n  522: \n  523: # ======================================================================\n  524: #  Plot\n  525: # ======================================================================\n  526: fig, axes = plt.subplots(2, 2, figsize=(14, 10))\n  527: fig.suptitle(\"JODD-WALL-43: J-Symmetry at Domain Wall  |  Verdict: FAIL (permanent closure)\","
+    },
+    {
+      "anchor_id": "prov_324",
+      "anchor_type": "data_provenance",
+      "name": "kk_cmb_transfer",
+      "script_path": "session-43/s43_kk_cmb_transfer.py",
+      "session": "s43",
+      "inputs": "computations/session-43/s43_kz_transfer.npz, computations/session-43/s43_lifshitz_class.npz",
+      "outputs": "session-43/s43_kk_cmb_transfer.npz, session-43/s43_kk_cmb_transfer.png",
+      "source_file": "computations/session-43/s43_kk_cmb_transfer.py",
+      "source_context_30_lines": "  480: print(f\"\\n  STATUS: epsilon_H is input. n_s is consistency check, NOT prediction.\")\n  481: print(f\"  First-sound ring IS a prediction (unique to substrate framework).\")\n  482: print(f\"  Pre-registerable: search for feature in xi(r) at r ~ {r_1:.0f} Mpc.\")\n  483: \n  484: # ============================================================\n  485: # 11. Save results\n  486: # ============================================================\n  487: \n  488: np.savez('computations/session-43/s43_kk_cmb_transfer.npz',\n  489:     # k grid and spectra\n  490:     k=k,\n  491:     P_k_standard=P_k_standard,\n  492:     P_k_total=P_k_total,\n  493:     Delta2_standard=Delta2_standard,\n  494:     Delta2_total=Delta2_total,\n  495:     T_standard=T_standard,\n  496:     T_total=T_total,"
+    },
+    {
+      "anchor_id": "prov_325",
+      "anchor_type": "data_provenance",
+      "name": "kz_cell_variants",
+      "script_path": "session-43/s43_kz_cell_variants.py",
+      "session": "s43",
+      "inputs": "",
+      "outputs": "session-43/s43_kz_cell_variants.npz, session-43/s43_kz_cell_variants.png",
+      "source_file": "computations/session-43/s43_kz_cell_variants.py",
+      "source_context_30_lines": "  888:     for n in N_CELL_VALUES:\n  889:         res = results_dict[n]\n  890:         key = f'n{n}'\n  891:         save_data[f'{key}_N_giant'] = res['N_giant']\n  892:         save_data[f'{key}_L_max'] = res['L_max']\n  893:         save_data[f'{key}_N_structures'] = res['N_structures']\n  894:         save_data[f'{key}_elapsed'] = np.array(res['elapsed'])\n  895: \n  896:     npz_path = 'computations/session-43/s43_kz_cell_variants.npz'\n  897:     np.savez(npz_path, **save_data)\n  898:     print(f\"\\nData saved to {npz_path}\")\n  899: \n  900:     # =========================================================================\n  901:     # Plot\n  902:     # =========================================================================\n  903:     plot_path = 'computations/session-43/s43_kz_cell_variants.png'\n  904:     make_plots(results_dict, slope, intercept, plot_path)"
+    },
+    {
+      "anchor_id": "prov_326",
+      "anchor_type": "data_provenance",
+      "name": "kz_transfer",
+      "script_path": "session-43/s43_kz_transfer.py",
+      "session": "s43",
+      "inputs": "",
+      "outputs": "session-43/s43_kz_transfer.npz, session-43/s43_kz_transfer.png",
+      "source_file": "computations/session-43/s43_kz_transfer.py",
+      "source_context_30_lines": " 1692:     'Z_fold': Z_fold,\n 1693: \n 1694:     # Parametric data for plotting\n 1695:     'epsilon_range': epsilon_range,\n 1696:     'n_s_range': n_s_range,\n 1697:     'r_single_field_range': r_single_field,\n 1698: }\n 1699: \n 1700: save_path = os.path.join(base, 's43_kz_transfer.npz')\n 1701: np.savez(save_path, **save_dict)\n 1702: print(f\"Data saved to {save_path}\")\n 1703: \n 1704: # =========================================================================\n 1705: # STEP 17: Generate plot\n 1706: # =========================================================================\n 1707: print(\"\\nGenerating plot...\")\n 1708: "
+    },
+    {
+      "anchor_id": "prov_327",
+      "anchor_type": "data_provenance",
+      "name": "lichnerowicz",
+      "script_path": "session-43/s43_lichnerowicz.py",
+      "session": "s43",
+      "inputs": "",
+      "outputs": "session-43/s43_lichnerowicz.npz, session-43/s43_lichnerowicz.png",
+      "source_file": "computations/session-43/s43_lichnerowicz.py",
+      "source_context_30_lines": "   21:     1. U(2)-invariant Sym^2_0(R^8) has dimension 2 (representation theory).\n   22:     2. Both basis tensors are automatically transverse (div = 0) at all tau.\n   23:     3. The rough Laplacian is NON-ZERO at tau > 0 (connection-squared fiber terms).\n   24:     4. The 2x2 Lichnerowicz problem is exact (no truncation).\n   25: \n   26: References:\n   27:     - Lauret (2021): On the Stability of Homogeneous Einstein Manifolds (Paper 37)\n   28:     - Schwahn (2023): Lichnerowicz Laplacian on Normal Homogeneous Spaces (Paper 39)\n   29:     - l20_lichnerowicz.py: Session 20b infrastructure (rough Laplacian, R/Ric endomorphisms)\n   30:     - r20a_riemann_tensor.py: Riemann tensor infrastructure\n   31: \n   32: Author: Baptista Spacetime Analyst (Session 43)\n   33: Date: 2026-03-14\n   34: \"\"\"\n   35: \n   36: import numpy as np\n   37: import sys"
+    },
+    {
+      "anchor_id": "prov_328",
+      "anchor_type": "data_provenance",
+      "name": "lifshitz_class",
+      "script_path": "session-43/s43_lifshitz_class.py",
+      "session": "s43",
+      "inputs": "",
+      "outputs": "session-43/s43_lifshitz_class.npz, session-43/s43_lifshitz_class.png",
+      "source_file": "computations/session-43/s43_lifshitz_class.py",
+      "source_context_30_lines": "  828:     'gate_verdict': np.array([gate_verdict]),\n  829:     'gate_reason': np.array([gate_reason]),\n  830:     'kz_ns_naive_mf': np.array([kz_ns_naive_mf]),\n  831:     'kz_ns_naive_xy': np.array([kz_ns_naive_xy]),\n  832:     'kz_ns_transfer': np.array([kz_ns_transfer]),\n  833:     'epsilon_H_needed': np.array([epsilon_needed]),\n  834: }\n  835: \n  836: save_path = os.path.join(base, 's43_lifshitz_class.npz')\n  837: np.savez(save_path, **save_dict)\n  838: print(f\"\\nResults saved to {save_path}\")\n  839: \n  840: # =========================================================================\n  841: # STEP 10: Generate plot\n  842: # =========================================================================\n  843: print(\"\\nGenerating plot...\")\n  844: "
+    },
+    {
+      "anchor_id": "prov_329",
+      "anchor_type": "data_provenance",
+      "name": "lrd_clustering",
+      "script_path": "session-43/s43_lrd_clustering.py",
+      "session": "s43",
+      "inputs": "",
+      "outputs": "session-43/s43_lrd_clustering.npz, session-43/s43_lrd_clustering.png",
+      "source_file": "computations/session-43/s43_lrd_clustering.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s43_lrd_clustering.py — LRD Clustering Bias Comparison (LRD-CLUST-43)\n    4: \n    5: Quantitatively compares measured LRD angular clustering with predictions\n    6: from three models:\n    7:   (a) Framework / standard CDM: b ~ 1.5-2.5\n    8:   (b) uSIDM (Roberts 2025, Paper 55): b_eff ~ 4.5\n    9:   (c) Low-spin CDM (Pacucci & Loeb 2025, Paper 42): b ~ 3-4\n   10: \n   11: Measured data from Carranza-Escudero et al. (2025, ApJL 989, L50; Paper 23):"
+    },
+    {
+      "anchor_id": "prov_330",
+      "anchor_type": "data_provenance",
+      "name": "mkk_posterior",
+      "script_path": "session-43/s43_mkk_posterior.py",
+      "session": "s43",
+      "inputs": "",
+      "outputs": "session-43/s43_mkk_posterior.npz, session-43/s43_mkk_posterior.png",
+      "source_file": "computations/session-43/s43_mkk_posterior.py",
+      "source_context_30_lines": "  749:     The Bayesian posterior assumes both are correct simultaneously,\n  750:     and the compromise is dominated by whichever has smaller uncertainty.\n  751: \"\"\")\n  752: \n  753: # ============================================================\n  754: # 12. SAVE DATA\n  755: # ============================================================\n  756: \n  757: np.savez(DATA_DIR / 's43_mkk_posterior.npz',\n  758:     # Grid\n  759:     log10_MKK=log10_MKK,\n  760:     MKK_grid=MKK_grid,\n  761:     N_grid=N_grid,\n  762:     dlog=dlog,\n  763:     # Posteriors\n  764:     p_joint=p_joint,\n  765:     p_alpha=p_alpha,"
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 49,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_481",
+      "anchor_type": "data_provenance",
+      "name": "ratio_correct",
+      "script_path": "session-47/s47_ratio_correct.py",
+      "session": "s47",
+      "inputs": "",
+      "outputs": "session-47/s47_ratio_correct.npz",
+      "source_file": "computations/session-47/s47_ratio_correct.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s47_ratio_correct.py -- RATIO-CORRECT-47\n    4: Corrects the S46 ratio of 2.19x (131/59.8) by constructing sector-matched\n    5: ratios where numerator and denominator come from the SAME sector.\n    6: \n    7: The problem with S46's ratio:\n    8:   - Numerator 131 = ALL PW-weighted pi-phases including B1 (15) and B3 (35)\n    9:   - Denominator 59.8 = ALL quasiparticle pairs from 992-mode sudden quench\n   10:   - These are apples and oranges: B1 has V(B1,B1)=0 (Trap 1) so its 15\n   11:     pi-phase channels are topologically available but dynamically inert"
+    },
+    {
+      "anchor_id": "prov_482",
+      "anchor_type": "data_provenance",
+      "name": "rhos_tensor",
+      "script_path": "session-47/s47_rhos_tensor.py",
+      "session": "s47",
+      "inputs": "",
+      "outputs": "session-47/s47_rhos_tensor.npz, session-47/s47_rhos_tensor.png",
+      "source_file": "computations/session-47/s47_rhos_tensor.py",
+      "source_context_30_lines": "  586: \n  587:     # =========================================================================\n  588:     # SAVE DATA\n  589:     # =========================================================================\n  590:     print(f\"\\n{'='*78}\")\n  591:     print(f\"  SAVING DATA\")\n  592:     print(f\"{'='*78}\")\n  593: \n  594:     npz_path = os.path.join(SCRIPT_DIR, 's47_rhos_tensor.npz')\n  595:     np.savez(npz_path,\n  596:              # Fold data\n  597:              rho_s_fold=rho_s_fold,\n  598:              rho_s_eigs_fold=rho_s_eigs_fold,\n  599:              rho_s_diag_fold=rho_diag_f,\n  600:              # Tau sweep\n  601:              tau_sweep=tau_sweep,\n  602:              rho_s_all=rho_s_all,"
+    },
+    {
+      "anchor_id": "prov_483",
+      "anchor_type": "data_provenance",
+      "name": "spectral_flow_ns",
+      "script_path": "session-47/s47_spectral_flow_ns.py",
+      "session": "s47",
+      "inputs": "",
+      "outputs": "session-47/s47_spectral_flow_ns.npz, session-47/s47_spectral_flow_ns.png",
+      "source_file": "computations/session-47/s47_spectral_flow_ns.py",
+      "source_context_30_lines": "  689: print(f\"\\n  -> Spectral flow inherits the same structural problem as pair creation:\")\n  690: print(f\"     eigenvalue span 2.5x across KK tower forces steep power law.\")\n  691: print(f\"     The spectral index is a property of the SPECTRUM, not the process.\")\n  692: \n  693: # ==============================================================================\n  694: # SECTION 15: Save data\n  695: # ==============================================================================\n  696: \n  697: output = base / 's47_spectral_flow_ns.npz'\n  698: np.savez(output,\n  699:     # Gate info\n  700:     gate_name='SPECTRAL-FLOW-NS-47',\n  701:     gate_verdict=verdict,\n  702: \n  703:     # 3-sector BdG energies and flow rates (60 tau points)\n  704:     tau_scan=tau_scan,\n  705:     E_B1=E_B1, E_B2=E_B2, E_B3=E_B3,"
+    },
+    {
+      "anchor_id": "prov_484",
+      "anchor_type": "data_provenance",
+      "name": "spectral_landscape",
+      "script_path": "session-47/s47_spectral_landscape.py",
+      "session": "s47",
+      "inputs": "s44_dos_tau.npz, s47_pi_sector.npz, s46_number_projected_bcs.npz",
+      "outputs": "session-47/s47_spectral_landscape.npz, session-47/s47_spectral_landscape.png",
+      "source_file": "computations/session-47/s47_spectral_landscape.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s47_spectral_landscape.py — Publication-quality spectral landscape of Jensen-deformed SU(3)\n    4: ===========================================================================================\n    5: \n    6: GATE: SPECTRAL-LANDSCAPE-47 (INFO — visualization task, no pass/fail)\n    7: \n    8: Shows all 992 Dirac eigenvalues at the fold (tau=0.19), annotated with:\n    9:   - Sector structure (B1/B2/B3) via rank ordering within each PW rep\n   10:   - Pi-phase topology from S47 W1-1 (13 states, PW-weighted)\n   11:   - BCS pairing information (gap edges, v² fractions)"
+    },
+    {
+      "anchor_id": "prov_485",
+      "anchor_type": "data_provenance",
+      "name": "texture_corr",
+      "script_path": "session-47/s47_texture_corr.py",
+      "session": "s47",
+      "inputs": "",
+      "outputs": "session-47/s47_texture_corr.npz, session-47/s47_texture_corr.png",
+      "source_file": "computations/session-47/s47_texture_corr.py",
+      "source_context_30_lines": "  602:      At fabric scale (s42): K_pivot = {K_pivot_Mpc/K_max_fabric:.1f}x K_max.\n  603:      CMB pivot is ABOVE tessellation Nyquist — probes within-cell.\n  604: \"\"\")\n  605: \n  606: # ===========================================================================\n  607: # Save data\n  608: # ===========================================================================\n  609: print(\"--- Saving ---\")\n  610: save_path = os.path.join(data_dir, 's47_texture_corr.npz')\n  611: np.savez(save_path,\n  612:     # Gate\n  613:     gate_name='TEXTURE-CORR-48',\n  614:     gate_verdict=verdict,\n  615:     # Parameters\n  616:     N_cells=N, l_cell=l_cell, L_total=L_total,\n  617:     xi_KZ=xi_KZ, xi_GL=xi_GL,\n  618:     T_compound=T_compound, T_acoustic=T_acoustic,"
+    },
+    {
+      "anchor_id": "prov_486",
+      "anchor_type": "data_provenance",
+      "name": "aniso_gap",
+      "script_path": "session-48/s48_aniso_gap.py",
+      "session": "s48",
+      "inputs": "",
+      "outputs": "session-48/s48_aniso_gap.npz, session-48/s48_aniso_gap.png",
+      "source_file": "computations/session-48/s48_aniso_gap.py",
+      "source_context_30_lines": "  167: \n  168:     return mode_dir_coupling, mode_energies, mode_sectors, pos_evals, pos_evecs, gammas\n  169: \n  170: \n  171: # =============================================================================\n  172: # MODULE 3: DIRECTION-DEPENDENT GAP ANSATZE\n  173: # =============================================================================\n  174: \n  175: def compute_aniso_gap(mode_dir_coupling, mode_energies, mode_sectors,\n  176:                        rho_s_diag, Delta_sectors):\n  177:     \"\"\"\n  178:     Compute direction-dependent effective gap for each BCS mode.\n  179: \n  180:     For each mode k, the \"dominant direction\" is the su(3) direction a\n  181:     with maximum coupling |<k|J_a|...>|^2. The effective gap is then\n  182:     modulated by rho_s in that direction.\n  183: "
+    },
+    {
+      "anchor_id": "prov_487",
+      "anchor_type": "data_provenance",
+      "name": "aniso_oz",
+      "script_path": "session-48/s48_aniso_oz.py",
+      "session": "s48",
+      "inputs": "",
+      "outputs": "session-48/s48_aniso_oz.npz, session-48/s48_aniso_oz.png",
+      "source_file": "computations/session-48/s48_aniso_oz.py",
+      "source_context_30_lines": "  836: print(f\"    5. The angular variation of n_s due to anisotropy is\")\n  837: print(f\"       {ns_std_angular:.4f} (0.4% of the spectral index)\")\n  838: print(f\"       — well below observational precision\")\n  839: \n  840: # ===========================================================================\n  841: # SAVE\n  842: # ===========================================================================\n  843: print(\"\\n--- Saving ---\")\n  844: save_path = os.path.join(data_dir, 's48_aniso_oz.npz')\n  845: np.savez(save_path,\n  846:     # Gate\n  847:     gate_name='ANISO-OZ-48',\n  848:     gate_verdict=verdict,\n  849: \n  850:     # Lattice parameters\n  851:     nx=nx, ny=ny, nz=nz, N_cells=N,\n  852:     J_xy=J_xy, J_z=J_z, J_C2=J_C2, J_su2=J_su2, J_u1=J_u1,"
+    },
+    {
+      "anchor_id": "prov_488",
+      "anchor_type": "data_provenance",
+      "name": "berry_complete",
+      "script_path": "session-48/s48_berry_complete.py",
+      "session": "s48",
+      "inputs": "",
+      "outputs": "session-48/s48_berry_complete.npz, session-48/s48_berry_complete.png",
+      "source_file": "computations/session-48/s48_berry_complete.py",
+      "source_context_30_lines": "   29:     2. SECTOR-RPQ-48: Sector-resolved BCS pair counts\n   30:     3. CONJUGATE-PI-48: (3,0)/(0,3) pi-phase gauge test\n   31:     4. PI-COUNT-21-48: (2,1) sector 5 pi-phases derivation\n   32:     5. PI-VANHOVE-48: Pi-phase states vs van Hove DOS peaks\n   33: \n   34: Gate: BERRY-COMPLETE-48 (INFO -- characterization batch)\n   35: \n   36: Input:  s46_berry_phase.npz, s48_wilson_loop.npz, s48_npair_full.npz, s44_dos_tau.npz\n   37: Output: s48_berry_complete.{npz,png}\n   38: \n   39: Author: berry-geometric-phase-theorist (Session 48 W5-B)\n   40: Date: 2026-03-17\n   41: \n   42: Citations:\n   43:     - Berry (1984): Proc. Roy. Soc. A 392, 45 [geometric phase]\n   44:     - S25: Berry curvature = 0 identically (anti-Hermiticity of Kosmann)\n   45:     - S46: 13 pi-phase states (Zak phase Z_2)"
+    },
+    {
+      "anchor_id": "prov_489",
+      "anchor_type": "data_provenance",
+      "name": "chi_q_phase",
+      "script_path": "session-48/s48_chi_q_phase.py",
+      "session": "s48",
+      "inputs": "computations/session-46/s46_qtheory_selfconsistent.npz, computations/session-35/s35_thouless_multiband.npz",
+      "outputs": "session-48/s48_chi_q_phase.npz",
+      "source_file": "computations/session-48/s48_chi_q_phase.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s48_chi_q_phase.py — q-theory susceptibility: phase vs amplitude decomposition\n    4: ===============================================================================\n    5: \n    6: Gate: CHI-Q-PHASE-48\n    7: \n    8: Physics:\n    9:   The q-theory vacuum energy rho_vac(tau) = E_spectral(tau) + E_cond(tau).\n   10: \n   11:   Amplitude susceptibility chi_tau = d^2 rho_vac / dtau^2"
+    },
+    {
+      "anchor_id": "prov_490",
+      "anchor_type": "data_provenance",
+      "name": "curv_extend",
+      "script_path": "session-48/s48_curv_extend.py",
+      "session": "s48",
+      "inputs": "",
+      "outputs": "session-48/s48_curv_extend.npz, session-48/s48_curv_extend.png",
+      "source_file": "computations/session-48/s48_curv_extend.py",
+      "source_context_30_lines": "    8:   2. CURV-ANISO-EXTEND-48: K_max/K_min to tau=1.0\n    9:   3. GL-FREE-ENERGY-48: F_GL(tau) from DOS + corrected V\n   10:   4. POMERANCHUK-CURV-48: Spontaneous distortion beyond Jensen\n   11:   5. Z3-WALL-48: Z_3 domain wall energy\n   12:   6. KZ-ANISO-48: Anisotropic KZ defect density\n   13: \n   14: Input: s47_curvature_anatomy.npz, s44_dos_tau.npz,\n   15:        s35_thouless_multiband.npz, s40_hessian_offjensen.npz\n   16: Output: s48_curv_extend.npz, s48_curv_extend.png\n   17: \n   18: Author: Gen-Physicist (Session 48)\n   19: Date: 2026-03-17\n   20: \"\"\"\n   21: \n   22: import numpy as np\n   23: import matplotlib\n   24: matplotlib.use('Agg')"
+    }
+  ]
+}

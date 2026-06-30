@@ -48,8 +48,8 @@ V_eff picks the row. Experiment checks the columns. **This session picks the row
 - **Tree-level V_tree** is monotonically decreasing (no minimum). Stabilization REQUIRES quantum corrections.
 
 ## What's missing (the "41 missing bosons"):
-The existing CW computation (`tier1_coleman_weinberg.py`) includes:
-- ✅ **Fermionic tower**: Full Dirac spectrum from `tier1_dirac_spectrum.py` (Peter-Weyl decomposition, all sectors up to p+q ≤ 6)
+The existing CW computation (`coleman_weinberg.py`) includes:
+- ✅ **Fermionic tower**: Full Dirac spectrum from `dirac_spectrum.py` (Peter-Weyl decomposition, all sectors up to p+q ≤ 6)
 - ✅ **4 C² gauge bosons**: Masses from Baptista eq 3.84 (non-Killing deformation)
 - ❌ **Scalar Laplacian on (SU(3), g_s)**: Eigenvalues of Δ₀ on the deformed manifold. These are bosonic KK modes.
 - ❌ **Vector Laplacian on (SU(3), g_s)**: Eigenvalues of the Hodge Laplacian Δ₁. Additional bosonic DOF.
@@ -86,17 +86,17 @@ The **sign difference** is critical. Bosons drive V_CW up; fermions drive it dow
    - Paper 17: Corollary 3.4 (D_K explicit), second fundamental form S
    - Paper 18: Scalar/vector Laplacian structure on deformed SU(3)
 
-6. **`tier0-computation/tier1_dirac_spectrum.py`** (~1580 lines) — The Peter-Weyl infrastructure. Your metric, your connection, your D_K.
+6. **`computations/dirac_spectrum.py`** (~1580 lines) — The Peter-Weyl infrastructure. Your metric, your connection, your D_K.
 
-7. **`tier0-computation/sp_metric_and_vtree.py`** — SP-1 + SP-4: explicit 8×8 metric and exact V_tree.
+7. **`computations/sp_metric_and_vtree.py`** — SP-1 + SP-4: explicit 8×8 metric and exact V_tree.
 
 ## Hawking-Theorist additionally:
 
-8. **`tier0-computation/tier1_coleman_weinberg.py`** (~47KB) — YOUR script from 17a. You know what's in it, what's missing, and what failed. **You are extending this.**
+8. **`computations/coleman_weinberg.py`** (~47KB) — YOUR script from 17a. You know what's in it, what's missing, and what failed. **You are extending this.**
 
-9. **`tier0-computation/tier1_cw_regularized.py`** (~32KB) — 6 regularization schemes + critical Λ scan.
+9. **`computations/cw_regularized.py`** (~32KB) — 6 regularization schemes + critical Λ scan.
 
-10. **`tier0-computation/tier1_spectral_free_energy.py`** (~32KB) — Spectral free energy. Thermodynamic interpretation.
+10. **`computations/spectral_free_energy.py`** (~32KB) — Spectral free energy. Thermodynamic interpretation.
 
 11. **`researchers/Hawking/`** — especially 03 (Four Laws), 07 (Gibbons-Hawking).
 
@@ -107,7 +107,7 @@ The **sign difference** is critical. Bosons drive V_CW up; fermions drive it dow
     - Vector (Hodge) Laplacian spectrum
     - Bosonic KK tower structure and multiplicity counting
 
-13. **`tier0-computation/tier1_spectral_action.py`** (~72KB) — Contains Seeley-DeWitt coefficients, heat kernel, gauge boson masses. Infrastructure for bosonic modes.
+13. **`computations/spectral_action.py`** (~72KB) — Contains Seeley-DeWitt coefficients, heat kernel, gauge boson masses. Infrastructure for bosonic modes.
 
 ## Connes-NCG-Theorist additionally:
 
@@ -116,7 +116,7 @@ The **sign difference** is critical. Bosons drive V_CW up; fermions drive it dow
     - 10 (Chamseddine-Connes-Marcolli: gravity + SM from spectral action)
     - 13 (Resilience of spectral standard model)
 
-15. **`tier0-computation/branching_computation_32dim.py`** (~1200 lines) — H_F = ℂ³², KO-dimension, spectral triple structure.
+15. **`computations/branching_computation_32dim.py`** (~1200 lines) — H_F = ℂ³², KO-dimension, spectral triple structure.
 
 ---
 
@@ -148,7 +148,7 @@ The existing computation has the full FERMIONIC KK tower (D_K eigenvalues via Pe
 - The scalar Laplacian Δ₀ on a group manifold has eigenvalues determined by the Casimir operator.
 - On bi-invariant (s=0) SU(3): eigenvalues λ_{(p,q)} = C₂(p,q)/R² where C₂ is the quadratic Casimir.
 - On Jensen-deformed SU(3): the metric is g_s = 3·diag(e^{-2s}×3, e^s×4, e^{2s}). How do the scalar Laplacian eigenvalues change?
-- **Peter-Weyl decomposition applies**: scalar functions decompose into irreps exactly as spinors do. The infrastructure in `tier1_dirac_spectrum.py` can be adapted.
+- **Peter-Weyl decomposition applies**: scalar functions decompose into irreps exactly as spinors do. The infrastructure in `dirac_spectrum.py` can be adapted.
 - **Multiplicity**: Each (p,q) irrep contributes dim(p,q)² scalar modes (matrix elements, not just characters).
 
 ### 2. Vector KK tower (Δ₁ = Hodge Laplacian on 1-forms)
@@ -166,9 +166,9 @@ The existing computation has the full FERMIONIC KK tower (D_K eigenvalues via Pe
 ```
 Plus: total bosonic DOF count. Confirm or correct the Weyl's law estimate of ~45.
 
-**KEY QUESTION**: Can the scalar Laplacian eigenvalues be computed using the SAME Peter-Weyl + Jensen metric infrastructure already in `tier1_dirac_spectrum.py`, just with the scalar representation instead of spinor? If yes, the computation is fast. If no, identify what additional infrastructure is needed.
+**KEY QUESTION**: Can the scalar Laplacian eigenvalues be computed using the SAME Peter-Weyl + Jensen metric infrastructure already in `dirac_spectrum.py`, just with the scalar representation instead of spinor? If yes, the computation is fast. If no, identify what additional infrastructure is needed.
 
-**Write to**: `tier0-computation/kk1_bosonic_tower.py`
+**Write to**: `computations/kk1_bosonic_tower.py`
 
 ---
 
@@ -187,7 +187,7 @@ You are the equation authority. Papers 15-18 contain the Laplacian structure on 
 - **Is this in Baptista's papers?** Check Paper 15 (V_eff structure) and Paper 18 (spectral action expansion). If Baptista gives the scalar Laplacian eigenvalues on deformed SU(3), extract the formula.
 
 ### 2. Compute scalar eigenvalues at max_pq_sum ≤ 6
-- Reuse the Peter-Weyl infrastructure from `tier1_dirac_spectrum.py`.
+- Reuse the Peter-Weyl infrastructure from `dirac_spectrum.py`.
 - For each (p,q) irrep: construct the scalar Laplacian matrix (NOT the Dirac operator — the Laplace-Beltrami operator on functions).
 - Diagonalize. Report eigenvalues and multiplicities.
 
@@ -197,7 +197,7 @@ You are the equation authority. Papers 15-18 contain the Laplacian structure on 
 
 **DELIVERABLE**: Scalar Laplacian eigenvalues as a function of s, organized by (p,q) sector, with multiplicities. Vector Laplacian eigenvalues or the formula to compute them.
 
-**Write to**: `tier0-computation/b6_scalar_vector_laplacian.py`
+**Write to**: `computations/b6_scalar_vector_laplacian.py`
 
 **CROSS-CHECK WITH KK-THEORIST**: Your results and KK-1's results must agree on the eigenvalue structure. Message each other before Hawking starts H-5.
 
@@ -218,7 +218,7 @@ where a_n are the heat kernel coefficients. If this expansion converges, V_eff i
 **YOUR TASK:**
 
 ### 1. Compute a_n at successive truncation orders
-Using existing eigenvalue data from `tier1_dirac_spectrum.py` and `tier1_spectral_action.py`:
+Using existing eigenvalue data from `dirac_spectrum.py` and `spectral_action.py`:
 - Compute a₀, a₂, a₄ at max_pq_sum = 3, 4, 5, 6
 - Plot each a_n vs truncation order
 - Report: do the coefficients stabilize or grow?
@@ -229,14 +229,14 @@ Using existing eigenvalue data from `tier1_dirac_spectrum.py` and `tier1_spectra
 - Assess whether the heat kernel expansion is asymptotic or convergent
 
 ### 3. Compare CW at truncation orders
-- Using the EXISTING fermionic CW (Hawking's `tier1_coleman_weinberg.py`):
+- Using the EXISTING fermionic CW (Hawking's `coleman_weinberg.py`):
 - Run at max_pq_sum = 3, 4, 5, 6
 - Plot V_CW(s) at each truncation
 - Report: does the minimum location stabilize? What's the shift between successive orders?
 
 **DELIVERABLE**: Convergence diagnostic. Is the perturbative CW approach reliable at max_pq_sum = 6? At max_pq_sum = 8? Should Hawking push to 10, or is the expansion failing?
 
-**Write to**: `tier0-computation/c1_seeley_dewitt_convergence.py`
+**Write to**: `computations/c1_seeley_dewitt_convergence.py`
 
 ---
 
@@ -244,7 +244,7 @@ Using existing eigenvalue data from `tier1_dirac_spectrum.py` and `tier1_spectra
 
 **Priority: DECISIVE. This is the computation that resolves the framework.**
 
-You built `tier1_coleman_weinberg.py` in 17a. It found 0/40 raw minima with only 4 bosonic DOF. Now you extend it.
+You built `coleman_weinberg.py` in 17a. It found 0/40 raw minima with only 4 bosonic DOF. Now you extend it.
 
 **YOUR TASK:**
 
@@ -286,7 +286,7 @@ V_eff(s) = V_tree(s)
 - **DECISIVE CLOSURE**: s₀ > 2 (curvature singularity)
 - **VERY DAMAGING**: V_eff still shifts >50% between truncation orders (non-convergent)
 
-**Write to**: `tier0-computation/h5_full_veff.py`
+**Write to**: `computations/h5_full_veff.py`
 
 ---
 

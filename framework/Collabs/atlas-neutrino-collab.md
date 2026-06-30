@@ -4,6 +4,8 @@
 **Angle**: PMNS mixing (Level 5 closure), mass hierarchy ratio R = 27.2, normal ordering prediction, scale bridge, experimental constraints
 **Date**: 2026-03-20
 
+> **S110 SUPERSESSION NOTE (HK-NEUTRINO, investigation-distillation; inv-11 HY2 = inv-1 §4 #5).** This review (Sessions 1–51) cites the mass-hierarchy ratio **R = 27.2** as a structural feature. That value is **SUPERSEDED**: the live result is **S96-MATTER-R-HIERARCHY = 9.86 (FAIL)** — the substrate matter-sector ratio does not reproduce the measured neutrino hierarchy. The LIVE neutrino observable is the **seesaw Σm_ν**, which LANDED DESI-consistent (S99 W3 / S100a; the §VII.BL ε_LX-external route, E1 promoted STAGE-3-PERMANENT; atlas-08 Q18b). Read every R = 27.2 mention below as an early structural-ballpark note, NOT a live precision prediction.
+
 ---
 
 ## 1. What the Atlas Shows: The Neutrino Sector in Five Numbers

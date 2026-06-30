@@ -1,0 +1,107 @@
+{
+  "table": "gates",
+  "batch_id": 12,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "gate_WDW-INITIAL-52",
+      "anchor_type": "gates",
+      "name": "WDW-INITIAL-52",
+      "session": "52",
+      "condition": "W1-A",
+      "verdict": "peak tau=9.5e-05 (>1e-5)",
+      "source_file": "sessions\\session-52\\session-52-results-workingpaper.md",
+      "source_context_30_lines": "    3: **Date**: 2026-03-20\n    4: **Format**: Parallel single-agent computations, 4 waves\n    5: **Source Plan**: `sessions/session-plan/session-52-plan.md`\n    6: \n    7: ---\n    8: \n    9: ## Wave 1: Foundation and Quick Wins\n   10: \n   11: ### W1-A: WDW-INITIAL-52 — Wheeler-DeWitt Initial Condition\n   12: **Agent**: quantum-foam-theorist | **Gate**: WDW-INITIAL-52\n   13: **Status**: COMPLETE\n   14: \n   15: **Gate Verdict**: FAIL (peak tau = 9.50e-05, threshold was 1e-5)\n   16: \n   17: **Key Numbers**:\n   18: - HH suppression at fold: 10^{220,506} relative to tau=0 (1,810x CC problem)\n   19: - 1D Schrodinger peak (Neumann BC): tau = 9.495e-05, FWHM = 2.50e-02"
+    },
+    {
+      "anchor_id": "gate_DDG-MKK-52",
+      "anchor_type": "gates",
+      "name": "DDG-MKK-52",
+      "session": "52",
+      "condition": "W1-B",
+      "verdict": "no sin²θ_W solution",
+      "source_file": "sessions\\session-52\\session-52-results-workingpaper.md",
+      "source_context_30_lines": "   25: **Cross-checks**: Seeley-DeWitt coefficients computed from eigenvalue data at 5 tau values. Sensitivity scan over f_2/f_0 = {0.1, 0.5, 1.0, 2.0, 5.0, 10.0} — all give tau=0 peak.\n   26: \n   27: **Assessment**: HH structurally selects tau_i = 0. The gate technically fails because the 1D quantum peak is at 9.5e-05 (10x above threshold), but the HH exponential weighting makes tau=0 overwhelmingly preferred. No fine-tuning of initial condition required. The e-fold margin for transit is effectively infinite.\n   28: \n   29: **Data**: `s52_wdw_initial.npz`, `s52_wdw_initial.png`\n   30: \n   31: ---\n   32: \n   33: ### W1-B: DDG-MKK-52 — Power-Law Gauge Coupling Running for M_KK\n   34: **Agent**: kaluza-klein-theorist | **Gate**: DDG-MKK-52\n   35: **Status**: COMPLETE\n   36: \n   37: **Gate Verdict**: FAIL (no sin²θ_W solution found)\n   38: \n   39: **Key Numbers**:\n   40: - M_KK (alpha_2 matching): 5.012e17 GeV — matches M_KK_kerner (5.042e17) at 0.003 OOM\n   41: - M_KK (gravity route): 7.429e16 GeV"
+    },
+    {
+      "anchor_id": "gate_ETA-B-52",
+      "anchor_type": "gates",
+      "name": "ETA-B-52",
+      "session": "52",
+      "condition": "W1-D",
+      "verdict": "phi_CP=0 (structural)",
+      "source_file": "sessions\\session-52\\session-52-results-workingpaper.md",
+      "source_context_30_lines": "   98: - Kosmann data from S34 (s34a_dphys_kosmann.npz) shows phi-dependent V ratios (3.0-4.6), consistent with the rank-1 constrained V being a specific projection\n   99: \n  100: **Assessment**: The Josephson ratio 19.52 is NOT algebraic in Casimir eigenvalues. It is, however, an algebraic identity of a deeper kind: a consequence of V_constrained being exactly rank-1. The rank-1 structure means the entire 3-band BCS problem reduces to a SINGLE pairing channel with sector weights v_i. All relative physics (gap ratios, coupling ratios, mode character) is fixed by these three numbers. The tau-independence of all ratios is a structural theorem, not a numerical accident. The v_i themselves encode Kosmann kernel geometry -- the way the Lie derivative couples different SU(3) representations -- which goes beyond Casimir labels.\n  101: \n  102: **Data**: `s52_casimir_josephson.npz`\n  103: \n  104: ---\n  105: \n  106: ### W1-D: ETA-B-52 — Baryogenesis CP-odd Phase and eta_B Estimate\n  107: **Agent**: dirac-antimatter-theorist | **Gate**: ETA-B-52\n  108: **Status**: COMPLETE\n  109: \n  110: **Gate Verdict**: FAIL — CP-odd phase = 0 IDENTICALLY. No intrinsic baryogenesis.\n  111: \n  112: **Key Numbers**:\n  113: - phi_CP = 0.000 for all 8 quasiparticle modes (real gap, theta=0)\n  114: - Gap phase sweep (37 theta values in [0, 2π]): eigenvalues are gauge-invariant, CP phases track theta exactly"
+    },
+    {
+      "anchor_id": "gate_GL-JOSEPHSON-52",
+      "anchor_type": "gates",
+      "name": "GL-JOSEPHSON-52",
+      "session": "52",
+      "condition": "W1-F",
+      "verdict": "4/6 anomalous branches",
+      "source_file": "sessions\\session-52\\session-52-results-workingpaper.md",
+      "source_context_30_lines": "  183: \n  184: **What remains uncomputed.** The continuum-limit torsion (restoring the full Peter-Weyl tower) would develop zeta-function poles and genuine regularization structure -- but S45 audit classified this as Level 3 (artifact of truncation) and the present computation confirms the finite crystal torsion is structureless.\n  185: \n  186: **Data**: `s52_analytic_torsion.npz`, `s52_analytic_torsion.png`\n  187: **Script**: `computations/s52_analytic_torsion.py`\n  188: \n  189: ---\n  190: \n  191: ### W1-F: GL-JOSEPHSON-52 — Ginzburg-Landau Fabric Dynamical Matrix\n  192: **Agent**: landau-condensed-matter-theorist | **Gate**: GL-JOSEPHSON-52\n  193: **Status**: COMPLETE\n  194: \n  195: **Gate Verdict**: PASS -- 4 of 6 branches have |alpha_eff - 2| > 0.05 at K < 0.2 M_KK.\n  196: \n  197: **Method**: Constructed 6x6 dynamical matrix for 3-sector GL condensate (B1, B2, B3) on BCC-derived 32-cell lattice. Each sector carries complex order parameter Delta_alpha = |Delta_alpha|*exp(i*theta_alpha), giving 6 real DOF per cell: 3 amplitudes + 3 phases. Solved generalized eigenvalue problem V(K)*x = omega^2 * T*x, where V is the stiffness matrix (GL potential + inter-sector Josephson + fabric Josephson) and T is the inertia matrix (T_phase = rho_alpha * Delta_alpha^2, T_amp = rho_alpha). Ground state and Josephson couplings from S48 data.\n  198: \n  199: **Key Numbers**:"
+    },
+    {
+      "anchor_id": "gate_QM-DISPERSION-52",
+      "anchor_type": "gates",
+      "name": "QM-DISPERSION-52",
+      "session": "52",
+      "condition": "W1-G",
+      "verdict": "alpha_QM=-0.579",
+      "source_file": "sessions\\session-52\\session-52-results-workingpaper.md",
+      "source_context_30_lines": "  228: \n  229: **Assessment**: The phase sector is NON-quadratic -- Goldstone is linear (alpha ~ 1), Leggett modes show intermediate power laws. Only the heavy amplitude modes follow standard K^2 massive dispersion. The 4-branch anomalous result at K < 0.2 is a structural consequence of the multi-sector GL functional: the phase stiffness hierarchy (J_C2 >> J_su2 >> J_u1) creates an anisotropic Josephson network where phase fluctuations see a qualitatively different landscape than amplitude fluctuations. This connects to the W1-G quantum metric result (alpha_QM = -0.579): both computations find sub-quadratic corrections to the naive K^2 dispersion at small K.\n  230: \n  231: **Data**: `s52_gl_josephson.npz`, `s52_gl_josephson.png`\n  232: **Script**: `computations/s52_gl_josephson.py`\n  233: \n  234: ---\n  235: \n  236: ### W1-G: QM-DISPERSION-52 — Quantum Metric K^4 Correction\n  237: **Agent**: berry-geometric-phase-theorist | **Gate**: QM-DISPERSION-52\n  238: **Status**: COMPLETE\n  239: \n  240: **Gate Verdict**: PASS — K⁴ correction modifies n_eff by > 0.01 at all tested K_pivot values.\n  241: \n  242: **Key Numbers**:\n  243: - alpha_QM (full multi-band) = -0.579 (correction to omega)\n  244: - n_eff at K=0.1: 0.984 (|dn|=0.016 > 0.01 — PASS)"
+    },
+    {
+      "anchor_id": "gate_HAWKING-T-SWEEP-52",
+      "anchor_type": "gates",
+      "name": "HAWKING-T-SWEEP-52",
+      "session": "52",
+      "condition": "W1-J",
+      "verdict": "spread=148%",
+      "source_file": "sessions\\session-52\\session-52-results-workingpaper.md",
+      "source_context_30_lines": "  333: - Nuclear analog (Paper 08, pairing collapse): when a shell gap opens in one channel, pairing in that channel collapses but the other channel is unaffected. The VH singularity at B2 is specific to the singlet. Non-singlet sectors lack this enhancement but compensate with mode count. Which effect wins depends on the V matrix.\n  334: \n  335: **Data**: `s52_n_pair_full.npz` (4.2 KB)\n  336: **Plot**: `s52_n_pair_full.png`\n  337: **Script**: `computations/s52_n_pair_full.py`\n  338: \n  339: ---\n  340: \n  341: ### W1-J: HAWKING-T-SWEEP-52 — T_acoustic Parametric Sweep\n  342: **Agent**: quantum-acoustics-theorist | **Gate**: HAWKING-T-SWEEP-52\n  343: **Status**: COMPLETE — **FAIL** (spread 148%)\n  344: \n  345: **Gate**: HAWKING-T-SWEEP-52\n  346: **Pre-registered criterion**: PASS if T_acoustic/T_Gibbs stable within 5% across 5 tau values; FAIL if >20%.\n  347: \n  348: **Method**: At each tau in {0.05, 0.10, 0.15, 0.19, 0.25}:\n  349: - T_acoustic(tau) = sqrt(alpha(tau)) / (4*pi) where alpha = d^2(m^2_B2)/dtau^2 from the S40 dispersion spline (50-point grid)."
+    },
+    {
+      "anchor_id": "gate_DS-QUANTUM-52",
+      "anchor_type": "gates",
+      "name": "DS-QUANTUM-52",
+      "session": "52",
+      "condition": "W3-D",
+      "verdict": "d_s monotone through 8",
+      "source_file": "sessions\\session-52\\session-52-results-workingpaper.md",
+      "source_context_30_lines": "  598: - Plot: `computations/s52_offjensen_pmns.png`\n  599: - Supplementary script: `computations/s52_offjensen_analysis.py`\n  600: - Supplementary data: `computations/s52_offjensen_pmns_supp.npz`\n  601: - Supplementary plot: `computations/s52_offjensen_pmns_supp.png`\n  602: \n  603: ---\n  604: \n  605: ### W3-D: WDAVG-DS-52 — WDW-Averaged Spectral Dimension\n  606: **Agent**: quantum-foam-theorist | **Gate**: DS-QUANTUM-52\n  607: **Status**: COMPLETE\n  608: **Condition**: W1-A produces Psi(tau) -- SATISFIED\n  609: \n  610: #### Method\n  611: \n  612: Computed the spectral dimension $d_s(t) = -2\\,d(\\ln P)/d(\\ln t)$ where $P(t,\\tau) = \\sum_n d_n \\exp(-t\\,\\omega_n(\\tau)^2)$ is the heat trace of $D_K^2$ on the Jensen-deformed SU(3). WDW averaging: $P_{\\rm WDW}(t) = \\int d\\tau\\,|\\Psi(\\tau)|^2\\,P(t,\\tau)$.\n  613: \n  614: **Input data**: 992 Dirac eigenvalues (with dim$^2$ degeneracies, total 101,984 states) at 5 tau values from `s44_dos_tau.npz`. Four WDW weighting schemes tested: Hartle-Hawking, Neumann ground state, Dirichlet ground state, flat prior."
+    },
+    {
+      "anchor_id": "gate_NPAIR3-ED-56",
+      "anchor_type": "gates",
+      "name": "NPAIR3-ED-56",
+      "session": "56",
+      "condition": "FAIL",
+      "verdict": "`s56_npair3_ed.npz`",
+      "source_file": "sessions\\session-56\\session-56-results-workingpaper.md",
+      "source_context_30_lines": "   17: - **FABRIC-STABILIZATION-56**: Does Z_fabric(tau) have a minimum near the fold that Z_cell does not?\n   18: - **PASS**: F_fabric(tau) has a minimum in [0.10, 0.30] with barrier > 1% of |F_fabric(0)|\n   19: - **FAIL**: F_fabric(tau) is monotone (or minimum outside target range, or barrier < 1%)\n   20: - **Null hypothesis**: Collective modes inherit single-cell monotonicity; the fabric does not stabilize the modulus\n   21: \n   22: **Secondary gates**:\n   23: - FABRIC-INTEGRABILITY-56: Does Josephson coupling break integrability at the fabric level?\n   24: - MU-SHIFT-56: Does inter-cell coupling generate nonzero effective chemical potential?\n   25: - NPAIR3-ED-56: Does integrability breaking reach GOE statistics at N_pair=3?\n   26: \n   27: ---\n   28: \n   29: ## Agent Instructions\n   30: \n   31: Each agent writes results in their assigned section(s) below. Include:\n   32: \n   33: 1. **Verdict**: PASS / FAIL / INFO with the gate criterion restated and the measured value"
+    },
+    {
+      "anchor_id": "gate_MU-SHIFT-56",
+      "anchor_type": "gates",
+      "name": "MU-SHIFT-56",
+      "session": "56",
+      "condition": "PASS/FAIL",
+      "verdict": "> 0.1 M_KK / < 0.01 M_KK",
+      "source_file": "sessions\\session-56\\session-56-results-workingpaper.md",
+      "source_context_30_lines": "   16: **Pre-registered master gate**:\n   17: - **FABRIC-STABILIZATION-56**: Does Z_fabric(tau) have a minimum near the fold that Z_cell does not?\n   18: - **PASS**: F_fabric(tau) has a minimum in [0.10, 0.30] with barrier > 1% of |F_fabric(0)|\n   19: - **FAIL**: F_fabric(tau) is monotone (or minimum outside target range, or barrier < 1%)\n   20: - **Null hypothesis**: Collective modes inherit single-cell monotonicity; the fabric does not stabilize the modulus\n   21: \n   22: **Secondary gates**:\n   23: - FABRIC-INTEGRABILITY-56: Does Josephson coupling break integrability at the fabric level?\n   24: - MU-SHIFT-56: Does inter-cell coupling generate nonzero effective chemical potential?\n   25: - NPAIR3-ED-56: Does integrability breaking reach GOE statistics at N_pair=3?\n   26: \n   27: ---\n   28: \n   29: ## Agent Instructions\n   30: \n   31: Each agent writes results in their assigned section(s) below. Include:\n   32: "
+    },
+    {
+      "anchor_id": "gate_EPSILON-DIRECT-58",
+      "anchor_type": "gates",
+      "name": "EPSILON-DIRECT-58",
+      "session": "58",
+      "condition": "W0-3",
+      "verdict": "PASS",
+      "source_file": "sessions\\session-58\\session-58-results-workingpaper.md",
+      "source_context_30_lines": "  207: - Script: `computations/s58_cc_cancellation_sweep.py`\n  208: - Data: `computations/s58_cc_cancellation_sweep.npz`\n  209: - Plot: `computations/s58_cc_cancellation_sweep.png`\n  210: \n  211: ---\n  212: \n  213: ### W0-3: Dipolar Coupling from Full V_bare Matrix (quantum-acoustics-theorist)\n  214: \n  215: **Gate**: EPSILON-DIRECT-58\n  216: - PASS: epsilon_direct in [0.001, 0.005] (confirms S49 and reduces uncertainty)\n  217: - FAIL: epsilon_direct outside [0.0005, 0.010] (S49 value wrong, Leggett predictions need revision)\n  218: \n  219: #### Gate Verdict: PASS\n  220: \n  221: **EPSILON-DIRECT-58**: epsilon_direct = **0.00143 +/- 39%** from V_bare_cont projection. Value lies in PASS range [0.001, 0.005]. Confirms S49 order of magnitude; places epsilon 0.58x below S49 central value (0.00248), shifting the Leggett gap down by factor 0.76.\n  222: \n  223: #### Method"
+    }
+  ]
+}

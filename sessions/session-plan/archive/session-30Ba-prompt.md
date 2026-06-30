@@ -6,11 +6,11 @@
 **Prerequisite**: None beyond existing Session 29 data. All inputs in current `.npz` files.
 **Delivers to**: Session 30Bb (minimum location, grid eigenvalue data), Session 30A (minimum location for Pfaffian scan)
 **Input data**:
-- `tier0-computation/tier1_dirac_spectrum.py` (core Dirac code)
-- `tier0-computation/s29b_jensen_transverse.npz` (Jensen saddle verdict, B-29d)
-- `tier0-computation/s29b_3sector_fbcs.npz` (3-sector free energy, B-29a)
-- `tier0-computation/s29b_bogoliubov_bcs.npz` (Bogoliubov BCS gap)
-- `tier0-computation/s29b_josephson_coupling.npz` (Josephson J_perp)
+- `computations/dirac_spectrum.py` (core Dirac code)
+- `computations/s29b_jensen_transverse.npz` (Jensen saddle verdict, B-29d)
+- `computations/s29b_3sector_fbcs.npz` (3-sector free energy, B-29a)
+- `computations/s29b_bogoliubov_bcs.npz` (Bogoliubov BCS gap)
+- `computations/s29b_josephson_coupling.npz` (Josephson J_perp)
 - Baptista Paper 15 eq 3.58-3.68: U(2)-invariant metric parameterization on SU(3)
 - Baptista Paper 15 eq 3.79-3.80: Scalar curvature and V_eff on the moduli space
 
@@ -81,15 +81,15 @@ Session 30Ba locates the true minimum of $V_{\text{total}}(\lambda_1, \lambda_2,
 Every result classified against its pre-registered gate BEFORE any interpretation. Report the number first. Classify second. Interpret third.
 
 **Python environment**: `"phonon-exflation-sim/.venv312/Scripts/python.exe"`
-**Output directory**: `tier0-computation/`
+**Output directory**: `computations/`
 **Script prefix**: `s30b_`
 
 ## PRE-SESSION GATE CHECK (MANDATORY FIRST ACTION)
 
 Before any computation, verify:
-1. Read `tier0-computation/s29b_gate_verdicts.txt` -- confirm B-29d FIRED (Jensen saddle)
-2. Read `tier0-computation/s29b_jensen_transverse.npz` -- confirm eigenvalues and eigenvectors available for T1, T2 directions
-3. Confirm existing Dirac spectrum code (`tier1_dirac_spectrum.py`) can accept general U(2)-invariant metric parameters $(\lambda_1, \lambda_2, \lambda_3)$, not just Jensen $\tau$
+1. Read `computations/s29b_gate_verdicts.txt` -- confirm B-29d FIRED (Jensen saddle)
+2. Read `computations/s29b_jensen_transverse.npz` -- confirm eigenvalues and eigenvectors available for T1, T2 directions
+3. Confirm existing Dirac spectrum code (`dirac_spectrum.py`) can accept general U(2)-invariant metric parameters $(\lambda_1, \lambda_2, \lambda_3)$, not just Jensen $\tau$
 4. If the Dirac code only accepts Jensen $\tau$, the FIRST computation is modifying it to accept general U(2)-invariant metrics (Step 0 below)
 
 ## COMPLETION SIGNAL
@@ -113,7 +113,7 @@ Session ends ONLY when user approves shutdown explicitly. Idle agents are not fi
 
 | Agent | Additional Reading |
 |:------|:-------------------|
-| phonon-exflation-sim | `tier0-computation/tier1_dirac_spectrum.py` (Dirac code to generalize), `tier0-computation/s29b_3sector_fbcs.py` (3-sector F_BCS computation to extend), `tier0-computation/s29b_jensen_transverse.py` (transverse Hessian code with T1/T2 parametrization) |
+| phonon-exflation-sim | `computations/dirac_spectrum.py` (Dirac code to generalize), `computations/s29b_3sector_fbcs.py` (3-sector F_BCS computation to extend), `computations/s29b_jensen_transverse.py` (transverse Hessian code with T1/T2 parametrization) |
 | baptista-spacetime-analyst | `researchers/Baptista/` -- Paper 15 Section 3.5-3.7 (U(2)-invariant moduli space, scalar curvature, Lagrangian), Paper 17 eq 1.3-1.4 ($[D_K, \mathcal{L}_X]$). Validate the off-Jensen metric parameterization and scalar curvature formula. |
 | coordinator | This prompt Section IV (gate conditions). Memorize ALL thresholds before first computation completes. |
 
@@ -194,7 +194,7 @@ These are zero-parameter predictions at the minimum. The RGE gate (Session 30Bb,
 
 ## Step 0: Generalize Dirac Code to U(2)-Invariant Metrics
 
-**Status**: The existing `tier1_dirac_spectrum.py` parameterizes the metric by a single Jensen parameter $\tau$ via $(\lambda_1, \lambda_2, \lambda_3) = (e^{2\tau}, e^{-2\tau}, e^{\tau})$. Generalize to accept $(\lambda_1, \lambda_2, \lambda_3)$ directly.
+**Status**: The existing `dirac_spectrum.py` parameterizes the metric by a single Jensen parameter $\tau$ via $(\lambda_1, \lambda_2, \lambda_3) = (e^{2\tau}, e^{-2\tau}, e^{\tau})$. Generalize to accept $(\lambda_1, \lambda_2, \lambda_3)$ directly.
 
 **What changes**: The metric tensor construction in `dirac_operator_on_irrep()` must replace the Jensen parametrization with direct $\lambda_a$ scaling. The structure constants and Clifford algebra are basis-dependent, not metric-dependent -- only the metric tensor $g_{ab}$ and its inverse change. The spin connection $\omega_{abc}$ is recomputed from $g_{ab}$ and the structure constants $f^c_{ab}$.
 
@@ -345,7 +345,7 @@ If **B-30min FIRES** (no minimum), 30Bb Step 6 (T1 extension) is triggered befor
 | `s30b_fbcs_landscape.png` | Heatmap of $F_{\text{BCS}}^{3\text{-sector}}$ alone (without spectral action) on the $(\tau, \epsilon)$ grid |
 | `s30b_dos_landscape.png` | Heatmap of $N(E_F)$ across the $(\tau, \epsilon)$ grid |
 
-Gate verdicts appended to: `tier0-computation/s30b_gate_verdicts.txt`
+Gate verdicts appended to: `computations/s30b_gate_verdicts.txt`
 
 ---
 
@@ -390,4 +390,4 @@ Session 30Ba is successful if it produces:
 
 ---
 
-*Session 30Ba: U(2)-Invariant Grid Search. Covers Session 29 Fusion Synthesis Priority 1 (Tier 1): locate the off-Jensen BCS minimum. ~305 lines new code. ~1-2 hours total compute time. Three hard closes (B-30min, B-30w, B-30phi), one existential gate (P-30w), one positive signal (P-30conv), two diagnostics (DOS-1, HM-1). Delivers the minimum location that gates both 30Bb and 30A.*
+*Session 30Ba: U(2)-Invariant Grid Search. Covers Session 29 Fusion Synthesis Priority 1 (Level 1): locate the off-Jensen BCS minimum. ~305 lines new code. ~1-2 hours total compute time. Three hard closes (B-30min, B-30w, B-30phi), one existential gate (P-30w), one positive signal (P-30conv), two diagnostics (DOS-1, HM-1). Delivers the minimum location that gates both 30Bb and 30A.*

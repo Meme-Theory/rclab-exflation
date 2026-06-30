@@ -1,54 +1,107 @@
-# Atlas D07: Permanent Results Catalog (Updated Through Session 51)
+# Atlas D07: Permanent Results Catalog (Updated Through Session 88)
 
 **Original registry**: S1-S28 (`sessions/permanent-results-registry.md`)
-**This extension**: S29-S51
-**Total permanent results**: 12 (original Section I) + 24 (new Section I) = 36 publishable standalone; ~80 additional structural/infrastructure results
-**Generated**: 2026-03-20
+**Atlas extension**: S29-S88 (this document)
+**Generated**: 2026-03-20 | **Updated**: 2026-05-09 (S67-S88 uplift; +60 §VII slot inventory rows added; Section XVI introduced)
+**Novelty audit**: 2026-03-20 (6 web-research agents) + 2026-05-09 round-trip audit (~37/66 §VII slots flagged for `/weave --update` entity-extractor refinement)
+
+**Honest count (post-S88)**: 10 Level A novel + 5 Level B partial + 25 known/textbook/retracted + 17 permanent theorems (S63 T1-T17) + 18 structural results (S64-S66) + ~60 §VII registry slots S52-S88 (63 PERMANENT + 1 STAGE-1-CANDIDATE + 1 CANDIDATE-PENDING + 2 INFO + 2 CORRIGENDUM + 4 OPEN + 2 DEPRECATED; K-cohort synced to canonical at S109 MAINTAIN — 10 joint theorems STAGE-1-CANDIDATE→STAGE-3-PERMANENT, only K8 §VII.AF.1.STATE-PROJ remains pending) = **~150+ total publishable + STAGE-1-CANDIDATE registry landings**
 
 ---
 
 ## I. Publishable Standalone Mathematics
 
-These survive regardless of the framework's physical fate. Publishable at JGP/CMP/JMP/PRD level.
+### Level A: Genuinely Novel (6 results — publishable standalone)
 
-| # | Result | Session | Precision | Target |
-|:--|:-------|:--------|:----------|:-------|
-| 1 | **D_K Block-Diagonality Universality** -- D_K exactly block-diagonal in Peter-Weyl for ANY left-invariant metric on ANY compact semisimple Lie group. Three independent proofs (algebraic, representation-theoretic, numerical). | 22b | 8.4e-15 | JGP/CMP |
-| 2 | **Spectral Action Monotonicity Theorem** -- a_{2k} monotone for k=0,1,2,3. Spectral action monotone under both connections, all smooth cutoffs, all temperatures, all Lambda > 0. Periodic orbit corrections bounded at 10^{-39} (E-3). | 24a+28c | 10^{-39} | JGP/CMP |
-| 3 | **Three Algebraic Traps** -- F/B = 4/11 (Weyl, fiber dim 44 vs 16), b_1/b_2 = 4/9 (Dynkin index), e/(ac) = 1/16 = 1/dim(spinor) (trace factorization). All from tensor product structure of spectral triple (A,H,D). | 20b, 21c, 22c | Exact algebraic | CMP |
-| 4 | **LZ Retraction / Codimension Classification** -- BCS transition on compact manifold is codimension-1 bifurcation, not codimension-2 avoided crossing. Landau-Zener inapplicable to BCS. Berry phase = 0 at second-order boundaries by definition. | 28 | Exact | JMP |
-| 5 | **Van Hove Zero-Critical-Coupling on Compact Manifolds** -- Discrete spectra on compact Riemannian manifolds produce 1D band structures where BCS pairing has no critical coupling threshold. g(omega) ~ 1/sqrt(omega - omega_min). Enhancement 43-51x over flat DOS. | 28c | Exact | CMP/PRL |
-| 6 | **Cl(8) Three-Way Bridge** -- Berry phase gamma/pi ~ 1, order-one violation hierarchy 2^{1+k/2}, 6/7 NCG axioms -- all trace to Spin(8) on C^16. New connection between Berry geometry and NCG axiom structure through Clifford algebra. | 28 | -- | JMP |
-| 7 | **Berry Curvature Vanishing on Compact Lie Groups** -- K_a anti-Hermitian (||K_a + K_a^dag|| < 1.12e-16, structural) implies Berry curvature Omega = 0 identically for ALL eigenstates, ALL sectors, ALL tau. Extends to ANY compact Lie group with left-invariant metric. | 25 | 1.12e-16 | JGP/CMP |
-| 8 | **Spectral Bianchi Identity** -- Gauge invariance of spectral action under SU(3)_L constrains sector-weighted spectral derivatives: Sum d_{(p,q)} * dV_{(p,q)}/dtau * M_a^{(p,q)} = 0. Analog of nabla_mu G^{mu nu} = 0. | 25 | Theoretical | CMP |
-| 9 | **8D Petrov Classification of Jensen-Deformed SU(3)** -- Type D at tau=0 (Einstein manifold), algebraically general with 8 distinct eigenvalues at all tau > 0. Stable multiplicity structure {3,4,1,2,4,3,3,8}. | 25 | Machine epsilon | GRG |
-| 10 | **Spectral Flow = 0 Theorem** -- R_K(tau) >= 12 > 0 for ALL tau >= 0 (proven analytically). Lichnerowicz bound: lambda^2 >= R_K/4 >= 3 > 0. No eigenvalue crosses zero. Eta invariant = 0. Five independent confirmations. | 25 | Exact | JGP |
-| 11 | **Grading Theorem** -- Tr(gamma_9 * f(D_K^2/Lambda^2)) = 0 identically for all f, all tau. D_K^2 commutes with gamma_9 and Tr(gamma_9) = 0. Confirmed by 8 independent researchers. | 25 | Exact | JMP/CMP |
-| 12 | **Perturbative Exhaustion Theorem** -- If H1-H5 hold (all verified), F_pert is not the true free energy. True free energy has branch structure F_true = min{F_pert, F_cond}. Transition is first-order (by H3). Barrier is non-perturbative. | 22c L-3 | H1-H5 verified | -- |
-| 13 | [NEW S30] **Interior Mixing Theorem** -- D_F couples to interior spectral modes, not gap-edge modes, via algebraic (m+m') suppression. Gap-edge perturbation suppressed 15-22x relative to operator norm. Gap closure from D_F on Jensen curve algebraically forbidden at large tau. Generalizes to any Dirac operator perturbed by Kosmann-Lichnerowicz commutator on a compact Lie group. | 30Ab | Exact algebraic | JGP/CMP |
-| 14 | [NEW S32] **Trap 4: Schur Orthogonality Selection Rule** -- V_eff(B_i, B_j) = 0 for ALL inter-branch coupling on Jensen and entire U(2)-invariant submanifold, to precision < 1e-55. U(2) representation theory forbids coupling between trivial (B1), fundamental (B2), and adjoint (B3) sectors. | 32a+32c | < 1e-55 | JGP/CMP |
-| 15 | [NEW S32] **Trap 5: J-Reality Particle-Hole Selection Rule** -- Particle-hole matrix elements vanish for REAL representations (B1, B3) by real structure J with J^2=+1 and [J, D_K]=0. Nonzero only for COMPLEX representations (B2). | 32b | < 1e-14 | JGP/CMP |
-| 16 | [NEW S34] **[iK_7, D_K] = 0 at ALL tau** -- Jensen deformation breaks SU(3) -> U(1)_7 EXACTLY in the Dirac spectrum. Permanent commutant. | 34 | Machine epsilon | JGP |
-| 17 | [NEW S34] **Schur's Lemma on B2** -- Casimir = 0.1557, irreducible. V(B2,B2) basis-independent within B2. | 34 | Exact | CMP |
-| 18 | [NEW S34] **Trap 1 Confirmed** -- V(B1,B1) = 0 exact (U(2) singlet selection rule, all 8 generators). | 34 | 3.4e-29 | CMP |
-| 19 | [NEW S35] **BCS Instability Is a 1D Theorem (RG-BCS-35)** -- One-loop beta function beta = -g^2 has no fixed point at finite g. For ANY attractive coupling g > 0, the dimensionless BCS coupling flows to strong coupling within B2 bandwidth. No critical threshold. | 35 | Exact | CMP/PRL |
-| 20 | [NEW S35] **SU(3) Anomalously Curved vs SU(2)xSU(2)** -- d^2S/ds^2 at s=0.20: SU(3) = +20.42, SU(2)xSU(2) = -3.42. Opposite-sign spectral action curvature. Fold on SU(3) has no counterpart on SU(2)xSU(2). Root cause: complex representations create competing forces absent in real/pseudoreal reps. | 35 | Machine epsilon | CMP/GRG |
-| 21 | [NEW S37] **Structural Monotonicity Theorem** -- <lambda^2>(tau) increases monotonically under volume-preserving Jensen deformation on SU(3). For any monotone cutoff f, S_f(tau) inherits monotonicity sector-by-sector. All 10 Peter-Weyl sectors individually monotone in the same direction. No minimum possible. 9,600 individual checks. | 37 | Machine epsilon | JGP/CMP |
-| 22 | [NEW S38] **Schwinger-Instanton Action Equality** -- S_Schwinger = 0.070, S_inst = 0.069. Same WKB integral through BdG gap in Euclidean and Lorentzian time. [NOTE: algebraic identity retracted S39; the numerical near-agreement survives as shape factor universality kappa = 0.653.] | 37-38 | 2.4% | -- |
-| 23 | [NEW S38] **GGE from Sudden Quench** -- Transit produces 59.8 quasiparticle pairs in a non-thermal GGE. P_exc = 1.000. E_exc/|E_cond| = 443. Complete condensate destruction. GGE Lagrange multipliers lambda_k = -ln|psi_pair[k]|^2 (analytic). [NOTE: permanence retracted S39 -- GGE thermalizes in ~6 natural units via 13% non-separable V_phys.] | 38-39 | Exact | -- |
-| 24 | [NEW S39] **N_pair = 1 Exact Reduction** -- 256-state Fock space reduces exactly to 8x8 matrix. Ground state pair sector purity P(N_pair=1) = 1.000000000000000 (15 digits). Richardson equation with G_eff = 0.2557 reproduces pair energy to 4.4e-16. | 39 | 1.2e-14 | CMP |
-| 25 | [NEW S39] **B2 Geometric Protection Theorem** -- Modified Lie derivative Xi vanishes identically within B2 by Schur's lemma on the irreducible (1,1) subspace. B2 Casimir preserved to 3e-16 at all tau. No correction compatible with SU(3) representation theory breaks B2 rank-1 separability. | 39 | 3e-16 | JGP |
-| 26 | [NEW S40] **Acoustic Hawking Temperature Agreement** -- Barcelo acoustic-metric T agrees with BCS T_Gibbs to 0.7% (T_a/T_Gibbs = 0.993). Zero free parameters. | 40 | 0.7% | GRG/PRL |
-| 27 | [NEW S42] **Geometric LCDM** -- Spectral action on M4 x SU(3) derives w = -1 to 28 decimal places, collisionless CDM (sigma/m = 5.7e-51 cm^2/g), NFW profiles. Zero dark-sector free parameters. | 42 | 10^{-29} | PRD/JCAP |
-| 28 | [NEW S44] **Sakharov Induced Gravity from KK Spectrum** -- Sakharov (1968) at Lambda = 10*M_KK: ratio 2.29 (0.36 OOM from observed G_N). Polynomial and log agree to factor 2.6 for G_N. | 44 | 0.36 OOM | PRD |
-| 29 | [NEW S44] **CDM by Construction** -- T^{0i}_4D = 0 algebraic for homogeneous GGE creation. v_eff = 3.48e-6 c. 5 independent proofs. | 44 | Exact | PRD |
-| 30 | [NEW S44] **a_2^bos/a_2^Dirac = 61/20 Exact** -- Representation-theoretic constant from Gilkey formula. Tau-independent. TT tensors 87.7% of bosonic a_2. | 44 | Exact algebraic | CMP |
-| 31 | [NEW S45] **Taylor Expansion Exactness Theorem** -- For finite discrete spectra, the spectral action has an EXACT convergent Taylor expansion in 1/Lambda^2. No non-perturbative content exists beyond polynomial expansion. | 45 | 1.56e-16 | JMP |
-| 32 | [NEW S48] **Trace Theorem (Goldstone Mass Wall)** -- S[UDU^dag] = S[D] for all D, f, U. Spectral action permanently blind to Goldstone mass. Cyclic invariance of trace. | 48 | Exact | JGP |
-| 33 | [NEW S50] **alpha_s = n_s^2 - 1 Structural Theorem** -- Five independent proofs that within K^2 propagators on compact Josephson lattices, the running is locked. 3-pole degeneracy, running mass bound gamma < 0.035, zero-mode protection, RPA suppression, Goldstone theorem dispersion. | 50 | Exact | CMP/PRD |
-| 34 | [NEW S50] **Lorentzian CMPP Type D** -- Physical spacetime (Lorentzian signature, complexified null frames) is algebraically special Type D. Corrects S49 "Type II locked" which was Riemannian artifact. | 50 | Exact | GRG |
-| 35 | [NEW S51] **Anderson-Higgs Impossibility for U(1)_7** -- [iK_7, D_K] = 0 prevents gauging at ALL orders. K_7 is Kosmann derivative (diffeomorphism), not inner automorphism (gauge). Three independent proofs. Categorical. | 51 | Exact | JGP/CMP |
-| 36 | [NEW S51] **n_s > 1 Structural for KK Tower** -- Bare Dirac heat kernel on any compact manifold gives n_s >= 1. Red tilt REQUIRES 4D dynamics. | 51 | Exact | CMP |
+These fill documented gaps in the literature. No prior art found by systematic web search.
+
+| # | Result | Session | Precision | Target | Novelty Basis |
+|:--|:-------|:--------|:----------|:-------|:--------------|
+| A1 | **Spectral Action Monotonicity Theorem** -- a_{2k} monotone for k=0,1,2,3. Spectral action monotone under both connections, all smooth cutoffs, all temperatures, all Lambda > 0. Periodic orbit corrections bounded at 10^{-39}. | 24a+28c | 10^{-39} | JGP/CMP | Connes 2019 review confirms no monotonicity framework exists in NCG literature. Genuine gap. |
+| A2 | **Structural Monotonicity Theorem** -- <lambda^2>(tau) increases monotonically under volume-preserving Jensen deformation on SU(3). For any monotone cutoff f, S_f(tau) inherits monotonicity sector-by-sector. All 10 Peter-Weyl sectors individually monotone in same direction. No minimum possible. 9,600 individual checks. | 37 | Machine epsilon | JGP/CMP | Strengthens A1. Combine into single paper. No prior work on spectral action behavior under metric flows. |
+| A3 | **8D Petrov Classification of Jensen-Deformed SU(3)** -- Type D at tau=0 (Einstein manifold), algebraically general with 8 distinct eigenvalues at all tau > 0. Stable multiplicity structure {3,4,1,2,4,3,3,8}. | 25 | Machine epsilon | GRG | No CMPP classification of SU(3) Weyl tensor exists in literature. |
+| A4 | **Lorentzian CMPP Type D** -- Physical spacetime (Lorentzian signature, complexified null frames) is algebraically special Type D. Corrects S49 "Type II locked" which was Riemannian artifact. | 50 | Exact | GRG | Combine with A3 into single classification paper. |
+| A5 | **alpha_s = n_s^2 - 1 Structural Theorem** -- Five independent proofs that within K^2 propagators on compact Josephson lattices, the running is locked. 3-pole degeneracy, running mass bound gamma < 0.035, zero-mode protection, RPA suppression, Goldstone theorem dispersion. | 50 | Exact | CMP/PRD | ZERO prior art found. Highest novelty, highest risk. Either paradigm-shifting or framework artifact. Requires rapid peer review. |
+| A6 | **Anderson-Higgs Impossibility for U(1)_7** -- [iK_7, D_K] = 0 prevents gauging at ALL orders. K_7 is Kosmann derivative (diffeomorphism), not inner automorphism (gauge). Two structurally distinct arguments (commutant obstruction with all-orders corollary; categorical inner/outer) + computational verification — the 2026-03-20 peer-review restructure demoted the former "third proof" (numerical) to verification status; row re-worded to match the corrected paper, 2026-06-12 papers review campaign. Categorical. | 51 | Exact | JGP/CMP | Inner vs outer automorphism distinction known (Connes), but all-orders impossibility for specific U(1)_7 on Jensen SU(3) is new. |
+
+| A7 | **CF-9 Algebraic Identity (Berry = NCG = KK A-tensor)** -- |A_coset|^2 = 3/2 + (3/2)e^{-4*tau} verified at machine epsilon (dev < 2e-14) across tau = [0, 0.5]. The A-tensor on the submersion SU(3) -> CP^2 decomposes into tau-independent u(1) (topological, 1.000) and exponentially decaying su(2) components. Exactly 16/136,480 modes couple to 4D (Peter-Weyl selection rule, trivial (0,0) irrep only). | 62 | 2e-14 | JGP/CMP | No prior quantitative verification of the Berry-NCG-KK triple identification on SU(3). The Peter-Weyl selection rule and mode decomposition are new. |
+| A8 | **Cauchy-Schwarz Spectral Moment Bound** -- For any spectral triple with discrete spectrum and non-negative cutoff f: F_0 F_{k+l} >= F_k F_l (Cauchy-Schwarz hierarchy). The Gaussian cutoff saturates the bound exactly (F_2 = F_1^2/F_0). Proved from positive semidefinite bilinear form on the spectral weights. The bound is PERMANENT, cutoff-independent, and holds for ALL spectral triples. Numerical verification on the 992-mode D_K spectrum at fold: all 6 cutoff families satisfy the discrete bound (excess 0.7-43.3%). | 62 | Exact proof | JGP/CMP | General theorem for spectral triples. Novel: the moment hierarchy constrains the spectral action cutoff function. Gaussian saturation property singled out as unique. |
+| A9 | **CC Monotonicity Theorem (q-theory)** -- dE_ZP/dq = (1/4) sum (2N_n + 1) d_n / omega_n(q) > 0 for all q > -lambda_min^2. The zero-point energy of any spectrum with positive weights is monotonically increasing in the shift parameter q. No interior equilibrium exists. Applied to SU(3) with GGE occupations: Lambda_CC = 0.838 M_KK^4 (114 OOM above observed). CC = integrability. | 62 | Exact proof | CMP/PRD | The monotonicity is elementary (sum of positive terms), but its application to the CC problem via q-theory and GGE occupations is novel. Connects Volovik q-theory to Richardson-Gaudin integrability. |
+| A10 | **Filter-Independence of Tree-Level Higgs Mass** -- The CCM spectral action Higgs mass depends only on g_3^2(M_KK) and a_4/a_2, NOT on the cutoff function shape. Specifically lambda_h = (4/3)g_3^2(M_KK)(a_4/a_2), giving m_H = 134.04 GeV for ALL 6 tested filter families. The cutoff enters only through f_4 (CC) and higher moments. | 62 | Structural | PRD/CMP | The structural independence follows from CCM Paper 10 eq 3.37 but has never been numerically verified across multiple filter families on a specific KK geometry. |
+
+| A11 | **Volovik Gibbs-Duhem Relaxation** -- rho_vac = epsilon(q) - mu*q -> 0 as q adjusts. Applied to spectral action: rho_vac ~ M_Pl^2 H^2 tracking. Landing at rho_vac(today)/rho_obs = 1.032 (0.01 OOM). FUNCTIONAL-INDEPENDENT: holds for any spectral functional. | 66 | 0.01 OOM | CMP/PRD | Novel application of Volovik q-theory to spectral action CC. The combination of Gibbs-Duhem identity with spectral action expansion history is new. |
+| A12 | **Chebyshev Monotonicity Theorem** -- Q^eff >= Q^bare for all UV-suppressing cutoffs. Protection cascade: monotonicity guarantees Gibbs-Duhem tracking. Proved from Chebyshev integral inequality on spectral sums with ordered weights. | 66 Workshop 1 | PERMANENT | JGP/CMP | Novel: establishes monotonicity protection for spectral action vacuum tracking. No prior art on Chebyshev bounds applied to spectral action. |
+| A13 | **Epsilon_H Sign Reversal** -- eps_H changes SIGN between cutoff families (sqrt(x): +0.022 vs zeta: negative). Scheme-dependent at the sign level. n_s spread across functionals: 0.164 (39x Planck error). | 66 W2-A | PERMANENT (negative result) | PRD | Novel negative result: demonstrates that the spectral index prediction is spectral-functional-dependent at the qualitative level. Forces functional selection as a physical requirement. |
+
+**Recommended papers (5+2):**
+1. "Monotonicity of the Spectral Action Under Jensen Deformation" (A1+A2) -> JGP/CMP
+2. "Algebraic Classification of the Weyl Tensor on Jensen-Deformed SU(3)" (A3+A4) -> GRG
+3. "Ungaugeability of Kosmann Symmetries of the Dirac Operator on Compact Lie Groups" (A6; retitled at the 2026-03-20 peer-review revision) -> JGP/CMP
+4. alpha_s = n_s^2 - 1 (A5) -> PRD **only if derivation survives external scrutiny**
+5. "Cauchy-Schwarz Hierarchy for Spectral Moments and Gaussian Saturation" (A8) -> JGP/CMP
+6. "Berry-NCG-KK Triple Identification on the SU(3) Submersion" (A7+A10) -> JGP/CMP
+7. "Volovik Relaxation of the Cosmological Constant in Spectral Action Cosmology" (A11+A12) -> CMP/PRD
+8. "Scheme Dependence of the Spectral Index in NCG Spectral Action" (A13) -> PRD
+
+### Level B: Partially Novel (5 results — need further work before submission)
+
+These contain novel elements but require deeper literature comparison, rigorous proof, or engagement with prior art.
+
+| # | Result | Session | Status | Issue |
+|:--|:-------|:--------|:-------|:------|
+| B1 | **Cl(8) Three-Way Bridge** -- Berry phase gamma/pi ~ 1, order-one violation hierarchy 2^{1+k/2}, 6/7 NCG axioms -- all trace to Spin(8) on C^16. | 28 | Partial prior art | Furey's Cl(8) program (arXiv:1702.04336, 2206.06912) covers related ground. Specific three-way unification may be novel synthesis. Requires direct comparison to Furey. |
+| B2 | **Berry Curvature Vanishing on Compact Lie Groups** -- K_a anti-Hermitian implies Berry curvature Omega = 0 identically for ALL eigenstates, ALL sectors, ALL tau. | 25 | Partial novelty | Not explicitly in literature, but may be seen as algebraically trivial by reviewers. Anti-Hermiticity -> vanishing is a short argument. Risk: medium. |
+| B3 | **Spectral Bianchi Identity** -- Gauge invariance of spectral action under SU(3)_L constrains sector-weighted spectral derivatives. | 25 | Unclear | Ward identities for spectral action may be implicit in Connes' formalism. Specific sector-weighted form may be novel. Needs validation against van Suijlekom's work. |
+| B4 | **Interior Mixing Theorem** -- D_F couples to interior spectral modes, not gap-edge modes, via algebraic (m+m') suppression. Generalizes to any Dirac operator perturbed by Kosmann-Lichnerowicz commutator on a compact Lie group. | 30Ab | Potentially novel | Framework-specific in derivation but claimed generalization to all compact Lie groups needs independent verification. |
+| B5 | **SU(3) Anomalously Curved vs SU(2)xSU(2)** -- Opposite-sign spectral action curvature. Fold on SU(3) has no counterpart on SU(2)xSU(2). Root cause: complex representations. | 35 | Potentially novel | Specific comparison likely new. Could strengthen the monotonicity paper (A1+A2) as supporting evidence for SU(3) specificity. |
+
+### Level C: Known Results on Specific Manifold (10 results — useful as lemmas, not standalone)
+
+These apply established mathematical tools (Schur's lemma, Weyl's law, Cooper instability, Gilkey formula, Sakharov mechanism) to the specific spectral triple on Jensen-deformed SU(3). Correct and useful, but the novelty is in the *input data*, not the *method or statement*. Cite the original sources; use as supporting lemmas.
+
+| # | Result | Session | Known Source |
+|:--|:-------|:--------|:-------------|
+| C1 | D_K Block-Diagonality Universality | 22b | Schur's lemma + equivariance. Fegan 1987, Slebarski 1985 assume this. |
+| C2 | Three Algebraic Traps (F/B, b_1/b_2, e/(ac)) | 20b-22c | Weyl's law, Dynkin indices, trace factorization. Standard tools. |
+| C3 | Van Hove Zero-Critical-Coupling | 28c | Cooper instability (1956). Application to compact manifolds untested but mechanism is textbook. |
+| C4 | Trap 4: Schur Orthogonality Selection Rule | 32a+32c | Schur orthogonality for U(2) reps. Automatic from representation theory. |
+| C5 | Trap 5: J-Reality PH Selection Rule | 32b | Real structure J with J^2=+1 on real reps. Standard NCG. |
+| C6 | [iK_7, D_K] = 0 at ALL tau | 34 | Computation of a commutator on a specific deformation family. Novel fact but routine calculation. |
+| C7 | Trap 1 Confirmed: V(B1,B1) = 0 | 34 | U(2) singlet selection rule. Standard representation theory. |
+| C8 | B2 Geometric Protection Theorem | 39 | Schur's lemma on irreducible (1,1) subspace. |
+| C9 | Sakharov Induced Gravity from KK Spectrum | 44 | Toms 1983 already established KK + Sakharov. Methodology known. |
+| C10 | a_2^bos/a_2^Dirac = 61/20 Exact | 44 | Gilkey formula applied to specific reps. Computation, not theorem. |
+
+### Level D: Textbook / Trivial / Not Publishable (13 results)
+
+These are either standard textbook results, trivial consequences of definitions, restatements of known theorems, or retracted claims. They should NOT appear on any publishable list.
+
+| # | Result | Session | Why Not Publishable |
+|:--|:-------|:--------|:--------------------|
+| D1 | LZ Retraction / Codimension Classification | 28 | LZ is for two-level systems; BCS is many-body. Physicists already know this. |
+| D2 | Spectral Flow = 0 Theorem | 25 | Lichnerowicz bound (1963) applied to SU(3). Verification, not research. |
+| D3 | Grading Theorem | 25 | 3-line proof from gamma_9 anticommutation + trace cyclicity. Standard NCG. |
+| D4 | Perturbative Exhaustion Theorem | 22c | Standard first-order phase transition thermodynamics with metastable branches. |
+| D5 | Schur's Lemma on B2 | 34 | Literally Schur's lemma applied to an irreducible rep. |
+| D6 | BCS Instability Is a 1D Theorem | 35 | Cooper instability (1956). Restatement. |
+| D7 | N_pair = 1 Exact Reduction | 39 | Richardson exact solution (1963) applied to finite system. |
+| D8 | Geometric LCDM | 42 | Spectral action -> CC is Chamseddine-Connes 1997. CDM claims require additional fiber structure not present. Overstated. |
+| D9 | CDM by Construction (T^{0i}=0) | 44 | Homogeneity -> no preferred direction -> T^{0i}=0. Basic field theory. |
+| D10 | Taylor Expansion Exactness Theorem | 45 | Finite sum of analytic functions is analytic. Mathematical tautology. |
+| D11 | Trace Theorem (Goldstone Mass Wall) | 48 | S[UDU^dag] = S[D] is the cyclic property of the trace. Known since before NCG existed. |
+| D12 | Acoustic Hawking Temperature Agreement | 40 | Barcelo framework standard; BCS application may be new but agreement is expected, not surprising. |
+| D13 | n_s > 1 Structural for KK Tower | 51 | Components exist (heat kernel, Weyl asymptotics) but the structural claim as stated needs rigorous proof. Unvalidated. |
+
+### Level E: Retracted (2 results)
+
+| # | Result | Session | Retraction |
+|:--|:-------|:--------|:-----------|
+| E1 | Schwinger-Instanton Action Equality | 37-38 | Algebraic identity retracted S39. Numerical near-agreement survives as shape factor universality kappa = 0.653, but not publishable as "equality." |
+| E2 | GGE from Sudden Quench (permanence) | 38-39 | Permanence retracted S39. GGE thermalizes in ~6 natural units via 13% non-separable V_phys. |
+
+### Audit Methodology
+
+Six web-research agents dispatched 2026-03-20 searched: arXiv, Semantic Scholar, Google Scholar, Wikipedia, nLab, journal archives (JGP, CMP, GRG, JMP, PRD, PRL), textbooks (Connes, van Suijlekom, Friedrich, Huang-Pandzic, Peskin-Schroeder), and specific author catalogs (Chamseddine, Connes, van Suijlekom, Furey, Fegan, Slebarski, Barcelo, Richardson, Cooper, Sakharov, Toms, Lichnerowicz). Each claim evaluated for: (1) existence of identical published result, (2) whether the claim follows trivially from known results, (3) whether prior art covers the essential content.
 
 ---
 
@@ -66,11 +119,11 @@ These survive regardless of the framework's physical fate. Publishable at JGP/CM
 | Baptista geometry checks | 67/67 | Machine epsilon | 17b | `b2_baptista_verification.py` |
 | D_K correctness audit | 39/39 | Exact zeros | 17b | `b3_dk_correctness_audit.py` |
 | Riemann tensor R_{abcd}(tau) | 147/147 | Machine epsilon | 20a | `r20a_riemann_tensor.py` |
-| Volume-preserving TT-deformation | det = 1.000000000 | Exact | 12 | `tier1_dirac_spectrum.py` |
+| Volume-preserving TT-deformation | det = 1.000000000 | Exact | 12 | `dirac_spectrum.py` |
 | 4 curvature invariants (analytic) | Exact formulas | Rational coefficients | 17b | `sp2_analytic_derivation.py` |
-| Dirac pipeline (8 validations) | All < 10^{-10} | Machine epsilon | 12 | `tier1_dirac_spectrum.py` |
+| Dirac pipeline (8 validations) | All < 10^{-10} | Machine epsilon | 12 | `dirac_spectrum.py` |
 | AZ class BDI, T^2 = +1 | -- | Exact | 17c | `d4_bdg_classification.py` |
-| lambda^2 = n/36 algebraic spectrum | 16 integers | Exact algebraic | 12 | `tier1_dirac_spectrum.py` |
+| lambda^2 = n/36 algebraic spectrum | 16 integers | Exact algebraic | 12 | `dirac_spectrum.py` |
 | Pfaffian Z_2 = +1 throughout | 100+ tau | Binary | 17c | `d2_pfaffian_computation.py` |
 | Gauss-Bonnet chi(SU(3)) = 0 | 21 tau | 1.24e-15 | 21c | -- |
 | TT stability: no tachyons | all tau in [0,2] | Positive | 20b | `l20_lichnerowicz.py` |
@@ -92,6 +145,68 @@ These survive regardless of the framework's physical fate. Publishable at JGP/CM
 | [NEW S47] Ric(u(1)) = 1/4 exactly at all tau | 26 tau | 2.2e-16 | 47 | -- |
 | [NEW S48] TT spectrum fully positive (31 modes) | 9 tau in [0, 0.50] | All positive | 48 | `s48_tt_lich.py` |
 | [NEW S50] Phi crossing omega_L2/omega_L1 = phi_paasch at tau=0.211686 | 61-point scan | 4.4e-15 | 50 | `s50_leggett_phi_confirm.py` |
+| [NEW S61] a_2 = 0.728235 (10-digit S46 match) | -- | Exact | 61 | `s61_heat_kernel_a2.py` |
+| [NEW S61] NCG verification chain 7/7 complete | 7 links | All PASS | 61 | Multiple s61_*.py |
+| [NEW S61] Block-diagonal theorem extended to ALL compact Lie groups | -- | Theorem | 61 | `s61_block_diagonal_general.py` |
+| [NEW S61] SM gauge group recovery (13/13 generators) | 13 generators | < 1e-13 | 61 | `s61_gauge_module.py` |
+| [NEW S61] 36D Hessian ALL 36 eigenvalues negative | 36 directions | All negative | 61 | `s61_hessian_36d.py` |
+| [NEW S61] Kasparov product 6/6 conditions | First computation | All PASS | 61 | `s61_kasparov_product.py` |
+| [NEW S61] EWSR Thouless identity | 16/16 checks | 14 sig figs | 61 | `s61_ewsr_thouless.py` |
+| [NEW S62] CF-9 |A_coset|^2 = 3/2 + (3/2)e^{-4tau} | 21 tau points | < 2e-14 | 62 | `s62_berry_projection.py` |
+| [NEW S62] Higgs doublet gauge-invariant in End(C^48) | 10 irreps | 3.5e-14 mixing | 62 | `s62_higgs_order_one.py` |
+| [NEW S62] Cauchy-Schwarz hierarchy on D_K spectrum | 6 families | All PASS (discrete) | 62 | `s62_cauchy_schwarz.py` |
+| [NEW S62] Meissner D_s(GGE)/D_s(fold) = 0.9885 | 5 routes | All PASS | 62 | `s62_meissner_gge.py` |
+| [NEW S62] BdG gauge fraction: gauge/gravity = 2.723 (structural formula) | 8 modes | Algebraic identity | 62 | `s62_bdg_gauge_fraction.py` |
+| [NEW S62] Delta > 0.353 M_KK along softest Hessian direction | 20 points | 7.1x threshold | 62 | `s62_type_i_transit.py` |
+
+### S63 Permanent Theorems (T1-T17) — NEW
+
+| Result | Precision | Session | Source |
+|:-------|:----------|:--------|:-------|
+| [T1] Zero First-Order Tensor — homogeneous transit on M^4 x K: pi_ij=0 | Exact | 63 | VdD-Hawking |
+| [T2] Breathing Mode Exclusion — delta g_ab^K = h(x)g_ab^K projects to 4D scalar, not tensor | Exact | 63 | VdD-Hawking |
+| [T3] Scalar-Tensor Kasparov Decoupling — U_total = 1_M tensor U_K implies beta_T=0 exactly at linear order | Exact | 63 | VdD-Hawking |
+| [T4] Exflation Tensor Theorem — r depends on exactly 3 numbers: eps(0.0216), c_s(0.485), N_e | Exact | 63 | VdD-Hawking E5 |
+| [T5] Volume-Preserving No-Trapping — theta_int=0 identically; Penrose singularity theorem inapplicable | Exact | 63 | W6-14 |
+| [T6] Constant-Epsilon Theorem — n_s = (1-3eps)/(1-eps) for power-law with constant eps, c_s | Exact | 63 | W4-01 |
+| [T7] n_s Gauge Invariance — eps_BLV = 2 - 1/eps_SA (exact); BLV and SA give identical n_s | Exact | 63 | W1-05 |
+| [T8] Hessian Cluster Structure — 10-cluster = Ad(U(2)) decomposition of Sym^2(su(3)); by Schur's lemma | Exact | 63 | W2-06 |
+| [T9] Mixed B-F q-theory Exclusion — same-spectrum B/F has at most one critical point (maximum). 9th CC closure | Exact | 63 | W3-06 |
+| [T10] Cartan Trace Identity — T_{SU(3)}(p,q) = T_{SU(2)}(q,p) = T_{U(1)}(q,p)/12 for ALL (p,q) | Exact | 63 | W5-07 |
+| [T11] Nonlocal Form Factor Inheritance — analyticity class of F(p^2) = analyticity class of f''(z). IDG CC CLOSED | Exact | 63 | W6-01 |
+| [T12] Transfer Function Factorization — T(k_4D|k_KK) = T_proj * T_evo. n_s is cutoff-independent | Exact | 63 | W6-03 |
+| [T13] MaxEnt Gaussian Uniqueness — Gaussian cutoff is unique max entropy solution. Strict concavity + KL divergence | Exact | 63 | W6-21 |
+| [T14] Kinetic Normalization Identity — K_DeWitt = 5.0 exact (LEADING two-derivative coeff, regulator-invariant), tau-independent; GCR-derived AND path-integral one-loop-MEASURE cross-confirmed (rel=0) † | Machine eps | 63, 116 | W6-25, S116-W4 |
+| [T15] Casimir Sigma Scaling — E_Cas(sigma) = sigma^{-1/8} E_Cas(1) to machine eps. Pure power-law | Machine eps | 63 | W5-03 |
+| [T16] S_3 Subgroup Edge-Weight — Josephson anisotropy max/min = 11.80, from S_3 subset S_4 | Exact | 63 | W3-08 |
+| [T17] Proton Decay Tree-Level Zero — exactly zero by PW orthogonality on SU(3). tau_p = 6.26e39 yr | Exact | 63 | W4-04 |
+
+† **[T14] scope** (S116-W4-ZNORM-PROVENANCE workshop × `S116-W4-MODULUS-PATHINT` PASS, audit `1148fd1b…`): "`= 5`" is exact and REGULATOR-INVARIANT as the **LEADING TERM** (a₂ geometric content — DeWitt contraction over SU(3)→u(2)⊕C² branching `{3,4,1}×{−2,+1,+2}²`, `w`-independent by `Σ n_i c_i = 0`, measure-confirmed: conformal/volume mode decouples, FP det τ-independent, fiber det well-defined). The **OPERATIVE** two-derivative coefficient is `5(1+δ)`, with `δ` a genuine SAME-ORDER a₄ correction (`R_K(∂τ)²`, `[τ]+2`), OPEN and `O(1)`-plausible at the fold (`ρ_B = R_K/Λ_eff² = −1.712`, single-scale); numerically-leading for `|τ−τ_fold| ≳ X` (`X` = `CF-S117-MODULUS-A4-GRADIENT` deliverable), expansion-marginal AT the fold. The four-derivative operators (`|R_{μaνb}|²`) are a SEPARATE order; the order-mixed `K_total≈7.07` is RETIRED. Standing scope: **DERIVED given S3** (SA-as-modulus-effective-action, ASSUMED, atlas-04) — prose tag = register tag.
+
+### S64-S66 Structural Results — NEW
+
+| Result | Precision | Session | Source |
+|:-------|:----------|:--------|:-------|
+| R-monotonicity on Jensen (AM-GM exact): dR/dtau >= 0 | PERMANENT | 64 W1-A | Candidate wall |
+| Fermi-surface lock: v^2(B2[0]) = 1/2 identically | PERMANENT | 64 W2-C | Algebraic |
+| a_0/a_2 trap (off-Jensen): decreasing a_2 INCREASES a_0/a_2 | PERMANENT | 64 W2-A | Candidate wall |
+| Spectral moment decoupling: F_{-1}(CC) vs F_{+1}(NEC) are different moments | PERMANENT | 64 W5-B | Structural |
+| H2 theorem: pi_ij=0 from DeWitt tracelessness (volume-preserving) | PERMANENT | 64 W3-A | Structural |
+| Chirality antisymmetry: {gamma_9, dD_K/dtau}=0. Chiral pairs ADD, not cancel | PERMANENT | 64 W6-B | Algebraic |
+| BdG Heat Kernel Factorization: K_BdG(t) = exp(-Delta^2 t) K_bare(t) | PERMANENT | 64-65 | Structural |
+| CC Ratio from Scalar Curvature Only: d(a_0/a_2)/ds = -(a_0/a_2)/R dR/ds | PERMANENT | 65 W1-B | Structural |
+| B/F Spectral Asymmetry = 0: |A|=0 EXACTLY on pure Riemannian triple | PERMANENT | 65 W1-C | Exact |
+| Bogoliubov Gaussianity Preservation: f_NL = O(eps) regardless of squeezing | PERMANENT | 65 W5-D | Structural |
+| EIH Casimir Monotonicity: local a_0/a_2 increases with C_2(p,q) | PERMANENT | 65 W6-A | Structural |
+| Volovik Gibbs-Duhem relaxation: rho_vac = eps(q)-mu*q -> 0 as q adjusts | FUNCTIONAL-INDEPENDENT | 66 W1-A | Novel (A11) |
+| Chebyshev monotonicity theorem: Q^eff >= Q^bare for all UV-suppressing cutoffs | PERMANENT | 66 Workshop 1 | Novel (A12) |
+| BCS-Sakharov decoupling: a_2, a_4 orthogonal projections. r_2=0.892 | PERMANENT | 66 Workshop 1 | Structural |
+| Anomaly one-parameter family: c_k(phi) = (-1)^k phi^k/k at one loop | STRUCTURAL | 66 Workshop 2 | Structural |
+| Heat kernel bridge: SA <-> heat kernel <-> S-matrix via Bernstein's theorem | STRUCTURAL | 66 Workshop 5 | Structural |
+| eps_H sign reversal between cutoff families: SCHEME-DEPENDENT at sign level | PERMANENT (negative) | 66 W2-A | Novel (A13) |
+| KO-dimension degeneracy at d=8: B_+/B_- give identical KO signs | PERMANENT | 66 W8-A | Algebraic |
+
+**Total proven mathematical results: 77+ publishable (Atlas D07 Levels A-C) + 17 (S63 T1-T17) + 18 (S64-S66) = 112+**
 
 ---
 
@@ -303,6 +418,8 @@ K(tau) = (23/96)e^{-8tau} - e^{-5tau} + (5/16)e^{-4tau} + (11/6)e^{-2tau} - (3/2
 | [NEW S50] w_a = 0 triple-locked | Trapping + integrability + frozen modulus | 50 | Structural |
 | [NEW S51] K* = m_G/sqrt(J) = 0.087 M_KK | SA-Goldstone mixing threshold | 51 | Derived |
 | [NEW S51] Convex combination theorem | n_s in [-1, +0.15] at K_pivot=2.0 | 51 | Exact |
+
+> **[S116-W2 scope note — LIGHT-vs-HEAVY Leggett disambiguation; the entries above stay VERBATIM, this note scopes them].** The `LEGGETT-MODE-48` / `[NEW S48-S50]` below-pair-breaking + Q=670,000 SHARP results (rows above, and the §XV/summary rows `ω_L1 = 0.070 M_KK`) are CORRECT and belong to the **LIGHT dipolar Leggett mode** `ω_L1 = 0.070 M_KK = 0.1508·Δ_BCS` (`proven_1792`, "below pair-breaking at ALL τ", `DIPOLAR-CATALOG-49`) — it sits below BOTH its intra-band edge `2Δ_BCS` AND the inter-band sharp-mode ceiling `4.7308·Δ_BCS`. They MUST NOT be inherited by the **HEAVY Leggett-channel DM anchor** `m_LeggettDM = 11.97·Δ_BCS = 5.5571 M_KK` (S70 `LEGGETT-MOMENT-70`), which is a DISTINCT 79×-heavier object: under Convention M (mass) it sits `x^⊥ = m/E_edge^⊥ = 5.5571/2.196 = 2.53 > 1`, **ABOVE** the inter-band continuum edge `E_edge^⊥ = Δ_BCS + √3 = 4.7308·Δ_BCS` (S116 W2 landau × volovik, Sage-exact). The HEAVY anchor's survival is **Reading A** — CPT non-annihilation (BDI `[J, D_K]=0`) + GGE integrability (Ordered Veil, S95) + `Γ_grav < H₀` (LEGGETT-GRAV-DECAY-67, C11-CONDITIONAL) — **NOT below-edge** (the C11-conditionality is the tell; below-edge would be unconditional). Two-observable separation: survival ⊥ sharpness; below-edge SHARPNESS is the LIGHT mode's property only. See `falsifier-master-inventory.md` Row #79.compute-corrigendum-S116-W2-PROTECTION-MAGNITUDE-RESCOPE (the eq(15c) two-error correction + the √ρ_s-free sharp-mode ceiling).
 
 ---
 
@@ -522,3 +639,168 @@ After Session 51 (Anderson-Higgs):       2-4%
 ---
 
 *Catalog compiled from: sessions/permanent-results-registry.md (S1-S28 baseline, 340 lines), summary/session-29-final.md through summary/session-51-final.md, summary/session-43-quicklook.md through summary/session-46-quicklook.md, summary/atlas-01-session-timeline.md, and MEMORY.md. All gate verdicts taken from source documents. Cross-referenced against Sagan verdicts (canonical authority) and synthesis files.*
+
+---
+
+## XVI. S52-S88 §VII Registry Slot Inventory (NEW)
+
+> **Provenance**: Section added 2026-05-09 per S88 atlas-uplift workshop. The S52-S88 era added ~60 substantive registry landings to `sessions/permanent-results-registry.md` under §VII slot identifiers. This section catalogs them with status, author(s), and substrate-IS framing per `phononic-framing.md` §"IS Space, Not IN Space".
+
+### Status legend
+
+- **PERMANENT** (STAGE-3): Stage-2 PASS-AND complete or proven structural identity; immune to retraction
+- **STAGE-1-CANDIDATE**: registered with substantive derivation; pending Stage-2 two-agent cross-axis verify per `joint-theorem-promotion.md`
+- **CANDIDATE-PENDING**: anchor-sweep / multi-year experiment blocking promotion
+- **INFO**: NEEDS-DECISION or FAIL-with-remediation; documented but non-binding
+- **CORRIGENDUM**: Option-A `supersedes`-tagged successor entry per `gate-verdicts.md §"Option A — sig_5 remediation"`
+- **OPEN**: reserved-but-unlanded slot OR NEEDS-COMPUTATION pending derivation
+- **DEPRECATED**: superseded by another slot
+
+### XVI.A. Headline cross-pillar bridge corpus (K=3 MANDATORY)
+
+The cross-pillar bridge corpus per `cross-pillar-bridge-anatomy.md` MANDATORY at K=3 is the framework's flagship structural development S86-S88. Three calibration corpus instances:
+
+| §VII slot | Theorem name | Landing session | Author(s) | Status |
+|:----------|:-------------|:----------------|:----------|:-------|
+| **§VII.AF.1.OP-PROJ** | Pillar III ↔ Pillar IV bridge (HKR-image; 0.0095% F_4 strict at L_max=10; L^{-3} algebraic envelope at d=4 = 0.10%; Level-3/Level-2 = 0.0950, 10× inside envelope) | S87 W5-1 (S86 W-5 origin) | volovik (V_input) + connes (C_output) — SOURCE-DOUBLE-CITE-CO-PRIMARY | PERMANENT-at-Hochschild-cohomology-level (PASS-UNCONDITIONAL per W-5 Workshop Verdict L2572-2587); Stage-2 cross-axis verify queued S89 per `joint-theorem-promotion.md` 4-stage pathway (atlas-11 §IV.1 cross-link) |
+| §VII.AF.1.STATE-PROJ | Pillar III ↔ Pillar IV STRUCTURALLY-ORTHOGONAL-COMPANION; allocated as state-projection counterpart | S88 W11 V.4 | mack | OPEN (PENDING-VERIFICATION) |
+| §VII.AG.1 | T7 ↔ S67 cyclic-fold quotient (HKR ∘ Connes-Karoubi; substrate-distance-1 Mellin pole s=3; V_4 cyclic-fold; 0.0095% residual on T6 numbers) | S87 W6-1 (S86 W-6 origin) | lizzi + volovik | **STAGE-3-PERMANENT** (K4; promoted S105 blind Stage-2 PASS-AND 18/18, connes × transit-dynamics; audit `402d893c`; Level-3 < Level-2 exact-rational 10.55× inside envelope; atlas-04 §X K4; atlas-07 tag synced S109 MAINTAIN) |
+| §VII.AG.2 | T7 ↔ S67 PASS-quotient-isomorphism with three sharpening clauses | S86 W-6 | lizzi + volovik | READY-TO-INSTALL conditional |
+| §VII.AG.4 | Z_3 gauge-sector signature (512 = (2/3) × 768 plaquette count) | S86 W-6 | volovik | READY-TO-INSTALL appendix tag |
+| §VII.AG.5 | D1 gauge-counting correction (n_frust ∈ {0, 2}, NOT {0, 3}) | S86 W-6 | volovik + lizzi | READY-TO-INSTALL |
+| §VII.AG.6 | Cross-cluster Mellin-Wick V_4 commutation theorem ([M, W]_{c_i, c_j} = 0 IDENTICALLY at all 16/16 V_4-coset pairs; identifies Klein-V_4 not Z_4) | S87 W6-5 | lizzi + volovik | PERMANENT |
+| **§VII.W-3.LAB** | 3rd cross-pillar bridge calibration instance (Lancaster MCT-3 inheritance kernel falsifier; rank-2 ker(ι_*); 4-gate Class A NULL + Class B cohomology-asymmetry ratio 7.3250 ± 0.1%) | S88 W4a-17 | volovik PRIMARY + landau + connes (CO-AUTHORS) | **STAGE-3-PERMANENT** (K5; promoted S100a blind Stage-2 PASS-AND 11/11, vdd × landau; audit `89eab199edaa7f90`; Level-3 lab anchor deferred-but-pre-registered 2027-2030; atlas-04 §X K5; atlas-07 tag synced S109 MAINTAIN) |
+| §VII.W-3.ALGEBRAIC | A_F = ℂ ⊕ ℍ ⊕ M_3(ℂ) Wedderburn-Artin Frobenius rescue class theorem (algebraic side) | S88 W4a-17 | connes + volovik | PERMANENT |
+| §VII.W-3.SUBSTRATE | Substrate-IS realization of Wedderburn-Frobenius rescue (axiom-5 fail at M_3 sector resolved via χ-killing per clause ii) | S88 W4a-17 | connes + volovik | PERMANENT |
+| **§VII.AJ.OP-PROJ** | Operator-projection: substrate-IS universal-large-negative-R prediction R_∞ ≈ −1.892 ± 0.001 (multiplicity-weighted Mellin-pole-window observable saturating monotonically at L_max → ∞; algebra-INVARIANT) | S88 W7 + W10 | volovik + mack | STAGE-1-CANDIDATE |
+| §VII.AJ.STATE-PROJ | State-projection: BCS-physics-grounded substrate-IS image of R_3HeB_lit = +0.03536 at polycritical pressure P_pc = 21.22 bar (algebraic shape (a−b)/(a+b); algebra-DEPENDENT) | S88 W7 + W10, S116 W7 | landau (PRIMARY) + volovik + connes | REGISTRY-INCOMPLETE-PENDING-FIRST-EXTRACTION (S116-W7-ALGEBRA-AXIS: Level-1 identity-class ORTHOGONAL ⊥ OP-PROJ CONFIRMED, value-free, first PHYSICAL 3He-B instance; Level-3 anchor HELD Track-B — substrate_first_SC_ratio_available=False, value IS R_3HeB_lit, Δ_BCS-cancels, vanishing-test FAIL; literal SC_corr_A/B route BLOCKED no-A-sector; discharge → CF-S117-STATEPROJ-INTER-SUMMAND) |
+| §VII.AJ.partition-stability | 4-stratum (2,4,8,6) cardinality vector at τ_fold = 0.190 (Friedrich-Bär saturation theorem; structural-saturation theorem closing finite-truncation artifact concern) [S116-W9-SATURATION-ADJUD SCOPE: the FB inequality \|λ\|_min(p,q) ≥ η_FB_lower·√(C₂+1) is a Casimir LOWER bound — saturation reach = the bottom-K floor + the bulk low-\|λ\| moments (incl. the Zubarev numerator mean_Z); structurally SILENT on λ_max (the Weyl edge, N(λ)~λ^d, ∂λ_max/∂L = 0.375). Do NOT cite FB-saturation to declare a λ_max-tail-sensitive moment "saturated": at p+q=15 the bottom-64 floor is FB-null (max\|diff\| = 0.0e+00) WHILE the branch-(iv) λ_max-driven w0 Zubarev moment SHIFTS (ρ_B = mean_Z/λ_max − 1; bottom-K ⟷ mean_Z FB-saturated ⊥ w0-shift ⟷ λ_max Weyl-drifting). Anchor: S116-W9-GTBUILDER-L15 INFO, audit_sha256 94ed48e7….] | S87 W11-2 + W11-3, S116 W9 | connes + mack — SOURCE-DOUBLE-CITE-CO-PRIMARY | PERMANENT |
+
+### XVI.B. Algebra-axis orthogonality + Mellin-Dirichlet headline theorems
+
+| §VII slot | Theorem name | Landing session | Author(s) | Status |
+|:----------|:-------------|:----------------|:----------|:-------|
+| §VII.U.1 | **Mellin-Dirichlet finite-spectrum identity** (FINITE-VECTOR class anchor; M[Tr e^{-tD²}](s/2)/Γ(s/2) = ζ_D(s); rel_diff = 0e+00 at L_max=12 across 31.9M weighted eigenvalue contributions) | S86 W-1 | connes + lizzi — SOURCE-DOUBLE-CITE-CO-PRIMARY | PERMANENT |
+| §VII.U.2 | **Algebra-axis orthogonality 4-corner classification** (Cell I = INVARIANT × s=3; Cell II = INVARIANT × s=4; Cell III = DEPENDENT × s=3; Cell IV = DEPENDENT × s=4; cross-corner co-primary FORBIDDEN; cross-pole co-primary FORBIDDEN) | S88 W5b-45 | lizzi PRIMARY + connes (CO-AUTHOR clauses c, d) + mack (sole-writer) | **STAGE-3-PERMANENT** (K1; promoted S105 blind Stage-2 PASS-AND 5/5 PARENT clauses, vdd × kitaev; audit `7c535495`; Var_a SUB-row independently permanent since S92 W4-7; atlas-04 §X K1; atlas-07 tag synced S109 MAINTAIN) — K=3 MANDATORY enforcement at registry layer |
+| §VII.U.6 | **T5 Mellin-Strip / Convergence-Cone Theorem** (INFINITE-VECTOR class; Zubarev profile M[exp(-x/Λ_Z²)](s) = Λ_Z^{2s}·Γ(s); pole set S_d = {0, 2, 4, 6, 8} for SU(3) at d=8; max_rel_err = 8.066e-28) | S86 W-1 | connes + lizzi | PERMANENT |
+| §VII.U.6.k1-vs-k2 | k=1 (Wick-decomposable) vs k=2 (pair-cumulant) channel counting distinction | S87 W2 R3 / S88 W6b-56 | lizzi | PERMANENT |
+| §VII.N | **Three-Layer Regulator Theorem (HKR-Connes-Lizzi-VdD)** (L1-axiomatic / L2-substrate-action / L3-observable three-layer regulator stratification on (A_K, H_K, D_K)) | S84 W2a-11 | connes + lizzi + van den Dungen | PERMANENT |
+
+### XVI.C. F_4-MB structural wall family + α_s tension family
+
+| §VII slot | Theorem name | Landing session | Author(s) | Status |
+|:----------|:-------------|:----------------|:----------|:-------|
+| §VII.Z | F_4-MB Structural Wall Family (a_0-Unsuppressed-at-LMAX10; |Λ_CC^MB|/|a_0^trunc| ≤ 0.5 fails worst-case Zubarev 9.4557; closes Pillar-III multiplier-algebra route to CC-suppression on F_4) | S86 1a-S1 | gen-physicist + volovik + connes | PERMANENT |
+| §VII.V.A | WEYL-NON-ASYMP-F_4-MB-NO-GO Corollary A | S86 1a-S1 | connes | PERMANENT |
+| §VII.AB.1 | α_s 11.31σ Tension + S50-S51 Sign-AND-Magnitude Lock under C1 identity α_s = n_s² − 1 (sign and magnitude are the SAME lock) | S86 W-2 | mack + volovik + connes — SOURCE-DOUBLE-CITE-CO-PRIMARY | PERMANENT |
+| §VII.AB.2-§VII.AB.7 | Triple-Protection Reading at CMB pivot (K-homogeneity + GAP-ANTIJENSEN-65 + sub-threshold inter-band coupling); 7-row family with K-homogeneity ODE | S86 W-3 | volovik + transit-dynamics | PERMANENT structural |
+| §VII.AB.8 | 3He-B Aalto LTL Lab-Analog Multi-Axis Falsifier (9-row lab-falsifier suite: SW1 58.9589 MHz at λ_6, SW2 364.5177 ppm at λ_7, SW3 1.4250 s^{-1} at λ_8 — UNIQUE λ_8 channel) | S86 W-3 + S86 W11-C5/C6 | mack-cosmic-bridge sole-writer | CANDIDATE-PENDING (multi-year LTL liaison; 5-yr horizon 2031) |
+| §VII.X.1 | α_s = n_s² − 1 registry upgrade (Sage-exact rational form: -8587279/100000000 at u_pivot = 19649/351; substrate ceiling \|δα_substrate\| ≤ 8.65e-5 absolute; hardens 11.31σ → 16.90σ vs Fairbairn-2025) | S85 W2-9 | connes | PERMANENT |
+| §VII.X.W4-1 | 9-cell tensor 3-channel bridge R^{(k)}_{p,q}(L_max=10) at k ∈ {1, 2, 3}; envelope L^{-α_k} with α_k = 2k-1 | S87 W4-1 | connes + lizzi | **STAGE-3-PERMANENT** (K7; promoted S108 W2-2 `S108-VIIXW41-W7A75-OEFORM` `25ef7594`; S107 W2-2 blind 3-channel Stage-2 PASS-AND k=1/2/3 + q=II Element-2 OE-form named-projector retrofit; 3rd blind-verified cross-pillar bridge; atlas-04 §X K7; atlas-07 tag synced S109 MAINTAIN) |
+| §VII.X.2-NECESSITY | M2 axiom structural source for Λ_SA finite-L residual | S87 W1a-6 | connes | STAGE-3-PERMANENT (promoted S108 W2-4 `S108-VIIX2NEC-STAGE2to3-PROMOTION`: S107 W2-3 blind cross-axis Stage-2 PASS-AND on every necessity clause [`4d98f916…`] + 6-of-6 full-64-char anchor-SHA harvest VERIFIED on disk via the S88-LAMBDA-SA-* successor family; atlas-04 K9 + open-channel-ledger §C K9 flipped to STAGE-3-PERMANENT in lockstep; supersedes the 2026-06-12 down-correction) |
+
+### XVI.D. Path-H/Path-C classification family + STAGE-1-CANDIDATE joint theorems
+
+| §VII slot | Theorem name | Landing session | Author(s) | Status |
+|:----------|:-------------|:----------------|:----------|:-------|
+| §VII.AC.1 | Path-H/Path-C multi-valued classification (a) — first explicit V+C SOURCE-DOUBLE-CITE-CO-PRIMARY structure | S87 CF-20 | lizzi + transit-dynamics | **STAGE-3-PERMANENT** (K2; promoted S108 W2-1 `S108-ACFAMILY-S3-MELLIN-PARSE-TREE` `8ca8f479`; S107 W2-1 blind CO-PRIMARY+binary JOINT spine PASS-AND + substrate-first ζ_{D_K} Mellin residue/Corner-III parse-tree discharged the s=3 audit-substituted leg; atlas-04 §X K2 + open-channel-ledger §C K2 synced; supersedes the 2026-06-12 down-correction; atlas-07 tag synced S109 MAINTAIN) |
+| §VII.AC.2 | B1/B2 block decomposition uniqueness theorem | S86 W-3 | volovik + connes | PERMANENT |
+| §VII.AC.3 | Rank-2 product detector orthogonality theorem (LiteBIRD × LISA factorization) | S86 W-3 | mack + qa | PERMANENT |
+| §VII.AC.4 | V1+C1 sequential-chain derivation of classification (a); calibrates SOURCE-DOUBLE-CITE-CO-PRIMARY anchor structure | S87 CF-20 | volovik + connes | **STAGE-3-PERMANENT** (K11; promoted S108 W2-1 `S108-ACFAMILY-S3-MELLIN-PARSE-TREE` `8ca8f479`; S107 W2-4 blind sequential-chain CO-PRIMARY direction Stage-2 PASS-AND + Corner-III parse-tree/a_4^ζ→a_2 re-pin discharged the s=3 audit-substituted leg; atlas-04 §X K11 + open-channel-ledger §C K11 synced; supersedes the 2026-06-13 down-correction; atlas-07 tag synced S109 MAINTAIN) |
+| §VII.AH | Joint F_2-class Path-(c) theorem (A_5 4-class projection s=3; 6-clause statement with 4 corrigenda; clauses c+d JOINT) | S87 W9a-1 | lizzi + transit-dynamics | **STAGE-3-PERMANENT** (K10; promoted S90 W2 CF-20; Stage-2 PASS-AND landed S89 W4-7, audit `4fcd7d29`; calibration corpus instance #1 of joint-theorem-promotion 4-stage pathway; atlas-04 §X K10 — prior STAGE-1-CANDIDATE Corrigendum-2 tag was stale, backfill-corrected at S109 MAINTAIN) |
+| §VII.AM | Universal Lock Condition (3-clause: pixelation lock + effacement lock + Page-time lock; calibration corpus N=3 — J3 BH-horizon + S58 Γ_eff = 0.99970 + W1b2-64 cascade-tail Page-time non-activation) | S88 W1b2-65 | hawking (PRIMARY) + transit-dynamics + connes | **STAGE-3-PERMANENT** (K6; promoted S100a three-agent Stage-2 PASS-AND 9/9, lizzi + volovik + schwarzschild-penrose; audit `6dc0f374ffd3ee4e`; atlas-09 Suspected flag CLEARED; calibration corpus instance #2 of joint-theorem-promotion; atlas-04 §X K6 — prior STAGE-1-CANDIDATE tag was stale, backfill-corrected at S109 MAINTAIN) |
+
+### XVI.E. Substrate-IS partition + moduli-deformation results
+
+| §VII slot | Theorem name | Landing session | Author(s) | Status |
+|:----------|:-------------|:----------------|:----------|:-------|
+| §VII.AD | Δ_0 Localization Formula (V_4 character on 4-stratum partition; Δ_0 = 4·c_{σ⁻¹((-1,-1))} on substrate (2,4,8,6) at τ_fold; QQ-exact) | S88 W2-8 | connes + volovik (CO-AUTHORS) + gen-physicist | **STAGE-3-PERMANENT** (K3; promoted S106 blind Stage-2 PASS-AND {a,b,c}, vdd × kitaev; audit `ac0bfe80`; kitaev proved the localization over GENERIC QQ, subsuming the 576-instance sweep; remains Level-1 single-τ-slice substrate-IS calibration #1 per phononic-framing.md; atlas-04 §X K3; supersedes the 2026-06-12 down-correction; atlas-07 tag synced S109 MAINTAIN) |
+| §VII.AE | Moduli-Space τ-Asymmetry of Substrate Partition Cardinality Vector (negative-side anticrossing-swap at δ_τ_crit_neg = -0.0750 ± 0.005; positive-side stratum-coalescence at δ_τ_crit_pos = +0.175 ± 0.05; 2.33× asymmetry ratio) | S88 W2-9 | gen-physicist | PERMANENT (Level-2 moduli-deformation substrate-IS observable) |
+| §VII.K-PROP.W10-4 | ρ_∞ permanent-wall (substrate-distance-2 pole s=4); ρ(L) = c_0 + α/L² + β/L⁴; ρ_∞ = -0.8103647022669215; structurally IRRATIONAL per CC2 PROVEN | S87 W10-2 | connes | PERMANENT |
+| §VII.K-PROP-W8.CELL-OCCUPANCY | cutoff_AL2010 / cutoff_sqrt L2 status update | S86 W-8 | mack + connes | READY-TO-INSTALL |
+| §VII.K-PROP-HK-2 | Windowed Pauli-Villars-as-Seeley-DeWitt refinement | S88 W11-134 | gen-physicist | PERMANENT |
+| §VII.AR | LEVEL-DRESSED rank-ordering at substrate-distance-2 pole s=4 (under PRIMARY-vs-SCHEMATIC level discipline; cross-regulator-spread metric) | S88 W7a-74 V.5 | gen-physicist + connes | CONDITIONAL (on A.36 Reading A WIN swap-survives ≥4/5) |
+| §VII.K-DUAL.LEVEL-DRESSED | Companion to §VII.AR | S88 | gen-physicist | PERMANENT |
+
+### XVI.F. P-v2 HP^1-content-distinct + Mellin-cone supplementary
+
+| §VII slot | Theorem name | Landing session | Author(s) | Status |
+|:----------|:-------------|:----------------|:----------|:-------|
+| §VII.P′ | (η = 0, GV ≠ 0) joint-probe official landing on (C_H, C_epsH) parity-twin pair; Bulletin #1 CONFIRMED-DEMOTED-SCHEME-DEPENDENT, Bulletin #2 CONFIRMED-PROMOTED-PARITY-BLINDNESS (composite verdict; Class-(c) PIN-DRIFT-FROM-STALE-SOURCE calibration) | S86 W-11 | lizzi + connes | PERMANENT |
+| §VII.AF.2 | §VII.P-v2 HP^1-content-distinct refinement (replaces failed S86 W9 C24 HP^0-content-distinct attempt) | S87 W5-4 | connes | PERMANENT (via mechanical-edit remediation) |
+| §VII.AF.3 | T6 substitution PROMOTION to PASS-UNCONDITIONAL | S86 W-5 | volovik + connes | NEEDS-DECISION |
+| §VII.U.7 | PER-EVAL FINITENESS PRE-REGISTRATION (W0-20 apex + W0-7-MB rho-fit per-evaluation finiteness check for FINITE-VECTOR observables) | S87 W1a-3 | lizzi | PERMANENT |
+
+### XVI.G. Other S52-S88 PERMANENT registry landings
+
+| §VII slot | Theorem name | Landing session | Author(s) | Status |
+|:----------|:-------------|:----------------|:----------|:-------|
+| §VII.B | Two-Layer Obstruction + HP^1 Cohomology Stability | S86 W1a-1 | (collaborative) | PERMANENT |
+| §VII.R | NCG-Structural-Exclusion Meta-Theorem (3-signed) | S86 W1a-2 | connes | PERMANENT |
+| §VII.S | Perturbative-Ledger Immunization Family (6 Φ-branches) | S86 W1a-3 | connes | PERMANENT |
+| §VII.T | Mellin Strip / Convergence Cone (sponsored, S85 W0-S6 origin; lifted into §VII.U.6 at S86) | S85 W0-S6 | lizzi-spectral-functional-theorist | PERMANENT (cross-link) |
+| §VII.AA | Layer-3 \|ρ\| Analytic Closed-Form Reduction (5-regulator atlas) | S86 W12-4 | connes | PERMANENT |
+| §VII.M.W10-3 | van-Hove-cusp non-stationarity uniqueness theorem (ASSERTS tau_fold = 0.190 as an imported premise per convention=canonical_constants-S85-freeze; PROVES only existence + non-stationary character dS/dtau != 0 + multiplicity-uniqueness — LOCATION-free; the cusp LOCATION is the distinct functional tau_cross_van_hove = 0.191038, registry §VII-B.TAU-CROSS-VAN-HOVE, S114 W-1 output (iii); 0.190 = 19/100 is the rational anchor, non-fungible with 0.191038) | S85 W10-3 | connes + lizzi | PERMANENT |
+| §VII.O.W4 | f_NL_folded pathway adjudication (3-pathway pinning: equilateral 0.0547 / GGE-folded 0.129 / analytic-template 0.7685) | S86 W-4 | gen-physicist + transit-dynamics | PERMANENT |
+| §VII.P | Borel-Summability Floor Theorem (W9-1; S_inst/Borel_thr = 5.58e+4 across τ range) | S85 W9-1 | gen-physicist | PERMANENT |
+| §VII.Q | F_amp^3PI Factorization-Invariance Theorem (W9-2; machine-epsilon identity 2.22e-16 across 5-regulator atlas) | S85 W9-2 | gen-physicist | PERMANENT |
+| §VII.W | First Cross-Pillar Bridge Theorem (Pillar III ↔ Pillar IV; HP parity-grading orthogonality of HP_*(A_F)) | S86 W-5 | volovik PRIMARY + connes CO-AUTHOR | PERMANENT |
+| §VII.AS | Geometric-Resummation Closure | S88 W18 W6a-51 | gen-physicist | PERMANENT |
+| §VIII.METHODOLOGY-FORWARD-BACKWARD-CLOSURE | First fb_pair(M) construction at S86 W-7 (per `epistemic-discipline.md §"Forward-Backward Inference Closure"`) | S86 W-7 | gen-physicist | PERMANENT (methodology-floor) |
+
+### XVI.H. Promotion-gap & deprecated slots
+
+| §VII slot | Status | Notes |
+|:----------|:-------|:------|
+| §VII.AT | OPEN (recommended for S89+ housekeeping per atlas-08 Q34) | W11 Volovik CC Tracking Wall (DILUTION-CC-66) currently anchored at `framework-cc-oom.md` + `falsifier-watchlist.md`; lacks dedicated §VII slot. Recommend §VII.AT allocation (next free letter post-§VII.AS at S88 W18 W6a-51). |
+| §VII.AN | RETRACTED-anchor-structure (S88 W-15 V.6 cross-corner conflation retraction per atlas-09 Item 41); ANCHOR-1 + ANCHOR-2 retained but reclassified from CO-PRIMARY to STRUCTURALLY-ORTHOGONAL-COMPANION | atlas-09 Item 41 calibration corpus instance #1 of `registry-landing.md §"Detection (when SOURCE-DOUBLE-CITE-CO-PRIMARY applies)"` clause 4 |
+| §VII.P → §VII.AF.2 v2 | DEPRECATED (S86 W9 C24 HP^0-content-distinct attempt superseded by §VII.AF.2 HP^1-content-distinct at S87 W5-4) | atlas-09 Item 39 cross-link |
+| §VII.Y → §VII.S.C-eta + §VII.S.C-theta | DEPRECATED placeholder; sub-rows relocated to §VII.S parent on 2026-04-26 | Registry hygiene |
+
+### XVI.I. Aggregate (S52-S88)
+
+| Status class | Count | Notes |
+|:------------|:-----:|:------|
+| PERMANENT (STAGE-3) | 63 | Includes Level A-E novel + S63 T1-T17 + S64-S66 structural + ~30 new S52-S88 §VII slots + the 11 K-cohort joint theorems promoted S90/S100a/S105/S106/S108 (K1 §VII.U.2, K2 §VII.AC.1, K3 §VII.AD, K4 §VII.AG.1, K5 §VII.W-3.LAB, K6 §VII.AM, K7 §VII.X.W4-1, K9 §VII.X.2-NECESSITY, K10 §VII.AH, K11 §VII.AC.4, K12 §VII.BZ) — atlas-07 cohort table synced to canonical at S109 MAINTAIN; **K12 §VII.BZ enumeration added at S110 (HK-ATLAS07-COHORT)** — K12 was promoted S106 STAGE-3-PERMANENT (blind Stage-2 PASS-AND `566cdcb5`; listed atlas-04 §X) but omitted from this K-cohort enumeration at S109 MAINTAIN; the aggregate STAGE-3 total reflects the canonical §VII census (K12 within it; the S110 fix is enumerative, not additive) |
+| STAGE-1-CANDIDATE | 1 | **§VII.AF.1.STATE-PROJ (K8) only** — PENDING-VERIFICATION, no dispatch-ready Stage-2 gate; the lone remaining joint-theorem-cohort holdout. K1-K7,K9-K12 ALL promoted STAGE-3-PERMANENT (S90/S100a/S105/S106/S108) and moved to the PERMANENT row above; atlas-07 cohort table reconciled to the canonical permanent-results-registry + atlas-04 §X + open-channel-ledger §C at S109 MAINTAIN (prior "11" count lagged S90-S108 promotions); K12 §VII.BZ enumeration completed at S110 (HK-ATLAS07-COHORT) |
+| CANDIDATE-PENDING | 1 | §VII.AB.8 (multi-year Aalto LTL liaison; 5-yr horizon 2031) |
+| INFO | 2 | §VII.AF.3, §VII.W-2 |
+| CORRIGENDUM | 2 | §VII.AN-CORRIGENDUM, §VII.AO-CORRIGENDUM (Option-A `supersedes`-tagged successor entries per `gate-verdicts.md`) |
+| OPEN | 4 | §VII.AG.2 (READY-TO-INSTALL conditional), §VII.AG.3 (DEFERRED ~9 months), §VII.AJ (parent), §VII.AJ.STATE-PROJ (REGISTRY-INCOMPLETE-PENDING-FIRST-EXTRACTION, S116-W7), §VII.AF.1.STATE-PROJ (companion slot allocation) |
+| DEPRECATED | 2 | §VII.P → §VII.AF.2 v2; §VII.Y → §VII.S.C-eta + §VII.S.C-theta |
+
+**Total**: ~60 substantive landings; ~22 distinct S88 slot landings; full count includes reserved/deprecated slots = 66 distinct slot rows.
+
+**By landing session**: S83 = 2; S84 = 4; S85 = 5; S86 ≈ 28; S87 ≈ 12; **S88 ≈ 25**.
+
+**By PRIMARY author**: connes-ncg-theorist 19; lizzi-spectral-functional-theorist 8; volovik-superfluid-universe-theorist 4; gen-physicist 5; knowledge-weaver 2; hawking-theorist 1; orchestrator-direct ~4; mack-cosmic-bridge sole-writer ~9 (technical content co-authored per individual rows).
+
+### XVI.J. D3 audit knowledge.db round-trip status (S88-current)
+
+Per atlas-07 materials packet Section 2 round-trip audit: ~37 of 66 §VII slots **lack direct knowledge-MCP slot-card entries** (PARTIAL or NO hit on most non-headline slots). This is a methodology-floor gap routed to atlas-08 Q32 (D3 audit knowledge.db round-trip). Remediation: refine `tools/extract_entities.py` regex to detect §VII.X.Y nested-slot structure (sub-slots like §VII.AF.1.OP-PROJ, §VII.K-PROP-W8-LAYERED currently surface only as PARTIAL or NO hits); rerun `/weave --update --db-sync` Phase 6.
+
+**Slots with confirmed YES knowledge.db hits** (~8): §VII.M, §VII.N, §VII.W, §VII.W-3.ALGEBRAIC + .SUBSTRATE, §VII.W-3.LAB, §VII.X.1, §VII.X.W4-1, §VII.AD, §VII.AF parent CAT slot, §VII.AF.1.OP-PROJ, §VII.K-PROP.W10-4.
+
+**Slots with PARTIAL coverage** (~21): FTS5 indexed but no theorem-table slot-card structure; registry text queryable via `mcp__knowledge__.search_knowledge` but not via `list_entities("theorems")` with proper slot-id/status/precision metadata.
+
+**Slots with NO direct hits** (~37): the remediation queue for `/weave --update` Phase 6 entity extraction post-fold.
+
+### XVI.K. Per-Bulletin-per-pole Level-1/2/3 ladder corpus (S88 W10-119 extension)
+
+Per `cross-pillar-bridge-anatomy.md §"Per-Bulletin-per-pole Level-1 wall classification"` (intra-pillar Pillar-VII Mellin-cone Bulletins; SUGGESTION at K=3 cohomology-class-distinct, MANDATORY-pending pole-distinct K=3):
+
+| Bulletin / slot | Substrate-distance pole | Level-1 (cohomology-class identity) | Level-2 (algebraic envelope) | Level-3 (empirical anchor) |
+|:----------------|:------------------------|:------------------------------------|:-----------------------------|:-----------------------------|
+| §VII.K-PROP.W10-4 ρ_∞ permanent-wall | s=4 (substrate-distance-2; fermionic-signed-residue) | ρ_∞ structurally IRRATIONAL per CC2 PROVEN; PERMANENT-WALL classification | simple-pole fit `ρ(L) = c_0 + α/L² + β/L⁴`; L^{-2} dominant convergence at d=4 | ρ_inf_full_f64 = -0.8103647022669215 (S87 W10-2; α = 29.916, β = -662.24, R² = 0.99995) |
+| §VII.U.1 Mellin-Dirichlet identity | s=3 (substrate-distance-1; apex-universal anchor) | Mellin-Dirichlet identity at substrate-distance-1 pole; (A)-class pure-Mellin-support per F_4 | L_max-stability rel_diff = 0e+00 (S86 W-1 / S87 W1a-4 PASS) at L_max=12 | bit-identity stability across atlas members; (A)-class anchor `M^{(ζ)}_3 ≈ 2.97e-3` at L_max=10 |
+| §VII.AR LEVEL-DRESSED rank-ordering | s=4 (same pole as W10-4 but distinct cohomology-class structure) | Rank ordering of {F_2, cutoff_sqrt, anomaly, Zubarev} at s=4 IS REGULATOR-PARAMETER-dependent under the PRIMARY-vs-SCHEMATIC LEVEL discipline | pole-specific α(s=4) per Casimir-bound saturation argument | rank-ordering value pinned in §VII.AR registry entry |
+
+Forward enforcement (S89+ Pillar-VII Bulletin-class entries at distinct poles s ∈ {5, 6, 7, ...}) MUST declare substrate-distance pole index, Level-1 classification (regulator-invariance status: FI / RD / MIXED + structural identity: rational / irrational / structurally-IRRATIONAL-per-CC2-analog), Level-2 envelope cite pole-specific α(s) AND Casimir-bound or Friedrich-Bär saturation argument, Level-3 anchor at L_max=10 OR analytic limit per pole-specific saturation theorem.
+
+### XVI.L. Cross-link to atlas-11 + atlas-12 (NEW atlases)
+
+The cross-pillar bridge corpus (Section XVI.A above) is jointly cited by atlas-11 (cross-pillar-bridge-corpus, NEW) and atlas-07 (here). The methodology-floor walls (PRU Class 8.4-8.6 advisory; Hybrid Independence Test K=1; Layer-separability carve-out K=1; Closing-Paragraph-Coherence audit pattern K=1; substrate-input-orthogonality K=1; reviewer-machinery-orthogonality K=1) are jointly cited by atlas-12 (methodology-floor, NEW) and atlas-04 (assumptions §VIII Methodology-Floor Walls). The 4-stage joint-theorem-promotion pathway is jointly cited by atlas-12 (methodology) and atlas-08 (open questions §VI.A Q24-Q26 Stage-2 verifies).
+
+---
+
+*S52-S88 §VII Registry Slot Inventory section added 2026-05-09. Compiled from `sessions/permanent-results-registry.md` (S29-S88; ~16,000 lines as of S88), atlas-07-materials packet, knowledge MCP `mcp__knowledge__.list_entities("theorems")`, `mcp__knowledge__.search_knowledge` queries against headline §VII slots. D3 round-trip audit data cross-referenced for the ~37/66 round-trip gap.*

@@ -1,0 +1,127 @@
+================================================================================
+W3-C  QCD-OPENING-74:  alpha_s from instantons in Region II (tau > 0.48)
+================================================================================
+  Loaded s73a_instanton_landscape.npz
+    tau_scan range: [0.000, 1.000]  (21 pts)
+    S_inst_scan range (S73A):  [2.6714, 19.7392]
+    kappa = 1 crossing (Region II boundary): tau = 0.480354
+  Loaded s74_instanton_stabilization.npz
+    TAU_TARGET       = 0.48
+    S_inst_target    = 7.558002625132   <-- W2-R refinement
+    n_inst_target    = 0.616061
+
+--------------------------------------------------------------------------------
+3.  Perturbative alpha_s(M_KK) from SM 2-loop upward RGE
+--------------------------------------------------------------------------------
+  alpha_s(M_Z)      = 0.118  (PDG 2024)
+  1/alpha_s(M_Z)    = 8.474576
+  g_3(M_Z)          = 1.217716
+  g_1(M_Z) (GUT)    = 0.461423
+  g_2(M_Z)          = 0.651724
+  y_t(M_Z)          = 0.942205
+  lambda(M_Z)       = 0.12907376
+
+  t_MKK(gravity) = ln(M_KK/M_Z) = 34.3338
+  t_MKK(kerner)  = ln(M_KK/M_Z) = 36.2488
+  alpha_s(M_KK, gravity 2-loop) = 0.02119289
+  1/alpha_s(M_KK, gravity)      = 47.185637
+  alpha_s(M_KK, kerner 2-loop)  = 0.02027179
+  1/alpha_s(M_KK, kerner)       = 49.329645
+
+--------------------------------------------------------------------------------
+4.  Instanton-dressed 1/alpha_s from Region II (tau > 0.48)
+--------------------------------------------------------------------------------
+  S_inst(tau=0.48)  = 7.558002625132  (W2-R refinement)
+  exp(-S_inst)      = 5.219166667164e-04
+
+  Instanton shift  Delta(1/alpha_s) = (c_inst / (2 pi)) * exp(-S_inst)
+
+  case                               route      alpha_s^pert   alpha_s^inst    |Delta a|/a
+  c=N_c=3 (Casimir)                  gravity      0.02119289     0.02119278   5.281174e-06
+  c=N_c=3 (Casimir)                  kerner       0.02027179     0.02027168   5.051640e-06
+  c=2 N_c=6 (Debye)                  gravity      0.02119289     0.02119267   1.056229e-05
+  c=2 N_c=6 (Debye)                  kerner       0.02027179     0.02027158   1.010323e-05
+  c=S_inst (log t'Hooft density)     gravity      0.02119289     0.02119261   1.330493e-05
+  c=S_inst (log t'Hooft density)     kerner       0.02027179     0.02027153   1.272667e-05
+
+--------------------------------------------------------------------------------
+5.  Gate classification
+--------------------------------------------------------------------------------
+  Dominant case:  c=S_inst (log t'Hooft density)  (S_inst = 7.558003)
+  |Delta alpha_s|/alpha_s^pert  (gravity)  = 1.330493e-05
+  |Delta alpha_s|/alpha_s^pert  (kerner)   = 1.272667e-05
+  Gate thresholds: PASS < 0.1, INFO < 0.3
+  Verdict (gravity): PASS
+  Verdict (kerner):  PASS
+  Verdict (overall): PASS
+
+--------------------------------------------------------------------------------
+6.  Region II scan: alpha_s^inst(M_KK) vs tau  (tau > 0.48)
+--------------------------------------------------------------------------------
+  Region II points: 11  (tau in [0.500, 1.000])
+     tau    kappa     S_inst        exp(-S)   |Da/a| (grav)    |Da/a| (ker)
+   0.500   0.9918     7.2616   7.019495e-04    1.719270e-05    1.644546e-05
+   0.550   0.9680     6.5706   1.400940e-03    3.104718e-05    2.969782e-05
+   0.600   0.9419     5.9453   2.618024e-03    5.249736e-05    5.021579e-05
+   0.650   0.9140     5.3796   4.609841e-03    8.363861e-05    8.000373e-05
+   0.700   0.8848     4.8676   7.691581e-03    1.262666e-04    1.207794e-04
+   0.750   0.8547     4.4044   1.222328e-02    1.815546e-04    1.736651e-04
+   0.800   0.8239     3.9853   1.858729e-02    2.497907e-04    2.389367e-04
+   0.850   0.7929     3.6060   2.715950e-02    3.302310e-04    3.158827e-04
+   0.900   0.7619     3.2629   3.827841e-02    4.210958e-04    4.028012e-04
+   0.950   0.7312     2.9524   5.221601e-02    5.197068e-04    4.971301e-04
+   1.000   0.7009     2.6714   6.915455e-02    6.227322e-04    5.956826e-04
+
+--------------------------------------------------------------------------------
+7.  Cross-checks
+--------------------------------------------------------------------------------
+  (a) S_inst -> 1000 limit: |alpha_inst - alpha_pert|/alpha_pert = 0.000e+00  (expect machine-zero)
+  (b) Inverse-coupling shift at tau=0.48: Delta(1/alpha_s) = 6.278102e-04
+      W1-R 't Hooft modulus ratio (2.55e-12) is in a DIFFERENT
+      channel (vertex / bare dS/dtau); the two are not numerically
+      comparable but the hierarchy is:
+          inverse-coupling shift  >>  modulus-vertex contribution
+          6.278e-04 vs W1-R 2.55e-12   (ratio 2.46e+08x)
+      Consistency: the inverse-coupling shift is larger than the
+      modulus-vertex contribution because the modulus form carries an
+      additional 1/Lambda^4 suppression and a smaller determinantal
+      prefactor.  Both channels agree on the exponential exp(-S_inst),
+      differing only by O(1) prefactors and phase-space dressings.
+  (c) Dimensional analysis: [(c/2pi) exp(-S_inst)] = dimensionless (PASS)
+  (d) Downward propagation: the instanton shift is UV-boundary,
+      so Delta(1/alpha_s) is preserved under RGE running.  At M_Z,
+      the same Delta shifts 1/alpha_s(M_Z) by the same amount,
+      giving a fractional shift of 7.408e-05 at M_Z.
+  (e) W1-A consistency: the W1-A TRANSFER-FUNCTION-74 result says
+      alpha_s(CMB) = 8.4e-15 (machine zero) after multifield delta-N.
+      The W3-C shift is even smaller than the naive +0.833 projection
+      and, projected through the same linear transfer, stays zero.
+
+--------------------------------------------------------------------------------
+8.  Writing outputs
+--------------------------------------------------------------------------------
+  Wrote C:\sandbox\Ainulindale Exflation\tier0-computation\s74_qcd_opening.npz
+  Wrote C:\sandbox\Ainulindale Exflation\tier0-computation\s74_qcd_opening.png
+
+--------------------------------------------------------------------------------
+10.  Writing Section W3-C in working paper
+--------------------------------------------------------------------------------
+  Wrote Section W3-C to C:\sandbox\Ainulindale Exflation\sessions\session-74\session-74-results-workingpaper.md
+
+================================================================================
+W3-C SUMMARY
+================================================================================
+Gate: QCD-OPENING-74  ->  PASS
+Reason: (c/2pi)*exp(-S_inst) = 6.278e-04; |Delta 1/alpha_s| = 6.278e-04; relative shift to alpha_s = 1.330e-05 (gravity); 1.273e-05 (kerner)
+
+  S_inst(tau=0.48)           = 7.558002625132  (W2-R)
+  exp(-S_inst)               = 5.219167e-04
+  alpha_s(M_Z, PDG)          = 0.118
+  alpha_s(M_KK, gravity 2L)  = 0.02119289
+  alpha_s(M_KK, kerner  2L)  = 0.02027179
+  Delta(1/alpha_s) dominant  = 6.278102e-04
+  |Delta alpha|/alpha (grav) = 1.330493e-05
+  |Delta alpha|/alpha (ker)  = 1.272667e-05
+  PASS threshold             = 0.1
+  Margin below PASS          = 7516x
+================================================================================

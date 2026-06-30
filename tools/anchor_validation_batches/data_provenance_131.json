@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 131,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1301",
+      "anchor_type": "data_provenance",
+      "name": "leggett_grav_decay",
+      "script_path": "session-73/s73a_leggett_grav_decay.py",
+      "session": "s73a",
+      "inputs": "",
+      "outputs": "session-73/s73a_leggett_grav_decay.npz",
+      "source_file": "computations/session-73/s73a_leggett_grav_decay.py",
+      "source_context_30_lines": "   59:     E_B1, E_B2_mean, E_B3_mean,\n   60: )\n   61: \n   62: # =============================================================================\n   63: # Load S67 data for comparison and Z_2 verification\n   64: # =============================================================================\n   65: data_dir = os.path.dirname(os.path.abspath(__file__))\n   66: \n   67: s67_path = os.path.join(data_dir, \"s67_leggett_grav_decay.npz\")\n   68: if os.path.exists(s67_path):\n   69:     s67 = np.load(s67_path, allow_pickle=True)\n   70:     Z2_asymmetry_max_s67 = float(s67['Z2_asymmetry_max'])\n   71:     Gamma_pair_s67 = float(s67['Gamma_pair_S59'])\n   72:     tau_pair_s67 = float(s67['tau_pair_s_S59'])\n   73:     d2a2_dphi2_s67 = float(s67['d2a2_dphi2'])\n   74:     frac_d2a2_s67 = float(s67['frac_d2a2'])\n   75:     HAS_S67 = True  # (local)"
+    },
+    {
+      "anchor_id": "prov_1302",
+      "anchor_type": "data_provenance",
+      "name": "luttinger_supersonic",
+      "script_path": "session-73/s73a_luttinger_supersonic.py",
+      "session": "s73a",
+      "inputs": "",
+      "outputs": "session-73/s73a_luttinger_supersonic.npz",
+      "source_file": "computations/session-73/s73a_luttinger_supersonic.py",
+      "source_context_30_lines": "  919:     'eps_pre': eps_pre,\n  920:     'eps_post': eps_post,\n  921:     'V_fold': V_fold,\n  922:     'tau_fold': tau_fold,\n  923:     'dt_transit': dt_transit,\n  924:     'N_modes': N_modes,\n  925: }\n  926: \n  927: outfile = os.path.join(data_dir, 's73a_luttinger_supersonic.npz')\n  928: np.savez(outfile, **results)\n  929: print(f\"Saved to {outfile}\")\n  930: \n  931: print(\"\\n\" + \"=\" * 72)\n  932: print(\"LUTTINGER-SUPERSONIC-73a COMPLETE\")\n  933: print(\"=\" * 72)"
+    },
+    {
+      "anchor_id": "prov_1303",
+      "anchor_type": "data_provenance",
+      "name": "mott_charge_noise",
+      "script_path": "session-73/s73a_mott_charge_noise.py",
+      "session": "s73a",
+      "inputs": "",
+      "outputs": "session-73/s73a_mott_charge_noise.npz",
+      "source_file": "computations/session-73/s73a_mott_charge_noise.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s73a_mott_charge_noise.py — Mott Charge Noise Decoherence Factor (MOTT-CHARGE-NOISE-73a)\n    4: \n    5: The CG(24) Josephson array at the fold has E_J/E_C ~ O(1), placing it near\n    6: the superconductor-insulator boundary. In this regime, quantum charge number\n    7: fluctuations on each cell are non-negligible. These fluctuations create a\n    8: dephasing factor F = exp(-<delta_N^2>/2) that suppresses the coherent\n    9: squeeze amplitude — a STATIC decoherence mechanism independent of exit-\n   10: horizon dynamics.\n   11: "
+    },
+    {
+      "anchor_id": "prov_1304",
+      "anchor_type": "data_provenance",
+      "name": "pw_threshold_ratios",
+      "script_path": "session-73/s73a_pw_threshold_ratios.py",
+      "session": "s73a",
+      "inputs": "",
+      "outputs": "session-73/s73a_pw_threshold_ratios.npz, session-73/s73a_pw_threshold_ratios.png",
+      "source_file": "computations/session-73/s73a_pw_threshold_ratios.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s73a_pw_threshold_ratios.py — PW-THRESHOLD-RATIOS-73a\n    4: =====================================================\n    5: \n    6: Peter-Weyl-sector-resolved threshold correction RATIOS delta_1/delta_3\n    7: and delta_2/delta_3 for the Weinberg angle RG running from M_KK to M_Z.\n    8: \n    9: STRUCTURAL CONTEXT\n   10: ------------------\n   11: S72 WEINBERG-72 found:"
+    },
+    {
+      "anchor_id": "prov_1305",
+      "anchor_type": "data_provenance",
+      "name": "re_decoherence_multi",
+      "script_path": "session-73/s73a_re_decoherence_multi.py",
+      "session": "s73a",
+      "inputs": "",
+      "outputs": "session-73/s73a_re_decoherence_multi.npz",
+      "source_file": "computations/session-73/s73a_re_decoherence_multi.py",
+      "source_context_30_lines": "  874: print()\n  875: \n  876: # =============================================================================\n  877: #  SECTION 8: SAVE RESULTS\n  878: # =============================================================================\n  879: print(\"SECTION 8: Saving results\")\n  880: print(\"-\" * 76)\n  881: \n  882: outfile = os.path.join(data_dir, \"s73a_re_decoherence_multi.npz\")\n  883: \n  884: np.savez(\n  885:     outfile,\n  886:     # Gate\n  887:     gate_name=\"RE-DECOHERENCE-MULTI-73a\",\n  888:     gate_verdict=verdict,\n  889:     gate_detail=verdict_detail,\n  890:     # Channel decomposition"
+    },
+    {
+      "anchor_id": "prov_1306",
+      "anchor_type": "data_provenance",
+      "name": "sector_rk",
+      "script_path": "session-73/s73a_sector_rk.py",
+      "session": "s73a",
+      "inputs": "",
+      "outputs": "session-73/s73a_sector_rk.npz",
+      "source_file": "computations/session-73/s73a_sector_rk.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s73a_sector_rk.py — Sector-Resolved R_K Conductance on CG(24)\n    4: ===============================================================\n    5: \n    6: Gate: SECTOR-RK-73a\n    7:   PASS: R_K^{SU(2)} / R_K^{U(1)} within 20% of threshold ratio delta_2/delta_1\n    8:         from W2-B (transport-threshold correlation)\n    9:   INFO: Sector resistances computed but no clear correlation with thresholds\n   10:   FAIL: All sectors have identical R_K (sector-independence)\n   11: "
+    },
+    {
+      "anchor_id": "prov_1307",
+      "anchor_type": "data_provenance",
+      "name": "spectral_action_profile",
+      "script_path": "session-73/s73a_spectral_action_profile.py",
+      "session": "s73a",
+      "inputs": "s66_cutoff_ns.npz",
+      "outputs": "session-73/s73a_spectral_action_profile.npz, session-73/s73a_spectral_action_profile.png",
+      "source_file": "computations/session-73/s73a_spectral_action_profile.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s73a_spectral_action_profile.py -- SPECTRAL-ACTION-PROFILE-73a\n    4: ================================================================\n    5: \n    6: Gate: SPECTRAL-ACTION-PROFILE-73a\n    7:   PASS: S(tau) has a post-fold minimum at tau_eq in [0.19, 1.5] with d^2S/dtau^2 > 0\n    8:   INFO: S(tau) monotonically increasing for tau > 0.19, or minimum outside [0.19, 1.5]\n    9:   FAIL: Unphysical results (negative S, non-smooth profile)\n   10: \n   11: Physics:"
+    },
+    {
+      "anchor_id": "prov_1308",
+      "anchor_type": "data_provenance",
+      "name": "abs_extrapolation",
+      "script_path": "session-73/s73b_abs_extrapolation.py",
+      "session": "s73b",
+      "inputs": "s72_asymptotic_truncation.npz, s70_lmax7_pw.npz, s73b_six_sequence.npz",
+      "outputs": "session-73/s73b_abs_extrapolation.npz, session-73/s73b_abs_extrapolation.png",
+      "source_file": "computations/session-73/s73b_abs_extrapolation.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s73b_abs_extrapolation.py  --  ABS-EXTRAP-L7\n    4: =============================================\n    5: \n    6: Gate: ABS-EXTRAP-L7\n    7:   PASS         : m_H, M_KK, G_N all converge with residuals < 5% across\n    8:                  three extrapolation methods\n    9:   INFO         : Some converge, others still scaling at L=7\n   10:   FAIL         : A quantity diverges at a rate inconsistent with Weyl\n   11:                  asymptotics (would indicate computation bug)"
+    },
+    {
+      "anchor_id": "prov_1309",
+      "anchor_type": "data_provenance",
+      "name": "canonical_audit",
+      "script_path": "session-73/s73b_canonical_audit.py",
+      "session": "s73b",
+      "inputs": "",
+      "outputs": "session-73/s73b_canonical_audit.npz",
+      "source_file": "computations/session-73/s73b_canonical_audit.py",
+      "source_context_30_lines": "   28:   d log a_2 / d tau:       -0.328 -> -0.307  (-6.6%)    NEAR-PROTECTED\n   29:   d log a_4 / d tau:       -0.470 -> -0.412  (-12.3%)   NEAR-PROTECTED\n   30:   d log a_0 / d tau:        0.000 -> 0.000   (exact)    PROTECTED (volume-preserving)\n   31: \n   32: AND m_H (from a_6/a_4 via 2-loop RGE): converges to 133.4 GeV (W3-F fit).\n   33: \n   34: Output\n   35: ------\n   36:   1. computations/session-73/s73b_canonical_audit.npz\n   37:   2. computations/_shared/canonical_constants_classification.md\n   38:   3. Printed summary suitable for copy into session-73b-results-workingpaper.md W5-A\n   39: \n   40: Classification rules applied\n   41: ----------------------------\n   42:   (a) PDG / CODATA values            -> PDG\n   43:   (b) Derived unit conversions       -> DERIVED (l=l')\n   44:   (c) Cosmological observables (obs) -> OBSERVATION"
+    },
+    {
+      "anchor_id": "prov_1310",
+      "anchor_type": "data_provenance",
+      "name": "corrections_propagate",
+      "script_path": "session-73/s73b_corrections_propagate.py",
+      "session": "s73b",
+      "inputs": "",
+      "outputs": "session-73/s73b_corrections_propagate.npz",
+      "source_file": "computations/session-73/s73b_corrections_propagate.py",
+      "source_context_30_lines": "  709: \n  710: # ============================================================================\n  711: #  SAVE RESULTS\n  712: # ============================================================================\n  713: print(\"\\n\" + \"=\" * 78)\n  714: print(\"SAVING RESULTS\")\n  715: print(\"=\" * 78)\n  716: \n  717: output_path = os.path.join(SCRIPT_DIR, 's73b_corrections_propagate.npz')\n  718: np.savez(output_path,\n  719:     # Alpha* values\n  720:     alpha_star_Vphys=alpha_Vphys,\n  721:     alpha_star_Vfull=alpha_Vfull,\n  722:     alpha_star_VHF=alpha_HF,\n  723:     alpha_star_s46_stored=alpha_s46_stored,\n  724:     alpha_star_vb3_stored=alpha_vb3_stored,\n  725:     # Level spacing"
+    }
+  ]
+}

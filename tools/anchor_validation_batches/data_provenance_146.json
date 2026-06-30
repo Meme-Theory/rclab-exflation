@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 146,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1451",
+      "anchor_type": "data_provenance",
+      "name": "mh_kasparov",
+      "script_path": "session-75/s75_mh_kasparov.py",
+      "session": "s75",
+      "inputs": "",
+      "outputs": "session-75/s75_mh_kasparov.npz, session-75/s75_mh_kasparov.png",
+      "source_file": "computations/session-75/s75_mh_kasparov.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s75_mh_kasparov.py -- M-H-FROM-KASPAROV-75\n    4: Higgs mass from the spectral action WITHOUT f(0) weighting factor,\n    5: using the Kasparov product approach.\n    6: \n    7: PHYSICAL DERIVATION\n    8: -------------------\n    9: In the standard Chamseddine-Connes-Marcolli (CCM) spectral action on M^4 x F,\n   10: the bosonic Lagrangian from Tr f(D^2/Lambda^2) gives the Higgs quartic coupling\n   11: at the unification scale Lambda = M_KK:"
+    },
+    {
+      "anchor_id": "prov_1452",
+      "anchor_type": "data_provenance",
+      "name": "morse_bott_multi_lmax",
+      "script_path": "session-75/s75_morse_bott_multi_lmax.py",
+      "session": "s75",
+      "inputs": "",
+      "outputs": "session-75/s75_morse_bott_multi_lmax.npz, session-75/s75_morse_bott_multi_lmax.png",
+      "source_file": "computations/session-75/s75_morse_bott_multi_lmax.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s75_morse_bott_multi_lmax.py -- MORSE-BOTT-MULTI-LMAX-75 (GPU-OPTIMIZED)\n    4: =========================================================================\n    5: Gate: S75-B4-MORSE-MULTI-LMAX\n    6:   PASS: Signature (36+, 0-, 0-null) at all three L_max in {3, 5, 7}\n    7:   INFO: Signature changes but remains (n+, 0-, 0-null) with different n+\n    8:   FAIL: Any negative eigenvalue appears\n    9: \n   10: GPU optimization: Batch all 1333 metric perturbations per L_max and use\n   11: torch.linalg.eigvalsh for batched Dirac eigenvalue computation on ROCm."
+    },
+    {
+      "anchor_id": "prov_1453",
+      "anchor_type": "data_provenance",
+      "name": "multi_channel_dm",
+      "script_path": "session-75/s75_multi_channel_dm.py",
+      "session": "s75",
+      "inputs": "",
+      "outputs": "session-75/s75_multi_channel_dm.npz",
+      "source_file": "computations/session-75/s75_multi_channel_dm.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s75_multi_channel_dm.py -- Multi-Channel DM CDM Compatibility Check\n    4: =====================================================================\n    5: Gate: S75-E3-MULTI-DM (MULTI-CHANNEL-DM-CDM-COMPAT-75)\n    6:   PASS: All 4 observables match CDM within 7%\n    7:   INFO: 1-2 observables outside 7%\n    8:   FAIL: >= 3 observables outside 7%\n    9: \n   10: PHYSICS:\n   11:     The Leggett-channel DM from the GGE relic consists of inter-band"
+    },
+    {
+      "anchor_id": "prov_1454",
+      "anchor_type": "data_provenance",
+      "name": "multi_instanton_lmax10",
+      "script_path": "session-75/s75_multi_instanton_lmax10.py",
+      "session": "s75",
+      "inputs": "s74_moduli_stabilization.npz, s73a_instanton_landscape.npz, s73a_spectral_action_profile.npz",
+      "outputs": "session-75/s75_multi_instanton_lmax10.npz, session-75/s75_multi_instanton_lmax10.png",
+      "source_file": "computations/session-75/s75_multi_instanton_lmax10.py",
+      "source_context_30_lines": "   25: The key new ingredient: at higher L_max, N_eig grows as L^8 (Weyl\n   26: asymptotic for 8-dimensional SU(3)). The instanton density n_inst\n   27: acquires an N_eig-dependent prefactor from the functional determinant\n   28: det'(-D^2)^{-1/2}, and instanton-instanton interactions scale as\n   29: n_inst^2 * V_int, where V_int is the interaction volume.\n   30: \n   31: Input: s74_moduli_stabilization.npz, s73a_instanton_landscape.npz,\n   32:        s73a_spectral_action_profile.npz, canonical_constants.py\n   33: Output: s75_multi_instanton_lmax10.npz, s75_multi_instanton_lmax10.png\n   34: \n   35: Cross-checks:\n   36:   CHK1: At L_max=7, must reproduce S74 ratio = 3.22e-3, zero sign changes.\n   37:   CHK2: V_multi grows as N_eig^2, V_bare as N_eig. Ratio scales as N_eig.\n   38:   CHK3: Dilute-gas valid if n_inst * V_inst^{1/4} < 1.\n   39: \"\"\"\n   40: \n   41: import numpy as np"
+    },
+    {
+      "anchor_id": "prov_1455",
+      "anchor_type": "data_provenance",
+      "name": "n22_n25_coupling",
+      "script_path": "session-75/s75_n22_n25_coupling.py",
+      "session": "s75",
+      "inputs": "computations/session-75/s75_multi_instanton_lmax10.npz",
+      "outputs": "session-75/s75_n22_n25_coupling.npz",
+      "source_file": "computations/session-75/s75_n22_n25_coupling.py",
+      "source_context_30_lines": "   25:   - computations/_shared/canonical_constants.py\n   26: \n   27: Gate: S75-B5-COUPLING-CHECK\n   28:   PASS: m_eff^2 / H_fold^2 >= 20.7\n   29:   INFO: 1.0 <= m_eff^2/H_fold^2 < 20.7\n   30:   FAIL: m_eff^2/H_fold^2 < 1.0\n   31: \n   32: Output:\n   33:   - computations/session-75/s75_n22_n25_coupling.npz\n   34: \"\"\"\n   35: \n   36: import sys\n   37: sys.path.insert(0, \"computations\")\n   38: from canonical_constants import *\n   39: import numpy as np\n   40: \n   41: # ============================================================================"
+    },
+    {
+      "anchor_id": "prov_1456",
+      "anchor_type": "data_provenance",
+      "name": "n25_cross_correlation",
+      "script_path": "session-75/s75_n25_cross_correlation.py",
+      "session": "s75",
+      "inputs": "",
+      "outputs": "session-75/s75_n25_cross_correlation.npz",
+      "source_file": "computations/session-75/s75_n25_cross_correlation.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s75_n25_cross_correlation.py -- Cross-correlation between GGE phase diffusion and a_2 perturbation\n    4: ===================================================================================================\n    5: \n    6: Gate: S75-A6-CROSS-CORR (Session 75 Wave 2, W2-F)\n    7:   PASS: |delta_A_s| < 0.01 OOM (cross-term negligible)\n    8:   INFO: 0.01 < |delta_A_s| < 0.10 OOM (small but nonzero)\n    9:   FAIL: |delta_A_s| > 0.10 OOM (significant cross-term, must include in A_s budget)\n   10: \n   11: PHYSICS (substrate framing):"
+    },
+    {
+      "anchor_id": "prov_1457",
+      "anchor_type": "data_provenance",
+      "name": "neff_post_thermalization",
+      "script_path": "session-75/s75_neff_post_thermalization.py",
+      "session": "s75",
+      "inputs": "",
+      "outputs": "session-75/s75_neff_post_thermalization.npz, session-75/s75_neff_post_thermalization.png",
+      "source_file": "computations/session-75/s75_neff_post_thermalization.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s75_neff_post_thermalization.py -- N-EFF-POST-THERMALIZATION-75\n    4: ==================================================================================\n    5: Gate: S75-L1-NEFF-POST-THERM\n    6:   PASS: N_eff matches SM 3.044 +/- 0.001\n    7:   INFO: N_eff in [3.0, 3.2]\n    8:   FAIL: N_eff outside [2.9, 3.3]\n    9: \n   10: Task: Trace the full post-fold thermalization history from GGE relic initial\n   11: conditions through neutrino decoupling to BBN and recombination, including"
+    },
+    {
+      "anchor_id": "prov_1458",
+      "anchor_type": "data_provenance",
+      "name": "nonlocal_sa_cc",
+      "script_path": "session-75/s75_nonlocal_sa_cc.py",
+      "session": "s75",
+      "inputs": "",
+      "outputs": "session-75/s75_nonlocal_sa_cc.npz, session-75/s75_nonlocal_sa_cc.png",
+      "source_file": "computations/session-75/s75_nonlocal_sa_cc.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s75_nonlocal_sa_cc.py — Leading Nonlocal Correction to Spectral Action CC\n    4: ==========================================================================\n    5: \n    6: Gate: S75-D3-NONLOCAL-CC\n    7: Pre-registered criterion:\n    8:   PASS  if |log10(delta_Lambda / Lambda_local)| >= 10\n    9:   INFO  if 1 < |log10 shift| < 10\n   10:   FAIL  if |log10 shift| < 1  (nonlocal correction negligible)\n   11: "
+    },
+    {
+      "anchor_id": "prov_1459",
+      "anchor_type": "data_provenance",
+      "name": "ns_nonpower_law_h",
+      "script_path": "session-75/s75_ns_nonpower_law_h.py",
+      "session": "s75",
+      "inputs": "",
+      "outputs": "session-75/s75_ns_nonpower_law_h.npz, session-75/s75_ns_nonpower_law_h.png",
+      "source_file": "computations/session-75/s75_ns_nonpower_law_h.py",
+      "source_context_30_lines": "  814:     'lambda_range': lambda_range,\n  815:     'ns_of_k': ns_of_k,\n  816: \n  817:     'tau_fine': tau_fine,\n  818:     'H_data': H_data,\n  819:     'q_eff': q_eff,\n  820: }\n  821: \n  822: np.savez(os.path.join(data_dir, 's75_ns_nonpower_law_h.npz'), **results)\n  823: print(f\"  Saved: s75_ns_nonpower_law_h.npz\")\n  824: \n  825: # ==============================================================================\n  826: #  SECTION 16: Plots\n  827: # ==============================================================================\n  828: \n  829: print(\"SECTION 16: Generate plots\")\n  830: print(\"-\" * 78)"
+    },
+    {
+      "anchor_id": "prov_1460",
+      "anchor_type": "data_provenance",
+      "name": "parker_hawking_reconciliation",
+      "script_path": "session-75/s75_parker_hawking_reconciliation.py",
+      "session": "s75",
+      "inputs": "",
+      "outputs": "session-75/s75_parker_hawking_reconciliation.npz, session-75/s75_parker_hawking_reconciliation.png",
+      "source_file": "computations/session-75/s75_parker_hawking_reconciliation.py",
+      "source_context_30_lines": "  611: ax.set_xlabel('omega / M_KK', fontsize=12)\n  612: ax.set_ylabel('<n_k> = sinh^2(r_k)', fontsize=12)\n  613: ax.set_title('Occupation: Parker vs Planckian', fontsize=13, fontweight='bold')\n  614: ax.legend(fontsize=9, loc='upper right')\n  615: ax.set_yscale('log')\n  616: ax.set_ylim(1e-4, 1e4)\n  617: \n  618: plt.tight_layout()\n  619: plt.savefig(str(SCRIPT_DIR / \"s75_parker_hawking_reconciliation.png\"), dpi=150, bbox_inches='tight')\n  620: log(f\"  Plot saved: s75_parker_hawking_reconciliation.png\")\n  621: \n  622: # =====================================================================\n  623: # SECTION 13: Save NPZ\n  624: # =====================================================================\n  625: log(\"\\n--- Section 13: Save ---\")\n  626: \n  627: np.savez("
+    }
+  ]
+}

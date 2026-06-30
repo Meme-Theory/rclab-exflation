@@ -1,0 +1,18 @@
+---
+name: s112-w3-1-b5a-bracketed-causal-patch-closes
+description: S112 W3-1 CF-S112-B5A-BRACKETED FAIL — Mach-13.75 white-hole causal patch leaves exit-slice microstate count at the EDGE undershoot; corridor "QES/island=A/4 via causal-patch f_bulk" CLOSED; bracket [0.5263,1.382] stands with interior pinned near lower edge
+metadata:
+  type: project
+---
+
+CF-S112-B5A-BRACKETED (S112 W3-1, [SIGN]) closed **composite FAIL** (sign=PASS, magnitude=FAIL, regime=VALID). audit_sha256=1bdf4c8d7a4e6abdbb63a10aeb880769b694a1ef978e3fb3344bfe074463ccba.
+
+**Result.** The white-hole exit-slice microstate count was tested as a bracketed interpolant R(f_bulk) = R_edge + f_bulk·(R_island − R_edge) between the S110 edge-only UNDERSHOOT (R_edge=0.5263, bulk-EE omitted) and the S111 full-island OVERSHOOT (R_island=1.382, full GGE bulk-EE at λ_exit=2.4893). The interpolation parameter f_bulk is the causally-accessible bulk-EE fraction on the acoustic-white-hole exit slice, DERIVED (not tuned) from the Mach-13.75 one-directional causal-disconnect geometry (PROVEN S85): λ_causal = λ_min + W_island/M = 0.941 (inverse-Mach width on the island spectral support [λ_min,λ_exit]). Derived **f_bulk = 0.00396** — captures only 60.34 of 15236.71 nats of island bulk-EE → **R(f_bulk) = 0.5297**, back at the edge undershoot. |R−1| = 0.470 > 0.25 INFO ceiling → FAIL.
+
+**Physics (the corridor-closing finding).** The one-directional Mach-13.75 white-hole horizon is so deep in the supersonic regime that the GGE bulk-EE of the island is almost entirely causally INACCESSIBLE on the exit slice. So the exit-slice microstate count is dominated by the boundary edge-mode term ALONE (the S110 reading). The S110 factor-1.9 undercount is NOT closed by causal-patch-restricted island bulk-EE — causal accessibility removes essentially all the bulk-EE that the S111 overshoot added. The two-sided bracket [R_edge=0.5263, R_island=1.382] stands as the standing bound, with the substrate-physical INTERIOR now pinned near the LOWER edge (R≈0.53), NOT at unity.
+
+**Anti-tautology held by a wide margin.** The FORBIDDEN R=1 crossing is f*=0.5536; the derived f_bulk=0.00396 is nowhere near it. EVERY substrate causal-patch reading tested lands R<0.64 (canonical inv-Mach-on-island 0.530; D1 inv-Mach-full-support 0.541; D2 direct 1/M 0.589; D3 c_BLV=0.485 sound-speed width 0.635). No comparator-shopping was needed or possible to reach 10%. This is a clean negative — the causal-patch f_bulk is a genuine substrate prediction that does NOT reproduce A/4.
+
+**Surviving corridor (for any future white-hole-microstate gate).** If a future gate wants exit-slice microstate=A/4, it must either (a) abandon the one-directional causal-patch restriction (use the full two-sided island bulk-EE — but that's the S111 OVERSHOOT, R=1.382), or (b) find a DIFFERENT boundary-term normalization (the c_conical=0.25 a_2^{Pauli-Villars} piece) that raises R_edge, or (c) accept that the exit-slice count is edge-dominated and the A/4 match lives elsewhere (e.g. a two-SIDED TFD/island construction, not the single-sided exit slice). The S110 single-sided-edge / S111 two-sided-island tension (recorded in [[s110-w4a1-microstate-boundary-vs-bulk]] and [[s111-w4-1-island-overshoots-a4]]) is now sharpened: the single-sided causal patch UNDERSHOOTS to the edge, the two-sided island OVERSHOOTS — A/4 sits between, and neither one-directional causal-patch nor full two-sided bulk-EE lands it. Links: [[s110-w4a1-microstate-boundary-vs-bulk]], [[s111-w4-1-island-overshoots-a4]].
+
+NON-BLOCKING Tier-3: changes no PROVEN structural result; only maps which microstate-count corridor is closed.

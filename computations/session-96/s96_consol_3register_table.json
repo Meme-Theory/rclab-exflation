@@ -1,0 +1,390 @@
+{
+  "gate_id": "S96-CONSOL-3REGISTER-TABLE",
+  "session": "S96",
+  "scheme": "THREE-REGISTER-PARTITION-ROBUST-CONDITIONAL-FALSIFIED",
+  "convention": "register-keyed-by-W8-1-status-tag-PLUS-substrate-moment-layer-tag-preserved-PLUS-no-flattening",
+  "verdict": "INFO",
+  "classification": "NON-PHONONIC",
+  "methodology_class": true,
+  "upstream_W8_1": {
+    "present": true,
+    "verdict": "INFO",
+    "audit_sha256": "ee7e303f514f1b7460c683b0f8868f645fe6b106b4b3095bff83e46cc4362256",
+    "cell_register_map_rows": 11
+  },
+  "register_assignment_rule": {
+    "robust-structural": [
+      "PROVEN",
+      "PASS-structural",
+      "DISSOLVED-favorably",
+      "BOUND-Gaussian-by-Wick"
+    ],
+    "conditional": [
+      "CONDITIONAL",
+      "SCHEME-DEPENDENT",
+      "route-dependent",
+      "doubly-conditional",
+      "VIABLE"
+    ],
+    "currently-falsified": [
+      "BROKEN",
+      "advancing-tension",
+      "INVERSION-falsified"
+    ]
+  },
+  "n_rows": 14,
+  "registers": {
+    "robust-structural": [
+      {
+        "observable": "CC closure",
+        "layer": "a0",
+        "reconciled_status": "PASS (DILUTION-CC-66)",
+        "dual_status": false
+      },
+      {
+        "observable": "r (tensor-to-scalar)",
+        "layer": "a2 tensor",
+        "reconciled_status": "PASS (within 2sigma; D04 IX row4 LIVE PASS<2sigma)",
+        "dual_status": false
+      },
+      {
+        "observable": "f_NL (non-Gaussianity)",
+        "layer": "bispectrum",
+        "reconciled_status": "BOUND-Gaussian-by-Wick (re-tagged per C4; central ~1.03)",
+        "dual_status": false
+      },
+      {
+        "observable": "sigma/m (DM self-interaction)",
+        "layer": "E29 / N_Fock=1",
+        "reconciled_status": "structural N_Fock=1 (PASS)",
+        "dual_status": false
+      },
+      {
+        "observable": "f*sigma_8(z) (RSD growth)",
+        "layer": "a2 growth",
+        "reconciled_status": "PASS-class (S8-tension-relieving sign; S77 PROVEN / S96-OBS-FSIGMA8-FORECAST)",
+        "dual_status": false
+      },
+      {
+        "observable": "nu mass ordering",
+        "layer": "a4/fiber neutrino",
+        "reconciled_status": "PASS (structural, machine-eps; S8/S34-36/S52/S56)",
+        "dual_status": false
+      },
+      {
+        "observable": "c_s^2 (dark-sector sound speed)",
+        "layer": "a2 Goldstone / Kasparov",
+        "reconciled_status": "PASS-class (Level-1 topological; §VII.BH cross-pillar bridge PROVEN, S96 W7-8)",
+        "dual_status": false
+      }
+    ],
+    "conditional": [
+      {
+        "observable": "w_0 (DE equation of state)",
+        "layer": "a0",
+        "reconciled_status": "C4 CONDITIONAL (DR3-binding 2027)",
+        "dual_status": false
+      },
+      {
+        "observable": "n_s (scalar tilt)",
+        "layer": "a2/Goldstone",
+        "reconciled_status": "C3/C9 SCHEME-DEPENDENT / CONDITIONAL on FUNCTIONAL-SELECT-67",
+        "dual_status": false
+      },
+      {
+        "observable": "alpha_s (running dn_s/dlnk)",
+        "layer": "a2/a4",
+        "reconciled_status": "C12 CONDITIONAL on CMB-S4 (channel-artifact resolved S93 W7-1)",
+        "dual_status": false
+      },
+      {
+        "observable": "m_H (Higgs mass)",
+        "layer": "a4/fiber",
+        "reconciled_status": "PASS-class (~2% budget); route-dependent (D04 IX row8 PROVEN-AT-OBS w/ caveat)",
+        "dual_status": true
+      },
+      {
+        "observable": "Omega_DM h^2",
+        "layer": "a2 Leggett gap",
+        "reconciled_status": "C7/C11 CONDITIONAL on LEGGETT-GRAV-DECAY-67 (margin PASS S95; D04 IX row9 PROVEN-AT-OBS)",
+        "dual_status": false
+      },
+      {
+        "observable": "sigma_8 (growth amplitude)",
+        "layer": "a2 growth",
+        "reconciled_status": "C9 PROVEN-with-conditional (VIABLE, ~2sigma between the S8-tension ends)",
+        "dual_status": false
+      }
+    ],
+    "currently-falsified": [
+      {
+        "observable": "w_a",
+        "layer": "a0",
+        "reconciled_status": "C5 BROKEN (3.43sigma post-Dovekie)",
+        "dual_status": false
+      }
+    ]
+  },
+  "sum_check": {
+    "n_robust": 7,
+    "n_conditional": 6,
+    "n_falsified": 1,
+    "n_total": 14,
+    "exact": true,
+    "all_assigned": true
+  },
+  "no_flattening": {
+    "holds": true,
+    "violations": []
+  },
+  "layer_tag_preserved": true,
+  "dual_status_straddle_rows": [
+    "m_H (Higgs mass)"
+  ],
+  "rows_full": [
+    {
+      "observable": "w_0 (DE equation of state)",
+      "layer": "a0",
+      "fw_value": "-0.918 (w0_FW, Volovik partition); branch-iv -0.842454",
+      "anchor": "-0.803 +/- 0.054 (joint, Popovic/DES-Dovekie 2511.07517v3)",
+      "reconciled_status": "C4 CONDITIONAL (DR3-binding 2027)",
+      "register": "conditional",
+      "dual_status": false,
+      "note": "LIVE 2.13sigma / 0.73sigma (branch-iv); borrows external H(t) (dagger / C10)"
+    },
+    {
+      "observable": "w_a",
+      "layer": "a0",
+      "fw_value": "0 (structural four-fold lock)",
+      "anchor": "-0.72 +/- 0.21 (same joint fit)",
+      "reconciled_status": "C5 BROKEN (3.43sigma post-Dovekie)",
+      "register": "currently-falsified",
+      "dual_status": false,
+      "note": "the live wager; prediction fixed, data moving away; item-34 'wa not a meaningful CPL parameter'"
+    },
+    {
+      "observable": "CC closure",
+      "layer": "a0",
+      "fw_value": "rho_vac/rho_obs = 1.032 (0.01 OOM)",
+      "anchor": "observed Lambda",
+      "reconciled_status": "PASS (DILUTION-CC-66)",
+      "register": "robust-structural",
+      "dual_status": false,
+      "note": "doubly-conditional on C10 + external H (caveat box); robust as the NON-INHERITANCE identity (Clause A), conditional on observed magnitude (Clause B) -- see dual-status note"
+    },
+    {
+      "observable": "n_s (scalar tilt)",
+      "layer": "a2/Goldstone",
+      "fw_value": "SCHEME-DEPENDENT (0.9561 / 0.9590 / 0.9595)",
+      "anchor": "Planck 0.9649 +/- 0.0042",
+      "reconciled_status": "C3/C9 SCHEME-DEPENDENT / CONDITIONAL on FUNCTIONAL-SELECT-67",
+      "register": "conditional",
+      "dual_status": false,
+      "note": "2.10sigma / 1.40sigma / 1.29sigma; BMA band 0.969 +/- 0.022 is the correct UQ object"
+    },
+    {
+      "observable": "r (tensor-to-scalar)",
+      "layer": "a2 tensor",
+      "fw_value": "0.033 (dual-pathway: Path-H 0.00745 / Path-C 0.0117)",
+      "anchor": "BICEP/Keck < 0.036",
+      "reconciled_status": "PASS (within 2sigma; D04 IX row4 LIVE PASS<2sigma)",
+      "register": "robust-structural",
+      "dual_status": false,
+      "note": "substrate-IS tensor sector; NO borrowed H; clean robust spine row"
+    },
+    {
+      "observable": "alpha_s (running dn_s/dlnk)",
+      "layer": "a2/a4",
+      "fw_value": "DUAL (scale, channel): substrate -0.0859 (s=3 Mellin) / pivot ~0",
+      "anchor": "Planck -0.0045 +/- 0.0067",
+      "reconciled_status": "C12 CONDITIONAL on CMB-S4 (channel-artifact resolved S93 W7-1)",
+      "register": "conditional",
+      "dual_status": false,
+      "note": "pivot image +0.67sigma consistent; substrate value awaits CMB-S4 ~34sigma-reach falsifier"
+    },
+    {
+      "observable": "f_NL (non-Gaussianity)",
+      "layer": "bispectrum",
+      "fw_value": "|f_NL| <~ 1.5 BOUND (-1.505 = -max_f_NL_FW saturation; central GGE ~1.03)",
+      "anchor": "Planck -0.9 +/- 5.1",
+      "reconciled_status": "BOUND-Gaussian-by-Wick (re-tagged per C4; central ~1.03)",
+      "register": "robust-structural",
+      "dual_status": false,
+      "note": "Gaussian-by-Wick to within a |f_NL|<~1.5 bound; 0.47sigma is the BOUND's distance, NOT a central detection"
+    },
+    {
+      "observable": "m_H (Higgs mass)",
+      "layer": "a4/fiber",
+      "fw_value": "127.5-131.8 GeV (KK threshold)",
+      "anchor": "PDG 125.25 +/- 0.17",
+      "reconciled_status": "PASS-class (~2% budget); route-dependent (D04 IX row8 PROVEN-AT-OBS w/ caveat)",
+      "register": "conditional",
+      "dual_status": true,
+      "note": "DUAL-STATUS STRADDLE: robust-on-magnitude (~2% theory budget PASS) BUT conditional-on-route (zeta 138.5 excluded; mu_BC 188 is ACCOMMODATION); placed in CONDITIONAL with disclosure, NOT flattened into robust"
+    },
+    {
+      "observable": "Omega_DM h^2",
+      "layer": "a2 Leggett gap",
+      "fw_value": "0.120 (Leggett-only)",
+      "anchor": "Planck 0.1186 +/- 0.0020",
+      "reconciled_status": "C7/C11 CONDITIONAL on LEGGETT-GRAV-DECAY-67 (margin PASS S95; D04 IX row9 PROVEN-AT-OBS)",
+      "register": "conditional",
+      "dual_status": false,
+      "note": "PASS 0.7sigma GIVEN Gamma_grav<H_0 (satisfied with 65-OOM margin, 8.85e-66); the conditional is satisfied, but the PASS is contingent"
+    },
+    {
+      "observable": "sigma/m (DM self-interaction)",
+      "layer": "E29 / N_Fock=1",
+      "fw_value": "0 exactly (N_Fock=1 superselection)",
+      "anchor": "Bullet < 1.25 cm^2/g",
+      "reconciled_status": "structural N_Fock=1 (PASS)",
+      "register": "robust-structural",
+      "dual_status": false,
+      "note": "structural zero distinct from any tuned cross-section; no borrowed H; clean robust spine row"
+    },
+    {
+      "observable": "sigma_8 (growth amplitude)",
+      "layer": "a2 growth",
+      "fw_value": "0.799 (zero-free-parameter)",
+      "anchor": "Planck sigma_8 0.811; lensing ~0.76",
+      "reconciled_status": "C9 PROVEN-with-conditional (VIABLE, ~2sigma between the S8-tension ends)",
+      "register": "conditional",
+      "dual_status": false,
+      "note": "VIABLE not a resolution; conditional on the sqrt(x) functional being canonical; borrows H (dagger). ANCHOR FIX (W6-7): Planck sigma_8=0.811, NOT the S_8=0.829 the prose mis-cited"
+    },
+    {
+      "observable": "f*sigma_8(z) (RSD growth)",
+      "layer": "a2 growth",
+      "fw_value": "-4.058% f*sigma8 PRODUCT suppression vs LCDM @ z=0.51 (bare-f -0.311% -- the PRODUCT, NOT bare-f)",
+      "anchor": "DESI-5yr / Euclid RSD",
+      "reconciled_status": "PASS-class (S8-tension-relieving sign; S77 PROVEN / S96-OBS-FSIGMA8-FORECAST)",
+      "register": "robust-structural",
+      "dual_status": false,
+      "note": "zero-free-parameter; sigma-dist 1.013 DESI-Y5 / 1.534 Euclid; C5 guard: -4.058% is the PRODUCT, -0.311% is bare-f; borrows H (modulation-on-borrowed-H caveat)"
+    },
+    {
+      "observable": "nu mass ordering",
+      "layer": "a4/fiber neutrino",
+      "fw_value": "Normal B1<B2<B3 (zero-free-parameter; dynamical tau=0.107 (1,1,0)-crossing)",
+      "anchor": "NuFit-6.0 (NO preferred ~2.5sigma)",
+      "reconciled_status": "PASS (structural, machine-eps; S8/S34-36/S52/S56)",
+      "register": "robust-structural",
+      "dual_status": false,
+      "note": "zero-free-parameter substrate eigenvalue ordering; no borrowed H; clean robust spine row; JUNO/DUNE clean yes/no"
+    },
+    {
+      "observable": "c_s^2 (dark-sector sound speed)",
+      "layer": "a2 Goldstone / Kasparov",
+      "fw_value": "0 exactly (Layer-1 topological; m_Goldstone^4D=0 by Kasparov factorization; bound <9.21e-4)",
+      "anchor": "dark-sector c_s^2 (DES/KiDS, future)",
+      "reconciled_status": "PASS-class (Level-1 topological; §VII.BH cross-pillar bridge PROVEN, S96 W7-8)",
+      "register": "robust-structural",
+      "dual_status": false,
+      "note": "STRUCTURAL ZERO (regulator-invariant, L-independent); no borrowed H; clean robust spine row; full §VII anatomy = W7-8 (mack-review-at-W8-2: no §7-surface retrofit needed -- entry is a §VII permanent-results cross-pillar bridge, not a §7 falsifier-surface row)"
+    }
+  ],
+  "consolidated_section7_surface_items": [
+    {
+      "id": "W6-1 (S96-OBS-FSIGMA8-FORECAST)",
+      "kind": "falsifier-inventory NEW row + §7.1 scorecard (already landed by W7-5)",
+      "observable": "f*sigma_8(z) RSD growth",
+      "fw_value": "-4.058% f*sigma8 PRODUCT suppression (bare-f -0.311%)",
+      "detector": "DESI-5yr 2029 -> Euclid 2030s",
+      "sigma": "1.013 (DESI-Y5) / 1.534 (Euclid)",
+      "canonical_pins": [
+        "fsigma8_product_suppression_FW_max_pct",
+        "f_bare_suppression_FW_pct",
+        "f_FW",
+        "f_LCDM"
+      ],
+      "verdict_anchor": "audit_sha256=318df6edeadb621453a46be1f5e8568db3fbff780e6e1792a69cb5ba37e06027",
+      "action": "NEW inventory Row A (f*sigma8 RSD discriminator); C5 guard explicit"
+    },
+    {
+      "id": "W6-2 (S96-OBS-FIRST-SOUND-RING)",
+      "kind": "falsifier-inventory NEW row",
+      "observable": "first-sound BAO ring A_FS = 0.204 = c2^2/c1^2 ring imprint at k1=0.0193 Mpc^-1 (r1=325.3 Mpc)",
+      "fw_value": "A_FS = 0.204 (two-fluid acoustic ratio; NO LCDM counterpart)",
+      "detector": "DESI-5yr (SNR 8.6) / DESI-DR1 (SNR 5.1)",
+      "sigma": "SNR 8.6 DESI-5yr (sigma_exp 2.35%, arXiv:2411.19738v2); 5.1 DESI-DR1",
+      "canonical_pins": [
+        "A_FS_first_sound_ring"
+      ],
+      "verdict_anchor": "audit_sha256=b74ccd56 (full-64 in s96 verdict file W6-2)",
+      "action": "NEW inventory Row B (first-sound ring); contrast: per-branch sub-feature A_obs_B1=1.445e-3 is OUTSIDE current rulers BY DESIGN (0.60x DESI-DR2 ruler) -- keep 'far below current rulers' scoped to THIS sub-feature, NOT the ring (ring is 141x the sub-feature)"
+    },
+    {
+      "id": "W6-3 (S96-OBS-CGWB-PEAK-FREQ)",
+      "kind": "Row #7.audit SCOPE-CORRECTION (split peak-FREQUENCY from amplitude)",
+      "observable": "CGWB peak FREQUENCY vs Omega_GW AMPLITUDE",
+      "fw_value": "peak f_obs(kappa_nat) = 8.4835e+39 Hz (GHz+, 43.9 decades above LISA) -- the asserted 'peak in LISA mHz band' is REFUTED; LISA samples the Omega_GW IR-TAIL AMPLITUDE (Omega_GW^(A)~1e-10 at 3 mHz, W6-4 PASS), NOT the spectral peak",
+      "detector": "LISA ~2034 (amplitude IR-tail; NOT the peak)",
+      "sigma": "D4 resolved AGAINST mHz peak",
+      "canonical_pins": [
+        "f_obs_CGWB_peak_kappa_nat",
+        "Omega_GW_Lambda_A_LISA"
+      ],
+      "verdict_anchor": "audit_sha256=646e6ad087dae6441515a62456300af48c7c135be103147767fbcbcbfbf2ee2e",
+      "action": "SCOPE-CORRECT the existing Row #7.audit / §7.2 #7 LISA flagship: split the two observables -- (a) Omega_GW AMPLITUDE at LISA pivot UNCHANGED (the live IR-tail flagship, 11+ OOM above LISA-PLS); (b) CGWB peak FREQUENCY CORRECTED to 8.48e39 Hz (GHz+), the mHz-peak placement is REFUTED; the peak-frequency flagship is NORMALIZATION-CONDITIONAL-AND-CURRENTLY-AGAINST-mHz (reaching LISA needs kappa=25 s/M_KK^-1, 42.5 OOM from natural hbar/M_KK)"
+    },
+    {
+      "id": "W7-5 MACK-INVENTORY-RECOMMENDATION (normal ordering)",
+      "kind": "falsifier-inventory NEW row",
+      "observable": "neutrino normal mass ordering (B1<B2<B3)",
+      "fw_value": "Normal ordering, ZERO-FREE-PARAMETER, machine-eps (D_K (1,1,0)-singlet, dynamical tau=0.107 crossing)",
+      "detector": "JUNO 2026+ / DUNE 2030s (a NO-vs-IO verdict is a clean yes/no)",
+      "sigma": "NuFit-6.0 NO preferred ~2.5sigma => consistent",
+      "canonical_pins": [],
+      "verdict_anchor": "S96-HYG-SELF-INVENTORY audit_sha256=92a368105c829e8394ec7a1be899e42813f496cbbf0926a1f86b8cb06f6d38f1",
+      "action": "NEW inventory Row C (normal mass ordering); the entire neutrino sector was ABSENT from the inventory before this landing"
+    },
+    {
+      "id": "W6-4 FIDELITY NOTE (Omega_GW round-figure)",
+      "kind": "publication-precision hygiene binding (Class-8.3)",
+      "observable": "Omega_GW^(C) round-figure 1e-57 vs Sage-exact 8.299e-58",
+      "fw_value": "1e-57 / 8.299e-58 = 1.20496x = 0.081 OOM (same-decade)",
+      "detector": "N/A (hygiene)",
+      "sigma": "N/A",
+      "canonical_pins": [
+        "Omega_GW_Companion_null",
+        "OOM_split_AC_regulator_class"
+      ],
+      "verdict_anchor": "audit_sha256=a9998118fdcb96bd41ebae88b0c2af0d5c4fb0c7c6d9bc277b62a50e10a0d382 (W6-4)",
+      "action": "CONFIRM the W6-4-landed FIDELITY NOTE: the round figure 1e-57 understates Omega_GW^(C) by 1.205x = 0.081 OOM (same-decade), NOT the '~10x / ~2 OOM' the rule/plan prose claimed. The DISCIPLINE (use Sage-exact 8.299e-58, never 1e-57) is correct and binding -- but the binding REASON is publication-precision hygiene (Class-8.3), NOT an OOM blunder. ALREADY landed in Row #7.audit line 159; this gate ratifies it for the consolidation"
+    },
+    {
+      "id": "§VII.BH (c_s^2=0)",
+      "kind": "mack-review-at-W8-2 (no §7-surface retrofit needed)",
+      "observable": "c_s^2 = 0 (dark-sector sound speed)",
+      "fw_value": "0 exactly (Kasparov factorization; bound <9.21e-4)",
+      "detector": "dark-sector c_s^2 (DES/KiDS, future)",
+      "sigma": "N/A (Level-1 topological)",
+      "canonical_pins": [],
+      "verdict_anchor": "audit_sha256=69d54dbf46f49424212a67bfb4a11c1472a39ad29d8c98ad1b6d2df8703a5003 (W7-8 §VII.BH)",
+      "action": "MACK-REVIEW VERDICT: §VII.BH is a §VII permanent-results CROSS-PILLAR BRIDGE entry (substrate-IS -> Kasparov bridge -> lab-IN dark-sector bound), NOT a §7 falsifier-SURFACE row. No strict §7-surface retrofit needed: the c_s^2 row already lands in §7.1 as a SCORECARD POINTER (PASS-class robust spine, the §7.3 joint-BF spine member) with the full anatomy at §VII.BH. The §7.1 row stays; no falsifier-master-inventory row is created (it is a registry bridge, not a falsifier)"
+    },
+    {
+      "id": "W6-7 (sigma_8 / S_8 labeling)",
+      "kind": "§7.1 anchor-citation fix",
+      "observable": "sigma_8 comparison anchor",
+      "fw_value": "capstone sigma_8 prediction 0.799; Planck anchor = sigma_8 0.811 (NOT S_8=0.829)",
+      "detector": "N/A (anchor hygiene)",
+      "sigma": "recomputed 2.00sigma (vs the mis-cited 0.829)",
+      "canonical_pins": [
+        "sigma_8"
+      ],
+      "verdict_anchor": "audit_sha256=37def5ddd58b9a5cdd3016949843fe94b5a61e905450ed3163b9fa810f7f9d0f (W6-7 Row #70)",
+      "action": "FIX the §7.1 sigma_8 row comparison anchor: cite Planck sigma_8=0.811 (the canonical Planck sigma_8), NOT 0.829 (which is S_8). The capstone '0.829' is the S_8 value mis-labeled as sigma_8; canonical_constants.py:sigma_8=0.811 is the Planck sigma_8. Prose/citation fix also routes to W8-6"
+    }
+  ],
+  "anchor_fixes": {
+    "sigma_8_anchor": "Planck sigma_8=0.811 (NOT S_8=0.829); W6-7 fix routed to §7.1 + W8-6 prose"
+  },
+  "input_pins": {
+    "computations/_shared/canonical_constants.py": "88f1e9b107dc30c49a2dbcde33cecbee14cc17404994a2ad8f76adceec8a7258",
+    "computations/session-96/s96_consol_status_sync.json": "0645bbc04dcbbe90eb961b034ee289af65969dbdcdb5ac4dd2367aaa8d992f78",
+    "sessions/framework/phonic-exflation-equation.md": "b9c5e27932cb4195707b3d16c8076ac9d748ca3b281e9ebdd39634ffafa272d8",
+    "sessions/framework/Atlas/atlas-04-assumptions.md": "dbc53b5d0b65807ab8ce760561888d7dbe691e2cf7092a4d543030c12bf240f0"
+  },
+  "closure_hash": "9a4b35c06d48281910ec9cb3cf3d8c29f3653fbf851462bdc3e4103af5721689"
+}

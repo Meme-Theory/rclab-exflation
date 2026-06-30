@@ -12,8 +12,8 @@
 
 Do NOT begin this session until the following files exist:
 - `sessions/YYYY-MM-DD-session-24a-synthesis.md` (required)
-- `tier0-computation/s24a_gate_verdicts.txt` (required)
-- `tier0-computation/s24a_vspec.npz` (required)
+- `computations/s24a_gate_verdicts.txt` (required)
+- `computations/s24a_vspec.npz` (required)
 
 If any are missing, STOP. Do not proceed on partial information. Notify the team lead.
 
@@ -32,7 +32,7 @@ Only coordinator writes the final synthesis. Sagan and Einstein contribute via S
 Light computation only (synthesis session). If spot-check scripts are needed:
 
 **Python**: `"phonon-exflation-sim/.venv312/Scripts/python.exe"`
-**Output directory**: `tier0-computation/`
+**Output directory**: `computations/`
 **Script prefix**: `s24b_`
 
 ---
@@ -50,7 +50,7 @@ Read `sessions/YYYY-MM-DD-session-24a-synthesis.md` completely. Key items to ext
 5. **Euclidean action**: I_E(M1) < I_E(M0)?
 6. **Eigenvalue ratios**: any phi_paasch = 1.53158 crossings?
 
-Also load `tier0-computation/s24a_vspec.npz` for the full numerical data if physical interpretation requires precise values.
+Also load `computations/s24a_vspec.npz` for the full numerical data if physical interpretation requires precise values.
 
 ## Pre-Session-24 Baselines
 
@@ -83,7 +83,7 @@ Also load `tier0-computation/s24a_vspec.npz` for the full numerical data if phys
 | Agent | Additional Reading | Researcher Index Ref |
 |:------|:-------------------|:---------------------|
 | sagan-empiricist | `sessions/session-23/session-23-tesla-take-sagan-collab.md` (Sagan's pre-registered gates for all three Tesla computations — V_spec, Berry, tight-binding) | Domain 12: Sagan-10 (Galileo methodology), Sagan-12 (ALH84001 cautionary), Sagan-13 (Seager Bayesian: compute P(evidence\|~framework) explicitly), Sagan-14 (phosphine parallel: marginal detection discipline) |
-| einstein-theorist | `sessions/session-23/session-23-tesla-take-einstein-collab.md` (EIH constraint, Starobinsky structural identity, CC problem). `tier0-computation/s24a_vspec.npz` (numerical data for physical interpretation) | Domain 4: Baptista-15 eq 3.80 (V_eff), KK-10 (Freund-Rubin), KK-11 (Lichnerowicz). Domain 8: Hawking-07 (Euclidean = spectral action), Einstein-07 (cosmological constant) |
+| einstein-theorist | `sessions/session-23/session-23-tesla-take-einstein-collab.md` (EIH constraint, Starobinsky structural identity, CC problem). `computations/s24a_vspec.npz` (numerical data for physical interpretation) | Domain 4: Baptista-15 eq 3.80 (V_eff), KK-10 (Freund-Rubin), KK-11 (Lichnerowicz). Domain 8: Hawking-07 (Euclidean = spectral action), Einstein-07 (cosmological constant) |
 | coordinator | `sessions/session-23/session-23b-synthesis.md` (23b verdict format — template for 24b synthesis structure). Session 24 master prompt Section VI (branch definitions) | Domain 12: Sagan-10 (methodology for synthesis quality) |
 
 ---

@@ -284,7 +284,7 @@ All single-particle pair creation mechanisms and the collective mode are closed.
 
 ## Files Produced
 
-38 scripts in `tier0-computation/`:
+38 scripts in `computations/`:
 
 ```
 s46_anomalous_dispersion.py     s46_kapitza_parametric.py

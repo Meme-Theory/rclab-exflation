@@ -1,167 +1,69 @@
 # Froggatt-Nielsen ALP
 
-**Author(s):** Admir Greljo, Ajdin Smolkovič, Ajdin Valenti
-
+**Author(s):** Admir Greljo, Aleks Smolkovic, Alessandro Valenti
 **Year:** 2024
-
-**Journal:** Journal of High Energy Physics, vol. 2024, article 174 (arXiv:2407.02998)
+**Journal:** Prepared for submission to JHEP
+**arXiv:** 2407.02998
+**Relevance:** MEDIUM
 
 ---
 
 ## Abstract
 
-The Froggatt-Nielsen mechanism, the leading explanation for fermion mass hierarchies, generically predicts the existence of an axion-like particle (ALP) as the "flavon" field. This paper conducts a comprehensive phenomenological study of realistic FN models based on discrete Z_N symmetries (N=4,6,8,...). The authors chart the allowed parameter space from theoretical consistency conditions, construct explicit renormalizable UV-complete models with minimal field content, and analyze the interplay between ALP signatures and associated UV-sector particles. A key finding is that **the FN scale can be as low as a few TeV**, dramatically lowering previous estimates and making the ALP potentially detectable at current and near-future colliders.
-
----
-
-## Historical Context
-
-The Froggatt-Nielsen mechanism (1979) was the first model to explain exponential fermion mass hierarchies through a classical (non-gauge) spontaneous symmetry breaking. The flavon field φ couples to fermions via Yukawas suppressed by powers of $\epsilon \equiv \langle \phi \rangle / M_*$.
-
-For decades, FN was treated primarily as an effective low-energy mechanism, with the flavon simply an auxiliary field. However, in the 2010s, as interest in ALPs as dark matter candidates and leptoquark mediators grew, theorists began asking: **what if the FN flavon is itself observable?**
-
-The ALP is a pseudo-scalar particle $a$ arising from a global U(1) symmetry (the "Peccei-Quinn" direction in the flavor space). If the FN scale is low enough (< 100 TeV), the ALP can appear in collider signatures, rare decays, and astrophysical constraints.
-
-This 2024 work is the first systematic phenomenological study of FN-ALPs, leveraging modern discrete symmetry approaches (Z_N) that are more economical than older A₄/S₄ models.
+The Froggatt-Nielsen (FN) mechanism, a prominent framework for explaining the observed flavor hierarchies, generically predicts the existence of an axion-like particle (ALP). This work examines a class of FN models based on Z_N discrete symmetries. We chart the allowed parameter space from a set of theoretical considerations and construct explicit renormalizable completions with minimal field content necessary to generate consistent textures. We then conduct comprehensive phenomenological analyses of two particularly elegant Z_4 and Z_8 models, highlighting the interplay between the effects of the ALP and the associated UV fields. We find that the FN scale can be as low as a few TeV.
 
 ---
 
 ## Key Arguments and Derivations
 
-### Froggatt-Nielsen Mechanism with Z_N Symmetry
+### 1. Froggatt-Nielsen Mechanism (Section 1)
 
-The standard FN lagrangian with a Z_N family symmetry reads:
+The FN mechanism introduces a global U(1)_FN symmetry with different generation charges. A symmetry-breaking spurion epsilon << 1 carrying unit charge generates Yukawa textures Y^f_{ij} ~ epsilon^{n_ij}. Spontaneous breaking of a continuous U(1) produces a Goldstone boson (axiflavon/flaxion).
 
-$$\mathcal{L}_\text{Yukawa} = Y_{ij} \frac{\langle \phi \rangle^{n_{ij}}}{M_*^{n_{ij}}} \bar{Q}^i_L H u^j_R + \text{h.c.}$$
+### 2. Z_N Discrete Symmetries (Section 2)
 
-where Q_L and u_R carry Z_N charges, n_ij is the "order" (power of the flavon), and M_* is the UV cutoff (usually M_GUT ~ 10^15 GeV).
+Instead of continuous U(1), the authors consider perturbatively exact Z_N subgroups. Key findings:
+- Z_4 is the simplest consistent model in non-SUSY theories
+- Z_8 can realize the same Yukawa structure as U(2)_{q+e^c+u^c} x Z_2
+- For N > 4, a light ALP is expected with mass from higher-dimensional operators
+- For Z_4, no light ALP (m_a ~ v_Phi)
 
-The Froggatt-Nielsen mechanism works because:
+### 3. Z_4 Model (Section 3)
 
-1. **Charge assignment**: Different generations carry different Z_N charges, permitting different n_ij values
-2. **Exponential hierarchy**: The small parameter $\epsilon = \langle \phi \rangle / M_* \approx 0.1$-$0.2$ raises to powers n_ij, creating the hierarchy
-3. **FCNC suppression**: The same Z_N symmetry forbids dangerous tree-level flavor-changing neutral currents
+Explicit renormalizable UV completion with minimal field content:
+- Fits observed flavor parameters at the level of SU(2) gauged flavor models
+- FN scale can be as low as a few TeV
+- Comprehensive phenomenological analysis including: meson mixing (K-Kbar, B-Bbar, D-Dbar), rare decays, electroweak precision, LHC constraints
+- Heavy vector-like fermion masses ~ v_Phi
 
-For electron mass: $n_{ee} \approx 5$ $\Rightarrow$ $m_e / v \sim \epsilon^5 \sim 10^{-6}$
+### 4. Z_8 Model (Section 4)
 
-For top mass: $n_{tt} = 0$ $\Rightarrow$ $m_t / v \sim \lambda_t \sim 1$
+Finer flavor structure with an ALP of mass ≥ GeV:
+- K+ -> pi+ a is kinematically forbidden (m_a > m_K - m_pi)
+- Realizes the same Yukawa structure as recently proposed flavor symmetry models
+- More predictive texture with finer generation hierarchies
 
-The ratio $m_e / m_t \sim 10^{-6}$, matching the observed hierarchy.
+### 5. UV Completions ("Wheel Models")
 
-### Global U(1) Peccei-Quinn Symmetry and ALP
-
-While Z_N forbids mixing between generations, the FN sector typically has an additional global U(1) symmetry under which the flavon transforms:
-
-$$\phi \to e^{i \alpha} \phi$$
-
-This U(1)_{PQ} is spontaneously broken by $\langle \phi \rangle$. The resulting Nambu-Goldstone boson (NGB) is the axion-like particle:
-
-$$a = \sqrt{2} \text{Im}(\phi) / f_a$$
-
-where $f_a$ is the axion decay constant, often identified with $f_a \sim M_* / N$ (N = order of the global U(1)).
-
-**Key insight**: Unlike the QCD axion (which solves the strong CP problem), the FN-ALP is a "flavor axion" whose properties (mass, couplings) are determined purely by the FN sector dynamics.
-
-### Renormalizable UV Completions
-
-The paper constructs explicit renormalizable lagrangians for Z₄ and Z₈ models. For Z₄:
-
-$$\text{Charges}: \quad \begin{array}{c|cccc}
-\text{Field} & Q_1 & Q_2 & Q_3 & \phi \\
-\hline
-\text{Z}_4 \text{ charge} & 0 & 1 & 2 & 1
-\end{array}$$
-
-This allows:
-- Renormalizable couplings: $\phi^0$ (Q₁), $\phi^1$ (Q₂), $\phi^2$ (Q₃)
-- Minimal field content: only the flavon and three generations
-
-The lagrangian is:
-
-$$\mathcal{L} = \bar{Q}_1 Y_1 \phi^0 u_R^1 + \bar{Q}_2 Y_2 \phi^1 u_R^2 + \bar{Q}_3 Y_3 \phi^2 u_R^3 + \text{h.c.} + \lambda_4 (\phi^\dagger \phi)^2 + \cdots$$
-
-The potential $V(\phi) = \lambda_4 (\phi^\dagger \phi)^2 + \lambda_6 (\phi^\dagger \phi)^3$ stabilizes the electroweak-scale VEV.
-
-### ALP Couplings and Branching Ratios
-
-The FN-ALP couples to SM particles through loop diagrams. The dominant couplings are:
-
-**To fermions** (via triangle loop with flavon):
-$$g_{aff} \sim \frac{m_f}{f_a} \cdot \text{(flavor structure)}$$
-
-**To photons** (via quark loop):
-$$a \gamma \gamma: \quad g_{a\gamma\gamma} \sim \frac{\alpha}{\pi f_a} \sum_q N_c^q Q_q^2 m_q / m_t$$
-
-**To gluons** (via heavy quark loop):
-$$a g g: \quad g_{agg} \sim \frac{\alpha_s}{2\pi f_a} \sum_q N_c^q m_q / m_t$$
-
-The ALP width is:
-
-$$\Gamma(a) = \frac{g_{agg}^2 m_a^3}{4\pi f_a^2} + \frac{g_{a\gamma\gamma}^2 m_a^3}{64\pi^3 f_a^2} + \cdots$$
-
-For $f_a \sim 1$ TeV and $m_a \sim 10$ GeV, $\Gamma(a) \sim 1$ MeV (narrow width approximation valid).
-
-### Low FN Scale: The Key Result
-
-The paper demonstrates that consistency with direct precision measurements (rare decays, Higgs properties, electroweak constraints) **does not require M_* >> 10^15 GeV** as previously assumed. Instead:
-
-$$M_* \geq 5 \text{ TeV} \quad \text{(collider reach)}$$
-
-This dramatic lowering arises because:
-
-1. **Minimal field content**: Z_N models avoid the proliferation of additional scalars that previously constrained the scale
-2. **Threshold effects**: Loop corrections from the flavon naturally suppress FCNC to acceptable levels
-3. **ALP decay branching**: The ALP itself is short-lived (lifetime < 10^{-11} s), decaying promptly to SM particles, avoiding constraints from long-lived particles
-
-At M_* ~ 10-100 TeV:
-- The ALP mass is $m_a \sim 10$-$100$ MeV
-- The decay constant is $f_a \sim$ few hundred GeV-TeV
-- The ALP branching to gg, γγ, and bb is ~ 40% each, with remainder to leptons
-
----
+The same scale M responsible for Yukawa textures also generates the ALP mass. The "wheel" diagram topology (Fig. 2) provides a natural architecture for both flavor hierarchies and ALP mass generation.
 
 ## Key Results
 
-1. **FN Scale Window**: The paper identifies $M_* \in [5 \text{ TeV}, 10^5 \text{ TeV}]$ as consistent with current constraints. Previous bounds (M_* > 10^15 GeV) relied on non-minimal models.
+1. Z_N Froggatt-Nielsen models with N >= 4 provide consistent flavor textures with a predicted ALP.
+2. The FN scale can be as low as a few TeV (Z_4 model), motivating direct searches at colliders.
+3. Z_4: no light ALP; Z_8: ALP with mass ≥ GeV, evading K+ -> pi+ a constraints.
+4. Explicit renormalizable UV completions constructed with minimal field content.
+5. Comprehensive phenomenological constraints from flavor physics, electroweak precision, and collider searches.
+6. The interplay between ALP effects and UV field effects is quantitatively important for setting bounds.
 
-2. **Z₄ and Z₈ Models**: Both achieve realistic mass matrices (electron-to-top mass ratio within 20%). Z₈ requires fewer order assignments (more economical).
+## Key Equations
 
-3. **ALP Phenomenology**:
-   - **Mass range**: 10 MeV - 10 GeV for M_* ~ 5-100 TeV
-   - **Decay constant**: $f_a$ ~ 100 GeV - 1 TeV
-   - **Coupling strength**: $g_{agg} \sim 10^{-4}-10^{-3}$ GeV^{-1} (accessible to ATLAS, CMS)
+| Label | Equation | Reference |
+|:------|:---------|:----------|
+| FN spurion | $\epsilon = v_\Phi / (\sqrt{2}\,M)$ | Section 1 |
+| Yukawa texture | $Y^f_{ij} \sim \epsilon^{n_{ij}}$ | Section 1 |
+| ALP mass (Z_N) | $m_a \sim v_\Phi \cdot (\epsilon)^{N-4}$ for $N > 4$ | Section 2 |
 
-4. **LHC Signatures**:
-   - Higgs decay to ALP pair: $h \to aa$ with BR ~ 1-10%
-   - ALP cascade decays: $a \to gg, bb, \tau\tau$ (displaced or prompt)
-   - Associated production: $pp \to Z a, W a$ with $a \to$ SM
-   - Current bounds from LHCb, ATLAS: exclude $f_a < 200$ GeV for $m_a$ ~ 1 GeV
+## Relevance to Phonon-Exflation
 
-5. **Flavor Structure**: The Z_N charge assignment is not unique. Different assignments yield different mass textures and ALP couplings. The paper catalogs 8 "benchmark" models with distinct phenomenological predictions.
-
----
-
-## Impact and Legacy
-
-This 2024 paper revitalized FN as a collider-testable framework. Previously, FN was considered a high-scale UV mechanism, largely inaccessible to experiment. By demonstrating that realistic FN models can operate at TeV scales with observable ALP signatures, the work opened a new frontier in flavor physics phenomenology.
-
-The paper has spawned follow-up work on:
-- Collider searches for FN-ALPs (ATLAS/CMS analyses)
-- Rare decay signatures ($b \to s a$, $\tau \to \mu a$)
-- Astrophysical constraints (SN 1987A cooling, stellar constraints)
-- Cosmology (ALP dark matter, inflation)
-
-It is now standard to include FN-ALP searches in BSM phenomenology studies at the LHC.
-
----
-
-## Connection to Phonon-Exflation Framework
-
-**Potential relevance**: The Paasch mass ratios (papers #01-18) exhibit approximate patterns that *could* reflect an underlying Z_N flavor symmetry. This paper provides a toolkit for testing that hypothesis.
-
-**Mechanism**: If the phonon-exflation fold mechanism preserves a residual Z_N symmetry at τ ≈ 0.2, then the Dirac spectrum gaps should exhibit charge quantization reflecting that symmetry. Different representations of Z_N would predict specific patterns in the mass spectrum.
-
-**Test**: Compare the observed Paasch mass ratios (m_τ/m_e, m_t/m_b, etc.) against Z₄ and Z₈ predictions in this paper. If alignment is found, this suggests the fold mechanism realizes a discrete family symmetry, with the ALP potentially emerging as an internal degree of freedom in the SU(3) compactification.
-
-**Speculative**: Could the K₇ charge observed in Session 34-35 be the Z_N charge? The analysis showed K₇ distinguishes Cooper pair carriers from other excitations. If K₇ ≈ Z_N, the framework would have discovered a new discrete symmetry protecting both fermion masses and the BCS instability.
-
+The FN mechanism provides a competing explanation for mass hierarchies through symmetry-breaking spurions, contrasting with the framework's geometric/spectral approach. The connection between flavor hierarchies and an ALP (axion-like particle) is noteworthy: if mass hierarchies have a geometric origin in the phonon-exflation framework, the predicted ALP spectrum would be different. The Z_N models' prediction that the FN scale can be as low as a few TeV means collider tests could discriminate between FN-type and spectral-action-type mass hierarchy mechanisms.

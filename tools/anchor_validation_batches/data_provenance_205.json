@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 205,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_2041",
+      "anchor_type": "data_provenance",
+      "name": "w1b_connes_distance_finite_spectrum_identity",
+      "script_path": "session-87/s87_w1b_connes_distance_finite_spectrum_identity.py",
+      "session": "s87",
+      "inputs": "",
+      "outputs": "session-87/s87_w1b_connes_distance_finite_spectrum_identity.npz, session-87/s87_w1b_connes_distance_finite_spectrum_iden...",
+      "source_file": "computations/session-87/s87_w1b_connes_distance_finite_spectrum_identity.py",
+      "source_context_30_lines": "  131: # Pre-registered tolerance bands\n  132: PASS_THRESHOLD = 1e-9       # ABSOLUTE (CLASS-α ceiling)            # (local)\n  133: INFO_CEILING = 1e-3         # CLASS-β ceiling                       # (local)\n  134: SDP_TOL = 1e-12             # SDP solver tolerance                  # (local)\n  135: N_LOC = 16                  # state-localized subspace size         # (local)\n  136: RNG_SEED = 42                                                       # (local)\n  137: \n  138: # Output destinations\n  139: OUT_NPZ = resolve_output(87, 's87_w1b_connes_distance_finite_spectrum_identity.npz')\n  140: OUT_PNG = resolve_output(87, 's87_w1b_connes_distance_finite_spectrum_identity.png')\n  141: VERDICT_TXT = resolve_output(87, 's87_gate_verdicts.txt')\n  142: \n  143: SPECTRUM_CACHE = resolve_output(84, 's84_spectrum_cache_L12_tau019.npz')\n  144: CANONICAL_CONSTS = resolve_script(None, 'canonical_constants.py')\n  145: INPUT_FILES = [SPECTRUM_CACHE, CANONICAL_CONSTS]\n  146: \n  147: # ---------------------------------------------------------------------------"
+    },
+    {
+      "anchor_id": "prov_2042",
+      "anchor_type": "data_provenance",
+      "name": "w1b_d_eff_anchor_verification",
+      "script_path": "session-87/s87_w1b_d_eff_anchor_verification.py",
+      "session": "s87",
+      "inputs": "",
+      "outputs": "session-87/s87_w1b_d_eff_anchor_verification.npz, session-87/s87_w1b_d_eff_anchor_verification.png",
+      "source_file": "computations/session-87/s87_w1b_d_eff_anchor_verification.py",
+      "source_context_30_lines": "  134: ANCHOR_D_EFF = 8                                                     # (local) d_eff anchor target\n  135: N_STRATA = 4                                                         # (local) V_4 partition cardinality\n  136: CHI2_VALID_MAX = 5.0                                                 # (local) regime VALID upper\n  137: CHI2_MARGINAL_MAX = 50.0                                             # (local) regime MARGINAL upper\n  138: RANDOM_SEED = 42                                                     # (local) plan PRDR pin\n  139: \n  140: # Output destinations\n  141: SPECTRUM_NPZ = resolve_output(84, 's84_spectrum_cache_L12_tau019.npz')\n  142: OUT_NPZ = resolve_output(87, 's87_w1b_d_eff_anchor_verification.npz')\n  143: OUT_PNG = resolve_output(87, 's87_w1b_d_eff_anchor_verification.png')\n  144: VERDICT_TXT = resolve_output(87, 's87_gate_verdicts.txt')\n  145: \n  146: INPUT_FILES = [\n  147:     resolve_script(None, 'canonical_constants.py'),\n  148:     SPECTRUM_NPZ,\n  149: ]\n  150: "
+    },
+    {
+      "anchor_id": "prov_2043",
+      "anchor_type": "data_provenance",
+      "name": "w1b_hk_1_6_pv_mpmath_richardson",
+      "script_path": "session-87/s87_w1b_hk_1_6_pv_mpmath_richardson.py",
+      "session": "s87",
+      "inputs": "",
+      "outputs": "session-87/s87_w1b_hk_1_6_pv_mpmath_richardson.npz",
+      "source_file": "computations/session-87/s87_w1b_hk_1_6_pv_mpmath_richardson.py",
+      "source_context_30_lines": "  133: # Pre-registered thresholds (HK-1)\n  134: PASS_REL_ERR_HK1 = 1e-40       # (local) quadrature-floor confirmed\n  135: FAIL_REL_ERR_HK1 = 1e-9        # (local) identity-violation ceiling\n  136: \n  137: # Pre-registered thresholds (HK-6)\n  138: PASS_BITEXACT_TOL_HK6 = 1e-15  # (local) bit-exact reproduction tolerance\n  139: \n  140: # Output destinations\n  141: OUT_NPZ = resolve_output(87, 's87_w1b_hk_1_6_pv_mpmath_richardson.npz')\n  142: VERDICT_TXT = resolve_output(87, 's87_gate_verdicts.txt')\n  143: PV_NPZ = resolve_output(87, 's87_w1b_pv_subtraction_recalibration.npz')\n  144: RICH_NPZ = resolve_output(87, 's87_w1b_lmax_weyl_convergence_sweep.npz')\n  145: CANONICAL_PY = resolve_script(None, 'canonical_constants.py')\n  146: \n  147: INPUT_FILES = [\n  148:     CANONICAL_PY,\n  149:     PV_NPZ,"
+    },
+    {
+      "anchor_id": "prov_2044",
+      "anchor_type": "data_provenance",
+      "name": "w1b_hk_2_windowed_pv_exploration",
+      "script_path": "session-87/s87_w1b_hk_2_windowed_pv_exploration.py",
+      "session": "s87",
+      "inputs": "",
+      "outputs": "session-87/s87_w1b_hk_2_windowed_pv_exploration.npz, session-87/s87_w1b_hk_2_windowed_pv_exploration.png",
+      "source_file": "computations/session-87/s87_w1b_hk_2_windowed_pv_exploration.py",
+      "source_context_30_lines": "  149: # PV mass scale: substrate dimensionless M_KK = 1 (eigenvalues are in\n  150: # dimensionless M_KK units throughout the framework's spectral cache).\n  151: M_KK_DIMLESS = 1.0                                                    # (local)\n  152: \n  153: # R_SD anchor from W1b-1 (continuum SD residue; pinned upstream).\n  154: R_SD_ANCHOR = 1.767131e+06                                            # (local) W1b-1 anchor\n  155: \n  156: # Output destinations\n  157: OUT_NPZ = resolve_output(87, 's87_w1b_hk_2_windowed_pv_exploration.npz')\n  158: OUT_PNG = resolve_output(87, 's87_w1b_hk_2_windowed_pv_exploration.png')\n  159: VERDICT_TXT = resolve_output(87, 's87_gate_verdicts.txt')\n  160: \n  161: CACHE_L12 = resolve_output(84, 's84_spectrum_cache_L12_tau019.npz')\n  162: CANONICAL_PY = resolve_script(None, 'canonical_constants.py')\n  163: SCRIPT_PATH = Path(__file__).resolve()\n  164: \n  165: INPUT_FILES = [CANONICAL_PY, CACHE_L12]"
+    },
+    {
+      "anchor_id": "prov_2045",
+      "anchor_type": "data_provenance",
+      "name": "w1b_hk_3_d_eff_convention_audit",
+      "script_path": "session-87/s87_w1b_hk_3_d_eff_convention_audit.py",
+      "session": "s87",
+      "inputs": "",
+      "outputs": "session-87/s87_w1b_hk_3_d_eff_convention_audit.npz, session-87/s87_w1b_hk_3_d_eff_convention_audit.png",
+      "source_file": "computations/session-87/s87_w1b_hk_3_d_eff_convention_audit.py",
+      "source_context_30_lines": "  125: L_MAX = 12                                                       # (local)\n  126: \n  127: # Pre-registered threshold values\n  128: D_EFF_TARGET = 8.0                                               # (local) anchor target\n  129: TOL_PASS_SUBSTRATE = 0.01                                        # (local) PASS-canonical threshold\n  130: TOL_INFO_SUBSTRATE = 0.10                                        # (local) INFO threshold\n  131: \n  132: # Output destinations\n  133: OUT_NPZ = resolve_output(87, 's87_w1b_hk_3_d_eff_convention_audit.npz')\n  134: OUT_PNG = resolve_output(87, 's87_w1b_hk_3_d_eff_convention_audit.png')\n  135: VERDICT_TXT = resolve_output(87, 's87_gate_verdicts.txt')\n  136: \n  137: S28C_PATH = SHARED_DIR / \"s28c_12d_axioms.py\"\n  138: W1B3_NPZ = resolve_output(87, 's87_w1b_lmax_weyl_convergence_sweep.npz')\n  139: W1B2_NPZ = resolve_output(87, 's87_w1b_d_eff_anchor_verification.npz')\n  140: CANONICAL_PY = resolve_script(None, 'canonical_constants.py')\n  141: "
+    },
+    {
+      "anchor_id": "prov_2046",
+      "anchor_type": "data_provenance",
+      "name": "w1b_hk_4_vii_u_w_recite",
+      "script_path": "session-87/s87_w1b_hk_4_vii_u_w_recite.py",
+      "session": "s87",
+      "inputs": "",
+      "outputs": "session-87/s87_w1b_hk_4_vii_u_w_recite.npz",
+      "source_file": "computations/session-87/s87_w1b_hk_4_vii_u_w_recite.py",
+      "source_context_30_lines": "   14:   pass idempotently using append-only Python file writers (no\n   15:   Edit-tool round-trips) per `.claude/rules/epistemic-discipline.md`\n   16:   §\"Registry-Write Hygiene under Parallel-Writer Race\".\n   17: \n   18: Pre-registered threshold:\n   19:   PASS iff (a) all in-scope §VII.U / §VII.W d_spec=8 (or d_eff=8)\n   20:   citations carry an inline annotation `(convention pin pending\n   21:   S87-W1B-HK-3)` AFTER each such token; AND (b) the citation\n   22:   inventory written to s87_w1b_hk_4_vii_u_w_recite.npz matches the\n   23:   per-file edit count; AND (c) the script is idempotent — re-running\n   24:   detects pre-existing annotations and is a no-op.\n   25: \n   26:   FAIL iff any in-scope citation remains unannotated.\n   27:   INFO iff zero in-scope citations exist (NULL pass — annotation\n   28:   set is empty by construction).\n   29: \n   30: Inputs (SHA-256 dual-pinned at runtime):"
+    },
+    {
+      "anchor_id": "prov_2047",
+      "anchor_type": "data_provenance",
+      "name": "w1b_hk_5_pv_continuum_pole_reconciliation",
+      "script_path": "session-87/s87_w1b_hk_5_pv_continuum_pole_reconciliation.py",
+      "session": "s87",
+      "inputs": "",
+      "outputs": "session-87/s87_w1b_hk_5_pv_continuum_pole_reconciliation.npz, session-87/s87_w1b_hk_5_pv_continuum_pole_reconciliation.p...",
+      "source_file": "computations/session-87/s87_w1b_hk_5_pv_continuum_pole_reconciliation.py",
+      "source_context_30_lines": "  117: GATE_ID = \"S87-W1B-HK-5-PV-CONTINUUM-POLE-RECONCILIATION\"          # (local)\n  118: SCHEME = \"richardson_L_minus_3\"                                    # (local)\n  119: CONVENTION = \"ConvB_D2_spectrum\"                                   # (local)\n  120: L_MAX = 14                                                         # (local)\n  121: \n  122: PASS_THRESHOLD = 1e-3                                              # (local)\n  123: INFO_THRESHOLD = 1e-2                                              # (local)\n  124: \n  125: OUT_NPZ = resolve_output(87, 's87_w1b_hk_5_pv_continuum_pole_reconciliation.npz')\n  126: OUT_PNG = resolve_output(87, 's87_w1b_hk_5_pv_continuum_pole_reconciliation.png')\n  127: VERDICT_TXT = resolve_output(87, 's87_gate_verdicts.txt')\n  128: \n  129: W1B_NPZ = resolve_output(87, 's87_w1b_lmax_weyl_convergence_sweep.npz')\n  130: \n  131: INPUT_FILES = [\n  132:     resolve_script(None, 'canonical_constants.py'),\n  133:     W1B_NPZ,"
+    },
+    {
+      "anchor_id": "prov_2048",
+      "anchor_type": "data_provenance",
+      "name": "w1b_hk_7_paired_slot_l14_disambiguation",
+      "script_path": "session-87/s87_w1b_hk_7_paired_slot_l14_disambiguation.py",
+      "session": "s87",
+      "inputs": "",
+      "outputs": "session-87/s87_w1b_hk_7_paired_slot_l14_disambiguation.npz, session-87/s87_w1b_hk_7_paired_slot_l14_disambiguation.png",
+      "source_file": "computations/session-87/s87_w1b_hk_7_paired_slot_l14_disambiguation.py",
+      "source_context_30_lines": "  140: PASS_TOL = 1e-3                                                          # (local) HK-7 strict PASS band\n  141: EXCLUDE_TOL = 1e-1                                                       # (local) W1b-4 verbatim\n  142: \n  143: # --- S64 canonical Gilkey-Seeley-DeWitt geometric coefficients\n  144: A0_GILKEY = 0.866                                                        # (local) a_0^Gilkey, S64 canonical\n  145: A2_GILKEY = 0.728234972609                                               # (local) a_2^Gilkey, S64 canonical\n  146: \n  147: # --- Output paths\n  148: OUT_NPZ = SCRIPT_DIR / \"s87_w1b_hk_7_paired_slot_l14_disambiguation.npz\"\n  149: OUT_PNG = SCRIPT_DIR / \"s87_w1b_hk_7_paired_slot_l14_disambiguation.png\"\n  150: VERDICT_TXT = SCRIPT_DIR / \"s87_gate_verdicts.txt\"\n  151: CANON_PY = SCRIPT_DIR / \"canonical_constants.py\"\n  152: L14_CACHE = SCRIPT_DIR / \"s87_spectrum_cache_L14_tau019.npz\"\n  153: W1B_4_SCRIPT = SCRIPT_DIR / \"s87_w1b_paired_slot_ratio_interpretation.py\"\n  154: S64_KASPAROV = SCRIPT_DIR / \"s64_bdg_kasparov.py\"\n  155: \n  156: INPUT_FILES = [CANON_PY, L14_CACHE, W1B_4_SCRIPT, S64_KASPAROV]"
+    },
+    {
+      "anchor_id": "prov_2049",
+      "anchor_type": "data_provenance",
+      "name": "w1b_lmax_weyl_convergence_sweep",
+      "script_path": "session-87/s87_w1b_lmax_weyl_convergence_sweep.py",
+      "session": "s87",
+      "inputs": "",
+      "outputs": "session-87/s87_w1b_lmax_weyl_convergence_sweep.npz, session-87/s87_w1b_lmax_weyl_convergence_sweep.png",
+      "source_file": "computations/session-87/s87_w1b_lmax_weyl_convergence_sweep.py",
+      "source_context_30_lines": "  190: VRAM_FEASIBILITY_GB = 8.5              # (local) plan-pinned 0.5*17 GB ceiling\n  191: VRAM_TOTAL_GB = 17.1                   # (local) RX 9070 XT total VRAM\n  192: \n  193: CACHE_L12 = resolve_output(84, 's84_spectrum_cache_L12_tau019.npz')\n  194: CACHE_L14_OUT = resolve_output(87, 's87_spectrum_cache_L14_tau019.npz')\n  195: W1B1_NPZ = resolve_output(87, 's87_w1b_pv_subtraction_recalibration.npz')\n  196: W1B2_NPZ = resolve_output(87, 's87_w1b_d_eff_anchor_verification.npz')\n  197: \n  198: OUT_NPZ = resolve_output(87, 's87_w1b_lmax_weyl_convergence_sweep.npz')\n  199: OUT_PNG = resolve_output(87, 's87_w1b_lmax_weyl_convergence_sweep.png')\n  200: VERDICT_TXT = resolve_output(87, 's87_gate_verdicts.txt')\n  201: \n  202: # Regulator-pin tag (regulator-pin-discipline.md): a_n citations carry tag\n  203: REGULATOR_TAG = \"Pauli-Villars\"        # (local) -> a_n^{Pauli-Villars}\n  204: \n  205: # PV mass scale: substrate dimensionless M_KK = 1 (matches W1b-1)\n  206: M_KK_DIMLESS = 1.0                     # (local) PV mass-scale in eigenvalue units"
+    },
+    {
+      "anchor_id": "prov_2050",
+      "anchor_type": "data_provenance",
+      "name": "w1b_paired_slot_ratio_interpretation",
+      "script_path": "session-87/s87_w1b_paired_slot_ratio_interpretation.py",
+      "session": "s87",
+      "inputs": "",
+      "outputs": "session-87/s87_w1b_paired_slot_ratio_interpretation.npz, session-87/s87_w1b_paired_slot_ratio_interpretation.png",
+      "source_file": "computations/session-87/s87_w1b_paired_slot_ratio_interpretation.py",
+      "source_context_30_lines": "  101: TOL_PASS = 1e-2                                                        # (local) per-class match\n  102: TOL_EXCLUDE = 1e-1                                                     # (local) other-class exclusion\n  103: \n  104: # --- Empirical observed paired-slot integers (from S86 W-1 W1b-T5 source)\n  105: PAIRED_SLOT_NUM = 7436                                                 # (local) a_0 split factor (S64)\n  106: PAIRED_SLOT_DEN = 3812                                                 # (local) a_2 split factor (S46)\n  107: \n  108: # --- Output paths\n  109: OUT_NPZ = SCRIPT_DIR / \"s87_w1b_paired_slot_ratio_interpretation.npz\"\n  110: OUT_PNG = SCRIPT_DIR / \"s87_w1b_paired_slot_ratio_interpretation.png\"\n  111: VERDICT_TXT = SCRIPT_DIR / \"s87_gate_verdicts.txt\"\n  112: CANON_PY = SCRIPT_DIR / \"canonical_constants.py\"\n  113: S64_KASPAROV = SCRIPT_DIR / \"s64_bdg_kasparov.py\"\n  114: S86_W2_WP = PROJECT_ROOT / \"sessions\" / \"session-86\" / \"session-86-w2-workingpaper.md\"\n  115: \n  116: INPUT_FILES = [CANON_PY, S64_KASPAROV, S86_W2_WP]\n  117: "
+    }
+  ]
+}

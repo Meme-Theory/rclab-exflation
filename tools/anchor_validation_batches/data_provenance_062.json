@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 62,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_611",
+      "anchor_type": "data_provenance",
+      "name": "leggett_amp",
+      "script_path": "session-53/s53_leggett_amp.py",
+      "session": "s53",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-53/s53_leggett_amp.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s53_leggett_amp.py — LEGGETT-AMP-53: Large-Modulation Floquet Analysis\n    4: ========================================================================\n    5: \n    6: Gate: LEGGETT-AMP-53\n    7:   PASS: Floquet multiplier |mu| > 1 AND amplification > 10\n    8:   INFO: |mu| > 1 but amplification < 10\n    9:   FAIL: |mu| <= 1 (stable, no parametric amplification)\n   10: \n   11: Physics:"
+    },
+    {
+      "anchor_id": "prov_612",
+      "anchor_type": "data_provenance",
+      "name": "leggett_damping",
+      "script_path": "session-53/s53_leggett_damping.py",
+      "session": "s53",
+      "inputs": "",
+      "outputs": "session-53/s53_leggett_damping.npz, session-53/s53_leggett_damping.png",
+      "source_file": "computations/session-53/s53_leggett_damping.py",
+      "source_context_30_lines": "  567: ax2.set_xlabel(r'$K / K_{BZ}$', fontsize=13)\n  568: ax2.set_ylabel(r'Kinematic gap [$M_{KK}$]', fontsize=13)\n  569: ax2.set_title('Leggett Decay Kinematic Gap', fontsize=14)\n  570: ax2.legend(fontsize=10)\n  571: ax2.set_xlim(0, 1)\n  572: ax2.grid(True, alpha=0.3)\n  573: \n  574: plt.tight_layout()\n  575: plt.savefig(os.path.join(os.path.dirname(__file__), 's53_leggett_damping.png'),\n  576:             dpi=150, bbox_inches='tight')\n  577: print(\"  Saved: s53_leggett_damping.png\")\n  578: \n  579: # ============================================================\n  580: # Section 11: Save data\n  581: # ============================================================\n  582: print(\"\\n--- Section 11: Saving data ---\")\n  583: "
+    },
+    {
+      "anchor_id": "prov_613",
+      "anchor_type": "data_provenance",
+      "name": "lk_stalling",
+      "script_path": "session-53/s53_lk_stalling.py",
+      "session": "s53",
+      "inputs": "",
+      "outputs": "session-53/s53_lk_stalling.npz",
+      "source_file": "computations/session-53/s53_lk_stalling.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s53_lk_stalling.py — Landau-Khalatnikov Critical Slowing Modifier (Route P6)\n    4: ==============================================================================\n    5: \n    6: Gate: LK-STALLING-53 (INFO)\n    7: Agent: landau-condensed-matter-theorist\n    8: \n    9: Physics:\n   10: --------\n   11: Near a BCS phase transition, the order parameter (gap Delta) has a characteristic"
+    },
+    {
+      "anchor_id": "prov_614",
+      "anchor_type": "data_provenance",
+      "name": "phonon_eos",
+      "script_path": "session-53/s53_phonon_eos.py",
+      "session": "s53",
+      "inputs": "",
+      "outputs": "session-53/s53_phonon_eos.npz, session-53/s53_phonon_eos.png",
+      "source_file": "computations/session-53/s53_phonon_eos.py",
+      "source_context_30_lines": "   52: \n   53: from canonical_constants import (\n   54:     T_acoustic, tau_fold, Vol_SU3_Haar, G_DeWitt, M_KK,\n   55:     c_Gold, c_fabric, N_e_classical, E_cond, H_fold,\n   56:     omega_L1, omega_L2, omega_H1, omega_H2, omega_H3,\n   57:     v_terminal, dt_transit, M_Pl_reduced\n   58: )\n   59: \n   60: OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), \"s53_phonon_eos_output.txt\")\n   61: fp = open(OUT, \"w\")\n   62: \n   63: def pr(s=\"\"):\n   64:     print(s)\n   65:     fp.write(s + \"\\n\")\n   66: \n   67: pr(\"=\" * 72)\n   68: pr(\"S53 PHONON-EOS-53: Phonon Equation of State + Exflationary History\")"
+    },
+    {
+      "anchor_id": "prov_615",
+      "anchor_type": "data_provenance",
+      "name": "phonon_lifetimes",
+      "script_path": "session-53/s53_phonon_lifetimes.py",
+      "session": "s53",
+      "inputs": "",
+      "outputs": "session-53/s53_phonon_lifetimes.npz, session-53/s53_phonon_lifetimes.png",
+      "source_file": "computations/session-53/s53_phonon_lifetimes.py",
+      "source_context_30_lines": "  718: ax3.set_ylabel('$v_g$ (M$_{KK}$)', fontsize=12)\n  719: ax3.set_title('Group velocity\\n(pair hopping speed)', fontsize=12)\n  720: ax3.legend(fontsize=8, loc='upper right')\n  721: ax3.set_xlim(0, K_BZ)\n  722: ax3.axhline(y=0, color='gray', linestyle='--', alpha=0.3)\n  723: ax3.grid(alpha=0.3)\n  724: \n  725: plt.tight_layout()\n  726: outpath = os.path.join(os.path.dirname(__file__), \"s53_phonon_lifetimes.png\")\n  727: plt.savefig(outpath, dpi=150, bbox_inches='tight')\n  728: print(f\"  Plot saved: {outpath}\")\n  729: plt.close()\n  730: \n  731: # ============================================================\n  732: # Section 13: Save data\n  733: # ============================================================\n  734: outdata = os.path.join(os.path.dirname(__file__), \"s53_phonon_lifetimes.npz\")"
+    },
+    {
+      "anchor_id": "prov_616",
+      "anchor_type": "data_provenance",
+      "name": "pomeranchuk_hfb",
+      "script_path": "session-53/s53_pomeranchuk_hfb.py",
+      "session": "s53",
+      "inputs": "computations/session-52/s52_hfb_full.npz, computations/session-53/s53_hfb_spectral.npz",
+      "outputs": "session-53/s53_pomeranchuk_hfb.npz",
+      "source_file": "computations/session-53/s53_pomeranchuk_hfb.py",
+      "source_context_30_lines": "  843: print(f\"    f_0^self-energy = {f0_HFB_S22c:+.3f} (HFB self-energy measure)\")\n  844: print(f\"    HFB effect: STRENGTHENS BCS instability conditions\")\n  845: print(f\"    At N_pair=1: Fermi liquid theory MARGINAL (Z={Z_B2_ed:.3f}, m*/m={m_star_ratio:.0f})\")\n  846: print()\n  847: \n  848: # =====================================================================\n  849: # 13. SAVE RESULTS\n  850: # =====================================================================\n  851: out_file = 'computations/session-53/s53_pomeranchuk_hfb.npz'\n  852: np.savez(out_file,\n  853:     # S22c reference\n  854:     f_00_S22c=-4.687,\n  855:     threshold=threshold,\n  856:     # Direct Landau parameter from V_bare\n  857:     f0_direct_discrete=f0_A_discrete,\n  858:     f0_direct_continuous=f0_A_continuous,\n  859:     f0_dressed_discrete=f0_B_discrete,"
+    },
+    {
+      "anchor_id": "prov_617",
+      "anchor_type": "data_provenance",
+      "name": "q_theory_gge",
+      "script_path": "session-53/s53_q_theory_gge.py",
+      "session": "s53",
+      "inputs": "",
+      "outputs": "session-53/s53_q_theory_gge.npz",
+      "source_file": "computations/session-53/s53_q_theory_gge.py",
+      "source_context_30_lines": "   18:     Lambda_GGE = F_GGE(q) - q * (d F_GGE / d q)\n   19: \n   20:   The vacuum compressibility chi_q = d^2 F_GGE / d q^2 controls\n   21:   the relaxation rate toward equilibrium.\n   22: \n   23: Gate: Q-THEORY-GGE-53 — INFO: chi_q and Lambda_GGE values reported.\n   24: \n   25: Inputs: canonical_constants, S38 GGE data\n   26: Outputs: s53_q_theory_gge_output.txt, s53_q_theory_gge.npz\n   27: \"\"\"\n   28: \n   29: import sys\n   30: import os\n   31: sys.path.insert(0, os.path.dirname(__file__))\n   32: \n   33: import numpy as np\n   34: from canonical_constants import ("
+    },
+    {
+      "anchor_id": "prov_618",
+      "anchor_type": "data_provenance",
+      "name": "sakharov_phonon",
+      "script_path": "session-53/s53_sakharov_phonon.py",
+      "session": "s53",
+      "inputs": "",
+      "outputs": "session-53/s53_sakharov_phonon.npz",
+      "source_file": "computations/session-53/s53_sakharov_phonon.py",
+      "source_context_30_lines": "  498: print(f\"    G_N^{{Sakharov}} from phonon spectrum reported and compared.\")\n  499: print(f\"    Phonon contribution is perturbative correction to Dirac-tower result.\")\n  500: print()\n  501: \n  502: # =============================================================================\n  503: # Save results\n  504: # =============================================================================\n  505: outfile = os.path.join(os.path.dirname(os.path.abspath(__file__)),\n  506:                        \"s53_sakharov_phonon_output.txt\")\n  507: # Redirect stdout to file\n  508: import io\n  509: import contextlib\n  510: \n  511: # Re-run with output capture\n  512: buf = io.StringIO()\n  513: with contextlib.redirect_stdout(buf):\n  514:     print(\"=\" * 72)"
+    },
+    {
+      "anchor_id": "prov_619",
+      "anchor_type": "data_provenance",
+      "name": "second_sound_cmb",
+      "script_path": "session-53/s53_second_sound_cmb.py",
+      "session": "s53",
+      "inputs": "",
+      "outputs": "session-53/s53_second_sound_cmb.npz, session-53/s53_second_sound_cmb.png",
+      "source_file": "computations/session-53/s53_second_sound_cmb.py",
+      "source_context_30_lines": "  647:   coupling is exactly zero at the Hessian level (structural). The GGE\n  648:   temperature cools from the GUT scale to the electroweak scale during\n  649:   exflation — consistent with standard cosmology onset.\n  650: \"\"\")\n  651: \n  652: # ============================================================================\n  653: #  Save data\n  654: # ============================================================================\n  655: out_path = os.path.join(os.path.dirname(__file__), 's53_second_sound_cmb.npz')\n  656: np.savez(out_path, **results)\n  657: print(f\"  Saved: {out_path}\")\n  658: \n  659: # ============================================================================\n  660: #  Plot\n  661: # ============================================================================\n  662: fig, axes = plt.subplots(2, 2, figsize=(14, 10))\n  663: fig.suptitle('S53 — Second-Sound CMB Imprint', fontsize=14, fontweight='bold')"
+    },
+    {
+      "anchor_id": "prov_620",
+      "anchor_type": "data_provenance",
+      "name": "spectral_function",
+      "script_path": "session-53/s53_spectral_function.py",
+      "session": "s53",
+      "inputs": "computations/session-53/s53_hfb_spectral.npz, computations/session-52/s52_hfb_full.npz",
+      "outputs": "session-53/s53_spectral_function.npz, session-53/s53_spectral_function.png",
+      "source_file": "computations/session-53/s53_spectral_function.py",
+      "source_context_30_lines": "   26:   Here it determines the \"particle content\" visible to a 4D observer after\n   27:   projection from the internal SU(3) space.\n   28: \n   29: Inputs:\n   30:   - computations/session-53/s53_hfb_spectral.npz (u_k, v_k from ED at N=1..4)\n   31:   - computations/session-52/s52_hfb_full.npz (quasiparticle energies E_k)\n   32: \n   33: Outputs:\n   34:   - computations/session-53/s53_spectral_function.npz\n   35:   - computations/session-53/s53_spectral_function.png\n   36:   - computations/session-53/s53_spectral_function_output.txt\n   37: \n   38: Gate: SPECTRAL-FUNCTION-HFB-53 (INFO)\n   39: \n   40: Author: Landau Condensed-Matter-Theorist\n   41: \"\"\"\n   42: "
+    }
+  ]
+}

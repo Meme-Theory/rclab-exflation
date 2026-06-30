@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 135,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1341",
+      "anchor_type": "data_provenance",
+      "name": "cc_m1_regularization",
+      "script_path": "session-74/s74_cc_m1_regularization.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_cc_m1_regularization.npz, session-74/s74_cc_m1_regularization.png",
+      "source_file": "computations/session-74/s74_cc_m1_regularization.py",
+      "source_context_30_lines": "   19:     INFO  if in [2, 5]\n   20:     FAIL  if > 5\n   21: \n   22: Input:\n   23:     computations/session-74/s74_spectrum_cache_L9_tau019.npz   (W1-C L=9 cache)\n   24:     computations/session-74/s74_hp4_pairing.npz                 (W2-K HP^4 pairing)\n   25: \n   26: Output:\n   27:     computations/session-74/s74_cc_m1_regularization.npz\n   28:     computations/session-74/s74_cc_m1_regularization.png\n   29: \n   30: Notes on dimensional interpretation\n   31: -----------------------------------\n   32: The cache stores |lambda_n| ALREADY in units of M_KK (dimensionless, range\n   33: [0.82, 4.30] at tau=0.190, L_max=9). Equivalently lambda_n^2/Lambda^2 is the\n   34: variable x with Lambda = M_KK. The DIRECT task formula therefore reduces to\n   35: "
+    },
+    {
+      "anchor_id": "prov_1342",
+      "anchor_type": "data_provenance",
+      "name": "coulomb_gas_instanton",
+      "script_path": "session-74/s74_coulomb_gas_instanton.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_coulomb_gas_instanton.npz, session-74/s74_coulomb_gas_instanton.png",
+      "source_file": "computations/session-74/s74_coulomb_gas_instanton.py",
+      "source_context_30_lines": "   43: Inputs\n   44: ------\n   45: computations/_shared/canonical_constants.py\n   46: computations/session-73/s73a_instanton_landscape.npz\n   47: computations/session-74/s74_moduli_stabilization.npz\n   48: \n   49: Outputs\n   50: -------\n   51: computations/session-74/s74_coulomb_gas_instanton.npz\n   52: computations/session-74/s74_coulomb_gas_instanton.png\n   53: \"\"\"\n   54: import os\n   55: import sys\n   56: import numpy as np\n   57: from scipy.interpolate import CubicSpline\n   58: import matplotlib\n   59: matplotlib.use(\"Agg\")"
+    },
+    {
+      "anchor_id": "prov_1343",
+      "anchor_type": "data_provenance",
+      "name": "dc_permanence",
+      "script_path": "session-74/s74_dc_permanence.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_dc_permanence.npz, session-74/s74_dc_permanence.png",
+      "source_file": "computations/session-74/s74_dc_permanence.py",
+      "source_context_30_lines": "   45: \n   46: Input files:\n   47:   computations/_shared/canonical_constants.py\n   48:   computations/session-73/s73b_virtual_particle.npz  (S73B 4-cell DC fraction)\n   49:   computations/session-64/s64_local_entangle.npz     (CG(24) adjacency)\n   50:   computations/session-56/s56_gge_fabric.npz         (eps_fold, V_fold, E_J_fold)\n   51: \n   52: Output files:\n   53:   computations/session-74/s74_dc_permanence.npz\n   54:   computations/session-74/s74_dc_permanence.png\n   55: \n   56: Session: S74 W4-B\n   57: Agent: kitaev-quantum-chaos-theorist\n   58: \"\"\"\n   59: \n   60: import os\n   61: import sys"
+    },
+    {
+      "anchor_id": "prov_1344",
+      "anchor_type": "data_provenance",
+      "name": "degeneracy_lift_alpha_s",
+      "script_path": "session-74/s74_degeneracy_lift_alpha_s.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_degeneracy_lift_alpha_s.npz, session-74/s74_degeneracy_lift_alpha_s.png",
+      "source_file": "computations/session-74/s74_degeneracy_lift_alpha_s.py",
+      "source_context_30_lines": "  659: \n  660: # ==============================================================================\n  661: #  SECTION 11: Write .npz\n  662: # ==============================================================================\n  663: \n  664: print(\"SECTION 11: Write output data\")\n  665: print(\"-\" * 78)\n  666: \n  667: out_path_npz = os.path.join(data_dir, 's74_degeneracy_lift_alpha_s.npz')  # (local)\n  668: \n  669: np.savez(\n  670:     out_path_npz,\n  671:     # Identification\n  672:     gate_name='N12-DEGENERACY-LIFT-ALPHA-S-74',\n  673:     gate_verdict=verdict,\n  674:     gate_reason=verdict_reason,\n  675:     # Per-mode inputs"
+    },
+    {
+      "anchor_id": "prov_1345",
+      "anchor_type": "data_provenance",
+      "name": "dimer_zero_mode",
+      "script_path": "session-74/s74_dimer_zero_mode.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_dimer_zero_mode.npz",
+      "source_file": "computations/session-74/s74_dimer_zero_mode.py",
+      "source_context_30_lines": "  459: theta_arr = np.array([r['theta'] for r in results_ZN])              # (local)\n  460: dev_u2_arr = np.array([r['dev_u2'] for r in results_ZN])            # (local)\n  461: dev_C2_arr = np.array([r['dev_C2'] for r in results_ZN])            # (local)\n  462: cond_A_arr = np.array([r['cond_A_commutes_u2'] for r in results_ZN], dtype=bool)  # (local)\n  463: cond_B_arr = np.array([r['cond_B_not_commute_C2'] for r in results_ZN], dtype=bool)  # (local)\n  464: valid_arr = np.array([r['valid_selection_rule'] for r in results_ZN], dtype=bool)    # (local)\n  465: phi_weight_arr = np.array([r['phi_weight_multiplier'] for r in results_ZN])          # (local)\n  466: \n  467: out_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), \"s74_dimer_zero_mode.npz\")  # (local)\n  468: np.savez(\n  469:     out_path,\n  470:     # Pre-registered gate verdict\n  471:     gate_verdict=np.array(gate_verdict),\n  472:     n_valid_subgroups=np.array(n_valid, dtype=int),\n  473:     valid_N_list=np.array(valid_N, dtype=int) if n_valid else np.array([], dtype=int),\n  474:     N_dim_total=np.array(N_dim_total, dtype=int),\n  475:     N_dim_smallest=np.array(N_dim_smallest, dtype=int),"
+    },
+    {
+      "anchor_id": "prov_1346",
+      "anchor_type": "data_provenance",
+      "name": "dr3_w0_falsifier",
+      "script_path": "session-74/s74_dr3_w0_falsifier.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_dr3_w0_falsifier.npz",
+      "source_file": "computations/session-74/s74_dr3_w0_falsifier.py",
+      "source_context_30_lines": "  250:         )\n  251: \n  252:     # ------------------------------------------------------------------\n  253:     # 8. WRITE NPZ RECORD (tamper-evident: contains everything needed\n  254:     #    to reproduce the verdict at DR3 release)\n  255:     # ------------------------------------------------------------------\n  256:     import os\n  257:     _here = os.path.dirname(os.path.abspath(__file__))     # (local)\n  258:     outpath = os.path.join(_here, \"s74_dr3_w0_falsifier.npz\")\n  259:     np.savez(\n  260:         outpath,\n  261:         # Framework prediction\n  262:         w0_central=np.asarray(w0_central),\n  263:         wa_locked=np.asarray(wa_locked),\n  264:         # Falsifier band\n  265:         w0_falsifier_lower=np.asarray(w0_falsifier_lower),\n  266:         w0_falsifier_upper=np.asarray(w0_falsifier_upper),"
+    },
+    {
+      "anchor_id": "prov_1347",
+      "anchor_type": "data_provenance",
+      "name": "ec_resolution",
+      "script_path": "session-74/s74_ec_resolution.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_ec_resolution.npz, session-74/s74_ec_resolution.png",
+      "source_file": "computations/session-74/s74_ec_resolution.py",
+      "source_context_30_lines": "   96: )\n   97: \n   98: # =============================================================================\n   99: # Configuration\n  100: # =============================================================================\n  101: \n  102: SCRIPT_DIR = Path(__file__).parent\n  103: CG24_FILE = SCRIPT_DIR / \"s73a_graph_spectral_decoherence.npz\"\n  104: OUT_NPZ = SCRIPT_DIR / \"s74_ec_resolution.npz\"\n  105: OUT_PNG = SCRIPT_DIR / \"s74_ec_resolution.png\"\n  106: \n  107: # Canonical Bose-Hubbard tunneling (per-bond)\n  108: T_BH = J_C2  # 0.933 M_KK, dominant Jensen-dressed Josephson coupling  # (local)\n  109: \n  110: # S55 phase stiffness (NOT the BH tunneling; reference only)\n  111: E_J_STIFFNESS_S55 = 7.042  # M_KK, phase stiffness per bond  # (local)\n  112: "
+    },
+    {
+      "anchor_id": "prov_1348",
+      "anchor_type": "data_provenance",
+      "name": "entry_th_deriv",
+      "script_path": "session-74/s74_entry_th_deriv.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_entry_th_deriv.npz, session-74/s74_entry_th_deriv.png",
+      "source_file": "computations/session-74/s74_entry_th_deriv.py",
+      "source_context_30_lines": "  427: print()\n  428: \n  429: # ==============================================================================\n  430: # 7. Save data\n  431: # ==============================================================================\n  432: \n  433: print(\"--- Phase 7: Save data and plot ---\")\n  434: \n  435: output_file = HERE / \"s74_entry_th_deriv.npz\"\n  436: np.savez(\n  437:     output_file,\n  438:     # Gate\n  439:     gate_name=\"ENTRY-TH-DERIV-74\",\n  440:     gate_verdict=gate_verdict,\n  441:     gate_detail=gate_detail,\n  442:     crossing_status=crossing_status,\n  443:     # Parameters"
+    },
+    {
+      "anchor_id": "prov_1349",
+      "anchor_type": "data_provenance",
+      "name": "evoi_recalibration",
+      "script_path": "session-74/s74_evoi_recalibration.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_evoi_recalibration.npz",
+      "source_file": "computations/session-74/s74_evoi_recalibration.py",
+      "source_context_30_lines": "   16: ------\n   17: Every verdict is pre-registered. Every resolution is permanent. The EVOI\n   18: numbers for STILL-OPEN items are pulled from the S73B table (unchanged\n   19: unless a S74 finding explicitly updates their P(pass) prior). New items\n   20: get P(pass) estimates based on their dependency structure.\n   21: \n   22: OUTPUT\n   23: ------\n   24: computations/session-74/s74_evoi_recalibration.npz\n   25:   - item_ids (string)\n   26:   - statuses (string: RESOLVED-PASS / RESOLVED-FAIL / INFO / OPEN / SUPERSEDED)\n   27:   - p_pass (float array)\n   28:   - evoi (float array)\n   29:   - tier (int array)\n   30:   - sources (string: S74 wave ID or \"carry-from-S73B\")\n   31:   - verdict_notes (string descriptions)\n   32: \"\"\""
+    },
+    {
+      "anchor_id": "prov_1350",
+      "anchor_type": "data_provenance",
+      "name": "external_comm_reframe",
+      "script_path": "session-74/s74_external_comm_reframe.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_external_comm_reframe.npz",
+      "source_file": "computations/session-74/s74_external_comm_reframe.py",
+      "source_context_30_lines": "  371:     \"m_H_tree_deviation_GeV\",\n  372:     \"m_H_tree_deviation_pct\",\n  373:     \"m_H_2loop_framework_GeV\",\n  374:     \"m_H_2loop_deviation_GeV\",\n  375:     \"m_H_2loop_deviation_pct\",\n  376: ])\n  377: \n  378: out_path = os.path.join(os.path.dirname(os.path.abspath(__file__)),\n  379:                         \"s74_external_comm_reframe.npz\")\n  380: \n  381: np.savez(\n  382:     out_path,\n  383:     docs=docs_arr,\n  384:     lines=lines_arr,\n  385:     categories=cats_arr,\n  386:     old_phrases=olds_arr,\n  387:     new_phrases=news_arr,"
+    }
+  ]
+}

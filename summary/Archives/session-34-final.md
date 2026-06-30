@@ -5,8 +5,8 @@
 **Computation Agents**: baptista (computation lead), connes (NCG validation + grand canonical), tesla (independent validation + 11% hunt), QA (11% hunt + beyond-mean-field), KK (independent KK validation), web-researcher (literature)
 **Reviewer Agents**: einstein, feynman, sagan, kk, landau, quantum-acoustics, hawking, dirac, paasch, schwarzschild-penrose, berry, baptista, cosmic-web, little-red-dots, neutrino, connes, gen-physicist, spectral-geometer, quantum-foam, tesla, nazarewicz
 **Workshops**: landau × nazarewicz, cosmic-web × quantum-foam, berry × tesla
-**Gate verdicts**: `tier0-computation/s34a_gate_verdicts.txt` (5/5 computed), s35a results (4 additional gates)
-**Total files produced**: 28 session documents, 13 tier0 computation triplets ({py,npz,png}), 2 new researcher papers indexed
+**Gate verdicts**: `computations/s34a_gate_verdicts.txt` (5/5 computed), s35a results (4 additional gates)
+**Total files produced**: 28 session documents, 13 computation computation triplets ({py,npz,png}), 2 new researcher papers indexed
 
 ---
 
@@ -379,7 +379,7 @@ PH maps (lambda_k, q_k) → (-lambda_k, -q_k).
 
 **Suggestions (5)**: Van Hove Morse theory classification in full moduli space, persistent homology of BCS gap landscape, TURING-1 PDE (HIGH PRIORITY), Bogoliubov dispersion on domain wall profile, Einasto characteristic scale assessment.
 
-**Updated classification**: Framework-derived results (mechanism chain 5/5, permanent structural results) vs framework-adjacent (all closed). Sole surviving extragalactic observable: Lambda from sector cancellation (Tier 3, uncomputed).
+**Updated classification**: Framework-derived results (mechanism chain 5/5, permanent structural results) vs framework-adjacent (all closed). Sole surviving extragalactic observable: Lambda from sector cancellation (Level 3, uncomputed).
 
 ### V.14 Little Red Dots JWST Analyst
 
@@ -795,20 +795,20 @@ D_phys breaking PH via inner fluctuations — already accounted for in DPHYS-34a
 
 | File | Agent | Content |
 |:-----|:------|:--------|
-| `tier0-computation/s34a_dphys_fold.{py,npz,png}` | bap | D_phys fold survival (DPHYS-34a-1) |
-| `tier0-computation/s34a_trap1_reeval.{py,npz,png}` | connes | Trap 1 re-evaluation (TRAP1-34a) |
-| `tier0-computation/s34a_dphys_kosmann.{py,npz,png}` | bap | Kosmann reprojection (DPHYS-34a-2) |
-| `tier0-computation/s34a_rpa_curvature.{py,npz,png}` | bap | RPA curvature (RPA-34a) |
-| `tier0-computation/s34a_dphys_thouless.{py,npz,png}` | bap | Thouless criterion (DPHYS-34a-3 FAIL) |
-| `tier0-computation/s34a_tesla_validation.{py,npz,png}` | tesla | Independent validation + Schur proof |
-| `tier0-computation/s34a_tesla_11pct.{py,npz,png}` | tesla | Van Hove + impedance hunt |
-| `tier0-computation/s34a_qa_11pct.{py,npz,png}` | QA | Acoustic perspective hunt |
-| `tier0-computation/s35a_vh_impedance_arbiter.{py,npz,png}` | bap | Van Hove + impedance arbitration |
-| `tier0-computation/s35a_kk_validation.{py,npz}` | KK | KK independent validation (8 M_max values) |
-| `tier0-computation/s35a_beyond_mean_field.{py,npz,png}` | QA | Beyond-mean-field corrections |
-| `tier0-computation/s35a_mu_physical_basis.{py,npz,png}` | connes | Canonical mu = 0 proof |
-| `tier0-computation/s35a_grand_canonical_mu.{py,npz,png}` | connes | Grand canonical evaluation |
-| `tier0-computation/s34a_gate_verdicts.txt` | coord | Gate verdicts (5/5) |
+| `computations/s34a_dphys_fold.{py,npz,png}` | bap | D_phys fold survival (DPHYS-34a-1) |
+| `computations/s34a_trap1_reeval.{py,npz,png}` | connes | Trap 1 re-evaluation (TRAP1-34a) |
+| `computations/s34a_dphys_kosmann.{py,npz,png}` | bap | Kosmann reprojection (DPHYS-34a-2) |
+| `computations/s34a_rpa_curvature.{py,npz,png}` | bap | RPA curvature (RPA-34a) |
+| `computations/s34a_dphys_thouless.{py,npz,png}` | bap | Thouless criterion (DPHYS-34a-3 FAIL) |
+| `computations/s34a_tesla_validation.{py,npz,png}` | tesla | Independent validation + Schur proof |
+| `computations/s34a_tesla_11pct.{py,npz,png}` | tesla | Van Hove + impedance hunt |
+| `computations/s34a_qa_11pct.{py,npz,png}` | QA | Acoustic perspective hunt |
+| `computations/s35a_vh_impedance_arbiter.{py,npz,png}` | bap | Van Hove + impedance arbitration |
+| `computations/s35a_kk_validation.{py,npz}` | KK | KK independent validation (8 M_max values) |
+| `computations/s35a_beyond_mean_field.{py,npz,png}` | QA | Beyond-mean-field corrections |
+| `computations/s35a_mu_physical_basis.{py,npz,png}` | connes | Canonical mu = 0 proof |
+| `computations/s35a_grand_canonical_mu.{py,npz,png}` | connes | Grand canonical evaluation |
+| `computations/s34a_gate_verdicts.txt` | coord | Gate verdicts (5/5) |
 | `sessions/archive/session-34/session-34a-synthesis.md` | coord | Wave 1 synthesis |
 | `sessions/archive/session-34/session-34-synthesis.md` | team-lead | Session synthesis |
 | `sessions/archive/session-34/session-34-exploration-addendum.md` | team-lead | Framework exploration |
@@ -845,4 +845,4 @@ D_phys breaking PH via inner fluctuations — already accounted for in DPHYS-34a
 
 ---
 
-*Session 34 Master Synthesis. Written 2026-03-07. Source: 28 session documents, 13 tier0 computation triplets, 2 new researcher papers. Total content reviewed: ~500KB across all sources.*
+*Session 34 Master Synthesis. Written 2026-03-07. Source: 28 session documents, 13 computation computation triplets, 2 new researcher papers. Total content reviewed: ~500KB across all sources.*

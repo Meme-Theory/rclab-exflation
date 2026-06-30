@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 85,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_841",
+      "anchor_type": "data_provenance",
+      "name": "backreaction_parker",
+      "script_path": "session-61/s61_backreaction_parker.py",
+      "session": "s61",
+      "inputs": "",
+      "outputs": "session-61/s61_backreaction_parker.npz, session-61/s61_backreaction_parker.png",
+      "source_file": "computations/session-61/s61_backreaction_parker.py",
+      "source_context_30_lines": "   30: Input:\n   31:   - s60_transplanckian_bogo.npz (mode energies, BdG spectrum)\n   32:   - s60_rg_integrals.npz (eps_fold, V_fold at fold)\n   33:   - s59_bogoliubov_coeff.npz (Bogoliubov coefficients from 3 methods)\n   34:   - s57_parker_ba.npz (Parker Bogoliubov at 9 tau checkpoints, 31 modes)\n   35:   - s58_acoustic_metric.npz (acoustic metric, H, c_BA, a_tau)\n   36: \n   37: Output:\n   38:   - s61_backreaction_parker.npz\n   39:   - s61_backreaction_parker.png\n   40: \n   41: Author: Hawking-Theorist (Session 61)\n   42: \"\"\"\n   43: \n   44: import sys\n   45: import os\n   46: sys.path.insert(0, os.path.dirname(__file__))"
+    },
+    {
+      "anchor_id": "prov_842",
+      "anchor_type": "data_provenance",
+      "name": "bcs_bec_crossover",
+      "script_path": "session-61/s61_bcs_bec_crossover.py",
+      "session": "s61",
+      "inputs": "",
+      "outputs": "session-61/s61_bcs_bec_crossover.npz, session-61/s61_bcs_bec_crossover.png",
+      "source_file": "computations/session-61/s61_bcs_bec_crossover.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s61_bcs_bec_crossover.py — BCS-BEC Crossover Diagnostic (BCS-BEC-61)\n    4: \n    5: Compute the crossover parameter 1/(k_F*a_s) and condensate fraction n_0/N\n    6: for the 8-mode BCS system at tau_fold, at each pair number N=1,2,3,4.\n    7: \n    8: Physics:\n    9:   The 8-mode system with pairing matrix V_{kl} and single-particle energies\n   10:   eps_k is solved by exact diagonalization in the N-pair Fock subspace.\n   11: "
+    },
+    {
+      "anchor_id": "prov_843",
+      "anchor_type": "data_provenance",
+      "name": "bdg_spectral_action",
+      "script_path": "session-61/s61_bdg_spectral_action.py",
+      "session": "s61",
+      "inputs": "",
+      "outputs": "session-61/s61_bdg_spectral_action.npz",
+      "source_file": "computations/session-61/s61_bdg_spectral_action.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s61_bdg_spectral_action.py — BdG Spectral Action (BDG-SA-61)\n    4: =============================================================\n    5: \n    6: FIRST NCG spectral action computation on a BCS system.\n    7: \n    8: Computes Seeley-DeWitt coefficients a_n(D_K^{BdG}) for the Bogoliubov-de Gennes\n    9: Dirac operator and compares to a_n(D_K).\n   10: \n   11: Physics:"
+    },
+    {
+      "anchor_id": "prov_844",
+      "anchor_type": "data_provenance",
+      "name": "bdi_diii_chain",
+      "script_path": "session-61/s61_bdi_diii_chain.py",
+      "session": "s61",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-61/s61_bdi_diii_chain.py",
+      "source_context_30_lines": "<name 'bdi_diii_chain' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: BDI-DIII-CHAIN-61: Altland-Zirnbauer inheritance chain from substrate to 3He-B\n    4: ================================================================================\n    5: \n    6: Gate: BDI-DIII-CHAIN-61 (INFO classification)\n    7: Agent: Nazarewicz Nuclear Structure Theorist\n    8: \n    9: Question: Is 3He-B the UNIQUE condensed matter endpoint reachable from BDI\n   10: via the compositing inheritance chain?\n   11: \n   12: Method: Trace T^2, C^2 through every compositing level. The AZ class changes\n   13: when the effective time-reversal operator acquires Kramers degeneracy (T^2 = -1),\n   14: which occurs when the composite object has half-integer spin.\n   15: \n   16: Reference: Sato & Ando (2017), Hasan & Kane (2010), Volovik (Paper 05 Table 1).\n   17: Framework BDI proven S08/S17c: J^2 = +1, [J, D_K] = 0, KO-dim = 6.\n   18: \"\"\"\n   19: \n   20: from canonical_constants import M_KK, tau_fold\n   21: import numpy as np\n   22: \n   23: # ==============================================================================\n   24: # SECTION 1: THE ALTLAND-ZIRNBAUER 10-FOLD WAY\n   25: # ==============================================================================\n   26: # The 10 AZ classes are labeled by (T^2, C^2, S) where:\n   27: #   T = time-reversal, C = particle-hole (charge conjugation), S = sublattice (chiral)\n   28: #   T^2 = 0 (absent), +1 (integer spin), -1 (half-integer spin, Kramers)\n   29: #   C^2 = 0 (absent), +1, -1\n   30: #   S = 0 (absent), 1 (present, S = TC when both T,C present)"
+    },
+    {
+      "anchor_id": "prov_845",
+      "anchor_type": "data_provenance",
+      "name": "bekenstein_desitter",
+      "script_path": "session-61/s61_bekenstein_desitter.py",
+      "session": "s61",
+      "inputs": "",
+      "outputs": "session-61/s61_bekenstein_desitter.npz",
+      "source_file": "computations/session-61/s61_bekenstein_desitter.py",
+      "source_context_30_lines": "  365: print(f\"  {'-'*75}\")\n  366: for q, v, u in summary:\n  367:     print(f\"  {q:<35} {v:<20} {u:<20}\")\n  368: \n  369: # ==============================================================================\n  370: # SAVE DATA\n  371: # ==============================================================================\n  372: outpath = os.path.join(os.path.dirname(os.path.abspath(__file__)),\n  373:                        \"s61_bekenstein_desitter.npz\")\n  374: \n  375: np.savez(outpath,\n  376:     Lambda_SI=Lambda_SI,\n  377:     R_H_m=R_H,\n  378:     R_H_Gpc=R_H / (Mpc_to_m * 1e3),\n  379:     S_dS=S_dS,\n  380:     log10_S_dS=np.log10(S_dS),\n  381:     A_horizon_m2=A_horizon,"
+    },
+    {
+      "anchor_id": "prov_846",
+      "anchor_type": "data_provenance",
+      "name": "bekenstein_radius",
+      "script_path": "session-61/s61_bekenstein_radius.py",
+      "session": "s61",
+      "inputs": "",
+      "outputs": "session-61/s61_bekenstein_radius.npz",
+      "source_file": "computations/session-61/s61_bekenstein_radius.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s61_bekenstein_radius.py — BEKENSTEIN-RADIUS-61\n    4: ================================================\n    5: Gate: PASS if corrected S_sector/S_Bek < 1 for any physical R.\n    6:       FAIL if > 1 with ALL physical R.\n    7:       INFO if [0.8, 1.2].\n    8: \n    9: The S60 Bekenstein bound used R = 1/M_KK (compactification radius).\n   10: The BCS condensate may have a different physical confinement radius.\n   11: We test three definitions:"
+    },
+    {
+      "anchor_id": "prov_847",
+      "anchor_type": "data_provenance",
+      "name": "block_diagonal_generality",
+      "script_path": "session-61/s61_block_diagonal_generality.py",
+      "session": "s61",
+      "inputs": "",
+      "outputs": "session-61/s61_block_diagonal_generality.npz",
+      "source_file": "computations/session-61/s61_block_diagonal_generality.py",
+      "source_context_30_lines": "  854:         'su3_jensen_params': [s for _, s, _, _, _ in su3_results],\n  855:         'su3_cross_norms': [mc for _, _, mc, _, _ in su3_results],\n  856:         'su2_connection_errs': [ce for _, _, _, _, ce, _ in su2_results],\n  857:         'su3_connection_errs': [ce for _, _, _, ce, _ in su3_results],\n  858:         'minimal_condition': 'compact_G_plus_left_invariant_metric',\n  859:     }\n  860: \n  861:     outpath = os.path.join(os.path.dirname(os.path.abspath(__file__)),\n  862:                            's61_block_diagonal_generality.npz')\n  863:     np.savez(outpath, **{k: np.array(v) if isinstance(v, list) else np.array([v])\n  864:                          for k, v in results.items()})\n  865:     print(f\"  Results saved to: {outpath}\")\n  866:     print(\"=\" * 80)\n  867: \n  868: \n  869: if __name__ == '__main__':\n  870:     main()"
+    },
+    {
+      "anchor_id": "prov_848",
+      "anchor_type": "data_provenance",
+      "name": "cc_bayes_comparison",
+      "script_path": "session-61/s61_cc_bayes_comparison.py",
+      "session": "s61",
+      "inputs": "",
+      "outputs": "session-61/s61_cc_bayes_comparison.npz",
+      "source_file": "computations/session-61/s61_cc_bayes_comparison.py",
+      "source_context_30_lines": "  565: print(\"  Here: chi_q=0.024 and ordered-veil permanence are decisive.\")\n  566: print()\n  567: \n  568: # =============================================================================\n  569: #  SECTION 8: SAVE RESULTS\n  570: # =============================================================================\n  571: \n  572: output_path = os.path.join(os.path.dirname(os.path.abspath(__file__)),\n  573:                            \"s61_cc_bayes_comparison.npz\")\n  574: \n  575: np.savez(output_path,\n  576:     # Models\n  577:     models=np.array(models),\n  578:     model_labels=np.array([model_labels[m] for m in models]),\n  579: \n  580:     # Priors and posteriors\n  581:     priors=np.array([prior[m] for m in models]),"
+    },
+    {
+      "anchor_id": "prov_849",
+      "anchor_type": "data_provenance",
+      "name": "cfl_correspondence",
+      "script_path": "session-61/s61_cfl_correspondence.py",
+      "session": "s61",
+      "inputs": "",
+      "outputs": "session-61/s61_cfl_correspondence.npz",
+      "source_file": "computations/session-61/s61_cfl_correspondence.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s61_cfl_correspondence.py — CFL-CORRESPONDENCE-61\n    4: ===================================================\n    5: \n    6: Literature evaluation: Score the color-flavor locked (CFL) phase of dense QCD\n    7: against the 22-correspondence scorecard established in S60 for 3He-B.\n    8: \n    9: Test: Inheritance predicts CFL scores >22 (extras from shared SU(3));\n   10:       Analogy predicts CFL scores ~22 (same universality class, no extras).\n   11: "
+    },
+    {
+      "anchor_id": "prov_850",
+      "anchor_type": "data_provenance",
+      "name": "chern_instanton",
+      "script_path": "session-61/s61_chern_instanton.py",
+      "session": "s61",
+      "inputs": "s61_kasparov_product_verification.npz, s61_spectral_flow.npz, s61_oneill_crossterms.npz",
+      "outputs": "session-61/s61_chern_instanton.npz",
+      "source_file": "computations/session-61/s61_chern_instanton.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s61_chern_instanton.py — CHERN-INST-61\n    4: Chern classes, instanton numbers, and topological corrections from the\n    5: fiber bundle structure of SU(3) with Jensen metric.\n    6: \n    7: Gate: CHERN-INST-61\n    8:   PASS if ind = integer and relates to S_inst\n    9:   FAIL if contradicts\n   10:   INFO if ind = 0\n   11: "
+    }
+  ]
+}

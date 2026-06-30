@@ -1,0 +1,107 @@
+{
+  "table": "gates",
+  "batch_id": 259,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "gate_RPA-32b",
+      "anchor_type": "gates",
+      "name": "RPA-32b",
+      "session": "32b",
+      "condition": "Decisive",
+      "verdict": "PASS** (chi = 20.43, 38x threshold)",
+      "source_file": "sessions\\archive\\session-32\\session-32b-synthesis.md",
+      "source_context_30_lines": "   32: | 4 | Gate classification + synthesis | coord | COMPLETE |\n   33: | 5 | RPA-1 formula review | baptista | COMPLETE (critical correction: Tr D_K -> sum\\|lambda_k\\|) |\n   34: | 6 | Mechanism chain assessment | tesla | COMPLETE |\n   35: \n   36: ### Gate Verdicts\n   37: \n   38: | ID | Type | Short Description | Verdict |\n   39: |:---|:-----|:-----------------|:--------|\n   40: | RPA-32b | Decisive | chi > 0.54 at tau=0.20 | **PASS** (chi = 20.43, 38x threshold) |\n   41: | W-32b | Decisive | rho_wall > 6.7 at domain wall | **PASS** (rho = 12.5-21.6, 1.9-3.2x threshold) |\n   42: | PB-32b | Conditional | B2 in Mathieu unstable band | **FAIL** at physical r (only r=5.0 in unstable tongue) |\n   43: \n   44: ### Deliverables\n   45: \n   46: | Output | Description | Status |\n   47: |:-------|:-----------|:-------|\n   48: | `computations/s32b_rpa1_thouless.py` | RPA-1 computation script | COMPLETE |"
+    },
+    {
+      "anchor_id": "gate_W-32b",
+      "anchor_type": "gates",
+      "name": "W-32b",
+      "session": "32b",
+      "condition": "Decisive",
+      "verdict": "PASS** (rho = 12.5-21.6, 1.9-3.2x threshold)",
+      "source_file": "sessions\\archive\\session-32\\session-32b-synthesis.md",
+      "source_context_30_lines": "   33: | 5 | RPA-1 formula review | baptista | COMPLETE (critical correction: Tr D_K -> sum\\|lambda_k\\|) |\n   34: | 6 | Mechanism chain assessment | tesla | COMPLETE |\n   35: \n   36: ### Gate Verdicts\n   37: \n   38: | ID | Type | Short Description | Verdict |\n   39: |:---|:-----|:-----------------|:--------|\n   40: | RPA-32b | Decisive | chi > 0.54 at tau=0.20 | **PASS** (chi = 20.43, 38x threshold) |\n   41: | W-32b | Decisive | rho_wall > 6.7 at domain wall | **PASS** (rho = 12.5-21.6, 1.9-3.2x threshold) |\n   42: | PB-32b | Conditional | B2 in Mathieu unstable band | **FAIL** at physical r (only r=5.0 in unstable tongue) |\n   43: \n   44: ### Deliverables\n   45: \n   46: | Output | Description | Status |\n   47: |:-------|:-----------|:-------|\n   48: | `computations/s32b_rpa1_thouless.py` | RPA-1 computation script | COMPLETE |\n   49: | `computations/s32b_rpa1_thouless.npz` | RPA-1 data (chi values, V matrix, decomposition) | COMPLETE |"
+    },
+    {
+      "anchor_id": "gate_PB-32b",
+      "anchor_type": "gates",
+      "name": "PB-32b",
+      "session": "32b",
+      "condition": "Conditional",
+      "verdict": "FAIL** at physical r (only r=5.0 in unstable tongue)",
+      "source_file": "sessions\\archive\\session-32\\session-32b-synthesis.md",
+      "source_context_30_lines": "   34: | 6 | Mechanism chain assessment | tesla | COMPLETE |\n   35: \n   36: ### Gate Verdicts\n   37: \n   38: | ID | Type | Short Description | Verdict |\n   39: |:---|:-----|:-----------------|:--------|\n   40: | RPA-32b | Decisive | chi > 0.54 at tau=0.20 | **PASS** (chi = 20.43, 38x threshold) |\n   41: | W-32b | Decisive | rho_wall > 6.7 at domain wall | **PASS** (rho = 12.5-21.6, 1.9-3.2x threshold) |\n   42: | PB-32b | Conditional | B2 in Mathieu unstable band | **FAIL** at physical r (only r=5.0 in unstable tongue) |\n   43: \n   44: ### Deliverables\n   45: \n   46: | Output | Description | Status |\n   47: |:-------|:-----------|:-------|\n   48: | `computations/s32b_rpa1_thouless.py` | RPA-1 computation script | COMPLETE |\n   49: | `computations/s32b_rpa1_thouless.npz` | RPA-1 data (chi values, V matrix, decomposition) | COMPLETE |\n   50: | `computations/s32b_rpa1_thouless.png` | RPA-1 plot (chi vs tau, diagonal vs off-diagonal) | COMPLETE |"
+    },
+    {
+      "anchor_id": "gate_CHAOS-1",
+      "anchor_type": "gates",
+      "name": "CHAOS-1",
+      "session": "38",
+      "condition": "C-5",
+      "verdict": "ORDERED",
+      "source_file": "sessions\\archive\\session-38\\session-38-master-synthesis.md",
+      "source_context_30_lines": "    8: ---\n    9: \n   10: ## Executive Summary\n   11: \n   12: Session 38 asked: **what does the instanton gas DO during transit through the van Hove fold?** The dense instanton gas (S_inst = 0.069, L/xi_GL = 0.031) discovered in Session 37 was not a dead end but a doorway. Four workshops and seven computations mapped the transit physics, and the answer rewrites the framework's physical picture.\n   13: \n   14: The transit through the fold is a sudden parametric quench (tau_Q/tau_0 = 8.7e-4) -- Parker-type cosmological particle creation with no horizon, no thermal spectrum, and no chaos at any level. The quench destroys the BCS condensate completely (P_exc = 1.000, E_exc/|E_cond| = 443), creating 59.8 quasiparticle pairs in a non-thermal Generalized Gibbs Ensemble protected by Richardson-Gaudin integrability. This GGE is permanent: three layers of conservation laws (integrability + block-diagonal theorem + suppressed 4D coupling) forbid thermalization at any timescale. The GGE Lagrange multipliers are as permanent as Lambda or gauge couplings -- cosmological constants of the theory.\n   15: \n   16: The Schwinger pair creation exponent equals the instanton action (0.070 = 0.069). These are the same WKB integral through the BdG gap in Euclidean and Lorentzian time. The instanton gas IS the pair creation process viewed in Euclidean signature. This is not an analogy to pair creation in some external gravitational field. The internal geometry's own compactification dynamics -- one WK\n... [truncated]"
+    },
+    {
+      "anchor_id": "gate_CHAOS-2",
+      "anchor_type": "gates",
+      "name": "CHAOS-2",
+      "session": "38",
+      "condition": "C-6",
+      "verdict": "ORDERED",
+      "source_file": "sessions\\archive\\session-38\\session-38-master-synthesis.md",
+      "source_context_30_lines": "   29: \n   30: Source: All four workshops + C-5/C-6/C-7.\n   31: \n   32: The session's title result. Three chaos diagnostics all return ORDERED:\n   33: \n   34: | Gate | Criterion | Measured | Verdict |\n   35: |:-----|:----------|:---------|:--------|\n   36: | CHAOS-1 (level spacing) | <r> > 0.50 at fold | <r> = 0.321 (sub-Poisson) | ORDERED |\n   37: | CHAOS-2 (OTOC) | Positive Lyapunov exponent | F(t) ~ t^{1.9}, no exponential | ORDERED |\n   38: | CHAOS-3 (scrambling) | t_scr < t_transit | t_scr/t_transit = 814 | ORDERED |\n   39: \n   40: The ordering is three-layered: (i) the single-particle Dirac spectrum is integrable (Poisson within K_7 multiplicity classes, C-5), (ii) the many-body BCS Fock space dynamics are integrable (no Lyapunov, KS rejects GOE at p < 0.001, C-6), and (iii) the post-transit GGE preserves this integrability forever (Richardson-Gaudin conserved integrals, W3). At no point does chaos enter.\n   41: \n   42: But the transit destroys the condensate (P_exc = 1.000). The 4D observer cannot see the ordered substrate directly -- only its scars: the pattern of resonance frequencies and spectral weights that encode the geometry of Jensen-deformed SU(3). The universe's internal degrees of freedom are born ordered and stay ordered, behind the veil of the sudden quench.\n   43: \n   44: **Single-particle details (C-5):** The (2,1) sector (84 unique levels) gives <r> = 0.321 at the fold -- below Poisson (0.386). The sub-Poisson value is diagnostic of superimposed indepen\n... [truncated]"
+    },
+    {
+      "anchor_id": "gate_CHAOS-3",
+      "anchor_type": "gates",
+      "name": "CHAOS-3",
+      "session": "38",
+      "condition": "C-7",
+      "verdict": "ORDERED",
+      "source_file": "sessions\\archive\\session-38\\session-38-master-synthesis.md",
+      "source_context_30_lines": "   30: Source: All four workshops + C-5/C-6/C-7.\n   31: \n   32: The session's title result. Three chaos diagnostics all return ORDERED:\n   33: \n   34: | Gate | Criterion | Measured | Verdict |\n   35: |:-----|:----------|:---------|:--------|\n   36: | CHAOS-1 (level spacing) | <r> > 0.50 at fold | <r> = 0.321 (sub-Poisson) | ORDERED |\n   37: | CHAOS-2 (OTOC) | Positive Lyapunov exponent | F(t) ~ t^{1.9}, no exponential | ORDERED |\n   38: | CHAOS-3 (scrambling) | t_scr < t_transit | t_scr/t_transit = 814 | ORDERED |\n   39: \n   40: The ordering is three-layered: (i) the single-particle Dirac spectrum is integrable (Poisson within K_7 multiplicity classes, C-5), (ii) the many-body BCS Fock space dynamics are integrable (no Lyapunov, KS rejects GOE at p < 0.001, C-6), and (iii) the post-transit GGE preserves this integrability forever (Richardson-Gaudin conserved integrals, W3). At no point does chaos enter.\n   41: \n   42: But the transit destroys the condensate (P_exc = 1.000). The 4D observer cannot see the ordered substrate directly -- only its scars: the pattern of resonance frequencies and spectral weights that encode the geometry of Jensen-deformed SU(3). The universe's internal degrees of freedom are born ordered and stay ordered, behind the veil of the sudden quench.\n   43: \n   44: **Single-particle details (C-5):** The (2,1) sector (84 unique levels) gives <r> = 0.321 at the fold -- below Poisson (0.386). The sub-Poisson value is diagnostic of superimposed independent spe\n... [truncated]"
+    },
+    {
+      "anchor_id": "gate_KZ-COSMO",
+      "anchor_type": "gates",
+      "name": "KZ-COSMO",
+      "session": "38",
+      "condition": "C-4",
+      "verdict": "ILL-POSED -> PASS",
+      "source_file": "sessions\\archive\\session-38\\session-38-master-synthesis.md",
+      "source_context_30_lines": "  213: \n  214: ## II. Gate Verdicts (Complete)\n  215: \n  216: | Gate | Sub-Session | Type | Verdict | Decisive Number |\n  217: |:-----|:-----------|:-----|:--------|:----------------|\n  218: | CHAOS-1 | C-5 | DIAGNOSTIC | **ORDERED** | <r> = 0.321 at fold (sub-Poisson, integrable) |\n  219: | CHAOS-2 | C-6 | DIAGNOSTIC | **ORDERED** | F(t) ~ t^{1.9}, no Lyapunov; KS rejects GOE p < 0.001 |\n  220: | CHAOS-3 | C-7 | DIAGNOSTIC | **ORDERED** | t_scr/t_transit = 814 |\n  221: | KZ-COSMO | C-4 | REFORMULATED | **ILL-POSED -> PASS** | P_exc = 1.000 (0D, no spatial defects) |\n  222: | CC-INST-38 | W0 + C-1/C-2 | CLOSURE | **CLOSED (76x)** | min(<Delta^2>/Delta_0^2) = 0.831 >> 0.011 |\n  223: \n  224: ---\n  225: \n  226: ## III. Constraint Map Update\n  227: \n  228: ### New Closure\n  229: "
+    },
+    {
+      "anchor_id": "gate_CC-INST-38",
+      "anchor_type": "gates",
+      "name": "CC-INST-38",
+      "session": "38",
+      "condition": "W0 + C-1/C-2",
+      "verdict": "CLOSED (76x)",
+      "source_file": "sessions\\archive\\session-38\\session-38-master-synthesis.md",
+      "source_context_30_lines": "   12: Session 38 asked: **what does the instanton gas DO during transit through the van Hove fold?** The dense instanton gas (S_inst = 0.069, L/xi_GL = 0.031) discovered in Session 37 was not a dead end but a doorway. Four workshops and seven computations mapped the transit physics, and the answer rewrites the framework's physical picture.\n   13: \n   14: The transit through the fold is a sudden parametric quench (tau_Q/tau_0 = 8.7e-4) -- Parker-type cosmological particle creation with no horizon, no thermal spectrum, and no chaos at any level. The quench destroys the BCS condensate completely (P_exc = 1.000, E_exc/|E_cond| = 443), creating 59.8 quasiparticle pairs in a non-thermal Generalized Gibbs Ensemble protected by Richardson-Gaudin integrability. This GGE is permanent: three layers of conservation laws (integrability + block-diagonal theorem + suppressed 4D coupling) forbid thermalization at any timescale. The GGE Lagrange multipliers are as permanent as Lambda or gauge couplings -- cosmological constants of the theory.\n   15: \n   16: The Schwinger pair creation exponent equals the instanton action (0.070 = 0.069). These are the same WKB integral through the BdG gap in Euclidean and Lorentzian time. The instanton gas IS the pair creation process viewed in Euclidean signature. This is not an analogy to pair creation in some external gravitational field. The internal geometry's own compactification dynamics -- one WKB integral, zero free parameters -- **produce** the par\n... [truncated]"
+    },
+    {
+      "anchor_id": "gate_C-4",
+      "anchor_type": "gates",
+      "name": "C-4",
+      "session": "38",
+      "condition": "KZ-COSMO",
+      "verdict": "ILL-POSED -> PASS",
+      "source_file": "sessions\\archive\\session-38\\session-38-master-synthesis.md",
+      "source_context_30_lines": "   44: **Single-particle details (C-5):** The (2,1) sector (84 unique levels) gives <r> = 0.321 at the fold -- below Poisson (0.386). The sub-Poisson value is diagnostic of superimposed independent spectral sequences from the unresolved U(1)_7 charge ([iK_7, D_K] = 0 exact). Within K_7 multiplicity classes, <r> = 0.375 recovers Poisson to 0.6 sigma. The (3,0)/(0,3) anomaly (<r> ~ 0.51) is a statistical fluctuation (not reproducible at adjacent tau values, N = 52).\n   45: \n   46: **Many-body details (C-6):** The 256-dimensional BCS Fock space OTOC shows BCH quadratic growth (F ~ t^{1.9}) followed by oscillatory behavior at the pair vibration quasi-period (~6.7), with no exponential regime (sliding-window R^2 < 0.70). The pairing interaction from Kosmann inner products has rank-1 structure within B2 -- too structured for SYK-type chaos.\n   47: \n   48: **Scrambling (C-7):** The OTOC saturation time exceeds the transit time by 814x. The pair vibration period (~6.7) exceeds transit time by 6,700x. The instanton gas cannot complete a single oscillation during transit.\n   49: \n   50: **2. Permanent GGE relic -- \"preheating without reheating\"**\n   51: \n   52: Source: W3 (Landau x Hawking), C-4.\n   53: \n   54: The transit is a sudden quench that completely destroys the BCS condensate:\n   55: \n   56: | Quantity | Value |\n   57: |:---------|:------|\n   58: | Adiabaticity tau_Q/tau_0 | 8.71e-4 (SUDDEN QUENCH) |\n   59: | P_LZ (Landau-Zener) | 0.999 (diabatic, exponent 6.84e-4) |\n   60: | \n... [truncated]"
+    },
+    {
+      "anchor_id": "gate_RG-39",
+      "anchor_type": "gates",
+      "name": "RG-39",
+      "session": "39",
+      "condition": "W1-1",
+      "verdict": "PASS",
+      "source_file": "sessions\\archive\\session-39\\session-39-master-synthesis.md",
+      "source_context_30_lines": "    8: ---\n    9: \n   10: ## Executive Summary\n   11: \n   12: Session 39 is the most computationally dense session in the project's history: 20 tasks planned across 4 waves, 18 computations completed, 5 gates PASS, 6 FAIL, 7 INFO, 2 SUPERSEDED, plus 1 independent Nazarewicz review. The session systematically resolved every open computational item from Session 38. Three S38 claims that formed the \"transit physics\" paradigm -- GGE permanence, Schwinger-instanton duality, and Friedmann-BCS stabilization -- are all now dead. Four additional S38 observations (omega_att = 9*(B3-B1), GPV observable post-transit, preheating without reheating, permanent non-thermal relic) are retracted or closed.\n   13: \n   14: The headline result is FRIED-39 FAIL: the coupled Friedmann-BCS dynamics produce a physical dwell time of 3.0e-4 natural units versus the required 40, a shortfall of 133,200x. The structural root cause is the gradient ratio |dV_bare/dtau| / |dE_BCS/dtau| = 6,596 at the fold -- the spectral action potential (value ~250,000, gradient ~58,723) overwhelms the BCS condensation energy (value -0.156, gradient ~8.90) because the former sums over 155,984 modes while the latter involves 8. This closes the 26th and final identified stabilization mechanism for the modulus tau. Every equilibrium, quasi-static, and dynamical stabilization pathway is now exhausted. The constraint surface for equilibrium stabilization has collapsed to dimension zero.\n   15: \n   16: What survives is structural \n... [truncated]"
+    }
+  ]
+}

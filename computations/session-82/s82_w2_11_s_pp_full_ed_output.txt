@@ -1,0 +1,154 @@
+==============================================================================
+S82 W2-11: S++-FULL-ED (Full ED on (0,0)+(1,1) sub-sector)
+==============================================================================
+
+  SHA-256 input pins (S81+ discipline):
+    s74_spectrum_cache_L9_tau019.npz: 3ce853809c61f79d49a2e7c169cce2625acc0b98e84a44742e0778049ba836f8
+    s78_multi_band_econd.npz:         063457ddd54e3914388359b31b2f7e52f98c0068e404924598fa0d949b54eb51
+    canonical_constants.py:           d934ce9d5d522183f5d6a67151f3b006a125e7a60935d94c717ddabd972e8c3c
+
+  Canonical constants:
+    tau_fold = 0.19
+    E_cond (S36 ED-CONV-36, 8-mode) = -0.1368505597
+    Delta_BCS = 0.464255
+    J_C2 = 0.933, J_su2 = 0.059, J_u1 = 0.038
+    omega_L1 = 0.138, omega_L2 = 0.192
+
+  Solver path: scipy.sparse.linalg.eigsh (Lanczos, smallest eigenvalue only)
+  (GPU dense eigvalsh is inappropriate here: the coupled-block matrices
+   in pair basis can reach O(4e4) dimension, which exceeds dense-GPU memory;
+   sparse Lanczos is the canonical method for this class of Richardson ED.)
+
+PRE-REGISTERED criteria (before compute):
+  MF baseline margin (s78_w1d): 5.807769e-04 = 0.0581%
+  PASS: margin_ED <= 2.903884e-04 AND sign_ED == s++
+  INFO: margin_ED in [2.90e-04, 1.16e-03]; sign == s++
+  INFO (widens): margin_ED > 1.16e-03 but sign == s++
+  FAIL: sign_ED == s+- AND margin_ED >= 1.0e-03
+  N_pair_cutoff (canonical): 2 per sector
+  N_pair_cutoff (extended check): 3 per sector
+
+==============================================================================
+SECTION 1: Load active-sector eigenvalues
+==============================================================================
+  Sector (0,0): lowest 12 evals in [0.81974, 0.97141], lam_max = 0.97141
+  Sector (1,1): lowest 12 evals in [0.87298, 1.06371], lam_max = 1.66957
+
+==============================================================================
+SECTION 2: f* scheme + V0 calibration (replicate s78 MF calibration)
+==============================================================================
+  V0_INTRA_CALIB (from s78): 0.03912767
+  Mean-field Delta per sector (canonical f* scheme):
+    Delta_(0,0) = 1.234129e-02, E_cond_(0,0)_MF = -5.457391e-02
+    Delta_(1,1) = 9.759138e-03, E_cond_(1,1)_MF = -3.412612e-02
+
+==============================================================================
+SECTION 3: Sparse pair-basis exact diagonalization
+==============================================================================
+
+  Pair basis: only doubly-occupied pairs populated (s-wave singlet).
+  Per-sector dim at fixed N_pair = C(12, N_pair).
+  Coupled-block dim = sum over eligible (n_a, n_b) splits of C(12,n_a)*C(12,n_b).
+
+==============================================================================
+SECTION 4: Canonical run (N_pair_cutoff = 2)
+==============================================================================
+  Josephson J_ab ((0,0)<->(1,1)) = J_u1 = 0.0380 M_KK (dl=2 rule per s78)
+
+  Computing canonical E_GS for sign = s++ (J_ab = +J_u1)...
+    E_GS(s++) = -1.1342233059 (N_total=3, t = 0.60s)
+      N_total=0: dim=1, E_min = 0.0000000000
+      N_total=1: dim=24, E_min = -0.5501640127
+      N_total=2: dim=276, E_min = -1.0476661291
+      N_total=3: dim=1584, E_min = -1.1342233059
+      N_total=4: dim=4356, E_min = -0.8736962550
+
+  Computing canonical E_GS for sign = s+- (J_ab = -J_u1)...
+    E_GS(s+-) = -1.1342233059 (N_total=3, t = 0.59s)
+      N_total=0: dim=1, E_min = 0.0000000000
+      N_total=1: dim=24, E_min = -0.5501640127
+      N_total=2: dim=276, E_min = -1.0476661291
+      N_total=3: dim=1584, E_min = -1.1342233059
+      N_total=4: dim=4356, E_min = -0.8736962550
+
+==============================================================================
+SECTION 5: ED margin and verdict logic (canonical run)
+==============================================================================
+  E_GS(s++) = -1.1342233059
+  E_GS(s+-) = -1.1342233059
+  Delta E (E_s+- - E_s++) = 1.998401e-15
+  Sign preferred by ED: s++
+  margin_ED = 1.761912e-15 = 0.0000%
+  Mean-field s78 margin: 5.807769e-04 = 0.0581%
+  sign_margin_delta = -5.807769e-04
+  ratio ED/MF = 0.0000
+
+  *** GATE S82-S-PP-FULL-ED: PASS ***
+  margin_ED=1.7619e-15 <= MF/2=2.90e-04; sign_ED=s++ matches Eliashberg-preferred; ED tightens MF by factor 329628812757.25
+
+==============================================================================
+SECTION 6: Cross-checks
+==============================================================================
+  CC1: Non-interacting ED reproduces filled-Fermi-sea (at N_total=4):
+       ED(V=0,J=0) = -0.8648415235
+       Expected   = -0.8648415235
+       Error      = 2.22e-16
+       CC1: PASS
+
+  CC2: Decoupling check (J=0) -> brackets both signed cases:
+       E_GS(J=0) = -0.8736962550  (t=0.58s)
+       E_GS(s++) = -1.1342233059
+       E_GS(s+-) = -1.1342233059
+       Between bounds: False
+       CC2: INFO
+
+  CC3: Single-sector (0,0) sweep N_pair in [0, 2]
+    E_N0 = 0.00000000
+    E_N1 = -0.05742088
+    E_N2 = -0.10873902
+    E_N3 = -0.12854257
+    E_cond_ED_(0,0) = E_N_best - E_N0 = -0.12854257
+    MF E_cond^(0,0) (s78) = -0.05457391
+    Rel diff = 135.54%
+    CC3: INFO (structural-level check)
+
+  CC4: dense numpy eigvalsh vs sparse Lanczos on a single block
+    Test block dim = 276
+    Dense GS  = -1.0476661291
+    Sparse GS = -1.0476661291
+    |err|     = 2.22e-16
+    CC4: PASS
+
+==============================================================================
+SECTION 7: Extended convergence check at N_pair_cutoff = 3
+==============================================================================
+    ext s++: N_total=2, dim=276, E_min=-1.0476661291 (t so far = 0.0s)
+    ext s+-: N_total=2, dim=276, E_min=-1.0476661291 (t so far = 0.1s)
+    ext s++: N_total=3, dim=2024, E_min=-1.4916065152 (t so far = 0.3s)
+    ext s+-: N_total=3, dim=2024, E_min=-1.4916065152 (t so far = 0.6s)
+    ext s++: N_total=4, dim=9636, E_min=-1.6933320622 (t so far = 2.2s)
+    ext s+-: N_total=4, dim=9636, E_min=-1.6933320622 (t so far = 3.8s)
+
+    Ext E_GS(s++) = -1.6933320622
+    Ext E_GS(s+-) = -1.6933320622
+    Ext sign pref = s+-
+    Ext margin = 9.179016e-16 = 0.0000%
+    Canonical margin = 1.761912e-15 = 0.0000%
+    |ext - canonical margin| = 8.44e-16
+
+==============================================================================
+SECTION 8: Save npz + plot + verdict
+==============================================================================
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s82_w2_11_s_pp_full_ed.npz
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s82_w2_11_s_pp_full_ed.png
+==============================================================================
+SECTION 9: Closure SHA + verdict line
+==============================================================================
+  Closure SHA-256: 00052e55d7a4b463d1ca22ea011ff172b871700a5072ad5b1c8918992fc4345c
+  Verdict line appended to C:\sandbox\Ainulindale Exflation\tier0-computation\s82_gate_verdicts.txt:
+    S82-S-PP-FULL-ED: PASS -- value=-5.807769e-04 scheme=EXACT-DIAG convention=fstar L_max=9 sha256=00052e55d7a4b463d1ca22ea011ff172b871700a5072ad5b1c8918992fc4345c
+
+OUTPUT_4TUPLE: (value=-5.807769e-04, scheme=EXACT-DIAG, convention=fstar, L_max=9)
+
+  Total runtime: 6.70 seconds
+  VERDICT LINE (canonical): S82-S-PP-FULL-ED: PASS -- value=-5.807769e-04 scheme=EXACT-DIAG convention=fstar L_max=9 sha256=00052e55d7a4b463d1ca22ea011ff172b871700a5072ad5b1c8918992fc4345c

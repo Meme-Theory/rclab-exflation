@@ -1,0 +1,20 @@
+---
+name: s110-w4-med-tier-and-stage2-plan
+description: S110 W4 plan-authoring (MED-tier compute W4a + §B Stage-2 theorem-promotion W4b) — cross-domain dedup spine + Stage-2 two-reviewer mechanics
+metadata:
+  type: project
+---
+
+S110 W4 = the MED tier + §B structural-theorem promotions, split W4a (6 compute) / W4b (3 §B Stage-2 verifies) inside ONE plan file `sessions/session-plan/session-110-plan-w4.md`.
+
+**Why:** the M_KK-keystone structural-support session. W4 is the largest wave; the spine is "sign-PASS/magnitude-FAIL = the rank-1 M_KK weight from every downstream consumer." W4a closes the held leg of several blind Stage-2 PASS-ANDs; W4b promotes 2 structural theorems via `joint-theorem-promotion.md` + re-anchors EVOI.
+
+**How to apply (cross-domain dedup spine — recurs whenever a wave spans BH-thermo + cosmo-bridge + spectral-functional + mass-quant + condensed-matter):**
+- **deg(T_{BZ→pivot}) = +2 NON-SCALAR** is the single shared transport degree (S93 W7-1 gate `S93-W7-1-...-DEG-TRANSPORT-BZ-PIVOT`, factorization_holds=False, T4-non-scalar). Dedup flag (iii): W3's CF-CV6B DERIVES it ONCE on the M⁴ summand; W4a gates CF3 (H₀) + CF-CO34 (LRD-T) CONSUME it — pre-register them as `<computed-at-runtime>` consumers, NOT re-derivers. The 25-OOM LRD-T gap and 0.75%-vs-9% H₀ gap are which-transport-incarnation signatures, not substrate failures.
+- §B Stage-2 mechanics (joint-theorem-promotion.md): the "compute" IS the two-reviewer dispatch. Pre-register (1) two axis-DISTINCT reviewers in PARALLEL, (2) NO prior workshop context (read only the Stage-1 registry entry), (3) NOT the original workshop authors, (4) JOINT clauses PASS-AND'd (logical AND, both must PASS), (5) substrate-input-orthogonality predicate (∃ obs loaded by exactly ONE reviewer) else carry the substrate-input-overlap caveat. gate_type stays `compute` (the verdict line records the Stage-2 AND result); the reviewer dispatch is the producing operation.
+  - CF-VIIBS-VERIFY: connes (NCG/spectral axis A) + volovik (superfluid/substrate axis B); S69 W5-G BdG-dressing K-homology invariance; 4 legs machine-exact (‖V_BdG‖=0.4642547, [V_BdG,a]=0).
+  - CF-W33-THEOREM: dq/da ∝ −(n₁−n₂)²≤0 (relic-Friedmann q ≠ SCALE-FACTOR-54 Connes-proxy q); Stage-1-candidate registration FIRST, then Stage-2. transit-dynamics owns the math; needs an axis-distinct second reviewer for the cross-check.
+  - CF-EVOI-REANCHOR: sagan + mack co-dispatch WITH anti-rescue fence (PROHIBITED_ACTIONS Class 1 — no post-hoc rescue of n_s 4.73σ / w_a 3.43σ); closes atlas-08 Q44 (40-session standing); per-observable BF table from inv-13 W2-3 is the INPUT. This is a review-shaped gate (artifact-existence; EVOI re-anchor + Q44 closure), not a numeric threshold.
+- **Folded §B register-consequences are NOT separate gates** — note inside the gating gate's verdict/CC block: HK-FWDC1-SLOT (gated on CF-2 Krein), HK-SA-RETAG (gated on CF-CCDARK-2/CF-2), HK-CASCADE-TIER1 (Counting-axis), HK-HIGGS-LEVEL3 (inv-8 W1-4 theorem), HK-EVOI-Q37 (lands with Q44 re-anchor).
+- **Path corrections caught at plan-freeze** (rollup prose drifted from disk): L12 cache = `computations/session-84/s84_spectrum_cache_L12_tau019.npz` (NOT _shared); no `bdg_spectral_triple.py` exists → use `computations/session-61/s61_bdg_spectral_action.py`; inv-3 W3-4 7n grid = `inv3_w3_casimir_graded_nj_7n.npz`; inv-8 W1-3 dimer = `inv8_w1_fdm_partition_reconciliation.npz`; inv-9 W1-5 = `inv9_w1_gge_fock_page_curve.npz`; inv-4 bulk ref = `inv4_w1_gge_page_curve.npz` + `inv4_w1_euclidean_replica.npz` (c_conical=0.25); inv-4 GL = `inv4_w2_gregory_laflamme_dynamical.npz`.
+- **Live missing-PROVENANCE consumed by W4a**: phi_paasch=1.53158 (NO PROVENANCE, get_constant-confirmed) is CF-CV2C's load-bearing input → HK-PHI-PAASCH is a real Wave-0 obligation; Omega_DM=0.2657 (NO PROVENANCE) is CF-DMAB-adjacent (dimer_Z2→0.276, HK-OMEGA-DM mack-folded); tau_NL NOT canonical → CF-AS3's τ_NL=1.527696 (95481/62500) promotion is live (canonical write-order, mack sole writer of inventory row).

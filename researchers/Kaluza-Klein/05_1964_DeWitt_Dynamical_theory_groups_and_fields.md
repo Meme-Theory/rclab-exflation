@@ -274,7 +274,7 @@ DeWitt's work connects to the phonon-exflation framework in several deep ways:
 
      S = Tr f(D^2/Lambda^2) ~ sum_n f_n Lambda^{d-2n} integral a_n(x) sqrt(g) d^d x
 
-   The Tier 1 spectral action computation (Session 14) implements exactly this
+   The Level 1 spectral action computation (Session 14) implements exactly this
    expansion for D_K on SU(3). The Seeley-DeWitt coefficients a_0, a_2, a_4
    determine the cosmological constant, Einstein-Hilbert action, and Yang-Mills
    action respectively.
@@ -286,6 +286,6 @@ DeWitt's work connects to the phonon-exflation framework in several deep ways:
    of computing quantum corrections to the higher-dimensional geometry.
 
 5. **Problem #77**: DeWitt's exercise asking students to work out the non-abelian
-   KK theory is essentially the assignment that the Tier 0 and Tier 1 computations
+   KK theory is essentially the assignment that the Computation and Level 1 computations
    carry out for the specific case G = SU(3) with Jensen deformation. The Sessions
    7-14 computational program is an answer to DeWitt's Problem #77, 60 years later.

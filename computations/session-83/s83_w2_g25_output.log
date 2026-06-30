@@ -1,0 +1,112 @@
+==============================================================================
+S83-EXCEPTIONAL-RANK-CARTAN-CLT-L8 [VERIFY][CHAIN]
+  Exceptional-rank CLT atlas: {G_2, F_4, Spin(8)} x L in {6, 7, 8}
+==============================================================================
+=== SHA-256 input pins ===
+  canonical_constants.py: d934ce9d5d522183...
+  s83_w2_g17_cartan_spin8_sanity.py: 7caa184f10484c57...
+  s83_w2_g18_cartan_exceptional_falsifier.py: b703bfa4c59a6e61...
+  s82_w3_3_dim_h_pi_universal.py: c25ccba1f6b52cbc...
+  self: ae5c47294b375362...
+  closure_sha (sorted): ad1a8c6946742f36...
+
+=== Pre-registered configuration ===
+  tau_fold        = 0.19
+  L_LIST          = [6, 7, 8]
+  GROUPS          = ['G_2', 'F_4', 'Spin(8)']
+  BAND_FRAC (PASS)= 15%
+  INFO_FRAC       = 20%
+  CLT formula     : 0.5 + 0.5/sqrt(dim_H_pi(G,L))  (plan L1742)
+  rho(lambda)     : sum of Dynkin labels (G18 convention)
+
+==============================================================================
+Section 8: Cross-gate consistency sanity checks
+==============================================================================
+
+  G_2 low-dim irrep check (height <= 2, expected: 7, 14, 27, 64, 77):
+    dynkin=(0, 1), dim=   14, height=1
+    dynkin=(0, 2), dim=   77, height=2
+    dynkin=(1, 0), dim=    7, height=1
+    dynkin=(1, 1), dim=   64, height=2
+    dynkin=(2, 0), dim=   27, height=2
+
+  Spin(8) adjoint (0,1,0,0) dim check: 28 (OK)
+  F_4 (0,0,0,1) dim check: 26 (OK)
+  F_4 adjoint (1,0,0,0) dim check: 52 (OK)
+
+  G_2 h-drift cross-check (G18 reported 4.108% at L=8):
+    G_2 L=8 h-drift = 4.1080% (G18 expected 4.108%)
+    G18 cross-consistency: |delta|/G18 = 0.00%
+    OK: within 5% of G18 reference
+
+==============================================================================
+Section 9: Compute drift_h atlas over {G_2, F_4, Spin(8)} x {6, 7, 8}
+==============================================================================
+  G_2       L=6: n_irreps=   27, dim_H_pi=     35783, alpha1_h=4.3340e-02, exact=4.5451e-02, drift_h=4.644286%  [0.00s]
+  G_2       L=7: n_irreps=   35, dim_H_pi=     88109, alpha1_h=5.0272e-02, exact=5.2550e-02, drift_h=4.335373%  [0.00s]
+  G_2       L=8: n_irreps=   44, dim_H_pi=    197834, alpha1_h=6.0840e-02, exact=6.3446e-02, drift_h=4.107965%  [0.00s]
+  F_4       L=6: n_irreps=  209, dim_H_pi=948685372503, alpha1_h=5.7079e-03, exact=5.8835e-03, drift_h=2.984177%  [0.01s]
+  F_4       L=7: n_irreps=  329, dim_H_pi=13603403938916, alpha1_h=7.1707e-03, exact=7.3683e-03, drift_h=2.681920%  [0.01s]
+  F_4       L=8: n_irreps=  494, dim_H_pi=153412156428829, alpha1_h=9.3435e-03, exact=9.5791e-03, drift_h=2.459854%  [0.02s]
+  Spin(8)   L=6: n_irreps=  209, dim_H_pi=   3929210, alpha1_h=3.5616e-02, exact=3.6423e-02, drift_h=2.213568%  [0.00s]
+  Spin(8)   L=7: n_irreps=  329, dim_H_pi=  17677230, alpha1_h=4.4070e-02, exact=4.4979e-02, drift_h=2.020490%  [0.01s]
+  Spin(8)   L=8: n_irreps=  494, dim_H_pi=  69626985, alpha1_h=5.6576e-02, exact=5.7658e-02, drift_h=1.877062%  [0.01s]
+
+  total compute time: 0.06s
+
+==============================================================================
+Section 10: CLT predictions and in-band test
+==============================================================================
+  (G, L)               dim_H_pi     drift_h^act        CLT    rel_dev   in 15%?   in 20%?
+  (G_2, L=6)            35783      4.644286%     0.5026    90.76%     False     False
+  (G_2, L=7)            88109      4.335373%     0.5017    91.36%     False     False
+  (G_2, L=8)           197834      4.107965%     0.5011    91.80%     False     False
+  (F_4, L=6)     948685372503      2.984177%     0.5000    94.03%     False     False
+  (F_4, L=7)     13603403938916      2.681920%     0.5000    94.64%     False     False
+  (F_4, L=8)     153412156428829      2.459854%     0.5000    95.08%     False     False
+  (Spin(8), L=6)      3929210      2.213568%     0.5003    95.58%     False     False
+  (Spin(8), L=7)     17677230      2.020490%     0.5001    95.96%     False     False
+  (Spin(8), L=8)     69626985      1.877062%     0.5001    96.25%     False     False
+
+  in_15%_band: 0/9
+  in_20%_band: 0/9
+
+  VERDICT: FAIL
+  reason : 0/9 in 15% band, 0/9 in 20% band. CLT atlas does NOT hold uniformly for exceptional ranks -- systematic deviation. Drift^actual is ~100x SMALLER than CLT (rank-dependent Cartan protection, per G17/G18 structural null).
+
+==============================================================================
+Section 11: Refined rank-scaling diagnostic (not a gate criterion)
+==============================================================================
+  G_2: drift ~ L^-0.427 * exp(-2.305)  (drift L=8 ~ 4.1035%)
+  F_4: drift ~ L^-0.672 * exp(-2.308)  (drift L=8 ~ 2.4570%)
+  Spin(8): drift ~ L^-0.574 * exp(-2.784)  (drift L=8 ~ 1.8751%)
+
+  Rank vs drift_h at L=8 (G17/G18 'protection proportional to rank'):
+    G_2       rank=2, drift_h(L=8)=4.107965%
+    F_4       rank=4, drift_h(L=8)=2.459854%
+    Spin(8)   rank=4, drift_h(L=8)=1.877062%
+
+==============================================================================
+Section 12: Plot
+==============================================================================
+  PNG saved: s83_w2_g25_exceptional_rank_cartan.png
+
+==============================================================================
+Section 13: Save NPZ
+==============================================================================
+  NPZ saved: s83_w2_g25_exceptional_rank_cartan.npz
+  closure SHA: e7b3fb64f8fbfac27b8bb5562d5fb5785307eca1027d267bd87c683513619b86
+
+==============================================================================
+Section 14: Append verdict line
+==============================================================================
+  appended to: s83_gate_verdicts.txt
+  verdict line:
+    S83-EXCEPTIONAL-RANK-CARTAN-CLT-L8: FAIL -- n_in_15%_band=0/9, n_in_20%_band=0/9, max_rel_dev_L8=0.962463, drift_h(G_2,L=8)=4.107965%, drift_h(F_4,L=8)=2.459854%, drift_h(Spin(8),L=8)=1.877062%, CLT(G_2,L=8)=0.5011, CLT(F_4,L=8)=0.5000, CLT(Spin(8),L=8)=0.5001, value=max_rel_dev_L8=0.962463 scheme=CLT-atlas-exceptional-rank-L6-L7-L8 convention=G18-rep-theoretic-zeta2-over-SDW-rho-sum-Dynkin L_max=8, sha256=e7b3fb64f8fbfac27b8bb5562d5fb5785307eca1027d267bd87c683513619b86
+
+  4-tuple: (value=max_rel_dev_L8=0.962463 scheme=CLT-atlas-exceptional-rank-L6-L7-L8 convention=G18-rep-theoretic-zeta2-over-SDW-rho-sum-Dynkin L_max=8)
+
+==============================================================================
+DONE. VERDICT: FAIL  |  max rel_dev at L=8: 96.25%
+total wall time: 0.4s
+==============================================================================

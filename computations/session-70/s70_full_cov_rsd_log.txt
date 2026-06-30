@@ -1,0 +1,223 @@
+==============================================================================
+FULL-COV-RSD-70: Full Covariance DESI RSD Reanalysis
+==============================================================================
+
+Loaded S69 data: 9 RSD bins
+  S69 diagonal chi^2: LCDM=8.0330, FW=6.8465, Comp=13.5956
+  S69 Delta(chi^2) FW-LCDM (diag) = -1.1865
+
+==============================================================================
+RSD DATA COMPILATION (9 bins)
+==============================================================================
+
+Idx      z   fsig8     err                 Survey          Reference
+--------------------------------------------------------------------
+  0  0.067   0.423   0.055                  6dFGS       Beutler+2012
+  1  0.150   0.530   0.160               SDSS MGS       Howlett+2015
+  2  0.380   0.497   0.045              BOSS DR12          Alam+2017
+  3  0.510   0.451   0.025          DESI DR1 LRG1          DESI 2024
+  4  0.610   0.436   0.034              BOSS DR12          Alam+2017
+  5  0.710   0.436   0.022          DESI DR1 LRG2          DESI 2024
+  6  0.930   0.444   0.026      DESI DR1 LRG3+ELG          DESI 2024
+  7  1.320   0.357   0.044          DESI DR1 ELG2          DESI 2024
+  8  1.480   0.462   0.045              eBOSS QSO          Alam+2021
+
+==============================================================================
+COVARIANCE MATRIX CONSTRUCTION
+==============================================================================
+
+  Systematic floor: sigma_sys = 0.005
+  Overlap correlation: r = 0.3
+  Overlapping bin pairs:
+    (2,4): BOSS DR12 z=0.380 <-> BOSS DR12 z=0.610
+    (3,5): DESI DR1 LRG1 z=0.510 <-> DESI DR1 LRG2 z=0.710
+    (5,6): DESI DR1 LRG2 z=0.710 <-> DESI DR1 LRG3+ELG z=0.930
+    (6,7): DESI DR1 LRG3+ELG z=0.930 <-> DESI DR1 ELG2 z=1.320
+
+  Covariance matrix C (9x9):
+              0         1         2         3         4         5         6         7         8
+    0  3.05e-03  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00
+    1  0.00e+00  2.56e-02  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00
+    2  0.00e+00  0.00e+00  2.05e-03  0.00e+00  4.59e-04  0.00e+00  0.00e+00  0.00e+00  0.00e+00
+    3  0.00e+00  0.00e+00  0.00e+00  6.50e-04  0.00e+00  1.65e-04  0.00e+00  0.00e+00  0.00e+00
+    4  0.00e+00  0.00e+00  4.59e-04  0.00e+00  1.18e-03  0.00e+00  0.00e+00  0.00e+00  0.00e+00
+    5  0.00e+00  0.00e+00  0.00e+00  1.65e-04  0.00e+00  5.09e-04  1.72e-04  0.00e+00  0.00e+00
+    6  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  1.72e-04  7.01e-04  3.43e-04  0.00e+00
+    7  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  3.43e-04  1.96e-03  0.00e+00
+    8  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  2.05e-03
+
+  Eigenvalues of C: min=3.271123e-04, max=2.562500e-02
+  Condition number: 78.34
+  Positive definite: YES
+
+  Correlation matrix R:
+            0       1       2       3       4       5       6       7       8
+    0   1.000   0.000   0.000   0.000   0.000   0.000   0.000   0.000   0.000
+    1   0.000   1.000   0.000   0.000   0.000   0.000   0.000   0.000   0.000
+    2   0.000   0.000   1.000   0.000   0.295   0.000   0.000   0.000   0.000
+    3   0.000   0.000   0.000   1.000   0.000   0.287   0.000   0.000   0.000
+    4   0.000   0.000   0.295   0.000   1.000   0.000   0.000   0.000   0.000
+    5   0.000   0.000   0.000   0.287   0.000   1.000   0.287   0.000   0.000
+    6   0.000   0.000   0.000   0.000   0.000   0.287   1.000   0.293   0.000
+    7   0.000   0.000   0.000   0.000   0.000   0.000   0.293   1.000   0.000
+    8   0.000   0.000   0.000   0.000   0.000   0.000   0.000   0.000   1.000
+
+==============================================================================
+CHI-SQUARED WITH FULL COVARIANCE
+==============================================================================
+
+  dof = 9 (0 free parameters)
+
+         Model |  chi2(S69)   chi2/dof | chi2(diag+sys)   chi2/dof | chi2(full)   chi2/dof
+  -------------+-----------------------+---------------------------+----------------------
+          LCDM |     8.0330     0.8926 |         7.8571     0.8730 |     8.3570     0.9286
+     Framework |     6.8465     0.7607 |         6.7457     0.7495 |     7.7480     0.8609
+    Compaction |    13.5956     1.5106 |        13.1888     1.4654 |    12.0079     1.3342
+
+  Delta(chi^2) FW - LCDM:
+    S69 diagonal:          -1.1865
+    Diagonal + sys floor:  -1.1114
+    Full covariance:       -0.6090
+
+==============================================================================
+EFFECT DECOMPOSITION
+==============================================================================
+
+  S69 (diagonal, no sys): Delta(chi^2) = -1.1865
+  + systematic floor:     Delta(chi^2) = -1.1114
+    => Effect of sys floor on Delta: +0.0750
+  + off-diagonal corr:    Delta(chi^2) = -0.6090
+    => Effect of correlations on Delta: +0.5024
+
+  Total shift from S69:   Delta(chi^2) moved by +0.5775
+  => Full covariance WEAKENS FW advantage, but FW still preferred
+
+==============================================================================
+PER-BIN CHI^2 CONTRIBUTIONS
+==============================================================================
+
+  Effective residual (C^{-1} * delta)_i * delta_i:
+  Idx      z     LCDM       FW     Comp                 Survey
+  ----------------------------------------------------
+    0  0.067   0.1402   0.0177   0.2981                  6dFGS
+    1  0.150   0.1984   0.2966   0.1480               SDSS MGS
+    2  0.380   0.3764   0.9782   0.0939              BOSS DR12
+    3  0.510   0.5153  -0.0069   1.6757          DESI DR1 LRG1
+    4  0.610   1.1462   0.3051   2.4893              BOSS DR12
+    5  0.710   1.3384   0.2277   3.4279          DESI DR1 LRG2
+    6  0.930   0.1525   0.9492  -0.1874      DESI DR1 LRG3+ELG
+    7  1.320   0.9276   0.5737   1.5542          DESI DR1 ELG2
+    8  1.480   3.5619   4.4067   2.5082              eBOSS QSO
+         Sum   8.3570   7.7480  12.0079
+
+==============================================================================
+SENSITIVITY ANALYSIS: Varying overlap correlation r
+==============================================================================
+
+      r   chi2_L  chi2_FW  chi2_CP  Dchi2(FW-L)  chi2_FW/dof
+  -------------------------------------------------------
+   0.00   7.8571   6.7457  13.1888      -1.1114       0.7495
+   0.10   7.8804   6.9757  12.4961      -0.9047       0.7751
+   0.20   8.0340   7.2899  12.1071      -0.7440       0.8100
+   0.30   8.3570   7.7480  12.0079      -0.6090       0.8609
+   0.40   8.9726   8.4983  12.2841      -0.4744       0.9443
+   0.50  10.3398  10.0726  13.3414      -0.2671       1.1192
+
+==============================================================================
+SENSITIVITY ANALYSIS: Varying systematic floor sigma_sys
+==============================================================================
+
+  sig_sys   chi2_L  chi2_FW  chi2_CP  Dchi2(FW-L)  chi2_FW/dof
+  ---------------------------------------------------------
+    0.000   8.5726   7.9269  12.3387      -0.6457       0.8808
+    0.003   8.4929   7.8608  12.2166      -0.6321       0.8734
+    0.005   8.3570   7.7480  12.0079      -0.6090       0.8609
+    0.010   7.8010   7.2866  11.1476      -0.5144       0.8096
+    0.015   7.0770   6.6826  10.0195      -0.3943       0.7425
+    0.020   6.3166   6.0397   8.8366      -0.2768       0.6711
+
+==============================================================================
+GOODNESS-OF-FIT p-VALUES
+==============================================================================
+
+         Model | chi2(diag)    p(diag) | chi2(full)    p(full)
+  -------------+-----------------------+----------------------
+          LCDM |     8.0330     0.5308 |     8.3570     0.4986
+     Framework |     6.8465     0.6531 |     7.7480     0.5597
+    Compaction |    13.5956         -- |    12.0079     0.2129
+
+  p > 0.05 indicates acceptable goodness-of-fit.
+
+==============================================================================
+MODEL COMPARISON (0 free parameters)
+==============================================================================
+
+  All models have 0 free parameters (all fixed from prior/framework).
+  Model comparison reduces to Delta(chi^2):
+
+  Full covariance:
+    FW vs LCDM:   Delta(chi^2) = -0.6090
+    Comp vs LCDM: Delta(chi^2) = +3.6509
+    Comp vs FW:   Delta(chi^2) = +4.2599
+
+  FW is preferred over LCDM by |Delta(chi^2)| = 0.6090
+
+==============================================================================
+CROSS-CHECK: Diagonal from C vs S69
+==============================================================================
+
+  Without sys floor (S69 values):
+    chi2_L  = 8.032993
+    chi2_FW = 6.846541
+  With sys floor (sigma_sys=0.005):
+    chi2_L  = 7.857128
+    chi2_FW = 6.745723
+  Difference from sys floor:
+    delta chi2_L  = -0.175865
+    delta chi2_FW = -0.100817
+  (Adding systematic floor uniformly reduces chi^2 by absorbing part of each residual into systematic error.)
+
+==============================================================================
+GATE VERDICT
+==============================================================================
+
+  Gate: FULL-COV-RSD-70 = INFO
+  Criterion: Report Delta_chi^2(full cov) with full covariance
+
+  S69 (diagonal):       chi^2/dof(FW) = 0.7607, Delta(chi^2) = -1.1865
+  S70 (full covariance): chi^2/dof(FW) = 0.8609, Delta(chi^2) = -0.6090
+
+  Change: Delta(chi^2) moved by +0.5775
+    - Systematic floor contribution: +0.0750
+    - Off-diagonal correlation contribution: +0.5024
+
+  RESULT: Framework remains preferred over LCDM with full covariance.
+  FW advantage: |Delta(chi^2)| = 0.6090 (was 1.1865 in S69)
+
+  Sensitivity: FW preference is robust across r in [0, 0.5] and sigma_sys in [0, 0.02].
+
+Data saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s70_full_cov_rsd.npz
+Plot saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s70_full_cov_rsd.png
+
+==============================================================================
+SUMMARY
+==============================================================================
+
+  FULL-COV-RSD-70: INFO
+  Full covariance matrix (9x9) constructed with:
+    - Systematic floor sigma_sys = 0.005
+    - 4 overlapping bin pairs with r = 0.3
+
+  Framework: chi^2/dof = 0.8609 (was 0.7607)
+  LCDM:      chi^2/dof = 0.9286 (was 0.8926)
+  Delta(chi^2) FW-LCDM = -0.6090 (was -1.1865)
+
+  Framework PREFERRED over LCDM by |Delta chi^2| = 0.6090
+
+  The result is ROBUST across sensitivity scans:
+    r in [0.0, 0.5]: Delta(chi^2) always negative (FW always preferred)
+    sigma_sys in [0.0, 0.02]: Delta(chi^2) always negative
+
+==============================================================================
+COMPUTATION COMPLETE
+==============================================================================

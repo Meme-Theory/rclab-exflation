@@ -300,7 +300,7 @@ algebraic, index-theoretic) exist but none is compelling.
 
 **Phonon-exflation connection:** N_g = 3 from Z_3 x Z_3 triality on SU(3).
 Session 17a verified Z_3 partition of 28 irreps with O(1) splittings. Full
-Z_3 x Z_3 requires spinor transport on CP^2 (Tier 1.5 computation).
+Z_3 x Z_3 requires spinor transport on CP^2 (Level 1.5 computation).
 
 ### 7.5 Problem 5: CP Violation and Strong CP
 
@@ -369,11 +369,11 @@ exflation mapping, the decisive computations are:
    eigenvalues of D_K at s = s_0, using the mass integral from Baptista
    Paper 14 Section 3.2. If these match the observed quark and lepton masses
    (even approximately), the framework would be extraordinary.
-   STATUS: Tier 2 (requires s_0 first).
+   STATUS: Level 2 (requires s_0 first).
 
 3. **Three generations from geometry:** Derive N_g = 3 from the Z_3 x Z_3
    structure on SU(3) with spinor transport on CP^2.
-   STATUS: Tier 1.5 (Z_3 partition verified, full Z_3 x Z_3 requires
+   STATUS: Level 1.5 (Z_3 partition verified, full Z_3 x Z_3 requires
    Baptista Paper 18 Appendix E computation).
 
 

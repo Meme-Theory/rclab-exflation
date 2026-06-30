@@ -1,0 +1,163 @@
+==============================================================================
+PENROSE-SUPERRAD-60: Superradiance Analogy for CC Extraction
+==============================================================================
+
+--- Input Summary ---
+alpha_total = 0.554717 (PASS threshold: 0.5227)
+lambda_alpha = -15.5955 (negative => ergosphere open)
+N_modes = 8, tau_fold = 0.1939
+E_sp at fold: [-1.18413693e-16  1.77061960e-01  3.29405571e-01  5.22910373e-01
+  7.26154925e-01  1.00439566e+00  1.07857332e+00  1.17000260e+00]
+pair_occ at fold: [9.57578016e-01 3.09062981e-02 3.42228414e-03 3.03659145e-03
+ 4.73238698e-03 6.74240036e-05 1.44115155e-04 1.12884079e-04]
+E0 (ground) = -0.020635 M_KK
+V_bare shape = (8, 8)
+
+==============================================================================
+STEP 1: Mode classification and K_7 charge assignment
+==============================================================================
+  Mode 0 (B2_0): E_sp = -0.000000, q_7 = +0.0, n_pair = 0.957578
+  Mode 1 (B2_1): E_sp = 0.177062, q_7 = +0.5, n_pair = 0.030906
+  Mode 2 (B2_2): E_sp = 0.329406, q_7 = -0.5, n_pair = 0.003422
+  Mode 3 (B2_3): E_sp = 0.522910, q_7 = +0.0, n_pair = 0.003037
+  Mode 4 (B1): E_sp = 0.726155, q_7 = +1.0, n_pair = 0.004732
+  Mode 5 (B3_0): E_sp = 1.004396, q_7 = -1.0, n_pair = 0.000067
+  Mode 6 (B3_1): E_sp = 1.078573, q_7 = +0.0, n_pair = 0.000144
+  Mode 7 (B3_2): E_sp = 1.170003, q_7 = +1.0, n_pair = 0.000113
+
+==============================================================================
+STEP 2: Effective energy with ergosphere chemical potential Phi_7
+==============================================================================
+  |lambda_alpha| = 15.5955
+  overlap_factor = 0.7000
+  Delta_B3 = 0.1760 M_KK
+  E_B3_mean = 0.978224 M_KK
+  Phi_7 (ergosphere) = 1.964134 M_KK
+
+  Mode-by-mode effective energies:
+  Mode           E_sp    q_7    q_7*Phi_7        E_eff   SR?
+  -------- ---------- ------ ------------ ------------ -----
+  B2_0      -0.000000   +0.0    +0.000000    -0.000000  COND
+  B2_1       0.177062   +0.5    +0.982067    -0.805005    SR
+  B2_2       0.329406   -0.5    -0.982067    +1.311473    no
+  B2_3       0.522910   +0.0    +0.000000    +0.522910    no
+  B1         0.726155   +1.0    +1.964134    -1.237979    SR
+  B3_0       1.004396   -1.0    -1.964134    +2.968530    no
+  B3_1       1.078573   +0.0    +0.000000    +1.078573    no
+  B3_2       1.170003   +1.0    +1.964134    -0.794131    SR
+
+  Superradiant modes: 3 out of 8
+  Superradiant mode indices: [1, 4, 7]
+
+==============================================================================
+STEP 3: Superradiance extraction rate per mode
+==============================================================================
+  V_B2_B3 coupling matrix (B2 rows, B3 cols):
+    B2_0: [  0.012136   0.019826   0.019053]
+    B2_1: [  0.006285   0.026537   0.018192]
+    B2_2: [  0.023123   0.012279   0.015613]
+    B2_3: [  0.026476   0.009377   0.015162]
+
+  T_eff = 0.1120 M_KK (GGE acoustic temperature)
+  rho_fold = 14.0233 per mode (B2 DOS at fold)
+
+  Superradiance rates:
+  Mode            E_eff    |V|^2_sum       Bose       Gamma_SR          dE/dt
+  -------- ------------ ------------ ---------- -------------- --------------
+  B2_0        -0.000000 9.033492e-04 900719925474099.2500   0.000000e+00   0.000000e+00
+  B2_1        -0.805005 1.074669e-03     1.0008   9.476149e-02   7.628347e-02
+  B1          -1.237979 5.370604e-59     1.0000   4.732150e-57   5.858303e-57
+  B3_2        -0.794131 1.167585e-03     1.0008   1.029625e-01   8.176573e-02
+
+==============================================================================
+STEP 4: Total CC reduction rate and cosmic timescale comparison
+==============================================================================
+  Total dLambda/dt = sum Gamma_SR(k)*|E_eff(k)| = 1.580492e-01 M_KK^3
+
+  Lambda_eff (dimensionless CC) = 0.0460
+  dLambda/dt = 1.580492e-01 M_KK^2 / M_KK^{-1}
+  t_extract = Lambda_eff / (dLambda/dt) = 2.910486e-01 M_KK^{-1}
+  MKK^{-1} = 8.8603e-42 s
+  t_extract = 2.5788e-42 s
+  t_universe = 4.3500e+17 s
+  t_extract / t_universe = 5.9282e-60
+  Total extracted in t_universe: 7.759533e+57
+  Fraction of Lambda_eff extracted: 1.686855e+59
+
+==============================================================================
+STEP 5: Hawking evaporation analogy — comparison of timescales
+==============================================================================
+  Analog Hawking temperature: T_eff = 0.1120 M_KK
+  For comparison: BH Hawking temp T_H = 1/(8*pi*M)
+  At M = M_Pl: T_H ~ 1/(8*pi) = 0.0398 M_Pl
+  The framework ergosphere is WARM: T/E_gap ~ 0.64
+  BH superradiance is COLD: T_H/omega ~ tiny for astrophysical BHs
+
+  KEY DIFFERENCE: No radiation to infinity in the analog.
+  BH superradiance: S_BH decreases, S_rad increases, S_gen >= 0
+  Analog: occupation redistributes within 8-mode Fock space
+  GSL-QTHEORY-46 (PASS): dS_gen/dt >= 0, 35,983x gravitational dominance
+  => Redistribution is ENTROPY-INCREASING but confined to internal space
+
+==============================================================================
+STEP 6: CC gap analysis — can superradiance bridge 112 orders?
+==============================================================================
+  Lambda_eff (spectral residual) = 4.6000e-02
+  Lambda_obs (dimensionless) = 8.8659e-115
+  Gap: Lambda_eff / Lambda_obs_dimless = 5.1884e+112
+  = 10^112.7
+
+  t_universe in M_KK^{-1} = 4.9096e+58
+  Total CC extracted = 7.7595e+57
+  CC reduction / Lambda_eff = 1.6869e+59
+  CC reduction / Lambda_obs = 8.7521e+171
+  Orders bridged toward observation: 171.9 of 112
+
+==============================================================================
+STEP 7: Back-reaction and self-consistency
+==============================================================================
+  alpha_total - alpha_crit = 0.032017
+  alpha range fraction = 0.0577 (5.8%)
+  Integrated free energy from ergosphere: delta_F = 4.822928e-01 M_KK
+  delta_F / Lambda_eff = 1.048463e+01
+  delta_F / Lambda_obs_dimless = 5.4399e+113
+  Analog spin-down time: 5.6057e-01 M_KK^{-1} = 4.9668e-42 s
+
+==============================================================================
+GATE VERDICT: PENROSE-SUPERRAD-60
+==============================================================================
+  N_superradiant modes: 3
+  Instantaneous dLambda/dt = 1.580492e-01 M_KK^2/M_KK^{-1}
+  Back-reaction limited: delta_F_ergo = 0.482293 M_KK
+  Lambda_eff = 4.600000e-02
+  Lambda_obs_dimless = 8.865880e-115
+  delta_F / Lambda_obs = 5.4399e+113 (= 10^113.7)
+  Spindown timescale: 4.9668e-42 s (1.14e-59 * t_universe)
+  VERDICT: INFO
+  Detail: Superradiance is REAL (3 modes, rate ~0.103 M_KK) but back-reaction limits total extraction to delta_F = 0.482 M_KK (O(1) in M_KK units, still 114 orders above Lambda_obs). Spindown t ~ 5.0e-42 s << t_universe.
+
+  PHYSICAL INTERPRETATION (Hawking perspective):
+  The B3 ergosphere IS open (lambda_alpha = -15.60 < 0).
+  3 modes satisfy the superradiance condition E_eff < 0.
+  This is the precise analog of omega < m*Omega_H for Kerr BH superradiance
+  (my Paper 05, Starobinsky amplification, Zel'dovich 1971).
+
+  CRITICAL: Back-reaction (analog of BH spin-down) is FAST.
+  t_spindown = 4.97e-42 s << t_universe = 4.35e+17 s.
+  The ergosphere closes after extracting delta_F = 0.4823 M_KK,
+  which is O(1) in framework units — not O(10^{-115}).
+  This is the analog of a Kerr BH spinning down to Schwarzschild:
+  superradiance is a transient that saturates at J=0, not a CC-tuning mechanism.
+
+  The CC gap of 112 orders requires a mechanism that can
+  suppress Lambda by e^{-260}. Penrose extraction suppresses
+  by a factor of ~ 10.5. Shortfall: 114 orders.
+
+  CONCLUSION: Penrose superradiance is KINEMATICALLY REAL but
+  DYNAMICALLY SELF-LIMITING. It joins the 27+ closed CC mechanisms.
+  The CC = q-theory self-tuning (Q-THEORY-BCS-45 PASS) remains unique.
+
+==============================================================================
+Saving results...
+  Saved s60_penrose_superrad.npz
+  Saved s60_penrose_superrad.png

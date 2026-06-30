@@ -1,0 +1,253 @@
+================================================================================
+VORTEX-NUCLEATION-53: KZ Vortex Density and Topological Baryogenesis
+================================================================================
+
+================================================================================
+STEP 1: KIBBLE-ZUREK CORRELATION LENGTH
+================================================================================
+
+Input parameters:
+  xi_0 = xi_BCS = 0.808347 M_KK^{-1}
+  tau_quench = dt_transit = 0.0011301575 M_KK^{-1}
+  tau_0 = 1/omega_att = 0.699301 M_KK^{-1}
+  nu = 0.5 (mean-field BCS)
+  z = 2 (model A, dissipative)
+
+KZ exponent: nu/(1+nu*z) = 0.2500
+Quench ratio: tau_quench/tau_0 = 0.001616
+  (quench_ratio < 1: SUDDEN QUENCH regime)
+
+xi_KZ = xi_0 * (tau_q/tau_0)^0.25
+      = 0.808347 * 0.001616^0.25
+      = 0.162075 M_KK^{-1}
+
+xi_KZ / xi_BCS = 0.200502
+  (KZ length SHORTER than coherence length: confirms sudden quench)
+
+CONFIRMATION: tau_quench/tau_0 = 0.0016 < 1
+  This is the SUDDEN QUENCH regime.
+  S38 found P_exc = 1.0 (complete excitation).
+  KZ formalism applies in its extreme limit: every mode excited.
+
+================================================================================
+STEP 2: VORTEX DENSITY AND DEFECT DIMENSIONALITY
+================================================================================
+
+Symmetry breaking: U(1)_7 (broken by BCS, S35)
+  pi_1(U(1)) = Z -> vortex-type defects (codimension 2)
+
+Internal manifold: SU(3) (dim = 8)
+  U(1)_7 orbit: dim = 1
+  Vortex core: codim = 2 -> dim(vortex) = 8 - 2 = 6
+  Vortices are 6-dimensional sheets in 8D SU(3)
+
+Transverse vortex density:
+  n_v(2D) = 1/xi_KZ^2 = 38.0686 M_KK^2
+
+Effective scales of SU(3):
+  Vol(SU(3)) = 1349.74 (M_KK^{-8})
+  L_eff = V^{1/8} = 2.4620 M_KK^{-1}
+  L_eff_2 = V^{1/4} = 6.0613 M_KK^{-1} (2D extent)
+
+Vortex count estimates:
+  Method 1 (V^{1/4}/xi_KZ)^2: N_v = 1398.60
+  Method 2 (V^{1/8}/xi_KZ)^2: N_v = 230.74
+
+CRITICAL: 0D constraint
+  L/xi_BCS = 0.031 (S37)
+  System is 0.031 coherence lengths across
+  L/xi_KZ = L/xi_BCS * (xi_BCS/xi_KZ) = 0.1546
+
+  A vortex core has size ~ xi_KZ. The entire system has size ~ 0.031 * xi_BCS.
+  L_system = 0.031 * 0.8083 = 0.025059 M_KK^{-1}
+  xi_KZ = 0.162075 M_KK^{-1}
+  L_system / xi_KZ = 0.1546
+
+  L_system < xi_KZ: system is SMALLER than one KZ correlation volume
+  MAXIMUM possible vortex count: N_v = 0 or 1 (quantum)
+  Classical KZ vortex nucleation is IMPOSSIBLE in 0D
+
+  N_v(0D) = 0 (no room for a vortex)
+
+32-cell fabric (S42):
+  Each cell is a KZ domain that transitions independently
+  Phase mismatch at boundaries -> vortex-like defects
+  Faces per cell (d=8): ~ 18
+  Total boundaries: N_cells * n_faces / 2 = 288
+
+  Each boundary has probability ~ 1/3 of hosting a vortex
+  (KZ: random phase => winding probability ~ 1/pi ~ 1/3)
+
+  p(vortex at boundary) = 1/pi = 0.3183
+  N_vortex(fabric) = N_boundaries * p = 91.7
+
+================================================================================
+STEP 3: ABJ ANOMALY AND CP VIOLATION IN VORTEX CORES
+================================================================================
+
+Obstruction analysis:
+
+1. N_3 invariant (S44 N3-BDG-44):
+   N_3 = 0 (system is 3He-B, not 3He-A)
+   The ABJ anomaly in Volovik's sense requires N_3 != 0
+   Spectral flow through zero energy: NOT AVAILABLE in gapped spectrum
+   min|E_BdG| at fold = 0.830 M_KK (finite gap)
+
+2. phi_CP structural zero (S52 ETA-B-52):
+   phi_CP = 0.0 (3 independent proofs)
+   BDI symmetry class: T^2 = +1 forces all matrix elements real
+   No CP violation in BULK spectrum
+
+3. Vortex core CP violation (the Volovik mechanism):
+   In 3He-A: vortex core has BOUND STATES at zero energy
+   These create local chirality imbalance: N_L - N_R != 0
+   CP violation from TOPOLOGY of vortex configuration
+
+Caroli-de Gennes bound states in vortex core:
+  E_n = (n+1/2) * Delta^2 / E_F
+  Delta = 0.7704 M_KK
+  E_F ~ 1.0 M_KK
+  E_0 = 0.2968 M_KK (lowest bound state)
+  E_0 / Delta = 0.3852
+
+  These are FINITE energy states, not zero modes.
+  No spectral flow -> no ABJ anomaly in the standard sense.
+
+================================================================================
+STEP 4: BARYON ASYMMETRY ESTIMATE
+================================================================================
+
+Method A: ABJ anomaly (COUNTERFACTUAL — requires N_3 != 0)
+  eta_B per vortex = 1/(16*pi) = 0.019894
+  This is the maximum CP violation per vortex IF the ABJ anomaly operated.
+
+Method B: Fabric vortex density approach
+  N_vortex(fabric) = 91.7
+  V_total = N_cells * Vol(SU(3)) = 43191.7 M_KK^{-8}
+
+Vortex-antivortex imbalance:
+  <N_v> = <N_anti-v> = N_total/2 = 45.8
+  delta(N_v - N_anti-v) ~ sqrt(N_total) = 9.57
+  Fractional imbalance: delta/N = 1/sqrt(N) = 0.1044
+
+Baryon number per vortex:
+  Delta_B = N_3 * w = 0 * 1 = 0
+  N_3 = 0 (3He-B class, S44)
+  The index theorem gives ZERO baryon creation per vortex.
+
+Reheating temperature estimate:
+  T_RH ~ E_exc / N_dof = 7.578 M_KK = 5.63e+17 GeV
+
+RESULT:
+  eta_B(Volovik mechanism) = 0.0
+  Reason: N_3 = 0 -> Delta_B per vortex = 0 -> no baryogenesis
+  eta_B(observed) = 6.12e-10
+
+================================================================================
+STEP 5: ALTERNATIVE TOPOLOGICAL BARYOGENESIS ROUTES
+================================================================================
+
+Route 1: Spectral flow through minigap (3He-B class)
+  In 3He-B, the minigap E_CdG provides a barrier to spectral flow.
+  At finite temperature T > E_CdG, thermal activation can produce
+  baryon number violation at rate ~ exp(-E_CdG/T).
+  E_CdG = 0.2968 M_KK
+  T_GGE(B2) = 0.668 M_KK (S43 GGE-TEMP-43)
+  exp(-E_CdG/T_B2) = 0.6413
+  Rate is O(1): thermal activation UNSUPPRESSED at GGE temperature.
+  BUT: phi_CP = 0 -> even with spectral flow, CP violation = 0.
+  CLOSED: CP is the bottleneck, not B violation.
+
+Route 2: Gravitational baryogenesis (Davoudiasl-Hambye-Riotto)
+  Uses coupling (1/M_*^2) * (d_mu R) * j^mu_B
+  During the transit, R(tau) is changing -> d_t R != 0
+  This is EXTERNAL to the BCS system (requires GR)
+  Not computable within the 0D BCS framework alone.
+  STATUS: OPEN (requires Friedmann coupling)
+
+Route 3: Spontaneous baryogenesis from U(1)_7 condensate
+  The BCS condensate carries K_7 charge +-1/2 (S35)
+  N_pair = 1 (S53)
+  If K_7 charge = baryon number (or lepton number):
+  Delta B = K_7 charge * N_pair = 1/2 * 1 = 1/2
+  eta_B ~ Delta B / s ~ (1/2) / (g_* T^3)
+
+  BUT: K_7 charge is NOT baryon number.
+  K_7 is generator of U(1) subset SU(3), acting on INTERNAL space.
+  Baryon number is a 4D quantum number.
+  Identifying K_7 = B requires a mapping not established.
+  STATUS: OPEN (requires K_7 -> B identification)
+
+Route 4: KZ domain wall network
+  32-cell fabric has ~288 boundaries with phase mismatch
+  Each boundary is a domain wall in the internal space
+  Domain walls in 4D can trap fermion zero modes
+  But: this is a DIFFERENT topology from vortices
+  Codimension-1 defects from discrete symmetry breaking
+  STATUS: REQUIRES separate computation (domain wall spectrum)
+
+================================================================================
+STEP 6: QUANTITATIVE SUMMARY
+================================================================================
+
+KEY NUMBERS:
+  xi_KZ = 0.162075 M_KK^{-1} (KZ correlation length)
+  xi_KZ / xi_BCS = 0.200502 (shorter: sudden quench)
+  n_v(2D) = 1/xi_KZ^2 = 38.0686 M_KK^2 (transverse vortex density)
+  N_vortex(fabric) = 91.7 (from 32-cell boundaries)
+  L_system/xi_KZ = 0.1546 (< 1: no room for classical vortex)
+  N_3 = 0 (3He-B class, no Fermi points)
+  Delta_B per vortex = 0 (index theorem)
+  phi_CP = 0 (3 proofs, S52)
+  eta_B(topological) = 0 (structural)
+  eta_B(observed) = 6.12e-10
+
+OBSTRUCTIONS (4 independent):
+  1. N_3 = 0: No Fermi points -> no ABJ anomaly -> no B violation per vortex
+  2. phi_CP = 0: No bulk CP violation (BDI T^2=+1)
+  3. 0D limit: L/xi_KZ = 0.1546 < 1, no room for classical vortex
+  4. N_pair = 1: Only 1 Cooper pair, no macroscopic condensate for phase winding
+
+VOLOVIK MECHANISM STATUS:
+  The ABJ anomaly in vortex cores (Paper 09) is the canonical mechanism for
+  topological baryogenesis in superfluid systems. It requires:
+    (a) Fermi points (N_3 != 0) for spectral flow
+    (b) CP-violating vortex textures for matter-antimatter asymmetry
+    (c) Sufficient system size for vortex nucleation
+    (d) Macroscopic condensate for coherent phase winding
+
+  This framework fails ALL FOUR requirements:
+    (a) N_3 = 0 (3He-B class)
+    (b) phi_CP = 0 (BDI structural zero)
+    (c) L/xi_KZ < 1 (0D limit)
+    (d) N_pair = 1 (no macroscopic condensate)
+
+  This is a STRUCTURAL closure of topological baryogenesis in the
+  internal space. External mechanisms (gravitational baryogenesis,
+  K_7 -> B mapping) remain open but require physics beyond the
+  BCS condensate on SU(3).
+
+================================================================================
+GATE VERDICT: VORTEX-NUCLEATION-53
+================================================================================
+
+INFO (as pre-registered).
+
+n_v(2D) = 38.0686 M_KK^2 (transverse KZ vortex density)
+N_vortex(fabric) = 91.7 (32-cell boundary defects)
+
+Baryogenesis viability: STRUCTURALLY EXCLUDED (4 obstructions)
+  The Volovik ABJ vortex mechanism (Paper 09) is inapplicable to 3He-B class.
+  The 0D limit prevents classical vortex nucleation.
+  phi_CP = 0 prevents CP violation even if vortices existed.
+  N_pair = 1 prevents macroscopic phase winding.
+
+Surviving routes: gravitational baryogenesis (external), K_7->B (unestablished).
+
+Classification: PARTICLE (baryogenesis mechanism). Phononic content: NONE.
+  The ABJ anomaly is a single-particle spectral flow effect, not a collective
+  phononic phenomenon. The vortex nucleation is a topological defect in the
+  order parameter, which is the condensate (phononic), but the B violation
+  mechanism operates on individual quasiparticle zero modes (particle).
+
+Plot saved: s53_vortex_nucleation.png

@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 186,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1851",
+      "anchor_type": "data_provenance",
+      "name": "w1b_alpha_s_transit_ps_67_simultaneous",
+      "script_path": "session-85/s85_w1b_alpha_s_transit_ps_67_simultaneous.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w1b_alpha_s_transit_ps_67_simultaneous.npz, session-85/s85_w1b_alpha_s_transit_ps_67_simultaneous.png",
+      "source_file": "computations/session-85/s85_w1b_alpha_s_transit_ps_67_simultaneous.py",
+      "source_context_30_lines": "  100: \n  101: # Planck 2018 1-sigma on alpha_s\n  102: SIGMA_PLANCK = 0.0067                                               # (local)\n  103: \n  104: # Thresholds\n  105: PASS_FRACTION = 0.5                                                 # (local)\n  106: FAIL_FRACTION = 1.0                                                 # (local)\n  107: \n  108: OUT_NPZ = SCRIPT_DIR / \"s85_w1b_alpha_s_transit_ps_67_simultaneous.npz\"\n  109: OUT_PNG = SCRIPT_DIR / \"s85_w1b_alpha_s_transit_ps_67_simultaneous.png\"\n  110: VERDICT_TXT = SCRIPT_DIR / \"s85_gate_verdicts.txt\"\n  111: CANON_PY = SCRIPT_DIR / \"canonical_constants.py\"\n  112: S62_NPZ = SCRIPT_DIR / \"s62_kz_ns.npz\"\n  113: S63_NPZ = SCRIPT_DIR / \"s63_running_ns.npz\"\n  114: \n  115: INPUT_FILES = [CANON_PY]\n  116: for extra in (S62_NPZ, S63_NPZ):"
+    },
+    {
+      "anchor_id": "prov_1852",
+      "anchor_type": "data_provenance",
+      "name": "w1b_beta_s_joint_s4_hd",
+      "script_path": "session-85/s85_w1b_beta_s_joint_s4_hd.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w1b_beta_s_joint_s4_hd.npz, session-85/s85_w1b_beta_s_joint_s4_hd.png",
+      "source_file": "computations/session-85/s85_w1b_beta_s_joint_s4_hd.py",
+      "source_context_30_lines": "  102: \n  103: # CMB-HD forecast\n  104: SIGMA_ALPHA_HD_PROXY = 1.5e-3                                       # (local, MacInnis anchor proxy)\n  105: \n  106: # Thresholds (plan §W1b-5)\n  107: PASS_TIGHTENING = 0.85                                              # (local)\n  108: FAIL_TIGHTENING = 0.95                                              # (local)\n  109: \n  110: OUT_NPZ = SCRIPT_DIR / \"s85_w1b_beta_s_joint_s4_hd.npz\"\n  111: OUT_PNG = SCRIPT_DIR / \"s85_w1b_beta_s_joint_s4_hd.png\"\n  112: VERDICT_TXT = SCRIPT_DIR / \"s85_gate_verdicts.txt\"\n  113: CANON_PY = SCRIPT_DIR / \"canonical_constants.py\"\n  114: \n  115: INPUT_FILES = [CANON_PY]\n  116: \n  117: \n  118: def sha256_of(path: Path) -> str:"
+    },
+    {
+      "anchor_id": "prov_1853",
+      "anchor_type": "data_provenance",
+      "name": "w1b_cf_m2_dr3_regulator_tree",
+      "script_path": "session-85/s85_w1b_cf_m2_dr3_regulator_tree.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w1b_cf_m2_dr3_regulator_tree.npz, session-85/s85_w1b_cf_m2_dr3_regulator_tree.png",
+      "source_file": "computations/session-85/s85_w1b_cf_m2_dr3_regulator_tree.py",
+      "source_context_30_lines": "   86:   (value='FLIP-A1-to-B2-at-L12', scheme=Zubarev, convention=R_842-successor, L_max=enumerated{5,10,12})\n   87: \n   88: Thresholds (pre-registered, plan §W1b-1):\n   89:   - PASS: all 21 cells preserve verdict across L_max\n   90:   - FAIL: at least one cell flips IN->OUT when L_max changes by 2\n   91:   - INFO: mixed (some regulator-robust, some not)\n   92: \n   93: Output files:\n   94:   - s85_w1b_cf_m2_dr3_regulator_tree.py\n   95:   - s85_w1b_cf_m2_dr3_regulator_tree.npz (21-cell matrix)\n   96:   - s85_w1b_cf_m2_dr3_regulator_tree.png (heatmap)\n   97: \"\"\"\n   98: \n   99: from __future__ import annotations\n  100: \n  101: import os\n  102: os.environ.setdefault(\"OMP_NUM_THREADS\", \"8\")"
+    },
+    {
+      "anchor_id": "prov_1854",
+      "anchor_type": "data_provenance",
+      "name": "w1b_cf_m6_alpha_s_w_a_decoupled_joint",
+      "script_path": "session-85/s85_w1b_cf_m6_alpha_s_w_a_decoupled_joint.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w1b_cf_m6_alpha_s_w_a_decoupled_joint.npz, session-85/s85_w1b_cf_m6_alpha_s_w_a_decoupled_joint.png",
+      "source_file": "computations/session-85/s85_w1b_cf_m6_alpha_s_w_a_decoupled_joint.py",
+      "source_context_30_lines": "  136: \n  137: # Independence thresholds (plan §W1b-10)\n  138: PASS_D = 0.30                                                       # (local) factor-2\n  139: FAIL_D = 0.60                                                       # (local) factor-4\n  140: \n  141: # Event status\n  142: EVENT_DR3_PUBLIC = False                                            # (local) DR3 window opens today; not public yet\n  143: \n  144: OUT_NPZ = SCRIPT_DIR / \"s85_w1b_cf_m6_alpha_s_w_a_decoupled_joint.npz\"\n  145: OUT_PNG = SCRIPT_DIR / \"s85_w1b_cf_m6_alpha_s_w_a_decoupled_joint.png\"\n  146: OUT_JSON = SCRIPT_DIR / \"s85_w1b_cf_m6_alpha_s_w_a_decoupled_joint.json\"\n  147: VERDICT_TXT = SCRIPT_DIR / \"s85_gate_verdicts.txt\"\n  148: CANON_PY = SCRIPT_DIR / \"canonical_constants.py\"\n  149: W1B3_NPZ = SCRIPT_DIR / \"s85_w1b_alpha_s_prior_range_lcdm.npz\"\n  150: W0_DR3_JSON = SCRIPT_DIR / \"s85_w0_dr3_regulator_successor_tree.json\"\n  151: \n  152: INPUT_FILES = [CANON_PY]"
+    },
+    {
+      "anchor_id": "prov_1855",
+      "anchor_type": "data_provenance",
+      "name": "w1b_cmb_hd_alpha_s_macinnis_explicit",
+      "script_path": "session-85/s85_w1b_cmb_hd_alpha_s_macinnis_explicit.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w1b_cmb_hd_alpha_s_macinnis_explicit.npz, session-85/s85_w1b_cmb_hd_alpha_s_macinnis_explicit.png, sessio...",
+      "source_file": "computations/session-85/s85_w1b_cmb_hd_alpha_s_macinnis_explicit.py",
+      "source_context_30_lines": "  102:     \"sigma_fNL_local\": 0.26,                                        # (local, Sec 5.2)\n  103:     \"sigma_r\": 0.005,                                               # (local, Sec 9.1)\n  104:     \"sigma_w0\": 0.005,                                              # (local, Sec 6)\n  105:     \"sigma_sum_mnu_meV\": 13.0,                                      # (local, Sec 6)\n  106:     \"sigma_B_SI_nG\": 0.036,                                         # (local, Sec 5.1)\n  107: }\n  108: # alpha_s NOT in this list.\n  109: \n  110: OUT_NPZ = SCRIPT_DIR / \"s85_w1b_cmb_hd_alpha_s_macinnis_explicit.npz\"\n  111: OUT_MD = SCRIPT_DIR / \"s85_w1b_cmb_hd_alpha_s_macinnis_explicit.md\"\n  112: OUT_PNG = SCRIPT_DIR / \"s85_w1b_cmb_hd_alpha_s_macinnis_explicit.png\"\n  113: VERDICT_TXT = SCRIPT_DIR / \"s85_gate_verdicts.txt\"\n  114: CANON_PY = SCRIPT_DIR / \"canonical_constants.py\"\n  115: \n  116: INPUT_FILES = [CANON_PY]\n  117: if MACINNIS_PDF.exists():\n  118:     INPUT_FILES.append(MACINNIS_PDF)"
+    },
+    {
+      "anchor_id": "prov_1856",
+      "anchor_type": "data_provenance",
+      "name": "w1b_genuine_unpinned_r_max_theorem",
+      "script_path": "session-85/s85_w1b_genuine_unpinned_r_max_theorem.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w1b_genuine_unpinned_r_max_theorem.npz, session-85/s85_w1b_genuine_unpinned_r_max_theorem.png, session-85...",
+      "source_file": "computations/session-85/s85_w1b_genuine_unpinned_r_max_theorem.py",
+      "source_context_30_lines": "  120: R_L1_ZETA = 13322.0                                                 # (local) zeta L1 inspection\n  121: R_L2_ZUBAREV = 1.0                                                  # (local) Zubarev L2 saturation\n  122: R_MAX_CANONICAL = 13322.0                                           # (local) S82 W2-2 reported canonical\n  123: \n  124: # Plan threshold\n  125: PASS_RESID = 1e-12                                                  # (local) theorem = machine epsilon\n  126: FAIL_RESID = 0.0                                                    # (local) any residual means FAIL\n  127: \n  128: OUT_NPZ = SCRIPT_DIR / \"s85_w1b_genuine_unpinned_r_max_theorem.npz\"\n  129: OUT_MD = SCRIPT_DIR / \"s85_w1b_genuine_unpinned_r_max_theorem.md\"\n  130: OUT_PNG = SCRIPT_DIR / \"s85_w1b_genuine_unpinned_r_max_theorem.png\"\n  131: VERDICT_TXT = SCRIPT_DIR / \"s85_gate_verdicts.txt\"\n  132: CANON_PY = SCRIPT_DIR / \"canonical_constants.py\"\n  133: S84_W2_WP = PROJECT_ROOT / \"sessions\" / \"session-84\" / \"session-84-w2-workingpaper.md\"\n  134: \n  135: INPUT_FILES = [CANON_PY]\n  136: if S84_W2_WP.exists():"
+    },
+    {
+      "anchor_id": "prov_1857",
+      "anchor_type": "data_provenance",
+      "name": "w1b_litebird_alpha_s_hazumi_verified",
+      "script_path": "session-85/s85_w1b_litebird_alpha_s_hazumi_verified.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w1b_litebird_alpha_s_hazumi_verified.npz, session-85/s85_w1b_litebird_alpha_s_hazumi_verified.png, sessio...",
+      "source_file": "computations/session-85/s85_w1b_litebird_alpha_s_hazumi_verified.py",
+      "source_context_30_lines": "   91: # Hazumi 2022 headline forecasts (from memory/section scanning; no alpha_s row)\n   92: HAZUMI_PUBLISHED_FORECASTS = {\n   93:     \"sigma_r\": \"0.001 (delta_r budget; JLTP Table)\",                # (local)\n   94:     \"sigma_n_T\": \"not explicitly; r-consistency only\",              # (local)\n   95:     \"sigma_tau_re\": \"0.002 (Full mission, cosmic variance limited)\",  # (local)\n   96:     \"sigma_alpha_s\": \"NOT PUBLISHED\",                               # (local)\n   97: }\n   98: \n   99: OUT_NPZ = SCRIPT_DIR / \"s85_w1b_litebird_alpha_s_hazumi_verified.npz\"\n  100: OUT_MD = SCRIPT_DIR / \"s85_w1b_litebird_alpha_s_hazumi_verified.md\"\n  101: OUT_PNG = SCRIPT_DIR / \"s85_w1b_litebird_alpha_s_hazumi_verified.png\"\n  102: VERDICT_TXT = SCRIPT_DIR / \"s85_gate_verdicts.txt\"\n  103: CANON_PY = SCRIPT_DIR / \"canonical_constants.py\"\n  104: \n  105: INPUT_FILES = [CANON_PY]\n  106: if HAZUMI_PDF.exists():\n  107:     INPUT_FILES.append(HAZUMI_PDF)"
+    },
+    {
+      "anchor_id": "prov_1858",
+      "anchor_type": "data_provenance",
+      "name": "w1b_planck_desi_2025_alpha_s_recalibration",
+      "script_path": "session-85/s85_w1b_planck_desi_2025_alpha_s_recalibration.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w1b_planck_desi_2025_alpha_s_recalibration.npz, session-85/s85_w1b_planck_desi_2025_alpha_s_recalibration...",
+      "source_file": "computations/session-85/s85_w1b_planck_desi_2025_alpha_s_recalibration.py",
+      "source_context_30_lines": "  155: ACT_ALONE_SIGMA = 0.029                                              # (local, col 1)\n  156: ACT_WMAP_ALPHA = 0.0128                                              # (local, col 2, Planck-independent)\n  157: ACT_WMAP_SIGMA = 0.0081                                              # (local, col 2)\n  158: ACT_PLANCK_ALPHA = 0.0023                                            # (local, col 3, post-2018 best-combined)\n  159: ACT_PLANCK_SIGMA = 0.0063                                            # (local, col 3)\n  160: ACT_PLANCK_REFERENCE_ALPHA = -0.0067                                 # (local, col 4, ACT's Planck-alone reference)\n  161: ACT_PLANCK_REFERENCE_SIGMA = 0.0067                                  # (local, col 4)\n  162: \n  163: OUT_NPZ = SCRIPT_DIR / \"s85_w1b_planck_desi_2025_alpha_s_recalibration.npz\"\n  164: OUT_MD = SCRIPT_DIR / \"s85_w1b_planck_desi_2025_alpha_s_recalibration.md\"\n  165: OUT_PNG = SCRIPT_DIR / \"s85_w1b_planck_desi_2025_alpha_s_recalibration.png\"\n  166: VERDICT_TXT = SCRIPT_DIR / \"s85_gate_verdicts.txt\"\n  167: CANON_PY = SCRIPT_DIR / \"canonical_constants.py\"\n  168: \n  169: INPUT_FILES = [CANON_PY]\n  170: for p in (TRISTRAM_PR4_PDF, DESI_III_PDF, DESI_VI_PDF, ACT_DR4_PDF, PLANCK_VI_PDF):\n  171:     if p.exists():"
+    },
+    {
+      "anchor_id": "prov_1859",
+      "anchor_type": "data_provenance",
+      "name": "w1c_alpha_s_magnitude_gap_registry",
+      "script_path": "session-85/s85_w1c_alpha_s_magnitude_gap_registry.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-85/s85_w1c_alpha_s_magnitude_gap_registry.py",
+      "source_context_30_lines": "   82: SESSION = \"S85\"                                              # (local)\n   83: GATE_ID = \"S85-W1c-ALPHA-S-MAGNITUDE-GAP-REGISTRY\"           # (local)\n   84: SCHEME = \"sigma-separation\"                                  # (local)\n   85: CONVENTION = \"planck-2018\"                                   # (local)\n   86: L_MAX = \"N/A\"                                                # (local)\n   87: \n   88: CANONICAL_PATH = resolve_script(None, 'canonical_constants.py')\n   89: VERDICT_TXT = resolve_output(85, 's85_gate_verdicts.txt')\n   90: OUT_JSON = resolve_output(85, 's85_w1c_alpha_s_magnitude_gap_registry.json')\n   91: REGISTRY_PATH = PROJECT_ROOT / \"sessions\" / \"permanent-results-registry.md\"  # (local)\n   92: \n   93: # Pre-registered PASS bands (plan §W1c-5.9)\n   94: SIGMA_SEP_LO, SIGMA_SEP_HI = 9.60, 9.64                      # (local)\n   95: MAG_RATIO_LO, MAG_RATIO_HI = 15.28, 15.38                    # (local)\n   96: TARGET_SUBSECTION = \"§VII.Ω.α_s-gap\"                          # (local)\n   97: REGISTRY_SUBSECTION_SENTINEL = (\n   98:     \"### §VII.Ω.α_s-gap — Structural Magnitude Gap\""
+    },
+    {
+      "anchor_id": "prov_1860",
+      "anchor_type": "data_provenance",
+      "name": "w1c_beta_s_cascade",
+      "script_path": "session-85/s85_w1c_beta_s_cascade.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-85/s85_w1c_beta_s_cascade.py",
+      "source_context_30_lines": "   88: L_MAX = \"N/A\"                                                # (local)\n   89: \n   90: # Pre-registered thresholds (plan §W1c-6.9)\n   91: PASS_RESIDUAL_MAX = 0.01                                     # (local)\n   92: INFO_RESIDUAL_MAX = 0.10                                     # (local)\n   93: \n   94: CANONICAL_PATH = resolve_script(None, 'canonical_constants.py')\n   95: VERDICT_TXT = resolve_output(85, 's85_gate_verdicts.txt')\n   96: OUT_JSON = resolve_output(85, 's85_w1c_beta_s_cascade.json')\n   97: \n   98: \n   99: def sha256_of(path: Path) -> str:\n  100:     h = hashlib.sha256()  # (local)\n  101:     try:\n  102:         h.update(path.read_bytes())\n  103:     except OSError:\n  104:         return \"\""
+    }
+  ]
+}

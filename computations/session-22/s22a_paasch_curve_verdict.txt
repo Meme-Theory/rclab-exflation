@@ -1,0 +1,19 @@
+T3-S22A-PAASCH-CURVE: PASS -- value=tau_closest=0.01880188,ratio_closest=1.53158601,crossings=[0.04240363,0.13218843],spline_cross_M1=0.14987825 scheme=s19a-eigendata-spline-brentq convention=r=E30/E00_min_per_sector L_max=max_pq_sum=6_from_s19a sha256=cb6a602b267d5aaba0f83ca06ed3054d728e7a0fa4535f423d91e7f735745f06
+  # target=phi_paasch=1.531580 (canonical_constants.py L125, PROVEN S12 machine-eps); reproduce s22a_paasch_curve.npz ratio[], crossings[], tau_closest, ratio_closest
+  # pre-fix=original s22a_paasch_curve.py hardcoded phi_paasch=1.531580 inline (L45) and lacked (local) tags on computed intermediates (E_30, ratio, delta, cs_ratio, tau_dense, etc.); no canonical_constants import
+  # fix=wrapper s22a_paasch_curve_t3.py added canonical import ("from canonical_constants import phi_paasch"), (local)-tagged every intermediate per computations/_shared/CLAUDE.md, SHA-256 pin logging in first 20 lines, closure hash emission, OMP_NUM_THREADS=8 cap (small-matrix scipy, GPU not warranted)
+  # reproduced=ratio_rel_err=0.000e+00, |tau_closest - prev|=0.000e+00, max |crossings - prev|=0.000e+00, ratio_closest=1.531586009806 (exact match byte-for-byte against computations/_shared/s22a_paasch_curve.npz)
+  # rel_error=0.0 (machine-epsilon reproduction across ratio[21], crossings[2], tau_closest, ratio_closest; Paasch invariant preserved)
+  # structural_result=spline_crossings=[0.01876973, 0.14987825]; second crossing at tau=0.14987825 localizes the S12 Paasch anchor s=0.15 to 4-digit precision (|0.14987825 - 0.15| = 1.22e-4). phi_paasch remains PERMANENT.
+  # substitution_chain (verified Python, no narrative):
+  #   r(tau) := E_{(3,0)}(tau) / E_{(0,0)}(tau)                         [definition]
+  #   delta(tau) := r(tau) - phi_paasch                                 [script L114]
+  #   r(0.10) = 1.53708755  ->  delta(0.10) = +0.00550755               [substitution]
+  #   r(0.20) = 1.51997722  ->  delta(0.20) = -0.01160178               [substitution]
+  #   sign(delta(0.10)) * sign(delta(0.20)) = (+1)(-1) = -1 < 0         [simplified]
+  #   -> IVT on CubicSpline(delta) gives a root in [0.10, 0.20]         [direction]
+  #   brentq localizes second root at tau = 0.14987825                  [verified]
+  # closure_inputs={s19a_sweep_data.npz:ad2a0da375f516aa24430db6630c733300428fa9682b0986a70b9b766aec1f5a, s22a_paasch_curve.py:1e2261a470f0a7ff99ef30c35cffd76d8a4ccc69fcfec00e59ab71eca2f81706, canonical_constants.py:68b50cd325d2cc8c63b775da3b6b92f538da582bee44c5d906c81259f24dd12f}
+  # script_sha=1e2261a470f0a7ff99ef30c35cffd76d8a4ccc69fcfec00e59ab71eca2f81706
+  # canon_sha=68b50cd325d2cc8c63b775da3b6b92f538da582bee44c5d906c81259f24dd12f
+  # wrapper_sha=s22a_paasch_curve_t3.py in tier0-archive/ (S81-canonical re-run companion)

@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 196,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1951",
+      "anchor_type": "data_provenance",
+      "name": "w10_mu_bc_zeta_interior",
+      "script_path": "session-86/s86_w10_mu_bc_zeta_interior.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "session-86/s86_w10_mu_bc_zeta_interior.npz",
+      "source_file": "computations/session-86/s86_w10_mu_bc_zeta_interior.py",
+      "source_context_30_lines": "   64: THIS_DIR = Path(__file__).resolve().parent\n   65: sys.path.insert(0, str(THIS_DIR))\n   66: from canonical_constants import tau_fold, M_Z  # noqa: E402\n   67: \n   68: # ----- Paths -----\n   69: PROJECT_ROOT = THIS_DIR.parent\n   70: VERDICTS_PATH = THIS_DIR / \"s86_gate_verdicts.txt\"\n   71: CANON_CONSTS_PATH = THIS_DIR / \"canonical_constants.py\"\n   72: NPZ_OUT = THIS_DIR / \"s86_w10_mu_bc_zeta_interior.npz\"\n   73: \n   74: GATE_ID = \"S86-MU-BC-V2-ZETA-AT-INTERIOR\"\n   75: SCHEME = \"zeta-at-interior\"\n   76: CONVENTION = \"Mellin-cone-strip-d=8\"\n   77: L_MAX_CANON = 10  # (local) plan-pinned canonical L_max\n   78: \n   79: \n   80: # ----- Helpers -----"
+    },
+    {
+      "anchor_id": "prov_1952",
+      "anchor_type": "data_provenance",
+      "name": "w11_eta_gv_joint_probe",
+      "script_path": "session-86/s86_w11_eta_gv_joint_probe.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "session-86/s86_w11_eta_gv_joint_probe.npz",
+      "source_file": "computations/session-86/s86_w11_eta_gv_joint_probe.py",
+      "source_context_30_lines": "  142: CORRIDOR_JSON = SCRIPT_DIR / \"s85_w2_disjoint_corridor_counter_construction.json\"\n  143: GV_NPZ = (\n  144:     PROJECT_ROOT / \"sessions\" / \"session-84\" / \"computation-artifacts\"\n  145:     / \"s84_w10a_115_gv_explicit.npz\"\n  146: )\n  147: PARITY_EXT_NPZ = SCRIPT_DIR / \"s86_w9_C24_parity_extension.npz\"\n  148: \n  149: # Outputs\n  150: OUT_NPZ = SCRIPT_DIR / \"s86_w11_eta_gv_joint_probe.npz\"\n  151: VERDICT_TXT = SCRIPT_DIR / \"s86_gate_verdicts.txt\"\n  152: \n  153: INPUT_FILES = [CANONICAL_PY, CORRIDOR_JSON, GV_NPZ, PARITY_EXT_NPZ]\n  154: \n  155: \n  156: def sha256_of(path: Path) -> str:\n  157:     h = hashlib.sha256()  # (local)\n  158:     try:"
+    },
+    {
+      "anchor_id": "prov_1953",
+      "anchor_type": "data_provenance",
+      "name": "w11_lab_falsifier_evoi_tree",
+      "script_path": "session-86/s86_w11_lab_falsifier_evoi_tree.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-86/s86_w11_lab_falsifier_evoi_tree.py",
+      "source_context_30_lines": "  128: )\n  129: C5_JSON_PATH = os.path.join(                                          # (local)\n  130:     PROJECT_ROOT, 'sessions', 'session-86', 'computation-artifacts',\n  131:     's86_w11_lab_si_translation.json'\n  132: )\n  133: CANONICAL_PY = os.path.join(HERE, 'canonical_constants.py')           # (local)\n  134: OUT_CSV_PATH = os.path.join(                                          # (local)\n  135:     PROJECT_ROOT, 'sessions', 'session-86', 'computation-artifacts',\n  136:     's86_w11_lab_falsifier_evoi_tree.csv'\n  137: )\n  138: OUT_JSON_PATH = os.path.join(                                         # (local)\n  139:     PROJECT_ROOT, 'sessions', 'session-86', 'computation-artifacts',\n  140:     's86_w11_lab_falsifier_evoi_tree.json'\n  141: )\n  142: VERDICT_PATH = os.path.join(HERE, 's86_gate_verdicts.txt')            # (local) canonical per gate-verdicts.md\n  143: \n  144: # ============================================================"
+    },
+    {
+      "anchor_id": "prov_1954",
+      "anchor_type": "data_provenance",
+      "name": "w11_lab_si_translation",
+      "script_path": "session-86/s86_w11_lab_si_translation.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-86/s86_w11_lab_si_translation.py",
+      "source_context_30_lines": "  388: \n  389: value = f\"{n_rows}-rows-populated\"                                    # (local)\n  390: \n  391: # ============================================================\n  392: # SECTION 7: Write CSV\n  393: # ============================================================\n  394: print(\"\\n[SEC 7] Write CSV\")\n  395: \n  396: csv_path = os.path.join(ARTIFACT_DIR, 's86_w11_lab_si_translation.csv')  # (local)\n  397: csv_columns = ['obs_id', 'platform', 'lambda', 'W8_4_ratio',\n  398:                'prefactor', 'prefactor_unit', 'SI_value', 'SI_unit',\n  399:                'sigma_detect', 'detection_ratio', 'lit_sha',\n  400:                'lit_arxiv_id', 'provisional', 'phenomenology_note']    # (local)\n  401: with open(csv_path, 'w', encoding='utf-8', newline='') as fh:\n  402:     w = csv.DictWriter(fh, fieldnames=csv_columns)\n  403:     w.writeheader()\n  404:     for r in rows:"
+    },
+    {
+      "anchor_id": "prov_1955",
+      "anchor_type": "data_provenance",
+      "name": "w12_cmb_hd_alpha_s_poll",
+      "script_path": "session-86/s86_w12_cmb_hd_alpha_s_poll.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "session-86/s86_w12_cmb_hd_alpha_s_poll.npz, session-86/s86_w12_cmb_hd_alpha_s_poll.png",
+      "source_file": "computations/session-86/s86_w12_cmb_hd_alpha_s_poll.py",
+      "source_context_30_lines": "   54:     2026-Q2 entry already appended manually before this script run;\n   55:     script reads it for SHA-pin)\n   56: \n   57: Output 4-tuple:\n   58:   (value=NO-PUBLICATION-YET, scheme=quarterly-cmb-hd-alpha-s-poll,\n   59:    convention=3-stream-detection, L_max=NA)\n   60: \n   61: Output file inventory:\n   62:   - computations/session-86/s86_w12_cmb_hd_alpha_s_poll.npz   (poll metadata)\n   63:   - computations/session-86/s86_w12_cmb_hd_alpha_s_poll.png   (status plot)\n   64:   - computations/session-86/s86_gate_verdicts.txt              (verdict line +\n   65:                                                           companion row)\n   66: \n   67: No GPU; CPU-only; OMP capped at 4.\n   68: \"\"\"\n   69: \n   70: from __future__ import annotations"
+    },
+    {
+      "anchor_id": "prov_1956",
+      "anchor_type": "data_provenance",
+      "name": "w12_detector_readiness_9_cell",
+      "script_path": "session-86/s86_w12_detector_readiness_9_cell.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-86/s86_w12_detector_readiness_9_cell.py",
+      "source_context_30_lines": "  531:     lines.append(\"Definition:  N_rows = number of detectors = 9\")\n  532:     lines.append(\"Definition:  N_cols = number of fields per detector = 5\")\n  533:     lines.append(\"             (status, launch/window, sigma-target, framework prediction, EVOI tag)\")\n  534:     lines.append(\"Definition:  N_required = N_rows * N_cols\")\n  535:     lines.append(\"Substitute:  N_required = 9 * 5\")\n  536:     lines.append(\"Simplify:    N_required = 45\")\n  537:     lines.append(\"Direction:   each cell either populated with cited value OR marked TBD-S87\")\n  538:     lines.append(\"             with citation; admissibility per plan §7 PRDR pin.\")\n  539:     lines.append(\"Verify:      Python enumerate -> 45 cells (see s86_w12_detector_readiness_9_cell.py)\")\n  540:     lines.append(\"```\")\n  541:     lines.append(\"\")\n  542:     lines.append(\"## EVOI taxonomy (closed set per plan §7)\")\n  543:     lines.append(\"\")\n  544:     lines.append(\"- **DECISIVE** (3 detectors: DESI DR3, CMB-S4, LISA, LiteBIRD): single-detector\")\n  545:     lines.append(\"  outcome can falsify or confirm a framework prediction at >=3-sigma alone.\")\n  546:     lines.append(\"- **DISCRIMINATING** (2 detectors: BK-Array, SKA-1): single-detector outcome\")\n  547:     lines.append(\"  separates internal pathways (Path-H/Path-C; folded-shape) at marginal sigma.\")"
+    },
+    {
+      "anchor_id": "prov_1957",
+      "anchor_type": "data_provenance",
+      "name": "w12_dr3_3layer_subtree",
+      "script_path": "session-86/s86_w12_dr3_3layer_subtree.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "session-86/s86_w12_dr3_3layer_subtree.npz",
+      "source_file": "computations/session-86/s86_w12_dr3_3layer_subtree.py",
+      "source_context_30_lines": "  172:     \"C7\": \"FAIL\",   # C2_exotic -> FAIL\n  173: }\n  174: \n  175: # --- L_max axis (closed set per plan §7)\n  176: L_MAX_LIST = [8, 10, 12]                                              # (local)\n  177: \n  178: # --- Output paths\n  179: OUT_MD = ARTIFACTS_DIR / \"s86_dr3_3layer_subtree.md\"\n  180: OUT_NPZ = SCRIPT_DIR / \"s86_w12_dr3_3layer_subtree.npz\"\n  181: OUT_JSON = SCRIPT_DIR / \"s86_w12_dr3_3layer_subtree.json\"\n  182: VERDICT_TXT = SCRIPT_DIR / \"s86_gate_verdicts.txt\"\n  183: CANON_PY = SCRIPT_DIR / \"canonical_constants.py\"\n  184: ZUBAREV_NPZ = SCRIPT_DIR / \"s85_w0_zubarev_lmax_convergence_to_minus_one.npz\"\n  185: W0_SUCCESSOR_JSON = SCRIPT_DIR / \"s85_w0_dr3_regulator_successor_tree.json\"\n  186: \n  187: INPUT_FILES = [CANON_PY, ZUBAREV_NPZ, W0_SUCCESSOR_JSON]\n  188: "
+    },
+    {
+      "anchor_id": "prov_1958",
+      "anchor_type": "data_provenance",
+      "name": "w12_fisher_pdf_pin",
+      "script_path": "session-86/s86_w12_fisher_pdf_pin.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-86/s86_w12_fisher_pdf_pin.py",
+      "source_context_30_lines": "  290:             \"\",\n  291:             \"```\",\n  292:             substitution_chain.rstrip(),\n  293:             \"```\",\n  294:             \"\",\n  295:             \"## Provenance\",\n  296:             \"\",\n  297:             \"- Plan: `sessions/session-plan/session-86-plan-w12.md` §W12-3\",\n  298:             \"- Producing script: `computations/session-86/s86_w12_fisher_pdf_pin.py`\",\n  299:             \"- Verdict file: `computations/session-86/s86_gate_verdicts.txt`\",\n  300:             \"  (S86-FISHER-PDF-PIN-CLOSURE + W4-3 re-emission + W4-6 re-emission)\",\n  301:             \"- Upstream registry: `sessions/framework/registry/detector-readiness-9-cell.md`\",\n  302:             \"  (rows (b)/(c)/(e)/(g)/(h) anchor to these PDFs via 'σ-target' column)\",\n  303:             \"\",\n  304:             \"## Status\",\n  305:             \"\",\n  306:             \"- Registry: REGISTERED (S86 W12-3).\","
+    },
+    {
+      "anchor_id": "prov_1959",
+      "anchor_type": "data_provenance",
+      "name": "w12_workshop_bottom20_regulator_ordering",
+      "script_path": "session-86/s86_w12_workshop_bottom20_regulator_ordering.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-86/s86_w12_workshop_bottom20_regulator_ordering.py",
+      "source_context_30_lines": "  196:         \"w_cutoff_sqrt = sqrt(x) * theta(144 - x) (monotone increasing for bottom-20 since x<<144). \"\n  197:         \"Therefore on bottom-20: 4 of 5 regulators (zeta, PV, lattice, cutoff_sqrt) produce IDENTICAL ranking; \"\n  198:         \"Mellin produces the GLOBAL REVERSAL of that ranking. \"\n  199:         \"BIMODALITY signature on bottom-20 reduces to MONOTONE-INCREASING vs MONOTONE-DECREASING dichotomy, \"\n  200:         \"i.e. a Z_2 ordering structure on bottom-20 — NOT a higher-order regulator-dependent splitting.\"\n  201:     ),\n  202: }\n  203: \n  204: OUT = Path(__file__).resolve().parent / \"s86_w12_workshop_bottom20_regulator_ordering.json\"\n  205: OUT.write_text(json.dumps(output, indent=2))\n  206: print(f\"Written: {OUT}\")\n  207: print()\n  208: print(f\"N_total eigenvalues at tau_fold=0.190 L_max=12: {N_total}\")\n  209: print(f\"Bottom-20 |lambda| range: [{abs_lams.min():.6f}, {abs_lams.max():.6f}]\")\n  210: print()\n  211: print(\"Bottom-20 ranks under each regulator (rank_of_original):\")\n  212: for name in names:"
+    },
+    {
+      "anchor_id": "prov_1960",
+      "anchor_type": "data_provenance",
+      "name": "w13_2_dual_sha_regen_amend",
+      "script_path": "session-86/s86_w13_2_dual_sha_regen_amend.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-86/s86_w13_2_dual_sha_regen_amend.py",
+      "source_context_30_lines": "  202:         \"schema_reference\":\n  203:             \".claude/rules/gate-verdicts.md_S87+_canonical_form\",\n  204:         \"amend_layer_pin\": LAYER,\n  205:         \"amend_arm_pin\": ARM,\n  206:         \"amend_f_pivot_pin\": F_PIVOT,\n  207:     }\n  208: \n  209:     # First 20 lines of stdout: input-pin map (audit-trail discipline)\n  210:     print(f\"[s86_w13_2_dual_sha_regen_amend] AMEND_ID = {AMEND_ID}\")\n  211:     print(f\"[s86_w13_2_dual_sha_regen_amend] amending row = {GATE_ID}\")\n  212:     print(f\"[s86_w13_2_dual_sha_regen_amend] target file  = {VERDICT_TXT}\")\n  213:     print(\"[s86_w13_2_dual_sha_regen_amend] input-pin map:\")\n  214:     for k, v in sorted(pins.items()):\n  215:         v_disp = v if len(str(v)) < 80 else str(v)[:76] + \"...\"  # (local)\n  216:         print(f\"  {k} = {v_disp}\")\n  217: \n  218:     # Compute the dual-SHA pair for the amend"
+    }
+  ]
+}

@@ -638,14 +638,14 @@ Pauli's hypothesis, Cowan-Reines detection, and the two-neutrino discovery estab
 
 ## Computational Verification Status
 
-The following scripts in `tier0-computation/` are indirectly relevant to the neutrino detection corpus:
+The following scripts in `computations/_shared/` are indirectly relevant to the neutrino detection corpus:
 
-- **`tier0-computation/tier1_dirac_spectrum.py`** (~1580 lines): Computes eigenvalues of D_K(s) on Jensen-deformed SU(3) via Peter-Weyl decomposition. The lightest eigenvalues of this spectrum correspond to neutrino masses. Session 12 found 147 eigenvalue pairs within 1% of phi_paasch (= 1.53158) at s ~ 1.14. The eigenvalue spacings at specific s values are the quantities that must match the measured Delta m^2_21 and Delta m^2_32 from this corpus.
+- **`computations/_shared/dirac_spectrum.py`** (~1580 lines): Computes eigenvalues of D_K(s) on Jensen-deformed SU(3) via Peter-Weyl decomposition. The lightest eigenvalues of this spectrum correspond to neutrino masses. Session 12 found 147 eigenvalue pairs within 1% of phi_paasch (= 1.53158) at s ~ 1.14. The eigenvalue spacings at specific s values are the quantities that must match the measured Delta m^2_21 and Delta m^2_32 from this corpus.
 
-- **`tier0-computation/z3_triality_labeling.py`**: Verifies Z_3 = (p-q) mod 3 partition of 28 irreps into three generation classes (Session 17a, B-4). The three-generation structure established by Paper 03 (two-neutrino discovery) and confirmed by LEP (N_nu = 3) must match this geometric Z_3 grading.
+- **`computations/_shared/z3_triality_labeling.py`**: Verifies Z_3 = (p-q) mod 3 partition of 28 irreps into three generation classes (Session 17a, B-4). The three-generation structure established by Paper 03 (two-neutrino discovery) and confirmed by LEP (N_nu = 3) must match this geometric Z_3 grading.
 
-- **`tier0-computation/d1_d3_j_compatibility.py`**: Verifies [J, D_K(s)] = 0 identically (Session 17a, D-1) and eigenvalue pairing to machine precision (D-3). The CPT invariance tested by KamLAND (Paper 09) -- that nu and nu_bar oscillate with the same parameters -- is guaranteed by this algebraic identity.
+- **`computations/_shared/d1_d3_j_compatibility.py`**: Verifies [J, D_K(s)] = 0 identically (Session 17a, D-1) and eigenvalue pairing to machine precision (D-3). The CPT invariance tested by KamLAND (Paper 09) -- that nu and nu_bar oscillate with the same parameters -- is guaranteed by this algebraic identity.
 
-- **`tier0-computation/gauge_coupling_derivation.py`**: Derives g_1/g_2 = e^{-2s} and s_0 = 0.2994 from sin^2 theta_W (Session 17a, B-1). The Fermi constant G_F = g_2^2 / (4 sqrt(2) M_W^2), which determines all neutrino cross sections in Papers 01, 02, 06, 09, and 10, is a geometric output of this derivation.
+- **`computations/_shared/gauge_coupling_derivation.py`**: Derives g_1/g_2 = e^{-2s} and s_0 = 0.2994 from sin^2 theta_W (Session 17a, B-1). The Fermi constant G_F = g_2^2 / (4 sqrt(2) M_W^2), which determines all neutrino cross sections in Papers 01, 02, 06, 09, and 10, is a geometric output of this derivation.
 
-No scripts directly compute neutrino oscillation parameters (Delta m^2, mixing angles, PMNS matrix elements) from the Dirac spectrum. This is a Tier 2 deliverable requiring the full spinor transport calculation (Baptista Paper 14, Section 3.2) to assign mass eigenvalues to specific neutrino species and compute the overlap integrals that determine PMNS angles.
+No scripts directly compute neutrino oscillation parameters (Delta m^2, mixing angles, PMNS matrix elements) from the Dirac spectrum. This is a Level 2 deliverable requiring the full spinor transport calculation (Baptista Paper 14, Section 3.2) to assign mass eigenvalues to specific neutrino species and compute the overlap integrals that determine PMNS angles.

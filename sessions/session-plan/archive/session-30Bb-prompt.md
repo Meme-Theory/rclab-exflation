@@ -5,11 +5,11 @@
 **Depends on**: Session 30Ba (minimum location $(\tau_{\min}, \epsilon_{\min})$ and grid eigenvalue data). Cannot proceed until 30Ba delivers `s30b_grid_bcs.npz` with confirmed minimum.
 **Prerequisite**: 30Ba P-30w verdict and minimum coordinates available. If B-30min FIRED in 30Ba (no minimum), Step 6 (T1 extension) runs first.
 **Input data**:
-- `tier0-computation/s30b_grid_bcs.npz` (from 30Ba — minimum location, grid eigenvalues)
-- `tier0-computation/s30b_sdw_grid.npz` (from 30Ba — Seeley-DeWitt landscape)
-- `tier0-computation/s30b_5d_stability.npz` (from 30Ba — T3/T4 stability)
-- `tier0-computation/tier1_dirac_spectrum.py` (generalized by 30Ba Step 0)
-- `tier0-computation/s29b_pmns_extraction.npz` (PMNS tridiagonal extraction)
+- `computations/s30b_grid_bcs.npz` (from 30Ba — minimum location, grid eigenvalues)
+- `computations/s30b_sdw_grid.npz` (from 30Ba — Seeley-DeWitt landscape)
+- `computations/s30b_5d_stability.npz` (from 30Ba — T3/T4 stability)
+- `computations/dirac_spectrum.py` (generalized by 30Ba Step 0)
+- `computations/s29b_pmns_extraction.npz` (PMNS tridiagonal extraction)
 - Baptista Paper 17 eq 1.3-1.4: $[D_K, \mathcal{L}_X]$ formula for gauge boson masses
 - Baptista Paper 18 eq 7.5: Dimensional reduction D_F = mass matrix from KK geometry
 
@@ -100,14 +100,14 @@ These are zero-parameter derivations. They either match the Standard Model or th
 Every result classified against its pre-registered gate BEFORE any interpretation. Report the number first. Classify second. Interpret third.
 
 **Python environment**: `"phonon-exflation-sim/.venv312/Scripts/python.exe"`
-**Output directory**: `tier0-computation/`
+**Output directory**: `computations/`
 **Script prefix**: `s30b_`
 
 ## PRE-SESSION GATE CHECK (MANDATORY FIRST ACTION)
 
 Before any computation, verify:
 1. Read 30Ba gate verdicts — confirm minimum found (B-30min did NOT fire)
-2. Read `tier0-computation/s30b_grid_bcs.npz` — extract $(\tau_{\min}, \epsilon_{\min})$ and corresponding $(\lambda_1, \lambda_2, \lambda_3)$
+2. Read `computations/s30b_grid_bcs.npz` — extract $(\tau_{\min}, \epsilon_{\min})$ and corresponding $(\lambda_1, \lambda_2, \lambda_3)$
 3. Read P-30w verdict from 30Ba — note $\sin^2(\theta_W)$ at minimum
 4. Confirm generalized Dirac code works at $N_{\max} = 6$ (30Ba Step 0 validated at $N_{\max} = 3$; higher sectors have larger representation dimensions)
 
@@ -123,8 +123,8 @@ Session ends ONLY when user approves shutdown explicitly. Idle agents are not fi
 
 ## ALL agents (MANDATORY):
 
-1. **Session 30Ba outputs**: `tier0-computation/s30b_grid_bcs.npz`, `s30b_sdw_grid.npz`, `s30b_5d_stability.npz` — minimum location, landscape, stability
-2. **Session 30Ba gate verdicts**: `tier0-computation/s30b_gate_verdicts.txt` — P-30w, B-30min, B-30w, B-30phi (preliminary)
+1. **Session 30Ba outputs**: `computations/s30b_grid_bcs.npz`, `s30b_sdw_grid.npz`, `s30b_5d_stability.npz` — minimum location, landscape, stability
+2. **Session 30Ba gate verdicts**: `computations/s30b_gate_verdicts.txt` — P-30w, B-30min, B-30w, B-30phi (preliminary)
 3. **Session 29 Fusion Synthesis Section IX**: `sessions/session-29/session-29-fusion-synthesis.md` — Priority Stack, Scenario Tree (A/B/C)
 4. **Session 29Bb Synthesis**: `sessions/session-29/session-29Bb-synthesis.md` — Jensen saddle analysis, T1/T2 eigenvectors
 5. **Session 29Ba Synthesis**: `sessions/session-29/session-29ba-synthesis.md` — 3-sector F_BCS, PMNS extraction
@@ -135,7 +135,7 @@ Session ends ONLY when user approves shutdown explicitly. Idle agents are not fi
 
 | Agent | Additional Reading |
 |:------|:-------------------|
-| phonon-exflation-sim | `tier0-computation/tier1_dirac_spectrum.py` (generalized code from 30Ba), `tier0-computation/s29b_pmns_extraction.py` (PMNS tridiagonal extraction to adapt) |
+| phonon-exflation-sim | `computations/dirac_spectrum.py` (generalized code from 30Ba), `computations/s29b_pmns_extraction.py` (PMNS tridiagonal extraction to adapt) |
 | einstein-theorist | Connes Papers 07, 10 (spectral action coefficients, GUT-scale coupling relations). Session 29 Connes Excursion. Assess NCG-KK coupling tension (XS-2) at the off-Jensen minimum. |
 | baptista-spacetime-analyst | `researchers/Baptista/` — Paper 15 Section 3.5-3.7, Paper 17 eq 1.3-1.4, Paper 18 Section 6-7 (mass mixing, CKM/PMNS). Validate the off-Jensen Dirac spectrum against Baptista's geometric expectations. |
 | coordinator | This prompt Section IV (gate conditions). Memorize ALL thresholds before first computation completes. |
@@ -231,7 +231,7 @@ with $b_1 = 41/10$, $b_2 = -19/6$, $b_3 = -7$ (SM one-loop). The ratio $\alpha_1
 
 ## Step 5: Diagnostics at the Minimum (Zero Marginal Cost)
 
-**Fusion Priority**: 4-6 (Session 29 Fusion Section IX.2, Tier 2)
+**Fusion Priority**: 4-6 (Session 29 Fusion Section IX.2, Level 2)
 **Cost**: Zero (from Step 3 output)
 
 From the full spectrum at the minimum, extract:
@@ -251,7 +251,7 @@ From the full spectrum at the minimum, extract:
 
 ## Step 5b (Contingent): Order-One Condition at the Minimum (OO-1)
 
-**Fusion Priority**: 7 (Session 29 Fusion Section IX.2, Tier 3)
+**Fusion Priority**: 7 (Session 29 Fusion Section IX.2, Level 3)
 **Cost**: ~5-10 minutes at a single point
 **Condition**: Runs after Step 3 delivers the minimum spectrum. Triggers if P-30w PASSES (from 30Ba) — otherwise the gauge sector is already wrong and OO-1 is moot.
 
@@ -354,7 +354,7 @@ Even if all existential gates fail, the spectrum at the minimum produces:
 | `s30b_rge_running.py` | Step 4 script |
 | `s30b_3d_grid.npz` | T1 extension (contingent on Step 6) |
 
-Gate verdicts appended to: `tier0-computation/s30b_gate_verdicts.txt`
+Gate verdicts appended to: `computations/s30b_gate_verdicts.txt`
 
 ---
 
@@ -433,8 +433,8 @@ The following computations were considered for 30B and deliberately deferred. Th
 | Acoustic impedance at BCS transition boundary | Medium | Trapping margin improvement. Downstream of minimum location. | QA S29 collab |
 | DNP launch energy distribution | Medium | Resolves trapping margin (20% sensitivity window) | Fusion IX.4, Priority 14 |
 
-**30C recommended scope**: OO-1 + DBCS-1 + mode-dependent PMNS dressing. These are the Tier 3 items from Fusion IX.2 that become actionable once 30Bb delivers the minimum analysis.
+**30C recommended scope**: OO-1 + DBCS-1 + mode-dependent PMNS dressing. These are the Level 3 items from Fusion IX.2 that become actionable once 30Bb delivers the minimum analysis.
 
 ---
 
-*Session 30Bb: Frozen-State Observables. Covers Session 29 Fusion Synthesis Priorities 2-3 (Tier 1) plus zero-cost Tier 2 diagnostics and contingent OO-1 from Tier 3. Depends on 30Ba minimum location. ~150 lines new code. ~15-20 min compute (Steps 3-5b). Two existential gates (P-30phi, RGE-A), two hard closes (B-30rge, B-30nck), four positive signals (P-30a, P-30b, P-30pmns, P-30golden), four diagnostics (AZ-1, OO-1, DOS-1 final). Scenario A (all PASS) → 30-45%. Scenario C (all FAIL) → 3-5%. AZ class must be established before 30A's Pfaffian scan runs.*
+*Session 30Bb: Frozen-State Observables. Covers Session 29 Fusion Synthesis Priorities 2-3 (Level 1) plus zero-cost Level 2 diagnostics and contingent OO-1 from Level 3. Depends on 30Ba minimum location. ~150 lines new code. ~15-20 min compute (Steps 3-5b). Two existential gates (P-30phi, RGE-A), two hard closes (B-30rge, B-30nck), four positive signals (P-30a, P-30b, P-30pmns, P-30golden), four diagnostics (AZ-1, OO-1, DOS-1 final). Scenario A (all PASS) → 30-45%. Scenario C (all FAIL) → 3-5%. AZ class must be established before 30A's Pfaffian scan runs.*

@@ -33,7 +33,7 @@ Phase 24a runs ALL seven cheap computations before any interpretation begins. Do
 Every result must be classified against its pre-registered Constraint Gate BEFORE any interpretation is attempted. Report the number first. Classify second. Interpret third.
 
 **Python environment**: `"phonon-exflation-sim/.venv312/Scripts/python.exe"`
-**Output directory**: `tier0-computation/`
+**Output directory**: `computations/`
 **Script prefix**: `s24a_` for Phase 24a, `s24b_` for Phase 24b
 
 ## MESSAGE PROTOCOL
@@ -107,7 +107,7 @@ The Session 23 arc closed the last energetic stabilization mechanism (BCS) but a
 
 | Agent | Additional Reading | Researcher Index Reference |
 |:------|:-------------------|:--------------------------|
-| phonon-exflation-sim | `tier0-computation/s23c_fiber_integrals_final.py` (V_spec formula + data loading), `s23c_fiber_integrals.npz` (curvature invariants at 21 tau), `s23a_kosmann_singlet.npz` (V_nm for Berry + neutrino R), `s23a_eigenvectors_extended.npz` (eigenvalues) | Domain 4: Hawking-07, Landau-04, Baptista-15 (V_eff machinery). Domain 3: Baptista-17 eq 3.8 (D_K structure) |
+| phonon-exflation-sim | `computations/s23c_fiber_integrals_final.py` (V_spec formula + data loading), `s23c_fiber_integrals.npz` (curvature invariants at 21 tau), `s23a_kosmann_singlet.npz` (V_nm for Berry + neutrino R), `s23a_eigenvectors_extended.npz` (eigenvalues) | Domain 4: Hawking-07, Landau-04, Baptista-15 (V_eff machinery). Domain 3: Baptista-17 eq 3.8 (D_K structure) |
 | coordinator | `sessions/session-23/session-23b-synthesis.md` Section IV (Constraint Registry). This prompt Section IV (Constraint Gates — memorize thresholds before computation) | Domain 12: Sagan-10 (methodology), Sagan-13 (Bayesian framework) |
 | sagan-empiricist (24b) | `sessions/session-23/session-23-sagan-verdict.md` (previous Sagan verdict structure), `sessions/session-23/session-23-tesla-take-sagan-collab.md` (Sagan's pre-registered gates for Tesla's computations) | Domain 12: Sagan-10, Sagan-12 (ALH84001 cautionary), Sagan-13 (Seager Bayesian), Sagan-14 (phosphine parallel) |
 | einstein-theorist (24b) | `sessions/session-23/session-23-tesla-take-einstein-collab.md` (Einstein's EIH constraint, CC problem, Starobinsky connection) | Domain 8: Hawking-07 (Euclidean = spectral action), Einstein-07 (cosmological constant). Domain 4: KK-10 (Freund-Rubin), KK-11 (Lichnerowicz) |
@@ -138,8 +138,8 @@ V_spec(tau; rho) = -R_K(tau) + rho * [500*R_K(tau)^2 - 32*|Ric(tau)|^2 - 28*K(ta
 where rho = c_4/c_2 = f_4/(60*f_2*Lambda^2) is the single free parameter.
 
 **Data sources**:
-- `tier0-computation/s23c_fiber_integrals.npz`: Keys `R_scalar`, `Ric_sq`, `K_kretschner`, `tau` at 21 points
-- `tier0-computation/r20a_riemann_tensor.npz`: Cross-check source
+- `computations/s23c_fiber_integrals.npz`: Keys `R_scalar`, `Ric_sq`, `K_kretschner`, `tau` at 21 points
+- `computations/r20a_riemann_tensor.npz`: Cross-check source
 
 **Procedure**:
 
@@ -154,7 +154,7 @@ where rho = c_4/c_2 = f_4/(60*f_2*Lambda^2) is the single free parameter.
 
 4. **Secondary scan**: rho in {0.001, 0.002, 0.005, 0.010, 0.020, 0.050, 0.100, 0.200, 0.500}. Plot tau_min(rho) to identify the rho range where tau_min falls in [0.20, 0.40].
 
-5. **Output**: `tier0-computation/s24a_vspec.py`, `s24a_vspec.npz` (tau, rho grid, V_spec, tau_min, V'', settling times), `s24a_vspec.png`.
+5. **Output**: `computations/s24a_vspec.py`, `s24a_vspec.npz` (tau, rho grid, V_spec, tau_min, V'', settling times), `s24a_vspec.png`.
 
 **Runtime**: Under 1 minute. Under 40 lines of Python.
 
@@ -250,7 +250,7 @@ H_eff = diag(lambda_1, ..., lambda_16) + V_nm(tau = 0.30)
 
 ### Step 7: Mandatory Gate Verdicts
 
-Record ALL verdicts in `tier0-computation/s24a_gate_verdicts.txt`:
+Record ALL verdicts in `computations/s24a_gate_verdicts.txt`:
 
 | Computation | Pre-Registered Threshold | Result | Gate Verdict |
 |:------------|:-------------------------|:-------|:-------------|
@@ -284,7 +284,7 @@ Classification must occur BEFORE interpretation. Report numbers first. Classify 
 
 **Condition**: tau_min in [0.20, 0.40] for some rho in [10^{-3}, 10^{1}].
 **Consequence**: Spectral action potential stabilizes in the physical window. Starobinsky mechanism on internal space. BF ~ 5-15 (one free parameter rho; full BF conditional on NCG constraining rho).
-**Tier upgrade**: tau_min in [0.25, 0.35] AND V_spec''(tau_min) > 0 (stable): BF → 8-15.
+**Level upgrade**: tau_min in [0.25, 0.35] AND V_spec''(tau_min) > 0 (stable): BF → 8-15.
 
 ## R-1: Neutrino R in [17, 66] — PASS (Gate Reopens)
 
@@ -398,18 +398,18 @@ V_spec is monotone. Starobinsky does not work. Assess whether any remaining resc
 
 | File | Producer | Content |
 |:-----|:---------|:--------|
-| `tier0-computation/s24a_vspec.py` | phonon-sim | V_spec at 5 rho values + secondary scan |
-| `tier0-computation/s24a_vspec.npz` | phonon-sim | Full V_spec data: tau, rho, V_spec, tau_min, V'', I_E |
-| `tier0-computation/s24a_vspec.png` | phonon-sim | V_spec(tau) for 5 rho values with physical window shaded |
-| `tier0-computation/s24a_berry.py` | phonon-sim | Intra-sector Berry curvature |
-| `tier0-computation/s24a_berry.npz` | phonon-sim | B_n(tau) at 9 tau values |
-| `tier0-computation/s24a_berry.png` | phonon-sim | Berry curvature vs tau |
-| `tier0-computation/s24a_neutrino.py` | phonon-sim | H_eff diagonalization, R extraction |
-| `tier0-computation/s24a_neutrino.txt` | phonon-sim | R value, mixing angle, gate verdict |
-| `tier0-computation/s24a_eigenvalue_ratios.py` | phonon-sim | Eigenvalue ratio map |
-| `tier0-computation/s24a_eigenvalue_ratios.npz` | phonon-sim | r_n(tau) at 9 tau values |
-| `tier0-computation/s24a_eigenvalue_ratios.png` | phonon-sim | Ratio heatmap with phi_paasch marked |
-| `tier0-computation/s24a_gate_verdicts.txt` | coordinator | All gate verdicts, classified in real time |
+| `computations/s24a_vspec.py` | phonon-sim | V_spec at 5 rho values + secondary scan |
+| `computations/s24a_vspec.npz` | phonon-sim | Full V_spec data: tau, rho, V_spec, tau_min, V'', I_E |
+| `computations/s24a_vspec.png` | phonon-sim | V_spec(tau) for 5 rho values with physical window shaded |
+| `computations/s24a_berry.py` | phonon-sim | Intra-sector Berry curvature |
+| `computations/s24a_berry.npz` | phonon-sim | B_n(tau) at 9 tau values |
+| `computations/s24a_berry.png` | phonon-sim | Berry curvature vs tau |
+| `computations/s24a_neutrino.py` | phonon-sim | H_eff diagonalization, R extraction |
+| `computations/s24a_neutrino.txt` | phonon-sim | R value, mixing angle, gate verdict |
+| `computations/s24a_eigenvalue_ratios.py` | phonon-sim | Eigenvalue ratio map |
+| `computations/s24a_eigenvalue_ratios.npz` | phonon-sim | r_n(tau) at 9 tau values |
+| `computations/s24a_eigenvalue_ratios.png` | phonon-sim | Ratio heatmap with phi_paasch marked |
+| `computations/s24a_gate_verdicts.txt` | coordinator | All gate verdicts, classified in real time |
 | `sessions/YYYY-MM-DD-session-24a-synthesis.md` | coordinator | Number-only gate summary |
 
 ## Phase 24b:

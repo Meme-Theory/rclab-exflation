@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 174,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1731",
+      "anchor_type": "data_provenance",
+      "name": "w4_alpha_fnl_framework_pred",
+      "script_path": "session-84/s84_w4_alpha_fnl_framework_pred.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w4_alpha_fnl_framework_pred.npz, session-84/s84_w4_alpha_fnl_framework_pred.png",
+      "source_file": "computations/session-84/s84_w4_alpha_fnl_framework_pred.py",
+      "source_context_30_lines": "   56: INPUT PINS (SHA-256 computed at runtime):\n   57:   - canonical_constants.py\n   58:   - s67_gge_bispectrum.npz    (f_NL^ch amplitudes)\n   59:   - s67_transit_ps.npz         (|beta_k|^2 curve across transit)\n   60:   - s63_running_ns.npz         (dispersion machinery & n_s)\n   61:   - s65_blue_tensor_tilt.npz   (dlnk/dtau conversion factor)\n   62: \n   63: OUTPUT:\n   64:   - s84_w4_alpha_fnl_framework_pred.npz (required keys: alpha_fnl_value,\n   65:     alpha_fnl_sigma, plus channel decomposition)\n   66:   - s84_w4_alpha_fnl_framework_pred.png\n   67:   - verdict line in s84_gate_verdicts.txt\n   68: \n   69: Gate logic (per W4 plan):\n   70:   PASS: |alpha_f_NL| > 0.80 and sigma/|alpha| < 0.20\n   71:   INFO: 0.30 <= |alpha_f_NL| <= 0.80\n   72:   FAIL: |alpha_f_NL| < 0.30"
+    },
+    {
+      "anchor_id": "prov_1732",
+      "anchor_type": "data_provenance",
+      "name": "w4_bicep_keck_2026_pre_register",
+      "script_path": "session-84/s84_w4_bicep_keck_2026_pre_register.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-84/s84_w4_bicep_keck_2026_pre_register.py",
+      "source_context_30_lines": "<name 'w4_bicep_keck_2026_pre_register' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python\n    2: \"\"\"S84 W4-42 BICEP-KECK-2026-PRE-REGISTER — frozen JSON decision tree against\n    3: the projected BICEP/Keck Array 2026 release of r(k_CMB).\n    4: \n    5: Gate ID: S84-BICEP-KECK-2026-PRE-REGISTER\n    6: Trigger: [VERIFY]\n    7: Classification: GEOMETRIC (tensor-to-scalar ratio at CMB)\n    8: \n    9: This is a procedural gate. It does not compute new physics; it freezes the\n   10: framework's pre-registered response to a future observation.\n   11: \n   12: Inputs:\n   13:     r_CMB_framework     = 0.01173... (G46 PASS, S83 W3-G46)\n   14:     sigma_r_BK_2026     = 0.005    (Ade+ 2025 preprint forecast for BK-Array 2026)\n   15:     sigma_theory_G46    = 0.003    (nominal propagation estimate)\n   16: \n   17: Decision-tree branches (pre-registered, no post-release re-registration):\n   18:     A (CONFIRMATION): r_BK ∈ [0.009, 0.015]   → PASS with high confidence\n   19:     B (CONSISTENCY):  r_BK_upper < 0.020       → INFO\n   20:     C (DISFAVORED):   r_BK_central > 0.025    → FAIL (2-3σ disfavored)\n   21:     D (RULED OUT):    r_BK_upper   < 0.008    → FAIL (2+σ above 95% CL upper)\n   22: \n   23: Substitution chain [VERIFY] for thresholds — see §VI.W4-42 of\n   24: session-84-w4-workingpaper.md.\n   25: \n   26: Outputs:\n   27:     s84_w4_bicep_keck_2026_decision_tree.json  — frozen JSON\n   28:     Verdict → s84_gate_verdicts.txt (dual-SHA form)\n   29:     Registry entry in sessions/framework/registry/pre-registered-observations.md\n   30: \"\"\""
+    },
+    {
+      "anchor_id": "prov_1733",
+      "anchor_type": "data_provenance",
+      "name": "w4_blue_transit_tilt_inaccessibility",
+      "script_path": "session-84/s84_w4_blue_transit_tilt_inaccessibility.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w4_blue_transit_tilt_inaccessibility.npz",
+      "source_file": "computations/session-84/s84_w4_blue_transit_tilt_inaccessibility.py",
+      "source_context_30_lines": "   51: Output 4-tuple:\n   52:   (value=EVOI=0, scheme=registry-entry, convention=bookkeeping, L_max=N/A)\n   53: \n   54: Side effects:\n   55:   - Appends verdict line to s84_gate_verdicts.txt (dual-SHA schema)\n   56:   - Appends entry to sessions/permanent-results-registry.md under tag\n   57:     OBSERVATIONAL-BOUNDARY-LITEB-NT\n   58:   - Inserts EVOI-closure row to sessions/evoi-framework.md (EVOI=0)\n   59:   - Writes JSON payload s84_w4_blue_transit_tilt_inaccessibility.json\n   60: \n   61: SUBSTITUTION CHAIN (discrimination ratio)\n   62: -----------------------------------------\n   63: Definitions:\n   64:   n_T_FW(k_CMB)  := framework tensor tilt at k_CMB, from S68/G46 transfer.\n   65:   n_T_SR(k_CMB)  := slow-roll prediction -r/8 = -2*eps_H(k_CMB).\n   66:   Delta_CMB      := |n_T_FW(k_CMB) - n_T_SR(k_CMB)|\n   67:   sigma_LB_3yr   := Fisher sigma(n_T) from G43 LiteBIRD 3-yr forecast."
+    },
+    {
+      "anchor_id": "prov_1734",
+      "anchor_type": "data_provenance",
+      "name": "w4_dr3_contingency_fine_grained",
+      "script_path": "session-84/s84_w4_dr3_contingency_fine_grained.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-84/s84_w4_dr3_contingency_fine_grained.py",
+      "source_context_30_lines": "  141: BRANCH_IV_WA = 0.0                                              # (local)\n  142: \n  143: # DR3 projected sigmas (from S71 DESI-DR3-SCENARIO-B-PRECISE-71)\n  144: SIG_W0_DR3 = 0.046                                              # (local)\n  145: SIG_WA_DR3 = 0.177                                              # (local)\n  146: RHO_DR3 = -0.85                                                 # (local)\n  147: \n  148: # Output destinations\n  149: OUT_JSON = resolve_output(84, 's84_w4_dr3_contingency_fine_grained.json')\n  150: VERDICT_TXT = resolve_output(84, 's84_gate_verdicts.txt')\n  151: \n  152: # Input-pin map (files whose SHA-256 is recorded in closure)\n  153: INPUT_FILES = [\n  154:     resolve_script(None, 'canonical_constants.py'),\n  155:     resolve_script(73, 's73b_desi_dr3_predictions.py'),\n  156:     resolve_output(73, 's73b_desi_dr3_predictions.npz'),\n  157:     resolve_script(83, 's83_w3_g42_dr3_live_watch.py'),"
+    },
+    {
+      "anchor_id": "prov_1735",
+      "anchor_type": "data_provenance",
+      "name": "w4_falsifier_rigor_registry",
+      "script_path": "session-84/s84_w4_falsifier_rigor_registry.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-84/s84_w4_falsifier_rigor_registry.py",
+      "source_context_30_lines": "   98: SCHEME = \"4-flag-taxonomy\"                            # (local)\n   99: CONVENTION = \"S84 rigor registry\"                     # (local)\n  100: L_MAX = \"N/A\"                                         # (local)\n  101: \n  102: PASS_RATIO_THRESHOLD = 1.0                            # (local)\n  103: INFO_RATIO_THRESHOLD = 0.80                           # (local)\n  104: MIN_ZFP_COUNT = 3                                     # (local)\n  105: \n  106: OUT_JSON = resolve_output(84, 's84_w4_falsifier_rigor_registry.json')\n  107: OUT_MD = PROJECT_ROOT / \"sessions\" / \"framework\" / \"falsifier-rigor-registry.md\"\n  108: VERDICT_TXT = resolve_output(84, 's84_gate_verdicts.txt')\n  109: \n  110: INPUT_FILES = [\n  111:     resolve_script(None, 'canonical_constants.py'),\n  112:     PROJECT_ROOT / \"sessions\" / \"framework\" / \"pre-registered-observations.md\",\n  113:     PROJECT_ROOT / \"sessions\" / \"permanent-results-registry.md\",\n  114:     resolve_output(82, 's82_gate_verdicts.txt'),"
+    },
+    {
+      "anchor_id": "prov_1736",
+      "anchor_type": "data_provenance",
+      "name": "w4_g51_lmax_convergence",
+      "script_path": "session-84/s84_w4_g51_lmax_convergence.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w4_g51_lmax_convergence.npz, session-84/s84_w4_g51_lmax_convergence.png",
+      "source_file": "computations/session-84/s84_w4_g51_lmax_convergence.py",
+      "source_context_30_lines": "   53: \n   54: PASS : |w_0^{Zubarev}(L=9) - w_0^{Zubarev}(L=5)| < 0.005\n   55:        AND converged to -0.918 +/- 0.02.\n   56: INFO : Converges but outside +/- 0.02 band OR converges outside 0.005\n   57:        but scheme-split shrinks monotonically.\n   58: FAIL : Split grows with L_max (structural) OR oscillates.\n   59: \n   60: Outputs:\n   61:   - computations/session-84/s84_w4_g51_lmax_convergence.npz\n   62:   - computations/session-84/s84_w4_g51_lmax_convergence.png\n   63:   - Verdict line appended to computations/session-84/s84_gate_verdicts.txt\n   64: \"\"\"\n   65: \n   66: import os\n   67: # CPU-thread cap before numpy import (safety; GPU is primary path here)\n   68: os.environ.setdefault('OMP_NUM_THREADS', '8')\n   69: os.environ.setdefault('MKL_NUM_THREADS', '8')"
+    },
+    {
+      "anchor_id": "prov_1737",
+      "anchor_type": "data_provenance",
+      "name": "w4_lb_cmbs4_joint_sigma_nt",
+      "script_path": "session-84/s84_w4_lb_cmbs4_joint_sigma_nt.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w4_lb_cmbs4_joint_sigma_nt.npz, session-84/s84_w4_lb_cmbs4_joint_sigma_nt.png",
+      "source_file": "computations/session-84/s84_w4_lb_cmbs4_joint_sigma_nt.py",
+      "source_context_30_lines": "   32:        positive; the joint-vs-alone improvement must be verified numerically.\n   33:        Shapes: dC/dn_T ∝ C_sig · ln(l/l_pivot), which is ZERO at l=l_pivot and\n   34:        grows in magnitude toward either end of the multipole range. Hence high-l\n   35:        CMB-S4 leverage on n_T only helps where C_sig is not subdominant to N_l;\n   36:        the joint improvement is tempered by C_sig drop-off at l>~300.\n   37: \n   38: Outputs\n   39: -------\n   40: - computations/session-84/s84_w4_lb_cmbs4_joint_sigma_nt.npz\n   41: - computations/session-84/s84_w4_lb_cmbs4_joint_sigma_nt.png (sigma(n_T) vs delens_S4 heatmap)\n   42: - Verdict line -> computations/session-84/s84_gate_verdicts.txt\n   43: \"\"\"\n   44: import sys\n   45: import os\n   46: import hashlib\n   47: import json\n   48: "
+    },
+    {
+      "anchor_id": "prov_1738",
+      "anchor_type": "data_provenance",
+      "name": "w4_nt_cmb_transfer",
+      "script_path": "session-84/s84_w4_nt_cmb_transfer.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w4_nt_cmb_transfer.npz, session-84/s84_w4_nt_cmb_transfer.png",
+      "source_file": "computations/session-84/s84_w4_nt_cmb_transfer.py",
+      "source_context_30_lines": "  247: ax.set_xscale('log')\n  248: ax.set_xlabel(\"k [Mpc^-1]\")\n  249: ax.set_ylabel(\"n_T(k)\")\n  250: ax.set_title(f\"S84 W4-39: n_T(k) across {decades_separation:.1f} decades -- verdict {verdict}\")\n  251: ax.legend(loc='center left', fontsize=9)\n  252: ax.grid(True, which='both', alpha=0.3)\n  253: plt.tight_layout()\n  254: \n  255: OUT_NPZ = SCRIPT_DIR / \"s84_w4_nt_cmb_transfer.npz\"\n  256: OUT_PNG = SCRIPT_DIR / \"s84_w4_nt_cmb_transfer.png\"\n  257: VERDICT_TXT = SCRIPT_DIR / \"s84_gate_verdicts.txt\"\n  258: \n  259: plt.savefig(OUT_PNG, dpi=140)\n  260: plt.close()\n  261: \n  262: np.savez(\n  263:     OUT_NPZ,"
+    },
+    {
+      "anchor_id": "prov_1739",
+      "anchor_type": "data_provenance",
+      "name": "w4_nt_fwhm_sensitivity",
+      "script_path": "session-84/s84_w4_nt_fwhm_sensitivity.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w4_nt_fwhm_sensitivity.npz, session-84/s84_w4_nt_fwhm_sensitivity.png",
+      "source_file": "computations/session-84/s84_w4_nt_fwhm_sensitivity.py",
+      "source_context_30_lines": "  142: N_SCAN = 10                                           # (local) log-spaced\n  143: STENCIL_REL_STEP = 0.05                               # (local) h/FWHM_0\n  144: N_STENCIL = 5                                         # (local) 5-point centered\n  145: \n  146: # Gate thresholds\n  147: PASS_THRESHOLD = 500.0                                # (local) per-FWHM-unit\n  148: INFO_THRESHOLD = 2000.0                               # (local) per-FWHM-unit\n  149: \n  150: OUT_NPZ = resolve_output(84, 's84_w4_nt_fwhm_sensitivity.npz')\n  151: OUT_PNG = resolve_output(84, 's84_w4_nt_fwhm_sensitivity.png')\n  152: VERDICT_TXT = resolve_output(84, 's84_gate_verdicts.txt')\n  153: \n  154: INPUT_FILES = [\n  155:     resolve_script(None, 'canonical_constants.py'),\n  156:     resolve_output(83, 's83_w3_g31_backreact_tauwindow.npz'),\n  157:     resolve_output(65, 's65_blue_tensor_tilt.npz'),\n  158: ]"
+    },
+    {
+      "anchor_id": "prov_1740",
+      "anchor_type": "data_provenance",
+      "name": "w4_p_obs_aligned_ceiling",
+      "script_path": "session-84/s84_w4_p_obs_aligned_ceiling.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w4_p_obs_aligned_ceiling.npz, session-84/s84_w4_p_obs_aligned_ceiling.png",
+      "source_file": "computations/session-84/s84_w4_p_obs_aligned_ceiling.py",
+      "source_context_30_lines": "  575:     # Build payload, compute SHAs\n  576:     payload = build_payload()\n  577:     sha_content = closure_sha256(payload)\n  578:     sha_audit = audit_sha256(payload)\n  579:     payload[\"sha\"] = sha_content\n  580: \n  581:     # Save JSON (frozen)\n  582:     out_dir = Path(__file__).resolve().parent  # (local)\n  583:     json_path = out_dir / \"s84_w4_p_obs_aligned_ceiling_chain.json\"  # (local)\n  584:     with open(json_path, \"w\") as f:\n  585:         json.dump(payload, f, indent=2, sort_keys=True)\n  586: \n  587:     # Save .npz (machine-readable manifest)\n  588:     npz_path = out_dir / \"s84_w4_p_obs_aligned_ceiling.npz\"  # (local)\n  589:     np.savez(\n  590:         npz_path,\n  591:         gate_id=np.array([\"S84-P-OBS-ALIGNED-CEILING\"]),"
+    }
+  ]
+}

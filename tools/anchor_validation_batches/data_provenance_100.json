@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 100,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_991",
+      "anchor_type": "data_provenance",
+      "name": "ns_acoustic",
+      "script_path": "session-63/s63_ns_acoustic.py",
+      "session": "s63",
+      "inputs": "",
+      "outputs": "session-63/s63_ns_acoustic.npz, session-63/s63_ns_acoustic.png",
+      "source_file": "computations/session-63/s63_ns_acoustic.py",
+      "source_context_30_lines": "   55:                     FAIL if n_s outside [0.93, 0.99]\n   56: \n   57: Inputs:\n   58:     computations/session-63/s63_sound_speed.npz\n   59:     computations/session-63/s63_mukhanov_sasaki.npz\n   60:     computations/session-62/s62_kz_ns.npz\n   61: \n   62: Outputs:\n   63:     computations/session-63/s63_ns_acoustic.npz\n   64:     computations/session-63/s63_ns_acoustic.png\n   65: \"\"\"\n   66: \n   67: import sys\n   68: import os\n   69: \n   70: SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))\n   71: PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)"
+    },
+    {
+      "anchor_id": "prov_992",
+      "anchor_type": "data_provenance",
+      "name": "oneloop_epsilon",
+      "script_path": "session-63/s63_oneloop_epsilon.py",
+      "session": "s63",
+      "inputs": "",
+      "outputs": "session-63/s63_oneloop_epsilon.npz, session-63/s63_oneloop_epsilon.png",
+      "source_file": "computations/session-63/s63_oneloop_epsilon.py",
+      "source_context_30_lines": "  527: print(f\"  One-loop slope ratio beta  = {beta:.6f}\")\n  528: print(f\"  One-loop curv ratio gamma  = {gamma:.6f}\")\n  529: print(f\"  One-loop value ratio alpha = {alpha:.6f}\")\n  530: \n  531: # =============================================================================\n  532: # Save output\n  533: # =============================================================================\n  534: \n  535: outpath = script_dir / 's63_oneloop_epsilon.npz'\n  536: np.savez(\n  537:     outpath,\n  538:     # Gate\n  539:     gate_name='ONELOOP-EPSILON-63',\n  540:     gate_verdict=verdict,\n  541:     gate_detail=detail,\n  542: \n  543:     # Profiles (near fold)"
+    },
+    {
+      "anchor_id": "prov_993",
+      "anchor_type": "data_provenance",
+      "name": "oneloop_ns",
+      "script_path": "session-63/s63_oneloop_ns.py",
+      "session": "s63",
+      "inputs": "",
+      "outputs": "session-63/s63_oneloop_ns.npz, session-63/s63_oneloop_ns.png",
+      "source_file": "computations/session-63/s63_oneloop_ns.py",
+      "source_context_30_lines": "   31:   - s62_kz_ns.npz: tree-level epsilon_H, n_s, Gilkey coefficients\n   32:   - s63_oneloop_epsilon.npz: full S_eff(tau) profile from W3-09\n   33: \n   34: Gate: ONELOOP-NS-63\n   35:   PASS if |delta n_s| < 0.0021  (0.5 sigma Planck)\n   36:   FAIL if |delta n_s| > 0.01\n   37: \n   38: Output:\n   39:   - s63_oneloop_ns.npz\n   40:   - s63_oneloop_ns.png\n   41: \n   42: Agent: spectral-geometer (Session 63, Wave 6)\n   43: \"\"\"\n   44: \n   45: import numpy as np\n   46: from pathlib import Path\n   47: import sys"
+    },
+    {
+      "anchor_id": "prov_994",
+      "anchor_type": "data_provenance",
+      "name": "phonon_dos",
+      "script_path": "session-63/s63_phonon_dos.py",
+      "session": "s63",
+      "inputs": "",
+      "outputs": "session-63/s63_phonon_dos.npz, session-63/s63_phonon_dos.png",
+      "source_file": "computations/session-63/s63_phonon_dos.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s63_phonon_dos.py — Phonon Density of States & Van Hove Classification\n    4: =======================================================================\n    5: \n    6: PHONON-DOS-63 (W5-01): Compute g(omega) for the full 45-mode coupled\n    7: dispersion across all 32 k-points. Identify all van Hove singularities\n    8: at hybridization gap edges. Classify by type (M0-M3).\n    9: \n   10: PHYSICS:\n   11:     The density of states g(omega) is the spectral measure:"
+    },
+    {
+      "anchor_id": "prov_995",
+      "anchor_type": "data_provenance",
+      "name": "proton_decay",
+      "script_path": "session-63/s63_proton_decay.py",
+      "session": "s63",
+      "inputs": "",
+      "outputs": "session-63/s63_proton_decay.npz, session-63/s63_proton_decay.png",
+      "source_file": "computations/session-63/s63_proton_decay.py",
+      "source_context_30_lines": "   75: \n   76: References:\n   77:   - s62_pati_salam_extension.npz: M_LQ, alpha_4, tau_p_years (tree-level)\n   78:   - s62_berry_projection.npz: n_nonzero_psi, N_modes, psi_hat_0_sq\n   79:   - Paper 24 (CCS 2013): Pati-Salam spectral triple\n   80:   - Paper 40 (CCS 2015): Grand Unification in Spectral Pati-Salam\n   81: \n   82: Output:\n   83:   - s63_proton_decay.npz\n   84:   - s63_proton_decay.png\n   85: \"\"\"\n   86: \n   87: import numpy as np\n   88: import matplotlib.pyplot as plt\n   89: import matplotlib\n   90: matplotlib.use('Agg')\n   91: import sys, os"
+    },
+    {
+      "anchor_id": "prov_996",
+      "anchor_type": "data_provenance",
+      "name": "ps_kasparov",
+      "script_path": "session-63/s63_ps_kasparov.py",
+      "session": "s63",
+      "inputs": "",
+      "outputs": "session-63/s63_ps_kasparov.npz, session-63/s63_ps_kasparov.png",
+      "source_file": "computations/session-63/s63_ps_kasparov.py",
+      "source_context_30_lines": "   65: \n   66: import matplotlib\n   67: matplotlib.use('Agg')\n   68: import matplotlib.pyplot as plt\n   69: \n   70: np.set_printoptions(precision=10, linewidth=140, suppress=True)\n   71: \n   72: OUTDIR = os.path.dirname(os.path.abspath(__file__))\n   73: OUTPUT_NPZ = os.path.join(OUTDIR, \"s63_ps_kasparov.npz\")\n   74: OUTPUT_PNG = os.path.join(OUTDIR, \"s63_ps_kasparov.png\")\n   75: \n   76: \n   77: # =============================================================================\n   78: # SECTION 1: PATI-SALAM GENERATOR CONSTRUCTION\n   79: # =============================================================================\n   80: \n   81: def build_PS_generators():"
+    },
+    {
+      "anchor_id": "prov_997",
+      "anchor_type": "data_provenance",
+      "name": "quantum_metric",
+      "script_path": "session-63/s63_quantum_metric.py",
+      "session": "s63",
+      "inputs": "",
+      "outputs": "session-63/s63_quantum_metric.npz, session-63/s63_quantum_metric.png",
+      "source_file": "computations/session-63/s63_quantum_metric.py",
+      "source_context_30_lines": " 1238: for n in range(N):\n 1239:     print(f\"    Band {n}: C ~ {berry_curvature_per_band[n]:.6f}\")\n 1240: \n 1241: # ===========================================================================\n 1242: # STEP 14: Save Data\n 1243: # ===========================================================================\n 1244: print(\"\\n--- Step 14: Save Data ---\")\n 1245: \n 1246: save_path = os.path.join(SCRIPT_DIR, 's63_quantum_metric.npz')\n 1247: np.savez(save_path,\n 1248:     # Gate\n 1249:     gate_name=gate_name,\n 1250:     gate_verdict=gate_verdict,\n 1251:     gate_detail=gate_detail,\n 1252:     # Key results\n 1253:     D_s_GGE=D_s_GGE,\n 1254:     D_s_PT_normalized=D_s_PT_final,"
+    },
+    {
+      "anchor_id": "prov_998",
+      "anchor_type": "data_provenance",
+      "name": "rg_n2",
+      "script_path": "session-63/s63_rg_n2.py",
+      "session": "s63",
+      "inputs": "",
+      "outputs": "session-63/s63_rg_n2.npz, session-63/s63_rg_n2.png",
+      "source_file": "computations/session-63/s63_rg_n2.py",
+      "source_context_30_lines": "  931: print(f\"\\n>>> VERDICT: {verdict}\")\n  932: print(f\">>> {detail}\")\n  933: \n  934: \n  935: # =====================================================================\n  936: #  13. SAVE DATA\n  937: # =====================================================================\n  938: \n  939: save_path = os.path.join(data_dir, 's63_rg_n2.npz')\n  940: np.savez(save_path,\n  941:     # Metadata\n  942:     N_pair=N_pair,\n  943:     N_modes=N_modes,\n  944:     E_J=E_J,\n  945: \n  946:     # 2-cell\n  947:     N_cells_2=N_cells_2,"
+    },
+    {
+      "anchor_id": "prov_999",
+      "anchor_type": "data_provenance",
+      "name": "richardson_gaudin_n1",
+      "script_path": "session-63/s63_richardson_gaudin_n1.py",
+      "session": "s63",
+      "inputs": "computations/session-60/s60_entangle_cg24.npz, computations/session-52/s52_hfb_full.npz, computations/session-60/s60_rg_...",
+      "outputs": "session-63/s63_richardson_gaudin_n1.npz",
+      "source_file": "computations/session-63/s63_richardson_gaudin_n1.py",
+      "source_context_30_lines": "  710: # =============================================================================\n  711: # Section 10: Save results\n  712: # =============================================================================\n  713: \n  714: print(\"\\n\" + \"=\"*70)\n  715: print(\"SAVING RESULTS\")\n  716: print(\"=\"*70)\n  717: \n  718: output_file = 'computations/session-63/s63_richardson_gaudin_n1.npz'\n  719: \n  720: results = {\n  721:     # Gate\n  722:     'gate_name': 'RICHARDSON-GAUDIN-N1-63',\n  723:     'gate_verdict': 'INFO',\n  724: \n  725:     # System parameters\n  726:     'N_cells': N_cells,"
+    },
+    {
+      "anchor_id": "prov_1000",
+      "anchor_type": "data_provenance",
+      "name": "running_ns",
+      "script_path": "session-63/s63_running_ns.py",
+      "session": "s63",
+      "inputs": "computations/session-42/s42_gradient_stiffness.npz, computations/session-63/s63_mukhanov_sasaki.npz",
+      "outputs": "session-63/s63_running_ns.npz, session-63/s63_running_ns.png",
+      "source_file": "computations/session-63/s63_running_ns.py",
+      "source_context_30_lines": "   23:     FAIL: |dn_s/dlnk| > 0.05\n   24: \n   25: Inputs:\n   26:     computations/session-42/s42_gradient_stiffness.npz  (S(tau) profile, 10 points)\n   27:     computations/session-62/s62_kz_ns.npz           (eps, eta at fold)\n   28:     computations/session-63/s63_mukhanov_sasaki.npz  (MS numerical P(k))\n   29: \n   30: Outputs:\n   31:     computations/session-63/s63_running_ns.npz\n   32:     computations/session-63/s63_running_ns.png\n   33: \"\"\"\n   34: \n   35: import sys\n   36: import os\n   37: sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))\n   38: \n   39: import numpy as np"
+    }
+  ]
+}

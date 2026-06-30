@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 70,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_691",
+      "anchor_type": "data_provenance",
+      "name": "leggett_fabric",
+      "script_path": "session-56/s56_leggett_fabric.py",
+      "session": "s56",
+      "inputs": "computations/session-54/s54_tb_hamiltonian.npz, computations/session-54/s54_scale_factor.npz",
+      "outputs": "session-56/s56_leggett_fabric.npz, session-56/s56_leggett_fabric.png",
+      "source_file": "computations/session-56/s56_leggett_fabric.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s56_leggett_fabric.py — Leggett Mode Dispersion on 32-Cell Graph\n    4: \n    5: LEGGETT-FABRIC-56: The Leggett mode is the massive Goldstone boson arising\n    6: from relative B2-B1 phase oscillation. On the fabric (Josephson junction\n    7: array on 32-cell CG graph), it becomes a propagating mode with dispersion:\n    8: \n    9:     omega_L^2(n) = omega_L0^2 + J_Leggett * lambda_n\n   10: \n   11: where:"
+    },
+    {
+      "anchor_id": "prov_692",
+      "anchor_type": "data_provenance",
+      "name": "mass_variation",
+      "script_path": "session-56/s56_mass_variation.py",
+      "session": "s56",
+      "inputs": "computations/session-54/s54_tb_hamiltonian.npz",
+      "outputs": "session-56/s56_mass_variation.npz, session-56/s56_mass_variation.png",
+      "source_file": "computations/session-56/s56_mass_variation.py",
+      "source_context_30_lines": "  210: \n  211: # Also find maximum absolute dM/dtau\n  212: max_dM_idx = np.argmax(np.abs(dM_total_dtau))\n  213: print(f\"Max |dM/dtau| = {np.abs(dM_total_dtau[max_dM_idx]):.6f} at tau = {tau_values[max_dM_idx]:.4f}\")\n  214: \n  215: # ============================================================\n  216: #  11. Save data\n  217: # ============================================================\n  218: np.savez('computations/session-56/s56_mass_variation.npz',\n  219:     tau_values=tau_values,\n  220:     eigenvalues=eigenvalues,\n  221:     dE_dtau=dE_dtau,\n  222:     dm2_dtau=dm2_dtau,\n  223:     M_total=M_total,\n  224:     W_total=W_total,\n  225:     dM_total_dtau=dM_total_dtau,\n  226:     dW_total_dtau=dW_total_dtau,"
+    },
+    {
+      "anchor_id": "prov_693",
+      "anchor_type": "data_provenance",
+      "name": "mu_josephson",
+      "script_path": "session-56/s56_mu_josephson.py",
+      "session": "s56",
+      "inputs": "computations/session-54/s54_tb_hamiltonian.npz",
+      "outputs": "session-56/s56_mu_josephson.npz, session-56/s56_mu_josephson.png",
+      "source_file": "computations/session-56/s56_mu_josephson.py",
+      "source_context_30_lines": "  276:     print(\"The S_f non-monotonicity channel is REOPENED.\")\n  277: else:\n  278:     print(f\"CONCLUSION: Intermediate regime. |mu_eff| = {max_mu_eff_gate:.6f} M_KK.\")\n  279:     print(\"PH symmetry is weakly broken. Gate is INFO — downstream test decisive.\")\n  280: \n  281: # ============================================================================\n  282: # 11. Save data\n  283: # ============================================================================\n  284: np.savez('computations/session-56/s56_mu_josephson.npz',\n  285:     tau_values=tau_values,\n  286:     mu_half=mu_half,\n  287:     mu_PH=mu_PH,\n  288:     mu_eff=mu_eff,\n  289:     mu_eff_over_BW=mu_eff_over_BW,\n  290:     A_PH=A_PH,\n  291:     gap_half=gap_half,\n  292:     BW=BW,"
+    },
+    {
+      "anchor_id": "prov_694",
+      "anchor_type": "data_provenance",
+      "name": "neff",
+      "script_path": "session-56/s56_neff.py",
+      "session": "s56",
+      "inputs": "computations/session-54/s54_tb_hamiltonian.npz, computations/session-54/s54_scale_factor.npz",
+      "outputs": "session-56/s56_neff.npz, session-56/s56_neff.png",
+      "source_file": "computations/session-56/s56_neff.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s56_neff.py — Effective Mode Count in Z_fabric vs Z_cell^N\n    4: ============================================================\n    5: \n    6: Session 56, W0-2 (NEFF-56)\n    7: \n    8: Physics:\n    9:   In a superfluid Josephson array on the 32-cell tessellation, phase coherence\n   10:   rigidifies the global phase degree of freedom.  The 31 Bogoliubov-Anderson (BA)\n   11:   phonon modes replace 31 independent single-cell phase modes.  This computation"
+    },
+    {
+      "anchor_id": "prov_695",
+      "anchor_type": "data_provenance",
+      "name": "npair3_ed",
+      "script_path": "session-56/s56_npair3_ed.py",
+      "session": "s56",
+      "inputs": "computations/session-54/s54_ed_sweep.npz",
+      "outputs": "session-56/s56_npair3_ed.npz, session-56/s56_npair3_ed.png",
+      "source_file": "computations/session-56/s56_npair3_ed.py",
+      "source_context_30_lines": "  586: \n  587: print(f\"VERDICT: {verdict}\")\n  588: print(f\"DETAIL:  {detail}\")\n  589: \n  590: \n  591: # ============================================================\n  592: # 13. Save all results\n  593: # ============================================================\n  594: np.savez('computations/session-56/s56_npair3_ed.npz',\n  595:     # Tau sweep results\n  596:     tau_vals=results['tau_vals'],\n  597:     r_full=results['r_full'],\n  598:     r_RG=results['r_RG'],\n  599:     eigenvalues_full=np.array(results['eigenvalues_full']),\n  600:     eigenvalues_RG=np.array(results['eigenvalues_RG']),\n  601:     Gamma_breaking=results['Gamma_breaking'],\n  602:     P_vac_DE=results['P_vac_DE'],"
+    },
+    {
+      "anchor_id": "prov_696",
+      "anchor_type": "data_provenance",
+      "name": "ns_fabric",
+      "script_path": "session-56/s56_ns_fabric.py",
+      "session": "s56",
+      "inputs": "computations/session-56/s56_ba_spectrum.npz, computations/session-56/s56_cba_sound.npz, computations/session-54/s54_scal...",
+      "outputs": "session-56/s56_ns_fabric.npz",
+      "source_file": "computations/session-56/s56_ns_fabric.py",
+      "source_context_30_lines": "    1: \"\"\"\n    2: s56_ns_fabric.py — NS-FABRIC-56: Spectral Index from Fabric Collective Modes\n    3: \n    4: Gate: NS-FABRIC-56 (INFO -> PASS if n_s in [0.93, 0.99])\n    5: \n    6: Physics:\n    7:     The single-cell n_s = -4.45 (S45 KZ-NS-KMAP-45) uses the Dirac spectrum\n    8:     with d=8 Weyl class. The fabric's Bogoliubov-Anderson (BA) collective modes\n    9:     have LINEAR dispersion (omega ~ c_BA * k) with effective spectral dimension d_s=2.\n   10: "
+    },
+    {
+      "anchor_id": "prov_697",
+      "anchor_type": "data_provenance",
+      "name": "omega_att_confirm",
+      "script_path": "session-56/s56_omega_att_confirm.py",
+      "session": "s56",
+      "inputs": "",
+      "outputs": "session-56/s56_omega_att_confirm.npz, session-56/s56_omega_att_confirm.png",
+      "source_file": "computations/session-56/s56_omega_att_confirm.py",
+      "source_context_30_lines": "  380: print(f\"       (TB bandwidth at fold = {bw_fold:.3f}, 9*bw = {9*bw_fold:.3f} vs omega_att = {omega_att:.3f})\")\n  381: print(f\"    VERDICT: COINCIDENCE (confirming S39)\")\n  382: \n  383: # ======================================================================\n  384: #  Step 9: Save results\n  385: # ======================================================================\n  386: print(\"\\n--- Step 9: Save results ---\")\n  387: \n  388: out_path = os.path.join(SCRIPT_DIR, 's56_omega_att_confirm.npz')\n  389: \n  390: np.savez(out_path,\n  391:     # Grid\n  392:     tau_values=tau_values,\n  393:     N_tau=N_tau,\n  394: \n  395:     # Eigenvalues\n  396:     E_B1=E_B1,"
+    },
+    {
+      "anchor_id": "prov_698",
+      "anchor_type": "data_provenance",
+      "name": "post_transit_coh",
+      "script_path": "session-56/s56_post_transit_coh.py",
+      "session": "s56",
+      "inputs": "computations/session-54/s54_tb_hamiltonian.npz, computations/session-54/s54_scale_factor.npz, computations/session-55/s5...",
+      "outputs": "session-56/s56_post_transit_coh.npz",
+      "source_file": "computations/session-56/s56_post_transit_coh.py",
+      "source_context_30_lines": "  344: print(f\"E_J_GGE at fold: {E_J_GGE[idx_fold]:.6f}\")\n  345: print(f\"Effacement ratio E_J/dS: {E_J_GGE[idx_fold]/dS_fold:.2e}\")\n  346: print(\"-> Pair coherence is MICROSCOPIC compared to spectral geometry\")\n  347: print(\"-> Consistent with EIH effacement principle\")\n  348: \n  349: # ============================================================\n  350: # 11. Save results\n  351: # ============================================================\n  352: np.savez('computations/session-56/s56_post_transit_coh.npz',\n  353:     # Grid data\n  354:     tau_values=tau_tb,\n  355:     J_C2_tau=J_C2_tau,\n  356:     H_tau=H_all,\n  357: \n  358:     # Equilibrium BCS\n  359:     F_anom_eq=F_anom_eq,\n  360:     E_J_eq=E_J_eq,"
+    },
+    {
+      "anchor_id": "prov_699",
+      "anchor_type": "data_provenance",
+      "name": "pvac_fabric",
+      "script_path": "session-56/s56_pvac_fabric.py",
+      "session": "s56",
+      "inputs": "computations/session-54/s54_tb_hamiltonian.npz, computations/session-54/s54_scale_factor.npz, computations/session-55/s5...",
+      "outputs": "session-56/s56_pvac_fabric.npz, session-56/s56_pvac_fabric.png",
+      "source_file": "computations/session-56/s56_pvac_fabric.py",
+      "source_context_30_lines": "  468: GATE VERDICT: FABRIC-PVAC-56 = INFO\n  469: |P_vac_fabric/cell| = |P_vac_single| to 0.1% (delta_m correction)\n  470: Josephson self-tuning CONFIRMED by equilibrium theorem + W1-2 integrability\n  471: \"\"\")\n  472: \n  473: # ============================================================\n  474: # 13. Save data\n  475: # ============================================================\n  476: np.savez('computations/session-56/s56_pvac_fabric.npz',\n  477:     # Core results\n  478:     tau_values=tau_values,\n  479:     P_vac_single=P_vac_single,\n  480:     P_vac_fabric_physical=P_vac_physical,\n  481:     P_vac_fabric_per_cell=P_vac_physical_per_cell,\n  482:     P_vac_naive=P_vac_caseC,\n  483:     P_vac_caseA=P_vac_caseA,\n  484:     P_vac_caseB=P_vac_caseB,"
+    },
+    {
+      "anchor_id": "prov_700",
+      "anchor_type": "data_provenance",
+      "name": "rotor_mf",
+      "script_path": "session-56/s56_rotor_mf.py",
+      "session": "s56",
+      "inputs": "computations/session-56/s56_ba_spectrum.npz, computations/session-54/s54_tb_hamiltonian.npz, computations/session-54/s54...",
+      "outputs": "session-56/s56_rotor_mf.npz, session-56/s56_rotor_mf.png",
+      "source_file": "computations/session-56/s56_rotor_mf.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s56_rotor_mf.py — Quantum Rotor Mean-Field Free Energy on 32-Cell Graph\n    4: \n    5: ROTOR-MF-56 (FABRIC-FREE-ENERGY-56 gate):\n    6: Compute F_fabric(tau) = F_cells + F_Josephson + F_BA on the 32-cell CG graph\n    7: using self-consistent XY mean-field theory for the Josephson phase order\n    8: parameter, combined with the Bogoliubov-Anderson phonon and BCS quasiparticle\n    9: contributions.\n   10: \n   11: Gate: FABRIC-FREE-ENERGY-56"
+    }
+  ]
+}

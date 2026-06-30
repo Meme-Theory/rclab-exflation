@@ -1,0 +1,79 @@
+{
+  "gate_id": "S85-W2-PRE-CC-1-KO6-ON-ETA",
+  "verdict": "PASS",
+  "value_4tuple": {
+    "value": 3,
+    "scheme": "ko6-eta-constraint-verification",
+    "convention": "APS+CCM-2007",
+    "L_max": "N/A"
+  },
+  "identities": {
+    "eps_expected": 1,
+    "eps_value": 1,
+    "eps_match": true,
+    "eps_prime_expected": 1,
+    "eps_prime_value": 1,
+    "eps_prime_match": true,
+    "eps_double_prime_expected": -1,
+    "eps_double_prime_value": -1,
+    "eps_double_prime_match": true,
+    "J_squared_is_identity_rep_norm": 0.0,
+    "gamma_commutes_rep_norm": 0.0,
+    "D_anticommutes_rep_norm": 0.0
+  },
+  "eta_derivation": {
+    "chain": [
+      {
+        "step": 1,
+        "label": "KO-6 algebraic identities (from verified toy model)",
+        "identities": {
+          "J^2 = +1": true,
+          "J gamma = +gamma J": true,
+          "J D = -D J": true
+        }
+      },
+      {
+        "step": 2,
+        "label": "D self-adjoint (intrinsic axiom of spectral triple)",
+        "eq": "D^* = D"
+      },
+      {
+        "step": 3,
+        "label": "Spectrum pairing (lambda, -lambda) via J",
+        "eq": "D psi = lambda psi => D (J psi) = JD^{-1}(J psi) ... use JD = -DJ => D(J psi) = -lambda (J psi)"
+      },
+      {
+        "step": 4,
+        "label": "APS eta-tilde over symmetric spectrum",
+        "eq": "eta-tilde(D, 0) = sum_{lambda != 0} sign(lambda) |lambda|^{-s}|_{s=0} = 0"
+      },
+      {
+        "step": 5,
+        "label": "APS eta including kernel correction",
+        "eq": "eta(D, 0) = (eta-tilde(D, 0) + dim ker D) / 2 = dim(ker D) / 2"
+      },
+      {
+        "step": 6,
+        "label": "Integer kernel dimension",
+        "eq": "dim ker D in Z_{>=0}  =>  eta(D, 0) = k/2 for some k in Z_{>=0}"
+      },
+      {
+        "step": 7,
+        "label": "Modulo Z",
+        "eq": "eta(D, 0) mod Z in {0, 1/2}"
+      }
+    ],
+    "admissible_eta_mod_Z_values": [
+      0.0,
+      0.5
+    ],
+    "constraint_statement": "eta(D, 0) mod Z in {0, 1/2} for any KO-6 spectral triple with self-adjoint D"
+  },
+  "constraint_cardinality": 3,
+  "closure_sha256": "bf1fbd11e4df5ff11b476c72abee16b397f9413a2cf7673ec4f12ca224c0bbc2",
+  "content_sha256": "e19cff665581a55b4387516c3ecd626cffc8289cf376d3ef529a8d8fbd5d2a00",
+  "input_shas": {
+    "computations/_shared/canonical_constants.py": "ece844a4c0c57a3b26660c1bdc1a2de76041138b7ace089da38d16d369e3931b",
+    "researchers/Connes/10_2007_Chamseddine_Connes_Marcolli_Gravity_standard_model.md": "073a8dfe64ec56370258518d59a002deb6e6220e034365e487df2aedab9cb6e3"
+  }
+}

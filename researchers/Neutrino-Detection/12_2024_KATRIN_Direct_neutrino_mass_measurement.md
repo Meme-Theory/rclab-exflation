@@ -274,7 +274,7 @@ KATRIN's upper bound $m_\nu < 0.45\;\text{eV}$ directly constrains the smallest 
 
 $$\lambda_1(s_0) \cdot M_{scale} < 0.45\;\text{eV}$$
 
-Combined with the requirement that the same $D_K(s_0)$ produces the correct charged lepton and quark masses (at $\sim$MeV-GeV scale), this constrains the spectrum of $D_K(s_0)$ to span at least 10 orders of magnitude -- from the neutrino mass scale ($\sim 0.05$ eV) to the top quark mass ($\sim 170$ GeV). The Tier 1 Dirac spectrum computation (Session 12) found eigenvalue ratios spanning 3-4 orders of magnitude at $s \approx 1$, suggesting that the full physical spectrum may require higher $(p,q)$ irreducible representations than currently computed (max $p+q = 6$).
+Combined with the requirement that the same $D_K(s_0)$ produces the correct charged lepton and quark masses (at $\sim$MeV-GeV scale), this constrains the spectrum of $D_K(s_0)$ to span at least 10 orders of magnitude -- from the neutrino mass scale ($\sim 0.05$ eV) to the top quark mass ($\sim 170$ GeV). The Level 1 Dirac spectrum computation (Session 12) found eigenvalue ratios spanning 3-4 orders of magnitude at $s \approx 1$, suggesting that the full physical spectrum may require higher $(p,q)$ irreducible representations than currently computed (max $p+q = 6$).
 
 ### No Free Yukawa Couplings
 
@@ -284,7 +284,7 @@ Session 12 established that the eigenvalues of $D_K(s)$ are not uniformly spaced
 
 ### Normal vs Inverted Hierarchy as a Prediction
 
-The neutrino mass ordering (normal: $m_1 < m_2 < m_3$, or inverted: $m_3 < m_1 < m_2$) is a prediction of the framework, not an input. The ordering of the lightest eigenvalues of $D_K(s_0)$ determines whether the electron-neutrino-dominated mass eigenstate ($\nu_1$) is lighter or heavier than the muon- and tau-dominated eigenstates ($\nu_2, \nu_3$). Current Tier 1 computations have not yet resolved this -- the lightest eigenvalues at $p + q \leq 6$ are in the $(0,0)$, $(1,0)$, and $(0,1)$ sectors, but the assignment to physical neutrino species requires the full spinor transport calculation (Baptista Paper 14, Section 3.2), which is a Tier 2 deliverable.
+The neutrino mass ordering (normal: $m_1 < m_2 < m_3$, or inverted: $m_3 < m_1 < m_2$) is a prediction of the framework, not an input. The ordering of the lightest eigenvalues of $D_K(s_0)$ determines whether the electron-neutrino-dominated mass eigenstate ($\nu_1$) is lighter or heavier than the muon- and tau-dominated eigenstates ($\nu_2, \nu_3$). Current Level 1 computations have not yet resolved this -- the lightest eigenvalues at $p + q \leq 6$ are in the $(0,0)$, $(1,0)$, and $(0,1)$ sectors, but the assignment to physical neutrino species requires the full spinor transport calculation (Baptista Paper 14, Section 3.2), which is a Level 2 deliverable.
 
 The cosmological constraint $\sum m_i < 0.12$ eV is beginning to disfavor the inverted ordering independently. If the framework predicts normal ordering, this is a consistency check; if it predicts inverted ordering, the framework faces increasing tension with cosmological data.
 
@@ -294,7 +294,7 @@ The Planck CMB constraint $\sum m_i < 0.12$ eV is an even tighter bound on the D
 
 $$\sum_{i=1}^3 \lambda_i(s_0) \cdot M_{scale} < 0.12\;\text{eV}$$
 
-This constrains the sum of the three lightest positive eigenvalues of $D_K(s_0)$. However, this bound assumes $\Lambda$CDM cosmology. In the phonon-exflation framework, the expansion history differs from $\Lambda$CDM (expansion is driven by internal compactification, not a cosmological constant), and the relationship between $\sum m_i$ and the CMB power spectrum may be modified. Whether this relaxes or tightens the bound is an open question that depends on the detailed expansion history -- a Tier 3 computation.
+This constrains the sum of the three lightest positive eigenvalues of $D_K(s_0)$. However, this bound assumes $\Lambda$CDM cosmology. In the phonon-exflation framework, the expansion history differs from $\Lambda$CDM (expansion is driven by internal compactification, not a cosmological constant), and the relationship between $\sum m_i$ and the CMB power spectrum may be modified. Whether this relaxes or tightens the bound is an open question that depends on the detailed expansion history -- a Level 3 computation.
 
 ### The NCG Spectral Triple and Neutrino Counting
 
@@ -304,4 +304,4 @@ If the framework predicts additional KK excitations of the neutrino above the ke
 
 ### KATRIN as a Constraint on the Stabilization Point
 
-Ultimately, KATRIN's precision measurement constrains the stabilization point $s_0$ of the Jensen deformation. If the effective potential $V_{eff}(s)$ stabilizes at a specific $s_0$, then $D_K(s_0)$ has a definite spectrum, and the lightest eigenvalues must satisfy KATRIN's bound. The Session 14 Coleman-Weinberg analysis found $s_0 \sim 0.3-0.6$, and the Session 17a gauge coupling derivation found $s_0 = 0.2994$ from $\sin^2\theta_W$. At these values, the Tier 1 spectrum shows eigenvalues that span the right order of magnitude for the charged fermion masses. Whether the lightest eigenvalues at $s_0 \approx 0.3$ are small enough to match the neutrino mass scale ($\lesssim 0.45$ eV when scaled to physical units) is one of the decisive tests of the framework.
+Ultimately, KATRIN's precision measurement constrains the stabilization point $s_0$ of the Jensen deformation. If the effective potential $V_{eff}(s)$ stabilizes at a specific $s_0$, then $D_K(s_0)$ has a definite spectrum, and the lightest eigenvalues must satisfy KATRIN's bound. The Session 14 Coleman-Weinberg analysis found $s_0 \sim 0.3-0.6$, and the Session 17a gauge coupling derivation found $s_0 = 0.2994$ from $\sin^2\theta_W$. At these values, the Level 1 spectrum shows eigenvalues that span the right order of magnitude for the charged fermion masses. Whether the lightest eigenvalues at $s_0 \approx 0.3$ are small enough to match the neutrino mass scale ($\lesssim 0.45$ eV when scaled to physical units) is one of the decisive tests of the framework.

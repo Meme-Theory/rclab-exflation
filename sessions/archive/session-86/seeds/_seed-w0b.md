@@ -1,0 +1,15 @@
+# Seed file — sessions/archive/session-86/session-86-w0b-workingpaper.md
+
+**Date**: 2026-04-26
+**Investigator**: phonon-first-cosmologist
+**Source WP**: `sessions/archive/session-86/session-86-w0b-workingpaper.md` (374 lines)
+
+## No candidates
+
+Wave W0b is entirely META/infrastructure/methodology work — five gates that pin audit machinery, registry methodology entries, and dual-SHA hook discipline. The wave self-classifies as NON-PHONONIC METHODOLOGY-class in §W0b synthesis: "they pin the audit-and-registry infrastructure under which subsequent S86 physics-gates execute. They do NOT derive substrate observables, do not invoke D_K eigenvalues, do not produce spectral-action moments." There is no physics computation in this wave for cross-pillar pattern detection to engage with — no eigenvalue spectra to compare across domains, no dispersion relations to translate, no Bogoliubov-class structure, no symmetry-breaking pattern that recurs in adjacent disciplines.
+
+The five verdicts (W0b-1 PASS=0 canonical_phrasing_audit, W0b-2 PASS=24 §VII.R single-name conflation, W0b-3 PASS=26 §VII.S three-layer adjudication, W0b-4 INFO=58 dual-SHA regen, W0b-5 PASS=0 sig_5 allowlist infrastructure) all closed correctly with substitution chains traceable to filesystem state. The W0b-4 INFO verdict honored filesystem reality (65 missing companions vs plan's 24) and fired the pre-registered INFO clause exactly as written — the plan-author count error became a transparent constraint-map update, not a workshop subject. The orchestrator's honesty note about W0a fabrication is a retrospective contrast, not an open W0b issue.
+
+The three explicit carry-forwards — `S87-SCHEMA-1.5-CONTENT-SHA-BACKFILL` (7 producing-script reruns to compute content_sha256), `S87-PRU-CARDINALITY-AUDIT-LANDING` (script referenced by `v3-closure-audit.sh` lines 82-106 but absent from filesystem), and `S87-CANONICAL-PROVENANCE-BACKFILL` (c_fabric, M_KK, K_crit, K_FIRAS, K_R5 lack PROVENANCE entries) — are mechanical S87 carry-forward computations, not S86 workshops. They are `update_constant()` calls and script reruns, deterministic and single-agent. The §VII.R / §VII.S methodology entries are LANDED with canonical instances scheduled in W8 P6/P7; reviewing them again here would be circular. The §VII letter-contention observation (plan said "likely §VII.M", actual was R/S because Ω, P, Q occupied) is plan-authoring hygiene that costs minutes-scale to verify at plan-freeze, not workshop material. The 3-pattern allowlist {REFRAME, logspace_fix, regex_fix} for sig_5 has zero false positives on the synthetic test; adversarial expansion against historical S82-S85 verdict files could surface new patterns but is hygiene/discovery, not adjudication.
+
+No structural questions remain unresolved. No competing claims need adjudication. No cross-pillar isomorphism is hiding here — the substance is filesystem-level audit machinery. A workshop would manufacture work that the wave's own pre-registration already closed.

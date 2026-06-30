@@ -1,0 +1,132 @@
+T3-S25-CONNES-WORKSHOP: INFO -- value=7.814786e+03 scheme=truncated_eta_zeta_reg_signed_power_sum convention=BDI_lambda_minus_lambda_pairing_KOdim6 L_max=11424_eigenvalues_s19a_sweep_21tau_grid sha256=f21c36e6a68c818ed5f04cda3332fd4e3564bcb04a2f67ca49f9e52b3f879059
+
+T3 re-run of s25_connes_workshop.py (computations/session-25/s25_connes_workshop.py, 453 lines, 17,293 bytes).
+Classification: diagnostic harvest across 7 NCG items (C1-C7). No pre-registered PASS/FAIL threshold exists in the original script, hence INFO.
+
+==============================================================================
+INPUT PINS (SHA-256, 64-char hex)
+==============================================================================
+s19a_sweep_data.npz:        ad2a0da375f516aa24430db6630c733300428fa9682b0986a70b9b766aec1f5a
+s23a_kosmann_singlet.npz:   ef547e583cf73e91b3f0d26e1ba14ee74c28d3718ee08dde12e0f17ad2775214
+r20a_riemann_tensor.npz:    fc256a9b4791b1d6e1416f93cabbb0e28fe0c858bf2aeb04414b7767a7351fe9
+
+CLOSURE SHA-256 (JSON-sorted compact of input_pins map):
+f21c36e6a68c818ed5f04cda3332fd4e3564bcb04a2f67ca49f9e52b3f879059
+
+==============================================================================
+4-TUPLE
+==============================================================================
+value      = 7.814786e+03
+             (max |eta_N(s)| over sampled s in {0.5, 1, 2, 4} and
+              tau_indices {0, 4, 8, 12, 16, 20})
+scheme     = truncated_eta_zeta_reg_signed_power_sum
+convention = BDI_lambda_minus_lambda_pairing_KOdim6
+L_max      = 11424_eigenvalues_s19a_sweep_21tau_grid
+
+==============================================================================
+STRUCTURAL HARVEST (T3 reproduction)
+==============================================================================
+C1 Dixmier trace ratio (Connes Q-4):
+  Tr_omega(|D_K(tau)|^{-8}) normalized to tau=0: MONOTONE DECREASING.
+  Interpretation: NCG "volume" in the -8 moment shrinks under Jensen
+  stiffening (consistent with R_scalar growing 2.000 -> 27.320).
+
+C2 Random NCG Jacobian (Connes S-4 / P5):
+  Singlet log|J|: non-monotone with interior peak observed in tau sweep
+  (see stdout log).
+  Full-spectrum log|J|: direction recorded in JSON_SUMMARY; no interior
+  peak required for entropic stabilization test here (diagnostic only).
+
+C3 Spectral flow (Connes S-1, Goal 4):
+  min|lambda|(tau=0) = 0.8333; sqrt(R/4)(tau=0) = 0.7071.
+  Lichnerowicz bound satisfied across the entire tau grid (per stdout).
+  n_sign_changes = 0 across 11424 eigenvalues x 21 tau values.
+  Caveat: s19a archive appears to store |lambda| (non-negative floats)
+  rather than signed D_K eigenvalues, so the sign-change count is
+  structurally guaranteed zero by the archive format, not a fresh test
+  of the BDI theorem.
+
+C4 Truncated eta invariant (Connes S-5):
+  max|eta_N(s)| over the sampled s,tau grid = 7.814786e+03.
+  NOT machine-zero as originally reported in s25_connes_workshop.py.
+  The original "max|eta| at all s, all tau: MACHINE ZERO" printout was
+  SPURIOUS: because the archive stores |lambda| (per C7 below), the
+  signs array is identically +1 and the sum degenerates to
+  sum_n |lambda_n|^{-s} (the spectral zeta, not the eta).
+  BDI-predicted eta = 0 is NOT tested by this archive; the claim
+  remains theoretically valid but requires signed eigenvalue data.
+
+C5 4D-integrated spectral action g(Y) (Connes S-2):
+  Lambda = 1: V_f and V_g differ by ratio 1.95 at tau=0, max deviation
+  of normalized curves grows with Lambda.
+  Lambda = 10: V_f MONO (increasing), V_g MONO (decreasing); V_g(0)/V_f(0) = 41.67.
+  Conclusion: Dimensional reduction from f(x)=x e^{-x} to
+  g(Y) = e^{-Y}(2+Y) qualitatively changes the tau-dependence at
+  large Lambda. Matches original diagnostic.
+
+C6 Seeley-DeWitt coefficients (Connes Q-1):
+  a_2 = (20/3) R:    range [13.33, 182.13] across tau in [0, 2].
+  a_4 = (1/90)(125 R^2 - 8|Ric|^2 + 2 K):  range [5.5, 1020.1].
+  da_2/dtau > 0 and da_4/dtau > 0 for ALL tau in [0, 2].
+  Conclusion: NO opposite-sign configuration, hence NO Starobinsky-type
+  minimum from a_2/a_4 competition (structural finding, unchanged).
+  R^2 dominance in a_4: 99.40% at tau=0; 98.75% at tau=1; 98.43% at tau=2.
+  Estimated |a_6|/|a_4| ~ 2 R grows from 4.0 (tau=0) to 54.6 (tau=2).
+  Conclusion: Spectral action asymptotic expansion DIVERGES factorially;
+  not convergent at any tau. Must be used as an asymptotic series only.
+
+C7 Index pairing (Connes S-3):
+  28 distinct (p,q) sectors identified.
+  Printed "idx = #(lambda>0) - #(lambda<0)" per sector at tau in {0, 10, 20}
+  returns idx = N_evals for every sector (e.g., (0,0): 16/48/96 ...).
+  This equals "all eigenvalues positive", which is a DATA-FORMAT artifact
+  of the s19a archive storing |lambda| rather than signed lambda.
+  The BDI lambda <-> -lambda symmetry predicts idx = 0 per sector
+  for the true signed D_K. Script's printed "TRIVIAL/NON-TRIVIAL"
+  classifier uses raw archive values and therefore reports NON-TRIVIAL;
+  this does NOT contradict the BDI theorem, it reveals an archive
+  schema discrepancy with the original computation's stated intent.
+  non_zero_index_count (raw) = 588.
+
+==============================================================================
+DERIVED QUANTITIES (JSON payload, reproducible from T3 script)
+==============================================================================
+dixmier_monotone_increasing: false
+dixmier_monotone_decreasing: true
+n_sign_changes_in_spectral_flow: 0
+n_sectors: 28
+non_zero_index_count: 588  (archive-format artifact; see C7)
+min_abs_lambda_at_tau0: 0.8333333333333323
+max_abs_lambda_over_tau_floor: 3.2064187295483997  (i.e., max over tau of min|lambda|)
+lich_bound_tau0: 0.7071067811865475
+
+==============================================================================
+RECONCILIATION WITH ORIGINAL S25 RECORD
+==============================================================================
+Unchanged structural conclusions (machine-reproducible from archive):
+  * a_2 and a_4 Seeley-DeWitt same-sign => no Starobinsky minimum
+  * R^2 dominance >= 98% in a_4 at all tau
+  * Asymptotic expansion factorially divergent
+  * Lichnerowicz bound numerically satisfied on stored |lambda|
+  * 588 "non-zero" index readings are an archive-format property, not
+    a test of the BDI theorem
+  * Dixmier trace ratio monotone DECREASING under Jensen
+
+Newly flagged (T3):
+  * max|eta_N(s)| = 7.81e+03, NOT machine-zero as printed in original.
+    The original's "eta = 0 identically" claim is theoretically correct
+    (BDI) but was NOT validated by the stored archive — signs array
+    applied to |lambda| data trivially degenerates to the zeta sum.
+  * C7 "NON-TRIVIAL" classification is likewise an archive artifact;
+    the signed D_K is still predicted to have idx = 0 by BDI.
+
+==============================================================================
+STATUS
+==============================================================================
+Gate: T3-S25-CONNES-WORKSHOP
+Verdict: INFO (diagnostic harvest; no pre-registered PASS/FAIL threshold)
+Reproducibility: deterministic against the three SHA-256-pinned archives.
+Limitations: BDI claims (C4 eta, C7 index) cannot be empirically tested
+             against the s19a archive as it stores |lambda|; a signed
+             eigenvalue archive would be required to complete the BDI
+             verification.

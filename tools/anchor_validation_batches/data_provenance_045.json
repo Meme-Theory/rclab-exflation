@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 45,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_441",
+      "anchor_type": "data_provenance",
+      "name": "gcm_zero_point",
+      "script_path": "session-46/s46_gcm_zero_point.py",
+      "session": "s46",
+      "inputs": "",
+      "outputs": "session-46/s46_gcm_zero_point.npz, session-46/s46_gcm_zero_point.png",
+      "source_file": "computations/session-46/s46_gcm_zero_point.py",
+      "source_context_30_lines": "  492:     'v_B3_vs_tau': np.array([all_bcs[t]['v_k'][5] for t in tau_gcm]),\n  493:     # Gate\n  494:     'gate_name': np.array(['GCM-ZERO-POINT-46']),\n  495:     'gate_verdict': np.array(['INFO']),\n  496:     'gate_detail': np.array([f'E_ZPE={E_ZPE_5:+.6f}, delta_tau*={delta_tau_5:+.6f}, '\n  497:                              f'GOA R^2={R2:.4f}, ZPE/q-barrier={zpe_qbarrier:.4f}']),\n  498: }\n  499: \n  500: out_path = os.path.join(SCRIPT_DIR, \"s46_gcm_zero_point.npz\")\n  501: np.savez_compressed(out_path, **output)\n  502: print(f\"  Saved: {out_path}\")\n  503: \n  504: # =====================================================================\n  505: # 13. PLOTS\n  506: # =====================================================================\n  507: \n  508: print(f\"\\nGenerating plots...\")"
+    },
+    {
+      "anchor_id": "prov_442",
+      "anchor_type": "data_provenance",
+      "name": "geometric_a2",
+      "script_path": "session-46/s46_geometric_a2.py",
+      "session": "s46",
+      "inputs": "",
+      "outputs": "session-46/s46_geometric_a2.npz, session-46/s46_geometric_a2.png",
+      "source_file": "computations/session-46/s46_geometric_a2.py",
+      "source_context_30_lines": "   89:     R = np.trace(Ric)\n   90:     return R, Ric, R_abcd\n   91: \n   92: \n   93: # ==============================================================================\n   94: #  SECTION 2: Geometric Seeley-DeWitt Coefficient a_2(D^2)\n   95: # ==============================================================================\n   96: \n   97: def geometric_a2_SD(tau):\n   98:     \"\"\"\n   99:     The Seeley-DeWitt coefficient a_2 for D^2 on 8-dimensional spin manifold.\n  100: \n  101:     For D^2 = nabla*nabla + R/4 (Lichnerowicz), the Gilkey formula gives:\n  102: \n  103:       a_2^{SD} = (4pi)^{-d/2} * int_M tr_S(R/6 * I_S + E) dvol          (1)\n  104: \n  105:     where E = R/4 * I_S, dim_S = 2^{d/2} = 16, d = 8."
+    },
+    {
+      "anchor_id": "prov_443",
+      "anchor_type": "data_provenance",
+      "name": "gge_friction",
+      "script_path": "session-46/s46_gge_friction.py",
+      "session": "s46",
+      "inputs": "computations/session-45/s45_gge_beating.npz, computations/session-44/s44_multi_t_jacobson.npz, computations/session-44/s...",
+      "outputs": "session-46/s46_gge_friction.npz, session-46/s46_gge_friction.png",
+      "source_file": "computations/session-46/s46_gge_friction.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s46_gge_friction.py — GGE Caldeira-Leggett Friction on Tau Modulus\n    4: ===================================================================\n    5: Gate: GGE-FRICTION-46 (diagnostic)\n    6: Agent: hawking-theorist\n    7: \n    8: Physics: The 8 Richardson-Gaudin modes act as a finite heat bath\n    9: providing Caldeira-Leggett dissipative friction on the tau modulus.\n   10: The bath spectral density J(omega) determines the friction coefficient.\n   11: The cranking inertia (ATDHFB) gives the many-body mass enhancement."
+    },
+    {
+      "anchor_id": "prov_444",
+      "anchor_type": "data_provenance",
+      "name": "gpv_fragmentation",
+      "script_path": "session-46/s46_gpv_fragmentation.py",
+      "session": "s46",
+      "inputs": "s43_flat_band.npz, s42_hauser_feshbach.npz, s46_rg_pair_transfer.npz",
+      "outputs": "session-46/s46_gpv_fragmentation.npz, session-46/s46_gpv_fragmentation.png",
+      "source_file": "computations/session-46/s46_gpv_fragmentation.py",
+      "source_context_30_lines": "  999: print(f\"  5. 'Hose count' alpha exponent confirmed STRUCTURALLY INVALID\")\n 1000: print(f\"     (from fragmentation perspective as well as pair-transfer).\")\n 1001: print()\n 1002: \n 1003: # ==============================================================================\n 1004: # SECTION 13: Save data\n 1005: # ==============================================================================\n 1006: \n 1007: print(\"Saving data to s46_gpv_fragmentation.npz...\")\n 1008: \n 1009: np.savez('s46_gpv_fragmentation.npz',\n 1010:     # Gate\n 1011:     gate_verdict=np.array(['INFO']),\n 1012:     gate_detail=np.array([\n 1013:         f'GPV fragmentation: GPV_f={GPV_fraction:.4f}, n_frag={n_frag_10pct}, '\n 1014:         f'alpha_GPV={alpha_frag:.3f}+/-{alpha_frag_err:.3f} (R2={R2_frag:.3f}). '\n 1015:         f'B2 GPV_f={block_frag[\"B2\"][\"GPV_fraction\"]:.4f}. '"
+    },
+    {
+      "anchor_id": "prov_445",
+      "anchor_type": "data_provenance",
+      "name": "gsl_qtheory",
+      "script_path": "session-46/s46_gsl_qtheory.py",
+      "session": "s46",
+      "inputs": "",
+      "outputs": "session-46/s46_gsl_qtheory.npz, session-46/s46_gsl_qtheory.png",
+      "source_file": "computations/session-46/s46_gsl_qtheory.py",
+      "source_context_30_lines": "   47: \n   48: Gate: GSL-QTHEORY-46\n   49:   Pre-registered criterion:\n   50:     PASS: S_gen(tau) monotonically non-decreasing through transit including tau*\n   51:           AND S_gen(tau*) > S_gen(tau_init) (entropy has increased at CC crossing)\n   52:     FAIL: S_gen decreases at tau* or has sustained violations (3+ consecutive)\n   53: \n   54: Input: s45_qtheory_bcs.npz, s42_gge_energy.npz, canonical_constants.py\n   55: Output: s46_gsl_qtheory.{npz,png}\n   56: \n   57: Author: hawking-theorist (Session 46)\n   58: References:\n   59:   - Bekenstein 1973 (Paper 11): S_BH = A/(4l_P^2), Bekenstein bound\n   60:   - Parker 1969 (Paper 15): quantized fields and particle creation\n   61:   - Jacobson 1995 (Paper 17): Einstein equation as thermodynamic identity\n   62:   - CCS 2019 (Paper 20): entropy and spectral action\n   63:   - GSL-40 (s40_gsl_transit): 3-term GSL, PASS structural, v_min = 0"
+    },
+    {
+      "anchor_id": "prov_446",
+      "anchor_type": "data_provenance",
+      "name": "hose_count",
+      "script_path": "session-46/s46_hose_count.py",
+      "session": "s46",
+      "inputs": "s42_hauser_feshbach.npz, s38_cc_instanton.npz",
+      "outputs": "session-46/s46_hose_count.npz, session-46/s46_hose_count.png",
+      "source_file": "computations/session-46/s46_hose_count.py",
+      "source_context_30_lines": "  909: ns_total_err = np.sqrt(alpha_best_err**2 + total_sys**2)\n  910: print(f\"  Final: n_s = {ns_pred:.3f} +/- {ns_total_err:.3f} (total)\")\n  911: print()\n  912: \n  913: # ==============================================================================\n  914: # SECTION 13: Save results\n  915: # ==============================================================================\n  916: \n  917: outfile = 's46_hose_count.npz'\n  918: np.savez(outfile,\n  919:     # Representation data\n  920:     sector_labels=sector_labels,\n  921:     k_arr=k_arr,\n  922:     n_hose_raw=n_hose_raw_arr,\n  923:     n_hose_gpv=n_hose_gpv_arr,\n  924:     n_hose_rg=n_hose_rg_arr,\n  925:     # Fit results"
+    },
+    {
+      "anchor_id": "prov_447",
+      "anchor_type": "data_provenance",
+      "name": "kapitza_parametric",
+      "script_path": "session-46/s46_kapitza_parametric.py",
+      "session": "s46",
+      "inputs": "",
+      "outputs": "session-46/s46_kapitza_parametric.npz, session-46/s46_kapitza_parametric.png",
+      "source_file": "computations/session-46/s46_kapitza_parametric.py",
+      "source_context_30_lines": "   21: \n   22:   Modulation depth: eps_total = Kapitza_ratio = 0.030 (S38, corrected).\n   23:   This is the physically established total modulation of omega_0^2 by\n   24:   the GGE oscillations, distributed across beats by (amp_E * deg).\n   25: \n   26: Gate: Diagnostic. Report whether any beat is within 10% of 2*omega_tau.\n   27: \n   28: Input:  s45_gge_beating.npz, s45_qtheory_bcs.npz, canonical_constants.py\n   29: Output: s46_kapitza_parametric.{npz,png}\n   30: \n   31: Author: Tesla-Resonance, Session 46\n   32: \"\"\"\n   33: \n   34: import sys\n   35: import os\n   36: import warnings\n   37: import numpy as np"
+    },
+    {
+      "anchor_id": "prov_448",
+      "anchor_type": "data_provenance",
+      "name": "landau_zener_ns",
+      "script_path": "session-46/s46_landau_zener_ns.py",
+      "session": "s46",
+      "inputs": "",
+      "outputs": "session-46/s46_landau_zener_ns.npz, session-46/s46_landau_zener_ns.png",
+      "source_file": "computations/session-46/s46_landau_zener_ns.py",
+      "source_context_30_lines": "   59:     M_KK, M_KK_gravity, Delta_B3,\n   60:     H_fold, dt_transit, v_terminal,\n   61:     xi_BCS, omega_PV, a0_fold, a2_fold, a4_fold,\n   62:     PI, Vol_SU3_Haar, N_dof_BCS,\n   63:     E_B1, E_B2_mean, E_B3_mean,\n   64: )\n   65: \n   66: DATA_DIR = Path(__file__).parent\n   67: OUT_PREFIX = \"s46_landau_zener_ns\"\n   68: \n   69: # ===========================================================================\n   70: # SECTION 1: Load eigenvalue data at multiple tau values\n   71: # ===========================================================================\n   72: print(\"=\" * 78)\n   73: print(\"LANDAU-ZENER-NS-46: k-Dependent Adiabaticity Parameter\")\n   74: print(\"=\" * 78)\n   75: "
+    },
+    {
+      "anchor_id": "prov_449",
+      "anchor_type": "data_provenance",
+      "name": "max_pq_sum_4",
+      "script_path": "session-46/s46_max_pq_sum_4.py",
+      "session": "s46",
+      "inputs": "",
+      "outputs": "session-46/s46_max_pq_sum_4.npz, session-46/s46_max_pq_sum_4.png",
+      "source_file": "computations/session-46/s46_max_pq_sum_4.py",
+      "source_context_30_lines": "   24: Gate: None explicit (infrastructure diagnostic).\n   25: \n   26: Input:\n   27:   - dirac_spectrum.py (spectrum computation infrastructure)\n   28:   - s42_hauser_feshbach.npz (existing spectrum at max_pq_sum=3)\n   29:   - canonical_constants.py\n   30: \n   31: Output:\n   32:   - s46_max_pq_sum_4.npz\n   33:   - s46_max_pq_sum_4.png\n   34: \n   35: Author: Gen-Physicist (Session 46)\n   36: \"\"\"\n   37: \n   38: import sys\n   39: import os\n   40: import time"
+    },
+    {
+      "anchor_id": "prov_450",
+      "anchor_type": "data_provenance",
+      "name": "multi_jacobson",
+      "script_path": "session-46/s46_multi_jacobson.py",
+      "session": "s46",
+      "inputs": "",
+      "outputs": "session-46/s46_multi_jacobson.npz, session-46/s46_multi_jacobson.png",
+      "source_file": "computations/session-46/s46_multi_jacobson.py",
+      "source_context_30_lines": "  632: print(\"STEP 10: Save Data\")\n  633: print(\"=\" * 78)\n  634: \n  635: # Convert crossings to arrays for saving\n  636: tau_star_B1 = np.array(tau_stars_sector['B1'])\n  637: tau_star_B2 = np.array(tau_stars_sector['B2'])\n  638: tau_star_B3 = np.array(tau_stars_sector['B3'])\n  639: \n  640: np.savez(base / 's46_multi_jacobson.npz',\n  641:     # Gate\n  642:     gate_name=np.array(['MULTI-JACOBSON-QTHEORY-46']),\n  643:     gate_verdict=np.array([verdict]),\n  644:     gate_detail=np.array([detail]),\n  645: \n  646:     # Input parameters\n  647:     tau_star=tau_star,\n  648:     tau_fold=tau_fold,"
+    }
+  ]
+}

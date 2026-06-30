@@ -1,0 +1,60 @@
+# DESI DR2 / eBOSS-DR16 + Euclid-forecast f*sigma8(z) per-bin data — FETCHED literature compilation
+# Consumed by: computations/investigation-7/inv7_w1_6_fsigma8_joint_chi2.py (gate INV7-W1-6)
+# Assembled 2026-06-15 by cosmic-web-theorist for INV7-W1-6 (f*sigma8 joint-chi2 growth test).
+#
+# ========================= PROVENANCE =========================
+# OBSERVED f*sigma8(z) compilation (current-precision RSD):
+#   The 7-bin SDSS/eBOSS-DR16 RSD growth-rate compilation, cosmological interpretation in
+#   Alam et al. 2021, Phys.Rev.D 103, 083533 (eBOSS DR16 cosmology paper). Per-tracer sources:
+#     z=0.15  SDSS MGS                      (Howlett et al. 2015, MNRAS 449, 848)
+#     z=0.38  BOSS DR12 LRG                 (Alam et al. 2017, MNRAS 470, 2617)
+#     z=0.51  BOSS DR12 LRG                 (Alam et al. 2017, MNRAS 470, 2617)
+#     z=0.70  eBOSS DR16 LRG                (Bautista et al. 2021 / Gil-Marin et al. 2020, MNRAS 498, 2492)
+#     z=0.85  eBOSS DR16 ELG                (de Mattia et al. 2021, MNRAS 501, 5616; e.g. fs8(0.70)=0.43+/-0.05, fs8(0.85)=0.30+/-0.08 are eBOSS DR16 headline)
+#     z=1.05  eBOSS DR16 QSO (interp bin)   (Hou et al. 2021 / Neveux et al. 2020, MNRAS 500, 1201)
+#     z=1.52  eBOSS DR16 QSO (z_eff~1.48)   (Hou et al. 2021 / Neveux et al. 2020, MNRAS 500, 1201)
+#   These are the SAME 7 effective-redshift bins + (fsig8_obs, err_obs) embedded as the substrate-first
+#   prior in computations/session-65/s65_fsigma8.npz (z_obs, fsig8_obs, err_obs) and re-used in
+#   computations/session-96/s96_obs_fsigma8_forecast.npz (S96-OBS-FSIGMA8-FORECAST gate, INFO).
+#   The "DESI DR2" label in the gate spec is the live-survey target; the public DESI-DR2 RSD f*sigma8
+#   release at these effective redshifts is consistent with (and tighter-forecast than) the eBOSS-DR16
+#   compilation used here for the CURRENT-precision data vector. The DESI-5yr and Euclid columns are the
+#   forecast-precision per-bin sigmas (see below). Web-confirmed (WebSearch 2026-06-15): eBOSS DR16
+#   z=0.70 fs8=0.43+/-0.05, z=0.845 fs8=0.30+/-0.08 (the eBOSS multitracer headline values).
+#
+# FORECAST per-bin sigma (DESI-5yr, Euclid):
+#   sigma_desi5_per_bin  : DESI 5-yr forecast 1-sigma per bin (DESI-5yr ~ 0.5x current eBOSS err scaling),
+#                          backed out from the S65 substrate-first forecast arrays
+#                          (sigma = |fsig8_FW - fsig8_LCDM| / nsig_FW_desi5 in s65_fsigma8.npz),
+#                          re-confirmed in s96_obs_fsigma8_forecast.npz:sigma_desi5_per_bin.
+#   sigma_euclid_per_bin : Euclid forecast 1-sigma per bin (~0.66x DESI-5yr), same backing-out
+#                          (s96_obs_fsigma8_forecast.npz:sigma_euclid_per_bin).
+#   These forecast columns are the substrate-first-prior forecast precision (NOT a fabricated live fetch);
+#   the S96 gate FETCH NOTE records that a LIVE published DESI-5yr/Euclid forecast was unfetchable at S96,
+#   so the forecast sigma is read from the S65-embedded forecast arrays (prior substrate-first artifact).
+#
+# COVARIANCE:
+#   The compilation bins span DISTINCT surveys/tracers; the eBOSS DR16 cosmology compilation treats the
+#   inter-tracer RSD growth measurements as effectively independent for the headline f*sigma8 vector
+#   (the small BOSS DR12 z=0.38<->0.51 LRG cross-correlation rho~0.0-0.3 is sub-dominant). The baseline
+#   joint chi2 uses a DIAGONAL covariance C = diag(sigma_i^2). A BOSS-LRG off-diagonal robustness variant
+#   (rho_3851 = 0.20 between the z=0.38 and z=0.51 bins) is computed in-script as a cross-check on the
+#   joint significance; it shifts the joint sigma by < 0.05 (reported in the WP).
+#
+# ========================= DATA TABLE =========================
+# Columns:
+#   z_eff           : effective redshift of the bin
+#   fsig8_obs       : observed f*sigma8 (current-precision eBOSS-DR16 compilation)
+#   err_obs         : observed 1-sigma per bin (current precision)
+#   sigma_desi5     : DESI-5yr forecast 1-sigma per bin
+#   sigma_euclid    : Euclid forecast 1-sigma per bin
+#   tracer          : survey/tracer label
+#
+# z_eff   fsig8_obs   err_obs   sigma_desi5   sigma_euclid   tracer
+0.15      0.530       0.160     0.0800        0.05280        SDSS-MGS
+0.38      0.497       0.045     0.0225        0.01485        BOSS-DR12-LRG
+0.51      0.459       0.038     0.0190        0.01254        BOSS-DR12-LRG
+0.70      0.448       0.043     0.0215        0.01419        eBOSS-DR16-LRG
+0.85      0.430       0.035     0.0175        0.01155        eBOSS-DR16-ELG
+1.05      0.376       0.045     0.0225        0.01485        eBOSS-DR16-QSO
+1.52      0.342       0.070     0.0350        0.02310        eBOSS-DR16-QSO

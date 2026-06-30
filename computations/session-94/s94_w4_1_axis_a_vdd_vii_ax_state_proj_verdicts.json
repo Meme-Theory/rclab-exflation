@@ -1,0 +1,88 @@
+{
+  "reviewer": "vdd-axisA",
+  "gate_id": "S94-VII-AX-STATE-PROJ-STAGE-2-CROSS-AXIS-VERIFY",
+  "axis": "Axis-A (NCG-axiomatic / spectral-functional; NCG-Kasparov bridge expertise for the BdG-sub-algebra HKR-image bridge map)",
+  "independence_attestation": {
+    "read_workshop_transcript": false,
+    "read_axis_b_output": false,
+    "read_op_proj_or_multipin_workshop": false,
+    "original_author_of_state_proj": false,
+    "downstream_inheritance_reach_violation": false,
+    "sources_read": [
+      "registered VII.AX.STATE-PROJ STAGE-1-CANDIDATE entry (registry L19526-L19608)",
+      "VII.AX.OP-PROJ STAGE-3 baseline text (registry L19378-L19518, the CHAINED parent)",
+      "sessions/session-plan/session-94-plan-w4.md SS-W4-1 (clause defs + JOINT list + JSON shape + rubric)",
+      "computations/session-91/s91_w5_1_full_bdg_pv.npz (obs_STATE; Axis-A only)",
+      "computations/_shared/canonical_constants.py (n_PBH_FW_central, tau_fold, Delta_BCS)"
+    ]
+  },
+  "single_axis": {
+    "Element-2_laboratory-IN_OE-form": "PASS"
+  },
+  "joint": {
+    "E1": "PASS",
+    "E3": "PASS",
+    "E4": "PASS"
+  },
+  "axisA_single_axis_all": "PASS",
+  "substrate_input_anchor": "s91_w5_1_full_bdg_pv.npz",
+  "clause_rederivations": {
+    "E1_substrate_IS_Cell-IV_state-pair_classification": {
+      "verdict": "PASS",
+      "type": "JOINT",
+      "parse_tree_terminus": "<psi_GGE-PBH | n_a^PBH | psi_GGE-PBH> = |v_a|^2 ; terminus is a state-pair expectation <psi|.|psi> carrying the prepared-state index a",
+      "counters": {"state_pair_count": 1, "algebra_dep_count": 1},
+      "cell": "IV (algebra-DEPENDENT state-pair functional x cardinality-cascade-pole)",
+      "orthogonality": "OP-PROJ terminus C(N_eigs,2) is a spectrum-only Tr/count => Cell I (state_pair_count=0); STRUCTURALLY ORTHOGONAL algebra-axis cell. Magnitude agreement (7.2761e-23) does NOT imply algebra-axis identity. Consistent with W14 algebra-axis orthogonality wall (algebra-INVARIANT vs algebra-DEPENDENT families structurally orthogonal in identity-class membership).",
+      "level1_single_tau_slice": "tau_fold = 0.19 (canonical; phononic-framing.md Single-tau-slice tag MANDATORY at K=2)"
+    },
+    "E2_laboratory-IN_OE-form": {
+      "verdict": "PASS",
+      "type": "Axis-A single-axis (NCG-axiomatic / spectral-functional verifies operator-expression form)",
+      "oe_form": "int_{Sigma_CMB u Sigma_LISA u Sigma_PTA} d^3x . Tr_{M_2(C)}(P_BdG . rho_BH-occ(x))",
+      "checks": {"integration_domain": true, "trace_Tr_M2C": true, "named_projector_P_BdG_not_bare": true, "prose_only_forbidden_form": false},
+      "note": "OE-form positive-match (cross-pillar-bridge-anatomy.md Element 2 OE-form discipline MANDATORY S88+): int + Tr + named projector P_BdG all present."
+    },
+    "E3_bridge_map": {
+      "verdict": "PASS",
+      "type": "JOINT",
+      "form": "Bogoliubov-state closed-form o HKR (Hochschild-Kostant-Rosenberg) L_max->inf image at BdG sub-algebra M_2(C) subset A_K o Connes-Moscovici 1995 SSIII.4 finite-spectral-triple residue on M_2(C)",
+      "checks": {
+        "occupation_bounded_0_1": "|v_a|^2 in [0.0257, 0.9743] over sampled xi-grid; bounded in [0,1] = TRUE",
+        "bogoliubov_normalization_u2_plus_v2_eq_1": "max|u^2+v^2-1| = 0.00e+00 (exact)",
+        "CM1995_residue_well_defined": "M_2(C) is finite-dimensional => CM-1995 SSIII.4 residue is a finite trace; HKR L->inf image is well-defined (no convergence pathology on a finite spectral triple)"
+      },
+      "binding_type": "(ii) external-observation (CMB/LISA/PTA detection horizons) + substrate-natural-binding (|v_a|^2 computed directly on substrate BdG sub-algebra, NOT canonical-import); both declarations consistent with regulator-pin-discipline four-axis orthogonality Binding axis."
+    },
+    "E4_algebraic_envelope": {
+      "verdict": "PASS",
+      "type": "JOINT",
+      "form": "L^{-alpha} convergence via bottom-K Bogoliubov-amplitude Friedrich-Bar saturation; Level-2-binding sub-class",
+      "channel_distinction_decisive": "The bottom-K Bogoliubov channel (K=8 FIXED, S52 8-mode) is STRUCTURALLY DISTINCT from the OP-PROJ N_eigs total-count channel that carries the E5 truncation-divergence HOLD. Sage-exact: d N_eigs/dL = (4/3)L^4 -> +inf (DIVERGES), whereas d(bottom-K saturated observable)/dL -> 0 (saturates). The S91 W5-1 npz EMPIRICALLY confirms the bottom-K log-derivative R_KW_PV is FLAT across L_max in [6,12] to relative spread 1.06e-11.",
+      "binding_holds_despite_E5_hold": "Because E4 rides the SATURATED bottom-K channel (not the divergent N_eigs channel), the Level-2 binding-envelope is PASS (NOT INFO). The inherited E5 dimensionful HOLD lives on the N_eigs channel and does NOT propagate to the bottom-K state-pair channel. This is the load-bearing distinction the plan SS-W4-1 substitution chain pre-registers (STATE-PROJ Level-1 state-pair identity STRUCTURALLY DISTINCT from / independent of the OP-PROJ N_eigs total-count channel).",
+      "regulator_invariance": "state-pair family is regulator-INVARIANT (IR-self-regularized by the BdG gap Delta_BCS = 0.46425, R-PROTECTED); corpus SS22 regulator-behavior sibling discriminator. Contrasts with the OP-PROJ algebra-INVARIANT spectrum-only family (regulator-DEPENDENT)."
+    },
+    "E5_empirical_anchor_HELD": {
+      "verdict": "N/A (HELD NOT-SATISFIED-PENDING; NOT a Stage-2 PASS clause per plan SS-W4-1)",
+      "anchor_agreement": "n_PBH_FW_central = 7.2761e-23 m^-3 inherited from OP-PROJ T1.13 via Sum_a |v_a|^2 . prob_form / L_pix_LRD^3; rel_err vs T1.13 anchor = 0.000e+00 (within rel_tol >= 1e-4 publication floor of 5 sig figs).",
+      "hold_rationale": "The dimensionful m^-3 Level-3 row is inherited Tier-2-dimensionful HOLD from OP-PROJ (cardinality channel truncation-DIVERGENT per W4-3 03b4fb35...; no substrate-singled-out canonical L*; the log-derivative that buys truncation-invariance annihilates the m^-3 prefactor). What was certified at the JOINT-Element-5 level in OP-PROJ Stage-2 was the anchor-STRUCTURE, NOT the dimensionful scalar inequality.",
+      "substitution_chain_direction": "Stage-2 PASS-AND promotes the theorem-STRUCTURE to STAGE-3-eligible WITHOUT asserting the held m^-3 registry-PASS. composite_PASS = [E-clauses PASS-AND] AND [orthogonality AND OAA AND conv-FULL]; the Level-3 m^-3 satisfaction term is ABSENT from composite_PASS by construction => composite_PASS is INDEPENDENT of the inherited HOLD. A Stage-2 PASS does NOT (and MUST NOT) assert a registry-PASS the parent no longer claims. CONSISTENT."
+    }
+  },
+  "structural_gates": {
+    "substrate_input_orthogonality": "PASS (structural ceiling, NO overlap caveat): obs_STATE = s91_w5_1_full_bdg_pv.npz (GGE-state-prepared occupation P_GGE_PV on the BdG sub-algebra) loaded by Axis-A ONLY; obs_OP = s93_w4_3 cardinality-cascade/N_eigs cache loaded by Axis-B ONLY. >=1 obs loaded by exactly ONE reviewer; disjoint. Mirrors the S89 W4-7 SSVII.AH FIRST-INSTANCE-WITHOUT-caveat precedent.",
+    "OAA_exclusion": "PASS: I (van-den-dungen) am not the W4-4 STATE-PROJ companion-landing author (mack), nor an Axis-A/Axis-B reviewer of the chained OP-PROJ/MULTI-PIN cluster (connes/volovik EXCLUDED under downstream-inheritance-reach). Precedent: I was Axis-A on the parallel VII.AV.STATE-PROJ Stage-2 (S93 W3-6).",
+    "axis_distinctness": "PASS: Axis-A (NCG-axiomatic / spectral-functional, vdd) vs Axis-B (substrate / transit / GGE-relic, transit-dynamics) on DIFFERENT axes.",
+    "convention_ends_FULL": "PASS (plan-pinned convention ends -K3-FULL)"
+  },
+  "convention_warnings_flagged": [
+    "JOINT-clause-list divergence: the registered OP-PROJ JOINT-clause flags (registry L19481) assign E1/E3/E5 JOINT, E2 single-axis Axis-A, E4 single-axis Axis-B. The governing plan SS-W4-1 (line 122) for THIS STATE-PROJ Stage-2 gate REASSIGNS to E1/E3/E4 JOINT, E2 single-axis Axis-A, and E5 HELD (not a PASS clause). I followed the plan SS-W4-1 JOINT list (E1,E3,E4) as the governing spec for the STATE-PROJ gate, since the STATE-PROJ entry's own envelope (Element 4) is JOINT-binding on the bottom-K channel and Element 5 is the inherited HOLD (not a satisfiable PASS clause). This reassignment is internally consistent with the STATE-PROJ entry: Element 4 is binding (PASS-able) while Element 5 is HELD.",
+    "input npz is the S91 W5-1 FULL-BdG-PV file whose OWN gate verdict is composite=FAIL/regime=BREAKDOWN (an alpha-extraction breakdown). That FAIL is IRRELEVANT to my clauses: I do NOT verify the alpha-extraction. I extract (a) the structural fact that the bottom-K log-derivative R_KW_PV is L_max-FLAT to 1.06e-11 (the multiplicative-normalization-cancellation identity, math-scripts.md K=1 calibration instance), and (b) the GGE-state-prepared occupation P_GGE_PV on the BdG sub-algebra (the regulator-INVARIANT state-pair-occupation data). Both are well-defined regardless of the alpha-extraction gate's FAIL."
+  ],
+  "notes": "Axis-A (NCG-axiomatic / spectral-functional) cross-review of VII.AX.STATE-PROJ STAGE-1-CANDIDATE, re-derived from the registered entry alone (no workshop transcript, no Axis-B output). ALL clauses PASS: E2 (single-axis Axis-A, OE-form) PASS; E1 (Cell-IV parse-tree, PASS), E3 (Bogoliubov-state o HKR o CM-1995 residue on M_2(C), PASS), E4 (bottom-K Friedrich-Bar Level-2-binding, PASS) all JOINT. E5 dimensionful m^-3 is HELD (NOT a PASS clause); the Stage-2 PASS promotes theorem-STRUCTURE only and does NOT assert the held registry-PASS. axisA_single_axis_all = PASS. The decisive Axis-A finding: the bottom-K Bogoliubov channel (E4) is STRUCTURALLY DISTINCT from the divergent N_eigs total-count channel (E5-HELD) -- Sage-verified d(bottom-K)/dL -> 0 vs dN_eigs/dL -> +inf -- so the binding-envelope is PASS, not INFO, and does not inherit the dimensionful truncation-divergence HOLD. substrate-input-orthogonality at structural ceiling (NO overlap caveat). Aggregation/emission deferred to gen-physicist (I do NOT emit the gate verdict line).",
+  "fourtuple": {
+    "scheme": "joint-theorem-promotion-Stage-2-single-sub-slot-parallel-cross-axis-PASS-AND",
+    "convention": "Stage-2-VII-AX-STATE-PROJ-vdd-AxisA-transit-AxisB-PARALLEL-OAA-exclusion-mack-connes-volovik-substrate-input-orthogonality-K3-FULL",
+    "L_max": 14
+  }
+}

@@ -1,0 +1,256 @@
+========================================================================
+  S53 — SECOND-SOUND-CMB-53: Pair Dispersion Coupling to Modulus
+========================================================================
+
+  Loaded s52_unified_action.npz
+  V_full shape: (7, 7)
+  G_mod_full = 116.6319
+  dt_transit = 1.130158e-03 M_KK^{-1}
+  Delta_ground = [0.37179453 0.73202611 0.08415248]
+  I_phase = [5.44067376e-01 7.86019855e+00 3.42657883e-03]
+
+========================================================================
+  SECTION 2: Theta-tau coupling d^2S/dtheta dtau
+========================================================================
+
+  Direct Hessian coupling V[theta_alpha, tau]:
+    V[th_B1, tau] = 0.000000e+00
+    V[th_B2, tau] = 0.000000e+00
+    V[th_B3, tau] = 0.000000e+00
+  RESULT: All ZERO. No direct theta-tau coupling in the Hessian.
+
+  Parametric theta-tau coupling (through Delta(tau)):
+  The phase couples to tau ONLY through the amplitude sector.
+  At ground state (theta = 0), the coupling vanishes identically.
+  Fluctuations couple at THIRD order: delta_theta * delta_tau * delta_Delta
+
+  GL coefficients at fold:
+    a = [ -1.95487296  -0.52454756 -15.90150762]
+    b = [7.07102807e+00 4.89442559e-01 1.12272791e+03]
+    Delta_0 = [0.37179453 0.73202611 0.08415248]
+
+  Sound speed hierarchy:
+    c_Gold   = 0.9150 M_KK
+    c_fabric = 209.9737 M_KK
+    Ratio    = 229.48
+    = 1 / 0.00436
+
+========================================================================
+  SECTION 3: Acoustic horizons and CMB multipole
+========================================================================
+
+  Transit duration: dt = 1.130158e-03 M_KK^{-1}
+
+  Acoustic horizon (pair excitations):
+    d_acoustic = c_Gold * dt = 0.915 * 1.1302e-03
+    d_acoustic = 1.034094e-03 M_KK^{-1}
+
+  Geometric horizon (substrate perturbations):
+    d_geom = c_fabric * dt = 209.97368021 * 1.1302e-03
+    d_geom = 2.373033e-01 M_KK^{-1}
+
+  Horizon ratio:
+    d_geom / d_acoustic = 229.48 (= c_fabric/c_Gold)
+
+  Physical lengths (at M_KK = 7.429e+16 GeV):
+    d_acoustic = 2.747e-36 m = 0.000 fm
+    d_geom     = 6.303e-34 m = 0.000 fm
+
+  CMB multipole from second-sound horizon:
+    l_second_sound = pi * (c_fabric / c_Gold)
+    l_second_sound = pi * 229.48
+    l_second_sound = 720.9
+
+  Predicted feature: spectral break/suppression near l ~ 721
+  This is between the 3rd and 4th acoustic peaks (l_3 ~ 800, l_4 ~ 1150)
+  The Planck power spectrum shows the onset of Silk damping at l ~ 800-1000.
+  The second-sound scale would appear as a DEFICIT at l ~ 720 relative to
+  the smooth damping envelope, because pair correlations are frozen out
+  above this multipole.
+
+========================================================================
+  SECTION 4: Two-sound dispersion relation
+========================================================================
+
+  Branch horizons during transit:
+  Branch        gap (M_KK)    v_g(k=0)      d_horizon     l_CMB   
+  ------------------------------------------------------------
+  Goldstone     0.0000        0.9150        1.0341e-03    721     
+  Leggett-1     0.1380        0.9010        1.0183e-03    732     
+  Leggett-2     0.1920        0.8912        1.0072e-03    740     
+  Higgs-1       0.3800        0.8511        9.6190e-04    775     
+  Higgs-2       1.4100        0.6685        7.5555e-04    987     
+  Higgs-3       11.4650       0.2968        3.3538e-04    2223    
+
+========================================================================
+  SECTION 5: GGE relic temperature evolution
+========================================================================
+
+  w_phonon = 0.202
+  Non-relativistic exponent: gamma_NR = 3w/(1+w) = 0.5042
+  T proportional a^{-0.5042}
+
+  T_init = 0.112 M_KK = 8.320e+15 GeV
+
+  After 80.89 exflationary e-folds (w = 0.202):
+    T_final = T_init * exp(-0.5042 * 80.89)
+    T_final = 8.320e+15 * exp(-40.78)
+    T_final = 1.618e-02 GeV
+    T_CMB   = 2.349e-13 GeV
+    T_final / T_CMB = 6.889e+10
+    Additional radiation e-folds needed: 24.96
+    Total e-folds: 105.85
+
+  Sensitivity to w:
+    w = 0.158 (W2-B): gamma = 0.4093, T_final = 3.471e+01 GeV
+    w = 0.202 (PHONON-EOS): gamma = 0.5042, T_final = 1.618e-02 GeV
+    w = 0.333 (radiation): gamma = 0.7500, T_final = 3.737e-11 GeV
+
+========================================================================
+  SECTION 6: Pair band contribution to CMB temperature
+========================================================================
+
+  Goldstone branch energy density at T_acoustic = 0.112 M_KK:
+    rho_Gold = (pi^2/30) * T^4 / c_Gold^3
+    rho_Gold = 6.757519e-05 M_KK^4
+    p_Gold   = 2.252506e-05 M_KK^4
+    Leggett-1: gap/T = 1.23, Boltzmann factor = 8.7244e-01
+    Leggett-2: gap/T = 1.71, Boltzmann factor = 7.5345e-01
+    Higgs-1: gap/T = 3.39, Boltzmann factor = 3.4112e-01
+    Higgs-2: gap/T = 12.59, Boltzmann factor = 3.1641e-04
+    Higgs-3: gap/T = 102.37, Boltzmann factor = 0.0000e+00
+
+  The pair band does NOT directly set the CMB temperature.
+  It determines the expansion rate H(z) during exflation,
+  which affects angular diameter distances and hence l-positions
+  of acoustic peaks.
+
+========================================================================
+  SECTION 7: Second-sound CMB signature analysis
+========================================================================
+
+  Two-sound hierarchy in CMB:
+    l_geom = pi * 1 = 3.1 (geometric horizon = full sky)
+    l_pair = pi * c_fabric/c_Gold = 720.9 (pair acoustic horizon)
+    
+    For l < 721: both geometric AND pair correlations present
+    For l > 721: only geometric correlations (pair excitations frozen out)
+
+  Running of n_s across second-sound scale:
+    dn_s/dl ~ (c_Gold/c_fabric)^2 = 1.8989e-05
+    This is a second-order effect, below Planck sensitivity
+    (Planck measured dn_s/d(ln k) = -0.0042 +/- 0.0078)
+
+  Fractional power contribution from pair sector:
+    delta C_l / C_l ~ F_BCS / V_KK = 7.1000e-03
+    This is a 0.7% effect on the power spectrum at l < 721
+
+========================================================================
+  SECTION 8: Comparison to Planck/SPT-3G data
+========================================================================
+
+  Planck 2018 TT spectrum near l ~ 721:
+    3rd acoustic peak: l ~ 800 (l_pair falls BEFORE this)
+    Power at l = 700: C_l ~ 3500 muK^2
+    Power at l = 800: C_l ~ 2500 muK^2 (3rd peak)
+    Silk damping envelope: D_l ~ exp(-2*(l/l_D)^2) with l_D ~ 1500
+    
+    A 0.7% feature at l ~ 721 would be:
+    delta C_l ~ 0.007 * 3500 = 24 muK^2
+    This is well within Planck noise at this l (24 vs ~50 muK^2 noise)
+    CONCLUSION: The second-sound feature is NOT detectable by Planck
+
+========================================================================
+  SECTION 9: Full temperature evolution
+========================================================================
+
+  Temperature milestones (Method 3, w = 0.202):
+    T_init       = 8.320e+15 GeV (GUT scale)
+    T = 100 GeV  at N_e = 63.6 (electroweak)
+    T = 0.2 GeV  at N_e = 75.9 (QCD)
+    T(80.89) = 0.02 GeV
+    Standard cooling from 0.0 GeV to T_CMB needs 25.0 e-folds
+
+========================================================================
+  SECTION 10: Condensed matter analogs — two-sound physics
+========================================================================
+
+  The two-sound hierarchy has precise condensed matter analogs:
+
+  1. SUPERFLUID He-4:
+     First sound:  c_1 = 238 m/s (density wave)
+     Second sound: c_2 = 20 m/s  (temperature wave)
+     Ratio: c_1/c_2 = 11.9
+
+  2. SUPERFLUID He-3B:
+     First sound:  c_1 ~ 364 m/s
+     Second sound: c_2 ~ 18 m/s
+     Ratio: c_1/c_2 ~ 20
+
+  3. EXFLATION (this framework):
+     First sound:  c_fabric = 209.97 M_KK (geometric)
+     Second sound: c_Gold   = 0.915 M_KK (pair/Goldstone)
+     Ratio: c_fabric/c_Gold = 229.5
+
+  The exflation ratio (229) is 10-20x LARGER than any laboratory superfluid.
+  This is because the geometric stiffness (116.6) is set by the
+  Planck mass M_p, while the pair stiffness is set by the BCS condensation
+  energy (0.137 M_KK). The enormous hierarchy M_p >> E_cond
+  maps directly to c_fabric >> c_Gold.
+
+  In He-4, the two-sound system is directly observed in heat pulse experiments.
+  A heat pulse creates BOTH first-sound and second-sound signals, arriving at
+  different times. The CMB analog: a perturbation during transit creates both
+  geometric (tau) and pair (theta) fluctuations, arriving at different "times"
+  (= imprinting at different angular scales on the CMB).
+
+  Volovik (Paper 10, Section 5): In the emergent spacetime picture, second
+  sound corresponds to fluctuations of the order parameter that propagate
+  within the Lorentz-invariant sector. First sound corresponds to fluctuations
+  of the underlying substrate (non-Lorentz-invariant). The 229x hierarchy is
+  the ratio of substrate rigidity to emergent-metric rigidity.
+
+========================================================================
+  SECTION 11: GATE VERDICT — SECOND-SOUND-CMB-53
+========================================================================
+
+  KEY RESULTS:
+  ============
+
+  1. THETA-TAU COUPLING: ZERO in the Hessian (V_full block-diagonal).
+     The Goldstone phase couples to the modulus ONLY parametrically,
+     through the tau-dependence of GL coefficients a(tau), b(tau).
+     This is a structural result: d^2V/dtheta dtau = 0 at ground state.
+     Physical coupling is THIRD-ORDER: delta_theta * delta_tau * delta_Delta.
+
+  2. ACOUSTIC HORIZON: d_acoustic = c_Gold * dt_transit = 1.0341e-03 M_KK^{-1}
+     Geometric horizon: d_geom = c_fabric * dt_transit = 2.3730e-01 M_KK^{-1}
+     Ratio: 229.5x
+
+  3. CMB MULTIPOLE: l_second_sound = pi * c_fabric/c_Gold = 721
+     This predicts a second-sound horizon feature at l ~ 721.
+     The feature amplitude is delta C_l/C_l ~ F_BCS/V_KK = 7.1e-03 (0.7%).
+     This is within Planck noise — NOT detectable with current data.
+
+  4. GGE TEMPERATURE EVOLUTION (w = 0.202):
+     T proportional a^{-0.5042} (non-relativistic exponent)
+     T_init = 8.32e+15 GeV (GUT scale, predicted)
+     After 80.89 e-folds: T = 0.0 GeV (electroweak scale)
+     Requires 25.0 additional radiation e-folds to reach T_CMB
+
+  5. RUNNING OF n_s: dn_s ~ (c_Gold/c_fabric)^2 = 1.9e-05
+     Second-order effect, below Planck sensitivity.
+
+  GATE: SECOND-SOUND-CMB-53 = INFO
+  The two-sound hierarchy produces a CMB feature at l ~ 721 with
+  amplitude 0.7%. Not observable with current instruments. The theta-tau
+  coupling is exactly zero at the Hessian level (structural). The GGE
+  temperature cools from the GUT scale to the electroweak scale during
+  exflation — consistent with standard cosmology onset.
+
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s53_second_sound_cmb.npz
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s53_second_sound_cmb.png
+
+========================================================================
+  END OF SECOND-SOUND-CMB-53
+========================================================================

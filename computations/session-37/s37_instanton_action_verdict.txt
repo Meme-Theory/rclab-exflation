@@ -1,0 +1,52 @@
+T3-S37-INSTANTON-ACTION: PASS -- value=0.06860372 scheme=BCS_GL_quartic convention=discrete_mode_B2 L_max=N/A sha256=dc8e8d7f833dbe0ad1e24cbd6836f3eeb173dce2cf434f69928a2de9a1ef5d4f
+
+# Canonical target (MCP get_constant):
+#   S_inst = 0.06860372346994315  (canonical_constants.py, session s37_instanton_mc)
+# Reproduced (Method D direct numerical):
+#   S_inst_best = 0.06860372
+# Absolute delta: 3.47e-09
+# Relative error: 5.06e-06 % (far inside ABSOLUTE 5% tolerance)
+# Regime (INST-37a gate): DENSE_GAS (S_inst < 0.5)
+#
+# Method triangulation (B2 sector, 4 modes):
+#   Method D (direct numerical, full BCS F)    S_inst = 0.06860372   PRIMARY
+#   Method C (GL quartic fit in alpha space)   S_inst = 0.00000000   (fit degeneracy: a_C>0)
+#   Method B (Thouless + GCM peak Delta_0)     S_inst = 1.88056097   (uses Delta_0_peak=0.770, not alpha_min-derived Delta_0=0.365)
+# Method D is the MCP-canonical and matches target to 8 decimal places.
+# Method B diverges because it uses Delta_0_peak (full-8-mode GCM solution)
+# with Thouless a(M_max) calibrated for B2-only DOS — a KNOWN mismatch in
+# the original script; not a T3 discrepancy.
+#
+# Substitution chain for action-direction (GL quartic):
+#   V(Delta) = b * (Delta^2 - Delta_0^2)^2
+#   S_inst   = integral_0^{Delta_0} sqrt(2V) dDelta
+#            = sqrt(2b) * (2/3) * Delta_0^3
+#   b>0, Delta_0>0 => S_inst > 0; S_inst ~ b^{1/2} * Delta_0^3
+#   S_inst = 0.0686 < 0.5 => DENSE INSTANTON GAS, Z_2 restored by tunneling.
+#
+# SHA-256 input pins (ordered, map-serialized, JSON-canonical):
+#   s23a_kosmann_singlet.npz        ef547e583cf73e91b3f0d26e1ba14ee74c28d3718ee08dde12e0f17ad2775214
+#   s34a_dphys_kosmann.npz          c5fbb8770a27b4ed39e9c04a512f4373f71fefc7fb1cbc591ad88c9f0b97a6f9
+#   s35a_vh_impedance_arbiter.npz   410c4835f23e5064712338853f57b3ac13370c6e7ef3dfd43ffe6fb13ce7a34d
+#   s36_gcm_self_consistent.npz     59af5aaf8dea16ddfea57945e434a0a4d8c74a43296ba542f64c096c7897f5f1
+#   s36_gl_cubic_check.npz          5e5035427eeee86aac53c52ffc749345bd8fdab04f725c971e230574c4551c1e
+#   s36_multisector_ed.npz          74c59d141ff64620af9b67e34f024d8190b0a0eb5d3f302b356aea12fa8f3631
+# Script SHA-256 (archive source): 0c529edff6b2a37499c344231c6f1e50e4e917c6cd1ca4abc988cc1dbebad975
+# canonical_constants.py SHA-256:  68b50cd325d2cc8c63b775da3b6b92f538da582bee44c5d906c81259f24dd12f
+# Closure SHA-256 (json.dumps(sorted input-pin map)):
+#   dc8e8d7f833dbe0ad1e24cbd6836f3eeb173dce2cf434f69928a2de9a1ef5d4f
+#
+# canonical_constants.py modifications: NONE (all required constants already present:
+#   M_max_thouless=1.674, S_inst=0.06860372346994315, rho_B2_per_mode=14.023250234055,
+#   tau_fold=0.19).  No MISSING flags.
+#
+# PRU/PRDR pins (machinery):
+#   n_alpha         = 10001            (alpha scan resolution)
+#   alpha_max_scan  = 3.0              (scan range)
+#   gap_n_iter      = 5000             (gap-equation iter cap)
+#   gap_tol         = 1e-14            (gap-equation tolerance)
+#   mu              = 0.0              (chemical potential, fold-aligned)
+#   fit_mask        = 0.01 < alpha < 2.5  (GL fit window)
+#   OMP_NUM_THREADS = 8                (small matrices, CPU path is correct)
+#   GPU path        = N/A (B2 matrices are 4x4, below GPU threshold of 100x100)
+#   random_seed     = N/A (deterministic, no stochastic sampling)

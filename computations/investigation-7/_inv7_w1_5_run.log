@@ -1,0 +1,36 @@
+Ainulindale: Unknown command line argument 'Exflation\phonon-exflation-sim\.venv312\Lib\site-packages\_rocm_sdk_core\lib\llvm\bin\offload-arch.exe'.  Try: 'C:\sandbox\Ainulindale --help'
+=== INV7-W1-5 — input SHA-256 pins ===
+  computations/_shared/canonical_constants.py: 8505153a884277ba...
+  computations/investigation-7/inv7_w1_1_c2_substrate.npz: 709f16deb56ea3a5...
+  closure: eb5b30d0a5d11e59... (legacy closure, informational)
+  audit_sha256:   803abfbc6315166e... (script+canonical+pinmap)
+  content_sha256: cf1969c735f3fbaf... (script only)
+
+=== INV7-W1-5 — persistent-homology Betti curves (sublevel-set sweep) ===
+  grid=256^3  L_box=1000.0 Mpc  N_mock=48  seed=12345
+  ring: k1=0.0193150486 Mpc^-1  r1=325.3 Mpc   f_NL(envelope)=1.505 (signed -1.505)
+  A_FS_substrate (PRIMARY) = 0.00388533   [W1-1 npz (feature_A_FS, substrate-genuine)]
+  A_FS_canon (contrast)    = 0.20400000   (recomb first-sound stand-in)
+  ring-amplitude ratio canon/substrate = 52.51x
+  fundamental k_f = 6.283185e-03 Mpc^-1 ; k1/k_f = 3.07 modes ; ring well-resolved = True
+
+  --- PRIMARY: FW(A_FS_substrate=0.003885) vs 48 GRF mocks ---
+    GRF mock 20/48  (823.6s elapsed)
+    GRF mock 40/48  (1651.2s elapsed)
+  nu_r1 (ring-scale threshold, GRF-variance-peak) = 1.2047 sigma  (idx 89)
+  beta_2_FW(nu_r1)            = 1.000
+  <beta_2_GRF(nu_r1)>         = 561998.021 +/- 905.273
+  Z (PRIMARY, substrate A_FS) = 620.8039
+
+  --- CONTRAST: FW(A_FS_canon=0.204000) vs 24 GRF mocks ---
+  Z (CONTRAST, canonical A_FS=0.204) = 425.1154  (nu_r1_c=0.7795)
+  topological-signal ratio Z_canon/Z_substrate = 0.68x  (expect ~ the 52x amplitude shrink, attenuated by the topology nonlinearity)
+
+  saved: computations\investigation-7\inv7_w1_5_persistent_homology_ring.npz
+  saved: computations\investigation-7\inv7_w1_5_persistent_homology_ring.png
+4-tuple: (value=620.80386181, scheme=FW, convention=RATIO-PERSISTENT-HOMOLOGY-SUBLEVEL-SWEEP-NMOCK48-DEVIATION, L_max=N/A)
+<<<EMIT_VERDICT_PAYLOAD>>>
+{"audit_sha256":"803abfbc6315166e452539ada9dfe7fd45e36f56122555f1d2e1d654dc3e4d2c","companion_note":"Z_beta2_ring(substrate_A_FS=0.003885)=620.804sigma vs thr 3.0; Z(canon_A_FS=0.204)=425.115; ring-ampl 52x weaker (W1-1 FAIL); DISTINCT from S43 volume-avg Betti k~1e24 (k_transition=9.4e23,unobservable); beta_2_FW(nu_r1)=1.00 vs GRF 561998.02+/-905.27","content_sha256":"cf1969c735f3fbaf83db153f3009c13e6d53616602628eb437b450cf381f3590","convention":"RATIO-PERSISTENT-HOMOLOGY-SUBLEVEL-SWEEP-NMOCK48-DEVIATION","extra_rows":["# INV7-W1-5 field: F=Gauss(P_FW*(1+A_FS*ring(k1))) + f_NL=1.505(signed -) local-NG; grid 256^3 L_box 1000.0Mpc N_mock 48 seed 12345; nu_r1=1.2047sigma (GRF-var-peak,field-agnostic); Betti via sublevel-set sweep (GUDHI absent): b0=#comp, b2=#enclosed-voids, b1=b0+b2-chi(cubical Euler); complementary to INV7-W2-1 (z~5 two-point)"],"gate_id":"INV7-W1-5","l_max":"N/A","magnitude_verdict":"PASS","regime_verdict":"VALID","schema_version":"S84+","scheme":"FW","session":7,"sign_verdict":"FAIL","track":"investigation","value":"620.803862","verdict":"PASS"}
+<<<END_EMIT_VERDICT_PAYLOAD>>>
+
+  INV7-W1-5 done in 3074.6s — verdict PASS (Z_substrate=620.804sigma)

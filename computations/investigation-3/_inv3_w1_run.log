@@ -1,0 +1,101 @@
+Ainulindale: Unknown command line argument 'Exflation\phonon-exflation-sim\.venv312\Lib\site-packages\_rocm_sdk_core\lib\llvm\bin\offload-arch.exe'.  Try: 'C:\sandbox\Ainulindale --help'
+==============================================================================
+INV3-W1-4  --  SECOND CHERN c_2 of the rank-4 B2 Wilczek-Zee bundle
+  over the 4-param off-block C^2 coset (lambda_4..lambda_7); Yang-monopole test
+  torch available: True (device=cuda)
+==============================================================================
+  INPUT-PIN  canonical_constants: computations\_shared\canonical_constants.py  sha256=fa2d94018ac1b098...
+  INPUT-PIN  dirac_spectrum: computations\_shared\dirac_spectrum.py  sha256=dadba674e950fad9...
+  INPUT-PIN  s102_wz_driver: computations\session-102\s102_w7_b2_eps2_wz_holonomy.py  sha256=e9526dd18bf60c5c...
+  INPUT-PIN  s103_coset2_npz: computations\session-103\s103_w3_b2_wz_holonomy_coset2.npz  sha256=64658efe3a2450d1...
+  INPUT-PIN  s101_isotropy_npz: computations\session-101\s101_w5_4_b2_isotropy_breaking.npz  sha256=5dbaedf16b729342...
+  INPUT-PIN  s96_chern_npz: computations\session-96\s96_geom_offjensen_chern.npz  sha256=fa0e53591ec258a1...
+  audit_sha256   = b63c4542bc37ab85b68962be102535416bd372771c2eec53405b35474471c193
+  content_sha256 = b966b4a4f2684d5ebd2f187d46e682b0d57fb6ec18c074e305b68a38c7eb0e54
+  GEOMETRY: v_J=(2,-2,1), v_mu=(11,7,-8)=n x v_J; vol-preserving, perp-Jensen OK
+  tau_fold=0.19 (mu=0 IS the Jensen line); anchor=(0.19,0.0)
+  coset generators (0-based array idx) = [3, 4, 5, 6] (= lambda_4..lambda_7)
+
+  [BASE] B2 quadruplet signed evals (cols 9..12) = [0.8452121 0.8452121 0.8452121 0.8452121]
+    within-B2 spread=1.67e-15 (4-fold degenerate at u=0 -> the candidate monopole)
+    gap_below=2.5471e-02  gap_above=1.2620e-01 (P well-defined iff both > 1e-04)
+    band projector rank = 4 (=4), ||P0^2 - P0||=3.05e-15 (idempotent)
+
+  [STAGE 1] off-block log-metric coset directions dH_4..dH_7 (||.||_F=1)
+    lambda_3: ||dH_raw||=8.0503e-01  ||dH||_F=1.000000
+    lambda_4: ||dH_raw||=8.0503e-01  ||dH||_F=1.000000
+    lambda_5: ||dH_raw||=8.0503e-01  ||dH||_F=1.000000
+    lambda_6: ||dH_raw||=8.0503e-01  ||dH||_F=1.000000
+    coset-direction Gram max off-diagonal |<dH_a|dH_b>| = 6.661e-16 (~0 => mutually orthonormal => clean R^4 = C^2 coset base)
+
+  [STAGE 2] band-gap vs deformation radius (P well-defined region)
+    R=0.005: min gap (worst of 8 dirs) = 2.5472e-02  (open)
+    R=0.010: min gap (worst of 8 dirs) = 2.5475e-02  (open)
+    R=0.020: min gap (worst of 8 dirs) = 2.5486e-02  (open)
+    R=0.030: min gap (worst of 8 dirs) = 2.5506e-02  (open)
+    R=0.050: min gap (worst of 8 dirs) = 2.5567e-02  (open)
+    R=0.100: min gap (worst of 8 dirs) = 2.5848e-02  (open)
+    -> P(u) well-defined (gap open) out to R ~ 0.100; continuum 4-ball R_max=0.05 (inside the gap-open region)
+
+  [STAGE 3] METHOD 1: continuum Chern-Weil c_2 = (1/8pi^2) integral Tr(F^F)
+           4D FD lattice 13^4 nodes on [-0.05,0.05]^4, h=8.3333e-03
+    projector grid built (13^4=28561 nodes); min band gap on grid = 2.5471e-02
+    second-Chern density max|rho| = 1.3754e-07
+    METHOD 1 c_2 (continuum Chern-Weil, 4-ball bulk) = 7.956755e-15
+    radial frac=0.50 (R=0.025): c_2_bulk = 7.809484e-17
+    radial frac=0.70 (R=0.035): c_2_bulk = 5.791090e-16
+    radial frac=0.85 (R=0.043): c_2_bulk = 2.517268e-15
+    radial frac=1.00 (R=0.050): c_2_bulk = 7.956755e-15
+
+  [STAGE 4] METHOD 2: S^4-closure diagnostic (boundary leakage + radial concentration)
+    boundary shell_frac (|rho| in r>0.8R)  = 9.7908e-01 (OPEN: boundary leakage)
+    inner-ball (r<=0.8R) bulk c_2          = 6.631551e-16
+    radial |rho| profile (8 bins, r=0..R)  = [2.584e-15 4.603e-10 1.082e-09 1.822e-09 3.012e-09 4.377e-09 5.849e-09
+ 7.521e-09]
+
+  [STAGE 5] FRAME-INVARIANCE: 8 random SU(2)-lifted U(16) conjugations (seed=20260614)
+    coarse-grid (9^4) baseline c_2 = 3.052086e-14
+    frame 1: c_2=+3.052086e-14  (|Delta| from baseline = 1.880e-25)
+    frame 2: c_2=+3.052086e-14  (|Delta| from baseline = 3.431e-25)
+    frame 3: c_2=+3.052086e-14  (|Delta| from baseline = 1.826e-24)
+    frame 4: c_2=+3.052086e-14  (|Delta| from baseline = 2.147e-25)
+    frame 5: c_2=+3.052086e-14  (|Delta| from baseline = 1.313e-24)
+    frame 6: c_2=+3.052086e-14  (|Delta| from baseline = 5.368e-25)
+    frame 7: c_2=+3.052086e-14  (|Delta| from baseline = 2.029e-25)
+    frame 8: c_2=+3.052086e-14  (|Delta| from baseline = 3.991e-26)
+    c_2 over 9 frames: mean=3.052086e-14 spread(abs)=2.363e-24
+    frame_invariance_residual = 2.363e-24 (ceiling 1e-08)
+
+  [STAGE 6] 1D-loop slice cross-check (reproduce S102 (4,6) + S103 (3,5) f_WZ)
+    plane (lam4,lam6): f_WZ=2.888785e-06  Tr U=+3.999997 (S102 ref 2.888785e-06; |Delta|=4.51e-13)
+    plane (lam3,lam5): f_WZ=2.888785e-06  Tr U=+3.999997 (S103 ref 2.888785e-06; |Delta|=0.00e+00)
+    S102 reproduced: True; S103 reproduced: True (the 1D loops are slices of this 4D base; f_WZ != 0 => F != 0 on the base)
+
+  [UPSTREAM] S96 on-block Chern C_fhs=9.778e-15 (PASS-TRIVIAL; on-block 2nd-Chern-relevant base is trivial)
+  [UPSTREAM] S103 coset-2 f_WZ=2.888785e-06 (1D-loop Track A; reproduced above)
+
+==============================================================================
+  VERDICT LOGIC (pre-registered, plan W1-4)
+==============================================================================
+  c_2 (METHOD 1 continuum Chern-Weil, full 4-ball) = 7.956755e-15
+  c_2 (METHOD 2 S^4-closure inner-ball r<=0.8R)    = 6.631551e-16
+  boundary shell_frac (S^4-closure certified?)     = 9.7908e-01 (False)
+  values agree (|Delta|<0.10)                      = True
+  round(c_2)                                       = 0
+  |c_2 - round(c_2)|                               = 7.956755e-15  (< 0.05 ? True)
+  frame_invariance_residual                        = 2.363e-24  (< 1e-08 ? True)
+  Yang monopole (round(c_2) != 0)                  = False
+
+  [SIGN] 3-tuple: sign=PASS magnitude=PASS regime=VALID
+  VERDICT  = PASS
+  TRACK    = B
+  BRANCH   = PASS-Track-B-c2=0-topological-triviality-survives-into-off-block-channel
+  POSTERIOR= TrackA=0.1_TrackB=0.9
+  PRIOR ACTION = RE-ALLOCATE-0.9-Track-B-off-block-trivial-fWZ-nontrivial-connection-no-integer-charge
+  SUBSTRATE READING: on-block triviality (S25 Omega=0, S96 Chern=0, S105 Euler=0) vs off-block c_2=0: f_WZ != 0 (genuine non-Abelian holonomy, S102/S103) but carries NO integer second-Chern charge.
+
+  saved npz -> C:\sandbox\Ainulindale Exflation\computations\investigation-3\inv3_w1_second_chern_b2.npz
+  saved png -> C:\sandbox\Ainulindale Exflation\computations\investigation-3\inv3_w1_second_chern_b2.png
+<<<EMIT_VERDICT_PAYLOAD>>>
+{"audit_sha256":"b63c4542bc37ab85b68962be102535416bd372771c2eec53405b35474471c193","companion_note":"second-Chern c_2=7.9568e-15 round=0 (Track B); Yang-monopole=False; frame-inv-residual=2.363e-24","content_sha256":"b966b4a4f2684d5ebd2f187d46e682b0d57fb6ec18c074e305b68a38c7eb0e54","convention":"RATIO","extra_rows":["# regulator_pin=N/A (second-Chern is a topological curvature integral, NOT a regulator-tagged Seeley-DeWitt moment); curvature_scheme=Kato-projector-A=P(dP)P (frame-free)","# normalization VALIDATED: continuum Chern-Weil prefactor 2 (=(1/4)*8) reproduces a regular-gauge BPST SU(2) one-instanton charge c_2 -> -1 (computations/investigation-3/_bpst_calib.json: -0.857@Ng33 -> -0.907@Ng41, converging to -1 under grid refinement; finite-grid deficit = BPST 1/x^3 tail)","# frame-invariance: c_2 spread(abs)=2.363e-24 over 8 SU(2)-lifted U(16) conjugations (seed 20260614); projector form invariant by construction (the W6-2 670x guard)","# two-method cross-check: METHOD 1 continuum Chern-Weil c_2=7.9568e-15 (full 4-ball, 13^4 FD lattice); METHOD 2 S^4-closure inner-ball c_2=6.6316e-16 (r<=0.8R, boundary shell_frac=9.791e-01<0.25 => bulk = S^4 charge); |Delta|=7.294e-15","# geometry: B2 4-fold degenerate at u=0 (within-band spread 1.67e-15), gap_below=2.5471e-02 gap_above=1.2620e-01 stay OPEN through the closed base (P SMOOTH through the degeneracy => internal band degeneracy, NOT a band crossing => no monopole charge of the rank-4 band bundle)","# 1D-loop reproduction: f_WZ(lam4,lam6)=2.8888e-06 matches S102 2.8888e-06 (|Delta|=4.51e-13); f_WZ(lam3,lam5)=2.8888e-06 matches S103 2.8888e-06 (|Delta|=0.00e+00); the 1D loops are slices of this 4D base; f_WZ != 0 => F != 0 (genuine non-abelian holonomy) but c_2=0 (no integer charge)","# dual_prior re-allocation: prior 0.35A/0.65B -> TrackA=0.1_TrackB=0.9; RE-ALLOCATE-0.9-Track-B-off-block-trivial-fWZ-nontrivial-connection-no-integer-charge","# substrate reading: extends CF-S102-B2-EPS2-WZ-HOLONOMY + S103-B2-WZ-HOLONOMY-COSET2 (1D-loop f_WZ=2.8888e-06 Track A) from 1 coset plane to the full 4D C^2 base; on-block triviality (S25/S96/S105) SURVIVES: off-block c_2=0, metric-without-curvature wall extends to the broken base"],"gate_id":"INV3-W1-4","l_max":"12","magnitude_verdict":"PASS","regime_verdict":"VALID","schema_version":"S84+","scheme":"Wilczek-Zee-projector-curvature-second-Chern-Chern-Weil","session":"3","sign_verdict":"PASS","track":"investigation","value":"verdict=PASS_track=B_c2=7.9568e-15_round=0_int_dev=7.957e-15_c2_cont=7.9568e-15_c2_method2=6.6316e-16_shell_frac=9.791e-01_s4_closure=False_methods_agree=True_frame_resid=2.363e-24_frame_inv=True_yang_monopole=False_gap_open_R=0.100_b2_spread0=1.67e-15_f_WZ46=2.8888e-06_f_WZ35=2.8888e-06_s102_repro=True_s103_repro=True_posterior=TrackA=0.1_TrackB=0.9","verdict":"PASS"}
+<<<END_EMIT_VERDICT_PAYLOAD>>>

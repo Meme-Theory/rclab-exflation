@@ -170,7 +170,7 @@ For general Riemannian manifolds (not necessarily Lie groups), isospectral rigid
 
 **Prediction (S43 forward)**: Compute the τ-dependence of D_K spectral multiplicities. If multiplicities are constant (Boldt-Lauret's prediction), the metric structure is stable. If multiplicities bifurcate or vanish at some τ*, that point marks a geometric phase transition (e.g., SU(3) fiber separating from M^4).
 
-**Concrete test**: Session 35 proved SU(3) is anomalously curved (d^2 S = +20.42 vs SU(2)×SU(2) d^2 S = -3.42). Boldt-Lauret would predict this curvature invariant is spectral-action-derived, hence τ-dependent. Verify: compute d^2 S(τ) from D_K spectrum at multiple τ values (S44 tier0).
+**Concrete test**: Session 35 proved SU(3) is anomalously curved (d^2 S = +20.42 vs SU(2)×SU(2) d^2 S = -3.42). Boldt-Lauret would predict this curvature invariant is spectral-action-derived, hence τ-dependent. Verify: compute d^2 S(τ) from D_K spectrum at multiple τ values (S44 computation).
 
 ---
 

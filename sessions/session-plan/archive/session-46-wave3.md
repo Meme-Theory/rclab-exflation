@@ -22,7 +22,7 @@ For the SU(3) system: the 8-mode BCS model has 3 sectors (B1, B2, B3) that play 
 
 **Computation Steps**:
 
-1. **Load data.** From `tier0-computation/s42_hauser_feshbach.npz`: eigenvalues, V matrix, sector labels, K_7 charges. From `tier0-computation/s38_cc_instanton.npz`: instanton parameters, pair susceptibility.
+1. **Load data.** From `computations/s42_hauser_feshbach.npz`: eigenvalues, V matrix, sector labels, K_7 charges. From `computations/s38_cc_instanton.npz`: instanton parameters, pair susceptibility.
 
 2. **Pair-addition operator.** Define P^+_k = c^+_{k,up} c^+_{k,down} for each of the 8 BCS-active modes. The total pair-addition operator is P^+ = sum_k P^+_k. The sector-restricted operators are P^+_{B1}, P^+_{B2}, P^+_{B3}.
 
@@ -49,17 +49,17 @@ For the SU(3) system: the 8-mode BCS model has 3 sectors (B1, B2, B3) that play 
 **Pre-registered gate**: Diagnostic (no explicit PASS/FAIL). Report alpha_GPV for constraint map.
 
 **Input files**:
-- `tier0-computation/s42_hauser_feshbach.npz`
-- `tier0-computation/s38_cc_instanton.npz`
-- `tier0-computation/canonical_constants.py`
+- `computations/s42_hauser_feshbach.npz`
+- `computations/s38_cc_instanton.npz`
+- `computations/canonical_constants.py`
 - `researchers/Landau/23_2015_Cappuzzello_Giant_Pairing_Vibration_14C_15C.md`
 - `researchers/Landau/24_2019_Fortunato_GPV_Heavy_Nuclei.md`
 - `researchers/Landau/25_2025_GPV_Fragmentation_Many_Body.md`
 
 **Output files**:
-- Script: `tier0-computation/s46_gpv_fragmentation.py`
-- Data: `tier0-computation/s46_gpv_fragmentation.npz`
-- Plot: `tier0-computation/s46_gpv_fragmentation.png`
+- Script: `computations/s46_gpv_fragmentation.py`
+- Data: `computations/s46_gpv_fragmentation.npz`
+- Plot: `computations/s46_gpv_fragmentation.png`
 
 **Working paper section**: W3-R1
 
@@ -82,7 +82,7 @@ For the framework: D_K on SU(3) is Riemannian. The BdG extension (S35) doubles t
 
 **Computation Steps**:
 
-1. **Load data.** From `tier0-computation/s42_hauser_feshbach.npz`: Dirac operator D_K, J operator, grading gamma. S35 BdG spectral triple results (from session notes).
+1. **Load data.** From `computations/s42_hauser_feshbach.npz`: Dirac operator D_K, J operator, grading gamma. S35 BdG spectral triple results (from session notes).
 
 2. **BdG Hilbert space.** Construct H_BdG = H + H^* where H is the 16-component spinor space. The BdG Dirac operator is:
 
@@ -135,17 +135,17 @@ For the framework: D_K on SU(3) is Riemannian. The BdG extension (S35) doubles t
 - FAIL: Axioms violated
 
 **Input files**:
-- `tier0-computation/s42_hauser_feshbach.npz`
-- `tier0-computation/s45_weak_order_one.npz`
-- `tier0-computation/canonical_constants.py`
+- `computations/s42_hauser_feshbach.npz`
+- `computations/s45_weak_order_one.npz`
+- `computations/canonical_constants.py`
 - `researchers/Connes/30_2023_Filaci_Martinetti_Critical_Survey_Twisted_Spectral_Triples.md`
 - `researchers/Connes/33_2021_Devastato_Lizzi_Martinetti_Kurkov_Minimal_Twist_SM_Field_Content.md`
 - `researchers/Connes/44_2026_Martinetti_Twisted_Standard_Model_Krein_Structure.md`
 
 **Output files**:
-- Script: `tier0-computation/s46_twist_bdg.py`
-- Data: `tier0-computation/s46_twist_bdg.npz`
-- Plot: `tier0-computation/s46_twist_bdg.png`
+- Script: `computations/s46_twist_bdg.py`
+- Data: `computations/s46_twist_bdg.npz`
+- Plot: `computations/s46_twist_bdg.png`
 
 **Working paper section**: W3-R2
 
@@ -168,7 +168,7 @@ For this system: the "bath" is the 8 Richardson-Gaudin modes with frequencies om
 
 **Computation Steps**:
 
-1. **Load data.** From `tier0-computation/s45_gge_beating.npz`: GGE beat frequencies, mode amplitudes. From `tier0-computation/s44_friedmann_bcs_audit.npz`: Friedmann dynamics, H(tau), v(tau). From `tier0-computation/s42_gge_energy.npz`: GGE occupation numbers, temperatures, mode energies. Import from `tier0-computation/canonical_constants.py`: H_fold, v_terminal, G_DeWitt, omega_PV, omega_att.
+1. **Load data.** From `computations/s45_gge_beating.npz`: GGE beat frequencies, mode amplitudes. From `computations/s44_friedmann_bcs_audit.npz`: Friedmann dynamics, H(tau), v(tau). From `computations/s42_gge_energy.npz`: GGE occupation numbers, temperatures, mode energies. Import from `computations/canonical_constants.py`: H_fold, v_terminal, G_DeWitt, omega_PV, omega_att.
 
 2. **Bath spectral density.** Define the Caldeira-Leggett spectral density of the 8-mode GGE bath:
 
@@ -210,15 +210,15 @@ For this system: the "bath" is the 8 Richardson-Gaudin modes with frequencies om
 **Pre-registered gate GGE-FRICTION-46**: Diagnostic. Report gamma_CL and velocity reduction factor.
 
 **Input files**:
-- `tier0-computation/s45_gge_beating.npz`
-- `tier0-computation/s44_friedmann_bcs_audit.npz`
-- `tier0-computation/s42_gge_energy.npz`
-- `tier0-computation/canonical_constants.py`
+- `computations/s45_gge_beating.npz`
+- `computations/s44_friedmann_bcs_audit.npz`
+- `computations/s42_gge_energy.npz`
+- `computations/canonical_constants.py`
 
 **Output files**:
-- Script: `tier0-computation/s46_gge_friction.py`
-- Data: `tier0-computation/s46_gge_friction.npz`
-- Plot: `tier0-computation/s46_gge_friction.png`
+- Script: `computations/s46_gge_friction.py`
+- Data: `computations/s46_gge_friction.npz`
+- Plot: `computations/s46_gge_friction.png`
 
 **Working paper section**: W3-R3
 
@@ -254,7 +254,7 @@ The first term is -1.68 (known). The second is the +1.65 gap that must be filled
 
 **Computation Steps**:
 
-1. **Load data.** From `tier0-computation/s45_gge_beating.npz`: GGE beat frequencies, amplitudes, phases. From `tier0-computation/s44_friedmann_bcs_audit.npz`: Friedmann equation, H(t), a(t) during transit.
+1. **Load data.** From `computations/s45_gge_beating.npz`: GGE beat frequencies, amplitudes, phases. From `computations/s44_friedmann_bcs_audit.npz`: Friedmann equation, H(t), a(t) during transit.
 
 2. **Internal vacuum energy spectrum.** Construct rho_vac(t) during transit as the sum of 3 beating cosines:
 
@@ -289,14 +289,14 @@ The first term is -1.68 (known). The second is the +1.65 gap that must be filled
 **Pre-registered gate**: None explicit. Diagnostic: report n_s from the full convolution.
 
 **Input files**:
-- `tier0-computation/s45_gge_beating.npz`
-- `tier0-computation/s44_friedmann_bcs_audit.npz`
-- `tier0-computation/canonical_constants.py`
+- `computations/s45_gge_beating.npz`
+- `computations/s44_friedmann_bcs_audit.npz`
+- `computations/canonical_constants.py`
 
 **Output files**:
-- Script: `tier0-computation/s46_transfer_function.py`
-- Data: `tier0-computation/s46_transfer_function.npz`
-- Plot: `tier0-computation/s46_transfer_function.png`
+- Script: `computations/s46_transfer_function.py`
+- Data: `computations/s46_transfer_function.npz`
+- Plot: `computations/s46_transfer_function.png`
 
 **Working paper section**: W3-R4
 
@@ -323,7 +323,7 @@ For the Jensen-deformed SU(3): the metric g(tau) deforms the root directions rel
 
 **Computation Steps**:
 
-1. **Load data.** From `tier0-computation/s42_hauser_feshbach.npz`: Dirac operator D_K at the fold, algebra representation. Import from `tier0-computation/canonical_constants.py`: tau_fold.
+1. **Load data.** From `computations/s42_hauser_feshbach.npz`: Dirac operator D_K at the fold, algebra representation. Import from `computations/canonical_constants.py`: tau_fold.
 
 2. **Define test points.** Choose 8 group elements g_i in SU(3): the identity e, the 6 root-direction exponentials exp(t * X_alpha) for the 6 roots, and one Cartan direction exponential exp(t * H_1). Set t = 0.1 (small displacement).
 
@@ -349,14 +349,14 @@ For the Jensen-deformed SU(3): the metric g(tau) deforms the root directions rel
 - (d) Citation: Connes (1994) "Noncommutative Geometry"; Connes-van Suijlekom (2021), Paper 28; Hekkelman-McDonald (2024), Paper 37.
 
 **Input files**:
-- `tier0-computation/s42_hauser_feshbach.npz`
-- `tier0-computation/canonical_constants.py`
+- `computations/s42_hauser_feshbach.npz`
+- `computations/canonical_constants.py`
 - `researchers/Connes/28_2021_Connes_van_Suijlekom_Spectral_Truncations.md`
 
 **Output files**:
-- Script: `tier0-computation/s46_connes_distance.py`
-- Data: `tier0-computation/s46_connes_distance.npz`
-- Plot: `tier0-computation/s46_connes_distance.png`
+- Script: `computations/s46_connes_distance.py`
+- Data: `computations/s46_connes_distance.npz`
+- Plot: `computations/s46_connes_distance.png`
 
 **Working paper section**: W3-R5
 
@@ -383,7 +383,7 @@ The 0.83-decade M_KK tension between gravity and Kerner routes (S42) may be a tr
 
 1. **Enumerate new representations.** At max_pq_sum = 6, the new (p,q) pairs are all pairs with p + q = 6: (6,0), (5,1), (4,2), (3,3), (0,6), (1,5), (2,4). Compute dim(p,q) = (p+1)(q+1)(p+q+2)/2 for each. Total new modes = sum dim^2.
 
-2. **Construct D_K at max_pq_sum = 6.** Using the existing tier1_dirac_spectrum.py infrastructure (if available) or constructing from the Lie algebra representation theory:
+2. **Construct D_K at max_pq_sum = 6.** Using the existing dirac_spectrum.py infrastructure (if available) or constructing from the Lie algebra representation theory:
    - For each new (p,q), construct the representation matrices of the 8 SU(3) generators in the dim(p,q)-dimensional space.
    - Construct the Dirac operator D_K = sum gamma^a e_a^i nabla_i on the spinor bundle tensored with the representation.
    - Diagonalize to get eigenvalues lambda_k.
@@ -409,14 +409,14 @@ The 0.83-decade M_KK tension between gravity and Kerner routes (S42) may be a tr
 **Pre-registered gate**: None explicit. Diagnostics: d_Weyl closer to 8? a_2 increasing? M_KK tension narrowing?
 
 **Input files**:
-- `tier0-computation/s42_hauser_feshbach.npz` — existing spectrum for comparison
-- `tier0-computation/s42_constants_snapshot.npz` — a_0, a_2, a_4 at max_pq_sum = 5
-- `tier0-computation/canonical_constants.py`
+- `computations/s42_hauser_feshbach.npz` — existing spectrum for comparison
+- `computations/s42_constants_snapshot.npz` — a_0, a_2, a_4 at max_pq_sum = 5
+- `computations/canonical_constants.py`
 
 **Output files**:
-- Script: `tier0-computation/s46_max_pq_sum_6.py`
-- Data: `tier0-computation/s46_max_pq_sum_6.npz`
-- Plot: `tier0-computation/s46_max_pq_sum_6.png`
+- Script: `computations/s46_max_pq_sum_6.py`
+- Data: `computations/s46_max_pq_sum_6.npz`
+- Plot: `computations/s46_max_pq_sum_6.png`
 
 **Working paper section**: W3-R6
 

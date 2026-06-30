@@ -1,0 +1,165 @@
+==========================================================================
+LIOUVILLIAN-52: Liouvillian Spectral Gap of N_pair=1 BCS Sector
+==========================================================================
+
+--- Step 1: Load input data ---
+  N_modes     = 8
+  E_8         = [0.84526909 0.84526909 0.84526909 0.84526909 0.81914    0.97822388
+ 0.97822388 0.97822388]
+  mu          = 0.0
+  xi          = [0.84526909 0.84526909 0.84526909 0.84526909 0.81914    0.97822388
+ 0.97822388 0.97822388]
+  V_phys max  = 0.88013323
+  V_phys diag = [3.57634206e-01 4.35886275e-01 7.40481520e-01 8.80133232e-01
+ 3.44089579e-29 6.79853670e-02 6.81386667e-02 1.68421951e-03]
+  Cross-check vs canonical_constants: PASS
+
+--- Step 2: Build H_pair (N_pair=1, 8x8) ---
+  H_pair Hermiticity error: 4.44e-16
+
+  H_pair eigenvalues (E_m):
+    E_0 = -0.6683810877
+    E_1 = 1.0525378690
+    E_2 = 1.4963533296
+    E_3 = 1.7525660063
+    E_4 = 1.8680044747
+    E_5 = 1.9077925611
+    E_6 = 2.0288791526
+    E_7 = 2.2800801880
+  E_min = -0.6683810877
+  E_max = 2.2800801880
+  Bandwidth = 2.9484612758
+
+--- Step 3: Build Liouvillian (64x64) ---
+  Liouvillian dimension: 64 x 64
+  Anti-Hermiticity error: 4.44e-16
+
+--- Step 4: Diagonalize Liouvillian ---
+  max |Re(lambda)| = 2.66e-15  (should be ~0)
+
+  Liouvillian eigenvalues (imaginary parts):
+    N_total = 64
+    min Im  = -2.9484612758
+    max Im  = 2.9484612758
+    N_zero  = 8  (expected 8, one per diagonal element)
+
+--- Step 5: Analytical cross-check ---
+  Cross-check error (L eigenvalues vs E_m - E_l): 1.15e-14
+  Analytical cross-check: PASS
+
+--- Step 6: Ruelle-Pollicott gap ---
+  gamma_RP (smallest nonzero |Im|) = 0.0397880864 M_KK
+  Second smallest                  = 0.0397880864 M_KK
+  Largest                          = 2.9484612758 M_KK
+
+  Unique nonzero |omega| values (28):
+    omega_0 = 0.0397880864  (degeneracy 2)
+    omega_1 = 0.1154384685  (degeneracy 2)
+    omega_2 = 0.1210865915  (degeneracy 2)
+    omega_3 = 0.1552265548  (degeneracy 2)
+    omega_4 = 0.1608746779  (degeneracy 2)
+    omega_5 = 0.2512010354  (degeneracy 2)
+    omega_6 = 0.2562126767  (degeneracy 2)
+    omega_7 = 0.2763131463  (degeneracy 2)
+    omega_8 = 0.3716511451  (degeneracy 2)
+    omega_9 = 0.3722876269  (degeneracy 2)
+    omega_10 = 0.4114392315  (degeneracy 2)
+    omega_11 = 0.4120757133  (degeneracy 2)
+    omega_12 = 0.4438154606  (degeneracy 2)
+    omega_13 = 0.5275141817  (degeneracy 2)
+    omega_14 = 0.5325258230  (degeneracy 2)
+    omega_15 = 0.7000281373  (degeneracy 2)
+    omega_16 = 0.7837268584  (degeneracy 2)
+    omega_17 = 0.8154666057  (degeneracy 2)
+    omega_18 = 0.8552546921  (degeneracy 2)
+    omega_19 = 0.9763412836  (degeneracy 2)
+    omega_20 = 1.2275423190  (degeneracy 2)
+    omega_21 = 1.7209189567  (degeneracy 2)
+    omega_22 = 2.1647344174  (degeneracy 2)
+    omega_23 = 2.4209470940  (degeneracy 2)
+    omega_24 = 2.5363855625  (degeneracy 2)
+    omega_25 = 2.5761736488  (degeneracy 2)
+    omega_26 = 2.6972602404  (degeneracy 2)
+    omega_27 = 2.9484612758  (degeneracy 2)
+
+  Context comparisons:
+    gamma_RP                 = 0.039788 M_KK
+    omega_PV (pair vibration)= 0.791659 M_KK
+    1/dt_transit             = 884.8324 M_KK
+    T_acoustic               = 0.112000 M_KK
+    2*pi*T_acoustic          = 0.703717 M_KK  (MSS bound)
+    gamma_RP / omega_PV      = 0.050259
+    gamma_RP * dt_transit    = 4.496680e-05
+
+--- Step 7: Level spacing statistics ---
+  N_positive frequencies = 28
+  N_spacings = 27
+  Spacings: [0.07565038 0.00564812 0.03413996 0.00564812 0.09032636 0.00501164
+ 0.02010047 0.095338   0.00063648 0.0391516  0.00063648 0.03173975
+ 0.08369872 0.00501164 0.16750231 0.08369872 0.03173975 0.03978809
+ 0.12108659 0.25120104 0.49337664 0.44381546 0.25621268 0.11543847
+ 0.03978809 0.12108659 0.25120104]
+
+  r-values: [0.07466087 0.16544022 0.16544022 0.06253018 0.05548371 0.24932956
+ 0.21083377 0.00667606 0.01625685 0.01625685 0.02005315 0.37921425
+ 0.05987715 0.02991983 0.49968695 0.37921425 0.79771988 0.32859201
+ 0.48203062 0.5091466  0.89954697 0.57729552 0.45055721 0.34466922
+ 0.32859201 0.48203062]
+  <r> = 0.291964
+  Poisson benchmark: <r> = 0.386
+  GOE benchmark:     <r> = 0.530
+  GUE benchmark:     <r> = 0.603
+
+  H_pair level spacings:
+  spacings = [1.72091896 0.44381546 0.25621268 0.11543847 0.03978809 0.12108659
+ 0.25120104]
+  r-values (H_pair): [0.25789446 0.57729552 0.45055721 0.34466922 0.32859201 0.48203062]
+  <r> (H_pair) = 0.406840
+
+--- Step 8: OTOC decay from RP gap ---
+  Dephasing time   t_deph  = 2*pi/gamma_RP = 157.9162 M_KK^{-1}
+  Poincare time    t_Poin  ~ 9871.7439 M_KK^{-1}
+  Transit time     t_tr    = 0.001130 M_KK^{-1}
+  t_deph / t_tr            = 139729.42
+
+==========================================================================
+GATE: LIOUVILLIAN-52
+==========================================================================
+
+  gamma_RP = 0.03978809 M_KK
+  Verdict: INFO: gamma_RP > 0.005 => partial chaoticity
+
+  H_pair <r> = 0.406840  (Poisson=0.386, GOE=0.530, GUE=0.603)
+  Classification: POISSON (integrable)
+
+  Liouvillian is purely imaginary (closed system, no dissipation)
+  No true RP decay -- OTOC oscillates quasi-periodically
+  Dephasing time = 157.9162 >> transit time = 0.001130
+  Ratio: 139729.4x
+
+  CONSISTENT WITH ALL PRIOR CHAOS DIAGNOSTICS:
+    CHAOS-1 (S38): <r>=0.321 sub-Poisson (integrable)
+    CHAOS-2 (S38): F(t) ~ t^1.9, no Lyapunov regime
+    CHAOS-3 (S38): t_scr/t_transit = 814x (no scrambling)
+    B2-INTEG-40:   <r>=0.401, g_T=0.087 (integrable)
+
+--- Step 10: Save data ---
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s52_liouvillian.npz
+
+--- Step 11: Generate plot ---
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s52_liouvillian.png
+
+==========================================================================
+COMPUTATION COMPLETE in 0.30s
+==========================================================================
+  H_pair eigenvalues: [-0.66838109  1.05253787  1.49635333  1.75256601  1.86800447  1.90779256
+  2.02887915  2.28008019]
+  gamma_RP           = 0.0397880864 M_KK
+  <r> (H_pair)       = 0.406840
+  <r> (Liouvillian)  = 0.291964
+  t_dephase          = 157.9162 M_KK^{-1}
+  t_dephase/t_transit= 139729.4x
+  Classification     : POISSON (integrable)
+  Gate verdict       : INFO: gamma_RP > 0.005 => partial chaoticity
+  Data: C:\sandbox\Ainulindale Exflation\tier0-computation\s52_liouvillian.npz
+  Plot: C:\sandbox\Ainulindale Exflation\tier0-computation\s52_liouvillian.png

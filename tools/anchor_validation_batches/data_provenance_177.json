@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 177,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1761",
+      "anchor_type": "data_provenance",
+      "name": "w6_field_expansion_convergence",
+      "script_path": "session-84/s84_w6_field_expansion_convergence.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w6_field_expansion_convergence.npz, session-84/s84_w6_field_expansion_convergence.png",
+      "source_file": "computations/session-84/s84_w6_field_expansion_convergence.py",
+      "source_context_30_lines": "  469: \n  470: # ============================================================\n  471: # SECTION 8: Save NPZ artifact\n  472: # ============================================================\n  473: print(\"[SEC 8] Save NPZ artifact\")\n  474: print(\"-\" * 72)\n  475: \n  476: npz_out_path = os.path.join(HERE,\n  477:                             's84_w6_field_expansion_convergence.npz')  # (local)\n  478: np.savez(\n  479:     npz_out_path,\n  480:     # Primary pre-registered arrays (plan §6 Output files)\n  481:     NLO_coef_field=float(c_field_reported),\n  482:     NLO_coef_gauge=float(NLO_COEF_GAUGE_G35),\n  483:     eps_H_bound=float(EPS_H),\n  484:     combined_expansion_total=float(combined),\n  485:     # Anchors"
+    },
+    {
+      "anchor_id": "prov_1762",
+      "anchor_type": "data_provenance",
+      "name": "w6_mellin_balance_template_audit",
+      "script_path": "session-84/s84_w6_mellin_balance_template_audit.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w6_mellin_balance_template_audit.npz",
+      "source_file": "computations/session-84/s84_w6_mellin_balance_template_audit.py",
+      "source_context_30_lines": "  109: GATE_ID = \"S84-OBSERVABLE-MELLIN-BALANCE-TEMPLATE\"           # (local)\n  110: SCHEME = \"meta-gate\"                                          # (local)\n  111: CONVENTION = \"Mellin-pre-declaration-template\"               # (local)\n  112: L_MAX = \"N/A\"                                                 # (local)\n  113: \n  114: TEMPLATE_FILE = TEMPLATES_DIR / \"mellin-balance-pre-declaration.md\"\n  115: VERDICT_TXT = resolve_output(84, 's84_gate_verdicts.txt')\n  116: \n  117: OUT_NPZ = resolve_output(84, 's84_w6_mellin_balance_template_audit.npz')\n  118: OUT_CSV = resolve_output(84, 's84_w6_mellin_balance_template_audit.csv')\n  119: \n  120: # S84 cluster-test gate set -- enumerated from plan §4.C / §VII.K-PROP and\n  121: # cross-referenced against the W6 plan's explicit enumeration in §W6-71.6.\n  122: # Each entry: (gate_id, plan_file, plan_section_anchor)\n  123: S84_CLUSTER_TEST_GATES = [                                    # (local)\n  124:     # W6 cluster-test gates (in W6 plan)\n  125:     (\"S84-Z-R-COUNTERTERM-EXISTENCE\","
+    },
+    {
+      "anchor_id": "prov_1763",
+      "anchor_type": "data_provenance",
+      "name": "w6_r_protected_atlas_completeness",
+      "script_path": "session-84/s84_w6_r_protected_atlas_completeness.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w6_r_protected_atlas_completeness.npz, session-84/s84_w6_r_protected_atlas_completeness.png",
+      "source_file": "computations/session-84/s84_w6_r_protected_atlas_completeness.py",
+      "source_context_30_lines": "   92:   w_Zubarev(lam)    = exp(-lam^2 / Lambda_Z^2)  [Lambda_Z = 1 M_KK]\n   93:   w_SDW(lam)        = alpha_star sqrt(x) + beta_star exp(-x), x=(lam/lam_max)^2\n   94:   w_dim-reg(lam)    = 1  (MSbar, pole-subtracted, flat)\n   95:   w_lattice-BR(lam) = 1  (Brillouin continuum limit, flat)\n   96: \n   97: INPUTS (SHA-256 pinned at runtime):\n   98:   - canonical_constants.py\n   99:   - s74_spectrum_cache_L9_tau019.npz (D_K spectrum at tau_fold)\n  100:   - s84_w6_r_protected_atlas_completeness.py (this script)\n  101: \"\"\"\n  102: from __future__ import annotations\n  103: \n  104: # ---------------------------------------------------------------------------\n  105: # Section 1 — Canonical constants (MANDATORY first import)\n  106: # ---------------------------------------------------------------------------\n  107: from canonical_constants import *  # noqa: F401,F403\n  108: from canonical_constants import M_KK, tau_fold, PI"
+    },
+    {
+      "anchor_id": "prov_1764",
+      "anchor_type": "data_provenance",
+      "name": "w6_sibling_common_prefactor",
+      "script_path": "session-84/s84_w6_sibling_common_prefactor.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w6_sibling_common_prefactor.npz, session-84/s84_w6_sibling_common_prefactor.png",
+      "source_file": "computations/session-84/s84_w6_sibling_common_prefactor.py",
+      "source_context_30_lines": "  138:     (\"mu\",                 +2, \"PIXIE/PRISM\",     2035, \"mu ~ integral(A_s W(k) dk/k) Silk dissipation\"),\n  139:     (\"tau_reio\",            0, \"Planck/CMB-S4\",   2018, \"optical depth — astrophysical, H~-independent\"),\n  140:     (\"alpha_s_CMB_S76\",     0, \"CMB-S4 (via n_s)\", 2030, \"alpha_s = n_s^2 - 1 (S50 spectral-moment identity)\"),\n  141:     (\"dn_s_d_ln_k\",         0, \"CMB-S4\",          2030, \"same as alpha_s (SR 2nd derivative)\"),\n  142:     (\"spec_idx_xcorr_nt_ns\",0, \"LiteBIRD+CMB-S4\", 2032, \"n_t - n_s consistency — ratio form\"),\n  143: ]\n  144: \n  145: # Output destinations\n  146: OUT_NPZ = resolve_output(84, 's84_w6_sibling_common_prefactor.npz')\n  147: OUT_PNG = resolve_output(84, 's84_w6_sibling_common_prefactor.png')\n  148: OUT_CSV = resolve_output(84, 's84_w6_sibling_common_prefactor.csv')\n  149: VERDICT_TXT = resolve_output(84, 's84_gate_verdicts.txt')\n  150: \n  151: INPUT_FILES = [\n  152:     resolve_script(None, 'canonical_constants.py'),\n  153: ]\n  154: "
+    },
+    {
+      "anchor_id": "prov_1765",
+      "anchor_type": "data_provenance",
+      "name": "w6_z_r_counterterm",
+      "script_path": "session-84/s84_w6_z_r_counterterm.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w6_z_r_counterterm.npz, session-84/s84_w6_z_r_counterterm.png",
+      "source_file": "computations/session-84/s84_w6_z_r_counterterm.py",
+      "source_context_30_lines": "  150: PROJECT_ROOT = SCRIPT_DIR.parent\n  151: \n  152: SESSION    = \"S84\"                                              # (local)\n  153: GATE_ID    = \"S84-Z-R-COUNTERTERM-EXISTENCE\"                    # (local)\n  154: SCHEME     = \"zeta-reference\"                                   # (local)\n  155: CONVENTION = \"heat-kernel-matching\"                             # (local)\n  156: L_MAX      = 5                                                  # (local) task-pinned\n  157: \n  158: OUT_NPZ     = SCRIPT_DIR / \"s84_w6_z_r_counterterm.npz\"\n  159: OUT_PNG     = SCRIPT_DIR / \"s84_w6_z_r_counterterm.png\"\n  160: VERDICT_TXT = SCRIPT_DIR / \"s84_gate_verdicts.txt\"\n  161: SPECTRUM_CACHE = SCRIPT_DIR / \"s74_spectrum_cache_L9_tau019.npz\"\n  162: \n  163: INPUT_FILES = [\n  164:     SCRIPT_DIR / \"canonical_constants.py\",\n  165:     SPECTRUM_CACHE,\n  166:     SCRIPT_DIR / \"s84_w6_z_r_counterterm.py\","
+    },
+    {
+      "anchor_id": "prov_1766",
+      "anchor_type": "data_provenance",
+      "name": "w7a_det_p_k_theory",
+      "script_path": "session-84/s84_w7a_det_p_k_theory.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-84/s84_w7a_det_p_k_theory.py",
+      "source_context_30_lines": "<name 'w7a_det_p_k_theory' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S84 W7a-74 — DET-P-K-THEORY (K-theoretic uplift of det(P)=1 to Witten 1998)\n    4: ==========================================================================\n    5: \n    6: Gate: S84-DET-P-K-THEORY ([VERIFY])\n    7: \n    8: Pre-registered thresholds (from session-84-plan-w7a.md §W7a-74):\n    9:   PASS: structure-preserving map phi: KK^6(A_F, A_F^o) -> K^0(M^4 x X_fiber)\n   10:         exists that carries det(P)=1 to Witten's anomaly-cancellation identity\n   11:         at K_0 level. Map respects Bott periodicity AND torsion classes.\n   12:   INFO: map exists at homotopy level (classifying-space equivalence) but is\n   13:         not structure-preserving at K_0. Homotopically equivalent but\n   14:         algebraically distinct.\n   15:   FAIL: no map exists; obstruction identified in a specific KK-group\n   16:         (KK^6 torsion, Bott periodicity mismatch, or K_0 rank mismatch).\n   17: \n   18: Classification: GEOMETRIC (Kasparov KK^6 structural identity)\n   19: Scheme: Kasparov_KK\n   20: Convention: Witten_1998\n   21: L_max: NA (K-theoretic, not spectral)\n   22: \n   23: METHODOLOGY\n   24: -----------\n   25: 6-step substitution chain per plan §W7a-74:\n   26:   1. S45 permanent: det(P)=1 with K_0(A_F) = Z^3 (SM A_F = C + H + M_3(C))\n   27:   2. Bott periodicity: KO^6(pt) = Z/2 torsion; K^0(pt) = Z torsion-free;\n   28:      complexification KO^6 -> K^0 is zero map.\n   29:   3. Chern character: ch_0(fundamental class) = rank of projection on\n   30:      H_F^+ half-generation = 16."
+    },
+    {
+      "anchor_id": "prov_1767",
+      "anchor_type": "data_provenance",
+      "name": "w7a_dynamics_uniqueness",
+      "script_path": "session-84/s84_w7a_dynamics_uniqueness.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-84/s84_w7a_dynamics_uniqueness.py",
+      "source_context_30_lines": "<name 'w7a_dynamics_uniqueness' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: S84 W7a-80: S84-DYNAMICS-UNIQUENESS-GATE (first-pass catalog)\n    3: \n    4: Systematic compactification-literature catalog for joint dynamics-signature\n    5: falsification. Target milestone S84 close: >= 5/50 compactifications with\n    6: 4-signature extraction. Full verdict deferred to S90 (catalog >= 50).\n    7: \n    8: 4-signature joint predicate (per plan W7a-80, .claude/rules/gate-verdicts.md):\n    9:   (i)   cubic_bc:     tau_fold in [0.15, 0.25] with integer-3 exponent in [2.5, 3.5]\n   10:   (ii)  blue_nt:      n_T > 0 at CMB pivot (k = 0.05 Mpc^-1) with EXPLICIT model\n   11:   (iii) freq_hier:    omega_max / omega_min >= 10 with >= 4 DISTINCT mode families\n   12:   (iv)  speed_order:  STRICT 4-speed chain c_mod > c_BLV > c_BA > c_L\n   13: \n   14: Substitution chain (threshold direction):\n   15:   Step 1. Definitions per paper p:\n   16:           cubic_bc(p), blue_nt(p), freq_hier(p), speed_order(p) in {0, 1}.\n   17:   Step 2. Joint predicate:\n   18:           all_four(p)     = cubic_bc(p) AND blue_nt(p) AND freq_hier(p) AND speed_order(p)\n   19:           k_of_four(p)    = cubic_bc(p) + blue_nt(p) + freq_hier(p) + speed_order(p)  in {0..4}\n   20:           three_of_four(p)= (k_of_four(p) == 3)\n   21:   Step 3. Aggregates over catalog:\n   22:           N_all_four        = sum_{p in catalog} all_four(p)\n   23:           N_three_of_four   = sum_{p in catalog} three_of_four(p)\n   24:   Step 4. Verdict:\n   25:           PASS  iff N_all_four == 0 AND N_three_of_four in [0, 2]\n   26:           INFO  iff N_all_four == 0 AND N_three_of_four >= 3\n   27:           FAIL  iff N_all_four >= 1\n   28:   Direction: MONOTONE falsification; any all-4 match flips to FAIL\n   29:              permanently (cannot be unmade by further catalog growth).\n   30: "
+    },
+    {
+      "anchor_id": "prov_1768",
+      "anchor_type": "data_provenance",
+      "name": "w7a_equiv_class_falsif",
+      "script_path": "session-84/s84_w7a_equiv_class_falsif.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-84/s84_w7a_equiv_class_falsif.py",
+      "source_context_30_lines": "<name 'w7a_equiv_class_falsif' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S84 W7a-79: S84-EQUIV-CLASS-FALSIF\n    4: ==================================\n    5: \n    6: Pre-registered falsifier (long-horizon, monotone):\n    7:   If ANY string-theoretic / NCG construction in the published literature\n    8:   exhibits BOTH\n    9:       (a) KO-dimension == 6, AND\n   10:       (b) |E_cond| ~ L^p  with  p in [4.18, 5.18]   (framework's 4.68 +- 0.5)\n   11:   then the framework's structural-equivalence-class uniqueness claim is\n   12:   FALSIFIED.\n   13: \n   14: Classification: GEOMETRIC (exhaustive catalog of external-paradigm\n   15: constructions; not a substrate-excitation result).\n   16: Agent:          kaku-speculative-theorist.\n   17: \n   18: Long-horizon provision (plan §W7a-79, \"Carry-forward provision\"):\n   19:   S84 verdict is PROVISIONAL from first-pass catalog (target >= 50 papers).\n   20:   Falsification is MONOTONE: once a matching construction is found, verdict\n   21:   becomes FAIL permanently (no retraction). Absence is provisional until\n   22:   catalog is exhaustive. S85-S90 extend incrementally.\n   23: \n   24: Pre-work (knowledge MCP):\n   25:   search_knowledge(\"KO-dim 6 matrix model power law E_cond\")\n   26:     -> S83 G36 gate fit for the framework itself (context; not evidence\n   27:        for or against external constructions).\n   28:   trace_entity(\"IKKT matrix model\")\n   29:     -> IKKT is convention=continuum-BCS-vs-IKKT in G36.\n   30:        IKKT does not carry a KO-dim=6 spectral-triple structure"
+    },
+    {
+      "anchor_id": "prov_1769",
+      "anchor_type": "data_provenance",
+      "name": "w7a_fth_uplift",
+      "script_path": "session-84/s84_w7a_fth_uplift.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-84/s84_w7a_fth_uplift.py",
+      "source_context_30_lines": "  305: print(f\"  -> verdict = {verdict}\")\n  306: \n  307: # -------------------------------------------------------------------\n  308: # Step 6: Closure SHA over input-pin map.\n  309: # -------------------------------------------------------------------\n  310: \n  311: input_pin_map = {                                                      # (local)\n  312:     \"canonical_constants.py\": sha_cc,\n  313:     \"s84_w7a_fth_uplift.py\": sha_script,\n  314:     \"ks_4fold_catalog_excerpt (deterministic-seed-84073)\": hashlib.sha256(\n  315:         f\"seed={SEED}|N={N_SAMPLE}|h11_range=[{H11_MIN},{H11_MAX}]|\"\n  316:         f\"base_dim_real={BASE_DIM_REAL_STANDARD}|\"\n  317:         f\"fw_compat_set={sorted(FRAMEWORK_COMPAT_SET)}|\"\n  318:         f\"d_spatial_fw={DIM_SPATIAL_FRAMEWORK}\".encode(\"utf-8\")\n  319:     ).hexdigest(),\n  320:     \"Weigand_TASI_2010_arxiv_1009.3497_Section_2.1\": hashlib.sha256(\n  321:         b\"Weigand TASI 2010 Section 2.1: elliptic CY4 base is complex 3-fold\""
+    },
+    {
+      "anchor_id": "prov_1770",
+      "anchor_type": "data_provenance",
+      "name": "w7a_het_decomp",
+      "script_path": "session-84/s84_w7a_het_decomp.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-84/s84_w7a_het_decomp.py",
+      "source_context_30_lines": "<name 'w7a_het_decomp' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: S84 W7a-72: S84-HET-DECOMP\n    3: Test whether framework's Psi_+ = C^16 embeds into E_8 adjoint via\n    4: E_6 x SU(3) -> SO(10) x U(1) -> SU(5) -> SM branching (Slansky 1981).\n    5: \n    6: Classification: GEOMETRIC (spectral-triple representation content).\n    7: Agent: kaku-speculative-theorist.\n    8: \n    9: Pre-work (knowledge MCP):\n   10:   search_knowledge(\"E_8 branching heterotic A_F Psi_+\")  -> confirms\n   11:     PERMANENT result: SM quantum numbers from Psi_+ = C^16 (S7).\n   12: \n   13: Method:\n   14:   1. Tabulate the Slansky 1981 branching chain:\n   15:      E_8 -> E_6 x SU(3)\n   16:      27 of E_6 -> 16 + 10 + 1 under SO(10) x U(1)\n   17:      16 of SO(10) -> 10 + 5-bar + 1 under SU(5)\n   18:      10 of SU(5) -> (3,2,+1/6) + (3-bar,1,-2/3) + (1,1,+1)  under SM\n   19:       5-bar of SU(5) -> (3-bar,1,+1/3) + (1,2,-1/2)          under SM\n   20:        1 of SU(5) -> (1,1,0)\n   21:   2. Tabulate framework Psi_+ = C^16 (from A_F = C+H+M_3(C), S7 permanent).\n   22:   3. Check set equality of (SU(3)_C, SU(2)_L, Y) triples between framework\n   23:      and heterotic 16 of SO(10).\n   24:   4. hypercharge_preserved = True iff ratio Y_framework/Y_heterotic = const\n   25:      for all 16 entries (rational equality, no normalization freedom since\n   26:      U(1)_Y convention is fixed by SU(5) embedding on both sides).\n   27:   5. Cross-checks:\n   28:      (a) anomaly cancellation: tr(Y) = 0 and tr(Y^3) = 0 per generation\n   29:      (b) total dim count = 16\n   30:      (c) E_8 branching completeness: 248 = 78+8+27*3+27bar*3 = 78+8+81+81 = 248"
+    }
+  ]
+}

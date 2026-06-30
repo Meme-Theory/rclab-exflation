@@ -5,10 +5,10 @@
 **Depends on**: Session 29B complete. B-29d FIRED (Jensen saddle, 2/4 eigenvalues negative). The Pfaffian must be computed at the true U(2)-invariant minimum, not on the 1D Jensen curve.
 **Prerequisite**: REVISED — Session 30 Thread 1 (2D U(2)-invariant grid search) must first locate the off-Jensen minimum. Then the D_F construction runs at that geometry. The original Jensen-stability prerequisite is replaced by off-Jensen minimum availability.
 **Input data**:
-- `tier0-computation/tier1_dirac_spectrum.py` (core Dirac code — to be modified for eigenvector return)
-- `tier0-computation/branching_computation_32dim.py` (Xi, G5, gamma_F, particle identification)
-- `tier0-computation/s23a_kosmann_singlet.py` (Kosmann operator K_a construction, corrected antisymmetric formula)
-- `tier0-computation/s29b_jensen_transverse.npz` (Jensen 5D stability verdict — FROM 29Bb)
+- `computations/dirac_spectrum.py` (core Dirac code — to be modified for eigenvector return)
+- `computations/branching_computation_32dim.py` (Xi, G5, gamma_F, particle identification)
+- `computations/s23a_kosmann_singlet.py` (Kosmann operator K_a construction, corrected antisymmetric formula)
+- `computations/s29b_jensen_transverse.npz` (Jensen 5D stability verdict — FROM 29Bb)
 - Baptista Paper 17 eq 1.4: $[D_K, \mathcal{L}_X]$ formula
 - Baptista Paper 18 Appendix E: SU(3) example
 
@@ -105,7 +105,7 @@ All prerequisites exist except Thread 1 (off-Jensen minimum). Compute that first
 Every result classified against its pre-registered gate BEFORE any interpretation. Report the number first. Classify second. Interpret third.
 
 **Python environment**: `"phonon-exflation-sim/.venv312/Scripts/python.exe"`
-**Output directory**: `tier0-computation/`
+**Output directory**: `computations/`
 **Script prefix**: `s30a_`
 
 ## PRE-SESSION GATE CHECK (MANDATORY FIRST ACTION)
@@ -113,7 +113,7 @@ Every result classified against its pre-registered gate BEFORE any interpretatio
 Before any computation, verify:
 1. Session 30 Thread 1 (2D U(2)-invariant grid search) has completed
 2. The off-Jensen minimum location (tau_min, eps_T2_min) is available
-3. Read `tier0-computation/s29b_gate_verdicts.txt` — B-29d FIRED (Jensen saddle, confirmed). The D_F construction runs at the off-Jensen minimum geometry, NOT on the 1D Jensen curve.
+3. Read `computations/s29b_gate_verdicts.txt` — B-29d FIRED (Jensen saddle, confirmed). The D_F construction runs at the off-Jensen minimum geometry, NOT on the 1D Jensen curve.
 
 If the off-Jensen minimum has not been located, **this session does not proceed**.
 
@@ -138,7 +138,7 @@ Session ends ONLY when user approves shutdown explicitly. Idle agents are not fi
 
 | Agent | Additional Reading |
 |:------|:-------------------|
-| phonon-exflation-sim | `tier0-computation/d2_pfaffian_computation.py` (Pfaffian algorithm to reuse in 30Ab), `tier0-computation/tier1_dirac_spectrum.py` (eigenvector modification target), `tier0-computation/s23a_kosmann_singlet.py` (Kosmann operator) |
+| phonon-exflation-sim | `computations/d2_pfaffian_computation.py` (Pfaffian algorithm to reuse in 30Ab), `computations/dirac_spectrum.py` (eigenvector modification target), `computations/s23a_kosmann_singlet.py` (Kosmann operator) |
 | einstein-theorist | `researchers/Einstein/index.md`. Connes Papers 09, 10, 12 — D_F structure in standard NCG. Assess whether Approach B (KK-derived D_F) is physically consistent despite order-one failure. |
 | baptista-spacetime-analyst | `researchers/Baptista/` — Paper 15 (moduli space), Paper 17 eq 1.3-1.4 ($[D_K, \mathcal{L}_X]$ formula), Paper 18 Section 6-7 (mass mixing = CKM/PMNS), Appendix E (SU(3) example). Cross-validate the D_F construction against Baptista's actual equations. |
 | coordinator | This prompt gate conditions. Memorize ALL thresholds before first computation completes |
@@ -149,7 +149,7 @@ Session ends ONLY when user approves shutdown explicitly. Idle agents are not fi
 
 ## Step 0: Eigenvector Extraction (Prerequisite Modification)
 
-Modify `tier1_dirac_spectrum.py` function `dirac_operator_on_irrep()` to return eigenvectors alongside eigenvalues. Currently calls `np.linalg.eigvals()` (eigenvalues only). Change to `np.linalg.eigh()` (eigenvalues + eigenvectors). ~5-line modification.
+Modify `dirac_spectrum.py` function `dirac_operator_on_irrep()` to return eigenvectors alongside eigenvalues. Currently calls `np.linalg.eigvals()` (eigenvalues only). Change to `np.linalg.eigh()` (eigenvalues + eigenvectors). ~5-line modification.
 
 $D_\pi(\tau)$ on sector $(p,q)$ is a $(\dim(p,q) \cdot 16) \times (\dim(p,q) \cdot 16)$ Hermitian matrix. Store eigenvectors $|\psi_n^{(p,q)}(\tau)\rangle$ for all sectors with $p+q \leq N_{\max}$.
 
@@ -159,7 +159,7 @@ The Lie derivative of the Jensen metric along the non-Killing frame vectors. An 
 
 $$(\mathcal{L}_{e_a} g)_{bc} = g_{bd} f^d_{ac} + g_{cd} f^d_{ab}$$
 
-in the left-invariant frame (where $f^d_{ac}$ are the frame structure constants). All ingredients exist in `tier1_dirac_spectrum.py`. **~30 lines, new function.**
+in the left-invariant frame (where $f^d_{ac}$ are the frame structure constants). All ingredients exist in `dirac_spectrum.py`. **~30 lines, new function.**
 
 ## Step 2: Compute $[D_K, \mathcal{L}_{e_a}]$ Matrix in Eigenbasis
 
@@ -216,7 +216,7 @@ $$\dim(\mathcal{H}_{\text{trunc}}) = (1 + 3 + 3 + 6 + 6 + 8) \times 16 = 432$$
 | `s30a_df_construction.npz` | `tau_values`, `D_F_matrices` (D_F at each tau), `eigvecs_by_sector` (eigenvectors), `lie_deriv_g` (Lie derivative tensors), `commutator_matrices`, `chirality_norms` ($\|D_F \gamma_F + \gamma_F D_F\|$), `D_F_frobenius_norms` |
 | `s30a_df_construction.py` | Complete Steps 0-3 script |
 
-Gate verdicts appended to: `tier0-computation/s30a_gate_verdicts.txt`
+Gate verdicts appended to: `computations/s30a_gate_verdicts.txt`
 
 ---
 

@@ -1,0 +1,65 @@
+{
+  "gate_id": "S84-ALPHA-S-PRE-REGISTRATION",
+  "session": 84,
+  "date_pre_registered": "2026-04-18",
+  "alpha_s_pred": -0.068968,
+  "alpha_s_pred_full": -0.06896799000000009,
+  "n_s_pred": 0.9649,
+  "n_s_pred_provenance": "canonical_constants.planck_ns (Planck 2018 central)",
+  "derivation": "alpha_s = n_s^2 - 1 = (n_s - 1)(n_s + 1)",
+  "derivation_provenance": "S50 permanent result T15 (LATENT IDENTITY IN CATALOG)",
+  "functional_form": "ln P_zeta ~ k^(n_s - 1) * (1 + (n_s^2 - 1) * ln(k/k_pivot)), curvature 2*beta = (n_s-1)(n_s+1) = n_s^2 - 1",
+  "sign": "NEGATIVE (red-running, n_s < 1)",
+  "k_pivot_Mpc_inv": 0.05,
+  "scheme": "CMB-PIVOT-k0.05",
+  "convention": "FRAMEWORK-GGE-single-parameter",
+  "L_max": 5,
+  "vs_planck_2018": {
+    "central": -0.0045,
+    "sigma": 0.0067,
+    "abs_difference": 0.06446799000000009,
+    "separation_sigma": 9.6221,
+    "discrepant": true,
+    "source": "Planck 2018 TT,TE,EE+lowE+lensing"
+  },
+  "vs_cmbs4_projection": {
+    "sigma_projected": 0.002,
+    "separation_sigma_from_zero": 34.484,
+    "decisive_window_start": "~2028",
+    "decisive_window_central": "~2030",
+    "detector": "CMB-S4",
+    "source": "Abazajian et al. 2022 (CMB-S4 Science Book / forecast)"
+  },
+  "scheme_lockout": [
+    "NO post-data retreat to auxiliary couplings (per feedback_no-priority-elevation)",
+    "NO post-data change to n_s_pred (n_s = 0.9649 is locked)",
+    "NO post-data change to derivation chain (alpha_s = n_s^2 - 1 is permanent)",
+    "IF CMB-S4 measures alpha_s != -0.069 +/- 3*sigma_CMBS4 = -0.069 +/- 0.006, FRAMEWORK BRANCH (running-identity) REFUTED. Scorecard entry required.",
+    "Allowable updates ONLY via n_s_pred refinement at higher L_max; identity propagates unchanged."
+  ],
+  "allowable_future_updates": "n_s_pred may update if substrate L_max extrapolation sharpens (e.g., S85+ at L_max > 5). Any such update MUST propagate through alpha_s_pred = n_s_pred^2 - 1 identically. This is parameter-refinement, NOT scheme-shopping.",
+  "cross_checks": {
+    "CC1_sign": {
+      "check": "n_s < 1 => n_s^2 < 1 => alpha_s < 0",
+      "result": true
+    },
+    "CC2_magnitude": {
+      "check": "|alpha_s| ~ 1e-2 vs slow-roll baseline ~1e-3",
+      "result": "framework alpha_s is ~100x larger than naive slow-roll"
+    },
+    "CC3_planck": {
+      "check": "9.62-sigma Planck separation BINDS framework, NOT a failure",
+      "result": "separation = 9.6221 sigma (Planck 2018)"
+    },
+    "CC4_planck_edge": {
+      "check": "Planck +1-sigma upper edge = -0.0045 + 0.0067 = +0.0022; framework is below by ~10 sigma",
+      "result": 10.622088059701507
+    },
+    "CC5_completeness": {
+      "check": "alpha_s = (n_s-1)(n_s+1); n_s = 1 => alpha_s = 0 (scale-invariant); n_s = 0.9649 => -0.068968",
+      "result": "factored identity matches direct identity to machine epsilon"
+    }
+  },
+  "content_sha256": "aa1daaa2d1cf71aba00d69633b822c4a24e846765e803732476bc07d3421c1b5",
+  "audit_sha256": "65b0b5bcfc2f7608474d54c32aaf665aa423ef9b1b2cda5a85e8a84b43e03d0c"
+}

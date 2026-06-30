@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 169,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1681",
+      "anchor_type": "data_provenance",
+      "name": "w10a_alternative_tau_mesh_uniqueness",
+      "script_path": "session-84/s84_w10a_alternative_tau_mesh_uniqueness.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w10a_alternative_tau_mesh_uniqueness.png",
+      "source_file": "computations/session-84/s84_w10a_alternative_tau_mesh_uniqueness.py",
+      "source_context_30_lines": "  246: # eps_gamma6 = 1e-4 so that AT MOST one or two adjacent mesh points pass\n  247: # Gamma6 around the canonical pin.\n  248: \n  249: PASS_TAU_TARGET = 0.190                                            # (local)\n  250: PASS_TAU_HALFWIDTH = 5.0e-5                                        # (local)\n  251: \n  252: # Output destinations\n  253: OUT_NPZ = ARTIFACTS_DIR / \"s84_w10a_119_tau_mesh_survivors.npz\"\n  254: OUT_PNG = resolve_output(84, 's84_w10a_alternative_tau_mesh_uniqueness.png')\n  255: VERDICT_TXT = resolve_output(84, 's84_gate_verdicts.txt')\n  256: \n  257: SPECTRUM_NPZ = (PROJECT_ROOT / \"computations\" / \"_shared\" /\n  258:                 \"s36_sfull_tau_stabilization.npz\")\n  259: CANON_PY = resolve_script(None, 'canonical_constants.py')\n  260: \n  261: INPUT_FILES = [\n  262:     CANON_PY,"
+    },
+    {
+      "anchor_id": "prov_1682",
+      "anchor_type": "data_provenance",
+      "name": "w10a_eps_h_k_class_location",
+      "script_path": "session-84/s84_w10a_eps_h_k_class_location.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-84/s84_w10a_eps_h_k_class_location.py",
+      "source_context_30_lines": "<name 'w10a_eps_h_k_class_location' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: S84 W10a-114  --  S84-EPSH-K-CLASS-LOCATION\n    3: =================================================================\n    4: \n    5: Hypothesis: The Heitsch 1-cocycle eps_H lives in HP^1(A_F)\n    6:             (odd cyclic cohomology, secondary CM-Hopf location)\n    7:             and is OUTSIDE image(ch: K_0(A_F) -> HP^0(A_F)) by parity.\n    8: \n    9: Three sub-verifications (all required for PASS):\n   10: \n   11:   (1) Chern character matrix on the 3 K_0(A_F) generators is\n   12:       explicitly built and its image is a rank-3 sub-lattice of\n   13:       HP^0(A_F).  By parity HP^0 cap HP^1 = 0, so the residual\n   14:       of any nonzero HP^1 class is its full HP^1-norm.\n   15: \n   16:   (2) Direct HP^1 cocycle representative is reconstructed from\n   17:       the Heitsch construction with normalization\n   18:       heitsch_ratio = 16.197718852989908   (from S83 W1-G2),\n   19:       and is verified non-zero.\n   20: \n   21:   (3) The Connes-Moscovici Godbillon-Vey lift of the Heitsch\n   22:       1-cocycle reproduces the same cyclic cocycle to within\n   23:       1e-6 relative.  (The CM lift is constructive: it produces\n   24:       the SAME cocycle up to the normalization 16.20 because\n   25:       the Heitsch construction IS the GV-lift restricted to\n   26:       H_1 = bialgebra of codim-1 foliations.)\n   27: \n   28: PASS thresholds:\n   29:    residual > 1e-4   (decisively outside image)\n   30:    |HP^1 representative| > 0"
+    },
+    {
+      "anchor_id": "prov_1683",
+      "anchor_type": "data_provenance",
+      "name": "w10a_gamma5_master_sign_gear",
+      "script_path": "session-84/s84_w10a_gamma5_master_sign_gear.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-84/s84_w10a_gamma5_master_sign_gear.py",
+      "source_context_30_lines": "<name 'w10a_gamma5_master_sign_gear' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: # -*- coding: utf-8 -*-\n    3: \"\"\"\n    4: S84 Wave 10a Gate 120 -- S84-GAMMA5-MASTER-SIGN-GEAR\n    5: =====================================================\n    6: \n    7: Agent:           gen-physicist\n    8: Trigger:         [VERIFY]\n    9: Classification:  GEOMETRIC (convexity lever / master sign-gear test)\n   10: Plan reference:  sessions/session-plan/session-84-plan-w10a.md  Sec W10a-120\n   11: \n   12: Hypothesis\n   13: ----------\n   14: The 35D VP Hessian convexity at the fold,\n   15:         d^2 S/dtau^2 |_{tau_fold}  =  +317,862.85   (S42 / S70 canonical),\n   16: is the MASTER SIGN-GEAR Gamma_5'. It locks not only\n   17:         sign(n_T) > 0           [G50 PASS, n_T = +0.468]\n   18: but ALSO the directions of four additional composite quantities:\n   19: \n   20:     (2) sign(F_amp - 1)\n   21:     (3) sign(dc_sub/dtau)\n   22:     (4) sign(c_Gold - c_fabric)\n   23:     (5) the 4-speed ordering c_mod > c_BLV > c_BA > c_L\n   24: \n   25: For each of (2)-(5) we write the explicit substitution chain from\n   26:     d^2 S/dtau^2 > 0\n   27: to the predicted sign, then VERIFY via direct computation against\n   28: canonical_constants (and pinned NPZ artifacts where the speed/F_amp\n   29: constants live). Each direction is judged BINARY (predicted == measured).\n   30: "
+    },
+    {
+      "anchor_id": "prov_1684",
+      "anchor_type": "data_provenance",
+      "name": "w10a_gv_class_explicit",
+      "script_path": "session-84/s84_w10a_gv_class_explicit.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-84/s84_w10a_gv_class_explicit.py",
+      "source_context_30_lines": "<name 'w10a_gv_class_explicit' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: # -*- coding: utf-8 -*-\n    3: \"\"\"\n    4: S84 Wave 10a Gate 115 -- S84-GV-CLASS-EXPLICIT\n    5: ================================================\n    6: \n    7: Agent:           connes-ncg-theorist\n    8: Trigger:         [VERIFY]\n    9: Classification:  GEOMETRIC (de Rham / cyclic cohomology explicit cocycle)\n   10: \n   11: Plan reference:  sessions/session-plan/session-84-plan-w10a.md  Sec W10a-115\n   12: Reference NPZ:   computations/session-83/s83_w3_g56_godbillon_vey_jensen_deform.npz\n   13:                  (= sessions/session-83/computation-artifacts/s83_g56_gv_jensen_deform.npz alias)\n   14:                  G56 stencil reference: gv_response = -4.0579e+04, stencil_err = 5.98e-07.\n   15: \n   16: Hypothesis\n   17: ----------\n   18: The Godbillon-Vey class [GV(F_Jensen)] of the Jensen-deformed foliation\n   19: is a non-zero element of H^3(M^4) represented by the 3-form\n   20:     omega_J  /\\  d omega_J  =  e^{-tau} dtau  /\\  d(e^{-tau} dtau).\n   21: Direct computation matches G56's Heitsch stencil value (-4.0579e+04)\n   22: to within 1% RATIO and stencil_err <= 1e-6.\n   23: \n   24: Substitution chain (mandatory; matches plan W10a-115 Step 1-7)\n   25: --------------------------------------------------------------\n   26: \n   27: Definitions:\n   28:   D1.  omega_J(tau) := e^{-tau} dtau  (planner sign convention; transverse\n   29:         1-form for the Jensen foliation along the tau-axis with the\n   30:         e^{-tau} fiber-volume weight that arises from"
+    },
+    {
+      "anchor_id": "prov_1685",
+      "anchor_type": "data_provenance",
+      "name": "w10a_gv_secondary_exclusion_audit",
+      "script_path": "session-84/s84_w10a_gv_secondary_exclusion_audit.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w10a_gv_secondary_exclusion_audit.npz, session-84/s84_w10a_gv_secondary_exclusion_audit.png",
+      "source_file": "computations/session-84/s84_w10a_gv_secondary_exclusion_audit.py",
+      "source_context_30_lines": "  125: SCHEME = \"chern_plus_cm_hopf\"                            # (local)\n  126: CONVENTION = \"hp_even_vs_h3\"                             # (local)\n  127: L_MAX = 5                                                # (local)\n  128: \n  129: ZERO_THRESHOLD = 1e-10                                   # (local) per plan §W10a-113\n  130: RATIO_PRIMARY = 10.0                                     # (local) plan step 4 ratio cut\n  131: \n  132: OUT_CSV = ARTIFACT_DIR / \"s84_w10a_113_gv_classification_table.csv\"\n  133: OUT_NPZ = SCRIPT_DIR / \"s84_w10a_gv_secondary_exclusion_audit.npz\"\n  134: OUT_PNG = SCRIPT_DIR / \"s84_w10a_gv_secondary_exclusion_audit.png\"\n  135: VERDICT_TXT = SCRIPT_DIR / \"s84_gate_verdicts.txt\"\n  136: \n  137: ATLAS_JSON = SCRIPT_DIR / \"s84_w3_vii_k_prop_atlas.json\"\n  138: G56_NPZ = SCRIPT_DIR / \"s83_w3_g56_godbillon_vey_jensen_deform.npz\"\n  139: EPSH_NPZ = SCRIPT_DIR / \"s83_w1_g2_epsilon_h_promotion.npz\"\n  140: CANONICAL = SCRIPT_DIR / \"canonical_constants.py\"\n  141: "
+    },
+    {
+      "anchor_id": "prov_1686",
+      "anchor_type": "data_provenance",
+      "name": "w10a_r_protection_k_audit",
+      "script_path": "session-84/s84_w10a_r_protection_k_audit.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w10a_r_protection_k_audit.npz",
+      "source_file": "computations/session-84/s84_w10a_r_protection_k_audit.py",
+      "source_context_30_lines": "  126: \n  127: # Pre-registered classification thresholds\n  128: SPAN_THRESHOLD = 1.5                                           # (local) class 2 vs 3 boundary\n  129: PASS_FRAC = 0.80                                               # (local) >=80% in class 1 -> PASS\n  130: FAIL_ACCIDENT_FRAC = 0.30                                      # (local) >=30% accident -> FAIL\n  131: \n  132: # Output destinations\n  133: OUT_CSV = S84_ART_DIR / \"s84_w10a_117_r_protection_classification.csv\"\n  134: OUT_NPZ = resolve_output(84, 's84_w10a_r_protection_k_audit.npz')\n  135: VERDICT_TXT = resolve_output(84, 's84_gate_verdicts.txt')\n  136: \n  137: INPUT_FILES = [\n  138:     resolve_script(None, 'canonical_constants.py'),\n  139:     resolve_output(83, 's83_w2_g14_cs_regulator_dependence.npz'),\n  140:     resolve_output(83, 's83_w2_g26_sdw_nlo_alpha_universality.npz'),\n  141:     resolve_output(83, 's83_w3_g58_meta_landing.npz'),\n  142:     resolve_output(84, 's84_w3_vii_k_prop_atlas.json'),"
+    },
+    {
+      "anchor_id": "prov_1687",
+      "anchor_type": "data_provenance",
+      "name": "w10a_rank_universality_proof",
+      "script_path": "session-84/s84_w10a_rank_universality_proof.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-84/s84_w10a_rank_universality_proof.py",
+      "source_context_30_lines": "<name 'w10a_rank_universality_proof' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S84 W10a-111 — RANK-UNIVERSALITY-PROOF-TEXT (sagan-empiricist)\n    4: ==============================================================\n    5: \n    6: Gate ID: S84-RANK-UNIVERSALITY-PROOF-TEXT\n    7: Trigger: [VERIFY-THEOREM]\n    8: Classification: GEOMETRIC (representation theory on compact simple Lie groups).\n    9: \n   10: This script does NOT compute new physics. It is a proof-checker / verifier:\n   11: it parses the theorem document at the pinned path and runs the §W10-111\n   12: rigor checklist mechanically, emitting a binary PROOF-COMPLETE bool. No\n   13: numerical residual; binary tolerance per pre-registration.\n   14: \n   15: Pre-registered threshold (S84 plan §W10a-111)\n   16: ---------------------------------------------\n   17: PASS: Proof document exists at pinned path with\n   18:         (i) theorem statement,\n   19:         (ii) >= 3 lemmas with independent proofs,\n   20:         (iii) proof step-by-step,\n   21:         (iv) rigor checklist covering edge cases G_2, F_4, E_6, E_7, E_8.\n   22:       Second independent read by separate agent confirms no gap.\n   23: FAIL: Any of (a) lemma proof has circular citation,\n   24:              (b) exceptional-group case claimed without check,\n   25:              (c) rank-r dependence cancels only up to O(1/r) (not exactly).\n   26: INFO: Proof exists but rigor-checklist read identifies a non-load-bearing\n   27:       gap (e.g., minor notational convention).\n   28: \n   29: Inputs (SHA-256 pinned in first 20 lines of stdout)\n   30: ---------------------------------------------------"
+    },
+    {
+      "anchor_id": "prov_1688",
+      "anchor_type": "data_provenance",
+      "name": "w10a_s80_header_repair",
+      "script_path": "session-84/s84_w10a_s80_header_repair.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-84/s84_w10a_s80_header_repair.py",
+      "source_context_30_lines": "<name 'w10a_s80_header_repair' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S84 W10a-112 — S84-S80-HEADER-REPAIR\n    4: ====================================\n    5: \n    6: Gate: S84-S80-HEADER-REPAIR ([AUDIT])\n    7: \n    8: Pre-registered threshold:\n    9:   PASS: All 6 W1 headers updated to match their body-verdict strings;\n   10:         a follow-up audit pass confirms zero mismatches.\n   11:   FAIL: One or more header updates introduces a new inconsistency.\n   12:   INFO (PRE-REG-INCOMPLETE): A header has no extractable body verdict\n   13:         (body still stub) — mark PRE-REG-INCOMPLETE for that header.\n   14: \n   15: ADAPTATION NOTE (2026-04-19):\n   16:   The plan (§W10a-112 lines 144-183) pre-registered the header pattern\n   17:     `## W1-N <slug> — <status>`  (2-hash level 2; status STRING in header)\n   18:   but the actual S80 file `sessions/session-80/session-80-results-workingpaper.md`\n   19:   uses\n   20:     `### W1-N: <SLUG> — EVOI <value> (<owner>)`  (3-hash level 3; NO status string)\n   21:   with the status carried on the line immediately below as\n   22:     `**Status**: <STATUS>`\n   23:   Per `.claude/rules/gate-verdicts.md`, a gate whose pre-registered\n   24:   machinery does not match the actual file structure is PRE-REG-INCOMPLETE.\n   25:   This gate therefore returns INFO-PRE-REG-INCOMPLETE-PATTERN; we still\n   26:   produce a derivative reconciliation patch (Status-line vs body-verdict)\n   27:   as a reconstruction protocol so the next session can act on it.\n   28: \n   29:   Plan's source_file `sessions/session-80/session-80-plan.md` does not\n   30:   exist; the only S80 markdown is `session-80-results-workingpaper.md`."
+    },
+    {
+      "anchor_id": "prov_1689",
+      "anchor_type": "data_provenance",
+      "name": "w10a_sha_collision_regen",
+      "script_path": "session-84/s84_w10a_sha_collision_regen.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-84/s84_w10a_sha_collision_regen.py",
+      "source_context_30_lines": "<name 'w10a_sha_collision_regen' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S84 W10a-110 -- SHA-COLLISION-REGEN\n    4: ==================================================================\n    5: Gate: S84-SHA-COLLISION-REGEN ([AUDIT], NON-PHONONIC)\n    6: \n    7: HYPOTHESIS: Three S82 verdict lines (W1-1-TD, W2-13, W3-7) that produced\n    8: duplicate SHA-256 closures (5aef2c40... triple-collision; documented in\n    9: S83-SHA-COLLISION-AUDIT, FAIL, value=1/3) can be deterministically\n   10: regenerated under the dual-SHA discipline (canonical ordered input-pin\n   11: sequence, UTF-8, no normalization shortcuts), yielding three DISTINCT\n   12: full 64-char hexdigests -- one per verdict.\n   13: \n   14: PASS: All 3 regenerated SHAs are 64-char hexdigests, pairwise distinct,\n   15:       and round-trip-identical (recompute byte-for-byte on second pass).\n   16: FAIL: Any two regenerated SHAs coincide, OR any SHA shorter than 64\n   17:       chars, OR round-trip mismatch.\n   18: INFO: One or more source `s82_w{N}_*_inputs.json` files absent --\n   19:       verdict cannot be reconstructed under canonical pin-map. Mark as\n   20:       PRE-REG-INCOMPLETE (PRU Class 8); defer to W10b with explicit\n   21:       reconstruction protocol.\n   22: \n   23: INPUTS (per plan §W10a-110):\n   24:   - sessions/session-82/s82_gate_verdicts.txt           (recorded SHAs)\n   25:   - sessions/session-82/computation-artifacts/s82_w1_1_td_inputs.json\n   26:   - sessions/session-82/computation-artifacts/s82_w2_13_inputs.json\n   27:   - sessions/session-82/computation-artifacts/s82_w3_7_inputs.json\n   28:   - sessions/session-83/computation-artifacts/s83_g55_sha_collision_audit.json\n   29:   - computations/_shared/canonical_constants.py\n   30: "
+    },
+    {
+      "anchor_id": "prov_1690",
+      "anchor_type": "data_provenance",
+      "name": "w10a_tau_kink_inventory_closure",
+      "script_path": "session-84/s84_w10a_tau_kink_inventory_closure.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-84/s84_w10a_tau_kink_inventory_closure.py",
+      "source_context_30_lines": "<name 'w10a_tau_kink_inventory_closure' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S84 W10a-121 — TAU-KINK-INVENTORY-CLOSURE (Borel-summability saddle inventory)\n    4: ==============================================================================\n    5: \n    6: Gate: S84-TAU-KINK-INVENTORY-CLOSURE  ([AUDIT])\n    7: \n    8: Pre-registered threshold (per session-84-plan-w10a §W10a-121):\n    9:   PASS iff min_over_saddles(S_inst) / 4.34  > 1.0\n   10:   FAIL  iff min_over_saddles(S_inst)        < 4.34\n   11:   INFO  iff min_over_saddles(S_inst) in (4.34, 10.0)\n   12: \n   13: Inputs (SHA-256 dual-pinned at runtime):\n   14:   - computations/_shared/canonical_constants.py     (S_fold, dS_fold, d2S_fold, tau_fold)\n   15:   - computations/session-70/s70_off_jensen_hess.npz    (35x35 VP Hessian + evals at fold)\n   16:   - computations/session-77/s77_hessian_overshoot.npz  (35D VP Hessian at turnaround)\n   17:   - script bytes (feeds BOTH audit_sha256 and content_sha256)\n   18: \n   19:   NOTE: The plan §W10a-121 names two static input files that do not exist on\n   20:   disk under the literal paths\n   21:       sessions/session-70/computation-artifacts/s70_35d_vp_hessian.npz\n   22:       sessions/session-83/computation-artifacts/s83_w2_harmonic_not_instanton_theorem.json\n   23:   The substantive content the plan requires (a 35D VP Hessian sample at the\n   24:   Jensen-fold and the Borel threshold S_inst = 4.34) is supplied by:\n   25:     - s70_off_jensen_hess.npz  (35-D VP Hessian at tau_fold = 0.19; evals_bcs_35)\n   26:     - s77_hessian_overshoot.npz (35-D VP Hessian sample at tau_turnaround = 1.614)\n   27:     - Borel threshold = 4.34 (literal pin from §W10a-121, not loaded from JSON)\n   28:   The dual-SHA pinmap pins what is actually read at runtime; if the plan's\n   29:   literal file artifacts are produced in a future session, the reader can be\n   30:   pointed at them with no algorithmic change."
+    }
+  ]
+}

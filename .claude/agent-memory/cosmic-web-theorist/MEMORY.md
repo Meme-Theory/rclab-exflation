@@ -1,72 +1,43 @@
 # Cosmic-Web-Theorist Agent Memory
 
 ## Reference Files
-- `../constraint-map.md` -- Unified constraint map (all agents). Query by ID for facts.
-- Papers: `researchers/Cosmic-Web/` (39 papers, indexed Session 43). Key: V02-E6, BK18-E6/E7, D17-E1/E3/E4, D19 (DESI DR2), WM37 (skepticism), La38 (SN systematics), V39 (first law dS), Pr28 (persistent Betti).
-- `meta_analysis_anomaly_update.md` -- Post-meta-analysis anomaly landscape (2026-03-13). S8 resolved, DESI DR2 3.1 sigma, bulk flow >4 sigma, dipole >5 sigma.
-- `session-49-results.md` -- S49 detailed results (20 gates, DESI B=20.9, alpha_s 6 sigma, CC crossing)
+- [Anomaly landscape](meta_analysis_anomaly_update.md) -- LSS anomaly snapshot 2026-03-13 + S70 bulk-flow correction. Use as on-ramp to "what's still live."
+- Unified constraint map: `../constraint-map.md` (project-wide, not duplicated here).
+- Cosmic-web paper corpus: `researchers/Cosmic-Web/` (39 papers, indexed S43). Key citations: V02-E6 (Volovik), BK18-E6/E7, D17-E1/E3/E4, D19 (DESI DR2), Pr28 (persistent Betti), WM37 (skepticism), La38 (SN systematics), V39 (first law dS).
+- Canonical numerical predictions live in `computations/_shared/canonical_constants.py` (w0_FW, wa_FW, sigma_8, planck_ns, alpha_s_*). Do NOT duplicate values here -- query canonical and cite.
 
-## My Domain's Scope (REVISED Session 50, 2026-03-20)
-- **S29-S42**: Framework = LCDM (w=-1). Sole connection: CC -> H(z) -> DESI (Tier 3).
-- **S49**: Framework predicts w_0 in [-0.43, -0.59]. B_1D=20.9 (w_0 closer to DESI combined fit than LCDM).
-- **S50 DECISIVE CLOSURE**: BAO distances EXCLUDE w_0 in [-0.43, -0.59]. chi^2/N=23.2 (FAIL >4).
-  - Delta_chi^2 = +241 vs LCDM. Framework distances 6-15% too small across ALL z.
-  - S49 B_1D=20.9 was MISLEADING: compared against derived parameter, not raw data.
-  - BAO data consistent with LCDM to ~1 sigma (excl. QSO outlier). Framework at 5-8 sigma per bin.
-  - STRUCTURAL: any w_0 > -0.9 produces >3% distance bias detectable by DESI.
-  - w_0 in [-0.43, -0.59] is CLOSED by BAO. Surviving: w_0 within ~2% of -1 (contradicts alpha=1.33).
-- alpha_s = n_s^2 - 1 = -0.069: RIGID prediction, 6.0 sigma from Planck. CMB-S4 decisive.
-- Van de Weygaert tools, Einasto profiles, void statistics: ZERO discriminating power.
-- k_transition = 9.4e+23 h/Mpc: PERMANENT CLOSURE of direct LSS/CMB signatures.
-- Tessellation, volume-averaged stats: ALL CLOSED (S43).
-- FIRST-SOUND-XI-44: CONTINGENT, unaudited since S43.
+## Operating Directives
+- **Quantitative-first classification (S58 lesson)**: when a computation produces a number, compare to threshold quantitatively before classifying as marginal / confirmed / dismissed. Do not pre-judge new inputs by prior closures.
+- **Substrate framing**: framework derives LCDM parameters; LCDM uses them. PASS-by-LCDM-match is evidence (zero free params), not "neutral." See user-memory `feedback_reporting-framing.md`.
+- **Domain parochialism trap**: an LSS-domain "no signal" does not undercount a framework with non-LSS observation surfaces. Apply uniqueness criterion: would another model match the prediction?
+- **Volovik tracking caveat (S67)**: constant chi reproduces LCDM identically; framework's w_0=-0.918 is the SEPARATE effacement-residual effect, not a "modification of tracking dynamics."
 
-## Key Epistemic Lessons
-- **Category error (Round 4)**: Framework derives LCDM parameters; LCDM uses them. Not competitors.
-- **Domain parochialism trap**: Evaluating by MY domain's observables undercounts frameworks with other observation surfaces.
-- **Sentinel vs Spectator**: Can decisively REFUTE (LCDM deviation falsifies) but not uniquely CONFIRM. Valid role.
-- **LCDM-as-baseline fallacy (S41)**: Lambda IS exotic. CDM IS exotic. Compare assumption counts honestly.
+## Closed Tests (one-line ledger)
+- Volume-averaged statistics (P(k), xi(r), VSF, Minkowski, genus, persistent Betti): CLOSED S43. k_transition=9.4e23 h/Mpc.
+- Tessellation to giant structures: CLOSED S43 at all N_cell.
+- Emergent G_eff: triple-closed. Persistent homology from sector-dependent gravity: triple-closed.
+- Cosmic strings Gmu~10^-4: EXCLUDED by Planck CMB (S58). Domain-wall GW: GHz frequencies, no detector.
+- Substrate compaction w_a (S66): wrong sign +1.121 vs DESI. Ruled out.
+- Volovik exact tracking (S67): chi=const is LCDM identically.
+- Transit GW for LISA (S69): f_peak~10^12 Hz, Omega(LISA)=8.3e-58. S58 prediction RETRACTED.
+- Off-Jensen z''/z for A_s (S69): delta=2.82e-4 << 0.1. Negligible.
+- Folded f_NL via Euclid bispectrum (S69): SNR=0.007. Outside reach.
+- Bulk-flow discrimination (S70 W4-E): chi_3 SNR=0.064 vs cosmic variance.
+- Scheme dependence: n_s sign depends on cutoff function; only sqrt(x) gives red tilt. All P(k)-derived predictions inherit this conditional.
 
-## Session 49-50 Key Results (updated 2026-03-20)
-- **DESI-DR3-PREP-49 PASS -> OVERTURNED S50**: B_1D=20.9 was misleading (derived parameter).
-  DESI-DR3-JOINT-50 FAIL: chi^2/N=23.2, Delta_chi^2=+241 vs LCDM from BAO distances.
-  w_0 in [-0.43,-0.59] EXCLUDED by BAO at overwhelming confidence.
-- **ALPHA-S-BAYES-49 FAIL**: alpha_s=n_s^2-1=-0.069+/-0.008. 6.0 sigma from Planck. CMB-S4 decisive.
-- **FABRIC-NPAIR-49 conditional -> J-PAIR-CALIBRATE-50 INFO**: J_pair=0.115 at best but 41% syst.
-- Detail: `session-49-results.md`
+## Live Discriminating Tests
+| Observable | Instrument | Timeline |
+|:-----------|:-----------|:---------|
+| w_0, w_a (DR3 sub-tree) | DESI DR3 | ~2027 |
+| n_s, alpha_s, Delta_N_eff | CMB-S4 | ~2030 |
+| f*sigma_8 (~4% below LCDM) | DESI 5yr / Euclid | ~2028 |
+| c_s^2, f_NL flavors | 21cm intensity (l>30k) | ~2040s |
 
-## Permanent Closures (My Domain)
-- **All pre-Session-29 observational tests**: CLOSED
-- **Channel 2 (emergent G_eff)**: triple-closed
-- **Channel 3 (persistent homology from sector-dependent gravity)**: triple-closed
-- **BAO compatibility**: MOOT (BCS at 10^{-41} s irrelevant to recombination)
-- **RGE-33a**: Wrong-sign hierarchy. CLOSED.
-- **Tessellation to giant structures**: KZ-CELL-43. STRUCTURALLY CLOSED at ALL N_cell.
-- **All volume-averaged statistics**: P(k), xi(r), sigma_8, VSF, Minkowski, genus, persistent Betti. CLOSED S43.
-- **ALPHA-ENV-43**: Per-domain alpha diluted to ~10^{-45}. CLOSED.
-- **PH-TESS-43**: beta_2 at 10^{-7} sigma. CLOSED.
-- **BAO-W0-50**: w_0 in [-0.43,-0.59] EXCLUDED by DESI BAO distances. chi^2/N=23.2. Delta_chi^2=+241 vs LCDM. STRUCTURAL CLOSURE (S50).
+## Session Pointers (compressed)
+- S43 closures: foundation; volume-averaged + tessellation + k_transition all permanent.
+- S49 (DELETED detail file): w_0 in [-0.43,-0.59] passed at B_1D=20.9; SUPERSEDED by S50 BAO exclusion.
+- S58: Volovik partition pins w_0=-0.918. Cosmic strings excluded.
+- S66 (DELETED detail file): w_a wrong-sign closure, Leggett-only DM resolves f_DM bottleneck, alpha_s scheme-dependent live.
+- S67-S70: full LSS scorecard; f*sig8 + SNe outperform LCDM; BAO highest tension at LRG2 z=0.706 (-2.26 sigma); transit GW closed; bulk-flow undiscriminating.
 
-## Surviving Predictions (Tiered, updated S50)
-- **Tier 1 (zero-parameter)**: phi_paasch (OPEN), CKM phase (OPEN)
-- **Tier 2 (one-parameter M_KK)**: proton lifetime (Hyper-K), reheating T_RH
-- **Tier 3 (sector sum)**: Lambda from L-8. **w_0 in [-0.43,-0.59] CLOSED by BAO (S50)**.
-- **Tier 4 (null)**: Delta_N_eff=0, delta_alpha=0, w_a=0
-- **Pre-registered (S49)**: alpha_s=-0.069+/-0.008 (CMB-S4). w_0 pre-registration MOOT (excluded).
-- **Open binary**: Delta_N_eff = 0 vs 0.03 (CMB-S4 ~2030)
-- **Contingent**: FIRST-SOUND-XI-44 (xi(r) at 325 Mpc, SNR 2-5), MVGAD-43 (void galaxy delay)
-
-## Permanent Closure: BAO Distances (S50)
-- **DESI-DR3-JOINT-50 FAIL**: chi^2/N=23.2. w_0 in [-0.43,-0.59] excluded.
-- Added to closures list below. The w_0 prediction from GGE alpha is DEAD unless alpha can be modified to yield w_0 within ~2% of -1.
-
-## Session History (compressed, pre-S49)
-- **S34**: TRAP-33b retracted, V-matrix corrected, Schur/Trap1/[iK_7,D_K] permanent. Workshop: C5 dissolved.
-- **S36**: TAU-STAB FAIL (monotonic S). Cascade hypothesis. Sagan 12%.
-- **S40**: 27 closures. Compound nucleus surviving. T-ACOUSTIC 0.7% Volovik analog. Scope unchanged.
-- **S41**: Domain EXPANDED (6 channels). PI fresh predictions. Z(tau) gateway.
-- **S42**: 15 gates. w=-1+O(10^{-29}). DM=CDM. S8 MOOT. GIANT-VORONOI 5x too large. Sagan 18%.
-- **S43**: PERS-HOM NULL. KZ-CELL CLOSED all N. ALPHA-ENV CLOSED. CW-PREREG F.1-F.6.
-- **S48**: Leggett modes, aniso gap, analog horizons (later RETRACTED S49). Z-K discrepancy 39.4%.
-- **S49**: 20 gates. w_0 detaches from LCDM. alpha_s at 6 sigma. CC crossing conditional PASS.
-- **S50**: DESI-DR3-JOINT-50 FAIL. BAO distances EXCLUDE w_0=[-0.43,-0.59]. S49 B_1D=20.9 overturned.
+For all numerical scorecard values (chi^2/dof, Delta chi^2, residuals, sigma counts), query `sessions/permanent-results-registry.md` or the relevant `s{N}_gate_verdicts.txt`. Do not re-pin values into agent memory.

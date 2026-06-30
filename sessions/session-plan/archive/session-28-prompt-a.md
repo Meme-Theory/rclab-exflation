@@ -3,11 +3,11 @@
 **Date**: 2026-02-27
 **Depends on**: Session 27 (T-1 PASS, multi-sector BCS), Session 19a (sweep data), Session 25 (spectral action data)
 **Input data**:
-- `tier0-computation/s19a_sweep_data.npz` (21 tau, 11424 modes -- Bogoliubov source)
-- `tier0-computation/s27_torsion_gap_gate.npz` (D_can vs D_K gaps, 21 tau, 4 sectors)
-- `tier0-computation/s27_multisector_bcs.npz` (9 sectors, 9 tau, 12 mu)
-- `tier0-computation/s23a_kosmann_singlet.npz` (Kosmann matrices, eigenvalues)
-- `tier0-computation/s25_landau_results.npz`, `s25_connes_results.npz` (thermal spectral action data)
+- `computations/s19a_sweep_data.npz` (21 tau, 11424 modes -- Bogoliubov source)
+- `computations/s27_torsion_gap_gate.npz` (D_can vs D_K gaps, 21 tau, 4 sectors)
+- `computations/s27_multisector_bcs.npz` (9 sectors, 9 tau, 12 mu)
+- `computations/s23a_kosmann_singlet.npz` (Kosmann matrices, eigenvalues)
+- `computations/s25_landau_results.npz`, `s25_connes_results.npz` (thermal spectral action data)
 
 ## Motivation
 
@@ -22,7 +22,7 @@ Session 28a opens with six zero-cost post-processing computations that extract m
 Every result classified against its pre-registered gate BEFORE any interpretation. Report the number first. Classify second. Interpret third.
 
 **Python environment**: `"phonon-exflation-sim/.venv312/Scripts/python.exe"`
-**Output directory**: `tier0-computation/`
+**Output directory**: `computations/`
 **Script prefix**: `s28a_`
 
 ## REQUIRED READING
@@ -43,7 +43,7 @@ ALL agents:
 
 **What**: Compute |beta_k|^2 from the rate of change of Dirac eigenvalues d(lambda_k)/d(tau). This is the Parker particle creation rate on the internal space -- the mechanism by which an evolving Jensen deformation generates phononic excitations. If |beta_k|^2 ~ 0 for all modes, the 1D phonon mechanism has no drive and is CLOSED.
 
-**Input**: `tier0-computation/s19a_sweep_data.npz` -- eigenvalues lambda_k(tau) at 21 tau values for 11424 modes.
+**Input**: `computations/s19a_sweep_data.npz` -- eigenvalues lambda_k(tau) at 21 tau values for 11424 modes.
 
 **Script**: `s28a_bogoliubov_coefficients.py`
 
@@ -108,7 +108,7 @@ ALL agents:
 
 **What**: Decompose the spectral gap ratio gap_T/gap_K from Session 27 into the Lichnerowicz components. On a compact Riemannian manifold, D^2 = nabla*nabla + R/4. For D_can (flat connection, nabla_can has zero curvature), D_can^2 = nabla_can*nabla_can. The gap ratio quantifies how much of the Levi-Civita gap comes from the curvature endomorphism R/4.
 
-**Input**: `tier0-computation/s27_torsion_gap_gate.npz`
+**Input**: `computations/s27_torsion_gap_gate.npz`
 
 **Script**: `s28a_lichnerowicz_decomposition.py`
 
@@ -134,7 +134,7 @@ ALL agents:
 
 **What**: Compute the spectral action Tr f(D_can^2 / Lambda^2) using D_can eigenvalues and compare to Tr f(D_K^2 / Lambda^2). This isolates the torsion contribution to the spectral action at all tau values.
 
-**Input**: `tier0-computation/s27_torsion_gap_gate.npz` (D_can and D_K eigenvalues per sector)
+**Input**: `computations/s27_torsion_gap_gate.npz` (D_can and D_K eigenvalues per sector)
 
 **Script**: `s28a_spectral_action_comparison.py`
 
@@ -160,7 +160,7 @@ ALL agents:
 
 **What**: Compute the two-point spectral correlation function R_2(s) = <rho(E) rho(E+s)> for the D_can and D_K spectra across sectors. Wigner-Dyson statistics (GUE/GOE) indicate spectral rigidity from quantum chaos; Poisson statistics indicate integrability. A transition between the two as tau varies would signal a spectral phase transition.
 
-**Input**: `tier0-computation/s27_multisector_bcs.npz` (eigenvalues per sector at 9 tau), `tier0-computation/s27_torsion_gap_gate.npz` (D_can eigenvalues)
+**Input**: `computations/s27_multisector_bcs.npz` (eigenvalues per sector at 9 tau), `computations/s27_torsion_gap_gate.npz` (D_can eigenvalues)
 
 **Script**: `s28a_spectral_correlations.py`
 
@@ -185,7 +185,7 @@ ALL agents:
 
 **What**: Plot the BCS maximum kernel eigenvalue M_max as a function of the quadratic Casimir C_2(p,q) across all 9 sectors, at fixed mu/lambda_min values. This maps the "dispersion relation" of the BCS instability across representations.
 
-**Input**: `tier0-computation/s27_multisector_bcs.npz`
+**Input**: `computations/s27_multisector_bcs.npz`
 
 **Script**: `s28a_mmax_dispersion.py`
 
@@ -214,9 +214,9 @@ ALL agents:
 **What**: Redo the BCS gap equation using D_can (canonical/torsionful Dirac operator) eigenvalues instead of D_K (Levi-Civita). Session 27 T-1 showed gap_T / gap_K ranges from 0.22 to 0.67 -- the torsionful gap is 33-78% weaker. This directly increases M_max = V / (2 * delta_lambda) because delta_lambda is smaller. The decisive question: does M_max cross 1 at mu = 0 in any sector?
 
 **Input**:
-- `tier0-computation/s27_torsion_gap_gate.npz` (D_can eigenvalues per sector)
-- `tier0-computation/s27_multisector_bcs.py` (BCS solver infrastructure, reuse)
-- `tier0-computation/tier1_dirac_spectrum.py` (geometry infrastructure)
+- `computations/s27_torsion_gap_gate.npz` (D_can eigenvalues per sector)
+- `computations/s27_multisector_bcs.py` (BCS solver infrastructure, reuse)
+- `computations/dirac_spectrum.py` (geometry infrastructure)
 
 **Script**: `s28a_torsionful_bcs.py`
 
@@ -292,26 +292,26 @@ Results from 28a that feed into 28b and 28c:
 
 | File | Computation | Producer |
 |:-----|:-----------|:---------|
-| `tier0-computation/s28a_bogoliubov_coefficients.py` | KC-1 | phonon-sim |
-| `tier0-computation/s28a_bogoliubov_coefficients.npz` | KC-1 data | phonon-sim |
-| `tier0-computation/s28a_bogoliubov_coefficients.png` | KC-1 plot | phonon-sim |
-| `tier0-computation/s28a_thermal_spectral_action.py` | L-1 | phonon-sim |
-| `tier0-computation/s28a_thermal_spectral_action.npz` | L-1 data | phonon-sim |
-| `tier0-computation/s28a_thermal_spectral_action.png` | L-1 plot | phonon-sim |
-| `tier0-computation/s28a_lichnerowicz.py` | E-1 | phonon-sim |
-| `tier0-computation/s28a_lichnerowicz.npz` | E-1 data | phonon-sim |
-| `tier0-computation/s28a_lichnerowicz.png` | E-1 plot | phonon-sim |
-| `tier0-computation/s28a_spectral_action_comparison.py` | C-1 | phonon-sim |
-| `tier0-computation/s28a_spectral_action_comparison.npz` | C-1 data | phonon-sim |
-| `tier0-computation/s28a_spectral_action_comparison.png` | C-1 plot | phonon-sim |
-| `tier0-computation/s28a_spectral_correlations.py` | C-4 | phonon-sim |
-| `tier0-computation/s28a_spectral_correlations.npz` | C-4 data | phonon-sim |
-| `tier0-computation/s28a_spectral_correlations.png` | C-4 plot | phonon-sim |
-| `tier0-computation/s28a_mmax_dispersion.py` | S-2 | phonon-sim |
-| `tier0-computation/s28a_mmax_dispersion.npz` | S-2 data | phonon-sim |
-| `tier0-computation/s28a_mmax_dispersion.png` | S-2 plot | phonon-sim |
-| `tier0-computation/s28a_torsionful_bcs.py` | E-4/S-1/L-4 | phonon-sim |
-| `tier0-computation/s28a_torsionful_bcs.npz` | E-4/S-1/L-4 data | phonon-sim |
-| `tier0-computation/s28a_torsionful_bcs.png` | E-4/S-1/L-4 plot | phonon-sim |
-| `tier0-computation/s28a_gate_verdicts.txt` | All gate verdicts | coordinator |
+| `computations/s28a_bogoliubov_coefficients.py` | KC-1 | phonon-sim |
+| `computations/s28a_bogoliubov_coefficients.npz` | KC-1 data | phonon-sim |
+| `computations/s28a_bogoliubov_coefficients.png` | KC-1 plot | phonon-sim |
+| `computations/s28a_thermal_spectral_action.py` | L-1 | phonon-sim |
+| `computations/s28a_thermal_spectral_action.npz` | L-1 data | phonon-sim |
+| `computations/s28a_thermal_spectral_action.png` | L-1 plot | phonon-sim |
+| `computations/s28a_lichnerowicz.py` | E-1 | phonon-sim |
+| `computations/s28a_lichnerowicz.npz` | E-1 data | phonon-sim |
+| `computations/s28a_lichnerowicz.png` | E-1 plot | phonon-sim |
+| `computations/s28a_spectral_action_comparison.py` | C-1 | phonon-sim |
+| `computations/s28a_spectral_action_comparison.npz` | C-1 data | phonon-sim |
+| `computations/s28a_spectral_action_comparison.png` | C-1 plot | phonon-sim |
+| `computations/s28a_spectral_correlations.py` | C-4 | phonon-sim |
+| `computations/s28a_spectral_correlations.npz` | C-4 data | phonon-sim |
+| `computations/s28a_spectral_correlations.png` | C-4 plot | phonon-sim |
+| `computations/s28a_mmax_dispersion.py` | S-2 | phonon-sim |
+| `computations/s28a_mmax_dispersion.npz` | S-2 data | phonon-sim |
+| `computations/s28a_mmax_dispersion.png` | S-2 plot | phonon-sim |
+| `computations/s28a_torsionful_bcs.py` | E-4/S-1/L-4 | phonon-sim |
+| `computations/s28a_torsionful_bcs.npz` | E-4/S-1/L-4 data | phonon-sim |
+| `computations/s28a_torsionful_bcs.png` | E-4/S-1/L-4 plot | phonon-sim |
+| `computations/s28a_gate_verdicts.txt` | All gate verdicts | coordinator |
 | `sessions/session-28/session-28a-synthesis.md` | Synthesis | coordinator |

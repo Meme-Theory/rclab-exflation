@@ -196,17 +196,17 @@ where $n_m = |beta_m|^2 = B_m(\tau)$ from `s28a_bogoliubov_coefficients.npz`.
 **Constraint Condition**: If any eigenvalue < 0: the modulus is unstable off-Jensen. The BCS analysis must be repeated in the full 5D space (multi-session effort). The 1D backreaction from 29A is unreliable.
 
 **Existing infrastructure**:
-- `tier1_dirac_spectrum.py`: full Dirac spectrum computation for any left-invariant metric. Contains `jensen_metric(tau)` and `compute_structure_constants()`. Adaptable to general left-invariant metrics.
+- `dirac_spectrum.py`: full Dirac spectrum computation for any left-invariant metric. Contains `jensen_metric(tau)` and `compute_structure_constants()`. Adaptable to general left-invariant metrics.
 - `s25_baptista_results.py`: moduli space metric G_{tau,tau} = 5 on the Jensen curve
 - `s28b_hessian.py`: 2D Hessian code, adaptable to higher dimensions
 
 **What must be built new**:
 1. General left-invariant metric parameterization (5 scale factors instead of Jensen's 1)
-2. Off-Jensen Dirac spectrum driver (call `tier1_dirac_spectrum` with modified metric)
+2. Off-Jensen Dirac spectrum driver (call `dirac_spectrum` with modified metric)
 3. 4x4 transverse Hessian assembly from finite differences
 4. Eigenvalue extraction and stability verdict
 
-**Inputs**: `tier1_dirac_spectrum.py` (core Dirac code), `s27_multisector_bcs.npz` (F_BCS at Jensen points), Baptista Paper 15 equations
+**Inputs**: `dirac_spectrum.py` (core Dirac code), `s27_multisector_bcs.npz` (F_BCS at Jensen points), Baptista Paper 15 equations
 
 **Computational cost**: MEDIUM. Each off-Jensen Dirac spectrum takes ~8.7s at max_pq_sum = 6. Need 8-16 off-Jensen evaluations (2 per direction, finite difference). Total: ~70-140s for spectra + BCS evaluation. Dominated by spectrum computation.
 
@@ -286,7 +286,7 @@ The fusion's XS-8 computed Lambda_crit ~ 3.0 using full-sector F_BCS''. With 3-s
 
 ### 29B-7: Pfaffian of D_total = D_K tensor 1_F + gamma_5 tensor D_F [HIGH COST, HIGHEST-CEILING GATE]
 
-**Fusion Priority**: Elevated to top-tier by Session 18 wrapup (marked HIGHEST PRIORITY since Session 18, deferred for 13 sessions)
+**Fusion Priority**: Elevated to top-level by Session 18 wrapup (marked HIGHEST PRIORITY since Session 18, deferred for 13 sessions)
 **29A Coverage**: None (entirely absent from 29A and original 29B-1 through 29B-6)
 **Dependency**: Requires 29B-4 (Jensen transverse stability) as a structural prerequisite — if Jensen ansatz is unstable, D_total Pfaffian on the 1D curve is physically meaningless. Independent of KC-3 verdict.
 
@@ -321,7 +321,7 @@ where $S$ contains Yukawa coupling matrices ($Y_\nu, Y_e, Y_u, Y_d$) and $T$ con
 In Baptista's framework (Papers 17, 18), $D_F$ is NOT an independent input. It emerges from the dimensional reduction of the higher-dimensional Dirac operator $D_P$ on $P = M^4 \times K$. Specifically, the Kosmann-Lichnerowicz derivative $\mathcal{L}_X$ of spinors along non-Killing vector fields $X$ on $K$ generates the chiral couplings that play the role of Yukawa couplings (Paper 17, eq 1.3-1.4). The mass mixing matrix $\langle \psi_\alpha, D\!\!\!/\,_K \psi_\beta \rangle_{L^2}$ between representation-basis spinors and mass-eigenspinors IS the CKM/PMNS-type matrix (Paper 18, Section 6-7).
 
 In this approach, $D_F$ is constructed from:
-1. The eigenspinors $\psi_n(\tau)$ of $D_K(\tau)$ — ALREADY COMPUTED (eigenvectors available from `tier1_dirac_spectrum.py` with minor modification)
+1. The eigenspinors $\psi_n(\tau)$ of $D_K(\tau)$ — ALREADY COMPUTED (eigenvectors available from `dirac_spectrum.py` with minor modification)
 2. The Kosmann operators $K_a$ for the 4 non-Killing directions ($a \in \mathbb{C}^2$) — ALREADY COMPUTED (`s23a_kosmann_singlet.py`)
 3. The overlap integrals $\langle \psi_\alpha | K_a | \psi_\beta \rangle$ between D_K eigenspinors from different sectors — requires Peter-Weyl cross-sector integration (NEW, but the mathematical ingredients exist)
 
@@ -350,7 +350,7 @@ The antisymmetric matrix $M = \Xi \cdot D_{\text{total}}$ is $864 \times 864$ (i
 
 **Step 0: Eigenvector extraction** (prerequisite modification)
 
-Modify `tier1_dirac_spectrum.py` function `dirac_operator_on_irrep()` to return eigenvectors alongside eigenvalues. Currently the function calls `np.linalg.eigvals()` (eigenvalues only). Change to `np.linalg.eigh()` (eigenvalues + eigenvectors). This is a ~5-line modification.
+Modify `dirac_spectrum.py` function `dirac_operator_on_irrep()` to return eigenvectors alongside eigenvalues. Currently the function calls `np.linalg.eigvals()` (eigenvalues only). Change to `np.linalg.eigh()` (eigenvalues + eigenvectors). This is a ~5-line modification.
 
 Specifically: $D_\pi(\tau)$ on sector $(p,q)$ is a $(\dim(p,q) \cdot 16) \times (\dim(p,q) \cdot 16)$ Hermitian matrix. Its eigenvectors $|\psi_n^{(p,q)}(\tau)\rangle$ are the internal eigenspinors. Store them for all sectors with $p+q \leq N_{\max}$.
 
@@ -429,10 +429,10 @@ This is nonzero only for non-Killing $X$ (vanishes when $\mathcal{L}_X g_K = 0$)
 #### Revised Method (Step by Step)
 
 **Step 0: Eigenvector extraction**
-Modify `tier1_dirac_spectrum.py` to return eigenvectors. ~5-line change.
+Modify `dirac_spectrum.py` to return eigenvectors. ~5-line change.
 
 **Step 1: Compute $\mathcal{L}_{e_a} g_\tau$ for $a = 3,4,5,6$**
-The Lie derivative of the Jensen metric along the non-Killing frame vectors. This is a $8 \times 8$ symmetric tensor per direction, computed from $(\mathcal{L}_{e_a} g)_{bc} = g_{bd} f^d_{ac} + g_{cd} f^d_{ab}$ in the left-invariant frame (where $f^d_{ac}$ are the frame structure constants). All ingredients exist in `tier1_dirac_spectrum.py`.
+The Lie derivative of the Jensen metric along the non-Killing frame vectors. This is a $8 \times 8$ symmetric tensor per direction, computed from $(\mathcal{L}_{e_a} g)_{bc} = g_{bd} f^d_{ac} + g_{cd} f^d_{ab}$ in the left-invariant frame (where $f^d_{ac}$ are the frame structure constants). All ingredients exist in `dirac_spectrum.py`.
 
 **Step 2: Compute the $[D_K, \mathcal{L}_{e_a}]$ matrix in the eigenbasis**
 Using Paper 17 eq 1.4, compute the commutator as a matrix on the spinor space. For each sector $(p,q)$, project into the $D_K$-eigenbasis to get:
@@ -494,7 +494,7 @@ Refine to $|\tau_c - \tau_{\text{grid}}| < 10^{-6}$ using bisection. Determine w
 
 #### Inputs
 
-- `tier1_dirac_spectrum.py`: D_K eigenvalues + eigenvectors (modified), frame, connection, structure constants
+- `dirac_spectrum.py`: D_K eigenvalues + eigenvectors (modified), frame, connection, structure constants
 - `branching_computation_32dim.py`: Xi, G5, gamma_F, particle identification
 - `d2_pfaffian_computation.py`: Parlett-Reid Pfaffian algorithm, (0,0) sector framework
 - `s23a_kosmann_singlet.py`: Kosmann operator $K_a$ construction (corrected antisymmetric formula)
@@ -534,7 +534,7 @@ Contents of .npz:
 
 #### Why This Has Been Deferred for 13 Sessions
 
-The honest answer: the theoretical prerequisite — determining whether $D_F$ can be derived from KK geometry rather than inserted by hand — was unresolved. The Kosmann machinery needed for $[D_K, \mathcal{L}_X]$ was only developed in Session 23a (Kosmann operator computation). The eigenvector infrastructure was only built in Session 12 (Tier 1 Dirac spectrum) but eigenvectors were discarded. The order-one condition status (C-6, Axiom 5 fails) was only determined in Session 28c.
+The honest answer: the theoretical prerequisite — determining whether $D_F$ can be derived from KK geometry rather than inserted by hand — was unresolved. The Kosmann machinery needed for $[D_K, \mathcal{L}_X]$ was only developed in Session 23a (Kosmann operator computation). The eigenvector infrastructure was only built in Session 12 (Level 1 Dirac spectrum) but eigenvectors were discarded. The order-one condition status (C-6, Axiom 5 fails) was only determined in Session 28c.
 
 All prerequisites now exist. The computation is feasible. The theoretical framework (Baptista Papers 17-18) provides the explicit formula for $D_F$ from geometry. The only remaining question is whether the formula produces a consistent, tau-continuous $D_F$ that generates a Pfaffian sign change.
 
@@ -663,7 +663,7 @@ Total computation time: ~2.5 hours. Dominated by 29B-5 (Josephson CG coefficient
 | 29B-6 | (included in 29B-1 output) | (included in 29B-1 script) | Gradient balance B-1 |
 | 29B-7 | `s29b_dtotal_pfaffian.npz` | `s29b_dtotal_pfaffian.py` | Pfaffian sign change gate |
 
-Gate verdicts file: `tier0-computation/s29b_gate_verdicts.txt`
+Gate verdicts file: `computations/s29b_gate_verdicts.txt`
 
 ---
 

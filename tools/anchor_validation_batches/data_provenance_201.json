@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 201,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_2001",
+      "anchor_type": "data_provenance",
+      "name": "w4_p4_branch_iv_commit",
+      "script_path": "session-86/s86_w4_p4_branch_iv_commit.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-86/s86_w4_p4_branch_iv_commit.py",
+      "source_context_30_lines": "<name 'w4_p4_branch_iv_commit' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S86 W4-1 P4 — BRANCH-IV-FORMULATION-COMMIT (registry-write verification)\n    4: =========================================================================\n    5: \n    6: Gate: S86-BRANCH-IV-FORMULATION-COMMIT  ([VERIFY])\n    7: \n    8: Pre-registered threshold (per session-86-plan-w4.md §W4-1 §9):\n    9:   PASS iff all 5 CC pass AND all 3 file edits present AND both canonical\n   10:   entries registered with provenance AND re-import succeeds. FAIL otherwise.\n   11: \n   12: Inputs (SHA-256 dual-pinned at runtime — first 20 lines of stdout):\n   13:   - sessions/framework/registry/branch-iv-canonical.md      (post-edit registry)\n   14:   - computations/_shared/canonical_constants.py       (post-edit + audit_sha256)\n   15:   - computations/_shared/artifacts/s85_w12_elim1_D_K_Lmax_moments.npz\n   16:                                                     (anchor cache)\n   17:   - computations/session-85/s85_gate_verdicts.txt        (W12-ELIM-* cite SHAs)\n   18:   - script bytes (feeds BOTH audit_sha256 and content_sha256)\n   19: \n   20: Output 4-tuple:\n   21:   (value=\"R_JE_retired+R_JK_landed+xi_E_GGE_inv_landed\",\n   22:    scheme=\"branch-iv-canonical\", convention=\"2B-path-c\", L_max=\"N/A\")\n   23: \n   24: Classification: PHONONIC\n   25: \n   26: METHODOLOGY\n   27: -----------\n   28: Registry-write commit verification. Reads the framework file + canonical\n   29: constants file post-edit; performs 5 cross-checks (CC-1/CC-2 dimensional\n   30: rescaling traces, CC-3 framework-file grep, CC-4 canonical_constants.py"
+    },
+    {
+      "anchor_id": "prov_2002",
+      "anchor_type": "data_provenance",
+      "name": "w4_p5_sector_2_k_invariant",
+      "script_path": "session-86/s86_w4_p5_sector_2_k_invariant.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "session-86/s86_w4_p5_sector_2_k_invariant.npz, session-86/s86_w4_p5_sector_2_k_invariant.png",
+      "source_file": "computations/session-86/s86_w4_p5_sector_2_k_invariant.py",
+      "source_context_30_lines": "  222:     \"zeta\": \"zeta\",\n  223:     \"Zubarev\": \"heat-kernel\",\n  224:     \"SDW\": \"Mellin\",\n  225:     \"cutoff_sqrt\": \"hard-cutoff\",\n  226:     \"anomaly\": \"Pauli-Villars\",\n  227: }\n  228: \n  229: # Output destinations\n  230: OUT_NPZ = resolve_output(86, 's86_w4_p5_sector_2_k_invariant.npz')\n  231: OUT_PNG = resolve_output(86, 's86_w4_p5_sector_2_k_invariant.png')\n  232: VERDICT_TXT = resolve_output(86, 's86_gate_verdicts.txt')\n  233: \n  234: INPUT_FILES = [\n  235:     resolve_script(None, '_spectral_action_regulators.py'),\n  236:     resolve_script(None, 'canonical_constants.py'),\n  237:     resolve_script(None, 'artifacts') / \"s85_w12_elim1_D_K_Lmax_moments.npz\",\n  238:     resolve_output(85, 's85_gate_verdicts.txt'),"
+    },
+    {
+      "anchor_id": "prov_2003",
+      "anchor_type": "data_provenance",
+      "name": "w5a_p3_sector_1_sr_flow",
+      "script_path": "session-86/s86_w5a_p3_sector_1_sr_flow.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-86/s86_w5a_p3_sector_1_sr_flow.py",
+      "source_context_30_lines": "   23:   quantum-pressure factor. The ξ²(0) IC encodes the substrate's spectral state at\n   24:   the fold via the s=−1 spectral diagnostic against E-class operators (W4 P4 pin:\n   25:   ξ_E_GGE^{-1} = 13.6425). Z(N_pivot) measures how the substrate's quantum-pressure\n   26:   normalization evolves across e-folds. The Mukhanov-Sasaki form is borrowed as a\n   27:   calculational scaffold; it is NOT an inflaton-as-fundamental-field assertion.\n   28: \n   29: Inputs (S84+ dual-SHA):\n   30:   - computations/_shared/canonical_constants.py\n   31:   - computations/session-86/s86_w5a_p3_sector_1_sr_flow.py (this file)\n   32: \n   33: Output 4-tuples (one per pivot):\n   34:   (value=Z_ratio_at_<pivot>, scheme=SR-LO-Mukhanov-Sasaki,\n   35:    convention=substrate-first-xi2(0)-IC, L_max=10)\n   36: \n   37: Author: transit-dynamics-theorist (S86 W5a runtime)\n   38: \"\"\"\n   39: from __future__ import annotations"
+    },
+    {
+      "anchor_id": "prov_2004",
+      "anchor_type": "data_provenance",
+      "name": "w5b_c15_i_gauge",
+      "script_path": "session-86/s86_w5b_c15_i_gauge.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-86/s86_w5b_c15_i_gauge.py",
+      "source_context_30_lines": "  110: # Pre-registered selection-rule alphabet (plan §9, §10)\n  111: SELECTION_RULES = (\"axiom-native\", \"observation-native\", \"pre-reg-both\")  # (local)\n  112: \n  113: # Canonical pivot values (per plan §6 + S77 transit-synthesis L103 + S82 W1-1)\n  114: N_SUBSTRATE_ZETA = 3.12   # (local) substrate Mellin-zeta moment at tau_fold (S77 L103)\n  115: N_MS = 55                 # (local) gauge-invariant MS comoving-mode horizon-exit (S82 W1-1)\n  116: \n  117: # Output destinations\n  118: OUT_JSON = resolve_output(86, 's86_w5b_c15_i_gauge_table.json')         # (local)\n  119: VERDICT_TXT = resolve_output(86, 's86_gate_verdicts.txt')               # (local)\n  120: \n  121: # Input files (SHA-pinned)\n  122: INPUT_FILES = [\n  123:     resolve_script(None, 'canonical_constants.py'),\n  124:     PROJECT_ROOT / \"sessions\" / \"session-plan\" / \"session-86-plan-w5b.md\",\n  125:     PROJECT_ROOT / \"sessions\" / \"session-plan\" / \"session-86-plan-w5a.md\",\n  126:     PROJECT_ROOT / \"sessions\" / \"session-77\" / \"session-77-transit-synthesis.md\","
+    },
+    {
+      "anchor_id": "prov_2005",
+      "anchor_type": "data_provenance",
+      "name": "w5b_c15_ii_baseline",
+      "script_path": "session-86/s86_w5b_c15_ii_baseline.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "session-86/s86_w5b_c15_ii_baseline.npz, session-86/s86_w5b_c15_ii_baseline.png",
+      "source_file": "computations/session-86/s86_w5b_c15_ii_baseline.py",
+      "source_context_30_lines": "   74:       Reconstruct H_W5aP3_lcdm(N)/H_initial = exp(-int_{N_initial}^{N} eps_lcdm dN'),\n   75:       compute at N_pivot, and report the deviation vs BASELINE constant-eps_H.\n   76:       The deviation IS the eta-driven correction (NOT a violation of agreement).\n   77: \n   78: Inputs (S84+ dual-SHA):\n   79:   - computations/_shared/canonical_constants.py\n   80:   - computations/session-86/s86_w5a_p3_sector_1_z_factor.npz (CC2 reference; W5a P3\n   81:     LCDM trajectory at (eta_0=0.005, alpha_s_0=0, xi^2_0=0) IC)\n   82:   - computations/session-86/s86_w5b_c15_ii_baseline.py (this file)\n   83: \n   84: Output 4-tuples (one verdict line per session bookkeeping; both pivot values\n   85: within the value field):\n   86:     (value=\"<H_at_3.12>;<H_at_55>\" (M_KK natural units),\n   87:      scheme=RK45_rtol1e-8,\n   88:      convention=both-pivots-PRE-REG-BOTH,\n   89:      L_max=10)\n   90: "
+    },
+    {
+      "anchor_id": "prov_2006",
+      "anchor_type": "data_provenance",
+      "name": "w5b_c16_csub_admissibility",
+      "script_path": "session-86/s86_w5b_c16_csub_admissibility.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "session-86/s86_w5b_c16_csub_admissibility.npz, session-86/s86_w5b_c16_csub_admissibility.png",
+      "source_file": "computations/session-86/s86_w5b_c16_csub_admissibility.py",
+      "source_context_30_lines": "  177: # the S78 results working-paper input below)\n  178: C_SUB_TARGET = 3.647                                            # (local) S78 W2-E zeta value (4-sig-fig presentation)\n  179: C_SUB_TARGET_PRECISE = 3.646971                                 # (local) S78 W2-E zeta value (6-sig-fig from verdict line)\n  180: \n  181: # k_pivot in fold-comoving M_KK units (canonical from S78 W2-E §0 + S77 N-PIVOT-MAP)\n  182: K_PIVOT_FOLD_COMOV = 14.31                                      # (local) M_KK at fold (S77)\n  183: \n  184: # Output destinations\n  185: OUT_NPZ = resolve_output(86, 's86_w5b_c16_csub_admissibility.npz')      # (local)\n  186: OUT_PNG = resolve_output(86, 's86_w5b_c16_csub_admissibility.png')      # (local)\n  187: VERDICT_TXT = resolve_output(86, 's86_gate_verdicts.txt')               # (local)\n  188: \n  189: # Input files (SHA-pinned)\n  190: INPUT_FILES = [\n  191:     resolve_script(None, 'canonical_constants.py'),\n  192:     resolve_script(78, 's78_f_conv_subhorizon.py'),\n  193:     PROJECT_ROOT / \"sessions\" / \"session-78\" / \"session-78-results-workingpaper.md\","
+    },
+    {
+      "anchor_id": "prov_2007",
+      "anchor_type": "data_provenance",
+      "name": "w6_1_immunization_family_landing",
+      "script_path": "session-86/s86_w6_1_immunization_family_landing.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-86/s86_w6_1_immunization_family_landing.py",
+      "source_context_30_lines": "<name 'w6_1_immunization_family_landing' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S86 W6-1 — S86-PERTURBATIVE-IMMUNIZATION-FAMILY-LANDING\n    4: ========================================================\n    5: \n    6: Gate: S86-PERTURBATIVE-IMMUNIZATION-FAMILY-LANDING ([VERIFY])\n    7: \n    8: Pre-registered threshold (plan §W6-1 §T):\n    9:   PASS iff (a) §VII.S body contains a 9-row corollary table with the\n   10:   exact column set {Branch / Corollary ID / Source-of-contamination Y /\n   11:   IEP class / Status / Landing wave / Dual-SHA};\n   12:        AND (b) family-level Theorem(Immunization) statement verbatim;\n   13:        AND (c) 4-step substitution-chain audit footer;\n   14:        AND (d) >=2 LANDED rows carry SHA back-references to W1c C41\n   15:                 verdict lines (S86-VII-S-C-ETA-LANDING +\n   16:                 S86-VII-S-C-THETA-LANDING; canonical post-rename\n   17:                 audit_sha256 at verdict-file lines 69-70);\n   18:        AND (e) verdict line uniqueness (no duplicate gate-ID line).\n   19:   Tolerance rule: THEOREM (binary presence + integer row-count exact).\n   20:   FAIL iff any of (a)-(e) violated.\n   21: \n   22: PLAN-TEXT INCONSISTENCY DIAGNOSTIC (resolved at runtime per\n   23: `feedback_dispatch-discipline.md`):\n   24:   The plan §M item 1 ordering header (line 105) reads\n   25:     \"verbatim ordering A, B, C, D, E, F, eta, theta, iota\"\n   26:   (9 elements), but the bulleted enumeration on lines 106-123\n   27:   contains 10 rows {A, B, C, D, E, F, G, eta, theta, iota}; \"G\"\n   28:   (C-zeta, twisted spectral triple deformation) is missing from\n   29:   the ordering header. The bulleted enumeration is the substantive\n   30:   source-of-truth; the header has a transcription typo. The"
+    },
+    {
+      "anchor_id": "prov_2008",
+      "anchor_type": "data_provenance",
+      "name": "w6_2_lattice_spacing_immunization",
+      "script_path": "session-86/s86_w6_2_lattice_spacing_immunization.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "session-86/s86_w6_2_lattice_spacing_immunization.npz",
+      "source_file": "computations/session-86/s86_w6_2_lattice_spacing_immunization.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s86_w6_2_lattice_spacing_immunization.py\n    4: ========================================\n    5: Gate: S86-LATTICE-SPACING-IMMUNIZATION-CANDIDATE (W6-2 / 1C C-α / OQ1)\n    6: \n    7: Owner: lizzi-spectral-functional-theorist\n    8: Trigger: [VERIFY-THEOREM]\n    9: Classification: GEOMETRIC\n   10: \n   11: PURPOSE"
+    },
+    {
+      "anchor_id": "prov_2009",
+      "anchor_type": "data_provenance",
+      "name": "w6_3_weyl_rescaling_weak",
+      "script_path": "session-86/s86_w6_3_weyl_rescaling_weak.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-86/s86_w6_3_weyl_rescaling_weak.py",
+      "source_context_30_lines": "  102: import numpy as np\n  103: \n  104: # ----- Imports & paths ------------------------------------------------------\n  105: SCRIPT_DIR = Path(__file__).parent.resolve()\n  106: sys.path.insert(0, str(SCRIPT_DIR))\n  107: from canonical_constants import M_KK, v_ew, m_t_pole\n  108: \n  109: CACHE_PATH   = SCRIPT_DIR / \"s84_spectrum_cache_L12_tau019.npz\"\n  110: DATA_OUT     = SCRIPT_DIR / \"_artifacts\" / \"s86_w6_3_weyl_rescaling_weak.npz\"\n  111: PLOT_OUT     = SCRIPT_DIR / \"_artifacts\" / \"s86_w6_3_weyl_rescaling_weak.png\"\n  112: JSON_OUT     = SCRIPT_DIR / \"_artifacts\" / \"s86_w6_3_weyl_rescaling_weak.json\"\n  113: VERDICT_FILE = SCRIPT_DIR / \"s86_gate_verdicts.txt\"\n  114: DATA_OUT.parent.mkdir(parents=True, exist_ok=True)\n  115: \n  116: GATE_ID = \"S86-WEYL-RESCALING-IMMUNIZATION-WEAK-FORM\"\n  117: \n  118: # ----- Helpers --------------------------------------------------------------"
+    },
+    {
+      "anchor_id": "prov_2010",
+      "anchor_type": "data_provenance",
+      "name": "w7_branchc_discriminator",
+      "script_path": "session-86/s86_w7_branchc_discriminator.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "session-86/s86_w7_branchc_discriminator.npz, session-86/s86_w7_branchc_discriminator.png",
+      "source_file": "computations/session-86/s86_w7_branchc_discriminator.py",
+      "source_context_30_lines": "   77: # X2-removed: alias 'SCRIPT_DIR' = ... 'computations' (replaced by tools.computation_root.resolve_*)\n   78: S85_3B_DIR = REPO_ROOT / \"sessions\" / \"session-85\"  # (local)\n   79: \n   80: VOLOVIK_SOLO = S85_3B_DIR / \"session-85-3b-branch-c-phonon-volovik.md\"  # (local)\n   81: LANDAU_SOLO = S85_3B_DIR / \"session-85-3b-branch-c-phonon-landau.md\"  # (local)\n   82: KAKU_SOLO = S85_3B_DIR / \"session-85-3b-branch-c-phonon-kaku.md\"  # (local)\n   83: \n   84: S86_VERDICT = resolve_output(86, 's86_gate_verdicts.txt')  # (local)\n   85: OUT_NPZ = resolve_output(86, 's86_w7_branchc_discriminator.npz')  # (local)\n   86: OUT_PNG = resolve_output(86, 's86_w7_branchc_discriminator.png')  # (local)\n   87: \n   88: GATE_ID = \"S86-BRANCH-C-MECHANISM-DISCRIMINATING-GATE\"  # (local)\n   89: SCHEME = \"ABSOLUTE-min-dominance\"  # (local) plan §7\n   90: CONVENTION = \"branch-c-vs-{landau,kaku}\"  # (local) plan §7\n   91: L_MAX_TAG = 10  # (local) plan §7\n   92: \n   93: PASS_R_MIN = 10.0  # (local) plan §9 PASS threshold"
+    }
+  ]
+}

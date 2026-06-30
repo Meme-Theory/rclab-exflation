@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 225,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_2241",
+      "anchor_type": "data_provenance",
+      "name": "w8_cf27_pin_repin",
+      "script_path": "session-88/s88_w8_cf27_pin_repin.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "session-88/s88_w8_cf27_pin_repin.npz",
+      "source_file": "computations/session-88/s88_w8_cf27_pin_repin.py",
+      "source_context_30_lines": "  103: # Section 3 — Paths + pre-registration\n  104: # ---------------------------------------------------------------------------\n  105: SESSION = \"S88\"                                                         # (local)\n  106: GATE_ID = \"S88-CF-27-PIN-RE-PIN-AT-PLAN-FREEZE\"                         # (local)\n  107: SCHEME = \"SHA-comparison-canonical-vs-source\"                           # (local)\n  108: CONVENTION = \"re-pin-on-drift-via-update_constant\"                      # (local)\n  109: L_MAX = \"N/A\"                                                           # (local)\n  110: \n  111: OUT_NPZ = SESSION_DIR / \"s88_w8_cf27_pin_repin.npz\"                     # (local)\n  112: VERDICT_TXT = SESSION_DIR / \"s88_gate_verdicts.txt\"                     # (local)\n  113: \n  114: # Three pathway-keyed constants per plan §W8-96 line 364\n  115: PATHWAY_KEYED_CONSTANTS = [                                             # (local)\n  116:     {\n  117:         \"name\": \"f_NL_FW_S82_equilateral\",\n  118:         \"expected_value\": 0.0547,\n  119:         \"source_path\": COMPUTATIONS_DIR / \"session-82\" / \"s82_w3_4_gge_fnl_channel.py\","
+    },
+    {
+      "anchor_id": "prov_2242",
+      "anchor_type": "data_provenance",
+      "name": "w8_cf29_partition_classify",
+      "script_path": "session-88/s88_w8_cf29_partition_classify.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "session-88/s88_w8_cf29_partition_classify.npz, session-88/s88_w8_cf29_partition_classify.png",
+      "source_file": "computations/session-88/s88_w8_cf29_partition_classify.py",
+      "source_context_30_lines": "   51:   search_knowledge('S70 LEGGETT-MOMENT substrate observable') -> known\n   52:   search_knowledge('Pillar III BCS substrate observable')      -> known\n   53:   search_knowledge('Pillar VI A_s n_s substrate spectral')      -> known\n   54:   get_constant('M_KK')   = 7.428660036284456e+16\n   55:   get_constant('tau_fold') = 0.19  (S12/S42 pin)\n   56:   Vol_SU3_Haar = 1349.7399583199533 (S44 corrected)\n   57: \n   58: Outputs:\n   59:   - NPZ      : computations/session-88/s88_w8_cf29_partition_classify.npz\n   60:   - PNG      : computations/session-88/s88_w8_cf29_partition_classify.png\n   61:   - Verdict  : computations/session-88/s88_gate_verdicts.txt   (canonical\n   62:                 + dual-SHA companion row, schema_version=S84+)\n   63:   - WP       : sessions/session-88/session-88-w8-workingpaper.md  (§W8-90)\n   64: \"\"\"\n   65: from __future__ import annotations\n   66: \n   67: import hashlib"
+    },
+    {
+      "anchor_id": "prov_2243",
+      "anchor_type": "data_provenance",
+      "name": "w8_cf29_resume",
+      "script_path": "session-88/s88_w8_cf29_resume.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "session-88/s88_w8_cf29_resume.npz",
+      "source_file": "computations/session-88/s88_w8_cf29_resume.py",
+      "source_context_30_lines": "   80: )\n   81: L_MAX_PIN = 10  # (local) inherited from §W8-90 plan §W8-98 ref pin\n   82: PARTITION_TOL = 1e-12  # (local) inherited reference value from #90\n   83: \n   84: VERDICT_PATH = (\n   85:     PROJECT_ROOT / \"computations\" / \"session-88\" / \"s88_gate_verdicts.txt\"\n   86: )\n   87: NPZ_OUT = (\n   88:     PROJECT_ROOT / \"computations\" / \"session-88\" / \"s88_w8_cf29_resume.npz\"\n   89: )\n   90: WP_PATH = (\n   91:     PROJECT_ROOT\n   92:     / \"sessions\"\n   93:     / \"session-88\"\n   94:     / \"session-88-w8-workingpaper.md\"\n   95: )\n   96: UPSTREAM_NPZ = ("
+    },
+    {
+      "anchor_id": "prov_2244",
+      "anchor_type": "data_provenance",
+      "name": "w8_cf30_k_count_revise",
+      "script_path": "session-88/s88_w8_cf30_k_count_revise.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "session-88/s88_w8_cf30_k_count_revise.npz",
+      "source_file": "computations/session-88/s88_w8_cf30_k_count_revise.py",
+      "source_context_30_lines": "  128: PASS_K = 2                                                                   # (local)  asymmetric: PASS iff K_revised == 2\n  129: \n  130: # Canonical §W8-90 SHA pin (latest non-superseded per gate-verdicts.md §\"Option A\")\n  131: W8_90_CANONICAL_AUDIT_SHA = (                                                # (local)\n  132:     \"dfff27f73a658ae595215b6b9e6c284b2c4f750d149814c25106d759f20d5137\"\n  133: )\n  134: \n  135: # Output destinations\n  136: OUT_NPZ = SESSION_DIR / \"s88_w8_cf30_k_count_revise.npz\"\n  137: VERDICT_TXT = SESSION_DIR / \"s88_gate_verdicts.txt\"\n  138: \n  139: INPUT_FILES = [\n  140:     SHARED_DIR / \"canonical_constants.py\",\n  141:     SESSION_DIR / \"s88_w8_cf29_partition_classify.npz\",\n  142: ]\n  143: \n  144: "
+    },
+    {
+      "anchor_id": "prov_2245",
+      "anchor_type": "data_provenance",
+      "name": "w8_cf30_resume",
+      "script_path": "session-88/s88_w8_cf30_resume.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "session-88/s88_w8_cf30_resume.npz",
+      "source_file": "computations/session-88/s88_w8_cf30_resume.py",
+      "source_context_30_lines": "  101: \n  102: # Pre-registered thresholds (plan §W8-99 line 449)\n  103: K_BASELINE = 1                                                         # (local) S86 W-4 R3-A baseline\n  104: K_PASS_PROMOTION = 3                                                   # (local) per feedback_rules-compensate-missing-structure.md MANDATORY\n  105: K_INFO_PENDING = 2                                                     # (local) SUGGESTION pre-promotion\n  106: TYPE_F_PREFIX = \"Type-F\"                                               # (local) Type-F-α admitted prefixes (Type-F-C / Type-F-H / Type-F-M3)\n  107: \n  108: UPSTREAM_NPZ = SESSION_DIR / \"s88_w8_cf29_resume.npz\"\n  109: OUT_NPZ = SESSION_DIR / \"s88_w8_cf30_resume.npz\"\n  110: VERDICT_TXT = SESSION_DIR / \"s88_gate_verdicts.txt\"\n  111: \n  112: INPUT_FILES = [\n  113:     SHARED_DIR / \"canonical_constants.py\",\n  114:     UPSTREAM_NPZ,\n  115: ]\n  116: \n  117: "
+    },
+    {
+      "anchor_id": "prov_2246",
+      "anchor_type": "data_provenance",
+      "name": "w8_channel_label_normalization",
+      "script_path": "session-88/s88_w8_channel_label_normalization.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "session-88/s88_w8_channel_label_normalization.npz",
+      "source_file": "computations/session-88/s88_w8_channel_label_normalization.py",
+      "source_context_30_lines": "  109: SCHEME = \"METHODOLOGY-canonical-constants-pin-landing\"            # (local)\n  110: CONVENTION = \"CHANNEL-LABELS-dict-9-cell-tensor-22-entries\"       # (local)\n  111: L_MAX = \"N/A\"                                                     # (local)\n  112: \n  113: CANONICAL_PATH = SHARED_DIR / \"canonical_constants.py\"\n  114: ALLOWLIST_PATH = PROJECT_ROOT / \".claude\" / \"rules\" / \"methodology-wave-allowlist.md\"\n  115: REGISTRY_PATH = PROJECT_ROOT / \"sessions\" / \"permanent-results-registry.md\"\n  116: VERDICT_TXT = SESSION_DIR / \"s88_gate_verdicts.txt\"\n  117: OUT_NPZ = SESSION_DIR / \"s88_w8_channel_label_normalization.npz\"\n  118: \n  119: INPUT_FILES = [\n  120:     SHARED_DIR / \"canonical_constants.py\",\n  121:     REGISTRY_PATH,\n  122:     ALLOWLIST_PATH,\n  123: ]\n  124: \n  125: # ---------------------------------------------------------------------------"
+    },
+    {
+      "anchor_id": "prov_2247",
+      "anchor_type": "data_provenance",
+      "name": "w8_consensus_independence_test_landing",
+      "script_path": "session-88/s88_w8_consensus_independence_test_landing.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-88/s88_w8_consensus_independence_test_landing.py",
+      "source_context_30_lines": "   99:     PROJECT_ROOT / \".claude\" / \"rules\" / \"methodology-wave-allowlist.md\"\n  100: )\n  101: REGISTRY_PATH = PROJECT_ROOT / \"sessions\" / \"permanent-results-registry.md\"\n  102: PLAN_PATH = (\n  103:     PROJECT_ROOT / \"sessions\" / \"session-plan\" / \"session-88-plan-w8.md\"\n  104: )\n  105: CANONICAL_PATH = SHARED_DIR / \"canonical_constants.py\"\n  106: VERDICT_TXT = SESSION_DIR / \"s88_gate_verdicts.txt\"\n  107: OUT_JSON = SESSION_DIR / \"s88_w8_consensus_independence_test_landing.json\"\n  108: \n  109: INPUT_FILES = [\n  110:     CROSS_PILLAR_PATH,    # PRE-edit state\n  111:     ALLOWLIST_PATH,       # PRE-edit state\n  112:     REGISTRY_PATH,\n  113:     PLAN_PATH,\n  114:     CANONICAL_PATH,\n  115: ]"
+    },
+    {
+      "anchor_id": "prov_2248",
+      "anchor_type": "data_provenance",
+      "name": "w8_level2_layer_distinction",
+      "script_path": "session-88/s88_w8_level2_layer_distinction.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-88/s88_w8_level2_layer_distinction.py",
+      "source_context_30_lines": "   80: L_MAX = \"N/A\"\n   81: \n   82: PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent\n   83: SCRIPT_PATH = Path(__file__).resolve()\n   84: CROSS_PILLAR_RULE = PROJECT_ROOT / \".claude\" / \"rules\" / \"cross-pillar-bridge-anatomy.md\"\n   85: ALLOWLIST_RULE = PROJECT_ROOT / \".claude\" / \"rules\" / \"methodology-wave-allowlist.md\"\n   86: PLAN_W8 = PROJECT_ROOT / \"sessions\" / \"session-plan\" / \"session-88-plan-w8.md\"\n   87: VERDICT_FILE = SCRIPT_PATH.parent / \"s88_gate_verdicts.txt\"\n   88: JSON_OUT = SCRIPT_PATH.parent / \"s88_w8_level2_layer_distinction.json\"\n   89: \n   90: \n   91: # ============================================================================\n   92: # Helpers\n   93: # ============================================================================\n   94: \n   95: def sha256_file(path: Path) -> str:\n   96:     h = hashlib.sha256()"
+    },
+    {
+      "anchor_id": "prov_2249",
+      "anchor_type": "data_provenance",
+      "name": "w8_orphan_fnl_pathway_update",
+      "script_path": "session-88/s88_w8_orphan_fnl_pathway_update.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-88/s88_w8_orphan_fnl_pathway_update.py",
+      "source_context_30_lines": "  100: )  # (local)\n  101: MASTER_INVENTORY = (\n  102:     PROJECT_ROOT / \"sessions\" / \"framework\" / \"registry\" / \"falsifier-master-inventory.md\"\n  103: )  # (local)\n  104: ALLOWLIST = (\n  105:     PROJECT_ROOT / \".claude\" / \"rules\" / \"methodology-wave-allowlist.md\"\n  106: )  # (local)\n  107: \n  108: OUT_JSON = SESSION_DIR / \"s88_w8_orphan_fnl_pathway_update.json\"\n  109: VERDICT_TXT = SESSION_DIR / \"s88_gate_verdicts.txt\"\n  110: \n  111: INPUT_FILES = [\n  112:     SHARED_DIR / \"canonical_constants.py\",\n  113:     PATHWAY_REGISTRY,\n  114:     MASTER_INVENTORY,\n  115:     ALLOWLIST,\n  116: ]"
+    },
+    {
+      "anchor_id": "prov_2250",
+      "anchor_type": "data_provenance",
+      "name": "w8_reading_a_rule_promote",
+      "script_path": "session-88/s88_w8_reading_a_rule_promote.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-88/s88_w8_reading_a_rule_promote.py",
+      "source_context_30_lines": "  107: SUBSTANTIVE_LINE_COUNT_MIN = 15                                     # (local)\n  108: \n  109: # 3-instance corpus identifiers (verbatim from plan §W8-92 method step 3)\n  110: CORPUS_INSTANCE_1 = \"S87 W4-2 §VII.AJ.W4-1\"                         # (local)\n  111: CORPUS_INSTANCE_2 = \"S87 W6-1 §VII.AG.1\"                            # (local)\n  112: CORPUS_INSTANCE_3 = \"S87 W11-meta-2\"                                # (local)\n  113: \n  114: # Output destinations\n  115: OUT_JSON = SESSION_DIR / \"s88_w8_reading_a_rule_promote.json\"\n  116: VERDICT_TXT = SESSION_DIR / \"s88_gate_verdicts.txt\"\n  117: \n  118: # Rule files this gate edits (verified at audit time)\n  119: RULE_REGISTRY_LANDING = PROJECT_ROOT / \".claude\" / \"rules\" / \"registry-landing.md\"\n  120: RULE_METHODOLOGY_ALLOWLIST = PROJECT_ROOT / \".claude\" / \"rules\" / \"methodology-wave-allowlist.md\"\n  121: PERMANENT_REGISTRY = PROJECT_ROOT / \"sessions\" / \"permanent-results-registry.md\"\n  122: \n  123: INPUT_FILES = ["
+    }
+  ]
+}

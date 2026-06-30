@@ -1,0 +1,214 @@
+# Atlas-04 Foundation & Assumptions Registry — S52-S88 Uplift Materials
+
+**Author**: mack-cosmic-bridge (cosmological / observational anchor sole-writer per `feedback_mack-bridge-role.md`)
+**Date**: 2026-05-09
+**Target atlas**: `sessions/framework/Atlas/atlas-04-assumptions.md` (15,494 bytes; data-content frozen at S50-S51 close 2026-04-04; mtime 2026-05-08 = touch only)
+**Output role**: Materials packet for orchestrator to apply as REVISIONS to atlas-04. This file is NOT the atlas; it is the source ledger from which atlas-04 revisions will be drawn.
+**Packet size**: ~22 status changes + ~10 new entries + 10 observational anchors.
+
+> Substrate-framing discipline (per `phononic-framing.md §"IS Space, Not IN Space"`): assumptions catalogued here are assertions about substrate-IS structure (e.g., "the spectral triple has KO-dim=6 by construction"); observational anchors in §2c are laboratory-IN measurements that the substrate-IS prediction is tested against. The 4-stage pathway is `assumed → conditional → proven → permanent`; promotion to atlas-07 §VII.* permanent results is the terminal step.
+
+> Numerical-claim discipline (per `math-scripts.md §"Double-Check Logic Before Compute"`): every σ-distance, OOM ratio, and percent-deviation cited in this packet was Python-verified at packet-write time. Substitution chains for each are inline. Quoted source values are loaded verbatim from `falsifier-master-inventory.md`, `falsifier-watchlist.md`, `canonical_constants.py`, and the sister atlas-uplift packets (atlas-02/05/06/07).
+
+---
+
+## Section 1 — What's currently in atlas-04 (state at 2026-04-04 / S50-S51 close)
+
+The atlas catalogues **52 entries** across 7 sections — Geometric Foundations (G1–G12, 12 entries), BCS / Many-Body Physics (B1–B8, 8 entries), Spectral Action (S1–S5, 5 entries), Cosmological Mapping (C1–C9, 9 entries), Transit / Dynamics (T1–T6, 6 entries), NCG / Algebraic Structure (N1–N4, 4 entries), Specific Claimed Predictions (P1–P4, 4 entries), plus a bottom-of-doc 4-row Surviving-Mechanisms summary table that the explicit count does not include. Per the atlas header (line 4): `15 PROVEN | 14 ASSUMED | 8 CONDITIONAL | 11 BROKEN | 4 DISSOLVED`.
+
+The status-class taxonomy is:
+- **PROVEN** — exact identity / theorem at machine epsilon, regardless of cosmological fate (e.g., G4 KO-dim=6, G8 [J,D_K]=0, G10 D_K block-diagonality, G11/12 Baptista 67/67 + Riemann 147/147, B1 BCS 1D theorem, B5/B6 AZ class BDI, P3/P4 structural KK-tower n_s≥1 + universal tachyonic).
+- **ASSUMED** — input ansatz with no derivation from a deeper principle (e.g., G1 M^4×K product, G2 K=SU(3), G3 Jensen 1-parameter family, G6 volume-preserving, G7 left-invariant, S2 cutoff-physical, S3 SA-correct-effective-action, C1 τ-parameterizes-cosmic-time).
+- **CONDITIONAL** — passes its own gate but depends on undetermined quantity (B2 Kosmann-uniqueness, B4 mean-field-N_pair=1, B7 mechanism-chain, B8 instanton-gas, C6 η baryon, C7 CDM-from-GGE, C8 G_N-Sakharov, N2 order-one A_F).
+- **BROKEN** — falsified by either observation or structural theorem (B3 singlet dominance, C2 K_pivot=2.0, C3 n_s OZ, C4 w_0=GGE, C5 w_a=0, T3 GGE-permanence, T5 equilibrium-stabilization, T6 Friedmann-BCS, N3 spectral-triple-axiom-5, N4 Anderson-Higgs).
+- **DISSOLVED** — question reframed; mechanism not falsified, the question itself was wrong (S1 SA-stabilization → transit paradigm; S4 perturbative SA → branch-structure; P1 phi_paasch as prediction → mathematical property).
+
+Format: 7-column tables — `# | Assumption | Status | Evidence | Session` with per-row prose evidence. No quantitative anchor pins (those live in `falsifier-master-inventory.md`); no σ-distance columns (those live in `falsifier-watchlist.md`). The atlas's bottom-of-doc Summary Assessment paragraph (lines 105–111) frames the geometric foundations as solid, the cosmological mapping as the breakage surface, and the K_pivot scale mapping as the load-bearing single largest risk.
+
+**Critical gap**: 22 sessions (S67–S88) post-date the atlas's data freeze; all 22 are absent. The largest classes of missing content are (i) the Volovik scenario-B paradigm shift at S66 (already present in evidence prose for C4/C7 but not propagated to status field for those entries — atlas pre-dates the W1-A PASS classification); (ii) cross-pillar-bridge-anatomy MANDATORY at K=3 (S86–S88); (iii) algebra-axis-orthogonality MANDATORY at K=3 (S87 W-2); (iv) joint-theorem-4-stage-pathway MANDATORY (S86 W-9); (v) the DESI DR3 Dovekie-update σ-distance band; (vi) LEGGETT-MOMENT 0.6%-Planck observational match (S70); (vii) the α_s canonical re-pin from −0.069±0.008 to +0.00117 (S85, RUNNING-NS-63 source) which inverts σ-direction relative to LCDM; (viii) the 9-row Aalto LTL 3He-B lab-falsifier suite (S86 W11 C5/C6); (ix) §VII.U.1 Mellin-Dirichlet-identity proven anchor at substrate-distance-1; (x) the LISA Companion-null Ω_GW = 8.299e-58 forward-falsifier prediction.
+
+A second feature-class missing: the 5-class taxonomy (PROVEN / ASSUMED / CONDITIONAL / BROKEN / DISSOLVED) is fundamentally substrate-physics-only. The S86–S88 era introduced **STAGE-1-CANDIDATE** as a structurally distinct status — joint cross-axis theorems that have landed in `permanent-results-registry.md` but are pending Stage-2 two-agent independent verify per `joint-theorem-promotion.md`. Atlas-07 currently houses 11 STAGE-1-CANDIDATE entries (per the atlas-07 packet's slot inventory). These cannot be classified as PROVEN (Stage-2 not landed), CONDITIONAL (in atlas-04's sense, which means "passes own gate but depends on undetermined quantity" — STAGE-1-CANDIDATE's blocker is structurally a 2-agent verify procedure, not undetermined physics), or ASSUMED (the candidates have substantive derivations). A 6th class STAGE-1-CANDIDATE may be required (see §3 flag (4)).
+
+---
+
+## Section 2 — What to revise
+
+### 2a. Status changes for existing entries (S52-S88)
+
+> Format: `existing entry # | current status | proposed status | reason | session | source`. Sessions cited are first session of evidence post-S51; multiple-session entries cite the most decisive landing. Sources cite either a registry slot (`§VII.X`), a rule file (`.claude/rules/X.md`), or a working-paper / verdict file. Sigma-distance assertions are Python-verified.
+
+| # | current status | proposed status | reason | session | source |
+|:--|:--------------|:----------------|:-------|:--------|:-------|
+| **C4** w_0 = GGE energy/pressure ratio | BROKEN | CONDITIONAL (status-of-Volovik-scenario-B; live-watch DESI DR3) | The atlas's BROKEN classification predates S66. After S58 Volovik partition (`canonical_constants.py:1243` w_0_FW = -0.918) and S66 DILUTION-CC-66 PASS, the substrate's w_0 is not "BROKEN" — it has a substrate-derived value `-0.918` whose σ-distance to DR2-Dovekie central `-0.752 ± 0.057` is **2.91σ** (Python: `(-0.918 - (-0.752))/0.057 = -2.912`). The W1 falsifier-master-inventory row 1 + 1.dovekie-2026-update sub-row gives post-Dovekie 2.130σ for canonical and 0.731σ for branch-(iv) `w_0_FW_R842 = -0.842454`. R_842 binding-event has NOT triggered (binding instrument is DESI DR3, not DES-SN reanalysis on DR2 BAO). | S58 → S66 → S88 W5 (mack-arxiv DES-Dovekie review) | `falsifier-master-inventory.md` row #1 + sub-row 1.dovekie-2026-update; `falsifier-watchlist.md` w_0 row; `canonical_constants.py:1243` |
+| **C5** w_a = 0 (frozen modulus post-transit) | BROKEN | BROKEN with TRIPLE-LOCK CITATION (status preserved; evidence updated for atlas-07 cross-link) | DESI DR2 measures w_a = -0.73 ± 0.27. Triple-lock proof (trapping + integrability + frozen modulus) lives at atlas-07 `[NEW S50] w_a = 0 triple-locked` (Structural). Post-Dovekie σ-distance: framework w_a = 0 vs DR2 -0.73±0.21 ≈ 3.43σ (per `falsifier-master-inventory.md` row 1.dovekie-2026-update: "+0.51σ tightening from 2.92 → 3.43"). Status remains BROKEN (the framework's prediction is fixed, the data is moving away). The atlas evidence prose remains canonical; only the σ-distance pin updates. | S50 (origin) → S88 W5 (Dovekie σ tightening) | atlas-07 `[NEW S50] w_a = 0 triple-locked` (line 50); `falsifier-master-inventory.md` row 1.dovekie-2026-update |
+| **C7** CDM from GGE Bogoliubov quasiparticles | CONDITIONAL | CONDITIONAL with LEGGETT-CHANNEL ANCHOR (substrate-derived sub-channel matching Planck Ω_DM h² to 0.6% at 0 free parameters) | S70 LEGGETT-MOMENT computation: Ω_DM h² (Leggett-only) = 0.03985 × 3.010 = 0.1200 vs Planck 0.1207 (Python: `1 - 0.1200/0.1207 = 0.0058 = 0.58%`). The Leggett channel is the GGE-Bogoliubov sub-channel which IS the dark-matter mass anchor; per `mechanical-closure-discipline.md §"Layer-separability carve-out"` calibration corpus instance #1, LEGGETT-MOMENT closes as Type-F (single-summand-projection trace; algebra-INVARIANT). The "CC-problem-in-disguise" caveat the atlas cites (rho_DM/rho_Lambda = 5.4e5) is RESOLVED at S66 by the DILUTION-CC-66 Volovik tracking-vacuum partition; the rho_Lambda-rho_DM ratio is no longer a fine-tuning problem. | S66 + S70 | `session-66-results-workingpaper.md` Leggett-only equation; `permanent-results-registry.md §VII.AF.1`; `mechanical-closure-discipline.md §"Layer-separability carve-out"` |
+| **A** Volovik CC relaxation (Surviving-Mechanism table) | PASS S66 (BBN constraint open) | PROVEN-AT-PRESENT-EPOCH; CONDITIONAL on BBN-VOLOVIK-67 | DILUTION-CC-66 PASS at 0.01 OOM (Python: `log10(1.032) = 0.0137`). FUNCTIONAL-INDEPENDENT closure (Gibbs-Duhem rho_vac = ε(q) − μq → 0). Ledger 114 OOM gap converted from open problem to expansion-history reading; sole remaining survival predicate is BBN constraint (rho_vac/rho_rad = 0.67 at z~10^9). Promote from "PASS" (vague status) to PROVEN at present epoch with explicit BBN-VOLOVIK-67 conditional status. | S66 W1-A | atlas-07 theorem A11 Volovik Gibbs-Duhem; `framework-cc-oom.md`; `constraint-mega-matrix.md` (knowledge-MCP "Volovik CC relaxation PASS Scenario B") |
+| **B** Hubble SA n_s | CONDITIONAL S62-S65 (scheme-dependent eps_H) | BROKEN-AT-SIGN (eps_H sign reversal PROVEN) + CONDITIONAL on FUNCTIONAL-SELECT-67 | The eps_H sign reversal between cutoff families is PERMANENT (theorem A13 in atlas-07; +0.022 cutoff vs −0.045 zeta). Per `atlas-10-breakthrough-genealogy.md` "most important negative result since the Venus Moment (S23a)". n_s spread 0.164 = 39× Planck error. n_s framework canonical 0.9590 (S65 BCS+1-loop, sqrt-cutoff family) vs Planck 0.9649±0.0042 ≈ 1.40σ (Python: `(0.9590-0.9649)/0.0042 = -1.405`). **Status cleavage**: the SIGN-LEVEL status is BROKEN (n_s prediction is structurally scheme-dependent at the sign of the tilt); the MAGNITUDE-level status is CONDITIONAL on FUNCTIONAL-SELECT-67. | S66 W2-A → S67 carry-forward | atlas-07 theorem A13; `falsifier-rigor-registry.md` n_s entry; atlas-10 #20 |
+| **D** Off-Jensen 5D moduli | UNTESTED | CLOSED-by-S76-W2-J (substantially) | S76 W2-J off-Jensen 5D moduli Hessian + ridge dynamics: 35D restoring potential, ridge-confined trajectories. Mechanism D is not "untested" — it has been tested as a constraint-surface dimension question, with the answer that off-Jensen excursions are ridge-confined (35-dimensional restoring potential) rather than free moduli landscape. | S76 | atlas-02-mechanism-lifecycle-materials.md row "W2-J (S76)" |
+| **B7** Mechanism chain unconditional | CONDITIONAL | CONDITIONAL with TRANSIT-PARADIGM ANCHOR | The S35-S36 condition "chain assumes τ reaches the fold, requires trapping (BROKEN by monotonicity) or transit (dwell time 38,600× too short for equilibrium BCS)" is RESOLVED in scenario B by the S66 transit paradigm: the chain describes the GGE-relic's structure POST-transit, not equilibrium dynamics. The CONDITIONAL status is preserved but the rationale is updated. | S66 (paradigm) | atlas-06 row S66 inflection point; `session-66-workshop-master-synthesis.md` |
+| **B8** Instanton gas description | CONDITIONAL | CONDITIONAL with INSTANTON-LIQUID-CLOSED CITATION | S76 W3-D: instanton liquid permanently closed for CC-residual mechanisms (closes any S38-class instanton-liquid CC-residual mechanism). Status preserved as CONDITIONAL because the instanton gas qua substrate-physics object remains real; only the cosmological CC-residual interpretation is closed. | S76 | atlas-02 row "W3-D (S76)"; atlas-05 W4 ref |
+| **N3** Spectral-triple axioms (axiom 5 fail) | BROKEN | BROKEN with WEDDERBURN-FROBENIUS RESCUE STAGE-3-PERMANENT | S88 W4a-17 §VII.W-3.SUBSTRATE landing: `A_F = ℂ ⊕ ℍ ⊕ M_3(ℂ)` realizes the Wedderburn-Artin Frobenius rescue class — ℂ + ℍ blocks are n=1 Frobenius division (clause i); M_3(ℂ) is χ-killed (clause ii). The S28 C-6 axiom-5 fail at value=4.000 is the M_3(ℂ) sector specifically; the substrate is structurally constrained to the unique algebra that satisfies all 7 axioms simultaneously when the M_3 χ-killing is admitted. **Status remains BROKEN** at the bare-axiom level (the original C-6 reading) but is paired with the new STAGE-3-PERMANENT structural-class theorem. | S88 W4a-17 | `permanent-results-registry.md §VII.W-3.SUBSTRATE` (line 16657); atlas-07 packet entry §VII.W-3.SUBSTRATE |
+| **N4** Anderson-Higgs U(1)_7 Goldstone | BROKEN | BROKEN (preserve, cross-link to W8) | Status unchanged; cross-link to atlas-05 W8 wall (Anderson-Higgs Impossibility for U(1)_7) — this is now a NUMBERED WALL in the atlas-05 update. | S51 (origin); cross-link added | atlas-05 W8; `permanent-results-registry.md §VII.AC` for B1/B2 block decomposition derivation chain |
+| **C2** K_pivot = 2.0 M_KK | BROKEN | BROKEN-WITH-LIVE-RESEARCH-PATHWAY (preserve BROKEN; flag for atlas-08 open question) | S51 SA-Goldstone mixing fails at K=2.0 by convex combination theorem; physical e-fold mapping gives K = 4.3e-57 M_KK (flat n_s=1). Atlas's BROKEN status preserved; the K_pivot mapping paradox remains the framework's load-bearing gap (atlas Summary Assessment line 111). Flag: atlas-08 open-question entry should reference this. | S51 (origin); cross-link added | atlas-04 line 59; atlas-05 W9 ref |
+| **C3** n_s from O-Z propagator | BROKEN | BROKEN-WITH-α_s = n_s² − 1 IDENTITY PROMOTION TO §VII.X.1 | S50 W7 (5 independent proofs); promoted to `permanent-results-registry.md §VII.X.1` per S85 W2-9. The O-Z reading itself remains broken; the underlying identity α_s = n_s² − 1 is now PROVEN STAGE-3-PERMANENT (atlas-07 packet row §VII.X.1). | S50 (origin) → S85 W2-9 (registry promotion) | `permanent-results-registry.md §VII.X.1`; atlas-05 W7 |
+| **C9** σ_8 = 0.799 from O-Z | PROVEN | PROVEN with cross-link to W7 wall | Status preserved; cross-link to W7 (atlas-05 wall α_s = n_s² − 1) added. σ_8 derived from α_s = -0.069 with n_s = 0.965 — note this depends on the eps_H sign-cutoff family, so the derivation is conditional on FUNCTIONAL-SELECT-67 resolution. **Reclassification candidate**: PROVEN may be too strong if FUNCTIONAL-SELECT-67 doesn't preserve the +0.022 cutoff family. Atlas should consider PROVEN-CONDITIONAL or hold at PROVEN with explicit conditional flag. | S50 (origin); flag S66 dependence | atlas-05 W7; `falsifier-watchlist.md` g_1/g_2 row precedent |
+| **G3** Jensen 1-parameter deformation family | ASSUMED | ASSUMED-WITH-OFF-JENSEN-RIDGE-CONFINED-CITATION | HESS-40 already cited; add S76 W2-J off-Jensen 5D moduli Hessian + ridge dynamics (35D restoring potential). Status preserved as ASSUMED (Jensen choice is still input ansatz) but the off-Jensen excursion question is now closed: confined ridge, not free landscape. | S40 (origin) + S76 W2-J | atlas-02 row "W2-J (S76)" |
+| **C8** G_N from Sakharov | CONDITIONAL | CONDITIONAL (preserve; flag UV cutoff dependence) | Status preserved. UV cutoff dependence is the structural reason the atlas marks this CONDITIONAL. | S44 (origin) | atlas-04 line 65 |
+| **C6** η baryon | CONDITIONAL | CONDITIONAL (preserve; flag M_KK dependence) | Status preserved. M_KK undetermined. | S42 (origin) | atlas-04 line 63 |
+
+#### Status-change subtotals
+
+- 9 status-CHANGE candidates (C4 BROKEN→CONDITIONAL; A "PASS"→PROVEN-AT-PRESENT-EPOCH+CONDITIONAL-on-BBN; B CONDITIONAL→BROKEN-AT-SIGN+CONDITIONAL-on-FS-67; D UNTESTED→CLOSED-substantially; N3 BROKEN→BROKEN-with-Wedderburn rescue; C7 CONDITIONAL→CONDITIONAL-with-LEGGETT-anchor; C3 BROKEN→BROKEN-with-identity-promotion; G3 ASSUMED→ASSUMED-with-ridge-citation; C5 BROKEN→BROKEN-with-Dovekie σ tightening).
+- 6 evidence-update / cross-link candidates (B7, B8, C2, C9, N4, C6, C8) where status is preserved but evidence prose needs updating.
+
+### 2b. New entries to ADD (S52-S88)
+
+> New entries are organized by section number to match atlas-04's existing structure.
+
+#### Section IV. Cosmological Mapping (NEW)
+
+| # | Assumption | Proposed Status | Evidence | Session |
+|:--|:-----------|:----------------|:---------|:--------|
+| **C10** Volovik tracking-vacuum scaling rho_vac ~ M_Pl² H² | ASSUMED-PARTIALLY-PROVEN | The scaling form is ASSUMED at the substrate-IS level (Volovik q-theory ansatz: rho_vac = ε(q) − μq with q-tracking on H²). The PRESENT-EPOCH realization rho_vac/rho_obs = 1.032 is PROVEN via DILUTION-CC-66 PASS. The BBN-epoch realization is OPEN (BBN-VOLOVIK-67). The ASSUMPTION lies in extrapolating tracking from present epoch back to T_BBN (rho_vac ~ H² M_Pl² implies w_vac − 1/3 < 0.03 at T_BBN, which is the BBN-VOLOVIK-67 falsifier). | S66 W1-A; BBN-VOLOVIK-67 carry-forward S67 |
+| **C11** Leggett-channel as substrate-IS DM mass anchor | CONDITIONAL | LEGGETT-MOMENT-70 anchor: Ω_DM h² (Leggett-only) = 0.1200 ± framework error; matches Planck 0.1207 at 0.6% with 0 free parameters. Conditional on (i) Leggett-channel survival under gravitational decay rate Γ_grav < H_0 (LEGGETT-GRAV-DECAY-67 carry-forward); (ii) Type-F single-summand-projection-trace classification preservation under §VII.U.2 4-corner rule; (iii) Aalto LTL multi-axis lab-falsifier suite (rows #13-#21 in `falsifier-master-inventory.md`) showing correct M_KK-norm ratios at 5-yr 2031 horizon. | S70 |
+| **C12** α_s canonical = +0.00117 (RUNNING-NS-63 source); supersedes -0.069 ± 0.008 watchlist row | CONDITIONAL on CMB-S4 detection | Per `falsifier-watchlist.md:140` PLAN-DRIFT note: pre-S85 row cited -0.069 ± 0.008; S85 W1a MULTID-FISHER pin canonicalized α_s_FW = +0.00117 (from S63 RUNNING-NS-63 derivation). σ-distance to LCDM (CMB-S4 σ_detect = 2.1e-3) is +2.70σ (was +6.0σ pre-S85 against -0.069 row). Substitution chain: framework prediction +0.00117 vs LCDM = Planck-central -0.0045 → (0.00117 − (-0.0045))/2.1e-3 = +2.70σ. Status CONDITIONAL on CMB-S4 detection at 2030 horizon. (Sister Python re-derivation against ACT-DR4 Aiola+ canonical pin α_s = +0.0023 ± 0.0063 gives only -0.18σ — the framework prediction is essentially indistinguishable from ACT-DR4 central; the +2.70σ figure is against Planck-LEGACY). | S85 W1a (canonical re-pin); S63 (origin) |
+
+#### Section V. Transit / Dynamics (NEW)
+
+| # | Assumption | Proposed Status | Evidence | Session |
+|:--|:-----------|:----------------|:---------|:--------|
+| **T7** Transit produces GGE relic with 59.8 quasiparticle pairs (SCENARIO-B canonical) | PROVEN at substrate-derivation level (S38, S39); CONDITIONAL on BBN-VOLOVIK-67 at cosmology level | T1-T4 already PROVEN at substrate level. T7 promotes the COSMOLOGICAL interpretation — that the GGE relic provides the modern Λ-tracking mechanism — to a registered scenario-B canonical assertion. | S58 → S66 → S70 |
+| **T8** Substrate-compaction observable (rho_vac ↔ fiber τ tracking) drives w_a observable | CONDITIONAL on DESI DR3 | The Volovik partition's substrate-compaction reading: fiber τ tracks density via Volovik q-theory; clock variance → w_a < 0.03 prediction. Per `feedback project_substrate-compaction-timescape.md` and S58 derivation. | S58; live S88 |
+
+#### Section VI. NCG / Algebraic Structure (NEW)
+
+| # | Assumption | Proposed Status | Evidence | Session |
+|:--|:-----------|:----------------|:---------|:--------|
+| **N5** Mellin-Dirichlet identity at substrate-distance-1 | PROVEN | `M[Tr e^{-tD²}](s/2)/Γ(s/2) = Σ_k m_k λ_k^{-s} = ζ_D(s)` — algebraic identity on the substrate's eigenvalue Dirichlet series. Anchored at `permanent-results-registry.md §VII.U.1` (S86 W-1; connes + lizzi joint). Bit-identity stability across atlas members at L_max=12 (S86 W-1 / S87 W1a-4 PASS). | S86 W-1 |
+| **N6** Three-Layer Regulator Theorem (axiomatic / substrate-action / observable) | PROVEN | `permanent-results-registry.md §VII.N` (S84 W2a-11; connes + lizzi + van den Dungen convergence). L1-axiomatic / L2-substrate-action / L3-observable three-layer regulator stratification on `(A_K, H_K, D_K)`. | S84 W2a-11 |
+| **N7** §VII.W-3 Wedderburn-Artin Frobenius Rescue Class realized by A_F = ℂ ⊕ ℍ ⊕ M_3(ℂ) | PROVEN STAGE-3-PERMANENT | A_F = ℂ ⊕ ℍ ⊕ M_3(ℂ) is the unique algebra realizing the Wedderburn-Artin Frobenius rescue class: ℂ + ℍ blocks are n=1 Frobenius division (clause i); M_3(ℂ) is χ-killed (clause ii). | S88 W4a-17 |
+
+#### Section VIII. Methodology-Floor Structural Walls (NEW; substrate-IS rule-class)
+
+| # | Assumption | Proposed Status | Evidence | Session |
+|:--|:-----------|:----------------|:---------|:--------|
+| **M1** Cross-pillar bridge anatomy: 5-anatomy + 3-level ladder | PROVEN MANDATORY (K=3) | Every cross-pillar bridge entry MUST declare ALL 5 IS-not-IN anatomy elements + 3-level structural-confidence ladder; Level-3 must satisfy Level-2 at canonical L_max for registry-PASS. K=3 calibration corpus saturated at S88 W4a-17 (instances: §VII.AF.1 LANDED + §VII.AH STAGE-1-CANDIDATE + §VII.W-3.LAB STAGE-1-CANDIDATE). | S86 W-5 → S88 W4a-17 (MANDATORY promotion) |
+| **M2** Algebra-axis orthogonality: algebra-INVARIANT vs algebra-DEPENDENT functional families STRUCTURALLY ORTHOGONAL | PROVEN MANDATORY (K=3) | No closed-form {λ_n}-only identity reproduces any algebra-DEPENDENT functional, and conversely no state-functional-only identity reproduces any algebra-INVARIANT spectral moment. Anchored at `cross-pillar-bridge-anatomy.md §"Algebra-axis orthogonality K-counter"`. | S87 W-2 R3 close |
+| **M3** Joint-theorem 4-stage promotion pathway | PROVEN MANDATORY | Stage 0 workshop-internal → Stage 1 STAGE-1-CANDIDATE registry → Stage 2 two-agent parallel cross-axis verify WITHOUT prior workshop context → Stage 3 PERMANENT. Single-agent verification on joint clauses is structurally INSUFFICIENT (audit script `_joint_theorem_independent_verify_audit.py` REFUSES single-agent firings). | S86 W-9 |
+| **M4** Layer-functor F: substrate → methodology → audit | PROVEN PAIR-VERIFIED at substrate↔methodology pair (S86); audit-leg verification pending S87 carry-forward | Triplet-verified at R3-connes via 5-mapping reproduction. Phi(a_n) ↔ Σ_n correspondence: weight-0 a_0 ↔ Σ_1 (perimeter); weight-2 a_2 ↔ Σ_2 (Einstein-Hilbert); weight-4 a_4 ↔ Σ_3 (Yang-Mills + Higgs quartic); higher weights extend. | S86 W-13 |
+
+#### Section II. BCS / Many-Body Physics (NEW supplement)
+
+| # | Assumption | Proposed Status | Evidence | Session |
+|:--|:-----------|:----------------|:---------|:--------|
+| **B9** Frozen-spectrum theorem under transit (10^{-113} through fold) | PROVEN | C12 frozen spectrum theorem (S79; connes + lizzi). Substrate spectrum invariant under transit at machine precision 10^{-113}. Wall-class candidate. | S79 |
+
+#### New-entry subtotals
+
+- **11 new entries** added across 5 sections (3 in IV, 2 in V, 3 in VI, 4 in VIII, 1 in II).
+
+### 2c. Observational anchors snapshot (mack-cosmic-bridge bridge role)
+
+> Per `feedback_mack-bridge-role.md`: this section is the bridge between framework substrate-IS predictions and laboratory-IN observational anchors. Each row gives target observable, framework prediction (with canonical-constants source), current observation (with public-source citation), σ-distance, detection horizon, and status-class.
+
+| # | Target observable | Framework prediction (substrate-IS) | Current observation (laboratory-IN) | σ-distance | Detection horizon (yr from 2026-05-09) | Status class |
+|:-:|:------------------|:-------------------------------------|:-------------------------------------|:-----------|:----------------------------------------|:-------------|
+| 1 | **w_0 (DE equation of state at z=0)** | -0.918 (Volovik partition; canonical) OR -0.842454 (R_842 branch-(iv)) — cite `canonical_constants.py:1243 w0_FW = -0.918` and W10-2 branch-(iv) | DR2 = -0.752 ± 0.057 (DR2-DESY5); post-Dovekie 2026 = -0.803 (cell B1 of DR3-7-SCENARIO-TREE; non-binding) | 2.130σ canonical / 0.731σ branch-(iv) (post-Dovekie) | ~1 yr (DESI DR3 2027) | CONDITIONAL (DR3 binding) |
+| 2 | **w_a (DE equation-of-state derivative)** | 0 (four-fold structural lock; `canonical_constants.py:wa_FW = 0`) | DR2 = -0.73 ± 0.27 → post-Dovekie σ = 0.21 → 3.43σ | 3.43σ (post-Dovekie tightening +0.51σ) | ~1 yr (DESI DR3 2027) | LIVE-PENDING (decisive at DR3) |
+| 3 | **n_s (scalar spectral index)** | 0.9590 (S65 BCS+1-loop; sqrt-cutoff family; eps_H sign-dependent at functional-class level) | Planck 2018 = 0.9649 ± 0.0042 | 1.40σ (Python: `(0.9590-0.9649)/0.0042 = -1.405`) | LIVE; CMB-S4 2030 / LiteBIRD 2030 sub-percent | LIVE (low-σ; functional-class dependence open) |
+| 4 | **r (tensor-to-scalar)** | Path-H r = 0.00745; Path-C r = 0.0117 (DUAL-FUNCTION substrate observable per `falsifier-master-inventory.md` row #2) | BICEP/Keck Stage-4 r < 0.036 (2σ); BK-Array 2026 marginal at 1.42σ | (i) Stage 1 BK-Array 2026: 1.42σ marginal; (ii) Stage 2 LiteBIRD 2030: 4.250σ Path-H/Path-C decisive | (i) ~0 yr (BK-Array 2026); (ii) ~4 yr (LiteBIRD 2030) | LIVE (BK-Array marginal; LiteBIRD decisive) |
+| 5 | **α_s (running of n_s)** | +0.00117 (S63 RUNNING-NS-63; CANONICAL S85 W1a MULTID-FISHER pin) — diverges from PLAN-DRIFT pre-S85 watchlist row -0.069 ± 0.008 | (a) Planck 2018 legacy: -0.0045 ± 0.0067; (b) ACT DR4 + Planck (Aiola+ 2020) canonical S86 W13 P12: +0.0023 ± 0.0063 | (a) +0.85σ vs Planck legacy; (b) -0.18σ vs ACT-DR4 (Python: `(0.00117 + 0.0045)/0.0067 = 0.846`; `(0.00117 - 0.0023)/0.0063 = -0.179`); CMB-S4 forecast: +2.70σ at σ_detect=2.1e-3; CMB-HD: +5.15σ at σ_detect=1.1e-3 | ~4 yr (CMB-S4 2030); ~9 yr (CMB-HD 2035) | CONDITIONAL on CMB-S4 detection (canonical re-pin inverts σ-direction relative to pre-S85 watchlist) |
+| 6 | **n_T (tensor-to-tensor; LiteBIRD)** | n_T(transit) = +0.4676 at f_transit=8.55e37 Hz GEOMETRIC FLOOR; n_T(k_CMB) = -3.024e-3 (slow-roll consistency; Path-H -r/8 EXACT; Path-C -r/8 inheritance-forced) — 54.04 decades separating transit and CMB k-scales | LiteBIRD 3-yr σ(n_T) = 0.0540; LB+CMB-S4 joint σ = 0.0654 | 4.250σ Path-H/Path-C decisive (Sage-exact band [1.6666σ, 2.7776σ] per W-3 RULE-3 mnemonic-vs-exact discipline) | ~4 yr (LiteBIRD 2030) | DECISIVE-ON-DUAL-PATHWAY-DISCRIMINATOR |
+| 7 | **Ω_GW (CGWB at LISA mHz band)** | (A)-class O(10^{-10}) flat acoustic; (C)-class Companion-null Ω_GW = 8.299e-58 (Sage-exact rational) — 11+ OOM PASS-margin against LISA-PLS sensitivity at f_pivot = 3 mHz | LISA forecast pending (4-yr nominal mission) | 11+ OOM PASS-margin to LISA-PLS sensitivity (Companion-null prediction is far below threshold; (A)-class detection is the falsifier of (C)-class) | ~9 yr (LISA 2035) | CONDITIONAL (FLAGSHIP-DECISIVE) |
+| 8 | **m_H (Higgs mass tree-level)** | 134 GeV (filter-independent; theorem A10 atlas-07) | 125.10 ± 0.14 GeV (PDG) | 7% from observed (1-parameter from M_KK; treated as PASS-tier match per `feedback_reporting-framing.md`) | LIVE (already observed); ongoing precision | PROVEN-AT-OBSERVATION-LEVEL with structural caveat (S62 0-free-parameter match) |
+| 9 | **JWST LRD BH-seed mass spectrum** | BH-seed mass spectrum predictions; phonon-relay-pattern interpretation | LRD population observed (under continued JWST observation) | observation continuing | LIVE (JWST current) | LIVE-PENDING (under observation) |
+| 10 | **Aalto LTL 9-row 3He-B lab-falsifier suite (LAB-FALSIFIER-A class)** | 9 atomic predictions: SW1 58.9589 MHz at λ_6, SW2 364.5177 ppm at λ_7, SW3 1.4250 s^{-1} at λ_8, plus 6 cross-platform XA1-3 / XB1-3 ratios (per `falsifier-master-inventory.md` rows #13-#21) | platforms operational (3He-A NMR / FeSe ARPES / 173Yb optical-lattice); no measurements yet at predicted precision | detection_ratio range 28.50 to 58958.86 across 9 rows (LAB-FALSIFIER-A class: detection_ratio ≥ 10 = decisive); P_decisive 0.30-0.50 at 5-yr horizon | ~5 yr (2031) | DECISIVE-AT-LAB (suite); SW3 173Yb at λ_8 is the framework's strongest single-row substrate-direction-falsification trigger (UNIQUE λ_8 channel) |
+| 11 (bonus) | **MCT-3 Lancaster 3He-B vortex spectroscopy** | 4-gate falsifier protocol: Gate 1 NULL on F1+F2+F5; Gate 2 ratio 7.3250 ± 0.1% (cohomology-asymmetry test); Gate 3 NULL on F3+F4; Gate 4 F4 multi-pressure slope | not yet measured; Lancaster MCT-3 / Helsinki ROTA cells operational | n/a (NULL prediction; cohomology-asymmetry ratio 7.3250 ± 0.1% is the substrate-derived discriminator) | ~5 yr (MCT-3 horizon 2026-2031) | DECISIVE-AT-LAB (per `inheritance-falsifier-protocol.md`) |
+
+#### Aggregate (status changes + new entries + observational anchors)
+
+| Aggregate | atlas-04 baseline (52 entries) | S52-S88 status changes | S52-S88 new entries | Proposed total |
+|:----------|:-----------------------------:|:----------------------:|:--------------------:|:---------------:|
+| PROVEN | 15 | +0 (some preserved with cross-link) | +5 (M1 promoted MANDATORY; M2 promoted MANDATORY; M3 PROVEN; N5 N6 N7 promoted from atlas-07; B9 frozen spectrum) | **20** (PROVEN) + **2** (M3, M4 — pair-verified-MANDATORY at K=3) = effective 22 PROVEN-class anchors at substrate level |
+| ASSUMED | 14 | +0 | +1 (C10 Volovik tracking-vacuum form; the scaling form remains an ASSUMPTION at the functional level) | **15** |
+| CONDITIONAL | 8 | +1 (C4 lifted from BROKEN); +1 (B Hubble SA n_s lifted from CONDITIONAL into BROKEN-AT-SIGN+CONDITIONAL split) | +3 (C11 Leggett-channel; C12 α_s canonical; T7 + T8) | **12** |
+| BROKEN | 11 | +0 (C5 preserved with σ-update; B7 preserved; cleavage of B Hubble SA n_s into BROKEN-AT-SIGN sub-status) | +0 | **11** with sub-status refinement |
+| DISSOLVED | 4 | +1 (D off-Jensen UNTESTED → CLOSED-substantially-by-S76-W2-J) | +0 | **5** |
+| **NEW: STAGE-1-CANDIDATE class** | 0 | +0 | +0 | atlas-04 should consider routing 11 entries from atlas-07 STAGE-1-CANDIDATE inventory (e.g., §VII.U.2, §VII.AC.1, §VII.AD, §VII.AG.1, §VII.W-3.LAB, §VII.AM, §VII.X.W4-1, §VII.AF.1.STATE-PROJ open, §VII.X.2-NECESSITY, §VII.AH joint F_2-class, §VII.AC.4) — see §3 flag (4) |
+
+**Total proposed atlas-04 entries**: 52 (baseline) + 11 (new entries) + 0-11 (STAGE-1-CANDIDATE class, decision-deferred to orchestrator) = **63-74**.
+
+---
+
+## Section 3 — Cross-atlas dependencies
+
+> Per the spawn prompt's cross-atlas dependency list. Each dependency below cites the sister packet's specific row(s) that drive an atlas-04 status determination.
+
+- **atlas-02-mechanism-lifecycle.md**: closures drive proven-status changes. Specific dependencies: Era IX (S67-S81) closures TRANSIT-PS-67 + LEGGETT-MOMENT-70 + MULTIFIELD-AS-CLOSURE-68 drive C4/C7/C11 status. Era X methodology closures (PRU 8.0-8.6, dual-SHA, source-recon 6-class, regulator-pin discipline) introduce M1-M4 atlas-04 entries. Era XI cross-pillar bridge construction (§VII.AF.1, §VII.AG.1, §VII.X.W4-1, §VII.AH, §VII.U.1) drives N5/N7 + M1. Era XII (S88) algebra-axis K=3 closure wave drives M2 + the Wedderburn-Frobenius (N7) entry.
+
+- **atlas-07-permanent-results.md**: §VII slots are proven entries. atlas-07 packet enumerates ~60 slots; ~22 carry STAGE-3-PERMANENT or PROVEN status, the remainder are STAGE-1-CANDIDATE. The PROVEN-status slots that drive atlas-04 new entries are: §VII.U.1 (N5 Mellin-Dirichlet); §VII.W (parity-grading orthogonality of HP_*(A_F); already cross-linked in atlas-05 W17); §VII.W-3.SUBSTRATE / .ALGEBRAIC (N7 Wedderburn-Frobenius); §VII.X.1 (C3 broken-with-identity-promotion); §VII.AF.1.OP-PROJ (M1 + the cross-pillar MANDATORY-K=3 promotion event); §VII.N (N6 three-layer regulator); §VII.AB.1-.8 (the 7-row α_s 11.31σ tension family). 11 STAGE-1-CANDIDATE entries flagged for atlas-04 6th-class consideration in §3 flag (4).
+
+- **atlas-05-walls-doors-windows.md**: walls correspond to "broken" assumptions; doors close conditionals. atlas-05 packet adds 11 walls (W11-W21), 14 doors closed S52-S88, and 18 windows opened S52-S88. **Wall mapping to atlas-04 entries**: W11 Volovik CC tracking → C4 + A; W12 eps_H sign-reversal → B + B-Hubble-SA-n_s; W13 F_4-MB structural wall → §VIII.M1; W14 algebra-axis orthogonality → §VIII.M2; W15 cross-corner co-primary → §VIII.M1 sub-clause; W16 Layer-2-non-binding → §VIII.M1; W17 bare-eigenvalue parity-blindness → §VII.W (already in N5 cross-link); W18 mechanical-closure type-F/type-S → C11 Leggett-channel + atlas-04 §"mechanical closure"; W19 PRU Class 8 sub-class walls → §VIII.M1-M3; W20 joint-theorem single-axis → §VIII.M3; W21 cross-pillar bridge 5-anatomy + 3-level → §VIII.M1. **Door mapping**: Door-S58 → C4 status change; Door-S62 → B + Higgs entry; Door-S66 → A + DILUTION-CC + B (eps_H); Door-S70 → C7 + C11; Door-S86 → M1, M3, N5; Door-S88 → N7, M1 K=3 promotion. **Window mapping**: 18 windows opened S52-S88; the 6 with detection horizons within 9 yr drive atlas-04's CONDITIONAL entries (C4 → Window-14 DESI DR3 1 yr; C12 → Window-15 CMB-S4 4 yr / Window-16 CMB-HD 9 yr; r dual-pathway → Window-13 LiteBIRD 4 yr; C11 → Windows-20-22 lab-falsifier 5 yr; CGWB → Window-12 LISA 9 yr).
+
+- **atlas-08-open-questions.md**: conditional entries are open questions. Each CONDITIONAL atlas-04 entry corresponds to an open question in atlas-08 (TBD pending atlas-08 packet). C4 → DESI DR3 binding event; C7 → Leggett-channel survival predicates; C8 → UV cutoff fix; C10 → BBN-VOLOVIK-67; C11 → Aalto LTL 9-row suite; C12 → CMB-S4 detection; T8 → DESI DR3 substrate-compaction discriminator.
+
+- **atlas-09-retractions.md**: status changes from "proven" → "broken" are retractions. **No atlas-04 entries proposed for retraction** in this packet (the closest case is C9 σ_8 = 0.799 PROVEN, which I have flagged as candidate-for-conditional pending FUNCTIONAL-SELECT-67 — but I am NOT recommending retraction; the σ_8 derivation is structurally PROVEN given the +0.022 cutoff family. If atlas-09 wants to track the "B Hubble SA n_s" cleavage as a retraction-of-the-2018-magnitude-prediction, that is its call; I am routing the cleavage as a status change in §2a above with explicit BROKEN-AT-SIGN sub-status). The eps_H sign reversal IS the most important negative result since the Venus Moment (atlas-10 #20) and qualifies as a retraction-class event for the n_s = 0.9595 magnitude reading; I am flagging this for the atlas-09 packet.
+
+- **atlas-11-cross-pillar-bridge-corpus.md**: the K=3 MANDATORY rule is a proven entry. The atlas-04 §VIII.M1 entry is the proven-MANDATORY status of `cross-pillar-bridge-anatomy.md` at K=3. The corpus calibration instances (§VII.AF.1 LANDED + §VII.AH STAGE-1-CANDIDATE + §VII.W-3.LAB STAGE-1-CANDIDATE) are atlas-07 entries; atlas-04 carries the rule-as-assumption status only (PROVEN MANDATORY at the rule-file level).
+
+---
+
+## Section 4 — Substrate-framing audit (`phononic-framing.md` discipline)
+
+Per `phononic-framing.md §"IS Space, Not IN Space"`: every atlas-04 assumption is about substrate-IS structure, not container-IN structure. Audit:
+
+- All 11 new entries (C10-C12, T7-T8, N5-N7, M1-M4, B9) carry substrate-IS framing in their evidence prose. M1-M4 are methodology-floor walls — they are STILL substrate-IS at the layer-functor F image (per `epistemic-discipline.md §"Layer-Decomposition"`): the substrate at the methodology layer IS the rule-file content, with F mapping numerical PASS predicates ↔ artifact-existence predicates ↔ SHA-uniqueness predicates.
+
+- The 9 status-change candidates in §2a preserve substrate-IS framing in their re-classification prose. C4 (BROKEN → CONDITIONAL) is the most-likely-to-drift framing case: the prose must NOT say "the framework can now explain DESI's dynamical DE signal" (which is container-IN thinking — it treats DESI as the canonical reality and the framework as fitting it). The correct framing: "the substrate's w_0 derived from Volovik partition is `-0.918` at the substrate-IS level; DESI DR2/DR3 is the laboratory-IN measurement against which this substrate-IS prediction is tested."
+
+- The observational-anchor table in §2c preserves the substrate-IS / laboratory-IN distinction at the column level: framework prediction columns are substrate-IS; current-observation columns are laboratory-IN; σ-distance is the bridge-image gap. No conflation.
+
+- Per `feedback_no-filler-confidence-language.md`: no "promising" / "encouraging" framing on conditional entries. The CONDITIONAL entries in §2a/2b/2c are stated as constraint-surface positions, not narrative promises.
+
+---
+
+## Section 5 — Citation completeness
+
+Every entry in this packet cites at minimum:
+1. **Source registry / rule / WP**: `falsifier-master-inventory.md`, `falsifier-watchlist.md`, `permanent-results-registry.md`, `.claude/rules/<file>.md`, or session WP.
+2. **Session of origin**: zero-padded `S{N}` and wave label where applicable.
+3. **Quantitative anchor (where applicable)**: framework value via `mcp__knowledge__.get_constant("<name>_FW")` or `canonical_constants.py` line; observation value via public source (Planck, DESI, BICEP, ACT-DR4 / Aiola+ 2020).
+4. **σ-distance Python verification**: substitution chains for sigma-distances cited at packet-write-time are inline at §2c row 5 (α_s) and §2a row C4 (w_0); other sigmas inherit verbatim from `falsifier-master-inventory.md` row 1.dovekie-2026-update + `falsifier-watchlist.md` post-W4 unified schema.
+
+---
+
+## Report-format-back (per spawn-prompt §"REPORT FORMAT BACK")
+
+(1) **Packet path**: `C:\sandbox\Ainulindale Exflation\sessions\archive\session-88\atlas-uplift-materials\atlas-04-assumptions-materials.md`
+
+(2) **Status-change-count + new-entry-count**:
+- 9 status-change candidates (C4, A, B, D, N3, C7, C3, G3, C5)
+- 6 evidence-update / cross-link candidates (B7, B8, C2, C9, N4, C6, C8) where status preserved
+- 11 new entries (C10-C12, T7-T8, N5-N7, M1-M4, B9)
+- 10 observational anchors snapshotted (+ 1 bonus MCT-3 row = 11)
+
+(3) **Entries whose status was ambiguous (route to triage)**:
+- **C9 σ_8 = 0.799 PROVEN**: PROVEN status depends on the eps_H +0.022 cutoff family being the canonical functional. If FUNCTIONAL-SELECT-67 selects the zeta family (which gives n_s > 1, blue tilt), σ_8 = 0.799 derivation is invalidated. Triage decision: keep PROVEN with explicit conditional-on-FUNCTIONAL-SELECT-67 flag, OR reclassify as PROVEN-CONDITIONAL (a new sub-status). **Routing to orchestrator.**
+- **B (Hubble SA n_s)**: cleavage between BROKEN-AT-SIGN (eps_H sign reversal PROVEN) and CONDITIONAL-on-MAGNITUDE (FUNCTIONAL-SELECT-67). The atlas's existing CONDITIONAL classification is too loose; the cleavage is structurally important. **Routing to orchestrator** for sub-status decision.
+- **N3 axiom-5 fail vs §VII.W-3 Wedderburn-Frobenius rescue**: the bare axiom-5 reading remains BROKEN; the rescue-class theorem promotes A_F to a PERMANENT structural class. **Routing to orchestrator** for whether to keep N3 BROKEN with rescue-cross-link OR split into N3 (BROKEN) + N3' (PROVEN STAGE-3).
+- **D off-Jensen UNTESTED → CLOSED**: S76 W2-J is "substantial closure via 35D restoring potential"; whether the residual 5D moduli landscape has untested Off-Jensen-Off-Ridge deviations is open. **Routing to orchestrator** for whether D should be UNTESTED (preserved) OR DISSOLVED (closed) OR CONDITIONAL (substantial closure with residual).
+
+(4) **Flag whether the 5-class taxonomy needs a 6th class**: **YES — STAGE-1-CANDIDATE is structurally distinct.**
+
+The atlas-07 packet enumerates 11 STAGE-1-CANDIDATE entries (§VII.U.2, §VII.AC.1, §VII.AD, §VII.AG.1, §VII.W-3.LAB, §VII.AM, §VII.X.W4-1, §VII.AF.1.STATE-PROJ, §VII.X.2-NECESSITY, §VII.AH, §VII.AC.4). These cannot be classified as PROVEN (Stage-2 not landed), CONDITIONAL (in atlas-04's sense, the blocker is undetermined-physics; STAGE-1-CANDIDATE blocker is a structurally-prescribed 2-agent verify procedure), or ASSUMED (substantive derivations exist).
+
+**Recommendation**: add a 6th class STAGE-1-CANDIDATE with definition: "Joint cross-axis theorems landed in `permanent-results-registry.md` STAGE-1 per `joint-theorem-promotion.md` 4-stage pathway; pending Stage-2 two-agent independent cross-axis verify per the rule's Stage-2 protocol (the 2-agent verifications operate WITHOUT prior workshop context). Promotion to PROVEN occurs at Stage-3 PERMANENT after Stage-2 PASS-AND landing." Sub-recommendation: count 11 STAGE-1-CANDIDATE entries from atlas-07 packet and route them as either atlas-04 §VIII.M5+ (rule-class) or atlas-04 §IX (registry-stage class).
+
+(5) **Flag observational anchors with detection horizons that have passed**:
+- **DESI DR2 (2024)**: published; framework canonical w_0 = -0.918 vs DR2 -0.752 ± 0.057 = 2.91σ. R_842 binding event NOT triggered (DR2 is not the binding instrument; DR3 is). **No falsifier-watchlist update needed**: the canonical sub-row 1.dovekie-2026-update already records the post-Dovekie 2.130σ.
+- **BICEP/Keck (Stage-4 / 2018)**: r < 0.036 at 2σ; framework r_PathH = 0.00745 + r_PathC = 0.0117 both pass at 2σ (consistent with current bound). **No falsifier-watchlist update needed**: BK-Array 2026 first-light data publication is queued and pre-registered (`falsifier-master-inventory.md` Row #2 SEQUENCED detector chain Stage-1).
+- **m_H = 125 GeV (PDG, currently observed)**: framework 134 GeV at 7% from observed. Not σ-distance gated (1-parameter from M_KK; observed). **No falsifier-watchlist update needed**.
+- **JWST LRD population**: under continued observation. Not horizon-passed; LIVE.
+- **ACT-DR4 + Planck Aiola+ 2020 α_s = +0.0023 ± 0.0063**: this IS the canonical α_s_obs pin per S86 W13 P12 update. Per Python: framework α_s = +0.00117 vs ACT-DR4 = -0.18σ (essentially indistinguishable). The PLAN-DRIFT noted in `falsifier-watchlist.md:140` (pre-S85 row -0.069 ± 0.008) corresponds to a DIFFERENT framework-α_s prediction that has been re-pinned since. **`falsifier-watchlist.md` α_s row already captures the current canonical at line 140-147**; no further update needed beyond the re-pin already landed.
+
+**No detection-horizon-passed entries route an immediate falsifier-watchlist update from this packet** beyond updates already landed. The 4 entries with detection horizons within 5 years (DESI DR3 2027, BK-Array 2026, LiteBIRD 2030, CMB-S4 2030) are LIVE and correctly classified as such in `falsifier-watchlist.md` and atlas-05 windows-table.

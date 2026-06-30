@@ -1,0 +1,61 @@
+**Status**: COMPLETED
+**Gate ID**: `S93-W9-1-PLAN-LINE-ANCHOR-VALIDATOR`
+**Trigger**: `[AUDIT]`
+**Classification**: **NON-PHONONIC** (methodology / audit-floor tooling — the F-image of the substrate PRU-drift problem at the audit layer)
+**Agent**: `gen-physicist`
+**Hypothesis**: A plan-freeze validator grepping each plan-block `section_anchor_lines: "L1-L2"` (and bare registry line citations) against the CURRENT registry heading-line index — via heading-anchor grep, not line-number trust — catches all four S92 drift instances (§VII.AR +106, §VII.AW.OP-PROJ +229, §VII.U.2 +56-equivalent, S92 W5 ~150-line) at plan-freeze, emitting S2 advisory at drift>50 and S1 MANDATORY at drift>200, integrating as an extension of `_plan_upstream_pin_validator.py`.
+**Classification note (METHODOLOGY-class)**: PASS predicate is artifact-existence-with-substantive-content (the validator script exists with a `__main__` self-test driver + integration hook), NOT a numerical-threshold comparison; the "drift" integers are audit-layer line counts, not substrate observables. **M4 ALLOWLIST FLAG**: gate-ID `S93-W9-1-PLAN-LINE-ANCHOR-VALIDATOR` requires orchestrator append to `sessions/framework/registry/methodology-wave-allowlist-ledger.md` at plan-freeze (orchestrator-only edit per recursion-attack closure, `methodology-wave-allowlist.md §"Edit discipline"`) + parallel rationale entry in `methodology-wave-instances.md`; until appended, M4 FAILS and the gate falls through to COMPUTE-class. **NOTE (subagent edit-denial)**: per the spawn-prompt ORCHESTRATOR OVERRIDE, the ledger append is the orchestrator's wave-close action; this gate did NOT touch the ledger.
+**Plan reference**: `sessions/session-plan/session-93-plan-w9.md` §W9-1 (5-of-5 calibration-test PASS boundary, drift-band thresholds 50/200, substitution chain for the monotone severity map, M1-M4 self-classification).
+
+**Output Artifacts**:
+- **Verdict line** (`computations/session-93/s93_gate_verdicts.txt:189`):
+  `S93-W9-1-PLAN-LINE-ANCHOR-VALIDATOR: PASS -- value='selftest_5of5_PASS_4TP_at_correct_severity_VII-AR+106-S2_VII-AW-OP-PROJ+229-S1_VII-U2+56-S2_S92-W5~150-S2_1TN_zero-drift-NO-ACTION_integration-hook-_plan_upstream_pin_validator=True_validator-exists-with-__main__-selftest=True' scheme=PLAN-LINE-ANCHOR-DRIFT-HEADING-GREP-VALIDATOR convention=section_anchor_lines-vs-current-registry-heading-grep-S2-at-drift-gt-50-S1-at-drift-gt-200 L_max=N/A audit_sha256=f235d491782804c01b4739c5de8c8787dac6d3c0fc5cb31a59585d1e7beed60b content_sha256=7281501167c5e6de705800f95c464db6d04c9a4b2d44aefa09a4e8cb33a764da schema_version=S84+`
+  Companion row (line 190): `# audit_sha256_short=f235d491782804c0 content_sha256_short=7281501167c5e6de # S93-W9-1-PLAN-LINE-ANCHOR-VALIDATOR dual-SHA companion row (W9a-99 split)`. No 3-tuple row ([AUDIT] trigger, not [SIGN]). `audit_sha256` unique across the session file (sig_5 clean, count=1).
+- **Script** `computations/_shared/_plan_line_anchor_validator.py` — contains `section_anchor_lines`, `drift_S1_floor`, `__main__` self-test driver (all confirmed present). Heading-anchor grep mode + `--self-test` calibration driver + `_plan_upstream_pin_validator` integration import.
+- **Data (JSON sidecar)** `computations/session-93/s93_w9_1_plan_line_anchor_validator_selftest.json` (1731 bytes) — the 5 calibration-test results (4 true-positive severities + 1 true-negative); `overall_pass=True`, `n_tests_pass=5/5`, `integration_hook_upstream_validator=True`.
+- **Emitter (dual-SHA, runtime closure)** `computations/session-93/_s93_w9_1_emit_verdict.py` — computes `audit_sha256`/`content_sha256` at runtime from the ordered input-pin map (never hardcoded); atomic single-`open("a")` append per `.claude/templates/script-template.py` §4+§6.
+- **Plot** — OPTIONAL per plan §W9-1 (`optional: true`); not generated (an audit-script gate; the JSON sidecar carries the 5 results).
+
+**MCP Pre-Compute Audit**:
+- `search_knowledge("plan-line-anchor drift validator section_anchor_lines registry heading")` → top hit `S89-PLAN-STALENESS-PRE-FLIGHT-VALIDATOR` (PASS; `scheme=methodology-layer-F-image`, `convention=orchestrator-direct-write-METHODOLOGY-CLASS`) — a SIBLING methodology-floor F-image validator (plan-staleness, not line-anchor); confirms the validator-class + scheme convention but is a DISTINCT axis. NOT a closure of this gate.
+- `search_knowledge("plan-text drift correction substrate-first canonical sourcing runtime rescue heading grep")` → `CF-74` (S90 W8) "Plan-text-drift correction orchestrator-convention promotion" + theorem "Substrate-first canonical-sourcing (4-step audit)" + `substrate-first-canonical-sourcing.md §(iv)` — these are the RUNTIME-RESCUE rule (`§(ii.B)`) this validator moves UPSTREAM to plan-freeze. No closure covers a plan-FREEZE line-anchor drift gate.
+- **Verdict**: NOT PRE-CLOSED. This is a NEW audit-floor validator; the closest prior art (`S89-PLAN-STALENESS-PRE-FLIGHT-VALIDATOR`) is an orthogonal sibling. Proceeded to author.
+
+**Verdict**: **PASS** — METHODOLOGY-class artifact-existence-with-content predicate met: `_plan_line_anchor_validator.py` present with `__main__` self-test driver + live integration hook into `_plan_upstream_pin_validator.py` (import "OK"), and the 5-of-5 calibration-corpus self-test passes (4 true-positive + 1 true-negative). NOT a numerical-threshold comparison; the drift integers are audit-layer line counts.
+
+**Results**:
+
+*Numbers first — the 5 calibration-test outcomes (self-test, fixture-based):*
+
+| # | Instance | Computed drift | Expected drift | Computed severity | Expected severity | Result |
+|:-:|:---------|:--------------:|:--------------:|:------------------|:------------------|:------:|
+| TP-1 | §VII.AR | 106 | 106 | S2 ADVISORY | S2 | PASS |
+| TP-2 | §VII.AW.OP-PROJ | 229 | 229 | **S1 MANDATORY** | S1 | PASS |
+| TP-3 | §VII.U.2 | 56 | 56 | S2 ADVISORY | S2 | PASS |
+| TP-4 | S92-W5 (§VII.BA fixture slot) | 150 | 150 | S2 ADVISORY | S2 | PASS |
+| TN-1 | zero-drift fixture | 0 | 0 | NO-ACTION | NO-ACTION | PASS (no false-positive) |
+
+5/5 tests pass; overall self-test = PASS; integration hook `_plan_upstream_pin_validator` import = OK.
+
+*Detection logic (heading-anchor grep, not line-number trust):* the validator (1) extracts every plan-block `section_anchor_lines: "L1-L2"` field and bare `lines NNNN-MMMM`/`line ~NNNN` citation adjacent to a `permanent-results-registry` mention; (2) associates each citation with the nearest `§VII.X` slot anchor in the same gate-block; (3) greps the CURRENT registry for that slot's `## §VII.X`/`### §VII.X` heading (exact match, with a unique-prefix fallback `VII.AW → VII.AW.OP-PROJ`; ambiguous prefixes surface as UNRESOLVED rather than silently mis-resolve); (4) computes `drift = |L_plan_anchor − L_actual|` with `L_plan_anchor` = the START anchor of the range (matching the W4 WP convention where +106 = 17276−17170 is start-to-start); (5) maps drift → severity. The self-test uses FIXTURES (in-memory pre-drift plan + post-drift registry frozen at the S92-era line layout) because the LIVE registry has drifted FURTHER since S92 (verified: §VII.AR now at line 17340, §VII.AW.OP-PROJ at 18393, §VII.U.2 at 12967 — drift is an ongoing live phenomenon, which is precisely why the self-test pins the S92 calibration corpus deterministically rather than greping the moving live registry). The live-grep production path was smoke-tested against `session-93-plan-w9.md` (0 line citations → PASS; the W9 plan uses `<computed-at-runtime>` SHA pins, not `section_anchor_lines`, so nothing to drift-check — correct).
+
+*Pre-registered severity bands (monotone non-decreasing in drift):* `drift_S2_floor=50`, `drift_S1_floor=200`. `severity(drift) = NO-ACTION if drift ≤ 50; S2 if 50 < drift ≤ 200; S1 if drift > 200`.
+
+*Substitution chain (the directional severity-map claim "drift > 200 ⇒ S1 strictly more severe than the S2 band 50 < drift ≤ 200"):*
+- **Step 1**: `drift := |L_plan_anchor − L_actual|` [definition; `L_plan_anchor` = `section_anchor_lines` start, `L_actual` = current-registry heading-grep line].
+- **Step 2**: `severity(drift) := NO-ACTION if drift ≤ 50; S2 if 50 < drift ≤ 200; S1 if drift > 200` [pre-registered band map from CF-S93-PLAN-LINE-ANCHOR-VALIDATOR, `session-92-w4-workingpaper.md:799`].
+- **Step 3**: Substitute §VII.AW.OP-PROJ: `drift = 229` [`session-92-w4-workingpaper.md:762` process observation, 18249−18020].
+- **Step 4**: Simplify: `229 > 200 ⇒ severity(229) = S1 MANDATORY`. Substitute §VII.AR: `drift = 106; 50 < 106 ≤ 200 ⇒ S2`. Substitute §VII.U.2: `drift = 56; 50 < 56 ≤ 200 ⇒ S2`. Substitute S92-W5: `drift = 150; 50 < 150 ≤ 200 ⇒ S2`.
+- **Step 5**: Direction — the severity map is MONOTONE NON-DECREASING in drift; the §VII.AW +229 case is the SOLE S1 in the corpus precisely because it is the only drift > 200. The four corpus instances partition as `{S1: §VII.AW +229} ∪ {S2: §VII.AR +106, §VII.U.2 +56, S92-W5 +150}`, and the validator reproduces this partition exactly while returning NO-ACTION on the zero-drift true-negative (verified in the table above).
+
+*4-tuple*: `(value='selftest_5of5_PASS_...', scheme=PLAN-LINE-ANCHOR-DRIFT-HEADING-GREP-VALIDATOR, convention=section_anchor_lines-vs-current-registry-heading-grep-S2-at-drift-gt-50-S1-at-drift-gt-200, L_max=N/A)`.
+
+*Dual-SHA (runtime closure over the ordered input-pin map)*: `audit_sha256=f235d491782804c01b4739c5de8c8787dac6d3c0fc5cb31a59585d1e7beed60b` = `sha256(bytes(_plan_line_anchor_validator.py) || bytes(canonical_constants.py) || pinmap_json)`, where `pinmap_json` is the sorted `{relpath: sha256}` over `_plan_upstream_pin_validator.py` + `permanent-results-registry.md` + `session-92-w4-workingpaper.md` + a `__calibration_canonical__` entry hashing the corpus drift values + severity bands. `content_sha256=7281501167c5e6de705800f95c464db6d04c9a4b2d44aefa09a4e8cb33a764da` = `sha256(bytes(_plan_line_anchor_validator.py))`. Both computed at runtime, never hardcoded; audit_sha256 unique in the session file.
+
+*Integration hook*: `_plan_line_anchor_validator.py` imports `_extract_gate_blocks` + `_parse_table_rows` from `_plan_upstream_pin_validator` (the existing validator it extends), with local fallbacks if the import fails. Self-test reports the hook live ("OK"). The two validators are orthogonal axes of plan-freeze coherence: upstream-pin (npz-payload consistency) vs line-anchor (registry-heading consistency).
+
+*M4 allowlist-append*: FLAGGED for orchestrator (3-column ledger row `| S93-W9-1-PLAN-LINE-ANCHOR-VALIDATOR | S93 | <sha256_of_plan_block> |` + parallel rationale entry in `methodology-wave-instances.md`); subagents are edit-denied on the ledger per recursion-attack closure — NOT touched by this gate.
+
+*Substrate framing*: NON-PHONONIC. Per `epistemic-discipline.md §"Layer-Decomposition"`, this validator is the audit-floor F-image of the substrate PRU-drift problem: a plan-pinned registry line number is the methodology-floor image of a substrate machinery-pin (the upstream gate output the plan-block consumes), and the line-anchor validator is the audit-line image of the substrate's numerical PASS-predicate. No D_K eigenvalue is computed; the validator moves the S92 W4/W5 runtime-rescue (`substrate-first-canonical-sourcing.md §(ii.B)`) UPSTREAM to plan-freeze. The benign `canonical_constants.py` runtime-SHA difference from any plan-pinned value is expected per §(ii.B) and folded into the audit_sha256 at runtime.
+
+*Solution-space note*: this gate's PASS confirms the plan-freeze drift-catch corridor is now CLOSED for `section_anchor_lines`-style registry-line citations — the S92 W4/W5 failure mode (agents runtime-rescuing stale line citations) is caught BEFORE dispatch in S94+. A drift caught at plan-freeze never reaches an agent's runtime; the §(ii.B) runtime-rescue burden is converted into an S2/S1 plan-freeze gate.

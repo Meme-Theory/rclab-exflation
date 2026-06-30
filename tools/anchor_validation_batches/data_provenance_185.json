@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 185,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1841",
+      "anchor_type": "data_provenance",
+      "name": "w1a_bk_array_livewatch",
+      "script_path": "session-85/s85_w1a_bk_array_livewatch.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-85/s85_w1a_bk_array_livewatch.py",
+      "source_context_30_lines": "   80: BRANCH_INFO_HIGH = 0.030                                            # (local) INFO in [PASS_HIGH, INFO_HIGH]\n   81: \n   82: S84_REGISTRATION_SHA_HEAD = \"e2ca24d6\"                              # (local) S84 W4-42 content_sha prefix\n   83: \n   84: # Event status (manually set; in future this would query https://bicepkeck.org)\n   85: EVENT_PUBLIC = False                                                # (local) as of 2026-04-23\n   86: NEXT_CHECK_DATE = \"2026-07-01\"                                      # (local) quarterly poll\n   87: \n   88: OUT_JSON = SCRIPT_DIR / \"s85_w1a_bk_array_livewatch.json\"\n   89: VERDICT_TXT = SCRIPT_DIR / \"s85_gate_verdicts.txt\"\n   90: CANON_PY = SCRIPT_DIR / \"canonical_constants.py\"\n   91: S84_PREREG_MD = PROJECT_ROOT / \"sessions\" / \"session-84\" / \"s84_w4_42_bicep_keck_prereg.md\"\n   92: \n   93: INPUT_FILES = [CANON_PY]\n   94: if S84_PREREG_MD.exists():\n   95:     INPUT_FILES.append(S84_PREREG_MD)\n   96: "
+    },
+    {
+      "anchor_id": "prov_1842",
+      "anchor_type": "data_provenance",
+      "name": "w1a_cf_m4_lisa_flagship",
+      "script_path": "session-85/s85_w1a_cf_m4_lisa_flagship.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w1a_cf_m4_lisa_flagship.npz, session-85/s85_w1a_cf_m4_lisa_flagship.png, session-85/s85_w1a_cf_m4_lisa_fl...",
+      "source_file": "computations/session-85/s85_w1a_cf_m4_lisa_flagship.py",
+      "source_context_30_lines": "   94: # Pre-registered target ratio (plan §W1a-6 step 5)\n   95: RATIO_TARGET = 1.133                                                # (local) plan step 5 pre-reg'd\n   96: PASS_RESID = 1e-3                                                   # (local) tolerance per plan\n   97: FAIL_RESID = 1e-2                                                   # (local)\n   98: \n   99: # LISA pivot\n  100: F_PIVOT = 3e-3                                                      # (local) Hz, LISA SRD-v3 noise minimum\n  101: \n  102: OUT_NPZ = SCRIPT_DIR / \"s85_w1a_cf_m4_lisa_flagship.npz\"\n  103: OUT_PNG = SCRIPT_DIR / \"s85_w1a_cf_m4_lisa_flagship.png\"\n  104: OUT_MD = SCRIPT_DIR / \"s85_w1a_cf_m4_lisa_flagship.md\"\n  105: VERDICT_TXT = SCRIPT_DIR / \"s85_gate_verdicts.txt\"\n  106: CANON_PY = SCRIPT_DIR / \"canonical_constants.py\"\n  107: W6_50_PY = SCRIPT_DIR / \"s84_w6_50_cgwb_pt.py\"\n  108: W6_50_MD = PROJECT_ROOT / \"sessions\" / \"session-84\" / \"s84_w6_50_cgwb_pt.md\"\n  109: \n  110: INPUT_FILES = [CANON_PY]"
+    },
+    {
+      "anchor_id": "prov_1843",
+      "anchor_type": "data_provenance",
+      "name": "w1a_dr3_livewatch",
+      "script_path": "session-85/s85_w1a_dr3_livewatch.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-85/s85_w1a_dr3_livewatch.py",
+      "source_context_30_lines": "   76: R_842_WA_LOW = -0.20                                                # (local)\n   77: R_842_WA_HIGH = 0.20                                                # (local)\n   78: \n   79: S84_REGISTRATION_SHA_HEAD = \"9cc7f47e\"                              # (local) S84 W1b-9 content_sha prefix\n   80: \n   81: EVENT_PUBLIC = False                                                # (local) DR3 not yet public as of 2026-04-23 window-open\n   82: NEXT_CHECK_DATE = \"2026-05-15\"                                      # (local) weekly check starting window open\n   83: \n   84: OUT_JSON = SCRIPT_DIR / \"s85_w1a_dr3_livewatch.json\"\n   85: VERDICT_TXT = SCRIPT_DIR / \"s85_gate_verdicts.txt\"\n   86: CANON_PY = SCRIPT_DIR / \"canonical_constants.py\"\n   87: S84_PROTOCOL_MD = PROJECT_ROOT / \"sessions\" / \"session-84\" / \"s84_w1b_9_dr3_response_protocol.md\"\n   88: \n   89: INPUT_FILES = [CANON_PY]\n   90: if S84_PROTOCOL_MD.exists():\n   91:     INPUT_FILES.append(S84_PROTOCOL_MD)\n   92: "
+    },
+    {
+      "anchor_id": "prov_1844",
+      "anchor_type": "data_provenance",
+      "name": "w1a_falsifier_monitor_rank",
+      "script_path": "session-85/s85_w1a_falsifier_monitor_rank.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w1a_falsifier_monitor_rank.md",
+      "source_file": "computations/session-85/s85_w1a_falsifier_monitor_rank.py",
+      "source_context_30_lines": "   82: CONVENTION = \"SU3-baseline\"                                         # (local)\n   83: L_MAX = 10                                                          # (local)\n   84: \n   85: # Alternative fiber-group set (FROZEN S84 W13-4; tesla W13 carry-forward)\n   86: ALT_GROUPS = [\"G_2\", \"F_4\", \"A_3\", \"C_3\"]                           # (local)\n   87: \n   88: DEV_THRESHOLD_FAIL = 0.10                                           # (local) 10% deviation triggers COUNTEREXAMPLE\n   89: \n   90: OUT_JSON = SCRIPT_DIR / \"s85_w1a_falsifier_monitor_rank.json\"\n   91: OUT_MD = SCRIPT_DIR / \"s85_w1a_falsifier_monitor_rank.md\"\n   92: VERDICT_TXT = SCRIPT_DIR / \"s85_gate_verdicts.txt\"\n   93: CANON_PY = SCRIPT_DIR / \"canonical_constants.py\"\n   94: \n   95: INPUT_FILES = [CANON_PY]\n   96: \n   97: \n   98: def sha256_of(path: Path) -> str:"
+    },
+    {
+      "anchor_id": "prov_1845",
+      "anchor_type": "data_provenance",
+      "name": "w1a_lisa_flagship_tightening",
+      "script_path": "session-85/s85_w1a_lisa_flagship_tightening.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w1a_lisa_flagship_tightening.npz, session-85/s85_w1a_lisa_flagship_tightening.png",
+      "source_file": "computations/session-85/s85_w1a_lisa_flagship_tightening.py",
+      "source_context_30_lines": "  102: F_PIVOT = 3e-3                                                      # (local) Hz, LISA SRD-v3\n  103: T_MISSION_YEARS = 4.0                                               # (local) LISA nominal mission\n  104: BANDWIDTH_FRAC = 0.1                                                # (local) 10% of pivot\n  105: \n  106: # Pre-registered thresholds (plan §W1a-7 §9)\n  107: PASS_SNR = 5.0                                                      # (local) DECISIVE threshold\n  108: FAIL_SNR = 1.0                                                      # (local) below => not useful\n  109: \n  110: OUT_NPZ = SCRIPT_DIR / \"s85_w1a_lisa_flagship_tightening.npz\"\n  111: OUT_PNG = SCRIPT_DIR / \"s85_w1a_lisa_flagship_tightening.png\"\n  112: VERDICT_TXT = SCRIPT_DIR / \"s85_gate_verdicts.txt\"\n  113: CANON_PY = SCRIPT_DIR / \"canonical_constants.py\"\n  114: W1A_6_NPZ = SCRIPT_DIR / \"s85_w1a_cf_m4_lisa_flagship.npz\"\n  115: W6_50_PY = SCRIPT_DIR / \"s84_w6_50_cgwb_pt.py\"\n  116: \n  117: INPUT_FILES = [CANON_PY]\n  118: for extra in (W1A_6_NPZ, W6_50_PY):"
+    },
+    {
+      "anchor_id": "prov_1846",
+      "anchor_type": "data_provenance",
+      "name": "w1a_litebird_nt_registry",
+      "script_path": "session-85/s85_w1a_litebird_nt_registry.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w1a_litebird_nt_registry.npz, session-85/s85_w1a_litebird_nt_registry.md",
+      "source_file": "computations/session-85/s85_w1a_litebird_nt_registry.py",
+      "source_context_30_lines": "   97: \n   98: # Decade separation annotation (S66)\n   99: DECADE_SEPARATION = 54                                              # (local, transit scale vs CMB scale in log10 k)\n  100: \n  101: # Pre-registered thresholds (plan §W1a-8)\n  102: PASS_NORMALIZED = 100.0                                             # (local) STRUCTURAL-FLOOR threshold\n  103: FAIL_NORMALIZED = 10.0                                              # (local) below => stays INFO\n  104: \n  105: OUT_NPZ = SCRIPT_DIR / \"s85_w1a_litebird_nt_registry.npz\"\n  106: OUT_MD = SCRIPT_DIR / \"s85_w1a_litebird_nt_registry.md\"\n  107: VERDICT_TXT = SCRIPT_DIR / \"s85_gate_verdicts.txt\"\n  108: CANON_PY = SCRIPT_DIR / \"canonical_constants.py\"\n  109: ATLAS_MD = PROJECT_ROOT / \"summary\" / \"atlas-04-permanent-results-registry.md\"\n  110: S84_LB_MD = PROJECT_ROOT / \"sessions\" / \"session-84\" / \"s84_w4_41_litebird_nt.md\"\n  111: \n  112: INPUT_FILES = [CANON_PY]\n  113: for extra in (ATLAS_MD, S84_LB_MD):"
+    },
+    {
+      "anchor_id": "prov_1847",
+      "anchor_type": "data_provenance",
+      "name": "w1a_multid_fisher",
+      "script_path": "session-85/s85_w1a_multid_fisher.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w1a_multid_fisher.npz, session-85/s85_w1a_multid_fisher.png",
+      "source_file": "computations/session-85/s85_w1a_multid_fisher.py",
+      "source_context_30_lines": "  126: SIGMA_FNL_SKA1 = 5.0                                                # (local, SKA-1 folded-shape; S85 W0 CMBS4-FNL)\n  127: \n  128: # Pre-registered thresholds\n  129: PASS_LOG10BF = 2.0                                                  # (local)\n  130: FAIL_LOG10BF = -2.0                                                 # (local)\n  131: S84_CROSS_CHECK_EXPECTED = 13.9                                     # (local, S84 W4-49 excl A_s)\n  132: S84_CROSS_CHECK_TOLERANCE = 0.20                                    # (local, +/- 20% acceptance)\n  133: \n  134: OUT_NPZ = SCRIPT_DIR / \"s85_w1a_multid_fisher.npz\"\n  135: OUT_PNG = SCRIPT_DIR / \"s85_w1a_multid_fisher.png\"\n  136: VERDICT_TXT = SCRIPT_DIR / \"s85_gate_verdicts.txt\"\n  137: CANON_PY = SCRIPT_DIR / \"canonical_constants.py\"\n  138: S84_MD = PROJECT_ROOT / \"sessions\" / \"session-84\" / \"session-84-s1-mack-alpha_s-synthesis.md\"\n  139: \n  140: INPUT_FILES = [CANON_PY]\n  141: if S84_MD.exists():\n  142:     INPUT_FILES.append(S84_MD)"
+    },
+    {
+      "anchor_id": "prov_1848",
+      "anchor_type": "data_provenance",
+      "name": "w1a_scheme_dep",
+      "script_path": "session-85/s85_w1a_scheme_dep.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w1a_scheme_dep.npz, session-85/s85_w1a_scheme_dep.png",
+      "source_file": "computations/session-85/s85_w1a_scheme_dep.py",
+      "source_context_30_lines": "   58:   (value=<max_variance>, scheme=MS-bar, convention=CONVENTION-I, L_max=10)\n   59: \n   60: Thresholds (pre-registered, plan §W1a-1):\n   61:   - PASS iff max_variance <= 0.01 (>= 5x reduction from 4.65% floor)\n   62:   - FAIL iff max_variance > 0.046\n   63:   - INFO iff 0.01 < max_variance <= 0.046\n   64: \n   65: Output files:\n   66:   - computations/session-85/s85_w1a_scheme_dep.py\n   67:   - computations/session-85/s85_w1a_scheme_dep.npz\n   68:   - computations/session-85/s85_w1a_scheme_dep.png\n   69:   - verdict appended to computations/session-85/s85_gate_verdicts.txt\n   70: \"\"\"\n   71: \n   72: from __future__ import annotations\n   73: \n   74: # ---------------------------------------------------------------------------"
+    },
+    {
+      "anchor_id": "prov_1849",
+      "anchor_type": "data_provenance",
+      "name": "w1b_alpha_s_joint_fisher_correlated",
+      "script_path": "session-85/s85_w1b_alpha_s_joint_fisher_correlated.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w1b_alpha_s_joint_fisher_correlated.npz, session-85/s85_w1b_alpha_s_joint_fisher_correlated.png",
+      "source_file": "computations/session-85/s85_w1b_alpha_s_joint_fisher_correlated.py",
+      "source_context_30_lines": "  106: RHO_S4_HD  = 0.30                                                   # (local, partial sky overlap alpha_s modes)\n  107: RHO_S4_LB  = 0.15                                                   # (local, atmospheric+galactic foreground low-l)\n  108: # All other cross-pairs = 0\n  109: \n  110: # Thresholds (plan §W1b-2)\n  111: PASS_RATIO = 1.25                                                   # (local)\n  112: FAIL_RATIO = 1.50                                                   # (local)\n  113: \n  114: OUT_NPZ = SCRIPT_DIR / \"s85_w1b_alpha_s_joint_fisher_correlated.npz\"\n  115: OUT_PNG = SCRIPT_DIR / \"s85_w1b_alpha_s_joint_fisher_correlated.png\"\n  116: VERDICT_TXT = SCRIPT_DIR / \"s85_gate_verdicts.txt\"\n  117: CANON_PY = SCRIPT_DIR / \"canonical_constants.py\"\n  118: PLAN_MD = PROJECT_ROOT / \"sessions\" / \"session-plan\" / \"session-85-plan-w1b.md\"\n  119: \n  120: INPUT_FILES = [CANON_PY]\n  121: if PLAN_MD.exists():\n  122:     INPUT_FILES.append(PLAN_MD)"
+    },
+    {
+      "anchor_id": "prov_1850",
+      "anchor_type": "data_provenance",
+      "name": "w1b_alpha_s_prior_range_lcdm",
+      "script_path": "session-85/s85_w1b_alpha_s_prior_range_lcdm.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w1b_alpha_s_prior_range_lcdm.npz, session-85/s85_w1b_alpha_s_prior_range_lcdm.png",
+      "source_file": "computations/session-85/s85_w1b_alpha_s_prior_range_lcdm.py",
+      "source_context_30_lines": "  108: PRIOR_NARROW_UNIFORM_HI = +0.02                                     # (local)\n  109: PRIOR_PLANCK_MU = -0.0045                                           # (local, Planck central)\n  110: PRIOR_PLANCK_SIG = 0.0067                                           # (local, Planck 1-sigma)\n  111: \n  112: # Thresholds (plan §W1b-3)\n  113: PASS_BF = 30.0                                                      # (local)\n  114: FAIL_BF = 3.0                                                       # (local)\n  115: \n  116: OUT_NPZ = SCRIPT_DIR / \"s85_w1b_alpha_s_prior_range_lcdm.npz\"\n  117: OUT_PNG = SCRIPT_DIR / \"s85_w1b_alpha_s_prior_range_lcdm.png\"\n  118: VERDICT_TXT = SCRIPT_DIR / \"s85_gate_verdicts.txt\"\n  119: CANON_PY = SCRIPT_DIR / \"canonical_constants.py\"\n  120: \n  121: INPUT_FILES = [CANON_PY]\n  122: \n  123: \n  124: def sha256_of(path: Path) -> str:"
+    }
+  ]
+}

@@ -82,7 +82,7 @@ Discussion topics:
 - Phonon-NCG dictionary: Final honest scoring (which entries are rigorous, which wrong?)
 - Simulation validation: What does Phase 2B actually tell us vs what we wish it told us?
 - Computational feasibility landscape: What can we compute in days vs weeks vs months?
-- V_eff implementation: Exact code plan (modify tier1_spectral_action.py? new script?)
+- V_eff implementation: Exact code plan (modify spectral_action.py? new script?)
 - BdG class DIII: Is the "topological superconductor" analogy deep or shallow?
 
 Output format: `sessions/session-16-round-1c-computation.md`
@@ -165,7 +165,7 @@ Input: Combined handout + Round 1a + Round 2a.
 
 Both agents discuss as teammates:
 - **Baptista-analyst** brings: D_K projection exact specification from Paper 17. Peter-Weyl decomposition changes for CP^2 vs SU(3). Z_3 mechanism from Paper 18.
-- **KK-theorist** brings: Code-level assessment. What changes in tier1_dirac_spectrum.py? Matrix sizes, new basis, computational cost.
+- **KK-theorist** brings: Code-level assessment. What changes in dirac_spectrum.py? Matrix sizes, new basis, computational cost.
 
 They negotiate the specification together — Baptista provides the math, KK reality-checks the implementation.
 

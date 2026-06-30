@@ -3,7 +3,7 @@
 **Date**: 2026-02-22
 **Author**: Baptista-Spacetime-Analyst
 **Context**: Session 26 preplan Section 3.2 excursion -- final thread
-**Input**: Tesla's torsion diagnostics (`tier0-computation/s26_torsion_diagnostics.py`), Baptista Papers 13-15
+**Input**: Tesla's torsion diagnostics (`computations/s26_torsion_diagnostics.py`), Baptista Papers 13-15
 
 ---
 

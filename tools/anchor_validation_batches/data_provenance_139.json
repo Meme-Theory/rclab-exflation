@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 139,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1381",
+      "anchor_type": "data_provenance",
+      "name": "mott_gap_renormalization",
+      "script_path": "session-74/s74_mott_gap_renormalization.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_mott_gap_renormalization.npz, session-74/s74_mott_gap_renormalization.png",
+      "source_file": "computations/session-74/s74_mott_gap_renormalization.py",
+      "source_context_30_lines": "  372: plt.suptitle(\n  373:     f\"S74 W4-P MOTT-GAP-RENORMALIZATION-74  |  \"\n  374:     f\"$E_C^{{\\\\rm fold}} = {E_C_fold_MKK:.4f}\\\\,M_{{\\\\rm KK}}$, \"\n  375:     f\"$N_e = {N_total:.2f}$,  verdict: {gate_verdict}\",\n  376:     fontsize=11,\n  377: )\n  378: plt.tight_layout()\n  379: \n  380: OUT_PNG = _HERE / \"s74_mott_gap_renormalization.png\"\n  381: fig.savefig(OUT_PNG, dpi=140, bbox_inches=\"tight\")\n  382: plt.close(fig)\n  383: print(f\"Plot saved: {OUT_PNG}\")\n  384: \n  385: # ---------------------------------------------------------------------------\n  386: # Save npz\n  387: # ---------------------------------------------------------------------------\n  388: "
+    },
+    {
+      "anchor_id": "prov_1382",
+      "anchor_type": "data_provenance",
+      "name": "mott_refined_cg24",
+      "script_path": "session-74/s74_mott_refined_cg24.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_mott_refined_cg24.npz, session-74/s74_mott_refined_cg24.png",
+      "source_file": "computations/session-74/s74_mott_refined_cg24.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s74_mott_refined_cg24.py — MOTT-REFINED-CG24-74 (Session 74, Wave 2 Batch 2)\n    4: \n    5: Refined Mott delta_OOM using the CANONICAL E_C = 0.4643 M_KK established in\n    6: W1-D (E_C-RESOLUTION-74, Method A: OES pair-addition on full CG(24)).\n    7: \n    8: Sector-specific Josephson couplings from the C^2 -> SU(2) x U(1) branching:\n    9:     C^2 branches as (2,+1) + (2,-1) + (1,+2) + (1,-2)\n   10:     Dimensions:         2      2       1        1\n   11:     Total dim weight = 6 (matches z=6 coordination of CG(24))"
+    },
+    {
+      "anchor_id": "prov_1383",
+      "anchor_type": "data_provenance",
+      "name": "multi_cell_plancherel",
+      "script_path": "session-74/s74_multi_cell_plancherel.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_multi_cell_plancherel.npz, session-74/s74_multi_cell_plancherel.png",
+      "source_file": "computations/session-74/s74_multi_cell_plancherel.py",
+      "source_context_30_lines": "  603: ax1.set_xticklabels(labels, rotation=45, ha='right')\n  604: ax1.set_ylabel('<r>_uniq per sector')\n  605: ax1.set_title('Per-sector r-ratio on distinct D_K spectrum\\n(n = sample size per sector)')\n  606: ax1.set_ylim(0, 0.9)\n  607: ax1.legend(loc='upper right', fontsize=7)\n  608: ax1.grid(alpha=0.3, axis='y')\n  609: \n  610: plt.tight_layout()\n  611: plot_path = os.path.join(outdir, 's74_multi_cell_plancherel.png')\n  612: plt.savefig(plot_path, dpi=150, bbox_inches='tight')\n  613: print(f\"  Plot saved: {plot_path}\")\n  614: \n  615: # =============================================================================\n  616: # 9. SAVE DATA\n  617: # =============================================================================\n  618: \n  619: print(\"\\n\" + \"=\" * 80)"
+    },
+    {
+      "anchor_id": "prov_1384",
+      "anchor_type": "data_provenance",
+      "name": "multi_layer_protection",
+      "script_path": "session-74/s74_multi_layer_protection.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_multi_layer_protection.npz",
+      "source_file": "computations/session-74/s74_multi_layer_protection.py",
+      "source_context_30_lines": "  693:         \"composite_proven\": composite,\n  694:         \"gate_verdict\": verdict,\n  695:         \"registry_candidate_number\": 48,\n  696:     }\n  697: \n  698:     # Persist alongside this script (computations/_shared/) regardless of cwd.\n  699:     import os\n  700:     here = os.path.dirname(os.path.abspath(__file__))\n  701:     npz_path = os.path.join(here, \"s74_multi_layer_protection.npz\")\n  702:     np.savez(npz_path, **data)\n  703:     print()\n  704:     print(f\"Data saved to {npz_path}\")\n  705: \n  706: \n  707: if __name__ == \"__main__\":\n  708:     main()"
+    },
+    {
+      "anchor_id": "prov_1385",
+      "anchor_type": "data_provenance",
+      "name": "n_eff_morse_bott",
+      "script_path": "session-74/s74_n_eff_morse_bott.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_n_eff_morse_bott.npz, session-74/s74_n_eff_morse_bott.png",
+      "source_file": "computations/session-74/s74_n_eff_morse_bott.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s74_n_eff_morse_bott.py -- N-EFF-MORSE-BOTT-74\n    4: ==================================================================================\n    5: Gate: N-EFF-MORSE-BOTT-74\n    6:   PASS: mapped N_eff in [2.8, 3.2]\n    7:   INFO: mapped N_eff in [2.5, 3.5]\n    8:   FAIL: mapped N_eff outside [2.5, 3.5]\n    9: \n   10: Task (S74-CF-10 from S73A landau-baptista workshop):\n   11:   Map the S65 fold Hessian signature (36+, 0-, 0 zero modes) to SM relativistic"
+    },
+    {
+      "anchor_id": "prov_1386",
+      "anchor_type": "data_provenance",
+      "name": "noether_chain",
+      "script_path": "session-74/s74_noether_chain.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_noether_chain.npz, session-74/s74_noether_chain.png",
+      "source_file": "computations/session-74/s74_noether_chain.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s74_noether_chain.py -- NOETHER-CHAIN-VERIFICATION-74 (S74 W1-O)\n    4: ================================================================\n    5: \n    6: Five-step Noether chain audit:\n    7: \n    8:   Step 1: Haar bi-invariance of the Jensen-deformed SU(3) metric\n    9:           (U(2) isotropy subgroup, 4 Killing generators)\n   10:   Step 2: U(1)_{N_pair} current conservation on the GGE ground state\n   11:   Step 3: Stress-energy trace  g^{mu nu} <T_{mu nu}>_{GGE} = -3 rho"
+    },
+    {
+      "anchor_id": "prov_1387",
+      "anchor_type": "data_provenance",
+      "name": "ns_1loop_spectral",
+      "script_path": "session-74/s74_ns_1loop_spectral.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_ns_1loop_spectral.npz, session-74/s74_ns_1loop_spectral.png",
+      "source_file": "computations/session-74/s74_ns_1loop_spectral.py",
+      "source_context_30_lines": "  558: \n  559: # =============================================================================\n  560: # STEP 10: SAVE DATA\n  561: # =============================================================================\n  562: print(\"\\n\" + \"=\" * 78)\n  563: print(\"STEP 10: Saving Data\")\n  564: print(\"=\" * 78)\n  565: \n  566: outpath = os.path.join(SCRIPT_DIR, 's74_ns_1loop_spectral.npz')\n  567: np.savez(\n  568:     outpath,\n  569:     gate_name='NS-1LOOP-SPECTRAL-74',\n  570:     gate_verdict=verdict,\n  571:     gate_detail=gate_detail,\n  572:     # Inputs\n  573:     tau_evals=tau_evals,\n  574:     Delta_profile=Delta_profile,"
+    },
+    {
+      "anchor_id": "prov_1388",
+      "anchor_type": "data_provenance",
+      "name": "ns_w0_joint",
+      "script_path": "session-74/s74_ns_w0_joint.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_ns_w0_joint.npz, session-74/s74_ns_w0_joint.png",
+      "source_file": "computations/session-74/s74_ns_w0_joint.py",
+      "source_context_30_lines": "   33: \n   34: Inputs:\n   35:   - canonical_constants.py (w0_FW, planck_ns, tau_fold, dS_fold, d2S_fold, S_fold)\n   36:   - s74_w0_zeta.npz (W1-J output: delta_w0_total from beta-spread)\n   37:   - S66 n_s scheme spread from W1-I (mu-variation): 0.001997\n   38:   - S66 canonical n_s = 0.9595 (BCS-CW route)\n   39: \n   40: Outputs:\n   41:   - s74_ns_w0_joint.npz\n   42:   - s74_ns_w0_joint.png\n   43: \"\"\"\n   44: \n   45: import os\n   46: import sys\n   47: import numpy as np\n   48: import matplotlib\n   49: matplotlib.use('Agg')"
+    },
+    {
+      "anchor_id": "prov_1389",
+      "anchor_type": "data_provenance",
+      "name": "overlap_matrix",
+      "script_path": "session-74/s74_overlap_matrix.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_overlap_matrix.npz",
+      "source_file": "computations/session-74/s74_overlap_matrix.py",
+      "source_context_30_lines": "  304: print(f\"\\nGate {gate_name}: {verdict}\")\n  305: print(f\"  Row-sum deviation:     {row_dev:.3e} (threshold 1e-6)\")\n  306: print(f\"  Col-sum deviation:     {col_dev:.3e} (threshold 1e-6)\")\n  307: print(f\"  Diagonal dominance:    {'PASS' if pass_diag else 'FAIL'} (need all M_ii > 0.5)\")\n  308: \n  309: # ==============================================================================\n  310: # 9. Save\n  311: # ==============================================================================\n  312: out = os.path.join(SCRIPT_DIR, 's74_overlap_matrix.npz')\n  313: # Convert branching table to arrays for saving\n  314: branching_keys = np.array(list(branching_table.keys()), dtype=np.int64)\n  315: branching_vals_raw = []\n  316: for k in branching_table:\n  317:     mult = branching_table[k]\n  318:     # Pack as list of (L, count) pairs padded with -1\n  319:     pairs = sorted(mult.items())\n  320:     flat = [item for pair in pairs for item in pair]"
+    },
+    {
+      "anchor_id": "prov_1390",
+      "anchor_type": "data_provenance",
+      "name": "phase_covariance_3x3",
+      "script_path": "session-74/s74_phase_covariance_3x3.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_phase_covariance_3x3.npz, session-74/s74_phase_covariance_3x3.png",
+      "source_file": "computations/session-74/s74_phase_covariance_3x3.py",
+      "source_context_30_lines": "   92: sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))\n   93: from canonical_constants import *\n   94: \n   95: PROJECT_ROOT = r\"C:\\sandbox\\Ainulindale Exflation\"\n   96: OUT_DIR = os.path.join(PROJECT_ROOT, \"computations\")\n   97: \n   98: INPUT_FABRY = os.path.join(OUT_DIR, \"s73a_fabry_perot_cavity.npz\")\n   99: INPUT_GGE   = os.path.join(OUT_DIR, \"s56_gge_fabric.npz\")\n  100: OUT_NPZ     = os.path.join(OUT_DIR, \"s74_phase_covariance_3x3.npz\")\n  101: OUT_PNG     = os.path.join(OUT_DIR, \"s74_phase_covariance_3x3.png\")\n  102: \n  103: # Gate thresholds (pre-registered)\n  104: GATE_LO = 0.10  # (local)\n  105: GATE_HI = 0.25  # (local)\n  106: \n  107: # ==============================================================================\n  108: # Section 1: Load data (W1-F convention fix)"
+    }
+  ]
+}

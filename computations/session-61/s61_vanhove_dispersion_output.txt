@@ -1,0 +1,155 @@
+==============================================================================
+S61 VANHOVE-DISP-61: Van Hove Dispersion — Tau-Resolved B2 Spectrum
+==============================================================================
+
+--- Section 1: Load input data ---
+Loaded: 50 tau values in [0.0000, 0.5000]
+  fold_idx = 19, tau_fold = 0.1939
+  N_cells = 32, diameter = 6
+  E_J at fold = 7.041511 M_KK
+  E_B2_mean (canonical) = 0.845269 M_KK
+
+--- Section 2: Graph Laplacian eigenvalues (C2 bonds) ---
+  lambda_0 = 0.000000 (Goldstone / zero mode)
+  lambda_1 = 0.170959 (Fiedler)
+  lambda_max = 7.328408
+  Number of k-points: 32
+  k_eff range: [0.000000, 1.417436]
+
+--- Section 3: B2-projected Hamiltonian ---
+  V_B2 (4x4 B2-B2 pairing block):
+    Eigenvalues: [-0.04198928  0.01303393  0.04536864  0.15573904]
+    Trace: 0.172152
+    Norm: 0.168065
+    Symmetric: True
+
+  B2 single-particle energies at fold:
+    eps_0 = -0.000000 M_KK
+    eps_1 = 0.177062 M_KK
+    eps_2 = 0.329406 M_KK
+    eps_3 = 0.522910 M_KK
+  B2 bandwidth (intra-cell): 0.522910 M_KK
+  B2 mean energy at fold: 0.257344 M_KK (canonical: 0.845269)
+
+--- Section 4: Full diagonalization ---
+  Diagonalized: 50 tau x 32 k = 1600 Hamiltonians
+  omega shape: (50, 32, 4)
+
+  Spectrum at fold (tau = 0.1939):
+    k=0 (Gamma point, lambda=0):
+      band 0: omega = 0.005730 M_KK
+      band 1: omega = 0.205739 M_KK
+      band 2: omega = 0.393783 M_KK
+      band 3: omega = 0.596277 M_KK
+    k=max (zone boundary, lambda=7.3284):
+      band 0: omega = 51.608803 M_KK
+      band 1: omega = 51.808812 M_KK
+      band 2: omega = 51.996855 M_KK
+      band 3: omega = 52.199350 M_KK
+    Band 0 bandwidth: 51.603072 M_KK
+    Band 1 bandwidth: 51.603072 M_KK
+    Band 2 bandwidth: 51.603072 M_KK
+    Band 3 bandwidth: 51.603072 M_KK
+    Total B2 spectral width at fold: 52.193619 M_KK
+
+--- Section 5: Group velocity and effective mass ---
+  Numerical v_g at fold (interior k-points):
+    mean = 7.041511, std = 1.63e-14
+    E_J(fold) = 7.041511
+    |v_g - E_J|/E_J = 0.00e+00
+
+  Eigenvector k-independence check:
+    max |psi(k=0) - psi(k=15)|: 7.46e-14
+    CONFIRMED: eigenvectors are k-independent (H shifts by E_J*lambda*I)
+
+  Analytic result: v_g(tau) = E_J(tau) for all bands
+    v_g range: [1.1189, 18.2997] M_KK
+    v_g at fold: 7.0415 M_KK
+
+  Effective mass in k_eff coordinates:
+    m*_keff at fold: 0.019467 M_KK
+    m*_keff range: [0.007491, 0.122513] M_KK
+
+--- Section 6: Density of States ---
+  DOS at fold:
+    Van Hove energy: E_VH = 8.168174 M_KK
+    DOS peak height: 15.2583
+  E_VH range: [2.8811, 62.9364] M_KK
+  DOS peak range: [12.1337, 33.3087]
+
+--- Section 7: Van Hove stability (gate criterion) ---
+  dE_VH/dtau:
+    max|dE_VH/dtau| = 1255.465920
+    mean|dE_VH/dtau| = 288.159321
+    dE_VH/dtau at fold = 670.910359
+
+  Bandwidth analysis at fold:
+    Intra-B2 (on-site): 0.522910 M_KK
+    Inter-cell (E_J*lam_max): 51.6031 M_KK
+    Total B2 width: 52.1936 M_KK
+    Flatness ratio (inter/intra): 98.6844
+
+  Graph Laplacian VH point:
+    lambda_VH = 5.016557 (at index 25)
+    Minimum gap = 0.008488
+
+  Analytic dE_VH/dtau (at lambda_VH = 5.0166):
+    at fold: -172.106706
+    max|dE_VH/dtau|: 456.886007
+
+--- Section 8: Flat band and van Hove physics ---
+  Graph spectral density (lambda histogram):
+    Peak bin: lambda ~ 1.1143, count = 2
+
+  E_J rate of change:
+    dE_J/dtau at fold: -34.2989 M_KK
+    E_J at fold: 7.0415 M_KK
+    Fractional rate: -4.8710 per unit tau
+
+--- Section 9: Gate Verdict ---
+  Gate criterion: max|dE_VH/dtau| vs threshold 0.01
+    max|dE_VH/dtau| (all tau) = 1255.465920
+    |dE_VH/dtau| at fold = 670.910359
+
+  GATE: VANHOVE-DISP-61
+  VERDICT: FAIL
+  DETAIL: max|dE_VH/dtau| = 1255.465920 > 0.01. VH energy is NOT tau-stable. E_VH drifts because both on-site B2 energies and E_J(tau) are tau-dependent. However, the flat-band CHARACTER is preserved: all 4 bands remain parallel with separation set by V_B2 eigenvalues (tau-independent).
+
+--- Section 10: Summary ---
+
+B2 Band Structure at fold (tau = 0.1939):
+  4 parallel bands, separation = V_B2 eigenvalues:
+    Band 0: [0.0057, 51.6088] M_KK, BW = 51.6031, center = 25.8073
+    Band 1: [0.2057, 51.8088] M_KK, BW = 51.6031, center = 26.0073
+    Band 2: [0.3938, 51.9969] M_KK, BW = 51.6031, center = 26.1953
+    Band 3: [0.5963, 52.1993] M_KK, BW = 51.6031, center = 26.3978
+
+  All bands have IDENTICAL bandwidth: 51.6031 M_KK
+  Group velocity: v_g = E_J(tau) = 7.0415 M_KK (all k, all bands)
+  Effective mass (k_eff): m* = 0.019467 M_KK
+
+  Van Hove singularity:
+    Type: band-edge pile-up (discrete graph spectrum)
+    E_VH at fold: 8.1682 M_KK
+    DOS at VH: 15.2583
+    dE_VH/dtau at fold: 670.910359
+
+  FLAT BAND PROTECTION THEOREM:
+    H_B2(k, tau) = H_B2(0, tau) + E_J(tau) * lambda_k * I_4
+    => All 4 bands are EXACTLY parallel at every tau
+    => Band SEPARATIONS = V_B2 eigenvalue splittings (tau-independent)
+    => Eigenvectors are k-independent (EXACT)
+    => v_g = E_J(tau) for ALL bands (EXACT)
+    This is NOT an approximation — it follows from [V_B2, I_4] = 0
+
+--- Section 11: Save data ---
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s61_vanhove_dispersion.npz
+
+--- Section 12: Plotting ---
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s61_vanhove_dispersion.png
+
+Total runtime: 0.73 s
+
+==============================================================================
+GATE: VANHOVE-DISP-61 — VERDICT: FAIL
+==============================================================================

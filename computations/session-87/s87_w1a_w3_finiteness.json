@@ -1,0 +1,98 @@
+{
+  "gate_id": "S87-W3-PER-EVAL-FINITENESS-PRE-REG",
+  "wp_id": "W1a-3",
+  "scheme": "Mellin-cone-substrate-distance-1+rho-fit-MB-lower-half",
+  "convention": "substrate-first-W0-20+W0-7-MB",
+  "L_max": 10,
+  "schema_version": "S84+",
+  "verdict": {
+    "composite": "INFO",
+    "sign_verdict": "PASS",
+    "magnitude_verdict": "INFO",
+    "regime_verdict": "VALID",
+    "value_str": "apex=4.1383e+02_AND_rho_fit_residual=1.1878e-04_AND_poly_deg=4_AND_registry_appended=True"
+  },
+  "apex": {
+    "apex_value": 413.8257799842795,
+    "finiteness_floor": 1e+50,
+    "floor_est_upper_algebraic": 256302.61632722252,
+    "N_eigenvalues": 78080,
+    "lambda_min_nonzero": 0.8197411120665079,
+    "n_pts_evaluated": 200,
+    "n_pts_intended": 200,
+    "epsilon_half_window": 0.01
+  },
+  "rho_fit": {
+    "rho_k_coefficients_k0_to_k4": [
+      410.41570879106115,
+      -337.9721526398571,
+      292.64849607837783,
+      -190.17227626955386,
+      96.26138616080911
+    ],
+    "polynomial_deg_pinned": 4,
+    "effective_polynomial_deg": 4,
+    "rho_fit_residual_normalised": 0.00011877648906694013,
+    "rms_abs_resid": 0.05185099101828621,
+    "R_scale_mean_abs": 436.5425466403877,
+    "n_pts_fit": 101,
+    "n_pts_intended": 101,
+    "s_grid_min": 2.5,
+    "s_grid_max": 3.5
+  },
+  "input_pin_map": {
+    "_gate_id": "S87-W3-PER-EVAL-FINITENESS-PRE-REG",
+    "_wp_id": "W1a-3",
+    "_scheme": "Mellin-cone-substrate-distance-1+rho-fit-MB-lower-half",
+    "_convention": "substrate-first-W0-20+W0-7-MB",
+    "L_max": 10,
+    "N_eigenvalues": 78080,
+    "apex_eps": 0.01,
+    "n_apex_pts": 200,
+    "rho_s_min": 2.5,
+    "rho_s_max": 3.5,
+    "n_rho_pts": 101,
+    "rho_fit_deg_cap": 4,
+    "apex_finiteness_floor": 1e+50,
+    "rho_fit_pass_resid": 1e-06,
+    "rho_fit_info_resid": 0.001,
+    "cache_sha256_pinned": "9e6d9cf7fd6a6949d622441b26fb9c2fa568654a22dc802e99898c326ca0f8d9",
+    "cache_sha256_observed": "9e6d9cf7fd6a6949d622441b26fb9c2fa568654a22dc802e99898c326ca0f8d9",
+    "upstream_S86_W0_20_audit_sha": "3b1c13ac7063163c81150952e0e9df82a97e6d7b23752d6ba3532874d8a5c440",
+    "upstream_S86_W0_20_content_sha": "05071d10327d7f32fe88eb9d63278f3a4f737ca1f87280a3c51a5f8266c01686",
+    "upstream_S86_W0_7_MB_audit_sha": "3ab5718a4a79787e893578cdcf0d6596d6a4824f2f3bd896c0a179aba14e3c82",
+    "upstream_S86_W0_7_MB_content_sha": "05071d10327d7f32fe88eb9d63278f3a4f737ca1f87280a3c51a5f8266c01686"
+  },
+  "shas": {
+    "audit_sha256": "9fe27a159784ff834202a8b5a424ce876e997b7e12f80617945730be829f29d8",
+    "content_sha256": "b06b56aa11281e1f42abb153a59ed8a0ac08edab7e1a0765ff78229e3649a833",
+    "cache_sha256_observed": "9e6d9cf7fd6a6949d622441b26fb9c2fa568654a22dc802e99898c326ca0f8d9",
+    "cache_sha256_pinned": "9e6d9cf7fd6a6949d622441b26fb9c2fa568654a22dc802e99898c326ca0f8d9"
+  },
+  "regulator_pin_tags": {
+    "apex_substrate_distance_1": "a_2^{Mellin}",
+    "rho_fit_polynomial_basis": "(s-3)^k for k=0..4"
+  },
+  "upstream_pre_reg_inc_pointers": {
+    "S86_W0_20_MB_RE_EMIT": {
+      "audit_sha256": "3b1c13ac7063163c81150952e0e9df82a97e6d7b23752d6ba3532874d8a5c440",
+      "content_sha256": "05071d10327d7f32fe88eb9d63278f3a4f737ca1f87280a3c51a5f8266c01686",
+      "verdict_file_line": 124,
+      "session": 86
+    },
+    "S86_W0_7_MB_RE_EMIT": {
+      "audit_sha256": "3ab5718a4a79787e893578cdcf0d6596d6a4824f2f3bd896c0a179aba14e3c82",
+      "content_sha256": "05071d10327d7f32fe88eb9d63278f3a4f737ca1f87280a3c51a5f8266c01686",
+      "verdict_file_line": 120,
+      "session": 86
+    }
+  },
+  "regeneration_provenance": {
+    "reason": "S86 mechanical PRE-REG-INC closure produced no .npz outputs; S87 W1a-3 regenerates the substantive content directly from the canonical L_max=10 spectrum cache (s84_spectrum_cache_L12_tau019.npz, sectors with p+q<=10).",
+    "regenerated_from": "tier0-computation\\s84_spectrum_cache_L12_tau019.npz",
+    "method_W0_20": "200 off-pole pts in [3-eps, 3+eps] (eps=0.01); apex_value = max|V(s)|; finiteness floor 1e+50.",
+    "method_W0_7_MB": "rho-fit on R(s)=(s-3)*V(s) in s in [2.5, 3.5] (101 pts; s=3 excised); polynomial degree <= 4."
+  },
+  "wall_time_seconds": 0.5910162925720215,
+  "registry_appended": true
+}

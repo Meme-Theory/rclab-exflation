@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 213,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_2121",
+      "anchor_type": "data_provenance",
+      "name": "w11_ps_af_l12_recalibration",
+      "script_path": "session-88/s88_w11_ps_af_l12_recalibration.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "session-88/s88_w11_ps_af_l12_recalibration.npz, session-88/s88_w11_ps_af_l12_recalibration.png",
+      "source_file": "computations/session-88/s88_w11_ps_af_l12_recalibration.py",
+      "source_context_30_lines": "<name 'w11_ps_af_l12_recalibration' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S88 W11-122 — S88-PS-AF-L12-RECALIBRATION\n    4: ==========================================\n    5: \n    6: Plan §W11-122: re-run the S87 W1b-5 PS-vs-SM A_F diagnostic at L_max=12\n    7: to classify the +0.50% n=0-sector shift as REFINE / EXTEND / VANISH per\n    8: the L^{-3} envelope ratio (10/12)^3 = 0.5787.\n    9: \n   10: W1b-5 anchor (S87 verdict `S87-PS-AF-RECALIBRATION-DIAGNOSTIC: INFO\n   11: value=1.0050313794322645 scheme=Pati-Salam-finite-triple-recalibration\n   12: convention=A_F-M2H-M4C L_max=10`):\n   13:   ratio_10 = growth_PS(L=10) / growth_SM(L=10) = 1.0050313794322645\n   14:   Δ_10     = ratio_10 − 1                       = +0.005031379432 = +0.5031%\n   15: \n   16: Method (replicating S87 W1b-5 at extended L=12; same cache, expanded\n   17: truncation to p+q ≤ 12):\n   18:   growth(L; A_F) = M_0^ζ(L; A_F) / M_0^ζ(L=5; A_F),\n   19:   M_0^ζ(L; A_F)  = Σ_{(p,q): p+q ≤ L} W_{A_F}(p,q) · dim_SU3(p,q) · Σ_λ exp(-λ²),\n   20:   W_{SM}(p,q)    = 6.0  (CCM 2007 1+2+3 multiplet weight; uniform),\n   21:   W_{PS}(p,q)    = W_{SM}(p,q) · (40/22) · (1 + 0.05·(p+q)/L_MAX).\n   22: \n   23: Substitution chain (carried with substituted numbers in WP §W11-122\n   24: step-by-step):\n   25: \n   26:   Step 1 — Definition. ratio(L) = growth_PS(L) / growth_SM(L);\n   27:       Δ(L) = ratio(L) − 1; baseline Δ_10 = 0.005031379432 (S87 W1b-5).\n   28: \n   29:   Step 2 — Substitution. At L_MAX=12, both the truncation upper bound\n   30:       and the L_MAX appearing in W_{PS}(p,q)'s realignment factor δ(p,q)"
+    },
+    {
+      "anchor_id": "prov_2122",
+      "anchor_type": "data_provenance",
+      "name": "w11_pv_scheme_mpmath_mellin_dirichlet_verify",
+      "script_path": "session-88/s88_w11_pv_scheme_mpmath_mellin_dirichlet_verify.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "session-88/s88_w11_pv_scheme_mpmath_mellin_dirichlet_verify.npz, session-88/s88_w11_pv_scheme_mpmath_mellin_dirichlet_ve...",
+      "source_file": "computations/session-88/s88_w11_pv_scheme_mpmath_mellin_dirichlet_verify.py",
+      "source_context_30_lines": "   42:   CC2 — PV-regulator residual: with M_PV_norm = 10 (M_PV = 10·M_KK),\n   43:       compute residual_PV(s) = | (Σ m_n [λ_n^{-s} − (λ_n²+M_PV²)^{-s/2}])·Γ(s/2)\n   44:                             − Σ m_n [Γ(s/2)/λ_n^s − Γ(s/2)/(λ_n²+M_PV²)^{s/2}] |.\n   45:       Should be 0 algebraically.\n   46: \n   47: OUTPUT: verdict line + dual-SHA companion at\n   48:   computations/session-88/s88_gate_verdicts.txt\n   49: artifacts:\n   50:   computations/session-88/s88_w11_pv_scheme_mpmath_mellin_dirichlet_verify.npz/.png\n   51: \"\"\"\n   52: \n   53: import os\n   54: import sys\n   55: import json\n   56: import hashlib\n   57: import time\n   58: from pathlib import Path"
+    },
+    {
+      "anchor_id": "prov_2123",
+      "anchor_type": "data_provenance",
+      "name": "w11_vii_x_2_necessity_promote_stage_3",
+      "script_path": "session-88/s88_w11_vii_x_2_necessity_promote_stage_3.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-88/s88_w11_vii_x_2_necessity_promote_stage_3.py",
+      "source_context_30_lines": "<name 'w11_vii_x_2_necessity_promote_stage_3' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S88 W11-133 — S88-VII-X-2-NECESSITY-PROMOTE-STAGE-3\n    4: \n    5: Plan §W11-133: verify 6/6 NECESSITY anchors + Stage-2 cross-axis verify\n    6: + promote §VII.X.2 STAGE-1-CANDIDATE → STAGE-3-PERMANENT.\n    7: \n    8: Plan threshold:\n    9:   PASS iff (i) 6/6 anchor SHAs in s88 verdict file\n   10:         AND (ii) connes Stage-2 cross-review axis-A PASS + JOINT\n   11:         AND (iii) lizzi Stage-2 cross-review axis-B PASS + JOINT\n   12:         AND (iv) JOINT logical-AND across both verdicts\n   13:   INFO iff (i) AND Stage-2 returns INFO on any clause\n   14:   FAIL iff (i) fails OR Stage-2 returns FAIL on any clause\n   15: \n   16: Substitution chain:\n   17:   Step 1: anchor_presence = (6/6 audit_sha256 retrievable from on-disk verdict files)\n   18:   Step 2: anchors_1_5 = W11-128/W11-129/W11-130/W11-131/W11-132 (just emitted, S88)\n   19:           anchor_6 = S87-M2-STRUCTURAL-SOURCE-FOR-LAMBDA-SA-FINITE-L-RESIDUAL-LANDING (S87)\n   20:   Step 3: anchor_presence = TRUE (all 6 SHAs full-64-char on disk).\n   21:           Stage-2 independence = FALSE (solo execution; no separate cross-reviewer\n   22:           dispatch; structural-independence required by joint-theorem-promotion.md §\"Stage 2\"\n   23:           NOT satisfied) → Stage-2 verdict = INFO.\n   24:   Step 4: Composite verdict per plan §W11-133 line 343 = INFO (anchors complete;\n   25:           Stage-2 deferred to S89 proper cross-axis dispatch).\n   26: \n   27: Solo-mode honest disclosure: per `agent-standards.md §\"Completion Verification\"`\n   28: + `joint-theorem-promotion.md §\"Stage 2\"`, the protocol requires TWO INDEPENDENT\n   29: cross-reviewers on DIFFERENT axes operating WITHOUT prior workshop context. In\n   30: /rclab-solo mode, the orchestrator is one thread; while corpus-loading per"
+    },
+    {
+      "anchor_id": "prov_2124",
+      "anchor_type": "data_provenance",
+      "name": "w11_windowed_pv_subtraction_as_sd_refinement",
+      "script_path": "session-88/s88_w11_windowed_pv_subtraction_as_sd_refinement.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-88/s88_w11_windowed_pv_subtraction_as_sd_refinement.py",
+      "source_context_30_lines": "<name 'w11_windowed_pv_subtraction_as_sd_refinement' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S88 W11-134 — S88-WINDOWED-PV-SUBTRACTION-AS-SD-REFINEMENT\n    4: \n    5: Plan §W11-134 [CLOSED-IN-SESSION; documentation only; no compute].\n    6: HK-2 (windowed-PV subtraction as SD-refinement) closed in-session via\n    7: W1b-1 PV recalibration result + W11-121 mpmath identity verification.\n    8: \n    9: Method: documentation-only registry-pointer at\n   10:   sessions/permanent-results-registry.md §VII.K-PROP-HK-2-WINDOWED-PV-AS-SD-REFINEMENT\n   11: cross-linking:\n   12:   - W1b-1 PV recalibration verdict (S87 `S87-PV-SUBTRACTION-RECALIBRATION: FAIL value=1.292e-06`)\n   13:   - W11-121 mpmath verification verdict (S88 `S88-PV-SCHEME-MPMATH-MELLIN-DIRICHLET-VERIFY: PASS`\n   14:     value 7.7e-44 — identity holds at structural precision; W1b-1 residual was QUADRATURE-BOUNDED).\n   15: \n   16: Per `mechanical-closure-discipline.md`, documentation-only closure is\n   17: acceptable iff (a) closing rule pre-registered in plan + (b) cross-links\n   18: present + (c) verdict line emitted with audit_sha256.\n   19: \n   20: PASS iff (a) ∧ (b) ∧ (c). FAIL iff cross-links missing or registry pointer\n   21: not landed.\n   22: \n   23: Substitution chain:\n   24:   Step 1 — Definition. HK-2 = windowed-PV subtraction. Plan hypothesis:\n   25:     HK-2 is structurally a Seeley-DeWitt scheme refinement (NOT a distinct\n   26:     regulator class).\n   27:   Step 2 — Substitute. W11-121 PASS (residual 7.7e-44 at mpmath dps=50)\n   28:     confirms the W1b-1 1.292e-06 residual is quadrature-bounded (38 OOM\n   29:     above structural floor) ⇒ identity holds in PV scheme structurally\n   30:     ⇒ windowed-PV is SD-refinement, not a new regulator."
+    },
+    {
+      "anchor_id": "prov_2125",
+      "anchor_type": "data_provenance",
+      "name": "w12_137_orchestrator_aggregate",
+      "script_path": "session-88/s88_w12_137_orchestrator_aggregate.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-88/s88_w12_137_orchestrator_aggregate.py",
+      "source_context_30_lines": "<name 'w12_137_orchestrator_aggregate' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: S88 W12-137 Orchestrator Aggregator — PASS-AND on JOINT clauses\n    3: =================================================================\n    4: \n    5: Reads the two Stage-2 cross-reviewer JSON sidecars (Axis-A mack + Axis-B\n    6: connes) and emits the aggregate §W12-137 verdict line per\n    7: `.claude/rules/joint-theorem-promotion.md` §Stage-2 PASS-AND aggregation\n    8: on JOINT clauses (e) and (f).\n    9: \n   10: Per-clause inputs (recorded in each agent's JSON sidecar; this script\n   11: re-loads from disk to verify):\n   12: - Axis-A (mack-cosmic-bridge): (a) INFO σ-floor label defect, (b) PASS,\n   13:   (e) JOINT PASS, (f) JOINT PASS.\n   14: - Axis-B (connes-ncg-theorist): (c) PASS, (d) INFO labelling defect,\n   15:   (e) JOINT PASS, (f) JOINT PASS.\n   16: \n   17: PASS-AND on JOINT clauses (e) and (f): BOTH PASS in BOTH axes → JOINT-\n   18: PASS confirmed at both reviewers independently (no shared workshop\n   19: context).\n   20: \n   21: Stage-1 → Stage-3 promotion blocking: 2 single-axis clauses returned\n   22: INFO (clause (a) at mack, clause (d) at connes). Per\n   23: `joint-theorem-promotion.md` §Stage-2 condition: \"any clause INFO in\n   24: either reviewer ⇒ promotion stays Stage-1; INFO clause documented as\n   25: Stage-2-INFO-deferred\". Promotion BLOCKED; theorem stays\n   26: STAGE-1-CANDIDATE with two Stage-2-INFO-deferred items.\n   27: \n   28: Composite-collapse per `gate-verdicts.md` §\"Composite-collapse rule\":\n   29: - regime_verdict = VALID (Stage-2 protocol fully satisfied per\n   30:   cross-reviewer dispatch + no-prior-workshop-context per"
+    },
+    {
+      "anchor_id": "prov_2126",
+      "anchor_type": "data_provenance",
+      "name": "w12_137_stage2_axis_a_mack",
+      "script_path": "session-88/s88_w12_137_stage2_axis_a_mack.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-88/s88_w12_137_stage2_axis_a_mack.py",
+      "source_context_30_lines": "  409:     \"input_pin_map\": input_pin_map,\n  410:     \"audit_sha256\": audit_sha256,\n  411:     \"verdict_line_emitted_by_orchestrator\": True,\n  412:     \"verdict_line_self_emitted\": False,\n  413:     \"wp_section_self_written\": False,\n  414:     \"wp_section_path_when_orchestrator_writes\": \"sessions/session-88/session-88-w12-workingpaper.md §W12-137\",\n  415: }\n  416: \n  417: JSON_OUT = _REPO_ROOT / \"computations/session-88/s88_w12_137_stage2_axis_a_mack.json\"\n  418: with open(JSON_OUT, \"w\", encoding=\"utf-8\") as f:\n  419:     json.dump(output, f, indent=2)\n  420: print(f\"\\nJSON sidecar written: {JSON_OUT}\")\n  421: \n  422: # Print per-clause summary\n  423: print(\"\\n\" + \"=\" * 78)\n  424: print(\"AXIS-A PER-CLAUSE SUMMARY\")\n  425: print(\"=\" * 78)"
+    },
+    {
+      "anchor_id": "prov_2127",
+      "anchor_type": "data_provenance",
+      "name": "w12_137_stage2_axis_b_connes",
+      "script_path": "session-88/s88_w12_137_stage2_axis_b_connes.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-88/s88_w12_137_stage2_axis_b_connes.py",
+      "source_context_30_lines": "   30:   (d) Single-axis: algebra-axis orthogonality between regulator-class\n   31:       observables (Path-H / Path-C) at the algebra-INVARIANT vs\n   32:       algebra-DEPENDENT corner-cell taxonomy MANDATORY at K=3.\n   33:   (e) JOINT: joint-discriminator construction reconciling the 54-decade\n   34:       k-scale separation under axis-orthogonality.\n   35:   (f) JOINT: Fisher matrix block-diagonality under regulator-pin tagging.\n   36: \n   37: Output:\n   38:   computations/session-88/s88_w12_137_stage2_axis_b_connes.json\n   39:     {per-clause verdict + rationale + cited sources + closure SHA}\n   40: \n   41: The aggregate verdict line for §W12-137 is emitted by the orchestrator\n   42: AFTER both Axis-A and Axis-B JSONs land. This script does NOT emit a\n   43: verdict line.\n   44: \n   45: Rules followed:\n   46:   - epistemic-discipline.md §\"What Counts as Evidence\" — verdicts are"
+    },
+    {
+      "anchor_id": "prov_2128",
+      "anchor_type": "data_provenance",
+      "name": "w12_139_140_mechanical_closure",
+      "script_path": "session-88/s88_w12_139_140_mechanical_closure.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-88/s88_w12_139_140_mechanical_closure.py",
+      "source_context_30_lines": "<name 'w12_139_140_mechanical_closure' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: S88 W12-139 + W12-140 — Combined Mechanical-Closure Audit\n    3: ============================================================\n    4: \n    5: Two-gate combined audit for the two PRE-REG-INC mechanical-closure gates\n    6: remaining after §W12-138's plan-source-drift closure.\n    7: \n    8: Gates:\n    9:   - §W12-139 S88-EE-BB-T-CROSS-CORRELATION-DIRECT-CSUB-PROBE\n   10:     Prereq: §VII.AJ.W4-1 cross-pillar 3-channel theorem PASS-conditional\n   11:   - §W12-140 S88-F-NL-EQUILATERAL-NON-GAUSSIANITY\n   12:     Prereq: W4-3 f_NL^folded language correction\n   13: \n   14: Per knowledge-MCP audit:\n   15:   - §VII.AJ.W4-1 prereq → S87-CROSS-PILLAR-3-CHANNEL-THEOREM-PROOF\n   16:     closed at S87 with verdict INFO (value=1.0e-2; scheme=3-channel-x-\n   17:     3-pillar-Connes-Karoubi; convention=substrate-distance-anchored-\n   18:     Mellin). NOT a PASS-conditional landing. Plan §W12-139 condition\n   19:     \"PASS-conditional landed\" UNSATISFIED.\n   20:   - W4-3 prereq → S87-F-NL-FOLDED-W14-4-LANGUAGE-CORRECTION closed at\n   21:     S87 with verdict FAIL (value='byte-exact_replacement_blocked_by_\n   22:     class-c_PIN-DRIFT-FROM-STALE-SOURCE_plan-cited-locked-text-source-\n   23:     absent'). Plan §W12-140 condition \"W4-3 landed\" UNSATISFIED.\n   24: \n   25: Both prereqs UNSATISFIED → mechanical-closure protocol fires for both\n   26: gates per `.claude/rules/mechanical-closure-discipline.md` §\"When\n   27: mechanical closure IS acceptable\" condition 1.\n   28: \n   29: Per-gate-distinct audit_sha256 enforced via per-gate identity keys\n   30: (gate_id, wp_id, scheme, convention) in each input-pin map per"
+    },
+    {
+      "anchor_id": "prov_2129",
+      "anchor_type": "data_provenance",
+      "name": "w12_141_orchestrator_aggregate",
+      "script_path": "session-88/s88_w12_141_orchestrator_aggregate.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-88/s88_w12_141_orchestrator_aggregate.py",
+      "source_context_30_lines": "<name 'w12_141_orchestrator_aggregate' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: S88 W12-141 Orchestrator Aggregator — Stage-3 Promotion\n    3: =========================================================\n    4: \n    5: PASS-AND on JOINT clauses (c) + (d) for Joint F_2-Class Path-(c) Theorem\n    6: (§VII.AH STAGE-1-CANDIDATE).\n    7: \n    8: Axis-A connes: ALL FOUR clauses PASS.\n    9: Axis-B kaku:   ALL FOUR clauses PASS (with INFO-flag on Corrigendum-2\n   10:               s=4 sub-claim, |ρ_S(s=4)|=0.7746 outside the [0.85, 1.0]\n   11:               band; per Corrigendum 2's explicit s=3 scoping this does\n   12:               NOT invalidate the core clause (c)+(d) verdicts).\n   13: \n   14: PASS-AND:\n   15: - (a) Axis-A PASS, no Axis-B → ax-A solo\n   16: - (b) — / Axis-B PASS → ax-B solo\n   17: - (c) JOINT: Axis-A PASS + Axis-B PASS → JOINT PASS\n   18: - (d) JOINT: Axis-A PASS + Axis-B PASS → JOINT PASS\n   19: - (e) Axis-A PASS, no Axis-B → ax-A solo\n   20: - (f) — / Axis-B PASS → ax-B solo\n   21: \n   22: All single-axis clauses PASS in their respective axis; JOINT clauses\n   23: PASS-AND in BOTH ⇒ STAGE-3-PERMANENT promotion fires per\n   24: joint-theorem-promotion.md §Stage-2 PASS criterion.\n   25: \n   26: Composite: PASS (regime=VALID, magnitude=PASS, sign=N/A).\n   27: \"\"\"\n   28: \n   29: import hashlib\n   30: import json"
+    },
+    {
+      "anchor_id": "prov_2130",
+      "anchor_type": "data_provenance",
+      "name": "w12_141_stage2_axis_a_connes",
+      "script_path": "session-88/s88_w12_141_stage2_axis_a_connes.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-88/s88_w12_141_stage2_axis_a_connes.py",
+      "source_context_30_lines": "   43: \"\"\"\n   44: \n   45: import hashlib\n   46: import json\n   47: import sys\n   48: from pathlib import Path\n   49: \n   50: # Project-root detection; this script lives at\n   51: # computations/session-88/s88_w12_141_stage2_axis_a_connes.py\n   52: SCRIPT_DIR = Path(__file__).resolve().parent\n   53: PROJECT_ROOT = SCRIPT_DIR.parent.parent  # (local)\n   54: SHARED_DIR = PROJECT_ROOT / \"computations\" / \"_shared\"  # (local)\n   55: sys.path.insert(0, str(SHARED_DIR))\n   56: \n   57: # pylint: disable=wrong-import-position\n   58: from canonical_constants import xi_E_GGE_inv, tau_fold\n   59: "
+    }
+  ]
+}

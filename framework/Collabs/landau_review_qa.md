@@ -21,7 +21,7 @@ I identify three errors (one moderate, two minor), four omissions (two significa
 
 The central identification -- SU(3) under Jensen deformation IS a phononic crystal (S41) -- is correctly stated and correctly deployed throughout. The branch classification (B1 acoustic, B2 flat-optical, B3 dispersive-optical) is used consistently with the established S31Ca labeling. The spectral action = phonon free energy identification (Section V.C) is mathematically exact: the spectral action Tr f(D^2/Lambda^2) IS the one-body partition function of the phononic crystal, evaluated at the test function f.
 
-The mapping table (Section I) correctly distinguishes between PROVEN results (computed to machine precision), STRUCTURAL results (exact mathematical identification with unexplored consequences), and OPEN results (mapping exists, quantitative prediction unconfirmed). This three-tier epistemology is precisely right for a living classification document.
+The mapping table (Section I) correctly distinguishes between PROVEN results (computed to machine precision), STRUCTURAL results (exact mathematical identification with unexplored consequences), and OPEN results (mapping exists, quantitative prediction unconfirmed). This three-level epistemology is precisely right for a living classification document.
 
 ### 1.2 What Requires Correction
 

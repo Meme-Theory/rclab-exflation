@@ -1,0 +1,252 @@
+========================================================================
+FIRAS-GGE-54: CMB Non-Thermality Suppression Factor
+========================================================================
+
+--- SECTION 0: FIRAS Constraint ---
+FIRAS 95% CL: delta_T/T < 6.0e-05
+T_CMB = 2.7255 K = 2.3487e-13 GeV
+
+--- SECTION 1: Internal GGE Non-Thermality ---
+GGE temperatures (M_KK units):
+  T_B2 = 0.668 (4 modes)
+  T_B1 = 0.435 (1 mode)
+  T_B3 = 0.178 (3 modes)
+  T_mean = 0.4551
+  T_max = 0.668, T_min = 0.178
+
+  w_k = T_k / T_mean: [1.46772865 1.46772865 1.46772865 1.46772865 0.95578138 0.39110135
+ 0.39110135 0.39110135]
+  w range: [0.3911, 1.4677]
+
+  delta_T_internal / T = (T_max - T_min) / (2*T_mean) = 0.5383
+  sigma(T) / T_mean (CV) = 0.4987
+
+  Internal non-thermality: 53.8%
+  (S53 W1-5 reported w range 0.158-0.202 -> ~12%)
+
+--- SECTION 2: Mechanism Analysis ---
+
+QUESTION: What suppresses the internal 12% non-thermality to < 6e-5?
+
+There are exactly three possible suppression mechanisms:
+
+  (A) CELL AVERAGING: If different Voronoi cells have different GGE states,
+      the KK integral averages over them.
+      Suppression: 1/sqrt(N_cells) = 1/sqrt(32) ~ 0.18
+
+  (B) MODE AVERAGING: The 8 BCS modes have different temperatures.
+      The 4D energy density is the SUM over all modes.
+      Individual mode fluctuations average down by 1/sqrt(N_dof).
+      Suppression: 1/sqrt(N_dof_BCS) = 1/sqrt(8) ~ 0.35
+
+  (C) KK SPECTRAL AVERAGING: The full Dirac spectrum has many more modes.
+      The total 4D energy density sums over ALL KK modes.
+      Only 8 BCS modes are non-thermal; the rest (10,000+) are thermal.
+      Suppression: N_BCS / N_total_modes ~ 8 / N_total
+
+Let me evaluate each.
+
+  MECHANISM A: Cell Averaging
+  N_cells = 32
+  Volume-preserving TT: all cells have EQUAL volume (S12)
+  BUT: the GGE is a GLOBAL state of the BCS condensate.
+  ALL cells have the SAME GGE distribution — the transit is
+  spatially homogeneous on the internal manifold (no spatial
+  domain structure — coherence length >> cell size, S37).
+  L/xi_GL = 0.031 (S37). The condensate is a SINGLE domain.
+  Cell averaging suppression: NONE (factor 1.0)
+
+  MECHANISM B: Mode Averaging
+  N_dof_BCS = 8
+  The 4D energy density sums over 8 BCS modes.
+  Mode averaging would give 1/sqrt(8) = 0.3536
+  BUT: 8 Richardson-Gaudin integrals CONSTRAIN all 8 modes.
+  The system is EXACTLY INTEGRABLE (S38). Mode occupations are
+  deterministic functions of the 8 conserved charges.
+  No statistical averaging occurs — the mode asymmetry is LOCKED.
+  Mode averaging suppression: NONE (factor 1.0)
+
+  MECHANISM C: KK Spectral Dilution
+  Total Dirac eigenvalues in SA window: ~6440
+  Non-thermal BCS modes: 8
+  Dilution factor (mode count): 8/6440 = 1.2422e-03
+
+  BUT this is not the right calculation. The non-thermality
+  does not dilute by mode counting — it transmits through
+  the gravitational coupling to 4D.
+
+--- SECTION 3: Gravitational Coupling to CMB ---
+  rho_GGE = 3.7413e+68 GeV^4
+  Internal non-thermality = 0.5383
+  delta_rho_internal = 2.0140e+68 GeV^4
+  rho_CMB = 2.0021e-51 GeV^4
+  T_CMB = 2.3487e-13 GeV
+
+  IMPORTANT: Comparing rho_GGE to rho_CMB is the CC problem.
+  delta_rho_internal / rho_CMB = 1.0059e+119
+  This is ~10^119 — the CC gap again, not a new constraint.
+
+--- SECTION 4: The Actual Physical Situation ---
+
+The question "how much does gravitational averaging suppress the GGE
+non-thermality?" rests on an assumption that needs examination.
+
+ASSUMPTION: The 4D observer sees a REDUCED version of the internal
+non-thermality, diluted by the KK averaging.
+
+REALITY: The KK reduction is NOT statistical averaging. It is a
+deterministic integral over the internal manifold:
+
+  rho_4D = (1/V_K) * integral_K rho_8D(x, y) * sqrt(g_K) d^8y
+
+If rho_8D(x, y) = rho_8D(x) (no y-dependence), the integral is trivial:
+  rho_4D = rho_8D
+
+The GGE is a QUANTUM state, not a classical field. It does not have
+spatial variation on the internal manifold (L/xi_GL = 0.031, S37).
+The 32 cells are in the SAME quantum state.
+
+Therefore: the KK volume integral provides NO suppression of the
+non-thermality. The internal non-thermality transmits to 4D AT FULL
+STRENGTH through the Einstein equation.
+
+--- SECTION 5: Systematic Suppression Factors ---
+  Suppression Factor Analysis:
+
+  S_cell (cell averaging)    = 1.0 (GGE is coherent)
+  S_mode (mode averaging)    = 1.0 (integrability locks)
+  S_KK   (KK volume)         = 1.0 (no y-dependence)
+
+  HOWEVER: The question is malformed.
+  The internal non-thermality is a CONSTANT, ISOTROPIC contribution
+  to the vacuum energy. It does NOT create CMB spectral distortions.
+  The coupling is purely gravitational (metric-only).
+  A constant, isotropic stress-energy -> FRW metric -> perfect BB.
+
+  The SPECTRAL non-thermality of the BCS modes lives in the
+  internal Hilbert space. It is invisible to 4D photons.
+
+--- SECTION 6: Legitimate Concerns ---
+
+Concern 1: The GGE affects the EXPANSION HISTORY, not the CMB spectrum.
+  If the GGE energy density is rho_GGE ~ 10^68 GeV^4, this dominates
+  the expansion rate by 115 orders over the observed CC. This is the
+  CC PROBLEM, not a FIRAS problem. FIRAS constrains spectral distortions,
+  not the expansion rate.
+
+  STATUS: The CC problem is S53's result. FIRAS adds nothing new.
+
+Concern 2: The GGE might have a TIME-DEPENDENT component.
+  If the GGE energy evolves (e.g., through slow Josephson relaxation
+  or integrability-breaking perturbations), the time variation creates
+  a y-type spectral distortion:
+    y ~ (delta_rho/rho) * (dt / t_Compton)
+
+  From S53: tau_J = 2.97e-43 s (Josephson coupling time)
+  This is 6.8e-61 * t_universe — effectively zero.
+  Integrability breaking rate: Beliaev damping Q = 6.7e5 (S50)
+  -> Gamma_Beliaev ~ omega/Q ~ negligible
+
+  Even with maximal Josephson coupling:
+    delta_rho / rho ~ tau_J / t_universe ~ 10^{-60}
+    y ~ 10^{-60}
+
+  This is 55 orders below FIRAS. SAFE.
+
+Concern 3: Mode-dependent redshifting.
+  If different BCS modes redshift differently during expansion,
+  the mode asymmetry could evolve. But in the GGE framework,
+  all modes are at the KK scale and redshift identically
+  (same metric, same geometry). No differential redshift.
+
+  Josephson time variation: tau_J / t_universe = 6.83e-61
+  y-distortion estimate: y ~ 6.83e-61
+  FIRAS y-bound: |y| < 1.5e-5
+  Margin: 2.20e+55 (safely below)
+
+--- SECTION 7: Gate Verdict ---
+Most conservative estimate (hostile to framework):
+  Assume each Voronoi cell independently develops a GGE state
+  drawn from the temperature distribution {T_B2, T_B1, T_B3}.
+  This is PHYSICALLY UNJUSTIFIED (L/xi_GL = 0.031) but gives
+  the largest possible non-thermality in 4D.
+
+CONCLUSION:
+  The GGE internal non-thermality does NOT produce CMB spectral
+  distortions. The coupling channel (GGE -> CMB spectrum) does
+  not exist. The GGE affects only the expansion rate (CC problem).
+
+  The 4D photon thermalizes through QED processes independently
+  of the internal BCS mode temperatures.
+
+  Effective suppression factor: EFFECTIVELY ZERO
+  (bounded above by Josephson time variation: ~10^{-60})
+
+  Upper bound on observable delta_T/T:
+    = 0.5383 x 6.83e-61
+    = 3.68e-61
+  FIRAS bound: 6.0e-05
+  Margin: 1.63e+56
+
+  Required suppression factor: 8972x
+  Achieved suppression factor: >10^55 (no coupling channel)
+
+--- SECTION 8: Skeptical Assessment (Sagan) ---
+
+This is an ACCOMMODATION, not a prediction.
+
+The framework "passes" FIRAS because the non-thermal internal modes
+are gravitationally DECOUPLED from the CMB spectral shape. This is
+not a specific quantitative prediction — it is a structural feature
+of ANY Kaluza-Klein theory where the internal DOF do not directly
+couple to the photon field.
+
+Bayes factor analysis:
+  P(FIRAS-compatible | framework):
+    Yes, by standard KK decoupling. Any extra-dimensional theory
+    with internal modes that couple only gravitationally will
+    trivially satisfy FIRAS.
+
+  P(FIRAS-compatible | generic theory with extra dimensions):
+    Also yes, for the same reason.
+
+  Bayes factor: BF ~ 1.0 (no discriminating power)
+
+This gate is a CONSISTENCY CHECK, not a prediction.
+It verifies that the framework does not immediately violate a
+well-established observation, but does not distinguish the framework
+from any other KK theory.
+
+Compare to the Venus standard (Sagan, Paper 01):
+  Sagan's Venus prediction was SPECIFIC: T_surface > 600K from CO2
+  greenhouse effect, when the consensus was T ~ 300K.
+  The FIRAS check is GENERIC: any KK theory passes.
+
+The actually important constraint here is the CC PROBLEM:
+  rho_GGE = 3.74e68 GeV^4 vs rho_Lambda_obs = 2.7e-47 GeV^4
+  This is a 115-order discrepancy. FIRAS is irrelevant by comparison.
+
+========================================================================
+GATE VERDICT: FIRAS-GGE-54 = PASS
+========================================================================
+
+HEADLINE: FIRAS-compatible by KK decoupling. BF = 1.0 (accommodation).
+
+Key numbers:
+  Internal non-thermality: delta_T_internal/T = 0.5383 (53.8%)
+  GGE temperatures: T_B2=0.668, T_B1=0.435, T_B3=0.178 (M_KK)
+  Coupling channel (GGE -> CMB spectrum): DOES NOT EXIST
+  Reason: isotropic+constant stress-energy -> FRW -> perfect BB
+  Upper bound from Josephson time variation: delta_T/T < 3.68e-61
+  FIRAS bound: delta_T/T < 6.0e-05
+  Margin: >55 orders of magnitude
+
+Classification: ACCOMMODATION (any KK theory passes)
+Bayes factor: BF ~ 1.0 (no discriminating power)
+
+The decisive constraint is the CC PROBLEM (115 orders), not FIRAS.
+
+Data saved: s54_firas_gge.npz
+Plot saved: s54_firas_gge.png
+
+Output will be captured by redirect.

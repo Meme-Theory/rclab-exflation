@@ -1,0 +1,109 @@
+==============================================================================
+S75-A1-H-PHYS: Effective Hubble at Perturbation Epoch vs. Fold Value
+==============================================================================
+
+--- SECTION 1: Input data ---
+  H_phys (S65 GM formula) = 0.404266 M_KK
+  eps_H_fold (S74)        = 0.021629
+  A_s gap (S74)           = 9.4716 OOM
+  M_Pl^2 (S74)            = 5.8601 M_KK^2
+
+  Per-branch horizon crossing (substrate tau units):
+    tau_cross(B3) = 13.1578  (c_B3 = 0.13965)
+    tau_cross(B1) = 18.0054  (c_B1 = 0.07980)
+    tau_cross(B2) = 112.4865  (c_B2 = 0.00200)
+    tau_fold       = 0.19
+    Ratio tau_cross/tau_fold: B3=69.3x, B1=94.8x, B2=592.0x
+
+  Spectral action data (16 tau points):
+    tau range: [0.0, 0.5]
+    a_2(tau_fold=0.19): interp = 2776.1654, canon = 2776.1654
+    S(tau_fold): interp = 250360.68, canon = 250360.68
+
+--- SECTION 2: Spectral coefficient evolution ---
+  a_2 power-law exponent gamma_a2 = 0.1764
+  (a_2(tau) ~ a2_fold * (tau_fold/tau)^0.176 for tau > tau_fold)
+    tau=0.22: exact=2747.95, power-law=2705.29, err=1.6%
+    tau=0.30: exact=2654.49, power-law=2561.26, err=3.5%
+    tau=0.50: exact=2324.76, power-law=2340.57, err=0.7%
+
+  Spectral action reconstruction coefficients:
+    f_0 = 1.486350, f_2 = 444.914265, f_4 = -736.174626
+    S_recon(tau_fold) = 250360.68, canon = 250360.68
+  a_4 power-law exponent gamma_a4 = 0.2608
+
+--- SECTION 3: Hubble rate evolution H(tau) ---
+  S_fold_recon   = 250360.68
+  a2_fold_recon  = 2776.1654
+
+  Two Hubble scales at fold:
+    H_fold  = 586.5268 M_KK (transit kinetic, KZ dynamics)
+    H_phys  = 0.404266 M_KK (GM formula, emergent physical)
+    Ratio   = 1450.84
+
+--- SECTION 4: H(tau_cross) and A_s ratio for each branch ---
+  dlnS_fold = 0.234353
+  K_norm    = 1.2482
+
+  Branch    tau_cross          H_A          H_B      eps_A      eps_B
+  -------- ---------- ------------ ------------ ---------- ----------
+  FOLD         0.1900     586.5268     586.5268   0.235360  -0.012460
+
+  CHK1: H_fold_A = 586.5268 M_KK, expected = 586.5268 M_KK -> PASS
+  CHK1: H_phys_s65 = 0.404266 M_KK (GM formula, different definition)
+  CHK2: a_2(tau_fold) = 2776.1654, expected = 2776.1654 -> PASS
+  B3          13.1578     0.122301   877.230228  32.991316  -0.000128
+  B1          18.0054     0.065312   892.231867  45.146055  -0.000087
+  B2         112.4865     0.001673   969.848150 282.044399  -0.000010
+
+--- SECTION 5: A_s(tau_cross) / A_s(tau_fold) ratios ---
+
+  Branch      H_ratio_A    H_ratio_B    A_s_ratio_A    A_s_ratio_B   log10(A)   log10(B)
+  -------- ------------ ------------ -------------- -------------- ---------- ----------
+  B3       2.085174e-04 1.495635e+00   3.101828e-10   2.180266e+02    -9.5084     2.3385
+  B1       1.113530e-04 1.521213e+00   6.464232e-11   3.318440e+02   -10.1895     2.5209
+  B2       2.853032e-06 1.653545e+00   6.792483e-15   3.538164e+03   -14.1680     3.5488
+
+  CHK3: A_s ratio at tau_fold = 1.000000 (Model A), 1.000000 (Model B) -> PASS (both = 1)
+  CHK4: tau=0.19: H_B^2 * a_2 = 9.55e+08, S = 2.50e+05, ratio = 3814.651764
+  CHK4: tau=0.30: H_B^2 * a_2 = 9.86e+08, S = 2.59e+05, ratio = 3814.651764
+  CHK4: tau=0.50: H_B^2 * a_2 = 1.07e+09, S = 2.80e+05, ratio = 3814.651764
+
+--- SECTION 6: Structural analysis of H reduction ---
+  B3: tau_cross/tau_fold = 69.3, geometric suppression = (tau_fold/tau_cross)^2 = 2.085174e-04, log10 = -3.6809
+  B1: tau_cross/tau_fold = 94.8, geometric suppression = (tau_fold/tau_cross)^2 = 1.113530e-04, log10 = -3.9533
+  B2: tau_cross/tau_fold = 592.0, geometric suppression = (tau_fold/tau_cross)^2 = 2.853032e-06, log10 = -5.5447
+
+  Dominant contribution analysis (Model A):
+  B3: H^2 contrib = -3.6809 OOM, eps contrib = -2.1467 OOM, total = -5.8275 OOM
+  B1: H^2 contrib = -3.9533 OOM, eps contrib = -2.2829 OOM, total = -6.2362 OOM
+  B2: H^2 contrib = -5.5447 OOM, eps contrib = -3.0786 OOM, total = -8.6233 OOM
+
+==============================================================================
+GATE VERDICT: S75-A1-H-PHYS
+==============================================================================
+
+  Model A (S74 power-law): best = -14.1680 OOM (B2)
+  Model B (spectral action): best = 2.3385 OOM (B3)
+
+  Gate: S75-A1-H-PHYS
+  Threshold: PASS < -3.0, INFO < -1.0, FAIL >= -1.0
+  Computed:  2.3385 OOM (conservative: Model B)
+  Verdict:   FAIL
+  Detail:    log10[A_s(tau_cross)/A_s(tau_fold)] = 2.3385 > -1.0. H_phys at perturbation epoch not significantly different from fold.
+
+  Per-branch log10[A_s ratio] (Model A / Model B):
+    B3: -9.5084 / 2.3385
+    B1: -10.1895 / 2.5209
+    B2: -14.1680 / 3.5488
+
+--- SECTION 8: Implications for A_s gap closure ---
+  B3: residual gap = -0.0368 (A) / 11.8101 (B) OOM
+  B1: residual gap = -0.7179 (A) / 11.9926 (B) OOM
+  B2: residual gap = -4.6963 (A) / 13.0204 (B) OOM
+
+--- SECTION 9: Generating plot ---
+  Plot saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s75_h_phys_reduction.png
+
+--- SECTION 10: Saving results ---
+  Data saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s75_h_phys_reduction.npz

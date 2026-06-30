@@ -1,0 +1,107 @@
+{
+  "table": "open_channels",
+  "batch_id": 42,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "open_411",
+      "anchor_type": "open_channels",
+      "name": "`S87-A-N-SEELEY-DEWITT-RETROFIT`",
+      "detail_1": "W0c-7 FAIL: 20,343 bare-a_n hits across 638 files",
+      "detail_2": "Per-file semantic review + tag SDW vs annotate NSDW",
+      "session": "86",
+      "source_file": "sessions\\session-86\\session-86-w0c-workingpaper.md",
+      "source_context_30_lines": "  958: ```\n  959: S86-W12-4-A_N-REGULATOR-PIN-DISCIPLINE: FAIL -- value='bare_a_n_count=20343_in_638_files' scheme=regulator_pin_audit convention=tagged_a_n L_max=N/A audit_sha256=16849308da83eae65074c504bd1c517141ba304230e30d04aa808f9a39c36787 content_sha256=ddeeea164e79faaf82f15ce71e3352de64bfa83a7324deb2fce36e6acf70c331 schema_version=S84+\n  960: ```\n  961: \n  962: (Mirror of `computations/s86_gate_verdicts.txt:27`. Full 64-char dual-SHA. The exact SHAs are visible in the verdict file; the line-pasted form here uses the runtime values.)\n  963: \n  964: **4-tuple**: `(value='bare_a_n_count=20343_in_638_files', scheme=regulator_pin_audit, convention=tagged_a_n, L_max=N/A)`\n  965: \n  966: **Disposition**: **FAIL — rule + audit-script landed (forward-looking compliance enabled); retrofit of 20k pre-existing bare-a_n hits queued for S87+ as `S87-A-N-SEELEY-DEWITT-RETROFIT`.** PROHIBITED_ACTIONS.4 (ansatz-forced PASS) prevents bulk auto-tagging of 20k violations as Seeley-DeWitt without per-script semantic review (most are non-Seeley-DeWitt: plain variables, lattice spacings, generic indices). The rule applies to NEW (post-2026-04-26) files; the audit's `--new-only` flag enforces it on new-file authorship.\n  967: \n  968: #### Results\n  969: \n  970: ##### (a) Pre-pass audit population\n  971: \n  972: | Metric | Value |\n  973: |:-------|:------|\n  974: | Files scanned (`computations/**/*.py` + `computations/**/*.py`) | 2,114 |"
+    },
+    {
+      "anchor_id": "open_412",
+      "anchor_type": "open_channels",
+      "name": "SM A_F",
+      "detail_1": "C ⊕ H ⊕ M_3(C)",
+      "detail_2": "1 + 4 + 18",
+      "session": "87",
+      "source_file": "sessions\\session-87\\session-87-results-workingpaper.md",
+      "source_context_30_lines": " 1925: \n 1926: ---\n 1927: \n 1928: ### §W1b-5. S87-PS-AF-RECALIBRATION-DIAGNOSTIC (gen-physicist, OPEN-Q)\n 1929: \n 1930: **Status**: COMPLETE (2026-04-28)\n 1931: **Gate ID**: `S87-PS-AF-RECALIBRATION-DIAGNOSTIC`\n 1932: **Trigger**: `[VERIFY]` (OPEN-Q diagnostic; bidirectional, no pre-registered sign)\n 1933: **Classification**: **GEOMETRIC** (Pati-Salam A_F finite-triple recalibration diagnostic; n=0 spectral-action growth factor under A_F = M_2(H) ⊕ M_4(C) vs SM A_F = C ⊕ H ⊕ M_3(C))\n 1934: **Agent**: `gen-physicist`\n 1935: **Hypothesis**: Recalibrating substrate A_F from SM `(C ⊕ H ⊕ M_3(C))` to PS `(M_2(H) ⊕ M_4(C))` shifts the n=0 growth factor below the 100× SM baseline at L_max=10. Bands: PASS `ratio < 1`; INFO `ratio ∈ [1, 5]`; FAIL `ratio > 5` OR Connes-Chamseddine 1996 axiom breach.\n 1936: **Plan reference**: `sessions/session-plan/session-87-plan-w1b.md` §W1b-5.\n 1937: \n 1938: **Substrate framing**: A_F is the substrate's OWN finite-spectral-triple algebra at the substrate-IS level. The diagnostic asks **which A_F the substrate IS** at the L_max=10 truncation — not \"which GUT extension to add to QFT-in-curved-spacetime\". Direction of explanation: D_K eigenvalues → A_F multiplet branching W_AF(p,q) → zeroth Mellin moment M_0^ζ → growth factor M_0^ζ(L=10) / M_0^ζ(L=5). PS is a structural-algebra alternative on the substrate, not an emergent extension.\n 1939: \n 1940: **MCP Pre-Compute Audit**:\n 1941: - `mcp__knowledge__search_knowledge(\"Pati-Salam A_F finite-triple\")` → \n... [truncated]"
+    },
+    {
+      "anchor_id": "open_413",
+      "anchor_type": "open_channels",
+      "name": "PS A_F",
+      "detail_1": "M_2(H) ⊕ M_4(C)",
+      "detail_2": "8 + 32",
+      "session": "87",
+      "source_file": "sessions\\session-87\\session-87-results-workingpaper.md",
+      "source_context_30_lines": " 1939: \n 1940: **MCP Pre-Compute Audit**:\n 1941: - `mcp__knowledge__search_knowledge(\"Pati-Salam A_F finite-triple\")` → 10 hits. Canonical anchor: theorem entry \"CCM 2007 finite-triple structure: A_F = ℂ ⊕ ℍ ⊕ M_3(ℂ), KO-dim 6, ε signs\" (PROVEN). Open-channel `Pati-Salam extension` (S85): `A_PS = H_R + H_L + M_4(C)`, `dim_R(PS_A_F) = 6 + 6 + 16 = 28 = 0 mod 2` (alternative convention; ratio-equivalent to plan's `M_2(H) ⊕ M_4(C)`). Prior scripts: `s62_pati_salam_extension.py` (`dim(Omega^1_D(A_F)) = 342 = 173 + 169`, `Dim(H_F)_SM = 32·N_gen = 96`) and `s78_pati_salam_further.py`. NOT PRE-CLOSED.\n 1942: - `mcp__knowledge__search_knowledge(\"n=0 spectral-action growth factor\")` → CF-12 anchor confirmed: `M_0^ζ(L=5) = 3.93e+05 → M_0^ζ(L=10) = 9.38e+07, growth = 238.7×` (`s86-mellin-cone-repair-or-no-go.md` §966); diagnostic threshold = 100×. Cross-class context: SDW = 223.6×, Zubarev = 218.3×. **Pre-existing structural caveat** (id. line, \"PS recalibration\"): \"M2-failure persists under any finite truncation regardless of finite-fiber algebra; PS recalibration ≠ refutation of the no-go theorem.\" This pre-frames the diagnostic as a SHIFT-MAGNITUDE measurement, NOT a no-go-overturning gate.\n 1943: - `mcp__knowledge__search_knowledge(\"Connes-Chamseddine 1996 finite spectral triple\")` → theorem \"CC 1996 §2.2-§2.3 multiplier-vector grading\" (PROVEN, permanent registry); equation entries confirm `A_F = C ⊕ H ⊕ M_3(C)` is the Standard-Model finite triple per Chamseddine-Connes-Marcolli 20\n... [truncated]"
+    },
+    {
+      "anchor_id": "open_414",
+      "anchor_type": "open_channels",
+      "name": "L_max=5 abs_evals",
+      "detail_1": "6,048 (Weyl-mult 159,936)",
+      "detail_2": "(same spectrum)",
+      "session": "87",
+      "source_file": "sessions\\session-87\\session-87-results-workingpaper.md",
+      "source_context_30_lines": " 1975: | PS A_F  | M_2(H) ⊕ M_4(C) | 8 + 32 | **40** | 48 (full M_2(H)_R + M_4(C)_R) |\n 1976: \n 1977: Naive trace ratio: `Tr(A_F_PS) / Tr(A_F_SM) = 40 / 22 = 1.8182` (the plan's substitution chain Step 2 baseline).\n 1978: \n 1979: **n=0 ζ-regulator growth factor table** (M_KK-normalized eigenvalues from `s84_spectrum_cache_L12_tau019.npz`; sectors `(p,q)` with level ≤ L):\n 1980: \n 1981: | Quantity | SM A_F (computed) | PS A_F (computed) | SM CF-12 anchor (S86 mellin-cone) |\n 1982: |:---------|:------------------|:------------------|:----------------------------------|\n 1983: | L_max=5 abs_evals | 6,048 (Weyl-mult 159,936) | (same spectrum) | — |\n 1984: | L_max=10 abs_evals | 78,080 (Weyl-mult 9,535,776) | (same spectrum) | — |\n 1985: | M_0^ζ(L=5) | 2.2834e+04 | 4.2316e+04 | 3.93e+05 |\n 1986: | M_0^ζ(L=10) | 3.5024e+04 | 6.5233e+04 | 9.38e+07 |\n 1987: | growth_0(ζ) = M_0^ζ(L=10)/M_0^ζ(L=5) | **1.5338×** | **1.5416×** | **238.7×** |\n 1988: \n 1989: **Reconciling the SM-anchor disparity** (1.5338× vs 238.7×): the SM CF-12 anchor (238.7×) is the n=0 growth factor under the Mellin-cone workshop's regulator-class convention `f(λ) ~ λ^{-2s}` evaluated at the s=0 substrate-distance pole, integrated over the workshop's cumulative-multiplicity sector counting. This gate's controlled diagnostic uses the Gaussian ζ-class kernel `f(λ) = exp(-λ²)` on the same `s84_spectrum_cache_L12_tau019.npz` at M_KK-normalized scale, giving a much smaller absolute number because the Gaussian decays fast o\n... [truncated]"
+    },
+    {
+      "anchor_id": "open_415",
+      "anchor_type": "open_channels",
+      "name": "L_max=10 abs_evals",
+      "detail_1": "78,080 (Weyl-mult 9,535,776)",
+      "detail_2": "(same spectrum)",
+      "session": "87",
+      "source_file": "sessions\\session-87\\session-87-results-workingpaper.md",
+      "source_context_30_lines": " 1976: \n 1977: Naive trace ratio: `Tr(A_F_PS) / Tr(A_F_SM) = 40 / 22 = 1.8182` (the plan's substitution chain Step 2 baseline).\n 1978: \n 1979: **n=0 ζ-regulator growth factor table** (M_KK-normalized eigenvalues from `s84_spectrum_cache_L12_tau019.npz`; sectors `(p,q)` with level ≤ L):\n 1980: \n 1981: | Quantity | SM A_F (computed) | PS A_F (computed) | SM CF-12 anchor (S86 mellin-cone) |\n 1982: |:---------|:------------------|:------------------|:----------------------------------|\n 1983: | L_max=5 abs_evals | 6,048 (Weyl-mult 159,936) | (same spectrum) | — |\n 1984: | L_max=10 abs_evals | 78,080 (Weyl-mult 9,535,776) | (same spectrum) | — |\n 1985: | M_0^ζ(L=5) | 2.2834e+04 | 4.2316e+04 | 3.93e+05 |\n 1986: | M_0^ζ(L=10) | 3.5024e+04 | 6.5233e+04 | 9.38e+07 |\n 1987: | growth_0(ζ) = M_0^ζ(L=10)/M_0^ζ(L=5) | **1.5338×** | **1.5416×** | **238.7×** |\n 1988: \n 1989: **Reconciling the SM-anchor disparity** (1.5338× vs 238.7×): the SM CF-12 anchor (238.7×) is the n=0 growth factor under the Mellin-cone workshop's regulator-class convention `f(λ) ~ λ^{-2s}` evaluated at the s=0 substrate-distance pole, integrated over the workshop's cumulative-multiplicity sector counting. This gate's controlled diagnostic uses the Gaussian ζ-class kernel `f(λ) = exp(-λ²)` on the same `s84_spectrum_cache_L12_tau019.npz` at M_KK-normalized scale, giving a much smaller absolute number because the Gaussian decays fast on the cache's |λ| ∈ [0.82, ≳5] support. **Both SM and PS values are computed under the \n... [truncated]"
+    },
+    {
+      "anchor_id": "open_416",
+      "anchor_type": "open_channels",
+      "name": "M_0^ζ(L=10)",
+      "detail_1": "3.5024e+04",
+      "detail_2": "6.5233e+04",
+      "session": "87",
+      "source_file": "sessions\\session-87\\session-87-results-workingpaper.md",
+      "source_context_30_lines": " 1930: **Status**: COMPLETE (2026-04-28)\n 1931: **Gate ID**: `S87-PS-AF-RECALIBRATION-DIAGNOSTIC`\n 1932: **Trigger**: `[VERIFY]` (OPEN-Q diagnostic; bidirectional, no pre-registered sign)\n 1933: **Classification**: **GEOMETRIC** (Pati-Salam A_F finite-triple recalibration diagnostic; n=0 spectral-action growth factor under A_F = M_2(H) ⊕ M_4(C) vs SM A_F = C ⊕ H ⊕ M_3(C))\n 1934: **Agent**: `gen-physicist`\n 1935: **Hypothesis**: Recalibrating substrate A_F from SM `(C ⊕ H ⊕ M_3(C))` to PS `(M_2(H) ⊕ M_4(C))` shifts the n=0 growth factor below the 100× SM baseline at L_max=10. Bands: PASS `ratio < 1`; INFO `ratio ∈ [1, 5]`; FAIL `ratio > 5` OR Connes-Chamseddine 1996 axiom breach.\n 1936: **Plan reference**: `sessions/session-plan/session-87-plan-w1b.md` §W1b-5.\n 1937: \n 1938: **Substrate framing**: A_F is the substrate's OWN finite-spectral-triple algebra at the substrate-IS level. The diagnostic asks **which A_F the substrate IS** at the L_max=10 truncation — not \"which GUT extension to add to QFT-in-curved-spacetime\". Direction of explanation: D_K eigenvalues → A_F multiplet branching W_AF(p,q) → zeroth Mellin moment M_0^ζ → growth factor M_0^ζ(L=10) / M_0^ζ(L=5). PS is a structural-algebra alternative on the substrate, not an emergent extension.\n 1939: \n 1940: **MCP Pre-Compute Audit**:\n 1941: - `mcp__knowledge__search_knowledge(\"Pati-Salam A_F finite-triple\")` → 10 hits. Canonical anchor: theorem entry \"CCM 2007 finite-triple structure: A_F = ℂ ⊕ ℍ ⊕ M_3(ℂ), KO-dim 6, ε sig\n... [truncated]"
+    },
+    {
+      "anchor_id": "open_417",
+      "anchor_type": "open_channels",
+      "name": "growth_0(ζ) = M_0^ζ(L=10)/M_0^ζ(L=5)",
+      "detail_1": "1.5338×",
+      "detail_2": "1.5416×",
+      "session": "87",
+      "source_file": "sessions\\session-87\\session-87-results-workingpaper.md",
+      "source_context_30_lines": " 1979: **n=0 ζ-regulator growth factor table** (M_KK-normalized eigenvalues from `s84_spectrum_cache_L12_tau019.npz`; sectors `(p,q)` with level ≤ L):\n 1980: \n 1981: | Quantity | SM A_F (computed) | PS A_F (computed) | SM CF-12 anchor (S86 mellin-cone) |\n 1982: |:---------|:------------------|:------------------|:----------------------------------|\n 1983: | L_max=5 abs_evals | 6,048 (Weyl-mult 159,936) | (same spectrum) | — |\n 1984: | L_max=10 abs_evals | 78,080 (Weyl-mult 9,535,776) | (same spectrum) | — |\n 1985: | M_0^ζ(L=5) | 2.2834e+04 | 4.2316e+04 | 3.93e+05 |\n 1986: | M_0^ζ(L=10) | 3.5024e+04 | 6.5233e+04 | 9.38e+07 |\n 1987: | growth_0(ζ) = M_0^ζ(L=10)/M_0^ζ(L=5) | **1.5338×** | **1.5416×** | **238.7×** |\n 1988: \n 1989: **Reconciling the SM-anchor disparity** (1.5338× vs 238.7×): the SM CF-12 anchor (238.7×) is the n=0 growth factor under the Mellin-cone workshop's regulator-class convention `f(λ) ~ λ^{-2s}` evaluated at the s=0 substrate-distance pole, integrated over the workshop's cumulative-multiplicity sector counting. This gate's controlled diagnostic uses the Gaussian ζ-class kernel `f(λ) = exp(-λ²)` on the same `s84_spectrum_cache_L12_tau019.npz` at M_KK-normalized scale, giving a much smaller absolute number because the Gaussian decays fast on the cache's |λ| ∈ [0.82, ≳5] support. **Both SM and PS values are computed under the SAME regulator convention on the SAME cache**, so the SM/PS ratio is a controlled diagnostic; the absolute scale disparity vs CF-12 anch\n... [truncated]"
+    },
+    {
+      "anchor_id": "open_418",
+      "anchor_type": "open_channels",
+      "name": "`ratio_PS_anchor = growth_PS / 238.7`",
+      "detail_1": "0.006458",
+      "detail_2": "< 1 → satisfies PASS-magnitude on anchor axis",
+      "session": "87",
+      "source_file": "sessions\\session-87\\session-87-results-workingpaper.md",
+      "source_context_30_lines": " 1987: | growth_0(ζ) = M_0^ζ(L=10)/M_0^ζ(L=5) | **1.5338×** | **1.5416×** | **238.7×** |\n 1988: \n 1989: **Reconciling the SM-anchor disparity** (1.5338× vs 238.7×): the SM CF-12 anchor (238.7×) is the n=0 growth factor under the Mellin-cone workshop's regulator-class convention `f(λ) ~ λ^{-2s}` evaluated at the s=0 substrate-distance pole, integrated over the workshop's cumulative-multiplicity sector counting. This gate's controlled diagnostic uses the Gaussian ζ-class kernel `f(λ) = exp(-λ²)` on the same `s84_spectrum_cache_L12_tau019.npz` at M_KK-normalized scale, giving a much smaller absolute number because the Gaussian decays fast on the cache's |λ| ∈ [0.82, ≳5] support. **Both SM and PS values are computed under the SAME regulator convention on the SAME cache**, so the SM/PS ratio is a controlled diagnostic; the absolute scale disparity vs CF-12 anchor reflects regulator-class choice, not gate failure (this is a documented diagnostic of regulator sensitivity per the S86 workshop's regulator-class table).\n 1990: \n 1991: **Ratio against the diagnostic anchor** (the plan's pre-registered comparison axis):\n 1992: \n 1993: | Quantity | Value | Plan band |\n 1994: |:---------|:------|:----------|\n 1995: | `ratio_PS_anchor = growth_PS / 238.7` | **0.006458** | < 1 → satisfies PASS-magnitude on anchor axis |\n 1996: | `ratio_PS_SM_computed = growth_PS / growth_SM` | **1.0050** | controlled-diagnostic; ~+0.5% PS/SM shift |\n 1997: | `shift_magnitude_rel = |Δgrowth| / growth_SM` | **\n... [truncated]"
+    },
+    {
+      "anchor_id": "open_419",
+      "anchor_type": "open_channels",
+      "name": "`ratio_PS_SM_computed = growth_PS / growth_SM`",
+      "detail_1": "1.0050",
+      "detail_2": "controlled-diagnostic; ~+0.5% PS/SM shift",
+      "session": "87",
+      "source_file": "sessions\\session-87\\session-87-results-workingpaper.md",
+      "source_context_30_lines": " 1988: \n 1989: **Reconciling the SM-anchor disparity** (1.5338× vs 238.7×): the SM CF-12 anchor (238.7×) is the n=0 growth factor under the Mellin-cone workshop's regulator-class convention `f(λ) ~ λ^{-2s}` evaluated at the s=0 substrate-distance pole, integrated over the workshop's cumulative-multiplicity sector counting. This gate's controlled diagnostic uses the Gaussian ζ-class kernel `f(λ) = exp(-λ²)` on the same `s84_spectrum_cache_L12_tau019.npz` at M_KK-normalized scale, giving a much smaller absolute number because the Gaussian decays fast on the cache's |λ| ∈ [0.82, ≳5] support. **Both SM and PS values are computed under the SAME regulator convention on the SAME cache**, so the SM/PS ratio is a controlled diagnostic; the absolute scale disparity vs CF-12 anchor reflects regulator-class choice, not gate failure (this is a documented diagnostic of regulator sensitivity per the S86 workshop's regulator-class table).\n 1990: \n 1991: **Ratio against the diagnostic anchor** (the plan's pre-registered comparison axis):\n 1992: \n 1993: | Quantity | Value | Plan band |\n 1994: |:---------|:------|:----------|\n 1995: | `ratio_PS_anchor = growth_PS / 238.7` | **0.006458** | < 1 → satisfies PASS-magnitude on anchor axis |\n 1996: | `ratio_PS_SM_computed = growth_PS / growth_SM` | **1.0050** | controlled-diagnostic; ~+0.5% PS/SM shift |\n 1997: | `shift_magnitude_rel = |Δgrowth| / growth_SM` | **0.5031%** | < 1% non-trivial threshold → INFO band per plan §983-984 |\n 1998: \n 1999: **D\n... [truncated]"
+    },
+    {
+      "anchor_id": "open_420",
+      "anchor_type": "open_channels",
+      "name": "`shift_magnitude_rel =",
+      "detail_1": "Δgrowth",
+      "detail_2": "/ growth_SM`",
+      "session": "87",
+      "source_file": "sessions\\session-87\\session-87-results-workingpaper.md",
+      "source_context_30_lines": " 1989: **Reconciling the SM-anchor disparity** (1.5338× vs 238.7×): the SM CF-12 anchor (238.7×) is the n=0 growth factor under the Mellin-cone workshop's regulator-class convention `f(λ) ~ λ^{-2s}` evaluated at the s=0 substrate-distance pole, integrated over the workshop's cumulative-multiplicity sector counting. This gate's controlled diagnostic uses the Gaussian ζ-class kernel `f(λ) = exp(-λ²)` on the same `s84_spectrum_cache_L12_tau019.npz` at M_KK-normalized scale, giving a much smaller absolute number because the Gaussian decays fast on the cache's |λ| ∈ [0.82, ≳5] support. **Both SM and PS values are computed under the SAME regulator convention on the SAME cache**, so the SM/PS ratio is a controlled diagnostic; the absolute scale disparity vs CF-12 anchor reflects regulator-class choice, not gate failure (this is a documented diagnostic of regulator sensitivity per the S86 workshop's regulator-class table).\n 1990: \n 1991: **Ratio against the diagnostic anchor** (the plan's pre-registered comparison axis):\n 1992: \n 1993: | Quantity | Value | Plan band |\n 1994: |:---------|:------|:----------|\n 1995: | `ratio_PS_anchor = growth_PS / 238.7` | **0.006458** | < 1 → satisfies PASS-magnitude on anchor axis |\n 1996: | `ratio_PS_SM_computed = growth_PS / growth_SM` | **1.0050** | controlled-diagnostic; ~+0.5% PS/SM shift |\n 1997: | `shift_magnitude_rel = |Δgrowth| / growth_SM` | **0.5031%** | < 1% non-trivial threshold → INFO band per plan §983-984 |\n 1998: \n 1999: **Direction\n... [truncated]"
+    }
+  ]
+}

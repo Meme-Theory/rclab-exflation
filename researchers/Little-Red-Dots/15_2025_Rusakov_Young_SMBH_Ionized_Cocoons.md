@@ -190,4 +190,4 @@ cm$^{-3}$) are also relevant to early-universe baryon physics -- the same epoch 
 rolling of the internal scale tau (if allowed) would leave imprints on the baryon-to-photon
 ratio and ionization history. The electron-scattering optical depth $\tau_e$ is in the range
 0.5--2, a dimensionless number comparable to the phonon-exflation coupling constant regime
-explored in tier0-computation.
+explored in computations.

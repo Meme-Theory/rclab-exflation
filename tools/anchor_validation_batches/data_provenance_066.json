@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 66,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_651",
+      "anchor_type": "data_provenance",
+      "name": "conformal_diagram",
+      "script_path": "session-55/s55_conformal_diagram.py",
+      "session": "s55",
+      "inputs": "computations/session-54/s54_connes_latt.npz, computations/session-54/s54_scale_factor.npz",
+      "outputs": "session-55/s55_conformal_diagram.npz, session-55/s55_conformal_diagram.png",
+      "source_file": "computations/session-55/s55_conformal_diagram.py",
+      "source_context_30_lines": "    6: tests particle horizon existence, SEC violation, and discrete trapped surfaces\n    7: on the 32-cell graph.\n    8: \n    9: Input:\n   10:   computations/session-54/s54_connes_latt.npz  (distance_matrix, adjacency, mean_distance)\n   11:   computations/session-54/s54_scale_factor.npz (tau, a, H, q)\n   12: \n   13: Output:\n   14:   computations/session-55/s55_conformal_diagram.npz  (all results)\n   15:   computations/session-55/s55_conformal_diagram.png  (4-panel figure)\n   16: \n   17: Gate: CONFORMAL-DIAGRAM-55 (INFO: causal structure classification)\n   18: \"\"\"\n   19: \n   20: import sys\n   21: sys.path.insert(0, 'computations')\n   22: import numpy as np"
+    },
+    {
+      "anchor_id": "prov_652",
+      "anchor_type": "data_provenance",
+      "name": "cutoff_family",
+      "script_path": "session-55/s55_cutoff_family.py",
+      "session": "s55",
+      "inputs": "computations/session-54/s54_tb_hamiltonian.npz, computations/session-54/s54_sa_latt_occ.npz",
+      "outputs": "session-55/s55_cutoff_family.npz, session-55/s55_cutoff_family.png",
+      "source_file": "computations/session-55/s55_cutoff_family.py",
+      "source_context_30_lines": "  217:     if len(interior_alphas) > 2:\n  218:         log_alpha = np.log(interior_alphas)\n  219:         corr = np.corrcoef(log_alpha, interior_taus)[0, 1]\n  220:         print(f\"  Correlation(ln(alpha), tau_min) = {corr:.4f}\")\n  221: else:\n  222:     print(\"  Too few interior minima for tracking analysis\")\n  223: \n  224: # ── Save results ──────────────────────────────────────────────────────\n  225: np.savez('computations/session-55/s55_cutoff_family.npz',\n  226:     alpha_primary=alpha_values,\n  227:     alpha_fine=alpha_fine,\n  228:     tau_values=tau_values,\n  229:     S_occ_primary=S_occ_primary,\n  230:     S_occ_fine=S_occ_fine,\n  231:     barrier_primary=barrier_p,\n  232:     barrier_fine=barrier_f,\n  233:     tau_min_primary=tau_min_p,"
+    },
+    {
+      "anchor_id": "prov_653",
+      "anchor_type": "data_provenance",
+      "name": "cutoff_sweep",
+      "script_path": "session-55/s55_cutoff_sweep.py",
+      "session": "s55",
+      "inputs": "computations/session-54/s54_tb_hamiltonian.npz, computations/session-54/s54_sa_latt_occ.npz",
+      "outputs": "session-55/s55_cutoff_sweep.npz, session-55/s55_cutoff_sweep.png",
+      "source_file": "computations/session-55/s55_cutoff_sweep.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s55_cutoff_sweep.py — CUTOFF-SWEEP-55\n    4: ======================================\n    5: Sweep cutoff Lambda continuously from 0.5 to 3.0 M_KK (20 values, primary range)\n    6: and from 0.5 to 10.0 M_KK (40 values, extended range for asymptotic test).\n    7: Track tau_min(Lambda) of S_occ to classify: pinned (physical) vs tracking (artifact).\n    8: \n    9: S_occ(tau; Lambda) = sum_k n_k(tau) * f(E_k(tau)^2 / Lambda^2)\n   10: \n   11: where n_k are BCS occupations with Delta_OES = 0.4643 M_KK, and f is the sharp"
+    },
+    {
+      "anchor_id": "prov_654",
+      "anchor_type": "data_provenance",
+      "name": "dbcs_connes",
+      "script_path": "session-55/s55_dbcs_connes.py",
+      "session": "s55",
+      "inputs": "",
+      "outputs": "session-55/s55_dbcs_connes.npz, session-55/s55_dbcs_connes.png",
+      "source_file": "computations/session-55/s55_dbcs_connes.py",
+      "source_context_30_lines": "   50: sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))\n   51: from canonical_constants import tau_fold, N_cells\n   52: \n   53: # ─── paths ───────────────────────────────────────────────────────────────\n   54: PROJ = os.path.dirname(os.path.abspath(__file__))\n   55: INPUT_TB = os.path.join(PROJ, \"s54_tb_hamiltonian.npz\")\n   56: INPUT_OCC = os.path.join(PROJ, \"s54_sa_latt_occ.npz\")\n   57: INPUT_REF = os.path.join(PROJ, \"s54_connes_latt.npz\")\n   58: OUTPUT_NPZ = os.path.join(PROJ, \"s55_dbcs_connes.npz\")\n   59: OUTPUT_PNG = os.path.join(PROJ, \"s55_dbcs_connes.png\")\n   60: \n   61: \n   62: def build_basis_matrices(D_off):\n   63:     \"\"\"Build E_k basis for the commutator [D_off, diag(f)] = sum_k f_k E_k.\n   64: \n   65:     E_k = e_k e_k^T @ D - D @ e_k e_k^T.\n   66:     Verification: [diag(f), D]_{ab} = (f_a - f_b) D_{ab}."
+    },
+    {
+      "anchor_id": "prov_655",
+      "anchor_type": "data_provenance",
+      "name": "eft_rules",
+      "script_path": "session-55/s55_eft_rules.py",
+      "session": "s55",
+      "inputs": "computations/session-54/s54_ed_sweep.npz, computations/session-54/s54_tb_hamiltonian.npz",
+      "outputs": "session-55/s55_eft_rules.npz",
+      "source_file": "computations/session-55/s55_eft_rules.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s55_eft_rules.py — Post-Transit EFT Feynman Rules\n    4: ===================================================\n    5: Feynman-Theorist, Session 55\n    6: \n    7: From the 8-mode BCS lattice Hamiltonian at the fold (tau~0.194), construct:\n    8:   1. The effective Lagrangian with explicit coupling constants\n    9:   2. Feynman rules: propagators, vertices, external legs\n   10:   3. Tree-level 2→2 scattering amplitudes |M|^2\n   11:   4. Cross sections σ in natural units (1/M_KK^2)"
+    },
+    {
+      "anchor_id": "prov_656",
+      "anchor_type": "data_provenance",
+      "name": "erich_continuum",
+      "script_path": "session-55/s55_erich_continuum.py",
+      "session": "s55",
+      "inputs": "",
+      "outputs": "session-55/s55_erich_continuum.npz, session-55/s55_erich_continuum.png",
+      "source_file": "computations/session-55/s55_erich_continuum.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s55_erich_continuum.py — Richardson Ground State on 992-Mode Continuum Spectrum\n    4: ===============================================================================\n    5: Session 55, W1-1: ERICH-CONTINUUM-55\n    6: \n    7: Computes E_Rich(tau) — the exact Richardson-Gaudin ground state energy at\n    8: N_pair=1 on the full 992-mode (496 pair-levels) continuum Dirac spectrum  # (local)\n    9: across tau in [0.00, 0.35].\n   10: \n   11: The continuum spectrum has d/Delta ~ 0.07-0.14 (vs 42 on the 8-mode lattice),"
+    },
+    {
+      "anchor_id": "prov_657",
+      "anchor_type": "data_provenance",
+      "name": "euclid",
+      "script_path": "session-55/s55_euclid.py",
+      "session": "s55",
+      "inputs": "computations/session-54/s54_tb_hamiltonian.npz, computations/session-54/s54_scale_factor.npz, computations/session-54/s5...",
+      "outputs": "session-55/s55_euclid.npz, session-55/s55_euclid.png",
+      "source_file": "computations/session-55/s55_euclid.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s55_euclid.py — EUCLID-55: Euclidean Free Energy at Gibbons-Hawking Temperature\n    4: \n    5: Computes F(tau, T_GH(tau)) = -T_GH(tau) * ln Z_BCS(tau, T_GH(tau))\n    6: where T_GH = H(tau)/(2*pi) is the Gibbons-Hawking temperature,\n    7: and Z_BCS = Prod_k (1 + exp(-E_k/T_GH)) for 8 BCS-active modes.\n    8: \n    9: Gate: EUCLID-55\n   10:   PASS: minimum in [0.10, 0.30] with barrier > 1%\n   11:   FAIL: monotone or barrier < 0.1%"
+    },
+    {
+      "anchor_id": "prov_658",
+      "anchor_type": "data_provenance",
+      "name": "euclid_continuum",
+      "script_path": "session-55/s55_euclid_continuum.py",
+      "session": "s55",
+      "inputs": "computations/session-44/s44_dos_tau.npz, computations/session-27/s27_multisector_bcs.npz, computations/session-54/s54_sc...",
+      "outputs": "session-55/s55_euclid_continuum.npz, session-55/s55_euclid_continuum.png",
+      "source_file": "computations/session-55/s55_euclid_continuum.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s55_euclid_continuum.py — EUCLID-CONTINUUM-55: Euclidean Free Energy on 992-Mode Continuum\n    4: \n    5: Repeats the EUCLID-55 computation (which PASSED on the 32-cell lattice with tau_min=0.220,\n    6: 30% barrier) on the full 992-mode continuum spectrum from the Dirac operator on SU(3).\n    7: \n    8: Physical content:\n    9:   F(tau, T_GH) = -T_GH(tau) * ln Z(tau, T_GH(tau))\n   10:   where T_GH = H(tau)/(2*pi) is the Gibbons-Hawking temperature,\n   11:   and ln Z = sum_{i=1}^{992} dim(p_i,q_i)^2 * ln(1 + exp(-omega_i/T_GH))"
+    },
+    {
+      "anchor_id": "prov_659",
+      "anchor_type": "data_provenance",
+      "name": "fabric_coupling",
+      "script_path": "session-55/s55_fabric_coupling.py",
+      "session": "s55",
+      "inputs": "computations/session-54/s54_tb_hamiltonian.npz, computations/session-54/s54_scale_factor.npz",
+      "outputs": "",
+      "source_file": "computations/session-55/s55_fabric_coupling.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s55_fabric_coupling.py — FABRIC-COUPLING-55\n    4: Inter-cell Josephson coupling estimate for the SU(3) fabric.\n    5: \n    6: Physics (Landau symmetry analysis):\n    7:   The fabric is a spatially extended lattice of SU(3) unit cells.\n    8:   Each cell carries a BCS condensate that spontaneously breaks U(1)_7.\n    9:   The order parameter is the pair amplitude Delta * exp(i*phi), where\n   10:   phi is the condensate phase.\n   11: "
+    },
+    {
+      "anchor_id": "prov_660",
+      "anchor_type": "data_provenance",
+      "name": "floquet",
+      "script_path": "session-55/s55_floquet.py",
+      "session": "s55",
+      "inputs": "computations/session-54/s54_tb_hamiltonian.npz, computations/session-54/s54_ed_sweep.npz",
+      "outputs": "session-55/s55_floquet.npz, session-55/s55_floquet.png",
+      "source_file": "computations/session-55/s55_floquet.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s55_floquet.py — Floquet Analysis of Periodically Driven 1-Pair BCS Hamiltonian\n    4: ================================================================================\n    5: \n    6: FLOQUET-55 gate: INFO — parametric instability tongues\n    7: \n    8: Physics:\n    9:     At the fold tau~0.19, the 8-mode BCS Hamiltonian in the 1-pair sector is:\n   10:         H_0 = diag(2*eps_1, ..., 2*eps_8) + V     (8x8, static)\n   11: "
+    }
+  ]
+}

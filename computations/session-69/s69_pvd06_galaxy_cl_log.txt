@@ -1,0 +1,194 @@
+==============================================================================
+PVD-06-GALAXY-CL-69: Galaxy Angular Power Spectrum C_l^{gg}
+==============================================================================
+
+Cosmological parameters:
+  Omega_m = 0.315, Omega_b = 0.0493, Omega_c = 0.2657
+  h = 0.674
+  T_CMB = 2.7255 K
+  Framework: n_s = 0.9595, sigma_8 = 0.793, w_0 = -0.918
+  LCDM:      n_s = 0.9649, sigma_8 = 0.811
+
+Eisenstein-Hu transfer function initialized (with BAO wiggles).
+  T(k) at k = [0.01 0.05 0.1  0.2  0.5 ] h/Mpc:
+    k = 0.010 h/Mpc: T(k) = 0.782793
+    k = 0.050 h/Mpc: T(k) = 0.274683
+    k = 0.100 h/Mpc: T(k) = 0.133583
+    k = 0.200 h/Mpc: T(k) = 0.056156
+    k = 0.500 h/Mpc: T(k) = 0.014416
+
+Sigma_8 normalization:
+  sigma_8 (unnorm, FW tilt):   0.001277
+  sigma_8 (unnorm, LCDM tilt): 0.001280
+  A_norm_FW   = 3.853419e+05 (normalizes to sigma_8 = 0.793)
+  A_norm_LCDM = 4.016477e+05 (normalizes to sigma_8 = 0.811)
+
+  Verification: sigma_8(FW) = 0.792999 (target 0.793)
+  Verification: sigma_8(LCDM) = 0.810998 (target 0.811)
+
+Solving growth ODEs...
+  D(a=1)/D(a=1) LCDM = 1.0000 (by normalization)
+  D(a=0.5)/D(a=1) LCDM = 0.606744
+  D(a=0.5)/D(a=1) FW   = 0.612729
+
+  DH = c/H_0 = 2997.92 Mpc/h
+  chi(z=0.35) LCDM = 959.3 Mpc/h
+  chi(z=0.35) FW   = 949.5 Mpc/h
+
+  Galaxy window: z_eff = 0.35, sigma_z = 0.12
+  Normalization check: integral(dN/dz) = 0.998231
+  Galaxy bias b = 1.87 (Ho et al. 2012)
+
+  Computing C_l^{gg} for Framework...
+    z range: [0.010, 0.830]
+    chi range: [29.9, 1962.5] Mpc/h
+
+  Computing C_l^{gg} for LCDM...
+    z range: [0.010, 0.830]
+    chi range: [29.9, 1992.9] Mpc/h
+
+  C_l computed for l = 10 to 600
+  C_l(l=100) FW   = 1.662e-06
+  C_l(l=100) LCDM = 1.695e-06
+  C_l(l=200) FW   = 5.240e-07
+  C_l(l=200) LCDM = 5.375e-07
+
+SDSS survey parameters:
+  f_sky = 0.1
+  N_gal = 2e+06
+  n_bar = 1193662 sr^{-1}
+  Delta_l = 10
+
+  shot noise 1/n_bar = 8.378e-07
+  C_l(l=100) = 1.695e-06, sigma = 2.526e-07, SNR = 6.7
+  C_l(l=200) = 5.375e-07, sigma = 9.712e-08, SNR = 5.5
+  C_l(l=400) = 1.383e-07, sigma = 4.877e-08, SNR = 2.8
+  Number of bins: 49
+
+==============================================================================
+FRAMEWORK vs LCDM COMPARISON (SDSS-like errors)
+==============================================================================
+     l      C_l(FW)    C_l(LCDM)        sigma      FW-LCDM  (sigma)    SNR
+------------------------------------------------------------------------------
+    20    7.819e-06    7.835e-06    1.915e-06   -1.555e-08   -0.008    4.1
+    30    6.051e-06    6.094e-06    1.255e-06   -4.229e-08   -0.034    4.9
+    40    4.742e-06    4.786e-06    8.837e-07   -4.423e-08   -0.050    5.4
+    50    3.886e-06    3.926e-06    6.704e-07   -4.059e-08   -0.061    5.9
+    60    3.265e-06    3.304e-06    5.325e-07   -3.885e-08   -0.073    6.2
+    70    2.755e-06    2.794e-06    4.325e-07   -3.887e-08   -0.090    6.5
+    80    2.318e-06    2.356e-06    3.560e-07   -3.841e-08   -0.108    6.6
+    90    1.954e-06    1.990e-06    2.972e-07   -3.606e-08   -0.121    6.7
+   100    1.662e-06    1.695e-06    2.526e-07   -3.264e-08   -0.129    6.7
+   110    1.435e-06    1.463e-06    2.189e-07   -2.883e-08   -0.132    6.7
+   120    1.254e-06    1.280e-06    1.929e-07   -2.562e-08   -0.133    6.6
+   130    1.107e-06    1.130e-06    1.723e-07   -2.325e-08   -0.135    6.6
+   140    9.823e-07    1.004e-06    1.554e-07   -2.150e-08   -0.138    6.5
+   150    8.752e-07    8.952e-07    1.413e-07   -2.003e-08   -0.142    6.3
+   160    7.827e-07    8.013e-07    1.294e-07   -1.861e-08   -0.144    6.2
+   170    7.030e-07    7.202e-07    1.193e-07   -1.720e-08   -0.144    6.0
+   180    6.345e-07    6.503e-07    1.108e-07   -1.584e-08   -0.143    5.9
+   190    5.753e-07    5.899e-07    1.034e-07   -1.458e-08   -0.141    5.7
+   200    5.240e-07    5.375e-07    9.712e-08   -1.347e-08   -0.139    5.5
+   210    4.791e-07    4.916e-07    9.163e-08   -1.251e-08   -0.137    5.4
+   220    4.394e-07    4.511e-07    8.679e-08   -1.167e-08   -0.134    5.2
+   230    4.042e-07    4.151e-07    8.252e-08   -1.096e-08   -0.133    5.0
+   240    3.727e-07    3.830e-07    7.872e-08   -1.024e-08   -0.130    4.9
+   250    3.446e-07    3.542e-07    7.531e-08   -9.624e-09   -0.128    4.7
+   260    3.194e-07    3.284e-07    7.225e-08   -9.015e-09   -0.125    4.5
+   270    2.968e-07    3.052e-07    6.949e-08   -8.384e-09   -0.121    4.4
+   280    2.762e-07    2.842e-07    6.699e-08   -7.974e-09   -0.119    4.2
+   290    2.578e-07    2.653e-07    6.472e-08   -7.514e-09   -0.116    4.1
+   300    2.410e-07    2.481e-07    6.264e-08   -7.077e-09   -0.113    4.0
+   310    2.257e-07    2.329e-07    6.076e-08   -7.142e-09   -0.118    3.8
+   320    2.118e-07    2.181e-07    5.898e-08   -6.354e-09   -0.108    3.7
+   330    1.990e-07    2.050e-07    5.736e-08   -6.021e-09   -0.105    3.6
+   340    1.873e-07    1.930e-07    5.586e-08   -5.719e-09   -0.102    3.5
+   350    1.766e-07    1.818e-07    5.446e-08   -5.252e-09   -0.096    3.3
+   360    1.666e-07    1.718e-07    5.317e-08   -5.172e-09   -0.097    3.2
+   370    1.577e-07    1.624e-07    5.196e-08   -4.718e-09   -0.091    3.1
+   380    1.491e-07    1.539e-07    5.084e-08   -4.771e-09   -0.094    3.0
+   390    1.413e-07    1.457e-07    4.977e-08   -4.479e-09   -0.090    2.9
+   400    1.340e-07    1.383e-07    4.877e-08   -4.277e-09   -0.088    2.8
+   410    1.273e-07    1.314e-07    4.783e-08   -4.114e-09   -0.086    2.7
+   420    1.211e-07    1.250e-07    4.695e-08   -3.872e-09   -0.082    2.7
+   430    1.153e-07    1.190e-07    4.611e-08   -3.750e-09   -0.081    2.6
+   440    1.098e-07    1.134e-07    4.532e-08   -3.622e-09   -0.080    2.5
+   450    1.046e-07    1.081e-07    4.456e-08   -3.469e-09   -0.078    2.4
+   460    9.981e-08    1.031e-07    4.384e-08   -3.304e-09   -0.075    2.4
+   470    9.538e-08    9.853e-08    4.316e-08   -3.151e-09   -0.073    2.3
+   480    9.123e-08    9.425e-08    4.252e-08   -3.025e-09   -0.071    2.2
+   490    8.731e-08    9.024e-08    4.190e-08   -2.922e-09   -0.070    2.2
+   500    8.361e-08    8.644e-08    4.131e-08   -2.827e-09   -0.068    2.1
+
+Distinguishability statistics:
+  chi^2(FW vs LCDM) = 0.57 / 49 bins
+  chi^2/dof = 0.0117
+  Max |delta/sigma| = 0.144 at l = 170
+  Mean |delta/sigma| = 0.1035
+  Combined significance = 0.76 sigma
+
+==============================================================================
+BAO WIGGLE ANALYSIS (l = 50-400)
+==============================================================================
+  FW/LCDM ratio in l = [50, 400]:
+    Mean:  0.975269
+    Std:   0.005228
+    Min:   0.968848 at l = 342
+    Max:   0.989661 at l = 50
+    BAO osc amplitude (FW-LCDM): 0.002261 (0.2261%)
+    BAO wiggle amplitude (LCDM D_l): 0.045% (rms/mean)
+    BAO wiggle amplitude (FW D_l):   0.044% (rms/mean)
+    BAO wiggle phase correlation (FW vs LCDM): 0.558341
+
+==============================================================================
+AMPLITUDE COMPARISON (sigma_8 effect)
+==============================================================================
+  Expected amplitude ratio (sigma_8 only): 0.956103
+    = (0.793/0.811)^2 = 0.956103
+  Measured C_l ratio (includes n_s + growth): 0.980648
+  Additional tilt effect: +0.025672
+  Framework C_l suppressed by 1.94% vs LCDM
+
+  S_8 = sigma_8 * sqrt(Omega_m / 0.3):
+    Framework: S_8 = 0.8126
+    Planck:    S_8 = 0.8310
+    KiDS-1000: S_8 = 0.759 +/- 0.024
+    DES Y3:    S_8 = 0.776 +/- 0.017
+    FW tension with KiDS:  2.23-sigma
+    FW tension with DES:   2.15-sigma
+    LCDM tension with KiDS: 3.00-sigma
+    LCDM tension with DES:  3.24-sigma
+
+******************************************************************************
+GATE ASSESSMENT: PVD-GALCL-69 -- INFO
+******************************************************************************
+
+Gate type: INFO (report shape comparison, no pass/fail threshold)
+
+Key findings:
+  1. FW-LCDM distinguishability: 0.76-sigma combined (49 bins)
+     chi^2(FW vs LCDM) = 0.57 / 49 = 0.0117
+  2. Max per-bin deviation: 0.144-sigma at l = 170
+  3. FW/LCDM amplitude ratio = 0.9806 (1.9% suppression)
+  4. BAO wiggle phase correlation = 0.5583 (identical BAO positions)
+  5. BAO osc amplitude shift = 0.002261 (< 0.2%)
+  6. S_8(FW) = 0.8126 vs KiDS 0.759 (eases S_8 tension by 0.8-sigma)
+
+Assessment:
+  The framework galaxy angular power spectrum is INDISTINGUISHABLE from LCDM
+  at SDSS precision. Both n_s and sigma_8 differences produce sub-percent
+  deviations in C_l^{gg}, well below the ~15% per-bin cosmic variance
+  at l~100. The BAO wiggle positions are identical (same Omega_m, Omega_b,
+  same Eisenstein-Hu transfer function). The amplitude suppression from
+  sigma_8 = 0.793 is ~4.4%, ameliorating the S_8 tension:
+  FW is 2.2-sigma from KiDS vs LCDM at 3.0-sigma.
+  Euclid/DESI spectroscopic samples needed to distinguish FW from LCDM in C_l^{gg}.
+******************************************************************************
+
+Data saved to: C:\sandbox\Ainulindale Exflation\tier0-computation\s69_pvd06_galaxy_cl.npz
+
+Plot saved to: C:\sandbox\Ainulindale Exflation\tier0-computation\s69_pvd06_galaxy_cl.png
+
+==============================================================================
+COMPUTATION COMPLETE: PVD-06-GALAXY-CL-69
+==============================================================================

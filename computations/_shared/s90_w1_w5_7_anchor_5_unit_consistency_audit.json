@@ -1,0 +1,72 @@
+{
+  "gate_id": "S90-W5-7-ANCHOR-5-UNIT-CONSISTENCY-AUDIT",
+  "verdict": "INFO",
+  "value_str": "reading_canonical=C;verdict_label=Reading-C-requires-lambda_unit_canonical-pin-promotion;n_anchor_5_sites=1;empirical_lambda_range_min=8.1974e-01;empirical_lambda_range_max=5.4189e+00;M_KK_GeV=7.428660e+16;anchor_5_literal_GeV_inv_sq=1.8121e-34;x_anchor_5_at_lambda_max=5.3212e-33;cache_lambda_units=dimensionless_M_KK_natural;lambda_unit_canonical_pin_required_promotion=True;reading_A_rejected_lambda_not_GeV=True;reading_B_rejected_script_lacks_normalization=True;reading_C_accepted_pin_promotion_carry_forward_to_S91=True;allowlist_row=pending;instances_row=pending",
+  "anchor_5_sites": [
+    {
+      "line_no": 336,
+      "match": "1.0 / M_KK_sq",
+      "line_text": "\"1/M_KK_sq\": 1.0 / M_KK_sq,"
+    }
+  ],
+  "lambda_range": {
+    "n_eigenvalues": 166896,
+    "lambda_min": 0.8197411120665079,
+    "lambda_max": 5.418936754718518,
+    "lambda_mean": 3.734798838674837,
+    "lambda_median": 3.8214960378177585,
+    "max_lambda_sq": 29.364875551639265
+  },
+  "comparison": {
+    "anchor_5_literal_value": 1.8120869482507436e-34,
+    "M_KK_sq": 5.518498993468978e+33,
+    "lambda_max_sq": 29.364875551639265,
+    "x_anchor_5_at_lambda_max_literal": 5.321170772413287e-33,
+    "readings": {
+      "A": {
+        "name": "Reading A (anchor 5 in GeV⁻²; λ stored in GeV)",
+        "anchor_5_units": "GeV⁻²",
+        "anchor_5_value": 1.8120869482507436e-34,
+        "lambda_unit_assumed": "GeV",
+        "x_argument_consistent": false,
+        "rationale": "Reading A REQUIRES λ stored in GeV with magnitudes ~ M_KK (7.4287e+16 GeV) for x = (1/M_KK²)·λ² to land in the IR-discriminating regime [0, ~few]. Empirical λ range from S84 cache is [8.197e-01, 5.419e+00] — these are NOT GeV values (GeV-scaled λ would be ~7e16). Reading A REJECTED by empirical dimensional check."
+      },
+      "B": {
+        "name": "Reading B (anchor 5 dimensionless after M_KK² normalization)",
+        "anchor_5_units": "dimensionless",
+        "anchor_5_value_implicit": 1.0,
+        "lambda_unit_assumed": "M_KK-normalized (dimensionless)",
+        "x_argument_consistent": true,
+        "rationale": "Reading B REQUIRES tacit normalization treating anchor_5 as M_KK²·(1/M_KK²) = 1 so that x = anchor_5·λ² reduces to λ² ∈ [6.720e-01, 2.936e+01] — IR-discriminating regime consistent with anchors 1-4. BUT: the script's literal expression `1.0 / M_KK_sq` with `M_KK_sq = float(M_KK ** 2)` in GeV² gives anchor_5 = 1.81e-34 (a SMALL number, NOT 1). Reading B REJECTED: script does NOT apply the normalization Reading B requires."
+      },
+      "C": {
+        "name": "Reading C (requires lambda_unit_canonical pin promotion)",
+        "anchor_5_units": "GeV⁻² (LITERAL) vs INTENDED dimensionless",
+        "anchor_5_value_literal": 1.8120869482507436e-34,
+        "x_anchor_5_at_lambda_max": 5.321170772413287e-33,
+        "lambda_unit_observed": "dimensionless (M_KK-natural)",
+        "x_argument_consistent": false,
+        "rationale": "Empirical spectrum-cache λ range [8.197e-01, 5.419e+00] establishes the cache stores λ DIMENSIONLESS (M_KK-natural units). Script's literal anchor_5 = 1.0 / M_KK_sq with M_KK_sq = float(M_KK ** 2) is in GeV⁻² (M_KK in GeV per canonical_constants). Product `x = anchor_5 · λ²` is dimensionally INCONSISTENT (GeV⁻² · dimensionless): numerically x ≈ 5.321e-33 at λ_max, which sits FAR BELOW the IR-discriminating regime [0, ~few]. At x ≈ 0, all 4 regulator profiles ({exp(-x), Theta(1-√x), exp(-x)(1-x+x²/2), 1/(1+exp(10(x-1)))}) converge to ~1, producing degenerate Mellin moments M_4 ≈ Σm_λ·λ⁻⁸. Anchor 5's rank-ordering is essentially noise; this IS the empirically-observed N=4/5 PASS pattern (anchor 5 is the outlier by construction). RESOLUTION: promote `lambda_unit_canonical ∈ {GeV², M_KK²}` pin to canonical_constants.py; future scripts citing anchor 5 = 1/M_KK² apply the appropriate conversion."
+      }
+    },
+    "canonical_reading": "C"
+  },
+  "input_pins": {
+    "pin_01_w5_7_producing_script": "57ae89ba7f30092db0954eb27413774a1a1b82c6d235866a2e2933f6de11a7a2",
+    "pin_02_s84_spectrum_cache_L12": "9e6d9cf7fd6a6949d622441b26fb9c2fa568654a22dc802e99898c326ca0f8d9",
+    "pin_03_canonical_constants_M_KK": "fe3b14d5268ec312a667f9bc348eaeb2bb1ad97a62adcf193f298fcbd02182d4",
+    "pin_04_regulator_pin_discipline_rule": "a0614a9fd7285a5fcc7c408bbdbeb6aa1c5a2762c10e4ab820139a01fcafe37d",
+    "pin_05_plan_w1": "db62e0854431f67b29ad6684dbc6907c30123b8de5ac7a5f14ad7fa088ff2121",
+    "pin_06_M_KK_value_GeV": "7.4286600362844560e+16",
+    "pin_07_lambda_max_from_cache": "5.4189367547185183e+00",
+    "pin_08_anchor_5_literal_value": "1.8120869482507436e-34",
+    "pin_09_x_anchor_5_at_lambda_max": "5.3211707724132868e-33",
+    "pin_10_canonical_reading": "C",
+    "pin_11_n_anchor_5_sites_detected": 1,
+    "pin_12_detection_regex": "anchor_5\\s*=|anchor\\[\\s*['\\\"]?5['\\\"]?\\s*\\]\\s*=|1\\s*/\\s*M_KK\\s*\\*\\*\\s*2|1\\.0\\s*/\\s*M_KK_sq"
+  },
+  "dual_sha": {
+    "audit_sha256": "977cc8b0c3a8db645b998ed6ac413a43ce21417a10fac2771b885d1da1758757",
+    "content_sha256": "5f1ffde28801e6d4bf5b8f42b01b1c0326ab5889005f9c7aad38ebb260638b59"
+  }
+}

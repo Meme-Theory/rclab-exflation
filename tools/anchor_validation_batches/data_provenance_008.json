@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 8,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_71",
+      "anchor_type": "data_provenance",
+      "name": "constraints",
+      "script_path": "session-22/s22d_constraints.py",
+      "session": "s22d",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-22/s22d_constraints.py",
+      "source_context_30_lines": "    1: \"\"\"\n    2: E-2 + E-3: EARLY DARK ENERGY BOUND AND ATOMIC CLOCK CONSTRAINT\n    3: ================================================================\n    4: \n    5: Session 22d — Einstein-Theorist\n    6: \n    7: Extracts EDE and atomic clock constraints from the rolling modulus ODE\n    8: results (s22d_rolling_trajectories.npz) and saves a dedicated constraint\n    9: results file.\n   10: \n   11: Author: Einstein-Theorist (Session 22d)\n   12: Date: 2026-02-20\n   13: \"\"\"\n   14: \n   15: import numpy as np"
+    },
+    {
+      "anchor_id": "prov_72",
+      "anchor_type": "data_provenance",
+      "name": "rolling_modulus",
+      "script_path": "session-22/s22d_rolling_modulus.py",
+      "session": "s22d",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-22/s22d_rolling_modulus.py",
+      "source_context_30_lines": "<name 'rolling_modulus' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: E-1: ROLLING MODULUS ODE — THREE DYNAMICAL SCENARIOS\n    3: =====================================================\n    4: \n    5: Session 22d — Einstein-Theorist\n    6: \n    7: Solves the modulus equation of motion in an FRW background for three\n    8: physically distinct scenarios:\n    9: \n   10:     Scenario A: Freund-Rubin trapping (V = V_FR, tau_i = 0.05, tau_dot_i = 0)\n   11:     Scenario B: Freund-Rubin overshoot (V = V_FR, tau_i = 0.05, tau_dot_i = 0.02)\n   12:     Scenario C: Pure CW roll (V = V_CW monotonic, tau_i = 0.05, tau_dot_i = 0)\n   13: \n   14: EQUATIONS (natural units, M_Pl = 1):\n   15: \n   16:     tau'' + 3*H*tau' + (1/G_tt)*V'(tau) = 0\n   17: \n   18:     H^2 = (1/3)*(rho_m + rho_r + rho_tau)\n   19: \n   20:     rho_tau = (G_tt/2)*tau'^2 + V(tau)\n   21:     p_tau   = (G_tt/2)*tau'^2 - V(tau)\n   22: \n   23:     w(t) = p_tau / rho_tau\n   24: \n   25: where G_tt = 5 (Baptista Paper 15, eq 3.79, sigma-model metric from KK\n   26: reduction of SU(3), confirmed Session 21b).\n   27: \n   28: INTEGRATION VARIABLE: We use N = ln(a) (e-folds from today) as the\n   29: integration variable, which converts the ODE to:\n   30: "
+    },
+    {
+      "anchor_id": "prov_73",
+      "anchor_type": "data_provenance",
+      "name": "bcs_gap_equation",
+      "script_path": "session-23/s23a_bcs_gap_equation.py",
+      "session": "s23a",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-23/s23a_bcs_gap_equation.py",
+      "source_context_30_lines": "<name 'bcs_gap_equation' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: Session 23a Step 5: BCS Gap Equation Solver for Kosmann-Dirac System\n    3: \n    4: Solves the self-consistent BCS gap equation using the agreed V_nm formula\n    5: (Feynman convention, Mandatory Gate approved by both landau and phonon-sim):\n    6: \n    7:     V_nm = -sum_{a=3,4,5,6} |<n|K_a|m>|^2    (V < 0 = attractive)\n    8: \n    9:     Delta_n = -sum_m V_nm * Delta_m / (2 * sqrt(xi_m^2 + Delta_m^2))\n   10: \n   11:     Linearized: M_nm = -V_nm / (2|xi_m|) = sum_a |<n|K_a|m>|^2 / (2|xi_m|)\n   12: \n   13:     Binary gate: max eigenvalue of M > 1 => non-trivial gap => PASS\n   14: \n   15: Three methods:\n   16:     Method 1: Linearized eigenvalue (binary gate)\n   17:     Method 2: Self-consistent iteration (gap magnitude)\n   18:     Method 3: Free energy minimization (thermodynamic stability)\n   19: \n   20: Three basis sizes:\n   21:     (a) 2-mode gap-edge only\n   22:     (b) 10-mode gap-edge + nearest level\n   23:     (c) Full 16-mode singlet\n   24: \n   25: Three chemical potential choices:\n   26:     (i)   mu = 0 (symmetric, spectrum center)\n   27:     (ii)  mu = +lambda_min (upper gap edge)\n   28:     (iii) mu = -lambda_min (lower gap edge)\n   29: \n   30: CRITICAL STRUCTURAL FINDING:"
+    },
+    {
+      "anchor_id": "prov_74",
+      "anchor_type": "data_provenance",
+      "name": "eigenvector_extended",
+      "script_path": "session-23/s23a_eigenvector_extended.py",
+      "session": "s23a",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-23/s23a_eigenvector_extended.py",
+      "source_context_30_lines": "<name 'eigenvector_extended' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: Session 23a Step 1: Extended eigenvector extraction from D_K(tau) for p+q <= 6.\n    3: \n    4: Extends s22b_eigenvector_extraction.py from p+q <= 3 (10 sectors, 1232 modes)\n    5: to p+q <= 6 (28 sectors, 11424 modes). Same tau grid, same eigh method.\n    6: \n    7: Mathematical background:\n    8:     D_pi = sum_{a,b} E_{ab} (rho(X_b) x gamma_a) + I_{dim_rho} x Omega(s)\n    9:     D_pi is anti-Hermitian => 1j * D_pi is Hermitian => eigh gives real eigenvalues\n   10:     and orthonormal eigenvectors.\n   11: \n   12: Sectors added (p+q = 4, 5, 6):\n   13:     p+q=4: (0,4) (1,3) (2,2) (3,1) (4,0) -- 5 sectors, 1680 modes\n   14:     p+q=5: (0,5) (1,4) (2,3) (3,2) (4,1) (5,0) -- 6 sectors, 3136 modes\n   15:     p+q=6: (0,6) (1,5) (2,4) (3,3) (4,2) (5,1) (6,0) -- 7 sectors, 5376 modes\n   16:     Total new: 18 sectors, 10192 modes\n   17:     Grand total: 28 sectors, 11424 modes per tau value\n   18: \n   19:     Largest matrix: (3,3) sector, dim=64, D_size=1024 -- eigh is fast.\n   20: \n   21: Output: computations/session-23/s23a_eigenvectors_extended.npz\n   22:     Same key format as s22b_eigenvectors.npz:\n   23:         tau_values, eigenvalues_{i}, sector_p_{i}, sector_q_{i},\n   24:         multiplicities_{i}, sector_sizes_{i}, sector_labels_{i},\n   25:         eigvec_{i}_sector_{j}\n   26: \n   27: Author: phonon-exflation-sim (Session 23a)\n   28: Date: 2026-02-20\n   29: \"\"\"\n   30: "
+    },
+    {
+      "anchor_id": "prov_75",
+      "anchor_type": "data_provenance",
+      "name": "precheck_3a_convergence",
+      "script_path": "session-23/s23a_precheck_3a_convergence.py",
+      "session": "s23a",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-23/s23a_precheck_3a_convergence.py",
+      "source_context_30_lines": "<name 'precheck_3a_convergence' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: Session 23a Step 3a: Seven-Way Convergence p-Value (Einstein check 3.5)\n    4: \n    5: Compute the look-elsewhere-corrected probability that seven indicators\n    6: fall within a window of width 0.20 in [0, 2.0].\n    7: \n    8: Indicators:\n    9:   1. DNP stability crossing:       tau = 0.285   (22a SP-5)\n   10:   2. Slow-roll epsilon < 1 center: tau ~ 0.23    (22a SP-1)\n   11:   3. IR spinodal V_IR'' < 0:       tau ~ 0.30    (22c L-1)\n   12:   4. Pomeranchuk instability:      tau ~ 0.30    (22c F-1)\n   13:   5. Grav-YM instanton minimum:    tau ~ 0.31    (22c F-2)\n   14:   6. Weinberg angle (FR formula):  tau = 0.3007  (22a QA-5)\n   15:   7. phi_paasch crossing:          tau = 0.150   (22a QA-4)\n   16: \n   17: Method: Monte Carlo simulation with look-elsewhere correction.\n   18: Also compute with effective DOF accounting for correlations.\n   19: \n   20: Reports p-value WITH and WITHOUT indicator #7.\n   21: \"\"\"\n   22: \n   23: import numpy as np\n   24: import sys\n   25: \n   26: np.random.seed(42)\n   27: \n   28: # ============================================================\n   29: # 1. INDICATOR VALUES\n   30: # ============================================================"
+    },
+    {
+      "anchor_id": "prov_76",
+      "anchor_type": "data_provenance",
+      "name": "precheck_3b",
+      "script_path": "session-23/s23a_precheck_3b.py",
+      "session": "s23a",
+      "inputs": "",
+      "outputs": "session-23/s23a_precheck_3b.png",
+      "source_file": "computations/session-23/s23a_precheck_3b.py",
+      "source_context_30_lines": "  243: ax.axhline(y=1.0, color='k', linestyle=':', alpha=0.5, label='F/B = 1')\n  244: ax.set_xlabel('N (number of modes)', fontsize=12)\n  245: ax.set_ylabel('F/B ratio at tau=0.30', fontsize=12)\n  246: ax.set_title('F/B Convergence to Trap')\n  247: ax.legend()\n  248: ax.grid(True, alpha=0.3)\n  249: \n  250: plt.tight_layout()\n  251: out_png = os.path.join(data_dir, 's23a_precheck_3b.png')\n  252: plt.savefig(out_png, dpi=150, bbox_inches='tight')\n  253: print(f\"\\nPlot saved to {out_png}\")\n  254: plt.close()\n  255: \n  256: print(\"\\n=== PRE-CHECK 3b COMPLETE ===\")"
+    },
+    {
+      "anchor_id": "prov_77",
+      "anchor_type": "data_provenance",
+      "name": "precheck_3b_N50_anomaly",
+      "script_path": "session-23/s23a_precheck_3b_N50_anomaly.py",
+      "session": "s23a",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-23/s23a_precheck_3b_N50_anomaly.py",
+      "source_context_30_lines": "<name 'precheck_3b_N50_anomaly' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: Session 23a Step 3b: N=50 V_IR'' Sign Diagnostic\n    4: \n    5: The master synthesis flags an anomaly: V_IR'' > 0 at N=50 when\n    6: N=10, 20, 100 all show V_IR'' < 0 at tau = 0.30.\n    7: \n    8: Load s22c_landau_classification.npz and s21c_V_IR.npz.\n    9: Extract V_IR(tau, N) for N = 10, 20, 30, 40, 50, 60, 70, 80, 90, 100.\n   10: Plot V_IR''(tau=0.30) vs N.\n   11: \n   12: Determine: smooth crossover or sharp jump?\n   13: \"\"\"\n   14: \n   15: import numpy as np\n   16: import matplotlib.pyplot as plt\n   17: import os\n   18: \n   19: data_dir = os.path.dirname(os.path.abspath(__file__))\n   20: \n   21: print(\"=\" * 70)\n   22: print(\"SESSION 23a STEP 3b: N=50 V_IR'' SIGN DIAGNOSTIC\")\n   23: print(\"=\" * 70)\n   24: \n   25: # ============================================================\n   26: # 1. LOAD EXISTING DATA\n   27: # ============================================================\n   28: print(\"\\n--- 1. Loading data ---\")\n   29: \n   30: vir = np.load(os.path.join(data_dir, 's21c_V_IR.npz'), allow_pickle=True)"
+    },
+    {
+      "anchor_id": "prov_78",
+      "anchor_type": "data_provenance",
+      "name": "precheck_3c_bianchi",
+      "script_path": "session-23/s23a_precheck_3c_bianchi.py",
+      "session": "s23a",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-23/s23a_precheck_3c_bianchi.py",
+      "source_context_30_lines": "<name 'precheck_3c_bianchi' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: Session 23a Step 3c: Bianchi Ansatz Format Compatibility Check\n    4: \n    5: Verify ALGEBRAICALLY that the condensate-modified effective potential\n    6: F_cond(tau) = F_pert(tau) - N(0)*Delta^2/(2g) + ...\n    7: is compatible with the contracted Bianchi identity nabla_mu G^{mu nu} = 0\n    8: from the 12D vacuum Einstein equations.\n    9: \n   10: This is a FORMAT check — does the ansatz for F_cond have the correct\n   11: functional form to satisfy the Bianchi identity?\n   12: \n   13: The FULL Bianchi check on the actual solution is deferred to Phase 23b.\n   14: \"\"\"\n   15: \n   16: import numpy as np\n   17: \n   18: print(\"=\" * 70)\n   19: print(\"SESSION 23a STEP 3c: BIANCHI ANSATZ FORMAT COMPATIBILITY\")\n   20: print(\"=\" * 70)\n   21: \n   22: # ============================================================\n   23: # 1. THE 12D VACUUM EINSTEIN EQUATIONS\n   24: # ============================================================\n   25: print(\"\"\"\n   26: 1. THE 12D VACUUM EINSTEIN EQUATIONS\n   27: ======================================\n   28: \n   29: The phonon-exflation framework starts from the 12D vacuum Einstein\n   30: equations on M^4 x K^8, where K = SU(3):"
+    },
+    {
+      "anchor_id": "prov_79",
+      "anchor_type": "data_provenance",
+      "name": "validation_einstein",
+      "script_path": "session-23/s23a_validation_einstein.py",
+      "session": "s23a",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-23/s23a_validation_einstein.py",
+      "source_context_30_lines": "<name 'validation_einstein' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: Session 23a: Einstein-Theorist Formula-by-Formula Validation\n    3: ============================================================\n    4: Independently verifies every numerical claim in the synthesis document.\n    5: \"\"\"\n    6: import sys\n    7: import os\n    8: import numpy as np\n    9: from scipy.linalg import eigh\n   10: \n   11: SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))\n   12: \n   13: def main():\n   14:     print(\"=\" * 80)\n   15:     print(\"EINSTEIN-THEORIST: Independent Validation of Session 23a Synthesis\")\n   16:     print(\"=\" * 80)\n   17: \n   18:     # ================================================================\n   19:     # LOAD ALL DATA\n   20:     # ================================================================\n   21:     gap_data = np.load(os.path.join(SCRIPT_DIR, \"s23a_gap_equation.npz\"), allow_pickle=True)\n   22:     kosmann_data = np.load(os.path.join(SCRIPT_DIR, \"s23a_kosmann_singlet.npz\"), allow_pickle=True)\n   23: \n   24:     tau_values = gap_data['tau_values']\n   25:     print(f\"\\nTau values: {tau_values}\")\n   26:     print(f\"Gap data keys: {sorted(gap_data.files)[:20]}...\")\n   27:     print(f\"Kosmann data keys: {sorted(kosmann_data.files)[:20]}...\")\n   28: \n   29:     # ================================================================\n   30:     # VALIDATION 1: M_max = 0.077-0.149 range (BdG, parameter-free)"
+    },
+    {
+      "anchor_id": "prov_80",
+      "anchor_type": "data_provenance",
+      "name": "validation_einstein_part2",
+      "script_path": "session-23/s23a_validation_einstein_part2.py",
+      "session": "s23a",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-23/s23a_validation_einstein_part2.py",
+      "source_context_30_lines": "<name 'validation_einstein_part2' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: Session 23a: Einstein-Theorist Validation Part 2 — Deep structural checks\n    3: \"\"\"\n    4: import numpy as np\n    5: from scipy.linalg import eigh\n    6: \n    7: import os\n    8: SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))\n    9: \n   10: def main():\n   11:     kosmann_data = np.load(os.path.join(SCRIPT_DIR, \"s23a_kosmann_singlet.npz\"), allow_pickle=True)\n   12:     gap_data = np.load(os.path.join(SCRIPT_DIR, \"s23a_gap_equation.npz\"), allow_pickle=True)\n   13:     tau_values = gap_data['tau_values']\n   14:     C2_IDX = [3, 4, 5, 6]\n   15: \n   16:     # ================================================================\n   17:     # VALIDATION A: BdG vs mu=0 linearized -- are they different?\n   18:     # ================================================================\n   19:     print(\"=\" * 80)\n   20:     print(\"VALIDATION A: BdG (E_n+E_m denominator) vs mu=0 linearized (2*|xi|)\")\n   21:     print(\"The synthesis Table II.2 shows both. Check consistency.\")\n   22:     print(\"=\" * 80)\n   23: \n   24:     print(f\"\\n{'tau':>6s}  {'M_max(mu=0)':>14s}  {'M_max(BdG+)':>14s}  {'Ratio':>8s}\")\n   25:     for idx, tau in enumerate(tau_values):\n   26:         evals = kosmann_data[f'eigenvalues_{idx}']\n   27:         V = np.zeros((16, 16))\n   28:         for a in C2_IDX:\n   29:             K = kosmann_data[f'K_a_matrix_{idx}_{a}']\n   30:             V += np.abs(K) ** 2"
+    }
+  ]
+}

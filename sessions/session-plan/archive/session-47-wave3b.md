@@ -37,22 +37,22 @@ This ratio differs from the bare ratio R_bare(tau) = lambda_{(3,0)} / lambda_{(0
 
 **Verified data locations**:
 
-- `tier0-computation/s44_dos_tau.npz`:
+- `computations/s44_dos_tau.npz`:
   - `tau0.XX_all_omega: shape=(992,)` at tau = 0.00, 0.05, 0.10, 0.15, 0.19
   - Contains the (0,0) sector eigenvalues at each tau (the first 16 of the 992, or identifiable by dim²=1)
 
-- `tier0-computation/s46_qtheory_selfconsistent.npz`:
+- `computations/s46_qtheory_selfconsistent.npz`:
   - `Delta_B1_sc: shape=(60,)` — self-consistent B1 gap vs tau
   - `Delta_B2_sc: shape=(60,)` — self-consistent B2 gap vs tau
   - `Delta_B3_sc: shape=(60,)` — self-consistent B3 gap vs tau
   - `tau_scan: shape=(60,)` — tau values for the gap scan
   - `Delta_B1_fold: 0.3718`, `Delta_B2_fold: 0.7320`, `Delta_B3_fold: 0.0842`
 
-- `tier0-computation/s46_number_projected_bcs.npz`:
+- `computations/s46_number_projected_bcs.npz`:
   - `Delta_bcs_fold: shape=(3,)` — [0.372, 0.732, 0.084]
   - `v2_bcs: shape=(3,)` — [0.045, 0.122, 0.002]
 
-- `tier0-computation/canonical_constants.py`
+- `computations/canonical_constants.py`
 
 **Computation Steps**:
 
@@ -91,9 +91,9 @@ This ratio differs from the bare ratio R_bare(tau) = lambda_{(3,0)} / lambda_{(0
 - FAIL: R_dressed never crosses phi — BCS dressing destroys the phi relationship entirely.
 
 **Output files**:
-- Script: `tier0-computation/s47_phi_bdg.py`
-- Data: `tier0-computation/s47_phi_bdg.npz`
-- Plot: `tier0-computation/s47_phi_bdg.png`
+- Script: `computations/s47_phi_bdg.py`
+- Data: `computations/s47_phi_bdg.npz`
+- Plot: `computations/s47_phi_bdg.png`
 
 **Working paper section**: W3-2
 

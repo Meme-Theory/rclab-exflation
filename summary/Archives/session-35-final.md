@@ -3,8 +3,8 @@
 **Date**: 2026-03-07
 **Format**: 4-wave parallel computation sprint (16 gates) + KK-NCG Excursion + 4 collaborative workshops
 **Agents**: 11 computation agents (landau, quantum-acoustics, feynman, gen-physicist, baptista, neutrino, paasch, connes, dirac, spectral-geometer, sagan) + 4 workshop pairs (feynman×landau, connes×spectral-geometer, kk×berry, neutrino×baptista)
-**Gate verdicts**: `tier0-computation/s35_gate_verdicts.txt`
-**Total files produced**: 6 session documents, 16 tier0 computation triplets ({py,npz,png}), 4 additional tier0 scripts from KK-NCG Excursion, 15 new research papers indexed (Connes/17-22, Baptista/19-27)
+**Gate verdicts**: `computations/s35_gate_verdicts.txt`
+**Total files produced**: 6 session documents, 16 computation computation triplets ({py,npz,png}), 4 additional computation scripts from KK-NCG Excursion, 15 new research papers indexed (Connes/17-22, Baptista/19-27)
 
 ---
 
@@ -277,7 +277,7 @@ With singlet PMNS permanently closed (R < 5.9), the surviving route is inter-sec
 
 ## IX. Open Questions (Ranked by Impact)
 
-### Tier 1: Framework-Critical
+### Level 1: Framework-Critical
 
 1. **a₄ heat kernel on M⁴ × SU(3)_Jensen × F** — The decisive computation. Extracts gauge couplings from the full almost-commutative Dirac operator. If it yields sin²(θ_W) ≈ 0.231 at s = 0.190, the framework predicts the Weinberg angle from geometry. BF ~ 10-20. *Owners: connes, baptista, spectral-geometer.*
 
@@ -285,7 +285,7 @@ With singlet PMNS permanently closed (R < 5.9), the surviving route is inter-sec
 
 3. **Full quantum treatment at larger N** — ED at N = 5 modes with 32 states is small. Multi-sector ED or DMRG at larger Fock space could confirm or overturn. *Owner: quantum-acoustics.*
 
-### Tier 2: Deepening
+### Level 2: Deepening
 
 4. **Sp(2) Dirac spectrum under Jensen-type deformation** — The primary specificity test. If Sp(2) has folds with comparable DOS enhancement, SU(3) loses quantitative specificity. *Owners: kk, spectral-geometer.*
 
@@ -295,7 +295,7 @@ With singlet PMNS permanently closed (R < 5.9), the surviving route is inter-sec
 
 7. **Λ from sector sum** — The cosmological constant from the spectral action summed over Peter-Weyl sectors. Would be transformative if computable. *Owners: hawking, connes.*
 
-### Tier 3: Collaborative Opportunities
+### Level 3: Collaborative Opportunities
 
 8. **Pure math paper (JGP/CMP)**: The combination of fold + Schur's lemma on B2 + [iK₇, D_K] = 0 + Trap 1 + SU(3) specificity constitutes publishable spectral geometry independent of physics claims.
 
@@ -363,7 +363,7 @@ The trajectory: initial climb to 52% on structural results → precipitous decli
 | `sessions/archive/session-35/session-35-kk-berry-workshop.md` | Specificity deepening |
 | `sessions/archive/session-35/session-35-neutrino-baptista-workshop.md` | Inter-sector PMNS rescue |
 
-### Tier0 Computations (16 gates + 4 excursion)
+### computation Computations (16 gates + 4 excursion)
 | File prefix | Gate | Key output |
 |:------------|:-----|:-----------|
 | s35_thouless_multiband | NEFF-THOULESS-35 | M_max = 1.674 |

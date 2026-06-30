@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 111,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1101",
+      "anchor_type": "data_provenance",
+      "name": "lyapunov_36d",
+      "script_path": "session-66/s66_lyapunov_36d.py",
+      "session": "s66",
+      "inputs": "",
+      "outputs": "session-66/s66_lyapunov_36d.npz, session-66/s66_lyapunov_36d.png",
+      "source_file": "computations/session-66/s66_lyapunov_36d.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s66_lyapunov_36d.py — CLASSICAL-LYAPUNOV-36D: Lyapunov Spectrum of SA Gradient Flow\n    4: =====================================================================================\n    5: \n    6: Gate: CLASSICAL-LYAPUNOV-36D\n    7:   PASS (integrability): lambda_max < 10^{-3} M_KK\n    8:   FAIL (chaos): lambda_max > 0.1 M_KK\n    9:   INFO: 10^{-3} < lambda_max < 0.1\n   10: \n   11: Context:"
+    },
+    {
+      "anchor_id": "prov_1102",
+      "anchor_type": "data_provenance",
+      "name": "mott_access",
+      "script_path": "session-66/s66_mott_access.py",
+      "session": "s66",
+      "inputs": "",
+      "outputs": "session-66/s66_mott_access.npz, session-66/s66_mott_access.png",
+      "source_file": "computations/session-66/s66_mott_access.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s66_mott_access.py — MOTT-ACCESS-66: Can Any Spectral Functional Drive E_J/E_C → 1?\n    4: ======================================================================================\n    5: \n    6: Gate: MOTT-ACCESS-66\n    7:   PASS: E_J/E_C < 10 for some physically motivated spectral functional\n    8:   FAIL: E_J/E_C > 100 for ALL tested functionals\n    9:   INFO: E_J/E_C reduced but still > 10\n   10: \n   11: Physics:"
+    },
+    {
+      "anchor_id": "prov_1103",
+      "anchor_type": "data_provenance",
+      "name": "ns_r_joint",
+      "script_path": "session-66/s66_ns_r_joint.py",
+      "session": "s66",
+      "inputs": "",
+      "outputs": "session-66/s66_ns_r_joint.npz, session-66/s66_ns_r_joint.png",
+      "source_file": "computations/session-66/s66_ns_r_joint.py",
+      "source_context_30_lines": "   35:   FAIL: 2D tension > 3 sigma\n   36:   INFO: 2-3 sigma (notable tension, borderline)\n   37: \n   38: NOTE: n_s = 0.9590 is a SCHEME-DEPENDENT prediction (sqrt cutoff).\n   39: W2-A showed spread = 0.164 across cutoff choices. This computation\n   40: uses the standard value; the scheme dependence is noted, not resolved.\n   41: \n   42: Output:\n   43:   - s66_ns_r_joint.npz\n   44:   - s66_ns_r_joint.png\n   45: \n   46: Agent: Mack-Cosmic-Bridge (Session 66, Wave 3)\n   47: \"\"\"\n   48: \n   49: import numpy as np\n   50: import sys\n   51: import os"
+    },
+    {
+      "anchor_id": "prov_1104",
+      "anchor_type": "data_provenance",
+      "name": "oee_npair3",
+      "script_path": "session-66/s66_oee_npair3.py",
+      "session": "s66",
+      "inputs": "",
+      "outputs": "session-66/s66_oee_npair3.npz, session-66/s66_oee_npair3.png",
+      "source_file": "computations/session-66/s66_oee_npair3.py",
+      "source_context_30_lines": "   25:   3. Choose local operator O = n_1 = c_1^dag c_1 (number on mode 1)\n   26:   4. Evolve: O(t) = U e^{iEt} U^dag O U e^{-iEt} U^dag\n   27:   5. Vectorize O(t) via Choi-Jamiolkowski: |O(t)>> in H_A tensor H_B\n   28:   6. Bipartition: modes {0,1,2,3} (B2) vs {4,5,6,7} (B1+B3)\n   29:   7. Compute S_OEE(t) = -Tr(rho_A ln rho_A) where rho_A = Tr_B(|O>><<O|)\n   30:   8. Fit to ln(t) and linear forms, classify\n   31: \n   32: Input: computations/session-64/s64_npair3_rg.npz\n   33: Output: computations/session-66/s66_oee_npair3.npz, s66_oee_npair3.png\n   34: \"\"\"\n   35: \n   36: import sys\n   37: import os\n   38: sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))\n   39: from canonical_constants import *\n   40: \n   41: import numpy as np"
+    },
+    {
+      "anchor_id": "prov_1105",
+      "anchor_type": "data_provenance",
+      "name": "pomeran_4cell",
+      "script_path": "session-66/s66_pomeran_4cell.py",
+      "session": "s66",
+      "inputs": "",
+      "outputs": "session-66/s66_pomeran_4cell.npz",
+      "source_file": "computations/session-66/s66_pomeran_4cell.py",
+      "source_context_30_lines": "  521: # =============================================================================\n  522: # Section 9: Save Results\n  523: # =============================================================================\n  524: \n  525: print(\"\\n\" + \"=\" * 72)\n  526: print(\"Section 9: Saving Results\")\n  527: print(\"=\" * 72)\n  528: \n  529: output_path = os.path.join(script_dir, 's66_pomeran_4cell.npz')\n  530: \n  531: np.savez(output_path,\n  532:     # Gate metadata\n  533:     gate_name='POMERAN-4CELL-66',\n  534:     gate_verdict=verdict,\n  535:     gate_criterion='min F_l^{4cell} > 0 for all l=0,1,2',\n  536:     gate_detail=detail,\n  537: "
+    },
+    {
+      "anchor_id": "prov_1106",
+      "anchor_type": "data_provenance",
+      "name": "product_ko_dim",
+      "script_path": "session-66/s66_product_ko_dim.py",
+      "session": "s66",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-66/s66_product_ko_dim.py",
+      "source_context_30_lines": "<name 'product_ko_dim' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: PRODUCT-KO-DIM-66: KO-Dimension Analysis for M^4 x SU(3)\n    4: ==========================================================\n    5: \n    6: Session 66, Wave 8-A (Connes NCG Theorist)\n    7: \n    8: QUESTION: KO(M^4) = 4, KO(SU(3)) = 0 (8-dim spin manifold, 8 mod 8 = 0).\n    9: Naive sum: KO(M^4 x SU(3)) = 4 + 0 = 4, which has J^2 = -1.\n   10: But Session 8 verified J^2 = +1 on the fiber. Resolution?\n   11: \n   12: KEY DISTINCTION: The NCG Standard Model uses M^4 x F where F is a FINITE\n   13: noncommutative space with KO-dim 6 (not the SU(3) manifold). The framework\n   14: claims SU(3) plays the role of F. This script resolves the tension.\n   15: \n   16: APPROACH:\n   17: 1. Tabulate KO-dimension signs for all n mod 8\n   18: 2. Compute signs for M^4 (KO=4), SU(3) as manifold (KO=0), and F_SM (KO=6)\n   19: 3. Derive the product spectral triple formulas from first principles\n   20: 4. Verify numerically using EXPLICIT Clifford algebra charge conjugation\n   21: 5. Show d=8 is uniquely degenerate (B_+ and B_- give same KO signs)\n   22: 6. Identify the resolution: J^2=+1 is on FIBER, J^2=-1 on PRODUCT\n   23: \n   24: REFERENCES:\n   25: - Paper 05: Connes (1995), \"Noncommutative geometry and reality\"\n   26: - Paper 10: Chamseddine-Connes-Marcolli (2007), definitive SM derivation\n   27: - Paper 14: Connes (2019), \"NCG: the spectral standpoint\"\n   28: - Gracia-Bondia, Varilly, Figueroa: \"Elements of NCG\" Ch. 9\n   29: \n   30: Author: Connes NCG Theorist Agent (Session 66)"
+    },
+    {
+      "anchor_id": "prov_1107",
+      "anchor_type": "data_provenance",
+      "name": "qtheory_npair",
+      "script_path": "session-66/s66_qtheory_npair.py",
+      "session": "s66",
+      "inputs": "",
+      "outputs": "session-66/s66_qtheory_npair.npz, session-66/s66_qtheory_npair.png",
+      "source_file": "computations/session-66/s66_qtheory_npair.py",
+      "source_context_30_lines": "   55:     E_B2_mean, E_B1, E_B3_mean, N_dof_BCS,\n   56:     E_exc, n_Bog, d2S_fold, Delta_0_GL, Delta_0_OES,\n   57: )\n   58: \n   59: # ==============================================================================\n   60: # OUTPUT SETUP\n   61: # ==============================================================================\n   62: OUTDIR = os.path.dirname(os.path.abspath(__file__))\n   63: OUT_NPZ = os.path.join(OUTDIR, 's66_qtheory_npair.npz')\n   64: OUT_PNG = os.path.join(OUTDIR, 's66_qtheory_npair.png')\n   65: OUT_TXT = os.path.join(OUTDIR, 's66_qtheory_npair_output.txt')\n   66: \n   67: class TeeOutput:\n   68:     def __init__(self, filepath):\n   69:         self.file = open(filepath, 'w')\n   70:         self.stdout = sys.stdout\n   71:     def write(self, text):"
+    },
+    {
+      "anchor_id": "prov_1108",
+      "anchor_type": "data_provenance",
+      "name": "running_ns",
+      "script_path": "session-66/s66_running_ns.py",
+      "session": "s66",
+      "inputs": "",
+      "outputs": "session-66/s66_running_ns.npz, session-66/s66_running_ns.png",
+      "source_file": "computations/session-66/s66_running_ns.py",
+      "source_context_30_lines": "  629: \n  630: # =============================================================================\n  631: # STEP 9: SAVE DATA\n  632: # =============================================================================\n  633: print(\"\\n\" + \"=\" * 78)\n  634: print(\"STEP 9: Save Data\")\n  635: print(\"=\" * 78)\n  636: \n  637: outpath = os.path.join(SCRIPT_DIR, 's66_running_ns.npz')\n  638: \n  639: # Prepare eigenvalue data for new sectors\n  640: evals_save = {}\n  641: for (key, evals) in evals_L4_new_data.items():\n  642:     i, p, q = key\n  643:     evals_save[f'evals_L4_tau{tau_evals[i]:.3f}_{p}_{q}'] = evals\n  644: \n  645: np.savez("
+    },
+    {
+      "anchor_id": "prov_1109",
+      "anchor_type": "data_provenance",
+      "name": "sff_npair4",
+      "script_path": "session-66/s66_sff_npair4.py",
+      "session": "s66",
+      "inputs": "",
+      "outputs": "session-66/s66_sff_npair4.npz, session-66/s66_sff_npair4.png",
+      "source_file": "computations/session-66/s66_sff_npair4.py",
+      "source_context_30_lines": "   23:   3. Construct full pairing H and RG H\n   24:   4. Generate ensemble (sigma_lift perturbations, n=500)\n   25:   5. Unfold each spectrum (mean normalization, per S53)\n   26:   6. Compute ensemble-averaged SFF K(t)\n   27:   7. Extract ramp slope, compare to GUE\n   28:   8. Number variance Sigma^2(L) as independent check\n   29: \n   30: Input: computations/session-64/s64_npair3_rg.npz (contains eps_bare, V_bare)\n   31: Output: computations/session-66/s66_sff_npair4.npz, s66_sff_npair4.png\n   32: \"\"\"\n   33: \n   34: import sys\n   35: import os\n   36: sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))\n   37: from canonical_constants import *\n   38: \n   39: import numpy as np"
+    },
+    {
+      "anchor_id": "prov_1110",
+      "anchor_type": "data_provenance",
+      "name": "spectral_dim",
+      "script_path": "session-66/s66_spectral_dim.py",
+      "session": "s66",
+      "inputs": "",
+      "outputs": "session-66/s66_spectral_dim.npz, session-66/s66_spectral_dim.png",
+      "source_file": "computations/session-66/s66_spectral_dim.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s66_spectral_dim.py -- SPECTRAL-DIM-66: Spectral Dimension in Cutoff vs Zeta Schemes\n    4: =====================================================================================\n    5: \n    6: Gate: SPECTRAL-DIM-66\n    7:   PASS: D_s^{zeta}(matter) = 4.0 +/- 0.1 AND D_s^{zeta}(gravity) = 2.0 +/- 0.1\n    8:   FAIL: D_s^{zeta} != predicted values\n    9:   INFO: D_s^{zeta} matches but D_s^{cutoff} also matches 4/2 (no scheme difference)\n   10: \n   11: Physics:"
+    }
+  ]
+}

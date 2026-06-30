@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=1400"/>
+<title>Ainulindalë Console — Exflation Knowledge Exhibit</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<div class="app">
+  <div class="topbar">
+    <div class="brand">Ainulindalë <small>· exflation console · the struck bell</small></div>
+    <div class="tabs" id="tabs">
+      <div class="tab active" data-v="fanout">Connections</div>
+      <div class="tab" data-v="atlas">Equation Atlas</div>
+      <div class="tab" data-v="library">Library</div>
+      <div class="tab" data-v="bedrock">Drill to Bedrock</div>
+      <div class="tab-sep" aria-hidden="true">·</div>
+      <div class="tab-group-label">Interesting Visualizations</div>
+      <div class="tab" data-v="bell">The Bell</div>
+      <div class="tab" data-v="spiral">Paasch Spiral</div>
+      <div class="tab" data-v="planstate">Δ(P,S)</div>
+      <div class="tab" data-v="genealogy">Genealogy</div>
+      <div class="tab" data-v="theoremtracks">Theorem Tracks</div>
+      <div class="tab" data-v="gantt">Falsifier Gantt</div>
+    </div>
+    <div class="spacer"></div>
+    <div class="status" id="topStatus">100 sessions · 1,241 equations · 155,984 eigenvalues · <b>P = 40%</b> conditional</div>
+  </div>
+
+  <div class="main">
+    <div class="view"><div class="viewInner" id="stage"></div></div>
+    <div class="inspector" id="inspector"></div>
+  </div>
+
+  <div class="bottom">
+    <div class="trajectory" id="trajectory"></div>
+    <div class="wordstrip" id="wordstrip"></div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+<script src="data.js"></script>
+<script src="views.js"></script>
+<script>
+(function(){
+  const stage = document.getElementById('stage');
+  const inspector = document.getElementById('inspector');
+  const trajectory = document.getElementById('trajectory');
+  const wordstrip = document.getElementById('wordstrip');
+  const tabs = document.getElementById('tabs');
+
+  const VIEWS = window.AE_VIEWS;
+  const BUILDERS = {
+    atlas:    VIEWS.buildAtlas,
+    library:  VIEWS.buildLibrary,
+    bedrock:  VIEWS.buildBedrock,
+    bell:     VIEWS.buildBell,
+    spiral:   VIEWS.buildSpiral,
+    fanout:   VIEWS.buildFanout,
+    planstate:VIEWS.buildPlanStateDiff,
+    genealogy:VIEWS.buildGenealogy,
+    theoremtracks: VIEWS.buildTheoremTracks,
+    gantt:    VIEWS.buildGantt,
+  };
+
+  function show(v){
+    try { localStorage.setItem('ae.view', v); } catch(e){}
+    tabs.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.v===v));
+    stage.innerHTML = '';
+    const host = document.createElement('div');
+    host.style.position='absolute'; host.style.inset='0';
+    stage.appendChild(host);
+    BUILDERS[v](host);
+  }
+  // Expose so inspector cards can navigate (e.g. "surf" a thought to fanout)
+  window.AE_SHOW = show;
+  tabs.addEventListener('click', e => {
+    const t = e.target.closest('.tab'); if (!t) return; show(t.dataset.v);
+  });
+
+  VIEWS.buildInspector(inspector);
+  VIEWS.buildTrajectory(trajectory);
+  VIEWS.buildWordmap(wordstrip);
+
+  const saved = (()=>{ try{ return localStorage.getItem('ae.view'); }catch(e){ return null; }})();
+  show(saved && BUILDERS[saved] ? saved : 'fanout');
+})();
+</script>
+</body>
+</html>

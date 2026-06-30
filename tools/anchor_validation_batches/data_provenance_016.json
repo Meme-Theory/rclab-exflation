@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 16,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_151",
+      "anchor_type": "data_provenance",
+      "name": "crosssector_check",
+      "script_path": "session-30/s30a_crosssector_check.py",
+      "session": "s30a",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-30/s30a_crosssector_check.py",
+      "source_context_30_lines": "<name 'crosssector_check' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: Session 30Aa: Cross-Sector Coupling Check\n    3: \n    4: Einstein claims D_F has cross-sector couplings with Delta(p+q)=1 selection rule.\n    5: This script verifies whether [D_K, L_{e_a}] has cross-sector terms by constructing\n    6: the full 432x432 operators and checking off-diagonal blocks.\n    7: \n    8: The key question: does L_{e_a} on the FULL truncated space have cross-sector terms?\n    9: \n   10: Mathematical analysis:\n   11:     L_{e_a} = rho(e_a) tensor I_16 + I_rho tensor K_a\n   12: \n   13:     BOTH terms act within each Peter-Weyl sector:\n   14:     - rho(e_a) is the sector-specific representation\n   15:     - K_a acts on spinor space only\n   16: \n   17:     IF L_{e_a} is block-diagonal, then [D_K, L_{e_a}] is also block-diagonal.\n   18:     The only way to get cross-sector terms is if L_{e_a} has them.\n   19: \n   20:     But L_{e_a} on H_trunc = bigoplus V_{(p,q)} tensor C^16 acts as:\n   21:     L_{e_a} = diag(L_{e_a}^{(0,0)}, L_{e_a}^{(1,0)}, L_{e_a}^{(0,1)}, ...)\n   22: \n   23:     So the commutator is also block-diagonal. Unless there's a subtlety I'm missing.\n   24: \n   25: This script constructs everything on the full space and checks numerically.\n   26: \n   27: Author: phonon-exflation-sim (Session 30Aa)\n   28: Date: 2026-03-01\n   29: \"\"\"\n   30: "
+    },
+    {
+      "anchor_id": "prov_152",
+      "anchor_type": "data_provenance",
+      "name": "df_construction",
+      "script_path": "session-30/s30a_df_construction.py",
+      "session": "s30a",
+      "inputs": "",
+      "outputs": "session-30/s30a_df_construction.npz",
+      "source_file": "computations/session-30/s30a_df_construction.py",
+      "source_context_30_lines": "   22:     D_F(tau) is the direct sum over sectors of these projected commutator\n   23:     matrices, summed over the 4 non-Killing directions.\n   24: \n   25: Key structural fact (Session 22b):\n   26:     D_K and L_{e_a} are BOTH block-diagonal in Peter-Weyl. Therefore\n   27:     [D_K, L_{e_a}] is also block-diagonal. D_F constructed this way\n   28:     has NO inter-sector couplings.\n   29: \n   30: Output: s30a_df_construction.npz with D_F(tau) for tau in [0, 0.50]\n   31: \n   32: Author: phonon-exflation-sim (Session 30Aa)\n   33: Date: 2026-03-01\n   34: \n   35: References:\n   36:     - Baptista Paper 17, eq 1.3-1.4: [D_K, L_X] formula\n   37:     - Session 22b: D_K block-diagonality theorem\n   38:     - Session 23a: Kosmann operator (corrected antisymmetric formula)"
+    },
+    {
+      "anchor_id": "prov_153",
+      "anchor_type": "data_provenance",
+      "name": "dtotal_pfaffian",
+      "script_path": "session-30/s30a_dtotal_pfaffian.py",
+      "session": "s30a",
+      "inputs": "",
+      "outputs": "session-30/s30a_dtotal_pfaffian.npz",
+      "source_file": "computations/session-30/s30a_dtotal_pfaffian.py",
+      "source_context_30_lines": "  494:     if sign_changes:\n  495:         print(f\"  30Ab: SIGN CHANGE -- D_F induces topological transition\")\n  496:     else:\n  497:         print(f\"  30Ab: Z_2 = {sign_val} (D_K + D_F, still trivial)\")\n  498: \n  499:     # ================================================================\n  500:     # SAVE\n  501:     # ================================================================\n  502:     output_path = os.path.join(SCRIPT_DIR, \"s30a_dtotal_pfaffian.npz\")\n  503:     np.savez_compressed(\n  504:         output_path,\n  505:         tau_values=tau_scan,\n  506:         pf_values=pf_values,\n  507:         pf_signs=pf_signs,\n  508:         min_gap_dtotal=min_gap_dtotal,\n  509:         D_F_norm=df_norms,\n  510:         D_K_norm=dk_norms,"
+    },
+    {
+      "anchor_id": "prov_154",
+      "anchor_type": "data_provenance",
+      "name": "step0_validate",
+      "script_path": "session-30/s30a_step0_validate.py",
+      "session": "s30a",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-30/s30a_step0_validate.py",
+      "source_context_30_lines": "<name 'step0_validate' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: Session 30Aa Step 0: Validate eigenvector extraction backward compatibility.\n    3: \n    4: Verifies that collect_spectrum_with_eigenvectors() produces eigenvalues\n    5: matching the original collect_spectrum() to machine epsilon at tau=0.15, 0.35.\n    6: \n    7: Also validates:\n    8: 1. Eigenvector orthonormality: ||V^dag V - I|| < 1e-12\n    9: 2. Eigenvalue reconstruction: ||D_pi @ v_n - lambda_n * v_n|| < 1e-12\n   10: 3. Anti-Hermiticity: ||D_pi + D_pi^dag|| < 1e-12\n   11: \n   12: Author: phonon-exflation-sim (Session 30Aa)\n   13: Date: 2026-03-01\n   14: \"\"\"\n   15: \n   16: import sys\n   17: import os\n   18: import time\n   19: import numpy as np\n   20: \n   21: SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))\n   22: sys.path.insert(0, SCRIPT_DIR)\n   23: \n   24: from dirac_spectrum import (\n   25:     su3_generators,\n   26:     compute_structure_constants,\n   27:     compute_killing_form,\n   28:     jensen_metric,\n   29:     orthonormal_frame,\n   30:     frame_structure_constants,"
+    },
+    {
+      "anchor_id": "prov_155",
+      "anchor_type": "data_provenance",
+      "name": "step1_validate",
+      "script_path": "session-30/s30a_step1_validate.py",
+      "session": "s30a",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-30/s30a_step1_validate.py",
+      "source_context_30_lines": "<name 'step1_validate' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: Session 30Aa Step 1: Validate Lie derivative of Jensen metric.\n    3: \n    4: Verifies:\n    5: 1. Killing directions (a=0,1,2,7): L_{e_a} g = 0 to machine epsilon\n    6: 2. Non-Killing directions (a=3,4,5,6): L_{e_a} g != 0\n    7: 3. Symmetry: (L_{e_a} g)_{bc} = (L_{e_a} g)_{cb}\n    8: 4. Volume-preservation: Tr(L_{e_a} g) = 0\n    9: 5. Cross-check with s23a Kosmann symmetric formula\n   10: 6. Covariant derivative nabla_{e_i}(L_{e_a} g) computation test\n   11: \n   12: Author: phonon-exflation-sim (Session 30Aa)\n   13: Date: 2026-03-01\n   14: \"\"\"\n   15: \n   16: import sys\n   17: import os\n   18: import time\n   19: import numpy as np\n   20: \n   21: SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))\n   22: sys.path.insert(0, SCRIPT_DIR)\n   23: \n   24: from dirac_spectrum import (\n   25:     su3_generators,\n   26:     compute_structure_constants,\n   27:     compute_killing_form,\n   28:     jensen_metric,\n   29:     orthonormal_frame,\n   30:     frame_structure_constants,"
+    },
+    {
+      "anchor_id": "prov_156",
+      "anchor_type": "data_provenance",
+      "name": "full_spectrum",
+      "script_path": "session-30/s30b_full_spectrum.py",
+      "session": "s30b",
+      "inputs": "",
+      "outputs": "session-30/s30b_full_spectrum.npz",
+      "source_file": "computations/session-30/s30b_full_spectrum.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s30b_full_spectrum.py — Full Dirac Spectrum at Candidate Points (Session 30Bb Steps 3, 5, 5b)\n    4: ==============================================================================================\n    5: \n    6: Computes the full Dirac spectrum at N_max=6 for two candidate evaluation points\n    7: on the U(2)-invariant surface:\n    8: \n    9:   Candidate 1 (Gradient-balance): tau=0.180, eps=-0.135\n   10:     - Where BCS and spectral action gradients cancel at Lambda_crit=1.12\n   11:     - sin2_B = 0.585 (far from SM)"
+    },
+    {
+      "anchor_id": "prov_157",
+      "anchor_type": "data_provenance",
+      "name": "grid_bcs",
+      "script_path": "session-30/s30b_grid_bcs.py",
+      "session": "s30b",
+      "inputs": "",
+      "outputs": "session-30/s30b_grid_bcs.npz",
+      "source_file": "computations/session-30/s30b_grid_bcs.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s30b_grid_bcs.py — BCS Free Energy on U(2)-invariant 2D Grid\n    4: =============================================================\n    5: \n    6: Session 30Ba Step 2: Compute the full Dirac spectrum at each (tau, eps)\n    7: grid point, evaluate V_total = V_spec + F_BCS, locate the minimum,\n    8: verify Hessian stability, and extract physical observables.\n    9: \n   10: At each grid point:\n   11:   1. Dirac eigenvalues for all 10 sectors (p+q <= 3)"
+    },
+    {
+      "anchor_id": "prov_158",
+      "anchor_type": "data_provenance",
+      "name": "rge_running",
+      "script_path": "session-30/s30b_rge_running.py",
+      "session": "s30b",
+      "inputs": "",
+      "outputs": "session-30/s30b_rge_running.npz, session-30/s30b_rge_running.png",
+      "source_file": "computations/session-30/s30b_rge_running.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s30b_rge_running.py — RGE Running + NCG-KK Tension Analysis\n    4: ============================================================\n    5: \n    6: Session 30Bb Step 4: Take g1/g2 from the grid data at the SM Weinberg contour\n    7: (where sin^2_B ~ 0.231 under Formula B) and run SM one-loop beta functions.\n    8: \n    9: RGE-A (zero parameters): Starting from g1/g2 at M_KK, does the ratio run to\n   10:   sin^2(theta_W) = 0.2312 at M_Z for SOME M_KK in [10^10, 10^18] GeV?\n   11: "
+    },
+    {
+      "anchor_id": "prov_159",
+      "anchor_type": "data_provenance",
+      "name": "rge_running_legacy",
+      "script_path": "session-30/s30b_rge_running_legacy.py",
+      "session": "s30b",
+      "inputs": "",
+      "outputs": "session-30/s30b_rge_running_legacy.npz, session-30/s30b_rge_running_legacy.png",
+      "source_file": "computations/session-30/s30b_rge_running_legacy.py",
+      "source_context_30_lines": "<name 'rge_running_legacy' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s30b_rge_running.py — RGE Running + NCG-KK Tension Analysis\n    4: ============================================================\n    5: \n    6: Session 30Bb Step 4: Take g1/g2 from the grid data at the SM Weinberg contour\n    7: (where sin^2_B ~ 0.231 under Formula B) and run SM one-loop beta functions.\n    8: \n    9: RGE-A (zero parameters): Starting from g1/g2 at M_KK, does the ratio run to\n   10:   sin^2(theta_W) = 0.2312 at M_Z for SOME M_KK in [10^10, 10^18] GeV?\n   11: \n   12: RGE-B (one parameter): If Part A passes, do individual g1(M_Z), g2(M_Z)\n   13:   match PDG values? PDG: alpha_1(M_Z) = 0.01699, alpha_2(M_Z) = 0.03376.\n   14: \n   15: NCG-KK tension (XS-2): Run UPWARD from M_KK. Find Lambda_SA where\n   16:   alpha_1 = alpha_2. Report Lambda_SA / M_KK.\n   17: \n   18: Beta function coefficients (SM one-loop):\n   19:   b1 = 41/10, b2 = -19/6, b3 = -7\n   20: \n   21: RGE formula:\n   22:   1/alpha_i(mu) = 1/alpha_i(M) + b_i/(2*pi) * ln(M/mu)\n   23: \n   24: At KK scale:\n   25:   g1/g2 = sqrt(L2/L1)  =>  alpha_1/alpha_2 = L2/L1 = (g1/g2)^2\n   26: \n   27: Formula B (correct, Baptista Paper 14 eq 2.93):\n   28:   sin^2(theta_W) = 3*L2 / (L1 + 3*L2)\n   29: \n   30: Author: einstein-theorist agent, Session 30Bb"
+    },
+    {
+      "anchor_id": "prov_160",
+      "anchor_type": "data_provenance",
+      "name": "sdw_grid",
+      "script_path": "session-30/s30b_sdw_grid.py",
+      "session": "s30b",
+      "inputs": "",
+      "outputs": "session-30/s30b_sdw_grid.npz, session-30/s30b_sdw_grid.png",
+      "source_file": "computations/session-30/s30b_sdw_grid.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s30b_sdw_grid.py — Seeley-DeWitt shortcut on U(2)-invariant 2D grid\n    4: ====================================================================\n    5: \n    6: Session 30Ba Step 1: Compute scalar curvature, Seeley-DeWitt coefficients,\n    7: Weinberg angle, and gauge coupling ratio on a 21x21 grid in (tau, epsilon)\n    8: on the volume-preserving U(2)-invariant surface.\n    9: \n   10: Parameterization (volume-preserving, orthogonal to Jensen tangent):\n   11:   log L1 = 2*tau - 11*eps/N"
+    }
+  ]
+}

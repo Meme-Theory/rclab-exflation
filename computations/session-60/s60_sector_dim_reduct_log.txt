@@ -1,0 +1,261 @@
+Canonical constants loaded.
+Input data loaded.
+
+======================================================================
+Step 1: O'Neill Decomposition of the Scalar Curvature
+======================================================================
+
+Paper 13 eq 3.4: R_P = R_M + R_K - |F|^2 - |S|^2 - |N|^2 - 2 delta N
+After fiber-integration (eq 3.41):
+  L_M = (1/2k_P)[R_M * f_phi - (1/4)*B_phi*|F|^2 - C_phi*|d_A phi|^2
+         - D_phi*|d|phi|^2|^2 - V(|phi|^2) - 2*Lambda_M*f_phi] * Vol(K,beta_0)
+
+Key structure:
+  * G_eff^{-1} ~ f_phi * Vol(K, beta_0)  (fiber-integrated coefficient of R_M)
+  * alpha ~ 1/lambda_1  (point evaluation on fiber metric, no integral)
+
+  tau_fold = 0.19
+  f_phi(tau) = 0.396817
+  df_phi/dtau = -3.796709
+  (1/f)(df/dtau) = -9.567901
+
+======================================================================
+Step 2: G_eff from the Spectral Action
+======================================================================
+
+In the spectral action framework, the 4D Einstein-Hilbert term arises as:
+  S_EH = (1/16*pi*G_eff) * integral R_M sqrt{g_M} d^4x
+
+where 1/(16*pi*G_eff) = a_2(tau) * M_KK^2 / (4*pi)
+and a_2(tau) is the second Seeley-DeWitt coefficient of the full Dirac spectrum.
+
+The S59 spinor norm computation found the SECTOR-RESOLVED a_2:
+  Sector d^2 values: [  1   9  36  64 100 225]
+  Sector a_2 values: [1.42296247e+01 9.62013978e+02 9.59404417e+03 1.10264731e+04
+ 5.40113924e+04 8.73762618e+04]
+  Sector mode counts: [ 16  96 192 128 320 240]
+  Total a_2 = 162984.4151
+  N_factor (a_2 ratio) = 15.369841
+
+  From S59: frac_da2 = (1/a_2)(da_2/dtau) = 99.1267
+  delta_tau_eff = 0.005303
+  delta_G/G = -5.256988e-01
+
+  delta_N/N = -2.628494e-01
+
+======================================================================
+Step 3: alpha from the Fiber Metric (Paper 13 eq 5.21)
+======================================================================
+
+The gauge coupling constants come from the fiber metric:
+  g'^2/4 = 3/lambda_1    (hypercharge)
+  g^2/4  = 1/lambda_2    (weak isospin)
+  alpha_EM = e^2/(4*pi)
+  e = 2*sqrt(3) / sqrt(lambda_1 + 3*lambda_2)  (Paper 13 eq 5.21)
+
+In the Jensen deformation parametrization (project convention):
+  g_1/g_2 = e^{-2*tau}   (Session 17a B-1)
+  => log(g_1^2/g_2^2) = -4*tau
+  => delta(g_1^2)/g_1^2 - delta(g_2^2)/g_2^2 = -4 * delta_tau
+
+From the clock constraint (S22d E-3):
+  delta_alpha/alpha = clock_coeff * delta_tau
+  clock_coeff = -3.08
+
+  Method 1 (clock constraint): |delta_alpha/alpha| = 1.633417e-02
+  Method 2 (Paper 13 direct): |delta_alpha/alpha| = 1.445370e-02
+    alpha sensitivity = 2.7254 (vs clock = 3.0800)
+
+  NOTE: Both methods give comparable sensitivities (~3-4 per unit tau).
+  Using clock constraint (canonical, from full Dirac spectrum).
+
+======================================================================
+Step 4: Naive Screening Ratio (no fiber integration correction)
+======================================================================
+
+  |delta_N/N| = (1/2) * |frac_da2| * delta_tau = (1/2) * 99.1267 * delta_tau
+  |delta_alpha/alpha| = |clock_coeff| * delta_tau = 3.0800 * delta_tau
+  => delta_tau CANCELS in the ratio
+
+  Screening ratio (naive) = (1/2) * |frac_da2| / |clock_coeff|
+                          = (1/2) * 99.1267 / 3.0800
+                          = 16.0920
+
+  This is 16.1x.  Gate threshold: 10^4 = 10000.
+  Shortfall: 621x below threshold.
+
+======================================================================
+Step 5: Fiber Integration Measure Correction
+======================================================================
+
+The key structural question: does the fiber integration measure DIFFERENTIATE
+the tau-sensitivity of G_eff from that of alpha?
+
+G_eff pathway:
+  a_2 = SUM_{(p,q)} d_{(p,q)}^2 * a_2^{(p,q)}(tau)
+  where d^2 is the Peter-Weyl multiplicity and a_2^{(p,q)} is the sector
+  Seeley-DeWitt coefficient. The TOTAL a_2 is a weighted sum.
+
+alpha pathway:
+  alpha = e^2/(4*pi), with e determined by the fiber metric along the u(1)
+  generator gamma_phi. This is a POINT evaluation on the Lie algebra metric.
+  Specifically: e^2 = 6*kappa_M / beta(gamma_phi, gamma_phi) (Paper 13 eq 4.13).
+
+STRUCTURAL ANALYSIS:
+  Both G_eff and alpha depend on the SAME left-invariant metric g_phi(tau).
+  There is exactly ONE deformation parameter: tau = |phi|^2.
+  a_2(tau) is a function of tau. alpha(tau) is a function of tau.
+  Both have O(1) sensitivities to tau (da_2/a_2/dtau ~ 99, dalpha/alpha/dtau ~ 3).
+  The fiber integration sums AMPLIFY the sensitivity of a_2 (frac_da2 = 99)
+  relative to alpha (sensitivity = 3.08).
+  This goes in the WRONG direction for screening: G varies MORE than alpha.
+
+  Sector-resolved a_2 (from S59 SPINOR-NORM-59):
+    Sector (0,0): d^2=   1, a_2=     14.2296, d^2*a_2=     14.2296 (  0.0%)
+    Sector (1,0): d^2=   9, a_2=    962.0140, d^2*a_2=   8658.1258 (  5.3%)
+    Sector (2,0)+(0,2): d^2=  36, a_2=   9594.0442, d^2*a_2= 345385.5902 (211.9%)
+    Sector (1,1): d^2=  64, a_2=  11026.4731, d^2*a_2= 705694.2752 (433.0%)
+    Sector (3,0)+(0,3): d^2= 100, a_2=  54011.3924, d^2*a_2=5401139.2441 (3313.9%)
+    Sector (2,1)+(1,2): d^2= 225, a_2=  87376.2618, d^2*a_2=19659658.9156 (12062.3%)
+    Total: 26120550.3806 (check vs a2_total = 162984.4151)
+
+======================================================================
+Step 6: (M_KK / M_Pl)^2 Suppression Factor
+======================================================================
+
+  M_KK = 7.4287e+16 GeV (gravity route)
+  M_Pl_reduced = 2.4350e+18 GeV
+  (M_KK / M_Pl)^2 = 9.3073e-04
+
+  Cross-check: 1/(4*pi*a_2_fold) = 2.8665e-05
+  (M_KK/M_Pl)^2 directly      = 9.3073e-04
+
+  With S59 spinor-norm correction (N_factor = 15.3698):
+  a_2_corrected = 10186.5259
+  M_Pl_corrected = 2.3866e+18
+  1/(4*pi*a_2_corrected) = 7.8120e-06
+  (M_KK/M_Pl_corr)^2 = 9.6889e-04
+
+  STRUCTURAL CONCLUSION:
+  (M_KK/M_Pl)^2 = 1/(4*pi*a_2). It is NOT an independent suppression factor.
+  It is algebraically identical to the inverse of the a_2 coefficient that
+  already determines G_eff. Inserting it would be DOUBLE-COUNTING.
+
+  The screening ratio formula is:
+    R_screen = |delta_N/N| / |delta_alpha/alpha|
+    = (1/2)|delta_G/G| / |delta_alpha/alpha|
+    = (1/2)|(da_2/dtau)/a_2| / |(dalpha/dtau)/alpha|
+    = (1/2)|frac_da_2| / |clock_coeff|
+  The (M_KK/M_Pl)^2 factor cancels: it is in BOTH numerator and denominator
+  when you trace through the spectral action derivation.
+
+======================================================================
+Step 7: Sector Separation Analysis
+======================================================================
+
+The only escape route: if different PW sectors have DIFFERENT
+tau-sensitivities, and if alpha depends on a different combination
+of sectors than G_eff.
+
+From the D_K block-diagonality theorem (S22b):
+  D_K is block-diagonal in Peter-Weyl sectors to machine epsilon (8.4e-15).
+  Each sector evolves independently under the Jensen deformation.
+
+G_eff: proportional to a_2 = SUM d^2 * a_2^{(p,q)}(tau)
+alpha: determined by the metric on su(3), specifically the u(1) direction.
+  In the (p,q) language, the (0,0) singlet sector gives the IDENTITY rep,
+  which sees only the global metric scale. Higher sectors see curvature.
+
+  (0,0) singlet a_2 = 14.2296
+  Fraction of total a_2: 8.730666e-05 = 0.0087%
+
+  If alpha depended ONLY on the singlet sector and G depended on ALL sectors,
+  the screening ratio could differ. But this is NOT the case:
+  alpha depends on the METRIC g_phi, which determines everything.
+
+  Structural sensitivity ratio: frac_da2 / |clock_coeff|
+    = 99.1267 / 3.0800 = 32.1840
+  Screening ratio (= structural/2): 16.0920
+
+  Three-parameter analysis (Paper 13 Section 5):
+  If lambda_1, lambda_2, lambda_3 could vary INDEPENDENTLY,
+  we could decouple alpha (which depends on lambda_1, lambda_2)
+  from G (which depends on the total spectral action).
+  But in the Jensen deformation: all lambda_i track the same tau.
+
+  e^{4*tau} = 2.1383
+  3-param alpha sensitivity: 2.7254
+  Clock constraint gives: 3.0800
+  Ratio: 1.1301
+
+======================================================================
+Step 8: Volume Form Screening (the f_phi factor)
+======================================================================
+
+One possible loophole: the fiber volume form f_phi(tau) enters G_eff
+through the Einstein-Hilbert fiber integration, but alpha is determined
+by the point metric. If G_eff ~ a_2 * f_phi and alpha ~ 1/lambda_1,
+then delta_G/G would have an ADDITIONAL contribution from delta_f/f.
+
+However, a_2 is computed from the FULL Dirac operator on P = M^4 x K,
+which already includes the fiber volume through the spectral measure.
+The frac_da2 = 99.13 ALREADY incorporates any volume form effects.
+
+Verification: the volume form sensitivity:
+  (1/f)(df/dtau) at tau = 0.19: -9.5679
+  This is -9.5679/99.1267 = 0.0965
+  of the spectral a_2 sensitivity.
+
+  The volume form diverges at tau -> 1/4, contributing to the steep slope.
+  But this is already captured in a_2(tau).
+
+======================================================================
+Step 9: Final Screening Ratio
+======================================================================
+
+  Screening ratio (naive)              = 16.0920
+  Screening ratio (with fiber vol)     = 16.0920 (same: already in a_2)
+  Screening ratio (with (M_KK/M_Pl)^2) = 16.0920 (same: algebraic identity)
+
+  MAXIMUM POSSIBLE screening ratio = 16.0920
+  Required for PASS: 10^4 = 10000
+  Shortfall: 621x
+
+  Supplementary: if delta_alpha/alpha = 10^-6 (ALPHA-ENV-43 target):
+    delta_tau = 3.2468e-07
+    delta_G/G = 3.2184e-05
+    delta_N/N = 1.6092e-05
+    This is FAR too small for w_a != 0 (need delta_N/N ~ 0.08)
+
+======================================================================
+GATE: SECTOR-DIM-REDUCT-60
+======================================================================
+
+  Screening ratio = 16.0920
+  Verdict: FAIL
+  Detail: Screening ratio = 16.1 < 100
+
+  The Riemannian submersion structure of Paper 13 provides NO additional
+  screening. Both G_eff and alpha depend on the SAME one-parameter Jensen
+  deformation tau. The (M_KK/M_Pl)^2 factor is algebraically 1/(4*pi*a_2),
+  which is already the coefficient determining G_eff. No double-counting.
+
+  The screening ratio is a STRUCTURAL constant at the fold:
+    R_screen = (1/2)|frac_da_2| / |clock_coeff|
+    = (1/2) * 99.13 / 3.08
+    = 16.1
+
+  To achieve R_screen > 10^4, the framework would need frac_da2/clock_coeff > 2*10^4,
+  i.e., the spectral action sensitivity would need to exceed the gauge coupling
+  sensitivity by a factor of 20,000. At the fold, the ratio is only 32.2.
+
+  PHYSICAL IMPLICATION:
+  Timescape w_a requires delta_N/N ~ 0.08, which implies delta_tau ~ 0.0016.
+  At this delta_tau, delta_alpha/alpha = 0.0049,
+  which exceeds ALPHA-ENV-43 (10^-6) by 4928x.
+  The timescape mechanism is INCOMPATIBLE with constant fine structure constant.
+
+Data saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s60_sector_dim_reduct.npz
+Results saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s60_sector_dim_reduct_results.txt
+
+=== SECTOR-DIM-REDUCT-60 COMPLETE ===

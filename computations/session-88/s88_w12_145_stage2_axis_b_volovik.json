@@ -1,0 +1,93 @@
+{
+  "audit_sha256": "d7fabd737512f3c7b47e351f71af0984f4d791bfa7b5239654418850d20c4427",
+  "axis": "B-transit-dynamics-volovik",
+  "cited_sources": {
+    "branch-iv-canonical.md \u00a73": "xi_E_GGE_inv landing as substrate-distance-1 anchor; substrate-distance-2 transit diagnostic = R_JK (canonical pin), distinct from the substrate-distance-1 family",
+    "canonical_constants.py xi_E_GGE_inv": "13.642473425595973 \u2014 substrate-distance-1 spectral diagnostic at s=-1; canonical anchor for s=3 SR-LO IC, but no analog canonical anchor for s=4 transit dynamics",
+    "computations/session-87/s87_gate_verdicts.txt:259+268+271+274": "FOUR successive verdict lines for S87-POLE-SPECIFICITY-SCAN with cross_reg_spread floating 0.0024 \u2192 0.0513 \u2192 0.3675 \u2192 0.8946; FINAL state = FAIL_numerical",
+    "epistemic-discipline.md \u00a7Pole-Scope sub-clause": "MANDATORY at K=4 (S88 W7a-72); pole-scoping declaration MUST scope correlation to specific pole; anchor-formula MUST be pre-registered for pole-extension",
+    "knowledge-MCP equation extract (s86-path-c-double-double-fail-reassessment)": "SR-LO-analog dynamical observable at s=4 is NOT predetermined by W4 P4 construction; different anchor formulas yield different projections",
+    "permanent_results_registry \u00a7VII.AH": "STAGE-1-CANDIDATE Joint F_2-Class Path-(c) Theorem; pole-specificity scoping under T-CR2.2 corrigendum",
+    "pru-class-corpus.md \u00a73 instance #4": "S87 W9b-2 |\u03c1_S(s=4)|=1.000 EXACT \u2014 citation cites line 268 (Reading_1_PASS); canonical FINAL state on disk + NPZ is line 274 FAIL",
+    "s87_w9b_pole_specificity_scan.py lines 277-322": "dynamical_projection_4class returns N_BREAK_S3_BASELINE at BOTH s=3 AND s=4; structural artifact of dynamical-axis freezing"
+  },
+  "computed_values": {
+    "L_max": 12,
+    "abs_rho_S_s4": 1.0,
+    "cross_regulator_spread": 0.894590744661054,
+    "npz_composite_verdict": "FAIL",
+    "npz_reading_classification": "FAIL_numerical",
+    "rho_S_per_regulator_s4": {
+      "SDW": -1.0,
+      "Zubarev": -0.10540925533894598,
+      "anomaly": -0.632455532033676,
+      "cutoff_sqrt": -0.9486832980505139,
+      "zeta": -1.0
+    },
+    "rho_S_s3": -1.0,
+    "rho_S_s4_4class_central": -1.0,
+    "sign_match": true
+  },
+  "discriminator_thresholds": {
+    "CROSS_REG_FAIL_THRESH": 0.3,
+    "PASS_READING1_MAGNITUDE_THRESH": 0.95,
+    "PASS_READING2_INFO_LO": 0.85
+  },
+  "gate_id": "S88-POLE-SCOPE-GENERIC-PLURALISM-VERIFY",
+  "input_pin_map_sha256": {
+    "branch_iv_canonical": "fe3d3c1b21fd5352a561c45a2da5b5f2672869efe56e7a65d4d543eebd47e497",
+    "canonical_constants": "af1355a0dd221a714e4e51072f24a051d603f8b00e551481380722b2968e1863",
+    "epistemic_discipline_rule": "482f134b1ba7e6118d55660b6ac9bece15b377ab6be447877bd963258dd64eb9",
+    "joint_theorem_promotion_rule": "5ff91e7a0dfa6ef09f6db262437561ba9321d0b209e03da78f6bf8d878b8cb92",
+    "permanent_results_registry": "265e3d24189fc720c1c8580237a4580ee238070e7e60450cf2989c00cdd6b267",
+    "plan_w12": "12830badc1271e17e25505cf4d2cc4f94e3157f1a06a0a8cf2146f7616b9b2c9",
+    "pru_class_corpus": "328692a1a83209bd8221014bee6f559fb5b4d36891698f34f21e9b4a17e5bc60",
+    "s87_verdicts": "fa96b3bde6fe269d0f73326465132df99f1331689e8dfc7d4dfc15f1be01855c",
+    "w9b_npz": "862aec46826ec102259d0501ed68dcf5bb7125dad9a40d39d44248550d0c1eb5",
+    "w9b_script": "768bab6058606bf9cfcb1d24f1d3cb7514e2d697cf9d49caa1cc90a524bf4ce1"
+  },
+  "rationale": "Pre-registered Reading_1 conjunction FAILs at one or more sub-clauses: spread clause FAIL: cross_regulator_spread=0.894591 > 0.3 (pre-registered FAIL clause). Transit-side structural audits: (i) the W9b-2 dynamical-axis is FROZEN at the s=3 SR-LO ODE baseline (N_BREAK_S3_BASELINE reused at s=4, NOT recomputed), so the central |rho_S(s=4)|=1.0 is rank-preservation of monotone schematic helpers, NOT a genuine cross-pole transit-dynamics test; (ii) at s=4 the SR-LO-analog dynamical observable is NOT predetermined by the W4 P4 construction (per equation extract from s86-path-c-double-double-fail-reassessment knowledge-MCP search) \u2014 different choices of the s=4 anchor formula yield DIFFERENT projections of M_R(s=4) onto an SR-LO-style IC; (iii) the per-regulator atlas spread 0.895 (Zubarev branch -0.105 vs zeta branch -1.0) shows the s=4 atlas is REGULATOR-CLASS-DEPENDENT in a way the s=3 atlas is NOT, falsifying the claim that the anti-correlation is a regulator-invariant substrate-IS observable at s=4. Reading_2 (pole-specific to s=3) is the structurally supported reading from the transit-dynamics side.",
+  "rationale_long": [
+    "Step 1 (Definitions):",
+    "  \u03c1_S(s; A) = Spearman( spectral_proj(s,c), dynamical_proj(s,c) ) over c in A_5 4-class projection",
+    "  Reading_1 = generic pluralism: |\u03c1_S| = 1 EXACT extends across Mellin-cone substrate-distance poles s=3, 4, 5, 6",
+    "  Reading_2 = pole-specific: structural correlation localizes to s=3 only",
+    "Step 2 (Substitution from W9b-2 NPZ):",
+    "  rho_S(s=3) = -1.000000, rho_S(s=4) = -1.000000, cross_regulator_spread(s=4) = 0.894591",
+    "  per-regulator rho_S(s=4): {'zeta': -1.0, 'Zubarev': -0.10540925533894598, 'SDW': -1.0, 'cutoff_sqrt': -0.9486832980505139, 'anomaly': -0.632455532033676}",
+    "Step 3 (Simplify \u2014 apply Reading_1 conjunction):",
+    "  magnitude clause:  |rho_S(s=4)| = 1.000000 >= 0.95 \u21d2 True",
+    "  sign clause:       sign-match \u21d2 True",
+    "  spread clause:     cross_regulator_spread = 0.894591 <= 0.3 \u21d2 False",
+    "  conjunction (AND): False",
+    "Step 4 (Direction):",
+    "  Reading_1 falsified by spread clause (pre-registered FAIL: cross_regulator_spread > 0.30).",
+    "  Transit-side structural defects compound the falsification:",
+    "    (i)  Dynamical-axis FROZEN at N_BREAK_S3_BASELINE (script lines 277-322); no genuine cross-pole transit-dynamics evaluation at s=4.",
+    "    (ii) At s=4 the SR-LO-analog dynamical observable is NOT predetermined by W4 P4 construction (knowledge-MCP search hit on equation extract from s86-path-c-double-double-fail-reassessment).",
+    "    (iii) Per-regulator atlas at s=4 is REGULATOR-CLASS-DEPENDENT (Zubarev \u2192 -0.105 vs zeta \u2192 -1.0); s=3 atlas is canonical-tight.",
+    "Step 5 (Conclusion):",
+    "  FAIL-Reading_1 (Axis-B transit-side); Reading_2 (pole-specific to s=3) is the structurally supported reading."
+  ],
+  "reading_1_pass_predicate_evaluation": {
+    "conjunction_AND": false,
+    "magnitude_clause_pass": true,
+    "sign_clause_pass": true,
+    "spread_clause_pass": false
+  },
+  "reading_2_pass_predicate_evaluation": {
+    "abs_rho_below_0p85_OR_sign_reversal_OR_spread_above_0p30": true
+  },
+  "stage_2_pass_AND_input": {
+    "axis_B_provides_input_for_PASS_AND": "FAIL-Reading_1",
+    "if_axis_A_returns_PASS_Reading_1": "joint Reading_1 still FAILs PASS-AND aggregation; STAGE-3 not promoted; Reading_2 pole-specific scoping retained",
+    "joint_promotion_to_STAGE_3_PERMANENT": "BLOCKED on Axis-B side (regardless of Axis-A verdict)"
+  },
+  "transit_dynamics_audits": {
+    "atlas_spread_breaks_pre_registered_threshold": true,
+    "dynamical_axis_frozen_at_s3_baseline": true,
+    "s4_anchor_formula_indeterminate": true,
+    "substrate_distance_pin_discipline_held": true
+  },
+  "verdict": "FAIL-Reading_1"
+}

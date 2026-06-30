@@ -1,0 +1,95 @@
+{
+  "axis": "spectral-functional",
+  "agent": "connes-ncg-theorist",
+  "gate_id": "S88-CROSS-AXIS-STAGE-2-VERIFY-CORNER-PINNED",
+  "stage": "Stage-2 cross-axis independent-verify",
+  "calibration_corpus_instance": "joint-theorem-promotion.md instance #1",
+  "registered_text_sha256_VII_AH": "d59cda4e8727404d122496c1acab9cb6138ad083c3d9179ae449bc2a5b6eeb67",
+  "registered_text_sha256_VII_U_1": "81db5e84714ea77e766fe569fe6d3968d6884d3692d36cb75eb0885386ba86af",
+  "registered_text_sha256_VII_U_2": "d6fe300bc39855661c32375a44fe97a817b4ddaad7f66a38df42e1287e307f89",
+  "registered_text_byte_ranges": {
+    "VII_AH": "lines 15399-15481 of sessions/permanent-results-registry.md (1-indexed; trailing newline included)",
+    "VII_U_1": "lines 12844-12889",
+    "VII_U_2": "lines 12890-12987"
+  },
+  "corner_I_observable_id": "S86-W-1-MELLIN-DIRICHLET-IDENTITY-AT-S3",
+  "corner_III_observable_id": "S87-S-2-A_F-CONNES-DISTANCE-STRICT-RESIDUAL-1.054e-01",
+  "single_axis_clauses": {
+    "(a)": {
+      "verdict": "PASS",
+      "justification": "M_R(s=3) is a regulator-class spectral-moment functional on the D_K eigenvalue spectrum at the substrate-distance-1 Mellin pole. By Connes-Moscovici 1995 §III.4 dim-spectrum residue formula a_n = Res[Tr(D^{-2s}); s=(d-n)/2] = Σ_k m_k · λ_k^{-(d-n)}, the M_R(s=3) numerical 5-tuple (1.581e-1, 1.581e-1, 1.201e-2, 1.110e-1, 3.185e-2) is fully determined by the spectrum {(λ_k(D_K), m_k)} together with the regulator R's prefactor. The 3-class partition (F_2 dominant; truncation/subtraction intermediate; suppression suppressed) is therefore a substrate-IS algebra-INVARIANT-class fact. Class-separation: pair_ratio(Zubarev) = (M_F2 − M_Zubarev)/M_F2 = (1.581e-1 − 1.201e-2)/1.581e-1 = 9.240e-01 vs PASS threshold 1e-3 ⇒ margin 924× (Python-verified). Numerical content matches §VII.U.1's Mellin-Dirichlet identity at L_max=12 (rel_diff = 0e+00). NCG-axiomatic: clause (a)'s parse-tree contains only spectral moments — no π(a) references — hence algebra-INVARIANT class per §VII.U.2 clause (e). Holds corner-cell-agnostically; M_R(s=3) is a Corner-I native observable, but its NUMERICAL FACT is invariant under whether the auditor's stance is INVARIANT or DEPENDENT (parse-tree class is a property of the functional, not the auditor).",
+      "applies_at_corners": ["I", "III"],
+      "context_dependency": "No workshop-transcript dependency. Numerical 5-tuple is pinned in the registered §VII.AH text and reproduced from the §VII.U.1 Mellin-Dirichlet identity at L_max=12. Substitution chain Python-verified in s88_w7a_71_connes_audit_helper.py."
+    },
+    "(e)": {
+      "verdict": "PASS",
+      "justification": "Cross-class K-invariance is a regulator-pair property of the spectrum: pair_ratio(R) = (M_R(s=3) − M_F2(s=3))/M_F2(s=3) compares two regulator-class spectral moments. Both numerator and denominator are algebra-INVARIANT functionals (parse-tree: spectral moments only). The L-CR3.3 quantitative margin amendment converts the binary admissibility verdict into the 3-class margin set: 924× (suppression) / 297.9× (truncation) / 798.5× (subtraction) over the W4-2 P5 PASS threshold 1e-3. Substitution chain Python-verified: (1.581e-1 − 1.201e-2)/1.581e-1 = 9.2404e-01 ⇒ 924.0×; (1.581e-1 − 1.110e-1)/1.581e-1 = 2.9791e-01 ⇒ 297.9×; (1.581e-1 − 3.185e-2)/1.581e-1 = 7.9855e-01 ⇒ 798.5×. Margins reproduce the registered text exactly. NCG-axiomatic uniqueness of F_2 as the 2-element K-invariant identity sub-atlas above which K-invariance fails at order O(1): F_2 = {ζ, SDW} are the two regulators that share Mellin-on-positive-spectrum identity at s=3 (M_F2 = 1.581e-1 degenerate); any superset re-FAILs at order O(1) per the spectral content of M_R. Holds corner-cell-agnostically: the K-invariance failure deviations are spectrum-only quantities. Knowledge MCP search 'F_2 K-invariance 924 margin' returned 10 hits with the canonical 924.0×/297.9×/798.5× values pinned at structural-equation level; canonical pinning is independent of the forbidden W-9 workshop transcript file.",
+      "applies_at_corners": ["I", "III"],
+      "context_dependency": "L-CR3.3 quantitative-margin amendment cites workshop §L-CR3.3 lines 1849-1858 (forbidden file). The numerical margins themselves are computable from the M_R(s=3) 5-tuple registered IN the §VII.AH text — Python-reproduction does not require the workshop transcript. Knowledge MCP search confirmed canonical pinning of 924/298/798 at structural-equation level. Margin reading holds under context-isolation."
+    }
+  },
+  "joint_clauses_per_corner": {
+    "(c)_at_corner_I": {
+      "verdict": "PASS",
+      "justification": "rank_spectral(R) = rank_dynamical(R) at s=3 with anti-correlated reading (largest M_R class produces earliest N_breakdown). At Corner I (INVARIANT × s=3), the spectral leg is well-defined: rank descending in M_R(s=3) yields (F_2, cutoff_sqrt, anomaly, Zubarev) = (1, 2, 3, 4). The dynamical leg at Corner I × s=3 is xi²_0(R) := xi_E_GGE_inv · M_R(s=3) / M_F2(s=3), an affine reparametrization of M_R(s=3); since xi²_0 is monotone-increasing in M_R, the SR-LO N_breakdown ordering at canonical IC reproduces the same rank vector (1,2,3,4) ascending in N_breakdown per the registered numerical 4-tuple (0.122, 0.176, 0.730, >55). Spearman ρ_S of two identical rank vectors is +1.0 EXACT (Python-verified rank substitution chain in audit helper). Pole-specificity scoping (T-CR2.2 corrigendum) restricts the duality to s=3 — consistent with §VII.U.2 clause (e) parse-tree decision: M_R(s=3) is algebra-INVARIANT × pole=s=3, locating the SPECTRAL leg at Corner I. NCG-axiomatic content at Corner I: the duality is a same-direction reading of two algebra-INVARIANT-class statistics (M_R rank ↔ xi²_0-derived breakdown rank), structurally consistent with the spectral-triple (A_K, H_K, D_K) at the substrate-distance-1 Mellin pole. Spectral-axis verdict PASS at Corner I, conditional on volovik-side audit of the SR-LO ODE dynamical leg at Corner I.",
+      "cross_corner_smuggle_check": "Clause (c) text scopes at 'Mellin-cone substrate-distance-1 pole s=3' (T-CR2.2). The DYNAMICAL leg's xi²_0(R) is affine in M_R(s=3); both legs share the same Mellin-pole AND the same algebra-axis (INVARIANT-side input from M_R(s=3); transit-dynamics output as ODE on xi²_0 derived from M_R). No Corner-III observable enters. No cross-corner reading smuggled at Corner I."
+    },
+    "(c)_at_corner_III": {
+      "verdict": "INFO",
+      "justification": "Corner III's canonical observable is the algebra-DEPENDENT A_F Connes distance STRICT residual 1.054e-01 at Pair-2. Clause (c)'s SPECTRAL leg uses M_R(s=3), which is algebra-INVARIANT × pole=s=3 = Corner I per §VII.U.2 clause (e) parse-tree decision. There is NO Corner-III-native analog of the rank_spectral(R) statistic that the clause refers to: a Connes-distance-derived ranking would require evaluating the Pair-2 STRICT residual under each regulator R ∈ A_5, but the W4-2 P5 numerical 5-tuple registered in §VII.AH is M_R(s=3) (spectral moment) not Connes distance. The clause's structural content does NOT extend to Corner III without smuggling a cross-corner reading (interpreting 'joint' as 'spanning Cells I and III simultaneously') — which §VII.U.2 clause (f) forbids. The clause as registered is intrinsically a Corner-I claim (algebra-INVARIANT spectral input + transit-dynamics output at s=3); the W7a-71 instruction to audit AT Corner III has no Corner-III-native target observable for this clause. INFO is not FAIL: the registered clause text does NOT violate §VII.U.2 clause (f) (it does not pin two anchors at co-primary weight across distinct corner cells). Rather, the corner-pinning AUDIT exposes that joint clause (c) is structurally Corner-I-localized; INFO at Corner III blocks Stage-3 promotion AT that corner under the W7a-71 rescope's PASS-AND logic, signaling that the clause does not need Corner-III-native verification because it does not make Corner-III claims. Recommended downstream action: amend the clause text (or §VII.AH theorem-name block) at S89+ Stage-3 to declare clause (c) Corner-I-scoped explicitly, removing the W7a-71 ambiguity.",
+      "cross_corner_smuggle_check": "No cross-corner reading is smuggled INTO the registered clause text. The corner-pinning audit exposes that the clause's substrate-IS observables (M_R(s=3) spectral, xi²_0(R) dynamical) both live at Corner I × s=3. Reading the clause AT Corner III is a category-error question; INFO at Corner III is the structurally honest verdict per the §VII.U.2 clause (e) parse-tree decision procedure."
+    },
+    "(d)_at_corner_I": {
+      "verdict": "PASS",
+      "justification": "The per-branch A_s ledger A_s = (H̃²/8π²)·(1/ε_H)·F_amp·c_sub^{−1}·f_conv involves quantities that are all derived from spectral integrals over D_K — H̃ (Hubble at horizon exit; spectral-action-derived), ε_H (slow-roll parameter; spectral-moment-derived), F_amp (Bogoliubov amplification; mode-equation-derived from D_K spectral content), c_sub (sub-Hubble suppression; spectral-action-derived), f_conv (conversion factor; spectral-moment-derived). All are algebra-INVARIANT-class per §VII.U.2 clause (e) (parse-tree contains spectral moments / mode-equation amplitudes; no π(a) state-pair references). At Corner I (INVARIANT × s=3), the per-branch protection is a substrate-IS algebra-INVARIANT-class statement: within a single F_2-class regulator branch, the multiplicative ledger preserves PASS-F2 at L_max-running deviation 0.000440% (S82 W2-1) and rank-3 protection <3.6% scheme-universality (W3-K). Three independent confirmations cited in clause (d): (i) rank-side W3-K rank-3 protection; (ii) L_max-side W2-1 0.000440% running; (iii) unitarity-side Bogoliubov |α|²−|β|² = 1 within branch. The Bogoliubov unitarity is a transit-dynamics observable but its WITHIN-BRANCH algebra-class is INVARIANT (the unitarity is a property of the mode-equation Wronskian, not a state-pair Connes-distance). Spectral-axis verdict PASS at Corner I, conditional on volovik-side audit of the transit-dynamics Bogoliubov framing.",
+      "cross_corner_smuggle_check": "No Corner-III observable enters. The A_s ledger is constructed from algebra-INVARIANT spectral integrals throughout; the per-branch protection statement does not invoke any state-pair Connes-distance or π(a) operator-algebra structure. Corner-I-localized."
+    },
+    "(d)_at_corner_III": {
+      "verdict": "INFO",
+      "justification": "Same structural reasoning as (c) at Corner III. The A_s ledger lives at Corner I (INVARIANT × s=3) — all five factors (H̃, ε_H, F_amp, c_sub, f_conv) are algebra-INVARIANT spectral-moment-derived; none has a Corner-III-native A_F Connes-distance analog. The per-branch-protection claim is intrinsically Corner-I-localized. Reading the clause AT Corner III is a category-error question without a Corner-III-native target. The W7a-71 corner-pinning audit EXPOSES this localization but does not falsify the clause: the clause text does NOT smuggle a cross-corner reading (it does not pin co-primary anchors across Cells I and III). INFO at Corner III blocks Stage-3 promotion at that corner per the W7a-71 PASS-AND logic. Recommended downstream action: amend the §VII.AH theorem-name block at S89+ to declare clause (d) Corner-I-scoped explicitly, paralleling the recommendation for clause (c).",
+      "cross_corner_smuggle_check": "No cross-corner reading smuggled INTO the registered clause text. Corner-pinning audit exposes Corner-I localization; INFO at Corner III is structurally honest per §VII.U.2 clause (e) parse-tree decision."
+    }
+  },
+  "cross_corner_reading_smuggled_anywhere": false,
+  "context_isolation_confirmed": true,
+  "files_read": [
+    "sessions/permanent-results-registry.md (lines 12844-12889 §VII.U.1; lines 12890-12987 §VII.U.2; lines 15399-15481 §VII.AH)",
+    "computations/_shared/canonical_constants.py (via Python import: tau_fold, xi_E_GGE_inv)"
+  ],
+  "files_NOT_read_per_isolation_rule": [
+    "sessions/session-86/workshops/s86-path-c-double-double-fail-reassessment.md (W-9 R1/R2/R3 transcripts)",
+    "sessions/session-plan/session-87-plan-w9a.md (W9a-1 plan-block)",
+    "sessions/session-plan/session-88-plan-w7a.md (current wave plan)",
+    "sessions/session-87/workshops/s87-alpha-s-route-dissonance.md",
+    "sessions/session-87/workshops/s87-connes-distance-on-af.md"
+  ],
+  "knowledge_mcp_queries_run": [
+    {
+      "tool": "get_constant",
+      "name": "xi_E_GGE_inv",
+      "value": "13.642473425595973",
+      "session": "S86",
+      "salient_return_one_line": "S86-BRANCH-IV-FORMULATION-COMMIT; lizzi 9A §2.2; substrate-natural anchor 59.8 * Delta_BCS / K_base; not superseded"
+    },
+    {
+      "tool": "get_constant",
+      "name": "tau_fold",
+      "value": "0.19",
+      "session": "S12/S42",
+      "salient_return_one_line": "CONST-FREEZE-42 from s42_constants_snapshot.npz; not superseded"
+    },
+    {
+      "tool": "search_knowledge",
+      "query": "F_2 K-invariance 924 margin",
+      "salient_return_one_line": "10 hits at structural-equation level pinning 924.0× / 297.9× / 798.5× margins from M_R(s=3) 5-tuple; canonical numerical content available without reading the W-9 workshop file"
+    },
+    {
+      "tool": "search_knowledge",
+      "query": "Mellin-Dirichlet identity L_max=12",
+      "salient_return_one_line": "S87-FINITE-SPECTRUM-MELLIN-DIRICHLET-IDENTITY-LANDING PASS at theorem tolerance 1e-15 on cache 9e6d9cf7fd6a6949..., rel_diff = 0e+00 by math.fsum exact-rounding at s ∈ [3, 4, 5]; §VII.U.1 corner I anchor confirmed."
+    }
+  ],
+  "stage_2_promotion_recommendation_axis_A_only": "promote-eligible-on-axis-A-at-Corner-I; INFO-at-Corner-III on clauses (c) and (d) signals that the joint clauses are structurally Corner-I-localized and the W7a-71 corner-pinning at Corner III has no Corner-III-native target observable. Recommend S89+ Stage-3 amendment to §VII.AH theorem-name block declaring clauses (c) and (d) explicitly Corner-I-scoped (parallel to §VII.U.2 clause (f) cross-corner co-primary FORBIDDEN discipline). Single-axis clauses (a) and (e) PASS corner-cell-agnostically. Axis-A spectral-functional cross-review verdict supports promotion at Corner I across all four lizzi-side clauses; promotion at Corner III is BLOCKED on the joint clauses by INFO (not FAIL) signaling structural Corner-I localization; the orchestrator's PASS-AND logic correctly conjuncts axis-A and axis-B verdicts AT EACH CORNER.",
+  "audit_timestamp": "2026-05-05T00:00:00Z",
+  "self_consistency_check": "Verdicts are mutually consistent: single-axis clauses (a) and (e) PASS at both corners (corner-cell-agnostic algebra-INVARIANT-class spectral content; Python-verified margins; no workshop-transcript dependency). Joint clauses (c) and (d) PASS at Corner I (substrate-IS observables M_R(s=3), xi²_0(R), A_s-ledger factors are all algebra-INVARIANT × s=3 = Corner I per §VII.U.2 clause (e) parse-tree decision). Joint clauses (c) and (d) INFO at Corner III (no Corner-III-native target observable for the clauses' structural content; INFO is structurally honest, NOT FAIL — the clause text does not violate §VII.U.2 clause (f) cross-corner co-primary FORBIDDEN). No cross-corner reading is smuggled into any clause; the corner-pinning audit exposes that joint clauses are structurally Corner-I-localized. Context-isolation confirmed: forbidden workshop files were NOT read; canonical 924×/297.9×/798.5× margins reproduced from registered §VII.AH text + canonical_constants.py via Python substitution chain (audit helper s88_w7a_71_connes_audit_helper.py); knowledge MCP queries confirmed canonical pinning at structural-equation level without dependency on workshop transcripts. Stage-2 promotion eligibility on axis-A: PASS at Corner I; INFO at Corner III for joint clauses; PASS corner-cell-agnostically for single-axis clauses."
+}

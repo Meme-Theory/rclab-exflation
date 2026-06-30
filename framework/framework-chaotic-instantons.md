@@ -1,12 +1,14 @@
 # Framework-Chaotic-Instantons: A Quantum Chaos Perspective
 
+> **S110 RETIREMENT NOTE (HK-CHAOTIC, investigation-distillation; inv-10 HY-C/HY-D = inv-1 §4 #1, stranded across BOTH inv-1 and inv-10).** Two corridors in this assessment are RETIRED: **(1)** the "lossy compression" scrambling-corridor **C1** (§4 / §5.4 / §7.1(B)) — RETIRED as falsified: the scrambling time exceeds the transit time by 1–2 OOM (t_* ~ 17 t_P ≫ τ_transit; §2.5 / §4.2), so the internal d.o.f. do NOT scramble during transit; "marginally viable" is withdrawn. **(2)** "edge-of-chaos at the fold" (§6 / §8.2) — RETIRED-AS-DYNAMICAL: the fold is a **DOS (density-of-states) feature**, not a dynamical edge-of-chaos (the Λ ~ 0.85 "above threshold" reading was an effective-Hilbert-space artifact). Paired with the `atlas-09-retractions.md` retraction log. The coherent-collective-mode result (§2: the pair vibration at ω = 0.792 is a coherent mode, NOT an SYK scrambling resonance) is UNAFFECTED and stands.
+
 **Author**: Kitaev Quantum Chaos Theorist
 **Date**: 2026-03-08
 **Status**: First engagement assessment
 **Documents reviewed**:
 1. `researchers/Kitaev/AGENTS.md` + 14 research papers (SYK, chaos bound, OTOCs, BGS, Berry-Tabor, RP resonances, scrambling, level statistics, Carlip cosmology)
 2. `sessions/framework/framework-mechanism-discussion-master-collab.md` (1,214 lines)
-3. `sessions/framework/spectral-post-mortem.md` (417 lines)
+3. `sessions/framework/registry/spectral-post-mortem.md` (417 lines)
 4. `sessions/framework/nazarewicz-string-theory-workshop.md` (1,094 lines)
 5. `summary/session-37-final.md` (394 lines, including Quantum Foam Addendum A)
 
@@ -265,7 +267,7 @@ This equals the scrambling time, as expected. The system DOES become a 1-design 
 
     t_2-design ~ (2/lambda_L) * ln(d) ~ 70 natural units ~ 35 Planck times
 
-**Assessment**: The internal dynamics can produce 1-design randomness (phase scrambling) on a timescale of ~17 t_P. This is borderline -- comparable to but somewhat longer than the Hubble time. Higher-order randomness (2-design, needed for full quantum entanglement properties) takes ~35 t_P. The "lossy compression" mechanism is marginally viable but NOT fast, and quantitative predictions depend sensitively on the actual Lyapunov exponent (which I estimated only roughly).
+**Assessment**: The internal dynamics can produce 1-design randomness (phase scrambling) on a timescale of ~17 t_P. This is borderline -- comparable to but somewhat longer than the Hubble time. Higher-order randomness (2-design, needed for full quantum entanglement properties) takes ~35 t_P. The "lossy compression" mechanism is marginally viable but NOT fast, and quantitative predictions depend sensitively on the actual Lyapunov exponent (which I estimated only roughly). **[RETIRED S110 — HK-CHAOTIC: scrambling-corridor C1 falsified; t_* ≫ τ_transit ⇒ no scrambling during transit; "marginally viable" withdrawn. See top retirement note.]**
 
 ### 4.4 Concrete Prediction: OTOC Decay Rate and Decoherence
 
@@ -360,7 +362,7 @@ For the B2 sector at the fold:
 
 This is well below the edge-of-chaos value Lambda_c ~ 0.5. By this (very rough) diagnostic, the fold crossing does NOT sit at the edge of chaos -- the active fraction is too small. The vast majority of the spectrum is spectator modes that do not participate in the BCS dynamics.
 
-However, the effective dimensionality is different. In the 0D limit, the relevant Hilbert space is that of the 8 gap-edge modes: dim = 2^8 = 256. The number of states participating in the pair vibration is B * dim / dim_total ~ 0.855 * 256 / 256 ~ 0.855. This gives Lambda ~ 0.85, which is ABOVE the edge-of-chaos threshold. The pair vibration involves nearly the entire effective Hilbert space.
+However, the effective dimensionality is different. In the 0D limit, the relevant Hilbert space is that of the 8 gap-edge modes: dim = 2^8 = 256. The number of states participating in the pair vibration is B * dim / dim_total ~ 0.855 * 256 / 256 ~ 0.855. This gives Lambda ~ 0.85, which is ABOVE the edge-of-chaos threshold. **[RETIRED-AS-DYNAMICAL S110 — HK-CHAOTIC: the fold is a DOS feature, not a dynamical edge-of-chaos; this Λ ~ 0.85 effective-Hilbert-space reading does not survive. See top retirement note.]** The pair vibration involves nearly the entire effective Hilbert space.
 
 ### 6.3 Domain Walls and Turing Patterns
 

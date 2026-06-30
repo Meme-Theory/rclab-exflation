@@ -1,0 +1,108 @@
+{
+  "reviewer": "van-den-dungen-bridge-theorist",
+  "axis": "A — spectral-functional / NCG-axiomatic (Kasparov-KK ↔ NCG-submersion bridge)",
+  "theorem": "VII.W-3.LAB",
+  "clauses": {
+    "A1": {
+      "verdict": "PASS",
+      "rationale": "Element 1 (substrate-IS) is sound. A_F = C + H + M_3(C) is the canonical finite real algebra of the SM spectral triple (real dim 2+4+18 = 24); the cocycle pair (phi_67, phi_88) is supported on the M_3(C)/su(3) sector (lambda_6/lambda_7 chiral pair; lambda_8 Cartan hypercharge) and is defined entirely by substrate-side structure — the Connes-Karoubi pairing with the Jensen-deformed band-0 projector at tau_fold = 0.190 (canonical pin tau_fold = 0.19 confirmed via knowledge MCP). All three numerical pins (cocycle_norm_phi67 = 0.793346, cocycle_norm_phi88 = 0.108307, substrate_cocycle_ratio_67_88 = 7.3249917525961665) carry S86 substrate-side provenance (W-5 CANON-EXTRACT), strictly upstream of the S88 lab-bridge entry — so the ratio is an intrinsic structural number with NO 3He/BdG input in its definition, exactly as claimed ('NOT a BdG band-structure derivative'). The published 7.324992 deviates from the canonical pin by 3.38e-8 relative, inside 7-sig-fig publication precision. The direction-of-explanation block (registry lines 17069-17076) enforces substrate-IS -> bridge -> lab-IN with no inversion.",
+      "key_numbers": {
+        "ratio_published": 7.324992,
+        "ratio_canonical_pin": 7.3249917525961665,
+        "rel_dev_published_vs_canonical": 3.3775305389557226e-08,
+        "cocycle_norm_phi67_pin": 0.793346,
+        "cocycle_norm_phi88_pin": 0.108307,
+        "tau_fold_canonical": 0.19,
+        "dim_R_A_F": 24
+      }
+    },
+    "A2": {
+      "verdict": "PASS",
+      "rationale": "Element 3 (bridge map) is sound and — stronger than the registered wording suggests — 'M_3(C) -> 0' is a DERIVED structural theorem, not an ansatz. M_3(C) is simple (Wedderburn factor), so any algebra homomorphism restricted to it is either injective or zero; injectivity requires target complex dimension >= 9. The registered chi target M_2(C) has dim_C = 4 < 9: annihilation forced. My pinned npz (s89_w2_a7) carries the same 8-step dimension-count proof for the independent chi' variant (target M_2(C) (x) Cl(1), dim_C = 8 < 9; kernel_M3C_dimension = 9; independence_from_chi_BdG_verified = True; composite_verdict PASS), which I re-derived from first principles — the conclusion is target-robust for ANY target of dim_C < 9, which strengthens the registered claim. The bridge map is explicitly named (inheritance morphism chi composed with (Delta_B/Delta_A)^p lab-conversion; Connes-Karoubi pairing named at Level-1), satisfying the anatomy rule's 'explicit map, not analogous' requirement with an admissible named class, and matching the FWD-C3 candidate (Pillar IV substrate cocycle norms <-> Pillar V 3He observables) in the rule file. The scalar (Delta_B/Delta_A)^p factor in the composite is discharged by the cancellation theorem (J1): the registered anchor is the dimensionless ratio in which the scalar cancels exactly, so the composite's binding content is the cocycle-class pairing, not the scalar — consistent with composite-bridge-map admissibility. BDI parent class matches the proven substrate AZ class. Note: the npz key 'chi_prime_morphism_matrix' stores the 9x9 identity, which is consistent only with the kernel-projector reading (kernel = ENTIRE M_3(C), so P_ker = I_9); under a literal morphism-matrix reading it would contradict proof step 7 — mild key mislabeling, content unambiguous given companion keys.",
+      "key_numbers": {
+        "dim_C_M3C": 9,
+        "dim_C_chi_target_M2C": 4,
+        "dim_C_chiprime_target_M2C_x_Cl1": 8,
+        "npz_kernel_M3C_dimension": 9,
+        "annihilation_forced_chi": true,
+        "annihilation_forced_chi_prime": true,
+        "npz_independence_from_chi_BdG": true,
+        "npz_K_counter_pre_post": [2, 3]
+      }
+    },
+    "A3": {
+      "verdict": "PASS",
+      "rationale": "Element 4 (Level-2 algebraic envelope) is sound in its structural-exact form. Per the anatomy rule's Level-2 audit axes, cross-reviewer-A audits Level-2-B (regulator-invariance, spectral-functional axis): the preserved quantity is a ratio of Connes-Karoubi pairings of two fixed cocycle classes with one common projector class — class-level pairings of this type are topological, hence regulator-invariant and L-independent (the Layer-1/topology side of the Kasparov boundary: class pairings are scheme-independent), and the (Delta_B/Delta_A)^p lab-conversion drops out exactly (J1). There is therefore NO L-axis on which the bridged quantity converges — the structural-exact band 7.3250 +/- 0.1% (replacing L^{-alpha}) is the CORRECT envelope form for the inheritance-morphism class, with the +/- 0.1% functioning as the pre-registered experimental discrimination band around an exactly-preserved value. The canonical ratio sits 1.13e-6 relative from the band center (band half-width 1e-3): internally consistent. Regulator-invariance (Level-2-B): PASS. Two annotations: (i) the FWD-C3 per-candidate envelope spec detail lives in cross-pillar-bridge-corpus.md §4, OUTSIDE my pinned source set — the rule file itself names FWD-C3 with this candidate row and explicitly contemplates structural-exact envelopes in the Level-2 audit-axes subsection, so the rule-level anchoring verifies, but the corpus-level spec text is unverifiable within my pins (absence recorded as a finding per protocol; non-blocking). (ii) The entry carries no explicit 'Level-2-binding' tag; the sub-class discipline is at SUGGESTION K=2 (not yet MANDATORY), and the structural-exact class discharges the binding question degenerately (the inheritance image IS the substrate value identically; deviation bound 0 + measurement band) — moreover Level-3 is honestly declared DEFERRED, so no registry-PASS is claimed off the envelope. Non-blocking.",
+      "key_numbers": {
+        "band_center": 7.325,
+        "band_halfwidth_rel": 0.001,
+        "rel_dev_canonical_from_band_center": 1.1259267057504706e-06,
+        "envelope_form": "structural-exact (NOT L^-alpha)",
+        "level_2B_regulator_invariance": "PASS"
+      }
+    },
+    "J1": {
+      "verdict": "PASS",
+      "rationale": "The cancellation theorem is an exact one-line field-axiom identity: with lab(F_i) = ||phi_a|| * f_i * (Delta_B/Delta_A)^p and lab(F_j) = ||phi_b|| * f_j * (Delta_B/Delta_A)^p at COMMON exponent p_i = p_j = p, the factor (Delta_B/Delta_A)^p multiplies numerator and denominator and cancels for any nonzero Delta_B/Delta_A and any integer p, leaving lab(F_i)/lab(F_j) = (||phi_a||/||phi_b||) * (f_i/f_j). Verified in EXACT rational arithmetic (Python Fraction, zero float error) over 200 random rational draws including negative exponents: exact equality on every draw — stronger than the cited 0.0e+00 machine-precision residual. Control check: unequal exponents (p_i != p_j) break the cancellation, confirming the common-exponent hypothesis is load-bearing and is correctly declared in both the protocol rule and the registered entry ('under common-exponent (Delta_B/Delta_A)^p rescaling'). The registered claim — ratio 7.324992 preserved INTACT, independent of (Delta_B/Delta_A) and p — is exactly true as scoped. Ratio sub-check within J1: computed ratio from the two independently-pinned canonical cocycle norms = 0.793346/0.108307 = 7.3249743783873615 vs canonical 7.3249917525961665 -> rel_dev = 2.37e-6 <= 1e-3 (margin factor ~422); the residual deviation is fully explained by the 6-decimal publication rounding of the two norm pins (propagation floor ~5.2e-6 > 2.37e-6).",
+      "key_numbers": {
+        "exact_rational_draws": 200,
+        "all_draws_exactly_equal": true,
+        "unequal_exponent_control_breaks_cancellation": true,
+        "cancellation_residual_exact": 0.0,
+        "ratio_subcheck_rel_dev": 2.371908309498079e-06,
+        "ratio_subcheck_within_band": true
+      }
+    },
+    "J2": {
+      "verdict": "PASS",
+      "rationale": "rank(ker iota_*) = 2 is sound as the rank of the protocol's canonically enumerated generator set. Both generators are supported on the M_3(C) summand: phi_67 on the (lambda_6, lambda_7) chiral pair, phi_88 on the lambda_8 Cartan hypercharge direction. My pinned npz proves the ENTIRE M_3(C) is annihilated by the inheritance morphism (Wedderburn simplicity + dimension count, kernel_M3C_dimension = 9, derived theorem) — hence BOTH cocycle classes necessarily lie in ker(iota_*); their independence follows from Killing-orthogonality of the (lambda_6, lambda_7)-plane and the lambda_8 Cartan direction in su(3). The registered enumeration matches inheritance-falsifier-protocol.md's canonical 3He-B realization verbatim (the rule itself names exactly these two generators for this kernel). Scope annotation: the algebra-kernel dimension (9 = full M_3(C), per the npz) and the tracked cocycle-kernel rank (2) are distinct objects, used consistently — 'rank' is the protocol-defined count of enumerated independent non-inheriting cocycle generators, not the Hochschild-kernel dimension. BOTH mandatory test classes are pre-registered in the entry per the rank >= 2 requirement: Class-A kernel-signature NULLs (decisive triplet F1+F2+F5 + supporting pair F3+F4, cross-linked to falsifier-master-inventory rows #47-#54b) AND Class-B cohomology-asymmetry ratio (7.3250 +/- 0.1% on any non-NULL detection), within the 4-gate structure the protocol mandates. The anatomy-rule audit item 7 (rank >= 2 requires the cross-reference to inheritance-falsifier-protocol.md §'Generalization beyond 3He-B') is satisfied — the cross-reference appears twice in the entry (lines 17067, 17091).",
+      "key_numbers": {
+        "rank_ker_iota_star_tracked": 2,
+        "generators": ["phi_67 (lambda_6/lambda_7 chiral pair)", "phi_88 (lambda_8 Cartan hypercharge)"],
+        "algebra_kernel_dim_M3C": 9,
+        "class_A_rows": "F1+F2+F5 decisive, F3+F4 supporting",
+        "class_B_band": "7.3250 +/- 0.1%",
+        "anatomy_audit_item7_crossref_present": true
+      }
+    },
+    "J3": {
+      "verdict": "PASS",
+      "rationale": "The Level-1 cohomology-class identity is sound on my axis's core competence. A bare cochain norm is NOT a class invariant — but the entry defines the norms via the Connes-Karoubi pairing on the Jensen-deformed band-0 projector at tau_fold = 0.190 (canonical 0.19 confirmed), and a pairing <[phi], [Ch(P_0)]> between a cyclic-cocycle class and a fixed projector/K-theory class IS a topological pairing: invariant under choice of class representative, under bounded perturbations preserving the K-homology class, and under regulator/truncation deformations fixing the classes. The ratio of two such pairings with a COMMON projector class is therefore a pure structural number — regulator-invariant and L-independent exactly as claimed. This is precisely the formulation that makes Level-1 well-posed; the entry adopts it explicitly. Classification as Level-1/topological is consistent with the canonical Kasparov boundary (class-level pairings are scheme-independent; spectral moments are not — this observable is on the topology side). Precision annotation (non-blocking): the plan-freeze J3 enumeration's 'Sage-exact 114453/15625' equals 7.324992 EXACTLY — i.e. the rational is the exact form of the 7-digit PUBLISHED value, not of the canonical double 7.3249917525961665 (rel dev 3.38e-8 between them, inside 7-sig-fig publication precision). Downstream consumers should not treat 114453/15625 as bit-exact for the canonical pin. Ratio sub-check passes (rel_dev 2.37e-6 from the independent norm-pin route; 3.38e-8 from the published-value route; band 1e-3).",
+      "key_numbers": {
+        "ratio_canonical_pin": 7.3249917525961665,
+        "QQ_114453_over_15625": 7.324992,
+        "rel_dev_QQ_vs_canonical": 3.3775305389557226e-08,
+        "tau_fold": 0.19,
+        "regulator_invariant": true,
+        "L_independent": true
+      }
+    }
+  },
+  "ratio_subcheck": {
+    "computed": 7.3249743783873615,
+    "computed_route": "cocycle_norm_phi67 / cocycle_norm_phi88 from the two independently-pinned canonical constants (0.793346 / 0.108307) — the most independent cross-check available within the pinned source set",
+    "canonical": 7.3249917525961665,
+    "rel_dev": 2.371908309498079e-06,
+    "within_band": true,
+    "band": 0.001,
+    "margin_factor": 421.6,
+    "note": "rel_dev fully consistent with 6-decimal publication rounding of the two norm pins (propagation floor ~5.2e-6); published-value route (7.324992) gives rel_dev 3.38e-8"
+  },
+  "additional_findings": [
+    "Stage-2 pre-registration block internal to the entry (lines 17078-17082) names connes-ncg-theorist as the Axis-A cross-reviewer, but connes-ncg-theorist is a CO-AUTHOR of the entry — joint-theorem-promotion.md audit item 3 forbids original workshop authoring agents as cross-reviewers. The actual dispatch (van-den-dungen-bridge-theorist on Axis A) CURES the violation; the entry's forward pre-registration text should be regarded as superseded on reviewer identity.",
+    "npz key 'chi_prime_morphism_matrix' stores I_9 — unambiguous as the kernel projector (kernel = entire M_3(C)) given companion keys, but mislabeled under a literal morphism-matrix reading (the morphism restricted to M_3(C) is the zero map per proof step 7).",
+    "FWD-C3 per-candidate envelope spec detail resides in cross-pillar-bridge-corpus.md §4, outside the pinned source set for this review; rule-level anchoring verified from cross-pillar-bridge-anatomy.md itself."
+  ],
+  "inputs_read": [
+    "sessions/permanent-results-registry.md — §VII.W-3.LAB block only (lines 17030-17099)",
+    "computations/session-89/s89_w2_a7_chi_prime_inheritance_morphism.npz",
+    ".claude/rules/joint-theorem-promotion.md",
+    ".claude/rules/inheritance-falsifier-protocol.md",
+    ".claude/rules/cross-pillar-bridge-anatomy.md",
+    "knowledge MCP get_constant: substrate_cocycle_ratio_67_88 = 7.3249917525961665 (S86 W-5 CANONICAL-5)",
+    "knowledge MCP get_constant: cocycle_norm_phi88 = 0.108307 (S86 W-5 CANONICAL-4)",
+    "knowledge MCP get_constant: cocycle_norm_phi67 = 0.793346 (S86 W-5 CANONICAL-3)",
+    "knowledge MCP get_constant: tau_fold = 0.19 (S12/S42 CONST-FREEZE-42)"
+  ],
+  "no_workshop_context_attestation": true
+}

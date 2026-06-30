@@ -1,0 +1,143 @@
+==============================================================================
+  S61 LICH-KSEC-61: Lichnerowicz Gap vs Sectional Curvature at DW
+==============================================================================
+  tau_DW (from S59)       = 0.11348814
+  S60 gap min at tau      = 0.1160 (Delta from DW = 0.0025)
+  S60 gap min value       = 0.31498055
+  S60 data loaded         = True
+
+  SU(3): 8 generators, Killing diag = [3. 3. 3. 3.]...
+
+  Grid: 201 points in [0.1000, 0.1200], spacing = 0.000100
+
+==============================================================================
+  STEP 2: Lichnerowicz + sectional curvature sweep
+==============================================================================
+
+       tau  n_TT           gap     K_cross      K_c2c2    K_su2su2      K_c2u1     K_su2u1        K_op
+  ----------------------------------------------------------------------------------------------------
+   0.10000    31   +0.31528713   +0.013965   +0.033508   +0.101784   +0.062500   +0.000000   -0.146719
+   0.10200    31   +0.31521284   +0.013854   +0.033691   +0.102192   +0.062500   +0.000000   -0.147105
+   0.10400    31   +0.31514891   +0.013743   +0.033872   +0.102601   +0.062500   +0.000000   -0.147490
+   0.10600    31   +0.31509529   +0.013634   +0.034051   +0.103012   +0.062500   +0.000000   -0.147873
+   0.10800    31   +0.31505196   +0.013525   +0.034227   +0.103425   +0.062500   +0.000000   -0.148256
+   0.11000    31   +0.31501886   +0.013417   +0.034401   +0.103840   +0.062500   +0.000000   -0.148637
+   0.11200    31   +0.31499595   +0.013311   +0.034572   +0.104256   +0.062500   +0.000000   -0.149018
+   0.11400    31   +0.31498319   +0.013204   +0.034741   +0.104674   +0.062500   +0.000000   -0.149397
+   0.11600    31   +0.31498055   +0.013099   +0.034909   +0.105093   +0.062500   +0.000000   -0.149776
+   0.11800    31   +0.31498797   +0.012995   +0.035073   +0.105515   +0.062500   +0.000000   -0.150153
+   0.12000    31   +0.31500542   +0.012891   +0.035236   +0.105937   +0.062500   +0.000000   -0.150530
+
+  Sweep: 2.0s for 201 points
+
+==============================================================================
+  STEP 3: Lichnerowicz Gap
+==============================================================================
+  Gap minimum: +0.3149802632 at tau = 0.115500
+  Gap range: [0.3149802632, 0.3152871340]
+  Refined: +0.3149802625 at tau = 0.11552453
+  |tau_gap - tau_DW| = 0.002036
+
+  S60 comparison:
+    S60: gap min at tau = 0.1160, val = 0.31498055
+    S61: gap min at tau = 0.115525, val = 0.3149802625
+    Delta_tau refinement: 0.000475
+
+==============================================================================
+  STEP 4: Sectional Curvature Structure
+==============================================================================
+
+  STRUCTURAL ZERO: K(su2, u1) = 0.00e+00 (identically zero)
+    [su(2), u(1)] = 0 within u(2). Flat by Lie bracket algebra.
+
+  Sector curvatures at tau=0.10 / tau_DW / tau=0.12:
+    K_cross(su2,C2)          : +0.01396500 / +0.01323089 / +0.01289132
+    K_c2c2(C2,C2)            : +0.03350812 / +0.03469935 / +0.03523607
+    K_su2su2(su2,su2)        : +0.10178356 / +0.10456916 / +0.10593743
+    K_c2u1(C2,u1)            : +0.06250000 / +0.06250000 / +0.06250000
+    K_operator_min           : -0.14671914 / -0.14930252 / -0.15053029
+
+  Monotonicity over [0.10, 0.12]:
+    K_cross        : DECREASING
+    K_c2c2         : INCREASING
+    K_su2su2       : INCREASING
+    K_c2u1         : DECREASING
+    K_op           : DECREASING
+
+  ALL coordinate sectional curvatures are MONOTONICALLY DECREASING.
+  No interior minimum in [0.10, 0.12] for any K_sec component.
+  The Lichnerowicz gap has an interior minimum but K_sec does not.
+  => Gap minimum is a Lichnerowicz-specific feature, NOT a K_sec effect.
+
+==============================================================================
+  STEP 5: Correlation Analysis
+==============================================================================
+  gap vs K_cross(su2,C2):
+    Pearson r  = 0.909187 (p = 1.18e-77)
+    Spearman r = 0.908741 (p = 1.88e-77)
+  gap vs K_operator_min:
+    Pearson r  = 0.906279 (p = 2.35e-76)
+    Spearman r = 0.908741 (p = 1.88e-77)
+  gap vs R_scalar:
+    Pearson r  = -0.884788 (p = 6.49e-68)
+    Spearman r = -0.908741 (p = 1.88e-77)
+  gap vs Ricci anisotropy (Ric_su2 - Ric_C2):
+    Pearson r  = -0.896075 (p = 4.07e-72)
+
+==============================================================================
+  STEP 6: Lichnerowicz Bound
+==============================================================================
+  R(tau_gap_min) = 2.00426518
+  Approximate E = R/8 = 0.25053315 (if Einstein)
+  2E = 0.50106629
+  gap = 0.31498026
+  gap / (2E) = 0.628620
+  Gap is 62.9% of the Einstein stability threshold.
+
+==============================================================================
+  STEP 7: TT Eigenvalue Verification
+==============================================================================
+  n_tt = 31 at all 201 grid points (verified)
+  All 31 eigenvalues positive: True
+  Min eigenvalue across grid: 0.3149802632
+  Max eigenvalue across grid: 0.8647737803
+
+  At tau_DW = 0.113500:
+    31 eigenvalues: [0.31498543, ..., 0.85821571]
+    gap = 0.3149854335
+
+==============================================================================
+  STEP 8: Gate Verdict -- LICH-KSEC-61
+==============================================================================
+
+  GATE: LICH-KSEC-61
+  VERDICT: FAIL
+  DETAIL: All sectional curvatures monotonically decrease in [0.10, 0.12]; no interior K_sec minimum exists. K(su2,u1) = 0 identically (structural flat, [su(2),u(1)]=0). Lichnerowicz gap minimum at tau=0.115525 (val=0.3149802625) is algebraic, arising from competition within Delta_L, not from sectional curvature extremum. Correlation gap vs K_cross: r=0.9092. |tau_gap - tau_DW| = 0.002036.
+
+==============================================================================
+  STEP 9: Save data
+==============================================================================
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s61_lichnerowicz_kmin.npz
+
+==============================================================================
+  STEP 10: Plots
+==============================================================================
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s61_lichnerowicz_kmin.png
+
+==============================================================================
+  SUMMARY
+==============================================================================
+  tau_DW                    = 0.11348814
+  tau_gap_min (refined)     = 0.11552453
+  |gap_min - DW|            = 0.00203639
+  K_sec structure: all monotone decreasing. No interior minimum.
+  K(su2,u1) = 0 (structural). K_cross, K_c2c2 decline smoothly.
+  Pearson r(gap, K_cross)   = 0.909187
+  Pearson r(gap, K_op)      = 0.906279
+  Pearson r(gap, Ric_aniso) = -0.896075
+  Gate: LICH-KSEC-61 = FAIL
+  Total runtime: 3.3s
+
+==============================================================================
+  DONE
+==============================================================================

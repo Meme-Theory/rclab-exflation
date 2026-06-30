@@ -394,7 +394,7 @@ Their ratio:
 $$\frac{\Delta m^2_{21}}{\Delta m^2_{31}} = \frac{|\lambda_2^2 - \lambda_1^2|}{|\lambda_3^2 - \lambda_1^2|} \approx \frac{7.53 \times 10^{-5}}{2.507 \times 10^{-3}} \approx 0.030$$
 
 This ratio of ~1:33 must emerge from the eigenvalue structure of $D_K(s)$ at
-$s = s_0$. In Session 12, the Tier 1 Dirac spectrum computation showed that
+$s = s_0$. In Session 12, the Level 1 Dirac spectrum computation showed that
 eigenvalue spacings in the lowest representations exhibit hierarchies of this
 order for specific ranges of the deformation parameter $s$.
 

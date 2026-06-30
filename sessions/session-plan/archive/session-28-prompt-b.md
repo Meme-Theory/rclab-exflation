@@ -3,12 +3,12 @@
 **Date**: 2026-02-27
 **Depends on**: Session 28a (torsionful BCS verdict, KC-1 verdict, thermal spectral action), Session 27 (multi-sector BCS data)
 **Input data**:
-- `tier0-computation/s27_multisector_bcs.npz` (9 sectors, 9 tau, 12 mu -- M_max, F_cond, Delta)
-- `tier0-computation/s27_torsion_gap_gate.npz` (D_can and D_K eigenvalues, eigenvectors)
-- `tier0-computation/s28a_torsionful_bcs.npz` (torsionful BCS results, if 28a produced them)
-- `tier0-computation/s28a_thermal_spectral_action.npz` (thermal F(tau; T), from 28a L-1)
-- `tier0-computation/tier1_dirac_spectrum.py` (geometry and operator infrastructure)
-- Session 8 J matrix data (real structure operator, from `tier0-computation/`)
+- `computations/s27_multisector_bcs.npz` (9 sectors, 9 tau, 12 mu -- M_max, F_cond, Delta)
+- `computations/s27_torsion_gap_gate.npz` (D_can and D_K eigenvalues, eigenvectors)
+- `computations/s28a_torsionful_bcs.npz` (torsionful BCS results, if 28a produced them)
+- `computations/s28a_thermal_spectral_action.npz` (thermal F(tau; T), from 28a L-1)
+- `computations/dirac_spectrum.py` (geometry and operator infrastructure)
+- Session 8 J matrix data (real structure operator, from `computations/`)
 
 ## Motivation
 
@@ -28,7 +28,7 @@ The priority ordering within 28b depends on 28a results:
 - **If L-1 gave CLOSED**: L-7 runs in reduced form (BCS-only at T=0, no thermal channel).
 
 **Python environment**: `"phonon-exflation-sim/.venv312/Scripts/python.exe"`
-**Output directory**: `tier0-computation/`
+**Output directory**: `computations/`
 **Script prefix**: `s28b_`
 
 ## REQUIRED READING
@@ -80,7 +80,7 @@ ALL agents:
 
 **What**: Compute the relaxation time tau_LK for the BCS order parameter in each sector as a function of the Jensen parameter tau. In Landau-Khalatnikov theory, the relaxation time diverges at a second-order phase transition (critical slowing down) and is finite elsewhere. If the (2,0) sector shows re-entrant behavior (supercritical -> subcritical -> supercritical, as found in S27), the relaxation time should show two divergences, trapping the modulus between them.
 
-**Input**: `tier0-computation/s27_multisector_bcs.npz` (M_max per sector per tau)
+**Input**: `computations/s27_multisector_bcs.npz` (M_max per sector per tau)
 
 **Script**: `s28b_relaxation_times.py`
 
@@ -110,7 +110,7 @@ ALL agents:
 
 **What**: Compute the Pomeranchuk stability parameter f_l for each sector as a function of tau. Session 22c found f(0,0) = -4.687 < -3 in the singlet, confirming BCS prerequisites. This extends the analysis to all 9 sectors, identifying which sector has the deepest instability and whether the instability pattern correlates with the BCS phase structure.
 
-**Input**: `tier0-computation/s27_multisector_bcs.npz` (V_max, eigenvalue spectra per sector)
+**Input**: `computations/s27_multisector_bcs.npz` (V_max, eigenvalue spectra per sector)
 
 **Script**: `s28b_pomeranchuk_map.py`
 
@@ -140,7 +140,7 @@ ALL agents:
 
 **What**: Compute the quasiparticle renormalization factor Z(tau) = |<psi_can|psi_LC>|^2, the overlap between D_can and D_K eigenvectors for the gap-edge states. Z = 1 means the torsionful and torsion-free eigenstates are identical; Z << 1 means torsion strongly mixes the states. The tau value where Z is minimized identifies the most strongly interacting regime.
 
-**Input**: `tier0-computation/s27_torsion_gap_gate.npz` (D_can and D_K eigenvectors)
+**Input**: `computations/s27_torsion_gap_gate.npz` (D_can and D_K eigenvectors)
 
 **Script**: `s28b_quasiparticle_weight.py`
 
@@ -166,7 +166,7 @@ ALL agents:
 
 **What**: Test whether the BCS free energy F_total(tau, mu) has cubic invariants (cusps, non-analyticities) at sector boundary transitions. In Landau theory, a cubic term in the order parameter drives first-order transitions. The multi-sector F_total from S27 showed sector on/off transitions -- are these smooth crossovers or sharp (first-order) transitions?
 
-**Input**: `tier0-computation/s27_multisector_bcs.npz` (F_cond per sector per tau per mu)
+**Input**: `computations/s27_multisector_bcs.npz` (F_cond per sector per tau per mu)
 
 **Script**: `s28b_cubic_invariant.py`
 
@@ -194,8 +194,8 @@ ALL agents:
 **What**: Find the simultaneous minimum of F_total(tau, T) = F_thermal(tau, T) + F_BCS(tau, T). This is the Landau two-transition scenario: at high T, the thermal spectral action dominates and may stabilize tau; at low T, the BCS condensation energy takes over. The combined free energy landscape in (tau, T) space determines whether a non-trivial self-consistent solution exists.
 
 **Input**:
-- `tier0-computation/s28a_thermal_spectral_action.npz` (F_thermal(tau; T) from 28a L-1)
-- `tier0-computation/s27_multisector_bcs.npz` (F_BCS(tau; mu) from S27)
+- `computations/s28a_thermal_spectral_action.npz` (F_thermal(tau; T) from 28a L-1)
+- `computations/s27_multisector_bcs.npz` (F_BCS(tau; mu) from S27)
 
 **Script**: `s28b_self_consistent_tau_T.py`
 
@@ -229,7 +229,7 @@ ALL agents:
 
 **What**: Compute the full Hessian matrix of F_total at the interior minimum tau=0.35 (mu/lambda_min=1.20) from S27 P3. A true minimum requires both eigenvalues of the Hessian to be positive. If one eigenvalue is negative, the point is a saddle.
 
-**Input**: `tier0-computation/s27_multisector_bcs.npz`
+**Input**: `computations/s27_multisector_bcs.npz`
 
 **Script**: `s28b_hessian.py`
 
@@ -261,7 +261,7 @@ ALL agents:
 
 **What**: Estimate Lambda_eff from the BCS condensation energy at the interior minimum. If condensation provides a negative contribution to the vacuum energy, this constrains the cosmological constant problem.
 
-**Input**: `tier0-computation/s27_multisector_bcs.npz` (F_total at interior min)
+**Input**: `computations/s27_multisector_bcs.npz` (F_total at interior min)
 
 **Script**: `s28b_lambda_eff.py`
 
@@ -321,27 +321,27 @@ Results from 28b that feed into 28c:
 
 | File | Computation | Producer |
 |:-----|:-----------|:---------|
-| `tier0-computation/s28b_order_one.py` | C-3 | phonon-sim |
-| `tier0-computation/s28b_order_one.npz` | C-3 data | phonon-sim |
-| `tier0-computation/s28b_order_one.txt` | C-3 verdict | phonon-sim |
-| `tier0-computation/s28b_relaxation_times.py` | L-3 | phonon-sim |
-| `tier0-computation/s28b_relaxation_times.npz` | L-3 data | phonon-sim |
-| `tier0-computation/s28b_relaxation_times.png` | L-3 plot | phonon-sim |
-| `tier0-computation/s28b_pomeranchuk.py` | L-5 | phonon-sim |
-| `tier0-computation/s28b_pomeranchuk.npz` | L-5 data | phonon-sim |
-| `tier0-computation/s28b_pomeranchuk.png` | L-5 plot | phonon-sim |
-| `tier0-computation/s28b_quasiparticle_weight.py` | L-6 | phonon-sim |
-| `tier0-computation/s28b_quasiparticle_weight.npz` | L-6 data | phonon-sim |
-| `tier0-computation/s28b_quasiparticle_weight.png` | L-6 plot | phonon-sim |
-| `tier0-computation/s28b_cubic_invariant.py` | L-9 | phonon-sim |
-| `tier0-computation/s28b_cubic_invariant.npz` | L-9 data | phonon-sim |
-| `tier0-computation/s28b_cubic_invariant.png` | L-9 plot | phonon-sim |
-| `tier0-computation/s28b_self_consistent_tau_T.py` | L-7 | phonon-sim |
-| `tier0-computation/s28b_self_consistent_tau_T.npz` | L-7 data | phonon-sim |
-| `tier0-computation/s28b_self_consistent_tau_T.png` | L-7 plot | phonon-sim |
-| `tier0-computation/s28b_hessian.py` | S-3 | phonon-sim |
-| `tier0-computation/s28b_hessian.npz` | S-3 data | phonon-sim |
-| `tier0-computation/s28b_hessian.txt` | S-3 verdict | phonon-sim |
-| `tier0-computation/s28b_lambda_eff.py` | E-5 | phonon-sim |
-| `tier0-computation/s28b_lambda_eff.txt` | E-5 estimate | phonon-sim |
+| `computations/s28b_order_one.py` | C-3 | phonon-sim |
+| `computations/s28b_order_one.npz` | C-3 data | phonon-sim |
+| `computations/s28b_order_one.txt` | C-3 verdict | phonon-sim |
+| `computations/s28b_relaxation_times.py` | L-3 | phonon-sim |
+| `computations/s28b_relaxation_times.npz` | L-3 data | phonon-sim |
+| `computations/s28b_relaxation_times.png` | L-3 plot | phonon-sim |
+| `computations/s28b_pomeranchuk.py` | L-5 | phonon-sim |
+| `computations/s28b_pomeranchuk.npz` | L-5 data | phonon-sim |
+| `computations/s28b_pomeranchuk.png` | L-5 plot | phonon-sim |
+| `computations/s28b_quasiparticle_weight.py` | L-6 | phonon-sim |
+| `computations/s28b_quasiparticle_weight.npz` | L-6 data | phonon-sim |
+| `computations/s28b_quasiparticle_weight.png` | L-6 plot | phonon-sim |
+| `computations/s28b_cubic_invariant.py` | L-9 | phonon-sim |
+| `computations/s28b_cubic_invariant.npz` | L-9 data | phonon-sim |
+| `computations/s28b_cubic_invariant.png` | L-9 plot | phonon-sim |
+| `computations/s28b_self_consistent_tau_T.py` | L-7 | phonon-sim |
+| `computations/s28b_self_consistent_tau_T.npz` | L-7 data | phonon-sim |
+| `computations/s28b_self_consistent_tau_T.png` | L-7 plot | phonon-sim |
+| `computations/s28b_hessian.py` | S-3 | phonon-sim |
+| `computations/s28b_hessian.npz` | S-3 data | phonon-sim |
+| `computations/s28b_hessian.txt` | S-3 verdict | phonon-sim |
+| `computations/s28b_lambda_eff.py` | E-5 | phonon-sim |
+| `computations/s28b_lambda_eff.txt` | E-5 estimate | phonon-sim |
 | `sessions/session-28/session-28b-synthesis.md` | Synthesis | coordinator |

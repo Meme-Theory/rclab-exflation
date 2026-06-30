@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 193,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1921",
+      "anchor_type": "data_provenance",
+      "name": "w8_bdi_tci_restricted_corridor",
+      "script_path": "session-85/s85_w8_bdi_tci_restricted_corridor.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w8_bdi_tci_restricted_corridor.npz, session-85/s85_w8_bdi_tci_restricted_corridor.png",
+      "source_file": "computations/session-85/s85_w8_bdi_tci_restricted_corridor.py",
+      "source_context_30_lines": "  378: # Build 2D arrays: invariant[reg][K] for plotting\n  379: nu_ch_mat = np.array([[invariants[reg_name][k_idx]['nu_ch']\n  380:                        for k_idx in range(len(K_grid))]\n  381:                       for reg_name, _ in REGULATORS])  # (local)\n  382: gap_mat = np.array([[invariants[reg_name][k_idx]['gap']\n  383:                      for k_idx in range(len(K_grid))]\n  384:                     for reg_name, _ in REGULATORS])  # (local)\n  385: \n  386: npz_path = os.path.join(HERE, 's85_w8_bdi_tci_restricted_corridor.npz')  # (local)\n  387: np.savez(\n  388:     npz_path,\n  389:     K_grid=K_grid,\n  390:     regulator_names=np.array([r[0] for r in REGULATORS]),\n  391:     regulator_deltas=np.array([r[1] for r in REGULATORS]),\n  392:     nu_ch_mat=nu_ch_mat,\n  393:     gap_mat=gap_mat,\n  394:     K_R5=K_R5,"
+    },
+    {
+      "anchor_id": "prov_1922",
+      "anchor_type": "data_provenance",
+      "name": "w8_convA_bdg_micro",
+      "script_path": "session-85/s85_w8_convA_bdg_micro.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w8_convA_bdg_micro.npz, session-85/s85_w8_convA_bdg_micro.png",
+      "source_file": "computations/session-85/s85_w8_convA_bdg_micro.py",
+      "source_context_30_lines": "  304: cross_checks_all = CC1 and CC2 and CC3 and CC4 and CC5 and CC6  # (local)\n  305: print(f\"  ALL cross-checks pass: {cross_checks_all}\")\n  306: \n  307: # ============================================================\n  308: # SECTION 6: Save NPZ + plot\n  309: # ============================================================\n  310: print(\"\\n[SEC 6] Save NPZ + plot\")\n  311: \n  312: npz_path = os.path.join(HERE, 's85_w8_convA_bdg_micro.npz')          # (local)\n  313: np.savez(\n  314:     npz_path,\n  315:     x_sweep=x_sweep,\n  316:     K_direct_sweep=K_direct_sweep,\n  317:     K_coth_sweep=K_coth_sweep,\n  318:     rel_diff_sweep=rel_diff_sweep,\n  319:     bands_names=np.array(list(band_results.keys())),\n  320:     bands_Delta=np.array([band_results[n]['Delta'] for n in band_results]),"
+    },
+    {
+      "anchor_id": "prov_1923",
+      "anchor_type": "data_provenance",
+      "name": "w8_kfiras_hidden_closed_form",
+      "script_path": "session-85/s85_w8_kfiras_hidden_closed_form.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w8_kfiras_hidden_closed_form.npz, session-85/s85_w8_kfiras_hidden_closed_form.png",
+      "source_file": "computations/session-85/s85_w8_kfiras_hidden_closed_form.py",
+      "source_context_30_lines": "  300: cross_checks_all = CC1 and CC2 and CC3 and CC4 and CC5 and CC6  # (local)\n  301: print(f\"  ALL cross-checks pass: {cross_checks_all}\")\n  302: \n  303: # ============================================================\n  304: # SECTION 6: NPZ + plot\n  305: # ============================================================\n  306: print(\"\\n[SEC 6] Save NPZ + plot\")\n  307: \n  308: npz_path = os.path.join(HERE, 's85_w8_kfiras_hidden_closed_form.npz')  # (local)\n  309: np.savez(\n  310:     npz_path,\n  311:     L_grid=np.array(L_GRID, dtype=np.int32),\n  312:     mu_by_L=np.array([mu_by_L[L] for L in L_GRID]),\n  313:     K_FIRAS_by_L=np.array([K_FIRAS_by_L[L] for L in L_GRID]),\n  314:     S_IC_cap_by_L=np.array([S_IC_cap_by_L[L] for L in L_GRID]),\n  315:     alpha_by_L=np.array([alpha_by_L[L] for L in L_GRID]),\n  316:     resid_by_L=np.array([resid_by_L[L] for L in L_GRID]),"
+    },
+    {
+      "anchor_id": "prov_1924",
+      "anchor_type": "data_provenance",
+      "name": "w8_kr5_lmax_stability",
+      "script_path": "session-85/s85_w8_kr5_lmax_stability.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w8_kr5_lmax_stability.npz, session-85/s85_w8_kr5_lmax_stability.png",
+      "source_file": "computations/session-85/s85_w8_kr5_lmax_stability.py",
+      "source_context_30_lines": "  237: \n  238: L_arr = np.array(L_GRID, dtype=np.int32)  # (local)\n  239: Delta_B2_arr = np.array([results_by_L[L]['Delta_B2'] for L in L_GRID])  # (local)\n  240: T_eff_B2_arr = np.array([results_by_L[L]['T_eff_B2'] for L in L_GRID])  # (local)\n  241: x_B2_arr = np.array([results_by_L[L]['x_B2'] for L in L_GRID])  # (local)\n  242: K_R5_arr = np.array([results_by_L[L]['K_R5'] for L in L_GRID])  # (local)\n  243: drift_arr = np.array([results_by_L[L]['drift_rel'] for L in L_GRID])  # (local)\n  244: \n  245: npz_path = os.path.join(HERE, 's85_w8_kr5_lmax_stability.npz')       # (local)\n  246: np.savez(\n  247:     npz_path,\n  248:     L_grid=L_arr,\n  249:     Delta_B2=Delta_B2_arr,\n  250:     T_eff_B2=T_eff_B2_arr,\n  251:     x_B2=x_B2_arr,\n  252:     K_R5_L=K_R5_arr,\n  253:     drift_rel=drift_arr,"
+    },
+    {
+      "anchor_id": "prov_1925",
+      "anchor_type": "data_provenance",
+      "name": "w8_leggett_tensor_fb_closure",
+      "script_path": "session-85/s85_w8_leggett_tensor_fb_closure.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w8_leggett_tensor_fb_closure.npz, session-85/s85_w8_leggett_tensor_fb_closure.png",
+      "source_file": "computations/session-85/s85_w8_leggett_tensor_fb_closure.py",
+      "source_context_30_lines": "  275: cross_checks_all = CC1 and CC2 and CC3 and CC4 and CC5 and CC6 and CC7  # (local)\n  276: print(f\"  ALL cross-checks pass: {cross_checks_all}\")\n  277: \n  278: # ============================================================\n  279: # SECTION 7: Save NPZ + plot\n  280: # ============================================================\n  281: print(\"\\n[SEC 7] Save NPZ + plot\")\n  282: \n  283: npz_path = os.path.join(HERE, 's85_w8_leggett_tensor_fb_closure.npz')  # (local)\n  284: np.savez(\n  285:     npz_path,\n  286:     r_L=r_L,\n  287:     r_L_squared=r_L**2,\n  288:     f_B_leading=f_B_leading,\n  289:     f_B_gap=f_B_gap,\n  290:     n_Bog=float(n_Bog),\n  291:     n_per_pair=n_per_pair,"
+    },
+    {
+      "anchor_id": "prov_1926",
+      "anchor_type": "data_provenance",
+      "name": "w8_mukhanov_sasaki_sub_corridor_audit",
+      "script_path": "session-85/s85_w8_mukhanov_sasaki_sub_corridor_audit.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w8_mukhanov_sasaki_sub_corridor_audit.npz, session-85/s85_w8_mukhanov_sasaki_sub_corridor_audit.png",
+      "source_file": "computations/session-85/s85_w8_mukhanov_sasaki_sub_corridor_audit.py",
+      "source_context_30_lines": "  296: cross_checks_all = CC1 and CC2 and CC3 and CC4 and CC5 and CC6 and CC7  # (local)\n  297: print(f\"  ALL cross-checks pass: {cross_checks_all}\")\n  298: \n  299: # ============================================================\n  300: # SECTION 6: Save NPZ + plot\n  301: # ============================================================\n  302: print(\"\\n[SEC 6] Save NPZ + plot\")\n  303: \n  304: npz_path = os.path.join(HERE, 's85_w8_mukhanov_sasaki_sub_corridor_audit.npz')  # (local)\n  305: np.savez(\n  306:     npz_path,\n  307:     K_R5=K_R5,\n  308:     K_base=K_base,\n  309:     gate_names=np.array([r['gate'] for r in W5_GATES]),\n  310:     gate_axes=np.array([r['axis'] for r in W5_GATES]),\n  311:     gate_original_verdicts=np.array([r['original_verdict'] for r in W5_GATES]),\n  312:     gate_statuses=np.array([reclass_results[r['gate']]['status'] for r in W5_GATES]),"
+    },
+    {
+      "anchor_id": "prov_1927",
+      "anchor_type": "data_provenance",
+      "name": "w8_su3_op_lab_predictions",
+      "script_path": "session-85/s85_w8_su3_op_lab_predictions.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w8_su3_op_lab_predictions.npz, session-85/s85_w8_su3_op_lab_predictions.png",
+      "source_file": "computations/session-85/s85_w8_su3_op_lab_predictions.py",
+      "source_context_30_lines": "  337: cross_checks_all = CC1 and CC2 and CC3 and CC4 and CC5 and CC6 and CC7  # (local)\n  338: print(f\"  ALL cross-checks pass: {cross_checks_all}\")\n  339: \n  340: # ============================================================\n  341: # SECTION 7: Save NPZ + plot\n  342: # ============================================================\n  343: print(\"\\n[SEC 7] Save NPZ + plot\")\n  344: \n  345: npz_path = os.path.join(HERE, 's85_w8_su3_op_lab_predictions.npz')   # (local)\n  346: np.savez(\n  347:     npz_path,\n  348:     inherited=np.array(INHERITED),\n  349:     unique=np.array(UNIQUE),\n  350:     D_K_toy=D_K_toy,\n  351:     unique_delta_E=np.array([unique_data[a]['delta_E'] for a in UNIQUE]),\n  352:     unique_xi=np.array([unique_data[a]['xi'] for a in UNIQUE]),\n  353:     unique_frac_Delta_BCS=np.array([unique_data[a]['frac_of_Delta_BCS'] for a in UNIQUE]),"
+    },
+    {
+      "anchor_id": "prov_1928",
+      "anchor_type": "data_provenance",
+      "name": "w9_borel_floor_registry",
+      "script_path": "session-85/s85_w9_borel_floor_registry.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w9_borel_floor_registry.npz, session-85/s85_w9_borel_floor_registry.png",
+      "source_file": "computations/session-85/s85_w9_borel_floor_registry.py",
+      "source_context_30_lines": "  137: PASS_THRESHOLD_FRACTION = 1.0                               # (local) THEOREM; ALL tau-grid points must satisfy bound\n  138: \n  139: # Input artifacts\n  140: SADDLE_NPZ = (PROJECT_ROOT / \"sessions\" / \"session-84\"\n  141:               / \"computation-artifacts\" / \"s84_w10a_121_saddle_inventory.npz\")\n  142: CANONICAL_PY = resolve_script(None, 'canonical_constants.py')\n  143: \n  144: # Output artifacts\n  145: OUT_NPZ = resolve_output(85, 's85_w9_borel_floor_registry.npz')\n  146: OUT_PNG = resolve_output(85, 's85_w9_borel_floor_registry.png')\n  147: OUT_REGISTRY_PATCH = resolve_output(85, 's85_w9_borel_floor_registry_payload.json')\n  148: VERDICT_TXT = resolve_output(85, 's85_gate_verdicts.txt')\n  149: \n  150: INPUT_FILES = [\n  151:     CANONICAL_PY,\n  152:     SADDLE_NPZ,\n  153: ]"
+    },
+    {
+      "anchor_id": "prov_1929",
+      "anchor_type": "data_provenance",
+      "name": "w9_f_amp_3pi_fi_registry",
+      "script_path": "session-85/s85_w9_f_amp_3pi_fi_registry.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w9_f_amp_3pi_fi_registry.npz, session-85/s85_w9_f_amp_3pi_fi_registry.png",
+      "source_file": "computations/session-85/s85_w9_f_amp_3pi_fi_registry.py",
+      "source_context_30_lines": "  115: NLO_MARGIN_MIN = 1000.0                                     # (local) plan §7 lower bound\n  116: \n  117: # Upstream artifacts\n  118: FI_NPZ = resolve_output(84, 's84_w6_f_amp_3pi_fi_chain.npz')          # W6-69\n  119: FE_NPZ = resolve_output(84, 's84_w6_field_expansion_convergence.npz')  # W6-70\n  120: CANONICAL_PY = resolve_script(None, 'canonical_constants.py')\n  121: \n  122: # Output artifacts\n  123: OUT_NPZ = resolve_output(85, 's85_w9_f_amp_3pi_fi_registry.npz')\n  124: OUT_PNG = resolve_output(85, 's85_w9_f_amp_3pi_fi_registry.png')\n  125: OUT_REGISTRY_PATCH = resolve_output(85, 's85_w9_f_amp_3pi_fi_registry_payload.json')\n  126: VERDICT_TXT = resolve_output(85, 's85_gate_verdicts.txt')\n  127: \n  128: INPUT_FILES = [\n  129:     CANONICAL_PY,\n  130:     FI_NPZ,\n  131:     FE_NPZ,"
+    },
+    {
+      "anchor_id": "prov_1930",
+      "anchor_type": "data_provenance",
+      "name": "w9_folded_triangle_21cm_shape",
+      "script_path": "session-85/s85_w9_folded_triangle_21cm_shape.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w9_folded_triangle_21cm_shape.npz, session-85/s85_w9_folded_triangle_21cm_shape.png",
+      "source_file": "computations/session-85/s85_w9_folded_triangle_21cm_shape.py",
+      "source_context_30_lines": "  121: RANDOM_SEED = 42                                            # (local) plan §7\n  122: INFO_THRESHOLD_F_NL = 0.1                                   # (local) plan §9 INFO cutoff\n  123: \n  124: # 21-cm noise floor (nominal SKA-Phase-2+ fiducial; used for SNR projection only)\n  125: SIGMA_21CM_PER_MODE = 1e-5                                  # (local) dimensionless per-mode bispectrum noise floor (conservative SKA-Phase-2 projection, consistent with W0 Babich-Creminelli L_max=8 context)\n  126: \n  127: CANONICAL_PY = resolve_script(None, 'canonical_constants.py')\n  128: \n  129: OUT_NPZ = resolve_output(85, 's85_w9_folded_triangle_21cm_shape.npz')\n  130: OUT_PNG = resolve_output(85, 's85_w9_folded_triangle_21cm_shape.png')\n  131: VERDICT_TXT = resolve_output(85, 's85_gate_verdicts.txt')\n  132: \n  133: INPUT_FILES = [CANONICAL_PY]\n  134: \n  135: \n  136: # --------------------------------------------------------------------\n  137: # Section 4 — SHA-256 utilities (identical to W9-1/W9-2)"
+    }
+  ]
+}

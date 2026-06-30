@@ -1,0 +1,127 @@
+==============================================================================
+QM-DISPERSION-52: Quantum Metric K^4 Correction to Goldstone Dispersion
+==============================================================================
+
+--- Step 1: Parameters ---
+  Using estimated DOS (fallback)
+  rho_B1 = 7.011625
+  rho_B2 = 56.093001
+  rho_B3 = 29.448825
+  s48 data issue: 'J values not found in s48 data'
+  Using approximate Josephson couplings
+  J_12 (B1-B2 Leggett) = 0.100000
+  J_13 (B1-B3 Leggett) = 0.020000
+  J_23 (B2-B3 Leggett) = 0.150000
+
+  Inter-cell Josephson:
+    J_xy (C^2)  = 0.933000 M_KK
+    J_z  (su2)  = 0.059000 M_KK
+    Anisotropy  = 15.8x
+
+--- Step 2: Bloch Hamiltonian ---
+  K=0 eigenvalues (omega^2): [-0.            0.0084657172  0.0188783274]
+  Goldstone eigenvalue: -3.4694e-18 (should be ~0)
+  Leggett gap 1: omega_L1 = 0.092009 M_KK
+  Leggett gap 2: omega_L2 = 0.137398 M_KK
+
+  K=0 Goldstone eigvec (sqrt-rho basis): [-0.2752409413 -0.7784989442 -0.5640760748]
+  Expected (uniform phase):               [0.2752409413 0.7784989442 0.5640760748]
+  Overlap: 1.0000000000
+
+--- Step 3: Dispersion along high-symmetry lines ---
+  Path length: 1001 points
+  Goldstone band: omega(X) = 0.265921
+  Goldstone band: omega(M) = 0.370651
+  Goldstone band: omega(Z) = 0.078394
+
+--- Step 4: Quantum Geometric Tensor ---
+  Computing QGT on 16^3 = 4096 grid...
+  QGT computation: 0.7s
+
+  QGT Statistics (nonzero points: 4088 / 4096):
+    tr(g) max  = 4.196232e-01
+    tr(g) mean = 1.919760e-02
+    tr(g) min  = 3.017014e-08
+    max|F_ij|  = 0.000000e+00 (should be ~0 for real H)
+
+  BZ-averaged quantum metric:
+    <g_xx> = 9.511921e-03
+    <g_yy> = 9.511921e-03
+    <g_zz> = 1.362578e-04
+    <tr(g)> = 1.916010e-02
+
+--- Step 5: K^4 coefficient from dispersion ---
+  Fit: omega^2 = 3.351136e-06 + 2.965490e-02*K^2 + -3.436764e-02*K^4 + 4.575009e-02*K^6
+  c_eff (lattice units) = 0.172206
+  K^4 coefficient (omega^2) = -3.436764e-02
+
+  alpha_QM (correction to omega):    -5.794598e-01
+  alpha_QM (correction to omega^2):  -1.158920e+00
+
+  Gamma->Z direction:
+    c_z (lattice) = 0.043730
+    K^4 coeff     = -3.515137e-04
+    alpha_QM_z    = -9.190727e-02
+
+  Sound speed anisotropy: c_xy / c_z = 3.9379
+
+--- Step 6: Effective power-law index ---
+  n_eff at K=0.1 (G->X): 0.983588
+  n_eff at K=0.5 (G->X): 0.854966
+  n_eff at K=1.0 (G->X): 0.793751
+  n_eff at K=pi  (G->X): 0.046004
+
+  n_eff at K=0.1 (G->Z): 0.998044
+  n_eff at K=0.5 (G->Z): 0.957265
+  n_eff at K=1.0 (G->Z): 0.856988
+
+  K where n_eff = 0.965 (G->X): K = 0.1682
+    (K/K_BZ = 0.0535)
+  K where n_eff = 0.965 (G->Z): K = 0.4529
+
+--- Step 7: Decomposition of K^4 correction ---
+  Single-band reference (uniform rho):
+    alpha_4 (omega^2)     = -2.520069e-03
+    alpha_QM (omega)      = -4.166508e-02
+
+  No-Leggett reference (J_Leggett=0):
+    alpha_4 (omega^2)     = -1.386038e-03
+    alpha_QM (omega)      = -4.166508e-02
+
+  Full multi-band:
+    alpha_4 (omega^2)     = -3.436764e-02
+    alpha_QM (omega)      = -5.794598e-01
+
+  QUANTUM METRIC CONTRIBUTION:
+    delta_alpha = alpha_full - alpha_no_Leggett = -5.377947e-01
+    Fractional: delta_alpha / alpha_lattice = 12.9076
+
+==============================================================================
+GATE VERDICT: QM-DISPERSION-52
+==============================================================================
+
+  Power-law modification |n_eff - 1| at candidate K_pivot values:
+   K_pivot   n_eff(G->X)       |dn_QM|     verdict
+  --------  ------------  ------------  ----------
+     0.100      0.983588  1.552582e-02        PASS
+     0.200      0.948105  4.851714e-02        PASS
+     0.500      0.854966  1.240507e-01        PASS
+     1.000      0.793751  1.214350e-01        PASS
+
+  Primary numbers:
+    alpha_QM (full, omega correction) = -5.794598e-01
+    delta_alpha_QM (quantum metric)   = -5.377947e-01
+    BZ-averaged tr(g)                 = 1.916010e-02
+    max Berry curvature |F|           = 0.000000e+00
+
+  GATE STATUS: PASS
+  Quantum metric K^4 correction modifies n_eff by > 0.01 at some K_pivot
+
+--- Step 9: Save results ---
+  Saved to C:\sandbox\Ainulindale Exflation\tier0-computation\s52_qm_dispersion.npz
+
+--- Step 10: Plotting ---
+  Plot saved to C:\sandbox\Ainulindale Exflation\tier0-computation\s52_qm_dispersion.png
+
+  Total runtime: 1.3s
+  DONE.

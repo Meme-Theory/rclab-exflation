@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "active_root": "computations",
+  "known_roots": ["computations/_shared", "computations"],
+  "_comment_purpose": "Phase 4 cutover: active_root flipped from 'computations/_shared' to 'computations' on 2026-05-03 after Phase 2a (mirror), Phase 2b (X2 transform), and Phase 3 (path-string migration) all completed cleanly. From this moment, all consumers of tools.computation_root.resolve_* route to computations/session-N/ and computations/_shared/ rather than computations/.",
+  "_comment_post_cutover_state": "The pre-cutover flat tree is eligible for deletion. The nested mirror (computations/session-N/ + computations/_shared/) is the live tree.",
+  "_comment_rollback": "If you need to revert to the flat layout: change active_root back to 'computations/_shared' AND restore the pre-cutover tree from git history (or backup). Note: scripts have been X2-transformed to use resolve_*; they continue to work under either flag setting because resolve_* honors the active_root.",
+  "_comment_provenance": "Phase 4 cutover authored 2026-05-03 per S88+ rigging plan.",
+  "_comment_relocation": "RELOCATED 2026-05-29 (S96 W2) from tools/ to computations/_shared/. Rationale: this is runtime config for the computations/ tree (shared computation infrastructure, alongside canonical_constants.py), NOT knowledge-index infra. While it lived in tools/ it was inadvertently deleted by the 'audit-clean hygiene' quicksave 5056e28a, which silently reverted resolve_* to the flat-mode default and broke session-scoped input resolution (surfaced by S96-SDW-CC-GAP via _analytic_zeta.py SPECTRUM_CACHE). config_path() in tools/computation_root.py now points here. Companion change: DEFAULT_ROOT hardened to 'computations' so a missing config falls back to the correct live tree, not the obsolete flat layout."
+}

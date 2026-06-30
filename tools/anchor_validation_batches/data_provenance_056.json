@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 56,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_551",
+      "anchor_type": "data_provenance",
+      "name": "gauge_u1k7",
+      "script_path": "session-51/s51_gauge_u1k7.py",
+      "session": "s51",
+      "inputs": "",
+      "outputs": "session-51/s51_gauge_u1k7.npz",
+      "source_file": "computations/session-51/s51_gauge_u1k7.py",
+      "source_context_30_lines": "  492: # ======================================================================\n  493: #  SAVE DATA\n  494: # ======================================================================\n  495: \n  496: elapsed = time.time() - t0\n  497: print(f\"\\nElapsed time: {elapsed:.1f} s\")\n  498: \n  499: np.savez_compressed(\n  500:     os.path.join(SCRIPT_DIR, \"s51_gauge_u1k7.npz\"),\n  501:     # Level 1\n  502:     comm_bare_norm=comm_bare_norm,\n  503:     ratio_bare=ratio_bare,\n  504:     DK_norm=DK_norm,\n  505:     evals_DK=evals_DK,\n  506:     # Level 2\n  507:     ratio_DK2=ratio_DK2,\n  508:     ratio_DK4=ratio_DK4,"
+    },
+    {
+      "anchor_id": "prov_552",
+      "anchor_type": "data_provenance",
+      "name": "high_pw",
+      "script_path": "session-51/s51_high_pw.py",
+      "session": "s51",
+      "inputs": "",
+      "outputs": "session-51/s51_high_pw.npz, session-51/s51_high_pw.png",
+      "source_file": "computations/session-51/s51_high_pw.py",
+      "source_context_30_lines": "  615:         f\"(direct weight-space construction instead of tensor product projection).\"\n  616:     )\n  617: \n  618:     print(f\"\\n  VERDICT: {verdict}\")\n  619:     print(f\"  Reason: {reason}\")\n  620: \n  621:     # --- Save results ---\n  622:     save_path = os.path.join(os.path.dirname(os.path.abspath(__file__)),\n  623:                               's51_high_pw.npz')\n  624: \n  625:     save_dict = {\n  626:         'tau': np.float64(tau_fold),\n  627:         'verdict': np.array([verdict], dtype='U10'),\n  628:         # Exact spectra\n  629:         'abs_evals_N6': spec_6['all_abs_evals'],\n  630:         'abs_evals_N8': spec_8['all_abs_evals'],\n  631:         'R_N6': np.float64(spec_6['spectral_radius']),"
+    },
+    {
+      "anchor_id": "prov_553",
+      "anchor_type": "data_provenance",
+      "name": "local_resonance",
+      "script_path": "session-51/s51_local_resonance.py",
+      "session": "s51",
+      "inputs": "",
+      "outputs": "session-51/s51_local_resonance.npz, session-51/s51_local_resonance.png",
+      "source_file": "computations/session-51/s51_local_resonance.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s51_local_resonance.py — Local Resonance Mass Enhancement via T-Matrix\n    4: =======================================================================\n    5: \n    6: Session 51, Gate: LOCAL-RESONANCE-51\n    7: \n    8: Physics:\n    9:   The Goldstone phonon (n=0 KK mode, m_G = 0.070 M_KK) propagates on the\n   10:   4D fabric. Its first-order self-energy from the T^2 condensate texture\n   11:   VANISHES because <V>_{T^2} = 0 for the zero-mode (S50 W1-H, proven)."
+    },
+    {
+      "anchor_id": "prov_554",
+      "anchor_type": "data_provenance",
+      "name": "polariton",
+      "script_path": "session-51/s51_polariton.py",
+      "session": "s51",
+      "inputs": "",
+      "outputs": "session-51/s51_polariton.npz",
+      "source_file": "computations/session-51/s51_polariton.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s51_polariton.py — Polariton/Hopfield Model for SA-Goldstone Coupling\n    4: =====================================================================\n    5: \n    6: Gate: POLARITON-51\n    7:     PASS: Lower polariton alpha_eff at K_pivot differs from 2.0 by > 0.1\n    8:     FAIL: Coupling too weak (Omega_R / linewidth < 0.1), both branches remain pure\n    9:     INFO: alpha_eff changes but magnitude insufficient for n_s target\n   10: \n   11: Physics:"
+    },
+    {
+      "anchor_id": "prov_555",
+      "anchor_type": "data_provenance",
+      "name": "sa_goldstone_mixing",
+      "script_path": "session-51/s51_sa_goldstone_mixing.py",
+      "session": "s51",
+      "inputs": "computations/session-44/s44_dos_tau.npz",
+      "outputs": "session-51/s51_sa_goldstone_mixing.npz, session-51/s51_sa_goldstone_mixing.png",
+      "source_file": "computations/session-51/s51_sa_goldstone_mixing.py",
+      "source_context_30_lines": "  529: \n  530: print(f\"SA-GOLDSTONE-MIXING-51: {verdict}\")\n  531: print(f\"Reason: {reason}\")\n  532: print(\"=\" * 70)\n  533: \n  534: # ========================================================================\n  535: # SECTION 12: Save data\n  536: # ========================================================================\n  537: np.savez('computations/session-51/s51_sa_goldstone_mixing.npz',\n  538:          K_values=K_values,\n  539:          P_G_norm=P_G_norm,\n  540:          chi_SA_norm=chi_SA_norm,\n  541:          n_s_G=n_s_G,\n  542:          n_s_SA=n_s_SA,\n  543:          beta_physical=beta_physical,\n  544:          K_star=K_star,\n  545:          K_pivot=K_pivot_default,"
+    },
+    {
+      "anchor_id": "prov_556",
+      "anchor_type": "data_provenance",
+      "name": "strutinsky",
+      "script_path": "session-51/s51_strutinsky.py",
+      "session": "s51",
+      "inputs": "",
+      "outputs": "session-51/s51_strutinsky.npz, session-51/s51_strutinsky.png",
+      "source_file": "computations/session-51/s51_strutinsky.py",
+      "source_context_30_lines": "   92:     x = omega**2 / Lambda**2\n   93:     return np.sum(dim2 * f_cutoff(x))\n   94: \n   95: \n   96: # ============================================================================\n   97: #  3. Strutinsky smoothing\n   98: # ============================================================================\n   99: \n  100: def strutinsky_smooth_density(E_grid, omega, dim2, gamma, p_order=6):\n  101:     \"\"\"\n  102:     Compute Strutinsky-smoothed level density on E_grid.\n  103: \n  104:     The Strutinsky prescription (with curvature corrections up to order p):\n  105: \n  106:       g_smooth(E) = (1/gamma*sqrt(pi)) * sum_n g_n * exp(-(E-omega_n)^2/gamma^2)\n  107:                     * C_p((E - omega_n)/gamma)\n  108: "
+    },
+    {
+      "anchor_id": "prov_557",
+      "anchor_type": "data_provenance",
+      "name": "12d_reduction",
+      "script_path": "session-52/s52_12d_reduction.py",
+      "session": "s52",
+      "inputs": "",
+      "outputs": "session-52/s52_12d_reduction.npz, session-52/s52_12d_reduction.png",
+      "source_file": "computations/session-52/s52_12d_reduction.py",
+      "source_context_30_lines": "   38: \n   39: Inputs:\n   40:   - s52_wdw_initial.npz: tau_i = 0, G_mod = 5.0\n   41:   - s52_ddg_mkk.npz: M_KK = 5.012e17 GeV (alpha_2 route)\n   42:   - s41_constants_vs_tau.npz: a_2(tau) at 16 tau values\n   43:   - canonical_constants.py: all framework constants\n   44: \n   45: Output:\n   46:   - s52_12d_reduction.npz\n   47:   - s52_12d_reduction.png (4-panel)\n   48: \n   49: Author: Baptista-Spacetime-Analyst (Session 52)\n   50: Date: 2026-03-20\n   51: \"\"\"\n   52: \n   53: import sys\n   54: import os"
+    },
+    {
+      "anchor_id": "prov_558",
+      "anchor_type": "data_provenance",
+      "name": "12d_reduction_analytic",
+      "script_path": "session-52/s52_12d_reduction_analytic.py",
+      "session": "s52",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-52/s52_12d_reduction_analytic.py",
+      "source_context_30_lines": "<name '12d_reduction_analytic' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S52 — 12D-REDUCTION-52 Analytic Cross-Check\n    4: =============================================\n    5: \n    6: Verifies the N_e saturation result and derives the analytic formula.\n    7: \n    8: In the stiff-matter limit (KE >> |V|), the Friedmann-modulus system simplifies:\n    9:   H^2 = G_mod_full * tau_dot^2 / (6 * M_p^2)\n   10:   tau evolves nearly as free particle: tau(t) ~ tau_i + tau_dot_0 * t\n   11:   a(t) ~ a_i * exp(H*t) ~ a_i * (1 + tau_dot_0 * sqrt(G_mod/(6*M_p^2)) * t)\n   12: \n   13: Actually for stiff matter (w=1): a(t) ~ t^{1/3}\n   14: \n   15: The KEY: N_e = integral_0^{t_fold} H(t) dt\n   16: \n   17: In the stiff limit:\n   18:   rho(t) = rho_0 * (a_0/a(t))^6  [w=1 => rho ~ a^{-6}]\n   19:   H^2 = rho/(3*M_p^2)\n   20:   da/dt = H*a => a ~ t^{1/3}\n   21:   H = 1/(3*t)\n   22:   N_e = integral H dt = (1/3)*ln(t_f/t_i)\n   23: \n   24: The transit time: tau_fold / tau_dot_0 ~ 0.19 / tau_dot_0\n   25: The initial time: set by the Hubble rate at start\n   26:   H_0 = tau_dot_0 * sqrt(G_mod_full/(6*M_p^2))\n   27:   t_i ~ 1/(3*H_0)\n   28: \n   29: For stiff matter: t_f = t_i * (a_f/a_i)^3\n   30: "
+    },
+    {
+      "anchor_id": "prov_559",
+      "anchor_type": "data_provenance",
+      "name": "analytic_torsion",
+      "script_path": "session-52/s52_analytic_torsion.py",
+      "session": "s52",
+      "inputs": "",
+      "outputs": "session-52/s52_analytic_torsion.npz, session-52/s52_analytic_torsion.png",
+      "source_file": "computations/session-52/s52_analytic_torsion.py",
+      "source_context_30_lines": "   26: \n   27: Method:\n   28:   1. Recompute Dirac eigenvalues at 50 tau values from dirac_spectrum\n   29:   2. Evaluate (2)-(3) exactly at each tau\n   30:   3. Numerical differentiation d(log T)/d(tau) for inflection detection\n   31:   4. Compare structure near tau_fold = 0.19\n   32: \n   33: Input: dirac_spectrum.py (Dirac operator infrastructure)\n   34: Output: s52_analytic_torsion.{npz,png}\n   35: \n   36: Author: Spectral-Geometer (Session 52)\n   37: Date: 2026-03-20\n   38: \"\"\"\n   39: \n   40: import sys\n   41: import os\n   42: import time"
+    },
+    {
+      "anchor_id": "prov_560",
+      "anchor_type": "data_provenance",
+      "name": "bekenstein",
+      "script_path": "session-52/s52_bekenstein.py",
+      "session": "s52",
+      "inputs": "",
+      "outputs": "session-52/s52_bekenstein.npz",
+      "source_file": "computations/session-52/s52_bekenstein.py",
+      "source_context_30_lines": "   38:     - Violated (S/S_Bek > 1): inconsistency requiring resolution\n   39: \n   40: INPUTS:\n   41:   - canonical_constants.py (all framework constants)\n   42:   - s39_bayes_gge_thermal.npz (GGE/Gibbs entropies from S39)\n   43:   - s45_truncated_torsion.npz (spectral torsion from S46 computation)\n   44: \n   45: OUTPUTS:\n   46:   - s52_bekenstein.npz (all computed quantities)\n   47:   - s52_bekenstein_plot.png (saturation diagram)\n   48: \n   49: Author: hawking-theorist, Session 52\n   50: Date: 2026-03-20\n   51: \"\"\"\n   52: \n   53: import os\n   54: import sys"
+    }
+  ]
+}

@@ -5,7 +5,7 @@
 **Agents**: 8 spawned across 2 waves — spectral-geometer (W1-A/D + cross-check), neutrino (W1-B), nazarewicz (W1-C, W2-AB, W2-C, W3-C), feynman (cross-check)
 **Master Gate**: CUTOFF-SA-37
 **Pre-session probability**: ~15% (8-25%)
-**Gate verdicts**: `tier0-computation/s37_gate_verdicts.txt`
+**Gate verdicts**: `computations/s37_gate_verdicts.txt`
 **Pre-session computation**: CC-ARITH-37 (Einstein, single-agent)
 **Framework document**: `sessions/framework/spectral-post-mortem.md` (Landau)
 
@@ -137,30 +137,30 @@ The instanton/pair-vibration physics stands INDEPENDENT of the stabilization que
 
 ## VII. Files Created or Modified
 
-### Tier-0 Computations (Session 37)
+### computation Computations (Session 37)
 
 | File | Content | Agent |
 |:-----|:--------|:------|
-| `tier0-computation/s37_cutoff_sa.py` | CUTOFF-SA-37 script | spectral-geometer |
-| `tier0-computation/s37_cutoff_sa.npz` | 10 cutoffs x 6 Lambda x 16 tau, SD coefficients | spectral-geometer |
-| `tier0-computation/s37_cutoff_sa.png` | Monotonicity visualization | spectral-geometer |
-| `tier0-computation/s37_k7_g1.py` | K7-G1-37 script | neutrino |
-| `tier0-computation/s37_k7_g1.npz` | q_7 charges, eigenvalues, multi-tau scan | neutrino |
-| `tier0-computation/s37_instanton_action.py` | F.1 instanton action | nazarewicz |
-| `tier0-computation/s37_instanton_action.npz` | GL parameters, S_inst, nuclear benchmarks | nazarewicz |
-| `tier0-computation/s37_instanton_action.png` | GL potential and instanton profile | nazarewicz |
-| `tier0-computation/s37_pair_susceptibility.py` | F.2/F.3 pair susceptibility + E_vac | nazarewicz |
-| `tier0-computation/s37_pair_susceptibility.npz` | Lehmann poles, mode decompositions, sum rules | nazarewicz |
-| `tier0-computation/s37_pair_susceptibility.png` | Spectral function visualization | nazarewicz |
-| `tier0-computation/s37_oneloop_sa.py` | F.5 one-loop spectral action correction | nazarewicz |
-| `tier0-computation/s37_oneloop_sa.npz` | BdG shift, E_cond(MF), Thouless flow | nazarewicz |
-| `tier0-computation/s37_oneloop_sa.png` | Energy decomposition at 9 tau points | nazarewicz |
-| `tier0-computation/s37_cutoff_crosscheck.py` | 7 independent cross-checks | feynman |
-| `tier0-computation/s37_cutoff_crosscheck.npz` | Monotonicity verification, loophole analysis | feynman |
-| `tier0-computation/s37_instanton_mc.py` | F.4 instanton MC (0D + lattice + extended) | nazarewicz |
-| `tier0-computation/s37_instanton_mc.npz` | Flip rates, n_inst, Z_2 balance, T-scan | nazarewicz |
-| `tier0-computation/s37_instanton_mc.png` | MC results visualization | nazarewicz |
-| `tier0-computation/s37_gate_verdicts.txt` | All gate verdicts | session |
+| `computations/s37_cutoff_sa.py` | CUTOFF-SA-37 script | spectral-geometer |
+| `computations/s37_cutoff_sa.npz` | 10 cutoffs x 6 Lambda x 16 tau, SD coefficients | spectral-geometer |
+| `computations/s37_cutoff_sa.png` | Monotonicity visualization | spectral-geometer |
+| `computations/s37_k7_g1.py` | K7-G1-37 script | neutrino |
+| `computations/s37_k7_g1.npz` | q_7 charges, eigenvalues, multi-tau scan | neutrino |
+| `computations/s37_instanton_action.py` | F.1 instanton action | nazarewicz |
+| `computations/s37_instanton_action.npz` | GL parameters, S_inst, nuclear benchmarks | nazarewicz |
+| `computations/s37_instanton_action.png` | GL potential and instanton profile | nazarewicz |
+| `computations/s37_pair_susceptibility.py` | F.2/F.3 pair susceptibility + E_vac | nazarewicz |
+| `computations/s37_pair_susceptibility.npz` | Lehmann poles, mode decompositions, sum rules | nazarewicz |
+| `computations/s37_pair_susceptibility.png` | Spectral function visualization | nazarewicz |
+| `computations/s37_oneloop_sa.py` | F.5 one-loop spectral action correction | nazarewicz |
+| `computations/s37_oneloop_sa.npz` | BdG shift, E_cond(MF), Thouless flow | nazarewicz |
+| `computations/s37_oneloop_sa.png` | Energy decomposition at 9 tau points | nazarewicz |
+| `computations/s37_cutoff_crosscheck.py` | 7 independent cross-checks | feynman |
+| `computations/s37_cutoff_crosscheck.npz` | Monotonicity verification, loophole analysis | feynman |
+| `computations/s37_instanton_mc.py` | F.4 instanton MC (0D + lattice + extended) | nazarewicz |
+| `computations/s37_instanton_mc.npz` | Flip rates, n_inst, Z_2 balance, T-scan | nazarewicz |
+| `computations/s37_instanton_mc.png` | MC results visualization | nazarewicz |
+| `computations/s37_gate_verdicts.txt` | All gate verdicts | session |
 
 ### Session Documents
 
@@ -177,8 +177,8 @@ The instanton/pair-vibration physics stands INDEPENDENT of the stabilization que
 
 | File | Content |
 |:-----|:--------|
-| `tier0-computation/s36_cc_arithmetic.py` | CC gradient computation |
-| `tier0-computation/s36_cc_arithmetic.npz` | Vacuum energies, SD coefficients, gradients |
+| `computations/s36_cc_arithmetic.py` | CC gradient computation |
+| `computations/s36_cc_arithmetic.npz` | Vacuum energies, SD coefficients, gradients |
 
 ---
 

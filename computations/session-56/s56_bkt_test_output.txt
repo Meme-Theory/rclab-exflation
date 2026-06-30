@@ -1,0 +1,98 @@
+========================================================================
+S56 BKT-TEST-56: BKT Temperature vs Gibbons-Hawking Temperature
+========================================================================
+
+--- Section 1: Load tight-binding Hamiltonian data ---
+  tau range: [0.0000, 0.5000], N_points = 50
+  N_cells = 32
+  J_C2 range: [0.269995, 1.995012] M_KK
+
+--- Section 2: Load scale factor data ---
+  Scale factor tau range: [0.0000, 0.3469], N_points = 10
+  H range: [2.5876, 3.9521] M_KK
+  Interpolated H range: [0.1277, 3.9521] M_KK
+
+--- Section 3: Josephson energy and BKT temperature ---
+  BCS gap Delta = 0.464255 M_KK
+  F_anomalous range: [2.660490, 7.678028]
+  E_J range: [0.559710, 10.588942] M_KK
+  T_BKT range: [0.879190, 16.633071] M_KK
+
+--- Section 4: Gibbons-Hawking temperature ---
+  T_GH range: [0.0203, 0.6290] M_KK
+
+--- Section 5: Crossing analysis ---
+  T_GH/T_BKT range: [0.023109, 0.165888]
+  NO CROSSINGS found in tau range [0.00, 0.50]
+  T_GH < T_BKT everywhere: fabric is in the ORDERED (vortex-bound) phase
+  Geometric temperature never reaches vortex unbinding
+
+  No crossings in gate range [0.05, 0.40]
+
+  At fold (tau = 0.1939):
+    E_J         = 3.890563 M_KK
+    T_BKT       = 6.111282 M_KK
+    T_GH        = 0.589895 M_KK
+    T_GH/T_BKT  = 0.0965
+    J_C2        = 0.918641 M_KK
+    F_anomalous = 4.610215
+
+  T_BKT minimum:
+    tau_min     = 0.5000
+    T_BKT(min)  = 0.879190 M_KK
+    T_GH at min = 0.020317 M_KK
+    ratio       = 0.0231
+
+  T_BKT maximum:
+    tau_max     = 0.0000
+    T_BKT(max)  = 16.633071 M_KK
+
+--- Section 6: Scale separation ---
+  T_acoustic (GGE) = 0.112000 M_KK
+  T_BKT(fold)/T_acoustic = 54.5650
+  T_GH(fold)/T_acoustic  = 5.2669
+
+  Delta (BCS gap) = 0.464255 M_KK
+  T_BKT(fold)/Delta = 13.1636
+  T_GH(fold)/Delta  = 1.2706
+
+  Separation factor: T_GH/T_BKT spans [0.02, 0.17]
+  => T_BKT DOMINATES: phase order always survives (max log10(ratio)=-0.78)
+
+--- Section 7: Graph coordination for BKT context ---
+  Mean coordination z = 5.81
+  Coordination range: [2, 8]
+  For BKT on lattice with z neighbors: T_BKT ~ (pi/2) * E_J
+  (This is the z-independent universal relation; z enters via
+   the renormalization of rho_s from the bare value)
+
+  z-corrected T_BKT at fold: 17.760913 M_KK
+  z-corrected ratio: 0.0332
+
+--- Section 8: Gate verdict ---
+
+  Gate: BKT-CROSSING-56
+  Verdict: INFO -- NO CROSSING in [0.05, 0.40]
+  T_GH < T_BKT at all tau: fabric always below BKT
+  Phase coherence survives throughout transit
+  Maximum T_GH/T_BKT = 0.17 at tau = 0.3776
+
+--- Section 9: Save results ---
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s56_bkt_test.npz
+
+--- Section 10: Generate plot ---
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s56_bkt_test.png
+
+========================================================================
+SUMMARY: BKT-TEST-56
+========================================================================
+  Delta (BCS gap)   = 0.464255 M_KK
+  E_J at fold       = 3.890563 M_KK
+  T_BKT at fold     = 6.111282 M_KK
+  T_GH at fold      = 0.5899 M_KK
+  T_GH/T_BKT(fold)  = 0.10
+  T_BKT minimum     = 0.879190 M_KK at tau = 0.5000
+  Crossings total   = 0
+  Crossings in gate = 0
+  Gate verdict      = NO_CROSSING
+========================================================================

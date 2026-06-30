@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 154,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1531",
+      "anchor_type": "data_provenance",
+      "name": "backreaction_selfconsistent",
+      "script_path": "session-78/s78_backreaction_selfconsistent.py",
+      "session": "s78",
+      "inputs": "",
+      "outputs": "session-78/s78_backreaction_selfconsistent.npz, session-78/s78_backreaction_selfconsistent.png",
+      "source_file": "computations/session-78/s78_backreaction_selfconsistent.py",
+      "source_context_30_lines": "   74: \n   75: INPUTS:\n   76:   - s73b_efold_mapping.npz  (trajectory H(N), w(N), aH(N))\n   77:   - s77_n_pivot_map.npz     (k_pivot = 14.31 M_KK, N_pivot = 3.12)\n   78:   - s77_transition_scale_pbh.npz  (linearized F_amp baseline)\n   79:   - canonical_constants.py\n   80: \n   81: OUTPUTS:\n   82:   - s78_backreaction_selfconsistent.npz  (per-iteration residuals,\n   83:                                           rho_p/rho_bg trajectory,\n   84:                                           eta-scan stability matrix)\n   85:   - s78_backreaction_selfconsistent.png  (convergence trace + rho trajectory\n   86:                                           + F_amp^sc vs iteration)\n   87: \n   88: APPEND-ONLY verdict:\n   89:   computations/session-78/s78_gate_verdicts.txt\n   90: "
+    },
+    {
+      "anchor_id": "prov_1532",
+      "anchor_type": "data_provenance",
+      "name": "bcs_formation_dynamics",
+      "script_path": "session-78/s78_bcs_formation_dynamics.py",
+      "session": "s78",
+      "inputs": "",
+      "outputs": "session-78/s78_bcs_formation_dynamics.npz, session-78/s78_bcs_formation_dynamics.png",
+      "source_file": "computations/session-78/s78_bcs_formation_dynamics.py",
+      "source_context_30_lines": "  634: tuple_tag = f\"({primary_overshoot:.4f}, {scheme_tag}, {convention_tag}, {L_max_tag})\"  # (local)\n  635: \n  636: # ------------------------------------------------------------------\n  637: # SECTION 7: Write outputs\n  638: # ------------------------------------------------------------------\n  639: print(\"\\n--- SECTION 7: Output artifacts ---\")\n  640: \n  641: np.savez(\n  642:     's78_bcs_formation_dynamics.npz',\n  643:     # Model A trajectory\n  644:     t_A=t_A, Delta_A=Delta_A,\n  645:     Delta_A_peak=Delta_A_peak, Delta_A_inf=Delta_A_inf,\n  646:     overshoot_A=overshoot_A, t_eq_A=t_eq_A,\n  647:     # Model C trajectory\n  648:     t_C=t_C, Delta_C=Delta_C, v_C=v_C,\n  649:     Delta_C_peak=Delta_C_peak, Delta_C_inf=Delta_C_inf,\n  650:     overshoot_C=overshoot_C, t_eq_C=t_eq_C, t_form_C=t_form_C,"
+    },
+    {
+      "anchor_id": "prov_1533",
+      "anchor_type": "data_provenance",
+      "name": "chi2_lmax_convergence",
+      "script_path": "session-78/s78_chi2_lmax_convergence.py",
+      "session": "s78",
+      "inputs": "",
+      "outputs": "session-78/s78_chi2_lmax_convergence.npz, session-78/s78_chi2_lmax_convergence.png",
+      "source_file": "computations/session-78/s78_chi2_lmax_convergence.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s78_chi2_lmax_convergence.py -- S78-W3-A-CHI2-LMAX-CONV\n    4: =========================================================\n    5: \n    6: Gate: S78-W3-A-CHI2-LMAX-CONV\n    7:   Primary scheme SDW (chi_2 = <sqrt(x)>_{d^2} identity).\n    8: \n    9:   PASS-direct:    68% posterior mass of BMA-extrapolated chi_2^{SDW}(L_max->inf)\n   10:                   overlaps [0.651, 0.719]  (Omega_Lambda = 0.685 direct).\n   11:   PASS-Friedmann: 68% posterior mass overlaps [1.952, 2.158]"
+    },
+    {
+      "anchor_id": "prov_1534",
+      "anchor_type": "data_provenance",
+      "name": "cmpp_tau_0p537",
+      "script_path": "session-78/s78_cmpp_tau_0p537.py",
+      "session": "s78",
+      "inputs": "",
+      "outputs": "session-78/s78_cmpp_tau_0p537.npz, session-78/s78_cmpp_tau_0p537.png",
+      "source_file": "computations/session-78/s78_cmpp_tau_0p537.py",
+      "source_context_30_lines": "  964:     'c2_zero_detected': np.array([c2_zero_detected]),\n  965:     'max_trace_err_pert': np.array([max_trace_err]),\n  966:     'TOL_TYPE_D': np.array([TOL_TYPE_D]),\n  967:     'TOL_ZERO': np.array([TOL_ZERO]),\n  968:     'TOL_TRACE': np.array([TOL_TRACE]),\n  969: }\n  970: \n  971: script_dir = os.path.dirname(os.path.abspath(__file__))\n  972: npz_path = os.path.join(script_dir, 's78_cmpp_tau_0p537.npz')  # (local)\n  973: np.savez(npz_path, **save_data)\n  974: print(f\"\\nSaved: {npz_path}\")\n  975: \n  976: \n  977: # =============================================================================\n  978: # PLOTS\n  979: # =============================================================================\n  980: "
+    },
+    {
+      "anchor_id": "prov_1535",
+      "anchor_type": "data_provenance",
+      "name": "dc_permanence",
+      "script_path": "session-78/s78_dc_permanence.py",
+      "session": "s78",
+      "inputs": "",
+      "outputs": "session-78/s78_dc_permanence.npz, session-78/s78_dc_permanence.png",
+      "source_file": "computations/session-78/s78_dc_permanence.py",
+      "source_context_30_lines": "   99:    the finite-size correction.\n  100: \n  101: Input files:\n  102:   computations/_shared/canonical_constants.py\n  103:   computations/session-64/s64_local_entangle.npz\n  104:   computations/session-56/s56_gge_fabric.npz\n  105: \n  106: Output files:\n  107:   computations/session-78/s78_dc_permanence.npz\n  108:   computations/session-78/s78_dc_permanence.png\n  109: \n  110: Session: S78 W3-N\n  111: Agent:   landau-condensed-matter-theorist\n  112: \"\"\"\n  113: \n  114: import os\n  115: import sys"
+    },
+    {
+      "anchor_id": "prov_1536",
+      "anchor_type": "data_provenance",
+      "name": "desi_dr3_update",
+      "script_path": "session-78/s78_desi_dr3_update.py",
+      "session": "s78",
+      "inputs": "",
+      "outputs": "session-78/s78_desi_dr3_update.npz, session-78/s78_desi_dr3_update.png",
+      "source_file": "computations/session-78/s78_desi_dr3_update.py",
+      "source_context_30_lines": "  115:     w0_FW,               # -0.918  (S58 Volovik partition registered value)\n  116:     wa_FW,               # 0.0     (four-fold lock)\n  117: )\n  118: \n  119: # ==============================================================================\n  120: #  Output paths\n  121: # ==============================================================================\n  122: SPEC_CACHE = os.path.join(HERE, \"s74_spectrum_cache_L9_tau019.npz\")\n  123: OUT_NPZ = os.path.join(HERE, \"s78_desi_dr3_update.npz\")\n  124: OUT_PNG = os.path.join(HERE, \"s78_desi_dr3_update.png\")\n  125: \n  126: \n  127: # ==============================================================================\n  128: #  Section 1: Spectrum loader (from s74_w0_zeta.py — canonical route)\n  129: # ==============================================================================\n  130: \n  131: def load_spectrum(Lmax_cut: int):"
+    },
+    {
+      "anchor_id": "prov_1537",
+      "anchor_type": "data_provenance",
+      "name": "eps_zero_matching",
+      "script_path": "session-78/s78_eps_zero_matching.py",
+      "session": "s78",
+      "inputs": "",
+      "outputs": "session-78/s78_eps_zero_matching.npz, session-78/s78_eps_zero_matching.png",
+      "source_file": "computations/session-78/s78_eps_zero_matching.py",
+      "source_context_30_lines": "   64: \n   65: from scipy.integrate import solve_ivp\n   66: from scipy.interpolate import interp1d\n   67: \n   68: import matplotlib\n   69: matplotlib.use('Agg')\n   70: import matplotlib.pyplot as plt\n   71: \n   72: OUT_NPZ = SCRIPT_DIR / \"s78_eps_zero_matching.npz\"\n   73: OUT_PNG = SCRIPT_DIR / \"s78_eps_zero_matching.png\"\n   74: OUT_LOG = SCRIPT_DIR / \"s78_eps_zero_matching_output.txt\"\n   75: \n   76: lines_log = []  # (local)\n   77: def log(msg=\"\"):\n   78:     print(msg)\n   79:     lines_log.append(msg)\n   80: "
+    },
+    {
+      "anchor_id": "prov_1538",
+      "anchor_type": "data_provenance",
+      "name": "f_conv_anomaly",
+      "script_path": "session-78/s78_f_conv_anomaly.py",
+      "session": "s78",
+      "inputs": "",
+      "outputs": "session-78/s78_f_conv_anomaly.npz, session-78/s78_f_conv_anomaly.png",
+      "source_file": "computations/session-78/s78_f_conv_anomaly.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s78_f_conv_anomaly.py  --  S78-W2-D-F-CONV-ANOMALY\n    4: ========================================================================\n    5: Gate: S78-W2-D-F-CONV-ANOMALY (Lizzi, spectral-functional-theorist, S78 W2)\n    6: \n    7: PRE-REGISTERED (BEFORE computing three-scheme comparison):\n    8:   HYPOTHESIS: f_conv^{anomaly, sharp} with (f_0=1/2, f_2=1, f_4=1) lies in\n    9:               3-scheme cluster {SDW, zeta, anomaly} with spread < factor 1.5.\n   10:               Additionally f_conv^{anomaly, f*-weights} agrees with f_conv^{f*}\n   11:               within factor 1.5."
+    },
+    {
+      "anchor_id": "prov_1539",
+      "anchor_type": "data_provenance",
+      "name": "f_conv_subhorizon",
+      "script_path": "session-78/s78_f_conv_subhorizon.py",
+      "session": "s78",
+      "inputs": "",
+      "outputs": "session-78/s78_f_conv_subhorizon.npz, session-78/s78_f_conv_subhorizon.png",
+      "source_file": "computations/session-78/s78_f_conv_subhorizon.py",
+      "source_context_30_lines": "   79:     R_protected_fold,\n   80:     Mpc_to_GeV_inv,\n   81: )\n   82: \n   83: import matplotlib\n   84: matplotlib.use('Agg')\n   85: import matplotlib.pyplot as plt\n   86: \n   87: OUT_NPZ = SCRIPT_DIR / \"s78_f_conv_subhorizon.npz\"\n   88: OUT_PNG = SCRIPT_DIR / \"s78_f_conv_subhorizon.png\"\n   89: OUT_LOG = SCRIPT_DIR / \"s78_f_conv_subhorizon_output.txt\"\n   90: \n   91: lines_log = []  # (local)\n   92: def log(msg=\"\"):\n   93:     print(msg)\n   94:     lines_log.append(msg)\n   95: "
+    },
+    {
+      "anchor_id": "prov_1540",
+      "anchor_type": "data_provenance",
+      "name": "famp_tilt_smoothed",
+      "script_path": "session-78/s78_famp_tilt_smoothed.py",
+      "session": "s78",
+      "inputs": "",
+      "outputs": "session-78/s78_famp_tilt_smoothed.npz, session-78/s78_famp_tilt_smoothed.png",
+      "source_file": "computations/session-78/s78_famp_tilt_smoothed.py",
+      "source_context_30_lines": "   92:   | bound from energy conservation), a factor ~143 reduction. BUT       |\n   93:   | saturation AT THE BOUND flattens k-dependence -- the slope in the   |\n   94:   | converged F_amp^sc regime would be NEAR ZERO by construction        |\n   95:   | (Branch-C cross-check). Our slope is the LINEARIZED prediction,     |\n   96:   | valid ABSENT backreaction. Report with explicit caveat.             |\n   97:   =======================================================================\n   98: \n   99: Output:\n  100:   computations/session-78/s78_famp_tilt_smoothed.npz   (data + cross-checks)\n  101:   computations/session-78/s78_famp_tilt_smoothed.png   (6 panels)\n  102:   computations/session-78/s78_gate_verdicts.txt         (append-only, one line)\n  103: \n  104: Classification: PHONONIC\n  105:   F_amp IS the Parker-Bogoliubov amplification of Mukhanov-Sasaki fluctuations\n  106:   through the spectral transit -- a substrate-level property of the squeezed\n  107:   GGE state post-fold. The slope is a structural invariant of the z''/z pump.\n  108: "
+    }
+  ]
+}

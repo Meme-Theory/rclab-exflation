@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 233,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_2321",
+      "anchor_type": "data_provenance",
+      "name": "w4_cf38_anchor_promotion_status",
+      "script_path": "session-90/s90_w4_cf38_anchor_promotion_status.py",
+      "session": "s90",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-90/s90_w4_cf38_anchor_promotion_status.py",
+      "source_context_30_lines": "<name 'w4_cf38_anchor_promotion_status' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S90 W4-2 — S90-W1-1-EMPIRICAL-ANCHOR-1-458-PROMOTION-STATUS-VERIFY (CF-38)\n    4: ==========================================================================\n    5: \n    6: Gate: S90-W1-1-EMPIRICAL-ANCHOR-1-458-PROMOTION-STATUS-VERIFY ([AUDIT])\n    7: \n    8: Mechanical pre-flight check for CF-37 (S90-W1-1-ALT-CORRIDOR-SELECTED-LRD-\n    9: ALPHA-DERIVATION). Determines whether the empirical LRD α-anchor\n   10: 1/458 ≈ 2.18e-3 (S88 W1b1-63 branch (c)) has been promoted to either:\n   11: \n   12:   (a) STAGE-3-PERMANENT registry entry in\n   13:       sessions/permanent-results-registry.md containing \"1/458\"\n   14:       AND a substrate-derived provenance marker, OR\n   15:   (b) `alpha_LRD_FW` canonical pin in\n   16:       computations/_shared/canonical_constants.py with substrate-\n   17:       derived PROVENANCE entry.\n   18: \n   19: PASS iff (a) ∨ (b)   → CF-37 Sub-clause B tightens 30% → 10% RATIO\n   20: FAIL iff ¬(a) ∧ ¬(b) → CF-37 Sub-clause B retains default 30% RATIO\n   21: INFO iff partial-promotion (STAGE-1-CANDIDATE / STAGE-2 only)\n   22: \n   23: This is a registry/canonical-state audit; no substrate-physics derivation\n   24: is required. FAIL here is documentation-truthful (anchor not yet promoted),\n   25: NOT a substrate-physics failure (per plan §W4-2 §13 substrate-framing\n   26: reminder).\n   27: \n   28: Plan reference: sessions/session-plan/session-90-plan-w4.md §W4-2.\n   29: \"\"\"\n   30: "
+    },
+    {
+      "anchor_id": "prov_2322",
+      "anchor_type": "data_provenance",
+      "name": "w4_cf39_mechanical_closure_blocked_by_cf40",
+      "script_path": "session-90/s90_w4_cf39_mechanical_closure_blocked_by_cf40.py",
+      "session": "s90",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-90/s90_w4_cf39_mechanical_closure_blocked_by_cf40.py",
+      "source_context_30_lines": "  161:         f\"schema_version={SCHEMA_VERSION}\\n\"\n  162:     )\n  163:     companion = (\n  164:         f\"# audit_sha256_short={audit_sha[:16]} \"\n  165:         f\"content_sha256_short={content_sha[:16]} \"\n  166:         f\"# {GATE_ID} dual-SHA companion row (W9a-99 split)\\n\"\n  167:         f\"# PRE-REG-INC per session-90-plan-w4.md §W4-3 §5 + §W4-4 §11; \"\n  168:         f\"deferred to S91; required prereq: [{CF40_GATE_ID}=PASS]; \"\n  169:         f\"closure_script=computations/session-90/s90_w4_cf39_mechanical_closure_blocked_by_cf40.py\\n\"\n  170:     )\n  171:     with VERDICT_TXT.open(\"a\", encoding=\"utf-8\") as fp:\n  172:         fp.write(canonical)\n  173:         fp.write(companion)\n  174: \n  175: \n  176: def main():\n  177:     t0 = time.time()"
+    },
+    {
+      "anchor_id": "prov_2323",
+      "anchor_type": "data_provenance",
+      "name": "w4_cf40_species_multiplicity_retry",
+      "script_path": "session-90/s90_w4_cf40_species_multiplicity_retry.py",
+      "session": "s90",
+      "inputs": "",
+      "outputs": "session-90/s90_w4_cf40_species_multiplicity_retry.npz, session-90/s90_w4_cf40_species_multiplicity_retry.png",
+      "source_file": "computations/session-90/s90_w4_cf40_species_multiplicity_retry.py",
+      "source_context_30_lines": "   84: PROJECT_ROOT = COMPUTATIONS_DIR.parent\n   85: \n   86: CANONICAL_CONSTANTS = SHARED_DIR / \"canonical_constants.py\"\n   87: S88_W6_V5_SOURCE = (\n   88:     PROJECT_ROOT\n   89:     / \"sessions\" / \"session-88\" / \"workshops\" / \"s88-w6-w1c-69-page1976-13oom.md\"\n   90: )\n   91: VERDICT_TXT = SESSION_DIR / \"s90_gate_verdicts.txt\"\n   92: NPZ_OUT = SESSION_DIR / \"s90_w4_cf40_species_multiplicity_retry.npz\"\n   93: PNG_OUT = SESSION_DIR / \"s90_w4_cf40_species_multiplicity_retry.png\"\n   94: JSON_OUT = SESSION_DIR / \"s90_w4_cf40_species_multiplicity_retry.json\"\n   95: \n   96: \n   97: # ---------------------------------------------------------------------\n   98: # Gate identity\n   99: # ---------------------------------------------------------------------\n  100: "
+    },
+    {
+      "anchor_id": "prov_2324",
+      "anchor_type": "data_provenance",
+      "name": "w4_cf41_n_pbh_band_edge_tension_promote",
+      "script_path": "session-90/s90_w4_cf41_n_pbh_band_edge_tension_promote.py",
+      "session": "s90",
+      "inputs": "",
+      "outputs": "session-90/s90_w4_cf41_n_pbh_band_edge_tension_promote.npz, session-90/s90_w4_cf41_n_pbh_band_edge_tension_promote.png",
+      "source_file": "computations/session-90/s90_w4_cf41_n_pbh_band_edge_tension_promote.py",
+      "source_context_30_lines": "  207: CASCADE_OPTION_C_EPSILON = 1e-5  # (local) small curvature correction\n  208: \n  209: # Input file paths\n  210: SPECTRUM_CACHE = COMPUTATIONS_DIR / \"session-84\" / \"s84_spectrum_cache_L12_tau019.npz\"\n  211: S89_W1_4_NPZ = COMPUTATIONS_DIR / \"session-89\" / \"s89_w1_n_pbh_band_edge_tension_reconciliation.npz\"\n  212: CANONICAL_CONSTANTS = SHARED_DIR / \"canonical_constants.py\"\n  213: \n  214: # Output paths\n  215: NPZ_OUT = SESSION_DIR / \"s90_w4_cf41_n_pbh_band_edge_tension_promote.npz\"\n  216: PNG_OUT = SESSION_DIR / \"s90_w4_cf41_n_pbh_band_edge_tension_promote.png\"\n  217: VERDICT_TXT = SESSION_DIR / \"s90_gate_verdicts.txt\"\n  218: \n  219: \n  220: def sha256_of(path):\n  221:     h = hashlib.sha256()\n  222:     try:\n  223:         h.update(path.read_bytes())"
+    },
+    {
+      "anchor_id": "prov_2325",
+      "anchor_type": "data_provenance",
+      "name": "w5_w2_1_a_cocycle_ratio",
+      "script_path": "session-90/s90_w5_w2_1_a_cocycle_ratio.py",
+      "session": "s90",
+      "inputs": "",
+      "outputs": "session-90/s90_w5_w2_1_a_cocycle_ratio.npz, session-90/s90_w5_w2_1_a_cocycle_ratio.png",
+      "source_file": "computations/session-90/s90_w5_w2_1_a_cocycle_ratio.py",
+      "source_context_30_lines": "  191: SUBSTRATE_FIRST_CANONICAL_SOURCING = (\n  192:     PROJECT_ROOT / \".claude\" / \"rules\" / \"substrate-first-canonical-sourcing.md\"\n  193: )\n  194: EPISTEMIC_DISCIPLINE = (\n  195:     PROJECT_ROOT / \".claude\" / \"rules\" / \"epistemic-discipline.md\"\n  196: )\n  197: \n  198: # ---- Output paths ----\n  199: NPZ_OUT = SESSION_DIR / \"s90_w5_w2_1_a_cocycle_ratio.npz\"\n  200: PNG_OUT = SESSION_DIR / \"s90_w5_w2_1_a_cocycle_ratio.png\"\n  201: VERDICT_TXT = SESSION_DIR / \"s90_gate_verdicts.txt\"\n  202: \n  203: \n  204: # ═══════════════════════════════════════════════════════════════════════════\n  205: # SHA helpers (canonical pattern per S90 W4 CF-41 + registry-landing.md\n  206: # §\"Bridge-Landing Script Architecture (single-shot pattern)\")\n  207: # ═══════════════════════════════════════════════════════════════════════════"
+    },
+    {
+      "anchor_id": "prov_2326",
+      "anchor_type": "data_provenance",
+      "name": "w5_w2_1_b_strict_f4",
+      "script_path": "session-90/s90_w5_w2_1_b_strict_f4.py",
+      "session": "s90",
+      "inputs": "",
+      "outputs": "session-90/s90_w5_w2_1_b_strict_f4.npz, session-90/s90_w5_w2_1_b_strict_f4.png",
+      "source_file": "computations/session-90/s90_w5_w2_1_b_strict_f4.py",
+      "source_context_30_lines": "  245:     PROJECT_ROOT / \".claude\" / \"rules\" / \"substrate-first-canonical-sourcing.md\"\n  246: )\n  247: EPISTEMIC_DISCIPLINE = (\n  248:     PROJECT_ROOT / \".claude\" / \"rules\" / \"epistemic-discipline.md\"\n  249: )\n  250: A_NPZ = SESSION_DIR / \"s90_w5_w2_1_a_cocycle_ratio.npz\"\n  251: \n  252: # ---- Output paths ----\n  253: NPZ_OUT = SESSION_DIR / \"s90_w5_w2_1_b_strict_f4.npz\"\n  254: PNG_OUT = SESSION_DIR / \"s90_w5_w2_1_b_strict_f4.png\"\n  255: VERDICT_TXT = SESSION_DIR / \"s90_gate_verdicts.txt\"\n  256: \n  257: \n  258: # ═══════════════════════════════════════════════════════════════════════════\n  259: # SHA helpers (canonical pattern per S90 W4 CF-41 + registry-landing.md\n  260: # §\"Bridge-Landing Script Architecture (single-shot pattern)\")\n  261: # ═══════════════════════════════════════════════════════════════════════════"
+    },
+    {
+      "anchor_id": "prov_2327",
+      "anchor_type": "data_provenance",
+      "name": "w5_w2_2_landau_bcs_grounded_r_substrate",
+      "script_path": "session-90/s90_w5_w2_2_landau_bcs_grounded_r_substrate.py",
+      "session": "s90",
+      "inputs": "",
+      "outputs": "session-90/s90_w5_w2_2_landau_bcs_grounded_r_substrate.npz, session-90/s90_w5_w2_2_landau_bcs_grounded_r_substrate.png",
+      "source_file": "computations/session-90/s90_w5_w2_2_landau_bcs_grounded_r_substrate.py",
+      "source_context_30_lines": "  244: EPISTEMIC_DISCIPLINE = (\n  245:     PROJECT_ROOT / \".claude\" / \"rules\" / \"epistemic-discipline.md\"\n  246: )\n  247: MATH_SCRIPTS = (\n  248:     PROJECT_ROOT / \".claude\" / \"rules\" / \"math-scripts.md\"\n  249: )\n  250: \n  251: # ---- Output paths ----\n  252: NPZ_OUT = SESSION_DIR / \"s90_w5_w2_2_landau_bcs_grounded_r_substrate.npz\"\n  253: PNG_OUT = SESSION_DIR / \"s90_w5_w2_2_landau_bcs_grounded_r_substrate.png\"\n  254: VERDICT_TXT = SESSION_DIR / \"s90_gate_verdicts.txt\"\n  255: \n  256: \n  257: # ═══════════════════════════════════════════════════════════════════════════\n  258: # SHA helpers (canonical pattern per S90 W4 CF-41 / registry-landing.md\n  259: # §\"Bridge-Landing Script Architecture (single-shot pattern)\")\n  260: # ═══════════════════════════════════════════════════════════════════════════"
+    },
+    {
+      "anchor_id": "prov_2328",
+      "anchor_type": "data_provenance",
+      "name": "w5_w2_4_sagan_dual_prior",
+      "script_path": "session-90/s90_w5_w2_4_sagan_dual_prior.py",
+      "session": "s90",
+      "inputs": "",
+      "outputs": "session-90/s90_w5_w2_4_sagan_dual_prior.png",
+      "source_file": "computations/session-90/s90_w5_w2_4_sagan_dual_prior.py",
+      "source_context_30_lines": "  249: JOINT_THEOREM_PROMOTION = (\n  250:     PROJECT_ROOT / \".claude\" / \"rules\" / \"joint-theorem-promotion.md\"\n  251: )\n  252: PERMANENT_RESULTS_REGISTRY = (\n  253:     PROJECT_ROOT / \"sessions\" / \"permanent-results-registry.md\"\n  254: )\n  255: \n  256: # ---- Output paths ----\n  257: JSON_OUT = SESSION_DIR / \"s90_w5_w2_4_sagan_dual_prior.json\"\n  258: PNG_OUT = SESSION_DIR / \"s90_w5_w2_4_sagan_dual_prior.png\"\n  259: VERDICT_TXT = SESSION_DIR / \"s90_gate_verdicts.txt\"\n  260: \n  261: \n  262: # ═══════════════════════════════════════════════════════════════════════════\n  263: # SHA helpers (canonical pattern)\n  264: # ═══════════════════════════════════════════════════════════════════════════\n  265: "
+    },
+    {
+      "anchor_id": "prov_2329",
+      "anchor_type": "data_provenance",
+      "name": "w6_f_traj_multiplicative_composition_atlas",
+      "script_path": "session-90/s90_w6_f_traj_multiplicative_composition_atlas.py",
+      "session": "s90",
+      "inputs": "",
+      "outputs": "session-90/s90_w6_f_traj_multiplicative_composition_atlas.npz, session-90/s90_w6_f_traj_multiplicative_composition_atlas...",
+      "source_file": "computations/session-90/s90_w6_f_traj_multiplicative_composition_atlas.py",
+      "source_context_30_lines": "  127: REL_PRECISION_COMPOSITION_PASS = 1.0e-10                         # (local) PASS threshold\n  128: REL_PRECISION_COMPOSITION_INFO_CEIL = 1.0e-6                     # (local) INFO ceiling\n  129: HEAT_KERNEL_T_REF = 1.0e-3                                       # (local)\n  130: PUBLICATION_PRECISION_SIG_FIGS = 11                              # (local)\n  131: VAR_A_FINGERPRINT_PREDICTED = 15.0 / 4.0                         # (local) = 3.75\n  132: \n  133: CACHE_PATH = COMPUTATIONS_DIR / \"session-84\" / \"s84_spectrum_cache_L12_tau019.npz\"\n  134: \n  135: OUT_NPZ = SESSION_DIR / \"s90_w6_f_traj_multiplicative_composition_atlas.npz\"\n  136: OUT_PNG = SESSION_DIR / \"s90_w6_f_traj_multiplicative_composition_atlas.png\"\n  137: VERDICT_TXT = SESSION_DIR / \"s90_gate_verdicts.txt\"\n  138: \n  139: INPUT_FILES = [\n  140:     SHARED_DIR / \"canonical_constants.py\",\n  141:     CACHE_PATH,\n  142:     SHARED_DIR / \"_spectral_action_regulators.py\",\n  143: ]"
+    },
+    {
+      "anchor_id": "prov_2330",
+      "anchor_type": "data_provenance",
+      "name": "w6_f_traj_zeta_sdw_var_a_test",
+      "script_path": "session-90/s90_w6_f_traj_zeta_sdw_var_a_test.py",
+      "session": "s90",
+      "inputs": "",
+      "outputs": "session-90/s90_w6_f_traj_zeta_sdw_var_a_test.npz, session-90/s90_w6_f_traj_zeta_sdw_var_a_test.png",
+      "source_file": "computations/session-90/s90_w6_f_traj_zeta_sdw_var_a_test.py",
+      "source_context_30_lines": "  136: \n  137: # F_traj theorem-predicted values (S84 W3-24 closed-form at locked norm L_k=1):\n  138: F_TRAJ_2_PREDICTED = 3.0 / 2.0                                   # (local)\n  139: F_TRAJ_4_PREDICTED = 5.0 / 2.0                                   # (local)\n  140: F_TRAJ_2_SQUARED = F_TRAJ_2_PREDICTED ** 2                       # (local) = 9/4\n  141: \n  142: CACHE_PATH = COMPUTATIONS_DIR / \"session-84\" / \"s84_spectrum_cache_L12_tau019.npz\"\n  143: \n  144: OUT_NPZ = SESSION_DIR / \"s90_w6_f_traj_zeta_sdw_var_a_test.npz\"\n  145: OUT_PNG = SESSION_DIR / \"s90_w6_f_traj_zeta_sdw_var_a_test.png\"\n  146: VERDICT_TXT = SESSION_DIR / \"s90_gate_verdicts.txt\"\n  147: \n  148: INPUT_FILES = [\n  149:     SHARED_DIR / \"canonical_constants.py\",\n  150:     CACHE_PATH,\n  151:     SHARED_DIR / \"_spectral_action_regulators.py\",\n  152: ]"
+    }
+  ]
+}

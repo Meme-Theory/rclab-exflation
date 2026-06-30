@@ -1,0 +1,27 @@
+{
+  "gate_id": "S87-W3-3E-LITEBIRD-LISA-NULL-ELIMINATION-CROSS-CHECK",
+  "verdict": "FAIL",
+  "value": 0.5,
+  "value_full": 0.5,
+  "scheme": "null-elimination-Fisher-distance",
+  "convention": "cell-predicted-vs-FAIL-no-cell-match-boundary",
+  "L_max": "N/A",
+  "sign_verdict": "PASS",
+  "magnitude_verdict": "FAIL",
+  "regime_verdict": "VALID",
+  "audit_sha256": "3cfc46e8c41660dace867e0483dbd08f3134d71aa085f7443375395f226687f7",
+  "content_sha256": "07911b953083670eb3764aff4442899e2e2da9fbd3935422da58d441b85eeff9",
+  "details": {
+    "cell_predicted": "PASS-PathH-(A)",
+    "off_prediction_classification": "FAIL-no-cell-match",
+    "n_T_axis_dist_sigma": 0.5,
+    "OOM_axis_dist_sigma": 0.5,
+    "null_elim_sigma_nearest_edge": 0.5,
+    "null_elim_sigma_corner": 0.7071067811865476,
+    "band_half_width_sigma": 0.5,
+    "OOM_band_half": 0.5,
+    "sigma_OOM_LISA_pin": 1.0
+  },
+  "structural_diagnosis": "Substrate prediction is structurally INSIDE PASS-PathH-(A) cell (sign_verdict=PASS), but pre-registered 5\u03c3 threshold is structurally incompatible with canonical 0.5\u03c3 band half-width pinned in _meta_classifier_v2.py \u2014 magnitude FAILs at null_elim_sigma=0.5\u03c3 < 3\u03c3 floor. S88 carry-forward: S88-NULL-ELIMINATION-BAND-WIDTH-RECONCILIATION to either widen meta_classifier_v2 bands or recalibrate threshold (PROHIBITED_ACTIONS Class 3 forbids in-session threshold relaxation).",
+  "carry_forward": "S88-NULL-ELIMINATION-BAND-WIDTH-RECONCILIATION"
+}

@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 153,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1521",
+      "anchor_type": "data_provenance",
+      "name": "r1_other_groups",
+      "script_path": "session-77/s77_r1_other_groups.py",
+      "session": "s77",
+      "inputs": "",
+      "outputs": "session-77/s77_r1_other_groups.npz, session-77/s77_r1_other_groups.png",
+      "source_file": "computations/session-77/s77_r1_other_groups.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s77_r1_other_groups.py -- R1-OTHER-GROUPS (W3-M, S77 Wave 3)\n    4: ==============================================================\n    5: \n    6: Gate: S77-D3-R1-UNIVERSAL (INFO)\n    7:   Report R_1 drift for SU(4) and Sp(2).\n    8:   Drift < 5% at L=3 confirms universality of R-protection.\n    9: \n   10: Physics (substrate framing):\n   11: ----------------------------"
+    },
+    {
+      "anchor_id": "prov_1522",
+      "anchor_type": "data_provenance",
+      "name": "r1_tau_trajectory",
+      "script_path": "session-77/s77_r1_tau_trajectory.py",
+      "session": "s77",
+      "inputs": "",
+      "outputs": "session-77/s77_r1_tau_trajectory.npz, session-77/s77_r1_tau_trajectory.png",
+      "source_file": "computations/session-77/s77_r1_tau_trajectory.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s77_r1_tau_trajectory.py -- R1-TAU-TRAJECTORY (S77-B6-R1-TRAJECTORY)\n    4: ====================================================================\n    5: \n    6: Gate: S77-B6-R1-TRAJECTORY (INFO characterization)\n    7:   Task: Map R_1(tau) = a_0(tau)*a_4(tau)/a_2(tau)^2 across tau in [0, 0.5].\n    8:   Key question: is R_1 stationary at the fold (tau=0.190)?\n    9: \n   10: Physics (substrate framing):\n   11: -----------------------------"
+    },
+    {
+      "anchor_id": "prov_1523",
+      "anchor_type": "data_provenance",
+      "name": "route_c_numerics",
+      "script_path": "session-77/s77_route_c_numerics.py",
+      "session": "s77",
+      "inputs": "computations/session-76/s76_hp4_first_principles.npz",
+      "outputs": "session-77/s77_route_c_numerics.npz",
+      "source_file": "computations/session-77/s77_route_c_numerics.py",
+      "source_context_30_lines": "  421: print(f\"  All S76 values confirmed to < 0.01 OOM precision.\")\n  422: print(f\"  The '0.034 OOM' label is a NAMING discrepancy, not a numerical error:\")\n  423: print(f\"  it refers to chi_2 vs Omega_L directly, not to chi_2/3 vs Omega_L.\")\n  424: print()\n  425: \n  426: # ============================================================================\n  427: # STEP 10: Save results\n  428: # ============================================================================\n  429: np.savez('computations/session-77/s77_route_c_numerics.npz',\n  430:     # Input values\n  431:     chi_2_canonical=chi_2_canonical,\n  432:     HP4_base=HP4_base,\n  433:     rho_Lambda_obs=rho_Lambda_obs,\n  434:     Omega_Lambda_obs=Omega_Lambda,\n  435:     rho_crit_GeV4=rho_crit_GeV4,\n  436:     # Route A\n  437:     rho_A=rho_A,"
+    },
+    {
+      "anchor_id": "prov_1524",
+      "anchor_type": "data_provenance",
+      "name": "sa_truncation",
+      "script_path": "session-77/s77_sa_truncation.py",
+      "session": "s77",
+      "inputs": "",
+      "outputs": "session-77/s77_sa_truncation.npz",
+      "source_file": "computations/session-77/s77_sa_truncation.py",
+      "source_context_30_lines": "  678:         R_5term_primary = res_5 / abs(term_2)  # (local)\n  679:         print(f\"\\n    5-term residual / a_4 = {R_5term_primary:.6f} ({R_5term_primary*100:.4f}%)\")\n  680:         if R_5term_primary < PASS_THRESH:\n  681:             print(f\"    5-term truncation would PASS. Higher SDW terms are needed but available.\")\n  682: \n  683:     # -----------------------------------------------------------------------\n  684:     # SAVE\n  685:     # -----------------------------------------------------------------------\n  686:     outfile = os.path.join(OUTDIR, 's77_sa_truncation.npz')\n  687: \n  688:     save_dict = {\n  689:         'tau': TAU,\n  690:         'Lambda': LAMBDA,\n  691:         'max_pq_sum': MAX_PQ_SUM,\n  692:         # SDW zeta moments (canonical)\n  693:         'a0': a0,\n  694:         'a2': a2,"
+    },
+    {
+      "anchor_id": "prov_1525",
+      "anchor_type": "data_provenance",
+      "name": "spectral_action_z",
+      "script_path": "session-77/s77_spectral_action_z.py",
+      "session": "s77",
+      "inputs": "computations/session-77/s77_n_pivot_map.npz, computations/session-76/s76_post_fold_h_tau.npz, computations/session-76/s7...",
+      "outputs": "session-77/s77_spectral_action_z.npz, session-77/s77_spectral_action_z.png",
+      "source_file": "computations/session-77/s77_spectral_action_z.py",
+      "source_context_30_lines": "   42: \n   43: Gate: S77-C3-SPECTRAL-Z\n   44:   PASS: z_fw/z_GR > 2 OOM correction at fold AND propagates to CMB A_s\n   45:   FAIL: z_fw/z_GR ~ 1 at CMB (corrections negligible)\n   46:   INFO: z_fw/z_GR significant at fold but doesn't propagate to CMB\n   47: \n   48: Input: s76_spectral_perturbation_theory.npz, s76_post_fold_h_tau.npz,\n   49:        s77_n_pivot_map.npz, canonical_constants.py\n   50: Output: s77_spectral_action_z.npz, s77_spectral_action_z.png\n   51: \"\"\"\n   52: \n   53: import sys\n   54: sys.path.insert(0, \"computations\")\n   55: from canonical_constants import (\n   56:     a0_fold, a2_fold, a4_fold,\n   57:     H_fold, M_KK, M_KK_gravity, M_Pl_reduced, M_Pl_unreduced,\n   58:     c_Gold, tau_fold, S_fold, dS_fold, d2S_fold,"
+    },
+    {
+      "anchor_id": "prov_1526",
+      "anchor_type": "data_provenance",
+      "name": "transition_scale_pbh",
+      "script_path": "session-77/s77_transition_scale_pbh.py",
+      "session": "s77",
+      "inputs": "computations/session-73/s73b_efold_mapping.npz, computations/session-77/s77_n_pivot_map.npz",
+      "outputs": "session-77/s77_transition_scale_pbh.npz, session-77/s77_transition_scale_pbh.png",
+      "source_file": "computations/session-77/s77_transition_scale_pbh.py",
+      "source_context_30_lines": "   35:   3. Solve same eq for pure dS with identical IC (normalization-independent F_amp)\n   36:   4. F_amp(k) = P_zeta(real) / P_zeta(dS) is IC-independent\n   37:   5. Physical P_zeta = F_amp * [H^2/(8*pi^2*eps)] * (M_KK/M_Pl)^2\n   38: \n   39:   The conformal-time formulation has NO friction term and exactly conserves\n   40:   the Wronskian, providing a clean unitarity cross-check.\n   41: \n   42: Input: computations/session-73/s73b_efold_mapping.npz, s77_n_pivot_map.npz\n   43: Output: computations/session-77/s77_transition_scale_pbh.npz, .png\n   44: \n   45: Cross-checks:\n   46:   CHK1: Wronskian |W(eta_end)/W(0) - 1| < 10^{-6} (unitarity)\n   47:   CHK2: F_amp -> 1 for modes deep inside horizon during transition\n   48:   CHK3: P_zeta frozen after horizon exit (superhorizon constancy)\n   49:   CHK4: pump -> 2*(aH)^2 in dS limit\n   50:   CHK5: P_zeta(dS) matches analytic H^2/(8*pi^2*eps) to < 10%\n   51: \"\"\""
+    },
+    {
+      "anchor_id": "prov_1527",
+      "anchor_type": "data_provenance",
+      "name": "v_tau_validation",
+      "script_path": "session-77/s77_v_tau_validation.py",
+      "session": "s77",
+      "inputs": "",
+      "outputs": "session-77/s77_v_tau_validation.npz, session-77/s77_v_tau_validation.png",
+      "source_file": "computations/session-77/s77_v_tau_validation.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s77_v_tau_validation.py -- V-TAU-VALIDATION: Spectral Action Reliability at tau > 1.0\n    4: =====================================================================================\n    5: \n    6: Gate: S77-B10-V-TAU-VALID (INFO)\n    7:   Report tau_max_reliable: the maximum tau at which spectral data remains\n    8:   smooth, well-converged, and consistent with both direct computation and\n    9:   polynomial extrapolation from the well-characterized region [0, 0.5].\n   10: \n   11: Physics:"
+    },
+    {
+      "anchor_id": "prov_1528",
+      "anchor_type": "data_provenance",
+      "name": "weinberg_locality",
+      "script_path": "session-77/s77_weinberg_locality.py",
+      "session": "s77",
+      "inputs": "",
+      "outputs": "session-77/s77_weinberg_locality.npz, session-77/s77_weinberg_locality.png",
+      "source_file": "computations/session-77/s77_weinberg_locality.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s77_weinberg_locality.py -- Prove chi_2 Not a Local Operator Trace\n    4: ===================================================================\n    5: \n    6: Gate: S77-D1-WEINBERG-LOCAL (INFO)\n    7:   Report whether chi_2 is provably nonlocal -- i.e., cannot be represented\n    8:   as a sum of local operator traces Tr(f(D_K)) for f polynomial or rapidly\n    9:   decaying, thereby evading Weinberg's no-go theorem for the CC.\n   10: \n   11: Mathematical Framework:"
+    },
+    {
+      "anchor_id": "prov_1529",
+      "anchor_type": "data_provenance",
+      "name": "a4_r2_f_star",
+      "script_path": "session-78/s78_a4_r2_f_star.py",
+      "session": "s78",
+      "inputs": "s70_ratio_gilkey_document.npz, s77_a4_gilkey_decomp.npz",
+      "outputs": "session-78/s78_a4_r2_f_star.npz, session-78/s78_a4_r2_f_star.png",
+      "source_file": "computations/session-78/s78_a4_r2_f_star.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s78_a4_r2_f_star.py  --  S78-W2-F-A4-R2-F-STAR\n    4: ==============================================\n    5: \n    6: Gate: S78-W2-F-A4-R2-F-STAR\n    7:   HYPOTHESIS: a_4^{HK} (bare HK Taylor Gilkey-universal coefficients on\n    8:     Jensen-deformed SU(3) at tau = 0.190) is R^2-dominated at > 90%,\n    9:     with the f*-scheme reweighting by a Mellin multiplier f_4^{f*}\n   10:     that is a PURE RESCALING and preserves invariant fractions.\n   11: "
+    },
+    {
+      "anchor_id": "prov_1530",
+      "anchor_type": "data_provenance",
+      "name": "as_normalization_trace",
+      "script_path": "session-78/s78_as_normalization_trace.py",
+      "session": "s78",
+      "inputs": "",
+      "outputs": "session-78/s78_as_normalization_trace.npz, session-78/s78_as_normalization_trace.png",
+      "source_file": "computations/session-78/s78_as_normalization_trace.py",
+      "source_context_30_lines": "   85:     PI,\n   86:     M_KK,\n   87:     M_Pl_reduced,\n   88:     A_s_CMB,\n   89:     planck_ns,\n   90:     Mpc_to_GeV_inv,\n   91: )\n   92: \n   93: OUT_NPZ = os.path.join(SCRIPT_DIR, \"s78_as_normalization_trace.npz\")\n   94: OUT_PNG = os.path.join(SCRIPT_DIR, \"s78_as_normalization_trace.png\")\n   95: \n   96: t_start = time.time()  # (local)\n   97: \n   98: log_lines = []  # (local)\n   99: \n  100: \n  101: def log(msg=\"\"):"
+    }
+  ]
+}

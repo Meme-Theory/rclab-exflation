@@ -12,7 +12,7 @@ Volume 1  PROGRESS IN PHYSICS                                                   
                                                            Klaus Paasch
 
                                                Waldstrasse 20, 22889 Tangstedt, Germany
-                                                               E-mail: [email redacted]
+                                                               E-mail: klauspaasch@aol.com
 
                      The assumption that elementary particles with nonzero rest mass consist of relativis-
 

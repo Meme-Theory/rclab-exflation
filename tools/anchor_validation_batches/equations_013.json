@@ -1,0 +1,117 @@
+{
+  "table": "equations",
+  "batch_id": 13,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "eq_14049",
+      "anchor_type": "equations",
+      "name": "D_K = D_K^{bare} + delta_D_G[a_2(D_K)]",
+      "eq_type": "structural",
+      "file": "",
+      "line": 296,
+      "context_snippet": "However, the NON-PERTURBATIVE closure is a different matter. The spectral action Tr f(D^2/Lambda^2) is defined for a FIXED Dirac operator D. The bootstrap loop asks: what is the self-consistent D such",
+      "source_file": "sessions\\session-63\\session-63-volovik-van-den-dungen-workshop.md",
+      "source_context_30_lines": "  288: At tree level, the spectral action Tr f(D_K^2/Lambda^2) generates the Einstein-Hilbert action through the a_2 term (Paper 06, eq. 3.20). The Einstein equations are then variational consequences of the spectral action. The EIH self-energy is a post-Newtonian consequence of these Einstein equations. So the chain:\n  289: \n  290:     D_K -> S[D_K] = Tr f(D_K^2/Lambda^2) -> G_eff from a_2 -> EIH corrections -> delta_D_G -> D_K + delta_D_G\n  291: \n  292: is entirely internal to the spectral action framework. Each step follows from the previous one. The loop closes at O(alpha_G). The fixed point of this loop (if one iterates) converges rapidly because alpha_G = 9.3 x 10^{-4} << 1: the correction to the correction is O(alpha_G^2) ~ 10^{-6}.\n  293: \n  294: However, the NON-PERTURBATIVE closure is a different matter. The spectral action Tr f(D^2/Lambda^2) is defined for a FIXED Dirac operator D. The bootstrap loop asks: what is the self-consistent D such that the gravitational field it generates, acting back on itself, reproduces D? This is a self-consistency equation:\n  295: \n  296:     D_K = D_K^{bare} + delta_D_G[a_2(D_K)]\n  297: \n  298: This is a fixed-point equation on the space of Dirac operators. In the NCG literature, there is no general existence or uniqueness theorem for such self-consistent spectral triples. The closest result is the inner fluctuation formalism (Connes-Chamseddine, Paper 06 Section 4.4), where inner automorphisms A -> A + Juge A Juge^{-1} + a[D,b] gen\n... [truncated]"
+    },
+    {
+      "anchor_id": "eq_19139",
+      "anchor_type": "equations",
+      "name": "D_max = abs(np.log10(pin_value) - np.log10(10.122438748384))  # vs ledger expected",
+      "eq_type": "structural",
+      "file": "",
+      "line": 330,
+      "context_snippet": "pin_value = pin_value_inline Compute D_max for Class-(f) severity",
+      "source_file": "sessions\\session-plan\\archive\\session-89-plan-w7.md",
+      "source_context_30_lines": "  322:   except ImportError:\n  323:       pin_landed = False\n  324:       # Compute parameterized form inline for in-script Class-(f) audit\n  325:       tau_sym = sp.Symbol('tau')\n  326:       slope_expr = sp.Integer(10) / (sp.Integer(1) - tau_sym / (sp.Integer(5) * sp.pi))\n  327:       pin_value_inline = float(slope_expr.subs(tau_sym, sp.Rational(19, 100)))  # tau_fold=0.19 = 19/100\n  328:       pin_value = pin_value_inline\n  329:       # Compute D_max for Class-(f) severity\n  330:       D_max = abs(np.log10(pin_value) - np.log10(10.122438748384))  # vs ledger expected\n  331:       # Class-(f) severity:\n  332:       #   D_max < 0.1 → NO-ACTION\n  333:       #   0.1 ≤ D_max < 1.0 → ADVISORY (S2)\n  334:       #   1.0 ≤ D_max < 3.0 → MANDATORY (S1; halt plan-freeze)\n  335:       #   D_max ≥ 3.0 → HARD-HALT\n  336:       class_f_severity = (\n  337:           'NO-ACTION' if D_max < 0.1 else\n  338:           'ADVISORY' if D_max < 1.0 else"
+    },
+    {
+      "anchor_id": "eq_13098",
+      "anchor_type": "equations",
+      "name": "T_{ann} \\sim \\left(\\frac{\\sigma_{wall}}{V_{bias}}\\right)^{1/2}",
+      "eq_type": "display",
+      "file": "",
+      "line": 352,
+      "context_snippet": "For a Z_2 wall network, the standard result is that walls annihilate when the wall tension equals the volume energy difference between the two vacua (bias term):",
+      "source_file": "sessions\\session-58\\session-58-lrd-collab.md",
+      "source_context_30_lines": "  344: **This means Scenario 1 is self-inconsistent.** If walls form at tau ~ 0.114 (T_form ~ M_KK) and have sigma ~ 10^{46} GeV^3, they must annihilate RAPIDLY or they overclose the universe. This is consistent with the W3-9 finding: at tau > 0.114, E_DW > 0 (walls are costly), so they want to annihilate. The question is how fast.\n  345: \n  346: **Scenario 2: Walls annihilate within a few Hubble times of formation.**\n  347: \n  348: S38 found t_ann ~ 793 x t_H. But this was computed for the internal-space domain walls at N_pair = 1 (zero-dimensional BCS). The 4D domain wall dynamics are different.\n  349: \n  350: For a Z_2 wall network, the standard result is that walls annihilate when the wall tension equals the volume energy difference between the two vacua (bias term):\n  351: \n  352: $$T_{ann} \\sim \\left(\\frac{\\sigma_{wall}}{V_{bias}}\\right)^{1/2}$$ [Eq. A3]\n  353: \n  354: where V_bias is the energy density difference between the two sides. From W3-9, V_bias / sigma_wall^{4/3} ~ E_DW/E_J ~ 10^{-3}. For GUT-scale walls, this gives rapid annihilation -- the bias is small but the gravitational backreaction (Hubble friction) limits the wall velocity.\n  355: \n  356: The annihilation temperature for a biased wall network is:\n  357: \n  358: $$T_{ann} \\sim \\left(\\frac{\\sigma_{wall}}{M_{Pl}}\\right)^{1/2} \\sim \\left(\\frac{2.5 \\times 10^{46}}{2.4 \\times 10^{18}}\\right)^{1/2} \\text{ GeV} \\sim 3 \\times 10^{14} \\text{ GeV}$$\n  359: \n  360: This is 100x below M_KK. From Eq. A1: f_peak ~ 1\n... [truncated]"
+    },
+    {
+      "anchor_id": "eq_11872",
+      "anchor_type": "equations",
+      "name": "Z(tau) = C_ijkl * d^i d^j d^k d^l",
+      "eq_type": "structural",
+      "file": "",
+      "line": 102,
+      "context_snippet": "Papers 22-23 establish the structural identity between elasticity tetrads and gravitational tetrads. The gradient stiffness Z(tau) is, in this language, the elastic modulus of the internal space viewe",
+      "source_file": "sessions\\archive\\session-42\\session-42-tesla-collab-volovik-collab.md",
+      "source_context_30_lines": "   94: where Delta_pair = 0.115 M_KK (from S35) and W is the bandwidth of the B2 sector at the fold. From S34 data, the B2 eigenvalue spread is ~ 0.104 M_KK (polariton computation W5-4 confirms this). Therefore W/Delta ~ 0.104/0.115 = 0.9 -- close to 1, not deep in the flat-band regime.\n   95: \n   96: However, Paper 18 shows that even moderate flattening (W ~ Delta) produces linear-in-g scaling rather than exponential suppression. The B2 sector at the fold may be in the crossover regime between conventional BCS and flat-band BCS. Computing the exact T_c(g) scaling from the B2 dispersion would determine whether the instability is flat-band-enhanced or conventional.\n   97: \n   98: ### 3c. Elasticity Tetrads and the Microscopic Meaning of Z(tau) = 74,731\n   99: \n  100: Papers 22-23 establish the structural identity between elasticity tetrads and gravitational tetrads. The gradient stiffness Z(tau) is, in this language, the elastic modulus of the internal space viewed as a deformable solid. The specific identification:\n  101: \n  102:     Z(tau) = C_ijkl * d^i d^j d^k d^l\n  103: \n  104: where C_ijkl is the elastic tensor of SU(3) under the Jensen deformation and d^i are the unit vectors along the deformation direction. Paper 22 (eq. for Riemann from strain) predicts:\n  105: \n  106:     R_4D ~ nabla nabla u ~ Z * (nabla tau)^2\n  107: \n  108: So the 4D Riemann curvature seen by low-energy observers is controlled by Z(tau) times the spatial tau gradient. At the fold, with Z = 74,731 \n... [truncated]"
+    },
+    {
+      "anchor_id": "eq_7197",
+      "anchor_type": "equations",
+      "name": "log g(L) = const + 4α · log(L) + log a_0(L)",
+      "eq_type": "structural",
+      "file": "",
+      "line": 67,
+      "context_snippet": "adjudication.md §3.1) Step 2 (substitute):",
+      "source_file": "sessions\\session-86\\workshops\\s86-cutoff-sqrt-gate-abc-trio.md",
+      "source_context_30_lines": "   59:   coupling g(L) := f_0 · Λ(L)^4 · a_0(L)         (cutoff_AL2010 a_0-channel coupling)\n   60:   Λ(L)         := Λ_0 · L^α                       (PRDR α scan window α ∈ [−2, +2])\n   61:   a_0(L)       := 16 · Σ_{p+q≤L} [(p+1)(q+1)(p+q+2)/2]^2\n   62:                                                   (Peter-Weyl L²(SU(3)) sum-of-dim²;\n   63:                                                    leading L^8/960 per workshop §1.5\n   64:                                                    Sage closed form, cutoff-sqrt-\n   65:                                                    adjudication.md §3.1)\n   66: Step 2 (substitute):\n   67:   log g(L) = const + 4α · log(L) + log a_0(L)\n   68:            = const + 4α · log(L) + k_eff(L) · log(L) + O(1)\n   69:   where k_eff(L) := d log a_0 / d log L\n   70:                   = log(a_0(L)/a_0(L−1)) / log(L/(L−1))    (effective polynomial growth)\n   71: \n   72: Step 3 (simplify):\n   73:   Boundedness as L → ∞ requires 4α + k_eff(L) → 0\n   74:                               ⇔ α_star(L) = −k_eff(L)/4\n   75:   Asymptotic regime: a_0(L) ~ L^8/960  ⇒  k_eff → 8  ⇒  α_star → −2."
+    },
+    {
+      "anchor_id": "eq_4543",
+      "anchor_type": "equations",
+      "name": "Delta_0_OES = 0.464255 M_KK  (pair-addition gap)",
+      "eq_type": "structural",
+      "file": "",
+      "line": 17,
+      "context_snippet": "Delta_0_GL = 0.770435 M_KK 2*Delta_0_GL = 1.540870 M_KK",
+      "source_file": "computations\\session-61\\s61_leggett_damping_output.txt",
+      "source_context_30_lines": "    9:   Higgs-2:    omega_H2 = 1.4100 M_KK\n   10:   Higgs-3:    omega_H3 = 11.4650 M_KK\n   11: \n   12: --- Section 2: Pair-Breaking Thresholds ---\n   13: \n   14:   (A) GL mean-field gap:\n   15:       Delta_0_GL = 0.770435 M_KK\n   16:       2*Delta_0_GL = 1.540870 M_KK\n   17:       Delta_0_OES = 0.464255 M_KK  (pair-addition gap)\n   18:       2*Delta_0_OES = 0.928509 M_KK\n   19: \n   20:   (B) Sector-resolved thresholds (S48, tau_fold):\n   21:       Delta_B1 = 0.371795, 2*Delta_B1 = 0.743589 M_KK\n   22:       Delta_B2 = 0.732026, 2*Delta_B2 = 1.464052 M_KK\n   23:       Delta_B3 = 0.084152, 2*Delta_B3 = 0.168305 M_KK\n   24:       (B3 is the SMALLEST sector gap → lowest pair-breaking threshold)\n   25: "
+    },
+    {
+      "anchor_id": "eq_16707",
+      "anchor_type": "equations",
+      "name": "beta_s = -0.1331 pin to 4.19e-5 = 42 ppm, 239x below the 1% PASS",
+      "eq_type": "structural",
+      "file": "",
+      "line": 77,
+      "context_snippet": "alpha_s_framework = -0.068968, yields beta_s_derived = -0.13309442710..., matching the canonical",
+      "source_file": "sessions\\session-85\\session-85-s3-alphas-registry-landau.md",
+      "source_context_30_lines": "   69:    postulate; it follows symbolically (exact, Sage-verified residual 0)\n   70:    from the OZ moment structure. Equivalently: the three OZ moments\n   71:    satisfy a LANDAU-MINKOWSKI closure where the third moment is\n   72:    algebraically determined by the first two.\n   73: \n   74: 3. The chain-rule identity, evaluated at Planck n_s_canon = 0.9649 and\n   75:    alpha_s_framework = -0.068968, yields\n   76:    beta_s_derived = -0.13309442710..., matching the canonical\n   77:    beta_s = -0.1331 pin to 4.19e-5 = 42 ppm, 239x below the 1% PASS\n   78:    threshold of W1c-6. The residual is wholly accounted for by the\n   79:    4-sig-fig storage truncation of the canonical beta_s pin\n   80:    (Python-verified).\n   81: \n   82: 4. Consequence — framework degree-of-freedom counting at the\n   83:    inflationary scale: the substrate emits ONE parameter (n_s) at this\n   84:    scale, not two (alpha_s and n_s) or three (beta_s, alpha_s, n_s).\n   85:    Any future refinement to the alpha_s prediction (closing the"
+    },
+    {
+      "anchor_id": "eq_16182",
+      "anchor_type": "equations",
+      "name": "coefficient κ = f_L (Leggett fraction, S82 permanent ≥ 0.6027).",
+      "eq_type": "structural",
+      "file": "",
+      "line": 344,
+      "context_snippet": "Step B: Power spectrum from B1 inherits n_s from B1's Mellin first-moment; B2 contributes α_s (second moment) with weight determined by branch-coupling",
+      "source_file": "sessions\\session-plan\\archive\\session-84-plan-w8a.md",
+      "source_context_30_lines": "  336: corrected power law whose \"tilt angle\" runs as n_s decreases.\n  337: \n  338: **Derivation approach (substrate-first)**:\n  339: \n  340: Step A: Spectral action on Jensen fiber produces 2 phonon branches (B1\n  341: acoustic, B2 optical). Canonical ratio c_1/c_2 = 1 + O(τ_fold²).\n  342: Step B: Power spectrum from B1 inherits n_s from B1's Mellin first-moment;\n  343: B2 contributes α_s (second moment) with weight determined by branch-coupling\n  344: coefficient κ = f_L (Leggett fraction, S82 permanent ≥ 0.6027).\n  345: Step C: Algebraic identity on the 2-branch spectral triple:\n  346: \n  347:   (second moment)/(first moment)² = 1 + correction\n  348: \n  349: yields α_s/(n_s - 1)² = 1/(n_s - 1) · (n_s + 1) = (n_s + 1)/(n_s - 1).\n  350: This is trivial algebra from (n_s² - 1)/(n_s - 1)² = (n_s+1)/(n_s-1).\n  351: \n  352: Step D: Confirm the S50 identity α_s = n_s² - 1 is equivalent to this"
+    },
+    {
+      "anchor_id": "eq_2989",
+      "anchor_type": "equations",
+      "name": "C_kk = n_k*(1-n_k) for independent particles. Deviation = correlation.",
+      "eq_type": "structural",
+      "file": "",
+      "line": 301,
+      "context_snippet": "Diagonal (fluctuation): [0.23544466 0.23444371 0.22760191 0.22409485 0.24998603 0.0154233 0.01571033 0.0201851 ]",
+      "source_file": "computations\\session-53\\s53_hfb_spectral_output.txt",
+      "source_context_30_lines": "  293:     |C(B1,B3)| = 0.002767\n  294:     |C(B3,B2)| = 0.002152\n  295:     |C(B3,B1)| = 0.002767\n  296:     |C(B3,B3)| = 0.007102\n  297: \n  298: --- N_pair = 2: Pair-pair correlator C_{kk'} ---\n  299: Diagonal (fluctuation): [0.23544466 0.23444371 0.22760191 0.22409485 0.24998603 0.0154233\n  300:  0.01571033 0.0201851 ]\n  301:   C_kk = n_k*(1-n_k) for independent particles. Deviation = correlation.\n  302:   n_k*(1-n_k): [0.23544466 0.23444371 0.22760191 0.22409485 0.24998603 0.0154233\n  303:  0.01571033 0.0201851 ]\n  304:   C_kk / Z_BCS: [1. 1. 1. 1. 1. 1. 1. 1.]\n  305: \n  306:   ||C_off-diag|| / ||C_diag|| = 0.4849\n  307:   This ratio measures the importance of inter-mode pair correlations\n  308:   In BCS, C_off-diag comes from the coherent pairing field\n  309:   Large ratio = strong collective pairing"
+    },
+    {
+      "anchor_id": "eq_1554",
+      "anchor_type": "equations",
+      "name": "OMP_NUM_THREADS=8 MKL_NUM_THREADS=8 \\",
+      "eq_type": "structural",
+      "file": "",
+      "line": 159,
+      "context_snippet": "Command: cd \"C:/sandbox/Ainulindale Exflation\"",
+      "source_file": "computations\\session-46\\s46_omega_classify_verdict.txt",
+      "source_context_30_lines": "  151: structure. It does NOT involve phononic excitations of the substrate.\n  152: Classification: GEOMETRIC (spectral-triple / algebraic).\n  153: \n  154: REPRODUCIBILITY:\n  155:   Python:  C:/sandbox/Ainulindale Exflation/phonon-exflation-sim/.venv312/Scripts/python.exe\n  156:   OMP:     OMP_NUM_THREADS=8  MKL_NUM_THREADS=8\n  157:   Command:\n  158:     cd \"C:/sandbox/Ainulindale Exflation\"\n  159:     OMP_NUM_THREADS=8 MKL_NUM_THREADS=8 \\\n  160:       \"phonon-exflation-sim/.venv312/Scripts/python.exe\" \\\n  161:       \"computations/_shared/t3-intake/s46_omega_classify_t3.py\"\n  162:   Runtime: 65.8 s (CPU)\n  163:   Full log: computations/_shared/t3-intake/_s46_run.log\n  164:   Output npz: computations/_shared/t3-intake/s46_omega_classify.npz"
+    }
+  ]
+}

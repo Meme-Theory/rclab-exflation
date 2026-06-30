@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 142,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1411",
+      "anchor_type": "data_provenance",
+      "name": "virtual_reframe",
+      "script_path": "session-74/s74_virtual_reframe.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_virtual_reframe.npz",
+      "source_file": "computations/session-74/s74_virtual_reframe.py",
+      "source_context_30_lines": "   20: Only PROPOSE revisions. Do NOT edit framework documents.\n   21: \n   22: Gate: VIRTUAL-REFRAME-74\n   23:   PASS if >= 3 revisions proposed.\n   24:   INFO if 1-2 revisions proposed.\n   25:   FAIL if 0 revisions proposed.\n   26: \n   27: Outputs:\n   28:   s74_virtual_reframe.npz  — revision table (old text, new text, rationale)\n   29: \"\"\"\n   30: \n   31: from __future__ import annotations\n   32: \n   33: import sys\n   34: from pathlib import Path\n   35: \n   36: import numpy as np"
+    },
+    {
+      "anchor_id": "prov_1412",
+      "anchor_type": "data_provenance",
+      "name": "w0_zeta",
+      "script_path": "session-74/s74_w0_zeta.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_w0_zeta.npz, session-74/s74_w0_zeta.png",
+      "source_file": "computations/session-74/s74_w0_zeta.py",
+      "source_context_30_lines": "   76: )\n   77: \n   78: # ----------------------------------------------------------------------------\n   79: #  Section 1: Load spectrum\n   80: # ----------------------------------------------------------------------------\n   81: \n   82: SPEC_CACHE = os.path.join(HERE, \"s74_spectrum_cache_L9_tau019.npz\")\n   83: GGE_CACHE = os.path.join(HERE, \"s56_gge_fabric.npz\")\n   84: OUT_NPZ = os.path.join(HERE, \"s74_w0_zeta.npz\")\n   85: OUT_PNG = os.path.join(HERE, \"s74_w0_zeta.png\")\n   86: \n   87: \n   88: def load_spectrum(Lmax_cut: int):\n   89:     \"\"\"Load D_K eigenvalues up to given L_max level.\"\"\"\n   90:     data = np.load(SPEC_CACHE, allow_pickle=True)\n   91:     sector_evals = data[\"sector_evals\"].item()\n   92:     evals = []"
+    },
+    {
+      "anchor_id": "prov_1413",
+      "anchor_type": "data_provenance",
+      "name": "w2e_integ_link",
+      "script_path": "session-74/s74_w2e_integ_link.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_w2e_integ_link.npz",
+      "source_file": "computations/session-74/s74_w2e_integ_link.py",
+      "source_context_30_lines": "  481: print(f\"  Reason: {gate_reason}\")\n  482: print(\"=\" * 78)\n  483: \n  484: # ============================================================================\n  485: #  STEP 8: Save data\n  486: # ============================================================================\n  487: print(\"\\n--- Step 8: Save results ---\")\n  488: \n  489: out_path = os.path.join(SCRIPT_DIR, 's74_w2e_integ_link.npz')\n  490: np.savez(\n  491:     out_path,\n  492:     # Gate metadata\n  493:     gate_name=np.array(\"W2E-INTEG-LINK-74\"),\n  494:     gate_verdict=np.array(gate_verdict),\n  495:     gate_reason=np.array(gate_reason),\n  496:     # W4-A residual source\n  497:     V_fold_w4a=V_fold_w4a,"
+    },
+    {
+      "anchor_id": "prov_1414",
+      "anchor_type": "data_provenance",
+      "name": "w4j_patch",
+      "script_path": "session-74/s74_w4j_patch.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-74/s74_w4j_patch.py",
+      "source_context_30_lines": "<name 'w4j_patch' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: Atomic patch: replace the W4-J placeholder block in\n    4: sessions/session-74/session-74-results-workingpaper.md with the\n    5: computed STRUCTURE-RG-SCALE-74 result block.\n    6: \n    7: This script is used to work around concurrent-writer contention\n    8: on the shared session results file.  It is idempotent: if the\n    9: block has already been replaced (i.e. the placeholder text is\n   10: absent), it exits silently with code 0.\n   11: \"\"\"\n   12: \n   13: import os\n   14: import sys\n   15: \n   16: RESULT_BODY = r\"\"\"### W4-J: STRUCTURE-RG-SCALE-74 -- 80/20 Partition BAO or Galaxy Bias Feature (phonon-first-cosmologist)\n   17: \n   18: **Status**: COMPLETE\n   19: **Gate**: `STRUCTURE-RG-SCALE-74`. PASS if k_RG matches BAO k_peak within 10%. INFO if matches within 30%. FAIL if > 30% off.\n   20: \n   21: **Gate verdict**: **FAIL**. Under both projection conventions the R-G level-spacing scale lies orders of magnitude away from the BAO peak. Interpretation A (physical-wavelength stretch, prompt formula): `k_RG = 6.11e-05 Mpc^{-1}`, `-3.21` OOM below `k_BAO = 0.1 Mpc^{-1}`. Interpretation B (comoving convention, no stretch, matches S73B): `k_RG = 2.03e+53 Mpc^{-1}`, `+54.31` OOM above. The substrate level-spacing does NOT leave a direct imprint at the BAO scale.\n   22: \n   23: **Framing (SUBSTRATE -- mandatory correction).** The R-G level spectrum is NOT a cosmological feature that has been \"stretched by expansion\". It is a property of the Dirac operator `D_K` on the Jensen-deformed fibre, specifically of the post-transit 4-cell / N_pair=4 / 8-mode BdG block used to certify multi-cell integrability in S73B. In the substrate picture, BAO peaks are emergent interference patterns of GGE acoustic excitations reorganising the `a_2(tau)` spectral weight after the fold. The question of this gate is: is the substrate's INTERNAL mean level spacing -- the fabric-intrinsic resolution of the level spectrum -- secretly the same scale as the emergent BAO peak? A priori there is no reason it should be. The BAO peak emerges from the sound horizon at matter-radiation decoupling (`r_drag ~ 147` Mpc), a scale governed by the GGE equation of state and the post-fold cosmological H(t), not by the level spacing of `D_K`. The gate tests a non-trivial coincidence hypothesis; FAIL confirms the scales are genuinely distinct and the 80/20 partition does NOT have a hidden BAO signature in this direction.\n   24: \n   25: **Two projection conventions (both computed).** There is a factor-of-`exp(N_total)` ambiguity in how an energy scale at the fold projects to a wavenumber today:\n   26: \n   27: - **Interpretation A -- physical-wavelength stretch (prompt-literal).** Treat `<Delta E>` as a physical frequency at the fold; the wavelength `lambda_fold = 2 pi hbar c / <Delta E>` stretches by `a_today / a_fold = exp(N_total) = 3.32e+57` on the way to today. Then `k_RG_today = <Delta E> * M_KK / (hbar_c * exp(N_total))`.\n   28: - **Interpretation B -- comoving invariant (S73B convention).** Treat `<Delta E>` as defining a comoving wavenumber in M_KK natural units; k_comoving is conserved so `k_RG_today = <Delta E> * M_KK / hbar_c` in Mpc^{-1} directly. This matches how S73B mapped `k_pivot = 0.05 Mpc^{-1}` to `k_pivot_MKK = 4.30e-57` WITHOUT any `exp(N_total)` factor.\n   29: \n   30: Under A the answer is physically meaningful (R-G scale sits near the cosmological horizon). Under B the answer is a UV scale far above BAO, confirming the level spacing is an internal-geometry quantity, not a cosmological one. The gate is primarily evaluated on A (prompt formula); B is retained as a consistency cross-check."
+    },
+    {
+      "anchor_id": "prov_1415",
+      "anchor_type": "data_provenance",
+      "name": "w5f_reverify",
+      "script_path": "session-74/s74_w5f_reverify.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_w5f_reverify.npz",
+      "source_file": "computations/session-74/s74_w5f_reverify.py",
+      "source_context_30_lines": "  543: # Floor interpretation: if PASS, floor = 21 + 4 - 3 (#24 was already confirmed\n  544: # in W5-D so it was already counted as PROMOTED to 21 effective floor) = 22 net.\n  545: # The pre-reg gate says: PASS if all 4 -> floor = 22.\n  546: \n  547: # ============================================================================\n  548: #  SAVE DATA\n  549: # ============================================================================\n  550: \n  551: out_npz = os.path.join(SCRIPT_DIR, \"s74_w5f_reverify.npz\")\n  552: np.savez(\n  553:     out_npz,\n  554:     # (0,0) invariance\n  555:     E_8_L3=E_8_L3,\n  556:     E_8_L5=E_8_L5,\n  557:     E_8_L7=E_8_L7,\n  558:     max_L3_L7=max_L3_L7,\n  559:     zero_zero_invariant=zero_zero_invariant,"
+    },
+    {
+      "anchor_id": "prov_1416",
+      "anchor_type": "data_provenance",
+      "name": "zero_mode_winding",
+      "script_path": "session-74/s74_zero_mode_winding.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_zero_mode_winding.npz, session-74/s74_zero_mode_winding.png",
+      "source_file": "computations/session-74/s74_zero_mode_winding.py",
+      "source_context_30_lines": "   47:     For any compact direction, there is a conserved current\n   48:     J^mu = (partial^mu X) / L where L is the period and X is the\n   49:     compact coordinate.  Compute:\n   50:       (a) For the phase of phi (the Higgs U(1)_Y direction): PASS --\n   51:           compact S^1 with period 2 pi / 3 after Z_3 center quotient.\n   52:       (b) For the radial modulus r_tau: FAIL -- no period.\n   53: \n   54: Outputs:\n   55:   - s74_zero_mode_winding.npz (compactness flags, period candidates)\n   56:   - s74_zero_mode_winding.png (optional diagnostic)\n   57: \"\"\"\n   58: \n   59: import numpy as np  # noqa: E402\n   60: import matplotlib  # noqa: E402\n   61: matplotlib.use(\"Agg\")\n   62: import matplotlib.pyplot as plt  # noqa: E402\n   63: import os  # noqa: E402"
+    },
+    {
+      "anchor_id": "prov_1417",
+      "anchor_type": "data_provenance",
+      "name": "alpha_s_dressed_potential",
+      "script_path": "session-75/s75_alpha_s_dressed_potential.py",
+      "session": "s75",
+      "inputs": "",
+      "outputs": "session-75/s75_alpha_s_dressed_potential.npz, session-75/s75_alpha_s_dressed_potential.png",
+      "source_file": "computations/session-75/s75_alpha_s_dressed_potential.py",
+      "source_context_30_lines": "  824: ax6.set_ylabel(r'$\\alpha_s \\times 10^6$')\n  825: ax6.set_title(r'Scheme Dependence of $\\alpha_s$')\n  826: ax6.legend(fontsize=9)\n  827: \n  828: fig.suptitle(f'S75-C2: Joint ($n_s$, $\\\\alpha_s$) from BCS-Dressed CW Potential\\n'\n  829:              f'Gate: {gate_verdict}  |  $n_s$ = {ns_final:.6f}  |  $\\\\alpha_s$ = {alpha_s_final:.4e}',\n  830:              fontsize=13, fontweight='bold')\n  831: \n  832: plt.savefig('s75_alpha_s_dressed_potential.png', dpi=150, bbox_inches='tight')\n  833: print(f\"  Plot saved: s75_alpha_s_dressed_potential.png\")\n  834: plt.close()\n  835: \n  836: # =============================================================================\n  837: # SAVE DATA\n  838: # =============================================================================\n  839: print(\"\\n\" + \"=\" * 78)\n  840: print(\"Saving data...\")"
+    },
+    {
+      "anchor_id": "prov_1418",
+      "anchor_type": "data_provenance",
+      "name": "anomaly_derived_fstar",
+      "script_path": "session-75/s75_anomaly_derived_fstar.py",
+      "session": "s75",
+      "inputs": "s66_cutoff_ns.npz",
+      "outputs": "session-75/s75_anomaly_derived_fstar.npz, session-75/s75_anomaly_derived_fstar.png",
+      "source_file": "computations/session-75/s75_anomaly_derived_fstar.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s75_anomaly_derived_fstar.py -- ANOMALY-DERIVED-F-STAR-75\n    4: ==========================================================\n    5: \n    6: Gate: S75-G1-ANOMALY-FSTAR\n    7:   PASS: c_1 > 0.9 (anomaly-derived f agrees with framework f* to 90%)\n    8:   INFO: 0.5 < c_1 < 0.9\n    9:   FAIL: c_1 < 0.5\n   10: \n   11: Physics:"
+    },
+    {
+      "anchor_id": "prov_1419",
+      "anchor_type": "data_provenance",
+      "name": "as_from_coleman_weinberg",
+      "script_path": "session-75/s75_as_from_coleman_weinberg.py",
+      "session": "s75",
+      "inputs": "",
+      "outputs": "session-75/s75_as_from_coleman_weinberg.npz, session-75/s75_as_from_coleman_weinberg.png",
+      "source_file": "computations/session-75/s75_as_from_coleman_weinberg.py",
+      "source_context_30_lines": "  874:     f\"Routes INDEPENDENT: {abs(log10_As_ratio - log10_W1G) > 1.0}\"\n  875: )\n  876: ax6.text(0.05, 0.95, summary_text, transform=ax6.transAxes,\n  877:          fontsize=9, fontfamily='monospace', verticalalignment='top')\n  878: \n  879: plt.suptitle('S75-A4-CW-JOINT: Joint ($A_s$, $n_s$) from BCS-Dressed CW Potential',\n  880:              fontsize=13, fontweight='bold', y=0.98)\n  881: \n  882: plt.savefig('s75_as_from_coleman_weinberg.png', dpi=150, bbox_inches='tight')\n  883: print(\"  Saved: s75_as_from_coleman_weinberg.png\")\n  884: \n  885: # =============================================================================\n  886: # SAVE DATA\n  887: # =============================================================================\n  888: print(\"\\n\" + \"=\" * 78)\n  889: print(\"Saving data...\")\n  890: print(\"=\" * 78)"
+    },
+    {
+      "anchor_id": "prov_1420",
+      "anchor_type": "data_provenance",
+      "name": "atlas_reclassify",
+      "script_path": "session-75/s75_atlas_reclassify.py",
+      "session": "s75",
+      "inputs": "",
+      "outputs": "session-75/s75_atlas_reclassify.npz",
+      "source_file": "computations/session-75/s75_atlas_reclassify.py",
+      "source_context_30_lines": "  752: print()\n  753: print(f\"The {n_fragile} FRAGILE entries depend on absolute spectral moments (a_0, a_2, a_4)\")\n  754: print(f\"or cutoff function choices and are genuinely L_max-SENSITIVE.\")\n  755: \n  756: # ============================================================================\n  757: # Step 7: Save results\n  758: # ============================================================================\n  759: \n  760: out_path = os.path.join(os.path.dirname(__file__), \"s75_atlas_reclassify.npz\")  # (local)\n  761: \n  762: np.savez(out_path,\n  763:     # Input\n  764:     original_entries=np.array(names, dtype=object),\n  765:     original_source=np.array([source[i] for i in nr_idx], dtype=object),\n  766:     original_note=np.array([proof[i] for i in nr_idx], dtype=object),\n  767:     # Classification\n  768:     new_status=new_status,"
+    }
+  ]
+}

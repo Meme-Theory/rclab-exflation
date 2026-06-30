@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 161,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1601",
+      "anchor_type": "data_provenance",
+      "name": "w2_9_multipair_econd",
+      "script_path": "session-82/s82_w2_9_multipair_econd.py",
+      "session": "s82",
+      "inputs": "",
+      "outputs": "session-82/s82_w2_9_multipair_econd.npz, session-82/s82_w2_9_multipair_econd.png",
+      "source_file": "computations/session-82/s82_w2_9_multipair_econd.py",
+      "source_context_30_lines": "  133: N_MODES = 8                                                       # (local)\n  134: N_PAIR_VALUES = [1, 2, 3]                                         # (local)\n  135: \n  136: # Pre-registered thresholds (plan L1502-L1504)\n  137: PASS_THRESHOLD = 10.0                                             # (local)\n  138: INFO_LOWER = 3.0                                                  # (local)\n  139: \n  140: # Output destinations\n  141: OUT_NPZ = resolve_output(82, 's82_w2_9_multipair_econd.npz')\n  142: OUT_PNG = resolve_output(82, 's82_w2_9_multipair_econd.png')\n  143: VERDICT_TXT = resolve_output(82, 's82_gate_verdicts.txt')\n  144: \n  145: INPUT_FILES = [\n  146:     resolve_script(None, 'canonical_constants.py'),\n  147:     ARCHIVE_DIR / \"s48_hfb_selfconsist.npz\",\n  148: ]\n  149: "
+    },
+    {
+      "anchor_id": "prov_1602",
+      "anchor_type": "data_provenance",
+      "name": "w3_10_cubic_sin2_w_ew",
+      "script_path": "session-82/s82_w3_10_cubic_sin2_w_ew.py",
+      "session": "s82",
+      "inputs": "",
+      "outputs": "session-82/s82_w3_10_cubic_sin2_w_ew.npz, session-82/s82_w3_10_cubic_sin2_w_ew.png",
+      "source_file": "computations/session-82/s82_w3_10_cubic_sin2_w_ew.py",
+      "source_context_30_lines": "  527: # SECTION 11: Closure SHA + 4-tuple emit\n  528: # =============================================================================\n  529: print()\n  530: print(\"-\" * 78)\n  531: print(\"[SEC 11] Closure SHA and 4-tuple emit\")\n  532: print(\"-\" * 78)\n  533: \n  534: closure_map = {                             # (local) ordered input-pin map\n  535:     'script': 's82_w3_10_cubic_sin2_w_ew.py',\n  536:     'gate_id': 'S82-CUBIC-SIN2-W-EW',\n  537:     'scheme': 'MS-bar-2loop-rundown',\n  538:     'convention': '2MZ-EW-SCALE-BC',\n  539:     'L_max': 'N/A',\n  540:     'mu_BC_primary_GeV': float(mu_BC_2MZ),\n  541:     'cubic_value_at_tau_fold': float(sin2_cubic_tau_fold),\n  542:     'sin2_MZ_pred_at_2MZ_BC': float(sin2_MZ_2MZ_BC),\n  543:     'sin2_MZ_PDG': float(sin2_thetaW_MSbar),"
+    },
+    {
+      "anchor_id": "prov_1603",
+      "anchor_type": "data_provenance",
+      "name": "w3_11_xi_bcs_vs_l_phonon",
+      "script_path": "session-82/s82_w3_11_xi_bcs_vs_l_phonon.py",
+      "session": "s82",
+      "inputs": "",
+      "outputs": "session-82/s82_w3_11_xi_bcs_vs_l_phonon.npz, session-82/s82_w3_11_xi_bcs_vs_l_phonon.png",
+      "source_file": "computations/session-82/s82_w3_11_xi_bcs_vs_l_phonon.py",
+      "source_context_30_lines": "  317: print(f\"  4-tuple:     {four_tuple}\")\n  318: print(f\"  closure_sha: {closure_sha}\")\n  319: \n  320: \n  321: # -----------------------------------------------------------------------------\n  322: # Section 9 -- Save data\n  323: # -----------------------------------------------------------------------------\n  324: np.savez(\n  325:     os.path.join(HERE, \"s82_w3_11_xi_bcs_vs_l_phonon.npz\"),\n  326:     # Inputs\n  327:     tau_values=tau_values,\n  328:     slope_Delta_tau=slope_Delta_tau,\n  329:     intercept_Delta_tau=intercept_Delta_tau,\n  330:     K_star_fold=K_star_fold,\n  331:     v_F_nat=v_F_nat,\n  332:     # Derived\n  333:     Delta_of_tau=Delta_of_tau,"
+    },
+    {
+      "anchor_id": "prov_1604",
+      "anchor_type": "data_provenance",
+      "name": "w3_12_l_phonon_derivation",
+      "script_path": "session-82/s82_w3_12_l_phonon_derivation.py",
+      "session": "s82",
+      "inputs": "",
+      "outputs": "session-82/s82_w3_12_l_phonon_derivation.npz, session-82/s82_w3_12_l_phonon_derivation.png",
+      "source_file": "computations/session-82/s82_w3_12_l_phonon_derivation.py",
+      "source_context_30_lines": "  113: \n  114: # Pre-registered band [0.175, 0.195]\n  115: K_STAR_LO = 0.175                                                   # (local)\n  116: K_STAR_HI = 0.195                                                   # (local)\n  117: K_STAR_TARGET = 0.185                                               # (local) QA-reported anchor\n  118: INFO_FACTOR = 1.2                                                   # (local)\n  119: \n  120: # Output destinations\n  121: OUT_NPZ = resolve_output(82, 's82_w3_12_l_phonon_derivation.npz')\n  122: OUT_PNG = resolve_output(82, 's82_w3_12_l_phonon_derivation.png')\n  123: VERDICT_TXT = resolve_output(82, 's82_gate_verdicts.txt')\n  124: \n  125: INPUT_FILES = [\n  126:     resolve_script(None, 'canonical_constants.py'),\n  127:     resolve_output(52, 's52_gl_josephson.npz'),\n  128: ]\n  129: "
+    },
+    {
+      "anchor_id": "prov_1605",
+      "anchor_type": "data_provenance",
+      "name": "w3_13_four_speed_provenance",
+      "script_path": "session-82/s82_w3_13_four_speed_provenance.py",
+      "session": "s82",
+      "inputs": "",
+      "outputs": "session-82/s82_w3_13_four_speed_provenance.npz, session-82/s82_w3_13_four_speed_provenance.png",
+      "source_file": "computations/session-82/s82_w3_13_four_speed_provenance.py",
+      "source_context_30_lines": "  179: # X2-removed: alias 'SCRIPT_DIR' = ... 'computations' (replaced by tools.computation_root.resolve_*)\n  180: \n  181: SESSION = \"S82\"                         # (local)\n  182: GATE_ID = \"S82-FOUR-SPEED-PROVENANCE-PIN\"  # (local)\n  183: SCHEME = \"PROVENANCE-PIN\"               # (local)\n  184: CONVENTION = \"FOUR-SPEED-HIERARCHY\"     # (local)\n  185: L_MAX = \"S42-10-TAU-GRID\"               # (local) tau_grid resolution of S42\n  186: \n  187: OUT_NPZ = resolve_output(82, 's82_w3_13_four_speed_provenance.npz')\n  188: OUT_PNG = resolve_output(82, 's82_w3_13_four_speed_provenance.png')\n  189: VERDICT_TXT = resolve_output(82, 's82_gate_verdicts.txt')\n  190: \n  191: # Inputs: data npz + source py files (for source_SHA provenance)\n  192: INPUT_FILES = [\n  193:     resolve_script(None, 'canonical_constants.py'),\n  194:     resolve_output(56, 's56_leggett_fabric.npz'),\n  195:     resolve_output(64, 's64_sound_speed.npz'),"
+    },
+    {
+      "anchor_id": "prov_1606",
+      "anchor_type": "data_provenance",
+      "name": "w3_14_c_gold_provenance_repair",
+      "script_path": "session-82/s82_w3_14_c_gold_provenance_repair.py",
+      "session": "s82",
+      "inputs": "",
+      "outputs": "session-82/s82_w3_14_c_gold_provenance_repair.npz, session-82/s82_w3_14_c_gold_provenance_repair.png",
+      "source_file": "computations/session-82/s82_w3_14_c_gold_provenance_repair.py",
+      "source_context_30_lines": "  122: L_MAX = 51                                          # (local) N_K+1 dispersion-grid size\n  123: \n  124: # Pre-registered pass/fail thresholds\n  125: PASS_FRAC = 0.01    # (local) 1.00% PASS band\n  126: INFO_FRAC = 0.03    # (local) 3.00% INFO/FAIL boundary\n  127: FIT_K_MIN = 1e-6    # (local) lower bound of c_Gold linear-fit window (s52 line 629)\n  128: FIT_K_MAX = 0.15    # (local) upper bound of linear-fit window (small-K Goldstone)\n  129: \n  130: OUT_NPZ = resolve_output(82, 's82_w3_14_c_gold_provenance_repair.npz')\n  131: OUT_PNG = resolve_output(82, 's82_w3_14_c_gold_provenance_repair.png')\n  132: VERDICT_TXT = resolve_output(82, 's82_gate_verdicts.txt')\n  133: \n  134: INPUT_FILES = [\n  135:     resolve_script(None, 'canonical_constants.py'),\n  136:     resolve_script(52, 's52_gl_josephson.py'),\n  137:     resolve_output(52, 's52_gl_josephson.npz'),\n  138: ]"
+    },
+    {
+      "anchor_id": "prov_1607",
+      "anchor_type": "data_provenance",
+      "name": "w3_1_rank_universality",
+      "script_path": "session-82/s82_w3_1_rank_universality.py",
+      "session": "s82",
+      "inputs": "",
+      "outputs": "session-82/s82_w3_1_rank_universality.npz",
+      "source_file": "computations/session-82/s82_w3_1_rank_universality.py",
+      "source_context_30_lines": "  150: # A finite-L alpha_fit ~ 3 (scheme-invariant to < 5%) is the signature that\n  151: # the structural cancellation L^{-1},...,L^{-(r-1)} has happened -- which is\n  152: # the theorem.  The asymptotic alpha -> rank(G) is then the L -> infty\n  153: # limit, proven analytically in §VI.A.\n  154: CROSS_SCHEME_SPREAD_TOLERANCE = 0.05  # (local) 5% for cross-scheme exponent match\n  155: SCHEMES_REQUIRED_PASS = 2             # (local) out of 3 (kept for legacy trend log)\n  156: \n  157: # Output destinations\n  158: OUT_NPZ = resolve_output(82, 's82_w3_1_rank_universality.npz')\n  159: VERDICT_TXT = resolve_output(82, 's82_gate_verdicts.txt')\n  160: PROOF_MD = SCRIPT_DIR.parent / \"sessions\" / \"session-82\" / \"session-82-results-workingpaper.md\"\n  161: \n  162: # Input files for SHA-256 closure\n  163: S78_NPZ = resolve_output(78, 's78_r1_lmax_cross_groups.npz')  # (local) empirical baseline\n  164: INPUT_FILES = [\n  165:     resolve_script(None, 'canonical_constants.py'),\n  166:     S78_NPZ,"
+    },
+    {
+      "anchor_id": "prov_1608",
+      "anchor_type": "data_provenance",
+      "name": "w3_2_r_family_atlas",
+      "script_path": "session-82/s82_w3_2_r_family_atlas.py",
+      "session": "s82",
+      "inputs": "",
+      "outputs": "session-82/s82_w3_2_r_family_atlas.npz, session-82/s82_w3_2_r_family_atlas.png",
+      "source_file": "computations/session-82/s82_w3_2_r_family_atlas.py",
+      "source_context_30_lines": "  146:     Vol_SU3_Haar, M_KK,\n  147:     R_protected_fold,\n  148: )\n  149: \n  150: import matplotlib\n  151: matplotlib.use('Agg')\n  152: import matplotlib.pyplot as plt\n  153: \n  154: OUT_NPZ  = SCRIPT_DIR / \"s82_w3_2_r_family_atlas.npz\"                # (local)\n  155: OUT_PNG  = SCRIPT_DIR / \"s82_w3_2_r_family_atlas.png\"                # (local)\n  156: SPECTRUM_CACHE = SCRIPT_DIR / \"s74_spectrum_cache_L9_tau019.npz\"      # (local)\n  157: GATE_VERDICTS  = SCRIPT_DIR / \"s82_gate_verdicts.txt\"                 # (local)\n  158: CANON_PY       = SCRIPT_DIR / \"canonical_constants.py\"                # (local)\n  159: \n  160: t_start = time.time()  # (local)\n  161: \n  162: GATE_ID     = \"S82-R-FAMILY-ATLAS-EXTENSION\"                           # (local)"
+    },
+    {
+      "anchor_id": "prov_1609",
+      "anchor_type": "data_provenance",
+      "name": "w3_3_dim_h_pi_universal",
+      "script_path": "session-82/s82_w3_3_dim_h_pi_universal.py",
+      "session": "s82",
+      "inputs": "",
+      "outputs": "session-82/s82_w3_3_dim_h_pi_universal.npz",
+      "source_file": "computations/session-82/s82_w3_3_dim_h_pi_universal.py",
+      "source_context_30_lines": "  130: \n  131: SESSION = \"S82\"                                                     # (local)\n  132: GATE_ID = \"S82-DIM-H-PI-UNIVERSAL-EXCLUSION\"                        # (local)\n  133: SCHEME = \"K-THEORY\"                                                 # (local)\n  134: CONVENTION = \"KASPAROV-KK\"                                          # (local)\n  135: L_MAX = \"N/A\"                                                       # (local)\n  136: \n  137: # Output destinations\n  138: OUT_NPZ = resolve_output(82, 's82_w3_3_dim_h_pi_universal.npz')\n  139: VERDICT_TXT = resolve_output(82, 's82_gate_verdicts.txt')\n  140: \n  141: INPUT_FILES = [\n  142:     resolve_script(None, 'canonical_constants.py'),\n  143:     resolve_output(82, 's82_w2_3_kasparov_abelian.npz'),\n  144:     resolve_output(82, 's82_gate_verdicts.txt'),\n  145:     PROJECT_ROOT / \"sessions\" / \"session-79\" / \"workshops\" / \"p4-b-w2c-u1-r-protection.md\",\n  146:     PROJECT_ROOT / \"researchers\" / \"Van-den-Dungen\" / \"01_2018_van_den_Dungen_Kasparov_Submersions.md\","
+    },
+    {
+      "anchor_id": "prov_1610",
+      "anchor_type": "data_provenance",
+      "name": "w3_4_gge_fnl_channel",
+      "script_path": "session-82/s82_w3_4_gge_fnl_channel.py",
+      "session": "s82",
+      "inputs": "",
+      "outputs": "session-82/s82_w3_4_gge_fnl_channel.npz, session-82/s82_w3_4_gge_fnl_channel.png",
+      "source_file": "computations/session-82/s82_w3_4_gge_fnl_channel.py",
+      "source_context_30_lines": "  207: PLANCK_CENTRAL = 2.5                                         # (local)\n  208: PLANCK_SIGMA = 5.7                                           # (local)\n  209: \n  210: # Pre-registered gate bands (S80 plan L1809-L1811)\n  211: PASS_SIGMA = 1.0                                             # (local) <=1 sigma\n  212: INFO_SIGMA = 2.0                                             # (local) 1<sigma<=2\n  213: \n  214: # Output destinations\n  215: OUT_NPZ = resolve_output(82, 's82_w3_4_gge_fnl_channel.npz')\n  216: OUT_PNG = resolve_output(82, 's82_w3_4_gge_fnl_channel.png')\n  217: VERDICT_TXT = resolve_output(82, 's82_gate_verdicts.txt')\n  218: \n  219: INPUT_FILES = [\n  220:     resolve_script(None, 'canonical_constants.py'),\n  221:     resolve_output(78, 's78_fnl_coherence.npz'),\n  222:     resolve_output(75, 's75_phases_bd.npz'),\n  223:     resolve_output(82, 's82_w2_15_phase_alignment_k_scan.npz'),"
+    }
+  ]
+}

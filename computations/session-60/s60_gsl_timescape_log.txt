@@ -1,0 +1,162 @@
+Canonical constants loaded.
+S59 timescape data loaded.
+==============================================================================
+GSL-TIMESCAPE-60: Generalized Second Law on Timescape Mechanism
+==============================================================================
+
+==============================================================================
+STEP 1: SPECTRAL ACTION ENTROPY LANDSCAPE
+==============================================================================
+  f_void = 0.76, f_wall = 0.24
+  delta_tau_eff = 0.005303
+  d_v (void shift) = 0.005303
+  d_w (wall shift) = 0.016794
+  tau_void = 0.184697
+  tau_wall = 0.206794
+  Check: f_v*tau_v + f_w*tau_w = 0.190000 (should be 0.19)
+
+  S_spec(tau_void) = 250053.99
+  S_spec(tau_fold) = 250360.68
+  S_spec(tau_wall) = 251390.84
+  <S_spec>_inhomog = 250374.83
+  Delta_S_grav = <S>_inhomog - S_uniform = 14.1548
+  Jensen inequality: POSITIVE (convex, as expected)
+  Jensen excess (exact) = 14.1548
+  Jensen excess (computed) = 14.1548
+  Ratio to S_fold = 5.65e-05
+
+==============================================================================
+STEP 2: BEKENSTEIN-HAWKING ENTROPY WITH VARYING G
+==============================================================================
+  frac_da2 = 99.127
+  a2_void = 1316.7344 (a2_fold = 2776.1654)
+  a2_wall = 7397.6969
+  G_void/G_0 = 2.108372 (delta = +1.1084)
+  G_wall/G_0 = 0.375274 (delta = -0.6247)
+  Volume-weighted <delta_G/G> = 0.692428 (should ~ 0)
+
+  S_BH(void)/S_BH(uniform) = 0.474300
+  S_BH(wall)/S_BH(uniform) = 2.664718
+  <S_BH>_inhomog / S_BH_uniform = 1.000000
+  Fractional change = +0.000000e+00
+
+  Variance of tau = 8.906250e-05
+  Quadratic BH correction = 4.375713e-01
+  (This is fractional; multiply by S_BH to get absolute)
+
+==============================================================================
+STEP 3: MATTER ENTROPY WITH VARYING GAP
+==============================================================================
+  n_k (Bogoliubov) = 0.273
+  S per mode = 0.586220 nats
+  S per cell (8 modes) = 4.689759 nats
+  S matter total (32 cells) = 150.0723 nats
+  S matter SAME in uniform and inhomogeneous (global quench)
+
+==============================================================================
+STEP 4: GENERALIZED ENTROPY COMPARISON
+==============================================================================
+  N_void = 24, N_wall = 8
+
+  UNIFORM:
+    S_grav = 32 * 250360.68 = 8011541.66
+    S_matter = 150.0723
+    S_gen = 8011691.74
+
+  INHOMOGENEOUS:
+    S_grav = 24*250053.99 + 8*251390.84 = 8012422.41
+    S_matter = 150.0723
+    S_gen = 8012572.48
+
+  Delta_S_gen = S_inhomog - S_uniform = 880.7471
+  Fractional = Delta_S_gen / S_gen_uniform = 1.10e-04
+
+==============================================================================
+STEP 5: ENTROPY PRODUCTION RATE
+==============================================================================
+  Swept epsilon from 0 to 1 in 500 steps
+  S_gen(eps=0) = 8011691.7351
+  S_gen(eps=1) = 8012572.4822
+  dS/deps: min = 415.8130, max = 1345.6812
+  Negative steps: 0 / 499
+  Monotonicity: MONOTONICALLY NON-DECREASING
+
+  Structure formation timescale: 5.0 Gyr
+  = 1.781e+58 M_KK^{-1}
+  d(delta_tau)/dt = 2.978e-61 M_KK
+  dS_gen/d(delta_tau) = 253744.0877 per M_KK^{-1}
+  dS_gen/dt = 7.556e-56 M_KK
+
+==============================================================================
+STEP 6: BEKENSTEIN BOUND CROSS-CHECK
+==============================================================================
+  H^{-1} = 1.373e+26 m
+  H^{-1} = 5.167e+58 M_KK^{-1}
+  L_cell = 1.628e+58 M_KK^{-1}
+  E_grad per cell = 1.710e+58 M_KK
+  S_grav per cell = 250360.68
+  Bekenstein bound (2*pi*R*E) = 1.749e+117
+  Bekenstein ratio S/S_Bek = 1.431e-112
+  Bekenstein bound: SATISFIED (S < S_Bek)
+
+==============================================================================
+STEP 7: BOUSSO COVARIANT ENTROPY BOUND
+==============================================================================
+  L_cell = 4.323e+25 m
+  A_cell = 1.869e+51 m^2
+  S_Bousso = A/(4*l_P^2) = 1.789e+120
+  S_matter per cell = 4.6898 nats
+  S_grav per cell = 250360.68
+  Holographic saturation = S/(S_Bousso) = 1.400e-115
+
+==============================================================================
+STEP 8: GSL CONSTRAINT ON delta_G/G MAGNITUDE
+==============================================================================
+  Scanning delta_G/G from 0 to 1.0:
+  Delta_S_gen(delta_G/G=0) = 0.0000
+  Delta_S_gen(delta_G/G=0.1) = 96.3430
+  Delta_S_gen(delta_G/G=0.3) = 391.1915
+  Delta_S_gen(delta_G/G=0.526) = 885.7175
+  Delta_S_gen(delta_G/G=1.0) = 2474.9166
+  All positive? True
+  Minimum = 0.000000
+
+==============================================================================
+STEP 9: CLAUSIUS INEQUALITY (IRREVERSIBILITY)
+==============================================================================
+  T_acoustic = 0.1120 M_KK
+  delta_T/T = 0.0279
+  T_void = 0.110437 M_KK
+  T_wall = 0.113563 M_KK
+  Q transported ~ 0.014661 M_KK
+  sigma_Clausius = 3.654437e-03 nats
+  (positive = entropy production, GSL satisfied)
+  Clausius: POSITIVE (irreversible, GSL OK)
+
+==============================================================================
+STEP 10: GATE VERDICT
+==============================================================================
+
+  GATE: GSL-TIMESCAPE-60
+  VERDICT: FAIL
+  DETAIL: GSL SATISFIED. Delta_S_gen = +880.75 (inhomogeneity has MORE entropy). Monotonic: 0/499 negative steps. Convexity of S_spec (d2S = 317863 > 0, HESS-40) guarantees <S(tau)> >= S(<tau>) by Jensen inequality. Matter entropy unchanged (global quench). Timescape NOT thermodynamically forbidden. delta_G/G = -0.526 must be constrained observationally, not thermodynamically.
+
+  Key numbers:
+    Delta_S_gen = 880.7471
+    Delta_S_gen / S_gen = 1.10e-04
+    Negative steps = 0 / 499
+    Convexity: d2S/dtau2 = 317863 > 0 (HESS-40)
+    delta_G/G = -0.5257
+    Bekenstein ratio = 1.431e-112
+    Clausius sigma = 3.654e-03
+
+==============================================================================
+PLOTTING
+==============================================================================
+
+Plot saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s60_gsl_timescape.png
+Data saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s60_gsl_timescape.npz
+
+Wall time: 0.58s
+
+=== GSL-TIMESCAPE-60 COMPLETE ===

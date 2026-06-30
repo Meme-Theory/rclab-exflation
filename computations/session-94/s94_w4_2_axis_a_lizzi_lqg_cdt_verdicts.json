@@ -1,0 +1,112 @@
+{
+  "gate_id": "S94-LQG-CDT-STAGE-2",
+  "axis": "A",
+  "axis_label": "NCG-axiomatic / spectral-functional",
+  "reviewer": "lizzi-spectral-functional-theorist",
+  "independence_attestation": {
+    "read_registered_candidate_text": true,
+    "read_AH_PF_1_workshop_transcript": false,
+    "read_axis_B_verdict": false,
+    "is_original_author": false,
+    "note": "AH-PF-1 authors were kk + landau; comparison-doc author was loop-quantum-gravity-theorist. I am none of these. Clauses re-derived from the registered comparison-doc SecV/SecVI + corpus Sec24 directive + an independent substrate-d_s functional computation on the D_K cache."
+  },
+  "substrate_input_anchor": "obs_dS",
+  "substrate_input_anchor_detail": "substrate d_s return-probability P(sigma)=Sum_(p,q) dim(p,q) Sum_i exp(-sigma lam_i^2) on the NORMAL-STATE D_K spectrum; reconstructed DIRECTLY from the D_K eigenvalue cache s92_spectrum_cache_L12_tau020.npz because the plan-pinned s92_adhoc_spectral_dimension_ds_flow.npz is ABSENT on disk (the windowed d_s was Claim B = OPEN at AH-PF-1; the S93 W7-3 fold-energy windowed-d_s gate returned INDETERMINATE). Loaded by Axis-A ONLY; mack (Axis-B) loads obs_anchor (the observational-anchor table). DISJOINT substrate inputs at >=1 obs => structural ceiling.",
+  "independent_check": {
+    "script": "computations/session-94/s94_w4_2_axis_a_lizzi_lqg_cdt_independent_check.py",
+    "npz": "computations/session-94/s94_w4_2_axis_a_lizzi_independent_check.npz",
+    "n_eigs_mult_weighted": 32206720,
+    "lam_max_M_KK": 5.460582,
+    "d_s_sweep_range": 15.06,
+    "d_s_fold_window_sigma_star": 1.4005,
+    "d_s_at_fold_window": 8.5228,
+    "dim_SU3": 8,
+    "weyl_rel_err_at_window_pct": 6.53,
+    "d_s_band_min_0p1_to_4": 2.8055,
+    "finding": "Phi[P] has NO single value: d_s ranges [0.10, 15.16] across sigma. Fold-window d_s=8.52 ~ dim SU(3)=8 (6.53%). Window also dips to 2.81 (overlaps CDT intermediate d_s~2). Confirms the same-functional-same-scale discipline numerically: a fixed-sigma vs CDT-window comparison without matching scale-type is an observable-conflation overclaim. The C2 d_s<->CDT directive is structurally correct."
+  },
+  "candidates": {
+    "C1_area_gap_vs_D_K_floor": {
+      "single_axis_A": {
+        "verdict": "PASS",
+        "clause": "D_K spectral-floor classification (algebra/operator-content)",
+        "reasoning": "D_K min eigenvalue pins an ENERGY scale (M_KK ~ 0.03 M_Pl); the area gap pins a LENGTH-squared scale. Different operator types (Dirac vs 2-surface area operator). Both discrete from representation theory. The connes-side STRUCTURAL-DISTINCTION-at-operator-content reading (doc SecI.3, Workshop 1) is the correct spectral-functional classification."
+      },
+      "joint": {
+        "verdict": "PASS",
+        "classification": "STRUCTURAL at kinematical-floor level, ANALOGICAL at operator-content level",
+        "reasoning": "Correct two-level classification. STRUCTURAL: both are the minimum non-zero geometric eigenvalue from rep theory. ANALOGICAL: area (length^2, 2-surface) vs Dirac (energy) operator content. Defensible from the algebra-content axis; PASS-AND with mack's cosmological-scale axis completes it."
+      }
+    },
+    "C2_LQC_bounce_vs_tau_fold_transit": {
+      "single_axis_A": {
+        "verdict": "PASS",
+        "clause": "spectral-functional content of the fold + d_s heat-trace functional Phi",
+        "reasoning": "The tau_fold transit is driven by a van Hove DOS divergence in the D_K spectrum (a spectral feature, NOT quasi-equilibrium polymer dynamics). The d_s heat-trace functional Phi[P](sigma)=-2 d ln P/d ln sigma is well-defined on the substrate spectrum (verified by independent computation). Spectral-functional content sound."
+      },
+      "joint": {
+        "verdict": "PASS",
+        "classification": "STRUCTURAL at singularity-replacement level, NON-ANALOGOUS at mechanism level + d_s<->CDT same-functional-same-scale (corpus Sec24)",
+        "reasoning": "STRUCTURAL: both replace the Big Bang singularity with finite-action substrate evolution. NON-ANALOGOUS: smooth quasi-equilibrium polymer bounce (LQC) vs impulsive Mach-13.75 supersonic first-order transit (framework). The d_s<->CDT sub-clause PASSES under same-functional-same-scale: my independent check CONFIRMS Phi sweeps d_s in [0.10, 15.16], fold-window d_s=8.52 ~ dim SU(3)=8 (6.53%), band dips to 2.81 overlapping CDT d_s~2. Comparing sigma->0 (Weyl) to CDT intermediate-window WITHOUT matching scale-type is the observable-conflation the directive FORBIDS. The directive is structurally correct."
+      }
+    },
+    "C3_EPRL_vs_spectral_action": {
+      "single_axis_A": {
+        "verdict": "PASS",
+        "clause": "spectral-action algebraic-category classification",
+        "reasoning": "Spectral action S=Tr f(D_K^2/Lambda^2) is a SCALAR functional on a CONTINUOUS spectral triple, decomposed into Seeley-DeWitt moments a_0, a_2, a_4 at distinct polynomial degrees. The EPRL vertex amplitude is a COMBINATORIAL object (15j-symbols) on a finite labelled 2-complex. Different algebraic categories. The semiclassical Einstein-Hilbert recovery (a_2 vs EPRL large-spin Regge) is a shared OUTPUT at coincident dimensional analysis, NOT shared structural machinery. The connes-side DISTINCT reading (Workshop 3) is the correct spectral-functional classification."
+      },
+      "joint": {
+        "verdict": "PASS",
+        "classification": "STRUCTURAL at sum-over-substrate level, ANALOGICAL at algebraic-content level",
+        "note": "The deeper DICTIONARY question (whether a discrete-to-continuous map exists; Workshop 3 R3 option (a)) is OPEN per doc SecIV.5 (spin-foam-sum divergence; canonical<->covariant LQG relation incomplete). The CLASSIFICATION itself does NOT depend on resolving the dictionary: ANALOGICAL-at-algebraic-content IS the statement that no structural dictionary is asserted. So the classification PASSES as authored. A reviewer who reads the open dictionary question as making the classification INFO would record a Stage-2-INFO-deferred borderline; I judge PASS because the classification is the honest both-true claim (shared sum-over-substrate STRUCTURE, distinct algebraic CONTENT), exactly what the open dictionary status implies.",
+        "reasoning": "STRUCTURAL: both implement dynamics as a sum over substrate configurations (spin-foam sum / spectral-action heat-trace). ANALOGICAL: combinatorial 15j category vs scalar heat-kernel functional. Defensible from algebra-content axis."
+      }
+    },
+    "C4_Immirzi_gamma_vs_tau_fold": {
+      "single_axis_A": {
+        "verdict": "PASS",
+        "clause": "regulator/scheme-convention-invariance of tau_fold vs gamma gauge-convention-dependence",
+        "reasoning": "Squarely the spectral-functional axis. gamma is convention-DEPENDENT at the gauge-group level: U(1) Chern-Simons gives gamma_0=ln2/(pi*sqrt3)~0.127, the SU(2) refinement gives ~0.2375 (factor ~1.87 spread). tau_fold=0.190 is the van Hove fold LOCATION (a geometric spectrum feature), convention-INVARIANT under regulator choice. Per ZETA-NOT-PHYSICAL (S75): physical observables are RATIOS / geometric features, not regulator-weighted absolute moments; tau_fold is the regulator-invariant kind, gamma is convention-keyed. The volovik-side STRUCTURALLY-DISTINCT reading (Workshop 4) is correct on the scheme-invariance axis."
+      },
+      "joint": {
+        "verdict": "PASS",
+        "classification": "STRUCTURAL at single-dimensionless-input level, NON-ANALOGOUS at pin-count (1 condition vs N>=6 conditions)",
+        "reasoning": "STRUCTURAL: both carry exactly one dimensionless input pinning substrate discreteness. NON-ANALOGOUS: gamma pinned by ONE matching condition (BH entropy); tau_fold over-constrained by N>=6 (van Hove geometry, dS/dtau, Mach 13.75, n_s, alpha_s, GGE relic count). The pin-count asymmetry + gamma convention-dependence vs tau_fold convention-invariance makes them structurally distinct kinds of single-parameter input. Defensible from both the scheme-invariance axis (mine) and the over-constraint/observational axis (mack)."
+      }
+    },
+    "C5_BH_entropy_punctures_vs_spectral_monotonicity": {
+      "single_axis_A": {
+        "verdict": "PASS",
+        "clause": "a_2 Seeley-DeWitt spectral-moment monotonicity route to the area law",
+        "reasoning": "The framework derives S=A/(4 G_N) with G_N from the a_2 moment of the spectral action, via substrate spectral-monotonicity (S37/S63: <lam^2>(tau) monotone in all 10 Peter-Weyl sectors, inherited by ANY monotone f). This is a spectral-moment hierarchy (monotonicity -> BCS coherence suppression -> vacuum energy -> area law), STRUCTURALLY DISTINCT from LQG combinatorial puncture counting (prod(2j+1), ln2 per j=1/2 puncture, U(1) Chern-Simons boundary). Same area-law OUTPUT via different machinery. Correct spectral-functional classification."
+      },
+      "joint": {
+        "verdict": "PASS",
+        "classification": "STRUCTURAL at area-law-output level, ANALOGICAL at intermediate-machinery level",
+        "reasoning": "STRUCTURAL: both produce S=A/(4 l_P^2) and both carry a substrate parameter (gamma or tau-dependent G_eff) at the horizon. ANALOGICAL: combinatorial puncture counting vs spectral-moment monotonicity are genuinely different intermediate routes. Defensible from the spectral-moment axis."
+      }
+    }
+  },
+  "structural_gates": {
+    "substrate_input_orthogonality": {
+      "verdict": "PASS",
+      "detail": "obs_dS (substrate d_s P(sigma), Axis-A ONLY) DISJOINT from obs_anchor (observational table n_s/alpha_s/w_0/r, Axis-B ONLY). Structural ceiling; NO substrate-input-overlap caveat (S89 W4-7 SecVII.AH precedent)."
+    },
+    "OAA_exclusion": {
+      "verdict": "PASS",
+      "detail": "I (lizzi) am NOT the comparison-doc author (loop-quantum-gravity-theorist) NOR an AH-PF-1 author (kk/landau) NOR a named competing-perspective in any of the 5 candidate workshops (named perspectives: connes/volovik/loop-quantum-gravity-theorist; I appear in NONE). Original-author-exclusion + downstream-inheritance-reach satisfied for the Axis-A seat."
+    },
+    "no_workshop_transcript_read": {
+      "verdict": "PASS",
+      "detail": "Did NOT read s92-adhoc-spectral-dimension-ds-flow-vs-cdt.md nor the candidate-workshop rounds; clauses re-derived from the registered comparison-doc text + corpus Sec24 directive + independent computation."
+    },
+    "convention_ends_FULL": {
+      "verdict": "PASS",
+      "detail": "No SCHEMATIC helper consumed; the d_s functional Phi and the spectral-action moments are FULL-physical (direct spectral sums on the D_K cache). Convention ends -FULL."
+    }
+  },
+  "axisA_single_axis_all": "PASS",
+  "axisA_joint_all": "PASS",
+  "notes": "All 5 single-axis (algebra-content / spectral-functional) clauses PASS and all 5 JOINT STRUCTURAL-vs-ANALOGICAL classifications PASS from the Axis-A side. The classifications are honest both-true statements (shared kinematical/output STRUCTURE + distinct operator/mechanism/algebraic CONTENT) -- the disciplined STRUCTURAL-vs-ANALOGICAL tagging the comparison doc requires. The load-bearing C2 d_s<->CDT clause is CONFIRMED numerically: the substrate d_s functional Phi has no single value (sweep range 15.06), so the same-functional-same-scale discipline is structurally correct -- a fixed-sigma-vs-CDT-window comparison would be an observable-conflation overclaim. KEY SCOPE CAVEAT (Axis-A): these are cross-FRAMEWORK comparison classifications, NOT cross-PILLAR bridge theorems on (A_K,H_K,D_K); their Stage-2 verification confers permanence as structural-comparison reference rows, NOT SecVII registry-PASS (consistent with plan PASS_meaning lines 495-497). C3 carries an OPEN-dictionary note (does NOT block the classification PASS; the ANALOGICAL-at-content tag IS the no-dictionary-asserted statement); a reviewer could read it as Stage-2-INFO-deferred. The aggregator PASS-ANDs this against mack Axis-B."
+}

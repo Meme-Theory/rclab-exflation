@@ -1,0 +1,58 @@
+{
+  "reviewer": "volovik-superfluid-universe-theorist",
+  "axis": "transit-dynamics / superfluid-universe",
+  "theorem": "VII.AM",
+  "clauses": {
+    "a_transit_half": {
+      "verdict": "PASS",
+      "rationale": "Lock invariance under cascade transit verified on three independent first-principles grounds. (i) Divergence protection: the trapping surface dR is DEFINED as the finite-codimension locus where the substrate mode-mixing rate diverges in the semiclassical limit; cascade dynamics acts at finite mixing rates everywhere off dR and cannot continuously dissolve a rate-divergent locus within the semiclassical limit (it can translate or merge it, not erase it), so the localized-eigenvalue-spectrum-reorganization character and the finite-area boundary are preserved throughout the transit window in which the theorem's premise holds. (ii) Weak-coupling consistency with clause (b): the canonical effacement Gamma_eff = 0.99970 means cross-boundary coupling during cascade is suppressed to 3.0e-4; cascade back-reaction on the boundary is 0.03%-level, structurally too weak to delocalize the lock or inflate the boundary area (boundary growth is bounded by the effacement-suppressed energy flux, so area finiteness is transit-stable). (iii) Superfluid-universe realization: at acoustic-horizon-class boundaries (3He/BEC analog class), quasiparticle cascades evolve ON the supersonic background and do not erase the sonic surface while the flow remains supersonic; the trapping character is maintained by the transit itself (the transit IS the supersonic passage). Scoping note (non-gating): invariance is conditional on the theorem's own premise (persistence of the trapping surface); the registered quantifier 'for every region R bounded by a trapping surface' makes this conditioning explicit, so the registered claim is sound as scoped. The NCG finite-area-on-spectral-metric statement itself is the spectral-functional reviewer's half and was not audited here.",
+      "key_numbers": {
+        "cross_boundary_coupling_suppression_1_minus_Gamma": 3.0e-4,
+        "boundary_backreaction_fraction_during_cascade": 3.0e-4
+      }
+    },
+    "b": {
+      "verdict": "PASS",
+      "rationale": "FULL transit audit. Formula structure Gamma_eff(R) = 1 - A(dR)/(4 G_N A_universal) is exactly the boundary-channel-counting form the superfluid axis supports: information transmission across a horizon-class trapping surface proceeds exclusively via boundary-localized modes (Andreev-bound-state analog of the substrate boundary spectrum), whose count scales as boundary area per area quantum (4 G_N is the substrate image of the microscopic coherence-length cross-section xi^2); transmitted share = boundary-channel fraction A(dR)/(4 G_N)/A_universal and effacement = 1 minus that fraction. Direction check passes: larger boundary -> more channels -> more leakage -> smaller Gamma_eff; linearization in A is self-consistent at the 3e-4 anchor scale. Anchor sub-check PASSES: canonical Gamma_effacement = 0.9997 (knowledge MCP) = 0.99970 (canonical_constants.py pin; S37 acoustic-white-hole impedance origin, consumed by the S58 Volovik vacuum partition per the w0_FW PROVENANCE lineage); deviation-from-1 = 3.0e-4 = registered A-term EXACTLY; the registered 'S58 fold-effacement, canonical Volovik partition' attribution is consistent with the canonical pin lineage; registered 5-sig-fig claim (0.99970) matches the pin. Superfluid translation: Gamma_eff = 0.99970 corresponds to an acoustic impedance step Z2/Z1 = 1.333e4 across the fold under normal-incidence energy-flux transmission 4z/(1+z)^2 = 3.0e-4 - a physically coherent strong-mismatch white-hole boundary. Premise instance check: the van Hove fold under supersonic transit IS a finite-codimension locus of divergent mode mixing (the acoustic-white-hole causal boundary), so the fold qualifies as a theorem instance on the transit axis. Registered Level-3 < Level-2 inequality holds formally (3.0e-4 < L_max^-1 = 0.1 at L_max=10, alpha >= 1) per the cross-pillar-bridge-anatomy Registry-PASS criterion; the alpha >= 1 floor is consistent with generic convergent spectral-sum tail scaling on this axis, and the entry explicitly defers tighter alpha pinning (disclosed, non-hidden). Non-gating caveats for the aggregation gate: (1) A_universal's unit convention is unpinned in the entry text - the formula parses dimensionally with A_universal as a dimensionless total-state-count normalization (natural units, G_N = Planck area) or as an area ratio in G_N=1 units; the calibration anchor pins the COMBINATION A(dR)/(4 G_N A_universal) = 3.0e-4, so Level-3 is unaffected; (2) the entry's cross-link 'computations/canonical_constants.py:58' has drifted - the pin resolves at computations/_shared/canonical_constants.py:540 at review time; the constant resolves unambiguously by name via the knowledge MCP, so the anchor remains robust; (3) the canonical provenance comment's phrase 'impedance-transmission coefficient' loosely names what functions as the effaced/reflected fraction (transmitted fraction is 1-Gamma = 3e-4); the registered clause (b) and the canonical NUMBERS agree, which is what the anchor requires.",
+      "key_numbers": {
+        "Gamma_eff_canonical_MCP": 0.9997,
+        "Gamma_eff_canonical_py_pin": 0.99970,
+        "deviation_from_1": 3.0e-4,
+        "registered_A_term": 3.0e-4,
+        "anchor_match_exact": true,
+        "implied_impedance_ratio_Z2_over_Z1_fold": 1.3331e4,
+        "level2_envelope_at_Lmax10_alpha1": 0.1,
+        "level3_lt_level2_formal": true
+      }
+    },
+    "c_transit_half": {
+      "verdict": "PASS",
+      "rationale": "The cascade-localization lower-bound reading is sound on the transit axis. (i) Rate-limiting microphysics: the Page crossover requires order-half of the region's modes to have reorganized AND their correlations exported; export cannot precede quasiparticle localization - in superfluid quench dynamics the earliest time at which correlations exist to be exported is the localization/healing timescale (the xi/c_s ~ hbar/Delta analog; Kibble-Zurek ordering: defect/quasiparticle localization precedes information release) - so t_Page >= t_cascade-localization is the correct ordering, with the substrate's cascade-localization rate as the rate-limiting microscopic process. (ii) Universality, derived independently on this axis: taking t_loc ~ G M/c^3 (the localization/light-crossing scale of the reorganization region) together with the REGISTERED Page formula t_Page = (5120 pi/2) G^2 M^3/(hbar c^4) gives the closed form t_Page/t_loc = 2560 pi (M/m_P)^2, which is >> 1 for ALL semiclassical M and saturates to order unity only at M ~ 0.011 m_P (2.43e-10 kg), exactly where the theorem's own semiclassical premise expires. The lower bound therefore holds for EVERY premise-satisfying region R, matching the registered universal quantifier - this is the transit-axis verification of the universal scoping, independent of any workshop derivation. At the anchor mass the margin is 1.70e45. (iii) Anchor arithmetic reproduced from the registered formula alone: t_Page(1e13 kg) = 4.2057e22 s; divided by t_universe(13.787 Gyr) = 4.3509e17 s gives ratio 9.6665e4 vs registered ratio_anchor = 9.6684e4 (relative deviation 2.0e-4, within constants/age-convention precision); log10 = 4.985, consistent with the registered '~5 OOM'. The entry's identification of the substrate cascade window with t_universe at the anchor is conservative on this axis (the cascade window is at most t_universe; the true margin is >= the registered one). (iv) Non-gating wording notes for the aggregation gate: the clause's 'equivalently' equates the localization lower bound with the window-relative statement; the window form is strictly STRONGER when the observation window far exceeds the localization time, and the anchor satisfies the stronger form, so the registered bound holds a fortiori at the anchor - a wording infelicity, not an unsoundness. The joint-flag table names only spectral-functional + semiclassical-gravity for clause (c) while the clause's lower-bound timescale (cascade-localization) is transit-dynamics content; the entry's Stage-2 protocol section correctly assigns a (c)-transit-half to this axis - a cosmetic internal attribution inconsistency with no physics impact. The laboratory-IN Page formula itself is the semiclassical reviewer's half; its exclusive data file (s88_w1b2_page_time_cascade_tail.npz) was NOT loaded here per substrate-input orthogonality.",
+      "key_numbers": {
+        "t_Page_1e13kg_s": 4.205739e22,
+        "t_universe_13p787Gyr_s": 4.35085e17,
+        "ratio_computed": 9.66648e4,
+        "ratio_registered": 9.6684e4,
+        "rel_dev_computed_vs_registered": 1.98e-4,
+        "log10_ratio": 4.985,
+        "t_loc_1e13kg_s": 2.4771e-23,
+        "t_Page_over_t_loc_at_anchor": 1.6978e45,
+        "universal_bound_closed_form": "t_Page/t_loc = 2560*pi*(M/m_P)^2",
+        "premise_saturation_mass_kg": 2.4269e-10
+      }
+    }
+  },
+  "anchor_subcheck_gamma_eff": {
+    "canonical": 0.9997,
+    "deviation_from_1": 3.0e-4,
+    "consistent": true
+  },
+  "inputs_read": [
+    "sessions/permanent-results-registry.md - SS-VII.AM block ONLY (lines 16700-16812)",
+    "knowledge MCP get_constant('Gamma_effacement') = 0.9997 (exclusive primary anchor load per substrate-input-orthogonality predicate)",
+    "computations/_shared/canonical_constants.py - Gamma_effacement pin (line 540) + S85 W7-3 provenance comment block (lines 531-543) + w0_FW PROVENANCE entry (S58 Volovik-partition lineage)",
+    ".claude/rules/joint-theorem-promotion.md (Stage-2 protocol)",
+    ".claude/rules/cross-pillar-bridge-anatomy.md (3-level structural-confidence ladder)"
+  ],
+  "no_workshop_context_attestation": true
+}

@@ -47,7 +47,7 @@ Nazarewicz (primary), Volovik, Landau, Sagan, Feynman, Tesla, Cosmic-Web, Connes
 ### III. Strong Convergences (5-9 reviewers agree)
 
 **8. The GL-JOSEPHSON fabric computation is the highest-priority many-body calculation (7/23)**
-Landau (primary), Tesla, QA, Berry, Volovik, Nazarewicz, Cosmic-Web recommend the 6x6 dynamical matrix of the 3-sector GL functional on the 32-cell lattice. All coefficients exist in the tier0 archive. This is the only fabric-level many-body computation never attempted.
+Landau (primary), Tesla, QA, Berry, Volovik, Nazarewicz, Cosmic-Web recommend the 6x6 dynamical matrix of the 3-sector GL functional on the 32-cell lattice. All coefficients exist in the computation archive. This is the only fabric-level many-body computation never attempted.
 
 **9. The off-Jensen landscape is the most consequential untested territory (9/23)**
 Baptista, KK, Berry, Neutrino, SP, Connes, Sagan, Spectral-Geom, String identify the 5-parameter U(2)-invariant family (or full 28D) as the sole route to nontrivial Berry curvature, PMNS mixing, and potential Pfaffian transitions.

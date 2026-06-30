@@ -1,0 +1,272 @@
+==============================================================================
+FUNCTIONAL-SELECT-L7-FLIP: L_max sensitivity of the n_s/m_H windows
+==============================================================================
+
+  L_max values: [3, 4, 5, 6, 7]
+  tau grid: 11 values in [0.140, 0.240]
+  tau_fold = 0.19
+  G_DeWitt = 5.0
+
+  Targets:
+    n_s = 0.9649 +/- 0.0042
+    m_H = 125.25 +/- 0.17 GeV
+  Gate windows:
+    n_s in [0.955, 0.975]
+    m_H in [122.0, 130.0] GeV
+
+==============================================================================
+STEP 0: Load Prior Data
+==============================================================================
+
+  W1-C baseline (L_max=3):
+    t*(n_s) = 0.0883
+    t*(m_H) = 0.9657
+    Delta_t = 0.8774
+    n_s(pure sqrt) = 0.956742
+
+  S70 mH_by_L (Gaussian cutoff + 2-loop SM RGE):
+    L=3: mH = 162.60 GeV
+    L=4: mH = 146.83 GeV
+    L=5: mH = 136.08 GeV
+    L=6: mH = 131.83 GeV
+    L=7: mH = 139.41 GeV
+
+  S72 zeta ratios per L_max:
+      L        a2/a0        a4/a2        a6/a4
+      3   140.712584    -3.585330    -0.441213
+      4    -2.393112     1.256879    -0.682988
+      5    -3.955819    -0.235742     0.288748
+      6    -5.091513    -0.595096    -0.230813
+      7    -6.319799    -0.766653    -0.314932
+
+==============================================================================
+STEP 1: Compute D_K Spectra at L_max=7 for Each tau
+==============================================================================
+  tau=0.140: 35 sectors, 18624 nonzero eigenvalues, t=27.3s
+  tau=0.150: 35 sectors, 18624 nonzero eigenvalues, t=22.0s
+  tau=0.160: 35 sectors, 18624 nonzero eigenvalues, t=21.1s
+  tau=0.170: 35 sectors, 18624 nonzero eigenvalues, t=22.6s
+  tau=0.180: 35 sectors, 18624 nonzero eigenvalues, t=22.3s
+  tau=0.190: 35 sectors, 18624 nonzero eigenvalues, t=22.9s
+  tau=0.200: 35 sectors, 18624 nonzero eigenvalues, t=22.8s
+  tau=0.210: 35 sectors, 18624 nonzero eigenvalues, t=22.2s
+  tau=0.220: 35 sectors, 18624 nonzero eigenvalues, t=22.8s
+  tau=0.230: 35 sectors, 18624 nonzero eigenvalues, t=22.6s
+  tau=0.240: 35 sectors, 18624 nonzero eigenvalues, t=23.1s
+
+  Total spectra computation: 251.7s
+
+==============================================================================
+STEP 2: Spectral Actions S_sqrt(tau, L_max), S_exp(tau, L_max)
+==============================================================================
+
+  Lambda convention: using S66 Lambda = 2.9568 M_KK for ALL L_max
+
+  Max |lambda| per L_max (at our tau grid):
+    L=3: lambda_max = 2.1441 (inside Lambda = 2.9568)
+    L=4: lambda_max = 2.5296 (inside Lambda = 2.9568)
+    L=5: lambda_max = 2.9163 (inside Lambda = 2.9568)
+    L=6: lambda_max = 3.3036 (ABOVE Lambda = 2.9568)
+    L=7: lambda_max = 3.6915 (ABOVE Lambda = 2.9568)
+
+  Weighted mode counts (non-zero eigenvalues):
+      L      N_weighted
+      3          155984
+      4         1021280
+      5         5060448
+      6        20408160
+      7        58572768
+    L=3 matches S66 N_modes=155984: OK
+
+==============================================================================
+STEP 3: Cubic Splines and Fold Derivatives
+==============================================================================
+
+  Fold derivatives by L_max:
+    L         S_sqrt        dS_sqrt       d2S_sqrt          S_exp         dS_exp        d2S_exp
+    3     8.4674e+04     1.9844e+04     1.0750e+05     1.1591e+05    -1.6637e+04    -9.0395e+04
+    4     6.4438e+05     1.4839e+05     8.0725e+05     6.8486e+05    -1.2656e+05    -6.8197e+05
+    5     3.6456e+06     8.2991e+05     4.5272e+06     3.0120e+06    -6.9222e+05    -3.6875e+06
+    6     1.6545e+07     3.7369e+06     2.0423e+07     1.0607e+07    -2.9408e+06    -1.5449e+07
+    7     5.2540e+07     1.1799e+07     6.4546e+07     2.6389e+07    -8.5008e+06    -4.3966e+07
+
+==============================================================================
+STEP 4: n_s(t, L_max) Parametric Curves
+==============================================================================
+
+  n_s(t=0) = n_s(pure sqrt):
+    L=3: n_s = 0.956742, eps_H = 0.021629
+    L=4: n_s = 0.957671, eps_H = 0.021165
+    L=5: n_s = 0.958269, eps_H = 0.020866
+    L=6: n_s = 0.958675, eps_H = 0.020663
+    L=7: n_s = 0.958951, eps_H = 0.020525
+
+  n_s(t=1) = n_s(pure exp):
+    L=3: n_s = 1.026417, eps_H = -0.013208
+    L=4: n_s = 1.034294, eps_H = -0.017147
+    L=5: n_s = 1.043142, eps_H = -0.021571
+    L=6: n_s = 1.052774, eps_H = -0.026387
+    L=7: n_s = 1.062285, eps_H = -0.031142
+
+==============================================================================
+STEP 5: Parameter Windows t*(n_s) and t*(m_H) per L_max
+==============================================================================
+
+  Parameter windows per L_max:
+    L    t*(n_s)       t[ns_lo,ns_hi]     mH_ref    t*(m_H)       t[mH_lo,mH_hi]    Delta_t
+    3     0.0883      [0.0000,0.2060]     162.60     0.5934      [0.5630,0.6392]     0.5050
+    4     0.0893      [0.0000,0.2157]     146.83     0.7276      [0.6904,0.7839]     0.6384
+    5     0.0931      [0.0000,0.2292]     136.08     0.8471      [0.8037,0.9126]     0.7540
+    6     0.0996      [0.0000,0.2469]     131.83     0.9027      [0.8565,0.9725]     0.8031
+    7     0.1086      [0.0000,0.2685]     139.41     0.8072      [0.7658,0.8695]     0.6985
+
+==============================================================================
+STEP 6: Window Overlap Check
+==============================================================================
+
+    L           n_s window           m_H window   overlap?      width
+    3      [0.0000,0.2060]      [0.5630,0.6392]         no     0.0000
+    4      [0.0000,0.2157]      [0.6904,0.7839]         no     0.0000
+    5      [0.0000,0.2292]      [0.8037,0.9126]         no     0.0000
+    6      [0.0000,0.2469]      [0.8565,0.9725]         no     0.0000
+    7      [0.0000,0.2685]      [0.7658,0.8695]         no     0.0000
+
+==============================================================================
+STEP 7: Extrapolation of Delta_t(L_max)
+==============================================================================
+
+  Delta_t(L) sequence: [0.50504895 0.63835868 0.75404541 0.80313538 0.6985115 ]
+  Delta_t monotone: False
+  Power-law fit: Delta_t(L) = 0.7754 + -10.0000 * L^(-3.2743)
+  Delta_t(L -> infinity) = 0.7754
+  WARNING: Delta_t is non-monotone; extrapolation unreliable.
+  Observed range: [0.5050, 0.8031]
+  Last value (L=7): 0.6985
+
+  t*(n_s) sequence: [0.08832279 0.08927216 0.09306662 0.09959736 0.10864142]
+  t*(n_s) -> 1.0000
+
+  t*(m_H) sequence: [0.59337174 0.72763085 0.84711203 0.90273274 0.80715291]
+  t*(m_H) -> 0.8827
+
+  With W1-C fixed mH_ref = 127.46 GeV (t*(m_H) = 0.9656):
+  Delta_t(L, mH_ref fixed): [0.8773003  0.87635092 0.87255647 0.86602573 0.85698167]
+  Delta_t_fixed -> -0.0344 at L -> infinity
+
+==============================================================================
+STEP 8: Cross-Checks
+==============================================================================
+
+  CC1: n_s(t=0) tau-derivative protection
+    L=3: n_s = 0.956742
+    L=7: n_s = 0.958951
+    Drift: 0.2309%
+    Expected: < 0.5%
+    Status: PASS
+
+  CC2: m_H(t=0) = 0 algebraic
+    mH_ref(L=7) * sqrt(0) = 0.000000 GeV
+    Expected: 0.0 exactly
+    Status: PASS
+
+  CC3: W1-C L_max=3 reproduction
+    Baseline t*(n_s) = 0.0883
+    Our L=3 t*(n_s)  = 0.0883
+    Difference = 0.0000
+    Note: L=3 baseline used S66 Lambda and S72 interp; we recompute natively
+
+==============================================================================
+STEP 9: Dilaton Family Re-Test at L_max=7
+==============================================================================
+
+  Dilaton family: f(x; phi) = -ln(1 + phi*x)
+  ALGEBRAIC FACT: f(0) = -ln(1) = 0 for ALL phi, independent of L_max.
+  Therefore m_H(dilaton) = mH_ref * sqrt(f(0)) = 0 at ANY L_max.
+  This is an algebraic theorem, NOT subject to L_max correction.
+
+       phi       f(0)       S_dil(L=7)   m_H(GeV)
+    -0.010   0.000000       4.8097e+05     0.0000
+    -0.050   0.000000       2.4480e+06     0.0000
+    -0.100   0.000000       5.0102e+06     0.0000
+    -0.200   0.000000       1.0527e+07     0.0000
+    -0.300   0.000000       1.6676e+07     0.0000
+    -0.500   0.000000       3.1705e+07     0.0000
+    -0.800                   DIVERGES
+    -1.000                   DIVERGES
+
+  CONFIRMED: dilaton family gives m_H = 0 at L_max=7 (same as L_max=3).
+  PERMANENT: f(0)=0 kills Higgs quartic independent of truncation.
+
+==============================================================================
+STEP 10: Additive Constant Route (E2) at L_max=7
+==============================================================================
+
+  L_max=7 fold values:
+    N_weighted = 58572768
+    S_sqrt(fold) = 5.2540e+07
+    S_exp(fold) = 2.6389e+07
+    dS_sqrt = 1.1799e+07
+    dS_exp = -8.5008e+06
+    d2S_sqrt = 6.4546e+07
+    d2S_exp = -4.3966e+07
+    mH_ref(L=7) = 139.41 GeV
+
+  (c, t) plane scan at L_max=7:
+    c in [0, 5], t in [0.001, 0.999], 201 x 201 points
+    Joint passes: 0 / 40401
+    NO JOINT SOLUTION at L_max=7.
+
+  L_max=7 additive constant analysis (pure sqrt + c):
+    eps_H(sqrt, L=7) = 0.020525
+    eps_H target = 0.017550
+    c_needed = 0.152037
+    m_H at this c = 54.36 GeV (target 125.25)
+    Within gate [122.0, 130.0]? no
+
+  L_max=3 recomputed:
+    eps_H(sqrt, L=3) = 0.021629
+    c_needed = 0.126171
+    W1-C baseline c_needed = 0.126171
+
+==============================================================================
+STEP 11: Gate Verdict
+==============================================================================
+
+  Delta_t sequence vs L_max: [0.50504895 0.63835868 0.75404541 0.80313538 0.6985115 ]
+  Minimum Delta_t = 0.5050 at L_max=3
+  Monotonic decrease? False
+  Monotonic increase? False
+
+  Extrapolation: Delta_t -> 0.7754 as L -> infinity
+
+  Secondary check (fixed mH_ref = 127.46 GeV, isolates n_s shape):
+    Delta_t_fixed(L): [0.8773003  0.87635092 0.87255647 0.86602573 0.85698167]
+    Range across L_max: 0.0203
+    This bounds the n_s shape L_max sensitivity to be small.
+
+  VERDICT: CONFIRMED-PERMANENT
+  Detail: Delta_t_min = 0.5050 (at L=3) remains > 10x PASS threshold; theorem PERMANENT
+
+  Any L_max with window overlap: False
+
+  Summary:
+    L     t*(ns)     t*(mH)    Delta_t    overlap
+    3     0.0883     0.5934     0.5050         no
+    4     0.0893     0.7276     0.6384         no
+    5     0.0931     0.8471     0.7540         no
+    6     0.0996     0.9027     0.8031         no
+    7     0.1086     0.8072     0.6985         no
+
+==============================================================================
+STEP 12: Save Data
+==============================================================================
+  Saved: s73b_functional_select_lmax7.npz
+
+==============================================================================
+STEP 13: Plot
+==============================================================================
+  Saved: s73b_functional_select_lmax7.png
+
+==============================================================================
+DONE.
+==============================================================================

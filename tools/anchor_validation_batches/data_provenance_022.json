@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 22,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_211",
+      "anchor_type": "data_provenance",
+      "name": "bdi_winding",
+      "script_path": "session-36/s36_bdi_winding.py",
+      "session": "s36",
+      "inputs": "computations/session-23/s23a_eigenvectors_extended.npz, computations/session-35/s35_pfaffian_corrected_j.npz, computatio...",
+      "outputs": "session-36/s36_bdi_winding.npz, session-36/s36_bdi_winding.png",
+      "source_file": "computations/session-36/s36_bdi_winding.py",
+      "source_context_30_lines": "  844: # ====================================================================\n  845: # SAVE RESULTS\n  846: # ====================================================================\n  847: \n  848: print(\"\\n\" + \"=\" * 70)\n  849: print(\"Saving results...\")\n  850: print(\"=\" * 70)\n  851: \n  852: np.savez('computations/session-36/s36_bdi_winding.npz',\n  853:     # Core result\n  854:     nu_winding = nu_final,\n  855:     verdict = 'TRIVIAL',\n  856: \n  857:     # Eigenvalue data\n  858:     tau_dense = tau_dense,\n  859:     E_B2_dense = E_B2_dense,\n  860:     tau_vals = tau_vals,"
+    },
+    {
+      "anchor_id": "prov_212",
+      "anchor_type": "data_provenance",
+      "name": "cc_arithmetic",
+      "script_path": "session-36/s36_cc_arithmetic.py",
+      "session": "s36",
+      "inputs": "",
+      "outputs": "session-36/s36_cc_arithmetic.npz",
+      "source_file": "computations/session-36/s36_cc_arithmetic.py",
+      "source_context_30_lines": "  383: # ─── 7. BCS correction detail ───────────────────────────────────────\n  384: print(f\"\\nBCS condensation energy breakdown:\")\n  385: print(f\"  E_BCS (8-mode ED, full sector) = {E_BCS:.6f}\")\n  386: print(f\"  |E_BCS| / V_sd = {abs(E_BCS) / abs(r['V_sd']):.2e}\")\n  387: print(f\"  |E_BCS| / V_gauss = {abs(E_BCS) / abs(r['V_gauss']):.2e}\")\n  388: print(f\"  The BCS correction is {'NEGLIGIBLE' if abs(E_BCS/r['V_sd']) < 0.01 else 'SIGNIFICANT'} compared to V_vac\")\n  389: \n  390: # ─── 8. Save results ────────────────────────────────────────────────\n  391: np.savez(data_dir / \"s36_cc_arithmetic.npz\",\n  392:          # Spectral sums at fold\n  393:          S0=r['S0'], S1=r['S1'], S2=r['S2'], S4=r['S4'],\n  394:          S6=r['S6'], S8=r['S8'],\n  395:          # HK coefficients at fold\n  396:          a0_hk=r['a0_hk'], a2_hk=r['a2_hk'], a4_hk=r['a4_hk'],\n  397:          # Vacuum energies\n  398:          V_sd=r['V_sd'], V_gauss=r['V_gauss'], V_smooth=r['V_smooth'],\n  399:          N_below=r['N_below'],"
+    },
+    {
+      "anchor_id": "prov_213",
+      "anchor_type": "data_provenance",
+      "name": "collectivity",
+      "script_path": "session-36/s36_collectivity.py",
+      "session": "s36",
+      "inputs": "",
+      "outputs": "session-36/s36_collectivity.npz",
+      "source_file": "computations/session-36/s36_collectivity.py",
+      "source_context_30_lines": "    2: \"\"\"\n    3: Session 36 COLL-36: Collectivity Decomposition in Weisskopf-Equivalent Units.\n    4: \n    5: Context:\n    6:     The RPA susceptibility chi = d^2S/dtau^2 = 20.43 at tau=0.20 quantifies the\n    7:     collective enhancement of the spectral action's response to Jensen deformation.\n    8: \n    9:     In nuclear physics, B(E2) transition rates measured in Weisskopf units (W.u.)\n   10:     diagnose collectivity:\n   11:         1 W.u.     = single-particle estimate\n   12:         10-30 W.u. = vibrational nucleus (coherent superposition of few particle-hole)\n   13:         100+ W.u.  = rotational (deformed) nucleus (maximal collectivity)\n   14: \n   15:     The analog for the spectral action:\n   16:         chi_sp  = single-particle (single-mode) curvature = max_k |d^2|lambda_k|/dtau^2|\n   17:         chi     = total RPA response = sum over all modes + off-diagonal (interaction)\n   18:         chi/chi_sp = collectivity ratio = \"Weisskopf units\""
+    },
+    {
+      "anchor_id": "prov_214",
+      "anchor_type": "data_provenance",
+      "name": "gcm_self_consistent",
+      "script_path": "session-36/s36_gcm_self_consistent.py",
+      "session": "s36",
+      "inputs": "",
+      "outputs": "session-36/s36_gcm_self_consistent.npz, session-36/s36_gcm_self_consistent.png",
+      "source_file": "computations/session-36/s36_gcm_self_consistent.py",
+      "source_context_30_lines": "  910:         'Mmax_MF_8x8_fine_peak': Mmax_MF_8x8_peak,\n  911: \n  912:         # Gate\n  913:         'gate_verdict': gate_verdict,\n  914:         'gate_Mmax': Mmax_gate,\n  915:         'peak_verdict': peak_verdict,\n  916:     }\n  917: \n  918:     out_npz = os.path.join(SCRIPT_DIR, 's36_gcm_self_consistent.npz')\n  919:     np.savez_compressed(out_npz, **save_dict)\n  920:     print(f\"  Data: {out_npz} ({os.path.getsize(out_npz) / 1024:.1f} KB)\")\n  921: \n  922:     # ================================================================\n  923:     #  PLOT\n  924:     # ================================================================\n  925:     print(f\"  Generating plot...\")\n  926:     import matplotlib"
+    },
+    {
+      "anchor_id": "prov_215",
+      "anchor_type": "data_provenance",
+      "name": "gl_cubic_check",
+      "script_path": "session-36/s36_gl_cubic_check.py",
+      "session": "s36",
+      "inputs": "",
+      "outputs": "session-36/s36_gl_cubic_check.npz, session-36/s36_gl_cubic_check.png",
+      "source_file": "computations/session-36/s36_gl_cubic_check.py",
+      "source_context_30_lines": "  917:         'q7_charges_B2': q_vals,\n  918:         'comm_norms_generators': np.array(comm_norms),\n  919:         'delta_vals': delta_vals,\n  920:         'F_vals': F_vals,\n  921:         'tau_values': TAU_VALUES,\n  922:         'cubic_term_by_tau': np.array([(t, c2, c3, c4) for t, c2, c3, c4 in cubic_term_by_tau]),\n  923:     }\n  924: \n  925:     out_npz = os.path.join(SCRIPT_DIR, 's36_gl_cubic_check.npz')\n  926:     np.savez_compressed(out_npz, **save_dict)\n  927:     print(f\"\\nSaved: {out_npz}\")\n  928:     print(f\"File size: {os.path.getsize(out_npz) / 1024:.1f} KB\")\n  929: \n  930:     # ==================================================================\n  931:     # PLOT\n  932:     # ==================================================================\n  933:     fig, axes = plt.subplots(2, 2, figsize=(14, 10))"
+    },
+    {
+      "anchor_id": "prov_216",
+      "anchor_type": "data_provenance",
+      "name": "intersector_pmns",
+      "script_path": "session-36/s36_intersector_pmns.py",
+      "session": "s36",
+      "inputs": "",
+      "outputs": "session-36/s36_intersector_pmns.npz, session-36/s36_intersector_pmns.png",
+      "source_file": "computations/session-36/s36_intersector_pmns.py",
+      "source_context_30_lines": " 1133:             save_data[f'p18_{i}_sin2_12'] = np.array([r['sin2_12']])\n 1134: \n 1135:         if r['O_matrix'] is not None:\n 1136:             save_data[f'p18_{i}_O_matrix'] = r['O_matrix']\n 1137: \n 1138:         c = r['containment']\n 1139:         save_data[f'p18_{i}_containment'] = np.array(c)\n 1140: \n 1141:     npz_path = os.path.join(SCRIPT_DIR, \"s36_intersector_pmns.npz\")\n 1142:     np.savez_compressed(npz_path, **save_data)\n 1143:     print(f\"Data saved: {npz_path}\")\n 1144: \n 1145:     # =====================================================================\n 1146:     # PLOT\n 1147:     # =====================================================================\n 1148:     fig, axes = plt.subplots(2, 3, figsize=(18, 10))\n 1149: "
+    },
+    {
+      "anchor_id": "prov_217",
+      "anchor_type": "data_provenance",
+      "name": "kk_ncg_bridge",
+      "script_path": "session-36/s36_kk_ncg_bridge.py",
+      "session": "s36",
+      "inputs": "",
+      "outputs": "session-36/s36_kk_ncg_bridge.npz",
+      "source_file": "computations/session-36/s36_kk_ncg_bridge.py",
+      "source_context_30_lines": "  298: \n  299: print(f\"{'=' * 70}\")\n  300: print(\"STATUS: PROOF SKETCH — clean theorem proven numerically.\")\n  301: print(\"NEXT: Analytical proof from spectral action a_4 coefficient\")\n  302: print(\"      on almost-commutative manifold M4 x SU(3) x F.\")\n  303: print(f\"{'=' * 70}\")\n  304: \n  305: # Save\n  306: np.savez('computations/session-36/s36_kk_ncg_bridge.npz',\n  307:          tr_Y2=np.array([tr_Y2]),\n  308:          tr_T32=np.array([tr_T32]),\n  309:          r2_NCG=np.array([r2_NCG]),\n  310:          r2_KK=np.array([r2_KK]),\n  311:          R_coupling2=np.array([R_coupling2]),\n  312:          R_sin2=np.array([R_sin2]),\n  313:          sin2_NCG=np.array([sin2_NCG]),\n  314:          sin2_KK=np.array([sin2_KK]),"
+    },
+    {
+      "anchor_id": "prov_218",
+      "anchor_type": "data_provenance",
+      "name": "mmax_authoritative",
+      "script_path": "session-36/s36_mmax_authoritative.py",
+      "session": "s36",
+      "inputs": "",
+      "outputs": "session-36/s36_mmax_authoritative.npz",
+      "source_file": "computations/session-36/s36_mmax_authoritative.py",
+      "source_context_30_lines": "  796:         'disc_s35_5x5': disc_s35_5,\n  797:         'disc_s35_8x8': disc_s35_8,\n  798: \n  799:         # Gate\n  800:         'gate_criterion': 'B2-only 4x4 M_max',\n  801:         'gate_result': gate_result,\n  802:     }\n  803: \n  804:     out_npz = os.path.join(SCRIPT_DIR, 's36_mmax_authoritative.npz')\n  805:     np.savez_compressed(out_npz, **save_dict)\n  806:     print(f\"\\nSaved: {out_npz}\")\n  807:     print(f\"Size: {os.path.getsize(out_npz) / 1024:.1f} KB\")\n  808: \n  809:     # ================================================================\n  810:     # FINAL SUMMARY\n  811:     # ================================================================\n  812:     elapsed = time.time() - t0"
+    },
+    {
+      "anchor_id": "prov_219",
+      "anchor_type": "data_provenance",
+      "name": "multisector_ed",
+      "script_path": "session-36/s36_multisector_ed.py",
+      "session": "s36",
+      "inputs": "",
+      "outputs": "session-36/s36_multisector_ed.npz, session-36/s36_multisector_ed.png",
+      "source_file": "computations/session-36/s36_multisector_ed.py",
+      "source_context_30_lines": "  695:     save_dict[prefix + 'n_pair_dist'] = res['n_pair_dist']\n  696:     save_dict[prefix + 'gs_n_pairs'] = res['gs_n_pairs']\n  697:     save_dict[prefix + 'E_spectrum'] = res['E_spectrum']\n  698:     save_dict[prefix + 'pair_corr'] = res['pair_corr']\n  699:     save_dict[prefix + 'offdiag_corr_max'] = res['offdiag_corr_max']\n  700:     if res['paired']:\n  701:         save_dict[prefix + 'Delta_eff'] = res['Delta_eff']\n  702: \n  703: out_npz = os.path.join(SCRIPT_DIR, 's36_multisector_ed.npz')\n  704: np.savez_compressed(out_npz, **save_dict)\n  705: print(f\"\\nSaved: {out_npz}\")\n  706: print(f\"File size: {os.path.getsize(out_npz) / 1024:.1f} KB\")\n  707: \n  708: \n  709: # ======================================================================\n  710: #  PLOT\n  711: # ======================================================================"
+    },
+    {
+      "anchor_id": "prov_220",
+      "anchor_type": "data_provenance",
+      "name": "pmns_path_analysis",
+      "script_path": "session-36/s36_pmns_path_analysis.py",
+      "session": "s36",
+      "inputs": "computations/session-36/s36_intersector_pmns.npz, computations/session-35/s35_sector_10_spectrum.npz, computations/sessi...",
+      "outputs": "",
+      "source_file": "computations/session-36/s36_pmns_path_analysis.py",
+      "source_context_30_lines": "<name 'pmns_path_analysis' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: PMNS-PATH-36: Path Forward Analysis for Neutrino Mixing\n    3: Determines which PMNS routes survive after W2-A triple closure.\n    4: \"\"\"\n    5: import numpy as np\n    6: \n    7: def main():\n    8:     # Load W2-A results\n    9:     d = np.load('computations/session-36/s36_intersector_pmns.npz', allow_pickle=True)\n   10:     s10 = np.load('computations/session-35/s35_sector_10_spectrum.npz', allow_pickle=True)\n   11:     k7 = np.load('computations/session-35/s35_k7_thouless.npz', allow_pickle=True)\n   12: \n   13:     print(\"=\" * 70)\n   14:     print(\"PMNS-PATH-36: Path Forward Decision Analysis\")\n   15:     print(\"=\" * 70)\n   16:     print()\n   17: \n   18:     # ---- SECTION 1: Summary of closures ----\n   19:     print(\"1. CLOSED ROUTES (5 total)\")\n   20:     print(\"-\" * 50)\n   21:     closures = [\n   22:         (\"S35\", \"Singlet tridiagonal PMNS\", \"R < 5.9 ceiling (Schur on U(2) irreps)\"),\n   23:         (\"W2-A P1\", \"NCG inner fluctuation cross-sector\", \"Cross-sector norm = 0 exactly (tensor product)\"),\n   24:         (\"W2-A P2\", \"H_eff structural bound\", \"max R*sin2_23 = 16.9 < 17.8 (0/600K MC pass)\"),\n   25:         (\"W2-A P3\", \"Paper 18 Phi-tilde misalignment\", \"O_matrix = I at all tau (Schur on U(2))\"),\n   26:         (\"W2-A P3b\", \"Off-Jensen within U(2)-invariant\", \"Schur still applies: mixing = 0 for any (l1,l2,l3)\"),\n   27:     ]\n   28:     for sess, name, reason in closures:\n   29:         print(f\"  [{sess}] {name}\")\n   30:         print(f\"    Reason: {reason}\")"
+    }
+  ]
+}

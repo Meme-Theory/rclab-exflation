@@ -1,0 +1,2329 @@
+A noncommutative integral on spectrally truncated spectral triples, and a
+link with quantum ergodicity
+Eva-Maria Hekkelman and Edward A. McDonald
+August 4, 2025
+Abstract
+We propose a simple approximation of the noncommutative integral in noncommutative
+geometry for the Connes–Van Suijlekom paradigm of spectrally truncated spectral triples. A
+close connection between this approximation and the field of quantum ergodicity and work by
+Widom in particular immediately provides a Szeg˝ o limit formula for noncommutative geome-
+try. We then make a connection to the density of states. Finally, we propose a definition for the
+ergodicity of geodesic flow for compact spectral triples. This definition is known in quantum
+ergodicity as uniqueness of the vacuum state forC∗-dynamical systems, and for spectral triples
+where local Weyl laws hold this implies that the Dirac operator of the spectral triple is quan-
+tum ergodic. This brings to light a close connection between quantum ergodicity and Connes’
+integral formula.
+Noncommutative geometry (NCG) [Con94] aims to study geometry through spectral data, moti-
+vated in part by the result that a Riemannian manifold can be reconstructed by such means [Con13].
+The relevant spectral data can be studied in the form of a spectral triple. For applications of NCG
+in physics and numerical computations in NCG, it is important to know how well spectral triples
+can be approximated by a finite truncation, since this is all we can measure physically or compute
+numerically. Connes and Van Suijlekom introduced the concept of operator system spectral triples
+for this purpose [CS21], developments towards which were made in [DLM14; GS20; GS21; CS22;
+DLL22; Hek22; GS23; Rie23; LS24; Sui24a; Sui24b] amongst others.
+We will connect this paradigm with Connes’ noncommutative integral. On a Hilbert space H
+with Dirac operator D, the (normalised) positive functional
+a 7→ Trω(a⟨D⟩−d)
+Trω(⟨D⟩−d) , a ∈ B(H), (1)
+where ⟨x⟩ := ( 1 + |x|2)
+1
+2 , ω ∈ ℓ∗
+∞ is an extended limit, and Tr ω is the corresponding Dixmier
+trace (see Section 1), has been identified by Connes as the correct analogue in NCG of integration
+on compact Riemannian manifolds [Con94] and therefore has been dubbed the noncommutative
+integral. In this note we will show that given a finite-rank spectral projection Pλ := χ[−λ,λ](D)
+where χ[−λ,λ] is the indicator function of the interval [−λ, λ] ⊆ R, the functional
+PλaPλ 7→ Tr(PλaPλ)
+Tr(Pλ) , a ∈ B(H), (2)
+approximates the noncommutative integral (1) on spectrally truncated unital spectral triples (Propo-
+sition 2.1, Theorem 2.7). This is a result in the spirit of [Ste19], where finite-rank approximations of
+1
+arXiv:2412.00628v2  [math.OA]  1 Aug 2025
+
+===PAGE-BREAK===
+
+zeta residues are given. We however do not assume the existence of a full asymptotic expansion of
+the heat trace. Instead, we focus our efforts on the computation of the first term of this expansion,
+which is the noncommutative integral.
+The language involved is closely tied to the field of quantum ergodicity, the inception of which
+can largely be credited to Shnirelman, Zelditch and Colin de Verdière [Shn74; Col85; Zel87]. For
+reviews of this field, we refer to [Zel10; Zel17]. Quantum ergodicity is a property of an opera-
+tor which can mean various things. A common definition is that, given a compact Riemannian
+manifold M and a positive self-adjoint operator ∆ on L2(M) with compact resolvent, the opera-
+tor ∆ is said to be quantum ergodic if for every orthonormal basis {en}∞
+n=0 of L2(M) consisting
+of eigenfunctions of ∆ with non-decreasing corresponding eigenvalues, there exists a density one
+subsequence J ⊆ N such that for all zero-order classical pseudodifferential operators Op(σ) with
+principal symbol σ ∈ C∞(S∗M),
+lim
+J∋j→∞
+⟨ej, Op(σ)ej⟩L2(M) =
+Z
+S∗ M
+σ dν,
+where ν is the measure on the cotangent sphere S∗M induced by the Riemannian metric. In this
+context, a density one subsequence means that
+#J ∩ {0, . . . ,n}
+n + 1 → 1, n → ∞.
+Quantum ergodicity implies in particular that the eigenfunctions |ej|2 become uniformly dis-
+tributed over M as J ∋ j → ∞, in the sense that the measures |ej|2dνg converge to 1
+vol(M) dνg in
+the weak∗-topology.
+Although quantum ergodicity shares a philosophical link with NCG – emerging from a functional-
+analytic approach to ergodic geodesic flow on compact Riemannian manifolds – there has yet to
+be made an explicit connection between the two fields, despite their contemporary development.
+We will show in Section 6 that our results on the noncommutative integral on truncated spectral
+triples provide the means with which the gap can be bridged.
+We propose below a straightforward noncommutative generalisation of the property of er-
+godic geodesic flow on compact Riemannian manifolds for spectral triples, and explore what some
+results from the field of quantum ergodicity provide in this context. Our definition of ergodicity
+is known in the study of C∗-dynamical systems as uniqueness of the vacuum state, and hence a
+result by Zelditch [Zel96] can now be recognised as an NCG version of the classical result that er-
+godicity of the geodesic flow implies quantum ergodicity of the Laplace–Beltrami operator [Shn74;
+Col85; Zel87], see Theorem 6.11 below.
+Additionally, we will draw from a result of Widom [Wid79] on the asymptotic behaviour of
+the functional (2), which directly implies a Szeg˝ o limit formula for spectral triples that satisfy the
+Weyl law (Theorem 3.2). This provides that for all self-adjoint A ∈ B(H) which map dom |D| into
+itself and such that [D, A] is bounded,
+Trω(⟨D⟩−d) · ω ◦ M
+Tr( f (Pλn APλn ))
+Tr(Pλn )
+
+= Trω( f (A)⟨D⟩−d), f ∈ C(R), f (0) = 0.
+Here, M : ℓ∞ → ℓ∞ is a logarithmic averaging operator, and ω ∈ ℓ∗
+∞ is an extended limit. Details
+are provided in Section 3. Note that we use the short-hand notationω ◦ M(an) for ω ◦ M({an}∞
+n=1).
+2
+
+===PAGE-BREAK===
+
+We remark that this result provides the insight that Szeg˝ o limit theorems can be interpreted as
+versions of Connes’ integral formula.
+An outline of this paper is as follows. We start with some preliminaries in Section 1, and
+we then explore and make precise the relation between the functionals (1) and (2) in Section 2.
+Section 3 provides the mentioned Szeg˝ o limit theorem for NCG. Next, we discuss a way of in-
+terpreting the functional (2) when the noncommutative integral (1) is not defined, for example in
+θ-summable or Li1-summable spectral triples. Namely, we relate the functional (2) to a functional
+that is sometimes called the Fröhlich functional, which has been studied extensively in [GRU19]
+as a KMS state. Finally, in Section 6 we exhibit our study in quantum ergodicity and its relation to
+NCG through our results on the noncommutative integral.
+Acknowledgement: The authors thank Nigel Higson for helpful comments and suggestions,
+and we thank Magnus Goffeng for pointing out the condition[D, A] being bounded is sufficient for
+Lemma 3.1. We are furthermore indebted to the anonymous reviewers of this note, who provided
+significant insights and comments. The first named author would like to thank the Pennsylvania
+State University and Nigel Higson for their hospitality during a visit where part of this work
+was done, and is partially supported by the Australian Research Council Laureate Fellowship
+FL170100052. We also extend our thanks to Eric Leichtnam, Qiaochu Ma, and Raphaël Ponge for
+their assistance.
+1 Preliminaries
+A spectral triple is a construction that is modeled after the data needed to reconstruct compact
+Riemannian spin manifolds [Con94; Con13]. The origin of the definition can be traced to Baaj–
+Julg [BJ83]. An operator system spectral triple is a generalisation of this, introduced in [CS21].
+Definition 1.1. An operator system spectral triple(A, H, D) consists of a spaceA of bounded operators on
+a Hilbert space H such that its norm closure is ∗-invariant, D is a self-adjoint operator on H with compact
+resolvent, and for all T ∈ A we have that T(dom D) ⊆ dom D and [D, T] extends to a bounded operator.
+If A forms a ∗-algebra, (A, H, D) is simply called a spectral triple.
+Typical examples of operator system spectral triples are of the form
+(PAP, PH, PD),
+where (A, H, D) is a spectral triple and P = χI(D) is a spectral projection of D.
+It should be remarked that in this work, we will mainly concentrate on high energy (large
+eigenvalue) asymptotics corresponding to D, using spectral projections of the form
+Pλ := χ[−λ,λ](D) = χ[0,λ](|D|).
+As such, our results really only depend on the positive operator |D|. We will keep the operator D
+itself around to maintain notation consistent with the noncommutative geometry literature.
+Write K(H) ⊆ B(H) for the compact operators on H, and for a compact operator A write
+{λ(k, A)}∞
+k=0 for any sequence of eigenvalues of A, counting multiplicities, ordered in decreasing
+modulus. For integration formulas in noncommutative geometry, an essential role is played by
+the weak trace-class operators (sometimes dubbed ‘infinitesimals of order 1’)
+L1,∞ := {A ∈ K(H) : λ(k, |A|) = O(k−1), k → ∞},
+3
+
+===PAGE-BREAK===
+
+and the rich structure of traces on this two-sided ideal in B(H) [LSZ21; LMSZ23].
+Definition 1.2. A singular trace on a two-sided ideal J ⊆ B(H) is a unitarily invariant linear functional
+ϕ : J → C that vanishes on finite-rank operators.
+An extended limit ω is a state on ℓ∞, the space of bounded sequences, which vanishes on the set of
+sequences converging to zero. Typically we write ω(an) to mean ω({an}∞
+n=0). For any extended limit
+ω ∈ ℓ∗
+∞, the mapping Trω : L1,∞ → C defined by
+Trω(A) := ω
+ 1
+log(n + 2)
+n
+∑
+k=0
+λ(k, A)
+
+, A ∈ L 1,∞,
+is a singular trace on L1,∞, called a Dixmier trace (see e.g. [LSZ21, Theorem 6.1.2]).
+It is important to remark that not all singular traces on L1,∞ are Dixmier traces [LSZ21, Chap-
+ter 6]. As a warning to the reader, in the literature sometimes Dixmier traces are considered on the
+Dixmier–Macaev ideal M1,∞ := {A ∈ K(H) : ∑n
+k=0 λ(k, |A|) = O(log(n))}, which is sometimes
+also denoted by L1,∞, though we have L1,∞ ⊊ M1,∞.
+For spectral triples, the term ‘noncommutative integral’ is inspired by the following result, a
+consequence of Connes’ trace formula [Con88]. For details, see [LSZ21, Chapters 7, 8] and [LMSZ23,
+Chapters 2, 3], as well as [ZS23].
+Theorem 1.3 (Connes’ integration formula). Let (M, g) be a d-dimensional closed Riemannian manifold
+(d > 1) with volume form νg. For f ∈ C(M) and for every positive normalised trace ϕ on L1,∞(L2(M))
+we have
+ϕ(M f (1 − ∆g)− d
+2 ) = ϕ((1 − ∆g)− d
+2 )
+Z
+M
+f d νg = Vol(Sd−1)
+d(2π)d
+Z
+M
+f d νg.
+A similar result holds for Rd [LMSZ23, Theorem 3.1.1]. This motivates the convention that the
+functional
+a 7→ ϕ(a⟨D⟩−d), a ∈ A,
+is called the noncommutative integral for d-dimensional spectral triples (A, H, D) (recall the no-
+tation ⟨x⟩ = (1 + |x|2)
+1
+2 ). In NCG literature the most studied case is the one where ϕ is a Dixmier
+trace, and we too will focus on this. We refer to [LPS10; LS10; LS11; LSZ21; LMSZ23] for thorough
+studies of the noncommutative integral.
+Finally, we recall two important spectral triples which we will use as examples in Section 6. For
+more details on the noncommutative torus (on which there is much literature) we refer to [HLP19a;
+HLP19b] and [GVF01, Section 12.3], for details on almost commutative manifolds to [Sui25, Chap-
+ter 10].
+Definition 1.4. Let d ≥ 2 and let θ be a real d × d antisymmetric matrix. The noncommutative torus is
+the universal C∗-algebra C(Td
+θ ) generated by a family of unitary elements{un}n∈Zd subject to the relations
+unum = e
+i
+2 ⟨n,θm⟩un+m, n, m ∈ Zd.
+The functional
+τθ
+
+∑
+k∈Zd
+ckuk
+
+:= c0
+4
+
+===PAGE-BREAK===
+
+extends to a continuous faithful trace state on C (Td
+θ ). The smooth subspace C ∞(Td
+θ ) is the subalgebra of
+x ∈ C(Td
+θ ) for whichbx(k) = τθ(xu∗
+k ) is a rapidly decaying sequence on Zd. The Hilbert space in the GNS
+representation corresponding to τθ is denoted L 2(Td
+θ ), and {un}n∈Zd is an orthonormal basis for L 2(Td
+θ ).
+The self-adjoint densely defined operators Dj, j = 1, . . . ,d on L2(Td
+θ ) are defined on the basis by
+Djuk := kjuk, k = (k1, . . . ,kd) ∈ Zd.
+The operator D = ∑d
+j=1 Dj ⊗ γj on L 2(Td
+θ ) ⊗ CNd, where γj are standard Clifford matrices on CNd with
+Nd = 2⌊ d
+2 ⌋, gives a spectral triple
+(C∞(Td
+θ ), L2(Td
+θ ) ⊗ CNd, D),
+where we represent C ∞(Td
+θ ) as operators on L 2(Td
+θ ) ⊗ CNd by acting on the first component [GVF01,
+Section 12.3]. We write ∆ := − ∑d
+j=1 D2
+j as an operator on L2(Td
+θ ), so that |D| =
+√
+−∆ ⊗ 1CNd .
+Definition 1.5. A spectral triple (A, H, D) is called even if equipped with a Z2-grading γ on H such
+that D γ = −γD and a γ = γa for all a ∈ A . The canonical spectral triple (C∞(M), L2(S), DM) of an
+even-dimensional Riemannian spin manifold has a natural grading γM making it an even spectral triple.
+Given such an even-dimensional manifold and a finite spectral triple (AF, HF, DF), meaning that HF and
+AF are finite-dimensional, we define the product spectral triple
+(C∞(M) ⊗ AF, L2(S) ⊗ HF, DM ⊗ 1 + γM ⊗ DF).
+This spectral triple is called an almost-commutative manifold.
+2 Integration on truncated spectral triples
+Let us fix a closed self-adjoint operator D on a separable Hilbert space H such that ⟨D⟩−d ∈
+L1,∞, where d > 0 and ⟨x⟩ := ( 1 + |x|2)
+1
+2 . We fix an extended limit ω ∈ ℓ∗
+∞ and assume
+that Trω(⟨D⟩−d) > 0. We write Pλ := χ[−λ,λ](D). This situation is modeled after (compact) d-
+dimensional spectral triples (A, H, D).
+We first provide the most straight-forward approach to the noncommutative integral on trun-
+cated triples, using standard techniques that are employed in quantum ergodicity [Col85]. We
+write
+f (t) ∼ Ct−α
+to mean
+lim
+t→0
+tα f (t) = C.
+Proposition 2.1. Let a ∈ B(H). If there exist constants C, C(a) ∈ R with
+Tr(e−tD2
+) ∼ Ct− d
+2 , Tr (ae−tD2
+) ∼ C(a)t− d
+2 ,
+then
+Trω(a⟨D⟩−d)
+Trω(⟨D⟩−d) = lim
+λ→∞
+Tr(PλaPλ)
+Tr(Pλ) .
+5
+
+===PAGE-BREAK===
+
+Proof. By [LSZ21, Corollary 8.1.3] we have that
+C = Γ( d
+2 + 1) Trω(⟨D⟩−d), C(a) = Γ( d
+2 + 1) Trω(a⟨D⟩−d).
+Recall that we assume Trω(⟨D⟩−d) > 0. An application of the Hardy–Littlewood Tauberian theo-
+rem [Fel71, Theorem XII.5.2] to the function Tr(e−tD2
+) shows that
+Tr(Pλ) ∼ Trω(⟨D⟩−d)λd, λ → ∞.
+Applying the theorem again to the function Tr(ae−tD2
+) then gives that limλ→∞
+Tr(PλaPλ)
+Tr(Pλ) exists and
+is equal to Trω(a⟨D⟩−d)
+Trω(⟨D⟩−d) .
+Remark 2.2. The Hardy-Littlewood Tauberian theorem implies that the condition Tr(e−tD2
+) ∼ Ct− d
+2 as
+t → 0 is equivalent to λ(k, D2) ∼ eCk
+2
+d as k → ∞ [Fel71, Theorem XII.5.2].
+Definition 2.3. We say that D 2 (as fixed at the start of this section) satisfies a Weyl law if Tr(e−tD2
+) ∼
+Ct− d
+2 , and it satisfies a local Weyl law for an operator a ∈ B(H) if Tr(ae−tD2
+) ∼ C(a)t− d
+2 .
+See [MSZ22] for an investigation of the validity of the (local) Weyl law for spectral triples,
+and [Pon23] for an extensive study of Weyl’s law in relation to Connes’ integral formula. The
+latter, work by Ponge, answers some questions regarding Weyl laws and the noncommutative
+integral related to measurability of operators.
+Although the local Weyl laws hold for Riemannian manifolds and a wide class of spectral
+triples [GS95; Vas07; EZ15; MSZ22], there are spectral triples in which such behaviour does not
+hold, see for example [HMN24, Example 5.7]. In the remainder of this section we show what can
+be deduced without this condition. We now fix an orthonormal basis {en}∞
+n=0 of eigenvectors of
+|D|, ordered such that the corresponding eigenvalues {λn}∞
+n=0 are non-decreasing. The following
+lemma is closely related to [LS11, Theorem 3.6].
+Lemma 2.4. Let A ∈ B(H). Then
+Trω(A⟨D⟩−d) = ω
+ 1
+log(n + 2)
+n
+∑
+k=0
+⟨λk⟩−d⟨ek, Aek⟩
+
+.
+If D2 satisfies Weyl’s law, i.e.λk ∼ Ck
+1
+d , this simplifies to
+Trω(A⟨D⟩−d)
+Trω(⟨D⟩−d) = ω
+ 1
+log(n + 2)
+n
+∑
+k=0
+⟨ek, Aek⟩
+k + 1
+
+.
+Proof. The first part is [LSZ21, Corollary 7.1.4(c)], the second claim is [LSZ21, Theorem 7.1.5(a)].
+What appears in the lemma above is the logarithmic mean M : ℓ∞ → ℓ∞, defined by
+M : x 7→
+ 1
+log(n + 2)
+n
+∑
+k=0
+xk
+k + 1
+∞
+n=0
+.
+This can be compared with the Cesàro mean
+C : x 7→
+ 1
+n + 1
+n
+∑
+k=0
+xk
+∞
+n=0
+.
+6
+
+===PAGE-BREAK===
+
+Lemma 2.5. For any sequence x ∈ ℓ∞, we have
+(M(x))n = ( M ◦ C(x))n + o(1), n → ∞.
+Proof. For x ∈ ℓ∞ and k ≥ 0 we have
+xk
+k + 1 =
+ 1
+k + 1
+k
+∑
+l=0
+xl
+
+− k
+k + 1
+1
+k
+k−1
+∑
+l=0
+xl
+
+= (C(x))k − (C(x))k−1 + 1
+k + 1 (C(x))k−1.
+Hence, as n → ∞
+(M(x))n = 1
+log(n + 2)
+n
+∑
+k=0
+xk
+k + 1
+= 1
+log(n + 2)
+
+(C(x))n +
+n
+∑
+k=1
+1
+k + 1 (C(x))k−1
+
+= ( M ◦ T ◦ C(x))n + o(1),
+where T : (x0, x1, x2, . . .) 7→ (0, x0, x1, . . .) is the right-shift operator onℓ∞. Finally, for any bounded
+sequence a ∈ ℓ∞, we have that
+(M ◦ T(a))n − (M(a))n = o(1), n → ∞,
+which can be found in [LSZ21, Lemma 6.2.12].
+Since both M and C are regular transformations in Hardy’s terminology [Har49, Chapter III],
+meaning that M(x)n → c whenever xn → c, it is a consequence of Lemma 2.5 that for x ∈ ℓ∞, if
+C(x)n → c then M(x)n → c as n → ∞. We introduce one more crucial lemma. Namely, writing
+Qn for the projection onto {e0, . . . ,en}, we want to switch freely between
+Tr(PλaPλ)
+Tr(Pλ) , Tr(QnaQn)
+Tr(Qn) .
+The first can be written as
+Tr(QN(λ)aQN(λ))
+Tr(QN(λ)) , where N(λ) is the greatest k ≥ 0 such that λk ≤ λ, and
+thus can be interpreted as a subsequence of the second. The following lemma can therefore be
+applied, which appeared as [Aza+22, Lemma 4.8] in a slightly weaker form and in a different
+context.
+Lemma 2.6. Let ϕ : N → R>0 be an increasing function such that ϕ(n) → ∞ as n → ∞, let {ak}k∈N ⊆
+R be a sequence such that
+ 1
+ϕ(n) ∑n
+k=0 |ak|
+	∞
+n=0 is bounded, and let {k0, k1, . . .} be an infinite, increasing
+sequence of positive integers such that
+lim
+n→∞
+ϕ(kn+1)
+ϕ(kn) = 1,
+and
+1
+ϕ(kn)
+kn
+∑
+k=kn−1+1
+|ak| = o(1), n → ∞.
+7
+
+===PAGE-BREAK===
+
+Labeling kin := min{ki : ki ≥ n}, we have that
+1
+ϕ(n)
+n
+∑
+k=0
+ak = 1
+ϕ(kin )
+kin
+∑
+k=0
+ak + o(1), n → ∞.
+Proof. Without loss of generality, we can assume that{ak}k∈N is a positive sequence. We have
+1
+ϕ(n)
+n
+∑
+k=1
+ak − 1
+ϕ(kin )
+kin
+∑
+k=1
+ak ≤
+ ϕ(kin )
+ϕ(kin−1) − 1
+ 1
+ϕ(kin )
+kin
+∑
+k=1
+ak = o(1);
+1
+ϕ(kin )
+kin
+∑
+k=1
+ak − 1
+ϕ(n)
+n
+∑
+k=1
+ak ≤ 1
+ϕ(kin )
+kin
+∑
+k=kin −1+1
+ak = o(1).
+We can now prove the main result of this section.
+Theorem 2.7. Let A ∈ B(H). If D 2 satisfies Weyl’s law (Definition 2.3), then
+Trω(A⟨D⟩−d)
+Trω(⟨D⟩−d) = ( ω ◦ M)
+ 
+⟨en, Aen⟩
+
+= ( ω ◦ M)
+Tr(QnAQn)
+Tr(Qn)
+
+= ( ω ◦ M)
+Tr(Pλn APλn )
+Tr(Pλn )
+
+. (3)
+If furthermore Q is an operator with T
+n≥0 dom(Dn) ⊆ dom Q such that for some s ≥ − d, Q⟨D⟩−s
+extends to a bounded operator, we have
+Trω(Q) = ω
+ Tr(PλnQPλn )
+log(Tr(Pλn ))
+
+, s = −d; (4)
+Trω(Q⟨D⟩−s−d)
+ 
+Trω(⟨D⟩−d)
+ s
+d +1 =
+ s
+d + 1
+
+ω ◦ M
+Tr(PλnQPλn )
+Tr(Pλn )
+s
+d +1
+
+, s > −d. (5)
+Proof. The first equality in equation (3) appeared in Lemma 2.4, the second equality is a conse-
+quence of Lemma 2.5 and the trivial identity
+Tr(QnAQn)
+Tr(Qn) = 1
+n + 1
+n
+∑
+k=0
+⟨ek, Aek⟩.
+The last equality follows from Lemma 2.6 when takingϕ(n) = n + 1, since the Weyl law gives that
+N(λn)
+N(λn+1) → 1. The assumption
+1
+N(λn)
+N(λn)
+∑
+k=N(λn−1)+1
+⟨ek, Aek⟩ = o(1), n → ∞
+in Lemma 2.6 is satisfied, since
+1
+N(λn)
+N(λn)
+∑
+k=N(λn−1)+1
+|⟨ek, Aek⟩| ≤ ∥ A∥∞
+N(λn) − N(λn−1)
+N(λn) = o(1), n → ∞.
+8
+
+===PAGE-BREAK===
+
+Now take an operatorQ withT
+n≥0 dom(Dn) ⊆ dom Q such that Q⟨D⟩−s extends to a bounded
+operator. For s = −d, the given formula for Trω(Q), equation (4), is a combination of Lemma 2.4
+and Lemma 2.6. For equation (5) we take s ̸= −d. First, due to Weyl’s law
+⟨λk⟩−s−d =
+ 
+Trω(⟨D⟩−d)
+ s
+d +1
+(k + 1)− s
+d −1 + o
+ 
+(k + 1)− s
+d −1
+, k → ∞
+and hence, since (k + 1)− s
+d ⟨ek, Qek⟩ is bounded, we have that
+⟨λk⟩−s−d⟨ek, Qek⟩ =
+ 
+Trω(⟨D⟩−d)
+ s
+d +1
+(k + 1)− s
+d −1⟨ek, Qek⟩ + o
+ 
+(k + 1)−1
+, k → ∞.
+Now applying Lemma 2.4 and then Lemma 2.5,
+Trω(Q⟨D⟩−s−d) = ω
+ 1
+log(n + 2) ∑
+k≤n
+⟨λk⟩−s−d⟨ek, Qek⟩
+
+=
+ 
+Trω(⟨D⟩−d)
+ s
+d +1
+ω ◦ M
+ 
+(n + 1)− s
+d ⟨en, Qen⟩
+
+=
+ 
+Trω(⟨D⟩−d)
+ s
+d +1
+ω ◦ M
+ 1
+n + 1 ∑
+k≤n
+(k + 1)− s
+d ⟨ek, Qek⟩
+
+.
+(6)
+Using Abel’s summation formula, asn → ∞
+1
+n + 1 ∑
+k≤n
+(k + 1)− s
+d ⟨ek, Qek⟩ = (n + 1)− s
+d −1
+∑
+k≤n
+⟨ek, Qek⟩
+− 1
+n + 1 ∑
+k≤n−1
+ 
+(k + 2)− s
+d − (k + 1)− s
+d
+
+∑
+j≤k
+⟨ej, Qej⟩.
+By Taylor’s formula, we have
+(k + 2)− s
+d − (k + 1)− s
+d + s
+d (k + 1)− s
+d −1 = s
+d
+  s
+d + 1
+Z 1
+0
+(1 − θ)(k + 1 + θ)− s
+d −2 dθ.
+Therefore
+1
+n + 1 ∑
+k≤n
+(k + 1)− s
+d ⟨ek, Qek⟩ = (n + 1)− s
+d −1
+∑
+k≤n
+⟨ek, Qek⟩ + s
+d C
+ 
+(k + 1)− s
+d −1
+∑
+j≤k
+⟨ej, Qej⟩
+	∞
+k=0
+
+n
+− s
+d
+  s
+d + 1
+Z 1
+0
+(1 − θ)C
+ 
+(k + 1 + θ)− s
+d −2
+∑
+j≤k
+⟨ej, Qej⟩
+	∞
+k=0
+
+n dθ,
+where C : ℓ∞ → ℓ∞ is the Cesàro operator. Since (j + 1)− s
+d ⟨ej, Qej⟩ is bounded and s > −d we
+have (k + 1 + θ)− s
+d −2
+∑
+j≤k
+⟨ej, Qej⟩
+ = O((k + 1)−1), k → ∞.
+Thus
+1
+n + 1 ∑
+k≤n
+(k + 1)− s
+d ⟨ek, Qek⟩ = (n + 1)− s
+d −1
+∑
+k≤n
+⟨ek, Qek⟩
++ s
+d C
+ 
+(k + 1)− s
+d −1
+∑
+j≤k
+⟨ej, Qej⟩
+	∞
+k=0
+
+n + O
+log(n + 2)
+n + 1
+
+.
+9
+
+===PAGE-BREAK===
+
+Combining this with equation (6) and using Lemma 2.5 again, we have
+Trω(Q⟨D⟩−s−d) =
+ 
+Trω(⟨D⟩−d)
+ s
+d +1 
+1 + s
+d
+
+ω ◦ M
+ 1
+(n + 1)
+s
+d +1 ∑
+k≤n
+⟨ek, Qek⟩
+
+.
+To apply Lemma 2.6, taking ϕ(n) = ( n + 1)
+s
+d +1 and kn = N(λn), we need to check that
+1
+N(λn)
+s
+d +1
+N(λn)
+∑
+k=N(λn−1)+1
+|⟨ek, Qek⟩| ≲ 1
+N(λn)
+s
+d +1
+N(λn)
+∑
+k=N(λn−1)+1
+k
+s
+d
+≲ N(λn)
+s
+d +1 − N(λn−1)
+s
+d +1
+N(λn)
+s
+d +1
+= o(1), n → ∞.
+Hence Lemma 2.6 applies, and we conclude that
+Trω(Q⟨D⟩−s−d) =
+  s
+d + 1
+ 
+Trω(⟨D⟩−d)
+ s
+d +1
+ω ◦ M
+Tr(PλnQPλn )
+Tr(Pλn )
+s
+d +1
+
+.
+As an obvious consequence of Theorem 2.7, if for A ∈ B(H)
+Tr(PλAPλ)
+Tr(Pλ)
+converges it follows that, provided D2 satisfies Weyl’s law, the limit must necessarily be the non-
+commutative integral of A. Furthermore, if the noncommutative integral is independent of ω,
+meaning that A⟨D⟩−d is Dixmier measurable (see e.g. [LSZ21; LMSZ23; Pon23]) one can replace
+ω ◦ M by lim ◦M on the right hand sides of Theorem 2.7. Finally, with a Weyl law, for self-adjoint
+A ∈ B(H) we have
+lim inf
+k→∞
+⟨ek, Aek⟩ ≤ lim inf
+λ→∞
+Tr(PλAPλ)
+Tr(Pλ) ≤ Trω(A⟨D⟩−d)
+Trω(⟨D⟩−d) ≤ lim sup
+λ→∞
+Tr(PλAPλ)
+Tr(Pλ) ≤ lim sup
+k→∞
+⟨ek, Aek⟩.
+All results achieved in this section are different flavours of the observation that the noncommu-
+tative integral is the limit point — in a weak, averaging notion — of the sequence {⟨ek, Aek⟩}∞
+k=0.
+For the circle T this is not surprising; given f = ∑∞
+k=−∞ akek ∈ L1(T) in Fourier basis, we have for
+every k ∈ Z
+⟨ek, M f ek⟩ = a0 =
+Z
+T
+f (t) dt.
+More generally, Proposition 2.1 combined with Connes’ integral formula (Theorem 1.3) and Lemma 2.6
+shows that for any d-dimensional closed Riemannian manifold M with volume form νg we have
+that the Cesàro mean of the sequence
+⟨ek, M f ek⟩, f ∈ C(M)
+10
+
+===PAGE-BREAK===
+
+converges to
+R
+M f d νg. This fact is precisely what started investigations into quantum ergodic-
+ity. Recall that this covers the study of to what extent the matrix elements ⟨ek, M f ek⟩ themselves
+converge to an integral of f . More details will be provided in Section 6.
+Previously, in [LSZ21, Section 7.5][LS11, Example 3.10] it had already been observed that for
+spectral triples (A, H, D) where D2 satisfies Weyl’s law that if the noncommutative integral
+Trω(a⟨D⟩−d)
+Trω(⟨D⟩−d) , a ∈ A,
+is independent of ω, then
+1
+log(n + 2)
+n
+∑
+k=0
+⟨ek, aek⟩
+k + 1 , a ∈ A,
+converges as n → ∞, which was interpreted as being related to quantum ergodicity.
+In quantum ergodicity and related fields, there is a vast literature on the properties and asymp-
+totics of the operators PλaPλ. Through the results established in this section, the link with Connes’
+integral formula unlocks this literature for study from the perspective of noncommutative geom-
+etry. One result from this cross-pollination is a Szeg˝ o limit theorem for truncated spectral triples.
+3 Szeg˝ o limit theorem
+Szeg˝ o proved various limit theorems concerning determinants of Toeplitz matrices, inspired by
+a conjecture by Pólya and after work on these determinants by Toeplitz, Caratheodory and Fejér,
+see [Sze15] and references therein. Much later, Widom provided a generalisation of these results
+with a simplified proof [Wid79], see also [LS96] for a version for elliptic selfadjoint (pseudo)differential
+operators on manifolds without boundary. We now provide a translation of the results of Widom
+into noncommutative geometry. We thank Magnus Goffeng for pointing out that instead of requir-
+ing that [|D|, A] is bounded, it suffices to assume in the following lemma that [D, A] is bounded.
+Lemma 3.1 ([Wid79]). Let D2 satisfy Weyl’s law (Definition 2.3), and let A∈ B(H) and B ∈ B(H) map
+dom |D| into itself, and be such that [D, A] and [D, B] are bounded. Then
+lim
+λ→∞
+Tr(PλA(1 − Pλ)BPλ)
+Tr(Pλ) = 0.
+Proof. First, [D, A] being bounded implies that[⟨D⟩
+1
+2 , A] is bounded due to the combination of [HMN24,
+Theorem 6] and [HMN24, Proposition 5.1] (alternatively, see [GVF01, Lemma 10.13]). Hence, re-
+placing D by ⟨D⟩
+1
+2 , we can assume that D is positive and that [|D|, A] and [|D|, B] are bounded.
+Then, by the Cauchy-Schwarz inequality, an equivalent formulation of the statement is that for
+every B such that [|D|, B] is bounded, we have
+lim
+λ→∞
+∥PλB(1 − Pλ)∥2
+HS
+Tr(Pλ) = 0,
+where ∥ · ∥HS is the Hilbert–Schmidt norm. The following argument is essentially due to Widom [Wid79,
+p. 145], see also [Gui79, Lemma 3.4].
+11
+
+===PAGE-BREAK===
+
+If λn, λm are distinct eigenvalues of|D| with corresponding spectral projectionsEλi = χ{λi}(|D|),
+then
+Eλn BEλm = 1
+λn − λm
+Eλn [|D|, B]Eλm.
+For N > 0, and writing {ek}k∈N for an orthonormal basis of H consisting of eigenvectors of |D|
+with corresponding eigenvalues {λk}k∈N, we therefore have
+∥PλB(1 − Pλ+N)∥2
+HS = ∑
+λn>λ+N
+λm≤λ
+|⟨em, PλB(1 − Pλ+N)en⟩|2
+= ∑
+λn>λ+N
+λm≤λ
+1
+(λn − λm)2 |⟨em, Pλ[|D|, B](1 − Pλ+N)en⟩|2
+≤ N−2∥Pλ[|D|, B](1 − Pλ+N)∥2
+HS.
+By the triangle inequality, we have
+∥PλB(1 − Pλ)∥2
+HS ≤ 2∥PλB(Pλ+N − Pλ)∥2
+HS + 2∥PλB(1 − Pλ+N)∥2
+HS
+≤ 2∥B∥2
+∞ Tr(Pλ+N − Pλ) + 2N−2 Tr(Pλ)∥[|D|, B]∥2
+∞.
+Weyl’s law implies that
+Tr(Pλ+N − Pλ) = o(Tr(Pλ)), λ → ∞,
+and hence
+lim sup
+λ→∞
+∥PλB(1 − Pλ)∥2
+HS
+Tr(Pλ) ≤ 2N−2∥[|D|, B]∥2
+∞.
+Since N is arbitrary, this completes the proof.
+Following Widom [Wid79] further, Lemma 3.1 can be combined with the characterisation of
+Connes’ integral theorem in Theorem 2.7 into a Szeg˝ o limit theorem.
+Theorem 3.2. Let D2 satisfy Weyl’s law (Definition 2.3), and let A ∈ B(H) be self-adjoint and such that
+it maps dom |D| into itself and [D, A] is bounded. Then
+(ω ◦ M)
+Tr( f (Pλn APλn ))
+Tr(Pλn )
+
+= Trω( f (A)⟨D⟩−d)
+Trω(⟨D⟩−d) , f ∈ C(R), f (0) = 0. (7)
+If for every positive integer k there is some constant Ck ∈ R with
+Tr(Ake−tD2
+) ∼ Ckt− d
+2 ,
+then for every f ∈ C(R) with f (0) = 0 we have
+lim
+λ→∞
+Tr( f (PλAPλ))
+Tr(Pλ) = Trω( f (A)⟨D⟩−d)
+Trω(⟨D⟩−d) . (8)
+12
+
+===PAGE-BREAK===
+
+Proof. To prove equation (7), we sketch the proof of the stronger identity
+(ω ◦ M)
+Tr(Pλn f (Pλn APλn )Pλn )
+Tr(Pλn )
+
+= Trω( f (A)⟨D⟩−d)
+Trω(⟨D⟩−d) , f ∈ C(R), (9)
+where it is no longer necessary that f (0) = 0. Lemma 3.1 gives that
+lim
+λ→∞
+Tr
+ 
+PλAkPλ − (PλAPλ)k
+Tr(Pλ) = 0, k ≥ 1, (10)
+which implies equation (9) for polynomial f through Theorem 2.7. An application of the Stone–
+Weierstrass theorem provides an extension to continuous functions. Details can be found in [Wid79,
+p. 144].
+Equation (8) for polynomial functions f is a combination of (10) and Proposition 2.1. If f is
+a continuous function on R with f (0) = 0, let ε > 0 and choose a polynomial function p with
+p(0) = 0 such that
+∥ f − p∥L∞([−∥A∥∞,∥A∥∞]) < ε.
+Then Tr(( f − p)(PλAPλ))
+Tr(Pλ)
+ < ε
+and
+| Trω(( f − p)(A)⟨D⟩−d)| ≤ ε∥⟨D⟩−d∥1,∞.
+Hence
+lim sup
+λ→∞
+ Trω(⟨D⟩−d)Tr( f (PλAPλ))
+Tr(Pλ) − Trω( f (A)⟨D⟩−d)
+ ≤ 2ε∥⟨D⟩−d∥1,∞.
+Since ε is arbitrary, this implies equation (8).
+We emphasise that Theorem 3.2 shows that the classical Szeg˝ o theorems for determinants of
+Toeplitz matrices and Widom’s generalisations thereof can be interpreted as properties of the non-
+commutative integral on spectral triples and their spectral truncations.
+4 Fröhlich functional
+So far, we have considered situations modeled afterd-dimensional spectral triples, where⟨D⟩−d ∈
+L1,∞. There are many examples of spectral triples that do not satisfy this condition, however.
+Instead, one could consider the property of θ-summability, which says that Tr(e−tD2
+) < ∞ for all
+t > 0, or Li1-summability which requires Tr(e−t|D|) < ∞ for t large enough.
+For this section, we therefore assume that D is a self-adjoint operator with compact resolvent,
+but we do not assume Weyl laws. Assuming Li1-summability, the functional
+a 7→ lim
+t→β
+Tr(ae−t|D|)
+Tr(e−t|D|) , a ∈ B(H),
+which is sometimes called the Fröhlich functional after [FGR98; CFF93], has been studied exten-
+sively in the literature [GM18; GRU19]. We highlight the relation between this functional and the
+one that has been the object of study in this note.
+13
+
+===PAGE-BREAK===
+
+Proposition 4.1. Assume there exists β ≥ 0 such that Tr(e−t|D|) < ∞ for t > β and limt↘β Tr(e−t|D|) =
+∞. Then, for any extended limit ω ∈ ℓ∗
+∞ there exists an extended limit ˆωD,β ∈ ℓ∗
+∞ depending on D and β
+such that
+ω
+Tr(ae−(β+ 1
+n )|D|)
+Tr(e−(β+ 1
+n )|D|)
+
+= ˆωD,β
+Tr(Pλn aPλn )
+Tr(Pλn )
+
+, a ∈ B(H). (11)
+Furthermore,
+lim
+λ→∞
+Tr(PλaPλ)
+Tr(Pλ) = lim
+t→β
+Tr(ae−t|D|)
+Tr(e−t|D|) , a ∈ B(H), (12)
+in the sense that if the LHS limit exists, then the RHS limit exists and the equality holds.
+Proof. Write {rk}∞
+k=0 for the eigenvalues of |D| counted without multiplicity so that r0 < r1 < · · · .
+Observe the identity rk = λN(rk) where N(λ) := #{k : λk ≤ λ} is the spectral counting function of
+|D| and {λn}∞
+n=0 are the eigenvalues of |D| counted with multiplicity. Then,
+Tr(ae−(β+ 1
+n )|D|)
+Tr(e−(β+ 1
+n )|D|)
+= 1
+Tr(e−(β+ 1
+n )|D|)
+∞
+∑
+k=0
+ 
+∑
+λj=rk
+⟨ej, aej⟩
+
+e−(β+ 1
+n )rk
+= 1
+Tr(e−(β+ 1
+n )|D|)
+∞
+∑
+k=0
+
+Tr(Prk )Tr(Prk aPrk )
+Tr(Prk ) − Tr(Prk−1)Tr(Prk−1aPrk−1)
+Tr(Prk−1)
+
+e−(β+ 1
+n )rk.
+Hence if we define ˆωD,β ∈ (ℓ∞)∗ by
+ˆωD,β(b) := ω
+ 1
+Tr(e−(β+ 1
+n )|D|)
+∞
+∑
+k=0
+
+Tr(Prk )bN(rk) − Tr(Prk−1)bN(rk−1)
+
+e−(β+ 1
+n )rk
+
+, b ∈ ℓ∞,
+we have by construction that
+ω
+Tr(ae−(β+ 1
+n )|D|)
+Tr(e−(β+ 1
+n )|D|)
+
+= ˆωD,β
+Tr(Pλn aPλn )
+Tr(Pλn )
+
+, a ∈ B(H),
+which is equation (11). Crucially, ˆωD,β is an extended limit if and only if lim t↘β Tr(e−t|D|) = ∞,
+see [Har49, Theorem III.2].
+Equation (12) is proved through the continuous version of the cited theorem, namely [Har49,
+Theorem III.5]. If the limit
+lim
+λ→∞
+Tr(PλaPλ)
+Tr(Pλ)
+exists, then all extended limits on the sequence Tr(Pλn aPλn )
+Tr(Pλn ) coincide, and so we conclude
+lim
+λ→∞
+Tr(PλaPλ)
+Tr(Pλ) = lim
+t→β
+Tr(ae−t|D|)
+Tr(e−t|D|) , a ∈ B(H).
+Writing PD := χ[0,∞) and applying the above results to PDD instead of D, we have that
+ω
+Tr(PDae−(β+ 1
+n )D)
+Tr(PDe−(β+ 1
+n )D)
+
+= ˆωD,β
+Tr(χ[0,λn](D)aχ[0,λn](D))
+Tr(χ[0,λn](D))
+
+, a ∈ B(H),
+which is a functional that is extensively studied in [GRU19]. In particular, it defines a KMS state
+of inverse temperature β on the Toeplitz algebra generated by a Li 1-summable spectral triple
+(A, H, D) satisfying some extra conditions.
+14
+
+===PAGE-BREAK===
+
+5 Density of States
+Another lens through which to interpret the discussed results so far is that of the density of states
+(DOS). In a sense, this perspective is the ‘Fourier transform’ of the picture in the previous sections.
+So far, we have thought of D as a Dirac-type operator, and A ∈ B(H) as a multiplication operator.
+We will now flip this around, takingD a multiplication operator onL2(X) for some metric measure
+space X, and A = f (H) for a potentially unbounded operator H on L2(X).
+Originating in solid state physics, the DOS describes for a quantum system, roughly speaking,
+how many quantum states are admitted at each energy level per unit volume. Usually, this frame-
+work is applied to study electrons in a solid material. For reviews of the DOS in mathematical
+physics, we refer to e.g. [PF92; Ves08; AW15].
+Following Simon [Sim82, Section C], we define the DOS as follows. Given a (possibly un-
+bounded) self-adjoint operator H on the Hilbert space L2(X) where X is some metric space with a
+Borel measure written as | · |, we consider the limits
+lim
+R→∞
+1
+|B(x0, R)|Tr( f (H)MχB(x0,R) ), f ∈ Cc(R),
+where B(x0, R) denotes the closed ball with center x0 ∈ X and radius R. When these limits exist
+(this includes assuming that f (H)MχB(x0,R) is trace-class), the limit is a positive continuous lin-
+ear functional on Cc(R) and hence, via the Riesz–Markov–Kakutani theorem, we obtain a Borel
+measure νH on R [Sim82, Proposition C.7.2] such that
+lim
+R→∞
+1
+|B(x0, R)|Tr( f (H)MχB(x0,R) ) =
+Z
+R
+f d νH, f ∈ Cc(R). (13)
+The measure νH, if it exists, is what we call the density of states of the operator H.
+The main result of this section concerns a Dixmier trace formula for the density of states (DOS)
+on discrete metric spaces, which gives a variant of the main result of [Aza+22]. This is an equality
+Trω( f (H)Mw) = C
+Z
+R
+f d νH, f ∈ Cc(R),
+where w : X → C is a weight such that Mw ∈ L 1,∞ and ω ∈ ℓ∗
+∞ is an extended limit. In [AMSZ20],
+this formula was proven for X = Rn and H = −∆ + MV a Schrödinger operator. As explained
+there, on Rn with H = −∆, this formula is nothing but the Fourier transform of Connes’ inte-
+gration formula applied to a radial function (Theorem 1.3). In following works [Aza+22; HM24],
+the formula was extended to certain discrete spaces and certain manifolds of bounded geometry,
+respectively.
+Let (X, dX) be an infinite metric space and let x0 ∈ X. We assume that all metric balls contain
+finitely many points. Let w : X → C be defined by
+w(x) = 1
+|B(x0, dX(x, x0))|
+where in this case | · | is the cardinality. Note that the spectral projections Pλ = χ[0,λ](M−1
+w ) of this
+operator are multiplication operators MχB(x0,Rλ ) for certain corresponding Rλ ∈ R>0. Let {rk}∞
+k=0 be
+an increasing enumeration of the set {d(x, x0) : x ∈ X}. That is, {rk}∞
+k=0 lists the set of distances
+of points from x0 without taking into account multiplicities.
+15
+
+===PAGE-BREAK===
+
+Proposition 5.1. Let X and w be as above. For the spectral counting function N(λ) = Tr(χ[−λ,λ](M−1
+w )),
+we have
+N(λ) ∼ λ, λ → ∞ ⇐ ⇒ |B(x0, rk+1)|
+|B(x0, rk)| → 1, k → ∞.
+Proof. =⇒: For λ ≥ 1, we have
+N(λ) = #{x ∈ X : |B(x0, dX(x, x0))| ≤ λ}
+= |B(x0, riλ )|,
+where riλ is the largest element in {rk}k∈N such that |B(x0, rk)| ≤ λ.
+In particular, N(|B(x0, rk)|) = |B(x0, rk)|, and N(|B(x0, rk)| − 1
+2 ) = |B(x0, rk−1)|. Hence, if
+N(λ) ∼ λ, it follows that
+|B(x0, rk+1)| − 1
+2
+|B(x0, rk)| = |B(x0, rk+1)| − 1
+2
+N(|B(x0, rk+1)| − 1
+2 ) → 1, k → ∞.
+Hence,
+|B(x0, rk+1)|
+|B(x0, rk)| → 1, k → ∞.
+⇐=: As before, we have
+N(λ) = |B(x0, riλ )|,
+and hence
+N(λ) = |B(x0, riλ )| ≤ λ ≤ | B(x0, r1+iλ )|.
+Dividing these inequalities by N(λ) gives
+1 ≤ λ
+N(λ) ≤ |B(x0, r1+iλ )|
+|B(x0, riλ )| .
+If |B(x0,rk+1)|
+|B(x0,rk)| → 1, it follows that N(λ) ∼ λ as λ → ∞.
+We observe that Proposition 5.1 is closely related to [CS23, Proposition 2.9].
+Theorem 5.2. Let (X, dX) and w : X → C be as before, and suppose that
+lim
+k→∞
+|B(x0, rk+1)|
+|B(x0, rk)| = 1. (14)
+Then for every extended limit ω ∈ ℓ∗
+∞ and bounded operator T ∈ B(ℓ2(X)),
+Trω(TM w) = ω ◦ M
+Tr(TM χB(x0,rk ) )
+|B(x0, rk)|
+
+. (15)
+Proof. We have that Mw ∈ L 1,∞ (see [Aza+22, Lemma 4.1]), and hence the left-hand side of equa-
+tion (15) is well-defined.
+By Proposition 5.1 and condition (14),
+N(λ) = Tr(χ[0,λ)(M−1
+w )) ∼ λ, λ → ∞.
+16
+
+===PAGE-BREAK===
+
+The eigenvalues (without multiplicity) of M−1
+w are equal to {|B(x0, rk)|}k∈N, where the eigenvalue
+|B(x0, rk)| has multiplicity |B(x0, rk)| − |B(x0, rk−1)|. Write {λk}k∈N for an eigenvalue sequence of
+M−1
+w without multiplicities, in increasing order. Given k ∈ N, there exists nk ∈ N such that
+|B(x0, rnk )| < k ≤ | B(x0, r1+nk )|.
+Then, λk = |B(x0, r1+nk )|, and hence
+1 ≤ λk
+k < |B(x0, r1+nk )|
+|B(x0, rnk )| .
+Condition (14) now implies that
+λk ∼ k, k → ∞.
+Hence, M−1
+w satisfies Weyl’s law, and Theorem 2.7 gives that for any extended limitω ∈ ℓ∗
+∞,
+Trω(TM w)
+Trω(Mw) = ω ◦ M
+Tr(TM χB(x0,rk ) )
+|B(x0, rk)|
+
+.
+Finally, since we proved that λk ∼ k, it also follows that Tr ω(Mw) = 1 independently of the
+extended limit ω ∈ ℓ∗
+∞ (this was also shown in [Hek25, Corollary 5.2.3]).
+Theorem 5.2 is less general than the main result of [Aza+22], since the latter provides a result
+for a much larger class of weightsw : X → C. However, for this particular choice ofw, Theorem 5.2
+is a stronger result than that was achieved in [Aza+22], since it does not assume the existence of
+the limits
+lim
+k→∞
+1
+|B(x0, rk)| Tr(TM χB(x0,rk ) ).
+Furthermore, from Theorem 5.2 we now see that Tr ω(TM w) is independent of the extended limit
+ω ∈ ℓ∗
+∞ if and only if
+lim
+k→∞
+M
+ 1
+|B(x0, rk)| Tr(TM χB(x0,rk ) )
+
+exists, which is novel.
+The Szeg˝ o limit theorem from Section 3 takes on an entirely different role in this setting. In
+light of Lemma 3.1, we obtain the following form of Theorem 3.2.
+Corollary 5.3. Let X and w as before, and assume that
+lim
+k→∞
+|B(x0, rk+1)|
+|B(x0, rk)| = 1.
+If for some α > 0, H maps dom(M−α
+w ) into dom(M−α
+w ) and [M−α
+w , H] extends to a bounded operator on
+ℓ2(X), then we have for all f ∈ Cc(R) and extended limits ω ∈ ℓ∗
+∞,
+ω ◦ M
+Tr( f (H)MχB(x0,rk ) )
+|B(x0, rk)|
+
+= ω ◦ M
+Tr( f (H|B(x0,R))MχB(x0,rk ) )
+|B(x0, rk)|
+
+= Trω( f (H)Mw),
+where H|B(x0,R) := MχB(x0,rk ) HM χB(x0,rk ).
+17
+
+===PAGE-BREAK===
+
+We see that the ‘Szeg˝ o limit theorem’ is now a result connecting two differing ways of defining
+the DOS. Namely, an alternative definition of the DOS than via equation (13) is that via the limits
+lim
+R→∞
+1
+|B(x0, R)|Tr( f (H|B(x0,R))MχB(x0,R) ) =
+Z
+R
+f d ˜νH, f ∈ Cc(R),
+and Corollary 5.3 gives conditions for a Dixmier trace formula to hold for both approaches. In
+particular, Corollary 5.3 also gives that under the listed conditions for H, we have that
+lim
+k→∞
+M
+ 1
+|B(x0, rk)| Tr( f (H)MχB(x0,rk ) )
+
+= lim
+k→∞
+M
+ 1
+|B(x0, rk)| Tr( f (H|B(x0,R))MχB(x0,rk ) )
+
+,
+in the sense that if one limit exists, the other limit exists and they are equal.
+The condition that [M−α
+w , H] extends to a bounded operator for some α > 0 is satisfied in most
+common situations.
+Example 5.4. Consider (Zd, dℓ1) where dℓ1 is the distance induced by theℓ1-norm (i.e. the graph distance).
+Let {em}m∈Zd be the canonical orthonormal basis of ℓ2(Zd). Define the discrete Laplacian by
+∆ : em 7→ ∑
+dℓ1 (k,m)=1
+(em − ek).
+Then for any bounded real-valued potential V : Zd → R, the Schrödinger operator H := −∆ + MV
+maps dom(M
+− 1
+d
+w ) into dom(M
+− 1
+d
+w ), and [H, M
+− 1
+d
+w ] extends to a bounded operator. This is easily seen
+from the fact that ∆ = ∑d
+k=1(2I − Sk − S∗
+k ), where S 1, . . . ,Sd are the shift operators on ℓ2(Zd), and
+|B(0, k)|
+1
+d ∼ Cdk.
+6 Noncommutative ergodicity
+Quantum ergodicity began as a study of geodesic flow on manifolds through abstract operator
+theoretical language. On a closed Riemannian manifold (M, g) we can define the geodesic flow
+as a map GM
+t : SM → SM, where SM is the unit sphere in the tangent bundle of the manifold
+M. For a point (x, v) ∈ SM, one simply takes the unique geodesic γ : R → M with γ(0) = x
+and γ′(0) = v, and defines GM
+t (x, v) := ( γ(t), γ′(t)). This flow is said to be ergodic if every
+measurable function f ∈ L∞(SM) which is fixed by the flow (i.e. f ◦ GM
+t = f almost everywhere)
+is constant almost everywhere. Equivalently, the geodesic flow can be defined on S∗M, the unit
+sphere in the cotangent bundle.
+Let {ek}∞
+k=0 be any orthonormal basis of eigenvectors of the Laplace–Beltrami operator∆g, and
+let Pλ := χ[0,λ](∆g). Related to the result derived in Section 2, it is known [Col85, Section 4] that
+for compact Riemannian manifolds we have that
+Tr(PλOp(a)Pλ)
+Tr(Pλ) →
+Z
+S∗ M
+a dν,
+where a ∈ C∞(S∗M) and Op(a) is a classical pseudodifferential operator with principal symbol a.
+Shnirelman, Zelditch, and Colin de Verdière showed [Shn74; Col85; Zel87] that this fact can be
+18
+
+===PAGE-BREAK===
+
+used, if M has ergodic geodesic flow, to show that there exists a density one subsequence {ej}j∈J
+of {ek}∞
+k=0, meaning that #(J∩{0,...,n})
+n+1 → 1, such that
+lim
+J∋j→∞
+⟨ej, Op(a)ej⟩ =
+Z
+S∗ M
+a dν.
+This and related properties are called quantum ergodicity of the operator ∆g.
+Before we start to put quantum ergodicity results into a noncommutative geometrical context,
+let us observe first that our labours in Section 2 provide a result in the other direction. The Weyl
+measure of an operator, which is the relevant measure for quantum ergodicity [CHT18, Section 4],
+admits a Dixmier trace formula.
+Definition 6.1. Let M be a manifold equipped with a nonvanishing density ρ, and let ∆ be a self-adjoint
+positive operator on L 2(M, ρ) with compact resolvent. Let {ek}∞
+k=0 be an orthonormal basis of L 2(M, ρ)
+consisting of eigenvectors of ∆ with corresponding eigenvalues {λk}∞
+k=0. If
+lim
+λ→∞
+1
+N(λ) ∑
+λk≤λ
+⟨ek, M f ek⟩
+exists for all f ∈ Cc(M), then there exists a measure µ∆ such that
+lim
+λ→∞
+1
+N(λ) ∑
+λk≤λ
+⟨ek, M f ek⟩ =
+Z
+M
+f d µ∆.
+This measure is called the local Weyl measure of ∆.
+Proposition 6.2. If ∆ as in Definition 6.1 satisfies Weyl’s law
+λ(k, ∆) ∼ Ck
+2
+d
+for some 0 < d ∈ R and admits a local Weyl measure µ∆, then
+Trω(M f (1 + ∆)− d
+2 ) = Trω((1 + ∆)− d
+2 )
+Z
+M
+f d µ∆. (16)
+Proof. Consequence of Theorem 2.7.
+This is relevant for sub-Riemannian manifolds, in which case one can take ∆ to be the sub-
+Laplacian and µ∆ is not necessarily the usual volume form on the manifoldM. Notably, a rescaling
+of this measure was found very recently in [KSZ24b, Section 1.4] to be a spectrally correct sub-
+Riemannian volume of M, additionally providing in that context a generalisation of the above
+Dixmier trace formula to any normalised continuous trace ϕ. This measure is studied extensively
+in this context in [CHT18] as well.
+We will now shift our attention to results in quantum ergodicity which are interesting when
+viewed from the perspective of noncommutative geometry. To start, we provide an analogue of
+ergodicity of the geodesic flow – a property a compact Riemannian manifold can have, which
+we should therefore be able to see as a property of a spectral triple. For this purpose we recall
+the following construction and theorem by Connes [Con95, Section 6]. For A ∈ B(H), we write
+σt(A) := eit|D|Ae−it|D|, t ∈ R.
+19
+
+===PAGE-BREAK===
+
+Theorem 6.3. For a unital regular spectral triple (A, H, D), where ‘regular’ means that that δn(a) ∈
+B(H) for all a ∈ A, n ∈ N, define
+S∗A := C∗
+ [
+t∈R
+σt
+ 
+A
+
++ K(H)
+
+K(H).
+This C∗-algebra comes equipped with automorphisms
+Gt(A + K(H)) := eit|D|Ae−it|D| + K(H).
+For (A, H, D) ≃ (C∞(M), L2(S), DM), the Dirac spectral triple associated to a compact Riemannian
+spin manifold, we have S ∗A ≃ C(S∗M). Furthermore, Egorov’s theorem implies that the action of G t on
+C(S∗M) is given by the geodesic flow GM
+t , see e.g [Zel17, Section 9.2][Zwo12, Section 11.1].
+The fact that Gt is given by the geodesic flow GM
+t in the commutative setting, provides the
+basis for interpreting Gt as an analogue of geodesic flow even in the noncommutative case. A few
+examples of the construction S∗A are given in [GL98]. In the context of foliations of manifolds, it
+has been covered in [Kor05].
+Remark 6.4. In the original formulation of Theorem 6.3 in [Con95], S ∗A was instead constructed as the
+space
+S∗A := C∗
+ [
+t∈R
+σt
+ 
+Ψ0
++ K(H)
+
+K(H),
+where for a spectral triple (A, H, D) Connes writes Ψ0 for the set of operators admitting an asymptotic
+expansion
+P = b0 + b−1⟨D⟩−1 + b−2⟨D⟩−2 + · · · , bj ∈ B ,
+with B generated by A and δn(A), where δ(a) := [ |D|, a]. The asymptotic expansion means that the
+difference between P and the nth partial summand extends to a bounded linear operator from dom(⟨D⟩s)
+to dom(⟨D⟩s+n) for every s ∈ R. Note that the operators [D, A] are not included in B.
+For a unital spectral triple,⟨D⟩−1 is compact. And since for b ∈ B , the second commutator[|D|, [|D|, b]]
+is bounded, we have norm convergence
+lim
+t→0
+σt(b) − b
+t = i[|D|, b],
+and hence Connes’ original construction and the one in Theorem 6.3 (also used in [GL98]) are the same.
+Note that it is important that the operators [D, A] are not included in Ψ0. For illustration, in the
+commutative case |D| acts with scalar principal symbol on the vector bundle S, meaning that B and hence
+Ψ0 can be regarded as acting on L 2(M) instead of L 2(S). The isomorphism S ∗C∞(M) ∼= C(S∗M) in
+Theorem 6.3 is then simply an extension of the symbol mapΨ0
+cl → C∞(S∗M) on classical pseudodifferential
+operators on M.
+The automorphisms Gt provide an action of R on the C∗-algebra S∗A, and this noncommuta-
+tive cotangent sphere is thus an example of a C∗-dynamical system.
+Definition 6.5. A C∗-dynamical system (A, G, α) consists of a C∗-algebra A, a locally compact group G,
+and a strongly continuous representation α : G → Aut(A).
+20
+
+===PAGE-BREAK===
+
+There is a vast literature on C∗-dynamical systems, see [BR87, Section 2.7] for a start. In partic-
+ular it has been a popular object of study in the field of quantum ergodicity, see e.g. [Zel96].
+Recall that for compact manifolds, geodesic flow is said to be ergodic if the only measurable
+functions that are invariant almost everywhere under the geodesic flow are the functions that are
+constant almost everywhere. This definition is measure-theoretic in nature, and to translate it into
+a statement on spectral triples we therefore define the noncommutative L2-space on S∗A, which
+corresponds with L2(S∗M) in the commutative case.
+Proposition 6.6. Let (A, H, D) be a unital regular spectral triple where D 2 satisfies Weyl’s law (Defini-
+tion 2.3). The functional
+τ(A + K(H)) := Trω(A⟨D⟩−d)
+Trω(⟨D⟩−d) ,
+defines a finite positive trace on S∗A.
+Proof. This is a standard result, see e.g. [CS23, Theorem 6.1] for a general formulation. We re-
+mark that the traciality of τ in fact follows from Theorem 2.7, Widom’s Lemma 3.1, and the trivial
+identity
+Tr(PλAPλBPλ) = Tr(PλBPλAPλ),
+which is a novel proof of this fact.
+Definition 6.7. We define L2(S∗A) as the Hilbert spaceHτ in the GNS construction(πτ, Hτ). Explicitly,
+writing I = {A + K(H) ∈ S∗A : τ(A∗A) = 0}, we define
+L2(S∗A) := S∗A/I
+∥·∥ L2 ,
+where the completion is taken in the semi-norm∥A + I∥L2 =
+ 
+τ(A∗A)
+ 1
+2 . The space L2(S∗A) is a Hilbert
+space with inner product defined via
+⟨A + I, B + I⟩L2 := τ(B∗A), A, B ∈ S∗A.
+Observe that the automorphism Gt on S∗A extends to a unitary operator Gt ∈ B(L2(S∗A)).
+Notation 6.8. In accordance with the paradigm called the C ∗-algebraic approach to the principal sym-
+bol [Cor79; SZ18; MSZ19; KSZ24a], we write
+sym : C∗
+ [
+t∈R
+σt
+ 
+A
+
++ K(H)
+
+→ S∗A
+for the defining quotient map of S ∗A (Theorem 6.3), which is understood as a symbol map. Writing π for
+the quotient map
+π : S∗A → L2(S∗A)
+A 7→ A + I′,
+we will furthermore use the notation
+symL2
+:= π ◦ sym : C∗
+ [
+t∈R
+σt
+ 
+A
+
++ K(H)
+
+→ L2(S∗A).
+21
+
+===PAGE-BREAK===
+
+Example 6.9. 1. For the Dirac spectral triple coming from a compact Riemannian spin manifold,
+(C∞(M), L2(S), DM), we have that S∗C∞(M) ≃ C(S∗M) with τS∗A =R
+S∗ M. Hence L2(S∗C∞(M)) ≃
+L2(S∗M). The action Gt agrees with the usual geodesic flow.
+2. Given an even dimensional compact Riemannian manifold, and a finite dimensional spectral triple
+(AF, HF, DF), we have for the almost commutative manifold (see Section 1)
+(A := C∞(M) ⊗ AF, L2(S) ⊗ HF, D := DM ⊗ 1 + γM ⊗ DF),
+that S∗A ≃ C(S∗M) ⊗ AF with τS∗A =R
+S∗ M ⊗ Tr. Hence L 2(S∗A) ≃ L2(S∗M) ⊗ HSF, where
+HSF is simply AF equipped with the Hilbert–Schmidt norm. The automorphisms G t act as G M
+t ⊗ 1,
+where GM
+t is the usual geodesic flow on S∗M. This corrects [GL98, Lemma 2.2].
+3. For the noncommutative torus (C∞(Td
+θ ), L2(Td
+θ ) ⊗ CNd, D) (see Section 1), we have that S∗C(Td
+θ ) ≃
+C(Td
+θ ) ⊗ C(Sd−1) with τS∗Td
+θ
+= τTd
+θ
+⊗R
+Sd−1 and ⊗ is the minimal C ∗-tensor product. Hence
+L2(S∗Td
+θ ) ≃ L2(Td
+θ ) ⊗ L2(Sd−1). The automorphisms Gt act as
+Gt(un ⊗ g) = un ⊗ et,ng, t ∈ R, n ∈ Zd, g ∈ C(Sd−1),
+where
+et,n(x) := exp(it n · x), t ∈ R, n ∈ Zd, x ∈ Sd−1 ⊆ Rd.
+4. Let A be the Toeplitz algebra, i.e. the C∗-algebra generated by the shift operator on ℓ2(N), and let D
+be the operator on ℓ2(N) defined on the standard basis {ej}j∈N
+D : ej 7→ jej, j ∈ N.
+For the spectral triple (A, ℓ2(N), D), we have S ∗A ≃ C(S1) with τS∗A =R
+S1. Hence L 2(S∗A) ≃
+L2(S1). The automorphism Gt is given by rotation.
+Proof. (1) can be found in [Con95, Proposition 2].
+(2): Since |D| =
+q
+D2
+M ⊗ 1 + 1 ⊗ D2
+F, it follows that |D| − | DM| ⊗ 1 is a compact operator on
+L2(S) ⊗ HF. We will show this with a double operator integral argument. First, one can omit
+the kernels of |D| and |DM| ⊗ 1 from the Hilbert space as the projection onto the kernel of either
+operator is finite-rank and thus compact. Both operators have compact resolvent. Hence, after this
+modification, the function f (x) = √x is smooth on a neighbourhood of the spectra of the operators
+|D| and |DM| ⊗ 1. Define the Sobolev spaces Hs := dom |DM|s ⊗ 1, s ∈ R, and apply [HMN24,
+Theorem 6] to find that
+|D| − |DM| ⊗ 1 = T
+D2,D2
+M⊗1
+f [1] (1 ⊗ D2
+F) ∈ K(H),
+where T
+D2,D2
+M⊗1
+f [1] (1 ⊗ D2
+F) is a double operator integral. Its compactness is a consequence of the
+fact that this multiple operator integral is a negative order pseudodifferential operator — to be
+precise, it is an element of op −1+ε(|DM| ⊗ 1) for any ε > 0 in the notation of [HMN24]. It now
+follows from Duhamel’s formula that
+eit|D| − eit(|DM|⊗1) = it
+Z 1
+0
+eist|D|(|D| − |DM| ⊗ 1)ei(1−s)t(|DM|⊗1) ds ∈ K(H).
+22
+
+===PAGE-BREAK===
+
+Therefore, [
+t∈R
+σt(B) + K(H) =
+[
+t∈R
+σM
+t (BM) ⊗ AF + K(H),
+where σM
+t is the conjugation with eit|DM| on M and BM the algebra generated by δn
+|DM|(C∞(M)) ⊆
+B(L2(M)). We conclude that S∗A ≃ C(S∗M) ⊗ A F. This proof shows that the action Gt on
+C(S∗M) ⊗ AF is given by Gt = GM
+t ⊗ 1.
+(3): Although the Hilbert space of the spectral triple is L2(Td
+θ ) ⊗ CNd, since |D| =
+√
+−∆ ⊗ 1 (see
+Section 1) similarly to the manifold case B acts trivially on the CNd-component. We can therefore
+make the identification B ⊆ B(L2(Td
+θ )). In fact, we claim that B
+∥·∥
+is a C∗-algebra stable under the
+action σt(·) = eit
+√
+−∆(·)e−it
+√
+−∆, and therefore
+S∗C(Td
+θ ) ≃ (B
+∥·∥
++ K(L2(Td
+θ )))/K(L2(Td
+θ )). (17)
+The claim holds since formally σt(a) = ∑∞
+k=0
+(it)k
+k! δk(a), and this sum is actually norm convergent
+for a ∈ Poly(Td
+θ ) := span{un}n∈Zd. Denoting the generated ∗-algebra Bpoly := ⟨a, δn(a)⟩a∈Poly(Td
+θ )
+we therefore have
+σt : Bpoly → B
+∥·∥
+.
+Since Poly(Td
+θ ) is dense in C∞(Td
+θ ) and σt is an isometry on B(L2(Td
+θ )), it is easily seen that this
+implies that σt maps B
+∥·∥
+into itself, proving (17).
+By construction C(Td
+θ ) is represented on L2(Td
+θ ) as bounded left-multiplication operators (de-
+note the representation π1), and C(Sd−1) is as well via the representation
+π2(g) = g
+  D1√
+−∆
+, . . . , Dd√
+−∆
+
+, g ∈ C(Sd−1),
+where Di : uk 7→ kiuk. It is shown in [MSZ19] that, writing Π(C(Td
+θ ), C(Sd−1)) for the C∗ -algebra
+generated by π1(C(Td
+θ )) and π2(C(Sd−1)) inside B(L2(Td
+θ )), we have
+Π(C(Td
+θ ), C(Sd−1))/K(L2(Td
+θ )) ≃ C(Td
+θ ) ⊗ C(Sd−1). (18)
+Comparing (17) and (18), to determine that S∗Td
+θ ≃ C(Td
+θ ) ⊗ C(Sd−1), it therefore suffices to show
+that
+B
+∥·∥
++ K(L2(Td
+θ )) = Π(C(Td
+θ ), C(Sd−1)) + K(L2(Td
+θ )) ⊆ B(L2(Td
+θ )). (19)
+To start, it is immediately obvious that π1(C(Td
+θ )) ⊆ B
+∥·∥
+. Next, the operators Di√
+−∆ generate
+π2(C(Sd−1)) as a C∗-algebra, and we claim that
+u∗
+ej [
+√
+−∆, uej ] − Dj√
+−∆
+∈ K(L2(Td
+θ )), (20)
+where ej ∈ Zd is the standard unit vector. This would imply
+Π(C(Td
+θ ), C(Sd−1)) + K(L2(Td
+θ )) ⊆ B
+∥·∥
++ K(L2(Td
+θ )). (21)
+23
+
+===PAGE-BREAK===
+
+Equation (20) is proven by writing
+
+u∗
+ej [
+√
+−∆, uej ] − Dj√
+−∆
+
+uk =
+
+|k + ej| − |k| − kj
+|k|
+
+uk.
+Now define
+f (t, k) := |k + tej|, k ∈ Zd, t ∈ R,
+and note that its derivatives in the t variable are
+f ′(t, k) = kj + t
+|k + tej|, f ′′(t, k) = |k + tej|2 − (kj + t)2
+|k + tej|3 .
+Hence
+
+u∗
+ej [
+√
+−∆, uej ] − Dj√
+−∆
+
+uk = ( f (1, k) − f (0, k) − f ′(0, k))uk
+=
+Z 1
+0
+(1 − t) f ′′(t, k) dt · uk.
+From the form of f ′′(t, k) above, we therefore have
+| f (1, k) − f (0, k) − f ′(0, k)| ∈ c0(Zd),
+which indeed shows that u∗
+ej [
+√
+−∆, uej ] −
+Dj√
+−∆ is a compact operator, proving (20) and there-
+fore (21).
+For the other inclusion,
+B
+∥·∥
++ K(L2(Td
+θ )) ⊆ Π(C(Td
+θ ), C(Sd−1)) + K(L2(Td
+θ )), (22)
+the above arguments already show that
+[
+√
+−∆, uej ] ∈ Π(C(Td
+θ ), C(Sd−1)) + K(L2(Td
+θ )).
+Since by explicit computation
+u∗
+ej δn√
+−∆(uej ) = ( u∗
+ej [
+√
+−∆, uej ])n,
+and since um
+ej = umej, we have that
+δn√
+−∆(uk) ∈ Π(C(Td
+θ ), C(Sd−1)) + K(L2(Td
+θ )), n ∈ Z≥0, k ∈ Zd,
+and hence proving (22). The two inclusions (21) and (22) give the equality (19), which was noted
+to imply that S∗Td
+θ ≃ C(Td
+θ ) ⊗ C(Sd−1). For the automorphism Gt, first note that
+σt(g( D1√
+−∆
+, . . . , Dd√
+−∆
+)) = g( D1√
+−∆
+, . . . , Dd√
+−∆
+), g ∈ C(Sd−1).
+24
+
+===PAGE-BREAK===
+
+Next,
+eit
+√
+−∆ueje−it
+√
+−∆uk = eit(|k+ej|−|k|)uejuk
+= uej exp(itu ∗
+ej [
+√
+−∆, uej ])uk
+= uej exp
+ 
+it Dj√
+−∆
+
+uk + uej
+
+exp(itu ∗
+ej [
+√
+−∆, uej ]) − exp
+ 
+it Dj√
+−∆
+
+uk.
+We have already seen that u∗
+ej [
+√
+−∆, uej ] −
+Dj√
+−∆ ∈ K(L2(Td
+θ )), and hence as in the proof of Exam-
+ple 6.9.2 it follows from Duhamel’s formula that
+exp(itu ∗
+ej [
+√
+−∆, uej ]) − exp
+ 
+it Dj√
+−∆
+
+∈ K(L2(Td
+θ )).
+Thus, we see that
+Gt(un ⊗ g) = un ⊗ et,ng, t ∈ R, n ∈ Zd, x ∈ Sd−1 ⊆ Rd, g ∈ C(Sd−1),
+where
+et,n(x) := exp(it n · x), t ∈ R, n ∈ Zd, x ∈ Sd−1 ⊆ Rd.
+(4): It is well-known that, after identifying ℓ2(N) with the Hardy space H2, any element in the
+Toeplitz algebra A can be written as Tϕ + K, where Tϕ is the Toeplitz operator with symbol ϕ ∈
+C(S1) and K ∈ K(ℓ2(N)), see e.g. [Mur90, Section 3.5]. By an explicit computation, it can be seen
+that
+eit|D|Tϕe−it|D| = Tϕ◦Rt,
+where Rt is rotation by the angle t. Hence σt(A) = A, and
+S∗A = A/K(ℓ2(N)) ≃ C(S1).
+For the noncommutative integral, we can use the diagonal formula in Theorem 2.7, so that for an
+arbitrary element Tϕ + K ∈ A,
+Trω((Tϕ + K)⟨D⟩−1) = ω ◦ M(⟨ek, (Tϕ + K)ek⟩) =
+Z
+S1
+ϕ(t) dt.
+Definition 6.10. We say that (A, H, D) is classically ergodic if for a ∈ L2(S∗A), we have Gt(a) = a for
+all t ∈ R if and only if a = λ · 1 ∈ L2(S∗A) for some λ ∈ C.
+The construction of L2(S∗A) has now reached its goal; for spectral triples derived from com-
+pact Riemannian manifolds, this definition is precisely the usual definition of ergodicity of the
+geodesic flow (Example 6.12.1).
+We now immediately claim the following theorem, the NCG analogue of the classic result in
+quantum ergodicity by Shnirelman, Zelditch, and Colin de Verdière [Shn74; Col85; Zel87].
+Theorem 6.11. Let (A, H, D) be a unital regular spectral triple with local Weyl laws. Assume that the
+closure of A in B (H) is separable. If the triple is classically ergodic, then for every basis {en}∞
+n=0 of
+eigenvectors of |D| there exists a density one subset J ⊆ N such that
+lim
+J∋j→∞
+⟨ej, Aej⟩ = Trω(A⟨D⟩−d)
+Trω(⟨D⟩−d) , A ∈ A.
+25
+
+===PAGE-BREAK===
+
+Proof. Classical ergodicity of (A, H, D) means that the projection onto the Gt-invariant vectors in
+L2(S∗A) has rank 1, which is called ‘uniqueness of the vacuum state’ for theC∗-dynamical system
+(S∗A, R, Gt) in [Zel96]. Hence, due to Proposition 2.1, the theorem is a consequence of [Zel96,
+Lemma 2.1].
+This theorem, while its mathematical core is already an established result in quantum ergodic-
+ity, gives a fresh perspective on the criterion of a C∗-dynamical system having a ‘unique vacuum
+state’. And while the vast majority of results in the paper [Zel96] are formulated for ‘quantised
+abelian’C∗-dynamical systems, which in our case would mean S∗A is represented as a commu-
+tative algebra on L2(S∗A), the philosophy of noncommutative geometry provides solid reason
+to study not quantised abelian C∗-dynamical systems but ones with a unique vacuum state, as
+proposed by Zelditch [Zel96].
+Example 6.12. We continue Example 6.9.
+1. The canonical spectral triple corresponding to a compact Riemannian spin manifold,(C∞(M), L2(S), DM)
+is classically ergodic if and only if M has ergodic geodesic flow.
+2. Any nontrivial almost commutative manifold (C∞(M) ⊗ AF, L2(S) ⊗ HF, DM ⊗ 1 + γM ⊗ DF) is
+not classically ergodic. Note that this corrects [Zel96, Corollary (3.1)], which was already known to
+experts to be false.
+3. The noncommutative torus, like the commutative torus, is not classically ergodic.
+4. The spectral triple of the Toeplitz algebra is classically ergodic. See [Zel96, Example (D)] for a gener-
+alisation.
+Proof. (1): Example 6.9.1 gave that L2S∗A is isomorphic to L2(S∗M) in this setting, with Gt given
+by the geodesic flow. The definition of classic ergodicity in Definition 6.10 is then equivalent with
+the standard definition of ergodic geodesic flow, see e.g. [Pet89, Proposition 2.4.1].
+(2): Since Gt acts on L2(S) ⊗ HSF by GM
+t ⊗ 1, any element of the form 1 ⊗ a is a fixed point of Gt.
+(3): It follows from Example 6.9 that for any f ∈ C(Sd−1), the element sym L2
+(1 ⊗ f ) ∈ L2(S∗Td
+θ )
+is a fixed point of Gt.
+(4): Since the only rotationally invariant functions in L2(S1) are the constant functions, the claim
+follows.
+We note that the well-studied examples of spectral triples in noncommutative geometry often
+possess a high degree of symmetry, and in geometric examples a high degree of symmetry can
+obstruct ergodicity.
+Example 6.13. A noncommutative example where classical ergodicity has been demonstrated can be found
+in [MM24, Proposition 3.2]. This concerns operators on vector-bundle valued sections of a compact mani-
+fold. It is in a sense a more ‘twisted’ version of the almost commutative manifolds in Example 6.12.2,
+Remark 6.14. In the context of Section 5, it is unknown to the authors what the significance of the con-
+struction S∗A and the concept of ergodicity is. In that section, taking a discrete metric space (X, dX), the
+operator D was taken to be M −1
+w , where w : X → C is defined by
+w(x) := 1
+|B(x0, dX(x, x0))|, x ∈ X.
+26
+
+===PAGE-BREAK===
+
+It was shown in Proposition 5.1 that M−1
+w satisfies a Weyl law if X satisfies the condition
+|B(x0, rk+1)|
+|B(x0, rk)| → 1, k → ∞.
+For the algebra A, it makes sense to include some operators of the form −∆ + MV, where ∆ is a (bounded)
+discrete analogue of the Laplace operator and V : X → R is bounded. Then, however, (A, H, D) has no
+chance to be classically ergodic: M−1
+w commutes with the multiplication operators MV, and hence L2(S∗A)
+will contain many fixed points for the action Gt. For the weaker property of quantum ergodicity, we would
+need for the canonical eigenbasis {ex}x∈X of ℓ2(X), that there exists a density one subset J ⊆ X such that
+lim
+j∈J
+⟨ej, Aej⟩ = Trω(A⟨D⟩−d)
+Trω(⟨D⟩−d) , A ∈ A.
+We now conclude this paper by giving some equivalent conditions for classical ergodicity.
+First, we invoke von Neumann’s mean ergodic theorem [RS80, Theorem II.11].
+Proposition 6.15. For any a ∈ L2(S∗A) there exists a fixed point of Gt denoted by aavg ∈ L2(S∗A) such
+that, putting
+aT := 1
+T
+Z T
+0
+Gt(a) dt,
+we have
+lim
+T→∞
+∥aT − aavg ∥L2 → 0.
+Furthermore,
+⟨1, aavg ⟩L2 = ⟨1, a⟩L2,
+and the map a 7→ aavg is L2-continuous.
+Proof. The existence of aavg and the L2-convergence of aT to aavg follows from von Neumann’s
+mean ergodic theorem, see e.g. [RS80, Theorem II.11], or see [DS88, Corollary VIII.7.3] for the
+continuous-time variant we use here.
+Next, since Gt is a unitary operator with Gt(1) = 1, we have
+⟨1, Gt(a)⟩L2 = ⟨1, a⟩L2.
+Hence,
+⟨1, aavg ⟩L2 − ⟨1, a⟩L2
+ ≤
+⟨1, aavg ⟩L2 − ⟨1, aT⟩L2
+ +
+⟨1, aT⟩L2 − ⟨1, a⟩L2
+
+| {z }
+=0= |⟨1, aavg − aT⟩L2|
+≤ ∥ aT − aavg ∥L2,
+which converges to 0 as T → ∞ due to the first part.
+The element aavg being a fixed point of Gt is a consequence of the estimate
+∥aT − Gt(aT)∥L2 = 1
+T
+
+Z t
+0
+Gs(a) ds −
+Z T+t
+T
+Gs(a) ds
+
+L2
+≤ 2t
+T ∥a∥L2
+T→∞− − − →0.
+27
+
+===PAGE-BREAK===
+
+Finally, for the continuity of a 7→ aavg, note that
+∥aT∥L2 ≤ 1
+T
+Z T
+0
+∥Gt(a)∥L2 dt = ∥a∥L2,
+and taking the limit T → ∞,
+∥aavg ∥L2 ≤ ∥ a∥L2.
+Remark 6.16. Since S∗A is represented as bounded operators on L2(S∗A), we can consider the von Neu-
+mann algebra πτ(S∗A)′′ in B (L2(S∗A)), denoted as L ∞(S∗A), to which τ extends as a faithful normal
+tracial state. We can define the noncommutative L p spaces L p(S∗A) := Lp(τ) for 1 ≤ p ≤ ∞ via
+standard constructions (we recover L 2(S∗A) for p = 2). This is precisely how the spaces L p(Td
+θ ) are con-
+structed [LMSZ23, Section 3.5]. It is possible to show that G t : Lp(S∗A) → Lp(S∗A) are isometries for
+all 1 ≤ p ≤ ∞, and the averages in Proposition 6.15 exist and converge in every Lp(S∗A).
+Proposition 6.17. Given a unital regular spectral triple (A, H, D) satisfying Weyl’s law, the following
+are equivalent:
+1. the spectral triple is classically ergodic;
+2. for all a ∈ L2(S∗A),
+aavg = ⟨1, a⟩L2 · 1;
+3. writing
+AT := 1
+T
+Z T
+0
+σt(A) dt, A ∈
+
+ [
+t∈R
+σt(A)
+
+,
+where
+
+S
+t∈R σt(A)
+
+is the ∗-algebra generated byS
+t∈R σt(A), we have for all A ∈
+
+S
+t∈R σt(A)
+
+lim
+T→∞
+ω ◦ M
+
+⟨ek, |AT|2ek⟩
+
+=
+Trω(A⟨D⟩−d)
+Trω(⟨D⟩−d)
+2
+.
+Proof. (1) ⇔ (2) is easily seen from the fact that aavg is a fixed point of Gt.
+Next, if A ∈
+
+S
+t∈R σt(A)
+
+, then by Theorem 2.7 it follows that
+ω ◦ M
+
+⟨ek, |AT|2ek⟩
+
+= Trω(|AT|2⟨D⟩−d)
+Trω(⟨D⟩−d)
+= ⟨symL2
+(AT), symL2
+(AT)⟩L2.
+Since symL2
+(AT) = symL2
+(A)T, Proposition 6.15 gives that
+lim
+T→∞
+ω ◦ M
+
+⟨ek, |AT|2ek⟩
+
+= ⟨symL2
+(A)avg, symL2
+(A)avg ⟩L2. (23)
+28
+
+===PAGE-BREAK===
+
+(2) ⇒ (3): This now follows from Equation (23) and the identity ⟨1, symL2
+(A)⟩L2 = Trω(A⟨D⟩−d)
+Trω(⟨D⟩−d) .
+(3) ⇒ (2): For a ∈ L2(S∗A), Proposition 6.15 gives that ⟨aavg, 1⟩L2 = ⟨a, 1⟩L2, and hence
+∥aavg − ⟨1, a⟩ · 1∥2
+L2 = ⟨aavg, aavg ⟩L2 − ⟨aavg, 1⟩L2⟨1, a⟩L2 − ⟨1, aavg ⟩L2⟨1, a⟩L2 + |⟨1, a⟩L2|2
+= ⟨aavg, aavg ⟩L2 − |⟨1, a⟩L2|2.
+Therefore, assumption (3) combined with Equation (23) gives for all A ∈
+
+S
+t∈R σt(A)
+
+,
+symL2
+(A)avg = ⟨1, symL2
+(A)⟩L2 · 1.
+The image of
+
+S
+t∈R σt(A)
+
+under the map symL2
+being dense in L2(S∗A), and the map a → aavg
+being L2-continuous, we can conclude that
+aavg = ⟨1, a⟩L2 · 1
+for all a ∈ L2(S∗A).
+References
+[AMSZ20] N. Azamov, E. McDonald, F. Sukochev, and D. Zanin. A Dixmier trace formula for
+the density of states. Comm. Math. Phys. 377.3 (2020), pp. 2597–2628.
+[AW15] M. Aizenman and S. Warzel. Random operators: Disorder effects on quantum spectra and
+dynamics. Vol. 168. Graduate Studies in Mathematics. American Mathematical Society,
+Providence, RI, 2015, pp. xiv+326.
+[Aza+22] N. Azamov, E.-M. Hekkelman, E. McDonald, F. Sukochev, and D. Zanin. An applica-
+tion of singular traces to crystals and percolation.J. Geom. Phys. 179 (2022), Paper No.
+104608, 22.
+[BJ83] S. Baaj and P . Julg. Théorie bivariante de Kasparov et opérateurs non bornés dans les
+C∗-modules hilbertiens. C. R. Acad. Sci. Paris Sér. I Math. 296.21 (1983), pp. 875–878.
+[BR87] O. Bratteli and D. W. Robinson. Operator algebras and quantum statistical mechanics 1.
+C∗- and W∗-algebras, symmetry groups, decomposition of states. Second edition. Texts and
+Monographs in Physics. Springer-Verlag, New York, 1987, pp. xiv+505.
+[CFF93] A. H. Chamseddine, G. Felder, and J. Fröhlich. Gravity in noncommutative geometry.
+Comm. Math. Phys. 155.1 (1993), pp. 205–217.
+[CHT18] Y. Colin de Verdière, L. Hillairet, and E. Trélat. Spectral asymptotics for sub-Riemannian
+Laplacians, I: Quantum ergodicity and quantum limits in the 3-dimensional contact
+case. Duke Math. J. 167.1 (2018), pp. 109–174.
+[Col85] Y. Colin de Verdière. Ergodicité et fonctions propres du laplacien. Comm. Math. Phys.
+102.3 (1985), pp. 497–502.
+[Con13] A. Connes. On the spectral characterization of manifolds. J. Noncommut. Geom. 7.1
+(2013), pp. 1–82.
+[Con88] A. Connes. The action functional in noncommutative geometry. Comm. Math. Phys.
+117.4 (1988), pp. 673–683.
+29
+
+===PAGE-BREAK===
+
+[Con94] A. Connes. Noncommutative geometry . Academic Press, Inc., San Diego, CA, 1994,
+pp. xiv+661.
+[Con95] A. Connes. Geometry from the spectral point of view. Lett. Math. Phys. 34.3 (1995),
+pp. 203–238.
+[Cor79] H. O. Cordes. Elliptic pseudodifferential operators—an abstract theory . Vol. 756. Lecture
+Notes in Mathematics. Springer, Berlin, 1979, pp. vii+331.
+[CS21] A. Connes and W. D. van Suijlekom. Spectral truncations in noncommutative geom-
+etry and operator systems. Comm. Math. Phys. 383.3 (2021), pp. 2021–2067.
+[CS22] A. Connes and W. D. van Suijlekom. Tolerance relations and operator systems. Acta
+Sci. Math. (Szeged) 88.1-2 (2022), pp. 101–129.
+[CS23] F. E. G. Cipriani and J.-L. Sauvageot. Measurability, spectral densities, and hyper-
+traces in noncommutative geometry. J. Noncommut. Geom. 17.4 (2023), pp. 1437–1468.
+[DLL22] F. D’Andrea, G. Landi, and F. Lizzi. Tolerance relations and quantization. Lett. Math.
+Phys. 112.4 (2022), Paper No. 65, 28.
+[DLM14] F. D’Andrea, F. Lizzi, and P . Martinetti. Spectral geometry with a cut-off: topological
+and metric aspects. J. Geom. Phys. 82 (2014), pp. 18–45.
+[DS88] N. Dunford and J. T. Schwartz. Linear operators. Part I. Wiley Classics Library. General
+theory, With the assistance of William G. Bade and Robert G. Bartle, Reprint of the
+1958 original, A Wiley-Interscience Publication. John Wiley & Sons, Inc., New York,
+1988, pp. xiv+858.
+[EZ15] M. Eckstein and A. Zaj ˛ ac. Asymptotic and exact expansions of heat traces. Math. Phys.
+Anal. Geom. 18.1 (2015), Art. 28, 44.
+[Fel71] W. Feller. An introduction to probability theory and its applications. Vol. II. Second edition.
+John Wiley & Sons, Inc., New York-London-Sydney, 1971, pp. xxiv+669.
+[FGR98] J. Fröhlich, O. Grandjean, and A. Recknagel. Supersymmetric quantum theory, non-
+commutative geometry, and gravitation.Symétries quantiques (Les Houches, 1995). North-
+Holland, Amsterdam, 1998, pp. 221–385.
+[GL98] F. Golse and E. Leichtnam. Applications of Connes’ geodesic flow to trace formulas
+in noncommutative geometry. J. Funct. Anal. 160.2 (1998), pp. 408–436.
+[GM18] M. Goffeng and B. Mesland. Spectral triples on ON. 2016 MATRIX annals. Vol. 1. MA-
+TRIX Book Ser. Springer, Cham, 2018, pp. 183–201.
+[GRU19] M. Goffeng, A. Rennie, and A. Usachev. Constructing KMS states from infinite-dimensional
+spectral triples. J. Geom. Phys. 143 (2019), pp. 107–149.
+[GS20] L. Glaser and A. B. Stern. Understanding truncated non-commutative geometries
+through computer simulations. J. Math. Phys. 61.3 (2020), pp. 033507, 11.
+[GS21] L. Glaser and A. B. Stern. Reconstructing manifolds from truncations of spectral triples.
+J. Geom. Phys. 159 (2021), Paper No. 103921, 17.
+[GS23] M. Gielen and W. D. van Suijlekom. Operator systems for tolerance relations on finite
+sets. Indag. Math. (N.S.) 34.3 (2023), pp. 606–621.
+30
+
+===PAGE-BREAK===
+
+[GS95] G. Grubb and R. T. Seeley. Weakly parametric pseudodifferential operators and Atiyah-
+Patodi-Singer boundary problems. Invent. Math. 121.3 (1995), pp. 481–529.
+[Gui79] V . Guillemin. Some classical theorems in spectral theory revisited. Seminar on Singu-
+larities of Solutions of Linear Partial Differential Equations (Inst. Adv. Study, Princeton,
+N.J., 1977/78). Vol. No. 91. Ann. of Math. Stud. Princeton Univ. Press, Princeton, NJ,
+1979, pp. 219–259.
+[GVF01] J. Gracia-Bondía, J. Várilly, and H. Figueroa. Elements of noncommutative geometry .
+Birkhäuser Advanced Texts: Basler Lehrbücher. [Birkhäuser Advanced Texts: Basel
+Textbooks]. Birkhäuser Boston, Inc., Boston, MA, 2001, pp. xviii+685.
+[Har49] G. H. Hardy. Divergent Series. Oxford, at the Clarendon Press, 1949, pp. xvi+396.
+[Hek22] E.-M. Hekkelman. Truncated geometry on the circle. Lett. Math. Phys. 112.2 (2022),
+Paper No. 20, 19.
+[Hek25] E.-M. Hekkelman. Trace Formulas in Noncommutative Geometry. PhD thesis. UNSW
+Sydney, 2025.
+[HLP19a] H. Ha, G. Lee, and R. Ponge. Pseudodifferential calculus on noncommutative tori, I.
+Oscillating integrals. Internat. J. Math. 30.8 (2019), pp. 1950033, 74.
+[HLP19b] H. Ha, G. Lee, and R. Ponge. Pseudodifferential calculus on noncommutative tori, II.
+Main properties. Internat. J. Math. 30.8 (2019), pp. 1950034, 73.
+[HM24] E.-M. Hekkelman and E. McDonald. A general Dixmier trace formula for the density
+of states on open manifolds. SIGMA Symmetry Integrability Geom. Methods Appl. 20
+(2024), Paper No. 007, 34.
+[HMN24] E.-M. Hekkelman, E. McDonald, and T. D. H. van Nuland. Multiple operator inte-
+grals, pseudodifferential calculus, and asymptotic expansions.arXiv preprint arXiv:2404.16338
+(2024).
+[Kor05] Y. A. Kordyukov. Egorov’s theorem for transversally elliptic operators on foliated
+manifolds and noncommutative geodesic flow. Math. Phys. Anal. Geom. 8.2 (2005),
+pp. 97–119.
+[KSZ24a] Y. Kordyukov, F. Sukochev, and D. Zanin. C∗-algebraic approach to the principal sym-
+bol. III. J. Noncommut. Geom. 18.4 (2024), pp. 1265–1314.
+[KSZ24b] Y. Kordyukov, F. Sukochev, and D. Zanin. Principal Symbol Calculus on Contact Mani-
+folds. Vol. 2359. Lecture Notes in Mathematics. Springer, Cham, 2024, pp. xiv+156.
+[LMSZ23] S. Lord, E. McDonald, F. Sukochev, and D. Zanin. Singular traces. Vol. 2. Trace Formu-
+las. Vol. 46/2. De Gruyter Studies in Mathematics. Second edition. De Gruyter, Berlin,
+2023.
+[LPS10] S. Lord, D. Potapov, and F. Sukochev. Measures from Dixmier traces and zeta func-
+tions. J. Funct. Anal. 259.8 (2010), pp. 1915–1949.
+[LS10] S. Lord and F. Sukochev. Measure theory in noncommutative spaces. SIGMA Symme-
+try Integrability Geom. Methods Appl. 6 (2010), Paper 072, 36.
+[LS11] S. Lord and F. A. Sukochev. Noncommutative residues and a characterisation of the
+noncommutative integral. Proc. Amer. Math. Soc. 139.1 (2011), pp. 243–257.
+31
+
+===PAGE-BREAK===
+
+[LS24] M. Leimbach and W. D. van Suijlekom. Gromov-Hausdorff convergence of spectral
+truncations for tori. Adv. Math. 439 (2024), Paper No. 109496, 26.
+[LS96] A. Laptev and Y. Safarov. Szeg˝ o type limit theorems. J. Funct. Anal. 138.2 (1996),
+pp. 544–559.
+[LSZ21] S. Lord, F. Sukochev, and D. Zanin. Singular traces. Vol. 1. Theory . Second edition.
+Vol. 46/1. De Gruyter Studies in Mathematics. De Gruyter, Berlin, 2021, pp. xxix+383.
+[MM24] M. Ma and Q. Ma. Semiclassical analysis, geometric representation and quantum er-
+godicity. Comm. Math. Phys. 405.11 (2024), Paper No. 259, 28.
+[MSZ19] E. McDonald, F. Sukochev, and D. Zanin. A C∗-algebraic approach to the principal
+symbol II. Math. Ann. 374.1-2 (2019), pp. 273–322.
+[MSZ22] E. McDonald, F. Sukochev, and D. Zanin. A noncommutative Tauberian theorem and
+Weyl asymptotics in noncommutative geometry. Lett. Math. Phys. 112.4 (2022), Paper
+No. 77, 45.
+[Mur90] G. J. Murphy. C∗-algebras and operator theory. Academic Press, Inc., Boston, MA, 1990,
+pp. x+286.
+[Pet89] K. Petersen. Ergodic theory. Vol. 2. Cambridge Studies in Advanced Mathematics. Cor-
+rected reprint of the 1983 original. Cambridge University Press, Cambridge, 1989,
+pp. xii+329.
+[PF92] L. Pastur and A. Figotin. Spectra of random and almost-periodic operators. Vol. 297. Grundlehren
+der mathematischen Wissenschaften [Fundamental Principles of Mathematical Sci-
+ences]. Springer-Verlag, Berlin, 1992, pp. viii+587.
+[Pon23] R. Ponge. Connes’ integration and Weyl’s laws. J. Noncommut. Geom. 17.2 (2023),
+pp. 719–767.
+[Rie23] M. A. Rieffel. Convergence of Fourier truncations for compact quantum groups and
+finitely generated groups. J. Geom. Phys. 192 (2023), Paper No. 104921, 13.
+[RS80] M. Reed and B. Simon. Methods of modern mathematical physics. I. Second edition. Func-
+tional analysis. Academic Press, Inc. [Harcourt Brace Jovanovich, Publishers], New
+York, 1980, pp. xv+400.
+[Shn74] A. I. Shnirelman. Ergodic properties of eigenfunctions. Uspehi Mat. Nauk 29.6(180)
+(1974), pp. 181–182.
+[Sim82] B. Simon. Schrödinger semigroups. Bull. Amer. Math. Soc. (N.S.) 7.3 (1982), pp. 447–
+526.
+[Ste19] A. B. Stern. Finite-rank approximations of spectral zeta residues. Lett. Math. Phys.
+109.3 (2019), pp. 565–577.
+[Sui24a] W. D. van Suijlekom. A generalization of K-theory to operator systems. arXiv preprint
+arXiv:2409.02773 (2024).
+[Sui24b] W. D. van Suijlekom. Higher K-groups for operator systems. arXiv preprint arXiv:2411.02981
+(2024).
+[Sui25] W. D. van Suijlekom. Noncommutative geometry and particle physics . Second edition.
+Mathematical Physics Studies. Springer, Cham, 2025, pp. xiii+315.
+32
+
+===PAGE-BREAK===
+
+[SZ18] F. Sukochev and D. Zanin. A C∗-algebraic approach to the principal symbol. I. J. Op-
+erator Theory 80.2 (2018), pp. 481–522.
+[Sze15] G. Szeg˝ o. Ein Grenzwertsatz über die Toeplitzschen Determinanten einer reellen pos-
+itiven Funktion. Math. Ann. 76.4 (1915), pp. 490–503.
+[Vas07] D. V . Vassilevich. Heat trace asymptotics on noncommutative spaces. SIGMA Symme-
+try Integrability Geom. Methods Appl. 3 (2007), Paper 093, 11.
+[Ves08] I. Veseli´ c. Existence and regularity properties of the integrated density of states of ran-
+dom Schrödinger operators. Vol. 1917. Lecture Notes in Mathematics. Springer-Verlag,
+Berlin, 2008, pp. x+142.
+[Wid79] H. Widom. Eigenvalue distribution theorems for certain homogeneous spaces. J. Func-
+tional Analysis 32.2 (1979), pp. 139–147.
+[Zel10] S. Zelditch. Recent developments in mathematical quantum chaos. Current develop-
+ments in mathematics, 2009. Int. Press, Somerville, MA, 2010, pp. 115–204.
+[Zel17] S. Zelditch. Eigenfunctions of the Laplacian on a Riemannian manifold . Vol. 125. CBMS
+Regional Conference Series in Mathematics. Conference Board of the Mathematical
+Sciences, Washington, DC; by the American Mathematical Society, Providence, RI,
+2017, pp. xiv+394.
+[Zel87] S. Zelditch. Uniform distribution of eigenfunctions on compact hyperbolic surfaces.
+Duke Math. J. 55.4 (1987), pp. 919–941.
+[Zel96] S. Zelditch. Quantum ergodicity of C∗ dynamical systems. Comm. Math. Phys. 177.2
+(1996), pp. 507–528.
+[ZS23] D. V . Zanin and F. Sukochev. Connes integration formula: a constructive approach.
+Funct. Anal. Appl. 57.1 (2023). Translation of Funktsional. Anal. i Prilozhen. 57 (2023),
+no. 1, 52–76., pp. 40–59.
+[Zwo12] M. Zworski. Semiclassical analysis. Vol. 138. Graduate Studies in Mathematics. Ameri-
+can Mathematical Society, Providence, RI, 2012, pp. xii+431.
+33

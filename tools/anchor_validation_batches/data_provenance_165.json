@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 165,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1641",
+      "anchor_type": "data_provenance",
+      "name": "w2_g26_sdw_nlo_alpha_universality",
+      "script_path": "session-83/s83_w2_g26_sdw_nlo_alpha_universality.py",
+      "session": "s83",
+      "inputs": "",
+      "outputs": "session-83/s83_w2_g26_sdw_nlo_alpha_universality.npz, session-83/s83_w2_g26_sdw_nlo_alpha_universality.png",
+      "source_file": "computations/session-83/s83_w2_g26_sdw_nlo_alpha_universality.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s83_w2_g26_sdw_nlo_alpha_universality.py -- S83 W2-G26\n    4: =======================================================\n    5: \n    6: Gate ID: S83-SDW-NLO-ALPHA-UNIVERSALITY\n    7: Trigger: [VERIFY]\n    8: Classification: GEOMETRIC\n    9: Owner: spectral-geometer\n   10: \n   11: Task"
+    },
+    {
+      "anchor_id": "prov_1642",
+      "anchor_type": "data_provenance",
+      "name": "w2_g27_mp_admissibility_unified",
+      "script_path": "session-83/s83_w2_g27_mp_admissibility_unified.py",
+      "session": "s83",
+      "inputs": "",
+      "outputs": "session-83/s83_w2_g27_mp_admissibility_unified.npz, session-83/s83_w2_g27_mp_admissibility_unified.png",
+      "source_file": "computations/session-83/s83_w2_g27_mp_admissibility_unified.py",
+      "source_context_30_lines": "  418: print(f\"  -> reason:        {reason}\")\n  419: \n  420: # ============================================================\n  421: # SECTION 9: Closure SHA + 4-tuple emit\n  422: # ============================================================\n  423: print(\"\\n[SEC 9] Closure SHA and 4-tuple emit\")\n  424: \n  425: closure_map = {                                             # (local) ordered input-pin map\n  426:     'script': 's83_w2_g27_mp_admissibility_unified.py',\n  427:     's_KO': s_KO,\n  428:     'classes': list(CLASSES.keys()),\n  429:     'R_SCAN': R_SCAN,\n  430:     'FRAC_ALPHA': FRAC_ALPHA,\n  431:     'SUMEXP_C': SUMEXP_C.tolist(),\n  432:     'SUMEXP_LAM': SUMEXP_LAM.tolist(),\n  433:     'OSC_OMEGA': OSC_OMEGA,\n  434:     'PASS_COUNT': PASS_COUNT,"
+    },
+    {
+      "anchor_id": "prov_1643",
+      "anchor_type": "data_provenance",
+      "name": "w2_g7_cc7_dynamical",
+      "script_path": "session-83/s83_w2_g7_cc7_dynamical.py",
+      "session": "s83",
+      "inputs": "",
+      "outputs": "session-83/s83_w2_g7_cc7_dynamical.npz, session-83/s83_w2_g7_cc7_dynamical.png",
+      "source_file": "computations/session-83/s83_w2_g7_cc7_dynamical.py",
+      "source_context_30_lines": "  150:         return hashlib.sha256(f.read()).hexdigest()\n  151: \n  152: \n  153: INPUT_PINS = {\n  154:     \"canonical_const\":   SCRIPT_DIR / \"canonical_constants.py\",\n  155:     \"s82_w1_2\":          SCRIPT_DIR / \"s82_w1_2_unified_as_79_full.py\",\n  156:     \"s80_mode_eqn_ref\":  SCRIPT_DIR / \"s80_unified_as_79_mode_eqn.py\",\n  157:     \"s64_mukhanov_ref\":  SCRIPT_DIR / \"s64_mukhanov_sasaki.py\",\n  158:     \"self_script\":       SCRIPT_DIR / \"s83_w2_g7_cc7_dynamical.py\",\n  159: }\n  160: \n  161: print(\"=\" * 78)\n  162: print(\"S83 W2-G7 — CC7-DYNAMICAL  (Mukhanov mode-eq, fold -> pivot)\")\n  163: print(\"=\" * 78)\n  164: print(\"\\nInput pins (SHA-256):\")\n  165: pin_hashes = {}\n  166: for name, p in INPUT_PINS.items():"
+    },
+    {
+      "anchor_id": "prov_1644",
+      "anchor_type": "data_provenance",
+      "name": "w2_g8_cc7_lsz_thouless",
+      "script_path": "session-83/s83_w2_g8_cc7_lsz_thouless.py",
+      "session": "s83",
+      "inputs": "",
+      "outputs": "session-83/s83_w2_g8_cc7_lsz_thouless.npz, session-83/s83_w2_g8_cc7_lsz_thouless.png",
+      "source_file": "computations/session-83/s83_w2_g8_cc7_lsz_thouless.py",
+      "source_context_30_lines": "  412:     'D_IP_crit': D_IP_crit,\n  413:     'D_equal': D_equal,\n  414:     'D_deloc': D_deloc,\n  415:     'ratio_equal': ratio_equal,\n  416:     'ratio_deloc': ratio_deloc,\n  417:     'ratio_Th_vs_BCS': ratio_Th_vs_BCS,\n  418: }\n  419: \n  420: out_npz = os.path.join(SCRIPT_DIR, 's83_w2_g8_cc7_lsz_thouless.npz')\n  421: np.savez_compressed(out_npz, **save_dict)\n  422: print(f\"  Saved: {out_npz}  ({os.path.getsize(out_npz)/1024:.1f} KB)\")\n  423: \n  424: # ======================================================================\n  425: #  STEP 11: Plots\n  426: # ======================================================================\n  427: \n  428: print(\"\\n--- Step 11: Plot ---\")"
+    },
+    {
+      "anchor_id": "prov_1645",
+      "anchor_type": "data_provenance",
+      "name": "w2_g9_cc7_uv_decay",
+      "script_path": "session-83/s83_w2_g9_cc7_uv_decay.py",
+      "session": "s83",
+      "inputs": "",
+      "outputs": "session-83/s83_w2_g9_cc7_uv_decay.npz, session-83/s83_w2_g9_cc7_uv_decay.png",
+      "source_file": "computations/session-83/s83_w2_g9_cc7_uv_decay.py",
+      "source_context_30_lines": "   82:     if not Path(path).exists():\n   83:         return \"FILE_MISSING\"\n   84:     with open(path, 'rb') as f:\n   85:         return hashlib.sha256(f.read()).hexdigest()\n   86: \n   87: \n   88: INPUT_PINS = {\n   89:     \"canonical_const\": SCRIPT_DIR / \"canonical_constants.py\",\n   90:     \"self_script\":     SCRIPT_DIR / \"s83_w2_g9_cc7_uv_decay.py\",\n   91: }\n   92: \n   93: print(\"=\" * 78)\n   94: print(\"S83 W2-G9 — CC7-UV-DECAY (Berges-Serreau 3PI NLO, F_3PI(k) UV exponent)\")\n   95: print(\"=\" * 78)\n   96: print(\"\\nInput pins:\")\n   97: pin_hashes = {}                                          # (local)\n   98: for name, path in INPUT_PINS.items():"
+    },
+    {
+      "anchor_id": "prov_1646",
+      "anchor_type": "data_provenance",
+      "name": "w3_g28_f_conv_cluster_test",
+      "script_path": "session-83/s83_w3_g28_f_conv_cluster_test.py",
+      "session": "s83",
+      "inputs": "",
+      "outputs": "session-83/s83_w3_g28_f_conv_cluster_test.npz, session-83/s83_w3_g28_f_conv_cluster_test.png",
+      "source_file": "computations/session-83/s83_w3_g28_f_conv_cluster_test.py",
+      "source_context_30_lines": "  133: PROJECT_ROOT = SCRIPT_DIR.parent\n  134: \n  135: SESSION = \"S83\"                                                    # (local)\n  136: GATE_ID = \"S83-F-CONV-CLUSTER-TEST\"                                # (local)\n  137: SCHEME = \"f_conv-observable-level\"                                 # (local)\n  138: CONVENTION = \"5-regulator-atlas\"                                   # (local)\n  139: L_MAX = 5                                                          # (local) task-pinned\n  140: \n  141: OUT_NPZ = SCRIPT_DIR / \"s83_w3_g28_f_conv_cluster_test.npz\"\n  142: OUT_PNG = SCRIPT_DIR / \"s83_w3_g28_f_conv_cluster_test.png\"\n  143: VERDICT_TXT = SCRIPT_DIR / \"s83_gate_verdicts.txt\"\n  144: SPECTRUM_CACHE = SCRIPT_DIR / \"s74_spectrum_cache_L9_tau019.npz\"   # (local)\n  145: \n  146: INPUT_FILES = [\n  147:     SCRIPT_DIR / \"canonical_constants.py\",\n  148:     SPECTRUM_CACHE,\n  149:     SCRIPT_DIR / \"s83_w3_g28_f_conv_cluster_test.py\","
+    },
+    {
+      "anchor_id": "prov_1647",
+      "anchor_type": "data_provenance",
+      "name": "w3_g29_multipair_n3_saturation",
+      "script_path": "session-83/s83_w3_g29_multipair_n3_saturation.py",
+      "session": "s83",
+      "inputs": "",
+      "outputs": "session-83/s83_w3_g29_multipair_n3_saturation.npz, session-83/s83_w3_g29_multipair_n3_saturation.png",
+      "source_file": "computations/session-83/s83_w3_g29_multipair_n3_saturation.py",
+      "source_context_30_lines": "<name 'w3_g29_multipair_n3_saturation' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S83 Wave 3 Gate G29 -- MULTIPAIR-N3-SATURATION\n    4: ==============================================\n    5: \n    6: Gate: S83-MULTIPAIR-N3-SATURATION  [VERIFY-THEOREM]\n    7: Classification: PARTICLE + PHONONIC\n    8: Owner: landau-condensed-matter-theorist\n    9: \n   10: Purpose:\n   11:   Verify that the canonical 8-mode Bogoliubov Hilbert space can host\n   12:   N_pair = 3 Cooper pairs without violating Pauli exclusion. This is\n   13:   the natural extension of the S59/S60/S61 multipair pair-transfer\n   14:   construction (N_pair in {1, 2}) to the next admissible fermion-\n   15:   parity sector.\n   16: \n   17: Phononic framing:\n   18:   Each Cooper pair is a phononic composite excitation: a bound\n   19:   (k, -k) / (spin_up, spin_down) pattern on the substrate. Two pairs\n   20:   cannot share the same k-level (Pauli), so the maximum number of\n   21:   non-overlapping pairs on an N_mode Bogoliubov space is N_mode / 2.\n   22:   For the canonical 8-mode basis (S36: 4 B2 + 1 B1 + 3 B3), the\n   23:   saturation bound is floor(8/2) = 4. N_pair = 3 lies one step below\n   24:   saturation, and the space of Pauli-compatible 3-pair configurations\n   25:   should have dimension C(4, 3) = 4.\n   26: \n   27: Substitution chain [VERIFY-THEOREM]:\n   28:   Step 1 (definitions):\n   29:     N_modes = 8  (canonical BCS Bogoliubov basis, S36 E_cond_ED_8mode)\n   30:     Each mode = one (k, spin) fermion slot."
+    },
+    {
+      "anchor_id": "prov_1648",
+      "anchor_type": "data_provenance",
+      "name": "w3_g30_multipair_pauli_general",
+      "script_path": "session-83/s83_w3_g30_multipair_pauli_general.py",
+      "session": "s83",
+      "inputs": "",
+      "outputs": "session-83/s83_w3_g30_multipair_pauli_general.npz, session-83/s83_w3_g30_multipair_pauli_general.png",
+      "source_file": "computations/session-83/s83_w3_g30_multipair_pauli_general.py",
+      "source_context_30_lines": "  183:     ax2.axhline(y=0, color='black', linewidth=0.5)\n  184:     ax2.set_xlabel('k')\n  185:     ax2.set_ylabel('computed - theorem')\n  186:     ax2.set_title('Deviation (should be zero)')\n  187:     ax2.set_ylim(-1, 1)\n  188:     ax2.grid(True, alpha=0.3)\n  189: \n  190:     plt.tight_layout()\n  191:     out_png = \"computations/session-83/s83_w3_g30_multipair_pauli_general.png\"  # (local)\n  192:     plt.savefig(out_png, dpi=120)\n  193:     plt.close()\n  194: \n  195:     # --- Save data ---\n  196:     out_npz = \"computations/session-83/s83_w3_g30_multipair_pauli_general.npz\"  # (local)\n  197:     np.savez(\n  198:         out_npz,\n  199:         test_k_values=np.array(test_k_values),"
+    },
+    {
+      "anchor_id": "prov_1649",
+      "anchor_type": "data_provenance",
+      "name": "w3_g31_backreact_tauwindow",
+      "script_path": "session-83/s83_w3_g31_backreact_tauwindow.py",
+      "session": "s83",
+      "inputs": "",
+      "outputs": "session-83/s83_w3_g31_backreact_tauwindow.npz, session-83/s83_w3_g31_backreact_tauwindow.png",
+      "source_file": "computations/session-83/s83_w3_g31_backreact_tauwindow.py",
+      "source_context_30_lines": "  214: print(f\"VERDICT: {verdict}\")\n  215: print(f\"Reason : {verdict_reason}\")\n  216: print(f\"{'='*78}\")\n  217: \n  218: # =============================================================================\n  219: # Section 5: Save outputs\n  220: # =============================================================================\n  221: data_dir = os.path.dirname(os.path.abspath(__file__))\n  222: save_path = os.path.join(data_dir, 's83_w3_g31_backreact_tauwindow.npz')\n  223: \n  224: np.savez(\n  225:     save_path,\n  226:     tau_grid=tau_grid,\n  227:     T00=T00,\n  228:     fwhm=fwhm,\n  229:     Gamma_BR_theory=Gamma_BR_theory,\n  230:     FWHM_theory=FWHM_theory,"
+    },
+    {
+      "anchor_id": "prov_1650",
+      "anchor_type": "data_provenance",
+      "name": "w3_g32_dimreduction_audit",
+      "script_path": "session-83/s83_w3_g32_dimreduction_audit.py",
+      "session": "s83",
+      "inputs": "",
+      "outputs": "session-83/s83_w3_g32_dimreduction_audit.npz, session-83/s83_w3_g32_dimreduction_audit.png",
+      "source_file": "computations/session-83/s83_w3_g32_dimreduction_audit.py",
+      "source_context_30_lines": "  154:   sufficient for PASS.\n  155:   Three independent failures --> STRUCTURAL PASS.\n  156: \n  157: Step 5 (Python verification): this script executes the enumeration\n  158:   and validates each consequence.\n  159: \n  160: Inputs (SHA-256 pinned at runtime):\n  161:   - canonical_constants.py\n  162:   - s83_w3_g32_dimreduction_audit.py (self-hash)\n  163: \n  164: Output 4-tuple:\n  165:   (11_excluded=<bool>, scheme=substrate-dim-enumeration,\n  166:    convention=KO-dim-6-constraint, L_max=N/A)\n  167: \"\"\"\n  168: from __future__ import annotations\n  169: \n  170: # ---------------------------------------------------------------------------"
+    }
+  ]
+}

@@ -1,0 +1,314 @@
+## S81 Tier 3 Re-Run Verdicts (canonical form per .claude/rules/gate-verdicts.md)
+
+T3-S69-BCS-SURFACE-GRAVITY: PASS -- value=0.4642547394830737 scheme=R-PROTECTED convention=RATIO L_max=6 sha256=868bc970101a28bc67af30770816982a7ea76ff991c8737889942dd5dc526377
+  # target: MCP Delta_BCS (S70 BCS-GAP-CANONICAL-70, R-Protected)
+  # pre-fix: script hardcoded Delta_BCS = 0.52 (12% drift above canonical)
+  # fix: added Delta_BCS to canonical_constants import list; removed line 102 hardcode
+  # reproduced: 0.4642547394830737 (byte-identical to MCP, relative error = 0)
+  # downstream shifts (script-computed, validated against substitution chain):
+  #   kappa_BCS:   3.588 -> 4.019  (+12.01% as predicted)
+  #   T_BCS_kappa: 0.571 -> 0.640  (+12.01% as predicted)
+  #   T_BCS_gap:   0.0828 -> 0.0739 (-10.72% as predicted)
+  # script_sha=81d9aef76168d642 canon_sha=68b50cd325d2cc8c npz_sha=4c16673184282ed9
+
+T3-S21C-GB-DEBUG4: PASS -- value=RUNNABLE scheme=RESTORATION convention=DIAGNOSTIC L_max=N/A sha256=c307709f05d7f90eea2f285177cf992a2f312941d19a0e41a361c118c6dbe69f
+  # target: script runs end-to-end (was BLOCKER: NameError at line 132, second
+  #         f-string NameError at line 118 discovered during re-run)
+  # pre-fix: two unrelated NameErrors
+  #   (a) `d['R_abcd']` referenced without `d = np.load(...)` — primary BLOCKER
+  #       reported by NCG Tier 2 agent
+  #   (b) f-string `|f_{abc} + f_{bac}|` interpreted `{abc}` as a variable (label
+  #       text was meant literal) — second NameError surfaced only when (a) fixed
+  # fix: added `d = np.load(r20a_riemann_tensor.npz, allow_pickle=True)` with
+  #      path fallback; escaped f-string literal braces; added canonical import
+  #      per computations/_shared/CLAUDE.md mandate
+  # reproduced: script runs 111 output lines; prints the DIAGNOSTIC partition
+  #   sum 1.76e-4 (which the script's own docstring flags as the open
+  #   investigation question — a nonzero result contradicting chi(SU(3))=0 from
+  #   Poincare-Hopf — expected pre-existing finding, investigation continued in
+  #   debug5/debug6/gauss_bonnet, not a new regression)
+  # Tier 3 grade: PASS (runnability restored). The physics investigation the
+  #   script documents remains open but is out of scope for a re-run verdict.
+  # script_sha=d272e7473ef0dc93 canon_sha=68b50cd325d2cc8c r20a_sha=fc256a9b4791b1d6
+
+T3-S43-SPECTRAL-DISSOLUTION: PASS -- value=0.190000 scheme=LEVEL-STATISTICS convention=ABSOLUTE L_max=2 sha256=c820d1a575d2b60bed11384731e935eadb0cdcb602998123f8cbb8a0506a460c
+  # target: MCP tau_fold = 0.19 (S42 CONST-FREEZE-42)
+  # pre-fix: archive script hardcoded TAU_FOLD=0.19 and 1.221e19 directly (no canonical import);
+  #          DISSOLUTION-43 gate cited via # gates_informed in data_provenance but not ingested
+  #          as a gate entity (ghost gate — separate extractor finding)
+  # fix: added `from canonical_constants import *`; TAU_FOLD = tau_fold alias;
+  #      swapped 1.221e19 hardcode at line 804 for M_Pl_unreduced (= 1.2209e19; 0.008% shift
+  #      absorbed in rounding — epsilon_crossover result is structural, unchanged)
+  # reproduced:
+  #   tau = 0.190000 (rel error vs MCP = 0)
+  #   r_unperturbed = 0.4101 (block-diagonal, near-Poisson; R_POISSON=0.386, R_GOE=0.531)
+  #   epsilon_crossover ~ 0.02 (first eps where <r> crosses midpoint 0.459)
+  #   M_KK_threshold = epsilon_crossover^2 * M_Pl_unreduced = 4.884e+15 GeV
+  # 6 sectors (p+q<=2), total Hilbert dim 432; 20 samples * 9 eps values, CPU eigvalsh
+  # physical conclusion: epsilon_crossover (0.02) <= foam amplitude 0.18
+  #   => foam DISSOLVES spectral triple at Planck scale (script's pre-existing verdict,
+  #      unchanged by canonical migration)
+  # script_sha=b1a3c6d87f0f7f6a canon_sha=68b50cd325d2cc8c npz_sha=95131f4e95afc29a
+  # ghost gate: DISSOLUTION-43 needs a session-plan gate block for the extractor to ingest it;
+  #   flagged for spectral-geometer follow-up.
+
+## Relation edges (tagged-link syntax; ingested by tools/extract_entities.py)
+
+[EDGE:derived_from] gates:T3-S69-BCS-SURFACE-GRAVITY -> constants:Delta_BCS  # R-Protected BCS gap canonical migration
+[EDGE:depends_on] data:s69_bcs_surface_gravity.py -> constants:Delta_BCS  # canonical import replaced hardcode 0.52
+[EDGE:depends_on] data:s43_spectral_dissolution.py -> constants:M_Pl_unreduced  # Planck mass canonical migration
+[EDGE:depends_on] data:s43_spectral_dissolution.py -> constants:tau_fold  # fold timescale canonical migration
+[EDGE:depends_on] data:s21c_gb_debug4.py -> data:r20a_riemann_tensor.npz  # Riemann tensor input, two-path fallback
+[EDGE:closed_by] open:DISSOLUTION-43 -> gates:T3-S43-SPECTRAL-DISSOLUTION  # epsilon_crossover 0.02 <= foam 0.18, verdict unchanged
+
+
+## Tier 3 intake consolidation
+
+T3-S38-KZ-DEFECTS: PASS -- value=1.000000 scheme=BCS_meanfield_KZ convention=0D_pair_reformulated L_max=N/A_KZ sha256=bb80a4c851e21cacee304e05b4e85b6805d7287c707ff8d0b3b631578c2e38d2
+
+T3-S42-CONSTANTS-SNAPSHOT: PASS -- value=0.831665 scheme=Kerner-vs-SpectralZeta-OOM convention=KK-SU3-Jensen-tau_fold L_max=NA sha256=9704d62b2d3a3af99b19cddaa418f8918b30bffc6dd3538427797e13486a4b7d
+
+T3-S42-FABRIC-WZ: PASS -- value=2.499672e-59 scheme=fabric-collective convention=M_KK=1e9GeV_FIRAS L_max=NA sha256=20c133b52d094f1ac4b3fab6dd52e5ecbc2e02cec1c9f1fdb58db6a70146cb13
+
+T3-S44-CC-GAP-AUDIT: INFO -- value=110.53 scheme=trace-log_x_EIH convention=log10_gap_OOM L_max=NA sha256=31c72408355f3e732714cb09e0cf48250e44f80624ce20dbb13d6e07a6758705
+  # target: diagnostic audit (no MCP-registered threshold); residual CC gap in OOM after stacked suppression
+  # pre-fix: script was already canonical — imports M_Pl_reduced, Omega_Lambda, H_0_km_s_Mpc, hbar_eV_s from canonical_constants.py
+  # fix: none required — all intermediates tagged `# (local)`, no hardcoded framework constants, MCP queried (cc_gap_audit entity matches)
+  # reproduced: residual_OOM=110.53 (trace-log x EIH singlet), matches S44 summary stacking (best chain = 9.42 orders suppression off starting gap 117.20)
+  # rel error: N/A (diagnostic; secondary checks: spectral-action reconstruction ratio rho_spec_stored/rho_recompute ~ O(1), trace-log/polynomial = 3.0895e-3 matches tl_ratio=3.0900e-3 to 4 sig fig)
+  # closure_inputs: {canon, script, s42_constants_snapshot.npz, s36_sfull_tau_stabilization.npz, s44_eih_grav.npz, s44_tracelog_cc.npz, s44_jacobson_spec.npz, s44_singlet_cc.npz}
+  # script_sha:  629dd713bd4f856f976d09f1a2bd40590ffc3347d681d0304a4bd0f30faa2688
+  # canon_sha:   68b50cd325d2cc8c63b775da3b6b92f538da582bee44c5d906c81259f24dd12f
+  # input shas: s42=39f613507950979327f0d9b7473bd73f7b0a7ea2d9d0c5507f6b8b939909f80b s36=6a172dfc7fb0103f4cc6a9d37dc2fb2b944f8c357edf8825e0e9c9427c4cbe1e eih=1269f339605636bb6a90268b55ba07ac829f2b21a944dc4a666b76d50f42bf96 tl=30b93ba7de622ce635c59384f354a0d38e5f35390250814689059d314a88983e jac=eba33df978738e0df6f0711168e43569a2978abd68050839578733db2b92b75f sin=f0e0305ea46559e404ab263d95a4c0a0a115a7467905c740e0d0cb83a06e8a2b
+  # missing_constants: none (rho_Lambda_standard = 2.888e-47 GeV^4 is a cross-check alternate convention; the canonical store has Lambda_obs_MP4 = 2.888e-122 dimensionless which is the same number in M_Pl^4 units; script flags the alternate as `# (local)` with canonical_constants.py note reference — acceptable)
+  # summary table (from stdout):
+  #   textbook M_Pl^4 gap        =  120.14 OOM
+  #   bare M_KK^4 gap            =  114.08 OOM
+  #   spectral (2/pi^2 a_0 M^4)  =  117.20 OOM   <-- starting point (Def B)
+  #   S_fold * M_KK^4 / 16 pi^2  =  117.28 OOM
+  #   trace-log geometric        =  114.77 OOM
+  #   trace-log x EIH singlet    =  110.53 OOM   <-- residual (final)
+  # notes: script is an organizational audit — no new pre-registered gate passes or fails here; S44 residual gap (110.53 OOM) is reproduced bit-for-bit from archived S36/S42/S44 workshop .npz files. The 2.888e-47 GeV^4 dark-energy-density cross-check is a widely-cited alternate form; its canonical analog is Lambda_obs_MP4 in canonical_constants.py. No constants need to be added.
+  # MCP baseline: trace_entity("cc_gap") returned proven_674 (cutoff CC gap = 117.8 OOM, zeta CC gap = 115.9 OOM) and closed_66 (CC gap = 114 OOM); our computed Def-B spectral value 117.20 matches proven_674 cutoff branch to within 0.6 OOM rounding (different a_0, M_KK snapshot vs live values).
+
+T3-S44-CONSTANTS-CORRECTED: PASS -- value=1349.739958 scheme=Weyl-integration-formula convention=SU3-Haar-8D L_max=NA sha256=41f9d398e6878c32d6ee54c9d1ea349072b986e918357b4834a74ccb0fed20d4
+
+T3-S52-QM-DISPERSION: PASS -- value=-5.794598e-01 scheme=poly_fit_omega_sq_vs_K_sq convention=GoldstoneBranch_G->X_small_K_cut=0.5 L_max=N/A sha256=8803552f031bc1d3b0ce7aec148723d64a5c7c58140871de995d287937568540
+  # target: -0.579 (MCP canonical alpha_QM, QM-DISPERSION-52 PASS)
+  # pre-fix: script already T3-compliant — `from canonical_constants import *` at line 76, all framework constants (N_cells, rho_B2_per_mode, Delta_0_GL, Delta_B3, J_C2, J_su2, PI) imported; all intermediates (Nk, dk, Ng, Nfit, kx_small_K_cut, target, qm_pass_thresh, qm_fail_thresh, K_pivots, rho_B1/B2/B3 fallback, J_12/13/23 fallback) already tagged `# (local)`. No edits required.
+  # fix: none — script passes T3 canonical-import + local-tagging discipline at current SHA (updated since prep-block SHA 9085656d2e094d12 -> current 4b4464b2e9cd93e1).
+  # reproduced: alpha_QM_omega = -5.794598e-01 (Goldstone K^4 correction coefficient on G->X). Also reproduced alpha_QM_omega_sq = -1.158920e+00, delta_alpha_QM = -5.377947e-01, tr_g_BZ_avg = 1.916010e-02, c_eff_xy = 0.172206, c_eff_z = 0.043730. K_pivots {0.1,0.2,0.5,1.0} all PASS |dn_QM|>0.01 threshold (1.55e-2 to 1.24e-1).
+  # rel error vs MCP: 7.94e-4 (0.0794%) — under RATIO 0.5% tolerance; well over 10x under FAIL threshold (5%).
+  # closure_inputs: script=4b4464b2e9cd93e1 canon=68b50cd325d2cc8c npz_s48=14f806285bd25ddf
+  # script_sha=4b4464b2e9cd93e131dc956e651944f90a7aa38f554478eba798f350978452ea  canon_sha=68b50cd325d2cc8c63b775da3b6b92f538da582bee44c5d906c81259f24dd12f
+  # note: s35_thouless_multiband.npz not present -> script took fallback branch for J_12/J_13/J_23 (lines 150-152, approximate Leggett couplings from omega_L1/L2 back-extraction). This is the INTENDED behavior encoded in the script; rho_B1/B2/B3 used the rho_B2_per_mode canonical-derived fallback. Result (-0.579) matches MCP canonical value to 3 decimal places.
+  # GPU path: N/A — Bloch Hamiltonian is 3x3, QGT scan is 16^3 = 4096 points, runtime 1.3s on CPU. No matrix >= 100x100 encountered; GPU would add data-transfer overhead for no benefit.
+  # missing canonical constants flagged: none. alpha_QM itself (value -0.579) IS registered canonical but has no PROVENANCE row — recommend update_constant(alpha_QM, -0.579, "S52", "s52_qm_dispersion.py", "QM-DISPERSION-52 gate PASS W1-G") to close that provenance gap.
+
+## Tier 3 intake consolidation
+
+T3-S38-ATTEMPT-FREQ: PASS -- value=1.4299612309 scheme=BCS_numerical_curvature convention=m_eff=1 L_max=n/a sha256=7efa9c25926f34357fba3a8cae9e3aa86ea3d5d695bd67dc97834c3d702722ce
+  # target            = 1.430 (MCP theorem "BCS attempt frequency", session-38-naz-tesla-workshop.md; mapped to omega_att_BCS = sqrt(F_BCS''(Delta_0)))
+  # pre-fix head16    = 9adca11c299158c5 (matches prep block line 732)
+  # fix               = (1) added `sys.path.insert(...)` + `from canonical_constants import *`; (2) swapped literal `0.190` -> canonical symbol `tau_fold` on line 114; (3) tagged 6 intermediates `# (local)`: omega_tau_fold, F_pp_GL, width, delta_inst, delta_inst_GL, n_inst_dilute, n_inst_dense (line 114 also tagged)
+  # reproduced        = 1.4299612309 (stdout "omega_att (BCS numerical)" & npz key 'omega_att_BCS')
+  # rel_err vs MCP    = |1.4299612309 - 1.430| / 1.430 = 2.711129e-05
+  # tolerance (RATIO) = 5.0e-3 (0.5%) -- rel_err << tol -> PASS
+  # closure           = SHA-256 of JSON-sorted input-pin map {s37_instanton_action.npz, s37_pair_susceptibility.npz, s31Ba_instanton_kapitza.npz, s38_cc_instanton.npz, s31Ch_instanton_eff_freq.npz, canonical_constants.py} = 7efa9c25926f34357fba3a8cae9e3aa86ea3d5d695bd67dc97834c3d702722ce
+  # post-fix SHA-256  = 01cdaa6be6795d45946380924d9172eafa4ccdc85cef08548c6ee796ea8eccb9 (head16: 01cdaa6be6795d45)
+  # input SHAs (head16):
+  #   s37_instanton_action.npz      = b0b19cc9f2694ef4
+  #   s37_pair_susceptibility.npz   = a21910055a772ce7
+  #   s31Ba_instanton_kapitza.npz   = fff04615f60e90c3
+  #   s38_cc_instanton.npz          = db1e7eb13a3c4fb1
+  #   s31Ch_instanton_eff_freq.npz  = 9b2ec7a97d7e2cc2
+  #   canonical_constants.py        = 68b50cd325d2cc8c
+  # direction note    = tau_fold swap 0.190 -> 0.19 is IEEE 754 identical (both parse to 0x3FC851EB851EB852); omega_att_BCS does not depend on tau_fold (only idx_fold for omega_tau_fold diagnostic); zero numerical shift as predicted
+  # upstream loaders  = a_GL, b_GL, Delta_0, S_inst, F_BCS, delta_scan, omega_PV, omega_tau, E_8, V_8x8, Delta_OES, B2_bw, rho_B2, d2E_fold, v_F, M_max, xi_BCS, xi_GL, E_cond, barrier_0d, barrier_A, L loaded from upstream .npz (NOT literals; not replaced)
+
+## Tier 3 intake consolidation
+
+T3-S23A-KOSMANN-SINGLET: PASS -- value=2.765999e-01 scheme=Kosmann_antisym_Baptista_P17_eq4.1 convention=KO-dim=6_Cliff8_ON-frame L_max=L_max=0_singlet_(0,0) sha256=aab0852822a14e1495ab9859a5a2929406bb1de55fb98733b36ef5fe57a14c22
+
+T3-S32C-PMNS-FINE-GRID: PASS -- value=sin2_13_fold=0.213138,theta12_fold=36.205deg,theta23_fold=43.370deg,R_fold=0.3965 scheme=MethodB_degenerate_PT_cubic_spline convention=U[alpha,i]_ascending_mass_flavor_basis L_max=singlet_L1L2L3_subspace_(0..15)_from_L_max>=1_D_K sha256=a2ceaa2794bd8d79e7c1bc6d5d55b2b67c7e41eae655a692fb3ce2ad8a7b4b1a
+
+T3-S36-MULTISECTOR-ED: PASS -- value=-0.13685055970476256 scheme=exact-diagonalization convention=BCS-pair-occupation-Fock L_max=N_POS_MAX=8 sha256=ecbc6771b14160ee3f0a2a708e4e60d390cef598c083a908457d7ed98607c153
+
+T3-S37-INSTANTON-ACTION: PASS -- value=0.06860372 scheme=BCS_GL_quartic convention=discrete_mode_B2 L_max=N/A sha256=dc8e8d7f833dbe0ad1e24cbd6836f3eeb173dce2cf434f69928a2de9a1ef5d4f
+
+T3-S37-PAIR-SUSCEPTIBILITY: PASS -- value=0.8545396590 scheme=Lehmann_256state_ED_pair_susc convention=largest_gap_split_P^dag_channel L_max=N/A_ED_8mode sha256=3b8111d7ea217dd79047160d985e53beeb90d7d6ad40fc85b58c52e5537eb714
+  # target: Delta_OES == canonical Delta_0_OES = 0.4642547394830737 (R-PROTECTED, BCS-GAP-CANONICAL-70); E_gs == canonical E_cond_ED_8mode = -0.13685055970476342; primary_ratio & ratio_Evac_Econd reproduce archive bit-for-bit
+  # pre-fix: archive script hardcoded n_modes=8, mu=0.0, grid (omega_max=2.0, n_omega=4000, eta_values=[...]), used numpy.linalg.eigh directly, no canonical_constants import, no OMP cap
+  # fix: new T3 copy at computations/_shared/t3-intake/s37_pair_susceptibility_t3.py: canonical `from canonical_constants import *` + explicit Delta_0_OES / Delta_BCS / E_cond THEOREM cross-checks; all grid/scan/n_modes intermediates tagged `# (local)`; OMP_NUM_THREADS=8 / MKL_NUM_THREADS=8 set before numpy; eigh kept (256x256 is below 100x100 GPU threshold and reproduces archive byte-for-byte); SHA-256 verify_pins() at startup; closure SHA emitted; 4-tuple printed last
+  # reproduced: (all match archive to 12 decimal places)
+  #   Delta_OES            = 0.464254739483 (canonical match |diff|=0)
+  #   E_gs                 = -0.136850559705 (canonical E_cond match |diff|=0)
+  #   omega_plus           = 0.791658919261 (N=2 - N=1)
+  #   omega_minus          = 0.136850559705 (|E(N=0) - E(N=1)|)
+  #   omega_pair_vib       = 0.791658919261
+  #   omega_split          = 1.337182660637 (largest spectral gap)
+  #   primary_ratio        = 0.854539659001 (pole/continuum, P^dag channel, gap-based split)
+  #   ratio_first_vs_rest  = 0.854539659001 (first-pole fraction — equal because largest gap sits above first pole)
+  #   ratio_Evac_Econd     = 28.756247965970 (cutoff = 2*Delta_OES = 0.9285; FAR above nuclear 0.05-0.15 benchmark)
+  #   E_vac_final          = 3.935308629152 (M_KK units; cutoff = 2*Delta_OES)
+  #   E_vac_full           = 5.611200774722 (all poles)
+  #   sum_Pdag             = 11.634251863248 (|<n|P^dag|0>|^2 total)
+  #   sum_P                = 5.634251863248
+  #   m_0 = sum_Pdag - sum_P = 6.000000000000 (= <N_pair>*2 * rho_VH term; closes to integer as expected by number-conservation)
+  #   m_1                  = 10.451351028441 (energy-weighted commutator sum rule)
+  # rel error vs archive: all 13 decisive scalars match to 12 decimal places (rel_err = 0.00%) — THEOREM tolerance (< 1e-10) and RATIO tolerance (< 0.5%) both cleared by >= 9 orders of margin
+  # rel error vs MCP canonical: Delta_OES matches canonical Delta_0_OES exactly; E_gs matches E_cond_ED_8mode exactly (these are R-PROTECTED: drift would fail)
+  # closure_inputs: {canon, t3_script, s36_multisector_ed.npz, s35a_vh_impedance_arbiter.npz}
+  # t3_script_sha:   a535461fc76112a9762de2848a5558150f2302008784bed3ac69fb58959516e3
+  # archive_sha:     698bc5d9acfbcad41f2207aff54b0ce9e5a8256c68e7c5b1a6f54ee89e904590  (computations/session-37/s37_pair_susceptibility.py, unchanged)
+  # canon_sha:       68b50cd325d2cc8c63b775da3b6b92f538da582bee44c5d906c81259f24dd12f
+  # input shas: s36_multisector=74c59d141ff64620af9b67e34f024d8190b0a0eb5d3f302b356aea12fa8f3631  s35a_vh=410c4835f23e5064712338853f57b3ac13370c6e7ef3dfd43ffe6fb13ce7a34d
+  # t3_output_npz_sha: a21910055a772ce7228e5b011815e71652ac1e1fd60bd344516c168e44268f61 — independent reproducibility witness: identical hash was pinned as `s37_pair_susceptibility.npz: a2191005...` in computations/_shared/t3-intake/s38_kz_defects_t3.py INPUT_PINS. T3 output is byte-for-byte identical to the archive npz that S38-T3 already pins.
+  # missing_constants: none. Delta_0_OES (BCS-GAP-CANONICAL-70, R-PROTECTED) and E_cond (= E_cond_ED_8mode) are both in canonical_constants.py with full provenance; this script VERIFIES them rather than computes them.
+  # GPU path: not used. 256x256 Hermitian eigendecomp runs in ~30 ms with OMP_NUM_THREADS=8; torch.linalg would add PCIe transfer overhead for negligible benefit. The 100x100 rule recommends GPU ABOVE that size; 256x256 is borderline — bit-for-bit reproducibility against the archive was the decisive factor.
+  # PHONONIC classification: YES — pair susceptibility chi_pair(omega) is the two-body correlator in the number-conserving BCS 8-mode fabric cell. B_n+ / B_n- spectral weights are the mode-resolved phononic coupling of P^dag (pair creation) to the 256-state eigenbasis. Delta_OES is the pair-addition/removal gap — a spectral moment of the ground state, not a one-body property.
+  # substitution chain (pair-susceptibility direction at the pole):
+  #   Step 1: chi_pair(omega) = Sum_n [B+_n / (omega - omega_n + i*eta) - B-_n / (omega + omega_n + i*eta)]    [Lehmann rep]
+  #   Step 2: near omega = omega_n, Re chi ~ B+_n * (omega - omega_n) / ((omega-omega_n)^2 + eta^2)            [take real part]
+  #   Step 3: for omega < omega_n (below pole), (omega - omega_n) < 0, B+_n > 0, denom > 0  =>  Re chi < 0    [substitute signs]
+  #   Step 4: as eta -> 0^+ and omega -> omega_n^-, Re chi -> -infinity                                         [limit]
+  #   Direction: chi_pair diverges NEGATIVELY at each pair-creation pole from below, POSITIVELY from above. Thouless-criterion Cooper instability: 1 + V * chi_pair(0) = 0 crossed when Sum_n (B+_n - B-_n) / omega_n > 1/V; attractive V shifts weight to smaller omega_n, driving the sum up, T_c upward.
+  # F.2 gate context: primary_ratio = 0.855 > 0.9 would indicate "near closure" (all strength in lowest pole); 0.3-0.7 mid-shell; here 0.855 is intermediate — strong single-pole dominance but not exhausted (14.5% leaked to higher poles). This is the N_pair=1 single-Cooper-pair regime of the 8-mode fabric cell, not a closed-shell nucleus.
+  # F.3 gate context: ratio_Evac_Econd = 28.76 far exceeds the nuclear 0.05-0.15 benchmark. This is EXPECTED for the phononic system: the "virtual pair" regime here is the entire B2-quartet + mixed-sector manifold, not just nucleonic sub-gap fluctuations. The cutoff 2*Delta_OES sits BELOW the VH-amplified B2 excitation band, so the numerator captures the huge VH-boosted pair-rearrangement strength while the denominator is the small N=1 condensation energy. This is a framework feature, not a deviation.
+  # notes: the script is a Tier-1 `NEEDS-CANONICAL-MIGRATION` (24 untagged assignments per Tier-1 scan). The T3 migration rewrote the script with explicit `# (local)` tags on every intermediate (grid parameters, loop accumulators, matrix-element arrays, pole catalog, verdict ratios) and added canonical cross-checks on Delta_OES and E_gs. Zero framework constants were hardcoded in the archive; the migration adds DISCIPLINE rather than correctness — the archive's numerical output was already right.
+  # MCP baseline: get_constant("Delta_BCS") returned 0.4642547394830737 (S70, BCS-GAP-CANONICAL-70, R-PROTECTED); trace_entity("pair_susceptibility") surfaced 10 downstream consumers (S37 instanton MC, S38 KZ defects, S39 integrability, S39 odd blocking, S39 spectral function, S40 QRPA modes, S40 self-consistent ODE, S42 fabric WZ, S43 foam GGE, S43 pair form factor, S43 GGE temperatures, S45 E_cond reconcile, S45 OCC spectral crosscheck, S46 V_b3b3, S50 Jpair calibrate, S74 W2E integ link). Any drift here propagates.
+
+## Tier 3 intake consolidation
+
+T3-S29C-K-TRANSITION: FAIL -- value=9.3971e+25_hMpc scheme=radiation convention=DESI-BAO L_max=NA sha256=b2c49dc7afd990d9d083de825135e08527cd6f34a3b0ce0e987e0bb9cd0e36dc
+
+T3-S30A-DTOTAL-PFAFFIAN: PASS -- value=+1 scheme=Pfaffian-Z2-per-sector convention=Parlett-Reid_Xi*D_total L_max=MAX_PQ_SUM=2_N_TAU=75 sha256=3207b176d66160519def580acdb8f827586ccd06bd4ab7c49b7418daa0b8530a
+
+T3-S30B-FULL-SPECTRUM: PASS -- value=lambda_min_grad=0.83498966,phi_30_grad=1.52060698,DOS_grad=62 scheme=full-Dirac-spectrum-U2invariant convention=volume-preserving-T2-dir-(-11,-7,8) L_max=6 sha256=8913f7fa2fc66023abf33614ff7b131f3582dd140849163470965031969f2bdd
+  # target=lambda_min_grad=0.83498966,phi_30=1.52060698,DOS=62 (MCP baseline, s30b_full_spectrum_results.txt, Session 30B synthesis)
+  # pre-fix=already-canonical-compliant (pure geometric computation, no framework-constant hardcodes; tau/eps are gate-defined candidate points, MAX_PQ_SUM=6 is gate PRU pin, RHO_SPEC=0.01 is pre-registered cutoff)
+  # fix=none-required (script has no canonical-constants violations; su3_generators/structure_constants/killing_form are algebraic primitives, gamma matrices from Cliff8 basis)
+  # reproduced=lambda_min_grad=0.83498966,phi_30=1.52060698,DOS=62 (exact match to MCP baseline across 28 sectors, N_max=6, 45.4s wall)
+  # rel_error=0.0 (machine-epsilon reproduction; anti-Hermiticity err <= 8.9e-16 in all sectors)
+  # closure_inputs={script:39a8fc86b6ff0b39141dfd0c9f4df3e88d8143e414400b44c87348c4b210f6cb, dirac_spectrum.py:267035cb598b08e94117a3245cb07b29fbe6bff7b5a614a1bde64982851809c3, s23a_kosmann_singlet.py:412f8b65afaa0b60c0a65ac6564b9b1ecf0ec440caba8e2797c74a8303d9c61e, canonical_constants.py:10bceb1a4e8b801843767f301ef564c8e26d3ad08e294358378ec770bcf6709e}
+  # script_sha=39a8fc86b6ff0b39141dfd0c9f4df3e88d8143e414400b44c87348c4b210f6cb
+  # canon_sha=10bceb1a4e8b801843767f301ef564c8e26d3ad08e294358378ec770bcf6709e
+
+T3-S37-INSTANTON-MC: PASS -- value=DENSE scheme=0D_zero_mode_MC convention=flip_rate_over_2L_times_xi_BCS L_max=NA_nonspectral sha256=f49a4a8761eda8a4b423f1b7f16ae49f38eaea950c8528105277cfe77782f8ea
+
+## Tier 3 intake consolidation
+
+T3-S29A-DERIVED-DRIVE-RATE: PASS -- value=1.5169 scheme=E_crit_over_V0 convention=n_gap_threshold=20_at_tau=0.50 L_max=NA sha256=215c7524fa7157b524da34761b3b9c6e62f157e35d44af3d0de513e3425b6d38
+
+T3-S29B-FREE-ENERGY-COMPARISON: INFO -- value=-13.0475 scheme=F_cond_Sc1_deepest_well convention=F_BCS_tau=0_minus_F_norm L_max=NA sha256=3caff13759ed1cec951b5c8e985bb57c0b2ae21b5bbf457e4813393b02b8aa8b
+  # target: diagnostic (no pre-registered PASS/FAIL on F_BCS depth); gate P-29e FIRES, K-29c DOES-NOT-FIRE
+  # Sc1 F_BCS=-13.0475@τ=0, Sc2 F_BCS=-18.5578@τ=0.35, Sc3 F_BCS=-5.6305@τ=0.50
+  # direction: condensed phase has strictly lower free energy wherever F_BCS<0 (ΔF=F_cond-F_norm=F_BCS after S_spectral cancels)
+  # canonical tau crossing = 0.500 (KC-3 self-consistent)
+  # no dV_total sign-change on bcs grid (no interior V_eff minimum at these mu)
+
+T3-S29C-GIBBONS-HAWKING-TEMPERATURE: FAIL -- value=0.1000 scheme=fraction_T_ratio_within_3x convention=T_GH=omega_char/PI_TT_metric L_max=NA sha256=555550ae52cb8ab933d774b7386928553f608c1b9a3ac9ed3f1c0ae58844e592
+
+## Tier 3 intake consolidation
+
+T3-S28C-12D-AXIOMS: FAIL -- value=6/7 scheme=connes-axioms-1996 convention=KO_total=6_mod_8 L_max=5 sha256=24fd130ba00291a3e391d39fd3e3ceb00a72b1b6162ad2c66d482a236ec58e30
+
+T3-S29B-PMNS-EXTRACTION: INFO -- value=sin2_13=0.202569,theta12=36.547deg,theta23=41.971deg,R=0.3810,delta_fit_vs_PDG=+0.180569(ABOVE_PDG) scheme=MethodB_degenerate_PT_tridiagonal_3x3_eigh convention=U[alpha,i]_ascending_mass_flavor_basis_sin2_13=|U_e3|^2_tan2_12=|U_e2|^2/|U_e1|^2_tan2_23=|U_mu3|^2/|U_tau3|^2 L_max=singlet_L1L2L3_subspace_0..15_tau_grid_nearest_to_tau_fold=0.19_tau_used=0.2 sha256=d05c87930b4eaebd4b784a4c2fff73c4f57602b970114f16fc9a72cd0caf222c
+
+## Tier 3 intake consolidation
+
+T3-S19A-FALSE-VACUUM-ANALYSIS: INFO -- value={rate_vac:1.613531,rate_gap:0.730475,d_s_min:6.3091,tau_at_ds_min:0.900,H_boundary_tau:0.955} scheme=PW-weighted-spectral-heat-kernel convention=d_log_sigma=0.01_centered_finite_difference L_max=max_pq=6 sha256=95eeb4619abeaabc9d5c120b51da7aeabdab2a978358498ed3289a959665f68a
+
+T3-S21C-GB-DEBUG6: PASS -- value=4.82e-20 scheme=euler_density_SU3_analytic_plus_stored convention=S_div_6144_normalized L_max=NA sha256=9a9b14ecb795552a44bbe916c12499322f7e42a11304bbd0756d1b0406f11213
+  # chi(SU(3))=0 to |S/6144|=3.78e-20 (analytic), 4.82e-20 (stored tau=0)
+  # S(S^4)=96 exact, chi=2; S(U(1)xSU(2))=0 exact; S(S^8)=645120 exact, chi=2
+  # All 5 sub-gates PASS; classification=GEOMETRIC
+  # Poincare-Hopf direction confirmed (compact Lie group of rank>=1 implies chi=0)
+  # script_sha=61f8453bd95395f232053dba99ec8d1e142f9a7ee9c5826688a25e75963fec83
+
+T3-S22A-DNP-BOUND: PASS -- value=0.282265 scheme=DNP_TT_lmin_over_m2gauge convention=global_min_over_sectors_00_10_01 L_max=3 sha256=095104f88cdbb2c145fa8e6a8da96539fd4224b732f157314374110ba3dd5298
+
+T3-S22A-PAASCH-CURVE: PASS -- value=tau_closest=0.01880188,ratio_closest=1.53158601,crossings=[0.04240363,0.13218843],spline_cross_M1=0.14987825 scheme=s19a-eigendata-spline-brentq convention=r=E30/E00_min_per_sector L_max=max_pq_sum=6_from_s19a sha256=cb6a602b267d5aaba0f83ca06ed3054d728e7a0fa4535f423d91e7f735745f06
+  # target=phi_paasch=1.531580 (canonical_constants.py L125, PROVEN S12 machine-eps); reproduce s22a_paasch_curve.npz ratio[], crossings[], tau_closest, ratio_closest
+  # pre-fix=original s22a_paasch_curve.py hardcoded phi_paasch=1.531580 inline (L45) and lacked (local) tags on computed intermediates (E_30, ratio, delta, cs_ratio, tau_dense, etc.); no canonical_constants import
+  # fix=wrapper s22a_paasch_curve_t3.py added canonical import ("from canonical_constants import phi_paasch"), (local)-tagged every intermediate per computations/_shared/CLAUDE.md, SHA-256 pin logging in first 20 lines, closure hash emission, OMP_NUM_THREADS=8 cap (small-matrix scipy, GPU not warranted)
+  # reproduced=ratio_rel_err=0.000e+00, |tau_closest - prev|=0.000e+00, max |crossings - prev|=0.000e+00, ratio_closest=1.531586009806 (exact match byte-for-byte against computations/_shared/s22a_paasch_curve.npz)
+  # rel_error=0.0 (machine-epsilon reproduction across ratio[21], crossings[2], tau_closest, ratio_closest; Paasch invariant preserved)
+  # structural_result=spline_crossings=[0.01876973, 0.14987825]; second crossing at tau=0.14987825 localizes the S12 Paasch anchor s=0.15 to 4-digit precision (|0.14987825 - 0.15| = 1.22e-4). phi_paasch remains PERMANENT.
+  # substitution_chain (verified Python, no narrative):
+  #   r(tau) := E_{(3,0)}(tau) / E_{(0,0)}(tau)                         [definition]
+  #   delta(tau) := r(tau) - phi_paasch                                 [script L114]
+  #   r(0.10) = 1.53708755  ->  delta(0.10) = +0.00550755               [substitution]
+  #   r(0.20) = 1.51997722  ->  delta(0.20) = -0.01160178               [substitution]
+  #   sign(delta(0.10)) * sign(delta(0.20)) = (+1)(-1) = -1 < 0         [simplified]
+  #   -> IVT on CubicSpline(delta) gives a root in [0.10, 0.20]         [direction]
+  #   brentq localizes second root at tau = 0.14987825                  [verified]
+  # closure_inputs={s19a_sweep_data.npz:ad2a0da375f516aa24430db6630c733300428fa9682b0986a70b9b766aec1f5a, s22a_paasch_curve.py:1e2261a470f0a7ff99ef30c35cffd76d8a4ccc69fcfec00e59ab71eca2f81706, canonical_constants.py:68b50cd325d2cc8c63b775da3b6b92f538da582bee44c5d906c81259f24dd12f}
+  # script_sha=1e2261a470f0a7ff99ef30c35cffd76d8a4ccc69fcfec00e59ab71eca2f81706
+  # canon_sha=68b50cd325d2cc8c63b775da3b6b92f538da582bee44c5d906c81259f24dd12f
+  # wrapper_sha=s22a_paasch_curve_t3.py in tier0-archive/ (S81-canonical re-run companion)
+
+T3-S22B-BLOCK-DIAGONAL-RESULTS: PASS -- value=0.000e+00 scheme=off_diag_frobenius_norm convention=max_across_9_tau_values L_max=3 sha256=43dbf70063a38d86376d647057d50ff835aae217ac23687c6ecf3f27a0c1b88e
+  # max_off_diag_frob=0.000e+00 (exact zero; stronger than proven_116's 8.4e-15 unitarity drift)
+  # max_eig_recovery_err=1.363e-12 via torch.linalg.eigvalsh on CUDA
+  # max_herm_err_rel=2.106e-16
+  # thresholds: off_diag<1e-14, eig_recovery<1e-10 — both PASS by many orders
+  # N=1232 matrix, 10 sectors (p+q<=3), 9 tau values
+  # script_sha=748d91e471b905c8f2199c6ded02445187ae1db69bc17d1851775c2840720ac2
+
+T3-S22B-KOSMANN-MATRIX: PASS -- value=maxLg_u2=0.000e+00,maxKLX=2.001e-16,minKLt=3.847e-02,maxCinter=0.000e+00 scheme=Kosmann_spinor_LX_and_Ltilde_Baptista_P17-P18 convention=KO-dim=6_Cliff8_ON-frame_PW-decomp L_max=L_max=max_pq_sum=3_(sectors_00_10_01_11_20_02) sha256=c726821d76cb4e612213ae2a94f531d1286b04dc15f36654cdbcb66c66c2b334
+  # target=(H0)max||K_LX||<1e-14 (H1)max||Lg_u2||<1e-14 (H2)min||K_Ltilde||>1e-3 (H3)max||C_inter||<1e-12 (all four structural identities must PASS jointly)
+  # pre-fix=schema-mismatch (PA-1 stored as eigvec_{i_tau}_sector_{idx} with sector_labels, but script expected eigenvectors_{i_tau}_p{p}_q{q}); no canonical-constants imports; no SHA-256 pinning; no gate verdict accumulation/emission
+  # fix=added canonical_constants * import (script uses no framework constants anyway; import is mandated by tier0-*/CLAUDE.md); added schema adapter mapping (sector_labels_{i_tau}, eigvec_{i_tau}_sector_{idx}) -> eigvec_dict[(p,q)]=(evals,evecs); added SHA-256 input-pin logging with closure hash per S81 gate-verdicts protocol; added H0/H1/H2/H3 accumulators with substitution-chain-derived thresholds (NORM_TOL=1e-14, KLT_FLOOR=1e-3, COUPLING_TOL=1e-12); added sidecar verdict emission; tagged all local scalars with # (local)
+  # reproduced=at tau=0.30: ||K_LX||=1.11e-16, ||K_Ltilde||=3.429e-01; at tau=0.50: ||K_LX||=2.00e-16, ||K_Ltilde||=9.781e-01; matches direct verification by independent path (K_Ltilde = K_LX + Phi_correction computed from compute_Ltilde_correction with transport map from compute_averaged_metric)
+  # rel_error=H0-bound: max||K_LX||/NORM_TOL=0.020 (max_KLX=2.001e-16, tolerance=1e-14, ratio=0.020 so 50x inside tolerance); H1 exact zero; H2-margin: min||K_Ltilde||/KLT_FLOOR=38.5 (3.847e-02 / 1e-3); H3 exact zero
+  # closure_inputs={script:7cf28b3ef2374c995bddcbd0708d6f5a4d6f973d0910777d2e9a2efb4860352a, dirac_spectrum.py:eee1b6fdcbb86847385130b3b3467c76fe1b5b73573d7dac4baf428cf4ff163f, canonical_constants.py:68b50cd325d2cc8c63b775da3b6b92f538da582bee44c5d906c81259f24dd12f, pa1_eigenvectors:8e08fc4f36386430c01ca5bab99447359584b4a5ac74a8a0a01599f5028583e6}
+  # script_sha=7cf28b3ef2374c995bddcbd0708d6f5a4d6f973d0910777d2e9a2efb4860352a
+  # canon_sha=68b50cd325d2cc8c63b775da3b6b92f538da582bee44c5d906c81259f24dd12f
+  # closure_sha=c726821d76cb4e612213ae2a94f531d1286b04dc15f36654cdbcb66c66c2b334
+
+T3-S22C-HIGGS-SIGMA: PASS -- value=lambda_Hs=0.30842514_constant,e_over_ac=0.0625000000000000 scheme=CCM-portal-spinor-trace convention=non-Killing-Cliff8-C2-sector L_max=3 sha256=cf4380740e5182d3e225e4badaa5b3a939e1dbadcbd44f0dfbab5f8804b8d5cd
+  # target=lambda_Hsigma=0.30842514_exactly_tau-independent,verdict_archive=STRUCTURAL_KILL_Trap_3,bf=0.3,a(0)=10816.0,c(0)=12.0,e(0)=8112.0 (MCP baseline, computations/_shared/s22c_higgs_sigma.npz; knowledge-base trace_entity gate=CLOSED BF=0.3; closed_mechanisms 381+455)
+  # pre-fix=missing-canonical-import (archive script lacked `from canonical_constants import *`; structural constants c1=4/13, c2=9/13, spinor_dim=16, SD coeffs 1/90,125,-8,2, f0=1.0, h=1e-5/1e-6, tau grids, thresholds all untagged)
+  # fix=added-canonical-import-and-local-tags (added `from canonical_constants import *`; added OMP_NUM_THREADS=8 cap; tagged all structural constants and intermediates as `# (local)`; copied to computations/_shared/s22c_higgs_sigma_t3.py; canonical_constants.py NOT modified; archive npz NOT overwritten)
+  # reproduced=lambda_Hs=0.30842514_all_16_tau_points,e_over_ac=0.0625000000000000_exact,verdict=STRUCTURAL_CLOSURE_Trap_3 (machine-epsilon match to archive; 10 (p,q) sectors at max_pq_sum=3)
+  # rel_error=lambda_Hs:3.60e-16,a_trace:1.68e-16,c_trace:0.00e+00,e_trace:0.00e+00,e/(a*c)_vs_1/16:3.47e-17 (all deviations at or below 1e-16 floating-point roundoff)
+  # substitution_chain=step1_def:a(tau)=PeterWeylWeightedSumOf(non-Killing_eigvals^2),c(tau)=Tr(Omega^dag_Omega),e(tau)=Tr(D_Y^dag_D_Y*Omega_full^dag_Omega_full)[CCM_Paper13_eq3.1-3.3];step2_formula:lambda_Hs(tau)=pi^2*e(tau)/(2*f_0*a(tau)*c(tau));step3_substitute_at_tau=0:a=10816,c=12,e=8112,e/(a*c)=8112/129792=1/16_exactly;step4_simplify:lambda=pi^2*(1/16)/(2*1.0)=pi^2/32=0.3084251375;step5_across_tau:ratio_1/16_holds_at_all_16_tau_points_to_3.47e-17;step6_direction:pi^2>0,e>0,a>0,c>0,f0>0=>lambda>0(REPULSIVE);step7_tau_selection:d(lambda)/d(tau)=0_identically=>portal_CANNOT_select_tau=Trap_3_closure
+  # machine_pins=max_pq_sum=3,tau_grid_A=linspace(0,2.0,21),tau_eig=16pts_[0,0.05,0.1,...,2.0],f0=1.0,spinor_dim=16(Cliff8),non_killing_idx=[3,4,5,6]_C2_sector,compute=numpy.linalg.eigvalsh_CPU_OMP=8,seed=none
+  # closure_inputs={s22c_higgs_sigma_archive:71ec39e4e1efa9d01915c8962beda1f11c9266b7911e15204fcb5d1e8329b592,dirac_spectrum:eee1b6fdcbb86847385130b3b3467c76fe1b5b73573d7dac4baf428cf4ff163f,canonical_constants:68b50cd325d2cc8c63b775da3b6b92f538da582bee44c5d906c81259f24dd12f,s22c_higgs_sigma_t3_self:95ea3ce959b166544824fb7f5de4d597cb00b3faf90e822d1e6a95ab8a3a5a64}
+  # script_sha=95ea3ce959b166544824fb7f5de4d597cb00b3faf90e822d1e6a95ab8a3a5a64
+  # canon_sha=68b50cd325d2cc8c63b775da3b6b92f538da582bee44c5d906c81259f24dd12f
+  # classification=GEOMETRIC (CCM portal coupling from D_K eigenstructure; quartic trace identity e/(a*c)=1/dim(spinor_8D)=1/16 is a Peter-Weyl algebraic invariant; no phononic excitations involved; result bounds the NCG-native tau-selection mechanism)
+  # PASS_means=Trap_3_structural_closure_confirmed:Higgs-sigma_portal_cannot_stabilize_tau_modulus_via_CCM_quartic_channel;NCG-native_portal_selection_CLOSED;mechanism_385+455_permanent
+  # note_on_131.8_GeV_mass_direction=S22C_measures_portal_lambda_Hs_NOT_m_H;131.8_GeV_prediction_belongs_to_s62_higgs_bcs_threshold.py(KK_threshold_a_4_curvature);no_substitution_chain_applicable_here_for_m_H
+  # note_on_archive_verdict_string=archive_labeled_STRUCTURAL_KILL(Trap_3),t3_script_emits_STRUCTURAL_CLOSURE(Trap_3)_per_epistemic_discipline(closures_are_boundaries_not_failures);numerical_verdict_identical
+
+T3-S22C-INSTANTON-ACTION: PASS -- value=0.309101 scheme=combined_grav_YM_Weyl convention=vol_preserving_Jensen L_max=N/A sha256=d9e71ea42d561f807429c141c73f0af6047d298f9fee72412348516e5f5f22b1
+
+T3-S24A-EIGENVALUE-RATIOS: FAIL -- value=10.147pct_dev scheme=closest_ratio_vs_phi_paasch convention=ascending_sorted_adjacent_ratios L_max=3 sha256=9581cff300a7b239dd07720009935a92fed0d31c590f43a5fa3f72dfdd1ac37f
+
+T3-S25-CONNES-WORKSHOP: INFO -- value=7.814786e+03 scheme=truncated_eta_zeta_reg_signed_power_sum convention=BDI_lambda_minus_lambda_pairing_KOdim6 L_max=11424_eigenvalues_s19a_sweep_21tau_grid sha256=f21c36e6a68c818ed5f04cda3332fd4e3564bcb04a2f67ca49f9e52b3f879059
+
+T3-S25-EINSTEIN-RESULTS: INFO -- value=V_mixed_monotone_over_100701_points scheme=Kerner_positive_gauge convention=a2+rho_a4+gamma_omega3_interior_min_search L_max=pq_max=6 sha256=7d7fb73083bd85810133c763db316092e80fc641dea5a63085f5cb8967cf5f2e
+
+T3-S26-P2-COOLING-TRAJECTORY: FAIL -- value=P2-LOCK:_CLOSED|sustained=0|raw=59|max_ratio=203.4801 scheme=LSODA_ODE convention=G_DeWitt L_max=fiducial sha256=b773a3d8d61814c44f5bc98f1e578eb376067802b96442396c1a54a752c785e5
+
+T3-S30B-RGE-RUNNING: FAIL -- value=no_crossing scheme=SM_one_loop convention=GUT_normalized L_max=NA sha256=815aa927ac8518d5b74ccdf50e271ef4204476cf725fd9a656115586bc56a4b5
+
+## Tier 3 intake consolidation
+
+T3-S34A-DPHYS-KOSMANN: PASS -- value=0.0859396 scheme=V_B2B2_off_diag_at_phi_gap convention=gate_band_0.05_to_0.15 L_max=16 sha256=c5fbb8770a27b4ed39e9c04a512f4373f71fefc7fb1cbc591ad88c9f0b97a6f9
+  # V(B2,B2) off-diag at phi=gap_{B3-B2}=0.1330 is 0.0859, bare 0.0572 (ratio 1.504) — PASS band (0.05, 0.15)
+  # direction verified: U mixes B2 with B1, transferring |K_a^bare|_{B1,B2}=0.0799 weight into the B2-B2 block
+  # cross-check V(phi=0) vs bare raw = 1.94e-16 (machine epsilon, exact unitarity recovery)
+  # W1 prediction "B3 channel opens" REFUTED: V(B3,B2) ratio 0.828 < 1.05 threshold
+  # multi-tau stability [0.10, 0.30]: 0.0810 -> 0.0907 at phi=gap, B2 overlap drops 1.000 -> 0.9346 (geometrically small perturbation)
+  # Classification GEOMETRIC
+
+T3-S35-PFAFFIAN-CORRECTED-J: PASS -- value=-1 scheme=Pfaffian-Parlett-Reid_C1_at_D_K_Cliff8 convention=KO-dim=6_corrected-J_C2=g1g3g5g7_C1=g2g4g6g8 L_max=16 sha256=1f6bf36f828513d4c384abcd30857b6cf396b98dc440f83acff62b6a077f4733
+
+T3-S46-OMEGA-CLASSIFY: FAIL -- value=m2_min_fold=+0.000870,m2_min_round=+0.000649,n_tach_all_tau=0 scheme=Omega1_D_inner_fluctuation convention=gamma_F_Z2_grading L_max=sector_(1,0)_dim_rho=3 sha256=6d0c39941a54355f8d16e9bf91e8dbe079d3d5ad045e6e56c5d855d9a599573c
+
+## Tier 3 intake consolidation
+
+T3-TIER1-SPECTRAL-ACTION: INFO -- value=(a_0=4.658e-02, a_2=7.325e+00, a_4=-2.918e+02, S_heat(0)=11690.4, R_exact(0)=2.000, R_exact(2)=27.320, corr=0.9619, d_eff=8.58, kappa_cc0=0.4628) scheme=heat_kernel_expansion convention=Chamseddine-Connes_dim8 L_max=3 sha256=aaaa00322599e18c6539fe3fe87be49b7feaadc30e513e6e7c71202730e136b1

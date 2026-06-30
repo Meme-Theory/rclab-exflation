@@ -139,7 +139,7 @@ def classify_equation(eq):
         combined = f"{raw} {latex} {context}".lower()
 
     # =========================================================================
-    # TIER 1: Exact named equations (highest confidence)
+    # : Exact named equations (highest confidence)
     # =========================================================================
 
     # --- Spectral Action ---
@@ -843,7 +843,7 @@ def classify_equation(eq):
         return "Convergence Rate at Fixed Point"
 
     # =========================================================================
-    # TIER 3: Source-file heuristics
+    # : Source-file heuristics
     # =========================================================================
 
     # Baptista equation numbers

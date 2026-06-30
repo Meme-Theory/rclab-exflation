@@ -1,0 +1,256 @@
+========================================================================
+  S53 — 7-DOF-SADDLES-53: Saddle Points at N_pair=1
+========================================================================
+
+========================================================================
+  SECTION 1: Geometric potential V_KK(tau)
+========================================================================
+
+  V_KK(0) = -46.652766 M_KK^4
+  V_KK(fold=0.19) = -47.075999 M_KK^4
+  dV_KK/ds(0) = -0.000000e+00
+  dV_KK/ds(fold) = -6.438846
+  d2V_KK/ds2(fold) = -63.163687
+
+========================================================================
+  SECTION 2: BCS pairing Hamiltonian (fold calibration)
+========================================================================
+
+  8-mode spectrum at fold (tau = 0.19):
+    eps_F = 0.845269 M_KK (Fermi level = B2 mean)
+    B2[0]: eps = 0.845269, eps_rel = -0.000000
+    B2[1]: eps = 0.845269, eps_rel = +0.000000
+    B2[2]: eps = 0.845269, eps_rel = +0.000000
+    B2[3]: eps = 0.845269, eps_rel = +0.000000
+    B1: eps = 0.819140, eps_rel = -0.026129
+    B3[0]: eps = 0.978224, eps_rel = +0.132955
+    B3[1]: eps = 0.978224, eps_rel = +0.132955
+    B3[2]: eps = 0.978224, eps_rel = +0.132955
+
+  N=1 sector Hamiltonian at fold:
+    H1[k,l] = 2*eps_k_rel * delta_kl + V_kl
+    min eigenvalue = -0.140381 M_KK^4
+    Full ED E_cond = -0.136851 M_KK^4
+    Discrepancy: 3.530809e-03 (N>1 sector mixing)
+
+  V matrix structure:
+    V_kk (diagonal): [2.55029469e-02 3.10831132e-02 5.28038441e-02 6.27624279e-02
+ 3.44089579e-29 6.79853670e-02 6.81386667e-02 1.68421951e-03]
+    B1-B2 coupling: V_B1_B2 = 0.079913 (all equal by C2 symmetry)
+    max |V_kl|: 0.079913
+    V eigenvalues: [-0.10388024 -0.07224027 -0.0421548   0.00706239  0.04187485  0.07057041
+  0.13296188  0.27576637]
+
+========================================================================
+  SECTION 3: Single-particle energy model
+========================================================================
+
+  Calibration constants:
+    C_norm = 0.815449 (overall normalization)
+    B2: c_coset = 6.780409, c_stab = -3.780409, sum = 3.000000 (target: 3)
+    B3: c_coset = 2.250399, c_stab = -0.917066, sum = 1.333333 (target: 1.333)
+
+  Verification at fold:
+    eps_B1(0.19) = 0.819140 (target: 0.819140)
+    eps_B2(0.19) = 0.845269 (target: 0.845269)
+    eps_B3(0.19) = 0.978224 (target: 0.978224)
+
+  At round point (s=0):
+    eps_B1(0) = 0.815449
+    eps_B2(0) = 1.630899
+    eps_B3(0) = 1.245620
+    B1-B2 gap: 0.815449
+    B2-B3 gap: -0.385279
+
+========================================================================
+  SECTION 4: E_cond(tau) from N=1 ED sweep
+========================================================================
+
+  E_cond(fold) = -0.140381 M_KK^4
+  E_cond from H1 at fold = -0.140381 M_KK^4
+  E_cond from full ED = -0.136851 M_KK^4
+  Match: 7.49e-16
+
+  E_cond range: [-1.638093, -0.042001]
+  E_cond(0.001) = -1.638093
+  E_cond(0.50) = -0.042008
+  Variation: 1136.97%
+
+  dE_cond/dtau at fold: 8.354336
+  d2E_cond/dtau2 at fold: -67.677684
+
+  B1-B2 gap:
+    At s=0.001: 0.811913
+    At fold: 0.026129
+    At s=0.50: -0.790713
+    Min gap: -0.790713 at tau = 0.5000
+
+========================================================================
+  SECTION 5: S_eff(tau) = V_KK(tau) + E_cond(tau)
+========================================================================
+
+  V_KK(fold) = -47.075999 M_KK^4
+  E_cond(fold) = -0.140381 M_KK^4
+  V_eff(fold) = -47.216381 M_KK^4
+  |E_cond/V_KK| = 2.982016e-03
+
+  GRADIENT COMPARISON at fold:
+    dV_KK/dtau = -6.438846 M_KK^4
+    dE_cond/dtau = 8.354336 M_KK^4
+    dV_eff/dtau = 1.915490 M_KK^4
+    |dE_cond/dV_KK| = 1.297490e+00
+
+  SADDLE POINT SEARCH:
+  Sign changes in dV_eff/dtau: 1 found
+    tau = 0.201202
+
+  Newton search from 20 initial conditions:
+    tau_0=0.010 -> tau_f=0.002000, dV=7.02e+00, d2V=4.61e+00, type=boundary
+    tau_0=0.035 -> tau_f=0.201498, dV=-1.52e-14, d2V=-6.79e+02, type=maximum
+    tau_0=0.061 -> tau_f=0.201498, dV=3.66e-15, d2V=-6.79e+02, type=maximum
+    tau_0=0.086 -> tau_f=0.201498, dV=3.66e-15, d2V=-6.79e+02, type=maximum
+    tau_0=0.111 -> tau_f=0.201498, dV=3.66e-15, d2V=-6.79e+02, type=maximum
+    tau_0=0.136 -> tau_f=0.201498, dV=3.66e-15, d2V=-6.79e+02, type=maximum
+    tau_0=0.162 -> tau_f=0.201498, dV=3.66e-15, d2V=-6.79e+02, type=maximum
+    tau_0=0.187 -> tau_f=0.201498, dV=-1.52e-14, d2V=-6.79e+02, type=maximum
+    tau_0=0.212 -> tau_f=0.201498, dV=3.66e-15, d2V=-6.79e+02, type=maximum
+    tau_0=0.237 -> tau_f=0.201498, dV=3.66e-15, d2V=-6.79e+02, type=maximum
+    tau_0=0.263 -> tau_f=0.201498, dV=3.66e-15, d2V=-6.79e+02, type=maximum
+    tau_0=0.288 -> tau_f=0.201498, dV=3.66e-15, d2V=-6.79e+02, type=maximum
+    tau_0=0.313 -> tau_f=0.201498, dV=3.66e-15, d2V=-6.79e+02, type=maximum
+    tau_0=0.338 -> tau_f=0.201498, dV=3.66e-15, d2V=-6.79e+02, type=maximum
+    tau_0=0.364 -> tau_f=0.201498, dV=3.66e-15, d2V=-6.79e+02, type=maximum
+    tau_0=0.389 -> tau_f=0.201498, dV=3.66e-15, d2V=-6.79e+02, type=maximum
+    tau_0=0.414 -> tau_f=0.201498, dV=3.66e-15, d2V=-6.79e+02, type=maximum
+    tau_0=0.439 -> tau_f=0.201498, dV=3.66e-15, d2V=-6.79e+02, type=maximum
+    tau_0=0.465 -> tau_f=0.204737, dV=-7.19e+00, d2V=6.59e+01, type=unconverged
+    tau_0=0.490 -> tau_f=0.201498, dV=3.66e-15, d2V=-6.79e+02, type=maximum
+
+  UNIQUE INTERIOR CRITICAL POINTS: 1
+    Minima: 0
+    Maxima: 1
+    tau = 0.201500, V_eff = -47.204740, d2V = -6.7908e+02, type = maximum
+
+========================================================================
+  SECTION 6: Hessian at critical points
+========================================================================
+
+  tau = 0.201500:
+    V_eff = -47.204740 M_KK^4
+    dV_eff/dtau = -1.5210e-14
+    d2V_eff/dtau2 = -6.7908e+02
+    ==> LOCAL MAXIMUM (unstable saddle)
+    V_KK(tau) = -47.154291, dV_KK/dtau = -7.183145
+    E_cond(tau) = -0.050448, dE_cond/dtau = 7.182082
+
+========================================================================
+  SECTION 7: Physics of E_cond(tau)
+========================================================================
+
+  Perturbative estimate at fold:
+    V_B1_B2 = 0.079913
+    delta_eps = 0.026129
+    E_cond_pert ~ -V^2/(2*delta) = -0.122203
+    E_cond_ED = -0.140381
+    Perturbation theory is 87.1% of exact
+    (Multi-mode mixing dominates: B1 hybridizes with ALL 4 B2 modes)
+
+  B1-B2 gap dynamics:
+    d(gap)/dtau at fold: -5.447700
+    Gap is CLOSING at fold
+    Min gap: -0.790713 at tau = 0.5000
+
+  SCALE HIERARCHY:
+    |V_KK(fold)| = 47.0760 M_KK^4
+    |E_cond(fold)| = 0.1404 M_KK^4
+    Ratio: |E_cond/V_KK| = 2.982016e-03
+
+    |dV_KK/dtau(fold)| = 6.4388 M_KK^4
+    |dE_cond/dtau(fold)| = 8.3543 M_KK^4
+    Gradient ratio: |dE_cond/dV_KK| = 1.2975
+    ==> E_cond gradient EXCEEDS V_KK gradient!
+    ==> Saddle points EXPECTED in V_eff(tau)
+
+========================================================================
+  SECTION 8: Mechanism analysis
+========================================================================
+
+  E_cond extrema:
+    Most negative: E_cond = -1.638093 at tau = 0.0010
+    Least negative: E_cond = -0.042001 at tau = 0.2720
+    Variation: 1.596092 M_KK^4
+
+  Best gradient match:
+    tau = 0.0010
+    |dE_cond/dtau| = 7.0203
+    |dV_KK/dtau| = 0.0002
+    Ratio: 33473.2627
+
+  N_cells amplification (fabric):
+    N_cells = 32
+    N_cells * E_cond(fold) = -4.4922 M_KK^4
+    N_cells * |E_cond/V_KK| = 9.5425e-02
+    Sign changes in dV_eff_fabric: 1
+      tau = 0.203706
+
+========================================================================
+  SECTION 9: 7-DOF -> 1-DOF reduction at N_pair=1
+========================================================================
+
+  S52 unified action: 7 DOFs = [tau, Delta_B1, Delta_B2, Delta_B3, theta_12, theta_23, theta_13]
+
+  S52 normal mode frequencies (omega^2):
+    [-1.28983063e+00  7.86046575e-19  1.89600464e-02  3.68936471e-02
+  1.44270659e-01  2.00444593e+00  1.31490135e+02]
+
+  At N_pair = 1 (W2-6):
+    - Delta is NOT variational: determined by ED (N=1 sector)
+    - Only 1 pair: no relative phases (theta = 0 by definition)
+    - 6 BCS DOFs (3 amplitudes + 3 phases) are FROZEN
+    - Effective action: S_eff[tau] = V_KK(tau) + E_cond(tau)
+
+  E_cond(tau) computed by diagonalizing the N=1 BCS Hamiltonian
+  at 500 tau points with the Jensen metric model for eps_k(tau).
+
+  Result: 1 interior critical points. 0 local minima.
+
+========================================================================
+  GATE VERDICT
+========================================================================
+
+  Gate: 7-DOF-SADDLES-53 = INFO
+  Detail: 7-DOF reduces to 1-DOF at N_pair=1. 1 critical points (all maxima/inflections, NO minima). |dE_cond/dV_KK| = 1.2975 at fold.
+
+========================================================================
+  Saving data and plot
+========================================================================
+  Saved: s53_7dof_saddles.npz
+  Saved: s53_7dof_saddles.png
+
+========================================================================
+  SUMMARY
+========================================================================
+
+  1. At N_pair = 1, the 7-DOF unified action reduces to 1-DOF: S_eff[tau].
+
+  2. S_eff(tau) = V_KK(tau) + E_cond(tau):
+     V_KK(fold) = -47.0760 M_KK^4 (gravitational, monotonically decreasing)
+     E_cond(fold) = -0.1404 M_KK^4 (BCS pairing)
+     |E_cond/V_KK| = 2.9820e-03
+
+  3. E_cond(tau) varies as tau changes through the single-particle spectrum
+     (B1-B2 gap closes at the fold, strengthening pairing).
+     E_cond range: [-1.6381, -0.0420]
+
+  4. SADDLE SEARCH: 1 interior critical points, 0 minima.
+     Gradient ratio |dE_cond/dV_KK| = 1.2975 at fold.
+
+  5. PHONONIC FRAMING: No equilibrium at N_pair=1. The modulus dynamics is dominated by V_KK. E_cond is a perturbative correction that can create local features but not overcome the monotonic geometric potential.
+
+  6. CONSTRAINT MAP UPDATE:
+     - V_eff(tau) at N_pair=1: NO local minimum
+     - The spectral action monotonicity (W4) survives when E_cond is added
+     - Stabilization requires either N_pair >> 1 (CLOSED by W2-6) or a mechanism beyond BCS (OPEN)
+
+  Gate: 7-DOF-SADDLES-53 = INFO
+

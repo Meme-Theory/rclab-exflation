@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 69,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_681",
+      "anchor_type": "data_provenance",
+      "name": "zeta",
+      "script_path": "session-55/s55_zeta.py",
+      "session": "s55",
+      "inputs": "computations/session-54/s54_tb_hamiltonian.npz",
+      "outputs": "session-55/s55_zeta.npz, session-55/s55_zeta.png",
+      "source_file": "computations/session-55/s55_zeta.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S55 W0-1: ZETA-55 — Zeta-Regularized Effective Action on 32-Cell Lattice\n    4: =========================================================================\n    5: \n    6: Gate: ZETA-55\n    7:     If zeta'_D(0, tau) is monotone => S_occ cutoff artifact confirmed on 32 cells\n    8:     If non-monotone => Connes' prediction wrong, S_occ strengthened\n    9: \n   10: Method:\n   11:     zeta'_D(0, tau) = -sum_{k: E_k > 0} ln(E_k(tau))\n   12: \n   13:     This is the derivative at s=0 of the spectral zeta function\n   14:         zeta_D(s, tau) = sum_{k: E_k > 0} E_k(tau)^{-s}\n   15:     evaluated via d/ds[E^{-s}]|_{s=0} = -ln(E)."
+    },
+    {
+      "anchor_id": "prov_682",
+      "anchor_type": "data_provenance",
+      "name": "zpf_stability",
+      "script_path": "session-55/s55_zpf_stability.py",
+      "session": "s55",
+      "inputs": "computations/session-54/s54_sa_latt_occ.npz",
+      "outputs": "",
+      "source_file": "computations/session-55/s55_zpf_stability.py",
+      "source_context_30_lines": "<name 'zpf_stability' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: S55 W0-4: ZPF-STABILITY-55 — Zero-Point Fluctuation Stability of S_occ Minimum\n    3: \n    4: Test whether zero-point fluctuations of the modulus field destabilize the\n    5: S_occ minimum. The resonance question: does the ground-state vibration of\n    6: the tau modulus fit inside the potential well, or does it slosh over the barrier?\n    7: \n    8: Method:\n    9:   1. Load S_occ(tau) at Sharp cutoff from s54_sa_latt_occ.npz\n   10:   2. Compute S_occ'' at the minimum via finite differences\n   11:   3. omega_0 = sqrt(S_occ'' / M_eff) with M_eff = G_DeWitt = 5.0\n   12:   4. delta_tau_0 = 1 / sqrt(2 * M_eff * omega_0)  (ZPF amplitude)\n   13:   5. Estimate barrier width from S_occ curve\n   14:   6. Compare delta_tau_0 to barrier width\n   15:   7. Compare omega_0 to Leggett mode omega_L1 = 0.070 M_KK\n   16: \n   17: Author: Tesla-Resonance\n   18: Session: S55, Wave 0\n   19: \"\"\"\n   20: \n   21: import numpy as np\n   22: import sys\n   23: sys.path.insert(0, 'computations')\n   24: \n   25: # ── Load data ──────────────────────────────────────────────────────────\n   26: data = np.load('computations/session-54/s54_sa_latt_occ.npz', allow_pickle=True)\n   27: \n   28: tau = data['tau_values']          # (50,)\n   29: Lambda_vals = data['Lambda_values']  # [1., 2., 5.]\n   30: cutoff_names = data['cutoff_names']  # ['Exponential', 'Sharp', 'Polynomial']"
+    },
+    {
+      "anchor_id": "prov_683",
+      "anchor_type": "data_provenance",
+      "name": "atensor_frustration",
+      "script_path": "session-56/s56_atensor_frustration.py",
+      "session": "s56",
+      "inputs": "",
+      "outputs": "session-56/s56_atensor_frustration.npz, session-56/s56_atensor_frustration.png",
+      "source_file": "computations/session-56/s56_atensor_frustration.py",
+      "source_context_30_lines": "  547: cos_wilson_scan = np.array([r['cos_wilson'] for r in results_all])\n  548: z_reduction_scan = np.array([r['z_reduction'] for r in results_all])\n  549: m_unfrust_scan = np.array([r['m_unfrust'] for r in results_all])\n  550: m_frust_scan = np.array([r['m_frust'] for r in results_all])\n  551: delta_m_scan = np.array([r['delta_m_frac'] for r in results_all])\n  552: A_mag_scan = np.array([r['A_mag'] for r in results_all])\n  553: max_res_scan = np.array([r['max_loop_residual'] for r in results_all])\n  554: \n  555: outpath = os.path.join(DATA_DIR, 's56_atensor_frustration.npz')\n  556: np.savez(outpath,\n  557:     tau_values=tau_scan,\n  558:     f_plaquette=f_plaq_scan,\n  559:     cos_wilson=cos_wilson_scan,\n  560:     z_reduction=z_reduction_scan,\n  561:     m_unfrust=m_unfrust_scan,\n  562:     m_frust=m_frust_scan,\n  563:     delta_m_frac=delta_m_scan,"
+    },
+    {
+      "anchor_id": "prov_684",
+      "anchor_type": "data_provenance",
+      "name": "ba_spectrum",
+      "script_path": "session-56/s56_ba_spectrum.py",
+      "session": "s56",
+      "inputs": "computations/session-54/s54_tb_hamiltonian.npz, computations/session-54/s54_scale_factor.npz",
+      "outputs": "session-56/s56_ba_spectrum.npz, session-56/s56_ba_spectrum.png",
+      "source_file": "computations/session-56/s56_ba_spectrum.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s56_ba_spectrum.py — Bogoliubov-Anderson Phonon Spectrum on 32-Cell Graph\n    4: \n    5: BA-SPECTRUM-56: Compute the collective phase-fluctuation normal modes\n    6: of the superfluid fabric modeled as a Josephson junction array on the\n    7: 32-cell CG graph.\n    8: \n    9: Physics:\n   10:   H_rotor = -E_J * Sum_{<ij>} cos(phi_i - phi_j) + E_c * Sum_i n_i^2\n   11:   Expanded to quadratic order:"
+    },
+    {
+      "anchor_id": "prov_685",
+      "anchor_type": "data_provenance",
+      "name": "bkt_test",
+      "script_path": "session-56/s56_bkt_test.py",
+      "session": "s56",
+      "inputs": "",
+      "outputs": "session-56/s56_bkt_test.npz, session-56/s56_bkt_test.png",
+      "source_file": "computations/session-56/s56_bkt_test.py",
+      "source_context_30_lines": "   53: import matplotlib.pyplot as plt\n   54: \n   55: from canonical_constants import (\n   56:     tau_fold, Delta_0_OES, J_C2 as J_C2_fold,\n   57:     N_cells, T_acoustic, E_cond,\n   58: )\n   59: \n   60: SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))\n   61: OUT_NPZ = os.path.join(SCRIPT_DIR, \"s56_bkt_test.npz\")\n   62: OUT_PNG = os.path.join(SCRIPT_DIR, \"s56_bkt_test.png\")\n   63: OUT_TXT = os.path.join(SCRIPT_DIR, \"s56_bkt_test_output.txt\")\n   64: \n   65: # ============================================================\n   66: # Output tee\n   67: # ============================================================\n   68: class Tee:\n   69:     def __init__(self, filename):"
+    },
+    {
+      "anchor_id": "prov_686",
+      "anchor_type": "data_provenance",
+      "name": "cba_sound",
+      "script_path": "session-56/s56_cba_sound.py",
+      "session": "s56",
+      "inputs": "computations/session-54/s54_tb_hamiltonian.npz",
+      "outputs": "session-56/s56_cba_sound.npz, session-56/s56_cba_sound.png",
+      "source_file": "computations/session-56/s56_cba_sound.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s56_cba_sound.py — CBA-SOUND-56\n    4: Bogoliubov-Anderson sound velocity on the 32-cell CG fabric.\n    5: \n    6: Physics:\n    7:   The 32-cell Cayley graph tessellation of SU(3) forms a Josephson junction\n    8:   array with quantum rotor Hamiltonian:\n    9:       H = -E_J sum_{<ij>} cos(phi_i - phi_j) + E_c sum_i (n_i - n_0)^2\n   10: \n   11:   In the superfluid regime (E_J/E_c >> 1), small phase fluctuations give"
+    },
+    {
+      "anchor_id": "prov_687",
+      "anchor_type": "data_provenance",
+      "name": "ej_uncertainty",
+      "script_path": "session-56/s56_ej_uncertainty.py",
+      "session": "s56",
+      "inputs": "computations/session-54/s54_tb_hamiltonian.npz, computations/session-55/s55_erich_continuum.npz",
+      "outputs": "session-56/s56_ej_uncertainty.npz",
+      "source_file": "computations/session-56/s56_ej_uncertainty.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s56_ej_uncertainty.py — EJ-UNCERTAINTY-56\n    4: Systematic uncertainties on fabric Josephson parameters.\n    5: \n    6: Methodology (Nazarewicz UQ, Paper 06 DFT methodology):\n    7:   Three independent uncertainty sources:\n    8:     (a) GAP CHOICE: Delta_OES = 0.4643 vs Delta_GL = 0.7704 M_KK\n    9:     (b) PERTURBATION ORDER: Higher-order corrections to E_J^(2)\n   10:     (c) MODE CONVERGENCE: 32-mode TB vs continuum estimates\n   11: "
+    },
+    {
+      "anchor_id": "prov_688",
+      "anchor_type": "data_provenance",
+      "name": "euclid_fabric",
+      "script_path": "session-56/s56_euclid_fabric.py",
+      "session": "s56",
+      "inputs": "computations/session-56/s56_rotor_mf.npz, computations/session-56/s56_mu_josephson.npz, computations/session-54/s54_tb_h...",
+      "outputs": "session-56/s56_euclid_fabric.npz, session-56/s56_euclid_fabric.png",
+      "source_file": "computations/session-56/s56_euclid_fabric.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s56_euclid_fabric.py — Euclidean Free Energy on Fabric with Physical mu_eff\n    4: \n    5: EUCLID-FABRIC-56 (INFO gate):\n    6: Cross-check of W1-1 (ROTOR-MF-56) with the physical mu_eff from W1-4 (MU-SHIFT-56).\n    7: \n    8: The question: W1-1 computed F_cells at mu=0 (PH-symmetric, S34 theorem). W1-4 showed\n    9: mu_eff = -0.201 M_KK at the fold (PH broken by non-bipartite CG graph). Does computing\n   10: F_cells at the PHYSICAL mu_eff change the monotonicity of F_fabric?\n   11: "
+    },
+    {
+      "anchor_id": "prov_689",
+      "anchor_type": "data_provenance",
+      "name": "fabric_integ",
+      "script_path": "session-56/s56_fabric_integ.py",
+      "session": "s56",
+      "inputs": "",
+      "outputs": "session-56/s56_fabric_integ.npz, session-56/s56_fabric_integ.png",
+      "source_file": "computations/session-56/s56_fabric_integ.py",
+      "source_context_30_lines": "  578:     r_unf = compute_gap_ratio_unfolded(evals)\n  579:     print(f\"  alpha={alpha_test:.1f}: <r>_raw={r_raw:.4f}, <r>_unfolded={r_unf:.4f}\")\n  580: \n  581: \n  582: # ============================================================\n  583: # 12. Save results\n  584: # ============================================================\n  585: \n  586: save_path = os.path.join(data_dir, 's56_fabric_integ.npz')\n  587: \n  588: np.savez(save_path,\n  589:     # Alpha sweep (symmetric)\n  590:     alpha_values=alpha_values,\n  591:     r_means_sym=r_means,\n  592:     n_ratios_sym=n_ratios_arr,\n  593:     # Alpha sweep (asymmetric)\n  594:     r_means_asym=r_means_asym,"
+    },
+    {
+      "anchor_id": "prov_690",
+      "anchor_type": "data_provenance",
+      "name": "gge_fabric",
+      "script_path": "session-56/s56_gge_fabric.py",
+      "session": "s56",
+      "inputs": "",
+      "outputs": "session-56/s56_gge_fabric.npz, session-56/s56_gge_fabric.png",
+      "source_file": "computations/session-56/s56_gge_fabric.py",
+      "source_context_30_lines": "  856: \"\"\")\n  857: \n  858: elapsed = time.time() - t0\n  859: print(f\"Elapsed: {elapsed:.1f}s\")\n  860: \n  861: # ============================================================================\n  862: # 19. Save data\n  863: # ============================================================================\n  864: save_path = os.path.join(SCRIPT_DIR, 's56_gge_fabric.npz')\n  865: np.savez(save_path,\n  866:     # Hamiltonians\n  867:     E_J_fold=E_J_fold,\n  868:     E_J_tau0=E_J_tau0,\n  869:     eps_fold=eps_fold,\n  870:     eps_tau0=eps_tau0,\n  871:     V_fold=V_fold,\n  872:     dim=dim,"
+    }
+  ]
+}

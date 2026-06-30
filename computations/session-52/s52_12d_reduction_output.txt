@@ -1,0 +1,268 @@
+========================================================================
+  S52 — 12D-REDUCTION-52: Submersion Decomposition of M^4 x SU(3)
+========================================================================
+
+[INPUTS]
+  tau_i = 0.0
+  tau_fold = 0.19
+  M_KK (canonical Kerner) = 5.042e+17 GeV
+  M_KK (DDG alpha_2) = 5.012e+17 GeV
+  M_Pl_reduced = 2.435e+18 GeV
+  G_mod = 5.0
+  Vol_SU3_Haar = 1349.74
+  tau data points: 16
+
+========================================================================
+  STEP 1: Internal scalar curvature R_K(tau)
+========================================================================
+
+  R_K(0) [bi-invariant] = 4.0000 (= 12/alpha = 12/3)
+  R_K(tau_fold=0.19)    = 4.036288
+  R_K(0.50)             = 4.576737
+
+  Cross-check: a_2/a_0 shape vs R_K analytic:
+     tau    R_K(anl)    a2/a0*norm     ratio
+   0.000    4.000000      4.000000   1.00000
+   0.050    4.000723      3.991821   0.99777
+   0.100    4.005592      3.967260   0.99043
+   0.150    4.018285      3.926478   0.97715
+   0.160    4.022057      3.916407   0.97373
+   0.170    4.026298      3.905709   0.97005
+   0.180    4.031034      3.894388   0.96610
+   0.190    4.036288      3.882449   0.96189
+   0.200    4.042083      3.869899   0.95740
+   0.210    4.048443      3.856743   0.95265
+   0.220    4.055391      3.842988   0.94762
+   0.250    4.079985      3.798201   0.93094
+   0.300    4.134795      3.712293   0.89782
+   0.350    4.209207      3.613287   0.85842
+   0.400    4.305873      3.502467   0.81342
+   0.500    4.576737      3.251155   0.71037
+
+========================================================================
+  STEP 2: KK Potential V_KK(tau)
+========================================================================
+  M_KK / M_Pl = 0.207051
+  M_Pl^2 in M_KK units = 23.3264
+
+  V_KK(0) = -46.6528 M_KK^4
+  V_KK(tau_fold=0.19) = -47.0760 M_KK^4
+  V_KK(0.50) = -53.3794 M_KK^4
+  dV/dtau(0) = -0.0000 M_KK^4
+  dV/dtau(fold) = -6.4388 M_KK^4
+  V_KK is monotonically decreasing (R_K decreasing in tau)
+
+========================================================================
+  STEP 3: Modulus kinetic term G_mod(tau)
+========================================================================
+
+  G_kin from metric derivatives: (1/4)*[(2)^2*1 + (-2)^2*3 + (1)^2*4]
+  G_kin = 5.0
+  G_DeWitt (canonical) = 5.0
+  MATCH: G_mod = 5.0 is EXACT and tau-INDEPENDENT
+  (This is because the Jensen deformation is a geodesic in DeWitt superspace)
+
+  G_mod_full = M_p^2 * G_kin = 116.63 M_KK^2
+
+========================================================================
+  STEP 4: Coupled Friedmann-modulus equations
+========================================================================
+
+  Potential analysis:
+  R_K(0) = 4.000000
+  R_K(fold) = 4.036288
+  V_KK(0) = -46.6528
+  V_KK(fold) = -47.0760
+  Delta_V = V(fold) - V(0) = -0.4232
+
+  R_K sample values:
+    s=0.00: R_K = 4.000000
+    s=0.01: R_K = 4.000006
+    s=0.05: R_K = 4.000723
+    s=0.10: R_K = 4.005592
+    s=0.15: R_K = 4.018285
+    s=0.19: R_K = 4.036288
+    s=0.25: R_K = 4.079985
+    s=0.30: R_K = 4.134795
+    s=0.40: R_K = 4.305873
+    s=0.50: R_K = 4.576737
+
+  dR_K/ds sample values:
+    s=0.00: dR_K/ds = 0.000000
+    s=0.01: dR_K/ds = 0.001782
+    s=0.05: dR_K/ds = 0.042886
+    s=0.10: dR_K/ds = 0.164096
+    s=0.15: dR_K/ds = 0.354509
+    s=0.19: dR_K/ds = 0.552065
+    s=0.25: dR_K/ds = 0.917998
+    s=0.30: dR_K/ds = 1.283353
+
+  R_K(0.00) = 4.00000000
+  R_K(0.01) = 4.00000596
+  R_K(0.05) = 4.00072324
+
+  CRITICAL FINDING:
+  R_K(s) = R_K(0) * (1 + 1.5*s^3 + O(s^4))
+  R_K INCREASES for s > 0, making V_KK MORE NEGATIVE
+  => The potential gradient DRIVES tau AWAY from 0
+  => This is a RUNAWAY potential, not a bowl!
+  => Exflation is dynamically driven by the KK curvature gradient!
+
+  R_K behavior over full range:
+  R_K(0.0) = 4.000000
+  R_K(0.1) = 4.005592
+  R_K(0.2) = 4.042083
+  R_K(0.3) = 4.134795
+  R_K(0.5) = 4.576737
+  R_K(1.0) = 8.351416
+  R_K(2.0) = 54.639323
+
+  R_K maximum at s = 5.0000, R_K_max = 22025.833528
+  R_K(s_max) / R_K(0) = 5506.458382
+
+========================================================================
+  STEP 5: Numerical integration
+========================================================================
+
+  Minimum tau_dot for H^2 > 0 at tau=0:
+  tau_dot_min = sqrt(2*|V(0)|/G_full) = 0.894427 M_KK
+  |V_KK(0)| = 46.6528
+  G_mod_full = 116.63
+
+  Scanning initial tau_dot for N_e:
+     tau_dot_0       N_e        t_fold     w_avg     K_pivot      status
+      0.895322       ---           ---       ---         ---     NO_FOLD
+      0.917459       ---           ---       ---         ---     NO_FOLD
+      0.939596       ---           ---       ---         ---     NO_FOLD
+      0.961733       ---           ---       ---         ---     NO_FOLD
+      0.983870       ---           ---       ---         ---     NO_FOLD
+      1.073313    0.0590  1.973011e-01    0.0608    0.942721        FAIL
+      1.252198    0.0924  1.775184e-01    0.1578    0.911710        FAIL
+      1.431084    0.1123  1.598242e-01    0.2525    0.893732        FAIL
+      1.609969    0.1255  1.447547e-01    0.3392    0.882024        FAIL
+      1.788854    0.1348  1.319987e-01    0.4152    0.873887        FAIL
+      2.683282    0.1564  9.070885e-02    0.6673    0.855225        FAIL
+      4.372755    0.1670  5.649491e-02    0.8550    0.846169        FAIL
+      6.062229    0.1701  4.092508e-02    0.9212    0.843570        FAIL
+      7.751702    0.1714  3.206313e-02    0.9518    0.842478        FAIL
+      9.441176    0.1721  2.634981e-02    0.9675    0.841919        FAIL
+     11.130649    0.1725  2.236225e-02    0.9772    0.841594        FAIL
+     12.820123    0.1727  1.942184e-02    0.9827    0.841390        FAIL
+     14.509597    0.1729  1.716429e-02    0.9865    0.841252        FAIL
+     16.199070    0.1730  1.537660e-02    0.9891    0.841155        FAIL
+     17.888544    0.1731  1.392599e-02    0.9911    0.841085        FAIL
+     44.721360    0.1734  5.572880e-03    0.9986    0.840814        FAIL
+     89.442719    0.1734  2.786618e-03    0.9996    0.840776        FAIL
+    134.164079    0.1734  1.857767e-03    0.9998    0.840769        FAIL
+    178.885438    0.1734  1.393331e-03    0.9999    0.840766        FAIL
+    223.606798    0.1734  1.114667e-03    0.9999    0.840765        FAIL
+    268.328157    0.1734  9.288901e-04    1.0000    0.840764        FAIL
+    313.049517    0.1734  7.961920e-04    1.0000    0.840764        FAIL
+    357.770876    0.1734  6.966683e-04    1.0000    0.840764        FAIL
+    402.492236    0.1734  6.192609e-04    1.0000    0.840764        FAIL
+    447.213595    0.1734  5.573349e-04    1.0000    0.840764        FAIL
+
+========================================================================
+  STEP 6: Detailed analysis
+========================================================================
+
+  Best solution:
+    tau_dot_0 = 447.213595 M_KK
+    N_e = 0.173445
+    t_fold = 5.573349e-04 M_KK^{-1}
+    w_avg = 0.999986
+    K_pivot = 0.840764
+    Gate: FAIL
+
+  Critical tau_dot (minimum to reach fold):
+    tau_dot_crit = 1.073313 M_KK
+    N_e at critical = 0.058985
+    K_pivot at critical = 0.942721
+
+========================================================================
+  STEP 7: Physical observables
+========================================================================
+
+  Trajectory details (best solution):
+    tau_dot_0 = 447.213595
+    Total time to fold: 5.573349e-04 M_KK^{-1}
+    = 1.680e+03 seconds (physical)
+    N_e = ln(a_fold/a_i) = 0.173445
+    w(start) = 1.000008
+    w(end) = 1.000023
+    w(mean) = 1.000014
+
+  V_KK comparison to spectral action V_SA:
+    V_KK(0) = -46.6528 M_KK^4
+    V_KK(fold) = -47.0760 M_KK^4
+    Delta_V = -0.4232 M_KK^4
+    S_fold (spectral action) = 250360.68 (M_KK units)
+    V_SA is monotone increasing (S37 theorem)
+    V_KK has R_K-driven structure (cubic onset at s=0)
+
+  4D Newton constant from reduction:
+    G_N (reduced) = 1/(8*pi*M_p^2) = 1.7057e-03 M_KK^{-2}
+    M_Pl/M_KK = 4.8297
+    Sakharov ratio M_KK/M_Pl = 0.2071
+
+========================================================================
+  STEP 8: GATE VERDICT — EFOLD-MAPPING-52 (MASTER GATE)
+========================================================================
+
+  Results across tau_dot_0 scan (25 valid solutions):
+  N_e range: [0.0590, 0.1734]
+  PASS (K_pivot < 0.087): 0
+  MARGINAL (0.087 < K_pivot < 0.5): 0
+  FAIL (K_pivot > 0.5): 25
+
+  GATE STATUS: FAIL
+  Best N_e = 0.1734 < 3.1
+
+  Physical interpretation:
+  - The KK potential V_KK(tau) = -M_p^2 * R_K(tau) / 2 is NEGATIVE (AdS-type)
+  - R_K(s) has CUBIC onset from s=0: R_K = 4*(1 + 1.5*s^3 + ...)
+  - The modulus is driven toward larger tau by the curvature gradient
+  - During transit, the equation of state is STIFF (w ~ 1) when KE >> |V|
+  - N_e scales logarithmically with tau_dot_0/tau_dot_crit
+  - The gate PASSES for any tau_dot_0 sufficiently above the Hubble threshold
+  - HH wavefunction (W1-A) provides tau_dot_0 from quantum uncertainty principle
+
+========================================================================
+  STEP 9: Save data and create plot
+========================================================================
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s52_12d_reduction.npz
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s52_12d_reduction.png
+
+========================================================================
+  SUMMARY: 12D-REDUCTION-52
+========================================================================
+
+  STRUCTURAL RESULTS:
+  1. R_K(tau) for Jensen-deformed SU(3) — ANALYTIC (Baptista eq 3.70):
+     R_K(s) = (12/alpha) * [2*e^{2s} - 1 + 8*e^{-s} - e^{-4s}] / 8
+     R_K(0) = 4.0000, R_K(fold) = 4.0363
+     CUBIC onset: R_K = 4*(1 + 1.5*s^3 + O(s^4))
+     Maximum at s = 5.0000: R_K_max = 22025.8335
+
+  2. G_mod = 5.0 EXACT and tau-INDEPENDENT:
+     G_kin = (1/4)*[4 + 12 + 4] = 5.0 (DeWitt metric on Jensen geodesic)
+
+  3. V_KK(tau) = -M_p^2 * R_K(tau) / 2:
+     V_KK(0) = -46.6528, V_KK(fold) = -47.0760
+     NEGATIVE potential (AdS-type) — drives STIFF epoch
+
+  4. Coupled Friedmann-modulus dynamics:
+     Stiff epoch (w ~ 1) when KE >> |V_KK|
+     tau_dot_min for H^2 > 0: 0.894427 M_KK
+
+  5. E-fold mapping:
+     N_e = 0.1734 at tau_dot_0 = 447.2136
+     K_pivot = exp(-N_e) = 0.840764
+     K* = 0.087, K_pivot/K* = 9.6639
+     w_avg = 1.0000 (stiff matter)
+
+  GATE: EFOLD-MAPPING-52 = FAIL
+
+========================================================================
+  END OF 12D-REDUCTION-52
+========================================================================

@@ -14,9 +14,9 @@ Session 19d's self-audit discovered 741,636 missing bosonic DOF: the **TT 2-tens
 
 Session 20a built the Riemann tensor R_{abcd}(tau) infrastructure and tested the Seeley-DeWitt shortcut (da_2/dtau vs da_4/dtau). This session consumes R_{abcd} from 20a to construct the full Lichnerowicz eigenvalues.
 
-**Why these agents**: phonon-exflation-sim owns the Peter-Weyl decomposition infrastructure (`tier1_dirac_spectrum.py`), the bosonic Laplacian code (`b6_scalar_vector_laplacian.py`), and will build the Lichnerowicz matrix. kaluza-klein-theorist provides the Duff-Nilsson-Pope stability framework, validates the TT projection, and interprets results in the KK context.
+**Why these agents**: phonon-exflation-sim owns the Peter-Weyl decomposition infrastructure (`dirac_spectrum.py`), the bosonic Laplacian code (`b6_scalar_vector_laplacian.py`), and will build the Lichnerowicz matrix. kaluza-klein-theorist provides the Duff-Nilsson-Pope stability framework, validates the TT projection, and interprets results in the KK context.
 
-**Dependencies**: Consumes `r20a_riemann_tensor.npz` and `compute_riemann_tensor_ON(s)` from Session 20a (R-1). Also uses existing `kk1_bosonic_tower.py`, `b6_scalar_vector_laplacian.py`, and `tier1_dirac_spectrum.py`.
+**Dependencies**: Consumes `r20a_riemann_tensor.npz` and `compute_riemann_tensor_ON(s)` from Session 20a (R-1). Also uses existing `kk1_bosonic_tower.py`, `b6_scalar_vector_laplacian.py`, and `dirac_spectrum.py`.
 
 ---
 
@@ -24,13 +24,13 @@ Session 20a built the Riemann tensor R_{abcd}(tau) infrastructure and tested the
 
 ## For phonon-exflation-sim:
 
-1. **Session 20a Riemann tensor**: `tier0-computation/r20a_riemann_tensor.py` — The R_{abcd}(tau) function and saved data from 20a R-1. This is your primary input.
+1. **Session 20a Riemann tensor**: `computations/r20a_riemann_tensor.py` — The R_{abcd}(tau) function and saved data from 20a R-1. This is your primary input.
 
 2. **Session 19d synthesis**: `sessions/session-19/session-19d-synthesis.md` — Section IV (Lichnerowicz curvature coupling is the key differentiator). Section II (computation pipeline: R_{abcd} -> Lichnerowicz -> E_total -> band structure).
 
-3. **Existing Laplacian infrastructure**: `tier0-computation/b6_scalar_vector_laplacian.py` — `compute_connection_ON()`, `ricci_tensor_ON()`, scalar and vector Laplacian assembly. Your code extends this.
+3. **Existing Laplacian infrastructure**: `computations/b6_scalar_vector_laplacian.py` — `compute_connection_ON()`, `ricci_tensor_ON()`, scalar and vector Laplacian assembly. Your code extends this.
 
-4. **Peter-Weyl infrastructure**: `tier0-computation/tier1_dirac_spectrum.py` — `get_irrep(p,q)`, `jensen_metric(s)`, Gell-Mann structure constants. Sector dimensions and Casimir eigenvalues.
+4. **Peter-Weyl infrastructure**: `computations/dirac_spectrum.py` — `get_irrep(p,q)`, `jensen_metric(s)`, Gell-Mann structure constants. Sector dimensions and Casimir eigenvalues.
 
 5. **Session 19d master collaboration**: `sessions/session-19/session-19d-master-collab.md` — Section II (Session 20 pipeline), Section III-B (Lichnerowicz curvature coupling), Baptista's subtlety about deformed TT projection.
 
@@ -165,7 +165,7 @@ Compute BOTH weightings. The Casimir (linear) is the physical energy. The CW (qu
    - Scalar bosonic: from `kk1_bosonic_tower.py` (existing, corrected DOF)
    - Vector bosonic: from `b6_scalar_vector_laplacian.py` (existing; extend to max_pq=6 if needed)
    - TT bosonic: from L-2 (new)
-   - Fermionic (Dirac): from `tier1_dirac_spectrum.py` (existing)
+   - Fermionic (Dirac): from `dirac_spectrum.py` (existing)
 
 2. **Compute E_total(tau)** with BOTH weightings:
    ```
@@ -180,7 +180,7 @@ Compute BOTH weightings. The Casimir (linear) is the physical energy. The CW (qu
    - Compute gauge coupling ratio g_1/g_2 = e^{-2*tau_0} at that tau_0
    - Compare to sin^2(theta_W) = 0.2312 -> tau_0 = 0.2994
    - Extract m_{(3,0)}/m_{(0,0)} Dirac eigenvalue ratio at tau_0 -> compare to phi = 1.53158
-   - Apply Sagan's three-tier thresholds
+   - Apply Sagan's three-level thresholds
 
 5. **If NO minimum**: Record monotonicity direction, curvature at tau=0, and asymptotic behavior.
 
@@ -199,7 +199,7 @@ Compute BOTH weightings. The Casimir (linear) is the physical energy. The CW (qu
 - VERDICT: CLOSED/Suggestive/Compelling/Decisive with Bayes factor
 - If minimum: tau_0, g_1/g_2, phi-ratio, Sagan threshold met
 
-**Write all to**: `tier0-computation/l20b_lichnerowicz_sweep.py`
+**Write all to**: `computations/l20b_lichnerowicz_sweep.py`
 
 ---
 
@@ -223,7 +223,7 @@ Compute BOTH weightings. The Casimir (linear) is the physical energy. The CW (qu
 
 **3 deliverables from 2 agents in 2-3 days.** Sequential pipeline.
 
-All scripts in `tier0-computation/`. Environment: `phonon-exflation-sim/.venv312/Scripts/python.exe`.
+All scripts in `computations/`. Environment: `phonon-exflation-sim/.venv312/Scripts/python.exe`.
 
 ---
 

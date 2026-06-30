@@ -75,7 +75,7 @@ Session 45 produced the first cosmological constant mechanism PASS in the projec
 
 **ACOUSTIC-NS-45** = INFO (STRUCTURAL) -- 5 methods for n_s from phononic substrate dispersion. Band curvature alpha_eff = 4.63 at fold. Gapped acoustic branch (omega_0 = 0.820, not Goldstone). Band inversion at tau = 0 (topological), resolved by Jensen deformation. 57-order scale mismatch (k_pivot/k_max ~ 10^{-57}) kills direct route. Files: `s45_acoustic_ns.py`, `s45_acoustic_ns.npz`, `s45_acoustic_ns.png`
 
-**HEAT-KERNEL-AUDIT-45** = INFO -- Classification: spectral action VALID, Seeley-DeWitt a_n APPROXIMATION (30-50% truncation error), spectral dimension d_s ARTIFACT (d_s -> 0 as sigma -> 0, not 8), analytic torsion ARTIFACT (extensive partial sum, not regulated torsion). Weyl counting d_Weyl = 6.81 is correct finite-spectrum dimensionality diagnostic. Files: `tier0-computation/s45_heat_kernel_audit.md`
+**HEAT-KERNEL-AUDIT-45** = INFO -- Classification: spectral action VALID, Seeley-DeWitt a_n APPROXIMATION (30-50% truncation error), spectral dimension d_s ARTIFACT (d_s -> 0 as sigma -> 0, not 8), analytic torsion ARTIFACT (extensive partial sum, not regulated torsion). Weyl counting d_Weyl = 6.81 is correct finite-spectrum dimensionality diagnostic. Files: `computations/s45_heat_kernel_audit.md`
 
 ### W5-R
 
@@ -157,7 +157,7 @@ These are mathematical results that survive regardless of the framework's physic
 
 12. **S45-S12: Weak order-one maximal violation.** Bochniak-Sitarz condition fails maximally with GG/Full = 1.000 exactly. Gauge sector is the worst violator. The 1:1/2:1/4 ratio GG:GS:SS is an algebraic identity.
 
-13. **S45-S13: Heat kernel classification.** On a finite discrete spectrum: spectral action is Tier 1 (exact), SD coefficients are Tier 2 (convergent approximation), spectral dimension and torsion are Tier 3 (artifacts requiring continuum structure absent at finite truncation).
+13. **S45-S13: Heat kernel classification.** On a finite discrete spectrum: spectral action is Level 1 (exact), SD coefficients are Level 2 (convergent approximation), spectral dimension and torsion are Level 3 (artifacts requiring continuum structure absent at finite truncation).
 
 14. **S45-S14: Three eternal GGE beat frequencies.** B2-B1 = 0.052, B2-B3 = 0.266, B1-B3 = 0.318 M_KK. Sum rule exact. Incommensurate ratio 5.088. Integrability-protected, persist forever.
 
@@ -254,21 +254,21 @@ The DM/DE ratio and dark energy equation of state are determined by a single dim
 
 ## Epistemological Audit
 
-The heat kernel validity audit (`s45_heat_kernel_audit.md`) classified all heat-kernel-derived quantities into three tiers:
+The heat kernel validity audit (`s45_heat_kernel_audit.md`) classified all heat-kernel-derived quantities into three levels:
 
-**Tier 1 (VALID on finite spectrum):**
+**Level 1 (VALID on finite spectrum):**
 - Spectral action S(Lambda) for any f, any Lambda
 - Heat trace K(sigma) for any sigma > 0
 - Spectral zeta moments (forward moments, zeta sums)
 - Taylor coefficients of K(sigma)
 - Bogoliubov coefficients |beta_k|^2
 
-**Tier 2 (APPROXIMATION, converges as truncation -> infinity):**
+**Level 2 (APPROXIMATION, converges as truncation -> infinity):**
 - Seeley-DeWitt coefficients a_0, a_2, a_4 (truncation error O(30-50%) at max_pq_sum = 5)
 - G_N extraction from a_2 (order-of-magnitude, not precision)
 - Eigenvalue counting function N(lambda) in Weyl regime
 
-**Tier 3 (ARTIFACT requiring continuum structure absent at finite truncation):**
+**Level 3 (ARTIFACT requiring continuum structure absent at finite truncation):**
 - Spectral dimension d_s(sigma) in UV regime (d_s -> 0, not 8, as sigma -> 0; overshoots above 8 at intermediate sigma)
 - Analytic torsion T = exp(-(1/2) zeta'(0)) (unregularized partial sum, extensive in N)
 - Anything requiring spectral zeta poles (zeta is entire for finite spectrum)
@@ -278,9 +278,9 @@ The heat kernel validity audit (`s45_heat_kernel_audit.md`) classified all heat-
 - SIGMA-SELECT-45 (search for correct sigma): ARTIFACT. No "correct sigma" exists on the finite spectrum.
 - ANALYTIC-TORSION-45 (T = 10^{20301}): ARTIFACT. Unregularized divergent partial sum.
 - TRUNCATED-TORSION-45 (T_singlet = 0.147): Partially defensible (16 modes, small multiplicity), but still a partial sum.
-- UNEXPANDED-SA-45 (Taylor exactness): FULLY VALID (Tier 1).
+- UNEXPANDED-SA-45 (Taylor exactness): FULLY VALID (Level 1).
 - All CC computations using a_0, a_2: Qualitatively unchanged (50% error on a 110-order gap is negligible).
-- CUTOFF-SA-37 (monotonicity theorem): FULLY VALID (Tier 1).
+- CUTOFF-SA-37 (monotonicity theorem): FULLY VALID (Level 1).
 
 ---
 
@@ -292,7 +292,7 @@ The heat kernel validity audit (`s45_heat_kernel_audit.md`) classified all heat-
 
 3. **E_cond 0.115 was dead code.** The value at line 105 of s42_gge_energy.py was assigned but never propagated to any stored output or downstream computation. All 6 downstream scripts load the correct ED value (0.13685) from npz files. 0/6 scripts shift > 5%. No reruns needed.
 
-4. **Heat kernel d_s and torsion reclassified.** The spectral dimension d_s on the finite spectrum is not a dimension diagnostic (Tier 3 artifact). The analytic torsion T = 10^{20301} is an extensive partial sum, not the regulated torsion of SU(3) (Tier 3 artifact). The S44 DIMFLOW computation that extracted n_s = 0.961 at sigma = 1.10 was operating on an artifact: the sigma at which d_s passes through 4 has no intrinsic physical meaning on the truncated spectrum.
+4. **Heat kernel d_s and torsion reclassified.** The spectral dimension d_s on the finite spectrum is not a dimension diagnostic (Level 3 artifact). The analytic torsion T = 10^{20301} is an extensive partial sum, not the regulated torsion of SU(3) (Level 3 artifact). The S44 DIMFLOW computation that extracted n_s = 0.961 at sigma = 1.10 was operating on an artifact: the sigma at which d_s passes through 4 has no intrinsic physical meaning on the truncated spectrum.
 
 ---
 
@@ -421,6 +421,6 @@ The heat kernel validity audit (`s45_heat_kernel_audit.md`) classified all heat-
 - `sessions/archive/session-45/s45_cc_balance_sheet.md` -- CC balance sheet with all numbers traced
 - `sessions/archive/session-45/s45_addendum_hose_count_ns.md` -- Hose-count diagnostic for n_s
 - `sessions/archive/session-45/s45_formula_audit.md` -- Formula audit report (19 computations)
-- `tier0-computation/s45_heat_kernel_audit.md` -- Heat kernel validity audit
+- `computations/s45_heat_kernel_audit.md` -- Heat kernel validity audit
 
-All scripts in `tier0-computation/`. All session documents in `sessions/archive/session-45/`.
+All scripts in `computations/`. All session documents in `sessions/archive/session-45/`.

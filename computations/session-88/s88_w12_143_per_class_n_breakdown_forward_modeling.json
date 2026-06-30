@@ -1,0 +1,77 @@
+{
+  "gate_id": "S88-OR-LATER-Q-8-PER-CLASS-N-BREAKDOWN-FORWARD-MODELING",
+  "wp_section": "W12-143",
+  "scheme": "SR-LO-Mukhanov-Sasaki-substrate-prior-1-over-alpha-squared-forward-model",
+  "convention": "substrate-natural-xi-E-GGE-class-projected-W9b-1-baseline-anchor",
+  "L_max": "N/A-SR-LO",
+  "schema_version": "S87+",
+  "input_sha_plan_w12": "12830badc1271e17e25505cf4d2cc4f94e3157f1a06a0a8cf2146f7616b9b2c9",
+  "input_sha_w9b1_json": "1e3e0a31d624bd9d1ee3732feb652904b52c1453e33f9d5724cd698f193b694f",
+  "input_sha_w9b1_py": "2b39ef7a109825b2718c912c18771421d5debedf35633165370301b4f2a02a4f",
+  "input_sha_cf42_py": "4cc53b584cc5cdf402dcbc549ddf8ecb98bf568202ea51014d9c27060b5e8d8a",
+  "input_sha_canonical_constants": "af1355a0dd221a714e4e51072f24a051d603f8b00e551481380722b2968e1863",
+  "input_sha_gate_verdicts_rule": "fd454c1374bf07dba99153e7d04b0d791e43de0d8bd6aa15d572604fab12b143",
+  "input_sha_math_scripts_rule": "28580db4c3221f9d004cc37d42f82e8eeaf1be72fa11d04f02c6217e808dc9a9",
+  "input_sha_v3_recovery_rule": "ff1240fcff050f9a34a26e5193146e7c5f4fc8a6f2703f0d500b336c99f95ae3",
+  "machinery_pin_n_breakdown_measured": 0.3197964204234936,
+  "machinery_pin_pass_tolerance": 0.01,
+  "machinery_pin_substrate_prior_p": 2.0,
+  "machinery_pin_alpha_R": [
+    1.0,
+    1.0954451150103321,
+    0.8944271909999159,
+    1.224744871391589
+  ],
+  "machinery_pin_n_breakdown_per_R_W9B1": [
+    0.01457768168620787,
+    0.012132263375416159,
+    0.01853106274316138,
+    0.009915791264885475
+  ],
+  "machinery_pin_labels_plan": [
+    "HypA",
+    "HypB",
+    "HypC",
+    "HypD"
+  ],
+  "machinery_pin_labels_w9b1": [
+    "C_1_e",
+    "C_2_a",
+    "C_3_b",
+    "C_4_ab"
+  ],
+  "cf42_landed": true,
+  "w9b1_audit_sha256": "42a79bfb069103120664b4938ca24efe36b30d1d7a3784abbe46652368ccdd41",
+  "N_breakdown_baseline": 0.01457768168620787,
+  "N_breakdown_predicted_substrate_prior": [
+    0.01457768168620787,
+    0.012148068071839895,
+    0.01822210210775984,
+    0.009718454457471914
+  ],
+  "N_breakdown_measured_W9b1": [
+    0.01457768168620787,
+    0.012132263375416159,
+    0.01853106274316138,
+    0.009915791264885475
+  ],
+  "Delta_R_substrate_prior": [
+    0.0,
+    -0.0024296136143679755,
+    0.0036444204215519693,
+    -0.004859227228735956
+  ],
+  "spread_predicted_substrate_prior": 0.3333333333333333,
+  "spread_measured_W9b1": 0.3197964204234936,
+  "rel_err_substrate_prior": 0.04232978246571154,
+  "p_lstsq_diagnostic": 1.9663626566265333,
+  "spread_predicted_lstsq_diagnostic": 0.32877154034571904,
+  "rel_err_lstsq_diagnostic": 0.02806510438841075,
+  "sign_verdict": "PASS",
+  "magnitude_verdict": "FAIL",
+  "regime_verdict": "VALID",
+  "composite_verdict": "FAIL",
+  "audit_sha256": "f5268a35ee94ee6ba78a34a9b24f2ec8c2197dcdd718ef3d72b23dd5490ff607",
+  "content_sha256": "5f86152b20d9c26a9bf4f306f5da7bb1441f6405e735fb6ee03620a53bfc9bbf",
+  "rationale": "Substrate-prior closed-form forward model N_breakdown(R) = N_baseline / alpha_R^2 yields spread_predicted = 1/3 = 0.333333... versus W9b-1 measured spread = 0.319796. Relative deviation = 4.2330% exceeds the 1% PASS criterion. The substrate-prior form CAPTURES THE LEADING SCALING (linear-in-alpha^2 SR-LO IC rescaling, per W9b-1 plan \u00a79 step 4 analytic estimate) but the SR-LO ODE non-linearity contributes a residual ~4% in N_breakdown that the closed-form does NOT reproduce within 1%. Diagnostic post-fit p_lstsq = 1.966363 reproduces W9b-1 by curve-fitting; reporting it as the gate verdict would be iterate-until-PASS Class-6 PROHIBITED_ACTIONS. Verdict: FAIL on plan \u00a7W12-143 1% pass-band; the substrate-prior 1/alpha^2 model is operationally useful as a first-order approximation but does NOT reproduce W9b-1 spread within plan-pinned tolerance. Closes corridor of per-class regulator-restriction modeling at substrate-prior leading order."
+}

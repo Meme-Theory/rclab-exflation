@@ -1,0 +1,195 @@
+========================================================================
+S55 IMPEDANCE-MATCHING-55: Phonon Transmission at Domain Boundaries
+========================================================================
+
+--- Section 1: Load TB Hamiltonian data ---
+  Loaded 50 Hamiltonians, N_cells=32
+  tau range: [0.000, 0.500]
+
+--- Section 2: Boundary cell identification ---
+  Boundary cells (p+q >= 5 or degree <= 3):
+    Cell 0: (0,0), degree=3, C2=0.000
+    Cell 15: (2,3), degree=8, C2=11.333
+    Cell 16: (3,2), degree=8, C2=11.333
+    Cell 17: (1,4), degree=8, C2=12.000
+    Cell 18: (4,1), degree=8, C2=12.000
+    Cell 19: (0,5), degree=4, C2=13.333
+    Cell 20: (5,0), degree=4, C2=13.333
+    Cell 21: (3,3), degree=7, C2=15.000
+    Cell 22: (2,4), degree=7, C2=15.333
+    Cell 23: (4,2), degree=7, C2=15.333
+    Cell 24: (1,5), degree=6, C2=16.333
+    Cell 25: (5,1), degree=6, C2=16.333
+    Cell 26: (0,6), degree=2, C2=18.000
+    Cell 27: (6,0), degree=2, C2=18.000
+    Cell 28: (3,4), degree=5, C2=19.333
+    Cell 29: (4,3), degree=5, C2=19.333
+    Cell 30: (2,5), degree=4, C2=20.000
+    Cell 31: (5,2), degree=4, C2=20.000
+  Total boundary cells: 18
+
+--- Section 3: Coupled domain Hamiltonian ---
+  Test: tau_L=0.1531, tau_R=0.2449
+  J_boundary = 0.900083 M_KK
+  H_total shape: (64, 64)
+  H_total symmetric: True
+  Eigenvalue range: [-0.715284, 8.077244]
+  Bandwidth: 8.792528
+
+--- Section 4: Fisher-Lee transmission computation ---
+
+--- Section 5: Transmission for target tau pairs ---
+
+  tau_L=0.1020, tau_R=0.2041:
+    J_boundary     = 1.081561 M_KK
+    BW_L, BW_R     = 9.7500, 6.4997 M_KK
+    Z_ratio        = 1.2248
+    R_acoustic     = 0.0102
+    T_classical    = 0.9898
+    Spectral overlap = 1.0000
+    T_max          = 1.7579
+    T_mean (>1%)   = 0.7631
+    T_integrated   = 8.1732 M_KK
+    Channels in overlap = 52
+
+  tau_L=0.1531, tau_R=0.2449:
+    J_boundary     = 0.900083 M_KK
+    BW_L, BW_R     = 7.9582, 5.5318 M_KK
+    Z_ratio        = 1.1994
+    R_acoustic     = 0.0082
+    T_classical    = 0.9918
+    Spectral overlap = 1.0000
+    T_max          = 1.9777
+    T_mean (>1%)   = 0.9519
+    T_integrated   = 8.4970 M_KK
+    Channels in overlap = 52
+
+  tau_L=0.0000, tau_R=0.1939:
+    J_boundary     = 1.353772 M_KK
+    BW_L, BW_R     = 14.6483, 6.7678 M_KK
+    Z_ratio        = 1.4712
+    R_acoustic     = 0.0364
+    T_classical    = 0.9636
+    Spectral overlap = 1.0000
+    T_max          = 1.4709
+    T_mean (>1%)   = 0.4560
+    T_integrated   = 6.3218 M_KK
+    Channels in overlap = 42
+
+  tau_L=0.1939, tau_R=0.1939:
+    J_boundary     = 0.918641 M_KK
+    BW_L, BW_R     = 6.7678, 6.7678 M_KK
+    Z_ratio        = 1.0000
+    R_acoustic     = 0.0000
+    T_classical    = 1.0000
+    Spectral overlap = 1.0000
+    T_max          = 2.2832
+    T_mean (>1%)   = 1.2516
+    T_integrated   = 10.6300 M_KK
+    Channels in overlap = 57
+
+  tau_L=0.0000, tau_R=0.5000:
+    J_boundary     = 0.733924 M_KK
+    BW_L, BW_R     = 14.6483, 2.6204 M_KK
+    Z_ratio        = 2.3643
+    R_acoustic     = 0.1645
+    T_classical    = 0.8355
+    Spectral overlap = 1.0000
+    T_max          = 1.4825
+    T_mean (>1%)   = 0.3993
+    T_integrated   = 3.8075 M_KK
+    Channels in overlap = 35
+
+  tau_L=0.1020, tau_R=0.2959:
+    J_boundary     = 0.900083 M_KK
+    BW_L, BW_R     = 9.7500, 4.5294 M_KK
+    Z_ratio        = 1.4672
+    R_acoustic     = 0.0359
+    T_classical    = 0.9641
+    Spectral overlap = 1.0000
+    T_max          = 1.8140
+    T_mean (>1%)   = 0.6520
+    T_integrated   = 6.4734 M_KK
+    Channels in overlap = 42
+
+--- Section 6: Transmission vs tau mismatch ---
+  Reference (tau_L = tau_R = fold): T_int = 10.4549
+  Minimum transmission ratio: 0.5771 at delta_tau = 0.3061
+  Exponential decay fit: T ~ exp(-2.06 * delta_tau)
+    Decay length: 1/alpha = 0.4844 in tau units
+
+--- Section 7: Symmetric mismatch from fold ---
+  delta_tau=0 (identical): T_int = 10.6300
+  delta_tau=0.10: T_int = 6.0731 (0.5713 relative)
+  delta_tau=0.19: T_int = 4.0652 (0.3824 relative)
+
+--- Section 8: Channel-resolved transmission ---
+  Eigenchannel decomposition for tau=(0.0000, 0.1939):
+    E=2.0: T_total=1.3053, N_open=14, tau_1=0.5439, tau_2=0.3091
+    E=5.0: T_total=0.6947, N_open=13, tau_1=0.4583, tau_2=0.0810
+    E=8.0: T_total=0.2595, N_open=9, tau_1=0.0934, tau_2=0.0934
+    E=11.0: T_total=0.0554, N_open=3, tau_1=0.0454, tau_2=0.0051
+
+--- Section 9: Coupling strength dependence ---
+  Coupling dependence for tau=(0.1, 0.2):
+    J_scale=0.1: T_int=0.8185 (0.100 relative)
+    J_scale=0.3: T_int=3.8715 (0.474 relative)
+    J_scale=0.5: T_int=5.9946 (0.733 relative)
+    J_scale=0.7: T_int=7.2143 (0.883 relative)
+    J_scale=1.0: T_int=8.1732 (1.000 relative)
+    J_scale=1.5: T_int=8.7211 (1.067 relative)
+    J_scale=2.0: T_int=8.8031 (1.077 relative)
+    J_scale=3.0: T_int=8.5866 (1.051 relative)
+
+========================================================================
+SUMMARY: IMPEDANCE-MATCHING-55
+========================================================================
+
+  Boundary cells: 18 (of 32 total)
+  Boundary criterion: p+q >= 5 or degree <= 3
+  Lead broadening: eta_lead = 0.3 M_KK
+  Intrinsic broadening: eta = 0.08 M_KK
+
+  --- Transmission Summary ---
+   tau_L  tau_R  Z_ratio  R_class    T_max    T_int  overlap
+  0.1020 0.2041   1.2248   0.0102   1.7579   8.1732   1.0000
+  0.1531 0.2449   1.1994   0.0082   1.9777   8.4970   1.0000
+  0.0000 0.1939   1.4712   0.0364   1.4709   6.3218   1.0000
+  0.1939 0.1939   1.0000   0.0000   2.2832  10.6300   1.0000
+  0.0000 0.5000   2.3643   0.1645   1.4825   3.8075   1.0000
+  0.1020 0.2959   1.4672   0.0359   1.8140   6.4734   1.0000
+
+  --- Key Findings ---
+  Identical-domain T_max: 2.2832
+  Identical-domain T_int: 10.6300
+  Maximum mismatch (0.00->0.50):
+    Z_ratio = 2.3643
+    T_max = 1.4825
+    Reflection R = 0.1645
+
+  Transmission decay: T ~ exp(-2.06 * delta_tau)
+  Decay length: 0.4844 tau-units
+
+--- Generating plots ---
+  Plot saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s55_impedance_matching.png
+
+========================================================================
+GATE VERDICT: IMPEDANCE-MATCHING-55
+========================================================================
+  Status: INFO
+  Classification: PHONONIC (domain boundary scattering)
+  Key result: Transmission decays with tau mismatch.
+  Decay rate: alpha = 2.06 per unit delta_tau
+  Decay length: l_tau = 0.4844
+  Identical domains: T_max = 2.2832
+  Maximum Z_ratio: 2.3643
+  Minimum Z_ratio: 1.0000
+
+  Physical interpretation:
+    The 32-cell SU(3) Voronoi domain acts as a phononic waveguide.
+    Domain boundaries with different tau introduce impedance mismatch
+    proportional to the bandwidth ratio Z = sqrt(BW_L/BW_R).
+    Classical acoustic reflection R = ((Z-1)/(Z+1))^2 provides an
+    upper bound on the actual quantum reflection, which is modulated
+    by resonant transmission through the 18 boundary channels.
+========================================================================

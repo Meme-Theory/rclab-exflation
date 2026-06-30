@@ -1,0 +1,86 @@
+{
+  "L_max": 10,
+  "audit_sha256": "55bc2eca90667255a1ef0041ca516b1878bcced5eb6562a7d08591bd7487c8e2",
+  "c_sub_baseline": 2.238,
+  "carry_forward": [
+    {
+      "effort_wave_equiv": 0.4,
+      "gate": "PASS iff module imports + reproduces W7b-82 verdict-line bit-for-bit at L_max=10",
+      "id": "S89-CHEEGER-SIMONS-MACHINERY-LANDING",
+      "inputs": [
+        "computations/session-88/s88_w7b_lf_d_cheeger_simons_odd_grading_proxy.py",
+        "computations/session-84/s84_spectrum_cache_L12_tau019.npz",
+        "canonical_constants.py:gv_canonical_difference_FW"
+      ],
+      "what": "extract W7b-82 inline machinery into canonical phonon-exflation-sim/src/aps_eta_cs.py"
+    },
+    {
+      "effort_wave_equiv": 0.8,
+      "gate": "PASS iff |c_sub_CheegerSimons - 2.238| / 2.238 < 0.02",
+      "id": "S89-W7c-85-RE-RUN",
+      "inputs": [
+        "phonon-exflation-sim/src/aps_eta_cs.py (S89 landing)",
+        "computations/session-84/s84_spectrum_cache_L12_tau019.npz",
+        "canonical_constants.py:c_sub_baseline"
+      ],
+      "what": "re-execute S88-W9c-1-THIRD-PROXY-CHEEGER-SIMONS with canonical APS module"
+    }
+  ],
+  "composite": "FAIL",
+  "content_sha256": "6b136b9230a1fa4401ce9214b996fe98414d3a7fe8755728fe57e00b0e523445",
+  "convention": "axiom-side-CS-third-proxy-INDEPENDENT-CROSS-CHECK-PRIMARY",
+  "gate_id": "S88-W9c-1-THIRD-PROXY-CHEEGER-SIMONS",
+  "independent_cross_check_routes": [
+    {
+      "probe": "tau-flow-trace",
+      "route": "(i)",
+      "source": "S86 W5b-2",
+      "status": "LANDED-INFO"
+    },
+    {
+      "probe": "WZW-anomaly-isolating",
+      "route": "(ii)",
+      "source": "S87 W9c-1",
+      "status": "LANDED-SCHEMATIC-FAIL"
+    },
+    {
+      "probe": "eta-Cheeger-Simons",
+      "route": "(iii)",
+      "source": "S88 W7c-85",
+      "status": "DEFERRED-S89"
+    }
+  ],
+  "inline_precedent_path": "C:\\sandbox\\Ainulindale Exflation\\computations\\session-88\\s88_w7b_lf_d_cheeger_simons_odd_grading_proxy.py",
+  "input_pin_map": {
+    "_blocked_prereq": "S88-CHEEGER-SIMONS-MACHINERY",
+    "_blocked_status": "absent_path",
+    "_const:ETA_FN_EPS": "1e-12",
+    "_const:INFO_BAND": "0.01",
+    "_const:L_max": "10",
+    "_const:M_KK": "7.428660036284456e+16",
+    "_const:PASS_BAND": "0.02",
+    "_const:c_sub_baseline": "2.238",
+    "_const:tau_fold": "0.19",
+    "_convention": "axiom-side-CS-third-proxy-INDEPENDENT-CROSS-CHECK-PRIMARY",
+    "_gate_id": "S88-W9c-1-THIRD-PROXY-CHEEGER-SIMONS",
+    "_scheme": "eta-Cheeger-Simons-APS-1975-secondary-class-band-0-restricted",
+    "_wp_id": "session-88-w7c-workingpaper.md#W7c-85",
+    "computations/_shared/canonical_constants.py": "a42eb64b78024715c09f241e0c837a8cc4645883b1869db320b375aef6b12d6b",
+    "computations/session-84/s84_spectrum_cache_L12_tau019.npz": "9e6d9cf7fd6a6949d622441b26fb9c2fa568654a22dc802e99898c326ca0f8d9",
+    "computations/session-88/s88_w7b_lf_d_cheeger_simons_odd_grading_proxy.py": "6c38cf2120225df8020d1a251cd17e6f3ea12763aa00d60964c2f20ec1641533",
+    "phonon-exflation-sim/src/aps_eta_cs.py": "ABSENT"
+  },
+  "magnitude_verdict": "N/A",
+  "prereq_aps_module_path": "C:\\sandbox\\Ainulindale Exflation\\phonon-exflation-sim\\src\\aps_eta_cs.py",
+  "prereq_aps_module_status": "absent_path",
+  "regime_verdict": "BREAKDOWN-PREREQ-BLOCKED",
+  "schema_version": "S87+",
+  "scheme": "eta-Cheeger-Simons-APS-1975-secondary-class-band-0-restricted",
+  "sign_verdict": "N/A",
+  "thresholds": {
+    "INFO_band": 0.01,
+    "PASS_band": 0.02,
+    "eta_function_eps": 1e-12
+  },
+  "value_str": "PRE-REG-INC_blocked_by_S88-CHEEGER-SIMONS-MACHINERY_status_absent;canonical_path=phonon-exflation-sim/src/aps_eta_cs.py;in_session_inline_precedent=computations/session-88/s88_w7b_lf_d_cheeger_simons_odd_grading_proxy.py;deferred_to_S89"
+}

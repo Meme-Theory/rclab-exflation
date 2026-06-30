@@ -1,0 +1,266 @@
+==============================================================================
+S63 LEGGETT-FABRIC-63: Leggett-BA Coupling on 32-Cell Josephson Fabric
+==============================================================================
+
+VoLoVIK SUPERFLUID UNIVERSE THEORIST — Session 63 W6-26
+3He-B analog: dipolar-to-BA coupling in textured superfluid
+
+--- Section 1: Load single-cell data ---
+Single-cell V_BC: [-3.55228688e-05  4.33673560e-05  9.32708389e-05 -1.01115326e-04
+  1.29757316e-19  3.48985231e-05 -3.52548886e-05  3.56365504e-07]
+  ||V_BC_cell|| = 1.566119e-04 M_KK
+  max|V_BC_cell| = 1.011153e-04 M_KK
+Leggett parameters:
+  eps_canonical = 0.00374
+  omega_L0 = 0.049 M_KK
+  J_L = 0.026335 M_KK
+  E_J_fold = 7.0415 M_KK
+
+--- Section 2: Fabric geometry ---
+CG(24) edges: 50 C^2 + 24 su(2) + 19 u(1) = 93 total
+
+Anisotropic Josephson matrix:
+  E_J(strong, C^2) = 0.7433 M_KK (50 edges)
+  E_J(weak, su2+u1) = 0.063 M_KK (43 edges)
+  ||H_J_aniso|| = 7.4559
+  Symmetry check: True
+
+Anisotropic graph Laplacian eigenvalues:
+  lambda_J = [-2.4137205  -2.09881352 -1.92004145 -1.69180399 -1.48182728 -1.26963621
+ -1.25204218 -1.00916025 -0.87450509 -0.79674507 -0.57152441 -0.47344716
+ -0.44692949 -0.4141048  -0.19253764 -0.16592598 -0.06681951 -0.0476207
+  0.16198622  0.32699345  0.40515601  0.43966634  0.72778659  0.81903605
+  0.93015311  1.29265954  1.34066635  1.57047033  1.83250068  2.15898666
+  2.37628488  2.804859  ]
+  Range: [-2.4137, 2.8049]
+  Bandwidth: 5.2186 M_KK
+
+Isotropic graph Laplacian eigenvalues (E_J * lambda_n):
+  Range: [0.0000, 51.6031]
+  Bandwidth: 51.6031 M_KK
+
+--- Section 3: Fabric-scale B-C coupling ---
+Single-particle energies at fold: [-1.18413693e-16  1.77061960e-01  3.29405571e-01  5.22910373e-01
+  7.26154925e-01  1.00439566e+00  1.07857332e+00  1.17000260e+00]
+V_bare eigenvalues: [-0.10388024 -0.07224027 -0.0421548   0.00706239  0.04187485  0.07057041
+  0.13296188  0.27576637]
+Leggett mode index: 4 (eigenvalue = 0.041875)
+Leggett mode vector: [-2.26820941e-01  2.76909631e-01  5.95553798e-01 -6.45642488e-01
+  3.33513856e-17  2.22834363e-01 -2.25109831e-01  2.27546822e-03]
+  B2 weight: 0.8997
+  B1 weight: 0.0000
+  B3 weight: 0.1003
+
+--- Section 4: Direct Bloch propagation ---
+
+Direct (Bloch) V_BC: ||V_BC|| = 1.566119e-04 M_KK at every k
+  This is k-INDEPENDENT because V_BC is an intra-cell coupling.
+  On the fabric, V_BC_direct = V_BC_cell otimes delta_{k,k'}
+
+--- Section 5: Full fabric diagonalization (B+C sectors) ---
+
+Leggett dispersion on anisotropic fabric:
+  WARNING: omega_L^2 < 0 at k=0, lambda_J=-2.4137
+  WARNING: omega_L^2 < 0 at k=1, lambda_J=-2.0988
+  WARNING: omega_L^2 < 0 at k=2, lambda_J=-1.9200
+  WARNING: omega_L^2 < 0 at k=3, lambda_J=-1.6918
+  WARNING: omega_L^2 < 0 at k=4, lambda_J=-1.4818
+  WARNING: omega_L^2 < 0 at k=5, lambda_J=-1.2696
+  WARNING: omega_L^2 < 0 at k=6, lambda_J=-1.2520
+  WARNING: omega_L^2 < 0 at k=7, lambda_J=-1.0092
+  WARNING: omega_L^2 < 0 at k=8, lambda_J=-0.8745
+  WARNING: omega_L^2 < 0 at k=9, lambda_J=-0.7967
+  omega_L range: [0.000000, 0.113539] M_KK
+  Leggett bandwidth (aniso): 0.113539 M_KK
+
+Diagonalized 32 Hamiltonians of size 9x9
+
+Spectrum at k=0 (Gamma point):
+  omega_BC = [-2.41186217e+00 -2.21802414e+00 -2.04455065e+00 -1.86390159e+00
+ -1.60814897e+00 -1.38775827e+00 -1.30287592e+00 -1.15417727e+00
+  1.30312405e-08]
+  C_weight = [2.54320026e-10 4.87887726e-11 2.36152122e-09 2.98977333e-09
+ 1.12516391e-10 1.28669498e-10 1.14863315e-09 4.56758404e-11
+ 9.99999993e-01]
+
+Spectrum at k=max (zone boundary):
+  omega_BC = [0.11353929 2.80671733 3.00055536 3.17402885 3.35467791 3.61043053
+ 3.83082123 3.91570359 4.06440223]
+  C_weight = [9.99999998e-01 2.03964870e-10 2.87974461e-11 1.05391542e-09
+ 9.88755821e-10 2.37960102e-11 1.79329717e-11 1.34873223e-10
+ 3.89805263e-12]
+
+--- Section 6: B-C crossing analysis ---
+
+Found 43 potential B-C crossings (detuning < 0.5 M_KK):
+  Crossing 0: k=10, B-mode=1, omega_B=-0.3758, omega_L=0.0162, detuning=0.3921
+  Crossing 1: k=10, B-mode=2, omega_B=-0.2024, omega_L=0.0162, detuning=0.2186
+  Crossing 2: k=10, B-mode=3, omega_B=-0.0217, omega_L=0.0162, detuning=0.0379
+  Crossing 3: k=10, B-mode=4, omega_B=0.2340, omega_L=0.0162, detuning=0.2178
+  Crossing 4: k=10, B-mode=5, omega_B=0.4544, omega_L=0.0162, detuning=0.4382
+  Crossing 5: k=11, B-mode=0, omega_B=-0.4716, omega_L=0.0251, detuning=0.4967
+  Crossing 6: k=11, B-mode=1, omega_B=-0.2778, omega_L=0.0251, detuning=0.3029
+  Crossing 7: k=11, B-mode=2, omega_B=-0.1043, omega_L=0.0251, detuning=0.1294
+  Crossing 8: k=11, B-mode=3, omega_B=0.0764, omega_L=0.0251, detuning=0.0513
+  Crossing 9: k=11, B-mode=4, omega_B=0.3321, omega_L=0.0251, detuning=0.3070
+  Crossing 10: k=12, B-mode=0, omega_B=-0.4451, omega_L=0.0270, detuning=0.4721
+  Crossing 11: k=12, B-mode=1, omega_B=-0.2512, omega_L=0.0270, detuning=0.2782
+  Crossing 12: k=12, B-mode=2, omega_B=-0.0778, omega_L=0.0270, detuning=0.1048
+  Crossing 13: k=12, B-mode=3, omega_B=0.1029, omega_L=0.0270, detuning=0.0759
+  Crossing 14: k=12, B-mode=4, omega_B=0.3586, omega_L=0.0270, detuning=0.3316
+  Crossing 15: k=13, B-mode=0, omega_B=-0.4122, omega_L=0.0292, detuning=0.4414
+  Crossing 16: k=13, B-mode=1, omega_B=-0.2184, omega_L=0.0292, detuning=0.2476
+  Crossing 17: k=13, B-mode=2, omega_B=-0.0449, omega_L=0.0292, detuning=0.0741
+  Crossing 18: k=13, B-mode=3, omega_B=0.1357, omega_L=0.0292, detuning=0.1065
+  Crossing 19: k=13, B-mode=4, omega_B=0.3915, omega_L=0.0292, detuning=0.3623
+  Crossing 20: k=14, B-mode=0, omega_B=-0.1907, omega_L=0.0410, detuning=0.2317
+  Crossing 21: k=14, B-mode=1, omega_B=0.0032, omega_L=0.0410, detuning=0.0378
+  Crossing 22: k=14, B-mode=2, omega_B=0.1766, omega_L=0.0410, detuning=0.1356
+  Crossing 23: k=14, B-mode=3, omega_B=0.3573, omega_L=0.0410, detuning=0.3163
+  Crossing 24: k=15, B-mode=0, omega_B=-0.1641, omega_L=0.0422, detuning=0.2063
+  Crossing 25: k=15, B-mode=1, omega_B=0.0298, omega_L=0.0422, detuning=0.0124
+  Crossing 26: k=15, B-mode=2, omega_B=0.2032, omega_L=0.0422, detuning=0.1610
+  Crossing 27: k=15, B-mode=3, omega_B=0.3839, omega_L=0.0422, detuning=0.3417
+  Crossing 28: k=16, B-mode=0, omega_B=-0.0650, omega_L=0.0464, detuning=0.1113
+  Crossing 29: k=16, B-mode=1, omega_B=0.1289, omega_L=0.0464, detuning=0.0825
+  Crossing 30: k=16, B-mode=2, omega_B=0.3024, omega_L=0.0464, detuning=0.2560
+  Crossing 31: k=16, B-mode=3, omega_B=0.4830, omega_L=0.0464, detuning=0.4366
+  Crossing 32: k=17, B-mode=0, omega_B=-0.0458, omega_L=0.0471, detuning=0.0929
+  Crossing 33: k=17, B-mode=1, omega_B=0.1481, omega_L=0.0471, detuning=0.1009
+  Crossing 34: k=17, B-mode=2, omega_B=0.3215, omega_L=0.0471, detuning=0.2744
+  Crossing 35: k=17, B-mode=3, omega_B=0.5022, omega_L=0.0471, detuning=0.4551
+  Crossing 36: k=18, B-mode=0, omega_B=0.1638, omega_L=0.0548, detuning=0.1090
+  Crossing 37: k=18, B-mode=1, omega_B=0.3577, omega_L=0.0548, detuning=0.3028
+  Crossing 38: k=18, B-mode=2, omega_B=0.5312, omega_L=0.0548, detuning=0.4763
+  Crossing 39: k=19, B-mode=0, omega_B=0.3289, omega_L=0.0602, detuning=0.2687
+  Crossing 40: k=19, B-mode=1, omega_B=0.5227, omega_L=0.0602, detuning=0.4625
+  Crossing 41: k=20, B-mode=0, omega_B=0.4070, omega_L=0.0626, detuning=0.3444
+  Crossing 42: k=21, B-mode=0, omega_B=0.4415, omega_L=0.0636, detuning=0.3779
+  k=10: gap = 0.037939 M_KK, C purity = 1.0000
+  k=10: gap = 0.037939 M_KK, C purity = 1.0000
+  k=10: gap = 0.037939 M_KK, C purity = 1.0000
+  k=10: gap = 0.037939 M_KK, C purity = 1.0000
+  k=10: gap = 0.037939 M_KK, C purity = 1.0000
+  k=11: gap = 0.051266 M_KK, C purity = 1.0000
+  k=11: gap = 0.051266 M_KK, C purity = 1.0000
+  k=11: gap = 0.051266 M_KK, C purity = 1.0000
+  k=11: gap = 0.051266 M_KK, C purity = 1.0000
+  k=11: gap = 0.051266 M_KK, C purity = 1.0000
+  k=12: gap = 0.075881 M_KK, C purity = 1.0000
+  k=12: gap = 0.075881 M_KK, C purity = 1.0000
+  k=12: gap = 0.075881 M_KK, C purity = 1.0000
+  k=12: gap = 0.075881 M_KK, C purity = 1.0000
+  k=12: gap = 0.075881 M_KK, C purity = 1.0000
+  k=13: gap = 0.074128 M_KK, C purity = 1.0000
+  k=13: gap = 0.074128 M_KK, C purity = 1.0000
+  k=13: gap = 0.074128 M_KK, C purity = 1.0000
+  k=13: gap = 0.074128 M_KK, C purity = 1.0000
+  k=13: gap = 0.074128 M_KK, C purity = 1.0000
+  k=14: gap = 0.037840 M_KK, C purity = 1.0000
+  k=14: gap = 0.037840 M_KK, C purity = 1.0000
+  k=14: gap = 0.037840 M_KK, C purity = 1.0000
+  k=14: gap = 0.037840 M_KK, C purity = 1.0000
+  k=15: gap = 0.012425 M_KK, C purity = 1.0000
+  k=15: gap = 0.012425 M_KK, C purity = 1.0000
+  k=15: gap = 0.012425 M_KK, C purity = 1.0000
+  k=15: gap = 0.012425 M_KK, C purity = 1.0000
+  k=16: gap = 0.082497 M_KK, C purity = 1.0000
+  k=16: gap = 0.082497 M_KK, C purity = 1.0000
+  k=16: gap = 0.082497 M_KK, C purity = 1.0000
+  k=16: gap = 0.082497 M_KK, C purity = 1.0000
+  k=17: gap = 0.092910 M_KK, C purity = 1.0000
+  k=17: gap = 0.092910 M_KK, C purity = 1.0000
+  k=17: gap = 0.092910 M_KK, C purity = 1.0000
+  k=17: gap = 0.092910 M_KK, C purity = 1.0000
+  k=18: gap = 0.109010 M_KK, C purity = 1.0000
+  k=18: gap = 0.109010 M_KK, C purity = 1.0000
+  k=18: gap = 0.109010 M_KK, C purity = 1.0000
+  k=19: gap = 0.268653 M_KK, C purity = 1.0000
+  k=19: gap = 0.268653 M_KK, C purity = 1.0000
+  k=20: gap = 0.344434 M_KK, C purity = 1.0000
+  k=21: gap = 0.377922 M_KK, C purity = 1.0000
+
+--- Section 7: Effective fabric V_BC ---
+
+Method A — Direct Bloch V_BC:
+  ||V_BC(fabric)_direct|| = 1.566119e-04 M_KK
+
+Method B — Spectral mixing:
+  V_eff(k) range: [2.997142e-04, 4.492436e-04] M_KK
+  ||V_BC(fabric)_spectral|| = 3.515535e-04 M_KK
+
+Method C — Perturbative Volovik mixing:
+  Sum over 176 (k, mode) pairs
+  ||V_BC(fabric)_pert|| = 3.887328e-05 M_KK
+
+Method D — Full real-space matrix:
+  V_BC_full shape: (256, 32)
+  ||V_BC_full||_F = 8.859312e-04 M_KK
+  ||V_BC_full||_F / sqrt(N_cells) = 1.566120e-04 M_KK (per cell)
+
+--- Section 8: Maximum C-sector admixture ---
+Maximum Leggett admixture in a BA mode:
+  max C_weight(B-dominated) = 7.216413e-06
+  at k=10, mode=3
+Maximum BA admixture in the Leggett mode:
+  max B_weight(C-dominated) = 7.443572e-06
+  at k=10
+
+--- Section 9: Anisotropic vs isotropic comparison ---
+Spectral shift (aniso - iso):
+  max |delta_omega| = 4.879821e+01 M_KK
+  mean |delta_omega| = 1.958514e+01 M_KK
+Leggett weight shift:
+  max |delta_C_weight| = 1.000000e+00
+  mean |delta_C_weight| = 1.250000e-01
+
+--- Section 10: Second-order Leggett-Anderson channel ---
+Second-order Leggett-Anderson coupling:
+  V_BC^(2)(k) range: [0.000000e+00, 1.870372e-02] M_KK
+  V_BC^(2) RMS = 4.632580e-03 M_KK
+  V_BC^(2) max = 1.870372e-02 M_KK
+
+==============================================================================
+SECTION 11: SUMMARY AND GATE VERDICT
+==============================================================================
+
+||V_BC|| estimates (all in M_KK):
+  Single cell (S62):           1.566119e-04
+  Method A (Bloch direct):     1.566119e-04
+  Method B (spectral mixing):  3.515535e-04
+  Method C (perturbative):     3.887328e-05
+  Method D (full matrix/cell): 1.566120e-04
+  Second-order channel (RMS):  4.632580e-03
+  Second-order channel (max):  1.870372e-02
+
+--- FABRIC AMPLIFICATION ---
+  V_BC(fabric) / V_BC(cell) = 1.0000
+  Fabric amplification factor: 1.0000x
+
+--- GATE VERDICT ---
+  Gate: LEGGETT-FABRIC-63
+  ||V_BC(fabric)|| = 1.566120e-04 M_KK
+  Threshold: > 0.01 M_KK
+  Verdict: INFO: decoupled
+
+--- 3He-B ANALOG ASSESSMENT ---
+  In 3He-B, the dipolar-BA coupling is V_dip ~ omega_L / omega_D ~ 10^{-3}
+  Here: V_BC / omega_L0 = 3.196162e-03
+  The framework Leggett-BA coupling is ~3e-03 of the Leggett gap,
+  similar to the 3He-B ratio. This is epsilon-suppressed (eps = 0.00374).
+  Fabric does NOT amplify: Josephson is rank-1 (pair transfer), orthogonal to
+  Leggett (relative phase). The indirect channel is eps^2-suppressed.
+  Topology: BDI class. No topological protection for B-C mixing.
+  Classification: PHONONIC (Leggett is internal-space phonon)
+
+Computation time: 0.03 s
+
+--- Section 12: Save results ---
+Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s63_leggett_fabric.npz
+
+--- Section 13: Generate plot ---
+Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s63_leggett_fabric.png
+
+==============================================================================
+LEGGETT-FABRIC-63 COMPLETE
+==============================================================================

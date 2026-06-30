@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 18,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_171",
+      "anchor_type": "data_provenance",
+      "name": "lie_derivative_norm",
+      "script_path": "session-33/s33a_lie_derivative_norm.py",
+      "session": "s33a",
+      "inputs": "computations/session-33/s33a_landau_sector.npz",
+      "outputs": "session-33/s33a_lie_derivative_norm.npz, session-33/s33a_lie_derivative_norm.png",
+      "source_file": "computations/session-33/s33a_lie_derivative_norm.py",
+      "source_context_30_lines": "   30: import matplotlib\n   31: matplotlib.use('Agg')\n   32: import matplotlib.pyplot as plt\n   33: \n   34: # ─────────────────────────────────────────────────────────────\n   35: # 1. Define the Lie derivative norm function\n   36: # ─────────────────────────────────────────────────────────────\n   37: \n   38: def lie_derivative_norm(tau):\n   39:     \"\"\"Lie derivative norm f(tau) for C^2 gauge bosons on Jensen-deformed SU(3).\n   40: \n   41:     From Baptista Paper 15 eq 3.83-3.84:\n   42:         f(tau) = [(e^tau - e^{-2*tau})^2 + (1 - e^{-tau})^2] / 5\n   43: \n   44:     Parameters\n   45:     ----------\n   46:     tau : float or ndarray"
+    },
+    {
+      "anchor_id": "prov_172",
+      "anchor_type": "data_provenance",
+      "name": "rge_gate",
+      "script_path": "session-33/s33a_rge_gate.py",
+      "session": "s33a",
+      "inputs": "",
+      "outputs": "session-33/s33a_rge_gate.npz, session-33/s33a_rge_gate.png",
+      "source_file": "computations/session-33/s33a_rge_gate.py",
+      "source_context_30_lines": "  408: )\n  409: ax.text(0.1, 0.95, summary, transform=ax.transAxes, fontsize=10,\n  410:         verticalalignment='top', fontfamily='monospace',\n  411:         bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.5))\n  412: \n  413: plt.suptitle('Session 33a: RGE Gate (RGE-33a)',\n  414:              fontsize=14, fontweight='bold')\n  415: plt.tight_layout()\n  416: plt.savefig('computations/session-33/s33a_rge_gate.png', dpi=150, bbox_inches='tight')\n  417: print(\"\\nPlot saved: computations/session-33/s33a_rge_gate.png\")\n  418: \n  419: # ─────────────────────────────────────────────────────────────\n  420: # 7. Save\n  421: # ─────────────────────────────────────────────────────────────\n  422: \n  423: np.savez('computations/session-33/s33a_rge_gate.npz',\n  424:          g1_over_g2_KK=np.array([g1_over_g2_KK]),"
+    },
+    {
+      "anchor_id": "prov_173",
+      "anchor_type": "data_provenance",
+      "name": "rge_gate_corrected",
+      "script_path": "session-33/s33a_rge_gate_corrected.py",
+      "session": "s33a",
+      "inputs": "",
+      "outputs": "session-33/s33a_rge_gate_corrected.npz, session-33/s33a_rge_gate_corrected.png",
+      "source_file": "computations/session-33/s33a_rge_gate_corrected.py",
+      "source_context_30_lines": "  455: )\n  456: ax.text(0.05, 0.95, summary, transform=ax.transAxes, fontsize=9.5,\n  457:         verticalalignment='top', fontfamily='monospace',\n  458:         bbox=dict(boxstyle='round', facecolor='lightyellow', alpha=0.8))\n  459: \n  460: plt.suptitle('RGE-33a CORRECTED: Baptista Normalization (sqrt(3) factor)',\n  461:              fontsize=13, fontweight='bold')\n  462: plt.tight_layout()\n  463: plt.savefig('computations/session-33/s33a_rge_gate_corrected.png', dpi=150, bbox_inches='tight')\n  464: print(f\"\\nPlot saved: computations/session-33/s33a_rge_gate_corrected.png\")\n  465: \n  466: # ─────────────────────────────────────────────────────────────\n  467: # 10. Save data\n  468: # ─────────────────────────────────────────────────────────────\n  469: \n  470: np.savez('computations/session-33/s33a_rge_gate_corrected.npz',\n  471:          # Baptista coupling extraction"
+    },
+    {
+      "anchor_id": "prov_174",
+      "anchor_type": "data_provenance",
+      "name": "strutinsky",
+      "script_path": "session-33/s33a_strutinsky.py",
+      "session": "s33a",
+      "inputs": "computations/session-23/s23a_eigenvectors_extended.npz, computations/session-32/s32b_rpa1_thouless.npz, computations/ses...",
+      "outputs": "session-33/s33a_strutinsky.npz, session-33/s33a_strutinsky.png",
+      "source_file": "computations/session-33/s33a_strutinsky.py",
+      "source_context_30_lines": "  323: ax.set_ylabel('d^2(sum|lambda|)/dtau^2')\n  324: ax.set_title('Branch Decomposition of Bare Curvature at tau=0.20')\n  325: ax.legend()\n  326: ax.grid(True, alpha=0.3, axis='y')\n  327: \n  328: plt.suptitle('Session 33a: Strutinsky Shell Correction (STRUT-33a)',\n  329:              fontsize=14, fontweight='bold')\n  330: plt.tight_layout()\n  331: plt.savefig('computations/session-33/s33a_strutinsky.png', dpi=150, bbox_inches='tight')\n  332: print(\"\\nPlot saved: computations/session-33/s33a_strutinsky.png\")\n  333: \n  334: # ─────────────────────────────────────────────────────────────\n  335: # 7. Save\n  336: # ─────────────────────────────────────────────────────────────\n  337: \n  338: save_dict = {\n  339:     'tau_values': tau_vals,"
+    },
+    {
+      "anchor_id": "prov_175",
+      "anchor_type": "data_provenance",
+      "name": "w3_kink_masses",
+      "script_path": "session-33/s33a_w3_kink_masses.py",
+      "session": "s33a",
+      "inputs": "",
+      "outputs": "session-33/s33a_w3_kink_masses.npz",
+      "source_file": "computations/session-33/s33a_w3_kink_masses.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s33a_w3_kink_masses.py -- W3 Kink Mass Ratios vs phi_paasch\n    4: Session 33a, Task #5 (W3-33a diagnostic gate)\n    5: \n    6: Computes exact mass ratios from integrable QFTs related to W_3 minimal\n    7: model M(6,5) at c=4/5 (Z_3 Potts critical point), checks against\n    8: phi_paasch = 1.531580 with 2%/5% tolerance.\n    9: \n   10: Theories surveyed:\n   11:   1. A_n affine Toda (n=2..8) -- fundamental mass ratios sin(a*pi/h)/sin(pi/h)"
+    },
+    {
+      "anchor_id": "prov_176",
+      "anchor_type": "data_provenance",
+      "name": "w3_kink_masses_v1",
+      "script_path": "session-33/s33a_w3_kink_masses_v1.py",
+      "session": "s33a",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-33/s33a_w3_kink_masses_v1.py",
+      "source_context_30_lines": "<name 'w3_kink_masses_v1' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: Session 33a Step 5: W_3 Kink Mass Ratios vs phi_paasch.\n    4: \n    5: Compare A_2 Toda / W_3 M(6,5) minimal model kink mass ratios to\n    6: phi_paasch = 1.531580.\n    7: \n    8: Mathematical background:\n    9:     The Z_3 Potts model at criticality is described by the W_3 minimal model\n   10:     M(6,5) with central charge c = 4/5. Its kink spectrum is determined by\n   11:     the Bethe ansatz / exact S-matrix approach.\n   12: \n   13:     The A_2 affine Toda field theory (integrable deformation of W_3 minimal\n   14:     model) has particles with exact mass ratios:\n   15:         m_1 = m_2 (degenerate doublet, Z_3 symmetry)\n   16:     Higher-mass particles form a bootstrap structure.\n   17: \n   18:     The A_2 Toda mass spectrum is:\n   19:         m_a/m_1 for each particle species a.\n   20: \n   21:     For the A_n-1 Toda theories, the mass spectrum is:\n   22:         m_a/m_1 = sin(a*pi/n) / sin(pi/n)   for a = 1, ..., n-1\n   23: \n   24:     For A_2: n = 3, so a = 1, 2\n   25:         m_1/m_1 = 1\n   26:         m_2/m_1 = sin(2*pi/3) / sin(pi/3) = 1 (degenerate doublet)\n   27: \n   28:     The GOLDEN RATIO appears in A_4 Toda (E8 related):\n   29:         m_2/m_1 = 2*cos(pi/5) = phi = 1.6180...\n   30:     This is NOT the A_2 system."
+    },
+    {
+      "anchor_id": "prov_177",
+      "anchor_type": "data_provenance",
+      "name": "nuc1_nucleation",
+      "script_path": "session-33/s33b_nuc1_nucleation.py",
+      "session": "s33b",
+      "inputs": "",
+      "outputs": "session-33/s33b_nuc1_nucleation.npz",
+      "source_file": "computations/session-33/s33b_nuc1_nucleation.py",
+      "source_context_30_lines": "  495:         'GL_a': a, 'GL_b': b, 'GL_c': c,\n  496:         'Delta_jump': Delta_jump,\n  497:         'latent_heat': latent_heat,\n  498:         'sigma_GL': sigma_GL,\n  499:         'VN_effective': VN,\n  500:         'trap1_M_max': trap_M_max,\n  501:     }\n  502: \n  503:     output_npz = os.path.join(SCRIPT_DIR, \"s33b_nuc1_nucleation.npz\")\n  504:     np.savez_compressed(output_npz, **save_data)\n  505:     print(f\"Saved: {output_npz}\")\n  506:     print(f\"File size: {os.path.getsize(output_npz) / 1024:.1f} KB\")\n  507: \n  508:     # ==================================================================\n  509:     # PLOT\n  510:     # ==================================================================\n  511:     fig, axes = plt.subplots(1, 2, figsize=(14, 5))"
+    },
+    {
+      "anchor_id": "prov_178",
+      "anchor_type": "data_provenance",
+      "name": "trap1_wall_bcs",
+      "script_path": "session-33/s33b_trap1_wall_bcs.py",
+      "session": "s33b",
+      "inputs": "",
+      "outputs": "session-33/s33b_trap1_wall_bcs.npz, session-33/s33b_trap1_wall_bcs.png",
+      "source_file": "computations/session-33/s33b_trap1_wall_bcs.py",
+      "source_context_30_lines": "  727:         save_data['mu_critical'] = mu_crit_full\n  728: \n  729:     for key, val in sc_results.items():\n  730:         w, mu = key\n  731:         prefix = f'sc_w{w}_mu{mu:.4f}'\n  732:         save_data[f'{prefix}_Delta'] = val['Delta']\n  733:         save_data[f'{prefix}_trivial'] = val['trivial']\n  734: \n  735:     output_npz = os.path.join(SCRIPT_DIR, \"s33b_trap1_wall_bcs.npz\")\n  736:     np.savez_compressed(output_npz, **save_data)\n  737:     print(f\"\\nSaved: {output_npz}\")\n  738:     print(f\"File size: {os.path.getsize(output_npz) / 1024:.1f} KB\")\n  739: \n  740:     # ==================================================================\n  741:     # PLOT\n  742:     # ==================================================================\n  743:     fig, axes = plt.subplots(2, 2, figsize=(14, 10))"
+    },
+    {
+      "anchor_id": "prov_179",
+      "anchor_type": "data_provenance",
+      "name": "dphys_fold",
+      "script_path": "session-34/s34a_dphys_fold.py",
+      "session": "s34a",
+      "inputs": "",
+      "outputs": "session-34/s34a_dphys_fold.npz, session-34/s34a_dphys_fold.png",
+      "source_file": "computations/session-34/s34a_dphys_fold.py",
+      "source_context_30_lines": "  852:     mixing_names = [m[0] for m in mixing_details]\n  853:     mixing_b23 = [m[1] for m in mixing_details]\n  854:     mixing_b21 = [m[2] for m in mixing_details]\n  855:     mixing_b22 = [m[3] for m in mixing_details]\n  856:     save_dict['mixing_b2_b3'] = np.array(mixing_b23)\n  857:     save_dict['mixing_b2_b1'] = np.array(mixing_b21)\n  858:     save_dict['mixing_b2_b2_off'] = np.array(mixing_b22)\n  859: \n  860:     out_npz = os.path.join(SCRIPT_DIR, 's34a_dphys_fold.npz')\n  861:     np.savez(out_npz, **save_dict)\n  862:     print(f\"\\n  Saved: {out_npz}\")\n  863: \n  864:     # ================================================================\n  865:     #  Plot\n  866:     # ================================================================\n  867:     fig, axes = plt.subplots(2, 2, figsize=(14, 10))\n  868: "
+    },
+    {
+      "anchor_id": "prov_180",
+      "anchor_type": "data_provenance",
+      "name": "dphys_kosmann",
+      "script_path": "session-34/s34a_dphys_kosmann.py",
+      "session": "s34a",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-34/s34a_dphys_kosmann.py",
+      "source_context_30_lines": "   46: from canonical_constants import *  # noqa: F401,F403 — MANDATORY\n   47: \n   48: # L_max pin: spectral-triple fiber dimension, fixed by Cliff(R^8) spinor module\n   49: L_FIBER_DPHYS = 16                   # (local: pin — dim H_F = 2^(8/2) = 16)\n   50: \n   51: # Delegate to the archive S34a script (its SCRIPT_DIR resolves to computations/_shared,\n   52: # which is where s23a_kosmann_singlet.npz and s34a_dphys_fold.py live).\n   53: if __name__ == \"__main__\":\n   54:     script = os.path.join(ARCHIVE_DIR, \"s34a_dphys_kosmann.py\")   # (local)\n   55:     with open(script, \"r\", encoding=\"utf-8\") as _f:\n   56:         code = _f.read()                                          # (local)\n   57:     # Execute in a namespace that has SCRIPT_DIR already set to the archive\n   58:     ns = {                                                        # (local)\n   59:         \"__name__\": \"__main__\",\n   60:         \"__file__\": script,\n   61:     }\n   62:     exec(compile(code, script, \"exec\"), ns)"
+    }
+  ]
+}

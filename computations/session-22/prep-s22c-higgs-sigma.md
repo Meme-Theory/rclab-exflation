@@ -1,0 +1,81 @@
+### S22C-HIGGS-SIGMA
+- Session: S22c
+- Path: computations/session-22/s22c_higgs_sigma.py (copied to computations/session-22/s22c_higgs_sigma.py with canonical-compliance patch)
+- Domain: GEOMETRIC (finite-part D_K eigenstructure + CCM portal formula; no phononic excitations, no running couplings)
+- Classification: GEOMETRIC
+- MCP baseline (computations/session-22/s22c_higgs_sigma.npz):
+  - lambda_Hsigma = 0.30842514 EXACTLY tau-independent across all 16 tau points [0, 2.0]
+  - verdict = "STRUCTURAL KILL (Trap 3)"  [note: legacy label; new script's mapping emits "STRUCTURAL CLOSURE (Trap 3)"]
+  - bf = 0.3
+  - a_trace at tau=0 = 10816.0
+  - c_trace at tau=0 = 12.0
+  - e_trace at tau=0 = 8112.0
+  - e/(a*c) at tau=0 = 8112/129792 = 1/16 EXACTLY (spinor-dimension trap identity)
+- MCP knowledge-base state (trace_entity("higgs_sigma")):
+  - gate Higgs-sigma: "Constant (Trap 3) | CLOSED (BF=0.3) | 22c"
+  - closed_mechanism 381: "Higgs-sigma | Constant (Trap 3) | 0.3"
+  - closed_mechanism 455: "Higgs-sigma portal | Exactly constant (Trap 3) | 22c C-1 | C-1"
+  - This re-run is a STRUCTURAL VERIFICATION, not a new computation; gate is already CLOSED in knowledge base
+- Canonical constants queried:
+  - m_H_obs = 125.1 GeV (PDG) -- NOT used by S22C (S22C measures PORTAL, not mass)
+  - v_ew = 246.0 GeV -- NOT used by S22C
+  - phi_paasch = 1.531580 -- not invoked
+  - tau_fold = 0.19 -- gate evaluation uses tau=0.30 (Weinberg angle), not the fold
+- Tolerance: THEOREM machine-epsilon (deterministic dense eigvalsh of 1j*anti-Hermitian operators on 16..64 x 16-spinor = 256..1024 matrices; Omega_full is block-diagonal, so algebraic identity is exact)
+- PRU machinery:
+  - max_pq_sum: pinned = 3 (all (p,q) with p+q <= 3; 10 sectors)
+  - tau_grid_A: pinned = np.linspace(0, 2.0, 21) (Approach A gauge-sector scan)
+  - tau_eig: pinned = np.array([0.0, 0.05, 0.10, 0.15, 0.20, 0.25, 0.30, 0.35, 0.40, 0.50, 0.60, 0.80, 1.00, 1.20, 1.50, 2.00]) (Approach C eigenvalue scan; 16 points)
+  - Spinor dimension: 16 (Cliff8 basis, fixed by build_cliff8)
+  - c_1, c_2 weights (gauge): (4/13, 9/13) from Trap 2 Dynkin embedding index (4/9 ratio, normalized to sum = 1 at tau=0)
+  - Yukawa sector selector: non-Killing indices [3, 4, 5, 6] (C^2 = SU(3)/U(2))
+  - f_0 (cutoff zeroth moment): pinned = 1.0 (dimensionless; only enters as multiplicative scale, does not affect Trap 3 ratio identity)
+  - Seed: none (deterministic)
+  - Compute path: numpy.linalg.eigvalsh on CPU (matrices <= 1024x1024; Hermitian form 1j*D); 10 sectors x 16 tau points = 160 eigvalsh calls, wall ~10-30s
+  - OMP_NUM_THREADS: set to 8 (CPU path; no GPU since Hermitian eigvalsh on <=1024^2 is fast enough on CPU and under the GPU-mandatory threshold for this pattern)
+- Input SHA-256 pins:
+  - s22c_higgs_sigma.py (archive, pre-fix): 71ec39e4e1efa9d01915c8962beda1f11c9266b7911e15204fcb5d1e8329b592
+  - dirac_spectrum.py (computations): eee1b6fdcbb86847385130b3b3467c76fe1b5b73573d7dac4baf428cf4ff163f
+  - canonical_constants.py: 68b50cd325d2cc8c63b775da3b6b92f538da582bee44c5d906c81259f24dd12f
+- Substitution chain for the sign/direction claim (Trap 3 structural closure):
+  - Step 1 (def): a(tau), c(tau), e(tau) defined as Peter-Weyl-weighted traces over non-Killing eigenvalues and Omega eigenvalues (archive script, lines 342-428).
+  - Step 2 (CCM formula): lambda_{H,sigma}(tau) = pi^2 * e(tau) / (2 * f_0 * a(tau) * c(tau))  [Paper 13 eq 3.1-3.3]
+  - Step 3 (substitute baseline at tau=0): a=10816, c=12, e=8112 --> e/(a*c) = 8112/129792 = 1/16
+  - Step 4 (simplify): lambda = pi^2 * (1/16) / (2 * 1.0) = pi^2/32 = 0.3084251375
+  - Step 5 (across tau): archive data shows e/(a*c) = 1/16 at ALL 16 tau points (verified 0.0625 exact). Ratio is algebraically pinned to 1/dim(spinor_8D) = 1/16.
+  - Step 6 (direction): pi^2 > 0, e > 0, a > 0, c > 0, f_0 > 0. Therefore lambda_{H,sigma} > 0 (REPULSIVE, positive-definite).
+  - Step 7 (tau-selection): d(lambda)/d(tau) = 0 identically (ratio is tau-independent). Therefore the portal CANNOT select tau. This is the Trap 3 closure: the CCM portal ratio e/(a*c) = 1/16 is a geometric identity, not a dynamical coupling.
+- Note on "131.8 GeV Higgs-mass direction" in the task prompt:
+  - S22C does NOT compute m_H. S22C computes the PORTAL coupling lambda_{H,sigma} (quartic cross-term |H|^2 sigma^2 in the two-field potential).
+  - The 131.8 GeV prediction comes from s62_higgs_bcs_threshold.py / m_H from KK threshold corrections (a_4 curvature mass-squared), a different script.
+  - The substitution chain for m_H direction is therefore N/A in this script. Chain documented here is for the PORTAL sign/tau-dependence claim, which is the actual gate observable.
+- Gate threshold (S81 canonical, pre-registered):
+  - DECISIVE (FAIL the Trap 3 hypothesis): lambda_Hs < 0 at any tau in [0.20, 0.35]
+  - COMPELLING (partial FAIL): lambda_Hs < 0 at any tau in [0.10, 0.50]
+  - STRUCTURAL CLOSURE (PASS the Trap 3 hypothesis): lambda_Hs exactly tau-independent AND > 0
+  - CLOSED: lambda_Hs > 0 everywhere (weaker form)
+  - NEUTRAL: mixed sign, non-constant
+- Expected output 4-tuple:
+  - (value=lambda_Hs=pi^2/32=0.30842514_constant, scheme=CCM-portal-spinor-trace, convention=non-Killing-Cliff8-C2-sector, L_max=3)
+- What PASSES means: the Higgs-sigma portal cannot stabilize the tau modulus; sigma cannot get its mass from this channel. The CCM NCG mechanism for tau selection via the portal is CLOSED.
+- What FAILS (hypothetical) would mean: the portal has nontrivial tau-dependence and could select tau; the NCG-native mechanism survives. This did NOT occur.
+- Pre-fix issues in archive script:
+  - Missing `from canonical_constants import *` (required for S34+ scripts per project rules; S22c is nominally exempt but re-run for audit requires compliance)
+  - Hardcoded literals: `4.0/13.0`, `9.0/13.0`, `1.0/90.0`, `125.0`, `8.0`, `2.0`, spinor-dim `16` -- all are algebraic/geometric constants (Trap 2 weights, SD curvature coefficients, Cliff8 spinor dimension), NOT framework-scale constants. They remain as literals but are tagged `# (local)` to pass the canonical audit; canonical_constants.py has no corresponding names since these are structural.
+  - Verdict-string legacy: archive wrote "STRUCTURAL KILL (Trap 3)"; t3 script emits "STRUCTURAL CLOSURE (Trap 3)" per epistemic-discipline (closures are boundaries, not failures). Reproduction tolerance is on the NUMERICAL verdict (lambda_Hs value + sign + monotonicity), not the string label.
+- Fix applied:
+  - Added `from canonical_constants import *` at top
+  - Added OMP_NUM_THREADS=8 cap before numpy import
+  - Tagged Trap 2 weights c1=4/13, c2=9/13 as `# (local)` (structural, not framework)
+  - Tagged Cliff8 spinor-dim `n_spin = 16` as `# (local)`
+  - Tagged CCM coefficients (1/90, 125, -8, 2) as `# (local)` where they appear inline
+  - Tagged tau grids, thresholds, f0=1.0, h=1e-5, h=1e-6 as `# (local)`
+  - Tagged all trace accumulators (a_trace, b_trace, c_trace, d_trace, e_trace init to 0.0) as `# (local)`
+  - No framework constants changed; no canonical_constants.py edits
+  - Output npz filename prefixed with `_t3` to avoid overwriting the archive baseline
+- Cross-check plan:
+  - Verify e(tau)/(a(tau)*c(tau)) = 1/16 EXACTLY at all 16 tau points (rtol 1e-12)
+  - Verify lambda_Hs = pi^2/32 EXACTLY at all 16 tau points (rtol 1e-12)
+  - Verify portal > 0 everywhere
+  - Verify monotonic flag = TRUE (constant counts as monotonic)
+  - Anti-Hermiticity check on 1j*D_full: max imag(eigvalsh(1j*D_full)) < 1e-12 per sector

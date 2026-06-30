@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 72,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_711",
+      "anchor_type": "data_provenance",
+      "name": "domain_wall",
+      "script_path": "session-57/s57_domain_wall.py",
+      "session": "s57",
+      "inputs": "computations/session-54/s54_tb_hamiltonian.npz, computations/session-57/s57_gge_equilibrium_gap.npz, computations/sessio...",
+      "outputs": "session-57/s57_domain_wall.npz",
+      "source_file": "computations/session-57/s57_domain_wall.py",
+      "source_context_30_lines": "   25: - Therefore: all cells produce the SAME GGE state {n_k}.\n   26: - The anomalous average F_GGE = sum_k u_k v_k (1-2f_k) is LARGE (2.23) but\n   27:   IDENTICAL for all cells.\n   28: - Domain walls require PHASE MISMATCH between cells.  With identical GGE states,\n   29:   delta_phi = 0 for all bonds.\n   30: - E_DW = J * |F|^2 * (1 - cos(delta_phi)) = 0 EXACTLY.\n   31: \n   32: Output:\n   33:   computations/session-57/s57_domain_wall.npz\n   34: \"\"\"\n   35: \n   36: import sys\n   37: import os\n   38: sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))\n   39: import numpy as np\n   40: from canonical_constants import (\n   41:     M_KK, M_KK_gravity, E_cond, N_cells, tau_fold,"
+    },
+    {
+      "anchor_id": "prov_712",
+      "anchor_type": "data_provenance",
+      "name": "fabric_dm_abundance",
+      "script_path": "session-57/s57_fabric_dm_abundance.py",
+      "session": "s57",
+      "inputs": "s57_finite_rate_transit.npz, s57_leggett_partition.npz, s57_gap_scaling.npz",
+      "outputs": "session-57/s57_fabric_dm_abundance.npz",
+      "source_file": "computations/session-57/s57_fabric_dm_abundance.py",
+      "source_context_30_lines": "  553:     'rho_DM_GeV4_fold': rho_DM_GeV4_fold,\n  554: \n  555:     # Gate\n  556:     'gate_name': 'FABRIC-DM-ABUNDANCE-57',\n  557:     'gate_verdict': gate_verdict,\n  558:     'gate_detail': gate_detail,\n  559: }\n  560: \n  561: np.savez('s57_fabric_dm_abundance.npz', **results)\n  562: print(f\"\\nSaved: s57_fabric_dm_abundance.npz\")\n  563: print(\"DONE\")"
+    },
+    {
+      "anchor_id": "prov_713",
+      "anchor_type": "data_provenance",
+      "name": "fabric_kz_quench",
+      "script_path": "session-57/s57_fabric_kz_quench.py",
+      "session": "s57",
+      "inputs": "",
+      "outputs": "session-57/s57_fabric_kz_quench.npz",
+      "source_file": "computations/session-57/s57_fabric_kz_quench.py",
+      "source_context_30_lines": "  474: \n  475:   KEY NUMBER: n_KZ_defect = 0 (KZ inapplicable)\n  476:   Actual excitation: P_exc = 0.081 (sudden quench, non-KZ, W1-1)\n  477: \"\"\")\n  478: \n  479: # ============================================================================\n  480: # 12. SAVE RESULTS\n  481: # ============================================================================\n  482: out_path = os.path.join(data_dir, 's57_fabric_kz_quench.npz')\n  483: \n  484: np.savez(out_path,\n  485:     # BCS gap profile\n  486:     tau_ed=tau_ed,\n  487:     Delta_MB=Delta_MB,\n  488:     E_cond_A=E_cond_A,\n  489:     E_cond_B=E_cond_B,\n  490: "
+    },
+    {
+      "anchor_id": "prov_714",
+      "anchor_type": "data_provenance",
+      "name": "feynman_crosscheck_w1_1",
+      "script_path": "session-57/s57_feynman_crosscheck_w1_1.py",
+      "session": "s57",
+      "inputs": "",
+      "outputs": "session-57/s57_feynman_crosscheck_w1_1.txt",
+      "source_file": "computations/session-57/s57_feynman_crosscheck_w1_1.py",
+      "source_context_30_lines": "   24:     PI, M_KK, M_KK_gravity, J_C2,\n   25: )\n   26: \n   27: import numpy as np\n   28: from scipy.linalg import eigh\n   29: from itertools import combinations\n   30: \n   31: data_dir = os.path.dirname(os.path.abspath(__file__))\n   32: out_path = os.path.join(data_dir, 's57_feynman_crosscheck_w1_1.txt')\n   33: out = open(out_path, 'w')\n   34: \n   35: def log(msg):\n   36:     print(msg)\n   37:     out.write(msg + '\\n')\n   38: \n   39: log(\"=\" * 70)\n   40: log(\"FEYNMAN CROSS-CHECK: W1-1 FINITE-RATE-TRANSIT-57\")"
+    },
+    {
+      "anchor_id": "prov_715",
+      "anchor_type": "data_provenance",
+      "name": "finite_rate_transit",
+      "script_path": "session-57/s57_finite_rate_transit.py",
+      "session": "s57",
+      "inputs": "",
+      "outputs": "session-57/s57_finite_rate_transit.npz, session-57/s57_finite_rate_transit.png",
+      "source_file": "computations/session-57/s57_finite_rate_transit.py",
+      "source_context_30_lines": "  750: print(f\"  B3 (isolated cells): P_exc = {P_exc_isolated:.6e}\")\n  751: print(f\"  B4 (Leggett gap->0): = B3\")\n  752: \n  753: # ==============================================================================\n  754: #  SECTION 16: Save Results\n  755: # ==============================================================================\n  756: \n  757: print(\"\\n--- Saving results ---\")\n  758: save_path = os.path.join(data_dir, 's57_finite_rate_transit.npz')\n  759: \n  760: np.savez(save_path,\n  761:     gate_name='FINITE-RATE-TRANSIT-57',\n  762:     gate_verdict=verdict,\n  763: \n  764:     tau_phys=tau_phys,\n  765:     P_exc_phys=P_exc_phys,\n  766:     E_exc_phys=E_exc_phys,"
+    },
+    {
+      "anchor_id": "prov_716",
+      "anchor_type": "data_provenance",
+      "name": "floquet_plasma",
+      "script_path": "session-57/s57_floquet_plasma.py",
+      "session": "s57",
+      "inputs": "",
+      "outputs": "session-57/s57_floquet_plasma.npz",
+      "source_file": "computations/session-57/s57_floquet_plasma.py",
+      "source_context_30_lines": "  419:     print(f\"\\n  {label}: N_full_cycles = [{N_full_cycles.min():.4f}, {N_full_cycles.max():.4f}]\")\n  420:     # Even the maximum is < 1 cycle. This means the transit IS sudden for the plasma mode.\n  421:     # But omega_J ~ few M_KK while dt_transit ~ 0.001. So omega*dt ~ 0.001-0.004. << 1.\n  422:     print(f\"  omega*dt_transit range: [{(omJ*dt_transit).min():.6f}, {(omJ*dt_transit).max():.6f}]\")\n  423: \n  424: # ============================================================\n  425: # 10. Save results\n  426: # ============================================================\n  427: save_path = r\"C:\\sandbox\\Ainulindale Exflation\\computations\\s57_floquet_plasma.npz\"\n  428: np.savez(save_path,\n  429:     # tau grid\n  430:     tau_values=tau_vals,\n  431:     dtau_dt=np.array(dtau_dt),\n  432:     dt_transit=np.array(dt_transit),\n  433:     # omega_J profiles\n  434:     omega_J_single=omega_J_single,\n  435:     omega_J_collective=omega_J_collective,"
+    },
+    {
+      "anchor_id": "prov_717",
+      "anchor_type": "data_provenance",
+      "name": "floquet_plasma_v2",
+      "script_path": "session-57/s57_floquet_plasma_v2.py",
+      "session": "s57",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-57/s57_floquet_plasma_v2.py",
+      "source_context_30_lines": "<name 'floquet_plasma_v2' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: FLOQUET-PLASMA-57 v2: Corrected Bogoliubov + Floquet analysis\n    4: ==============================================================\n    5: The v1 monodromy computation had the right structure but the Parker\n    6: extraction needs care. This version:\n    7: \n    8: 1. Verifies the monodromy det=1 (symplectic)\n    9: 2. Correctly extracts |beta|^2 from the sudden-quench formula\n   10: 3. Checks the WKB integral for particle production\n   11: 4. Provides the definitive gate verdict\n   12: \n   13: The KEY physics: omega_J * dt_transit << 1 everywhere. The plasma mode\n   14: does NOT oscillate during the transit. This is the INSTANTANEOUS QUENCH\n   15: limit. The Bogoliubov coefficient is:\n   16:   |beta|^2 = [(omega_i - omega_f) / (2*sqrt(omega_i*omega_f))]^2\n   17: \n   18: Author: Tesla-Resonance\n   19: Session: 57 (2026-03-22)\n   20: \"\"\"\n   21: import sys\n   22: sys.path.insert(0, r\"C:\\sandbox\\Ainulindale Exflation\\computations\")\n   23: import numpy as np\n   24: from scipy.integrate import solve_ivp, quad\n   25: from scipy.interpolate import CubicSpline\n   26: from canonical_constants import (\n   27:     tau_fold, dt_transit, H_fold, PI\n   28: )\n   29: \n   30: # ============================================================"
+    },
+    {
+      "anchor_id": "prov_718",
+      "anchor_type": "data_provenance",
+      "name": "gap_scaling",
+      "script_path": "session-57/s57_gap_scaling.py",
+      "session": "s57",
+      "inputs": "",
+      "outputs": "session-57/s57_gap_scaling.npz, session-57/s57_gap_scaling.png",
+      "source_file": "computations/session-57/s57_gap_scaling.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s57_gap_scaling.py — Many-Body Gap Scaling for N = 1, 2, 4, 8, 16, 32 Cells\n    4: ==============================================================================\n    5: Session 57, W1-3: GAP-SCALING-57\n    6: \n    7: Constructs the BCS-reduced Hamiltonian on a linear chain of N cells\n    8: (each cell = 8 BCS modes) with intra-cell pairing from V_bare_cont\n    9: and inter-cell Josephson coupling. Diagonalizes in the N_pair=1\n   10: canonical subspace (dim = 8*N) to extract the many-body gap\n   11: Delta_N = E_1 - E_0."
+    },
+    {
+      "anchor_id": "prov_719",
+      "anchor_type": "data_provenance",
+      "name": "gge_equilibrium_gap",
+      "script_path": "session-57/s57_gge_equilibrium_gap.py",
+      "session": "s57",
+      "inputs": "",
+      "outputs": "session-57/s57_gge_equilibrium_gap.npz",
+      "source_file": "computations/session-57/s57_gge_equilibrium_gap.py",
+      "source_context_30_lines": "  436: print(f\"  This is the precise arithmetic confirmation of the Volovik\")\n  437: print(f\"  equilibrium theorem applied to the BCS-on-SU(3) framework:\")\n  438: print(f\"  in a system where the microscopic theory is known, the vacuum\")\n  439: print(f\"  energy problem reduces to the thermalization problem.\")\n  440: print(f\"{'='*70}\")\n  441: \n  442: # ── 9. Save results ──────────────────────────────────────────────────\n  443: \n  444: outpath = os.path.join(os.path.dirname(__file__), 's57_gge_equilibrium_gap.npz')\n  445: np.savez(outpath,\n  446:     # Gate\n  447:     gate_name='GGE-EQUILIBRIUM-GAP-57',\n  448:     gate_verdict=gate_verdict,\n  449:     gate_criterion=gate_criterion,\n  450:     gate_value=gate_value,\n  451:     # Mode data\n  452:     branch_labels=branch_labels,"
+    },
+    {
+      "anchor_id": "prov_720",
+      "anchor_type": "data_provenance",
+      "name": "leggett_partition",
+      "script_path": "session-57/s57_leggett_partition.py",
+      "session": "s57",
+      "inputs": "s57_leggett_tau_profile.npz, s57_channel_energy_budget.npz, s56_leggett_fabric.npz",
+      "outputs": "session-57/s57_leggett_partition.npz, session-57/s57_leggett_partition.png",
+      "source_file": "computations/session-57/s57_leggett_partition.py",
+      "source_context_30_lines": "  628:     # Gate\n  629:     'gate_name': 'LEGGETT-PARTITION-57',\n  630:     'gate_verdict': overall_verdict,\n  631:     'f_DM_energy': f_DM_energy,\n  632:     'P_exc_mean': P_exc_mean,\n  633:     'shortfall_factor': Omega_DM / max(f_DM_energy, 1e-20),\n  634: }\n  635: \n  636: np.savez('s57_leggett_partition.npz', **save_dict)\n  637: print(f\"\\nData saved: s57_leggett_partition.npz\")\n  638: \n  639: # ======================================================================\n  640: # 9. Plotting\n  641: # ======================================================================\n  642: \n  643: fig, axes = plt.subplots(2, 3, figsize=(18, 12))\n  644: fig.suptitle('S57 LEGGETT-PARTITION-57: DM/CC Energy Fraction\\n'"
+    }
+  ]
+}

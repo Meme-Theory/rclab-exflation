@@ -1,0 +1,95 @@
+{
+  "table": "data_provenance",
+  "batch_id": 243,
+  "count": 8,
+  "anchors": [
+    {
+      "anchor_id": "prov_2421",
+      "anchor_type": "data_provenance",
+      "name": "s31Ch_instanton_eff_freq",
+      "script_path": "session-31/s31Ch_instanton_eff_freq.py",
+      "session": "",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-31/s31Ch_instanton_eff_freq.py",
+      "source_context_30_lines": "   10:   omega_eff^2 = T3 - delta = 8.326 - delta\n   11:   Re-evaluate V_Kapitza(tau; A=0.08, omega=omega_eff) using arcsine-weighted average.\n   12:   Find delta_crit where minimum appears.\n   13:   Compare to Gamma_inst^2.\n   14: \n   15: Gate N-31Ch-G (DECISIVE): PASS if delta_crit <= Gamma_inst^2 at tau in [0.15, 0.21].\n   16: \n   17: Input: s31Ba_kapitza_gate.npz, s31Ba_instanton_kapitza.npz\n   18: Output: s31Ch_instanton_eff_freq.{npz,png}\n   19: \"\"\"\n   20: \n   21: import numpy as np\n   22: import matplotlib\n   23: matplotlib.use('Agg')\n   24: import matplotlib.pyplot as plt\n   25: \n   26: # ── Load data ──"
+    },
+    {
+      "anchor_id": "prov_2422",
+      "anchor_type": "data_provenance",
+      "name": "s31Ci_bayesian_convergence",
+      "script_path": "session-31/s31Ci_bayesian_convergence.py",
+      "session": "",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-31/s31Ci_bayesian_convergence.py",
+      "source_context_30_lines": "    9: CORRECTION: The \"instanton peak at 0.181\" refers to the RATIO\n   10: Gamma_inst/omega_tau, NOT Gamma_inst alone. Gamma_inst is monotonic.\n   11: The ratio peaks because omega_tau (Hessian frequency) has a minimum\n   12: at the gradient-balance point.\n   13: \n   14: Gate N-31Ci-G: INFORMATIVE if BF > 10.\n   15: \n   16: Input: s30b_grid_bcs.npz, s30b_sdw_grid.npz, s31Ba_instanton_kapitza.npz\n   17: Output: s31Ci_bayesian_convergence.{npz,png}\n   18: \"\"\"\n   19: \n   20: import numpy as np\n   21: from scipy.interpolate import interp1d\n   22: import matplotlib\n   23: matplotlib.use('Agg')\n   24: import matplotlib.pyplot as plt\n   25: import os, time"
+    },
+    {
+      "anchor_id": "prov_2423",
+      "anchor_type": "data_provenance",
+      "name": "s33w3_modulus_equation",
+      "script_path": "session-33/s33w3_modulus_equation.py",
+      "session": "",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-33/s33w3_modulus_equation.py",
+      "source_context_30_lines": "  802: ax.set_title('Modulus mass and minimum position vs eta')\n  803: ax.axhline(0, color='gray', ls='-', alpha=0.3)\n  804: ax2.axhline(0.19, color='red', ls=':', alpha=0.3)\n  805: ax.legend(loc='upper left', fontsize=8)\n  806: ax2.legend(loc='upper right', fontsize=8)\n  807: ax.grid(True, alpha=0.3)\n  808: \n  809: plt.tight_layout()\n  810: plt.savefig('C:/sandbox/Ainulindale Exflation/computations/session-33/s33w3_modulus_equation.png', dpi=150)\n  811: print(\"\\nFigure saved to computations/session-33/s33w3_modulus_equation.png\")\n  812: \n  813: \n  814: # ===========================================================================\n  815: # 11. KEY NUMERICAL RESULTS\n  816: # ===========================================================================\n  817: \n  818: print(\"\\n\" + \"=\"*70)"
+    },
+    {
+      "anchor_id": "prov_2424",
+      "anchor_type": "data_provenance",
+      "name": "s33w3_paasch_dump_point",
+      "script_path": "session-33/s33w3_paasch_dump_point.py",
+      "session": "",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-33/s33w3_paasch_dump_point.py",
+      "source_context_30_lines": "  305:   phi_paasch^2 * ln(phi_paasch) = {trans_phi:.6f} (= 1 by construction)\n  306:   Connection: {'ALGEBRAIC' if abs(trans_val - 1) < 0.01 or abs(trans_val - 0.5) < 0.01 else 'NOT SIMPLE RATIONAL'}\n  307: \n  308: B2 EIGENVALUE AT DUMP: {b2_dump:.8f}\n  309: B2 MINIMUM LOCATION:   tau = {tau_b2min:.4f} (lambda_B2 = {b2_min:.8f})\n  310: \"\"\")\n  311: \n  312: # Save results\n  313: np.savez('s33w3_paasch_dump_point.npz',\n  314:          tau_dump=tau_dump,\n  315:          E00_dump=E00_dump,\n  316:          E30_dump=E30_dump,\n  317:          ratio_dump=ratio_dump,\n  318:          phi_paasch=phi_p,\n  319:          deviation_pct=(ratio_dump/phi_p - 1)*100,\n  320:          gate_P30phi_pass=inside,\n  321:          gate_low=gate_low,"
+    },
+    {
+      "anchor_id": "prov_2425",
+      "anchor_type": "data_provenance",
+      "name": "s33w3_sp_dump_geometry",
+      "script_path": "session-33/s33w3_sp_dump_geometry.py",
+      "session": "",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-33/s33w3_sp_dump_geometry.py",
+      "source_context_30_lines": "<name 's33w3_sp_dump_geometry' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: Session 33 Workshop 3 -- SP Deliverable 1: Dump Point Geometry\n    3: =============================================================\n    4: \n    5: Compute Kretschner scalar K(tau), all curvature invariants, and their\n    6: derivatives at the dump point (tau=0.190) and phi_paasch point (tau=0.15).\n    7: \n    8: All formulas are EXACT ANALYTIC from SP-2 (Session 17a, verified at\n    9: machine epsilon against Levi-Civita connection computation).\n   10: \n   11: Author: Schwarzschild-Penrose-Geometer\n   12: Date: 2026-03-06\n   13: \"\"\"\n   14: import numpy as np\n   15: \n   16: # =====================================================================\n   17: # EXACT ANALYTIC FORMULAS (rational coefficients, SP-2)\n   18: # =====================================================================\n   19: \n   20: def R_exact(s):\n   21:     \"\"\"Scalar curvature R(s). R(0) = 2.\"\"\"\n   22:     return -0.25*np.exp(-4*s) + 2*np.exp(-s) - 0.25 + 0.5*np.exp(2*s)\n   23: \n   24: def Ric2_exact(s):\n   25:     \"\"\"|Ric|^2(s). |Ric|^2(0) = 0.5.\"\"\"\n   26:     return (\n   27:         (1/12) * np.exp(-8*s)\n   28:         + (-1/2) * np.exp(-5*s)\n   29:         + (1/8) * np.exp(-4*s)\n   30:         + (13/12) * np.exp(-2*s)"
+    },
+    {
+      "anchor_id": "prov_2426",
+      "anchor_type": "data_provenance",
+      "name": "s33w3_wall_pmns",
+      "script_path": "session-33/s33w3_wall_pmns.py",
+      "session": "",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-33/s33w3_wall_pmns.py",
+      "source_context_30_lines": "   35: \n   36: # ============================================================\n   37: # Configuration\n   38: # ============================================================\n   39: DATA_DIR = Path(r\"C:\\sandbox\\Ainulindale Exflation\\computations\")\n   40: SINGLET_FILE = DATA_DIR / \"s23a_kosmann_singlet.npz\"\n   41: WALL_DOS_FILE = DATA_DIR / \"s32b_wall_dos.npz\"\n   42: UMKLAPP_FILE = DATA_DIR / \"s32a_umklapp_vertex.npz\"\n   43: OUTPUT_NPZ = DATA_DIR / \"s33w3_wall_pmns.npz\"\n   44: OUTPUT_PNG = DATA_DIR / \"s33w3_wall_pmns.png\"\n   45: \n   46: # PDG targets\n   47: PDG = {\n   48:     'sin2_13': (0.020, 0.024, 0.0218),  # (lo, hi, best_fit)\n   49:     'theta_12': (31.3, 35.9, 33.44),\n   50:     'theta_23': (40.1, 51.7, 49.1),\n   51:     'R': (29.0, 37.0, 32.6),  # R = Dm^2_32 / Dm^2_21"
+    },
+    {
+      "anchor_id": "prov_2427",
+      "anchor_type": "data_provenance",
+      "name": "_s35_pfaffian_corrected_j_rerun",
+      "script_path": "session-35/_s35_pfaffian_corrected_j_rerun.py",
+      "session": "",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-35/_s35_pfaffian_corrected_j_rerun.py",
+      "source_context_30_lines": "<name '_s35_pfaffian_corrected_j_rerun' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: S35-PFAFFIAN-CORRECTED-J — Re-run (S81 canonical verdict form)\n    3: ==================================================================\n    4: \n    5: Gate: PF-J-35 (BDI topological invariant under corrected J).\n    6: \n    7: Structural theorem (pre-registered):\n    8:   M = C1 @ D_K(tau) is antisymmetric (since {P=C1*K, D_K}=0, D_K Hermitian).\n    9:   Pf(M)^2 = det(M) = det(C1) * det(D_K).\n   10:   sgn(Pf) is PIECEWISE-CONSTANT on any interval where spectral gap is open,\n   11:   and changes sign iff det(D_K) = 0 (gap closes).\n   12: \n   13: Session 34 J-correction: C2 = gamma_1*gamma_3*gamma_5*gamma_7 (was sigma_2^{x4}).\n   14: The Pfaffian matrix M uses C1, NOT C2. So the correction is a non-trivial\n   15: sanity check: BDI algebraic structure (T^2=P^2=+1, S=TP=gamma_9) must still\n   16: hold with the corrected T = C2*K, and the Pfaffian sign must remain constant.\n   17: \n   18: Re-run machinery pins:\n   19:   L_max = 16         (spinor dimension, fixed by Cliff(R^8) on 16-dim)\n   20:   N_TAU_STORED = 9   (from s23a_kosmann_singlet.npz, tau in [0, 0.5])\n   21:   N_TAU_EXTENDED = 25 (first-principles scan, tau in [0, 2.5])\n   22: \n   23: Canonical constants imported; intermediates tagged # (local).\n   24: \"\"\"\n   25: \n   26: import os\n   27: import sys\n   28: # === Phase 2b X2 transform bootstrap (auto-inserted by tools/_x2_transform_copies.py) ===\n   29: import sys as _x2_sys\n   30: import pathlib as _x2_pathlib"
+    },
+    {
+      "anchor_id": "prov_2428",
+      "anchor_type": "data_provenance",
+      "name": "_w22_synthesis_subst_chain_verify",
+      "script_path": "session-88/_w22_synthesis_subst_chain_verify.py",
+      "session": "",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-88/_w22_synthesis_subst_chain_verify.py",
+      "source_context_30_lines": "<name '_w22_synthesis_subst_chain_verify' not found in source>\n--- file head ---\n    1: \"\"\"Substitution-chain verification helper for s88-w22 synthesis (lizzi solo).\n    2: \n    3: Verifies every sign/direction/threshold claim in the workshop synthesis via\n    4: explicit substitution chains. NOT a gate; all values are (local) test\n    5: intermediates pulled from §W7a-74 verdict-line text and registry Grep\n    6: output. No framework constants are consumed; canonical-import audit is\n    7: N/A for this read-only verifier.\n    8: \"\"\"\n    9: # (local-only verifier; canonical_constants import not required -- no\n   10: # framework constant is read or written here)\n   11: import sys\n   12: import os\n   13: sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '_shared'))\n   14: from canonical_constants import M_KK as _UNUSED_KEEP_AUDIT_HAPPY  # noqa: F401  # (local)\n   15: \n   16: # ============================================================\n   17: # SUBCHAIN 1 -- PASS-RANK direction (FAIL or PASS?)\n   18: # ============================================================\n   19: rho_T1 = 0.800              # |rho_S| in T1 sign-stripped (raw -0.800)  # (local)\n   20: rho_T2 = 1.000              # |rho_S| in T2 sign-stripped (raw -1.000)  # (local)\n   21: threshold_rank = 0.999      # (local)\n   22: clauseA_rank = rho_T1 >= threshold_rank   # (local)\n   23: clauseB_rank = rho_T2 >= threshold_rank   # (local)\n   24: PASS_RANK = clauseA_rank and clauseB_rank # (local)\n   25: print('SUBCHAIN-1 PASS-RANK: T1>=0.999 = %s; T2>=0.999 = %s; conj = %s; verdict = %s'\n   26:       % (clauseA_rank, clauseB_rank, PASS_RANK,\n   27:          'FAIL-RANK' if not PASS_RANK else 'PASS-RANK'))\n   28: \n   29: # ============================================================\n   30: # SUBCHAIN 2 -- PASS-MAGNITUDE direction"
+    }
+  ]
+}

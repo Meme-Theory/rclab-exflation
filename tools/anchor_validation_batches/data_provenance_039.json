@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 39,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_381",
+      "anchor_type": "data_provenance",
+      "name": "lifshitz_eta_crosscheck",
+      "script_path": "session-44/s44_lifshitz_eta_crosscheck.py",
+      "session": "s44",
+      "inputs": "",
+      "outputs": "session-44/s44_lifshitz_eta_crosscheck.npz",
+      "source_file": "computations/session-44/s44_lifshitz_eta_crosscheck.py",
+      "source_context_30_lines": "  528:   the superfluid case: the fluctuation spectrum of a quenched superfluid\n  529:   is determined by the quench RATE, not by the Fermi surface topology.\n  530: \"\"\")\n  531: \n  532: # ============================================================\n  533: # SECTION 13: Save results\n  534: # ============================================================\n  535: \n  536: np.savez(base / 's44_lifshitz_eta_crosscheck.npz',\n  537:     # Volovik recomputed values\n  538:     slope_n_phys_volovik=np.array([slope_n[0]]),\n  539:     slope_P_volovik=np.array([slope_P[0]]),\n  540:     eta_eff_volovik=np.array([eta_volovik]),\n  541:     ns_volovik=np.array([ns_volovik]),\n  542: \n  543:     # Landau values\n  544:     eta_eff_landau=np.array([landau_eta]),"
+    },
+    {
+      "anchor_id": "prov_382",
+      "anchor_type": "data_provenance",
+      "name": "mkk_reconcile",
+      "script_path": "session-44/s44_mkk_reconcile.py",
+      "session": "s44",
+      "inputs": "",
+      "outputs": "session-44/s44_mkk_reconcile.npz, session-44/s44_mkk_reconcile.png",
+      "source_file": "computations/session-44/s44_mkk_reconcile.py",
+      "source_context_30_lines": "  569:     'f2_bayesian': f2_bayesian,\n  570:     'tension_f2_sakharov': tension_f2_sak,\n  571:     # Seeley-DeWitt comparison\n  572:     'a2_SD_correct': a2_SD_g0,\n  573:     'a2_SD_wrong': a2_SD_g0_wrong,\n  574:     'a2_zeta': a2_fold,\n  575: }\n  576: \n  577: np.savez(DATA_DIR / 's44_mkk_reconcile.npz', **save_dict)\n  578: print(f\"\\nSaved: {DATA_DIR / 's44_mkk_reconcile.npz'}\")\n  579: \n  580: # ==============================================================================\n  581: #  PLOTTING\n  582: # ==============================================================================\n  583: fig, axes = plt.subplots(2, 2, figsize=(14, 10))\n  584: fig.suptitle('MKK-RECONCILE-44: Vol(SU(3)) Correction Analysis',\n  585:              fontsize=14, fontweight='bold')"
+    },
+    {
+      "anchor_id": "prov_383",
+      "anchor_type": "data_provenance",
+      "name": "multi_t_jacobson",
+      "script_path": "session-44/s44_multi_t_jacobson.py",
+      "session": "s44",
+      "inputs": "",
+      "outputs": "session-44/s44_multi_t_jacobson.npz, session-44/s44_multi_t_jacobson.png",
+      "source_file": "computations/session-44/s44_multi_t_jacobson.py",
+      "source_context_30_lines": "  565: print(f\"8-fluid EOS computed. w_internal = {w_eff_gge:.3f}, w_4D = 0.\")\n  566: print(f\"Negative T(B2,B1) = {T_B2B1:.4f} encodes B2-B1 anti-correlation.\")\n  567: print(f\"Cross-temps are INTERNAL; do not modify 4D Friedmann equation.\")\n  568: print(f\"Heat capacity has {n_negative_C} negative eigenvalue(s) => non-standard thermodynamics.\")\n  569: \n  570: # ============================================================\n  571: # 13. Save data\n  572: # ============================================================\n  573: np.savez(base / 's44_multi_t_jacobson.npz',\n  574:     # Gate\n  575:     gate_name=np.array([gate_name]),\n  576:     gate_verdict=np.array([gate_verdict]),\n  577: \n  578:     # Per-mode quantities\n  579:     labels=labels,\n  580:     E_k=E_k,\n  581:     n_k=n_k,"
+    },
+    {
+      "anchor_id": "prov_384",
+      "anchor_type": "data_provenance",
+      "name": "n3_bdg",
+      "script_path": "session-44/s44_n3_bdg.py",
+      "session": "s44",
+      "inputs": "computations/session-38/s38_cc_instanton.npz, computations/session-35/s35_ed_corrected_dos.npz, computations/session-22/...",
+      "outputs": "session-44/s44_n3_bdg.npz, session-44/s44_n3_bdg.png",
+      "source_file": "computations/session-44/s44_n3_bdg.py",
+      "source_context_30_lines": "  727: print(f\"  N_3 = {results['N_3']}\")\n  728: print(f\"  N_1 = {results['N_1']}\")\n  729: print(f\"  eta (spectral asymmetry) = {results['eta_spectral']}\")\n  730: print(f\"  Pfaffian sign = {results['pfaffian_sign']} (from S35, nontrivial)\")\n  731: \n  732: # ============================================================\n  733: # STEP 10: Save Data\n  734: # ============================================================\n  735: np.savez('computations/session-44/s44_n3_bdg.npz',\n  736:     # Gate\n  737:     gate_verdict=np.array([gate_verdict]),\n  738: \n  739:     # BdG spectrum\n  740:     E_BdG_fold=E_BdG_full,\n  741:     E_BdG_vs_tau=E_BdG_vs_tau,\n  742:     xi_all=xi_all,\n  743:     Delta_all=Delta_all,"
+    },
+    {
+      "anchor_id": "prov_385",
+      "anchor_type": "data_provenance",
+      "name": "sakharov_gn",
+      "script_path": "session-44/s44_sakharov_gn.py",
+      "session": "s44",
+      "inputs": "",
+      "outputs": "session-44/s44_sakharov_gn.npz, session-44/s44_sakharov_gn.png",
+      "source_file": "computations/session-44/s44_sakharov_gn.py",
+      "source_context_30_lines": "   13: Gate: PASS if |log10(G_N^Sak / G_N^obs)| < 2 (within 2 OOM)\n   14:       FAIL if |log10(G_N^Sak / G_N^obs)| > 3\n   15:       BONUS if |log10(G_N^Sak / G_N^spec)| < 1\n   16: \n   17: Input: computations/session-36/s36_sfull_tau_stabilization.npz (eigenvalues at tau=0.190)\n   18:        computations/session-42/s42_constants_snapshot.npz (M_KK, a_2, etc.)\n   19:        computations/session-42/s42_hauser_feshbach.npz (reference masses)\n   20: \n   21: Output: computations/session-44/s44_sakharov_gn.npz, s44_sakharov_gn.png\n   22: \"\"\"\n   23: \n   24: import numpy as np\n   25: import matplotlib\n   26: matplotlib.use('Agg')\n   27: import matplotlib.pyplot as plt\n   28: from pathlib import Path\n   29: "
+    },
+    {
+      "anchor_id": "prov_386",
+      "anchor_type": "data_provenance",
+      "name": "sakharov_gn_audit",
+      "script_path": "session-44/s44_sakharov_gn_audit.py",
+      "session": "s44",
+      "inputs": "",
+      "outputs": "session-44/s44_sakharov_gn_audit.npz",
+      "source_file": "computations/session-44/s44_sakharov_gn_audit.py",
+      "source_context_30_lines": "  322: print(f\"  1/(16piG_obs) = {inv_16piG_obs:.6e} GeV^2\")\n  323: print(f\"  Ratio = {ratio_B:.4f}\")\n  324: print(f\"  |log10(G_Sak/G_obs)| = {abs(log10_dev):.4f}\")\n  325: if abs(log10_dev) < 2:\n  326:     print(f\"  VERDICT: PASS (within {10**abs(log10_dev):.1f}x of observed)\")\n  327: else:\n  328:     print(f\"  VERDICT: FAIL ({10**abs(log10_dev):.1f}x off)\")\n  329: \n  330: np.savez(DATA_DIR / 's44_sakharov_gn_audit.npz',\n  331:     inv_16piG_agent=inv_A,\n  332:     inv_16piG_sakharov_full=inv_B,\n  333:     inv_16piG_spectral=inv_C,\n  334:     inv_16piG_log_corrected=inv_E,\n  335:     inv_16piG_agent_dimfix=inv_F,\n  336:     inv_16piG_obs=inv_16piG_obs,\n  337:     ratio_B=ratio_B,\n  338:     log10_dev=log10_dev,"
+    },
+    {
+      "anchor_id": "prov_387",
+      "anchor_type": "data_provenance",
+      "name": "sakharov_gn_crosscheck",
+      "script_path": "session-44/s44_sakharov_gn_crosscheck.py",
+      "session": "s44",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-44/s44_sakharov_gn_crosscheck.py",
+      "source_context_30_lines": "<name 'sakharov_gn_crosscheck' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: SAKHAROV-GN-44 Cross-Check (Nazarewicz)\n    4: \n    5: Independent verification of the Volovik agent's Sakharov induced gravity computation.\n    6: Loads the same 992-eigenvalue spectrum from s42_hauser_feshbach.npz and s36 data,\n    7: recomputes the key sums, checks multiplicity weighting, tests alternative\n    8: regularizations, and verifies the species-count estimate.\n    9: \n   10: All numbers are cross-checked against s44_sakharov_gn.npz (Volovik output).\n   11: \"\"\"\n   12: \n   13: import numpy as np\n   14: from pathlib import Path\n   15: \n   16: DATA_DIR = Path(__file__).parent\n   17: \n   18: # ===========================================================================\n   19: # Physical constants\n   20: # ===========================================================================\n   21: from canonical_constants import G_N as G_N_OBS  # m^3 kg^-1 s^-2\n   22: from canonical_constants import M_Pl_reduced as M_PL_REDUCED  # GeV\n   23: G_N_NAT = 1.0 / (8.0 * np.pi * M_PL_REDUCED**2)  # GeV^{-2}\n   24: \n   25: # ===========================================================================\n   26: # Step A: Load data independently\n   27: # ===========================================================================\n   28: d36 = np.load(DATA_DIR / 's36_sfull_tau_stabilization.npz', allow_pickle=True)\n   29: d42c = np.load(DATA_DIR / 's42_constants_snapshot.npz', allow_pickle=True)\n   30: d42h = np.load(DATA_DIR / 's42_hauser_feshbach.npz', allow_pickle=True)"
+    },
+    {
+      "anchor_id": "prov_388",
+      "anchor_type": "data_provenance",
+      "name": "singlet_cc",
+      "script_path": "session-44/s44_singlet_cc.py",
+      "session": "s44",
+      "inputs": "",
+      "outputs": "session-44/s44_singlet_cc.npz, session-44/s44_singlet_cc.png",
+      "source_file": "computations/session-44/s44_singlet_cc.py",
+      "source_context_30_lines": "  446: print(f\"  standard DM gravitates but doesn't gauge-couple.\")\n  447: print(f\"  Here we have energy that gauge-couples but doesn't gravitate.\")\n  448: \n  449: # ============================================================\n  450: # 8. SAVE DATA\n  451: # ============================================================\n  452: \n  453: np.savez(\n  454:     base / \"s44_singlet_cc.npz\",\n  455:     # Core results\n  456:     E_exc_total=E_exc_total,\n  457:     singlet_fraction_methodA=singlet_frac_A,\n  458:     singlet_fraction_methodB=singlet_frac_B,\n  459:     singlet_fraction_compound=singlet_frac_C_compound,\n  460:     singlet_fraction_acoustic=singlet_frac_C_acoustic,\n  461:     singlet_fraction_canonical=singlet_frac_canonical,\n  462:     singlet_fraction_d2=singlet_frac_d2_A,"
+    },
+    {
+      "anchor_id": "prov_389",
+      "anchor_type": "data_provenance",
+      "name": "spectral_dim_band",
+      "script_path": "session-44/s44_spectral_dim_band.py",
+      "session": "s44",
+      "inputs": "",
+      "outputs": "session-44/s44_spectral_dim_band.npz, session-44/s44_spectral_dim_band.png",
+      "source_file": "computations/session-44/s44_spectral_dim_band.py",
+      "source_context_30_lines": "   43: import matplotlib.pyplot as plt\n   44: from matplotlib.gridspec import GridSpec\n   45: \n   46: # ======================================================================\n   47: # CONFIGURATION\n   48: # ======================================================================\n   49: \n   50: data_dir = Path(\"computations\")\n   51: output_npz = data_dir / \"s44_spectral_dim_band.npz\"\n   52: output_png = data_dir / \"s44_spectral_dim_band.png\"\n   53: \n   54: # ======================================================================\n   55: # DATA LOADING\n   56: # ======================================================================\n   57: \n   58: print(\"=\" * 72)\n   59: print(\"SESSION 44 W6-6: SPECTRAL DIMENSION FROM POLARITON BAND STRUCTURE\")"
+    },
+    {
+      "anchor_id": "prov_390",
+      "anchor_type": "data_provenance",
+      "name": "strutinsky_diag",
+      "script_path": "session-44/s44_strutinsky_diag.py",
+      "session": "s44",
+      "inputs": "",
+      "outputs": "session-44/s44_strutinsky_diag.npz, session-44/s44_strutinsky_diag.png",
+      "source_file": "computations/session-44/s44_strutinsky_diag.py",
+      "source_context_30_lines": "  671:      just as nuclear pairing (~12 MeV) is ~0.7% of total BE (~1700 MeV)\n  672: \"\"\")\n  673: \n  674: # ================================================================\n  675: # 12. SAVE DATA\n  676: # ================================================================\n  677: \n  678: np.savez(\n  679:     os.path.join(SCRIPT_DIR, \"s44_strutinsky_diag.npz\"),\n  680:     # Spectrum\n  681:     unique_masses=unique_masses,\n  682:     mass_multiplicities=mass_mults,\n  683:     N_modes=N_modes,\n  684:     N_unique=N_unique,\n  685:     tau_fold=tau_fold,\n  686: \n  687:     # Scales"
+    }
+  ]
+}

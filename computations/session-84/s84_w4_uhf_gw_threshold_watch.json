@@ -1,0 +1,89 @@
+{
+  "gate_id": "S84-UHF-GW-THRESHOLD-WATCH",
+  "gate_type": "AUDIT-registry-writer",
+  "registry_tag": "WALL-MIGRATION-WATCH-C5",
+  "classification": "GEOMETRIC-WALL-MIGRATION-WATCH",
+  "session": 84,
+  "wave": "W4-47",
+  "owner_agent": "mack-cosmic-bridge",
+  "registered_at": "2026-04-19T15:49:31Z",
+  "registered_date": "2026-04-19",
+  "taxonomy_definition": {
+    "WALL": "Prediction is derivable and structural; outside current AND near-future (2035-2045) detector reach but NOT outside all conceivable detector reach. Migration path via detector improvement is pre-registered.",
+    "FALSIFIER": "Prediction is within instrumental reach; PASS/FAIL verdicts are meaningful.",
+    "DETECTOR-STERILE": "Prediction is structural but outside all conceivable detector reach under current physics (e.g., signal requires observation at k >> k_Planck). Stricter than WALL.",
+    "C5_current_classification": "WALL",
+    "C5_migration_criterion": "Any UHF GW detector reports sigma(Omega_GW)(1 mHz) < 1.0e-40 (absolute density parameter). Upon crossing this threshold, C5 migrates WALL -> FALSIFIER and is subject to PASS/FAIL discrimination against the gamma route at Omega_gamma(1 mHz) = 1.800e-59."
+  },
+  "framework_prediction": {
+    "route_gamma_gravity_only_1mHz": 1.8e-59,
+    "route_alpha_instanton_1mHz": 4.235e-89,
+    "route_gamma_source": "S83 W3-G52 C5 relabel (S82 W2-6)",
+    "route_alpha_source": "S83 W3-G52 C5 relabel (S82 W2-6)",
+    "dominant_route": "gamma (gravity-only)",
+    "retired_route_per_S77": "direct domain-wall annihilation (Josephson bias kills walls 15,000x before reheating)"
+  },
+  "detector_landscape": {
+    "current_LISA_sensitivity_1mHz": 1e-12,
+    "current_UHF_roadmap_floor_1mHz": 1e-20,
+    "migration_threshold_1mHz_absolute": 1e-40,
+    "UHF_detector_classes_2035_2045": [
+      "Levitated sensors (McCuller et al.)",
+      "Inverse Gertsenshtein effect (Holometer-successor)",
+      "Cavity-based (ADMX-inspired UHF search)",
+      "Resonant-mass (MiniGrail-successor)"
+    ],
+    "literature_reach_window_2035_2045": "Omega_GW ~ 10^-8 to 10^-12 at 10^3-10^7 Hz (not 10^-40 at 1 mHz)",
+    "no_trigger_window": "2026-2035",
+    "expected_horizon_window": "2035-2045  (levitated sensors / inverse-Gertsenshtein / UHF cavity)"
+  },
+  "migration_gap_analysis": {
+    "gap_abs_OOM_physical": 18.744727494896694,
+    "gap_abs_OOM_interpretation": "log10(Omega_th / Omega_gamma) = 18.74 OOM; threshold sits 18.74 OOM ABOVE framework gamma prediction; this is the physical migration gap.",
+    "gap_plan_literal_LISA_relative": 6.7447274948966935,
+    "gap_plan_literal_interpretation": "46.7447 - 40 = 6.7447; plan-text arithmetic; this is a LISA-relative-exponent subtraction and is NOT the physical OOM gap. Recorded for provenance; do not use in downstream computation without unit conversion.",
+    "gap_UHF_above_threshold_OOM": 20.0,
+    "gap_UHF_above_threshold_interpretation": "Current UHF roadmap floor is 20 OOM above the migration threshold. UHF must improve 20 OOM in sensitivity at 1 mHz to trigger migration.",
+    "gap_UHF_above_framework_OOM": 38.74472749489669,
+    "gap_UHF_above_framework_interpretation": "Even after migration, UHF roadmap floor is 38.74 OOM above the framework gamma prediction; C5 remains a DETECTOR-STERILE observable at the framework amplitude. Migration changes the CLASS (WALL -> FALSIFIER) but not the structural inaccessibility."
+  },
+  "substrate_framing": "C5 is the domain-wall / primordial GW channel predicted by the cosmological phase transition at the fold (tau = 0.190). The 46.74-OOM suppression of Omega_gamma(1 mHz) = 1.8e-59 below LISA sensitivity at 1 mHz is NOT a framework failure. It is the structural consequence of the fold's FIRST-ORDER transition being weakly-coupled in the relevant spectral sector. The instanton-mediated (alpha) route sits 76.37 OOM below LISA. Neither is reachable by LISA or the near-term UHF detector roadmap. This WALL is a consequence of the substrate's geometric protection of the GW channel, not a parameter mismatch.",
+  "dependency_graph": {
+    "S83_G52_C5_relabel": "primary prediction source for Omega_gamma(1 mHz) and Omega_alpha(1 mHz)",
+    "S82_W2_6_GW_channel": "alpha-vs-gamma discrimination 4.25e29 at 1 mHz (29.63 OOM; prior falsifier)",
+    "S77_DW_GW": "direct domain-wall annihilation route RETRACTED (Josephson bias kills walls 15,000x)",
+    "canonical_constants": "tau_fold, w0_FW, planck_ns provenance (no numerical use in this gate)"
+  },
+  "input_sha256_pins": {
+    "canonical_constants.py": "5bf99138d7c5039d5dfd6143885d95aa20bed5954aed5e4764e02038745330af",
+    "s83_w3_g52_channel5_relabel.npz": "e297ad6cba598af13d73ac73564f04580506e3537979f6f239ea1d8c5323c08c",
+    "s82_w2_6_gw_channel.npz": "a6574e676ffa54233cc9e523e3d6f9f10a9add8dc77b7b976ce608d9f95765c4",
+    "s77_domain_wall_gw.npz": "642b19d1f29bc5a835da8e2ff97e30f33fda35a94b54b52f7aad99a5f7bf9bcb"
+  },
+  "input_pin_status": {
+    "canonical_constants.py": "present",
+    "s83_w3_g52_channel5_relabel.npz": "present",
+    "s82_w2_6_gw_channel.npz": "present",
+    "s77_domain_wall_gw.npz": "present"
+  },
+  "gate_verdict": "PASS",
+  "pass_criteria": {
+    "watch_criterion_registered_with_explicit_threshold": true,
+    "taxonomy_defined_WALL_FALSIFIER_DETECTOR_STERILE": true,
+    "physical_gap_documented_gap_abs_OOM": 18.744727494896694,
+    "plan_literal_gap_documented_flagged": 6.7447274948966935
+  },
+  "fourtuple_tag": {
+    "value": "watch-criterion-registered",
+    "scheme": "UHF-GW-migration",
+    "convention": "Omega_GW at 1 mHz",
+    "L_max": "N/A"
+  },
+  "carry_forward_pointers": {
+    "CF_47_no_2026_2035_trigger": "No UHF GW detector in the 2026-2035 window is expected to reach Omega_GW < 1e-40 at 1 mHz; no migration event is forecast.",
+    "CF_47_monitor_UHF_development": "Monitor levitated-sensor / inverse-Gertsenshtein / cavity-based / resonant-mass UHF detector proposals for sensitivity projections at 1 mHz-equivalent (frequency-rescaling via spectral shape).",
+    "CF_47_c5_stays_on_registry": "C5 remains on the permanent-results-registry as a LIVE-WATCH-MIGRATABLE WALL under tag WALL-MIGRATION-WATCH-C5. If any detector trigger occurs, the registry entry is amended with migration event date and the classification flips WALL -> FALSIFIER."
+  },
+  "content_sha256": "2df0850ce6ad10149048203b6d9d3259e50381381ac687251191e989311a8e37",
+  "audit_sha256": "9317d3c38f78a419095483c2cd097caa52f628a1745ecb0db7853408004874fc"
+}

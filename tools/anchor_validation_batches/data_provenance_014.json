@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 14,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_131",
+      "anchor_type": "data_provenance",
+      "name": "phonon_tmatrix",
+      "script_path": "session-28/s28c_phonon_tmatrix.py",
+      "session": "s28c",
+      "inputs": "",
+      "outputs": "session-28/s28c_phonon_tmatrix.npz, session-28/s28c_phonon_tmatrix.png",
+      "source_file": "computations/session-28/s28c_phonon_tmatrix.py",
+      "source_context_30_lines": "   68: \n   69: Gate KC-2:\n   70:     PASS:         W > 0.1 * Gamma  (scattering sufficient for bottleneck)\n   71:     CLOSED:         W < 0.01 * Gamma  (phonons decay before scattering)\n   72:     INCONCLUSIVE: W in [0.01, 0.1] * Gamma\n   73: \n   74: Input: computations/session-23/s23a_eigenvectors_extended.npz\n   75:        computations/session-28/s28a_bogoliubov_coefficients.npz\n   76: Output: computations/session-28/s28c_phonon_tmatrix.npz\n   77:         computations/session-28/s28c_phonon_tmatrix.png\n   78: \n   79: Author: phonon-exflation-sim agent\n   80: Date: 2026-02-27\n   81: \"\"\"\n   82: \n   83: import numpy as np\n   84: import matplotlib"
+    },
+    {
+      "anchor_id": "prov_132",
+      "anchor_type": "data_provenance",
+      "name": "sector_convergence",
+      "script_path": "session-28/s28c_sector_convergence.py",
+      "session": "s28c",
+      "inputs": "",
+      "outputs": "session-28/s28c_sector_convergence.npz, session-28/s28c_sector_convergence.png",
+      "source_file": "computations/session-28/s28c_sector_convergence.py",
+      "source_context_30_lines": "  560:         \"F_new_contribution\": F_new_contribution,\n  561:         \"F_total_s27\": F_total_s27,\n  562:         \"F_total_combined\": F_total_combined,\n  563:         \"convergence_ratios\": convergence_ratios,\n  564:         \"verdict\": np.array([verdict]),\n  565:         \"verdict_text\": np.array([verdict_text]),\n  566:     })\n  567: \n  568:     npz_path = os.path.join(SCRIPT_DIR, \"s28c_sector_convergence.npz\")\n  569:     np.savez_compressed(npz_path, **npz_data)\n  570:     print(f\"\\nData saved: {npz_path}\")\n  571: \n  572:     # -----------------------------------------------------------------------\n  573:     # Gate verdict file\n  574:     # -----------------------------------------------------------------------\n  575:     gate_path = os.path.join(SCRIPT_DIR, \"s28c_gate_verdicts.txt\")\n  576:     with open(gate_path, 'a') as f:"
+    },
+    {
+      "anchor_id": "prov_133",
+      "anchor_type": "data_provenance",
+      "name": "steady_state_mu",
+      "script_path": "session-28/s28c_steady_state_mu.py",
+      "session": "s28c",
+      "inputs": "",
+      "outputs": "session-28/s28c_steady_state_mu.npz, session-28/s28c_steady_state_mu.png, session-28/s28c_steady_state_mu.txt",
+      "source_file": "computations/session-28/s28c_steady_state_mu.py",
+      "source_context_30_lines": "   54: \n   55: # ==============================================================================\n   56: # Configuration\n   57: # ==============================================================================\n   58: \n   59: DATA_DIR = Path(__file__).parent\n   60: BOGO_FILE = DATA_DIR / \"s28a_bogoliubov_coefficients.npz\"\n   61: TMAT_FILE = DATA_DIR / \"s28c_phonon_tmatrix.npz\"\n   62: OUTPUT_NPZ = DATA_DIR / \"s28c_steady_state_mu.npz\"\n   63: OUTPUT_PNG = DATA_DIR / \"s28c_steady_state_mu.png\"\n   64: OUTPUT_TXT = DATA_DIR / \"s28c_steady_state_mu.txt\"\n   65: \n   66: # Drive strength scan\n   67: DRIVE_MIN = 0.001\n   68: DRIVE_MAX = 10.0\n   69: N_DRIVE = 100\n   70: "
+    },
+    {
+      "anchor_id": "prov_134",
+      "anchor_type": "data_provenance",
+      "name": "derived_drive_rate",
+      "script_path": "session-29/s29a_derived_drive_rate.py",
+      "session": "s29a",
+      "inputs": "",
+      "outputs": "session-29/s29a_derived_drive_rate.npz, session-29/s29a_derived_drive_rate.png",
+      "source_file": "computations/session-29/s29a_derived_drive_rate.py",
+      "source_context_30_lines": "   42:     PASS: n_gap > 20 at tau=0.50 for E_total <= 2 * V_eff(0)\n   43:     WEAK PASS: n_gap > 20 requires E_total in [2, 10] * V_eff(0)\n   44:     FAIL: n_gap > 20 requires E_total > 10 * V_eff(0)\n   45: \n   46: Input: computations/session-24/s24a_vspec.npz\n   47:        computations/session-28/s28c_steady_state_mu.npz\n   48:        computations/session-22/s22d_rolling_trajectories.npz\n   49:        computations/session-26/s26_multimode_bcs.npz\n   50: Output: computations/session-29/s29a_derived_drive_rate.npz\n   51:         computations/session-29/s29a_derived_drive_rate.png\n   52: \n   53: Author: phonon-exflation-sim agent\n   54: Date: 2026-02-28\n   55: \"\"\"\n   56: \n   57: import numpy as np\n   58: import matplotlib"
+    },
+    {
+      "anchor_id": "prov_135",
+      "anchor_type": "data_provenance",
+      "name": "entropy_balance",
+      "script_path": "session-29/s29a_entropy_balance.py",
+      "session": "s29a",
+      "inputs": "",
+      "outputs": "session-29/s29a_entropy_balance.npz, session-29/s29a_entropy_balance.png",
+      "source_file": "computations/session-29/s29a_entropy_balance.py",
+      "source_context_30_lines": "   13: GATE K-29b: If dS_particles < |dS_spec| at ANY tau in [0, 0.50], tau evolution\n   14: is thermodynamically FORBIDDEN. Session terminates.\n   15: \n   16: Inputs:\n   17:     - s23a_eigenvectors_extended.npz: eigenvalues at 9 tau [0..0.50]\n   18:     - s28a_bogoliubov_coefficients.npz: B_k(tau), omega(tau), Gamma_inject(tau)\n   19: \n   20: Outputs:\n   21:     - s29a_entropy_balance.npz\n   22:     - s29a_entropy_balance.png\n   23: \n   24: Author: hawking-theorist agent (Session 29a)\n   25: Date: 2026-02-28\n   26: \"\"\"\n   27: \n   28: import numpy as np\n   29: import matplotlib"
+    },
+    {
+      "anchor_id": "prov_136",
+      "anchor_type": "data_provenance",
+      "name": "inter_sector_coupling",
+      "script_path": "session-29/s29a_inter_sector_coupling.py",
+      "session": "s29a",
+      "inputs": "",
+      "outputs": "session-29/s29a_inter_sector_coupling.npz, session-29/s29a_inter_sector_coupling.png",
+      "source_file": "computations/session-29/s29a_inter_sector_coupling.py",
+      "source_context_30_lines": "   52: \n   53: Gate G-29b (soft):\n   54:     J_perp / Delta_BCS < 1: Mermin-Wagner applies (quasi-1D, no true long-range order)\n   55:     J_perp / Delta_BCS >= 1: Inter-sector coupling strong enough to stabilize\n   56:     J_perp / Delta_BCS >= 10: Inter-sector coupling dominates (dimensional crossover)\n   57: \n   58: Input: computations/session-23/s23a_eigenvectors_extended.npz\n   59:        computations/session-26/s26_multimode_bcs.npz\n   60: Output: computations/session-29/s29a_inter_sector_coupling.npz\n   61:         computations/session-29/s29a_inter_sector_coupling.png\n   62: \n   63: Author: phonon-exflation-sim agent\n   64: Date: 2026-02-28\n   65: \"\"\"\n   66: \n   67: import numpy as np\n   68: import matplotlib"
+    },
+    {
+      "anchor_id": "prov_137",
+      "anchor_type": "data_provenance",
+      "name": "tmatrix_extension",
+      "script_path": "session-29/s29a_tmatrix_extension.py",
+      "session": "s29a",
+      "inputs": "",
+      "outputs": "session-29/s29a_tmatrix_extension.npz, session-29/s29a_tmatrix_extension.png",
+      "source_file": "computations/session-29/s29a_tmatrix_extension.py",
+      "source_context_30_lines": "   23: \n   24: From s28c results:\n   25:     tau=0.15: W/Gamma_inject = 0.52 (KC-2 PASS)\n   26:     tau=0.25: W/Gamma_inject = 0.19\n   27:     tau=0.35: W/Gamma_inject = 0.27\n   28: \n   29: Input: computations/session-23/s23a_eigenvectors_extended.npz\n   30:        computations/session-28/s28a_bogoliubov_coefficients.npz\n   31: Output: computations/session-29/s29a_tmatrix_extension.npz\n   32:         computations/session-29/s29a_tmatrix_extension.png\n   33: \n   34: Author: phonon-exflation-sim agent\n   35: Date: 2026-02-28\n   36: \"\"\"\n   37: \n   38: import numpy as np\n   39: import matplotlib"
+    },
+    {
+      "anchor_id": "prov_138",
+      "anchor_type": "data_provenance",
+      "name": "3sector_fbcs",
+      "script_path": "session-29/s29b_3sector_fbcs.py",
+      "session": "s29b",
+      "inputs": "",
+      "outputs": "session-29/s29b_3sector_fbcs.npz, session-29/s29b_3sector_fbcs.png",
+      "source_file": "computations/session-29/s29b_3sector_fbcs.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s29b_3sector_fbcs.py — 3-Sector BCS Free Energy Restriction + Gradient Balance\n    4: \n    5: Session 29Ba computations:\n    6:   29B-1: Restrict F_BCS to permanently supercritical sectors (3,0), (0,3), (0,0).\n    7:   29B-6: Gradient balance S_b'(tau) + F_BCS^{3-sector}'(tau) = 0.\n    8: \n    9: Permanently supercritical sectors (from L-9 first-order transition + LZ retraction):\n   10:   (3,0): idx=6, Peter-Weyl mult = dim_rho^2 = 100, first-order (c = 0.00552)\n   11:   (0,3): idx=7, Peter-Weyl mult = dim_rho^2 = 100, first-order (c = 0.00723)"
+    },
+    {
+      "anchor_id": "prov_139",
+      "anchor_type": "data_provenance",
+      "name": "bogoliubov_bcs",
+      "script_path": "session-29/s29b_bogoliubov_bcs.py",
+      "session": "s29b",
+      "inputs": "",
+      "outputs": "session-29/s29b_bogoliubov_bcs.npz, session-29/s29b_bogoliubov_bcs.png, session-29/s29b_bogoliubov_bcs.txt",
+      "source_file": "computations/session-29/s29b_bogoliubov_bcs.py",
+      "source_context_30_lines": "   37: matplotlib.use('Agg')\n   38: import matplotlib.pyplot as plt\n   39: from pathlib import Path\n   40: \n   41: # ─── Configuration ───────────────────────────────────────────────────────────\n   42: DATA_DIR = Path(SCRIPT_DIR)\n   43: BOG_FILE = DATA_DIR / 's28a_bogoliubov_coefficients.npz'\n   44: S27_FILE = DATA_DIR / 's27_multisector_bcs.npz'\n   45: OUT_NPZ = DATA_DIR / 's29b_bogoliubov_bcs.npz'\n   46: OUT_PNG = DATA_DIR / 's29b_bogoliubov_bcs.png'\n   47: OUT_TXT = DATA_DIR / 's29b_bogoliubov_bcs.txt'\n   48: \n   49: MU_RATIO = 1.20\n   50: LOAD_BEARING = [(0, 0), (3, 0), (0, 3)]\n   51: GATE_THRESHOLD = 0.01  # Delta/lambda_min > 0.01\n   52: \n   53: # BCS self-consistency parameters"
+    },
+    {
+      "anchor_id": "prov_140",
+      "anchor_type": "data_provenance",
+      "name": "free_energy_comparison",
+      "script_path": "session-29/s29b_free_energy_comparison.py",
+      "session": "s29b",
+      "inputs": "",
+      "outputs": "session-29/s29b_free_energy_comparison.npz, session-29/s29b_free_energy_comparison.png",
+      "source_file": "computations/session-29/s29b_free_energy_comparison.py",
+      "source_context_30_lines": "  131: \n  132:     return data\n  133: \n  134: \n  135: # ===========================================================================\n  136: # FREE ENERGY COMPARISON\n  137: # ===========================================================================\n  138: \n  139: def compute_free_energy_comparison(data):\n  140:     \"\"\"Compare F_condensed vs F_normal at each tau.\n  141: \n  142:     The comparison is structured as:\n  143:         F_normal(tau) = S_spectral(tau)\n  144:         F_condensed(tau, mu) = S_spectral(tau) + F_BCS(tau, mu)\n  145:         Delta_F(tau, mu) = F_condensed - F_normal = F_BCS(tau, mu)\n  146: \n  147:     So the crossing condition is simply F_BCS(tau, mu) = 0."
+    }
+  ]
+}

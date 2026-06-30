@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 63,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_621",
+      "anchor_type": "data_provenance",
+      "name": "vortex_nucleation",
+      "script_path": "session-53/s53_vortex_nucleation.py",
+      "session": "s53",
+      "inputs": "",
+      "outputs": "session-53/s53_vortex_nucleation.png",
+      "source_file": "computations/session-53/s53_vortex_nucleation.py",
+      "source_context_30_lines": "  655: bars4 = ax4.bar(labels, plot_vals, color=barcolors4, edgecolor='black', linewidth=0.5)\n  656: ax4.set_ylabel(r'$\\log_{10}(\\eta_B)$', fontsize=12)\n  657: ax4.set_title(r'Baryon Asymmetry: $\\eta_B = n_B/n_\\gamma$', fontsize=12)\n  658: ax4.axhline(log_eta_obs, color='green', linestyle='--', alpha=0.5, label=f'Observed: {eta_BBN_obs:.2e}')\n  659: ax4.legend(fontsize=9)\n  660: ax4.grid(True, alpha=0.3, axis='y')\n  661: \n  662: plt.tight_layout()\n  663: plt.savefig(os.path.join(os.path.dirname(os.path.abspath(__file__)), 's53_vortex_nucleation.png'), dpi=150)\n  664: plt.close()\n  665: log(\"\")\n  666: log(\"Plot saved: s53_vortex_nucleation.png\")\n  667: \n  668: # Save output\n  669: output_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 's53_vortex_nucleation_output.txt')\n  670: with open(output_path, 'w') as f:\n  671:     f.write('\\n'.join(output_lines))"
+    },
+    {
+      "anchor_id": "prov_622",
+      "anchor_type": "data_provenance",
+      "name": "b2_angular",
+      "script_path": "session-54/s54_b2_angular.py",
+      "session": "s54",
+      "inputs": "",
+      "outputs": "session-54/s54_b2_angular.npz, session-54/s54_b2_angular.png",
+      "source_file": "computations/session-54/s54_b2_angular.py",
+      "source_context_30_lines": "  909:             ax.plot([r['tau']] * 4, r['B2_evals'], 'o', color='green', markersize=4)\n  910:             ax.plot([r['tau']] * 1, r['B1_evals'], 's', color='orange', markersize=4)\n  911:     ax.set_xlabel('tau')\n  912:     ax.set_ylabel('Eigenvalue (i*Omega)')\n  913:     ax.set_title('Singlet Spectrum vs tau')\n  914:     ax.grid(True, alpha=0.3)\n  915: \n  916:     plt.tight_layout()\n  917:     plot_path = os.path.join(SCRIPT_DIR, 's54_b2_angular.png')\n  918:     plt.savefig(plot_path, dpi=150)\n  919:     print(f\"\\nPlot saved to: {plot_path}\")\n  920: \n  921:     # ====================================================================\n  922:     # PART G: Save data\n  923:     # ====================================================================\n  924:     save_data = {\n  925:         'tau_values': np.array(taus),"
+    },
+    {
+      "anchor_id": "prov_623",
+      "anchor_type": "data_provenance",
+      "name": "bures_connes",
+      "script_path": "session-54/s54_bures_connes.py",
+      "session": "s54",
+      "inputs": "",
+      "outputs": "session-54/s54_bures_connes.png",
+      "source_file": "computations/session-54/s54_bures_connes.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s54_bures_connes.py — BURES-CONNES-54\n    4: Information Geometry vs Spectral Geometry on SU(3) moduli space.\n    5: \n    6: Computes:\n    7:   1. Bures distance d_B(tau_i, tau_j) = arccos|<gs(tau_i)|gs(tau_j)>|\n    8:      from Richardson ED ground states (N_pair=1, 8D pair basis).\n    9:   2. Connes moduli distance proxy: |<d_D>(tau_i) - <d_D>(tau_j)|\n   10:      from Voronoi-lattice spectral distance (32 cells).\n   11:   3. Comparison: d_B vs d_Connes for all (i,j) pairs."
+    },
+    {
+      "anchor_id": "prov_624",
+      "anchor_type": "data_provenance",
+      "name": "connes_latt",
+      "script_path": "session-54/s54_connes_latt.py",
+      "session": "s54",
+      "inputs": "",
+      "outputs": "session-54/s54_connes_latt.npz, session-54/s54_connes_latt.png",
+      "source_file": "computations/session-54/s54_connes_latt.py",
+      "source_context_30_lines": "   33: import os\n   34: import sys\n   35: import warnings\n   36: warnings.filterwarnings('ignore')\n   37: \n   38: # ─── paths ───────────────────────────────────────────────────────────────\n   39: PROJ = os.path.dirname(os.path.abspath(__file__))\n   40: INPUT = os.path.join(PROJ, \"s54_tb_hamiltonian.npz\")\n   41: OUTPUT_NPZ = os.path.join(PROJ, \"s54_connes_latt.npz\")\n   42: OUTPUT_PNG = os.path.join(PROJ, \"s54_connes_latt.png\")\n   43: S46_FILE = os.path.join(PROJ, \"..\", \"_shared\", \"s46_connes_distance.npz\")\n   44: \n   45: \n   46: def build_basis_matrices(D_off):\n   47:     \"\"\"Build the E_k basis for the commutator [D_off, diag(f)].\n   48: \n   49:     E_k = e_k e_k^T @ D_off - D_off @ e_k e_k^T"
+    },
+    {
+      "anchor_id": "prov_625",
+      "anchor_type": "data_provenance",
+      "name": "ed_sweep",
+      "script_path": "session-54/s54_ed_sweep.py",
+      "session": "s54",
+      "inputs": "",
+      "outputs": "session-54/s54_ed_sweep.npz, session-54/s54_ed_sweep.png",
+      "source_file": "computations/session-54/s54_ed_sweep.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s54_ed_sweep.py — Richardson Ground State E_0(tau) via Exact Diagonalization\n    4: =============================================================================\n    5: Session 54, W1-1: ED-SWEEP-54\n    6: \n    7: Computes the exact ground state energy E_0(tau) of the BCS Hamiltonian at\n    8: N_pair=1 via exact diagonalization in the 8-mode pair space, at 50 tau  # (local)\n    9: values across [0.00, 0.50], using the 32-cell lattice Hamiltonian spectrum.\n   10: \n   11: TWO parallel approaches (Strutinsky philosophy):"
+    },
+    {
+      "anchor_id": "prov_626",
+      "anchor_type": "data_provenance",
+      "name": "elastic_tetrad",
+      "script_path": "session-54/s54_elastic_tetrad.py",
+      "session": "s54",
+      "inputs": "",
+      "outputs": "session-54/s54_elastic_tetrad.npz, session-54/s54_elastic_tetrad.png",
+      "source_file": "computations/session-54/s54_elastic_tetrad.py",
+      "source_context_30_lines": "   39:   3. Pontryagin density via explicit computation of tr(R wedge R) using\n   40:      the Lie algebra structure constants of su(3).\n   41:   4. Numerical verification of tau-independence of the topological term.\n   42: \n   43: Inputs:\n   44:   - canonical_constants.py\n   45: \n   46: Output:\n   47:   - s54_elastic_tetrad.npz\n   48:   - s54_elastic_tetrad.png\n   49: \n   50: Author: Volovik-Superfluid-Universe-Theorist (Session 54)\n   51: Date: 2026-03-21\n   52: \"\"\"\n   53: \n   54: import sys\n   55: import os"
+    },
+    {
+      "anchor_id": "prov_627",
+      "anchor_type": "data_provenance",
+      "name": "firas_gge",
+      "script_path": "session-54/s54_firas_gge.py",
+      "session": "s54",
+      "inputs": "",
+      "outputs": "session-54/s54_firas_gge.npz, session-54/s54_firas_gge.png",
+      "source_file": "computations/session-54/s54_firas_gge.py",
+      "source_context_30_lines": "   32:   2. If all 32 cells have the SAME non-thermal distribution (coherent GGE),\n   33:      then averaging over cells provides ZERO suppression.\n   34:   3. The key question is whether different cells have different GGE states,\n   35:      or the same GGE state.\n   36:   4. Even if cells differ, sqrt(32) ~ 5.7 gives suppression of ~5.7x,\n   37:      which reduces 12% to 2% — nowhere near the factor 2000 needed.\n   38: \n   39: Inputs: canonical_constants, S53 GGE data\n   40: Outputs: s54_firas_gge_output.txt, s54_firas_gge.npz, s54_firas_gge.png\n   41: \"\"\"\n   42: \n   43: import sys\n   44: import os\n   45: sys.path.insert(0, os.path.dirname(__file__))\n   46: \n   47: import numpy as np\n   48: import matplotlib"
+    },
+    {
+      "anchor_id": "prov_628",
+      "anchor_type": "data_provenance",
+      "name": "geodesic_deviation",
+      "script_path": "session-54/s54_geodesic_deviation.py",
+      "session": "s54",
+      "inputs": "",
+      "outputs": "session-54/s54_geodesic_deviation.png",
+      "source_file": "computations/session-54/s54_geodesic_deviation.py",
+      "source_context_30_lines": "  956: ax4.set_ylim(0, 1.5)\n  957: # Add labels\n  958: for bar, val in zip(bars, values):\n  959:     label = 'ZERO' if val == 0 else 'NONZERO\\n(kinetic only)'\n  960:     ax4.text(bar.get_x() + bar.get_width()/2., bar.get_height() + 0.05,\n  961:              label, ha='center', va='bottom', fontsize=9, fontweight='bold')\n  962: \n  963: plt.tight_layout()\n  964: plt.savefig(os.path.join(os.path.dirname(os.path.abspath(__file__)), 's54_geodesic_deviation.png'),\n  965:             dpi=150, bbox_inches='tight')\n  966: print(f\"\\nPlot saved: computations/session-54/s54_geodesic_deviation.png\")\n  967: \n  968: # =============================================================================\n  969: # PART 17: Summary Table\n  970: # =============================================================================\n  971: \n  972: print()"
+    },
+    {
+      "anchor_id": "prov_629",
+      "anchor_type": "data_provenance",
+      "name": "graph_laplacian_ds",
+      "script_path": "session-54/s54_graph_laplacian_ds.py",
+      "session": "s54",
+      "inputs": "",
+      "outputs": "session-54/s54_graph_laplacian_ds.npz, session-54/s54_graph_laplacian_ds.png",
+      "source_file": "computations/session-54/s54_graph_laplacian_ds.py",
+      "source_context_30_lines": "  306:           label='d=8 ref')\n  307: ax.set_xlabel('lambda (eigenvalue)', fontsize=11)\n  308: ax.set_ylabel('N(lambda) (counting function)', fontsize=11)\n  309: ax.set_title('(d) Eigenvalue Counting Function', fontsize=11)\n  310: ax.legend(fontsize=8)\n  311: ax.grid(True, alpha=0.3)\n  312: \n  313: plt.tight_layout()\n  314: plt.savefig(str(Path(__file__).parent / \"s54_graph_laplacian_ds.png\"), dpi=150,\n  315:             bbox_inches='tight')\n  316: plt.close()\n  317: print(f\"\\nPlot saved to s54_graph_laplacian_ds.png\")\n  318: \n  319: # ── Save results ──────────────────────────────────────────────────────────\n  320: results = {\n  321:     'tau_values': tau_values,\n  322:     't_range': t_range,"
+    },
+    {
+      "anchor_id": "prov_630",
+      "anchor_type": "data_provenance",
+      "name": "gutzwiller_su3",
+      "script_path": "session-54/s54_gutzwiller_su3.py",
+      "session": "s54",
+      "inputs": "",
+      "outputs": "session-54/s54_gutzwiller_su3.npz, session-54/s54_gutzwiller_su3.png",
+      "source_file": "computations/session-54/s54_gutzwiller_su3.py",
+      "source_context_30_lines": "  934:      Strutinsky works from quantum mechanics (exact eigenvalues + smoothing).\n  935:      Agreement validates the semiclassical approximation.\n  936: \"\"\")\n  937: \n  938:     # --- Save results ---\n  939:     print(\"[14] Saving results...\")\n  940:     outdir = os.path.dirname(os.path.abspath(__file__))\n  941: \n  942:     np.savez(os.path.join(outdir, 's54_gutzwiller_su3.npz'),\n  943:              tau_fold=tau,\n  944:              E_F=E_F,\n  945:              R_scalar=R_scalar,\n  946:              Ricci_eigenvalues=Ric_evals,\n  947:              n_sectors=len(sectors),\n  948:              sectors_pq=np.array([(s['p'], s['q']) for s in sectors]),\n  949:              sectors_dim=np.array([s['d'] for s in sectors]),\n  950:              sectors_casimir=np.array([s['C2'] for s in sectors]),"
+    }
+  ]
+}

@@ -1,0 +1,1766 @@
+Surmise for random matrices’ level spacing distributions beyond nearest-neighbors
+Ruth Shir, ∗ Pablo Martinez-Azcona, and Aur´ elia Chenu
+Department of Physics and Materials Science, University of Luxembourg, L-1511 Luxembourg, Luxembourg
+Correlations between energy levels can help distinguish whether a many-body system is of inte-
+grable or chaotic nature. The study of short-range and long-range spectral correlations generally
+involves quantities which are very different, unless one uses thek-th nearest neighbor (kNN) level
+spacing distributions. For nearest-neighbor (NN) spectral spacings, the distribution in random ma-
+trices is well captured by the Wigner surmise. This well-known approximation, derived exactly for
+a 2×2 matrix, is simple and satisfactorily describes the NN spacings of larger matrices. There have
+been attempts in the literature to generalize Wigner’s surmise to further away neighbors. However,
+as we show, the current proposal in the literature fails to accurately capture numerical data. Using
+the known variance of the distributions from random matrix theory, we propose a corrected surmise
+for thekNN spectral distributions. This surmise better characterizes spectral correlations while
+retaining the simplicity of Wigner’s surmise. We test the predictions against numerical results and
+show that the corrected surmise is systematically more accurate at capturing data from random
+matrices. Using the XXZ spin chain with random on-site disorder, we illustrate how these results
+can be used as a refined probe of many-body quantum chaos for both short- and long-range spectral
+correlations.
+I. INTRODUCTION
+The most well-known and widely used probe of quan-
+tum chaos is the nearest-neighbor level spacing distribu-
+tion of a system’s spectrum [1]. TheBohigas-Giannoni-
+Schmitconjecture [2] states that quantum chaotic sys-
+tems have, in the bulk of their spectrum, spectral statis-
+tics corresponding to random matrices. The spectral
+statistics belongs to a particular random matrix univer-
+sality class, depending on certain basic symmetries of
+the physical system’s Hamiltonian. In the bulk of the
+spectrum [1], the spectral statistics of a closed chaotic
+quantum system are expected to belong to one of the
+three universality classes of Hermitian random matrix
+theory (RMT), represented by the Gaussian Orthogo-
+nal, Unitary or Symplectic Ensembles (GOE, GUE or
+GSE, respectively). We note that the edges of the spec-
+trum may not exhibit universality and may depend on
+the nature of the underlying physical system [3]. In con-
+trast, theBerry-Taborconjecture [4] states that spectral
+statistics in the bulk of the spectrum of closed integrable
+quantum systems have the same statistics as the Pois-
+son point process on a line, i.e. behave as if their ener-
+gies were sampled independently. More specifically, the
+statement is that quantum systems with classically inte-
+grable counterparts will have such level spacing statistics.
+There are a few counter examples: an obvious one being
+the harmonic oscillator but also more complex examples
+exist, which show that certain classically integrable sys-
+tems can show RMT statistics [5, 6]. Generically how-
+ever, the two conjectures hold even for quantum many-
+body systems which do not have a classical counterpart.
+To summarize, the most important distinction between
+chaotic and integrable spectral statistics is the existence,
+∗ ruth.shir@uni.lu
+or not, ofrepulsionbetween energy levels in the bulk of
+the spectrum, respectively, which indicates correlations
+between the energies. The presence of level repulsion
+and the agreement with the random matrix description
+of the spectrum have been experimentally tested in heavy
+nuclei [7–10], chaotic systems with a semiclassical limit
+such as microwave billiards [11, 12] and, more recently,
+many-body setups [13, 14].
+Wigner famously derived the distribution of spacings
+in a 2×2 random matrix [15] and, though not exact,
+cf. Figure 2 in [16] and [1, 17, 18], obtained a surmise
+that works surprisingly well for much larger random ma-
+trices [19]. This is a simple function which has proven
+to be extremely useful in the study of quantum chaos.
+However, it probes only short-range correlations between
+eigenvalues. Longer-range spectral fluctuations are also
+very relevant to characterize quantum chaos. In partic-
+ular, they are key to explain the full extent of the ramp
+of the Spectral Form Factor (SFF) [20]. Their study in-
+cludes quantities such as the number variance [21], the
+spectral rigidity [22], or the power spectrum [23], as well
+as the distributions of closest and farthest neighbors [24].
+Formal, exact results for thekth nearest neighbor (kNN)
+spacing distributions are discussed in [25–27], but these
+lack an explicit form. Other works [28, 29] suggest an ap-
+proximate simple form, which, as we discuss below, does
+not accurately capture the numerical data.
+In general, quantities such as thekNN distributions
+(including the nearest-neighbor level spacing distribu-
+tion), the number variance, the spectral rigidity, and in
+some cases even the SFF [30], require a process ofun-
+foldingto be applied to the spectrum. This process (de-
+scribed in Appendix B) removes the global density depen-
+dence and keeps only the fluctuations in the spectrum
+to be analysed. Once performed correctly, universality
+emerges and we are able to compare the spectral statis-
+tics of physical Hamiltonians with those of (the unfolded
+spectrum of) random matrices and the Poisson point pro-
+arXiv:2504.20134v2  [quant-ph]  5 Nov 2025
+
+=== PAGE BREAK ===
+
+2
+cess. For this reason, thespacing ratios[31–33] are often
+used since they do not require unfolding to obtain univer-
+sal results. However, the results for longer-range spacing
+ratios are still limited to smallk[33, 34]. Thus, to un-
+derstand long-range correlations among eigenvalues it is
+nonetheless useful to study the above-mentioned quanti-
+ties, which require unfolding.
+In this work, we take a fresh look at thekth nearest
+neighbor spacing distributions, modeled with a Wigner-
+like surmise. Using the variance of these distributions,
+we correct the exponent of the surmise which leads to
+better agreement with the numerical data. We quantify
+how well it fits the data using the standard deviation
+goodness-of-fit between the distributions. We further
+test our new surmise on a physical many-body model,
+namely the XXZ spin chain with random on-site mag-
+netic fields. The spectral statistics of this model changes
+as a function of the disorder strength of the random, local
+fields. More specifically, for a small but non-zero value
+of disorder strength, it corresponds to ‘chaotic’ spectral
+statistics—matching GOE spectral statistics; while for
+a large value of disorder strength, it exhibits ‘integrable’
+spectral statistics—described by the Poisson distribution.
+This behavior was shown in several previous works, see
+e.g. [35–42], as well as in the framework of the study of
+many-body localization [43]. Here we use the corrected
+surmise to study thekth nearest neighbor distributions
+for this spin chain in its different regimes and to obtain
+a more refined measure of quantum chaos. In particu-
+lar, our new surmise provides a distribution for everyk,
+which contains more information than scalar indicators
+such as the number variance, but which, unlike the form
+known in the previous literature, has the correct variance.
+This gives a valuable tool to study the breakdown of ran-
+dom matrix behavior for long-range spectral statistics in
+single- and many-body quantum chaotic systems.
+This paper is organized as follows: in Section II, we de-
+scribe and discuss the currently known results for thekth
+nearest neighbor distributions—which we also re-derive
+in App. A in a formal way. Based on the (known) vari-
+ance of these distributions, we introduce a corrected sur-
+mise. In Section III, we test how well this surmise per-
+forms against numerical results for the three Gaussian en-
+sembles of random matrix theory and compare this per-
+formance with that of the old surmise. In Section IV, we
+describe the XXZ spin chain Hamiltonian with random
+on-site disorder. We compute thekNN distributions in
+its different regimes as a function of the disorder strength
+and use it to show when this system deviates from RMT.
+Finally, we summarize and discuss our results in Section
+V.
+II. THEkNN SP ACING DISTRIBUTIONS
+In this section we define and discuss thekth nearest
+neighbor spacing distributions, and provide a corrected
+Wigner-like surmise to describe them.
+A. Wigner-like surmises
+The spectrum of a Hermitian matrix of sizeN×Ncon-
+sists ofNreal eigenvalues,E 1 ≤E 2 ≤ · · · ≤E N. The
+kth nearest neighbor spectral spacings are given by the
+set{s (k)
+i }N−k
+i=1 , where [44]s (k)
+i =E i+k −E i. Fork= 1,
+these provide the distribution of nearest-neighbor (NN)
+spacings. Hermitian random matrices can be categorized
+into three universality classes according to their funda-
+mental symmetries. These classes markedly exhibit dif-
+ferent behavior for their NN spectral spacings. The latter
+is given approximately by the Wigner surmise distribu-
+tion [1]
+P (k=1)(s) =C β sβ e−Aβ s2
+,(1)
+whereβ= 1,2,4 for the Gaussian Orthogonal, Unitary
+and Symplectic ensembles, respectively. The coefficients
+Cβ andA β are set by normalizing the distribution to
+unity and normalizing the mean of the distribution to
+⟨s⟩= 1.
+While chaotic systems are expected to exhibit spec-
+tral statistics belonging to one of the universality classes
+of random matrix theory [2], integrable systems are ex-
+pected to have uncorrelated eigenvalues and to exhibit
+spectral statistics which coincide with those of the 1d
+Poisson point process [4]. ThekNN distributions for the
+Poisson point process are derived and given in App. C.
+Here, we will be interested in finding a good approxima-
+tion for thekth nearest-neighbor spacing distributions of
+the three universality classes of Hermitian random ma-
+trices.
+Wigner’s surmise Eq. (1) for NN spacings is found
+by considering the smallest possible random matrix with
+nearest-neighbor spacing, i.e. a 2×2 matrix. To find the
+kNN spacing distribution, one may similarly attempt to
+consider a (k+ 1)×(k+ 1) sized matrix, as done in [29].
+We perform such a computation in App. A and find the
+following approximate behavior
+P (k)(s)≈C α sα e−Aαs2
+,(2)
+where the powerαnow depends on the spectral rangek
+as
+α= 1
+2 k(k+ 1)β+k−1.(3)
+Here as well, the coefficientsC α andA α can be computed
+by setting the normalization of the distribution to 1,R ∞
+0 P (k)(s)ds= 1 and setting the first moment of the dis-
+tribution tokby requiring⟨s (k)⟩=
+R ∞
+0 s P(k)(s)ds=k,
+where⟨•⟩ ≡
+R ∞
+0 P (k)(s)•dsdenotes the average. This
+is expected for an unfolded spectrum (see App. B for
+details on the unfolding procedures) and can be verified
+numerically, see Figure 1 (insets). These conditions lead
+to
+Aα =
+"
+Γ
+  α
+2 + 1
+
+kΓ
+  α+1
+2
+
+#2
+, C α = 2A
+α+1
+2
+α
+Γ
+  α+1
+2
+ .(4)
+
+=== PAGE BREAK ===
+
+3
+0 20 40
+k
+0.25
+0.50
+0.75
+1.00
+∆ (k)
+GOE
+0 50
+0
+50Mean
+0 20 40
+k
+0.2
+0.4
+∆ (k)
+GUE
+0 50
+0
+50Mean
+0 10 20
+k
+0.10
+0.15
+0.20
+0.25
+∆ (k)
+GSE
+0 25
+0
+25Mean
+FIG. 1. The variance and mean (inset) of thekth neighbor spacing distributions for the GOE, GUE, and GSE, fork≥1. The
+red dots show the analytical values using the new surmise, i.e. the exponent Eq. (15) in the expression for the variance Eq. (7).
+The blue dots show analytical values for the old surmise, i.e. using the exponent Eq. (3) in Eq. (7). The grey crosses show
+numerical data for 1000 realizations of random matrices of dimensionN= 1000 for the GOE and GUE andN= 2000 for the
+GSE. In all cases, the numerical mean for the unfolded spectrum satisfies⟨s (k)⟩=k.
+The evaluation of Gamma functions for large values of
+the argument is numerically unstable. For this reason,
+it will prove useful to introduce approximate expressions
+forA α andC α given in Eq. (4) for largeαas
+Aα = 1
+k2
+ α
+2 + 1
+4 + 1
+16α
+
++O(α −2),(5)
+Cα =
+r α
+π
+1
+k1+α e
+1
+4 + α
+2 +O(α−2)
+
+1+ 1
+12α +O(α −2)
+
+≈ 1 + 12α
+12√πα k1+α e
+1
+4 + α
+2 .(6)
+These approximations work very well, even for not very
+largek, since from Eq. (3),αis ofO(k 2). The cor-
+rected exponent that we define in Eq. (15) behaves as
+O(k2/lnk), for which these approximations still work ac-
+curately. For the simulation, we explicitly state whether
+we use the approximated or exact expressions.
+The distribution Eq. (2) withαgiven by Eq. (3) was
+introduced in several works, see e.g. [28, 29, 34, 45–47]
+and App. A for a discussion, and argued for in various
+ways; we will refer to it as theold surmise. It does recover
+the NN Wigner surmise by settingk= 1 in the expression
+Eq. (3) forαand using the latter to get the constants in
+Eq. (4). However, it does not work very well for neither
+small nor largek, as we discuss below. In particular, the
+variance
+∆(k) =⟨s (k)2
+⟩ − ⟨s(k)⟩2 = α+ 1
+2Aα
+−k 2,(7)
+withαgiven by Eq. (3) does not follow the variance found
+numerically, as can be seen in Figure 1. Indeed, the pre-
+dictions from Eq. (3) underestimate thekNN variance
+obtained numerically for random matrices (grey crosses),
+especially for largek, while for smallkthey slightly over-
+estimate the variance. More specifically, we will show
+that this distribution Eq. (2) does not accurately model
+thekNN distribution for random matrices—see Eq. (18)
+for the definition of the goodness-of-fit indicator and Fig-
+ures 2 and 3 for the results.
+Below, we discuss the exact variance and use it to cor-
+rect the exponentα. This yields a new surmise that
+better captures the distributions for thekNN spacings,
+as we verify against numerical data.
+B. The variance of thekNN spacing distributions
+While there seems to be no satisfactory (i.e. accurate
+andsimple) expression for thekNN spacing distributions
+of random matrices in the literature, the variance of these
+distributions is known [48, 49] and reads
+∆(k)
+β = 2
+π2β lnk+c β.(8)
+The coefficientc β can be thought of as the‘boundary
+condition ’for ∆ (k)
+β atk= 1. Following [48], who pro-
+posed using the variance of Wigner’s surmise Eq. (1) as
+the boundary condition for GOE, we use the variance of
+Wigner’s surmise also for GUE and GSE to compute the
+constant for each ensemble:c 1 = 4/π−1,c 2 = 3π/8−1
+andc 4 = 45π/128−1.
+It was observed [48] that the variance of thekNN dis-
+tribution is related (to good precision) to thenumber
+varianceΣ 2 through
+∆(k) = Σ2(k)−1/6,(9)
+the number variance being defined as [21, 50]
+Σ2(L) = η2(ξs, L)− η(ξs, L)
+2
+,(10)
+whereη(ξ s, L) counts the number of levels in the interval
+[ξs, ξs +L], whereLis a continuous parameter. The av-
+erage, denoted by the overline, is taken over the starting
+pointsξ s. In practice, one also averages over realizations
+of the model. This relationship Eq. (9) is not fully under-
+stood in the literature but was found to hold for various
+ensembles, including the GOE, GUE and GSE [51].
+
+=== PAGE BREAK ===
+
+4
+Let us stress the difference between ∆ (k) and Σ 2(L):
+the first measures the fluctuations in thelengthof an
+interval containingk+ 1 levels (one at each end of the
+interval andk−1 within the interval), while the second
+measures the fluctuations in thenumber of levelscon-
+tained in an interval of lengthL. Since the spectrum is
+unfolded, the average energy difference between two con-
+secutive levels is set at⟨s (1)⟩= 1, which sets these two
+quantities on the same scale. We also note that the nu-
+merical computation of thekNN distributions and thus
+of ∆ (k) is more straightforward than that of the num-
+ber variance, Σ 2(L). While thekNN distributions re-
+quire a simple difference operation between eigenvalues
+for every integer 1≤k≤k max, the computation of the
+number variance requires counting the number of eigen-
+values that lie in every spectral window of sizeLfor every
+0≤L≤L max. In Appendix D we discuss the computa-
+tional cost of computing numerically the number variance
+vs the variance of thekNN distributions, showing that
+computing the number variance is more costly.
+For comparison, the variance of thekNN distributions
+for the 1d Poisson point process is given by
+∆(k)
+Poisson =k .(11)
+It is interesting to note that, for Poisson, in the relation-
+ship between the number variance and the variance of
+P (k), the 1/6 disappears, and
+∆(k)
+Poisson = Σ2
+Poisson(k).(12)
+Later in Section IV, we will check the relationships
+Eq. (9) and Eq. (12) for a physical model with a transi-
+tion between chaos and integrability.
+Thus, for an unfolded spectrum, the mean of eachkNN
+distribution always equalsk. In turn, the variance of
+the distribution captures the different behaviors between
+Poisson and RMT eigenvalues’ statistics—Eq. (11) shows
+a linear dependence∼kfor Poisson, while Eq. (8) shows
+it grows more slowly as∼lnkfor RMT. This is a mani-
+festation of spectral rigidity in random matrices. Indeed,
+the distance between an eigenvalue and itskth NN is not
+as spread out as in Poisson, where eigenvalues are not
+correlated and the mean and the variance are equal to
+each other. Below, we use the knowledge of the variance
+to get a better surmise for thekNN spacing distributions.
+C. The correctedkNN spacing distribution
+The expression Eq. (2) withA α andC α given by
+Eq. (4) for thekNN spacing distributions, hasαas the
+only free parameter. Indeed, its variance Eq. (7) depends
+only onα. We propose to correctαusing the exact ex-
+pression for the variance, Eq. (8). The corrected value,
+which we denote with a tilde as ˜α, is thus found by setting
+˜α+ 1
+2A˜α
+−k 2 = 2
+π2β lnk+c β .(13)
+Using the approximated expression Eq. (5) up to and
+includingO(α −1), an explicit expression for the corrected
+exponent follows as
+˜α= 1
+4(π2βcβ + 2 lnk)
+h
+π2βk2 −(π 2βcβ + 2 lnk) (14)
++π 2βk2
+s
+1− π2βcβ + 2 lnk
+π2βk2
+
+4− π2βcβ + 2 lnk
+π2βk2
+i
+.
+In the largeklimit, the ratio π2βcβ+2 lnk
+π2βk 2 is small, of
+O(k−2 lnk). We can thus expand the square-root as≈
+1− 1
+2
+h
+π2βcβ+2 lnk
+π2βk 2
+
+4− π2βcβ+2 lnk
+π2βk 2
+i
+≈1−2 π2βcβ+2 lnk
+π2βk 2 .
+Using this approximation in Eq. (14) we find that at large
+k, ˜αcan be approximated by:
+˜α= π2βk2
+2 (π2βcβ + 2 lnk) − 3
+4 +O(k −2 lnk),(15)
+withc β given under Eq. (8). Note that thek 2 behavior
+seen in Eq. (3) now has a lnkcorrection in Eq. (15).
+Also, unlike the power of the old surmise,αin Eq. (3),
+the corrected exponent ˜αis not necessarily an integer.
+For NN spacings (k= 1), this corrected power reads ˜α=
+1
+2cβ
+− 3
+4. It numerically reduces to ˜α≈1.08,2.06,4.04
+for GOE, GUE and GSE, respectively, which are quite
+close to the values ofβfor each of the corresponding
+ensembles. Therefore, even for NN where the expansions
+are not guaranteed to work, the numerical value of ˜αis
+still reasonably close to the expected value. In Appendix
+F we study further the case ofk= 1 for the GUE. Using
+the variance of the exact NN distribution, Eq. (F3), we
+solve Eq. (7) numerically to find a corrected power ˜β,
+Eq. (F4). We show that using this corrected power in
+Eq. (1) performs better than Wigner’s surmise (withβ=
+2) by comparing with numerical data and with the exact
+analytical result, see Figure F.1.
+Thenew surmiseis thus given by Eq. (2) withαgiven
+by Eq. (15) rather than Eq. (3), namely
+˜P (k)(s) =C ˜αs˜αexp(−A˜αs2).(16)
+It is legitimate to ask how well this corrected surmise
+performs. To start with, Figure 1 compares the vari-
+ance Eq. (7) as computed using the new Eq. (15) or old
+Eq. (3) exponent with the variance obtained numerically
+for random matrices. The constantA α was computed
+using the exact expression fork <10 in both cases. We
+see that the variance of the new surmise (red dots) now
+matches numerical data for the variance as a function of
+kfor the three Gaussian ensembles. In the next Section,
+we go beyond the variance and quantify the performance
+of the new surmise by measuring the distance to the nu-
+merically generated distributions from RMT. We will see
+that, although it was derived using the largeαapprox-
+imation ofA α, the surmise Eq. (16) works well already
+fork≥2.
+
+=== PAGE BREAK ===
+
+5
+10 20 30
+k
+0
+1
+2
+3σ
+×10−2
+ GOE
+σold
+σnew
+σGauss
+10 20 30
+k
+0
+1
+2
+3σ
+×10−2
+ GUE
+σold
+σnew
+σGauss
+5 10 15 20 25
+k
+0
+1
+2
+3σ
+×10−2
+ GSE
+σold
+σnew
+σGauss
+FIG. 2. The standard deviation (goodness of fit),σ, defined in Eq. (18), fork≥2 computed for the old surmise (blue), the new
+surmise (red) and the Gaussian surmise (gold) against numerical data of 1000 realizations of random matrices of dimension
+N= 1000 for the GOE and GUE andN= 2000 for the GSE. The new surmise Eq. (16) systematically better captures the
+numerical data in the three ensembles.
+D. Gaussian surmise for large k
+For largek, thekNN distributions are known to be-
+come Gaussian [49]. This can be seen for Eq. (16) (or in
+the same way for Eq. (2)) from Eq. (7) by noting that, at
+largek, the inflection points are located symmetrically
+around the mean at a distance given by the asymptotic
+value of the standard deviation,
+√
+∆(k). In particular
+the inflection points are given byk± k√
+2˜α. Here,kis
+the mean, and k√
+2˜αis
+√
+∆(k) at large ˜α. In addition, it
+can be checked that the asymptotic values of the Skew-
+ness and excess Kurtosis are given by Skew→ 1√
+2˜αand
+Kurt→ 3
+4˜α2 which approach zero for large ˜α, showing
+that the distribution is becoming more and more Gaus-
+sian, see App. E. The numerical data confirms that the
+higher moments, namely the Skewness and excess Kur-
+tosis, tend to zero for largek, see Figure C.1.
+This behavior is captured by a Gaussian centered atk
+with a variance ∆ (k) as given in Eq. (8), i.e.
+˜P (k)
+Gauss(s) = 1√
+2π∆ (k)
+exp
+
+−(s−k) 2
+2∆(k)
+
+.(17)
+We now present some arguments in favor of Eq. (17), fol-
+lowing Appendix N of [49]. EachkNN spacing is a sum
+ofkNN spacings, namelys (k)
+i =s (1)
+i +s(1)
+i+1+· · ·+s (1)
+i+k−1.
+Since thes (1)
+i are identically distributed, in the absence
+of correlations between them, the central limit theorem
+would imply that thekNN distributions are Gaussian at
+largek. There are, however, correlations between the NN
+spacings. Yet, for NN spacings which are sufficiently far
+apart, the correlations fall off asC(s (1)
+i , s(1)
+j )∼ |i−j| −2
+[49], which means they can be considereduncorrelatedfor
+|i−j| ≥m, thus constituting anm-dependent stationary
+sequence[52]. ThekNN spacings, being a sum of such an
+m-dependent sequence, are predicted to have a Gaussian
+distribution for largekaccording to theDiananda theo-
+rem[52]. We test also the Gaussian surmise in the next
+Section and find good agreement with numerical results
+for large enoughk.
+III. COMP ARISON WITH NUMERICAL
+RESUL TS
+In this Section, we compare the analytical surmise for
+thekNN distributions against numerical results. The
+analytical functions are (i) the old surmise Eq. (2) with
+αgiven by Eq. (3), (ii) the corrected surmise given by
+Eq. (16), and (iii) the Gaussian surmise Eq. (17), ex-
+pected at largek. The numerical results were generated
+from 1000 realizations of matrices of sizeN= 1000 taken
+from the GOE and the GUE, and of sizeN= 2000 for
+the GSE. The unfolding procedure we use is described in
+App. B.
+We test how well two distributions,p 1(s) andp 2(s),
+agree with each other using thestandard deviation
+goodness-of-fit [53, 54]
+σ=
+vuut 1
+n
+nX
+i=1
+[p1(si)−p 2(si)]2.(18)
+Here,nin the number of bins ands i corresponds to the
+middle of theith bin. Note that very small values in the
+tails of the distributions can result in a smaller value for
+σwithout reflecting a better fit. To avoid this effect, we
+test the performance of the fit restricting ourselves to 3
+standard deviations from the mean of the distribution.
+Figure 2 shows, for the GOE, GUE and GSE, the
+standard deviation Eq. (18) between the numerical val-
+ues and either the old surmise, Eq. (2) withαgiven by
+Eq. (3), the new surmise Eq. (16), or the Gaussian sur-
+mise Eq. (17). For the old and new surmises, we use
+the exact expressions forA α andC α fork <10 and the
+approximated ones fork≥10, for all three ensembles.
+Note that the absolute values ofσare not physically
+relevant because they may be affected by factors such as
+the values of the distributions and the number of bins.
+However, the value ofσfork= 2 in GOE, which is known
+to be exactly equivalent to the nearest neighbor Wigner
+surmise in GSE [55], may be taken as a benchmark value
+indicative of a ‘good’ fit. We observe that the corrected
+surmise consistently performs as well or better, i.e. has
+
+=== PAGE BREAK ===
+
+6
+1 2 3
+s
+0.0
+0.5
+P (s)
+k =2
+σ =0.72
+4 6
+s
+0.0
+0.5
+k =5
+σ =0.9
+10 12 14
+s
+0.0
+0.5
+k =12
+σ =0.34
+16 18
+s
+0.0
+0.5
+k =17
+σ =0.63
+22 24 26
+s
+0.0
+0.5
+k =24
+σ =1.1
+1 2 3
+s
+0.0
+0.5
+P (s)
+σ =0.41
+4 6
+s
+0.0
+0.5
+σ =0.33
+10 12 14
+s
+0.0
+0.5
+σ =0.34
+16 18
+s
+0.0
+0.5
+σ =0.28
+22 24 26
+s
+0.0
+0.5
+σ =0.23
+FIG. 3. ThekNN distributions for a few values ofk, for the GUE. The histograms show the numerical data for 1000 realizations
+ofN= 1000 matrices taken from the GUE. The top row shows the old surmise (blue curves), while the bottom row shows the
+new surmise (red curves). The standard deviation goodness-of-fit,σ, between the analytical distributions and the numerical
+data is shown in units of 10 −2. See Appendix G for similar data for the GOE and GSE.
+a smaller value ofσwhich is close to the benchmark—
+σ= 0.3×10 −2 forβ= 1 andk= 2—than the old surmise.
+This means that the corrected surmise provides a better
+characterization of spectral correlations fork≥2 than
+the old surmise.
+It is noteworthy that the old surmise gives a good fit
+for a few intermediate values ofk—as good as the cor-
+rected surmise—and otherwise provides a very poor fit
+for long-range spectral correlations. This behavior may
+be explained looking at Fig. 1, which shows that the
+variance of the old surmise and thekNN distribution co-
+incide at some particulark—numerically estimated to be
+k≈18,12,8 respectively forβ= 1,2,4. These values
+also correspond to the points at which the old surmise
+becomes as good as the corrected one, cf. Fig. 2. We
+also see in Fig. 2 that the Gaussian surmise performs
+similarly well—slightly better for GOE, equally for GUE
+and slightly worse for GSE— as the corrected surmise for
+long-rangek≳10 neighbors.
+To illustrate the different distributions, Fig. 3 displays
+the numerical histograms forP (k)(s) for GUE (results
+for the GOE and GSE can be found in App. G) for a
+few values ofk, together with the old surmise (top) and
+corrected surmise (bottom). The goodness of fitσfor
+each analytical distribution is also indicated. Again, we
+observe that the corrected surmise consistently provides
+a better fit of the numerical values. For smallk= 4,6,
+the old surmise predicts a slightly broader distribution
+than the numerical one, leading to a smaller value than
+expected in the peak of the distribution. Fork= 12, the
+variance of the old surmise intersects with the actual vari-
+ance of thekNN spacing distribution, and thus the old
+and the corrected surmise give an equally good fit. For
+long-range spacingsk= 17,24, we find that the old sur-
+mise predicts a narrower distribution—due to its smaller
+variance— while the corrected surmise accurately cap-
+tures the numerical data. Note that since the Skewness
+and excess Kurtosis of these distributions is small—cf.
+Fig. C.1—the distributions look Gaussian, and indeed,
+the Gaussian distribution Eq. (17) also provides a good
+model for largek≳10. Finally, we checked that using
+the expression Eq. (14) for ˜αinstead of its largekap-
+proximation, Eq. (15), improves the fit slightly for a few
+small value ofkas follows: for GOE it provides a better
+fit fork= 2,3 withσ= 0.29,0.37 instead of 0.36,0.38,
+respectively; for GUE it provides a better fit fork= 2
+withσ= 0.38 instead of 0.41; and for GSE we found no
+improvement. For higher values ofkwe found the same
+value ofσwhen rounding to two decimal places.
+To summarize, we find that for all three Gaussian en-
+sembles fork≥2, the new surmise always performs bet-
+ter than the old surmise.
+IV. THE XXZ MODEL WITH RANDOM
+DISORDER
+In this Section, we test our new surmise for thekNN
+spacing distributions on a physical model which exhibits
+a transition from chaos to integrability. We show how
+the deviation from the corrected surmise witnesses the
+breakdown of random matrix universality. The model
+we use is the Heisenberg XXZ spin chain
+Hxxz =
+LX
+n=1
+(Sx
+nSx
+n+1 +S y
+nSy
+n+1 +J zSz
+nSz
+n+1),(19)
+to which random magnetic fields are added on each site
+Hdis =
+LX
+n=1
+hz
+nSz
+n.(20)
+Hereh z
+n are real random numbers taken from a uniform
+distribution,U [−W/2,W/2], of widthW.
+The HamiltonianH≡H xxz +H dis conserves the total
+spin in thez-direction,S z = PL
+n=1 Sz
+n. We choose to
+work in the sector with half of the spins up and half of
+the spins down, which is of dimension
+  L
+L/2
+
+. We present
+results for an open spin chain withL= 16 spins. We
+
+=== PAGE BREAK ===
+
+7
+10 20 30
+k
+0
+2
+4
+6σ
+×10−2
+20 40
+k
+100
+101
+∆ (k)
+20 40
+k
+0.0
+0.2
+0.4
+0.6
+Σ 2(k) − ∆ (k)
+W =1
+W =1.25
+W =1.5
+W =1.75
+W =2
+W =3
+W =4
+W =5
+W =20
+FIG. 4. Results for the XXZ spin chain with random on-site magnetic fields. (Left) The goodness-of-fit,σ, forW=
+1,1.25,1.5,1.75 and 2, compared with thekNN GOE distributions for 2≤k≤35. The dashed red line atσ= 0.3×10 −2 is
+the benchmark value discussed in the main text; the connecting lines are shown as a guide to the eye. (Middle) The variance
+of thekNN distributions for the disorder strengthsWlisted in the legend (log-scale on they-axis). For reference we added the
+variances Eq. (8) for the GOE (red dots) and the variances Eq. (11) for the 1d Poisson point process (black dots). The number
+variance is plotted as a continuous line. (Right) The difference between the Number Variance and the variances of thekNN
+distributions (crosses; the connecting lines are shown as a guide to the eye). The value of 1/6 is plotted as a horizontal red
+line. The full distribution histograms are shown for a few values ofkin Figure 5.
+draw our statistics from 100 realizations of disorder for
+W= 1,20 and 50 realizations for other values of the
+disorder strength,W.
+As explained in App. B, for each disorder realization,
+we select eigenvalues in a spectral window from the dens-
+est part of the spectrum for which the density of states
+is not less than 0.9 times the maximal density; this en-
+sures that the window we choose is in the bulk of the
+spectrum and away from the spectrum’s edges. We then
+perform the unfolding procedure in that window. The
+number of energy eigenvalues selected in this way is of
+the order of a few thousands out of the total number of
+12860 eigenvalues for each realization (the exact number
+depends on the value ofWand on the particular disorder
+realization).
+This model is often used in the context of many-body
+localization, see e.g. [35–38, 56, 57], and is known to
+transition from chaotic to integrable spectral behavior as
+the disorder strengthWis increased. The Hamiltonian is
+real and symmetric and thus, in the chaotic regime, we
+expect the spectralkNN distributions of this model to
+coincide with those of a random matrix from the GOE.
+Figure 4 (left) shows the goodness of fitσbetween
+thekNN distribution for GOE and the chaotic phase
+W= 1,1.25,1.5,1.75,2 of the disordered XXZ model.
+We see that forW= 1 thekNN distribution of the GOE
+provides a very good model fork≲15, beyond which
+range the standard deviation starts to grow. This indi-
+cates the breakdown of universality for long-range corre-
+lations. When the disorderWincreases, the value of the
+standard deviationσstays constant for small values ofk
+and then deviates for larger values ofk. The more we de-
+viate from the chaotic phase, the smaller the value ofkat
+which the transition between these two regimes happens.
+The slope of theσcurve also increases withW. Notably,
+the breakdown of universality happens with very small
+increase of the disorder. Indeed, forW= 2 already, the
+only spectral ranges that resemble GOE arek= 2,3.
+Figure 4 (middle) shows the variance of thekNN dis-
+tributions for various values of the disorder strengthW.
+For reference, we plot the variance values expected from
+random matrices from the GOE (red) as well as the vari-
+ances expected from thekNN distribution of the 1d Pois-
+son point process (black). The plot shows that the small-
+est values of the disorderW= 1,1.25,1.5,1.75 follow the
+predictions of GOE until a certaink, after which the vari-
+ance starts to grow faster than GOE. This also showcases
+the breakdown of universality for long-range correlations.
+The critical spacing rangekat which this breakdown oc-
+curs progressively decreases with the strength of the dis-
+orderW. For completeness, we also plotted the number
+variance along with the discrete values of ∆ (k). The dif-
+ference between the number variance and the variance of
+thekNN distribution is shown in Figure 4 (right). For
+W= 1,1.25,1.5,1.75, this difference is always close to
+1/6. This indicates that the variance of thekNN distribu-
+tion and the number variance always differ by a constant,
+but both deviate from the universal RMT prediction at
+the same rate for all ranges. In turn, in the transition
+between chaos and integrability (intermediate values of
+W), the difference between these quantities grows with
+k, indicating that the transition between chaos and inte-
+grability is monitored differently by these two quantities.
+Indeed, both quantities grow, but the number variance
+grows slightly faster for largek. Lastly, in the integrable
+phase of the model,W= 20, the difference between the
+two quantities is close to zero, as expected from the Pois-
+son ensemble. The fluctuations however are larger than
+in the chaotic regime possibly because the values of both
+quantities are much larger.
+Figure 5 presents the fullkNN distributions for several
+values ofkandW. As expected, atW= 1, the model
+
+=== PAGE BREAK ===
+
+8
+0 2 4 6
+s
+0.0
+0.2
+0.4
+0.6
+P (s)
+k =2
+0 5 10 15
+s
+0.0
+0.2
+0.4
+k =4
+0 5 10 15 20
+s
+0.0
+0.2
+0.4
+k =8
+W
+1
+2
+3
+4
+5
+20
+10 20
+s
+0.0
+0.2
+0.4
+P (s)
+k =12
+10 20 30
+s
+0.0
+0.2
+0.4
+k =18
+20 30 40 50
+s
+0.0
+0.2
+0.4
+k =34
+FIG. 5. Numerical data for thekNN distributions for the XXZ spin chain with random on-site magnetic fields (step histograms)
+ForW= 1,2,3,4,5 and 20. The red smooth curve shows the corrected surmise Eq. (16) and the black smooth curve shows
+thekNN distributions for the 1d Poisson point process Eq. (C3). We see a refined picture of how the spectral statistics change
+from chaos to integrability at various spectral ranges.
+is in the chaotic regime with the distributions close to
+those of GOE. Deviations from the GOE distributions
+can be seen askbecomes larger; this can also be seen
+in the plot of the variance, Fig. 4. AtW= 20, the
+model is in the integrable regime and follows the Poisson
+kNN distributions with deviations at largek, as can be
+seen also in the plot of the variance, Figure 4. At val-
+ues in between these two values of disorder strength, we
+see spectral behavior between the two regimes for all val-
+ues ofk. Finally, Figure 6 shows how the variance ∆ (k)
+changes as a function ofWfor 1≤k≤50. The crossover
+from chaos to integrability seems to occur at smallerW
+for largerk, indicating a faster loss of correlation between
+further away energy eigenvalues. This shows that differ-
+ent neighbor ranges transition from chaos to integrability
+at different disorder strengthsW. It would be interest-
+ing to test this result for larger systems and see whether
+such ak-dependent transition persists. In any case, this
+highlights the importance of studying longer-range cor-
+relations when looking at the transition/crossover from
+chaos to integrability.
+V. SUMMAR Y
+ThekNN distribution for Gaussian Random Matri-
+ces can be approximated by an expression similar to the
+Wigner surmise. In this work, we have shown how the
+Wigner-like surmise suggested in previous literature fails
+100 101
+W
+100
+101
+∆ (k)
+FIG. 6. Numerical data for the variance ∆ (k) of thekNN
+distributions as a function of the disorder strength,W, for
+the XXZ spin chain with random on-site magnetic fields. The
+different lines show different 1≤k≤50 from bottom to top.
+to accurately capture both short- and long-range spectral
+correlations, as can be seen by inspecting its variance in
+Figure 1. We provided a new surmise for the distribu-
+tion ofkNN spacings of random matrices by correcting
+the power to a new power ˜αgiven by Eq. (15). The ex-
+pression now reproduces the value of the variance of the
+kNN distributions for random matrices, and fits numer-
+
+=== PAGE BREAK ===
+
+9
+ical random matrix data, as shown quantitatively using
+the standard deviation goodness-of-fitσ. We find that
+the corrected surmise consistently provides a good fit to
+the numericalkNN distributions already fork≥2. We
+also found that the full expression, Eq. (14) for ˜α, pro-
+vides a slightly better fit fork= 2,3 in the GOE and for
+k= 2 in the GUE.
+The number variance and the variances of thekNN
+distributions provide us with a singlek-dependent num-
+ber to study long-range correlations among eigenvalues.
+The full distributions give us more and allow us to study
+in more detail the structure of the correlations between
+eigenvalues and the breakdown of universality for long-
+range spectral correlations in physical systems.
+These results can be used as a refined probe of quan-
+tum chaos for testing longer-range correlations among
+eigenvalues, as exemplified by our numerical results for
+the XXZ spin chain with on-site disorder. We were able
+to study the fullP (k)(s) distributions at various values
+of disorder strength,W. The variance of these distribu-
+tions can be used instead of the number variance, and,
+from a practical point of view, may be easier to compute
+numerically. As Figure 6 suggests, the variance of the
+kNN distributions can be used to quantitatively study
+the crossover from chaos to integrability as a function of
+the spectral distancek. It would be interesting to study
+the scaling of thisk-dependent transition as a function
+of system size.
+In light of our results, the relationship between the
+number variance and the variance of theP (k)(s) distri-
+butions remains an open problem [49]. It would also
+be interesting to extend thekNN distributions to study
+dissipative quantum chaos, where the complex spec-
+trum hinders some long-range signatures of quantum
+chaos [54, 58–60].
+ACKNOWLEDGMENTS
+We thank Gernot Akemann and Patricia P¨ aßler for in-
+sightful discussions and acknowledge funding from the
+Luxembourg National Research Fund (FNR, Attract
+grant QOMPET 15382998). The numerical simulations
+presented in this work were carried out using the HPC
+facilities of the University of Luxembourg.
+Appendix A: Surmise derivation
+To find a surmise for the distribution of thekth neighbor level spacing, we use aN=k+ 1 dimensional random
+matrix with energy levelsE 1 ≤E 2 ≤ · · · ≤E k+1 and attempt to compute
+P (k)(s) =
+Z ∞
+−∞
+dE1
+Z ∞
+E1
+dE2 · · ·
+Z ∞
+Ek
+dEk+1ρ(E1, . . . , Ek+1)δ
+
+s−(E k+1 −E 1)
+
+.(A1)
+The integration limits take into account the ordering of the levels andρis the joint eigenvalue probability distribution
+ρ(E1, . . . , EN) =C
+Y
+1≤i<j≤N
+|Ei −E j|β e−APN
+i=1E2
+i .(A2)
+Following the derivation in [61], we change variables from{E 1, E2, . . . , Ek+1}to{E 1, s1, s2, . . . , sk}, wheres i ≡s (1)
+i
+are the NN spacings. Then
+P (k)(s)∝
+Z ∞
+−∞
+dE1
+Z ∞
+0
+ds1· · ·
+Z ∞
+0
+dskρ(E1, s1 . . . , sk)δ
+
+s−
+kX
+i=1
+si
+
+.(A3)
+Note thatE 1 appears only in the exponential term ofρ(E 1, s1 . . . , sk) =
+
+p(s1, s2, . . . , sk)
+β
+×
+e−A[E2
+1+(E1+s1)2+(E1+s1+s2)2+···+(E1+s1+···+sk)2], written here using thek(k+ 1)/2 degree polynomial:
+p(s1, s2, . . . , sk)=s1(s1+s2). . .(s 1+s2+. . .+s k)
+×s2(s2+s3). . .(s 2+s3+. . .+s k)×. . .×s k−1(sk−1+sk)×sk .(A4)
+Sinces i ≥0 for alli, this polynomial is positive everywhere. Performing the Gaussian integral overE 1, we find (up
+to a constant):
+P (k)(s)∝
+Z ∞
+0
+ds1· · ·
+Z ∞
+0
+dsk
+
+p(s1, s2, . . . , sk)
+β
+e−A q(s1,...,sk) δ
+
+s−
+kX
+i=1
+si
+
+,(A5)
+where we defined the quadratic polynomial resulting from the integration overE 1 as
+q({si}) =
+kX
+i=1
+i(k+1−i)
+k+1 s2
+i +
+kX
+i<j=1
+2i(k+1−j)
+k+1 sisj .(A6)
+
+=== PAGE BREAK ===
+
+10
+Note that sinces i ≥0 for alliand the coefficients of this quadratic polynomial are always positive,q(s 1, . . . , sk)≥0
+everywhere. Next, we rescale the spacings asx i =s i/s. Taking into account the Jacobian of this transformation, which
+iss k, the homogeneity ofp(s 1, . . . , sk) and ofq(s 1, . . . , sk), and using the delta function identityδ(ax) =δ(x)/|a|, we
+arrive at
+P (k)(s)∝s k−1s
+k(k+1)
+2 β
+Z ∞
+0
+dx1· · ·
+Z ∞
+0
+dxk
+
+p(x1, x2, . . . , xk)
+β
+e−As2q(x1,...,xk)δ
+
+1−
+kX
+i=1
+xi
+
+.(A7)
+This is an integral over a (k−1)simplex. Using theδ-function to setx k = 1−x 1 −x 2 − · · · −x k−1 and restricting
+the integration limits, we replace the quadratic function by q({xi}k−1
+i=1 ) = k
+k+1 −2Pk−1
+i=1 Bixi +Pk−1
+i,j=1 Aijxixj where
+the elementsB i andA ij fori, j= 1, . . . , k−1 are given by [62]
+Bi = k−i
+k+ 1 ,(A8a)
+Aii = (k−i)(i+ 1)
+k+ 1 ,(A8b)
+Ai̸=j = (k−max(i, j))(min(i, j) + 1)
+k+ 1 .(A8c)
+Similarly, the polynomialp({x i}k
+i=1) is replaced by p({xi}k−1
+i=1 ). After completing the square, we arrive at the (k−1)-
+dimensional integral
+P (k)(s)∝s
+k(k+1)
+2 βsk−1e− A
+2 s2
+Z 1
+0
+dx1
+Z 1−x1
+0
+dx2· · ·
+Z 1−Pk−2
+i=1 xi
+0
+dxk−1p(x)βe−As2(xT −mT )A(x−m),(A9)
+where we introduced the vectorsm=A −1B,x= (x 1, . . . , xk−1) and where we have usedA
+ k
+k+1 −B T A−1B
+
+=A/2
+for allk. The vectormsimplifies to (1/2,0, . . . ,0) which means that the Gaussian is centered at zero for allx i except
+x1.
+The integral over the simplex is challenging to compute exactly. For smalls, the Gaussian in the integral can be
+expanded to second order ins, resulting in a correction to the width of the pre-factor Gaussian function, while at
+largesthe integral gives corrections to the power law. We thus end up with the generalized distribution given in
+Eq. (2). Since similar results have been reported in the literature, let us briefly review their arguments here. The first
+generalization of Wigner’s surmise, that we are aware of, assumes a Brody-like ansatz, which leaves the power-lawα
+as a free parameter [45]. In Ref. [63], the power-law in Eq. (3) is found using a smallsexpansion and the generalized
+Wigner surmise, Eq. (2), is obtained assuming a Gaussian behavior at larges. This approach is also followed in [46]
+in the context of 2-dimensional Poisson point processes. These references thus find the same distribution through
+heuristic arguments. Formal results for thekNN probability distributions can be obtained exactly using tools from
+RMT, see e.g. [25], and there are even connections between the differentkNN distributions [47]. However, these
+formal and exact results lack an explicit expression for thekNN distribution reminiscent of the Wigner surmise, which
+is itself an approximation [1]. More recently, an extension of these results to spacing ratios was tested numerically [34]
+but with no analytical proof. Lastly, Rao [29] proposed an analytical derivation of the generalized Wigner distribution
+from the joint-probability-density of eigenvalues. However, since the energies are not ordered, the spacingE k+1 −E 1
+need not be ak-th level spacing. The same work also seems to suggest that the generalized Wigner distribution is
+the exact distribution of thekNN spacing, despite the latter being known as an approximation only, as can already
+be seen in exact small size results like [61, 64]. In turn, our derivation is based on Wigner’s original argument, i.e.
+considering the joint-probability-density of eigenvalues of the largest possible matrix with ak-th level spacing; we
+have explicitly stated the approximations involved in obtaining the generalized Wigner distribution and discussed the
+corrections to the distribution.
+Appendix B: Unfolding
+The unfolding procedure ensures that only local fluctuations are taken into account when computing spectral
+correlations among eigenvalues. This is achieved by removing the energy density dependence on the global density of
+states, ¯ρ(E), which is system dependent.
+As described in [1, 50], the cumulative distribution function of the average density of states, ¯ρ(E), multiplied by
+the number of eigenvalues in the desired energy window,
+f(E) =N
+Z E
+−∞
+dE′ ¯ρ(E′),(B1)
+
+=== PAGE BREAK ===
+
+11
+0 20 40
+k
+0.0
+0.2
+0.4
+0.6
+Skewness
+GOE
+0 50
+0.00
+0.25
+Kurtosis
+0 20 40
+k
+0.0
+0.2
+0.4
+Skewness
+GUE
+0 50
+0.0
+0.1
+Kurtosis
+0 10 20
+k
+0.0
+0.1
+0.2
+0.3
+Skewness
+GSE
+0 25
+0.000
+0.025
+Kurtosis
+FIG. C.1. Skewness and excess Kurtosis (inset) of thekNN distributions fork≥1. Both tend to zero askis increased,
+implying that the distributions become Gaussian at largek. The analytical values of the Skewness (red dots) are computed
+using Eq. (15) in Eq. (E3).
+provides the function that achieves a uniform average density of states.
+In the case of the Gaussian ensembles—GOE, GUE and GSE—the global density of states in the largeNlimit is
+given by Wigner’s semicircle [25] and the integral in Eq. (B1) can be done analytically [65]. In the case of a physical
+system such as the one we are considering in this work—the XXZ spin chain with random magnetic fields—the
+global density of states is unknown. Then, the integral is done numerically and fitted to a polynomial function for
+each realization of the disorder. We focus on eigenvalues from the densest part of the spectrum by choosing those
+eigenvalues which lay within a region where the density of states is not less than 0.9 of its maximal value. We then
+perform the integral in Eq. (B1) for that set of eigenvalues and fit it to a third-degree polynomial.
+Appendix C: The 1d Poisson point process
+The NN spectral statistics for uncorrelated energy eigenvalues is given byP (1)(s) =e −¯ρs, where ¯ρis the average
+density of states, taken to be the uniform distribution ¯ρ(E) = ¯ρ= 1. This is known as the ‘Poissonian’ NN distribution.
+We will now present a derivation for thekNN distributions of the 1d Poisson point process (see also [66]). Since there
+are no correlations between the energies, the joint probability distribution of the NNs,{s i}k
+i=1, is a product of
+the individual NN distributions,P(s 1, s2, . . . , sk) =P(s 1)P(s 2). . . P(s k) =e −Pk
+i=1 si. Using the joint distribution,
+P(s 1, s2, . . . , sk), we can define the probability that thekth nearest neighbor spacing issas
+P (k)(s)∝
+Z ∞
+0
+ds1 . . . dsk P({s i}k
+i=1)δ(s−
+kX
+i=1
+si).(C1)
+As in App. A, we rescale the variables,x i =s i/s. Taking into account the Jacobian, given bys k, and the integrating
+over the delta function, which contributes as −1 and sets everywherex k = 1− Pk−1
+i=1 xi, we find:
+P (k)(s)∝s k−1e−s
+Z 1
+0
+dx1
+Z 1−x1
+0
+dx2 . . .
+Z 1−Pk−2
+i=1 xi
+0
+dxk−1
+=s k−1e−s ×constant,(C2)
+where the second equality follows from the fact that the integral over the simplex is a finite constant. The normalized
+distribution is then given by
+P (k)
+Poisson(s) = 1
+(k−1)! sk−1e−s .(C3)
+It can be checked that⟨s⟩=k, as expected, and that the variance of this distribution is ∆ (k) =k.
+
+=== PAGE BREAK ===
+
+12
+Appendix D: Computational cost of computing the number variance vs the variance of thekNN distributions
+For a fixed value ofL, the computation of the number variance requires going over the spectrumN ξs times, checking
+if a givenE n is in the interval [ξ s, ξs +L] and computing the variance ofη(ξ s, L). This procedure has to be repeated
+Nav times to average over the RMT ensemble or the disorder realizations. This means that we need to perform
+O(NavNξs N) individual operations and we need to compute a varianceO(N av) times. Comparatively, thekNN
+variance provides a better scaling, for a fixedkwe need to run over the spectrumN av times computing the difference
+En+k −E n which givesO(N avN) operations, and we only need to compute the variance a single time. Furthermore,
+the individual operations needed to compute the number variance involve twoifstatements to check whetherE n ≥ξ s
+andE n ≤ξ s +L, while for thekNN variance the individual operation is a simple subtraction. Let us denote the
+complexity of each operation as:C window to check if the energy is in the windowE n ∈[ξ s, ξs +L],C s for the subtraction
+andC var(n) for the variance ofnelements. For a singleL, the complexity of the number variance is then of the order
+CNV ∼ C windowNavNξs N+C var(N Nξs)Nav,(D1)
+while for a singlekNN variance it is
+CkNNvar ∼ C sNavN+C var(N Nav),(D2)
+which shows that thekNN variance, although related to the number variance, is less computationally costly to
+compute.
+Appendix E: Skewness and Kurtosis
+To see whether the considered distributions are normal, we also look at the Skewness and excess Kurtosis—which
+are expected to be zero for a normal distribution. For thekNN distributions, they are
+Skew(k) = ⟨(s(k) − ⟨s(k)⟩)3⟩
+(∆(k))3/2 (E1)
+and
+Kurt(k) = ⟨(s(k) − ⟨s(k)⟩)4⟩
+(∆(k))2 −3,(E2)
+respectively. For the distribution Eq. (2), the Skewness reads
+Skew(k) =
+√
+2
+
+4Γ
+  α
+2 +1
+3
+−(2α+1)Γ
+  α
+2 +1
+
+Γ
+  α+ 1
+2
+2
+
+(α+ 1)Γ
+  α+1
+2
+2
+−2Γ
+  α
+2 + 1
+23/2 (E3)
+= 1√
+2α +O(α −3/2).(E4)
+See Figure C.1 for numerical data for GOE, GUE and GSE versus analytical data from Eq. (E3), computed using
+Eq. (15).
+It is also interesting to look at the Skewness of thekNN distributions from the 1d Poisson point process, Eq. (C3).
+It is given by Skew (k) = 2√
+k. Note that it goes to zero, as a function ofk, much slower than the result for RMT,
+which goes as 1/
+√
+2αindicating a∼1/kdecay forαgiven by Eq. (3) and∼
+√
+lnk/kfor Eq. (15).
+Appendix F: A better surmise for thek= 1case
+In this Appendix we discuss the NN level spacing distribution, focusing on the GUE. The corrected power, ˜α, was
+derived from Eq. (13) using the largeαexpansion ofA α, Eq. (5). Another source of inaccuracy in ˜αcomes from the
+initial condition which is the variance as derived from Wigner’s surmise – which is in itself inexact. It is thus not
+expected to work particularly well atk= 1. In Figure F.1 we compare the performance of the new surmise, Eq. (16)
+with ˜αgiven by Eq. (15) [67], with that of Wigner’s surmise and with the exact result at large dimension given in
+
+=== PAGE BREAK ===
+
+13
+0 1 2 3
+s
+0.0
+0.2
+0.4
+0.6
+0.8
+P (s)
+k =1
+PWigner, σ =0.43
+P ˜α, σ =0.83
+P ˜β, σ =0.35
+Pexact, σ =0.32
+0.0 0.5 1.0 1.5 2.0 2.5 3.0
+s
+−0.004
+−0.002
+0.000
+0.002
+0.004
+Pexact − PWigner
+Pexact − P ˜β
+FIG. F.1. (Right) numerical data from 1000 realizations of GUE matrices of sizeN= 1000 (histogram) is compared with:
+Wigner’s surmise (blue line), the corrected surmiseP ˜αgiven by Eq. (16) atk= 1 (red line),P ˜β given by Eq. (1) with corrected
+power Eq. (F4) (black line). We also show the exact result from [16] (green line). (Left) The difference between the exact
+result and Wigner’s surmise (dashed blue line), and the difference between the exact result and Eq. (1) with corrected power
+Eq. (F4) (dashed black line). Both the goodness-of-fit,σ, and the difference plot indicate that using the corrected power ˜βin
+Eq. (1) performs better than Wigner’s surmise (given by Eq. (1) withβ= 2).
+[16]. The exact result is a product of Dyson’s asymptotic result at largesand a Pad´ e expansion evaluated from a
+smallsTaylor expansion of the exact level spacing distribution. Dyson’s asymptotic result is given by:
+Pas(s) = π2
+16
+
+s2 − 2
+π2 + 5
+π2s2
+
+Eas(s) (F1)
+whereE as(s) = (π/2)−1/4e2Bs−1/4e−π2s2/8 withB= ln(2)/24 + (3/2)ζ ′(−1) [68]. The Pad´ e expansion is given by:
+Pad´ e(s) =
+P2L
+m=0 νmsm/4
+P2L
+m=0 ∆msm/4
+(F2)
+where the coefficientsν m and ∆ m can be computed from the firstLTaylor coefficients, and are given in Table 2 of
+[16] forL= 22. Finally, the exact result can be expressed as:
+Pexact(s) = Pad´ e(s)Pas(s).(F3)
+Using the exact result, we can exploit the relation, Eq. (7), between the variance and the powerαwithout resorting
+to the largekapproximation to obtain an improvement over Wigner’s surmise. This can be done by solving Eq. (7)
+numerically forαusing the variance of the exact NN distribution as given by Eq. (F3), ∆ (1)
+exact = 0.17999. This
+computation gives a corrected power
+˜β= 1.96998 (F4)
+to use in Eq. (1) instead ofβ= 2.
+Figure F.1 (left) shows Wigner’s surmise, Eq. (1) withβ= 2, the corrected surmise, Eq. (16) atk= 1, and Eq. (1)
+with the corrected power given by Eq. (F4). We also show the exact analytical result in terms of a Pad´ e expansion,
+Eq. (F3). We compute theσgoodness-of-fit for each of these results compared with numerical data in a range between
+0 and 4 standard deviations from the mean of the distribution (which is unity in this case). The goodness-of-fit using
+˜βin Eq. (1) indeed performs better than Wigner’s surmise (withβ= 2). In the right panel of this figure we compare
+the differences between: the exact result and Wigner’s surmise (reproducing Figure 2 in [16]), and the exact result
+and Eq. (1) with ˜βgiven by Eq. (F4).
+Appendix G: Results for the GOE and GSE
+In this Appendix, we show the explicitP (k)(s) distributions for some values ofkfor the GOE and the GSE. Figures
+G.1 and G.2 compare the old surmise and the new surmise with numerical results for these ensembles. For the
+complete set ofσgoodness-of-fit values, see Figure 2 in the main text. Similarly to what we observed for the GUE
+in the main text, the corrected distributions for the GOE and GSE consistently perform better than the old surmise;
+
+=== PAGE BREAK ===
+
+14
+0 2 4
+s
+0.0
+0.5
+P (s)
+k =2
+σ =0.3
+2 4 6
+s
+0.0
+0.5
+k =4
+σ =0.65
+10.0 12.5 15.0
+s
+0.00
+0.25
+k =12
+σ =0.45
+15.0 17.5 20.0
+s
+0.00
+0.25
+k =18
+σ =0.29
+30 35
+s
+0.00
+0.25
+k =32
+σ =0.63
+0 2 4
+s
+0.0
+0.5
+P (s)
+σ =0.36
+2 4 6
+s
+0.0
+0.5
+σ =0.36
+10.0 12.5 15.0
+s
+0.00
+0.25
+σ =0.28
+15.0 17.5 20.0
+s
+0.00
+0.25
+σ =0.29
+30 35
+s
+0.00
+0.25
+σ =0.28
+FIG. G.1. ThekNN distributions for a few values ofk, for the GOE. The histograms show the numerical data for 1000
+realizations of sizeN= 1000 matrices. The top row shows the old surmise (blue curves) and the bottom row shows the new
+surmise (red curves). The standard deviation goodness-of-fit,σ, between the analytical distributions and the numerical data is
+shown in units of 10 −2.
+1 2 3
+s
+0
+1P (s)
+k =2
+σ =1.26
+3 4 5
+s
+0.0
+0.5
+k =4
+σ =1.25
+7 8 9
+s
+0.0
+0.5
+k =8
+σ =0.47
+16 18
+s
+0.0
+0.5
+k =17
+σ =1.43
+22 24 26
+s
+0.0
+0.5
+k =24
+σ =2.16
+1 2 3
+s
+0
+1P (s)
+σ =0.52
+3 4 5
+s
+0
+1
+σ =0.51
+7 8 9
+s
+0.0
+0.5
+σ =0.43
+16 18
+s
+0.0
+0.5
+σ =0.46
+22 24 26
+s
+0.0
+0.5
+σ =0.42
+FIG. G.2. ThekNN distributions for a few values ofk, for the GSE. The histograms show the numerical data for 1000
+realizations of sizeN= 2000 matrices. The top row shows the old surmise (blue curves) and the bottom row shows the new
+surmise (red curves). The standard deviation goodness-of-fit,σ, between the analytical distributions and the numerical data is
+shown in units of 10 −2.
+as discussed in the main text, using ˜αgiven by Eq. (14) further improves the fit for the GOE atk= 2,3. Below a
+certain value,k= 18 in GOE andk= 8 in GSE, the old surmise is slightly smaller at the peak, due to its slightly
+bigger variance than the actual RMT result. After this point the old surmise overestimates the value at the peak, due
+to its smaller variance. At the crossing point,k= 18 for GOE andk= 8 for GSE, the old and the corrected surmises
+perform equally well in describing the numerical distribution.
+[1] F. Haake,Quantum Signatures of Chaos, Springer Series
+in Synergetics (Springer, Berlin, 2010).
+[2] O. Bohigas, M. J. Giannoni, and C. Schmit, Phys. Rev.
+Lett.52, 1 (1984).
+[3] In some cases the edges of the spectrum may also exhibit
+universality, see e.g. [69, 70].
+[4] M. V. Berry and M. Tabor, Proc. Royal Society of Lon-
+don. Series A: Math. and Phys. Sciences356, 375 (1977).
+[5] L. Benet, F. Leyvraz, and T. H. Seligman, Phys. Rev. E
+68, 045201 (2003).
+[6] S. Hern´ andez-Quiroz and L. Benet, Phys. Rev. E81,
+036218 (2010).
+[7] J. A. Harvey and D. J. Hughes, Phys. Rev.109, 471
+(1958).
+[8] J. B. Garg, J. Rainwater, J. S. Petersen, and W. W.
+Havens, Phys. Rev.134, B985 (1964).
+[9] H. S. Camarda and P. D. Georgopulos, Phys. Rev. Lett.
+50, 492 (1983).
+[10] R. U. Haq, A. Pandey, and O. Bohigas, Phys. Rev. Lett.
+48, 1086 (1982).
+[11] H.-J. St¨ ockmann and J. Stein, Phys. Rev. Lett.64, 2215
+(1990).
+[12] H.-J. St¨ ockmann,Quantum Chaos: An Introduction
+(Cambridge University Press, 1999).
+[13] C. B. Da˘ g, S. I. Mistakidis, A. Chan, and
+H. R. Sadeghpour, Communications Physics6(2023),
+10.1038/s42005-023-01258-1.
+
+=== PAGE BREAK ===
+
+15
+[14] H. Dong, P. Zhang, C. B. Da˘ g, Y. Gao, N. Wang, J. Deng,
+X. Zhang, J. Chen, S. Xu, K. Wang, Y. Wu, C. Zhang,
+F. Jin, X. Zhu, A. Zhang, Y. Zou, Z. Tan, Z. Cui, Z. Zhu,
+F. Shen, T. Li, J. Zhong, Z. Bao, H. Li, Z. Wang, Q. Guo,
+C. Song, F. Liu, A. Chan, L. Ying, and H. Wang, Phys.
+Rev. Lett.134, 010402 (2025).
+[15] E. P. Wigner, Mathematical Proceedings of the Cam-
+bridge Philosophical Society47, 790–798 (1951).
+[16] B. Dietz and F. Haake, Zeitschrift f¨ ur Physik B Con-
+densed Matter80, 153 (1990).
+[17] M. Gaudin, Nuclear Physics25, 447 (1961).
+[18] B. Dietz and K. Zyczkowski, Zeitschrift f¨ ur Physik B
+Condensed Matter84, 157 (1991).
+[19] N. Rosenzweig, Phys. Rev. Lett.1, 24 (1958).
+[20] P. Martinez-Azcona, R. Shir, and A. Chenu, Phys. Rev.
+B111, 165108 (2025).
+[21] F. J. Dyson and M. L. Mehta, J. of Math. Phys.4, 701
+(1963).
+[22] M. V. Berry, Proc. Royal Society of London. Series A:
+Math. and Phys. Sciences400, 229 (1985).
+[23] A. L. Corps and A. Rela˜ no, Phys. Rev. E103, 012208
+(2021).
+[24] S. C. Srivastava, A. Lakshminarayan, S. Tomsovic, and
+A. B¨ acker, J. of Phys. A: Mathematical and Theoretical
+52, 025101 (2018).
+[25] M. L. Mehta,Random matrices(Elsevier, 2004).
+[26] M. L. Mehta and A. Pandey, J. of Phys. A: Mathematical
+and General16, L601 (1983).
+[27] U. Grimm, physica status solidi (b)241, 2139 (2004).
+[28] A. Y. Abul-Magd and M. H. Simbel, Phys. Rev. E60,
+5371 (1999).
+[29] W.-J. Rao, Phys. Rev. B102, 054202 (2020).
+[30] To compare the SFF profile for a physical system with
+that of RMT it is necessary to unfold the spectrum first,
+cf. [20, 71].
+[31] V. Oganesyan and D. A. Huse, Physical Review B75
+(2007), 10.1103/physrevb.75.155111.
+[32] Y. Y. Atas, E. Bogomolny, O. Giraud, and G. Roux,
+Phys. Rev. Lett.110, 084101 (2013).
+[33] Y. Atas, E. Bogomolny, O. Giraud, P. Vivo, and E. Vivo,
+Journal of Physics A: Mathematical and Theoretical46,
+355204 (2013).
+[34] S. H. Tekur, U. T. Bhosale, and M. S. Santhanam, Phys.
+Rev. B98, 104305 (2018).
+[35] M. Serbyn and J. E. Moore, Phys. Rev. B93, 041424
+(2016).
+[36] C. L. Bertrand and A. M. Garc´ ıa-Garc´ ıa, Phys. Rev. B
+94, 144201 (2016).
+[37] P. Sierant and J. Zakrzewski, Phys. Rev. B99, 104205
+(2019).
+[38] P. Sierant and J. Zakrzewski, Phys. Rev. B101, 104201
+(2020).
+[39] M. Serbyn, Z. Papi´ c, and D. A. Abanin, Phys. Rev. B
+96, 104201 (2017).
+[40] L. F. Santos and E. J. Torres-Herrera, “Nonequilibrium
+quantum dynamics of many-body systems,” inChaotic,
+Fractional, and Complex Dynamics: New Insights and
+Perspectives, edited by M. Edelman, E. E. N. Macau,
+and M. A. F. Sanjuan (Springer International Publishing,
+Cham, 2018) pp. 231–260.
+[41] W. Buijsman, V. Cheianov, and V. Gritsev, Phys. Rev.
+Lett.122, 180601 (2019).
+[42] P. Sierant, D. Delande, and J. Zakrzewski, Phys. Rev.
+Lett.124, 186601 (2020).
+[43] D. A. Abanin, E. Altman, I. Bloch, and M. Serbyn, Rev.
+Mod. Phys.91, 021001 (2019).
+[44] In what follows, we will omit the superscript (k) for sim-
+plicity of notation, unless we want to explicitly highlight
+the role ofk.
+[45] D. Engel, J. Main, and G. Wunner, J. Physics A: Math-
+ematical and General31, 6965 (1998).
+[46] J. Sakhr and J. M. Nieminen, Phys. Rev. E73, 047202
+(2006).
+[47] P. J. Forrester, Comm. in Math. Phys.285, 653 (2009).
+[48] J. French, P. Mello, and A. Pandey, Annals of Physics
+113, 277 (1978).
+[49] T. A. Brody, J. Flores, J. B. French, P. A. Mello,
+A. Pandey, and S. S. M. Wong, Rev. Mod. Phys.53,
+385 (1981).
+[50] T. Guhr, A. Muller-Groeling, and H. A. Weidenmuller,
+Phys. Rept.299, 189 (1998).
+[51] Note that from this relationship, the constantc β can
+be read off asc 1 = 2
+π2 [ln 2π+γ+ 1−π 2/8]−1/6
+for GOE,c 2 = 1
+π2 [ln 2π+γ+ 1]−1/6 for GUE and
+c4 = 1
+2π2 [ln 4π+γ+ 1 +π 2/8]−1/6 for GSE, where
+γ≈0.57721 is Euler’s constant. We have chosen, how-
+ever, to use as the boundary condition the variance at
+k= 1 as given by Wigner’s surmise, since this choice
+was reported in [48] to work more accurately in the GOE
+case.
+[52] P. H. Diananda and M. S. Bartlett, Mathematical Pro-
+ceedings of the Cambridge Philosophical Society49,
+239–246 (1953).
+[53] G. Akemann, A. Mielke, and P. P¨ aßler, Phys. Rev. E
+106, 014146 (2022).
+[54] G. Akemann, F. Balducci, A. Chenu, P. P¨ aßler, F. Roc-
+cati, and R. Shir, Phys. Rev. Res.7, 013098 (2025).
+[55] M. L. Mehta and F. J. Dyson, Journal of Mathematical
+Physics4, 713–719 (1963).
+[56] M. ˇZnidariˇ c, T. Prosen, and P. Prelovˇ sek, Phys. Rev. B
+77, 064426 (2008).
+[57] A. Pal and D. A. Huse, Phys. Rev. B82, 174411 (2010).
+[58] A. M. Garc´ ıa-Garc´ ıa, L. S´ a, and J. J. M. Verbaarschot,
+Phys. Rev. D107, 066007 (2023).
+[59] Z. Xu, A. Chenu, T. c. v. Prosen, and A. del Campo,
+Phys. Rev. B103, 064309 (2021).
+[60] F. Roccati, F. Balducci, R. Shir, and A. Chenu, Phys.
+Rev. B109, L140201 (2024).
+[61] P. B. Kahn and C. E. Porter, Nuclear Physics48, 385
+(1963).
+[62] It can be checked thatAis positive definite. The in-
+verse ofAis a tridiagonal, almost Toeplitz matrix, with
+diagonalA −1
+11 = 3/2 andA −1
+ii = 2 fori̸= 1, and off-
+diagonalsA −1
+i,i+1 =A −1
+i−1,i =−1. It can also be verified
+thatm=A −1B= (1/2,0,0, . . . ,0).
+[63] A. Y. Abul-Magd and M. H. Simbel, Physical Review E
+62, 4792 (2000), publisher: American Physical Society.
+[64] M. V. Berry and P. Shukla, Journal of Physics A: Math-
+ematical and Theoretical51, 475101 (2018), publisher:
+IOP Publishing.
+[65]https://robertsweeneyblanco.github.io/
+Computational_Random_Matrix_Theory/Eigenvalues/
+Wigner_Semicircle_Law.html.
+[66] J. Sakhr and J. M. Nieminen, Phys. Rev. E73, 036201
+(2006).
+[67] Incidentally, atk= 1 Eq. (15) for ˜αperforms better than
+the long expression Eq. (14). This can happen sincek= 1
+
+=== PAGE BREAK ===
+
+16
+is away from largekfor which ˜αwas derived.
+[68] Here,ζ ′(z) is the derivative of the Riemann zeta function.
+[69] W. Buijsman, T. L. M. Lezama, T. Leiser, and L. F.
+Santos, Phys. Rev. E106, 054144 (2022).
+[70] E. Carro, L. Benet, and I. P´ erez Castillo, Journal of
+Statistical Mechanics: Theory and Experiment2023,
+043201 (2023).
+[71] J. ˇSuntajs, J. Bonˇ ca, T. Prosen, and L. Vidmar, Phys.
+Rev. E102, 062144 (2020), arXiv:1905.06345 [cond-
+mat.str-el].

@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 122,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1211",
+      "anchor_type": "data_provenance",
+      "name": "betti_fisher",
+      "script_path": "session-70/s70_betti_fisher.py",
+      "session": "s70",
+      "inputs": "",
+      "outputs": "session-70/s70_betti_fisher.npz, session-70/s70_betti_fisher.png",
+      "source_file": "computations/session-70/s70_betti_fisher.py",
+      "source_context_30_lines": "  739: ax.set_title(f'Schematic Persistence Diagram (R = {R_plot})', fontsize=11)\n  740: ax.legend(fontsize=8, loc='upper left')\n  741: ax.set_xlim(-4, 4)\n  742: ax.set_ylim(-4, 4)\n  743: ax.grid(True, alpha=0.3)\n  744: \n  745: plt.tight_layout()\n  746: outdir = os.path.dirname(os.path.abspath(__file__))\n  747: plt.savefig(os.path.join(outdir, 's70_betti_fisher.png'), dpi=150, bbox_inches='tight')\n  748: print(f\"\\nPlot saved: {os.path.join(outdir, 's70_betti_fisher.png')}\")\n  749: \n  750: # ============================================================================\n  751: #  Section 8: Gate Verdict and Summary\n  752: # ============================================================================\n  753: \n  754: print(\"\\n\" + \"=\" * 72)\n  755: print(\"  GATE VERDICT: BETTI-FISHER-70\")"
+    },
+    {
+      "anchor_id": "prov_1212",
+      "anchor_type": "data_provenance",
+      "name": "bulk_flow",
+      "script_path": "session-70/s70_bulk_flow.py",
+      "session": "s70",
+      "inputs": "",
+      "outputs": "session-70/s70_bulk_flow.npz, session-70/s70_bulk_flow.png",
+      "source_file": "computations/session-70/s70_bulk_flow.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s70_bulk_flow.py -- BULK-FLOW-70: Bulk Flow Amplitude at FW Cosmology\n    4: =====================================================================\n    5: Gate: BULK-FLOW-70\n    6:   INFO: Report V_bulk(R) for FW and LCDM\n    7: \n    8: Physics:\n    9:   The 3D RMS bulk flow within a sphere of radius R is:\n   10:     <|V|^2> = (H_0 f)^2 / (2*pi^2) * integral_0^infty P(k) * |W(kR)|^2 dk\n   11:   where W(x) = 3*(sin(x) - x*cos(x))/x^3 is the top-hat window function,"
+    },
+    {
+      "anchor_id": "prov_1213",
+      "anchor_type": "data_provenance",
+      "name": "cavity_bcs_horizon",
+      "script_path": "session-70/s70_cavity_bcs_horizon.py",
+      "session": "s70",
+      "inputs": "",
+      "outputs": "session-70/s70_cavity_bcs_horizon.npz, session-70/s70_cavity_bcs_horizon.png",
+      "source_file": "computations/session-70/s70_cavity_bcs_horizon.py",
+      "source_context_30_lines": "  742: # ============================================================================\n  743: #  SECTION 11: Save data\n  744: # ============================================================================\n  745: \n  746: print(\"\\n\" + \"=\" * 72)\n  747: print(\"SECTION 11: Saving outputs\")\n  748: print(\"=\" * 72)\n  749: \n  750: outpath = os.path.join(data_dir, 's70_cavity_bcs_horizon.npz')\n  751: \n  752: save_dict = {\n  753:     # Grid data\n  754:     'tau_fine': tau_fine,\n  755:     'eta_fine': eta_fine,\n  756:     'k_grid': k_grid,\n  757:     'k_tach_fold': np.float64(k_tach_fold),\n  758:     'k_transit': np.float64(k_transit),"
+    },
+    {
+      "anchor_id": "prov_1214",
+      "anchor_type": "data_provenance",
+      "name": "chirp_penumbra",
+      "script_path": "session-70/s70_chirp_penumbra.py",
+      "session": "s70",
+      "inputs": "",
+      "outputs": "session-70/s70_chirp_penumbra.npz, session-70/s70_chirp_penumbra.png",
+      "source_file": "computations/session-70/s70_chirp_penumbra.py",
+      "source_context_30_lines": "  644:     print(f\"    {n_multi} modes show multiple crossings (possible parametric resonance).\")\n  645: else:\n  646:     print(f\"    No multiple crossings => single-pass chirp, no parametric resonance.\")\n  647: \n  648: # ============================================================================\n  649: #  SECTION 10: Save data\n  650: # ============================================================================\n  651: \n  652: outpath = os.path.join(os.path.dirname(__file__), 's70_chirp_penumbra.npz')\n  653: np.savez(\n  654:     outpath,\n  655:     # Tachyonic boundary\n  656:     tau_fine=tau_fine,\n  657:     eta_fine=eta_fine,\n  658:     k_tach_tau=k_tach_tau,\n  659:     dk_tach_dtau=dk_tach_dtau,\n  660:     dk_tach_dt=dk_tach_dt,"
+    },
+    {
+      "anchor_id": "prov_1215",
+      "anchor_type": "data_provenance",
+      "name": "class_isw",
+      "script_path": "session-70/s70_class_isw.py",
+      "session": "s70",
+      "inputs": "",
+      "outputs": "session-70/s70_class_isw.npz, session-70/s70_class_isw.png",
+      "source_file": "computations/session-70/s70_class_isw.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s70_class_isw.py — Full Boltzmann ISW with c_s^2_DE = 0\n    4: ========================================================\n    5: \n    6: Session 70, Gate: CLASS-ISW-70\n    7: Carry-forward: Mack, VdD (2/9 reviewers)\n    8: \n    9: Computes the ISW effect using a full Boltzmann hierarchy (CAMB 1.6.6)\n   10: with c_s^2_DE = 0 (the tracking vacuum prediction derived in Q-SOUND-70 PASS).\n   11: "
+    },
+    {
+      "anchor_id": "prov_1216",
+      "anchor_type": "data_provenance",
+      "name": "consistency_fi_map",
+      "script_path": "session-70/s70_consistency_fi_map.py",
+      "session": "s70",
+      "inputs": "s69_transit_consistency.npz, s66_zeta_sa.npz, s70_non_pert_sa.npz",
+      "outputs": "session-70/s70_consistency_fi_map.npz",
+      "source_file": "computations/session-70/s70_consistency_fi_map.py",
+      "source_context_30_lines": "  749: print(f\"\\n  Gate: CONSISTENCY-FI-MAP-70\")\n  750: print(f\"  Verdict: {verdict}\")\n  751: print(f\"  Detail: {detail}\")\n  752: \n  753: # ==============================================================================\n  754: # SECTION 8: Save Results\n  755: # ==============================================================================\n  756: \n  757: np.savez('s70_consistency_fi_map.npz',\n  758:     # Gate\n  759:     gate_name='CONSISTENCY-FI-MAP-70',\n  760:     gate_verdict=verdict,\n  761:     gate_detail=detail,\n  762: \n  763:     # CR-1 classification\n  764:     CR1_name='alpha_s = 0 (Bogoliubov saturation)',\n  765:     CR1_classification=CR1_classification,"
+    },
+    {
+      "anchor_id": "prov_1217",
+      "anchor_type": "data_provenance",
+      "name": "desi_dr3_update",
+      "script_path": "session-70/s70_desi_dr3_update.py",
+      "session": "s70",
+      "inputs": "",
+      "outputs": "session-70/s70_desi_dr3_update.npz, session-70/s70_desi_dr3_update.png",
+      "source_file": "computations/session-70/s70_desi_dr3_update.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s70_desi_dr3_update.py -- DESI-DR3-UPDATE-70: Decision Tree Update with S69-S70 Results\n    4: ========================================================================================\n    5: Gate: DESI-DR3-UPDATE-70\n    6:   INFO: Updated decision tree and discriminating power forecast.\n    7: \n    8: Physics:\n    9:   The S68 DESI DR3 forecast computed Fisher-matrix exclusion significance\n   10:   for the framework (w_0 = -0.918, w_a = 0) under three pre-registered\n   11:   scenarios (A: confirms DR2, B: toward LCDM, C: more dynamical DE)."
+    },
+    {
+      "anchor_id": "prov_1218",
+      "anchor_type": "data_provenance",
+      "name": "discrete_berry_dennis",
+      "script_path": "session-70/s70_discrete_berry_dennis.py",
+      "session": "s70",
+      "inputs": "",
+      "outputs": "session-70/s70_discrete_berry_dennis.npz, session-70/s70_discrete_berry_dennis.png",
+      "source_file": "computations/session-70/s70_discrete_berry_dennis.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s70_discrete_berry_dennis.py -- Bucher Test 5: Berry-Dennis on Discrete Graphs\n    4: ================================================================================\n    5: \n    6: Gate: DISCRETE-BERRY-DENNIS-70\n    7:     PASS:  chi^2/ndof < 3 on CG(24) for the discrete Berry-Dennis distribution\n    8:     FAIL:  No well-defined discrete limit exists for N_vertices < 100\n    9:     INFO:  Discrete limit exists but requires N > 24 for convergence\n   10: \n   11: Physics:"
+    },
+    {
+      "anchor_id": "prov_1219",
+      "anchor_type": "data_provenance",
+      "name": "dm_pair_decay",
+      "script_path": "session-70/s70_dm_pair_decay.py",
+      "session": "s70",
+      "inputs": "",
+      "outputs": "session-70/s70_dm_pair_decay.npz",
+      "source_file": "computations/session-70/s70_dm_pair_decay.py",
+      "source_context_30_lines": "   23: \n   24: Gate: DM-PAIR-DECAY-70\n   25:     PASS: Gamma_L * t_universe < sigma_FIRAS (stable against FIRAS)\n   26:     FAIL: Gamma_L * t_universe > 1 (decays within age of universe)\n   27:     INFO: intermediate (detectable by PIXIE but not FIRAS)\n   28: \n   29: Input: computations/session-67/s67_leggett_grav_decay.npz\n   30:        computations/_shared/canonical_constants.py\n   31: Output: computations/session-70/s70_dm_pair_decay.npz\n   32:         Working paper Section W5-A\n   33: \"\"\"\n   34: \n   35: import sys\n   36: import os\n   37: import numpy as np\n   38: \n   39: # Ensure canonical_constants is importable"
+    },
+    {
+      "anchor_id": "prov_1220",
+      "anchor_type": "data_provenance",
+      "name": "epsh_alpha_sensitivity",
+      "script_path": "session-70/s70_epsh_alpha_sensitivity.py",
+      "session": "s70",
+      "inputs": "",
+      "outputs": "session-70/s70_epsh_alpha_sensitivity.npz, session-70/s70_epsh_alpha_sensitivity.png",
+      "source_file": "computations/session-70/s70_epsh_alpha_sensitivity.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s70_epsh_alpha_sensitivity.py -- EPSH-ALPHA-SENSITIVITY-70\n    4: ==========================================================\n    5: \n    6: Gate: EPSH-ALPHA-SENSITIVITY-70\n    7:   INFO: Report d(eps_H)/d(alpha) and sensitivity classification\n    8:   Robust if |d(eps_H)/d(alpha)| < 0.01 at fold\n    9:   Sensitive if |d(eps_H)/d(alpha)| > 0.1 at fold\n   10: \n   11: Physics:"
+    }
+  ]
+}

@@ -377,12 +377,12 @@ This is arguably more valuable than the original beta/alpha computation. Session
 ### IX.4 Existing Infrastructure
 
 All fiber geometry is computed and stored:
-- `tier0-computation/r20a_riemann_tensor.npz`: Full Riemann tensor, 147/147 verified
-- `tier0-computation/s23c_fiber_integrals.npz`: a_4_geom, rho_needed, all curvature invariants
-- `tier0-computation/s23c_fiber_integrals_final.py`: Clean computation script
-- `tier0-computation/s23c_fiber_integrals.py`: Detailed derivation with all intermediate steps
-- `tier0-computation/s22d_rolling_modulus.py`: FR potential implementation (Session 22d)
-- `tier0-computation/gauge_coupling_derivation.py`: g_1/g_2 = e^{-2tau} derivation
+- `computations/r20a_riemann_tensor.npz`: Full Riemann tensor, 147/147 verified
+- `computations/s23c_fiber_integrals.npz`: a_4_geom, rho_needed, all curvature invariants
+- `computations/s23c_fiber_integrals_final.py`: Clean computation script
+- `computations/s23c_fiber_integrals.py`: Detailed derivation with all intermediate steps
+- `computations/s22d_rolling_modulus.py`: FR potential implementation (Session 22d)
+- `computations/gauge_coupling_derivation.py`: g_1/g_2 = e^{-2tau} derivation
 
 ---
 
@@ -455,23 +455,23 @@ The combination 500*R_K^2 - 32*|Ric_K|^2 - 28*K_K for the Dirac Laplacian on 8D 
 
 | File | Producer | Content |
 |:-----|:---------|:--------|
-| `tier0-computation/s23c_fiber_integrals.py` | kk-2 | Detailed derivation with all intermediate steps |
-| `tier0-computation/s23c_fiber_integrals_final.py` | kk-2 | Clean computation script |
-| `tier0-computation/s23c_fiber_integrals.npz` | kk-2 | All fiber integral results (tau, R_scalar, Ric_sq, K, omega_sq, a4_geom, rho_needed) |
-| `tier0-computation/s23c_f_dependence.py` | kk-2 | Three-scenario f-dependence analysis |
-| `tier0-computation/s23c_scenario_c_closure.py` | kk-2 | Numerical proof: \|omega_3\|^2 not in submersion formula (5 tests) |
-| `tier0-computation/s23c_moment_mapping.py` | kk-2 | 12D->4D moment mapping (partially superseded by 2x2 analysis) |
-| `tier0-computation/s23c_2x2_moment_system.py` | kk-2 | **FINAL** corrected analysis: hierarchy argument closes A3 |
-| `tier0-computation/s23c_AC_normalization.py` | kk-2 | (15/2) normalization resolution + convention-independent A/C formulation |
+| `computations/s23c_fiber_integrals.py` | kk-2 | Detailed derivation with all intermediate steps |
+| `computations/s23c_fiber_integrals_final.py` | kk-2 | Clean computation script |
+| `computations/s23c_fiber_integrals.npz` | kk-2 | All fiber integral results (tau, R_scalar, Ric_sq, K, omega_sq, a4_geom, rho_needed) |
+| `computations/s23c_f_dependence.py` | kk-2 | Three-scenario f-dependence analysis |
+| `computations/s23c_scenario_c_closure.py` | kk-2 | Numerical proof: \|omega_3\|^2 not in submersion formula (5 tests) |
+| `computations/s23c_moment_mapping.py` | kk-2 | 12D->4D moment mapping (partially superseded by 2x2 analysis) |
+| `computations/s23c_2x2_moment_system.py` | kk-2 | **FINAL** corrected analysis: hierarchy argument closes A3 |
+| `computations/s23c_AC_normalization.py` | kk-2 | (15/2) normalization resolution + convention-independent A/C formulation |
 | `sessions/archive/session-23/session-23c-synthesis.md` | coord + kk-2 | This document (kk-2 completed after coord crash) |
 
 ### Input Files Referenced
 
 | File | Role |
 |:-----|:-----|
-| `tier0-computation/r20a_riemann_tensor.npz` | Riemann tensor data (147/147 verified, Session 20a) |
-| `tier0-computation/s22d_rolling_modulus.py` | FR potential implementation (beta_flux = 0.02233) |
-| `tier0-computation/gauge_coupling_derivation.py` | g_1/g_2 = e^{-2tau} derivation (Session 17a) |
+| `computations/r20a_riemann_tensor.npz` | Riemann tensor data (147/147 verified, Session 20a) |
+| `computations/s22d_rolling_modulus.py` | FR potential implementation (beta_flux = 0.02233) |
+| `computations/gauge_coupling_derivation.py` | g_1/g_2 = e^{-2tau} derivation (Session 17a) |
 | `sessions/archive/session-23/session-23a-synthesis.md` | K-1e decisive closure |
 | `sessions/archive/session-23/session-23b-synthesis.md` | P2a/P2b separation, 23c trigger |
 | `sessions/archive/session-22/session-22-master-synthesis.md` | FR potential, beta/alpha = 0.28 fitted |

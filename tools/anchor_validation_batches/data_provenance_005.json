@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 5,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_41",
+      "anchor_type": "data_provenance",
+      "name": "gb_debug3",
+      "script_path": "session-21/s21c_gb_debug3.py",
+      "session": "s21c",
+      "inputs": "C:/sandbox/Ainulindale Exflation/computations/_shared/r20a_riemann_tensor.npz",
+      "outputs": "",
+      "source_file": "computations/session-21/s21c_gb_debug3.py",
+      "source_context_30_lines": "<name 'gb_debug3' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: Debug part 3: The partition pairing issue.\n    3: The partition sum formula pairs k-th pair of partition_i with k-th pair of partition_j.\n    4: But the full epsilon*epsilon*RRRR contraction has the pairs of the a-indices and c-indices\n    5: independently determined. The issue is whether pair k of the a-partition should always\n    6: contract with pair k of the c-partition (position-matched) or whether all pairings\n    7: should be independent.\n    8: \n    9: In the full sum:\n   10: S = sum_{sigma_a, sigma_c in S_{2n}} sgn(sigma_a) sgn(sigma_c)\n   11:     * R_{sigma_a(0)sigma_a(1), sigma_c(0)sigma_c(1)} * ... * R_{sigma_a(2n-2)sigma_a(2n-1), sigma_c(2n-2)sigma_c(2n-1)}\n   12: \n   13: The k-th R factor takes its first index pair from positions (2k, 2k+1) of sigma_a\n   14: and its second index pair from positions (2k, 2k+1) of sigma_c.\n   15: The position k is FIXED — it's not summed over. So the pairing IS position-matched.\n   16: \n   17: BUT: when we decompose sigma_a into (partition, pair-ordering, within-pair swaps),\n   18: the pair-ordering part REORDERS which pair goes in which position.\n   19: Similarly for sigma_c.\n   20: \n   21: For partition_a with pairs (P_a[0], P_a[1], ..., P_a[n-1]) and pair-ordering tau_a in S_n:\n   22: sigma_a puts P_a[tau_a(0)] in positions (0,1), P_a[tau_a(1)] in positions (2,3), etc.\n   23: \n   24: Similarly sigma_c puts P_c[tau_c(0)] in positions (0,1), etc.\n   25: \n   26: So: prod_k R_{P_a[tau_a(k)], P_c[tau_c(k)]}\n   27: \n   28: The full sum over all sigma_a, sigma_c decomposes as:\n   29: S = sum_{P_a, P_c} sum_{tau_a, tau_c in S_n} sum_{flips}\n   30:     sgn(P_a)*sgn(tau_a)*sgn_flips * sgn(P_c)*sgn(tau_c)*sgn_flips"
+    },
+    {
+      "anchor_id": "prov_42",
+      "anchor_type": "data_provenance",
+      "name": "gb_debug4",
+      "script_path": "session-21/s21c_gb_debug4.py",
+      "session": "s21c",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-21/s21c_gb_debug4.py",
+      "source_context_30_lines": "<name 'gb_debug4' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: Debug part 4: The curvature 2-form Pfaffian.\n    3: \n    4: The curvature 2-form is: Omega^a_b = (1/2) R^a_{bcd} e^c ^ e^d\n    5: In ON frame: R^a_{bcd} = delta^{ae} R_{ebcd} = R_{abcd}.\n    6: BUT: the Pfaffian of a skew-symmetric matrix involves the matrix structure Omega^a_b,\n    7: NOT Omega_{ab}. The key distinction:\n    8: - Omega^a_b: first index up, second down. Antisymmetric?\n    9:   R^a_{bcd} is NOT antisymmetric in (a,b) — it's antisymmetric in (c,d) only.\n   10:   But the curvature of a metric connection has R_{abcd} antisymmetric in (a,b) AND (c,d).\n   11:   So R^a_{bcd} = R_{abcd} in ON frame, which IS antisymmetric in (a,b).\n   12:   But Omega^a_b = (1/2) R^a_{bcd} e^c^e^d with the MATRIX indices being (a,b).\n   13:   The antisymmetry R_{abcd} = -R_{bacd} means R^a_b = -R^b_a, so Omega^a_b = -Omega^b_a.\n   14:   Good: the matrix is antisymmetric.\n   15: \n   16: But wait: the SIGN CONVENTION matters.\n   17: Our stored tensor has Ric = R_{cabc} (= -R_standard contracted).\n   18: This means R_stored = -R_Wald.\n   19: The curvature 2-form with our convention: Omega_stored = -Omega_Wald.\n   20: Pf(-Omega) = (-1)^n Pf(Omega) where n = dim/2 = 4.\n   21: (-1)^4 = +1. So Pf(Omega_stored) = Pf(Omega_Wald).\n   22: The Euler density is unchanged. OK so sign is not the issue.\n   23: \n   24: Let me try a completely different approach: compute the Euler characteristic of SU(3)\n   25: directly from the structure constants, using the known formula for Lie groups.\n   26: \n   27: For a compact Lie group G:\n   28: chi(G) = 0 if dim(G) > 0.\n   29: \n   30: This follows because G has a nowhere-zero left-invariant vector field."
+    },
+    {
+      "anchor_id": "prov_43",
+      "anchor_type": "data_provenance",
+      "name": "gb_debug5",
+      "script_path": "session-21/s21c_gb_debug5.py",
+      "session": "s21c",
+      "inputs": "C:/sandbox/Ainulindale Exflation/computations/_shared/r20a_riemann_tensor.npz",
+      "outputs": "",
+      "source_file": "computations/session-21/s21c_gb_debug5.py",
+      "source_context_30_lines": "<name 'gb_debug5' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: Session 21c P0-5: Gauss-Bonnet DEFINITIVE DEBUG\n    3: \n    4: The core problem: both \"diagonal\" and \"det-based\" partition sums give nonzero\n    5: values for round SU(3), but chi(SU(3)) = 0 requires the Euler density to vanish.\n    6: \n    7: Strategy:\n    8: 1. Build the analytic Riemann tensor from SU(3) structure constants (tau=0).\n    9: 2. Verify it matches stored data to machine epsilon (or find the discrepancy).\n   10: 3. Compute the Euler density using the BRUTE FORCE epsilon contraction\n   11:    (no pair-partition decomposition — just raw epsilon_{a1...a8} * epsilon_{c1...c8} * R*R*R*R).\n   12: 4. Cross-check on S^4 (4D sphere) where chi=2 is known and the formula is simpler.\n   13: 5. Cross-check on S^8 (8D sphere).\n   14: \n   15: If the brute-force epsilon contraction gives zero for analytic SU(3), the pair-partition\n   16: formula is wrong. If it gives nonzero, something deeper is wrong.\n   17: \"\"\"\n   18: \n   19: import numpy as np\n   20: from itertools import permutations\n   21: \n   22: print(\"=\" * 70)\n   23: print(\"Session 21c P0-5: Gauss-Bonnet DEFINITIVE DEBUG\")\n   24: print(\"=\" * 70)\n   25: \n   26: # =====================================================================\n   27: # PART 1: Analytic Riemann tensor for round SU(3)\n   28: # =====================================================================\n   29: \n   30: # SU(3) structure constants (standard Gell-Mann basis, 0-indexed = i-1)"
+    },
+    {
+      "anchor_id": "prov_44",
+      "anchor_type": "data_provenance",
+      "name": "gb_debug6",
+      "script_path": "session-21/s21c_gb_debug6.py",
+      "session": "s21c",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-21/s21c_gb_debug6.py",
+      "source_context_30_lines": "    1: \"\"\"\n    2: S21C-GB-DEBUG6: Brute-force Gauss-Bonnet via double-epsilon contraction.\n    3: \n    4: Rerun of computations/session-21/s21c_gb_debug6.py with canonical constants import\n    5: and local-variable tagging (S81 T3 form).\n    6: \n    7: Goal: verify chi(SU(3)) = 0 via direct Levi-Civita contraction\n    8:     S = eps_A * eps_B * R_{A1 B1} * R_{A2 B2} * R_{A3 B3} * R_{A4 B4}\n    9: on analytic SU(3), U(1)xSU(2), S^4, S^8 plus the stored Riemann tensor at tau=0.\n   10: \n   11: Canonical direction: Poincare-Hopf asserts chi(G) = 0 for any compact Lie group\n   12: of rank r >= 1 (nonvanishing vector field exists via left-invariant generators)."
+    },
+    {
+      "anchor_id": "prov_45",
+      "anchor_type": "data_provenance",
+      "name": "gb_debug6_legacy",
+      "script_path": "session-21/s21c_gb_debug6_legacy.py",
+      "session": "s21c",
+      "inputs": "C:/sandbox/Ainulindale Exflation/computations/_shared/r20a_riemann_tensor.npz",
+      "outputs": "",
+      "source_file": "computations/session-21/s21c_gb_debug6_legacy.py",
+      "source_context_30_lines": "<name 'gb_debug6_legacy' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: Session 21c P0-5: Gauss-Bonnet BRUTE FORCE via epsilon tensor contraction.\n    3: \n    4: The pair-partition formula gives nonzero Euler density for ANALYTIC round SU(3),\n    5: which must be wrong (chi(SU(3)) = 0). The 4D cross-checks pass perfectly.\n    6: \n    7: This script computes the double-epsilon contraction DIRECTLY using numpy's\n    8: Levi-Civita symbol and einsum, avoiding the pair-partition decomposition entirely.\n    9: \n   10: The Euler density in dim=2n is proportional to:\n   11: E = eps^{a_1...a_{2n}} eps^{b_1...b_{2n}} * R_{a1 a2 b1 b2} * ... * R_{a_{2n-1} a_{2n} b_{2n-1} b_{2n}}  # (local)\n   12: \n   13: We compute this for:\n   14: - S^4 (dim=4, chi=2) -- quick cross-check\n   15: - U(1) x SU(2) (dim=4, chi=0) -- Lie group check\n   16: - Analytic SU(3) (dim=8, chi=0) -- THE test\n   17: \"\"\"\n   18: \n   19: import numpy as np\n   20: \n   21: print(\"=\" * 70)\n   22: print(\"BRUTE FORCE EULER DENSITY VIA EPSILON TENSOR\")\n   23: print(\"=\" * 70)\n   24: \n   25: # =====================================================================\n   26: # Build Levi-Civita symbols\n   27: # =====================================================================\n   28: \n   29: def levi_civita(n):\n   30:     \"\"\"Build the n-dimensional Levi-Civita symbol as a numpy array.\"\"\""
+    },
+    {
+      "anchor_id": "prov_46",
+      "anchor_type": "data_provenance",
+      "name": "gb_final",
+      "script_path": "session-21/s21c_gb_final.py",
+      "session": "s21c",
+      "inputs": "C:/sandbox/Ainulindale Exflation/computations/_shared/r20a_riemann_tensor.npz",
+      "outputs": "",
+      "source_file": "computations/session-21/s21c_gb_final.py",
+      "source_context_30_lines": "<name 'gb_final' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: Session 21c P0-5: Gauss-Bonnet Topological Check — FINAL COMPUTATION\n    3: \n    4: Computes the 8D Euler density E_8(tau) at all 21 tau values using the\n    5: brute-force double-epsilon tensor contraction (no pair-partition decomposition).\n    6: \n    7: The previous pair-partition formula was INCORRECT for SU(3) — it gave nonzero\n    8: results due to a combinatorial error in handling cross-pair contractions.\n    9: The brute-force method is exact and confirmed by:\n   10: - S^4: chi = 2 (correct)\n   11: - S^8: chi = 2 (correct)\n   12: - U(1) x SU(2): chi = 0 (correct)\n   13: - Analytic SU(3): S = 0 to machine epsilon (correct)\n   14: \"\"\"\n   15: \n   16: import numpy as np\n   17: import time\n   18: \n   19: print(\"=\" * 70)\n   20: print(\"Session 21c P0-5: Gauss-Bonnet Topological Check\")\n   21: print(\"=\" * 70)\n   22: print(f\"Date: 2026-02-19\")\n   23: print(f\"Method: Brute-force double-epsilon contraction\")\n   24: \n   25: # Build 8D Levi-Civita symbol\n   26: def levi_civita(n):\n   27:     from itertools import permutations\n   28:     eps = np.zeros([n] * n, dtype=np.float64)\n   29:     identity = list(range(n))\n   30:     for perm in permutations(identity):"
+    },
+    {
+      "anchor_id": "prov_47",
+      "anchor_type": "data_provenance",
+      "name": "kk_verify",
+      "script_path": "session-21/s21c_kk_verify.py",
+      "session": "s21c",
+      "inputs": "computations/session-19/s19a_sweep_data.npz",
+      "outputs": "",
+      "source_file": "computations/session-21/s21c_kk_verify.py",
+      "source_context_30_lines": "<name 'kk_verify' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"Quick verification of branching, T''(0), delta_T, S_signed for Stage 1 assessment.\"\"\"\n    3: \n    4: import numpy as np\n    5: from collections import defaultdict\n    6: \n    7: # ========== SU(3) weight enumeration ==========\n    8: def su3_weights(p, q):\n    9:     pos_roots = [(2, -1), (-1, 2), (1, 1)]\n   10:     def inner(mu, nu):\n   11:         return (2*mu[0]*nu[0] + mu[0]*nu[1] + mu[1]*nu[0] + 2*mu[1]*nu[1]) / 3.0\n   12: \n   13:     all_weights = {}\n   14:     visited = set()\n   15:     queue = [(p, q)]\n   16:     visited.add((p, q))\n   17: \n   18:     while queue:\n   19:         m1, m2 = queue.pop(0)\n   20:         all_weights[(m1, m2)] = 0\n   21:         for alpha in [(2, -1), (-1, 2)]:\n   22:             new = (m1 - alpha[0], m2 - alpha[1])\n   23:             if new not in visited:\n   24:                 a_num = q - new[1] - 2*new[0] + 2*p\n   25:                 if a_num % 3 == 0:\n   26:                     a = a_num // 3\n   27:                     b = new[0] - p + 2*a\n   28:                     if a >= 0 and b >= 0:\n   29:                         visited.add(new)\n   30:                         queue.append(new)"
+    },
+    {
+      "anchor_id": "prov_48",
+      "anchor_type": "data_provenance",
+      "name": "neutrino_fine_grid",
+      "script_path": "session-21/s21c_neutrino_fine_grid.py",
+      "session": "s21c",
+      "inputs": "",
+      "outputs": "session-21/s21c_neutrino_fine_grid.npz",
+      "source_file": "computations/session-21/s21c_neutrino_fine_grid.py",
+      "source_context_30_lines": "   15:   - Compute R(tau)\n   16:   - Check convergence at max_pq_sum = 7 and 8\n   17: \n   18: Constraint Gates:\n   19:   PASS: R_max > 32.6\n   20:   SOFT MISS: R_max in [30, 32.6]\n   21:   HARD CLOSED: R_max < 30\n   22: \n   23: Output: s21c_neutrino_fine_grid.npz, s21c_neutrino_R.png\n   24: \"\"\"\n   25: \n   26: import sys\n   27: import os\n   28: import time\n   29: import numpy as np\n   30: import matplotlib.pyplot as plt\n   31: "
+    },
+    {
+      "anchor_id": "prov_49",
+      "anchor_type": "data_provenance",
+      "name": "T_double_prime",
+      "script_path": "session-21/s21c_T_double_prime.py",
+      "session": "s21c",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-21/s21c_T_double_prime.py",
+      "source_context_30_lines": "  382: \n  383:     print(\"\\n=== ALL VERIFICATIONS PASSED ===\")\n  384: \n  385: \n  386: # ============================================================\n  387: # PART 3: T''(0) COMPUTATION\n  388: # ============================================================\n  389: \n  390: def compute_T_double_prime(branching, data_file='computations/session-19/s19a_sweep_data.npz'):\n  391:     \"\"\"\n  392:     Compute T''(0) = (1/64pi^2) Sum_n Delta_b(n) * [d^2 lambda_n/dtau^2 * (1/lambda_n) - (d lambda_n/dtau)^2 * (1/lambda_n^2)] at tau=0\n  393: \n  394:     Uses forward 2nd-order finite differences from the 21-point tau grid (dtau = 0.1).\n  395:     \"\"\"\n  396:     print(\"\\n\" + \"=\"*60)\n  397:     print(\"P0-2: T''(0) SIGN GATE COMPUTATION\")\n  398:     print(\"=\"*60)"
+    },
+    {
+      "anchor_id": "prov_50",
+      "anchor_type": "data_provenance",
+      "name": "V_IR",
+      "script_path": "session-21/s21c_V_IR.py",
+      "session": "s21c",
+      "inputs": "",
+      "outputs": "session-21/s21c_V_IR.npz, session-21/s21c_V_IR.png",
+      "source_file": "computations/session-21/s21c_V_IR.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: Session 21c P0-1: V_IR(tau) for p+q <= 2 — THE DECISIVE TEST\n    4: \n    5: Computes the low-mode Casimir energy V_IR(tau) = E_bos(tau) - E_ferm(tau)\n    6: using eigenvalues with p+q <= 2, as a function of the Jensen deformation parameter tau.\n    7: \n    8: The constant-ratio trap locks the full-spectrum F/B ratio at 0.55.\n    9: This computation tests whether the LOWEST modes escape that trap.\n   10: \n   11: Data sources:"
+    }
+  ]
+}

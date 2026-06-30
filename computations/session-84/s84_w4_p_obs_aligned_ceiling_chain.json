@@ -1,0 +1,109 @@
+{
+  "DAG_edges": [
+    {
+      "from": "7/9",
+      "label": "A1: DERIV-I (\u2227 DERIV-II)",
+      "to": "8/9"
+    },
+    {
+      "from": "7/9",
+      "label": "A2: TAU-CROSS-SCALE",
+      "to": "8/9"
+    },
+    {
+      "from": "8/9",
+      "label": "B1: TRANSFER-FUNCTION-74",
+      "to": "9/9"
+    },
+    {
+      "from": "8/9",
+      "label": "B2: ALPHA-S-CMB-S4-PROJECTION-REFINEMENT",
+      "to": "9/9"
+    }
+  ],
+  "baseline": {
+    "P_obs_aligned": 0.777777777778,
+    "denominator": 9,
+    "fail_channels": [
+      "sin^2_theta_W",
+      "alpha_s"
+    ],
+    "numerator": 7,
+    "pass_channels": [
+      "n_s",
+      "r",
+      "m_H",
+      "N_eff",
+      "w_0",
+      "f_NL",
+      "A_s"
+    ],
+    "s83_verdict": "S83-P-OBS-ALIGNED-UPDATE-LOGIC PASS"
+  },
+  "chain_logic": {
+    "step_1_definition": "Transition m/9 -> (m+1)/9 requires at least one trigger-gate PASS re-classifying one FAIL channel to PASS; verdicts are permanent.",
+    "step_2_substitution": "A1/A2 disjunctive for sin^2_theta_W; B1/B2 disjunctive for alpha_s.",
+    "step_3_simplification": "Minimum PASS-set size for 7/9 -> 9/9 = |(A1 OR A2)| + |(B1 OR B2)| = 1 + 1 = 2. Upper bound on dependency edges = 4.",
+    "step_4_direction": "Monotone non-decreasing (gate-verdicts rule: 'Verdicts are permanent'). Ceiling CANNOT un-lift."
+  },
+  "classification": "NON-PHONONIC",
+  "current_state": {
+    "P_obs_aligned": 0.777777777778,
+    "denominator": 9,
+    "n_FAIL": 2,
+    "n_INFO": 0,
+    "n_PASS": 7,
+    "numerator": 7
+  },
+  "freeze_policy": "Single-authority pre-registration (2026-04-18); no re-registration on partial PASS. The DAG is frozen; downstream verdict appends may only cite it, not modify it.",
+  "gate_id": "S84-P-OBS-ALIGNED-CEILING",
+  "registration_date": "2026-04-18",
+  "sequential_pre_registration_note": "Ceilings MAY lift INDIVIDUALLY before the chain completes. I.e., if A1 lands PASS in S85 and B1/B2 remain open, P_obs_aligned moves 7/9 -> 8/9 as a standalone registry event. The ceiling-lift is NOT gated on chain completion. Chain completion = 9/9 is the terminal state, but intermediate lifts are independently registerable and cite THIS registry entry for their DAG position.",
+  "sha": "0f8cb99b1f7a90d04a2b0957832c3e8bdd47ef2b634ff306cbd9184c2930f54e",
+  "triggers_to_8_9": [
+    {
+      "conjunction_note": "A1 reads as (DERIV-I AND DERIV-II); together they discharge the two cited obligations from W1b-4 PASS. Either alone is insufficient under W1b-4 audit semantics (plan L784).",
+      "conjunction_with": [
+        "S84-DERIV-II"
+      ],
+      "evidence_column_lift": "ZFP (ZERO-FREE-PARAMETER) count in W4-48 rigor registry gains +1 row [sin^2_theta_W] if A1 PASSES: the Weinberg angle becomes derivable from Jensen-SU(3) spectral dimension + rep-theoretic block structure, with zero tunable input beyond tau_fold (already pinned by M_KK -> m_H PASS).",
+      "gate_id": "S84-DERIV-I",
+      "label": "A1",
+      "mechanism": "Cube-3 override via spectral dimension d_spec(s) = Tr(|D_K|^{-s}) -> 3 at fiber-transition scale on Jensen-SU(3). Geometric pin for mu_BC = M_Z*sqrt(1 + exp(12*tau_fold)/3) = 188.185 GeV; completes bi-criterion gate W1b-4 Layer-3b ball-volume = coupling-ratio.",
+      "path": "sin^2_theta_W",
+      "session_ref": "S84 W9b-105"
+    },
+    {
+      "conjunction_note": "A2 is an ALTERNATIVE route. Per plan-index L64: 'W9b-107 depends on W9b-105 (DERIV-I) AND W9b-106 (DERIV-II) PASS -- circularity avoidance.' A2 therefore presumes DERIV-I, II dispatched but uses the 2-loop RGE inversion as the observational-pinning mechanism rather than the direct geometric identity.",
+      "conjunction_with": [],
+      "evidence_column_lift": "SCHEME-DEPENDENT (not ZFP) flag in W4-48 rigor registry: sin^2_theta_W PASS via A2 adds +1 row to the SCHEME-DEPENDENT column rather than ZFP, since the pinning uses RGE scheme (2-loop SM + Yukawa). Directionally improves the narrative but does NOT strengthen the ZFP headline count.",
+      "gate_id": "S84-TAU-CROSS-SCALE",
+      "label": "A2",
+      "mechanism": "d(sin^2_theta_W(M_Z))/d tau_fold from 2-loop SM RGE+Yukawa. PDG inversion pins tau_fold indirectly. ONLY VALID AFTER DERIV-I AND DERIV-II are dispatched + scoped (plan-index circularity-avoidance note).",
+      "path": "sin^2_theta_W",
+      "session_ref": "S84 W9b-107"
+    }
+  ],
+  "triggers_to_9_9": [
+    {
+      "conjunction_note": "B1 is standalone. A PASS resolves N1 EVOI + S73B TRANSIT-PS FAIL (alpha_s = +0.833) simultaneously. The S75 W1-A 'alpha_s = 0, n_s = 1.000' result is INFO pending Planck-1-sigma distance check; if that check lands PASS in S85+, B1 PASSES.",
+      "conjunction_with": [],
+      "evidence_column_lift": "ZFP (ZERO-FREE-PARAMETER) count in W4-48 rigor registry gains +1 row [alpha_s] if B1 PASSES: alpha_s is then derived from the multifield delta-N Sasaki-Stewart transfer function with zero tunable input (composition of BCS-mode overlaps and horizon-crossing tau). Adds a second CMB observable to the ZFP column alongside n_s, r.",
+      "gate_id": "N1-TRANSFER-FUNCTION-74",
+      "label": "B1",
+      "mechanism": "k-dependent multifield delta-N transfer function from fiber P(k) to CMB P(k). PASS gate: |alpha_s(k_CMB)| < 0.015 AND n_s(k_CMB) in [0.9607, 0.9691] (Planck 1-sigma; S74 plan L204). Currently INFO at alpha_s = 8.4e-15 (machine-zero from multifield delta-N; n_s = 1.000 degenerate) -- the INFO class reflects the L=7 cell degeneracy that S78 W1-A had not cleared.",
+      "path": "alpha_s",
+      "session_ref": "S74 W1-A (carry-forward; EVOI rank 1)"
+    },
+    {
+      "conjunction_note": "B2 is standalone and TEMPORALLY DOWNSTREAM of B1. B1 is a COMPUTATION (multifield transfer); B2 is a PROJECTION refinement (detector-side forecast update). They are independent channels.",
+      "conjunction_with": [],
+      "evidence_column_lift": "DETECTOR-STERILE -> DETECTOR-ACTIVE flag flip in W4-48 rigor registry: alpha_s moves from DETECTOR-STERILE (too noisy under pre-S4 forecast) to DETECTOR-ACTIVE if B2 PASSES. Does NOT add a ZFP row (projection is observational-side, not derivation-side), but removes alpha_s from the STERILE column.",
+      "gate_id": "S84-ALPHA-S-CMB-S4-PROJECTION-REFINEMENT",
+      "label": "B2",
+      "mechanism": "Forecast tightening: CMB-S4 sigma(alpha_s) ~ 0.002 against Abazajian 2022+ projections. The framework alpha_s_pred = -0.068968 (S84-ALPHA-S-PRE-REGISTRATION) becomes falsifiable at ~30-sigma under CMB-S4 full-mission; if projection tightens by ~5x and falls within 3-sigma of framework value, alpha_s is re-classified PASS under the S72 observational convention.",
+      "path": "alpha_s",
+      "session_ref": "S84 #52 (post-W4 carry-forward, projection update)"
+    }
+  ]
+}

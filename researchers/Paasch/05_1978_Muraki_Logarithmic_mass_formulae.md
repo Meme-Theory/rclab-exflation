@@ -162,7 +162,7 @@ the phonon-exflation framework because:
 
 1. The Jensen TT-deformation of SU(3) has EXPONENTIAL scale factors ($e^{2s}$, $e^{-2s}$,
    $e^s$) -- precisely the kind of structure that could generate geometric mass ratios
-2. The Tier 1 Dirac spectrum computation found phi_paasch ($\phi_P = 1.53158$) appearing at specific
+2. The Level 1 Dirac spectrum computation found phi_paasch ($\phi_P = 1.53158$) appearing at specific
    deformation parameters, suggesting that "special" algebraic numbers CAN emerge from the
    geometry
 3. If $V_{\text{eff}}(s)$ selects a specific deformation parameter $s_0$, the eigenvalue

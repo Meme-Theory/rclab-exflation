@@ -441,9 +441,9 @@ Pope lecture notes: full pedagogical treatment including CY, AdS/CFT, moduli.
 
 | Paper | Key Formula | Verified In Project? | Reference |
 |:------|:-----------|:---------------------|:----------|
-| 06 (Kerner) | R(bundle) = K(base) - (1/4)F^2 | YES (Baptista 13-18, Session 17b: 67/67 checks) | tier0-computation/ |
+| 06 (Kerner) | R(bundle) = K(base) - (1/4)F^2 | YES (Baptista 13-18, Session 17b: 67/67 checks) | computations/_shared/ |
 | 10 (FR) | R_AdS/R_K = -8/7 | YES (Session 33: beta/alpha critical ratio 0.31292) | s33w3_modulus_equation.py |
-| 14 (DNP) | m_n = sqrt(n(n+6))/rho on S7 | PARTIAL (SU(3) spectrum computed, not S7) | tier1_dirac_spectrum.py |
+| 14 (DNP) | m_n = sqrt(n(n+6))/rho on S7 | PARTIAL (SU(3) spectrum computed, not S7) | dirac_spectrum.py |
 | 03 (Klein) | m_n = n/R | YES (implicit in all KK tower computations) | multiple scripts |
 | 15 (AC) | V_C ~ -1/rho^4 | INDIRECT (Casimir computed in Session 19d, constant-ratio trap) | s19d_casimir.py |
 | 13 (Witten) | Bubble instanton action on SU(3) | NOT COMPUTED | pipeline priority 4 |

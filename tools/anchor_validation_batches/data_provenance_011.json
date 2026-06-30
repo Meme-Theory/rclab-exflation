@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 11,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_101",
+      "anchor_type": "data_provenance",
+      "name": "sp_results",
+      "script_path": "session-25/s25_sp_results.py",
+      "session": "s25",
+      "inputs": "computations/_shared/r20a_riemann_tensor.npz, computations/session-23/s23c_fiber_integrals.npz, computations/session-25/...",
+      "outputs": "session-25/s25_sp_results.npz",
+      "source_file": "computations/session-25/s25_sp_results.py",
+      "source_context_30_lines": "  886: for key, val in results.items():\n  887:     print(f\"{key}: {val['name']}\")\n  888:     print(f\"  Status: {val['status']}\")\n  889:     print(f\"  Result: {val['result']}\")\n  890:     print(f\"  Impact: {val['impact']}\")\n  891:     print()\n  892: \n  893: # Save results\n  894: np.savez('computations/session-25/s25_sp_results.npz',\n  895:     tau_21=tau_21,\n  896:     tau_9=tau_9,\n  897:     Weyl_sq=Weyl_sq,\n  898:     Ric0_sq=Ric0_sq,\n  899:     Weyl_K_ratio=Weyl_K_ratio,\n  900:     a4_Weyl=a4_Weyl,\n  901:     a4_Ricci=a4_Ricci,\n  902:     a4_total_check=a4_total_check,"
+    },
+    {
+      "anchor_id": "prov_102",
+      "anchor_type": "data_provenance",
+      "name": "baptista_bridge",
+      "script_path": "session-26/s26_baptista_bridge.py",
+      "session": "s26",
+      "inputs": "",
+      "outputs": "session-26/s26_baptista_bridge.npz, session-26/s26_baptista_bridge.png",
+      "source_file": "computations/session-26/s26_baptista_bridge.py",
+      "source_context_30_lines": " 1063: # =====================================================================\n 1064: # SAVE NUMERICAL RESULTS\n 1065: # =====================================================================\n 1066: \n 1067: print(\"\\n\" + \"=\" * 74)\n 1068: print(\"SAVING RESULTS\")\n 1069: print(\"=\" * 74)\n 1070: \n 1071: np.savez(f\"{base}/s26_baptista_bridge.npz\",\n 1072:     # Grid data\n 1073:     tau_23c=tau_23c,\n 1074:     tau_fine=tau_fine,\n 1075: \n 1076:     # Scalar curvature\n 1077:     R_scalar=R_scalar,\n 1078:     R_K_fine=R_K_fine,\n 1079:     NORM_FACTOR=np.array(NORM_FACTOR),"
+    },
+    {
+      "anchor_id": "prov_103",
+      "anchor_type": "data_provenance",
+      "name": "multimode_bcs",
+      "script_path": "session-26/s26_multimode_bcs.py",
+      "session": "s26",
+      "inputs": "",
+      "outputs": "session-26/s26_multimode_bcs.npz, session-26/s26_multimode_bcs.png",
+      "source_file": "computations/session-26/s26_multimode_bcs.py",
+      "source_context_30_lines": "  705: \n  706:     return jac_evals, stable\n  707: \n  708: \n  709: # ===========================================================================\n  710: # MAIN COMPUTATION\n  711: # ===========================================================================\n  712: \n  713: def run_multimode_bcs():\n  714:     \"\"\"Main computation: multi-mode BCS gap equation with quality gates.\"\"\"\n  715: \n  716:     t_start_global = time.time()\n  717: \n  718:     print(\"=\" * 80)\n  719:     print(\"SESSION 26 — PRIORITY 1: MULTI-MODE BCS GAP EQUATION\")\n  720:     print(\"=\" * 80)\n  721:     print()"
+    },
+    {
+      "anchor_id": "prov_104",
+      "anchor_type": "data_provenance",
+      "name": "p2_cooling_trajectory",
+      "script_path": "session-26/s26_p2_cooling_trajectory.py",
+      "session": "s26",
+      "inputs": "",
+      "outputs": "session-26/s26_p2_cooling_trajectory.npz, session-26/s26_p2_cooling_trajectory.png",
+      "source_file": "computations/session-26/s26_p2_cooling_trajectory.py",
+      "source_context_30_lines": "    1: \"\"\"\n    2: re-run: Session 26 Priority 2 -- Coupled Cooling-Trajectory ODE System\n    3: ========================================================================\n    4: \n    5: Gate: S26-P2-COOLING-TRAJECTORY\n    6: Parent: computations/session-26/s26_p2_cooling_trajectory.py (original author: gen-physicist, 2026-02-25)\n    7: \n    8: T3 changes from parent:\n    9:   - `from canonical_constants import *` (was hardcoded G_TT=5.0)\n   10:   - G_TT replaced by G_DeWitt (canonical, S42 s42_gradient_stiffness)\n   11:   - `# (local)` tags on all intermediate / scan / threshold variables\n   12:   - First-20-line stdout SHA-256 log for every input\n   13:   - Final closure SHA-256 emission and S81 canonical verdict line\n   14: "
+    },
+    {
+      "anchor_id": "prov_105",
+      "anchor_type": "data_provenance",
+      "name": "p2_cooling_trajectory_legacy",
+      "script_path": "session-26/s26_p2_cooling_trajectory_legacy.py",
+      "session": "s26",
+      "inputs": "",
+      "outputs": "session-26/s26_p2_cooling_trajectory_legacy.npz, session-26/s26_p2_cooling_trajectory_legacy.png",
+      "source_file": "computations/session-26/s26_p2_cooling_trajectory_legacy.py",
+      "source_context_30_lines": "<name 'p2_cooling_trajectory_legacy' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: Session 26 Priority 2: Coupled Cooling-Trajectory ODE System\n    3: =============================================================\n    4: \n    5: Modulus (tau) + chemical potential (mu) dynamics in FRW background.\n    6: \n    7: KEY PHYSICS INSIGHT: The modulus tau settles under V_spec + Hubble damping\n    8: on a timescale t_roll ~ O(1), while mu dilutes to the BCS window on a timescale\n    9: t_dil ~ (mu_0 / lmin)^2 >> 1. By the time mu enters the window, tau has long\n   10: settled near its V_spec equilibrium. The ODE integration confirms this.\n   11: \n   12: STRATEGY:\n   13:   Phase A: Integrate tau dynamics under V_spec alone (no BCS). Use hard floor\n   14:            at tau=0 via clipping (not a stiff wall). Determine tau_settled.\n   15:   Phase B: At tau_settled, sweep mu through the BCS window using a simple\n   16:            adiabatic analysis: at each r = mu/lmin(tau), evaluate V_eff and\n   17:            check for lock (dV_eff/dtau = 0 with d^2V_eff/dtau^2 > 0).\n   18:            NOTE: Phase B is DIAGNOSTIC ONLY. The adiabatic lock points are\n   19:            static equilibria that may not be dynamically accessible. The\n   20:            verdict is determined solely by the ODE integration (Phase C).\n   21:   Phase C: Full 3-variable ODE with relaxed tolerances and max_step control.\n   22: \n   23: SCANS: mu_0, tau_i, pi_i, H_0, T/T_c.\n   24: \n   25: VERDICT LOGIC (v2, corrected):\n   26:   The verdict is determined ONLY by dynamic ODE integration results.\n   27:   Adiabatic lock points are reported as diagnostics, not gates.\n   28:   A \"lock\" requires: tau settled near a fixed point with |pi| < threshold\n   29:   AND inside the BCS condensation window for a sustained period.\n   30:   Transient sign changes during tau ringing do NOT count as locks."
+    },
+    {
+      "anchor_id": "prov_106",
+      "anchor_type": "data_provenance",
+      "name": "p3_a6_computation",
+      "script_path": "session-26/s26_p3_a6_computation.py",
+      "session": "s26",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-26/s26_p3_a6_computation.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s26_p3_a6_computation.py\n    4: Session 26 Priority 3: Seeley-DeWitt a_6 on Jensen-deformed SU(3)\n    5: \n    6: Computes the sixth heat kernel coefficient a_6(tau) for the Dirac Laplacian\n    7: D_K^2 on (SU(3), g_tau) at 21 tau values, then assembles the three-term\n    8: spectral action potential\n    9: \n   10:     V_spec^(6)(tau) = c_2 * a_2^{red}(tau) + c_4 * a_4^{red}(tau) + c_6 * a_6^{red}(tau)\n   11: "
+    },
+    {
+      "anchor_id": "prov_107",
+      "anchor_type": "data_provenance",
+      "name": "torsion_diagnostics",
+      "script_path": "session-26/s26_torsion_diagnostics.py",
+      "session": "s26",
+      "inputs": "",
+      "outputs": "session-26/s26_torsion_diagnostics.npz",
+      "source_file": "computations/session-26/s26_torsion_diagnostics.py",
+      "source_context_30_lines": "  677:                 print(f\"    RESONANCE in ({p},{q}) at t={t_min:.4f}: \"\n  678:                       f\"min|eval| = {val_min:.6f}\")\n  679:     if not any_resonance:\n  680:         print(f\"    No resonance found in any sector.\")\n  681: \n  682:     # =========================================================================\n  683:     # SAVE\n  684:     # =========================================================================\n  685:     save_path = os.path.join(OUTDIR, 's26_torsion_diagnostics.npz')\n  686:     np.savez(save_path,\n  687:              tau_dense=tau_dense,\n  688:              T0_norm2=results_1['T0_norm2'],\n  689:              T3_norm2=results_1['T3_norm2'],\n  690:              Trest_norm2=results_1['Trest_norm2'],\n  691:              decomp_ratios=ratios,\n  692:              T3_norms=T3_norms,\n  693:              Trest_norms=Trest_norms,"
+    },
+    {
+      "anchor_id": "prov_108",
+      "anchor_type": "data_provenance",
+      "name": "torsion_resonance_detail",
+      "script_path": "session-26/s26_torsion_resonance_detail.py",
+      "session": "s26",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-26/s26_torsion_resonance_detail.py",
+      "source_context_30_lines": "<name 'torsion_resonance_detail' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: Session 26: Detailed contorsion resonance analysis.\n    3: \n    4: The main script flagged \"non-monotone\" behavior in sectors (1,0), (0,1), (1,1).\n    5: But the minimum gap was at t=1.0 (Schouten), not at an intermediate t.\n    6: This suggests the gap has a local increase somewhere before decreasing to its final value.\n    7: \n    8: Let us examine this in detail: plot ALL eigenvalues (not just the gap) as functions of t,\n    9: and check whether any avoided crossing creates a local gap minimum at intermediate t.\n   10: \n   11: Author: Tesla-Resonance\n   12: Date: 2026-02-22\n   13: \"\"\"\n   14: \n   15: import numpy as np\n   16: import matplotlib\n   17: matplotlib.use('Agg')\n   18: import matplotlib.pyplot as plt\n   19: import sys\n   20: import os\n   21: \n   22: sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__))))\n   23: \n   24: from dirac_spectrum import (\n   25:     su3_generators, compute_structure_constants, compute_killing_form,\n   26:     jensen_metric, orthonormal_frame, frame_structure_constants,\n   27:     connection_coefficients, spinor_connection_offset,\n   28:     build_cliff8, dirac_operator_on_irrep, get_irrep\n   29: )\n   30: "
+    },
+    {
+      "anchor_id": "prov_109",
+      "anchor_type": "data_provenance",
+      "name": "multisector_bcs",
+      "script_path": "session-27/s27_multisector_bcs.py",
+      "session": "s27",
+      "inputs": "",
+      "outputs": "session-27/s27_multisector_bcs.npz, session-27/s27_multisector_bcs.png",
+      "source_file": "computations/session-27/s27_multisector_bcs.py",
+      "source_context_30_lines": "  883:         \"Delta_max\": Delta_max_all,\n  884:         \"F_cond\": F_cond_all,\n  885:         \"F_total\": F_total,\n  886:         \"lambda_min\": lambda_min_all,\n  887:         \"V_diag_sum\": V_diag_sum_all,\n  888:         \"verdict\": np.array([verdict]),\n  889:     })\n  890: \n  891:     npz_path = os.path.join(SCRIPT_DIR, \"s27_multisector_bcs.npz\")\n  892:     np.savez_compressed(npz_path, **npz_data)\n  893:     print(f\"\\nData saved: {npz_path}\")\n  894: \n  895:     # -----------------------------------------------------------------------\n  896:     # Plot\n  897:     # -----------------------------------------------------------------------\n  898:     results = {\n  899:         \"M_max\": M_max_all,"
+    },
+    {
+      "anchor_id": "prov_110",
+      "anchor_type": "data_provenance",
+      "name": "torsion_gap_gate",
+      "script_path": "session-27/s27_torsion_gap_gate.py",
+      "session": "s27",
+      "inputs": "",
+      "outputs": "session-27/s27_torsion_gap_gate.npz, session-27/s27_torsion_gap_gate.png",
+      "source_file": "computations/session-27/s27_torsion_gap_gate.py",
+      "source_context_30_lines": "  166:     mags = np.abs(evals.imag)\n  167:     return np.min(mags) if len(mags) > 0 else 0.0\n  168: \n  169: \n  170: # =============================================================================\n  171: # MAIN GATE COMPUTATION\n  172: # =============================================================================\n  173: \n  174: def run_torsion_gap_gate():\n  175:     \"\"\"\n  176:     Execute the T-1 Torsion Gap Gate computation.\n  177: \n  178:     Sweeps tau in [0, 0.50] across 21 values, computes gap_K and gap_T\n  179:     for 4 sectors, performs 3 cross-checks, renders verdict.\n  180:     \"\"\"\n  181:     print(\"=\" * 72)\n  182:     print(\"SESSION 27 PRIORITY 1: T-1 TORSION GAP GATE\")"
+    }
+  ]
+}

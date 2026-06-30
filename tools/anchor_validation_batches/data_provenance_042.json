@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 42,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_411",
+      "anchor_type": "data_provenance",
+      "name": "kretschner",
+      "script_path": "session-45/s45_kretschner.py",
+      "session": "s45",
+      "inputs": "",
+      "outputs": "session-45/s45_kretschner.npz",
+      "source_file": "computations/session-45/s45_kretschner.py",
+      "source_context_30_lines": "  830:     # SAVE\n  831:     # =================================================================\n  832: \n  833:     print(\"\\n\" + \"=\" * 78)\n  834:     print(\"  SAVING DATA\")\n  835:     print(\"=\" * 78)\n  836: \n  837:     out_file = os.path.join(os.path.dirname(os.path.abspath(__file__)),\n  838:                             's45_kretschner.npz')\n  839: \n  840:     # Build tau sweep for dense output\n  841:     tau_sweep = np.array(tau_values)\n  842:     K_sweep = np.array([K_exact(t) for t in tau_values])\n  843:     R_sweep = np.array([R_scalar_exact(t) for t in tau_values])\n  844:     Ric2_sweep = np.array([Ric2_exact(t) for t in tau_values])\n  845:     Weyl2_sweep = np.array([Weyl2_from_bianchi(t) for t in tau_values])\n  846: "
+    },
+    {
+      "anchor_id": "prov_412",
+      "anchor_type": "data_provenance",
+      "name": "kz_ns",
+      "script_path": "session-45/s45_kz_ns.py",
+      "session": "s45",
+      "inputs": "",
+      "outputs": "session-45/s45_kz_ns.npz, session-45/s45_kz_ns.png",
+      "source_file": "computations/session-45/s45_kz_ns.py",
+      "source_context_30_lines": "   41:     xi_BCS, xi_GL, a0_fold, a2_fold, a4_fold,\n   42:     A_s_CMB, Omega_r, H_0_GeV, M_Pl_reduced,\n   43:     PI, Vol_SU3_Haar, N_dof_BCS,\n   44:     rho_Lambda_obs, Omega_m, Omega_Lambda,\n   45:     Mpc_to_m, hbar_c_GeV_m, c_light,\n   46: )\n   47: \n   48: DATA_DIR = Path(__file__).parent\n   49: OUT_PREFIX = \"s45_kz_ns\"\n   50: \n   51: # ---------------------------------------------------------------------------\n   52: # SECTION 1: Load eigenvalue data\n   53: # ---------------------------------------------------------------------------\n   54: print(\"=\" * 78)\n   55: print(\"KZ-NS-45: Kibble-Zurek Bogoliubov Spectrum for n_s\")\n   56: print(\"=\" * 78)\n   57: "
+    },
+    {
+      "anchor_id": "prov_413",
+      "anchor_type": "data_provenance",
+      "name": "kz_ns_crosscheck",
+      "script_path": "session-45/s45_kz_ns_crosscheck.py",
+      "session": "s45",
+      "inputs": "s44_dos_tau.npz",
+      "outputs": "session-45/s45_kz_ns_crosscheck.npz",
+      "source_file": "computations/session-45/s45_kz_ns_crosscheck.py",
+      "source_context_30_lines": "  824: # =============================================================================\n  825: # SECTION 11: Save Results\n  826: # =============================================================================\n  827: \n  828: print(\"\\n\" + \"=\" * 78)\n  829: print(\"SECTION 11: Saving Results\")\n  830: print(\"=\" * 78)\n  831: \n  832: np.savez('s45_kz_ns_crosscheck.npz',\n  833:     # Eigenvalue data\n  834:     lambda_in=lambda_in,\n  835:     lambda_out=lambda_out,\n  836:     dim2=dim2,\n  837:     N_modes=N_modes,\n  838:     N_weighted=N_weighted,\n  839: \n  840:     # Bogoliubov coefficients"
+    },
+    {
+      "anchor_id": "prov_414",
+      "anchor_type": "data_provenance",
+      "name": "kz_ns_kmap",
+      "script_path": "session-45/s45_kz_ns_kmap.py",
+      "session": "s45",
+      "inputs": "s44_dos_tau.npz, s44_eih_grav.npz, s45_kz_ns.npz",
+      "outputs": "session-45/s45_kz_ns_kmap.npz, session-45/s45_kz_ns_kmap.png",
+      "source_file": "computations/session-45/s45_kz_ns_kmap.py",
+      "source_context_30_lines": "  862: ax.set_title('(d) Per-Mode EIH Power by Representation')\n  863: ax.legend(fontsize=6, ncol=2)\n  864: \n  865: fig.suptitle(f'KZ-NS-KMAP-45: EIH Perturbation k-Mapping\\n'\n  866:              f'$n_s = {ns_eu:.4f}$, $R^2 = {r2_eu:.4f}$, '\n  867:              f'Verdict: {verdict}',\n  868:              fontsize=12, fontweight='bold')\n  869: plt.tight_layout()\n  870: plt.savefig('s45_kz_ns_kmap.png', dpi=150, bbox_inches='tight')\n  871: print(\"Plot saved: s45_kz_ns_kmap.png\")\n  872: \n  873: # =============================================================================\n  874: # SECTION 14: SAVE RESULTS\n  875: # =============================================================================\n  876: \n  877: print(\"\\n\" + \"=\" * 78)\n  878: print(\"SECTION 14: Saving Results\")"
+    },
+    {
+      "anchor_id": "prov_415",
+      "anchor_type": "data_provenance",
+      "name": "lk_relax",
+      "script_path": "session-45/s45_lk_relax.py",
+      "session": "s45",
+      "inputs": "",
+      "outputs": "session-45/s45_lk_relax.npz, session-45/s45_lk_relax.png",
+      "source_file": "computations/session-45/s45_lk_relax.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s45_lk_relax.py — Landau-Khalatnikov Relaxation Dynamics (LK-RELAX-45)\n    4: ========================================================================\n    5: \n    6: Gate: LK-RELAX-45\n    7:   PASS: N_e > 10 during dwell (sufficient for observable signature)\n    8:   FAIL: N_e < 0.1\n    9:   INFO: N_e in [0.1, 10]\n   10: \n   11: Physics:"
+    },
+    {
+      "anchor_id": "prov_416",
+      "anchor_type": "data_provenance",
+      "name": "mkk_tension",
+      "script_path": "session-45/s45_mkk_tension.py",
+      "session": "s45",
+      "inputs": "",
+      "outputs": "session-45/s45_mkk_tension.npz, session-45/s45_mkk_tension.png",
+      "source_file": "computations/session-45/s45_mkk_tension.py",
+      "source_context_30_lines": " 1354:     'sin2_thetaW_fold': sin2_W_baptista,\n 1355: \n 1356:     # Gate\n 1357:     'gate_name': np.array(['MKK-TENSION-45']),\n 1358:     'gate_status': np.array([gate_status]),\n 1359:     'gate_criterion': np.array(['tension < 0.2 decades']),\n 1360: }\n 1361: \n 1362: outpath = DATA_DIR / 's45_mkk_tension.npz'\n 1363: np.savez(outpath, **save_dict)\n 1364: print(f\"Saved: {outpath}\")\n 1365: \n 1366: # ============================================================================\n 1367: #  PLOTTING\n 1368: # ============================================================================\n 1369: fig, axes = plt.subplots(2, 2, figsize=(14, 10))\n 1370: fig.suptitle('MKK-TENSION-45: Definitive M_KK Tension Audit',"
+    },
+    {
+      "anchor_id": "prov_417",
+      "anchor_type": "data_provenance",
+      "name": "occ_spectral",
+      "script_path": "session-45/s45_occ_spectral.py",
+      "session": "s45",
+      "inputs": "",
+      "outputs": "session-45/s45_occ_spectral.npz, session-45/s45_occ_spectral.png",
+      "source_file": "computations/session-45/s45_occ_spectral.py",
+      "source_context_30_lines": "  907:         save_dict[f\"{prefix}_has_min\"] = np.array([res['has_minimum']])\n  908:         if res['tau_min'] is not None:\n  909:             save_dict[f\"{prefix}_tau_min\"] = np.array([res['tau_min']])\n  910:         if res['barrier'] is not None:\n  911:             save_dict[f\"{prefix}_barrier\"] = np.array([res['barrier']])\n  912:         if res['barrier_frac'] is not None:\n  913:             save_dict[f\"{prefix}_barrier_frac\"] = np.array([res['barrier_frac']])\n  914: \n  915:     npz_path = os.path.join(data_dir, \"s45_occ_spectral.npz\")\n  916:     np.savez(npz_path, **save_dict)\n  917:     print(f\"  Saved: {npz_path}\")\n  918: \n  919:     # ==============================================================================\n  920:     # SECTION 17: Plot\n  921:     # ==============================================================================\n  922: \n  923:     print(\"\\n[13] Generating plots...\")"
+    },
+    {
+      "anchor_id": "prov_418",
+      "anchor_type": "data_provenance",
+      "name": "occ_spectral_crosscheck",
+      "script_path": "session-45/s45_occ_spectral_crosscheck.py",
+      "session": "s45",
+      "inputs": "",
+      "outputs": "session-45/s45_occ_spectral_crosscheck.npz",
+      "source_file": "computations/session-45/s45_occ_spectral_crosscheck.py",
+      "source_context_30_lines": "  545:     'anchor_taus': np.array([0.00, 0.10, 0.19, 0.25, 0.50]),\n  546:     'available_taus': dos_taus,\n  547:     'n_B2_variation_pct': n_B2_variation,\n  548:     'session': 'S45',\n  549:     'agent': 'nazarewicz-nuclear-structure-theorist',\n  550:     'gate': 'W1-1x OCC-SPEC cross-check',\n  551: }\n  552: \n  553: np.savez(SCRIPT_DIR / \"s45_occ_spectral_crosscheck.npz\", **save_dict)\n  554: print(\"  Saved: computations/session-45/s45_occ_spectral_crosscheck.npz\")\n  555: \n  556: # ==============================================================================\n  557: # SECTION 10: Overall verdict\n  558: # ==============================================================================\n  559: \n  560: max_n = np.max(n_mc)\n  561: print(f\"\\n{'='*78}\")"
+    },
+    {
+      "anchor_id": "prov_419",
+      "anchor_type": "data_provenance",
+      "name": "occ_spectral_landau",
+      "script_path": "session-45/s45_occ_spectral_landau.py",
+      "session": "s45",
+      "inputs": "",
+      "outputs": "session-45/s45_occ_spectral_landau.npz, session-45/s45_occ_spectral_landau.png",
+      "source_file": "computations/session-45/s45_occ_spectral_landau.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s45_occ_spectral_landau.py — Landau Free Energy for Tau-Stabilization (OCC-SPEC-45-LANDAU)\n    4: ==========================================================================================\n    5: \n    6: FRESH computation of the total Landau free energy F_total(tau) = F_geo(tau) + F_BCS(tau).\n    7: \n    8: The physical framing:\n    9:    F_total(tau, Delta) = F_geometric(tau) + F_BCS(tau, Delta(tau))\n   10: \n   11: where:"
+    },
+    {
+      "anchor_id": "prov_420",
+      "anchor_type": "data_provenance",
+      "name": "occupied_cyclic",
+      "script_path": "session-45/s45_occupied_cyclic.py",
+      "session": "s45",
+      "inputs": "",
+      "outputs": "session-45/s45_occupied_cyclic.npz, session-45/s45_occupied_cyclic.png",
+      "source_file": "computations/session-45/s45_occupied_cyclic.py",
+      "source_context_30_lines": "   37: \n   38:     The key question is: does n_F make the pairing matrix SINGULAR?\n   39: \n   40: Inputs:\n   41:     - s42_hauser_feshbach.npz (SU(3) spectrum at fold)\n   42:     - canonical_constants.py (tau_fold, E_cond, Delta_pair)\n   43: \n   44: Output:\n   45:     - s45_occupied_cyclic.npz\n   46:     - s45_occupied_cyclic.png\n   47: \"\"\"\n   48: \n   49: import sys\n   50: import os\n   51: sys.path.insert(0, os.path.dirname(__file__))\n   52: import numpy as np\n   53: from scipy import linalg"
+    }
+  ]
+}

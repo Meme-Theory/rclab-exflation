@@ -20,9 +20,9 @@ Parse `$ARGUMENTS` to extract:
    - A discipline: "Neutrino Detection Specialist", "Lattice QCD Expert"
    - A hybrid: "Penrose-style twistor theorist", "Bohr complementarity analyst"
    - **Multiple researchers**: "Landau and Connes", "Noether, Witten, Meitner" -- process EACH as a separate researcher (see Multi-Researcher Mode below)
-2. **--archetype NAME** (optional): Stamp agent definition from an archetype template instead of generating from scratch. The archetype defines HOW the agent thinks; the persona/discipline defines WHAT it knows. Valid names: skeptic, principalist, calculator, dreamer, boundary-guard, workhorse, observer, bridge, generalist, formatter.
-3. **--papers N** (optional, default 14): Number of papers to fetch
-4. **--color COLOR** (optional): Agent color for the UI (e.g., crimson, teal, amber). Auto-assigned if omitted.
+2. **--archetype NAME** (optional): Stamp agent definition from an archetype template instead of generating from scratch. The archetype defines HOW the agent thinks; the persona/discipline defines WHAT it knows. Valid names are the `.md` files in `.claude/agent-templates/` (without extension).
+3. **--papers N** (optional, default 15, minimum 15): Number of papers to fetch. Values below 15 are bumped to 15 — this is a hard floor, not a target.
+4. **--color COLOR** (optional): Agent color for the UI. ONLY these 8 values are valid: red, blue, green, yellow, purple, orange, pink, cyan. Auto-assigned if omitted.
 
 If `$ARGUMENTS` is `--help`, show this usage summary and stop:
 ```
@@ -38,8 +38,8 @@ If `$ARGUMENTS` is blank, ask the user for a researcher/discipline.
 
 When multiple researchers are specified (detected by "and", commas, or multiple names):
 1. Parse into separate researcher specs (each inherits any shared flags like --papers)
-2. Run Steps 0-1 for ALL researchers in PARALLEL (one web-researcher per researcher)
-3. Steps 2-4 (agent definitions, memory dirs, AGENTS.md) can also run in parallel
+2. Run Step 0 (collision checks) for ALL researchers in parallel. For Step 1, the session agent (Opus) runs Step 1b–1c searches+downloads directly via the paper-search MCP. Step 1d transcription subagents from ALL researchers batch together at <= 8 concurrent (per `feedback_dispatch-discipline.md`).
+3. Steps 2-4 (agent definitions, memory dirs, AGENTS.md) can run in parallel with Step 1d transcription batches.
 4. Report all researchers in a combined final report
 
 ## Naming Convention
@@ -74,53 +74,114 @@ Before doing anything:
 2. Check if `.claude/agents/{slug}.md` already exists
 3. If EITHER exists, warn the user and ask whether to overwrite or abort
 
-## Step 1: Paper Research & Generation (DELEGATED to web-researcher)
+## Step 1: Paper Search & Transcription (session-agent search -> per-paper Opus transcribers)
 
-**DO NOT do this yourself.** Spawn a `web-researcher` agent (haiku model, fast and cheap) to handle the entire search + paper-writing pipeline.
+**The session agent (you, on Opus) does the search + downloads yourself via the paper-search MCP. Per-paper transcription is delegated to ONE Opus subagent per paper. NEVER delegate the search or transcription to haiku/sonnet — token conservation here bricks the corpus. See `feedback_max-effort-full-fidelity.md`.**
 
-First, read the project's root `CLAUDE.md` to extract:
+If the paper-search MCP tools aren't already loaded into this session, load them first:
+
+```
+ToolSearch(query: "select:mcp__paper-search__search_arxiv,mcp__paper-search__download_arxiv,mcp__paper-search__search_biorxiv,mcp__paper-search__download_biorxiv,mcp__paper-search__search_pubmed,mcp__paper-search__download_pubmed,mcp__paper-search__search_google_scholar", max_results: 10)
+```
+
+### Step 1a — Domain extraction
+
+Read the project's root `CLAUDE.md` to extract:
 - **Project domain** (e.g., "computational biology", "algebraic topology")
 - **Central research question** (if stated)
 - **Key technical context** (methods, frameworks, tools being used)
 
-For EACH researcher, use the Agent tool:
+### Step 1b — Search & shortlist (session agent, paper-search MCP)
+
+For each researcher, search the relevant corpora directly:
+- `mcp__paper-search__search_arxiv` — physics, math, CS, quantitative biology
+- `mcp__paper-search__search_biorxiv` / `mcp__paper-search__search_medrxiv` — life-sciences preprints
+- `mcp__paper-search__search_pubmed` — biomedical
+- `mcp__paper-search__search_google_scholar` — cross-domain fallback
+
+Run MULTIPLE queries per researcher. Don't settle for the first batch:
+1. `"{DisplayName}"` — direct author search
+2. `"{DisplayName}" {project-keywords}` — narrow to project-relevant work
+3. `{discipline} {project-domain-keywords}` — for discipline-based agents
+4. `"{DisplayName}" review` — surveys / lecture notes for breadth
+
+**Shortlist >= 15 papers per researcher** (this is a FLOOR, not a target). If `--papers N` was passed with N < 15, bump it to 15. If N >= 15, honor it. Mix:
+- Foundational works defining the researcher's program
+- Project-relevant applications
+- Recent results (last ~5 years) where available
+- One or two review/survey papers for breadth
+
+### Step 1c — Download PDFs (session agent, paper-search MCP)
+
+Create the destination folder:
+
+`mkdir -p "downloads/{FolderName}"`
+
+Download each shortlisted paper to a local PDF path. The `download_*` MCP tools save PDFs to a local directory; capture the returned path for each.
+
+- `mcp__paper-search__download_arxiv` for arXiv
+- `mcp__paper-search__download_biorxiv` / `download_medrxiv` for bioRxiv/medRxiv
+- `mcp__paper-search__download_pubmed` for PubMed
+
+Track the local PDF path for each downloaded paper. If a download fails, find an alternate via `mcp__paper-search__search_google_scholar` OR substitute another paper from the shortlist. Never proceed to transcription with a missing source.
+
+### Step 1d — Per-paper transcription (ONE Opus subagent per paper, parallel batches)
+
+
+After all PDFs are downloaded, spawn ONE Opus subagent per paper. Send them in BATCHES of <= 8 concurrent (per `feedback_dispatch-discipline.md`). Each subagent's whole job is to transcribe ONE paper — never bundle multiple papers into one subagent.
+
+`mkdir -p "researchers/{FolderName}"`
+
+Per-paper dispatch:
 
 ```
 Agent(
-  subagent_type: "web-researcher",
-  model: "haiku",
+  subagent_type: "general-purpose",
+  model: "opus",
   mode: "bypassPermissions",
-  description: "Fetch papers for {DisplayName}",
-  run_in_background: true,  // for multi-researcher mode
+  description: "Transcribe {short-paper-title}",
+  run_in_background: true,  // batched parallel
   prompt: """
-    You are populating a researcher folder with reference papers.
+    Transcribe ONE research paper to a substantive markdown reference document.
 
-    **Researcher**: {DisplayName}
-    **Folder path**: researchers/{FolderName}/
-    **Paper count**: {N}
-    **Project context**: {domain and research question from CLAUDE.md}
+    **Source PDF**: {absolute-path-to-pdf}
+    **Output path**: researchers/{FolderName}/{NN}_{paper-slug}.md
+    **Researcher context**: {DisplayName} — {one sentence on their program}
+    **Project context**: {domain + research question from CLAUDE.md}
 
-    First, create the folder if it doesn't exist:
-    mkdir -p "researchers/{FolderName}"
+    Read the PDF in full. For PDFs exceeding the Read tool's 10-page Windows limit, invoke the `pdf` skill to chunk-read.
 
-    Then follow your standard Phase 1 (search) and Phase 2 (generate) pipeline.
-    Write all {N} papers to the folder path above.
+    Produce a substantive markdown reference covering:
+    - Title, authors, year, venue, full citation
+    - Abstract (verbatim or close paraphrase)
+    - Key results stated precisely — equations preserved verbatim, named theorems quoted
+    - Methods (techniques, frameworks, computational approach)
+    - Definitions of central terms introduced in the paper
+    - Connection to {DisplayName}'s broader program (what this paper does in the arc)
+    - Connection to the project's research question, where there is direct relevance
+    - Open questions or limitations the paper itself names
+
+    150-400 lines target; depth over filler. Precise notation.
+    ASCII-safe characters only (Windows cp1252): use ->, [OK], -- instead of unicode arrows/checkmarks/em dashes.
+
+    Do NOT generic-summarize. The agent that consumes this corpus must be able to cite specific results, methods, and definitions from your transcription.
   """
 )
 ```
 
-**For multi-researcher mode**: spawn ALL web-researchers in a SINGLE message (parallel Agent calls). Then wait for all to complete before proceeding.
+**Multi-researcher mode**: transcription subagents across ALL researchers batch together at <= 8 concurrent. Wait for each batch to complete before launching the next batch. Do NOT roll-dispatch — see `feedback_dispatch-discipline.md`.
 
-**While web-researchers run**: proceed immediately to Steps 2-4 (agent definition, memory, AGENTS.md) since these don't depend on the papers being written.
+**While transcription batches run**: proceed to Steps 2-4 (agent definition, memory, AGENTS.md) — these don't depend on the papers being written.
 
 ### Verification
 
-After the web-researcher completes, verify:
-- All N paper files exist in `researchers/{FolderName}/`
-- Each file is >= 100 lines (flag any that are thin)
-- No placeholder or TODO content
+After every batch completes, verify in each researcher folder:
+- >= 15 paper files exist
+- Each file >= 150 lines (per Rule 2)
+- No placeholder / TODO content
+- Required sections present (abstract, methods, results, connections)
 
-If any papers are missing or thin, either re-run the web-researcher for specific papers or write them yourself.
+If any paper is missing or thin, re-dispatch an Opus transcription subagent for that specific paper. Never write a placeholder yourself; never accept a thin transcription; never re-task a single agent to fix multiple thin transcriptions at once.
 
 ## Step 1.5: Persona Research (if persona-based agent)
 
@@ -194,6 +255,7 @@ model: opus
 color: {chosen-color}
 memory: project
 persona: "{persona name if real researcher, empty if discipline}"
+template: {archetype name, or "workhorse" if freeform}
 ---
 ```
 
@@ -206,7 +268,9 @@ The `description` field is CRITICAL -- it controls when the orchestrator routes 
 
 Stamp from the archetype template with domain overlay:
 
-1. **Section 1 (Identity)**: KEEP the archetype's thinking style verbatim. Add one sentence connecting it to the specific domain. **If a persona is provided**: use the personal block from Step 1.5 to write 2-3 sentences that characterize HOW this person thinks -- their methodology, their signature moves, their intellectual personality. Do NOT just name-drop ("You embody Carl Sagan's approach"). Instead, embed the actual intellectual DNA: what they argue for, how they argue, what makes them distinctive. Include a representative quote if the personal block has one. The reader should be able to identify the persona from the description even if you removed the name.
+1. **Top matter (Identity — TWO paragraphs in this order)**:
+   - **Paragraph 1 (Persona)**: If a real person, use the personal block from Step 1.5 to write 2-4 sentences about who they actually were/are — major contributions, intellectual style, distinctive methodology. This is a factual biographical sketch, not roleplay. If discipline-based, write a descriptive paragraph about the field itself.
+   - **Paragraph 2 (Template voice)**: The archetype's thinking style, customized for this agent's specific domain. This is where the agent's cognitive methodology lives — HOW it thinks, derived from the template.
 
 2. **Section 2 (Research Corpus)**: Point to `researchers/{FolderName}/`. Include the "read at start of engagement" instruction.
 
@@ -216,9 +280,9 @@ Stamp from the archetype template with domain overlay:
 
 5. **Section 5 (Interaction Patterns)**: KEEP from template. Adjust the cross-domain bullet for the specific project context.
 
-6. **Section 6 (Output Standards)**: KEEP from template. Add domain-specific format requirements if needed.
+6. **Section 6 (Output Standards)**: ONLY agent-specific standards. Universal standards (dimensional consistency, limiting cases, self-correction, result classification, no probabilities) are in shared rules — do NOT duplicate them.
 
-7. **Section 7 (Persistent Memory)**: Set path to `.claude/agent-memory/{slug}/`. Customize the "Record" list for the domain.
+7. **Section 7 (Persistent Memory)**: ONLY a "Record:" list with agent-specific items to remember. Universal memory guidelines are in the `agent-standards.md` rule — do NOT duplicate the boilerplate.
 
 **What to PRESERVE from the archetype template:**
 - The thinking style (this IS the agent's identity)
@@ -236,27 +300,29 @@ Stamp from the archetype template with domain overlay:
 
 #### Agent Body -- Freeform Mode (no `--archetype`)
 
-Generate from scratch:
+Freeform defaults to the `workhorse` template structure (set `template: workhorse` in frontmatter). Read `.claude/agent-templates/workhorse.md` for the structural reference. Generate sections following the SAME standard as archetype mode:
 
-1. **Identity paragraph**: "You are **{Display-Name}**, an agent embodying..." **If persona-based**: use the personal block from Step 1.5 to write 3-4 sentences capturing the person's intellectual methodology, distinctive positions, and communication style. Embed specific details -- what they were known for, how they argued, what they valued. A generic "embodies X's approach" is WRONG. The identity paragraph should read like a colleague's description of how this person actually thinks. **If discipline-based**: describe the methodology and intellectual priorities of a top specialist in that field.
+1. **Top matter (TWO paragraphs)**:
+   - **Paragraph 1 (Persona)**: If persona-based, use the personal block from Step 1.5 to write 2-4 factual sentences about the person. If discipline-based, describe the field.
+   - **Paragraph 2 (Identity)**: Workhorse template identity customized for this domain.
 
 2. **Research Corpus**: Point to `researchers/{FolderName}/`.
 
-3. **Core Identity section** (5 numbered principles): The researcher's intellectual methodology, what they value, how they think. **If persona-based**: derive at least 3 of the 5 principles from the personal block's "THINKS BY", "ARGUES FOR", and "VALUES" fields. These should be the ACTUAL intellectual moves this person is known for, not generic methodology.
+3. **Core Methodology** (from workhorse template, customized with domain-specific principles)
 
-4. **Primary Directives** (numbered sections):
+4. **Primary Directives** (from workhorse template):
    - Domain-appropriate rigor standard
-   - Domain Expertise (list all subdomains)
-   - Adversarial Debate Mode
-   - [1-2 unique sections]
+   - Domain Expertise (Core Theory / Advanced Topics / Formal Tools)
+   - Consistency Checking (domain-specific verification)
+   - [1-2 unique domain sections]
 
-5. **Output Standards**: Notation conventions, derivation structure
+5. **Interaction Patterns** (Solo / Team / Adversarial / Cross-domain)
 
-6. **Quality Control**: Domain-appropriate verification methods
+6. **Output Standards**: ONLY agent-specific items. Universal standards are in shared rules.
 
-7. **What You Value Most**: 4 bullets capturing intellectual priorities
+7. **Persistent Memory**: ONLY a "Record:" list with domain-specific items.
 
-8. **Persistent Memory**: Standard section with correct agent slug path.
+Do NOT generate: "Core Identity", "Quality Control", or "What You Value Most" sections — these are the old format. All agents follow the template-based structure.
 
 ## Step 3: Agent Memory Directory
 
@@ -275,6 +341,16 @@ Copy `researchers/agents.md` into the new researcher folder:
 - Write it to `researchers/{FolderName}/AGENTS.md`
 
 This is the generic reading-level guide that all researcher folders share.
+
+## Step 4.5: Update Agent Roster
+
+Add the new agent to `.claude/templates/agent-roster.md` — the canonical name-to-type mapping used by all collab skills. Append a row:
+
+```
+| {short-name} | {slug} | {short-name} |
+```
+
+This ensures `/rclab-coordinate`, `/rclab-review`, and `/rclab-plan` can resolve the new agent by name.
 
 ## Step 5: Report
 
@@ -300,13 +376,13 @@ For multi-researcher mode, combine all researchers into a single report.
 
 ## Rules
 
-1. **Delegate paper fetching to web-researcher.** Do NOT write papers yourself or spawn opus agents for paper generation. The web-researcher (haiku) handles this faster and cheaper.
+1. **Session agent searches; one Opus subagent per paper transcribes.** Never delegate the search or per-paper transcription to haiku/sonnet — token conservation here bricks the corpus. Never bundle multiple papers into one transcription subagent. See `feedback_max-effort-full-fidelity.md`.
 2. **Papers must be substantive.** 150-400 lines each. Verify after web-researcher completes. Agents will READ these as their primary knowledge base. Thin papers = weak agents.
 3. **The agent definition description field controls routing.** Get it right. Test it mentally: "If a user asks about [topic], would this description cause the orchestrator to select this agent?"
 4. **Respect the existing ecosystem.** Don't duplicate coverage of an existing agent's domain. If overlap exists, make the new agent complementary, not redundant.
 5. **Connection to the project's research question is OPTIONAL per paper** but REQUIRED in the agent definition. Every agent should know how their domain connects to the project's central question.
-6. **Color assignment**: Pick a color NOT already used by existing agents. Available: crimson, teal, amber, emerald, coral, indigo, bronze, silver, magenta, cyan, lime, rose, slate, etc.
+6. **Color assignment**: ONLY 8 valid values: red, blue, green, yellow, purple, orange, pink, cyan.
 7. **Windows cp1252 compatibility**: All generated content must use ASCII-safe characters. No unicode arrows, checkmarks, em dashes. Use `->`, `[OK]`, `--` instead.
-8. **Parallel where possible.** Multiple web-researchers run in parallel. Agent definitions can be written while papers are being fetched.
+8. **Parallel where possible.** Per-paper Opus transcription subagents run in parallel (<= 8 concurrent per `feedback_dispatch-discipline.md`). Agent definitions (Steps 2-4) can be written while transcription batches run.
 9. **Do NOT invoke `/indexing`.** The caller is responsible for indexing after this skill completes. This skill creates the agent and its corpus; indexing is a separate step.
 10. **When using `--archetype`, preserve the archetype's methodology.** The archetype defines HOW the agent thinks. The persona/discipline defines WHAT it knows. Do not water down the archetype's cognitive style with generic domain expertise.

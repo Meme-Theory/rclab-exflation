@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 37,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_361",
+      "anchor_type": "data_provenance",
+      "name": "cdm_construct",
+      "script_path": "session-44/s44_cdm_construct.py",
+      "session": "s44",
+      "inputs": "computations/session-42/s42_gge_energy.npz, computations/session-42/s42_hauser_feshbach.npz, computations/session-43/s43...",
+      "outputs": "session-44/s44_cdm_construct.npz, session-44/s44_cdm_construct.png",
+      "source_file": "computations/session-44/s44_cdm_construct.py",
+      "source_context_30_lines": "   15: \n   16: Input:\n   17:   computations/session-42/s42_gge_energy.npz\n   18:   computations/session-42/s42_hauser_feshbach.npz\n   19:   computations/session-43/s43_pair_form_factor.npz\n   20:   computations/session-43/s43_cdm_category.npz\n   21: \n   22: Output:\n   23:   computations/session-44/s44_cdm_construct.npz\n   24:   computations/session-44/s44_cdm_construct.png\n   25: \n   26: Session 44 W1-2, volovik-superfluid-universe-theorist\n   27: \"\"\"\n   28: \n   29: import numpy as np\n   30: import matplotlib\n   31: matplotlib.use('Agg')"
+    },
+    {
+      "anchor_id": "prov_362",
+      "anchor_type": "data_provenance",
+      "name": "chladni_gge",
+      "script_path": "session-44/s44_chladni_gge.py",
+      "session": "s44",
+      "inputs": "",
+      "outputs": "session-44/s44_chladni_gge.npz, session-44/s44_chladni_gge.png",
+      "source_file": "computations/session-44/s44_chladni_gge.py",
+      "source_context_30_lines": "  622:              fontsize=8.5, fontweight=fw, fontfamily='monospace',\n  623:              verticalalignment='top')\n  624: \n  625: fig.suptitle('CHLADNI-GGE-44: GGE Spatial Patterns on SU(3)\\n'\n  626:              'All gap-edge modes are trivial irrep -- '\n  627:              'internal-space density is UNIFORM',\n  628:              fontsize=14, fontweight='bold')\n  629: \n  630: plt.savefig(os.path.join(SCRIPT_DIR, 's44_chladni_gge.png'),\n  631:             dpi=150, bbox_inches='tight')\n  632: print(f\"  Saved: computations/session-44/s44_chladni_gge.png\")\n  633: \n  634: # ======================================================================\n  635: #  STEP 12: Save data\n  636: # ======================================================================\n  637: \n  638: print(\"\\n--- Step 12: Save data ---\")"
+    },
+    {
+      "anchor_id": "prov_363",
+      "anchor_type": "data_provenance",
+      "name": "coherent_wall",
+      "script_path": "session-44/s44_coherent_wall.py",
+      "session": "s44",
+      "inputs": "computations/session-43/s43_impedance_mismatch.npz, computations/session-42/s42_fabric_dispersion.npz, computations/sess...",
+      "outputs": "session-44/s44_coherent_wall.npz, session-44/s44_coherent_wall.png",
+      "source_file": "computations/session-44/s44_coherent_wall.py",
+      "source_context_30_lines": "  841:     'xi_KZ': np.array([xi_KZ]),\n  842:     'N_domains': np.array([N_domains]),\n  843:     'delta_tau_wall': np.array([delta_tau_wall]),\n  844:     'N_realizations': np.array([N_realizations]),\n  845:     'gap_edge': np.array([gap_edge]),\n  846:     'L_total_mean': np.array([L_total_mean]),\n  847: }\n  848: \n  849: np.savez('computations/session-44/s44_coherent_wall.npz', **save_dict)\n  850: print(\"\\n  Data saved to computations/session-44/s44_coherent_wall.npz\")\n  851: \n  852: \n  853: # ============================================================\n  854: # 14. PLOT\n  855: # ============================================================\n  856: \n  857: fig, axes = plt.subplots(3, 2, figsize=(16, 14))"
+    },
+    {
+      "anchor_id": "prov_364",
+      "anchor_type": "data_provenance",
+      "name": "constants_corrected_legacy",
+      "script_path": "session-44/s44_constants_corrected_legacy.py",
+      "session": "s44",
+      "inputs": "",
+      "outputs": "session-44/s44_constants_corrected_legacy.npz",
+      "source_file": "computations/session-44/s44_constants_corrected_legacy.py",
+      "source_context_30_lines": "<name 'constants_corrected_legacy' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S44 CORRECTED CONSTANTS SNAPSHOT (Level 3 re-run, S81)\n    4: \n    5: Loads s42_constants_snapshot.npz, applies two corrections:\n    6:   1. Vol(SU(3)): 8880.93 -> 1349.74 (Weyl integration formula)\n    7:   2. E_cond: 0.115 -> 0.137 (s37 ED, 256-state, machine epsilon)\n    8: \n    9: And recomputes all downstream quantities. Saves corrected values.\n   10: \n   11: KEY FINDING from MKK-RECONCILE-44 (Part A):\n   12:   Vol(SU(3)) does NOT enter either M_KK extraction route.\n   13:   The 0.83-decade M_KK tension is REAL, not a volume artifact.\n   14:   Vol affects only: M_star, V_phys, R_KK (secondary).\n   15:   E_cond affects: E_exc, T_compound, all thermal estimates.\n   16: \n   17: Author: Nazarewicz Nuclear Structure Theorist (Session 44, W7-1 Part B)\n   18: Level 3 migration: S81 canonical-constants compliance\n   19: \"\"\"\n   20: \n   21: import numpy as np\n   22: import hashlib\n   23: import json\n   24: from pathlib import Path\n   25: \n   26: import sys\n   27: _ROOT = Path(__file__).resolve().parent\n   28: if str(_ROOT) not in sys.path:\n   29:     sys.path.insert(0, str(_ROOT))\n   30: from canonical_constants import ("
+    },
+    {
+      "anchor_id": "prov_365",
+      "anchor_type": "data_provenance",
+      "name": "cutoff_f",
+      "script_path": "session-44/s44_cutoff_f.py",
+      "session": "s44",
+      "inputs": "",
+      "outputs": "session-44/s44_cutoff_f.npz, session-44/s44_cutoff_f.png",
+      "source_file": "computations/session-44/s44_cutoff_f.py",
+      "source_context_30_lines": "  552: print(f\"  Suppression orders:              {np.log10(f_2_CCM_from_GN / f_4_CCM_from_CC):.1f}\")\n  553: print(f\"  Hankel f_4_min (Stieltjes):      {f_4_min:.4e}\")\n  554: print(f\"  CC orders gap at M_KK:           {np.log10(CC_ratio):.1f}\")\n  555: print(f\"  CC orders gap at 10*M_KK:        {np.log10(1/f_0_from_CC_10MKK):.1f}\")\n  556: \n  557: # ============================================================\n  558: # 8. SAVE DATA\n  559: # ============================================================\n  560: np.savez(DATA_DIR / 's44_cutoff_f.npz',\n  561:     # f_2 from four routes\n  562:     f_2_sak_MPl=f_2_sak_MPl,\n  563:     f_2_sak_10MKK=f_2_sak_10MKK,\n  564:     f_2_bosonic=f_2_bosonic,\n  565:     f_2_log_only=f_2_log_only,\n  566:     # f_4 (CC moment)\n  567:     f_4_CC_MKK=f_4_CCM_from_CC,\n  568:     f_4_CC_10MKK=f_0_from_CC_10MKK,"
+    },
+    {
+      "anchor_id": "prov_366",
+      "anchor_type": "data_provenance",
+      "name": "dimflow",
+      "script_path": "session-44/s44_dimflow.py",
+      "session": "s44",
+      "inputs": "",
+      "outputs": "session-44/s44_dimflow.npz, session-44/s44_dimflow.png",
+      "source_file": "computations/session-44/s44_dimflow.py",
+      "source_context_30_lines": "   41: import matplotlib.pyplot as plt\n   42: from matplotlib.gridspec import GridSpec\n   43: \n   44: # ═══════════════════════════════════════════════════════════════════════\n   45: # CONFIGURATION\n   46: # ═══════════════════════════════════════════════════════════════════════\n   47: \n   48: data_dir = Path(\"computations\")\n   49: output_npz = data_dir / \"s44_dimflow.npz\"\n   50: output_png = data_dir / \"s44_dimflow.png\"\n   51: \n   52: SECTORS = [(0,0),(1,0),(0,1),(1,1),(2,0),(0,2),(3,0),(0,3),(2,1),(1,2)]\n   53: \n   54: def dim_pq(p, q):\n   55:     \"\"\"Dimension of SU(3) irrep (p,q).\"\"\"\n   56:     return (p + 1) * (q + 1) * (p + q + 2) // 2\n   57: "
+    },
+    {
+      "anchor_id": "prov_367",
+      "anchor_type": "data_provenance",
+      "name": "dissolution_scaling",
+      "script_path": "session-44/s44_dissolution_scaling.py",
+      "session": "s44",
+      "inputs": "",
+      "outputs": "session-44/s44_dissolution_scaling.npz, session-44/s44_dissolution_scaling.png",
+      "source_file": "computations/session-44/s44_dissolution_scaling.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s44_dissolution_scaling.py -- DISSOLUTION-SCALING-44\n    4: =====================================================\n    5: \n    6: Test whether the spectral triple dissolution threshold epsilon_crossover\n    7: scales as 1/sqrt(N) with mode count, or differently.\n    8: \n    9: === PHYSICS ===\n   10: \n   11: In DISSOLUTION-43, we found epsilon_crossover ~ 0.014 at max_pq_sum=2 (N=432)."
+    },
+    {
+      "anchor_id": "prov_368",
+      "anchor_type": "data_provenance",
+      "name": "dm_de_ratio",
+      "script_path": "session-44/s44_dm_de_ratio.py",
+      "session": "s44",
+      "inputs": "",
+      "outputs": "session-44/s44_dm_de_ratio.npz, session-44/s44_dm_de_ratio.png",
+      "source_file": "computations/session-44/s44_dm_de_ratio.py",
+      "source_context_30_lines": "  617: \n  618: # Note: this doesn't match 0.39 either (gives ~5.6)\n  619: # The point is: the ratio is an O(1)-O(10) quantity, not an O(10^5) quantity.\n  620: \n  621: # ============================================================\n  622: # SAVE DATA\n  623: # ============================================================\n  624: \n  625: out_path = base / \"s44_dm_de_ratio.npz\"\n  626: np.savez(out_path,\n  627:     # Observed\n  628:     Omega_DM_obs=Omega_DM_obs,\n  629:     Omega_DE_obs=Omega_DE_obs,\n  630:     ratio_obs=ratio_obs,\n  631: \n  632:     # Method 1\n  633:     ratio_1a_chi_q=ratio_1a,"
+    },
+    {
+      "anchor_id": "prov_369",
+      "anchor_type": "data_provenance",
+      "name": "dos_tau",
+      "script_path": "session-44/s44_dos_tau.py",
+      "session": "s44",
+      "inputs": "",
+      "outputs": "session-44/s44_dos_tau.npz, session-44/s44_dos_tau.png",
+      "source_file": "computations/session-44/s44_dos_tau.py",
+      "source_context_30_lines": "  572: # Van Hove data per tau\n  573: for i, res in enumerate(results_per_tau):\n  574:     tau_str = f\"tau{res['tau']:.2f}\"\n  575:     vh = sorted(res['vh_list'], key=lambda x: x['omega'])\n  576:     output_data[f'{tau_str}_vh_omega'] = np.array([v['omega'] for v in vh])\n  577:     output_data[f'{tau_str}_vh_rho'] = np.array([v['rho'] for v in vh])\n  578:     output_data[f'{tau_str}_vh_type'] = np.array([v['type'] for v in vh])\n  579: \n  580: out_path = os.path.join(SCRIPT_DIR, \"s44_dos_tau.npz\")\n  581: np.savez_compressed(out_path, **output_data)\n  582: print(f\"Saved: {out_path}\")\n  583: \n  584: # ================================================================\n  585: # 9. PLOTS\n  586: # ================================================================\n  587: \n  588: print(f\"\\nGenerating plots...\")"
+    },
+    {
+      "anchor_id": "prov_370",
+      "anchor_type": "data_provenance",
+      "name": "eih_grav",
+      "script_path": "session-44/s44_eih_grav.py",
+      "session": "s44",
+      "inputs": "computations/session-42/s42_constants_snapshot.npz, computations/session-36/s36_sfull_tau_stabilization.npz",
+      "outputs": "session-44/s44_eih_grav.npz, session-44/s44_eih_grav.png",
+      "source_file": "computations/session-44/s44_eih_grav.py",
+      "source_context_30_lines": "  417: print(f\"\")\n  418: print(f\"Combined: EIH singlet x trace-log = {np.log10(abs(Tr_ln_singlet)/S_fold):.2f} orders total\")\n  419: print(f\"This reduces the CC problem from ~120 to ~{120+np.log10(abs(Tr_ln_singlet)/S_fold):.0f} OOM.\")\n  420: \n  421: # ============================================================\n  422: # 10. SAVE DATA\n  423: # ============================================================\n  424: \n  425: np.savez('computations/session-44/s44_eih_grav.npz',\n  426:     # Gate\n  427:     gate_verdict=np.array([verdict]),\n  428:     gate_name=np.array(['EIH-GRAV-44']),\n  429:     gate_ratio=ratio_ADM_to_Sfold,\n  430:     # Spectral action decomposition\n  431:     S_singlet=S_singlet,\n  432:     S_fold=S_fold,\n  433:     ratio_singlet_to_full=ratio_singlet_to_full,"
+    }
+  ]
+}

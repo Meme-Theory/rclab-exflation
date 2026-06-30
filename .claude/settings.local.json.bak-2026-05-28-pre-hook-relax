@@ -1,0 +1,159 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.worldscientific.com)",
+      "WebFetch(domain:arxiv.org)",
+      "WebFetch(domain:inspirehep.net)",
+      "Bash(timeout:*)",
+      "WebFetch(domain:www.researchgate.net)",
+      "WebFetch(domain:hal.science)",
+      "WebFetch(domain:www.academia.edu)",
+      "WebFetch(domain:prespacetime.com)",
+      "WebFetch(domain:api.semanticscholar.org)",
+      "WebFetch(domain:progress-in-physics.com)",
+      "WebFetch(domain:www.sciencedirect.com)",
+      "Bash(del \"C:\\\\sandbox\\\\Ainulindale Exflation\\\\Paasch\\\\01_1984_Fission_fragment_spectroscopy_large_surface_barrier_detectors.pdf\")",
+      "WebFetch(domain:www.taylorfrancis.com)",
+      "WebFetch(domain:cds.cern.ch)",
+      "Bash(pandoc:*)",
+      "WebFetch(domain:link.springer.com)",
+      "WebFetch(domain:en.wikipedia.org)",
+      "WebFetch(domain:www.ias.ac.in)",
+      "WebFetch(domain:www.thefreelibrary.com)",
+      "WebFetch(domain:iopscience.iop.org)",
+      "Bash(where:*)",
+      "Bash(if not exist \"C:\\\\sandbox\\\\Ainulindale Exflation\\\\computations\" mkdir \"C:\\\\sandbox\\\\Ainulindale Exflation\\\\computations\")",
+      "Bash(git init:*)",
+      "Skill(team-blast)",
+      "Bash(\"phonon-exflation-sim/.venv312/Scripts/python.exe\" -c:*)",
+      "Bash(\"phonon-exflation-sim/.venv312/Scripts/python.exe\" -c \":*)",
+      "Bash(\"phonon-exflation-sim/.venv312/Scripts/python.exe\":*)",
+      "WebFetch(domain:www.nature.com)",
+      "mcp__paper-search__download_arxiv",
+      "Bash(mkdir -p \"C:/sandbox/Sovereign-AI/researchers/Amari\")",
+      "Bash(mkdir -p \"C:/sandbox/Sovereign-AI/researchers/Togelius\")",
+      "Bash(mkdir -p \"C:/sandbox/Sovereign-AI/.claude/agent-memory/amari-manifold-maintainer\")",
+      "Bash(mkdir -p \"C:/sandbox/Sovereign-AI/.claude/agent-memory/togelius-systems-cartographer\")",
+      "Bash(cp \"C:/Users/ryan/.claude/statusline-command.sh\" \"C:/sandbox/statusline-command.sh\")",
+      "Read(//c/sandbox/**)",
+      "Bash(bash .claude/hooks/response-mandate.sh)",
+      "Bash(bash \"C:/sandbox/Ainulindale Exflation/.claude/hooks/response-mandate.sh\")",
+      "Bash(bash \"C:/sandbox/Ainulindale Exflation/.claude/hooks/python-validate.sh\")",
+      "Bash(bash .claude/hooks/python-validate.sh)",
+      "Bash(bash .claude/hooks/framework-edit-reindex.sh)",
+      "Bash(bash \"C:/sandbox/Ainulindale Exflation/.claude/hooks/framework-edit-reindex.sh\")",
+      "Bash(mkdir -p \"tools/mcp-servers/oeis-mcp\" \"tools/mcp-servers/zbmath-mcp\" \"tools/mcp-servers/mathscinet-mcp\" \"tools/mcp-servers/sage-mcp\")",
+      "Bash(mkdir -p \".claude/skills/proof-check\" \".claude/skills/conjecture-index\" \".claude/skills/sage-compute\")",
+      "mcp__knowledge__search_knowledge",
+      "mcp__knowledge__get_constant",
+      "Read(//c/Users/ryan/**)"
+    ],
+    "deny": []
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear|compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"C:/sandbox/Ainulindale Exflation/.claude/hooks/SESSION-START-DIRECTIVE.sh\"",
+            "timeout": 5000
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit|NotebookEdit|Agent|TaskCreate",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"C:/sandbox/Ainulindale Exflation/.claude/hooks/PRIME-DIRECTIVE.sh\"",
+            "timeout": 5000
+          },
+          {
+            "type": "command",
+            "command": "bash \"C:/sandbox/Ainulindale Exflation/.claude/hooks/READ-FEEDBACK-RULES-DIRECTIVE.sh\"",
+            "timeout": 5000
+          }
+        ]
+      },
+      {
+        "matcher": "TaskUpdate",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"C:/sandbox/Ainulindale Exflation/.claude/hooks/TASK-UPDATE-RETROSPECTIVE.sh\"",
+            "timeout": 5000
+          }
+        ]
+      },
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"C:/sandbox/Ainulindale Exflation/.claude/hooks/source-recon-plan-audit.sh\"",
+            "timeout": 30000
+          },
+          {
+            "type": "command",
+            "command": "bash \"C:/sandbox/Ainulindale Exflation/.claude/hooks/EPISTEMIC-DISCIPLINE-EDIT-GUARD.sh\"",
+            "timeout": 5000
+          },
+          {
+            "type": "command",
+            "command": "bash \"C:/sandbox/Ainulindale Exflation/.claude/hooks/rules-folder-subagent-block.sh\"",
+            "timeout": 5000
+          }
+        ]
+      },
+      {
+        "matcher": "mcp__.*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"C:/sandbox/Ainulindale Exflation/.claude/hooks/mcp-pre-check.sh\"",
+            "timeout": 5000
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"C:/sandbox/Ainulindale Exflation/.claude/hooks/framework-edit-reindex.sh\"",
+            "timeout": 60000
+          }
+        ]
+      },
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"C:/sandbox/Ainulindale Exflation/.claude/hooks/python-validate.sh\"",
+            "timeout": 10000
+          }
+        ]
+      }
+    ],
+    "SubagentStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"C:/sandbox/Ainulindale Exflation/.claude/hooks/SUBAGENT-START-DIRECTIVE.sh\"",
+            "timeout": 5000
+          }
+        ]
+      }
+    ]
+  },
+  "outputStyle": "Explanatory",
+  "alwaysThinkingEnabled": true
+}

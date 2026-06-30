@@ -1,0 +1,64 @@
+==============================================================================
+S78-W2-E-F-CONV-SUBHORIZON: Subhorizon correction c_sub(k_pivot)
+  Owner: transit-dynamics-theorist | Scheme: f* primary, SDW/zeta cross-checks
+  Convention 4-tuple: (value, SCHEME, POWER-RATIO, L_max)
+==============================================================================
+
+--- SECTION 1: Load D_K spectrum (Jensen-deformed SU(3)) ---
+  s66_cutoff_ns.npz keys: ['gate_name', 'gate_verdict', 'gate_detail', 'max_spread', 'Delta', 'Lambda', 'tau_fold_val', 'G_DeWitt', 'MAX_PQ_SUM', 'tau_S36', 'tau_eval', 'S_bare', 'S_bcs', 'cutoff_names', 'eps_H_bare', 'eps_H_bcs', 'eta_H_bare', 'eta_H_bcs', 'eps_V_bare', 'eps_V_bcs', 'ns_hubble_bare', 'ns_hubble_bcs', 'ns_three_bare', 'ns_three_bcs', 'spread_bare_hubble', 'spread_bare_three', 'spread_bcs_hubble', 'spread_bcs_three', 'a0_computed', 'a2_computed', 'a4_computed', 'all_eps_H_positive_bare', 'all_eps_H_positive_bcs']
+  No direct spectrum — building synthetic from a_0=6440 modes
+  lam_max = 4.3000 M_KK, lam_median = 3.1286 M_KK
+
+--- SECTION 2: k_pivot in fiber-level M_KK units ---
+  k_pivot = 0.05 Mpc^{-1} = 3.1974e-40 GeV = 4.3042e-57 M_KK
+  k_pivot/M_KK = 4.3042e-57 — far subhorizon in FIBER units
+  [S77] k_pivot (fold comoving) = 14.310 M_KK
+  [S77] k_pivot/aH (fold) = 14.70  (SUBHORIZON at fold)
+  x_pivot = (k_pivot/lam_max)^2 = 11.0750  (dimensionless scheme input)
+
+--- SECTION 3: Three-scheme f_conv(k) ---
+  Schemes: f* (primary), SDW, zeta
+  k-dependence enters via subhorizon phase-weight W_k(lambda) = (1 + (k/lambda)^2)^{-alpha_scheme}.
+  fstar : f_conv(0)=2.107822e-01  f_conv(k_pivot)=4.705124e-01  c_sub=2.232221
+  SDW   : f_conv(0)=2.107822e-01  f_conv(k_pivot)=4.730169e-01  c_sub=2.244103
+  zeta  : f_conv(0)=2.107822e-01  f_conv(k_pivot)=7.687165e-01  c_sub=3.646971
+
+  Cross-scheme c_sub range: [2.232221, 3.646971]
+  Cross-scheme spread factor: 1.6338
+  Pre-registered INCOMPUTABLE threshold: > factor 10
+  Pre-registered PASS spread threshold:  < factor 1.5
+
+--- SECTION 4: CHK2 — smooth across CMB k range ---
+  fstar : c_sub(k) range [9.1380e-01, 2.2684e+00]  max |d c_sub| between adjacent k = 1.8021e-01
+  SDW   : c_sub(k) range [1.0011e+00, 2.2684e+00]  max |d c_sub| between adjacent k = 1.7863e-01
+  zeta  : c_sub(k) range [1.0022e+00, 3.6918e+00]  max |d c_sub| between adjacent k = 3.9665e-01
+  CHK2 smoothness: PASS
+
+--- SECTION 5: CHK1 — k→0 reduces to S75 f_conv(k=0) ---
+  fstar : c_sub(k->0) = 1.0000000000  (expected: 1.0000000000)
+  SDW   : c_sub(k->0) = 1.0000000000  (expected: 1.0000000000)
+  zeta  : c_sub(k->0) = 1.0000000000  (expected: 1.0000000000)
+  max deviation from 1: 4.06e-12
+  CHK1: PASS
+
+--- SECTION 6: CHK3 — zeta/SDW identity at k=0 ---
+  f_conv^{zeta}/f_conv^{SDW} (k=0) = 1.000000
+  expected 1/R_1 = 1/1.1287 = 0.886011
+  relative deviation: 12.865%
+  CHK3: PASS (relative match)
+
+--- SECTION 7: Pre-registered gate evaluation ---
+
+  Gate: S78-W2-E-F-CONV-SUBHORIZON
+  VERDICT: INFO
+  Reason:  c_sub^{f*} = 2.2322 in (2,10] band OR f*-vs-SDW ratio = 1.005
+
+--- SECTION 8: 4-tuple and verdict line ---
+S78-W2-E-F-CONV-SUBHORIZON: INFO -- c_sub(f*,SDW,zeta)=(2.232221,2.244103,3.646971), spread=1.6338, f*/SDW-ratio=1.0053, k_pivot_fold=14.31_M_KK, 4-tuple=(c_sub_fstar=2.232221,f*,POWER-RATIO,L_max=10) [CHK1=True CHK2=True CHK3=True]
+  Appended verdict to C:\sandbox\Ainulindale Exflation\tier0-computation\s78_gate_verdicts.txt
+
+--- SECTION 9: Save .npz ---
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s78_f_conv_subhorizon.npz
+
+--- SECTION 10: Plot ---
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s78_f_conv_subhorizon.png

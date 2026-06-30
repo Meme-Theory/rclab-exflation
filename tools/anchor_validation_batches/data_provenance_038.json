@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 38,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_371",
+      "anchor_type": "data_provenance",
+      "name": "first_sound_fisher",
+      "script_path": "session-44/s44_first_sound_fisher.py",
+      "session": "s44",
+      "inputs": "computations/session-44/s44_first_sound_imprint.npz, computations/session-43/s43_kk_cmb_transfer.npz, computations/sessi...",
+      "outputs": "session-44/s44_first_sound_fisher.npz, session-44/s44_first_sound_fisher.png",
+      "source_file": "computations/session-44/s44_first_sound_fisher.py",
+      "source_context_30_lines": "    1: \"\"\"\n    2: s44_first_sound_fisher.py — Fisher Forecast for 325 Mpc First-Sound Ring\n    3: \n    4: Gate: FIRST-SOUND-44\n    5:   PASS: SNR > 3 in DESI DR2\n    6:   FAIL: SNR < 1 in Euclid Y5\n    7:   INFO: SNR 1-3\n    8: \n    9: Method:\n   10:   1. Compute LCDM P(k) using Eisenstein-Hu no-wiggle + calibrated BAO wiggles"
+    },
+    {
+      "anchor_id": "prov_372",
+      "anchor_type": "data_provenance",
+      "name": "first_sound_imprint",
+      "script_path": "session-44/s44_first_sound_imprint.py",
+      "session": "s44",
+      "inputs": "computations/session-42/s42_gradient_stiffness.npz, computations/session-43/s43_acoustic_metric.npz, computations/sessio...",
+      "outputs": "session-44/s44_first_sound_imprint.npz, session-44/s44_first_sound_imprint.png",
+      "source_file": "computations/session-44/s44_first_sound_imprint.py",
+      "source_context_30_lines": " 1056: # ============================================================\n 1057: # SAVE RESULTS\n 1058: # ============================================================\n 1059: \n 1060: print(f\"\\n{'='*70}\")\n 1061: print(\"SAVING RESULTS\")\n 1062: print(f\"{'='*70}\")\n 1063: \n 1064: np.savez('computations/session-44/s44_first_sound_imprint.npz',\n 1065:     # Gate\n 1066:     gate_name='FIRST-SOUND-IMPRINT-44',\n 1067:     gate_verdict=verdict,\n 1068:     gate_detail=verdict_detail,\n 1069: \n 1070:     # Two-sound system\n 1071:     c_1=c_1,\n 1072:     c_2_rad=c_2_rad,"
+    },
+    {
+      "anchor_id": "prov_373",
+      "anchor_type": "data_provenance",
+      "name": "foam_cutoff",
+      "script_path": "session-44/s44_foam_cutoff.py",
+      "session": "s44",
+      "inputs": "",
+      "outputs": "session-44/s44_foam_cutoff.npz, session-44/s44_foam_cutoff.png",
+      "source_file": "computations/session-44/s44_foam_cutoff.py",
+      "source_context_30_lines": "  468:         for s in S_profile:\n  469:             print(f\"{s:12.2f}\", end='')\n  470:         print(f\"  {mono:>10s}\")\n  471: \n  472: # ===========================================================================\n  473: # SAVE DATA\n  474: # ===========================================================================\n  475: \n  476: np.savez(base / 's44_foam_cutoff.npz',\n  477:     # Parameters\n  478:     tau_with_evals=np.array(tau_with_evals),\n  479:     gamma_values=gamma_values,\n  480:     alpha_values=np.array(alpha_values),\n  481:     epsilon_crossover=epsilon_crossover,\n  482:     # Spectral action arrays\n  483:     S_foam_linear=S_foam_lin,\n  484:     S_foam_gaussian=S_foam_gaus,"
+    },
+    {
+      "anchor_id": "prov_374",
+      "anchor_type": "data_provenance",
+      "name": "frg_pilot",
+      "script_path": "session-44/s44_frg_pilot.py",
+      "session": "s44",
+      "inputs": "computations/session-36/s36_mmax_authoritative.npz, computations/session-38/s38_cc_instanton.npz, computations/session-4...",
+      "outputs": "session-44/s44_frg_pilot.npz, session-44/s44_frg_pilot.png",
+      "source_file": "computations/session-44/s44_frg_pilot.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s44_frg_pilot.py — FRG Pilot for 3-Sector BCS System (FRG-PILOT-44)\n    4: \n    5: Tests whether the FRG effective action deviates from the heat kernel expansion\n    6: for the 8 gap-edge modes of the B1/B2/B3 BCS system.\n    7: \n    8: Physics context:\n    9:   The system is 0-dimensional (L/xi_GL = 0.031 from S38). In 0D, the FRG is\n   10:   equivalent to exact integration of the partition function. The \"Wilsonian\"\n   11:   procedure is shell-by-shell integration over energy levels, which in the"
+    },
+    {
+      "anchor_id": "prov_375",
+      "anchor_type": "data_provenance",
+      "name": "friedmann_bcs_audit",
+      "script_path": "session-44/s44_friedmann_bcs_audit.py",
+      "session": "s44",
+      "inputs": "computations/session-36/s36_sfull_tau_stabilization.npz, computations/session-42/s42_gradient_stiffness.npz, computation...",
+      "outputs": "session-44/s44_friedmann_bcs_audit.npz, session-44/s44_friedmann_bcs_audit.png",
+      "source_file": "computations/session-44/s44_friedmann_bcs_audit.py",
+      "source_context_30_lines": "    1: \"\"\"\n    2: s44_friedmann_bcs_audit.py — Friedmann-BCS epsilon_H Audit After E-vs-F & EIH Corrections\n    3: ==========================================================================================\n    4: \n    5: GATE: FRIEDMANN-BCS-AUDIT-44\n    6:   PASS: shortfall narrows by >10x\n    7:   FAIL: shortfall persists within factor 2\n    8:   INFO: correction computed, shortfall changed but surface still empty\n    9: \n   10: Physics (principle-theoretic reasoning):"
+    },
+    {
+      "anchor_id": "prov_376",
+      "anchor_type": "data_provenance",
+      "name": "holographic_spec",
+      "script_path": "session-44/s44_holographic_spec.py",
+      "session": "s44",
+      "inputs": "",
+      "outputs": "session-44/s44_holographic_spec.npz, session-44/s44_holographic_spec.png",
+      "source_file": "computations/session-44/s44_holographic_spec.py",
+      "source_context_30_lines": "  715: print(f\"    It contributes a modest ~{orders_holo_only:.0f} orders, insufficient by ~{gap_bulk - total_orders:.0f} orders.\")\n  716: \n  717: # ============================================================\n  718: # 9. SAVE DATA\n  719: # ============================================================\n  720: \n  721: print(\"\\n--- Saving data ---\")\n  722: \n  723: output_path = base / \"s44_holographic_spec.npz\"\n  724: np.savez(output_path,\n  725:     # Input parameters\n  726:     N_domains=N_domains,\n  727:     xi_KZ=xi_KZ,\n  728:     total_modes=total_modes,\n  729:     N_boundary_full=N_boundary_full,\n  730:     N_bulk_full=N_bulk_full,\n  731:     N_total_full=N_total_full,"
+    },
+    {
+      "anchor_id": "prov_377",
+      "anchor_type": "data_provenance",
+      "name": "homog_recompute",
+      "script_path": "session-44/s44_homog_recompute.py",
+      "session": "s44",
+      "inputs": "computations/session-42/s42_homogeneity.npz",
+      "outputs": "session-44/s44_homog_recompute.npz, session-44/s44_homog_recompute.png",
+      "source_file": "computations/session-44/s44_homog_recompute.py",
+      "source_context_30_lines": "  530:     # Parametric\n  531:     'f_parametric': f_parametric,\n  532: \n  533:     # Gate\n  534:     'gate_verdict': np.array([gate_verdict]),\n  535:     'gate_name': np.array(['HOMOG-42-RECOMPUTE-44']),\n  536: }\n  537: \n  538: np.savez('computations/session-44/s44_homog_recompute.npz', **save_dict)\n  539: print(\"Saved: computations/session-44/s44_homog_recompute.npz\")\n  540: \n  541: # ============================================================\n  542: # 9. PLOT\n  543: # ============================================================\n  544: \n  545: print(\"\\n\" + \"=\" * 70)\n  546: print(\"8. GENERATING PLOTS\")"
+    },
+    {
+      "anchor_id": "prov_378",
+      "anchor_type": "data_provenance",
+      "name": "induced_g",
+      "script_path": "session-44/s44_induced_g.py",
+      "session": "s44",
+      "inputs": "",
+      "outputs": "session-44/s44_induced_g.npz, session-44/s44_induced_g.png",
+      "source_file": "computations/session-44/s44_induced_g.py",
+      "source_context_30_lines": " 1205:     print(f\"    2. G_N^bos / G_N^obs = {INV_16piG_OBS / inv_16piG_bos:.4f} (using M_KK from Dirac)\")\n 1206:     print(f\"    3. G_N^bos / G_N^Sak = {inv_16piG_sak_10MKK / inv_16piG_bos:.4f}\")\n 1207:     print(f\"    4. M_KK tension: Dirac={tension_dirac:.4f}, Bos={tension_bos:.4f} decades\")\n 1208:     print(f\"    5. f_2 = {f_2_from_sak:.4f} (from matching Sakharov at Lambda=10*M_KK)\")\n 1209: \n 1210:     # =========================================================================\n 1211:     # SAVE DATA\n 1212:     # =========================================================================\n 1213:     npz_path = os.path.join(SCRIPT_DIR, 's44_induced_g.npz')\n 1214:     np.savez(npz_path,\n 1215:         # Core results\n 1216:         a2_red_scalar=a2_red_scalar,\n 1217:         a2_red_gauge=a2_red_gauge,\n 1218:         a2_red_TT=a2_red_TT,\n 1219:         a2_red_bos_total=a2_red_bos_total,\n 1220:         a2_red_dirac=a2_red_dirac,\n 1221:         ratio_bos_dirac=ratio_bos_dirac,"
+    },
+    {
+      "anchor_id": "prov_379",
+      "anchor_type": "data_provenance",
+      "name": "jacobson_spec",
+      "script_path": "session-44/s44_jacobson_spec.py",
+      "session": "s44",
+      "inputs": "",
+      "outputs": "session-44/s44_jacobson_spec.npz, session-44/s44_jacobson_spec.png",
+      "source_file": "computations/session-44/s44_jacobson_spec.py",
+      "source_context_30_lines": "    1: \"\"\"\n    2: s44_jacobson_spec.py — JACOBSON-SPEC-44\n    3: Jacobson mapping for the GGE relic: gravitating energy density from\n    4: delta Q = sum_k T_k dS_k on local Rindler horizons.\n    5: \n    6: Gate: JACOBSON-SPEC-44\n    7:   PASS: rho_Jacobson within 30 OOM of Lambda_obs\n    8:   FAIL: rho_Jacobson > 10^60 * Lambda_obs\n    9: \n   10: Physics:"
+    },
+    {
+      "anchor_id": "prov_380",
+      "anchor_type": "data_provenance",
+      "name": "lifshitz_eta",
+      "script_path": "session-44/s44_lifshitz_eta.py",
+      "session": "s44",
+      "inputs": "",
+      "outputs": "session-44/s44_lifshitz_eta.npz, session-44/s44_lifshitz_eta.png",
+      "source_file": "computations/session-44/s44_lifshitz_eta.py",
+      "source_context_30_lines": "  938: # ============================================================\n  939: # SECTION 16: Save all results\n  940: # ============================================================\n  941: \n  942: print(\"\\n\" + \"=\" * 70)\n  943: print(\"SECTION 16: Saving results\")\n  944: print(\"=\" * 70)\n  945: \n  946: np.savez(base / 's44_lifshitz_eta.npz',\n  947:          # Gate\n  948:          gate_verdict=np.array([gate_verdict]),\n  949:          gate_reason=np.array([gate_reason]),\n  950: \n  951:          # Primary results\n  952:          eta_eff_fold=np.array([eta_eff_fold]),\n  953:          eta_eff_round=np.array([eta_eff_round_final]),\n  954:          ns_fold=np.array([ns_fold]),"
+    }
+  ]
+}

@@ -14,7 +14,7 @@ Compute the slow-roll parameter epsilon_H = -dH/dt / H^2 during the fold transit
 
 **Computation Steps**:
 
-1. Load spectral action data from `tier0-computation/s36_sfull_tau_stabilization.npz` and BCS dynamics from `tier0-computation/s38_cc_instanton.npz`. Load collective inertia from `tier0-computation/s40_collective_inertia.npz`.
+1. Load spectral action data from `computations/s36_sfull_tau_stabilization.npz` and BCS dynamics from `computations/s38_cc_instanton.npz`. Load collective inertia from `computations/s40_collective_inertia.npz`.
 
 2. Write coupled ODEs: tau_dot from ATDHFB equation (M_ATDHFB * tau_ddot = -dV/dtau - BCS_backreaction), H from Friedmann (H^2 = (8piG/3) * [S_full(tau) * M_KK^4 + kinetic + BCS]).
 
@@ -27,13 +27,13 @@ Compute the slow-roll parameter epsilon_H = -dH/dt / H^2 during the fold transit
 **Pre-registered gate FRIEDMANN-BCS-43**: INFO (feeds Sagan assessment).
 
 **Input files**:
-- `tier0-computation/s36_sfull_tau_stabilization.npz`
-- `tier0-computation/s38_cc_instanton.npz`
-- `tier0-computation/s40_collective_inertia.npz`
-- `tier0-computation/s42_gradient_stiffness.npz`
+- `computations/s36_sfull_tau_stabilization.npz`
+- `computations/s38_cc_instanton.npz`
+- `computations/s40_collective_inertia.npz`
+- `computations/s42_gradient_stiffness.npz`
 - W1-2 results (Lifshitz type, Van Hove exponent)
 
-**Output**: `tier0-computation/s43_friedmann_bcs.{py,npz,png}`
+**Output**: `computations/s43_friedmann_bcs.{py,npz,png}`
 
 ---
 
@@ -51,7 +51,7 @@ Extend the W1-2 Lifshitz transition analysis to higher SU(3) representation sect
 
 **Computation Steps**:
 
-1. Use `tier0-computation/tier1_dirac_spectrum.py` to compute D_K eigenvalues for sectors with p+q = 4 [(4,0), (3,1), (2,2)] and p+q = 5 [(5,0), (4,1), (3,2)] at tau = 0.10, 0.15, 0.18, 0.19, 0.20, 0.22, 0.25.
+1. Use `computations/dirac_spectrum.py` to compute D_K eigenvalues for sectors with p+q = 4 [(4,0), (3,1), (2,2)] and p+q = 5 [(5,0), (4,1), (3,2)] at tau = 0.10, 0.15, 0.18, 0.19, 0.20, 0.22, 0.25.
 
 2. Track eigenvalue trajectories through the fold. Identify any sign crossings (band inversions).
 
@@ -62,10 +62,10 @@ Extend the W1-2 Lifshitz transition analysis to higher SU(3) representation sect
 **Pre-registered gate HIGHER-SECT-43**: INFO.
 
 **Input files**:
-- `tier0-computation/tier1_dirac_spectrum.py`
+- `computations/dirac_spectrum.py`
 - W1-2 results (sector-by-sector sign crossings for p+q ≤ 3)
 
-**Output**: `tier0-computation/s43_higher_sector_crossings.{py,npz,png}`
+**Output**: `computations/s43_higher_sector_crossings.{py,npz,png}`
 
 ---
 
@@ -101,9 +101,9 @@ Compute the full transfer function T(k) mapping the KZ perturbation spectrum at 
 **Input files**:
 - W1-2 results (Lifshitz type, xi_KZ, z, nu)
 - W7-2 results (epsilon_H during transit)
-- `tier0-computation/s42_constants_snapshot.npz` (M_KK)
+- `computations/s42_constants_snapshot.npz` (M_KK)
 
-**Output**: `tier0-computation/s43_kk_cmb_transfer.{py,npz,png}`
+**Output**: `computations/s43_kk_cmb_transfer.{py,npz,png}`
 
 ---
 
@@ -178,7 +178,7 @@ W3-5 used the linear delta-N formalism: P_R(k) = (dN/d_tau)^2 * P_tau(k). This i
 
 **Computation Steps**:
 
-1. Load W3-5 results from `tier0-computation/s43_kz_transfer.npz`.
+1. Load W3-5 results from `computations/s43_kz_transfer.npz`.
 2. Compute d2N/dtau^2 from the spectral action curvature d2S/dtau2 = 317,863.
 3. f_NL = (5/6) * (d2N/dtau^2) / (dN/dtau)^2. Compare to Planck bound |f_NL| < 5.
 4. Multi-field N_eff from off-Jensen gradient stiffness (if available from W4-1, otherwise estimate).
@@ -187,7 +187,7 @@ W3-5 used the linear delta-N formalism: P_R(k) = (dN/d_tau)^2 * P_tau(k). This i
 **Pre-registered gate MOD-REHEAT-43**: INFO.
 
 **Input files**: `s43_kz_transfer.npz`, `s42_gradient_stiffness.npz`, W4-1 results (if available).
-**Output**: `tier0-computation/s43_mod_reheating.{py,npz,png}`
+**Output**: `computations/s43_mod_reheating.{py,npz,png}`
 
 ---
 
@@ -206,7 +206,7 @@ Evaluate ALL Session 43 results (W1 through W7-5) against pre-registered gates. 
 **Input**: All `s43_*.npz`, complete working paper including W7-1 through W7-5 results.
 **Gate**: SAGAN-43 (meta-gate).
 
-**Output**: `tier0-computation/s43_sagan_assessment.md`
+**Output**: `computations/s43_sagan_assessment.md`
 
 ---
 

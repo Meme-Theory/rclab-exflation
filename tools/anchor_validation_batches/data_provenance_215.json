@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 215,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_2141",
+      "anchor_type": "data_provenance",
+      "name": "w12_null_elimination_band_width_reconciliation",
+      "script_path": "session-88/s88_w12_null_elimination_band_width_reconciliation.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-88/s88_w12_null_elimination_band_width_reconciliation.py",
+      "source_context_30_lines": "  247:           f\"(joint reading admissible per S87 W3-3d PASS canonical)\")\n  248:     print(f\"  composite         = {composite_verdict}\")\n  249:     print()\n  250: \n  251:     # --- 4. Save reconciliation outcome to JSON sidecar ---\n  252:     print(\"[Step 4] Saving JSON sidecar ...\")\n  253:     json_path = (\n  254:         _REPO / \"computations\" / \"session-88\"\n  255:         / \"s88_w12_null_elimination_band_width_reconciliation.json\"\n  256:     )\n  257:     payload = {\n  258:         \"gate_id\": GATE_ID,\n  259:         \"wp_section\": WP_SECTION,\n  260:         \"scheme\": SCHEME,\n  261:         \"convention\": CONVENTION,\n  262:         \"pre_reg_threshold_sigma\": PRE_REG_THRESHOLD_SIGMA,\n  263:         \"band_axis_half_width_sigma\": BAND_AXIS_HALF_WIDTH_SIGMA,"
+    },
+    {
+      "anchor_id": "prov_2142",
+      "anchor_type": "data_provenance",
+      "name": "w12_pati_salam_embedding_b1_b2_partition",
+      "script_path": "session-88/s88_w12_pati_salam_embedding_b1_b2_partition.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-88/s88_w12_pati_salam_embedding_b1_b2_partition.py",
+      "source_context_30_lines": "  266:     print(f\"[Step 5] dual-SHA closure:\")\n  267:     print(f\"  audit_sha256:   {audit_sha256}\")\n  268:     print(f\"  content_sha256: {content_sha256}\")\n  269:     print()\n  270: \n  271:     # Save JSON sidecar\n  272:     json_path = (\n  273:         _REPO / \"computations\" / \"session-88\"\n  274:         / \"s88_w12_pati_salam_embedding_b1_b2_partition.json\"\n  275:     )\n  276:     payload = {\n  277:         **input_pin_map,\n  278:         \"sign_verdict\": sign_verdict,\n  279:         \"magnitude_verdict\": magnitude_verdict,\n  280:         \"regime_verdict\": regime_verdict,\n  281:         \"composite_verdict\": composite_verdict,\n  282:         \"audit_sha256\": audit_sha256,"
+    },
+    {
+      "anchor_id": "prov_2143",
+      "anchor_type": "data_provenance",
+      "name": "w12_sr_lo_per_class_downstream_respec",
+      "script_path": "session-88/s88_w12_sr_lo_per_class_downstream_respec.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-88/s88_w12_sr_lo_per_class_downstream_respec.py",
+      "source_context_30_lines": "  111:     content_sha = closure_hash({\n  112:         \"ratio\": ratio, \"verdict\": composite_verdict,\n  113:         \"sign\": sign_verdict, \"magnitude\": magnitude_verdict, \"regime\": regime_verdict,\n  114:     })\n  115:     print(f\"  audit_sha256:   {audit_sha}\")\n  116:     print(f\"  content_sha256: {content_sha}\")\n  117: \n  118:     # Save JSON sidecar\n  119:     json_path = _REPO / \"computations\" / \"session-88\" / \"s88_w12_sr_lo_per_class_downstream_respec.json\"\n  120:     with open(json_path, \"w\", encoding=\"utf-8\") as fh:\n  121:         json.dump({\n  122:             **input_pin_map,\n  123:             \"ratio\": ratio,\n  124:             \"composite_verdict\": composite_verdict,\n  125:             \"sign_verdict\": sign_verdict,\n  126:             \"magnitude_verdict\": magnitude_verdict,\n  127:             \"regime_verdict\": regime_verdict,"
+    },
+    {
+      "anchor_id": "prov_2144",
+      "anchor_type": "data_provenance",
+      "name": "w13_nc_two_torus_fgk_fixed_point",
+      "script_path": "session-88/s88_w13_nc_two_torus_fgk_fixed_point.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "session-88/s88_w13_nc_two_torus_fgk_fixed_point.npz, session-88/s88_w13_nc_two_torus_fgk_fixed_point.png",
+      "source_file": "computations/session-88/s88_w13_nc_two_torus_fgk_fixed_point.py",
+      "source_context_30_lines": "  152: L_MAX_EXTRA_FOR_FIT = (16, 20, 24)  # (local) extra Ls for rate-fit refinement\n  153: PV_S = 1.5  # (local) substrate-distance parameter for L^{-3} envelope match\n  154: PV_M = 1.0  # (local) Pauli-Villars mass in T^2_theta natural units (M_KK -> 1)\n  155: DELTA_J = 0.0  # (local) leading-order Jensen deformation; per helpers docstring\n  156: RATE_TARGET = 3.0  # (local) W-5 envelope L^{-3} target\n  157: RATE_TOLERANCE = 0.10  # (local) 10% relative tolerance on rate\n  158: \n  159: # Output destinations\n  160: OUT_NPZ = SESSION_DIR / \"s88_w13_nc_two_torus_fgk_fixed_point.npz\"\n  161: OUT_PNG = SESSION_DIR / \"s88_w13_nc_two_torus_fgk_fixed_point.png\"\n  162: VERDICT_TXT = SESSION_DIR / \"s88_gate_verdicts.txt\"\n  163: HELPERS_PATH = COMPUTATIONS_DIR / \"_nc_two_torus_helpers.py\"\n  164: CANONICAL_PATH = SHARED_DIR / \"canonical_constants.py\"\n  165: SCRIPT_PATH = Path(__file__).resolve()\n  166: \n  167: INPUT_FILES = [\n  168:     SCRIPT_PATH,"
+    },
+    {
+      "anchor_id": "prov_2145",
+      "anchor_type": "data_provenance",
+      "name": "w13_w7_3_c_gamma_weak_tier1_lift",
+      "script_path": "session-88/s88_w13_w7_3_c_gamma_weak_tier1_lift.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "session-88/s88_w13_w7_3_c_gamma_weak_tier1_lift.npz, session-88/s88_w13_w7_3_c_gamma_weak_tier1_lift.png",
+      "source_file": "computations/session-88/s88_w13_w7_3_c_gamma_weak_tier1_lift.py",
+      "source_context_30_lines": "    1: \"\"\"\n    2: s88_w13_w7_3_c_gamma_weak_tier1_lift.py — S88-W7-3-C-GAMMA-WEAK-PRIMARY-LIFT\n    3: ============================================================================\n    4: \n    5: Gate: S88-W7-3-C-GAMMA-WEAK-PRIMARY-LIFT  ([VERIFY])\n    6: Plan: sessions/session-plan/session-88-plan-w13.md §W13-159\n    7: Trigger: [VERIFY]\n    8: Classification: COMPUTE-class\n    9: \n   10: PRIMARY full-physical Pauli-Villars (per `substrate-first-canonical-sourcing.md`"
+    },
+    {
+      "anchor_id": "prov_2146",
+      "anchor_type": "data_provenance",
+      "name": "w13_w7_3_n_c_oeis_lookup",
+      "script_path": "session-88/s88_w13_w7_3_n_c_oeis_lookup.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "session-88/s88_w13_w7_3_n_c_oeis_lookup.png",
+      "source_file": "computations/session-88/s88_w13_w7_3_n_c_oeis_lookup.py",
+      "source_context_30_lines": "   92: SCHEME = \"mcp-oeis-lookup-by-values\"  # (local)\n   93: CONVENTION = \"verbatim-w7-3-sequence-10-10-10-11-13\"  # (local)\n   94: L_MAX = \"N/A\"  # (local)\n   95: \n   96: # Verdict file (CANONICAL per gate-verdicts.md)\n   97: VERDICT_TXT = COMPUTATIONS_DIR / \"session-88\" / \"s88_gate_verdicts.txt\"  # (local)\n   98: \n   99: # Output artifacts\n  100: OUT_JSON = SESSION_DIR / \"s88_w13_w7_3_n_c_oeis_lookup.json\"  # (local)\n  101: OUT_PNG = SESSION_DIR / \"s88_w13_w7_3_n_c_oeis_lookup.png\"  # (local)\n  102: \n  103: # Pre-registered sequence\n  104: N_C_SEQUENCE = (10, 10, 10, 11, 13)  # (local) — W7-3 SCHEMATIC integer-graded multiplier\n  105: \n  106: # ---------------------------------------------------------------------------\n  107: # Section 4 — SHA helpers (dual-SHA S87+ schema)\n  108: # ---------------------------------------------------------------------------"
+    },
+    {
+      "anchor_id": "prov_2147",
+      "anchor_type": "data_provenance",
+      "name": "w13_w7_4_l1_numerical_warrant_chain",
+      "script_path": "session-88/s88_w13_w7_4_l1_numerical_warrant_chain.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "session-88/s88_w13_w7_4_l1_numerical_warrant_chain.png",
+      "source_file": "computations/session-88/s88_w13_w7_4_l1_numerical_warrant_chain.py",
+      "source_context_30_lines": "  190:     INPUT_REGISTRY_MD,\n  191:     INPUT_WAVE_CLASS_RULE,\n  192:     INPUT_VERDICTS_FILE,\n  193:     INPUT_CANONICAL_CONSTANTS,\n  194: ]\n  195: \n  196: # Output destinations (canonical session-{N}/ paths per gate-verdicts.md\n  197: # + spawn-prompt override of plan §W13-164's `computations/s88_*` paths)\n  198: OUT_JSON = SESSION_DIR / \"s88_w13_w7_4_l1_numerical_warrant_chain.json\"  # script artifact\n  199: OUT_PNG = SESSION_DIR / \"s88_w13_w7_4_l1_numerical_warrant_chain.png\"\n  200: OUT_CHAIN_MANIFEST = SESSION_DIR / \"s88_w13_warrant_check_chain.json\"\n  201: VERDICT_TXT = SESSION_DIR / \"s88_gate_verdicts.txt\"\n  202: \n  203: \n  204: # ---------------------------------------------------------------------------\n  205: # Section 4 -- SHA-256 input-pin block (MANDATORY; first 20 lines of stdout)\n  206: # ---------------------------------------------------------------------------"
+    },
+    {
+      "anchor_id": "prov_2148",
+      "anchor_type": "data_provenance",
+      "name": "w13_w7_4_l2_promotable_cac_conversion",
+      "script_path": "session-88/s88_w13_w7_4_l2_promotable_cac_conversion.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "session-88/s88_w13_w7_4_l2_promotable_cac_conversion.png",
+      "source_file": "computations/session-88/s88_w13_w7_4_l2_promotable_cac_conversion.py",
+      "source_context_30_lines": "  153: INPUT_FILES = [\n  154:     INPUT_AUDIT_JSON,\n  155:     INPUT_REGULATOR_LOCKDOWN_RULE,\n  156:     INPUT_S85_W0_7_NPZ,\n  157:     INPUT_CANONICAL_CONSTANTS,\n  158: ]\n  159: \n  160: # Output destinations\n  161: OUT_JSON = SESSION_DIR / \"s88_w13_w7_4_l2_promotable_cac_conversion.json\"\n  162: OUT_PNG = SESSION_DIR / \"s88_w13_w7_4_l2_promotable_cac_conversion.png\"\n  163: VERDICT_TXT = SESSION_DIR / \"s88_gate_verdicts.txt\"  # canonical per gate-verdicts.md\n  164: \n  165: \n  166: # ---------------------------------------------------------------------------\n  167: # Section 4 — SHA-256 input-pin block (MANDATORY; first 20 lines of stdout)\n  168: # ---------------------------------------------------------------------------\n  169: "
+    },
+    {
+      "anchor_id": "prov_2149",
+      "anchor_type": "data_provenance",
+      "name": "w13_w7_4_layer_audit_step_f_rewrite",
+      "script_path": "session-88/s88_w13_w7_4_layer_audit_step_f_rewrite.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "session-88/s88_w13_w7_4_layer_audit_step_f_rewrite.png",
+      "source_file": "computations/session-88/s88_w13_w7_4_layer_audit_step_f_rewrite.py",
+      "source_context_30_lines": "  168: \n  169: GATE_ID = \"S88-W7-4-LAYER-AUDIT-STEP-F-RUBRIC-REWRITE\"                    # (local)\n  170: SCHEME = \"direct-dict-lookup-no-fuzzy-match\"                              # (local)\n  171: CONVENTION = \"hand-tagged-N-200-stratified-ground-truth\"                  # (local)\n  172: SCHEMA_VERSION = \"S87+\"                                                   # (local)\n  173: \n  174: CORPUS_JSON = COMPUTATIONS_DIR / \"session-87\" / \"s87_w7_layer_audit_full_enumeration.json\"  # (local)\n  175: REF_TABLE_JSON = COMPUTATIONS_DIR / \"_w7_4_step_f_reference_table.json\"   # (local)\n  176: OUT_JSON = SCRIPT_DIR / \"s88_w13_w7_4_layer_audit_step_f_rewrite.json\"    # (local)\n  177: OUT_PNG = SCRIPT_DIR / \"s88_w13_w7_4_layer_audit_step_f_rewrite.png\"      # (local)\n  178: VERDICT_FILE = SCRIPT_DIR / \"s88_gate_verdicts.txt\"                       # (local)\n  179: \n  180: S87_HARNESS_PY = COMPUTATIONS_DIR / \"session-87\" / \"s87_w7_layer_audit_full_enumeration.py\"  # (local)\n  181: EPISTEMIC_DISCIPLINE_MD = REPO_ROOT / \".claude\" / \"rules\" / \"epistemic-discipline.md\"        # (local)\n  182: REGULATOR_PIN_DISCIPLINE_MD = REPO_ROOT / \".claude\" / \"rules\" / \"regulator-pin-discipline.md\" # (local)\n  183: \n  184: # Stratified N=200 sample: floor=30 convention"
+    },
+    {
+      "anchor_id": "prov_2150",
+      "anchor_type": "data_provenance",
+      "name": "w13_w7_5_warrant_head_subtest_implementation",
+      "script_path": "session-88/s88_w13_w7_5_warrant_head_subtest_implementation.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "session-88/s88_w13_w7_5_warrant_head_subtest_implementation.npz, session-88/s88_w13_w7_5_warrant_head_subtest_implementa...",
+      "source_file": "computations/session-88/s88_w13_w7_5_warrant_head_subtest_implementation.py",
+      "source_context_30_lines": "    1: \"\"\"\n    2: s88_w13_w7_5_warrant_head_subtest_implementation.py\n    3: ====================================================\n    4: \n    5: Gate: S88-W7-5-WARRANT-HEAD-SUBTEST-IMPLEMENTATION ([VERIFY])\n    6: \n    7: Pre-registered threshold (plan §W13-165 lines 558-561):\n    8:   PASS  iff subtest_a ∧ subtest_b ∧ subtest_c ALL-PASS; SECONDARY composite operational.\n    9:   FAIL  iff ≥1 subtest FAILs.\n   10:   INFO  iff ≥1 subtest INFO (e.g., scheme-invariance margins close to threshold)."
+    }
+  ]
+}

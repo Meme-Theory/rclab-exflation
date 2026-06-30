@@ -1,0 +1,125 @@
+==============================================================================
+S78-W1-E-PRE-FOLD-VACUUM: Squeezed-Vacuum S_IC Under Three IC Principles
+==============================================================================
+Convention: S_IC(k) = |alpha_k + beta_k|^2
+Bogoliubov sign convention: plus (a_out = alpha a_in + beta* a_in^dag)
+Scheme: f*, L_max=10
+Canonical IC principle: spectral stationarity (Transit default)
+Cross-checks: minimum-entropy, AZ-topology
+==============================================================================
+
+--- SECTION 1: Trajectory & Pump Field Construction ---
+  k_pivot (fold norm)      = 14.311093 M_KK
+  k^2/(z''/z) at fold      = 107.6356  (>>1 => deeply subhorizon)
+  k/aH at fold             = 14.6721
+  N_pivot                  = 3.1184
+  Post-fold H_dS           = 0.632937 M_KK
+  Post-fold eps_dS         = 4.815003e-03
+  Post-fold asymptote pump_N(large N) = 1.9952  (expect ~2)
+
+  Pre-fold stiff epoch: w = 0.1489, eps = 1.7233
+  Conformal-time exponent (a ~ (-eta)^n): n = 1.3825
+  Pre-fold pump at eta_match: z''/z = 0.000000 M_KK^2
+  Post-fold pump at fold (eta=0^+): z''/z = -105.277356 M_KK^2
+  Pre-fold conformal window: eta in [-1.130158e-02, -1.130158e-03] M_KK^-1
+  Post-fold window: eta in [0, 1.438200e+00] M_KK^-1
+
+--- SECTION 2: Mode Equation Solver ---
+
+--- SECTION 3: Three IC Principles ---
+
+--- SECTION 4: Bogoliubov Extraction ---
+
+--- SECTION 5: S_IC(k_pivot) Under Three Principles ---
+  IC point eta_ic         = -1.130158e-02 M_KK^-1 (pre-fold)
+  End point eta_end       = 1.228798e+00 M_KK^-1 (post-fold, N=2.020)
+  k/aH at eta_end         = 2.998
+  k^2/(z''/z) at eta_end  = 4.503
+
+  IC principle: spectral_stationarity
+    omega(eta_ic) = 14.311092688448717
+    v0 = (0.1869169151636192+0j), dv0 = -2.67498529794546j
+    Wronskian drift |W_f - W_0| / |W_0| = 6.11e-10
+    alpha = 1.254386e+02+1.637563e+02j
+    beta  = 1.790262e+02+1.024676e+02j
+    |alpha|^2 - |beta|^2 = 0.9999999994  (unitarity deviation: 6.11e-10)
+    S_IC(k_pivot) = |alpha + beta|^2 = 1.635740e+05
+
+  IC principle: min_entropy
+    omega(eta_ic) = 14.311092688448717
+    v0 = (0.2643404364613315+0j), dv0 = 0j
+    Wronskian drift |W_f - W_0| / |W_0| = 0.00e+00
+    alpha = 2.152891e+02+4.333766e+01j
+    beta  = 2.152891e+02-4.333766e+01j
+    |alpha|^2 - |beta|^2 = 0.0000000000  (unitarity deviation: 1.00e+00)
+    S_IC(k_pivot) = |alpha + beta|^2 = 1.853977e+05
+
+  IC principle: az_topology
+    omega(eta_ic) = 14.311092688448717
+    v0 = (0.1869169151636192+0j), dv0 = 2.67498529794546j
+    Wronskian drift |W_f - W_0| / |W_0| = 6.11e-10
+    alpha = 1.790262e+02-1.024676e+02j
+    beta  = 1.254386e+02-1.637563e+02j
+    |alpha|^2 - |beta|^2 = -0.9999999994  (unitarity deviation: 2.00e+00)
+    S_IC(k_pivot) = |alpha + beta|^2 = 1.635740e+05
+
+  SUMMARY (3 IC principles):
+    S_IC(spectral_stationarity)  = 1.635740e+05  [CANONICAL]
+    S_IC(min_entropy)            = 1.853977e+05
+    S_IC(az_topology)            = 1.635740e+05
+
+  Spread across principles (max/min): factor = 1.133e+00  (0.054 OOM)
+
+--- SECTION 6: Cross-Check 1 — Adiabatic Recovery (BD Limit) ---
+  Adiabatic timescale: 0.1130 M_KK^-1 (100x transit)
+  S_IC(adiabatic, spectral_stationarity) = 9.998905e-01  (expect ~1 for BD)
+  S_IC(adiabatic, min_entropy) = 1.935680e+00  (expect ~1 for BD)
+  S_IC(adiabatic, az_topology) = 9.998905e-01  (expect ~1 for BD)
+  CHK1 (adiabatic BD): PARTIAL
+
+--- SECTION 7: Cross-Check 2 — First-Order PT Signature ---
+  dS_bare/dtau (pre-fold)    = 58672.8024
+  dS_bare/dtau (post-fold)   ~ 359.2351 (transit-scale estimate)
+  Discontinuity ratio        = 0.0061  (expect != 1 for 1st-order PT)
+  CHK2 (first-order PT): PASS
+
+--- SECTION 8: Cross-Check 3 — Level-Crossing vs n_pairs ---
+  |beta|^2 (k_pivot, canonical) = 4.254999e+04
+  n_pairs_total / 8 modes      = 7.4750 (substrate BCS, different basis)
+  CHK3 (pair production consistent): PASS (structural)
+
+--- SECTION 9: Cross-Check 4 — Non-BD Squeeze Functional Invariance ---
+  S_IC(canonical)            = 1.635740e+05
+  S_IC(10% scheme-shifted)   = 1.934880e+05
+  Ratio (shifted/canonical)  = 1.182877
+  CHK4 (non-BD squeeze FI): PASS
+
+--- SECTION 10: Cross-Check 5 — Principle-Ordering Stability ---
+  Re-computing all 3 principles under 10% pre-fold perturbation...
+  Original ordering (SS, ME, AZ): indices sorted = [0 2 1]
+  Perturbed ordering (SS, ME, AZ): indices sorted = [0 2 1]
+  CHK5 (ordering stability): PASS
+
+--- SECTION 11: Cross-Check 6 — Scheme-Invariant Ratio ---
+  k_lo (proxy for k=0) = 4.770364e+00 M_KK
+  eta_end (k_lo)          = 8.104077e-01 (N=0.921)
+  S_IC(k_pivot)           = 1.635740e+05
+  S_IC(k_lo proxy)        = 3.117222e+04
+  Ratio (k_pivot/k_lo)    = 5.247430e+00
+
+==============================================================================
+SECTION 12: Pre-Registered Gate Verdict
+==============================================================================
+
+  S_IC canonical (spectral stationarity) = 1.635740e+05
+  Cross-check spread factors: SS/ME = 1.133e+00, SS/AZ = 1.000e+00
+  Maximum spread factor = 1.133e+00
+
+  VERDICT: FAIL
+  Reason:  S_IC canonical = 1.636e+05 > 1 — pre-fold vacuum is an AMPLIFICATION channel, NOT a suppression channel (opposite sign of original hypothesis). Cross-check spread within factor 2 (no axiomatic gap), but the channel runs the WRONG direction for A_s closure.
+
+--- SECTION 13: Plot ---
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s78_pre_fold_vacuum.png
+
+--- SECTION 14: Save NPZ ---
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s78_pre_fold_vacuum.npz

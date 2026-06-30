@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 28,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_271",
+      "anchor_type": "data_provenance",
+      "name": "fermionic_spectral_action",
+      "script_path": "session-41/s41_fermionic_spectral_action.py",
+      "session": "s41",
+      "inputs": "",
+      "outputs": "session-41/s41_fermionic_spectral_action.npz, session-41/s41_fermionic_spectral_action.png",
+      "source_file": "computations/session-41/s41_fermionic_spectral_action.py",
+      "source_context_30_lines": "  445: \n  446: # ======================================================================\n  447: #  Step 7: Save and Plot\n  448: # ======================================================================\n  449: print(\"\\n\" + \"=\" * 78)\n  450: print(\"STEP 7: SAVE DATA AND PLOT\")\n  451: print(\"=\" * 78)\n  452: \n  453: out_file = os.path.join(SCRIPT_DIR, 's41_fermionic_spectral_action.npz')\n  454: np.savez(out_file,\n  455:     tau=results['tau'],\n  456:     S_F_Connes=results['S_F_Connes'],\n  457:     S_F_Pfaff=results['S_F_Pfaff'],\n  458:     S_F_Pfaff_B2=results['S_F_Pfaff_B2'],\n  459:     S_F_Pfaff_B1=results['S_F_Pfaff_B1'],\n  460:     S_F_Pfaff_B3=results['S_F_Pfaff_B3'],\n  461:     E_cond=results['E_cond'],"
+    },
+    {
+      "anchor_id": "prov_272",
+      "anchor_type": "data_provenance",
+      "name": "log_signed",
+      "script_path": "session-41/s41_log_signed.py",
+      "session": "s41",
+      "inputs": "",
+      "outputs": "session-41/s41_log_signed.npz, session-41/s41_log_signed.png",
+      "source_file": "computations/session-41/s41_log_signed.py",
+      "source_context_30_lines": "   13:   (A) Constant-ratio: w_B=44, w_F=16 per eigenvalue -> proportional to unsigned (control)\n   14:   (B) Gamma_9 grading: +1/-1 from spectral pairing -> identically zero (control)\n   15:   (C) BdG particle-hole: P eigenvalue +-1 within each sector (physical B/F from BCS)\n   16:   (D) Level-dependent: B/F weight varies with eigenvalue index within each sector\n   17: \n   18: Also computes the UNSIGNED log sum as baseline for comparison.\n   19: \n   20: Input: s36_sfull_tau_stabilization.npz, s27_multisector_bcs.npz\n   21: Output: s41_log_signed.npz, s41_log_signed.png\n   22: \"\"\"\n   23: \n   24: import numpy as np\n   25: from pathlib import Path\n   26: import matplotlib\n   27: matplotlib.use('Agg')\n   28: import matplotlib.pyplot as plt\n   29: from scipy.interpolate import CubicSpline"
+    },
+    {
+      "anchor_id": "prov_273",
+      "anchor_type": "data_provenance",
+      "name": "mkk_rge",
+      "script_path": "session-41/s41_mkk_rge.py",
+      "session": "s41",
+      "inputs": "",
+      "outputs": "session-41/s41_mkk_rge.npz, session-41/s41_mkk_rge.png",
+      "source_file": "computations/session-41/s41_mkk_rge.py",
+      "source_context_30_lines": "  601: ax2.set_title('Gauge Coupling Ratio vs Energy Scale', fontsize=14)\n  602: ax2.legend(fontsize=9, loc='upper left')\n  603: ax2.set_xlim(1.5, 19)\n  604: ax2.set_ylim(0.4, 1.3)\n  605: ax2.grid(True, alpha=0.3)\n  606: \n  607: plt.tight_layout()\n  608: outdir = os.path.dirname(os.path.abspath(__file__))\n  609: plt.savefig(os.path.join(outdir, 's41_mkk_rge.png'), dpi=150, bbox_inches='tight')\n  610: print(\"Plot saved: computations/session-41/s41_mkk_rge.png\")\n  611: print()\n  612: \n  613: \n  614: # =============================================================================\n  615: # DETAILED ANALYSIS: Convention A (most physical for this framework)\n  616: # =============================================================================\n  617: "
+    },
+    {
+      "anchor_id": "prov_274",
+      "anchor_type": "data_provenance",
+      "name": "offjensen_bcs",
+      "script_path": "session-41/s41_offjensen_bcs.py",
+      "session": "s41",
+      "inputs": "",
+      "outputs": "session-41/s41_offjensen_bcs.npz, session-41/s41_offjensen_bcs.png",
+      "source_file": "computations/session-41/s41_offjensen_bcs.py",
+      "source_context_30_lines": "  813:             color=plt.cm.viridis(i / max(len(EPSILONS)-1, 1)))\n  814: ax.set_xlabel('epsilon')\n  815: ax.set_ylabel('Positive eigenvalues')\n  816: ax.set_title('Spectrum Evolution')\n  817: ax.set_xscale('symlog', linthresh=0.0005)\n  818: ax.grid(True, alpha=0.3)\n  819: \n  820: plt.tight_layout()\n  821: plt.savefig(os.path.join(SCRIPT_DIR, 's41_offjensen_bcs.png'), dpi=150)\n  822: print(f\"  Plot saved: computations/session-41/s41_offjensen_bcs.png\")\n  823: \n  824: \n  825: # =============================================================================\n  826: # STEP 9: SAVE RESULTS\n  827: # =============================================================================\n  828: print(\"\\n\" + \"=\" * 78)\n  829: print(\"STEP 8: SAVING RESULTS\")"
+    },
+    {
+      "anchor_id": "prov_275",
+      "anchor_type": "data_provenance",
+      "name": "spectral_refinement",
+      "script_path": "session-41/s41_spectral_refinement.py",
+      "session": "s41",
+      "inputs": "",
+      "outputs": "session-41/s41_spectral_refinement.npz, session-41/s41_spectral_refinement.png",
+      "source_file": "computations/session-41/s41_spectral_refinement.py",
+      "source_context_30_lines": "   31: matplotlib.use('Agg')\n   32: import matplotlib.pyplot as plt\n   33: \n   34: # ═══════════════════════════════════════════════════════════════════════\n   35: # CONFIGURATION\n   36: # ═══════════════════════════════════════════════════════════════════════\n   37: \n   38: data_dir = Path(\"computations\")\n   39: output_npz = data_dir / \"s41_spectral_refinement.npz\"\n   40: output_png = data_dir / \"s41_spectral_refinement.png\"\n   41: \n   42: SECTORS = [(0,0),(1,0),(0,1),(1,1),(2,0),(0,2),(3,0),(0,3),(2,1),(1,2)]\n   43: \n   44: TOL_DEFAULT = 1e-6\n   45: TOL_VALUES = [1e-8, 1e-7, 1e-6, 1e-5, 1e-4, 1e-3]\n   46: LAMBDA_CUTOFF = 0.01\n   47: "
+    },
+    {
+      "anchor_id": "prov_276",
+      "anchor_type": "data_provenance",
+      "name": "constants_snapshot",
+      "script_path": "session-42/s42_constants_snapshot.py",
+      "session": "s42",
+      "inputs": "",
+      "outputs": "session-42/s42_constants_snapshot.npz, session-42/s42_constants_snapshot.png",
+      "source_file": "computations/session-42/s42_constants_snapshot.py",
+      "source_context_30_lines": " 1252:     # CC\n 1253:     'rho_Lambda_spectral': rho_Lambda,\n 1254:     'CC_ratio': CC_ratio,\n 1255:     # Gate\n 1256:     'gate_verdict': np.array([gate_verdict]),\n 1257:     'gate_name': np.array(['CONST-FREEZE-42']),\n 1258: }\n 1259: \n 1260: np.savez(DATA_DIR / 's42_constants_snapshot.npz', **save_dict)\n 1261: print(f\"\\nSaved: {DATA_DIR / 's42_constants_snapshot.npz'}\")\n 1262: \n 1263: # ======================================================================\n 1264: # PLOTTING\n 1265: # ======================================================================\n 1266: \n 1267: fig, axes = plt.subplots(2, 3, figsize=(18, 10))\n 1268: fig.suptitle('CONST-FREEZE-42: Constants as Frozen Snapshots',"
+    },
+    {
+      "anchor_id": "prov_277",
+      "anchor_type": "data_provenance",
+      "name": "coupled_doorway",
+      "script_path": "session-42/s42_coupled_doorway.py",
+      "session": "s42",
+      "inputs": "",
+      "outputs": "session-42/s42_coupled_doorway.npz, session-42/s42_coupled_doorway.png",
+      "source_file": "computations/session-42/s42_coupled_doorway.py",
+      "source_context_30_lines": "  893:         save_data[f'{key}_min_q'] = r['min_q']\n  894:         save_data[f'{key}_mean_q'] = r['mean_q']\n  895:         save_data[f'{key}_lightest_coupled'] = r['lightest_coupled']\n  896:         save_data[f'{key}_evals_coupled'] = r['evals_coupled']\n  897:         save_data[f'{key}_q_values'] = r['q_values']\n  898:         save_data[f'{key}_channel_BR'] = r['channel_BR']\n  899:         save_data[f'{key}_channel_suppression'] = r['channel_suppression']\n  900: \n  901:     out_path = os.path.join(SCRIPT_DIR, \"s42_coupled_doorway.npz\")\n  902:     np.savez_compressed(out_path, **save_data)\n  903:     print(f\"  Saved: {out_path}\")\n  904:     print(f\"  Size: {os.path.getsize(out_path) / 1024:.1f} KB\")\n  905: \n  906:     # ================================================================\n  907:     # 8. Generate plots\n  908:     # ================================================================\n  909:     print(\"\\n--- Generating plots ---\")"
+    },
+    {
+      "anchor_id": "prov_278",
+      "anchor_type": "data_provenance",
+      "name": "crystal_spec",
+      "script_path": "session-42/s42_crystal_spec.py",
+      "session": "s42",
+      "inputs": "",
+      "outputs": "session-42/s42_crystal_spec.npz, session-42/s42_crystal_spec.png",
+      "source_file": "computations/session-42/s42_crystal_spec.py",
+      "source_context_30_lines": "   23:     Total eigenvalues per tau: 1232\n   24: \n   25: Pre-registered gate criteria:\n   26:     1. Van Hove singularity: eigenvalue spacing < 0.005 for 3+ levels at any tau in [0.01, 0.10]\n   27:     2. Gap closure: min |lambda| < 0.1 in any sector\n   28:     3. Inter-sector crossing: sign change in (lambda_i^A - lambda_j^B) between sectors\n   29:     4. Berry curvature: B(tau) peak > 500 in the full multi-sector spectrum\n   30: \n   31: Output: computations/session-42/s42_crystal_spec.npz, s42_crystal_spec.png\n   32: \n   33: Author: Gen-Physicist (Session 42)\n   34: Date: 2026-03-13\n   35: \"\"\"\n   36: \n   37: import sys\n   38: import os\n   39: import time"
+    },
+    {
+      "anchor_id": "prov_279",
+      "anchor_type": "data_provenance",
+      "name": "dark_energy_wz",
+      "script_path": "session-42/s42_dark_energy_wz.py",
+      "session": "s42",
+      "inputs": "computations/session-42/s42_gradient_stiffness.npz, computations/session-42/s42_fabric_dispersion.npz, computations/sess...",
+      "outputs": "session-42/s42_dark_energy_wz.npz, session-42/s42_dark_energy_wz.png",
+      "source_file": "computations/session-42/s42_dark_energy_wz.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s42_dark_energy_wz.py — Dark Energy w(z) Prediction (W-Z-42)\n    4: \n    5: Einstein-Theorist, Session 42.\n    6: \n    7: PRINCIPLE: The tau modulus of the M4 x SU(3) spectral geometry has a spectral\n    8: action V_eff(tau) = S_B(tau) that is monotonically increasing (proven S36).\n    9: The gradient stiffness Z(tau) and modulus mass m_tau are known from W1-1/W2-1.\n   10: \n   11: QUESTION: Does tau evolution in FRW produce dynamical dark energy w != -1?"
+    },
+    {
+      "anchor_id": "prov_280",
+      "anchor_type": "data_provenance",
+      "name": "dm_profile",
+      "script_path": "session-42/s42_dm_profile.py",
+      "session": "s42",
+      "inputs": "computations/session-42/s42_fabric_dispersion.npz",
+      "outputs": "session-42/s42_dm_profile.npz, session-42/s42_dm_profile.png",
+      "source_file": "computations/session-42/s42_dm_profile.py",
+      "source_context_30_lines": "  700:     'n_framework_free_params': np.array([0]),\n  701:     'n_shared_params': np.array([1]),  # M_KK\n  702: \n  703:     # Inner slope verification\n  704:     'r_inner': r_inner,\n  705:     'slope_nfw': slope_nfw,\n  706: }\n  707: \n  708: np.savez('computations/session-42/s42_dm_profile.npz', **results)\n  709: print(\"  Saved: computations/session-42/s42_dm_profile.npz\")\n  710: \n  711: # =============================================================================\n  712: # STEP 11: Plot\n  713: # =============================================================================\n  714: print(\"\\n  Generating plot...\")\n  715: \n  716: fig, axes = plt.subplots(2, 2, figsize=(14, 11))"
+    }
+  ]
+}

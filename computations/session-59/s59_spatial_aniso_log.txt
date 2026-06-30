@@ -1,0 +1,148 @@
+========================================================================
+SPATIAL-ANISO-59: Spatial Anisotropy from Mach 421 Quench
+========================================================================
+
+1. LOADING ACOUSTIC METRIC DATA
+----------------------------------------
+  tau grid: 50 points, [0.000, 0.500]
+  fold_idx = 19, tau_fold = 0.194
+  c_BA at fold = 0.3991 M_KK
+  H_tau at fold = 3.7064 M_KK
+  R_acoustic at fold = 442.9467 M_KK^2
+  Mach at fold = 421.3
+
+2. LOADING FRIEDMANN DERIVATION DATA
+----------------------------------------
+  M_Pl_eff = 4.7858e+19 GeV
+  M_Pl_ratio = M_Pl_eff / M_Pl_reduced = 19.6542
+  G_eff at fold = 1.7372e-41 GeV^{-2}
+  R_acoustic at fold (from friedmann) = 442.9467 M_KK^2
+  Mach at fold (from friedmann) = 421.3
+
+3. CORE CALCULATION: delta_g / g
+----------------------------------------
+  M_KK (gravity) = 7.4287e+16 GeV
+  M_Pl_eff = 4.7858e+19 GeV
+  M_KK / M_Pl_eff = 1.552233e-03
+  (M_KK / M_Pl_eff)^2 = 2.409427e-06
+
+  R_acoustic (50-pt grid):
+    At fold (idx=19): 442.9467
+    Max |R_acoustic|: 13153.2196
+    From friedmann npz: 442.9467
+
+  delta_g / g:
+    At fold: 1.067248e-03
+    Maximum: 3.169173e-02
+    From friedmann R: 1.067248e-03
+    log10(delta_g_fold) = -2.97
+    log10(delta_g_max) = -1.50
+
+4. COMPARISON WITH CMB SCALAR AMPLITUDE
+----------------------------------------
+  A_s (CMB) = 2.10e-09
+  delta_g (fold) = 1.067248e-03
+  delta_g / A_s = 5.0821e+05
+  delta_g EXCEEDS A_s by factor 5.08e+05
+  => Would imprint on CMB/LSS if inhomogeneous
+
+5. SCENARIO A: HOMOGENEOUS SHATTERING
+----------------------------------------
+  If the transit is spatially uniform (all cells simultaneously),
+  the perturbation is isotropic and modifies only the scale factor.
+  No spatial anisotropy is generated.
+  delta_a / a = delta_g / g = 1.067248e-03
+  This is a UNIFORM rescaling — pure conformal perturbation.
+  It shifts the effective scale factor at the transit epoch but
+  generates NO angular power spectrum contributions.
+  => GEOMETRIC contribution: isotropic, non-observable
+
+6. SCENARIO B: CAUSAL FRONT PROPAGATION
+----------------------------------------
+  c_fabric = 209.9737 M_KK
+  dt_transit = 1.130158e-03 M_KK^{-1}
+  lambda_front = c_fabric * dt_transit = 2.3730e-01 M_KK^{-1}
+
+  Physical scale of causal front:
+    lambda = 6.3035e-34 m
+    lambda = 2.0428e-56 Mpc
+
+  Hubble radius at transit:
+    R_H = 1/H_fold = 1.704952e-03 M_KK^{-1}
+    R_H = 4.5289e-36 m
+    lambda_front / R_H = 1.3918e+02
+  Causal front LARGER than Hubble radius
+  => Super-horizon perturbation
+
+  Causal front perturbation amplitude: delta_g = 1.067248e-03
+  This perturbation has wavenumber k = 2*pi/lambda
+  k_front = 2.6477e+01 M_KK
+  k_front = 3.0758e+56 Mpc^{-1}
+
+7. MACH NUMBER AND SONIC HORIZON
+----------------------------------------
+  Mach at fold = 421.3
+  c_BA at fold = 0.3991 M_KK
+  Sonic horizon during transit = c_BA * dt_transit = 4.510278e-04 M_KK^{-1}
+  Sonic horizon = 1.1981e-36 m
+  Compare: modulus covers tau_fold = 0.19 in dt = 1.130158e-03
+  => Sound CANNOT communicate across the system during transit
+  => Mach 421 means the transit is 421x faster than sound
+
+  With 32 cells and Mach = 421:
+  Each cell undergoes transit INDEPENDENTLY (no causal contact)
+  => Phase of condensate in each cell is RANDOM (Kibble-Zurek)
+  => But ALL cells experience the SAME tau evolution
+  => The quench is HOMOGENEOUS in tau, even though condensate phases are random
+  => Domain walls form (random phases) but delta_g is tau-dependent only
+
+8. KEY DISTINCTION: tau-HOMOGENEITY vs PHASE-RANDOMNESS
+----------------------------------------
+  The Shattering is tau-HOMOGENEOUS:
+    ALL cells undergo tau=0 -> tau_fold simultaneously
+    P_exc = 1.0 in every cell (S38)
+    |Delta|^2 -> 0 in every cell (pair-breaking complete)
+    delta_g depends on |Delta(tau)|^2, not phase
+    => delta_g is ISOTROPIC (Scenario A)
+
+  Domain wall contribution (post-transit):
+    max E_DW / E_J ~ 5.28e-06 (S58 OFF-JENSEN-DW)
+    delta_g from DW ~ 1.2722e-11
+    This is 6.06e-03 x A_s
+
+9. QUANTITATIVE SUMMARY
+========================================================================
+
+  INPUTS:
+    M_KK = 7.4287e+16 GeV (gravity route)
+    M_Pl_eff = 4.7858e+19 GeV (spectral action)
+    (M_KK/M_Pl)^2 = 2.409427e-06
+    R_acoustic (fold) = 442.9467 M_KK^2
+    Mach (fold) = 421.3
+    c_fabric = 209.97 M_KK
+    dt_transit = 1.130158e-03 M_KK^{-1}
+
+  RESULTS:
+    delta_g / g (fold) = 1.067248e-03
+    delta_g / g (max)  = 3.169173e-02
+    log10(delta_g) = -2.97
+    A_s (CMB) = 2.10e-09
+    delta_g / A_s = 5.0821e+05
+
+10. GATE VERDICT: SPATIAL-ANISO-59
+========================================================================
+  Gate: SPATIAL-ANISO-59
+  Verdict: FAIL
+  delta_g/g = 1.0672e-03 > 10^{-3}. Metric perturbation too large without matching CMB spectrum.
+
+11. SAVING RESULTS
+----------------------------------------
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s59_spatial_aniso.npz
+
+12. GENERATING PLOT
+----------------------------------------
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s59_spatial_aniso.png
+
+========================================================================
+COMPUTATION COMPLETE
+========================================================================

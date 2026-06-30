@@ -1,0 +1,107 @@
+{
+  "table": "open_channels",
+  "batch_id": 34,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "open_331",
+      "anchor_type": "open_channels",
+      "name": "`tolerance`",
+      "detail_1": "10⁻³ on F_amp(order=fixed, N=N_field).",
+      "detail_2": "",
+      "session": "84",
+      "source_file": "sessions\\session-84\\session-84-w5-workingpaper.md",
+      "source_context_30_lines": "   52: - INFO: F_amp < 0.4454 but ratio ≥ 0.75 (numerical PASS, structural stagnation).\n   53: - Tolerance: RATIO (factor-3 band on F_amp).\n   54: \n   55: **Machinery pin (PRDR)** (verbatim from plan):\n   56: - `N_eval`: per-order a_i coefficients at 1/N expansion, evaluated at K=2.035 via 3PI resummation + FKK dressing.\n   57: - `L_max`: 5 (S83 canonical for W2 regulator atlas).\n   58: - `scan_range`: order ∈ {LO, NLO, NNLO, N3LO}; N_field ∈ {1, 2, 4, 8, 16}.\n   59: - `step_size`: N/A (discrete orders).\n   60: - `tolerance`: 10⁻³ on F_amp(order=fixed, N=N_field).\n   61: - `scheme`: Zubarev (L2 substrate-action minimum from S83 G1).\n   62: - `convention`: K=2.035 (R1 PS-SUBSTRATE-MATCHED-IC canonical).\n   63: - `random_seed`: 42 (deterministic; no stochastic step).\n   64: - `GPU path`: `torch.linalg` mandatory — 3PI dressing kernels are ≥400×400 at L_max=5, use ROCm GPU.\n   65: \n   66: **Expected 4-tuple**: `(value=<F_amp_N3LO>, scheme=Zubarev, convention=K=2.035, L_max=5)`\n   67: \n   68: **Verdict**:"
+    },
+    {
+      "anchor_id": "open_332",
+      "anchor_type": "open_channels",
+      "name": "`convention`",
+      "detail_1": "K=2.035 (R1 PS-SUBSTRATE-MATCHED-IC canonical).",
+      "detail_2": "",
+      "session": "84",
+      "source_file": "sessions\\session-84\\session-84-w5-workingpaper.md",
+      "source_context_30_lines": "   54: \n   55: **Machinery pin (PRDR)** (verbatim from plan):\n   56: - `N_eval`: per-order a_i coefficients at 1/N expansion, evaluated at K=2.035 via 3PI resummation + FKK dressing.\n   57: - `L_max`: 5 (S83 canonical for W2 regulator atlas).\n   58: - `scan_range`: order ∈ {LO, NLO, NNLO, N3LO}; N_field ∈ {1, 2, 4, 8, 16}.\n   59: - `step_size`: N/A (discrete orders).\n   60: - `tolerance`: 10⁻³ on F_amp(order=fixed, N=N_field).\n   61: - `scheme`: Zubarev (L2 substrate-action minimum from S83 G1).\n   62: - `convention`: K=2.035 (R1 PS-SUBSTRATE-MATCHED-IC canonical).\n   63: - `random_seed`: 42 (deterministic; no stochastic step).\n   64: - `GPU path`: `torch.linalg` mandatory — 3PI dressing kernels are ≥400×400 at L_max=5, use ROCm GPU.\n   65: \n   66: **Expected 4-tuple**: `(value=<F_amp_N3LO>, scheme=Zubarev, convention=K=2.035, L_max=5)`\n   67: \n   68: **Verdict**:\n   69: ```\n   70: W5-53: INFO -- value=1.016485 scheme=Zubarev convention=K=2.035 L_max=5 sha256=c849a0908ade1f5dbec935fa85a236e4b689913a15c59ff280a85e4229034022"
+    },
+    {
+      "anchor_id": "open_333",
+      "anchor_type": "open_channels",
+      "name": "Step 5 (conclusion direction)",
+      "detail_1": "Series converges (sat_ratio 0.285 < 0.75, not FAIL-saturating in series-divergence sense) but to a **limit above target*...",
+      "detail_2": "",
+      "session": "84",
+      "source_file": "sessions\\session-84\\session-84-w5-workingpaper.md",
+      "source_context_30_lines": "   91: | Borel radius R_Borel = max(r_1, r_2) | 0.2853 | < 1 ⇒ series convergent for N ≥ 1 |\n   92: \n   93: **Substitution chain** ([CHAIN][VERIFY] — mandatory, direction claim):\n   94: \n   95: - **Step 1 (definitions)**: F_amp(order) := ∏_{i=1..order} (1 − a_i/N^i). F_amp_bare := F_amp(LO) at K=2.035 (S82 W2-4 pivot = 1.281). F_amp_target := 0.4454 (plan Key anchors). a_i are Berges 3PI 1/N-expansion coefficients in the Zubarev dressing at K=2.035.\n   96: - **Step 2 (substitution — verified numerically)**: R_req = F_amp_bare / F_amp_target = 1.281 / 0.4454 = **2.876066**. Plan-stated anchor 2.876; computed differs by 6.6e-5 relative — within rounding. **Verified ✓.**\n   97: - **Step 3 (simplification)**: F_amp(N3LO)/F_amp_bare ≤ 1/R_req = 0.34770. Cumulative product ∏(1 − a_i/N^i) must ≤ 0.3477, i.e. at least 65.23 % cumulative suppression at N3LO order.\n   98: - **Step 4 (direction)**: Computed Borel radius R_Borel = max(|a_2/a_1|, |a_3/a_2|) = max(1.50e-3, 0.2853) = **0.2853 < 1** ⇒ series is formally Borel-convergent (no divergence at any N_field ≥ 1). BUT cumulative suppression at SU(3), N3LO order = 1 − 1.016485/1.281 = **0.2065** (20.65%). Required 65.23%. Suppression shortfall = **3.16× short** of target.\n   99: - **Step 5 (conclusion direction)**: Series converges (sat_ratio 0.285 < 0.75, not FAIL-saturating in series-divergence sense) but to a **limit above target** (F_amp → ~1.016 asymptotically at SU(3), independent of how many 1/N orders are kept). This is the **\n... [truncated]"
+    },
+    {
+      "anchor_id": "open_334",
+      "anchor_type": "open_channels",
+      "name": "This reinforces (does NOT overturn) the S83 G11 FAIL interpretation",
+      "detail_1": "the \"NNLO shortfall\" persists at N3LO and asymptotes.",
+      "detail_2": "",
+      "session": "84",
+      "source_file": "sessions\\session-84\\session-84-w5-workingpaper.md",
+      "source_context_30_lines": "  108: 6. **Monotonicity in 1/N order** — F_amp(LO)=1.281 > F_amp(NLO)=1.0166 > F_amp(NNLO)=1.01650 > F_amp(N3LO)=1.01649 — strictly monotone decreasing, but ~10⁻⁴ per order after NLO. Effective plateau at F_amp ≈ 1.0165.\n  109: \n  110: **Self-assessment (what the verdict maps)**:\n  111: \n  112: INFO verdict maps the dynamics-layer rescue path at K=2.035 as **series-convergent but target-unreachable** — a previously-unmapped intermediate regime between PASS (rescue accessible) and FAIL (series divergent-saturating). Structural content:\n  113: \n  114: - Dynamics-layer F_amp suppression at K=2.035 plateaus at ~1.0165 in the Berges 3PI 1/N expansion regardless of order truncation.\n  115: - The 2.876× suppression required for F_amp_target = 0.4454 is **not accessible** by any order of 1/N at SU(3).\n  116: - This reinforces (does NOT overturn) the S83 G11 FAIL interpretation: the \"NNLO shortfall\" persists at N3LO and asymptotes.\n  117: - The Borel radius R_Borel = 0.285 is 2.6× smaller than the Jensen-consistent r_2 ~ 1/3 = 0.333. The series converges faster than Jensen expectation, meaning the convergent limit is reached earlier and more firmly above target.\n  118: \n  119: **What PASS would have meant** (counterfactual): dynamics-layer rescue accessible by 1/N; S83 G11 FAIL reflects truncation, not saturation. — NOT triggered.\n  120: \n  121: **What FAIL would have meant** (counterfactual): 1/N series saturating divergently at NNLO; promotes \"dynamics-WALL-at-2.035\" to permanent-r\n... [truncated]"
+    },
+    {
+      "anchor_id": "open_335",
+      "anchor_type": "open_channels",
+      "name": "BARE-SPECTRAL-ACTION as V.P. for τ_fold",
+      "detail_1": "CLOSED",
+      "detail_2": "§W8a-85 measures dS/dτ(Gauss) = −2.036 × 10⁴ ≠ 0 at τ_fold. Jensen ansatz falsified (slope 0.64, not in {+1, −1, +½}). B...",
+      "session": "84",
+      "source_file": "sessions\\session-84\\session-84-w8-workingpaper.md",
+      "source_context_30_lines": " 1066: - **Step 4 (Direction)**: ΔS < 0 over Δτ > 0 → S is decreasing on [0.05, 0.22] → τ_fold = 0.190 lies interior to a decreasing gradient region, not at a stationary point.\n 1067: \n 1068: ---\n 1069: \n 1070: #### Constraint-map update (W9 branches closed vs open)\n 1071: \n 1072: | Branch                                                   | Status                              | Reason |\n 1073: |:---------------------------------------------------------|:------------------------------------|:-------|\n 1074: | **BARE-SPECTRAL-ACTION as V.P. for τ_fold**              | **CLOSED**                          | §W8a-85 measures dS/dτ(Gauss) = −2.036 × 10⁴ ≠ 0 at τ_fold. Jensen ansatz falsified (slope 0.64, not in {+1, −1, +½}). Bare Tr(exp(−D_K²/Λ²)) has no interior extremum at τ_fold; S is monotonically decreasing across the probed Jensen window. |\n 1075: | **DRESSED-SPECTRAL-ACTION as V.P. for τ_fold**           | **OPEN**                            | S42 canonical dS_fold = +58,672.8 uses abs-like cutoff (a DIFFERENT functional from Gaussian). BCS/GGE/Gilkey loop-corrections + Jensen-deformed covariance could move the extremum to τ_fold. Bare-vs-dressed extremum relation NOT COMPUTED. |\n 1076: | **GGE-ENTROPY-FUNCTIONAL as V.P.**                       | **OPEN**                            | τ_fold may extremize S_GGE (Jacobson-Λ_J horizon-entropy, BCS free-energy, integrated-out KK modulus effective action). §W8a-85 did not test these. Each is a distinct V.P. |\n 1077: | **MECHANIS\n... [truncated]"
+    },
+    {
+      "anchor_id": "open_336",
+      "anchor_type": "open_channels",
+      "name": "DRESSED-SPECTRAL-ACTION as V.P. for τ_fold",
+      "detail_1": "OPEN",
+      "detail_2": "S42 canonical dS_fold = +58,672.8 uses abs-like cutoff (a DIFFERENT functional from Gaussian). BCS/GGE/Gilkey loop-corre...",
+      "session": "84",
+      "source_file": "sessions\\session-84\\session-84-w8-workingpaper.md",
+      "source_context_30_lines": " 1067: \n 1068: ---\n 1069: \n 1070: #### Constraint-map update (W9 branches closed vs open)\n 1071: \n 1072: | Branch                                                   | Status                              | Reason |\n 1073: |:---------------------------------------------------------|:------------------------------------|:-------|\n 1074: | **BARE-SPECTRAL-ACTION as V.P. for τ_fold**              | **CLOSED**                          | §W8a-85 measures dS/dτ(Gauss) = −2.036 × 10⁴ ≠ 0 at τ_fold. Jensen ansatz falsified (slope 0.64, not in {+1, −1, +½}). Bare Tr(exp(−D_K²/Λ²)) has no interior extremum at τ_fold; S is monotonically decreasing across the probed Jensen window. |\n 1075: | **DRESSED-SPECTRAL-ACTION as V.P. for τ_fold**           | **OPEN**                            | S42 canonical dS_fold = +58,672.8 uses abs-like cutoff (a DIFFERENT functional from Gaussian). BCS/GGE/Gilkey loop-corrections + Jensen-deformed covariance could move the extremum to τ_fold. Bare-vs-dressed extremum relation NOT COMPUTED. |\n 1076: | **GGE-ENTROPY-FUNCTIONAL as V.P.**                       | **OPEN**                            | τ_fold may extremize S_GGE (Jacobson-Λ_J horizon-entropy, BCS free-energy, integrated-out KK modulus effective action). §W8a-85 did not test these. Each is a distinct V.P. |\n 1077: | **MECHANISM-CHAIN selects τ_fold (dynamical, non-V.P.)** | **OPEN**                            | I-1 + Turing + RPA + WALL + BCS first-order transition criterion. Not a variational princi\n... [truncated]"
+    },
+    {
+      "anchor_id": "open_337",
+      "anchor_type": "open_channels",
+      "name": "GGE-ENTROPY-FUNCTIONAL as V.P.",
+      "detail_1": "OPEN",
+      "detail_2": "τ_fold may extremize S_GGE (Jacobson-Λ_J horizon-entropy, BCS free-energy, integrated-out KK modulus effective action). ...",
+      "session": "84",
+      "source_file": "sessions\\session-84\\session-84-w8-workingpaper.md",
+      "source_context_30_lines": " 1068: ---\n 1069: \n 1070: #### Constraint-map update (W9 branches closed vs open)\n 1071: \n 1072: | Branch                                                   | Status                              | Reason |\n 1073: |:---------------------------------------------------------|:------------------------------------|:-------|\n 1074: | **BARE-SPECTRAL-ACTION as V.P. for τ_fold**              | **CLOSED**                          | §W8a-85 measures dS/dτ(Gauss) = −2.036 × 10⁴ ≠ 0 at τ_fold. Jensen ansatz falsified (slope 0.64, not in {+1, −1, +½}). Bare Tr(exp(−D_K²/Λ²)) has no interior extremum at τ_fold; S is monotonically decreasing across the probed Jensen window. |\n 1075: | **DRESSED-SPECTRAL-ACTION as V.P. for τ_fold**           | **OPEN**                            | S42 canonical dS_fold = +58,672.8 uses abs-like cutoff (a DIFFERENT functional from Gaussian). BCS/GGE/Gilkey loop-corrections + Jensen-deformed covariance could move the extremum to τ_fold. Bare-vs-dressed extremum relation NOT COMPUTED. |\n 1076: | **GGE-ENTROPY-FUNCTIONAL as V.P.**                       | **OPEN**                            | τ_fold may extremize S_GGE (Jacobson-Λ_J horizon-entropy, BCS free-energy, integrated-out KK modulus effective action). §W8a-85 did not test these. Each is a distinct V.P. |\n 1077: | **MECHANISM-CHAIN selects τ_fold (dynamical, non-V.P.)** | **OPEN**                            | I-1 + Turing + RPA + WALL + BCS first-order transition criterion. Not a variational principle but \n... [truncated]"
+    },
+    {
+      "anchor_id": "open_338",
+      "anchor_type": "open_channels",
+      "name": "MECHANISM-CHAIN selects τ_fold (dynamical, non-V.P.)",
+      "detail_1": "OPEN",
+      "detail_2": "I-1 + Turing + RPA + WALL + BCS first-order transition criterion. Not a variational principle but a dynamical selection ...",
+      "session": "84",
+      "source_file": "sessions\\session-84\\session-84-w8-workingpaper.md",
+      "source_context_30_lines": " 1069: \n 1070: #### Constraint-map update (W9 branches closed vs open)\n 1071: \n 1072: | Branch                                                   | Status                              | Reason |\n 1073: |:---------------------------------------------------------|:------------------------------------|:-------|\n 1074: | **BARE-SPECTRAL-ACTION as V.P. for τ_fold**              | **CLOSED**                          | §W8a-85 measures dS/dτ(Gauss) = −2.036 × 10⁴ ≠ 0 at τ_fold. Jensen ansatz falsified (slope 0.64, not in {+1, −1, +½}). Bare Tr(exp(−D_K²/Λ²)) has no interior extremum at τ_fold; S is monotonically decreasing across the probed Jensen window. |\n 1075: | **DRESSED-SPECTRAL-ACTION as V.P. for τ_fold**           | **OPEN**                            | S42 canonical dS_fold = +58,672.8 uses abs-like cutoff (a DIFFERENT functional from Gaussian). BCS/GGE/Gilkey loop-corrections + Jensen-deformed covariance could move the extremum to τ_fold. Bare-vs-dressed extremum relation NOT COMPUTED. |\n 1076: | **GGE-ENTROPY-FUNCTIONAL as V.P.**                       | **OPEN**                            | τ_fold may extremize S_GGE (Jacobson-Λ_J horizon-entropy, BCS free-energy, integrated-out KK modulus effective action). §W8a-85 did not test these. Each is a distinct V.P. |\n 1077: | **MECHANISM-CHAIN selects τ_fold (dynamical, non-V.P.)** | **OPEN**                            | I-1 + Turing + RPA + WALL + BCS first-order transition criterion. Not a variational principle but a dynamical\n... [truncated]"
+    },
+    {
+      "anchor_id": "open_339",
+      "anchor_type": "open_channels",
+      "name": "EMPIRICAL-τ_fold RETENTION",
+      "detail_1": "ACTIVE (default fallback)",
+      "detail_2": "τ_fold = 0.190 remains epistemically empirical (matched from DESI/ACT/CMB epoch). Framework input count stays at 3 maste...",
+      "session": "84",
+      "source_file": "sessions\\session-84\\session-84-w8-workingpaper.md",
+      "source_context_30_lines": " 1070: #### Constraint-map update (W9 branches closed vs open)\n 1071: \n 1072: | Branch                                                   | Status                              | Reason |\n 1073: |:---------------------------------------------------------|:------------------------------------|:-------|\n 1074: | **BARE-SPECTRAL-ACTION as V.P. for τ_fold**              | **CLOSED**                          | §W8a-85 measures dS/dτ(Gauss) = −2.036 × 10⁴ ≠ 0 at τ_fold. Jensen ansatz falsified (slope 0.64, not in {+1, −1, +½}). Bare Tr(exp(−D_K²/Λ²)) has no interior extremum at τ_fold; S is monotonically decreasing across the probed Jensen window. |\n 1075: | **DRESSED-SPECTRAL-ACTION as V.P. for τ_fold**           | **OPEN**                            | S42 canonical dS_fold = +58,672.8 uses abs-like cutoff (a DIFFERENT functional from Gaussian). BCS/GGE/Gilkey loop-corrections + Jensen-deformed covariance could move the extremum to τ_fold. Bare-vs-dressed extremum relation NOT COMPUTED. |\n 1076: | **GGE-ENTROPY-FUNCTIONAL as V.P.**                       | **OPEN**                            | τ_fold may extremize S_GGE (Jacobson-Λ_J horizon-entropy, BCS free-energy, integrated-out KK modulus effective action). §W8a-85 did not test these. Each is a distinct V.P. |\n 1077: | **MECHANISM-CHAIN selects τ_fold (dynamical, non-V.P.)** | **OPEN**                            | I-1 + Turing + RPA + WALL + BCS first-order transition criterion. Not a variational principle but a dynamical selecti\n... [truncated]"
+    },
+    {
+      "anchor_id": "open_340",
+      "anchor_type": "open_channels",
+      "name": "MG-0 MELLIN CONE UNIVERSALITY** (free)",
+      "detail_1": "SURVIVES** (PASS-THEOREM §W8a-89)",
+      "detail_2": "Empty-gap bound [1.5, 2.5] holds across 3 framework-independent cases. MG-0 is a universal positive-measure theorem, not...",
+      "session": "84",
+      "source_file": "sessions\\session-84\\session-84-w8-workingpaper.md",
+      "source_context_30_lines": " 1071: \n 1072: | Branch                                                   | Status                              | Reason |\n 1073: |:---------------------------------------------------------|:------------------------------------|:-------|\n 1074: | **BARE-SPECTRAL-ACTION as V.P. for τ_fold**              | **CLOSED**                          | §W8a-85 measures dS/dτ(Gauss) = −2.036 × 10⁴ ≠ 0 at τ_fold. Jensen ansatz falsified (slope 0.64, not in {+1, −1, +½}). Bare Tr(exp(−D_K²/Λ²)) has no interior extremum at τ_fold; S is monotonically decreasing across the probed Jensen window. |\n 1075: | **DRESSED-SPECTRAL-ACTION as V.P. for τ_fold**           | **OPEN**                            | S42 canonical dS_fold = +58,672.8 uses abs-like cutoff (a DIFFERENT functional from Gaussian). BCS/GGE/Gilkey loop-corrections + Jensen-deformed covariance could move the extremum to τ_fold. Bare-vs-dressed extremum relation NOT COMPUTED. |\n 1076: | **GGE-ENTROPY-FUNCTIONAL as V.P.**                       | **OPEN**                            | τ_fold may extremize S_GGE (Jacobson-Λ_J horizon-entropy, BCS free-energy, integrated-out KK modulus effective action). §W8a-85 did not test these. Each is a distinct V.P. |\n 1077: | **MECHANISM-CHAIN selects τ_fold (dynamical, non-V.P.)** | **OPEN**                            | I-1 + Turing + RPA + WALL + BCS first-order transition criterion. Not a variational principle but a dynamical selection structure. Orthogonal to §W8a-85 FAIL. |\n 1078: | **EMPIRICA\n... [truncated]"
+    }
+  ]
+}

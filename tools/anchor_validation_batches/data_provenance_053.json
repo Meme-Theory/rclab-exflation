@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 53,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_521",
+      "anchor_type": "data_provenance",
+      "name": "gauss_codazzi",
+      "script_path": "session-49/s49_gauss_codazzi.py",
+      "session": "s49",
+      "inputs": "",
+      "outputs": "session-49/s49_gauss_codazzi.npz, session-49/s49_gauss_codazzi.png",
+      "source_file": "computations/session-49/s49_gauss_codazzi.py",
+      "source_context_30_lines": "   31: 7. Israel junction conditions: is there a jump in K_{ij} at 0.537?\n   32: \n   33: Gate: GAUSS-CODAZZI-TRANSITION-49\n   34:   PASS: K_ij computed, jump quantified, 4D backreaction characterized\n   35:   INFO: K_ij computed, jump continuous\n   36:   FAIL: computation ill-defined at transition\n   37: \n   38: Input: s48_curv_extend.npz, s45_kretschner.npz, canonical_constants.py\n   39: Output: s49_gauss_codazzi.npz, s49_gauss_codazzi.png\n   40: \n   41: Author: Schwarzschild-Penrose-Geometer (Session 49)\n   42: Date: 2026-03-17\n   43: \"\"\"\n   44: \n   45: import numpy as np\n   46: import matplotlib\n   47: matplotlib.use('Agg')"
+    },
+    {
+      "anchor_id": "prov_522",
+      "anchor_type": "data_provenance",
+      "name": "geometric_breaking",
+      "script_path": "session-49/s49_geometric_breaking.py",
+      "session": "s49",
+      "inputs": "",
+      "outputs": "session-49/s49_geometric_breaking.npz, session-49/s49_geometric_breaking.png",
+      "source_file": "computations/session-49/s49_geometric_breaking.py",
+      "source_context_30_lines": "  920: print(f\"Detail: {verdict_detail}\")\n  921: print(f\"{'='*78}\")\n  922: \n  923: # =====================================================================\n  924: # STEP 12: Save results\n  925: # =====================================================================\n  926: print(\"\\nSaving results...\")\n  927: \n  928: outfile = os.path.join(os.path.dirname(__file__), 's49_geometric_breaking.npz')\n  929: np.savez(outfile,\n  930:     # Potential landscape\n  931:     tau_full=tau_curv_full,\n  932:     S_full=S_full,\n  933:     R_scalar=R_scalar,\n  934:     alpha_SR=alpha_SR,\n  935:     beta_SR=beta_SR,\n  936:     S_fit_residual=residual,"
+    },
+    {
+      "anchor_id": "prov_523",
+      "anchor_type": "data_provenance",
+      "name": "hfb_backreaction",
+      "script_path": "session-49/s49_hfb_backreaction.py",
+      "session": "s49",
+      "inputs": "",
+      "outputs": "session-49/s49_hfb_backreaction.npz, session-49/s49_hfb_backreaction.png",
+      "source_file": "computations/session-49/s49_hfb_backreaction.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s49_hfb_backreaction.py — Fully Self-Consistent Dirac-BCS Iteration\n    4: =====================================================================\n    5: Session 49, W1-I\n    6: \n    7: Closes the HFB loop: Delta -> D_K(Delta) -> new eigenvalues -> new BCS -> new Delta.\n    8: \n    9: Physics:\n   10:   In nuclear HFB (Paper 02, Dobaczewski et al.), self-consistency means:\n   11:     rho -> Gamma[rho] -> {phi_k} -> rho  (particle-hole channel)"
+    },
+    {
+      "anchor_id": "prov_524",
+      "anchor_type": "data_provenance",
+      "name": "hfb_backreaction_plot",
+      "script_path": "session-49/s49_hfb_backreaction_plot.py",
+      "session": "s49",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-49/s49_hfb_backreaction_plot.py",
+      "source_context_30_lines": "<name 'hfb_backreaction_plot' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"Generate diagnostic plots for HFB-BACKREACTION-49.\"\"\"\n    3: \n    4: import numpy as np\n    5: import matplotlib\n    6: matplotlib.use('Agg')\n    7: import matplotlib.pyplot as plt\n    8: from pathlib import Path\n    9: \n   10: data_dir = Path(__file__).parent\n   11: d = np.load(data_dir / 's49_hfb_backreaction.npz', allow_pickle=True)\n   12: \n   13: fig, axes = plt.subplots(2, 2, figsize=(12, 10))\n   14: \n   15: # --- Panel (a): Delta_B2 vs g_ph ---\n   16: ax = axes[0, 0]\n   17: g_ph = d['g_ph_values']\n   18: D_B2 = d['Delta_B2_vs_gph']\n   19: D_B2_ref = D_B2[0]\n   20: ax.plot(g_ph, (D_B2 / D_B2_ref - 1) * 100, 'o-', color='navy', ms=6, lw=2)\n   21: ax.axhline(0, color='gray', ls='--', lw=0.5)\n   22: ax.axvspan(0, 0.10, alpha=0.15, color='green', label='Physical range')\n   23: ax.axhline(-10, color='red', ls=':', lw=1, label='Gate threshold')\n   24: ax.axhline(10, color='red', ls=':', lw=1)\n   25: ax.set_xlabel(r'$g_{ph}$ (ph coupling fraction)', fontsize=12)\n   26: ax.set_ylabel(r'$\\Delta_{B2}$ shift (%)', fontsize=12)\n   27: ax.set_title('(a) Gap backreaction vs ph coupling', fontsize=12)\n   28: ax.legend(fontsize=9)\n   29: ax.set_xlim(-0.02, 0.55)\n   30: "
+    },
+    {
+      "anchor_id": "prov_525",
+      "anchor_type": "data_provenance",
+      "name": "kz_3component",
+      "script_path": "session-49/s49_kz_3component.py",
+      "session": "s49",
+      "inputs": "",
+      "outputs": "session-49/s49_kz_3component.npz, session-49/s49_kz_3component.png",
+      "source_file": "computations/session-49/s49_kz_3component.py",
+      "source_context_30_lines": "   29:   1. Compute spectral gap closing rate d(Delta_i)/d(tau) per sector\n   30:      from the Dirac spectrum eigenvalue derivatives.\n   31:   2. Extract effective nu_i, z_i from the gap closing behavior.\n   32:   3. Build sector-wise KZ: n_i = d_i * rho_i * P_LZ_i(tau_Q, J_i)\n   33:   4. Total n = n_u1 + n_su2 + n_c2 (additive: independent pair creation)\n   34:   5. Also compute geometric mean for comparison with S48.\n   35: \n   36: Input: s48_curv_extend.npz, canonical_constants.py, dirac_spectrum\n   37: Output: s49_kz_3component.npz, s49_kz_3component.png\n   38: \n   39: Author: Gen-Physicist (Session 49)\n   40: Date: 2026-03-17\n   41: \"\"\"\n   42: \n   43: import numpy as np\n   44: import matplotlib\n   45: matplotlib.use('Agg')"
+    },
+    {
+      "anchor_id": "prov_526",
+      "anchor_type": "data_provenance",
+      "name": "leggett_gge",
+      "script_path": "session-49/s49_leggett_gge.py",
+      "session": "s49",
+      "inputs": "computations/session-38/s38_otoc_bcs.npz, computations/session-48/s48_leggett_mode.npz, computations/session-38/s38_kz_d...",
+      "outputs": "session-49/s49_leggett_gge.npz, session-49/s49_leggett_gge.png",
+      "source_file": "computations/session-49/s49_leggett_gge.py",
+      "source_context_30_lines": "  808: print(f\"\\nVerdict: {verdict}\")\n  809: print(f\"Detail: {detail}\")\n  810: \n  811: # ==============================================================================\n  812: #  Section 15: Save results\n  813: # ==============================================================================\n  814: print(\"\\n--- Saving results ---\")\n  815: \n  816: np.savez('computations/session-49/s49_leggett_gge.npz',\n  817:     # Gate\n  818:     gate_name='LEGGETT-GGE-49',\n  819:     gate_verdict=verdict,\n  820:     gate_detail=detail,\n  821:     # GGE parameters\n  822:     p_gge_N1=p_gge_N1,\n  823:     p_gibbs_N1=p_gibbs_N1,\n  824:     T_compound=T_compound,"
+    },
+    {
+      "anchor_id": "prov_527",
+      "anchor_type": "data_provenance",
+      "name": "leggett_phi_scan",
+      "script_path": "session-49/s49_leggett_phi_scan.py",
+      "session": "s49",
+      "inputs": "",
+      "outputs": "session-49/s49_leggett_phi_scan.npz, session-49/s49_leggett_phi_scan.png",
+      "source_file": "computations/session-49/s49_leggett_phi_scan.py",
+      "source_context_30_lines": "   27:   INFO: closest approach < 1% but no exact match\n   28:   FAIL: smooth variation, no special relationship\n   29: \n   30: Input:\n   31:   - s48_leggett_mode.npz (omega_L1, omega_L2 at 8 tau values)\n   32:   - s47_curvature_anatomy.npz (curvature data for interpolation)\n   33: \n   34: Output:\n   35:   - s49_leggett_phi_scan.npz\n   36:   - s49_leggett_phi_scan.png\n   37: \n   38: Author: Tesla-Resonance (Session 49)\n   39: \"\"\"\n   40: \n   41: import sys\n   42: import os\n   43: sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))"
+    },
+    {
+      "anchor_id": "prov_528",
+      "anchor_type": "data_provenance",
+      "name": "leggett_transit",
+      "script_path": "session-49/s49_leggett_transit.py",
+      "session": "s49",
+      "inputs": "",
+      "outputs": "session-49/s49_leggett_transit.npz, session-49/s49_leggett_transit.png",
+      "source_file": "computations/session-49/s49_leggett_transit.py",
+      "source_context_30_lines": " 1016:     print(f\"  T_L1 = {transit_results['T_L1']:.1f} M_KK^{{-1}} >> dt_transit = {data['dt_transit']:.5f}\")\n 1017:     print(f\"  The Leggett mode has the LARGEST adiabatic parameter\")\n 1018:     print(f\"  (most frozen) of all collective modes during transit.\")\n 1019: \n 1020:     # =================================================================\n 1021:     # SAVE DATA\n 1022:     # =================================================================\n 1023: \n 1024:     save_path = os.path.join(SCRIPT_DIR, 's49_leggett_transit.npz')\n 1025: \n 1026:     # Collect all results\n 1027:     save_dict = {\n 1028:         # Gate\n 1029:         'gate_name': np.array(['LEGGETT-TRANSIT-49']),\n 1030:         'gate_verdict': np.array([gate_verdict]),\n 1031:         'gate_detail': np.array([gate_detail]),\n 1032: "
+    },
+    {
+      "anchor_id": "prov_529",
+      "anchor_type": "data_provenance",
+      "name": "multi_t_friedmann",
+      "script_path": "session-49/s49_multi_t_friedmann.py",
+      "session": "s49",
+      "inputs": "s39_richardson_gaudin.npz, s48_dmde_refine.npz, s46_zubarev_derivation.npz",
+      "outputs": "session-49/s49_multi_t_friedmann.npz, session-49/s49_multi_t_friedmann.png",
+      "source_file": "computations/session-49/s49_multi_t_friedmann.py",
+      "source_context_30_lines": "  540: print(f\"    BUT: relative to single-T at same E, it is 25% CLOSER to DESI.\")\n  541: \n  542: # =============================================================================\n  543: # Step 12: Save and plot\n  544: # =============================================================================\n  545: \n  546: print(\"\\n--- Saving data and plot ---\")\n  547: \n  548: np.savez('s49_multi_t_friedmann.npz',\n  549:     # GGE state\n  550:     epsilon_k=epsilon_k,\n  551:     lambda_k=lambda_k,\n  552:     n_k_GGE=n_k_GGE,\n  553:     T_k_GGE=T_k_GGE,\n  554:     E_qp_k=E_qp_k,\n  555:     labels=labels,\n  556:     # S46 reference"
+    },
+    {
+      "anchor_id": "prov_530",
+      "anchor_type": "data_provenance",
+      "name": "non_li_tt",
+      "script_path": "session-49/s49_non_li_tt.py",
+      "session": "s49",
+      "inputs": "",
+      "outputs": "session-49/s49_non_li_tt.npz, session-49/s49_non_li_tt.png",
+      "source_file": "computations/session-49/s49_non_li_tt.py",
+      "source_context_30_lines": "   35:     TT modes (the exact count depends on the transversality constraints).\n   36: \n   37: Gate: NON-LI-TT-49\n   38:     PASS: first negative eigenvalue at tau > tau_fold\n   39:     INFO: first negative within 0.02 of fold\n   40:     FAIL: negative eigenvalue before fold\n   41: \n   42: Output:\n   43:     - s49_non_li_tt.npz\n   44:     - s49_non_li_tt.png\n   45: \n   46: Author: Spectral-Geometer (Session 49)\n   47: Date: 2026-03-17\n   48: \"\"\"\n   49: \n   50: import numpy as np\n   51: import matplotlib"
+    }
+  ]
+}

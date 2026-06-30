@@ -18,7 +18,7 @@ Kostelecky SME thresholds (Paper 18 in `researchers/Antimatter/`): electron |b_0
 
 **Computation Steps**:
 
-1. Load `tier1_dirac_spectrum.py`. Construct D_K at the fold for the Jensen metric AND for a metric deformed in the g_73 direction by epsilon = 0.001, 0.01, 0.05.
+1. Load `dirac_spectrum.py`. Construct D_K at the fold for the Jensen metric AND for a metric deformed in the g_73 direction by epsilon = 0.001, 0.01, 0.05.
 
 2. Compute [J, D_K(off-Jensen)] in the 16×16 representation at each epsilon.
 
@@ -28,8 +28,8 @@ Kostelecky SME thresholds (Paper 18 in `researchers/Antimatter/`): electron |b_0
 
 **Pre-registered gate OFFJ-J-43**: PASS if nonzero AND < 10^{-12} (geometric epsilon_CP). FAIL if > 10^{-12} (conflicts BASE). INFO if exactly zero.
 
-**Input**: `tier1_dirac_spectrum.py`, Papers 18, 26 in `researchers/Antimatter/`
-**Output**: `tier0-computation/s43_offj_jsymm.{py,npz,png}`
+**Input**: `dirac_spectrum.py`, Papers 18, 26 in `researchers/Antimatter/`
+**Output**: `computations/s43_offj_jsymm.{py,npz,png}`
 
 ---
 
@@ -64,7 +64,7 @@ Paper 24 (Chamseddine-Connes-vS): dropping the first-order condition entirely ge
 **Pre-registered gate TWIST-43**: PASS if sigma exists satisfying all 3 criteria. FAIL if no valid sigma. INFO if sigma exists but BDI compatibility undetermined.
 
 **Input**: Papers 29-31 in `researchers/Antimatter/`, `s35_pfaffian_corrected_j.npz`
-**Output**: `tier0-computation/s43_twisted_real.{py,npz,png}`
+**Output**: `computations/s43_twisted_real.{py,npz,png}`
 
 ---
 
@@ -105,7 +105,7 @@ Uses W1-2 Lifshitz classification result for the Van Hove exponent and topologic
 **Pre-registered gate BCS-CLASS-43**: INFO. Report (nu, z, n_s). PASS if n_s > 0.90.
 
 **Input**: W1-2 results, Paper 47, `s36_mmax_authoritative.npz`, `s35_ed_corrected_dos.npz`
-**Output**: `tier0-computation/s43_bcs_universality.{py,npz,png}`
+**Output**: `computations/s43_bcs_universality.{py,npz,png}`
 
 ---
 
@@ -142,7 +142,7 @@ Nuclear analog: neutron transmission through compound nucleus with closely-space
 **Pre-registered gate FANO-CONT-43**: PASS if Fano zeros found with |q| < 1 for any channel. FAIL if q = infinity everywhere.
 
 **Input**: `s42_coupled_doorway.npz`, `s42_hauser_feshbach.npz`, `s23a_kosmann_singlet.npz`
-**Output**: `tier0-computation/s43_fano_continuum.{py,npz,png}`
+**Output**: `computations/s43_fano_continuum.{py,npz,png}`
 
 ---
 
@@ -175,7 +175,7 @@ Compare framework growth rate predictions (= LCDM, since w = -1) against DESI DR
 **Pre-registered gate FSIG8-43**: INFO (sentinel — framework = LCDM).
 
 **Input**: Planck parameters, DESI DR1 data (from S42 W5-3)
-**Output**: `tier0-computation/s43_fsigma8.{py,npz,png}`
+**Output**: `computations/s43_fsigma8.{py,npz,png}`
 
 ---
 
@@ -212,7 +212,7 @@ Euclid void size function (Paper 33, Co33-E1) forecasts FoM(w0,wa) = 17 from voi
 **Pre-registered gate VOID-EXP-43**: INFO.
 
 **Input**: Planck parameters, Paper 13 methodology, Paper 33 forecasts
-**Output**: `tier0-computation/s43_void_expansion.{py,npz,png}`
+**Output**: `computations/s43_void_expansion.{py,npz,png}`
 
 ---
 
@@ -243,7 +243,7 @@ Compare void size distribution from DESI/ASTRA against framework (= LCDM) predic
 **Pre-registered gate VOID-CAT-43**: INFO.
 
 **Input**: Paper 34 in `researchers/Cosmic-Web/`, Planck parameters
-**Output**: `tier0-computation/s43_void_catalog.{py,npz,png}`
+**Output**: `computations/s43_void_catalog.{py,npz,png}`
 
 ---
 
@@ -274,7 +274,7 @@ Quantitatively compare measured LRD clustering bias with model predictions.
 **Pre-registered gate LRD-CLUST-43**: INFO.
 
 **Input**: Papers 23, 42, 55 in `researchers/Little-Red-Dots/`
-**Output**: `tier0-computation/s43_lrd_clustering.{py,npz,png}`
+**Output**: `computations/s43_lrd_clustering.{py,npz,png}`
 
 ---
 
@@ -307,7 +307,7 @@ Pre-register the framework's prediction for Simons Observatory CMB lensing conve
 **Pre-registered gate SIMONS-43**: INFO (pre-registration).
 
 **Input**: Planck parameters, Paper 30
-**Output**: `tier0-computation/s43_simons_prereg.{py,npz,png}`
+**Output**: `computations/s43_simons_prereg.{py,npz,png}`
 
 ---
 
@@ -342,7 +342,7 @@ Transition from BH-dominated to DM-dominated kinematics at r ~ 100-300 pc — re
 **Pre-registered gate SIDM-NFW-43**: INFO.
 
 **Input**: `s42_dm_profile.npz`, Papers 32, 51, 55, 56 in `researchers/Little-Red-Dots/`
-**Output**: `tier0-computation/s43_sidm_nfw.{py,npz,png}`
+**Output**: `computations/s43_sidm_nfw.{py,npz,png}`
 
 ---
 
@@ -381,7 +381,7 @@ Ingredients exist: 992 KK eigenvalues (HF-KK-42), V matrix (S34 Kosmann), T_a = 
 **Pre-registered gate HF-CASCADE-43**: PASS if n_breaks determined to ±0.5. FAIL if sigma > 1.
 
 **Input**: `s42_hauser_feshbach.npz`, `s23a_kosmann_singlet.npz`, `s38_cc_instanton.npz`
-**Output**: `tier0-computation/s43_hf_cascade.{py,npz,png}`
+**Output**: `computations/s43_hf_cascade.{py,npz,png}`
 
 ---
 
@@ -419,7 +419,7 @@ Construct a joint Bayesian posterior P(M_KK | alpha_EM, G_N, FIRAS) replacing th
 **Pre-registered gate MKK-BAYES-43**: INFO (produces posterior with CI).
 
 **Input**: `s42_constants_snapshot.npz`, `s42_homogeneity.npz`, PDG values
-**Output**: `tier0-computation/s43_mkk_posterior.{py,npz,png}`
+**Output**: `computations/s43_mkk_posterior.{py,npz,png}`
 
 ---
 

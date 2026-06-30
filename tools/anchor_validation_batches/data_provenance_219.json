@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 219,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_2181",
+      "anchor_type": "data_provenance",
+      "name": "w3b_chi_inheritance_kde_complete",
+      "script_path": "session-88/s88_w3b_chi_inheritance_kde_complete.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "session-88/s88_w3b_chi_inheritance_kde_complete.npz, session-88/s88_w3b_chi_inheritance_kde_complete.png",
+      "source_file": "computations/session-88/s88_w3b_chi_inheritance_kde_complete.py",
+      "source_context_30_lines": "  174: # Pre-registered thresholds (plan §4)\n  175: L_MAX_SET = (10, 11, 12)                                              # (local)\n  176: A_F_FLOOR_M_KK_UNITS = 0.02   # = 0.01 / r(0.190) with r(0.190) ~ 0.5  # (local)\n  177: CHI_NORM_THRESHOLD = 1e-12                                            # (local)\n  178: ENVELOPE_C_PASS = 10.0        # d=4 anchor (cross-pillar-bridge-anatomy.md) # (local)\n  179: ENVELOPE_C_INFO = 50.0                                                # (local)\n  180: \n  181: # Output destinations\n  182: OUT_NPZ = resolve_output(88, 's88_w3b_chi_inheritance_kde_complete.npz')\n  183: OUT_PNG = resolve_output(88, 's88_w3b_chi_inheritance_kde_complete.png')\n  184: VERDICT_TXT = resolve_output(88, 's88_gate_verdicts.txt')\n  185: \n  186: INPUT_FILES = [\n  187:     resolve_output(84, 's84_spectrum_cache_L12_tau019.npz'),\n  188:     resolve_script(None, 'canonical_constants.py'),\n  189: ]\n  190: "
+    },
+    {
+      "anchor_id": "prov_2182",
+      "anchor_type": "data_provenance",
+      "name": "w3b_chiral_pair_multiplicity_two_route",
+      "script_path": "session-88/s88_w3b_chiral_pair_multiplicity_two_route.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "session-88/s88_w3b_chiral_pair_multiplicity_two_route.npz, session-88/s88_w3b_chiral_pair_multiplicity_two_route.png",
+      "source_file": "computations/session-88/s88_w3b_chiral_pair_multiplicity_two_route.py",
+      "source_context_30_lines": "   64:     cocycle_norm_phi88,\n   65:     substrate_cocycle_ratio_67_88,\n   66: )\n   67: \n   68: # ============================================================================\n   69: # Machinery pin (PRDR per plan §6)\n   70: # ============================================================================\n   71: GATE_ID = \"S88-CHIRAL-PAIR-MULTIPLICITY-SYMMETRY-VERIFICATION-PLUS-LAB-CONVERSION-FACTOR-DERIVATION\"\n   72: SCRIPT_NAME = \"s88_w3b_chiral_pair_multiplicity_two_route.py\"\n   73: SESSION = \"S88\"\n   74: WAVE = \"W3b\"\n   75: \n   76: L_MAX_PW = 10                                       # (local) p + q <= 10 (66 sectors expected; 65 in cache)\n   77: TAU_FOLD = tau_fold                                 # = 0.190\n   78: W5_SAGE_EXACT_TARGET = substrate_cocycle_ratio_67_88  # = 7.324992\n   79: \n   80: CLASS_B_BAND = 1e-3                                 # (local) Gate-2 0.1% pre-registered tolerance"
+    },
+    {
+      "anchor_id": "prov_2183",
+      "anchor_type": "data_provenance",
+      "name": "w3c_d_eff_anchor_audit",
+      "script_path": "session-88/s88_w3c_d_eff_anchor_audit.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "session-88/s88_w3c_d_eff_anchor_audit.npz, session-88/s88_w3c_d_eff_anchor_audit.png",
+      "source_file": "computations/session-88/s88_w3c_d_eff_anchor_audit.py",
+      "source_context_30_lines": "   94: PASS_THRESHOLD_ABS = 1.0e-12  # (local) Sage-symbolic identity (publication-precision)\n   95: INFO_THRESHOLD_ABS = 1.0e-3   # (local) numerical near-match\n   96: ALG_IDENTITY_TOL = 1.0e-6    # (local) rational fit grid match tolerance\n   97: \n   98: # Inputs / outputs\n   99: CANONICAL_PY = SHARED_DIR / \"canonical_constants.py\"\n  100: S87_W1B_NPZ = (PROJECT_ROOT / \"computations\" / \"session-87\"\n  101:                / \"s87_w1b_hk_3_d_eff_convention_audit.npz\")\n  102: OUT_NPZ = HERE / \"s88_w3c_d_eff_anchor_audit.npz\"\n  103: OUT_PNG = HERE / \"s88_w3c_d_eff_anchor_audit.png\"\n  104: VERDICT_TXT = SHARED_DIR / \"s88_gate_verdicts.txt\"\n  105: \n  106: INPUT_FILES = [CANONICAL_PY, S87_W1B_NPZ]\n  107: \n  108: \n  109: # Section 4 -- SHA helpers\n  110: def sha256_of(path: Path) -> str:"
+    },
+    {
+      "anchor_id": "prov_2184",
+      "anchor_type": "data_provenance",
+      "name": "w3c_eta_gv_regulator_independence",
+      "script_path": "session-88/s88_w3c_eta_gv_regulator_independence.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "session-88/s88_w3c_eta_gv_regulator_independence.npz, session-88/s88_w3c_eta_gv_regulator_independence.png",
+      "source_file": "computations/session-88/s88_w3c_eta_gv_regulator_independence.py",
+      "source_context_30_lines": "  143: RATIO_TOL = 0.005  # (local) plan pin: 0.5% across regulator-class\n  144: \n  145: # A_5_extended atlas per plan §W3c-29 (replaces S86 W-11 precursor's\n  146: # {Zubarev, SDW, anomaly} with {Pauli-Villars, Mellin, lattice})\n  147: ATLAS_A_5_EXTENDED = (\"zeta\", \"Pauli-Villars\", \"Mellin\", \"lattice\", \"cutoff_sqrt\")  # (local)\n  148: \n  149: # Inputs / outputs\n  150: CANONICAL_PY = SHARED_DIR / \"canonical_constants.py\"\n  151: OUT_NPZ = HERE / \"s88_w3c_eta_gv_regulator_independence.npz\"\n  152: OUT_PNG = HERE / \"s88_w3c_eta_gv_regulator_independence.png\"\n  153: VERDICT_TXT = SHARED_DIR / \"s88_gate_verdicts.txt\"\n  154: \n  155: INPUT_FILES = [CANONICAL_PY]\n  156: \n  157: \n  158: # Section 4 -- SHA helpers (matches s86_w11 precursor pattern)\n  159: def sha256_of(path: Path) -> str:"
+    },
+    {
+      "anchor_id": "prov_2185",
+      "anchor_type": "data_provenance",
+      "name": "w4b_pre_reg_inc_closure",
+      "script_path": "session-88/s88_w4b_pre_reg_inc_closure.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-88/s88_w4b_pre_reg_inc_closure.py",
+      "source_context_30_lines": "  227: \n  228: def make_companion_row(gate: dict, value_str: str, audit_sha: str, content_sha: str) -> str:\n  229:     req = \", \".join(gate[\"required\"])                           # (local)\n  230:     return (\n  231:         f\"# audit_sha256_short={audit_sha[:16]} content_sha256_short={content_sha[:16]} \"\n  232:         f\"# {gate['gate_id']} dual-SHA companion row (W9a-99 split); \"\n  233:         f\"PRE-REG-INC per session-88-plan-w4b.md {gate['wp_id'].replace('W4b-', '§W4b-')}; \"\n  234:         f\"deferred to S89; required prereqs: [{req}]; \"\n  235:         f\"closure_script=computations/session-88/s88_w4b_pre_reg_inc_closure.py\\n\"\n  236:     )\n  237: \n  238: \n  239: def make_3tuple_annotation_row(gate: dict) -> str:\n  240:     \"\"\"S87+ schema-v2 3-tuple annotation companion row.\n  241: \n  242:     Per `.claude/rules/gate-verdicts.md` §\"S87+ canonical form (Schema-v2)\":\n  243:     PRE-REG-INC mechanical closures emit:"
+    },
+    {
+      "anchor_id": "prov_2186",
+      "anchor_type": "data_provenance",
+      "name": "w4c_aalto_ltl_coordination",
+      "script_path": "session-88/s88_w4c_aalto_ltl_coordination.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-88/s88_w4c_aalto_ltl_coordination.py",
+      "source_context_30_lines": "   73: from canonical_constants import substrate_cocycle_ratio_67_88, tau_fold  # noqa: E402\n   74: \n   75: GATE_ID    = \"S88-3HE-B-AALTO-LTL-CAMPAIGN-COORDINATION\"\n   76: WP_ID      = \"S88-W4c-31\"\n   77: SCHEME     = \"three-group-three-cell-matrix\"\n   78: CONVENTION = \"substrate-rows-mapped-to-aalto-observables\"\n   79: L_MAX      = \"10\"\n   80: \n   81: SCRIPT_PATH    = resolve_script(88, 's88_w4c_aalto_ltl_coordination.py')\n   82: VERDICT_OUT    = resolve_output(88, 's88_gate_verdicts.txt')\n   83: PROTOCOL_PATH  = (PROJECT_ROOT / \"sessions\" / \"framework\" / \"registry\"\n   84:                   / \"aalto-ltl-multi-session-protocol.md\")\n   85: PLAN_PATH      = PROJECT_ROOT / \"sessions\" / \"session-plan\" / \"session-88-plan-w4c.md\"\n   86: INHERITANCE_FAL = PROJECT_ROOT / \".claude\" / \"rules\" / \"inheritance-falsifier-protocol.md\"\n   87: CROSS_PILLAR    = PROJECT_ROOT / \".claude\" / \"rules\" / \"cross-pillar-bridge-anatomy.md\"\n   88: INVENTORY_PATH  = (PROJECT_ROOT / \"sessions\" / \"framework\" / \"registry\"\n   89:                    / \"falsifier-master-inventory.md\")"
+    },
+    {
+      "anchor_id": "prov_2187",
+      "anchor_type": "data_provenance",
+      "name": "w4c_alpha_s_nmr_extraction_protocol",
+      "script_path": "session-88/s88_w4c_alpha_s_nmr_extraction_protocol.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-88/s88_w4c_alpha_s_nmr_extraction_protocol.py",
+      "source_context_30_lines": "   71: from canonical_constants import tau_fold, planck_ns  # noqa: E402\n   72: \n   73: GATE_ID    = \"S88-3HE-B-ALPHA-S-EXTRACTION-PROTOCOL\"\n   74: WP_ID      = \"S88-W4c-36\"\n   75: SCHEME     = \"longitudinal-NMR-resonance-running\"\n   76: CONVENTION = \"algebra-INVARIANT-s3-Mellin-pole\"\n   77: L_MAX      = \"10\"\n   78: \n   79: SCRIPT_PATH    = resolve_script(88, 's88_w4c_alpha_s_nmr_extraction_protocol.py')\n   80: VERDICT_OUT    = resolve_output(88, 's88_gate_verdicts.txt')\n   81: PROTOCOL_PATH  = (PROJECT_ROOT / \"sessions\" / \"framework\" / \"registry\"\n   82:                   / \"3he-b-alpha-s-nmr-extraction-protocol.md\")\n   83: PLAN_PATH      = PROJECT_ROOT / \"sessions\" / \"session-plan\" / \"session-88-plan-w4c.md\"\n   84: INHERITANCE_FAL = PROJECT_ROOT / \".claude\" / \"rules\" / \"inheritance-falsifier-protocol.md\"\n   85: INVENTORY_PATH  = (PROJECT_ROOT / \"sessions\" / \"framework\" / \"registry\"\n   86:                    / \"falsifier-master-inventory.md\")\n   87: "
+    },
+    {
+      "anchor_id": "prov_2188",
+      "anchor_type": "data_provenance",
+      "name": "w4c_az_inheritance_cartesian_confirm",
+      "script_path": "session-88/s88_w4c_az_inheritance_cartesian_confirm.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "session-88/s88_w4c_az_inheritance_cartesian_confirm.npz, session-88/s88_w4c_az_inheritance_cartesian_confirm.png",
+      "source_file": "computations/session-88/s88_w4c_az_inheritance_cartesian_confirm.py",
+      "source_context_30_lines": "   80: # Hermitian conjugate X -> X.T.conj() (anti-linear, involutive), as\n   81: # verified by worked example: q=(1,2,3,4) -> chi(q)=[[1+2i,3+4i],[-3+4i,1-2i]];\n   82: # J(q)=(1,-2,-3,-4) -> chi(J(q))=[[1-2i,-3-4i],[3-4i,1+2i]] = chi(q)^dagger.\n   83: # V2 implements the corrected J-action below; substrate-physics unchanged\n   84: # (J-equivariance holds; the V1 FAIL was a verifier bug, not a substrate\n   85: # failure). V1 verdict stays in s88_gate_verdicts.txt as honest audit;\n   86: # V2 emits a fresh canonical line.\n   87: \n   88: SCRIPT_PATH = resolve_script(88, 's88_w4c_az_inheritance_cartesian_confirm.py')\n   89: VERDICT_OUT = resolve_output(88, 's88_gate_verdicts.txt')\n   90: NPZ_PATH    = resolve_output(88, 's88_w4c_az_inheritance_cartesian_confirm.npz')\n   91: PNG_PATH    = resolve_output(88, 's88_w4c_az_inheritance_cartesian_confirm.png')\n   92: PLAN_PATH   = PROJECT_ROOT / \"sessions\" / \"session-plan\" / \"session-88-plan-w4c.md\"\n   93: INHERITANCE_CANON = (PROJECT_ROOT / \"sessions\" / \"framework\" / \"correspondence\"\n   94:                      / \"3HeB-inheritance-canonical.md\")\n   95: \n   96: # Plan §W4c-35 machinery pin (lines 683-697)"
+    },
+    {
+      "anchor_id": "prov_2189",
+      "anchor_type": "data_provenance",
+      "name": "w4c_class_a_lab_dispatch",
+      "script_path": "session-88/s88_w4c_class_a_lab_dispatch.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-88/s88_w4c_class_a_lab_dispatch.py",
+      "source_context_30_lines": "   71: from canonical_constants import substrate_cocycle_ratio_67_88, tau_fold  # noqa: E402\n   72: \n   73: GATE_ID    = \"S88-3HE-B-CLASS-A-LAB-DISPATCH\"\n   74: WP_ID      = \"S88-W4c-32\"\n   75: SCHEME     = \"Class-A-decisive-triplet\"\n   76: CONVENTION = \"kernel-signature-NULL-9sigma\"\n   77: L_MAX      = \"10\"\n   78: \n   79: SCRIPT_PATH    = resolve_script(88, 's88_w4c_class_a_lab_dispatch.py')\n   80: VERDICT_OUT    = resolve_output(88, 's88_gate_verdicts.txt')\n   81: PROTOCOL_PATH  = (PROJECT_ROOT / \"sessions\" / \"framework\" / \"registry\"\n   82:                   / \"class-a-lab-dispatch-pre-registration.md\")\n   83: PLAN_PATH      = PROJECT_ROOT / \"sessions\" / \"session-plan\" / \"session-88-plan-w4c.md\"\n   84: INHERITANCE_FAL = PROJECT_ROOT / \".claude\" / \"rules\" / \"inheritance-falsifier-protocol.md\"\n   85: CROSS_PILLAR    = PROJECT_ROOT / \".claude\" / \"rules\" / \"cross-pillar-bridge-anatomy.md\"\n   86: INVENTORY_PATH  = (PROJECT_ROOT / \"sessions\" / \"framework\" / \"registry\"\n   87:                    / \"falsifier-master-inventory.md\")"
+    },
+    {
+      "anchor_id": "prov_2190",
+      "anchor_type": "data_provenance",
+      "name": "w4c_class_b_ratio_precision",
+      "script_path": "session-88/s88_w4c_class_b_ratio_precision.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-88/s88_w4c_class_b_ratio_precision.py",
+      "source_context_30_lines": "   64: from canonical_constants import substrate_cocycle_ratio_67_88, tau_fold  # noqa: E402\n   65: \n   66: GATE_ID    = \"S88-3HE-B-CLASS-B-RATIO-PRECISION\"\n   67: WP_ID      = \"S88-W4c-33\"\n   68: SCHEME     = \"Class-B-ratio-precision\"\n   69: CONVENTION = \"ROTA-amplitude-ratio-cancellation-theorem\"\n   70: L_MAX      = \"10\"\n   71: \n   72: SCRIPT_PATH    = resolve_script(88, 's88_w4c_class_b_ratio_precision.py')\n   73: VERDICT_OUT    = resolve_output(88, 's88_gate_verdicts.txt')\n   74: PROTOCOL_PATH  = (PROJECT_ROOT / \"sessions\" / \"framework\" / \"registry\"\n   75:                   / \"class-b-ratio-precision-rota-pre-registration.md\")\n   76: PLAN_PATH      = PROJECT_ROOT / \"sessions\" / \"session-plan\" / \"session-88-plan-w4c.md\"\n   77: INHERITANCE_FAL = PROJECT_ROOT / \".claude\" / \"rules\" / \"inheritance-falsifier-protocol.md\"\n   78: CROSS_PILLAR    = PROJECT_ROOT / \".claude\" / \"rules\" / \"cross-pillar-bridge-anatomy.md\"\n   79: INVENTORY_PATH  = (PROJECT_ROOT / \"sessions\" / \"framework\" / \"registry\"\n   80:                    / \"falsifier-master-inventory.md\")"
+    }
+  ]
+}

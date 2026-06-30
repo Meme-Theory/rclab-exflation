@@ -1,0 +1,84 @@
+=== S100b-WA-ROBUST ===
+=== S100b-WA-ROBUST -- input SHA-256 pins ===
+  computations/_shared/canonical_constants.py: 35797b56c236a192...
+  downloads/research-sweep-s99/dark-energy-observational/02_Efstathiou_Evolving-DE-or-SNe-Systematics.pdf: cab7f002bece69d9...
+  downloads/research-sweep-s99/dark-energy-observational/03_Giare_DDE-Beyond-Planck-Multi-CMB.pdf: 4a259aebb5249836...
+  downloads/research-sweep-s99/dark-energy-observational/05_Bansal-Huterer_Expansion-History-DESI-DR2.pdf: 5494d929759ca73b...
+  downloads/research-sweep-s99/dark-energy-observational/06_DESI_DR2-BAO-Cosmological-Constraints.pdf: 1e82f26e4cc3901b...
+  plan-pinned SHAs (papers 03/05/06): VERIFIED
+  closure: 4a7c286fbeea8b6c... (legacy, informational)
+--- validations ---
+  convention checks: DR2-marg 2.920 (=2.920), DESY5-joint 3.739 (->3.74), PP-joint 2.818 (->2.82)
+  omega_gamma h^2 = 2.471161e-05 (fundamental constants, T_CMB = 2.725 K)
+  omega_nu,m h^2 = 6.468579e-04 (WMAP-7 formalism, mnu = 0.06 eV); T_nu0 = 1.94501 K; y0 = 357.98
+  r_d integral (z_d=1060, pivot) = 146.905 Mpc vs Eq.(2) = 147.031 Mpc -> kappa = 1.000853
+  SN shape self-check: LCDM Om=0.333 -> Om_eff = 0.3331
+  fiducial (paper-05 App-B: wb=0.02240, wcdm=0.1198, H0=68.24, LCDM):
+    D_M* = 13844.63 Mpc, r_*(cal) = 144.598 Mpc, r_d(eq2) = 147.234 Mpc
+    R_pred = 1.7454 (obs 1.7504; pull -1.26 sigma)
+    ell_a_pred = 300.794 (obs 301.77; pull -11.54 sigma)
+    BAO z=0.295 DV/rd: pred 7.965 obs 7.942 pull +0.31
+    BAO z=0.510 DM/rd: pred 13.353 obs 13.588 pull -1.41
+    BAO z=0.510 DH/rd: pred 22.558 obs 21.863 pull +1.63
+    BAO z=0.706 DM/rd: pred 17.523 obs 17.351 pull +0.97
+    BAO z=0.706 DH/rd: pred 20.040 obs 19.455 pull +1.77
+    BAO z=0.934 DM/rd: pred 21.793 obs 21.576 pull +1.43
+    BAO z=0.934 DH/rd: pred 17.482 obs 17.641 pull -0.83
+    BAO z=1.321 DM/rd: pred 27.855 obs 27.601 pull +0.80
+    BAO z=1.321 DH/rd: pred 14.018 obs 14.176 pull -0.72
+    BAO z=1.484 DM/rd: pred 30.042 obs 30.512 pull -0.62
+    BAO z=1.484 DH/rd: pred 12.843 obs 12.817 pull +0.05
+    BAO z=2.330 DM/rd: pred 38.930 obs 38.988 pull -0.11
+    BAO z=2.330 DH/rd: pred 8.603 obs 8.632 pull -0.29
+    calibration invariant R/ell_a (D_M-free; = 100 sqrt(om_m h^2) r_*/(pi c)):
+      pred 5.802652e-03  obs 5.800444e-03  pull +0.17 sigma
+    NOTE: individual R/ell_a pulls share a common ~-0.3% D_M(z*) offset from the
+    App-B fiducial (H0 fixed 68.24) vs CMB-chain-mean parameter-point mismatch;
+    absolute pulls are DIAGNOSTIC; the D_M-free invariant is the calibration gate.
+  quadrature doubling: |dD_hi/D| = 5.83e-08, |dr_*/r_*| = 2.08e-07
+--- ROUTE-A base scan ---
+  [base] scan 161x301x61x61 done in 291.9s; mean masked frac = 0.1959; quad_resid_max(r_*) = 4.05e-05
+--- interp spot check ---
+  max |interp - direct| / direct over 25 pts x 3 (w0,wa) probes: 1.07e-05
+--- ROUTE-A posterior (V0 primary: paper-02 PP fit, shape-matched) ---
+  w_a = -0.7970  +0.2705 / -0.2808  (68% equal-tail)
+  w_0 = -0.7738  [-0.8498, -0.7027]
+  sigma_gov = 0.2705 (upper bar, toward zero)
+  d_sigma(V0) = 2.9463
+  d_sigma(V1) = 4.0293  (w_a = -1.1621 +0.2884/-0.2881)
+  d_sigma(V2) = 2.7808  (w_a = -0.5759 +0.2071/-0.2172)
+  d_sigma(V3) = 2.9175  (w_a = -0.7471 +0.2561/-0.2662)
+  Omega_m mean = 0.3164; H0 mean = 66.96; Om/H0 edge mass = 3.85e-22
+  w_a edge mass = 8.17e-06; w_0 edge mass = 9.25e-05
+--- convergence A: (w0, wa) steps halved ---
+  [halve-w0wa] scan 321x601x61x61 done in 1141.9s; mean masked frac = 0.1954; quad_resid_max(r_*) = 4.05e-05
+  d_sigma(halved w0/wa) = 2.9197; |delta| = 0.0267
+--- convergence B: (Om, H0) steps halved ---
+  [halve-OmH0] scan 161x301x121x121 done in 792.7s; mean masked frac = 0.1959; quad_resid_max(r_*) = 4.05e-05
+  d_sigma(halved Om/H0) = 2.9464; |delta| = 0.0001
+--- r_* calibration sensitivity (eps = +-0.001) ---
+  [eps-0.001] scan 161x301x61x61 done in 302.4s; mean masked frac = 0.1959; quad_resid_max(r_*) = 4.05e-05
+  eps = -0.001: d_sigma = 2.8662 (delta -0.0802)
+  [eps+0.001] scan 161x301x61x61 done in 295.3s; mean masked frac = 0.1959; quad_resid_max(r_*) = 4.05e-05
+  eps = +0.001: d_sigma = 3.0258 (delta +0.0795)
+--- ROUTE-B anchor cross-check (paper-03 Table II) ---
+  |w_a^A - w_a^B| = |-0.7970 - (-0.47)| = 0.3270 vs 1 sigma^B = 0.2 -> INCONSISTENT
+  route-B published-anchor scoring: ACT+WMAP 2.136 sigma; SPT+WMAP 1.160 sigma
+  w_0 consistency (informational): |-0.7738 - (-0.859)| = 0.0852 vs sigma^B(w0) = 0.055
+--- substitution chain (plan SS W1-3 item 7, substituted) ---
+  Def 1: wa_FW = 0.0 [S58 four-fold lock; canonical_constants]
+  Def 2: robust combination R: route-A = compressed Planck+ACT (R, ell_a, wb) + DESI DR2 BAO (13) + PP(paper-02 fit);
+         (w_a_rec, sig+, sig-) = (-0.7970, 0.2705, 0.2808)
+  Def 3: w_a_rec = -0.7970 < 0 => 0 lies ABOVE => sigma_gov = sigma+ = 0.2705
+  Substitute: d_sigma = |0 - (-0.7970)| / 0.2705 = 2.9463
+  Direction: smaller d_sigma = lock survives; PASS boundary 2.0, INFO/FAIL boundary 3.0
+=== VERDICT: INFO (d_sigma = 2.946) ===
+  npz written: C:\sandbox\Ainulindale Exflation\computations\session-100b\s100b_wa_robust.npz
+  plot written: C:\sandbox\Ainulindale Exflation\computations\session-100b\s100b_wa_robust.png
+  audit_sha256 = 15c54621f59184ccd349f6498e89ce68fff5fae1a047922e771e6b55f07c4eab
+  content_sha256 = 077dc843babcc59c9870ace19c241103f4df6208aeadfe98c625e20fc4c158c1
+  4-tuple: (value=2.946, scheme=FW, convention=ABSOLUTE-sigma-gov-toward-zero-ROUTE-A-primary, L_max=N/A)
+<<<EMIT_VERDICT_PAYLOAD>>>
+{"audit_sha256":"15c54621f59184ccd349f6498e89ce68fff5fae1a047922e771e6b55f07c4eab","companion_note":"route-A compressed-likelihood reconstruction; paper-05 Eq.(5)-(6) datavector; paper-06 Tab.IV 13-distance BAO + Eq.(2) r_d; paper-02 SS2(i) PP fit; route-B anchor Giare Tab.II WMAP+ACT+DESI+PP wa=-0.47+0.22-0.20","content_sha256":"077dc843babcc59c9870ace19c241103f4df6208aeadfe98c625e20fc4c158c1","convention":"ABSOLUTE-sigma-gov-toward-zero-ROUTE-A-primary","extra_rows":["# S100b-WA-ROBUST datavector provenance: PDF SHAs 02=cab7f002bece69d9 03=4a259aebb5249836 05=5494d929759ca73b 06=1e82f26e4cc3901b (plan-pin VERIFIED)","# S100b-WA-ROBUST route-B published anchors: ACT+WMAP+DESI+PP d_sigma=2.136; SPT+WMAP+DESI+PP d_sigma=1.160; route-A w0=-0.7738 [-0.8498,-0.7027]","# S100b-WA-ROBUST sagan caveat: w_a=0 is a NULL LCDM shares -- INFO earns falsification-survival only, NO Bayesian credit over LCDM; discriminator is w_0 at fixed w_a=0 (W1-4 + DESI DR3)"],"gate_id":"S100b-WA-ROBUST","l_max":"N/A","schema_version":"S84+","scheme":"FW","session":"100b","value":"d_sigma=2.946_ROUTE-A-primary_waRec=-0.7970+0.2705-0.2808_sigmaGov=upper(toward-zero)_SN=paper02-LCDM-Om0.333pm0.018-shape-matched_routeB-consistency=dWa0.327le1sigB0.20=VIOLATED_conv=dA0.027dB0.000_variants=V1:4.029,V2:2.781,V3:2.918_baselines=2.92,3.74,2.82_survival-only-no-Bayes-credit","verdict":"INFO"}
+<<<END_EMIT_VERDICT_PAYLOAD>>>
+=== done in 2833.4s ===

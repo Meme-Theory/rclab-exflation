@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 59,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_581",
+      "anchor_type": "data_provenance",
+      "name": "pl_tduality",
+      "script_path": "session-52/s52_pl_tduality.py",
+      "session": "s52",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-52/s52_pl_tduality.py",
+      "source_context_30_lines": "  834:     print(\"  The metric duality amounts to tau -> -tau, so the SA density\")\n  835:     print(\"  is monotone DECREASING where the original is INCREASING.\")\n  836:     print(\"  W4 (monotonicity) is FRAME-INDEPENDENT in the PL duality sense.\")\n  837: \n  838:     # -----------------------------------------------------------------------\n  839:     # Save results\n  840:     # -----------------------------------------------------------------------\n  841:     save_path = os.path.join(os.path.dirname(os.path.abspath(__file__)),\n  842:                              's52_pl_tduality.npz')\n  843: \n  844:     np.savez(save_path,\n  845:              tau_grid=tau_grid,\n  846:              R_dual=sa_results['R_dual'],\n  847:              SA_density_a0=sa_results['SA_density_a0'],\n  848:              SA_density_a2=sa_results['SA_density_a2'],\n  849:              SA_density_a4=sa_results['SA_density_a4'],\n  850:              metric_det=sa_results['metric_det'],"
+    },
+    {
+      "anchor_id": "prov_582",
+      "anchor_type": "data_provenance",
+      "name": "pl_test",
+      "script_path": "session-52/s52_pl_test.py",
+      "session": "s52",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-52/s52_pl_test.py",
+      "source_context_30_lines": "<name 'pl_test' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"Quick test of PL-Tduality components.\"\"\"\n    3: import numpy as np\n    4: import sys, os\n    5: sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))\n    6: \n    7: out = os.path.join(os.path.dirname(os.path.abspath(__file__)), 's52_test_out.txt')\n    8: \n    9: try:\n   10:     from s52_pl_tduality import (su3_antihermitian_basis, borel_basis,\n   11:                                   verify_manin_triple, compute_structure_constants_general)\n   12:     lines = []\n   13:     lines.append(\"=== TEST 1: Bases ===\")\n   14:     su3b = su3_antihermitian_basis()\n   15:     lines.append(f\"su3 basis count: {len(su3b)}\")\n   16: \n   17:     gb = borel_basis()\n   18:     lines.append(f\"gstar basis count: {len(gb)}\")\n   19: \n   20:     lines.append(\"\\n=== TEST 2: Manin triple ===\")\n   21:     mt = verify_manin_triple()\n   22:     for k, v in mt.items():\n   23:         if isinstance(v, np.ndarray) and v.ndim > 1:\n   24:             lines.append(f\"{k}: shape={v.shape}, max={np.max(np.abs(v)):.6f}\")\n   25:         else:\n   26:             lines.append(f\"{k}: {v}\")\n   27: \n   28:     lines.append(\"\\n=== TEST 3: g* structure constants ===\")\n   29:     f_abc = compute_structure_constants_general(gb)\n   30:     lines.append(f\"f_abc shape: {f_abc.shape}\")"
+    },
+    {
+      "anchor_id": "prov_583",
+      "anchor_type": "data_provenance",
+      "name": "qm_dispersion",
+      "script_path": "session-52/s52_qm_dispersion.py",
+      "session": "s52",
+      "inputs": "",
+      "outputs": "session-52/s52_qm_dispersion.npz, session-52/s52_qm_dispersion.png",
+      "source_file": "computations/session-52/s52_qm_dispersion.py",
+      "source_context_30_lines": "  751: print(f\"\\n  GATE STATUS: {gate_status}\")\n  752: print(f\"  {gate_msg}\")\n  753: \n  754: # ===========================================================================\n  755: # STEP 9: Save data\n  756: # ===========================================================================\n  757: print(\"\\n--- Step 9: Save results ---\")\n  758: \n  759: save_path = os.path.join(SCRIPT_DIR, 's52_qm_dispersion.npz')\n  760: np.savez_compressed(\n  761:     save_path,\n  762:     # Grid data\n  763:     kx_grid=kx_grid, ky_grid=ky_grid, kz_grid=kz_grid,\n  764:     g_trace_grid=g_trace_grid,\n  765:     g_tensor_grid=g_tensor_grid,\n  766:     F_tensor_grid=F_tensor_grid,\n  767:     omega_grid=omega_grid,"
+    },
+    {
+      "anchor_id": "prov_584",
+      "anchor_type": "data_provenance",
+      "name": "quick_test",
+      "script_path": "session-52/s52_quick_test.py",
+      "session": "s52",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-52/s52_quick_test.py",
+      "source_context_30_lines": "<name 'quick_test' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"Minimal test — no imports from tier1.\"\"\"\n    3: import numpy as np\n    4: import os\n    5: \n    6: out = os.path.join(os.path.dirname(os.path.abspath(__file__)), 's52_quick_out.txt')\n    7: \n    8: try:\n    9:     lines = [\"START\"]\n   10: \n   11:     # Gell-Mann matrices\n   12:     lam = []\n   13:     lam.append(np.array([[0,1,0],[1,0,0],[0,0,0]], dtype=complex))\n   14:     lam.append(np.array([[0,-1j,0],[1j,0,0],[0,0,0]], dtype=complex))\n   15:     lam.append(np.array([[1,0,0],[0,-1,0],[0,0,0]], dtype=complex))\n   16:     lam.append(np.array([[0,0,1],[0,0,0],[1,0,0]], dtype=complex))\n   17:     lam.append(np.array([[0,0,-1j],[0,0,0],[1j,0,0]], dtype=complex))\n   18:     lam.append(np.array([[0,0,0],[0,0,1],[0,1,0]], dtype=complex))\n   19:     lam.append(np.array([[0,0,0],[0,0,-1j],[0,1j,0]], dtype=complex))\n   20:     lam.append(np.array([[1,0,0],[0,1,0],[0,0,-2]], dtype=complex) / np.sqrt(3))\n   21: \n   22:     su3_basis = [-1j/2.0 * l for l in lam]\n   23:     lines.append(f\"su3 basis: {len(su3_basis)} generators\")\n   24: \n   25:     # Borel basis\n   26:     basis = []\n   27:     h1 = np.zeros((3,3), dtype=complex); h1[0,0]=1; h1[1,1]=-1\n   28:     h2 = np.zeros((3,3), dtype=complex); h2[1,1]=1; h2[2,2]=-1\n   29:     basis.append(h1); basis.append(h2)\n   30: "
+    },
+    {
+      "anchor_id": "prov_585",
+      "anchor_type": "data_provenance",
+      "name": "ricci_flow",
+      "script_path": "session-52/s52_ricci_flow.py",
+      "session": "s52",
+      "inputs": "",
+      "outputs": "session-52/s52_ricci_flow.npz, session-52/s52_ricci_flow.png",
+      "source_file": "computations/session-52/s52_ricci_flow.py",
+      "source_context_30_lines": "   47: \n   48:   where r_i are the Ricci curvature eigenvalues on each summand.\n   49: \n   50: Inputs:\n   51:   - canonical_constants.py: tau_fold, dS_fold, G_DeWitt, g0_diag, etc.\n   52:   - s52_12d_reduction.npz: R_K(tau) data\n   53: \n   54: Output:\n   55:   - s52_ricci_flow.npz\n   56:   - s52_ricci_flow.png (3-panel)\n   57: \n   58: Author: Baptista-Spacetime-Analyst (Session 52)\n   59: Date: 2026-03-20\n   60: \"\"\"\n   61: \n   62: import sys\n   63: import os"
+    },
+    {
+      "anchor_id": "prov_586",
+      "anchor_type": "data_provenance",
+      "name": "unified_action",
+      "script_path": "session-52/s52_unified_action.py",
+      "session": "s52",
+      "inputs": "",
+      "outputs": "session-52/s52_unified_action.npz, session-52/s52_unified_action.png",
+      "source_file": "computations/session-52/s52_unified_action.py",
+      "source_context_30_lines": "   25: \n   26: Cross-coupling:\n   27:   tau -> BCS: V_KK(tau) drives modulus; DOS rho(tau) modifies GL coefficients\n   28:   N_e constraint: N_e = tau_fold * sqrt(G_DeWitt / 6) = 0.1734 (stiff limit, STRUCTURAL)\n   29: \n   30: Gate: INFO (structural assembly). No pass/fail — this is a construction.\n   31: \n   32: Output:\n   33:   s52_unified_action.npz — action data, EL residuals, cross-checks\n   34:   s52_unified_action.png — 4-panel: V_KK, F_BCS, dispersion coupling, EL residuals\n   35: \n   36: Author: Feynman-Theorist (Session 52)\n   37: Date: 2026-03-20\n   38: \"\"\"\n   39: \n   40: import sys\n   41: import os"
+    },
+    {
+      "anchor_id": "prov_587",
+      "anchor_type": "data_provenance",
+      "name": "void_function",
+      "script_path": "session-52/s52_void_function.py",
+      "session": "s52",
+      "inputs": "",
+      "outputs": "session-52/s52_void_function.npz, session-52/s52_void_function.png",
+      "source_file": "computations/session-52/s52_void_function.py",
+      "source_context_30_lines": "  443:     print()\n  444: \n  445: \n  446: # ============================================================================\n  447: #  Section 11: Save Data\n  448: # ============================================================================\n  449: \n  450: output_dir = os.path.dirname(os.path.abspath(__file__))\n  451: npz_path = os.path.join(output_dir, \"s52_void_function.npz\")\n  452: \n  453: save_dict = {\n  454:     'R_hMpc_inv': R_arr,\n  455:     'alpha_s_values': np.array([0.0, -0.02, -0.069]),\n  456: }\n  457: for label in ['LCDM', 'SA-mix', 'O-Z']:\n  458:     safe = label.replace('-', '_')\n  459:     save_dict[f'dn_dlnR_{safe}'] = results[label]['dn_dlnR']"
+    },
+    {
+      "anchor_id": "prov_588",
+      "anchor_type": "data_provenance",
+      "name": "wdavg_ds",
+      "script_path": "session-52/s52_wdavg_ds.py",
+      "session": "s52",
+      "inputs": "computations/session-52/s52_wdw_initial.npz, computations/session-44/s44_dos_tau.npz",
+      "outputs": "session-52/s52_wdavg_ds.npz, session-52/s52_wdavg_ds.png",
+      "source_file": "computations/session-52/s52_wdavg_ds.py",
+      "source_context_30_lines": "  440: print(f\"  >>> d_s(resolution scale) = {ds_at_phys:.4f}\")\n  441: print(f\"  >>> Reason: No CDT-like dimensional reduction in internal SU(3) fiber.\")\n  442: print(f\"  >>>   d_s = 8 (Weyl limit) for SU(3) is the correct result.\")\n  443: print(f\"  >>>   CDT prediction applies to M4 path integral, not D_K on fiber.\")\n  444: \n  445: # ============================================================================\n  446: #  11. Save data\n  447: # ============================================================================\n  448: outpath = \"computations/session-52/s52_wdavg_ds.npz\"\n  449: np.savez(outpath,\n  450:     # Diffusion parameter\n  451:     t_arr=t_arr,\n  452:     # Fixed-tau heat traces and spectral dimensions\n  453:     tau_data=tau_data,\n  454:     P_fixed_tau0=P_fixed[0.0],\n  455:     P_fixed_tau005=P_fixed[0.05],\n  456:     P_fixed_tau010=P_fixed[0.10],"
+    },
+    {
+      "anchor_id": "prov_589",
+      "anchor_type": "data_provenance",
+      "name": "wdw_initial",
+      "script_path": "session-52/s52_wdw_initial.py",
+      "session": "s52",
+      "inputs": "",
+      "outputs": "session-52/s52_wdw_initial.npz, session-52/s52_wdw_initial.png",
+      "source_file": "computations/session-52/s52_wdw_initial.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s52_wdw_initial.py — Wheeler-DeWitt Initial Condition\n    4: ======================================================\n    5: \n    6: Session 52, Gate WDW-INITIAL-52.\n    7: \n    8: Solves the Wheeler-DeWitt equation on the minisuperspace (a, tau)\n    9: with Hartle-Hawking no-boundary (Euclidean regularity) boundary\n   10: condition. Extracts |Psi(tau)|^2 and determines the peak location.\n   11: "
+    },
+    {
+      "anchor_id": "prov_590",
+      "anchor_type": "data_provenance",
+      "name": "wdw_test",
+      "script_path": "session-52/s52_wdw_test.py",
+      "session": "s52",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-52/s52_wdw_test.py",
+      "source_context_30_lines": "<name 'wdw_test' not found in source>\n--- file head ---\n    1: import sys, os\n    2: sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))\n    3: print(\"Starting...\")\n    4: import numpy as np\n    5: print(\"numpy OK\")\n    6: from canonical_constants import tau_fold, G_DeWitt, M_KK_gravity, M_Pl_unreduced\n    7: print(f\"tau_fold={tau_fold}, G_DeWitt={G_DeWitt}\")\n    8: print(f\"M_KK={M_KK_gravity:.4e}, M_P={M_Pl_unreduced:.4e}\")\n    9: \n   10: # Check S44 data\n   11: s44 = os.path.join(os.path.dirname(os.path.abspath(__file__)), 's44_dos_tau.npz')\n   12: print(f\"S44 path: {s44}\")\n   13: print(f\"S44 exists: {os.path.exists(s44)}\")\n   14: \n   15: if os.path.exists(s44):\n   16:     d = np.load(s44, allow_pickle=True)\n   17:     print(f\"S44 keys: {list(d.keys())[:5]}...\")\n   18:     tv = d['tau_values']\n   19:     omegas = d[f'tau{tv[0]:.2f}_all_omega']\n   20:     dims = d[f'tau{tv[0]:.2f}_all_dim2']\n   21:     a2_0 = np.sum(dims * omegas)\n   22:     print(f\"a2(tau=0) = {a2_0:.2f}\")\n   23: \n   24: # Quick test: compute the key number\n   25: MKK_MP = M_KK_gravity / M_Pl_unreduced\n   26: print(f\"M_KK/M_P = {MKK_MP:.6e}\")\n   27: print(f\"(M_KK/M_P)^4 = {MKK_MP**4:.6e}\")\n   28: \n   29: # Write a test file to confirm script execution completes\n   30: with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 's52_test_marker.txt'), 'w') as f:"
+    }
+  ]
+}

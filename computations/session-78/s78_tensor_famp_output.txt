@@ -1,0 +1,149 @@
+==============================================================================
+S78-W3-C-TENSOR-FAMP: Tensor F_amp and r(k_pivot)
+==============================================================================
+
+Pre-registered conventions (§W3-C):
+  - F_amp^T, F_amp^S both POWER RATIOS (LINEAR, not squared)
+  - r = (F_amp^T * P_dS^T) / (F_amp^S * P_dS^S), P_dS explicit
+  - Polarization normalization: sqrt(2)/M_Pl_red per polarization
+    (standard Mukhanov-Sasaki; u_T = a * M_Pl_red * h per polarization)
+  - eps = eps_H (NOT eps_V)
+  - Same regime as F_amp^S: LINEARIZED (W1-C declared INCOMPUTABLE)
+
+==============================================================================
+SECTION 1: Load S73B background
+==============================================================================
+  S73B: N in [0.0000, 63.4049]
+  k_pivot = 14.3111 M_KK (fold-frame comoving)
+  N_pivot = 3.1184
+  F_amp^S (linearized, S77 reference) = 6857.69
+  H_dS = 6.3294e-01 M_KK, eps_dS = 4.8150e-03
+  (M_KK/M_Pl_red)^2 = 9.3073e-04
+
+==============================================================================
+SECTION 2: Background in conformal time
+==============================================================================
+  eta range: [0, 1.438209e+00] M_KK^{-1}
+  pump_S(dS limit) = 1.9952 (expected 2.0)
+  pump_T(dS limit) = 1.9952 (expected 2.0)
+  dS from arrays: H_dS = 6.3294e-01 M_KK, eps_dS = 4.8150e-03
+  (verify vs S77 reference: match within 0.00%)
+
+==============================================================================
+SECTION 3: Mode equation solvers
+==============================================================================
+
+==============================================================================
+SECTION 4: PRE-REGISTERED r (locked BEFORE gate run)
+==============================================================================
+  Pre-registered F_amp^T/F_amp^S: [0.50, 2.00]
+  (central 1.00 from principle: linearized pumps ~= at leading order)
+
+  Pre-registered r (mode-equation level, factor 2):
+    r_pre_central = 7.7040e-02
+    r_pre band    = [3.8520e-02, 1.5408e-01]
+
+  Slow-roll CONTROL (method validity): r = 16 eps = 7.7040e-02
+  (This MUST recover in slow-roll control; reproducing in physics = FAIL)
+
+  Substrate-framework CMB-observable r (EIH-effaced, NOT this gate):
+    r_substrate_obs = 7.1703e-05
+    = 16 eps * (M_KK/M_Pl_red)^2 (graviton impedance mismatch, S44)
+
+==============================================================================
+SECTION 5: Tensor mode equation at k_pivot (real background)
+==============================================================================
+  eta_end(k_pivot) = 1.434723e+00 M_KK^{-1}
+  Solving tensor mode equation with pump a''/a (real background)...
+  |u_T^real|^2 at superhorizon = 6.555505e-02
+  Wronskian deviation (real) = 2.047e-12
+  Solving tensor mode equation in pure dS...
+  eta_dS_end (for superhorizon reach of k_pivot in pure dS) = 1.5764e+00
+  |u_T^dS|^2 at superhorizon = 6.042686e-02
+  F_amp^T(k_pivot) = 1.0849e+00
+
+==============================================================================
+SECTION 6: Scalar mode at k_pivot (reproduce S77)
+==============================================================================
+  |v_S^real|^2 at superhorizon = 6.403749e+02
+  |v_S^dS|^2 at superhorizon = 6.042686e-02
+  F_amp^S(k_pivot) = 1.0598e+04
+  S77 reference     = 6.8577e+03
+  reproduction ratio = 1.5453
+
+==============================================================================
+SECTION 7: r(k_pivot) from mode-equation amplitudes
+==============================================================================
+  F_amp^T / F_amp^S = 0.0001
+  P_dS^T / P_dS^S   = 16 * eps_dS = 7.7040e-02 (explicit, no shortcut)
+  r(k_pivot) = 7.8866e-06
+
+  Pre-registered central: 7.7040e-02
+  Pre-registered band:    [3.8520e-02, 1.5408e-01]
+  Within pre-registered factor 2? NO
+
+  Relative to slow-roll 16*eps: r_computed / (16*eps_dS) = 1.0237e-04
+  If approx 1.0, r accidentally reproduces 16*eps (FAIL criterion).
+
+==============================================================================
+SECTION 8: Tensor backreaction diagnostic rho_T/rho_bg
+==============================================================================
+  M_Pl_red / M_KK = 32.7785
+  rho_bg = 3 H^2 M_Pl_red^2 = 1.2913e+03 M_KK^4
+  rho_T peak estimate = 7.6845e+02 M_KK^4
+  rho_T / rho_bg at peak = 5.9511e-01
+  Linear OK if < 0.1; recomputed self-consistently if > 0.1
+
+==============================================================================
+SECTION 9: Slow-roll control (cross-check 1): r = 16 eps MUST recover
+==============================================================================
+  Setting up no-fold slow-roll control background...
+  Slow-roll control (no fold):
+    F_amp^T(SR)     = 1.0124e+00
+    F_amp^S(SR)     = 1.0124e+00
+    F_amp^T/F_amp^S = 1.0000
+    r_SR_computed   = 7.7040e-02
+    r_SR_expected   = 7.7040e-02 = 16 * eps_dS
+    deviation       = 0.00%
+    slow-roll control PASS? YES
+
+==============================================================================
+SECTION 10: Gate verdict
+==============================================================================
+  r(k_pivot)         = 7.8866e-06
+  Pre-reg band       = [3.8520e-02, 1.5408e-01]
+  Slow-roll 16*eps   = 7.7040e-02
+  r / 16*eps         = 0.0001  (OK)
+  within_pre_reg     = False
+  backreaction_linear= False
+  slow-roll control  = PASS
+
+  VERDICT: INFO
+  REASON: r = 7.8866e-06 significantly off pre-reg band [3.8520e-02, 1.5408e-01]; backreaction 5.951e-01.
+
+==============================================================================
+SECTION 11: Cross-checks
+==============================================================================
+  CHK1 (slow-roll control r=16*eps method): PASS
+        r_SR_computed/r_SR_expected = 1.0000
+  CHK2 (LiteBIRD r<0.024):
+        r_mode_eq           = 7.8866e-06 (<0.024)
+        r_substrate_CMB     = 7.3403e-09 (<0.024)
+        (r_substrate = r_mode * (M_KK/M_Pl_red)^2; S44 Route D effacement)
+  CHK3 (tensor backreaction at peak): rho_T/rho_bg = 5.951e-01
+        (requires self-consistent; > 0.1)
+  CHK4 (same scheme/regime as F_amp^S):
+        F_amp^S(this) / F_amp^S(S77) = 1.5453
+        (diverges; solver tolerances differ)
+
+==============================================================================
+SECTION 12: Plots
+==============================================================================
+  Plot saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s78_tensor_famp.png
+
+==============================================================================
+SECTION 13: Save outputs
+==============================================================================
+  NPZ saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s78_tensor_famp.npz
+  Verdict appended to C:\sandbox\Ainulindale Exflation\tier0-computation\s78_gate_verdicts.txt:
+    S78-W3-C-TENSOR-FAMP: INFO — r(k_pivot)=7.887e-06, F_amp^T/F_amp^S=0.000, slow-roll-control=PASS

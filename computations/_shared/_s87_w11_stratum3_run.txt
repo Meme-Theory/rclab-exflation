@@ -1,0 +1,87 @@
+=== S87-STRATUM3-LMAX-SCAN -- input SHA-256 pins ===
+  computations/_shared/canonical_constants.py: e81c36046e543acb...
+  computations/_shared/dirac_spectrum.py: eee1b6fdcbb86847...
+  computations/session-84/s84_spectrum_cache_L12_tau019.npz: 9e6d9cf7fd6a6949...
+  closure (legacy): aff9e8c691edfea8...
+  audit_sha256:   f19bcd5e25969374...
+  content_sha256: 43ad11970f0bceb9...
+  tau_fold = 0.19
+  L_max scan = (12, 13, 14, 15)
+  bottom-N cut = 20
+  stratum-3 target |S_3| = 8  (W-12 canonical)
+  Friedrich-Bär conservative lower bound eta_FB = 0.4
+
+--- CC1: L_max=12 baseline from cache ---
+  cache n_total=166896; bot20 |lambda| range=[0.8197411121, 0.8452121014]
+  cache strata cardinalities: [2, 4, 8, 6]
+  stratum-4 ceiling = 0.8452121014
+
+--- CC2: Empirical Friedrich-Bär ratio across L=12 cache ---
+  eta_FB empirical range: [0.4365, 0.5472]
+  argmin eta_FB at sector (1, 1)
+  using ETA_FB_LOWER = 0.4 (conservative lower bound, 10% below empirical min)
+
+--- CC2b: Per-sector |lambda|_min monotone in (p+q) ---
+  p+q : min |lambda|_min over sectors at p+q
+    1  : 0.835894
+    2  : 0.872975
+    3  : 1.123757
+    4  : 1.377034
+    5  : 1.635219
+    6  : 1.892451
+    7  : 2.153002
+    8  : 2.416178
+    9  : 2.673537
+   10  : 2.933469
+   11  : 3.188479
+   12  : 3.445796
+  Monotone-in-(p+q): True
+
+--- L_max scan {12, 13, 14, 15} via structural-saturation theorem ---
+
+  L_max=12:
+    n_total = 166896 (incremental cumulative)
+    bot20 |lambda| range = [0.8197411121, 0.8452121014]
+    strata cardinalities = [2, 4, 8, 6]
+    |S_3| = 8  (target = 8)
+    NEW sector minimizer at p+q=12: (6, 6), C_2 = 48.0000
+    empirical |lambda|_min at p+q=12: 3.445796
+    margin above stratum-4 ceiling: 2.600584  (>0 -> no intrusion)
+
+  L_max=13:
+    n_total = 234096 (incremental cumulative)
+    bot20 |lambda| range = [0.8197411121, 0.8452121014]
+    strata cardinalities = [2, 4, 8, 6]
+    |S_3| = 8  (target = 8)
+    NEW sector minimizer at p+q=13: (6, 7), C_2 = 55.3333
+    Friedrich-Bar lower bound: 3.002221 (eta_FB=0.4, sqrt(C_2+1)=7.5056)
+    margin above stratum-4 ceiling: 2.157009  (>0 -> no intrusion)
+
+  L_max=14:
+    n_total = 321136 (incremental cumulative)
+    bot20 |lambda| range = [0.8197411121, 0.8452121014]
+    strata cardinalities = [2, 4, 8, 6]
+    |S_3| = 8  (target = 8)
+    NEW sector minimizer at p+q=14: (7, 7), C_2 = 63.0000
+    Friedrich-Bar lower bound: 3.200000 (eta_FB=0.4, sqrt(C_2+1)=8.0000)
+    margin above stratum-4 ceiling: 2.354788  (>0 -> no intrusion)
+
+  L_max=15:
+    n_total = 432112 (incremental cumulative)
+    bot20 |lambda| range = [0.8197411121, 0.8452121014]
+    strata cardinalities = [2, 4, 8, 6]
+    |S_3| = 8  (target = 8)
+    NEW sector minimizer at p+q=15: (7, 8), C_2 = 71.3333
+    Friedrich-Bar lower bound: 3.401960 (eta_FB=0.4, sqrt(C_2+1)=8.5049)
+    margin above stratum-4 ceiling: 2.556748  (>0 -> no intrusion)
+
+  NPZ written: tier0-computation\s87_w11_stratum3_lmax_scan.npz
+
+  Plot written: tier0-computation\s87_w11_stratum3_lmax_scan.png
+(value=4, scheme=block-diagonal-cache-plus-friedrich-baer-bound, convention=4-stratum-canonical-W12-stratum-3, L_max=12-15-scan)
+
+=== S87-STRATUM3-LMAX-SCAN: PASS (pass_count=4/4, wall 0.5s) ===
+  cardinality_S3_per_lmax = [8, 8, 8, 8]
+  cardinality_all_per_lmax = [[2, 4, 8, 6], [2, 4, 8, 6], [2, 4, 8, 6], [2, 4, 8, 6]]
+  L_max_breakdown_threshold = 0 (0 = no breakdown)
+  Friedrich-Bär margins (FB lower bound − stratum-4 ceiling) = [2.600584026771723, 2.157009298412768, 2.3547878986267134, 2.556748117872866]

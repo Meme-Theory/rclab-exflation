@@ -24,7 +24,7 @@ Computing Z_{phi,phi}, Z_{sigma,sigma}, and Z_{phi,sigma} determines whether off
 
 **Computation Steps**:
 
-1. Load `tier0-computation/s42_gradient_stiffness.py` and `tier0-computation/tier1_dirac_spectrum.py`.
+1. Load `computations/s42_gradient_stiffness.py` and `computations/dirac_spectrum.py`.
 
 2. Identify the T1 (breathing) and T2 (cross-block) deformation directions from Paper 15 Section 3.6 (U(2)-invariant moduli on SU(3)). The Jensen direction is the diagonal (2, -2, 1) in the (u(1), su(2), C^2) decomposition. T1 is the volume-preserving breathing mode. T2 is the cross-block deformation.
 
@@ -40,8 +40,8 @@ Computing Z_{phi,phi}, Z_{sigma,sigma}, and Z_{phi,sigma} determines whether off
 
 **Pre-registered gate ZMATRIX-43**: INFO (structural). Report the condition number Z_max/Z_min.
 
-**Input**: `tier0-computation/s42_gradient_stiffness.py`, `tier1_dirac_spectrum.py`, Paper 15 eq 3.60, 3.79 in `researchers/Baptista/`
-**Output**: `tier0-computation/s43_offjensen_z_matrix.{py,npz,png}`
+**Input**: `computations/s42_gradient_stiffness.py`, `dirac_spectrum.py`, Paper 15 eq 3.60, 3.79 in `researchers/Baptista/`
+**Output**: `computations/s43_offjensen_z_matrix.{py,npz,png}`
 
 ---
 
@@ -69,7 +69,7 @@ Fold anisotropic Ricci: Ric|_{u(1)} = 1.50, Ric|_{su(2)} = 1.930, Ric|_{C^2} = 2
 
 2. Construct the Lichnerowicz Laplacian Delta_L on symmetric 2-tensors restricted to U(2)-invariant TT tensors at the fold metric. Paper 37 eq 3.1 reduces this to a finite-dimensional eigenvalue problem using representation theory.
 
-3. The Jensen metric at tau=0.190 has specific structure constants computable from `tier0-computation/tier1_dirac_spectrum.py` (orthonormal frame, connection coefficients).
+3. The Jensen metric at tau=0.190 has specific structure constants computable from `computations/dirac_spectrum.py` (orthonormal frame, connection coefficients).
 
 4. Compute all eigenvalues of Delta_L restricted to the U(2)-invariant TT subspace.
 
@@ -80,7 +80,7 @@ Fold anisotropic Ricci: Ric|_{u(1)} = 1.50, Ric|_{su(2)} = 1.930, Ric|_{C^2} = 2
 **Pre-registered gate LICHN-43**: PASS if all eigenvalues positive. FAIL if any negative (structural threat).
 
 **Input**: Papers 37-39, 48 in `researchers/Baptista/`, fold metric from `s42_gradient_stiffness.npz`
-**Output**: `tier0-computation/s43_lichnerowicz.{py,npz,png}`
+**Output**: `computations/s43_lichnerowicz.{py,npz,png}`
 
 ---
 
@@ -131,7 +131,7 @@ Naz W3-1 review mechanism (d): collective ZP energy T_ZP = 108 M_KK^4 at the fol
 **Pre-registered gate BREATHE-43**: INFO. If K_BCS < 0 and |K_BCS| > K_spectral, report ANOMALOUS (breathing mode unstable).
 
 **Input**: `s36_sfull_tau_stabilization.npz`, `s42_gradient_stiffness.npz`, `s38_cc_instanton.npz`, `s40_collective_inertia.npz`
-**Output**: `tier0-computation/s43_breathing_mode.{py,npz,png}`
+**Output**: `computations/s43_breathing_mode.{py,npz,png}`
 
 ---
 
@@ -178,7 +178,7 @@ Additional bounds (QF 3B):
 **Pre-registered gate LIV-43**: PASS if alpha_LIV < 10^{-2.5}. FAIL if exceeds any bound.
 
 **Input**: `s42_hauser_feshbach.npz`, LIV papers in `researchers/Quantum-Foam/`
-**Output**: `tier0-computation/s43_oneloop_liv.{py,npz,png}`
+**Output**: `computations/s43_oneloop_liv.{py,npz,png}`
 
 ---
 
@@ -223,7 +223,7 @@ where V_3 is the cubic anharmonic vertex and rho_2 is the 2-phonon joint DOS at 
 **Pre-registered gate THERM-COND-43**: INFO. Report kappa value and whether fabric is perfect conductor.
 
 **Input**: `s36_mmax_authoritative.npz`, S40 QRPA data, `s42_gradient_stiffness.npz` (for d^3S/dtau^3)
-**Output**: `tier0-computation/s43_thermal_conductivity.{py,npz,png}`
+**Output**: `computations/s43_thermal_conductivity.{py,npz,png}`
 
 ---
 

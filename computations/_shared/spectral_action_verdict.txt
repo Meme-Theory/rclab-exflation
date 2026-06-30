@@ -1,0 +1,110 @@
+T3-TIER1-SPECTRAL-ACTION: INFO -- value=(a_0=4.658e-02, a_2=7.325e+00, a_4=-2.918e+02, S_heat(0)=11690.4, R_exact(0)=2.000, R_exact(2)=27.320, corr=0.9619, d_eff=8.58, kappa_cc0=0.4628) scheme=heat_kernel_expansion convention=Chamseddine-Connes_dim8 L_max=3 sha256=aaaa00322599e18c6539fe3fe87be49b7feaadc30e513e6e7c71202730e136b1
+
+==============================================================================
+T3-TIER1-SPECTRAL-ACTION — Tier 3 re-run verdict (Spectral-Geometer, S81)
+==============================================================================
+
+Classification: GEOMETRIC
+Script: C:/sandbox/Ainulindale Exflation/computations/_shared/spectral_action.py
+Status: PRODUCTION (also present in tier0-archive/; current production file differs by +9 lines — S81 T3 canonical import added)
+
+Seeley-DeWitt coefficients on (SU(3), g_s) with Jensen deformation:
+  Heat kernel expansion K(t) = Tr(exp(-t D^2)) = sum_n a_n * t^{(n-d)/2}, d=8
+  Chamseddine-Connes convention:
+    a_0 = dim(S) * Vol / (4pi)^{d/2}           [cosmological / volume]
+    a_2 = dim(S) * R * Vol / (6 * (4pi)^{d/2}) [scalar curvature -> Einstein-Hilbert]
+    a_4 = dim(S) * [5R^2 - 2|Ric|^2 + 2|Riem|^2] / (360*(4pi)^{d/2}) * Vol + gauge  [Yang-Mills]
+
+SUBSTITUTION CHAIN (Einstein-Hilbert from a_2):
+  Step 1 Definition: 6 * a_2 / a_0 = R (Gilkey, dim(S) and Vol cancel)
+  Step 2 Substitution: R_spectral(s) = 6 * a_2(s) / a_0(s)
+  Step 3 Baptista bracket: R(s)/R(0) = [2*e^{2s} - 1 + 8*e^{-s} - e^{-4s}] / 8
+  Step 4 At s=0: bracket=8, dR/ds=0 (stationary), d^2R/ds^2=0, d^3R/ds^3=72 > 0
+  Step 5 Direction: R(s)/R(0) increases monotonically for s > 0.
+    s=0.10 : +0.14%    s=0.19 : +0.91%    s=0.50 : +14.4%    s=2.00 : +1266%
+  Conclusion: gravity (second spectral moment a_2) INCREASES under Jensen deformation.
+  Simultaneously: total spectral action S_heat(s) DECREASES (S(2)/S(0)=0.2545 at Lambda=5).
+  Volume preserved exactly (det ratio = 1 to 1e-16).
+
+NUMERICAL RESULTS (max_pq_sum=3, Lambda=5.0, t_range=(0.01,0.5)):
+
+  Tier 1 (EXACT, structural):
+    R(s=0)        = 2.000000   (matches bi-invariant known result)
+    R(s=2)        = 27.3197    (13.7x R(0))
+    R_exact vs R_Baptista    max ratio error = 5e-15 (machine epsilon)
+    Volume preservation      max det deviation < 1e-16
+    Correlation S_heat vs V_Baptista(0,s) = 0.9619
+    Weyl effective dimension d_eff = 8.58 (expected 8.0, dev 7.2%)
+
+  Tier 2 (truncation-limited, individual SD coefficients):
+    a_0 = 4.658e-02  +/- 5.70e-01  (rel. unc. 1223%)
+    a_2 = 7.325e+00  +/- 2.41e+01  (rel. unc. 329%)
+    a_4 = -2.918e+02 +/- 3.95e+02  (rel. unc. 136%)
+    NOTE: Individual a_n values at max_pq_sum=3 are unreliable.
+    This is a KNOWN structural limitation of the fitting approach.
+    Ratios and total action remain reliable.
+
+  Tier 3 (derived observable, V_eff stabilization via Coleman-Weinberg):
+    Lambda_cc=0 crossing at kappa ~ 0.4628
+    (bi-invariant s=0 is unstable; 1-loop correction stabilizes at finite s_min)
+
+SPECTRAL ACTION AT FOLD (s=tau_fold=0.19):
+  R_exact(0.19)    = ~2.019    (+0.94% above R(0))
+  S_heat(0.19)     ~ 11643     (~0.404% below S(0); linear interpolation between s=0.1 and s=0.2)
+  V_Baptista(0.19) ~ +0.193    (still above 0, sign change at s ~ 0.6)
+
+CROSS-CHECKS:
+  - Clifford algebra validation: err = 0 (machine precision)
+  - SU(2) Dirac benchmark: PASS (err < 1e-10)
+  - Baptista analytical R(s)/R(0) matched to 5e-15 (Levi-Civita connection exact)
+  - Volume preservation under Jensen: exact (1e-16)
+  - Weyl law: d_eff = 8.58, consistent with finite truncation (no violation)
+
+CANONICAL CONSTANT COMPLIANCE:
+  Imports: tau_fold, Vol_SU3_Haar from canonical_constants (S81 T3-compliant).
+  OMP_NUM_THREADS / MKL_NUM_THREADS capped at 8 (CPU-only eigvalsh path).
+  Locals tagged: S (accumulator), m2_u2, V_1loop, bracket_0, val (Riemann),
+  max_ratio_err, k_max, V_min_candidates, etc.
+  No hardcoded framework constants.
+
+INPUT SHA256 PINS (64-char hex):
+  script         = ab38e01616ee15b50b17f1dd02a60b182269a561919fd70bdd8e558bf8971ccd
+  dep_dirac      = eee1b6fdcbb86847385130b3b3467c76fe1b5b73573d7dac4baf428cf4ff163f
+  dep_const      = 68b50cd325d2cc8c63b775da3b6b92f538da582bee44c5d906c81259f24dd12f
+  out_spectral   = 335039f0e91d0fb2bb436c8bbe7be65523ad5a5feac702c591a5b373af1522e4
+  out_heatkernel = 2767ded9f63792712bac1631116b3b6b3c1d862726203b74d773752445e44e6c
+  out_vefflnds   = 127645d5c0e1aa5de538c460d56d792a7f9f0beb42d144ed293756fde5baa0e8
+
+CLOSURE SHA256 (full 64-char): aaaa00322599e18c6539fe3fe87be49b7feaadc30e513e6e7c71202730e136b1
+
+VERDICT REASONING:
+  INFO, not PASS/FAIL. The script is a DIAGNOSTIC / machinery validation — its
+  reliable outputs (exact R(g_s), volume preservation, correlation, Weyl law)
+  all cross-check. The unreliable outputs (individual a_0, a_2, a_4) are
+  structurally limited by truncation and the script itself states this
+  explicitly. No pre-registered PASS/FAIL threshold exists for a machinery
+  validation of this form — the appropriate verdict is INFO.
+
+STRUCTURAL HARVEST:
+  1. The Chamseddine-Connes heat kernel expansion is numerically self-consistent
+     on Jensen-deformed SU(3) with dim=8 convention.
+  2. Exact scalar curvature R(s) from Levi-Civita matches Baptista's analytical
+     formula to machine epsilon -- STRUCTURAL cross-check for Baptista Paper 15.
+  3. Spectral action S(s) is monotonically DECREASING in s for all tested Lambda
+     (2, 5, 10, 20) -- reproduces S35/S36 monotonicity result at truncation 3.
+  4. The a_2/a_0 ratio is dominated by a_0 crossing zero within the fit range;
+     individual SD coefficients at max_pq_sum=3 cannot be used as quantitative
+     inputs to downstream physics. Only the total action and exact connection
+     results should propagate.
+  5. Coleman-Weinberg 1-loop correction (Baptista eq 3.87) introduces a finite-s
+     minimum in V_eff for kappa > 0 and crosses Lambda_cc=0 at kappa ~ 0.4628.
+     This reproduces Baptista's cosmological constant tuning result.
+
+FLAGS:
+  - Script is in tier0-computation/ (PRODUCTION USE) -- modifications require audit.
+  - Also present in tier0-archive/ (historical one-shot); the two differ only
+    in S81 T3 compliance header (canonical imports + OMP cap).
+  - max_pq_sum=3 is PINNED for this verdict; any downstream use at higher
+    L_max produces DIFFERENT numerics and requires a new verdict.
+
+END VERDICT

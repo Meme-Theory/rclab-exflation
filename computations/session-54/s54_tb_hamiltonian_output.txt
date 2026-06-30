@@ -1,0 +1,234 @@
+========================================================================
+S54 TB-HAMILTONIAN-54: Tight-Binding Hamiltonian on 32-Cell Graph
+========================================================================
+
+--- Section 1: 32-cell representation graph ---
+  Number of cells: 32
+  Casimir range: [0.000, 20.000]
+  Dimension range: [1, 90]
+  Total Hilbert space dimension (sum of dims): 1056
+
+  Representations (Casimir order):
+     0: (0,0)  C2=0.000  dim=1
+     1: (0,1)  C2=1.333  dim=3
+     2: (1,0)  C2=1.333  dim=3
+     3: (1,1)  C2=3.000  dim=8
+     4: (0,2)  C2=3.333  dim=6
+     5: (2,0)  C2=3.333  dim=6
+     6: (1,2)  C2=5.333  dim=15
+     7: (2,1)  C2=5.333  dim=15
+     8: (0,3)  C2=6.000  dim=10
+     9: (3,0)  C2=6.000  dim=10
+    10: (2,2)  C2=8.000  dim=27
+    11: (1,3)  C2=8.333  dim=24
+    12: (3,1)  C2=8.333  dim=24
+    13: (0,4)  C2=9.333  dim=15
+    14: (4,0)  C2=9.333  dim=15
+    15: (2,3)  C2=11.333  dim=42
+    16: (3,2)  C2=11.333  dim=42
+    17: (1,4)  C2=12.000  dim=35
+    18: (4,1)  C2=12.000  dim=35
+    19: (0,5)  C2=13.333  dim=21
+    20: (5,0)  C2=13.333  dim=21
+    21: (3,3)  C2=15.000  dim=64
+    22: (2,4)  C2=15.333  dim=60
+    23: (4,2)  C2=15.333  dim=60
+    24: (1,5)  C2=16.333  dim=48
+    25: (5,1)  C2=16.333  dim=48
+    26: (0,6)  C2=18.000  dim=28
+    27: (6,0)  C2=18.000  dim=28
+    28: (3,4)  C2=19.333  dim=90
+    29: (4,3)  C2=19.333  dim=90
+    30: (2,5)  C2=20.000  dim=81
+    31: (5,2)  C2=20.000  dim=81
+
+--- Section 2: Adjacency from Clebsch-Gordan rules ---
+  Bond counts (undirected):
+    C^2 coset:       50
+    su(2) stabilizer: 24
+    u(1) hypercharge: 19
+    Total:           93
+  Bonds per cell: min=2, max=8, mean=5.81
+  Per-type means: C2=3.12, su2=1.50, u1=1.19
+  Symmetry: PASS | Self-loops: NONE | Overlap: NONE
+  Connected components: 1
+  Graph diameter: 6
+
+--- Section 3: tau-dependent Josephson couplings ---
+  At fold (tau=0.19):
+    J_C2  = 0.933000 (canonical: 0.933)
+    J_su2 = 0.059000 (canonical: 0.059)
+    J_u1  = 0.038000 (canonical: 0.038)
+  At tau=0 (bi-invariant):
+    J_C2  = 1.995012
+    J_su2 = 0.018869
+    J_u1  = 0.055567
+    J_C2/J_su2 = 105.7278 (fold: 15.8136)
+    J_C2/J_u1  = 35.9029 (fold: 24.5526)
+
+  Effective coupling at fold:
+    J_eff = 3.12*0.933 + 1.50*0.059 + 1.19*0.038
+          = 3.0493 M_KK
+    C^2 fraction: 95.6%
+    su(2) fraction: 2.9%
+    u(1) fraction: 1.5%
+
+--- Section 4: Hamiltonian construction and diagonalization ---
+  Tau grid: 50 values in [0.00, 0.50]
+  Diagonalization complete: 50 tau values
+
+--- Section 5: Cross-checks ---
+  Symmetry error (max): 0.00e+00
+  Trace check at tau=0.000: Tr(H)=202.518438, sum(evals)=202.518438, rel_err=0.00e+00
+  Trace check at tau=0.255: Tr(H)=77.362838, sum(evals)=77.362838, rel_err=0.00e+00
+  Trace check at tau=0.500: Tr(H)=45.968362, sum(evals)=45.968362, rel_err=3.09e-16
+
+  Lowest eigenvalue (should be ~0):
+    min=-1.28e-15, max=3.11e-15, mean=4.39e-16
+  Ground state uniformity at fold (std/mean): 0.000000
+    (0 = perfectly uniform delocalized state)
+  Orthonormality error at fold: 3.66e-15
+
+  Spectrum at fold (tau=0.19):
+    Eigenvalues: [-0.000000, ..., 6.767789]
+    Bandwidth: 6.767789 M_KK
+    Largest gap: 0.568922 M_KK
+    Number of distinct eigenvalues: 32
+    Gaps (all 31):
+      E_1 - E_0 = 0.177062
+      E_2 - E_1 = 0.152344
+      E_3 - E_2 = 0.193505
+      E_4 - E_3 = 0.203245
+      E_5 - E_4 = 0.278241
+      E_6 - E_5 = 0.074178
+      E_7 - E_6 = 0.091429
+      E_8 - E_7 = 0.528668
+      E_9 - E_8 = 0.026372
+      E_10 - E_9 = 0.167373
+      E_11 - E_10 = 0.281638
+      E_12 - E_11 = 0.243194
+      E_13 - E_12 = 0.109816
+      E_14 - E_13 = 0.306045
+      E_15 - E_14 = 0.313549
+      E_16 - E_15 = 0.072543
+      E_17 - E_16 = 0.035951
+      E_18 - E_17 = 0.214559
+      E_19 - E_18 = 0.173931
+      E_20 - E_19 = 0.127339
+      E_21 - E_20 = 0.065552
+      E_22 - E_21 = 0.229473
+      E_23 - E_22 = 0.086113
+      E_24 - E_23 = 0.263420
+      E_25 - E_24 = 0.310455
+      E_26 - E_25 = 0.038937
+      E_27 - E_26 = 0.371401
+      E_28 - E_27 = 0.345321
+      E_29 - E_28 = 0.386696
+      E_30 - E_29 = 0.330519
+      E_31 - E_30 = 0.568922
+
+--- Section 6: Comparison to continuum GL-Josephson ---
+  Fiedler eigenvalue (algebraic connectivity): 0.177062 M_KK
+  Bandwidth at fold: 6.767789 M_KK
+  Ratio BW/J_C2: 7.3672
+  Continuum c_Gold: 0.915 M_KK
+
+--- Section 7: Degeneracy and band structure ---
+  [C, H] at fold: 0.00e+00 (should be ~0)
+  Self-conjugate reps (p=q): 4
+  Conjugate pairs: 14
+  Expected degeneracy: 14 doublets + 4 singlets
+
+  Degeneracy pattern at fold (32 distinct levels):
+    Level  0: E = -0.000000, singlet
+    Level  1: E = 0.177062, singlet
+    Level  2: E = 0.329406, singlet
+    Level  3: E = 0.522910, singlet
+    Level  4: E = 0.726155, singlet
+    Level  5: E = 1.004396, singlet
+    Level  6: E = 1.078573, singlet
+    Level  7: E = 1.170003, singlet
+    Level  8: E = 1.698670, singlet
+    Level  9: E = 1.725042, singlet
+    Level 10: E = 1.892415, singlet
+    Level 11: E = 2.174053, singlet
+    Level 12: E = 2.417248, singlet
+    Level 13: E = 2.527063, singlet
+    Level 14: E = 2.833108, singlet
+    Level 15: E = 3.146658, singlet
+    Level 16: E = 3.219201, singlet
+    Level 17: E = 3.255152, singlet
+    Level 18: E = 3.469711, singlet
+    Level 19: E = 3.643642, singlet
+    Level 20: E = 3.770981, singlet
+    Level 21: E = 3.836533, singlet
+    Level 22: E = 4.066006, singlet
+    Level 23: E = 4.152120, singlet
+    Level 24: E = 4.415540, singlet
+    Level 25: E = 4.725995, singlet
+    Level 26: E = 4.764932, singlet
+    Level 27: E = 5.136333, singlet
+    Level 28: E = 5.481654, singlet
+    Level 29: E = 5.868349, singlet
+    Level 30: E = 6.198868, singlet
+    Level 31: E = 6.767789, singlet
+
+--- Section 8: tau dependence ---
+     tau        BW   Gap_max       E_1      E_31      J_C2     J_su2      J_u1
+   0.000   14.6483    1.3199    0.3478   14.6483    1.9950    0.0189    0.0556
+   0.051   11.9495    1.0685    0.2870   11.9495    1.6267    0.0256    0.0502
+   0.102    9.7500    0.8609    0.2386    9.7500    1.3264    0.0348    0.0453
+   0.153    7.9582    0.6878    0.2007    7.9582    1.0816    0.0473    0.0409
+   0.204    6.4997    0.5414    0.1720    6.4997    0.8819    0.0642    0.0369
+   0.255    5.3141    0.4261    0.1515    5.3141    0.7191    0.0872    0.0334
+   0.306    4.3534    0.3239    0.1387    4.3534    0.5863    0.1184    0.0301
+   0.357    3.5810    0.2282    0.1334    3.5810    0.4781    0.1608    0.0272
+   0.408    2.9768    0.2644    0.1359    2.9768    0.3898    0.2184    0.0246
+   0.459    2.6252    0.2253    0.1323    2.6252    0.3179    0.2967    0.0222
+
+  Bandwidth: range [2.6012, 14.6483] M_KK
+  Bandwidth relative variation: 186.48%
+  Bandwidth: NON-MONOTONE, peak at tau=0.000
+
+--- Section 9: Phononic branch classification ---
+  Band structure at fold:
+    Acoustic (E=0): 1 mode
+    First optical (Fiedler): E = 0.177062 M_KK
+    Top of band: E = 6.767789 M_KK
+    Number of bands: 32
+
+  Large gaps (> 0.6768):
+
+--- Section 10: Save data ---
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s54_tb_hamiltonian.npz
+
+--- Section 11: Plotting ---
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s54_tb_hamiltonian.png
+
+========================================================================
+GATE VERDICT: TB-HAMILTONIAN-54
+========================================================================
+  Cells: 32 (required: 32) PASS
+  Tau points: 50 (required: >= 20) PASS
+  Tau range: [0.00, 0.50] (required: [0.00, 0.50]) PASS
+  H_TB symmetry: 0.00e+00 PASS
+  Graph connected: PASS
+  Zero eigenvalue: 3.11e-15 PASS
+
+  VERDICT: PASS
+
+  Key numbers:
+    32 cells: reps (0,0) through (5,2) by Casimir cutoff
+    93 bonds: 50 C^2 + 24 su(2) + 19 u(1)
+    Mean coordination: 5.81 (range 2-8)
+    Graph diameter: 6
+    Bandwidth at fold: 6.7678 M_KK
+    Fiedler eigenvalue at fold: 0.177062 M_KK
+    Spectral gap (E_1/BW): 0.0262
+    Degeneracy pattern: 32 distinct levels at fold
+    Conjugation symmetry: 14 doublets + 4 singlets
+
+  Files produced:
+    C:\sandbox\Ainulindale Exflation\tier0-computation\s54_tb_hamiltonian.npz
+    C:\sandbox\Ainulindale Exflation\tier0-computation\s54_tb_hamiltonian.png
+    C:\sandbox\Ainulindale Exflation\tier0-computation\s54_tb_hamiltonian_output.txt

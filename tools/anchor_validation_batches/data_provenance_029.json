@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 29,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_281",
+      "anchor_type": "data_provenance",
+      "name": "fabric_dispersion",
+      "script_path": "session-42/s42_fabric_dispersion.py",
+      "session": "s42",
+      "inputs": "",
+      "outputs": "session-42/s42_fabric_dispersion.npz, session-42/s42_fabric_dispersion.png",
+      "source_file": "computations/session-42/s42_fabric_dispersion.py",
+      "source_context_30_lines": "  642: print(f\"{'lambda_fs':<35} {'~0':>15} {'(no streaming)':<20}\")\n  643: print(f\"{'sigma/m':<35} {sigma_over_m_phys:>15.1e} {'cm^2/g (Conv A)':<20}\")\n  644: print(f\"{'Profile prediction':<35} {'NFW (1/r cusp)':>15} {'':<20}\")\n  645: print(f\"{'DM type':<35} {'CDM-like':>15} {'':<20}\")\n  646: \n  647: # ============================================================\n  648: # 13. SAVE DATA\n  649: # ============================================================\n  650: outfile = base / \"s42_fabric_dispersion.npz\"\n  651: np.savez(outfile,\n  652:     # Gate\n  653:     verdict=np.array([verdict]),\n  654:     # Sound speed\n  655:     c_fabric_value=np.array([1.0]),  # in c units\n  656:     c_fabric_type=np.array(['Lorentz_invariant']),\n  657:     # Tau mass\n  658:     m_tau=np.array([m_tau]),"
+    },
+    {
+      "anchor_id": "prov_282",
+      "anchor_type": "data_provenance",
+      "name": "fabric_wz",
+      "script_path": "session-42/s42_fabric_wz.py",
+      "session": "s42",
+      "inputs": "",
+      "outputs": "session-42/s42_fabric_wz.npz, session-42/s42_fabric_wz.png",
+      "source_file": "computations/session-42/s42_fabric_wz.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s42_fabric_wz.py — Fabric-Collective Dark Energy w(z) (W-Z-42 REDO)\n    4: \n    5: Einstein-Theorist, Session 42 (Redo). Level 3 re-run S81:\n    6:   - canonical_constants import (never hardcode framework constants)\n    7:   - upstream .npz inputs pinned via SHA-256\n    8:   - closure SHA emitted\n    9:   - 4-tuple output tag\n   10: \n   11: The fabric has spatial structure (32 Voronoi cells, domain walls, gradient"
+    },
+    {
+      "anchor_id": "prov_283",
+      "anchor_type": "data_provenance",
+      "name": "fabric_wz_v2",
+      "script_path": "session-42/s42_fabric_wz_v2.py",
+      "session": "s42",
+      "inputs": "computations/session-42/s42_gradient_stiffness.npz, computations/session-42/s42_fabric_dispersion.npz, computations/sess...",
+      "outputs": "session-42/s42_fabric_wz_v2.npz, session-42/s42_fabric_wz_v2.png",
+      "source_file": "computations/session-42/s42_fabric_wz_v2.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s42_fabric_wz_v2.py — Fabric-Collective Dark Energy w(z) (W-Z-42 REDO #2)\n    4: \n    5: Einstein-Theorist, Session 42.\n    6: \n    7: CRITICAL ERROR IN REDO #1 (s42_fabric_wz.py):\n    8:   Compared domain wall thickness at the KK scale (~10^{-49} Mpc) to cell size\n    9:   at the Hubble scale today (~10^3 Mpc). These are quantities from DIFFERENT\n   10:   EPOCHS separated by 10^{10+} e-folds. The wall fraction must be evaluated\n   11:   AT THE SAME EPOCH."
+    },
+    {
+      "anchor_id": "prov_284",
+      "anchor_type": "data_provenance",
+      "name": "gge_energy",
+      "script_path": "session-42/s42_gge_energy.py",
+      "session": "s42",
+      "inputs": "computations/session-42/s42_constants_snapshot.npz, computations/session-42/s42_hauser_feshbach.npz, computations/sessio...",
+      "outputs": "session-42/s42_gge_energy.npz, session-42/s42_gge_energy.png",
+      "source_file": "computations/session-42/s42_gge_energy.py",
+      "source_context_30_lines": "  565: the energy comes from the BCS condensation energy released by the\n  566: transit quench, not from inflaton decay.\n  567: \"\"\")\n  568: \n  569: # ============================================================\n  570: # 9. Save results\n  571: # ============================================================\n  572: \n  573: np.savez('computations/session-42/s42_gge_energy.npz',\n  574:     # M_KK values\n  575:     M_KK_gravity=M_KK_grav,\n  576:     M_KK_gauge=M_KK_gauge,\n  577: \n  578:     # Framework quantities (M_KK units)\n  579:     E_cond_MKK=E_cond_MKK,\n  580:     E_exc_MKK=E_exc_MKK,\n  581:     n_pairs=n_pairs,"
+    },
+    {
+      "anchor_id": "prov_285",
+      "anchor_type": "data_provenance",
+      "name": "giant_voronoi",
+      "script_path": "session-42/s42_giant_voronoi.py",
+      "session": "s42",
+      "inputs": "",
+      "outputs": "session-42/s42_giant_voronoi.npz, session-42/s42_giant_voronoi.png",
+      "source_file": "computations/session-42/s42_giant_voronoi.py",
+      "source_context_30_lines": "  872:     }\n  873:     for key in SHELLS:\n  874:         save_data[f'{key}_N_giant'] = all_results[key]['N_giant']\n  875:         save_data[f'{key}_L_max'] = all_results[key]['L_max']\n  876:         save_data[f'{key}_L_mean'] = all_results[key]['L_mean']\n  877:         save_data[f'{key}_N_faces'] = all_results[key]['N_faces']\n  878:         save_data[f'{key}_N_structures'] = all_results[key]['N_structures']\n  879: \n  880:     npz_path = 'computations/session-42/s42_giant_voronoi.npz'\n  881:     np.savez(npz_path, **save_data)\n  882:     print(f\"\\nData saved to {npz_path}\")\n  883: \n  884:     # =================================================================\n  885:     # Plot\n  886:     # =================================================================\n  887:     plot_path = 'computations/session-42/s42_giant_voronoi.png'\n  888:     make_plots(all_results['z08'], all_results['z16'], plot_path)"
+    },
+    {
+      "anchor_id": "prov_286",
+      "anchor_type": "data_provenance",
+      "name": "gradient_stiffness",
+      "script_path": "session-42/s42_gradient_stiffness.py",
+      "session": "s42",
+      "inputs": "",
+      "outputs": "session-42/s42_gradient_stiffness.npz, session-42/s42_gradient_stiffness.png",
+      "source_file": "computations/session-42/s42_gradient_stiffness.py",
+      "source_context_30_lines": " 1306:         'tau_fold_used': np.array([fold_tau]),\n 1307:         'verdict': np.array([verdict]),\n 1308:     }\n 1309: \n 1310:     # Per-sector Z at fold\n 1311:     for p, q in KK_SECTORS:\n 1312:         save_data[f'Z_sector_{p}_{q}_fold'] = np.array([r_D['Z_per_sector'][(p, q)]])\n 1313: \n 1314:     outpath_npz = os.path.join(SCRIPT_DIR, 's42_gradient_stiffness.npz')\n 1315:     np.savez_compressed(outpath_npz, **save_data)\n 1316:     print(f\"\\nData saved: {outpath_npz}\")\n 1317: \n 1318:     # ===================================================================\n 1319:     # PLOT\n 1320:     # ===================================================================\n 1321: \n 1322:     fig, axes = plt.subplots(2, 2, figsize=(16, 12))"
+    },
+    {
+      "anchor_id": "prov_287",
+      "anchor_type": "data_provenance",
+      "name": "hauser_feshbach",
+      "script_path": "session-42/s42_hauser_feshbach.py",
+      "session": "s42",
+      "inputs": "",
+      "outputs": "session-42/s42_hauser_feshbach.npz, session-42/s42_hauser_feshbach.png",
+      "source_file": "computations/session-42/s42_hauser_feshbach.py",
+      "source_context_30_lines": "  901:     'log_eta_observed': -9.2,\n  902: \n  903:     # Sensitivity\n  904:     'T_scan': T_scan,\n  905:     'DR_scan': DR_scan,\n  906:     'T_3dec': T_3dec,\n  907: }\n  908: \n  909: output_path = os.path.join(SCRIPT_DIR, \"s42_hauser_feshbach.npz\")\n  910: np.savez_compressed(output_path, **output_data)\n  911: print(f\"\\nSaved: {output_path}\")\n  912: \n  913: # ================================================================\n  914: # 14. PLOTS\n  915: # ================================================================\n  916: \n  917: fig, axes = plt.subplots(2, 2, figsize=(14, 10))"
+    },
+    {
+      "anchor_id": "prov_288",
+      "anchor_type": "data_provenance",
+      "name": "homogeneity",
+      "script_path": "session-42/s42_homogeneity.py",
+      "session": "s42",
+      "inputs": "computations/session-42/s42_gradient_stiffness.npz, computations/session-42/s42_tau_dyn_reopening.npz, computations/sess...",
+      "outputs": "session-42/s42_homogeneity.npz, session-42/s42_homogeneity.png",
+      "source_file": "computations/session-42/s42_homogeneity.py",
+      "source_context_30_lines": "    1: \"\"\"\n    2: HOMOG-42: Spatial Homogeneity of Transit — delta_tau/tau Constraint\n    3: ===================================================================\n    4: Einstein-theorist computation.\n    5: \n    6: PRINCIPLE: The fabric IS space. tau(x) defines the local internal geometry.\n    7: Spatial variations in tau produce spatial variations in coupling constants.\n    8: The equivalence principle demands spatial homogeneity of tau to the precision\n    9: required by FIRAS (delta_T/T < 10^{-5}) and Webb/Barrow (delta_alpha/alpha ~ 10^{-5}).\n   10: \n   11: METHOD:\n   12: 1. Z(tau) from W1-1 gives gradient stiffness.\n   13: 2. Effective mass of canonical field: m_phi^2 = V''(tau)/Z(tau).\n   14: 3. Hubble rate from Friedmann with spectral action energy density:\n   15:    H^2 = a_0 * M_KK^4 / (6 * (4pi)^2 * M_P^2).\n   16: 4. EXACT time-dependent Starobinsky variance for massive scalar in de Sitter:"
+    },
+    {
+      "anchor_id": "prov_289",
+      "anchor_type": "data_provenance",
+      "name": "kz_fnl",
+      "script_path": "session-42/s42_kz_fnl.py",
+      "session": "s42",
+      "inputs": "",
+      "outputs": "session-42/s42_kz_fnl.npz, session-42/s42_kz_fnl.png",
+      "source_file": "computations/session-42/s42_kz_fnl.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s42_kz_fnl.py — Kibble-Zurek defect density and primordial non-Gaussianity f_NL\n    4: ==============================================================================\n    5: \n    6: Gate: FNL-42\n    7: PASS: |f_NL| in [0.5, 100]\n    8: FAIL: |f_NL| > 200 (excluded by Planck) or |f_NL| < 0.01 (undetectable)\n    9: \n   10: Physics:\n   11: - BCS transition at the fold is second-order, Z_2 universality (GL-CUBIC-36)"
+    },
+    {
+      "anchor_id": "prov_290",
+      "anchor_type": "data_provenance",
+      "name": "ns_tilt",
+      "script_path": "session-42/s42_ns_tilt.py",
+      "session": "s42",
+      "inputs": "",
+      "outputs": "session-42/s42_ns_tilt.npz, session-42/s42_ns_tilt.png",
+      "source_file": "computations/session-42/s42_ns_tilt.py",
+      "source_context_30_lines": "  614: \n  615:     # Gate\n  616:     'ns_primary': np.array([ns_primary]),\n  617:     'r_primary': np.array([r_primary]),\n  618:     'alpha_s_primary': np.array([alpha_primary]),\n  619:     'verdict': np.array([verdict]),\n  620: }\n  621: \n  622: np.savez(DATA_DIR / 's42_ns_tilt.npz', **save_dict)\n  623: print(f\"\\nSaved: {DATA_DIR / 's42_ns_tilt.npz'}\")\n  624: \n  625: \n  626: # ═══════════════════════════════════════════════════════════════════════\n  627: # PLOTTING\n  628: # ═══════════════════════════════════════════════════════════════════════\n  629: \n  630: fig, axes = plt.subplots(2, 3, figsize=(18, 11))"
+    }
+  ]
+}

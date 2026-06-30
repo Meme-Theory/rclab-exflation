@@ -5,15 +5,15 @@
 **Depends on**: Session 28 (all sub-sessions). 29B-4 is standalone. 29B-3 and 29B-5 are gated by 29A results.
 **Prerequisite**: For 29B-3 — 29A entropy balance must PASS (K-29b did not fire). For 29B-5 — 29A J_perp estimate from 29a-4 required. 29B-4 has no prerequisites and should start immediately.
 **Input data**:
-- `tier0-computation/tier1_dirac_spectrum.py` (core Dirac code, frame, connection, structure constants)
-- `tier0-computation/s27_multisector_bcs.npz` (F_BCS at Jensen points, V_nm for all sectors)
-- `tier0-computation/s28a_bogoliubov_coefficients.npz` (B_k(tau) for all sectors, 21 tau x 11,424 modes)
-- `tier0-computation/s23a_kosmann_singlet.npz` (V_nm for (0,0) sector)
-- `tier0-computation/s23a_eigenvectors_extended.npz` (D_K eigenvectors for all sectors)
-- `tier0-computation/s28b_hessian.npz` (2D Hessian code, adaptable)
-- `tier0-computation/s25_baptista_results.py` (G_{tau,tau} = 5 on Jensen curve)
-- `tier0-computation/s29a_gate_verdicts.txt` (KC-3 and entropy verdicts — FROM 29A)
-- `tier0-computation/s29a_inter_sector_coupling.npz` (J_perp zeroth-order — FROM 29A, for 29B-5)
+- `computations/dirac_spectrum.py` (core Dirac code, frame, connection, structure constants)
+- `computations/s27_multisector_bcs.npz` (F_BCS at Jensen points, V_nm for all sectors)
+- `computations/s28a_bogoliubov_coefficients.npz` (B_k(tau) for all sectors, 21 tau x 11,424 modes)
+- `computations/s23a_kosmann_singlet.npz` (V_nm for (0,0) sector)
+- `computations/s23a_eigenvectors_extended.npz` (D_K eigenvectors for all sectors)
+- `computations/s28b_hessian.npz` (2D Hessian code, adaptable)
+- `computations/s25_baptista_results.py` (G_{tau,tau} = 5 on Jensen curve)
+- `computations/s29a_gate_verdicts.txt` (KC-3 and entropy verdicts — FROM 29A)
+- `computations/s29a_inter_sector_coupling.npz` (J_perp zeroth-order — FROM 29A, for 29B-5)
 
 ## Motivation
 
@@ -34,12 +34,12 @@ This sub-session tackles the three medium-to-high-cost computations from the 29B
 Every result classified against its pre-registered gate BEFORE any interpretation. Report the number first. Classify second. Interpret third.
 
 **Python environment**: `"phonon-exflation-sim/.venv312/Scripts/python.exe"`
-**Output directory**: `tier0-computation/`
+**Output directory**: `computations/`
 **Script prefix**: `s29b_`
 
 ## 29A GATE CHECK (for 29B-3 and 29B-5 only)
 
-Before starting 29B-3 or 29B-5, read `tier0-computation/s29a_gate_verdicts.txt` and verify:
+Before starting 29B-3 or 29B-5, read `computations/s29a_gate_verdicts.txt` and verify:
 1. For 29B-3: Entropy balance = PASS (K-29b did not fire)
 2. For 29B-5: J_perp estimate available from `s29a_inter_sector_coupling.npz`
 
@@ -67,7 +67,7 @@ Session ends ONLY when user approves shutdown explicitly. Idle agents are not fi
 
 | Agent | Additional Reading |
 |:------|:-------------------|
-| phonon-exflation-sim | `tier0-computation/tier1_dirac_spectrum.py` (Dirac spectrum infrastructure), `tier0-computation/s28b_hessian.py` (Hessian code to extend), `tier0-computation/s27_multisector_bcs.py` (BCS solver) |
+| phonon-exflation-sim | `computations/dirac_spectrum.py` (Dirac spectrum infrastructure), `computations/s28b_hessian.py` (Hessian code to extend), `computations/s27_multisector_bcs.py` (BCS solver) |
 | baptista-spacetime-analyst | `researchers/Baptista/` — Paper 15 Section 3.7 (5D moduli space parameterization, eq 3.68), Paper 17 (Kosmann-Lichnerowicz derivative) |
 | landau-condensed-matter-theorist | `researchers/Landau/index.md` — BCS gap equation, Bogoliubov occupation, Josephson coupling physics |
 | coordinator | This prompt Section IV (gate conditions). Memorize ALL thresholds before first computation completes |
@@ -107,13 +107,13 @@ Session ends ONLY when user approves shutdown explicitly. Idle agents are not fi
 **Constraint Condition (B-29d)**: If any eigenvalue < 0: the modulus is unstable off-Jensen. The BCS analysis must be repeated in the full 5D space (multi-session effort). The 1D backreaction from 29A is unreliable.
 
 **Existing infrastructure**:
-- `tier1_dirac_spectrum.py`: full Dirac spectrum computation for any left-invariant metric. Contains `jensen_metric(tau)` and `compute_structure_constants()`. Adaptable to general left-invariant metrics.
+- `dirac_spectrum.py`: full Dirac spectrum computation for any left-invariant metric. Contains `jensen_metric(tau)` and `compute_structure_constants()`. Adaptable to general left-invariant metrics.
 - `s25_baptista_results.py`: moduli space metric G_{tau,tau} = 5 on the Jensen curve
 - `s28b_hessian.py`: 2D Hessian code, adaptable to higher dimensions
 
 **What must be built new**:
 1. General left-invariant metric parameterization (5 scale factors instead of Jensen's 1)
-2. Off-Jensen Dirac spectrum driver (call `tier1_dirac_spectrum` with modified metric)
+2. Off-Jensen Dirac spectrum driver (call `dirac_spectrum` with modified metric)
 3. 4x4 transverse Hessian assembly from finite differences
 4. Eigenvalue extraction and stability verdict
 
@@ -242,7 +242,7 @@ Even in worst case (KC-3 FAIL), 29B-4 (Jensen 5D Hessian) produces a publishable
 | 29B-3 | `s29b_bogoliubov_bcs.npz` | `s29b_bogoliubov_bcs.py` | Thermal Goldilocks |
 | 29B-5 | `s29b_josephson_coupling.npz` | `s29b_josephson_coupling.py` | J_perp / Delta gate |
 
-Gate verdicts appended to: `tier0-computation/s29b_gate_verdicts.txt`
+Gate verdicts appended to: `computations/s29b_gate_verdicts.txt`
 
 ---
 

@@ -1,828 +1,855 @@
 # Volovik Paper Index
 
 **Researcher**: Grigory E. Volovik (and collaborators: F.R. Klinkhamer, J. Nissinen, M.A. Zubkov, K. Zhang)
-**Papers**: 37 (1994-2025)
+**Papers**: 35 (1998-2025), all sourced from arXiv PDFs
 **Primary domain**: Emergent spacetime from superfluid condensates, topological quantum vacuum, analog gravity, q-theory of vacuum energy, flat bands, de Sitter thermodynamics
-**Project relevance**: Volovik's superfluid vacuum program is the direct physical blueprint for phonon-exflation. BCS pairing on SU(3), emergent Lorentz/gauge symmetries from topology, vacuum energy nullification by equilibrium thermodynamics, Kibble-Zurek defect formation, and the GGE relic as a non-equilibrium superfluid state all trace to constructions first realized in superfluid 3He and systematized across these 37 papers.
+**Project relevance**: Volovik's superfluid vacuum program is the direct physical blueprint for phonon-exflation. BCS pairing on SU(3), emergent Lorentz/gauge symmetries from topology, vacuum energy nullification by equilibrium thermodynamics, Kibble-Zurek defect formation, and the GGE relic as a non-equilibrium superfluid state all trace to constructions first realized in superfluid 3He. The q-theory of the cosmological constant, the elasticity-tetrad formulation of gravity, and the Fermi-point universality class for the Standard Model are the three pillars on which the framework's vacuum dynamics, emergent geometry, and particle content rest.
 
 ---
 
 ## Dependency Graph
 
 ```
-FOUNDATIONAL MONOGRAPH & REVIEWS
-  01 (Helium Droplet, 2003) --> 02 (cosmological analogies, 2001)
-  01 --> 04 (Fermi point scenario, 2008) --> 06 (topology of vacuum, 2012)
-  01 --> 32 (dimensionless physics, 2020) --> 31 (frozen snapshots, 2023)
-  01 --> 27 (non-equilibrium vacua, 2013) --> 34 (time crystals, 2013)
+EMERGENT GRAVITY AND SUPERFLUID UNIVERSE (Volovik 1998-2013)
+  01 (Superfluid Analogies) --> 03 (Fermi Point Scenario)
+  01 --> 04 (Vacuum Energy CC)
+  01 --> 06 (Induced Gravity 3He)
+  01 --> 08 (Axial Anomaly Baryogenesis)
+  01 --> 27 (PG Black Hole)
+  06 --> 09 (Hydraulic Jump White Hole)
+  06 --> 27
+  03 --> 25 (Superfluid Universe review)
+  04 --> 25
+  25 --> 05 (Topology Quantum Vacuum)
+  05 --> 10 (Topological Superfluids)
 
-ANALOG GRAVITY & HORIZONS
-  07 (induced gravity 3He, 1994) --> 29 (PG black hole, 2003) --> 10 (hydraulic jump, 2005)
-  07 --> 01
-  29 --> 24 (type-II Weyl / Lifshitz, 2016)
-  24 --> 33 (exotic Lifshitz, 2017)
+Q-THEORY AND VACUUM SELF-TUNING (Klinkhamer-Volovik 2008-2017)
+  04 --> 13 (Self-Tuning Vacuum)
+  13 --> 14 (Gluonic Vacuum Q-Theory)
+  13 --> 33 (Dark Matter Q-Theory)
+  14 --> 33
+  25 --> 13  [thermodynamic vacuum -> q-theory formalization]
 
-VACUUM ENERGY & Q-THEORY
-  05 (CC from condensed matter, 2005) --> 15 (self-tuning q, 2008) --> 16 (gluonic q, 2009)
-  15 --> 35 (DM from DE in q-theory, 2016)
-  15 --> 23 (tetrads + q-theory, 2023)
-  05 --> 30 (Newton constant, 2022)
+ELASTICITY TETRADS AND EMERGENT WEYL (2014-2023)
+  20 (Elasticity Tetrads) --> 21 (Tetrads Q-Theory)
+  20 --> 30 (Dimensionless Physics Topological)
+  21 --> 13  [tetrads realize q-variable]
+  23 (Emergent Weyl Geometry) --> 24 (Emergent Weyl Spinors)
+  23 --> 22 (Type-II Weyl Lifshitz)
+  24 --> 23  [companion papers]
+  22 --> 31 (Exotic Lifshitz Transitions)
 
-TOPOLOGY & CLASSIFICATION
-  06 (topology of vacuum, 2012) --> 11 (topological superfluids, 2019)
-  06 --> 28 (3He-B BDI classification, 2009)
-  11 --> 33 (exotic Lifshitz, 2017)
-  28 --> 11
+TOPOLOGICAL SUPERFLUIDS AND BDI (2009-2021)
+  05 --> 26 (Lifshitz-Horava z=3)
+  05 --> 10
+  10 --> 19 (Combined Lorentz)
+  10 --> 34 (Gravitational Anomaly)
+  26 --> 22  [Lifshitz scaling -> type-II Weyl]
 
-PARTICLE PHYSICS & SYMMETRY EMERGENCE
-  08 (BEC-BCS CPT, 2004) --> 13 (Lorentz without trans-Planck, 2013)
-  09 (axial anomaly baryogenesis, 1998) --> 14 (topological defects cosmo, 2011)
-  09 --> 36 (gravitational anomaly, 2021)
-  13 --> 21 (combined Lorentz, 2021)
-  25 (emergent Weyl geometry, 2014) --> 26 (emergent Weyl spinors, 2014)
-  26 --> 22 (elasticity tetrads, 2019)
-  22 --> 23
+FLAT BANDS AND PLANCKIAN (2017-2019)
+  16 (Graphite Flat Band) --> 17 (Flat Band Planckian)
+  16 --> 31 (Exotic Lifshitz)
+  22 --> 16  [Lifshitz transition -> flat band]
 
-DE SITTER THERMODYNAMICS
-  17 (dS decay, 2024) --> 12 (first law dS, 2025)
-  17 --> 37 (Landau-Khalatnikov two-fluid dS, 2024)
-  05 --> 17
+DE SITTER, DIMENSIONLESS PHYSICS, AND CONCEPTUAL (2004-2025)
+  12 (Dimensionless Planck-Mink) --> 02 (Acoustic Metric Planck)
+  12 --> 29 (Sommerfeld Analog)
+  12 --> 30
+  15 (dS Decay) --> 11 (First Law dS)
+  15 --> 29
+  15 --> 35 (LK Two-Fluid dS)
+  11 --> 35
+  07 (BEC-BCS CPT) --> 19  [topological QPT -> combined symmetry]
+  18 (Discrete Z4) --> 12  [Z4 breaking -> dimensionless metric]
+  28 (Negative Newton) --> 06  [species-dependent G]
+  32 (Time Crystals) --> 10  [quasi-ODLRO in 3He-B]
+  19 --> 21  [tetrad as symmetry-breaking order parameter]
 
-FLAT BAND & NOVEL PHASES
-  18 (flat band SC, 2018) --> 19 (Planckian metal, 2019)
-
-EMERGENT CONSTANTS & GRAVITY
-  03 (acoustic Planck constants, 2023) <-- 01, 32
-  20 (Z4 symmetry QG, 2024) <-- 21, 28
-  30 (Newton constant, 2022) <-- 07, 05
-  31 (frozen snapshots, 2023) <-- 03, 32
+CROSS-THEME LINKS
+  01,03,06 --[Fermi point topology]--> 05,10,25 [universality classification]
+  13,14,33 --[q-theory]--> 21 [tetrad realization of q-variable]
+  20,21    --[elasticity]--> 12,29,30 [dimensionless physics]
+  16,17,31 --[flat band]--> 22 [Lifshitz transitions]
+  11,15,29,35 --[dS thermodynamics]--> 04,13 [vacuum energy from equilibrium]
+  08,34    --[anomaly]--> 10 [topological protection]
 ```
-
----
 
 ## Topic Map
 
-### A. Foundational Monograph & Reviews
-Papers: 01, 02, 04, 32
-The core program: superfluid 3He-A as a laboratory cosmos. Paper 01 is the 530-page monograph. Paper 02 is the Physics Reports review of cosmological analogies. Paper 04 introduces the Fermi-point scenario. Paper 32 develops dimensionless physics where all constants emerge from topology.
+### A. Emergent Gravity and Superfluid Universe
+Papers: 01, 03, 04, 06, 08, 09, 25, 27
+The foundational program (1998-2013). Volovik demonstrates that superfluid 3He-A is not merely an analogy for the quantum vacuum but its closest known physical realization. Paper 01 is the comprehensive review (Physics Reports) establishing the acoustic metric, vacuum energy nullification, Fermi-point topology, chiral anomaly, and event horizon analogs. Paper 03 concentrates the Fermi-point manifesto: D=4 naturally, CC=0 naturally, hierarchy problem solved by topological mass protection. Paper 04 derives the thermodynamic nullification of the CC for any self-sustained vacuum in equilibrium. Paper 06 derives the effective gravitational constant G(T) and the event horizon from a moving domain wall. Paper 08 reports the experimental verification of the ABJ anomaly in 3He-A via the spectral flow force. Paper 09 identifies the hydraulic jump as a white hole analog. Paper 25 is the most comprehensive review of the q-theory vacuum dynamics and topological classification. Paper 27 constructs a quasi-stationary PG black hole in thin 3He-A film and derives the Hawking temperature.
 
-### B. Vacuum Energy & q-Theory
-Papers: 05, 15, 16, 35
-Resolution of the CC problem. Paper 05 shows vacuum energy is zero at equilibrium. Papers 15-16 develop q-theory with the gluon condensate as explicit realization. Paper 35 unifies DM and DE as background and perturbations of the same q-field.
+### B. Q-Theory and Vacuum Self-Tuning
+Papers: 13, 14, 33
+The q-theory program (Klinkhamer-Volovik 2008-2017). Paper 13 introduces the vacuum variable q with thermodynamic self-tuning: rho_vac = epsilon(q) - q d(epsilon)/dq = 0 in equilibrium, without fine-tuning. Paper 14 identifies the QCD gluon condensate as a physical realization of q, deriving Lambda ~ K^3_QCD / E^2_Planck ~ (3 meV)^4, matching observation. Paper 33 shows that spacetime-dependent perturbations of q behave as pressureless cold dark matter oscillating at Planck frequency. Together: dark energy = constant q, dark matter = oscillating q, both from one vacuum field.
 
-### C. Topology & Classification
-Papers: 06, 11, 24, 28, 33
-Momentum-space topology as organizing principle. Paper 06 gives the AZ classification. Paper 28 identifies 3He-B as class BDI. Paper 11 synthesizes topological superfluids. Papers 24 and 33 develop Lifshitz transitions with the insight that black hole horizons are Lifshitz surfaces.
+### C. Elasticity Tetrads and Emergent Weyl
+Papers: 20, 21, 22, 23, 24
+The tetrad-gravity program (2014-2023). Papers 23-24 (Volovik-Zubkov) demonstrate that complex quantum mechanics and Weyl spinors emerge from multi-component real Majorana fermions near topologically protected Fermi points; the imaginary unit i is emergent. Paper 20 (Nissinen-Volovik) introduces elasticity tetrads E^a_mu = d_mu X^a from crystal deformations, establishing the mixed Chern-Simons action for the 3+1D quantum Hall effect with topologically quantized prefactors N_a. Paper 21 (Klinkhamer-Volovik) unites elasticity tetrads with gravity tetrads: q = (1/4)e^mu_a E^a_mu, the vacuum is a plastic fermionic crystal, dislocations carry torsion. Paper 22 (Volovik-Zhang) classifies type-I and type-II Weyl fermions: the black hole horizon is the surface of a Lifshitz transition between them.
 
-### D. Analog Gravity & Horizons
-Papers: 07, 10, 29, 36
-Laboratory realizations of gravitational phenomena. Paper 07 opened the field with induced gravity in 3He-A. Paper 29 constructs the PG black hole in thin 3He-A films. Paper 10 identifies hydraulic jumps as white holes. Paper 36 demonstrates gravitational anomalies in chiral superconductors.
+### D. Topological Superfluids and BDI
+Papers: 05, 10, 19, 26, 34
+Topological classification of quantum vacua (2009-2021). Paper 05 classifies three universality classes: Fermi point (3He-A, SM), fully gapped (3He-B, topological insulator), Fermi surface (normal metals). Paper 10 is the comprehensive review of topological superfluids: Weyl, Dirac, Majorana fermions; flat bands in vortex cores; chiral anomaly experiments. Paper 19 derives the combined Lorentz symmetry L_c x L_s -> L_J from the 3He-B symmetry-breaking pattern, with torsion strings and degenerate Minkowski vacua. Paper 26 tests Horava gravity against the Fermi-point scenario: z=3 anisotropic scaling naturally emerges in quantum hydrodynamics. Paper 34 derives the gravitational anomaly (extra 1/3 factor) in chiral superconductors, with hopfion-mediated baryogenesis.
 
-### E. Particle Physics & Symmetry Emergence
-Papers: 08, 09, 13, 14, 21, 25, 26
-How SM symmetries emerge from superfluid vacuum. Paper 08 connects BEC-BCS crossover to CPT violation. Paper 09 simulates baryogenesis via the axial anomaly. Paper 13 resolves the trans-Planckian problem. Paper 14 shows defects are inevitable and carry zero modes. Paper 21 derives combined Lorentz symmetry. Papers 25-26 establish emergent Weyl geometry and universal Weyl spinor reduction.
+### E. Flat Bands and Planckian
+Papers: 16, 17, 31
+Flat band physics (2017-2019). Paper 16 connects magic-angle twisted bilayer graphene superconductivity to the Khodel-Shaginyan flat band mechanism: T_c ~ lambda (linear) replaces T_c ~ exp(-1/lambda) (BCS). Paper 17 identifies the SYK model as microscopically realizing the Khodel-Shaginyan fermion condensate, with flat band responsible for Planckian dissipation. Paper 31 classifies exotic Lifshitz transitions between topological structures (Fermi surfaces, Weyl points, Dirac lines), shows the hierarchy problem is proximity to a topological Lifshitz transition, and flat bands near these transitions enhance T_c.
 
-### F. Flat Band & Novel Phases
-Papers: 18, 19, 34
-Paper 18 explains magic-angle graphene via flat-band Van Hove singularity. Paper 19 connects flat bands to Planckian metals via SYK. Paper 34 proposes time crystals connecting to GGE permanence.
-
-### G. de Sitter Thermodynamics
-Papers: 12, 17, 37
-Paper 17 establishes T_local = H/pi. Paper 12 derives the first law with holographic entropy relation. Paper 37 maps Landau-Khalatnikov two-fluid hydrodynamics onto de Sitter cosmology.
-
-### H. Emergent Constants & Gravity
-Papers: 03, 20, 22, 23, 27, 30, 31
-Paper 03 shows Planck constants are acoustic metric components. Paper 30 derives G_N from superfluid parameters. Papers 22-23 establish structural identity between elasticity tetrads and gravitational tetrads with volume-preserving deformations as fundamental. Paper 20 identifies Z4 symmetry of tetrads. Paper 27 frames cosmology as relaxation of a non-equilibrium superfluid. Paper 31 develops Planck constants as frozen snapshots.
-
----
+### F. De Sitter, Dimensionless Physics, and Conceptual
+Papers: 02, 07, 11, 12, 15, 18, 28, 29, 30, 32, 35
+The conceptual-thermodynamic program (2004-2025). Papers 11, 15, 29, 35 develop de Sitter thermodynamics: the local temperature T = H/pi = 2T_GH, Fermi-liquid-like epsilon ~ T^2, holographic bulk-surface correspondence S = A/(4G), and gravitational dark matter as Zel'dovich stiff matter (w=1). Papers 12, 02, 30 develop dimensionless physics: tetrads have dimension [L]^{-1}, all diffeomorphism invariants are dimensionless, Planck constants are Minkowski metric elements. Paper 07 analyzes the BEC-BCS quantum phase transition with CPT-violating Fermi point splitting. Paper 18 derives Z_4 discrete symmetry in quantum gravity from composite tetrads. Paper 28 tests conjectures (Penrose collapse, Verlinde entropy, maximum force) against negative Newton constant. Paper 32 analyzes quasi-ODLRO and broken time translation symmetry in superfluids.
 
 ## Quick Reference
 
 | If your task involves... | Read these papers | Priority |
 |:---|:---|:---|
-| BCS instability / Cooper pairing on SU(3) | 08, 18, 28, 11 | CRITICAL |
-| Vacuum energy / cosmological constant | 05, 15, 16, 35 | CRITICAL |
-| GGE relic / non-equilibrium state | 27, 34, 37 | CRITICAL |
-| Topological classification (AZ, BDI) | 06, 28, 11 | CRITICAL |
-| Emergent Lorentz / gauge symmetry | 04, 13, 21, 26 | HIGH |
-| Analog horizons / particle creation | 07, 29, 10, 24 | HIGH |
-| de Sitter thermodynamics / dark energy | 12, 17, 37 | HIGH |
-| Emergent G_N / Planck constants | 03, 30, 31, 32 | HIGH |
-| Tetrad / metric emergence from fermions | 20, 22, 23, 25 | HIGH |
-| Baryogenesis / chiral anomaly | 09, 14, 36 | MEDIUM |
-| Lifshitz transitions / Van Hove | 24, 33, 18 | MEDIUM |
-| Kibble-Zurek defect formation | 02, 14, 27 | MEDIUM |
+| Cosmological constant / vacuum energy / CC problem | 01, 03, 04, 13, 14, 25, 33 | CRITICAL |
+| Emergent gravity / acoustic metric / Painleve-Gullstrand | 01, 06, 27, 35 | CRITICAL |
+| Fermi point topology / N_3 invariant / Weyl emergence | 01, 03, 05, 10, 25 | CRITICAL |
+| q-theory self-tuning / vacuum variable dynamics | 13, 14, 25, 33 | CRITICAL |
+| Elasticity tetrads / vacuum crystal / torsion | 20, 21, 30 | CRITICAL |
+| BDI classification / topological superfluids / 3He-B | 05, 10, 19, 26 | HIGH |
+| Chiral anomaly / baryogenesis / spectral flow | 08, 10, 34 | HIGH |
+| Flat bands / Van Hove / enhanced T_c | 16, 17, 31, 22 | HIGH |
+| de Sitter thermodynamics / T = H/pi / dark matter | 11, 15, 29, 35 | HIGH |
+| Dimensionless physics / emergent Planck constants | 02, 12, 30 | HIGH |
+| Emergent Weyl spinors / imaginary unit from topology | 23, 24 | HIGH |
+| Event horizon / Hawking radiation analog | 06, 09, 27, 22 | HIGH |
+| Lifshitz transitions / type-I vs type-II Weyl | 22, 31 | HIGH |
+| Dark matter from q-field oscillations | 33, 35 | HIGH |
+| CPT violation / Fermi point splitting | 07, 19 | MEDIUM |
+| Z_4 symmetry / discrete symmetries | 18, 03 | MEDIUM |
+| Negative Newton constant / species-dependent G | 28, 06 | MEDIUM |
+| Time crystals / quasi-ODLRO / magnon BEC | 32 | MEDIUM |
+| Hydraulic jump / white hole analog | 09 | MEDIUM |
+| Gravitational anomaly / hopfion baryogenesis | 34 | MEDIUM |
 
 ---
 
 ## Paper Entries
 
-### Paper 01: The Universe in a Helium Droplet
-- **File**: `01_2003_Volovik_Universe_Helium_Droplet.md`
-- **arXiv**: N/A (Oxford University Press monograph)
-- **Year**: 2003
-- **Relevance**: CRITICAL
-- **Tags**: monograph, emergence, superfluid 3He-A, Weyl fermions, gauge fields, gravity, CC, Hawking radiation
-
-**Summary**: The foundational 530-page monograph establishing that superfluid 3He-A is the closest known physical realization of the quantum vacuum. Derives emergence of Lorentz invariance, gauge fields, gravity, and chiral fermions from BCS condensate. Shows vacuum energy is zero at equilibrium.
-
-**Key Results**:
-- Weyl fermions emerge from topological Fermi points (N_3 = 2) in 3He-A
-- Gauge fields emerge from Berry phase of order parameter texture
-- Effective PG metric: ds^2 = -(c_0^2 - v^2)dt^2 - 2v_i dx^i dt + dx^2
-- CC is zero at equilibrium; small deviations track perturbation energy
-- Inflation maps to latent heat release during superfluid phase transition
-
-**Key Equations**:
-
-| Label | Description | Reference |
-|:---|:---|:---|
-| H_eff | Effective Hamiltonian: p_F gamma^i (k_i - A_i) + M gamma^0 | Ch. 5 |
-| g_munu(PG) | Acoustic metric for quasiparticles | Ch. 7 |
-| rho_vac = 0 | Equilibrium vacuum energy | Ch. 10 |
-
-**Dependencies**: Foundation for all other papers.
-
-### Paper 02: Superfluid Analogies of Cosmological Phenomena
-- **File**: `02_2001_Volovik_Superfluid_Analogies_Cosmological.md`
+### Paper 01: Superfluid analogies of cosmological phenomena
+- **File**: `01_2001_Volovik_Superfluid_Analogies_Cosmological.md`
 - **arXiv**: gr-qc/0005091
 - **Year**: 2001
-- **Relevance**: HIGH
-- **Tags**: review, inflation, CC, baryogenesis, Kibble-Zurek, Hawking radiation, axial anomaly
+- **Relevance**: CRITICAL
+- **Tags**: superfluid-analog, acoustic-metric, vacuum-energy, Fermi-point, chiral-anomaly, Hawking-radiation, two-fluid, cosmological-constant
 
-**Summary**: Physics Reports review establishing the complete dictionary between superfluid 3He-A and cosmological processes. Derives BCS free energy, Berry-phase gauge fields, ABJ anomaly for baryogenesis, and Kibble-Zurek defect formation.
+**Summary**: The foundational review (Physics Reports, 150+ pages). Derives the acoustic metric for phonons, vacuum energy nullification for self-sustained systems (epsilon_vac = 0 in equilibrium), Fermi-point topology protecting Weyl fermion emergence, gauge field/gravity emergence from order parameter textures, chiral anomaly as baryogenesis mechanism, and event horizon analogs in superfluid flow. Establishes the complete program: the quantum vacuum is a superfluid.
 
 **Key Results**:
-- BCS free energy drives inevitable pairing instability
-- SU(2) Berry connection from spin-orbit coupled texture
-- Kibble-Zurek defect density n ~ xi^{-3}
-- ABJ anomaly: d_mu j^5_mu = (N_f/16pi^2) F F-tilde
+- Acoustic metric with Lorentzian signature from quadratic Lagrangian for sound waves
+- epsilon_vac = 0 for self-sustaining vacuum at T=0, P=0 (no fine-tuning)
+- N_3 topological invariant protects gapless Weyl spectrum
+- SM has same momentum-space topology as 3He-A (Fermi-point universality class)
+- Gauge fields = Fermi point shifts; gravity = vierbein from slope deformation
+- ABJ anomaly in 3He-A = baryogenesis analog
+- Tolman temperature law emerges from two-fluid model
 
 **Key Equations**:
 
 | Label | Description | Reference |
 |:---|:---|:---|
-| F_BCS | BCS free energy functional | Sec. II |
-| A_Berry | Berry connection: i <psi| nabla sigma^a |psi> | Sec. III |
-| ABJ | Axial current divergence | Sec. V |
+| Acoustic metric | g^{00}=-1/(mnc), g^{0i}=-v_s^i/(mnc), g^{ij}=(c^2 delta^{ij}-v_s^i v_s^j)/(mnc) | Eq.(13) |
+| Vacuum nullification | epsilon_vac(self-sustaining) = 0 | Eq.(23) |
+| N_3 invariant | N_3 = (1/24pi^2) tr oint G dG^{-1} G dG^{-1} G dG^{-1} | Eq.(63) |
+| Emergent metric | g^{mu nu} = eta^{ab} e^mu_a e^nu_b | Eq.(65) |
+| ABJ in 3He-A | P-dot = (p_F^3/2pi^2) l-hat (dt l-hat . curl l-hat) | Eq.(22) Sec.VII |
 
-**Dependencies**: Draws from 01; upstream of 14, 27.
+**Dependencies**: Upstream of 03, 04, 06, 08, 25, 27
 
-### Paper 03: Acoustic Metric and Planck Constants
-- **File**: `03_2023_Volovik_Acoustic_Metric_Planck_Constants.md`
+---
+
+### Paper 02: Acoustic metric and Planck constants
+- **File**: `02_2023_Volovik_Acoustic_Metric_Planck_Constants.md`
 - **arXiv**: 2302.08894
 - **Year**: 2023
 - **Relevance**: HIGH
-- **Tags**: Planck constants, acoustic metric, Akama-Diakonov, emergent constants, phonons
+- **Tags**: acoustic-metric, Planck-constant, dimensionless, Akama-Diakonov, Tolman-law
 
-**Summary**: Planck constants are not fundamental but emerge as Minkowski metric components in Akama-Diakonov theory. Acoustic Planck length in superfluids scales with interatomic spacing, not 10^{-35} m.
+**Summary**: Two Planck constants (hbar ~ time, h-bar ~ length) as Minkowski metric elements from Akama-Diakonov theory. Acoustic analog: h-bar_ac ~ interatomic distance. Planck constants stable during expansion (Delta ~ T^2_GH).
 
-**Key Results**:
-- hbar, hbar_bar are tetrad components
-- Acoustic Planck length ~ atomic spacing
-- c = hbar_s / hbar_t
-- G ~ alpha^2 hbar / l_0^2 (emergent)
+**Key Equations**: sqrt(-g^{00}_Mink)=hbar [Eq.5]; hbar_ac^2=m/(hbar n s) [Eq.15]
 
-**Key Equations**:
+**Dependencies**: Downstream of 12
 
-| Label | Description | Reference |
-|:---|:---|:---|
-| g^munu | Metric from Planck constants | Sec. I |
-| hbar_ac | Acoustic Planck constant ~ Delta_0/E_Planck | Sec. II |
+---
 
-**Dependencies**: Builds on 01, 32. Downstream: 31.
-
-### Paper 04: Emergent Physics: Fermi Point Scenario
-- **File**: `04_2008_Volovik_Emergent_Physics_Fermi_Point_Scenario.md`
+### Paper 03: Emergent physics: Fermi point scenario
+- **File**: `03_2008_Volovik_Emergent_Physics_Fermi_Point.md`
 - **arXiv**: 0801.0724
 - **Year**: 2008
 - **Relevance**: CRITICAL
-- **Tags**: Fermi point, N_3 invariant, emergent gravity, 4D natural, small CC
+- **Tags**: Fermi-point, emergent-gravity, cosmological-constant, hierarchy-problem, Atiyah-Bott-Shapiro, D=4, discrete-symmetry
 
-**Summary**: Central thesis. Gravity, fermions, bosons emerge from topologically stable Fermi points. 4D spacetime topologically privileged. Trans-Planckian physics invisible.
+**Summary**: The concentrated manifesto. Near any Fermi point (topological charge N=+/-1), Weyl fermions, gauge fields, and gravity emerge simultaneously. D=4 is natural from Atiyah-Bott-Shapiro. CC=0 from self-sustained vacuum thermodynamics. Vacuum compressibility chi_vac is a new fundamental constant alongside G. Lorentz invariance persists above E_Planck. Discrete symmetries are more fundamental than continuous ones.
 
 **Key Results**:
-- Winding number nu classifies Fermi points
-- Lorentz from E ~ v_F |k|; 4D preferred
-- CC ~ perturbation energy; trans-Planckian insensitive
+- G^{-1} near Fermi point = e^beta_alpha Gamma^alpha (p_beta - p^{(0)}_beta): simultaneous fermion/gauge/gravity emergence
+- Lambda = -P_vac = 0 for self-sustained vacuum
+- Vacuum compressibility chi^{-1}_vac = q^2 d^2 epsilon/dq^2 > 0
+- E_Lorentz >> E_Planck (experimental bound > 10^9 E_P)
+- Lambda fluctuations: <(Delta Lambda)^2> = T/(V chi_vac)
 
 **Key Equations**:
 
 | Label | Description | Reference |
 |:---|:---|:---|
-| H(k) | Weyl Hamiltonian: v_F sigma.k | Sec. I |
-| nu | Winding number on S^2 | Eq. 1 |
+| Universal propagator | G^{-1} = e^beta_alpha Gamma^alpha (p_beta - p^{(0)}_beta) | Eq.(2.1) |
+| Vacuum pressure | P_vac = -epsilon(q) + q d(epsilon)/dq | Eq.(3.4) |
+| CC = 0 | Lambda = -P_vac = 0 for self-sustained vacuum | Eq.(3.8) |
+| Vacuum compressibility | chi^{-1}_vac = q^2 d^2(epsilon)/dq^2 | Eq.(3.9) |
 
-**Dependencies**: Builds on 01. Central to 06, 13, 26.
+**Dependencies**: Downstream of 01; upstream of 25
 
-### Paper 05: Vacuum Energy and Cosmological Constant
-- **File**: `05_2005_Volovik_Vacuum_Energy_Cosmological_Constant.md`
+---
+
+### Paper 04: Cosmological constant and vacuum energy
+- **File**: `04_2005_Volovik_Vacuum_Energy_Cosmological_Constant.md`
 - **arXiv**: gr-qc/0405012
 - **Year**: 2005
 - **Relevance**: CRITICAL
-- **Tags**: CC, vacuum energy, equilibrium, coincidence problem, quantum liquid
+- **Tags**: cosmological-constant, vacuum-energy, Gibbs-Duhem, self-sustained, coincidence-problem, false-vacuum
 
-**Summary**: Vacuum energy exactly zero in isolated quantum liquid. Four perturbation types induce vacuum energy proportional to their own scale. Coincidence problem dissolved.
+**Summary**: The thermodynamic resolution of the CC problem. The proper vacuum energy is rho_vac = (1/V)<H - sum mu_a N_a>, invariant under energy reference shifts. For isolated droplet: P=0 therefore rho_vac=0. With matter: rho_vac = (1/3) rho_matter (coincidence problem resolved). Both true and false vacua have zero vacuum energy in equilibrium; phase transition energy goes into matter, not vacuum.
 
 **Key Results**:
-- rho_Lambda = 0 at equilibrium (no fine-tuning)
-- Four sources: external, quasiparticles, curvature, boundaries
-- rho_Lambda tracks dominant energy component
+- rho_vac = -P_vac, invariant under zero-energy reference shift
+- rho_vac = 0 for self-sustained vacuum without fine-tuning
+- rho_vac ~ rho_matter in equilibrium with matter (coincidence resolved)
+- True and false vacua both have rho_vac = 0 at P=0
+- Phase transition energy -> matter, not vacuum
 
 **Key Equations**:
 
 | Label | Description | Reference |
 |:---|:---|:---|
-| E_0 = 0 | Ground state energy zero by definition | Sec. I |
-| rho_quasi | ~ rho_matter | Sec. II |
+| Proper vacuum energy | rho_vac = (1/V)<H - sum mu_a N_a> | Eq.(3.2) |
+| Gibbs-Duhem | E - TS - sum mu_a N_a = -pV | Eq.(3.3) |
+| Coincidence | rho_vac = (1/3) rho_matter | Eq.(5.4) |
+| With curvature | rho_vac = (1/3)rho_matter + 1/(4 pi G a^2) | Eq.(7.3) |
 
-**Dependencies**: Foundation for 15, 16, 17, 35.
+**Dependencies**: Downstream of 01; upstream of 13, 25
 
-### Paper 06: Topology of Quantum Vacuum
-- **File**: `06_2012_Volovik_Topology_Quantum_Vacuum.md`
+---
+
+### Paper 05: Topology of quantum vacuum
+- **File**: `05_2012_Volovik_Topology_Quantum_Vacuum.md`
 - **arXiv**: 1111.4627
 - **Year**: 2012
-- **Relevance**: CRITICAL
-- **Tags**: AZ classification, bulk-boundary, topological protection, Lorentz emergence
-
-**Summary**: Quantum vacuum as topological matter. Full AZ classification. Bulk-surface/bulk-vortex correspondences. SM vacuum = topological superfluid.
-
-**Key Results**:
-- 10 AZ classes for quantum vacua
-- Gaplessness topologically protected
-- Lorentz from isotropic Fermi points via RG
-
-**Key Equations**:
-
-| Label | Description | Reference |
-|:---|:---|:---|
-| nu | Winding number: Tr[P dP] | Sec. II |
-| A_mu | Emergent gauge field | Sec. IV |
-
-**Dependencies**: Builds on 04. Upstream of 11, 28.
-
-### Paper 07: Induced Gravity in Superfluid 3He
-- **File**: `07_1994_Volovik_Induced_Gravity_Superfluid_3He.md`
-- **arXiv**: cond-mat/9307009
-- **Year**: 1994
 - **Relevance**: HIGH
-- **Tags**: analog gravity, PG metric, Hawking radiation, Sakharov mechanism, Unruh effect
+- **Tags**: topological-classification, Fermi-point, Fermi-surface, BDI, 3He-B, Majorana, flat-band, bulk-surface
 
-**Summary**: Opened analog gravity. PG metric for 3He-A quasiparticles. Horizons in flows. T_H from surface gravity. G_eff ~ 1/N(E_F). Unruh analog.
+**Summary**: Three universality classes: fully gapped (3He-B, N_K), Fermi point (3He-A, N_3), Fermi surface (N_1). SM=Fermi-point above EW, 3He-B below. 3He-B: N_K=2, Majorana surface states. Flat bands in vortex cores (E_n=-n omega_0, n=0 exact). QPT at mu=0.
+
+**Key Equations**: N_1 [Eq.13]; N_3 [Eq.15]; 3He-B H=tau_3(p^2/2m*-mu)+c_B(sigma.p)tau_1 [Eq.25]; E_n=-n omega_0 [Eq.61]
+
+**Dependencies**: Downstream of 25; upstream of 10, 26
+
+---
+
+### Paper 06: Induced gravity in superfluid 3He
+- **File**: `06_1998_Volovik_Induced_Gravity_Superfluid_3He.md`
+- **arXiv**: cond-mat/9806010
+- **Year**: 1998
+- **Relevance**: CRITICAL
+- **Tags**: induced-gravity, event-horizon, Hawking-radiation, Bekenstein-entropy, domain-wall, ergoregion, cosmic-string
+
+**Summary**: Derives effective gravity from topologically stable gap nodes. The metric and gauge fields are dynamical collective modes. CC=0 from equilibrium thermodynamics (electroneutrality principle generalized). G(T) = 12pi/[K(T) Delta^2(T)] is temperature-dependent. A moving domain wall creates black/white hole horizons with T_H. Vortices = spinning cosmic strings. Ergoregion instability can simulate inflation.
 
 **Key Results**:
-- PG metric: ds^2 = -c_0^2 dt^2 + (dx - v dt)^2
-- T_H = hbar c_0 kappa / (2pi k_B)
-- G_eff^{-1} ~ N(E_F) (Sakharov)
+- g^{mu nu} and A_mu are collective modes from gap-node topology
+- CC=0: dS_vac/dg^{mu nu} = 0 is thermodynamic equilibrium
+- G(T) = 12pi/[K(T) Delta^2(T)] with K(T)=1-T^2/T_c^2
+- Moving domain wall: horizons at tanh(x_h/d) = v/c_perp
+- T_H = (hbar/2pi k_B)(dc_x/dx)|_h
 
 **Key Equations**:
 
 | Label | Description | Reference |
 |:---|:---|:---|
-| g_munu(PG) | Painleve-Gullstrand metric | Eq. 3 |
-| T_H | Hawking temperature | Sec. III |
-| G_eff | Induced Newton constant | Sec. IV |
+| Gap node spectrum | E^2 = g^{ik}(p_i-p^{(0)}_i)(p_k-p^{(0)}_k) | Eq.(1) |
+| Effective G(T) | G(T) = 12pi/[K(T) Delta^2(T)] | Eq.(4) |
+| Speed of light profile | c_x(x) = c_perp tanh(x/d) | Eq.(7) |
+| Hawking temperature | T_H = (hbar/2pi k_B) kappa | Eq.(12) |
 
-**Dependencies**: Foundational. Upstream of 29, 10, 01.
+**Dependencies**: Downstream of 01; upstream of 09, 27, 28
 
-### Paper 08: BEC-BCS Crossover and CPT Violation
-- **File**: `08_2004_Volovik_Klinkhamer_BEC_BCS_Crossover_CPT_Violation.md`
+---
+
+### Paper 07: BEC-BCS crossover and CPT violation
+- **File**: `07_2004_Klinkhamer_Volovik_BEC_BCS_CPT_Violation.md`
 - **arXiv**: cond-mat/0407597
 - **Year**: 2004
 - **Relevance**: HIGH
-- **Tags**: BEC-BCS, CPT violation, Fermi point splitting, neutrino mass
+- **Tags**: BEC-BCS, CPT-violation, Fermi-point-splitting, Chern-Simons, quantum-phase-transition, alpha-phase
 
-**Summary**: p-wave BEC-BCS crossover splits four Dirac nodes, changes topological invariant. CPT violation from asymmetric splitting. Neutrino oscillation modifications.
+**Summary**: Topological QPT between BEC (gapped) and BCS (Fermi points) at q_c=0. Marginal Fermi point splits into N=+/-1 pair. CPT violation produces splitting with CS coefficient. Alpha-phase: 8 Fermi points at cube vertices.
 
-**Key Results**:
-- Topology changes discontinuously at crossover
-- CPT violation from asymmetric Fermi-point splitting
-- Delta_{CPT} < 10^{-3} eV^2
+**Key Equations**: E^2=(p^2/2m-q)^2+c_perp^2(p x l-hat)^2 [Eq.2]; S_CS with CS vector from topology [Eq.15-17]
 
-**Dependencies**: Builds on 01. Connects to 13, 28.
+**Dependencies**: Upstream of 19
 
-### Paper 09: Axial Anomaly in 3He-A: Baryogenesis
-- **File**: `09_1998_Volovik_Axial_Anomaly_3He_A_Baryogenesis.md`
+---
+
+### Paper 08: Axial anomaly in 3He-A and baryogenesis
+- **File**: `08_1998_Volovik_Axial_Anomaly_3He_Baryogenesis.md`
 - **arXiv**: cond-mat/9802091
 - **Year**: 1998
-- **Relevance**: MEDIUM
-- **Tags**: chiral anomaly, baryogenesis, vortex, primordial magnetic field
+- **Relevance**: HIGH
+- **Tags**: chiral-anomaly, ABJ, baryogenesis, magnetogenesis, spectral-flow, vortex-force, experimental
 
-**Summary**: Quantized vortices simulate sphalerons. Chiral anomaly creates charge asymmetry. Vortex motion transfers momentum. Anomalous currents generate magnetic-field analogs.
+**Summary**: EXPERIMENTAL verification of ABJ anomaly in 3He-A: |1-d_perp|<0.005. Spectral flow force on vortices nearly cancels Magnus force, difference ~ (c_perp/c_parallel)^2. Momentum transfer vacuum->matter = baryogenesis analog. 6 collective modes = axion, photons, gravitons, dilaton.
 
-**Key Results**:
-- Vortex texture = topological gauge field
-- Quantized charge creation from winding number
-- Momentum transfer from condensate to quasiparticles
+**Key Equations**: P-dot = (p_F^3/2pi^2) l-hat (dt l-hat . curl l-hat) [Eq.22]; F_sf = 2pi hbar C_0 z x (v_L-v_n) [Eq.27]
 
-**Dependencies**: Foundational for 14, 36.
+**Dependencies**: Downstream of 01; related to 10, 34
 
-### Paper 10: Hydraulic Jump as a White Hole
-- **File**: `10_2005_Volovik_Hydraulic_Jump_White_Hole.md`
+---
+
+### Paper 09: The hydraulic jump as a white hole
+- **File**: `09_2005_Volovik_Hydraulic_Jump_White_Hole.md`
 - **arXiv**: physics/0508215
 - **Year**: 2005
 - **Relevance**: MEDIUM
-- **Tags**: white hole, hydraulic jump, PG metric, ripplon
+- **Tags**: white-hole, hydraulic-jump, ergoregion, Miles-instability, ripplon, PG-metric
 
-**Summary**: Circular hydraulic jump as white-hole analog. T_W ~ 10^{-4} K (measurable). Ergoregions in rotating flows.
+**Summary**: Circular hydraulic jump = 2+1D white hole for ripplons. Miles instability in ergoregion is decay mechanism. Confirmed in superfluid 4He experiments.
 
-**Key Results**:
-- Horizon at v_flow = c_ripplon
-- T_W = hbar kappa / (2pi k_B c_0) ~ 10^{-4} K
+**Key Equations**: ds^2=-c^2dt^2+(dr-v(r)dt)^2+r^2dphi^2 [Eq.11]
 
-**Dependencies**: Builds on 07, 29.
+**Dependencies**: Downstream of 06
 
-### Paper 11: Topological Superfluids
-- **File**: `11_2019_Volovik_Topological_Superfluids.md`
+---
+
+### Paper 10: Topological superfluids
+- **File**: `10_2019_Volovik_Topological_Superfluids.md`
 - **arXiv**: 1602.02595
 - **Year**: 2019
 - **Relevance**: CRITICAL
-- **Tags**: 3He-A, 3He-B, AZ classification, Majorana, vortex zero modes, anomalous transport
+- **Tags**: topological-superfluid, Weyl, Majorana, flat-band, chiral-anomaly, half-quantum-vortex, Kibble-wall, bulk-surface
 
-**Summary**: Complete synthesis of topological properties in 3He. AZ classification. Anomalies. Bulk-boundary/bulk-vortex correspondences. Extends to all topological materials.
+**Summary**: Comprehensive review of 3He topological phases. Three classes: Weyl (A), Dirac nodal (polar), fully gapped (B). HQVs observed (polar). Chiral anomaly confirmed (Manchester/Helsinki). Majorana surface states probed. Flat bands in vortex cores (E_n=-n omega_0, n=0 exact). Combined (p,r) topology.
 
-**Key Results**:
-- 3He-A: class BDI; 3He-B: class D
-- N_zero = |winding number|
-- Chiral magnetic effect from topology
+**Key Equations**: v_s=(hbar/4m) epsilon l-hat curl [Eq.3]; H^(a)=e^i_alpha tau^alpha(p_i-q^(a)A_i) [Eq.20]; E_n=-n omega_0 [Eq.61]
 
-**Dependencies**: Builds on 06, 28.
+**Dependencies**: Downstream of 05, 25; upstream of 19, 34
 
-### Paper 12: First Law of de Sitter Thermodynamics
-- **File**: `12_2025_Volovik_First_Law_de_Sitter_Thermodynamics.md`
+---
+
+### Paper 11: First law of de Sitter thermodynamics
+- **File**: `11_2025_Volovik_First_Law_de_Sitter.md`
 - **arXiv**: 2504.05763
 - **Year**: 2025
 - **Relevance**: HIGH
-- **Tags**: de Sitter, first law, local temperature, holographic entropy
+- **Tags**: de-Sitter, first-law, local-temperature, holographic, f(R)-gravity, negative-entropy, gravastar
 
-**Summary**: T_local = H/(2pi) = 2 T_GH. Total entropy equals horizon entropy (holographic). First law in both formulations.
+**Summary**: T=H/pi=2T_GH (local temperature). S_bulk=A/(4G) (holographic). Modified Gibbs-Duhem: Ts=epsilon+p+KR. EOS w=1 (stiff matter). Contracting dS: S=-A/(4G); gravastar S=0. First law verified for arbitrary volume and horizon.
 
-**Key Results**:
-- T_local = H/(2pi)
-- S_total = pi/(G H^2) = S_horizon
+**Key Equations**: Ts=epsilon+p+KR [Eq.8]; T dS_H=dE_H+P dV_H [Eq.17]
 
-**Dependencies**: Builds on 17. Companion to 37.
+**Dependencies**: Downstream of 15; upstream of 35
 
-### Paper 13: Lorentz Invariance Without Trans-Planckian Physics
-- **File**: `13_2013_Volovik_Lorentz_Invariance_Trans_Planckian_Physics.md`
-- **arXiv**: 1303.1914
-- **Year**: 2013
+---
+
+### Paper 12: Dimensionless physics: Planck constant as Minkowski metric element
+- **File**: `12_2022_Volovik_Dimensionless_Physics_Planck_Minkowski.md`
+- **arXiv**: 2209.15426
+- **Year**: 2022
 - **Relevance**: HIGH
-- **Tags**: Lorentz invariance, trans-Planckian, topological protection, CPT emergence
+- **Tags**: dimensionless, Diakonov, Planck-constant, Minkowski-metric, Tolman-law, emergent-QM
 
-**Summary**: Trans-Planckian paradox resolved. Lorentz invariance topologically protected. CPT from particle-hole symmetry. Delta v/c ~ (E/E_Planck)^n.
+**Summary**: Diakonov tetrads have [E^a_mu]=1/[L], making all diffeomorphism invariants dimensionless. hbar is a Minkowski metric element, not fundamental. Schrodinger equation emerges from classical field theory. Multiple Minkowski vacua with different hbar obey Tolman law.
 
-**Key Results**:
-- Linearized dispersion automatically Lorentz-invariant
-- Low-energy theory independent of UV
-- CPT from Bogoliubov particle-hole symmetry
+**Key Equations**: ds^2_Mink = (1/hbar^2)(-dt^2+dr^2) [Eq.14]; [k_i,x_j]=i delta^j_i (no hbar) [Eq.18]
 
-**Dependencies**: Builds on 04. Upstream of 21.
+**Dependencies**: Upstream of 02, 29, 30
 
-### Paper 14: Topological Defects and Cosmological Implications
-- **File**: `14_2011_Volovik_Topological_Defects_Cosmological_Implications.md`
-- **arXiv**: N/A (conference)
-- **Year**: 2011
-- **Relevance**: MEDIUM
-- **Tags**: Kibble-Zurek, cosmic strings, zero modes, baryogenesis, GW
+---
 
-**Summary**: Defects inevitable (Kibble). Zero modes carry quantum numbers. Baryogenesis from defect decay. Cosmic string GWs detectable.
-
-**Key Results**:
-- n_defect ~ xi^{-D}; N_zero = |winding|
-- Topological baryogenesis from zero-mode decay
-
-**Dependencies**: Builds on 09. Connects to 27.
-
-### Paper 15: Self-Tuning Vacuum Variable and Cosmological Constant
-- **File**: `15_2008_Klinkhamer_Volovik_Self_Tuning_Vacuum.md`
+### Paper 13: Self-tuning vacuum variable and cosmological constant
+- **File**: `13_2008_Klinkhamer_Volovik_Self_Tuning_Vacuum.md`
 - **arXiv**: 0711.3170
 - **Year**: 2008
 - **Relevance**: CRITICAL
-- **Tags**: q-theory, self-tuning, CC, vacuum variable
+- **Tags**: q-theory, self-tuning, vacuum-variable, cosmological-constant, compressibility, four-form
 
-**Summary**: Vacuum variable q self-tunes to rho(q_0) = 0. Observed CC from imperfect vacuum perturbed by matter. No fine-tuning.
+**Summary**: Founding paper of q-theory. Introduces Lorentz-invariant vacuum variable q with conserved charge and chemical potential mu. The gravitating vacuum energy density is rho_vac = epsilon(q) - q d(epsilon)/dq, not epsilon(q) alone. In equilibrium: rho_vac(q_0) = 0 without fine-tuning. Matter perturbation gives delta rho_vac ~ T^8/(chi E_P^2). Four-form and four-velocity field realizations presented.
 
 **Key Results**:
-- q spatially uniform (Lorentz invariance)
-- rho(q_0) = 0 without fine-tuning
-- rho_vac ~ (delta q)^2 ~ rho_matter
+- rho_vac = epsilon - q d(epsilon)/dq: the correct vacuum energy density
+- rho_vac(q_0) = 0 in equilibrium (self-tuning, no fine-tuning)
+- Vacuum compressibility chi > 0 ensures stability
+- Matter perturbation: delta rho_vac ~ T^8/(chi E_P^2)
 
-**Dependencies**: Builds on 05. Foundation for 16, 35, 23.
+**Key Equations**:
 
-### Paper 16: Gluonic Vacuum, q-Theory, and the Cosmological Constant
-- **File**: `16_2009_Klinkhamer_Volovik_Gluonic_Vacuum_Q_Theory.md`
+| Label | Description | Reference |
+|:---|:---|:---|
+| Vacuum energy density | rho_vac(q) = epsilon(q) - q d(epsilon)/dq | Eq.(4) |
+| Self-tuning | rho_vac(q_0) = 0 | Eq.(12) |
+| Compressibility | chi = (q^2 d^2 epsilon/dq^2)^{-1} | Eq.(14) |
+
+**Dependencies**: Downstream of 04, 25; upstream of 14, 21, 33
+
+---
+
+### Paper 14: Gluonic vacuum, q-theory, and the cosmological constant
+- **File**: `14_2009_Klinkhamer_Volovik_Gluonic_Vacuum_Q_Theory.md`
 - **arXiv**: 0811.4347
 - **Year**: 2009
-- **Relevance**: HIGH
-- **Tags**: QCD, gluon condensate, q-theory, CC estimate
+- **Relevance**: CRITICAL
+- **Tags**: q-theory, gluon-condensate, QCD, cosmological-constant, conformal-anomaly, crossover-time
 
-**Summary**: QCD gluon condensate as q. Lambda ~ K_QCD^3/E_Planck^2 matches observation. Natural suppression from scale hierarchy.
+**Summary**: The QCD gluon condensate q = <G^a_{mu nu}G^{a mu nu}/(4pi^2)> is a physical realization of the q-variable. Using asymptotic freedom and conformal anomaly, the remnant CC is Lambda ~ K^3_QCD/E^2_Planck ~ (3 meV)^4, matching observation. The crossover time t_cross ~ E^2_P K^{-3/2}_QCD ~ 10^{17} s matches the age of the Universe.
 
 **Key Results**:
-- Lambda ~ K_QCD^3 / E_Planck^2
-- K_QCD/E_Planck ~ 10^{-24}
-- Hubble friction: ddot{q} + 3H dot{q} + dV/dq = 0
+- Gluon condensate is a concrete q-variable realization
+- Lambda ~ K^3_QCD/E^2_Planck ~ (3 x 10^{-3} eV)^4 (correct order)
+- Effective potential epsilon(q) = epsilon_0 + b_1 q ln(q/q_c)
+- Crossover time ~ 10^{17} s (matches observation)
+- Non-Abelian gauge theory required for stable vacuum (b_1 > 0)
 
-**Dependencies**: Builds on 15.
+**Key Equations**:
 
-### Paper 17: Thermodynamics and Decay of de Sitter Vacuum
-- **File**: `17_2024_Volovik_Thermodynamics_de_Sitter_Decay.md`
+| Label | Description | Reference |
+|:---|:---|:---|
+| Gluon condensate | q = <G^a_{mu nu}G^{a mu nu}/(4pi^2)> | Eq.(2.4) |
+| Effective potential | epsilon(q) = epsilon_0 + b_1 q ln(q/q_c) | Eq.(5.1a) |
+| CC estimate | Lambda = k_Lambda K^3_QCD/E^2_Planck | Eq.(6.7) |
+
+**Dependencies**: Downstream of 13; upstream of 33
+
+---
+
+### Paper 15: Thermodynamics and decay of de Sitter vacuum
+- **File**: `15_2024_Volovik_Thermodynamics_de_Sitter_Decay.md`
 - **arXiv**: 2312.02292
 - **Year**: 2024
 - **Relevance**: HIGH
-- **Tags**: de Sitter, T=H/pi, particle creation, vacuum decay
+- **Tags**: de-Sitter, thermodynamics, decay, Fermi-liquid, triplication, holographic, f(R)
 
-**Summary**: T_local = H/pi (twice GH). Thermodynamic instability drives particle creation, entropy increase, vacuum decay. Metastable over cosmic timescales.
+**Summary**: De Sitter heat bath at T=H/pi=2T_GH. Fermi-liquid thermodynamics (epsilon~T^2, s~T). Holographic S_bulk=A/(4G) in 3+1d uniquely. (K,R) conjugate in f(R) gravity. De Sitter unstable: triplication rate exp(-2m/T).
 
-**Key Results**:
-- T = H/pi for comoving observers
-- Gamma ~ exp(-E pi/H); dS/dt > 0
+**Key Equations**: T=H/pi [Eq.5]; s_vac=12pi^2 K T [Eq.23]; Gamma(1->3)~exp(-2m/T) [Eq.13]
 
-**Dependencies**: Builds on 05. Upstream of 12, 37.
+**Dependencies**: Upstream of 11, 29, 35
 
-### Paper 18: Graphite, Graphene, and Flat Band Superconductivity
-- **File**: `18_2018_Volovik_Graphite_Graphene_Flat_Band_Superconductivity.md`
+---
+
+### Paper 16: Graphite, graphene, and flat band superconductivity
+- **File**: `16_2018_Volovik_Graphite_Flat_Band_Superconductivity.md`
 - **arXiv**: 1803.08799
 - **Year**: 2018
 - **Relevance**: HIGH
-- **Tags**: flat band, Van Hove, magic angle, T_c linear in g
+- **Tags**: flat-band, superconductivity, graphene, magic-angle, Khodel-Shaginyan, Van-Hove
 
-**Summary**: Flat-band Van Hove singularity eliminates exponential BCS suppression. T_c ~ g (linear). Geometry controls superconductivity.
+**Summary**: Flat band T_c ~ lambda (linear) vs BCS exp(-1/lambda). Three routes: topological (Dirac lines), symmetry (moire), interaction (Khodel-Shaginyan). Magic-angle graphene confirms. Nuclear connection (Belyaev 1961).
 
-**Key Results**:
-- N(E_F) diverges in flat band; T_c ~ g
-- Magic angle ~ 1.1 deg; bandwidth ~ 10 meV
+**Dependencies**: Upstream of 17; downstream of 22
 
-**Dependencies**: Upstream of 19.
+---
 
-### Paper 19: Flat Band and Planckian Metal
-- **File**: `19_2019_Volovik_Flat_Band_Planckian_Metal.md`
+### Paper 17: Flat band and Planckian metal
+- **File**: `17_2019_Volovik_Flat_Band_Planckian_Metal.md`
 - **arXiv**: 1907.11515
 - **Year**: 2019
-- **Relevance**: MEDIUM
-- **Tags**: SYK, Planckian metal, linear resistivity, fermion condensate
+- **Relevance**: HIGH
+- **Tags**: flat-band, SYK, Planckian-dissipation, Khodel-Shaginyan, strange-metal
 
-**Summary**: SYK produces flat bands. Linear-T resistivity from constant DOS. Planckian bound saturated.
+**Summary**: SYK model microscopically realizes Khodel-Shaginyan flat band. Two Landau theory solutions: delta n=0 (FL) and epsilon(p)=0 (flat band). Singular DOS -> linear-T resistivity (Planckian dissipation).
 
-**Key Results**:
-- rho(T) ~ alpha T from flat DOS
-- Planckian: mean free path ~ de Broglie wavelength
+**Dependencies**: Downstream of 16
 
-**Dependencies**: Builds on 18.
+---
 
-### Paper 20: Discrete Z4 Symmetry in Quantum Gravity
-- **File**: `20_2024_Volovik_Discrete_Z4_Symmetry_Quantum_Gravity.md`
+### Paper 18: Discrete Z4 symmetry in quantum gravity
+- **File**: `18_2024_Volovik_Discrete_Z4_Symmetry_Quantum_Gravity.md`
 - **arXiv**: 2406.00718
 - **Year**: 2024
 - **Relevance**: MEDIUM
-- **Tags**: Z4 symmetry, tetrad, metric signature flip, 3He-B
+- **Tags**: Z4-symmetry, ADW-gravity, composite-tetrad, PT-symmetry, domain-wall, 3He-B
 
-**Summary**: Tetrads inherit Z4 from fermionic condensate. e -> ie flips metric signature (discrete Wick rotation). 3He-B realization.
+**Summary**: ADW gravity has Z_4 symmetry (i-hat^2=PT). Spontaneous breaking produces H-antiH domain walls. i=sqrt(-1) may be emergent from vacuum topology. 3He-B analogy.
 
-**Key Results**:
-- g_munu -> -g_munu under Z4
-- Four degenerate ground states; topological defects between domains
+**Dependencies**: Upstream of 12
 
-**Dependencies**: Builds on 21, 28.
+---
 
-### Paper 21: Combined Lorentz Symmetry
-- **File**: `21_2021_Volovik_Combined_Lorentz_Symmetry_Superfluid_3He.md`
+### Paper 19: Combined Lorentz symmetry: lessons from superfluid 3He
+- **File**: `19_2021_Volovik_Combined_Lorentz_Superfluid_3He.md`
 - **arXiv**: 2011.06466
 - **Year**: 2021
 - **Relevance**: HIGH
-- **Tags**: Lorentz emergence, SO(5) breaking, sector-dependent metric, hbar emergence
+- **Tags**: combined-symmetry, Lorentz, parity, time-reversal, torsion-string, degenerate-vacuum, 3He-B
 
-**Summary**: Lorentz emerges from SO(5) breaking. Sector-dependent tetrads. hbar ~ <Delta>. Boosts inseparable from internal gauge.
+**Summary**: P, T, Lorentz are combined symmetries: L_c x L_s -> L_J. Degenerate Minkowski vacua: pi_0=Z_2xZ_2 (walls), pi_1=Z_2 (torsion strings). Four tetrads for four Weyl types. Tetrad determinant as q-variable; rho_vac(e_eq)=0.
 
-**Key Results**:
-- SO(5) -> SO(3) breaking produces emergent Lorentz
-- Sector-dependent metrics; equivalence principle restored at low energy
-- hbar and c emergent from condensation amplitude
+**Key Equations**: L_c x L_s -> L_J [Eq.7]; rho_vac(e_eq)=0 [Eq.37]
 
-**Dependencies**: Builds on 13. Connects to 20.
+**Dependencies**: Downstream of 07, 10; upstream of 21
 
-### Paper 22: Elasticity Tetrads and Emergent Gravity
-- **File**: `22_2019_Nissinen_Volovik_Elasticity_Tetrads_Emergent_Gravity.md`
-- **arXiv**: 1811.09236
+---
+
+### Paper 20: Elasticity tetrads, mixed anomalies, and 3+1D quantum Hall effect
+- **File**: `20_2019_Nissinen_Volovik_Elasticity_Tetrads.md`
+- **arXiv**: 1812.03175
 - **Year**: 2019
 - **Relevance**: CRITICAL
-- **Tags**: elasticity tetrad, gravitational tetrad, structural identity, mixed anomaly
+- **Tags**: elasticity-tetrad, quantum-Hall, Chern-Simons, torsion, dislocation, anomaly-inflow, Callan-Harvey
 
-**Summary**: Structural identity between elasticity and gravitational tetrads. Phonon-strain coupling produces Einstein-Hilbert action. Lattice defects = spacetime curvature. Mixed axial-gravitational anomaly.
+**Summary**: Introduces elasticity tetrads E^a_mu = d_mu X^a from crystal deformations with [E^a_mu] = [L]^{-1}. The 3+1D QHE is described by mixed CS action with topologically quantized prefactors N_a. Hall conductance quantized in response to deformation. Dislocations carry torsion; anomaly inflow via Callan-Harvey. Dimensionless metric from elasticity tetrads.
 
 **Key Results**:
-- e^elast = delta + d u (identical to GR tetrad)
-- Riemann ~ nabla nabla u (curvature from strain)
-- d_mu j_5^mu = (N_W/24pi^2) R wedge R
+- E^a_mu = d_mu X^a with canonical dimension [L]^{-1}
+- 3+1D CS action with integer N_a (momentum-space topological invariants)
+- d(sigma^{ij})/dE^a_k = (e^2/2pi h) epsilon^{ijk} N_a (quantized)
+- Torsion = dislocation density; anomaly inflow on dislocations
 
-**Dependencies**: Builds on 25, 26. Upstream of 23.
+**Key Equations**:
 
-### Paper 23: Tetrads and q-Theory: Volume Preserving
-- **File**: `23_2023_Nissinen_Volovik_Tetrads_q_Theory_Volume_Preserving.md`
-- **arXiv**: 2206.10071
-- **Year**: 2023
+| Label | Description | Reference |
+|:---|:---|:---|
+| Elasticity tetrad | E^a_mu = d_mu X^a(x) | Eq.(10) |
+| 3+1D CS action | S = (1/8pi^2) sum_a N_a int E^a A dA | Eq.(14) |
+| Anomaly inflow | d_mu J^mu = -(1/32pi^2) F sum N_a T^a | Eq.(32) |
+
+**Dependencies**: Upstream of 21, 30
+
+---
+
+### Paper 21: Tetrads and q-theory
+- **File**: `21_2023_Nissinen_Volovik_Tetrads_Q_Theory.md`
+- **arXiv**: 1812.07046
+- **Year**: 2019
 - **Relevance**: CRITICAL
-- **Tags**: q-theory, tetrad, volume-preserving, teleparallel
+- **Tags**: q-theory, tetrad, elasticity, vacuum-crystal, torsion, dislocation, Dolgov-problem
 
-**Summary**: Tetrad = translation gauge field in q-theory. Volume-preserving deformations fundamental (conformal forbidden). Teleparallel: R=0, geometry in torsion. No scalar dilaton.
+**Summary**: Unites gravity tetrads and elasticity tetrads. The vacuum is a plastic fermionic crystal. q = (1/4) e^mu_a E^a_mu from both tetrads. Field equations yield rho_V = epsilon - q d(epsilon)/dq and d(epsilon)/dq = mu = const. Equilibrium: rho_V = 0. Avoids the Dolgov/Rubakov-Tinyakov problem. Dislocations = torsion, disclinations = curvature.
 
 **Key Results**:
-- det(e) = const (volume-preserving by q-consistency)
-- R = 0; all geometry in torsion
-- Spin connection uniquely determined
-- Brans-Dicke excluded algebraically
+- q = (1/4) e^mu_a E^a_mu (gravity + elasticity tetrads)
+- Vacuum = plastic fermionic crystal
+- rho_V(q_0) = 0 in equilibrium; Newtonian gravity preserved
+- Dislocations = torsion, disclinations = curvature
 
-**Dependencies**: Builds on 15, 22. Directly relevant to S12 TT deformation.
+**Key Equations**:
 
-### Paper 24: Type-II Weyl, Lifshitz Transitions, Event Horizons
-- **File**: `24_2016_Volovik_Zhang_Type_II_Weyl_Lifshitz_Transition.md`
+| Label | Description | Reference |
+|:---|:---|:---|
+| q-variable | q = (1/4) e^mu_a E^a_mu | Eq.(6) |
+| Vacuum energy | rho_V = epsilon(q) - q d(epsilon)/dq | Eq.(13) |
+| Equilibrium | rho_V(q_0) = 0 | Eq.(17a) |
+
+**Dependencies**: Downstream of 13, 19, 20
+
+---
+
+### Paper 22: Lifshitz transitions, type-II Weyl, and event horizon
+- **File**: `22_2016_Volovik_Zhang_Type_II_Weyl_Lifshitz.md`
 - **arXiv**: 1604.00849
-- **Year**: 2016
+- **Year**: 2017
 - **Relevance**: HIGH
-- **Tags**: type-II Weyl, Lifshitz transition, event horizon, tilted cone
+- **Tags**: type-II-Weyl, Lifshitz-transition, event-horizon, PG-metric, Berry-flux, flat-band
 
-**Summary**: Type-I/II Weyl transition = Lifshitz transition = event horizon. Universal topology. Van Hove divergence at transition. Supercritical superfluid realizes it.
+**Summary**: Type-II Weyl fermions behind BH horizons. Horizon = Lifshitz transition surface (type-I/II boundary at |e^j_0[e^{-1}]^k_j|=1). Berry flux transfer through type-II points. Flat band at transition enhances T_c.
 
-**Key Results**:
-- alpha = v_parallel/v_perp; alpha=1 = Lifshitz = horizon
-- Van Hove N(E_F) -> infinity at transition
-- Torsion singularity (not curvature) at transition
+**Key Equations**: H = e^j_k(p_j-p^{(0)}_j)sigma_k + e^j_0(p_j-p^{(0)}_j) [Eq.1]
 
-**Dependencies**: Builds on 29. Upstream of 33.
+**Dependencies**: Downstream of 23; upstream of 16, 31
 
-### Paper 25: Emergent Weyl Geometry
-- **File**: `25_2014_Volovik_Zubkov_Emergent_Weyl_Geometry.md`
-- **arXiv**: 1405.5306
+---
+
+### Paper 23: Emergent Weyl fermions and the origin of i=sqrt(-1)
+- **File**: `23_2014_Volovik_Zubkov_Emergent_Weyl_Geometry.md`
+- **arXiv**: 1404.4084
 - **Year**: 2014
 - **Relevance**: HIGH
-- **Tags**: Weyl geometry, conformal, vortex lattice, scale-dependent CC
+- **Tags**: emergent-Weyl, imaginary-unit, Majorana, teleparallel, vierbein, topology
 
-**Summary**: Weyl geometry from superfluids. Density variations = Weyl rescalings. Weyl vector from vortex circulation. Lambda(phi) scale-dependent.
+**Summary**: Complex QM emerges from real Majorana fermions near topological Fermi points. i_eff=((0,-1),(1,0)) from topology. Multi-component Majorana reduces to Weyl spinors with emergent gauge field, vierbein, and teleparallel gravity.
 
-**Key Results**:
-- phi = (1/2) log(rho_s/rho_0)
-- nabla g = -2 A g (Weyl compatibility)
-- Lambda(phi) = Lambda_0 + beta phi + gamma phi^2
+**Key Equations**: i_eff=((0,-1),(1,0)) [Eq.3]; N=(epsilon_{ijk}/8pi) int hedgehog integral [Eq.8]; S=(1/2) int e e^j_a sigma^a iD_j Psi [Eq.10]
 
-**Dependencies**: Upstream of 26, 22.
+**Dependencies**: Upstream of 22, 24
 
-### Paper 26: Emergent Weyl Spinors in Multi-Fermion Systems
-- **File**: `26_2014_Volovik_Zubkov_Emergent_Weyl_Spinors_Multi_Fermion.md`
+---
+
+### Paper 24: Emergent Weyl spinors in multi-fermion systems
+- **File**: `24_2014_Volovik_Zubkov_Emergent_Weyl_Spinors.md`
 - **arXiv**: 1402.5700
 - **Year**: 2014
 - **Relevance**: HIGH
-- **Tags**: multi-fermion, Weyl emergence, universality, Chern number
+- **Tags**: emergent-Weyl, Horava, multi-fermion, coarse-graining, teleparallel, Froggatt-Nielsen
 
-**Summary**: Universal reduction: any multi-fermion system with stable Fermi point -> Weyl fermions. N_Weyl = sum C_i. Independent of microscopic details.
+**Summary**: Explicit verification of Horava's conjecture: N-component systems reduce to 2-component Weyl at Fermi point. Both complex and Majorana systems. Teleparallel gravity emerges. Froggatt-Nielsen random dynamics connection.
 
-**Key Results**:
-- H_eff = v_F sigma_i k_i (universal)
-- N_Weyl = total Chern number
-- Majorana systems also reduce to Weyl
-- 992 modes -> SM fermions via this mechanism
+**Dependencies**: Companion to 23
 
-**Dependencies**: Companion to 25. Upstream of 22.
+---
 
-### Paper 27: Superfluids as Non-Equilibrium Quantum Vacua
-- **File**: `27_2013_Volovik_Superfluids_Non_Equilibrium_Quantum_Vacua.md`
-- **arXiv**: 1301.4782
-- **Year**: 2013
+### Paper 25: The superfluid Universe
+- **File**: `25_2013_Volovik_Superfluids_Non_Equilibrium_Vacua.md`
+- **arXiv**: 1004.0597
+- **Year**: 2010
 - **Relevance**: CRITICAL
-- **Tags**: non-equilibrium, quench, phonon production, Kibble-Zurek, GGE, dark energy
+- **Tags**: q-theory, vacuum-relaxation, topological-classification, Fermi-point, Minkowski-attractor, CC-relaxation
 
-**Summary**: Vacuum IS a superfluid. Cosmology = non-equilibrium relaxation. Inflation = quench; reheating = phonon production; dark energy = surface tension. No temperature in far-from-equilibrium state.
+**Summary**: The most comprehensive review of the superfluid vacuum program. Three q-field realizations (Yang-Mills, 4-form, aether). Cosmology as relaxation to equilibrium: rho_vac(t) ~ E_P^2 H^2 at late times. Minkowski is an attractor. Multiple Minkowski vacua for any bare Lambda. Four universality classes of gapless fermionic vacua. SM vacuum is topological in both massless (3He-A class) and massive (3He-B class) states. Anti-GUT manifesto.
 
 **Key Results**:
-- Phonon energy: E ~ hbar sqrt(Delta/tau_Q)
-- Dark energy as surface tension
-- Universe relaxes toward equilibrium irreversibly
-- Far-from-equilibrium: no T, only energy density
+- Lambda = epsilon(q) - mu q = 0 in equilibrium (three realizations)
+- rho_vac(t) ~ E_P^2 H^2 (matches observation)
+- Minkowski is attractor; multiple vacua compensate any Lambda_bare
+- Four universality classes: Fermi point, Fermi line, Fermi surface, Fermi band
+- SM = 3He-A class (massless) / 3He-B class (massive)
+- Z_2 discrete symmetry -> SU(2) gauge fields
 
-**Dependencies**: Builds on 01. Foundation for 34, GGE interpretation.
+**Key Equations**:
 
-### Paper 28: Topological Order in 3He-B: BDI Classification
-- **File**: `28_2009_Volovik_3He_B_Topological_Order_BDI_Classification.md`
+| Label | Description | Reference |
+|:---|:---|:---|
+| CC (three forms) | Lambda = epsilon(q) - mu q | Eq.(2.11) |
+| Vacuum relaxation | rho_vac(t) ~ E_P^2/t^2 sin^2(omega t) | Eq.(5.5a) |
+| Present Lambda | rho_vac(t_now) ~ E_P^2 H^2 | Eq.(5.5b) |
+| Fermi point expansion | G^{-1} = e^b_a Gamma^a (p_b - p^{(0)}_b) | Eq.(7.2) |
+| N_K invariant | N_K = (1/24pi^2) tr int d^3p K G dG^{-1} G dG^{-1} G dG^{-1} | Eq.(8.13) |
+
+**Dependencies**: Downstream of 01, 03, 04; upstream of 05, 13
+
+---
+
+### Paper 26: z=3 Lifshitz-Horava model and Fermi-point scenario
+- **File**: `26_2009_Volovik_3He_B_Topological_BDI.md`
 - **arXiv**: 0904.4113
 - **Year**: 2009
 - **Relevance**: CRITICAL
-- **Tags**: 3He-B, BDI, T^2=+1, C^2=+1, Majorana, winding W=1
+- **Tags**: Lifshitz-Horava, anisotropic-scaling, z=3, Sakharov, Newton-constant, acoustic-gravity
 
-**Summary**: 3He-B: AZ class BDI (T^2=+1, C^2=+1, S). Winding W=1. Majorana zero modes in vortices. Robust against BDI-symmetric disorder.
+**Summary**: Tests Horava gravity via condensed matter. z=3 scaling from quantum hydrodynamics (omega=c_s k + gamma k^5). G^{-1}~M^2 ln(E_uv^2/M^2) from Sakharov. Lorentz violation at p^5/M^4 (safe). CC=0 automatic; G needs fine-tuning.
 
-**Key Results**:
-- Class BDI, winding W=1
-- Majorana modes in vortex cores
-- Gap suppression quadratic (topological protection)
-- W = (1/2pi i) integral Tr[G dG]
+**Key Equations**: E^2=p^2+p^6/M^4 [Eq.1]; G^{-1}~M^2 ln(E^2_uv/M^2) [Eq.11]
 
-**Dependencies**: Foundation for S17c. Upstream of 11, 20.
+**Dependencies**: Downstream of 05; upstream of 22
 
-### Paper 29: Painleve-Gullstrand Black Hole in 3He-A
-- **File**: `29_2003_Volovik_Painleve_Gullstrand_Black_Hole_3He_A.md`
-- **arXiv**: gr-qc/0302041
-- **Year**: 2003
+---
+
+### Paper 27: PG black hole in thin 3He-A film
+- **File**: `27_2003_Volovik_Painleve_Gullstrand_Black_Hole.md`
+- **arXiv**: gr-qc/9901077
+- **Year**: 1999
 - **Relevance**: HIGH
-- **Tags**: PG metric, black hole analog, Hawking radiation, Schwinger pair creation
+- **Tags**: PG-metric, black-hole, Hawking-radiation, negative-temperature, Andreev, 3He-A-film
 
-**Summary**: PG black hole in 3He-A film. v_0 = c_s sqrt(2M/r). T_H ~ 10^{-3} K. Pair creation rate ~ exp(-pi Delta^2 / hbar kappa c_s). S_inst = 0.069 in framework matches Schwinger structure.
+**Summary**: Quasi-stationary PG black hole in 3He-A film on 4He. T_H=hbar|v'|/(2pi) from tunneling. Reversed population behind horizon (T=-0). Andreev scattering traps both partners inside. 4He screening prevents Cherenkov collapse.
 
-**Key Results**:
-- PG metric exactly realized; horizon at v_0 = c_s
-- T_H = hbar c_s^2 / (4pi k_B M) ~ 10^{-3} K
-- Schwinger pair creation rate calculable
+**Key Equations**: ds^2=-(c^2-v^2)dt^2+2v dr dt+dr^2+r^2dOmega^2 [Eq.1]; S=pi E/|v'| [Eq.11]; T_H=hbar|v'|/(2pi) [Eq.12]
 
-**Dependencies**: Builds on 07. Upstream of 10, 24.
+**Dependencies**: Downstream of 01, 06
 
-### Paper 30: Newton's Constant from Superfluid Perspective
-- **File**: `30_2022_Volovik_Newton_Constant_Modified_Gravity_Superfluid.md`
-- **arXiv**: 2112.00294
+---
+
+### Paper 28: Negative Newton constant may destroy some conjectures
+- **File**: `28_2022_Volovik_Negative_Newton_Constant.md`
+- **arXiv**: 2202.12743
 - **Year**: 2022
 - **Relevance**: HIGH
-- **Tags**: Newton constant, emergent G_N, modified gravity, Planck mass
+- **Tags**: Newton-constant, species-counting, Sakharov, Penrose-collapse, Verlinde, maximum-force
 
-**Summary**: G_N ~ c_s^2/rho_0 ~ Delta^2/(m^2 N(E_F)). Not fundamental. Modified gravity = different vacuum states. G_N time-dependent.
+**Summary**: G^{-1}=G_0^{-1}+(Lambda^2_uv/12pi)(n_0+n_{1/2}-4n_1) depends on species. Thermal correction universal (QFT=condensed matter). Penrose, Verlinde, max force all fail for 1/G<=0. In tetrad gravity, 1/(4G) may be integer topological invariant.
 
-**Key Results**:
-- G_N ~ c_s^2 / rho_0
-- G_N depends on BCS gap Delta
-- f(R) gravity = state-dependent vacuum
-- Planck length = sqrt(hbar / c_s rho_0) (emergent)
+**Key Equations**: G^{-1}=G_0^{-1}+(Lambda^2_uv/12pi)(n_0+n_{1/2}-4n_1) [Eq.1]; G^{-1}(T)-G^{-1}(0)=-(pi/18)n_{1/2}T^2 [Eq.2]
 
-**Dependencies**: Builds on 07, 05.
+**Dependencies**: Downstream of 06
 
-### Paper 31: Planck Constants as Frozen Snapshots
-- **File**: `31_2023_Volovik_Dimensionless_Physics_Planck_Constants_Frozen_Snapshots.md`
+---
+
+### Paper 29: Analog Sommerfeld law in quantum vacuum
+- **File**: `29_2023_Volovik_Dimensionless_Physics_Planck.md`
 - **arXiv**: 2307.00860
 - **Year**: 2023
-- **Relevance**: HIGH
-- **Tags**: frozen snapshots, constant variation, Akama-Diakonov, alpha variation
+- **Relevance**: MEDIUM
+- **Tags**: Sommerfeld, de-Sitter, Fermi-liquid, Gibbs-Duhem, gravastar, stiff-matter
 
-**Summary**: Constants are frozen snapshots of vacuum state. Two Planck constants with c = hbar_s/hbar_t. Constants vary at phase transitions. Testable via quasar absorption, BBN.
+**Summary**: De Sitter = Fermi liquid thermodynamics. Modified Gibbs-Duhem with (K,R). Sommerfeld law S/atom~T/E_P. Gravastars: S=0. Planckian dissipation: 1/tau_E=H=pi T.
 
-**Key Results**:
-- Dimensionality emergent (Akama-Diakonov)
-- c = hbar_s / hbar_t
-- Critical behavior at phase transitions
-- alpha(tau), G_N(tau) evolve with vacuum
+**Dependencies**: Downstream of 12, 15
 
-**Dependencies**: Builds on 03, 32.
+---
 
-### Paper 32: Dimensionless Physics: Topological Matter
-- **File**: `32_2020_Volovik_Dimensionless_Physics_Topological_Matter.md`
+### Paper 30: Dimensionless physics
+- **File**: `30_2020_Volovik_Dimensionless_Physics_Topological.md`
 - **arXiv**: 2006.16821
 - **Year**: 2020
 - **Relevance**: MEDIUM
-- **Tags**: dimensionless, superplastic crystal, topological operators, Nieh-Yan
+- **Tags**: dimensionless, elasticity-tetrad, DV-dimensions, topological-terms, Nieh-Yan, area-quantization
 
-**Summary**: Metric becomes dimensionless in emergent gravity. G_N, Lambda as topological invariants. Nieh-Yan torsion anomaly. 3+1D quantum Hall effect.
+**Summary**: Two emergent gravity routes both give [g_{mu nu}]=1/[L]^2. All invariants dimensionless: [G]=[Lambda]=[M]=1. BH area dimensionless (Bekenstein quantization). QHE CS with integer prefactors. Nieh-Yan anomaly universal.
 
-**Key Results**:
-- g_ij ~ delta_ij + u_ij (gravity = elasticity)
-- G_N, Lambda dimensionless topological invariants
-- Nieh-Yan: T^a wedge T_a
+**Dependencies**: Downstream of 12, 20
 
-**Dependencies**: Builds on 01. Upstream of 31.
+---
 
-### Paper 33: Exotic Lifshitz Transitions in Topological Materials
-- **File**: `33_2017_Volovik_Exotic_Lifshitz_Transitions_Topological_Materials.md`
+### Paper 31: Exotic Lifshitz transitions in topological materials
+- **File**: `31_2017_Volovik_Exotic_Lifshitz_Transitions.md`
 - **arXiv**: 1701.06435
 - **Year**: 2017
-- **Relevance**: MEDIUM
-- **Tags**: Lifshitz classification, Van Hove, SC enhancement, Hopf invariant
+- **Relevance**: HIGH
+- **Tags**: Lifshitz-transition, Fermi-surface, Weyl-point, Dirac-line, nexus, hierarchy-problem, flat-band
 
-**Summary**: Five universal classes of Lifshitz transitions. Hopf invariant for linked Dirac lines. Van Hove from Lifshitz enhances SC. Event horizons = Lifshitz surfaces.
+**Summary**: Classification of topological Lifshitz transitions by N_1, N_2, N_3. Hierarchy problem = proximity to topological QPT between gapped vacua. Flat bands at transitions: T_c~gV_FB. Nexus: Dirac lines terminate on Weyl points.
 
-**Key Results**:
-- Five classes: pinch-off, saddle, Dirac-to-Weyl, Weyl pair, band inversion
-- SC enhancement from Van Hove singularity at Lifshitz
+**Dependencies**: Downstream of 22, 16
 
-**Dependencies**: Builds on 24, 11.
+---
 
-### Paper 34: Time Crystals: Broken Time Translation
-- **File**: `34_2013_Volovik_Time_Crystals_Broken_Time_Translation.md`
-- **arXiv**: 1209.5765
+### Paper 32: Time crystals and quasi-ODLRO
+- **File**: `32_2013_Volovik_Time_Crystals_Broken_Time.md`
+- **arXiv**: 1309.1845
 - **Year**: 2013
-- **Relevance**: HIGH
-- **Tags**: time crystal, GGE, two timescales, integrability, prethermalization
+- **Relevance**: MEDIUM
+- **Tags**: time-crystal, quasi-ODLRO, magnon-BEC, vortex-precession, broken-time, relaxation
 
-**Summary**: Time crystals from tau_N >> tau_E. GGE in integrable systems: persistent oscillations. omega = dE/dN. Extreme prethermalization. Anticipated experimental confirmation.
+**Summary**: Quasi-ODLRO requires tau_Q >> tau_E (not infinity). <a^+>~exp(i omega t) with omega=dE/dQ. Examples: superfluid 4He, magnon BEC, vortex precession. Time symmetry breaking observable only through Q decay.
 
-**Key Results**:
-- rho_GGE = Z^{-1} exp(-sum beta_i I_i)
-- omega = (E_N - E_{N-1})/hbar
-- Robust if perturbation << hbar omega
-- GGE relic is time crystal
+**Dependencies**: Related to 10
 
-**Dependencies**: Builds on 27. Directly relevant to S38 GGE.
+---
 
-### Paper 35: Dark Matter from Dark Energy in q-Theory
-- **File**: `35_2016_Klinkhamer_Volovik_Dark_Matter_Dark_Energy_q_Theory.md`
+### Paper 33: Dark matter from dark energy in q-theory
+- **File**: `33_2016_Klinkhamer_Volovik_Dark_Matter_Q_Theory.md`
 - **arXiv**: 1612.02326
-- **Year**: 2016
-- **Relevance**: HIGH
-- **Tags**: q-theory, DM-DE unification, Planck oscillations, detection evasion
+- **Year**: 2017
+- **Relevance**: CRITICAL
+- **Tags**: dark-matter, dark-energy, q-theory, pressureless-fluid, Planck-oscillation, CDM
 
-**Summary**: q-field background = DE; perturbations delta-q = DM (pressureless dust, a^{-3}). Planck-frequency oscillations evade detection. DM/DE ~ 3 naturally.
+**Summary**: Constant q gives Lambda=0 (dark energy nullification). Spacetime-dependent perturbation q(x) = q_0 + q_0 xi(x) oscillates at Planck frequency omega ~ E_P. Time-averaged T^{mu nu} is pressureless perfect fluid = cold dark matter. Implication: direct DM detection will fail. Dark matter and dark energy are two aspects of the same q-field.
 
 **Key Results**:
-- DM = perturbations; DE = background q
-- w ~ 0 for delta-q (matter scaling)
-- Detection evasion from high-frequency oscillation
-- DM/DE ~ 3 without fine-tuning
+- q perturbation oscillates at omega ~ E_P
+- Time-averaged pressure = 0 (CDM behavior)
+- DM clusters for L >> l_P
+- Direct DM detection predicted to fail
+- DE (constant delta q) and DM (oscillating xi) from one field
 
-**Dependencies**: Builds on 15, 16.
+**Key Equations**:
 
-### Paper 36: Analog of Gravitational Anomaly in Topological Superconductors
-- **File**: `36_2021_Volovik_Analog_Gravitational_Anomaly_Topological_Superconductors.md`
+| Label | Description | Reference |
+|:---|:---|:---|
+| Oscillation | omega^2 = (q_0)^{-1}(chi_0)^{-1} ~ E_P^2 | Eq.(17b) |
+| DM energy density | rho_DM = (1/2)(chi_0)^{-1}(a_xi)^2 | Eq.(21a) |
+| DM pressure | <P_DM> ~ 0 | Eq.(21b) |
+
+**Dependencies**: Downstream of 13, 14
+
+---
+
+### Paper 34: Analog of gravitational anomaly in topological chiral superconductors
+- **File**: `34_2021_Volovik_Gravitational_Anomaly_Topological.md`
 - **arXiv**: 2104.01020
 - **Year**: 2021
-- **Relevance**: MEDIUM
-- **Tags**: gravitational anomaly, 1/3 factor, hopfion, thermal Hall
+- **Relevance**: HIGH
+- **Tags**: gravitational-anomaly, chiral-superconductor, hopfion, baryogenesis, spin-connection, 1/3-factor
 
-**Summary**: Gravitational anomaly in chiral superconductors = (1/3) x chiral anomaly. EM field as spin connection. Hopfion-mediated anomalies in neutral superfluids.
+**Summary**: EM field = spin connection for Bogoliubov quasiparticles (R^{12}=2F). Gravitational anomaly has extra 1/3 vs ABJ. Hopfion creation = gravitational instanton producing 6 chiral fermions (baryogenesis analog).
 
-**Key Results**:
-- Gravitational anomaly coefficient = (1/3) chiral
-- Hopfion creation/annihilation mediates anomalies
-- Thermal Hall effect as signature
+**Key Equations**: C^{12}_mu=2A_mu [Eq.6]; d_mu J^5=(1/3)(1/32pi^2)FF-dual [Eq.13]; d_mu J^5=(1/6)d_mu n_H [Eq.19]
 
-**Dependencies**: Builds on 09. Connects to 22.
+**Dependencies**: Downstream of 10
 
-### Paper 37: Landau-Khalatnikov Two-Fluid Model to de Sitter
-- **File**: `37_2024_Volovik_Landau_Khalatnikov_Two_Fluid_de_Sitter.md`
+---
+
+### Paper 35: From Landau two-fluid model to de Sitter Universe
+- **File**: `35_2024_Volovik_Landau_Khalatnikov_Two_Fluid_de_Sitter.md`
 - **arXiv**: 2410.04392
 - **Year**: 2024
 - **Relevance**: HIGH
-- **Tags**: two-fluid, Landau-Khalatnikov, de Sitter, vacuum=superfluid, matter=normal
+- **Tags**: two-fluid, de-Sitter, dark-matter, stiff-matter, Zel-dovich, power-law-decay, Planck-constant
 
-**Summary**: Landau-Khalatnikov two-fluid hydrodynamics maps onto de Sitter. Vacuum = superfluid (s=0); matter = normal (s>0). T_GH as thermodynamic temperature. Power-law deviations from Lambda-CDM.
+**Summary**: De Sitter = three components: vacuum (DE), gravitational DM (w=1 stiff), ordinary matter. P_DM + P_vac = 0 in equilibrium (superfluid analog). Power-law decay with energy exchange reaches correct present-day values. Proton triggers cascading creation.
 
-**Key Results**:
-- Vacuum = superfluid component; matter = normal
-- T_GH controls mutual friction and entropy flow
-- rho_m ~ t^{-0.4}, rho_Lambda ~ t^{0.6}
-- dS/dt = S_0 H(t) (entropy arrow)
+**Key Equations**: w~exp(-E_n/T), T=H/pi [Eq.9]; S_H=A/(4G) [Eq.16]; Ts=epsilon+P_vac-KR [Eq.18]
 
-**Dependencies**: Builds on 17. Companion to 12.
+**Dependencies**: Downstream of 11, 15
 
 ---
 
 ## Cross-Paper Equation Concordance
 
-**Emergent metric g_munu**: Papers 01, 07, 22, 25, 29, 32. Convention: Painleve-Gullstrand form ds^2 = -(c_0^2 - v^2)dt^2 - 2v_i dx^i dt + dx^2. Papers 22-23 extend to elasticity tetrads. Paper 25 generalizes to Weyl geometry with e^{2phi}.
+### Vacuum Energy / Cosmological Constant (Papers 01, 03, 04, 13, 14, 25, 33)
+- **rho_vac = epsilon(q) - q d(epsilon)/dq**: 01(22), 03(3.5), 04(3.4), 13(4), 14(5.2b), 25(2.11), 33(7)
+- **rho_vac = 0 in equilibrium**: 01(23), 03(3.8), 04(5.3), 13(12), 21(17a), 25(3.8)
+- **chi^{-1} = q^2 d^2(epsilon)/dq^2 > 0**: 03(3.9), 13(14), 25(3.8), 33(10)
 
-**Vacuum variable q**: Papers 05, 15, 16, 23, 35. Paper 15 introduces q (spacetime-independent, self-tuning). Paper 16 identifies q = gluon condensate. Paper 23 connects to tetrad det(e). Paper 35 uses delta-q as DM.
+### Fermi Point Topology N_3 (Papers 01, 03, 05, 07, 10, 25, 31)
+- **N_3 = (1/24pi^2) tr oint G dG^{-1} G dG^{-1} G dG^{-1}**: 01(63), 05(15), 10(15), 25(7.1), 31(6)
+- **Hedgehog N = (1/8pi) int g-hat . (dg-hat x dg-hat)**: 05(18), 10(18), 23(8)
 
-**Topological winding number nu/W**: Papers 04, 06, 11, 24, 26, 28, 33. Paper 04: N_3 for Fermi points. Paper 06: full AZ table. Paper 28: W=1 for 3He-B. Paper 26: N_Weyl = sum C_i. Paper 24: Lifshitz = topology change.
+### Emergent Weyl Fermions (Papers 01, 03, 10, 22, 23, 24, 25)
+- **G^{-1} = e^beta_alpha Gamma^alpha (p_beta - p^{(0)}_beta)**: 01(64), 03(2.1), 25(7.2)
+- **H = e^j_k(p_j-p^{(0)}_j)sigma_k + e^j_0(p_j-p^{(0)}_j)**: 10(20), 22(1)
 
-**Hawking/Gibbons-Hawking temperature**: Papers 07, 10, 12, 17, 29, 37. T_H = hbar kappa/(2pi k_B). Papers 12, 17: T_local = H/pi = 2 T_GH for de Sitter. Paper 37: T_GH as Landau-Khalatnikov bath.
+### Acoustic / PG Metric (Papers 01, 06, 09, 11, 15, 27, 35)
+- **ds^2 = -(c^2-v^2)dt^2 + 2v dr dt + ...**: 01(13), 06(9), 27(1)
+- **ds^2 = -dt^2 + (dr-Hr dt)^2 + r^2 dOmega^2** (de Sitter): 11(2), 15(5), 35(5)
 
-**BCS gap Delta**: Papers 01, 02, 08, 11, 18, 27, 28, 30. Standard E = sqrt(xi^2 + Delta^2). Paper 18: flat-band eliminates exponential suppression. Paper 30: G_N ~ Delta^2.
+### De Sitter Temperature and Thermodynamics (Papers 11, 15, 29, 35)
+- **T = H/pi = 2T_GH**: 11 Sec.II, 15(5), 29 Sec.I, 35(9)
+- **Ts = epsilon + p + KR** (modified Gibbs-Duhem): 11(8), 29(5), 35(18)
 
-**GGE density matrix**: Papers 27, 34. rho_GGE = Z^{-1} exp(-sum beta_i I_i). Paper 34: time crystals. Direct analog of S38 Richardson-Gaudin GGE relic.
+### Elasticity Tetrads (Papers 20, 21, 30)
+- **E^a_mu = d_mu X^a**: 20(10), 21(4), 30(2)
+- **q = (1/4) e^mu_a E^a_mu**: 21(6)
 
----
+### Sakharov Induced Gravity (Papers 06, 26, 28)
+- **G^{-1} ~ M^2 ln(E_uv^2/M^2)**: 26(11)
+- **G^{-1} = G_0^{-1} + (Lambda^2_uv/12pi)(n_0+n_{1/2}-4n_1)**: 28(1)
+- **G(T) = 12pi/[K(T) Delta^2(T)]**: 06(4)
+
+### Chiral Anomaly (Papers 01, 08, 10, 34)
+- **n-dot = (1/4pi^2)(e_R^2-e_L^2) E.B**: 01(22-VII), 08(13)
+- **d_mu J^5 = (1/3)(1/32pi^2) FF-dual** (gravitational, extra 1/3): 34(13)
 
 ## Notation Conventions
 
-| Symbol | Meaning | Papers |
+| Symbol | Meaning | Typical value or dimension |
 |:---|:---|:---|
-| q | Vacuum variable (q-theory) | 15, 16, 23, 35 |
-| e^a_mu | Tetrad / vierbein | 20, 21, 22, 23, 25, 32 |
-| Delta | BCS pairing gap | 01, 02, 08, 11, 18, 27, 28, 30 |
-| v_F | Fermi velocity | 01, 02, 04, 07, 26 |
-| c_s | Speed of sound | 03, 07, 10, 29, 30 |
-| xi | Coherence length: hbar v_F/(pi Delta) | 01, 07, 28, 29 |
-| N(E_F) | Density of states at Fermi level | 02, 18, 19, 30, 33 |
-| nu, W | Topological winding number | 04, 06, 11, 24, 28 |
-| kappa | Surface gravity at horizon | 07, 10, 29 |
-| T_H, T_GH | Hawking / Gibbons-Hawking temperature | 07, 12, 17, 29, 37 |
-| rho_s | Superfluid density | 25, 27, 37 |
-| H | Hubble parameter | 12, 16, 17, 37 |
-| K_QCD | QCD string tension | 16 |
-| omega^ab | Spin connection | 22, 23 |
-| alpha | Tilting parameter (type-I/II Weyl) | 24, 33 |
-| I_i | Richardson-Gaudin conserved integrals | 34 |
-| phi | Weyl conformal factor | 25 |
-| hbar_t, hbar_s | Temporal/spatial Planck constants | 03, 31 |
-
----
+| q | Vacuum variable (conserved charge density) | [depends on realization] |
+| epsilon(q) | Microscopic vacuum energy density | ~ E_P^4 |
+| rho_vac | Gravitating vacuum energy = epsilon - q d(epsilon)/dq | = 0 in equilibrium |
+| mu | Chemical potential of vacuum charge = d(epsilon)/dq | Integration constant |
+| chi_vac | Vacuum compressibility | chi^{-1} = q^2 d^2(epsilon)/dq^2 > 0 |
+| N_3 | Topological charge of Fermi point (Weyl node) | Integer |
+| N_K | Topological charge of fully-gapped state (3He-B class) | sign(mu) |
+| e^a_mu | Gravitational tetrad (vierbein) | [L]^{-1} in Diakonov theory |
+| E^a_mu | Elasticity tetrad = d_mu X^a | [L]^{-1} |
+| v_s | Superfluid velocity | cm/s |
+| Delta_0 | Gap amplitude (plays role of E_Planck) | ~ meV in 3He |
+| c_perp, c_parallel | "Speed of light" perpendicular/parallel to l-hat in 3He-A | c_perp ~ cm/s, c_parallel ~ m/s |
+| p_F | Fermi momentum | ~ hbar/Angstrom |
+| v_F = p_F/m* | Fermi velocity | ~ 50 m/s in 3He |
+| K | Gravitational coupling = 1/(16pi G) | Dimensionless in DV theory |
+| R | Scalar curvature | Conjugate to K in de Sitter |
+| T_GH | Gibbons-Hawking temperature = H/(2pi) | |
+| T_dS | Local de Sitter temperature = H/pi = 2T_GH | |
+| l-hat | Unit vector along orbital angular momentum in 3He-A | |
 
 ## Computational Verification Status
 
-| Paper | Equation/Result | Verified? | Where |
+Results from computations verified against Volovik papers:
+
+| Paper concept | Session(s) | Computation | Status |
 |:---|:---|:---|:---|
-| 28 | AZ class BDI, T^2=+1 | Yes | S17c |
-| 28 | Pfaffian sgn(Pf)=-1 | Yes | S35 (all 34 tau) |
-| 04 | Lorentz from linear dispersion | Partial | S7-8 (SM from Psi_+) |
-| 05 | CC = 0 at equilibrium | Tested | S36-38 (CC overshoot 80-127) |
-| 18 | Van Hove DOS enhances BCS | Yes | S35 (M_max=1.674) |
-| 27 | Kibble-Zurek phonon production | Yes | S38 (59.8 pairs, P_exc=1.000) |
-| 34 | GGE with conserved integrals | Yes | S38 (8 R-G integrals) |
-| 23 | Volume-preserving deformations | Yes | S12 (TT deformation) |
-| 15 | Self-tuning q to rho=0 | No | GGE-LAMBDA-38 (open) |
-| 24 | Lifshitz transition at fold | Partial | S22-24 (Pomeranchuk) |
-| 07 | PG metric from superfluid flow | No | Not computed |
-| 17 | T_local = H/pi | No | Not tested |
-| 37 | Two-fluid power-law decay | No | FRIEDMANN-BCS-38 (open) |
+| Vacuum nullification (rho_vac=0) | S42-S58 | Q-THEORY series | rho_vac formula confirmed; residual 111-115 OOM above obs (integrability problem) |
+| Sakharov induced G_N | S44, S45 | SAKHAROV-GN-44, RUNNING-GN-45 | G_Sak/G_obs=0.436 (0.36 OOM); a_0=6440 modes; monotone in tau |
+| BDI classification | S17c, S34, S35 | AZ class, Pfaffian | BDI confirmed (T^2=+1); sgn(Pf)=-1 at all tau; framework is 3He-B class NOT 3He-A |
+| N_3 topological invariant | S44 | N3-BDG-44 | N_3=0 (inapplicable to 0D discrete spectrum); system is 3He-B class |
+| Flat band (T_c ~ lambda) | S43 | FLATBAND-43 | B2 is ideal flat band (W=0 exact, U(2) Schur); T_c linear confirmed |
+| q-theory self-tuning | S43-S48 | QFIELD-43, Q-THEORY series | Self-tuning trivially satisfied but residual CC 113+ orders above obs |
+| Elasticity tetrads | S43, S54 | ELAST-Z-43, ELASTIC-TETRAD-CC-54 | 8 elastic constants computed; Z_Hessian=665810; spectral amplification 133162 |
+| Two-fluid DM/DE ratio | S44-S48 | DM-DE-RATIO-44, DMDE-REFINE-48 | 7/11 methods within 10x of obs (0.387); best=1.060 |
+| Vacuum compressibility chi_q | S43, S53 | TWOFLUID-W-43, Q-THEORY-GGE-53 | chi_q(SA)=317863; GGE obstruction blocks self-tuning |
+| CC cancellation (Volovik formula) | S57, S58 | CC-SIGN-57, CC-SWEEP-58 | Lambda_eff=+1.709 (positive, accelerating); near-cancellation structural in transit |
+| Chiral anomaly / baryogenesis | S53 | VORTEX-NUCLEATION-53 | Topological baryogenesis EXCLUDED (N_3=0, 4 obstructions); ABJ inapplicable to 3He-B class |
+| Acoustic e-folds | S53 | ACOUSTIC-EFOLD-53 | N_e=2.89 (sound speed +2.72, density 0 by equilibrium theorem) |

@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 187,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1861",
+      "anchor_type": "data_provenance",
+      "name": "w1c_canonical_constants_disambiguation",
+      "script_path": "session-85/s85_w1c_canonical_constants_disambiguation.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-85/s85_w1c_canonical_constants_disambiguation.py",
+      "source_context_30_lines": "  108: \n  109: # Pre-registered threshold: 3 patches, all must land\n  110: EXPECTED_PATCHES = 3                                         # (local)\n  111: REFERENCE_ALPHA_TOLERANCE = 1e-10                            # (local) plan §W1c-1 machinery pin\n  112: VENV_PYTHON = PROJECT_ROOT / \"phonon-exflation-sim\" / \".venv312\" / \"Scripts\" / \"python.exe\"  # (local)\n  113: \n  114: CANONICAL_PATH = resolve_script(None, 'canonical_constants.py')\n  115: VERDICT_TXT = resolve_output(85, 's85_gate_verdicts.txt')\n  116: OUT_JSON = resolve_output(85, 's85_w1c_canonical_constants_disambiguation.json')\n  117: \n  118: # ---------------------------------------------------------------------------\n  119: # Section 4 — SHA helpers (S84+ dual-SHA schema)\n  120: # ---------------------------------------------------------------------------\n  121: \n  122: \n  123: def sha256_of(path: Path) -> str:\n  124:     h = hashlib.sha256()  # (local)"
+    },
+    {
+      "anchor_id": "prov_1862",
+      "anchor_type": "data_provenance",
+      "name": "w1c_framework_impact_matrix",
+      "script_path": "session-85/s85_w1c_framework_impact_matrix.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-85/s85_w1c_framework_impact_matrix.py",
+      "source_context_30_lines": "   99: PASS_MAX_FLAGGED = 5                                         # (local) plan §W1c-7.9\n  100: INFO_MAX_FLAGGED = 20                                        # (local)\n  101: \n  102: CANONICAL_PATH = resolve_script(None, 'canonical_constants.py')\n  103: W1C_3_JSON = resolve_output(85, 's85_w1c_historical_alpha_s_audit.json')\n  104: REGISTRY_PATH = PROJECT_ROOT / \"sessions\" / \"permanent-results-registry.md\"\n  105: S84_VERDICTS = resolve_output(84, 's84_gate_verdicts.txt')\n  106: S85_VERDICTS = resolve_output(85, 's85_gate_verdicts.txt')\n  107: OUT_JSON = resolve_output(85, 's85_w1c_framework_impact_matrix.json')\n  108: \n  109: VERDICT_LINE_RE = re.compile(\n  110:     r\"^(?P<gate>[A-Za-z0-9_\\-]+):\\s+\"\n  111:     r\"(?P<status>PASS|FAIL|INFO|PENDING-EVENT|PRE-REG-INCOMPLETE)\\s+--\\s+\"\n  112:     r\"value=(?P<value>\\S+)\\s+\"\n  113:     r\"scheme=(?P<scheme>\\S+)\\s+\"\n  114:     r\"convention=(?P<convention>\\S+)\\s+\"\n  115:     r\"L_max=(?P<Lmax>\\S+)\""
+    },
+    {
+      "anchor_id": "prov_1863",
+      "anchor_type": "data_provenance",
+      "name": "w1c_historical_alpha_s_audit",
+      "script_path": "session-85/s85_w1c_historical_alpha_s_audit.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-85/s85_w1c_historical_alpha_s_audit.py",
+      "source_context_30_lines": "  119: PASS_MAX_AMBIGUOUS = 5                                       # (local)\n  120: INFO_MAX_AMBIGUOUS = 20                                      # (local)\n  121: \n  122: # Session floor (plan §W1c-3.7)\n  123: SESSION_FLOOR = 34                                           # (local)\n  124: \n  125: CANONICAL_PATH = resolve_script(None, 'canonical_constants.py')\n  126: VERDICT_TXT = resolve_output(85, 's85_gate_verdicts.txt')\n  127: OUT_JSON = resolve_output(85, 's85_w1c_historical_alpha_s_audit.json')\n  128: \n  129: # Match alpha_s as a symbol (not alpha_star, alpha_scan, etc.)\n  130: # Accept alpha_s, alpha_s_MZ, alpha_s(M_Z), alpha_s = ..., etc.\n  131: ALPHA_S_RE = re.compile(\n  132:     r\"alpha_s(?![a-zA-Z0-9_])\"     # alpha_s not followed by a word char\n  133:     r\"|alpha_s_(?:MZ|mz|framework|inflation|central|QCD|qcd)\"\n  134:     r\"|α_s\"                         # unicode variant\n  135:     r\"|α\\s*_\\s*s\","
+    },
+    {
+      "anchor_id": "prov_1864",
+      "anchor_type": "data_provenance",
+      "name": "w1c_s50_s51_identity_commit",
+      "script_path": "session-85/s85_w1c_s50_s51_identity_commit.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-85/s85_w1c_s50_s51_identity_commit.py",
+      "source_context_30_lines": "  118: SESSION = \"S85\"                                              # (local)\n  119: GATE_ID = \"S85-W1c-S50-51-IDENTITY-INTERPRETATION-COMMIT\"    # (local)\n  120: SCHEME = \"S50-51-derivation-audit\"                           # (local)\n  121: CONVENTION = \"option-2-commit\"                               # (local)\n  122: L_MAX = \"N/A\"                                                # (local)\n  123: \n  124: CANONICAL_PATH = resolve_script(None, 'canonical_constants.py')\n  125: VERDICT_TXT = resolve_output(85, 's85_gate_verdicts.txt')\n  126: OUT_JSON = resolve_output(85, 's85_w1c_s50_s51_identity_commit.json')\n  127: \n  128: # Actual paths (documented discrepancies with plan):\n  129: #   Plan said: sessions/framework/permanent-results-registry.md\n  130: #   Actual:    sessions/permanent-results-registry.md\n  131: #   Plan said: summary/atlas-*.md\n  132: #   Actual:    sessions/framework/Atlas/atlas-*.md\n  133: REGISTRY_PATH = PROJECT_ROOT / \"sessions\" / \"permanent-results-registry.md\"  # (local)\n  134: S50_DIR = PROJECT_ROOT / \"sessions\" / \"archive\" / \"session-50\"                # (local)"
+    },
+    {
+      "anchor_id": "prov_1865",
+      "anchor_type": "data_provenance",
+      "name": "w1c_w1_gate_rerun",
+      "script_path": "session-85/s85_w1c_w1_gate_rerun.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-85/s85_w1c_w1_gate_rerun.py",
+      "source_context_30_lines": "  111: SESSION = \"S85\"                                              # (local)\n  112: GATE_ID = \"S85-W1c-W1-GATE-RERUN-UNDER-DISAMBIGUATION\"       # (local)\n  113: SCHEME = \"rerun-audit\"                                       # (local)\n  114: CONVENTION = \"post-W1c-1-patch\"                              # (local)\n  115: L_MAX = \"N/A\"                                                # (local)\n  116: \n  117: CANONICAL_PATH = resolve_script(None, 'canonical_constants.py')\n  118: VERDICT_TXT = resolve_output(85, 's85_gate_verdicts.txt')\n  119: OUT_JSON = resolve_output(85, 's85_w1c_w1_gate_rerun.json')\n  120: \n  121: # Target gates in plan §W1c-4.7 order\n  122: TARGET_GATES = [\n  123:     \"S85-W1a-ALPHA-S-REGISTRY-UPGRADE\",\n  124:     \"S85-W1b-ALPHA-S-PRIOR-RANGE-LCDM\",\n  125:     \"S85-W1b-PLANCK-DESI-2025-ALPHA-S-RECALIBRATION\",\n  126:     \"S85-W1b-CF-M6-ALPHA-S-W-A-DECOUPLED-JOINT\",\n  127: ]  # (local)"
+    },
+    {
+      "anchor_id": "prov_1866",
+      "anchor_type": "data_provenance",
+      "name": "w2_alpha_s_axiom_minimality",
+      "script_path": "session-85/s85_w2_alpha_s_axiom_minimality.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-85/s85_w2_alpha_s_axiom_minimality.py",
+      "source_context_30_lines": "<name 'w2_alpha_s_axiom_minimality' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python\n    2: \"\"\"\n    3: S85-W2-ALPHA-S-AXIOM-MINIMALITY-AU\n    4: \n    5: Audit of the NCG-axiom minimality for the alpha_s derivation (a_4 Seeley-DeWitt\n    6: coefficient). The plan §W2-1 (session-85-plan-w2.md) specifies a 7-axiom\n    7: CCM-2007 roster and asks: which subset is LOAD-BEARING for the a_4 coefficient\n    8: that pins alpha_s?\n    9: \n   10: Reference: Chamseddine-Connes-Marcolli 2007, §2.1; standard 7-axiom NCG roster\n   11: from Connes 1995 \"Noncommutative geometry and reality\".\n   12: \n   13: Gate verdict: PASS if subset_cardinality <= 5, i.e. at least 2 axioms are\n   14: non-load-bearing for a_4 -> alpha_s.\n   15: \"\"\"\n   16: from __future__ import annotations\n   17: \n   18: import hashlib\n   19: import json\n   20: import os\n   21: import sys\n   22: from pathlib import Path\n   23: \n   24: sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))\n   25: from canonical_constants import *  # noqa: F401,F403\n   26: \n   27: # ---------------------------------------------------------------------------\n   28: # Input SHA pins (logged in first 20 stdout lines)\n   29: # ---------------------------------------------------------------------------\n   30: INPUT_FILES = ["
+    },
+    {
+      "anchor_id": "prov_1867",
+      "anchor_type": "data_provenance",
+      "name": "w2_alpha_s_pre_reg_landing",
+      "script_path": "session-85/s85_w2_alpha_s_pre_reg_landing.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-85/s85_w2_alpha_s_pre_reg_landing.py",
+      "source_context_30_lines": "  277:         print(f\"{p['id']:<40}{p['observable']:<15}{p['detector']:<30}{sig_str:>10}\")\n  278:     print(\"-\" * 70)\n  279:     print(f\"num_contradictions = {num_contradictions}\")\n  280:     print(f\"doc_gaps count     = {len(doc_gaps)}\")\n  281:     print(\"-\" * 70)\n  282: \n  283:     # Emit §VII.M.2 section\n  284:     section_md = build_vii_m2_section()\n  285:     section_path = Path(__file__).parent / \"s85_w2_alpha_s_pre_reg_landing_section.md\"\n  286:     section_path.write_text(section_md)\n  287:     print(f\"WROTE {section_path}\")\n  288: \n  289:     # Closure SHA\n  290:     pin_map_str = json.dumps(\n  291:         {\n  292:             \"inputs\": input_shas,\n  293:             \"num_pre_regs\": len(PRE_REGS),"
+    },
+    {
+      "anchor_id": "prov_1868",
+      "anchor_type": "data_provenance",
+      "name": "w2_band_detector_map",
+      "script_path": "session-85/s85_w2_band_detector_map.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w2_band_detector_map.npz, session-85/s85_w2_band_detector_map.png",
+      "source_file": "computations/session-85/s85_w2_band_detector_map.py",
+      "source_context_30_lines": "  145:     if 300 <= l_crit <= 5000:\n  146:         verdict = \"PASS\"\n  147:     elif 5000 < l_crit <= 10000:\n  148:         verdict = \"INFO\"\n  149:     else:\n  150:         verdict = \"FAIL\"\n  151: \n  152:     # Save NPZ\n  153:     npz_path = Path(__file__).parent / \"s85_w2_band_detector_map.npz\"\n  154:     np.savez(\n  155:         npz_path,\n  156:         K_R5=np.array([K_R5]),\n  157:         K_crit_BdG=np.array([K_CRIT_BDG]),\n  158:         k_pivot=np.array([k_pivot_planck]),\n  159:         D_A=np.array([D_A_RECOMB_MPC]),\n  160:         k_phys=np.array([k_phys]),\n  161:         l_crit=np.array([l_crit]),"
+    },
+    {
+      "anchor_id": "prov_1869",
+      "anchor_type": "data_provenance",
+      "name": "w2_disjoint_corridor_counter_construction",
+      "script_path": "session-85/s85_w2_disjoint_corridor_counter_construction.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w2_disjoint_corridor_counter_construction.npz, session-85/s85_w2_disjoint_corridor_counter_construction.p...",
+      "source_file": "computations/session-85/s85_w2_disjoint_corridor_counter_construction.py",
+      "source_context_30_lines": "  177:     print(\"-\" * 70)\n  178:     print(f\"num_counter_examples = {num_counter_examples}\")\n  179:     print(\"-\" * 70)\n  180: \n  181:     # Verdict\n  182:     verdict = \"PASS\" if num_counter_examples == 0 else \"FAIL\"\n  183: \n  184:     # Save NPZ of per-pair spectral signatures\n  185:     npz_path = Path(__file__).parent / \"s85_w2_disjoint_corridor_counter_construction.npz\"\n  186:     np.savez(\n  187:         npz_path,\n  188:         pair_names=np.array([\",\".join(r[\"pair\"]) for r in pairs_table]),\n  189:         a0_a=np.array([r[\"sig_a\"][0] for r in pairs_table]),\n  190:         a0_b=np.array([r[\"sig_b\"][0] for r in pairs_table]),\n  191:         a2_a=np.array([r[\"sig_a\"][1] for r in pairs_table]),\n  192:         a2_b=np.array([r[\"sig_b\"][1] for r in pairs_table]),\n  193:         a4_a=np.array([r[\"sig_a\"][2] for r in pairs_table]),"
+    },
+    {
+      "anchor_id": "prov_1870",
+      "anchor_type": "data_provenance",
+      "name": "w2_hp3_disjoint_corridor",
+      "script_path": "session-85/s85_w2_hp3_disjoint_corridor.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w2_hp3_disjoint_corridor.npz, session-85/s85_w2_hp3_disjoint_corridor.png",
+      "source_file": "computations/session-85/s85_w2_hp3_disjoint_corridor.py",
+      "source_context_30_lines": "  141:     #   HC^3 stencil matrix has shape (dim A, dim A, dim A, dim A)\n  142:     #   All entries vanish under the Hochschild differential + boundary conditions\n  143:     # We save a sparse representation (zero-sparsity encoding for all triples).\n  144:     cochain_matrices = {\n  145:         str((row[\"triple\"][0], row[\"triple\"][1], row[\"triple\"][2])):\n  146:         np.zeros((1, 1), dtype=int)\n  147:         for row in triples_table\n  148:     }\n  149:     npz_path = Path(__file__).parent / \"s85_w2_hp3_disjoint_corridor.npz\"\n  150:     np.savez(npz_path, **cochain_matrices)\n  151:     print(f\"WROTE {npz_path} (zero-sparsity Hochschild cochains)\")\n  152: \n  153:     # Emit lattice diagram (PNG)\n  154:     try:\n  155:         import matplotlib.pyplot as plt\n  156:         fig, ax = plt.subplots(figsize=(9, 6))\n  157:         # Lattice nodes: factor supports"
+    }
+  ]
+}

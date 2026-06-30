@@ -152,7 +152,7 @@ Berry's identification: T''(0) > 0 arises from global log-concavity of eigenvalu
 
 **Cross-reference — Theorem 1, Trap 2 (Section III)**: The CP-1 algebraic identity and Trap 2 (b₁/b₂ = 4/9) are the **same mathematical object** discovered from two independent directions. Trap 2 says the Dynkin embedding index locks the relationship between U(1) hypercharge contributions and SU(2) isospin contributions across all (p,q) sectors. CP-1 says the Cartan flux channel structure constants equal the gauge-threshold correction coefficients. Both are descriptions of the same representation-theoretic fact: the SU(3) → SU(2)×U(1) embedding fixes these ratios algebraically. kk found it from the flux side (21b); Theorem 1 found it from the branching side (21c Phase A). They should be unified as a single result with two derivation paths.
 
-**Correct observable — PENDING**: kk's Stage 1 assessment identified this: "The identity holds; the correct observable for this identity has not yet been identified." Candidate observables for Phase 1 investigation: (1) g₁(τ) gauge coupling running (kk, master collab Tier 0 #17), (2) mode reordering at τ ≈ 0.11 (baptista, see open thread below), (3) δ_T(τ) sector decomposition by Z₃ triality (baptista, master collab Tier 0 #6).
+**Correct observable — PENDING**: kk's Stage 1 assessment identified this: "The identity holds; the correct observable for this identity has not yet been identified." Candidate observables for Phase 1 investigation: (1) g₁(τ) gauge coupling running (kk, master collab computation #17), (2) mode reordering at τ ≈ 0.11 (baptista, see open thread below), (3) δ_T(τ) sector decomposition by Z₃ triality (baptista, master collab computation #6).
 
 **Status**: Minimum prediction REFUTED. Algebraic identity CONFIRMED (= Theorem 1, Trap 2, different derivation path). Correct observable for the identity PENDING investigation.
 
@@ -375,7 +375,7 @@ Expected probability from 21b table: 45-50% from panel baseline of 43%.
 
 **kk Stage 1 Interpretive Assessment** (received Phase B):
 
-*T''(0) — COMPELLING, not DECISIVE*: The sign is structurally correct. Negative Delta_b × negative log-concavity bracket = positive T''(0). But the tier is COMPELLING rather than DECISIVE because the fixed-point location is unconfirmed without δ_T(τ) zero-crossing. T''(0) > 0 means the self-consistency map has the right curvature; it does not establish that the fixed point exists in the physical window [0.15, 0.35].
+*T''(0) — COMPELLING, not DECISIVE*: The sign is structurally correct. Negative Delta_b × negative log-concavity bracket = positive T''(0). But the level is COMPELLING rather than DECISIVE because the fixed-point location is unconfirmed without δ_T(τ) zero-crossing. T''(0) > 0 means the self-consistency map has the right curvature; it does not establish that the fixed point exists in the physical window [0.15, 0.35].
 
 *S_signed STRUCTURAL CLOSURE — confirmed with algebraic proof*: b₁/b₂ = 4/9 is not a numerical coincidence — it is an algebraic theorem. Non-abelian Casimir scales as dim² (grows quadratically with representation size); hypercharge Y² grows linearly. The ratio is fixed by the embedding and cannot fluctuate across sectors. This seals the S_signed result: Delta_b = b₁ − b₂ = -(5/9)·b₂ < 0 for every (p,q) sector, and no sector competition is possible.
 
@@ -413,7 +413,7 @@ Critical open question (baptista): "Could off-diagonal coupling CREATE a minimum
 
 **Ordering note**: baptista's post-session Phase B recommendation differs from the coordinator's original ordering on one key point — whether coupled V_IR (eigenvector extraction) should precede delta_T (existing data). Reconciliation below; both orderings are incorporated.
 
-### Tier 0: Zero-cost (minutes — existing data, no new extraction)
+### computation: Zero-cost (minutes — existing data, no new extraction)
 
 | Priority | Computation | Time | Constraint Gate | Prob shift if PASS |
 |:---------|:-----------|:-----|:----------|:------------------|
@@ -422,7 +422,7 @@ Critical open question (baptista): "Could off-diagonal coupling CREATE a minimum
 
 **Coordinator rationale for P1-0 first**: Uses existing eigenvalue data and already-computed branching rules. Pure analysis — no new extraction. The answer takes minutes and directly determines whether T''(0) COMPELLING upgrades to DECISIVE. If the fixed point is not in [0.15, 0.35], the self-consistency route closes and probability drops to ~35% regardless of any other result. Run this first.
 
-### Tier 1: Hours — eigenvector extraction required
+### Level 1: Hours — eigenvector extraction required
 
 | Priority | Computation | Time | Constraint Gate | Prob shift if PASS |
 |:---------|:-----------|:-----|:----------|:------------------|
@@ -433,9 +433,9 @@ Critical open question (baptista): "Could off-diagonal coupling CREATE a minimum
 
 **Baptista's rationale for coupled V_IR as #1**: The block-diagonal treatment breaks at coupling/gap = 4-5x. Coupled diagonalization is the only way to resolve whether the N=50 minimum is a real physical feature. Unreliability cuts both ways — coupling could CREATE a deeper minimum. This directly resolves the most uncertain Phase A result (UNCERTAIN-INTERESTING → CLOSED or COMPELLING).
 
-**Coordinator synthesis**: Baptista is correct that coupled V_IR is the most information-rich computation in the pipeline. It is correctly placed in Tier 1. P1-0 (delta_T) runs first only because it costs nothing and its gate logic determines the context for interpreting all other results. If P1-0 fails (no zero-crossing), the probability interpretation of P1-2 PASS changes substantially.
+**Coordinator synthesis**: Baptista is correct that coupled V_IR is the most information-rich computation in the pipeline. It is correctly placed in Level 1. P1-0 (delta_T) runs first only because it costs nothing and its gate logic determines the context for interpreting all other results. If P1-0 fails (no zero-crossing), the probability interpretation of P1-2 PASS changes substantially.
 
-### Tier 2: Days — BCS condensate physics
+### Level 2: Days — BCS condensate physics
 
 | Priority | Computation | Rationale |
 |:---------|:-----------|:----------|
@@ -452,7 +452,7 @@ Critical open question (baptista): "Could off-diagonal coupling CREATE a minimum
 ### Gate Logic
 
 - If δ_T(τ) no zero-crossing: self-consistency CLOSED. Framework ~35%. All other results interpreted in that context.
-- If δ_T(τ) zero-crossing at τ₀ ∈ [0.15, 0.35]: DECISIVE tier, ~55-62%.
+- If δ_T(τ) zero-crossing at τ₀ ∈ [0.15, 0.35]: DECISIVE level, ~55-62%.
 - If coupled V_IR non-monotonic: COMPELLING, ~50-58% (or ~62-70% if combined with T''(0) zero-crossing).
 - If Cartan flux OPEN: +8-12 pp independent of spectral results.
 - If both delta_T and coupled V_IR PASS: DELTA scenario, ~70-80%.
@@ -517,7 +517,7 @@ The next computation that changes the probability is δ_T(τ): locate the self-c
 
 ### A.1 kk delta_T(tau) Preliminary Code
 
-kk wrote `tier0-computation/s21c_kk_verify.py` which includes a delta_T(tau) zero-crossing computation — this is P1-0 from the Phase 1 pipeline. The script computes:
+kk wrote `computations/s21c_kk_verify.py` which includes a delta_T(tau) zero-crossing computation — this is P1-0 from the Phase 1 pipeline. The script computes:
 
 ```
 delta_T(tau) = -Sum[Delta_b * ln(lambda^2)] / (64*pi^2 * e^{4*tau})
@@ -535,18 +535,18 @@ Phase B should be re-run in a dedicated follow-up session to complete the cross-
 
 | File | Producer | Status |
 |:-----|:---------|:-------|
-| `tier0-computation/s21c_gauss_bonnet.txt` | baptista | COMPLETE — P0-5 PASS |
-| `tier0-computation/s21c_gauss_bonnet.py` | baptista | Source script |
-| `tier0-computation/s21c_gb_debug[1-6].py` | baptista | Debug iterations |
-| `tier0-computation/s21c_gb_final.py` | baptista | Final validated script |
-| `tier0-computation/s21c_V_IR.npz` | berry | COMPLETE — V_IR data |
-| `tier0-computation/s21c_V_IR.png` | berry | COMPLETE — V_IR plots |
-| `tier0-computation/s21c_V_IR.py` | berry | Source script |
-| `tier0-computation/s21c_neutrino_fine_grid.npz` | berry | COMPLETE — Neutrino data |
-| `tier0-computation/s21c_neutrino_R.png` | berry | COMPLETE — Neutrino plots |
-| `tier0-computation/s21c_neutrino_fine_grid.py` | berry | Source script |
-| `tier0-computation/s21c_T_double_prime.py` | kk | Source script (P0-2 + P0-3) |
-| `tier0-computation/s21c_T_double_prime_result.txt` | kk | COMPLETE — T''(0) = +7,969 |
-| `tier0-computation/s21c_S_signed.npz` | kk | COMPLETE — S_signed data |
-| `tier0-computation/s21c_S_signed.png` | kk | COMPLETE — S_signed plot |
-| `tier0-computation/s21c_kk_verify.py` | kk | PARTIAL — includes delta_T code (P1-0 preview) |
+| `computations/s21c_gauss_bonnet.txt` | baptista | COMPLETE — P0-5 PASS |
+| `computations/s21c_gauss_bonnet.py` | baptista | Source script |
+| `computations/s21c_gb_debug[1-6].py` | baptista | Debug iterations |
+| `computations/s21c_gb_final.py` | baptista | Final validated script |
+| `computations/s21c_V_IR.npz` | berry | COMPLETE — V_IR data |
+| `computations/s21c_V_IR.png` | berry | COMPLETE — V_IR plots |
+| `computations/s21c_V_IR.py` | berry | Source script |
+| `computations/s21c_neutrino_fine_grid.npz` | berry | COMPLETE — Neutrino data |
+| `computations/s21c_neutrino_R.png` | berry | COMPLETE — Neutrino plots |
+| `computations/s21c_neutrino_fine_grid.py` | berry | Source script |
+| `computations/s21c_T_double_prime.py` | kk | Source script (P0-2 + P0-3) |
+| `computations/s21c_T_double_prime_result.txt` | kk | COMPLETE — T''(0) = +7,969 |
+| `computations/s21c_S_signed.npz` | kk | COMPLETE — S_signed data |
+| `computations/s21c_S_signed.png` | kk | COMPLETE — S_signed plot |
+| `computations/s21c_kk_verify.py` | kk | PARTIAL — includes delta_T code (P1-0 preview) |

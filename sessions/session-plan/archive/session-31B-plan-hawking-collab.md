@@ -154,7 +154,7 @@ The entire viability of the Kapitza vacuum hinges on this. Adiabatic oscillation
 
 **Q2. What sets the oscillation amplitude A?**
 
-The plan treats A as a free parameter and scans over it. But physically, A is set by the initial conditions (what amplitude was excited during the initial decompactification) and then modified by dissipation. The no-boundary proposal (Paper 09) in principle selects both tau_* and A. The Hartle-Hawking wave function on the combined (tau, eps) space gives Psi(tau_*, A) ~ exp(-I_E^{Kapitza}(tau_*, A)), with the saddle-point value of A determined by extremizing I_E. This is a computable prediction (Tier 2, requires Euclidean path integral on the oscillating background).
+The plan treats A as a free parameter and scans over it. But physically, A is set by the initial conditions (what amplitude was excited during the initial decompactification) and then modified by dissipation. The no-boundary proposal (Paper 09) in principle selects both tau_* and A. The Hartle-Hawking wave function on the combined (tau, eps) space gives Psi(tau_*, A) ~ exp(-I_E^{Kapitza}(tau_*, A)), with the saddle-point value of A determined by extremizing I_E. This is a computable prediction (Level 2, requires Euclidean path integral on the oscillating background).
 
 **Q3. Does the Kapitza minimum produce a preferred value of the cosmological constant?**
 
@@ -166,7 +166,7 @@ Session 25 (TH-02) found no Hawking-Page transition in the STATIC Euclidean acti
 
 **Q5. What is the scrambling time of the Kapitza vacuum?**
 
-If the Kapitza vacuum stores information in the oscillation pattern, the scrambling time (Paper 13, t_s ~ M*ln(M)) determines how quickly that information becomes inaccessible. For a vacuum with effective entropy S_Kapitza, the scrambling time is t_s ~ (1/omega_perp) * S_Kapitza * ln(S_Kapitza). This is relevant for the information-theoretic consistency of the framework but is a Tier 2+ computation.
+If the Kapitza vacuum stores information in the oscillation pattern, the scrambling time (Paper 13, t_s ~ M*ln(M)) determines how quickly that information becomes inaccessible. For a vacuum with effective entropy S_Kapitza, the scrambling time is t_s ~ (1/omega_perp) * S_Kapitza * ln(S_Kapitza). This is relevant for the information-theoretic consistency of the framework but is a Level 2+ computation.
 
 ---
 

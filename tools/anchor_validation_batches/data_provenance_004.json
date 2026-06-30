@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 4,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_31",
+      "anchor_type": "data_provenance",
+      "name": "false_vacuum_analysis_legacy",
+      "script_path": "session-19/s19a_false_vacuum_analysis_legacy.py",
+      "session": "s19a",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-19/s19a_false_vacuum_analysis_legacy.py",
+      "source_context_30_lines": "<name 'false_vacuum_analysis_legacy' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: Session 19a -- S-5 Extension: False Vacuum Analysis\n    3: =====================================================\n    4: \n    5: The user asked \"False Vacuum?\" about the d_s > 8 behavior at large tau.\n    6: \n    7: Key observation: V_eff(tau) is monotonically DECREASING (Session 18 closure).\n    8: The system wants to roll to tau -> infinity. But the spectral data says:\n    9: \n   10: 1. Spectral gap GROWS with tau (lambda_min: 0.833 -> 3.206)\n   11: 2. Vacuum energy <lambda^2> grows exponentially (~e^{1.77*tau})\n   12: 3. d_s exceeds topological dimension 8 at tau > ~1.0\n   13: 4. Spectral entropy DECREASES monotonically\n   14: \n   15: This is the structure of a FALSE VACUUM: energetically favored by V_eff\n   16: but creating a spectral desert where excitations are too expensive for\n   17: any physics to exist.\n   18: \n   19: The TRUE vacuum must be at intermediate tau where:\n   20: - The spectrum still supports particle-like excitations\n   21: - The spectral gap is not too large\n   22: - The d_s is close to physical values (4-8)\n   23: \n   24: This script computes:\n   25: 1. Spectral gap evolution\n   26: 2. Vacuum energy density evolution\n   27: 3. Excitation cost: energy to create the lightest mode\n   28: 4. \"Habitability\" metric: where can the universe support particles?\n   29: 5. The spectral false vacuum boundary\n   30: "
+    },
+    {
+      "anchor_id": "prov_32",
+      "anchor_type": "data_provenance",
+      "name": "level_statistics",
+      "script_path": "session-19/s19a_level_statistics.py",
+      "session": "s19a",
+      "inputs": "",
+      "outputs": "session-19/s19a_level_statistics.png",
+      "source_file": "computations/session-19/s19a_level_statistics.py",
+      "source_context_30_lines": "  334: \n  335:     return np.array(pooled), n_used\n  336: \n  337: \n  338: # =============================================================================\n  339: # MAIN ANALYSIS\n  340: # =============================================================================\n  341: \n  342: def analyze_level_statistics(data):\n  343:     \"\"\"\n  344:     Full level statistics analysis at each tau, using distinct eigenvalue levels.\n  345:     \"\"\"\n  346:     tau_values = data['tau_values']\n  347:     n_tau = len(tau_values)\n  348: \n  349:     # Storage for 4 analysis types\n  350:     # (A) Global distinct"
+    },
+    {
+      "anchor_id": "prov_33",
+      "anchor_type": "data_provenance",
+      "name": "spectral_dimension",
+      "script_path": "session-19/s19a_spectral_dimension.py",
+      "session": "s19a",
+      "inputs": "",
+      "outputs": "session-19/s19a_spectral_dimension.png",
+      "source_file": "computations/session-19/s19a_spectral_dimension.py",
+      "source_context_30_lines": "   60:     K = np.zeros(len(sigma_values))\n   61:     for i, sigma in enumerate(sigma_values):\n   62:         # exp(-sigma * lambda_n^2) with multiplicities\n   63:         K[i] = np.sum(multiplicities * np.exp(-sigma * lam2))\n   64: \n   65:     return K\n   66: \n   67: \n   68: def spectral_dimension(K, sigma_values):\n   69:     \"\"\"\n   70:     Extract spectral dimension d_s = -2 * d(log K) / d(log sigma).\n   71: \n   72:     Uses central differences in log-space for numerical differentiation.\n   73: \n   74:     Args:\n   75:         K: heat kernel trace values K(sigma)\n   76:         sigma_values: corresponding sigma values"
+    },
+    {
+      "anchor_id": "prov_34",
+      "anchor_type": "data_provenance",
+      "name": "spectral_gap",
+      "script_path": "session-19/s19a_spectral_gap.py",
+      "session": "s19a",
+      "inputs": "",
+      "outputs": "session-19/s19a_spectral_gap.png",
+      "source_file": "computations/session-19/s19a_spectral_gap.py",
+      "source_context_30_lines": "   23: import numpy as np\n   24: \n   25: SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))\n   26: sys.path.insert(0, SCRIPT_DIR)\n   27: \n   28: from s19a_sweep_data import load_sweep_data\n   29: \n   30: \n   31: def analyze_spectral_gap(data):\n   32:     \"\"\"\n   33:     Compute spectral gap statistics at each tau.\n   34:     \"\"\"\n   35:     tau_values = data['tau_values']\n   36:     n_tau = len(tau_values)\n   37: \n   38:     # Storage\n   39:     min_gap = np.zeros(n_tau)          # Global minimum |lambda| at each tau"
+    },
+    {
+      "anchor_id": "prov_35",
+      "anchor_type": "data_provenance",
+      "name": "sweep_data",
+      "script_path": "session-19/s19a_sweep_data.py",
+      "session": "s19a",
+      "inputs": "",
+      "outputs": "session-19/s19a_sweep_data.npz",
+      "source_file": "computations/session-19/s19a_sweep_data.py",
+      "source_context_30_lines": "   23: from dirac_spectrum import (\n   24:     su3_generators,\n   25:     compute_structure_constants,\n   26:     build_cliff8,\n   27:     collect_spectrum,\n   28: )\n   29: \n   30: \n   31: def generate_sweep_data(tau_values, max_pq_sum=6, verbose=True):\n   32:     \"\"\"\n   33:     Generate eigenvalue data at each tau-value for all irreps up to max_pq_sum.\n   34: \n   35:     For each tau, we store:\n   36:       - The absolute eigenvalues |lambda| (sorted, distinct within each sector)\n   37:       - The sector labels (p, q) for each eigenvalue\n   38:       - The Peter-Weyl multiplicity dim(p,q) for each eigenvalue\n   39: "
+    },
+    {
+      "anchor_id": "prov_36",
+      "anchor_type": "data_provenance",
+      "name": "low_mode_TT_casimir",
+      "script_path": "session-21/s21a_low_mode_TT_casimir.py",
+      "session": "s21a",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-21/s21a_low_mode_TT_casimir.py",
+      "source_context_30_lines": "<name 'low_mode_TT_casimir' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: Session 21a: Low-Mode TT Casimir Diagnostic (A-1)\n    3: ===================================================\n    4: \n    5: Tesla-Resonance Agent — Resonance Reinterpretation of the Perturbative CLOSED\n    6: Core hypothesis: The constant-ratio trap is a HIGH-MODE phenomenon (Weyl's law).\n    7: Low modes couple to cavity shape (boundary conditions, curvature corrections).\n    8: If the low-mode contribution to E_TT has different tau-dependence than the\n    9: full sum, there exists a frequency scale below which curvature coupling matters.\n   10: \n   11: Diagnostics:\n   12:   1. E_TT_low(tau) for lowest N_cut = 50, 100, 200 eigenvalues\n   13:   2. R_low(tau) = E_fermion_low / E_boson_low for low modes\n   14:   3. Ratio of low-mode to full-mode E_TT at each tau\n   15:   4. Spectral action with Schwinger cutoff: f(x) = x * exp(-x)\n   16: \n   17: Data source: recompute from l20_lichnerowicz.py infrastructure\n   18: (NPZ only stores aggregates, need individual eigenvalues)\n   19: \n   20: Author: Tesla-Resonance (Session 21a, A-1)\n   21: Date: 2026-02-19\n   22: \"\"\"\n   23: \n   24: import numpy as np\n   25: import sys\n   26: import os\n   27: import time\n   28: import matplotlib\n   29: matplotlib.use('Agg')\n   30: import matplotlib.pyplot as plt"
+    },
+    {
+      "anchor_id": "prov_37",
+      "anchor_type": "data_provenance",
+      "name": "cp1_identity_investigation",
+      "script_path": "session-21/s21c_cp1_identity_investigation.py",
+      "session": "s21c",
+      "inputs": "computations/session-19/s19a_sweep_data.npz",
+      "outputs": "",
+      "source_file": "computations/session-21/s21c_cp1_identity_investigation.py",
+      "source_context_30_lines": "<name 'cp1_identity_investigation' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: Session 21c — CP-1 Algebraic Identity Investigation\n    4: \n    5: The CP-1 algebraic identity (Cartan flux channel = U(1) gauge-threshold correction)\n    6: is CONFIRMED as a structural theorem (= Theorem 1, Trap 2, b_1/b_2 = 4/9).\n    7: The S_signed minimum prediction was REFUTED, but S_signed was the wrong observable.\n    8: \n    9: This script investigates three candidate observables for the identity:\n   10:   1. g_1(tau) — U(1) gauge coupling running (uses b_1 alone, not b_1-b_2)\n   11:   2. Mode reordering at tau ~ 0.11 — sector crossing vs e^{-4tau} structure\n   12:   3. delta_T(tau) sector decomposition by Z_3 triality\n   13: \n   14: All computations are zero-cost: existing eigenvalue data, existing branching rules.\n   15: \n   16: Author: phonon-exflation team (CP-1 mislabel correction investigation)\n   17: \"\"\"\n   18: \n   19: import numpy as np\n   20: import matplotlib\n   21: matplotlib.use('Agg')\n   22: import matplotlib.pyplot as plt\n   23: \n   24: \n   25: # ============================================================\n   26: # BRANCHING RULES — HARDCODED from verified s21c_T_double_prime_result.txt\n   27: # (Avoids expensive Freudenthal recursion for high (p,q) sectors)\n   28: # ============================================================\n   29: \n   30: def get_branching():"
+    },
+    {
+      "anchor_id": "prov_38",
+      "anchor_type": "data_provenance",
+      "name": "gauss_bonnet",
+      "script_path": "session-21/s21c_gauss_bonnet.py",
+      "session": "s21c",
+      "inputs": "C:/sandbox/Ainulindale Exflation/computations/_shared/r20a_riemann_tensor.npz",
+      "outputs": "session-21/s21c_gauss_bonnet.txt",
+      "source_file": "computations/session-21/s21c_gauss_bonnet.py",
+      "source_context_30_lines": "   13: Under the volume-preserving Jensen deformation, the pointwise Euler density is tau-independent\n   14: at the \"average\" level (since the manifold is homogeneous under left-SU(3) action for all tau,\n   15: the density is constant over the manifold and the integral = density * volume).\n   16: \n   17: PASS: E_8(tau) = E_8(0) to machine epsilon at all 21 tau values.\n   18: FAIL: E_8 varies with tau => BUG in Riemann data.\n   19: \n   20: Data: computations/_shared/r20a_riemann_tensor.npz\n   21: Output: computations/session-21/s21c_gauss_bonnet.txt\n   22: \"\"\"\n   23: \n   24: import numpy as np\n   25: import time\n   26: \n   27: start = time.time()\n   28: \n   29: # Load data"
+    },
+    {
+      "anchor_id": "prov_39",
+      "anchor_type": "data_provenance",
+      "name": "gb_debug",
+      "script_path": "session-21/s21c_gb_debug.py",
+      "session": "s21c",
+      "inputs": "C:/sandbox/Ainulindale Exflation/computations/_shared/r20a_riemann_tensor.npz",
+      "outputs": "",
+      "source_file": "computations/session-21/s21c_gb_debug.py",
+      "source_context_30_lines": "<name 'gb_debug' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: Debug script: Verify the Gauss-Bonnet / Euler density computation.\n    3: Key question: is our partition formula correct?\n    4: Cross-check: use a completely different computation method (brute force via Levi-Civita).\n    5: \"\"\"\n    6: \n    7: import numpy as np\n    8: from itertools import permutations\n    9: \n   10: d = np.load('C:/sandbox/Ainulindale Exflation/computations/_shared/r20a_riemann_tensor.npz', allow_pickle=True)\n   11: R0 = d['R_abcd'][0]  # tau=0, round SU(3)\n   12: \n   13: # ============================================================================\n   14: # METHOD 1: Partition-based (from main script)\n   15: # ============================================================================\n   16: def partitions_into_pairs(s):\n   17:     s = sorted(s)\n   18:     if len(s) == 0:\n   19:         yield []\n   20:         return\n   21:     if len(s) == 2:\n   22:         yield [(s[0], s[1])]\n   23:         return\n   24:     first = s[0]\n   25:     rest = s[1:]\n   26:     for idx, partner in enumerate(rest):\n   27:         pair = (first, partner)\n   28:         remaining = rest[:idx] + rest[idx+1:]\n   29:         for sub_partition in partitions_into_pairs(remaining):\n   30:             yield [pair] + sub_partition"
+    },
+    {
+      "anchor_id": "prov_40",
+      "anchor_type": "data_provenance",
+      "name": "gb_debug2",
+      "script_path": "session-21/s21c_gb_debug2.py",
+      "session": "s21c",
+      "inputs": "C:/sandbox/Ainulindale Exflation/computations/_shared/r20a_riemann_tensor.npz",
+      "outputs": "",
+      "source_file": "computations/session-21/s21c_gb_debug2.py",
+      "source_context_30_lines": "<name 'gb_debug2' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: Debug part 2: Check if R_abcd is in coordinate (left-invariant) frame vs ON frame.\n    3: If in LI frame, the Euler density computation needs the metric determinant.\n    4: \"\"\"\n    5: \n    6: import numpy as np\n    7: \n    8: d = np.load('C:/sandbox/Ainulindale Exflation/computations/_shared/r20a_riemann_tensor.npz', allow_pickle=True)\n    9: tau_vals = d['tau']\n   10: R_abcd = d['R_abcd']\n   11: Ric = d['Ric']\n   12: R_scalar = d['R_scalar']\n   13: \n   14: # KEY TEST: If the Riemann tensor is in the LEFT-INVARIANT (LI) frame with metric g_ab,\n   15: # then contractions need the inverse metric. If it's in the ON frame, contractions use delta.\n   16: #\n   17: # At tau=0: g_LI = 3*I_8. In LI frame, Ric_{ab} = R_{cabc} (or similar) but this gives\n   18: # Ric in the LI frame, and R_scalar = g^{ab} Ric_{ab} = (1/3) Tr(Ric_LI).\n   19: #\n   20: # Test: if LI frame, R = (1/3) * sum_a Ric_{aa} = (1/3) * 8 * Ric_{11}\n   21: # At tau=0: R_scalar = 2.0. If Ric_{aa} = 0.25 in LI, then (1/3)*8*0.25 = 0.667 != 2.0.\n   22: # If ON frame: R = sum Ric_{aa} = 8*0.25 = 2.0. MATCHES.\n   23: # So Ric is in ON frame.\n   24: \n   25: # But wait: check at tau=0.5.\n   26: # In LI frame with g = 3*diag(e^{2*0.5}*[3 dirs], e^{-2*0.5}*[4 dirs], e^{0.5}*[1 dir])\n   27: # = 3*diag(e, e, e, e^{-1}, e^{-1}, e^{-1}, e^{-1}, e^{0.5})\n   28: # Ric values at tau=0.5: [0.464, 0.464, 0.464, 0.161, 0.161, 0.161, 0.161, 0.250]\n   29: # R = sum = 3*0.464 + 4*0.161 + 0.250 = 1.393 + 0.645 + 0.250 = 2.288\n   30: # R_scalar at tau=0.5: 2.288. MATCHES (so it IS ON frame for Ric)."
+    }
+  ]
+}

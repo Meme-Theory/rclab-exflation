@@ -1,97 +1,95 @@
 # Sagan-Empiricist Agent Memory
 
-## Project Context
-- Role: Sole probability estimator; empirical gatekeeper demanding testable predictions and statistical rigor
-- Reference corpus: 30+ papers in `C:\sandbox\Ainulindale Exflation\researchers\Sagan\`
-- Unified constraint map: `.claude/agent-memory/constraint-map.md` (shared by all agents)
-- **Session lessons detail**: `session-lessons-detail.md` -- S32-S43 detailed lessons
-- **S44 assessment**: `sessions/archive/session-44/s44_sagan_assessment.md`
+## Role
+- Sole probability estimator; empirical gatekeeper for testable predictions
+- Reference corpus: 30+ papers in `researchers/Sagan/` (full library; 6 prior gaps filled)
+- Constraint map: `sessions/framework/registry/` (project-level, NOT in agent memory)
 
-## Structural Successes (BF = 25-55)
-10 zero-parameter structural predictions matching SM: KO-dim=6, SM quantum numbers,
-CPT, AZ class BDI, u(2) massless, C^2 massive, SM sectors lightest, spectral gap,
-block-diagonality, Z_3 = 10+9+9. Plus 5 quantitative matches and 3 qualitative.
+## Methodology (compact)
+1. Pre-registration (Venus Rule): only pre-registered gates move probability
+2. BF = (prior predictive range) / (posterior width); NOT small discount numbers
+3. Joint probability = product of individual gate BFs (not arithmetic mean)
+4. Closures STRENGTHEN survivors (eliminate wrong mechanisms is progress)
+5. Constraint grouping: same root cause = ONE entry, not N
+6. Prerequisite gates: BF cap 1.5-2.0 (not full confirmation)
+7. Accommodation discount 0.6x for wide brackets on KNOWN observables
+8. Zero-param geometric prediction: full BF (no postdiction discount)
+9. Pipeline reliability 0.85x for 3+ formula errors per session
+10. Scorekeeper bias check: ALWAYS test both directions (recurrent S22-24, S43)
 
-## Probability Checkpoints (sole estimator, pre-registered gates only)
-- Prior: 2-5%. KO-dim=6: 10-15%. SM quantum numbers: 25-35%. S19d: 45-52% (PEAK).
-- S22d: 27%. S23a: 14%. S24a: 10%. S25: 8-12%.
-- S33b: 18%. S34+S35: 32%. S36: 12%. S40: 8-12%.
-- S42: 18% (11-30%). BF~3.0. Level 3 dark sector.
-- S43 original: 6% (3-10%). RETRACTED -- scorekeeper bias.
-- S43 redux: 12% (8-16%). BF~1.14.
-- **S44: 23% (13-37%). BF~2.18.** G_N triple convergence, CDM algebraic, n_s crisis deepened.
-- **Rule**: No probability movement without a pre-registered gate firing.
+Hardened rules (do NOT duplicate here):
+- Pre-registration discipline -> `.claude/rules/epistemic-discipline.md`
+- EVOI prioritization -> `.claude/rules/evoi-prioritization.md`
+- PASS/FAIL parity -> `.claude/rules/math-scripts.md`
+- v3 closure recovery -> `.claude/rules/v3-closure-recovery.md`
+- Cross-pillar bridges -> `.claude/rules/cross-pillar-bridge-anatomy.md`
 
-## S44 Key Results (2026-03-15)
-- G_N: 3 routes agree within factor 3 (Sakharov 2.3x, bosonic 61/20, SA by construction)
-- CDM: T^{0i}=0 algebraic, 5 independent proofs, zero free params
-- n_s: CRISIS. epsilon_H ratio invariance theorem closes ENTIRE amplitude-projection class
-- CC: 110.5 OOM gap (trace-log x EIH singlet). Fine-tuning 10^{-121}, not impossibility
-- Vol(SU(3)) correction: 8880.9->1349.7. M_KK tension 0.83->0.013 decades. PROVISIONAL
-- 3 formula errors caught (Sakharov normalization, Stieltjes ordering, Vol(SU3))
-- 68 total closures, 7 new this session
-- Make-or-break: KZ-NS-45 (Bogoliubov spectrum for n_s)
+## Probability Timeline (sole estimator)
+Tracked through S69 only (sessions S70+ have no Sagan formal assessment yet):
 
-## Surviving Solution Space (Post-S44)
-- CC: unsolved at 110.5 OOM. q-theory and unexpanded SA are only routes
-- n_s: epsilon_H theorem closes all amplitude-projection. KZ Bogoliubov ONLY surviving route
-- DM: CDM algebraic. DM/DE ratio 2.7x (tractable via alpha_eff)
-- G_N: RESOLVED (triple convergence). M_KK agreement PROVISIONAL (Vol audit needed)
-- First-sound 325 Mpc: mechanism valid, SNR=0.16 (undetectable)
-- Venus standard: STILL UNMET. 44 sessions, zero confirmed external predictions
+| Session | P_post | BF | Note |
+|:--------|:------:|:--:|:-----|
+| Prior | 2-5% | -- | Initial |
+| S19d | 45-52% | -- | PEAK |
+| S22d | 27% | -- | Block-diag, Trap 3 |
+| S24a | 10% | -- | Venus Moment |
+| S25 | 8-12% | -- | Panel low |
+| S35 | 32% | -- | Mechanism chain |
+| S40 | 8-12% | -- | Lava deficit |
+| S43redux | 12% | -- | Scorekeeper-corrected |
+| S44 | 23% | 2.18 | G_N triple, CDM algebraic |
+| S57 | 22% (13-35%) | 4.0 | First DM bracket from geometry |
+| S61 | 24% | 1.50 | Higgs 134 GeV (1 of 5) |
+| S65 | ~24% | ~1.0 | n_s, CC permanent |
+| S69 | 22% | 1.0 | Neutral (accommodations) |
 
-## Empirical Methodology (17 principles)
-1. Venus method: Competing hypotheses against same data
-2. Galileo method: Four independent lines of evidence
-3. TTAPS method: Quantitative predictions, acknowledge limitations
-4. Parameter counting: M data - N params = degrees of freedom
-5. Bayes factors: 3 = barely mentioning, 10 = substantial, 100 = decisive
-6. Baloney Detection Kit: 6-criterion systematic evaluation
-7. Pre-registration: Venus Rule -- pre-register, compute, honor result
-8. Prerequisite-vs-confirmation: Conditions met != outcome confirmed
-9. Anti-confirmation bias (Redux): Same rigor to negative conclusions as positive
-10. Constraint grouping: Same root cause = one entry, not inflated count
-11. Bookkeeping separation: Constraint map is reference, not narrative
-12. Evidence pre-registration: Only pre-registered gate results move probability
-13. P(constraint | correct) is nonzero: Model expected constraints under correct framework
-14. Sole estimator rule: Only Sagan produces probability estimates
-15. Closures are constraints, not failures: BF~1.0 unless last path closed
-16. Self-correction via prior correction: Retracted results removed from prior, not penalized twice
-17. **Pipeline reliability discount**: 3+ formula errors in one session = 0.85x BF (S44 new)
+**Rule**: No probability movement without pre-registered gate.
+**Note**: gate-counting BF may underestimate; methodology under review at `sessions/framework/registry/evoi-framework.md`.
 
-## 5-Level Evidence Hierarchy (Post-S44)
-1. Internal consistency: **STRONG** (14+ permanent results)
-2. Structural necessity: **ACHIEVED**
-3. Quantitative predictions (internal): **STRENGTHENED** (G_N triple, CDM algebraic, DM/DE 2.7x)
-4. Novel predictions (external): **ONE CANDIDATE, UNTESTABLE** (first-sound 325 Mpc, SNR=0.16)
-5. Independent confirmation: **FUTURE**
+## Structural Successes (BF = 25-55, joint)
+10 zero-parameter geometric predictions matching SM exactly: KO-dim=6, SM quantum
+numbers, CPT, AZ class BDI, u(2) massless, C^2 massive, SM sectors lightest,
+spectral gap, block-diagonality, Z_3 = 10+9+9. Plus 5 quantitative + 3 qualitative.
 
-## Session Lessons (S44-specific)
-- Formula provenance is the systematic blind spot: arithmetic correct, formulas wrong
-- Cross-check agents endorse wrong formulas (correlated failure mode)
-- Nazarewicz formula audit protocol: units, dimensions, limiting case, original citation
-- Vol(SU(3)) errors can persist across sessions (S42->S44)
-- BF for structural-not-predictive results: discount for M_KK-defined quantities
-- Adversarial BF adjustment: always check P(result | null hypothesis)
-- Lava deficit pattern: 0.8x additional discount (80% consistency gates, ~0% prediction gates)
+## Surviving Solution Space (Post-S69 snapshot; verify against permanent-results-registry for current)
+- CC: 117 OOM gap PERMANENT (a_0/a_2=C/R, S65). No path identified.
+- n_s: 0.9590 (1.40 sigma). Cutoff = effective free param.
+- Spectral running: alpha_s "5.8 sigma contradiction" (S65/S69 memory) RESOLVED S93 W7-1 (PASS) as channel artifact. Two scale-separated alpha_s: substrate-distance -0.08587279 (s=3 Mellin, FI-class, FROZEN) vs Goldstone-pivot ~0; deg(T_BZ->pivot)=+2 decides. Pivot image +0.67sigma consistent; substrate value awaits CMB-S4 (~34sigma reach). NO LONGER a contradiction.
+- A_s (S116 W1, supersedes old "0.485 OOM / 3.06x BELOW Planck"): squeeze now ABOVE Planck
+  (+0.864 OOM box-delta = 7.3x, CFB1 PASS L_max POINT; or +0.196 slow-roll-MS = 1.57x). Magnitude
+  is NOT a stake-claim: 1 fitted Gamma (CF2 FAIL, irreducibly fitted) + 1 unresolved 410.7sigma
+  fork (transfer prefactor N, CF-S117). Gamma_fit=0.512 closes NEITHER branch to Planck (box-delta
+  product +0.574 OOM over; required Gamma=0.137). Genuine 0-param content = {scale ~1 OOM (BF 3-5)
+  + over-production sign (Gamma<=1 forces it, fork-robust) + tilt-flatness alpha_s~0 (NEW-1/OQ4,
+  CMB-S4-testable)}. Absolute magnitude recoverable iff CF-S117 (N-stable) AND a substrate-Gamma both PASS.
+- HEURISTIC (A_s-derived, reusable): (1) a "PERMANENT 3-axis FLOOR" inequality can be observationally
+  INERT — A_s>A_s^BD is a 0.61 ppm self-comparison over the framework's OWN Bunch-Davies vacuum, NOT
+  the over-Planck overproduction; never cite a self-comparison sign-theorem as the observational
+  prediction. (2) A "NOT substrate-derivable" FAIL is construction-SCOPED, not universal: CF2 scanned
+  near-horizon-barrier SCALES only; the dimensionally-natural moment-ratio/Connes-distance Gamma
+  (d_A=0, even-morphism sector, NOT parity-foreclosed) is untested. A one-corridor FAIL is a mapped
+  boundary, not a wall (surrogate-vs-canonical, substrate-first-canonical-sourcing.md §iv-bis).
+- Higgs: 127.51 GeV (S69 BCS-resolved). 1.93% from observed.
+- alpha_s(M_Z): 0.022, persistent 5.4x failure. NOT BCS-caused.
+- DM: f_DM=0.947 vulnerable. Omega_DM h^2 bracket [0.017, 0.188].
+- Off-Jensen: PERMANENT (Schur). Jensen line = valley attractor.
+- Venus standard: STILL NOT MET (69 sessions). w_0 NOT derived (Volovik partition deferred 12+).
+- NROY: 0% under current partition.
+- w_0 branch-iv (S100b INFO): L-stability UNVERIFIED — post-S86 formulation defines NO w_0(L)
+  evaluator (sole L-leg = retired R_JE slot; exact reduction w_0=f(R_JE)). 4 candidate
+  recombinations span spreads 0.000830-0.036327 crossing 0.025 = decision-relevant unpinned
+  freedom -> forced INFO, not a forced number. PRIMARY=A=-0.918 re-confirmed (zero
+  data-proximity). Method: sensitivity-table-over-unpinned-choices is the honest demonstrator
+  when a formulation gap blocks a pre-registered test; CAC offsets can silently absorb
+  multi-sigma anchor mismatches (legacy C0: 6.2 sigma) — demand the offset's physical
+  derivation before accepting any CAC-form stability PASS. CF-S101 evaluator-derivation queued.
 
-## Landau Classification Review (S44 collab)
-- Reviewed 509-line mapping doc: `sessions/framework/landau-classification-of-phonon-exflation.md`
-- Review output: `sessions/archive/session-44/session-44-quicklook-sagan-collab.md`
-- BF = 1.0 (no probability movement). Mapping is reference, not evidence.
-- 10 key entries: 2 partial evidence, 3 constraints, 4 relabelings, 1 misleading
-- DM/DE "universality" argument: O(1) is trivial (single-scale), not from universality
-- One-body/many-body partition: correct tautology (SA is one-body by definition)
-- OCC-SPEC-45 is the mapping's most consequential prediction (derived from it)
-- 3 missed limitations: no partition function, Jensen ansatz, non-unique mapping
-- **Rule 18: Mappings are not evidence.** Relabeling framework concepts in CM language = BF 1.0 unless the mapping generates a NEW testable prediction that would not exist without it.
+## S84 W10b-122 INFO (biographical-framing audit)
+survival=0.7778=21/27 vs PASS_thr=0.80; kappa_sample=1.00; sym_shift=0.00.
+ALL 21 quantitative/identity claims survive neutral-prompt strip (math + canonical
+constants + S83 verdicts). 6 organizational claims and 3 workshop-process claims
+degrade. Methodology: workshop wrap-ups carry ~22% organizational over-content.
 
-## Key Reusable Rules (all sessions)
-- Always verify agent summaries against their scripts
-- Scope errors in generator summation can reverse closures; apply 0.6x BF discount
-- Self-consistency is load-bearing: MF>1 does NOT guarantee SC>1
-- Mixed sessions (PASS+FAIL) = partially-correct framework signature
-- Prerequisite-vs-confirmation: consistency gates != confirmations (BF~1.5-2.0 each)
-- Venus standard NOT MET: 44 sessions, zero novel predictions confirmed
-- **Scorekeeper bias recurrence**: S22-S24 and S43. WATCH FOR THIS.
-- **KZ-NS-45 is the decisive gate**: PASS -> BF 10-20 (P~60%+). FAIL -> BF 0.3 (P~8%).
+## Linked Files
+- [Session lessons S32-S69](session-lessons-all.md) — calibration corpus, BF heuristics
+- [S57 BF derivation](s57_probability_update.md) — central methodology calibration

@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 19,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_181",
+      "anchor_type": "data_provenance",
+      "name": "dphys_kosmann_legacy",
+      "script_path": "session-34/s34a_dphys_kosmann_legacy.py",
+      "session": "s34a",
+      "inputs": "",
+      "outputs": "session-34/s34a_dphys_kosmann_legacy.npz, session-34/s34a_dphys_kosmann_legacy.png",
+      "source_file": "computations/session-34/s34a_dphys_kosmann_legacy.py",
+      "source_context_30_lines": "<name 'dphys_kosmann_legacy' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: Session 34a: DPHYS-34a-2 -- Kosmann Kernel Under D_phys Eigenspinors\n    3: =====================================================================\n    4: \n    5: CONTEXT:\n    6:   DPHYS-34a-1 PASS: B2 fold survives inner fluctuations (d2=1.226 at phi=gap).\n    7:   The D_phys eigenvectors rotate relative to bare D_K eigenvectors under phi,\n    8:   mixing branches B1/B2/B3.\n    9: \n   10:   THIS COMPUTATION: Reproject the Kosmann pairing kernel V_nm into the D_phys\n   11:   eigenbasis. The K_a matrices (Kosmann-Lichnerowicz derivatives along Killing\n   12:   fields) are UNCHANGED -- they are properties of the isometry algebra. What\n   13:   changes is the BASIS: D_phys eigenspinors acquire admixtures from phi.\n   14: \n   15:   Critical question: does V(B2,B2) remain nonzero (and large enough for BCS)\n   16:   when B2 eigenspinors acquire B3/B1 admixture from phi?\n   17: \n   18: METHOD:\n   19:   1. Reconstruct D_phys = D_K + phi + J*phi*J^{-1} at each (tau, phi_VEV).\n   20:   2. Diagonalize to get D_phys eigenvectors (evecs_phys) in original basis.\n   21:   3. Compute overlap U = evecs_bare^H @ evecs_phys (bare-to-D_phys rotation).\n   22:   4. Transform K_a: K_a^{phys}_{nm} = (U^H K_a^{bare} U)_{nm}.\n   23:   5. Compute V_nm(phi) = sum_{a=0}^7 |K_a^{phys}_{nm}|^2.\n   24:   6. Extract V(B2,B2)(phi), decomposed by generator type.\n   25:   7. Sweep |phi_VEV| from 0 to 0.20.\n   26: \n   27: MANDATORY CROSS-CHECK:\n   28:   At phi=0, U = I (up to phases), so V_nm(phi=0) must reproduce the raw\n   29:   Kosmann kernel sum_a |K_a^{bare}_{nm}|^2.\n   30: "
+    },
+    {
+      "anchor_id": "prov_182",
+      "anchor_type": "data_provenance",
+      "name": "dphys_thouless",
+      "script_path": "session-34/s34a_dphys_thouless.py",
+      "session": "s34a",
+      "inputs": "",
+      "outputs": "session-34/s34a_dphys_thouless.npz, session-34/s34a_dphys_thouless.png",
+      "source_file": "computations/session-34/s34a_dphys_thouless.py",
+      "source_context_30_lines": "  865:         if np.isfinite(pc):\n  866:             save_dict[f'wall_{w_idx}_phi_c'] = pc\n  867: \n  868:         if w_idx in sc_results:\n  869:             save_dict[f'wall_{w_idx}_sc_Delta'] = sc_results[w_idx]['Delta']\n  870:             save_dict[f'wall_{w_idx}_sc_trivial'] = sc_results[w_idx]['trivial']\n  871:             save_dict[f'wall_{w_idx}_sc_D_max'] = sc_results[w_idx]['D_max']\n  872: \n  873:     out_npz = os.path.join(SCRIPT_DIR, 's34a_dphys_thouless.npz')\n  874:     np.savez_compressed(out_npz, **save_dict)\n  875:     print(f\"\\nSaved: {out_npz}\")\n  876:     print(f\"File size: {os.path.getsize(out_npz) / 1024:.1f} KB\")\n  877: \n  878:     # ==================================================================\n  879:     # PLOT\n  880:     # ==================================================================\n  881:     fig, axes = plt.subplots(2, 2, figsize=(14, 10))"
+    },
+    {
+      "anchor_id": "prov_183",
+      "anchor_type": "data_provenance",
+      "name": "qa_11pct",
+      "script_path": "session-34/s34a_qa_11pct.py",
+      "session": "s34a",
+      "inputs": "",
+      "outputs": "session-34/s34a_qa_11pct.npz, session-34/s34a_qa_11pct.png",
+      "source_file": "computations/session-34/s34a_qa_11pct.py",
+      "source_context_30_lines": "  971: \n  972:     # Minimum input\n  973:     'rho_needed': rho_needed,\n  974:     'rho_ratio_needed': rho_ratio_needed,\n  975:     'V_ratio_needed': V_ratio_needed,\n  976:     'xi_needed': xi_needed,\n  977: }\n  978: \n  979: out_npz = os.path.join(SCRIPT_DIR, 's34a_qa_11pct.npz')\n  980: np.savez_compressed(out_npz, **save_dict)\n  981: print(f\"Saved: {out_npz}\")\n  982: print(f\"File size: {os.path.getsize(out_npz) / 1024:.1f} KB\")\n  983: \n  984: \n  985: # ======================================================================\n  986: #  PLOT\n  987: # ======================================================================"
+    },
+    {
+      "anchor_id": "prov_184",
+      "anchor_type": "data_provenance",
+      "name": "rpa_curvature",
+      "script_path": "session-34/s34a_rpa_curvature.py",
+      "session": "s34a",
+      "inputs": "",
+      "outputs": "session-34/s34a_rpa_curvature.npz, session-34/s34a_rpa_curvature.png",
+      "source_file": "computations/session-34/s34a_rpa_curvature.py",
+      "source_context_30_lines": "  507:         'd2S_at_gap': np.array(d2S_at_gap),\n  508:         'ratio_at_gap': np.array(ratio_at_gap),\n  509:         'margin_at_gap': np.array(margin_at_gap),\n  510:         'min_d2S_any_phi': np.array(min_d2S_any_phi),\n  511:         'gap_b2_b3': np.array(GAP_B2_B3),\n  512:         'verdict': np.array(verdict),\n  513:         'worst_direction': np.array('H_j'),\n  514:     }\n  515:     out_npz = os.path.join(SCRIPT_DIR, 's34a_rpa_curvature.npz')\n  516:     np.savez(out_npz, **save_dict)\n  517:     print(f\"\\n  Saved: {out_npz}\")\n  518: \n  519:     # ================================================================\n  520:     #  Plot\n  521:     # ================================================================\n  522:     fig, axes = plt.subplots(2, 2, figsize=(14, 10))\n  523: "
+    },
+    {
+      "anchor_id": "prov_185",
+      "anchor_type": "data_provenance",
+      "name": "tesla_11pct",
+      "script_path": "session-34/s34a_tesla_11pct.py",
+      "session": "s34a",
+      "inputs": "",
+      "outputs": "session-34/s34a_tesla_11pct.npz, session-34/s34a_tesla_11pct.png",
+      "source_file": "computations/session-34/s34a_tesla_11pct.py",
+      "source_context_30_lines": "  989:     # Sensitivity\n  990:     'v_min_scan': v_min_scan,\n  991:     'M_max_scan': M_max_scan,\n  992: }\n  993: \n  994: if len(crossings) > 0:\n  995:     save_dict['v_crit'] = v_crit\n  996: \n  997: out_npz = os.path.join(SCRIPT_DIR, 's34a_tesla_11pct.npz')\n  998: np.savez_compressed(out_npz, **save_dict)\n  999: print(f\"Saved: {out_npz}\")\n 1000: print(f\"File size: {os.path.getsize(out_npz) / 1024:.1f} KB\")\n 1001: \n 1002: \n 1003: # ======================================================================\n 1004: #  PLOT\n 1005: # ======================================================================"
+    },
+    {
+      "anchor_id": "prov_186",
+      "anchor_type": "data_provenance",
+      "name": "tesla_validation",
+      "script_path": "session-34/s34a_tesla_validation.py",
+      "session": "s34a",
+      "inputs": "",
+      "outputs": "session-34/s34a_tesla_validation.npz, session-34/s34a_tesla_validation.png",
+      "source_file": "computations/session-34/s34a_tesla_validation.py",
+      "source_context_30_lines": "  804:     'M_max_optimized_wall2': best_Mmax_opt,\n  805:     'spectral_upper_bound': M_evals[0],\n  806:     # Verdict\n  807:     'trap33b_retraction_justified': True,\n  808:     'dphys34a3_confirmed': True,\n  809:     'basis_optimization_closes_gap': best_Mmax_opt >= 1.0,\n  810: }\n  811: \n  812: out_npz = os.path.join(SCRIPT_DIR, 's34a_tesla_validation.npz')\n  813: np.savez_compressed(out_npz, **save_dict)\n  814: print(f\"Saved: {out_npz}\")\n  815: print(f\"File size: {os.path.getsize(out_npz) / 1024:.1f} KB\")\n  816: \n  817: # ======================================================================\n  818: #  PLOT\n  819: # ======================================================================\n  820: "
+    },
+    {
+      "anchor_id": "prov_187",
+      "anchor_type": "data_provenance",
+      "name": "trap1_reeval",
+      "script_path": "session-34/s34a_trap1_reeval.py",
+      "session": "s34a",
+      "inputs": "",
+      "outputs": "session-34/s34a_trap1_reeval.npz, session-34/s34a_trap1_reeval.png",
+      "source_file": "computations/session-34/s34a_trap1_reeval.py",
+      "source_context_30_lines": "  441: \n  442:     # Save off-diagonal V(gap,n) at tau=0.20\n  443:     V_gn_020, V_decomp_020 = compute_V_gap_offdiag(kosmann, 3)\n  444:     save_data['V_gap_offdiag_tau020'] = V_gn_020\n  445:     save_data['V_gap_offdiag_SU2_tau020'] = V_decomp_020['SU2']\n  446:     save_data['V_gap_offdiag_C2_tau020'] = V_decomp_020['C2']\n  447:     save_data['V_gap_offdiag_U1_tau020'] = V_decomp_020['U1']\n  448: \n  449:     output_npz = os.path.join(SCRIPT_DIR, \"s34a_trap1_reeval.npz\")\n  450:     np.savez_compressed(output_npz, **save_data)\n  451:     print(f\"Saved: {output_npz}\")\n  452:     print(f\"File size: {os.path.getsize(output_npz) / 1024:.1f} KB\")\n  453:     print()\n  454: \n  455:     # ==================================================================\n  456:     # PLOT\n  457:     # =================================================================="
+    },
+    {
+      "anchor_id": "prov_188",
+      "anchor_type": "data_provenance",
+      "name": "b2_coherence",
+      "script_path": "session-35/s35_b2_coherence.py",
+      "session": "s35",
+      "inputs": "",
+      "outputs": "session-35/s35_b2_coherence.npz, session-35/s35_b2_coherence.png",
+      "source_file": "computations/session-35/s35_b2_coherence.py",
+      "source_context_30_lines": "   47: # ======================================================================\n   48: #  Paths\n   49: # ======================================================================\n   50: SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))\n   51: DATA_DIR = SCRIPT_DIR\n   52: \n   53: SINGLET_FILE = os.path.join(DATA_DIR, \"s23a_kosmann_singlet.npz\")\n   54: VH_FILE = os.path.join(DATA_DIR, \"s35a_vh_impedance_arbiter.npz\")\n   55: OUTPUT_NPZ = os.path.join(DATA_DIR, \"s35_b2_coherence.npz\")\n   56: OUTPUT_PNG = os.path.join(DATA_DIR, \"s35_b2_coherence.png\")\n   57: \n   58: # ======================================================================\n   59: #  Constants\n   60: # ======================================================================\n   61: TAU_VALUES = np.array([0.0, 0.10, 0.15, 0.20, 0.25, 0.30, 0.35, 0.40, 0.50])\n   62: \n   63: # Full 16-mode index assignments (eigenvalues sorted ascending):"
+    },
+    {
+      "anchor_id": "prov_189",
+      "anchor_type": "data_provenance",
+      "name": "ed_corrected_dos",
+      "script_path": "session-35/s35_ed_corrected_dos.py",
+      "session": "s35",
+      "inputs": "",
+      "outputs": "session-35/s35_ed_corrected_dos.npz, session-35/s35_ed_corrected_dos.png",
+      "source_file": "computations/session-35/s35_ed_corrected_dos.py",
+      "source_context_30_lines": "  609: \n  610: # V matrices\n  611: save_dict['V_5x5_bare'] = V_5x5_bare\n  612: save_dict['V_5x5_gap'] = V_5x5_gap\n  613: save_dict['E_5'] = E_5\n  614: save_dict['retention_ratio'] = retention_ratio\n  615: save_dict['B1B2_ratio'] = B1B2_ratio\n  616: \n  617: out_npz = os.path.join(SCRIPT_DIR, 's35_ed_corrected_dos.npz')\n  618: np.savez_compressed(out_npz, **save_dict)\n  619: print(f\"\\nSaved: {out_npz}\")\n  620: print(f\"File size: {os.path.getsize(out_npz) / 1024:.1f} KB\")\n  621: \n  622: \n  623: # ======================================================================\n  624: #  PLOT\n  625: # ======================================================================"
+    },
+    {
+      "anchor_id": "prov_190",
+      "anchor_type": "data_provenance",
+      "name": "impedance_wavematch",
+      "script_path": "session-35/s35_impedance_wavematch.py",
+      "session": "s35",
+      "inputs": "",
+      "outputs": "session-35/s35_impedance_wavematch.npz, session-35/s35_impedance_wavematch.png",
+      "source_file": "computations/session-35/s35_impedance_wavematch.py",
+      "source_context_30_lines": "   45: SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))\n   46: DATA_DIR = SCRIPT_DIR\n   47: \n   48: SINGLET_FILE = os.path.join(DATA_DIR, \"s23a_kosmann_singlet.npz\")\n   49: UMKLAPP_FILE = os.path.join(DATA_DIR, \"s32a_umklapp_vertex.npz\")\n   50: PRIOR_FILE   = os.path.join(DATA_DIR, \"s35a_vh_impedance_arbiter.npz\")\n   51: MODULUS_FILE = os.path.join(DATA_DIR, \"s33w3_modulus_equation.npz\")\n   52: \n   53: OUTPUT_NPZ = os.path.join(DATA_DIR, \"s35_impedance_wavematch.npz\")\n   54: OUTPUT_PNG = os.path.join(DATA_DIR, \"s35_impedance_wavematch.png\")\n   55: \n   56: # ======================================================================\n   57: #  Constants\n   58: # ======================================================================\n   59: TAU_VALUES = np.array([0.0, 0.10, 0.15, 0.20, 0.25, 0.30, 0.35, 0.40, 0.50])\n   60: TAU_WALL_LO = 0.15\n   61: TAU_WALL_HI = 0.25"
+    }
+  ]
+}

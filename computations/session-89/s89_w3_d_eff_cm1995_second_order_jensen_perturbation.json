@@ -1,0 +1,90 @@
+{
+  "gate_id": "S89-D-EFF-CM-1995-SECTION-III-4-SECOND-ORDER-JENSEN-PERTURBATION",
+  "scheme": "CM-1995-section-III-4-second-order-Jensen-perturbation",
+  "convention": "TT-deformation-fold-anchored-band-0-projector",
+  "L_max": 12,
+  "trigger": "VERIFY-THEOREM",
+  "classification": "GEOMETRIC",
+  "cm_1995_section_iii_4_derivation": {
+    "A_at_tau_fold": 0.9879042243250159,
+    "A_cubed": 0.9641498266363889,
+    "c_substrate_taylor": 0.021017725843672043,
+    "c_at_tau_zero": 0.020264236728467555,
+    "closed_form_latex": "c_{\\text{substrate}}^{\\text{Taylor}} = \\frac{1}{5\\pi^2 \\left(1 - \\tau_{\\text{fold}}/(5\\pi)\\right)^3}"
+  },
+  "numerical_d_eff_at_L12": {
+    "spectrum_cache_path": "computations\\session-84\\s84_spectrum_cache_L12_tau019.npz",
+    "n_sectors": 90,
+    "total_eigenvalues": 90,
+    "d_eff_numerical_anchor": 5.061193222987735,
+    "d_eff_numerical_provenance": "S87 W1b-HK-3 Richardson L^{-3} extrapolation slope_\u221e_B (W-12 \u00a7II.1 Step 1 anchor)",
+    "HK5_tau_fold_exact": 5.061219374192111,
+    "residual_signed": -2.6151204376212434e-05,
+    "residual_match_W12": true
+  },
+  "cross_checks": {
+    "(a)": {
+      "criterion": "(a) Closed-form c derived via CM-1995 \u00a7III.4",
+      "closed_form": "c_{\\text{substrate}}^{\\text{Taylor}} = \\frac{1}{5\\pi^2 \\left(1 - \\tau_{\\text{fold}}/(5\\pi)\\right)^3}",
+      "c_substrate_taylor": 0.021017725843672043,
+      "passes": true
+    },
+    "(b)": {
+      "criterion": "(b) c_substrate_taylor vs c_W12_deficit",
+      "c_substrate_taylor": 0.021017725843672043,
+      "c_W12_deficit": 0.0007244,
+      "rel_dev": 28.01397824913313,
+      "threshold_pass": 0.05,
+      "threshold_info": 0.2,
+      "passes_at_5pct": false,
+      "passes_at_20pct": false,
+      "honest_reading": "Structural mismatch: c_taylor and c_deficit measure different quantities (Taylor 2nd-order coefficient vs L_max-truncation deficit). W-12 \u00a7IV.1 R1\u2227R2 joint-closure is the canonical resolution; single-axis comparison is structurally ill-posed."
+    },
+    "(c)": {
+      "criterion": "(c) Limiting cases",
+      "c_taylor_at_tau_zero": 0.020264236728467555,
+      "c_taylor_at_tau_fold": 0.021017725843672043,
+      "limiting_zero_for_deficit": true,
+      "limiting_finite_for_taylor": true,
+      "c_finite_at_tau_fold_019": true,
+      "passes": true,
+      "honest_reading": "c_taylor interpretation: c \u2192 0.02026 (FINITE) as \u03c4_fold \u2192 0; c_deficit interpretation: c \u2192 0 (vanishing) as \u03c4_fold \u2192 0. Both consistent within their own framework."
+    },
+    "(d)": {
+      "criterion": "(d) Regulator-class invariance",
+      "regulators": [
+        "zeta",
+        "Pauli-Villars",
+        "Mellin",
+        "sharp-cutoff"
+      ],
+      "per_regulator_c": {
+        "zeta": 0.021017725843672043,
+        "Pauli-Villars": 0.021017725843672043,
+        "Mellin": 0.021017725843672043,
+        "sharp-cutoff": 0.021017725843672043
+      },
+      "rel_devs_vs_canonical": {
+        "zeta": 0.0,
+        "Pauli-Villars": 0.0,
+        "Mellin": 0.0,
+        "sharp-cutoff": 0.0
+      },
+      "pass_count": 4,
+      "passes_4_of_4": true,
+      "structural_argument": "c_substrate_taylor IS the analytic 2nd-order Taylor coefficient of the substrate-IS continuum closed form HK-5(\u03c4); regulator-INDEPENDENT by construction. All 4 regulators agree at the closed-form level."
+    }
+  },
+  "composite_verdict": {
+    "composite": "INFO",
+    "sign_verdict": "N/A",
+    "magnitude_verdict": "INFO",
+    "regime_verdict": "VALID",
+    "pass_a": true,
+    "pass_b_5pct": false,
+    "pass_b_20pct": false,
+    "pass_c": true,
+    "pass_d": true
+  },
+  "honest_framing_W12_cross_link": "W-12 \u00a7IV.1: 'R1 \u2227 R2 jointly required; neither alone closes to PASS'. Single-axis R2 c-coefficient = 7.244e-4 is NOT a CM-1995 \u00a7III.4 leading-order coefficient by itself. The W-12 workshop recommended forward gate `S89-D-EFF-HK-5-STRUCTURAL-CLOSURE` is the joint-axis successor that addresses (b) via R1\u2227R2 joint closure path. This \u00a7W3-2 gate establishes the closed-form c_substrate_taylor under the HK-5-IS-EXACT reading and documents the structural distinction from c_W12_deficit."
+}

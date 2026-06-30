@@ -1,0 +1,46 @@
+# S117 W1 — A_s Magnitude Fork Resolution Structure (plan I authored)
+
+**Artifact**: `sessions/session-plan/session-117-plan-w1.md` (I authored it AS transit-dynamics-theorist, 2026-06-28). 4 gates, theme = Q23 A_s-magnitude rate-limiter. This file is the methodological summary; the plan file is canonical.
+
+## The fork (2-member plurality, CF-W1-2 canonical reading)
+
+| Grid | 𝒩 | A_s | OOM vs Planck | Source |
+|:-----|:---|:----|:--------------|:-------|
+| ξ_KZ (KZ coherence/healing, UV) | ≈1 | 1.5367059962762235e-8 (`A_s_FW`) | **+0.864** | S111-CF-AS3a box-delta impulse-quench |
+| H̃ (TD/ζ Branch-A, IR) | 0.2148 | 3.2994e-9 | **+0.196** | inv12_w3_5 / UNIFIED-AS-79 |
+
+- Gap = 0.6682 OOM = **2·log₁₀(2.15814)** carrier-ratio backbone (Sage-exact; A_s ∝ carrier², carrier ∝ scale^{±1}).
+- ≈**410.5σ** in Planck units: (1.5367e-8 − 3.2994e-9)/0.0294e-9 (context cites 410.7σ; ~0.05% diff = A_s(H̃) rounding). Planck `A_s_CMB=2.1e-9`, σ=0.0294e-9.
+- **CF-W1-2**: cite the 2-member {+0.196,+0.864} 𝒩-gap as the live plurality. The adiabatic half ("two-cluster axis confirmed") is workshop-DEMOTED.
+
+## KEY S-1 audit correction (why GS-1 is the real resolver)
+
+The original CF-S117 𝒩-spread "regime-robustness scan" is **INTRA-grid Parker-trivial**: adiabatic invariance of |β_k|² forces 𝒩-spread ≤ 0.1 OOM for BOTH grids. It does **NOT** adjudicate the ξ_KZ-vs-H̃ grid SELECTION (the real fork). Left as written it is a load-and-compare-to-self foregone PASS (the framework's own S116-W1-AS-CF3 flagged this). The 𝒩-spread is RETAINED but DEMOTED to a consistency cross-check.
+
+## GS-1 (gate 1-2) = the fork adjudicator, plan-freeze-BLOCKING for 1-1
+
+Between-grid scale-coincidence test from DISJOINT substrate inputs: ℓ_occ=ξ_KZ vs ℓ_horizon=c_s/(aH)|_exit (c_s=v_transit/Mach, Mach=13.75; aH|_exit from H·dt_transit=0.663). Δ_scale=|log₁₀(ℓ_occ)−log₁₀(ℓ_horizon)|. Three-branch:
+- **CONVENTION-BLOCKED** (Δ_scale≤0.05): scales coincide ⇒ 0.668 carrier ratio is a normalization-convention artifact ⇒ fork dissolves, A_s single-valued.
+- **PHYSICS-SCALE-SEPARATION** (|2·Δ_scale−0.668|≤0.1): two genuine substrate scales under common deg=+2 ⇒ apply **Volovik hydrodynamic selection** (A_s = curvature/a₂-channel = hydrodynamic IR ⇒ reads at ℓ_horizon acoustic-horizon, NOT ℓ_occ coherence-length) ⇒ SELECT acoustic-horizon grid (+0.196); ξ_KZ-grid value re-typed as occupation number density (a₀/T⁰⁰).
+- **INFO-RESIDUAL-PREFACTOR** (neither): deg=+2 not the sole carrier ⇒ residual non-scale prefactor ⇒ fork STANDS, flag re-derivation.
+
+1-1 composite collapses on GS-1's branch: PASS (single-valued) iff CONVENTION-BLOCKED ∨ PHYSICS-SCALE-SEPARATION; FAIL (≈410.5σ fork stands) iff INFO-RESIDUAL-PREFACTOR. Dispatch order **1-2 → 1-1**.
+
+**GS-1 LANDED [S117 W1-2 INFO, audit d7f28d3e2cf5c22b…]: INFO-RESIDUAL-PREFACTOR ⇒ FORK STANDS.** Δ_scale=0.5325 (c_Gold primary), 2·Δ=1.065 vs fork-backbone 0.668 (residual 0.397 OOM); (aH)|_exit=k_pivot=14.3111 (exit aH=k, s77 reldev 2.5e-16); deg=+2 backbone 2·log₁₀(2.158127)=0.668154 Sage-exact (resid 0.0). NEITHER branch fires: required-c_s PHYSICS-SCALE-SEP window **[0.51640, 0.65011] M_KK** (Sage-200bit) is STRADDLED — c_BLV=0.485 below, c_Gold=0.915 above ⇒ no canonical sound speed sits in the deg=+2 fork-carrying band ⇒ a **residual non-scale prefactor** (greybody / c_sub Mellin-weight / F_amp backreaction) co-carries part of the 0.668 fork. 3He-B lab V.2 (non-gating): R_scale=ℓ_occ/ℓ_horizon=0.2934<1 conversion-invariant (micro-below-causal). carrier_exp=+1 (deg+2). sign=PASS/mag=INFO/regime=VALID. Script `computations/session-117/s117_gs1_grid_selection.py`.
+
+**1-1 T-FOLD-EXIT-NORMALIZATION LANDED [S117 W1-1 FAIL, audit 89b51de59f4fd49a…]: composite FAIL (fork stands; GS-1=INFO).** Genuine MS Radau propagation `d²v/dx²+(1−ν²/x²)v=0`, x=k/aH from 14.672→0.0125, Radau rtol=1e-10: **ν²=(z''/z)/(aH)²=2.00000000 EXACT de-Sitter** (from s77 k2_over_zppz_fold=107.636 / k_over_aH_fold²=215.27); Radau-vs-analytic-BD `(1+i/x)e^{ix}` reldev **1.27e-11** (faithful). Curvature FREEZES: |ζ|²(exit x=1)=2.0, |ζ|²(frozen x=0.0125)=1.0002, **exit/frozen=1.9997** (de-Sitter |ζ|²=ζ_∞²(1+x²) signature) ⇒ empty-WKB-leg IS correct frozen-superhorizon physics (ω²<0 for x<√2, no subhorizon WKB phase). **𝒩-spread=0.016965 OOM ≤0.1 GRID-INDEPENDENT** (5 frozen surfaces; subhorizon adiab |ω'/ω²|≤0.0257 at x=4.5 ⇒ |β_k|² Parker bound 2.9e-4 OOM) — DIRECTLY CONFIRMS the S-1 audit: 𝒩-spread is the SAME ratio for both grids, Parker-TRIVIAL, does NOT adjudicate selection. Round-trip 𝒩_ξKZ=1.0 ⇒ A_s=β²_k̂/(2π²)=1.5367059963e-8 vs A_s_FW reldev **0.0**; 𝒩_H̃=A_s(H̃)/A_s_FW=0.214708. Grid-discipline: OOM_naive_extrap=9.3737 REJECTED (TWO-SPECTRA-TWO-ROLES). SIGN: OOM_G1=+0.86437/OOM_G2=+0.19622 both >0 ⇒ over-production SIGN-ROBUST unconditionally; gap 0.66815=2·log₁₀(2.158120) Sage resid 1.66e-16; 410.46σ. **composite-precedence (load-bearing)**: regime=VALID override of generic empty-WKB⇒MARGINAL; WITHOUT it mag=FAIL∧regime=MARGINAL⇒INFO, WITH it ⇒ FAIL (fork genuinely stands). sign=PASS/mag=FAIL/regime=VALID. Script `computations/session-117/s117_t_fold_exit_normalization.py`.
+
+## Other two gates
+
+- **1-3 ROUTE-B-PW-SOCC** [COMPUTED S117 W1-3 **INFO**, audit_sha256=219802b75289933f…]: Route-B Peter-Weyl A_s with occupied-state S_occ=(1+2n̄)·S_fold (n̄=2.7358e-4, K_sub_R2=1.0005472 ⇒ S_occ lift +2.376e-4 OOM ≪0.1, so base assembly fixes the image), CC3-threaded (slope=2.000000000888, resid 8.9e-10 PASS). **RESULT: images a THIRD value OOM_RB=+0.38373** (A_s^RouteB-SOcc=5.0810e-9). Base = A_s^RouteB-vac = **A_s_BD = 5.078171e-9** (TD-canonical Route-B/BD floor, S82-W2-4/S84 AS-PIN-MAP; modern reconciled image of S66 RAW Route-B-PW crisis 2.918e-6/gap 3.143 OOM, frac_PW=3.19e-4). Neither fork member: |0.38373−0.864|=0.481, |0.38373−0.196|=0.188 (both >0.1). **K_sub-reading ROBUST**: R1-R4 (softest/mult-wtd/geomean/maxocc) ALL third-point, OOM spread 0.0017 (S_occ functional choice does NOT change the image). ⇒ A_s magnitude PLURALITY expands **2→3** (box-delta +0.864 / TD-ζ +0.196 / Route-B-GGE-modular +0.384); feeds [[s114-as-functional-selection]] PLURALISM-PERMANENT. sign=PASS/mag=INFO/regime=VALID. a_n^{ζ} Branch-A. Plan-drift (§(ii.B)): canonical_constants 8c850fd9→d884a2b5 (sibling W0-1 appended rho_s_C2=7.962), BENIGN — A_s_CMB/A_s_FW/H̃ bit-identical. Script `computations/session-117/s117_route_b_pw_socc.py`.
+- **1-4 ALT-GREYBODY** [COMPUTED S117 W1-4 **FAIL**, audit_sha256=649ce24486c60645…d66b25]: two substrate-IS bridge maps in d_A=0 even-morphism (parity-admissible §23.0(5)) BOTH MISS all 3 targets {Γ_req(box-delta)=0.13666, Γ_req(slow-roll)=0.63655, Γ_fit=0.51187} at every **knob-free** scale → composite best rel_dev=**0.1838 ≫ 0.10**. (1) **Connes** Γ=1/(λ_max−λ_min) [knob-free, one number/spectrum]: DK(s84 L12)=**0.217429**, BdG(inv12 ω_k)=**0.359756**; best 0.297 vs fit. (2) **Wodzicki a_2/a_4 moment ratio** M(s=3)/M(s=2), poleconv-A-double [a_2 pole_in_s=3/n=2, a_4 pole_in_s=2/n=4, degree −2 EVEN], a_n^{Pauli-Villars}: DK bare=**0.254545**, BdG bare=**0.417799**; best 0.184 vs fit (closest of all). **KNOB-LOCATION (durable method-note)**: the moment ratio has a HIDDEN knob = the PV regulator mass M_reg; the UV limit M_reg≥λ_max (above spectrum) recovers BARE (=miss), only M_reg IN-BULK (M_reg=M_KK=1<λ_max=5.42) tunes onto a target (M_reg=M_KK→0.5325 DK rel_dev 0.040 vs fit / 0.6389 BdG rel_dev 0.004 vs slow-roll) = moment-ratio analog of the S95 in-band V0 knob, EXCLUDED by NON-IN-BAND pin. **A "substrate-natural" spectral-moment ratio is NOT knob-free** — the regulator mass is a placement freedom equivalent to in-band barrier placement; only M_reg→∞ is genuinely substrate-natural and it recovers the bare miss. Connes distance has NO knob, misses outright. ⇒ FAIL GENERALIZES "exit-greybody NOT substrate-derivable" from INV12-W3-4 Pöschl-Teller (1 corridor) to **3 construction classes** {PT-barrier, Wodzicki-moment, Connes-distance} → structural-wall candidate (atlas-09); A_s = squeeze × FITTED Γ, A2 knob exposed, filter leg does NOT close. regime VALID (closed-form on cached spectra; distinct from S110-CF-AS2 eps_WKB BREAKDOWN). Coherent w/ [[s116_q23_as_grounding]] S116-W1-AS-CF2 (straddles 0.512 at no substrate scale) + S114/S115 PLURALISM-PERMANENT. canonical-drift §(ii.B) benign (W0-1 rho_s_C2=7.962 append, consumed values bit-identical). Script `computations/session-117/s117_alt_greybody.py`; a_n^{Pauli-Villars} + Wodzicki Res_W(s).
+
+## Regime note
+
+RESOLVED-FROZEN (89/89 frozen-superhorizon, Z_norm=1, empty WKB leg is CORRECT per S111-CF-AS3a). 1-1 declares plan-frozen-operator precedence (gate-verdicts.md): empty-WKB-leg ≠ regime BREAKDOWN — overrides the TRANSIT-PS-67 generic WKB-leg-empty⇒MARGINAL reading.
+
+## SOURCE-RECON note
+
+A_s(H̃)=3.2994e-9, omega_q≈2.0128, relic_rms≈2.9253 are **npz-sourced, NOT named canonicals** (S-2 spec's "canonical_constants.py barrier scales" phrasing is loose; kappa_exit/Delta_BCS ARE canonical). Pin from inv12 npz; optional Wave-0-style promotion of `A_s_FW_branch_A` deferred.
+
+Cross-refs: [[s114-as-functional-selection]] (PLURALISM-PERMANENT lineage — 1-3 INFO third-point feeds it), [[s116_q23_as_grounding]] (CF-AS factorization, exact-greybody live Q).

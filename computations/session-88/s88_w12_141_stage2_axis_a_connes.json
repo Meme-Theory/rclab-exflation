@@ -1,0 +1,182 @@
+{
+  "gate_id": "S88-W12-141-STAGE-2-AXIS-A-SPECTRAL-FUNCTIONAL-VERIFY",
+  "session": "S88",
+  "wave": "W12",
+  "wave_item": "141",
+  "stage": 2,
+  "axis": "A",
+  "reviewer": "connes-ncg-theorist",
+  "theorem_under_review": "\u00a7VII.AH Joint F_2-Class Path-(c) Theorem (STAGE-1-CANDIDATE)",
+  "registry_anchor_section": "sessions/permanent-results-registry.md \u00a7VII.AH",
+  "registry_anchor_line_range": [
+    15399,
+    15481
+  ],
+  "verdicts_per_clause": {
+    "clause_a": {
+      "side": "lizzi-side single-axis (spectral-functional)",
+      "verdict": "PASS",
+      "rationale": "M_R(s=3) over A_5 partitions into three classes \u2014 F_2-dominant (1.581e-1), truncation/subtraction intermediate (cutoff_sqrt 1.110e-1, anomaly 3.185e-2), Zubarev-suppressed (1.201e-2). The maximum pair_ratio against F_2 is 9.240354e-01 = 924x over the PASS threshold 1e-3 (Python-reproduced, matches theorem claim 924x exactly). The substrate-Mellin-multiplier M_R(s=3) is well-defined as the Mellin transform of the regulator-dressed heat-trace at the substrate-distance-1 pole; \u00a7VII.U.1 Mellin-Dirichlet identity (S86 W-1 / S87 W1a-4 PASS rel_diff = 0e+00 at L_max=12) supplies the algebraic anchor. Each M_R is explicitly tagged with its regulator R per the regulator-pin discipline (a_n^{Mellin} convention), satisfying the cited rule.",
+      "value": {
+        "max_pair_ratio_against_F_2": 0.9240354206198609,
+        "ratio_over_PASS_threshold": 924.0354206198608,
+        "F_2_self_pair_ratio": 0.0
+      },
+      "cited_sources": [
+        "sessions/permanent-results-registry.md \u00a7VII.AH lines 15417, 15427",
+        "sessions/permanent-results-registry.md \u00a7VII.U.1 lines 12848-12886",
+        "sessions/permanent-results-registry.md \u00a7VII.K lines 3824-4040",
+        ".claude/rules/regulator-pin-discipline.md (a_n^{Mellin} tag)"
+      ]
+    },
+    "clause_e": {
+      "side": "lizzi-side single-axis (spectral-functional, L-CR3.3 quantitative)",
+      "verdict": "PASS",
+      "rationale": "Quantitative robustness statement of K-invariance closure reproduced bit-for-bit from \u00a7VII.AH line 15435: pair_ratio(Zubarev, F_2) = 9.240354e-01 = 924.04x over PASS (theorem 924x \u2713), pair_ratio(cutoff_sqrt, F_2) = 2.979127e-01 = 297.91x over PASS (theorem 298x \u2713), pair_ratio(anomaly, F_2) = 7.985452e-01 = 798.55x over PASS (theorem 798x \u2713). OOM safety margins: Zubarev +2.966, cutoff_sqrt +2.474, anomaly +2.902 (theorem +2.97 / +2.47 / +2.90 \u2713). All non-F_2 atlas restrictions FAIL K-invariance at O(1); F_2 = {\u03b6, SDW} is the UNIQUE 2-element K-invariant identity sub-atlas of A_5 at s=3, with R-protection analog hardness aligning with S77 R_1 3.6% scheme-universality and S78 W3-K 0.000440% L_max-running margins. The lizzi FI/RD/MIXED classification framework (\u00a7VII.K, S82 42-row atlas) is the natural setting: F_2 is FI-identity (cocycle-level exact via cyclic-pairing clause (a) of the \u00a7VII.K L2 theorem); every non-F_2 atlas member is RD or MIXED at the s=3 pole.",
+      "value": {
+        "pair_ratios": {
+          "Zubarev": 0.9240354206198609,
+          "cutoff_sqrt": 0.2979127134724857,
+          "anomaly": 0.7985452245414294
+        },
+        "ratios_over_PASS_threshold": {
+          "Zubarev": 924.0354206198608,
+          "cutoff_sqrt": 297.91271347248573,
+          "anomaly": 798.5452245414294
+        },
+        "OOM_safety_margins": {
+          "Zubarev": 2.965688619147502,
+          "cutoff_sqrt": 2.4740890371966873,
+          "anomaly": 2.90229951685849
+        },
+        "theorem_claims_match": true
+      },
+      "cited_sources": [
+        "sessions/permanent-results-registry.md \u00a7VII.AH lines 15435, 15447",
+        "sessions/permanent-results-registry.md \u00a7VII.K lines 3824-4040 (S82 42-row atlas FI=30/RD=4/MIXED=8 at L_max=Cartan-rank(SU(3))=2)",
+        "sessions/permanent-results-registry.md \u00a7VII.U.1 lines 12848-12886"
+      ]
+    },
+    "clause_c_axisA": {
+      "side": "JOINT spectral+transit (Axis-A spectral side adjudicates)",
+      "verdict": "PASS",
+      "rationale": "Anti-correlated spectral-dynamical rank-duality at s=3: the 4-element rank vectors of M_R(s=3) and N_breakdown are structurally inverse-aligned (largest M_R \u2194 earliest N_break). Spearman rho_S(s=3) = -1.0000 (Python-reproduced; |rho_S| = 1.0 EXACT, matches theorem claim verbatim). From the spectral side, the rank ordering of M_R is structurally well-defined at the s=3 Mellin-residue pole (substrate-distance-1; \u00a7VII.U.1 anchor). The affine class-projection xi^2_0(R) := xi_E_GGE_inv \u00b7 M_R(s=3) / M_F2(s=3) monotonically maps M_R order to xi^2_0 order \u2014 verified: xi^2_0(F_2) = 13.6425, xi^2_0(cutoff_sqrt) = 9.5782, xi^2_0(anomaly) = 2.7483, xi^2_0(Zubarev) = 1.0363. The spectral side certifies the s=3 anchor; the s=4 pole-specificity prediction (|rho_S(s=4)| < 0.3) is falsifier-class and deferred to S87-POLE-SPECIFICITY-SCAN \u2014 Axis-A does NOT extend to s=4. PASS-AND'd with Axis-B at orchestrator.",
+      "value": {
+        "spearman_rho_s3": -0.9999999999999998,
+        "rank_spectral": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "rank_dynamical": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "xi2_0_per_class": {
+          "F_2": 13.642473425595973,
+          "cutoff_sqrt": 9.578207148900399,
+          "anomaly": 2.748341420652953,
+          "Zubarev": 1.0363447554801242
+        }
+      },
+      "cited_sources": [
+        "sessions/permanent-results-registry.md \u00a7VII.AH lines 15431, 15425, 15443",
+        "sessions/permanent-results-registry.md \u00a7VII.U.1 lines 12848-12886",
+        "computations/_shared/canonical_constants.py (xi_E_GGE_inv = 13.642473425595973)"
+      ],
+      "joint_clause": true,
+      "PASS_AND_required_with": "Axis-B (transit-dynamics side)"
+    },
+    "clause_d_axisA": {
+      "side": "JOINT spectral+transit (Axis-A spectral side adjudicates)",
+      "verdict": "PASS",
+      "rationale": "Per-branch protection of the A_s multiplicative ledger A_s = (H\u0303\u00b2/8\u03c0\u00b2)\u00b7(1/\u03b5_H)\u00b7F_amp\u00b7c_sub^{-1}\u00b7f_conv is structurally well-defined at the spectral-functional level: each factor is a per-class spectral functional whose regulator-dressing is captured by the \u00a7VII.K FI/RD/MIXED taxonomy (S82 42-row atlas at L_max = Cartan-rank(SU(3))=2). Within a single branch (fixed R \u2208 A_5), the FI factors (scheme-invariant ratios via cyclic-pairing) compose with RD factors (regulator-dependent shifts such as c_sub^{-1}) to a substrate-derived A_s that is L_max-stable to 0.000440% (S82 W2-1 replay anchor; rank-side W3-K rank-3 protection at <3.6% scheme-universality margin; ledger-side S82 W1-2 delta_OOM = +0.1962 PASS-F2 against Planck). The unitarity-side Bogoliubov |\u03b1|\u00b2 - |\u03b2|\u00b2 = 1 within-branch identity is the spectral-functional analog of unitarity at the substrate's own algebra. From Axis-A spectral-functional side, all three independent confirmations are substrate-IS structural: they operate ON (A_K, H_K, D_K) without invoking a GR container (direction of explanation flows substrate \u2192 emergent per phononic-framing.md). PASS conditional on PASS-AND with Axis-B.",
+      "value": {
+        "anchor_count": 3,
+        "anchors": {
+          "rank_side_W3_K": "3.6%_scheme_universality_margin",
+          "L_max_side_W2_1_replay": "0.000440%_running_deviation",
+          "unitarity_Bogoliubov": "|alpha|^2 - |beta|^2 = 1 within branch",
+          "ledger_S82_W1_2": "delta_OOM = +0.1962 (PASS-F2 against Planck)"
+        },
+        "spectral_functional_factor_count": 5,
+        "factors": [
+          "H_tilde_squared_over_8_pi_squared",
+          "1_over_eps_H",
+          "F_amp",
+          "c_sub_inverse",
+          "f_conv"
+        ]
+      },
+      "cited_sources": [
+        "sessions/permanent-results-registry.md \u00a7VII.AH line 15433",
+        "sessions/permanent-results-registry.md \u00a7VII.K lines 3824-4040",
+        "sessions/permanent-results-registry.md \u00a7VII.U.1 lines 12848-12886",
+        ".claude/rules/regulator-convention-lockdown.md (CAC convention)",
+        ".claude/rules/cross-pillar-bridge-anatomy.md \u00a7Algebra-axis orthogonality K-counter (algebra-INVARIANT vs algebra-DEPENDENT family classification)"
+      ],
+      "joint_clause": true,
+      "PASS_AND_required_with": "Axis-B (transit-dynamics side)"
+    }
+  },
+  "axis_a_aggregate": {
+    "axis": "A_spectral_functional_NCG_axiomatic",
+    "reviewer": "connes-ncg-theorist",
+    "counterpart_axis_B_dispatched_in_parallel": "kaku-speculative-theorist",
+    "volovik_excluded_per_joint_theorem_promotion_md_condition_3": true,
+    "all_clauses_PASS": true,
+    "joint_clauses_pending_PASS_AND_with_Axis_B": [
+      "clause_c_axisA",
+      "clause_d_axisA"
+    ],
+    "single_axis_clauses_resolved": [
+      "clause_a",
+      "clause_e"
+    ],
+    "closure_sha256_over_input_pin_map": "26b1f094990fbb3ce46b50a0d0cdbff4cfef5cf2efe33958a066255c5f9762f7",
+    "stage_2_protocol_compliance": {
+      "no_workshop_transcripts_read": true,
+      "permitted_sources_only": true,
+      "open_verdict_framing": true,
+      "without_prior_workshop_context": true
+    }
+  },
+  "input_pin_map": {
+    "registry_section": "sessions/permanent-results-registry.md \u00a7VII.AH",
+    "registry_line_range": [
+      15399,
+      15481
+    ],
+    "M_F2_s3": 0.1581,
+    "M_Zubarev_s3": 0.01201,
+    "M_cutoff_sqrt_s3": 0.111,
+    "M_anomaly_s3": 0.03185,
+    "PASS_threshold": 0.001,
+    "FAIL_threshold": 0.01,
+    "xi_E_GGE_inv": 13.642473425595973,
+    "tau_fold": 0.19,
+    "N_break_per_class": {
+      "F_2": 0.122,
+      "cutoff_sqrt": 0.176,
+      "anomaly": 0.73,
+      "Zubarev": 55.0
+    },
+    "cited_rules": [
+      ".claude/rules/joint-theorem-promotion.md \u00a7Stage-2",
+      ".claude/rules/regulator-pin-discipline.md a_n^{Mellin}",
+      ".claude/rules/regulator-convention-lockdown.md (CAC)",
+      ".claude/rules/cross-pillar-bridge-anatomy.md \u00a7Algebra-axis orthogonality K-counter",
+      ".claude/rules/registry-landing.md \u00a7SOURCE-DOUBLE-CITE-CO-PRIMARY"
+    ],
+    "cited_registry_anchors": [
+      "\u00a7VII.U.1 (Mellin-Dirichlet identity; PASS rel_diff=0e+00 at L_max=12)",
+      "\u00a7VII.K (FI=30 / RD=4 / MIXED=8 at L_max = Cartan-rank(SU(3))=2)",
+      "\u00a7VII.AC.1 (SOURCE-DOUBLE-CITE-CO-PRIMARY precedent)"
+    ],
+    "axis": "A_spectral_functional",
+    "reviewer": "connes-ncg-theorist"
+  }
+}

@@ -1,0 +1,203 @@
+==============================================================================
+EUCLID-LENSING-TRACKING-69: CMB Lensing from Tracking DE
+Gate: EUCLID-LENS-69
+==============================================================================
+
+Parameters:
+  H_0 = 67.4 km/s/Mpc
+  Omega_m = 0.315, Omega_DE = 0.685
+  sigma_8 = 0.811
+  w_0(FW) = -0.918, w_0(LCDM) = -1.0
+  c_s^2(tracking) = 0.0, c_s^2(smooth) = 1.0
+  CMB-S4: f_sky = 0.4, sigma_T = 1.0 muK-arcmin
+  Multipole range: l = [100, 500] (401 modes)
+
+========================================================================
+SECTION 1: BACKGROUND COSMOLOGY
+========================================================================
+
+  Tracking enhancement factor F(z) [c_s^2 = 0, w_0 = -0.918]:
+    F(z=0.0) = 1.047501
+    F(z=0.3) = 1.023062
+    F(z=0.5) = 1.015550
+    F(z=1.0) = 1.007041
+    F(z=2.0) = 1.002305
+    F(z=3.0) = 1.001044
+    F(z=5.0) = 1.000342
+
+  Cross-check vs S68: F(z=0.5)
+    This script: 1.015550
+    S68 ISW:     1.015555
+    Agreement:   0.0005%
+
+  chi(z*=1100, LCDM) = 13866 Mpc
+  chi(z*=1100, FW)   = 13763 Mpc
+
+========================================================================
+SECTION 2: GROWTH FACTORS
+========================================================================
+
+  Computing growth factors for three models...
+  D(z=0): LCDM=0.997694, FW=0.997611, Quint=0.997721
+  D(z=1): LCDM=0.879058, FW=0.876458, Quint=0.882263
+  D(z=2): LCDM=0.845188, FW=0.841590, Quint=0.849080
+
+  D_FW/D_Quint - 1 at key z:
+    z=0.0: -0.0111%
+    z=0.3: -0.2778%
+    z=0.5: -0.4194%
+    z=1.0: -0.6580%
+    z=2.0: -0.8821%
+    z=3.0: -0.9768%
+
+========================================================================
+SECTION 3: MATTER POWER SPECTRUM
+========================================================================
+
+  P(k) normalization: P_0 = 2.8574e+05 Mpc^3
+  P(k=0.1, z=0) = 10240 Mpc^3 (expect ~5000)
+  P(k=0.01, z=0) = 37135 Mpc^3 (expect ~10000)
+
+========================================================================
+SECTION 4: CMB LENSING CONVERGENCE C_l^{kk}
+========================================================================
+
+  Theory:
+  The CMB lensing convergence kappa is an integral of the lensing potential
+  along the line of sight:
+
+    kappa(n) = -1/2 * integral_0^{chi_*} dchi * chi(chi_*-chi)/chi_* * nabla^2_perp Phi
+
+  In the Limber approximation, the convergence power spectrum is:
+
+    C_l^{kk} = integral_0^{chi_*} dchi [W_kappa(chi)]^2 / chi^2 * P_Phi(l/chi, z)
+
+  where the lensing kernel is:
+    W_kappa(chi) = (3/2) * Omega_m * (H_0/c)^2 * chi * (chi_*-chi)/chi_* * (1+z)
+
+  And P_Phi = [3/2 * Omega_m * H_0^2 / (c^2 * k^2)]^2 * (1+z)^2 * P_delta(k, z)
+
+  Substituting: the C_l^{kk} integral in terms of P_delta becomes:
+
+    C_l^{kk} = integral dz * [W(z)]^2 * P_delta(l/chi, z) * H(z) / (c * chi^2)
+
+  For tracking DE (c_s^2 = 0):
+    - D(z) is enhanced by DE clustering in the growth ODE
+    - The Poisson equation source is enhanced by F(z)
+    - Both effects multiply: Phi_tracking ~ D_B(z) * F(z) / (1+z)
+    - The lensing power gets an additional factor F^2(z) beyond growth
+
+  For smooth DE (c_s^2 = 1):
+    - Modified expansion history changes D(z) relative to LCDM
+    - But no Poisson enhancement: F = 1
+
+  Computing C_l^{kk} for three models...
+    Model A: LCDM (w=-1, smooth)...
+    Model B: Framework (w_0=-0.918, c_s^2=0, tracking)...
+    Model C: Quintessence (w_0=-0.918, c_s^2=1, smooth)...
+
+  Power spectrum values at selected multipoles:
+      l |   C_l^kk(LCDM) |     C_l^kk(FW) |  C_l^kk(Quint)
+  ------+----------------+----------------+---------------
+    100 |   3.250156e-07 |   3.233243e-07 |   3.265813e-07
+    150 |   2.788978e-07 |   2.762833e-07 |   2.794691e-07
+    200 |   2.359529e-07 |   2.331584e-07 |   2.360471e-07
+    250 |   2.007041e-07 |   1.979258e-07 |   2.004974e-07
+    300 |   1.718918e-07 |   1.692177e-07 |   1.714919e-07
+    400 |   1.287408e-07 |   1.263831e-07 |   1.281595e-07
+    500 |   9.900243e-08 |   9.698153e-08 |   9.838376e-08
+
+========================================================================
+SECTION 5: TRACKING MODIFICATION Delta_kk
+========================================================================
+
+  Delta_kk = (C_FW - C_Quint) / C_LCDM at selected multipoles:
+      l |     Delta_kk |        % |    FW/LCDM | Quint/LCDM
+  ------+--------------+----------+------------+-----------
+    100 |    -0.010021 |  -1.0021 |   0.994796 |   1.004817
+    150 |    -0.011423 |  -1.1423 |   0.990625 |   1.002048
+    200 |    -0.012243 |  -1.2243 |   0.988157 |   1.000399
+    250 |    -0.012813 |  -1.2813 |   0.986157 |   0.998970
+    300 |    -0.013230 |  -1.3230 |   0.984443 |   0.997673
+    350 |    -0.013548 |  -1.3548 |   0.982966 |   0.996514
+    400 |    -0.013798 |  -1.3798 |   0.981686 |   0.995484
+    450 |    -0.013999 |  -1.3999 |   0.980570 |   0.994568
+    500 |    -0.014164 |  -1.4164 |   0.979587 |   0.993751
+
+  Statistics (l = 100-500):
+    Mean   Delta_kk = -0.012910 = -1.2910%
+    Median Delta_kk = -0.013230 = -1.3230%
+    Min    Delta_kk = -0.014164 = -1.4164%
+    Max    Delta_kk = -0.010021 = -1.0021%
+
+    Mean FW/LCDM     = 0.985178 (-1.4822%)
+    Mean Quint/LCDM  = 0.998088 (-0.1912%)
+
+  Decomposition: growth-only vs growth+Poisson
+    Mean D_track/D_smooth at z ~ 0.5-2 (lensing kernel peak):
+      z=0.5: D_track/D_smooth = 0.995806 (-0.4194%)
+      z=1.0: D_track/D_smooth = 0.993420 (-0.6580%)
+      z=1.5: D_track/D_smooth = 0.992035 (-0.7965%)
+      z=2.0: D_track/D_smooth = 0.991179 (-0.8821%)
+
+========================================================================
+SECTION 6: CMB-S4 NOISE AND SNR
+========================================================================
+
+  Lensing noise N_l^{kk} (CMB-S4 iterative delensing):
+    N_{l=100} = 2.500e-09, C_l/N_l = 130.01
+    N_{l=200} = 1.000e-08, C_l/N_l = 23.60
+    N_{l=300} = 2.250e-08, C_l/N_l = 7.64
+    N_{l=400} = 4.000e-08, C_l/N_l = 3.22
+    N_{l=500} = 6.250e-08, C_l/N_l = 1.58
+
+  Per-multipole fractional error sigma(C_l)/C_l:
+    l = 100: 15.89%
+    l = 200: 11.64%
+    l = 300: 10.32%
+    l = 400: 10.36%
+    l = 500: 11.53%
+
+  SNR for detecting tracking signal (FW - Quint):
+    Per-multipole peak SNR: 0.1336 at l = 378
+    Cumulative SNR(l=100-500): 2.3626
+    Cumulative SNR(FW vs LCDM): 2.8569
+
+  Binned SNR (FW-Quint, 8 bins):
+   l_min-l_max |  Mean Delta_kk |  SNR_bin
+  -------------+----------------+---------
+     100-  150 |      -0.010790 |   0.5348
+     150-  200 |      -0.011852 |   0.6815
+     200-  250 |      -0.012538 |   0.7947
+     250-  300 |      -0.013027 |   0.8764
+     300-  350 |      -0.013393 |   0.9260
+     350-  400 |      -0.013675 |   0.9436
+     400-  450 |      -0.013900 |   0.9317
+     450-  500 |      -0.014082 |   0.8947
+  Total binned SNR: 2.3594
+
+========================================================================
+SECTION 7: GATE VERDICT
+========================================================================
+
+  |Mean Delta_kk| = 1.2910%
+  Gate threshold: PASS > 0.5%, FAIL < 0.1%, INFO 0.1-0.5%
+
+  =================================================
+  Gate EUCLID-LENS-69: PASS
+  Delta_kk = 1.29% > 0.5% (CMB-S4 detectable)
+  Cumulative SNR (FW vs Quint, l=100-500): 2.3626
+  Cumulative SNR (FW vs LCDM, l=100-500): 2.8569
+  =================================================
+
+========================================================================
+SECTION 8: OUTPUT
+========================================================================
+  Data saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s69_euclid_lensing.npz
+
+Generating plot...
+  Plot saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s69_euclid_lensing.png
+
+========================================================================
+COMPUTATION COMPLETE
+========================================================================

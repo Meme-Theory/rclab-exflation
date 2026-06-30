@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 132,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1311",
+      "anchor_type": "data_provenance",
+      "name": "desi_dr3_predictions",
+      "script_path": "session-73/s73b_desi_dr3_predictions.py",
+      "session": "s73b",
+      "inputs": "s70_desi_dr3_update.npz, s70_full_cov_pantheon.npz",
+      "outputs": "session-73/s73b_desi_dr3_predictions.npz",
+      "source_file": "computations/session-73/s73b_desi_dr3_predictions.py",
+      "source_context_30_lines": "  131: print()\n  132: print(f\"BAO D_M/r_d (DR2 current):\")\n  133: print(f\"  chi^2/dof (FW) = {chi2_dof_DM_fw_dr2:.3f}\")\n  134: print()\n  135: print(\"GATE: DESI-DR3-PREP-73B\")\n  136: print(\"VERDICT: INFO (strategic pre-registration, not a computation)\")\n  137: \n  138: np.savez(\n  139:     's73b_desi_dr3_predictions.npz',\n  140:     # Framework prediction\n  141:     w0_fw=w0_fw,\n  142:     w0_fw_sigma_scheme=w0_fw_sigma_scheme,\n  143:     wa_fw=wa_fw,\n  144:     wa_fw_sigma=wa_fw_sigma,\n  145:     # S73B W2-D anchor\n  146:     w_GGE_S73B=w_GGE_S73B,\n  147:     w_combined_S73B=w_combined_S73B,"
+    },
+    {
+      "anchor_id": "prov_1312",
+      "anchor_type": "data_provenance",
+      "name": "efold_mapping",
+      "script_path": "session-73/s73b_efold_mapping.py",
+      "session": "s73b",
+      "inputs": "s73a_spectral_action_profile.npz, s73a_instanton_landscape.npz, s64_ne_selfconsist.npz",
+      "outputs": "session-73/s73b_efold_mapping.npz, session-73/s73b_efold_mapping.png",
+      "source_file": "computations/session-73/s73b_efold_mapping.py",
+      "source_context_30_lines": "   66: Cross-checks:\n   67:   (1) N_total must be consistent with observed CMB temperature.\n   68:   (2) H_0 at present must match 67.4 km/s/Mpc.\n   69:   (3) T_CMB = 2.7255 K constrains the reheating temperature.\n   70:   (4) BBN constraints (S73A W1-C) on G_eff during radiation epoch.\n   71: \n   72: Input: s73a_spectral_action_profile.npz, s73a_instanton_landscape.npz,\n   73:        s64_ne_selfconsist.npz, canonical_constants.py\n   74: Output: s73b_efold_mapping.npz\n   75: \"\"\"\n   76: \n   77: import numpy as np\n   78: import sys\n   79: import os\n   80: import time\n   81: import matplotlib\n   82: matplotlib.use('Agg')"
+    },
+    {
+      "anchor_id": "prov_1313",
+      "anchor_type": "data_provenance",
+      "name": "functional_select",
+      "script_path": "session-73/s73b_functional_select.py",
+      "session": "s73b",
+      "inputs": "s66_cutoff_ns.npz, s67_higgs_zeta.npz, s72_spectral_functional_fit.npz, s73a_spectral_action_profile.npz, s73a_entropy_f...",
+      "outputs": "session-73/s73b_functional_select.npz, session-73/s73b_functional_select.png",
+      "source_file": "computations/session-73/s73b_functional_select.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s73b_functional_select.py -- FUNCTIONAL-SELECT-73B\n    4: ====================================================\n    5: \n    6: Gate: FUNCTIONAL-SELECT-73B\n    7:   PASS: Unique f* with n_s in [0.955, 0.975] AND m_H in [122, 130] GeV exists\n    8:         with zero free parameters (self-consistency or anomaly cancellation).\n    9:   FAIL: The allowed region requires a free parameter (t* or phi).\n   10:   INFO: Self-consistency equation derived but cannot be solved at current truncation.\n   11: "
+    },
+    {
+      "anchor_id": "prov_1314",
+      "anchor_type": "data_provenance",
+      "name": "functional_select_lmax7",
+      "script_path": "session-73/s73b_functional_select_lmax7.py",
+      "session": "s73b",
+      "inputs": "s73b_functional_select.npz, s70_lmax7_pw.npz, s72_zeta_ratio_scan.npz, s66_cutoff_ns.npz",
+      "outputs": "session-73/s73b_functional_select_lmax7.npz, session-73/s73b_functional_select_lmax7.png",
+      "source_file": "computations/session-73/s73b_functional_select_lmax7.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s73b_functional_select_lmax7.py -- FUNCTIONAL-SELECT-L7-FLIP\n    4: =============================================================\n    5: \n    6: Gate: FUNCTIONAL-SELECT-L7-FLIP\n    7:   FLIPPED-PASS: Delta_t < 0.05 (windows overlap) at any L_max >= 5\n    8:                 -- flips S73B W1-C FAIL\n    9:   IMPROVED:     Delta_t in [0.05, 0.30] at L_max=7 (windows closer)\n   10:   UNCHANGED:    Delta_t in [0.30, 1.0] at L_max=7 (same as L=3's 0.877)\n   11:   WORSENED:     Delta_t > 1.0 at L_max=7 (more disjoint)"
+    },
+    {
+      "anchor_id": "prov_1315",
+      "anchor_type": "data_provenance",
+      "name": "gibbs_duhem_gge",
+      "script_path": "session-73/s73b_gibbs_duhem_gge.py",
+      "session": "s73b",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-73/s73b_gibbs_duhem_gge.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s73b_gibbs_duhem_gge.py — GIBBS-DUHEM-73B: Zubarev vs Keldysh w_0 Resolution\n    4: ==============================================================================\n    5: \n    6: Gate: GIBBS-DUHEM-73B\n    7:   PASS: Zubarev and Keldysh agree within 5% after proper vacuum subtraction\n    8:         AND reconciliation with Volovik algebraically established\n    9:   FAIL: Discrepancy persists after vacuum subtraction (fundamental formalism disagreement)\n   10:   INFO: Discrepancy reduces but does not close\n   11: "
+    },
+    {
+      "anchor_id": "prov_1316",
+      "anchor_type": "data_provenance",
+      "name": "m1_convergence",
+      "script_path": "session-73/s73b_m1_convergence.py",
+      "session": "s73b",
+      "inputs": "s73a_spectral_action_profile.npz",
+      "outputs": "session-73/s73b_m1_convergence.npz, session-73/s73b_m1_convergence.png",
+      "source_file": "computations/session-73/s73b_m1_convergence.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s73b_m1_convergence.py -- M1-CC-73B\n    4: =====================================\n    5: \n    6: Gate: M1-CC-73B\n    7:   PASS:           M_1 converges at Weyl rate (alpha < 0 with clear extrapolation)\n    8:                   AND the CC prediction from M_1 matches observed Lambda within\n    9:                   0.1 OOM via non-additive G-renormalization.\n   10:   INFO:           M_1 converges but the CC prediction shifts > 0.1 OOM.\n   11:   DIVERGENT-SCALE: M_1 diverges at Weyl rate but scales predictably"
+    },
+    {
+      "anchor_id": "prov_1317",
+      "anchor_type": "data_provenance",
+      "name": "multi_cell_integ",
+      "script_path": "session-73/s73b_multi_cell_integ.py",
+      "session": "s73b",
+      "inputs": "",
+      "outputs": "session-73/s73b_multi_cell_integ.npz, session-73/s73b_multi_cell_integ.png",
+      "source_file": "computations/session-73/s73b_multi_cell_integ.py",
+      "source_context_30_lines": "  690:     save_dict[f'r_{key}'] = data['r_mean']\n  691:     save_dict[f'r_ctrl_{key}'] = data['r_ctrl']\n  692:     save_dict[f'dim_{key}'] = data['dim']\n  693:     save_dict[f'eta_{key}'] = data['brody_eta']\n  694:     save_dict[f'eta_ctrl_{key}'] = data['brody_ctrl']\n  695:     save_dict[f'evals_{key}'] = data['evals']\n  696:     save_dict[f'evals_ctrl_{key}'] = data['evals_ctrl']\n  697: \n  698: outpath = os.path.join(data_dir, 's73b_multi_cell_integ.npz')\n  699: np.savez(outpath, **save_dict)\n  700: print(f\"Saved: {outpath}\")\n  701: \n  702: # =====================================================================\n  703: #  10. PLOT\n  704: # =====================================================================\n  705: \n  706: fig, axes = plt.subplots(2, 2, figsize=(14, 10))"
+    },
+    {
+      "anchor_id": "prov_1318",
+      "anchor_type": "data_provenance",
+      "name": "proven_robustness_audit",
+      "script_path": "session-73/s73b_proven_robustness_audit.py",
+      "session": "s73b",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-73/s73b_proven_robustness_audit.py",
+      "source_context_30_lines": "<name 'proven_robustness_audit' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: S73B PROVEN-ROBUSTNESS-73B: L_max Independence Audit of 21 Proven Results\n    3: =========================================================================\n    4: \n    5: Purpose:\n    6:     The W3-A SDW-VALIDATION-73B discovery -- that canonical a_k values (a_0=6440,\n    7:     a_2=2776.17, a_4=1350.72) are L_max=3 partial sums, NOT converged asymptotics,\n    8:     with ~170% shifts at L_max=7 -- raises a legitimate concern: some \"proven\n    9:     results\" may secretly depend on L_max=3 canonical values and need re-derivation.\n   10: \n   11:     This script audits each of the 21 proven results from the permanent registry\n   12:     and traces each proof to its algebraic core. The classification is:\n   13:       - ROBUST (representation-theoretic / algebraic identity / superselection)\n   14:       - QUASI-ROBUST (tau-derivative or ratio-of-ratios, ~1.7% L_max shift)\n   15:       - NEEDS-L_MAX-REVERIFICATION (numerical at L_max=3, no analytic proof)\n   16:       - L_MAX-SENSITIVE (secretly uses canonical a_k -- demotion required)\n   17: \n   18:     This is primarily a documentation / classification script. It reads\n   19:     canonical_constants.py to extract the L_max=3 values that act as the \"suspect\n   20:     canonical set,\" then records the classification of each proof.\n   21: \n   22: Gate: PROVEN-ROBUSTNESS-73B\n   23:     PASS            -- all 21 results confirmed L_max-independent at algebraic level\n   24:     PASS-WITH-NOTES -- results robust but some need re-stating with explicit provenance\n   25:     FAIL            -- one or more results secretly depend on L_max=3; demotion required\n   26: \n   27: Author: van-den-dungen-bridge-theorist\n   28: Session: S73B W5-F\n   29: \"\"\"\n   30: "
+    },
+    {
+      "anchor_id": "prov_1319",
+      "anchor_type": "data_provenance",
+      "name": "ramanujan_decoherence",
+      "script_path": "session-73/s73b_ramanujan_decoherence.py",
+      "session": "s73b",
+      "inputs": "computations/session-73/s73a_graph_spectral_decoherence.npz",
+      "outputs": "session-73/s73b_ramanujan_decoherence.npz",
+      "source_file": "computations/session-73/s73b_ramanujan_decoherence.py",
+      "source_context_30_lines": "  362: #  SECTION 7: Save outputs\n  363: # ============================================================================\n  364: \n  365: print()\n  366: print(\"-\" * 72)\n  367: print(\"SECTION 7: Saving outputs\")\n  368: print(\"-\" * 72)\n  369: \n  370: out_path = \"computations/session-73/s73b_ramanujan_decoherence.npz\"  # (local)\n  371: np.savez(\n  372:     out_path,\n  373:     # Gate metadata\n  374:     gate_name=\"RAMANUJAN-73B\",\n  375:     gate_verdict=\"INFO\",\n  376:     gate_detail=(\n  377:         f\"d_s (stable)={d_s_stable:.3f}, d_s (vshort)={d_s_vshort:.3f}, \"\n  378:         f\"d_s (short)={d_s_short:.3f}, d_s (inter)={d_s_inter:.3f}. \""
+    },
+    {
+      "anchor_id": "prov_1320",
+      "anchor_type": "data_provenance",
+      "name": "sdw_validation",
+      "script_path": "session-73/s73b_sdw_validation.py",
+      "session": "s73b",
+      "inputs": "s73a_spectral_action_profile.npz",
+      "outputs": "session-73/s73b_sdw_validation.npz, session-73/s73b_sdw_validation.png",
+      "source_file": "computations/session-73/s73b_sdw_validation.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s73b_sdw_validation.py -- SDW-VALIDATION-73B\n    4: ==============================================\n    5: \n    6: Gate: SDW-VALIDATION-73B\n    7:   PASS: |a_0/a_2(direct) / a_0/a_2(SDW) - 1| < 0.05 AND\n    8:         |a_2/a_4(direct) / a_2/a_4(SDW) - 1| < 0.05 (ratios robust)\n    9:   FAIL: Either ratio deviates by > 20%\n   10:   INFO: L_max dependence exceeds 5%\n   11: "
+    }
+  ]
+}

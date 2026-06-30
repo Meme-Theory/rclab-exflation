@@ -1,0 +1,144 @@
+==============================================================================
+FK-BOUND-52: Friedrich-Kirchberg Eigenvalue Bound for Jensen SU(3)
+==============================================================================
+
+--- Section A: Loading Eigenvalue Data ---
+  tau values: [0.   0.05 0.1  0.15 0.19]
+  lambda_min at each tau: [0.83333333 0.83154495 0.83145131 0.82387268 0.81974111]
+
+--- Section B: Bounds at Fold (tau = 0.19) ---
+  R(tau_fold) = 2.0181439559
+  Vol(SU(3)) = 1349.7400
+
+  EIGENVALUE BOUNDS (lambda^2 >= ...):
+    Lichnerowicz:  lambda^2 >= R/4           = 0.5045359890
+    Friedrich:     lambda^2 >= 2R/7          = 0.5766125588
+    Kirchberg(K'): lambda^2 >= 5R/16         = 0.6306699862
+
+  AS BOUNDS ON |lambda|:
+    Lichnerowicz:  |lambda| >= 0.7103069681
+    Friedrich:     |lambda| >= 0.7593500898
+    Kirchberg(K'): |lambda| >= 0.7941473328
+
+  ACTUAL lambda_1 at fold:
+    lambda_1    = 0.8197411121
+    lambda_1^2  = 0.6719754908
+
+  BOUND SATISFACTION:
+    lambda_1^2 / Lichnerowicz  = 1.331868  (>1: SATISFIED)
+    lambda_1^2 / Friedrich     = 1.165385  (>1: SATISFIED)
+    lambda_1^2 / Kirchberg(K') = 1.065495  (>1: SATISFIED)
+
+  IMPROVEMENT HIERARCHY:
+    Friedrich over Lichnerowicz:  6.90%
+    Kirchberg over Friedrich:     4.58%
+    Kirchberg over Lichnerowicz:  11.80%
+    Tightness (lambda_1 / Kirchberg): 1.032228
+    Gap above Kirchberg:          6.55%
+
+--- Section C: Ricci Tensor Analysis at Fold ---
+  [r20a_riemann_tensor not available — using S46 validated values]
+  Ricci eigenvalues (S46): [0.23002126 0.23002126 0.23002126 0.23002126 0.25       0.2826863
+ 0.2826863  0.2826863 ]
+  Ric_min = 0.2300212600
+  Ricci-based bound: lambda^2 >= 0.5257628800
+  WEAKER than Friedrich: 0.525763 < 0.576613
+
+--- Section D: Tau Sweep of Bounds ---
+
+     tau     R(tau)       Lich      Fried      Kirch     lam1^2 lam1/K^{1/2}
+  ------ ---------- ---------- ---------- ---------- ---------- ------------
+    0.00   2.000000   0.500000   0.571429   0.625000   0.694444     1.054093
+    0.05   2.000362   0.500090   0.571532   0.625113   0.691467     1.051735
+    0.10   2.002796   0.500699   0.572227   0.625874   0.691311     1.050978
+    0.15   2.009142   0.502286   0.574041   0.627857   0.678766     1.039752
+    0.19   2.018144   0.504536   0.576613   0.630670   0.671975     1.032228
+
+--- Section E: Branch-Resolved Bounds at Fold ---
+  B1 (trivial, deg=1): lambda=0.819140, lambda^2=0.670990
+    vs Lich: 1.3299x  vs Fried: 1.1637x  vs Kirch: 1.0639x
+  B2 (fund, deg=4): lambda=0.845269, lambda^2=0.714480
+    vs Lich: 1.4161x  vs Fried: 1.2391x  vs Kirch: 1.1329x
+  B3 (adj, deg=3): lambda=0.978224, lambda^2=0.956922
+    vs Lich: 1.8966x  vs Fried: 1.6596x  vs Kirch: 1.5173x
+
+--- Section F: Sharpness Analysis ---
+  Friedrich is SHARP on the round sphere S^n.
+  On round S^8: lambda_1^2 = R_S8/4 * 8/7 (Friedrich) = n/(4(n-1)) * R
+  On Jensen SU(3), lambda_1 exceeds Friedrich by 16.54%
+  Kirchberg (K') is sharp on Kahler manifolds.
+  Since Jensen SU(3) is NOT Kahler, the bound is STRICT (never achieved).
+  lambda_1 exceeds Kirchberg by 6.55%
+
+  Absolute gaps (lambda^2):
+    Above Lichnerowicz:  0.167440
+    Above Friedrich:     0.095363
+    Above Kirchberg(K'): 0.041306
+
+--- Section G: Fold Tracking ---
+  R(tau) is MONOTONICALLY INCREASING for tau in [0, 0.30]:
+    R(0.00) = 2.000000
+    R(0.10) = 2.002796
+    R(0.19) = 2.018144
+    R(0.30) = 2.067397
+  Therefore ALL curvature-based bounds are monotonically increasing.
+  The fold (B2 eigenvalue minimum at tau~0.190) is INVISIBLE to Friedrich/Kirchberg.
+  This is consistent with the structural finding from S36/S37:
+    curvature-based spectral functionals cannot see the fold.
+
+  Tightness ratio lambda_1/sqrt(Kirchberg) across tau:
+    tau=0.00: 1.054093
+    tau=0.05: 1.051735
+    tau=0.10: 1.050978
+    tau=0.15: 1.039752
+    tau=0.19: 1.032228
+  TIGHTEST at tau=0.19: ratio=1.032228
+  The bound approaches most tightly near the fold (if it does).
+
+==============================================================================
+SUMMARY: FK-BOUND-52
+==============================================================================
+
+  Manifold: (SU(3), g_tau) with Jensen deformation parameter tau
+  Dimension: n = 8 (m = 4)
+  Spin: YES (pi_1(SU(3)) = 0)
+  R(fold) = 2.018144 (constant on homogeneous space)
+
+  BOUND HIERARCHY (lambda^2 >=):
+    Lichnerowicz (1963):   R/4           = 0.504536  |lambda| >= 0.710307
+    Friedrich (1980):      2R/7          = 0.576613  |lambda| >= 0.759350
+    Kirchberg (1990 K'):   5R/16         = 0.630670  |lambda| >= 0.794147
+    ACTUAL lambda_1:                       0.671975  |lambda| =  0.819741
+
+  IMPROVEMENT CHAIN:
+    Friedrich over Lichnerowicz:   +14.3% (lambda^2), +6.9% (lambda)
+    Kirchberg over Friedrich:      +9.4% (lambda^2), +4.6% (lambda)
+    Kirchberg over Lichnerowicz:   +25.0% (lambda^2), +11.8% (lambda)
+
+  TIGHTNESS AT FOLD:
+    lambda_1^2 / Kirchberg = 1.0655  (gap: 6.5%)
+    lambda_1^2 / Friedrich = 1.1654  (gap: 16.5%)
+    lambda_1 / sqrt(Kirchberg) = 1.032228
+
+  KIRCHBERG APPLICABILITY:
+    Non-Kahler extension (Kirchberg 1990, Math. Nachr. 147):
+    Applies to n=2m, m even, compact spin, R=const > 0. ALL CONDITIONS MET.
+    Equality requires Kahler structure -> STRICT on Jensen SU(3).
+
+  FOLD VISIBILITY:
+    R(tau) monotonically increasing -> all curvature bounds monotonically increasing.
+    The fold (B2 minimum at tau~0.190) is INVISIBLE to curvature bounds.
+    Confirms S36/S37 structural result: curvature functionals miss the fold.
+
+  GATE VERDICT: INFO
+    FK improves on Lichnerowicz by 11.8% in the eigenvalue bound.
+    The Kirchberg non-Kahler extension provides the strongest applicable bound.
+    All three bounds are satisfied with comfortable margin.
+    The fold is invisible to all curvature-based bounds (structural).
+
+--- Saving data ---
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s52_fk_bound.npz
+--- Generating plot ---
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s52_fk_bound.png
+
+--- FK-BOUND-52 COMPLETE ---

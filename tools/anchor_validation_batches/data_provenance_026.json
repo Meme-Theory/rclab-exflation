@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 26,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_251",
+      "anchor_type": "data_provenance",
+      "name": "kk_mass",
+      "script_path": "session-39/s39_kk_mass.py",
+      "session": "s39",
+      "inputs": "s39_gge_lambdas.npz, s39_richardson_gaudin.npz, s37_pair_susceptibility.npz, s38_otoc_bcs.npz",
+      "outputs": "session-39/s39_kk_mass.npz",
+      "source_file": "computations/session-39/s39_kk_mass.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s39_kk_mass.py -- MASS-39: 4D Mass Spectrum of Post-Transit Quasiparticle Excitations\n    4: ======================================================================================\n    5: \n    6: Computes the 4D Kaluza-Klein mass spectrum from the BCS quasiparticle structure\n    7: at three candidate tau_exit values (0.205, 0.25, 0.50).\n    8: \n    9: Physics:\n   10: --------\n   11:   The 8-mode reduced BCS Hamiltonian at each tau has eigenvalues {e_n} in the"
+    },
+    {
+      "anchor_id": "prov_252",
+      "anchor_type": "data_provenance",
+      "name": "lie_derivative_integ",
+      "script_path": "session-39/s39_lie_derivative_integ.py",
+      "session": "s39",
+      "inputs": "",
+      "outputs": "session-39/s39_lie_derivative_integ.npz",
+      "source_file": "computations/session-39/s39_lie_derivative_integ.py",
+      "source_context_30_lines": "  727: }\n  728: \n  729: # Add Casimir sweep results\n  730: for t_key, t_data in casimir_results.items():\n  731:     tau_label = f\"tau_{t_key:.2f}\".replace('.', 'p')\n  732:     for k2, v2 in t_data.items():\n  733:         save_dict[f'{tau_label}_{k2}'] = np.array(v2)\n  734: \n  735: outpath = os.path.join(SCRIPT_DIR, 's39_lie_derivative_integ.npz')\n  736: np.savez(outpath, **save_dict)\n  737: \n  738: t_end = time.time()\n  739: print(f\"\\nTotal runtime: {t_end - t_start:.2f}s\")\n  740: print(f\"Saved to: {outpath}\")"
+    },
+    {
+      "anchor_id": "prov_253",
+      "anchor_type": "data_provenance",
+      "name": "odd_blocking",
+      "script_path": "session-39/s39_odd_blocking.py",
+      "session": "s39",
+      "inputs": "computations/session-37/s37_pair_susceptibility.npz, computations/session-38/s38_otoc_bcs.npz, computations/session-39/s...",
+      "outputs": "session-39/s39_odd_blocking.npz, session-39/s39_odd_blocking.png",
+      "source_file": "computations/session-39/s39_odd_blocking.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s39_odd_blocking.py — Odd-Particle Blocking Computation (ODD-39)\n    4: \n    5: Computes the quasiparticle spectrum for odd-particle (blocking) configurations.\n    6: In BCS theory, an odd-particle state has one unpaired fermion in mode k,\n    7: which blocks that mode from participating in pairing. The remaining N-1 modes\n    8: form a reduced BCS Hamiltonian.\n    9: \n   10: The blocking energy delta_E(k) = E_gs(blocked, k) - E_gs(unblocked) gives the\n   11: energy cost of placing one unpaired particle in mode k. This is the odd-even"
+    },
+    {
+      "anchor_id": "prov_254",
+      "anchor_type": "data_provenance",
+      "name": "richardson_gaudin",
+      "script_path": "session-39/s39_richardson_gaudin.py",
+      "session": "s39",
+      "inputs": "",
+      "outputs": "session-39/s39_richardson_gaudin.npz, session-39/s39_richardson_gaudin.png",
+      "source_file": "computations/session-39/s39_richardson_gaudin.py",
+      "source_context_30_lines": "  671:     'branch_labels': np.array(branch_labels),\n  672:     'mu': mu,\n  673:     'rho_at_fold': rho_at_fold,\n  674:     'E_B2_of_tau': E_B2_of_tau,\n  675:     'v_B2_of_tau': v_B2,\n  676:     'rho_B2_of_tau': rho_B2_of_tau,\n  677: }\n  678: \n  679: out_npz = os.path.join(SCRIPT_DIR, 's39_richardson_gaudin.npz')\n  680: np.savez_compressed(out_npz, **save_dict)\n  681: print(f\"Saved: {out_npz}\")\n  682: print(f\"  Size: {os.path.getsize(out_npz) / 1024:.1f} KB\")\n  683: \n  684: # ======================================================================\n  685: #  STEP 9: Plots\n  686: # ======================================================================\n  687: "
+    },
+    {
+      "anchor_id": "prov_255",
+      "anchor_type": "data_provenance",
+      "name": "schwinger_geometric",
+      "script_path": "session-39/s39_schwinger_geometric.py",
+      "session": "s39",
+      "inputs": "",
+      "outputs": "session-39/s39_schwinger_geometric.npz, session-39/s39_schwinger_geometric.png",
+      "source_file": "computations/session-39/s39_schwinger_geometric.py",
+      "source_context_30_lines": "  980:            label=f'$|v_{{traj}}|$ = {v_C:.1f}')\n  981: ax.set_xlabel(r'$|d\\tau/dt|$')\n  982: ax.set_ylabel(r'$S_{Schwinger}$')\n  983: ax.set_title('Schwinger Exponent vs Transit Speed')\n  984: ax.legend(fontsize=8)\n  985: ax.grid(True, alpha=0.3)\n  986: \n  987: plt.tight_layout()\n  988: plt.savefig(os.path.join(SCRIPT_DIR, 's39_schwinger_geometric.png'), dpi=150)\n  989: print(f\"\\n  Plot saved: computations/session-39/s39_schwinger_geometric.png\")\n  990: \n  991: # Find the |v| that gives exact equality\n  992: v_exact = np.pi * Delta_0_peak**2 / S_inst_ref\n  993: print(f\"\\n  For EXACT equality S_Schwinger = S_inst:\")\n  994: print(f\"    Required |v| = pi * Delta_0^2 / S_inst = {v_exact:.4f}\")\n  995: print(f\"    Actual |v| (terminal) = {v_A:.4f}\")\n  996: print(f\"    Actual |v| (trajectory) = {v_C:.4f}\")"
+    },
+    {
+      "anchor_id": "prov_256",
+      "anchor_type": "data_provenance",
+      "name": "schwinger_naz_review",
+      "script_path": "session-39/s39_schwinger_naz_review.py",
+      "session": "s39",
+      "inputs": "computations/session-37/s37_instanton_action.npz, computations/session-36/s36_tau_dynamics.npz, computations/session-39/...",
+      "outputs": "session-39/s39_schwinger_naz_review.npz",
+      "source_file": "computations/session-39/s39_schwinger_naz_review.py",
+      "source_context_30_lines": "  609: print(\"  Strutinsky shell corrections.\")\n  610: print()\n  611: print(\"  VERDICT: ENDORSE FAIL\")\n  612: print(\"  The Schwinger-instanton 'duality' is downgraded from\")\n  613: print(\"  'publishable identity' (my S38 claim) to 'shape factor\")\n  614: print(\"  universality' (Landau theory, not a new result).\")\n  615: print()\n  616: \n  617: np.savez('computations/session-39/s39_schwinger_naz_review.npz',\n  618:     # Verified numbers\n  619:     S_inst_GL=S_GL_check,\n  620:     S_inst_D=S_D_check,\n  621:     S_Schwinger_GL=S_Schw,\n  622:     S_Schwinger_num=S_Schw_correct,\n  623:     ratio_GL=ratio_GL,\n  624:     disc_S38=disc,\n  625:     # Shape analysis"
+    },
+    {
+      "anchor_id": "prov_257",
+      "anchor_type": "data_provenance",
+      "name": "schwinger_proof",
+      "script_path": "session-39/s39_schwinger_proof.py",
+      "session": "s39",
+      "inputs": "computations/session-37/s37_instanton_action.npz, computations/session-36/s36_tau_dynamics.npz, computations/session-39/...",
+      "outputs": "session-39/s39_schwinger_proof.npz",
+      "source_file": "computations/session-39/s39_schwinger_proof.py",
+      "source_context_30_lines": "  601:     # Gate verdict\n  602:     'gate_id': 'SCHWING-PROOF-39',\n  603:     'gate_verdict': 'FAIL',\n  604:     'gate_reason': 'near-coincidence not identity',\n  605:     'identity_ratio_GL': ratio_GL,\n  606:     'corrected_disc': disc_corrected,\n  607: }\n  608: \n  609: np.savez('computations/session-39/s39_schwinger_proof.npz', **results)\n  610: print(\"Saved: computations/session-39/s39_schwinger_proof.npz\")\n  611: print()\n  612: \n  613: # Print summary table\n  614: print(\"=\" * 72)\n  615: print(\"SUMMARY TABLE\")\n  616: print(\"=\" * 72)\n  617: print()"
+    },
+    {
+      "anchor_id": "prov_258",
+      "anchor_type": "data_provenance",
+      "name": "spectral_function",
+      "script_path": "session-39/s39_spectral_function.py",
+      "session": "s39",
+      "inputs": "",
+      "outputs": "session-39/s39_spectral_function.npz, session-39/s39_spectral_function.png",
+      "source_file": "computations/session-39/s39_spectral_function.py",
+      "source_context_30_lines": "  799: # Add peak data\n  800: if gpv_peak is not None:\n  801:     save_dict['gpv_peak_omega'] = gpv_peak['omega']\n  802:     save_dict['gpv_peak_height'] = gpv_peak['height']\n  803: if removal_peak is not None:\n  804:     save_dict['removal_peak_omega'] = removal_peak['omega']\n  805:     save_dict['removal_peak_height'] = removal_peak['height']\n  806: \n  807: out_npz = os.path.join(SCRIPT_DIR, 's39_spectral_function.npz')\n  808: np.savez_compressed(out_npz, **save_dict)\n  809: print(f\"  Saved: {out_npz}\")\n  810: print(f\"  Size: {os.path.getsize(out_npz) / 1024:.1f} KB\")\n  811: \n  812: # ======================================================================\n  813: #  Step 14: PLOT\n  814: # ======================================================================\n  815: "
+    },
+    {
+      "anchor_id": "prov_259",
+      "anchor_type": "data_provenance",
+      "name": "acoustic_temperature",
+      "script_path": "session-40/s40_acoustic_temperature.py",
+      "session": "s40",
+      "inputs": "",
+      "outputs": "session-40/s40_acoustic_temperature.npz, session-40/s40_acoustic_temperature.png",
+      "source_file": "computations/session-40/s40_acoustic_temperature.py",
+      "source_context_30_lines": "   13:   FAIL (NO CONNECTION): T_acoustic differs from T_Gibbs by more than factor 5\n   14: \n   15: Inputs:\n   16:   computations/session-39/s39_cascade_spectroscopy.npz  (B2 dispersion)\n   17:   computations/session-39/s39_richardson_gaudin.npz      (BCS gap at fold)\n   18:   computations/session-37/s37_pair_susceptibility.npz    (pair gap Delta_pair)\n   19: \n   20: Outputs:\n   21:   computations/session-40/s40_acoustic_temperature.npz\n   22:   computations/session-40/s40_acoustic_temperature.png\n   23: \"\"\"\n   24: \n   25: import numpy as np\n   26: from scipy.interpolate import CubicSpline\n   27: from scipy.optimize import brentq\n   28: import matplotlib\n   29: matplotlib.use('Agg')"
+    },
+    {
+      "anchor_id": "prov_260",
+      "anchor_type": "data_provenance",
+      "name": "b2_decay_out",
+      "script_path": "session-40/s40_b2_decay_out.py",
+      "session": "s40",
+      "inputs": "",
+      "outputs": "session-40/s40_b2_decay_out.npz, session-40/s40_b2_decay_out.png",
+      "source_file": "computations/session-40/s40_b2_decay_out.py",
+      "source_context_30_lines": " 1061:     # Inputs\n 1062:     'E_8': E_8,\n 1063:     'V_phys': V_phys,\n 1064:     'p_k': p_k,\n 1065:     'lambda_k': lambda_k,\n 1066:     'branch_labels': np.array(branch_labels),\n 1067: }\n 1068: \n 1069: np.savez(os.path.join(SCRIPT_DIR, 's40_b2_decay_out.npz'), **save_dict)\n 1070: print(f\"  Saved: computations/session-40/s40_b2_decay_out.npz\")\n 1071: \n 1072: # ======================================================================\n 1073: #  STEP 17: Plots\n 1074: # ======================================================================\n 1075: \n 1076: print(\"\\n--- Step 17: Generate plots ---\")\n 1077: "
+    }
+  ]
+}

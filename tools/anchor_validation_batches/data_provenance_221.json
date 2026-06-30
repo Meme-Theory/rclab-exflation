@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 221,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_2201",
+      "anchor_type": "data_provenance",
+      "name": "w5a_tau_pivot_canonical_promotion",
+      "script_path": "session-88/s88_w5a_tau_pivot_canonical_promotion.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "session-88/s88_w5a_tau_pivot_canonical_promotion.npz",
+      "source_file": "computations/session-88/s88_w5a_tau_pivot_canonical_promotion.py",
+      "source_context_30_lines": "   66: L_MAX = \"N/A\"  # (local)\n   67: \n   68: # Class-(f) candidate values\n   69: CANDIDATE_A = 0.198  # (local) S87 W2-5.6 placeholder\n   70: CANDIDATE_B = 0.190  # (local) S86 W4 P5 conservative; = tau_fold\n   71: SUBSTRATE_CANONICAL = 0.190  # (local) substrate-first selection (= tau_fold)\n   72: \n   73: # Files\n   74: SCRIPT_PATH = T0 / \"s88_w5a_tau_pivot_canonical_promotion.py\"\n   75: NPZ_OUT = T0 / \"s88_w5a_tau_pivot_canonical_promotion.npz\"\n   76: VERDICT_FILE = T0 / \"s88_gate_verdicts.txt\"\n   77: \n   78: CANON_PY = SHARED_DIR / \"canonical_constants.py\"\n   79: ALLOWLIST_PATH = PROJECT_ROOT / \".claude\" / \"rules\" / \"methodology-wave-allowlist.md\"\n   80: PLAN_PATH = PROJECT_ROOT / \"sessions\" / \"session-plan\" / \"session-88-plan-w5a.md\"\n   81: S87_W2_5_SCRIPT = PROJECT_ROOT / \"computations\" / \"session-87\" / \"s87_w2_a4_a2_pivot_stationarity_pin.py\"\n   82: S86_W4_P5_SCRIPT = PROJECT_ROOT / \"computations\" / \"session-86\" / \"s86_w4_p5_sector_2_k_invariant.py\""
+    },
+    {
+      "anchor_id": "prov_2202",
+      "anchor_type": "data_provenance",
+      "name": "w5b_connes_distance_16x16_grid",
+      "script_path": "session-88/s88_w5b_connes_distance_16x16_grid.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "session-88/s88_w5b_connes_distance_16x16_grid.npz",
+      "source_file": "computations/session-88/s88_w5b_connes_distance_16x16_grid.py",
+      "source_context_30_lines": "   55: CALIBRATION:\n   56:   - State basis: 16 elementary computational basis vectors e_i on the n_loc=16\n   57:     Hilbert space induced by §W5b-49's chiral D_loc construction.\n   58:   - D_F: same chiral D_loc as §W5b-49 (Pair-2 sectors (0,1)+(1,0) at L_max=12).\n   59:   - SDP solver: cvxpy.CLARABEL with tol_gap_abs/rel 1e-9 (matches §W5b-49).\n   60:   - SDP infrastructure: 14-DOF complex-Hermitian A_F basis from §W5b-49.\n   61: \n   62: OUTPUTS:\n   63:   - computations/session-88/s88_w5b_connes_distance_16x16_grid.npz\n   64:   - computations/session-88/s88_w5b_connes_distance_16x16_heatmap.png\n   65:   - Verdict line at computations/session-88/s88_gate_verdicts.txt\n   66: \n   67: Substrate framing: The 16x16 distance matrix IS the substrate's intrinsic metric\n   68: structure on its state space - not \"in\" any container. The block-pattern\n   69: recovery IS the substrate's algebra decomposition manifesting in the distance\n   70: metric. Fidelity F IS the substrate's quantitative measure of how closely its\n   71: state-space metric respects its algebra decomposition."
+    },
+    {
+      "anchor_id": "prov_2203",
+      "anchor_type": "data_provenance",
+      "name": "w5b_connes_distance_af_complex_hermitian",
+      "script_path": "session-88/s88_w5b_connes_distance_af_complex_hermitian.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "session-88/s88_w5b_connes_distance_af_complex_hermitian.npz, session-88/s88_w5b_connes_distance_af_complex_hermitian.png",
+      "source_file": "computations/session-88/s88_w5b_connes_distance_af_complex_hermitian.py",
+      "source_context_30_lines": "   84: CALIBRATION:\n   85:   - State-pair: same canonical Pair-2 (\"B1 acoustic min/max\") as S87 W1b-6/W3.\n   86:   - D_F: chiral D_loc construction identical to S87 W3 (re-built deterministically).\n   87:   - L_max: 12 (same spectrum cache s84_spectrum_cache_L12_tau019.npz).\n   88:   - SDP solver: cvxpy.CLARABEL with tol_gap_abs/rel 1e-9.\n   89:   - n_loc = 16 (same as S87 W3).\n   90: \n   91: OUTPUTS:\n   92:   - computations/session-88/s88_w5b_connes_distance_af_complex_hermitian.npz\n   93:   - computations/session-88/s88_w5b_connes_distance_af_complex_hermitian.png\n   94:     (per-block contribution stacked-bar of |x_C|, ||x_H||_2, ||x_M3||_F)\n   95:   - Verdict line at computations/session-88/s88_gate_verdicts.txt\n   96: \n   97: Substrate framing: d_C(omega_1, omega_2) IS the substrate's intrinsic metric on\n   98: its state space. The 14-DOF complex-Hermitian basis IS the full self-adjoint\n   99: content of A_F; the 8-DOF real-symmetric subset is a measurement-convention\n  100: under-sample."
+    },
+    {
+      "anchor_id": "prov_2204",
+      "anchor_type": "data_provenance",
+      "name": "w5b_corner_classification_audit",
+      "script_path": "session-88/s88_w5b_corner_classification_audit.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-88/s88_w5b_corner_classification_audit.py",
+      "source_context_30_lines": "<name 'w5b_corner_classification_audit' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S88 W5b-46 — S88-FOUR-CORNER-RETROACTIVE-ANNOTATION-AUDIT-SCRIPT\n    4: ================================================================\n    5: \n    6: Gate: S88-FOUR-CORNER-RETROACTIVE-ANNOTATION-AUDIT-SCRIPT ([VERIFY])\n    7: \n    8: Pre-registered threshold (plan §W5b-46 PASS criterion):\n    9:   PASS iff: (i) `_corner_classification_audit.py` exists + runs without\n   10:   exception on `sessions/permanent-results-registry.md`; (ii) emits valid\n   11:   JSON output for all 7 §VII slots; (iii) per-slot corner predictions\n   12:   match the table (or, if mismatch, mismatches are flagged AMBIGUOUS and\n   13:   routed to lizzi+connes consultation, NOT silently re-classified);\n   14:   (iv) [post-mack-write] all 7 slot headers have **Corner**: I/II/III/IV\n   15:   annotation; (v) audit script integrated as callable from\n   16:   `_source_reconciliation_audit.py` post-V.2 extension hook.\n   17: \n   18:   At THIS gate's evaluation: criterion (iv) is mack's downstream write\n   19:   (separate Wave-B dispatch); the audit JSON we emit IS the input to\n   20:   mack.  This script's PASS therefore covers (i), (ii), (iii), (v); the\n   21:   composite verdict is INFO if criterion (iv) is the only outstanding\n   22:   item AND (i)-(iii)+(v) all PASS, since the audit is operational and\n   23:   the registry write is a follow-up not a defect of THIS gate.\n   24: \n   25: Inputs (SHA-256 dual-pinned at runtime — see Section 4 below; S84+ schema):\n   26:   - sessions/permanent-results-registry.md  (parse target)\n   27:   - computations/_shared/_corner_classification_audit.py  (audit module)\n   28:   - computations/_shared/canonical_constants.py\n   29:   - script bytes (this thin wrapper)\n   30: "
+    },
+    {
+      "anchor_id": "prov_2205",
+      "anchor_type": "data_provenance",
+      "name": "w5b_corner_iv_level2_envelope",
+      "script_path": "session-88/s88_w5b_corner_iv_level2_envelope.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "session-88/s88_w5b_corner_iv_level2_envelope.npz, session-88/s88_w5b_corner_iv_level2_envelope.png",
+      "source_file": "computations/session-88/s88_w5b_corner_iv_level2_envelope.py",
+      "source_context_30_lines": "   69: - computations/session-52/s52_bogoliubov_amp.npz   (GGE Bogoliubov amplitudes\n   70:    from S52; provides Delta_per_mode, u_k, v_k for the canonical 8-mode\n   71:    Bogoliubov vacuum state-pair)\n   72: - computations/session-84/s84_spectrum_cache_L12_tau019.npz   (D_K spectrum\n   73:    cache truncatable at L_max in {6..12} via max(p,q)<=L_max sector filtering)\n   74: - computations/_shared/canonical_constants.py   (tau_fold, M_KK, Delta_BCS)\n   75: \n   76: ==== OUTPUTS ====\n   77: - computations/session-88/s88_w5b_corner_iv_level2_envelope.npz\n   78: - computations/session-88/s88_w5b_corner_iv_level2_envelope.png\n   79: - canonical verdict line + dual-SHA companion + S87+ schema-v2 3-tuple\n   80:   annotation row appended to computations/session-88/s88_gate_verdicts.txt\n   81: \n   82: Author: connes-ncg-theorist (S88 W5b-47)\n   83: \"\"\"\n   84: from __future__ import annotations\n   85: "
+    },
+    {
+      "anchor_id": "prov_2206",
+      "anchor_type": "data_provenance",
+      "name": "w5b_mack_registry_writer",
+      "script_path": "session-88/s88_w5b_mack_registry_writer.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-88/s88_w5b_mack_registry_writer.py",
+      "source_context_30_lines": "<name 'w5b_mack_registry_writer' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: # -*- coding: utf-8 -*-\n    3: \"\"\"\n    4: S88 W5b mack-cosmic-bridge sole-writer registry-landing script.\n    5: \n    6: GATES:\n    7: - Gate A: S88-VII-U-2-REGISTRY-WRITE\n    8:     Lands lizzi's §VII.U.2 4-corner classification STAGE-1-CANDIDATE\n    9:     drafted in WP §W5b-45, with cross-citation to connes 8-step axiom\n   10:     proof at WP §W5b-48.\n   11: - Gate B: S88-WAVE-B-CORNER-CELL-ANNOTATION-PASS\n   12:     Annotates **Corner**: <I/II/III/IV> on 7 existing §VII registry\n   13:     slot headers per the §W5b-46 predicted-assignment table.\n   14: \n   15: ARCHITECTURE: AFTER-pattern per `.claude/rules/registry-landing.md`\n   16: §\"Bridge-Landing Script Architecture\":\n   17:   1. build_promotion_text(...) — pure function, full text in memory\n   18:   2. write_atomic_with_fsync(...) — single disk write\n   19:   3. re_read + verify_section_matches(...) — single boolean per gate\n   20:   4. emit_verdict_line(...) — exactly ONE canonical line + dual-SHA\n   21:      companion per gate (no schema-v2 3-tuple; both gates are\n   22:      artifact-existence METHODOLOGY-class with no [SIGN] trigger).\n   23: \n   24: INPUT-PIN MAP (closure_hash → audit_sha256):\n   25: - s88_w5b_45_lizzi_draft_sha\n   26: - s88_w5b_48_connes_axiom_proof_sha\n   27: - s88_w5b_46_audit_json_sha\n   28: - methodology_wave_allowlist_sha\n   29: - permanent_results_registry_pre_write_sha\n   30: - canonical_constants_sha"
+    },
+    {
+      "anchor_id": "prov_2207",
+      "anchor_type": "data_provenance",
+      "name": "w6a_dim_plus_rank_over_2_prefactor",
+      "script_path": "session-88/s88_w6a_dim_plus_rank_over_2_prefactor.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "session-88/s88_w6a_dim_plus_rank_over_2_prefactor.npz, session-88/s88_w6a_dim_plus_rank_over_2_prefactor.png",
+      "source_file": "computations/session-88/s88_w6a_dim_plus_rank_over_2_prefactor.py",
+      "source_context_30_lines": "  136: L_MAX_SU4 = 8                                                 # (local) plan §7\n  137: L_MAX_TAG = \"SU2:15,SU3:12,SU4:8\"                             # (local) verdict-line tag\n  138: \n  139: # Pre-registered thresholds (plan §9)\n  140: PASS_THRESHOLD = 1e-12                                        # (local)\n  141: INFO_THRESHOLD = 1e-9                                         # (local)\n  142: \n  143: # Output destinations\n  144: OUT_NPZ = SESSION_DIR / \"s88_w6a_dim_plus_rank_over_2_prefactor.npz\"   # (local)\n  145: OUT_PNG = SESSION_DIR / \"s88_w6a_dim_plus_rank_over_2_prefactor.png\"   # (local)\n  146: OUT_JSON = SESSION_DIR / \"s88_w6a_dim_plus_rank_over_2_prefactor.json\" # (local)\n  147: VERDICT_TXT = SESSION_DIR / \"s88_gate_verdicts.txt\"                    # (local)\n  148: \n  149: # Input pin map per plan §10 (substrate-IS sources):\n  150: INPUT_FILES = [\n  151:     SHARED_DIR / \"canonical_constants.py\",\n  152:     COMPUTATIONS_DIR / \"session-84\" / \"s84_spectrum_cache_L12_tau019.npz\","
+    },
+    {
+      "anchor_id": "prov_2208",
+      "anchor_type": "data_provenance",
+      "name": "w6a_jensen_dim_spectrum_first_principles",
+      "script_path": "session-88/s88_w6a_jensen_dim_spectrum_first_principles.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "session-88/s88_w6a_jensen_dim_spectrum_first_principles.npz, session-88/s88_w6a_jensen_dim_spectrum_first_principles.png",
+      "source_file": "computations/session-88/s88_w6a_jensen_dim_spectrum_first_principles.py",
+      "source_context_30_lines": "  156: PREFACTOR_A = DIM_SU3 + RANK_SU3                                      # (local) = 10\n  157: PREFACTOR_B = (DIM_SU3 + RANK_SU3) / 2                                # (local) = 5\n  158: CARTAN_PLANCHEREL = 5 * math.pi                                       # (local) = 5*pi\n  159: \n  160: # tau pin (canonical_constants.py: tau_fold = 0.19)\n  161: TAU_PIN = float(tau_fold)  # noqa: F405                               # (local)\n  162: \n  163: # Output destinations\n  164: OUT_NPZ = SESSION_DIR / 's88_w6a_jensen_dim_spectrum_first_principles.npz'\n  165: OUT_PNG = SESSION_DIR / 's88_w6a_jensen_dim_spectrum_first_principles.png'\n  166: OUT_JSON = SESSION_DIR / 's88_w6a_jensen_dim_spectrum_first_principles.json'\n  167: VERDICT_TXT = SESSION_DIR / 's88_gate_verdicts.txt'\n  168: \n  169: # Input-pin map (per plan-spec; orchestrator override paths)\n  170: INPUT_FILES = [\n  171:     _SHARED_DIR / 'canonical_constants.py',\n  172:     PROJECT_ROOT / 'computations' / 'session-84' / 's84_spectrum_cache_L12_tau019.npz',"
+    },
+    {
+      "anchor_id": "prov_2209",
+      "anchor_type": "data_provenance",
+      "name": "w6b_conv_b_re_pin",
+      "script_path": "session-88/s88_w6b_conv_b_re_pin.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-88/s88_w6b_conv_b_re_pin.py",
+      "source_context_30_lines": "  424: \n  425:     emit_verdict_line(verdict, value_str, audit_sha, content_sha)\n  426: \n  427:     print(f\"VERDICT: {verdict} -- value={value_str}\")\n  428:     print(f\"  audit_sha256:   {audit_sha}\")\n  429:     print(f\"  content_sha256: {content_sha}\")\n  430: \n  431:     # Emit JSON sidecar for downstream WP consumption\n  432:     sidecar = Path(\"computations/session-88/s88_w6b_conv_b_re_pin.json\")\n  433:     sidecar.write_text(json.dumps({\n  434:         \"gate_id\": GATE_ID,\n  435:         \"verdict\": verdict,\n  436:         \"value\": value_str,\n  437:         \"audit_sha256\": audit_sha,\n  438:         \"content_sha256\": content_sha,\n  439:         \"scheme\": SCHEME,\n  440:         \"convention\": CONVENTION,"
+    },
+    {
+      "anchor_id": "prov_2210",
+      "anchor_type": "data_provenance",
+      "name": "w6b_k1_vs_k2_registry_note",
+      "script_path": "session-88/s88_w6b_k1_vs_k2_registry_note.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-88/s88_w6b_k1_vs_k2_registry_note.py",
+      "source_context_30_lines": "  282:     }\n  283:     audit_sha = closure_hash(input_pin_map)\n  284:     emit_verdict_line(verdict, value_str, audit_sha, content_sha)\n  285: \n  286:     print(f\"VERDICT: {verdict} -- value={value_str}\")\n  287:     print(f\"  audit_sha256:   {audit_sha}\")\n  288:     print(f\"  content_sha256: {content_sha}\")\n  289: \n  290:     sidecar = Path(\"computations/session-88/s88_w6b_k1_vs_k2_registry_note.json\")\n  291:     sidecar.write_text(json.dumps({\n  292:         \"gate_id\": GATE_ID, \"verdict\": verdict, \"value\": value_str,\n  293:         \"audit_sha256\": audit_sha, \"content_sha256\": content_sha,\n  294:         \"scheme\": SCHEME, \"convention\": CONVENTION, \"L_max\": L_MAX,\n  295:         \"regulator\": REGULATOR, \"schema_version\": SCHEMA,\n  296:         \"SU_N_cross_checks\": [\n  297:             {\"N\": N, \"d\": d, \"r\": r, \"k1_exponent\": k1, \"k2_exponent\": k2}\n  298:             for N, d, r, k1, k2 in SU_N_CROSS_CHECKS"
+    }
+  ]
+}

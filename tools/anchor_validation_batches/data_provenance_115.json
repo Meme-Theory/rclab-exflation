@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 115,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1141",
+      "anchor_type": "data_provenance",
+      "name": "multifield_delta_n",
+      "script_path": "session-67/s67_multifield_delta_n.py",
+      "session": "s67",
+      "inputs": "",
+      "outputs": "session-67/s67_multifield_delta_n.npz, session-67/s67_multifield_delta_n.png",
+      "source_file": "computations/session-67/s67_multifield_delta_n.py",
+      "source_context_30_lines": "  657: print(f\"    Enhancement: {best_enhancement:.4e} (best: {method_names[best_method_idx]})\")\n  658: print(f\"    A_s gap: M1={gap_m1:.2f}, M2={gap_m2:.2f}, M3={gap_m3:.2f} OOM from Planck\")\n  659: print(f\"    f_NL estimate: {f_NL_est:.4f}\")\n  660: \n  661: # ============================================================================\n  662: #  SECTION 11: Save results\n  663: # ============================================================================\n  664: \n  665: outfile = os.path.join(os.path.dirname(__file__), 's67_multifield_delta_n.npz')\n  666: \n  667: np.savez(\n  668:     outfile,\n  669:     # Gate metadata\n  670:     gate_name='MULTIFIELD-DELTA-N-67',\n  671:     gate_verdict='INFO',\n  672:     gate_detail=gate_detail,\n  673:     # Branch structure"
+    },
+    {
+      "anchor_id": "prov_1142",
+      "anchor_type": "data_provenance",
+      "name": "projected_moments",
+      "script_path": "session-67/s67_projected_moments.py",
+      "session": "s67",
+      "inputs": "",
+      "outputs": "session-67/s67_projected_moments.npz, session-67/s67_projected_moments.png",
+      "source_file": "computations/session-67/s67_projected_moments.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s67_projected_moments.py -- PROJECTED-MOMENTS-67: Spectral Moments from\n    4: Richardson-Gaudin Exact Occupations\n    5: =====================================================================\n    6: \n    7: Gate: PROJECTED-MOMENTS-67\n    8:   PASS: |delta_a_2 / a_2| < 10% at N_pair = 4\n    9:   FAIL: |delta_a_2 / a_2| > 20%\n   10:   INFO: intermediate (10-20%)\n   11: "
+    },
+    {
+      "anchor_id": "prov_1143",
+      "anchor_type": "data_provenance",
+      "name": "spectral_endpoint",
+      "script_path": "session-67/s67_spectral_endpoint.py",
+      "session": "s67",
+      "inputs": "",
+      "outputs": "session-67/s67_spectral_endpoint.npz, session-67/s67_spectral_endpoint.png",
+      "source_file": "computations/session-67/s67_spectral_endpoint.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s67_spectral_endpoint.py -- SPECTRAL-ENDPOINT-67: Functional Interpolation Continuity\n    4: =====================================================================================\n    5: \n    6: Gate: SPECTRAL-ENDPOINT-67\n    7:   PASS: d^2S/dtau^2 changes sign at some eta_*, meaning the curvature of the\n    8:         spectral action transitions smoothly from convex to concave.\n    9:   FAIL: d^2S/dtau^2 has the same sign for all eta (no sign change in [0, 2]).\n   10: \n   11: Physics:"
+    },
+    {
+      "anchor_id": "prov_1144",
+      "anchor_type": "data_provenance",
+      "name": "sub_gap_scan",
+      "script_path": "session-67/s67_sub_gap_scan.py",
+      "session": "s67",
+      "inputs": "",
+      "outputs": "session-67/s67_sub_gap_scan.npz, session-67/s67_sub_gap_scan.png",
+      "source_file": "computations/session-67/s67_sub_gap_scan.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s67_sub_gap_scan.py -- SUB-GAP-FUNCTIONAL-SCAN-67\n    4: ===================================================\n    5: \n    6: Gate: SUB-GAP-FUNCTIONAL-SCAN-67\n    7:   PASS: omega_L1 < 2*Delta(f) for all surviving functionals\n    8:   FAIL: omega_L1 > 2*Delta(f) for any surviving functional\n    9: \n   10: Physics\n   11: -------"
+    },
+    {
+      "anchor_id": "prov_1145",
+      "anchor_type": "data_provenance",
+      "name": "transit_ps",
+      "script_path": "session-67/s67_transit_ps.py",
+      "session": "s67",
+      "inputs": "",
+      "outputs": "session-67/s67_transit_ps.npz, session-67/s67_transit_ps.png",
+      "source_file": "computations/session-67/s67_transit_ps.py",
+      "source_context_30_lines": "  681: print(f\"  {'Null rejected':<40} {'YES':<25}\")\n  682: print(f\"  {'Gate verdict':<40} {gate_verdict:<25}\")\n  683: \n  684: \n  685: # ============================================================================\n  686: #  SECTION 12: Save data\n  687: # ============================================================================\n  688: \n  689: output_file = os.path.join(os.path.dirname(__file__), 's67_transit_ps.npz')\n  690: \n  691: np.savez(output_file,\n  692:          # Grids\n  693:          k_grid=k_grid,\n  694:          k_grid_rk=k_rk_valid,\n  695:          k_transit=k_transit,\n  696:          # P_zeta from each method\n  697:          P_zeta_rk=P_rk_valid,"
+    },
+    {
+      "anchor_id": "prov_1146",
+      "anchor_type": "data_provenance",
+      "name": "vhs_classify",
+      "script_path": "session-67/s67_vhs_classify.py",
+      "session": "s67",
+      "inputs": "",
+      "outputs": "session-67/s67_vhs_classify.npz, session-67/s67_vhs_classify.png",
+      "source_file": "computations/session-67/s67_vhs_classify.py",
+      "source_context_30_lines": "  779:     'dominant_vhs': np.array(dominant_vhs),\n  780:     'vhs_order': np.array(vhs_order),\n  781: \n  782:     # Gate\n  783:     'gate_name': np.array('VHS-CLASSIFY-67'),\n  784:     'gate_verdict': np.array('INFO'),\n  785: }\n  786: \n  787: np.savez(os.path.join(SCRIPT_DIR, 's67_vhs_classify.npz'), **results)\n  788: print(\"  Saved: s67_vhs_classify.npz\")\n  789: \n  790: \n  791: # ============================================================\n  792: # 10. PLOTS\n  793: # ============================================================\n  794: \n  795: print(\"--- Generating plots ---\")"
+    },
+    {
+      "anchor_id": "prov_1147",
+      "anchor_type": "data_provenance",
+      "name": "volovik_q_a0",
+      "script_path": "session-67/s67_volovik_q_a0.py",
+      "session": "s67",
+      "inputs": "",
+      "outputs": "session-67/s67_volovik_q_a0.npz, session-67/s67_volovik_q_a0.png",
+      "source_file": "computations/session-67/s67_volovik_q_a0.py",
+      "source_context_30_lines": "   56:   - Paper 25 (Volovik 2013): rho_vac ~ E_P^2 H^2 at late times\n   57:   - Paper 18 (Volovik 2024): Discrete Z_4 symmetry, quantized q\n   58:   - S66 DILUTION-CC-66 PASS: a_2 channel relaxation works (0.01 OOM)\n   59:   - S66 QTHEORY-NPAIR-66 FAIL: discrete N_pair self-tuning CLOSED\n   60:   - S66 TWO-COMPONENT-66: rho_geom(a_0) dominates rho_GGE by 2 OOM\n   61:   - S66 Lizzi-Landau Workshop: a_0 integer obstruction analysis\n   62: \n   63: Reads: s30b_full_spectrum.npz, s61_multi_pair_qtheory.npz, s53_q_theory_gge.npz\n   64: Writes: s67_volovik_q_a0.npz, s67_volovik_q_a0.png\n   65: \n   66: Author: volovik-superfluid-universe-theorist\n   67: Date: 2026-04-04\n   68: \"\"\"\n   69: \n   70: import sys\n   71: import os\n   72: import time"
+    },
+    {
+      "anchor_id": "prov_1148",
+      "anchor_type": "data_provenance",
+      "name": "wgc_saturation",
+      "script_path": "session-67/s67_wgc_saturation.py",
+      "session": "s67",
+      "inputs": "",
+      "outputs": "session-67/s67_wgc_saturation.npz, session-67/s67_wgc_saturation.png",
+      "source_file": "computations/session-67/s67_wgc_saturation.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s67_wgc_saturation.py -- WGC-SATURATION-67: Weak Gravity Conjecture Saturation Test\n    4: =====================================================================================\n    5: \n    6: Gate: WGC-SATURATION-67\n    7:   Prediction: ratio = 1/2 (saturation of the Bellazzini positivity bound)\n    8:   INFO: Report exact ratio\n    9: \n   10: Physics\n   11: -------"
+    },
+    {
+      "anchor_id": "prov_1149",
+      "anchor_type": "data_provenance",
+      "name": "acoustic_transfer",
+      "script_path": "session-68/s68_acoustic_transfer.py",
+      "session": "s68",
+      "inputs": "",
+      "outputs": "session-68/s68_acoustic_transfer.npz, session-68/s68_acoustic_transfer.png",
+      "source_file": "computations/session-68/s68_acoustic_transfer.py",
+      "source_context_30_lines": " 1682:                 color='red', alpha=0.1, label='Planck 2-sigma')\n 1683: ax.set_xlabel('tau')\n 1684: ax.set_ylabel('alpha_s = dn_s/dlnk')\n 1685: ax.set_title('Running of Spectral Index')\n 1686: ax.legend(fontsize=7)\n 1687: ax.set_ylim(-0.10, 0.05)\n 1688: \n 1689: plt.tight_layout()\n 1690: plot_file = os.path.join(script_dir, 's68_acoustic_transfer.png')\n 1691: fig.savefig(plot_file, dpi=150)\n 1692: print(f\"\\n  Saved plot: {plot_file}\")\n 1693: \n 1694: # ============================================================================\n 1695: #  SECTION 23: Save data\n 1696: # ============================================================================\n 1697: \n 1698: output_file = os.path.join(script_dir, 's68_acoustic_transfer.npz')"
+    },
+    {
+      "anchor_id": "prov_1150",
+      "anchor_type": "data_provenance",
+      "name": "alpha_s_transfer",
+      "script_path": "session-68/s68_alpha_s_transfer.py",
+      "session": "s68",
+      "inputs": "",
+      "outputs": "session-68/s68_alpha_s_transfer.npz, session-68/s68_alpha_s_transfer.png",
+      "source_file": "computations/session-68/s68_alpha_s_transfer.py",
+      "source_context_30_lines": "  981:         ax.text(bar.get_x() + bar.get_width()/2., val,\n  982:                 f'{val:.5f}', ha='center', va='bottom' if val > 0 else 'top',\n  983:                 fontsize=8)\n  984:     else:\n  985:         ax.text(bar.get_x() + bar.get_width()/2., 0.001,\n  986:                 '0 (exact)', ha='center', va='bottom', fontsize=8)\n  987: \n  988: plt.tight_layout()\n  989: fig.savefig(os.path.join(data_dir, 's68_alpha_s_transfer.png'), dpi=150)\n  990: print(f\"\\n  Saved plot: s68_alpha_s_transfer.png\")\n  991: \n  992: # ============================================================================\n  993: #  SECTION 16: Save data\n  994: # ============================================================================\n  995: \n  996: output_file = os.path.join(data_dir, 's68_alpha_s_transfer.npz')\n  997: "
+    }
+  ]
+}

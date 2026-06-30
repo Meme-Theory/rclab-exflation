@@ -170,7 +170,7 @@ predictions. The connection is deep:
 3. **Both are "Kepler-stage" results**: Empirically precise formulas without dynamical
    derivation
 4. **The $Z_3$ connection**: Koide's trigonometric form with $2\pi k/3$ structure mirrors
-   the $Z_3 = (p-q) \mod 3$ triality labeling found in the Tier 1 Dirac spectrum
+   the $Z_3 = (p-q) \mod 3$ triality labeling found in the Level 1 Dirac spectrum
    computation (Session 17a, deliverable B-4)
 
 The key question is whether Koide and Paasch are seeing the SAME underlying structure from
@@ -189,6 +189,6 @@ The Koide formula connects to the phonon-exflation framework in several ways:
 2. **Circulant mass matrices**: The circulant structure underlying $Q = 2/3$ can arise from
    the representation theory of cyclic groups acting on the internal space -- exactly the
    kind of structure that the commutant analysis (Sessions 7-10) explored.
-3. **Benchmark**: Any mass prediction from $V_{\text{eff}}(s_0)$ and the Tier 1 eigenvalue
+3. **Benchmark**: Any mass prediction from $V_{\text{eff}}(s_0)$ and the Level 1 eigenvalue
    spectrum must be CONSISTENT with the Koide formula for charged leptons -- this is a
    non-trivial constraint on the framework.

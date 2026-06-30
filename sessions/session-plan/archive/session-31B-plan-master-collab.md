@@ -70,7 +70,7 @@ If both the static (tau = 0) and Kapitza (tau_*, oscillating) vacua exist as Euc
 
 ### 1. Severity of the one-loop prefactor in I-1
 
-**SP and Einstein**: The prefactor C introduces O(10^2) uncertainty, potentially invalidating the gate verdict if the ratio falls in a gray zone. Both recommend computing I-1 with C=1 but flagging the uncertainty explicitly. SP further suggests that the twistor description of the instanton moduli space could resolve the prefactor permanently (Tier 2, high-ceiling).
+**SP and Einstein**: The prefactor C introduces O(10^2) uncertainty, potentially invalidating the gate verdict if the ratio falls in a gray zone. Both recommend computing I-1 with C=1 but flagging the uncertainty explicitly. SP further suggests that the twistor description of the instanton moduli space could resolve the prefactor permanently (Level 2, high-ceiling).
 
 **Hawking**: Goes further -- the Euclidean continuation may have negative modes (conformal factor problem) absent from the Lorentzian analysis. The prefactor is not merely uncertain but potentially divergent without careful analytic continuation. Session 20b's TT stability (no tachyons) applies to the Lorentzian sector only.
 
@@ -119,7 +119,7 @@ Synthesized from all three reviews. Items marked with asterisks (**) are amendme
 | **15** | Gibbons-Hawking temperature of Kapitza oscillation | Hawking (3.4) | Zero (analytic, omega_perp known) | T_GH^{Kapitza} ~ T_BCS would be a self-consistency condition. Diagnostic. |
 | **16** | Quantum occupation number estimate n_perp | Einstein (5.3) | Zero (analytic) | n_perp >> 1 validates classical Kapitza; n_perp ~ 1 requires quantum treatment. Critical for interpretation. |
 | **17** | Cosmological constant arithmetic at Kapitza minimum | Einstein (3.5) | Zero (conditional on K-1 PASS) | rho_Lambda = V_Kapitza(tau_*)/8piG vs 10^{-47} GeV^4. Characterizes where framework stands on CC problem. |
-| **18** | Petrov classification along limit cycle | SP (3.6) | Tier 2 (blocked on K-1 PASS + specific trajectory) | Novel prediction: time-dependent Petrov type = "phonon heartbeat." |
+| **18** | Petrov classification along limit cycle | SP (3.6) | Level 2 (blocked on K-1 PASS + specific trajectory) | Novel prediction: time-dependent Petrov type = "phonon heartbeat." |
 
 ---
 

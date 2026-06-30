@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 242,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_2411",
+      "anchor_type": "data_provenance",
+      "name": "s31Ca_foam_domain_phase",
+      "script_path": "session-31/s31Ca_foam_domain_phase.py",
+      "session": "",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-31/s31Ca_foam_domain_phase.py",
+      "source_context_30_lines": "   33:   Perlman bound: Delta_L < 10^{-15} m for d = 1 Gpc.\n   34: \n   35:   Find minimum l_coh such that Delta_L < Perlman bound.\n   36: \n   37: Gate F-2-G: PASS if l_coh < 10^6 * l_P satisfies Perlman bound.\n   38: \n   39: Input: computations/_shared/dirac_spectrum.py (spectrum computation)\n   40:        OR s31Ca_foam_spectral_dim.npz (if available, for cached spectra)\n   41: Output: s31Ca_foam_domain_phase.{npz,png}\n   42: \n   43: Session 31Ca -- Quantum Foam Diagnostics\n   44: \"\"\"\n   45: \n   46: import sys\n   47: import os\n   48: import numpy as np\n   49: import matplotlib"
+    },
+    {
+      "anchor_id": "prov_2412",
+      "anchor_type": "data_provenance",
+      "name": "s31Ca_foam_holo_dof",
+      "script_path": "session-31/s31Ca_foam_holo_dof.py",
+      "session": "",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-31/s31Ca_foam_holo_dof.py",
+      "source_context_30_lines": "   37:   Lambda cutoff, K(t) ~ integral_0^Lambda dN(lambda') * exp(-t*lambda'^2).\n   38:   If N ~ Lambda^alpha, then K(t) ~ t^{-alpha/2} for small t, giving\n   39:   d_s = alpha. So the spectral dimension EQUALS the growth exponent\n   40:   of the cumulative mode count.\n   41: \n   42: Gate F-3-G: INFORMATIVE (characterizes the DOF scaling, no pass/fail threshold).\n   43: \n   44: Input: computations/_shared/dirac_spectrum.py (spectrum computation)\n   45: Output: s31Ca_foam_holo_dof.{npz,png}\n   46: \n   47: Session 31Ca -- Quantum Foam Diagnostics\n   48: \"\"\"\n   49: \n   50: import sys\n   51: import os\n   52: import numpy as np\n   53: import matplotlib"
+    },
+    {
+      "anchor_id": "prov_2413",
+      "anchor_type": "data_provenance",
+      "name": "s31Ca_foam_spectral_dim",
+      "script_path": "session-31/s31Ca_foam_spectral_dim.py",
+      "session": "",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-31/s31Ca_foam_spectral_dim.py",
+      "source_context_30_lines": "   23:   (the geometric dimension of SU(3)) at each fixed tau. The question is\n   24:   whether AVERAGING over a tau distribution modifies this.\n   25: \n   26:   With Peter-Weyl multiplicities: K(t) = sum_{(p,q)} dim(p,q)^2 *\n   27:   sum_k exp(-t * |lambda_k^{(p,q)}|^2) where lambda_k are eigenvalues\n   28:   of D in sector (p,q).\n   29: \n   30: Input: computations/_shared/dirac_spectrum.py (spectrum computation)\n   31: Output: s31Ca_foam_spectral_dim.{npz,png}\n   32: \n   33: Session 31Ca -- Quantum Foam Diagnostics\n   34: \"\"\"\n   35: \n   36: import sys\n   37: import os\n   38: import numpy as np\n   39: import matplotlib"
+    },
+    {
+      "anchor_id": "prov_2414",
+      "anchor_type": "data_provenance",
+      "name": "s31Ca_instanton_kapitza",
+      "script_path": "session-31/s31Ca_instanton_kapitza.py",
+      "session": "",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-31/s31Ca_instanton_kapitza.py",
+      "source_context_30_lines": "   30:   position-dependent enhancement that can preferentially lift the\n   31:   potential at certain tau values.\n   32: \n   33: Input:\n   34:   - s31Ba_kapitza_gate.npz (V_avg, V_corr at T3 for each A)\n   35:   - s31Ba_instanton_kapitza.npz (Gamma_inst at 6 coupling ratios)\n   36: \n   37: Output:\n   38:   - s31Ca_instanton_kapitza.{npz,png}\n   39: \n   40: Gate: If a minimum appears near tau ~ 0.18, this is the first positive\n   41: signal from a pre-registered dynamical gate in the project's history.\n   42: \"\"\"\n   43: \n   44: import numpy as np\n   45: import matplotlib\n   46: # === Phase 2b X2 transform bootstrap (auto-inserted by tools/_x2_transform_copies.py) ==="
+    },
+    {
+      "anchor_id": "prov_2415",
+      "anchor_type": "data_provenance",
+      "name": "s31Cb_bcs_convergence",
+      "script_path": "session-31/s31Cb_bcs_convergence.py",
+      "session": "",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-31/s31Cb_bcs_convergence.py",
+      "source_context_30_lines": "   18: \n   19: Additionally, we test the SCALING of M_max with N_eff by studying the\n   20: V_matrix sub-blocks and their eigenvalue spectra.\n   21: \n   22: Gate N-31Cb-G: PASS if M_max at mu=0 shows monotonic INCREASE with N_eff\n   23: AND extrapolated M_inf > 0.5. FAIL if M_max decreases or converges to < 0.1.\n   24: \n   25: Input: s23a_gap_equation.npz, s23a_kosmann_singlet.npz\n   26: Output: s31Cb_bcs_convergence.{npz,png}\n   27: \"\"\"\n   28: \n   29: import numpy as np\n   30: from numpy.linalg import eigvalsh\n   31: import matplotlib\n   32: matplotlib.use('Agg')\n   33: import matplotlib.pyplot as plt\n   34: from scipy.optimize import curve_fit"
+    },
+    {
+      "anchor_id": "prov_2416",
+      "anchor_type": "data_provenance",
+      "name": "s31Cc_bcs_kapitza",
+      "script_path": "session-31/s31Cc_bcs_kapitza.py",
+      "session": "",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-31/s31Cc_bcs_kapitza.py",
+      "source_context_30_lines": "   44:     at every static tau value.\n   45: \n   46: Input:\n   47:     computations/session-23/s23a_gap_equation.npz (V_matrix, eigenvalues, M_max at 9 tau)\n   48:     computations/session-31/s31Ba_kapitza_gate.npz (Kapitza orbit parameters)\n   49:     computations/session-31/s31Ba_instanton_kapitza.npz (instanton frequencies)\n   50: \n   51: Output:\n   52:     computations/session-31/s31Cc_bcs_kapitza.{py,npz,png}\n   53: \n   54: Session 31Ca -- Nazarewicz Nuclear Structure Computations\n   55: \"\"\"\n   56: \n   57: import sys\n   58: import os\n   59: import numpy as np\n   60: import matplotlib"
+    },
+    {
+      "anchor_id": "prov_2417",
+      "anchor_type": "data_provenance",
+      "name": "s31Cd_bayesian_ncgkk",
+      "script_path": "session-31/s31Cd_bayesian_ncgkk.py",
+      "session": "",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-31/s31Cd_bayesian_ncgkk.py",
+      "source_context_30_lines": "    8: Log-uniform prior on M_KK in [10^14, 10^18] GeV.\n    9: Likelihood: L(M_KK) = exp(-(log10(Lambda_SA/M_KK))^2 / (2*sigma^2))\n   10: Posterior, Bayes factor, KL divergence computed analytically.\n   11: Sensitivity over sigma in {1, 2, 3, 5}.\n   12: \n   13: Gate N-31Cd-G: INFORMATIVE if D_KL > 1 nat, DECISIVE if BF < 0.01.\n   14: \n   15: Input: s31Ba_nck_tau021.npz, s30b_rge_running.npz\n   16: Output: s31Cd_bayesian_ncgkk.{npz,png}\n   17: \"\"\"\n   18: \n   19: import numpy as np\n   20: from scipy import integrate\n   21: import matplotlib\n   22: matplotlib.use('Agg')\n   23: import matplotlib.pyplot as plt\n   24: "
+    },
+    {
+      "anchor_id": "prov_2418",
+      "anchor_type": "data_provenance",
+      "name": "s31Ce_gcm_moduli",
+      "script_path": "session-31/s31Ce_gcm_moduli.py",
+      "session": "",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-31/s31Ce_gcm_moduli.py",
+      "source_context_30_lines": "   11: Hamiltonian kernel: H_ij = V_total(q_i) * N_ij (adiabatic approximation)\n   12: \n   13: Solve generalized eigenvalue problem: H*f = E*N*f\n   14: Extract GCM ground state, participation ratio, expectation values.\n   15: \n   16: Gate N-31Ce-G: PHYSICS PASS if <sin^2_tw>_GCM closer to 0.231 than any single grid point.\n   17: \n   18: Input: s30b_grid_bcs.npz, s30b_sdw_grid.npz\n   19: Output: s31Ce_gcm_moduli.{npz,png}\n   20: \"\"\"\n   21: \n   22: import numpy as np\n   23: from scipy.linalg import eigh\n   24: import matplotlib\n   25: matplotlib.use('Agg')\n   26: import matplotlib.pyplot as plt\n   27: from matplotlib.colors import Normalize"
+    },
+    {
+      "anchor_id": "prov_2419",
+      "anchor_type": "data_provenance",
+      "name": "s31Cf_odd_even_stagger",
+      "script_path": "session-31/s31Cf_odd_even_stagger.py",
+      "session": "",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-31/s31Cf_odd_even_stagger.py",
+      "source_context_30_lines": "    8: This is the spectral analog of odd-even mass staggering in nuclear physics\n    9: (Nazarewicz Paper 03). Large Delta^(3) indicates strong pairing correlations\n   10: (alternating level density near the gap edge).\n   11: \n   12: Gate N-31Cf-G: INFORMATIVE if Delta^(3) shows sharp peak/sign-change at gap edge\n   13: for tau in [0.15, 0.25].\n   14: \n   15: Input: s23a_gap_equation.npz, s30b_full_spectrum.npz, s23a_kosmann_singlet.npz\n   16: Output: s31Cf_odd_even_stagger.{npz,png}\n   17: \"\"\"\n   18: \n   19: import numpy as np\n   20: import matplotlib\n   21: matplotlib.use('Agg')\n   22: import matplotlib.pyplot as plt\n   23: import os, time\n   24: "
+    },
+    {
+      "anchor_id": "prov_2420",
+      "anchor_type": "data_provenance",
+      "name": "s31Cg_selfconsistent_cranking",
+      "script_path": "session-31/s31Cg_selfconsistent_cranking.py",
+      "session": "",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-31/s31Cg_selfconsistent_cranking.py",
+      "source_context_30_lines": "    8: For each Kapitza minimum at reduced omega:\n    9:   - Extract d^2V/dtau^2 at the minimum\n   10:   - Compute omega_out^2 = (1/m_tau) * d^2V/dtau^2 where m_tau = 5 (Baptista Paper 15 eq 3.79)\n   11:   - Check omega_out/omega_input in [0.8, 1.2]\n   12: \n   13: Gate N-31Cg-G: PASS if fixed point at omega^2 in [1, 8].\n   14: \n   15: Input: s31Ba_kapitza_gate.npz\n   16: Output: s31Cg_selfconsistent_cranking.{npz,png}\n   17: \"\"\"\n   18: \n   19: import numpy as np\n   20: import matplotlib\n   21: matplotlib.use('Agg')\n   22: import matplotlib.pyplot as plt\n   23: \n   24: # ── Load Kapitza data ──"
+    }
+  ]
+}

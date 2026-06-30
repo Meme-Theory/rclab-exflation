@@ -1,0 +1,67 @@
+{
+  "gate_id": "S92-W8-CF-S92-PHASE-WEIGHT-QCD-CROSSOVER-REFINEMENT",
+  "scheme": "borsanyi-2016-cubic-spline-interpolation",
+  "convention": "mack-cosmic-bridge-primary-substrate-cascade-tail-PHASE-WEIGHT-REFINEMENT",
+  "anchors": {
+    "100GeV": {
+      "T_MeV": 100000.0,
+      "borsanyi_g_star_interp": 106.75,
+      "g_star_PDG_ref": 106.75,
+      "rel_dev": 0.0,
+      "verdict_per_anchor": "PASS"
+    },
+    "1GeV": {
+      "T_MeV": 1000.0,
+      "borsanyi_g_star_interp": 61.75,
+      "g_star_PDG_ref": 61.75,
+      "rel_dev": 0.0,
+      "verdict_per_anchor": "PASS"
+    },
+    "1MeV": {
+      "T_MeV": 1.0,
+      "borsanyi_g_star_interp": 10.75,
+      "g_star_PDG_ref": 10.75,
+      "rel_dev": 0.0,
+      "verdict_per_anchor": "PASS"
+    }
+  },
+  "max_rel_dev": 0.0,
+  "sign_directional": {
+    "prediction": "qcd_crossover_weight_borsanyi(1 GeV) < 1",
+    "w_borsanyi_1GeV": 0.7542441438158984,
+    "g_lattice_1GeV": 61.75,
+    "g_residual_1GeV": 16.937268655763766,
+    "g_free_deconfined_1GeV": 76.3513611769441,
+    "sign_confirmed": true
+  },
+  "structural_validity": {
+    "continuity_C2": true,
+    "operator_clause_2_g_star_monotonic": {
+      "strict_exact_crossover": false,
+      "strict_exact_full": false,
+      "breach_fraction_crossover": 0.1557614360162131,
+      "max_downward_excursion_g_star_units": 0.1493447036036315,
+      "excursion_relative": 0.0024417557648033807,
+      "excursion_vs_5pct_band": 0.04883511529606761,
+      "note": "natural cubic spline (plan-pinned bc_type='natural') does not preserve monotonicity on the near-flat plateau (T~668-800 MeV); overshoot is within the Bar-Reichel interpolation-error regime and the 5% Borsanyi model-uncertainty band; regime band MARGINAL"
+    },
+    "operator_clause_3_w_in_range_0_1": true,
+    "w_monotonic_diagnostic_NOT_a_clause": false,
+    "structurally_valid": true
+  },
+  "sign_verdict": "PASS",
+  "magnitude_verdict": "PASS",
+  "regime_verdict": "MARGINAL",
+  "composite_verdict": "PASS",
+  "cascade_form_pin": "S88 W6 §V.5",
+  "lattice_QCD_pin": "Borsanyi et al. 2016 (Nature 539, 69) / PDG canonical",
+  "borsanyi_construction_note": "g_*(T) grid anchored to PDG-CANONICAL at 1 GeV (61.75), EW asymptote (g_star_SM=106.75), BBN asymptote (g_star_BBN=10.75); crossover-band points are CONSTRUCTED monotone interpolants with standard lattice crossover shape, NOT independent Borsanyi measurements (flagged per point in borsanyi_anchor_provenance).",
+  "audit_sha256": "dba0b7911831829c3cf3fadac3e370e8a741cc46cec03ea7a0b9273533872b17",
+  "content_sha256": "0a5a66170e46d0b634ffded115c07eeaebd5b47fe200026ca3248c85da926a66",
+  "input_pin_shas": {
+    "computations/_shared/canonical_constants.py": "34ddcc8cb9d8a6dde82fb22c333377ba539a8509a5ef153d6ea304c56db263cc",
+    "computations/session-91/s91_w3_cf40_kolb_turner_fd_be_integrated.py": "01a7a4476b034c704510834f5ead6d16a15364a8aeb13f127403f2e0f0735b31",
+    "computations/session-91/s91_w3_cf40_kolb_turner_fd_be_integrated.npz": "10ddab6b2ee0a48bb5da021a9356161f0e1b0b88e8be466fb3cb636e0e81ae45",
+    "computations/session-91/s91_gate_verdicts.txt": "78ba80992e8a7b2f660b87f4b02a32c5d618b391a97f8ad5a8751ff8fbc5bf21"
+  }
+}

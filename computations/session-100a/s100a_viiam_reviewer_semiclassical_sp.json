@@ -1,0 +1,64 @@
+{
+  "reviewer": "schwarzschild-penrose-geometer",
+  "axis": "semiclassical-gravity (Page formula; Bekenstein-Hawking area-entropy)",
+  "theorem": "VII.AM",
+  "clauses": {
+    "a_semiclassical_half": {
+      "verdict": "PASS",
+      "rationale": "The finite-area-boundary / trapping-surface reading is semiclassically coherent on all three audit points. (i) Trapped-surface definition: the laboratory-IN image of 'R bounded by a trapping surface' is the trapped region bounded by the apparent horizon (the outermost marginally outer trapped surface, theta_+ = 0), each leaf a CLOSED (compact) codimension-2 spacelike surface with both null expansions theta_+/- < 0 (Penrose 1965) -- compactness gives finite area BY DEFINITION, and the Riemannian Penrose inequality (Huisken-Ilmanen/Bray) bounds A <= 16*pi*(G*M/c^2)^2, so area-finiteness is mass-controlled, not merely topological. (ii) The registered characterization 'a finite-codimension subset where the mode-mixing rate diverges in the semiclassical limit' matches the established horizon Bogoliubov structure (Hawking 1975): the out-mode phase log-diverges on the last-escaping horizon generator and the in/out Bogoliubov mixing integrand diverges there, producing the steady thermal flux -- identifying the trigger locus by divergent semiclassical mode-mixing is exactly how the horizon enters the laboratory-IN derivation. (iii) Causal structure: under the null energy condition, trapped surfaces lie inside the event horizon (Hawking & Ellis Prop. 9.2.8) and trigger null geodesic incompleteness (Penrose 1965: closed trapped surface + NEC + non-compact Cauchy surface), so 'trapping surface => horizon trigger/lock' is structurally the semiclassical singularity-theorem trigger. Non-blocking precision notes: (n1) the boundary of a spacetime region is codimension-1 (the trapping-horizon world-tube) while area lives on its codimension-2 MOTS leaves -- the registered 'finite-codimension subset' phrasing accommodates both, and on the spectral side del-R carries the spectral-metric area directly; (n2) the semiclassical lock is NEC-conditioned and not eternal (Hawking flux violates pointwise NEC near the horizon, permitting area decrease), which the registered theorem itself handles correctly by delegating the information-return timescale to clause (c) -- the (a)+(c) decomposition is the semiclassically correct split. Lock invariance under cascade transit is the transit-dynamics half and is outside this audit per the plan-freeze assignment.",
+      "key_numbers": {
+        "mots_leaf_codimension": 2,
+        "boundary_worldtube_codimension": 1,
+        "null_expansion_families_required_negative": 2,
+        "penrose_inequality_area_bound_coefficient": "A <= 16*pi*(G*M/c^2)^2"
+      }
+    },
+    "b_semiclassical_half": {
+      "verdict": "PASS",
+      "rationale": "The Bekenstein-Hawking area-entropy reading of Gamma_eff(R) = 1 - A(del-R)/(4*G_N*A_universal) is semiclassically correct in normalization and structure. (i) 4*G_N normalization: A/(4*G_N) in hbar=c=k_B=1 units (S_BH = k_B*c^3*A/(4*G*hbar) in SI) is THE Bekenstein-Hawking entropy; the 1/4 coefficient is uniquely fixed by T_H = kappa/(2*pi) combined with the first law dM = (kappa/(8*pi*G_N))*dA (Hawking 1975, sharpening Bekenstein 1973's proportionality) -- the registered conversion of boundary area to information capacity uses the unique semiclassically correct coefficient; any other value would FAIL. (ii) Dimensional closure: Gamma_eff is dimensionless iff A_universal is read as the dimensionless substrate area-quanta count (the total substrate entropy budget) in Planck-normalized units; this is exactly the role the registered entry assigns it ('the substrate-area normalization'), so the formula is dimensionally closed under the entry's own convention -- recorded as a convention note, not an incoherence. (iii) Limit/monotonicity structure: A(del-R) -> 0 gives Gamma_eff -> 1 (no effacement); A(del-R)/(4*G_N) -> A_universal gives Gamma_eff -> 0 (holographic saturation: a boundary whose Bekenstein-Hawking entropy saturates the universal budget transmits nothing); 0 <= Gamma_eff <= 1 is equivalent to the holographic-type area bound A(del-R) <= 4*G_N*A_universal. This is Bekenstein-bound saturation structure, and the form 1-(horizon-area-controlled deficit) parallels the semiclassical greybody transmission factor Gamma_{omega,l} through the horizon barrier -- the same structural role under the same symbol. (iv) Area-quantization bound: with the deficit expressed as (boundary BH entropy)/(universal budget), the minimal resolvable nonzero deficit is one area quantum over the budget (Bekenstein: one bit per 4*ln2 Planck areas; the 1/(4*G_N) normalization is the convention-independent part of any area-quantization scheme), so 'suppressed... bounded by the area-quantization scale' is the correct semiclassical floor statement. (v) In-entry arithmetic: 1 - 0.99970 = 3.0e-4, equal to the entry's quoted A(del-R)/(4*G_N*A_universal) = 3.0e-4 -- internally consistent. The dynamical pin of the Gamma_eff VALUE (Volovik partition, canonical_constants Gamma_effacement) is the transit-dynamics reviewer's exclusive load per substrate-input orthogonality; I reason only from the value as quoted inside the registered entry text.",
+      "key_numbers": {
+        "bekenstein_hawking_denominator_coefficient": 4.0,
+        "gamma_eff_quoted_in_entry": 0.9997,
+        "deficit_1_minus_gamma_eff": 3.0e-4,
+        "entry_quoted_area_fraction": 3.0e-4,
+        "internal_arithmetic_consistent": true
+      }
+    },
+    "c": {
+      "verdict": "PASS",
+      "rationale": "Full semiclassical audit PASSes on formula, interpretation, and anchor. (i) Formula: integrating the canonical photon-sector geometric-optics Hawking mass-loss law dM/dt = -hbar*c^4/(15360*pi*G^2*M^2) gives t_evap = 5120*pi*G^2*M^3/(hbar*c^4); the registered t_Page = (1/2)*t_evap = (5120*pi/2)*G^2/(hbar*c^4)*M^3 is the standard Page-1993 leading-order entropy-crossover convention ('Information in black hole radiation', PRL 71, 3743: information return begins near the half-entropy point). First-principles prefactor from CODATA-2018 constants = 4.2057389524279904e-17 s/kg^3, matching the pinned npz prefactor_si BIT-EXACTLY (rel_dev = 0.0). (ii) The 'local-vs-global causal-structure Page-curve crossover' gloss is semiclassically correct: pre-Page the radiation entropy follows local QFT-on-curved-background (monotone Hawking rise); the post-Page decline is enforced by global unitarity and is invisible to any local calculation (in modern language the island/replica-wormhole contribution is a global causal-structure effect crossing the horizon) -- the crossover IS a local-vs-global statement. (iii) Anchor sub-check from MY pinned npz: at M = 1e13 kg, t_Page = 4.205739e+22 s, t_universe = 4.350e+17 s (= 13.78 Gyr, Planck age), ratio = 9.668365e+04 vs registered 9.6684e+04 -- rel_dev = 3.6e-6, consistent at the 5-sig-fig publication precision; log10(ratio) = 4.985 = the registered '~5 OOM'. Bound direction verified: t_Page >> t_universe places the crossover structurally OUTSIDE the observation window (lower-bound direction of the clause), and the anchor BH's fractional mass loss by today is 1.7e-6 under the same law -- a self-consistent quasi-static anchor. (iv) Internal identities exact across the full npz grid: t_Page/t_evap = 0.5 at all 5 masses; M^3 cube-law exact (ratio(1e14)/ratio(1e13) = 1000.0); M_crit = (t_universe/prefactor)^(1/3) = 2.17879e+11 kg and M_pass100 = 100^(1/3)*M_crit = 1.01131e+12 kg both reproduce bit-exactly; pass_per_grid [F,T,T,T,T] matches the ratio >= 100 passband. The line-19 anchor verdict (gate-ID S88-CF-CURV-11-PAGE-TIME-CASCADE-TAIL-MASS, the W1b2-64 wave-gate) carries audit_sha256 = 8d086bdf... and content_sha256 = 985217c9... exactly matching the registry Instance-3 quoted SHAs, resolving the known legacy-path drift (registry cites 'computations/s88_gate_verdicts.txt:19'; canonical session-88 path confirmed by dual-SHA identity). (v) Convention robustness: the Page-2013 refined crossover coefficient (0.5396*t_evap for photons+gravitons, vs the registered 1/2) shifts the ratio to 1.043e+05 -- still ~5 OOM; at the anchor mass T_H = 1.227e+10 K = 1.057 MeV, so neutrino channels are active and e+e- marginal, and a species-summed Page-1976 power would shorten t_evap by an O(few) factor -- the >= 4-OOM margin absorbs every such refinement. The photon-sector convention is explicitly pre-registered on the anchor verdict line (scheme=Hawking-1974-Page-1993), so this is a stated-regime note, not a defect.",
+      "key_numbers": {
+        "prefactor_firstprinciples_s_per_kg3": 4.2057389524279904e-17,
+        "prefactor_npz_s_per_kg3": 4.2057389524279904e-17,
+        "prefactor_rel_dev": 0.0,
+        "t_Page_anchor_s": 4.205738952427990e+22,
+        "t_evap_anchor_s": 8.411477904855980e+22,
+        "t_Page_over_t_evap": 0.5,
+        "t_universe_s": 4.35e+17,
+        "ratio_anchor_npz": 96683.65407880438,
+        "ratio_anchor_log10_OOM": 4.985353055846827,
+        "M_crit_kg": 217879137827.08075,
+        "M_pass100_kg": 1011305373215.3575,
+        "cube_law_ratio_1e14_over_1e13": 1000.0,
+        "ratio_under_page2013_coefficient_0p5396": 104340.99948184568,
+        "T_H_anchor_K": 12269006698.422716,
+        "T_H_anchor_MeV": 1.0572611951580007,
+        "fractional_mass_loss_by_t_universe": 1.723837969924702e-06
+      }
+    }
+  },
+  "anchor_subcheck_ratio": {
+    "npz_value": 96683.65407880438,
+    "registered": 96684.0,
+    "rel_dev": 3.5778535809594743e-06,
+    "consistent": true
+  },
+  "inputs_read": [
+    "sessions/permanent-results-registry.md (ONLY the §VII.AM block, lines 16700-16812)",
+    "computations/session-88/s88_w1b2_page_time_cascade_tail.npz (exclusively-assigned Level-3 anchor data; substrate-input orthogonality honored)",
+    "computations/session-88/s88_gate_verdicts.txt line 19 (gate-ID S88-CF-CURV-11-PAGE-TIME-CASCADE-TAIL-MASS = wave-gate W1b2-64; canonical path used per dispatch; legacy-path drift in registry text resolved by exact dual-SHA match: audit_sha256=8d086bdfc66554a207b75137283c3ec1b03c4b5c3488620ebaa6a5a73b9676f1, content_sha256=985217c9249553a9fc470f5a115465066aadb556b91a9109e777514ffa336107) and line 22 (Stage-1 promotion line, corpus cross-reference only)",
+    ".claude/rules/joint-theorem-promotion.md (Stage-2 protocol)",
+    ".claude/rules/cross-pillar-bridge-anatomy.md (3-level ladder)"
+  ],
+  "no_workshop_context_attestation": true
+}

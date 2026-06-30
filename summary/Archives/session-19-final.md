@@ -173,7 +173,7 @@ Agent range: Sagan at 45–52% (conservative), team consensus at 48–58%, with 
 2. **Track B: Lichnerowicz operator implementation** — full Riemann tensor R_abcd(s), TT projection, eigenvalue computation (days)
 3. **Track B gate: Full E_total(τ)** with all four towers (scalar + vector_pq≤6 + TT + Dirac) — the decisive plot
 4. **Pre-register Constraint Condition:** E_total monotonically decreasing with TT → all perturbative spectral mechanisms closed
-5. **Pre-register success thresholds:** Sagan's three-tier criteria
+5. **Pre-register success thresholds:** Sagan's three-level criteria
 6. **Validate at s=0** against known Lichnerowicz eigenvalues on bi-invariant SU(3)
 7. **Fix kk1_bosonic_spectrum.npz** multiplicity convention
 
@@ -183,9 +183,9 @@ Agent range: Sagan at 45–52% (conservative), team consensus at 48–58%, with 
 
 | File | Description |
 |:-----|:-----------|
-| `tier0-computation/d19d_casimir_gate.py` | D-1 gate: boson/fermion E_proxy separation |
-| `tier0-computation/d19d_casimir_gate.png` | 6-panel diagnostic plot |
-| `tier0-computation/d19d_casimir_gate.npz` | Numerical results |
+| `computations/d19d_casimir_gate.py` | D-1 gate: boson/fermion E_proxy separation |
+| `computations/d19d_casimir_gate.png` | 6-panel diagnostic plot |
+| `computations/d19d_casimir_gate.npz` | Numerical results |
 
 ---
 

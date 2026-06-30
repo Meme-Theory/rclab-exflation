@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 170,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1691",
+      "anchor_type": "data_provenance",
+      "name": "w10a_vii_k_prop_sha_uniqueness",
+      "script_path": "session-84/s84_w10a_vii_k_prop_sha_uniqueness.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-84/s84_w10a_vii_k_prop_sha_uniqueness.py",
+      "source_context_30_lines": "<name 'w10a_vii_k_prop_sha_uniqueness' not found in source>\n--- file head ---\n    1: \"\"\"S84 W10a Gate 118 — VII.K-PROP atlas SHA uniqueness audit.\n    2: \n    3: Tests the pre-registered hypothesis (§W10a-118):\n    4:     All verdict SHAs in the §VII.K-PROP propagation atlas are pairwise\n    5:     distinct AND each traces to an independent pin map (no two verdicts\n    6:     share the same canonical input-pin sequence).\n    7: \n    8: Schema note: the atlas (s84_w3_vii_k_prop_atlas.json) does NOT carry a\n    9: per-row `closure_sha256` or `input_pin_ordered_list` field. Its\n   10: provenance is one meta-level closure_sha plus per-row content\n   11: (p_k, class, span_predicted, provenance, classification). For the\n   12: distinctness audit we therefore compute a per-row content SHA from\n   13: the canonical JSON of (p_k, class, span_predicted, provenance) and a\n   14: per-row pin-map proxy from the same tuple.\n   15: \n   16: Pass / Fail / INFO thresholds (from plan §W10a-118):\n   17:     PASS: All SHAs pairwise distinct AND all pin-maps mutually\n   18:           independent (<80% positional overlap).\n   19:     FAIL: Any SHA collision OR any two pin-maps with >=80% positional\n   20:           overlap.\n   21:     INFO: All distinct but pin-maps cluster.\n   22: \n   23: Verdict-line format (S81+ canonical):\n   24:     S84-VII-K-PROP-SHA-UNIQUENESS: PASS|FAIL|INFO -- value=<distinct/total>\n   25:         scheme=pairwise_sha_plus_pin_map convention=vii_k_prop_atlas_full\n   26:         L_max=N/A audit_sha256=<64-char> content_sha256=<64-char>\n   27: \"\"\"\n   28: from __future__ import annotations\n   29: \n   30: import datetime"
+    },
+    {
+      "anchor_id": "prov_1692",
+      "anchor_type": "data_provenance",
+      "name": "w10a_w1_g6_layer_diagnosis",
+      "script_path": "session-84/s84_w10a_w1_g6_layer_diagnosis.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-84/s84_w10a_w1_g6_layer_diagnosis.py",
+      "source_context_30_lines": "<name 'w10a_w1_g6_layer_diagnosis' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S84 W10a-116 — S84-W1G6-LAYER-DIAGNOSIS (van-den-dungen-bridge-theorist)\n    4: ========================================================================\n    5: \n    6: Gate: S84-W1G6-LAYER-DIAGNOSIS ([AUDIT])\n    7: Classification: GEOMETRIC (functorial / three-layer structure)\n    8: \n    9: Pre-registered threshold (BINARY tolerance):\n   10:   PASS  iff failing composite has exactly one L1-AX factor and one L2-SA factor\n   11:   FAIL  iff failing composite is intra-layer (all factors share a single layer tag)\n   12:   INFO  iff any factor is UNPINNED (diagnosis blocked on UNPINNED ingredient)\n   13: \n   14: Inputs (SHA-256 dual-pinned at runtime; S84+ dual-SHA schema):\n   15:   - computations/session-83/s83_w1_g6_fi_duality_theorem.npz       (S83 W1-G6 atlas + composite records;\n   16:                                                               gate plan named s83_w1_g6_fi_duality.npz,\n   17:                                                               actual filename per S83 script:\n   18:                                                               s83_w1_g6_fi_duality_theorem.npz)\n   19:   - .claude/agent-memory/lizzi-spectral-functional-theorist/project_s83_three_layer_synthesis.md\n   20:                                                              (three-layer atlas distribution;\n   21:                                                               gate plan named\n   22:                                                               s83_vii_m_three_layer_theorem.json\n   23:                                                               + _vii_k_prop_atlas.json which do\n   24:                                                               not exist on disk -- the canonical\n   25:                                                               source is the three-layer synthesis\n   26:                                                               memo plus the §VII.K atlas embedded\n   27:                                                               in the s83 NPZ)\n   28:   - computations/session-83/s83_w1_g6_fi_duality_theorem.py        (the producing script -- the §VII.K\n   29:                                                               atlas rows are embedded in this script\n   30:                                                               as ATLAS_42 and AS_LEDGER_COMPOSITES)"
+    },
+    {
+      "anchor_id": "prov_1693",
+      "anchor_type": "data_provenance",
+      "name": "w10b_alpha_s_derivation_chain_audit",
+      "script_path": "session-84/s84_w10b_alpha_s_derivation_chain_audit.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-84/s84_w10b_alpha_s_derivation_chain_audit.py",
+      "source_context_30_lines": "<name 'w10b_alpha_s_derivation_chain_audit' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S84-W10b-123: ALPHA-S-DERIVATION-CHAIN-AUDIT\n    4: ================================================================================\n    5: \n    6: Gate: S84-ALPHA-S-DERIVATION-CHAIN-AUDIT\n    7: Trigger: [VERIFY-THEOREM]\n    8: Classification: GEOMETRIC\n    9: \n   10: Hypothesis:\n   11:   S50's permanent identity alpha_s = n_s^2 - 1 derives from the minimal axiom\n   12:   set {CCM 2007 A1-A6 + KO-dim=6 + A_F = C (+) H (+) M_3(C) singleton +\n   13:   Mellin-kernel spectral action}, WITHOUT auxiliary coupling relations and\n   14:   WITHOUT observational n_s as input.\n   15: \n   16: Method (per plan §W10b-123):\n   17:   Step 1: formalize the axiom set\n   18:   Step 2: trace the S50 derivation chain (sourced from s50_running_mass.py\n   19:           Sections 6/8/9, atlas T15 entry, session-50-results-workingpaper.md)\n   20:   Step 3: classify each step as\n   21:             CCM_2007_A1_A6 / KO_dim=6 / A_F_singleton / Mellin_kernel\n   22:             OR auxiliary OR observational\n   23:   Step 4: count auxiliaries and observational n_s usage\n   24:   Step 5: run cross-checks\n   25:             (a) Mellin-kernel closure: verify d^2(ln P)/d(ln k)^2 = alpha_s\n   26:                 (the second-derivative interpretation, sympy)\n   27:             (b) substrate-level alpha_s match -0.068968 to <=1% via the\n   28:                 exact O-Z formula alpha_s = -4u/(1+u)^2 evaluated at u\n   29:                 solved from n_s = 0.9649 (since u = (1+n_s)/(1-n_s) for\n   30:                 constant mass)"
+    },
+    {
+      "anchor_id": "prov_1694",
+      "anchor_type": "data_provenance",
+      "name": "w10b_biographical_framing_audit",
+      "script_path": "session-84/s84_w10b_biographical_framing_audit.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-84/s84_w10b_biographical_framing_audit.py",
+      "source_context_30_lines": "<name 'w10b_biographical_framing_audit' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S84 W10b-122 — S84-BIOGRAPHICAL-FRAMING-AUDIT\n    4: =============================================\n    5: \n    6: Gate: S84-BIOGRAPHICAL-FRAMING-AUDIT ([AUDIT])\n    7: \n    8: Pre-registered threshold:\n    9:   PASS iff survival_fraction >= 0.80 AND inter_auditor_kappa >= 0.6\n   10:        AND prompt_symmetry_shift < 0.15\n   11:   INFO iff 0.50 <= survival_fraction < 0.80 OR inter_auditor_kappa < 0.6\n   12:   FAIL iff survival_fraction < 0.50\n   13: \n   14: Inputs (SHA-256 dual-pinned at runtime; S84+ schema):\n   15:   - canonical_constants.py (feeds audit_sha256)\n   16:   - sessions/session-83/workshops/s83-gear-machine-thought-experiment.md\n   17:   - sessions/session-83/session-83-gen-physicist-s6-synthesis.md\n   18:   - computations/session-83/s83_gate_verdicts.txt\n   19:   - .claude/rules/epistemic-discipline.md\n   20:   - script bytes (feeds BOTH audit_sha256 and content_sha256)\n   21: \n   22: Output 4-tuple:\n   23:   (value=<survival_fraction>, scheme=neutral_prompt,\n   24:    convention=arg_backed_vs_weak_vs_unsupported, L_max=NA)\n   25: \n   26: Classification: NON-PHONONIC (methodological audit of agent-interaction pattern)\n   27: \n   28: METHODOLOGY\n   29: -----------\n   30: This audit re-evaluates the load-bearing claims of S83's gear-machine R2"
+    },
+    {
+      "anchor_id": "prov_1695",
+      "anchor_type": "data_provenance",
+      "name": "w10b_cmbs4_joint_discriminator_plane",
+      "script_path": "session-84/s84_w10b_cmbs4_joint_discriminator_plane.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-84/s84_w10b_cmbs4_joint_discriminator_plane.py",
+      "source_context_30_lines": "<name 'w10b_cmbs4_joint_discriminator_plane' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S84 W10b-124 — CMB-S4 Joint Discriminator Plane (5-axis Fisher)\n    4: ================================================================\n    5: \n    6: Gate: S84-CMB-S4-JOINT-DISCRIMINATOR-PLANE ([CHAIN])\n    7: \n    8: Pre-registered threshold:\n    9:   PASS  iff for EACH of {K1, K2}: number of axes with σ-separation >= 5  is >= 2\n   10:   INFO  iff for EACH of {K1, K2}: number of axes with σ-separation >= 3  is >= 2\n   11:         AND PASS is not satisfied\n   12:   FAIL  iff for AT LEAST ONE of {K1, K2}: number of axes with σ-separation >= 3  is < 2\n   13: \n   14: Inputs (SHA-256 dual-pinned at runtime — S84+ schema):\n   15:   - canonical_constants.py\n   16:   - computations/session-84/s84_gate_verdicts.txt   (read for gate 123 status)\n   17:   - computations/session-83/s83_gate_verdicts.txt   (G46/G50/M_KK references)\n   18:   - script bytes (feeds BOTH audit_sha256 and content_sha256)\n   19: \n   20: Output 4-tuple:\n   21:   (value=(sep_K1, sep_K2), scheme=Fisher_joint,\n   22:    convention=continuous_Gaussian_plus_discrete_Poisson, L_max=NA)\n   23: \n   24: Classification: NON-PHONONIC (observational forecast / Fisher-information computation)\n   25: \n   26: METHODOLOGY\n   27: -----------\n   28: 5x5 Fisher matrix on continuous axes (n_T_CMB, alpha_s, log10(M_KK)) plus discrete\n   29: ALP-feature counting (Poisson + chi^2 accumulation) plus binary speed-hierarchy\n   30: (DETECTOR-STERILE in 2030s instruments). Per-axis sigma separations and joint"
+    },
+    {
+      "anchor_id": "prov_1696",
+      "anchor_type": "data_provenance",
+      "name": "w1a_baseline_htilde_sensitivity",
+      "script_path": "session-84/s84_w1a_baseline_htilde_sensitivity.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w1a_baseline_htilde_sensitivity.npz, session-84/s84_w1a_baseline_htilde_sensitivity.png",
+      "source_file": "computations/session-84/s84_w1a_baseline_htilde_sensitivity.py",
+      "source_context_30_lines": "   22:   eps_H          = 0.02163 (one-loop SR)         line 163\n   23:   A_s_canonical  = 3.30e-9 (W1-2 Branch-A)       line 329\n   24: Parker IC anchor (from W2-4 Parker IC record\n   25: computations/session-82/s82_w2_4_ps_substrate_matched_ic.py line 18, 102):\n   26:   n_pairs (anchor) -> 59.8\n   27:   P_exc   (anchor) -> 1.000\n   28: \n   29: Outputs:\n   30:   s84_w1a_baseline_htilde_sensitivity.npz\n   31:   s84_w1a_baseline_htilde_sensitivity.png\n   32:   s84_w1a_baseline_htilde_sensitivity.log\n   33: Verdict appended to s84_gate_verdicts.txt with full 64-char SHA-256.\n   34: \"\"\"\n   35: from __future__ import annotations\n   36: \n   37: import hashlib\n   38: import json"
+    },
+    {
+      "anchor_id": "prov_1697",
+      "anchor_type": "data_provenance",
+      "name": "w1a_dynamics_dressing",
+      "script_path": "session-84/s84_w1a_dynamics_dressing.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w1a_dynamics_dressing.npz, session-84/s84_w1a_dynamics_dressing.png",
+      "source_file": "computations/session-84/s84_w1a_dynamics_dressing.py",
+      "source_context_30_lines": "  337: # -----------------------------------------------------------------------------\n  338: print(\"=\" * 78)\n  339: print(f\"4-tuple: (value={F_supp_additive:.6f}, scheme=zeta, convention=TD, L_max={L_MAX})\")\n  340: print(\"=\" * 78)\n  341: \n  342: # -----------------------------------------------------------------------------\n  343: # Save .npz\n  344: # -----------------------------------------------------------------------------\n  345: npz_out = os.path.join(HERE, 's84_w1a_dynamics_dressing.npz')   # (local)\n  346: np.savez(\n  347:     npz_out,\n  348:     X_per_channel=X_arr,\n  349:     inv_X_per_channel=inv_X,\n  350:     sum_inv=sum_inv,\n  351:     F_supp_max_additive=F_supp_additive,\n  352:     F_supp_max_multiplicative=F_supp_multiplicative,\n  353:     cc_ii_residual=cc_ii_residual,"
+    },
+    {
+      "anchor_id": "prov_1698",
+      "anchor_type": "data_provenance",
+      "name": "w1a_w0_sv1",
+      "script_path": "session-84/s84_w1a_w0_sv1.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w1a_w0_sv1.npz",
+      "source_file": "computations/session-84/s84_w1a_w0_sv1.py",
+      "source_context_30_lines": "   86: CC-v   F_Josephson^zeta sign check: confirm NEGATIVE (-336.641). Sign enters\n   87:        multiplicatively through xi_J = F_J_Zub / F_J_zeta (sign cancels in\n   88:        the ratio, giving xi_J > 0). Then |F_J_Zub| (used in rho_J = |F_J|/N)\n   89:        gives rho_J > 0, ensuring rho_vac > 0. Wrong sign on F_J would flip\n   90:        w_0 to > -1 (NEC violation at DR3 epoch).\n   91: \n   92: OUTPUTS\n   93: -------\n   94: 1. computations/session-84/s84_w1a_w0_sv1.npz: reproduced w_0 + 5 CC results\n   95: 2. computations/session-84/s84_w1a_w0_sv1.py: this script\n   96: 3. Verdict line in computations/session-84/s84_gate_verdicts.txt with 64-char SHA\n   97: \n   98: PASS iff |w_0 - (-0.842454)| < 1e-5 AND all 5 CCs verify.\n   99: FAIL otherwise (no INFO band; RATIO tolerance).\n  100: \n  101: REVERSION PROTOCOL ON FAIL: retract branch (iv); declare w_0 canonical\n  102: UNSPECIFIED pending S85 re-audit. NO retreat to -0.918 or -0.998."
+    },
+    {
+      "anchor_id": "prov_1699",
+      "anchor_type": "data_provenance",
+      "name": "w1a_w0_sv2",
+      "script_path": "session-84/s84_w1a_w0_sv2.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w1a_w0_sv2.npz",
+      "source_file": "computations/session-84/s84_w1a_w0_sv2.py",
+      "source_context_30_lines": "   85:         already stored in the cache; the CC-iv cross-check is a SHA-hash\n   86:         sanity on the sector_evals, plus a torch-vs-numpy cross-check on the\n   87:         sum computation itself (two independent summation paths).\n   88: CC-v    Mellin cone sampling: tr(|D_K|^{-s}) at s=3 -- compare value against\n   89:         W1-G1 cache sum, verify Mellin-cone-consistent.\n   90: \n   91: OUTPUTS\n   92: -------\n   93: 1. computations/session-84/s84_w1a_w0_sv2.npz: per L_max xi_J, xi_E_GGE, R_JE,\n   94:    matrix dim, CC results.\n   95: 2. computations/session-84/s84_w1a_w0_sv2.py: this script.\n   96: 3. Verdict line appended to computations/session-84/s84_gate_verdicts.txt (ATOMIC\n   97:    'a'-mode single-line append).\n   98: \"\"\"\n   99: import sys\n  100: import os\n  101: os.environ.setdefault('OMP_NUM_THREADS', '8')"
+    },
+    {
+      "anchor_id": "prov_1700",
+      "anchor_type": "data_provenance",
+      "name": "w1a_w0_sv5",
+      "script_path": "session-84/s84_w1a_w0_sv5.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w1a_w0_sv5.npz",
+      "source_file": "computations/session-84/s84_w1a_w0_sv5.py",
+      "source_context_30_lines": "   10: S84+ dual-SHA schema (audit_sha256 + content_sha256).\n   11: \n   12: Cross-checks: CC-i through CC-vi per plan §W1a-3.SV5. PASS iff all 6 verify\n   13: AND both SHAs full-64-char AND audit schedule strictly forward-time AND branch\n   14: (iv) center -0.842454 lies in interior of R_842 w_0 interval.\n   15: \n   16: Environment: phonon-exflation-sim/.venv312/Scripts/python.exe; OMP_NUM_THREADS=8\n   17: fenced (audit only — no linear algebra). Writes:\n   18:   - computations/session-84/s84_w1a_w0_sv5.npz\n   19:   - computations/_shared/canonical_sha_ledger.json (created or extended)\n   20:   - computations/session-84/s84_gate_verdicts.txt (verdict line appended; created if missing)\n   21: \"\"\"\n   22: \n   23: import os\n   24: os.environ.setdefault(\"OMP_NUM_THREADS\", \"8\")\n   25: \n   26: import json"
+    }
+  ]
+}

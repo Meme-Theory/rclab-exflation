@@ -1,0 +1,241 @@
+==============================================================================
+  INSTANTON-STABILIZATION-74 (W2-R): Refined dV_inst/dtau at tau=0.480
+==============================================================================
+
+  Pre-registered gate criteria:
+    Sign condition:  dV_inst/dtau < 0 (restoring)
+    Magnitude: |dV_inst/dtau| >= dS_fold = 58672.80
+    Target tau     = 0.4800
+    Expected outcome: FAIL (refinement of W1-B sub-gate (a))
+    W1-B baseline: ratio = 3.22e-3 (309x too small)
+
+==============================================================================
+SECTION 1: Loading Input Data (S73A + W1-B baseline)
+==============================================================================
+  S73A: 21 tau points, MAX_PQ = 3
+  S73A kappa=1 crossing: tau = 0.480354
+  S73A n_inst peak: 0.732170 at tau = 0.600
+
+  W1-B baseline at tau = 0.480354:
+    force_inst_A (gap^2) = -1.435864 M_KK^4
+    force_inst_B (M_KK^4) = -1.915887 M_KK^4
+    dV_bare/dtau         = 445.426542 M_KK^4
+    E_inst_A (gap^2)     = 0.749451
+    Ratio A (inst/bare)  = 3.223570e-03
+    Ratio B (inst/bare)  = 4.301240e-03
+
+  S73A spectral action profile (L_max=3, Lambda=12.9080):
+    S_bare_fstar at fold    = 31244.571746
+    dS_bare_fstar/dtau fold = 4032.843186
+    S_bare_fstar at 0.480   = 33359.805561
+    dS_bare_fstar/dtau 0.48 = 10655.888117
+
+  V_fold_HK normalization:
+    V_fold_HK = (2/pi^2)*a_0 = 1305.016845 M_KK^4
+    dV_bare/dtau at 0.480    = 445.072943 M_KK^4
+
+==============================================================================
+SECTION 2: Analytic Derivative of n_inst(tau)
+==============================================================================
+
+  At tau = 0.48:
+    S_inst(0.480) = 8 pi^2 / (4 exp(0.96)) = 7.558003
+    g^2(0.480)    = 4 exp(0.96) = 10.446786
+    n_inst(0.480) = C * S^6 * exp(-S) = 6.160609e-01
+    dn_inst/dtau  = 2 * n * (S - 2*N_c) = 2 * n * (7.5580 - 6.0)
+                  = 1.919649e+00
+    Sign: POSITIVE (n still rising)
+
+  Instanton force (analytic) at tau = 0.48:
+    gap(D_K) at 0.480   = 0.865578 (spline from 21-pt S73A)
+    E_inst_A = gap^2    = 0.749226
+    E_inst_B = M_KK^4   = 1.000000
+    dV_inst_A/dtau      = -1.438250e+00 M_KK^4
+    dV_inst_B/dtau      = -1.919649e+00 M_KK^4
+    Sign (A): ANTI-RESTORING
+    Sign (B): ANTI-RESTORING
+
+==============================================================================
+SECTION 3: Fine-Grid Numerical Derivative of n_inst(tau)
+==============================================================================
+
+  Fine grid: N = 2001, dtau = 0.000450
+  Index closest to 0.480: idx = 844, tau = 0.479800
+  n_inst(0.480) [fine]       = 6.156767e-01
+  dn_inst/dtau  [fine,grad]  = 1.922171e+00
+  dn_inst/dtau  [analytic]   = 1.919649e+00
+  Relative error fine-grad vs analytic: 1.313918e-03
+
+  CubicSpline derivative comparison at tau = 0.480:
+    Fine grid (2001 pts, analytic n)   = 1.919649e+00
+    21-point grid (W1-B method)         = 1.920338e+00
+    Analytic                            = 1.919649e+00
+    Rel err 21-pt vs analytic = 3.587396e-04
+    Rel err fine-spline vs analytic = 1.139321e-10
+
+==============================================================================
+SECTION 4: Limiting-Case Cross-Checks
+==============================================================================
+
+  Limit 1 (strong coupling, tau=0.05):
+    S_inst    = 17.8608 (large => exp(-S) suppresses)
+    n_inst    = 3.598704e-03
+    dn/dtau   = 8.536683e-02
+    Expected: n exponentially small. Confirmed: False
+
+  Limit 2 (critical, tau=0.5):
+    S_inst    = 7.2616
+    n_inst    = 6.517750e-01
+    dn/dtau   = 1.644623e+00
+    Non-singular: True
+
+  Limit 3 (weak coupling, tau=1.0):
+    S_inst    = 2.6714
+    n_inst    = 1.591643e-01
+
+  Analytic n_inst peak location:
+    tau_peak = -0.5 * ln(6/(2 pi^2)) = 0.595424
+    S_inst at peak = 6.000000 (should be 6.0)
+    S73A n_inst peak tau = 0.600 (tabulated, dtau=0.05)
+
+==============================================================================
+SECTION 5: W1-B Backreaction at Higher Precision (alpha=1 flat-space)
+==============================================================================
+
+  At tau = 0.48 (analytic, high precision):
+    n_inst        = 6.1606093153e-01
+    dn_inst/dtau  = 1.9196490971e+00
+    d2n_inst/dtau^2 = -1.2643123886e+01
+
+  Instanton forces (M_KK^4):
+    force_A_refined = -gap^2 * dn/dtau = -1.438250e+00
+    force_B_refined = -1.0 * dn/dtau   = -1.919649e+00
+    dV_bare/dtau at 0.480              = 4.450729e+02
+
+  Local ratio (inst/bare at 0.480):
+    A (gap^2 norm)   = 3.231493e-03
+    B (M_KK^4 norm)  = 4.313111e-03
+
+  Canonical dS_fold threshold (in M_KK^4 units):
+    dS_fold (bare)   = 58672.8024
+    V_fold_HK / S_fold = 5.212547e-03
+    threshold_MKK4   = 305.834752 M_KK^4
+    Ratio A vs thresh = 4.702703e-03
+    Ratio B vs thresh = 6.276753e-03
+
+  Comparison to W1-B (CubicSpline on 21 points):
+    W1-B force_A = -1.435864, refined = -1.438250
+    W1-B force_B = -1.915887, refined = -1.919649
+    Rel diff A = 1.662056e-03
+    Rel diff B = 1.963891e-03
+
+==============================================================================
+SECTION 6: Multi-Instanton Condensate Check (higher spectral sectors)
+==============================================================================
+
+  Spectral gap sensitivity (MAX_PQ=3):
+    tau = 0.450: gap = 0.855149
+    tau = 0.500: gap = 0.873214
+    Spline interp at 0.480 : gap = 0.865578
+
+  Q=2 (double-charge instanton) at tau = 0.48:
+    S_inst_Q2 = 2 * S_inst_1 = 15.116005
+    n_inst_Q2               = 2.057808e-02
+    dn_inst_Q2/dtau         = 3.751797e-01
+    Ratio Q2/Q1 in density  = 3.340267e-02
+    Ratio Q2/Q1 in derivative = 1.954418e-01
+
+  Sum_Q=1..5 n_Q / n_Q1 = 1.033602 (multi-charge enhancement factor)
+  W1-P result: R_multi/single = 2.21 (factor ~2 enhancement)
+  Our factor includes only charge-Q tower, not interaction corrections.
+
+  With W1-P multi-instanton enhancement factor 2.21:
+    force_A_multi     = -3.178533e+00 M_KK^4
+    ratio_A_multi vs threshold = 1.039297e-02
+    ratio_B_multi vs threshold = 1.387162e-02
+
+==============================================================================
+SECTION 7: Gate Verdict
+==============================================================================
+
+  Sign analysis (task convention: negative = restoring):
+    dV_inst_A/dtau = -1.438250e+00 M_KK^4
+    Sign task:     True
+    Sign standard: False
+
+  Magnitude analysis:
+    |dV_inst_A/dtau|          = 1.438250e+00 M_KK^4
+    threshold (dS_fold in MKK4) = 305.834752 M_KK^4
+    |dV_inst_A/dtau| >= thresh: False
+    Shortfall factor:           2.13e+02
+
+  *** Gate INSTANTON-STABILIZATION-74 verdict: INFO ***
+  Detail: dV_inst_A/dtau = -1.4383e+00 M_KK^4 (sign restoring), |ratio/threshold| = 4.7027e-03, |ratio/bare-local| = 3.2315e-03. Confirms W1-B at higher precision: rel diff 1.6621e-03.
+
+==============================================================================
+SECTION 8: Precision Improvement Summary
+==============================================================================
+
+  Precision comparison at tau = 0.480:
+    Analytic n_inst              = 6.1606093153e-01
+    21-pt spline n_inst          = 6.1604527246e-01
+    Absolute diff                = 1.565908e-05
+    Relative diff                = 2.541806e-05
+
+    Analytic dn_inst/dtau        = 1.9196490971e+00
+    21-pt spline dn_inst/dtau    = 1.9203377513e+00
+    Absolute diff                = 6.886541e-04
+    Relative diff                = 3.587396e-04
+
+  Verdict sensitivity to precision:
+    W1-B verdict: FAIL (ratio = 3.22e-3)
+    W2-R refined (analytic):
+      ratio A (gap^2)   = 3.231493e-03
+      ratio B (M_KK^4)  = 4.313111e-03
+    Change from W1-B   = 0.0036
+    Refinement does NOT move verdict from FAIL boundary.
+    Instanton stabilization at alpha=1 flat-space is STRUCTURALLY FAIL.
+
+==============================================================================
+SECTION 9: Saving data
+==============================================================================
+
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s74_instanton_stabilization.npz
+
+==============================================================================
+SECTION 10: Plotting
+==============================================================================
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s74_instanton_stabilization.png
+
+==============================================================================
+FINAL SUMMARY
+==============================================================================
+
+  Gate INSTANTON-STABILIZATION-74 (W2-R): INFO
+  Target tau:                      0.48
+  V_inst analytic:                 -4.615686e-01 M_KK^4
+  dV_inst/dtau (A, gap^2):         -1.438250e+00 M_KK^4
+  dV_inst/dtau (B, M_KK^4):        -1.919649e+00 M_KK^4
+  dV_bare/dtau at 0.480 (local):   4.450729e+02 M_KK^4
+  Ratio vs local bare (A):         3.231493e-03
+  Ratio vs threshold (A):          4.702703e-03
+  Shortfall (A):                   2.13e+02 (x too small)
+
+  W1-B comparison:
+    Force A (21-pt spline, W1-B):  -1.435864
+    Force A (analytic, W2-R):      -1.438250
+    Rel diff:                      1.662056e-03
+
+  Conclusion: W1-B sub-gate (a) CONFIRMED at higher precision.
+  The 21-pt spline gave ~0.15% relative error in dn_inst/dtau at tau=0.480.
+  Analytic derivation yields force = -1.4383 M_KK^4,
+  against a threshold of 305.8348 M_KK^4.
+  Shortfall factor: 2.126e+02.
+  Multi-charge enhancement (W1-P): factor 2.21 still leaves shortfall 9.62e+01.
+
+  Classification: GEOMETRIC (spectral derivative of instanton partition function).
+  Single-channel alpha=1 flat-space instanton stabilization is STRUCTURALLY FAIL.
+  Consistent with 9 closed channels (W1-B/P/Q/R, W2-L/R).
+
+  Total runtime: 0.54s
+

@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 44,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_431",
+      "anchor_type": "data_provenance",
+      "name": "unexpanded_sa",
+      "script_path": "session-45/s45_unexpanded_sa.py",
+      "session": "s45",
+      "inputs": "",
+      "outputs": "session-45/s45_unexpanded_sa.npz, session-45/s45_unexpanded_sa.png",
+      "source_file": "computations/session-45/s45_unexpanded_sa.py",
+      "source_context_30_lines": "  922:     # Key results\n  923:     'min_c4_over_c2': min_ratio,\n  924:     'taylor_20term_error': abs(S_exact - S_taylor) / abs(S_exact),\n  925: \n  926:     # Gate\n  927:     'gate_verdict': np.array([gate_verdict]),\n  928: }\n  929: \n  930: output_npz = DATA_DIR / 's45_unexpanded_sa.npz'\n  931: np.savez(output_npz, **save_dict)\n  932: print(f\"  Saved: {output_npz}\")\n  933: \n  934: \n  935: # ========================================================================\n  936: # PLOTTING\n  937: # ========================================================================\n  938: fig, axes = plt.subplots(2, 3, figsize=(18, 10))"
+    },
+    {
+      "anchor_id": "prov_432",
+      "anchor_type": "data_provenance",
+      "name": "weak_order_one",
+      "script_path": "session-45/s45_weak_order_one.py",
+      "session": "s45",
+      "inputs": "",
+      "outputs": "session-45/s45_weak_order_one.npz",
+      "source_file": "computations/session-45/s45_weak_order_one.py",
+      "source_context_30_lines": "  427: \n  428:     return C_cliff, AF_names, AF_factors, AF_class, gauge_idx, scalar_idx\n  429: \n  430: \n  431: # =============================================================================\n  432: # SECTION 4: WEAK ORDER-ONE TEST (Bochniak-Sitarz)\n  433: # =============================================================================\n  434: \n  435: def test_weak_order_one(C_full, gauge_idx, scalar_idx, AF_names, AF_class):\n  436:     \"\"\"\n  437:     Apply the Bochniak-Sitarz weak order-one decomposition to the full\n  438:     double commutator matrix C.\n  439: \n  440:     The weak condition requires: C[i,j] = 0 for i,j BOTH in gauge_idx.\n  441:     It allows: C[i,j] != 0 when i or j is in scalar_idx.\n  442: \n  443:     Returns:"
+    },
+    {
+      "anchor_id": "prov_433",
+      "anchor_type": "data_provenance",
+      "name": "anomalous_dispersion",
+      "script_path": "session-46/s46_anomalous_dispersion.py",
+      "session": "s46",
+      "inputs": "computations/session-44/s44_dos_tau.npz, computations/session-42/s42_hauser_feshbach.npz, computations/session-45/s45_co...",
+      "outputs": "session-46/s46_anomalous_dispersion.npz, session-46/s46_anomalous_dispersion.png",
+      "source_file": "computations/session-46/s46_anomalous_dispersion.py",
+      "source_context_30_lines": "  850: ax.plot(k_values, vg_C, 'g^-', ms=5, label='Model C', alpha=0.8)\n  851: ax.axhline(0.0, color='gray', ls=':', alpha=0.5)\n  852: ax.set_xlabel(r'$k = \\sqrt{C_2}$')\n  853: ax.set_ylabel(r'$d\\omega_{\\rm coll}/dk$ (M$_{KK}$)')\n  854: ax.set_title('Collective mode group velocity')\n  855: ax.legend(fontsize=7)\n  856: \n  857: plt.tight_layout()\n  858: plt.savefig('computations/session-46/s46_anomalous_dispersion.png', dpi=150, bbox_inches='tight')\n  859: print(\"\\nPlot saved: computations/session-46/s46_anomalous_dispersion.png\")\n  860: \n  861: # ================================================================\n  862: # 14. SAVE DATA\n  863: # ================================================================\n  864: \n  865: np.savez('computations/session-46/s46_anomalous_dispersion.npz',\n  866:     # Input echoed"
+    },
+    {
+      "anchor_id": "prov_434",
+      "anchor_type": "data_provenance",
+      "name": "bayesian_gp",
+      "script_path": "session-46/s46_bayesian_gp.py",
+      "session": "s46",
+      "inputs": "computations/session-45/s45_qtheory_bcs.npz, computations/session-46/s46_number_projected_bcs.npz, computations/session-...",
+      "outputs": "session-46/s46_bayesian_gp.npz, session-46/s46_bayesian_gp.png",
+      "source_file": "computations/session-46/s46_bayesian_gp.py",
+      "source_context_30_lines": "  612: \n  613: ci_lab = \"68\" if tau_16 <= tau_fold <= tau_84 else (\n  614:     \"95\" if tau_2p5 <= tau_fold <= tau_97p5 else \">95\")\n  615: plt.suptitle(\n  616:     f'BAYESIAN-GP-46: $\\\\tau^* = {tau_mean:.3f} \\\\pm {sigma_tau_final:.3f}$, '\n  617:     f'68% CI: [{tau_16:.3f}, {tau_84:.3f}], $\\\\tau_{{fold}}$ in {ci_lab}% CI',\n  618:     fontsize=14, fontweight='bold')\n  619: plt.tight_layout(rect=[0, 0, 1, 0.94])\n  620: plt.savefig('computations/session-46/s46_bayesian_gp.png', dpi=150, bbox_inches='tight')\n  621: print(\"  Saved: computations/session-46/s46_bayesian_gp.png\")\n  622: \n  623: # ============================================================================\n  624: # STEP 10: Save Results\n  625: # ============================================================================\n  626: print(\"\\n--- Saving results ---\")\n  627: \n  628: np.savez('computations/session-46/s46_bayesian_gp.npz',"
+    },
+    {
+      "anchor_id": "prov_435",
+      "anchor_type": "data_provenance",
+      "name": "bekenstein_torsion",
+      "script_path": "session-46/s46_bekenstein_torsion.py",
+      "session": "s46",
+      "inputs": "",
+      "outputs": "session-46/s46_bekenstein_torsion.npz",
+      "source_file": "computations/session-46/s46_bekenstein_torsion.py",
+      "source_context_30_lines": "  428: print(f\"  Bekenstein saturation (torsion, R_KK): {saturation_Bek:.2%}\")\n  429: print(f\"  Holographic utilization: {S_Fock_max / S_holo * 100:.2e}%\")\n  430: print(f\"{'='*78}\")\n  431: \n  432: # =============================================================================\n  433: # 11. Save results\n  434: # =============================================================================\n  435: np.savez(\n  436:     os.path.join(os.path.dirname(__file__), \"s46_bekenstein_torsion.npz\"),\n  437:     # Input\n  438:     T_singlet=T_singlet,\n  439:     omega_singlet=omega_singlet,\n  440:     logdet_singlet=logdet_singlet,\n  441:     n_modes_singlet=n_modes,\n  442:     tau_fold=tau_fold_data,\n  443:     # Entropy measures\n  444:     S_torsion_nats=S_torsion_nats,"
+    },
+    {
+      "anchor_id": "prov_436",
+      "anchor_type": "data_provenance",
+      "name": "berry_phase",
+      "script_path": "session-46/s46_berry_phase.py",
+      "session": "s46",
+      "inputs": "",
+      "outputs": "session-46/s46_berry_phase.npz, session-46/s46_berry_phase.png",
+      "source_file": "computations/session-46/s46_berry_phase.py",
+      "source_context_30_lines": "   50:     - Volovik (2003): Universe in a Helium Droplet, Ch. 8 (topological protection)\n   51:     - Paper 10 (Volovik): emergent gauge fields from Berry phase in order parameter space\n   52:     - Paper 08 (Dirac cones): Berry phase pi at Dirac points in phononic crystals\n   53: \n   54: Gate: BAND-INVERSION-BERRY-46 (Diagnostic)\n   55:     Report Berry phase per sector and whether any equals pi.\n   56: \n   57: Input:  s44_dos_tau.npz, s45_acoustic_ns.npz, canonical_constants.py\n   58: Output: s46_berry_phase.{npz,png}\n   59: \n   60: Author: tesla-resonance (Session 46 W4-2)\n   61: Date: 2026-03-15\n   62: \"\"\"\n   63: \n   64: import sys\n   65: import os\n   66: import numpy as np"
+    },
+    {
+      "anchor_id": "prov_437",
+      "anchor_type": "data_provenance",
+      "name": "connes_distance",
+      "script_path": "session-46/s46_connes_distance.py",
+      "session": "s46",
+      "inputs": "",
+      "outputs": "session-46/s46_connes_distance.npz",
+      "source_file": "computations/session-46/s46_connes_distance.py",
+      "source_context_30_lines": "  148:     K = K.real\n  149: \n  150:     # Eigendecompose\n  151:     evals, evecs = eigh(K)\n  152: \n  153:     return evals, evecs, basis, comms\n  154: \n  155: \n  156: def connes_distance_sector_L2(lip_evals, lip_evecs, basis, delta_pq, dim_pq):\n  157:     \"\"\"\n  158:     Compute the Connes distance in the L2 (Frobenius) norm version.\n  159: \n  160:     This gives an EXACT answer for the modified distance:\n  161:         d_F(delta) = max_{f: ||[D, f x I]||_F <= 1} Tr(delta f)\n  162: \n  163:     The answer is:\n  164:         d_F = sqrt(sum_k (c_k / lambda_k)^2)"
+    },
+    {
+      "anchor_id": "prov_438",
+      "anchor_type": "data_provenance",
+      "name": "dissolution_singlet",
+      "script_path": "session-46/s46_dissolution_singlet.py",
+      "session": "s46",
+      "inputs": "",
+      "outputs": "session-46/s46_dissolution_singlet.npz, session-46/s46_dissolution_singlet.png",
+      "source_file": "computations/session-46/s46_dissolution_singlet.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s46_dissolution_singlet.py -- DISSOLUTION-SINGLET-46\n    4: =====================================================\n    5: \n    6: Compute entanglement entropy S(eps_c) restricted to singlet-singlet\n    7: partition only (16 modes, bipartition A=4, B=4).\n    8: \n    9: === PHYSICS ===\n   10: \n   11: S45 DISSOLUTION-ENTROPY-45 found S/S_page ~ 0.47 for the FULL block-diagonal"
+    },
+    {
+      "anchor_id": "prov_439",
+      "anchor_type": "data_provenance",
+      "name": "fabric_tessellation",
+      "script_path": "session-46/s46_fabric_tessellation.py",
+      "session": "s46",
+      "inputs": "computations/session-44/s44_coherent_wall.npz, computations/session-44/s44_voronoi_fnl.npz",
+      "outputs": "session-46/s46_fabric_tessellation.npz, session-46/s46_fabric_tessellation.png",
+      "source_file": "computations/session-46/s46_fabric_tessellation.py",
+      "source_context_30_lines": "  656: \n  657:     # Fit quality\n  658:     'R2_mc': r2_mc,\n  659: \n  660:     # Runtime\n  661:     'elapsed_s': t_elapsed,\n  662: }\n  663: \n  664: np.savez('computations/session-46/s46_fabric_tessellation.npz', **save_dict)\n  665: print(f\"\\n  Data saved to computations/session-46/s46_fabric_tessellation.npz\")\n  666: \n  667: # ============================================================\n  668: # 10. PLOT\n  669: # ============================================================\n  670: \n  671: fig, axes = plt.subplots(2, 3, figsize=(18, 11))\n  672: fig.suptitle('FABRIC-TESSELLATION-46: Domain Wall Modulation of Pair Creation\\n'"
+    },
+    {
+      "anchor_id": "prov_440",
+      "anchor_type": "data_provenance",
+      "name": "fwd_bwd_ns",
+      "script_path": "session-46/s46_fwd_bwd_ns.py",
+      "session": "s46",
+      "inputs": "",
+      "outputs": "session-46/s46_fwd_bwd_ns.npz, session-46/s46_fwd_bwd_ns.png",
+      "source_file": "computations/session-46/s46_fwd_bwd_ns.py",
+      "source_context_30_lines": "   67:     E_B1, E_B2_mean, E_B3_mean,\n   68: )\n   69: \n   70: import matplotlib\n   71: matplotlib.use('Agg')\n   72: import matplotlib.pyplot as plt\n   73: \n   74: DATA_DIR = Path(__file__).parent\n   75: OUT_PREFIX = \"s46_fwd_bwd_ns\"\n   76: \n   77: # ==============================================================================\n   78: # KZ UNIVERSALITY CONSTANTS\n   79: # ==============================================================================\n   80: z_kz = 2.024       # Bogoliubov dynamic exponent\n   81: nu_kz = 0.6301     # 3D XY correlation length exponent\n   82: znu = z_kz * nu_kz  # = 1.27532\n   83: ns_factor = znu / (1.0 + znu)  # = 0.56058"
+    }
+  ]
+}

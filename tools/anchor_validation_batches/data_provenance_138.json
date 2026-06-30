@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 138,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1371",
+      "anchor_type": "data_provenance",
+      "name": "joint_audit_atlas",
+      "script_path": "session-74/s74_joint_audit_atlas.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_joint_audit_atlas.npz",
+      "source_file": "computations/session-74/s74_joint_audit_atlas.py",
+      "source_context_30_lines": "  396: else:\n  397:     verdict = \"INFO\"\n  398:     verdict_detail = \"Unexpected state\"\n  399: \n  400: # ---------------------------------------------------------------------------\n  401: #  Section 8: Save merged atlas.\n  402: # ---------------------------------------------------------------------------\n  403: \n  404: out_path = os.path.join(SRC_DIR, \"s74_joint_audit_atlas.npz\")\n  405: \n  406: # Convert entries to parallel arrays for npz storage.\n  407: arr_source     = np.array([e[\"source\"]         for e in atlas_entries], dtype=object)\n  408: arr_category   = np.array([e[\"category\"]       for e in atlas_entries], dtype=object)\n  409: arr_entry      = np.array([e[\"entry\"]          for e in atlas_entries], dtype=object)\n  410: arr_status     = np.array([e[\"status\"]         for e in atlas_entries], dtype=object)\n  411: arr_magnitude  = np.array([e[\"magnitude\"]      for e in atlas_entries], dtype=object)\n  412: arr_w5_raw     = np.array([e[\"w5_raw_bin\"]     for e in atlas_entries], dtype=object)"
+    },
+    {
+      "anchor_id": "prov_1372",
+      "anchor_type": "data_provenance",
+      "name": "lefschetz_gaussian",
+      "script_path": "session-74/s74_lefschetz_gaussian.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_lefschetz_gaussian.npz, session-74/s74_lefschetz_gaussian.png",
+      "source_file": "computations/session-74/s74_lefschetz_gaussian.py",
+      "source_context_30_lines": "   45:     4. Energy comparison: E_state vs V_CW(fold)\n   46: \n   47: Pre-registered gate:\n   48:     PASS if |E_state - V_CW| / |V_CW| < 5%\n   49:     INFO if 5-15%\n   50:     FAIL if > 15% or non-positive-definite\n   51: \n   52: Output:\n   53:     s74_lefschetz_gaussian.npz   -- C, r_k, n_k, E_state, V_CW, ratios\n   54:     s74_lefschetz_gaussian.png   -- r_k and n_k spectra\n   55: \"\"\"\n   56: \n   57: import os\n   58: import numpy as np\n   59: import matplotlib\n   60: matplotlib.use(\"Agg\")\n   61: import matplotlib.pyplot as plt"
+    },
+    {
+      "anchor_id": "prov_1373",
+      "anchor_type": "data_provenance",
+      "name": "lefschetz_measure_factorization",
+      "script_path": "session-74/s74_lefschetz_measure_factorization.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_lefschetz_measure_factorization.npz, session-74/s74_lefschetz_measure_factorization.png",
+      "source_file": "computations/session-74/s74_lefschetz_measure_factorization.py",
+      "source_context_30_lines": "  114:        Gaussian ratio exp(-kappa_H * 0.5).\n  115: \n  116: Dependencies:\n  117:     computations/_shared/canonical_constants.py\n  118:     computations/session-74/s74_bdi_morse_stability.npz (W2-D output)\n  119:     researchers/Baptista/13_2021_Baptista_HD_Routes_SM_Bosons.md\n  120: \n  121: Outputs:\n  122:     computations/session-74/s74_lefschetz_measure_factorization.npz\n  123:     computations/session-74/s74_lefschetz_measure_factorization.png\n  124: \"\"\"\n  125: \n  126: import os\n  127: import sys\n  128: import time\n  129: import numpy as np\n  130: import matplotlib"
+    },
+    {
+      "anchor_id": "prov_1374",
+      "anchor_type": "data_provenance",
+      "name": "leggett_jeans",
+      "script_path": "session-74/s74_leggett_jeans.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_leggett_jeans.npz",
+      "source_file": "computations/session-74/s74_leggett_jeans.py",
+      "source_context_30_lines": "  275: \n  276: print(f\"Verdict: {verdict}\")\n  277: print(f\"  {verdict_text}\")\n  278: \n  279: # ============================================================================\n  280: # 9. SAVE DATA\n  281: # ============================================================================\n  282: \n  283: out_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 's74_leggett_jeans.npz')\n  284: np.savez(\n  285:     out_path,\n  286:     # PRIMARY RESULTS\n  287:     k_J_invMpc_central=k_J_invMpc_central,\n  288:     k_J_invMpc_lo=k_J_invMpc_lo,\n  289:     k_J_invMpc_hi=k_J_invMpc_hi,\n  290:     k_J_natural_central=k_J_natural_central,\n  291:     k_J_SI_central=k_J_SI_central,"
+    },
+    {
+      "anchor_id": "prov_1375",
+      "anchor_type": "data_provenance",
+      "name": "leggett_vacuum_cc",
+      "script_path": "session-74/s74_leggett_vacuum_cc.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_leggett_vacuum_cc.npz, session-74/s74_leggett_vacuum_cc.png",
+      "source_file": "computations/session-74/s74_leggett_vacuum_cc.py",
+      "source_context_30_lines": "    1: \"\"\"\n    2: s74_leggett_vacuum_cc.py -- LEGGETT-VACUUM-CC-74 (W2-N)\n    3: \n    4: Compute chi_Leggett, the Leggett-channel contribution to the cosmological constant\n    5: budget, from the zero-point energy of the Leggett mode summed over the (0,0) PW\n    6: sector at L_max = 7, normalized to chi_2 = 0.747.\n    7: \n    8: The (0,0) sector is the level-0 SU(3) singlet — the lowest-energy (base-singlet)\n    9: sector of D_K on Jensen SU(3). It contains 16 eigenvalues in [0.820, 0.971] M_KK\n   10: (level-0 content is fixed regardless of L_max truncation)."
+    },
+    {
+      "anchor_id": "prov_1376",
+      "anchor_type": "data_provenance",
+      "name": "lmax_zeta_audit",
+      "script_path": "session-74/s74_lmax_zeta_audit.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_lmax_zeta_audit.npz, session-74/s74_lmax_zeta_audit.png",
+      "source_file": "computations/session-74/s74_lmax_zeta_audit.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s74_lmax_zeta_audit.py -- L-MAX-ZETA-REGULARIZATION-74 (W1-C, Session 74 Wave 1)\n    4: ================================================================================\n    5: \n    6: Bidirectional L_max convergence audit of the Seeley-DeWitt coefficients\n    7: a_0, a_2, a_4, a_6, a_8 using three independent methods:\n    8: \n    9:   Route A: Spectral zeta analytic continuation\n   10:            zeta_D(s) = sum_n d_n * |lambda_n|^{-2s}\n   11:            Evaluated at s in {0,1,2,3,4} (integers on the real line)"
+    },
+    {
+      "anchor_id": "prov_1377",
+      "anchor_type": "data_provenance",
+      "name": "modular_sin2",
+      "script_path": "session-74/s74_modular_sin2.py",
+      "session": "s74",
+      "inputs": "s74_jensen_threshold.npz, s73b_efold_mapping.npz",
+      "outputs": "session-74/s74_modular_sin2.npz, session-74/s74_modular_sin2.png",
+      "source_file": "computations/session-74/s74_modular_sin2.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s74_modular_sin2.py -- MODULAR-SIN2-74 (W3-I, Session 74 Wave 3 Batch 2)\n    4: ================================================================================\n    5: \n    6: Compute the sin^2(theta_W)(M_Z) from the FULL Jensen-deformed tau(z) trajectory,\n    7: integrating the KK threshold sum along the modular flow tau_fold -> tau_today,\n    8: and test whether per-component integration over the trajectory EVADES the\n    9: W2-J Jensen-blindness theorem at per-sector resolution.\n   10: \n   11: Substrate framing"
+    },
+    {
+      "anchor_id": "prov_1378",
+      "anchor_type": "data_provenance",
+      "name": "modular_wa",
+      "script_path": "session-74/s74_modular_wa.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_modular_wa.npz, session-74/s74_modular_wa.png",
+      "source_file": "computations/session-74/s74_modular_wa.py",
+      "source_context_30_lines": "  139: \n  140: sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))\n  141: from canonical_constants import (\n  142:     tau_fold, dS_fold, d2S_fold, S_fold,\n  143:     M_KK, w0_FW, Delta_BCS, M_Pl_reduced, PI,\n  144:     H_fold as H_fold_canonical,\n  145: )\n  146: \n  147: OUT_STEM = \"s74_modular_wa\"\n  148: HERE = os.path.dirname(os.path.abspath(__file__))\n  149: \n  150: # ------------------------------------------------------------------\n  151: # Pre-registered gate thresholds (frozen BEFORE computation)\n  152: # ------------------------------------------------------------------\n  153: WA_PASS_ABS_THRESH = 0.05   # (local) |w_a| < 0.05 -> PASS\n  154: WA_INFO_ABS_THRESH = 0.15   # (local) 0.05 <= |w_a| < 0.15 -> INFO; >= 0.15 -> FAIL\n  155: "
+    },
+    {
+      "anchor_id": "prov_1379",
+      "anchor_type": "data_provenance",
+      "name": "moduli_stabilization",
+      "script_path": "session-74/s74_moduli_stabilization.py",
+      "session": "s74",
+      "inputs": "s73a_spectral_action_profile.npz, s73a_instanton_landscape.npz, s73a_jj_kappa_map.npz, s56_gge_fabric.npz",
+      "outputs": "session-74/s74_moduli_stabilization.npz, session-74/s74_moduli_stabilization.png",
+      "source_file": "computations/session-74/s74_moduli_stabilization.py",
+      "source_context_30_lines": "   39:       fixed (relic condition). <H_GGE> adds to S_bare.\n   40: \n   41:   (d) SPECTRAL-ACTION-UNTRUNCATED-74: S(tau) = Tr f(D_K^2/Lambda^2) at\n   42:       larger L_max. The S73A result at L_max=3 showed monotone increase.\n   43:       Does adding higher sectors (p+q>3) introduce a minimum?\n   44: \n   45: Input: s73a_spectral_action_profile.npz, s73a_instanton_landscape.npz,\n   46:        s73a_jj_kappa_map.npz, s56_gge_fabric.npz, canonical_constants.py\n   47: Output: s74_moduli_stabilization.npz, s74_moduli_stabilization.png\n   48: \"\"\"\n   49: \n   50: import numpy as np\n   51: import sys\n   52: import os\n   53: import time\n   54: import matplotlib\n   55: matplotlib.use('Agg')"
+    },
+    {
+      "anchor_id": "prov_1380",
+      "anchor_type": "data_provenance",
+      "name": "modulus_decay",
+      "script_path": "session-74/s74_modulus_decay.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_modulus_decay.npz",
+      "source_file": "computations/session-74/s74_modulus_decay.py",
+      "source_context_30_lines": "  181: print(f\"Sub-Planckian f_mod         : {f_mod_sub_planckian}\")\n  182: print(f\"Sub-M_KK m_mod              : {m_mod_sub_MKK}\")\n  183: print()\n  184: print(\"Gate verdict: N15-MODULUS-DECAY-74 =\", verdict)\n  185: print(f\"  {verdict_detail}\")\n  186: \n  187: # ---------- Save data ----------\n  188: out_path = os.path.join(os.path.dirname(os.path.abspath(__file__)),\n  189:                         's74_modulus_decay.npz')\n  190: np.savez(\n  191:     out_path,\n  192:     # Inputs\n  193:     tau_scan=tau_scan,\n  194:     S_inst_A=S_inst_A,\n  195:     tau_fold=float(tau_fold),\n  196:     tau_post=tau_post,\n  197:     idx_post=idx_post,"
+    }
+  ]
+}

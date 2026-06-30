@@ -1,0 +1,51 @@
+{
+  "gate_id": "S86-K-FLOOR-K-WALL-LAND",
+  "verdict": "FAIL",
+  "session": "S86",
+  "wave": "W0c",
+  "k_floor": null,
+  "k_wall": null,
+  "k_crit_bdg_anchor": 2.035,
+  "source_description": "S85 W0 audit npz: K_floor_present=False, K_wall_present=False (presence-check only; no values)",
+  "ordering_status": "un-evaluable (no values)",
+  "upstream_w5_d4": {
+    "found": true,
+    "lines": [
+      "S85-K-FLOOR-WALL-JOINT-REGISTRY-LANDING: FAIL -- value=0 scheme=permanent-registry convention=W5-D.4 L_max=8 audit_sha256=bb488eb01d68f3572df166ded9d78f54ba25b994668e1382d72c7fb04c863faa content_sha256=541294b4fa9dab33d8b033d3d77a21434b54df74feab76a391c3a56ccb858273 schema_version=S84+",
+      "# S85-K-FLOOR-WALL-JOINT-REGISTRY-LANDING: audit_sha256_short=bb488eb01d68f357 content_sha256=541294b4fa9dab33d8b033d3d77a21434b54df74feab76a391c3a56ccb858273 audit_sha256=bb488eb01d68f3572df166ded9d78f54ba25b994668e1382d72c7fb04c863faa  # canonicalized S86 W0b-4 (post-hoc append, not edit)"
+    ]
+  },
+  "npz_search": {
+    "candidates": [
+      "tier0-computation\\s85_w0_k_floor_wall_registry_landing.npz"
+    ],
+    "findings": [
+      {
+        "path": "tier0-computation\\s85_w0_k_floor_wall_registry_landing.npz",
+        "keys": [
+          "K_floor_present",
+          "K_wall_present",
+          "K_R5",
+          "K_crit",
+          "registry_exists",
+          "both_K_present",
+          "joint_condition_ok",
+          "audit_sha256",
+          "content_sha256"
+        ],
+        "scalar_payload": {
+          "K_floor_present": false,
+          "K_wall_present": false,
+          "K_R5": 1.9222,
+          "K_crit": 91.5,
+          "registry_exists": false,
+          "both_K_present": false,
+          "joint_condition_ok": true
+        }
+      }
+    ]
+  },
+  "audit_sha256": "0d29ebd4612d3999c35c7abc5fb75406a4b5a22d64efd814a4b0d1b489a0ff4d",
+  "content_sha256": "04436aadeabd13a81bf9508bb4c668794eef0afc1c5345d69b6ba5fdea2c5116",
+  "remediation_route": "Tier-3 escalation: re-derive S85 W5 D.4 producing K_floor / K_wall as substrate-corridor BdG-bracket pair, then land them via this gate in a future S86-W0c-4-RERUN or S87+ wave."
+}

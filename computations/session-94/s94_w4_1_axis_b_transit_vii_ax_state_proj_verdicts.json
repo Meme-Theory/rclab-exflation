@@ -1,0 +1,37 @@
+{
+  "reviewer": "transit-axisB",
+  "single_axis": {
+    "regulator_invariant_IR_envelope": "PASS",
+    "substrate_framing_direction": "PASS",
+    "element5_hold_substitution_chain": "PASS",
+    "substrate_input_orthogonality": "PASS",
+    "E1_substrate_GGE_occupation": "PASS"
+  },
+  "joint": {
+    "E1": "PASS",
+    "E3": "PASS",
+    "E4": "PASS"
+  },
+  "axisB_single_axis_all": "PASS",
+  "axisB_joint_all": "PASS",
+  "substrate_input_anchor": "s93_w4_3_vii_ax_op_proj_n_eigs_growth.npz",
+  "substrate_input_anchor_ondisk": "s93_w4_3_n_pbh_canonical_truncation_factorization.npz",
+  "obs_OP_sha256": "4d21402cee9746418ea9805c15e25857d1dfdde5f5a6862c7b6cd4d44f31c6aa",
+  "obs_STATE_loaded_by_axisB": false,
+  "n_PBH_op_L14_m3": 7.276051822131149e-23,
+  "n_PBH_registry_m3": 7.2761e-23,
+  "rel_dev_inheritance": 6.621386299187033e-06,
+  "op_channel_divergent": true,
+  "state_channel_bounded": true,
+  "ir_self_regularized_v2_at_K0": 0.5,
+  "L_max": 14,
+  "notes": "Axis-B (transit-dynamics / substrate / GGE-relic) re-derived all clauses FROM FIRST PRINCIPLES from the registered §VII.AX.STATE-PROJ entry alone (registry L19526-L19622); NO workshop transcript, NO Axis-A verdict, NO OP-PROJ/MULTI-PIN workshop read. JOINT E1 (Cell-IV state-pair |v_a|^2 on M_2(C), parse-tree terminus <psi|.|psi>): PASS. JOINT E3 (Bogoliubov-state o HKR o CM-1995 bridge, Element-5 inheritance rel_dev=6.62e-06): PASS. JOINT E4 (bottom-K bounded/IR-self-reg/FB-saturated, independent of DIVERGENT OP-PROJ N_eigs channel): PASS. Substitution chain: theorem-structure Stage-3-eligibility orthogonal to the HELD Tier-2-dimensionful m^-3 Level-3 row (m^-3 stays NOT-SATISFIED-PENDING; CF-S94-N-PBH-TRUNCATION-ANCHOR). Substrate-input-orthogonality: obs_OP loaded by Axis-B ONLY, obs_STATE NOT loaded (structural ceiling, no caveat). All Axis-B single-axis clauses + 3 JOINT clauses PASS; the inherited m^-3 Level-3 row is NOT a Stage-2 PASS-clause (HELD per parent).",
+  "details": {
+    "E1": "Cell-IV state-pair classification: |v_a|^2=<psi|b_a^dag b_a|psi> carries prepared-state index a (state_pair_count=1, algebra_dep_count=1) -> Cell IV (algebra-DEPENDENT), STRUCTURALLY ORTHOGONAL to OP-PROJ Cell-I spectrum-only cardinality. Closed-form |v_a|^2 valid prob in [0,1/2]: True (v2=[0.5, 0.5, 0.49995, 0.495, 0.146447]). Magnitude-agreement with OP-PROJ (shared 7.2761e-23) does NOT force shared cell.",
+    "E4": "Level-2-binding envelope independence: OP-PROJ N_eigs total-count channel DIVERGENT (w_limit=DIVERGENT, saturates=False, increasing=True); STATE-PROJ bottom-K |v_a|^2 BOUNDED in [0,1/2] for all K,L_max => cannot inherit total-count divergence. IR-self-regularized: |v_a(K->0)|^2 -> 0.500000000000 (=1/2, gap-protected, Delta_a=1.0>0); regulator-INVARIANT (corpus §22 sibling discriminator). Friedrich-Bar bottom-K saturation (L=14,15,16) = [True, True, True]. Channels structurally independent: True.",
+    "E3": "Bridge map EXPLICIT (3 named legs: Bogoliubov-state closed-form o HKR L->inf o CM-1995 §III.4 residue on M_2(C)); NOT 'analogous'. Element-5 inheritance pin: n_PBH^STATE = Sum_a|v_a|^2 * prob_form / L_pix^3 reproduces OP-PROJ magnitude 7.276052e-23 vs registry 7.276100e-23, rel_dev=6.621e-06 <= 1e-04 => mag_agree=True. Per-mode occupation is a valid Bogoliubov probability (True); aggregation well-posed. substrate-natural-binding (occupation computed on BdG sub-algebra, not canonical-import). [Self-correction: registered entry uses ONE closed-form; it does NOT assert the S52-static and acoustic |v_a|^2 forms are identical (Sage-verified distinct) — the inheritance test is the n_PBH MAGNITUDE agreement, not a form-identity.]",
+    "substrate_framing": "Direction substrate->lab CONFIRMED: D_K bottom-K spectrum at tau_fold -> S52 8-mode Bogoliubov amplitudes (u_a,v_a) -> state-pair occupation |v_a|^2 -> aggregated n_PBH; CMB/LISA/PTA detection horizons are the laboratory-IN measurement context (Element-2 OE-form), NOT a fit. No container-thinking inversion.",
+    "substitution_chain": "Stage-3-eligibility predicate = [two-axis PASS-AND on STRUCTURAL clauses E1,E3,E4] is INDEPENDENT of the inherited dimensionful m^-3 Level-3 row (Tier-2-dimensionful, HELD NOT-SATISFIED-PENDING). The m^-3 term does NOT appear in composite_PASS. The bottom-K state-pair channel (E1) is bounded/saturated (E4) and structurally distinct from the OP-PROJ N_eigs total-count channel (DIVERGENT, L_max=14 status PROVISIONAL-NEEDS-RE-DETERMINATION); a Stage-2 structural PASS does NOT assert the held m^-3 registry-PASS. subchain_valid=True.",
+    "orthogonality": "obs_OP (s93_w4_3_n_pbh_canonical_truncation_factorization.npz) loaded by Axis-B ONLY; obs_STATE (s91_w5_1_full_bdg_pv.npz) NOT loaded by Axis-B (Axis-A only). Disjoint substrate inputs at >=1 obs => structural ceiling, NO substrate-input-overlap caveat. NOTE plan-text drift: plan cites obs_OP as 's93_w4_3_vii_ax_op_proj_n_eigs_growth.npz'; on-disk canonical is 's93_w4_3_n_pbh_canonical_truncation_factorization.npz' (same N_eigs cascade; resolved per substrate-first-canonical-sourcing.md §(ii.B))."
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 178,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1771",
+      "anchor_type": "data_provenance",
+      "name": "w7b_75_b_power_stability",
+      "script_path": "session-84/s84_w7b_75_b_power_stability.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-84/s84_w7b_75_b_power_stability.py",
+      "source_context_30_lines": "  136: SPECTRUM_CACHE_L12 = SCRIPT_DIR / \"s84_spectrum_cache_L12_tau019.npz\"  # (local) new cache emitted here\n  137: G36_NPZ = SCRIPT_DIR / \"s83_w3_g36_matrix_model_classification.npz\"  # (local)\n  138: \n  139: INPUT_FILES = [\n  140:     SCRIPT_DIR / \"canonical_constants.py\",\n  141:     G36_NPZ,\n  142:     SPECTRUM_CACHE_L9,\n  143:     SCRIPT_DIR / \"dirac_spectrum.py\",\n  144:     SCRIPT_DIR / \"s84_w7b_75_b_power_stability.py\",\n  145: ]\n  146: \n  147: # Pre-registered thresholds (plan §W7b-75)\n  148: B_ANCHOR = 4.681                                                # (local) G36 anchor\n  149: PASS_B_TOL = 0.10                                               # (local) b-power tolerance\n  150: INFO_B_TOL = 0.30                                               # (local) b-power INFO tolerance\n  151: PASS_R2_THRESHOLD = 0.99                                        # (local)\n  152: INFO_R2_THRESHOLD = 0.95                                        # (local)"
+    },
+    {
+      "anchor_id": "prov_1772",
+      "anchor_type": "data_provenance",
+      "name": "w7b_76_sdw_b_prediction",
+      "script_path": "session-84/s84_w7b_76_sdw_b_prediction.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-84/s84_w7b_76_sdw_b_prediction.py",
+      "source_context_30_lines": "  158: OUT_PNG = SCRIPT_DIR / \"s84_w7b_76_plot.png\"\n  159: VERDICT_TXT = SCRIPT_DIR / \"s84_gate_verdicts.txt\"\n  160: \n  161: INPUT_FILES = [\n  162:     SCRIPT_DIR / \"canonical_constants.py\",\n  163:     SCRIPT_DIR / \"s74_spectrum_cache_L9_tau019.npz\",\n  164:     SCRIPT_DIR / \"s84_w7b_75_data.npz\",\n  165:     SCRIPT_DIR / \"s83_w3_g36_matrix_model_classification.npz\",\n  166:     SCRIPT_DIR / \"s84_w7b_76_sdw_b_prediction.py\",\n  167: ]\n  168: \n  169: # Pre-registered thresholds (plan §W7b-76)\n  170: B_TARGET_FINITE = 4.681                                          # (local) G36 L=3..8\n  171: B_TARGET_MID = 4.988                                             # (local) W7b-75 L=3..12 joint\n  172: B_TARGET_HIGH = 5.838                                            # (local) W7b-75 L=9..12\n  173: PASS_B_TOL = 0.10                                                # (local) pre-reg tol for PASS\n  174: INFO_B_TOL = 0.30                                                # (local) pre-reg tol for INFO"
+    },
+    {
+      "anchor_id": "prov_1773",
+      "anchor_type": "data_provenance",
+      "name": "w7b_77_twisted_triple_admissibility",
+      "script_path": "session-84/s84_w7b_77_twisted_triple_admissibility.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-84/s84_w7b_77_twisted_triple_admissibility.py",
+      "source_context_30_lines": "<name 'w7b_77_twisted_triple_admissibility' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S84-W7b-77-TWISTED-TRIPLE-ADMISSIBILITY\n    4: \n    5: Tests whether the Connes-Moscovici (2008) twisted spectral triple generalization\n    6: extends the singleton admissibility result {d_total=12, KO-dim=6, A_F=C(+)H(+)M_3(C)}\n    7: from S83-G32 to any additional (d_internal, KO-dim, A_F, sigma) combination.\n    8: \n    9: Method (representation-theoretic enumeration; no GPU):\n   10:   Enumerate 16 candidate twisted triples T-1..T-16.\n   11:   For each, apply 4 admissibility filters:\n   12:     F1: Mellin cone pairing (d_total=12 required)\n   13:     F2: Connes-Marcolli 2013 Table 1 KO-dim sign table\n   14:     F3: SM content match (3 generations + gauge bosons from A_F modules)\n   15:     F4: Jensen deformation compatibility (sigma preserves monotonicity)\n   16:   Count candidates passing ALL filters.\n   17: \n   18: PASS iff count = 0 exactly (twisting does NOT extend singleton).\n   19: \n   20: References:\n   21:   - Connes-Moscovici 2008, \"Type III and spectral triples\" (arXiv:math/0609703)\n   22:     Def 2.3: twisted spectral triple axioms (replaces [D,a] bounded by [D,a]_sigma)\n   23:   - Connes-Marcolli 2013, \"A walk in the noncommutative garden\" Table 1\n   24:     KO-dim sign table for (eps, eps', eps'')\n   25:   - S83-G32 (singleton admissibility)\n   26:   - S83-G36 (matrix-model classification)\n   27:   - S82 Mellin cone admissibility filter\n   28: \"\"\"\n   29: \n   30: from __future__ import annotations"
+    },
+    {
+      "anchor_id": "prov_1774",
+      "anchor_type": "data_provenance",
+      "name": "w7b_78_correspondence_table_closure",
+      "script_path": "session-84/s84_w7b_78_correspondence_table_closure.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-84/s84_w7b_78_correspondence_table_closure.py",
+      "source_context_30_lines": "<name 'w7b_78_correspondence_table_closure' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S84 W7b-78 — S84-CORRESPONDENCE-TABLE-CLOSURE\n    4: =============================================\n    5: \n    6: Gate: S84-W7b-78-CORRESPONDENCE-TABLE-CLOSURE ([AUDIT])\n    7: \n    8: Pre-registered threshold (plan §W7b-78):\n    9:   PASS iff open_count = 0 AND all 31 entries classified (with one-line reason).\n   10:   INFO iff 1 <= open_count <= 3 (external input deferred to S85 workshop).\n   11:   FAIL iff open_count >= 4 (methodology breakdown).\n   12: \n   13: Inputs (SHA-256 pinned at runtime, §4 below):\n   14:   - canonical_constants.py                              (framework constants provenance)\n   15:   - s83_w3_g32_dimreduction_audit.npz                   (G32 verdict substrate)\n   16:   - s83_w3_g36_matrix_model_classification.npz          (G36 verdict substrate)\n   17:   - s83_gate_verdicts.txt                               (SHA-pinned G32 + G36 rows)\n   18:   - sessions/session-64/investigation-phonon-strings.md (S64 18-entry baseline)\n   19:   - .claude/agent-memory/kaku-speculative-theorist/MEMORY.md (29-entry post-S64 ledger)\n   20: \n   21: Output 4-tuple:\n   22:   (value=<open_count>, scheme=post-G32-G36-audit, convention=5-bucket, L_max=N/A)\n   23: \n   24: Classification: NON-PHONONIC (meta-audit)\n   25: \n   26: METHODOLOGY\n   27: -----------\n   28: Re-classify every one of the 31 correspondence-table entries (29 pre-S83 + 2 new\n   29: ANTI additions from S83) against the post-G32 and post-G36 hard filters:\n   30: "
+    },
+    {
+      "anchor_id": "prov_1775",
+      "anchor_type": "data_provenance",
+      "name": "w7b_81_mp_admissibility_extended",
+      "script_path": "session-84/s84_w7b_81_mp_admissibility_extended.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w7b_81_mp_admissibility_extended.png",
+      "source_file": "computations/session-84/s84_w7b_81_mp_admissibility_extended.py",
+      "source_context_30_lines": "  559: print(f\"  -> REASON:  {reason}\")\n  560: \n  561: # ============================================================\n  562: # SECTION 10: Closure SHA + 4-tuple\n  563: # ============================================================\n  564: print(\"\\n[SEC 10] Closure SHA-256 and 4-tuple emit\")\n  565: \n  566: closure_map = {                                              # (local)\n  567:     'script': 's84_w7b_81_mp_admissibility_extended.py',\n  568:     's_KO': s_KO,\n  569:     'classes': CLASS_NAMES,\n  570:     'fresh_classes': [n for n in CLASS_NAMES\n  571:                       if CLASSES[n][1] == 'FRESH'],\n  572:     'R_SCAN': R_SCAN,\n  573:     'ZUBAREV_ALPHA': ZUBAREV_ALPHA,\n  574:     'DIMREG_EPS': DIMREG_EPS,\n  575:     'GAUSSSQ_ALPHA': GAUSSSQ_ALPHA,"
+    },
+    {
+      "anchor_id": "prov_1776",
+      "anchor_type": "data_provenance",
+      "name": "w7b_82_g36_prdr_audit",
+      "script_path": "session-84/s84_w7b_82_g36_prdr_audit.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-84/s84_w7b_82_g36_prdr_audit.py",
+      "source_context_30_lines": "   68: \n   69: SESSION = \"S84\"                                                   # (local)\n   70: GATE_ID = \"S84-W7b-82-G36-PRDR-AUDIT\"                             # (local)\n   71: SCHEME = \"PRDR-audit\"                                             # (local)\n   72: CONVENTION = \"§0.11-ladder\"                                       # (local)\n   73: L_MAX = 8                                                         # (local)\n   74: \n   75: OUT_NPZ = SCRIPT_DIR / \"s84_w7b_82_data.npz\"\n   76: OUT_JSON = SCRIPT_DIR / \"s84_w7b_82_g36_prdr_audit_output.json\"\n   77: VERDICT_TXT = SCRIPT_DIR / \"s84_gate_verdicts.txt\"\n   78: SPECTRUM_CACHE = SCRIPT_DIR / \"s74_spectrum_cache_L9_tau019.npz\"\n   79: G36_NPZ = SCRIPT_DIR / \"s83_w3_g36_matrix_model_classification.npz\"\n   80: G36_SCRIPT = SCRIPT_DIR / \"s83_w3_g36_matrix_model_classification.py\"\n   81: W7b75_NPZ = SCRIPT_DIR / \"s84_w7b_75_data.npz\"                    # (local) downstream drift context\n   82: \n   83: INPUT_FILES = [\n   84:     SCRIPT_DIR / \"canonical_constants.py\","
+    },
+    {
+      "anchor_id": "prov_1777",
+      "anchor_type": "data_provenance",
+      "name": "w7b_83_vii_n_registry_landing",
+      "script_path": "session-84/s84_w7b_83_vii_n_registry_landing.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-84/s84_w7b_83_vii_n_registry_landing.py",
+      "source_context_30_lines": "  206: def build_registry_entry(combined_audit_sha, today_iso):\n  207:     lines = []\n  208:     lines.append('')\n  209:     lines.append('---')\n  210:     lines.append('')\n  211:     lines.append(f'## §VII.O — Admissibility Singleton and IKKT Anti-Correspondence Theorem (S84 W7b-83, {today_iso})')\n  212:     lines.append('')\n  213:     lines.append('**Source**: S84 W7b-83. Script '\n  214:                  '`computations/session-84/s84_w7b_83_vii_n_registry_landing.py`; '\n  215:                  'data `s84_w7b_83_data.npz`; block `s84_w7b_83_landing_block.md`.')\n  216:     lines.append('')\n  217:     lines.append('**Classification**: GEOMETRIC (theorem-landing). '\n  218:                  'Substrate framing: the eigenvalue spectrum of D_K on '\n  219:                  'Jensen-deformed SU(3) admits exactly one (d_total, KO-dim, A_F) '\n  220:                  'configuration consistent with (i) Mellin-cone d-singleton, '\n  221:                  '(ii) CCM KO-dim=6 sign-table row, (iii) three-generation SM '\n  222:                  'gauge content, and (iv) two-scale power-law |E_cond(L)| '"
+    },
+    {
+      "anchor_id": "prov_1778",
+      "anchor_type": "data_provenance",
+      "name": "w7b_84_kk_tower_at_singleton",
+      "script_path": "session-84/s84_w7b_84_kk_tower_at_singleton.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-84/s84_w7b_84_kk_tower_at_singleton.py",
+      "source_context_30_lines": "  103:         for chunk in iter(lambda: fh.read(65536), b\"\"):\n  104:             h.update(chunk)\n  105:     return h.hexdigest()\n  106: \n  107: \n  108: INPUT_PINS = {\n  109:     \"canonical_constants.py\": _sha256_of(SCRIPT_DIR / \"canonical_constants.py\"),\n  110:     \"s63_csdr_branching.npz\": _sha256_of(SCRIPT_DIR / \"s63_csdr_branching.npz\"),\n  111:     \"s84_w7b_84_kk_tower_at_singleton.py\": _sha256_of(\n  112:         SCRIPT_DIR / \"s84_w7b_84_kk_tower_at_singleton.py\"\n  113:     ),\n  114: }\n  115: \n  116: print(\"=\" * 72)\n  117: print(\"S84-W7b-84-KK-TOWER-AT-SINGLETON\")\n  118: print(\"=\" * 72)\n  119: print(\"Input-pin SHA map (first 20 lines):\")"
+    },
+    {
+      "anchor_id": "prov_1779",
+      "anchor_type": "data_provenance",
+      "name": "w8a_af_birkhoff_uniqueness",
+      "script_path": "session-84/s84_w8a_af_birkhoff_uniqueness.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-84/s84_w8a_af_birkhoff_uniqueness.py",
+      "source_context_30_lines": "<name 'w8a_af_birkhoff_uniqueness' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: S84 W8a-87 Part (b) — S84-AF-BIRKHOFF-UNIQUENESS-PROOF\n    3: ======================================================\n    4: \n    5: Gate: S84-AF-BIRKHOFF-UNIQUENESS-PROOF\n    6: Trigger: [VERIFY-THEOREM][CHAIN]\n    7: Classification: GEOMETRIC (algebra A_F is the fiber structure of the spectral\n    8:                            triple — the fabric, not an excitation of it)\n    9: Agent: einstein-theorist\n   10: \n   11: PURPOSE\n   12: -------\n   13: Prove A_F = C (+) H (+) M_3(C) is the UNIQUE finite-dimensional real\n   14: noncommutative associative algebra (dim_R <= 50) satisfying six axioms:\n   15: \n   16:   (i)   KO-dim = 6 mod 8 (reduces to a real spectral triple),\n   17:   (ii)  first-order condition  [[D,a],J b J^{-1}] = 0,\n   18:   (iii) orientability (Hochschild cycle representing the volume form),\n   19:   (iv)  Poincare duality (Fredholm module / K-homology pairing nondegenerate),\n   20:   (v)   CCM admissibility (Chamseddine-Connes-Marcolli — centre structure\n   21:         and multiplicity pattern required for the heat-kernel SM dictionary),\n   22:   (vi)  SM hypercharge reproduction Y = -(2/3) T_3 - (1/3) T_L\n   23:         (operator relation inside the representation on H_F).\n   24: \n   25: Method: Wedderburn-Artin enumeration (every finite-dim semisimple real\n   26: associative algebra is a direct sum of matrix algebras over R, C, H). Walk\n   27: every direct sum A = (+)_i M_{n_i}(K_i) with  sum_i n_i^2 dim_R(K_i) <= 50.\n   28: For each, deterministically evaluate axioms (i)-(vi).\n   29: \n   30: Non-semisimple, commutative, quantum-group, and Clifford-algebra families"
+    },
+    {
+      "anchor_id": "prov_1780",
+      "anchor_type": "data_provenance",
+      "name": "w8a_af_singleton_sm_couplings",
+      "script_path": "session-84/s84_w8a_af_singleton_sm_couplings.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-84/s84_w8a_af_singleton_sm_couplings.py",
+      "source_context_30_lines": "<name 'w8a_af_singleton_sm_couplings' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: S84 §W8a-87 Part (a): A_F -> SM gauge couplings via 1-loop RGE from Lambda_GUT = M_KK to M_Z.\n    3: \n    4: Pre-registered gate: S84-AF-SINGLETON-SM-COUPLINGS\n    5:   Hypothesis: Starting from only A_F = C + H + M_3(C) + Chamseddine-Connes a_4 boundary condition\n    6:               + 1-loop SM RGE, derive g_1(M_Z), g_2(M_Z), g_3(M_Z).\n    7:   PASS iff all three |g_i/g_i_PDG - 1| < 0.01.\n    8:   FAIL iff any |g_i/g_i_PDG - 1| > 0.10.\n    9:   INFO otherwise.\n   10: \n   11: Method:\n   12:   1. Chamseddine-Connes a_4 boundary condition at Lambda_GUT = M_KK:\n   13:        g_1^SU5(M_KK) = g_2(M_KK) = g_3(M_KK) = g_GUT\n   14:      where g_GUT is structural, fixed by the spectral action a_4 normalization.\n   15:   2. For this test, g_GUT is determined by the internal-consistency structural\n   16:      condition: at the boundary scale, the three couplings must coincide. We\n   17:      extract g_GUT from alpha_2^-1(M_KK) = alpha_3^-1(M_KK) (the two asymptotically\n   18:      free couplings that naturally meet), then test whether g_1 agrees.\n   19:      This is a ONE-parameter structural BC (g_GUT) predicting THREE couplings.\n   20:   3. 1-loop SM RGE: d(1/alpha_i)/d(ln mu) = -b_i/(2*pi)\n   21:      with (b_1, b_2, b_3) = (41/10, -19/6, -7) in SM hypercharge normalization for b_1.\n   22:   4. g_1 in SU(5) GUT normalization: g_1^SU5 = sqrt(5/3) * g_1^SM.\n   23:      Correspondingly, b_1^SU5 = (3/5) * b_1^SM = (3/5)(41/10) = 123/50.\n   24:   5. Run each alpha_i from M_KK down to M_Z, then convert back to g_i^SM for\n   25:      comparison to PDG.\n   26: \n   27: Pre-registered substitution chain:\n   28:   alpha_i^-1(M_Z) = alpha_i^-1(M_KK) + (b_i / (2*pi)) * ln(M_KK/M_Z)  (i=2,3 directly)\n   29:   alpha_1_SU5^-1(M_Z) = alpha_1_SU5^-1(M_KK) + (b_1_SU5 / (2*pi)) * ln(M_KK/M_Z)\n   30:   g_1^SM = sqrt(3/5) * g_1_SU5"
+    }
+  ]
+}

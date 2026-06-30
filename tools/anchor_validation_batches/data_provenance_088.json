@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 88,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_871",
+      "anchor_type": "data_provenance",
+      "name": "heat_kernel_a2",
+      "script_path": "session-61/s61_heat_kernel_a2.py",
+      "session": "s61",
+      "inputs": "s60_pw_h0_conv.npz",
+      "outputs": "session-61/s61_heat_kernel_a2.npz, session-61/s61_heat_kernel_a2.png",
+      "source_file": "computations/session-61/s61_heat_kernel_a2.py",
+      "source_context_30_lines": "  509: # ==============================================================================\n  510: #  SECTION 10: Save Data\n  511: # ==============================================================================\n  512: \n  513: print(f\"\\n{'='*72}\")\n  514: print(\"SECTION 10: Saving data\")\n  515: print(\"=\" * 72)\n  516: \n  517: np.savez('s61_heat_kernel_a2.npz',\n  518:     # tau grid\n  519:     tau_arr=tau_arr,\n  520:     tau_fold=tau_fold,\n  521:     idx_fold=idx_fold,\n  522:     N_tau=N_tau,\n  523:     # Geometric quantities\n  524:     R_arr=R_arr,\n  525:     R_fold=R_fold,"
+    },
+    {
+      "anchor_id": "prov_872",
+      "anchor_type": "data_provenance",
+      "name": "heat_kernel_a4",
+      "script_path": "session-61/s61_heat_kernel_a4.py",
+      "session": "s61",
+      "inputs": "s60_a4_trace.npz",
+      "outputs": "session-61/s61_heat_kernel_a4.npz, session-61/s61_heat_kernel_a4.png",
+      "source_file": "computations/session-61/s61_heat_kernel_a4.py",
+      "source_context_30_lines": "  626: \n  627: elapsed = time.time() - t0\n  628: \n  629: print()\n  630: print(f\"Computation time: {elapsed:.2f}s\")\n  631: print()\n  632: \n  633: np.savez(\n  634:     's61_heat_kernel_a4.npz',\n  635:     # tau scan\n  636:     tau_arr=tau_arr,\n  637:     R_arr=R_arr,\n  638:     Ric2_arr=Ric2_arr,\n  639:     K_arr=K_arr,\n  640:     a2_gilkey_arr=a2_arr,\n  641:     a4_gilkey_arr=a4_arr,\n  642:     ratio_gilkey_arr=ratio_arr,"
+    },
+    {
+      "anchor_id": "prov_873",
+      "anchor_type": "data_provenance",
+      "name": "higgs_mass",
+      "script_path": "session-61/s61_higgs_mass.py",
+      "session": "s61",
+      "inputs": "",
+      "outputs": "session-61/s61_higgs_mass.npz, session-61/s61_higgs_mass.png",
+      "source_file": "computations/session-61/s61_higgs_mass.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s61_higgs_mass.py — HIGGS-MASS-61\n    4: Higgs mass from sector-resolved spectral action using CORRECTED geometric\n    5: a_4/a_2 = 0.414 (Gilkey computation, S61 W3).\n    6: \n    7: The old Peter-Weyl ratio a_4/a_2 = 1.823 was wrong by 4.4x.\n    8: \n    9: Physics\n   10: -------\n   11: The Chamseddine-Connes-Marcolli (CCM) spectral action on M^4 x F yields"
+    },
+    {
+      "anchor_id": "prov_874",
+      "anchor_type": "data_provenance",
+      "name": "hk_oscillation",
+      "script_path": "session-61/s61_hk_oscillation.py",
+      "session": "s61",
+      "inputs": "s44_dos_tau.npz, s61_heat_kernel_a2.npz, s61_heat_kernel_a4.npz, s60_pw_h0_conv.npz",
+      "outputs": "session-61/s61_hk_oscillation.npz",
+      "source_file": "computations/session-61/s61_hk_oscillation.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s61_hk_oscillation.py — Heat Kernel Mode-Resolved Oscillatory Corrections\n    4: ===========================================================================\n    5: \n    6: Gate: HK-OSCILLATION-61\n    7: Pre-registered criterion:\n    8:   PASS  if oscillatory residual ~ Lambda_obs (within 10 orders)\n    9:   FAIL  if residual -> 0 (averages out)\n   10:   INFO  if finite but >> Lambda_obs\n   11: "
+    },
+    {
+      "anchor_id": "prov_875",
+      "anchor_type": "data_provenance",
+      "name": "inherit_bayes",
+      "script_path": "session-61/s61_inherit_bayes.py",
+      "session": "s61",
+      "inputs": "",
+      "outputs": "session-61/s61_inherit_bayes.npz",
+      "source_file": "computations/session-61/s61_inherit_bayes.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s61_inherit_bayes.py — Bayesian Inheritance vs Analogy Discrimination\n    4: =====================================================================\n    5: \n    6: Gate: INHERIT-BAYES-61  (INFO expected)\n    7: \n    8: Two models:\n    9:   M_inherit: Framework BCS on SU(3) is the PARENT condensate.\n   10:              Nuclear pairing and 3He-B are descendants.\n   11:   M_analogy: Framework BCS is mathematically SIMILAR but not causally related."
+    },
+    {
+      "anchor_id": "prov_876",
+      "anchor_type": "data_provenance",
+      "name": "integrability_scaling",
+      "script_path": "session-61/s61_integrability_scaling.py",
+      "session": "s61",
+      "inputs": "",
+      "outputs": "session-61/s61_integrability_scaling.npz, session-61/s61_integrability_scaling.png",
+      "source_file": "computations/session-61/s61_integrability_scaling.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s61_integrability_scaling.py — Integrability Breaking Scaling with N_cells\n    4: ==========================================================================\n    5: \n    6: Gate: INTEG-SCALING-61\n    7:   PASS: beta > 0.5 (integrability breaking decays -> GGE permanent)\n    8:   FAIL: beta < 0.1 (breaking intensive -> thermalizes)\n    9:   INFO: beta in [0.1, 0.5] (intermediate)\n   10: \n   11: Physics:"
+    },
+    {
+      "anchor_id": "prov_877",
+      "anchor_type": "data_provenance",
+      "name": "j_breaking_catalog",
+      "script_path": "session-61/s61_j_breaking_catalog.py",
+      "session": "s61",
+      "inputs": "s61_dynamic_j_breaking.npz",
+      "outputs": "session-61/s61_j_breaking_catalog.npz, session-61/s61_j_breaking_catalog.md",
+      "source_file": "computations/session-61/s61_j_breaking_catalog.py",
+      "source_context_30_lines": " 1027: print()\n 1028: print(f\"  E1 is the ONLY mechanism where the required delta_CP is natural.\")\n 1029: print()\n 1030: \n 1031: # ==========================================================================\n 1032: # SAVE RESULTS\n 1033: # ==========================================================================\n 1034: \n 1035: np.savez('s61_j_breaking_catalog.npz',\n 1036:     # Gate\n 1037:     gate_name='J-BREAKING-CATALOG-61',\n 1038:     gate_verdict=verdict,\n 1039:     gate_detail=detail,\n 1040:     eta_BBN_obs=eta_BBN_obs,\n 1041:     gate_lo=gate_lo,\n 1042:     gate_hi=gate_hi,\n 1043: "
+    },
+    {
+      "anchor_id": "prov_878",
+      "anchor_type": "data_provenance",
+      "name": "josephson_integrability",
+      "script_path": "session-61/s61_josephson_integrability.py",
+      "session": "s61",
+      "inputs": "",
+      "outputs": "session-61/s61_josephson_integrability.npz, session-61/s61_josephson_integrability.png",
+      "source_file": "computations/session-61/s61_josephson_integrability.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s61_josephson_integrability.py — Josephson Collective Mode Integrability on CG(24)\n    4: ==================================================================================\n    5: \n    6: Gate: JOSEPHSON-INTEG-61\n    7:   PASS: <r> < 0.45 (Poisson, integrable => GGE protected)\n    8:   FAIL: <r> > 0.50 (GOE, chaotic => GGE thermalizes)\n    9:   INFO: <r> in [0.45, 0.50] (intermediate)\n   10: \n   11: Physics: S38 found <r> = 0.321 for BCS Hamiltonian alone (Poisson-like, integrable)."
+    },
+    {
+      "anchor_id": "prov_879",
+      "anchor_type": "data_provenance",
+      "name": "kasparov_product_verification",
+      "script_path": "session-61/s61_kasparov_product_verification.py",
+      "session": "s61",
+      "inputs": "",
+      "outputs": "session-61/s61_kasparov_product_verification.npz",
+      "source_file": "computations/session-61/s61_kasparov_product_verification.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s61_kasparov_product_verification.py -- First Kasparov Product Verification (KASPAROV-VERIFY-61)\n    4: ================================================================================================\n    5: \n    6: Gate: KASPAROV-VERIFY-61\n    7:   PASS if all 5 Kasparov conditions hold AND factorization agreement < 1%\n    8:   INFO if partial (some conditions marginal)\n    9:   FAIL if any condition violated\n   10: \n   11: Mathematical framework (van den Dungen Paper 01, 1811.07824):"
+    },
+    {
+      "anchor_id": "prov_880",
+      "anchor_type": "data_provenance",
+      "name": "leggett_damping",
+      "script_path": "session-61/s61_leggett_damping.py",
+      "session": "s61",
+      "inputs": "",
+      "outputs": "session-61/s61_leggett_damping.npz",
+      "source_file": "computations/session-61/s61_leggett_damping.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s61_leggett_damping.py — Landau Damping Threshold for Leggett Mode (LEGGETT-DAMPING-61)\n    4: \n    5: Physics:\n    6:   The Leggett mode is a relative phase oscillation between condensate sectors.\n    7:   It can decay into quasiparticle pairs if its frequency omega_L exceeds the\n    8:   pair-breaking threshold 2*Delta. Below this threshold, the decay channel\n    9:   is kinematically forbidden — the Leggett mode is \"gap-protected.\"\n   10: \n   11:   In superfluid 3He-B, omega_L / (2*Delta) ~ 0.7, so the Leggett mode is"
+    }
+  ]
+}

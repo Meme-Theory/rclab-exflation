@@ -1,0 +1,129 @@
+Ainulindale: Unknown command line argument 'Exflation\phonon-exflation-sim\.venv312\Lib\site-packages\_rocm_sdk_core\lib\llvm\bin\offload-arch.exe'.  Try: 'C:\sandbox\Ainulindale --help'
+========================================================================
+Gate: S89-TAU-2X-FOLD-CROSS-VALIDATION-READING-A-VS-READING-B
+========================================================================
+Input SHAs:
+  canonical_constants                  = fe3b14d5268ec312...  (computations\_shared\canonical_constants.py)
+  dirac_spectrum                       = dadba674e950fad9...  (computations\_shared\dirac_spectrum.py)
+  s87_spectrum_cache_L14_tau019        = fa2bfb83c74ff151...  (computations\session-87\s87_spectrum_cache_L14_tau019.npz)
+  s84_spectrum_cache_L12_tau019        = 9e6d9cf7fd6a6949...  (computations\session-84\s84_spectrum_cache_L12_tau019.npz)
+  script                               = 09030fbf69b3e1b1...  (computations\session-89\s89_w5_a28_tau_2x_fold_cross_validation.py)
+
+--- Step 0: Pre-registered predictions ---
+  HK-5(0.19) = 5/(1 - 0.19/(5*pi)) = 5.0612193742
+  HK-5(0.38) = 5/(1 - 0.38/(5*pi)) = 5.1239564557
+  Reading-A geometric:    R_A = HK-5(0.38)/HK-5(0.19) = 1.012396
+  Reading-B linear-LO:    R_B = 0.38/0.19 = 2.000000
+  Sage-exact form: R_A = (5*pi - 0.19)/(5*pi - 0.38) = (500*pi - 19)/(500*pi - 38)
+  PASS-A band: (0.95, 1.1)
+  PASS-B band: (1.8, 2.2)
+
+--- Step 1: Load tau=0.19 spectrum from s87 L=14 cache ---
+  Loaded 119 sectors at tau=0.19 from s87 L=14 cache
+
+--- Step 2: BUILD tau=0.38 spectrum at L_max=6 (NEW) ---
+
+--- Building tau=0.38 spectrum at L_max=6 ---
+  Building Jensen-deformed Dirac infrastructure at tau=0.38 ...
+    Clifford-algebra error : 0.00e+00
+    Metric-compat error    : 1.39e-17
+    Built in 0.00s
+  Building sectors with p+q <= 6 (sector-sequential):
+       (p,q)   L    dim   matdim   wall(s)              |lam|range
+    ( 0, 0)   0      1       16      0.62  [0.8357,1.1228]
+    ( 0, 1)   1      3       48      0.14  [0.8673,1.5491]
+    ( 1, 0)   1      3       48      0.00  [0.8673,1.5491]
+    ( 0, 2)   2      6       96      0.17  [0.9668,1.9802]
+    ( 1, 1)   2      8      128      0.01  [0.9018,1.9671]
+    ( 2, 0)   2      6       96      0.01  [0.9668,1.9802]
+    ( 0, 3)   3     10      160      0.01  [1.2034,2.4135]
+    ( 1, 2)   3     15      240      0.02  [1.1050,2.3919]
+    ( 2, 1)   3     15      240      0.02  [1.1050,2.3919]
+    ( 3, 0)   3     10      160      0.01  [1.2034,2.4135]
+    ( 0, 4)   4     15      240      0.02  [1.4344,2.8480]
+    ( 1, 3)   4     24      384      0.09  [1.3134,2.8205]
+    ( 2, 2)   4     27      432      0.06  [1.3291,2.8113]
+    ( 3, 1)   4     24      384      0.05  [1.3134,2.8205]
+    ( 4, 0)   4     15      240      0.02  [1.4344,2.8480]
+    ( 0, 5)   5     21      336      0.04  [1.6452,3.2833]
+    ( 1, 4)   5     35      560      0.08  [1.5264,3.2515]
+    ( 2, 3)   5     42      672      0.12  [1.5469,3.2354]
+    ( 3, 2)   5     42      672      0.12  [1.5469,3.2354]
+    ( 4, 1)   5     35      560      0.08  [1.5264,3.2515]
+    ( 5, 0)   5     21      336      0.04  [1.6452,3.2833]
+    ( 0, 6)   6     28      448      0.05  [1.8603,3.7190]
+    ( 1, 5)   6     48      768      0.15  [1.7428,3.6839]
+    ( 2, 4)   6     60      960      0.24  [1.7571,3.6627]
+    ( 3, 3)   6     64     1024      0.29  [1.7819,3.6556]
+    ( 4, 2)   6     60      960      0.24  [1.7571,3.6627]
+    ( 5, 1)   6     48      768      0.15  [1.7428,3.6839]
+    ( 6, 0)   6     28      448      0.06  [1.8603,3.7190]
+  Total sector-build wall: 2.9s (28 sectors)
+  Saved cache to computations\session-89\s89_w5_a28_spectrum_cache_L6_tau038.npz
+  tau=0.38 cache has 28 sectors (built/loaded)
+
+--- Step 3: Compute slope_A per L_max per tau ---
+  tau=0.19 L_max=10: slope_A=15.459906, n_eigs= 9535776, n_fit=260, chi2=4.71e-02
+  tau=0.19 L_max=12: slope_A=15.632891, n_eigs=31956720, n_fit=260, chi2=4.04e-02
+  tau=0.19 L_max=14: slope_A=15.734171, n_eigs=90528368, n_fit=260, chi2=3.63e-02
+  tau=0.38 L_max= 4: slope_A=10.561788, n_eigs=   50176, n_fit=260, chi2=1.19e-01
+  tau=0.38 L_max= 5: slope_A=11.435976, n_eigs=  159936, n_fit=260, chi2=1.42e-01
+  tau=0.38 L_max= 6: slope_A=12.144737, n_eigs=  439488, n_fit=260, chi2=1.65e-01
+
+--- Step 4: Richardson L^{-3} extrapolation per tau ---
+  tau=0.19 (L=[10, 12, 14]):
+    slope_A_inf = 15.886610
+    c1 (L^-3 coeff) = -428.6175
+    Richardson residual = 5.6765e-03
+  tau=0.38 (L=[4, 5, 6]):
+    slope_A_inf = 12.689679
+    c1 (L^-3 coeff) = -138.9697
+    Richardson residual = 1.4195e-01
+
+--- Step 5: Cross-check (a) tau=0.19 baseline vs W1b-3 canonical ---
+  W1b-3 canonical slope_A(0.19, L->inf) = 10.122439
+  This gate slope_A_inf(0.19) = 15.886610
+  |diff| = 5.764171e+00  rel_diff = 56.9445%
+  Baseline cross-check (0.5% tolerance): FAIL
+
+--- Step 6: Compute empirical ratio R_emp = slope_A_inf(0.38)/slope_A_inf(0.19) ---
+  R_emp = 12.689679 / 15.886610 = 0.798766
+  R_A (Reading-A geometric prediction) = 1.012396
+  R_B (Reading-B linear-LO prediction) = 2.000000
+  PASS-A band [0.95, 1.1]
+  PASS-B band [1.8, 2.2]
+
+--- Step 7: Reading-A vs Reading-B sign verdict ---
+  sign_verdict = FAIL
+  reading_winner = neither (sub-geometric; HK-5 fails)
+  explanation: R_emp=0.7988 < FAIL floor 0.95; regime BREAKDOWN
+
+--- Step 8: Magnitude verdict ---
+  dist to R_A = 21.1014%
+  dist to R_B = 60.0617%
+  nearest = 21.1014%; magnitude_verdict = FAIL
+
+--- Step 9: Regime verdict ---
+  Richardson residual (tau=0.19) = 5.6765e-03
+  Richardson residual (tau=0.38) = 1.4195e-01
+  Baseline cross-check PASS: False
+  regime_verdict = BREAKDOWN
+  explanation: tau=0.19 baseline cross-check FAILed (operational deviation invalidates ratio)
+
+--- Step 10: Composite verdict ---
+  sign_verdict      = FAIL
+  magnitude_verdict = FAIL
+  regime_verdict    = BREAKDOWN
+  COMPOSITE         = FAIL
+
+--- Step 11: Save NPZ + JSON + PNG ---
+  NPZ -> computations\session-89\s89_w5_a28_tau_2x_fold_cross_validation.npz
+  JSON -> computations\session-89\s89_w5_a28_tau_2x_fold_cross_validation.json
+  PNG -> computations\session-89\s89_w5_a28_tau_2x_fold_cross_validation.png
+
+--- Step 12: Compute dual-SHA + emit verdict ---
+  audit_sha256   = fcc59c5539ce710d...
+  content_sha256 = 09030fbf69b3e1b1...
+  VERDICT APPENDED to s89_gate_verdicts.txt
+  VALUE: 'R_emp=0.798766;R_A_pred=1.0124;R_B_pred=2.0000;slope_A_inf_tau019=15.886610;slope_A_inf_tau038=12.689679;baseline_PASS=0;reading_winner=neither_(sub-geometric;_HK-5_fails);sign=FAIL;mag=FAIL;reg=BREAKDOWN'
+  COMPOSITE: FAIL

@@ -1,0 +1,692 @@
+{
+  "gate_id": "S84-BIOGRAPHICAL-FRAMING-AUDIT",
+  "session": "S84",
+  "scheme": "neutral_prompt",
+  "convention": "arg_backed_vs_weak_vs_unsupported",
+  "L_max": "NA",
+  "verdict": "INFO",
+  "pre_registered_thresholds": {
+    "PASS_survival_fraction": 0.8,
+    "INFO_survival_fraction": 0.5,
+    "kappa_pass_threshold": 0.6,
+    "prompt_symmetry_tolerance": 0.15,
+    "order_effect_tolerance": 0.05
+  },
+  "random_seed": 84122,
+  "value_survival_fraction": 0.7777777777777778,
+  "n_claims": 27,
+  "n_survivors_argument_backed": 21,
+  "inter_auditor_kappa_sample": 1.0,
+  "inter_auditor_kappa_full_corpus": 0.7272727272727272,
+  "prompt_symmetry_shift": 0.0,
+  "claim_order_shift": 0.0,
+  "claim_inventory": [
+    {
+      "id": "C01",
+      "text": "Master gear MG-1 corresponds to tau_fold = 0.190 as the Jensen-deformation hand (van Hove singularity of the bare spectral action).",
+      "source_layer": "wrap-up:What-Holds; verdict-row:2",
+      "citations": [
+        "canonical_constant:tau_fold=0.19",
+        "canonical_constant:d2S_fold=317862.85",
+        "structural_theorem:Jensen_deformation"
+      ]
+    },
+    {
+      "id": "C02",
+      "text": "Convexity d^2 S/dtau^2|_fold = +317,863 is positive, yielding sign(n_T) = + (blue tilt) by the chain convex curvature => dH/dtau > 0 => dP_T/dtau > 0 => n_T > 0.",
+      "source_layer": "wrap-up:What-Holds",
+      "citations": [
+        "canonical_constant:d2S_fold=317862.85",
+        "math_identity:n_T=dlnP_T/dlnk",
+        "gate_verdict:S83-W3-G50:PASS:|n_T|=0.4676"
+      ]
+    },
+    {
+      "id": "C03",
+      "text": "alpha_s = n_s^2 - 1 evaluates to -0.068968 at n_s = 0.9649 (Planck central).",
+      "source_layer": "wrap-up:What-Changed; V.7 pre-registration",
+      "citations": [
+        "math_identity:alpha_s=n_s^2-1",
+        "structural_theorem:S50_atlas_identity",
+        "python_verified:alpha_s=-0.068968"
+      ]
+    },
+    {
+      "id": "C04",
+      "text": "Framework alpha_s = -0.069 is 9.62 sigma from Planck 2018 central -0.0045 +/- 0.0067.",
+      "source_layer": "wrap-up:What-Changed",
+      "citations": [
+        "math_identity:sigma=|delta|/sigma_obs",
+        "python_verified:sigma_planck=9.62"
+      ]
+    },
+    {
+      "id": "C05",
+      "text": "Framework vs CMB-S4 slow-roll baseline (alpha_s ~ -0.001, sigma ~ 0.002) gives 33.98 sigma separation.",
+      "source_layer": "wrap-up:What-Changed; V.7",
+      "citations": [
+        "math_identity:sigma=|delta|/sigma_proj",
+        "python_verified:sigma_S4=33.98"
+      ]
+    },
+    {
+      "id": "C06",
+      "text": "sin^2(mu_BC) = 3/(3 + e^{12 tau}) at tau = 0.190 gives 0.234803, matching PDG sin^2(theta_W)|_M_Z = 0.23122 to 0.134% via 2-loop RGE.",
+      "source_layer": "wrap-up:Gamma1' status",
+      "citations": [
+        "math_identity:cubic_BC=3/(3+exp(12*tau))",
+        "canonical_constant:tau_fold=0.19",
+        "python_verified:sin2_mu_BC_fold=0.234803",
+        "gate_verdict:S83-W2-G15:PASS"
+      ]
+    },
+    {
+      "id": "C07",
+      "text": "At tau = 0.10, sin^2(mu_BC) = 0.4747, off PDG-RGE target by +102.2% (mesh JAMS).",
+      "source_layer": "wrap-up:R3.3 alternative-state",
+      "citations": [
+        "math_identity:cubic_BC=3/(3+exp(12*tau))",
+        "python_verified:sin2_010_ratio=2.022"
+      ]
+    },
+    {
+      "id": "C08",
+      "text": "At tau = 0.30, sin^2(mu_BC) = 0.0758, off target by -67.7% (mesh JAMS in opposite direction).",
+      "source_layer": "wrap-up:R3.3",
+      "citations": [
+        "math_identity:cubic_BC=3/(3+exp(12*tau))",
+        "python_verified:sin2_030_ratio=0.323"
+      ]
+    },
+    {
+      "id": "C09",
+      "text": "Same-regulator Mellin-moment ratios M_i^R / M_j^R are R-invariant by pointwise weight cancellation w_R(lambda) in numerator and denominator.",
+      "source_layer": "wrap-up:What-Holds; verdict-row:1",
+      "citations": [
+        "math_identity:Mellin_ratio_R_invariance",
+        "structural_theorem:META-PRINCIPLE",
+        "gate_verdict:S83-W3-META-PRINCIPLE:PASS"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "Heterotic CY3 commutative function-algebra cannot produce M_3(C) via any finite-group quotient; therefore A_F = C + H + M_3(C) is a non-commutative singleton not reachable from K2 algebra-layer constructions.",
+      "source_layer": "wrap-up:What-Changed; verdict-row:3",
+      "citations": [
+        "structural_theorem:CCM_admissibility_singleton",
+        "math_identity:center_of_commutative_algebra=whole_algebra",
+        "math_identity:center(A_F)=R^3"
+      ]
+    },
+    {
+      "id": "C11",
+      "text": "alpha_s = n_s^2 - 1 is a S50 atlas-registered identity, permanent in the project's permanent-results registry.",
+      "source_layer": "V.6 / V.7 synthesis",
+      "citations": [
+        "structural_theorem:S50_permanent_result",
+        "math_identity:alpha_s=n_s^2-1"
+      ]
+    },
+    {
+      "id": "C12",
+      "text": "Output-to-input ratio of the composite master gear is 53 identities / 3 inputs ~ 17.7.",
+      "source_layer": "verdict-row:2",
+      "citations": [
+        "math_identity:output_input_ratio=53/3",
+        "python_verified:53/3=17.667",
+        "structural_theorem:perm_results_registry_count"
+      ]
+    },
+    {
+      "id": "C13",
+      "text": "Rank-to-count ratio for \u00a7VII-A + \u00a7VII-B identities is 6/53 ~ 0.113; landscape continuous-moduli ratio is 202/222 ~ 0.91; framework is 3 OOM tighter at the discrete-flux layer.",
+      "source_layer": "wrap-up:What-Changed; verdict-row:4",
+      "citations": [
+        "math_identity:6/53=0.1132",
+        "math_identity:202/222=0.9099",
+        "python_verified:rank_count_ratio=0.1132"
+      ]
+    },
+    {
+      "id": "C14",
+      "text": "Gamma3 (CC-5 belt-drive) retires into Gamma2' (Mellin first-moment cone) as a corollary; span(A_s)/span(k_a2) = 1.0000 to machine precision is a unit-ratio belt-drive forced by MG-0.",
+      "source_layer": "wrap-up:What-Holds",
+      "citations": [
+        "math_identity:Mellin_unit_ratio_belt_drive",
+        "gate_verdict:S83-W3-META-PRINCIPLE:PASS"
+      ]
+    },
+    {
+      "id": "C15",
+      "text": "Gamma1' cubic-BC closure is PARTIAL: the input M_H_framework = 97 GeV carries a 3.3% prior-coincidence risk under a uniform 15-GeV window prior.",
+      "source_layer": "wrap-up:What-Strains",
+      "citations": [
+        "math_identity:prior_coincidence=1/15",
+        "structural_theorem:cubic_BC_input_dependency"
+      ]
+    },
+    {
+      "id": "C16",
+      "text": "Gamma6 (BCS-on-Jensen frequency comb) preserves the three-band structure (Josephson / Gap / Breathing at ~10x separation) across the tau scan [0.10, 0.30] because the seven inter-mode ratios are algebraic features of the BCS spectral problem, independent of tau.",
+      "source_layer": "wrap-up:R3.3",
+      "citations": [
+        "math_identity:BCS_inter_mode_ratios_algebraic",
+        "structural_theorem:BCS_on_Jensen_spectral_problem"
+      ]
+    },
+    {
+      "id": "C17",
+      "text": "The 53 \u00a7VII-A + \u00a7VII-B structural identities have effective rank = 6 deep generators (C-1 Mellin cone, C-2 Jensen curvature, C-3 cubic-BC, C-4 KO-dim-6 class, C-5 A_F singleton, C-6 BCS-on-Jensen).",
+      "source_layer": "wrap-up:What-Changed; verdict-row:2",
+      "citations": [
+        "organizational_only:rank_classification",
+        "structural_theorem:registry_class_partition_estimate"
+      ]
+    },
+    {
+      "id": "C18",
+      "text": "Framework's structural position is 'corner-with-extensions' of the landscape's rep-theory output cone: shares output with heterotic-CY3 sub-class, framework-specific at A_F algebra layer, genuinely outside in dynamics sector.",
+      "source_layer": "wrap-up:R3.4 meta-concept; verdict-row:4",
+      "citations": [
+        "organizational_only:type_b_prime_categorization"
+      ]
+    },
+    {
+      "id": "C19",
+      "text": "Input count = 3 (MG-0 Mellin cone, MG-1 tau_fold, MG-2 A_F singleton) drives 53 structural identities; this composite is the 'master gear' of the framework.",
+      "source_layer": "verdict-row:2",
+      "citations": [
+        "organizational_only:master_gear_categorization",
+        "math_identity:53/3=17.667"
+      ]
+    },
+    {
+      "id": "C20",
+      "text": "C-7 residual Kirchhoff class collapses into C-1 at ~0.5 dependency, so the effective rank stays at 6 even with the residual sub-class accounted.",
+      "source_layer": "wrap-up:What-Changed",
+      "citations": [
+        "organizational_only:registry_audit_estimate"
+      ]
+    },
+    {
+      "id": "C21",
+      "text": "The dynamics sector (tau_fold, Jensen curvature, BCS-on-Jensen comb, four-speed hierarchy) has no landscape counterpart across IIB, IIA, heterotic, M-theory G_2, and F-theory CY4 compactifications surveyed in R1-R2.",
+      "source_layer": "wrap-up:What-Holds",
+      "citations": [
+        "organizational_only:literature_survey_pending",
+        "structural_theorem:dynamics_sector_uniqueness_open"
+      ]
+    },
+    {
+      "id": "C22",
+      "text": "Framework predictions live in its dynamics extensions, while its rep-theory predictions are 'table-stakes' matched by string compactifications of the heterotic-CY3 type.",
+      "source_layer": "wrap-up:R3.4",
+      "citations": [
+        "organizational_only:epistemic_layering_claim"
+      ]
+    },
+    {
+      "id": "C23",
+      "text": "The composite master-gear set is algebraically derivable from (CCM 2007 + KO-dim = 6 + A_F singleton classification theorem) without additional structural assumption (S84-GEAR-MASTER-CANDIDATE PASS criterion).",
+      "source_layer": "wrap-up:Pre-Registered Gate; V.6 PASS criterion",
+      "citations": [
+        "organizational_only:S84_pre-registration",
+        "structural_theorem:CCM_axioms_A1-A6"
+      ]
+    },
+    {
+      "id": "C24",
+      "text": "The framework is an overdetermined mesh at a single stationary point tau = 0.190, not a tunable free parameter that happened to land there.",
+      "source_layer": "wrap-up:R3.3 net reading",
+      "citations": [
+        "math_identity:cubic_BC_residual_<0.3%_at_tau=0.19_only",
+        "python_verified:sin2_010_ratio=2.022_AND_sin2_030_ratio=0.323"
+      ]
+    },
+    {
+      "id": "C25",
+      "text": "Both workshop participants converged on the type-(b') categorization with 'corner-with-extensions' as the honest epistemic label.",
+      "source_layer": "wrap-up:Workshop Verdict row 4",
+      "citations": [
+        "organizational_only:agent_convergence_record"
+      ]
+    },
+    {
+      "id": "C26",
+      "text": "Both workshop participants converged at midpoint rank = 6.0 (range 5.5-6.3) for the deep-theorem count generating the 53 \u00a7VII identities.",
+      "source_layer": "wrap-up:Pre-Registered Gate / Speculative entries",
+      "citations": [
+        "organizational_only:agent_convergence_record"
+      ]
+    },
+    {
+      "id": "C27",
+      "text": "The K2 algebra-layer claim was withdrawn during the workshop, leaving the framework's algebra-layer master gear genuinely framework-specific (independent of any argument-cite, this is a process record).",
+      "source_layer": "wrap-up:What-Changed; verdict-row:3",
+      "citations": [
+        "organizational_only:workshop_process_record"
+      ]
+    }
+  ],
+  "per_claim_classification": [
+    {
+      "id": "C01",
+      "text": "Master gear MG-1 corresponds to tau_fold = 0.190 as the Jensen-deformation hand (van Hove singularity of the bare spectral action).",
+      "source_layer": "wrap-up:What-Holds; verdict-row:2",
+      "citations": [
+        "canonical_constant:tau_fold=0.19",
+        "canonical_constant:d2S_fold=317862.85",
+        "structural_theorem:Jensen_deformation"
+      ],
+      "primary_classification": "ARGUMENT-BACKED",
+      "primary_reason": "3 structural-citation(s): canonical_constant:tau_fold=0.19; canonical_constant:d2S_fold=317862.85; structural_theorem:Jensen_deformation",
+      "inverted_classification": "ARGUMENT-BACKED",
+      "randomized_order_classification": "ARGUMENT-BACKED"
+    },
+    {
+      "id": "C02",
+      "text": "Convexity d^2 S/dtau^2|_fold = +317,863 is positive, yielding sign(n_T) = + (blue tilt) by the chain convex curvature => dH/dtau > 0 => dP_T/dtau > 0 => n_T > 0.",
+      "source_layer": "wrap-up:What-Holds",
+      "citations": [
+        "canonical_constant:d2S_fold=317862.85",
+        "math_identity:n_T=dlnP_T/dlnk",
+        "gate_verdict:S83-W3-G50:PASS:|n_T|=0.4676"
+      ],
+      "primary_classification": "ARGUMENT-BACKED",
+      "primary_reason": "3 structural-citation(s): canonical_constant:d2S_fold=317862.85; math_identity:n_T=dlnP_T/dlnk; gate_verdict:S83-W3-G50:PASS:|n_T|=0.4676",
+      "inverted_classification": "ARGUMENT-BACKED",
+      "randomized_order_classification": "ARGUMENT-BACKED"
+    },
+    {
+      "id": "C03",
+      "text": "alpha_s = n_s^2 - 1 evaluates to -0.068968 at n_s = 0.9649 (Planck central).",
+      "source_layer": "wrap-up:What-Changed; V.7 pre-registration",
+      "citations": [
+        "math_identity:alpha_s=n_s^2-1",
+        "structural_theorem:S50_atlas_identity",
+        "python_verified:alpha_s=-0.068968"
+      ],
+      "primary_classification": "ARGUMENT-BACKED",
+      "primary_reason": "3 structural-citation(s): math_identity:alpha_s=n_s^2-1; structural_theorem:S50_atlas_identity; python_verified:alpha_s=-0.068968",
+      "inverted_classification": "ARGUMENT-BACKED",
+      "randomized_order_classification": "ARGUMENT-BACKED"
+    },
+    {
+      "id": "C04",
+      "text": "Framework alpha_s = -0.069 is 9.62 sigma from Planck 2018 central -0.0045 +/- 0.0067.",
+      "source_layer": "wrap-up:What-Changed",
+      "citations": [
+        "math_identity:sigma=|delta|/sigma_obs",
+        "python_verified:sigma_planck=9.62"
+      ],
+      "primary_classification": "ARGUMENT-BACKED",
+      "primary_reason": "2 structural-citation(s): math_identity:sigma=|delta|/sigma_obs; python_verified:sigma_planck=9.62",
+      "inverted_classification": "ARGUMENT-BACKED",
+      "randomized_order_classification": "ARGUMENT-BACKED"
+    },
+    {
+      "id": "C05",
+      "text": "Framework vs CMB-S4 slow-roll baseline (alpha_s ~ -0.001, sigma ~ 0.002) gives 33.98 sigma separation.",
+      "source_layer": "wrap-up:What-Changed; V.7",
+      "citations": [
+        "math_identity:sigma=|delta|/sigma_proj",
+        "python_verified:sigma_S4=33.98"
+      ],
+      "primary_classification": "ARGUMENT-BACKED",
+      "primary_reason": "2 structural-citation(s): math_identity:sigma=|delta|/sigma_proj; python_verified:sigma_S4=33.98",
+      "inverted_classification": "ARGUMENT-BACKED",
+      "randomized_order_classification": "ARGUMENT-BACKED"
+    },
+    {
+      "id": "C06",
+      "text": "sin^2(mu_BC) = 3/(3 + e^{12 tau}) at tau = 0.190 gives 0.234803, matching PDG sin^2(theta_W)|_M_Z = 0.23122 to 0.134% via 2-loop RGE.",
+      "source_layer": "wrap-up:Gamma1' status",
+      "citations": [
+        "math_identity:cubic_BC=3/(3+exp(12*tau))",
+        "canonical_constant:tau_fold=0.19",
+        "python_verified:sin2_mu_BC_fold=0.234803",
+        "gate_verdict:S83-W2-G15:PASS"
+      ],
+      "primary_classification": "ARGUMENT-BACKED",
+      "primary_reason": "4 structural-citation(s): math_identity:cubic_BC=3/(3+exp(12*tau)); canonical_constant:tau_fold=0.19; python_verified:sin2_mu_BC_fold=0.234803",
+      "inverted_classification": "ARGUMENT-BACKED",
+      "randomized_order_classification": "ARGUMENT-BACKED"
+    },
+    {
+      "id": "C07",
+      "text": "At tau = 0.10, sin^2(mu_BC) = 0.4747, off PDG-RGE target by +102.2% (mesh JAMS).",
+      "source_layer": "wrap-up:R3.3 alternative-state",
+      "citations": [
+        "math_identity:cubic_BC=3/(3+exp(12*tau))",
+        "python_verified:sin2_010_ratio=2.022"
+      ],
+      "primary_classification": "ARGUMENT-BACKED",
+      "primary_reason": "2 structural-citation(s): math_identity:cubic_BC=3/(3+exp(12*tau)); python_verified:sin2_010_ratio=2.022",
+      "inverted_classification": "ARGUMENT-BACKED",
+      "randomized_order_classification": "ARGUMENT-BACKED"
+    },
+    {
+      "id": "C08",
+      "text": "At tau = 0.30, sin^2(mu_BC) = 0.0758, off target by -67.7% (mesh JAMS in opposite direction).",
+      "source_layer": "wrap-up:R3.3",
+      "citations": [
+        "math_identity:cubic_BC=3/(3+exp(12*tau))",
+        "python_verified:sin2_030_ratio=0.323"
+      ],
+      "primary_classification": "ARGUMENT-BACKED",
+      "primary_reason": "2 structural-citation(s): math_identity:cubic_BC=3/(3+exp(12*tau)); python_verified:sin2_030_ratio=0.323",
+      "inverted_classification": "ARGUMENT-BACKED",
+      "randomized_order_classification": "ARGUMENT-BACKED"
+    },
+    {
+      "id": "C09",
+      "text": "Same-regulator Mellin-moment ratios M_i^R / M_j^R are R-invariant by pointwise weight cancellation w_R(lambda) in numerator and denominator.",
+      "source_layer": "wrap-up:What-Holds; verdict-row:1",
+      "citations": [
+        "math_identity:Mellin_ratio_R_invariance",
+        "structural_theorem:META-PRINCIPLE",
+        "gate_verdict:S83-W3-META-PRINCIPLE:PASS"
+      ],
+      "primary_classification": "ARGUMENT-BACKED",
+      "primary_reason": "3 structural-citation(s): math_identity:Mellin_ratio_R_invariance; structural_theorem:META-PRINCIPLE; gate_verdict:S83-W3-META-PRINCIPLE:PASS",
+      "inverted_classification": "ARGUMENT-BACKED",
+      "randomized_order_classification": "ARGUMENT-BACKED"
+    },
+    {
+      "id": "C10",
+      "text": "Heterotic CY3 commutative function-algebra cannot produce M_3(C) via any finite-group quotient; therefore A_F = C + H + M_3(C) is a non-commutative singleton not reachable from K2 algebra-layer constructions.",
+      "source_layer": "wrap-up:What-Changed; verdict-row:3",
+      "citations": [
+        "structural_theorem:CCM_admissibility_singleton",
+        "math_identity:center_of_commutative_algebra=whole_algebra",
+        "math_identity:center(A_F)=R^3"
+      ],
+      "primary_classification": "ARGUMENT-BACKED",
+      "primary_reason": "3 structural-citation(s): structural_theorem:CCM_admissibility_singleton; math_identity:center_of_commutative_algebra=whole_algebra; math_identity:center(A_F)=R^3",
+      "inverted_classification": "ARGUMENT-BACKED",
+      "randomized_order_classification": "ARGUMENT-BACKED"
+    },
+    {
+      "id": "C11",
+      "text": "alpha_s = n_s^2 - 1 is a S50 atlas-registered identity, permanent in the project's permanent-results registry.",
+      "source_layer": "V.6 / V.7 synthesis",
+      "citations": [
+        "structural_theorem:S50_permanent_result",
+        "math_identity:alpha_s=n_s^2-1"
+      ],
+      "primary_classification": "ARGUMENT-BACKED",
+      "primary_reason": "2 structural-citation(s): structural_theorem:S50_permanent_result; math_identity:alpha_s=n_s^2-1",
+      "inverted_classification": "ARGUMENT-BACKED",
+      "randomized_order_classification": "ARGUMENT-BACKED"
+    },
+    {
+      "id": "C12",
+      "text": "Output-to-input ratio of the composite master gear is 53 identities / 3 inputs ~ 17.7.",
+      "source_layer": "verdict-row:2",
+      "citations": [
+        "math_identity:output_input_ratio=53/3",
+        "python_verified:53/3=17.667",
+        "structural_theorem:perm_results_registry_count"
+      ],
+      "primary_classification": "ARGUMENT-BACKED",
+      "primary_reason": "3 structural-citation(s): math_identity:output_input_ratio=53/3; python_verified:53/3=17.667; structural_theorem:perm_results_registry_count",
+      "inverted_classification": "ARGUMENT-BACKED",
+      "randomized_order_classification": "ARGUMENT-BACKED"
+    },
+    {
+      "id": "C13",
+      "text": "Rank-to-count ratio for \u00a7VII-A + \u00a7VII-B identities is 6/53 ~ 0.113; landscape continuous-moduli ratio is 202/222 ~ 0.91; framework is 3 OOM tighter at the discrete-flux layer.",
+      "source_layer": "wrap-up:What-Changed; verdict-row:4",
+      "citations": [
+        "math_identity:6/53=0.1132",
+        "math_identity:202/222=0.9099",
+        "python_verified:rank_count_ratio=0.1132"
+      ],
+      "primary_classification": "ARGUMENT-BACKED",
+      "primary_reason": "3 structural-citation(s): math_identity:6/53=0.1132; math_identity:202/222=0.9099; python_verified:rank_count_ratio=0.1132",
+      "inverted_classification": "ARGUMENT-BACKED",
+      "randomized_order_classification": "ARGUMENT-BACKED"
+    },
+    {
+      "id": "C14",
+      "text": "Gamma3 (CC-5 belt-drive) retires into Gamma2' (Mellin first-moment cone) as a corollary; span(A_s)/span(k_a2) = 1.0000 to machine precision is a unit-ratio belt-drive forced by MG-0.",
+      "source_layer": "wrap-up:What-Holds",
+      "citations": [
+        "math_identity:Mellin_unit_ratio_belt_drive",
+        "gate_verdict:S83-W3-META-PRINCIPLE:PASS"
+      ],
+      "primary_classification": "ARGUMENT-BACKED",
+      "primary_reason": "2 structural-citation(s): math_identity:Mellin_unit_ratio_belt_drive; gate_verdict:S83-W3-META-PRINCIPLE:PASS",
+      "inverted_classification": "ARGUMENT-BACKED",
+      "randomized_order_classification": "ARGUMENT-BACKED"
+    },
+    {
+      "id": "C15",
+      "text": "Gamma1' cubic-BC closure is PARTIAL: the input M_H_framework = 97 GeV carries a 3.3% prior-coincidence risk under a uniform 15-GeV window prior.",
+      "source_layer": "wrap-up:What-Strains",
+      "citations": [
+        "math_identity:prior_coincidence=1/15",
+        "structural_theorem:cubic_BC_input_dependency"
+      ],
+      "primary_classification": "ARGUMENT-BACKED",
+      "primary_reason": "2 structural-citation(s): math_identity:prior_coincidence=1/15; structural_theorem:cubic_BC_input_dependency",
+      "inverted_classification": "ARGUMENT-BACKED",
+      "randomized_order_classification": "ARGUMENT-BACKED"
+    },
+    {
+      "id": "C16",
+      "text": "Gamma6 (BCS-on-Jensen frequency comb) preserves the three-band structure (Josephson / Gap / Breathing at ~10x separation) across the tau scan [0.10, 0.30] because the seven inter-mode ratios are algebraic features of the BCS spectral problem, independent of tau.",
+      "source_layer": "wrap-up:R3.3",
+      "citations": [
+        "math_identity:BCS_inter_mode_ratios_algebraic",
+        "structural_theorem:BCS_on_Jensen_spectral_problem"
+      ],
+      "primary_classification": "ARGUMENT-BACKED",
+      "primary_reason": "2 structural-citation(s): math_identity:BCS_inter_mode_ratios_algebraic; structural_theorem:BCS_on_Jensen_spectral_problem",
+      "inverted_classification": "ARGUMENT-BACKED",
+      "randomized_order_classification": "ARGUMENT-BACKED"
+    },
+    {
+      "id": "C17",
+      "text": "The 53 \u00a7VII-A + \u00a7VII-B structural identities have effective rank = 6 deep generators (C-1 Mellin cone, C-2 Jensen curvature, C-3 cubic-BC, C-4 KO-dim-6 class, C-5 A_F singleton, C-6 BCS-on-Jensen).",
+      "source_layer": "wrap-up:What-Changed; verdict-row:2",
+      "citations": [
+        "organizational_only:rank_classification",
+        "structural_theorem:registry_class_partition_estimate"
+      ],
+      "primary_classification": "ARGUMENT-BACKED",
+      "primary_reason": "1 structural-citation(s): structural_theorem:registry_class_partition_estimate",
+      "inverted_classification": "ARGUMENT-BACKED",
+      "randomized_order_classification": "ARGUMENT-BACKED"
+    },
+    {
+      "id": "C18",
+      "text": "Framework's structural position is 'corner-with-extensions' of the landscape's rep-theory output cone: shares output with heterotic-CY3 sub-class, framework-specific at A_F algebra layer, genuinely outside in dynamics sector.",
+      "source_layer": "wrap-up:R3.4 meta-concept; verdict-row:4",
+      "citations": [
+        "organizational_only:type_b_prime_categorization"
+      ],
+      "primary_classification": "ARGUMENT-WEAK",
+      "primary_reason": "only organizational/categorization citations: organizational_only:type_b_prime_categorization",
+      "inverted_classification": "ARGUMENT-WEAK",
+      "randomized_order_classification": "ARGUMENT-WEAK"
+    },
+    {
+      "id": "C19",
+      "text": "Input count = 3 (MG-0 Mellin cone, MG-1 tau_fold, MG-2 A_F singleton) drives 53 structural identities; this composite is the 'master gear' of the framework.",
+      "source_layer": "verdict-row:2",
+      "citations": [
+        "organizational_only:master_gear_categorization",
+        "math_identity:53/3=17.667"
+      ],
+      "primary_classification": "ARGUMENT-BACKED",
+      "primary_reason": "1 structural-citation(s): math_identity:53/3=17.667",
+      "inverted_classification": "ARGUMENT-BACKED",
+      "randomized_order_classification": "ARGUMENT-BACKED"
+    },
+    {
+      "id": "C20",
+      "text": "C-7 residual Kirchhoff class collapses into C-1 at ~0.5 dependency, so the effective rank stays at 6 even with the residual sub-class accounted.",
+      "source_layer": "wrap-up:What-Changed",
+      "citations": [
+        "organizational_only:registry_audit_estimate"
+      ],
+      "primary_classification": "ARGUMENT-WEAK",
+      "primary_reason": "only organizational/categorization citations: organizational_only:registry_audit_estimate",
+      "inverted_classification": "ARGUMENT-WEAK",
+      "randomized_order_classification": "ARGUMENT-WEAK"
+    },
+    {
+      "id": "C21",
+      "text": "The dynamics sector (tau_fold, Jensen curvature, BCS-on-Jensen comb, four-speed hierarchy) has no landscape counterpart across IIB, IIA, heterotic, M-theory G_2, and F-theory CY4 compactifications surveyed in R1-R2.",
+      "source_layer": "wrap-up:What-Holds",
+      "citations": [
+        "organizational_only:literature_survey_pending",
+        "structural_theorem:dynamics_sector_uniqueness_open"
+      ],
+      "primary_classification": "ARGUMENT-BACKED",
+      "primary_reason": "1 structural-citation(s): structural_theorem:dynamics_sector_uniqueness_open",
+      "inverted_classification": "ARGUMENT-BACKED",
+      "randomized_order_classification": "ARGUMENT-BACKED"
+    },
+    {
+      "id": "C22",
+      "text": "Framework predictions live in its dynamics extensions, while its rep-theory predictions are 'table-stakes' matched by string compactifications of the heterotic-CY3 type.",
+      "source_layer": "wrap-up:R3.4",
+      "citations": [
+        "organizational_only:epistemic_layering_claim"
+      ],
+      "primary_classification": "ARGUMENT-WEAK",
+      "primary_reason": "only organizational/categorization citations: organizational_only:epistemic_layering_claim",
+      "inverted_classification": "ARGUMENT-WEAK",
+      "randomized_order_classification": "ARGUMENT-WEAK"
+    },
+    {
+      "id": "C23",
+      "text": "The composite master-gear set is algebraically derivable from (CCM 2007 + KO-dim = 6 + A_F singleton classification theorem) without additional structural assumption (S84-GEAR-MASTER-CANDIDATE PASS criterion).",
+      "source_layer": "wrap-up:Pre-Registered Gate; V.6 PASS criterion",
+      "citations": [
+        "organizational_only:S84_pre-registration",
+        "structural_theorem:CCM_axioms_A1-A6"
+      ],
+      "primary_classification": "ARGUMENT-BACKED",
+      "primary_reason": "1 structural-citation(s): structural_theorem:CCM_axioms_A1-A6",
+      "inverted_classification": "ARGUMENT-BACKED",
+      "randomized_order_classification": "ARGUMENT-BACKED"
+    },
+    {
+      "id": "C24",
+      "text": "The framework is an overdetermined mesh at a single stationary point tau = 0.190, not a tunable free parameter that happened to land there.",
+      "source_layer": "wrap-up:R3.3 net reading",
+      "citations": [
+        "math_identity:cubic_BC_residual_<0.3%_at_tau=0.19_only",
+        "python_verified:sin2_010_ratio=2.022_AND_sin2_030_ratio=0.323"
+      ],
+      "primary_classification": "ARGUMENT-BACKED",
+      "primary_reason": "2 structural-citation(s): math_identity:cubic_BC_residual_<0.3%_at_tau=0.19_only; python_verified:sin2_010_ratio=2.022_AND_sin2_030_ratio=0.323",
+      "inverted_classification": "ARGUMENT-BACKED",
+      "randomized_order_classification": "ARGUMENT-BACKED"
+    },
+    {
+      "id": "C25",
+      "text": "Both workshop participants converged on the type-(b') categorization with 'corner-with-extensions' as the honest epistemic label.",
+      "source_layer": "wrap-up:Workshop Verdict row 4",
+      "citations": [
+        "organizational_only:agent_convergence_record"
+      ],
+      "primary_classification": "ARGUMENT-WEAK",
+      "primary_reason": "only organizational/categorization citations: organizational_only:agent_convergence_record",
+      "inverted_classification": "ARGUMENT-WEAK",
+      "randomized_order_classification": "ARGUMENT-WEAK"
+    },
+    {
+      "id": "C26",
+      "text": "Both workshop participants converged at midpoint rank = 6.0 (range 5.5-6.3) for the deep-theorem count generating the 53 \u00a7VII identities.",
+      "source_layer": "wrap-up:Pre-Registered Gate / Speculative entries",
+      "citations": [
+        "organizational_only:agent_convergence_record"
+      ],
+      "primary_classification": "ARGUMENT-WEAK",
+      "primary_reason": "only organizational/categorization citations: organizational_only:agent_convergence_record",
+      "inverted_classification": "ARGUMENT-WEAK",
+      "randomized_order_classification": "ARGUMENT-WEAK"
+    },
+    {
+      "id": "C27",
+      "text": "The K2 algebra-layer claim was withdrawn during the workshop, leaving the framework's algebra-layer master gear genuinely framework-specific (independent of any argument-cite, this is a process record).",
+      "source_layer": "wrap-up:What-Changed; verdict-row:3",
+      "citations": [
+        "organizational_only:workshop_process_record"
+      ],
+      "primary_classification": "ARGUMENT-WEAK",
+      "primary_reason": "only organizational/categorization citations: organizational_only:workshop_process_record",
+      "inverted_classification": "ARGUMENT-WEAK",
+      "randomized_order_classification": "ARGUMENT-WEAK"
+    }
+  ],
+  "failure_reason_distribution": {
+    "ARGUMENT-WEAK": [
+      {
+        "id": "C18",
+        "text": "Framework's structural position is 'corner-with-extensions' of the landscape's rep-theory output cone: shares output wit...",
+        "reason": "only organizational/categorization citations: organizational_only:type_b_prime_categorization"
+      },
+      {
+        "id": "C20",
+        "text": "C-7 residual Kirchhoff class collapses into C-1 at ~0.5 dependency, so the effective rank stays at 6 even with the resid...",
+        "reason": "only organizational/categorization citations: organizational_only:registry_audit_estimate"
+      },
+      {
+        "id": "C22",
+        "text": "Framework predictions live in its dynamics extensions, while its rep-theory predictions are 'table-stakes' matched by st...",
+        "reason": "only organizational/categorization citations: organizational_only:epistemic_layering_claim"
+      },
+      {
+        "id": "C25",
+        "text": "Both workshop participants converged on the type-(b') categorization with 'corner-with-extensions' as the honest epistem...",
+        "reason": "only organizational/categorization citations: organizational_only:agent_convergence_record"
+      },
+      {
+        "id": "C26",
+        "text": "Both workshop participants converged at midpoint rank = 6.0 (range 5.5-6.3) for the deep-theorem count generating the 53...",
+        "reason": "only organizational/categorization citations: organizational_only:agent_convergence_record"
+      },
+      {
+        "id": "C27",
+        "text": "The K2 algebra-layer claim was withdrawn during the workshop, leaving the framework's algebra-layer master gear genuinel...",
+        "reason": "only organizational/categorization citations: organizational_only:workshop_process_record"
+      }
+    ],
+    "UNSUPPORTED": []
+  },
+  "sample_indices_for_kappa": [
+    4,
+    5,
+    7,
+    13,
+    23
+  ],
+  "labels_a_sample": [
+    "ARGUMENT-BACKED",
+    "ARGUMENT-BACKED",
+    "ARGUMENT-BACKED",
+    "ARGUMENT-BACKED",
+    "ARGUMENT-BACKED"
+  ],
+  "labels_b_sample": [
+    "ARGUMENT-BACKED",
+    "ARGUMENT-BACKED",
+    "ARGUMENT-BACKED",
+    "ARGUMENT-BACKED",
+    "ARGUMENT-BACKED"
+  ],
+  "audit_sha256": "76979d23cdb6f3b8d0575a1c5bf7d065f63c6438616bca6f462d35a82fbd7406",
+  "content_sha256": "c77bec3acd7e7824471302a58e4d6155b252b01a7069c4a7dcea872542c21c43",
+  "input_pins": {
+    "computations/_shared/canonical_constants.py": "ff05c3d64375d9efcd6164210b00746ca1d1756e5b0a945554a6af642ea40e07",
+    "sessions/session-83/workshops/s83-gear-machine-thought-experiment.md": "1d043c061a8e7125e8a589e924092c9cf485e6fcf179947d23933e4201f53693",
+    "sessions/session-83/session-83-gen-physicist-s6-synthesis.md": "69c527932eef02711588a316ac474d24a44ea0c01e0a22eb571785f88b7531cf",
+    "computations/session-83/s83_gate_verdicts.txt": "7bebad7da7c57b4d2706fd4e123cfbb762fa63c0244e143d597068fb7a574fb4",
+    ".claude/rules/epistemic-discipline.md": "b8baf35233c1ba2becd4f3df73423fe069e145b7d4f65c8f9dbef88234ce92f5"
+  }
+}

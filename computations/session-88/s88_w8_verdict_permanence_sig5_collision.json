@@ -1,0 +1,72 @@
+{
+  "gate_id": "S88-VERDICT-PERMANENCE-VS-SIG5-RULE-COLLISION-RESOLUTION",
+  "verdict": "PASS",
+  "value": "a=True;b=True;c=True;d=True;e=True;composite=PASS;plan_block_sha=0b9d18ef8546be94...;calibration_corpus_N=3;option=A_supersedes_tag_protocol;user_adjudication_date=2026-05-05",
+  "scheme": "METHODOLOGY-rule-file-edit-policy-decision",
+  "convention": "user-adjudicated-Option-A-supersedes-tag-protocol",
+  "L_max": "N/A",
+  "audit_sha256": "88dc93bd0ae34dd4bf7474534119ce51f18965f900cf9ff1ada0bcc16e1433cc",
+  "content_sha256": "a88530b462fb18698ab5c7e668ecfa8e8b5683e14d8531f0e3c272dbe1320ad3",
+  "plan_block_sha256": "0b9d18ef8546be942f23335e473b18c1695368524efdfc13f28729ce3fb9861e",
+  "thresholds": {
+    "a_user_adjudication_received": {
+      "pass": true,
+      "diag": "user adjudication received: Option A (transmitted 2026-05-05 via spawn prompt; encoded as Option A clause in gate-verdicts.md + v3-closure-recovery.md)"
+    },
+    "b_consistent_policy_text": {
+      "pass": true,
+      "diag": "gate-verdicts.md hits={'Option A': True, 'supersedes': True, 'user adjudication': True, 'S88 W8-100': True, 'absolute verdict permanence': True}; v3-closure-recovery.md hits={'Option A': True, 'supersedes': True, 'user adjudication': True, 'S88 W8-100': True, 'absolute verdict permanence': True}"
+    },
+    "c_cross_link_present": {
+      "pass": true,
+      "diag": "gate-verdicts.md references v3-closure-recovery.md+sig_5: True; v3-closure-recovery.md references gate-verdicts.md+Option A: True"
+    },
+    "d_allowlist_row_appended": {
+      "pass": true,
+      "diag": "allowlist gate-ID present: True; allowlist W8-100 row present: True"
+    },
+    "e_substantive_line_count": {
+      "pass": true,
+      "diag": "gate-verdicts.md Option A block substantive lines=24 (>=15 required); v3-closure-recovery.md sig_5 Option A sub-bullet substantive lines=32 (>=15 required)"
+    }
+  },
+  "calibration_corpus_N": 3,
+  "calibration_corpus_instances": [
+    {
+      "id": 1,
+      "gate": "S88-MECHANICAL-CLOSURE-DISCIPLINE-LAYER-SEPARABILITY-CARVE-OUT-CLAUSE",
+      "wave": "W8-89-main",
+      "pattern": "rubric-corrective",
+      "original_audit_shas": [
+        "82b51f06cebe90e15c10452f534aefbe6aea8b072f1f1e09512f450f459df69e",
+        "22af2693d24d2a7cc1faa9d88a8ec48be649ef65a7cf429ffe61795495437d3c"
+      ],
+      "corrective_audit_sha": "1ebc28f3ab71fba346846c675bc63d1f900e970a8f5cae66656de355fb0f8dc8"
+    },
+    {
+      "id": 2,
+      "gate": "S88-W8-89-STAGE-2-AXIS-A-CONNES-VERIFY",
+      "wave": "W8-89-Stage-2-axis-A-connes",
+      "pattern": "rubric-corrective",
+      "original_audit_shas": [
+        "14d46cedaaf5ad28479cf4d2dadaac9aefefa76a252376e01d835ae5880c8034"
+      ],
+      "corrective_audit_sha": "cf118c5093b9d5d56be5debf868280998a641d87558da1bdb7bfe22e81d5f0a2"
+    },
+    {
+      "id": 3,
+      "gate": "S88-CF-28-ORPHAN-FNL-PATHWAY-REGISTRY-UPDATE",
+      "wave": "W8-97",
+      "pattern": "script-bug-corrective",
+      "original_audit_shas": [
+        "abbc117a55320418fb92c7a54c2e075a34cb6d3a7900acfb77994d80d69900e6"
+      ],
+      "corrective_audit_sha": "21400f9f8e040a12a423de8c60cc84cac716643409f825c378a17a6e02892184"
+    }
+  ],
+  "user_adjudication": {
+    "date": "2026-05-05",
+    "selected_option": "A",
+    "policy": "absolute verdict permanence; corrective lines appended with supersedes=<old_audit_sha> tag; downstream consumers cite latest non-superseded line"
+  }
+}

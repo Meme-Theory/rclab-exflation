@@ -408,7 +408,7 @@ Commutative S <= 2 proven (S5). Non-commutative from SU(3) holonomy OPEN. Fock s
 ### Domain 17: Observational Tests and JWST
 **STATUS: DESI w(z) PRIMARY GATE; LRD demographics OPEN; ALPHA-ENV-43 QUEUED**
 
-DESI BAO is the Tier 1 observational test. 66 Little Red Dots papers cover JWST high-z AGN demographics with potential tension against LCDM. Cosmic-Web papers provide void statistics and bulk flow diagnostics. ALPHA-ENV-43 (delta_alpha/alpha ~ 10^{-6} void vs filament) is the sole surviving LSS discriminant.
+DESI BAO is the Level 1 observational test. 66 Little Red Dots papers cover JWST high-z AGN demographics with potential tension against LCDM. Cosmic-Web papers provide void statistics and bulk flow diagnostics. ALPHA-ENV-43 (delta_alpha/alpha ~ 10^{-6} void vs filament) is the sole surviving LSS discriminant.
 
 | Paper | Researcher | Relevance | Status | One-Line Description |
 |:------|:-----------|:----------|:-------|:---------------------|
@@ -584,7 +584,7 @@ Sagan library expanded from 14 to 33 papers covering Bayesian methods (Trotta), 
 3. Feynman-11 (Schwinger proper-time = spectral action engine)
 4. Berry-01 (Geometric phase from eigenvalue data)
 5. Parker-01 (Bogoliubov transformations for transit)
-6. Scripts: `tier0-computation/` (tier1_dirac_spectrum.py, canonical_constants.py)
+6. Scripts: `computations/_shared/` (dirac_spectrum.py, canonical_constants.py)
 
 ---
 
@@ -648,7 +648,7 @@ Sagan library expanded from 14 to 33 papers covering Bayesian methods (Trotta), 
 | PMNS / neutrino masses | Neutrino-05/07/08/12, Baptista-14 | Neutrino, Baptista | OPEN (R~5.9 ceiling) |
 | phi_paasch significance | Paasch-02/11, Berry-03/10 | Paasch, Berry | SUGGESTIVE (z=3.65) |
 | Koide Q=2/3 | Paasch-07, Neutrino-09 | Paasch, Neutrino | OPEN |
-| DESI w(z) / dark energy | Einstein-18/19, CW papers | Einstein, Cosmic-Web | GATE (Tier 1) |
+| DESI w(z) / dark energy | Einstein-18/19, CW papers | Einstein, Cosmic-Web | GATE (Level 1) |
 | JWST high-z BH demographics | LRD corpus (66 papers) | Little-Red-Dots | ACTIVE |
 | CC hiding via foam | QF-08/11/14, Volovik-05 | Quantum-Foam, Volovik | COMPARISON |
 | Island formula in KK | Hawking-14/21 | Hawking | NOVEL PREDICTION |
@@ -791,7 +791,7 @@ Expanded from 10 to 29 papers. Classical (01-06: Schwarzschild, Kerr, Penrose di
 ### Neutrino-Detection
 **Papers**: 12 | **Domain**: Neutrino masses, oscillations, PMNS, mass bounds | **Relevance**: HIGH | **Detailed Index**: [index.md](Neutrino-Detection/index.md)
 
-Neutrino masses = lightest D_K eigenvalues → direct observational constraints on Jensen deformation. KATRIN 2024: m_nu < 0.45 eV. PMNS = Tier 2 target (singlet ceiling R~5.9 CLOSED).
+Neutrino masses = lightest D_K eigenvalues → direct observational constraints on Jensen deformation. KATRIN 2024: m_nu < 0.45 eV. PMNS = Level 2 target (singlet ceiling R~5.9 CLOSED).
 
 **Top Papers**: 05 (PMNS theory), 07 (Super-K), 08 (SNO), 09 (KamLAND), 12 (KATRIN)
 

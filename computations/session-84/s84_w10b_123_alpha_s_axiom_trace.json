@@ -1,0 +1,170 @@
+{
+  "gate_id": "S84-ALPHA-S-DERIVATION-CHAIN-AUDIT",
+  "trigger": "VERIFY-THEOREM",
+  "classification": "GEOMETRIC",
+  "axioms_minimal": {
+    "CCM_2007_A1_A6": "Chamseddine-Connes-Marcolli 2007 axioms A1..A6 for the spectral Standard Model: A1 (real spectral triple), A2 (KO-dim=6), A3 (first-order condition), A4 (orientability), A5 (Poincare duality), A6 (regularity / smooth dimension).",
+    "KO_dim_6": "KO-dimension of the finite spectral triple equals 6 mod 8",
+    "A_F_singleton": "Finite-dimensional algebra A_F = C (+) H (+) M_3(C); singleton result of the d=12 admissibility lattice (S83 G32).",
+    "Mellin_kernel": "Spectral action S_b = Tr f(D^2/Lambda^2) expanded via Mellin transform giving Seeley-DeWitt expansion S = f_4 Lambda^4 a_0 + f_2 Lambda^2 a_2 + f_0 a_4 + ..."
+  },
+  "per_step_axiom_classification": {
+    "step_1": {
+      "claim": "The Goldstone phi field arises as a phononic excitation of the spectral fabric \u2014 a U(1) phase mode on the SU(2) sector of A_F.",
+      "source_class": "A_F_singleton",
+      "source_detail": "A_F = C (+) H (+) M_3(C) gives a U(1) from C, an SU(2) from H, and an SU(3) from M_3. The Goldstone phase is the U(1) zero mode; its existence requires no auxiliary input.",
+      "in_minimal_axioms": true
+    },
+    "step_2": {
+      "claim": "The two-point Goldstone correlator at scales below the fold has an Ornstein-Zernike (single-pole) structure: P(K) = T / (J*K^2 + m^2), where J is a stiffness and m is the bare mass.",
+      "source_class": "Mellin_kernel",
+      "source_detail": "The Mellin-kernel expansion of the spectral action gives a Klein-Gordon kinetic term (a_2 coefficient of Seeley-DeWitt) and a mass term. For a single Goldstone (one species, one pole) the propagator IS O-Z by construction. Multi-pole structure would require auxiliary fields beyond the singleton A_F.",
+      "in_minimal_axioms": true
+    },
+    "step_3": {
+      "claim": "The spectral tilt: n_s(K) - 1 = d ln P / d ln K = -2/(1+u), where u := m^2 / (J*K^2).",
+      "source_class": "Mellin_kernel",
+      "source_detail": "Pure algebraic consequence of the O-Z propagator form; uses only logarithmic differentiation. No auxiliary input.",
+      "in_minimal_axioms": true
+    },
+    "step_4": {
+      "claim": "The running: alpha_s = d n_s / d ln K = -4u/(1+u)^2.",
+      "source_class": "Mellin_kernel",
+      "source_detail": "Algebraic consequence of (E1); second logarithmic derivative of the O-Z propagator. No auxiliary input.",
+      "in_minimal_axioms": true
+    },
+    "step_5": {
+      "claim": "(n_s - 1)(n_s + 1) = (-2/(1+u))(2u/(1+u)) = -4u/(1+u)^2 = alpha_s. Hence alpha_s = n_s^2 - 1 IDENTICALLY for any K, m, J, T.",
+      "source_class": "Mellin_kernel",
+      "source_detail": "Algebraic identity. The variable u is eliminated; the final form depends ONLY on n_s, not on K, m, J, T. No observational input required; the identity is functional, not numerical.",
+      "in_minimal_axioms": true
+    },
+    "step_6": {
+      "claim": "EVALUATION: at n_s = 0.9649 (Planck pivot), alpha_s = 0.9649^2 - 1 = -0.068968.",
+      "source_class": "EVALUATION_NOT_DERIVATION",
+      "source_detail": "This step inserts an OBSERVATIONAL n_s (Planck) to obtain a NUMERICAL prediction. The identity alpha_s = n_s^2 - 1 itself did NOT use this n_s; the evaluation is downstream of the derivation. Per audit definition (plan \u00a7W10b-123), this is a post-derivation evaluation, NOT an axiom or aux-coupling input in the derivation chain.",
+      "in_minimal_axioms": false
+    }
+  },
+  "n_aux_couplings": 0,
+  "observational_n_s_in_derivation": false,
+  "observational_inputs_used_in_evaluation": [
+    "Planck n_s = 0.9649 (used ONLY for downstream numerical evaluation, NOT in the derivation chain itself)"
+  ],
+  "cross_check_a_closure": {
+    "method": "sympy symbolic d^2 ln P / d(ln K)^2 vs identity",
+    "passes": true,
+    "symbolic_diff": "0"
+  },
+  "cross_check_b_substrate": {
+    "method": "exact O-Z alpha_s = -4u/(1+u)^2 vs identity at n_s=0.9649",
+    "n_s_anchor": 0.9649,
+    "u": 55.98005698005695,
+    "alpha_s_substrate": -0.06896799000000003,
+    "alpha_s_identity": -0.06896799000000009,
+    "rel_deviation": 8.048828337792323e-16,
+    "abs_dev_vs_plan_anchor_minus_0_068968": 9.999999911469715e-09,
+    "passes": true,
+    "H_TD_pin_context": 0.005907
+  },
+  "cross_check_c_functional": {
+    "method": "evaluate identity at 5 n_s values in scan",
+    "scan": [
+      {
+        "n_s": 0.95,
+        "u": 38.999999999999964,
+        "alpha_s_substrate": -0.09750000000000009,
+        "alpha_s_identity": -0.09750000000000003,
+        "rel_deviation": 5.693451408334135e-16,
+        "identity_holds": true
+      },
+      {
+        "n_s": 0.96,
+        "u": 48.99999999999996,
+        "alpha_s_substrate": -0.07840000000000007,
+        "alpha_s_identity": -0.07840000000000003,
+        "rel_deviation": 5.310377987684102e-16,
+        "identity_holds": true
+      },
+      {
+        "n_s": 0.9649,
+        "u": 55.98005698005695,
+        "alpha_s_substrate": -0.06896799000000003,
+        "alpha_s_identity": -0.06896799000000009,
+        "rel_deviation": 8.048828337792323e-16,
+        "identity_holds": true
+      },
+      {
+        "n_s": 0.97,
+        "u": 65.66666666666661,
+        "alpha_s_substrate": -0.05910000000000005,
+        "alpha_s_identity": -0.05910000000000004,
+        "rel_deviation": 1.174093723165351e-16,
+        "identity_holds": true
+      },
+      {
+        "n_s": 0.98,
+        "u": 98.99999999999991,
+        "alpha_s_substrate": -0.03960000000000003,
+        "alpha_s_identity": -0.03960000000000008,
+        "rel_deviation": 1.2265721547310733e-15,
+        "identity_holds": true
+      }
+    ],
+    "n_holding": 5,
+    "identity_only_at_planck": false,
+    "passes": true
+  },
+  "cross_check_d_cc5": {
+    "method": "CC-5 propagation alpha_{n_s^2} = 2 n_s alpha_s vs functional",
+    "scan": [
+      {
+        "n_s": 0.95,
+        "alpha_s_functional": -0.09750000000000003,
+        "alpha_s_from_cc5": -0.09750000000000003,
+        "rel_deviation": 0.0
+      },
+      {
+        "n_s": 0.96,
+        "alpha_s_functional": -0.07840000000000003,
+        "alpha_s_from_cc5": -0.07840000000000003,
+        "rel_deviation": 0.0
+      },
+      {
+        "n_s": 0.9649,
+        "alpha_s_functional": -0.06896799000000009,
+        "alpha_s_from_cc5": -0.06896799000000009,
+        "rel_deviation": 0.0
+      },
+      {
+        "n_s": 0.97,
+        "alpha_s_functional": -0.05910000000000004,
+        "alpha_s_from_cc5": -0.05910000000000004,
+        "rel_deviation": 0.0
+      },
+      {
+        "n_s": 0.98,
+        "alpha_s_functional": -0.03960000000000008,
+        "alpha_s_from_cc5": -0.03960000000000008,
+        "rel_deviation": 0.0
+      }
+    ],
+    "passes": true
+  },
+  "verdict": "PASS",
+  "verdict_value": "n_aux=0",
+  "verdict_reason": "derivation closes under {CCM + KO-dim=6 + A_F-singleton + Mellin-kernel}; no auxiliary couplings; no observational n_s in derivation; all 4 cross-checks pass",
+  "input_pin_map": {
+    "canonical_constants.py": "ff05c3d64375d9efcd6164210b00746ca1d1756e5b0a945554a6af642ea40e07",
+    "s50_running_mass.py": "62f12a62071b467d2331a2a83b2eeea8d3d8202264fae127f76ae5ae0696ec0a",
+    "session-50-results-workingpaper.md": "4522f693a81df1805267515afa82b2c24b394612de436c395fd043e3700813dc",
+    "s83_gate_verdicts.txt": "7bebad7da7c57b4d2706fd4e123cfbb762fa63c0244e143d597068fb7a574fb4",
+    "s84_plan_w10b": "47076421d64726d0e317299c85b9b0aa87c89b78f85c1ad8c4e06347c75b495a"
+  },
+  "content_sha256": "de0a736134b24485289ee3aa12d3aa4024787ddd915451e5bbe3e42167c85ed3",
+  "scheme": "Mellin_kernel_CCM2007",
+  "convention": "n_s_pivot_0.05_Mpc_inv",
+  "L_max": "5_for_crosscheck_b",
+  "random_seed": 84123,
+  "elapsed_s": 0.1370105743408203
+}

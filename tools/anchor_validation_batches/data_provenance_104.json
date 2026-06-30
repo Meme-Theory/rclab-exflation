@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 104,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1031",
+      "anchor_type": "data_provenance",
+      "name": "occ_spec",
+      "script_path": "session-64/s64_occ_spec.py",
+      "session": "s64",
+      "inputs": "",
+      "outputs": "session-64/s64_occ_spec.npz, session-64/s64_occ_spec.png",
+      "source_file": "computations/session-64/s64_occ_spec.py",
+      "source_context_30_lines": "   16: \n   17: Gate: OCC-SPEC-64\n   18:   INFO: Report S_occ and revised A_s gap\n   19:   Notable: S_occ < 100 => A_s problem significantly reduced\n   20: \n   21: Input: D_K eigenvalues from s36_sfull_tau_stabilization.npz\n   22:        Delta = Delta_0_OES = 0.464 M_KK (canonical)\n   23:        mu = E_B1 = 0.819 M_KK (BCS chemical potential)  # (local)\n   24: Output: s64_occ_spec.{npz,png}\n   25: \n   26: Session 64, Gen-Physicist agent\n   27: \"\"\"\n   28: \n   29: import numpy as np\n   30: import matplotlib.pyplot as plt\n   31: import os\n   32: import sys"
+    },
+    {
+      "anchor_id": "prov_1032",
+      "anchor_type": "data_provenance",
+      "name": "quantum_metric",
+      "script_path": "session-64/s64_quantum_metric.py",
+      "session": "s64",
+      "inputs": "",
+      "outputs": "session-64/s64_quantum_metric.npz, session-64/s64_quantum_metric.png",
+      "source_file": "computations/session-64/s64_quantum_metric.py",
+      "source_context_30_lines": "  474: print(f\"  {'E_J / Delta_BCS':<40s} {E_J_fold/abs(E_GS_0):>12.1f} {'':>10s}\")\n  475: \n  476: # ===========================================================================\n  477: # STEP 11: Save data\n  478: # ===========================================================================\n  479: print(\"\\n--- Step 11: Saving data ---\")\n  480: \n  481: np.savez(\n  482:     os.path.join(SCRIPT_DIR, 's64_quantum_metric.npz'),\n  483:     gate_name=gate_name,\n  484:     gate_verdict=gate_verdict,\n  485:     gate_detail=gate_detail,\n  486:     # D_s values\n  487:     D_s_PT_total=0.0,\n  488:     D_s_PT_conv=0.0,\n  489:     D_s_PT_geom=0.0,\n  490:     D_s_josephson_fold=D_s_fold_ref,"
+    },
+    {
+      "anchor_id": "prov_1033",
+      "anchor_type": "data_provenance",
+      "name": "rg_charge_decomp",
+      "script_path": "session-64/s64_rg_charge_decomp.py",
+      "session": "s64",
+      "inputs": "",
+      "outputs": "session-64/s64_rg_charge_decomp.npz, session-64/s64_rg_charge_decomp.png",
+      "source_file": "computations/session-64/s64_rg_charge_decomp.py",
+      "source_context_30_lines": "  697: print(f\"  rho_ZP in span{{R_k}}: {r_squared*100:.4f}%\")\n  698: print(f\"  H_grav in span{{R_k}}: {grav_r2*100:.4f}%\")\n  699: print(f\"  rho_ZP GGE value: {rho_ZP_GGE:.6e} M_KK\")\n  700: print(f\"  delta_CC total: {total_delta_CC:.6e} M_KK\")\n  701: \n  702: # =============================================================================\n  703: # Section 11: Save Data\n  704: # =============================================================================\n  705: save_path = os.path.join(data_dir, 's64_rg_charge_decomp.npz')\n  706: np.savez(save_path,\n  707:          # Gate\n  708:          gate_name='R-G-CHARGE-DECOMPOSITION-64',\n  709:          gate_verdict=verdict,\n  710:          gate_detail=detail,\n  711:          # Input\n  712:          eps_fold=eps_fold,\n  713:          eps_corrected=eps_corr,"
+    },
+    {
+      "anchor_id": "prov_1034",
+      "anchor_type": "data_provenance",
+      "name": "s_asymptotic",
+      "script_path": "session-64/s64_s_asymptotic.py",
+      "session": "s64",
+      "inputs": "",
+      "outputs": "session-64/s64_s_asymptotic.npz, session-64/s64_s_asymptotic.png",
+      "source_file": "computations/session-64/s64_s_asymptotic.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s64_s_asymptotic.py — S-ASYMPTOTIC-64: Spectral Action Beyond the Fold\n    4: ========================================================================\n    5: \n    6: THE single most critical computation in the framework's history.\n    7: \n    8: Computes the spectral action S(tau) and its Seeley-DeWitt coefficients\n    9: a_0, a_2, a_4 at tau values BEYOND the fold (tau = 0.190), extending\n   10: out to tau = 10.0.\n   11: "
+    },
+    {
+      "anchor_id": "prov_1035",
+      "anchor_type": "data_provenance",
+      "name": "sector_selective",
+      "script_path": "session-64/s64_sector_selective.py",
+      "session": "s64",
+      "inputs": "",
+      "outputs": "session-64/s64_sector_selective.npz, session-64/s64_sector_selective.png",
+      "source_file": "computations/session-64/s64_sector_selective.py",
+      "source_context_30_lines": "   27:   6. Iterate: use shifted eigenvalues to recompute gravitational self-energy (bootstrap)\n   28: \n   29: Gate: SECTOR-SELECTIVE-BREAKING-64\n   30:   PASS: |delta_rho/rho_vac| > 10^{-6}\n   31:   FAIL: |delta_rho/rho_vac| < 10^{-8}\n   32:   INFO: 10^{-8} < |delta_rho/rho_vac| < 10^{-6}\n   33: \n   34: Input: s64_rg_charge_decomp.npz (W1-B), canonical_constants.py\n   35: Output: s64_sector_selective.npz, s64_sector_selective.png\n   36:         Section W2-C of session-64-results-workingpaper.md\n   37: \n   38: Session: S64 W2-C\n   39: Author: Quantum-Acoustics Theorist\n   40: \"\"\"\n   41: \n   42: import numpy as np\n   43: from scipy.optimize import brentq"
+    },
+    {
+      "anchor_id": "prov_1036",
+      "anchor_type": "data_provenance",
+      "name": "shell_hessian",
+      "script_path": "session-64/s64_shell_hessian.py",
+      "session": "s64",
+      "inputs": "",
+      "outputs": "session-64/s64_shell_hessian.npz, session-64/s64_shell_hessian.png",
+      "source_file": "computations/session-64/s64_shell_hessian.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s64_shell_hessian.py — SHELL-HESSIAN-64: FRG Shell-by-Shell Hessian Decimation\n    4: ================================================================================\n    5: Gate: SHELL-HESSIAN-64\n    6:   PASS if all 36 eigenvalues of H_eff remain positive at EVERY decimation step.\n    7:   FAIL if any eigenvalue crosses zero during multiplet removal.\n    8: \n    9: Method (FRG decimation, UV -> IR):\n   10:   1. Start with the FULL effective Hessian (all PW multiplets included):\n   11:        H_eff = H_tree + sum_{(p,q)} H_1loop^{(p,q)}"
+    },
+    {
+      "anchor_id": "prov_1037",
+      "anchor_type": "data_provenance",
+      "name": "skyrmion_baryon",
+      "script_path": "session-64/s64_skyrmion_baryon.py",
+      "session": "s64",
+      "inputs": "",
+      "outputs": "session-64/s64_skyrmion_baryon.npz, session-64/s64_skyrmion_baryon.png",
+      "source_file": "computations/session-64/s64_skyrmion_baryon.py",
+      "source_context_30_lines": "   76: \n   77: # ---------------------------------------------------------------\n   78: # Setup\n   79: # ---------------------------------------------------------------\n   80: PROJECT_ROOT = r'C:\\sandbox\\Ainulindale Exflation'\n   81: SCRIPT_DIR = os.path.join(PROJECT_ROOT, 'computations')\n   82: sys.path.insert(0, SCRIPT_DIR)\n   83: \n   84: _LOG_PATH = os.path.join(SCRIPT_DIR, 's64_skyrmion_baryon_output.txt')\n   85: class _Tee:\n   86:     def __init__(self, *streams):\n   87:         self.streams = streams\n   88:     def write(self, data):\n   89:         for s in self.streams:\n   90:             s.write(data)\n   91:             s.flush()\n   92:     def flush(self):"
+    },
+    {
+      "anchor_id": "prov_1038",
+      "anchor_type": "data_provenance",
+      "name": "sound_speed",
+      "script_path": "session-64/s64_sound_speed.py",
+      "session": "s64",
+      "inputs": "",
+      "outputs": "session-64/s64_sound_speed.npz, session-64/s64_sound_speed.png",
+      "source_file": "computations/session-64/s64_sound_speed.py",
+      "source_context_30_lines": "   61:   PASS: c_s < 1 (causal) for all three speeds\n   62:   FAIL: any c_s > 1 (acausal)\n   63:   INFO: identification of which speed governs n_s, A_s, tensor ratio, and\n   64:         acoustic horizon\n   65: \n   66: Inputs:\n   67:   computations/session-42/s42_gradient_stiffness.npz    (tau-dependent Z, dS, d2S)\n   68:   computations/session-62/s62_kz_ns.npz             (epsilon_H, n_s)\n   69:   computations/session-63/s63_sound_speed.npz        (prior c_s results)\n   70:   computations/session-64/s64_s_asymptotic.npz       (S(tau) beyond fold)\n   71:   computations/session-64/s64_epsilon_profile.npz    (W1-E epsilon profile)\n   72: \n   73: Outputs:\n   74:   computations/session-64/s64_sound_speed.npz\n   75:   computations/session-64/s64_sound_speed.png\n   76: \"\"\"\n   77: "
+    },
+    {
+      "anchor_id": "prov_1039",
+      "anchor_type": "data_provenance",
+      "name": "tensor_burst",
+      "script_path": "session-64/s64_tensor_burst.py",
+      "session": "s64",
+      "inputs": "",
+      "outputs": "session-64/s64_tensor_burst.npz, session-64/s64_tensor_burst.png",
+      "source_file": "computations/session-64/s64_tensor_burst.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s64_tensor_burst.py — TENSOR-BURST-64: Full Second-Order Tensor Spectrum\n    4: =========================================================================\n    5: \n    6: Session 64, Wave 3-A (Hawking-Theorist)\n    7: \n    8: Computes the tensor power spectrum P_T(k), tensor-to-scalar ratio r,\n    9: and CMB-observable r_CMB for the phonon-exflation transit.\n   10: \n   11: Physics summary:"
+    },
+    {
+      "anchor_id": "prov_1040",
+      "anchor_type": "data_provenance",
+      "name": "tensor_scalar",
+      "script_path": "session-64/s64_tensor_scalar.py",
+      "session": "s64",
+      "inputs": "s62_hessian_oneloop.npz, s62_kz_ns.npz, s63_sound_speed.npz, s63_tensor_scalar.npz, s64_tensor_burst.npz, s54_starobinsk...",
+      "outputs": "session-64/s64_tensor_scalar.npz, session-64/s64_tensor_scalar.png",
+      "source_file": "computations/session-64/s64_tensor_scalar.py",
+      "source_context_30_lines": "   23: GATE: TENSOR-SCALAR-64\n   24:   PASS: r < 0.036 after R^2 + multi-field corrections\n   25:   FAIL: r > 0.1\n   26: \n   27: INPUTS:\n   28:   - computations/session-62/s62_hessian_oneloop.npz (36D Hessian)\n   29:   - computations/session-62/s62_kz_ns.npz (epsilon_H, f0, f2, f4)\n   30:   - computations/session-63/s63_sound_speed.npz (c_s, v_transit)\n   31:   - computations/session-63/s63_tensor_scalar.npz (S63 results for cross-check)\n   32:   - computations/session-64/s64_tensor_burst.npz (W3-A results)\n   33:   - computations/session-54/s54_starobinsky_r2.npz (S54 prior)\n   34: \n   35: OUTPUTS:\n   36:   - computations/session-64/s64_tensor_scalar.npz\n   37:   - computations/session-64/s64_tensor_scalar.png\n   38: \n   39: Author: kaluza-klein-theorist (Session 64)"
+    }
+  ]
+}

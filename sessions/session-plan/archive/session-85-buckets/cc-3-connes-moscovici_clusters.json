@@ -1,0 +1,65 @@
+{
+  "bucket": "cc-3-connes-moscovici",
+  "clusters": [
+    {
+      "cluster_id": "cc3cm-cluster-01-mellin-cone-s3-residue",
+      "label": "Mellin-cone Connes-Moscovici s=3 residue convergence at L=8-12 (test + contingency re-choice)",
+      "rationale": "Both items operate on the same Mellin-cone Connes-Moscovici s=3 residue machinery at L_max=8,10,12 evaluated against monotone Cauchy-decay / asymptotic-convergence criteria. Item 64 runs the test (re-audits w_0 branches and evaluates CM s=3 residues across {ζ, Zubarev, alternative regulator}); item 134 is the conditional re-choice if item 64's ζ-regulator check fails, consuming W1a-3 SV2 CC-v output and broadening the regulator family to heat-kernel / Dixmier-trace. Same spectral-functional-family question on same L grid, same CM s=3 residue dataset.",
+      "items": [
+        {"raw_index": 64, "gate_id": "S85-W0-L", "title": "L_max ≥ 8 spectral functional re-audit (replaces branch (iv))"},
+        {"raw_index": 134, "gate_id": "S85-W0-REGULATOR-SPECTRAL-FUNCTIONAL-RECHOICE", "title": "S85-W0-REGULATOR-SPECTRAL-FUNCTIONAL-RECHOICE** (from W1a-3 SV2 and W4-46 joint)"}
+      ]
+    },
+    {
+      "cluster_id": "cc3cm-cluster-02-hp1-af-dimension-baseline-and-twisted",
+      "label": "HP^1(A_F) dimension / generating-set: un-twisted baseline + CM-2008 twisted extension",
+      "rationale": "Item 58 computes rank HP^1(A_F) for A_F = C + H + M_3(C) via direct Connes-Moscovici Hopf-cyclic reduction on the un-twisted algebra, and asks whether [ε_H] generates HP^1. Item 49 extends the same HP^1 computation to the twisted case, sweeping 16 admissible CM-2008 twists θ and projecting ch_θ onto HP^1_θ. Item 49 explicitly takes item 58's baseline (un-twisted HP^1 structure on A_F) as the reference against which the twisted projection ratio is evaluated. Same cohomology degree (HP^1), same algebra (A_F), direct input/output dependence. Conservative merge honored — HP^3 (item 57) is deliberately kept separate because it is a different cohomology degree.",
+      "items": [
+        {"raw_index": 58, "gate_id": "", "title": "HP¹(A_F) dimension / generating-set computation"},
+        {"raw_index": 49, "gate_id": "", "title": "Falsifier execution: CM-2008 twist scan for HP^1 leakage."}
+      ]
+    }
+  ],
+  "singletons": [
+    {
+      "raw_index": 3,
+      "gate_id": "CC-3",
+      "title": "CC-3 Connes-Moscovici Dimension Spectrum Signed Residue Sum (PRIORITY 5)",
+      "rationale_as_singleton": "The core CC-3 dimension-spectrum residue computation: enumerate Sd of D_K on Jensen-SU(3) at L_max=9, compute Res ζ_{D²}(s) at each pole, evaluate Λ_CC = Σ sign(Hopf_d) · Res. This is the defining CC-3 quantity. Per bucket instructions, CC-3 residue computation is distinct from upstream prerequisites (S83 W1-G3 dim H_π closure) and downstream Hopf-cocycle sign pairing. None of the other 7 items compute Λ_CC directly — 64/134 compute s=3 residues for convergence diagnostics (different purpose), 49/58 compute HP^* on A_F (different algebra and different invariant), 57 is HP^3, 99 consumes the CC3 identity as derived input, 18 is unrelated Landau OP."
+    },
+    {
+      "raw_index": 18,
+      "gate_id": "CF-3",
+      "title": "[landau] Multi-valued Landau OP for R6–R7",
+      "rationale_as_singleton": "Landau-theoretic order-parameter engineering across K_crit = 91.5 on the R6-R7 K-corridor. The 'CC3' reference inside its text (W5-54 CC3) is a different CC3 tag, not Connes-Moscovici. No dimension-spectrum, residue, zeta-pole, HP^*, or Hopf-cyclic content. Mis-routed into the Connes-Moscovici bucket by string-match; no merge candidate exists here."
+    },
+    {
+      "raw_index": 57,
+      "gate_id": "",
+      "title": "HP^3 extension: three-way disjoint-corridor theorem.",
+      "rationale_as_singleton": "Locates or vanishes the H^3(F_Jensen) class via 3-cocycle basis of HC^3(A_F) and δ_2 Godbillon-Vey secondary characteristic. Degree-3 Hopf-cyclic cohomology is structurally distinct from degree-1 (items 49, 58) — different dimension, different generators (H_1 Hopf algebra's δ_2 vs X,Y derivations relevant to HP^1). Conservative merge rule retains the degree separation: HP^1 and HP^3 are different invariants of A_F even though both live in the Connes-Moscovici Hopf-cyclic framework."
+    },
+    {
+      "raw_index": 99,
+      "gate_id": "BASELINE-HTILDE-DERIVATION",
+      "title": "S85-BASELINE-HTILDE-DERIVATION (TD-vs-LI divergence chase)",
+      "rationale_as_singleton": "Downstream derivation of H̃ via two independent routes (Connes-Marcolli zeta canonical TD vs. Zubarev LI) to reconcile a 240× divergence and land H̃ in the W1a-1 PASS window. Consumes the CC3 identity d(ln A_s)/d(ln H̃) = +2 as given input, but does NOT compute the CC-3 signed-residue sum itself. Per bucket instructions, downstream computations that consume a CC-3 identity as scaffolding are distinct from the CC-3 residue computation proper. No HP^* content, no Mellin-cone convergence diagnostic. Stands alone as the H̃ two-route reconciliation task."
+    }
+  ],
+  "summary": {
+    "input_count": 8,
+    "clusters_count": 2,
+    "clustered_items_count": 4,
+    "singletons_count": 4,
+    "total_covered": 8,
+    "conservation_check": "clustered (4) + singletons (4) = 8 = input_count",
+    "merge_policy": "conservative",
+    "distinctions_honored": [
+      "CC-3 residue-sum computation (item 3) kept distinct from downstream H̃ derivation that consumes CC-3 identity (item 99)",
+      "CC-3 residue-sum computation (item 3) kept distinct from CM s=3 residue convergence diagnostic (items 64, 134) — same machinery family, different target quantity",
+      "HP^1(A_F) cluster (49, 58) kept distinct from HP^3(A_F) computation (item 57) — different cohomology degree",
+      "HP^* on A_F (items 49, 57, 58) kept distinct from dimension spectrum Sd of D_K (item 3) — different invariants",
+      "Landau K-corridor OP (item 18) recognized as mis-routed (string-match on 'CC3' label collision), kept as singleton"
+    ]
+  }
+}

@@ -28,7 +28,7 @@ abroad, or from public or private research centers.  publics ou priv�s.
                      Klaus Paasch
  Sugambrerweg 46, 22453 Hamburg, Germany
 
-                [email redacted]
+                klauspaasch@aol.com
 
 Abstract
 

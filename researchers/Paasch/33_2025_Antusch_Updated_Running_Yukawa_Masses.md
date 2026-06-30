@@ -1,103 +1,62 @@
 # Updated Running Quark and Lepton Parameters at Various Scales
 
 **Author(s):** Stefan Antusch, Kevin Hinze, Shaikh Saad
-
-**Year:** 2025
-
-**Journal:** arXiv:2510.01312
+**Year:** 2025 (v2: 2026)
+**Journal:** [INCOMPLETE - not extractable from PDF]
+**arXiv:** 2510.01312
+**Relevance:** HIGH
 
 ---
 
 ## Abstract
 
-The running of quark and lepton Yukawa couplings across multiple energy scales is a cornerstone of flavor physics and tests of physics beyond the Standard Model. This paper revisits the evolution of these parameters incorporating the latest 2024 Particle Data Group determinations, which feature significantly smaller uncertainties compared to 2022 data. The authors present evolved parameter values at benchmark scales from the Z-boson mass (91.2 GeV) to the GUT scale (10^16 GeV) within both the Standard Model and the minimal supersymmetric extension (MSSM). For MSSM scenarios, results include various tan(β) values with supersymmetry breaking at 3 and 10 TeV, incorporating approximate threshold corrections.
-
----
-
-## Historical Context
-
-The renormalization group evolution (RGE) of Yukawa couplings was first systematically studied in the 1980s following the development of the Standard Model. These running parameters are essential because:
-
-1. **High-scale constraints**: GUT-scale predictions require evolved values from low-energy measurements
-2. **SUSY thresholds**: The MSSM predicts significant corrections at the SUSY-breaking scale
-3. **Precision tests**: Small improvements in PDG measurements propagate through RGE codes to constrain BSM models
-4. **Hierarchy testing**: Yukawa running encodes the flavor problem at the quantum level
-
-The 2024 PDG update represents a quadrennial refinement with improved lepton mass measurements and more precise CKM determinations. This paper's primary contribution is numerical: providing the community with the latest baseline running masses for phenomenology and model-building purposes.
+In the light of the recent Particle Data Group (PDG) release, we revisit the running quark and lepton Yukawa couplings, together with the quark mixing parameters, across a range of energy scales. The 2024 PDG determinations of low-energy fermion masses feature significantly smaller uncertainties, resulting from a reduced estimate of systematic errors compared to the more conservative treatment in the 2022 analysis. To assess the impact of these changes, we present running parameters obtained using both the 2022 and 2024 datasets, within the frameworks of the Standard Model (SM) and its minimal supersymmetric extension (MSSM). The evolved values, along with their associated 1-sigma uncertainties, are given within the SM framework at benchmark scales of M_Z and 10^3, 3x10^3, 10^4, 10^5, 10^7, 10^9, 10^12, and 10^16 GeV. Within the MSSM, we additionally provide GUT-scale results for different choices of tan(beta), assuming supersymmetry breaking scales of 3 and 10 TeV, including an approximate way for taking supersymmetric loop threshold corrections into account. We furthermore discuss implications of the updated results for constructing and testing theories beyond the SM.
 
 ---
 
 ## Key Arguments and Derivations
 
-### Standard Model RGE
+### 1. Low-Scale Input Parameters (Section 2)
 
-The one-loop running of the up-type Yukawa coupling $Y_u^i$ (for generation $i$) follows:
+The paper uses 15 low-scale input parameters from both the 2022 and 2024 PDG releases. Key 2024 PDG values include:
+- M_t = 172.4 +/- 0.7 GeV, M_h = 125.20 +/- 0.11 GeV
+- m_b(m_b) = 4.183 +/- 0.004 GeV, m_c(m_c) = 1.2730 +/- 0.0028 GeV
+- m_s(2 GeV) = 93.5 +/- 0.5 MeV, m_d(2 GeV) = 4.70 +/- 0.04 MeV, m_u(2 GeV) = 2.16 +/- 0.04 MeV
 
-$$\frac{d Y_u^i}{d \ln \mu} = \frac{1}{16\pi^2} Y_u^i \left( 3 \text{Tr}(Y_u^\dagger Y_u) + \text{Tr}(Y_d^\dagger Y_d) + \text{Tr}(Y_e^\dagger Y_e) - \frac{16}{3} g_3^2 - 3 g_2^2 - \frac{13}{9} g_1^2 \right)$$
+The 2024 PDG values show dramatically reduced uncertainties: bottom quark uncertainty decreased from 0.7% to 0.09%.
 
-where $g_i$ are the gauge couplings, and the trace terms represent contributions from all three generations. Down-type and charged lepton Yukawas evolve similarly, with different coefficients for the gauge interactions.
+### 2. SM Running Parameters (Section 2)
 
-The quark mixing matrix CKM and neutrino mixing matrix PMNS evolve differently. In the SM, the CKM matrix receives corrections that preserve unitarity to machine precision. The lepton sector is more complex due to the presence of neutrino masses via the seesaw mechanism.
+Fermion masses and mixing parameters are evolved using MS-bar renormalization group equations from M_Z to 10^16 GeV within the SM. Results are provided in comprehensive tables at nine benchmark scales.
 
-### Benchmark Scales
+### 3. MSSM Running Parameters (Section 3)
 
-The paper reports results at six benchmark energy scales:
+Parameters are converted from MS-bar to DR-bar scheme at M_SUSY and evolved to M_GUT = 2 x 10^16 GeV using MSSM RGEs. Results given for tan(beta) = 5, 10, 30, 50 with M_SUSY = 3 and 10 TeV. An approximate method for incorporating tan(beta)-enhanced SUSY threshold corrections is provided.
 
-- **M_Z** = 91.2 GeV (electroweak scale, primary output scale)
-- **M_W** = 80.4 GeV (W boson mass)
-- **M_top** = 172.8 GeV (top quark pole mass)
-- **M_GUT** = 2 × 10^16 GeV (approximate unification scale)
-- **Intermediate scales** for SUSY phenomenology
+### 4. Implications for BSM Model Building (Section 4)
 
-At each scale, the evolution accounts for the threshold corrections from all heavier fermions and bosons that decouple.
-
-### MSSM Modifications
-
-In the MSSM, the Yukawa couplings run differently due to:
-
-$$\frac{d Y_u^i}{d \ln \mu} = \frac{1}{16\pi^2} Y_u^i \left( 3 \text{Tr}(Y_u^\dagger Y_u) + \text{Tr}(Y_d^\dagger Y_d) + \text{Tr}(Y_e^\dagger Y_e) - \frac{16}{3} g_3^2 - 3 g_2^2 - \frac{13}{9} g_1^2 + \text{SUSY corrections} \right)$$
-
-The SUSY corrections depend on tan(β), the ratio of Higgs VEVs. Large tan(β) scenarios (tan(β) > 10) can significantly modify the bottom and tau Yukawas due to enhanced corrections. The paper includes threshold effects at the SUSY-breaking scale (M_SUSY = 3 TeV and 10 TeV).
-
-### Numerical Improvements
-
-The 2024 PDG update improves precision in several areas:
-
-- **Lepton masses**: electron, muon, tau measured to better than 0.1% accuracy
-- **CKM elements**: improvements in |V_ub|, |V_cb|, phase δ from B-factory data
-- **Quark masses**: running masses at 2 GeV determined from lattice QCD with reduced systematic uncertainty
-
-These improvements propagate multiplicatively through RGE evolution, resulting in tighter constraints on BSM models that predict or constrain Yukawa values.
-
----
+The updated running parameters have implications for:
+- GUT-scale Yukawa unification tests (b-tau, b-s-tau-mu, etc.)
+- Flavor symmetry models predicting mass ratios
+- Determination of the Dirac CP phase from quark sector
 
 ## Key Results
 
-1. **Quark Yukawa running**: At M_Z, the top Yukawa is $y_t \approx 0.925$. At M_GUT in the SM, $y_t$ evolves to approximately 0.45-0.52 depending on the running scheme.
+1. 2024 PDG quark masses have unprecedented precision (e.g., m_b uncertainty: 0.7% -> 0.09%).
+2. Running Yukawa couplings provided at 9 SM benchmark scales from M_Z to 10^16 GeV.
+3. MSSM GUT-scale values provided for 4 values of tan(beta) and 2 SUSY-breaking scales.
+4. Updated mass ratios at M_Z (2024 PDG): m_u/m_d = 0.474, m_s/m_d = 20.2, m_c/m_s = 11.8, m_b/m_tau = 2.36.
+5. Running mass ratios evolve significantly from M_Z to M_GUT, which is critical for testing GUT-scale predictions.
 
-2. **Lepton Yukawa values**: The electron Yukawa at M_Z is $y_e \approx 2.8 \times 10^{-6}$, while the tau Yukawa is $y_\tau \approx 1.0 \times 10^{-2}$. The ratio $y_\tau / y_e \approx 3500$ at the electroweak scale.
+## Key Equations
 
-3. **CKM unitarity**: Running CKM parameters remain unitary to better than 0.01% at all scales tested.
+| Label | Equation | Reference |
+|:------|:---------|:----------|
+| Yukawa coupling | $y_f(\mu) = \frac{\sqrt{2}\,m_f(\mu)}{v}$ | Standard |
+| RG evolution | $\frac{d\,y_f}{d\ln\mu} = \beta_{y_f}(y_f, g_i)$ | Standard SM/MSSM RGE |
+| 2024 PDG m_b | $m_b(m_b) = 4.183 \pm 0.004\;\text{GeV}$ | Eq. (2.2) |
+| 2024 PDG m_u | $m_u(2\;\text{GeV}) = 2.16 \pm 0.04\;\text{MeV}$ | Eq. (2.2) |
 
-4. **SUSY threshold effects**: For tan(β) = 10 and M_SUSY = 3 TeV, the bottom Yukawa receives corrections of order +5% to +15% depending on stop/sbottom mixing parameters.
+## Relevance to Phonon-Exflation
 
-5. **Convergence**: The paper confirms that PDG 2024 updates yield numerical changes of 2-8% for most parameters compared to 2022 values, with larger changes (10-20%) in less-well-determined quantities like |V_ub|.
-
----
-
-## Impact and Legacy
-
-This paper serves a critical bookkeeping function for the flavor physics community. RGE running is a prerequisite for almost all flavor-symmetry models, BSM phenomenology, and GUT-scale predictions. By providing updated baseline values with 2024 precision, the paper eliminates ambiguity in comparisons between theory and experiment.
-
-The work is frequently cited in papers proposing new flavor structures (e.g., discrete symmetries, extra dimensions, technicolor) because such models must first match the running SM values before proposing modifications. It also provides the baseline against which new physics searches (LHC flavor anomalies, rare decays, precision electroweak) are benchmarked.
-
----
-
-## Framework Relevance
-
-**Direct connection to phonon-exflation**: The Paasch relations (Papers 01-18) make quantitative predictions for particle mass ratios at a given renormalization scale. This paper's provision of running masses at multiple scales (especially M_Z and M_GUT) is essential for testing whether Paasch's formulae hold universally or only at a specific τ-determined mass scale.
-
-In the phonon-exflation framework, particle masses emerge from Dirac spectral gaps in the SU(3) geometry at the fold (τ ≈ 0.2). Those gap values define an effective "natural" mass scale that may differ from M_Z or GUT convention. By providing evolved masses at many scales, this paper allows the framework to determine at which renormalization scale Paasch's empirical relations are best satisfied—a strong constraint on the mechanism.
-
-**Application**: Use Antusch et al.'s running values to test Paasch's mass ratios at benchmark scales (M_Z, M_top, M_GUT). If ratios are scale-independent (as Paasch's classical phenomenological relations suggest), this validates that the framework's mass-gap origin is fundamental, not a low-scale artifact.
-
+This paper provides the definitive reference for running fermion masses at all energy scales, which is essential input for the framework. The spectral action on M4 x SU(3) predicts mass ratios at the compactification scale (related to tau), and these must be compared to physical masses after RG evolution. The dramatically improved 2024 PDG precision — especially for light quarks — tightens the constraints on any mass-ratio prediction. The running mass tables allow direct comparison between the framework's phi_paasch = 1.531580 (at tau = 0.15) and the physical mass ratios at the appropriate energy scale.

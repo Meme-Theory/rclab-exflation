@@ -113,7 +113,7 @@ The framework's mathematical structure (NCG spectral triple on M⁴ × SU(3)) ha
 Dirac would say: take this beauty seriously, even where the physics isn't yet clear.
 
 ### 2. "Playing with" the Dirac Spectrum
-The Tier 1 computation (Session 12) is precisely Dirac's method:
+The Level 1 computation (Session 12) is precisely Dirac's method:
 - Compute the spectrum of D_K on deformed SU(3)
 - Look for beautiful mathematical relations in the eigenvalue ratios
 - The phi_paasch emergence (1.53158 at s = 1.14) is the kind of numerical coincidence Dirac would pursue

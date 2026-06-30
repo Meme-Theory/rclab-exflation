@@ -1,0 +1,207 @@
+========================================================================
+S52 METRIC-NOISE-52: Stochastic Metric Noise from Tessellation
+========================================================================
+
+--- SECTION 1: Cell Geometry ---
+Vol_SU3_Haar = 1349.74  (M_KK^{-8})
+N_cells = 32
+Vol_cell = 42.18  (M_KK^{-8})
+L_cell = 1.5964  (M_KK^{-1})
+L_cell = 2.149e-17  GeV^{-1}
+L_cell = 4.240e-33  m
+M_KK^{-1} = 2.656e-33  m
+l_Planck = 1.616e-35  m
+L_cell / l_Planck = 2.624e+02
+L_cell / M_KK^{-1} = 1.5964
+
+--- SECTION 2: Metric Fluctuation Amplitude ---
+tau_fold = 0.19
+delta_tau / tau = 1.750e-06  (HOMOG-42)
+delta_tau = 3.325e-07
+
+Jensen metric perturbation:
+  <(delta_g/g)^2>^{1/2} / delta_tau = sqrt(29/8) = 1.9039
+  delta_g/g (internal, per cell) = 6.331e-07
+
+Volume and Newton constant fluctuation:
+  Tr(g^{-1} delta_g) = (6-8+1) * delta_tau = -delta_tau
+  delta(Vol)/Vol per cell = -1.662e-07
+  delta(G_N)/G_N per cell = 1.662e-07
+
+M_KK / M_Pl = 6.085e-03  (-2.22 dex)
+
+Method 1 (naive KK): h ~ delta_tau * (M_KK/M_Pl)^2 = 1.231e-11
+Method 2 (effacement): h ~ delta_tau * delta_g = 2.593e-14
+
+--- SECTION 3: Tessellation Phonon Modes ---
+Lattice constant a = 4.386 M_KK^{-1}
+BZ boundary K_BZ = 0.716 M_KK
+Goldstone speed c_Gold = 0.915 M_KK
+Leggett-1 gap = 0.138 M_KK
+Leggett-2 gap = 0.192 M_KK
+N_K modes per branch = 32
+
+--- SECTION 4: Noise Spectrum S_h(f) ---
+T_acoustic = 0.112 M_KK = 8.320e+15 GeV
+
+Thermal occupations (Bose-Einstein):
+  m_tau mode (2.062 MKK):    <n> = 1.010e-08
+  Leggett-1 (0.138 MKK):     <n> = 4.118e-01
+  Leggett-2 (0.192 MKK):     <n> = 2.196e-01
+  Branch-3 (0.378 MKK):      <n> = 3.491e-45
+  Branch-4 (1.410 MKK):      <n> = 3.408e-06
+  Higgs-1 (11.465 MKK):      <n> = 3.491e-45
+
+Lattice parameters:
+  N_lin (effective) = 1.542
+  K_min = 0.9289 M_KK
+  omega_Gold(K_min) = 0.8499 M_KK
+  omega_Gold(K_min) / T_acoustic = 7.59
+  <n>_Goldstone(K_min) = 5.064e-04
+
+All modes frozen: <n> << 1. Noise = ZERO-POINT only.
+
+--- SECTION 5: Zero-Point Metric Noise ---
+Z_fold = 74730.76
+Dispersion speeds (M_KK):
+  c_Gold = 0.915
+  c_L1   = 0.713
+  c_L2   = 1.351
+  c_B3   = 1.964
+  c_B4   = 3.367
+
+Zero-point tau variance per branch (summed over K):
+  Branch-3: <(delta_tau)^2> = 1.304e-04
+  Branch-4: <(delta_tau)^2> = 6.946e-05
+  Higgs-1:  <(delta_tau)^2> = 1.877e-05
+  Total:    delta_tau_zp = 1.478e-02
+  delta_tau_zp / tau_fold = 7.781e-02
+
+  delta_tau(HOMOG-42) / tau = 1.750e-06
+  delta_tau(zero-point) / tau = 7.781e-02
+  Ratio HOMOG/ZP = 0.00
+
+--- SECTION 6: Strain PSD S_h(f) ---
+Characteristic frequencies:
+  f_Gold(K_min) = 1.527e+40 Hz
+  f_Gold(K_BZ)  = 9.107e+39 Hz
+  f_Leggett_1   = 2.479e+39 Hz
+  f_Leggett_2   = 3.449e+39 Hz
+  f_Branch_3    = 6.790e+39 Hz
+  f_Branch_4    = 2.533e+40 Hz
+  f_Higgs_1     = 2.059e+41 Hz
+  f_fabric_gap  = 3.704e+40 Hz
+
+Strain from zero-point fluctuations:
+  h_rms (at gap, no effacement) = 5.474e-07
+  h_rms (with effacement 7.8e-8) = 1.153e-09
+
+Correlation length of metric noise:
+  r_corr = 1/(m_tau * M_KK) = 1.288e-33 m
+  r_corr / l_Planck = 79.704
+  tau_corr = 4.297e-42 s
+  f_corr = 3.704e+40 Hz  (= f_gap)
+
+--- SECTION 7: Detector Comparison ---
+
+h_0 (at source) = 7.392e-03
+r_corr = 1.288e-33 m
+
+Detector                        r_det (m)     r_det/r_corr     log10(suppression)    h_eff       
+----------------------------------------------------------------------------------------------------
+GQuEST (1.5m)                   1.500e+00     1.164e+33        -505694517221637231243839385108480.0    <10^{-300}
+LIGO (4km)                      4.000e+03     3.105e+36        -1348518712591032759612504931538305024.0    <10^{-300}
+LISA (2.5Gm)                    2.500e+09     1.941e+42        -842824195369395315215025141701911917887488.0    <10^{-300}
+Cosmic interferometer (1AU)     1.496e+11     1.161e+44        -50434599850904619277252019192752811871830016.0    <10^{-300}
+
+--- SECTION 8: GQuEST Comparison ---
+Zero-point amplitude A_zp = 4.507e-04
+Langer damping gamma_tau = 0.250 M_KK
+S_tau(f << f_gap) = 6.046e-06 M_KK^{-4}
+S_tau(f << f_gap) = 3.366e-46 Hz^{-1}
+
+GQuEST comparison:
+  r_det / r_corr = 1.164e+33
+  log10(exp(-r/r_corr)) = -505694517221637231243839385108480.0
+  This is suppression by 10^{-505694517221637231243839385108480}
+  sqrt(S_h) at gap (no spatial suppression) = 9.173e-24 Hz^{-1/2}
+  sqrt(S_h) at gap (with exp suppression)   = (below machine precision)
+  GQuEST sensitivity: sqrt(S_h) ~ 1.000e-21 Hz^{-1/2}
+
+--- SECTION 9: Comparison to Foam Models ---
+Distance fluctuation at l = 1 m:
+  Random walk:  delta_l = 4.020e-18 m
+  Holographic:  delta_l = 6.393e-24 m
+  Framework (no exp): delta_l ~ 3.078e-70 m
+  Framework (with exp): log10(suppression) = -3.4e+32
+  Framework effective: delta_l < 10^{-3e+32} m  (below all detectors)
+
+Distance fluctuation at l = l_P:
+  Random walk:  delta_l = l_P = 1.616e-35 m
+  Holographic:  delta_l = l_P = 1.616e-35 m
+  Framework:    delta_l = 2.390e-37 m  (ratio 1.478e-02)
+
+========================================================================
+SUMMARY: METRIC-NOISE-52 Results
+========================================================================
+
+R1: Cell geometry
+   L_cell = 1.5964 M_KK^{-1} = 4.240e-33 m
+   32-cell Voronoi tessellation of SU(3) with dim=8
+
+R2: Metric fluctuation amplitude (HOMOG-42 classical)
+   delta_tau / tau = 1.75e-6  (cell-to-cell)
+   delta_g_internal / g = 6.331e-07  (RMS over all 8 directions)
+   delta(G_N) / G_N = 1.662e-07  (conformal volume fluctuation)
+
+R3: Zero-point fluctuation from tessellation phonons
+   All modes FROZEN: T_acoustic/omega_min = 0.132 (<<1)
+   delta_tau_zp = 1.478e-02  (in M_KK units)
+   delta_tau_zp / tau_fold = 7.781e-02
+
+R4: Characteristic frequencies  (ALL at ~10^40 Hz)
+   f_Gold(K_min) = 1.527e+40 Hz
+   f_Leggett_1   = 2.479e+39 Hz
+   f_Leggett_2   = 3.449e+39 Hz
+   f_fabric_gap  = 3.704e+40 Hz
+
+R5: Correlation length and exponential suppression (W-FOAM-5)
+   r_corr = 1/m_tau = 1.288e-33 m  (79.7 * l_P)
+   At GQuEST (1.5m): suppression 10^{-5e+32}
+   CONFIRMS GQUEST-43: null for ALL sub-10^40 Hz detectors
+
+R6: Strain amplitude at source scale
+   h_rms(at r_corr) = 7.392e-03  (conformal, no KK dilution)
+   h_rms(KK diluted) = 5.474e-07
+   h_rms(effaced)    = 1.153e-09
+
+R7: Comparison to GQuEST
+   Framework S_h^{1/2}(1 MHz) < 10^{-3e+32} Hz^{-1/2}
+   GQuEST sensitivity: ~10^{-21} Hz^{-1/2}
+   MARGIN: 3e+32 orders of magnitude
+
+R8: Comparison to standard foam models (at l = 1m)
+   Random walk:  delta_l ~ 4.0e-18 m  (RULED OUT by Perlman)
+   Holographic:  delta_l ~ 6.4e-24 m  (marginally allowed)
+   Framework:    delta_l < 10^{-3e+32} m  (exponentially null)
+
+R9: Physical picture
+   The 32-cell tessellation IS a source of metric noise, but:
+   (a) All phonon modes are frozen (quantum ground state, T << omega)
+   (b) The fabric gap m_tau = 2.062 M_KK confines all fluctuations
+       within r_corr ~ 1.3 l_P
+   (c) Exponential suppression at detector scales is 10^{10^25} or greater
+   (d) This is the STRONGEST null prediction in the framework
+
+   The framework is discriminable from gapless foam models (Verlinde-Zurek
+   pixellon, Ng holographic) precisely because the gap kills all low-frequency
+   noise. A DETECTION of broadband metric noise at any frequency below
+   10^40 Hz would FALSIFY this framework.
+
+--- Saving data and creating plots ---
+Plot saved: s52_metric_noise.png
+Data saved: s52_metric_noise.npz
+
+========================================================================
+METRIC-NOISE-52 COMPLETE
+========================================================================

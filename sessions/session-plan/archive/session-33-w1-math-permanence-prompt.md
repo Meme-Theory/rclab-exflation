@@ -83,7 +83,7 @@ In Connes-Chamseddine NCG, the physical Dirac operator is not D_K but D_K + phi 
 Questions:
 - Does d^2(sum|lambda_k|)/dtau^2 remain above 0.54 when computed with D_K + phi + J phi J^{-1}?
 - What IS the inner fluctuation spectrum on Jensen-deformed SU(3)? The inner fluctuation is determined by the algebra A_F and the representation on H. For the SM algebra A_F = C + H + M_3(C), the inner fluctuation phi is the Higgs doublet.
-- Is this computable with existing tier0 infrastructure? What would the computation require?
+- Is this computable with existing computation infrastructure? What would the computation require?
 - At minimum: what is the SIGN of the inner fluctuation correction to the spectral action curvature?
 - Can representation theory constrain the correction without computing it explicitly?
 

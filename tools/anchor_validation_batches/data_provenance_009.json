@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 9,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_81",
+      "anchor_type": "data_provenance",
+      "name": "2x2_moment_system",
+      "script_path": "session-23/s23c_2x2_moment_system.py",
+      "session": "s23c",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-23/s23c_2x2_moment_system.py",
+      "source_context_30_lines": "<name '2x2_moment_system' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: Session 23c: 2x2 Moment System for f_4/(f_8 Lambda^4)\n    3: ======================================================\n    4: \n    5: CORRECTION to s23c_moment_mapping.py:\n    6: Baptista identified that the submersion formula R_P = R_M + R_K - |F|^2 - ...\n    7: means the a_2 coefficient (moment f_8 Lambda^8) ALSO contributes to the gauge\n    8: kinetic term, not just a_4. The 4D effective action receives gauge contributions\n    9: from BOTH 12D a_2 and a_4.\n   10: \n   11: The correct structure is a 2x2 LINEAR SYSTEM:\n   12: \n   13:   [A  B] [f_8 Lambda^8]   [pi^2/(2 g_3^2)]     (gauge coupling)\n   14:   [C  D] [f_4 Lambda^4] = [6/(kappa^2 Vol_4)]   (Newton's constant)\n   15: \n   16: where A, B, C, D are fiber integrals over (SU(3), g_Jensen(tau)).\n   17: \n   18: If det(M) != 0, both f_8 Lambda^8 and f_4 Lambda^4 are UNIQUELY determined,\n   19: and beta/alpha becomes a zero-parameter prediction.\n   20: \n   21: Author: KK Theorist (Session 23c)\n   22: Date: 2026-02-20\n   23: \"\"\"\n   24: \n   25: import numpy as np\n   26: \n   27: print(\"=\" * 70)\n   28: print(\"2x2 MOMENT SYSTEM: Corrected f-dependence analysis\")\n   29: print(\"=\" * 70)\n   30: print()"
+    },
+    {
+      "anchor_id": "prov_82",
+      "anchor_type": "data_provenance",
+      "name": "AC_normalization",
+      "script_path": "session-23/s23c_AC_normalization.py",
+      "session": "s23c",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-23/s23c_AC_normalization.py",
+      "source_context_30_lines": "<name 'AC_normalization' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: Session 23c: A/C Normalization Pin-Down for Session 24\n    3: ======================================================\n    4: \n    5: Resolves the (15/2) normalization question flagged by baptista.\n    6: \n    7: The key question: does the (15/2) factor from Baptista eq 3.71 enter the\n    8: A/C gauge-gravity consistency check, or does it cancel?\n    9: \n   10: Author: KK Theorist (Session 23c)\n   11: Date: 2026-02-20\n   12: \"\"\"\n   13: \n   14: import numpy as np\n   15: import sys, os\n   16: sys.path.insert(0, \"C:/sandbox/Ainulindale Exflation/computations\")\n   17: from dirac_spectrum import (su3_generators, compute_structure_constants,\n   18:                                    compute_killing_form, jensen_metric,\n   19:                                    U1_IDX, SU2_IDX, M_IDX)\n   20: \n   21: print(\"=\" * 70)\n   22: print(\"A/C NORMALIZATION PIN-DOWN\")\n   23: print(\"=\" * 70)\n   24: print()\n   25: \n   26: # ======================================================================\n   27: # 1. What does our code use?\n   28: # ======================================================================\n   29: \n   30: gens = su3_generators()"
+    },
+    {
+      "anchor_id": "prov_83",
+      "anchor_type": "data_provenance",
+      "name": "f_dependence",
+      "script_path": "session-23/s23c_f_dependence.py",
+      "session": "s23c",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-23/s23c_f_dependence.py",
+      "source_context_30_lines": "<name 'f_dependence' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: Session 23c: Analysis of f-dependence in beta/alpha\n    3: ====================================================\n    4: \n    5: Addresses baptista's question: Does beta/alpha depend on the spectral\n    6: action test function f? If so, what is the BF impact?\n    7: \n    8: Author: KK Theorist (Session 23c)\n    9: Date: 2026-02-20\n   10: \"\"\"\n   11: \n   12: import numpy as np\n   13: \n   14: print(\"=\" * 60)\n   15: print(\"f-DEPENDENCE ANALYSIS: beta/alpha in spectral action\")\n   16: print(\"=\" * 60)\n   17: print()\n   18: \n   19: # ======================================================================\n   20: # THE SPECTRAL ACTION EXPANSION\n   21: # ======================================================================\n   22: \n   23: print(\"SPECTRAL ACTION EXPANSION on M^4 x K (D=12):\")\n   24: print()\n   25: print(\"S = Tr(f(D_P^2 / Lambda^2))\")\n   26: print(\"  ~ f_0 Lambda^12 a_0 + f_2 Lambda^10 a_2 + f_4 Lambda^8 a_4 + ...\")\n   27: print()\n   28: print(\"where f_k = integral f(u) u^(5-k) du  (for D=12)\")\n   29: print()\n   30: "
+    },
+    {
+      "anchor_id": "prov_84",
+      "anchor_type": "data_provenance",
+      "name": "fiber_integrals",
+      "script_path": "session-23/s23c_fiber_integrals.py",
+      "session": "s23c",
+      "inputs": "",
+      "outputs": "session-23/s23c_fiber_integrals.npz",
+      "source_file": "computations/session-23/s23c_fiber_integrals.py",
+      "source_context_30_lines": "  846: \n  847: 7. WHAT SESSION 24 MUST DETERMINE: Whether rho = {rho_needed:.6f} is the\n  848:    NATURAL value from the spectral action (i.e., whether f_4/(60*f_2*Lambda^2)\n  849:    equals this specific number). This requires fixing the test function f and\n  850:    the cutoff scale Lambda — which are the ONLY free parameters.\n  851: \"\"\")\n  852: \n  853: # Save results\n  854: np.savez(os.path.join(base, 's23c_fiber_integrals.npz'),\n  855:          tau=tau_vals,\n  856:          R_scalar=R_scalar,\n  857:          Ric_sq=Ric_sq,\n  858:          K_kretschner=K_kretschner,\n  859:          omega_sq=omega_sq_vals,\n  860:          a4_geom=a4_geom,\n  861:          rho_needed=rho_needed,\n  862:          V_second_deriv=V_second,"
+    },
+    {
+      "anchor_id": "prov_85",
+      "anchor_type": "data_provenance",
+      "name": "fiber_integrals_final",
+      "script_path": "session-23/s23c_fiber_integrals_final.py",
+      "session": "s23c",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-23/s23c_fiber_integrals_final.py",
+      "source_context_30_lines": "<name 'fiber_integrals_final' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: Session 23c Task 7 (FINAL): Fiber Integrals for alpha(tau) and beta(tau)\n    3: ========================================================================\n    4: \n    5: Computes the geometric fiber integrals entering the FR potential\n    6: V_FR(tau) = -alpha * R_K(tau) + beta * |omega_3|^2(tau)\n    7: \n    8: and the spectral action potential\n    9: V_spec(tau) = c_2 * R_K(tau) + c_4 * (500*R_K^2 - 32*|Ric|^2 - 28*K)(tau)\n   10: \n   11: Uses existing r20a Riemann tensor data (147/147 verified).\n   12: \n   13: Author: KK Theorist (Session 23c, respawned)\n   14: Date: 2026-02-20\n   15: \"\"\"\n   16: \n   17: import numpy as np\n   18: from scipy.optimize import brentq\n   19: \n   20: # =====================================================================\n   21: # LOAD DATA\n   22: # =====================================================================\n   23: base = \"C:/sandbox/Ainulindale Exflation/computations\"\n   24: d = np.load(f\"{base}/r20a_riemann_tensor.npz\")\n   25: \n   26: tau_data = d['tau']         # 21 points, 0 to 2\n   27: R_K_data = d['R_scalar']    # scalar curvature\n   28: Ric_ab = d['Ric']           # Ricci tensor\n   29: K_data = d['K']             # Kretschner scalar\n   30: "
+    },
+    {
+      "anchor_id": "prov_86",
+      "anchor_type": "data_provenance",
+      "name": "moment_mapping",
+      "script_path": "session-23/s23c_moment_mapping.py",
+      "session": "s23c",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-23/s23c_moment_mapping.py",
+      "source_context_30_lines": "<name 'moment_mapping' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: Session 23c: 12D -> 4D Moment Mapping Analysis\n    3: ================================================\n    4: \n    5: Critical question (from baptista's CCM 2007 analysis):\n    6: Does the KK reduction from 12D spectral action to 4D effective action\n    7: map the 12D moments (f_4, f_6, f_8, f_10, f_12) to 4D moments\n    8: (f_0, f_2, f_4) in a way that constrains f_4^{12D}/(f_8^{12D} Lambda^4)?\n    9: \n   10: This determines whether beta/alpha is a genuine free parameter or\n   11: is fixed by SM couplings.\n   12: \n   13: Author: KK Theorist (Session 23c)\n   14: Date: 2026-02-20\n   15: \"\"\"\n   16: \n   17: import numpy as np\n   18: \n   19: print(\"=\" * 70)\n   20: print(\"12D -> 4D MOMENT MAPPING ANALYSIS\")\n   21: print(\"=\" * 70)\n   22: print()\n   23: \n   24: # ======================================================================\n   25: # THE SPECTRAL ACTION IN d DIMENSIONS\n   26: # ======================================================================\n   27: \n   28: print(\"THE SPECTRAL ACTION IN d DIMENSIONS\")\n   29: print(\"=\" * 50)\n   30: print()"
+    },
+    {
+      "anchor_id": "prov_87",
+      "anchor_type": "data_provenance",
+      "name": "scenario_c_closure",
+      "script_path": "session-23/s23c_scenario_c_closure.py",
+      "session": "s23c",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-23/s23c_scenario_c_closure.py",
+      "source_context_30_lines": "<name 'scenario_c_closure' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: Session 23c: Scenario C Closure — Verify |omega_3|^2 lives in a_4, not a_2\n    3: ==========================================================================\n    4: \n    5: Baptista's structural argument:\n    6: 1. The submersion formula R_P = R_M + R_K - |F|^2 - |S'|^2 + ... is COMPLETE\n    7: 2. |omega_3|^2 does NOT appear in R_P (only in curvature-squared invariants)\n    8: 3. Therefore |omega_3|^2 MUST enter through the a_4 Gilkey coefficient\n    9: \n   10: This script verifies: |omega_3|^2 is a component of K = R_{abcd}R^{abcd}\n   11: (the Kretschner scalar), NOT of R_K (the Ricci scalar). Specifically:\n   12:   |omega_3|^2 = f_{abc} f^{abc} where f_{abc} = structure constants\n   13:   These enter the Riemann tensor but NOT the Ricci tensor (after trace).\n   14: \n   15: Author: KK Theorist (Session 23c)\n   16: Date: 2026-02-20\n   17: \"\"\"\n   18: \n   19: import numpy as np\n   20: \n   21: base = \"C:/sandbox/Ainulindale Exflation/computations\"\n   22: d = np.load(f\"{base}/r20a_riemann_tensor.npz\")\n   23: \n   24: tau_data = d['tau']\n   25: R_K_data = d['R_scalar']\n   26: K_data = d['K']\n   27: Ric_data = d['Ric']\n   28: \n   29: n_tau = len(tau_data)\n   30: Ric_sq_data = np.array([np.sum(Ric_data[i]**2) for i in range(n_tau)])"
+    },
+    {
+      "anchor_id": "prov_88",
+      "anchor_type": "data_provenance",
+      "name": "berry",
+      "script_path": "session-24/s24a_berry.py",
+      "session": "s24a",
+      "inputs": "",
+      "outputs": "session-24/s24a_berry.npz, session-24/s24a_berry.png",
+      "source_file": "computations/session-24/s24a_berry.py",
+      "source_context_30_lines": "   81: # Overall peak across all states\n   82: for t_idx in range(n_tau):\n   83:     peak_state = np.argmax(B_all[t_idx])\n   84:     print(f\"  tau={tau_values[t_idx]:.2f}: max B over all states = {B_all[t_idx].max():.6f} at state {peak_state}\")\n   85: \n   86: # =====================================================================\n   87: # SAVE\n   88: # =====================================================================\n   89: np.savez(f\"{base}/s24a_berry.npz\",\n   90:          tau=tau_values,\n   91:          B_gap_edge=B_gap_edge,\n   92:          B_all=B_all)\n   93: print(f\"\\nSaved: {base}/s24a_berry.npz\")\n   94: \n   95: # =====================================================================\n   96: # PLOT\n   97: # ====================================================================="
+    },
+    {
+      "anchor_id": "prov_89",
+      "anchor_type": "data_provenance",
+      "name": "eigenvalue_ratios",
+      "script_path": "session-24/s24a_eigenvalue_ratios.py",
+      "session": "s24a",
+      "inputs": "",
+      "outputs": "session-24/s24a_eigenvalue_ratios.npz, session-24/s24a_eigenvalue_ratios.png",
+      "source_file": "computations/session-24/s24a_eigenvalue_ratios.py",
+      "source_context_30_lines": "   36:   canonical_constants.py. NO HARDCODES.\n   37: \n   38: Input pins (SHA-256, 64-char)\n   39: -----------------------------\n   40: - s23a_kosmann_singlet.npz:\n   41:     ef547e583cf73e91b3f0d26e1ba14ee74c28d3718ee08dde12e0f17ad2775214\n   42: - canonical_constants.py:\n   43:     68b50cd325d2cc8c63b775da3b6b92f538da582bee44c5d906c81259f24dd12f\n   44: - original s24a_eigenvalue_ratios.py (computations/_shared):\n   45:     64240ef8ad9c37122dfa650068486e364de1c6c57cf8cce1accc9ee1a585c85d\n   46: \n   47: L_max pin\n   48: ---------\n   49: L_max inherits from s23a upstream: 16 = dim(singlet sector) at\n   50: L_max = 3 per S52 singlet-projection lineage. Fixed by input; not a\n   51: free parameter at this stage.\n   52: \"\"\""
+    },
+    {
+      "anchor_id": "prov_90",
+      "anchor_type": "data_provenance",
+      "name": "eigenvalue_ratios_legacy",
+      "script_path": "session-24/s24a_eigenvalue_ratios_legacy.py",
+      "session": "s24a",
+      "inputs": "",
+      "outputs": "session-24/s24a_eigenvalue_ratios_legacy.npz, session-24/s24a_eigenvalue_ratios_legacy.png",
+      "source_file": "computations/session-24/s24a_eigenvalue_ratios_legacy.py",
+      "source_context_30_lines": "<name 'eigenvalue_ratios_legacy' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: Session 24a Step 6: Eigenvalue Ratio Map\n    3: ==========================================\n    4: \n    5: r_n(tau) = |lambda_{n+1}| / |lambda_n| for n = 1,...,15\n    6: Mark phi_paasch = 1.53158 crossings (within 0.1%)\n    7: \n    8: Data source: s23a_kosmann_singlet.npz — 16 eigenvalues in (0,0) singlet at 9 tau\n    9: \"\"\"\n   10: \n   11: import numpy as np\n   12: import matplotlib\n   13: matplotlib.use('Agg')\n   14: import matplotlib.pyplot as plt\n   15: \n   16: # =====================================================================\n   17: # LOAD DATA\n   18: # =====================================================================\n   19: base = \"C:/sandbox/Ainulindale Exflation/computations\"\n   20: d = np.load(f\"{base}/s23a_kosmann_singlet.npz\")\n   21: \n   22: tau_values = d['tau_values']  # shape (9,)\n   23: n_tau = len(tau_values)\n   24: \n   25: print(\"=\" * 60)\n   26: print(\"STEP 6: Eigenvalue Ratio Map\")\n   27: print(\"=\" * 60)\n   28: print(f\"tau values: {tau_values}\")\n   29: \n   30: phi_paasch = 1.53158"
+    }
+  ]
+}

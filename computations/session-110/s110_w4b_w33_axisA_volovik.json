@@ -1,0 +1,63 @@
+{
+  "gate": "S110-CF-W33-THEOREM",
+  "theorem": "VII.CE — dq/da Two-q-Distinctness Theorem (inv-12 W3-3, sharpens S95-W4-4)",
+  "stage": "Stage-2 cross-axis INDEPENDENT verify (joint-theorem-promotion.md)",
+  "axis": "Axis-A (relic-occupation / substrate)",
+  "reviewer": "volovik-superfluid-universe-theorist",
+  "reviewer_role": "NON-author; original author (transit-dynamics-theorist) excluded per original-author-exclusion clause",
+  "no_workshop_context": true,
+  "sources_read": [
+    "sessions/permanent-results-registry.md §VII.CE (Stage-1 candidate entry ONLY)",
+    "computations/investigation-12/inv12_w3_3_back_reaction_closure_hsq.npz",
+    "agent memory (volovik-superfluid-universe-theorist)"
+  ],
+  "sources_NOT_read": [
+    "inv-12 workshop/digest transcript (independence)",
+    "s110_w4b_w33_axisB_einstein.json (other reviewer output; independence)"
+  ],
+  "method": "First-principles re-derivation via Sage MCP (perfect-square dq/da from two-barotropic-fluid Friedmann/Raychaudhuri) + numerical verification against the npz trajectories. No transcription of the registry value.",
+
+  "clauses": {
+    "a": {
+      "statement": "dq/da = -(n1-n2)^2 x (positive prefactor), Sage-exact perfect-square form (n1,n2 relevant band occupations).",
+      "verdict": "PASS",
+      "reasoning": "Re-derived from first principles. Flat FRW, units 8*pi*G/3=1, two non-interacting barotropic fluids rho_i = A_i a^{-3(1+w_i)}, q=(rho+3p)/(2 rho). Sage gives dq/da = -(9/2) A1 A2 a^{3w1+3w2-1} (w1-w2)^2 / (A2 a^{3w1}+A1 a^{3w2})^2 — manifestly -(positive prefactor)x(w1-w2)^2, an EXACT perfect square. With w2=-1 the square is (w1+1)^2=(w1-w2)^2. The perfect-square STRUCTURE and the negative overall sign are confirmed exactly.",
+      "caveat": "The npz stores numerical trajectories only — no n1,n2 occupation values and no symbolic dq/da field. The substitution (w1-w2) <-> (n1-n2) is a substrate-side (author/Axis-B) identification of the two-fluid EoS with band occupations; it is NOT anchorable from the npz alone. The load-bearing, Axis-A-verifiable content (perfect-square form + sign) PASSES; the n-vs-w dictionary is recorded as INFO-not-falsified."
+    },
+    "b": {
+      "statement": "Back-reaction closure: the diluting positive-energy relic's back-reaction on the emergent expansion is consistent.",
+      "verdict": "PASS",
+      "reasoning": "npz hsq ('H-squared') closure: H_eff_sq in [9.1173, 9.8968] all finite and strictly positive; rho_relic_tau in [3.206, 16.910] all finite and positive; q_eff all finite; max_excursion=0.0, frac_outside=0.0. The relic dilutes cleanly toward the constant-Lambda de Sitter attractor (q->-1). This RESOLVES the S95-W3-3 self-consistency divergence (sc_diverges=True there); the inv-12 hsq formulation closes finitely. rho_vac_over_obs=1.032 consistent with the DILUTION-CC tracking-vacuum picture (Volovik q-theory; CC-Monotonicity Theorem #19, no interior q-theory equilibrium)."
+    },
+    "JOINT": {
+      "statement": "Two-q-distinctness requires BOTH the relic-Friedmann sign (Axis-A: dq/da <= 0 monotone-non-increasing) AND the Connes-proxy rising reading (Axis-B). My side = relic-Friedmann monotonicity.",
+      "verdict": "PASS",
+      "reasoning": "My side verified: relic-Friedmann q_eff(a) is monotone NON-INCREASING — 0/499 increasing steps, max step = -9.81e-5 (all negative); q falls -0.854212 (a=2.053) -> -0.970000 (a=3.574). Matches the Sage derivation dq/da<=0 and the analytic q(a) limits (a->0+ q=+1/2 dust; a->inf q=-1 de Sitter). Internal-consistency cross-check of the data underpinning the JOINT: Connes-proxy q54 RISES monotonically -0.97323 -> +0.81438 (opposite monotonicity). Opposite monotonicity => the two q's cannot be the same observable. JOINT PASSES on my side; full JOINT requires Axis-B PASS on the rising-proxy reading (PASS-AND)."
+    }
+  },
+
+  "supporting_numerics": {
+    "q_eff_monotone_non_increasing": true,
+    "q_eff_increasing_steps_over_total": "0 / 499",
+    "q_eff_max_positive_step": -9.814e-05,
+    "q_eff_start_small_a": -0.8542115071411638,
+    "q_eff_end_large_a": -0.97,
+    "H_eff_sq_range": [9.11726, 9.8968],
+    "rho_relic_range": [3.20568, 16.9103],
+    "max_excursion": 0.0,
+    "frac_outside": 0.0,
+    "q54_proxy_rising_min_max": [-0.97323077, 0.81437689],
+    "q54_monotone_rising": true,
+    "band_span_reproduced_relic": 0.06504971508923381,
+    "rho_vac_over_obs": 1.032,
+    "sage_dq_da_factored": "-(9/2)*A1*A2*a^(3*w1+3*w2-1)*(w1-w2)^2/(A2*a^(3*w1)+A1*a^(3*w2))^2",
+    "sage_perfect_square_confirmed": true,
+    "sage_sign_definite_nonpositive": true,
+    "attractor_q_a_to_inf": -1,
+    "early_q_a_to_0_dust": 0.5
+  },
+
+  "substrate_input": "computations/investigation-12/inv12_w3_3_back_reaction_closure_hsq.npz (loaded by THIS Axis-A reviewer). Axis-A clauses (a),(b) re-derived independently via Sage MCP; numerical trajectories cross-checked against the npz. Note for substrate-input-orthogonality (joint-theorem-promotion.md): both reviewers may load this same npz; structural-output-type independence (independent Sage re-derivation on the relic-Friedmann side vs Connes-proxy side) is established, but a substrate-input-overlap caveat applies unless Axis-B's verdict loads a disjoint data object — orchestrator to record the overlap caveat if so.",
+
+  "overall_axisA_verdict": "PASS (clauses a, b, and the Axis-A side of JOINT all PASS; clause-a perfect-square form + sign confirmed Sage-exact from first principles; back-reaction closes finitely; relic-Friedmann q monotone non-increasing). One honest caveat: the n-occupation <-> w-EoS dictionary in clause (a) is author/Axis-B-side and not anchorable from the npz; recorded as INFO-not-falsified, does not block the Axis-A PASS on the load-bearing structural content."
+}

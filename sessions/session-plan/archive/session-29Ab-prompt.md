@@ -5,12 +5,12 @@
 **Depends on**: Session 29Aa (KC-3 PASS required, entropy balance PASS required, derived drive rate from 29a-2)
 **Prerequisite**: 29Aa must complete with KC-3 PASS AND entropy PASS. If either fires a hard close (K-29a or K-29b), this sub-session does not run.
 **Input data**:
-- `tier0-computation/s29a_derived_drive_rate.npz` (E_total range, d(tau)/dt profile) — FROM 29Aa
-- `tier0-computation/s29a_inter_sector_coupling.npz` (J_perp / Delta_BCS) — FROM 29Aa
-- `tier0-computation/s28a_spectral_action_comparison.npz` (I_E(tau) for D_K and D_can, V_eff)
-- `tier0-computation/s28b_self_consistent_tau_T.npz` (F_total(tau, mu) landscape)
-- `tier0-computation/s28b_hessian.npz` (Hessian eigenvalues at minima)
-- `tier0-computation/s28c_bcs_van_hove.npz` (Van Hove BCS gap Delta(tau))
+- `computations/s29a_derived_drive_rate.npz` (E_total range, d(tau)/dt profile) — FROM 29Aa
+- `computations/s29a_inter_sector_coupling.npz` (J_perp / Delta_BCS) — FROM 29Aa
+- `computations/s28a_spectral_action_comparison.npz` (I_E(tau) for D_K and D_can, V_eff)
+- `computations/s28b_self_consistent_tau_T.npz` (F_total(tau, mu) landscape)
+- `computations/s28b_hessian.npz` (Hessian eigenvalues at minima)
+- `computations/s28c_bcs_van_hove.npz` (Van Hove BCS gap Delta(tau))
 
 ## Motivation
 
@@ -32,12 +32,12 @@ The three computations here answer three questions:
 Every result classified against its pre-registered gate BEFORE any interpretation. Report the number first. Classify second. Interpret third.
 
 **Python environment**: `"phonon-exflation-sim/.venv312/Scripts/python.exe"`
-**Output directory**: `tier0-computation/`
+**Output directory**: `computations/`
 **Script prefix**: `s29b_`
 
 ## 29Aa GATE CHECK (MANDATORY FIRST ACTION)
 
-Before any computation, read `tier0-computation/s29a_gate_verdicts.txt` and verify:
+Before any computation, read `computations/s29a_gate_verdicts.txt` and verify:
 1. KC-3 verdict = PASS (K-29a did not fire)
 2. Entropy balance = PASS (K-29b did not fire)
 
@@ -66,7 +66,7 @@ Session ends ONLY when user approves shutdown explicitly. Idle agents are not fi
 
 | Agent | Additional Reading |
 |:------|:-------------------|
-| phonon-exflation-sim | `tier0-computation/s28b_self_consistent_tau_T.py` (F_total infrastructure), `tier0-computation/s28c_bcs_van_hove.py` (BCS gap solver) |
+| phonon-exflation-sim | `computations/s28b_self_consistent_tau_T.py` (F_total infrastructure), `computations/s28c_bcs_van_hove.py` (BCS gap solver) |
 | einstein-theorist | `researchers/Einstein/index.md` — Friedmann equation context. Baptista Paper 15 eq 1.2 (KK ansatz), G_{tau,tau} = 5 derivation |
 | landau-condensed-matter-theorist | `researchers/Landau/index.md` — BCS fluctuation theory, Ginzburg criterion |
 | coordinator | This prompt Section IV (pre-registered Constraint Gates). Memorize ALL thresholds before first computation completes |
@@ -265,16 +265,16 @@ Results from 29Ab that feed into 29Ac:
 
 | File | Computation | Producer |
 |:-----|:-----------|:---------|
-| `tier0-computation/s29b_free_energy_comparison.py` | 29b-1 | phonon-sim |
-| `tier0-computation/s29b_free_energy_comparison.npz` | 29b-1 data | phonon-sim |
-| `tier0-computation/s29b_free_energy_comparison.png` | 29b-1 plot | phonon-sim |
-| `tier0-computation/s29b_modulus_eom.py` | 29b-2 | phonon-sim |
-| `tier0-computation/s29b_modulus_eom.npz` | 29b-2 data | phonon-sim |
-| `tier0-computation/s29b_modulus_eom.png` | 29b-2 plot | phonon-sim |
-| `tier0-computation/s29b_gaussian_correction.py` | 29b-3 | landau |
-| `tier0-computation/s29b_gaussian_correction.npz` | 29b-3 data | landau |
-| `tier0-computation/s29b_gaussian_correction.txt` | 29b-3 verdict | landau |
-| `tier0-computation/s29b_gate_verdicts.txt` | All gate verdicts | coordinator |
+| `computations/s29b_free_energy_comparison.py` | 29b-1 | phonon-sim |
+| `computations/s29b_free_energy_comparison.npz` | 29b-1 data | phonon-sim |
+| `computations/s29b_free_energy_comparison.png` | 29b-1 plot | phonon-sim |
+| `computations/s29b_modulus_eom.py` | 29b-2 | phonon-sim |
+| `computations/s29b_modulus_eom.npz` | 29b-2 data | phonon-sim |
+| `computations/s29b_modulus_eom.png` | 29b-2 plot | phonon-sim |
+| `computations/s29b_gaussian_correction.py` | 29b-3 | landau |
+| `computations/s29b_gaussian_correction.npz` | 29b-3 data | landau |
+| `computations/s29b_gaussian_correction.txt` | 29b-3 verdict | landau |
+| `computations/s29b_gate_verdicts.txt` | All gate verdicts | coordinator |
 | `sessions/session-29/session-29Ab-synthesis.md` | Synthesis | coordinator |
 
 ---

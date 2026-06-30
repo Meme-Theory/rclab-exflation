@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 23,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_221",
+      "anchor_type": "data_provenance",
+      "name": "sfull_tau_stabilization",
+      "script_path": "session-36/s36_sfull_tau_stabilization.py",
+      "session": "s36",
+      "inputs": "",
+      "outputs": "session-36/s36_sfull_tau_stabilization.npz, session-36/s36_sfull_tau_stabilization.png",
+      "source_file": "computations/session-36/s36_sfull_tau_stabilization.py",
+      "source_context_30_lines": "  613: ax.grid(True, alpha=0.3)\n  614: \n  615: plt.suptitle(f'TAU-STAB-36: Multi-Sector S_full Stabilization -- {verdict}',\n  616:              fontsize=15, fontweight='bold',\n  617:              color='red' if verdict == 'FAIL' else 'green')\n  618: plt.tight_layout()\n  619: \n  620: outpath_png = os.path.join(os.path.dirname(os.path.abspath(__file__)),\n  621:                            's36_sfull_tau_stabilization.png')\n  622: plt.savefig(outpath_png, dpi=150, bbox_inches='tight')\n  623: print(f\"\\nPlot saved: {outpath_png}\")\n  624: \n  625: # ===========================================================================\n  626: # 11. SAVE DATA\n  627: # ===========================================================================\n  628: \n  629: save_data = {"
+    },
+    {
+      "anchor_id": "prov_222",
+      "anchor_type": "data_provenance",
+      "name": "species_scale",
+      "script_path": "session-36/s36_species_scale.py",
+      "session": "s36",
+      "inputs": "",
+      "outputs": "session-36/s36_species_scale.npz, session-36/s36_species_scale.png",
+      "source_file": "computations/session-36/s36_species_scale.py",
+      "source_context_30_lines": "    1: \"\"\"\n    2: s36_species_scale.py — Species Scale Computation for W6 Resolution\n    3: =====================================================================\n    4: \n    5: Computes Lambda_species(tau) from the KK spectrum of D_K on Jensen-deformed SU(3).\n    6: \n    7: The species scale (Swampland Distance Conjecture, van de Heisteeg et al. 2022):\n    8:     Lambda_species = M_P / N_species^{1/(d-2)}\n    9: \n   10: where N_species counts the number of KK modes below the cutoff."
+    },
+    {
+      "anchor_id": "prov_223",
+      "anchor_type": "data_provenance",
+      "name": "spectral_action_gauge",
+      "script_path": "session-36/s36_spectral_action_gauge.py",
+      "session": "s36",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-36/s36_spectral_action_gauge.py",
+      "source_context_30_lines": "<name 'spectral_action_gauge' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: Session 36: Spectral Action Gauge Coupling on SU(3)\n    4: \n    5: The spectral action Tr(f(D_K^2/Lambda^2)) on a compact Lie group K produces\n    6: gauge kinetic terms via the a_4 Seeley-DeWitt coefficient. The coefficient\n    7: of the gauge field strength F_a determines the inverse coupling g_a^{-2}.\n    8: \n    9: For the Dirac operator D_K on (SU(3), g_Jensen(s)), the a_4 coefficient is:\n   10: \n   11:   a_4 = (4*pi)^{-d/2} * integral_K [\n   12:     (1/12) Tr(Omega_{mu nu} Omega^{mu nu})  <-- gauge kinetic\n   13:     + (1/2) Tr(E)                           <-- endomorphism\n   14:     + ...scalar curvature terms...\n   15:   ] vol_K\n   16: \n   17: where Omega_{mu nu} is the curvature of the spin connection, and the\n   18: trace is over the spinor bundle.\n   19: \n   20: KEY QUESTION: Does the spectral action on K=SU(3) give a gauge coupling\n   21: ratio DIFFERENT from both the KK eigenvalue (sqrt(3)) and the NCG trace (sqrt(3/5))?\n   22: \n   23: APPROACH: Compute the gauge kinetic coefficient from the spin connection\n   24: curvature on SU(3) with Jensen metric. The spin connection Omega_ab\n   25: depends on the metric, so the Jensen deformation modifies the gauge\n   26: kinetic normalization.\n   27: \n   28: On a Lie group with left-invariant metric g, the spin connection is:\n   29:   omega^a_b(e_c) = (1/2)(C^a_{bc} + g^{ad}g_{ce}C^e_{db} - g^{ad}g_{be}C^e_{dc})\n   30: where C^a_{bc} are the structure constants."
+    },
+    {
+      "anchor_id": "prov_224",
+      "anchor_type": "data_provenance",
+      "name": "tau_dynamics",
+      "script_path": "session-36/s36_tau_dynamics.py",
+      "session": "s36",
+      "inputs": "",
+      "outputs": "session-36/s36_tau_dynamics.npz, session-36/s36_tau_dynamics.png",
+      "source_file": "computations/session-36/s36_tau_dynamics.py",
+      "source_context_30_lines": "  550:             info = trajectories[key]\n  551:             sk = key.replace('=', '').replace('.', 'p')\n  552:             save_dict[f'traj_{sk}_t'] = info['t'][::10]  # subsample for storage\n  553:             save_dict[f'traj_{sk}_tau'] = info['tau'][::10]\n  554:             save_dict[f'traj_{sk}_v'] = info['v'][::10]\n  555:             save_dict[f'traj_{sk}_t_dwell'] = np.float64(info['t_dwell'])\n  556:             save_dict[f'traj_{sk}_v_fold'] = np.float64(info['v_fold'])\n  557: \n  558:     np.savez(os.path.join(SCRIPT_DIR, 's36_tau_dynamics.npz'), **save_dict)\n  559:     print(f\"  Saved: s36_tau_dynamics.npz\")\n  560: \n  561:     # ================================================================\n  562:     #  PLOT\n  563:     # ================================================================\n  564:     print(f\"\\nGenerating plot...\")\n  565: \n  566:     fig = plt.figure(figsize=(16, 16))"
+    },
+    {
+      "anchor_id": "prov_225",
+      "anchor_type": "data_provenance",
+      "name": "cutoff_crosscheck",
+      "script_path": "session-37/s37_cutoff_crosscheck.py",
+      "session": "s37",
+      "inputs": "",
+      "outputs": "session-37/s37_cutoff_crosscheck.npz",
+      "source_file": "computations/session-37/s37_cutoff_crosscheck.py",
+      "source_context_30_lines": "    8:   - Monotonically INCREASING for all increasing f\n    9:   - Has NO minimum at ANY (f, Lambda)\n   10:   - All 10 sectors individually monotone\n   11: \n   12: This script verifies from scratch using the RAW eigenvalue data.\n   13: Six checks, each independent.\n   14: \n   15: Input: s36_sfull_tau_stabilization.npz, s27_multisector_bcs.npz\n   16: Output: s37_cutoff_crosscheck.npz\n   17: \"\"\"\n   18: \n   19: import numpy as np\n   20: from pathlib import Path\n   21: import matplotlib\n   22: matplotlib.use('Agg')\n   23: import matplotlib.pyplot as plt\n   24: "
+    },
+    {
+      "anchor_id": "prov_226",
+      "anchor_type": "data_provenance",
+      "name": "cutoff_sa",
+      "script_path": "session-37/s37_cutoff_sa.py",
+      "session": "s37",
+      "inputs": "",
+      "outputs": "session-37/s37_cutoff_sa.npz, session-37/s37_cutoff_sa.png",
+      "source_file": "computations/session-37/s37_cutoff_sa.py",
+      "source_context_30_lines": "   10:   PASS:         S_f(tau) has local minimum at tau_min in [0.15, 0.25] for >=1 cutoff\n   11:                 in a CONNECTED region of (f, Lambda) space, with sufficient depth\n   12:   FAIL:         S_f(tau) monotonic for ALL (f, Lambda) combinations\n   13:   INCONCLUSIVE: Minimum exists but too shallow (dwell < tau_BCS by >10x)\n   14: \n   15: Also extracts Seeley-DeWitt coefficients a_0(tau), a_2(tau), a_4(tau) from heat kernel fits.\n   16: \n   17: Input: s36_sfull_tau_stabilization.npz, s27_multisector_bcs.npz\n   18: Output: s37_cutoff_sa.npz, s37_cutoff_sa.png\n   19: \"\"\"\n   20: \n   21: import numpy as np\n   22: from pathlib import Path\n   23: import matplotlib\n   24: matplotlib.use('Agg')\n   25: import matplotlib.pyplot as plt\n   26: from scipy.optimize import minimize_scalar"
+    },
+    {
+      "anchor_id": "prov_227",
+      "anchor_type": "data_provenance",
+      "name": "instanton_action",
+      "script_path": "session-37/s37_instanton_action.py",
+      "session": "s37",
+      "inputs": "",
+      "outputs": "session-37/s37_instanton_action.npz",
+      "source_file": "computations/session-37/s37_instanton_action.py",
+      "source_context_30_lines": "    1: \"\"\"\n    2: S37-INSTANTON-ACTION:  re-run of s37_instanton_action.py\n    3: =================================================================\n    4: \n    5: Original: computations/session-37/s37_instanton_action.py (SHA-256 head 16: 0c529edff6b2a374)\n    6: \n    7: Purpose\n    8: -------\n    9: Reproduce the S37 instanton action computation under S81 canonical discipline:\n   10:   - Framework constants imported from canonical_constants.py"
+    },
+    {
+      "anchor_id": "prov_228",
+      "anchor_type": "data_provenance",
+      "name": "instanton_action_legacy",
+      "script_path": "session-37/s37_instanton_action_legacy.py",
+      "session": "s37",
+      "inputs": "",
+      "outputs": "session-37/s37_instanton_action_legacy.npz, session-37/s37_instanton_action_legacy.png",
+      "source_file": "computations/session-37/s37_instanton_action_legacy.py",
+      "source_context_30_lines": "<name 'instanton_action_legacy' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: Session 37: F.1 Instanton Action from ED Spectrum (ZERO-COST)\n    4: =============================================================\n    5: \n    6: GATE: INST-37a\n    7:   S_inst < 0.5  -> Dense instanton gas, Z_2 restored, virtual particle regime\n    8:   0.5 < S_inst < 5 -> Crossover regime\n    9:   S_inst > 5    -> Dilute instantons, standard mean-field BCS\n   10: \n   11: CONTEXT:\n   12:   The BCS condensate on the B2 sector breaks Z_2 (sign of Delta).\n   13:   GL-CUBIC-36 confirmed: second-order transition, Z_2 universality class.\n   14:   No cubic term (U(1)_7 forbids it). The GL potential is:\n   15: \n   16:     F_GL[Delta] = a |Delta|^2 + b |Delta|^4\n   17: \n   18:   with a < 0 (below T_c / above the Thouless threshold) and b > 0.\n   19: \n   20:   The instanton connects the false vacuum (Delta=0) to the true vacuum\n   21:   (Delta=Delta_0) through a kink solution. The action determines the\n   22:   tunneling rate: Gamma ~ exp(-S_inst).\n   23: \n   24: PHYSICAL PARAMETERS (from Session 35-36):\n   25:   M_max = 1.674 (8x8 authoritative, MMAX-AUTH-36)\n   26:   M_max(B2-only) = 1.351 (conservative)\n   27:   rho_smooth = 14.02 per B2 mode (van Hove DOS)\n   28:   E_cond = -0.137 (8-mode ED, ED-CONV-36)\n   29:   v_F = 0.01174 (Fermi velocity at physical fold)\n   30:   N_B2 = 4 (B2 flat-band modes)  # (local)"
+    },
+    {
+      "anchor_id": "prov_229",
+      "anchor_type": "data_provenance",
+      "name": "instanton_mc",
+      "script_path": "session-37/s37_instanton_mc.py",
+      "session": "s37",
+      "inputs": "",
+      "outputs": "session-37/s37_instanton_mc.npz, session-37/s37_instanton_mc.png",
+      "source_file": "computations/session-37/s37_instanton_mc.py",
+      "source_context_30_lines": "   71:     with open(path, 'rb') as f:\n   72:         for chunk in iter(lambda: f.read(65536), b''):\n   73:             h.update(chunk)\n   74:     return h.hexdigest()[:n]\n   75: \n   76: input_pins = {\n   77:     'canonical_constants.py': sha256_head(os.path.join(SCRIPT_DIR, 'canonical_constants.py')),\n   78:     's37_instanton_action.npz': sha256_head(os.path.join(ARCHIVE_DIR, 's37_instanton_action.npz')),\n   79:     's37_instanton_mc.py(original)': sha256_head(os.path.join(ARCHIVE_DIR, 's37_instanton_mc.py')),\n   80: }\n   81: \n   82: print(\"=\" * 78)\n   83: print(\"F.4 INSTANTON DENSITY MONTE CARLO (S81 T3 RE-RUN)\")\n   84: print(\"=\" * 78)\n   85: print(\"INPUT PINS (SHA-256 head-16):\")\n   86: for k, v in input_pins.items():\n   87:     print(f\"  {k}: {v}\")"
+    },
+    {
+      "anchor_id": "prov_230",
+      "anchor_type": "data_provenance",
+      "name": "k7_g1",
+      "script_path": "session-37/s37_k7_g1.py",
+      "session": "s37",
+      "inputs": "",
+      "outputs": "session-37/s37_k7_g1.npz",
+      "source_file": "computations/session-37/s37_k7_g1.py",
+      "source_context_30_lines": "  638: \n  639: elapsed = time.time() - t0\n  640: print(f\"\\nTotal runtime: {elapsed:.1f}s\")\n  641: \n  642: # ======================================================================\n  643: #  SAVE DATA\n  644: # ======================================================================\n  645: \n  646: OUT_NPZ = os.path.join(SCRIPT_DIR, 's37_k7_g1.npz')\n  647: np.savez(OUT_NPZ,\n  648:     tau_fold=TAU_FOLD,\n  649:     tau_scan=TAU_SCAN,\n  650:     evals_10=evals_10,\n  651:     q7_all=q7_all,\n  652:     q7_G1=q7_G1,\n  653:     q7_G1_variance=var_q7,\n  654:     q7_G1_vs_tau=np.array(q7_G1_vs_tau),"
+    }
+  ]
+}

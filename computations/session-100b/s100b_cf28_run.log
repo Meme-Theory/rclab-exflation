@@ -1,0 +1,78 @@
+=== S100b-CF28-SIMPLE-POLE-PREFLIGHT — input SHA-256 pins ===
+  computations/_shared/canonical_constants.py: 35797b56c236a192...
+  computations/session-84/s84_spectrum_cache_L12_tau019.npz: 9e6d9cf7fd6a6949...
+  computations/_shared/dirac_spectrum.py: dadba674e950fad9...
+  computations/_shared/_analytic_zeta.py: 6383c87717c17040...
+  computations/_shared/_cm_1995_residue_formula.py: ee02f2711d061c8d...
+  downloads/research-sweep-s99/spectral-geometry-math/01_Lai-Teh_Dirac-Spectrum-Spectral-Action-SU3.pdf: b5502a2fa4e719eb...
+  audit_sha256:   031b62677392dfd1b2bac4094bc88e5e7e826736eab9887d7cab25ce85ce6156
+  content_sha256: 2a109f7a4bf96d64a576f06c67b84513d67c8d19ddb8300459ca6ddf10652a73
+  canonical echoes: tau_fold=0.19, Vol_SU3_Haar=1349.74, M_KK=7.429e+16
+  cross-algebra caveat: residue_s6_PS_Linf=9.393640e-04 is the SU(4)_PS rank-4 algebra pole — NOT comparable to SU(3) values here (declared, not compared)
+
+[route 1] building exact Faulhaber/Bernoulli reduction (J_max=40, diag to 50) ...
+  S_j(N) exact-poly-vs-direct verification PASS for j<=50; even-degree nonzero coefficients: 0 (odd-degree theorem HOLDS)
+  candidate pole locations: 42 distinct; max = 4 (no candidate poles at s_A > 4: OK)
+  half-integer candidate locations: 0 (odd-grade regularity structural iff 0)
+  genuine poles among scanned points: ['4', '2', '1'] (canonical S_d={0,2,4,6,8} predicts s_A in {4,3,2,1} + Gamma-poles)
+    s_A=4: m_p_cand=41 m_p_genuine=41 Res=1.791406779491e-01 |J50-J40|=6.238e-23
+    s_A=2: m_p_cand=2 m_p_genuine=2 Res=0.000000000000e+00 |J50-J40|=0.000e+00
+    s_A=1: m_p_cand=3 m_p_genuine=3 Res=0.000000000000e+00 |J50-J40|=0.000e+00
+
+[evaluator] Hurwitz-split continuation (N0=64) ...
+  EM-Hurwitz vs mpmath (real axis, w in [-13, 85]): max rel dev = 4.987e-15 (OK; target 1e-12, bounded by mpmath real-path accuracy at large w)
+  N0-split independence (s=3.7, -2.6): max |delta| = 3.789e-26
+  s_A=5.0: direct(N<=4000)=1.014490154728056e-01 evaluator=1.014490298778430e-01 |diff|=1.44e-08 tail_bound=3.29e-08 OK
+  s_A=6.0: direct(N<=4000)=2.532591898293449e-02 evaluator=2.532591898293557e-02 |diff|=1.08e-15 tail_bound=1.37e-15 OK
+  s_A=7.0: direct(N<=4000)=7.726807213020732e-03 evaluator=7.726807213020753e-03 |diff|=2.08e-17 tail_bound=7.62e-23 OK
+  j-term decay ratios at key points (expect ~0.25, must be <1): {2.5: 0.2741, 3.0: 0.2801, 3.5: 0.2397, 5.0: 0.2839, 6.0: 0.2926, 7.0: 0.3011} -> OK
+
+[route 2] contour Laurent extraction (R=0.1, N_quad=64, dps=50) ...
+  n=  0 s_A=  4.0 s_B=  8.0 [anchor] m_p=41 c_-2=+2.26e-53 c_-1=+1.79140677949059e-01 c_0=-8.731095e-02 dbl_ratio=1.26e-52 xroute=0.00e+00 (1.9s)
+  n=  1 s_A=  3.5 s_B=  7.0 [KEY   ] m_p= 0 c_-2=-1.65e-46 c_-1=-3.30456066262915e-46 c_0=-4.458560e-01 dbl_ratio=3.71e-46 xroute=nan (2.0s)
+  n=  2 s_A=  3.0 s_B=  6.0 [KEY   ] m_p= 0 c_-2=-1.91e-51 c_-1=+7.11769770882130e-50 c_0=-2.616620e-01 dbl_ratio=7.32e-51 xroute=nan (2.1s)
+  n=  3 s_A=  2.5 s_B=  5.0 [KEY   ] m_p= 0 c_-2=-1.80e-49 c_-1=-7.31423987939742e-49 c_0=-1.899610e-01 dbl_ratio=9.49e-49 xroute=nan (2.2s)
+  n=  4 s_A=  2.0 s_B=  4.0 [anchor] m_p= 2 c_-2=+1.92e-48 c_-1=-2.69277155460326e-47 c_0=-1.404428e-01 dbl_ratio=1.37e-47 xroute=nan (2.0s)
+  n=  5 s_A=  1.5 s_B=  3.0 [anchor] m_p= 0 c_-2=-1.89e-45 c_-1=+1.19069555687515e-44 c_0=-9.629259e-02 dbl_ratio=1.97e-44 xroute=nan (2.1s)
+  n=  6 s_A=  1.0 s_B=  2.0 [anchor] m_p= 3 c_-2=-4.70e-45 c_-1=+6.36910639359189e-44 c_0=-5.530727e-02 dbl_ratio=8.49e-44 xroute=nan (2.1s)
+  n=  7 s_A=  0.5 s_B=  1.0 [anchor] m_p= 0 c_-2=+2.99e-42 c_-1=-3.03418513741804e-42 c_0=-2.129150e-02 dbl_ratio=1.40e-40 xroute=nan (2.0s)
+  n=  8 s_A=  0.0 s_B=  0.0 [exotic] m_p= 0 c_-2=+3.27e-41 c_-1=-2.75268182653637e-40 c_0=-1.786303e-39 dbl_ratio=3.27e-11 xroute=nan (2.2s)
+  n= 10 s_A= -1.0 s_B= -2.0 [exotic] m_p= 0 c_-2=+8.84e-38 c_-1=-2.37179114004507e-36 c_0=-2.636809e-35 dbl_ratio=8.84e-08 xroute=nan (2.0s)
+  n= 12 s_A= -2.0 s_B= -4.0 [exotic] m_p= 0 c_-2=-6.35e-34 c_-1=-4.40614132564260e-34 c_0=-1.738275e-32 dbl_ratio=6.35e-04 xroute=nan (2.0s)
+  n= 14 s_A= -3.0 s_B= -6.0 [exotic] m_p= 0 c_-2=-1.38e-30 c_-1=+1.63427609367730e-29 c_0=+9.358933e-29 dbl_ratio=1.47e-02 xroute=nan (2.0s)
+  n=  - s_A=  5.0 s_B= 10.0 [KEY   ] m_p= 0 c_-2=+4.70e-55 c_-1=-3.91518268079911e-54 c_0=+1.014490e-01 dbl_ratio=4.63e-54 xroute=nan (2.0s)
+  n=  - s_A=  6.0 s_B= 12.0 [KEY   ] m_p= 0 c_-2=+3.26e-56 c_-1=+8.48289580839808e-55 c_0=+2.532592e-02 dbl_ratio=1.29e-54 xroute=nan (2.3s)
+  n=  - s_A=  7.0 s_B= 14.0 [KEY   ] m_p= 0 c_-2=-3.26e-56 c_-1=-3.09951962229930e-55 c_0=+7.726807e-03 dbl_ratio=4.22e-54 xroute=nan (2.2s)
+
+[Weyl anchor] Gamma(4)*Res_(s_A=4) = 1.074844067694351e+00 vs Weyl integral 1.074844067694351e+00: resid = 0.000e+00 (< 0.001: OK)
+  diagnostic: implied Vol (lambda_hat units) = 1675.19 vs Vol_SU3_Haar = 1349.74 (kappa-convention dependent, Chain-3 scale freedom — NOT gating)
+
+[heat trace] K(t) partial sums + no-log series overlay ...
+  effective grid 1267 (terms beyond mask < 1e-40 of K; pin L_huge=4000); max truncation tail (rel) = 4.07e-57 (< 1e-30: OK)
+  no-log series residual: max over t<=1e-2 = 2.62e-16 (O(t^4) expected; visual artifact in PNG)
+
+[prong B] s84 L12 cache + (4,4) reconstruction at tau_fold ...
+Ainulindale: Unknown command line argument 'Exflation\phonon-exflation-sim\.venv312\Lib\site-packages\_rocm_sdk_core\lib\llvm\bin\offload-arch.exe'.  Try: 'C:\sandbox\Ainulindale --help'
+  lineage cross-checks: (2,2) max|dlam| = 1.91e-14, (4,3) max|dlam| = 4.13e-14
+  (4,4) reconstructed: dim 125, block 2000x2000, 2000 states, hom_err=2.84e-15, |lam| in [2.4120, 3.7640]
+  per-sector state-count deficits: 0 (none — all 16*dim states present)
+  s_A=5.0: shell exp (double-power) -2.366 vs -3.0 [OUT]; (single-power s_B=10 family at exponent s) +1.708 vs +2.0 [OK]
+  s_A=6.0: shell exp (double-power) -4.028 vs -5.0 [OUT]; (single-power s_B=12 family at exponent s) +0.903 vs +1.0 [OK]
+  s_A=7.0: shell exp (double-power) -5.708 vs -7.0 [OUT]; (single-power s_B=14 family at exponent s) +0.093 vs +0.0 [OK]
+  L-stability s_A=5.0: shells-11+12 measured 2.284e+01 vs tail_est 1.842e+01 (ratio 1.24 <= 2: OK)
+  L-stability s_A=6.0: shells-11+12 measured 1.586e+00 vs tail_est 1.149e+00 (ratio 1.38 <= 2: OK)
+  Conv.-A tau_fold sums: zeta_A(5.0)=1.231568e+03, zeta_A(6.0)=9.357164e+02, zeta_A(7.0)=9.746831e+02
+  [regime diag] s_A=5.0: tau0-EXACT window slope -2.425 vs analytic -3.0 (dev +0.575); tau_fold dev +0.634 -> window-artifact (ideal spectrum misses band too)
+  [regime diag] s_A=6.0: tau0-EXACT window slope -4.041 vs analytic -5.0 (dev +0.959); tau_fold dev +0.972 -> window-artifact (ideal spectrum misses band too)
+  [regime diag] s_A=7.0: tau0-EXACT window slope -5.658 vs analytic -7.0 (dev +1.342); tau_fold dev +1.292 -> window-artifact (ideal spectrum misses band too)
+  [regime diag] top-end local slopes (L=11->12): s_A=5.0: -2.522, s_A=6.0: -4.255, s_A=7.0: -5.999
+
+[npz] s100b_cf28_simple_pole_preflight.npz written
+[png] s100b_cf28_simple_pole_preflight.png written
+
+(value='log_free_567_both_conv=True;c2ratio_max=3.71e-46;a2pole_sA3_res=0.0000000000e+00;xroute_max=0.00e+00;weyl_resid=0.00e+00;oddgrades_regular=True;exotic_locus_logfree=True;shells_ok=False;Lstab_ok=True;expclause_regime=preasymptotic-window-artifact', scheme=Mellin-symbolic-Faulhaber+contour-Laurent-numeric, convention=poleconv-DUAL-declared-SU3-algebra+scale-invariant-pole-order, L_max=r1-exact|HT4000|prongB-12)
+<<<EMIT_VERDICT_PAYLOAD>>>
+{"audit_sha256":"031b62677392dfd1b2bac4094bc88e5e7e826736eab9887d7cab25ce85ce6156","content_sha256":"2a109f7a4bf96d64a576f06c67b84513d67c8d19ddb8300459ca6ddf10652a73","convention":"poleconv-DUAL-declared-SU3-algebra+scale-invariant-pole-order","extra_rows":["# regulator_pin=a_n^{Mellin} (== a_n^{zeta} at simple poles via Gamma-cancellation, FI); poleconv-DUAL-declared: Conv.A double-power s_A=(8-n)/2 / Conv.B single-power s_B=8-n, numerals {5,6,7} scanned under BOTH; algebra=SU(3) (A_K,H_K,D_K), NOT SU(4)_PS # S100b-CF28-SIMPLE-POLE-PREFLIGHT pole-labeling row","# Class-8.7 witness: coincident-root loci pre-declared s_A in {0,-1,-2,-3} (n in {8,10,12,14}); zeta_A REGULAR there (Pochhammer annihilation) => Gamma*zeta_A simple; per-pole m_p table + Faulhaber->zeta_R corridor pin in s100b_cf28_simple_pole_preflight.npz[class87_witness]; _cm_1995_residue_formula.py FULL-physical template; _analytic_zeta.py off-pole-Hankel INFO corridor # S100b-CF28-SIMPLE-POLE-PREFLIGHT Class-8.7 witness pointer"],"gate_id":"S100b-CF28-SIMPLE-POLE-PREFLIGHT","l_max":"r1-exact|HT4000|prongB-12","magnitude_verdict":"FAIL","regime_verdict":"MARGINAL","schema_version":"S84+","scheme":"Mellin-symbolic-Faulhaber+contour-Laurent-numeric","session":"100b","sign_verdict":"PASS","value":"log_free_567_both_conv=True;c2ratio_max=3.71e-46;a2pole_sA3_res=0.0000000000e+00;xroute_max=0.00e+00;weyl_resid=0.00e+00;oddgrades_regular=True;exotic_locus_logfree=True;shells_ok=False;Lstab_ok=True;expclause_regime=preasymptotic-window-artifact","verdict":"INFO"}
+<<<END_EMIT_VERDICT_PAYLOAD>>>
+
+=== S100b-CF28-SIMPLE-POLE-PREFLIGHT: INFO (wall 35.6s) ===

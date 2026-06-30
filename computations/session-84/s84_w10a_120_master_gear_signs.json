@@ -1,0 +1,75 @@
+{
+  "gate_id": "S84-GAMMA5-MASTER-SIGN-GEAR",
+  "session": "S84",
+  "verdict": "INFO",
+  "value": "4/5",
+  "n_agreed_over_5": 4,
+  "n_dissent": 1,
+  "n_dissent_with_known_reason": 1,
+  "n_dissent_unexplained": 0,
+  "convexity_lever_value": 317862.84898132,
+  "convexity_lever_sign": 1,
+  "claims": [
+    {
+      "id": 1,
+      "name": "sign(n_T) > 0",
+      "predicted_sign": 1,
+      "computed_sign": 1,
+      "agreement_bool": true,
+      "computed_value": 0.4676036871525688,
+      "derivation_chain_text": "Claim 1: sign(n_T) > 0 (re-verification of G50 PASS).\n  Defn: tensor tilt n_T = d ln P_T / d ln k.\n  At fold (transit-epoch dynamics): n_T = (positive Bogoliubov\n    weighting) * f(d2S/dtau^2), where f has positive coefficient.\n  Substitution: n_T propto (d2S/dtau^2) * (positive factors).\n  Simplified: sign(n_T) = sign(d2S/dtau^2).\n  Direction: d2S/dtau^2 = +317,863 > 0  =>  n_T > 0.\n  Predicted: +;  Computed: G50 NPZ n_T_primary = +0.4676.\n"
+    },
+    {
+      "id": 2,
+      "name": "sign(F_amp - 1) > 0",
+      "predicted_sign": 1,
+      "computed_sign": 1,
+      "agreement_bool": true,
+      "computed_value": 1.0257840776146343,
+      "derivation_chain_text": "Claim 2: sign(F_amp - 1) > 0.\n  Defn: F_amp := |v(k)|^2 / |v_BD(k)|^2 evaluated at the pivot,\n    i.e. amplification of mode power above Bunch-Davies.\n  At fold (linearized): F_amp = 1 + I where\n    I = integral_{tau_in}^{tau_fold} (d2S/dtau^2)*K(tau,k) dtau\n    with K(tau,k) > 0 (slow-roll-extended squeezing kernel).\n  Substitution: F_amp - 1 = integral( + * + ) > 0.\n  Simplified: sign(F_amp - 1) = sign(d2S/dtau^2).\n  Direction: d2S/dtau^2 > 0  =>  F_amp > 1.\n  Predicted: +;  Computed: G7 NPZ F_amp_lin_numerical = 1.0258 > 1.\n"
+    },
+    {
+      "id": 3,
+      "name": "sign(dc_sub/dtau)",
+      "predicted_sign": 1,
+      "computed_sign": 1,
+      "agreement_bool": true,
+      "computed_value": 1.6948853388241218,
+      "derivation_chain_text": "Claim 3: sign(dc_sub/dtau) -- VERIFY runtime.\n  Defn: c_sub(tau) := substrate scalar speed (BLV in S64-S65\n    convention, evaluated at tau).\n  At convex minimum (locally) in tau: dc_sub/dtau = alpha *\n    f(d2S/dtau^2) with alpha = +1 in the standard sign-convention\n    (c_sub increases as the modulus rolls past the fold).\n  Substitution: sign(dc_sub/dtau) = sign(alpha) * sign(d2S/dtau^2).\n  Simplified: with alpha = + and d2S/dtau^2 > 0  =>  > 0.\n  Predicted: +;  Computed: G50 NPZ dlnc_dtau = +1.6949.\n  sign(dlnc_dtau) = +1.\n"
+    },
+    {
+      "id": 4,
+      "name": "sign(c_Gold - c_fabric)",
+      "predicted_sign": 1,
+      "computed_sign": -1,
+      "agreement_bool": false,
+      "computed_value": -209.05868021,
+      "derivation_chain_text": "Claim 4: sign(c_Gold - c_fabric) under convexity-lever prediction.\n  Plan-stated prediction: c_Gold > c_fabric (Goldstone stiffer);\n    convexity d2S/dtau^2 > 0 stabilizes the ordering. Predicted: +.\n  Defn: c_Gold = 0.915 (M_KK, S52 GL-JOSEPHSON-52)\n         c_fabric = 209.97 (M_KK / scaled, S42 C-FABRIC-42)\n         c_Gold / c_fabric = 0.00436 (R-PROTECTED, 229x hierarchy,\n           S74 W4-F #20 drift 0.00%).\n  Substitution: c_Gold - c_fabric = 0.915 - 209.97 = -209.06.\n  Simplified: sign(c_Gold - c_fabric) = -.\n  Direction: NEGATIVE. The plan prediction (positive) is INVERTED\n    by canonical reality.\n  Structural reason: the c_Gold/c_fabric hierarchy is governed by\n    the EIGENVALUE-GRADIENT gear (Casimir aggregation), NOT the\n    fold-convexity gear. The 229x ratio bypasses the Seeley-DeWitt\n    expansion (R-PROTECTED). Hence Gamma_5' does NOT control this\n    sign -- a known different-gear dissent.\n  Predicted (plan): +;  Computed: -.  AGREEMENT: FALSE\n    (with documented structural reason for dissent).\n",
+      "dissent_has_known_structural_reason": true,
+      "dissent_reason": "R-PROTECTED 229x hierarchy is governed by the eigenvalue-gradient (Casimir) gear, not the fold-convexity gear."
+    },
+    {
+      "id": 5,
+      "name": "ordering c_mod > c_BLV > c_BA > c_L",
+      "predicted_sign": 1,
+      "computed_sign": 1,
+      "agreement_bool": true,
+      "computed_value": {
+        "c_mod_minus_c_BLV": 0.5151,
+        "c_BLV_minus_c_BA": 0.08589999999999998,
+        "c_BA_minus_c_L": 0.3735,
+        "ordering_holds": true
+      },
+      "derivation_chain_text": "Claim 5: 4-speed ordering c_mod > c_BLV > c_BA > c_L.\n  Defn (M_KK units, fold values, S64/S56/S65/S70 canonical):\n    c_mod = 1.0    (modulus, EXACT)\n    c_BLV = 0.4849   (Barcelo-Liberati-Visser scalar)\n    c_BA  = 0.399    (Bogoliubov-Anderson sound)\n    c_L   = 0.0255    (Leggett group velocity)\n  Three pairwise inequalities required:\n    (a) c_mod - c_BLV  = +0.5151  sign = +1\n    (b) c_BLV - c_BA   = +0.0859  sign = +1\n    (c) c_BA  - c_L    = +0.3735  sign = +1\n  Ordering predicted from full 35D Hessian positive-definite at\n    fold (S70 canonical: Hessian positive in entire 35D VP space,\n    not just along tau). Sub-fiber hierarchy is pinned.\n  Predicted: ordering holds (all 3 pairs > 0).\n  Computed: ordering_holds = True.\n"
+    }
+  ],
+  "input_pins": {
+    "computations/_shared/canonical_constants.py": "ff05c3d64375d9efcd6164210b00746ca1d1756e5b0a945554a6af642ea40e07",
+    "computations/session-83/s83_w3_g50_nT_bogoliubov.npz": "5e8f69875cd04ef9ed0f958e6010ab11b706707a9996a6707ef69d8f436954c4",
+    "computations/session-83/s83_w2_g7_cc7_dynamical.npz": "3521ee593bdf215c1fdc81a0e526c998d8cda093b63727e68858f055244259ce"
+  },
+  "closure_legacy": "0a25ae224c60608e58f7ee021a9a9bc648986739ceb1b0b4522ad122c8642485",
+  "audit_sha256": "bb80e29e83def3f6fea8db1a09601eb6006552570b3da9fac3f6145007c0231f",
+  "content_sha256": "f75a8dd2ae4562b33fdfa63a80f089f48e8e67eb1a717ab861e6c1701393bab9",
+  "schema_version": "S84+"
+}

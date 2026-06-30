@@ -21,7 +21,7 @@ Two inferential gaps remain: domain formation via Turing instability (supported 
 
 ## I. Results Hierarchy
 
-### Tier 1: Framework-Decisive Results
+### Level 1: Framework-Decisive Results
 
 **1. RPA-32b PASS: Collective Vacuum Polarization Stabilization (38x margin)**
 - Sub-session: 32b. Gate type: Decisive.
@@ -31,7 +31,7 @@ Two inferential gaps remain: domain formation via Turing instability (supported 
 - **Significance**: First demonstration that the SU(3) Dirac sea's collective response to tau perturbations exceeds the threshold for vacuum polarization stabilization. Wall 4 (spectral action monotonicity at uniform tau) -- which had blocked 10 perturbative mechanisms -- is circumvented at the quantum level.
 - **Formula correction (baptista, confirmed by sim)**: sim initially computed d^2(Tr D_K)/dtau^2, which is identically zero by tracelessness (spectral pairing: Tr D_K = 0 at all tau). The correct gate quantity is d^2(sum|lambda_k|)/dtau^2 -- the spectral action curvature. The absolute value breaks the spectral pairing symmetry.
 - **Margin robustness**: 38x survives 20% separable correction (-> 30x), truncation effects at N_max=6 (< 3%), and higher-loop corrections (typically O(10%)).
-- Source: `tier0-computation/s32b_rpa1_thouless.{py,npz,png}`
+- Source: `computations/s32b_rpa1_thouless.{py,npz,png}`
 
 **2. W-32b PASS: Boundary Condensation Viable (1.9-3.2x margin)**
 - Sub-session: 32b. Gate type: Decisive.
@@ -47,7 +47,7 @@ Two inferential gaps remain: domain formation via Turing instability (supported 
 - **Significance**: First positive boundary gate in 32 sessions. Wall 3 (spectral gap blocks BCS in bulk) is IRRELEVANT at domain walls. The B2 flat-band quartet provides sufficient spectral weight for condensation at any spatial boundary where tau varies.
 - CdGM spacing: actual 0.817 vs tesla R3 prediction 0.545 (ratio 1.5). Discrepancy traces to E_F definition (B2 eigenvalue at wall ~1.24 vs global gap edge 0.822).
 - B2 eigenvector overlaps: 0.21-0.87 across widest wall. Strong mode mixing -- Born approximation fails; full scattering theory required and computed.
-- Source: `tier0-computation/s32b_wall_dos.{py,npz,png}`
+- Source: `computations/s32b_wall_dos.{py,npz,png}`
 
 **3. First Viable Mechanism Chain (4 PASS, 1 FAIL optional, 1 INFERRED)**
 
@@ -71,19 +71,19 @@ Three of five links directly computed with pre-registered gates passing. Two sup
 
 These were the two walls directly blocking the mechanism chain. W3 blocked BCS; W4 blocked stabilization. Neither applies to the actual physics (boundary spectrum, quantum corrections).
 
-### Tier 2: Structural Results
+### Level 2: Structural Results
 
 **5. Trap 4: Schur Orthogonality Selection Rule (32a)**
 - V_eff(B_i, B_j) = 0 for all inter-branch coupling on the Jensen curve, to precision < 1e-55. U(2) representation theory forbids coupling between trivial (B1), fundamental (B2), and adjoint (B3) sectors.
 - **Extended in 32c**: Trap 4 holds on the entire U(2)-invariant submanifold (not just the 1D Jensen curve). B2 4-fold and B3 3-fold degeneracies preserved to machine precision (< 2.3e-15) along all scanned T2 directions.
 - Joins Traps 1-3 as the fourth representation-theoretic conservation law on the Jensen curve.
-- Source: `tier0-computation/s32a_flat_b2_interaction.{py,npz,png}`
+- Source: `computations/s32a_flat_b2_interaction.{py,npz,png}`
 
 **6. Trap 5: J-Reality Particle-Hole Selection Rule (32b)**
 - Particle-hole matrix elements of U(2)-invariant perturbations vanish for REAL representations (B1 = trivial, B3 = SU(2) adjoint) by the real structure J with J^2=+1 and [J, D_K]=0. Nonzero only for COMPLEX representations (B2 = U(2) fundamental).
 - V matrix at RPA level: B3-to-B3+ = ZERO (< 1e-14), B1-to-B1+ = ZERO (< 1e-14), B2-to-B2+ = NONZERO (up to 0.632).
 - Structural, exact, holds for any U(2)-invariant deformation of D_K on any compact group with KO-dim 6 real structure.
-- Source: `tier0-computation/s32b_rpa1_thouless.{py,npz,png}` (V matrix structure)
+- Source: `computations/s32b_rpa1_thouless.{py,npz,png}` (V matrix structure)
 
 **7. B1+B2+B3 Three-Branch Classification (32a)**
 - The 8-fold singlet degeneracy at tau=0 (lambda = sqrt(3)/2 = 0.866) splits under Jensen deformation into:
@@ -95,13 +95,13 @@ These were the two walls directly blocking the mechanism chain. W3 blocked BCS; 
 | B3 | SU(2) adj | 3 | 0.377 | [+0.46, +0.98] | Optical triplet (RPA-1) |
 
 - B2 maintains perfect 4-fold degeneracy (spread < 1e-15) at all tau. B3 maintains perfect 3-fold degeneracy. Both protected by U(2) representation theory.
-- Source: `tier0-computation/s32a_umklapp_vertex.{py,npz,png}`
+- Source: `computations/s32a_umklapp_vertex.{py,npz,png}`
 
 **8. U(2) Preservation Along T2 Direction (32c)**
 - B2 and B3 degeneracies exact to machine precision (< 2.3e-15) for ALL eps in [-0.15, +0.15] along T2.
 - BDI Z invariant = +1 at all checkpoints. Wall 5 extended from Jensen 1D curve to U(2)-invariant submanifold.
 - Gap cannot close without representation mixing, which requires U(2)-BREAKING perturbations (T3 or T4 directions from Session 29Bb).
-- Source: `tier0-computation/s32c_topo_t2_scan.{py,npz,png}`
+- Source: `computations/s32c_topo_t2_scan.{py,npz,png}`
 
 **9. Updated Algebraic Trap Registry**
 
@@ -115,7 +115,7 @@ These were the two walls directly blocking the mechanism chain. W3 blocked BCS; 
 
 All five traps share a common root: representation-theoretic conservation laws on the Jensen curve.
 
-### Tier 3: Diagnostic Results
+### Level 3: Diagnostic Results
 
 **10. U-32a PASS: Turing Activator-Inhibitor Sign Correct (32a)**
 - V_{B3,B2,B1} = +0.049 at tau=0.15 (gradient-balance point). Positive vertex confirms B3 excitation feeds B2 population. Turing channel OPEN.
@@ -390,32 +390,32 @@ The revision is bounded above by the two remaining inferential gaps (domain form
 
 | File | Gate | Producer |
 |:-----|:-----|:---------|
-| `tier0-computation/s32a_umklapp_vertex.{py,npz,png}` | U-32a, A-32a | sim |
-| `tier0-computation/s32a_anharmonic_vertices.{py,npz,png}` | AH-32a | sim |
-| `tier0-computation/s32a_flat_b2_interaction.{py,npz,png}` | FL-32a | sim |
-| `tier0-computation/s32a_gate_verdicts.txt` | -- | coord |
+| `computations/s32a_umklapp_vertex.{py,npz,png}` | U-32a, A-32a | sim |
+| `computations/s32a_anharmonic_vertices.{py,npz,png}` | AH-32a | sim |
+| `computations/s32a_flat_b2_interaction.{py,npz,png}` | FL-32a | sim |
+| `computations/s32a_gate_verdicts.txt` | -- | coord |
 | `sessions/archive/session-32/session-32a-synthesis.md` | -- | coord |
 
 ### Session 32b (Decisive Computations)
 
 | File | Gate | Producer |
 |:-----|:-----|:---------|
-| `tier0-computation/s32b_rpa1_thouless.{py,npz,png}` | RPA-32b | sim |
-| `tier0-computation/s32b_wall_dos.{py,npz,png}` | W-32b | sim |
-| `tier0-computation/s32b_param_b2_mathieu.{py,npz,png}` | PB-32b | sim |
-| `tier0-computation/s32b_gate_verdicts.txt` | -- | coord |
+| `computations/s32b_rpa1_thouless.{py,npz,png}` | RPA-32b | sim |
+| `computations/s32b_wall_dos.{py,npz,png}` | W-32b | sim |
+| `computations/s32b_param_b2_mathieu.{py,npz,png}` | PB-32b | sim |
+| `computations/s32b_gate_verdicts.txt` | -- | coord |
 | `sessions/archive/session-32/session-32b-synthesis.md` | -- | coord |
 
 ### Session 32c (Topological Scout)
 
 | File | Gate | Producer |
 |:-----|:-----|:---------|
-| `tier0-computation/s32c_topo_t2_scan.{py,npz,png}` | TT-32c | baptista |
-| `tier0-computation/s32c_gate_verdicts.txt` | -- | coord |
+| `computations/s32c_topo_t2_scan.{py,npz,png}` | TT-32c | baptista |
+| `computations/s32c_gate_verdicts.txt` | -- | coord |
 | `sessions/archive/session-32/session-32c-synthesis.md` | -- | coord |
 
 **Total**: 9 computation scripts, 9 data archives, 9 plots, 3 gate verdict files, 3 sub-session syntheses, 1 master synthesis.
 
 ---
 
-*Session 32 master synthesis written by baptista (baptista-spacetime-analyst) from: Session 32a synthesis (4 gates: U-32a PASS, A-32a PASS, AH-32a PASS conditional, FL-32a ZERO structural), Session 32b synthesis (3 gates: RPA-32b PASS 38x, W-32b PASS 1.9-3.2x, PB-32b FAIL), Session 32c synthesis (1 gate: TT-32c OPEN, gap min 0.1021, U(2) preserved), gate verdict files (s32a, s32b, s32c). All gate verdicts taken as authoritative from source documents -- no re-adjudication. Cross-sub-session discoveries (Section IV) represent the primary value-add of this master synthesis. Gate verdict files: `tier0-computation/s32a_gate_verdicts.txt`, `tier0-computation/s32b_gate_verdicts.txt`, `tier0-computation/s32c_gate_verdicts.txt`.*
+*Session 32 master synthesis written by baptista (baptista-spacetime-analyst) from: Session 32a synthesis (4 gates: U-32a PASS, A-32a PASS, AH-32a PASS conditional, FL-32a ZERO structural), Session 32b synthesis (3 gates: RPA-32b PASS 38x, W-32b PASS 1.9-3.2x, PB-32b FAIL), Session 32c synthesis (1 gate: TT-32c OPEN, gap min 0.1021, U(2) preserved), gate verdict files (s32a, s32b, s32c). All gate verdicts taken as authoritative from source documents -- no re-adjudication. Cross-sub-session discoveries (Section IV) represent the primary value-add of this master synthesis. Gate verdict files: `computations/s32a_gate_verdicts.txt`, `computations/s32b_gate_verdicts.txt`, `computations/s32c_gate_verdicts.txt`.*

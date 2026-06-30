@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 231,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_2301",
+      "anchor_type": "data_provenance",
+      "name": "w7c_fwd_c1_bridge_landing_vii_au",
+      "script_path": "session-89/s89_w7c_fwd_c1_bridge_landing_vii_au.py",
+      "session": "s89",
+      "inputs": "",
+      "outputs": "session-89/s89_w7c_fwd_c1_bridge_landing_vii_au.npz, session-89/s89_w7c_fwd_c1_bridge_landing_vii_au.png",
+      "source_file": "computations/session-89/s89_w7c_fwd_c1_bridge_landing_vii_au.py",
+      "source_context_30_lines": "  105: SESSION = 89  # (local) session number\n  106: WAVE = \"W7c\"\n  107: GATE_ID = \"S89-A24-FWD-C1-PILLAR-I-II-BRIDGE-LANDING-VII-AU\"\n  108: SCHEME = \"cross-pillar-bridge-FWD-C1-Pillar-I-II\"\n  109: CONVENTION = \"registry-landing-single-shot-AFTER-pattern\"\n  110: L_MAX_PLAN = 10  # (local) FWD-C1 canonical truncation (matches W-5 §VII.AF.1 precedent)\n  111: SCHEMA_VERSION = \"S87+\"\n  112: \n  113: NPZ_PATH = SESSION_DIR / \"s89_w7c_fwd_c1_bridge_landing_vii_au.npz\"\n  114: PNG_PATH = SESSION_DIR / \"s89_w7c_fwd_c1_bridge_landing_vii_au.png\"\n  115: VERDICT_PATH = SESSION_DIR / f\"s{SESSION}_gate_verdicts.txt\"\n  116: \n  117: # Input paths (SHA pinned)\n  118: CANONICAL_CONSTS = ROOT / \"computations\" / \"_shared\" / \"canonical_constants.py\"\n  119: REGISTRY_PATH = ROOT / \"sessions\" / \"permanent-results-registry.md\"\n  120: CROSS_PILLAR_BRIDGE_RULE = ROOT / \".claude\" / \"rules\" / \"cross-pillar-bridge-anatomy.md\"\n  121: JOINT_THEOREM_RULE = ROOT / \".claude\" / \"rules\" / \"joint-theorem-promotion.md\""
+    },
+    {
+      "anchor_id": "prov_2302",
+      "anchor_type": "data_provenance",
+      "name": "w2_canonical_constants_class_d_joint_provenance",
+      "script_path": "session-90/s90_w2_canonical_constants_class_d_joint_provenance.py",
+      "session": "s90",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-90/s90_w2_canonical_constants_class_d_joint_provenance.py",
+      "source_context_30_lines": "<name 'w2_canonical_constants_class_d_joint_provenance' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S90 W2-10 + W2-11 — Joint canonical_constants PROVENANCE landings (CF-27 + CF-28)\n    4: ==================================================================================\n    5: \n    6: Per plan §\"Hard prerequisites\" item 4: CF-27 (DERIVATIVE) and CF-28\n    7: (PRIMARY) are STRUCTURALLY PAIRED with joint atomic emission. This single\n    8: script performs BOTH edits in ONE atomic write to canonical_constants.py +\n    9: emits TWO verdict lines (one per gate-ID) preserving task-list separation.\n   10: \n   11: Gates emitted:\n   12:   - S90-CANONICAL-CONSTANTS-EPS-H-HP1-NORM-PROVENANCE-ADDITION (CF-28)\n   13:     PRIMARY canonical PROVENANCE block above line 156 (eps_H_HP1_norm)\n   14:   - S90-CANONICAL-CONSTANTS-R-UNIVERSAL-HP1-STRICT-F4-CLASS-D-PROVENANCE-UPDATE (CF-27)\n   15:     Class-(d) DERIVATIVE PROVENANCE block above line 235 (R_universal_HP1_strict_F4)\n   16: \n   17: Substrate framing: `eps_H_HP1_norm = 16.197719` IS the PRIMARY substrate-IS\n   18: observable (BZ-trace on Jensen-deformed band-0 projector at ζ-regulator,\n   19: substrate-IS Level 1 single-τ-slice at τ_fold = 0.19); `R_universal_\n   20: HP1_strict_F4 = 1.030902` IS a DERIVATIVE form via 1/f_4_prefactor_sdw\n   21: reduction (Class-(d) PIN-DERIVATIVE-VS-SOURCE-PRIMARY per\n   22: `epistemic-discipline.md §\"Source Reconciliation\"`).\n   23: \"\"\"\n   24: \n   25: from __future__ import annotations\n   26: \n   27: import sys\n   28: from pathlib import Path\n   29: \n   30: _SHARED_DIR = Path(__file__).resolve().parent.parent / \"_shared\""
+    },
+    {
+      "anchor_id": "prov_2303",
+      "anchor_type": "data_provenance",
+      "name": "w2_dr3_binding_protocol_readiness_audit",
+      "script_path": "session-90/s90_w2_dr3_binding_protocol_readiness_audit.py",
+      "session": "s90",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-90/s90_w2_dr3_binding_protocol_readiness_audit.py",
+      "source_context_30_lines": "   47: CONVENTION = \"dr3-binding-protocol-readiness-6-item-checklist\"  # (local)\n   48: L_MAX = 12  # (local)\n   49: \n   50: BRANCH_IV_CANONICAL = PROJECT_ROOT / \"sessions\" / \"framework\" / \"registry\" / \"branch-iv-canonical.md\"\n   51: PRE_REGISTERED_OBSERVATIONS = PROJECT_ROOT / \"sessions\" / \"framework\" / \"registry\" / \"pre-registered-observations.md\"\n   52: CANONICAL_CONSTANTS = SHARED_DIR / \"canonical_constants.py\"\n   53: INVENTORY = PROJECT_ROOT / \"sessions\" / \"framework\" / \"registry\" / \"falsifier-master-inventory.md\"\n   54: VERDICT_TXT = SESSION_DIR / \"s90_gate_verdicts.txt\"\n   55: AUDIT_REPORT_JSON = SESSION_DIR / \"s90_w2_dr3_binding_protocol_readiness_audit.json\"\n   56: \n   57: \n   58: def sha256_of(path):\n   59:     h = hashlib.sha256()\n   60:     try:\n   61:         h.update(path.read_bytes())\n   62:     except OSError:\n   63:         return \"\""
+    },
+    {
+      "anchor_id": "prov_2304",
+      "anchor_type": "data_provenance",
+      "name": "w2_falsifier_inventory_row_2_r_dual_pathway_update",
+      "script_path": "session-90/s90_w2_falsifier_inventory_row_2_r_dual_pathway_update.py",
+      "session": "s90",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-90/s90_w2_falsifier_inventory_row_2_r_dual_pathway_update.py",
+      "source_context_30_lines": "<name 'w2_falsifier_inventory_row_2_r_dual_pathway_update' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S90 W2-14 — S90-FALSIFIER-INVENTORY-ROW-2-R-DUAL-PATHWAY-UPDATE (CF-31)\n    4: ========================================================================\n    5: \n    6: Gate: S90-FALSIFIER-INVENTORY-ROW-2-R-DUAL-PATHWAY-UPDATE ([VERIFY])\n    7: \n    8: Appends a NEW audit-pin sub-row (Row #2.audit-CF-31) immediately below\n    9: Row #2 (r dual-pathway) of `sessions/framework/registry/falsifier-master-\n   10: inventory.md`. The new audit-pin contains:\n   11:   - BK-Array 2026 pre-reg full 64-char audit_sha256 = `b1eb9e61ece7b0467...`\n   12:     (actual gate: S84-BICEP-KECK-2026-PRE-REGISTER at S84 line 45;\n   13:     plan §\"Hard prerequisites\" referenced this as \"S87 W4-42\" — actual\n   14:     location is S84, plan-pin minor inaccuracy disclosed)\n   15:   - LiteBIRD STRUCTURAL-FLOOR full 64-char audit_sha256 = `f5a285d8548129b0...`\n   16:     (S85-W1a-LITEBIRD-NT-REGISTRY-LANDING at S85 line 24)\n   17:   - S89 W7a/W7b/W4-4 cross-link record-discipline annotations (r not affected;\n   18:     cross-link only)\n   19:   - Mnemonic-vs-exact ratio K=2 corpus annotation per `math-scripts.md\n   20:     §\"Mnemonic-vs-exact ratio discipline (S86 W-3 RULE-3)\"`\n   21: \"\"\"\n   22: \n   23: from __future__ import annotations\n   24: \n   25: import sys\n   26: from pathlib import Path\n   27: \n   28: _SHARED_DIR = Path(__file__).resolve().parent.parent / \"_shared\"\n   29: sys.path.insert(0, str(_SHARED_DIR))\n   30: from canonical_constants import *  # noqa: F401,F403,E402"
+    },
+    {
+      "anchor_id": "prov_2305",
+      "anchor_type": "data_provenance",
+      "name": "w2_falsifier_inventory_row_3_alpha_s_canonical_update",
+      "script_path": "session-90/s90_w2_falsifier_inventory_row_3_alpha_s_canonical_update.py",
+      "session": "s90",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-90/s90_w2_falsifier_inventory_row_3_alpha_s_canonical_update.py",
+      "source_context_30_lines": "<name 'w2_falsifier_inventory_row_3_alpha_s_canonical_update' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S90 W2-12 — S90-FALSIFIER-INVENTORY-ROW-3-ALPHA-S-CANONICAL-UPDATE (CF-29)\n    4: ==========================================================================\n    5: \n    6: Updates Row #3 (α_s) of `sessions/framework/registry/falsifier-master-\n    7: inventory.md` from historical `-0.068968` (alpha_s_inflation_framework;\n    8: pre-Route-B-identity n_s anchor) to the bit-exact substrate-canonical\n    9: `α_s_canonical = -8587279/100000000 ≈ -0.085 872 79` (Sage-QQ exact =\n   10: n_s_FW_exact² − 1 per Route-B identity at substrate-distance-1 Mellin\n   11: pole s=3; S89 W7a triple-verified). Recomputes gap_sigma against both\n   12: Planck-2018-legacy AND Aiola-2020-canonical observational anchors.\n   13: Tags \"FIRST multi-σ falsifier within near-term observational reach\"\n   14: (both gaps ≥ 5σ within CMB-S4 + CMB-HD reach). Appends Row #3.audit-CF-29\n   15: sub-row with S89 W7a + W4-4 audit_sha256 PROVENANCE pins, PRESERVING the\n   16: existing Row #3.audit (S86 W14-2 strengthening citation).\n   17: \"\"\"\n   18: \n   19: from __future__ import annotations\n   20: \n   21: import sys\n   22: from pathlib import Path\n   23: \n   24: _SHARED_DIR = Path(__file__).resolve().parent.parent / \"_shared\"\n   25: sys.path.insert(0, str(_SHARED_DIR))\n   26: from canonical_constants import *  # noqa: F401,F403,E402\n   27: \n   28: import hashlib  # noqa: E402\n   29: import json  # noqa: E402\n   30: import os  # noqa: E402"
+    },
+    {
+      "anchor_id": "prov_2306",
+      "anchor_type": "data_provenance",
+      "name": "w2_mack_observational_constraints_s89_update",
+      "script_path": "session-90/s90_w2_mack_observational_constraints_s89_update.py",
+      "session": "s90",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-90/s90_w2_mack_observational_constraints_s89_update.py",
+      "source_context_30_lines": "<name 'w2_mack_observational_constraints_s89_update' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S90 W2-15 — S90-MACK-OBSERVATIONAL-CONSTRAINTS-S89-UPDATE (CF-32)\n    4: ==================================================================\n    5: \n    6: Gate: S90-MACK-OBSERVATIONAL-CONSTRAINTS-S89-UPDATE ([VERIFY])\n    7: \n    8: Appends a new \"S89-Close Observational Constraints Snapshot\" section to\n    9: `sessions/framework/registry/mack-observational-constraints.md` (the AMRI-\n   10: PROMOTED 2026-04-28 mack-cosmic-bridge sole-writer registry). The new\n   11: section consolidates S89 PASS results: bit-exact n_s_FW_exact = 9561/10000\n   12: + α_s_canonical = -8587279/100000000 ≈ -0.085 872 79 + joint χ²_diag = 43.09\n   13: vs Planck 2018 + S89 W7a + W4-4 audit_sha256 pins + cross-links to\n   14: canonical_constants.py + falsifier-master-inventory.md Row #3 (post-CF-29).\n   15: \n   16: DEPENDENCY: CF-29 (S90-FALSIFIER-INVENTORY-ROW-3-ALPHA-S-CANONICAL-UPDATE)\n   17: PASS landed first per plan §\"Hard prerequisites\" item 5. CF-29 verdict\n   18: SHA: `92c09dc0a053354b...` (already on disk per S90 W2-12 emission).\n   19: \"\"\"\n   20: \n   21: from __future__ import annotations\n   22: \n   23: import sys\n   24: from pathlib import Path\n   25: \n   26: _SHARED_DIR = Path(__file__).resolve().parent.parent / \"_shared\"\n   27: sys.path.insert(0, str(_SHARED_DIR))\n   28: from canonical_constants import *  # noqa: F401,F403,E402\n   29: \n   30: import hashlib  # noqa: E402"
+    },
+    {
+      "anchor_id": "prov_2307",
+      "anchor_type": "data_provenance",
+      "name": "w2_vii_aau_vii_av_withdrawn_in_favor_of_cleanup",
+      "script_path": "session-90/s90_w2_vii_aau_vii_av_withdrawn_in_favor_of_cleanup.py",
+      "session": "s90",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-90/s90_w2_vii_aau_vii_av_withdrawn_in_favor_of_cleanup.py",
+      "source_context_30_lines": "<name 'w2_vii_aau_vii_av_withdrawn_in_favor_of_cleanup' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S90 W2-1 — S90-VII-AAU-VII-AV-WITHDRAWN-IN-FAVOR-OF-S90-LANDING-CLEANUP (CF-18)\n    4: ==============================================================================\n    5: \n    6: Gate: S90-VII-AAU-VII-AV-WITHDRAWN-IN-FAVOR-OF-S90-LANDING-CLEANUP ([VERIFY])\n    7: \n    8: Pre-registered threshold:\n    9:   PASS iff all three header annotations present after atomic write:\n   10:     - §VII.AAU.OP-PROJ: **Status**: WITHDRAWN-IN-FAVOR-OF-S90-LANDING + c857179040b40224\n   11:     - §VII.AU.OP-PROJ: **Provenance annotation (CF-18)** + f1fae96aae6d401b\n   12:     - §VII.AV.OP-PROJ: **Status**: WITHDRAWN-IN-FAVOR-OF-S90-LANDING + cc18126581ddd9a1\n   13:   FAIL iff any of the three insertions missing post-write.\n   14: \n   15: Inputs (SHA-256 dual-pinned at runtime; S84+ schema):\n   16:   - sessions/permanent-results-registry.md (pre-edit content; feeds audit_sha256)\n   17:   - script bytes (feeds BOTH audit_sha256 and content_sha256)\n   18:   - canonical_constants.py (feeds audit_sha256)\n   19:   - computations/session-89/s89_gate_verdicts.txt (W7c SHA cross-reference; feeds audit_sha256)\n   20: \n   21: Output 4-tuple:\n   22:   (value=<bool>, scheme=mack-sole-writer-single-shot-AFTER-pattern,\n   23:    convention=registry-hygiene-cleanup, L_max=N/A)\n   24: \n   25: Classification: METHODOLOGY (registry-text WITHDRAWN-IN-FAVOR-OF cleanup of\n   26: W7c three-emission supersedes chain; PASS predicate is artifact-existence-\n   27: with-substantive-content).\n   28: \n   29: METHODOLOGY\n   30: -----------"
+    },
+    {
+      "anchor_id": "prov_2308",
+      "anchor_type": "data_provenance",
+      "name": "w2_vii_af_1_op_proj_annotation_clarification",
+      "script_path": "session-90/s90_w2_vii_af_1_op_proj_annotation_clarification.py",
+      "session": "s90",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-90/s90_w2_vii_af_1_op_proj_annotation_clarification.py",
+      "source_context_30_lines": "<name 'w2_vii_af_1_op_proj_annotation_clarification' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S90 W2-9 — S90-VII-AF-1-OP-PROJ-ANNOTATION-CLARIFICATION-AND-W5-V4-LINE-401-PARENTHETICAL (CF-26)\n    4: ================================================================================================\n    5: \n    6: Gate: S90-VII-AF-1-OP-PROJ-ANNOTATION-CLARIFICATION-AND-W5-V4-LINE-401-PARENTHETICAL ([VERIFY])\n    7: \n    8: Inserts a 17-line clarification block at §VII.AF.1.OP-PROJ (line 14712 in\n    9: permanent-results-registry.md; the FIRST registered cross-pillar bridge\n   10: entry per cross-pillar-bridge-anatomy.md calibration corpus). The block\n   11: disambiguates three structurally-distinct Level-3 anchor derived scalars\n   12: (r=19/200, STRICT_F4=1.030902, err_STRICT=0.0095%) + CONV-9 §VII-B HP1-\n   13: NEAR-INVARIANCE upstream cite (lizzi co-sign) + W-5 V4 line 401 parenthetical\n   14: (connes co-sign).\n   15: \"\"\"\n   16: \n   17: from __future__ import annotations\n   18: \n   19: import sys\n   20: from pathlib import Path\n   21: \n   22: _SHARED_DIR = Path(__file__).resolve().parent.parent / \"_shared\"\n   23: sys.path.insert(0, str(_SHARED_DIR))\n   24: from canonical_constants import *  # noqa: F401,F403,E402\n   25: \n   26: import hashlib  # noqa: E402\n   27: import json  # noqa: E402\n   28: import os  # noqa: E402\n   29: import time  # noqa: E402\n   30: "
+    },
+    {
+      "anchor_id": "prov_2309",
+      "anchor_type": "data_provenance",
+      "name": "w2_vii_ah_stage_3_permanent_promotion",
+      "script_path": "session-90/s90_w2_vii_ah_stage_3_permanent_promotion.py",
+      "session": "s90",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-90/s90_w2_vii_ah_stage_3_permanent_promotion.py",
+      "source_context_30_lines": "<name 'w2_vii_ah_stage_3_permanent_promotion' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S90 W2-3 — S90-VII-AH-STAGE-3-PERMANENT-PROMOTION (CF-20)\n    4: =========================================================\n    5: \n    6: Gate: S90-VII-AH-STAGE-3-PERMANENT-PROMOTION ([VERIFY])\n    7: \n    8: Pre-registered threshold (per plan §W2-3 §9):\n    9:   PASS iff (a) §VII.AH theorem-name line contains STAGE-3-PERMANENT AND NOT\n   10:                 STAGE-1-CANDIDATE (literal grep on the heading line only)\n   11:        AND (b) Stage-2 PASS provenance annotation present with 4fcd7d29… SHA fragment\n   12:        AND (c) joint-theorem-promotion.md K=3 calibration row added with §VII.AH\n   13:        AND (d) joint-theorem-promotion.md Status line MANDATORY at K=3\n   14:   FAIL iff any of (a)-(d) absent post-write.\n   15: \n   16: Inputs (S84+ dual-SHA schema):\n   17:   - sessions/permanent-results-registry.md (pre-edit)\n   18:   - .claude/rules/joint-theorem-promotion.md (pre-edit)\n   19:   - computations/session-89/s89_gate_verdicts.txt (W4-7 audit 4fcd7d29…)\n   20:   - script bytes + canonical_constants.py\n   21: \n   22: Output 4-tuple (per plan §W2-3 §8):\n   23:   (value=<bool>, scheme=mack-sole-writer-single-shot-AFTER-pattern,\n   24:    convention=joint-theorem-promotion-stage-3-permanent, L_max=N/A)\n   25: \n   26: Classification: METHODOLOGY (§VII.AH STAGE-1-CANDIDATE → STAGE-3-PERMANENT\n   27: tag replacement + joint-theorem-promotion calibration corpus K=2 → K=3\n   28: advancement). First framework cross-axis joint theorem to reach\n   29: STAGE-3-PERMANENT eligibility per `joint-theorem-promotion.md` 4-stage pathway.\n   30: "
+    },
+    {
+      "anchor_id": "prov_2310",
+      "anchor_type": "data_provenance",
+      "name": "w2_vii_an_registry_anchor_reconciliation",
+      "script_path": "session-90/s90_w2_vii_an_registry_anchor_reconciliation.py",
+      "session": "s90",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-90/s90_w2_vii_an_registry_anchor_reconciliation.py",
+      "source_context_30_lines": "<name 'w2_vii_an_registry_anchor_reconciliation' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S90 W2-6 — S90-VII-AN-REGISTRY-ANCHOR-RECONCILIATION (CF-23)\n    4: =============================================================\n    5: \n    6: Gate: S90-VII-AN-REGISTRY-ANCHOR-RECONCILIATION ([VERIFY])\n    7: \n    8: Resolves §VII.AN registry-anchor framing reconciliation per plan §W2-6. The\n    9: W6-2 audit at S89 (audit `9f7a203def8301f7589501b7d73030097ceeb060cd714b1be785f0737619aa5f`)\n   10: reported the producing script `s82_w3_9_as_adjacent_obs.py` as MISSING from\n   11: disk; that flag was stale or has since been resolved — the script EXISTS at\n   12: `computations/session-82/s82_w3_9_as_adjacent_obs.py` (461 lines; valid\n   13: docstring) as verified at S90 W2 dispatch time. Path-a (restore missing\n   14: producing script) is structurally satisfied by current state.\n   15: \n   16: This gate adds a PROVENANCE annotation (CF-23) to §VII.AN documenting:\n   17:   (i) the W6-2 stale-flag resolution (script verified on disk at S90 W2);\n   18:   (ii) the on-disk script's content_sha256 for audit reproducibility;\n   19:   (iii) the K=4 NEGATIVE-CALIBRATION corpus instance #4 RESOLVED.\n   20: \n   21: No anchor-text REWRITE is required (the anchor cites the GATE \"S82 W3-9\n   22: single-pole Mellin closure\", not a specific script path; the script\n   23: implementing S82 W3-9 IS on disk).\n   24: \"\"\"\n   25: \n   26: from __future__ import annotations\n   27: \n   28: import sys\n   29: from pathlib import Path\n   30: "
+    }
+  ]
+}

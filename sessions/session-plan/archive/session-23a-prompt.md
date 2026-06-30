@@ -28,7 +28,7 @@ This is the first phase of Session 23. It uses existing Session 22b data (eigenv
 Every result must be classified against its pre-registered Constraint Gate BEFORE any interpretation is attempted. Report the number first. Classify second. Interpret third.
 
 **Python environment**: `"phonon-exflation-sim/.venv312/Scripts/python.exe"`
-**Output directory**: `tier0-computation/`
+**Output directory**: `computations/`
 **Script prefix**: `s23a_`
 
 ## PRE-SESSION REVIEW
@@ -100,8 +100,8 @@ The analogy to superfluid He-3 is a universality class statement, not metaphor. 
 
 | Agent | Additional Reading |
 |:------|:------------------|
-| phonon-exflation-sim | `tier0-computation/s22b_eigenvector_extraction.py` (eigenvector infrastructure), `tier0-computation/s22b_kosmann_matrix.py` (Kosmann matrix element computation), `tier0-computation/s22c_bcs_channel_scan.py` (BCS channel scan from Session 22c F-1) |
-| landau-condensed-matter-theorist | `sessions/session-22/session-22c-PertubativeExhaustionTheorem.md` (L-3 formalization), `tier0-computation/s22c_landau_classification.py` (Landau classification computation) |
+| phonon-exflation-sim | `computations/s22b_eigenvector_extraction.py` (eigenvector infrastructure), `computations/s22b_kosmann_matrix.py` (Kosmann matrix element computation), `computations/s22c_bcs_channel_scan.py` (BCS channel scan from Session 22c F-1) |
+| landau-condensed-matter-theorist | `sessions/session-22/session-22c-PertubativeExhaustionTheorem.md` (L-3 formalization), `computations/s22c_landau_classification.py` (Landau classification computation) |
 
 ---
 
@@ -119,7 +119,7 @@ The analogy to superfluid He-3 is a universality class statement, not metaphor. 
 
 **Background**: Session 22b eigenvectors (s22b_eigenvectors.npz) cover p+q <= 3 only, with 1232 modes per tau value at 9 tau values [0.0, 0.10, 0.15, 0.20, 0.25, 0.30, 0.35, 0.40, 0.50]. The gap equation requires eigenvectors at higher sectors for convergence testing.
 
-**Task**: Extend the eigenvector extraction to p+q <= 6 using the existing s22b_eigenvector_extraction.py infrastructure. The code from Session 22b (tier1_dirac_spectrum.py) already supports arbitrary (p,q) sectors. Run at the same 9 tau values.
+**Task**: Extend the eigenvector extraction to p+q <= 6 using the existing s22b_eigenvector_extraction.py infrastructure. The code from Session 22b (dirac_spectrum.py) already supports arbitrary (p,q) sectors. Run at the same 9 tau values.
 
 **Sectors to add** (p+q = 4, 5, 6):
 
@@ -146,9 +146,9 @@ The analogy to superfluid He-3 is a universality class statement, not metaphor. 
 
 **Note on memory**: The largest matrix (3,3) at 1024x1024 complex requires ~16 MB for eigenvectors. Total memory for p+q <= 6 at 9 tau values: ~2-4 GB. Well within the 17 GB VRAM and 128 GB RAM.
 
-**Output**: `tier0-computation/s23a_eigenvectors_extended.npz` with same key structure as s22b_eigenvectors.npz but expanded to p+q <= 6.
+**Output**: `computations/s23a_eigenvectors_extended.npz` with same key structure as s22b_eigenvectors.npz but expanded to p+q <= 6.
 
-**Runtime estimate**: ~30-60 minutes for the full extension at 9 tau values. **Note**: The existing s22b_eigenvector_extraction.py and tier1_dirac_spectrum.py infrastructure is CPU-based (numpy eigendecomposition). The (3,3) sector at 1024x1024 complex is the bottleneck — O(n³) eigendecomposition at this size takes ~seconds per matrix, but 18 sectors × 9 tau values = 162 eigendecompositions. If wall-clock exceeds 90 minutes, phonon-sim should investigate GPU porting via torch.linalg.eigh for the larger sectors.
+**Runtime estimate**: ~30-60 minutes for the full extension at 9 tau values. **Note**: The existing s22b_eigenvector_extraction.py and dirac_spectrum.py infrastructure is CPU-based (numpy eigendecomposition). The (3,3) sector at 1024x1024 complex is the bottleneck — O(n³) eigendecomposition at this size takes ~seconds per matrix, but 18 sectors × 9 tau values = 162 eigendecompositions. If wall-clock exceeds 90 minutes, phonon-sim should investigate GPU porting via torch.linalg.eigh for the larger sectors.
 
 ## Step 2: Kosmann Matrix Element Extraction (phonon-sim + landau)
 
@@ -167,7 +167,7 @@ The analogy to superfluid He-3 is a universality class statement, not metaphor. 
 
 **Note on Killing directions**: For the Jensen metric, frame vectors e_0, e_1, e_2, e_7 (the u(2) directions) are Killing at all tau. Their metric Lie derivatives vanish identically: (L_{e_a} g) = 0 for a in {0,1,2,7}. Only the C^2 directions a in {3,4,5,6} contribute nonzero Kosmann corrections. This reduces the effective sum from 8 to 4 generators.
 
-**Output**: `tier0-computation/s23a_kosmann_singlet.npz` containing K_a^{nm}(tau) for a = 3,4,5,6 (non-Killing directions) at 9 tau values.
+**Output**: `computations/s23a_kosmann_singlet.npz` containing K_a^{nm}(tau) for a = 3,4,5,6 (non-Killing directions) at 9 tau values.
 
 ## Step 3: Zero-Cost Pre-Checks (landau or phonon-sim)
 
@@ -193,13 +193,13 @@ Method: Monte Carlo simulation. Draw 7 independent uniform values in [0, 2.0]. C
 
 **Sensitivity test**: Report the p-value both WITH and WITHOUT indicator #7 (φ_paasch at τ = 0.150). Indicator #7 is a mass ratio crossing — physically distinct from the stability/instability indicators #1-6. Including it in a clustering test is debatable; reporting both values lets Phase 23b (Sagan) adjudicate the evidential weight.
 
-**Output**: p-value (with and without #7) and effective DOF. Append to `tier0-computation/s23a_kosmann_singlet.npz` or report inline.
+**Output**: p-value (with and without #7) and effective DOF. Append to `computations/s23a_kosmann_singlet.npz` or report inline.
 
 **3b. N=50 V_IR'' Sign Diagnostic**
 
 The master synthesis flags an anomaly: V_IR'' > 0 at N=50 when N=10, 20, 100 all show V_IR'' < 0 at tau = 0.30. Investigate.
 
-Load `tier0-computation/s22c_landau_classification.npz`. Extract V_IR(tau, N) for N = 10, 20, 30, 40, 50, 60, 70, 80, 90, 100. Plot V_IR''(tau=0.30) vs N. Is the sign change at N=50 a smooth crossover or a sharp jump? If smooth crossover: identifies a physical scale where UV modes begin dominating (expected from the constant-ratio trap). If sharp jump: numerical artifact requiring investigation.
+Load `computations/s22c_landau_classification.npz`. Extract V_IR(tau, N) for N = 10, 20, 30, 40, 50, 60, 70, 80, 90, 100. Plot V_IR''(tau=0.30) vs N. Is the sign change at N=50 a smooth crossover or a sharp jump? If smooth crossover: identifies a physical scale where UV modes begin dominating (expected from the constant-ratio trap). If sharp jump: numerical artifact requiring investigation.
 
 **Output**: Inline report or append to synthesis.
 
@@ -296,7 +296,7 @@ Compare Delta values. Convergence criterion: if |Delta(B) - Delta(A)| / |Delta(B
 
 ## Step 6: Mandatory Outputs
 
-Record ALL of the following in `tier0-computation/s23a_gap_equation.npz` and `s23a_gap_equation.txt`:
+Record ALL of the following in `computations/s23a_gap_equation.npz` and `s23a_gap_equation.txt`:
 
 | Output | Description | Units |
 |:-------|:-----------|:------|
@@ -310,7 +310,7 @@ Record ALL of the following in `tier0-computation/s23a_gap_equation.npz` and `s2
 | Convergence test | Delta(p+q<=6) vs Delta(p+q<=4) | Dimensionless ratio |
 | F_cond(tau) | Condensate free energy at all tau | KK^4 |
 
-Also produce a plot: `tier0-computation/s23a_gap_equation.png` showing Delta(tau) and F_cond(tau) vs tau with the physical window [0.15, 0.35] marked.
+Also produce a plot: `computations/s23a_gap_equation.png` showing Delta(tau) and F_cond(tau) vs tau with the physical window [0.15, 0.35] marked.
 
 ---
 
@@ -326,7 +326,7 @@ Classification must occur BEFORE interpretation. Report numbers first. Classify 
 
 ## K-1: Gap Equation Outcomes (Step 5)
 
-| Tier | Gate ID | Criterion | BF | Posterior (from 40% panel / 27% Sagan) |
+| Level | Gate ID | Criterion | BF | Posterior (from 40% panel / 27% Sagan) |
 |:-----|:--------|:----------|:---|:---------------------------------------|
 | **DECISIVE PASS** | K-1a | Delta/lambda_min > 0.3, tau_0 in [0.25, 0.35] | 15-20 | **52-58%** panel / **45-55%** Sagan |
 | **INTERESTING** | K-1b | Delta/lambda_min in [0.1, 0.3], tau_0 in [0.20, 0.40] | 3-5 | **42-48%** panel / **30-38%** Sagan |
@@ -341,12 +341,12 @@ Classification must occur BEFORE interpretation. Report numbers first. Classify 
 
 | File | Producer | Content |
 |:-----|:---------|:--------|
-| `tier0-computation/s23a_eigenvectors_extended.npz` | phonon-sim | Extended eigenvectors at p+q <= 6 |
-| `tier0-computation/s23a_kosmann_singlet.npz` | phonon-sim | Kosmann matrix elements in (0,0) singlet + pairing kernel |
-| `tier0-computation/s23a_gap_equation.py` | phonon-sim | Gap equation solver script |
-| `tier0-computation/s23a_gap_equation.npz` | phonon-sim | Gap equation results (Delta, tau_0, V_eff, convergence) |
-| `tier0-computation/s23a_gap_equation.txt` | phonon-sim | Full tabular output |
-| `tier0-computation/s23a_gap_equation.png` | phonon-sim | Delta(tau) and F_cond(tau) plots |
+| `computations/s23a_eigenvectors_extended.npz` | phonon-sim | Extended eigenvectors at p+q <= 6 |
+| `computations/s23a_kosmann_singlet.npz` | phonon-sim | Kosmann matrix elements in (0,0) singlet + pairing kernel |
+| `computations/s23a_gap_equation.py` | phonon-sim | Gap equation solver script |
+| `computations/s23a_gap_equation.npz` | phonon-sim | Gap equation results (Delta, tau_0, V_eff, convergence) |
+| `computations/s23a_gap_equation.txt` | phonon-sim | Full tabular output |
+| `computations/s23a_gap_equation.png` | phonon-sim | Delta(tau) and F_cond(tau) plots |
 | `sessions/2026-02-XX-session-23a-synthesis.md` | coordinator | Phase 23a synthesis with Constraint Gate verdicts |
 
 ---

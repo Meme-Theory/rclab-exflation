@@ -3,15 +3,15 @@
 **Date**: 2026-02-27
 **Depends on**: Session 28a (KC-1 verdict, torsionful BCS), Session 28b (C-3 order-one, L-7 self-consistent tau-T, S-3 Hessian)
 **Input data**:
-- `tier0-computation/s28a_bogoliubov_coefficients.npz` (KC-1 output: |beta_k|^2)
-- `tier0-computation/s23a_eigenvectors_extended.npz` (D_K eigenvectors for mode overlaps)
-- `tier0-computation/s23a_kosmann_singlet.npz` (Kosmann coupling data)
-- `tier0-computation/s27_torsion_gap_gate.npz` (D_can eigenvalues)
-- `tier0-computation/s27_multisector_bcs.npz` (multi-sector BCS data)
-- `tier0-computation/s28a_torsionful_bcs.npz` (torsionful BCS, if available)
-- `tier0-computation/s28b_order_one.npz` (C-3 result, for C-6 gating)
-- `tier0-computation/r20a_riemann_tensor.npz` (Riemann tensor for geodesic computation)
-- `tier0-computation/tier1_dirac_spectrum.py` (geometry infrastructure)
+- `computations/s28a_bogoliubov_coefficients.npz` (KC-1 output: |beta_k|^2)
+- `computations/s23a_eigenvectors_extended.npz` (D_K eigenvectors for mode overlaps)
+- `computations/s23a_kosmann_singlet.npz` (Kosmann coupling data)
+- `computations/s27_torsion_gap_gate.npz` (D_can eigenvalues)
+- `computations/s27_multisector_bcs.npz` (multi-sector BCS data)
+- `computations/s28a_torsionful_bcs.npz` (torsionful BCS, if available)
+- `computations/s28b_order_one.npz` (C-3 result, for C-6 gating)
+- `computations/r20a_riemann_tensor.npz` (Riemann tensor for geodesic computation)
+- `computations/dirac_spectrum.py` (geometry infrastructure)
 
 ## Motivation
 
@@ -33,7 +33,7 @@ Similarly, C-6 (12D axiom verification) is gated by C-3 (order-one condition fro
 - **If C-3 FAILED**: C-6 is informational only -- the 12D triple fails at the algebra level.
 
 **Python environment**: `"phonon-exflation-sim/.venv312/Scripts/python.exe"`
-**Output directory**: `tier0-computation/`
+**Output directory**: `computations/`
 **Script prefix**: `s28c_`
 
 ## REQUIRED READING
@@ -54,9 +54,9 @@ ALL agents:
 **What**: Compute the 4-point overlap integrals of SU(3) Dirac mode functions that determine the phonon-phonon scattering amplitude in the 1D effective theory. The 1D phonon collision mechanism requires that phonon-phonon scattering is efficient enough to establish a thermalization bottleneck (scattering rate W comparable to or exceeding the decay rate Gamma). If W << Gamma, phonons decay before they can scatter and the bottleneck mechanism fails.
 
 **Input**:
-- `tier0-computation/s23a_eigenvectors_extended.npz` (D_K eigenvectors per mode)
+- `computations/s23a_eigenvectors_extended.npz` (D_K eigenvectors per mode)
 - Spectral action a_4 coefficient for the quartic vertex
-- `tier0-computation/tier1_dirac_spectrum.py` (mode functions)
+- `computations/dirac_spectrum.py` (mode functions)
 
 **Script**: `s28c_phonon_tmatrix.py`
 
@@ -196,7 +196,7 @@ The overlap is nonzero only if (p_3,q_3) x (p_4,q_4) contains a component in the
 
 **What**: Verify the 7 axioms of a spectral triple for the product geometry M^4 x (SU(3), g_tau, D_can). This is the gate DP-1: if all 7 axioms hold, the 12D geometry defines a valid noncommutative space in the sense of Connes.
 
-**Input**: `tier0-computation/r20a_riemann_tensor.npz` (metrics), Session 8 J matrix, D_can from s27
+**Input**: `computations/r20a_riemann_tensor.npz` (metrics), Session 8 J matrix, D_can from s27
 
 **Script**: `s28c_12d_axioms.py`
 
@@ -227,7 +227,7 @@ For axioms 4-5, numerical verification at machine precision. For axioms 1-3, 6-7
 
 **What**: Compute the lengths of closed geodesics on (SU(3), g_tau) and their contribution to the spectral action via the Duistermaat-Guillemin trace formula. If the non-perturbative (periodic orbit) corrections exceed 4% of the perturbative (Seeley-DeWitt) spectral action at the KK scale, they cannot be neglected and may provide the non-perturbative minimum that perturbation theory cannot.
 
-**Input**: Jensen metric g_tau from `tier0-computation/tier1_dirac_spectrum.py`
+**Input**: Jensen metric g_tau from `computations/dirac_spectrum.py`
 
 **Script**: `s28c_periodic_orbits.py`
 
@@ -288,7 +288,7 @@ For axioms 4-5, numerical verification at machine precision. For axioms 1-3, 6-7
 
 **What**: Extend the multi-sector BCS computation from S27 (p+q <= 3, 9 sectors) to p+q <= 4 (adding (4,0), (0,4), (3,1), (1,3), (2,2) = 5 new sectors, 14 total). Verify that the F_total profile converges: if higher sectors contribute negligibly, the physical sector count is 9 and the S27 result is definitive. If higher sectors change the qualitative picture, p+q <= 3 was insufficient.
 
-**Input**: `tier0-computation/s27_multisector_bcs.py` (BCS solver, extend sector list), `tier0-computation/tier1_dirac_spectrum.py`
+**Input**: `computations/s27_multisector_bcs.py` (BCS solver, extend sector list), `computations/dirac_spectrum.py`
 
 **Script**: `s28c_sector_convergence.py`
 
@@ -371,28 +371,28 @@ Dependency chain:
 
 | File | Computation | Producer |
 |:-----|:-----------|:---------|
-| `tier0-computation/s28c_phonon_tmatrix.py` | KC-2 | phonon-sim |
-| `tier0-computation/s28c_phonon_tmatrix.npz` | KC-2 data | phonon-sim |
-| `tier0-computation/s28c_phonon_tmatrix.png` | KC-2 plot | phonon-sim |
-| `tier0-computation/s28c_steady_state_mu.py` | KC-3 | phonon-sim |
-| `tier0-computation/s28c_steady_state_mu.npz` | KC-3 data | phonon-sim |
-| `tier0-computation/s28c_steady_state_mu.txt` | KC-3 verdict | phonon-sim |
-| `tier0-computation/s28c_luttinger.py` | KC-4 | phonon-sim |
-| `tier0-computation/s28c_luttinger.txt` | KC-4 verdict | phonon-sim |
-| `tier0-computation/s28c_bcs_van_hove.py` | KC-5 | phonon-sim |
-| `tier0-computation/s28c_bcs_van_hove.npz` | KC-5 data | phonon-sim |
-| `tier0-computation/s28c_bcs_van_hove.txt` | KC-5 verdict | phonon-sim |
-| `tier0-computation/s28c_12d_axioms.py` | C-6 | phonon-sim |
-| `tier0-computation/s28c_12d_axioms.npz` | C-6 data | phonon-sim |
-| `tier0-computation/s28c_12d_axioms.txt` | C-6 verdict | phonon-sim |
-| `tier0-computation/s28c_periodic_orbits.py` | E-3 | phonon-sim |
-| `tier0-computation/s28c_periodic_orbits.npz` | E-3 data | phonon-sim |
-| `tier0-computation/s28c_periodic_orbits.png` | E-3 plot | phonon-sim |
-| `tier0-computation/s28c_berry_bcs.py` | S-4 | phonon-sim |
-| `tier0-computation/s28c_berry_bcs.npz` | S-4 data | phonon-sim |
-| `tier0-computation/s28c_berry_bcs.png` | S-4 plot | phonon-sim |
-| `tier0-computation/s28c_sector_convergence.py` | L-8 | phonon-sim |
-| `tier0-computation/s28c_sector_convergence.npz` | L-8 data | phonon-sim |
-| `tier0-computation/s28c_sector_convergence.png` | L-8 plot | phonon-sim |
-| `tier0-computation/s28c_gate_verdicts.txt` | All gate verdicts | coordinator |
+| `computations/s28c_phonon_tmatrix.py` | KC-2 | phonon-sim |
+| `computations/s28c_phonon_tmatrix.npz` | KC-2 data | phonon-sim |
+| `computations/s28c_phonon_tmatrix.png` | KC-2 plot | phonon-sim |
+| `computations/s28c_steady_state_mu.py` | KC-3 | phonon-sim |
+| `computations/s28c_steady_state_mu.npz` | KC-3 data | phonon-sim |
+| `computations/s28c_steady_state_mu.txt` | KC-3 verdict | phonon-sim |
+| `computations/s28c_luttinger.py` | KC-4 | phonon-sim |
+| `computations/s28c_luttinger.txt` | KC-4 verdict | phonon-sim |
+| `computations/s28c_bcs_van_hove.py` | KC-5 | phonon-sim |
+| `computations/s28c_bcs_van_hove.npz` | KC-5 data | phonon-sim |
+| `computations/s28c_bcs_van_hove.txt` | KC-5 verdict | phonon-sim |
+| `computations/s28c_12d_axioms.py` | C-6 | phonon-sim |
+| `computations/s28c_12d_axioms.npz` | C-6 data | phonon-sim |
+| `computations/s28c_12d_axioms.txt` | C-6 verdict | phonon-sim |
+| `computations/s28c_periodic_orbits.py` | E-3 | phonon-sim |
+| `computations/s28c_periodic_orbits.npz` | E-3 data | phonon-sim |
+| `computations/s28c_periodic_orbits.png` | E-3 plot | phonon-sim |
+| `computations/s28c_berry_bcs.py` | S-4 | phonon-sim |
+| `computations/s28c_berry_bcs.npz` | S-4 data | phonon-sim |
+| `computations/s28c_berry_bcs.png` | S-4 plot | phonon-sim |
+| `computations/s28c_sector_convergence.py` | L-8 | phonon-sim |
+| `computations/s28c_sector_convergence.npz` | L-8 data | phonon-sim |
+| `computations/s28c_sector_convergence.png` | L-8 plot | phonon-sim |
+| `computations/s28c_gate_verdicts.txt` | All gate verdicts | coordinator |
 | `sessions/session-28/session-28c-synthesis.md` | Final synthesis | coordinator |

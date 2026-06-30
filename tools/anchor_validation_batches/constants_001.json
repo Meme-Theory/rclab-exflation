@@ -1,0 +1,107 @@
+{
+  "table": "constants",
+  "batch_id": 1,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "const_A_s_floor_5conv",
+      "anchor_type": "constants",
+      "name": "A_s_floor_5conv",
+      "value": "5.09e-13",
+      "session": "S83/S84",
+      "source_citation": "sessions/session-84/session-84-w5-workingpaper.md §W5-59 (s84_w5_floor_conditioned_on_branch.py)",
+      "source_file": "computations/_shared/canonical_constants.py",
+      "source_context_30_lines": "  653: #   unit:              dimensionless\n  654: #   session-of-origin: S83\n  655: #   source-document:   sessions/session-83/session-83-w3-workingpaper.md §G38\n  656: #                      (K-MATCHING-5-CONVENTIONS)\n  657: #   derivation-pin:    computations/session-83/s83_w3_g38_k_matching_5_conventions.py\n  658: #   gate-id:           S83-W3-G38-K-MATCHING-5-CONVENTIONS\n  659: K_match_need = 0.6366\n  660: \n  661: # A_s_floor_5conv — Branch-B A_s floor under R5 regulator + Zubarev dressing\n  662: #   name:              A_s_floor_5conv\n  663: #   value:             5.09e-13\n  664: #   unit:              dimensionless (scalar power amplitude)\n  665: #   session-of-origin: S83 (pre-registered), S84 (final pinning via W5-59)\n  666: #   source-document:   sessions/session-84/session-84-w5-workingpaper.md §W5-59\n  667: #                      (FLOOR-CONDITIONED-ON-BRANCH)\n  668: #   derivation-pin:    computations/session-84/s84_w5_floor_conditioned_on_branch.py\n  669: #                      (pending-W5-59 — placeholder; orchestrator re-pins"
+    },
+    {
+      "anchor_id": "const_CC_OOM",
+      "anchor_type": "constants",
+      "name": "CC_OOM",
+      "value": "115.5",
+      "session": "S66",
+      "source_citation": "s66_w1a_dilution_cc.npz",
+      "source_file": "computations/_shared/canonical_constants.py",
+      "source_context_30_lines": "  337: \n  338: # M_KK: TWO extraction routes, 0.83-decade tension (CONST-FREEZE-42 PASS)\n  339: M_KK_gravity = 7.428660036284456e16   # GeV, spectral zeta / Newton's constant route (S42)\n  340: M_KK_kerner = 5.041679838376001e17    # GeV, Kerner gauge-metric route (S42)\n  341: M_KK = M_KK_gravity                   # Default alias — gravity route (conservative)\n  342: OOM_diff_MKK = 0.831664779390838      # log10(M_KK_kerner / M_KK_gravity) (S42)\n  343: \n  344: # ==============================================================================\n  345: CC_OOM = 115.5  # CC_OOM = 115.5 OOM cosmological-constant dilution depth from Volovik tracking-vacuum partition; S66 W1-A PASS (rho_vac/rho_obs = 1.032). Substrate cascade-depth multiplier: cascade_depth = CC_OOM * log_2(10) = 383.6827 generations EXACT for pixelation-lock cascade-tail BBN-mass derivation (S88 W1c-66 J7 89-peak detection). (S66)\n  346: #  SECTION C: BCS / Many-Body Constants\n  347: # ==============================================================================\n  348: \n  349: # BCS condensation energy — THREE values exist; each is a DIFFERENT quantity\n  350: # All in M_KK units (dimensionless ratios)\n  351: E_cond_ED_8mode = -0.13685055970476342  # S36 ED-CONV-36: 8-mode (4B2+1B1+3B3), 256-state, canonical\n  352: E_cond_ED_5mode = -0.11507660716341951  # S35 ED: 5-mode (4B2+1B1), 32-state (superseded by 8-mode)\n  353: E_cond_GL = -0.156                      # S37: Ginzburg-Landau functional (different quantity)"
+    },
+    {
+      "anchor_id": "const_Delta_0_GL",
+      "anchor_type": "constants",
+      "name": "Delta_0_GL",
+      "value": "0.7704350982797368",
+      "session": "S37",
+      "source_citation": "s37_instanton_mc.npz",
+      "source_file": "computations/_shared/canonical_constants.py",
+      "source_context_30_lines": "  359: E_exc_ratio = 443.0            # E_exc / |E_cond| (S38, Schwinger-instanton duality)\n  360: E_exc = E_exc_ratio * abs(E_cond)  # = 60.625 M_KK (derived — was 50.9 with old E_cond)\n  361: n_pairs = 59.8                 # Bogoliubov quasiparticle pairs from transit (S38)\n  362: N_dof_BCS = 8                  # Fock space modes (4B2 + 1B1 + 3B3)\n  363: T_compound = E_exc / 8         # Microcanonical temperature (M_KK units)\n  364: \n  365: # BCS gap and pairing — THREE quantities, often confused:\n  366: #\n  367: #   Delta_0_GL  = 0.770 M_KK : Ginzburg-Landau ORDER PARAMETER amplitude from\n  368: #                 s37_instanton_mc.  This is sqrt(|a_GL|/(2*b_GL)), the equilibrium\n  369: #                 condensate magnitude.  NOT an excitation gap.\n  370: #\n  371: #   Delta_0_OES = 0.464 M_KK : Odd-Even Staggering (pair-addition) gap from exact\n  372: #                 diagonalization in s37_pair_susceptibility (256-state Hilbert space,\n  373: #                 8-mode Fock space = 4 B2 + 1 B1 + 3 B3).  This IS the physical BCS\n  374: #                 gap — the energy cost to add/remove one Cooper pair.\n  375: #                 CANONICAL BCS GAP."
+    },
+    {
+      "anchor_id": "const_Delta_0_OES",
+      "anchor_type": "constants",
+      "name": "Delta_0_OES",
+      "value": "0.4642547394830737",
+      "session": "S37",
+      "source_citation": "s37_pair_susceptibility.npz",
+      "source_file": "computations/_shared/canonical_constants.py",
+      "source_context_30_lines": "  363: T_compound = E_exc / 8         # Microcanonical temperature (M_KK units)\n  364: \n  365: # BCS gap and pairing — THREE quantities, often confused:\n  366: #\n  367: #   Delta_0_GL  = 0.770 M_KK : Ginzburg-Landau ORDER PARAMETER amplitude from\n  368: #                 s37_instanton_mc.  This is sqrt(|a_GL|/(2*b_GL)), the equilibrium\n  369: #                 condensate magnitude.  NOT an excitation gap.\n  370: #\n  371: #   Delta_0_OES = 0.464 M_KK : Odd-Even Staggering (pair-addition) gap from exact\n  372: #                 diagonalization in s37_pair_susceptibility (256-state Hilbert space,\n  373: #                 8-mode Fock space = 4 B2 + 1 B1 + 3 B3).  This IS the physical BCS\n  374: #                 gap — the energy cost to add/remove one Cooper pair.\n  375: #                 CANONICAL BCS GAP.\n  376: #\n  377: #   Delta_B3    = 0.176 M_KK : Gap in the B3 sector specifically (S38).  Smaller than\n  378: #                 the total gap because B3 modes lie further from the Fermi surface.\n  379: #"
+    },
+    {
+      "anchor_id": "const_Delta_BCS",
+      "anchor_type": "constants",
+      "name": "Delta_BCS",
+      "value": "0.4642547394830737",
+      "session": "S70",
+      "source_citation": "alias for Delta_0_OES",
+      "source_file": "computations/_shared/canonical_constants.py",
+      "source_context_30_lines": "  379: #\n  380: #   The value 0.52 M_KK that appears in some S69 scripts (s69_bcs_surface_gravity.py)\n  381: #   is NOT a separate gap measurement.  It was a confusion with the B2[3] single-particle\n  382: #   energy eps_fold[3] = 0.5229 M_KK.  That is a bare eigenvalue of D_K, not a pairing gap.\n  383: #   Superseded by Delta_0_OES = 0.4643 (S70, BCS-GAP-CANONICAL-70).\n  384: #\n  385: Delta_0_GL = 0.7704350982797368   # GL order parameter amplitude (M_KK, s37_instanton_mc)\n  386: Delta_0_OES = 0.4642547394830737  # OES/pair-addition gap (M_KK, s37_pair_susceptibility)\n  387: Delta_BCS = Delta_0_OES           # R-PROTECTED — CANONICAL BCS gap alias (S70, BCS-GAP-CANONICAL-70)\n  388:                                   # Dimensionless ratio Delta_BCS/M_KK = 0.4643; eigenvalue ratio,\n  389:                                   # bypasses Seeley-DeWitt expansion. STRUCTURAL, drift 0.00% (S74 W4-F #19)\n  390: Delta_B3 = 0.176                  # B3 sector gap (M_KK, S38)\n  391: M_max_thouless = 1.674            # Maximum Thouless parameter (S35 RPA)\n  392: S_inst = 0.06860372346994315      # Instanton action (s37_instanton_mc, quantum critical point)\n  393: \n  394: # Coherence lengths (s37_instanton_mc, high precision)\n  395: xi_BCS = 0.8083468753837275       # BCS coherence length (M_KK^{-1})"
+    },
+    {
+      "anchor_id": "const_E_B1",
+      "anchor_type": "constants",
+      "name": "E_B1",
+      "value": "0.8191400026759529",
+      "session": "S38",
+      "source_citation": "s38_attempt_freq.npz",
+      "source_file": "computations/_shared/canonical_constants.py",
+      "source_context_30_lines": "  579: # Directional phase stiffness on 32-cell tessellation\n  580: J_C2 = 0.933                   # C^2 coset directions (4 bonds, dominant) M_KK\n  581: J_su2 = 0.059                  # su(2) stabilizer directions (3 bonds) M_KK\n  582: J_u1 = 0.038                   # u(1) direction (1 bond, softest) M_KK\n  583: T_acoustic = 0.112              # GGE acoustic temperature (S42/S47) M_KK\n  584: \n  585: # Mode spectrum at fold (s37_instanton_action)\n  586: rho_B2_per_mode = 14.023250234055  # B2 DOS per mode at fold\n  587: E_B1 = 0.8191400026759529     # B1 mode energy at fold (M_KK)\n  588: E_B2_mean = 0.845269087679269 # Mean B2 energy at fold (M_KK)\n  589: E_B3_mean = 0.9782238787713764  # Mean B3 energy at fold (M_KK)\n  590: \n  591: # ==============================================================================\n  592: #  SECTION E2: S52 Phonon & Structural Results\n  593: # ==============================================================================\n  594: \n  595: # GL-Josephson phonon spectrum (s52_gl_josephson.npz, GL-JOSEPHSON-52 PASS)"
+    },
+    {
+      "anchor_id": "const_E_B2_mean",
+      "anchor_type": "constants",
+      "name": "E_B2_mean",
+      "value": "0.845269087679269",
+      "session": "S38",
+      "source_citation": "s38_attempt_freq.npz",
+      "source_file": "computations/_shared/canonical_constants.py",
+      "source_context_30_lines": "  580: J_C2 = 0.933                   # C^2 coset directions (4 bonds, dominant) M_KK\n  581: J_su2 = 0.059                  # su(2) stabilizer directions (3 bonds) M_KK\n  582: J_u1 = 0.038                   # u(1) direction (1 bond, softest) M_KK\n  583: T_acoustic = 0.112              # GGE acoustic temperature (S42/S47) M_KK\n  584: \n  585: # Mode spectrum at fold (s37_instanton_action)\n  586: rho_B2_per_mode = 14.023250234055  # B2 DOS per mode at fold\n  587: E_B1 = 0.8191400026759529     # B1 mode energy at fold (M_KK)\n  588: E_B2_mean = 0.845269087679269 # Mean B2 energy at fold (M_KK)\n  589: E_B3_mean = 0.9782238787713764  # Mean B3 energy at fold (M_KK)\n  590: \n  591: # ==============================================================================\n  592: #  SECTION E2: S52 Phonon & Structural Results\n  593: # ==============================================================================\n  594: \n  595: # GL-Josephson phonon spectrum (s52_gl_josephson.npz, GL-JOSEPHSON-52 PASS)\n  596: c_Gold = 0.915                    # Goldstone sound speed (M_KK units)"
+    },
+    {
+      "anchor_id": "const_E_B3_mean",
+      "anchor_type": "constants",
+      "name": "E_B3_mean",
+      "value": "0.9782238787713764",
+      "session": "S38",
+      "source_citation": "s38_attempt_freq.npz",
+      "source_file": "computations/_shared/canonical_constants.py",
+      "source_context_30_lines": "  581: J_su2 = 0.059                  # su(2) stabilizer directions (3 bonds) M_KK\n  582: J_u1 = 0.038                   # u(1) direction (1 bond, softest) M_KK\n  583: T_acoustic = 0.112              # GGE acoustic temperature (S42/S47) M_KK\n  584: \n  585: # Mode spectrum at fold (s37_instanton_action)\n  586: rho_B2_per_mode = 14.023250234055  # B2 DOS per mode at fold\n  587: E_B1 = 0.8191400026759529     # B1 mode energy at fold (M_KK)\n  588: E_B2_mean = 0.845269087679269 # Mean B2 energy at fold (M_KK)\n  589: E_B3_mean = 0.9782238787713764  # Mean B3 energy at fold (M_KK)\n  590: \n  591: # ==============================================================================\n  592: #  SECTION E2: S52 Phonon & Structural Results\n  593: # ==============================================================================\n  594: \n  595: # GL-Josephson phonon spectrum (s52_gl_josephson.npz, GL-JOSEPHSON-52 PASS)\n  596: c_Gold = 0.915                    # Goldstone sound speed (M_KK units)\n  597: c_Gold_over_c_fabric = 0.00436    # R-PROTECTED — 229x hierarchy; eigenvalue gradient ratio,"
+    },
+    {
+      "anchor_id": "const_E_cond",
+      "anchor_type": "constants",
+      "name": "E_cond",
+      "value": "-0.13685055970476342",
+      "session": "S36",
+      "source_citation": "alias for E_cond_ED_8mode",
+      "source_file": "computations/_shared/canonical_constants.py",
+      "source_context_30_lines": "    2: \"\"\"\n    3: Canonical Constants Module — Single Source of Truth\n    4: ====================================================\n    5: \n    6: Created: Session 45 (2026-03-15)\n    7: Purpose: Eliminate hardcoded constant drift across computations scripts.\n    8: \n    9: Provenance audit (S44, AUDIT_UPSTREAM_ROOTS.md) found:\n   10:   - Three E_cond values (-0.115, -0.137, -0.156) used interchangeably\n   11:   - Two Vol(SU(3)) formulas (8880.9 vs 1349.7) in competing scripts\n   12:   - M_KK = 1e16 used where 7.43e16 (gravity) or 5.04e17 (Kerner) intended\n   13: \n   14: Every constant below has a session/gate provenance comment.\n   15: The PROVENANCE dict (Section F) provides machine-readable lineage.\n   16: \n   17: Usage:\n   18:     from canonical_constants import E_cond, tau_fold, M_KK_gravity"
+    },
+    {
+      "anchor_id": "const_E_cond_ED_5mode",
+      "anchor_type": "constants",
+      "name": "E_cond_ED_5mode",
+      "value": "-0.11507660716341951",
+      "session": "S35",
+      "source_citation": "s36_multisector_ed.npz (config_1_E_cond)",
+      "source_file": "computations/_shared/canonical_constants.py",
+      "source_context_30_lines": "  344: # ==============================================================================\n  345: CC_OOM = 115.5  # CC_OOM = 115.5 OOM cosmological-constant dilution depth from Volovik tracking-vacuum partition; S66 W1-A PASS (rho_vac/rho_obs = 1.032). Substrate cascade-depth multiplier: cascade_depth = CC_OOM * log_2(10) = 383.6827 generations EXACT for pixelation-lock cascade-tail BBN-mass derivation (S88 W1c-66 J7 89-peak detection). (S66)\n  346: #  SECTION C: BCS / Many-Body Constants\n  347: # ==============================================================================\n  348: \n  349: # BCS condensation energy — THREE values exist; each is a DIFFERENT quantity\n  350: # All in M_KK units (dimensionless ratios)\n  351: E_cond_ED_8mode = -0.13685055970476342  # S36 ED-CONV-36: 8-mode (4B2+1B1+3B3), 256-state, canonical\n  352: E_cond_ED_5mode = -0.11507660716341951  # S35 ED: 5-mode (4B2+1B1), 32-state (superseded by 8-mode)\n  353: E_cond_GL = -0.156                      # S37: Ginzburg-Landau functional (different quantity)\n  354: \n  355: # The canonical value is the 8-mode ED result (S36, verified to machine epsilon)\n  356: E_cond = E_cond_ED_8mode               # = -0.137 (alias for downstream use)\n  357: \n  358: # Excitation energy from BCS transit quench (S38)\n  359: E_exc_ratio = 443.0            # E_exc / |E_cond| (S38, Schwinger-instanton duality)\n  360: E_exc = E_exc_ratio * abs(E_cond)  # = 60.625 M_KK (derived — was 50.9 with old E_cond)"
+    }
+  ]
+}

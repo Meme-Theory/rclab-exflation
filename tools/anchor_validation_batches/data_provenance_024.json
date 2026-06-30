@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 24,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_231",
+      "anchor_type": "data_provenance",
+      "name": "oneloop_sa",
+      "script_path": "session-37/s37_oneloop_sa.py",
+      "session": "s37",
+      "inputs": "",
+      "outputs": "session-37/s37_oneloop_sa.npz, session-37/s37_oneloop_sa.png",
+      "source_file": "computations/session-37/s37_oneloop_sa.py",
+      "source_context_30_lines": "  825:         'gate_verdict': 'FAIL',\n  826:         'shortfall': KINETIC_THRESHOLD / max(depth_fold, 1e-15),\n  827: \n  828:         # Reference values\n  829:         'E_cond_ED': E_cond_ED,\n  830:         'dS_fold': dS_fold,\n  831:     }\n  832: \n  833:     out_npz = os.path.join(SCRIPT_DIR, 's37_oneloop_sa.npz')\n  834:     np.savez_compressed(out_npz, **save_dict)\n  835:     print(f\"\\nSaved: {out_npz}\")\n  836:     print(f\"Size: {os.path.getsize(out_npz) / 1024:.1f} KB\")\n  837: \n  838:     # ================================================================\n  839:     # PLOT\n  840:     # ================================================================\n  841:     fig, axes = plt.subplots(2, 2, figsize=(14, 10))"
+    },
+    {
+      "anchor_id": "prov_232",
+      "anchor_type": "data_provenance",
+      "name": "pair_susceptibility",
+      "script_path": "session-37/s37_pair_susceptibility.py",
+      "session": "s37",
+      "inputs": "",
+      "outputs": "session-37/s37_pair_susceptibility.npz, session-37/s37_pair_susceptibility.png",
+      "source_file": "computations/session-37/s37_pair_susceptibility.py",
+      "source_context_30_lines": "    1: \"\"\"\n    2: S37-PAIR-SUSCEPTIBILITY:  re-run of s37_pair_susceptibility.py\n    3: =======================================================================\n    4: \n    5: Original: computations/session-37/s37_pair_susceptibility.py (SHA-256 head 16: 698bc5d9acfbcad4)\n    6: \n    7: Purpose\n    8: -------\n    9: Reproduce S37 dynamical pair susceptibility chi_pair(omega) via Lehmann\n   10: representation over all 256 eigenstates of the 8-mode BCS ED, under"
+    },
+    {
+      "anchor_id": "prov_233",
+      "anchor_type": "data_provenance",
+      "name": "pair_susceptibility_legacy",
+      "script_path": "session-37/s37_pair_susceptibility_legacy.py",
+      "session": "s37",
+      "inputs": "",
+      "outputs": "session-37/s37_pair_susceptibility_legacy.npz, session-37/s37_pair_susceptibility_legacy.png",
+      "source_file": "computations/session-37/s37_pair_susceptibility_legacy.py",
+      "source_context_30_lines": "<name 'pair_susceptibility_legacy' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: Session 37: F.2 Pair Susceptibility + F.3 Vacuum Polarization Energy\n    4: =====================================================================\n    5: \n    6: Computes the dynamical pair susceptibility chi_pair(omega) via the Lehmann\n    7: representation using ALL 256 eigenstates from the 8-mode BCS exact\n    8: diagonalization (ED-CONV-36).\n    9: \n   10: The pair susceptibility:\n   11:   chi_pair(omega) = Sum_n [ |<n|P^dag|0>|^2 / (omega - omega_n + i*eta)\n   12:                           - |<n|P|0>|^2    / (omega + omega_n + i*eta) ]\n   13: \n   14: where omega_n = E_n - E_0 and P^dag = Sum_k b_k^dag (pair creation operator).\n   15: \n   16: Physical content:\n   17:   - Im chi_pair(omega) = spectral density of pair fluctuations\n   18:   - Poles below 2*Delta = pair-vibrational (virtual) excitations\n   19:   - Continuum above 2*Delta = pair-breaking excitations\n   20:   - E_vac = -(1/2pi) * integral_0^{2Delta} Im chi(omega) * omega d(omega)\n   21: \n   22: This is the nuclear-physics standard analysis: the pair-vibrational spectrum\n   23: reveals the structure of virtual pair fluctuations in the BCS vacuum.\n   24: \n   25: Nuclear benchmarks:\n   26:   - Pole-to-continuum ratio: 0.3-0.7 (mid-shell), >0.9 (near closures)\n   27:   - |E_vac|/|E_cond|: 0.05-0.15\n   28: \n   29: Author: Nazarewicz Nuclear Structure Theorist, Session 37\n   30: Date: 2026-03-08"
+    },
+    {
+      "anchor_id": "prov_234",
+      "anchor_type": "data_provenance",
+      "name": "attempt_freq",
+      "script_path": "session-38/s38_attempt_freq.py",
+      "session": "s38",
+      "inputs": "",
+      "outputs": "session-38/s38_attempt_freq.npz",
+      "source_file": "computations/session-38/s38_attempt_freq.py",
+      "source_context_30_lines": "  683:     # Eigenvalue spacings\n  684:     'unique_diffs': unique_diffs,\n  685: \n  686:     # Uncertainty\n  687:     'omega_att_uncertainty': abs(omega_att_BCS - omega_att_GL),\n  688:     'omega_att_frac_uncertainty': abs(omega_att_BCS - omega_att_GL) / omega_att_BCS,\n  689: }\n  690: \n  691: out_path = os.path.join(SCRIPT_DIR, 's38_attempt_freq.npz')\n  692: np.savez(out_path, **results)\n  693: print(f\"  Saved to {out_path}\")\n  694: \n  695: dt = time.time() - t0\n  696: print(f\"  Total time: {dt:.2f}s\")\n  697: \n  698: \n  699: # ======================================================================"
+    },
+    {
+      "anchor_id": "prov_235",
+      "anchor_type": "data_provenance",
+      "name": "cc_instanton",
+      "script_path": "session-38/s38_cc_instanton.py",
+      "session": "s38",
+      "inputs": "",
+      "outputs": "session-38/s38_cc_instanton.npz, session-38/s38_cc_instanton.png",
+      "source_file": "computations/session-38/s38_cc_instanton.py",
+      "source_context_30_lines": "  696:     'mult_k': mult_k,\n  697: \n  698:     # Distribution at T=1.0 (for plotting)\n  699:     'phi_grid_T1': results_0d[1.0]['phi_grid'][::40],  # downsample\n  700:     'boltz_T1': results_0d[1.0]['boltz'][::40],\n  701:     'V_T1': results_0d[1.0]['V'][::40],\n  702: }\n  703: \n  704: outpath = os.path.join(SCRIPT_DIR, 's38_cc_instanton.npz')\n  705: np.savez_compressed(outpath, **save_dict)\n  706: print(f\"  Saved: {outpath}\")\n  707: \n  708: \n  709: # ======================================================================\n  710: #  Plotting\n  711: # ======================================================================\n  712: "
+    },
+    {
+      "anchor_id": "prov_236",
+      "anchor_type": "data_provenance",
+      "name": "kz_defects",
+      "script_path": "session-38/s38_kz_defects.py",
+      "session": "s38",
+      "inputs": "",
+      "outputs": "session-38/s38_kz_defects.npz",
+      "source_file": "computations/session-38/s38_kz_defects.py",
+      "source_context_30_lines": "    1: \"\"\"\n    2: S38-KZ-DEFECTS:  re-run of s38_kz_defects.py\n    3: ======================================================\n    4: \n    5: Original: computations/session-38/s38_kz_defects.py (SHA-256 head 16: bd6dc37147c83bfa)\n    6: \n    7: Purpose\n    8: -------\n    9: Reproduce the S38 KZ defect/excitation computation under S81 canonical\n   10: discipline:"
+    },
+    {
+      "anchor_id": "prov_237",
+      "anchor_type": "data_provenance",
+      "name": "kz_defects_legacy",
+      "script_path": "session-38/s38_kz_defects_legacy.py",
+      "session": "s38",
+      "inputs": "",
+      "outputs": "session-38/s38_kz_defects_legacy.npz",
+      "source_file": "computations/session-38/s38_kz_defects_legacy.py",
+      "source_context_30_lines": "<name 'kz_defects_legacy' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: Session 38 (T3-S38-KZ-DEFECTS re-run under S81 canonical verdict form):\n    3:   Kibble-Zurek Defect Density Estimate\n    4: \n    5: Estimates the defect density produced by the transit through the BCS phase\n    6: transition at the van Hove fold, using the Kibble-Zurek mechanism.\n    7: \n    8: Physics:\n    9:   - The modulus tau transits through the BCS instability window [0.175, 0.205]\n   10:     at terminal velocity |v_tau| ~ 26.5 (in M_KK units, canonical).\n   11:   - BCS universality class: nu = 1/2, z = 2 (mean-field).\n   12:   - BDI topological class with T^2 = +1.\n   13:   - The internal space is 0D for pairing (L/xi_GL = 0.031).\n   14:   - Cooper pairs carry K_7 charge +/- 1/2.\n   15: \n   16: Method:\n   17:   1. Extract transit parameters from canonical_constants.py + archived .npz\n   18:   2. Compute KZ correlation length xi_KZ (sudden-quench floor)\n   19:   3. Compute defect density for 1D quench (tau-direction)\n   20:   4. Map to 4D cosmological observables\n   21:   5. Evaluate BDI topological content\n   22:   6. Bogoliubov pair creation estimate\n   23: \n   24: S81 canonical output 4-tuple:\n   25:   (value=P_exc_kz, scheme=KZ_sudden_quench, convention=BCS_meanfield_nu0.5_z2, L_max=N/A)\n   26: \"\"\"\n   27: \n   28: import os\n   29: \n   30: # CPU-only fallback for this script (no heavy linear algebra)."
+    },
+    {
+      "anchor_id": "prov_238",
+      "anchor_type": "data_provenance",
+      "name": "level_spacing",
+      "script_path": "session-38/s38_level_spacing.py",
+      "session": "s38",
+      "inputs": "",
+      "outputs": "session-38/s38_level_spacing.npz, session-38/s38_level_spacing.png",
+      "source_file": "computations/session-38/s38_level_spacing.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s38_level_spacing.py -- CHAOS-1 Gate: D_K Level Spacing Statistics\n    4: \n    5: Compute the level spacing ratio statistic <r> for the Dirac operator D_K\n    6: on Jensen-deformed SU(3), within individual Peter-Weyl sectors.\n    7: \n    8: Physics:\n    9:   - D_K is block-diagonal by Peter-Weyl decomposition (proven Session 22b)\n   10:   - At tau=0 (bi-invariant SU(3)), maximal symmetry => integrable (Poisson)\n   11:   - Jensen deformation breaks SU(3) -> U(1)_7, should push toward chaos"
+    },
+    {
+      "anchor_id": "prov_239",
+      "anchor_type": "data_provenance",
+      "name": "otoc_bcs",
+      "script_path": "session-38/s38_otoc_bcs.py",
+      "session": "s38",
+      "inputs": "computations/session-37/s37_pair_susceptibility.npz, computations/session-37/s37_instanton_action.npz, computations/sess...",
+      "outputs": "session-38/s38_otoc_bcs.npz, session-38/s38_otoc_bcs.png",
+      "source_file": "computations/session-38/s38_otoc_bcs.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s38_otoc_bcs.py — OTOC of BCS gap operator in 0D Fock space (CHAOS-2)\n    4: \n    5: Computes the out-of-time-ordered correlator F(t) = -<[A(t), A(0)]^2>_beta\n    6: for the pairing gap operator A = (Delta + Delta^dag)/sqrt(2) in the\n    7: reduced BCS Hamiltonian on 8 pairing modes (B2 x4, B1, B3 x3).\n    8: \n    9: Diagnostics:\n   10:   1. OTOC F(t) at multiple temperatures -> Lyapunov exponent lambda_L\n   11:   2. MSS bound check: lambda_L <= 2*pi*T"
+    },
+    {
+      "anchor_id": "prov_240",
+      "anchor_type": "data_provenance",
+      "name": "9to1_sweep",
+      "script_path": "session-39/s39_9to1_sweep.py",
+      "session": "s39",
+      "inputs": "",
+      "outputs": "session-39/s39_9to1_sweep.npz, session-39/s39_9to1_sweep.png",
+      "source_file": "computations/session-39/s39_9to1_sweep.py",
+      "source_context_30_lines": "  431: \n  432: n_active = len(results_list)\n  433: print(f\"\\n  Active BCS points: {n_active}\")\n  434: \n  435: if n_active < 2:\n  436:     print(\"  INSUFFICIENT DATA for statistical analysis.\")\n  437:     print(\"  Saving minimal results and exiting.\")\n  438: \n  439:     out_path = os.path.join(SCRIPT_DIR, 's39_9to1_sweep.npz')\n  440:     np.savez(out_path, verdict=\"INSUFFICIENT_DATA\", n_active=n_active)\n  441:     sys.exit(0)\n  442: \n  443: tau_arr = np.array([r['tau'] for r in results_list])\n  444: omega_att_arr = np.array([r['omega_att'] for r in results_list])\n  445: R_31_arr = np.array([r['R_B3_B1'] for r in results_list])\n  446: R_32_arr = np.array([r['R_B3_B2'] for r in results_list])\n  447: Delta_arr = np.array([r['Delta_0'] for r in results_list])"
+    }
+  ]
+}

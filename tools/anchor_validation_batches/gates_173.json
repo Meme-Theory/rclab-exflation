@@ -1,0 +1,107 @@
+{
+  "table": "gates",
+  "batch_id": 173,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "gate_T3-S22A-DNP-BOUND",
+      "anchor_type": "gates",
+      "name": "T3-S22A-DNP-BOUND",
+      "session": "81",
+      "condition": "",
+      "verdict": "PASS",
+      "source_file": "computations\\session-81\\s81_gate_verdicts.txt",
+      "source_context_30_lines": "  221: \n  222: T3-S21C-GB-DEBUG6: PASS -- value=4.82e-20 scheme=euler_density_SU3_analytic_plus_stored convention=S_div_6144_normalized L_max=NA sha256=9a9b14ecb795552a44bbe916c12499322f7e42a11304bbd0756d1b0406f11213\n  223:   # chi(SU(3))=0 to |S/6144|=3.78e-20 (analytic), 4.82e-20 (stored tau=0)\n  224:   # S(S^4)=96 exact, chi=2; S(U(1)xSU(2))=0 exact; S(S^8)=645120 exact, chi=2\n  225:   # All 5 sub-gates PASS; classification=GEOMETRIC\n  226:   # Poincare-Hopf direction confirmed (compact Lie group of rank>=1 implies chi=0)\n  227:   # script_sha=61f8453bd95395f232053dba99ec8d1e142f9a7ee9c5826688a25e75963fec83\n  228: \n  229: T3-S22A-DNP-BOUND: PASS -- value=0.282265 scheme=DNP_TT_lmin_over_m2gauge convention=global_min_over_sectors_00_10_01 L_max=3 sha256=095104f88cdbb2c145fa8e6a8da96539fd4224b732f157314374110ba3dd5298\n  230: \n  231: T3-S22A-PAASCH-CURVE: PASS -- value=tau_closest=0.01880188,ratio_closest=1.53158601,crossings=[0.04240363,0.13218843],spline_cross_M1=0.14987825 scheme=s19a-eigendata-spline-brentq convention=r=E30/E00_min_per_sector L_max=max_pq_sum=6_from_s19a sha256=cb6a602b267d5aaba0f83ca06ed3054d728e7a0fa4535f423d91e7f735745f06\n  232:   # target=phi_paasch=1.531580 (canonical_constants.py L125, PROVEN S12 machine-eps); reproduce s22a_paasch_curve.npz ratio[], crossings[], tau_closest, ratio_closest\n  233:   # pre-fix=original s22a_paasch_curve.py hardcoded phi_paasch=1.531580 inline (L45) and lacked (local) tags on computed intermediates (E_30, ratio, delta,\n... [truncated]"
+    },
+    {
+      "anchor_id": "gate_T3-S22A-PAASCH-CURVE",
+      "anchor_type": "gates",
+      "name": "T3-S22A-PAASCH-CURVE",
+      "session": "81",
+      "condition": "",
+      "verdict": "PASS",
+      "source_file": "computations\\session-81\\s81_gate_verdicts.txt",
+      "source_context_30_lines": "  223:   # chi(SU(3))=0 to |S/6144|=3.78e-20 (analytic), 4.82e-20 (stored tau=0)\n  224:   # S(S^4)=96 exact, chi=2; S(U(1)xSU(2))=0 exact; S(S^8)=645120 exact, chi=2\n  225:   # All 5 sub-gates PASS; classification=GEOMETRIC\n  226:   # Poincare-Hopf direction confirmed (compact Lie group of rank>=1 implies chi=0)\n  227:   # script_sha=61f8453bd95395f232053dba99ec8d1e142f9a7ee9c5826688a25e75963fec83\n  228: \n  229: T3-S22A-DNP-BOUND: PASS -- value=0.282265 scheme=DNP_TT_lmin_over_m2gauge convention=global_min_over_sectors_00_10_01 L_max=3 sha256=095104f88cdbb2c145fa8e6a8da96539fd4224b732f157314374110ba3dd5298\n  230: \n  231: T3-S22A-PAASCH-CURVE: PASS -- value=tau_closest=0.01880188,ratio_closest=1.53158601,crossings=[0.04240363,0.13218843],spline_cross_M1=0.14987825 scheme=s19a-eigendata-spline-brentq convention=r=E30/E00_min_per_sector L_max=max_pq_sum=6_from_s19a sha256=cb6a602b267d5aaba0f83ca06ed3054d728e7a0fa4535f423d91e7f735745f06\n  232:   # target=phi_paasch=1.531580 (canonical_constants.py L125, PROVEN S12 machine-eps); reproduce s22a_paasch_curve.npz ratio[], crossings[], tau_closest, ratio_closest\n  233:   # pre-fix=original s22a_paasch_curve.py hardcoded phi_paasch=1.531580 inline (L45) and lacked (local) tags on computed intermediates (E_30, ratio, delta, cs_ratio, tau_dense, etc.); no canonical_constants import\n  234:   # fix=wrapper s22a_paasch_curve_t3.py added canonical import (\"from canonical_constants import phi_paasch\"), (local)-tagged every intermediate per co\n... [truncated]"
+    },
+    {
+      "anchor_id": "gate_T3-S22B-BLOCK-DIAGONAL-RESULTS",
+      "anchor_type": "gates",
+      "name": "T3-S22B-BLOCK-DIAGONAL-RESULTS",
+      "session": "81",
+      "condition": "",
+      "verdict": "PASS",
+      "source_file": "computations\\session-81\\s81_gate_verdicts.txt",
+      "source_context_30_lines": "  243:   #   sign(delta(0.10)) * sign(delta(0.20)) = (+1)(-1) = -1 < 0         [simplified]\n  244:   #   -> IVT on CubicSpline(delta) gives a root in [0.10, 0.20]         [direction]\n  245:   #   brentq localizes second root at tau = 0.14987825                  [verified]\n  246:   # closure_inputs={s19a_sweep_data.npz:ad2a0da375f516aa24430db6630c733300428fa9682b0986a70b9b766aec1f5a, s22a_paasch_curve.py:1e2261a470f0a7ff99ef30c35cffd76d8a4ccc69fcfec00e59ab71eca2f81706, canonical_constants.py:68b50cd325d2cc8c63b775da3b6b92f538da582bee44c5d906c81259f24dd12f}\n  247:   # script_sha=1e2261a470f0a7ff99ef30c35cffd76d8a4ccc69fcfec00e59ab71eca2f81706\n  248:   # canon_sha=68b50cd325d2cc8c63b775da3b6b92f538da582bee44c5d906c81259f24dd12f\n  249:   # wrapper_sha=s22a_paasch_curve_t3.py in tier0-archive/ (S81-canonical re-run companion)\n  250: \n  251: T3-S22B-BLOCK-DIAGONAL-RESULTS: PASS -- value=0.000e+00 scheme=off_diag_frobenius_norm convention=max_across_9_tau_values L_max=3 sha256=43dbf70063a38d86376d647057d50ff835aae217ac23687c6ecf3f27a0c1b88e\n  252:   # max_off_diag_frob=0.000e+00 (exact zero; stronger than proven_116's 8.4e-15 unitarity drift)\n  253:   # max_eig_recovery_err=1.363e-12 via torch.linalg.eigvalsh on CUDA\n  254:   # max_herm_err_rel=2.106e-16\n  255:   # thresholds: off_diag<1e-14, eig_recovery<1e-10 — both PASS by many orders\n  256:   # N=1232 matrix, 10 sectors (p+q<=3), 9 tau values\n  257:   # script_sha=748d91e471b905c8f2199c6ded02445187ae1db69bc17d1851775c2840720ac2\n\n... [truncated]"
+    },
+    {
+      "anchor_id": "gate_T3-S22B-KOSMANN-MATRIX",
+      "anchor_type": "gates",
+      "name": "T3-S22B-KOSMANN-MATRIX",
+      "session": "81",
+      "condition": "",
+      "verdict": "PASS",
+      "source_file": "computations\\session-81\\s81_gate_verdicts.txt",
+      "source_context_30_lines": "  251: T3-S22B-BLOCK-DIAGONAL-RESULTS: PASS -- value=0.000e+00 scheme=off_diag_frobenius_norm convention=max_across_9_tau_values L_max=3 sha256=43dbf70063a38d86376d647057d50ff835aae217ac23687c6ecf3f27a0c1b88e\n  252:   # max_off_diag_frob=0.000e+00 (exact zero; stronger than proven_116's 8.4e-15 unitarity drift)\n  253:   # max_eig_recovery_err=1.363e-12 via torch.linalg.eigvalsh on CUDA\n  254:   # max_herm_err_rel=2.106e-16\n  255:   # thresholds: off_diag<1e-14, eig_recovery<1e-10 — both PASS by many orders\n  256:   # N=1232 matrix, 10 sectors (p+q<=3), 9 tau values\n  257:   # script_sha=748d91e471b905c8f2199c6ded02445187ae1db69bc17d1851775c2840720ac2\n  258: \n  259: T3-S22B-KOSMANN-MATRIX: PASS -- value=maxLg_u2=0.000e+00,maxKLX=2.001e-16,minKLt=3.847e-02,maxCinter=0.000e+00 scheme=Kosmann_spinor_LX_and_Ltilde_Baptista_P17-P18 convention=KO-dim=6_Cliff8_ON-frame_PW-decomp L_max=L_max=max_pq_sum=3_(sectors_00_10_01_11_20_02) sha256=c726821d76cb4e612213ae2a94f531d1286b04dc15f36654cdbcb66c66c2b334\n  260:   # target=(H0)max||K_LX||<1e-14 (H1)max||Lg_u2||<1e-14 (H2)min||K_Ltilde||>1e-3 (H3)max||C_inter||<1e-12 (all four structural identities must PASS jointly)\n  261:   # pre-fix=schema-mismatch (PA-1 stored as eigvec_{i_tau}_sector_{idx} with sector_labels, but script expected eigenvectors_{i_tau}_p{p}_q{q}); no canonical-constants imports; no SHA-256 pinning; no gate verdict accumulation/emission\n  262:   # fix=added canonical_constants * import (script uses no framework constants\n... [truncated]"
+    },
+    {
+      "anchor_id": "gate_T3-S22C-HIGGS-SIGMA",
+      "anchor_type": "gates",
+      "name": "T3-S22C-HIGGS-SIGMA",
+      "session": "81",
+      "condition": "",
+      "verdict": "PASS",
+      "source_file": "computations\\session-81\\s81_gate_verdicts.txt",
+      "source_context_30_lines": "  262:   # fix=added canonical_constants * import (script uses no framework constants anyway; import is mandated by tier0-*/CLAUDE.md); added schema adapter mapping (sector_labels_{i_tau}, eigvec_{i_tau}_sector_{idx}) -> eigvec_dict[(p,q)]=(evals,evecs); added SHA-256 input-pin logging with closure hash per S81 gate-verdicts protocol; added H0/H1/H2/H3 accumulators with substitution-chain-derived thresholds (NORM_TOL=1e-14, KLT_FLOOR=1e-3, COUPLING_TOL=1e-12); added sidecar verdict emission; tagged all local scalars with # (local)\n  263:   # reproduced=at tau=0.30: ||K_LX||=1.11e-16, ||K_Ltilde||=3.429e-01; at tau=0.50: ||K_LX||=2.00e-16, ||K_Ltilde||=9.781e-01; matches direct verification by independent path (K_Ltilde = K_LX + Phi_correction computed from compute_Ltilde_correction with transport map from compute_averaged_metric)\n  264:   # rel_error=H0-bound: max||K_LX||/NORM_TOL=0.020 (max_KLX=2.001e-16, tolerance=1e-14, ratio=0.020 so 50x inside tolerance); H1 exact zero; H2-margin: min||K_Ltilde||/KLT_FLOOR=38.5 (3.847e-02 / 1e-3); H3 exact zero\n  265:   # closure_inputs={script:7cf28b3ef2374c995bddcbd0708d6f5a4d6f973d0910777d2e9a2efb4860352a, dirac_spectrum.py:eee1b6fdcbb86847385130b3b3467c76fe1b5b73573d7dac4baf428cf4ff163f, canonical_constants.py:68b50cd325d2cc8c63b775da3b6b92f538da582bee44c5d906c81259f24dd12f, pa1_eigenvectors:8e08fc4f36386430c01ca5bab99447359584b4a5ac74a8a0a01599f5028583e6}\n  266:   # script_sha=7cf28b3ef2374c995bddcbd0708d6f5a4d6f973d0910777d2e9a2efb\n... [truncated]"
+    },
+    {
+      "anchor_id": "gate_T3-S22C-INSTANTON-ACTION",
+      "anchor_type": "gates",
+      "name": "T3-S22C-INSTANTON-ACTION",
+      "session": "81",
+      "condition": "",
+      "verdict": "PASS",
+      "source_file": "computations\\session-81\\s81_gate_verdicts.txt",
+      "source_context_30_lines": "  278:   # closure_inputs={s22c_higgs_sigma_archive:71ec39e4e1efa9d01915c8962beda1f11c9266b7911e15204fcb5d1e8329b592,dirac_spectrum:eee1b6fdcbb86847385130b3b3467c76fe1b5b73573d7dac4baf428cf4ff163f,canonical_constants:68b50cd325d2cc8c63b775da3b6b92f538da582bee44c5d906c81259f24dd12f,s22c_higgs_sigma_t3_self:95ea3ce959b166544824fb7f5de4d597cb00b3faf90e822d1e6a95ab8a3a5a64}\n  279:   # script_sha=95ea3ce959b166544824fb7f5de4d597cb00b3faf90e822d1e6a95ab8a3a5a64\n  280:   # canon_sha=68b50cd325d2cc8c63b775da3b6b92f538da582bee44c5d906c81259f24dd12f\n  281:   # classification=GEOMETRIC (CCM portal coupling from D_K eigenstructure; quartic trace identity e/(a*c)=1/dim(spinor_8D)=1/16 is a Peter-Weyl algebraic invariant; no phononic excitations involved; result bounds the NCG-native tau-selection mechanism)\n  282:   # PASS_means=Trap_3_structural_closure_confirmed:Higgs-sigma_portal_cannot_stabilize_tau_modulus_via_CCM_quartic_channel;NCG-native_portal_selection_CLOSED;mechanism_385+455_permanent\n  283:   # note_on_131.8_GeV_mass_direction=S22C_measures_portal_lambda_Hs_NOT_m_H;131.8_GeV_prediction_belongs_to_s62_higgs_bcs_threshold.py(KK_threshold_a_4_curvature);no_substitution_chain_applicable_here_for_m_H\n  284:   # note_on_archive_verdict_string=archive_labeled_STRUCTURAL_KILL(Trap_3),t3_script_emits_STRUCTURAL_CLOSURE(Trap_3)_per_epistemic_discipline(closures_are_boundaries_not_failures);numerical_verdict_identical\n  285: \n  286: T3-S22C-INSTANTON-ACTION: PASS -- value=0.309101 schem\n... [truncated]"
+    },
+    {
+      "anchor_id": "gate_T3-S24A-EIGENVALUE-RATIOS",
+      "anchor_type": "gates",
+      "name": "T3-S24A-EIGENVALUE-RATIOS",
+      "session": "81",
+      "condition": "",
+      "verdict": "FAIL",
+      "source_file": "computations\\session-81\\s81_gate_verdicts.txt",
+      "source_context_30_lines": "  280:   # canon_sha=68b50cd325d2cc8c63b775da3b6b92f538da582bee44c5d906c81259f24dd12f\n  281:   # classification=GEOMETRIC (CCM portal coupling from D_K eigenstructure; quartic trace identity e/(a*c)=1/dim(spinor_8D)=1/16 is a Peter-Weyl algebraic invariant; no phononic excitations involved; result bounds the NCG-native tau-selection mechanism)\n  282:   # PASS_means=Trap_3_structural_closure_confirmed:Higgs-sigma_portal_cannot_stabilize_tau_modulus_via_CCM_quartic_channel;NCG-native_portal_selection_CLOSED;mechanism_385+455_permanent\n  283:   # note_on_131.8_GeV_mass_direction=S22C_measures_portal_lambda_Hs_NOT_m_H;131.8_GeV_prediction_belongs_to_s62_higgs_bcs_threshold.py(KK_threshold_a_4_curvature);no_substitution_chain_applicable_here_for_m_H\n  284:   # note_on_archive_verdict_string=archive_labeled_STRUCTURAL_KILL(Trap_3),t3_script_emits_STRUCTURAL_CLOSURE(Trap_3)_per_epistemic_discipline(closures_are_boundaries_not_failures);numerical_verdict_identical\n  285: \n  286: T3-S22C-INSTANTON-ACTION: PASS -- value=0.309101 scheme=combined_grav_YM_Weyl convention=vol_preserving_Jensen L_max=N/A sha256=d9e71ea42d561f807429c141c73f0af6047d298f9fee72412348516e5f5f22b1\n  287: \n  288: T3-S24A-EIGENVALUE-RATIOS: FAIL -- value=10.147pct_dev scheme=closest_ratio_vs_phi_paasch convention=ascending_sorted_adjacent_ratios L_max=3 sha256=9581cff300a7b239dd07720009935a92fed0d31c590f43a5fa3f72dfdd1ac37f\n  289: \n  290: T3-S25-CONNES-WORKSHOP: INFO -- value=7.814786e+03 scheme=truncated_eta_zeta_\n... [truncated]"
+    },
+    {
+      "anchor_id": "gate_T3-S25-CONNES-WORKSHOP",
+      "anchor_type": "gates",
+      "name": "T3-S25-CONNES-WORKSHOP",
+      "session": "81",
+      "condition": "",
+      "verdict": "INFO",
+      "source_file": "computations\\session-81\\s81_gate_verdicts.txt",
+      "source_context_30_lines": "  282:   # PASS_means=Trap_3_structural_closure_confirmed:Higgs-sigma_portal_cannot_stabilize_tau_modulus_via_CCM_quartic_channel;NCG-native_portal_selection_CLOSED;mechanism_385+455_permanent\n  283:   # note_on_131.8_GeV_mass_direction=S22C_measures_portal_lambda_Hs_NOT_m_H;131.8_GeV_prediction_belongs_to_s62_higgs_bcs_threshold.py(KK_threshold_a_4_curvature);no_substitution_chain_applicable_here_for_m_H\n  284:   # note_on_archive_verdict_string=archive_labeled_STRUCTURAL_KILL(Trap_3),t3_script_emits_STRUCTURAL_CLOSURE(Trap_3)_per_epistemic_discipline(closures_are_boundaries_not_failures);numerical_verdict_identical\n  285: \n  286: T3-S22C-INSTANTON-ACTION: PASS -- value=0.309101 scheme=combined_grav_YM_Weyl convention=vol_preserving_Jensen L_max=N/A sha256=d9e71ea42d561f807429c141c73f0af6047d298f9fee72412348516e5f5f22b1\n  287: \n  288: T3-S24A-EIGENVALUE-RATIOS: FAIL -- value=10.147pct_dev scheme=closest_ratio_vs_phi_paasch convention=ascending_sorted_adjacent_ratios L_max=3 sha256=9581cff300a7b239dd07720009935a92fed0d31c590f43a5fa3f72dfdd1ac37f\n  289: \n  290: T3-S25-CONNES-WORKSHOP: INFO -- value=7.814786e+03 scheme=truncated_eta_zeta_reg_signed_power_sum convention=BDI_lambda_minus_lambda_pairing_KOdim6 L_max=11424_eigenvalues_s19a_sweep_21tau_grid sha256=f21c36e6a68c818ed5f04cda3332fd4e3564bcb04a2f67ca49f9e52b3f879059\n  291: \n  292: T3-S25-EINSTEIN-RESULTS: INFO -- value=V_mixed_monotone_over_100701_points scheme=Kerner_positive_gauge convention=a2+rho_a4+gamma_omega3_inte\n... [truncated]"
+    },
+    {
+      "anchor_id": "gate_T3-S25-EINSTEIN-RESULTS",
+      "anchor_type": "gates",
+      "name": "T3-S25-EINSTEIN-RESULTS",
+      "session": "81",
+      "condition": "",
+      "verdict": "INFO",
+      "source_file": "computations\\session-81\\s81_gate_verdicts.txt",
+      "source_context_30_lines": "  284:   # note_on_archive_verdict_string=archive_labeled_STRUCTURAL_KILL(Trap_3),t3_script_emits_STRUCTURAL_CLOSURE(Trap_3)_per_epistemic_discipline(closures_are_boundaries_not_failures);numerical_verdict_identical\n  285: \n  286: T3-S22C-INSTANTON-ACTION: PASS -- value=0.309101 scheme=combined_grav_YM_Weyl convention=vol_preserving_Jensen L_max=N/A sha256=d9e71ea42d561f807429c141c73f0af6047d298f9fee72412348516e5f5f22b1\n  287: \n  288: T3-S24A-EIGENVALUE-RATIOS: FAIL -- value=10.147pct_dev scheme=closest_ratio_vs_phi_paasch convention=ascending_sorted_adjacent_ratios L_max=3 sha256=9581cff300a7b239dd07720009935a92fed0d31c590f43a5fa3f72dfdd1ac37f\n  289: \n  290: T3-S25-CONNES-WORKSHOP: INFO -- value=7.814786e+03 scheme=truncated_eta_zeta_reg_signed_power_sum convention=BDI_lambda_minus_lambda_pairing_KOdim6 L_max=11424_eigenvalues_s19a_sweep_21tau_grid sha256=f21c36e6a68c818ed5f04cda3332fd4e3564bcb04a2f67ca49f9e52b3f879059\n  291: \n  292: T3-S25-EINSTEIN-RESULTS: INFO -- value=V_mixed_monotone_over_100701_points scheme=Kerner_positive_gauge convention=a2+rho_a4+gamma_omega3_interior_min_search L_max=pq_max=6 sha256=7d7fb73083bd85810133c763db316092e80fc641dea5a63085f5cb8967cf5f2e\n  293: \n  294: T3-S26-P2-COOLING-TRAJECTORY: FAIL -- value=P2-LOCK:_CLOSED|sustained=0|raw=59|max_ratio=203.4801 scheme=LSODA_ODE convention=G_DeWitt L_max=fiducial sha256=b773a3d8d61814c44f5bc98f1e578eb376067802b96442396c1a54a752c785e5\n  295: \n  296: T3-S30B-RGE-RUNNING: FAIL -- value=no_crossing scheme=\n... [truncated]"
+    },
+    {
+      "anchor_id": "gate_T3-S26-P2-COOLING-TRAJECTORY",
+      "anchor_type": "gates",
+      "name": "T3-S26-P2-COOLING-TRAJECTORY",
+      "session": "81",
+      "condition": "",
+      "verdict": "FAIL",
+      "source_file": "computations\\session-81\\s81_gate_verdicts.txt",
+      "source_context_30_lines": "  286: T3-S22C-INSTANTON-ACTION: PASS -- value=0.309101 scheme=combined_grav_YM_Weyl convention=vol_preserving_Jensen L_max=N/A sha256=d9e71ea42d561f807429c141c73f0af6047d298f9fee72412348516e5f5f22b1\n  287: \n  288: T3-S24A-EIGENVALUE-RATIOS: FAIL -- value=10.147pct_dev scheme=closest_ratio_vs_phi_paasch convention=ascending_sorted_adjacent_ratios L_max=3 sha256=9581cff300a7b239dd07720009935a92fed0d31c590f43a5fa3f72dfdd1ac37f\n  289: \n  290: T3-S25-CONNES-WORKSHOP: INFO -- value=7.814786e+03 scheme=truncated_eta_zeta_reg_signed_power_sum convention=BDI_lambda_minus_lambda_pairing_KOdim6 L_max=11424_eigenvalues_s19a_sweep_21tau_grid sha256=f21c36e6a68c818ed5f04cda3332fd4e3564bcb04a2f67ca49f9e52b3f879059\n  291: \n  292: T3-S25-EINSTEIN-RESULTS: INFO -- value=V_mixed_monotone_over_100701_points scheme=Kerner_positive_gauge convention=a2+rho_a4+gamma_omega3_interior_min_search L_max=pq_max=6 sha256=7d7fb73083bd85810133c763db316092e80fc641dea5a63085f5cb8967cf5f2e\n  293: \n  294: T3-S26-P2-COOLING-TRAJECTORY: FAIL -- value=P2-LOCK:_CLOSED|sustained=0|raw=59|max_ratio=203.4801 scheme=LSODA_ODE convention=G_DeWitt L_max=fiducial sha256=b773a3d8d61814c44f5bc98f1e578eb376067802b96442396c1a54a752c785e5\n  295: \n  296: T3-S30B-RGE-RUNNING: FAIL -- value=no_crossing scheme=SM_one_loop convention=GUT_normalized L_max=NA sha256=815aa927ac8518d5b74ccdf50e271ef4204476cf725fd9a656115586bc56a4b5\n  297: \n  298: ## Tier 3 intake consolidation\n  299: \n  300: T3-S34A-DPHYS-KOSMANN: PASS -- value=0.08593\n... [truncated]"
+    }
+  ]
+}

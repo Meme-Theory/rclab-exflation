@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 224,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_2231",
+      "anchor_type": "data_provenance",
+      "name": "w7c_third_proxy_cheeger_simons",
+      "script_path": "session-88/s88_w7c_third_proxy_cheeger_simons.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "session-88/s88_w7c_third_proxy_cheeger_simons.npz, session-88/s88_w7c_third_proxy_cheeger_simons.png",
+      "source_file": "computations/session-88/s88_w7c_third_proxy_cheeger_simons.py",
+      "source_context_30_lines": "  129: SPECTRUM_CACHE = REPO_ROOT / \"computations\" / \"session-84\" / \"s84_spectrum_cache_L12_tau019.npz\"\n  130: APS_MODULE_PATH = REPO_ROOT / \"phonon-exflation-sim\" / \"src\" / \"aps_eta_cs.py\"\n  131: INLINE_PRECEDENT = (\n  132:     REPO_ROOT / \"computations\" / \"session-88\"\n  133:     / \"s88_w7b_lf_d_cheeger_simons_odd_grading_proxy.py\"\n  134: )\n  135: \n  136: VERDICT_TXT = REPO_ROOT / \"computations\" / \"session-88\" / \"s88_gate_verdicts.txt\"\n  137: NPZ_OUT = REPO_ROOT / \"computations\" / \"session-88\" / \"s88_w7c_third_proxy_cheeger_simons.npz\"\n  138: PNG_OUT = REPO_ROOT / \"computations\" / \"session-88\" / \"s88_w7c_third_proxy_cheeger_simons.png\"\n  139: JSON_OUT = REPO_ROOT / \"computations\" / \"session-88\" / \"s88_w7c_third_proxy_cheeger_simons.json\"\n  140: WP_PATH = REPO_ROOT / \"sessions\" / \"session-88\" / \"session-88-w7c-workingpaper.md\"\n  141: \n  142: # Pre-registered thresholds (plan Sec W7c-85 thresholds)\n  143: PASS_BAND = 0.02  # (local) |c_sub_CS - 2.238| / 2.238 < 0.02 PASS\n  144: INFO_BAND = 0.01  # (local) 0.01 <= ... < 0.02 INFO\n  145: ETA_FN_EPS = 1e-12  # (local) plan machinery pin eta_function_eps"
+    },
+    {
+      "anchor_id": "prov_2232",
+      "anchor_type": "data_provenance",
+      "name": "w7c_tier1_live_physical_re_run",
+      "script_path": "session-88/s88_w7c_tier1_live_physical_re_run.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "session-88/s88_w7c_tier1_live_physical_re_run.npz, session-88/s88_w7c_tier1_live_physical_re_run.png",
+      "source_file": "computations/session-88/s88_w7c_tier1_live_physical_re_run.py",
+      "source_context_30_lines": "  122: SESSION_DIR = PROJECT_ROOT / \"computations\" / \"session-88\"\n  123: WP_PATH = PROJECT_ROOT / \"sessions\" / \"session-88\" / \"session-88-w7c-workingpaper.md\"\n  124: VERDICT_FILE = SESSION_DIR / \"s88_gate_verdicts.txt\"\n  125: PV_PIPELINE = PROJECT_ROOT / \"phonon-exflation-sim\" / \"src\" / \"spectral_action_pv.py\"\n  126: SPECTRUM_CACHE = (\n  127:     PROJECT_ROOT / \"computations\" / \"session-84\" / \"s84_spectrum_cache_L12_tau019.npz\"\n  128: )\n  129: \n  130: OUT_PY = SESSION_DIR / \"s88_w7c_tier1_live_physical_re_run.py\"\n  131: OUT_NPZ = SESSION_DIR / \"s88_w7c_tier1_live_physical_re_run.npz\"\n  132: OUT_PNG = SESSION_DIR / \"s88_w7c_tier1_live_physical_re_run.png\"\n  133: OUT_JSON = SESSION_DIR / \"s88_w7c_tier1_live_physical_re_run.json\"\n  134: \n  135: # Plan-block pins (verbatim machinery pin per plan §W7c-84 lines 57-67).\n  136: # Canonical constants M_KK, tau_fold, c_sub_baseline imported above.\n  137: # Schema-only literals (gate-block parameters, not framework-physical\n  138: # constants) are tagged `# (local)` per math-scripts.md §\"Local Variable Tagging\"."
+    },
+    {
+      "anchor_id": "prov_2233",
+      "anchor_type": "data_provenance",
+      "name": "w8_87_update_workingpaper",
+      "script_path": "session-88/s88_w8_87_update_workingpaper.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-88/s88_w8_87_update_workingpaper.py",
+      "source_context_30_lines": "<name 'w8_87_update_workingpaper' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S88 W8-87 — Working-paper §W8-87 atomic block-replace helper.\n    4: \n    5: Per .claude/rules/epistemic-discipline.md §\"Registry-Write Hygiene under\n    6: Parallel-Writer Race\", concurrent editors race the Edit tool's mtime\n    7: check; the canonical pattern is a Python writer that does a targeted\n    8: read-replace-write within a single open() handle, with an explicit\n    9: retry loop on FileExistsError-equivalent failures. We simply use atomic\n   10: read-modify-write here: the §W8-87 block has a unique header so the\n   11: replacement is idempotent and cannot collide with §W8-88..§W8-100.\n   12: \"\"\"\n   13: \n   14: from __future__ import annotations\n   15: \n   16: import sys\n   17: from pathlib import Path\n   18: \n   19: SESSION_DIR = Path(__file__).resolve().parent\n   20: PROJECT_ROOT = SESSION_DIR.parent.parent\n   21: WP_PATH = PROJECT_ROOT / \"sessions\" / \"session-88\" / \"session-88-w8-workingpaper.md\"\n   22: \n   23: OLD_BLOCK_MARKER = \"### §W8-87. S88-CONSENSUS-INDEPENDENCE-TEST-LANDING (gen-physicist)\"\n   24: NEXT_BLOCK_MARKER = \"### §W8-88.\"\n   25: \n   26: NEW_BLOCK = \"\"\"### §W8-87. S88-CONSENSUS-INDEPENDENCE-TEST-LANDING (gen-physicist)\n   27: \n   28: **Status**: COMPLETE\n   29: **Gate ID**: `S88-CONSENSUS-INDEPENDENCE-TEST-LANDING`\n   30: **Trigger**: `Wave-0 plan-freeze; methodology rule-file edit`"
+    },
+    {
+      "anchor_id": "prov_2234",
+      "anchor_type": "data_provenance",
+      "name": "w8_89_stage2_axis_a_connes",
+      "script_path": "session-88/s88_w8_89_stage2_axis_a_connes.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "session-88/s88_w8_89_stage2_axis_a_connes.npz",
+      "source_file": "computations/session-88/s88_w8_89_stage2_axis_a_connes.py",
+      "source_context_30_lines": "    8: Audit logic: this script is a STRUCTURAL admissibility audit, not a\n    9: numerical computation. Each of the four carve-out conditions L1-L4\n   10: plus the Stage-2 PASS-AND requirement is reduced to a logical\n   11: predicate over the on-disk rule-file substrate. Each predicate is\n   12: either TRUE (PASS) or FALSE (FAIL) — no numerical thresholds, no\n   13: convention shopping, no scan loops.\n   14: \n   15: Outputs:\n   16:   * NPZ at  computations/session-88/s88_w8_89_stage2_axis_a_connes.npz\n   17:   * Verdict line + companion at computations/session-88/s88_gate_verdicts.txt\n   18:   * Working-paper subsection appended to\n   19:     sessions/session-88/session-88-w8-workingpaper.md §W8-89\n   20: \n   21: Per CLAUDE.md: substrate framing per phononic-framing.md (the substrate\n   22: IS the algebra `A_K = C ⊕ H ⊕ M_3(C)`; central projections are\n   23: intrinsic to the substrate, not derived from a meta-container).\n   24: "
+    },
+    {
+      "anchor_id": "prov_2235",
+      "anchor_type": "data_provenance",
+      "name": "w8_89_stage2_axis_b_volovik",
+      "script_path": "session-88/s88_w8_89_stage2_axis_b_volovik.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "session-88/s88_w8_89_stage2_axis_b_volovik.npz",
+      "source_file": "computations/session-88/s88_w8_89_stage2_axis_b_volovik.py",
+      "source_context_30_lines": "   59: SCHEME = \"two-agent-parallel-independent-verify\"\n   60: CONVENTION = \"joint-clause-AND-aggregation-axis-B-substrate-superfluid-universe\"\n   61: L_MAX_TAG = \"N/A\"\n   62: AXIS = \"AXIS-B\"\n   63: \n   64: VERDICT_FILE = PROJECT_ROOT / \"computations\" / \"session-88\" / \"s88_gate_verdicts.txt\"\n   65: NPZ_FILE = (\n   66:     PROJECT_ROOT / \"computations\" / \"session-88\"\n   67:     / \"s88_w8_89_stage2_axis_b_volovik.npz\"\n   68: )\n   69: \n   70: \n   71: # ---------------------------------------------------------------------------\n   72: # Per-condition audit results (substitution chain in docstrings)\n   73: # ---------------------------------------------------------------------------\n   74: \n   75: def audit_L1_layer_functor_cleanness() -> dict:"
+    },
+    {
+      "anchor_id": "prov_2236",
+      "anchor_type": "data_provenance",
+      "name": "w8_allowlist_append_helper",
+      "script_path": "session-88/s88_w8_allowlist_append_helper.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-88/s88_w8_allowlist_append_helper.py",
+      "source_context_30_lines": "<name 'w8_allowlist_append_helper' not found in source>\n--- file head ---\n    1: \"\"\"S88 W8-92 — atomic-append helper for methodology-wave-allowlist.md row.\n    2: \n    3: Mirrors the canonical Python `with open(\"a\")` POSIX O_APPEND pattern from\n    4: `_script_template.py append_verdict()` to avoid mtime-conditional Edit-tool\n    5: race conditions under parallel writers (per registry-landing.md\n    6: §\"Bridge-Landing Script Architecture\").\n    7: \"\"\"\n    8: from pathlib import Path\n    9: \n   10: ALLOWLIST = Path(__file__).resolve().parent.parent.parent / \".claude\" / \"rules\" / \"methodology-wave-allowlist.md\"\n   11: \n   12: NEW_ROW = (\n   13:     \"| W8-92 | S88     | S88-OPERATOR-PROJECTION-READING-A-RULE-PROMOTE \"\n   14:     \"(registry-landing.md §\\\"Operator-Projection Reading-A Naming Hygiene\\\" extension; \"\n   15:     \"K=3 calibration corpus K_promotion=3 → MANDATORY status promotion per \"\n   16:     \"`feedback_rules-compensate-missing-structure.md`; corpus = \"\n   17:     \"{S87 W4-2 §VII.AJ.W4-1 operator-projection on A_K = ℂ ⊕ ℍ ⊕ M_3(ℂ) \"\n   18:     \"central-projection traces, S87 W6-1 §VII.AG.1 operator-projection on \"\n   19:     \"T7 ↔ S67 quotient-functor cyclic-fold V_4 modulo \"\n   20:     \"(CF-LZ-VV Cyclic-Fold Mellin Spectroscopy theorem candidate \"\n   21:     \"STAGE-1-CANDIDATE per joint-theorem-promotion.md), S87 W11-meta-2 \"\n   22:     \"operator-projection on cross-pillar bridge-anatomy K-count discipline \"\n   23:     \"(math-scripts.md §\\\"Machinery-Feasibility Audit\\\" D_K Block-Diagonality \"\n   24:     \"pre-check; W11-2 + W11-3 dual calibration with \"\n   25:     \"audit_sha256 = 9f6d9bcea1e798eccdf3dad43922dad94b07ac3977353b7e032db39494f62253)}; \"\n   26:     \"naming convention `§VII.X.OP-PROJ` (algebra-side) vs `§VII.X.STATE-PROJ` \"\n   27:     \"(state-side) MANDATORY at plan-freeze; `_registry_landing_audit.py` \"\n   28:     \"Class-(g) `OP-VS-STATE-PROJECTION-NAMING-DRIFT` flag; cross-link to \"\n   29:     \"`cross-pillar-bridge-anatomy.md §\\\"Algebra-axis orthogonality K-counter\\\"` \"\n   30:     \"MANDATORY clause as registry-naming-layer specialization at non-redundant \""
+    },
+    {
+      "anchor_id": "prov_2237",
+      "anchor_type": "data_provenance",
+      "name": "w8_carve_out_clause",
+      "script_path": "session-88/s88_w8_carve_out_clause.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-88/s88_w8_carve_out_clause.py",
+      "source_context_30_lines": "  123: L_MAX = \"N/A\"                                                                    # (local)\n  124: \n  125: RULES_DIR = PROJECT_ROOT / \".claude\" / \"rules\"                                  # (local)\n  126: RULE_FILE = RULES_DIR / \"mechanical-closure-discipline.md\"                      # (local)\n  127: ALLOWLIST_FILE = RULES_DIR / \"methodology-wave-allowlist.md\"                    # (local)\n  128: PLAN_FILE = (PROJECT_ROOT / \"sessions\" / \"session-plan\"\n  129:              / \"session-88-plan-w8.md\")                                         # (local)\n  130: \n  131: OUT_JSON = SESSION_DIR / \"s88_w8_carve_out_clause.json\"                         # (local)\n  132: VERDICT_TXT = SESSION_DIR / \"s88_gate_verdicts.txt\"                             # (local)\n  133: \n  134: # Anchor pair for insertion: NEW section between §\"When mechanical\n  135: # closure IS acceptable\" and §\"When mechanical closure indicates a\n  136: # PLANNING DEFECT\" (per plan §W8-89 method step 1).\n  137: INSERT_ANCHOR_BEFORE = \"## When mechanical closure indicates a PLANNING DEFECT\"  # (local)\n  138: NEW_SECTION_HEADER = \"## Layer-separability carve-out (admissible-with-conditions)\"  # (local)\n  139: "
+    },
+    {
+      "anchor_id": "prov_2238",
+      "anchor_type": "data_provenance",
+      "name": "w8_cf25_stage2_axis_a_connes",
+      "script_path": "session-88/s88_w8_cf25_stage2_axis_a_connes.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "session-88/s88_w8_cf25_stage2_axis_a_connes.npz",
+      "source_file": "computations/session-88/s88_w8_cf25_stage2_axis_a_connes.py",
+      "source_context_30_lines": "   46: \n   47: GATE_ID = \"S88-CF-25-STAGE-2-AXIS-A-CONNES-VERIFY\"\n   48: SESSION = 88  # (local)\n   49: WAVE = \"W8\"\n   50: SLOT = \"W8-95\"\n   51: \n   52: ROOT = Path(__file__).resolve().parents[2]\n   53: CACHE_PATH = ROOT / \"computations\" / \"session-84\" / \"s84_spectrum_cache_L12_tau019.npz\"\n   54: NPZ_PATH = ROOT / \"computations\" / \"session-88\" / \"s88_w8_cf25_stage2_axis_a_connes.npz\"\n   55: VERDICTS_PATH = ROOT / \"computations\" / \"session-88\" / \"s88_gate_verdicts.txt\"\n   56: SCRIPT_PATH = Path(__file__).resolve()\n   57: \n   58: \n   59: def load_spectrum(L_max: int) -> tuple[np.ndarray, int]:\n   60:     \"\"\"Aggregate spectrum cache filtered at p+q <= L_max.\"\"\"\n   61:     d = np.load(CACHE_PATH, allow_pickle=True)\n   62:     sd = d[\"sector_evals\"].item()"
+    },
+    {
+      "anchor_id": "prov_2239",
+      "anchor_type": "data_provenance",
+      "name": "w8_cf25_stage2_axis_b_volovik",
+      "script_path": "session-88/s88_w8_cf25_stage2_axis_b_volovik.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "session-88/s88_w8_cf25_stage2_axis_b_volovik.npz",
+      "source_file": "computations/session-88/s88_w8_cf25_stage2_axis_b_volovik.py",
+      "source_context_30_lines": "   63: SESSION = \"S88\"\n   64: GATE_ID = \"S88-CF-25-STAGE-2-AXIS-B-VOLOVIK-VERIFY\"\n   65: SCHEME = \"stage-2-axis-B-substrate-physics-first-principles\"\n   66: CONVENTION = \"volovik-superfluid-universe-theorist-axis-B\"\n   67: L_max = 10  # (local) — S88 audit pin to canonical L_max for §VII.X.W4-1 anchor\n   68: SCHEMA_VERSION = \"S87+\"\n   69: \n   70: CACHE_PATH = ROOT / \"computations\" / \"session-84\" / \"s84_spectrum_cache_L12_tau019.npz\"\n   71: NPZ_OUT    = ROOT / \"computations\" / \"session-88\" / \"s88_w8_cf25_stage2_axis_b_volovik.npz\"\n   72: VERDICT_F  = ROOT / \"computations\" / \"session-88\" / \"s88_gate_verdicts.txt\"\n   73: \n   74: \n   75: def closure_hash(payload: dict) -> str:\n   76:     \"\"\"SHA-256 over a JSON-serialized input-pin map (canonical key ordering).\"\"\"\n   77:     payload_str = json.dumps(payload, sort_keys=True, default=str)\n   78:     return hashlib.sha256(payload_str.encode(\"utf-8\")).hexdigest()\n   79: "
+    },
+    {
+      "anchor_id": "prov_2240",
+      "anchor_type": "data_provenance",
+      "name": "w8_cf25_stage_2_aggregate",
+      "script_path": "session-88/s88_w8_cf25_stage_2_aggregate.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "session-88/s88_w8_cf25_stage_2_aggregate.npz",
+      "source_file": "computations/session-88/s88_w8_cf25_stage_2_aggregate.py",
+      "source_context_30_lines": "   96: SCHEME = \"Stage-2-two-agent-parallel-cross-axis-verify-no-workshop-context\"  # (local)\n   97: CONVENTION = \"PASS-AND-on-JOINT-clauses-axis-A-connes-axis-B-volovik\"  # (local)\n   98: L_MAX = 10                                                            # (local)\n   99: \n  100: # Per-axis upstream verdict NPZ paths (orchestrator-provided)\n  101: AXIS_A_NPZ = SESSION_DIR / \"s88_w8_cf25_stage2_axis_a_connes.npz\"     # (local)\n  102: AXIS_B_NPZ = SESSION_DIR / \"s88_w8_cf25_stage2_axis_b_volovik.npz\"    # (local)\n  103: \n  104: OUT_NPZ = SESSION_DIR / \"s88_w8_cf25_stage_2_aggregate.npz\"\n  105: VERDICT_TXT = SESSION_DIR / \"s88_gate_verdicts.txt\"\n  106: \n  107: INPUT_FILES = [\n  108:     SHARED_DIR / \"canonical_constants.py\",\n  109:     AXIS_A_NPZ,\n  110:     AXIS_B_NPZ,\n  111: ]\n  112: "
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-# Session 22a: Zero-Cost Calculation Bonanza — Tier 0 Sweep
+# Session 22a: Zero-Cost Calculation Bonanza — computation Sweep
 
 ## Session Type: COMPUTATION (zero-cost, existing data only)
 ## Agents: schwarzschild-penrose-geometer + quantum-acoustics-theorist + coordinator
@@ -24,7 +24,7 @@
 Every result must be classified against its pre-registered Constraint Gate BEFORE any interpretation is attempted. Report the number first. Classify second. Interpret third.
 
 **Python environment**: `"phonon-exflation-sim/.venv312/Scripts/python.exe"`
-**Output directory**: `tier0-computation/`
+**Output directory**: `computations/`
 **Script prefix**: `s22a_`
 
 ---
@@ -66,7 +66,7 @@ Physical window [0.15, 1.55] where (0,0) singlet dominates gap edge. All known p
    — Full Phase 0 results, structural theorems, three-monopole topology. Read completely.
 
 2. **R2 master collab**: `sessions/session-21/session-21c-r2-master-collab.md`
-   — Post-delta_T probability assessments. Sections VIII (Tier 0 priority table), IX (probability), X (conditional structure). THIS is the primary tasking document.
+   — Post-delta_T probability assessments. Sections VIII (computation priority table), IX (probability), X (conditional structure). THIS is the primary tasking document.
 
 3. **Session 21b Valar plan**: `sessions/session-plan/session-21b-valar-plan.md`
    — Constraint Gate registry (Section VI). Pre-registered gates for every computation.
@@ -117,7 +117,7 @@ eta(tau) = (1 / G_ττ) * V''(tau) / V(tau) = (1/5) * V''(tau) / V(tau)
 
 where V(tau) is the total perturbative potential from Session 20b data.
 
-**Data source**: `tier0-computation/l20_vtotal_minimum.npz`
+**Data source**: `computations/l20_vtotal_minimum.npz`
 - Keys include V_total(tau), V_CW(tau), E_Casimir(tau) at 21 tau values
 - Derivatives via finite differences (use 3-point central difference where possible)
 
@@ -131,7 +131,7 @@ where V(tau) is the total perturbative potential from Session 20b data.
 
 **Pre-registered Constraint Gates** (SP, R2 collab):
 
-| Tier | Criterion | BF | Prob shift |
+| Level | Criterion | BF | Prob shift |
 |:-----|:----------|:---|:-----------|
 | DECISIVE | epsilon < 0.01 throughout [0.15, 0.55] (ultra-slow roll) | 20 | +12-15 pp |
 | COMPELLING | epsilon < 1 throughout [0.15, 0.55] (slow-roll satisfied) | 8 | +6-10 pp |
@@ -141,7 +141,7 @@ where V(tau) is the total perturbative potential from Session 20b data.
 
 **Note on V'''(0) = -7.2**: The cubic term means V' is not uniformly positive. Near tau=0, V' < 0 (potential initially curves down). Epsilon diverges as V -> 0. Compute from tau = 0.05 upward, avoid the tau=0 pole.
 
-**Output**: `tier0-computation/s22a_slow_roll.py`, `tier0-computation/s22a_slow_roll.npz`, `tier0-computation/s22a_slow_roll.png`
+**Output**: `computations/s22a_slow_roll.py`, `computations/s22a_slow_roll.npz`, `computations/s22a_slow_roll.png`
 
 ---
 
@@ -161,7 +161,7 @@ On SU(3) (d=8), |C|^2 = C_{abcd}C^{abcd}
 
 From Session 20a data: |Riem|^2, |Ric|^2, R_K are all precomputed.
 
-**Data source**: `tier0-computation/r20a_riemann_tensor.npz`
+**Data source**: `computations/r20a_riemann_tensor.npz`
 - This contains the full Riemann tensor components R_{abcd}(tau) at 21 tau values
 
 **Protocol**:
@@ -174,13 +174,13 @@ From Session 20a data: |Riem|^2, |Ric|^2, R_K are all precomputed.
 
 **Pre-registered Constraint Gates** (SP proposal, R2 collab Table V.10):
 
-| Tier | Criterion | BF | Prob shift |
+| Level | Criterion | BF | Prob shift |
 |:-----|:----------|:---|:-----------|
 | INTERESTING | |C|^2 minimized at tau in [0.15, 0.40] (Weyl selects physical window) | 4 | +2-4 pp |
 | CLOSED | |C|^2 monotonically increasing (Weyl hypothesis irrelevant / selects tau=0) | 0.7 | -1 pp |
 | PASS | |C|^2 minimized at tau=0 (confirms round metric is Weyl-optimal) | 1 | 0 pp |
 
-**Output**: `tier0-computation/s22a_weyl_curvature.py`, `tier0-computation/s22a_weyl_curvature.npz`, `tier0-computation/s22a_weyl_curvature.png`
+**Output**: `computations/s22a_weyl_curvature.py`, `computations/s22a_weyl_curvature.npz`, `computations/s22a_weyl_curvature.png`
 
 ---
 
@@ -214,7 +214,7 @@ From Session 17b: R_K(tau) is an exact analytic function (stored in `sp2_final_v
 
 **Pre-registered Constraint Gates** (Hawking R2 collab):
 
-| Tier | Criterion | BF | Prob shift |
+| Level | Criterion | BF | Prob shift |
 |:-----|:----------|:---|:-----------|
 | INTERESTING | I_E(M1) < I_E(M0) (M1 Euclidean-preferred) | 3 | +2-3 pp |
 | COMPELLING | I_E ratio exp(-delta I_E) > 10 (exponential dominance of M1) | 8 | +5-8 pp |
@@ -225,7 +225,7 @@ From Session 17b: R_K(tau) is an exact analytic function (stored in `sp2_final_v
 R_K(tau) = (1/4) * [n_1 * e^{-4tau} + n_2 + n_3 * e^{6tau}] (schematically from structure constants)
 The exact formula is in `sp2_final_verification.py`. Load or recompute.
 
-**Output**: `tier0-computation/s22a_euclidean_action.py`, `tier0-computation/s22a_euclidean_action.txt`
+**Output**: `computations/s22a_euclidean_action.py`, `computations/s22a_euclidean_action.txt`
 
 ---
 
@@ -259,9 +259,9 @@ At M1 (transition from pre-condensate to condensate-active window):
 - Z_inside: DOS ~ 2 (singlet multiplicity), gap stabilizing
 
 **Data sources**:
-- `tier0-computation/s19a_sweep_data.npz` — Dirac eigenvalues by sector at 21 tau values
-- `tier0-computation/kk1_bosonic_spectrum.npz` — bosonic modes at 4 tau values
-- `tier0-computation/s21c_V_IR.npz` — V_IR data (gap behavior)
+- `computations/s19a_sweep_data.npz` — Dirac eigenvalues by sector at 21 tau values
+- `computations/kk1_bosonic_spectrum.npz` — bosonic modes at 4 tau values
+- `computations/s21c_V_IR.npz` — V_IR data (gap behavior)
 
 **Protocol**:
 1. For each tau in the sweep: compute the fermionic gap edge = smallest fermionic eigenvalue.
@@ -274,14 +274,14 @@ At M1 (transition from pre-condensate to condensate-active window):
 
 **Pre-registered Constraint Gates** (QA R2 proposal):
 
-| Tier | Criterion | BF | Prob shift |
+| Level | Criterion | BF | Prob shift |
 |:-----|:----------|:---|:-----------|
 | DECISIVE | R_reflect > 0.30 at both M1 and M2 (cavity with >30% reflectivity) | 15 | +8-12 pp |
 | COMPELLING | R_reflect > 0.10 at M1 (partial trapping) | 6 | +4-6 pp |
 | INTERESTING | Impedance discontinuity confirmed (Z changes by factor >2 at M1) | 3 | +1-3 pp |
 | CLOSED | Z(tau) smooth, no discontinuity at monopoles (R_reflect < 0.01) | 0.3 | -3-5 pp |
 
-**Output**: `tier0-computation/s22a_impedance.py`, `tier0-computation/s22a_impedance.npz`, `tier0-computation/s22a_impedance.png`
+**Output**: `computations/s22a_impedance.py`, `computations/s22a_impedance.npz`, `computations/s22a_impedance.png`
 
 ---
 
@@ -302,8 +302,8 @@ where q is the Fano parameter (q=0: pure Lorentzian; q->infinity: symmetric Fano
 **At the monopoles**: The "resonance" is the gap-edge mode approaching the avoided crossing. The "continuum" is the bulk spectral density. The lineshape of the gap-edge eigenvalue trajectory encodes q.
 
 **Data sources**:
-- `tier0-computation/s21c_neutrino_fine_grid.npz` — fine-grid R(tau) data near M2 (tau~1.58)
-- `tier0-computation/s19a_sweep_data.npz` — coarse-grid eigenvalues for M1
+- `computations/s21c_neutrino_fine_grid.npz` — fine-grid R(tau) data near M2 (tau~1.58)
+- `computations/s19a_sweep_data.npz` — coarse-grid eigenvalues for M1
 
 **Protocol**:
 1. Near M2 (tau~1.58): extract eigenvalue trajectories of the 3 lightest eigenmodes.
@@ -314,7 +314,7 @@ where q is the Fano parameter (q=0: pure Lorentzian; q->infinity: symmetric Fano
 
 **Pre-registered Constraint Gates** (QA proposal):
 
-| Tier | Criterion | BF | Prob shift |
+| Level | Criterion | BF | Prob shift |
 |:-----|:----------|:---|:-----------|
 | COMPELLING | |q| > 2 at M2 (strong coupling, Fano-dominated lineshape) | 5 | +2-4 pp |
 | INTERESTING | |q| in [1, 2] (mixed Lorentzian/Fano) | 3 | +1-2 pp |
@@ -322,7 +322,7 @@ where q is the Fano parameter (q=0: pure Lorentzian; q->infinity: symmetric Fano
 
 This is a consistency check on the coupling estimate, not a primary gate.
 
-**Output**: `tier0-computation/s22a_fano.py`, `tier0-computation/s22a_fano.txt`
+**Output**: `computations/s22a_fano.py`, `computations/s22a_fano.txt`
 
 ---
 
@@ -334,7 +334,7 @@ This is a consistency check on the coupling estimate, not a primary gate.
 
 **Background**: The delta_T(tau) result shows exponential decay from 3399 to 3.04 across [0, 2.0]. Tesla (R2 collab) proposed that the characteristic scale tau* = 1/gamma ~ 0.28 is suggestively close to the FR minimum at tau = 0.30, and further proposed a Bragg bandgap interpretation where the e^{-4tau} modulation period creates a bandgap in tau-space. This computation characterizes the decay profile and tests whether the decay rate is algebraically determined by the Dynkin indices.
 
-**Data source**: `tier0-computation/s21c_cp1_investigation.npz`
+**Data source**: `computations/s21c_cp1_investigation.npz`
 - Keys include: `delta_T_total`, `delta_T_b1`, `delta_T_b2`, `delta_T_z3_0`, `delta_T_z3_1`, `delta_T_z3_2`, `tau_values`
 
 **Protocol**:
@@ -345,7 +345,7 @@ This is a consistency check on the coupling estimate, not a primary gate.
 5. **Test the algebraic determination**: The Dynkin embedding index gives b1/b2 = 4/9. Does the decay rate gamma relate algebraically to 4 (from e^{-4tau})? Specifically: gamma_fit vs 4 (exact from flux channel)?
 6. **Sign structure analysis**: delta_T_b1 and delta_T_b2 are individually negative (driven by gauge-weighted sum). delta_T_total is positive (singlet sector dominates). Compute the singlet contribution = delta_T_total - delta_T_b1 * weight - delta_T_b2 * weight. This isolates the (0,0) singlet's role.
 
-**Output**: `tier0-computation/s22a_delta_T_profile.py`, `tier0-computation/s22a_delta_T_profile.txt`, `tier0-computation/s22a_delta_T_profile.png`
+**Output**: `computations/s22a_delta_T_profile.py`, `computations/s22a_delta_T_profile.txt`, `computations/s22a_delta_T_profile.png`
 
 ---
 
@@ -357,7 +357,7 @@ This is a consistency check on the coupling estimate, not a primary gate.
 
 **Background**: Session 12 found m_{(3,0)}/m_{(0,0)} = 1.531580 at tau=0.15, which is 0.0005% from phi_paasch = 1.53158 (= solution to x = e^{-x^2}). This result was found at a single tau value. Paasch (R2 collab) pre-registered: compute this ratio at ALL 21 tau values and check whether the phi_paasch match is specific to tau~0.15, or whether the ratio tracks phi_paasch along a curve.
 
-**Data source**: `tier0-computation/s19a_sweep_data.npz`
+**Data source**: `computations/s19a_sweep_data.npz`
 - Dirac eigenvalues by sector (p,q) at 21 tau values
 
 **Protocol**:
@@ -369,14 +369,14 @@ This is a consistency check on the coupling estimate, not a primary gate.
 
 **Pre-registered Constraint Gates** (Paasch R2 collab):
 
-| Tier | Criterion | BF | Prob shift |
+| Level | Criterion | BF | Prob shift |
 |:-----|:----------|:---|:-----------|
 | DECISIVE | r(tau) crosses phi_paasch at tau_phi in [0.14, 0.16] and dip below 0.01% | 20 | +6-10 pp |
 | COMPELLING | r(tau) tracks phi_paasch within 0.1% for tau in [0.10, 0.20] | 8 | +4-6 pp |
 | INTERESTING | r(tau) crosses phi_paasch at some tau | 3 | +1-2 pp |
 | CLOSED | r(tau) never within 1% of phi_paasch at any tau | 0.3 | -3-5 pp |
 
-**Output**: `tier0-computation/s22a_paasch_curve.py`, `tier0-computation/s22a_paasch_curve.npz`, `tier0-computation/s22a_paasch_curve.png`
+**Output**: `computations/s22a_paasch_curve.py`, `computations/s22a_paasch_curve.npz`, `computations/s22a_paasch_curve.png`
 
 ---
 
@@ -396,7 +396,7 @@ The sound speed in each sector is c_s = d(omega)/dk|_{k->0} ~ sqrt(dE/dn)|_n. Fo
 
 At tau = 0.30 (the FR minimum / Weinberg angle point), this ratio should reproduce sin^2(theta_W) = 0.231.
 
-**Data source**: `tier0-computation/s19a_sweep_data.npz` at tau=0.30 (index 3)
+**Data source**: `computations/s19a_sweep_data.npz` at tau=0.30 (index 3)
 
 **Protocol**:
 1. At tau = 0.30: extract eigenvalues from U(1)-dominated sectors (select using the b1 weighting from branching computation).
@@ -419,7 +419,7 @@ This is a consistency check, not a primary gate. Even a 10% agreement would be i
 
 **Background**: The Session 21b result showed Poisson statistics across the bulk spectrum. Session 21c resolved the apparent contradiction: Poisson is measured intra-sector; Kosmann coupling acts inter-sector. A falsifiable prediction from Session 21c: the lowest 20-50 modes should show deviation from Poisson — Brody parameter q ~ 0.3-0.5 (intermediate statistics between Poisson and GOE), since the coupling/gap ratio is 4-5x only for the lowest modes.
 
-**Data source**: `tier0-computation/s19a_sweep_data.npz`
+**Data source**: `computations/s19a_sweep_data.npz`
 
 **Protocol**:
 1. Extract the 50 lowest Dirac eigenvalues ACROSS ALL SECTORS at tau = 0.30, 0.50, 1.00.
@@ -429,7 +429,7 @@ This is a consistency check, not a primary gate. Even a 10% agreement would be i
 5. Compare to bulk Brody parameter from Session 21b (q ~ 0 for bulk, Poisson).
 6. **Pre-registered**: low-mode q > 0.3 at tau = 0.30 confirms CP-2 coupling prediction.
 
-**Output**: Append to `s22a_slow_roll.py` or create `tier0-computation/s22a_level_stats.py`. Minimal output: one table of q values.
+**Output**: Append to `s22a_slow_roll.py` or create `computations/s22a_level_stats.py`. Minimal output: one table of q values.
 
 ---
 
@@ -441,7 +441,7 @@ This is a consistency check, not a primary gate. Even a 10% agreement would be i
 
 **Background**: KK (R2 collab) cited the Duff-Nilsson-Pope (KK Paper 11) stability bound: lambda_L >= 3m^2 for TT 2-tensors on (SU(3), g_Jensen). This is the Lichnerowicz bound — violation at some tau would signal a non-perturbative instability in the TT sector that could drive a transition. The ratio lambda_L_min(tau)/m^2_gauge(tau) should be checked.
 
-**Data source**: `tier0-computation/l20_TT_spectrum.npz` — TT eigenvalues
+**Data source**: `computations/l20_TT_spectrum.npz` — TT eigenvalues
 
 **Protocol**:
 1. Load the TT spectrum. Extract the minimum TT eigenvalue lambda_L_min(tau) at each tau.

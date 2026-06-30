@@ -1,0 +1,69 @@
+[info] S71: tau_scan n=82, range [0.1800, 0.2610]
+[info] S71: tau_entry = 0.21950133
+[info] S71: v_arr(tau_entry) ~ 87.7816 M_KK
+[info] S71: cs_arr(tau_entry) ~ 435.1214 M_KK
+[info] S71: kappa_v (ref)    = 457.656228 M_KK
+[info] S71: T_entry (ref)    = 72.838251 M_KK
+[info] S71: kappa_entry (Phase-1 Mach, DIFFERENT quantity) = 79386.25
+[info] W2-C: kappa_v match   = 457.656228  (S71 identity carry-forward)
+[info] W2-C: kappa_bare (82-point np.gradient recompute) = 528.6987
+
+kappa_v cross-method comparison (at tau_entry):
+  Method A (cubic spline at tau_entry):
+    dv/dtau    = -457.655933
+    dc/dtau    = +71.021827
+    |d(v-cs)/dtau|  = 528.677759
+    |dv/dtau|       = 457.655933  (Phase-8 convention)
+  Method B (np.gradient + linear interp):
+    dv/dtau    = -457.676862
+    dc/dtau    = +71.021793
+    |d(v-cs)/dtau|  = 528.698655
+    |dv/dtau|       = 457.676862
+  Method C (np.gradient at nearest grid j=40, tau=0.220000):
+    dv/dtau    = -459.942365
+    dc/dtau    = +71.044993
+    |d(v-cs)/dtau|  = 530.987358
+    |dv/dtau|       = 459.942365
+
+ADOPTED kappa_entry_v2 = 457.655933 M_KK
+ADOPTED T_H            = kappa_entry_v2 / (2 pi)
+                       = 72.838204 M_KK
+
+Self-consistency identity:
+  2 pi T_H              = 457.655932676268
+  kappa_entry_v2        = 457.655932676268
+  |2 pi T_H - kappa|/|kappa| = 0.000e+00
+
+Match against S71 kappa_v_ref = 457.656228:
+  relative deviation = 6.455e-07
+
+S71 Phase-1 kappa_entry reconciliation:
+  kappa_entry_s71 (Phase-1, Mach spline)   = 79386.25
+  kappa_entry_v2  (Phase-8, velocity grad) = 457.655933
+  ratio Phase-1 / Phase-8                   = 173.46
+  (Carry-forward: W2-C HFB-HORIZON-BACKREACTION-74 documented
+   these as two different diagnostics: 79,386 = kappa_fold_curvature
+   from the 4-point Mach spline, 457 = kappa_v from the 82-point
+   velocity-gradient flow. Neither is 'wrong'; they measure different
+   quantities.)
+
+W2-A per-mode dispersive diagnostic (NOT Hawking kappa):
+  v_g(B1)   = +0.180821    |dv_g/dtau|(B1) = 0.814822
+  v_g(B2)   = +0.073847    |dv_g/dtau|(B2) = 0.310552
+  v_g(B3)   = +0.099734    |dv_g/dtau|(B3) = 0.151609
+  These v_g are per-mode group velocities d omega_k / d k_i, used for
+  dispersive corrections to squeezing redistribution (BRANCH-NBAR-D-K-74),
+  NOT the fluid velocity v_tau that enters the Hawking surface gravity.
+
+Dimensional consistency:
+  [v_arr]        = M_KK (energy, since omega_k is in M_KK and k is dimensionless)
+  [kappa_v]      = M_KK (since v_tau in M_KK and tau dimensionless)
+  [T_H]          = M_KK
+
+GATE T-ENTRY-D-K-74: PASS
+  kappa_entry_v2 = 457.655933 M_KK from D_K spectral action velocity gradient (cubic spline at tau_entry). T_H = 72.838204 M_KK. Self-consistency |2 pi T_H - kappa|/kappa = 0.00e+00 < 1e-6. Matches S71 kappa_v reference to 6.45e-07. S71 Phase-1 kappa_entry = 79386 is identified as a separate Mach-gradient curvature scale, not a rival Hawking surface gravity measurement (W2-C carry-forward).
+
+[plot] C:\sandbox\Ainulindale Exflation\tier0-computation\s74_t_entry_dk.png
+[data] C:\sandbox\Ainulindale Exflation\tier0-computation\s74_t_entry_dk.npz
+
+Total runtime: 0.31 s

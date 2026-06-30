@@ -1,0 +1,195 @@
+Gate T3-S36-MULTISECTOR-ED — Tier 3 re-run of s36_multisector_ed.py
+================================================================================
+
+Trigger:            [VERIFY-THEOREM] (reproducibility under PRU+GPU)
+Classification:     PHONONIC (BCS pairing in the positive-eigenvalue B1/B2/B3
+                    sector of the Kosmann kernel at tau=0.20, near fold_tau=0.190)
+Producing script:   computations/session-36/s36_multisector_ed.py   (migrated)
+Original script:    computations/session-36/s36_multisector_ed.py
+Session:            S81 (Tier 3 re-run wave)
+Original SHA (head): d98d445013435e46
+Input data:         tier0-archive/{s23a_kosmann_singlet, s34a_dphys_kosmann,
+                                   s35a_vh_impedance_arbiter,
+                                   s35_ed_corrected_dos}.npz
+
+--------------------------------------------------------------------------------
+PRIMARY GATE VALUE: E_cond at full 8-mode positive sector (1 B1 + 4 B2 + 3 B3)
+--------------------------------------------------------------------------------
+
+target                : -0.13685055970476342    (canonical_constants.py L148,
+                                                 E_cond_ED_8mode; this script
+                                                 is the canonical PRODUCER,
+                                                 re-run closes the loop)
+pre_fix               : -0.13685055970476342    (archived script computes the
+                                                 same quantity; canonical value
+                                                 was minted FROM this script's
+                                                 first run in S36)
+fix                   : canonical-constants imports (E_cond_ED_8mode,
+                        E_cond_ED_5mode, tau_fold); locals tagged (ETA_REG,
+                        TAU_INDEX, N_POS_MAX, N_EFF_B2, all 4 path constants,
+                        _INPUT_PINS, _CLOSURE_SHA, mu, b_m, corr, epsilon_mf,
+                        N_eff_B2); OMP_NUM_THREADS=8 cap; input paths repointed
+                        to tier0-archive; S81 closure-hash block printed on
+                        startup; tau_fold echoed (computed at TAU_INDEX=3 where
+                        tau=0.20, offset +0.01 from fold_tau=0.19 — structural
+                        choice preserved from S36 original).
+reproduced            : -0.13685055970476256    (full precision, S81 re-run)
+abs_error             :  8.604e-16
+rel_error             :  6.287e-15
+tolerance             : THEOREM -> machine-epsilon (< 1e-12)
+verdict               : PASS
+
+Reproduction error is ~7e-15, consistent with the order-of-eigenvector-sign
+freedom in LAPACK eigh across library-version boundaries. Well below the
+THEOREM tolerance.
+
+--------------------------------------------------------------------------------
+SECONDARY QUANTITIES REPRODUCED (all at machine-epsilon)
+--------------------------------------------------------------------------------
+
+E_cond(N=5, S35 baseline)  : -0.11507660716341951  (bit-exact against
+                                                    E_cond_ED_5mode = L149
+                                                    canonical_constants.py;
+                                                    rel_err = 0.000e+00)
+Fractional change N=5->N=8 :  18.92 %             (< 20 % pre-registered PASS
+                                                    threshold; monotone-decreasing
+                                                    through N=5,6,7,8)
+S35 xcheck (V, E, E_cond)  : True (all three)     (allclose atol=1e-12)
+
+--------------------------------------------------------------------------------
+SUBSTITUTION CHAIN -- Sector-energy-ordering direction
+--------------------------------------------------------------------------------
+
+Definition:
+  E_cond(N) = E_gs(N) - E_vac = E_gs(N)     [vacuum state = |0...0> has E=0]
+  H_N = span{|n_1,...,n_N>}                 [Fock pair-occupation basis]
+  H_N  <=  H_{N+1}                          [adding mode (N+1) extends basis
+                                              with 0-partner blocks]
+
+Substitution (Rayleigh-Ritz on a nested variational subspace):
+  E_gs(N+1) = min_{|psi> in H_{N+1}} <psi|H|psi>
+            <= min_{|psi> in H_N}    <psi|H|psi>      [H_N subset of H_{N+1}]
+            =  E_gs(N)
+
+Simplification:
+  E_gs(N+1) <= E_gs(N)
+  <=> E_cond(N+1) <= E_cond(N)
+  <=> |E_cond(N+1)| >= |E_cond(N)|          [both <= 0, so monotone-decreasing
+                                              in signed value == monotone-
+                                              increasing in magnitude]
+
+Direction (read from canonical form):
+  Adding modes STRICTLY deepens (or preserves) the condensation energy.
+  Numerical sequence (this run):
+    N=4 (B2 only)     :  E_cond =  0.000000       [below pairing threshold]
+    N=5 (4B2 + 1B1)   :  E_cond = -0.115077
+    N=6 (+1 B3)       :  E_cond = -0.121418
+    N=7 (+2 B3)       :  E_cond = -0.128846
+    N=8 (+3 B3, full) :  E_cond = -0.136851
+  Monotone-decreasing at every step. |E_cond(N=8)| - |E_cond(N=5)| =
+  +0.021774 > 0, so ENHANCED.
+
+Conclusion:
+  The "ENHANCED" verdict is structurally mandatory (Rayleigh-Ritz on a nested
+  variational manifold), not a coincidence of numerical values. It would fail
+  only if the B3 sector gave a zero contribution to the matrix elements
+  V(B2,B3) -- which the Kosmann selection rules do NOT enforce (only V(B1,B3)=0
+  is exact). B3 couples to B2 with non-trivial V; hence the inequality is
+  strict at every step.
+
+--------------------------------------------------------------------------------
+MACHINERY PIN (PRDR -- Pre-Registration Dry-Run)
+--------------------------------------------------------------------------------
+
+TAU_INDEX    = 3              # tau = 0.20 index (near fold_tau = 0.190)
+ETA_REG      = 0.001          # Thouless regulator; DO-NOT-PROMOTE (canonical
+                              # exclusion list L634); diagnostic only, does
+                              # NOT enter the ED Hamiltonian
+N_POS_MAX    = 8              # full positive-eigenvalue sector (1 B1+4 B2+3 B3)
+N_STATES     = 256            # = 2**N_POS_MAX (Fock pair-occupation basis)
+N_EFF_B2     = 4              # bookkeeping for expansion-parameter display
+mu           = 0.0            # particle-hole symmetric chemical potential
+selection    = V(B1,B1)=0 (Trap 1), V(B1,B3)=0 (exact from S23a Kosmann kernel)
+GPU path     = numpy.linalg.eigh with OMP_NUM_THREADS=8 / MKL_NUM_THREADS=8
+               (matrices are at most 256x256; torch hop would add 4x device
+               transfer cost with no wall-time payoff below ~1000; documented
+               exception to the "prefer GPU for N>=100" default)
+
+--------------------------------------------------------------------------------
+INPUT PINS (SHA-256)
+--------------------------------------------------------------------------------
+
+script_sha           : 93a46aab3dcb2dade45b0e558f7b2ffad0566e541d0c238d9fff6ce96462c346
+original_archive_sha : d98d445013435e4618f7a6db1ffe188584f4978b22ddadd5d99d16d8e0346d97
+canon_sha            : 68b50cd325d2cc8c63b775da3b6b92f538da582bee44c5d906c81259f24dd12f
+s23a_kosmann_sha     : ef547e583cf73e91b3f0d26e1ba14ee74c28d3718ee08dde12e0f17ad2775214
+s34a_dphys_sha       : c5fbb8770a27b4ed39e9c04a512f4373f71fefc7fb1cbc591ad88c9f0b97a6f9
+s35a_vh_arbiter_sha  : 410c4835f23e5064712338853f57b3ac13370c6e7ef3dfd43ffe6fb13ce7a34d
+s35_ed_corrected_sha : ab38ce337a4545eedbe9df2aef699c04b283216f1531954c95b7d657e3bcb6d2
+closure_inputs       : ecbc6771b14160ee3f0a2a708e4e60d390cef598c083a908457d7ed98607c153
+   (SHA-256 of JSON-serialized sorted {script, canonical_constants,
+    s23a_kosmann, s34a_dphys_kosmann, s35a_vh_arbiter, s35_ed_corrected}
+    pin map, as emitted by the script on startup.)
+
+--------------------------------------------------------------------------------
+S81 CANONICAL VERDICT LINE
+--------------------------------------------------------------------------------
+
+T3-S36-MULTISECTOR-ED: PASS -- value=-0.13685055970476256 scheme=exact-diagonalization convention=BCS-pair-occupation-Fock L_max=N_POS_MAX=8 sha256=ecbc6771b14160ee3f0a2a708e4e60d390cef598c083a908457d7ed98607c153
+
+--------------------------------------------------------------------------------
+DOWNSTREAM GATE (pre-existing from S36) -- ED-CONV-36
+--------------------------------------------------------------------------------
+
+ED-CONV-36 pre-registered PASS/FAIL/ENHANCED criteria:
+  PASS:     E_cond < 0 at N=8, |Delta E_cond|/|E_cond| < 20 % from N=5 to N=8
+  FAIL:     E_cond -> 0 at large N (B3 screens pairing)
+  ENHANCED: |E_cond(N=8)| > |E_cond(N=5)| (multi-band enhancement)
+
+Evaluated this run:
+  E_cond(N=8) = -0.136851 < 0                    -> PASS leg 1 met
+  Fractional change N=5->N=8 = 18.92 % < 20 %    -> PASS leg 2 met
+  |E_cond(N=8)| = 0.136851 > |E_cond(N=5)| = 0.115077
+                                                  -> ENHANCED achieved
+
+ED-CONV-36 verdict reproduced: ENHANCED  (unchanged from S36 original).
+
+--------------------------------------------------------------------------------
+CONSTANTS FLAGGED FOR POTENTIAL PROMOTION TO canonical_constants.py
+--------------------------------------------------------------------------------
+
+All constants required by this script are ALREADY canonical or properly tagged
+as local. No new promotions required. Re-confirmed against MCP:
+
+  E_cond_ED_8mode  -> canonical_constants.py L148  (target of this re-run; PASS)
+  E_cond_ED_5mode  -> L149  (secondary cross-check; bit-exact PASS)
+  E_cond           -> L153  (alias = E_cond_ED_8mode; used by downstream scripts)
+  tau_fold         -> L124  (context; script probes tau=0.20, near fold_tau=0.19)
+
+Local-tagged (diagnostic; intentionally NOT canonical):
+  ETA_REG   = 0.001                (Thouless regulator; DO-NOT-PROMOTE L634)
+  N_EFF_B2  = 4                    (expansion-parameter bookkeeping)
+  TAU_INDEX = 3                    (index into the stored tau grid; array-shape)
+  N_POS_MAX = 8                    (sector size; structural not physical)
+  mu        = 0.0                  (particle-hole symmetric; structural)
+  DOS_rho per B2 mode = 14.02      (read from s35a_vh_impedance_arbiter.npz at
+                                    runtime via vh_arbiter['rho_at_physical'];
+                                    not a stand-alone constant -- derived from
+                                    the stored VH-IMP-35a grid each run)
+
+--------------------------------------------------------------------------------
+NOTES
+--------------------------------------------------------------------------------
+
+1. The canonical E_cond_ED_8mode (= -0.13685055970476342) was originally
+   *minted* from the S36 ED run. The S81 re-run reproduces this value to
+   ~7e-15 relative error, closing the self-referential canonical loop with a
+   fresh closure SHA.
+
+2. The 5-mode baseline E_cond_ED_5mode (= -0.11507660716341951) reproduces
+   bit-exactly (abs_diff = 0), because the 5-mode Hilbert space is small
+   enough that the eigh path is numerically stable across LAPACK versions.
+
+3. Runtime: 0.6 s on OMP_NUM_THREADS=8 CPU path. GPU dispatch was NOT used
+   (matrices 32x32, 64x64, 128x128, 256x256 are below the torch.linalg
+   payoff threshold; the cost of the device hops dominates the LAPACK call).

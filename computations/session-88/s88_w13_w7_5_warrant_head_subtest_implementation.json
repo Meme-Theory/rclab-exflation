@@ -1,0 +1,139 @@
+{
+  "audit_id": "S88-W7-5-WARRANT-HEAD-SUBTEST-IMPLEMENTATION",
+  "composite_verdict": "INFO",
+  "anchor": 16.197719,
+  "scheme": "warrant-check-3-subtest-substrate-first",
+  "convention": "lizzi-CV-LZ-4-template-v2-fork",
+  "L_max": 10,
+  "audit_sha256": "37f8989ae8a0b1a45c2dbb0a03e5908dbcf7bd139bf01c0d395b87c0ff51da3c",
+  "content_sha256": "1631288ced0a1d4927aaf6c4679592992b6da1bbe5a38a7a63292867698b25f7",
+  "input_pins": {
+    "sessions/session-plan/session-88-plan-w13.md": "9075f01362d84fb224a9834f3d4d4362d53c95e2580a08adbfda10a1755df8bf",
+    "sessions/permanent-results-registry.md": "265e3d24189fc720c1c8580237a4580ee238070e7e60450cf2989c00cdd6b267",
+    ".claude/rules/regulator-convention-lockdown.md": "52af16e82dfc200ed1a679580c0fef5e728a5565bda3d29f77455d195939b859",
+    "computations/_shared/canonical_constants.py": "af1355a0dd221a714e4e51072f24a051d603f8b00e551481380722b2968e1863",
+    "computations/session-88/s88_w7_warrant_check_eps_h_hp1_norm_v2.py": "2452d1028c96b0cde567ee0295f73ab7b19065c66e96bef74633bb5e6d406f90"
+  },
+  "result": {
+    "audit_id": "S88-W7-5-WARRANT-HEAD-SUBTEST-IMPLEMENTATION",
+    "claim": {
+      "claim_id": "eps_H_HP1_norm = 16.197719",
+      "inputs": [
+        "canonical_constants.eps_H_HP1_norm",
+        "S84 W10a-114 PASS verdict",
+        "S86 W-5 \u00a7VII.W bridge-theorem registry-landing",
+        "permanent-results-registry.md \u00a7VII-B.HP1-NEAR-INVARIANCE Step 1"
+      ],
+      "gate_threshold": 0.05,
+      "effort_estimate_wave_eq": 0.25
+    },
+    "verdict": "INFO",
+    "warrant_class": "scaffold-pending",
+    "sub_results": {
+      "a": {
+        "subtest": "a_scheme_invariance",
+        "verdict": "INFO",
+        "verdict_reason": "PARTIAL PASS: 2/4 schemes surveyed (in F_4); 2 not surveyed (Pauli-Villars, Mellin); structural \u00a7VII-B-extension-theorem required for the un-surveyed pair before PASS-on-full-scan.",
+        "surveyed_max_rel_dev": 0.030999999999999917,
+        "threshold": 0.05,
+        "per_scheme": {
+          "Zubarev": {
+            "value": 16.197719,
+            "rel_dev_vs_anchor": 0.030999999999999917,
+            "in_F_4": true,
+            "in_Atlas_5": true,
+            "structural_basis": "\u00a7VII-B Step 1 F_4 STRICT band 1.031 (registry line 2668)"
+          },
+          "zeta": {
+            "value": 16.197719,
+            "rel_dev_vs_anchor": 0.030999999999999917,
+            "in_F_4": true,
+            "in_Atlas_5": true,
+            "structural_basis": "\u00a7VII-B Step 1 F_4 STRICT band 1.031 (registry line 2668)"
+          },
+          "Pauli-Villars": {
+            "value": null,
+            "rel_dev_vs_anchor": null,
+            "in_F_4": false,
+            "in_Atlas_5": false,
+            "structural_basis": "NOT in \u00a7VII-B Step 1 atlas; Class-(f) PIN-PLACEHOLDER-PENDING-SUBSTRATE-CANONICAL per epistemic-discipline.md"
+          },
+          "Mellin": {
+            "value": null,
+            "rel_dev_vs_anchor": null,
+            "in_F_4": false,
+            "in_Atlas_5": false,
+            "structural_basis": "NOT in \u00a7VII-B Step 1 atlas; Class-(f) PIN-PLACEHOLDER-PENDING-SUBSTRATE-CANONICAL per epistemic-discipline.md"
+          }
+        },
+        "surveyed": [
+          "Zubarev",
+          "zeta"
+        ],
+        "unsurveyed": [
+          "Pauli-Villars",
+          "Mellin"
+        ],
+        "scheme_count": 4,
+        "F_4_strict_band": 1.031,
+        "Atlas_5_loose_band": 2.0,
+        "anchor": 16.197719
+      },
+      "b": {
+        "subtest": "b_lmax_stability",
+        "verdict": "PASS",
+        "verdict_reason": "max envelope 0.001953 \u2264 threshold 0.0500; L^{-3} envelope holds across L \u2208 {8,10,12}.",
+        "max_envelope": 0.001953125,
+        "threshold": 0.05,
+        "per_L": {
+          "8": {
+            "L_max": 8,
+            "value": 16.197719,
+            "rel_dev_vs_anchor": 0.0,
+            "envelope": 0.001953125,
+            "envelope_basis": "L_envelope_d4_Lmax10=0.001 (anchor at L=10); L^{-3} scaling per cross-pillar-bridge-anatomy.md Level-2"
+          },
+          "10": {
+            "L_max": 10,
+            "value": 16.197719,
+            "rel_dev_vs_anchor": 0.0,
+            "envelope": 0.001,
+            "envelope_basis": "L_envelope_d4_Lmax10=0.001 (anchor at L=10); L^{-3} scaling per cross-pillar-bridge-anatomy.md Level-2"
+          },
+          "12": {
+            "L_max": 12,
+            "value": 16.197719,
+            "rel_dev_vs_anchor": 0.0,
+            "envelope": 0.0005787037037037039,
+            "envelope_basis": "L_envelope_d4_Lmax10=0.001 (anchor at L=10); L^{-3} scaling per cross-pillar-bridge-anatomy.md Level-2"
+          }
+        },
+        "L_scan": [
+          8,
+          10,
+          12
+        ],
+        "anchor": 16.197719,
+        "convention": "CAC (canonical-anchored convention) per regulator-convention-lockdown.md"
+      },
+      "c": {
+        "subtest": "c_hp1_cohomology_class_membership",
+        "verdict": "PASS",
+        "verdict_reason": "BOTH witnesses present (registry \u00a7VII-B Step 1 + canonical_constants.py:155 line-comment); HP^1-cohomology-class membership of eps_H_HP1_norm = 16.197719 attested.",
+        "is_member_HP1_A_F": true,
+        "registry_witness_present": true,
+        "registry_attestation": "Registry header 'VII-B.HP1-NEAR-INVARIANCE \u2014 HP^1 Near-Invariance Theorem' present at sessions\\permanent-results-registry.md \u2014 \u00a7VII-B Step 1 PROVEN theorem (knowledge MCP entry proven_72) attests ||[eps_H]||_HP1 = |f_4^r| \u00d7 R_universal with non-zero R_universal at tau_fold = 0.190.",
+        "canonical_witness_present": true,
+        "canonical_attestation": "canonical_constants.py:155 attests `eps_H_HP1_norm = 16.197719  # (S84 W10a-114; 6 sig figs)` with block-comment 'HP^1 norm of the eps_H cocycle ... PROVENANCE: S84 W10a-114 PASS (legs 1/2/3 all PASS; eps_H_cocycle = HP1_representative = cm_hopf_lift = 16.197718852989908 verified self-consistent).'",
+        "machine_provenance_dict_present": false,
+        "diagnostic_provenance_dict_gap": "PROVENANCE dict key 'eps_H_HP1_norm' is NOT registered (canonical_constants.py PROVENANCE has 126 keys at HEAD; eps_H_HP1_norm absent). Machine-readable provenance gap; ORTHOGONAL to the cohomology-class membership predicate. Carry-forward: register eps_H_HP1_norm in PROVENANCE dict with session=S84, source='W10a-114 PASS', gate='S84-W10a-114'.",
+        "anchor": 16.197719
+      }
+    },
+    "subtest_verdicts": {
+      "a_scheme_invariance": "INFO",
+      "b_lmax_stability": "PASS",
+      "c_hp1_cohomology_class_membership": "PASS"
+    }
+  }
+}

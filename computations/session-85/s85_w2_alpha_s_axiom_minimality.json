@@ -1,0 +1,86 @@
+{
+  "gate_id": "S85-W2-ALPHA-S-AXIOM-MINIMALITY-AU",
+  "verdict": "PASS",
+  "value_4tuple": {
+    "value": 5,
+    "scheme": "axiom-invocation-trace",
+    "convention": "CCM-2007",
+    "L_max": "N/A"
+  },
+  "axiom_table": [
+    {
+      "id": "dim",
+      "name": "Dimension",
+      "statement": "Spectral dimension of (A, H, D) is a non-negative integer d; eigenvalues lambda_n of |D| satisfy Weyl asymptotics lambda_n ~ n^(1/d).",
+      "invoked": true,
+      "invocation_site": "Heat-kernel expansion Tr(exp(-t D^2)) ~ sum_k t^((k-d)/2) a_k; a_4 is the k=4 coefficient in d=4 mod 8 convention.",
+      "structural_dependency": "Without dimension axiom, heat-kernel index k of Seeley-DeWitt expansion is undefined; a_4 is structurally tied to d=4 conv."
+    },
+    {
+      "id": "reg",
+      "name": "Regularity",
+      "statement": "a and [D, a] lie in the smooth domain of delta^n = [|D|, .] for all n (CCM-2007 auto-satisfied on finite A_F).",
+      "invoked": true,
+      "invocation_site": "Symbol of heat kernel requires smooth a; Seeley-DeWitt coefficients are local integrals of smooth jets of D^2.",
+      "structural_dependency": "Without regularity, the heat kernel trace expansion fails to converge / loses asymptotic form."
+    },
+    {
+      "id": "fin",
+      "name": "Finiteness",
+      "statement": "The space H_inf = intersect_n Dom(D^n) is finitely-generated projective module over A. On finite A_F: dim H_F < inf.",
+      "invoked": true,
+      "invocation_site": "Trace_F in a_4 = integral tr_F(E_2) dvol on M4 x F requires finite-dim trace over H_F = C^32.",
+      "structural_dependency": "Without finiteness, tr_F diverges; g_3^2 coefficient extraction (which pins alpha_s) requires a convergent sum over F."
+    },
+    {
+      "id": "real",
+      "name": "Reality (J)",
+      "statement": "Anti-unitary J: H -> H with J^2 = epsilon, J D = epsilon'' D J, J gamma = epsilon' gamma J. KO-6 row: (eps, eps', eps'') = (+1,+1,-1).",
+      "invoked": true,
+      "invocation_site": "Fermionic action (1/2)<J psi, D psi> doubles to full Dirac action; reality enforces absence of fermion-doubling / Majorana structure which affects Yukawa traces in c (Tr Y^*Y) feeding a_2, but a_4 uses (Y^*Y)^2 trace (d-term of CCM-2007 eq. 3.14). Without J, (Y^*Y)^2 trace structure is not well-defined.",
+      "structural_dependency": "Reality is load-bearing for the fermionic closure that produces the d-term in a_4 (Higgs quartic) via coupling to right-handed neutrinos."
+    },
+    {
+      "id": "order1",
+      "name": "First-order",
+      "statement": "[[D, a], J b J^{-1}] = 0 for all a, b in A. This is the 'bimodule' compatibility of D with left/right A-actions.",
+      "invoked": true,
+      "invocation_site": "Inner-fluctuation decomposition D -> D + A + JAJ^{-1} separates into gauge (from M4 sector) + Higgs (from F sector). a_4 produces Yang-Mills Tr F^2 terms FROM the inner fluctuation. Without first-order, no clean YM extraction, no g_i^2 coefficients, no alpha_s.",
+      "structural_dependency": "First-order is the gauge-sector backbone of a_4. Breaking first-order (even weakly as in Bochniak-Sitarz 2021) re-routes the a_4 structure; alpha_s depends on the 'strict' first-order decomposition."
+    },
+    {
+      "id": "orient",
+      "name": "Orientability",
+      "statement": "There exists a Hochschild cycle c of degree d with pi(c) = gamma (volume form / chirality on F).",
+      "invoked": false,
+      "invocation_site": "Orientability selects the volume form / chirality grading, not the eigenvalue content of D. a_4 = Tr f(D^2/Lambda^2) is symmetric in lambda_n^2; does not depend on the sign / orientation of the grading cycle.",
+      "structural_dependency": "a_4 coefficient extraction uses tr_F over the UNGRADED trace (even Seeley-DeWitt coefficient, k=4 even), so the orientation cycle is NOT invoked. Physical picture: alpha_s depends on g_3^2 (gauge coupling magnitude), not on the chirality sign."
+    },
+    {
+      "id": "PD",
+      "name": "Poincare duality",
+      "statement": "The intersection form on K-theory K_*(A) x K_*(A) -> Z is non-degenerate.",
+      "invoked": false,
+      "invocation_site": "Poincare duality is a K-theoretic TOPOLOGICAL statement on the algebra A; a_4 is a LOCAL spectral-action integral. The eigenvalue spectrum of D does not invoke K-theory of A in its computation.",
+      "structural_dependency": "PD is used to CLASSIFY admissible finite algebras (CCM-2007 Theorem 2.1) -- i.e. to establish that A_F = C + H + M_3(C) is the UNIQUE choice. But GIVEN A_F, the a_4 coefficient on (A_F, H_F, D_F) is computed without invoking PD. Classification axiom, not computation axiom."
+    }
+  ],
+  "invoked_ids": [
+    "dim",
+    "reg",
+    "fin",
+    "real",
+    "order1"
+  ],
+  "not_invoked_ids": [
+    "orient",
+    "PD"
+  ],
+  "closure_sha256": "69934d6c13328236a6fef1d26060a93ce9be94456794d81f8b94d2d2faf98700",
+  "content_sha256": "6a9d35c56fa3b6c45d1f0a5e4237afbfee94f6c5bb1b220d2f414ef14c63f423",
+  "input_shas": {
+    "researchers/Connes/10_2007_Chamseddine_Connes_Marcolli_Gravity_standard_model.md": "073a8dfe64ec56370258518d59a002deb6e6220e034365e487df2aedab9cb6e3",
+    ".claude/agent-memory/connes-ncg-theorist/s83-w3-g54-hp-even-audit.md": "d0da21eb1d0bc6398f8c8f5697ddfe928136a8a7f2d6fc7b53df1d9929f13f51",
+    "sessions/permanent-results-registry.md": "19b5efd944a007a57b9837d5dbec90b4bcc89897d7af2a3965911447c25a097d"
+  }
+}

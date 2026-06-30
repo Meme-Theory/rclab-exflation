@@ -1,0 +1,78 @@
+C-3: ORDER-ONE CONDITION [[D_can, a_F], J b_F J^{-1}] = 0
+============================================================
+
+Date: 2026-02-27
+Script: s28b_order_one.py
+Total runtime: 2.3s
+
+GATE C-3 VERDICT
+------------------------------------------------------------
+
+Verdict: FAIL
+Max norm (non-trivial sectors): 3.117365e+00
+Max norm (0,0) singlet: 0.000000e+00
+
+COMPARISON D_can vs D_K
+------------------------------------------------------------
+
+D_can (0,0): 0.000000e+00  (M_Lie=0, trivially zero)
+D_K   (0,0): 2.338024e+00  (Omega contribution)
+D_can non-triv: 3.117365e+00  (Clifford only)
+D_K   non-triv: 3.896707e+00  (Clifford + Omega)
+
+SECTOR TABLE (L_inf norm)
+------------------------------------------------------------
+   tau   sector        D_can          D_K
+  0.00    (0,0) 0.000000e+00 1.732051e+00
+  0.00    (1,0) 2.309401e+00 2.886751e+00
+  0.00    (0,1) 2.309401e+00 2.886751e+00
+  0.00    (1,1) 2.309401e+00 2.309401e+00
+  0.15    (0,0) 0.000000e+00 2.012356e+00
+  0.15    (1,0) 2.683141e+00 3.353927e+00
+  0.15    (0,1) 2.683141e+00 3.353927e+00
+  0.15    (1,1) 2.683141e+00 2.683141e+00
+  0.30    (0,0) 0.000000e+00 2.338024e+00
+  0.30    (1,0) 3.117365e+00 3.896707e+00
+  0.30    (0,1) 3.117365e+00 3.896707e+00
+  0.30    (1,1) 3.117365e+00 3.117365e+00
+
+FROBENIUS NORM TABLE
+------------------------------------------------------------
+   tau   sector    Frobenius        L_inf
+  0.00    (0,0) 0.000000e+00 0.000000e+00
+  0.00    (1,0) 1.306395e+01 2.309401e+00
+  0.00    (0,1) 1.306395e+01 2.309401e+00
+  0.00    (1,1) 3.200000e+01 2.309401e+00
+  0.15    (0,0) 0.000000e+00 0.000000e+00
+  0.15    (1,0) 1.349587e+01 2.683141e+00
+  0.15    (0,1) 1.349587e+01 2.683141e+00
+  0.15    (1,1) 3.305800e+01 2.683141e+00
+  0.30    (0,0) 0.000000e+00 0.000000e+00
+  0.30    (1,0) 1.432208e+01 3.117365e+00
+  0.30    (0,1) 1.432208e+01 3.117365e+00
+  0.30    (1,1) 3.508179e+01 3.117365e+00
+
+CLIFFORD 32-DIM (tau-independent)
+Max violation: 4.000000e+00
+Worst: gamma_1, a=H_i, b=H_i
+
+FACTOR BREAKDOWN (32-dim Clifford)
+------------------------------------------------------------
+(C  , C  ): 2.000000e+00
+(C  , H  ): 2.828427e+00
+(C  , M3 ): 2.000000e+00
+(H  , C  ): 2.828427e+00
+(H  , H  ): 4.000000e+00
+(H  , M3 ): 2.828427e+00
+(M3 , C  ): 2.000000e+00
+(M3 , H  ): 2.828427e+00
+(M3 , M3 ): 2.000000e+00
+
+STRUCTURAL NOTES
+------------------------------------------------------------
+The O(1) violation is structural (Baptista-Connes mismatch).
+D_can order-one violation is PURELY Clifford (no Omega).
+The violation condition is tau-INDEPENDENT (norm varies, condition does not).
+(0,0) singlet satisfies order-one TRIVIALLY (M_Lie = 0).
+Neither D_K nor D_can satisfies order-one in the Baptista representation.
+This is NOT a framework closure -- it is the known open problem from Session 9-10.

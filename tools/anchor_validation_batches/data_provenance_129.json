@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 129,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1281",
+      "anchor_type": "data_provenance",
+      "name": "instanton_kappa",
+      "script_path": "session-72/s72_instanton_kappa.py",
+      "session": "s72",
+      "inputs": "",
+      "outputs": "session-72/s72_instanton_kappa.npz, session-72/s72_instanton_kappa.png",
+      "source_file": "computations/session-72/s72_instanton_kappa.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s72_instanton_kappa.py — Instanton Connection Curvature kappa vs Kasparov Bound\n    4: ================================================================================\n    5: \n    6: Gate: INSTANTON-KAPPA-72\n    7:   PASS: min(kappa(rho)) < 0.586 for some rho (non-trivial fibration viable).\n    8:   INFO: min(kappa(rho)) in [0.586, 1.0] (marginal, higher-order corrections may matter).\n    9:   FAIL: min(kappa(rho)) > 1.0 for all rho (non-trivial fibration robustly obstructed).\n   10: \n   11: Physics:"
+    },
+    {
+      "anchor_id": "prov_1282",
+      "anchor_type": "data_provenance",
+      "name": "island_graph",
+      "script_path": "session-72/s72_island_graph.py",
+      "session": "s72",
+      "inputs": "computations/session-64/s64_local_entangle.npz, computations/session-71/s71_inter_site_entangle.npz, computations/sessio...",
+      "outputs": "session-72/s72_island_graph.npz, session-72/s72_island_graph.png",
+      "source_file": "computations/session-72/s72_island_graph.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s72_island_graph.py — Entanglement Island Graph on CG(24)\n    4: ==========================================================\n    5: \n    6: Gate: ISLAND-GRAPH-72\n    7:   PASS: Area law R^2 > 0.9 AND Page curve shows rise-saturation-symmetry\n    8:   INFO: R^2 in [0.7, 0.9]\n    9:   FAIL: Volume law dominates\n   10: \n   11: Computes entanglement entropy across all bipartitions of CG(24) using:"
+    },
+    {
+      "anchor_id": "prov_1283",
+      "anchor_type": "data_provenance",
+      "name": "kappa_delta",
+      "script_path": "session-72/s72_kappa_delta.py",
+      "session": "s72",
+      "inputs": "",
+      "outputs": "session-72/s72_kappa_delta.npz, session-72/s72_kappa_delta.png",
+      "source_file": "computations/session-72/s72_kappa_delta.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s72_kappa_delta.py — Self-Consistent BCS Gap Curvature kappa_Delta\n    4: ===================================================================\n    5: \n    6: Gate: KAPPA-DELTA-72\n    7:   PASS: t_dec/t_transit in [1.0, 5.0] AND kappa_Delta real and positive.\n    8:   INFO: t_dec/t_transit outside [1.0, 5.0] but kappa_Delta well-defined.\n    9:   FAIL: Gap equation fails to converge, or Delta(tau) non-monotonic.\n   10: \n   11: Physics:"
+    },
+    {
+      "anchor_id": "prov_1284",
+      "anchor_type": "data_provenance",
+      "name": "modular_chirp",
+      "script_path": "session-72/s72_modular_chirp.py",
+      "session": "s72",
+      "inputs": "",
+      "outputs": "session-72/s72_modular_chirp.npz",
+      "source_file": "computations/session-72/s72_modular_chirp.py",
+      "source_context_30_lines": "  700: # ============================================================================\n  701: #  SECTION 12: Save Results\n  702: # ============================================================================\n  703: \n  704: print(f\"\\n{'=' * 72}\")\n  705: print(\"SECTION 12: Saving Results\")\n  706: print(f\"{'=' * 72}\")\n  707: \n  708: outfile = os.path.join(data_dir, 's72_modular_chirp.npz')\n  709: np.savez(outfile,\n  710:     # Gate\n  711:     gate_name='MODULAR-CHIRP-72',\n  712:     gate_verdict=verdict,\n  713:     gate_criterion='|d2H_mod - kappa_s71| / kappa_s71 < 1e-8 (PASS), 1e-4 (INFO)',\n  714:     max_dev_B2=max_dev_B2,\n  715:     max_dev_all=max_dev_all,\n  716: "
+    },
+    {
+      "anchor_id": "prov_1285",
+      "anchor_type": "data_provenance",
+      "name": "spectral_functional_fit",
+      "script_path": "session-72/s72_spectral_functional_fit.py",
+      "session": "s72",
+      "inputs": "s66_cutoff_ns.npz",
+      "outputs": "session-72/s72_spectral_functional_fit.npz, session-72/s72_spectral_functional_fit.png",
+      "source_file": "computations/session-72/s72_spectral_functional_fit.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s72_spectral_functional_fit.py -- SPECTRAL-FUNCTIONAL-FIT-72\n    4: =============================================================\n    5: \n    6: Gate: SPECTRAL-FUNCTIONAL-FIT-72\n    7:   PASS: A positive f(x) exists satisfying all three constraints within error bars,\n    8:         with ||residuals|| < 0.01.\n    9:   INFO: A solution exists but requires f(x) < 0 in some region, or residuals > 0.01\n   10:         but < 0.1.\n   11:   FAIL: No solution exists for any positive f(x)."
+    },
+    {
+      "anchor_id": "prov_1286",
+      "anchor_type": "data_provenance",
+      "name": "tau_equilibrium",
+      "script_path": "session-72/s72_tau_equilibrium.py",
+      "session": "s72",
+      "inputs": "",
+      "outputs": "session-72/s72_tau_equilibrium.npz, session-72/s72_tau_equilibrium.png",
+      "source_file": "computations/session-72/s72_tau_equilibrium.py",
+      "source_context_30_lines": "  337: print(f\"4. tau_eq > tau_fold for all physical models                    [VERIFIED]\")\n  338: print(f\"5. Delta(tau_eq) > 0 for all stable equilibria                 [VERIFIED]\")\n  339: print(f\"6. BCS shift perturbative: |delta_BCS| ~ O(10^{{-5}})           [VERIFIED]\")\n  340: print()\n  341: \n  342: # ============================================================\n  343: # STEP 7: Save Data\n  344: # ============================================================\n  345: outfile = os.path.join(data_dir, 's72_tau_equilibrium.npz')\n  346: \n  347: # Collect stable quartic results\n  348: if len(stable_quartic) > 0:\n  349:     sq_tau_eq = np.array([r['tau_eq'] for r in stable_quartic])\n  350:     sq_d2V = np.array([r['d2V_min'] for r in stable_quartic])\n  351:     sq_Delta = np.array([r['Delta_eq'] for r in stable_quartic])\n  352:     sq_depth = np.array([r['depth'] for r in stable_quartic])\n  353:     sq_xmax = np.array([r['x_max'] for r in stable_quartic])"
+    },
+    {
+      "anchor_id": "prov_1287",
+      "anchor_type": "data_provenance",
+      "name": "tau_fold_consistency",
+      "script_path": "session-72/s72_tau_fold_consistency.py",
+      "session": "s72",
+      "inputs": "",
+      "outputs": "session-72/s72_tau_fold_consistency.npz, session-72/s72_tau_fold_consistency.png",
+      "source_file": "computations/session-72/s72_tau_fold_consistency.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s72_tau_fold_consistency.py -- TAU-FOLD-CONSISTENCY-72\n    4: ======================================================\n    5: \n    6: Gate: TAU-FOLD-CONSISTENCY-72\n    7:   PASS: All three tau ranges overlap at a common region containing tau = 0.19 +/- 0.02.\n    8:   INFO: Two of three overlap; the third is within 2-sigma of the overlap region.\n    9:   FAIL: No common overlap region exists (the three observables are mutually inconsistent).\n   10: \n   11: Physics:"
+    },
+    {
+      "anchor_id": "prov_1288",
+      "anchor_type": "data_provenance",
+      "name": "weinberg_angle",
+      "script_path": "session-72/s72_weinberg_angle.py",
+      "session": "s72",
+      "inputs": "",
+      "outputs": "session-72/s72_weinberg_angle.npz, session-72/s72_weinberg_angle.png",
+      "source_file": "computations/session-72/s72_weinberg_angle.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s72_weinberg_angle.py — WEINBERG-72: sin^2(theta_W) at M_KK + RG to M_Z\n    4: =========================================================================\n    5: \n    6: Computes the Weinberg angle from the Baptista KK framework boundary conditions\n    7: at M_KK and runs it to M_Z using SM one-loop RG equations, including KK\n    8: threshold corrections from the PW tower.\n    9: \n   10: Structure:\n   11:   1. M_KK-scale boundary conditions (SCHEME-INDEPENDENT)"
+    },
+    {
+      "anchor_id": "prov_1289",
+      "anchor_type": "data_provenance",
+      "name": "zeta_ratio_scan",
+      "script_path": "session-72/s72_zeta_ratio_scan.py",
+      "session": "s72",
+      "inputs": "",
+      "outputs": "session-72/s72_zeta_ratio_scan.npz, session-72/s72_zeta_ratio_scan.png",
+      "source_file": "computations/session-72/s72_zeta_ratio_scan.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s72_zeta_ratio_scan.py -- ZETA-RATIO-CONVERGENCE-72\n    4: Spectral Zeta Ratio a_6^z/a_4^z Convergence Scan vs L_max\n    5: \n    6: STRUCTURAL CONTEXT\n    7: ------------------\n    8: S71 found a_6^z/a_4^z = 0.567 at L_max=7, but the Landau-Baptista workshop\n    9: (WS3 C3/D3) established this is contaminated by finite-spectrum artifacts.\n   10: The spectral zeta of a truncated spectrum is a finite sum whose Taylor\n   11: coefficients receive contributions from all spectral moments. As L_max"
+    },
+    {
+      "anchor_id": "prov_1290",
+      "anchor_type": "data_provenance",
+      "name": "alpha_s_josephson",
+      "script_path": "session-73/s73a_alpha_s_josephson.py",
+      "session": "s73a",
+      "inputs": "",
+      "outputs": "session-73/s73a_alpha_s_josephson.npz",
+      "source_file": "computations/session-73/s73a_alpha_s_josephson.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s73a_alpha_s_josephson.py — ALPHA-S-JOSEPHSON-73a\n    4: Branching-Resolved Josephson Couplings and alpha_s Virtual Excitation Corrections\n    5: =================================================================================\n    6: \n    7: Gate: ALPHA-S-JOSEPHSON-73a\n    8:   PASS: |delta_alpha_s / alpha_s| > 0.1 AND correction moves alpha_s toward 0.118\n    9:   INFO: |delta_alpha_s / alpha_s| in [0.01, 0.1]\n   10:   FAIL: |delta_alpha_s / alpha_s| < 0.01\n   11: "
+    }
+  ]
+}

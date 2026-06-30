@@ -1,0 +1,126 @@
+==============================================================================
+EUCLID-FOLDED-69: Galaxy Bispectrum Folded Shape Forecast
+==============================================================================
+
+Framework predictions (from S67 GGE-BISPECTRUM-67):
+  f_NL^folded  = 0.1293  (GGE diagonal CLT, N_pair = 59.8)
+  f_NL^equil   = 0.8530   (c_BLV = 0.485)
+
+  sigma_8 normalization check: 0.8109 (target: 0.811)
+  alpha(0.05) = 11671.68 (Poisson transfer function)
+
+==============================================================================
+EUCLID SPECTROSCOPIC SURVEY PARAMETERS
+==============================================================================
+  Redshift: z = 0.9 - 1.8
+  f_sky = 0.36, bins = 9
+  V_total = 43.47 (Gpc/h)^3 = 142.0 Gpc^3
+
+  z=0.95: V=3.799 (Gpc/h)^3, n_g=3.5e-03, b=1.798
+  z=1.05: V=4.146 (Gpc/h)^3, n_g=3.0e-03, b=1.882
+  z=1.15: V=4.451 (Gpc/h)^3, n_g=2.5e-03, b=1.966
+  z=1.25: V=4.716 (Gpc/h)^3, n_g=2.0e-03, b=2.050
+  z=1.35: V=4.944 (Gpc/h)^3, n_g=1.7e-03, b=2.134
+  z=1.45: V=5.137 (Gpc/h)^3, n_g=1.4e-03, b=2.218
+  z=1.55: V=5.300 (Gpc/h)^3, n_g=1.2e-03, b=2.302
+  z=1.65: V=5.435 (Gpc/h)^3, n_g=1.0e-03, b=2.386
+  z=1.75: V=5.545 (Gpc/h)^3, n_g=8.0e-04, b=2.470
+
+==============================================================================
+FISHER MATRIX COMPUTATION
+==============================================================================
+
+  k_min = 0.008 h/Mpc, k_max = 0.15 h/Mpc, N_k = 40
+  dk = 0.00364 h/Mpc
+
+  Computing LOCAL Fisher (cross-check against Sefusatti & Komatsu)...
+  sigma(f_NL^loc, Euclid) = 1.57
+  [S&K07 benchmark: ~5 for V=50 Gpc^3, n_g=1e-3, b=2, k_max=0.1]
+  [Our parameters: V=43 (Gpc/h)^3, <n_g>~2e-3, <b>~2.1, k_max=0.15]
+
+==============================================================================
+FOLDED FISHER WITH SHAPE WEIGHTING
+==============================================================================
+
+  Direct Fisher computation (folded template with shape weight):
+    sigma(f_NL^fold, direct) = 1.76
+    sigma(f_NL^loc) = 1.57
+    Ratio fold/loc = 1.12
+
+  Cross-check (Karagiannis+2018 scaling):
+    sigma(fold)/sigma(loc) ~ 12.0
+    sigma(f_NL^fold, literature scaling) = 18.9
+    This is a sanity check, not our primary result.
+
+  Best estimate (conservative):
+    sigma(f_NL^fold) = 18.9 [literature scaling]
+    SNR = f_NL / sigma = 0.1293 / 18.9 = 0.00685
+
+==============================================================================
+k_max SENSITIVITY
+==============================================================================
+  k_max=0.05: sigma_loc=11.08, sigma_fold(direct)=13.97, sigma_fold(lit)=133.0, sigma_fold(best)=133.0
+  k_max=0.10: sigma_loc=3.06, sigma_fold(direct)=3.50, sigma_fold(lit)=36.7, sigma_fold(best)=36.7
+  k_max=0.15: sigma_loc=1.57, sigma_fold(direct)=1.76, sigma_fold(lit)=18.9, sigma_fold(best)=18.9
+  k_max=0.20: sigma_loc=0.99, sigma_fold(direct)=1.09, sigma_fold(lit)=11.8, sigma_fold(best)=11.8
+  k_max=0.25: sigma_loc=0.69, sigma_fold(direct)=0.76, sigma_fold(lit)=8.3, sigma_fold(best)=8.3
+  k_max=0.30: sigma_loc=0.53, sigma_fold(direct)=0.57, sigma_fold(lit)=6.3, sigma_fold(best)=6.3
+
+==============================================================================
+COMPARISON ACROSS EXPERIMENTS
+==============================================================================
+
+  Experiment                     sigma(fold)     SNR        Detectable?
+  ---------------------------------------------------------------------------
+  Planck (CMB)                   8.600           0.01504    NO
+  CMB-S4 (CMB)                   6.900           0.01874    NO
+  Euclid spectroscopic           18.868          0.00685    NO
+  CMB-S4 + Euclid                6.480           0.01996    NO
+  21cm (l_max=3e4, cons.)        0.220           0.58780    NO
+  21cm (l_max=1e5, opt.)         0.036           3.59209    YES
+
+  Multi-tracer improvement (Seljak 2009):
+    Improvement factor: 1.7x (Euclid+DESI, 2-4 tracers)
+    sigma(fold, multi-tracer) = 11.1
+    SNR(multi-tracer) = 0.01165
+
+==============================================================================
+GATE VERDICT: EUCLID-FOLDED-69
+==============================================================================
+
+  Gate: EUCLID-FOLDED-69 (INFO)
+  Verdict: INFO
+
+  Primary result:
+    sigma(f_NL^folded, Euclid) = 18.9
+    Framework prediction: f_NL^folded = 0.1293
+    SNR = 0.00685
+
+  The folded bispectrum f_NL = 0.129 is NOT detectable by Euclid
+  spectroscopic galaxy bispectrum (SNR = 6.854e-03).
+
+  The galaxy bispectrum sigma ~ 19 for the folded template
+  is WORSE than CMB-S4 (sigma = 6.9) because:
+    (a) The folded shape is harder to extract from LSS than from CMB
+    (b) Nonlinear galaxy bias reduces the primordial signal
+    (c) The galaxy bispectrum has fewer effective modes for the folded
+        shape compared to CMB (3D volume helps local, not folded)
+
+  Detection hierarchy (most to least sensitive):
+    1. 21cm tomography (l_max=1e5): sigma=0.036, SNR=3.6  [2040s+]
+    2. 21cm tomography (l_max=3e4): sigma=0.22,  SNR=0.59 [2035+]
+    3. CMB-S4:                      sigma=6.9,   SNR=0.019 [2030s]
+    4. Euclid spectroscopic:        sigma=19,   SNR=6.9e-03 [2030s]
+
+  CONCLUSION: The folded bispectrum remains detectable ONLY via 21cm
+  tomography. Euclid galaxy bispectrum does not improve on CMB-S4 for
+  the folded template (it IS better for the local template).
+  The framework's unique folded signature requires next-generation
+  intensity mapping with l_max > 5e4 for unambiguous detection.
+
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s69_euclid_folded.npz
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s69_euclid_folded.png
+
+==============================================================================
+COMPUTATION COMPLETE
+==============================================================================

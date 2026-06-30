@@ -1,0 +1,48 @@
+Session 28a Gate Verdicts
+Date: 2026-02-27
+=========================
+
+KC-1  Parametric Injection Rate (Bogoliubov)     PASS
+  B_k(gap) = 0.023 > 0.01 threshold (2.3x above)
+  B_k(max) = 0.225 at tau=0.40, sector (3,3)
+  Gamma_inject = 29,643 at tau=0.40
+  Constraint Chain gateway OPEN: KC-2 through KC-5 proceed
+
+L-1   Thermal Spectral Action                     CLOSED
+  dF/dtau > 0 everywhere, all T in [0.1, 10.0] * lambda_min
+  Zero sign changes in entire (tau, T) plane
+  Thermal stabilization channel CLOSED
+
+E-1   Lichnerowicz Gap Decomposition              DIAGNOSTIC
+  Curvature fraction f_R = 0.84-0.95 in (1,0)/(0,1) sectors
+  Available enhancement (gap_K/gap_T)^2 = 6.2-19.9x
+  Tightness > 1 in (1,0)/(0,1): Omega_LC contributes beyond R/4
+
+C-1   Spectral Action S_can vs S_LC               CLOSED
+  S_can(tau) monotonically DECREASING under all smooth cutoffs
+  S_LC(tau) monotonically DECREASING under all smooth cutoffs
+  V-1 transfers to torsionful sector: connection-independent
+  Spectral action stabilization via torsion CLOSED
+
+C-4   Spectral Correlation R_2(s)                  DIAGNOSTIC (WEAK)
+  Brody q: D_can = 0.28+/-0.23, D_K = 0.16+/-0.24
+  D_can slightly more repulsive (Delta_q = +0.075)
+  One GOE crossover: (1,1) at tau=0.50
+  Statistical reliability limited: 18-42 distinct levels/sector
+
+S-2   M_max vs C_2 Dispersion                     DIAGNOSTIC (PHONON-LIKE)
+  M_max decreasing with C_2 at mu=0 (phonon-like)
+  Power law: M_max ~ C_2^{-1.49}
+  Universal threshold: mu_crit/lambda_min = 0.95 +/- 0.05
+  No acoustic branch; gap-edge proximity effect
+
+E-4/S-1/L-4  Torsionful BCS                       MINOR PASS
+  M_max(mu=0) = 0.529 in (0,1) at tau=0.50 [D_can]
+  M_max(mu=0) = 0.110 in (0,1) at tau=0.50 [D_K]
+  Enhancement: 4.83x (gap weakening dominant, basis rotation secondary)
+  M_max(mu=lambda_min) = 24.39 [D_can] vs 7.10 [D_K]
+  mu=0 obstruction NOT resolved; BCS requires mu_eff >= 0.95*lambda_min
+
+Summary: 1 PASS, 1 MINOR PASS, 2 CLOSES, 3 DIAGNOSTICS
+New closed mechanisms: 2 (L-1 thermal, C-1 S_can monotone)
+Total closed: 20. Closure-to-pass ratio: 10:1.

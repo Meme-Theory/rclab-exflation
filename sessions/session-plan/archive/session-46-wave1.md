@@ -29,7 +29,7 @@ The decisive question: does self-consistent Delta(tau) lock the crossing tau* on
 
 **Computation Steps**:
 
-1. **Load data.** Eigenvalues lambda_k(tau) from `tier0-computation/s44_dos_tau.npz` and `tier0-computation/s41_spectral_refinement.npz`. BCS coupling and pairing matrix from `tier0-computation/s42_hauser_feshbach.npz`. Prior q-theory results from `tier0-computation/s45_qtheory_bcs.npz` (constant-gap crossing at 0.209). Import constants from `tier0-computation/canonical_constants.py`: tau_fold, E_cond, Delta_0_GL, a0_fold, a2_fold, M_KK_gravity.
+1. **Load data.** Eigenvalues lambda_k(tau) from `computations/s44_dos_tau.npz` and `computations/s41_spectral_refinement.npz`. BCS coupling and pairing matrix from `computations/s42_hauser_feshbach.npz`. Prior q-theory results from `computations/s45_qtheory_bcs.npz` (constant-gap crossing at 0.209). Import constants from `computations/canonical_constants.py`: tau_fold, E_cond, Delta_0_GL, a0_fold, a2_fold, M_KK_gravity.
 
 2. **Construct tau grid.** Use 60 values: tau = 0.00, 0.02, 0.05, 0.08, 0.10, 0.12, 0.14, 0.16, 0.17, 0.175, 0.180, 0.185, 0.186, 0.187, 0.188, 0.189, 0.190, 0.191, 0.192, 0.193, 0.194, 0.195, 0.196, 0.198, 0.200, 0.205, 0.210, 0.215, 0.220, 0.230, 0.240, 0.250, 0.260, 0.280, 0.300, 0.320, 0.340, 0.360, 0.380, 0.400, 0.420, 0.440, 0.460, 0.480, 0.500 (dense scan around 0.185-0.200 to catch the T3-T5 crossing and potential tau* lock).
 
@@ -64,19 +64,19 @@ The decisive question: does self-consistent Delta(tau) lock the crossing tau* on
 - FAIL: tau* outside [0.15, 0.25]
 
 **Input files**:
-- `tier0-computation/s45_qtheory_bcs.npz`
-- `tier0-computation/s42_hauser_feshbach.npz`
-- `tier0-computation/s41_spectral_refinement.npz`
-- `tier0-computation/s44_dos_tau.npz`
-- `tier0-computation/canonical_constants.py`
+- `computations/s45_qtheory_bcs.npz`
+- `computations/s42_hauser_feshbach.npz`
+- `computations/s41_spectral_refinement.npz`
+- `computations/s44_dos_tau.npz`
+- `computations/canonical_constants.py`
 - `researchers/Volovik/05_2005_Volovik_Vacuum_Energy_Cosmological_Constant.md`
 - `researchers/Volovik/15_2008_Klinkhamer_Volovik_q_Theory.md`
 - `researchers/Volovik/16_2017_Klinkhamer_Volovik_q_Theory_Dark_Energy.md`
 
 **Output files**:
-- Script: `tier0-computation/s46_qtheory_selfconsistent.py`
-- Data: `tier0-computation/s46_qtheory_selfconsistent.npz`
-- Plot: `tier0-computation/s46_qtheory_selfconsistent.png`
+- Script: `computations/s46_qtheory_selfconsistent.py`
+- Data: `computations/s46_qtheory_selfconsistent.npz`
+- Plot: `computations/s46_qtheory_selfconsistent.png`
 
 **Working paper section**: W1-R1
 
@@ -121,7 +121,7 @@ The pair mode count at Casimir wavenumber k = sqrt(C_2(p,q)) is the number of DI
 
 **Computation Steps**:
 
-1. **Load data.** From `tier0-computation/s42_hauser_feshbach.npz`: eigenvalues, sector labels (B1/B2/B3), K_7 charges, pairing interaction V_{kl}, representation labels (p,q), Casimir values C_2(p,q). From `tier0-computation/canonical_constants.py`: Delta_0_GL, E_cond, tau_fold.
+1. **Load data.** From `computations/s42_hauser_feshbach.npz`: eigenvalues, sector labels (B1/B2/B3), K_7 charges, pairing interaction V_{kl}, representation labels (p,q), Casimir values C_2(p,q). From `computations/canonical_constants.py`: Delta_0_GL, E_cond, tau_fold.
 
 2. **Identify BCS-active sectors.** Sectors with eigenvalues within the BCS pairing window |lambda_k - E_F| < omega_D (where E_F = 0 from S34, omega_D is the Debye-analogue cutoff, approximately 2*Delta_0). List all sectors and their Casimir wavenumber k = sqrt(C_2).
 
@@ -150,18 +150,18 @@ The pair mode count at Casimir wavenumber k = sqrt(C_2(p,q)) is the number of DI
 - FAIL: alpha < 0.5 or alpha > 2.0
 
 **Input files**:
-- `tier0-computation/s42_hauser_feshbach.npz`
-- `tier0-computation/s44_dos_tau.npz`
-- `tier0-computation/s38_cc_instanton.npz`
-- `tier0-computation/canonical_constants.py`
+- `computations/s42_hauser_feshbach.npz`
+- `computations/s44_dos_tau.npz`
+- `computations/s38_cc_instanton.npz`
+- `computations/canonical_constants.py`
 - `researchers/Landau/23_2015_Cappuzzello_Giant_Pairing_Vibration_14C_15C.md`
 - `researchers/Landau/24_2019_Fortunato_GPV_Heavy_Nuclei.md`
 - `researchers/Landau/25_2025_GPV_Fragmentation_Many_Body.md`
 
 **Output files**:
-- Script: `tier0-computation/s46_hose_count.py`
-- Data: `tier0-computation/s46_hose_count.npz`
-- Plot: `tier0-computation/s46_hose_count.png`
+- Script: `computations/s46_hose_count.py`
+- Data: `computations/s46_hose_count.npz`
+- Plot: `computations/s46_hose_count.png`
 
 **Working paper section**: W1-R2
 
@@ -184,7 +184,7 @@ The pair mode count at Casimir wavenumber k = sqrt(C_2(p,q)) is the number of DI
 
 You are computing the Seeley-DeWitt a_2 coefficient from the analytically known Ricci scalar of the Jensen-deformed SU(3) metric, independent of the spectral eigenvalue sum. This quantifies the truncation error and determines whether the 0.83-decade M_KK tension is a truncation artifact.
 
-**Context.** The heat kernel audit (S45 HEAT-KERNEL-AUDIT-45) classified Seeley-DeWitt coefficients as Tier 2 APPROXIMATION on the finite truncated spectrum. The spectral a_2 = 2776.17 (from s42_constants_snapshot.npz, CONST-FREEZE-42) is computed as:
+**Context.** The heat kernel audit (S45 HEAT-KERNEL-AUDIT-45) classified Seeley-DeWitt coefficients as Level 2 APPROXIMATION on the finite truncated spectrum. The spectral a_2 = 2776.17 (from s42_constants_snapshot.npz, CONST-FREEZE-42) is computed as:
 
     a_2^{spectral} = sum_k d_k / lambda_k^2
 
@@ -210,7 +210,7 @@ on the Jensen family g_ij(tau).
 
 **Computation Steps**:
 
-1. **Load data.** From `tier0-computation/r20a_riemann_tensor.npz` or recompute: the Ricci scalar R(tau) and sectional curvatures at tau = tau_fold = 0.19. From `tier0-computation/s42_constants_snapshot.npz`: a_2^{spectral} = 2776.17. Import from `tier0-computation/canonical_constants.py`: tau_fold, a2_fold, Vol_SU3_Haar, M_KK_gravity.
+1. **Load data.** From `computations/r20a_riemann_tensor.npz` or recompute: the Ricci scalar R(tau) and sectional curvatures at tau = tau_fold = 0.19. From `computations/s42_constants_snapshot.npz`: a_2^{spectral} = 2776.17. Import from `computations/canonical_constants.py`: tau_fold, a2_fold, Vol_SU3_Haar, M_KK_gravity.
 
 2. **Ricci scalar at the fold.** The Jensen metric on SU(3) has 8 orthogonal generators split into (2 Cartan, 6 root). The Jensen deformation scales root generators by e^{2 tau} relative to Cartan. Compute R(tau_fold) from the structure constants of SU(3) and the Jensen metric tensor. The formula for the Ricci tensor on a Lie group with left-invariant metric is:
 
@@ -228,7 +228,7 @@ on the Jensen family g_ij(tau).
 
     a_2^{geometric}(tau_fold) = (4 pi)^{-4} * [ R(tau_fold)/6 * 16 + Tr_S(E) ] * Vol(SU(3), g(tau_fold))
 
-6. **Comparison.** Compute the ratio a_2^{spectral} / a_2^{geometric}. This ratio quantifies the truncation error of the max_pq_sum = 5 spectrum. If it is within 30%, the spectral computation is Tier 2 valid.
+6. **Comparison.** Compute the ratio a_2^{spectral} / a_2^{geometric}. This ratio quantifies the truncation error of the max_pq_sum = 5 spectrum. If it is within 30%, the spectral computation is Level 2 valid.
 
 7. **M_KK implication.** G_N = 1 / (48 pi a_2 M_KK^2) (Sakharov induced gravity). If a_2^{geometric} > a_2^{spectral}, then M_KK^{geometric} < M_KK^{spectral}, narrowing the 0.83-decade tension.
 
@@ -245,14 +245,14 @@ on the Jensen family g_ij(tau).
 - FAIL: disagreement > 100%
 
 **Input files**:
-- `tier0-computation/s42_constants_snapshot.npz` (a_2 spectral, M_KK)
-- `tier0-computation/s42_hauser_feshbach.npz` (eigenvalue spectrum for cross-check)
-- `tier0-computation/canonical_constants.py`
+- `computations/s42_constants_snapshot.npz` (a_2 spectral, M_KK)
+- `computations/s42_hauser_feshbach.npz` (eigenvalue spectrum for cross-check)
+- `computations/canonical_constants.py`
 
 **Output files**:
-- Script: `tier0-computation/s46_geometric_a2.py`
-- Data: `tier0-computation/s46_geometric_a2.npz`
-- Plot: `tier0-computation/s46_geometric_a2.png`
+- Script: `computations/s46_geometric_a2.py`
+- Data: `computations/s46_geometric_a2.npz`
+- Plot: `computations/s46_geometric_a2.png`
 
 **Working paper section**: W1-R3
 
@@ -287,11 +287,11 @@ The formula works as follows. The GGE state has von Neumann entropy S_GGE (in na
 - S_max - S_GGE = 2.089 nats (departure from thermality)
 - alpha = 3.456 / 2.089 = 1.654... wait, that gives alpha = 1.654 not 0.410.
 
-**CORRECTION**: Re-derive from the actual S45 ALPHA-EFF-45 npz. The formula may be alpha = (S_max - S_GGE) / S_GGE = 0.604, or alpha = S_GGE / S_max = 0.623, or something else entirely. Load `tier0-computation/s45_alpha_eff.npz` and trace the EXACT formula used. This is precisely the provenance gap the formula audit flagged.
+**CORRECTION**: Re-derive from the actual S45 ALPHA-EFF-45 npz. The formula may be alpha = (S_max - S_GGE) / S_GGE = 0.604, or alpha = S_GGE / S_max = 0.623, or something else entirely. Load `computations/s45_alpha_eff.npz` and trace the EXACT formula used. This is precisely the provenance gap the formula audit flagged.
 
 **Computation Steps**:
 
-1. **Load S45 data.** From `tier0-computation/s45_alpha_eff.npz`: extract all stored values including alpha, S_GGE, S_max, method labels. From `tier0-computation/s42_gge_energy.npz`: GGE occupation numbers, temperatures, energies.
+1. **Load S45 data.** From `computations/s45_alpha_eff.npz`: extract all stored values including alpha, S_GGE, S_max, method labels. From `computations/s42_gge_energy.npz`: GGE occupation numbers, temperatures, energies.
 
 2. **Trace the exact formula.** Read the s45_alpha_eff.py script to identify the EXACT algebraic expression that produces alpha = 0.410. Write it down as a single self-contained equation with all variables defined.
 
@@ -334,15 +334,15 @@ Compute this ratio numerically from the 8-mode GGE spectrum and compare to alpha
 - FAIL: Disagree by more than 50%
 
 **Input files**:
-- `tier0-computation/s45_alpha_eff.npz`
-- `tier0-computation/s42_gge_energy.npz`
-- `tier0-computation/canonical_constants.py`
+- `computations/s45_alpha_eff.npz`
+- `computations/s42_gge_energy.npz`
+- `computations/canonical_constants.py`
 - Zubarev, D.N. (1974), "Nonequilibrium Statistical Thermodynamics," Consultants Bureau.
 
 **Output files**:
-- Script: `tier0-computation/s46_zubarev_derivation.py`
-- Data: `tier0-computation/s46_zubarev_derivation.npz`
-- Plot: `tier0-computation/s46_zubarev_derivation.png` (alpha from multiple methods, bar chart)
+- Script: `computations/s46_zubarev_derivation.py`
+- Data: `computations/s46_zubarev_derivation.npz`
+- Plot: `computations/s46_zubarev_derivation.png` (alpha from multiple methods, bar chart)
 
 **Working paper section**: W1-R4
 

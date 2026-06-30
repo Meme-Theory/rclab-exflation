@@ -1,0 +1,107 @@
+{
+  "table": "gates",
+  "batch_id": 172,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "gate_T3-S30A-DTOTAL-PFAFFIAN",
+      "anchor_type": "gates",
+      "name": "T3-S30A-DTOTAL-PFAFFIAN",
+      "session": "81",
+      "condition": "",
+      "verdict": "PASS",
+      "source_file": "computations\\session-81\\s81_gate_verdicts.txt",
+      "source_context_30_lines": "  177:   # F.3 gate context: ratio_Evac_Econd = 28.76 far exceeds the nuclear 0.05-0.15 benchmark. This is EXPECTED for the phononic system: the \"virtual pair\" regime here is the entire B2-quartet + mixed-sector manifold, not just nucleonic sub-gap fluctuations. The cutoff 2*Delta_OES sits BELOW the VH-amplified B2 excitation band, so the numerator captures the huge VH-boosted pair-rearrangement strength while the denominator is the small N=1 condensation energy. This is a framework feature, not a deviation.\n  178:   # notes: the script is a Tier-1 `NEEDS-CANONICAL-MIGRATION` (24 untagged assignments per Tier-1 scan). The T3 migration rewrote the script with explicit `# (local)` tags on every intermediate (grid parameters, loop accumulators, matrix-element arrays, pole catalog, verdict ratios) and added canonical cross-checks on Delta_OES and E_gs. Zero framework constants were hardcoded in the archive; the migration adds DISCIPLINE rather than correctness — the archive's numerical output was already right.\n  179:   # MCP baseline: get_constant(\"Delta_BCS\") returned 0.4642547394830737 (S70, BCS-GAP-CANONICAL-70, R-PROTECTED); trace_entity(\"pair_susceptibility\") surfaced 10 downstream consumers (S37 instanton MC, S38 KZ defects, S39 integrability, S39 odd blocking, S39 spectral function, S40 QRPA modes, S40 self-consistent ODE, S42 fabric WZ, S43 foam GGE, S43 pair form factor, S43 GGE temperatures, S45 E_cond reconcile, S45 OCC spectral crosscheck, S46 V_b3b3, S50 Jpair calib\n... [truncated]"
+    },
+    {
+      "anchor_id": "gate_T3-S30B-FULL-SPECTRUM",
+      "anchor_type": "gates",
+      "name": "T3-S30B-FULL-SPECTRUM",
+      "session": "81",
+      "condition": "",
+      "verdict": "PASS",
+      "source_file": "computations\\session-81\\s81_gate_verdicts.txt",
+      "source_context_30_lines": "  179:   # MCP baseline: get_constant(\"Delta_BCS\") returned 0.4642547394830737 (S70, BCS-GAP-CANONICAL-70, R-PROTECTED); trace_entity(\"pair_susceptibility\") surfaced 10 downstream consumers (S37 instanton MC, S38 KZ defects, S39 integrability, S39 odd blocking, S39 spectral function, S40 QRPA modes, S40 self-consistent ODE, S42 fabric WZ, S43 foam GGE, S43 pair form factor, S43 GGE temperatures, S45 E_cond reconcile, S45 OCC spectral crosscheck, S46 V_b3b3, S50 Jpair calibrate, S74 W2E integ link). Any drift here propagates.\n  180: \n  181: ## Tier 3 intake consolidation\n  182: \n  183: T3-S29C-K-TRANSITION: FAIL -- value=9.3971e+25_hMpc scheme=radiation convention=DESI-BAO L_max=NA sha256=b2c49dc7afd990d9d083de825135e08527cd6f34a3b0ce0e987e0bb9cd0e36dc\n  184: \n  185: T3-S30A-DTOTAL-PFAFFIAN: PASS -- value=+1 scheme=Pfaffian-Z2-per-sector convention=Parlett-Reid_Xi*D_total L_max=MAX_PQ_SUM=2_N_TAU=75 sha256=3207b176d66160519def580acdb8f827586ccd06bd4ab7c49b7418daa0b8530a\n  186: \n  187: T3-S30B-FULL-SPECTRUM: PASS -- value=lambda_min_grad=0.83498966,phi_30_grad=1.52060698,DOS_grad=62 scheme=full-Dirac-spectrum-U2invariant convention=volume-preserving-T2-dir-(-11,-7,8) L_max=6 sha256=8913f7fa2fc66023abf33614ff7b131f3582dd140849163470965031969f2bdd\n  188:   # target=lambda_min_grad=0.83498966,phi_30=1.52060698,DOS=62 (MCP baseline, s30b_full_spectrum_results.txt, Session 30B synthesis)\n  189:   # pre-fix=already-canonical-compliant (pure geometric computation, no framework-constan\n... [truncated]"
+    },
+    {
+      "anchor_id": "gate_T3-S37-INSTANTON-MC",
+      "anchor_type": "gates",
+      "name": "T3-S37-INSTANTON-MC",
+      "session": "81",
+      "condition": "",
+      "verdict": "PASS",
+      "source_file": "computations\\session-81\\s81_gate_verdicts.txt",
+      "source_context_30_lines": "  189:   # pre-fix=already-canonical-compliant (pure geometric computation, no framework-constant hardcodes; tau/eps are gate-defined candidate points, MAX_PQ_SUM=6 is gate PRU pin, RHO_SPEC=0.01 is pre-registered cutoff)\n  190:   # fix=none-required (script has no canonical-constants violations; su3_generators/structure_constants/killing_form are algebraic primitives, gamma matrices from Cliff8 basis)\n  191:   # reproduced=lambda_min_grad=0.83498966,phi_30=1.52060698,DOS=62 (exact match to MCP baseline across 28 sectors, N_max=6, 45.4s wall)\n  192:   # rel_error=0.0 (machine-epsilon reproduction; anti-Hermiticity err <= 8.9e-16 in all sectors)\n  193:   # closure_inputs={script:39a8fc86b6ff0b39141dfd0c9f4df3e88d8143e414400b44c87348c4b210f6cb, dirac_spectrum.py:267035cb598b08e94117a3245cb07b29fbe6bff7b5a614a1bde64982851809c3, s23a_kosmann_singlet.py:412f8b65afaa0b60c0a65ac6564b9b1ecf0ec440caba8e2797c74a8303d9c61e, canonical_constants.py:10bceb1a4e8b801843767f301ef564c8e26d3ad08e294358378ec770bcf6709e}\n  194:   # script_sha=39a8fc86b6ff0b39141dfd0c9f4df3e88d8143e414400b44c87348c4b210f6cb\n  195:   # canon_sha=10bceb1a4e8b801843767f301ef564c8e26d3ad08e294358378ec770bcf6709e\n  196: \n  197: T3-S37-INSTANTON-MC: PASS -- value=DENSE scheme=0D_zero_mode_MC convention=flip_rate_over_2L_times_xi_BCS L_max=NA_nonspectral sha256=f49a4a8761eda8a4b423f1b7f16ae49f38eaea950c8528105277cfe77782f8ea\n  198: \n  199: ## Tier 3 intake consolidation\n  200: \n  201: T3-S29A-DERIVED-DRIVE-RATE: PASS -- \n... [truncated]"
+    },
+    {
+      "anchor_id": "gate_T3-S29A-DERIVED-DRIVE-RATE",
+      "anchor_type": "gates",
+      "name": "T3-S29A-DERIVED-DRIVE-RATE",
+      "session": "81",
+      "condition": "",
+      "verdict": "PASS",
+      "source_file": "computations\\session-81\\s81_gate_verdicts.txt",
+      "source_context_30_lines": "  193:   # closure_inputs={script:39a8fc86b6ff0b39141dfd0c9f4df3e88d8143e414400b44c87348c4b210f6cb, dirac_spectrum.py:267035cb598b08e94117a3245cb07b29fbe6bff7b5a614a1bde64982851809c3, s23a_kosmann_singlet.py:412f8b65afaa0b60c0a65ac6564b9b1ecf0ec440caba8e2797c74a8303d9c61e, canonical_constants.py:10bceb1a4e8b801843767f301ef564c8e26d3ad08e294358378ec770bcf6709e}\n  194:   # script_sha=39a8fc86b6ff0b39141dfd0c9f4df3e88d8143e414400b44c87348c4b210f6cb\n  195:   # canon_sha=10bceb1a4e8b801843767f301ef564c8e26d3ad08e294358378ec770bcf6709e\n  196: \n  197: T3-S37-INSTANTON-MC: PASS -- value=DENSE scheme=0D_zero_mode_MC convention=flip_rate_over_2L_times_xi_BCS L_max=NA_nonspectral sha256=f49a4a8761eda8a4b423f1b7f16ae49f38eaea950c8528105277cfe77782f8ea\n  198: \n  199: ## Tier 3 intake consolidation\n  200: \n  201: T3-S29A-DERIVED-DRIVE-RATE: PASS -- value=1.5169 scheme=E_crit_over_V0 convention=n_gap_threshold=20_at_tau=0.50 L_max=NA sha256=215c7524fa7157b524da34761b3b9c6e62f157e35d44af3d0de513e3425b6d38\n  202: \n  203: T3-S29B-FREE-ENERGY-COMPARISON: INFO -- value=-13.0475 scheme=F_cond_Sc1_deepest_well convention=F_BCS_tau=0_minus_F_norm L_max=NA sha256=3caff13759ed1cec951b5c8e985bb57c0b2ae21b5bbf457e4813393b02b8aa8b\n  204:   # target: diagnostic (no pre-registered PASS/FAIL on F_BCS depth); gate P-29e FIRES, K-29c DOES-NOT-FIRE\n  205:   # Sc1 F_BCS=-13.0475@τ=0, Sc2 F_BCS=-18.5578@τ=0.35, Sc3 F_BCS=-5.6305@τ=0.50\n  206:   # direction: condensed phase has strictly lower free energy whereve\n... [truncated]"
+    },
+    {
+      "anchor_id": "gate_T3-S29B-FREE-ENERGY-COMPARISON",
+      "anchor_type": "gates",
+      "name": "T3-S29B-FREE-ENERGY-COMPARISON",
+      "session": "81",
+      "condition": "",
+      "verdict": "INFO",
+      "source_file": "computations\\session-81\\s81_gate_verdicts.txt",
+      "source_context_30_lines": "  195:   # canon_sha=10bceb1a4e8b801843767f301ef564c8e26d3ad08e294358378ec770bcf6709e\n  196: \n  197: T3-S37-INSTANTON-MC: PASS -- value=DENSE scheme=0D_zero_mode_MC convention=flip_rate_over_2L_times_xi_BCS L_max=NA_nonspectral sha256=f49a4a8761eda8a4b423f1b7f16ae49f38eaea950c8528105277cfe77782f8ea\n  198: \n  199: ## Tier 3 intake consolidation\n  200: \n  201: T3-S29A-DERIVED-DRIVE-RATE: PASS -- value=1.5169 scheme=E_crit_over_V0 convention=n_gap_threshold=20_at_tau=0.50 L_max=NA sha256=215c7524fa7157b524da34761b3b9c6e62f157e35d44af3d0de513e3425b6d38\n  202: \n  203: T3-S29B-FREE-ENERGY-COMPARISON: INFO -- value=-13.0475 scheme=F_cond_Sc1_deepest_well convention=F_BCS_tau=0_minus_F_norm L_max=NA sha256=3caff13759ed1cec951b5c8e985bb57c0b2ae21b5bbf457e4813393b02b8aa8b\n  204:   # target: diagnostic (no pre-registered PASS/FAIL on F_BCS depth); gate P-29e FIRES, K-29c DOES-NOT-FIRE\n  205:   # Sc1 F_BCS=-13.0475@τ=0, Sc2 F_BCS=-18.5578@τ=0.35, Sc3 F_BCS=-5.6305@τ=0.50\n  206:   # direction: condensed phase has strictly lower free energy wherever F_BCS<0 (ΔF=F_cond-F_norm=F_BCS after S_spectral cancels)\n  207:   # canonical tau crossing = 0.500 (KC-3 self-consistent)\n  208:   # no dV_total sign-change on bcs grid (no interior V_eff minimum at these mu)\n  209: \n  210: T3-S29C-GIBBONS-HAWKING-TEMPERATURE: FAIL -- value=0.1000 scheme=fraction_T_ratio_within_3x convention=T_GH=omega_char/PI_TT_metric L_max=NA sha256=555550ae52cb8ab933d774b7386928553f608c1b9a3ac9ed3f1c0ae58844e592\n  211: "
+    },
+    {
+      "anchor_id": "gate_T3-S29C-GIBBONS-HAWKING-TEMPERATURE",
+      "anchor_type": "gates",
+      "name": "T3-S29C-GIBBONS-HAWKING-TEMPERATURE",
+      "session": "81",
+      "condition": "",
+      "verdict": "FAIL",
+      "source_file": "computations\\session-81\\s81_gate_verdicts.txt",
+      "source_context_30_lines": "  202: \n  203: T3-S29B-FREE-ENERGY-COMPARISON: INFO -- value=-13.0475 scheme=F_cond_Sc1_deepest_well convention=F_BCS_tau=0_minus_F_norm L_max=NA sha256=3caff13759ed1cec951b5c8e985bb57c0b2ae21b5bbf457e4813393b02b8aa8b\n  204:   # target: diagnostic (no pre-registered PASS/FAIL on F_BCS depth); gate P-29e FIRES, K-29c DOES-NOT-FIRE\n  205:   # Sc1 F_BCS=-13.0475@τ=0, Sc2 F_BCS=-18.5578@τ=0.35, Sc3 F_BCS=-5.6305@τ=0.50\n  206:   # direction: condensed phase has strictly lower free energy wherever F_BCS<0 (ΔF=F_cond-F_norm=F_BCS after S_spectral cancels)\n  207:   # canonical tau crossing = 0.500 (KC-3 self-consistent)\n  208:   # no dV_total sign-change on bcs grid (no interior V_eff minimum at these mu)\n  209: \n  210: T3-S29C-GIBBONS-HAWKING-TEMPERATURE: FAIL -- value=0.1000 scheme=fraction_T_ratio_within_3x convention=T_GH=omega_char/PI_TT_metric L_max=NA sha256=555550ae52cb8ab933d774b7386928553f608c1b9a3ac9ed3f1c0ae58844e592\n  211: \n  212: ## Tier 3 intake consolidation\n  213: \n  214: T3-S28C-12D-AXIOMS: FAIL -- value=6/7 scheme=connes-axioms-1996 convention=KO_total=6_mod_8 L_max=5 sha256=24fd130ba00291a3e391d39fd3e3ceb00a72b1b6162ad2c66d482a236ec58e30\n  215: \n  216: T3-S29B-PMNS-EXTRACTION: INFO -- value=sin2_13=0.202569,theta12=36.547deg,theta23=41.971deg,R=0.3810,delta_fit_vs_PDG=+0.180569(ABOVE_PDG) scheme=MethodB_degenerate_PT_tridiagonal_3x3_eigh convention=U[alpha,i]_ascending_mass_flavor_basis_sin2_13=|U_e3|^2_tan2_12=|U_e2|^2/|U_e1|^2_tan2_23=|U_mu3|^2/|U_tau3|^2 L_max=\n... [truncated]"
+    },
+    {
+      "anchor_id": "gate_T3-S28C-12D-AXIOMS",
+      "anchor_type": "gates",
+      "name": "T3-S28C-12D-AXIOMS",
+      "session": "81",
+      "condition": "",
+      "verdict": "FAIL",
+      "source_file": "computations\\session-81\\s81_gate_verdicts.txt",
+      "source_context_30_lines": "  206:   # direction: condensed phase has strictly lower free energy wherever F_BCS<0 (ΔF=F_cond-F_norm=F_BCS after S_spectral cancels)\n  207:   # canonical tau crossing = 0.500 (KC-3 self-consistent)\n  208:   # no dV_total sign-change on bcs grid (no interior V_eff minimum at these mu)\n  209: \n  210: T3-S29C-GIBBONS-HAWKING-TEMPERATURE: FAIL -- value=0.1000 scheme=fraction_T_ratio_within_3x convention=T_GH=omega_char/PI_TT_metric L_max=NA sha256=555550ae52cb8ab933d774b7386928553f608c1b9a3ac9ed3f1c0ae58844e592\n  211: \n  212: ## Tier 3 intake consolidation\n  213: \n  214: T3-S28C-12D-AXIOMS: FAIL -- value=6/7 scheme=connes-axioms-1996 convention=KO_total=6_mod_8 L_max=5 sha256=24fd130ba00291a3e391d39fd3e3ceb00a72b1b6162ad2c66d482a236ec58e30\n  215: \n  216: T3-S29B-PMNS-EXTRACTION: INFO -- value=sin2_13=0.202569,theta12=36.547deg,theta23=41.971deg,R=0.3810,delta_fit_vs_PDG=+0.180569(ABOVE_PDG) scheme=MethodB_degenerate_PT_tridiagonal_3x3_eigh convention=U[alpha,i]_ascending_mass_flavor_basis_sin2_13=|U_e3|^2_tan2_12=|U_e2|^2/|U_e1|^2_tan2_23=|U_mu3|^2/|U_tau3|^2 L_max=singlet_L1L2L3_subspace_0..15_tau_grid_nearest_to_tau_fold=0.19_tau_used=0.2 sha256=d05c87930b4eaebd4b784a4c2fff73c4f57602b970114f16fc9a72cd0caf222c\n  217: \n  218: ## Tier 3 intake consolidation\n  219: \n  220: T3-S19A-FALSE-VACUUM-ANALYSIS: INFO -- value={rate_vac:1.613531,rate_gap:0.730475,d_s_min:6.3091,tau_at_ds_min:0.900,H_boundary_tau:0.955} scheme=PW-weighted-spectral-heat-kernel convention=d_log_sigma=0.01_ce\n... [truncated]"
+    },
+    {
+      "anchor_id": "gate_T3-S29B-PMNS-EXTRACTION",
+      "anchor_type": "gates",
+      "name": "T3-S29B-PMNS-EXTRACTION",
+      "session": "81",
+      "condition": "",
+      "verdict": "INFO",
+      "source_file": "computations\\session-81\\s81_gate_verdicts.txt",
+      "source_context_30_lines": "  208:   # no dV_total sign-change on bcs grid (no interior V_eff minimum at these mu)\n  209: \n  210: T3-S29C-GIBBONS-HAWKING-TEMPERATURE: FAIL -- value=0.1000 scheme=fraction_T_ratio_within_3x convention=T_GH=omega_char/PI_TT_metric L_max=NA sha256=555550ae52cb8ab933d774b7386928553f608c1b9a3ac9ed3f1c0ae58844e592\n  211: \n  212: ## Tier 3 intake consolidation\n  213: \n  214: T3-S28C-12D-AXIOMS: FAIL -- value=6/7 scheme=connes-axioms-1996 convention=KO_total=6_mod_8 L_max=5 sha256=24fd130ba00291a3e391d39fd3e3ceb00a72b1b6162ad2c66d482a236ec58e30\n  215: \n  216: T3-S29B-PMNS-EXTRACTION: INFO -- value=sin2_13=0.202569,theta12=36.547deg,theta23=41.971deg,R=0.3810,delta_fit_vs_PDG=+0.180569(ABOVE_PDG) scheme=MethodB_degenerate_PT_tridiagonal_3x3_eigh convention=U[alpha,i]_ascending_mass_flavor_basis_sin2_13=|U_e3|^2_tan2_12=|U_e2|^2/|U_e1|^2_tan2_23=|U_mu3|^2/|U_tau3|^2 L_max=singlet_L1L2L3_subspace_0..15_tau_grid_nearest_to_tau_fold=0.19_tau_used=0.2 sha256=d05c87930b4eaebd4b784a4c2fff73c4f57602b970114f16fc9a72cd0caf222c\n  217: \n  218: ## Tier 3 intake consolidation\n  219: \n  220: T3-S19A-FALSE-VACUUM-ANALYSIS: INFO -- value={rate_vac:1.613531,rate_gap:0.730475,d_s_min:6.3091,tau_at_ds_min:0.900,H_boundary_tau:0.955} scheme=PW-weighted-spectral-heat-kernel convention=d_log_sigma=0.01_centered_finite_difference L_max=max_pq=6 sha256=95eeb4619abeaabc9d5c120b51da7aeabdab2a978358498ed3289a959665f68a\n  221: \n  222: T3-S21C-GB-DEBUG6: PASS -- value=4.82e-20 scheme=euler_density_SU3_analyti\n... [truncated]"
+    },
+    {
+      "anchor_id": "gate_T3-S19A-FALSE-VACUUM-ANALYSIS",
+      "anchor_type": "gates",
+      "name": "T3-S19A-FALSE-VACUUM-ANALYSIS",
+      "session": "81",
+      "condition": "",
+      "verdict": "INFO",
+      "source_file": "computations\\session-81\\s81_gate_verdicts.txt",
+      "source_context_30_lines": "  212: ## Tier 3 intake consolidation\n  213: \n  214: T3-S28C-12D-AXIOMS: FAIL -- value=6/7 scheme=connes-axioms-1996 convention=KO_total=6_mod_8 L_max=5 sha256=24fd130ba00291a3e391d39fd3e3ceb00a72b1b6162ad2c66d482a236ec58e30\n  215: \n  216: T3-S29B-PMNS-EXTRACTION: INFO -- value=sin2_13=0.202569,theta12=36.547deg,theta23=41.971deg,R=0.3810,delta_fit_vs_PDG=+0.180569(ABOVE_PDG) scheme=MethodB_degenerate_PT_tridiagonal_3x3_eigh convention=U[alpha,i]_ascending_mass_flavor_basis_sin2_13=|U_e3|^2_tan2_12=|U_e2|^2/|U_e1|^2_tan2_23=|U_mu3|^2/|U_tau3|^2 L_max=singlet_L1L2L3_subspace_0..15_tau_grid_nearest_to_tau_fold=0.19_tau_used=0.2 sha256=d05c87930b4eaebd4b784a4c2fff73c4f57602b970114f16fc9a72cd0caf222c\n  217: \n  218: ## Tier 3 intake consolidation\n  219: \n  220: T3-S19A-FALSE-VACUUM-ANALYSIS: INFO -- value={rate_vac:1.613531,rate_gap:0.730475,d_s_min:6.3091,tau_at_ds_min:0.900,H_boundary_tau:0.955} scheme=PW-weighted-spectral-heat-kernel convention=d_log_sigma=0.01_centered_finite_difference L_max=max_pq=6 sha256=95eeb4619abeaabc9d5c120b51da7aeabdab2a978358498ed3289a959665f68a\n  221: \n  222: T3-S21C-GB-DEBUG6: PASS -- value=4.82e-20 scheme=euler_density_SU3_analytic_plus_stored convention=S_div_6144_normalized L_max=NA sha256=9a9b14ecb795552a44bbe916c12499322f7e42a11304bbd0756d1b0406f11213\n  223:   # chi(SU(3))=0 to |S/6144|=3.78e-20 (analytic), 4.82e-20 (stored tau=0)\n  224:   # S(S^4)=96 exact, chi=2; S(U(1)xSU(2))=0 exact; S(S^8)=645120 exact, chi=2\n  225:   # All 5 sub-gates PA\n... [truncated]"
+    },
+    {
+      "anchor_id": "gate_T3-S21C-GB-DEBUG6",
+      "anchor_type": "gates",
+      "name": "T3-S21C-GB-DEBUG6",
+      "session": "81",
+      "condition": "",
+      "verdict": "PASS",
+      "source_file": "computations\\session-81\\s81_gate_verdicts.txt",
+      "source_context_30_lines": "  214: T3-S28C-12D-AXIOMS: FAIL -- value=6/7 scheme=connes-axioms-1996 convention=KO_total=6_mod_8 L_max=5 sha256=24fd130ba00291a3e391d39fd3e3ceb00a72b1b6162ad2c66d482a236ec58e30\n  215: \n  216: T3-S29B-PMNS-EXTRACTION: INFO -- value=sin2_13=0.202569,theta12=36.547deg,theta23=41.971deg,R=0.3810,delta_fit_vs_PDG=+0.180569(ABOVE_PDG) scheme=MethodB_degenerate_PT_tridiagonal_3x3_eigh convention=U[alpha,i]_ascending_mass_flavor_basis_sin2_13=|U_e3|^2_tan2_12=|U_e2|^2/|U_e1|^2_tan2_23=|U_mu3|^2/|U_tau3|^2 L_max=singlet_L1L2L3_subspace_0..15_tau_grid_nearest_to_tau_fold=0.19_tau_used=0.2 sha256=d05c87930b4eaebd4b784a4c2fff73c4f57602b970114f16fc9a72cd0caf222c\n  217: \n  218: ## Tier 3 intake consolidation\n  219: \n  220: T3-S19A-FALSE-VACUUM-ANALYSIS: INFO -- value={rate_vac:1.613531,rate_gap:0.730475,d_s_min:6.3091,tau_at_ds_min:0.900,H_boundary_tau:0.955} scheme=PW-weighted-spectral-heat-kernel convention=d_log_sigma=0.01_centered_finite_difference L_max=max_pq=6 sha256=95eeb4619abeaabc9d5c120b51da7aeabdab2a978358498ed3289a959665f68a\n  221: \n  222: T3-S21C-GB-DEBUG6: PASS -- value=4.82e-20 scheme=euler_density_SU3_analytic_plus_stored convention=S_div_6144_normalized L_max=NA sha256=9a9b14ecb795552a44bbe916c12499322f7e42a11304bbd0756d1b0406f11213\n  223:   # chi(SU(3))=0 to |S/6144|=3.78e-20 (analytic), 4.82e-20 (stored tau=0)\n  224:   # S(S^4)=96 exact, chi=2; S(U(1)xSU(2))=0 exact; S(S^8)=645120 exact, chi=2\n  225:   # All 5 sub-gates PASS; classification=GEOMETRIC\n  226:   # Poinca\n... [truncated]"
+    }
+  ]
+}

@@ -14,11 +14,11 @@ All pass at machine epsilon (~1e-15).
 | 2.65 | 14 | R homo, L not (= order-one constraint) | branching_computation.py |
 | 2.66 | 14 | SM particle ID | branching_computation.py |
 | 3.61 | 15 | U(2) embedding | branching_computation.py |
-| 3.68 | 15 | Jensen scale factors | tier1_dirac_spectrum.py |
-| 3.70 | 15 | scalar curvature R(s) | tier1_spectral_action.py |
-| 3.72 | 15 | volume preservation | tier1_dirac_spectrum.py |
-| 3.80 | 15 | classical V(sigma,s) | tier1_spectral_action.py |
-| 3.84 | 15 | gauge boson mass | tier1_spectral_action.py |
+| 3.68 | 15 | Jensen scale factors | dirac_spectrum.py |
+| 3.70 | 15 | scalar curvature R(s) | spectral_action.py |
+| 3.72 | 15 | volume preservation | dirac_spectrum.py |
+| 3.80 | 15 | classical V(sigma,s) | spectral_action.py |
+| 3.84 | 15 | gauge boson mass | spectral_action.py |
 
 ## Self-Consistent Freeze-Out Impossibility
 - H(t) < c_s/d_mean for ALL R when alpha=0.667

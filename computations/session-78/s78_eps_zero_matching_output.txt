@@ -1,0 +1,64 @@
+==============================================================================
+S78-W2-G-EPS-ZERO-MATCHING: |beta^(2)(k_pivot)|^2 at eps=0 turning point
+  Owner: transit-dynamics-theorist | Scheme: SCHEME-INDEPENDENT
+  Convention 4-tuple: (|beta|^2, SCHEME, POWER-RATIO, L_max)
+==============================================================================
+
+--- SECTION 1: Load trajectory data ---
+  Loaded s73b trajectory: 50000 points, N in [0.000, 63.405]
+  N_turn (min eps) = 0.0836
+  eps(N_turn)     = 3.578372e-04
+  H(N_turn)       = 0.9102 M_KK
+
+--- SECTION 2: Pump terms in phi-variable and Mukhanov z-variable ---
+  a''/a at N_turn = 1.9582e+00  (SMOOTH)
+  z''/z at N_turn = 1.8527e+06  (possible divergence)
+  Conformal time grid: 24024 unique points (was 50000); eta range [0.0000e+00, 1.4382e+00]
+  idx_min_eps (full) = 45, (dedup) = 45
+  N_turn (dedup) = 0.0836, eta_turn = 8.622193e-02
+
+--- SECTION 3: phi-variable mode equation (primary) ---
+  k_pivot (fold comoving) = 14.3100 M_KK
+  eta_BD_start = 0.0000e+00
+  eta_SH (superhorizon) = 1.4347e+00
+  Window spans N = 0.000 -> 6.114 e-folds
+  phi-variable Wronskian drift: 4.55e-13
+  z-variable Wronskian drift: 5.82e-11
+
+--- SECTION 4: Bogoliubov |beta|^2 at end of integration ---
+  At last subhorizon point (eta = 1.3390e+00):
+    omega_phi = 1.4733
+    |beta_phi|^2 = 1.3550e+00
+  |beta_phi|^2 at N_turn (eta_turn = 8.6222e-02) = 3.4459e-06
+  eps=0 zone integration: N ∈ [-0.116, 0.284], eta ∈ [0.0000e+00, 2.8369e-01]
+  pre-turn adiabatic IC: omega_pre = 14.301
+  |beta_phi|^2 (eps=0 zone only) = 1.0401e-05
+
+  PRIMARY |beta^(2)|^2_phi = 1.040119e-05
+
+--- SECTION 5: zeta-gauge (u = z*zeta) cross-check ---
+  eps in window: [3.578372e-04, 1.7233e+00]
+  z-variable: |beta^{(2)}|^2_zeta = 4.5316e+04
+  z-variable Wronskian drift in zone: 3.20e-10
+  phi / zeta beta^2 ratio = 2.2953e-10
+  Gauge-invariance: DISAGREEMENT (INCOMPUTABLE trigger)
+
+--- SECTION 6: Adiabaticity parameter omega/|omega_dot| at N_turn ---
+  omega/|omega_dot| at N_turn = 8.5831e+01
+  Parker adiabatic bound exp(-2*pi*omega/omega_dot) = 6.1258e-235
+
+--- SECTION 7: Pre-registered gate evaluation ---
+
+  Gate: S78-W2-G-EPS-ZERO-MATCHING
+  VERDICT: INCOMPUTABLE
+  Reason:  phi/zeta gauges disagree: phi = 1.04e-05, zeta = 4.53e+04
+
+--- SECTION 8: 4-tuple and verdict line ---
+S78-W2-G-EPS-ZERO-MATCHING: INCOMPUTABLE -- |beta^(2)|^2_phi=1.0401e-05, |beta^(2)|^2_zeta=4.5316e+04, gauge-ratio=2.2953e-10, N_turn=0.084, eps(N_turn)=3.578e-04, omega/|omega_dot|=8.583e+01, adiab-bound=6.126e-235, 4-tuple=(|beta|^2=1.0401e-05,SCHEME-INDEPENDENT,POWER-RATIO,L_max=10) [CHK1=phi-smooth,CHK2=gauge-FAIL]
+  Appended verdict to C:\sandbox\Ainulindale Exflation\tier0-computation\s78_gate_verdicts.txt
+
+--- SECTION 9: Save .npz ---
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s78_eps_zero_matching.npz
+
+--- SECTION 10: Plot ---
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s78_eps_zero_matching.png

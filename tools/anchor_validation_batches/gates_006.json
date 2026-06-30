@@ -1,0 +1,107 @@
+{
+  "table": "gates",
+  "batch_id": 6,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "gate_GIANT-VORONOI-42",
+      "anchor_type": "gates",
+      "name": "GIANT-VORONOI-42",
+      "session": "42",
+      "condition": "Observational",
+      "verdict": "PASS",
+      "source_file": "sessions\\archive\\session-42\\session-42-results-workingpaper.md",
+      "source_context_30_lines": "  118: ### Assessment\n  119: \n  120: Z-FABRIC-42 PASSES: Z_spectral = 74,731 exceeds |dS/dtau| = 58,673 by 27%. The fabric has non-trivial spatial rigidity with Z/|dS/dtau| = 1.27 at the fold. Spatial inhomogeneity in tau costs comparable energy to the spectral action potential gradient, confirming the single-crystal approximation misses an O(1) effect. The transit timescale correction (factor ~2.6) is insufficient to reopen TAU-DYN-36's 38,600x shortfall.\n  121: \n  122: ---\n  123: \n  124: ## W1-2: Giant Structure Voronoi Test\n  125: \n  126: **Agent**: cosmic-web-theorist | **Gate**: GIANT-VORONOI-42\n  127: **Status**: **PASS** (both criteria satisfied)\n  128: \n  129: ### Computation\n  130: \n  131: Tested whether a 32-cell Poisson-Voronoi tessellation of the observable universe (R_obs = 14,250 Mpc) naturally produces giant structures (comoving extent > 500 Mpc) visible to a random observer at z = 0.8 and z = 1.6.\n  132: \n  133: **Method**: 10,000 realizations. Each: 32 seeds placed uniformly in the observable sphere; observer placed uniformly in the sphere (NOT at center). For each pair of seeds (i,j), computed the Voronoi face (perpendicular bisector plane) and its analytic intersection with the spherical shell at comoving distance d(z). The intersection of a plane with a sphere is a circle; measured its comoving extent (diameter, clipped to |r| < R_obs). Grouped overlapping face intersections into connected structures. Counted \"giant structures\" with extent > 500 Mpc.\n  134\n... [truncated]"
+    },
+    {
+      "anchor_id": "gate_HF-KK-42",
+      "anchor_type": "gates",
+      "name": "HF-KK-42",
+      "session": "42",
+      "condition": "Structural",
+      "verdict": "FAIL",
+      "source_file": "sessions\\archive\\session-42\\session-42-results-workingpaper.md",
+      "source_context_30_lines": "  202: The gate PASSES but the physical picture has significant tensions: (1) the predicted structures (~4,700 Mpc) are ~5x larger than observed (~1,000 Mpc), (2) the spatial realization mechanism is uncomputed, and (3) the observed structures are at the upper tail of the model distribution (92nd percentile). The test has low DISCRIMINATING POWER because it only asks \"is the geometry compatible?\" not \"does the geometry predict the observed structures?\" A more discriminating test would compare the SCALE DISTRIBUTION (not just the count) of observed vs predicted structures.\n  203: \n  204: The result constrains the solution space: the 32-cell hypothesis is not geometrically excluded. But it is not confirmed -- it needs the fabric gradient stiffness Z(tau) to determine whether the tessellation is dynamically realized, and it predicts structures much larger than those actually observed.\n  205: \n  206: ---\n  207: \n  208: ## W1-3: Hauser-Feshbach KK Branching Ratios\n  209: \n  210: **Agent**: nazarewicz-nuclear-structure-theorist | **Gate**: HF-KK-42\n  211: **Status**: FAIL\n  212: \n  213: ### Gate Verdict\n  214: \n  215: **HF-KK-42: FAIL**\n  216: \n  217: | Criterion | Threshold | Result | Verdict |\n  218: |:----------|:----------|:-------|:--------|"
+    },
+    {
+      "anchor_id": "gate_HF-BOUNDARY-42",
+      "anchor_type": "gates",
+      "name": "HF-BOUNDARY-42",
+      "session": "42",
+      "condition": "Structural",
+      "verdict": "FAIL",
+      "source_file": "sessions\\archive\\session-42\\session-42-results-workingpaper.md",
+      "source_context_30_lines": "  517: | `computations/s42_tau_dyn_reopening.py` | Computation script |\n  518: | `computations/s42_tau_dyn_reopening.npz` | All numerical results |\n  519: | `computations/s42_tau_dyn_reopening.png` | 4-panel diagnostic plot |\n  520: \n  521: ---\n  522: \n  523: ## W2-3: Coupled Doorway Fano Selectivity at Crystal Boundary\n  524: \n  525: **Agent**: nazarewicz-nuclear-structure-theorist | **Gate**: HF-BOUNDARY-42\n  526: **Status**: **FAIL**\n  527: \n  528: ### Gate Verdict\n  529: \n  530: **HF-BOUNDARY-42: FAIL**\n  531: \n  532: | Criterion | Threshold | Result | Verdict |\n  533: |:----------|:----------|:-------|:--------|"
+    },
+    {
+      "anchor_id": "gate_C-FABRIC-42",
+      "anchor_type": "gates",
+      "name": "C-FABRIC-42",
+      "session": "42",
+      "condition": "Structural",
+      "verdict": "PASS",
+      "source_file": "sessions\\archive\\session-42\\session-42-results-workingpaper.md",
+      "source_context_30_lines": "  299: | `computations/s42_hauser_feshbach.py` | Computation script |\n  300: | `computations/s42_hauser_feshbach.npz` | All numerical results |\n  301: | `computations/s42_hauser_feshbach.png` | 4-panel diagnostic plot |\n  302: \n  303: ---\n  304: \n  305: ## W2-1: Fabric Sound Speed and Quasiparticle Dispersion\n  306: \n  307: **Agent**: quantum-acoustics-theorist | **Gate**: C-FABRIC-42\n  308: **Status**: **PASS**\n  309: \n  310: ### Gate Verdict\n  311: \n  312: **C-FABRIC-42: PASS**\n  313: \n  314: - c_fabric = **c** (Lorentz invariant, by construction of spectral action from D^2)\n  315: - m_tau^2 = **+4.253** (positive at fold, positive at ALL computed tau in [0.05, 0.30])"
+    },
+    {
+      "anchor_id": "gate_TAU-DYN-REOPEN-42",
+      "anchor_type": "gates",
+      "name": "TAU-DYN-REOPEN-42",
+      "session": "42",
+      "condition": "Decisive",
+      "verdict": "FAIL",
+      "source_file": "sessions\\archive\\session-42\\session-42-results-workingpaper.md",
+      "source_context_30_lines": "  428: | `computations/s42_fabric_dispersion.py` | Computation script |\n  429: | `computations/s42_fabric_dispersion.npz` | All numerical results |\n  430: | `computations/s42_fabric_dispersion.png` | 4-panel diagnostic (tau dispersion, BdG dispersion, m_tau vs tau, group velocity) |\n  431: \n  432: ---\n  433: \n  434: ## W2-2: TAU-DYN Reopening Analysis\n  435: \n  436: **Agent**: gen-physicist | **Gate**: TAU-DYN-REOPEN-42\n  437: **Status**: **FAIL**\n  438: \n  439: ### Gate Verdict\n  440: \n  441: **TAU-DYN-REOPEN-42: FAIL**\n  442: \n  443: | Criterion | Threshold | Result | Verdict |\n  444: |:----------|:----------|:-------|:--------|"
+    },
+    {
+      "anchor_id": "gate_DM-PROFILE-42",
+      "anchor_type": "gates",
+      "name": "DM-PROFILE-42",
+      "session": "42",
+      "condition": "Observational",
+      "verdict": "PASS",
+      "source_file": "sessions\\archive\\session-42\\session-42-results-workingpaper.md",
+      "source_context_30_lines": " 1099: If K_fabric is very different from d2S/dtau2 (e.g., if the BCS contribution to K has the opposite sign from the spectral action contribution), the breathing mode could have anomalous dynamics. However, based on the effacement ratio, I expect the BCS contribution to K is 10^{-6} of the spectral action contribution, making this correction negligible.\n 1100: \n 1101: **Final assessment**: W3-1 conclusion stands. w_0 = -1 + O(10^{-29}). The PI's physical intuition correctly identifies real energy channels, but ALL channels are defeated by the effacement ratio. The framework predicts geometric Lambda-CDM.\n 1102: \n 1103: ---\n 1104: \n 1105: ## W3-2: Dark Matter Profile Prediction\n 1106: \n 1107: **Agent**: landau-condensed-matter-theorist | **Gate**: DM-PROFILE-42\n 1108: **Status**: **PASS**\n 1109: \n 1110: ### Gate Verdict\n 1111: \n 1112: **DM-PROFILE-42: PASS**\n 1113: \n 1114: | Criterion | Threshold | Result | Verdict |\n 1115: |:----------|:----------|:-------|:--------|"
+    },
+    {
+      "anchor_id": "gate_LCDM-COMPARE-42",
+      "anchor_type": "gates",
+      "name": "LCDM-COMPARE-42",
+      "session": "42",
+      "condition": "Synthesis",
+      "verdict": "PASS",
+      "source_file": "sessions\\archive\\session-42\\session-42-results-workingpaper.md",
+      "source_context_30_lines": " 1239: | `computations/s42_dm_profile.py` | Computation script |\n 1240: | `computations/s42_dm_profile.npz` | All numerical results |\n 1241: | `computations/s42_dm_profile.png` | 4-panel diagnostic (density profile, rotation curve, lensing, inner slope) |\n 1242: \n 1243: ---\n 1244: \n 1245: ## W4-1: LCDM Parameter Comparison and Synthesis\n 1246: \n 1247: **Agent**: sagan-empiricist | **Gate**: LCDM-COMPARE-42\n 1248: **Status**: **PASS**\n 1249: \n 1250: ### Methodology\n 1251: \n 1252: This section applies the Sagan empirical methodology to all Session 42 results: Venus method (competing hypotheses against the same data), Galileo method (demand multiple independent lines of evidence), TTAPS method (quantitative predictions with acknowledged limitations), and the Baloney Detection Kit (parameter counting, alternative explanations, falsifiability). The probability assessment follows the pre-registered gate protocol established in Session 25.\n 1253: \n 1254: Pre-registered gate criterion for LCDM-COMPARE-42:\n 1255: - **PASS**: Framework produces at least 2 predictions that are simultaneously CONSISTENT with observation (within 2 sigma) AND PARAMETER-FREE (derived without fitting)."
+    },
+    {
+      "anchor_id": "gate_CONST-FREEZE-42",
+      "anchor_type": "gates",
+      "name": "CONST-FREEZE-42",
+      "session": "42",
+      "condition": "Consistency",
+      "verdict": "PASS",
+      "source_file": "sessions\\archive\\session-42\\session-42-results-workingpaper.md",
+      "source_context_30_lines": " 1562: The probability trajectory: 8-12% (S40) -> 8-12% (S41, deferred) -> **18% (S42)**. The upward movement is driven by DM-PROFILE-42 (CDM from geometry, BF ~ 2.0-3.0) and W-Z-42 (geometric Lambda, BF ~ 1.5-2.0), partially offset by TAU-DYN-REOPEN-42 FAIL (BF ~ 0.35-0.5). The net BF of ~3.0 (correlation-adjusted) produces the 18% central estimate.\n 1563: \n 1564: The framework has reached **Evidence Level 3** (quantitative internal predictions) for the dark sector. Evidence Level 4 (novel prediction of an unmeasured observable) remains **NOT YET ACHIEVED** after 42 sessions. The highest-priority path to Level 4 is the gauge coupling match -> M_KK determination -> absolute mass predictions.\n 1565: \n 1566: ---\n 1567: \n 1568: ## W4-2: Constants as Frozen Snapshots\n 1569: \n 1570: **Agent**: tesla-resonance | **Gate**: CONST-FREEZE-42\n 1571: **Status**: **PASS** (|Delta log10(M_KK)| = 0.83 < 1 OOM)\n 1572: \n 1573: ### What Was Computed\n 1574: \n 1575: The PI's claim: measured fundamental constants are frozen snapshots of the internal geometry at the fold epoch tau_fold = 0.190. We tested this by extracting M_KK from two independent routes and checking consistency.\n 1576: \n 1577: **Method.** Two approaches to extract the KK mass scale:\n 1578: "
+    },
+    {
+      "anchor_id": "gate_NS-TILT-42",
+      "anchor_type": "gates",
+      "name": "NS-TILT-42",
+      "session": "42",
+      "condition": "Observational",
+      "verdict": "FAIL",
+      "source_file": "sessions\\archive\\session-42\\session-42-results-workingpaper.md",
+      "source_context_30_lines": " 1633: - Script: `computations/s42_constants_snapshot.py`\n 1634: - Data: `computations/s42_constants_snapshot.npz`\n 1635: - Plot: `computations/s42_constants_snapshot.png`\n 1636: \n 1637: ---\n 1638: \n 1639: ## W5-1: Primordial Tilt n_s\n 1640: \n 1641: **Agent**: tesla-resonance | **Gate**: NS-TILT-42\n 1642: **Status**: **FAIL**\n 1643: \n 1644: ### Method\n 1645: \n 1646: Computed effective slow-roll parameters from the tau-dependence of the spectral action S(tau) = Tr|D_K(tau)| during the transit, using data from S41 (Seeley-DeWitt coefficients a_0, a_2, a_4) and S42 W1-1 (gradient stiffness Z, full S_total and derivatives).\n 1647: \n 1648: The slow-roll analog parameters are:\n 1649: "
+    },
+    {
+      "anchor_id": "gate_E-GGE-42",
+      "anchor_type": "gates",
+      "name": "E-GGE-42",
+      "session": "42",
+      "condition": "Structural",
+      "verdict": "PASS",
+      "source_file": "sessions\\archive\\session-42\\session-42-results-workingpaper.md",
+      "source_context_30_lines": " 1718: - Script: `computations/s42_ns_tilt.py`\n 1719: - Data: `computations/s42_ns_tilt.npz`\n 1720: - Plot: `computations/s42_ns_tilt.png`\n 1721: \n 1722: ---\n 1723: \n 1724: ## W5-2: GGE Energy Budget\n 1725: \n 1726: **Agent**: nazarewicz-nuclear-structure-theorist | **Gate**: E-GGE-42\n 1727: **Status**: **PASS**\n 1728: \n 1729: ### Gate Verdict\n 1730: \n 1731: **E-GGE-42: PASS**\n 1732: \n 1733: | Criterion | Threshold | Result (gravity) | Result (gauge) | Verdict |\n 1734: |:----------|:----------|:-----------------|:---------------|:--------|"
+    }
+  ]
+}

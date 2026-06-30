@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 30,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_291",
+      "anchor_type": "data_provenance",
+      "name": "polariton",
+      "script_path": "session-42/s42_polariton.py",
+      "session": "s42",
+      "inputs": "",
+      "outputs": "session-42/s42_polariton.npz, session-42/s42_polariton.png",
+      "source_file": "computations/session-42/s42_polariton.py",
+      "source_context_30_lines": "    1: \"\"\"\n    2: S42 W5-4: Digamma-polariton — B2 Collective Mode / Gauge Boson Hybridization\n    3: =============================================================================\n    4: \n    5: Computes whether the B2 collective mode (GPV at omega=0.792 M_KK) or the B2\n    6: single-particle gap-edge mode (0.845 M_KK) hybridizes with KK gauge bosons\n    7: to form a phonon-polariton. Tests the PI's proposal that the Higgs mass is\n    8: the polariton gap (anticrossing energy).\n    9: \n   10: Physics: In solid-state, phonon-polaritons form when an optical phonon branch"
+    },
+    {
+      "anchor_id": "prov_292",
+      "anchor_type": "data_provenance",
+      "name": "s8_tension",
+      "script_path": "session-42/s42_s8_tension.py",
+      "session": "s42",
+      "inputs": "computations/session-42/s42_fabric_wz_v2.npz",
+      "outputs": "session-42/s42_s8_tension.npz, session-42/s42_s8_tension.png",
+      "source_file": "computations/session-42/s42_s8_tension.py",
+      "source_context_30_lines": "  343: \n  344: # Compute f*sigma_8 at a fine grid for plotting\n  345: z_fine = np.linspace(0, 3, 500)\n  346: a_fine = 1.0 / (1.0 + z_fine)\n  347: D_fine = np.array([D_norm(a) for a in a_fine])\n  348: f_fine = np.array([f_growth(a) for a in a_fine])\n  349: fs8_fine = f_fine * sigma8_framework * D_fine\n  350: \n  351: np.savez('computations/session-42/s42_s8_tension.npz',\n  352:     # Gate\n  353:     gate_name='S8-FABRIC-42',\n  354:     gate_verdict='MOOT',\n  355:     gate_reason='S8 tension resolved by KiDS Legacy 2025',\n  356: \n  357:     # Framework prediction\n  358:     w0_framework=w0_fabric,\n  359:     wa_framework=wa_fabric,"
+    },
+    {
+      "anchor_id": "prov_293",
+      "anchor_type": "data_provenance",
+      "name": "tau_dyn_reopening",
+      "script_path": "session-42/s42_tau_dyn_reopening.py",
+      "session": "s42",
+      "inputs": "",
+      "outputs": "session-42/s42_tau_dyn_reopening.npz, session-42/s42_tau_dyn_reopening.png",
+      "source_file": "computations/session-42/s42_tau_dyn_reopening.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s42_tau_dyn_reopening.py  --  TAU-DYN-REOPEN-42\n    4: =================================================\n    5: Determines whether fabric gradient stiffness Z(tau) from W1-1 reopens\n    6: TAU-DYN-36, the decisive closure that found tau_BCS / tau_transit = 38,600.\n    7: \n    8: Three mechanisms analyzed:\n    9:   (a) Direct inertial enhancement  (canonical vs non-canonical normalization)\n   10:   (b) Thouless-Valatin mass renormalization (mode coupling sum)\n   11:   (c) Friedmann friction (overdamped cosmological regime)"
+    },
+    {
+      "anchor_id": "prov_294",
+      "anchor_type": "data_provenance",
+      "name": "acoustic_metric",
+      "script_path": "session-43/s43_acoustic_metric.py",
+      "session": "s43",
+      "inputs": "",
+      "outputs": "session-43/s43_acoustic_metric.npz, session-43/s43_acoustic_metric.png",
+      "source_file": "computations/session-43/s43_acoustic_metric.py",
+      "source_context_30_lines": "   27:   to a universal cone c = 1/4. This is \"asymptotic Lorentz invariance recovery\"\n   28:   -- the UV is universal, the IR is branch-specific.\n   29: \n   30: Inputs:\n   31:   s42_fabric_dispersion.npz  (branch masses, dispersion curves)\n   32:   s42_polariton.npz          (anticrossing data, polariton branches)\n   33: \n   34: Outputs:\n   35:   s43_acoustic_metric.npz    (all computed quantities)\n   36:   s43_acoustic_metric.png    (4-panel figure)\n   37: \n   38: Author: Tesla-Resonance\n   39: Date: 2026-03-14\n   40: \"\"\"\n   41: \n   42: import numpy as np\n   43: from numpy.linalg import eigvalsh"
+    },
+    {
+      "anchor_id": "prov_295",
+      "anchor_type": "data_provenance",
+      "name": "adiabaticity",
+      "script_path": "session-43/s43_adiabaticity.py",
+      "session": "s43",
+      "inputs": "",
+      "outputs": "session-43/s43_adiabaticity.npz, session-43/s43_adiabaticity.png",
+      "source_file": "computations/session-43/s43_adiabaticity.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: ADIAB-43: Paper 16 Adiabaticity Diagnostic\n    4: ============================================\n    5: \n    6: Computes the adiabaticity ratio R_i for each Dirac eigenvalue lambda_i\n    7: at the fold (tau ~ 0.19), providing an independent confirmation of the\n    8: TAU-DYN shortfall via Baptista Paper 16 mass variation framework.\n    9: \n   10: Baptista Paper 16 (arXiv:2406.09503), Section 7, establishes that KK\n   11: mass variation occurs when the internal metric is not covariantly\n   12: constant.  The adiabatic condition for a mode with mass lambda_i is:\n   13: \n   14:     R_i = |d lambda_i / dt| / lambda_i^2"
+    },
+    {
+      "anchor_id": "prov_296",
+      "anchor_type": "data_provenance",
+      "name": "alpha_pattern",
+      "script_path": "session-43/s43_alpha_pattern.py",
+      "session": "s43",
+      "inputs": "computations/session-42/s42_homogeneity.npz, computations/session-42/s42_gradient_stiffness.npz, computations/session-42...",
+      "outputs": "session-43/s43_alpha_pattern.npz, session-43/s43_alpha_pattern.png",
+      "source_file": "computations/session-43/s43_alpha_pattern.py",
+      "source_context_30_lines": "   21:   3. Convert P_alpha(k) = (3.08)^2 * P_tau(k) via clock constraint\n   22:   4. Map KZ comoving scale through inflation to present-day scales\n   23:   5. Project to angular power spectrum C_l^alpha\n   24:   6. Compare to quasar absorption precision ~10^{-6}\n   25:   7. Compute Spearman correlation with void/cluster environment\n   26: \n   27: Author: quantum-foam-theorist (S43)\n   28: Input: s42_homogeneity.npz, s42_gradient_stiffness.npz, s42_constants_snapshot.npz, s42_kz_fnl.npz\n   29: Output: s43_alpha_pattern.{npz,png}\n   30: \"\"\"\n   31: \n   32: import numpy as np\n   33: import matplotlib.pyplot as plt\n   34: from scipy.special import spherical_jn\n   35: from scipy.integrate import quad\n   36: \n   37: # ============================================================"
+    },
+    {
+      "anchor_id": "prov_297",
+      "anchor_type": "data_provenance",
+      "name": "baryo_k7",
+      "script_path": "session-43/s43_baryo_k7.py",
+      "session": "s43",
+      "inputs": "",
+      "outputs": "session-43/s43_baryo_k7.npz, session-43/s43_baryo_k7.png",
+      "source_file": "computations/session-43/s43_baryo_k7.py",
+      "source_context_30_lines": "  585:     'eta_est': eta_est,\n  586:     'eta_obs': eta_obs,\n  587:     'K_all_norms': K_all_norms,\n  588:     'comm_all_norms': comm_all_norms,\n  589:     'relation_all': np.array(relation_all),\n  590:     'verdict': np.array(verdict),\n  591: }\n  592: \n  593: outpath = os.path.join(SCRIPT_DIR, \"s43_baryo_k7.npz\")\n  594: np.savez_compressed(outpath, **npz_data)\n  595: print(f\"\\n  Saved: {outpath}\")\n  596: \n  597: # ======================================================================\n  598: #  Plot\n  599: # ======================================================================\n  600: fig, axes = plt.subplots(2, 2, figsize=(14, 10))\n  601: fig.suptitle(f\"BARYO-K7-43: K_7 Chiral Anomaly at Fold  |  Verdict: {verdict}\", fontsize=14)"
+    },
+    {
+      "anchor_id": "prov_298",
+      "anchor_type": "data_provenance",
+      "name": "bcs_universality",
+      "script_path": "session-43/s43_bcs_universality.py",
+      "session": "s43",
+      "inputs": "computations/session-36/s36_mmax_authoritative.npz, computations/session-35/s35_ed_corrected_dos.npz, computations/sessi...",
+      "outputs": "session-43/s43_bcs_universality.npz, session-43/s43_bcs_universality.png",
+      "source_file": "computations/session-43/s43_bcs_universality.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s43_bcs_universality.py\n    4: BCS Universality Class on Jensen-Deformed SU(3)\n    5: \n    6: Gate: BCS-CLASS-43 (INFO). PASS if n_s > 0.90.\n    7: \n    8: Physics:\n    9: --------\n   10: The BCS phase transition on the Jensen-deformed SU(3) manifold breaks a Z_2\n   11: symmetry (complex gap Delta -> -Delta after K_7-pinning removes U(1) phase)."
+    },
+    {
+      "anchor_id": "prov_299",
+      "anchor_type": "data_provenance",
+      "name": "bg_spinor_polariton",
+      "script_path": "session-43/s43_bg_spinor_polariton.py",
+      "session": "s43",
+      "inputs": "",
+      "outputs": "session-43/s43_bg_spinor_polariton.npz, session-43/s43_bg_spinor_polariton.png",
+      "source_file": "computations/session-43/s43_bg_spinor_polariton.py",
+      "source_context_30_lines": "  729:     save_dict[f'ev2_{key}'] = results[ds]['ev2']\n  730: \n  731: # Add per-case gaps\n  732: for case in gap_orig:\n  733:     safe = case.replace(' ', '_').replace('-', '_')\n  734:     save_dict[f'gap_orig_{safe}'] = gap_orig[case]\n  735:     save_dict[f'gap_corr_{safe}'] = gap_corr[case]\n  736: \n  737: np.savez(os.path.join(base_dir, 's43_bg_spinor_polariton.npz'), **save_dict)\n  738: print()\n  739: print(f\"Data saved to: computations/session-43/s43_bg_spinor_polariton.npz\")\n  740: \n  741: # =============================================================================\n  742: # SECTION 12: PLOT\n  743: # =============================================================================\n  744: \n  745: fig, axes = plt.subplots(2, 2, figsize=(14, 11))"
+    },
+    {
+      "anchor_id": "prov_300",
+      "anchor_type": "data_provenance",
+      "name": "breathing_mode",
+      "script_path": "session-43/s43_breathing_mode.py",
+      "session": "s43",
+      "inputs": "",
+      "outputs": "session-43/s43_breathing_mode.npz, session-43/s43_breathing_mode.png",
+      "source_file": "computations/session-43/s43_breathing_mode.py",
+      "source_context_30_lines": "  805:         fontsize=10, verticalalignment='top', fontfamily='monospace',\n  806:         bbox=dict(boxstyle='round', facecolor='lightyellow', alpha=0.8))\n  807: \n  808: plt.suptitle(f'BREATHE-43: Giant Monopole Resonance of 32-Cell Fabric -- {verdict}',\n  809:              fontsize=14, fontweight='bold')\n  810: plt.tight_layout()\n  811: \n  812: outpath_png = os.path.join(os.path.dirname(os.path.abspath(__file__)),\n  813:                            's43_breathing_mode.png')\n  814: plt.savefig(outpath_png, dpi=150, bbox_inches='tight')\n  815: print(f\"\\nPlot saved: {outpath_png}\")\n  816: \n  817: \n  818: # ===========================================================================\n  819: # SAVE DATA\n  820: # ===========================================================================\n  821: "
+    }
+  ]
+}

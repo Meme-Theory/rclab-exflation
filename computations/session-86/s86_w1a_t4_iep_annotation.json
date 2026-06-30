@@ -1,0 +1,116 @@
+{
+  "gate_id": "S86-VII-R-IEP-ANNOTATION",
+  "verdict": "PASS",
+  "value": 6,
+  "scheme": "registry_landing",
+  "convention": "64-char-dual-SHA",
+  "L_max": "N/A",
+  "audit_sha256": "15e9072d850999a58479fec71ed7f32e04ee6687456bff19267984b1ea7e2d78",
+  "content_sha256": "66097c26676f17b0ea7ee02a21cf4974b372bf9389d4cda6aa2f69c3c85e404a",
+  "registry_sha256_pre": "66097c26676f17b0ea7ee02a21cf4974b372bf9389d4cda6aa2f69c3c85e404a",
+  "registry_sha256_post": "66097c26676f17b0ea7ee02a21cf4974b372bf9389d4cda6aa2f69c3c85e404a",
+  "verify_as_is": true,
+  "iep_partition_rule": "per-mode → INTENSIVE; mode-summed → EXTENSIVE per IEP §3.1",
+  "T3_projected_map": {
+    "Φ-A": "EXTENSIVE",
+    "Φ-B": "INTENSIVE",
+    "Φ-C": "EXTENSIVE",
+    "Φ-D": "INTENSIVE",
+    "Φ-E": "INTENSIVE",
+    "Φ-F": "EXTENSIVE"
+  },
+  "T4_derived_map": {
+    "Φ-A": "EXTENSIVE",
+    "Φ-B": "INTENSIVE",
+    "Φ-C": "EXTENSIVE",
+    "Φ-D": "INTENSIVE",
+    "Φ-E": "INTENSIVE",
+    "Φ-F": "EXTENSIVE"
+  },
+  "registry_tag_map": {
+    "Φ-A": "EXTENSIVE",
+    "Φ-B": "INTENSIVE",
+    "Φ-C": "EXTENSIVE",
+    "Φ-D": "INTENSIVE",
+    "Φ-E": "INTENSIVE",
+    "Φ-F": "EXTENSIVE"
+  },
+  "agreement_check": {
+    "T3_eq_T4_exact_map_equality": true,
+    "T4_eq_REGISTRY_exact_map_equality": true,
+    "tolerance_rule": "THEOREM"
+  },
+  "balance_check": {
+    "intensive_count": 3,
+    "extensive_count": 3,
+    "balanced_3I_3E": true
+  },
+  "cross_checks": {
+    "CC1_vii_s_exists": true,
+    "CC2_six_rows": true,
+    "CC3_t3_eq_t4": true,
+    "CC4_no_placeholder": true,
+    "CC5_balance_3I_3E": true,
+    "REGISTRY_eq_T4": true
+  },
+  "partition_rule_application": [
+    {
+      "branch": "Φ-A",
+      "label": "LATTICE-SPACING",
+      "preserved_axis": "rank-axis (lattice scheme is rank-blind)",
+      "scope": "mode-summed",
+      "scope_reason": "lattice affects total a_n",
+      "iep_tag": "EXTENSIVE"
+    },
+    {
+      "branch": "Φ-B",
+      "label": "UV-CUTOFF-CHOICE",
+      "preserved_axis": "Mellin-support within F_4",
+      "scope": "per-mode",
+      "scope_reason": "Mellin-support per eigenvalue → ζ-class observables",
+      "iep_tag": "INTENSIVE"
+    },
+    {
+      "branch": "Φ-C",
+      "label": "WEYL-RESCALING",
+      "preserved_axis": "rank-axis (rank-blind to leading order)",
+      "scope": "mode-summed",
+      "scope_reason": "Weyl rescales total volume",
+      "iep_tag": "EXTENSIVE"
+    },
+    {
+      "branch": "Φ-D",
+      "label": "INNER-FLUCTUATION",
+      "preserved_axis": "Ward axis (stable under A → A+ω)",
+      "scope": "per-mode",
+      "scope_reason": "per-fiber Connes ω perturbation",
+      "iep_tag": "INTENSIVE"
+    },
+    {
+      "branch": "Φ-E",
+      "label": "WARD-IDENTITY",
+      "preserved_axis": "all three axes ([J, D_K]=0 directly)",
+      "scope": "per-mode",
+      "scope_reason": "[J, D_K]=0 holds per-eigenvalue",
+      "iep_tag": "INTENSIVE"
+    },
+    {
+      "branch": "Φ-F",
+      "label": "RG-FLOW-INVARIANCE",
+      "preserved_axis": "Mellin-support on F_4",
+      "scope": "mode-summed",
+      "scope_reason": "RG runs total coupling",
+      "iep_tag": "EXTENSIVE"
+    }
+  ],
+  "input_pin_map_sha_inputs": {
+    "registry_path": "sessions/permanent-results-registry.md",
+    "registry_sha256_pre": "66097c26676f17b0ea7ee02a21cf4974b372bf9389d4cda6aa2f69c3c85e404a",
+    "plan_w1a_path": "sessions/session-plan/session-86-plan-w1a.md",
+    "plan_w1a_sha256": "f1b8a142def2c261e848b6ed97343d4410591389a808673fc8d2ae9b139c1711",
+    "verdict_file_path": "computations/session-86/s86_gate_verdicts.txt",
+    "verdict_file_sha256_pre": "0e4353b6b7abc8ba390a703fb7490f39d76a884d0c431f4ed88d16e6ff00e176"
+  },
+  "schema_version": "S86+",
+  "timestamp_utc": "2026-04-26T17:10:09.771886+00:00"
+}

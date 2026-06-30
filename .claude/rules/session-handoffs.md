@@ -11,7 +11,6 @@ paths:
 
 - **Directories**: `session-NN/` — zero-padded session number
 - **Files**: `session-NNx-descriptor.md` — where `x` is optional sub-session letter
-- **Examples**: `session-01-first-contact.md`, `session-14b-spectral-action.md`
 
 ## Mandatory Handoff
 

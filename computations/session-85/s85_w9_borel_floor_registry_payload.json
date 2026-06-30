@@ -1,0 +1,47 @@
+{
+  "gate_id": "S85-W9-BOREL-FLOOR-REGISTRY-LANDING",
+  "trigger": "VERIFY-THEOREM",
+  "classification": "GEOMETRIC",
+  "agent": "feynman-theorist",
+  "wave": "S85 W9-1",
+  "source_gate": "W10-121 (S84 W10a \u2014 tau-kink-inventory-closure)",
+  "source_artifact": "sessions/session-84/computation-artifacts/s84_w10a_121_saddle_inventory.npz",
+  "theorem_statement": "min_{tau in [0.05, 0.35]} S_inst(tau, mode) = 242091.449 >> Borel_threshold = 4.34 (4.75 OOM safety margin). The Jensen-tau instanton-action spectrum on the D_K-derived effective potential landscape is Borel-summable across the entire physical scan window; no genuine bound saddle exists in [0.05, 0.35] at L_max=5.",
+  "pass_conditions": {
+    "a_fraction_tau_above_threshold": 1.0,
+    "a_pass": true,
+    "cc1_w10_121_reference_match_pct": 0.03778895110464107,
+    "cc1_pass": true
+  },
+  "key_numbers": {
+    "min_S_inst_abs": 242091.44926167323,
+    "borel_threshold": 4.34,
+    "ratio": 55781.43992204453,
+    "log10_safety_OOM": 4.746489720796416,
+    "n_tau_grid": 301,
+    "n_total_points": 10535,
+    "tau_scan_range": [
+      0.05,
+      0.35
+    ],
+    "L_max": 5
+  },
+  "wall_added_to_constraint_map": "W_Borel_tau_[0.05,0.35]_L5",
+  "downstream_implications": [
+    "Perturbation-theory claims (tree + 1-loop F_amp^3PI, Mukhanov-Sasaki z_R, f_conv Z_R two-loop) are epistemically justified without instanton-contamination concerns inside the physical scan window.",
+    "Companion to W2-HARMONIC-NOT-INSTANTON (S_harm = 0.203 < Borel 4.34): together immunize the perturbative ledger against false instanton interpretations and against genuine-instanton intrusions in [0.05, 0.35].",
+    "Per-tau scan cache (tau_scan + S_inst_min_per_tau arrays in s85_w9_borel_floor_registry.npz) available for downstream 1/N expansions."
+  ],
+  "dual_sha": {
+    "audit_sha256": "5bea2a903af1415f70b0987b00d10f1bb8ba0ba0708cf8f12bffb9d06e0d1947",
+    "content_sha256": "1d29d866ef31d7fcbfd3dabf8b849e0de00636794418155cb4f73c89d8087860"
+  },
+  "registry_target": "sessions/permanent-results-registry.md \u00a7VII.M (to be appended by orchestrator)",
+  "plan_documentation_corrections": [
+    "Actual artifact path: sessions/session-84/computation-artifacts/s84_w10a_121_saddle_inventory.npz (plan stated s84_w10_121_borel_floor.npz)",
+    "Actual n_tau: 301 (plan stated 61)",
+    "Actual L_max: 5 (plan stated 10)",
+    "Actual registry path: sessions/permanent-results-registry.md (plan stated sessions/framework/permanent-results-registry.md)",
+    "Actual npz scheme label: hessian_eigendirection_scan (plan convention label Borel-disk-pointwise retained for verdict 4-tuple)"
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 2,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_11",
+      "anchor_type": "data_provenance",
+      "name": "w1_emit_verdict",
+      "script_path": "_shared/s90_w1_emit_verdict.py",
+      "session": "s90",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/_shared/s90_w1_emit_verdict.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s90_w1_emit_verdict.py — Atomic dual-SHA verdict-line emitter for S90 W1 gates.\n    4: \n    5: Usage:\n    6:   python s90_w1_emit_verdict.py <gate_id> <verdict> <value_str> <scheme> <convention> \\\n    7:                                 <L_max> <input_pin_map_json> [supersedes_sha]\n    8: \n    9: Computes:\n   10:   content_sha256 = SHA-256 over the producing artifact (rule-file diff or audit-script)\n   11:   audit_sha256   = SHA-256 over the ordered input-pin map (JSON-serialized)"
+    },
+    {
+      "anchor_id": "prov_12",
+      "anchor_type": "data_provenance",
+      "name": "w1_parse_tree_expansion_audit_test",
+      "script_path": "_shared/s90_w1_parse_tree_expansion_audit_test.py",
+      "session": "s90",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/_shared/s90_w1_parse_tree_expansion_audit_test.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s90_w1_parse_tree_expansion_audit_test.py — S90 W1-8 self-test + verdict emitter\n    4: ================================================================================\n    5: \n    6: Verifies the S90 W1-8 MISSING-PARSE-TREE-EXPANSION audit hook extension to\n    7: `computations/_shared/_registry_landing_audit.py`:\n    8: \n    9:   - **T1 (positive)**: §VII.U.2 (canonical declaration site for Var_a parse-tree\n   10:     expansion per `sessions/permanent-results-registry.md` line 12961 + clause\n   11:     (e) line 12995) PASSes the audit (state-history label `n_a^GGE` matches"
+    },
+    {
+      "anchor_id": "prov_13",
+      "anchor_type": "data_provenance",
+      "name": "w1_partial_positive_audit_test",
+      "script_path": "_shared/s90_w1_partial_positive_audit_test.py",
+      "session": "s90",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/_shared/s90_w1_partial_positive_audit_test.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s90_w1_partial_positive_audit_test.py — S90 W1-9 self-test + verdict emitter\n    4: =============================================================================\n    5: \n    6: Verifies the S90 W1-9 PARTIAL-POSITIVE compliance class extension to\n    7: `computations/_shared/_substrate_first_provenance_audit.py`:\n    8: \n    9:   - **T1 (PARTIAL-POSITIVE — live fixture)**: §W5-7\n   10:     (`S89-HEAT-KERNEL-ANCHOR-SWEEP-W7A-74-PRIMARY`) detected as\n   11:     PARTIAL-POSITIVE. Verdict block read from"
+    },
+    {
+      "anchor_id": "prov_14",
+      "anchor_type": "data_provenance",
+      "name": "w1_plan_staleness_extension_test",
+      "script_path": "_shared/s90_w1_plan_staleness_extension_test.py",
+      "session": "s90",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/_shared/s90_w1_plan_staleness_extension_test.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s90_w1_plan_staleness_extension_test.py — S90 W1-3 self-test + verdict emitter\n    4: ==============================================================================\n    5: \n    6: Verifies the S90 W1-3 two-axis extension to `_plan_staleness_audit.py`:\n    7:   - Axis 1 (regex tightening): the `pre_supersession_pin` regex is tightened\n    8:     to YAML pin-map context (eliminates the W6-plan:226 prose-table\n    9:     false-positive AND the W6-plan:247 `staleness_pattern_set:` letter-\n   10:     direct-extension edge case).\n   11:   - Axis 2 (cross_wave_anchor_drift): a NEW detector class compares"
+    },
+    {
+      "anchor_id": "prov_15",
+      "anchor_type": "data_provenance",
+      "name": "w1_pru_class_8_7_test",
+      "script_path": "_shared/s90_w1_pru_class_8_7_test.py",
+      "session": "s90",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/_shared/s90_w1_pru_class_8_7_test.py",
+      "source_context_30_lines": "<name 'w1_pru_class_8_7_test' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"S90 W1-12 — S90-RULE-EXTENSION-EPISTEMIC-PRU-CLASS-8-7-DEGENERATE-OBSERVABLE\n    3: \n    4: Gate: S90-RULE-EXTENSION-EPISTEMIC-PRU-CLASS-8-7-DEGENERATE-OBSERVABLE\n    5:       (PHONON-FIRST V.4)\n    6: Trigger: [AUDIT]\n    7: Classification: METHODOLOGY (PRU Class 8.7 promotion + audit-script pattern\n    8:                 landing; gen-physicist orchestrator-direct-write per\n    9:                 wave-classification.md M1∧M2∧M3∧M4)\n   10: \n   11: Plan reference: sessions/session-plan/session-90-plan-w1.md §W1-12 lines 780-857.\n   12: \n   13: Method (plan §W1-12 #6):\n   14:   1. Promote Class 8.7 to PRU sub-class taxonomy table\n   15:      (`.claude/rules/epistemic-discipline.md`)\n   16:   2. Append \"Degenerate-Observable Pre-Flight Check (Class 8.7; advisory until\n   17:      K=3)\" sub-section per directive-document discipline\n   18:   3. Extend `_pru_cardinality_audit.py` with detector patterns P1 + P2 +\n   19:      degeneracy-witness check (file created in-session per W6-3 hygiene-gap\n   20:      discharge documented at S89 W6 WP line 363; Class 8.7 is the inaugural\n   21:      content; broader D_PRU_raw cardinality audit is separate carry-forward)\n   22:   4. Self-test on S89 §W1-1 FAIL plan-block (K=1 calibration corpus instance)\n   23:   5. Append §\"Class 8.7 Calibration Corpus\" to pru-class-corpus.md (§18)\n   24:   6. Emit dual-SHA verdict\n   25: \n   26: Pre-registered thresholds (plan §W1-12 #9):\n   27:   PASS iff (i) Class 8.7 row added to taxonomy table\n   28:            (ii) sub-section appended with 3 enumerated elements\n   29:            (iii) audit-script extension lands with P1+P2 patterns +\n   30:                  degeneracy-witness check"
+    },
+    {
+      "anchor_id": "prov_16",
+      "anchor_type": "data_provenance",
+      "name": "w1_vii_an_audit_script_extension_test",
+      "script_path": "_shared/s90_w1_vii_an_audit_script_extension_test.py",
+      "session": "s90",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/_shared/s90_w1_vii_an_audit_script_extension_test.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s90_w1_vii_an_audit_script_extension_test.py — Self-test for S90 W1-1.\n    4: \n    5: Gate: S90-VII-AN-AUDIT-SCRIPT-REGISTRY-ANCHOR-RECONCILIATION-EXTENSION\n    6: Trigger: [AUDIT]\n    7: Classification: METHODOLOGY\n    8: Agent: gen-physicist orchestrator-direct-write\n    9: \n   10: Hypothesis: New Class-(g) `REGISTRY-ANCHOR-ROUTE-A-VS-ROUTE-B-CONFLATION`\n   11: detector in _registry_landing_audit.py flags §VII.AN's W5a-44 NEGATIVE-CALIBRATION"
+    },
+    {
+      "anchor_id": "prov_17",
+      "anchor_type": "data_provenance",
+      "name": "w1_w5_7_anchor_5_unit_consistency_audit",
+      "script_path": "_shared/s90_w1_w5_7_anchor_5_unit_consistency_audit.py",
+      "session": "s90",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/_shared/s90_w1_w5_7_anchor_5_unit_consistency_audit.py",
+      "source_context_30_lines": "   85: )\n   86: CANONICAL_CONSTANTS = ROOT / \"computations\" / \"_shared\" / \"canonical_constants.py\"\n   87: REGULATOR_PIN_RULE = ROOT / \".claude\" / \"rules\" / \"regulator-pin-discipline.md\"\n   88: PLAN_W1 = ROOT / \"sessions\" / \"session-plan\" / \"session-90-plan-w1.md\"\n   89: THIS_SCRIPT = Path(__file__).resolve()\n   90: \n   91: OUT_JSON = (\n   92:     ROOT / \"computations\" / \"_shared\"\n   93:     / \"s90_w1_w5_7_anchor_5_unit_consistency_audit.json\"\n   94: )\n   95: \n   96: \n   97: # ---------------- Audit steps ----------------\n   98: def detect_anchor_5_sites(script_text: str) -> list[dict]:\n   99:     \"\"\"Apply plan-pinned regex to locate anchor-5 sites in W5-7 script.\"\"\"\n  100:     sites = []  # (local) match records\n  101:     for m in ANCHOR_5_REGEX.finditer(script_text):"
+    },
+    {
+      "anchor_id": "prov_18",
+      "anchor_type": "data_provenance",
+      "name": "w1_w6_3_prospective_application",
+      "script_path": "_shared/s90_w1_w6_3_prospective_application.py",
+      "session": "s90",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/_shared/s90_w1_w6_3_prospective_application.py",
+      "source_context_30_lines": "  142:         \"detection_regex\": r\"VII\\.AQ.*Stage-2|Stage-2.*VII\\.AQ|S90.*VII-AQ-STAGE-2\",\n  143:         \"expected_landing_wave\": \"W4 CF-54+CF-55\",\n  144:     },\n  145: }\n  146: \n  147: PLAN_W1 = ROOT / \"sessions\" / \"session-plan\" / \"session-90-plan-w1.md\"\n  148: THIS_SCRIPT = Path(__file__).resolve()\n  149: OUT_JSON = (\n  150:     ROOT / \"computations\" / \"_shared\" / \"s90_w1_w6_3_prospective_application.json\"\n  151: )\n  152: \n  153: \n  154: def check_artifact_landed(artifact_key: str, spec: dict) -> dict:\n  155:     \"\"\"Determine whether a downstream artifact has landed.\"\"\"\n  156:     path = spec[\"detection_path\"]  # (local)\n  157:     if not path.exists():\n  158:         return {"
+    },
+    {
+      "anchor_id": "prov_19",
+      "anchor_type": "data_provenance",
+      "name": "w0_r2_w2_allowlist_sha_compute",
+      "script_path": "_shared/s91_w0_r2_w2_allowlist_sha_compute.py",
+      "session": "s91",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/_shared/s91_w0_r2_w2_allowlist_sha_compute.py",
+      "source_context_30_lines": "<name 'w0_r2_w2_allowlist_sha_compute' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"S91 W0 R2 — Compute plan-block SHAs for S90 W2-1..W2-15 allowlist batch.\n    3: \n    4: Per `.claude/rules/methodology-wave-allowlist.md` schema (3-column form, post-S88\n    5: W9-RULE-CLEANUP lift-out): each row records `(gate_id, session, sha256_of_plan_block)`\n    6: where the SHA is computed via SHA-256 over the plan-file gate-block text\n    7: (from the `## §W{i}-{n}.` heading through but not including the next `## §`\n    8: heading or EOF).\n    9: \n   10: Pairs with `sessions/framework/registry/methodology-wave-instances.md` rationale\n   11: prose entries (S88 W9-RULE-CLEANUP precedent — rationale lives in registry,\n   12: allowlist holds the 3-column audit tuples).\n   13: \n   14: S90 W2 gate-block boundaries (from grep `^## §W2-` in\n   15: `sessions/session-plan/session-90-plan-w2.md`):\n   16:   §W2-1   at line 67   — CF-18 §VII.AAU/§VII.AV withdrawn-in-favor-of LANDING-CLEANUP\n   17:   §W2-2   at line 195  — CF-19 §VII.NEXT substrate-clock-uniqueness STAGE-1-CANDIDATE\n   18:   §W2-3   at line 336  — CF-20 §VII.AH STAGE-3-PERMANENT promotion\n   19:   §W2-4   at line 440  — CF-21 §VII.W-3.LAB Element-2 OE-form retrofit\n   20:   §W2-5   at line 553  — CF-22 §VII.AR Stage-2 PENDING A36 sub-claim advancement\n   21:   §W2-6   at line 663  — CF-23 §VII.AN registry-anchor reconciliation\n   22:   §W2-7   at line 763  — CF-24 §W6a plan-file-or-downstream anchor reconciliation\n   23:   §W2-8   at line 862  — CF-25 §VII.U.2 corner-reconciliation Reading-B lock-in\n   24:   §W2-9   at line 974  — CF-26 §VII.AF.1.OP-PROJ annotation clarification + W5 V4\n   25:   §W2-10  at line 1089 — CF-27 canonical_constants R_universal HP1 strict-F4 Class-(d)\n   26:   §W2-11  at line 1230 — CF-28 canonical_constants eps_H HP1 norm provenance addition\n   27:   §W2-12  at line 1354 — CF-29 falsifier-inventory row-3 alpha_s_canonical update\n   28:   §W2-13  at line 1487 — CF-30 DR3 binding-protocol readiness audit\n   29:   §W2-14  at line 1588 — CF-31 falsifier-inventory row-2 r dual-pathway update\n   30:   §W2-15  at line 1691 — CF-32 mack-observational-constraints S89 update (EOF at 1929)"
+    },
+    {
+      "anchor_id": "prov_20",
+      "anchor_type": "data_provenance",
+      "name": "w0_r2_w2_instances_append",
+      "script_path": "_shared/s91_w0_r2_w2_instances_append.py",
+      "session": "s91",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/_shared/s91_w0_r2_w2_instances_append.py",
+      "source_context_30_lines": "<name 'w0_r2_w2_instances_append' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"S91 W0 R2 — Append 15 W2-1..W2-15 registry entries to methodology-wave-instances.md.\n    3: \n    4: Per `.claude/rules/methodology-wave-allowlist.md` §\"Edit discipline\" item 4\n    5: (canonical append-helper pattern): writes rationale-prose entries to\n    6: `sessions/framework/registry/methodology-wave-instances.md` keyed by the\n    7: `### {gate_label} ({session}) — {sha}` heading per the post-W9-RULE-CLEANUP\n    8: schema (allowlist holds 3-column rows; registry holds rationale prose).\n    9: \n   10: Format mirrored from existing W7-6 entry (lines 1858-1878 of registry file):\n   11:   - ### {gate_label} ({session}) — {sha256_of_plan_block}\n   12:   - **Provenance**: gate-ID + agent role + plan reference + sha citation\n   13:   - **Action / Rule extension**: structural summary of what the gate did\n   14:   - **Gate classification (M1∧M2∧M3∧M4 conjunction)**: per-test rationale\n   15:   - **Closure conditions**: verdict + audit_sha256 + content_sha256\n   16:   - **Cross-link**: rule files, registry sections, prior precedents\n   17:   - **Carry-forward** (where applicable): forward gate IDs for S91+\n   18:   - **Substrate framing**: layer-functor F image declaration\n   19: \n   20: Source data:\n   21:   - Plan-block SHAs from `s91_w0_r2_w2_allowlist_shas.json` (this session)\n   22:   - Verdict-line audit_sha256s from `computations/session-90/s90_gate_verdicts.txt`\n   23:   - Gate titles from plan file `sessions/session-plan/session-90-plan-w2.md`\n   24: \n   25: Per `feedback_no-asking-just-execute.md` housekeeping discipline:\n   26: in-session orchestrator-direct-write completion of the 15-row batch.\n   27: \"\"\"\n   28: import json\n   29: import sys\n   30: from pathlib import Path"
+    }
+  ]
+}

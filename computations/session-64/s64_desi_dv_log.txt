@@ -1,0 +1,297 @@
+========================================================================
+DESI-DV-64: Model-Independent DESI BAO Distance Comparison
+========================================================================
+
+Cosmological parameters (Planck 2018):
+  Omega_m  = 0.315
+  Omega_b  = 0.0493
+  Omega_r  = 9.15e-05
+  Omega_DE = 0.684909
+  h        = 0.674
+  H_0      = 67.4 km/s/Mpc
+
+Framework parameters (S59 WA-ERROR-PROP-59):
+  w_0 = -0.918087 +/- 0.036647
+  w_a = -0.000575 +/- 0.000273
+
+Substrate compaction (S59 TIMESCAPE-WA-59):
+  w_a(apparent) = -0.644891
+  w_0(offset)   = -0.005956
+
+Four models for D_V computation:
+  LCDM:        w_0 = -1.000, w_a = 0.000
+  Framework:   w_0 = -0.918087, w_a = -0.000575
+  Compaction:  w_0 = -0.924043, w_a = -0.644891
+  DESI DR2 bf: w_0 = -0.752,  w_a = -0.730
+
+========================================================================
+DESI DR2 Redshift Bins and Precision
+========================================================================
+
+   z_eff        Tracer  sigma(DV)/DV
+   0.295           BGS         1.9%
+   0.510          LRG1         1.3%
+   0.706          LRG2         0.9%
+   0.934     LRG3+ELG1         0.8%
+   1.321          ELG2         1.0%
+   1.484           QSO         1.5%
+   2.330           Lya         1.5%
+
+Sound horizon: r_d = 147.024 Mpc (E&H 1998)
+  Planck 2018 reference: r_d = 147.09 Mpc
+
+========================================================================
+D_V(z)/r_d Predictions for Four Models
+========================================================================
+
+  $\Lambda$CDM:
+       z      DV/rd      DM/rd      DH/rd
+   0.295     8.0566     8.2805    25.8540
+   0.510    12.8335    13.5000    22.7403
+   0.706    16.4623    17.7003    20.1700
+   0.934    19.9488    21.9946    17.5699
+   1.321    24.4704    28.0819    14.0658
+   1.484    25.9732    30.2760    12.8809
+   2.330    31.3543    39.1835     8.6164
+
+  Framework ($w_0=-0.918$):
+       z      DV/rd      DM/rd      DH/rd
+   0.295     7.9646     8.2050    25.4404
+   0.510    12.6395    13.3289    22.2859
+   0.706    16.1895    17.4432    19.7534
+   0.934    19.6097    21.6504    17.2240
+   1.321    24.0708    27.6267    13.8329
+   1.484    25.5617    29.7860    12.6856
+   2.330    30.9364    38.5844     8.5355
+
+  Compaction ($w_a=-0.64$):
+       z      DV/rd      DM/rd      DH/rd
+   0.295     8.0422     8.2577    25.8573
+   0.510    12.8755    13.5020    22.9577
+   0.706    16.5874    17.7575    20.5007
+   0.934    20.1698    22.1327    17.9346
+   1.321    24.8051    28.3524    14.3727
+   1.484    26.3362    30.5936    13.1512
+   2.330    31.7580    39.6606     8.7395
+
+  DESI best-fit ($w_0=-0.752$, $w_a=-0.73$):
+       z      DV/rd      DM/rd      DH/rd
+   0.295     7.8572     8.1046    25.0333
+   0.510    12.4968    13.1621    22.0891
+   0.706    16.0716    17.2571    19.7440
+   0.934    19.5545    21.4795    17.3519
+   1.321    24.1280    27.5244    14.0353
+   1.484    25.6562    29.7168    12.8867
+   2.330    31.1263    38.6559     8.6616
+
+========================================================================
+Fractional Deviations (Model - LCDM) / LCDM  [%]
+========================================================================
+
+       z   Framework  Compaction     DESI bf    DESI err
+  ------  ----------  ----------  ----------  ----------
+   0.295     -1.142%     -0.179%     -2.475%       +1.9%
+   0.510     -1.512%     +0.328%     -2.623%       +1.3%
+   0.706     -1.657%     +0.760%     -2.374%       +0.9%
+   0.934     -1.700%     +1.108%     -1.976%       +0.8%
+   1.321     -1.633%     +1.368%     -1.399%       +1.0%
+   1.484     -1.585%     +1.398%     -1.220%       +1.5%
+   2.330     -1.333%     +1.288%     -0.727%       +1.5%
+
+========================================================================
+Per-Bin Separation from LCDM (in DESI sigma)
+========================================================================
+
+       z   Framework  Compaction     DESI bf
+  ------  ----------  ----------  ----------
+   0.295       0.60s       0.09s       1.30s
+   0.510       1.16s       0.25s       2.02s
+   0.706       1.84s       0.84s       2.64s
+   0.934       2.12s       1.38s       2.47s
+   1.321       1.63s       1.37s       1.40s
+   1.484       1.06s       0.93s       0.81s
+   2.330       0.89s       0.86s       0.48s
+
+  Multi-bin chi2 (vs LCDM, 7 bins):
+    Framework:  14.19  (sqrt = 3.77-sigma)
+    Compaction: 6.18  (sqrt = 2.49-sigma)
+    DESI bf:    21.68  (sqrt = 4.66-sigma)
+
+========================================================================
+Direction Analysis: Which Way Does DESI Pull?
+========================================================================
+
+  DESI DR2 data direction (w_0>-1, w_a<0 = Quintom B):
+    Low z: less DE than CC -> shorter distances (DV < DV_LCDM)
+    High z: more DE than CC (phantom past) -> longer distances (DV > DV_LCDM)
+
+  Framework direction:
+    z=0.295:  shorter by 1.142%  [MATCHES DESI]
+    z=0.510:  shorter by 1.512%  [MATCHES DESI]
+    z=0.706:  shorter by 1.657%  [MATCHES DESI]
+    z=0.934:  shorter by 1.700%  [MATCHES DESI]
+    z=1.321:  shorter by 1.633%  [MATCHES DESI]
+    z=1.484:  shorter by 1.585%  [MATCHES DESI]
+    z=2.330:  shorter by 1.333%  [MATCHES DESI]
+
+  Compaction direction:
+    z=0.295:  shorter by 0.179%  [MATCHES DESI]
+    z=0.510:   longer by 0.328%  [OPPOSES DESI]
+    z=0.706:   longer by 0.760%  [OPPOSES DESI]
+    z=0.934:   longer by 1.108%  [OPPOSES DESI]
+    z=1.321:   longer by 1.368%  [OPPOSES DESI]
+    z=1.484:   longer by 1.398%  [OPPOSES DESI]
+    z=2.330:   longer by 1.288%  [OPPOSES DESI]
+
+  Pattern correlation with DESI best-fit deviation:
+    Framework:  r = -0.0356
+    Compaction: r = +0.8172
+    (r = +1: same pattern, r = -1: opposite pattern)
+
+========================================================================
+Inter-Model Separations (in DESI sigma per bin)
+========================================================================
+
+       z     FW-Comp     FW-DESI   Comp-DESI
+  ------  ----------  ----------  ----------
+   0.295       0.51s       0.70s       1.21s
+   0.510       1.41s       0.86s       2.27s
+   0.706       2.69s       0.80s       3.48s
+   0.934       3.51s       0.35s       3.86s
+   1.321       3.00s       0.23s       2.77s
+   1.484       1.99s       0.24s       1.75s
+   2.330       1.75s       0.40s       1.34s
+
+  Multi-bin chi2:
+    FW vs Compaction:  37.80  (6.15-sigma)
+    FW vs DESI bf:     2.25  (1.50-sigma)
+    Comp vs DESI bf:   46.11  (6.79-sigma)
+
+========================================================================
+DR3 Projections and Pre-Registered Decision Rules
+========================================================================
+
+  DR3 projected fractional precision (sqrt(2) reduction):
+    z=0.295: 1.34% (DR2: 1.90%)
+    z=0.510: 0.92% (DR2: 1.30%)
+    z=0.706: 0.64% (DR2: 0.90%)
+    z=0.934: 0.57% (DR2: 0.80%)
+    z=1.321: 0.71% (DR2: 1.00%)
+    z=1.484: 1.06% (DR2: 1.50%)
+    z=2.330: 1.06% (DR2: 1.50%)
+
+  Framework-LCDM separation with DR3 precision:
+    z=0.295: 0.85-sigma
+    z=0.510: 1.64-sigma
+    z=0.706: 2.60-sigma
+    z=0.934: 3.00-sigma
+    z=1.321: 2.31-sigma
+    z=1.484: 1.49-sigma
+    z=2.330: 1.26-sigma
+    Combined: 5.33-sigma
+
+  Compaction vs DESI best-fit with DR3 precision:
+    z=0.295: 1.71-sigma
+    z=0.510: 3.21-sigma
+    z=0.706: 4.92-sigma
+    z=0.934: 5.45-sigma
+    z=1.321: 3.91-sigma
+    z=1.484: 2.47-sigma
+    z=2.330: 1.90-sigma
+    Combined: 9.60-sigma
+
+  Pre-registered CPL-based decision rules (from S60):
+    w_a < -0.530 => framework excluded at >= 3-sigma
+    w_a > -0.350 => framework consistent at <= 2-sigma
+
+  Translated D_V/r_d boundaries:
+       z         FW       LCDM   wa=-0.53   wa=-0.35    DESI bf
+   0.295     7.9646     8.0566     7.8324     7.8122     7.8572
+   0.510    12.6395    12.8335    12.4198    12.3540    12.4968
+   0.706    16.1895    16.4623    15.9390    15.8229    16.0716
+   0.934    19.6097    19.9488    19.3643    19.1934    19.5545
+   1.321    24.0708    24.4704    23.8742    23.6366    24.1280
+   1.484    25.5617    25.9732    25.3876    25.1323    25.6562
+   2.330    30.9364    31.3543    30.8428    30.5570    31.1263
+
+  Model-independent DR3 decision rule:
+  Key redshift z=0.934 (highest precision anisotropic bin):
+    Framework: DV/rd = 19.6097
+    LCDM:      DV/rd = 19.9488
+    DESI bf:   DV/rd = 19.5545
+    Separation FW-LCDM: -1.700%
+    Separation DESI-LCDM: -1.976%
+    FW undershoots DESI direction by: 0.277%
+
+========================================================================
+STRUCTURAL DIAGNOSTICS
+========================================================================
+
+The framework's w_0 = -0.918 pushes ALL distances shorter than LCDM
+uniformly across redshift (monotonic, 1.1-1.7% deficit). This is the CORRECT
+DIRECTION at low z (where DESI also sees shorter distances) but the WRONG
+BEHAVIOR at high z (where DESI's w_a < 0 implies the Quintom-B phantom
+crossing lengthens distances).
+
+The substrate compaction (w_a = -0.645) introduces z-dependent
+modification that partially captures this crossing behavior. At z > 1,
+compaction distances are LONGER than LCDM, matching the DESI direction.
+However, compaction distances are also longer than LCDM at low z, which
+is the wrong direction.
+
+Key structural findings:
+1. Framework-LCDM separation is 3.8-sigma (DR2), projecting
+   to 5.3-sigma with DR3. The two are distinguishable.
+2. Compaction pattern correlation with DESI: r = 0.817 (vs Framework
+   r = -0.036). Neither matches the DESI pattern well.
+3. The DESI best-fit pattern (Quintom B) has a z-crossing near z ~ 0.5 where
+   deviations from LCDM change sign. The framework's monotonic deviation
+   cannot reproduce this.
+4. The compaction DOES produce a z-dependent deviation, but its shape differs
+   from the DESI best-fit.
+
+
+========================================================================
+GATE VERDICT: DESI-DV-64
+========================================================================
+
+  Gate: DESI-DV-64
+  Status: INFO
+  Detail: D_V/r_d at 7 DESI bins. FW-LCDM: 3.8-sig (DR2), 5.3-sig (DR3 proj). Compaction chi2=6.2 vs LCDM. Pattern corr: FW -0.04, Comp 0.82 vs DESI bf. DR3 decision: w_a<-0.53 excludes FW at 3-sig
+
+  Pre-registered DR3 exclusion criteria:
+    CPL-based: w_a < -0.530 => framework excluded (>= 3-sigma)
+    CPL-based: w_a > -0.350 => framework consistent (<= 2-sigma)
+    Distance-based: If D_V(z=0.934)/r_d < 19.364, 
+      framework excluded at 3-sigma
+
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s64_desi_dv.npz
+  Saved: s64_desi_dv.png
+
+========================================================================
+WORKING PAPER TABLE
+========================================================================
+
+### Table: D_V(z)/r_d at DESI DR2 Redshift Bins
+
+| z_eff | Tracer | LCDM | Framework | Compaction | DESI bf | FW-LCDM [%] | Comp-LCDM [%] | DESI err [%] |
+|:------|:-------|:-----|:----------|:-----------|:--------|:------------|:--------------|:-------------|
+| 0.295 | BGS | 8.057 | 7.965 | 8.042 | 7.857 | -1.142 | -0.179 | 1.9 |
+| 0.510 | LRG1 | 12.833 | 12.639 | 12.876 | 12.497 | -1.512 | +0.328 | 1.3 |
+| 0.706 | LRG2 | 16.462 | 16.189 | 16.587 | 16.072 | -1.657 | +0.760 | 0.9 |
+| 0.934 | LRG3+ELG1 | 19.949 | 19.610 | 20.170 | 19.555 | -1.700 | +1.108 | 0.8 |
+| 1.321 | ELG2 | 24.470 | 24.071 | 24.805 | 24.128 | -1.633 | +1.368 | 1.0 |
+| 1.484 | QSO | 25.973 | 25.562 | 26.336 | 25.656 | -1.585 | +1.398 | 1.5 |
+| 2.330 | Lya | 31.354 | 30.936 | 31.758 | 31.126 | -1.333 | +1.288 | 1.5 |
+
+### Table: Multi-bin chi-squared vs LCDM
+
+| Model | chi2 (7 bins) | sigma_eff | Pattern corr | Direction |
+|:------|:--------------|:----------|:-------------|:----------|
+| Framework | 14.19 | 3.77 | -0.036 | Uniformly shorter |
+| Compaction | 6.18 | 2.49 | +0.817 | z-dependent |
+| DESI best-fit | 21.68 | 4.66 | +1.000 | Quintom B crossing |
+
+========================================================================
+DONE
+========================================================================

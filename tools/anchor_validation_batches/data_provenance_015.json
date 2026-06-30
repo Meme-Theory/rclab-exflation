@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 15,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_141",
+      "anchor_type": "data_provenance",
+      "name": "gaussian_correction",
+      "script_path": "session-29/s29b_gaussian_correction.py",
+      "session": "s29b",
+      "inputs": "",
+      "outputs": "session-29/s29b_gaussian_correction.npz, session-29/s29b_gaussian_correction.png, session-29/s29b_gaussian_correction.tx...",
+      "source_file": "computations/session-29/s29b_gaussian_correction.py",
+      "source_context_30_lines": "   51: import matplotlib.pyplot as plt\n   52: from pathlib import Path\n   53: \n   54: # ============================================================================\n   55: # Configuration\n   56: # ============================================================================\n   57: \n   58: DATA_DIR = Path(r\"C:\\sandbox\\Ainulindale Exflation\\computations\")\n   59: OUTPUT_PREFIX = DATA_DIR / \"s29b_gaussian_correction\"\n   60: \n   61: SECTOR_LABELS = ['(0,0)', '(1,0)', '(0,1)', '(1,1)', '(2,0)', '(0,2)',\n   62:                  '(2,1)', '(1,2)', '(3,0)', '(0,3)']\n   63: SECTOR_MULTS = np.array([1, 9, 9, 64, 36, 36, 225, 225, 100, 100])\n   64: \n   65: TAU_VH_MAP = {'0p15': 2, '0p25': 4, '0p35': 6, '0p50': 8}\n   66: \n   67: "
+    },
+    {
+      "anchor_id": "prov_142",
+      "anchor_type": "data_provenance",
+      "name": "jensen_transverse",
+      "script_path": "session-29/s29b_jensen_transverse.py",
+      "session": "s29b",
+      "inputs": "",
+      "outputs": "session-29/s29b_jensen_transverse.npz, session-29/s29b_jensen_transverse.png, session-29/s29b_jensen_transverse.txt",
+      "source_file": "computations/session-29/s29b_jensen_transverse.py",
+      "source_context_30_lines": "   57: matplotlib.use('Agg')\n   58: import matplotlib.pyplot as plt\n   59: from pathlib import Path\n   60: \n   61: # ─── Configuration ───────────────────────────────────────────────────────────\n   62: DATA_DIR = Path(SCRIPT_DIR)\n   63: S27_FILE = DATA_DIR / 's27_multisector_bcs.npz'\n   64: S24A_FILE = DATA_DIR / 's24a_vspec.npz'\n   65: OUT_NPZ = DATA_DIR / 's29b_jensen_transverse.npz'\n   66: OUT_PNG = DATA_DIR / 's29b_jensen_transverse.png'\n   67: OUT_TXT = DATA_DIR / 's29b_jensen_transverse.txt'\n   68: \n   69: # Jensen parameter at BCS minimum\n   70: TAU_0 = 0.35\n   71: # Perturbation size for finite differences\n   72: EPS = 0.02\n   73: # Max p+q for Dirac spectrum (6 for full, 3 for fast test)"
+    },
+    {
+      "anchor_id": "prov_143",
+      "anchor_type": "data_provenance",
+      "name": "josephson_coupling",
+      "script_path": "session-29/s29b_josephson_coupling.py",
+      "session": "s29b",
+      "inputs": "",
+      "outputs": "session-29/s29b_josephson_coupling.npz, session-29/s29b_josephson_coupling.png, session-29/s29b_josephson_coupling.txt",
+      "source_file": "computations/session-29/s29b_josephson_coupling.py",
+      "source_context_30_lines": "   71: from pathlib import Path\n   72: \n   73: # ─── Configuration ───────────────────────────────────────────────────────────\n   74: DATA_DIR = Path(SCRIPT_DIR)\n   75: S23A_EVEC_FILE = DATA_DIR / 's23a_eigenvectors_extended.npz'\n   76: S22B_KOSMANN_FILE = DATA_DIR / 's22b_kosmann_matrix.npz'\n   77: S27_FILE = DATA_DIR / 's27_multisector_bcs.npz'\n   78: S29A_ISC_FILE = DATA_DIR / 's29a_inter_sector_coupling.npz'\n   79: OUT_NPZ = DATA_DIR / 's29b_josephson_coupling.npz'\n   80: OUT_PNG = DATA_DIR / 's29b_josephson_coupling.png'\n   81: OUT_TXT = DATA_DIR / 's29b_josephson_coupling.txt'\n   82: \n   83: # Sector indices in s23a_eigenvectors_extended.npz\n   84: SECTOR_IDX_03 = 8   # (0,3) sector\n   85: SECTOR_IDX_30 = 9   # (3,0) sector\n   86: \n   87: MU_RATIO = 1.20"
+    },
+    {
+      "anchor_id": "prov_144",
+      "anchor_type": "data_provenance",
+      "name": "modulus_eom",
+      "script_path": "session-29/s29b_modulus_eom.py",
+      "session": "s29b",
+      "inputs": "",
+      "outputs": "session-29/s29b_modulus_eom.npz, session-29/s29b_modulus_eom.png",
+      "source_file": "computations/session-29/s29b_modulus_eom.py",
+      "source_context_30_lines": " 1003:     print(f\"  {p29f['detail']}\")\n 1004:     if 'hits' in p29f:\n 1005:         for mkk, t_sec in p29f['hits']:\n 1006:             print(f\"    M_KK = {mkk:.0e} GeV: t_BCS = {t_sec:.3e} s\")\n 1007: \n 1008:     # -----------------------------------------------------------------------\n 1009:     # 7. Save data\n 1010:     # -----------------------------------------------------------------------\n 1011:     npz_path = os.path.join(SCRIPT_DIR, \"s29b_modulus_eom.npz\")\n 1012: \n 1013:     save_dict = {\n 1014:         'M_KK_values': np.array(M_KK_VALUES),\n 1015:         'E_mult_values': np.array(E_MULT_VALUES),\n 1016:         'G_tau_tau': np.array([G_TAU_TAU]),\n 1017:         'tau_cross': np.array([tau_cross]),\n 1018:         'V_at_0': np.array([V0]),\n 1019:         'latent_heat_mu1': np.array([data['latent_heat_mu1']]),"
+    },
+    {
+      "anchor_id": "prov_145",
+      "anchor_type": "data_provenance",
+      "name": "pmns_extraction",
+      "script_path": "session-29/s29b_pmns_extraction.py",
+      "session": "s29b",
+      "inputs": "",
+      "outputs": "session-29/s29b_pmns_extraction.npz",
+      "source_file": "computations/session-29/s29b_pmns_extraction.py",
+      "source_context_30_lines": "    1: \"\"\"\n    2: Session 29Ba — re-run: PMNS Mixing Angle Extraction from Tridiagonal Kosmann\n    3: ===============================================================================\n    4: \n    5: T3 canonical re-run of s29b_pmns_extraction.py under S81 standards:\n    6:   - `from canonical_constants import *` (no framework constants hardcoded)\n    7:   - All intermediates tagged `# (local)`\n    8:   - PDG reference values remain local with citation\n    9:   - SHA-256 pin of all inputs (FULL 64-char hex) logged before compute\n   10:   - Closure SHA-256 of JSON-sorted pin map emitted at the end\n   11:   - 3x3 PMNS angle extraction (CPU, OMP capped to 8)\n   12: \n   13: Classification: PARTICLE — mixing-angle extraction from singlet sector of D_K."
+    },
+    {
+      "anchor_id": "prov_146",
+      "anchor_type": "data_provenance",
+      "name": "pmns_extraction_legacy",
+      "script_path": "session-29/s29b_pmns_extraction_legacy.py",
+      "session": "s29b",
+      "inputs": "",
+      "outputs": "session-29/s29b_pmns_extraction_legacy.npz, session-29/s29b_pmns_extraction_legacy.png, session-29/s29b_pmns_extraction_...",
+      "source_file": "computations/session-29/s29b_pmns_extraction_legacy.py",
+      "source_context_30_lines": "<name 'pmns_extraction_legacy' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: Session 29Ba: PMNS Mixing Angle Extraction from Tridiagonal Kosmann Kernel\n    3: ==========================================================================\n    4: \n    5: Extracts the full 3x3 PMNS mixing matrix from the (0,0) singlet sector\n    6: of the D_K Dirac operator on Jensen-deformed SU(3).\n    7: \n    8: The singlet sector has 16 eigenvalues grouping into 3 distinct positive-energy\n    9: levels (plus their particle-hole partners):\n   10:   L1: multiplicity 1 (gap-edge singlet)\n   11:   L2: multiplicity 4 (quadruplet)\n   12:   L3: multiplicity 3 (triplet)\n   13: \n   14: Selection rules (Session 23a):\n   15:   V(L1, L2) ~ 0.07-0.13 (nearest-neighbor)\n   16:   V(L1, L3) = 0 EXACTLY (selection rule)\n   17:   V(L2, L3) ~ 0.01-0.03 (nearest-neighbor)\n   18: \n   19: Three analysis methods:\n   20:   Method A: Full 16x16 H_eff diagonalization, extract 3 smallest positive eigenvalues\n   21:   Method B: Degenerate perturbation theory -> 3x3 reduction\n   22:   Method C: Single-mode 3x3 (individual coupling, not Frobenius norm)\n   23: \n   24: Gate B-29b: sin^2(theta_13) < 0.005 or > 0.10 -> tridiagonal PMNS fails\n   25: Gate P-29b: sin^2(theta_13) in [0.015, 0.030] -> PASS\n   26: \n   27: Input: s23a_kosmann_singlet.npz\n   28: Output: s29b_pmns_extraction.npz\n   29: \"\"\"\n   30: "
+    },
+    {
+      "anchor_id": "prov_147",
+      "anchor_type": "data_provenance",
+      "name": "cdl_bounce",
+      "script_path": "session-29/s29c_cdl_bounce.py",
+      "session": "s29c",
+      "inputs": "",
+      "outputs": "session-29/s29c_cdl_bounce.npz, session-29/s29c_cdl_bounce.png",
+      "source_file": "computations/session-29/s29c_cdl_bounce.py",
+      "source_context_30_lines": "   32:     5. Compare B to 400 threshold\n   33: \n   34: Inputs:\n   35:     computations/session-28/s28a_spectral_action_comparison.npz\n   36:     computations/session-28/s28b_self_consistent_tau_T.npz\n   37:     computations/session-29/s29b_free_energy_comparison.npz\n   38: \n   39: Outputs:\n   40:     computations/session-29/s29c_cdl_bounce.npz\n   41:     computations/session-29/s29c_cdl_bounce.png\n   42: \"\"\"\n   43: \n   44: import numpy as np\n   45: from scipy.interpolate import CubicSpline\n   46: from scipy.integrate import solve_ivp, quad\n   47: import matplotlib\n   48: matplotlib.use('Agg')"
+    },
+    {
+      "anchor_id": "prov_148",
+      "anchor_type": "data_provenance",
+      "name": "gibbons_hawking_temperature",
+      "script_path": "session-29/s29c_gibbons_hawking_temperature.py",
+      "session": "s29c",
+      "inputs": "",
+      "outputs": "session-29/s29c_gibbons_hawking_temperature.npz, session-29/s29c_gibbons_hawking_temperature.png",
+      "source_file": "computations/session-29/s29c_gibbons_hawking_temperature.py",
+      "source_context_30_lines": "  192: print(f\"Mean R^2 (tau>0): {mean_R2:.4f}\")\n  193: print(f\"Verdict: {verdict}\")\n  194: \n  195: # ==============================================================================\n  196: # Save results\n  197: # ==============================================================================\n  198: \n  199: np.savez(\n  200:     os.path.join(data_dir, 's29c_gibbons_hawking_temperature.npz'),\n  201:     tau_values=tau_values,\n  202:     T_GH_prediction=T_GH_prediction,\n  203:     T_eff=T_eff,\n  204:     T_eff_err=T_eff_err,\n  205:     T_ratio=T_ratio,\n  206:     R_squared=R_squared,\n  207:     chi2_red=chi2_red,\n  208:     n_modes_used=n_modes_used,"
+    },
+    {
+      "anchor_id": "prov_149",
+      "anchor_type": "data_provenance",
+      "name": "gw_spectrum",
+      "script_path": "session-29/s29c_gw_spectrum.py",
+      "session": "s29c",
+      "inputs": "",
+      "outputs": "session-29/s29c_gw_spectrum.npz, session-29/s29c_gw_spectrum.png",
+      "source_file": "computations/session-29/s29c_gw_spectrum.py",
+      "source_context_30_lines": "   36: \n   37: Inputs:\n   38:     computations/session-28/s28b_self_consistent_tau_T.npz\n   39:     computations/session-29/s29b_free_energy_comparison.npz\n   40:     computations/session-29/s29b_modulus_eom.npz\n   41:     computations/session-29/s29b_gaussian_correction.npz\n   42: \n   43: Outputs:\n   44:     computations/session-29/s29c_gw_spectrum.npz\n   45:     computations/session-29/s29c_gw_spectrum.png\n   46: \"\"\"\n   47: \n   48: import numpy as np\n   49: import matplotlib\n   50: matplotlib.use('Agg')\n   51: import matplotlib.pyplot as plt\n   52: import os"
+    },
+    {
+      "anchor_id": "prov_150",
+      "anchor_type": "data_provenance",
+      "name": "k_transition",
+      "script_path": "session-29/s29c_k_transition.py",
+      "session": "s29c",
+      "inputs": "",
+      "outputs": "session-29/s29c_k_transition.npz, session-29/s29c_k_transition.png",
+      "source_file": "computations/session-29/s29c_k_transition.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: 29c-2: Transition Scale k_transition from Modulus Dynamics\n    4: ==========================================================\n    5: \n    6: Physics:\n    7:     When the modulus tau rolls from tau=0 to the BCS trapping point at tau~0.35-0.50,\n    8:     it crosses the BCS condensation threshold at some time t_BCS. The comoving\n    9:     wavenumber that exits the horizon at that moment defines a characteristic scale:\n   10: \n   11:         k_transition = a(t_BCS) * H(t_BCS)"
+    }
+  ]
+}

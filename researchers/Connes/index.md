@@ -78,6 +78,24 @@ SPECTRAL ACTION COSMOLOGY (2010-2015)
   10 + 07 --> 42 (Nelson-Sakellariadou: Higgs as inflaton)
   10 + 09 --> 43 (Marcolli-Pierpaoli: early universe, sterile nu DM)
   24 + 40 --> 42, 43 (Pati-Salam cosmological implications)
+
+K-THEORY CONNECTIONS (researchers/K-Theory/)
+  KT-01 = Paper 15 (entropy = spectral action, duplicate)
+  KT-04 = Paper 07 (spectral action principle, duplicate)
+  KT-02 (reconstruction theorem) --> 04 (proves conjecture from NCG book)
+  KT-02 --> 08 (rigorizes axiom framework)
+  KT-02 --> 05 (K-theoretic vs analytical separation -> KO-dim permanent)
+  KT-02 --> 28 (reconstruction is truncation target)
+  KT-05 (boundary terms) --> 07 (extends spectral action to boundaries)
+  KT-05 --> 10 (boundary heat kernel for SM triple)
+  KT-05 --> 42 (boundary structure for spectral cosmology)
+  KT-06 (cyclic cohomology SUq(2)) --> 01 (extends founding cyclic program)
+  KT-06 --> 02 (applies Chern-Connes character to quantum groups)
+  KT-06 --> 06 (extends local index formula to quantum groups)
+  KT-07 (Type III spectral triples) --> 06 (extends local index formula to Type III)
+  KT-07 --> 02 (cyclic cohomology without trace)
+  KT-07 --> 05 (K-theory independence of trace -> KO-dim canonical)
+  KT-07 --> 14 (Type III universality in spectral standpoint)
 ```
 
 ---
@@ -204,6 +222,13 @@ Paper 04 (Connes book 1994): the 661-page treatise. Paper 26 (vS textbook 2ed 20
 | 42 | 2010 | Nelson-Sakellariadou | Higgs inflation from spectral action | CMB parameters from NCG |
 | 43 | 2010 | Marcolli-Pierpaoli | Early universe NCG models | Running G_N, sterile nu DM |
 | 44 | 2026 | Martinetti | Twisted SM + Krein structure | Indefinite inner product, twistors |
+| -- | -- | -- | **K-Theory cross-refs (researchers/K-Theory/)** | -- |
+| KT-01 | 2018 | Chamseddine-Connes-vS | Entropy = spectral action (= Paper 15) | Universal f_S, Riemann xi coefficients |
+| KT-02 | 2008 | Connes | Reconstruction theorem | K-theoretic vs analytical partition |
+| KT-04 | 1996 | Chamseddine-Connes | Universal action formula (= Paper 07) | Spectral action principle (duplicate) |
+| KT-05 | 2007 | Chamseddine-Connes | GHY boundary from spectral action | Boundary terms K-theoretically determined |
+| KT-06 | 2002 | Connes | Index formula on SUq(2) | K-theory survives q-deformation |
+| KT-07 | 2006 | Connes-Moscovici | Type III spectral triples | K-theory without trace; universality |
 
 ---
 
@@ -547,3 +572,55 @@ Relevance: MEDIUM. RGE in spectral framework; sterile nu phenomenology.
 6. **Sigma field and Jensen parameter**: Paper 13's sigma field may correspond to fluctuations of the Jensen parameter s around equilibrium (S17a). The two-field potential V(H,sigma) from Paper 13 maps to V_eff(s) from spectral action.
 
 7. **Twisted spectral triples and Lorentzian**: Papers 30-32, 44 suggest the fold transition (Riemannian SU(3) -> physical M4) may be a twist-induced signature change. Untested.
+
+---
+
+## K-Theory Cross-References
+
+Six papers in the `researchers/K-Theory/` collection are authored by Connes and collaborators and connect directly to this corpus. These papers develop the K-theoretic infrastructure (index theory, cyclic cohomology, reconstruction, entropy) that determines which spectral triple properties are topologically protected and which depend on the choice of spectral functional. The S71 workshop identified this as the scheme-dependent/scheme-independent partition: K-theoretic invariants (KO-dimension, quantum numbers, CPT) are permanent; Seeley-DeWitt coefficients (masses, couplings, CC) are analytically contingent. These six papers provide the mathematical foundation for that partition.
+
+### Cross-Reference Map
+
+| K-Theory Paper | Connes Paper(s) | Connection |
+|:--|:--|:--|
+| KT-01: Entropy and Spectral Action (2018, Chamseddine-Connes-vS) | **Paper 15** (entropy = spectral action) | Same result. KT-01 is the K-Theory collection's copy of the Chamseddine-Connes-van Suijlekom entropy paper. Paper 15 is the Connes collection's entry. Both establish S_vN = Tr(f_S(D^2/beta^2)) with coefficients given by Riemann xi values. |
+| | Paper 07 (spectral action principle) | KT-01 provides the thermodynamic/information-theoretic justification for the spectral action introduced in Paper 07. The universal test function f_S is SELECTED by entropy maximization, not imposed by hand. |
+| | Paper 14 (spectral standpoint) | KT-01's identification of spectral action as partition function connects to Paper 14's thermodynamic interpretation (S_b = free energy). |
+| | Paper 16 (finite density, Bessel) | KT-01 is the predecessor. Paper 16 extends the entropy-spectral action identity to finite chemical potential mu with Bessel function coefficients. |
+| KT-02: Spectral Characterization of Manifolds (2008, Connes) | **Paper 04** (NCG book, 1994) | KT-02 proves the reconstruction conjecture stated in Paper 04 Ch V: commutative spectral triples satisfying five axioms uniquely determine smooth compact Riemannian manifolds. |
+| | Paper 08 (gravity + matter from axioms) | KT-02 rigorizes the axiom framework used in Paper 08. The five axioms in KT-02's strengthened form are the same axioms Paper 08 applies to derive the SM. |
+| | Paper 05 (real structure, KO-dim) | KT-02 establishes which spectral data is K-theoretically protected (index, dimension, spin structure) vs analytically contingent (metric, Seeley-DeWitt coefficients). This is the mathematical basis for Paper 05's KO-dim classification being permanent. |
+| | Paper 28 (spectral truncations) | KT-02's reconstruction is the target that Paper 28's truncated spectral triples converge toward. Tolerance relations in Paper 28 quantify departure from KT-02's exact reconstruction. |
+| KT-04: Universal Action Formula (1996, Chamseddine-Connes) | **Paper 07** (spectral action principle) | Same foundational paper. KT-04 is the K-Theory collection's copy of the 1996 Chamseddine-Connes spectral action paper. Paper 07 is the Connes collection's entry. Both introduce S = Tr f(D^2/Lambda^2). |
+| | Paper 10 (CCM 2007) | KT-04 introduces the principle; Paper 10 carries out the complete computation for the SM spectral triple with neutrino mixing, yielding definitive a_0/a_2/a_4 coefficients. |
+| | Paper 06 (local index formula) | KT-04's heat kernel expansion relies on the Seeley-DeWitt machinery developed in Paper 06 (Connes-Moscovici local index formula). |
+| KT-05: Boundary Terms from Spectral Action (2007, Chamseddine-Connes) | Paper 07 (spectral action principle) | KT-05 extends Paper 07's spectral action to manifolds with boundary, proving the Gibbons-Hawking-York term emerges automatically with correct sign and coefficient. |
+| | Paper 10 (CCM 2007) | KT-05 and Paper 10 are contemporaneous. KT-05 establishes that boundary contributions to the heat kernel expansion produce the correct gravitational boundary term for the SM spectral triple of Paper 10. |
+| | Paper 42 (Nelson-Sakellariadou cosmology) | KT-05's boundary structure is relevant to Paper 42's spectral action cosmology: boundary terms at the fold transition determine energy conservation and tunneling amplitudes. |
+| KT-06: Cyclic Cohomology on SUq(2) (2002, Connes) | **Paper 01** (C*-algebras, cyclic cohomology) | KT-06 extends Paper 01's founding cyclic cohomology program to quantum groups. The cyclic cocycle structure of Paper 01 is shown to survive quantization (q-deformation). |
+| | Paper 02 (full cyclic theory) | KT-06 applies Paper 02's (b,B)-bicomplex and Chern-Connes character to the quantum group SUq(2), demonstrating that periodic cyclic cohomology computes the correct index. |
+| | Paper 06 (local index formula) | KT-06 extends Paper 06's Connes-Moscovici local index formula to quantum groups. The Wodzicki residue and pseudo-differential calculus are adapted to the noncommutative setting. |
+| KT-07: Type III and Spectral Triples (2006, Connes-Moscovici) | **Paper 06** (local index formula) | KT-07 extends Paper 06's local index formula to Type III von Neumann algebras via twisted spectral triples. The Chern character lands in ordinary (untwisted) cyclic cohomology despite the twist. |
+| | Paper 02 (full cyclic theory) | KT-07 proves that cyclic cohomology remains well-defined even without a trace (Type III). Paper 02's framework is more robust than initially expected. |
+| | Paper 05 (real structure, KO-dim) | KT-07's result that K-theoretic invariants are independent of trace choice supports Paper 05's KO-dim classification as canonical and natural. |
+| | Paper 14 (spectral standpoint) | KT-07's Type III universality is referenced in Paper 14's survey of the current state of NCG. The K-theoretic independence of trace is part of Paper 14's argument for the thermodynamic interpretation. |
+
+### Duplicate Identification
+
+Two K-Theory papers are duplicates of existing Connes papers:
+- **KT-01** = **Paper 15**: Both are Chamseddine-Connes-van Suijlekom (2018/2019), "Entropy and the spectral action." arXiv:1809.02944.
+- **KT-04** = **Paper 07**: Both are Chamseddine-Connes (1996), "The spectral action principle." arXiv:hep-th/9606056.
+
+The remaining four (KT-02, KT-05, KT-06, KT-07) are NOT duplicated in the Connes collection and provide independent K-theoretic content.
+
+### S71 Scheme-Dependent/Independent Partition
+
+The S71 workshop finding that predictions partition into K-theoretic (scheme-independent) vs spectral (scheme-dependent) classes is grounded primarily in three K-Theory papers:
+
+1. **KT-02 (Reconstruction Theorem)**: Most directly relevant. Proves that the five axioms determine topology and K-theoretic structure, while the metric (hence Seeley-DeWitt coefficients) depends on the specific Dirac operator. This is the rigorous mathematical statement behind the partition: the axioms fix KO-dimension, index, quantum numbers; the heat kernel expansion fixes masses, couplings, CC.
+
+2. **KT-01 (Entropy = Spectral Action)**: Shows that the choice of test function f is not arbitrary -- entropy selects a universal f_S whose moments are Riemann xi values. This constrains the scheme-dependent side: even the "contingent" Seeley-DeWitt coefficients are partially determined by the entropy-spectral action identity. The degree of remaining freedom is the gap between f_S and the physical cutoff function.
+
+3. **KT-07 (Type III Extension)**: Shows that K-theoretic invariants do not require a trace. This is the strongest universality result: even if the algebra has no natural averaging (Type III), the index, Chern character, and cyclic cohomology class are well-defined. For the framework, this means KO-dimension and quantum numbers survive regardless of how exotic the internal geometry becomes under deformation.
+
+KT-06 provides a worked example (SUq(2)) demonstrating that the index is stable under q-deformation, directly analogous to the framework's claim that KO-dimension and quantum numbers are stable under Jensen deformation (tau variation). KT-05 shows that boundary terms are K-theoretically determined, placing boundary physics on the scheme-independent side.

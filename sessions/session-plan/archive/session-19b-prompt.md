@@ -34,9 +34,9 @@ Plus a prerequisite: V_eff exponential fit and slow-roll parameter check (Addend
 
 2. **Baptista Paper 15**: `researchers/Baptista/15_2024_Internal_symmetries_in_Kaluza_Klein_models.md` — Section 3.6 (FRW-KK cosmology), eq 3.77 (TT kinetic term), eq 3.79 (4D Lagrangian), eq 3.80 (V_tree), eq 3.84 (gauge boson mass), eq 3.87 (CW correction).
 
-3. **Session 17a gauge coupling derivation**: `tier0-computation/gauge_coupling_derivation.py` — The B-1 result: g_1/g_2 = e^{-2tau}. You need d(g_i)/d(tau) for Calculation B.
+3. **Session 17a gauge coupling derivation**: `computations/gauge_coupling_derivation.py` — The B-1 result: g_1/g_2 = e^{-2tau}. You need d(g_i)/d(tau) for Calculation B.
 
-4. **Session 18 V_eff data**: `tier0-computation/h5_standalone_verify.py` — The independently verified V_eff values at 26 tau-points. This is your V_eff input for the ODE solver.
+4. **Session 18 V_eff data**: `computations/h5_standalone_verify.py` — The independently verified V_eff values at 26 tau-points. This is your V_eff input for the ODE solver.
 
 5. **Your agent memory**: `.claude/agent-memory/baptista-spacetime-analyst/` — Check for Session 18 addendum context.
 
@@ -97,7 +97,7 @@ w_tau   = p_tau / rho_tau
 | Source | What | Location |
 |:-------|:-----|:---------|
 | V_eff(tau) at 26 tau-values | Monotonically decreasing, independently verified to 4 sig figs | h5_standalone_verify.py output |
-| V_tree(tau) | Exact analytic function | tier1_spectral_action.py: baptista_V_tree() |
+| V_tree(tau) | Exact analytic function | spectral_action.py: baptista_V_tree() |
 | R_K(tau) | Scalar curvature of Jensen-deformed SU(3) | sp2_final_verification.py output |
 | Gauge couplings | g_1/g_2 = e^{-2tau} (analytic) | gauge_coupling_derivation.py |
 | V_eff mu-dependence | V_eff at mu=0.01, 1.0, 10.0, 100.0 | Session 18 data (Addendum XII.4) |
@@ -314,7 +314,7 @@ d(alpha_em)/dt = (d(alpha_em)/dtau) * tau_dot
 
 **4 deliverables from 2 agents over 2-3 days.**
 
-All scripts go in `tier0-computation/`. Naming: `r19b_veff_fit.py`, `r19b_frw_solver.py`, `r19b_gauge_drift.py`, `r19b_wz_desi.py`.
+All scripts go in `computations/`. Naming: `r19b_veff_fit.py`, `r19b_frw_solver.py`, `r19b_gauge_drift.py`, `r19b_wz_desi.py`.
 
 **Environment**: System Python (`python`). scipy.integrate.solve_ivp, scipy.optimize.curve_fit, numpy, matplotlib. No GPU.
 

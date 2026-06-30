@@ -3,7 +3,7 @@
 **Date**: 2026-03-15
 **Author**: Gen-Physicist (session plan)
 **Format**: Parallel single-agent computations across 8 waves
-**Source**: S44 quicklook (31 computations, 8 structural results, 7 closures), S44 collab reviews (9 specialists + Sagan + Landau framework doc + master synthesis), S45 prereg (4 tiers, 42 distinct suggestions, 6 convergence clusters), S45 occupied-state specification, Landau classification document
+**Source**: S44 quicklook (31 computations, 8 structural results, 7 closures), S44 collab reviews (9 specialists + Sagan + Landau framework doc + master synthesis), S45 prereg (4 levels, 42 distinct suggestions, 6 convergence clusters), S45 occupied-state specification, Landau classification document
 **Motivation**: Session 44 proved G_N from three independent routes (factor 2.3 agreement), established CDM by algebraic construction (T^{0i}=0), closed the entire amplitude-projection class for n_s (epsilon_H ratio invariance theorem), and deepened the CC to an honest 110.5 orders. The session raised P from 12% to 23% on the strength of G_N triple convergence and CDM, but n_s remains the framework's most severe deficit. Session 45 attacks the two session-defining computations: the occupied-state spectral action (sole surviving tau-stabilization route) and the Kibble-Zurek Bogoliubov spectrum (sole surviving dynamical n_s route). The CC is addressed through analytic torsion and q-theory on the corrected discrete KK tower.
 **Results file**: `sessions/session-45/session-45-results-workingpaper.md`
 
@@ -186,10 +186,10 @@ The second term (eigenvalue change) has the same sign as in S37 (monotone contri
 
 **Computation Steps**:
 
-1. **Load spectrum.** Eigenvalues lambda_k(tau) from `tier0-computation/s41_spectral_refinement.npz` (multiple tau) and `tier0-computation/s36_sfull_tau_stabilization.npz`. Peter-Weyl degeneracies d_k = dim(p,q)^2 = ((p+1)(q+1)(p+q+2)/2)^2 from standard formula. Also load: `tier0-computation/s42_hauser_feshbach.npz` (992 eigenvalues at fold, sector labels, multiplicities), `tier0-computation/s38_cc_instanton.npz` (BCS coupling, Delta_0), `tier0-computation/s44_dos_tau.npz` (van Hove tracking), `tier0-computation/s44_vanhove_track.npz`.
+1. **Load spectrum.** Eigenvalues lambda_k(tau) from `computations/s41_spectral_refinement.npz` (multiple tau) and `computations/s36_sfull_tau_stabilization.npz`. Peter-Weyl degeneracies d_k = dim(p,q)^2 = ((p+1)(q+1)(p+q+2)/2)^2 from standard formula. Also load: `computations/s42_hauser_feshbach.npz` (992 eigenvalues at fold, sector labels, multiplicities), `computations/s38_cc_instanton.npz` (BCS coupling, Delta_0), `computations/s44_dos_tau.npz` (van Hove tracking), `computations/s44_vanhove_track.npz`.
 
 2. **BCS gap equation at each tau.** For tau = 0.00, 0.02, 0.05, 0.08, 0.10, 0.12, 0.14, 0.16, 0.17, 0.18, 0.185, 0.190, 0.195, 0.20, 0.22, 0.25, 0.30, 0.35, 0.40, 0.50:
-   - Compute eigenvalues at that tau (use `tier0-computation/tier1_dirac_spectrum.py` if not already stored)
+   - Compute eigenvalues at that tau (use `computations/dirac_spectrum.py` if not already stored)
    - Compute DOS N(E, tau) from eigenvalues
    - Solve the self-consistent BCS gap equation: 1/g = sum_k d_k / (2 * E_k) where E_k = sqrt(xi_k^2 + Delta^2) and xi_k = lambda_k - mu (mu=0, S34 result). Use the BCS coupling from S35/S38: the B2 pairing interaction V_eff
    - Obtain Delta(tau) and the Bogoliubov amplitudes u_k(tau), v_k(tau)
@@ -242,20 +242,20 @@ The second term (eigenvalue change) has the same sign as in S37 (monotone contri
 - **BONUS**: tau_min within 10% of tau_fold = 0.190 (self-consistent fold selection)
 
 **Input files**:
-- `tier0-computation/s41_spectral_refinement.npz`
-- `tier0-computation/s36_sfull_tau_stabilization.npz`
-- `tier0-computation/s42_hauser_feshbach.npz`
-- `tier0-computation/s38_cc_instanton.npz`
-- `tier0-computation/s36_mmax_authoritative.npz`
-- `tier0-computation/s44_dos_tau.npz`
-- `tier0-computation/s44_vanhove_track.npz`
-- `tier0-computation/tier1_dirac_spectrum.py` (for new tau values)
+- `computations/s41_spectral_refinement.npz`
+- `computations/s36_sfull_tau_stabilization.npz`
+- `computations/s42_hauser_feshbach.npz`
+- `computations/s38_cc_instanton.npz`
+- `computations/s36_mmax_authoritative.npz`
+- `computations/s44_dos_tau.npz`
+- `computations/s44_vanhove_track.npz`
+- `computations/dirac_spectrum.py` (for new tau values)
 - `researchers/Connes/16_2022_Dong_Khalkhali_van_Suijlekom_Second_quantization_spectral_action.md`
 
 **Output files**:
-- Script: `tier0-computation/s45_occ_spectral.py`
-- Data: `tier0-computation/s45_occ_spectral.npz`
-- Plot: `tier0-computation/s45_occ_spectral.png`
+- Script: `computations/s45_occ_spectral.py`
+- Data: `computations/s45_occ_spectral.npz`
+- Plot: `computations/s45_occ_spectral.png`
 
 **Working paper section**: W1-1
 
@@ -263,7 +263,7 @@ The second term (eigenvalue change) has the same sign as in S37 (monotone contri
 - Independent BCS gap solver (Strutinsky-smoothed DOS vs raw)
 - Verify n_k(tau) at 5 anchor points (tau = 0.00, 0.10, 0.19, 0.25, 0.50)
 - Flag if S_vac monotonicity cross-check fails
-- Report: `tier0-computation/s45_occ_spectral_crosscheck.py`
+- Report: `computations/s45_occ_spectral_crosscheck.py`
 
 ---
 
@@ -302,7 +302,7 @@ For d=3, z=2.024, nu=0.6301 (3D Ising, S43 BCS-CLASS-43): n_s = -0.68 (far too r
 
 **Computation Steps**:
 
-1. **Load eigenvalue data.** From `tier0-computation/s42_hauser_feshbach.npz` (992 eigenvalues at fold), `tier0-computation/s41_spectral_refinement.npz` (eigenvalues at multiple tau), `tier0-computation/s38_cc_instanton.npz` (BCS parameters, quench parameters), `tier0-computation/s44_dos_tau.npz` (van Hove evolution).
+1. **Load eigenvalue data.** From `computations/s42_hauser_feshbach.npz` (992 eigenvalues at fold), `computations/s41_spectral_refinement.npz` (eigenvalues at multiple tau), `computations/s38_cc_instanton.npz` (BCS parameters, quench parameters), `computations/s44_dos_tau.npz` (van Hove evolution).
 
 2. **Pre-transit and post-transit spectra.** Define:
    - Pre-transit: lambda_k^{in} at tau = 0 (round SU(3), maximal degeneracy)
@@ -374,18 +374,18 @@ For d=3, z=2.024, nu=0.6301 (3D Ising, S43 BCS-CLASS-43): n_s = -0.68 (far too r
 - **BONUS**: alpha_s consistent with Planck within 2 sigma
 
 **Input files**:
-- `tier0-computation/s42_hauser_feshbach.npz`
-- `tier0-computation/s41_spectral_refinement.npz`
-- `tier0-computation/s38_cc_instanton.npz`
-- `tier0-computation/s44_dos_tau.npz`
-- `tier0-computation/s44_vanhove_track.npz`
-- `tier0-computation/s42_constants_snapshot.npz`
+- `computations/s42_hauser_feshbach.npz`
+- `computations/s41_spectral_refinement.npz`
+- `computations/s38_cc_instanton.npz`
+- `computations/s44_dos_tau.npz`
+- `computations/s44_vanhove_track.npz`
+- `computations/s42_constants_snapshot.npz`
 - `researchers/Volovik/21_2016_Kibble_Zurek_Phase_Transitions.md` (if available)
 
 **Output files**:
-- Script: `tier0-computation/s45_kz_ns.py`
-- Data: `tier0-computation/s45_kz_ns.npz`
-- Plot: `tier0-computation/s45_kz_ns.png`
+- Script: `computations/s45_kz_ns.py`
+- Data: `computations/s45_kz_ns.npz`
+- Plot: `computations/s45_kz_ns.png`
 
 **Working paper section**: W1-2
 
@@ -393,7 +393,7 @@ For d=3, z=2.024, nu=0.6301 (3D Ising, S43 BCS-CLASS-43): n_s = -0.68 (far too r
 - Independent Bogoliubov coefficient computation
 - Verify |beta_k|^2 vanishes for modes with lambda_k^{in} = lambda_k^{out}
 - Test alternative quench profiles (linear ramp, tanh profile)
-- Report: `tier0-computation/s45_kz_ns_crosscheck.py`
+- Report: `computations/s45_kz_ns_crosscheck.py`
 
 ---
 
@@ -430,8 +430,8 @@ Compute zeta'(0) by numerical differentiation of the partial sums of lambda_k^{-
 
 **FORMULA AUDIT**: (a) Units: T is dimensionless (exponential of a spectral invariant). (b) Dimensional check: zeta'(0) is dimensionless (spectral zeta at s=0). (c) Limiting case: for S^1 of length L, T(S^1) = L/(2 pi). For round S^3, T = 1. (d) Cite: Ray-Singer (1971), Cheeger-Muller theorem.
 
-**Input files**: `tier0-computation/s42_hauser_feshbach.npz`, `tier0-computation/s41_spectral_refinement.npz`
-**Output files**: Script `tier0-computation/s45_analytic_torsion.py`, Data `tier0-computation/s45_analytic_torsion.npz`, Plot `tier0-computation/s45_analytic_torsion.png`
+**Input files**: `computations/s42_hauser_feshbach.npz`, `computations/s41_spectral_refinement.npz`
+**Output files**: Script `computations/s45_analytic_torsion.py`, Data `computations/s45_analytic_torsion.npz`, Plot `computations/s45_analytic_torsion.png`
 **Working paper section**: W2-1
 
 ---
@@ -448,7 +448,7 @@ Compute zeta'(0) by numerical differentiation of the partial sums of lambda_k^{-
 You are computing the non-equilibrium specific heat exponent alpha_eff from the 8-temperature GGE, which determines the DM/DE ratio. S44 W6-4 found the best equilibrium estimate: DM/DE = 1.06 (2.7x observed 0.387). The GGE has 8 independent temperatures (S44 W6-5), 3 of which are negative. The equilibrium specific heat exponents (Bose alpha=3, Fermi alpha=2, 3D Ising alpha=0.110) do not match the observed 0.387. The non-equilibrium computation is needed.
 
 **Method.** From the 8 Richardson-Gaudin conserved integrals I_k and the GGE Lagrange multipliers lambda_k (the "8 temperatures"):
-1. Load 8 GGE temperatures from `tier0-computation/s44_multi_t_jacobson.npz`
+1. Load 8 GGE temperatures from `computations/s44_multi_t_jacobson.npz`
 2. Compute the energy-temperature response matrix C_kl = dE_k / dT_l
 3. Diagonalize C_kl to obtain heat capacity eigenvalues (3 negative from S44 W6-5)
 4. Define alpha_eff from Omega_DM / Omega_DE = f(eigenvalue spectrum)
@@ -458,8 +458,8 @@ You are computing the non-equilibrium specific heat exponent alpha_eff from the 
 
 **FORMULA AUDIT**: (a) C_kl in units of dimensionless (energy/temperature). (b) Dimensional check. (c) Limiting case: if all T_k equal, C_kl reduces to scalar C = dE/dT, and alpha_eff = equilibrium alpha. (d) Cite: Landau Paper 04 Section 4, Volovik Paper 05 Section 2.
 
-**Input files**: `tier0-computation/s44_multi_t_jacobson.npz`, `tier0-computation/s42_gge_energy.npz`, `tier0-computation/s44_dm_de_ratio.npz`
-**Output files**: Script `tier0-computation/s45_alpha_eff.py`, Data `tier0-computation/s45_alpha_eff.npz`, Plot `tier0-computation/s45_alpha_eff.png`
+**Input files**: `computations/s44_multi_t_jacobson.npz`, `computations/s42_gge_energy.npz`, `computations/s44_dm_de_ratio.npz`
+**Output files**: Script `computations/s45_alpha_eff.py`, Data `computations/s45_alpha_eff.npz`, Plot `computations/s45_alpha_eff.png`
 **Working paper section**: W2-2
 
 ---
@@ -487,8 +487,8 @@ You are computing the Volovik q-theory self-tuning mechanism on the CORRECTED di
 
 **FORMULA AUDIT**: (a) rho(q) in GeV^4. (b) Dimensional check: q is dimensionless, rho has mass dimension 4. (c) Limiting case: continuous spectrum -> Volovik Papers 15-16 result. (d) Cite: Volovik Papers 15-16 (q-theory), S44 W1-4 (trace-log), S44 W2-3 (EIH singlet).
 
-**Input files**: `tier0-computation/s43_qtheory_selftune.npz`, `tier0-computation/s44_tracelog_cc.npz`, `tier0-computation/s44_eih_grav.npz`, `tier0-computation/s42_hauser_feshbach.npz`
-**Output files**: Script `tier0-computation/s45_qtheory_kk.py`, Data `tier0-computation/s45_qtheory_kk.npz`, Plot `tier0-computation/s45_qtheory_kk.png`
+**Input files**: `computations/s43_qtheory_selftune.npz`, `computations/s44_tracelog_cc.npz`, `computations/s44_eih_grav.npz`, `computations/s42_hauser_feshbach.npz`
+**Output files**: Script `computations/s45_qtheory_kk.py`, Data `computations/s45_qtheory_kk.npz`, Plot `computations/s45_qtheory_kk.png`
 **Working paper section**: W2-3
 
 ---
@@ -532,8 +532,8 @@ Test three routes:
 
 **Gate SIGMA-SELECT-45**: PASS if self-consistent sigma found. FAIL if no fixed point. INFO if multiple.
 
-**Input files**: `tier0-computation/s44_dimflow.npz`, `tier0-computation/s42_constants_snapshot.npz`
-**Output files**: Script `tier0-computation/s45_sigma_select.py`
+**Input files**: `computations/s44_dimflow.npz`, `computations/s42_constants_snapshot.npz`
+**Output files**: Script `computations/s45_sigma_select.py`
 **Working paper section**: W2-4
 
 ---
@@ -559,8 +559,8 @@ Computation:
 
 **Gate MKK-TENSION-45**: PASS if tension narrows to < 0.2 decades. FAIL if structural and irreducible. INFO if partially resolved.
 
-**Input files**: `tier0-computation/s44_mkk_reconcile.npz`, `tier0-computation/s44_constants_corrected.npz`, `tier0-computation/s42_constants_snapshot.npz`
-**Output files**: Script `tier0-computation/s45_mkk_tension.py`, Data `tier0-computation/s45_mkk_tension.npz`
+**Input files**: `computations/s44_mkk_reconcile.npz`, `computations/s44_constants_corrected.npz`, `computations/s42_constants_snapshot.npz`
+**Output files**: Script `computations/s45_mkk_tension.py`, Data `computations/s45_mkk_tension.npz`
 **Working paper section**: W3-1
 
 ---
@@ -584,8 +584,8 @@ Steps:
 
 **Gate ECOND-RECONCILE-45**: INFO (determine authoritative value, quantify downstream impact).
 
-**Input files**: `tier0-computation/s37_pair_susceptibility.npz`, `tier0-computation/s42_hauser_feshbach.npz`
-**Output files**: Script `tier0-computation/s45_econd_reconcile.py`, Data `tier0-computation/s45_econd_reconcile.npz`
+**Input files**: `computations/s37_pair_susceptibility.npz`, `computations/s42_hauser_feshbach.npz`
+**Output files**: Script `computations/s45_econd_reconcile.py`, Data `computations/s45_econd_reconcile.npz`
 **Working paper section**: W3-2
 
 ---
@@ -601,7 +601,7 @@ Steps:
 The Debye-Waller factor exp(-2W) suppresses coherent scattering in crystals. On SU(3), the phonon spectrum (S44 W5-3: gap stable, bandwidth +28%) provides a DW factor for the spectral action eigenvalues. If 2W ~ O(1), the spectral action receives significant thermal corrections. Compute this.
 
 Steps:
-1. Load DOS from `tier0-computation/s44_dos_tau.npz`
+1. Load DOS from `computations/s44_dos_tau.npz`
 2. Compute the mean-square displacement <u^2> from the phonon DOS using standard Debye theory
 3. Evaluate 2W = <u^2> * (2 pi / d)^2 where d is the nearest-neighbor distance on SU(3)
 4. Compute exp(-2W) and report whether the DW correction is percent-level or larger
@@ -609,8 +609,8 @@ Steps:
 
 **Gate DEBYE-WALLER-45**: INFO (diagnostic, whether DW factor modifies spectral action at percent level).
 
-**Input files**: `tier0-computation/s44_dos_tau.npz`, `tier0-computation/s42_hauser_feshbach.npz`
-**Output files**: Script `tier0-computation/s45_debye_waller.py`, Data `tier0-computation/s45_debye_waller.npz`
+**Input files**: `computations/s44_dos_tau.npz`, `computations/s42_hauser_feshbach.npz`
+**Output files**: Script `computations/s45_debye_waller.py`, Data `computations/s45_debye_waller.npz`
 **Working paper section**: W3-3
 
 ---
@@ -633,8 +633,8 @@ Steps:
 
 **Gate QNM-NS-45**: INFO (diagnostic, comparing QNM route to Bogoliubov route).
 
-**Input files**: `tier0-computation/s44_friedmann_bcs_audit.npz`, `tier0-computation/s44_dimflow.npz`
-**Output files**: Script `tier0-computation/s45_qnm_ns.py`, Data `tier0-computation/s45_qnm_ns.npz`
+**Input files**: `computations/s44_friedmann_bcs_audit.npz`, `computations/s44_dimflow.npz`
+**Output files**: Script `computations/s45_qnm_ns.py`, Data `computations/s45_qnm_ns.npz`
 **Working paper section**: W3-4
 
 ---
@@ -649,18 +649,18 @@ Steps:
 
 **Prompt**:
 
-Complete the upstream audit of all tier0 .npz files for consistency. The S44 parallel audit found 3 issues (Vol(SU(3)) 3 values, E_cond 2 values, stale M_KK). Complete the S7-S24 foundational script audit. Produce a CANONICAL CONSTANTS FILE imported by all future scripts.
+Complete the upstream audit of all computation .npz files for consistency. The S44 parallel audit found 3 issues (Vol(SU(3)) 3 values, E_cond 2 values, stale M_KK). Complete the S7-S24 foundational script audit. Produce a CANONICAL CONSTANTS FILE imported by all future scripts.
 
 Steps:
-1. Catalog every .npz file in tier0-computation/ with creation date and key quantities stored
+1. Catalog every .npz file in computations/ with creation date and key quantities stored
 2. Cross-check: every file that stores M_KK, E_cond, Vol_SU3, Delta_0, mu must agree with the authoritative values
 3. Flag any inconsistencies with file path, stored value, and authoritative value
-4. Write `tier0-computation/s45_canonical_constants.py` that defines ALL authoritative constants in one place
+4. Write `computations/s45_canonical_constants.py` that defines ALL authoritative constants in one place
 5. Verify the authoritative values: M_KK (gravity route), E_cond (from ECOND-RECONCILE-45), Vol(SU(3)) (from MKK-TENSION-45), Delta_0 (from s38), mu=0 (from S34 theorem)
 
 **Gate DATA-PROVENANCE-45**: INFO (audit, produce canonical constants file).
 
-**Output files**: `tier0-computation/s45_canonical_constants.py`, `tier0-computation/s45_data_provenance_audit.md`
+**Output files**: `computations/s45_canonical_constants.py`, `computations/s45_data_provenance_audit.md`
 **Working paper section**: W4-1
 
 ---
@@ -684,8 +684,8 @@ Steps:
 
 **Gate KRETSCHNER-12D-45**: INFO (geometric diagnostic).
 
-**Input files**: `tier0-computation/s42_hauser_feshbach.npz` (metric data)
-**Output files**: Script `tier0-computation/s45_kretschner.py`, Data `tier0-computation/s45_kretschner.npz`
+**Input files**: `computations/s42_hauser_feshbach.npz` (metric data)
+**Output files**: Script `computations/s45_kretschner.py`, Data `computations/s45_kretschner.npz`
 **Working paper section**: W4-2
 
 ---
@@ -709,8 +709,8 @@ Steps:
 
 **Gate DOS-FINE-SCAN-45**: INFO (diagnostic feeding OCC-SPEC interpretation).
 
-**Input files**: `tier0-computation/s44_vanhove_track.npz`, `tier0-computation/tier1_dirac_spectrum.py`
-**Output files**: Script `tier0-computation/s45_dos_fine_scan.py`, Data `tier0-computation/s45_dos_fine_scan.npz`, Plot `tier0-computation/s45_dos_fine_scan.png`
+**Input files**: `computations/s44_vanhove_track.npz`, `computations/dirac_spectrum.py`
+**Output files**: Script `computations/s45_dos_fine_scan.py`, Data `computations/s45_dos_fine_scan.npz`, Plot `computations/s45_dos_fine_scan.png`
 **Working paper section**: W4-3
 
 ---
@@ -738,8 +738,8 @@ Steps:
 
 **Gate EULER-DEFICIT-45**: INFO (structural result, connects to CC through vacuum energy accounting).
 
-**Input files**: `tier0-computation/s44_multi_t_jacobson.npz`, `tier0-computation/s42_gge_energy.npz`
-**Output files**: Script `tier0-computation/s45_euler_deficit.py`
+**Input files**: `computations/s44_multi_t_jacobson.npz`, `computations/s42_gge_energy.npz`
+**Output files**: Script `computations/s45_euler_deficit.py`
 **Working paper section**: W4-4
 
 ---
@@ -758,8 +758,8 @@ S44 W1-1 (corrected) found Lambda_eff ~ 10 x M_KK. S44 W6-7 found epsilon_c ~ 1/
 
 **Gate SAKHAROV-UV-DISSOLUTION-45**: INFO (link between UV physics and emergence).
 
-**Input files**: `tier0-computation/s44_sakharov_gn_audit.npz`, `tier0-computation/s44_dissolution_scaling.npz`
-**Output files**: Script `tier0-computation/s45_sakharov_dissolution.py`
+**Input files**: `computations/s44_sakharov_gn_audit.npz`, `computations/s44_dissolution_scaling.npz`
+**Output files**: Script `computations/s45_sakharov_dissolution.py`
 **Working paper section**: W5-1
 
 ---
@@ -777,7 +777,7 @@ The occupied-state spectral action (Paper 16) defines a modified spectral triple
 **Gate OCCUPIED-CYCLIC-45**: INFO (mathematical foundation for OCC-SPEC).
 
 **Input files**: `researchers/Connes/16_2022_Dong_Khalkhali_van_Suijlekom_Second_quantization_spectral_action.md`
-**Output files**: Script `tier0-computation/s45_occupied_cyclic.py`
+**Output files**: Script `computations/s45_occupied_cyclic.py`
 **Working paper section**: W5-2
 
 ---
@@ -794,8 +794,8 @@ Construct the GL free energy F(T_1, ..., T_8) on the 8-temperature GGE manifold.
 
 **Gate GL-GGE-STABILITY-45**: INFO (landscape topology for DM/DE and stability analysis).
 
-**Input files**: `tier0-computation/s44_multi_t_jacobson.npz`, `tier0-computation/s42_gge_energy.npz`
-**Output files**: Script `tier0-computation/s45_gl_gge.py`, Data `tier0-computation/s45_gl_gge.npz`
+**Input files**: `computations/s44_multi_t_jacobson.npz`, `computations/s42_gge_energy.npz`
+**Output files**: Script `computations/s45_gl_gge.py`, Data `computations/s45_gl_gge.npz`
 **Working paper section**: W5-3
 
 ---
@@ -812,8 +812,8 @@ S44 W1-1 computed G_N^{Sakharov} at the fold. Compute G_N(tau) across the full t
 
 **Gate RUNNING-GN-45**: INFO (diagnostic, tau-dependence of gravitational coupling).
 
-**Input files**: `tier0-computation/s44_sakharov_gn_audit.npz`, `tier0-computation/s41_spectral_refinement.npz`
-**Output files**: Script `tier0-computation/s45_running_gn.py`, Data `tier0-computation/s45_running_gn.npz`, Plot `tier0-computation/s45_running_gn.png`
+**Input files**: `computations/s44_sakharov_gn_audit.npz`, `computations/s41_spectral_refinement.npz`
+**Output files**: Script `computations/s45_running_gn.py`, Data `computations/s45_running_gn.npz`, Plot `computations/s45_running_gn.png`
 **Working paper section**: W5-4
 
 ---
@@ -830,8 +830,8 @@ Test the weak order-one condition from Connes Paper 25 on the framework's spectr
 
 **Gate WEAK-ORDER-ONE-45**: INFO (structural condition on the spectral triple).
 
-**Input files**: `tier0-computation/s42_hauser_feshbach.npz`, `researchers/Connes/25_2023_Connes_Spectral_Action_Weak_Order_One.md` (if available)
-**Output files**: Script `tier0-computation/s45_weak_order_one.py`
+**Input files**: `computations/s42_hauser_feshbach.npz`, `researchers/Connes/25_2023_Connes_Spectral_Action_Weak_Order_One.md` (if available)
+**Output files**: Script `computations/s45_weak_order_one.py`
 **Working paper section**: W5-5
 
 ---
@@ -848,7 +848,7 @@ Compute the Bayes factor between q-theory and spectral action for the CC, using 
 
 **Gate BAYESIAN-MODEL-45**: INFO (model comparison).
 
-**Output files**: Script `tier0-computation/s45_bayesian_model.py`
+**Output files**: Script `computations/s45_bayesian_model.py`
 **Working paper section**: W6-1
 
 ---
@@ -863,8 +863,8 @@ Compute the phononic Casimir force between KZ domain walls in the internal space
 
 **Gate ACOUSTIC-CASIMIR-45**: INFO (acoustic interaction between domains).
 
-**Input files**: `tier0-computation/s44_coherent_wall.npz`, `tier0-computation/s44_dos_tau.npz`
-**Output files**: Script `tier0-computation/s45_acoustic_casimir.py`
+**Input files**: `computations/s44_coherent_wall.npz`, `computations/s44_dos_tau.npz`
+**Output files**: Script `computations/s45_acoustic_casimir.py`
 **Working paper section**: W6-2
 
 ---
@@ -879,8 +879,8 @@ S44 W2-3 (EIH-GRAV-44) found S_singlet/S_fold = 5.684e-5 (17,594x suppression). 
 
 **Gate PETER-WEYL-CENSORSHIP-45**: INFO (robustness of EIH singlet projection).
 
-**Input files**: `tier0-computation/s44_eih_grav.npz`, `tier0-computation/s44_dissolution_scaling.npz`
-**Output files**: Script `tier0-computation/s45_peter_weyl_censorship.py`
+**Input files**: `computations/s44_eih_grav.npz`, `computations/s44_dissolution_scaling.npz`
+**Output files**: Script `computations/s45_peter_weyl_censorship.py`
 **Working paper section**: W6-3
 
 ---
@@ -895,8 +895,8 @@ Compute the autocorrelation function C(t) = <O(t) O(0)>_GGE from the 8 GGE modes
 
 **Gate GGE-BEATING-45**: INFO (GGE temporal structure).
 
-**Input files**: `tier0-computation/s44_multi_t_jacobson.npz`, `tier0-computation/s42_gge_energy.npz`
-**Output files**: Script `tier0-computation/s45_gge_beating.py`
+**Input files**: `computations/s44_multi_t_jacobson.npz`, `computations/s42_gge_energy.npz`
+**Output files**: Script `computations/s45_gge_beating.py`
 **Working paper section**: W6-4
 
 ---
@@ -911,8 +911,8 @@ Map the two-fluid (superfluid + normal) post-transit state to an effective w(z) 
 
 **Gate TWO-FLUID-DESI-45**: INFO (w(z) prediction for DESI comparison).
 
-**Input files**: `tier0-computation/s44_dm_de_ratio.npz`, `tier0-computation/s42_constants_snapshot.npz`
-**Output files**: Script `tier0-computation/s45_two_fluid_desi.py`, Data `tier0-computation/s45_two_fluid_desi.npz`
+**Input files**: `computations/s44_dm_de_ratio.npz`, `computations/s42_constants_snapshot.npz`
+**Output files**: Script `computations/s45_two_fluid_desi.py`, Data `computations/s45_two_fluid_desi.npz`
 **Working paper section**: W6-5
 
 ---
@@ -927,8 +927,8 @@ Construct the spectral Penrose diagram in the (tau, lambda_k) plane, colored by 
 
 **Gate SPECTRAL-PENROSE-45**: INFO (visualization).
 
-**Input files**: `tier0-computation/s41_spectral_refinement.npz`, `tier0-computation/s44_vanhove_track.npz`, `tier0-computation/s42_hauser_feshbach.npz`
-**Output files**: Script `tier0-computation/s45_spectral_penrose.py`, Plot `tier0-computation/s45_spectral_penrose.png`
+**Input files**: `computations/s41_spectral_refinement.npz`, `computations/s44_vanhove_track.npz`, `computations/s42_hauser_feshbach.npz`
+**Output files**: Script `computations/s45_spectral_penrose.py`, Plot `computations/s45_spectral_penrose.png`
 **Working paper section**: W6-6
 
 ### W6-7: Dissolution Entanglement Entropy (DISSOLUTION-ENTROPY-45)
@@ -940,7 +940,7 @@ Construct the spectral Penrose diagram in the (tau, lambda_k) plane, colored by 
 Compute the entanglement entropy across the Poisson → GOE level statistics transition as a function of perturbation strength epsilon. S44 W6-7 characterized the dissolution by epsilon_c ~ N^{-0.457} (crossover in <r> statistic). The entanglement entropy provides a complementary characterization: how much quantum information is shared between blocks as the block-diagonal structure fragments?
 
 **Method**:
-1. Load eigenvalue data from `tier0-computation/s42_hauser_feshbach.npz` and dissolution data from `tier0-computation/s44_dissolution_scaling.npz`.
+1. Load eigenvalue data from `computations/s42_hauser_feshbach.npz` and dissolution data from `computations/s44_dissolution_scaling.npz`.
 2. For each truncation level (max_pq_sum = 1 through 5), construct the block-diagonal D_K and add random perturbation of strength epsilon.
 3. Partition the Hilbert space into blocks. Compute the reduced density matrix rho_A = Tr_B(|psi><psi|) for the ground state of the perturbed Hamiltonian.
 4. Compute S_ent(epsilon) = -Tr(rho_A ln rho_A) at 20 epsilon values from 0 to 10*epsilon_c.
@@ -951,8 +951,8 @@ Compute the entanglement entropy across the Poisson → GOE level statistics tra
 
 **Gate DISSOLUTION-ENTROPY-45**: INFO (entanglement characterization of dissolution).
 
-**Input files**: `tier0-computation/s42_hauser_feshbach.npz`, `tier0-computation/s44_dissolution_scaling.npz`
-**Output files**: Script `tier0-computation/s45_dissolution_entropy.py`, Data `.npz`, Plot `.png`
+**Input files**: `computations/s42_hauser_feshbach.npz`, `computations/s44_dissolution_scaling.npz`
+**Output files**: Script `computations/s45_dissolution_entropy.py`, Data `.npz`, Plot `.png`
 **Working paper section**: W6-7
 
 ---
@@ -985,7 +985,7 @@ Update the CC gap calculation from S44's 110.5 orders, incorporating: analytic t
 **Gate CC-GAP-UPDATE-45**: INFO (updated CC accounting).
 
 **Input files**: All s45_*.npz CC-related
-**Output files**: Script `tier0-computation/s45_cc_gap_update.py`
+**Output files**: Script `computations/s45_cc_gap_update.py`
 **Working paper section**: W7-2
 
 ---
@@ -1129,7 +1129,7 @@ Violations of this protocol should be flagged in the formula audit report (W7-1)
 1. **ALL physics agents use opus.** Sonnet only for knowledge-weaver bookkeeping.
 2. **Script prefix**: `s45_`
 3. **Python**: `"phonon-exflation-sim/.venv312/Scripts/python.exe"`
-4. **Output directory**: `tier0-computation/`
+4. **Output directory**: `computations/`
 5. **Gate IDs**: as specified in each wave prompt. No collisions with S44 IDs (all S44 gates end in `-44`).
 6. **Working paper**: `sessions/session-45/session-45-results-workingpaper.md`
 7. **One writer per output file.** Other agents contribute via SendMessage.

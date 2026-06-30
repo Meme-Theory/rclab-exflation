@@ -162,14 +162,14 @@ An honest range: **10-15% probability that the core physical picture is substant
 
 ## 4. Revised Priority List
 
-### Tier 1 -- Critical Path (UNCHANGED, all agents agree)
+### Level 1 -- Critical Path (UNCHANGED, all agents agree)
 
 | Priority | Action | Rationale | Feasibility |
 |----------|--------|-----------|-------------|
 | 1 | Compute Dirac spectrum on SU(3) with Jensen TT-deformation | Make-or-break test. Binary outcome. Everything depends on this. | Graduate-level, weeks-to-months. FEM on manifolds or perturbation theory. |
 | 2 | Monte Carlo significance test on Paasch spiral | Quantify look-elsewhere effect. Two-version protocol: (a) with Paasch's phi_paasch, (b) with optimized phi_paasch. 10^6 random spectra. | Straightforward computation, days. |
 
-### Tier 2 -- Paper Revision (MODIFIED by reframing)
+### Level 2 -- Paper Revision (MODIFIED by reframing)
 
 | Priority | Action | What Changed |
 |----------|--------|-------------|
@@ -183,7 +183,7 @@ An honest range: **10-15% probability that the core physical picture is substant
 | 10 | Note noncommutative geometry connection | NEW. "Operator dimensions" map onto Connes' spectral triple framework. This connection provides additional mathematical infrastructure. |
 | 11 | Note A2 root system hypothesis for sequence angles | NEW. If the 6 angles emerge from deformed SU(3) Weyl group, they become derived rather than empirical. |
 
-### Tier 3 -- Simulation (conditional on Tier 1)
+### Level 3 -- Simulation (conditional on Level 1)
 
 | Priority | Action | What Changed |
 |----------|--------|-------------|

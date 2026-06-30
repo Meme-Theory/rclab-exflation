@@ -1,0 +1,81 @@
+C:\sandbox\Ainulindale Exflation\computations\session-100b\s100b_w7_a2_heavy_seed_abundance.py:778: UserWarning: Tight layout not applied. The bottom and top margins cannot be made large enough to accommodate all Axes decorations.
+  fig.tight_layout(rect=(0.0, 0.0, 1.0, 0.93))
+=== S100b-A2-HEAVY-SEED-ABUNDANCE — input SHA-256 pins ===
+  10_Pacucci_LRDs-Are-Direct-Collapse-Black-Holes.pdf: 7178cf0d740af1ea... [MATCH]
+  06_Ilie_LRDs-as-Collapsed-Supermassive-Dark-Stars.pdf: 00b02df8f95f715f... [MATCH]
+  01_Sacchi_Chandra-Rules-Out-Super-Eddington-LRDs.pdf: 787239d5ae9f965f... [MATCH]
+  00-INDEX.md: 246bb0c6ff4d4c78... [MATCH]
+  session-99-litrev-jwst-lrd-little-red-dots.md: 884f99606ba951fa... [MATCH]
+  session-99-litrev-jwst-lrd-mack.md: e83c2a0f42f71de9... [MATCH]
+  canonical_constants.py: 1adce7fca7c66bbd... [runtime]
+  s100b_w7_selection_function_floor.npz: 0dffa0c3f72ca4b1... [W7-1 npz consumed]
+  audit_sha256:   37f64fcd7e81ef85... (script+canonical+pinmap+machinery)
+  content_sha256: b8ae1b2f13cc356d... (script only)
+
+=== HEAD DIAGNOSTIC — emergent G_eff vs CODATA G_N ===
+  dictionary: 1/(16 pi G_eff) = f2 * M_KK^2 * a_2_zeta/(48 pi^2); f2_dict_CC = 92.0, a_2_FW_zeta = 2776.165389, M_KK_gravity = 7.428660e+16 GeV
+  G_eff = 6.686779e-39 GeV^-2 | G_N = 6.708722e-39 GeV^-2
+  G_eff/G_N = 0.996729  =>  |G_eff/G_N - 1| = 3.2708e-03
+  M_Pl_eff(reduced) = 1.7249e+18 GeV (CODATA reduced 2.435e18)
+  a_2/a_0 = 0.431081582 (gravity-to-vacuum moment ratio)
+  tau-stability: |dG/G| <= kappa_2*dtau^2 = 0.0210181*0.01^2 = 2.102e-06 over collapse epoch (first order dG/dtau = 0, a_2-flat regime S95-W5-4)
+
+=== C1 — gas-dynamical seed (chain 17-2 substituted) ===
+  Step 1-2: c_s = sqrt(gamma k_B T/(mu m_p)) = 9.4980e+05 cm/s = 9.50 km/s  [chain: 9.5 km/s]
+  Step 3:   Mdot = alpha c_s^3/G_eff = 0.1993 M_sun/yr  [chain: ~0.20]
+  Step 4:   M(t_SMS=1.0 Myr) = 1.9930e+05 M_sun  [chain: 2.0e5]
+  Step 5:   M_GR cap = 3.0e+05 M_sun (Ilie n=3, C=2.5)
+  Step 6:   M_seed = min x f_prompt(1.0) = 1.9930e+05 M_sun
+  Canonical form: log10(M_seed/M_sun) = 5.2995  [band 4.5, 5.5]
+  C1: PASS (in-band direction confirmed)
+  corners (t_SMS Myr, f_prompt) -> log10 M_seed:
+    (1.0, 0.1): M_seed = 1.993e+04 M_sun, log10 = 4.300 [BELOW band (Ilie prompt-floor diagnostic, NOT gated)]
+    (1.0, 1.0): M_seed = 1.993e+05 M_sun, log10 = 5.300 [in-band]
+    (2.0, 0.1): M_seed = 3.000e+04 M_sun, log10 = 4.477 [BELOW band (Ilie prompt-floor diagnostic, NOT gated)]
+    (2.0, 1.0): M_seed = 3.000e+05 M_sun, log10 = 5.477 [in-band]
+  Jeans floor M_J(T=8000 K): n=1.00e+07: 1.411e+04 M_sun, n=3.16e+07: 7.938e+03 M_sun, n=1.00e+08: 4.463e+03 M_sun
+  => M_J << M_seed at all corners: monolithic accretion-fed growth confirmed
+  core n=1.00e+07: R_core = 1.993 pc, N_H = 6.150e+25 cm^-2 (>= 1e25: YES), t_ff = 1.476e+04 yr
+  core n=3.16e+07: R_core = 1.358 pc, N_H = 1.325e+26 cm^-2 (>= 1e25: YES), t_ff = 8.301e+03 yr
+  core n=1.00e+08: R_core = 0.925 pc, N_H = 2.855e+26 cm^-2 (>= 1e25: YES), t_ff = 4.668e+03 yr
+
+=== chain 17-1 — X-ray ceiling diagnostic (Sacchi 390 Ms, k_bol=16.7) ===
+  L_Edd(1e5 M_sun) = 1.300e+43 erg/s; ratio = 0.433 < 1 [chain: 0.433]
+  L_Edd(M_seed_fid = 1.993e+05) = 2.591e+43; ratio = 0.864
+  both BELOW the 3e43 erg/s stacked ceiling BEFORE Compton-thick self-screening (N_H >= 1e25 cm^-2 at every pinned core corner — the screen IS the flow)
+
+=== C2a — n_ACH(z): emergent a_2-chain vs LCDM reference (chain 17-3) ===
+  z=6: M_ACH_em = 1.607e+08 M_sun (sigma=1.024, nu=1.646, D=0.1811) | n_em = 4.6461e+00, n_ref = 4.6461e+00 cMpc^-3 | dlog10 = -0.00000 dex
+  z=8: M_ACH_em = 1.104e+08 M_sun (sigma=0.822, nu=2.053, D=0.1410) | n_em = 4.2128e+00, n_ref = 4.2128e+00 cMpc^-3 | dlog10 = -0.00000 dex
+  z=10: M_ACH_em = 8.179e+07 M_sun (sigma=0.688, nu=2.450, D=0.1154) | n_em = 3.1136e+00, n_ref = 3.1136e+00 cMpc^-3 | dlog10 = -0.00000 dex
+  max_z |dlog10 n_ACH| = 0.00000 dex  [<= 0.5]  C2a: PASS
+  [STRUCTURAL-IDENTITY DISCLOSURE] dlog10 n_ACH = 0 is EXACT under the borrowed baseline (M_ACH ~ 1/G and rho_m0 ~ 1/G cancel: count above a fixed-T_vir threshold is G-invariant); C2a PASS is convention-structural — the empirical content is the head diagnostic (3.271e-03) + the absolute abundance level
+  chain 17-3 Step-2 OOM expectation 1e-2..1e0 cMpc^-3 vs computed n_ACH(z=6) = 4.646e+00: ABOVE — deviation disclosed (sufficiency direction STRENGTHENED; conclusion f_req<<1 unchanged)
+
+=== C2b — selection-folded LRD sufficiency at z=6 ===
+  fold source: W7-1 npz (extraction_status=EXTRACTION-LIMITED-BOUND-FORM; S_band(z=6)=[0.25,1.00], W=4.0)
+  n_LRD_obs in [1.0e-05, 1.0e-04] cMpc^-3 (z>4 pin) => intrinsic band [1.00e-05, 4.00e-04] (+0.602 dex)
+  f_req(z=6) = n_LRD_folded_max/n_ACH_em = 4.000e-04/4.646e+00 = 8.6094e-05  [<= 1.0]  C2b: PASS
+  f_req band over the observed range: [2.152e-06, 8.609e-05] — chain 17-3 envelope 1e-5..4e-2: direction SUFFICIENT confirmed (surplus absorbed by sub-unity pristine/LW-synchronization efficiency, external by construction)
+
+=== C3 — energy ledger (annihilation entry STRUCTURALLY ABSENT) ===
+  E_grav (a_2 channel, G_eff M_gas^2/R_core) = 6.277e+54 erg
+  E_compressional (isothermal work, ln rho_core/rho_vir = 21.64) = 2.329e+53 erg  (E_comp/E_grav = 0.0371)
+  E_radiative ~ E_grav (Ly-alpha thermostat SINK, not source) = 6.277e+54 erg
+  E_annihilation = 0.0 STRUCTURAL ZERO — LEGGETT-MOMENT-70 (Leggett-channel GGE DM, CPT-neutral non-annihilating, mass anchor 11.97 Delta_BCS; CONDITIONAL Gamma_grav < H_0); Annihilation = 0 PASS (baseline-findings-s66)
+  P_extra/P_grav = max(0, E_comp - E_grav)/E_grav = 0.0000e+00  [<= 0.01]  C3: PASS
+  gravity finances compression with margin 26.9x — the gas-dynamical route is self-financing; no annihilation-like channel required
+
+=== VERDICT — C1=True C2a=True C2b=True C3=True => composite PASS ===
+  3-tuple: sign=PASS magnitude=PASS regime=VALID (Omega_m(z=6)=0.9937; collapse-rule consistency asserted)
+  WALL LAW: consistency ceiling only — zero framework-vs-LCDM discrimination at z < 10^28 (LRD_demographics_not_discriminating). dual_prior: Track A 0.9 (a_2-channel gas-dynamical seeding closes the DCBH benchmark)
+
+  npz -> s100b_w7_a2_heavy_seed_abundance.npz
+  png -> s100b_w7_a2_heavy_seed_abundance.png
+
+(value='C1_log10Mseed=5.300_in[4.5,5.5]=True;C2a_maxdlog_nACH=0.00000dex_le0.5=True;C2b_freq_z6=8.609e-05_le1=True_fold=W7-1-npz-flat-floor-x4;C3_Pextra/Pgrav=0.000e+00_le0.01=True_annihilation=0-STRUCTURAL-LEGGETT-MOMENT-70;headdiag_|Geff/GN-1|=3.271e-03;LEdd_ratio_1e5=0.433_fid=0.864_below-Sacchi-ceiling;NH_fid=1.32e+26cm-2_ge1e25;nACH_z6_em=4.646e+00cMpc-3_OOM-above-chain17-3-expectation-disclosed;consistency-ceiling_wall-law_z-lt-1e28_no-discrimination', scheme=A2-EMERGENT-FRIEDMANN-DCBH, convention=BORROWED-H-BASELINE-SUBSTRATE-NATURAL-G, L_max=N/A)
+<<<EMIT_VERDICT_PAYLOAD>>>
+{"audit_sha256":"37f64fcd7e81ef8575b1781b0385d3a0db6bd8a2ba4647790e0a81b7164455c9","companion_note":"conjunctive C1^C2a^C2b^C3 heavy-seed consistency ceiling; emergent a_2^{zeta}-channel chain exercised end-to-end at z=6-10; wall law LRD_demographics_not_discriminating (z<1e28) \u2014 PASS = consistency only","content_sha256":"b8ae1b2f13cc356dd0fd4c0e2782e7a2e4d23bd59c229d70a78867f2f45a572e","convention":"BORROWED-H-BASELINE-SUBSTRATE-NATURAL-G","extra_rows":["# regulator_pin=a_n^{zeta}: a_2_FW_zeta=2776.165389 a_0_FW_zeta=6440.0 (S88); G_eff dictionary 1/(16piG)=f2*M_KK^2*a_2/(48pi^2), f2_dict_CC=92.0 (S95-W3-3/S96-W1 machinery, promoted S100b); M_KK_gravity=7.428660036284456e16 GeV (S42 CONST-FREEZE-42 anchor); |G_eff/G_N-1|=3.271e-03 non-circular vs CODATA # S100b-A2-HEAVY-SEED-ABUNDANCE normalization row","# dual_prior re-allocation: composite=PASS -> Track A 0.9 (a_2-channel gas-dynamical seeding closes DCBH benchmark; seeding fork OPEN) # S100b-A2-HEAVY-SEED-ABUNDANCE dual-prior row","# C2b consumed s100b_w7_selection_function_floor.npz (W7-1 INFO EXTRACTION-LIMITED flat-floor band [0.25,1.0], numerically = mode-B x4 widening; mode_B_exercised=False); f_DM=0.209 partition DECLARED NOT RE-TESTED (borrowed-H observed-Omega baseline) # S100b-A2-HEAVY-SEED-ABUNDANCE convention row","# chain17-3 Step-2 OOM deviation disclosed: computed n_ACH(z=6)=4.646e+00 cMpc^-3 ABOVE the 1e-2..1e0 pre-registered OOM expectation; sufficiency direction STRENGTHENED (f_req=8.609e-05 inside pre-registered envelope 1e-5..4e-2) # S100b-A2-HEAVY-SEED-ABUNDANCE disclosure row","# C2a STRUCTURAL-IDENTITY disclosure (math-scripts.md multiplicative-cancellation discipline): dlog10 n_ACH = 0 EXACT under borrowed-(H_0,Omega,sigma_8) baseline \u2014 M_ACH~1/G and rho_m0~1/G cancel (count above fixed-T_vir threshold is G-invariant); empirical content = head diagnostic 3.271e-03 + absolute n_ACH landing # S100b-A2-HEAVY-SEED-ABUNDANCE structural-identity row"],"gate_id":"S100b-A2-HEAVY-SEED-ABUNDANCE","l_max":"N/A","magnitude_verdict":"PASS","regime_verdict":"VALID","schema_version":"S84+","scheme":"A2-EMERGENT-FRIEDMANN-DCBH","session":"100b","sign_verdict":"PASS","three_tuple_note":"sign=chains 17-1 BELOW + 17-2 IN-BAND + 17-3 SUFFICIENT all confirmed; regime=post-transit late-epoch z in [6,10], Omega_m(z=6)=0.994, f_used=1.00","value":"C1_log10Mseed=5.300_in[4.5,5.5]=True;C2a_maxdlog_nACH=0.00000dex_le0.5=True;C2b_freq_z6=8.609e-05_le1=True_fold=W7-1-npz-flat-floor-x4;C3_Pextra/Pgrav=0.000e+00_le0.01=True_annihilation=0-STRUCTURAL-LEGGETT-MOMENT-70;headdiag_|Geff/GN-1|=3.271e-03;LEdd_ratio_1e5=0.433_fid=0.864_below-Sacchi-ceiling;NH_fid=1.32e+26cm-2_ge1e25;nACH_z6_em=4.646e+00cMpc-3_OOM-above-chain17-3-expectation-disclosed;consistency-ceiling_wall-law_z-lt-1e28_no-discrimination","verdict":"PASS"}
+<<<END_EMIT_VERDICT_PAYLOAD>>>
+
+=== S100b-A2-HEAVY-SEED-ABUNDANCE: PASS (wall 1.1s) ===

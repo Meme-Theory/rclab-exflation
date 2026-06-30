@@ -1,0 +1,231 @@
+============================================================================
+DESI-DR3-65: Pre-Registered DR3 Predictions
+============================================================================
+
+Cosmological parameters (Planck 2018 baseline):
+  Omega_m  = 0.315
+  Omega_b  = 0.0493
+  Omega_r  = 9.15e-05
+  Omega_DE = 0.684909
+  h        = 0.674
+  H_0      = 67.4 km/s/Mpc
+  sigma_8  = 0.811
+
+============================================================================
+Loading Upstream Data
+============================================================================
+  Loaded s64_desi_dv.npz
+  DR2 z_eff = [0.295 0.51  0.706 0.934 1.321 1.484 2.33 ]
+  DR2 sigma_DV_frac = [0.019 0.013 0.009 0.008 0.01  0.015 0.015]
+  w0_fw = -0.918087, wa_fw = -0.000575
+  w0_comp = -0.924043, wa_comp = -0.644891
+  S64 chi2_FW(vs LCDM) = 14.190
+  Loaded s59_growth_factor.npz
+  sigma8_fw = 0.793166 (LCDM: 0.811)
+  growth_ratio = 0.978009
+  gamma_LCDM = 0.55, gamma_wCDM = 0.554096
+
+============================================================================
+Pre-Registered Redshift Bins (DR3)
+============================================================================
+  z = [0.3 0.5 0.7 0.9 1.1 1.3 1.5]
+  N_bins = 7
+
+  DR3 precision estimate (sigma_DR1/sqrt(3) = sigma_DR2 * sqrt(2/3)):
+      z    DR1 frac    DR2 frac    DR3 frac
+    0.3      2.667%      1.886%      1.540%
+    0.5      1.878%      1.328%      1.084%
+    0.7      1.290%      0.912%      0.745%
+    0.9      1.152%      0.815%      0.665%
+    1.1      1.253%      0.886%      0.723%
+    1.3      1.399%      0.989%      0.808%
+    1.5      2.121%      1.500%      1.225%
+
+  Sound horizon: r_d = 147.024 Mpc
+
+============================================================================
+D_V(z)/r_d Predictions at Pre-Registered DR3 Bins
+============================================================================
+
+  Three models:
+    Framework (substrate compaction): w_0 = -0.918, w_a = -0.645
+    LCDM:                            w_0 = -1.000, w_a = 0.000
+    DESI DR2 best-fit:               w_0 = -0.752, w_a = -0.73
+
+      z       DV_FW     DV_LCDM     DV_DESI    FW-LCDM%  DESI-LCDM%
+  -----  ----------  ----------  ----------  ----------  ----------
+    0.3      8.1572      8.1780      7.9745     -0.254%     -2.488%
+    0.5     12.6553     12.6306     12.2985     +0.195%     -2.630%
+    0.7     16.4641     16.3605     15.9706     +0.633%     -2.384%
+    0.9     19.6588     19.4732     19.0768     +0.953%     -2.036%
+    1.1     22.3298     22.0754     21.6993     +1.153%     -1.703%
+    1.3     24.5672     24.2616     23.9159     +1.260%     -1.425%
+    1.5     26.4508     26.1103     25.7957     +1.304%     -1.205%
+
+============================================================================
+Discriminating Power: Per-Bin (D_V^FW - D_V^LCDM) / sigma_DR3(z)
+============================================================================
+
+      z   sigma_DR3     FW-LCDM   DESI-LCDM     FW-DESI   |FW-LCDM|
+  -----  ----------  ----------  ----------  ----------  ----------
+    0.3      0.1259      -0.16s      -1.62s      +1.45s       0.16s
+    0.5      0.1369      +0.18s      -2.43s      +2.61s       0.18s
+    0.7      0.1219      +0.85s      -3.20s      +4.05s       0.85s
+    0.9      0.1296      +1.43s      -3.06s      +4.49s       1.43s
+    1.1      0.1597      +1.59s      -2.36s      +3.95s       1.59s
+    1.3      0.1959      +1.56s      -1.76s      +3.32s       1.56s
+    1.5      0.3198      +1.06s      -0.98s      +2.05s       1.06s
+
+============================================================================
+Predicted Combined chi^2 for DR3
+============================================================================
+
+  Scenario 1: DR3 data matches LCDM
+    chi2_FW(ref=LCDM)  = 8.94 (2.99-sigma)
+    chi2_LCDM(ref=LCDM) = 0.00 (by definition)
+    delta_chi2 = -8.94 (LCDM wins)
+    => FAIL
+
+  Scenario 2: DR3 data matches DESI DR2 best-fit
+    chi2_FW(ref=DESI)  = 76.32 (8.74-sigma)
+    chi2_LCDM(ref=DESI) = 37.72 (6.14-sigma)
+    delta_chi2 = chi2_LCDM - chi2_FW = -38.60
+    => FAIL (delta < 0)
+
+  Scenario 3: DR3 midway between LCDM and DESI best-fit
+    chi2_FW(ref=mid)   = 33.20 (5.76-sigma)
+    chi2_LCDM(ref=mid) = 9.43 (3.07-sigma)
+    delta_chi2 = -23.77
+    => FAIL (delta < 0)
+
+============================================================================
+Pivotal Redshift Bin (Maximum |FW-LCDM|/sigma_DR3)
+============================================================================
+
+  Pivotal bin: z = 1.1
+    |FW - LCDM|/sigma = 1.59
+    DV_FW/r_d  = 22.3298
+    DV_LCDM/r_d = 22.0754
+    sigma_DR3 (abs) = 0.1597
+    Fractional deviation: +1.153%
+    DR3 fractional precision: 0.723%
+
+  Full ranking:
+    #1: z = 1.1, |n_sigma| = 1.59, frac = +1.153%, DR3 err = 0.723%
+    #2: z = 1.3, |n_sigma| = 1.56, frac = +1.260%, DR3 err = 0.808%
+    #3: z = 0.9, |n_sigma| = 1.43, frac = +0.953%, DR3 err = 0.665%
+    #4: z = 1.5, |n_sigma| = 1.06, frac = +1.304%, DR3 err = 1.225%
+    #5: z = 0.7, |n_sigma| = 0.85, frac = +0.633%, DR3 err = 0.745%
+    #6: z = 0.5, |n_sigma| = 0.18, frac = +0.195%, DR3 err = 1.084%
+    #7: z = 0.3, |n_sigma| = 0.16, frac = -0.254%, DR3 err = 1.540%
+
+============================================================================
+f*sigma_8(z) at Pre-Registered DR3 Bins
+============================================================================
+
+  Growth computation:
+    D(a=1) ratio [FW/LCDM] = 1.021854
+    sigma_8(LCDM) = 0.8110
+    sigma_8(FW)   = 0.8287 (same A_s assumption)
+
+  f*sigma_8(z) comparison:
+      z     f*sig8_FW   f*sig8_LCDM   frac_diff     DR3 err   n_sigma
+  -----  ------------  ------------  ----------  ----------  --------
+    0.3      0.484777      0.473474     +2.387%      0.0144     0.78s
+    0.5      0.489953      0.474488     +3.259%      0.0115     1.34s
+    0.7      0.479794      0.461977     +3.857%      0.0104     1.71s
+    0.9      0.460462      0.442394     +4.084%      0.0104     1.74s
+    1.1      0.436773      0.419850     +4.031%      0.0127     1.33s
+    1.3      0.411829      0.396716     +3.810%      0.0162     0.93s
+    1.5      0.387379      0.374256     +3.507%      0.0202     0.65s
+
+  Combined f*sigma_8 chi2 (FW vs LCDM): 11.44 (3.38-sigma)
+
+============================================================================
+Combined BAO + f*sigma_8 Discriminating Power
+============================================================================
+
+  D_V chi2 (7 bins):        8.94
+  f*sigma_8 chi2 (7 bins):  11.44
+  Combined chi2 (14 dof):   20.38 (4.51-sigma)
+
+  The BAO distance channel dominates: 43.9% of total chi2
+
+============================================================================
+PRE-REGISTERED PREDICTIONS SUMMARY TABLE
+============================================================================
+
+### Framework model: w_0 = -0.918, w_a = -0.645
+### DR3 precision: sigma_DR1/sqrt(3)
+### Pivotal bin: z = 1.1
+
+| z   | DV_FW/r_d | DV_LCDM/r_d | FW-LCDM [%] | sigma_DR3 | n_sig | f*sig8_FW | f*sig8_LCDM | f*sig8 diff [%] |
+|:----|:----------|:------------|:------------|:----------|:------|:----------|:------------|:----------------|
+| 0.3 | 8.1572 | 8.1780 | -0.254 | 1.540% | 0.16 | 0.4848 | 0.4735 | +2.387 |
+| 0.5 | 12.6553 | 12.6306 | +0.195 | 1.084% | 0.18 | 0.4900 | 0.4745 | +3.259 |
+| 0.7 | 16.4641 | 16.3605 | +0.633 | 0.745% | 0.85 | 0.4798 | 0.4620 | +3.857 |
+| 0.9 | 19.6588 | 19.4732 | +0.953 | 0.665% | 1.43 | 0.4605 | 0.4424 | +4.084 |
+| 1.1 | 22.3298 | 22.0754 | +1.153 | 0.723% | 1.59 | 0.4368 | 0.4198 | +4.031 |
+| 1.3 | 24.5672 | 24.2616 | +1.260 | 0.808% | 1.56 | 0.4118 | 0.3967 | +3.810 |
+| 1.5 | 26.4508 | 26.1103 | +1.304 | 1.225% | 1.06 | 0.3874 | 0.3743 | +3.507 |
+
+### Predicted chi^2 (DR3 precision)
+| Scenario | chi2_FW | chi2_LCDM | delta_chi2 | Verdict |
+|:---------|:--------|:----------|:-----------|:--------|
+| Data = LCDM | 8.9 | 0.0 | -8.9 | FAIL |
+| Data = DESI bf | 76.3 | 37.7 | -38.6 | FAIL |
+| Data = midpoint | 33.2 | 9.4 | -23.8 | FAIL |
+
+============================================================================
+STRUCTURAL ASSESSMENT
+============================================================================
+
+The substrate compaction model (w_0 = -0.918, w_a = -0.645) introduces
+redshift-dependent dark energy that is STRONGER than LCDM at low z (less
+DE => shorter distances) and WEAKER at high z (more DE in the past).
+
+Direction comparison with DESI:
+- DESI DR2 best-fit (w_0 = -0.752, w_a = -0.73) also has w > -1
+  at low z and w < -1 at high z (Quintom B crossing).
+- The framework's w(z) = w_0 + w_a*(1-a) also produces a crossing,
+  but from a different physical mechanism (fiber tau tracking density).
+
+Key structural constraint (from S64):
+- The framework's D_V deviations are monotonically shorter than LCDM.
+- DESI best-fit deviations show a z-dependent pattern with diminishing
+  deficit at high z.
+- The framework is CLOSER to DESI than LCDM is at all redshifts below
+  z ~ 1, but the pattern correlation is weak (r = -0.04 at DR2 bins).
+
+DR3 discriminating power:
+- BAO distances: 3.0-sigma separation FW vs LCDM.
+- f*sigma_8: 3.4-sigma separation (growth rate).
+- Combined: 4.5-sigma (14 effective dof).
+- Pivotal bin: z = 1.1 (highest discriminating power).
+
+The gate resolves as follows:
+- If DR3 confirms DESI direction (w_0 > -1, w_a < 0):
+  LCDM is FURTHER from data than substrate FW, but substrate FW is even
+  FURTHER (distances go LONGER, not shorter). Both lose to DESI.
+  delta_chi2 = -38.6 => FAIL.
+- If DR3 reverts to w = -1 (LCDM): substrate FW is FURTHER from data.
+  delta_chi2 = -8.9 => FAIL.
+- If DR3 lands midway: delta_chi2 = -23.8 => FAIL.
+NOTE: The PURE framework (w_a=0, w_0=-0.918) was CLOSER to DESI than
+LCDM (S64 chi2: FW=14.2 vs LCDM=21.7). The w_a=-0.645 reverses this.
+
+
+============================================================================
+GATE VERDICT: DESI-DR3-65
+============================================================================
+
+  Gate: DESI-DR3-65
+  Status: PRE-REGISTERED
+  Detail: Pre-registered D_V(z)/r_d and f*sig_8(z) at 7 bins z=0.3-1.5 with w_0=-0.918, w_a=-0.645. FW-LCDM separation: 3.0-sig (BAO), 3.4-sig (growth). Pivotal bin: z=1.1. Decision: chi2_LCDM - chi2_FW > 4 => STRONG PASS. If DESI-like: delta=-38.6. If LCDM-like: delta=-8.9.
+
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s65_desi_dr3_prep.npz
+  Saved: s65_desi_dr3_prep.png
+
+============================================================================
+DONE
+============================================================================

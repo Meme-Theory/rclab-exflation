@@ -1,0 +1,107 @@
+{
+  "table": "gates",
+  "batch_id": 260,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "gate_W1-2",
+      "anchor_type": "gates",
+      "name": "W1-2",
+      "session": "39",
+      "condition": "STRUCTURAL",
+      "verdict": "sigma_R/R_0 = 25.2%, R varies 3x",
+      "source_file": "sessions\\archive\\session-39\\session-39-master-synthesis.md",
+      "source_context_30_lines": "  103: \n  104: ---\n  105: \n  106: ## II. Gate Verdicts (Complete)\n  107: \n  108: | Gate | Wave | Type | Verdict | Decisive Number | Agent |\n  109: |:-----|:-----|:-----|:--------|:----------------|:------|\n  110: | RG-39 | W1-1 | CONSISTENCY | **PASS** | \\|E_gs(8x8) - E_gs(ED)\\| = 1.2e-14 | gen-physicist |\n  111: | 9TO1-39 | W1-2 | STRUCTURAL | **FAIL (COINCIDENCE)** | sigma_R/R_0 = 25.2%, R varies 3x | gen-physicist |\n  112: | SCHWING-GEOM-39 | W1-3 | CROSS-CHECK | **INTERMEDIATE** | 2.40% discrepancy (2%-5% window) | gen-physicist |\n  113: | CASCADE-39 | W1-4 | STRUCTURAL | **PASS (UNIQUE FOLD)** | 1 island, M_max = 1.684 at tau = 0.194 | gen-physicist |\n  114: | FS-METRIC-39 | W1-5 | DIAGNOSTIC | **INFORMATIVE** | g_FS peak at tau = 0.280, 2% from DNP | gen-physicist |\n  115: | GGE-LAMBDA-39 | W2-1 | DECISIVE | **PASS** | Self-consistency = 0.00, analytic lambda_k | gen-physicist |\n  116: | INTEG-39 | W2-2 | DECISIVE | **FAIL** | <r> = 0.481, beta = 0.633, t_therm = 6 | gen-physicist |\n  117: | SPEC-39 | W2-3 | OBSERVABLE | **FAIL** | GPV weight 0.1% (need > 30%) | gen-physicist |\n  118: | FRIED-39 | W2-4 | DECISIVE (MASTER) | **FAIL** | Dwell = 3.0e-4, shortfall = 133,200x | gen-physicist |\n  119: | SCHWING-PROOF-39 | W2-5 | THEOREM | **FAIL** | GL ratio = 4.08, coincidence | gen-physicist + nazarewicz |"
+    },
+    {
+      "anchor_id": "gate_CASCADE-39",
+      "anchor_type": "gates",
+      "name": "CASCADE-39",
+      "session": "39",
+      "condition": "W1-4",
+      "verdict": "PASS (UNIQUE FOLD)",
+      "source_file": "sessions\\archive\\session-39\\session-39-master-synthesis.md",
+      "source_context_30_lines": "    8: ---\n    9: \n   10: ## Executive Summary\n   11: \n   12: Session 39 is the most computationally dense session in the project's history: 20 tasks planned across 4 waves, 18 computations completed, 5 gates PASS, 6 FAIL, 7 INFO, 2 SUPERSEDED, plus 1 independent Nazarewicz review. The session systematically resolved every open computational item from Session 38. Three S38 claims that formed the \"transit physics\" paradigm -- GGE permanence, Schwinger-instanton duality, and Friedmann-BCS stabilization -- are all now dead. Four additional S38 observations (omega_att = 9*(B3-B1), GPV observable post-transit, preheating without reheating, permanent non-thermal relic) are retracted or closed.\n   13: \n   14: The headline result is FRIED-39 FAIL: the coupled Friedmann-BCS dynamics produce a physical dwell time of 3.0e-4 natural units versus the required 40, a shortfall of 133,200x. The structural root cause is the gradient ratio |dV_bare/dtau| / |dE_BCS/dtau| = 6,596 at the fold -- the spectral action potential (value ~250,000, gradient ~58,723) overwhelms the BCS condensation energy (value -0.156, gradient ~8.90) because the former sums over 155,984 modes while the latter involves 8. This closes the 26th and final identified stabilization mechanism for the modulus tau. Every equilibrium, quasi-static, and dynamical stabilization pathway is now exhausted. The constraint surface for equilibrium stabilization has collapsed to dimension zero.\n   15: \n   16: What survives is structural \n... [truncated]"
+    },
+    {
+      "anchor_id": "gate_FS-METRIC-39",
+      "anchor_type": "gates",
+      "name": "FS-METRIC-39",
+      "session": "39",
+      "condition": "W1-5",
+      "verdict": "INFORMATIVE",
+      "source_file": "sessions\\archive\\session-39\\session-39-master-synthesis.md",
+      "source_context_30_lines": "   67: The Paper 18 modified Lie derivative correction Xi is nonzero (20.2% of K_a on C^2 generators) but vanishes identically within B2 by Schur's lemma on the irreducible (1,1) subspace. The Casimir C_2(B2) is preserved to 3e-16 at all 8 tau values tested (0.10 to 0.50). The corrected B2 Casimir has a minimum at tau ~ 0.40 (C_2 = 0.226). The full 8-mode V changes by 25.3%, but within B2, the off-diagonal pairing structure is unchanged. No correction compatible with SU(3) representation theory can break B2 rank-1 separability.\n   68: \n   69: **8. MASS-39 PASS -- Complete 4D Mass Table**\n   70: Three mass levels at tau_exit = 0.205: M_B1 = 0.819, M_B2 = 0.845, M_B3 = 0.982 in M_KK units. All J^P = 0^+ scalars, K_7 = 0. B2 quartet 4-fold degenerate to machine epsilon. B3 triplet 3-fold degenerate. Mass ordering M_B1 < M_B2 < M_B3 at all tau. BdG transit-interior masses reach M/M_KK ~ 42 for B2 near the fold (49.4x enhancement). Gibbs thermalization temperature T = 0.113 M_KK, beta = 8.872. GGE concentrates 93% on B2; Gibbs redistributes to 27.1% B1 occupation.\n   71: \n   72: **9. ENT-39 INFO -- GGE is an Exact Product State**\n   73: Entanglement entropy S_ent = 0.000 bits (identically zero, not numerical). The GGE factorizes as rho_GGE = tensor product of single-mode states because the Bogoliubov transformation is mode-diagonal. Verified by three independent checks: mutual information = -1.8e-15, product deviation max = 2.8e-17, negativity = 2.2e-16. Total GGE entropy = 3.542 \n... [truncated]"
+    },
+    {
+      "anchor_id": "gate_GGE-LAMBDA-39",
+      "anchor_type": "gates",
+      "name": "GGE-LAMBDA-39",
+      "session": "39",
+      "condition": "W2-1",
+      "verdict": "PASS",
+      "source_file": "sessions\\archive\\session-39\\session-39-master-synthesis.md",
+      "source_context_30_lines": "    8: ---\n    9: \n   10: ## Executive Summary\n   11: \n   12: Session 39 is the most computationally dense session in the project's history: 20 tasks planned across 4 waves, 18 computations completed, 5 gates PASS, 6 FAIL, 7 INFO, 2 SUPERSEDED, plus 1 independent Nazarewicz review. The session systematically resolved every open computational item from Session 38. Three S38 claims that formed the \"transit physics\" paradigm -- GGE permanence, Schwinger-instanton duality, and Friedmann-BCS stabilization -- are all now dead. Four additional S38 observations (omega_att = 9*(B3-B1), GPV observable post-transit, preheating without reheating, permanent non-thermal relic) are retracted or closed.\n   13: \n   14: The headline result is FRIED-39 FAIL: the coupled Friedmann-BCS dynamics produce a physical dwell time of 3.0e-4 natural units versus the required 40, a shortfall of 133,200x. The structural root cause is the gradient ratio |dV_bare/dtau| / |dE_BCS/dtau| = 6,596 at the fold -- the spectral action potential (value ~250,000, gradient ~58,723) overwhelms the BCS condensation energy (value -0.156, gradient ~8.90) because the former sums over 155,984 modes while the latter involves 8. This closes the 26th and final identified stabilization mechanism for the modulus tau. Every equilibrium, quasi-static, and dynamical stabilization pathway is now exhausted. The constraint surface for equilibrium stabilization has collapsed to dimension zero.\n   15: \n   16: What survives is structural \n... [truncated]"
+    },
+    {
+      "anchor_id": "gate_INTEG-39",
+      "anchor_type": "gates",
+      "name": "INTEG-39",
+      "session": "39",
+      "condition": "W2-2",
+      "verdict": "FAIL",
+      "source_file": "sessions\\archive\\session-39\\session-39-master-synthesis.md",
+      "source_context_30_lines": "   27: The coupled Friedmann-BCS ODE with Hubble friction was integrated across 5 scenarios spanning 11 decades of Hubble parameter. Physical dwell = 3.0e-4, shortfall = 133,200x. Three independent obstructions, each individually fatal:\n   28: \n   29: - Gradient ratio |dV_bare/dtau| / |dE_BCS/dtau| = 6,596x at fold. The BCS condensation energy is a perturbation of order 6.2e-7 relative to the spectral action at the fold.\n   30: - E-fold catastrophe: achieving dwell = 40 requires H = 5.22e6, producing 2.09e8 e-folds during the dwell (3.5 million times observed inflation).\n   31: - No local minimum: E_cond/S_full ~ 6e-7, the BCS pocket creates no trapping, no oscillation, no attractor.\n   32: \n   33: This closes every identified tau-stabilization pathway accumulated over 39 sessions. The equilibrium subspace has dimension zero.\n   34: \n   35: **2. INTEG-39 FAIL -- GGE Permanence Retracted**\n   36: The full 8-mode BCS Hamiltonian is NOT Richardson-Gaudin integrable. V_phys is 87% rank-1 by variance but 36% non-separable by Frobenius norm. The 13% non-separable component produces:\n   37: \n   38: - Global weighted level spacing ratio <r> = 0.481 (intermediate between Poisson 0.386 and GOE 0.536)\n   39: - Brody parameter beta = 0.633 (63% GOE character)\n   40: - Thouless conductance g_T = 0.60 (weakly chaotic, at metal-insulator transition)\n   41: - FGR thermalization time t_therm ~ 5.94 natural units\n   42: - t_therm / t_Hubble = 9.0e-48 (thermalization is instantaneous on cosmolo\n... [truncated]"
+    },
+    {
+      "anchor_id": "gate_SPEC-39",
+      "anchor_type": "gates",
+      "name": "SPEC-39",
+      "session": "39",
+      "condition": "W2-3",
+      "verdict": "FAIL",
+      "source_file": "sessions\\archive\\session-39\\session-39-master-synthesis.md",
+      "source_context_30_lines": "   81: ### Level 3: Diagnostic Results\n   82: \n   83: **12. 9TO1-39 FAIL -- omega_att / (B3-B1) is a Coincidence**\n   84: R(tau) = omega_att / (B3 - B1) varies by a factor of 3x across the BCS window (sigma_R/R_0 = 0.252, 25.2%). R tracks the BCS gap magnitude (corr = 0.987 with Delta_0) and shows zero correlation with the geometric splitting (corr = 0.049 with B3-B1). The near-integer value R ~ 9 at the fold is fold-specific. Closed.\n   85: \n   86: **13. SCHWING-GEOM-39 INTERMEDIATE -- Schwinger from Scalar Curvature**\n   87: S_Schwinger = pi * Delta_0^2 / |v| = 0.07025 vs S_inst = 0.06860, discrepancy 2.40% (between 2% PASS and 5% FAIL thresholds). R(tau) alone cannot reproduce the transit speed. The GL quartic overestimates S_inst by 4.18x. The correct Landau-Zener Schwinger exponent using v_F = 0.0117 gives S_LZ = 1.53 (22x larger than S_inst) -- pair creation at the fold is exponentially suppressed by Schwinger.\n   88: \n   89: **14. SPEC-39 FAIL -- GPV Does Not Survive Sudden Quench**\n   90: Post-quench spectral function concentrates 99.7% of weight at bare transitions (omega = 1.691 = 2*xi_B2), with 0.1% in the GPV window [0.70, 0.85] (need > 30%). The GPV is a collective BCS excitation that exists only in the interacting eigenbasis. When V -> 0, collectivity is destroyed. JSD(A_GGE, A_eq) = 0.667, approaching theoretical maximum ln(2) = 0.693. The equilibrium spectral function concentrates 93.2% weight on the GPV pole at omega = 0.792; the GGE spectral function is near\n... [truncated]"
+    },
+    {
+      "anchor_id": "gate_FRIED-39",
+      "anchor_type": "gates",
+      "name": "FRIED-39",
+      "session": "39",
+      "condition": "W2-4",
+      "verdict": "FAIL",
+      "source_file": "sessions\\archive\\session-39\\session-39-master-synthesis.md",
+      "source_context_30_lines": "    6: **Document type**: Definitive standalone session record -- all sub-session results integrated by importance, not chronology\n    7: \n    8: ---\n    9: \n   10: ## Executive Summary\n   11: \n   12: Session 39 is the most computationally dense session in the project's history: 20 tasks planned across 4 waves, 18 computations completed, 5 gates PASS, 6 FAIL, 7 INFO, 2 SUPERSEDED, plus 1 independent Nazarewicz review. The session systematically resolved every open computational item from Session 38. Three S38 claims that formed the \"transit physics\" paradigm -- GGE permanence, Schwinger-instanton duality, and Friedmann-BCS stabilization -- are all now dead. Four additional S38 observations (omega_att = 9*(B3-B1), GPV observable post-transit, preheating without reheating, permanent non-thermal relic) are retracted or closed.\n   13: \n   14: The headline result is FRIED-39 FAIL: the coupled Friedmann-BCS dynamics produce a physical dwell time of 3.0e-4 natural units versus the required 40, a shortfall of 133,200x. The structural root cause is the gradient ratio |dV_bare/dtau| / |dE_BCS/dtau| = 6,596 at the fold -- the spectral action potential (value ~250,000, gradient ~58,723) overwhelms the BCS condensation energy (value -0.156, gradient ~8.90) because the former sums over 155,984 modes while the latter involves 8. This closes the 26th and final identified stabilization mechanism for the modulus tau. Every equilibrium, quasi-static, and dynamical stabilization pathway is now e\n... [truncated]"
+    },
+    {
+      "anchor_id": "gate_SCHWING-PROOF-39",
+      "anchor_type": "gates",
+      "name": "SCHWING-PROOF-39",
+      "session": "39",
+      "condition": "W2-5",
+      "verdict": "FAIL",
+      "source_file": "sessions\\archive\\session-39\\session-39-master-synthesis.md",
+      "source_context_30_lines": "   38: - Global weighted level spacing ratio <r> = 0.481 (intermediate between Poisson 0.386 and GOE 0.536)\n   39: - Brody parameter beta = 0.633 (63% GOE character)\n   40: - Thouless conductance g_T = 0.60 (weakly chaotic, at metal-insulator transition)\n   41: - FGR thermalization time t_therm ~ 5.94 natural units\n   42: - t_therm / t_Hubble = 9.0e-48 (thermalization is instantaneous on cosmological timescales)\n   43: \n   44: Sector-resolved statistics: central sectors (N_pair = 2,3,4,5) show GOE (beta ~ 0.7-0.8), edge sectors (N_pair = 6,7) retain Poisson. The physical ground state (N_pair = 1) is intermediate (<r> = 0.497). The S38 claim of a \"permanent non-thermal relic\" is retracted. However, t_therm/t_transit = 5,253: the GGE is valid during transit and immediately after.\n   45: \n   46: **3. SCHWING-PROOF-39 FAIL -- Schwinger-Instanton Duality Dead**\n   47: The S38 near-agreement S_Schwinger = 0.0703 vs S_inst = 0.0686 (2.4% discrepancy) is a numerical coincidence, not an algebraic identity. In the GL limit, S_inst_GL / S_Schwinger = 4.08 (definitively not 1). Root cause: mixing two incompatible BCS energy functionals -- the gap equation (Delta_0 = 0.770) and the alpha-path landscape (Delta_0 = 0.365). The effective gap D_eff = sqrt(S_inst * |v| / pi) = 0.7614 is 98.8% of Delta_0_GL -- a three-way conspiracy between gap, transit speed, and path condensation energy with no algebraic protection. Nazarewicz independently endorsed the FAIL and retracted his S38 WKB identity\n... [truncated]"
+    },
+    {
+      "anchor_id": "gate_MASS-39",
+      "anchor_type": "gates",
+      "name": "MASS-39",
+      "session": "39",
+      "condition": "W3-1",
+      "verdict": "PASS",
+      "source_file": "sessions\\archive\\session-39\\session-39-master-synthesis.md",
+      "source_context_30_lines": "   61: - lambda_B1 = 2.771 (x1 mode, 6.3% weight)\n   62: - lambda_B3 = 6.007 (x3 modes, 0.7% weight)\n   63: \n   64: S_GGE = 1.575 nats. Purity = 0.220, effective rank = 4.5. Negative inter-branch effective temperature T_eff(B1 vs B2) = -0.040 (definitive non-thermal signature: B2 overpopulated relative to B1 despite higher energy). Richardson-Gaudin integrals are inapplicable (commutators O(10^2-10^4)); the correct integrals are the N_pair = 1 sector eigenprojectors Q_k = |phi_k><phi_k|.\n   65: \n   66: **7. LIED-39 PASS -- B2 Geometric Protection Theorem**\n   67: The Paper 18 modified Lie derivative correction Xi is nonzero (20.2% of K_a on C^2 generators) but vanishes identically within B2 by Schur's lemma on the irreducible (1,1) subspace. The Casimir C_2(B2) is preserved to 3e-16 at all 8 tau values tested (0.10 to 0.50). The corrected B2 Casimir has a minimum at tau ~ 0.40 (C_2 = 0.226). The full 8-mode V changes by 25.3%, but within B2, the off-diagonal pairing structure is unchanged. No correction compatible with SU(3) representation theory can break B2 rank-1 separability.\n   68: \n   69: **8. MASS-39 PASS -- Complete 4D Mass Table**\n   70: Three mass levels at tau_exit = 0.205: M_B1 = 0.819, M_B2 = 0.845, M_B3 = 0.982 in M_KK units. All J^P = 0^+ scalars, K_7 = 0. B2 quartet 4-fold degenerate to machine epsilon. B3 triplet 3-fold degenerate. Mass ordering M_B1 < M_B2 < M_B3 at all tau. BdG transit-interior masses reach M/M_KK ~ 42 for B2 near the fold (49.4x enhancemen\n... [truncated]"
+    },
+    {
+      "anchor_id": "gate_BDG-SIM-39",
+      "anchor_type": "gates",
+      "name": "BDG-SIM-39",
+      "session": "39",
+      "condition": "W3-3",
+      "verdict": "FAIL",
+      "source_file": "sessions\\archive\\session-39\\session-39-master-synthesis.md",
+      "source_context_30_lines": "   84: R(tau) = omega_att / (B3 - B1) varies by a factor of 3x across the BCS window (sigma_R/R_0 = 0.252, 25.2%). R tracks the BCS gap magnitude (corr = 0.987 with Delta_0) and shows zero correlation with the geometric splitting (corr = 0.049 with B3-B1). The near-integer value R ~ 9 at the fold is fold-specific. Closed.\n   85: \n   86: **13. SCHWING-GEOM-39 INTERMEDIATE -- Schwinger from Scalar Curvature**\n   87: S_Schwinger = pi * Delta_0^2 / |v| = 0.07025 vs S_inst = 0.06860, discrepancy 2.40% (between 2% PASS and 5% FAIL thresholds). R(tau) alone cannot reproduce the transit speed. The GL quartic overestimates S_inst by 4.18x. The correct Landau-Zener Schwinger exponent using v_F = 0.0117 gives S_LZ = 1.53 (22x larger than S_inst) -- pair creation at the fold is exponentially suppressed by Schwinger.\n   88: \n   89: **14. SPEC-39 FAIL -- GPV Does Not Survive Sudden Quench**\n   90: Post-quench spectral function concentrates 99.7% of weight at bare transitions (omega = 1.691 = 2*xi_B2), with 0.1% in the GPV window [0.70, 0.85] (need > 30%). The GPV is a collective BCS excitation that exists only in the interacting eigenbasis. When V -> 0, collectivity is destroyed. JSD(A_GGE, A_eq) = 0.667, approaching theoretical maximum ln(2) = 0.693. The equilibrium spectral function concentrates 93.2% weight on the GPV pole at omega = 0.792; the GGE spectral function is nearly non-overlapping.\n   91: \n   92: **15. BDG-SIM-39 FAIL -- Mean-Field Cannot See GPV**\n   93: Full 8-mode self-con\n... [truncated]"
+    }
+  ]
+}

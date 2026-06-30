@@ -1,0 +1,107 @@
+{
+  "table": "session_files",
+  "batch_id": 180,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "sf_87:session-87-plan-w3.md",
+      "anchor_type": "session_files",
+      "name": "session-87-plan-w3.md",
+      "path": "sessions/session-plan/archive/session-87-plan-w3.md",
+      "session": "87",
+      "size_bytes": 90263,
+      "source_file": "sessions/session-plan/archive/session-87-plan-w3.md",
+      "source_context_30_lines": " 1118: All SHA pins computed at runtime per the canonical script template (`computations/script-template.py`); `audit_sha256 = closure_hash(input_pin_map)` derived from the ordered input-pin map.\n 1119: \n 1120: ---\n 1121: \n 1122: ## §V. Plan-Freeze Validation Outputs (Phase 3e expected outputs)\n 1123: \n 1124: Per `.claude/rules/agent-standards.md` + skill §3e, the orchestrator runs these validators on this plan file at S87 plan-freeze:\n 1125: \n 1126: 1. `python computations/_plan_upstream_pin_validator.py --json sessions/session-plan/session-87-plan-w3.md` → `sessions/session-plan/session-87-plan-w3-validation.json` (upstream-reference pin map)\n 1127: 2. `python computations/_yaml_gate_validator.py sessions/session-plan/session-87-plan-w3.md` → PRDR machinery checklist + `schema_version: R3` per gate\n 1128: 3. `python computations/_source_reconciliation_audit.py sessions/session-plan/session-87-plan-w3.md` → 5+1-class taxonomy report (special attention to Class-(f) PIN-PLACEHOLDER for δ_speed canonical pins)\n 1129: 4. `python computations/_substrate_first_provenance_audit.py sessions/session-plan/session-87-plan-w3.md` (V.1 manual review; production audit pending S87 implementation per CF-79 adjacent)\n 1130: 5. Post-dispatch grep on `computations/s86_gate_verdicts.txt` for collision check on S87 gate IDs (no S87-prefixed entries should pre-exist; if any collision, route to `_recovery_controller.py` Stage-3 user-trigger)\n 1131: \n 1132: Per-gate YAML metadata (R3 schema):\n 1133\n... [truncated]"
+    },
+    {
+      "anchor_id": "sf_87:session-87-plan-w4.md",
+      "anchor_type": "session_files",
+      "name": "session-87-plan-w4.md",
+      "path": "sessions/session-plan/archive/session-87-plan-w4.md",
+      "session": "87",
+      "size_bytes": 68561,
+      "source_file": "sessions/session-plan/archive/session-87-plan-w4.md",
+      "source_context_30_lines": "   53: -->\n   54: | S38 algebraic GGE-permanence theorem | `permanent-results-registry.md` (S38 entry) | LANDED | CF-26 (post-tau_fold GGE state cross-check) |\n   55: | S86 W4 P4 commit `xi_E_GGE_inv = 13.642473425595973` | `canonical_constants.py` (per W5a-2 §10 substrate-first canonical) | LANDED | CF-26 (substrate-canonical for GGE quantities) |\n   56: \n   57: ### Plan-freeze validator gates (per context §0.4)\n   58: \n   59: Per the no-tech-debt rule (`CLAUDE.md §\"No Technical Debt\"`), the W4 plan-freeze runs:\n   60: \n   61: 1. `python computations/_plan_upstream_pin_validator.py --json sessions/session-plan/session-87-plan-w4.md`\n   62: 2. `python computations/_yaml_gate_validator.py sessions/session-plan/session-87-plan-w4.md`\n   63: 3. `python computations/_source_reconciliation_audit.py` (5+1-class taxonomy + cluster-span canonical-metric + Class-(f) PIN-PLACEHOLDER)\n   64: 4. `python computations/_substrate_first_provenance_audit.py` (V.1 manual review until S87 implementation lands)\n   65: 5. `python computations/_cross_pillar_bridge_audit.py` (mandatory for CF-25 5-anatomy + 3-level ladder discipline)\n   66: 6. `python computations/_pru_cardinality_audit.py` (PRU cardinality pre-flight)\n   67: 7. Pre-dispatch grep on `computations/s86_gate_verdicts.txt` for collision check on S87 gate IDs (no `S87-*` entries should pre-exist)\n   68: \n   69: ---"
+    },
+    {
+      "anchor_id": "sf_87:session-87-plan-w5.md",
+      "anchor_type": "session_files",
+      "name": "session-87-plan-w5.md",
+      "path": "sessions/session-plan/archive/session-87-plan-w5.md",
+      "session": "87",
+      "size_bytes": 62840,
+      "source_file": "sessions/session-plan/archive/session-87-plan-w5.md",
+      "source_context_30_lines": "   31: 2. `computations/canonical_constants.py` — at S86-close state; carries the W-5 substrate-IS Hochschild pairing R_universal pin (verify via `mcp__knowledge__.get_constant('R_universal_W5')` at gate execution time) and the cocycle norm ratio 7.324992 (verify via `mcp__knowledge__.get_constant('cocycle_ratio_phi67_phi88')`).\n   32: 3. `computations/s87_gate_verdicts.txt` — exists or can be created on first verdict-line append.\n   33: 4. `.claude/rules/cross-pillar-bridge-anatomy.md` — frozen at S86 W-5 promotion; provides 5-element anatomy + 3-level ladder spec used by CF-31.\n   34: 5. `.claude/rules/inheritance-falsifier-protocol.md` — frozen at S86 W-5 promotion; provides 4-gate structure used by CF-32+CF-33.\n   35: 6. `.claude/rules/phononic-framing.md` §\"IS Space, Not IN Space\" — provides direction-of-explanation cross-link.\n   36: 7. `.claude/rules/regulator-pin-discipline.md` — frozen S86 W0c-7; bare `a_n` citations in W5 scripts MUST be tagged `a_n^{ζ}`.\n   37: \n   38: Plan-freeze validators (per session-87-context.md §1.4) MUST run before W5 dispatch:\n   39: - `_plan_upstream_pin_validator.py --json sessions/session-plan/session-87-plan-w5.md` → `sessions/session-plan/session-87-plan-w5-validation.json`\n   40: - `_yaml_gate_validator.py sessions/session-plan/session-87-plan-w5.md`\n   41: - `_source_reconciliation_audit.py` (D_max ≥ 3.0 HARD-HALT)\n   42: - `_substrate_first_provenance_audit.py` (manual review until S87 implementation lands)\n   43: - `_cross_pillar_\n... [truncated]"
+    },
+    {
+      "anchor_id": "sf_87:session-87-plan-w6.md",
+      "anchor_type": "session_files",
+      "name": "session-87-plan-w6.md",
+      "path": "sessions/session-plan/archive/session-87-plan-w6.md",
+      "session": "87",
+      "size_bytes": 61903,
+      "source_file": "sessions/session-plan/archive/session-87-plan-w6.md",
+      "source_context_30_lines": "  764: | scan_range | N/A | tau_fold | tau_fold | §VII walls | V_4-coset pairs | tau_fold (legacy match) |\n  765: | step_size | N/A | N/A | N/A | N/A | N/A | N/A |\n  766: | tolerance | substantive_line_count >= 15; SHA match | 1e-10 RATIO | 1e-6 RATIO vs 512 | enumeration-completeness | algebraic identity | 1e-12 ABSOLUTE |\n  767: | scheme | SOURCE-DOUBLE-CITE-CO-PRIMARY | a_n^{ζ} | a_n^{ζ} wilson_3 | CFMSW | Mellin-cone s=3 + Wick rotation | a_n^{ζ} |\n  768: | convention | STAGE-1-CANDIDATE | cyclic-fold V_4 | Z_3-quotient cyclic-fold V_4 | V_4 partition | V_4 cyclic-fold | F_4 + M decomposition |\n  769: | random_seed | N/A | N/A | N/A | N/A | N/A | N/A |\n  770: | GPU path | N/A | torch.linalg.eigh on AMD RX 9070 XT (partial) | torch.linalg.matrix_exp | N/A | N/A (Sage MCP eligible) | same as legacy script |\n  771: \n  772: PRDR Pre-Registration Dry-Run validation required at plan-freeze: run `computations/_yaml_gate_validator.py sessions/session-plan/session-87-plan-w6.md` for PRDR machinery checklist + R3 `schema_version` per gate. Run `computations/_pru_cardinality_audit.py` to verify D_PRU_raw = 0 across all 6 gates.\n  773: \n  774: ---\n  775: \n  776: ## Wave 6 Input-SHA Ledger\n  777: \n  778: Single-source consolidated ledger of all upstream files Wave 6 consumes (cross-referenced from per-gate Input SHA-256 pins above):\n  779: \n  780: | File | Used by gate(s) | Purpose | SHA-pin policy |"
+    },
+    {
+      "anchor_id": "sf_87:session-87-plan-w7.md",
+      "anchor_type": "session_files",
+      "name": "session-87-plan-w7.md",
+      "path": "sessions/session-plan/archive/session-87-plan-w7.md",
+      "session": "87",
+      "size_bytes": 90872,
+      "source_file": "sessions/session-plan/archive/session-87-plan-w7.md",
+      "source_context_30_lines": " 1634: W8 plan-author: read W7's verdict file `computations/s87_gate_verdicts.txt`\n 1635: for the 5 + 1-secondary verdict lines; route per the above 15-row decision-point\n 1636: table.\n 1637: \n 1638: ---\n 1639: \n 1640: ## §0.13. Validator Coverage Checklist (plan-freeze; per skill §3e)\n 1641: \n 1642: Run at plan-freeze for `session-87-plan-w7.md`:\n 1643: \n 1644: 1. ✅ `computations/_plan_upstream_pin_validator.py --json sessions/session-plan/session-87-plan-w7.md`\n 1645:    → JSON to `sessions/session-plan/session-87-plan-w7-validation.json`\n 1646: 2. ✅ `computations/_yaml_gate_validator.py sessions/session-plan/session-87-plan-w7.md`\n 1647:    (verifies `schema_version: R3` per gate; PRDR machinery checklist)\n 1648: 3. ✅ `computations/_source_reconciliation_audit.py` (5+1 class taxonomy; HARD-HALT at D_max ≥ 3.0)\n 1649: 4. ✅ `computations/_substrate_first_provenance_audit.py` (V.1 manual review until\n 1650:    implementation lands; canonical xi_E_GGE_inv source = canonical_constants.py"
+    },
+    {
+      "anchor_id": "sf_87:session-87-plan-w8.md",
+      "anchor_type": "session_files",
+      "name": "session-87-plan-w8.md",
+      "path": "sessions/session-plan/archive/session-87-plan-w8.md",
+      "session": "87",
+      "size_bytes": 90133,
+      "source_file": "sessions/session-plan/archive/session-87-plan-w8.md",
+      "source_context_30_lines": " 1248: **Cross-wave dispatch order** within W8:\n 1249: 1. §W8-1, §W8-2, §W8-4, §W8-5, §W8-8 may dispatch in parallel (no intra-wave dependencies; all inputs pre-existing)\n 1250: 2. §W8-3 may dispatch in parallel with the above\n 1251: 3. §W8-6 dispatches AFTER §W8-4 completes (consumes `s87_w8_hbw_audit_atlas_a_4.npz`)\n 1252: 4. §W8-7 dispatches AFTER §W8-3 completes (consumes `s87_w8_c45_sixth_regulator_promotion.json` for shared Hopf-cocycle infrastructure)\n 1253: \n 1254: Concurrent dispatch wave plan: 6 parallel (§W8-1, §W8-2, §W8-3, §W8-4, §W8-5, §W8-8) + 2 sequential (§W8-6 after §W8-4, §W8-7 after §W8-3). Maximum concurrent agent count = 6 ≤ 8 cap.\n 1255: \n 1256: **End of session-87-plan-w8.md**."
+    },
+    {
+      "anchor_id": "sf_87:session-87-plan-w9a.md",
+      "anchor_type": "session_files",
+      "name": "session-87-plan-w9a.md",
+      "path": "sessions/session-plan/archive/session-87-plan-w9a.md",
+      "session": "87",
+      "size_bytes": 80296,
+      "source_file": "sessions/session-plan/archive/session-87-plan-w9a.md",
+      "source_context_30_lines": "   78: ### Field 5 — Hypothesis\n   79: The Joint F_2-Class Path-(c) Theorem 6-clause statement (verbatim from S86 W-9 workshop §\"Wrap-Up\" final-text lock-in at line 2291; clauses (a)..(f) with author-side attribution per workshop §E-R2.2 lines 1097-1112, §T-CR2.4 lines 1336-1385, §L-CR3.3 lines 1849-1858; 4 corrigenda from R3-B closure) is registry-eligible at Stage-1-CANDIDATE per `.claude/rules/joint-theorem-promotion.md`. The theorem's CLAUSE-LEVEL ATTRIBUTION distinguishes single-axis lizzi-side clauses from single-axis transit-side clauses from JOINT clauses requiring both axes; Stage-2 promotion (CF-59 at S88+) requires two-agent parallel independent verification of all clauses, with JOINT clauses PASS-AND'd across both verdicts.\n   80: \n   81: ### Field 6 — Method (full dispatch prompt)\n   82: \n   83: ```\n   84: DISPATCH PROMPT — mack-cosmic-bridge (sole writer; METHODOLOGY-class registry-landing)\n   85: \n   86: You are dispatched on `S87-PATH-C-SUCCESSOR-ANCHOR-LANDING` per Sub-Wave 9a §W9a-1 of `sessions/session-plan/session-87-plan-w9a.md`. Your task is to land the Joint F_2-Class Path-(c) Theorem from S86 W-9 as a STAGE-1-CANDIDATE entry in `sessions/permanent-results-registry.md` at slot §VII.AH, then update `sessions/framework/registry/falsifier-master-inventory.md` rows 2 + 13-21 to cite the §VII.AH landing.\n   87: \n   88: OPENING ACTIONS (mandatory):\n   89: 1. Read `.claude/rules/joint-theorem-promotion.md` §\"The 4 Stages\" — confirm Stage 1 requirements (full t\n... [truncated]"
+    },
+    {
+      "anchor_id": "sf_87:session-87-plan-w9b.md",
+      "anchor_type": "session_files",
+      "name": "session-87-plan-w9b.md",
+      "path": "sessions/session-plan/archive/session-87-plan-w9b.md",
+      "session": "87",
+      "size_bytes": 52159,
+      "source_file": "sessions/session-plan/archive/session-87-plan-w9b.md",
+      "source_context_30_lines": "   41: | S86 W-9 §L-CR3.2 lines 1758-1806 (4-class projection extremality |ρ_S|=1.0 EXACT) | S86 W-9 source | CF-58 reference baseline (s=3 anti-correlation extremality value to be tested against at s=4) |\n   42: | `sessions/framework/registry/branch-iv-canonical.md` §3 | S86 W4 P4 commit | CF-55 substrate-natural anchor formula source (xi_E_GGE_inv = 59.8·Δ_BCS/K_base); per-class affine-projection rescaling derivation |\n   43: | (LATENT cross-link) `computations/s87_w7_xi_E_per_class.npz` from W9a-CF-42 (if landed) | W9a-CF-42 = `S87-W5A-P3-IC-PER-CLASS-VERIFY` | CF-55 enriched input — per-class xi values replace affine class-projection construction if W9a landed first; otherwise CF-55 uses canonical-with-affine-projection construction |\n   44: \n   45: ### Validator coverage at Sub-Wave 9b plan-freeze\n   46: \n   47: Per `session-87-context.md` §1.4, run before sub-wave dispatch:\n   48: \n   49: 1. `python computations/_plan_upstream_pin_validator.py --json sessions/session-plan/session-87-plan-w9b.md` → `sessions/session-plan/session-87-plan-w9b-validation.json` — upstream npz pin map verification\n   50: 2. `python computations/_yaml_gate_validator.py sessions/session-plan/session-87-plan-w9b.md` — R3 schema_version + PRDR machinery checklist per gate\n   51: 3. `python computations/_source_reconciliation_audit.py` — 5+1 class taxonomy pin-vs-canonical drift; HARD-HALT at D_max ≥ 3.0; class-(f) PIN-PLACEHOLDER detection for CF-55 (xi_E_GGE_inv canonical match required)\n   52: \n... [truncated]"
+    },
+    {
+      "anchor_id": "sf_87:session-87-plan-w9c.md",
+      "anchor_type": "session_files",
+      "name": "session-87-plan-w9c.md",
+      "path": "sessions/session-plan/archive/session-87-plan-w9c.md",
+      "session": "87",
+      "size_bytes": 55899,
+      "source_file": "sessions/session-plan/archive/session-87-plan-w9c.md",
+      "source_context_30_lines": "  603: \n  604: All 8 input pins resolve to on-disk files at S86-close per context §0 \"Files-on-disk verified at S87 plan-freeze (2026-04-27)\" with one expected runtime-derivation (the τ_fold ± 0.005 spectrum caches, which regenerate via torch.linalg.eigh on RX 9070 XT if absent). The `_plan_upstream_pin_validator.py` post-write check verifies the 6 file-existence pins are non-zero size; HARD-HALT on any missing file other than the runtime-derived spectrum-cache pair.\n  605: \n  606: Cross-cite-only pin (NOT a runtime input, registered for traceability):\n  607: - W-9 workshop wrap-up §\"Workshop Verdict\" — the open-verdict framing source per `.claude/rules/epistemic-discipline.md` §\"Cross-Proxy Adjudication\" requirement (2). Cited for plan-author traceability; not loaded by the runtime script.\n  608: \n  609: ---\n  610: \n  611: **End of session-87-plan-w9c.md**"
+    },
+    {
+      "anchor_id": "sf_87:session-87-plan-w9d.md",
+      "anchor_type": "session_files",
+      "name": "session-87-plan-w9d.md",
+      "path": "sessions/session-plan/archive/session-87-plan-w9d.md",
+      "session": "87",
+      "size_bytes": 38253,
+      "source_file": "sessions/session-plan/archive/session-87-plan-w9d.md",
+      "source_context_30_lines": "  115:     - sessions/session-86/session-86-w9-* (workshop synthesis EXCLUDED)\n  116:     - sessions/session-86/path-c-reassessment-* (workshop closure EXCLUDED)\n  117: \n  118:   # Audit-script registration (mandatory per joint-theorem-promotion §\"Audit at plan-freeze\")\n  119:   plan_freeze_validator: computations/_joint_theorem_independent_verify_audit.py\n  120:   validator_invocation: |\n  121:     python computations/_joint_theorem_independent_verify_audit.py \\\n  122:       --gate-id S88-OR-LATER-EXTENDED-THEOREM-INDEPENDENT-VERIFY \\\n  123:       --plan-file sessions/session-plan/session-87-plan-w9d.md \\\n  124:       --json sessions/session-plan/session-87-plan-w9d-stage2-validation.json\n  125:   validator_pass_criteria: |\n  126:     PASS iff (1) two cross-reviewers dispatched in parallel (not sequentially);\n  127:             (2) cross-reviewers on DIFFERENT axes (spectral-functional + transit-dynamics/superfluid);\n  128:             (3) cross-reviewers NOT the original workshop authoring agents\n  129:                 (i.e., NOT lizzi-spectral-functional-theorist, NOT transit-dynamics-theorist);\n  130:             (4) dispatch prompts EXCLUDE workshop R1/R2/R3 transcripts\n  131:                 (verified by grep on the prompt text for forbidden source paths);"
+    }
+  ]
+}

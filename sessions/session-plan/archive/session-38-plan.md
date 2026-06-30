@@ -197,7 +197,7 @@ This is NOT the same question as "does S_f have a minimum?" It's "does the TOTAL
 ### C-5: D_K Level Spacing Statistics [ZERO-COST] (from Kitaev first engagement)
 
 **Agent**: kitaev-quantum-chaos-theorist (or gen-physicist with chaos diagnostic script)
-**Input**: Existing D_K eigenvalues from tier0 .npz files at tau = 0, 0.10, 0.15, 0.190, 0.25
+**Input**: Existing D_K eigenvalues from computation .npz files at tau = 0, 0.10, 0.15, 0.190, 0.25
 **Compute**: Level spacing ratio <r> within each Peter-Weyl sector (especially B2). Must unfold spectrum first (remove smooth DOS trend). Compute within a single sector (block-diagonal theorem).
 **Gate CHAOS-1**:
 - <r> > 0.50 at fold (tau=0.190) -> GOE statistics, genuine quantum chaos. PASS

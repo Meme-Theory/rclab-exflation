@@ -1,0 +1,259 @@
+========================================================================
+S52 CASIMIR-JOSEPHSON-52: J_12/J_23 from Casimir Algebra
+========================================================================
+
+--- Section 1: Loading data ---
+J_12 (B1-B2) = 0.03540210
+J_23 (B2-B3) = 0.00181366
+J_13 (B1-B3) = 0.00046785
+J_12/J_23 = 19.519658
+J_12/J_13 = 75.669238
+J_23/J_13 = 3.876566
+
+--- Section 2: SU(3) Casimir Invariants ---
+Sector   (p,q)         C_2        C_3   dim
+---------------------------------------------
+B1       (0,0)      0.0000     0.0000     1
+B2       (1,1)      3.0000     0.0000     8
+B3f      (1,0)      1.3333     1.1111     3
+B3c      (0,1)      1.3333    -1.1111     3
+
+--- Section 3: V_constrained Rank Analysis (KEY RESULT) ---
+V_constrained (3x3):
+  [0.06606567, 0.13007667, 0.01495339]
+  [0.13007667, 0.25610792, 0.02944173]
+  [0.01495339, 0.02944173, 0.00338457]
+
+Singular values: [3.25558156e-01 1.46967545e-17 7.26654837e-19]
+sv[1]/sv[0] = 4.51e-17
+sv[2]/sv[0] = 2.23e-18
+Numerical rank: 1
+
+*** V_constrained is EXACTLY RANK-1 ***
+
+Rank-1 vector v = sqrt(diag(V)) = [0.25703243, 0.50607106, 0.05817707]
+
+V / (v * v^T) (should be all 1.0):
+  [1.0000000000, 1.0000000000, 1.0000000000]
+  [1.0000000000, 1.0000000000, 1.0000000000]
+  [1.0000000000, 1.0000000000, 1.0000000000]
+Max deviation from 1.0: 2.22e-16
+
+--- Section 4: Algebraic Identity ---
+From S46 data:
+  Delta_B1 = 0.37179453
+  Delta_B2 = 0.73202611
+  Delta_B3 = 0.08415248
+
+Self-consistency check (rank-1 => Delta_i/Delta_j = v_i/v_j):
+  v_1/v_3 = 4.41810565
+  D_1/D_3 = 4.41810565
+  Match: True
+
+  v_1/v_2 = 0.50789790
+  D_1/D_2 = 0.50789790
+  Match: True
+
+  v_2/v_3 = 8.69880670
+  D_2/D_3 = 8.69880670
+  Match: True
+
+*** ALGEBRAIC IDENTITY (rank-1 theorem) ***
+  J_12/J_23 = (v_1/v_3)^2 = V_11/V_33
+  V_11/V_33 = 19.51965754
+  (v_1/v_3)^2 = 19.51965754
+  J_12/J_23 = 19.51965754
+  Match: True
+
+  J_12/J_13 = (v_2/v_3)^2 = V_22/V_33
+  V_22/V_33 = 75.66923798
+  J_12/J_13 = 75.66923798
+  Match: True
+
+  J_23/J_13 = (v_2/v_1)^2 = V_22/V_11
+  V_22/V_11 = 3.87656586
+  (J_23/J_13)^-1 = J_13/J_23... checking:
+  J_23/J_13 = 3.87656586
+
+Verification of all J ratios:
+  J_12/J_23 = v_1^2/v_3^2 = 19.51965754 vs 19.51965754
+  J_12/J_13 = v_2^2/v_3^2 = 75.66923798 vs 75.66923798
+  J_23/J_13 = v_2^2/v_1^2 = 3.87656586 vs 3.87656586
+
+--- Section 5: Tau-Independence of J_12/J_23 ---
+   tau    J_12/J_23    D_1/D_3  V_12/V_23
+---------------------------------------------
+  0.05    19.519658   4.418106   4.418106
+  0.10    19.519658   4.418106   4.418106
+  0.13    19.519658   4.418106   4.418106
+  0.15    19.519658   4.418106   4.418106
+  0.19    19.519658   4.418106   4.418106
+  0.25    19.519658   4.418106   4.418106
+  0.30    19.519658   4.418106   4.418106
+  0.35    19.519658   4.418106   4.418106
+
+J_12/J_23 coefficient of variation: 2.13e-14%
+D_1/D_3 coefficient of variation: 9.56e-01%
+*** Both exactly tau-independent (rank-1 theorem) ***
+
+--- Section 6: Casimir Content of V_11/V_33 ---
+
+V_ii values (diagonal of V_constrained):
+  V_11 (B1, singlet) = 0.06606567
+  V_22 (B2, adjoint) = 0.25610792
+  V_33 (B3, fund)    = 0.00338457
+
+V_ii ratios:
+  V_11/V_33 = 19.519658 = J_12/J_23
+  V_22/V_33 = 75.669238 = J_12/J_13
+  V_22/V_11 = 3.876566 = J_23/J_13
+
+Casimir-based predictions for V_11/V_33:
+  C_2(B2)^2/C_2(B3)^2 = 5.062500  (off by 3.86x)
+  dim(B1)^2*C_2(B2)/dim(B3f)^2 = 0.333333
+  (delta C_2)^2 ratio: 3.240000
+  None of these match V_11/V_33 = 19.519658
+
+V_B1B2/V_B3B2 from Kosmann (phi-dependent, S34):
+  phi=0:     3.011349
+  phi=0.13:  3.506290
+  These vary with phi, unlike V_constrained (rank-1) which is fixed
+  V_constrained ratio V_12/V_23 = 4.418106
+
+--- Section 7: Phi Crossing Condition ---
+sqrt(C_2 + f) model:
+  f = 6.0/(phi^2 - 1) = 4.4585
+  phi_check = sqrt((6+f)/f) = 1.531580
+  phi_paasch = 1.531580
+  Match: True
+
+Actual spectrum at tau=0.15:
+  min omega = 0.823873
+  max omega = 1.998474
+  max/min = 2.425707 (phi_paasch = 1.53158)
+  Note: max/min = 2.426, phi = 1.532, so phi is NOT max/min of full spectrum
+  phi is the ratio for SPECIFIC reps (3,0)/(0,0)
+
+Sector eigenvalue energies at fold:
+  E_B1 = 0.819140 (C_2=0)
+  E_B2 = 0.845269 (C_2=3)
+  E_B3 = 0.978224 (C_2=4/3)
+  Note: E ordering (B1<B2<B3) differs from C_2 ordering (B1<B3<B2)
+  => eigenvalues are NOT a monotone function of C_2
+
+--- Section 8: Rank-1 Theorem ---
+
+THEOREM (Rank-1 Josephson Identity):
+  If the inter-sector pairing matrix V is rank-1 (V_ij = v_i * v_j),
+  then the BCS self-consistency forces Delta_i proportional to v_i,
+  and all Josephson coupling RATIOS are tau-independent:
+
+    J_ij/J_kl = (v_i * v_j) / (v_k * v_l)
+
+  In particular:
+    J_12/J_23 = v_1^2/v_3^2 = V_11/V_33
+
+  Proof: J_ij = V_ij * Delta_i * Delta_j = v_i*v_j * (alpha*v_i)*(alpha*v_j)
+         = alpha^2 * v_i^2 * v_j^2
+         where alpha(tau) absorbs all tau dependence.
+
+VERIFICATION:
+  V_constrained singular values: 3.255582e-01, 1.47e-17, 7.27e-19
+  Rank: 1 (to machine epsilon)
+  V_11/V_33 = 19.51965754
+  J_12/J_23 = 19.51965754
+  Match: True
+  Tau variation: 0.00% (exact)
+
+--- Section 9: Algebraic Value of V_11/V_33 ---
+V_11/V_33 = 19.51965754
+sqrt(V_11/V_33) = v_1/v_3 = 4.41810565
+
+Closest simple rationals to V_11/V_33:
+  488/25 = 19.52000000  (err = 0.0018%)
+  449/23 = 19.52173913  (err = 0.0107%)
+  410/21 = 19.52380952  (err = 0.0213%)
+  371/19 = 19.52631579  (err = 0.0341%)
+  332/17 = 19.52941176  (err = 0.0500%)
+  293/15 = 19.53333333  (err = 0.0701%)
+  254/13 = 19.53846154  (err = 0.0963%)
+
+Closest algebraic to v_1/v_3 = 4.41810565:
+  53/12                =   4.416667  (-0.033%)
+  4+5/12               =   4.416667  (-0.033%)
+  sqrt(19.5)           =   4.415880  (-0.050%)
+  3+sqrt(2)            =   4.414214  (-0.088%)
+  2*pi^2 root          =   4.442883  (+0.561%)
+  C_2(B2)+C_2(B3)      =   4.333333  (-1.919%)
+
+V_ii in Kosmann kernel units:
+  V_11 = 0.06606567
+  V_22 = 0.25610792
+  V_33 = 0.00338457
+
+  If V_ii ~ dim^alpha: alpha = -2.7047
+  V_11/V_33 = (1/3)^-2.7047 = 19.519658
+
+--- Section 10: Simple Casimir Formulas for V_ii ---
+
+Sector   dim    C_2     C_3     V_ii
+--------------------------------------------------
+  B1        1   0.000    0.000  0.06606567
+  B2        8   3.000    0.000  0.25610792
+  B3        3   1.333    1.111  0.00338457
+
+  V_11/dim(B1) = 0.066066
+  V_22/dim(B2) = 0.032013
+  V_33/dim(B3f) = 0.001128
+  NOT proportional to dim
+
+  V_11/dim(B1)^2 = 0.066066
+  V_22/dim(B2)^2 = 0.004002
+  V_33/dim(B3f)^2 = 0.000376
+  NOT proportional to dim^2
+
+========================================================================
+SECTION 11: GATE VERDICT -- CASIMIR-JOSEPHSON-52
+========================================================================
+
+FINDINGS:
+
+1. STRUCTURAL THEOREM: V_constrained is EXACTLY rank-1.
+   Singular values: [3.255582e-01, 1.47e-17, 7.27e-19]
+   V_ij = v_i * v_j where v = [0.257032, 0.506071, 0.058177]
+
+2. ALGEBRAIC IDENTITY: J_12/J_23 = V_11/V_33 = (v_1/v_3)^2
+   V_11/V_33 = 19.51965754
+   J_12/J_23 = 19.51965754
+   Agreement to machine epsilon.
+
+3. SELF-CONSISTENCY: BCS gap equation forces Delta_i = alpha * v_i
+   v_1/v_3 = 4.41810565
+   D_1/D_3 = 4.41810565
+   Agreement to machine epsilon.
+
+4. TAU INDEPENDENCE: J_12/J_23 is EXACTLY constant across all tau.
+   All tau dependence is in alpha(tau)^2, which cancels in ratios.
+
+5. CASIMIR CONTENT: V_11/V_33 = 19.52 is NOT a simple function of
+   Casimir eigenvalues C_2(B1)=0, C_2(B2)=3, C_2(B3)=4/3.
+   It encodes the GEOMETRY of the Kosmann pairing kernel projected
+   onto sectors, which depends on full matrix elements, not just
+   representation labels.
+
+6. PHI CROSSING: m_{(3,0)}/m_{(0,0)} = 1.5316 is consistent with
+   omega ~ sqrt(C_2 + f(tau)) where f = 4.4585, but this is a
+   one-parameter fit, not a derivation from Casimirs.
+
+GATE VERDICT: INFO
+  J_12/J_23 = 19.5197 is an ALGEBRAIC IDENTITY forced by
+  the rank-1 structure of V_constrained, equaling V_11/V_33.
+  The numerical value encodes Kosmann kernel geometry, NOT Casimir
+  eigenvalues. The deeper structural content is the rank-1 theorem
+  itself, which makes ALL Josephson ratios tau-independent.
+
+--- Saving results ---
+Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s52_casimir_josephson.npz
+Gate: CASIMIR-JOSEPHSON-52 = INFO
+
+Done.

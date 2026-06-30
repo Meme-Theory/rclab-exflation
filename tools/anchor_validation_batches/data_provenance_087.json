@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 87,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_861",
+      "anchor_type": "data_provenance",
+      "name": "fredholm_bdg_v2",
+      "script_path": "session-61/s61_fredholm_bdg_v2.py",
+      "session": "s61",
+      "inputs": "computations/session-60/s60_rg_integrals.npz",
+      "outputs": "",
+      "source_file": "computations/session-61/s61_fredholm_bdg_v2.py",
+      "source_context_30_lines": "<name 'fredholm_bdg_v2' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: FREDHOLM-BDG-61 v2: Extended analysis with V_fold pairing and gap-function checks\n    4: ==================================================================================\n    5: \n    6: The v1 computation showed:\n    7:   - ind_Z = 0 (forced by PHS, consistent with sf=0)\n    8:   - Pf = +1 (trivial)\n    9: \n   10: This v2 extends the analysis:\n   11:   1. Use the FULL V_fold pairing matrix (not simplified block-diagonal Delta)\n   12:   2. Compute the gap function properly: Delta_ij = g_eff * V_ij * <c_j c_i>\n   13:   3. Check Pfaffian under BCS self-consistency\n   14:   4. Compute the Z_2 invariant at BOTH endpoints: tau=0 (round) and tau=tau_fold\n   15:   5. Track the CHANGE in Pfaffian sign (which would indicate a topological transition)\n   16:   6. Check the Kitaev criterion for the FULL pairing matrix\n   17: \n   18: Paper 14's framework: the INDEX of the Fredholm complex is stable under\n   19: RELATIVELY COMPACT perturbations (Thm 3.15). This means the block-diagonal\n   20: approximation should give the same answer as the full pairing -- unless the\n   21: perturbation crosses a gap closing.\n   22: \"\"\"\n   23: \n   24: import numpy as np\n   25: import sys\n   26: \n   27: sys.path.insert(0, '.')\n   28: from canonical_constants import (\n   29:     E_cond, Delta_0_GL, Delta_B3, tau_fold, N_dof_BCS,\n   30:     S_inst, xi_BCS, a_GL, b_GL, E_B1, Delta_0_OES"
+    },
+    {
+      "anchor_id": "prov_862",
+      "anchor_type": "data_provenance",
+      "name": "functional_eq",
+      "script_path": "session-61/s61_functional_eq.py",
+      "session": "s61",
+      "inputs": "",
+      "outputs": "session-61/s61_functional_eq.npz, session-61/s61_functional_eq.png",
+      "source_file": "computations/session-61/s61_functional_eq.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s61_functional_eq.py — FUNC-EQ-61\n    4: Functional Equation and J-Symmetry Constraints for D_K on SU(3)\n    5: \n    6: Mathematical Setup\n    7: ------------------\n    8: Three structural properties of the spectral zeta function\n    9: zeta_{|D_K|}(s) = sum_n d_n |lambda_n|^{-s} on (SU(3), g_tau):\n   10: \n   11: (a) ETA FUNCTION VANISHING (J-symmetry):"
+    },
+    {
+      "anchor_id": "prov_863",
+      "anchor_type": "data_provenance",
+      "name": "gauge_module_check",
+      "script_path": "session-61/s61_gauge_module_check.py",
+      "session": "s61",
+      "inputs": "",
+      "outputs": "session-61/s61_gauge_module_check.npz",
+      "source_file": "computations/session-61/s61_gauge_module_check.py",
+      "source_context_30_lines": "   63:     spinor_connection_offset,\n   64:     build_cliff8,\n   65:     build_chirality,\n   66: )\n   67: \n   68: np.set_printoptions(precision=10, linewidth=140, suppress=True)\n   69: \n   70: OUTDIR = os.path.dirname(os.path.abspath(__file__))\n   71: OUTPUT_NPZ = os.path.join(OUTDIR, \"s61_gauge_module_check.npz\")\n   72: \n   73: # =============================================================================\n   74: # SECTION 1: A_F ALGEBRA INFRASTRUCTURE\n   75: # Reproduced from s28b_order_one.py with validation\n   76: # =============================================================================\n   77: \n   78: def flat_idx(row, col):\n   79:     \"\"\"Map (row, col) in 4x4 matrix to flat index in 16-dim Psi_+."
+    },
+    {
+      "anchor_id": "prov_864",
+      "anchor_type": "data_provenance",
+      "name": "gauge_module_extended",
+      "script_path": "session-61/s61_gauge_module_extended.py",
+      "session": "s61",
+      "inputs": "",
+      "outputs": "session-61/s61_gauge_module_extended.npz",
+      "source_file": "computations/session-61/s61_gauge_module_extended.py",
+      "source_context_30_lines": "  248:         # Check if it stabilized\n  249:         print(f\"\\n  RESULT: Extended space also fails bimodule closure\")\n  250:         print(f\"  Max residuals: {max(ml,mr,mol,mor):.6e}\")\n  251: \n  252:     dt = time.time() - t0\n  253:     print(f\"\\n  Runtime: {dt:.1f}s\")\n  254: \n  255:     # Save\n  256:     np.savez(os.path.join(OUTDIR, \"s61_gauge_module_extended.npz\"),\n  257:              rank_ext=rank_ext,\n  258:              bimod_left=ml, bimod_right=mr,\n  259:              bimod_opp_left=mol, bimod_opp_right=mor,\n  260:              gauge_residuals=pgm,\n  261:              gauge_names=np.array(un, dtype=object),\n  262:              gauge_factors=np.array(uf, dtype=object),\n  263:              n_preserve=n_preserve,\n  264:              is_bimodule=ext_is_bimodule)"
+    },
+    {
+      "anchor_id": "prov_865",
+      "anchor_type": "data_provenance",
+      "name": "gge_therm",
+      "script_path": "session-61/s61_gge_therm.py",
+      "session": "s61",
+      "inputs": "",
+      "outputs": "session-61/s61_gge_therm.npz, session-61/s61_gge_therm.png",
+      "source_file": "computations/session-61/s61_gge_therm.py",
+      "source_context_30_lines": "    1: \"\"\"\n    2: s61_gge_therm.py — GGE Thermalization via Thouless Time Scaling (GGE-THERM-61)\n    3: \n    4: Gate: PASS if t_Th > 10 * t_transit at N=32. FAIL if < 0.1 * t_transit. INFO otherwise.\n    5: \n    6: Physics:\n    7:     The Thouless energy E_Th(N) = D / L^2 measures how fast information diffuses\n    8:     across a disordered/coupled system of size L ~ N^{1/3} (in d=3).\n    9:     For a lattice with diffusion constant D = E_J * a^2 / hbar (a = lattice spacing = 1):\n   10:         E_Th(N) = E_J / N^{2/3}"
+    },
+    {
+      "anchor_id": "prov_866",
+      "anchor_type": "data_provenance",
+      "name": "gge_therm_window",
+      "script_path": "session-61/s61_gge_therm_window.py",
+      "session": "s61",
+      "inputs": "computations/session-55/s55_conformal_diagram.npz, computations/session-57/s57_percolation_cc.npz, computations/session-...",
+      "outputs": "session-61/s61_gge_therm_window.npz, session-61/s61_gge_therm_window.png",
+      "source_file": "computations/session-61/s61_gge_therm_window.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s61_gge_therm_window.py — Thouless Time vs Conformal Time Budget (GGE-THERM-61)\n    4: ================================================================================\n    5: \n    6: Session 61, Wave 2, SP-3 (Schwarzschild-Penrose Geometer)\n    7: \n    8: Pre-registered gate: GGE-THERM-61\n    9:   PASS if t_Th / Delta_eta > 10\n   10:   FAIL if t_Th / Delta_eta < 0.1\n   11:   INFO if in [0.1, 10]"
+    },
+    {
+      "anchor_id": "prov_867",
+      "anchor_type": "data_provenance",
+      "name": "gge_thermalization",
+      "script_path": "session-61/s61_gge_thermalization.py",
+      "session": "s61",
+      "inputs": "",
+      "outputs": "session-61/s61_gge_thermalization.npz",
+      "source_file": "computations/session-61/s61_gge_thermalization.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s61_gge_thermalization.py — GGE Thermalization via Compound Nucleus Doorway-State Formalism\n    4: ============================================================================================\n    5: \n    6: Gate: GGE-THERM-61\n    7:   PASS if t_Th > 10 * t_transit\n    8:   FAIL if t_Th < 0.1 * t_transit\n    9:   INFO if t_Th in [0.1, 10] * t_transit\n   10: \n   11: Physics:"
+    },
+    {
+      "anchor_id": "prov_868",
+      "anchor_type": "data_provenance",
+      "name": "ginzburg_staircase",
+      "script_path": "session-61/s61_ginzburg_staircase.py",
+      "session": "s61",
+      "inputs": "",
+      "outputs": "session-61/s61_ginzburg_staircase.npz",
+      "source_file": "computations/session-61/s61_ginzburg_staircase.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s61_ginzburg_staircase.py -- Ginzburg Criterion for the CC Staircase\n    4: =====================================================================\n    5: \n    6: Session 61, GINZBURG-CC-61 gate.\n    7: \n    8: Physics\n    9: -------\n   10: The CC staircase is a mean-field construction: each cell has a BCS ground\n   11: state |Psi_N> with N condensed pairs, and the CC at step N is"
+    },
+    {
+      "anchor_id": "prov_869",
+      "anchor_type": "data_provenance",
+      "name": "gl_staircase",
+      "script_path": "session-61/s61_gl_staircase.py",
+      "session": "s61",
+      "inputs": "",
+      "outputs": "session-61/s61_gl_staircase.npz, session-61/s61_gl_staircase.png",
+      "source_file": "computations/session-61/s61_gl_staircase.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s61_gl_staircase.py — Ginzburg-Landau Free Energy for CC Staircase\n    4: ====================================================================\n    5: \n    6: Task: GL-STAIRCASE-61\n    7: Agent: Landau Condensed-Matter Theorist\n    8: \n    9: PHYSICS:\n   10:   The discrete E_GS(N) staircase has Gi = 421,000 — fluctuations completely\n   11:   wash out the individual steps. But the Ginzburg-Landau free energy F(n)"
+    },
+    {
+      "anchor_id": "prov_870",
+      "anchor_type": "data_provenance",
+      "name": "gsl_timescape_jensen",
+      "script_path": "session-61/s61_gsl_timescape_jensen.py",
+      "session": "s61",
+      "inputs": "",
+      "outputs": "session-61/s61_gsl_timescape_jensen.npz, session-61/s61_gsl_timescape_jensen.png",
+      "source_file": "computations/session-61/s61_gsl_timescape_jensen.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s61_gsl_timescape_jensen.py — GSL-TIMESCAPE-61\n    4: \n    5: Verify that convexity of S_spec(tau) guarantees Delta_S_gen > 0 under\n    6: spatial inhomogeneity via Jensen's inequality.\n    7: \n    8: Physics:\n    9:     The substrate compaction timescape (S59-60) proposes that spatial\n   10:     variation in the compactification parameter tau produces clock\n   11:     variance -> w_a. For this to be thermodynamically consistent, the"
+    }
+  ]
+}

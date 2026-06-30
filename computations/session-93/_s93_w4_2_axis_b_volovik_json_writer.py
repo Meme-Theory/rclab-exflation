@@ -1,0 +1,192 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""Writer for the Axis-B (volovik) verdict JSON of S93-W4-2 Stage-2 cross-axis verify.
+
+This is the AXIS-B reviewer's output (per-clause verdicts formed FROM FIRST PRINCIPLES
+on the substrate / superfluid-universe axis, WITHOUT prior workshop context, reading ONLY
+the registered §VII.AX.MULTI-PIN-ATLAS Stage-1 entry + cited pins + obs_2). It does NOT
+emit any gate verdict line; the aggregation/emission is a separate orchestrator-triggered
+step in s93_w4_2_vii_ax_multi_pin_atlas_stage_2_verify.py --emit.
+"""
+from __future__ import annotations
+
+import os
+
+os.environ.setdefault("OMP_NUM_THREADS", "8")
+
+import hashlib
+import json
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent.parent  # (local)
+import sys
+
+sys.path.insert(0, str(ROOT / "computations" / "_shared"))
+from canonical_constants import M_KK, tau_fold  # noqa: E402
+
+OUT = (  # (local)
+    ROOT / "computations" / "session-93"
+    / "s93_w4_2_axis_b_volovik_multi_pin_atlas_verify.json"
+)
+OBS2 = ROOT / "computations" / "session-91" / "s91_w5_3_cf41_upper_22_6.npz"  # (local)
+OBS2_SHA = hashlib.sha256(OBS2.read_bytes()).hexdigest()  # (local)
+
+R_zeta, R_PV, R_Mellin = 1.414393e02, 1.144577e02, 1.414393e02  # (local)
+spread = max(R_zeta, R_PV, R_Mellin) - min(R_zeta, R_PV, R_Mellin)  # (local)
+spread_str = f"{spread:.4f}"  # (local)
+
+payload = {
+    "gate_id": "S93-W4-2-VII-AX-MULTI-PIN-ATLAS-STAGE-2-CROSS-AXIS-VERIFY",
+    "axis": "B",
+    "reviewer": "volovik-superfluid-universe-theorist",
+    "axis_label": "substrate / superfluid-universe",
+    "stage_1_entry_audited": "VII.AX.MULTI-PIN-ATLAS (registry line ~19486; STAGE-1-CANDIDATE)",
+    "stage_1_landing_audit_sha256_head": "a006b8092e33e680",
+    "stage_1_source_verdict_audit_sha256": (
+        "58671312b0aee2e749836b8902273ab135073992736ddcc8f3362be2328dea14"
+    ),
+    "independence_protocol": {
+        "read_W3_workshop_transcript": False,
+        "read_S92_W6_1_W6_2_workshop_transcript": False,
+        "read_axis_A_verdict_during_audit": False,
+        "audited_from_first_principles_on_axis_B": True,
+        "sources_read": [
+            "registered VII.AX.MULTI-PIN-ATLAS Stage-1 entry text",
+            "S91 W2-1 PASS-V verdict line (cited pin)",
+            "obs_2 grid s91_w5_3_cf41_upper_22_6.npz (Axis-B-only load)",
+        ],
+        "loaded_input_obs_2": "computations/session-91/s91_w5_3_cf41_upper_22_6.npz",
+        "obs_2_sha256": OBS2_SHA,
+        "did_not_load_obs_1_registry_text_grid": (
+            "obs_1 (VII.AX.OP-PROJ registry-text content) is Axis-A-only per plan dispatch"
+        ),
+    },
+    "axis_B_single_axis_clauses": {
+        "Element_4_L_minus_3_algebraic_envelope": {
+            "verdict": "PASS",
+            "evidence": (
+                "L^-3 algebraic envelope at d=4 substrate-distance-2 pole s=4; Level-2-BINDING "
+                "sub-class (HKR-image of chi-prime Hochschild moment binds Level-1 pluralism "
+                "THEOREM to lab-IN continuum images at Pillar IV/II/V projections; c_continuum "
+                "defined per regulator class). Three structurally INDEPENDENT envelopes (Hybrid "
+                "Independence Test clause iv YES), NOT numerical refinements of one another but "
+                "distinct HKR-image bindings to three structurally distinct continuum lab "
+                "observables. Substrate/superfluid axis confirms the envelope is Level-2-binding, "
+                "not Level-2-non-binding (each regulator-class image has a defined continuum "
+                "c_continuum)."
+            ),
+        }
+    },
+    "joint_clauses": {
+        "Element_1_JOINT_substrate_IS_observable": {
+            "verdict": "PASS",
+            "semantic_tag": "substrate_IS_observable_level_1_single_tau_slice",
+            "evidence": (
+                "Res_s=4[Tr(D_K^-2s)] at chi-prime restriction on (A_K,H_K,D_K(tau_fold=0.19)) is "
+                "a Level-1 single-tau-slice substrate-IS observable, NOT a container coordinate. "
+                "The substrate IS the spectral triple at tau_fold=0.19; the s=4 Mellin residue is "
+                "intrinsic to its spectral closure (a higher spectral-moment of D_K, the "
+                "superfluid-universe analog of a higher-order order-parameter-texture "
+                "gradient-energy density). Direction-of-explanation flows substrate -> emergent "
+                "(no container inversion). Level-1 single-tau-slice tag present per "
+                "phononic-framing.md K=2 MANDATORY."
+            ),
+        },
+        "Element_3_JOINT_bridge_map": {
+            "verdict": "PASS",
+            "semantic_tag": "JOINT_bridge_map",
+            "evidence": (
+                "Bridge map explicitly named: Connes-Moscovici 1995 III.4 finite-spectral-triple "
+                "residue formula o HKR L_max->inf image at d=4 substrate-distance-2 pole s=4 (NOT "
+                "analogous-to / corresponds-to). Element-3 fiducial-anchor binding type (iii) "
+                "joint-hypersurface: lab discrimination is 2D in (regulator-class R, observable "
+                "value), realized by the three regulator-class images spanning the 2D (R, R_value) "
+                "hypersurface. Genuine 2D discrimination (distinct image values=2: R_zeta==R_Mellin "
+                "exact, R_PV outlier; spread=" + spread_str + " M_KK^2 > 1e-3 option-iv threshold). "
+                "Bridge-map-scheme suffix discipline satisfied (each fiducial sub-row carries "
+                "-ZETA-/-PV-/-MELLIN- convention-tag suffix)."
+            ),
+        },
+        "Element_5_JOINT_empirical_anchor": {
+            "verdict": "PASS",
+            "semantic_tag": "JOINT_empirical_anchor",
+            "evidence": (
+                "Triple-pin empirical anchor at canonical L_max=12 via S91 W2-1 PASS-V "
+                "(audit_sha256=58671312b0aee2e7...): R_zeta=1.414393e+02, R_PV=1.144577e+02, "
+                "R_Mellin=1.414393e+02 M_KK^2. Cross-regulator spread " + spread_str + " M_KK^2 >> "
+                "1e-3 option-iv threshold by 4.43 OOM IS the substrate empirical signature of "
+                "regulator-class-pluralism; option-v admission criterion satisfied BY "
+                "CONSTRUCTION. Level-3 single-pinned at R_Mellin (substrate-natural canonical per "
+                "Level-3 anchor singleness sub-clause); R_zeta + R_PV are Level-2-B DIAGNOSTIC "
+                "sub-rows ONLY (cross-corner co-primary FORBIDDEN per "
+                "substrate-first-canonical-sourcing.md (i))."
+            ),
+        },
+    },
+    "substrate_input_orthogonality_obs_2": {
+        "verdict": "PASS",
+        "obs_2_loaded_by_axis_B_only": True,
+        "obs_2_NOT_loaded_by_axis_A": True,
+        "structural_ceiling_NO_overlap_caveat": True,
+        "obs_2_structurally_distinct_from_atlas_observable": True,
+        "evidence": (
+            "obs_2 (n_PBH cardinality grid) is loaded by Axis-B only (plan dispatch: "
+            "axis_a.loads_obs_2=false, axis_b.loads_obs_2=true). obs_2 tracks N_eigs LINEARLY "
+            "(ratio-of-ratios=1.0 exact at L_max {14,15,16}) => cardinality-cascade observable at "
+            "substrate-distance-3 pole s=5, STRUCTURALLY DISTINCT from the MULTI-PIN-ATLAS "
+            "observable (s=4 Mellin residue, substrate-distance-2). Cross-pole ladder s=3 "
+            "(alpha_s) / s=4 (MULTI-PIN-ATLAS) / s=5 (n_PBH) -- obs_2 anchors the s=5 end, "
+            "non-fungible w.r.t. the s=4 atlas. Structural ceiling achieved => NO "
+            "substrate-input-overlap caveat (matches S89 W4-7 VII.AH "
+            "FIRST-INSTANCE-WITHOUT-caveat precedent)."
+        ),
+        "obs_2_n_PBH_central": 7.276051822131147e-23,
+        "obs_2_sub_band_membership": "UPPER-22-6-CONJUNCT-PASS",
+    },
+    "machinery_not_self_authored": {
+        "verdict": "PASS",
+        "evidence": (
+            "Axis-B (volovik) applies substrate/superfluid first-principles audit + the "
+            "5-anatomy/3-level ladder + Hybrid Independence Test predicate. These audit-machinery "
+            "rules were NOT authored by volovik (cross-pillar-bridge-anatomy.md is a shared rule "
+            "file; the Hybrid Independence Test predicate (i OR ii OR iii) AND iv is rule-file "
+            "canonical). Verdict-layer machinery is not structurally self-authored."
+        ),
+    },
+    "honesty_notes": [
+        (
+            "Registry Element 3/5 + provenance state '33% relative divergence' for the "
+            "cross-regulator spread. Independent Axis-B check: spread/R_Mellin = "
+            "26.9816/141.4393 = 19.08%; spread/R_PV = 23.58%; neither is exactly 33%. This is a "
+            "NON-LOAD-BEARING annotation imprecision -- the load-bearing claim (spread >> 1e-3 "
+            "option-iv threshold => option-v pluralism) holds robustly at 4.43 OOM excess. Flagged "
+            "as INFO-level annotation note for a future registry-text hygiene pass; does NOT affect "
+            "any clause verdict (the spread magnitude itself, 26.98 M_KK^2, is bit-reproduced from "
+            "the registered triple-pin)."
+        )
+    ],
+    "axis_B_per_clause": {
+        "Element_1_JOINT": "PASS",
+        "JOINT_Element_3": "PASS",
+        "JOINT_Element_5": "PASS",
+        "Element_4_single_axis": "PASS",
+        "substrate_input_orthogonality_obs_2": "PASS",
+        "machinery_not_self_authored": "PASS",
+    },
+    "axis_B_composite": "PASS",
+    "axis_B_composite_rationale": (
+        "All Axis-B-audited clauses PASS (E1 JOINT, JE3, JE5, E4 single-axis) AND "
+        "substrate-input-orthogonality at obs_2 PASS at structural ceiling AND "
+        "machinery-not-self-authored PASS. Axis-B confirms the VII.AX.MULTI-PIN-ATLAS option-v "
+        "regulator-class-pluralism structural conclusion from the substrate/superfluid axis, "
+        "WITHOUT prior workshop context, reading only the registered Stage-1 entry + cited pins "
+        "+ obs_2."
+    ),
+    "M_KK": float(M_KK),
+    "tau_fold": float(tau_fold),
+}
+
+OUT.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+print("WROTE", OUT)
+print("axis_B_composite =", payload["axis_B_composite"])
+print(json.dumps(payload["axis_B_per_clause"], indent=2))

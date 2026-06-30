@@ -1,0 +1,52 @@
+Ainulindale: Unknown command line argument 'Exflation\phonon-exflation-sim\.venv312\Lib\site-packages\_rocm_sdk_core\lib\llvm\bin\offload-arch.exe'.  Try: 'C:\sandbox\Ainulindale --help'
+=== CF-S117-BRANCH-IV-L16 :: branch-(iv) w_0 DR3 L_max diagnostic one truncation deeper (p+q=16) ===
+[const] w0_FW=-0.918  tau_fold=0.19  Lambda_Z=1.0  Gamma_effacement=0.9997  N_cells=32
+[canon] runtime-verified: w0_FW=-0.918 (==-0.918), tau_fold=0.19 (==0.190)
+=== CF-S117-BRANCH-IV-L16 — input SHA-256 pins ===
+  computations/_shared/canonical_constants.py: d884a2b512001392...
+  computations/session-106/s106_w1_highl_cache_l1416.npz: e6bc3af86a3fa7ac...
+  computations/session-105/s105_branch_iv_direct_l1314.py: 10119df99b8a54ff...
+  computations/session-84/s84_spectrum_cache_L12_tau019.npz: 9e6d9cf7fd6a6949...
+  computations/_shared/dirac_spectrum.py: dadba674e950fad9...
+  closure_hash:   e041507308d425e6...
+  audit_sha256:   aec1f966f758ba8a... (script+canonical+pinmap)
+  content_sha256: c3eb821e3187f207... (script only)
+[cache] npz-internal audit_sha256=5af2b7cd09d86349...  integrity_ok(== 5af2b7cd...)=True
+[cache] sector_evals_L16: 136 sectors (complete p+q<=15)  cache_herm_err_max=1.13e-15
+[w9-lineage] rho_B(10/13/14/15)=-0.575206615135/-0.656884151842/-0.677718044738/-0.696174388058
+[w9-lineage] reproduction max_diff=2.22e-16 ok(<= 1e-12)=True
+  --- BUILD p+q=16 shell: 9 upper-triangle sectors (conjugates by CPT) ---
+[pipeline] device=cuda:0  GT builder substituted for dense symmetric-power
+    (16,0)/(0,16) GT-pure: dim=153 D=2448 |lam|=[4.772309,6.917603] herr=[0.0e+00,0.0e+00] conj_sentinel=3.55e-14 (1.6+0.8s)
+    (15,1)+conj(1,15): dim=288 D=4608 |lam|=[4.634050,6.834724] herr=7.8e-16 (4.8s)
+    (14,2)+conj(2,14): dim=405 D=6480 |lam|=[4.550395,6.762075] herr=5.1e-16 (11.0s)
+    (13,3)+conj(3,13): dim=504 D=8064 |lam|=[4.496561,6.699987] herr=4.5e-16 (18.8s)
+    (12,4)+conj(4,12): dim=585 D=9360 |lam|=[4.473617,6.648757] herr=3.9e-16 (151.1s)
+    (11,5)+conj(5,11): dim=648 D=10368 |lam|=[4.482032,6.608636] herr=5.1e-16 (199.6s)
+    (10,6)+conj(6,10): dim=693 D=11088 |lam|=[4.503768,6.579829] herr=4.0e-16 (238.4s)
+    (9,7)+conj(7,9): dim=720 D=11520 |lam|=[4.505501,6.562484] herr=6.7e-16 (286.0s)
+    (8,8): dim=729 D=11664 |lam|=[4.502838,6.556692] herr=2.9e-16 (272.1s)
+[build] p+q=16 shell complete: 17/17 sectors (1184.3s total)  lam_max=6.917603@(0, 16)
+[resume] saved shell to s117_branch_iv_l16_shell_resume.npz
+[shell] complete_16=True (17/17)  herr_max=7.78e-16(floor 2.40e-14, ok=True)  conj_sentinel=3.55e-14(ok=True)  lam_max@(0, 16)(GT-pure=True)
+[merge] merged: 153 sectors, max_level=16
+  rho_B(14) [merged] = -0.677718044737923  (lam_max=6.168115, mean_Z=1.987872, n_modes=323136)
+  rho_B(15) [merged] = -0.696174388058208  (lam_max=6.542827, mean_Z=1.987878, n_modes=434112)
+  rho_B(16) [merged] = -0.712634671571781  (lam_max=6.917603, mean_Z=1.987879, n_modes=573648)
+[xcheck] rho_B(15) merged-vs-W9 = 1.11e-16; rho_B(14) merged-vs-W9 = 1.11e-16 (<= 1e-12)
+[driver] lambda_max(15)=6.542827 -> lambda_max(16)=6.917603 (raises=True, b=0.374776)
+[driver] mean_Z(15)=1.987878 -> mean_Z(16)=1.987879 (frozen shift=8.86e-07)
+[cac] offset_B = -0.342793384865  [w0_FW=-0.918 - rho_B(10)=-0.575206615135]
+[cac] w0^CAC(10) = -0.918000000000000  (== w0_FW? resid=0.00e+00)
+  w0^CAC(14) = -1.020511429602951
+  w0^CAC(15) = -1.038967772923236
+  w0^CAC(16) = -1.055428056436809
+[span] spread_CAC{14,15,16} = 0.034916626834  (offset-free = 0.034916626834; resid=1.11e-16)
+[span] vs W9 spread_CAC{13,14,15}=0.0392902: narrows=True
+[decr] d(14->15)=-0.01845634  d(15->16)=-0.01646028  sign_neg=True  decelerating=True  |d(14->15)|-|d(15->16)|=+0.00199606
+[law] d(15->16) empirical=-0.01646028  analytic(mean_Z*Delta(1/lam_max))=-0.01646042  residual=1.35e-07
+[inv13-contrast] this rho_B(16)=-0.712635 vs INV13 rho_B(16)=-0.696174 (bottom-K FB-saturation artifact); genuine lambda_max-driven shift=0.016460
+[VERDICT] INFO-by-construction (corridor CLOSED-WITH-RESULT per W-5)  rho_B(16)=-0.712635  spread_CAC{14,15,16}=0.0349166  d(15->16)=-0.016460  decelerating=True  spread_narrows=True  guard_ok=True  => INFO
+<<<EMIT_VERDICT_PAYLOAD>>>
+{"session": 117, "gate_id": "CF-S117-BRANCH-IV-L16", "verdict": "INFO", "value": "rho_B(16)=-0.712635 spread_CAC{14,15,16}=0.0349166 d(15->16)=-0.016460<d(14->15)=-0.018456_DECEL lam_max(15)=6.542827->lam_max(16)=6.917603@(0, 16) mean_Z_frozen_shift=8.86e-07 w0CAC(16)=-1.055428 offset_B=-0.342793 spread_narrows=True conj_sentinel=3.6e-14 INV13_contrast_shift=0.016460 INFO-by-construction_corridor-CLOSED-WITH-RESULT", "scheme": "zeta", "convention": "CAC-branch-iv-anchored-L10-DERIVED-OFFSET", "l_max": "16", "audit_sha256": "aec1f966f758ba8a25b9614b47172f897367f66763e07cbc351917d79a4ba703", "content_sha256": "c3eb821e3187f207a346effe237c36892a74ad38e1bb2737fbc6c3f25eade822", "schema_version": "S84+", "sign_verdict": "PASS", "magnitude_verdict": "PASS", "regime_verdict": "VALID", "extra_rows": ["# composite-precedence: session-117-plan-w7.md \u00a7W7-3 + workshops/s116-w0-spectral-derivability.md (W-5 R3-FINAL closure). Generic 3-tuple collapse would read PASS (sign=PASS decel + magnitude=PASS narrows + regime=VALID); OVERRIDDEN to composite INFO because the branch-iv corridor is CLOSED-WITH-RESULT and is NOT reopenable by a value-neutral L_max diagnostic (the spread is offset-invariant -> certifies rho_B->-1 smoothly, NOT support for -0.918).", "# regulator_pin=a_2^{Mellin} poleconv-A-double (pole_in_s=3, curvature_grade_n=2); cutoff_axis=spectral (Zubarev Lambda_Z=1.0 on D_K spectrum); GT(p,0)-bosonic-ladder + Casimir-projection mixed; conj-CPT-symmetry halved-build (9 upper-triangle sectors, conj_sentinel=3.6e-14); cache_integrity=5af2b7cd", "# lambda_max-DRIVEN: lambda_max(15)=6.542827->lambda_max(16)=6.917603 (GT-pure (0, 16), C2=304/3 highest) RAISES denominator; mean_Z frozen 1.987878->1.987879(shift 8.9e-07); rho_B(16)=-0.712635 != INV13 rho_B(16)=-0.696174 (bottom-K FB-saturation artifact, ORTHOGONAL to lambda_max-driven moment); 1/lam_max^2 law residual=1.4e-07"]}
+<<<END_EMIT_VERDICT_PAYLOAD>>>

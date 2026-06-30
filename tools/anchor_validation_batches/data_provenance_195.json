@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 195,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1941",
+      "anchor_type": "data_provenance",
+      "name": "w0c_external_clock_scaffold",
+      "script_path": "session-86/s86_w0c_external_clock_scaffold.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-86/s86_w0c_external_clock_scaffold.py",
+      "source_context_30_lines": "  127:   - Re-pin S86's frozen 2026-2030 plan (would violate freeze-no-re-pin)\n  128:   - Re-define ingest-gate branches without explicit user approval\n  129:   - Add new ingest-gates between S86 and the target session (would silently\n  130:     re-pin the scaffold)\n  131: \n  132: ## §4. Provenance\n  133: \n  134: **Source plan**: `sessions/session-plan/session-86-plan-w0c.md` §W0c-8\n  135: **Created in S86 W0c-8** by `s86_w0c_external_clock_scaffold.py`\n  136: **Verdict**: PASS → `computations/session-86/s86_gate_verdicts.txt`\n  137: \"\"\"\n  138: \n  139: \n  140: def sha256_of(path: Path) -> str:\n  141:     h = hashlib.sha256()  # (local)\n  142:     try:\n  143:         h.update(path.read_bytes())"
+    },
+    {
+      "anchor_id": "prov_1942",
+      "anchor_type": "data_provenance",
+      "name": "w0c_extract_vdd_T_correction",
+      "script_path": "session-86/s86_w0c_extract_vdd_T_correction.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-86/s86_w0c_extract_vdd_T_correction.py",
+      "source_context_30_lines": "<name 'w0c_extract_vdd_T_correction' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S86 W0c-3 companion — vdd §VI non-flat T-correction extractor\n    4: ==============================================================\n    5: \n    6: Per plan §W0c-3.6 step (b): \"write a small companion script ... that reads\n    7: researchers/Van-den-Dungen/<vdd_paper>.md (orchestrator pins the exact filename\n    8: at dispatch; if absent, the script glob-searches researchers/Van-den-Dungen/*.md\n    9: and prints candidates), parses §VI for the non-flat T-correction at L_max=2,\n   10: prints the value to 6 sig figs, and exits 0 on success.\"\n   11: \n   12: Outcome: the 14 vdd-tracked papers in researchers/Van-den-Dungen/ use named\n   13: section headings (Abstract, Historical Context, Key Arguments and Derivations,\n   14: Key Results, Impact and Legacy, Connection to Phonon-Exflation Framework),\n   15: NOT numbered §VI headings. There is therefore NO §VI section to parse. The\n   16: substrate-first canonical source for the non-flat T-correction at L_max=2 is\n   17: the S83 W2-G24 first-principles computation (Cartan-flat-at-tau_fold theorem)\n   18: recorded in computations/session-83/s83_w2_g24_nonflat_t_correction_l2.npz key\n   19: 'correction_P1_T' = 0.0 (machine-epsilon zero).\n   20: \n   21: This script:\n   22:   (a) globs researchers/Van-den-Dungen/*.md and lists candidates with SHA-256;\n   23:   (b) attempts §VI / Section VI grep; reports absence;\n   24:   (c) extracts the substrate-first canonical value from the S83 W2-G24 npz;\n   25:   (d) prints the value to 6 sig figs;\n   26:   (e) exits 0 on substrate-first extraction (or 2 if S83 npz is unreadable).\n   27: \"\"\"\n   28: from __future__ import annotations\n   29: \n   30: from canonical_constants import M_KK  # noqa: F401  # framework-import discipline (computations/_shared/CLAUDE.md)"
+    },
+    {
+      "anchor_id": "prov_1943",
+      "anchor_type": "data_provenance",
+      "name": "w0c_kcrit_bdg_register",
+      "script_path": "session-86/s86_w0c_kcrit_bdg_register.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-86/s86_w0c_kcrit_bdg_register.py",
+      "source_context_30_lines": "<name 'w0c_kcrit_bdg_register' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S86 W0c-2 — S86-K_CRIT_BDG-CANONICAL-CONSTANTS-REGISTRATION\n    4: ============================================================\n    5: \n    6: Gate: S86-K_CRIT_BDG-CANONICAL-CONSTANTS-REGISTRATION ([VERIFY])\n    7: Classification: META\n    8: \n    9: Pre-registered threshold (plan §W0c-2.9):\n   10:   PASS iff K_crit_BdG = 2.035 exists in canonical_constants.py with a\n   11:   provenance block AND K_crit = 91.5 coexists unaltered.\n   12:   FAIL iff variable absent, value mismatch, K_crit overwritten, or\n   13:   provenance block missing.\n   14: \n   15: Inputs (S84+ dual-SHA):\n   16:   - computations/_shared/canonical_constants.py (pre-edit)\n   17:   - computations/session-62/s62_w2_bdg_critical.py (provenance trace; may be absent)\n   18:   - script bytes (this file)\n   19: \n   20: Output 4-tuple:\n   21:   (value=2.035, scheme=canonical_constants_register,\n   22:    convention=BdG_channel, L_max=N/A)\n   23: \"\"\"\n   24: from __future__ import annotations\n   25: \n   26: import hashlib\n   27: import json\n   28: import sys\n   29: import time\n   30: import os"
+    },
+    {
+      "anchor_id": "prov_1944",
+      "anchor_type": "data_provenance",
+      "name": "w0c_kfloor_kwall_land",
+      "script_path": "session-86/s86_w0c_kfloor_kwall_land.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-86/s86_w0c_kfloor_kwall_land.py",
+      "source_context_30_lines": "<name 'w0c_kfloor_kwall_land' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S86 W0c-4 — S86-K-FLOOR-K-WALL-LAND\n    4: ====================================\n    5: \n    6: Gate: S86-K-FLOOR-K-WALL-LAND ([VERIFY])\n    7: Classification: PHONONIC\n    8: \n    9: Pre-registered threshold (plan §W0c-4.9):\n   10:   PASS iff K_floor + K_wall both in canonical_constants.py + W5 D.4 block in\n   11:   permanent-results-registry.md with dual-SHA + ordering check\n   12:   K_floor < K_crit_BdG < K_wall holds.\n   13:   FAIL iff any of: variable absent, registry block absent, W5 D.4 SHA mismatch,\n   14:   ordering violated.\n   15:   INFO iff registry-file did not exist at session start (CREATED status).\n   16: \n   17: Inputs (S84+ dual-SHA):\n   18:   - computations/_shared/canonical_constants.py (pre-edit)\n   19:   - sessions/permanent-results-registry.md (pre-edit, or ABSENT)\n   20:   - computations/session-85/s85_gate_verdicts.txt (W5 D.4 verdict-line entry)\n   21:   - computations/session-85/s85_w0_k_floor_wall_registry_landing.{py,npz}\n   22:     (S85 predecessor; audit-only)\n   23:   - script bytes (this file)\n   24: \n   25: Output 4-tuple:\n   26:   (value=K_floor_K_wall_landed | upstream_FAIL_no_values,\n   27:    scheme=canonical_constants_plus_registry,\n   28:    convention=W5_D.4_derivation, L_max=N/A)\n   29: \"\"\"\n   30: from __future__ import annotations"
+    },
+    {
+      "anchor_id": "prov_1945",
+      "anchor_type": "data_provenance",
+      "name": "w0c_lambda_top_extract",
+      "script_path": "session-86/s86_w0c_lambda_top_extract.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-86/s86_w0c_lambda_top_extract.py",
+      "source_context_30_lines": "<name 'w0c_lambda_top_extract' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S86 W0c-1 — S86-LAMBDA-TOP-DIRECT-EXTRACTION\n    4: ============================================\n    5: \n    6: Gate: S86-LAMBDA-TOP-DIRECT-EXTRACTION ([VERIFY])\n    7: Classification: GEOMETRIC\n    8: \n    9: Pre-registered threshold (plan §W0c-1.9):\n   10:   PASS iff all 6 sub-criteria PASS (cache-integrity, count==155984,\n   11:   hermiticity, magnitude band [4.5,6.5]·M_KK, asymptotic-consistency\n   12:   L=10/L=12 ∈ [0.85,1.0], 6-sig-fig stability).\n   13:   FAIL iff any 1+ sub-criterion FAILs.\n   14:   INFO iff cache file ABSENT.\n   15: \n   16: Inputs (S84+ dual-SHA):\n   17:   - computations/_shared/artifacts/s85_w12_elim1_D_K_Lmax_moments.npz\n   18:   - computations/_shared/canonical_constants.py\n   19:   - script bytes (this file)\n   20: \n   21: Output 4-tuple:\n   22:   (value=<lambda_max_to_6sigfig | sentinel>, scheme=spectral_cache_direct,\n   23:    convention=L_max=10_native, L_max=10)\n   24: \"\"\"\n   25: from __future__ import annotations\n   26: \n   27: from canonical_constants import M_KK, c_fabric, J_C2  # noqa: F401\n   28: \n   29: import hashlib\n   30: import json"
+    },
+    {
+      "anchor_id": "prov_1946",
+      "anchor_type": "data_provenance",
+      "name": "w0c_mellin_compliance_lift",
+      "script_path": "session-86/s86_w0c_mellin_compliance_lift.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-86/s86_w0c_mellin_compliance_lift.py",
+      "source_context_30_lines": "<name 'w0c_mellin_compliance_lift' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S86 W0c-6 — S86-MELLIN-COMPLIANCE-LIFT\n    4: =======================================\n    5: \n    6: Gate: S86-MELLIN-COMPLIANCE-LIFT ([AUDIT])\n    7: Classification: META\n    8: \n    9: Pre-registered threshold (plan §W0c-6.9):\n   10:   PASS iff all identified non-compliant Mellin-labeled scripts post-lift\n   11:   carry the 5 W6-71 markers (n_compliant == n_total).\n   12:   FAIL iff any script post-lift missing 1+ markers.\n   13:   INFO iff glob count differs from expected 8.\n   14: \n   15: The 5 W6-71 canonical markers (plan §W0c-6.6 step 1):\n   16:   1. # MELLIN-CONVERGENCE-STRIP: <s_lower>, <s_upper>\n   17:   2. # MELLIN-RESIDUE-EXTRACTION: <method>\n   18:   3. # MELLIN-COUNTERTERM-SUBTRACTION: <Seeley-DeWitt-coefficient>\n   19:   4. # MELLIN-ANALYTIC-CONTINUATION-PATH: <path-spec>\n   20:   5. # MELLIN-CLOSURE-VERIFICATION: <self-test-result>\n   21: \n   22: Lift strategy: insert all 5 markers immediately after the\n   23: `from canonical_constants import *` line (or at top after shebang/docstring\n   24: if no such import). Marker values use W6-71 defaults with a\n   25: `(W6-71_default; per-script audit needed)` annotation per the plan's\n   26: \"per-script values may differ\" instruction (§W0c-6.6 step 3).\n   27: \n   28: Excludes `_mellin_5_marker_audit.py` from the lift target set (the audit\n   29: script contains the marker regex patterns by virtue of being the audit;\n   30: its glob hit is a self-reference false positive)."
+    },
+    {
+      "anchor_id": "prov_1947",
+      "anchor_type": "data_provenance",
+      "name": "w0c_r3_yaml_lift",
+      "script_path": "session-86/s86_w0c_r3_yaml_lift.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-86/s86_w0c_r3_yaml_lift.py",
+      "source_context_30_lines": "<name 'w0c_r3_yaml_lift' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S86 W0c-5 — S86-R3-YAML-LIFT\n    4: =============================\n    5: \n    6: Gate: S86-R3-YAML-LIFT ([AUDIT])\n    7: Classification: META\n    8: \n    9: Pre-registered threshold (plan §W0c-5.9):\n   10:   PASS iff sig_4_coverage >= 0.90 post-lift.\n   11:   FAIL iff sig_4_coverage < 0.90 post-lift.\n   12:   INFO iff parser fails on any S85 plan file (script exits 2).\n   13: \n   14: The lift inserts `schema_version: R3` as the first sub-key of every\n   15: machinery_pin: block in S85 plan files. Per .claude/rules/v3-closure-recovery.md\n   16: the sig_4 metric is the fraction of gate blocks declaring R3 schema; per\n   17: the validator (_yaml_gate_validator.py:73-82) compliance also requires an\n   18: 8-item PRDR checklist (operator, strict_PASS_boundary,\n   19: boundary_reachable_analytically, reachable_rationals, machinery_pin_map,\n   20: audit_discriminators, substitution_chain, input_files). The literal\n   21: plan instruction (insert schema_version: R3) will not by itself raise\n   22: the validator's compliance score above the 8-item checklist coverage,\n   23: so this gate's PASS path requires the gate blocks to ALREADY carry\n   24: the 8-item content — `schema_version: R3` is the labelling layer.\n   25: \n   26: Inputs (S84+ dual-SHA):\n   27:   - sessions/session-plan/archive/session-85-plan-w*.md (16 files;\n   28:     located in archive/ post-S85-close, NOT directly under session-plan/)\n   29:   - computations/_shared/_yaml_gate_validator.py (canonical sig_4 audit tool)\n   30:   - script bytes (this file)"
+    },
+    {
+      "anchor_id": "prov_1948",
+      "anchor_type": "data_provenance",
+      "name": "w0c_w3_7_re_pin",
+      "script_path": "session-86/s86_w0c_w3_7_re_pin.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-86/s86_w0c_w3_7_re_pin.py",
+      "source_context_30_lines": "<name 'w0c_w3_7_re_pin' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S86 W0c-9 — S86-W3-7-PASS-CLAUSE-RE-PIN\n    4: ========================================\n    5: \n    6: Gate: S86-W3-7-PASS-CLAUSE-RE-PIN ([SIGN])\n    7: Classification: META\n    8: \n    9: Pre-registered threshold (plan §W0c-9.9):\n   10:   PASS iff PASS line edited from 10% → 12.5% AND FAIL line unchanged at 30%\n   11:   AND comment block landed above PASS line.\n   12:   FAIL iff edit fails OR pre-edit assertions don't match.\n   13:   INFO iff file shows PASS already at 12.5% (no edit needed; ALREADY_REPINNED).\n   14: \n   15: Substitution chain (plan §W0c-9.10):\n   16:   scheme_floor = 12.5% (lower bound M(W3-7) can attain under pinned scheme)\n   17:   current_PASS = 10% < scheme_floor ⇒ structurally unattainable\n   18:   Re-pin PASS = 12.5% (= scheme_floor) restores attainability.\n   19:   FAIL = 30% unchanged ⇒ INFO band [12.5%, 30%] is genuine.\n   20: \n   21: Inputs (S84+ dual-SHA):\n   22:   - sessions/session-plan/archive/session-85-plan-w3.md (W3-7 located at line 540)\n   23:     (canonical path was sessions/session-plan/session-85-plan-w3.md;\n   24:     file archived post-S85-close per W0c-5 finding)\n   25:   - script bytes (this file)\n   26: \n   27: Output 4-tuple:\n   28:   (value=12.5%_pass_30%_fail, scheme=W3_7_re_pin,\n   29:    convention=scheme_floor_12.5, L_max=N/A)\n   30: \"\"\""
+    },
+    {
+      "anchor_id": "prov_1949",
+      "anchor_type": "data_provenance",
+      "name": "w10_mu_bc_heat_kernel_diagnostic",
+      "script_path": "session-86/s86_w10_mu_bc_heat_kernel_diagnostic.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-86/s86_w10_mu_bc_heat_kernel_diagnostic.py",
+      "source_context_30_lines": "  111: # Candidate weight axis (plan §7)\n  112: CANDIDATE_WEIGHTS = [2, 4, 6, 8]                                 # (local) substrate-spectral weights\n  113: \n  114: \n  115: # ---------------------------------------------------------------------------\n  116: # Section 3 — Output paths\n  117: # ---------------------------------------------------------------------------\n  118: # X2-removed: alias 'SCRIPT_DIR' = ... 'computations' (replaced by tools.computation_root.resolve_*)\n  119: OUT_JSON = resolve_output(86, 's86_w10_mu_bc_heat_kernel_diagnostic.json')\n  120: VERDICT_TXT = resolve_output(86, 's86_gate_verdicts.txt')\n  121: \n  122: # Files whose SHA-256 we pin (input audit chain)\n  123: V2_SOURCE_SCRIPT = resolve_script(85, 's85_w0_d_spec_alt_derivations.py')\n  124: V2_DATA_NPZ = resolve_output(85, 's85_w0_d_spec_alt_derivations.npz')\n  125: V2_VERDICT_FILE = resolve_output(85, 's85_gate_verdicts.txt')\n  126: CANONICAL_CONSTANTS = resolve_script(None, 'canonical_constants.py')\n  127: SCRIPT_PATH = Path(__file__).resolve()"
+    },
+    {
+      "anchor_id": "prov_1950",
+      "anchor_type": "data_provenance",
+      "name": "w10_mu_bc_rep_theoretic",
+      "script_path": "session-86/s86_w10_mu_bc_rep_theoretic.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "session-86/s86_w10_mu_bc_rep_theoretic.npz",
+      "source_file": "computations/session-86/s86_w10_mu_bc_rep_theoretic.py",
+      "source_context_30_lines": "   66: # we derive; they are NOT used numerically in the rep-theoretic computation\n   67: # (which is by construction parameter-free), but they are pinned in the\n   68: # input-pin map so audit_sha256 is bound to the framework constants version.\n   69: from canonical_constants import tau_fold, M_Z, c_fabric  # noqa: F401\n   70: \n   71: \n   72: REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent\n   73: S86_VERDICT = REPO_ROOT / \"computations\" / \"session-86\" / \"s86_gate_verdicts.txt\"\n   74: DATA_OUT = REPO_ROOT / \"computations\" / \"session-86\" / \"s86_w10_mu_bc_rep_theoretic.npz\"\n   75: CANONICAL_CONSTANTS_PATH = REPO_ROOT / \"computations\" / \"_shared\" / \"canonical_constants.py\"\n   76: PLAN_PATH = REPO_ROOT / \"sessions\" / \"session-plan\" / \"session-86-plan-w10.md\"\n   77: WP_PATH = REPO_ROOT / \"sessions\" / \"session-86\" / \"session-86-w10-workingpaper.md\"\n   78: \n   79: GATE_ID = \"S86-MU-BC-V2-REP-THEORETIC\"\n   80: \n   81: # Pre-registered tolerance (plan §7 + §9): rep-theoretic identity must be EXACT.\n   82: PASS_ABS_TOL = 1e-12  # (local) machine-eps tolerance for integer-12 PASS"
+    }
+  ]
+}

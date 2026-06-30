@@ -1,0 +1,57 @@
+{
+  "gate_id": "W0-MKK-PROVENANCE",
+  "verdict": "PASS",
+  "value": "provenance_present_primary_w0_FW=True_M_KK=True_hygiene_a_Delta_B3=True_all_provenance_present=True_value_invariant_w0_FW=True_M_KK=True_Delta_B3=True_all_values_invariant=True_w0_FW=-0.918_S58_four-fold-lock_binds_Falsifier1_DESI-DR3_dual-canonical_branch-iv_-0.842454_conditional_M_KK=7.428660036284456e16_S42_gravity-route_alias_of_M_KK_gravity_Kerner-alt_5.04e17_OOM_diff_0.831665_Delta_B3=0.176_S38_item-a_distinct_from_Delta_B3_s53_0.084152_nominal-2x_reldev_0.0437_M_KK_gravity_provenance_intact=True_item_b_f2=92_NOTED-ONLY_no_consumer_no_write_f2_cc_pinned=False_fix=PROVENANCE-dict_entries_added_to_canonical_constants.py_values_BIT-UNCHANGED_sync=knowledge.db_via_weave-update_get_constant_reads_live_dict_nonempty_NOW",
+  "scheme": "constant-hygiene",
+  "convention": "provenance-transcription-no-revalue",
+  "L_max": "N/A",
+  "audit_sha256": "8298cea94a0fcd09230ee37805aae7fe310a28e906e32e97e001de5b1a6f1538",
+  "content_sha256": "df8333e961db25e9a8cc995de3973fbc1dbc6048e013d9842fce10d2843f9def",
+  "task": "mack-cosmic-bridge W0-MKK-PROVENANCE: add PROVENANCE-dict entries for w0_FW + M_KK (+ Delta_B3, routed-in hygiene item (a)) to canonical_constants.py; values bit-unchanged",
+  "targets": {
+    "w0_FW": {
+      "value": -0.918,
+      "value_invariant": true,
+      "provenance_present": true,
+      "session": "S58",
+      "source": "S58 four-fold-lock (Volovik vacuum partition + effacement Gamma_effacement=0.99970)",
+      "role": "framework dark-energy w_0 from Volovik vacuum partition + effacement (Gamma_effacement=0.99970), S58 four-fold lock; BINDS Falsifier #1 (DESI DR3 / R_842 rectangle). Dual canonical: branch-(iv) w0_FW_R842=-0.842454 is DR3-PASS-conditional (NOT a standalone canonical constant)."
+    },
+    "M_KK": {
+      "value": 7.428660036284456e+16,
+      "value_invariant": true,
+      "provenance_present": true,
+      "session": "S42",
+      "source": "s42_constants_snapshot.npz (alias of M_KK_gravity)",
+      "role": "default alias of M_KK_gravity = 7.428660036284456e16 GeV (spectral-zeta / Newton's-constant gravity route, S42; conservative route). Kerner gauge-metric alt M_KK_kerner=5.041679838376001e17; OOM_diff_MKK=0.831664779390838 (0.83-decade tension, both CONST-FREEZE-42 PASS). Gap was on the bare alias; M_KK_gravity already carried provenance."
+    },
+    "Delta_B3": {
+      "value": 0.176,
+      "value_invariant": true,
+      "provenance_present": true,
+      "session": "S38",
+      "source": "S38 B3-sector pairing-gap derivation (M_KK units)",
+      "role": "S38 B3-sector pairing gap = 0.176 (M_KK units); routed-in hygiene item (a). NOMINAL doubled-gap convention of Delta_B3_s53=0.084152 (S53), but 2x is approximate (2*Delta_B3_s53=0.168304, rel dev 4.3727%; S38 predates the s53 per-band derivation). DISTINCT constant from Delta_B3_s53."
+    }
+  },
+  "item_b_f2_92": {
+    "decision": "NOTED-ONLY (conditional; no write)",
+    "reason": "the only pinned f_2 is f_2_default=2.34 (Gaussian-cutoff, S62); the CC-dictionary f2≈92 has no canonical pin and no identified consumer. Pinning an unconsumed value would be canonical-clutter, not hygiene. Pin ONLY IF a consumer surfaces.",
+    "f2_cc_pinned": false,
+    "flagged_for": "orchestrator follow-up (WP §W6-4)"
+  },
+  "fix": {
+    "target_file": "computations/_shared/canonical_constants.py",
+    "where": "PROVENANCE dict, Section F-hygiene block before the closing brace",
+    "operation": "ADD machine-readable PROVENANCE-dict entries for the three keys; existing variable assignments UNTOUCHED (provenance-transcription, NOT a re-value).",
+    "revalue": false,
+    "update_constant_note": "mcp.update_constant REFUSES to touch an existing constant by design ('manually edit canonical_constants.py') — the manual PROVENANCE-dict edit is exactly that safe path. get_constant reads the live dict, so the provenance is visible immediately; knowledge.db syncs on next /weave --update per math-scripts.md §'Sync enforcement'."
+  },
+  "substrate_framing": "NON-PHONONIC constant-provenance hygiene. The constants ARE substrate-derived (w0_FW from the Volovik vacuum partition + effacement; M_KK from the spectral-zeta / Newton's-constant gravity route; Delta_B3 from the S38 B3-sector pairing gap). This gate adds the audit-trail provenance so those substrate derivations are traceable from the knowledge MCP — closing an AMRI-adjacent gap at the canonical-constants layer (provenance belongs in canonical_constants.py + knowledge.db, NEVER in agent memory) before the DESI DR3 falsifier binds.",
+  "M1_M4_self_classification": {
+    "M1_artifact_existence_with_content": true,
+    "M2_canonical_constants_edit_plus_sha_no_numerical_compute": true,
+    "M3_provenance_transcription_from_inline_comments_plus_knowledge_graph_edges": true,
+    "M4_methodology_allowlist": "N/A (COMPUTE-class hygiene gate; no registry/rule-file edit)"
+  }
+}

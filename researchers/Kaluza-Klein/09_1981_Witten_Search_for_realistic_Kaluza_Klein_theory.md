@@ -270,7 +270,7 @@ This paper is DIRECTLY relevant to the phonon-exflation program in several ways:
    exactly the mechanism used in the Baptista papers, where Isom(SU(3)) under
    the Jensen deformation breaks from SU(3) x SU(3) to U(1) x SU(2) x SU(3).
 
-5. **The fermion spectrum**: The Tier 1 Dirac spectrum computation (Session 12)
+5. **The fermion spectrum**: The Level 1 Dirac spectrum computation (Session 12)
    directly addresses the question Witten raised: what is the fermion spectrum
-   from KK compactification? The Peter-Weyl decomposition used in the Tier 1
+   from KK compactification? The Peter-Weyl decomposition used in the Level 1
    code is the technical implementation of Witten's harmonic expansion.

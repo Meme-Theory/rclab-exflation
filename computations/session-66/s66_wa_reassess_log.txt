@@ -1,0 +1,156 @@
+========================================================================
+WA-REASSESS-66: CPL vs Actual w(z) from Substrate Compaction
+========================================================================
+
+Cosmological parameters (Planck 2018):
+  Omega_m  = 0.315
+  Omega_r  = 9.15e-05
+  Omega_DE = 0.684909
+  H_0      = 67.4 km/s/Mpc
+
+S64 reference values:
+  Pure FW:     w_0=-0.918087, w_a=-0.000575
+  Compaction:  w_0=-0.924043, w_a=-0.644891
+
+S59 timescape parameters:
+  corr_factor = -0.199766
+  delta_G/G   = -0.525699
+  sigma_tau   = 0.005303
+
+Substrate compaction model:
+  w_0 (intrinsic) = -0.918087
+  f_void           = 0.76
+  alpha_z          = 0.3
+  corr_factor      = -0.199766
+
+========================================================================
+Step 2: Computing w(z) from substrate compaction physics
+========================================================================
+
+Effective w(z) from substrate compaction:
+      z        w(z)  rho_DE_eff/rho_0
+    0.0   -0.725179          1.819941
+    0.5   -0.497758          2.878849
+    1.0   -0.277872          4.878348
+    1.5   -0.120463          8.352922
+    2.0   -0.019880         13.908402
+    2.5    0.043440         22.222804
+    3.0    0.084401         34.045667
+
+========================================================================
+Step 3: CPL fit
+========================================================================
+
+CPL fit result:
+  w_0 = -0.786841 +/- 0.048914
+  w_a = 1.120724 +/- 0.086501
+
+========================================================================
+Step 4: CPL residual
+========================================================================
+
+      z        w(z)    w_CPL(z)    Residual
+    0.0   -0.725179   -0.786841    0.061663
+    0.5   -0.497758   -0.413267   -0.084491
+    1.0   -0.277872   -0.226480   -0.051393
+    1.5   -0.120463   -0.114407   -0.006055
+    2.0   -0.019880   -0.039692    0.019812
+    2.5    0.043440    0.013676    0.029765
+    3.0    0.084401    0.053701    0.030699
+
+  Max |residual| = 0.084491
+  RMS residual   = 0.047569
+
+  CPL verdict: BEYOND-CPL NEEDED (max residual 0.0845 > 0.05)
+
+========================================================================
+Step 5: Pure framework w(z) for comparison
+========================================================================
+
+  Pure framework: w(z) = -0.918087 (constant)
+  This is a CPL model with w_0=-0.918087, w_a=0.0
+
+========================================================================
+Step 6: DESI DR1 comparison
+========================================================================
+
+DESI DR1 (BAO+CMB+SNe): w_0 = -0.55 +/- 0.21, w_a = -1.32 +/- 0.7
+DESI DR2 (BAO+CMB+SNe): w_0 = -0.752 +/- 0.057, w_a = -0.73 +/- 0.25
+
+--- Model A: Pure Framework (w_0=-0.918, w_a=0.000) ---
+  vs DESI DR1:
+    Delta w_0 = -0.368 (1.75 sigma)
+    Delta w_a = +1.320 (1.89 sigma)
+    2D tension = 2.57 sigma
+  vs DESI DR2:
+    Delta w_0 = -0.166 (2.91 sigma)
+    Delta w_a = +0.730 (2.92 sigma)
+    2D tension = 4.13 sigma
+
+--- Model B: Substrate Compaction CPL fit (w_0=-0.787, w_a=1.121) ---
+  vs DESI DR1:
+    Delta w_0 = -0.237 (1.13 sigma)
+    Delta w_a = +2.441 (3.49 sigma)
+    2D tension = 3.66 sigma
+  vs DESI DR2:
+    Delta w_0 = -0.035 (0.61 sigma)
+    Delta w_a = +1.851 (7.40 sigma)
+    2D tension = 7.43 sigma
+
+--- Reference: LCDM (w_0=-1.000, w_a=0.000) ---
+  vs DESI DR1:
+    Delta w_0 = -0.450 (2.14 sigma)
+    Delta w_a = +1.320 (1.89 sigma)
+    2D tension = 2.85 sigma
+  vs DESI DR2:
+    Delta w_0 = -0.248 (4.35 sigma)
+    Delta w_a = +0.730 (2.92 sigma)
+    2D tension = 5.24 sigma
+
+========================================================================
+Fine-grained residual analysis (301 points, z in [0, 3])
+========================================================================
+  Max |residual| (fine) = 0.084770
+
+========================================================================
+Step 8: Structural analysis
+========================================================================
+
+  dw/dz at z~0:   0.454842
+  dw/dz at z~1:   0.377295
+  dw/dz at z~2:   0.163903
+  CPL dw/dz at z=0: 1.120724
+  Mismatch at z=0: 0.665882
+
+  w(z=0) = -0.725179
+  w(z=3) = 0.084401
+  Phantom crossing (w crosses -1): False
+
+========================================================================
+GATE VERDICT: WA-REASSESS-66
+========================================================================
+
+  Framework w(z) from substrate compaction:
+    CPL best-fit: w_0 = -0.7868, w_a = 1.1207
+    Max CPL residual: 0.0845 (fine: 0.0848)
+    CPL adequacy: BEYOND-CPL
+  DESI DR1 comparison (2D): 3.66 sigma
+  DESI DR2 comparison (2D): 7.43 sigma
+
+  Gate WA-REASSESS-66: INFO
+  Detail: Compaction CPL (w_0=-0.787, w_a=1.121) at 3.66-sigma from DESI DR1 (> 3); CPL BEYOND-CPL (residual 0.0848)
+
+========================================================================
+SUMMARY TABLE
+========================================================================
+
+Model                          w_0      w_a DR1 2D-sig DR2 2D-sig
+------------------------- -------- -------- ---------- ----------
+Pure FW                     -0.918    0.000       2.57       4.13
+Compaction (CPL fit)        -0.787    1.121       3.66       7.43
+LCDM                        -1.000    0.000       2.85       5.24
+DESI DR1 bf                 -0.550   -1.320        ---        ---
+DESI DR2 bf                 -0.752   -0.730        ---        ---
+
+Data saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s66_wa_reassess.npz
+Plot saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s66_wa_reassess.png

@@ -1,0 +1,147 @@
+==============================================================================
+TRANSFER-FUNCTION-74: Multifield delta-N Transfer (Fiber -> CMB)
+==============================================================================
+
+Gate thresholds:
+  PASS: |alpha_s(k_pivot)| < 0.015 AND n_s in [0.9607, 0.9691]
+  FAIL: |alpha_s(k_pivot)| > 0.030
+  INFO: 0.015 <= |alpha_s| <= 0.030
+
+SECTION 1: Load S73B BCS fold data
+------------------------------------------------------------------------------
+  Labels       : [np.str_('B2[0]'), np.str_('B2[1]'), np.str_('B2[2]'), np.str_('B2[3]'), np.str_('B1'), np.str_('B3[0]'), np.str_('B3[1]'), np.str_('B3[2]')]
+  omega_k(fold): [0.83878756 0.83878756 0.83878756 0.83878756 0.818443   0.8757719
+ 0.8757719  0.8757719 ]
+  r_k_bcs      : [1.78566125 1.78566125 1.78566125 1.78566125 3.5713225  1.96347194
+ 1.96347194 1.96347194]
+  mode_weights : [0.00795737 0.00795737 0.00795737 0.00795737 0.15023886 0.27272315
+ 0.27272315 0.27248538]
+  W_B1=0.150239, W_B2=0.031829, W_B3=0.817932
+  omega_B1=0.818443, omega_B2=0.838788, omega_B3=0.875772
+  S73B raw P_B1=3.3321e+04, P_B2=1.7874e+02, P_B3=8.1061e+03
+
+SECTION 2: Branch-averaged squeezing and occupation
+------------------------------------------------------------------------------
+  r_B1 = 3.571322, r_B2 = 1.785661, r_B3 = 1.963472
+  n_B1 = 1.354923e+05, n_B2 = 3.347452e+03, n_B3 = 5.658163e+03
+  phi_B1=0.007948, phi_B2=0.008124, phi_B3=0.008521
+
+SECTION 3: Per-branch group velocity from BCS dispersion
+------------------------------------------------------------------------------
+  Delta(fold)   = 0.464255 M_KK
+  eps_B1        = 0.674030, eps_B2 = 0.698593, eps_B3 = 0.742593
+  c_B1          = 7.980000e-02, c_B2 = 1.995000e-03, c_B3 = 1.396500e-01
+  c_B1/c_BA     = 0.2000
+  c_B2/c_BA     = 0.0050  (flattest branch)
+  c_B3/c_BA     = 0.3500
+  m_eff^2(B1)   = 0.215532
+  m_eff^2(B2)   = 0.215532
+  m_eff^2(B3)   = 0.215532
+
+SECTION 4: Emergent Hubble rate H(tau) from tessellation mapping
+------------------------------------------------------------------------------
+  H(tau=0.170) = 585.1506 M_KK (pre-fold)
+  H(tau_fold)  = 586.5268 M_KK (canonical: 586.5268)
+  H(tau=0.210) = 480.1274 M_KK
+  H(tau=0.500) = 84.6945 M_KK
+  H(tau=2.000) = 5.2934 M_KK
+  H(tau=5.000) = 0.846945 M_KK
+  H(tau=100)   = 2.117362e-03 M_KK
+  H(tau=1000)  = 2.117362e-05 M_KK
+
+SECTION 5: Overlap matrix M_ib = <B_i | branch_b>
+------------------------------------------------------------------------------
+  OVERLAP-MATRIX-74 not available, using diagonal fallback M = I_3.
+  M_overlap =
+    [1. 0. 0.]
+    [0. 1. 0.]
+    [0. 0. 1.]
+
+SECTION 6: Per-branch horizon-crossing times tau_cross(b, k)
+------------------------------------------------------------------------------
+  (S73B reference) scale_factor = 9.354180e-05
+  (S73B reference) Delta_lnk_fiber = 0.067702
+
+  Substrate pivot k_fold_sub = omega_B2 = 0.838788 M_KK
+  Mapped to CMB k_pivot_Mpc = 0.05 Mpc^-1 (linear log-k map)
+
+  Horizon-crossing at pivot (branch-specific k_sub):
+    tau_cross(B1) = 18.005391  (k_sub_B1 = 0.8184)
+    tau_cross(B2) = 112.486458  (k_sub_B2 = 0.8388)
+    tau_cross(B3) = 13.157773  (k_sub_B3 = 0.8758)
+
+SECTION 7: Per-branch Planck factor P_b(k)
+------------------------------------------------------------------------------
+  B1: H_cross=0.0653, P_planck=3.7031e+04
+  B2: H_cross=0.0017, P_planck=1.6890e-02
+  B3: H_cross=0.1223, P_planck=2.1761e+02
+
+SECTION 8: Branch Jacobian J_b for zeta mapping
+------------------------------------------------------------------------------
+  Per-branch psi (energy fractions):
+    psi_B1 = 0.800872
+    psi_B2 = 0.004296
+    psi_B3 = 0.194832  (sum = 1.000000)
+  Per-branch Jacobian J_b = sqrt(psi_b) / H_b:
+    J_B1 = 1.370224e+01
+    J_B2 = 3.916896e+01
+    J_B3 = 3.609112e+00
+
+SECTION 9: k-scan for T_b(k) and P_s(k)
+------------------------------------------------------------------------------
+  k range: [1.0000e-04, 1.0000e+00] Mpc^-1
+  Points:  201
+  Pivot idx=135, k_pivot_actual=0.050119 Mpc^-1
+  P_s(k_pivot) = 1.046886e+06 (substrate units)
+
+SECTION 10: n_s and alpha_s extraction at pivot
+------------------------------------------------------------------------------
+  Finite differences at pivot:
+    n_s(pivot) = 1.000000
+    alpha_s(pivot) = 1.396007e-13
+  Quadratic fit (window=20 on each side):
+    n_s(pivot) = 1.000000
+    alpha_s(pivot) = 8.389505e-15
+
+SECTION 11: A_s in dimensionless 4D units
+------------------------------------------------------------------------------
+  P_s(pivot, substrate) = 1.046886e+06
+  M_KK / M_Pl           = 6.084577e-03
+  A_s(4D estimate)      = 1.434897e-03
+  A_s(Planck)           = 2.1000e-09
+  log10(A_s/A_s_obs)    = +5.8346 OOM
+
+SECTION 12: Cross-checks
+------------------------------------------------------------------------------
+  CHK1 (uniform velocity): alpha_s = 8.389505e-15, n_s = 1.000000
+  CHK1 expected: the composed P_s becomes a sum of B_b contributions at a
+  single tau_cross, removing the multifield horizon-crossing staggering.
+  The non-trivial k-dependence then arises only through k_CMB_to_k_fiber.
+
+  CHK2 (dimensional): A_s estimate = 1.4349e-03, gap = +5.83 OOM
+  CHK3 (B1<->B3 swap): P_swapped/P_original = 6.721024
+  CHK3 expected: != 1 because W_B1 (0.150) != W_B3 (0.818)
+  CHK3 status: PASS
+
+SECTION 13: Gate verdict — TRANSFER-FUNCTION-74
+==============================================================================
+  n_s(pivot)       = 1.000000
+  alpha_s(pivot)   = 8.389505e-15
+  |alpha_s|        = 8.389505e-15
+  Planck n_s band  = [0.9607, 0.9691]
+  A_s(estimate)    = 1.4349e-03
+  A_s gap          = +5.83 OOM from Planck
+
+  VERDICT: INFO
+  Reason: alpha_s OK but n_s=1.0000 out of Planck band
+
+SECTION 14: Save outputs
+------------------------------------------------------------------------------
+  Data: C:\sandbox\Ainulindale Exflation\tier0-computation\s74_transfer_function.npz
+  Plot: C:\sandbox\Ainulindale Exflation\tier0-computation\s74_transfer_function.png
+
+Total wall time: 1.20s
+
+==============================================================================
+TRANSFER-FUNCTION-74: INFO
+==============================================================================

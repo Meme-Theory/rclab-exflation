@@ -45,7 +45,7 @@ where n_k(tau) are the BCS Bogoliubov occupation numbers. The occupation numbers
 
 ### Steps
 
-1. **Load spectrum**: eigenvalues lambda_k(tau) from `tier0-computation/s41_spectral_refinement.npz` (multiple tau) and `tier0-computation/s36_sfull_tau_stabilization.npz`. PW degeneracies from standard dim(p,q) formula.
+1. **Load spectrum**: eigenvalues lambda_k(tau) from `computations/s41_spectral_refinement.npz` (multiple tau) and `computations/s36_sfull_tau_stabilization.npz`. PW degeneracies from standard dim(p,q) formula.
 
 2. **BCS gap equation at each tau**: For tau = 0.00, 0.02, 0.05, 0.08, 0.10, 0.12, 0.14, 0.16, 0.17, 0.18, 0.185, 0.190, 0.195, 0.20, 0.22, 0.25, 0.30, 0.35, 0.40, 0.50:
    - Compute DOS N(E, tau) from eigenvalues
@@ -83,20 +83,20 @@ where n_k(tau) are the BCS Bogoliubov occupation numbers. The occupation numbers
    - Does dwell time exceed H^{-1}? (tau-stabilization criterion)
 
 ### Input Files
-- `tier0-computation/s41_spectral_refinement.npz`
-- `tier0-computation/s36_sfull_tau_stabilization.npz`
-- `tier0-computation/s42_hauser_feshbach.npz`
-- `tier0-computation/s38_cc_instanton.npz` (BCS coupling, Delta_0)
-- `tier0-computation/s36_mmax_authoritative.npz`
-- `tier0-computation/s44_dos_tau.npz` (van Hove tracking)
-- `tier0-computation/s44_vanhove_track.npz`
-- `tier0-computation/tier1_dirac_spectrum.py` (if new tau values needed)
+- `computations/s41_spectral_refinement.npz`
+- `computations/s36_sfull_tau_stabilization.npz`
+- `computations/s42_hauser_feshbach.npz`
+- `computations/s38_cc_instanton.npz` (BCS coupling, Delta_0)
+- `computations/s36_mmax_authoritative.npz`
+- `computations/s44_dos_tau.npz` (van Hove tracking)
+- `computations/s44_vanhove_track.npz`
+- `computations/dirac_spectrum.py` (if new tau values needed)
 - `researchers/Connes/16_2022_Dong_Khalkhali_van_Suijlekom_Second_quantization_spectral_action.md`
 
 ### Output Files
-- Script: `tier0-computation/s45_occ_spectral.py`
-- Data: `tier0-computation/s45_occ_spectral.npz`
-- Plot: `tier0-computation/s45_occ_spectral.png`
+- Script: `computations/s45_occ_spectral.py`
+- Data: `computations/s45_occ_spectral.npz`
+- Plot: `computations/s45_occ_spectral.png`
 
 ---
 

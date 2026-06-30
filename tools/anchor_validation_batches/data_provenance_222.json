@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 222,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_2211",
+      "anchor_type": "data_provenance",
+      "name": "w6b_level2_envelope_audit",
+      "script_path": "session-88/s88_w6b_level2_envelope_audit.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-88/s88_w6b_level2_envelope_audit.py",
+      "source_context_30_lines": "  382:     audit_sha = closure_hash(input_pin_map)\n  383: \n  384:     emit_verdict_line(verdict, value_str, audit_sha, content_sha)\n  385: \n  386:     print(f\"VERDICT: {verdict} -- value={value_str}\")\n  387:     print(f\"  audit_sha256:   {audit_sha}\")\n  388:     print(f\"  content_sha256: {content_sha}\")\n  389: \n  390:     sidecar = Path(\"computations/session-88/s88_w6b_level2_envelope_audit.json\")\n  391:     sidecar.write_text(json.dumps({\n  392:         \"gate_id\": GATE_ID, \"verdict\": verdict, \"value\": value_str,\n  393:         \"audit_sha256\": audit_sha, \"content_sha256\": content_sha,\n  394:         \"scheme\": SCHEME, \"convention\": CONVENTION, \"L_max\": L_MAX,\n  395:         \"regulator\": REGULATOR, \"schema_version\": SCHEMA,\n  396:         \"substantive\": {\n  397:             \"adopted_form\": {\n  398:                 \"alpha\": ALPHA_ADOPTED,"
+    },
+    {
+      "anchor_id": "prov_2212",
+      "anchor_type": "data_provenance",
+      "name": "w6b_substrate_framing_edit",
+      "script_path": "session-88/s88_w6b_substrate_framing_edit.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-88/s88_w6b_substrate_framing_edit.py",
+      "source_context_30_lines": "  319:     }\n  320:     audit_sha = closure_hash(input_pin_map)\n  321:     emit_verdict_line(verdict, value_str, audit_sha, content_sha)\n  322: \n  323:     print(f\"VERDICT: {verdict} -- value={value_str}\")\n  324:     print(f\"  audit_sha256:   {audit_sha}\")\n  325:     print(f\"  content_sha256: {content_sha}\")\n  326: \n  327:     sidecar = Path(\"computations/session-88/s88_w6b_substrate_framing_edit.json\")\n  328:     sidecar.write_text(json.dumps({\n  329:         \"gate_id\": GATE_ID, \"verdict\": verdict, \"value\": value_str,\n  330:         \"audit_sha256\": audit_sha, \"content_sha256\": content_sha,\n  331:         \"scheme\": SCHEME, \"convention\": CONVENTION, \"L_max\": L_MAX,\n  332:         \"regulator\": REGULATOR, \"schema_version\": SCHEMA,\n  333:         \"pre_edit_grep\": {\"forbidden\": pre_forbidden, \"required\": pre_required,\n  334:                           \"w6b_53_duplication\": pre_edit1},\n  335:         \"post_edit_grep\": {\"forbidden\": post_forbidden, \"required\": post_required,"
+    },
+    {
+      "anchor_id": "prov_2213",
+      "anchor_type": "data_provenance",
+      "name": "w7_layer_audit_v2",
+      "script_path": "session-88/s88_w7_layer_audit_v2.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-88/s88_w7_layer_audit_v2.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S88 W13-162 -- s88_w7_layer_audit_v2.py: REWRITTEN Step F harness\n    4: ==================================================================\n    5: \n    6: Provenance: S88 fork of `computations/session-87/s87_w7_layer_audit_full_enumeration.py`\n    7: Step F sample-match section (lines 640-680). The original used:\n    8: \n    9:     sample_specs = [\n   10:         # (filename_substring, line_keyword, expected_tag, label)\n   11:         (\"_spectral_action_regulators.py\", \"REGULATOR_NAMES\", \"L3\", ...),"
+    },
+    {
+      "anchor_id": "prov_2214",
+      "anchor_type": "data_provenance",
+      "name": "w7_warrant_check_eps_h_hp1_norm_v2",
+      "script_path": "session-88/s88_w7_warrant_check_eps_h_hp1_norm_v2.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-88/s88_w7_warrant_check_eps_h_hp1_norm_v2.py",
+      "source_context_30_lines": "    1: \"\"\"\n    2: s88_w7_warrant_check_eps_h_hp1_norm_v2.py\n    3: ==========================================\n    4: \n    5: S88 W13-165 fork of the S87 W7-5 warrant-head warrant-check executor for\n    6: `eps_H_HP1_norm = 16.197719`. The S87 instance reported INFO-SCAFFOLD\n    7: because subtest_a / subtest_b / subtest_c executors were stubbed as\n    8: `NotImplementedError`. This v2 fork implements them per §W13-165 +\n    9: §VII-B.HP1-NEAR-INVARIANCE Step 1 (the canonical theorem the warrant\n   10: guards), with substrate-first values taken from the registry's W5-6"
+    },
+    {
+      "anchor_id": "prov_2215",
+      "anchor_type": "data_provenance",
+      "name": "w7a_71_connes_audit_helper",
+      "script_path": "session-88/s88_w7a_71_connes_audit_helper.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-88/s88_w7a_71_connes_audit_helper.py",
+      "source_context_30_lines": "<name 'w7a_71_connes_audit_helper' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: S88 W7a-71 connes-ncg-theorist Stage-2 cross-axis verify helper.\n    3: \n    4: Computes SHA-256 over the §VII.AH / §VII.U.1 / §VII.U.2 registry sections\n    5: on disk for the connes-side audit JSON. Read-only; no side effects beyond\n    6: stdout.\n    7: \"\"\"\n    8: import hashlib\n    9: import sys\n   10: from pathlib import Path\n   11: \n   12: # Canonical constants per `.claude/rules/math-scripts.md` discipline:\n   13: # tau_fold (Jensen-deformation slice), xi_E_GGE_inv (W4 P4 substrate-natural\n   14: # anchor entering xi²_0(R) := xi_E_GGE_inv · M_R(s=3) / M_F2(s=3) in the\n   15: # §VII.AH theorem statement).\n   16: sys.path.insert(0, str(Path(__file__).resolve().parents[1] / \"_shared\"))\n   17: from canonical_constants import tau_fold, xi_E_GGE_inv  # noqa: E402\n   18: \n   19: # Sanity-print the canonical constants this audit depends on (matches the\n   20: # §VII.AH theorem-statement pin xi_E_GGE_inv = 13.642473425595973 + Jensen\n   21: # slice tau_fold = 0.190 used by the §VII.U.1 L_max=12 cache).\n   22: print(f\"canonical tau_fold       = {tau_fold}\")\n   23: print(f\"canonical xi_E_GGE_inv   = {xi_E_GGE_inv}\")\n   24: print()\n   25: \n   26: REGISTRY_PATH = Path(\"sessions/permanent-results-registry.md\")\n   27: \n   28: with REGISTRY_PATH.open(\"rb\") as f:\n   29:     data = f.read()\n   30: "
+    },
+    {
+      "anchor_id": "prov_2216",
+      "anchor_type": "data_provenance",
+      "name": "w7a_76_77_pre_reg_inc_closure",
+      "script_path": "session-88/s88_w7a_76_77_pre_reg_inc_closure.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-88/s88_w7a_76_77_pre_reg_inc_closure.py",
+      "source_context_30_lines": "<name 'w7a_76_77_pre_reg_inc_closure' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S88 W7a-76 + W7a-77 — Mechanical PRE-REG-INC Closure\n    4: ======================================================\n    5: \n    6: Gates closed:\n    7:   - S88-VII-AJ-TWO-ROW-LANDING (W7a-76)\n    8:   - S88-OR-LATER-VII-AJ-INDEPENDENT-VERIFY (W7a-77)\n    9: \n   10: Mechanical-closure rationale per `.claude/rules/mechanical-closure-discipline.md`:\n   11: \n   12: (1) Upstream-block topology is the cause:\n   13:     - §W7a-74 (S88-W9B-2-RANK-VS-MAGNITUDE-LAYER-DISCRIMINATOR) returned\n   14:       composite verdict FAIL with sign=FAIL, magnitude=FAIL, regime=VALID;\n   15:       |ρ_S(s=4)|_TIER-1 = 0.800 < 0.999 (PASS-RANK threshold);\n   16:       spread_TIER-1 = 1.011 ≫ 0.06 (PASS-MAGNITUDE bound).\n   17:     - §W7a-76 plan §372 FAIL clause (pre-registered): \"FAIL: #74 returned\n   18:       FAIL-RANK or FAIL-MAGNITUDE → §VII.AJ.1 or §VII.AJ.2 cannot land\".\n   19:     - §W7a-77 plan §401 explicitly conditional: \"CONDITIONAL on (#76 + #74)\n   20:       PASS\"; with #74 FAIL, the chain to #77 is structurally severed.\n   21: \n   22: (2) Verdict honesty:\n   23:     - Both gates emit FAIL with descriptive value-string naming the\n   24:       blocking prereq + status. NOT PASS. NOT INFO.\n   25: \n   26: (3) Per-gate-distinct audit_sha256:\n   27:     - Pinmap for each gate embeds `_gate_id`, `_wp_id`, `_scheme`,\n   28:       `_convention` distinct keys; SHA-256 of canonical-serialized pinmap\n   29:       is therefore distinct between gates.\n   30: "
+    },
+    {
+      "anchor_id": "prov_2217",
+      "anchor_type": "data_provenance",
+      "name": "w7a_cross_axis_stage2_verify_corner_pinned",
+      "script_path": "session-88/s88_w7a_cross_axis_stage2_verify_corner_pinned.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-88/s88_w7a_cross_axis_stage2_verify_corner_pinned.py",
+      "source_context_30_lines": "<name 'w7a_cross_axis_stage2_verify_corner_pinned' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: # -*- coding: utf-8 -*-\n    3: \"\"\"\n    4: S88 W7a-71 — S88-CROSS-AXIS-STAGE-2-VERIFY-CORNER-PINNED\n    5: =========================================================\n    6: \n    7: Gate: S88-CROSS-AXIS-STAGE-2-VERIFY-CORNER-PINNED ([VERIFY-THEOREM])\n    8: \n    9: Pre-registered threshold (per session-88-plan-w7a.md §W7a-71 §74-77):\n   10:   PASS iff\n   11:     (1) all 4 single-axis clause verdicts (a, b, e, f) PASS, AND\n   12:     (2) joint clauses (c) and (d) PASS independently in ALL FOUR\n   13:         (axis × corner) combinations:\n   14:           (corner_I × axis_A_connes) ∧ (corner_III × axis_A_connes) ∧\n   15:           (corner_I × axis_B_volovik) ∧ (corner_III × axis_B_volovik).\n   16:   FAIL iff any clause returns FAIL.\n   17:   INFO iff any clause returns INFO without any FAIL.\n   18:   rel_tol = 1e-9 (presentation-precision-tolerant default; verdicts are\n   19:   categorical PASS/FAIL/INFO from cross-reviewer auditors, not numerical).\n   20: \n   21: Inputs (SHA-256 dual-pinned at runtime — S84+ schema):\n   22:   - computations/session-88/s88_w7a_71_connes_verdict.json (Axis-A reviewer)\n   23:   - computations/session-88/s88_w7a_71_volovik_verdict.json (Axis-B reviewer)\n   24:   - canonical_constants.py (feeds audit_sha256 only)\n   25:   - script bytes (feeds BOTH audit_sha256 and content_sha256)\n   26: \n   27: Output 4-tuple:\n   28:   (value=<verdict_str>, scheme=zeta-spectral-action,\n   29:    convention=substrate-distance-1-corner-pinned, L_max=12)\n   30: "
+    },
+    {
+      "anchor_id": "prov_2218",
+      "anchor_type": "data_provenance",
+      "name": "w7a_element_2_oe_form_discipline",
+      "script_path": "session-88/s88_w7a_element_2_oe_form_discipline.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-88/s88_w7a_element_2_oe_form_discipline.py",
+      "source_context_30_lines": "<name 'w7a_element_2_oe_form_discipline' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: # -*- coding: utf-8 -*-\n    3: \"\"\"\n    4: S88 W7a-73 — S88-CROSS-PILLAR-BRIDGE-ANATOMY-ELEMENT-2-OE-FORM-DISCIPLINE\n    5: ========================================================================\n    6: \n    7: Gate: S88-CROSS-PILLAR-BRIDGE-ANATOMY-ELEMENT-2-OE-FORM-DISCIPLINE ([AUDIT])\n    8: \n    9: Pre-registered threshold (per session-88-plan-w7a.md §W7a-73 §177-181):\n   10:   PASS iff (i) cross-pillar-bridge-anatomy.md §\"IS-not-IN Anatomy\" Element 2\n   11:         OE-form discipline subsection landed with positive-match regex +\n   12:         negative-match regex + worked-example contrast (K=2 corpus W-5\n   13:         PASS + W11-5 FAIL); AND (ii) audit script extension landed at\n   14:         computations/_shared/_cross_pillar_bridge_audit.py with\n   15:         ELEMENT_2_OE_POSITIVE_REGEX + ELEMENT_2_OE_NEGATIVE_REGEX\n   16:         + audit_element_2_oe_form function + audit_section integration;\n   17:         AND (iii) regex calibration on K=2 corpus yields W-5 PASS +\n   18:         W11-5 FAIL pre-retrofit (both must classify correctly); AND\n   19:         (iv) methodology-wave-allowlist.md contains the W7a-73 row.\n   20: \n   21:   FAIL iff positive-match regex too permissive (admits W11-5 prose form)\n   22:         OR negative-match regex too aggressive (rejects W-5 OE-form);\n   23:         OR any expected marker is absent on disk.\n   24: \n   25:   INFO iff regex calibration imperfect on edge cases (e.g., Pillar V\n   26:         degenerate-integral form requires extending positive-match to\n   27:         admit \\\\sum); update positive-match and re-validate.\n   28: \n   29: Inputs (SHA-256 dual-pinned at runtime — S84+ schema):\n   30:   - .claude/rules/cross-pillar-bridge-anatomy.md (post-W7a-73 edit)"
+    },
+    {
+      "anchor_id": "prov_2219",
+      "anchor_type": "data_provenance",
+      "name": "w7a_partner_pillar_axis_derivation",
+      "script_path": "session-88/s88_w7a_partner_pillar_axis_derivation.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-88/s88_w7a_partner_pillar_axis_derivation.py",
+      "source_context_30_lines": "  380:     print(tuple_companion.rstrip())\n  381:     print(\"=\" * 70)\n  382:     print()\n  383:     print(f\"4-tuple: (value=\\\"{value_str[:80]}...\\\", scheme={scheme_str}, \"\n  384:           f\"convention={convention_str}, L_max={L_max_str})\")\n  385:     print()\n  386: \n  387:     # Save metadata for WP-update task\n  388:     meta_path = SESSION_DIR / \"s88_w7a_partner_pillar_axis_derivation.json\"  # (local)\n  389:     with open(meta_path, \"w\", encoding=\"utf-8\") as f:\n  390:         json.dump({\n  391:             \"gate_id\": GATE_ID,\n  392:             \"audit_sha256\": audit_sha,\n  393:             \"content_sha256\": content_sha,\n  394:             \"verdict\": composite_verdict,\n  395:             \"value_str\": value_str,\n  396:             \"scheme\": scheme_str,"
+    },
+    {
+      "anchor_id": "prov_2220",
+      "anchor_type": "data_provenance",
+      "name": "w7a_rank_vs_magnitude_layer_discriminator",
+      "script_path": "session-88/s88_w7a_rank_vs_magnitude_layer_discriminator.py",
+      "session": "s88",
+      "inputs": "",
+      "outputs": "session-88/s88_w7a_rank_vs_magnitude_layer_discriminator.npz, session-88/s88_w7a_rank_vs_magnitude_layer_discriminator.p...",
+      "source_file": "computations/session-88/s88_w7a_rank_vs_magnitude_layer_discriminator.py",
+      "source_context_30_lines": "  619:         composite_verdict_collapsed = \"PASS\"\n  620:     if composite_verdict_collapsed != composite_verdict:\n  621:         print(f\"  NOTE: composite from rubric ({composite_verdict}) differs from collapse rule ({composite_verdict_collapsed}); using collapse-rule for verdict line.\")\n  622:     composite_verdict = composite_verdict_collapsed\n  623:     print(f\"  composite (post-collapse-rule): {composite_verdict}\")\n  624:     print()\n  625: \n  626:     # ---- Section 9.9: NPZ data dump ----\n  627:     npz_path = PROJECT_ROOT / \"session-88\" / \"s88_w7a_rank_vs_magnitude_layer_discriminator.npz\"  # (local)\n  628:     np.savez(\n  629:         npz_path,\n  630:         rho_S_T1=np.array([rho_T1]),\n  631:         rho_S_T2=np.array([rho_T2]),\n  632:         spread_T1=np.array([spread_T1]),\n  633:         spread_T2=np.array([spread_T2]),\n  634:         M_R_T1_4class=np.array([M_R_T1[c] for c in A5_4CLASS_ORDER]),\n  635:         M_R_T2_4class=np.array([M_R_T2[c] for c in A5_4CLASS_ORDER]),"
+    }
+  ]
+}

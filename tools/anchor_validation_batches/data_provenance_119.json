@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 119,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1181",
+      "anchor_type": "data_provenance",
+      "name": "off_jensen_gradient",
+      "script_path": "session-69/s69_off_jensen_gradient.py",
+      "session": "s69",
+      "inputs": "",
+      "outputs": "session-69/s69_off_jensen_gradient.npz",
+      "source_file": "computations/session-69/s69_off_jensen_gradient.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s69_off_jensen_gradient.py — OFF-JENSEN-GRAD-69: Transverse Gradient Along Jensen Line\n    4: =======================================================================================\n    5: Gate: OFF-JENSEN-GRAD-69\n    6:   PASS if |nabla_perp S| / |dS/dtau| < 0.1 at ALL 5 tau values\n    7:   INFO otherwise\n    8: \n    9: Physics (Governing Structure):\n   10: ------------------------------\n   11: The Jensen line is a 1-parameter curve tau -> g(tau) in the 36-dimensional space"
+    },
+    {
+      "anchor_id": "prov_1182",
+      "anchor_type": "data_provenance",
+      "name": "off_jensen_sa",
+      "script_path": "session-69/s69_off_jensen_sa.py",
+      "session": "s69",
+      "inputs": "",
+      "outputs": "session-69/s69_off_jensen_sa.npz",
+      "source_file": "computations/session-69/s69_off_jensen_sa.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s69_off_jensen_sa.py — OFF-JENSEN-69: Off-Jensen Spectral Action at tau=0.19\n    4: =============================================================================\n    5: Gate: OFF-JENSEN-69\n    6:   PASS if delta(z''/z)/(z''/z) > 0.1 (off-Jensen contributes meaningfully to A_s)\n    7:   FAIL if delta < 0.01 (off-Jensen negligible at epsilon = 0.05)\n    8:   INFO if intermediate\n    9: \n   10: Physics:\n   11: --------"
+    },
+    {
+      "anchor_id": "prov_1183",
+      "anchor_type": "data_provenance",
+      "name": "petrov_bcs",
+      "script_path": "session-69/s69_petrov_bcs.py",
+      "session": "s69",
+      "inputs": "",
+      "outputs": "session-69/s69_petrov_bcs.npz, session-69/s69_petrov_bcs.png",
+      "source_file": "computations/session-69/s69_petrov_bcs.py",
+      "source_context_30_lines": "  999: \n 1000: elapsed = time.time() - t_start\n 1001: print(f\"\\nTotal runtime: {elapsed:.1f}s\")\n 1002: \n 1003: # ==============================================================================\n 1004: # Save results\n 1005: # ==============================================================================\n 1006: \n 1007: np.savez(os.path.join(script_dir, 's69_petrov_bcs.npz'),\n 1008:     # Gate\n 1009:     gate_name='PETROV-BCS-69',\n 1010:     gate_verdict='INFO',\n 1011:     gate_detail=(\n 1012:         f'Static: Type {type_sb} (bare) -> Type {type_sBCS} (BCS). '\n 1013:         f'Dynamic: Type {type_db} (bare) -> Type {type_dBCS} (BCS). '\n 1014:         f'BCS correction O({anomalous_scale:.4f}), preserves algebraic type.'\n 1015:     ),"
+    },
+    {
+      "anchor_id": "prov_1184",
+      "anchor_type": "data_provenance",
+      "name": "phi_eff",
+      "script_path": "session-69/s69_phi_eff.py",
+      "session": "s69",
+      "inputs": "s67_transit_ps.npz, s67_multifield_delta_n.npz, s68_bcs_dressed_mode.npz",
+      "outputs": "session-69/s69_phi_eff.npz, session-69/s69_phi_eff.png",
+      "source_file": "computations/session-69/s69_phi_eff.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s69_phi_eff.py -- PHI-EFF-BCS-BOGOL-69: BCS Squeeze Phase Determination\n    4: =========================================================================\n    5: \n    6: Gate: PHI-EFF-69\n    7:   PASS: Enhancement in [1.3, 4.0] (A_s gap improved by 0.11-0.60 OOM)\n    8:   FAIL: Enhancement < 1.0 (destructive interference, gap WORSENS)\n    9:   INFO: Enhancement in [1.0, 1.3] (modest, need additional channels)\n   10: \n   11: Physics"
+    },
+    {
+      "anchor_id": "prov_1185",
+      "anchor_type": "data_provenance",
+      "name": "pvd04_sne",
+      "script_path": "session-69/s69_pvd04_sne.py",
+      "session": "s69",
+      "inputs": "",
+      "outputs": "session-69/s69_pvd04_sne.npz, session-69/s69_pvd04_sne.png",
+      "source_file": "computations/session-69/s69_pvd04_sne.py",
+      "source_context_30_lines": "   16: Framework predicts flat wCDM with:\n   17:   w_0 = -0.918, w_a = 0, Omega_m = 0.315, H_0 = 67.4 km/s/Mpc\n   18: \n   19: Gate: PVD-SNE-69\n   20:   PASS: chi^2/dof < 1.5 (binned)\n   21:   FAIL: Systematic redshift-dependent trend > 0.05 mag\n   22:   INFO: chi^2/dof in [1.5, 2.5] (binned)\n   23: \n   24: Output: s69_pvd04_sne.npz, s69_pvd04_sne.png\n   25: \"\"\"\n   26: \n   27: import numpy as np\n   28: from scipy import integrate\n   29: import matplotlib\n   30: matplotlib.use('Agg')\n   31: import matplotlib.pyplot as plt\n   32: from pathlib import Path"
+    },
+    {
+      "anchor_id": "prov_1186",
+      "anchor_type": "data_provenance",
+      "name": "pvd05_fsigma8",
+      "script_path": "session-69/s69_pvd05_fsigma8.py",
+      "session": "s69",
+      "inputs": "",
+      "outputs": "session-69/s69_pvd05_fsigma8.npz, session-69/s69_pvd05_fsigma8.png",
+      "source_file": "computations/session-69/s69_pvd05_fsigma8.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s69_pvd05_fsigma8.py -- PVD-05-FSIGMA8-69: Growth Rate vs Data\n    4: ================================================================\n    5: Gate: PVD-FSIG8-69\n    6:   PASS: chi^2/dof < 2\n    7:   FAIL: chi^2/dof > 3\n    8:   INFO: chi^2/dof in [2, 3]\n    9: \n   10: Physics:\n   11:   Compare framework f*sigma_8(z) predictions against published RSD measurements."
+    },
+    {
+      "anchor_id": "prov_1187",
+      "anchor_type": "data_provenance",
+      "name": "pvd06_galaxy_cl",
+      "script_path": "session-69/s69_pvd06_galaxy_cl.py",
+      "session": "s69",
+      "inputs": "",
+      "outputs": "session-69/s69_pvd06_galaxy_cl.npz, session-69/s69_pvd06_galaxy_cl.png",
+      "source_file": "computations/session-69/s69_pvd06_galaxy_cl.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s69_pvd06_galaxy_cl.py -- PVD-06-GALAXY-CL-69: Galaxy Angular Power Spectrum\n    4: ==============================================================================\n    5: \n    6: Session 69, Wave 5-L (mack-cosmic-bridge)\n    7: \n    8: Computes the galaxy angular power spectrum C_l^{gg} from the framework's matter\n    9: power spectrum P(k) and compares to published SDSS angular power spectrum data.\n   10: \n   11: Method:"
+    },
+    {
+      "anchor_id": "prov_1188",
+      "anchor_type": "data_provenance",
+      "name": "pvd07_planck_cl",
+      "script_path": "session-69/s69_pvd07_planck_cl.py",
+      "session": "s69",
+      "inputs": "",
+      "outputs": "session-69/s69_pvd07_planck_cl.npz, session-69/s69_pvd07_planck_cl.png",
+      "source_file": "computations/session-69/s69_pvd07_planck_cl.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s69_pvd07_planck_cl.py — PVD-07-PLANCK-CL-69: Planck TT Power Spectrum Shape Test\n    4: ===================================================================================\n    5: \n    6: Session 69, Wave 3-D (gen-physicist)\n    7: \n    8: Computes the CMB temperature angular power spectrum C_l^{TT} from the framework's\n    9: parameters and compares the SHAPE to Planck 2018 data using CAMB (full Boltzmann).\n   10: \n   11: The A_s normalization is known to be off by 0.755 OOM -- this test is about whether"
+    },
+    {
+      "anchor_id": "prov_1189",
+      "anchor_type": "data_provenance",
+      "name": "pvd08_cluster",
+      "script_path": "session-69/s69_pvd08_cluster.py",
+      "session": "s69",
+      "inputs": "",
+      "outputs": "session-69/s69_pvd08_cluster.npz, session-69/s69_pvd08_cluster.png",
+      "source_file": "computations/session-69/s69_pvd08_cluster.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s69_pvd08_cluster.py -- PVD-08-CLUSTER-MF-69: Cluster Mass Function\n    4: =====================================================================\n    5: Gate: PVD-CLUST-69\n    6:   PASS: chi^2/dof < 3\n    7:   INFO: chi^2/dof >= 3\n    8: \n    9: Physics:\n   10:   Compare the framework's predicted cluster mass function to observed cluster\n   11:   counts. The cluster mass function is exponentially sensitive to sigma_8 --"
+    },
+    {
+      "anchor_id": "prov_1190",
+      "anchor_type": "data_provenance",
+      "name": "pvd09_desi_nz",
+      "script_path": "session-69/s69_pvd09_desi_nz.py",
+      "session": "s69",
+      "inputs": "",
+      "outputs": "session-69/s69_pvd09_desi_nz.npz, session-69/s69_pvd09_desi_nz.png",
+      "source_file": "computations/session-69/s69_pvd09_desi_nz.py",
+      "source_context_30_lines": "   40: \n   41: Framework predicts flat wCDM with:\n   42:   w_0 = -0.918, w_a = 0, Omega_m = 0.315, H_0 = 67.4 km/s/Mpc\n   43: \n   44: Gate: PVD-NZ-69\n   45:   INFO: Report volume element comparison per tracer.\n   46:   No pre-registered pass/fail threshold (this is a diagnostic test).\n   47: \n   48: Output: s69_pvd09_desi_nz.npz, s69_pvd09_desi_nz.png\n   49: \"\"\"\n   50: \n   51: import numpy as np\n   52: from scipy import integrate\n   53: import matplotlib\n   54: matplotlib.use('Agg')\n   55: import matplotlib.pyplot as plt\n   56: from pathlib import Path"
+    }
+  ]
+}

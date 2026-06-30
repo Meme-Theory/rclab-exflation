@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 31,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_301",
+      "anchor_type": "data_provenance",
+      "name": "carlip_cc",
+      "script_path": "session-43/s43_carlip_cc.py",
+      "session": "s43",
+      "inputs": "computations/session-42/s42_constants_snapshot.npz, computations/session-42/s42_gradient_stiffness.npz, computations/ses...",
+      "outputs": "session-43/s43_carlip_cc.npz, session-43/s43_carlip_cc.png",
+      "source_file": "computations/session-43/s43_carlip_cc.py",
+      "source_context_30_lines": "   50:     FAIL: No L produces Lambda_eff near Lambda_obs, OR required L is sub-Planckian\n   51: \n   52: Input:\n   53:     s42_constants_snapshot.npz  -- S_fold, M_KK values\n   54:     s42_gradient_stiffness.npz  -- S_fold confirmation\n   55:     s43_qtheory_selftune.npz    -- W1-1 q-theory corrected Lambda_internal\n   56: \n   57: Output:\n   58:     s43_carlip_cc.npz  -- All computed quantities\n   59:     s43_carlip_cc.png  -- Diagnostic plots\n   60: \"\"\"\n   61: \n   62: import numpy as np\n   63: import matplotlib\n   64: matplotlib.use('Agg')\n   65: import matplotlib.pyplot as plt\n   66: from matplotlib.gridspec import GridSpec"
+    },
+    {
+      "anchor_id": "prov_302",
+      "anchor_type": "data_provenance",
+      "name": "cbb_timeline",
+      "script_path": "session-43/s43_cbb_timeline.py",
+      "session": "s43",
+      "inputs": "",
+      "outputs": "session-43/s43_cbb_timeline.npz, session-43/s43_cbb_timeline.png",
+      "source_file": "computations/session-43/s43_cbb_timeline.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s43_cbb_timeline.py  --  Cold Big Bang Timeline (CBB-TIMELINE-43)\n    4: \n    5: Constructs the complete Cold Big Bang timeline: epoch-by-epoch evolution\n    6: from tau=0 to z=0, incorporating ALL W1-W2 results from Session 43.\n    7: Side-by-side comparison with standard Hot Big Bang. Identifies first\n    8: observational divergence point.\n    9: \n   10: Gate: CBB-TIMELINE-43\n   11:   PASS: complete 7-epoch timeline + 1 falsifiable prediction"
+    },
+    {
+      "anchor_id": "prov_303",
+      "anchor_type": "data_provenance",
+      "name": "cdm_category",
+      "script_path": "session-43/s43_cdm_category.py",
+      "session": "s43",
+      "inputs": "",
+      "outputs": "session-43/s43_cdm_category.npz, session-43/s43_cdm_category.png",
+      "source_file": "computations/session-43/s43_cdm_category.py",
+      "source_context_30_lines": "  603: print(\"  2. CDM-RETRACTION-44: SUPERSEDED by CDM-CONSTRUCT-43 PASS\")\n  604: print(\"  3. DM-DE-RATIO-44: DM part clarified (all GGE = CDM)\")\n  605: print(\"  4. The 'DM problem' is now ONLY about abundance (CC problem)\")\n  606: print(\"     not about categorization\")\n  607: \n  608: # ============================================================\n  609: # SAVE DATA\n  610: # ============================================================\n  611: np.savez(base / \"s43_cdm_category.npz\",\n  612:     # Gate\n  613:     gate_name=\"CDM-CONSTRUCT-43\",\n  614:     gate_verdict=verdict,\n  615: \n  616:     # KK masses\n  617:     m_k_MKK=m_k_MKK,\n  618:     m_k_GeV=m_k_GeV,\n  619:     branch_labels=branch_labels,"
+    },
+    {
+      "anchor_id": "prov_304",
+      "anchor_type": "data_provenance",
+      "name": "chiral_eta",
+      "script_path": "session-43/s43_chiral_eta.py",
+      "session": "s43",
+      "inputs": "",
+      "outputs": "session-43/s43_chiral_eta.npz, session-43/s43_chiral_eta.png",
+      "source_file": "computations/session-43/s43_chiral_eta.py",
+      "source_context_30_lines": "  735:     'err_anticomm_wall': err_anticomm_wall,\n  736:     'tr_g9_signDwall': tr_g9_signDwall,\n  737:     'delta_eta_chiral': delta_eta_chiral,\n  738:     'g9_K7_relation': np.array(g9_K7_relation),\n  739:     'gate_quantities': np.array(list(gate_quantities.items()), dtype=object),\n  740:     'verdict': np.array(verdict),\n  741: }\n  742: \n  743: outpath = os.path.join(SCRIPT_DIR, \"s43_chiral_eta.npz\")\n  744: np.savez_compressed(outpath, **npz_data)\n  745: print(f\"\\n  Saved: {outpath}\")\n  746: \n  747: \n  748: # ======================================================================\n  749: #  Plot\n  750: # ======================================================================\n  751: fig, axes = plt.subplots(2, 3, figsize=(18, 10))"
+    },
+    {
+      "anchor_id": "prov_305",
+      "anchor_type": "data_provenance",
+      "name": "cw_preregistrations",
+      "script_path": "session-43/s43_cw_preregistrations.py",
+      "session": "s43",
+      "inputs": "",
+      "outputs": "session-43/s43_cw_preregistrations.npz, session-43/s43_cw_preregistrations.png",
+      "source_file": "computations/session-43/s43_cw_preregistrations.py",
+      "source_context_30_lines": "    1: \"\"\"\n    2: s43_cw_preregistrations.py — Cosmic Web Pre-Registerable Predictions F.1-F.6\n    3: \n    4: Formalizes all 6 pre-registerable predictions from S42 cosmic web addendum\n    5: (F.1-F.5) plus the new F.6 FIRST-SOUND-XI-44 from the W4-5 BAO-as-second-sound\n    6: result.\n    7: \n    8: Status summary:\n    9:   F.1 ALPHA-ENV-43:  CLOSED (W6-4: 1/sqrt(N_domains) kills signal)\n   10:   F.2 IMP-ASYM-43:   OPEN but ~10^{-6} (effacement-suppressed, likely undetectable)"
+    },
+    {
+      "anchor_id": "prov_306",
+      "anchor_type": "data_provenance",
+      "name": "dowker_sorkin",
+      "script_path": "session-43/s43_dowker_sorkin.py",
+      "session": "s43",
+      "inputs": "computations/session-42/s42_fabric_wz_v2.npz",
+      "outputs": "session-43/s43_dowker_sorkin.npz, session-43/s43_dowker_sorkin.png",
+      "source_file": "computations/session-43/s43_dowker_sorkin.py",
+      "source_context_30_lines": "  482: for i in range(1, len(comparison_data)):\n  483:     for j in range(3):\n  484:         if i % 2 == 0:\n  485:             table[i, j].set_facecolor('#f0f0f0')\n  486: ax4.set_title('(d) Structural Comparison', fontsize=13, pad=20)\n  487: \n  488: fig.suptitle('DS-LAMBDA-43: Dowker-Sorkin vs Framework CC Comparison',\n  489:              fontsize=14, fontweight='bold', y=0.98)\n  490: plt.savefig('computations/session-43/s43_dowker_sorkin.png', dpi=150, bbox_inches='tight')\n  491: print(\"\\nFigure saved: computations/session-43/s43_dowker_sorkin.png\")\n  492: \n  493: # =============================================================================\n  494: # 10. SAVE RESULTS\n  495: # =============================================================================\n  496: np.savez('computations/session-43/s43_dowker_sorkin.npz',\n  497:     # Gate info\n  498:     gate_name='DS-LAMBDA-43',"
+    },
+    {
+      "anchor_id": "prov_307",
+      "anchor_type": "data_provenance",
+      "name": "elasticity_tetrad",
+      "script_path": "session-43/s43_elasticity_tetrad.py",
+      "session": "s43",
+      "inputs": "",
+      "outputs": "session-43/s43_elasticity_tetrad.npz, session-43/s43_elasticity_tetrad.png",
+      "source_file": "computations/session-43/s43_elasticity_tetrad.py",
+      "source_context_30_lines": "   33:      action response to arbitrary strain perturbations\n   34:   4. Contract with Jensen direction: Z_tetrad = C * n * n\n   35:   5. Compare to Z_spectral = 74,731 from S42\n   36:   6. Report full C tensor decomposition (Voigt notation)\n   37:   7. Extract bulk, shear, anisotropy invariants\n   38: \n   39: Gate: ELAST-Z-43 (INFO)\n   40: Input: s42_gradient_stiffness.npz, Papers 22-23\n   41: Output: s43_elasticity_tetrad.{py,npz,png}\n   42: \n   43: Author: volovik-superfluid-universe-theorist (Session 43)\n   44: Date: 2026-03-14\n   45: \"\"\"\n   46: \n   47: import sys\n   48: import os\n   49: import time"
+    },
+    {
+      "anchor_id": "prov_308",
+      "anchor_type": "data_provenance",
+      "name": "fano_continuum",
+      "script_path": "session-43/s43_fano_continuum.py",
+      "session": "s43",
+      "inputs": "",
+      "outputs": "session-43/s43_fano_continuum.npz, session-43/s43_fano_continuum.png",
+      "source_file": "computations/session-43/s43_fano_continuum.py",
+      "source_context_30_lines": "  915: \n  916:         # Per-channel data at dt=0.1\n  917:         f'q_exact_dt0.1': last_res['q_exact'],\n  918:         f'T_min_dt0.1': last_res['T_min_exact'],\n  919:         f'Gamma_total_dt0.1': last_res['Gamma_total'],\n  920:         f'V_dc_dt0.1': last_res['V_dc'],\n  921:     }\n  922: \n  923:     output_npz = os.path.join(SCRIPT_DIR, \"s43_fano_continuum.npz\")\n  924:     np.savez_compressed(output_npz, **npz_data)\n  925:     print(f\"\\nSaved: {output_npz}\")\n  926: \n  927:     # ============================================================\n  928:     # PLOT\n  929:     # ============================================================\n  930:     fig, axes = plt.subplots(2, 2, figsize=(14, 10))\n  931:     fig.suptitle(\"FANO-CONT-43: Discrete+Continuum Fano at 4D Boundaries\\n\""
+    },
+    {
+      "anchor_id": "prov_309",
+      "anchor_type": "data_provenance",
+      "name": "first_law",
+      "script_path": "session-43/s43_first_law.py",
+      "session": "s43",
+      "inputs": "computations/session-42/s42_gradient_stiffness.npz, computations/session-42/s42_gge_energy.npz, computations/session-42/...",
+      "outputs": "session-43/s43_first_law.npz, session-43/s43_first_law.png",
+      "source_file": "computations/session-43/s43_first_law.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s43_first_law.py -- Internal First Law with Fabric EOS (FIRSTLAW-43)\n    4: ====================================================================\n    5: \n    6: Hawking-Theorist computation for Session 43, Section W6-6.\n    7: \n    8: Verifies the analog first law at the fold (tau = 0.19):\n    9: \n   10:     dE_total = T_a * dS_GGE + X_tau * dtau + sigma * dA_wall + mu_string * dL_string\n   11: "
+    },
+    {
+      "anchor_id": "prov_310",
+      "anchor_type": "data_provenance",
+      "name": "flat_band",
+      "script_path": "session-43/s43_flat_band.py",
+      "session": "s43",
+      "inputs": "",
+      "outputs": "session-43/s43_flat_band.npz, session-43/s43_flat_band.png",
+      "source_file": "computations/session-43/s43_flat_band.py",
+      "source_context_30_lines": "   17:   2. Compute effective bandwidth W(tau) of B2 gap-edge modes at each tau.\n   18:   3. Flat-band criterion: W << Delta_pair (Delta=0.464 from S37).\n   19:   4. Compute T_c(g) scaling from actual DOS.\n   20:   5. Report W/Delta ratio, T_c scaling.\n   21: \n   22: GATE: FLATBAND-43: INFO\n   23: INPUT: dirac_spectrum.py functions, s35_ed_corrected_dos.npz,\n   24:        s35_sector_10_spectrum.npz, s23a_kosmann_singlet.npz, Paper 18\n   25: OUTPUT: s43_flat_band.{py,npz,png}\n   26: \n   27: Author: volovik-superfluid-universe-theorist, Session 43\n   28: Date: 2026-03-14\n   29: \"\"\"\n   30: \n   31: import os\n   32: import sys\n   33: import time"
+    }
+  ]
+}

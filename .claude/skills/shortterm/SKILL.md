@@ -60,8 +60,13 @@ For each file and each distinct piece of information, classify it as:
 - **CRITICAL**: Equations, constants, proven results, key file paths, debugging solutions — things that would cause errors or wasted work if forgotten.
 - **REFERENCE**: Detailed session notes, derivation steps, debate context — useful for deep recall but not needed every session.
 - **STALE**: Superseded, refuted, completed TODOs, outdated probability estimates. State what superseded it.
+- **AMRI-PROMOTE** (Agent-Memory Registry Inversion): Project-level registries mistakenly stored in this memory — watchlists, detector rosters, cross-channel correlation matrices, pinned observational predictions, closed-mechanism lists, canonical constant tables, gate-verdict tables. See `.claude/rules/agent-standards.md` § AMRI for the three detection tests (input-pin / output-target / cross-agent overlap). Optional screening aid: run `python computations/_shared/_agent_memory_inversion_audit.py --agent <your-agent-type>` before classifying — its report narrows candidates.
 
-Also flag any information with PROJECT-WIDE value for promotion to a shared doc.
+For each **AMRI-PROMOTE** item, your Phase 5 report MUST include:
+- `content`: the full text block, preserved verbatim
+- `target_framework_path`: proposed path `sessions/framework/<slug>.md`
+- `consumer_gates`: list of gate IDs in session plans that reference this memory as Input-SHA (search `sessions/session-plan/*.md` and `sessions/session-*/` for your agent-memory path)
+- `migration_note`: one-line justification for promotion, naming which AMRI test fired
 
 Be honest — you are helping yourself by cutting dead weight. If something was true in an earlier session but corrected later, mark the earlier version as STALE.
 
@@ -78,6 +83,7 @@ Combine your classification and structural analysis, then execute ALL file edits
 - Merge related detail files where possible
 - Compress narrative to bullets
 - Rewrite MEMORY.md to the target structure (under 100 lines)
+- For **AMRI-PROMOTE** items: do NOT delete the content. Replace it in-place with a pointer line: `> See \`sessions/framework/<slug>.md\` (AMRI-promoted <YYYY-MM-DD>; was <one-line reason>)`. The orchestrator will read your Phase 5 promotion report and write the framework file + reindex via `/weave --update`. Your job is to (a) remove the AMRI content from your memory and (b) install the pointer so your future self knows where the migrated content now lives.
 
 Rules:
 - NEVER delete information you classified as CRITICAL
@@ -107,7 +113,18 @@ When all edits are done, output a summary with:
 - Before/after line counts per file
 - Files deleted, merged, or created
 - Total lines before and after
-- Any PROJECT-WIDE items flagged for promotion
+- **AMRI-PROMOTE inventory** — for each promoted item, emit a structured block the orchestrator parses verbatim:
+
+  ```
+  ### AMRI-PROMOTE: <slug>
+  **Target**: `sessions/framework/<slug>.md`
+  **Migration note**: <one-line justification; name which AMRI test fired>
+  **Consumer gates**: <comma-separated gate IDs, or NONE_FOUND>
+  **Content (verbatim)**:
+  <fenced block with the exact content to be promoted>
+  ```
+
+  If no AMRI-PROMOTE items were found, state `AMRI-PROMOTE inventory: none` explicitly.
 ```
 
 ## Step 3: Report

@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 134,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1331",
+      "anchor_type": "data_provenance",
+      "name": "as_from_bogoliubov",
+      "script_path": "session-74/s74_as_from_bogoliubov.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_as_from_bogoliubov.npz, session-74/s74_as_from_bogoliubov.png",
+      "source_file": "computations/session-74/s74_as_from_bogoliubov.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s74_as_from_bogoliubov.py -- A_s from 8-mode Bogoliubov squeezed vacuum\n    4: =======================================================================\n    5: \n    6: Gate: A-S-FROM-BOGOLIUBOV-74  (Session 74 Wave 1 Batch 2, W1-G)\n    7:   PASS: |log10(A_s^computed/A_s^Planck)| < 1.0 (within factor 10, closes 2+ OOM)\n    8:   INFO: 1.0 < |gap| < 2.0 (partial closure)\n    9:   FAIL: |gap| > 2.0 (Bogoliubov-amplitude route insufficient)\n   10: \n   11: PHYSICS (substrate framing):"
+    },
+    {
+      "anchor_id": "prov_1332",
+      "anchor_type": "data_provenance",
+      "name": "asymmetric_fold_low_l_spec",
+      "script_path": "session-74/s74_asymmetric_fold_low_l_spec.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_asymmetric_fold_low_l_spec.npz",
+      "source_file": "computations/session-74/s74_asymmetric_fold_low_l_spec.py",
+      "source_context_30_lines": "   18: This script writes a full-fidelity S75+ prompt for executing the\n   19: asymmetric-fold low-l TT computation. It is SPEC-ONLY (no physics\n   20: computation is performed here).\n   21: \n   22: Pre-registered gate:\n   23:     ASYMMETRIC-FOLD-LOW-L-SPEC-74: PASS if spec is complete. FAIL if missing.\n   24: \n   25: Output:\n   26:     s74_asymmetric_fold_low_l_spec.npz  — spec payload (string + metadata)\n   27: \n   28: Framework dependencies upstream:\n   29:     §3a (asymmetric fold geometry: Mach 20.7, entry horizon n_bar=85.2, open exit)\n   30:     §7c / §9 Gate 4 (BOUNCE-SYMMETRY-DISTINGUISH pre-registration)\n   31:     §10 carry-forward (deferred two sessions out, depends on s75_transfer_function.py)\n   32: \n   33: Framework dependencies downstream:\n   34:     s75_transfer_function.py (W4-CC spec) must be in place to map fiber"
+    },
+    {
+      "anchor_id": "prov_1333",
+      "anchor_type": "data_provenance",
+      "name": "b1_weight_audit",
+      "script_path": "session-74/s74_b1_weight_audit.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_b1_weight_audit.npz",
+      "source_file": "computations/session-74/s74_b1_weight_audit.py",
+      "source_context_30_lines": "  250: print(f\"  PASS window  : [{pass_lo:.3f}, {pass_hi:.3f}]\")\n  251: print(f\"  INFO window  : [{info_lo:.3f}, {info_hi:.3f}]\")\n  252: print(f\"  Computed     : W_B1 = {W_B1_audit:.6f}\")\n  253: print(f\"  Threshold    : +/- {tol_pass:.3f} around {W_B1_ref:.3f} for PASS\")\n  254: \n  255: # ==============================================================================\n  256: # 7. Save\n  257: # ==============================================================================\n  258: out = os.path.join(SCRIPT_DIR, \"s74_b1_weight_audit.npz\")\n  259: np.savez(\n  260:     out,\n  261:     # main audit result\n  262:     W_B1_audit=W_B1_audit,\n  263:     W_B1_transit=W_B1_transit,\n  264:     W_B1_ref=W_B1_ref,\n  265:     delta=delta,\n  266:     rel=rel,"
+    },
+    {
+      "anchor_id": "prov_1334",
+      "anchor_type": "data_provenance",
+      "name": "bcs_gap_k_scale",
+      "script_path": "session-74/s74_bcs_gap_k_scale.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_bcs_gap_k_scale.npz",
+      "source_file": "computations/session-74/s74_bcs_gap_k_scale.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s74_bcs_gap_k_scale.py -- BCS-GAP-K-SCALE-74 (W4-GG, Session 74 Wave 4)\n    4: ================================================================================\n    5: \n    6: BCS Gap Imprint k_BCS on LSS P(k).\n    7: \n    8: Substrate framing\n    9: -----------------\n   10: The BCS gap Delta_BCS = 0.4643 M_KK (S70 canonical, BCS-GAP-CANONICAL-70) is a\n   11: characteristic energy scale of the substrate's BCS pairing structure at the"
+    },
+    {
+      "anchor_id": "prov_1335",
+      "anchor_type": "data_provenance",
+      "name": "bdi_morse_stability",
+      "script_path": "session-74/s74_bdi_morse_stability.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_bdi_morse_stability.npz, session-74/s74_bdi_morse_stability.png",
+      "source_file": "computations/session-74/s74_bdi_morse_stability.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s74_bdi_morse_stability.py — BDI-MORSE-STABILITY-74: BDI Block Structure + Morse Nondegeneracy\n    4: ================================================================================================\n    5: Gate: BDI-MORSE-STABILITY-74\n    6:   PASS if (A) BDI block-diagonal structure verified to 1e-10 off-diagonal AND\n    7:           (B) all eigenvalues nonzero (|eigenvalue| > 1e-6).\n    8:   INFO if block-diagonal but some eigenvalues near zero.\n    9:   FAIL if block-diagonality broken or genuine zero modes exist.\n   10: \n   11: Substrate framing:"
+    },
+    {
+      "anchor_id": "prov_1336",
+      "anchor_type": "data_provenance",
+      "name": "bdspt_anomaly",
+      "script_path": "session-74/s74_bdspt_anomaly.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_bdspt_anomaly.npz",
+      "source_file": "computations/session-74/s74_bdspt_anomaly.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s74_bdspt_anomaly.py -- BDSPT-ANOMALY-74 (W4-H, Session 74 Wave 4)\n    4: ================================================================================\n    5: \n    6: Euclidean Path Integral Commutes with J at the Non-Perturbative Level\n    7: =====================================================================\n    8: \n    9: Carry-forward #4 from S73B phonon-first-hawking workshop (EM4).\n   10: \n   11: STATEMENT OF THE TEST"
+    },
+    {
+      "anchor_id": "prov_1337",
+      "anchor_type": "data_provenance",
+      "name": "bkt_sector_resolved",
+      "script_path": "session-74/s74_bkt_sector_resolved.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_bkt_sector_resolved.npz, session-74/s74_bkt_sector_resolved.png",
+      "source_file": "computations/session-74/s74_bkt_sector_resolved.py",
+      "source_context_30_lines": "    1: \"\"\"\n    2: s74_bkt_sector_resolved.py  —  BKT-SECTOR-RESOLVED-74  (Session 74 Wave 2 Batch 2, W2-G)\n    3: \n    4: Sector-resolved Berezinskii–Kosterlitz–Thouless phase diagram on CG(24) for the\n    5: three Josephson sectors (C^2, su(2), u(1)). Each sector carries its own phase\n    6: stiffness J_a (from S47 TEXTURE-CORR-48, canonical constants), and the BKT\n    7: temperature is determined by the universal 2D-XY relation\n    8: \n    9:     T_BKT^{(a)} = (pi / 2) * K_a ,\n   10: "
+    },
+    {
+      "anchor_id": "prov_1338",
+      "anchor_type": "data_provenance",
+      "name": "branch_comb_amplitude_spec",
+      "script_path": "session-74/s74_branch_comb_amplitude_spec.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_branch_comb_amplitude_spec.npz",
+      "source_file": "computations/session-74/s74_branch_comb_amplitude_spec.py",
+      "source_context_30_lines": "   34:              (c) explicit inputs w/ file paths, (d) explicit outputs,\n   35:              (e) pre-registered gate for the S75+ execution, and\n   36:              (f) substrate-framing correction preamble.\n   37:         INFO if the spec is drafted but missing one of (a-f).\n   38:         FAIL if the spec cannot be written (e.g., W1-E FAIL with no\n   39:              workaround statement).\n   40: \n   41: Output artefacts:\n   42:     s74_branch_comb_amplitude_spec.npz : {prompt, inputs, gate, metadata}\n   43:     s74_branch_comb_amplitude_spec.png : (no plot -- spec-only, stub)\n   44: \n   45: Session: S74 | Wave 4 | Agent: quantum-acoustics-theorist\n   46: \"\"\"\n   47: \n   48: import os\n   49: import sys\n   50: import time"
+    },
+    {
+      "anchor_id": "prov_1339",
+      "anchor_type": "data_provenance",
+      "name": "branch_kappa",
+      "script_path": "session-74/s74_branch_kappa.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_branch_kappa.npz, session-74/s74_branch_kappa.png",
+      "source_file": "computations/session-74/s74_branch_kappa.py",
+      "source_context_30_lines": "   24:         FAIL if fit R^2 < 0.95.\n   25: \n   26: Cross-checks:\n   27:     - k=0 limit: kappa_eff(k=0) = 0 (trivially, the formula vanishes at k=0)\n   28:     - W2-C delta_kappa ~ 0.49% (workshop expectation 5-6% was wrong)\n   29:     - B2[0] flat-band reconstruction should approximate S71 kappa_entry = 79,386\n   30: \n   31: Outputs:\n   32:     s74_branch_kappa.npz : numerical arrays + gate verdict\n   33:     s74_branch_kappa.png : log-log fit + branch averages\n   34: \"\"\"\n   35: \n   36: import os\n   37: import sys\n   38: import numpy as np\n   39: import matplotlib\n   40: matplotlib.use(\"Agg\")"
+    },
+    {
+      "anchor_id": "prov_1340",
+      "anchor_type": "data_provenance",
+      "name": "branch_nbar_dk",
+      "script_path": "session-74/s74_branch_nbar_dk.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_branch_nbar_dk.npz, session-74/s74_branch_nbar_dk.png",
+      "source_file": "computations/session-74/s74_branch_nbar_dk.py",
+      "source_context_30_lines": "  491: print(f\"  (6) Task Parker form vs sinh^2: max deviation = {max_deviation:.2e} \"\n  492:       f\"(should be < 1e-10 by identity)\")\n  493: print()\n  494: \n  495: # ==============================================================================\n  496: #  SECTION 12: Save data\n  497: # ==============================================================================\n  498: \n  499: out_npz = os.path.join(data_dir, 's74_branch_nbar_dk.npz')  # (local)\n  500: np.savez(out_npz,\n  501:     gate_name='BRANCH-NBAR-D-K-74',\n  502:     gate_verdict=gate_verdict,\n  503:     gate_detail=f'<n_bar>_weighted = {n_bar_weighted:.4f}, S73A W1-E = 85.23',\n  504:     # Mode structure\n  505:     labels=labels,\n  506:     N_modes=N_modes,\n  507:     idx_B1=idx_B1, idx_B2=idx_B2, idx_B3=idx_B3,"
+    }
+  ]
+}

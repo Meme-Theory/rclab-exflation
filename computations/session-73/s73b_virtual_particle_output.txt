@@ -1,0 +1,204 @@
+========================================================================
+VIRTUAL-PARTICLE-73B
+Virtual Particle Decay on CG(24) -- Single-Mode Perturbation
+========================================================================
+tau_fold    = 0.19
+Delta_BCS   = 0.464255 M_KK
+J_C2        = 0.933 M_KK  (Josephson coupling, dominant)
+T_acoustic  = 0.112 M_KK
+c_Gold      = 0.915 M_KK (Goldstone sound speed)
+M_KK        = 7.4287e+16 GeV
+
+S73A Luttinger data: N_modes = 8
+  delta_N_full_rel = 2.22e-16
+  (Luttinger superselection confirmed to machine epsilon)
+
+System: N_modes = 8, N_cells = 4, N_slots = 32, N_pair = 2
+Dim(Fock) = C(32,2) = 496
+
+C_4 ring in CG(24): vertices (0, np.int64(1), np.int64(3), np.int64(2))
+Cell ordering: cell 0 = v0, cell 1 = v1, cell 2 = v2, cell 3 = v3
+
+Fock basis built: 496 states
+
+========================================================================
+HAMILTONIAN CONSTRUCTION
+========================================================================
+H dim = 496, Hermiticity error = 0.00e+00
+H construction time: 0.01 s
+
+========================================================================
+DIAGONALIZATION
+========================================================================
+Diagonalization: 0.09 s
+E_min = -13.254755, E_max = 18.110548
+Spectrum spread = 31.3653 M_KK
+Gap to first excited = 0.307750
+Level spacing at center = 0.000046 M_KK
+
+beta = 1/T_acoustic = 8.9286 M_KK^{-1}
+Ground-state thermal weight: 0.935517
+Effective thermal dim: 1.138
+
+GGE occupation (should sum to 2): sum = 2.000000
+
+GGE <n_{c,m}> by cell:
+  cell 0: [2.480e-01 2.296e-01 1.980e-02 1.000e-03 1.500e-03 0.000e+00 1.000e-04
+ 0.000e+00]
+  cell 1: [2.480e-01 2.296e-01 1.980e-02 1.000e-03 1.500e-03 0.000e+00 1.000e-04
+ 0.000e+00]
+  cell 2: [2.480e-01 2.296e-01 1.980e-02 1.000e-03 1.500e-03 0.000e+00 1.000e-04
+ 0.000e+00]
+  cell 3: [2.480e-01 2.296e-01 1.980e-02 1.000e-03 1.500e-03 0.000e+00 1.000e-04
+ 0.000e+00]
+
+========================================================================
+PERTURBATION: localize one pair at (cell=1, B1)
+========================================================================
+Perturbation slot = 8 (cell=1, mode=0)
+eps_fold[0] = -1.184137e-16
+GGE <n_slot=8> = 0.247981
+||P_slot |GS>|| = 0.498892
+<psi_0| n_8 |psi_0> = 1.0000000000 (should be 1.0000000000)
+<psi_0|H|psi_0> = -6.453674 M_KK
+E_gs           = -13.254755 M_KK
+Excess energy  = 6.801081 M_KK
+(Compare Delta_BCS = 0.464255 M_KK)
+
+========================================================================
+SPECTRAL DECOMPOSITION
+========================================================================
+IPR(psi_0) = 1.871252e-01
+N_eff eigenstates in psi_0 = 5.344
+Total Fock dim = 496
+<E>_{psi_0} = -6.453674 M_KK
+sigma_E      = 4.805646 M_KK  (energy spread)
+sigma_E / Delta_BCS = 10.3513
+
+E_qp (reference) = Delta_BCS = 0.464255 M_KK
+(E_mean^2 - E_gs^2 - E_qp^2) / E_qp^2 = 213.6066
+Off-shell flag (|ratio| > 0.1): True
+
+========================================================================
+TIME EVOLUTION
+========================================================================
+omega_max    = 31.3653 M_KK
+tau_Josephson= 0.1706 M_KK^{-1} (single-hop time)
+t_max        = 6.8234 M_KK^{-1}
+dt           = 3.4117e-03  (n_t = 2000)
+Monitor slots (cell, B1): [0, 8, 16, 24]
+Time traces computed: 2.49 s
+
+Initial values (should match the imposed perturbation at t=0):
+  cell 0, slot 0: n(0) = 0.0001, delta_n(0) = -0.2478  (GGE = 0.2480)
+  cell 1, slot 8: n(0) = 1.0000, delta_n(0) = 0.7520  (GGE = 0.2480)
+  cell 2, slot 16: n(0) = 0.0001, delta_n(0) = -0.2478  (GGE = 0.2480)
+  cell 3, slot 24: n(0) = 0.0002, delta_n(0) = -0.2477  (GGE = 0.2480)
+
+========================================================================
+DECAY RATE EXTRACTION
+========================================================================
+Log-linear fit on [0, 2.270]:
+  A = 0.2399
+  Gamma_virt = 0.033625 M_KK
+Gamma_dephasing (= sigma_E) = 4.805646 M_KK
+Gamma_Josephson = 5.8622 M_KK  (= 2*pi*J_C2)
+J_C2 (raw)      = 0.9330 M_KK
+
+Gamma_virt / J_C2 = 0.0360
+Gamma_dephasing / J_C2 = 5.1507
+
+Long-time mean <delta_n_{cell=1, B1}> (second half) = 0.153162
+Long-time mean |delta_n_{cell=1, B1}|              = 0.317957
+DC fraction (permanent / initial): 0.203667
+
+Power-law fit: alpha = 0.0196, resid = 1388.1578
+Exp      fit: Gamma = -0.0000, resid = 1388.8508
+==> Power-law (dispersive) fits better
+
+========================================================================
+SPATIAL PROPAGATION
+========================================================================
+Peak arrival times and amplitudes (cells 0..3):
+  cell 0: peak at t = 0.0000 M_KK^{-1}, delta_n_peak = -0.2478
+  cell 1: peak at t = 0.0000 M_KK^{-1}, delta_n_peak = +0.7520
+  cell 2: peak at t = 0.0000 M_KK^{-1}, delta_n_peak = -0.2478
+  cell 3: peak at t = 0.4608 M_KK^{-1}, delta_n_peak = +0.7494
+
+Arrival threshold = 0.0752
+  cell 0: arrival time = 0.0000 M_KK^{-1}
+  cell 2: arrival time = 0.0000 M_KK^{-1}
+  cell 3: arrival time = 0.0000 M_KK^{-1}
+
+========================================================================
+R-G CONSERVED CHARGE DECOMPOSITION
+========================================================================
+Mode-occupation profile of psi_0:
+  <N_k=0> = 1.000504
+  <N_k=1> = 0.976291
+  <N_k=2> = 0.019740
+  <N_k=3> = 0.000033
+  <N_k=4> = 0.003220
+  <N_k=5> = 0.000001
+  <N_k=6> = 0.000162
+  <N_k=7> = 0.000049
+sum_k <N_k> = 2.000000 (should be 2)
+
+N_k variance (should be 0 if R-G eigenstate):
+  Var(N_k=0) = 5.036544e-04
+  Var(N_k=1) = 2.314703e-02
+  Var(N_k=2) = 1.934998e-02
+  Var(N_k=3) = 3.322480e-05
+  Var(N_k=4) = 3.209829e-03
+  Var(N_k=5) = 1.077674e-06
+  Var(N_k=6) = 1.622571e-04
+  Var(N_k=7) = 4.882603e-05
+
+Max R-G charge variance = 2.314703e-02
+R-G decomposition exact to machine epsilon: False
+
+Top R-G charge-sector weights of psi_0:
+  (1, 1, 0, 0, 0, 0, 0, 0): weight = 0.976291
+  (1, 0, 1, 0, 0, 0, 0, 0): weight = 0.019740
+  (1, 0, 0, 0, 1, 0, 0, 0): weight = 0.003220
+  (2, 0, 0, 0, 0, 0, 0, 0): weight = 0.000504
+  (1, 0, 0, 0, 0, 0, 1, 0): weight = 0.000162
+  (1, 0, 0, 0, 0, 0, 0, 1): weight = 0.000049
+  (1, 0, 0, 1, 0, 0, 0, 0): weight = 0.000033
+  (1, 0, 0, 0, 0, 1, 0, 0): weight = 0.000001
+  (0, 1, 1, 0, 0, 0, 0, 0): weight = 0.000000
+  (0, 1, 0, 1, 0, 0, 0, 0): weight = 0.000000
+
+Top sector weight (stable fraction): 0.976291
+Decaying fraction (non-dominant sectors) = 0.023709
+
+========================================================================
+YUKAWA SCREENING LENGTH
+========================================================================
+c_BA (Goldstone)  = 0.915 M_KK
+Gamma_virt        = 0.033625 M_KK
+xi_virt = c_BA/Gamma_virt = 27.2122 M_KK^{-1}
+xi_virt (SI)      = 7.2284e-32 m
+l_Planck          = 1.6163e-35 m
+xi_virt / l_Planck= 4.4723e+03
+
+========================================================================
+GATE VERDICT: VIRTUAL-PARTICLE-73B
+========================================================================
+Verdict: FAIL
+Reason:  Gamma_virt = 0.0336 < J_C2 = 0.9330: perturbation propagates as a stable excitation.
+
+========================================================================
+PLOTTING
+========================================================================
+Figure saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s73b_virtual_particle.png
+
+========================================================================
+SAVING RESULTS
+========================================================================
+Data saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s73b_virtual_particle.npz
+
+Total runtime: 3.10 s
+========================================================================
+GATE VERDICT: VIRTUAL-PARTICLE-73B = FAIL
+========================================================================

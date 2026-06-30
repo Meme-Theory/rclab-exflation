@@ -34,11 +34,11 @@ Your job: **calculate**. The Pfaffian is binary — it changes sign or it doesn'
 
 3. **`/Antimatter/`** — Your paper library.
 
-4. **`tier0-computation/branching_computation_32dim.py`** (~1200 lines) — The J operator construction. You need J explicitly for the Pfaffian.
+4. **`computations/branching_computation_32dim.py`** (~1200 lines) — The J operator construction. You need J explicitly for the Pfaffian.
 
-5. **`tier0-computation/tier1_dirac_spectrum.py`** (~1580 lines) — The D_K eigenvalue/eigenvector engine. **NOTE**: You may need to modify `collect_spectrum()` to also return eigenvectors (not just eigenvalues). Session 16 specified this as a small code change.
+5. **`computations/dirac_spectrum.py`** (~1580 lines) — The D_K eigenvalue/eigenvector engine. **NOTE**: You may need to modify `collect_spectrum()` to also return eigenvectors (not just eigenvalues). Session 16 specified this as a small code change.
 
-6. **`tier0-computation/session11_gamma_F_correction.py`** — The corrected gamma_F. Key for BdG classification.
+6. **`computations/session11_gamma_F_correction.py`** — The corrected gamma_F. Key for BdG classification.
 
 7. **Session 17a D-1 results** — J-compatibility audit results. Confirm $[J, D_K(s)] = 0$ holds before computing Pf(J·D_F).
 
@@ -50,7 +50,7 @@ Your job: **calculate**. The Pfaffian is binary — it changes sign or it doesn'
 
 10. **Your agent memory**: `.claude/agent-memory/hawking-theorist/` — Your coffee table insight: V_CW = Helmholtz free energy.
 
-11. **`tier0-computation/tier1_dirac_spectrum.py`** — You need the full eigenvalue tower for the spectral free energy.
+11. **`computations/dirac_spectrum.py`** — You need the full eigenvalue tower for the spectral free energy.
 
 12. **Session 17a H-1 results** — Your own V_eff computation. You now use it as the classical background for the phase structure.
 
@@ -102,7 +102,7 @@ where $D_F(s)$ is the finite-dimensional Dirac operator restricted to a single s
 
 3. **Determine**: does $\operatorname{sgn}(\operatorname{Pf})$ change at any $s_c$?
 
-**TECHNICAL NOTE**: You need eigenvectors, not just eigenvalues, to construct $D_F$ in the sector basis. The existing `tier1_dirac_spectrum.py` may need a small modification to `collect_spectrum()` to return eigenvectors. This was pre-specified in Session 16 Rank 1b.
+**TECHNICAL NOTE**: You need eigenvectors, not just eigenvalues, to construct $D_F$ in the sector basis. The existing `dirac_spectrum.py` may need a small modification to `collect_spectrum()` to return eigenvectors. This was pre-specified in Session 16 Rank 1b.
 
 **DELIVERABLE**:
 - Plot of $\operatorname{Pf}(s)$ vs $s$ (log scale for magnitude, separate plot for sign)
@@ -135,7 +135,7 @@ Session 11 identified the spectral triple as BdG class DIII (topological superco
 Your coffee table insight: V_CW = Helmholtz free energy $F(s, \mu)$ with $s$ as order parameter and $\mu$ as temperature.
 
 **YOUR TASK**:
-1. Compute $F(s, \mu) = -\sum_{(p,q)} \dim(p,q) \sum_j \ln\!\big(|\lambda_j^{(p,q)}(s)|^2/\mu^2\big)$ (spectral zeta regularization) using eigenvalues from `tier1_dirac_spectrum.py`.
+1. Compute $F(s, \mu) = -\sum_{(p,q)} \dim(p,q) \sum_j \ln\!\big(|\lambda_j^{(p,q)}(s)|^2/\mu^2\big)$ (spectral zeta regularization) using eigenvalues from `dirac_spectrum.py`.
 
 2. Identify critical points: $\partial F/\partial s = 0$. At each critical point, compute:
    - $F''(s)$ = curvature of free energy (second-order if smooth, first-order if discontinuity in $F'$)
@@ -221,10 +221,10 @@ That is **4 deliverables** from **3 agents**. The critical output is D-2: does t
 
 | Script | Lines | Who Needs It |
 |:-------|:-----:|:-------------|
-| `tier1_dirac_spectrum.py` | ~1580 | D-2 (needs eigenvector modification), H-2 (eigenvalue tower) |
+| `dirac_spectrum.py` | ~1580 | D-2 (needs eigenvector modification), H-2 (eigenvalue tower) |
 | `branching_computation_32dim.py` | ~1200 | D-2 (J operator), D-4 (BdG classification) |
 | `session11_gamma_F_correction.py` | ~300 | D-4 (gamma_F for BdG class) |
-| `tier1_spectral_action.py` | ~900 | H-2 (R(s) for normalization) |
+| `spectral_action.py` | ~900 | H-2 (R(s) for normalization) |
 
 ---
 

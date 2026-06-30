@@ -4,13 +4,13 @@
 
 ### Project Structure
 - **Root**: `C:\sandbox\Ainulindale Exflation\`
-- **Tier0 scripts**: `tier0-computation/` (all NCG spectral computations)
+- **Computation scripts**: `computations/` (all NCG spectral computations)
 - **GPE sim**: `phonon-exflation-sim/src/` (dormant since Session 14)
 - **Python**: `phonon-exflation-sim/.venv312/Scripts/python.exe` (ALWAYS use this)
 
 ### Core Scripts
-- `tier1_dirac_spectrum.py` (~1600 lines): Peter-Weyl Dirac, D_K, D_F, eigenvectors, Lie derivatives
-- `tier1_spectral_action.py` (~1550 lines): 14 modules, spectral action, Seeley-DeWitt
+- `dirac_spectrum.py` (~1600 lines): Peter-Weyl Dirac, D_K, D_F, eigenvectors, Lie derivatives
+- `spectral_action.py` (~1550 lines): 14 modules, spectral action, Seeley-DeWitt
 
 ### Structurally Proven (machine epsilon)
 - KO-dim = 6 (S7-8). SM quantum numbers from Psi_+ = C^16 (S7).
@@ -48,7 +48,7 @@
 - sqrt(7/3) = 1.52753 also within 2% (0.26%), triggering W_3-specific PASS.
 - 118 matches within 5%, 39 within 2%. phi_paasch sits in a dense region of Toda ratios.
 - Key insight: 2*cos(2*pi/9) is degree-3 algebraic over Q, same as rank of SU(3).
-- Output: `tier0-archive/s33a_w3_kink_masses.{py,npz}`
+- Output: `computations/s33a_w3_kink_masses.{py,npz}`
 
 ## Reference Index
 - `ncg-foundations.md` -- Sessions 7-12,16: KO-dim, branching, chirality, CW, performance
@@ -78,5 +78,5 @@
 - **Dict coverage**: Always verify dict keys match data coverage (28 sectors at pq<=6).
 - **G5 != gamma9**: G5=diag from gamma_5 cols. gamma9=Spin(8) chirality. Different operators.
 - **Xi_ext construction**: Each sector pairs with OWN charge conjugate, NOT contragredient sector.
-- **build_cliff8()**: Correct function name in tier1_dirac_spectrum.py (not clifford_generators).
+- **build_cliff8()**: Correct function name in dirac_spectrum.py (not clifford_generators).
 - **_irrep_cache**: s-INDEPENDENT. No need to clear between s-values.

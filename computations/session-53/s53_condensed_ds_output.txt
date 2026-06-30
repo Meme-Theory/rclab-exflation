@@ -1,0 +1,177 @@
+======================================================================
+S53 CONDENSED-DS-53: Spectral Dimension from GL Band Structure
+======================================================================
+
+--- Section 1: Load GL Josephson data ---
+  Loaded 51 K-points, 6 branches
+  K range: [0, 0.716319], a_BCC = 4.3857
+  Branches: ['Goldstone', 'Leggett-1', 'Leggett-2', 'Branch-3', 'Branch-4', 'Higgs-1']
+
+  omega^2 at K=0 (Laplacian eigenvalues):
+    Goldstone   : omega^2 = 1.342784e-16, omega = 1.158786e-08
+    Leggett-1   : omega^2 = 1.896005e-02, omega = 1.376955e-01
+    Leggett-2   : omega^2 = 3.689365e-02, omega = 1.920772e-01
+    Branch-3    : omega^2 = 1.430305e-01, omega = 3.781938e-01
+    Branch-4    : omega^2 = 1.986710e+00, omega = 1.409507e+00
+    Higgs-1     : omega^2 = 1.314533e+02, omega = 1.146531e+01
+
+  omega^2 at K=K_BZ:
+    Goldstone   : omega^2 = 2.573018e-01
+    Leggett-1   : omega^2 = 2.802606e-01
+    Leggett-2   : omega^2 = 9.721657e-01
+    Branch-3    : omega^2 = 2.118637e+00
+    Branch-4    : omega^2 = 7.800237e+00
+    Higgs-1     : omega^2 = 1.315082e+02
+
+--- Section 2: Discrete eigenvalue spectrum ---
+  N_cells = 32, K-points = 33
+  Total eigenvalues: 198 (= 33 x 6)
+  Goldstone: 33, Gapped: 165
+  Eigenvalue range: [1.3428e-16, 1.3151e+02]
+  Zero modes (< 1e-10): 1
+
+  Lowest 10 eigenvalues:
+    lambda_0 = 1.342784e-16
+    lambda_1 = 4.884588e-04
+    lambda_2 = 1.905622e-03
+    lambda_3 = 4.167040e-03
+    lambda_4 = 7.211888e-03
+    lambda_5 = 1.100866e-02
+    lambda_6 = 1.553827e-02
+    lambda_7 = 1.896005e-02
+    lambda_8 = 2.043864e-02
+    lambda_9 = 2.078138e-02
+
+  Highest 5 eigenvalues:
+    lambda_193 = 1.315004e+02
+    lambda_194 = 1.315025e+02
+    lambda_195 = 1.315045e+02
+    lambda_196 = 1.315064e+02
+    lambda_197 = 1.315082e+02
+
+--- Section 3: Heat kernel and spectral dimension ---
+  lambda_min (nonzero) = 4.884588e-04
+  lambda_max = 1.315082e+02
+  t range: [7.6041e-06, 4.0945e+05] (3000 points)
+
+  Computing: all 6 branches (discrete)...
+  Computing: Goldstone branch only...
+  Computing: gapped branches only...
+  Computing: 3D-weighted (K^2 multiplicity)...
+
+--- Section 4: Crossover scales ---
+  Goldstone BW        : lambda = 2.5730e-01, t_cross = 3.8865, d_s(all) = 1.0460, d_s(gold) = 0.6282
+  Leggett-1 gap       : lambda = 1.8960e-02, t_cross = 52.7425, d_s(all) = 1.4136, d_s(gold) = 0.9886
+  Leggett-2 gap       : lambda = 3.6894e-02, t_cross = 27.1049, d_s(all) = 1.5080, d_s(gold) = 1.0519
+  Branch-3 gap        : lambda = 1.4303e-01, t_cross = 6.9915, d_s(all) = 1.4066, d_s(gold) = 0.8975
+  Branch-4 gap        : lambda = 1.9867e+00, t_cross = 0.5033, d_s(all) = 0.5071, d_s(gold) = 0.1037
+  Higgs-1 gap         : lambda = 1.3145e+02, t_cross = 0.0076, d_s(all) = 0.1548, d_s(gold) = 0.0016
+
+--- Section 5: Plateau analysis ---
+  Found 5 plateau segments:
+    Plateau 0: d_s ~ 0.006 at t ~ 1.326e-04, width = 2.12 decades
+    Plateau 1: d_s ~ 0.154 at t ~ 9.085e-03, width = 0.39 decades
+    Plateau 2: d_s ~ 0.102 at t ~ 3.312e-02, width = 0.26 decades
+    Plateau 4: d_s ~ 0.000 at t ~ 6.907e+04, width = 1.20 decades
+
+--- Section 6: Comparison with bare Dirac spectrum ---
+
+  BARE D_K^2 (DS-QUANTUM-52):
+    d_s -> 8 (Weyl asymptotics on 8D SU(3))
+    Monotonically approaches 8 — FAIL for d_s = 4
+
+  CONDENSED GL spectrum (this computation):
+    The BCS condensate creates a tight-binding band structure with 6 branches.
+    The spectrum now lives on a 32-vertex GRAPH, not on the 8D continuum.
+
+  Key result: on a graph, the spectral dimension at intermediate t reflects the
+  graph's effective dimensionality. A 32-vertex BCC graph embedded in SU(3) has:
+    - Coordination number z = 14 (8 NN + 6 NNN)
+    - Effective dimension d_eff ~ ln(z)/ln(2) ~ 3.8 (heuristic)
+    - But the graph spectral dimension depends on the eigenvalue distribution,
+      not just coordination
+
+  The BCS gap creates a scale separation:
+    t < 1/lambda_Higgs: all modes active, d_s ~ d_graph
+    1/lambda_Higgs < t < 1/lambda_Leggett: Higgs frozen, 5 active modes
+    t > 1/lambda_Goldstone_BW: only Goldstone mode active, d_s -> d_Goldstone
+    t >> 1/lambda_min: finite-size d_s -> 0
+
+
+--- Section 7: d_s = 4 question ---
+  Maximum d_s:
+    All branches (discrete):    1.6524 at t = 1.4247e+01
+    Goldstone only:             1.0901 at t = 1.6389e+01
+    Gapped only:                1354.9274
+    3D-weighted (K^2, artifact): 67.8287
+
+  d_s within 0.5 of 4: NO
+
+  d_s within 0.3 of 4: NO
+
+  d_s within 0.1 of 4: NO
+
+  IR behavior:
+    d_s(all, t_max) = 0.0000
+    d_s(gold, t_max) = 0.0000
+    P(all, t_max) = 5.050505e-03
+    Expected P(t->inf) = 1/N = 5.050505e-03 (zero mode saturation)
+
+--- Section 8: Weyl counting cross-check ---
+  Weyl exponent (full range): alpha = 0.2884, d_s(Weyl) = 0.5768
+  Weyl exponent (low-lambda): alpha = 0.6885, d_s(Weyl) = 1.3770
+  Weyl exponent (high-lambda): alpha = 0.0890, d_s(Weyl) = 0.1779
+  Goldstone Weyl exponent: alpha = 0.5532, d_s(Weyl) = 1.1065
+
+--- Section 9: Gate Verdict ---
+
+  GATE: CONDENSED-DS-53
+  VERDICT: INFO
+  DETAIL:
+    d_s flow computed from GL 6-branch tight-binding spectrum
+    on 32-cell BCC Voronoi tessellation of SU(3).
+
+    Discrete graph (CORRECT method):
+      d_s_max = 1.652 at t = 1.425e+01
+      d_s at Leggett-2 gap scale: 1.508
+      d_s -> 0.000 (IR, finite-size saturation)
+
+    Goldstone-only:
+      d_s_max = 1.090
+
+    3D K^2 weighting (ARTIFACT for finite graph):
+      d_s_max = 67.829 (divergent at large t, K=0 weight -> 0)
+
+    KEY FINDING: The condensed spectrum reduces d_s from 8 (bare Dirac)
+    to ~ 1.7 (tight-binding graph). The BCS condensation projects
+    the 8D SU(3) manifold onto the low-dimensional BCC graph.
+    d_s does NOT reach 4 --- BCC graph is too low-dimensional.
+    The graph spectral dimension ~ 1.7 reflects the BCC
+    coordination structure, not the embedding dimension.
+
+--- Section 10: Generating plot ---
+  Plot saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s53_condensed_ds.png
+
+--- Section 11: Summary Table ---
+
+  =============== CONDENSED-DS-53 SUMMARY ===============
+  Quantity                                   Value
+  ----------------------------------- ------------
+  d_s(bare D_K^2, S52)                         8.0
+  d_s_max(GL, all 6 branches)                1.652
+  d_s_max(Goldstone only)                    1.090
+  d_s_max(gapped only)                    1354.927
+  d_s at Leggett-2 scale                     1.508
+  d_s at Goldstone BW scale                  1.046
+  d_s(IR, t -> inf)                          0.000
+  P(t -> inf)                         5.050505e-03
+  1/N_modes (zero-mode floor)         5.050505e-03
+  N_modes total                                198
+  Spectral gap (lambda_min)           4.884588e-04
+  ========================================================
+
+  Data saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s53_condensed_ds.npz
+
+======================================================================
+CONDENSED-DS-53 COMPLETE
+======================================================================

@@ -1,0 +1,45 @@
+# Workshop seed — Session 112, Wave 3 (chunk w3 of 3)
+
+**Investigator chunk**: W3 (Compact-Object + Floquet Precision, Tier-3 refinement)
+**Gates**: `CF-S112-B5A-BRACKETED` (FAIL), `CF-S112-FLOQUET3-HPAR-TIGHTEN` (INFO)
+**Rule applied**: `.claude/rules/Investigating-Workshops.md` (four-condition workshop definition; "is NOT" list; 3-question discriminator, first-YES-wins; honest-count discipline).
+
+## No candidates
+
+Wave 3 produced **zero genuine workshops** (0 Slot-1, 0 Slot-2). Both gates are Tier-3 NON-BLOCKING corridor-narrowing refinements whose SIGN already PASSed in prior sessions; each one either closed a corridor cleanly (no competing reading) or narrowed it onto a settled "two-distinct-constructions-both-consistent" reading. Neither carries a math/physics adjudication where two agents would derive opposing first-principles positions that cannot both be right — the prerequisite for a workshop. The one surviving forward route (the two-sided TFD/island microstate count) is already a pre-registered solo compute carry-forward (`CF-S113-B5A-TFD`, in the W3 WP), which the rule's "is NOT" item 1 explicitly classifies as a carry-forward, not a workshop.
+
+### Why each gate is NOT a workshop (3-question discriminator, first YES wins)
+
+**`CF-S112-FLOQUET3-HPAR-TIGHTEN` — INFO (sign=PASS · magnitude=INFO · regime=VALID; `h_par_derived = 9.42e-4`, metric 0.1355, 13.6% high vs the guard-floor `8.3e-4`).**
+
+The spawn prompt's targeted question — does the afterglow-derived `h_par = 9.42e-4` genuinely TENSION the S101-W1 odd-floor guard pin `8.3e-4` in a way two agents would read differently — resolves to **Q2 (settled), not a Q1 borderline tension**:
+
+- **Q1 NO.** There is no competing reading of *what the result means*. The gate itself pre-registers (INFO_meaning, plan §W3-2) and the producing agent confirms in-WP that "the guard-floor `8.3e-4` is an odd-floor pin from a **distinct S101-W1 construction** and need not coincide bit-for-bit with the afterglow-derived value." The two numbers are *independently-constructed substrate quantities* — one a Mathieu odd-coefficient relic-floor pin (S101-W1-QEQ-RELIC-ODDFLOOR), the other a Volovik-tracking V_eff ring-down settled-envelope amplitude (this gate) — that agree in scale, sign, AND side (both ~1e-3 → h_par ~1e-3; the afterglow value sits 13.6% above, where S111's one-period heuristic sat 66.8% below). Two distinct constructions landing the same decade with the same sign is a *consistency confirmation*, not a ledger-dissonance. The 13.6%-high is an expected residual of two non-identical constructions, not a sign-flip or a magnitude contradiction agents would dispute.
+- The regime upgraded MARGINAL→VALID and `h_par` moved from guard-floor-ASSERTED to substrate-MOTIVATED — a corridor-narrowing, status-confirming move, not a status-changing one. §VII.BP DEAD (no discrete time crystal) is UNAFFECTED by ×77 (`h_par = 9.42e-4 ≪ 14/193 = 0.0725`); the verdict touches no live ledger contradiction.
+- **Marker test**: the resolution is "corridor narrowed; h_par confirmed substrate-motivated; no canonical-constants promotion since INFO does not clear the 10% band" — bookkeeping confirmation, not a derivation producing a new contested structural claim. → Q2, settled in-session (recorded in the WP §"Effected In-Session"). NOT a workshop.
+
+**`CF-S112-B5A-BRACKETED` — FAIL (sign=PASS · magnitude=FAIL · regime=VALID; `f_bulk = 0.00396` ⇒ R = 0.5297, `|R−1| = 0.4703 > 0.25` INFO ceiling).**
+
+- **Q1 NO.** The FAIL is unambiguous and admits a SINGLE structural reading: the one-directional Mach-13.75 white-hole exit-slice causal patch (`λ_causal = 0.941`, barely above the spectral floor `λ_min = 0.820`) captures only **60.34 of 15236.71 nats** of island bulk-EE, so the microstate count sits at the lower-bracket edge (R ≈ 0.53, the edge-dominated S110 reading). Both agents would read this the same way — the horizon is too deep in the supersonic regime for island bulk-EE to be causally accessible on the exit slice. No FAIL-admits-multiple-readings divergence: every substrate-physical causal-patch reading tested (canonical inverse-Mach, D1–D3) lands R < 0.64, and the FORBIDDEN R=1 tautology crossing (`f* = 0.5536`) is avoided by a wide margin (anti-tautology discipline held). The corridor "QES/island microstate = A/4 via a single-sided causal-patch `f_bulk`" is *closed*, not contested.
+- The surviving route — a two-sided thermofield-double (TFD) island construction — is **already a pre-registered solo compute carry-forward** in the W3 WP (`CF-S113-B5A-TFD`, gate `|R_TFD − 1| ≤ 0.10`, [SIGN], ~1 wave). Per rule "is NOT" item 1, a solo compute follow-up with a pre-registered threshold + machinery is a **carry-forward**, not a workshop. There is no adversarial reading-divergence to adjudicate; there is a queued compute to run. → carry-forward (already captured; see below). NOT a workshop.
+
+## Cross-wave flags
+
+None visible from the W3 substance. Both W3 gates are Tier-3 NON-BLOCKING by construction (no PROVEN structural result changed; constraint-mapping only) and touch isolated corridors — white-hole microstate counting (B5A) and the §VII.BP DTC-absence verdict (FLOQUET3). Neither verdict conflicts with another wave's PASS that is readable from W3's own files. The two corridors do not intersect any live `sessions/evoi-framework.md` §1–§4 Tier row's resolving-gate pre-registration (both are sub-Tier-3 refinements). No NEW high-leverage EVOI-table-absent open item surfaced from W3 — the surviving B5A route is already enumerated as a session-level carry-forward, and the FLOQUET3 corridor is closed-narrowed with §VII.BP DEAD unaffected.
+
+## Carry-forwards (route to /rclab-plan, NOT this schedule)
+
+- **`CF-S113-B5A-TFD`** — two-sided TFD/island white-hole microstate count. **ALREADY CAPTURED** in `sessions/session-112/session-112-w3-workingpaper.md §"Carry-Forward Computations"` with a full 4-field spec (What / Inputs / Gate `|R_TFD − 1| ≤ 0.10` PASS, `(0.10,0.25]` INFO, `>0.25` FAIL, [SIGN] / Effort ~1 wave). Listed here for completeness only — **do NOT duplicate** into the schedule or re-mint; `/rclab-plan` lifts it from the WP CF block directly.
+
+No NEW carry-forwards surfaced from W3. (The FLOQUET3 corridor is closed-narrowed in-session; its in-session resolutions — §VII.BP DEAD unaffected, no `canonical_constants.py` h_par promotion since INFO does not clear the band — are recorded in the WP §"Effected In-Session", not carry-forwards.)
+
+## Wave-by-wave digest
+
+### W3 — Compact-Object + Floquet Precision (Tier-3 refinement)
+
+Two independent Tier-3 NON-BLOCKING precision computes, each closing the *magnitude* leg of a prior bracketed/MARGINAL result whose SIGN already PASSed:
+
+- **`CF-S112-B5A-BRACKETED` (hawking-theorist) — FAIL** (composite; sign=PASS · magnitude=FAIL · regime=VALID; audit `1bdf4c8d…`). The substrate-derived causally-accessible bulk fraction `f_bulk = 0.00396` ⇒ `R(f_bulk) = 0.5297`, `|R−1| = 0.4703` > 0.25 INFO ceiling. The single-sided Mach-13.75 white-hole exit-slice causal patch (`λ_causal = 0.941`, just above the spectral floor `λ_min = 0.820`) captures only 60.34 of 15236.71 nats of island bulk-EE ⇒ microstate count sits at the lower-bracket edge (R ≈ 0.53, edge-dominated S110 reading); the S110 factor-1.9 undercount is NOT closed by causal-patch island bulk-EE (if anything reaffirmed). Anti-tautology held by a wide margin (FORBIDDEN R=1 crossing `f* = 0.5536`; every substrate causal-patch reading R < 0.64). Corridor "QES/island = A/4 via single-sided causal-patch `f_bulk`" CLOSED at the lower edge; surviving route = two-sided TFD (carry-forward CF-S113-B5A-TFD). Reading unambiguous → no workshop.
+- **`CF-S112-FLOQUET3-HPAR-TIGHTEN` (transit-dynamics-theorist) — INFO** (sign=PASS · magnitude=INFO · regime=VALID; audit `dbb93195…`). The physical S66 Volovik-tracking `V_eff` (genuine minimum at τ_fold, no runaway) settles the modulus to `δτ_amp = 6.292e-3` — 3.42× the S111 one-period heuristic, the predicted direction — assembling `h_par = 9.425e-4`, metric 0.1355 (13.6% high, just outside the 10% PASS band; well inside the 1.0 INFO band). Corridor narrowed S111 factor-3.01-LOW (regime MARGINAL) → 13.6%-HIGH (regime VALID); `h_par` upgraded guard-floor-ASSERTED → substrate-MOTIVATED (right scale + sign + side), not pinned within 10% (the guard-floor `8.3e-4` is an S101-W1 odd-floor pin from a *distinct* construction; bit-for-bit coincidence not expected). NON-BLOCKING: `h_par ≪ 14/193 = 0.0725` (×77) ⇒ §VII.BP DEAD unaffected. Settled "two distinct constructions, both consistent" reading → no workshop.
+
+**Honest count for W3: 0 Slot-1, 0 Slot-2.** Consistent with the rule's honest-count discipline — a wave of two clean Tier-3 NON-BLOCKING refinements (one corridor-closing FAIL, one corridor-narrowing INFO), both with unambiguous single-reading verdicts and no cross-wave ledger contradiction, produces zero workshops. Padding either the queued TFD compute or the settled FLOQUET3 INFO into a "workshop" would violate the four-condition definition (no two-agent competing-perspective tension on a specific concrete divergence).

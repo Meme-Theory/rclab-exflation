@@ -1,0 +1,14 @@
+{
+  "gate_id": "S86-W12-4-A_N-REGULATOR-PIN-DISCIPLINE",
+  "verdict": "FAIL",
+  "session": "S86",
+  "wave": "W0c",
+  "rule_file_landed": true,
+  "audit_script_landed": true,
+  "n_files_scanned": 2116,
+  "files_with_violations": 638,
+  "bare_a_n_count": 20343,
+  "audit_sha256": "16849308da83eae65074c504bd1c517141ba304230e30d04aa808f9a39c36787",
+  "content_sha256": "ddeeea164e79faaf82f15ce71e3352de64bfa83a7324deb2fce36e6acf70c331",
+  "remediation_route": "Tier-3 carry-forward to S87+: queue gate `S87-A-N-SEELEY-DEWITT-RETROFIT` for manual semantic review of pre-existing a_n citations. The audit regex `\\ba_(\\d+)\\b(?!\\^)` matches non-Seeley-DeWitt patterns (lattice spacings, plain variable names) and auto-tagging all 20k violations as Seeley-DeWitt would be ansatz-forced PASS. The regulator-pin-discipline rule applies forward-looking from S86 W0c-7 (any NEW file post-2026-04-26 must comply); use `_a_n_regulator_pin_audit.py --new-only` to enforce on new files."
+}

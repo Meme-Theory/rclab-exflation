@@ -1,0 +1,117 @@
+{
+  "table": "equations",
+  "batch_id": 32,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "eq_1884",
+      "anchor_type": "equations",
+      "name": "E_PBCS(N=2) = 3.0193747914",
+      "eq_type": "structural",
+      "file": "",
+      "line": 200,
+      "context_snippet": "--- Number-Projected BCS at N_pair = 2 ---",
+      "source_file": "computations\\session-52\\s52_hfb_full_output.txt",
+      "source_context_30_lines": "  192: \n  193: --- Number-Projected BCS at N_pair = 1 ---\n  194:   E_PBCS(N=1) = 1.4538776259\n  195:   Projection norm Z_1 = 0.008234\n  196:   n_k_PBCS = [0.18218842 0.18218842 0.18218842 0.18218842 0.22218617 0.01635339\n  197:  0.01635339 0.01635339]\n  198: \n  199: --- Number-Projected BCS at N_pair = 2 ---\n  200:   E_PBCS(N=2) = 3.0193747914\n  201:   Projection norm Z_2 = 0.052231\n  202:   n_k_PBCS = [0.36471177 0.36471177 0.36471177 0.36471177 0.42302736 0.03937518\n  203:  0.03937518 0.03937518]\n  204: \n  205: ==============================================================================\n  206: Section 5: Full HFB Self-Consistent Loop (ED + Mean-Field Rearrangement)\n  207: ==============================================================================\n  208: "
+    },
+    {
+      "anchor_id": "eq_1654",
+      "anchor_type": "equations",
+      "name": "S_ent       = 0.0000      (entanglement: ZERO, product state)",
+      "eq_type": "structural",
+      "file": "",
+      "line": 179,
+      "context_snippet": "HIERARCHY OF ENTROPIES (in nats):",
+      "source_file": "computations\\session-52\\s52_bekenstein_output.txt",
+      "source_context_30_lines": "  171:     => FAR below bound. The transit excitation energy dominates.\n  172: \n  173: ==============================================================================\n  174: SECTION 10: ENTROPIC HIERARCHY AND INTERPRETATION\n  175: ==============================================================================\n  176: \n  177:   HIERARCHY OF ENTROPIES (in nats):\n  178: \n  179:     S_ent       = 0.0000      (entanglement: ZERO, product state)\n  180:     S_torsion   = 1.9169      (spectral torsion, singlet)\n  181:     S_GGE       = 2.2125      (GGE, 8-mode Richardson-Gaudin)\n  182:     S_Gibbs     = 4.6448      (Gibbs, post-thermalization)\n  183:     S_Fock_max  = 5.5452      (8-mode Fock maximum)\n  184:     S_CCS_8     = 5.5073      (CCS spectral, 8 gap-edge)\n  185:     S_CCS_full  = 682.9    (CCS spectral, 992 modes)\n  186:     S_Bek(phys) = 380.92    (Bekenstein at E_exc, R_KK)\n  187:     S_holo      = 3.3754e+03  (holographic at R_KK)"
+    },
+    {
+      "anchor_id": "eq_19160",
+      "anchor_type": "equations",
+      "name": "verdict_routing = 'PASS'",
+      "eq_type": "structural",
+      "file": "",
+      "line": 629,
+      "context_snippet": "verdict_routing = 'FAIL-WITH-REMEDIATION-SLOT-REROUTED' else:",
+      "source_file": "sessions\\session-plan\\archive\\session-89-plan-w7.md",
+      "source_context_30_lines": "  621:   registry_path = 'sessions/permanent-results-registry.md'\n  622:   used_letters = grep(r'^### §VII\\.A[A-Z]', registry_path)\n  623:   next_free = first letter in {'AU', 'AV', 'AW'} not in used_letters\n  624:   slot_id = '§VII.AU' if next_free == 'AU' else f'§VII.{next_free}'  # parallel-writer race protection\n  625:   if slot_id != '§VII.AU':\n  626:       # Slot rerouting triggered; emit FAIL-with-remediation per epistemic-discipline.md\n  627:       verdict_routing = 'FAIL-WITH-REMEDIATION-SLOT-REROUTED'\n  628:   else:\n  629:       verdict_routing = 'PASS'\n  630: \n  631: Step 3 — Operator-Projection Reading-A naming hygiene suffix declaration:\n  632:   # FWD-C1 entry at substrate-distance-1 pole s=3 admits both projection readings:\n  633:   #   OP-PROJ: operator-projection on A_K = ℂ ⊕ ℍ ⊕ M_3(ℂ) central-projection traces\n  634:   #   STATE-PROJ: state-projection on state-pair functionals\n  635:   # Per registry-landing.md §\"Operator-Projection Reading-A Naming Hygiene\" MANDATORY at K=3:\n  636:   #   bare '§VII.AU' FORBIDDEN; suffix-tag MANDATORY when both readings admissible.\n  637:   slot_full_id = f'{slot_id}.OP-PROJ'   # operator-projection reading is the canonical W-5 calibration"
+    },
+    {
+      "anchor_id": "eq_15634",
+      "anchor_type": "equations",
+      "name": "all_pass = all(s < 1.5 for s in spans.values())",
+      "eq_type": "structural",
+      "file": "",
+      "line": 2180,
+      "context_snippet": "values = {(reg, r): compute_ratio(reg, r) for reg in regulators for r in ratios} spans = {r: max(values[(reg,r)] for reg in regulators) / min(values[(reg,r)] for reg in regulators) for r in ratios}",
+      "source_file": "sessions\\session-plan\\archive\\session-83-plan.md",
+      "source_context_30_lines": " 2172:   Step 3: Universal iff Span_i < 1.5 for all i.\n 2173:   Step 4: Direction. PASS if all span<1.5; FAIL if any span>2.5; INFO otherwise.\n 2174:   Step 5: Python:\n 2175: ```\n 2176: regulators = ['zeta','Zubarev','SDW','dim-reg','lattice-BR']\n 2177: ratios = ['ns_over_alphas', 'As_over_mu', 'fNL_over_r']\n 2178: values = {(reg, r): compute_ratio(reg, r) for reg in regulators for r in ratios}\n 2179: spans = {r: max(values[(reg,r)] for reg in regulators) / min(values[(reg,r)] for reg in regulators) for r in ratios}\n 2180: all_pass = all(s < 1.5 for s in spans.values())\n 2181: print(f\"Ratio spans: {spans}\")\n 2182: print(f\"Verdict: {'PASS' if all_pass else 'INFO' if all(s<2.5 for s in spans.values()) else 'FAIL'}\")\n 2183: ```\n 2184: \n 2185: OUTPUTS: s83_w3_g34_*, §W3-G34.\n 2186: ```\n 2187: \n 2188: ---"
+    },
+    {
+      "anchor_id": "eq_16488",
+      "anchor_type": "equations",
+      "name": "visibility(branch c, L) = 1 iff residue_c(L) > residue_a(L)  AND",
+      "eq_type": "structural",
+      "file": "",
+      "line": 164,
+      "context_snippet": "Step 2 — Definition (residue-visibility threshold):",
+      "source_file": "sessions\\session-85\\session-85-3b-branch-c-phonon-landau.md",
+      "source_context_30_lines": "  156: Step 1 — Definition (BCS-vacuum existence on the C² coset):\n  157:   The Leggett phase mode is R-protected (LEGGETT-PARTITION-57/58 PASS).\n  158:   R-protection ⇒ the phase-vacuum exists at every L_max for which the\n  159:   C² coset is in the spectrum, i.e., for all L_max ≥ 1.\n  160:   ⇒ The \"BCS vacuum\" question is NOT about existence; it is about\n  161:     the residue contribution to the late-time Hubble channel.\n  162: \n  163: Step 2 — Definition (residue-visibility threshold):\n  164:   visibility(branch c, L) = 1 iff residue_c(L) > residue_a(L)  AND\n  165:                                    stability_delta_c(L) ≤ 0.10 AND\n  166:                                    Cauchy-monotone decay holds.\n  167: \n  168: Step 3 — Substitute (from W10-4 §(d) and §(e)):\n  169:   At L = 8:  residue_c = 1.530e-4  vs  residue_a = 2.972e-5  ⇒  residue_c > residue_a (5.1×).\n  170:   At L = 10: residue_c = 6.672e-5  vs  residue_a = 2.600e-6  ⇒  residue_c > residue_a (25.7×).\n  171:   At L = 12: residue_c = 2.909e-5  vs  residue_a = 2.275e-7  ⇒  residue_c > residue_a (127.9×).\n  172:   Branch c stability_delta = 7.53e-5 (≤ 0.10) ⇒ stable at all L."
+    },
+    {
+      "anchor_id": "eq_17414",
+      "anchor_type": "equations",
+      "name": "family F_4 = {ζ, Zubarev, SDW} (the (A)-regulator class) and",
+      "eq_type": "structural",
+      "file": "",
+      "line": 316,
+      "context_snippet": "\"(A) / (C) regulator-class discriminator structure: The 5-regulator atlas {ζ, Zubarev, SDW, cutoff_sqrt, anomaly} splits into pure-a_4",
+      "source_file": "sessions\\session-plan\\archive\\session-86-plan-w14.md",
+      "source_context_30_lines": "  308:                from computations/s85_gate_verdicts.txt W13-2 line)\n  309: \n  310: Action 2 — Append a documenting paragraph immediately below the row\n  311: (within the row's \"Discriminator\" or \"Notes\" sub-section, creating\n  312: the sub-section if absent):\n  313: \n  314:   \"(A) / (C) regulator-class discriminator structure: The 5-regulator\n  315:   atlas {ζ, Zubarev, SDW, cutoff_sqrt, anomaly} splits into pure-a_4\n  316:   family F_4 = {ζ, Zubarev, SDW} (the (A)-regulator class) and\n  317:   mixed-support family M = {cutoff_sqrt, anomaly} (the (C)-regulator\n  318:   class) per S85 W12-4 + lizzi S-7 §V.6 Mellin Strip Theorem. CGWB\n  319:   Ω_GW(LISA) is regulator-class-bipolar: (A) class predicts\n  320:   O(10^-10) LISA-detectable spectral density at f_LISA = 3 mHz\n  321:   (cross-ref CGWB-ABSOLUTE-PT family); (C) class predicts the\n  322:   W13-2.Ω 45-OOM null Ω_GW = 8.299e-58. A LISA detection at\n  323:   Ω_GW > 10^-12 falsifies (C); a LISA non-detection at\n  324:   Ω_GW < 10^-12 over the 4-yr nominal mission is consistent with"
+    },
+    {
+      "anchor_id": "eq_5169",
+      "anchor_type": "equations",
+      "name": "k= 5: w_A = 0.500000, w_B = 0.500000, asymmetry = 0.000000",
+      "eq_type": "structural",
+      "file": "",
+      "line": 168,
+      "context_snippet": "k= 3: w_A = 0.500000, w_B = 0.500000, asymmetry = 0.000000 k= 4: w_A = 0.500000, w_B = 0.500000, asymmetry = 0.000000",
+      "source_file": "computations\\session-64\\s64_local_entangle_output.txt",
+      "source_context_30_lines": "  160: \n  161: --- Section 10: Mode delocalization across cut ---\n  162:   TB eigenstate weights in region A (max-cut):\n  163:     k= 0: w_A = 0.500000, w_B = 0.500000, asymmetry = 0.000000\n  164:     k= 1: w_A = 0.500000, w_B = 0.500000, asymmetry = 0.000000\n  165:     k= 2: w_A = 0.500000, w_B = 0.500000, asymmetry = 0.000000\n  166:     k= 3: w_A = 0.500000, w_B = 0.500000, asymmetry = 0.000000\n  167:     k= 4: w_A = 0.500000, w_B = 0.500000, asymmetry = 0.000000\n  168:     k= 5: w_A = 0.500000, w_B = 0.500000, asymmetry = 0.000000\n  169:     k= 6: w_A = 0.500000, w_B = 0.500000, asymmetry = 0.000000\n  170:     k= 7: w_A = 0.500000, w_B = 0.500000, asymmetry = 0.000000\n  171:     k= 8: w_A = 0.500000, w_B = 0.500000, asymmetry = 0.000000\n  172:     k= 9: w_A = 0.500000, w_B = 0.500000, asymmetry = 0.000000\n  173:     k=10: w_A = 0.077209, w_B = 0.922791, asymmetry = 0.422791\n  174:     k=11: w_A = 0.950589, w_B = 0.049411, asymmetry = 0.450589\n  175:     k=12: w_A = 0.000000, w_B = 1.000000, asymmetry = 0.500000\n  176:     k=13: w_A = 0.972202, w_B = 0.027798, asymmetry = 0.472202"
+    },
+    {
+      "anchor_id": "eq_1874",
+      "anchor_type": "equations",
+      "name": "alpha_ph = 2.00: conv=True (60 iter)",
+      "eq_type": "structural",
+      "file": "",
+      "line": 177,
+      "context_snippet": "n_B2=1.787373, n_B1=0.185558, n_B3=0.027068",
+      "source_file": "computations\\session-52\\s52_hfb_full_output.txt",
+      "source_context_30_lines": "  169: \n  170:   alpha_ph = 1.50: conv=True (62 iter)\n  171:     E_gs = 2.8864271632 (delta = -4.1411%)\n  172:     E_sp shift: max|Sigma| = 9.48e-02\n  173:     n_k = [0.25826253 0.67972016 0.25802196 0.5913687  0.18555824 0.00814497\n  174:  0.0085397  0.01038374]\n  175:     n_B2=1.787373, n_B1=0.185558, n_B3=0.027068\n  176: \n  177:   alpha_ph = 2.00: conv=True (60 iter)\n  178:     E_gs = 2.7777917040 (delta = -7.7489%)\n  179:     E_sp shift: max|Sigma| = 1.46e-01\n  180:     n_k = [0.16517681 0.81365189 0.18243822 0.7188796  0.10183698 0.00569323\n  181:  0.00559151 0.00673177]\n  182:     n_B2=1.880147, n_B1=0.101837, n_B3=0.018017\n  183: \n  184: ==============================================================================\n  185: Section 4: BCS and Number-Projected BCS for Comparison"
+    },
+    {
+      "anchor_id": "eq_16651",
+      "anchor_type": "equations",
+      "name": "S_dressed[D_K,φ]    ≡ Tr f(D_K/Λ + φ^{1/2}/Λ)                        [matter-dressed; φ ≥ 0 self-adjoint matter-density]",
+      "eq_type": "structural",
+      "file": "",
+      "line": 419,
+      "context_snippet": "Step 1 (definitions): S_bare[D_K]         ≡ Tr f(D_K/Λ)                                    [Chamseddine-Connes, undressed]",
+      "source_file": "sessions\\session-plan\\archive\\session-85-plan-w7.md",
+      "source_context_30_lines": "  411: - **FAIL**: sign(δa_2) = − (dressing weakens emergent gravity, violates substrate-primacy of gravity-as-a_2).\n  412: - **INFO**: sign(δa_2) = + but |δS_dressed/S_bare| > 0.5 (non-perturbative regime; dressing is strong, requires resummation; carry-forward).\n  413: \n  414: **10. Substitution chain**:\n  415: \n  416: ```\n  417: Step 1 (definitions):\n  418:   S_bare[D_K]         ≡ Tr f(D_K/Λ)                                    [Chamseddine-Connes, undressed]\n  419:   S_dressed[D_K,φ]    ≡ Tr f(D_K/Λ + φ^{1/2}/Λ)                        [matter-dressed; φ ≥ 0 self-adjoint matter-density]\n  420:   a_n                 ≡ Seeley-DeWitt coefficient at order Λ^{4-n} in heat-kernel expansion\n  421:   a_2 (gravity)       ≡ −(1/12) · (1/Vol_SU3) · Σ_k [1] · R(g_M)      [emergent Einstein-Hilbert]\n  422:   δS_dressed          ≡ S_dressed − S_bare\n  423: \n  424: Step 2 (substitution — heat-kernel expansion):\n  425:   S_dressed ≈ Tr f(D_K/Λ) + Tr[f'(D_K/Λ) · φ^{1/2}/Λ] + (1/2) Tr[f''(D_K/Λ) · φ/Λ²] + ...\n  426:   δS_dressed = Tr[f'(D_K/Λ) · φ^{1/2}/Λ] + (1/2) Tr[f''(D_K/Λ) · φ/Λ²] + O(φ^{3/2})\n  427:   Leading a_2 shift (O(Λ²) coefficient of expansion):"
+    },
+    {
+      "anchor_id": "eq_2636",
+      "anchor_type": "equations",
+      "name": "T_init = 8.3201e+15 GeV (8.32 x 10^15 GeV)",
+      "eq_type": "structural",
+      "file": "",
+      "line": 158,
+      "context_snippet": "SCENARIO A: Exflation sets initial conditions for standard Big Bang",
+      "source_file": "computations\\session-53\\s53_exflation_cmb_temp_output.txt",
+      "source_context_30_lines": "  150: PREDICTION SUMMARY\n  151: ========================================================================\n  152: \n  153: 1. GGE formation temperature:     T_init = 8.3201e+15 GeV\n  154: 2. Required redshift to T_CMB:     z = 3.5425e+28\n  155: 3. Required e-folds (radiation):   N = 65.74\n  156: \n  157: SCENARIO A: Exflation sets initial conditions for standard Big Bang\n  158:   T_init = 8.3201e+15 GeV (8.32 x 10^15 GeV)\n  159:   This is at the GUT scale — consistent with standard cosmology\n  160:   T_init / T_RH(typical) = O(1) — no hierarchy problem\n  161: \n  162: SCENARIO B: Exflation is the only expansion (GGE = radiation)\n  163:   T∝1/a               : T = 6.1586e-20 GeV, T/T_CMB = 2.26e-20, OVERCOOLED\n  164:   T∝a^{-0.869}        : T = 2.5654e-15 GeV, T/T_CMB = 9.41e-16, OVERCOOLED\n  165:   T∝a^{-0.409}        : T = 3.4692e+01 GeV, T/T_CMB = 1.27e+01, warm by 1.1 OOM\n  166: "
+    }
+  ]
+}

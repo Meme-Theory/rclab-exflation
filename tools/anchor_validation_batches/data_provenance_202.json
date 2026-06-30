@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 202,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_2011",
+      "anchor_type": "data_provenance",
+      "name": "w7_joint_cc_residue",
+      "script_path": "session-86/s86_w7_joint_cc_residue.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "session-86/s86_w7_joint_cc_residue.npz, session-86/s86_w7_joint_cc_residue.png",
+      "source_file": "computations/session-86/s86_w7_joint_cc_residue.py",
+      "source_context_30_lines": "   82: # ---------------------------------------------------------------------------\n   83: # Paths\n   84: # ---------------------------------------------------------------------------\n   85: ROOT = Path(__file__).resolve().parent.parent  # project root\n   86: # X2-removed: alias 'SCRIPT_DIR' = ... 'computations' (replaced by tools.computation_root.resolve_*)\n   87: SESS85 = ROOT / \"sessions\" / \"session-85\"\n   88: VERDICTS = resolve_output(86, 's86_gate_verdicts.txt')\n   89: \n   90: NPZ_OUT = resolve_output(86, 's86_w7_joint_cc_residue.npz')\n   91: PNG_OUT = resolve_output(86, 's86_w7_joint_cc_residue.png')\n   92: \n   93: # Late-bind input source documents (S85 1A 3-solo synthesis files)\n   94: SECTOR_DOCS = {\n   95:     \"phonon\": SESS85 / \"session-85-1a-cc-residue-phonon-first.md\",\n   96:     \"transit\": SESS85 / \"session-85-1a-cc-residue-transit.md\",\n   97:     \"landau\":  SESS85 / \"session-85-1a-cc-residue-landau.md\",\n   98: }"
+    },
+    {
+      "anchor_id": "prov_2012",
+      "anchor_type": "data_provenance",
+      "name": "w8_c7_lmax_direct",
+      "script_path": "session-86/s86_w8_c7_lmax_direct.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-86/s86_w8_c7_lmax_direct.py",
+      "source_context_30_lines": "<name 'w8_c7_lmax_direct' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S86 W8-3 — CGWB-LMAX-DIRECT: L=8 vs L=10 truncation diagnostic at f_LISA\n    4: =========================================================================\n    5: \n    6: Gate: S86-CGWB-LMAX-DIRECT ([VERIFY])\n    7: \n    8: Replaces the S85 W13-2 §(f) band-width-diagnostic (Omega_GW spectral slope\n    9: over [0.5 f_LISA, 2 f_LISA] at fixed L_max=10) with a DIRECT truncation\n   10: diagnostic: hold f FIXED at f_LISA = 3 mHz and vary L_max from 10 to 8.\n   11: \n   12: PASS  iff  delta_rel = |Omega_L8 - Omega_L10| / Omega_L10 <= 0.05\n   13: INFO  iff  0.05 < delta_rel <= 0.20\n   14: FAIL  iff  delta_rel > 0.20\n   15: \n   16: Output 4-tuple:\n   17:   (value=(Omega_L8, Omega_L10, delta_rel),\n   18:    scheme=L_max-direct-truncation-comparison,\n   19:    convention=W13-2-forward-map+f_LISA-pivot+log-log-interp,\n   20:    L_max=8-vs-10)\n   21: \n   22: Classification: GEOMETRIC — the eigenvalue truncation level L_max controls\n   23: how many of the D_K eigenvalues enter the spectral action; M_KK is derived\n   24: via the gravity-route partial-sum a_2(L_max). The W13-2 cache spectrum was\n   25: computed at canonical M_KK (L=10 pin); this gate substitutes M_KK_at_L8\n   26: into the identical s69-style transit-GW forward map and compares\n   27: Omega_GW(f_LISA) at L=10 vs L=8.\n   28: \n   29: SUBSTITUTION CHAIN (plan §10):\n   30: "
+    },
+    {
+      "anchor_id": "prov_2013",
+      "anchor_type": "data_provenance",
+      "name": "w8_gate_a_lmax_finiteness",
+      "script_path": "session-86/s86_w8_gate_a_lmax_finiteness.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-86/s86_w8_gate_a_lmax_finiteness.py",
+      "source_context_30_lines": "<name 'w8_gate_a_lmax_finiteness' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: S86 W-8 / GATE A: S86-CUTOFF-SQRT-GATE-A-LMAX-FINITENESS\n    3: ========================================================\n    4: \n    5: Master gate of the cutoff_AL2010 atlas-cardinality determinant trio (W-8).\n    6: Tests whether `f_0 * Lambda(L_max)^4 * a_0(L_max)` admits a positive-alpha\n    7: scaling Lambda(L_max) = Lambda_0 * L_max^alpha (alpha in [-2, +2]) such that\n    8: the coupling is bounded as L_max -> infty on Jensen-deformed SU(3).\n    9: \n   10: Per `sessions/framework/registry/cutoff-sqrt-adjudication.md` §3.1 + workshop\n   11: R3-C-E3-C, GATE A FAIL is structurally pre-determined by the substrate's\n   12: Peter-Weyl L^8 mode-count growth at d=8 spectral dimension. This S86\n   13: dispatch is canonical-record (logging the FAIL with input-pin closure-hash\n   14: for the permanent registry), NOT adjudication.\n   15: \n   16: Substitution chain (per .claude/rules/math-scripts.md §Double-Check Logic\n   17: Before Compute):\n   18: \n   19:   Step 1 (definitions):\n   20:     coupling g(L) := f_0 * Lambda(L)^4 * a_0(L)\n   21:     Lambda(L)    := Lambda_0 * L^alpha\n   22:     a_0(L)       := 16 * sum_{p+q<=L} [(p+1)(q+1)(p+q+2)/2]^2\n   23:                     [Peter-Weyl L^2(SU(3)) sum-of-dim^2 multiplicity;\n   24:                      leading term L^8/960 per workshop §1.5 Sage closed form]\n   25: \n   26:   Step 2 (substitute):\n   27:     g(L) = f_0 * Lambda_0^4 * L^{4*alpha} * a_0(L)\n   28:     For boundedness as L -> infty:\n   29:       log g(L) = const + 4*alpha*log(L) + log a_0(L)\n   30:                = const + 4*alpha*log(L) + k_eff(L)*log(L) + O(1)"
+    },
+    {
+      "anchor_id": "prov_2014",
+      "anchor_type": "data_provenance",
+      "name": "w8_gate_b_kernel_admissibility",
+      "script_path": "session-86/s86_w8_gate_b_kernel_admissibility.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-86/s86_w8_gate_b_kernel_admissibility.py",
+      "source_context_30_lines": "<name 'w8_gate_b_kernel_admissibility' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: S86 W-8 / GATE B: S86-CUTOFF-SQRT-GATE-B-KERNEL-ADMISSIBILITY\n    3: =============================================================\n    4: \n    5: Subset-removal sweep on the a_0 slot under W2-1 protocol (L_max=7) for the\n    6: cutoff_AL2010 Mellin-cutoff regulator. Tests which CCM-2007 axioms source the\n    7: a_0 slot under cutoff_AL2010 vs zeta -- does the load-bearing set reduce to\n    8: {dim, fin}, or does it require {reg, 1st-order} (inner-fluctuation lift)?\n    9: \n   10: Per `sessions/framework/registry/cutoff-sqrt-adjudication.md` §3.2 and the\n   11: S85 W2-1 W2-1 subset-removal protocol exemplar\n   12: (`computations/session-85/s85_w2_alpha_s_axiom_minimality.py`).\n   13: \n   14: Substitution chain (per .claude/rules/math-scripts.md §Double-Check Logic\n   15: Before Compute):\n   16: \n   17:   Step 1 (definitions):\n   18:     A = CCM-2007 axiom set = {dim, reg, fin, real, 1st-order, orient, PD}\n   19:     cutoff_AL2010 published Mellin vector v_pub = (f_0, f_2, f_4, f_6) = (1/2, 1, 1, 0)\n   20:     cutoff_AL2010 framework-truncated v_fw = (2, 1, 0.5, 0.1)\n   21:     a_0 sourcing routes:\n   22:       (i)   GLOBAL-TRACE:    a_0 = Tr_H(1) / Vol_F   requires {dim, fin}\n   23:       (ii)  HEAT-KERNEL:     a_0 = lim_{t->0+} Tr exp(-t D^2)  requires {reg}\n   24:       (iii) MELLIN-RESIDUE:  a_0 = Res_{s=0} zeta_D(s)         requires {reg, 1st-order}\n   25: \n   26:   Step 2 (substitute under W2-1 subset-removal):\n   27:     For each axiom x in A, set invoked[x] = False, recompute a_0 sourcing under\n   28:     cutoff_AL2010.\n   29:     cutoff_AL2010 = sharp Theta(Lambda - |D|)/sqrt(|D|^2/Lambda^2) regulator.\n   30:     f_0 = 1/2 is FORCED by anomaly-cancellation (Andrianov-Lizzi arXiv:1103.0478;"
+    },
+    {
+      "anchor_id": "prov_2015",
+      "anchor_type": "data_provenance",
+      "name": "w8_gate_c_hbw_mp_abs_conv_s6",
+      "script_path": "session-86/s86_w8_gate_c_hbw_mp_abs_conv_s6.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "session-86/s86_w8_gate_c_hbw_mp_abs_conv_s6.png",
+      "source_file": "computations/session-86/s86_w8_gate_c_hbw_mp_abs_conv_s6.py",
+      "source_context_30_lines": "  430:     'saturated': saturated,\n  431:     'hbw_primary': hbw_primary,\n  432:     'hbw_stencil': hbw_stencil,\n  433:     'cross_check_sign_match': cross_check_sign_match,\n  434:     'verdict': verdict,\n  435:     'verdict_reason': reason,\n  436:     'inputs': {k: v for k, v in sorted(INPUT_SHAS.items())\n  437:                if v is not None},\n  438:     '__script__': 's86_w8_gate_c_hbw_mp_abs_conv_s6',\n  439:     '__gate_id__': 'S86-CUTOFF-SQRT-GATE-C-S82-APPLICABILITY',\n  440: }\n  441: \n  442: closure_str = json.dumps(closure_map, sort_keys=True, default=str)  # (local)\n  443: audit_sha = hashlib.sha256(closure_str.encode('utf-8')).hexdigest()  # (local)\n  444: assert len(audit_sha) == 64, \"audit SHA must be full 64-char hexdigest\"\n  445: \n  446: # Content SHA = SHA-256 of THIS script's bytes (W9a-99 dual-SHA template)"
+    },
+    {
+      "anchor_id": "prov_2016",
+      "anchor_type": "data_provenance",
+      "name": "w8_p6_cgwb_diagrammatic_commit",
+      "script_path": "session-86/s86_w8_p6_cgwb_diagrammatic_commit.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-86/s86_w8_p6_cgwb_diagrammatic_commit.py",
+      "source_context_30_lines": "<name 'w8_p6_cgwb_diagrammatic_commit' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S86 W8-P6 — S86-CGWB-ALPHA-S-INDEPENDENCE-DIAGRAMMATIC-COMMIT\n    4: =============================================================\n    5: \n    6: Gate: S86-CGWB-ALPHA-S-INDEPENDENCE-DIAGRAMMATIC-COMMIT ([AUDIT])\n    7: \n    8: Pre-registered threshold (binary, structural-completeness):\n    9:   PASS iff (n_cells = 9) AND (n_axes = 6)\n   10:        AND artifact_npz exists AND artifact_json exists.\n   11:   FAIL iff any of the above is absent.\n   12:   No INFO band (audit-class binary completeness).\n   13: \n   14: Inputs (SHA-256 dual-pinned at runtime — see §4 below; S84+ schema):\n   15:   - sessions/session-85/session-85-w13-workingpaper.md  (6A subsection\n   16:     context; W13-2 INFO verdict-line anchor; do NOT re-derive)\n   17:   - sessions/permanent-results-registry.md              (W0b R7 + R8\n   18:     methodology entries — confirmed landed at §VII.M.3 + §VII.M.4)\n   19:   - computations/session-85/s85_gate_verdicts.txt             (W13-2 verdict\n   20:     line provenance)\n   21:   - computations/_shared/canonical_constants.py            (constant-import\n   22:     provenance)\n   23:   - script bytes (feeds BOTH audit_sha256 and content_sha256)\n   24: \n   25: Output 4-tuple:\n   26:   (value=(n_cells=9, n_axes=6, rho_anchored_count=1, rho_computed_count=1),\n   27:    scheme=registry-9cell,\n   28:    convention=W13-2-anchor+P7-LAYER-3+W0b-R8-methodology,\n   29:    L_max=10)\n   30: "
+    },
+    {
+      "anchor_id": "prov_2017",
+      "anchor_type": "data_provenance",
+      "name": "w8_p7_rho_substrate_mc",
+      "script_path": "session-86/s86_w8_p7_rho_substrate_mc.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-86/s86_w8_p7_rho_substrate_mc.py",
+      "source_context_30_lines": "<name 'w8_p7_rho_substrate_mc' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S86 W8-2 (P7) -- S86-RHO-SUBSTRATE-PREDICTION-MC\n    4: ================================================\n    5: \n    6: Gate: S86-RHO-SUBSTRATE-PREDICTION-MC ([VERIFY]+[SIGN])\n    7: \n    8: Pre-registered threshold (plan §W8-2 line 419-423):\n    9:   PASS  iff  |rho_substrate-prediction| in [0.819, 1.001]\n   10:             (RATIO <= 1e-1 of reference 0.91, capped at 1.0 by Cauchy-Schwarz)\n   11:             under at least one (sign_convention, atlas_weighting) combination\n   12:             of the 6, AND bootstrap sigma_rho <= 0.05.\n   13:   INFO  iff  |rho| outside [0.819, 1.001] BUT consistent across >=4/6 cells\n   14:             (sign of |rho| in same direction for >=4/6) AND bootstrap sigma_rho <= 0.05.\n   15:   FAIL  iff  bootstrap sigma_rho > 0.05 OR max-min spread of |rho| over 6 cells > 0.5\n   16:             OR script crashes before producing 6-cell rho_grid.\n   17: \n   18: Tolerance rule: RATIO (<= 1e-1) for PASS band; ABSOLUTE (sigma_rho <= 0.05)\n   19:                 for stability checks.\n   20: \n   21: Output 4-tuple:\n   22:   (value=(rho_signed_uniform, rho_signed_PV-dn, rho_signed_PV-excl,\n   23:           rho_mag_uniform, rho_mag_PV-dn, rho_mag_PV-excl),\n   24:    scheme=substrate-marginalized-observable,\n   25:    convention=W12-4-5-regulator-atlas+W13-2-forward-map+pre-pinned-6cell,\n   26:    L_max=10)\n   27: \n   28: Classification: PHONONIC (LAYER-3 substrate-marginalized-observable; the MC\n   29:                 samples the substrate's regulator-class predictions for\n   30:                 (alpha_s, Omega_GW(f_LISA)) under the W12-4 5-regulator atlas)."
+    },
+    {
+      "anchor_id": "prov_2018",
+      "anchor_type": "data_provenance",
+      "name": "w9_C24_vii_p_v2_parity_extension",
+      "script_path": "session-86/s86_w9_C24_vii_p_v2_parity_extension.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-86/s86_w9_C24_vii_p_v2_parity_extension.py",
+      "source_context_30_lines": "<name 'w9_C24_vii_p_v2_parity_extension' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S86 W9-C24 — §VII.P-v2 + §VII.P' Parity-Extension (composite gate)\n    4: ==================================================================\n    5: \n    6: Gate: S86-VII-P-V2-PARITY-EXTENSION ([VERIFY-THEOREM])\n    7: Lands TWO §VII registry entries via ONE composite verdict line.\n    8: \n    9: Pre-registered thresholds (plan §W9-2 §9):\n   10:   PASS: BOTH (a) (C_H, C_epsH)-type twin pairs are dropped from\n   11:         R_P|_{HP^0-distinct} (verified by exact integer HP^0-dim\n   12:         difference), AND (b) ω_GV does not vanish on any surviving\n   13:         §VII.P-v2 corridor (cocycle eigenvalue spectrum bounded away\n   14:         from 0 by >= 1e-12).\n   15:   FAIL: either (a) twin pairs NOT dropped (HP^0-content-distinct does\n   16:         NOT separate (C_H, C_epsH)), OR (b) ω_GV vanishes on at least\n   17:         one surviving corridor.\n   18:   INFO: §VII.P-v2 lands but §VII.P' fails (or vice versa) — partial\n   19:         refinement; pre-registered fallback is single-entry registry\n   20:         write with the failed half deferred to S87.\n   21: \n   22: Inputs (SHA-256 dual-pinned at runtime, S84+ schema):\n   23:   - computations/_shared/canonical_constants.py (HP0_content_dim=3,\n   24:     HP1_dim=3, FI_parity_exclusion=1)\n   25:   - computations/session-85/s85_w2_disjoint_corridor_counter_construction.json\n   26:     (the 7-corridor catalog from S85 W2-7 FAIL-with-refinement;\n   27:     contains C_C, C_H, C_M3, C_CH, C_CM3, C_HM3, C_epsH)\n   28:   - sessions/session-84/computation-artifacts/s84_w10a_115_gv_explicit.npz\n   29:     (S84 W10-115 odd-parity GV cocycle; restored from blob\n   30:     ffe431f09ebde7ab318b233a544bfba5938f9a8e committed in b9b3394)"
+    },
+    {
+      "anchor_id": "prov_2019",
+      "anchor_type": "data_provenance",
+      "name": "w9_C26_w22_predicted_instantiations",
+      "script_path": "session-86/s86_w9_C26_w22_predicted_instantiations.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-86/s86_w9_C26_w22_predicted_instantiations.py",
+      "source_context_30_lines": "<name 'w9_C26_w22_predicted_instantiations' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S86 W9-C26 — W2-2 Predicted Instantiations (TWO sub-gates)\n    4: ==========================================================\n    5: \n    6: Gate (composite): S86-W2-2-PREDICTED-INSTANTIATIONS\n    7:   Sub-gate C26.A: §VII.P-prime  ([VERIFY-THEOREM])\n    8:   Sub-gate C26.B: §VII.K-DUAL-q ([VERIFY-THEOREM])\n    9: \n   10: Pre-registered thresholds (plan session-86-plan-w9.md §9):\n   11: \n   12:   C26.A PASS iff\n   13:     (i)  dim HP^3(A_F^Spin8) - dim HP^3(A_F^SU3) == 1 EXACTLY (theorem-grade\n   14:          integer; no tolerance), AND\n   15:     (ii) the rank-2 obstruction class projects non-trivially onto §VII.P\n   16:          parity-blindness equivalence R_P.\n   17:   C26.A FAIL iff integer difference != 1.\n   18:   C26.A INFO iff difference == 1 but rank-2 generator orthogonal to R_P.\n   19: \n   20:   C26.B PASS iff\n   21:     (i)  bucket_count(HP^even(A_F^q)) == 4 EXACTLY at every q in q_range, AND\n   22:     (ii) max_q |dim HP^{2k}(A_F^q) - dim HP^{2k}(A_F^1)| <= 1e-3 * (1-q)^2.\n   23:   C26.B FAIL iff bucket count != 4 or boundary deviation exceeds tolerance.\n   24:   C26.B INFO iff bucket count == 4 but stability marginal (<=2x threshold).\n   25: \n   26: Inputs (SHA-256 dual-pinned at runtime):\n   27:   - computations/_shared/canonical_constants.py  (HP1_dim, FI_parity_exclusion,\n   28:     rank_exclusion, eps_H_HP1_norm)\n   29:   - computations/session-85/s85_w2_hp3_disjoint_corridor.py  (S85 theorem source:\n   30:     HC^odd(semisimple-finite-dim-A) = 0 => HP^3 = 0 structurally)"
+    },
+    {
+      "anchor_id": "prov_2020",
+      "anchor_type": "data_provenance",
+      "name": "w9_C44_r_protection_mellin_criterion",
+      "script_path": "session-86/s86_w9_C44_r_protection_mellin_criterion.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-86/s86_w9_C44_r_protection_mellin_criterion.py",
+      "source_context_30_lines": "<name 'w9_C44_r_protection_mellin_criterion' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S86 W9-3 — S86-R-PROTECTION-MELLIN-CRITERION (C44, lizzi-track)\n    4: ================================================================\n    5: \n    6: Gate: S86-R-PROTECTION-MELLIN-CRITERION ([VERIFY-THEOREM])\n    7: Plan: sessions/session-plan/session-86-plan-w9.md §W9-3 (lines 427-676)\n    8: \n    9: Pre-registered thresholds (plan §9):\n   10:   PASS  iff  concordance >= 0.95  AND per-class concordance >= 0.85 EVERY class\n   11:                               AND |concordance(L=10) - concordance(L=8)| <= 0.05\n   12:   FAIL  iff  concordance < 0.80\n   13:   INFO  iff  0.80 <= concordance < 0.95   (banded; partial validity)\n   14:   INFO-DEFER if budget defer (NOT applicable here -- DO NOT DEFER per dispatch)\n   15: \n   16: Inputs (SHA-256 dual-pinned at runtime):\n   17:   - computations/_shared/canonical_constants.py\n   18:   - computations/session-80/s80_w09_canonical_classification.py  (CLASSIFICATION dict)\n   19:   - computations/session-86/s86_gate_verdicts.txt                (T10 + W4 closure SHAs)\n   20: \n   21: Output 4-tuple:\n   22:   (value=<concordance in [0.0,1.0]>, scheme=\"Mellin-moment-criterion-test\",\n   23:    convention=\"criterion-vs-empirical\", L_max=10)\n   24: \n   25: Classification: GEOMETRIC (R-protection is a property of the substrate's\n   26: spectral-functional ledger under the 5-regulator atlas).\n   27: \n   28: METHODOLOGY\n   29: -----------\n   30: The lizzi S-1 §IV.5 criterion proposes:"
+    }
+  ]
+}

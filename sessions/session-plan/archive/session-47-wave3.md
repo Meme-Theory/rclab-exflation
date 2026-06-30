@@ -22,7 +22,7 @@ You are testing whether the full Dirac eigenvalue spectrum on Jensen-deformed SU
 
 **Verified data locations**:
 
-- `tier0-computation/s44_dos_tau.npz`:
+- `computations/s44_dos_tau.npz`:
   - `tau0.19_all_omega: shape=(992,)` — full eigenvalue spectrum at fold (tau=0.19)
   - `tau0.19_all_dim2: shape=(992,)` — PW degeneracies
   - `tau0.15_all_omega: shape=(992,)` — spectrum at tau=0.15 (where phi was originally found)
@@ -30,15 +30,15 @@ You are testing whether the full Dirac eigenvalue spectrum on Jensen-deformed SU
   - `tau0.00_all_omega: shape=(992,)` — spectrum at bi-invariant point
   - Available tau values: 0.00, 0.05, 0.10, 0.15, 0.19
 
-- `tier0-computation/s46_max_pq_sum_4.npz` — may contain higher-truncation data (check if it has eigenvalues at max_pq_sum=4)
+- `computations/s46_max_pq_sum_4.npz` — may contain higher-truncation data (check if it has eigenvalues at max_pq_sum=4)
 
-- `tier0-computation/s47_pi_sector.npz` (from W1-1):
+- `computations/s47_pi_sector.npz` (from W1-1):
   - Sector assignments (B1/B2/B3) for the 992 modes
 
-- `tier0-computation/s47_spectral_landscape.npz`:
+- `computations/s47_spectral_landscape.npz`:
   - Processed spectrum data with sector coloring
 
-- `tier0-computation/canonical_constants.py`:
+- `computations/canonical_constants.py`:
   - `phi_paasch` if available, or compute from the known value 1.531580
 
 **Computation Steps**:
@@ -77,9 +77,9 @@ You are testing whether the full Dirac eigenvalue spectrum on Jensen-deformed SU
 - FAIL: Phases consistent with uniform distribution (p > 0.05) — no sequence structure
 
 **Output files**:
-- Script: `tier0-computation/s47_paasch_spiral.py`
-- Data: `tier0-computation/s47_paasch_spiral.npz`
-- Plot: `tier0-computation/s47_paasch_spiral.png`
+- Script: `computations/s47_paasch_spiral.py`
+- Data: `computations/s47_paasch_spiral.npz`
+- Plot: `computations/s47_paasch_spiral.png`
 
 **Working paper section**: W3-1
 

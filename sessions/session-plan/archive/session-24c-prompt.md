@@ -25,7 +25,7 @@ Session ends ONLY when user approves shutdown explicitly; Password mechanism on 
 ## COMPUTATION ENVIRONMENT
 
 **Python**: `"phonon-exflation-sim/.venv312/Scripts/python.exe"`
-**Output directory**: `tier0-computation/`
+**Output directory**: `computations/`
 **Script prefix**: `s24c_`
 
 ---
@@ -51,7 +51,7 @@ This is the deepest unresolved question in the framework.
 1. **Session 24b synthesis**: `sessions/YYYY-MM-DD-session-24b-synthesis.md`
    V_spec result, combined BF, physical interpretation.
 
-2. **V_spec data**: `tier0-computation/s24a_vspec.npz`
+2. **V_spec data**: `computations/s24a_vspec.npz`
    tau_min, V_spec(tau_min), V_spec''(tau_min), V_barrier = V_spec(0) - V_spec(tau_min).
 
 3. **Session 23 Tesla-take Landau collab**: `sessions/session-23/session-23-tesla-take-landau-collab.md`
@@ -67,7 +67,7 @@ This is the deepest unresolved question in the framework.
 | Agent | Additional Reading | Researcher Index Ref |
 |:------|:-------------------|:---------------------|
 | landau-condensed-matter-theorist | `sessions/session-23/session-23-tesla-take-landau-collab.md` (d_eff=1 argument in full). `sessions/session-22/session-22c-PertubativeExhaustionTheorem.md` (L-3: PET formalization) | Domain 4: Landau-04 (d=8>d_uc=4 for FIELD fluctuations; but modulus is 1D PARAMETER), Landau-05 (superfluidity: phonon stabilization analog) |
-| einstein-theorist | `sessions/session-23/session-23-tesla-take-einstein-collab.md` (EIH constraint, CC problem, thermal history). `tier0-computation/s24a_vspec.npz` (numerical V_spec data) | Domain 8: Hawking-07 (Euclidean action at saddle point), Einstein-07 (CC). Domain 4: KK-10 (Freund-Rubin: modulus mass from V''), KK-11 (Lichnerowicz stability) |
+| einstein-theorist | `sessions/session-23/session-23-tesla-take-einstein-collab.md` (EIH constraint, CC problem, thermal history). `computations/s24a_vspec.npz` (numerical V_spec data) | Domain 8: Hawking-07 (Euclidean action at saddle point), Einstein-07 (CC). Domain 4: KK-10 (Freund-Rubin: modulus mass from V''), KK-11 (Lichnerowicz stability) |
 
 ---
 
@@ -251,7 +251,7 @@ If probability ceiling > 15%:
 
 | File | Producer | Content |
 |:-----|:---------|:--------|
-| `tier0-computation/s24c_ginzburg.py` | phonon-sim (if needed) | Ginzburg criterion + bounce action computation |
+| `computations/s24c_ginzburg.py` | phonon-sim (if needed) | Ginzburg criterion + bounce action computation |
 | `sessions/YYYY-MM-DD-session-24c-starobinsky-synthesis.md` | coordinator | Fluctuation analysis verdict + Session 25 definition |
 
 ## Branch B:

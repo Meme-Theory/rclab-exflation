@@ -58,14 +58,14 @@ You are the Landau condensed matter theorist. Your task is to resolve the N_eff 
 **Context**: Session 34 found M_max = 0.902 in the B2-only (5×5) Thouless matrix with step-function wall DOS. With smooth-wall van Hove DOS (rho = 14.02/mode), M_max = 1.445. The beyond-mean-field corridor requires N_eff > 5.5. The question is whether cross-channel couplings (B1-B2, B3-B2) push the effective pairing dimensionality above 5.5.
 
 **Computation**:
-1. Load the corrected spinor V matrix from `tier0-computation/s34a_dphys_kosmann.npz`:
+1. Load the corrected spinor V matrix from `computations/s34a_dphys_kosmann.npz`:
    - V(B1,B1) = 0.000 (Trap 1, exact zero)
    - V(B1,B2) = 0.077 (at phi=gap)
    - V(B1,B3) = 0.000 (Trap 4)
    - V(B2,B2) = 0.086 (at phi=gap, off-diagonal max)
    - V(B2,B3) = 0.022 (at phi=gap)
    - V(B3,B3) = read from data
-2. Load eigenvalues from `tier0-computation/s23a_kosmann_singlet.npz` at tau = 0.20 (dump point).
+2. Load eigenvalues from `computations/s23a_kosmann_singlet.npz` at tau = 0.20 (dump point).
 3. Compute the smooth-wall DOS for each branch (B1, B2, B3) using the van Hove integral with v_min = 0.012 for B2 (fold at v=0) and step-function for B1/B3 (no fold).
 4. Construct the 3×3 Thouless matrix: M_{ij} = V(B_i, B_j) × rho_j / (2|xi_j|) where xi_j is the gap-edge distance.
 5. Compute the largest eigenvalue of M. This IS N_eff-adjusted M_max.
@@ -75,7 +75,7 @@ You are the Landau condensed matter theorist. Your task is to resolve the N_eff 
 - PASS: max eigenvalue > 1.0
 - FAIL: max eigenvalue ≤ 1.0
 
-**Output**: Script `tier0-computation/s35_thouless_multiband.py`, data `s35_thouless_multiband.npz`, plot `s35_thouless_multiband.png`. Write results to Section W1-A of `sessions/session-35/session-35-results-workingpaper.md`.
+**Output**: Script `computations/s35_thouless_multiband.py`, data `s35_thouless_multiband.npz`, plot `s35_thouless_multiband.png`. Write results to Section W1-A of `sessions/session-35/session-35-results-workingpaper.md`.
 
 ---
 
@@ -89,10 +89,10 @@ You are the Landau condensed matter theorist. Your task is to resolve the N_eff 
 
 You are the Quantum Acoustics theorist. Your task is to rerun the beyond-mean-field exact diagonalization at the corrected smooth-wall DOS.
 
-**Context**: Session 34's BMF-35a (`tier0-computation/s35a_beyond_mean_field.py`) ran ED at rho = 8.81 (step-function wall with old impedance). At this rho, M_max(MF) = 0.902, and the ED found zero condensation energy (vacuum ground state). The corrected smooth-wall rho = 14.02 gives M_max(MF) = 1.445 > 1.0. At this higher rho, the ED ground state MAY shift from vacuum to a paired state.
+**Context**: Session 34's BMF-35a (`computations/s35a_beyond_mean_field.py`) ran ED at rho = 8.81 (step-function wall with old impedance). At this rho, M_max(MF) = 0.902, and the ED found zero condensation energy (vacuum ground state). The corrected smooth-wall rho = 14.02 gives M_max(MF) = 1.445 > 1.0. At this higher rho, the ED ground state MAY shift from vacuum to a paired state.
 
 **Computation**:
-1. Read `tier0-computation/s35a_beyond_mean_field.py` to understand the existing ED infrastructure (32-state Fock space, 5 modes, pair hopping Hamiltonian).
+1. Read `computations/s35a_beyond_mean_field.py` to understand the existing ED infrastructure (32-state Fock space, 5 modes, pair hopping Hamiltonian).
 2. Modify the script to use rho = 14.02 (smooth-wall van Hove) instead of 8.81 (step with old impedance). Also test rho = 14.66 (smooth-wall with multi-sector factor 1.046).
 3. Run ED at BOTH rho values. For each, report:
    - Ground state energy E_0
@@ -106,7 +106,7 @@ You are the Quantum Acoustics theorist. Your task is to rerun the beyond-mean-fi
 - PASS: E_cond < 0 (paired ground state) at rho = 14.02
 - FAIL: E_cond = 0 (vacuum ground state) at rho = 14.02
 
-**Output**: Script `tier0-computation/s35_ed_corrected_dos.py`, data `s35_ed_corrected_dos.npz`, plot `s35_ed_corrected_dos.png`. Write results to Section W1-B of `sessions/session-35/session-35-results-workingpaper.md`.
+**Output**: Script `computations/s35_ed_corrected_dos.py`, data `s35_ed_corrected_dos.npz`, plot `s35_ed_corrected_dos.png`. Write results to Section W1-B of `sessions/session-35/session-35-results-workingpaper.md`.
 
 ---
 
@@ -141,7 +141,7 @@ You are the Feynman theorist. Your task is to determine whether the BCS coupling
 - FAIL: g(IR) < 1.0 throughout bandwidth (mean-field + BMF corridor analysis applies)
 - NOTE: g_bare > 1 at phi=gap means the coupling STARTS above the critical value. Report whether this is a genuine strong-coupling result or an artifact of the one-loop truncation.
 
-**Output**: Script `tier0-computation/s35_rg_bcs_flow.py`, data `s35_rg_bcs_flow.npz`, plot `s35_rg_bcs_flow.png`. Write results to Section W1-C of `sessions/session-35/session-35-results-workingpaper.md`.
+**Output**: Script `computations/s35_rg_bcs_flow.py`, data `s35_rg_bcs_flow.npz`, plot `s35_rg_bcs_flow.png`. Write results to Section W1-C of `sessions/session-35/session-35-results-workingpaper.md`.
 
 ---
 
@@ -158,8 +158,8 @@ You are the General Physicist. Your task is to determine whether the conserved K
 **Context**: Session 34 proved [iK_7, D_K] = 0 at all tau. The iK_7 eigenvalues on B2 are +1/4 (2 modes) and -1/4 (2 modes). If Cooper pairs must conserve K_7 charge (total q = 0), pairing is restricted to the (+1/4) × (-1/4) channel. This may change the effective Thouless matrix structure.
 
 **Computation**:
-1. Load K_7 eigenvalues from `tier0-computation/s35a_grand_canonical_mu.npz`.
-2. Load the spinor V matrix from `tier0-computation/s34a_dphys_kosmann.npz`.
+1. Load K_7 eigenvalues from `computations/s35a_grand_canonical_mu.npz`.
+2. Load the spinor V matrix from `computations/s34a_dphys_kosmann.npz`.
 3. Decompose the B2 quartet into q = +1/4 doublet and q = -1/4 doublet.
 4. Compute V matrix elements BETWEEN the two charge sectors: V(+1/4, -1/4) = the charge-conserving channel.
 5. Compute V matrix elements WITHIN each charge sector: V(+1/4, +1/4) and V(-1/4, -1/4) = the charge-violating channels.
@@ -173,7 +173,7 @@ You are the General Physicist. Your task is to determine whether the conserved K
 - If M_max(charge-resolved) < M_max(charge-mixed): charge conservation RESTRICTS pairing
 - Report the ratio and whether q_7 is conserved through the fold (q flips → modes hybridize → N_eff changes)
 
-**Output**: Script `tier0-computation/s35_k7_thouless.py`, data `s35_k7_thouless.npz`. Write results to Section W1-D of `sessions/session-35/session-35-results-workingpaper.md`.
+**Output**: Script `computations/s35_k7_thouless.py`, data `s35_k7_thouless.npz`. Write results to Section W1-D of `sessions/session-35/session-35-results-workingpaper.md`.
 
 ---
 
@@ -191,7 +191,7 @@ Can start in parallel with Wave 1 (no dependencies). W2-C and W2-D are medium-co
 
 **Prompt**: Compute the van Hove smooth-wall DOS integral at 5 tau evaluation points within the wall region [0.15, 0.25] (tau = 0.16, 0.18, 0.20, 0.22, 0.24). For each, compute M_max with spinor V = 0.057 and impedance = 1.0. Confirm M_max > 1.0 is generic across the wall, not specific to tau_idx = 3.
 
-**Input data**: `tier0-computation/s35a_vh_impedance_arbiter.npz`, `tier0-computation/s23a_kosmann_singlet.npz`.
+**Input data**: `computations/s35a_vh_impedance_arbiter.npz`, `computations/s23a_kosmann_singlet.npz`.
 **Gate**: VH-SENS-35. PASS if M_max > 1.0 at ≥ 3 of 5 points.
 **Output**: Script `s35_vh_sensitivity.py`, results to Section W2-A of working paper.
 
@@ -205,7 +205,7 @@ Can start in parallel with Wave 1 (no dependencies). W2-C and W2-D are medium-co
 
 **Prompt**: Compute the transported pairing overlap: take BdG pairing amplitudes at the fold center (tau = 0.20) and transform using the eigenvector overlap matrix O between tau = 0.20 and tau = 0.15 / tau = 0.25. Report the fraction of pairing coherence surviving transport across the wall.
 
-**Input data**: Eigenvectors from `tier0-computation/s23a_kosmann_singlet.npz`, overlap data from `s35a_vh_impedance_arbiter.npz`.
+**Input data**: Eigenvectors from `computations/s23a_kosmann_singlet.npz`, overlap data from `s35a_vh_impedance_arbiter.npz`.
 **Gate**: COH-35. INFORMATIVE. Overlap > 0.7 = coherence preserved. Overlap < 0.5 = coherence destroyed.
 **Output**: Script `s35_b2_coherence.py`, results to Section W2-B of working paper.
 
@@ -233,7 +233,7 @@ Can start in parallel with Wave 1 (no dependencies). W2-C and W2-D are medium-co
 
 **Prompt**: Compute the Dirac spectrum of D_K in the (1,0) Peter-Weyl sector at 9 tau values in [0, 0.50]. Identify the B2-like branch. Determine if it has a fold (v = 0) within [0.15, 0.25]. If yes, compute the Kosmann matrix elements V((1,0)_B2, (0,0)_B2) — the cross-sector pairing. Report whether the (1,0) sector contributes additional modes to N_eff.
 
-**Input data**: D_K construction code from `tier0-computation/s23a_kosmann_singlet.py` (extend to (1,0) sector).
+**Input data**: D_K construction code from `computations/s23a_kosmann_singlet.py` (extend to (1,0) sector).
 **Gate**: SECT-B2-35. INFORMATIVE. If fold exists AND V_cross > 0.01 → sector contributes to N_eff.
 **Output**: Script `s35_sector_10_spectrum.py`, data `s35_sector_10_spectrum.npz`, results to Section W2-D of working paper.
 
@@ -293,7 +293,7 @@ W3-C (Sagan) MUST wait for Wave 1 results. Others can start with Wave 2 or earli
 
 **Prompt**: Compute the von Neumann spectral entropy S = -sum[n_k ln(n_k) + (1-n_k)ln(1-n_k)] where n_k = 1/(exp(beta × lambda_k) + 1), using the 16 singlet eigenvalues at each of 9 tau values. Plot S vs tau at beta = 0.5, 1.0, 2.0, 5.0. Determine if S has a maximum at or near tau = 0.190 (the fold).
 
-**Input data**: Eigenvalues from `tier0-computation/s23a_kosmann_singlet.npz`.
+**Input data**: Eigenvalues from `computations/s23a_kosmann_singlet.npz`.
 **Gate**: ENTROPY-35. INFORMATIVE. If S peaks at fold → entropy-driven stabilization mechanism (Paper 15).
 **Output**: Script `s35_spectral_entropy.py`, data `s35_spectral_entropy.npz`, plot `s35_spectral_entropy.png`, results to Section W3-D of working paper.
 
@@ -307,7 +307,7 @@ W3-C (Sagan) MUST wait for Wave 1 results. Others can start with Wave 2 or earli
 
 **Prompt**: Reconstruct the antisymmetric matrix M = C2 × D_K where C2 = gamma_1 × gamma_3 × gamma_5 × gamma_7 (the corrected J from Session 34). Compute sgn(Pf(M)) at the same tau values used in Session 17c. Verify BDI classification survives the J correction.
 
-**Input data**: D_K matrices from `tier0-computation/s23a_kosmann_singlet.npz`, C2 construction from `s34a_dphys_fold.py`.
+**Input data**: D_K matrices from `computations/s23a_kosmann_singlet.npz`, C2 construction from `s34a_dphys_fold.py`.
 **Gate**: PF-J-35. PASS if sgn(Pf) = +1 at all tau values.
 **Output**: Script `s35_pfaffian_corrected_j.py`, data `s35_pfaffian_corrected_j.npz`, results to Section W3-E of working paper.
 
@@ -382,7 +382,7 @@ ALL scripts use the GPU venv:
 ### Output Discipline
 
 - Each agent writes results ONLY to their designated section in `sessions/session-35/session-35-results-workingpaper.md`
-- Each agent produces a script in `tier0-computation/s35_*.py` with corresponding `.npz` and `.png`
+- Each agent produces a script in `computations/s35_*.py` with corresponding `.npz` and `.png`
 - No agent modifies another agent's section
 - The synthesis section is written LAST by the coordinator after all waves complete
 

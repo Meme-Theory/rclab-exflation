@@ -1,0 +1,58 @@
+{
+  "bucket": "litebird",
+  "clusters": [
+    {
+      "cluster_id": "litebird-01-nT-rescue-paths",
+      "theme": "LiteBIRD n_T rescue paths: LSST kappa-kappa A_lens prior + extended 6-7yr LB + >50% delensing to push W4-37 sigma(n_T) below 0.04 PASS threshold",
+      "member_raw_indices": [22, 120],
+      "representative_gate_id": "LITEB-LSST-PRIOR",
+      "representative_title": "LiteBIRD n_T rescue paths via LSST A_lens prior + extended mission + delensing",
+      "merge_rationale": "Both items compute the same Fisher-forecast quantity: whether external A_lens prior from LSST kappa-kappa (plus 6-7yr LB extension and >50% delensing) tightens the joint sigma(n_T) from W4-37 below the 0.04 PASS threshold. Inputs are identical (W4-37 Fisher construction, LSST kappa-kappa forecast, LB extended mission specs). Item 22 is the mack-origin version; item 120 is the transit-origin version enumerating the same three rescue paths.",
+      "origins_union": ["mack", "transit"],
+      "sources_union": ["session-84-mack-synthesis.md", "session-84-transit-synthesis.md"],
+      "member_count": 2
+    },
+    {
+      "cluster_id": "litebird-02-fB-cScanon-identity",
+      "theme": "f_B = c_S_canon coincidence vs closed-form identity test",
+      "member_raw_indices": [47, 48],
+      "representative_gate_id": "CSCANON-IDENTITY",
+      "representative_title": "f_B = c_S_canon identity test (W5 D.5)",
+      "merge_rationale": "Verbatim duplicate gates. Both items test whether W5-64 observation f_B_joint = 0.485 = c_S_canon is a closed-form identity or a 6-sig-fig coincidence via decomposition of the f_B inversion chain. Identical inputs (W5-64 data, S83 G46 r_CMB derivation, sound-speed definitions at fold). Item 47 is tesla-origin (no gate ID assigned); item 48 is mack-origin with explicit CSCANON-IDENTITY gate ID. Conservative merge: same test, same inputs, same hypothesis.",
+      "origins_union": ["tesla", "mack"],
+      "sources_union": ["session-84-tesla-synthesis.md", "session-84-mack-synthesis.md"],
+      "member_count": 2
+    },
+    {
+      "cluster_id": "litebird-03-two-speed-nT-adjudication",
+      "theme": "Two-speed acoustic metric (c_T/c_S = 2.062) re-adjudication for n_T(CMB) under W4-48: test whether c_T=c_S=1 was a CHOICE or CONSEQUENCE, compute n_T at L_max>=8, project detector reach",
+      "member_raw_indices": [77, 148],
+      "representative_gate_id": "CF-M7",
+      "representative_title": "n_T(CMB) two-speed acoustic metric re-adjudication under W4-48 with L_max>=8 spectrum and detector projection",
+      "merge_rationale": "Both items interrogate the two-speed acoustic metric (c_T/c_S != 1) implications for LiteBIRD n_T. Item 77 asks the convention question: whether S68 LITEB-R-FORECAST-68's c_T=c_S=1 assumption was a CHOICE or CONSEQUENCE of prior convention. Item 148 executes the companion computation: verify c_T/c_S = 2.062 structural preservation at L_max>=8, compute n_T(k_CMB) under the L_max=8 spectrum, and project R_realized for delensing>50% + LSST A_lens prior against 2030-2040 detector 1-sigma thresholds. Shared input chain (W4-48 flag row 4, W4-39 derivation chain, W4-37 Fisher 3-param, S68 LITEB-R-FORECAST-68 code). Conservative merge: one is the convention diagnostic, the other is the numerical projection, but they are the same W4-48 adjudication.",
+      "origins_union": ["mack", "tesla"],
+      "sources_union": ["session-84-s4-mack-falsifier-synthesis.md", "session-84-tesla-synthesis.md"],
+      "member_count": 2
+    }
+  ],
+  "singletons": [
+    {
+      "raw_index": 71,
+      "gate_id": "CF-M5",
+      "title": "LiteBIRD n_T W4-41 permanent registry landing: write up EVOI=0 as structural",
+      "singleton_rationale": "Documentation/registry task, not a computation. Writes up W4-41 EVOI=0 as structurally permanent for the 2030-2040 window and attaches it to the W4-48 rigor registry. Distinct from clusters 01/03: those actively TEST whether rescue paths (LSST prior, extended mission, delensing) or two-speed adjudication change the PASS status; this item LOCKS IN the already-computed EVOI=0 verdict as a permanent registry entry. No computation, no new gate threshold.",
+      "origins": ["mack"],
+      "sources": ["session-84-s4-mack-falsifier-synthesis.md"]
+    }
+  ],
+  "summary": {
+    "input_count": 7,
+    "cluster_count": 3,
+    "clustered_item_count": 6,
+    "singleton_count": 1,
+    "total_accounted": 7,
+    "verification": "6 clustered + 1 singleton = 7 (matches input_count)",
+    "merge_philosophy": "Conservative: merged only where items computed the same observable (n_T rescue paths), tested the same identity (f_B=c_S_canon), or re-adjudicated the same two-speed metric question. Kept registry/writeup task (71) separate from active rescue-path computations (22, 120) even though both reference W4-41 EVOI=0, because the deliverable type differs (documentation vs Fisher projection).",
+    "distinct_observables_preserved": "n_T (via rescue paths and two-speed) vs f_B=c_S_canon identity are different physical questions and remain in separate clusters despite both being LiteBIRD-adjacent."
+  }
+}

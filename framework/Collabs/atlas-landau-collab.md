@@ -99,7 +99,7 @@ with known coefficients from S47 (rho_s tensor), S48 (Leggett modes, Josephson h
 
 The key question is whether modes 5-6 (relative amplitude oscillations between sectors) have dispersion that differs qualitatively from K^2. In the amplitude sector, the Goldstone theorem does NOT apply -- amplitude modes are not Goldstone bosons. Their dispersion is determined by the GL coefficients, not by symmetry. If the amplitude-phase coupling K_AP is nonzero (which it generically is in multi-component GL theory), the resulting hybridized modes could have anomalous dispersion at intermediate K.
 
-**Assessment**: This computation requires no new data. All coefficients exist in the tier0 archive. The dynamical matrix is 6x6 at each K-point on the 32-cell lattice (14 independent K-shells). The computation is one script, one session, one agent. The pre-registered gate: does any mode have |alpha_eff - 2| > 0.05 at K < 0.2 M_KK?
+**Assessment**: This computation requires no new data. All coefficients exist in the computation archive. The dynamical matrix is 6x6 at each K-point on the 32-cell lattice (14 independent K-shells). The computation is one script, one session, one agent. The pre-registered gate: does any mode have |alpha_eff - 2| > 0.05 at K < 0.2 M_KK?
 
 This is worth computing. It is the only fabric-level many-body computation that has not been attempted. The polariton model (S51) tested coupling between single-cell modes. The GL-JOSEPHSON computation tests the full spatial structure.
 

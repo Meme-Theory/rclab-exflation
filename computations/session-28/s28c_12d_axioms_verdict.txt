@@ -1,0 +1,76 @@
+T3-S28C-12D-AXIOMS: FAIL -- value=6/7 scheme=connes-axioms-1996 convention=KO_total=6_mod_8 L_max=5 sha256=24fd130ba00291a3e391d39fd3e3ceb00a72b1b6162ad2c66d482a236ec58e30
+
+============================================================
+T3 Re-Run Verdict — S28C 12D Spectral Triple Axiom Audit
+============================================================
+
+Gate ID: T3-S28C-12D-AXIOMS
+Script: computations/_shared/s28c_12d_axioms.py
+Script SHA-256 (pre-edit):  4b8c6ec39ab671c05cc607ccf57900c829160299583d7cbaeb91ccd834726cba
+Script SHA-256 (post-run):  24fd130ba00291a3e391d39fd3e3ceb00a72b1b6162ad2c66d482a236ec58e30
+L_max_pin: 5 (Peter-Weyl max_pq_sum; registered as L_MAX_PIN in main)
+tau sweep: {0.00, 0.15, 0.30} (diagnostic; axioms are tau-independent)
+Python: phonon-exflation-sim/.venv312/Scripts/python.exe
+OMP_NUM_THREADS=8 (pre-numpy) — pure CPU path, all matrices < 100x100 (Clifford 16x16, J_F 32x32, PW blocks <= 50x50)
+
+Pre-Registered Pass/Fail Criterion
+----------------------------------
+PASS iff N_pass == N_total == 7 (all 7 Connes axioms satisfied).
+Value is a pass-count N_pass/N_total; no sign/direction chain required
+(PASS direction pre-registered as equality to N_total).
+
+Axiom-by-Axiom Results
+----------------------
+Axiom 1 (DIMENSION):     PASS — d_s consistent with 8 (product: 12). Weyl asymptotics theorem.
+Axiom 2 (REGULARITY):    PASS — bounded commutators; ||[D,a]||/||D|| finite.
+Axiom 3 (FINITENESS):    PASS — H_inf = C^inf(SU(3))^16, Lie group parallelizable (Swan).
+Axiom 4 (REALITY):       PASS — KO_F = 6, KO_total = 6 mod 8, eps''_F = -1 (matches SM spectral triple).
+Axiom 5 (FIRST ORDER):   FAIL — max ||[[D,a], o(b)]|| = 4.000 (O(1) violation, tau-independent).
+Axiom 6 (ORIENTATION):   PASS — compact oriented manifold Hochschild cycle.
+Axiom 7 (POINCARE DUAL): PASS — b_k = b_{8-k} verified (0<->8, 3<->5); K-theory non-degenerate.
+
+Score: 6/7 PASS, 1/7 FAIL  =>  VALUE = 6/7  =>  VERDICT = FAIL
+
+Key Invariants (for cross-gate cross-checks)
+--------------------------------------------
+KO_F                 = 6 mod 8
+KO_total             = 6 mod 8
+eps'_K (B^T = eps'_K B)  = +1 (B symmetric for Cliff(R^8))
+eps'_F (J_F^2)       = +1
+eps''_F              = -1 (J_F anticommutes with gamma_F)
+Axiom 5 max norm     = 4.000000 (Clifford-only, tau-independent)
+Worst triple         = (alpha, a, b) reported in script output
+Trivial sector zero modes = 16 (M_Lie=0 on (0,0)) — expected
+
+Structural Interpretation
+-------------------------
+The 6/7 PASS confirms everything EXCEPT the order-one condition. Axiom 5 FAILs
+with max norm = 4.000 (exact integer — purely Clifford algebraic, independent
+of tau, independent of Jensen deformation). This is the C-3 result propagated
+into the 12D product: the Clifford representation of A_F on C^16 is incompatible
+with [[D_can, a], J b J^{-1}] = 0 for the SU(3) canonical Dirac operator.
+
+Consequence: M^4 x (SU(3), g_tau, D_can) with the C^16 A_F representation is
+NOT a Connes spectral triple. The framework's resolution (S36+ instanton-gas
+paradigm) routes around axiom 5 rather than satisfying it — the 12D product in
+the naive representation is CLOSED as a spectral-triple candidate. The
+order-one violation bounds the solution space: surviving representations must
+either (a) modify the C^16 embedding of A_F, or (b) re-route through the
+post-transit GGE description that does not require a Connes spectral triple.
+
+Files Written This Run
+----------------------
+computations/_shared/s28c_12d_axioms.npz      (numerical axiom data)
+computations/_shared/s28c_12d_axioms.txt      (legacy verdict file)
+computations/_shared/t3-intake/t3_S28C_12D_AXIOMS_verdict.txt   (this file)
+computations/_shared/t3-intake/prep_T3-S28C-12D-AXIOMS.md       (prep block)
+
+Provenance
+----------
+Knowledge-base query confirmed: C-6 gate FAIL already recorded from S28c
+(session-28c-results.md). Equation record for order-one structural form
+(opposite-algebra action [pi(a), J pi(b) J^{-1}] = 0) traced in eq_161088.
+J_C2 constant looked up as a sanity check (value 0.933); not used in this
+script — 12D axiom verification is purely algebraic/structural.
+
+T3 Re-Run Confirms S28c Verdict: FAIL (C-6 / DP-1).

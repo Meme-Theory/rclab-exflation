@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 125,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1241",
+      "anchor_type": "data_provenance",
+      "name": "ratio_gilkey_document",
+      "script_path": "session-70/s70_ratio_gilkey_document.py",
+      "session": "s70",
+      "inputs": "",
+      "outputs": "session-70/s70_ratio_gilkey_document.npz",
+      "source_file": "computations/session-70/s70_ratio_gilkey_document.py",
+      "source_context_30_lines": "  440: # =============================================================================\n  441: \n  442: elapsed = time.time() - t0\n  443: \n  444: print(f\"Computation time: {elapsed:.2f}s\")\n  445: print()\n  446: \n  447: np.savez(\n  448:     os.path.join(SCRIPT_DIR, 's70_ratio_gilkey_document.npz'),\n  449:     # Convention A: spectral zeta (canonical_constants)\n  450:     a0_fold_zeta=np.float64(a0_fold),\n  451:     a2_fold_zeta=np.float64(a2_fold),\n  452:     a4_fold_zeta=np.float64(a4_fold),\n  453:     ratio_zeta=np.float64(ratio_A),\n  454:     # Convention B: Gilkey heat kernel (S61)\n  455:     a2_gilkey_fold=np.float64(a2_gilkey_fold),\n  456:     a4_gilkey_fold=np.float64(a4_gilkey_fold),"
+    },
+    {
+      "anchor_id": "prov_1242",
+      "anchor_type": "data_provenance",
+      "name": "spectral_dim_flow",
+      "script_path": "session-70/s70_spectral_dim_flow.py",
+      "session": "s70",
+      "inputs": "",
+      "outputs": "session-70/s70_spectral_dim_flow.npz, session-70/s70_spectral_dim_flow.png",
+      "source_file": "computations/session-70/s70_spectral_dim_flow.py",
+      "source_context_30_lines": "   35:   consistent with universality: IR condensate physics decouples from UV geometry.\n   36: \n   37: Inputs:\n   38:   computations/session-44/s44_dos_tau.npz (992 D_K eigenvalues at fold)\n   39:   computations/session-69/s69_spectral_dim_bcs.npz (prior results for cross-check)\n   40:   computations/_shared/canonical_constants.py\n   41: \n   42: Output:\n   43:   computations/session-70/s70_spectral_dim_flow.npz\n   44:   computations/session-70/s70_spectral_dim_flow.png\n   45: \n   46: Author: volovik-superfluid-universe-theorist\n   47: Session: S70 W4-H\n   48: \"\"\"\n   49: \n   50: import sys\n   51: import os"
+    },
+    {
+      "anchor_id": "prov_1243",
+      "anchor_type": "data_provenance",
+      "name": "superluminal_fraction",
+      "script_path": "session-70/s70_superluminal_fraction.py",
+      "session": "s70",
+      "inputs": "",
+      "outputs": "session-70/s70_superluminal_fraction.npz, session-70/s70_superluminal_fraction.png",
+      "source_file": "computations/session-70/s70_superluminal_fraction.py",
+      "source_context_30_lines": "   39:     INFO: partial agreement\n   40: \n   41: INPUT:\n   42:     - computations/_shared/canonical_constants.py\n   43:     - computations/session-56/s56_gge_fabric.npz (GGE occupation numbers)\n   44:     - computations/session-69/s69_four_speed.npz (speed hierarchy, c_BLV)\n   45: \n   46: OUTPUT:\n   47:     - computations/session-70/s70_superluminal_fraction.npz\n   48:     - computations/session-70/s70_superluminal_fraction.png\n   49: \"\"\"\n   50: \n   51: import sys\n   52: import os\n   53: import numpy as np\n   54: from itertools import permutations\n   55: "
+    },
+    {
+      "anchor_id": "prov_1244",
+      "anchor_type": "data_provenance",
+      "name": "trapped_acoustic",
+      "script_path": "session-70/s70_trapped_acoustic.py",
+      "session": "s70",
+      "inputs": "",
+      "outputs": "session-70/s70_trapped_acoustic.npz, session-70/s70_trapped_acoustic.png",
+      "source_file": "computations/session-70/s70_trapped_acoustic.py",
+      "source_context_30_lines": "  628: \n  629: print(f\"\\n{'='*72}\")\n  630: print(\"SECTION 10: Saving data and plots\")\n  631: print(f\"{'='*72}\")\n  632: \n  633: outdir = os.path.dirname(__file__)\n  634: \n  635: # Save data\n  636: npz_path = os.path.join(outdir, 's70_trapped_acoustic.npz')\n  637: np.savez(npz_path,\n  638:          tau_fine=tau_fine,\n  639:          eta_fine=eta_fine,\n  640:          theta_plus_conformal=theta_plus_conformal,\n  641:          Theta_plus_proper=Theta_plus_proper,\n  642:          dlna_deta=dlna_deta,\n  643:          dlnz_deta=dlnz_deta,\n  644:          H_ac=H_ac,"
+    },
+    {
+      "anchor_id": "prov_1245",
+      "anchor_type": "data_provenance",
+      "name": "void_cs2",
+      "script_path": "session-70/s70_void_cs2.py",
+      "session": "s70",
+      "inputs": "",
+      "outputs": "session-70/s70_void_cs2.npz, session-70/s70_void_cs2.png",
+      "source_file": "computations/session-70/s70_void_cs2.py",
+      "source_context_30_lines": "  588: #  Section 9: Save Data and Plots\n  589: # ============================================================================\n  590: \n  591: print(\"-\" * 72)\n  592: print(\"Section 9: Saving data and plots\")\n  593: print(\"-\" * 72)\n  594: \n  595: outdir = os.path.dirname(os.path.abspath(__file__))\n  596: npz_path = os.path.join(outdir, \"s70_void_cs2.npz\")\n  597: png_path = os.path.join(outdir, \"s70_void_cs2.png\")\n  598: \n  599: # Collect all results for saving\n  600: save_dict = {\n  601:     'R_v_list': np.array(R_v_list),\n  602:     'z_eff': z_eff,\n  603:     'w0_FW': w0_FW,\n  604:     'sigma8_FW': sigma8_FW,"
+    },
+    {
+      "anchor_id": "prov_1246",
+      "anchor_type": "data_provenance",
+      "name": "void_size",
+      "script_path": "session-70/s70_void_size.py",
+      "session": "s70",
+      "inputs": "",
+      "outputs": "session-70/s70_void_size.npz, session-70/s70_void_size.png",
+      "source_file": "computations/session-70/s70_void_size.py",
+      "source_context_30_lines": "  602: print()\n  603: \n  604: \n  605: # ============================================================================\n  606: #  Section 13: Save Data\n  607: # ============================================================================\n  608: \n  609: output_dir = os.path.dirname(os.path.abspath(__file__))\n  610: npz_path = os.path.join(output_dir, \"s70_void_size.npz\")\n  611: \n  612: save_dict = {\n  613:     # Radii\n  614:     'R_lag': R_lag,\n  615:     'R_eul_LCDM': results['LCDM']['R_eul'],\n  616:     'R_eul_FW': results['FW']['R_eul'],\n  617:     # Void size functions\n  618:     'dn_dlnR_eul_LCDM': results['LCDM']['dn_dlnR_eul'],"
+    },
+    {
+      "anchor_id": "prov_1247",
+      "anchor_type": "data_provenance",
+      "name": "weyl_np_scalars",
+      "script_path": "session-70/s70_weyl_np_scalars.py",
+      "session": "s70",
+      "inputs": "",
+      "outputs": "session-70/s70_weyl_np_scalars.npz, session-70/s70_weyl_np_scalars.png",
+      "source_file": "computations/session-70/s70_weyl_np_scalars.py",
+      "source_context_30_lines": " 1063: ax.set_xticks(x)\n 1064: ax.set_xticklabels(labels_np)\n 1065: ax.set_ylabel(r'$|\\delta\\Psi_A|$ (BCS - bare)')\n 1066: ax.set_title('BCS Splitting of Dynamic NP Scalars')\n 1067: ax.grid(axis='y', alpha=0.3)\n 1068: \n 1069: plt.suptitle('S70 WEYL-NP-SCALARS-70: Newman-Penrose Scalars Under BCS', fontsize=14)\n 1070: plt.tight_layout()\n 1071: plt.savefig(os.path.join(script_dir, 's70_weyl_np_scalars.png'), dpi=150)\n 1072: plt.close()\n 1073: print(\"  Plot saved: s70_weyl_np_scalars.png\")\n 1074: \n 1075: # ==============================================================================\n 1076: #  SECTION 11: Gate Verdict and Save\n 1077: # ==============================================================================\n 1078: \n 1079: elapsed = time.time() - t_start"
+    },
+    {
+      "anchor_id": "prov_1248",
+      "anchor_type": "data_provenance",
+      "name": "zeta_as_budget",
+      "script_path": "session-70/s70_zeta_as_budget.py",
+      "session": "s70",
+      "inputs": "",
+      "outputs": "session-70/s70_zeta_as_budget.npz, session-70/s70_zeta_as_budget.png",
+      "source_file": "computations/session-70/s70_zeta_as_budget.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s70_zeta_as_budget.py -- ZETA-AS-BUDGET-70: A_s Gap Budget in Zeta Scheme\n    4: =========================================================================\n    5: \n    6: Gate: ZETA-AS-BUDGET-70\n    7:   INFO: Report gap_zeta and |gap_zeta - gap_cutoff|. Flag if > 0.1 OOM.\n    8: \n    9: Physics:\n   10: --------\n   11: The A_s gap budget (0.485 OOM) was computed in the sqrt-cutoff scheme:"
+    },
+    {
+      "anchor_id": "prov_1249",
+      "anchor_type": "data_provenance",
+      "name": "21cm_isw_preregistration",
+      "script_path": "session-71/s71_21cm_isw_preregistration.py",
+      "session": "s71",
+      "inputs": "",
+      "outputs": "session-71/s71_21cm_isw_preregistration.npz",
+      "source_file": "computations/session-71/s71_21cm_isw_preregistration.py",
+      "source_context_30_lines": "  637: print(\"     not direct sensitivity at high z\")\n  638: print(\"  6. Detection requires sigma(A_ISW) < 0.02 for 2-sigma discrimination\")\n  639: print(\"     -> needs >>10^3 modes at l=2-30, achievable with all-sky IM + CMB cross-correlation\")\n  640: \n  641: # ===========================================================================\n  642: # Save results\n  643: # ===========================================================================\n  644: \n  645: save_path = os.path.join(os.path.dirname(__file__), 's71_21cm_isw_preregistration.npz')\n  646: np.savez(save_path,\n  647:     # Chain step 1: c_s^2\n  648:     cs2_tree=cs2_tree,\n  649:     cs2_1loop=cs2_1loop,\n  650:     cs2_total=cs2_total,\n  651:     cs2_fibration_delta=cs2_fibration_delta,\n  652:     cs2_eff_range=np.array([cs2_eff_low, cs2_eff_high]),\n  653: "
+    },
+    {
+      "anchor_id": "prov_1250",
+      "anchor_type": "data_provenance",
+      "name": "alpha_s_bayesian_shadow",
+      "script_path": "session-71/s71_alpha_s_bayesian_shadow.py",
+      "session": "s71",
+      "inputs": "",
+      "outputs": "session-71/s71_alpha_s_bayesian_shadow.npz, session-71/s71_alpha_s_bayesian_shadow.png",
+      "source_file": "computations/session-71/s71_alpha_s_bayesian_shadow.py",
+      "source_context_30_lines": "   29:   So: dw_0 / d(a_0/a_2) = -f_partition = -(1 - Gamma) / (a_0/a_2)\n   30: \n   31: At the fold: a_0/a_2 = 6440.0 / 2776.17 = 2.3196\n   32: And w_0 = -0.918 => 1 - Gamma = 0.082 => f_partition = 0.082 / 2.3196 = 0.03535\n   33: \n   34: Gate: ALPHA-S-BAYESIAN-SHADOW-71\n   35:   INFO: Report max systematic and compare to spectral zeta uncertainty (10.2%)\n   36: \n   37: Output: s71_alpha_s_bayesian_shadow.npz, s71_alpha_s_bayesian_shadow.png\n   38: \"\"\"\n   39: \n   40: import numpy as np\n   41: from scipy import integrate, optimize\n   42: import matplotlib\n   43: matplotlib.use('Agg')\n   44: import matplotlib.pyplot as plt\n   45: from pathlib import Path"
+    }
+  ]
+}

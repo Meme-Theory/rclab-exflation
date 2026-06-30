@@ -1,0 +1,37 @@
+{
+  "bucket": "knowledge-mcp",
+  "clusters": [],
+  "singletons": [
+    {
+      "raw_index": 20,
+      "title": "`[ε_H]` survival under Jensen deformation of the transverse sector",
+      "reason": "Heitsch 1-cocycle computation on Jensen-deformed foliation; consumes canonical_constants as input but does not update or query the knowledge-MCP / canonical_constants infrastructure itself. Distinct physics topic (cohomology/foliation theory)."
+    },
+    {
+      "raw_index": 106,
+      "gate_id": "CMPP-PETROV-DENSER-GRID",
+      "title": "S85-CMPP-PETROV-DENSER-GRID (extend the 8-checkpoint result)",
+      "reason": "Petrov classification grid-densification on existing S84-W8B-95 script; consumes canonical_constants as input. Physics extension (τ-grid densification), not a knowledge-infrastructure update."
+    },
+    {
+      "raw_index": 144,
+      "gate_id": "NONFLAT-T-CORRECTION-L2",
+      "title": "Submersion-preservation under non-flat base — Pontryagin on M⁴",
+      "reason": "Pontryagin density on non-flat FRW base; Kasparov-product parity-preservation test. Consumes canonical_constants for R_M⁴ but is a geometric/submersion computation, not an infrastructure update."
+    },
+    {
+      "raw_index": 152,
+      "title": "Verify `K_R5 = 1.9222 = hull_lo` is stable under L_max sweep",
+      "reason": "L_max sweep of GGE K-targets using band-structure solver; consumes canonical_constants (Delta_0_GL, T_GGE_B2) but is a convergence/stability test of a physics result, not a knowledge-MCP infrastructure action."
+    }
+  ],
+  "summary": {
+    "input_count": 4,
+    "cluster_count": 0,
+    "clustered_items": 0,
+    "singleton_count": 4,
+    "total_accounted": 4,
+    "merge_policy": "conservative",
+    "rationale": "All four items consume canonical_constants.py as input data but none update/extend the knowledge-MCP schema, add new canonical constants, run /weave --update, or query the knowledge-index. They are physics computations (cohomology cocycle, Petrov classification grid densification, Pontryagin on non-flat base, K-corridor L_max stability) that happen to live in the knowledge-mcp theme bucket only because canonical_constants is listed in their inputs. Under conservative merge, reading canonical_constants as input is not the same shared-infrastructure action and does not justify a merge."
+  }
+}

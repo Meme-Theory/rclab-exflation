@@ -6,7 +6,7 @@ argument-hint: <identifier> [--dry-run] [--keep <file>] [--keep-all-detail]
 
 # Redact — Purge Agent Memory References
 
-Remove all references to a given identifier (session ID, mechanism name, etc.) from agent memory files. Project files (sessions/, tier0-computation/, constraint-map) are preserved — only `.claude/agent-memory/` is touched.
+Remove all references to a given identifier (session ID, mechanism name, etc.) from agent memory files. Project files (sessions/, computations/, constraint-map) are preserved — only `.claude/agent-memory/` is touched.
 
 ## Usage
 
@@ -130,7 +130,7 @@ Manual review needed:
 
 ## Safety Rules
 
-1. **NEVER touch files outside `.claude/agent-memory/`** — sessions/, tier0-computation/, researchers/, tools/ are untouchable.
+1. **NEVER touch files outside `.claude/agent-memory/`** — sessions/, computations/, researchers/, tools/ are untouchable.
 2. **NEVER remove a line containing other valuable data** — flag it for manual review instead.
 3. **NEVER remove constraint-map.md content by default** — it's reference data. Only remove if the user explicitly passes `--no-preserve-constraint-map` (not a standard flag — they'd need to explicitly ask).
 4. **Section-level granularity preferred** — removing a whole section is cleaner than leaving an orphaned header with one remaining bullet.

@@ -1,0 +1,105 @@
+T3-S29C-GIBBONS-HAWKING-TEMPERATURE: FAIL -- value=0.1000 scheme=fraction_T_ratio_within_3x convention=T_GH=omega_char/PI_TT_metric L_max=NA sha256=555550ae52cb8ab933d774b7386928553f608c1b9a3ac9ed3f1c0ae58844e592
+
+GATE: T3-S29C-GIBBONS-HAWKING-TEMPERATURE
+SCRIPT: computations/_shared/s29c_gibbons_hawking_temperature.py
+DOMAIN: Gibbons-Hawking temperature at fold horizon (acoustic analog)
+SESSION: S81 Tier 3 re-run
+DATE: 2026-04-17
+AGENT: hawking-theorist
+CLASSIFICATION: PHONONIC (acoustic surface-gravity-derived GH analog)
+
+PRE-REGISTERED CRITERIA:
+  PASS: fraction_within_3x > 0.5 AND mean_R^2 > 0.3
+  MODERATE: fraction_within_3x > 0.3 OR mean_R^2 > 0.2
+  FAIL: otherwise
+
+SUBSTITUTION CHAIN (direction of T_GH^internal in tau):
+  Step 1: T_GH^internal(tau) := omega_char(tau) / PI       [definition]
+  Step 2: omega_char(tau) = exp(-2*tau)                    [TT metric-det eigenvalue scaling]
+  Step 3: T_GH^internal(tau) = exp(-2*tau) / PI            [substitution]
+  Step 4: dT_GH/dtau = -2 * exp(-2*tau) / PI               [differentiate]
+  Step 5: exp(-2*tau) > 0 for all real tau                 [exponential positivity]
+  Conclusion: T_GH^internal is strictly monotonically DECREASING in tau.
+              T_GH(0) = 1/PI = 0.318310
+              T_GH(tau_fold=0.19) = exp(-0.38)/PI = 0.2172 (direction verified)
+
+INPUT PINS (SHA-256, 64-char):
+  canonical_constants.py:              10bceb1a4e8b801843767f301ef564c8e26d3ad08e294358378ec770bcf6709e
+  s28a_bogoliubov_coefficients.npz:    6b95f2f49dc99c3b755c8655ff399d289101fb1ffae916661a13bd25dbea0515
+  s29c_gibbons_hawking_temperature.py (original pre-fix):
+                                       221e10608d1b0f18ed8c259eae78a402b0268bd7220ef36566de66876586da0a
+
+CLOSURE SHA (s29c_gibbons_hawking_temperature.py post-fix, 64-char):
+  555550ae52cb8ab933d774b7386928553f608c1b9a3ac9ed3f1c0ae58844e592
+
+OUTPUT SHA (s29c_gibbons_hawking_temperature.npz, 64-char):
+  007256d99fcd07afe2450e459d226658a8c00c66e6c299e68aed09b6e488ab95
+
+RESULT:
+  T_ratio mean (tau>0):     114.0724 +/- 159.9394
+  Fraction within 3x:       0.100   (threshold 0.5)
+  Mean R^2 (tau>0):         -72.3366 (threshold 0.3)
+  n_modes_used (all tau):   11424
+
+  Key data points:
+    tau=0.100:  T_GH=0.2606  T_eff=0.4152  ratio=1.59   R^2=-0.18
+    tau=0.190:  T_GH=0.2172  (interp) fold horizon
+    tau=0.200:  T_GH=0.2134  T_eff=0.4902  ratio=2.30   R^2=-0.42
+    tau=0.500:  T_GH=0.1171  T_eff=0.7377  ratio=6.30   R^2=-1.41
+    tau=1.000:  T_GH=0.0431  T_eff=1.2351  ratio=28.67  R^2=-7.39
+    tau=2.000:  T_GH=0.0058  T_eff=3.3179  ratio=569.11 R^2=-521.10
+
+VERDICT: FAIL
+
+STRUCTURAL INTERPRETATION:
+  The Bogoliubov spectrum from s28a is NOT Bose-Einstein distributed against
+  a temperature T_GH^internal = exp(-2*tau)/PI. Ratio diverges monotonically
+  from ~1.5 at small tau to ~570 at tau=2.0, and mean R^2 is strongly negative
+  (model worse than constant-mean). This is consistent with the S73A finding
+  that the fold transit is IMPULSIVE (Mach 13.75, supersonic), producing
+  SQUEEZED THERMAL rather than pure Planckian occupation. The ansatz
+  omega_char = exp(-2*tau) captures only the Laplacian-eigenvalue envelope;
+  it does not reproduce the |beta_k|^2 distribution because the relevant
+  thermal scale is T_squeeze ~ 700 M_KK at the fold (S73A workshop), not the
+  geometric H/(2*pi) analog.
+
+  The FAIL constrains the solution space: a naive de-Sitter-analog surface-
+  gravity Gibbons-Hawking temperature is NOT the relevant thermal scale for
+  the acoustic fold transit. The surviving region (consistent with S73A,
+  S73B, S74) is the squeezed-thermal + instanton-valley family, where T_eff
+  is set by the Bogoliubov squeezing amplitude and not by e^{-2tau}/pi.
+
+SUBSTRATE FRAMING CHECK:
+  The "Gibbons-Hawking temperature" here is an ACOUSTIC analog (surface
+  gravity kappa derived from Killing-metric deformation under Jensen
+  evolution), NOT a geometric event horizon temperature. Space is emergent
+  from the a_2 Seeley-DeWitt coefficient; the internal eigenvalue spectrum
+  reorganization IS the particle creation, not "particles produced IN a
+  curved container". FAIL therefore means the simple e^{-2tau}/pi envelope
+  is wrong, not that thermal analog physics itself is excluded.
+
+REMEDIATION:
+  None required for this anchor. FAIL is informative and aligns with the
+  established squeezed-thermal + impulsive-transit picture (S73A, S73B).
+  See T_squeeze and impulsive-transit gates for the superseding thermal
+  scale.
+
+PRU ENUMERATION:
+  (a) Gate pre-registered PASS/FAIL criteria: YES (fraction_within_3x > 0.5,
+      mean_R^2 > 0.3) — FROZEN at anchor creation.
+  (b) Omega-char ansatz (exp(-2*tau)): FROZEN from volume-preserving TT
+      g(tau) = diag(e^{-4tau/3}, e^{-4tau/3}, e^{8tau/3}) via metric-det
+      Laplacian scaling — no free parameter.
+  (c) Fit window (omega > 1e-10, |beta_k|^2 > 1e-15): FROZEN as numerical
+      cutoffs, not fit parameters.
+  PRU status: NONE detected. All gate-relevant machinery pinned.
+
+FILES TOUCHED:
+  Modified: computations/_shared/s29c_gibbons_hawking_temperature.py (canonical imports, local tags)
+  Written:  computations/_shared/s29c_gibbons_hawking_temperature.npz (re-run output)
+  Written:  computations/_shared/s29c_gibbons_hawking_temperature.png (re-run plot)
+  Written:  computations/_shared/t3-intake/t3_S29C_GIBBONS_HAWKING_TEMPERATURE_verdict.txt (this file)
+  Written:  computations/_shared/t3-intake/prep_T3-S29C-GIBBONS-HAWKING-TEMPERATURE.md (prep block)
+
+S81-LINE:
+T3-S29C-GIBBONS-HAWKING-TEMPERATURE | FAIL | closure=555550ae52cb8ab933d774b7386928553f608c1b9a3ac9ed3f1c0ae58844e592 | hawking-theorist | 2026-04-17

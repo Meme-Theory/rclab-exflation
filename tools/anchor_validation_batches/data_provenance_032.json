@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 32,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_311",
+      "anchor_type": "data_provenance",
+      "name": "foam_gge",
+      "script_path": "session-43/s43_foam_gge.py",
+      "session": "s43",
+      "inputs": "computations/session-37/s37_pair_susceptibility.npz, computations/session-42/s42_gge_energy.npz, computations/session-38...",
+      "outputs": "session-43/s43_foam_gge.npz, session-43/s43_foam_gge.png",
+      "source_file": "computations/session-43/s43_foam_gge.py",
+      "source_context_30_lines": "   34:   3. Compute clean GGE occupations (no foam)\n   35:   4. Channel A: stochastic diagonal noise (analytic: delta_n = 0 exact)\n   36:   5. Channel B: Lindblad dephasing with n_k (analytic: delta_n = 0 exact)\n   37:   6. Channel C: Lindblad thermal excitation with c_k^dag, c_k\n   38:   7. Channel D: off-diagonal unitary (forbidden but computed as bound)\n   39:   8. Report delta_n_i for each of 8 modes\n   40: \n   41: Input: s42_gge_energy.npz, s38_cc_instanton.npz, s37_pair_susceptibility.npz\n   42: Output: s43_foam_gge.{npz,png}\n   43: \n   44: Author: quantum-foam-theorist\n   45: Date: 2026-03-14\n   46: \"\"\"\n   47: \n   48: import numpy as np\n   49: import matplotlib.pyplot as plt\n   50: from matplotlib.gridspec import GridSpec"
+    },
+    {
+      "anchor_id": "prov_312",
+      "anchor_type": "data_provenance",
+      "name": "friedmann_bcs",
+      "script_path": "session-43/s43_friedmann_bcs.py",
+      "session": "s43",
+      "inputs": "computations/session-36/s36_sfull_tau_stabilization.npz, computations/session-42/s42_gradient_stiffness.npz, computation...",
+      "outputs": "session-43/s43_friedmann_bcs.npz, session-43/s43_friedmann_bcs.png",
+      "source_file": "computations/session-43/s43_friedmann_bcs.py",
+      "source_context_30_lines": "    1: \"\"\"\n    2: s43_friedmann_bcs.py — Coupled Friedmann-BCS epsilon_H During Transition\n    3: =========================================================================\n    4: \n    5: GATE: FRIEDMANN-BCS-43 (INFO)\n    6: \n    7: Computes the slow-roll parameter epsilon_H = -dH/dt / H^2 during the\n    8: fold transit (tau = 0.05 to 0.30) using a coupled Friedmann-BCS solver.\n    9: \n   10: Physics:"
+    },
+    {
+      "anchor_id": "prov_313",
+      "anchor_type": "data_provenance",
+      "name": "fsigma8",
+      "script_path": "session-43/s43_fsigma8.py",
+      "session": "s43",
+      "inputs": "",
+      "outputs": "session-43/s43_fsigma8.npz, session-43/s43_fsigma8.png",
+      "source_file": "computations/session-43/s43_fsigma8.py",
+      "source_context_30_lines": "  242: D_plot = D_interp(a_plot)\n  243: f_plot = f_interp(a_plot)\n  244: fsig8_plot = f_plot * sigma_8_0 * D_plot\n  245: \n  246: # ============================================================\n  247: # 9. Save results\n  248: # ============================================================\n  249: np.savez(\n  250:     \"computations/session-43/s43_fsigma8.npz\",\n  251:     z_desi=z_desi,\n  252:     a_desi=a_desi,\n  253:     D_desi=D_desi,\n  254:     f_desi=f_desi,\n  255:     fsig8_theory=fsig8_theory,\n  256:     fsig8_obs=fsig8_desi,\n  257:     fsig8_err=fsig8_err,\n  258:     tension_sigma=tension,"
+    },
+    {
+      "anchor_id": "prov_314",
+      "anchor_type": "data_provenance",
+      "name": "gcm_zeropoint",
+      "script_path": "session-43/s43_gcm_zeropoint.py",
+      "session": "s43",
+      "inputs": "",
+      "outputs": "session-43/s43_gcm_zeropoint.npz, session-43/s43_gcm_zeropoint.png",
+      "source_file": "computations/session-43/s43_gcm_zeropoint.py",
+      "source_context_30_lines": "    1: \"\"\"\n    2: s43_gcm_zeropoint.py — GCM Zero-Point Correction to S_fold (GCM-ZP-43)\n    3: \n    4: Task: Determine whether S_fold = 250,361 M_KK includes or excludes the\n    5: collective zero-point energy E_ZP = (1/2)*omega_0 from the tau modulus\n    6: oscillation. If excluded, compute the corrected S_fold and its impact\n    7: on the cosmological constant estimate.\n    8: \n    9: Physics argument (nuclear DFT analogy):\n   10:   - In nuclear HFB, the energy E_HFB(q_0) at equilibrium deformation q_0"
+    },
+    {
+      "anchor_id": "prov_315",
+      "anchor_type": "data_provenance",
+      "name": "gge_dm_abundance",
+      "script_path": "session-43/s43_gge_dm_abundance.py",
+      "session": "s43",
+      "inputs": "computations/session-43/s43_qtheory_selftune.npz, computations/session-42/s42_gradient_stiffness.npz, computations/sessi...",
+      "outputs": "session-43/s43_gge_dm_abundance.npz, session-43/s43_gge_dm_abundance.png",
+      "source_file": "computations/session-43/s43_gge_dm_abundance.py",
+      "source_context_30_lines": "  971:     f\"  N_osc = {N_oscillations:.1e} >> 1 (w=0 valid)\",\n  972:     f\"  lambda_fs = {lambda_fs_4D_Mpc:.1e} Mpc (CDM)\",\n  973: ]\n  974: ax.text(0.05, 0.95, '\\n'.join(summary_text), transform=ax.transAxes,\n  975:         fontsize=8.5, verticalalignment='top', fontfamily='monospace',\n  976:         bbox=dict(boxstyle='round', facecolor='lightyellow', alpha=0.8))\n  977: \n  978: plt.tight_layout()\n  979: plt.savefig('computations/session-43/s43_gge_dm_abundance.png', dpi=150, bbox_inches='tight')\n  980: print(\"Plot saved: computations/session-43/s43_gge_dm_abundance.png\")\n  981: \n  982: # ===========================================================================\n  983: # SAVE DATA\n  984: # ===========================================================================\n  985: print(\"\\nSaving data...\")\n  986: \n  987: save_dict = {"
+    },
+    {
+      "anchor_id": "prov_316",
+      "anchor_type": "data_provenance",
+      "name": "gge_temperatures",
+      "script_path": "session-43/s43_gge_temperatures.py",
+      "session": "s43",
+      "inputs": "",
+      "outputs": "session-43/s43_gge_temperatures.npz, session-43/s43_gge_temperatures.png",
+      "source_file": "computations/session-43/s43_gge_temperatures.py",
+      "source_context_30_lines": "   40:   The T_k computed here are the 8 independent thermodynamic coordinates\n   41:   of the Volovik time-crystal state.\n   42: \n   43: Author: Volovik Superfluid Universe Theorist, Session 43\n   44: Date: 2026-03-14\n   45: \n   46: Gate: GGE-TEMP-43 (INFO)\n   47: Input: s37_pair_susceptibility.npz, s38_cc_instanton.npz\n   48: Output: s43_gge_temperatures.{npz,png}\n   49: \"\"\"\n   50: \n   51: import os\n   52: import sys\n   53: import time\n   54: import numpy as np\n   55: from numpy.linalg import eigh, eig\n   56: import matplotlib"
+    },
+    {
+      "anchor_id": "prov_317",
+      "anchor_type": "data_provenance",
+      "name": "gquest_prereg",
+      "script_path": "session-43/s43_gquest_prereg.py",
+      "session": "s43",
+      "inputs": "computations/session-42/s42_fabric_dispersion.npz",
+      "outputs": "session-43/s43_gquest_prereg.npz, session-43/s43_gquest_prereg.png",
+      "source_file": "computations/session-43/s43_gquest_prereg.py",
+      "source_context_30_lines": "   18:   This is a HARD null prediction. The fabric DOF cannot be excited at ANY\n   19:   laboratory frequency. The suppression is not marginal -- it is absolute.\n   20: \n   21: Inputs:\n   22:   - computations/session-42/s42_fabric_dispersion.npz (m_tau, c_fabric)\n   23:   - GQuEST parameters from Paper 17 (Vermeulen+ 2025, PRX 15 011034)\n   24: \n   25: Outputs:\n   26:   - computations/session-43/s43_gquest_prereg.npz (all computed quantities)\n   27:   - computations/session-43/s43_gquest_prereg.png (suppression factor visualization)\n   28: \n   29: Gate: GQUEST-43 (INFO — pre-registration, not pass/fail)\n   30: \"\"\"\n   31: \n   32: import numpy as np\n   33: import matplotlib\n   34: matplotlib.use('Agg')"
+    },
+    {
+      "anchor_id": "prov_318",
+      "anchor_type": "data_provenance",
+      "name": "greybody",
+      "script_path": "session-43/s43_greybody.py",
+      "session": "s43",
+      "inputs": "",
+      "outputs": "session-43/s43_greybody.npz, session-43/s43_greybody.png",
+      "source_file": "computations/session-43/s43_greybody.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: GREYBODY-43: Greybody Factor from Acoustic Metric at the Van Hove Fold\n    4: =======================================================================\n    5: \n    6: Computes the frequency-dependent greybody factor Gamma(omega) for BdG\n    7: quasiparticle modes near the B2 van Hove singularity.\n    8: \n    9: PHYSICS SUMMARY:\n   10:   S40 established two temperature prescriptions at the B2 fold:\n   11:     T_Rindler  = alpha/(4*pi)      = 0.158 M_KK  (velocity-gradient surface gravity)\n   12:     T_acoustic = sqrt(alpha)/(4*pi) = 0.112 M_KK  (acoustic metric surface gravity)\n   13:   T_acoustic matches T_Gibbs (0.113) to 0.7%. The 40% discrepancy with T_Rindler\n   14:   IS the greybody factor: Gamma_eff = T_a/T_R = 1/sqrt(alpha) = 0.709."
+    },
+    {
+      "anchor_id": "prov_319",
+      "anchor_type": "data_provenance",
+      "name": "gsl_transit",
+      "script_path": "session-43/s43_gsl_transit.py",
+      "session": "s43",
+      "inputs": "",
+      "outputs": "session-43/s43_gsl_transit.npz, session-43/s43_gsl_transit.png",
+      "source_file": "computations/session-43/s43_gsl_transit.py",
+      "source_context_30_lines": "   62:   FAIL: if dS_gen/dt < 0 anywhere during the three epochs\n   63:   PASS: if dS_gen/dt >= 0 everywhere\n   64: \n   65: Author: hawking-theorist (Session 43)\n   66: References:\n   67:   - Bekenstein 1973 (Paper 11): S_BH = A/4, Bekenstein bound\n   68:   - Parker 1969 (Paper 15): particle creation = pair production from vacuum\n   69:   - Jacobson 1995 (Paper 17): Einstein eqs from thermodynamics, delta_Q = T dS\n   70:   - GSL-40 (s40_gsl_transit.py): prior single-site 3-term GSL\n   71:   - CUTOFF-SA-37: S_spec monotonically increasing (structural theorem)\n   72: \"\"\"\n   73: \n   74: import os\n   75: import sys\n   76: import time\n   77: import numpy as np\n   78: import matplotlib"
+    },
+    {
+      "anchor_id": "prov_320",
+      "anchor_type": "data_provenance",
+      "name": "hf_cascade",
+      "script_path": "session-43/s43_hf_cascade.py",
+      "session": "s43",
+      "inputs": "",
+      "outputs": "session-43/s43_hf_cascade.npz, session-43/s43_hf_cascade.png",
+      "source_file": "computations/session-43/s43_hf_cascade.py",
+      "source_context_30_lines": "   36:           n_eff = -log(eta/eta_HF) / log(1/pb_factor)\n   37: \n   38: Input:\n   39:     computations/session-42/s42_hauser_feshbach.npz\n   40:     computations/session-43/s43_pair_form_factor.npz\n   41:     computations/session-38/s38_attempt_freq.npz\n   42: \n   43: Output:\n   44:     computations/session-43/s43_hf_cascade.{npz,png}\n   45: \n   46: Author: nazarewicz-nuclear-structure-theorist (Session 43)\n   47: Date: 2026-03-14\n   48: \"\"\"\n   49: \n   50: import sys\n   51: import os\n   52: import numpy as np"
+    }
+  ]
+}

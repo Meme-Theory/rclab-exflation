@@ -1,0 +1,85 @@
+=== S100b-KNN-ORDERED-VEIL — input SHA-256 pins ===
+  computations/_shared/canonical_constants.py: a13dddb1365b35f2...
+  computations/session-84/s84_spectrum_cache_L12_tau019.npz: 9e6d9cf7fd6a6949...
+  downloads/research-sweep-s99/spectral-geometry-math/08_Shir-Martinez-Azcona-Chenu_kNN-Level-Spacing-Surmise.pdf: b2b0c541d668fac2...
+  audit_sha256:   04e3d4d2244ce3d2... (script+canonical+pinmap)
+  content_sha256: 525f372f4a8d084c... (script only)
+  canonical imports: tau_fold=0.19, r_POISSON_canonical=0.3863, r_GOE_canonical=0.5307, M_KK=7.428660e+16
+
+=== Step 1: Shir 2504.20134 coefficient extraction (local PDF) ===
+  anchors found: 14/14 -> extraction_ok=True
+    eq2_surmise_form       P (k)(s)≈C α sα e-Aαs2 ,(2)
+    eq3_old_exponent       α= 1 2 k(k+ 1)β+k-1.(3)
+    eq4_normalization      Aα = " Γ α 2 + 1 kΓ α+1 2 #2 , C α = 2A α+1 2 α Γ α+1 2 .(4)
+    eq7_variance_ident     = α+ 1 2Aα -k 2,(7)
+    eq8_rmt_variance       ∆(k) β = 2 π2β lnk+c β.(8)
+    eq8_c1_boundary        c 1 = 4/π-1
+    eq9_number_var         ∆(k) = Σ2(k)-1/6,(9)
+    eq11_poisson_var       ∆(k) Poisson =k .(11)
+    eq15_corrected_exp     ~α= π2βk2 2 (π2βcβ + 2 lnk) - 3 4 +O(k -2 lnk),(15)
+    eq15_k1_special        this corrected power reads ~α= 1 2cβ - 3 4
+    eq16_new_surmise       ~P (k)(s) =C ~αs~αexp(-A~αs2).(16)
+    eq18_gof               [p1(si)-p 2(si)]2.(18)
+    eqC3_poisson_knn       (k-1)! sk-1e-s .(C3)
+    appB_unfolding         Appendix B: Unfolding
+  c_1 = 4/pi - 1 = 0.273240
+  k | Delta_GOE  Delta_Poisson  denom(ClaimB) | alpha_old  alpha_corr  Delta_surmise(corr)
+  1 |    0.2732         1.0000        0.7268 |    1.0000      1.0799       0.2621
+  2 |    0.4137         2.0000        1.5863 |    4.0000      4.0844       0.4107
+  3 |    0.4959         3.0000        2.5041 |    8.0000      8.3251       0.4948
+  XC5 Delta_GOE vs plan 4-sf pins: OK
+  XC6 V_k denominators vs plan:    OK
+  XC4 corrected-surmise quadrature checks:
+    k=1: int P = 1.00000000 (=1), int s P = 1.00000000 (=1)
+    k=2: int P = 1.00000000 (=1), int s P = 2.00000000 (=2)
+    k=3: int P = 1.00000000 (=1), int s P = 3.00000000 (=3)
+
+=== Step 2: sector resolution (distinct |lambda|, BDI dedup) ===
+  sectors in cache: 90 (plan-freeze 90); evals with multiplicity: 166896 (plan-freeze 166896)
+  eligible sectors (n_unique >= 100): 52 (plan-freeze 52)
+  XC3 BDI conjugate identity: max |diff| = 1.759e-13 (tol 1e-12); mismatches: 0
+  p>=q representatives: 27 (plan-freeze 27); pooled distinct levels: 5846 (pin 5846 +-1%)
+  XC10 r-count: 5792 (expected 5792)
+  <r>_resolved = 0.3910  [baseline S38 pooled-unresolved 0.321; Poisson 0.3863; GOE 0.5307; z vs Poisson = +1.34 (sigma_r=0.0035)]
+  Claim C direction: <r> rose from 0.321: True; Poisson-side: True
+
+=== Steps 3+4: unfolding pair + pooled kNN statistics ===
+  OPERATIONAL DEVIATION (disclosed; monotone-window edge trim, PRIMARY only):
+    levels trimmed: 87 of 5846 (1.49%); mid-spectrum violations flagged: 0; residual nonpositive spacings dropped: 0
+  -- PRIMARY poly-deg5+edgetrim (nonmonotone unfold points: 60) --
+  k |    n    mean(=k)  Delta_emp     V_k  | D_Poisson D_WigCorr D_WigOld | GoF18_P GoF18_W
+  1 |  5732    1.0098     0.9143   0.882 |    0.0315    0.1946   0.1881 |  0.0329  0.2224
+  2 |  5705    2.0048     1.5831   0.737 |    0.0424    0.2003   0.1979 |  0.0267  0.1460
+  3 |  5678    3.0029     2.1553   0.663 |    0.0575    0.2076   0.2033 |  0.0311  0.1243
+  Brody beta_1 (MLE, k=1 pooled) = 0.0551 (boundary 0.3)
+  -- SECONDARY mean-norm (nonmonotone unfold points: 0) --
+  k |    n    mean(=k)  Delta_emp     V_k  | D_Poisson D_WigCorr D_WigOld | GoF18_P GoF18_W
+  1 |  5819    1.0000     3.1833   4.004 |    0.0905    0.2989   0.2920 |  0.0582  0.2397
+  2 |  5792    1.9076     5.9738   3.505 |    0.1506    0.3841   0.3817 |  0.0560  0.1759
+  3 |  5765    2.7900    10.3130   3.920 |    0.1889    0.4423   0.4378 |  0.0524  0.1526
+  Brody beta_1 (MLE, k=1 pooled) = -0.1780 (boundary 0.3)
+
+=== Step 5: super-Poisson trigger + degeneracy attribution ===
+  PRIMARY: F_emp(0.25)=0.1991 vs F_P=0.2212 (3sigma band 0.0164); excess_fire=False; vk_fire=False -> TRIGGERED=False
+  SECONDARY: F_emp(0.25)=0.2689 vs F_P=0.2212 (3sigma band 0.0163); excess_fire=True; vk_fire=True -> TRIGGERED=True
+  SECONDARY attribution: attributable=False  {'V_1_reduced': np.float64(3.402271579870877), 'V_2_reduced': np.float64(2.964029416966158), 'V_3_reduced': np.float64(3.327368189219669), 'D_poisson_1_reduced': 0.08620201772602565, 'D_poisson_2_reduced': 0.13646624633341642, 'D_poisson_3_reduced': 0.17913170288042518, 'D_wigner_corr_1_reduced': 0.2863572321972524, 'D_wigner_corr_2_reduced': 0.36737669598183315, 'D_wigner_corr_3_reduced': 0.4258307150316742, 'beta1_reduced': -0.06599734039416388, 'restored_all_k': False}
+
+  xcheckA (untrimmed primary, nonpositive-spacing drop only):
+    V_k = [np.float64(0.88), np.float64(0.739), np.float64(0.669)], beta1 = 0.0518, D_P = [0.0292, 0.0381, 0.0529], D_W = [0.1966, 0.2041, 0.2116]
+
+=== Step 6: verdict assembly ===
+  scheme classes: PRIMARY=PASS, SECONDARY=PASS
+  composite (operator-authoritative): PASS
+  3-tuple: sign=PASS magnitude=PASS regime=VALID -> collapse=PASS; XC9 collapse==operator: OK
+
+  DIAGNOSTIC repaired-(4,4) row (n_unique=114): <r>=0.3907, beta1=0.0537, V_k=[np.float64(0.885), np.float64(0.739), np.float64(0.663)]
+
+  npz written: s100b_w4_knn_ordered_veil.npz
+  plot written: s100b_w4_knn_ordered_veil.png
+
+(value='r_mean=0.3910|V_k=0.882,0.737,0.663|beta1=0.055|KS_P=0.032,0.042,0.057|KS_W=0.195,0.200,0.208|N=5846|reps=27|subpath=none', scheme=Shir-2504.20134-corrected-kNN-surmise, convention=sector-resolved-distinct-abs-lambda-BDI-dedup;unfolding-pair{poly-deg5-primary,mean-norm-secondary};beta=1-GOE-reference+edgetrim-monotone-window-primary, L_max=12)
+<<<EMIT_VERDICT_PAYLOAD>>>
+{"audit_sha256":"04e3d4d2244ce3d2d06a60b124b56d7059b7e58b85e4f81aded9504f4c92a567","companion_note":"sector-resolved kNN; secondary-scheme V_k=4.004,3.505,3.920; beta1_sec=-0.178; r_z_vs_Poisson=+1.34","content_sha256":"525f372f4a8d084c6044ec15cc1d2068146bf524cf365fe8dfdd8da72a364910","convention":"sector-resolved-distinct-abs-lambda-BDI-dedup;unfolding-pair{poly-deg5-primary,mean-norm-secondary};beta=1-GOE-reference+edgetrim-monotone-window-primary","extra_rows":["# UNTRUSTED-UPSTREAM caveat: consumes s84 cache lineage flagged by S100b-TAU0-LAITEH-REDUCTION ESCALATION (STRUCTURED LC t=1/2; eigensolver control-verified; canonicity adjudication pending) \u2014 dispatched per pre-registered orchestrator triage","# diagnostic: repaired-(4,4) robustness row (no verdict weight): {\"n_unique_44\": 114, \"pooled_n_with44\": 5960, \"r_mean_with44\": 0.390715220851033, \"beta1_with44\": 0.05371066457160505, \"V_k_with44\": [0.8851018891611415, 0.7392799872046502, 0.6626066489312675], \"D_po"],"gate_id":"S100b-KNN-ORDERED-VEIL","l_max":"12","magnitude_verdict":"PASS","regime_verdict":"VALID","schema_version":"S84+","scheme":"Shir-2504.20134-corrected-kNN-surmise","session":"100b","sign_verdict":"PASS","value":"r_mean=0.3910|V_k=0.882,0.737,0.663|beta1=0.055|KS_P=0.032,0.042,0.057|KS_W=0.195,0.200,0.208|N=5846|reps=27|subpath=none","verdict":"PASS"}
+<<<END_EMIT_VERDICT_PAYLOAD>>>
+
+=== S100b-KNN-ORDERED-VEIL: PASS (wall 1.9s) ===

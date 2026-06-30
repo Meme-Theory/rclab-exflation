@@ -1,0 +1,184 @@
+==============================================================================
+BEKENSTEIN-PW-60: Bekenstein Bound on Peter-Weyl Sectors
+==============================================================================
+
+--- Section 1: Load Input Data ---
+tau_fold = 0.19
+M_KK = 7.428660e+16 GeV (gravity route)
+R_KK = 1/M_KK = 1.346138e-17 GeV^{-1}
+Levels: [np.int64(0), np.int64(1), np.int64(2), np.int64(3), np.int64(4), np.int64(5)]
+N_modes per level: [np.int64(8), np.int64(56), np.int64(216), np.int64(616), np.int64(1456), np.int64(3024)]
+Lambda_eff per level: ['1.395628e-03', '-2.249856e+01', '-5.187080e+04', '-1.910324e+05', '-5.218410e+05', '-1.199931e+06']
+S_ent(0,0) 2-cell = 1.039115 nats
+S_ent(0,0) 4-cell k=N/2 = 1.381461 nats
+
+--- Section 2: BCS Energy Per Level ---
+
+E_BCS per level (M_KK units):
+  Level 0: N_modes=     8, E_BCS = -1.369800e-01 M_KK, |E_BCS| = 1.369800e-01 M_KK
+  Level 1: N_modes=    56, E_BCS = -8.660059e+01 M_KK, |E_BCS| = 8.660059e+01 M_KK
+  Level 2: N_modes=   216, E_BCS = -2.885419e+03 M_KK, |E_BCS| = 2.885419e+03 M_KK
+  Level 3: N_modes=   616, E_BCS = -3.763779e+04 M_KK, |E_BCS| = 3.763779e+04 M_KK
+  Level 4: N_modes=  1456, E_BCS = -2.913568e+05 M_KK, |E_BCS| = 2.913568e+05 M_KK
+  Level 5: N_modes=  3024, E_BCS = -1.916855e+06 M_KK, |E_BCS| = 1.916855e+06 M_KK
+
+Power-law fit (levels 1-4): |E_BCS| ~ 0.0040 * N^2.4936
+  Level 5 extrapolation: E_BCS = -1.916855e+06 M_KK
+
+Physical energies |E_BCS| * M_KK (GeV):
+  Level 0: 1.017578e+16 GeV
+  Level 1: 6.433263e+18 GeV
+  Level 2: 2.143479e+20 GeV
+  Level 3: 2.795984e+21 GeV
+  Level 4: 2.164390e+22 GeV
+  Level 5: 1.423967e+23 GeV
+
+--- Section 3: Bekenstein Bound ---
+R_KK = 1.346138e-17 GeV^{-1}
+
+Bekenstein bound per level:
+  Level 0: S_Bekenstein = 2*pi*R*E = 2*pi*1.369800e-01 = 8.606707e-01 nats
+  Level 1: S_Bekenstein = 2*pi*R*E = 2*pi*8.660059e+01 = 5.441276e+02 nats
+  Level 2: S_Bekenstein = 2*pi*R*E = 2*pi*2.885419e+03 = 1.812962e+04 nats
+  Level 3: S_Bekenstein = 2*pi*R*E = 2*pi*3.763779e+04 = 2.364852e+05 nats
+  Level 4: S_Bekenstein = 2*pi*R*E = 2*pi*2.913568e+05 = 1.830649e+06 nats
+  Level 5: S_Bekenstein = 2*pi*R*E = 2*pi*1.916855e+06 = 1.204396e+07 nats
+
+Cross-check (S_Bek = 2*pi*|E_BCS_MKK|):
+  Level 0: 8.606707e-01 (diff: 0.00e+00)
+  Level 1: 5.441276e+02 (diff: 1.14e-13)
+  Level 2: 1.812962e+04 (diff: 0.00e+00)
+  Level 3: 2.364852e+05 (diff: 5.82e-11)
+  Level 4: 1.830649e+06 (diff: 2.33e-10)
+  Level 5: 1.204396e+07 (diff: 1.86e-09)
+
+--- Section 4: Entropy Per Level ---
+Per-mode entropy estimates from (0,0):
+  s_per_mode (2-cell) = 0.129889 nats/mode
+  s_per_mode (4-cell) = 0.172683 nats/mode
+  s_max = ln(2) = 0.693147 nats/mode
+
+Entropy estimates per level:
+Level  N_modes    S_vN_cons     S_vN_lib        S_max          S_Bek
+    0        8       1.0391       1.3815       5.5452         0.8607
+    1       56       7.2738       9.6702      38.8162       544.1276
+    2      216      28.0561      37.2994     149.7198     18129.6191
+    3      616      80.0119     106.3725     426.9787    236485.2297
+    4     1456     189.1190     251.4259    1009.2223   1830648.6186
+    5     3024     392.7856     522.1923    2096.0771  12043957.4996
+
+--- Section 5: Bekenstein Saturation Analysis ---
+
+Saturation ratios S_vN / S_Bekenstein:
+Level     Ratio_cons      Ratio_lib      Ratio_max   Saturated?
+    0   1.207332e+00   1.605098e+00   6.442856e+00          YES
+    1   1.336783e-02   1.777199e-02   7.133666e-02           NO
+    2   1.547529e-03   2.057376e-03   8.258298e-03           NO
+    3   3.383377e-04   4.498061e-04   1.805519e-03           NO
+    4   1.033071e-04   1.373425e-04   5.512922e-04           NO
+    5   3.261267e-05   4.335720e-05   1.740356e-04           NO
+
+Saturated sectors (conservative): [0]
+Saturated sectors (liberal): [0]
+Saturated sectors (max entropy): [0]
+
+--- Section 6: Physical Interpretation ---
+ANALYSIS: Why Bekenstein does NOT truncate
+
+The Bekenstein bound S_Bek = 2*pi*R*E grows with energy E.
+|E_BCS| grows as N_modes^alpha with alpha ~ 2.49 (power-law from S59).
+Meanwhile, the maximum possible entropy S_max = N_modes * ln(2) grows linearly.
+
+Since alpha > 1, the Bekenstein bound grows FASTER than the entropy.
+Higher PW sectors are FURTHER from saturation, not closer.
+The bound provides NO physical truncation of the PW sum.
+
+--- Casimir-Adjusted Bekenstein Bound ---
+
+Casimir-adjusted bounds (R_eff = 1/(M_KK*sqrt(C2_max))):
+Level   C2_max   R_eff (GeV^-1)      S_Bek_Cas        S_max          Ratio
+    0   0.0000     1.346138e-17         0.8607       5.5452   6.442856e+00
+    1   1.3333     1.165790e-17       471.2283      38.8162   8.237248e-02
+    2   3.3333     7.373100e-18      9930.0014     149.7198   1.507752e-02
+    3   6.0000     5.495585e-18     96544.6907     426.9787   4.422601e-03
+    4   9.3333     4.406270e-18    599220.4190    1009.2223   1.684225e-03
+    5  13.3333     3.686550e-18   3298373.6021    2096.0771   6.354881e-04
+
+--- Section 7: Lambda_eff Analysis ---
+
+Lambda_eff by cumulative PW level:
+  Level 0-0: Lambda_eff = +1.395628e-03 M_KK^4
+  Level 0-1: Lambda_eff = -2.249856e+01 M_KK^4
+  Level 0-2: Lambda_eff = -5.187080e+04 M_KK^4
+  Level 0-3: Lambda_eff = -1.910324e+05 M_KK^4
+  Level 0-4: Lambda_eff = -5.218410e+05 M_KK^4
+  Level 0-5: Lambda_eff = -1.199931e+06 M_KK^4
+
+rho_Lambda (GeV^4):
+  Level 0-0: rho_Lambda = +4.250222e+64 GeV^4
+    |rho|/rho_obs = 1.574156e+111
+  Level 0-1: rho_Lambda = -6.851673e+68 GeV^4
+    |rho|/rho_obs = 2.537657e+115
+  Level 0-2: rho_Lambda = -1.579664e+72 GeV^4
+    |rho|/rho_obs = 5.850609e+118
+  Level 0-3: rho_Lambda = -5.817669e+72 GeV^4
+    |rho|/rho_obs = 2.154692e+119
+  Level 0-4: rho_Lambda = -1.589206e+73 GeV^4
+    |rho|/rho_obs = 5.885948e+119
+  Level 0-5: rho_Lambda = -3.654250e+73 GeV^4
+    |rho|/rho_obs = 1.353426e+120
+
+CC gap (OOM above observed):
+  Level 0-0: +111.2 OOM
+  Level 0-1: +115.4 OOM
+  Level 0-2: +118.8 OOM
+  Level 0-3: +119.3 OOM
+  Level 0-4: +119.8 OOM
+  Level 0-5: +120.1 OOM
+
+=== CC Comparison ===
+Full PW sum (L=0..5): Lambda_eff = -1.199931e+06 M_KK^4, gap = 120.1 OOM
+L=0 only (if truncated): Lambda_eff = +1.395628e-03 M_KK^4, gap = 111.2 OOM
+Reduction from truncation: 8.9 OOM
+But: Bekenstein does NOT justify truncation (no saturation)
+
+--- Section 8: Gate Verdict ---
+
+Gate: BEKENSTEIN-PW-60
+Verdict: FAIL
+Reason: No sectors Bekenstein-saturated. S_max/S_Bek ranges from 6.44e+00 (L=0) to 1.74e-04 (L=5). Bound grows faster than entropy (|E_BCS| ~ N^2.49, alpha>1)
+
+--- Physical Explanation ---
+The Bekenstein bound S_Bek = 2*pi*R*E is an upper bound on entropy.
+For BCS states confined to the KK radius R_KK = 1/M_KK:
+  S_Bek(L) = 2*pi*|E_BCS(L)|  (in M_KK natural units)
+
+|E_BCS| grows as N_modes^{2.49} (superlinear).
+Maximum entropy S_max = N_modes * ln(2) grows linearly.
+
+At level 0: S_max/S_Bek = 6.4429 = 644.3%
+At level 5: S_max/S_Bek = 1.740356e-04
+
+The ratio DECREASES with level — higher sectors are exponentially
+further from saturation. This is because BCS pairing grows the
+binding energy faster than the Hilbert space dimension grows the
+available entropy.
+
+ONLY the (0,0) sector is CLOSE to saturation (S_max/S_Bek ~ 6.4),
+but even it does not saturate (ratio < 1 would be needed).
+
+CLASSIFICATION: NON-PHONONIC (Bekenstein bound is geometric).
+The phononic spectrum enters through E_BCS, but the bound itself
+is a property of the confining geometry (R_KK).
+
+--- Section 9: Saving Results ---
+Saved: s60_bekenstein_pw.npz
+
+--- Section 10: Plotting ---
+Saved: s60_bekenstein_pw.png
+
+Total runtime: 0.6s
+
+==============================================================================
+GATE: BEKENSTEIN-PW-60 — FAIL
+==============================================================================

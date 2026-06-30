@@ -25,7 +25,7 @@ Beyond the computation, Session 40 produced a parallel event: 22 researcher revi
 
 ## I. Results Hierarchy
 
-### Tier 1: Framework-Decisive
+### Level 1: Framework-Decisive
 
 **1. HESS-40 FAIL -- 27th and Final Equilibrium Closure**
 
@@ -51,7 +51,7 @@ Combined closures: along Jensen (monotonic by theorem, CUTOFF-SA-37), transverse
 
 The ATDHFB collective inertia M_coll = 1.695 < G_mod = 5.0, making the modulus LIGHTER than assumed. Self-consistent dwell time = 6.08e-4 (0.58x uncorrected). Transit is 1.72x FASTER. Position-dependent vs constant mass: 0.1% difference (negligible). FRIED-39 shortfall worsens from 38,600x to ~114,000x. Both dynamics deep in sudden-quench regime (Q = 1.25e-3 << 1). Thermal endpoint unchanged.
 
-### Tier 2: Structural Confirmations (5 gates)
+### Level 2: Structural Confirmations (5 gates)
 
 **3. B2-INTEG-40 PASS -- Near-Integrable Island**
 
@@ -101,7 +101,7 @@ delta_Lambda/S_fold = 2.85 x 10^{-6}. Three post-transit states (GGE, Gibbs, fol
 
 All 8 QRPA eigenvalues positive (min omega^2 = 2.665, stability margin 3.1x). V_rem is purely time-even (V_rem^odd = 0 identically to machine precision). 97.5% of EWSR concentrated in a single B2 collective mode at omega = 3.245. EWSR/Thouless = 0.9995. Stable at all 9 tau values tested (0.0 to 0.5). No QRPA instability exists at any point along the transit.
 
-### Tier 3: Informative Failures (3 gates)
+### Level 3: Informative Failures (3 gates)
 
 **8. NOHAIR-40 FAIL -- Temperature Varies 64.6% (A Prediction)**
 
@@ -117,7 +117,7 @@ S_ent(B2|rest) max = 0.422 nats (18.5% of Page value 2.275 nats). Participation 
 
 M_ATDHFB = 1.695 (0.34x G_mod), not the 50-170x predicted by Naz-Hawking. sigma_ZP = 0.026 < 0.05 (FAIL threshold). Root cause: the SU(3) fold is a velocity zero with LARGE gap (Delta_B2/eps_B2 = 2.44) -- opposite of nuclear backbending where E_qp -> 0 at the crossing. B1 dominates 71% of the cranking mass through its gap derivative, not B2. Transit is classical.
 
-### Tier 4: Diagnostic
+### Level 4: Diagnostic
 
 **11. B2-DECAY-40 B2-FIRST -- Resolves S39 Divergence 1**
 
@@ -283,17 +283,17 @@ Do not search for new equilibrium stabilization mechanisms. The constraint surfa
 
 | File | Content | Wave |
 |:-----|:--------|:-----|
-| `tier0-computation/s40_b2_integrability.{py,npz,png}` | B2 subsystem integrability | W1-1 |
-| `tier0-computation/s40_acoustic_temperature.{py,npz,png}` | Acoustic temperature | W1-2 |
-| `tier0-computation/s40_gsl_transit.{py,npz,png}` | GSL through transit | W1-3 |
-| `tier0-computation/s40_cc_transit.{py,npz}` | CC transit shift | W1-4 |
-| `tier0-computation/s40_nohair_sensitivity.{py,npz,png}` | No-hair sensitivity | W1-5 |
-| `tier0-computation/s40_qrpa_modes.{py,npz,png}` | QRPA collective modes | W2-1 |
-| `tier0-computation/s40_internal_page_curve.{py,npz,png}` | Internal Page curve | W2-2 |
-| `tier0-computation/s40_b2_decay_out.{py,npz,png}` | B2 decay-out ED | W2-3 |
-| `tier0-computation/s40_hessian_offjensen.{py,npz,png}` | Off-Jensen Hessian | W3-1 |
-| `tier0-computation/s40_collective_inertia.{py,npz,png}` | ATDHFB collective inertia | W3-2 |
-| `tier0-computation/s40_self_consistent_ode.{py,npz,png}` | Self-consistent modulus ODE | W4-1 |
+| `computations/s40_b2_integrability.{py,npz,png}` | B2 subsystem integrability | W1-1 |
+| `computations/s40_acoustic_temperature.{py,npz,png}` | Acoustic temperature | W1-2 |
+| `computations/s40_gsl_transit.{py,npz,png}` | GSL through transit | W1-3 |
+| `computations/s40_cc_transit.{py,npz}` | CC transit shift | W1-4 |
+| `computations/s40_nohair_sensitivity.{py,npz,png}` | No-hair sensitivity | W1-5 |
+| `computations/s40_qrpa_modes.{py,npz,png}` | QRPA collective modes | W2-1 |
+| `computations/s40_internal_page_curve.{py,npz,png}` | Internal Page curve | W2-2 |
+| `computations/s40_b2_decay_out.{py,npz,png}` | B2 decay-out ED | W2-3 |
+| `computations/s40_hessian_offjensen.{py,npz,png}` | Off-Jensen Hessian | W3-1 |
+| `computations/s40_collective_inertia.{py,npz,png}` | ATDHFB collective inertia | W3-2 |
+| `computations/s40_self_consistent_ode.{py,npz,png}` | Self-consistent modulus ODE | W4-1 |
 | `sessions/archive/session-40/session-40-results-workingpaper.md` | Full working paper | W4-2 |
 | `sessions/archive/session-40/session-40-handoff.md` | Handoff document | W4-2 |
 | `sessions/archive/session-40/session-40-master-collab.md` | 22-reviewer master synthesis | Post |

@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 57,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_561",
+      "anchor_type": "data_provenance",
+      "name": "bogoliubov_amp",
+      "script_path": "session-52/s52_bogoliubov_amp.py",
+      "session": "s52",
+      "inputs": "",
+      "outputs": "session-52/s52_bogoliubov_amp.npz, session-52/s52_bogoliubov_amp.png",
+      "source_file": "computations/session-52/s52_bogoliubov_amp.py",
+      "source_context_30_lines": "   57:     V_B2B2 = 0.0572 (bare, phi=0)\n   58:     V_B2B2 = 0.0859 (at gap, phi=0.13)\n   59: \n   60:   We use the BARE vertex (phi=0) since we are computing quasiparticle\n   61:   scattering, not the pairing interaction itself.\n   62: \n   63: GATE: INFO (does a finite, physically sensible amplitude emerge?)\n   64: INPUT: s52_eta_b.npz (BdG data), s23a_kosmann_singlet.npz (Kosmann kernel)\n   65: OUTPUT: s52_bogoliubov_amp.npz, s52_bogoliubov_amp.png\n   66: \n   67: Author: feynman-theorist, Session 52\n   68: Date: 2026-03-20\n   69: \"\"\"\n   70: \n   71: import os\n   72: import sys\n   73: import time"
+    },
+    {
+      "anchor_id": "prov_562",
+      "anchor_type": "data_provenance",
+      "name": "casimir_josephson",
+      "script_path": "session-52/s52_casimir_josephson.py",
+      "session": "s52",
+      "inputs": "",
+      "outputs": "session-52/s52_casimir_josephson.npz",
+      "source_file": "computations/session-52/s52_casimir_josephson.py",
+      "source_context_30_lines": "   23: \n   24: Input:\n   25:   computations/session-34/s34a_dphys_kosmann.npz\n   26:   computations/session-46/s46_qtheory_selfconsistent.npz\n   27:   computations/session-48/s48_leggett_mode.npz\n   28:   computations/session-44/s44_dos_tau.npz\n   29: \n   30: Output:\n   31:   computations/session-52/s52_casimir_josephson.npz\n   32: \"\"\"\n   33: \n   34: import sys\n   35: import os\n   36: sys.path.insert(0, os.path.join(os.path.dirname(__file__)))\n   37: from canonical_constants import *\n   38: \n   39: import numpy as np"
+    },
+    {
+      "anchor_id": "prov_563",
+      "anchor_type": "data_provenance",
+      "name": "ddg_mkk",
+      "script_path": "session-52/s52_ddg_mkk.py",
+      "session": "s52",
+      "inputs": "",
+      "outputs": "session-52/s52_ddg_mkk.npz, session-52/s52_ddg_mkk.png",
+      "source_file": "computations/session-52/s52_ddg_mkk.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s52_ddg_mkk.py — DDG Power-Law Gauge Coupling Running for M_KK\n    4: ================================================================\n    5: \n    6: Gate: DDG-MKK-52\n    7:   PASS: M_KK determined within 1 OOM from gauge coupling matching.\n    8:         Value consistent with Sakharov ratio (S44: 0.36 OOM).\n    9:   FAIL: No consistent M_KK from all three couplings (spread > 3 OOM).\n   10: \n   11: Method:"
+    },
+    {
+      "anchor_id": "prov_564",
+      "anchor_type": "data_provenance",
+      "name": "eta_b",
+      "script_path": "session-52/s52_eta_b.py",
+      "session": "s52",
+      "inputs": "",
+      "outputs": "session-52/s52_eta_b.npz, session-52/s52_eta_b.png",
+      "source_file": "computations/session-52/s52_eta_b.py",
+      "source_context_30_lines": "   54: import matplotlib.pyplot as plt\n   55: \n   56: PROJECT_ROOT = r'C:\\sandbox\\Ainulindale Exflation'\n   57: SCRIPT_DIR = os.path.join(PROJECT_ROOT, 'computations')\n   58: ARCHIVE_DIR = os.path.join(PROJECT_ROOT, \"computations\", \"_shared\")\n   59: sys.path.insert(0, SCRIPT_DIR)\n   60: \n   61: # Redirect stdout to both console and file for Windows bash 0kb workaround\n   62: _LOG_PATH = os.path.join(SCRIPT_DIR, 's52_eta_b_log.txt')\n   63: class _Tee:\n   64:     def __init__(self, *streams):\n   65:         self.streams = streams\n   66:     def write(self, data):\n   67:         for s in self.streams:\n   68:             s.write(data)\n   69:             s.flush()\n   70:     def flush(self):"
+    },
+    {
+      "anchor_id": "prov_565",
+      "anchor_type": "data_provenance",
+      "name": "explore_data",
+      "script_path": "session-52/s52_explore_data.py",
+      "session": "s52",
+      "inputs": "computations/session-44/s44_dos_tau.npz, computations/session-36/s36_multisector_ed.npz, computations/session-34/s34a_dp...",
+      "outputs": "",
+      "source_file": "computations/session-52/s52_explore_data.py",
+      "source_context_30_lines": "<name 'explore_data' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"Explore input data for N-PAIR-FULL-52.\"\"\"\n    3: import sys\n    4: sys.path.insert(0, '.')\n    5: import numpy as np\n    6: \n    7: print(\"=\"*60)\n    8: print(\"s44_dos_tau.npz\")\n    9: print(\"=\"*60)\n   10: d = np.load('computations/session-44/s44_dos_tau.npz', allow_pickle=True)\n   11: print(\"Keys:\", list(d.keys()))\n   12: for k in sorted(d.keys()):\n   13:     v = d[k]\n   14:     if hasattr(v, 'shape'):\n   15:         print(f\"  {k}: shape={v.shape}, dtype={v.dtype}\")\n   16:         if v.ndim == 0:\n   17:             print(f\"    scalar value: {v.item()}\")\n   18:         elif v.ndim == 1 and v.size <= 30:\n   19:             print(f\"    values: {v}\")\n   20:         elif v.ndim == 1:\n   21:             print(f\"    first 10: {v[:10]}\")\n   22:             print(f\"    size={v.size}, min={v.min():.6f}, max={v.max():.6f}\")\n   23:         elif v.ndim == 2:\n   24:             print(f\"    shape={v.shape}\")\n   25:             if v.size <= 50:\n   26:                 print(f\"    {v}\")\n   27:     else:\n   28:         print(f\"  {k}: type={type(v)}\")\n   29: \n   30: print()"
+    },
+    {
+      "anchor_id": "prov_566",
+      "anchor_type": "data_provenance",
+      "name": "fk_bound",
+      "script_path": "session-52/s52_fk_bound.py",
+      "session": "s52",
+      "inputs": "",
+      "outputs": "session-52/s52_fk_bound.npz, session-52/s52_fk_bound.png",
+      "source_file": "computations/session-52/s52_fk_bound.py",
+      "source_context_30_lines": "   48: Hierarchy: Lichnerowicz < Friedrich < Kirchberg(K')\n   49: \n   50: Gate: FK-BOUND-52 (INFO)\n   51:   Does FK improve on Lichnerowicz?\n   52:   How tight is the bound at the fold?\n   53:   Does the bound track the fold structure as tau varies?\n   54: \n   55: Input: s44_dos_tau.npz, canonical_constants.py, dirac_spectrum\n   56: Output: s52_fk_bound.npz, s52_fk_bound.png\n   57: \n   58: Author: Spectral-Geometer (Session 52)\n   59: Date: 2026-03-20\n   60: \"\"\"\n   61: \n   62: import numpy as np\n   63: import sys\n   64: import os"
+    },
+    {
+      "anchor_id": "prov_567",
+      "anchor_type": "data_provenance",
+      "name": "gl_josephson",
+      "script_path": "session-52/s52_gl_josephson.py",
+      "session": "s52",
+      "inputs": "",
+      "outputs": "session-52/s52_gl_josephson.npz, session-52/s52_gl_josephson.png",
+      "source_file": "computations/session-52/s52_gl_josephson.py",
+      "source_context_30_lines": "  657:     print(f\"  sum(Delta^2) = {sum_D2:.6f}\")\n  658:     print(f\"  sum(rho*Delta^2) = {sum_rD2:.6f}\")\n  659: \n  660: # ============================================================\n  661: # Section 15: Save data\n  662: # ============================================================\n  663: print(\"\\n--- Section 15: Saving data ---\")\n  664: \n  665: outfile = os.path.join(os.path.dirname(__file__), \"s52_gl_josephson.npz\")\n  666: np.savez(outfile,\n  667:     # Grid\n  668:     K_array=K_plot,\n  669:     K_BZ=K_BZ,\n  670:     a_BCC=a_BCC,\n  671:     N_K=N_K,\n  672:     # Dispersion\n  673:     omega_branches=omega_all,"
+    },
+    {
+      "anchor_id": "prov_568",
+      "anchor_type": "data_provenance",
+      "name": "hawking_t_sweep",
+      "script_path": "session-52/s52_hawking_t_sweep.py",
+      "session": "s52",
+      "inputs": "",
+      "outputs": "session-52/s52_hawking_t_sweep.npz, session-52/s52_hawking_t_sweep.png",
+      "source_file": "computations/session-52/s52_hawking_t_sweep.py",
+      "source_context_30_lines": "   23: Inputs:\n   24:   computations/session-40/s40_acoustic_temperature.npz   (dispersion m^2(tau))\n   25:   computations/session-39/s39_richardson_gaudin.npz      (E_8(tau) at 9 tau values)\n   26:   computations/session-39/s39_kk_mass.npz               (GGE/Gibbs reference)\n   27:   computations/session-39/s39_gge_lambdas.npz           (p_gge occupations)\n   28:   computations/session-41/s41_offjensen_bcs.npz          (off-Jensen BCS data)\n   29: \n   30: Outputs:\n   31:   computations/session-52/s52_hawking_t_sweep.npz\n   32:   computations/session-52/s52_hawking_t_sweep.png\n   33: \"\"\"\n   34: \n   35: import sys\n   36: import numpy as np\n   37: from scipy.interpolate import CubicSpline\n   38: from scipy.optimize import brentq\n   39: from pathlib import Path"
+    },
+    {
+      "anchor_id": "prov_569",
+      "anchor_type": "data_provenance",
+      "name": "hfb_full",
+      "script_path": "session-52/s52_hfb_full.py",
+      "session": "s52",
+      "inputs": "",
+      "outputs": "session-52/s52_hfb_full.npz, session-52/s52_hfb_full.png",
+      "source_file": "computations/session-52/s52_hfb_full.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s52_hfb_full.py — Full HFB Self-Consistent Gap at N_pair=1 AND N_pair=2\n    4: =========================================================================\n    5: Session 52, W4-B: HFB-FULL-52\n    6: \n    7: Solves the FULL Hartree-Fock-Bogoliubov problem at fixed particle number\n    8: using EXACT DIAGONALIZATION in the N-particle Fock subspace, then extracts\n    9: self-consistent mean-field parameters.\n   10: \n   11: The distinction between \"BCS\" and \"full HFB\" (Paper 02, Dobaczewski et al.):"
+    },
+    {
+      "anchor_id": "prov_570",
+      "anchor_type": "data_provenance",
+      "name": "inspect_data",
+      "script_path": "session-52/s52_inspect_data.py",
+      "session": "s52",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-52/s52_inspect_data.py",
+      "source_context_30_lines": "<name 'inspect_data' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"Quick inspection of data files for Liouvillian computation.\"\"\"\n    3: import os, sys, numpy as np\n    4: \n    5: ARCHIVE = os.path.join(os.path.dirname(os.path.abspath(__file__)), \"..\", \"_shared\")\n    6: \n    7: d37 = np.load(os.path.join(ARCHIVE, 's37_pair_susceptibility.npz'), allow_pickle=True)\n    8: print(\"=== s37_pair_susceptibility.npz keys ===\")\n    9: for k in sorted(d37.files):\n   10:     v = d37[k]\n   11:     if isinstance(v, np.ndarray):\n   12:         print(f\"  {k}: shape={v.shape}, dtype={v.dtype}\")\n   13:     else:\n   14:         print(f\"  {k}: {v}\")\n   15: \n   16: print()\n   17: d38 = np.load(os.path.join(ARCHIVE, 's38_otoc_bcs.npz'), allow_pickle=True)\n   18: print(\"=== s38_otoc_bcs.npz keys ===\")\n   19: for k in sorted(d38.files):\n   20:     v = d38[k]\n   21:     if isinstance(v, np.ndarray):\n   22:         print(f\"  {k}: shape={v.shape}, dtype={v.dtype}\")\n   23:     else:\n   24:         print(f\"  {k}: {v}\")\n   25: \n   26: print(\"\\n=== Key data ===\")\n   27: E_8 = d37['E_8']\n   28: V_8x8 = d37['V_8x8']\n   29: rho_8 = d37['rho']\n   30: mu = float(d37['mu'])"
+    }
+  ]
+}

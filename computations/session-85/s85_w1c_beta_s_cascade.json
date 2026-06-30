@@ -1,0 +1,29 @@
+{
+  "gate_id": "S85-W1c-BETA-S-CASCADE-CONSISTENCY",
+  "status": "PASS",
+  "value": 4.187e-05,
+  "reason": "residual = 4.19e-05 < 0.01 (slow-roll chain rule reproduces W0-1 pin to 41.9 ppm \u2014 single-parent provenance confirmed)",
+  "n_s_canon": 0.9649,
+  "alpha_s_framework_central": -0.06896799000000009,
+  "beta_s_canonical_pin": -0.1331,
+  "beta_s_derived": -0.13309442710200017,
+  "residual": 4.187000751181544e-05,
+  "residual_ppm": 41.87000751181544,
+  "w0_1_prereg_line": "S85-BETA-S-CMB-S4-PREREG: PASS -- value=60.49999999999999 scheme=MS-bar convention=Planck-central L_max=8 audit_sha256=50a3ca8798488ee451a923769678be05b38a46b30da63f2faab1c748ea6760ea content_sha256=cf3648a5f657275fb3fe68d46e4a95a63043ba1c71c51d06183b3f3583c41682 schema_version=S84+",
+  "canonical_sha": "84aaa1e07dff5add28a0726e395707adc7196982d47924be125fac0edeca128f",
+  "audit_sha256": "9040b020ba7dfa3bbc2605ffee92eb84ecc3aa436abdd25dbe05dd57e667da7a",
+  "content_sha256": "a6fbcaafe154afb969d4c98978c1b4995dc0f69eb1f3a24568da2f09e6a70507",
+  "scheme": "slow-roll-chain",
+  "convention": "inflation-run",
+  "L_max": "N/A",
+  "thresholds": {
+    "PASS_RESIDUAL_MAX": 0.01,
+    "INFO_RESIDUAL_MAX": 0.1
+  },
+  "substitution_chain": {
+    "step_1_definition": "\u03b2_s := d\u03b1_s/dlnk (slow-roll) AND \u03b1_s = n_s\u00b2 - 1 (S50-51, W1c-2 commit)",
+    "step_2_chain_rule": "\u03b2_s = d/dlnk (n_s\u00b2-1) = 2 n_s \u00d7 \u03b1_s",
+    "step_3_substitute": "2 \u00d7 0.9649 \u00d7 (-0.06896799000000009) = -0.13309442710200017",
+    "step_4_direction": "\u03b2_s_derived matches \u03b2_s_canonical to 41.9 ppm; sign NEGATIVE (tilt accelerates toward smaller values at smaller scales; consistent with W0-1 pin on sign grounds)"
+  }
+}

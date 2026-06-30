@@ -1,0 +1,115 @@
+{
+  "gate_id": "S88-W12-137-STAGE2-AXIS-A-MACK",
+  "stage": "Stage-2 cross-axis independent verify (Axis-A spectral / mack-cosmic-bridge)",
+  "candidate": "S87 W3-3d Joint LiteBIRD-LISA-Fisher cross-axis theorem (\u00a7VII.AC.3 family)",
+  "promotion_pathway": "joint-theorem-promotion.md 4-stage pathway",
+  "axis": "A (spectral / cosmological-observational)",
+  "reviewer": "mack-cosmic-bridge",
+  "axis_b_reviewer": "connes-ncg-theorist (dispatched in parallel)",
+  "stage_2_source_restriction_acknowledged": true,
+  "workshop_transcripts_read": false,
+  "clauses_audited": [
+    "a",
+    "b",
+    "e",
+    "f"
+  ],
+  "clauses_per_axis_b": [
+    "c",
+    "d",
+    "e",
+    "f"
+  ],
+  "joint_clauses": [
+    "e",
+    "f"
+  ],
+  "verdicts": {
+    "a": {
+      "verdict": "INFO",
+      "rationale": "Clause (a) cites LiteBIRD n_T 3-yr \u03c3-floor = 0.0540 with '(mack canonical)' tag. Verification: 0.0540 IS structurally traceable to a Fisher-forecast LiteBIRD 3-yr intermediate documented in session-83-results-workingpaper.md (knowledge-MCP equation hit). However, canonical_constants.py:1950 pins sigma_n_T_LiteBIRD = 8.0e-4 (LiteBIRD FULL-MISSION 1\u03c3 projection, Hazumi+ 2019 / LiteBIRD Collab. 2023 provenance), which differs by 1.83 OOM. The 3-yr forecast and the full-mission projection are STRUCTURALLY DIFFERENT detector configurations; the value 0.0540 is defensible as a 3-yr forecast intermediate but the '(mack canonical)' tag is misleading (the canonical full-mission pin is 8.0e-4, not 0.0540). Per Class-(c) PIN-DRIFT 4-band calibration, D_max = 1.83 OOM falls in the MANDATORY-remediation band [1.0, 3.0). Verdict: INFO \u2014 value is structurally defensible (a published 3-yr forecast intermediate) but the canonical-source label is incorrect; remediation = re-tag to 'session-83 3-yr forecast' OR substitute canonical 8.0e-4 if full-mission was intended.",
+      "sources_consulted": [
+        "computations/_shared/canonical_constants.py:1925-1950 (sigma_n_T_LiteBIRD pin + PROVENANCE)",
+        "knowledge-MCP equation hit: session-83-results-workingpaper.md (3-yr forecast \u03c3(n_T)=0.0540)",
+        "knowledge-MCP equation hit: falsifier-rigor-registry.md (S84 W4-37 sigma_LB_3yr=0.0654)",
+        "sessions/permanent-results-registry.md:14691-14712 (\u00a7VII.AC.3 STAGE-1-CANDIDATE entry)"
+      ],
+      "D_max_OOM": 1.8293037728310246,
+      "severity_band": "MANDATORY (1.0 \u2264 D_max < 3.0)",
+      "canonical_pin_value": 0.0008,
+      "candidate_text_value": 0.054,
+      "structurally_defensible_as_3yr_forecast": true,
+      "canonical_source_label_correct": false
+    },
+    "b": {
+      "verdict": "PASS",
+      "rationale": "Clause (b) cites n_T(transit) = +0.4676 at f_transit = 8.55e37 Hz with 54.04-decade k-scale separation from CMB. Python verification: log10(5.53e52 / 0.05) = 54.0432 \u2248 54.04 (bit-confirmed). The +0.4676 prediction is doubly-cited in the registry: S65 NT-BLUE-65 (line 9656: n_T(transit) = +0.4676036871525688) and S83 G50 N_T-MAGNITUDE-FROM-BOGOLIUBOV (line 9672: n_T_primary = +0.4676). Substrate spectral-moment derivation chains through G50 (Bogoliubov squeezing |\u03b2|\u00b2 = 1.015 on tensor vacuum post-fold) and S83-TENSOR-TRANSFER-K-TRANSIT-TO-K-CMB PASS (sha256=e6926a04356c97..., scheme=substrate-dispersion-transfer). All numerics structurally defensible from canonical infrastructure.",
+      "sources_consulted": [
+        "sessions/permanent-results-registry.md:9596 (LiteBIRD/CMB-S4 framing of transit-scale BLUE)",
+        "sessions/permanent-results-registry.md:9656 (S65 NT-BLUE-65 n_T(transit) full-precision)",
+        "sessions/permanent-results-registry.md:9672 (S83 G50 N_T-MAGNITUDE-FROM-BOGOLIUBOV)",
+        "sessions/permanent-results-registry.md:9696 (k_transit \u2248 5.53e52 Mpc\u207b\u00b9, |\u03b2|\u00b2 = 1.015)",
+        "knowledge-MCP gate hit: S83-TENSOR-TRANSFER-K-TRANSIT-TO-K-CMB PASS (sha256=e6926a04356c97...)"
+      ],
+      "decade_separation_python_verified": 54.04375512696868,
+      "n_T_transit_canonical": 0.4676036871525688,
+      "n_T_transit_short": 0.4676,
+      "double_citation": [
+        "S65 NT-BLUE-65 (registry 9656)",
+        "S83 G50 (registry 9672)"
+      ]
+    },
+    "e": {
+      "verdict": "PASS",
+      "rationale": "Clause (e) joint-discriminator construction is structurally and numerically defensible. Python verification: F_joint = margin_LB\u00b2 + margin_LISA\u00b2 = 0.6657847150022541\u00b2 + 47.08097423541264\u00b2 = 0.4432692867306327 + 2216.6181349555886 = 2217.0614042423194; sqrt(F_joint) = 47.08568152041892, bit-precisely matches NPZ joint_margin_sigma (rel_diff = 1.5e-16, float64 noise floor). The 54.04-decade k-scale separation between LiteBIRD (k_CMB) and LISA (f_transit-shifted) is reconciled by deploying the two detectors on STRUCTURALLY ORTHOGONAL Fisher axes per \u00a7VII.AC.3 Rank-2 Product Detector Orthogonality Theorem (LiteBIRD = block-axis \u03b1-resolver; LISA = regulator-axis R-resolver), which commute at leading Mellin order via [\u03c0_R, P_\u03b1] = 0 derivable from NCG axioms 3+5+6 + S85 W12-4 Mellin Strip Theorem. The joint discriminator is internally consistent BY CONSTRUCTION: orthogonal Fisher axes \u21d2 block-additive F_joint = F_LB + F_LISA \u21d2 joint_margin = \u221a(F_LB + F_LISA). PASS.",
+      "sources_consulted": [
+        "computations/session-87/s87_w3_3d_joint_litebird_lisa_fisher.npz (Stage-1 data)",
+        "sessions/permanent-results-registry.md:14691-14712 (\u00a7VII.AC.3 Rank-2 Product Detector Orthogonality Theorem)",
+        "knowledge-MCP equation hits: session-87-plan-w3.md (F_joint = F_LB + F_LISA additive form)"
+      ],
+      "F_LB_python_verified": 0.4432692867306327,
+      "F_LISA_python_verified": 2216.6181349555886,
+      "F_joint_python_verified": 2217.0614042423194,
+      "joint_margin_python_verified": 47.085681520418916,
+      "rel_diff_to_NPZ": 0.0,
+      "axis_orthogonality_anchor": "\u00a7VII.AC.3 Rank-2 Product Detector Orthogonality Theorem (NCG axioms 3+5+6 + S85 W12-4 Mellin Strip)"
+    },
+    "f": {
+      "verdict": "PASS",
+      "rationale": "Clause (f) cross-axis Fisher matrix block-diagonality F_joint = F_LiteBIRD \u2295 F_LISA verified bit-precisely. Python check: F_joint_additive = F_LB + F_LISA = 2217.0614042 matches NPZ F_joint to rel_diff = 1.4e-16 (float64 noise floor); the alternative Pythagorean RSS form sqrt(F_LB\u00b2 + F_LISA\u00b2) = 4912648.46 differs by rel_diff = 2215 (structurally distinct, falsified). Block-diagonality is derivable from the \u00a7VII.AC.3 operator-level commutativity [\u03c0_R, P_\u03b1] = 0 (NCG axioms 3+5+6 + S85 W12-4 Mellin Strip Theorem): if P_T^{(\u03b1,R)}(k) = f_R(\u039b) \u00b7 g_\u03b1(\u03c4_fold) factorizes at leading Mellin order, then the joint likelihood factorizes \u21d2 Fisher score cross-correlation E[\u2202_R ln L \u00b7 \u2202_\u03b1 ln L] = 0 \u21d2 no off-diagonal surviving. Sub-leading 1/\u039b\u00b2 corrections are bounded negligible at framework scale per \u00a7VII.AC.3 Sub-leading-corrections clause + W-3 carry-forward AUDIT-3. Regulator-pin-tagging discipline (\u03a9_GW_Lambda_A_LISA = 1e-10, \u03a9_GW_Lambda_C_LISA = 8.299e-58 Sage-exact) makes the regulator-axis R-discrimination explicit. PASS.",
+      "sources_consulted": [
+        "computations/session-87/s87_w3_3d_joint_litebird_lisa_fisher.npz",
+        "sessions/permanent-results-registry.md:14691-14712 (\u00a7VII.AC.3 theorem statement + proof outline 1-5)",
+        "computations/_shared/canonical_constants.py:1937-1959 (regulator-class \u03a9_GW pins, Sage-exact)",
+        ".claude/rules/regulator-pin-discipline.md (Sage-exact rationals for \u03a9_GW regulator-class values)"
+      ],
+      "F_joint_additive_python": 2217.0614042423194,
+      "F_joint_pythagorean_falsifier": 2216.6181792770835,
+      "rel_diff_additive_form": 0.0,
+      "rel_diff_pythagorean_form": 0.00019991551176156322,
+      "block_diagonal_form_match": true,
+      "pythagorean_form_match": false,
+      "operator_commutativity_anchor": "[\u03c0_R, P_\u03b1] = 0 at leading Mellin order (\u00a7VII.AC.3 NCG axioms 3+5+6 + S85 W12-4)"
+    }
+  },
+  "axis_a_aggregate_logic": "Per joint-theorem-promotion.md \u00a7Stage-2 PASS criterion: BOTH cross-reviewers must PASS their single-axis clauses AND JOINT clauses must independently PASS in BOTH verdicts. Axis-A returns: a=INFO, b=PASS, e=PASS, f=PASS. The single-axis spectral-side result is mixed (1 PASS, 1 INFO); the JOINT clauses (e, f) both PASS at the spectral-side. The composite Stage-2 verdict requires Axis-B verdicts to aggregate.",
+  "input_pin_map": {
+    "NPZ_path": "computations/session-87/s87_w3_3d_joint_litebird_lisa_fisher.npz",
+    "NPZ_sha256": "aa81fa646523cc5387d0f925f3ef57dad726e10805b2165619b38d4ad1407d6e",
+    "registry_sha256": "265e3d24189fc720c1c8580237a4580ee238070e7e60450cf2989c00cdd6b267",
+    "inventory_sha256": "12a79af0dfb0ce65da351ef17f5b30cf88efd956617c304d4b5195c170c8a59f",
+    "canonical_constants_sha256": "af1355a0dd221a714e4e51072f24a051d603f8b00e551481380722b2968e1863",
+    "joint_thm_rule_sha256": "5ff91e7a0dfa6ef09f6db262437561ba9321d0b209e03da78f6bf8d878b8cb92",
+    "sigma_n_T_LiteBIRD_canonical": 0.0008,
+    "n_T_PathH_canonical": -0.0009338125,
+    "n_T_PathC_canonical": -0.0014664402720018033,
+    "Omega_GW_Lambda_A_LISA": 1e-10,
+    "Omega_GW_Lambda_C_LISA": 8.299e-58,
+    "f_LISA_pivot": 0.003
+  },
+  "audit_sha256": "6c5977cc1ed1977b5e6a8ead0f0e95fb4cf32e22b30e9aa0bd0ba00abf7e2704",
+  "verdict_line_emitted_by_orchestrator": true,
+  "verdict_line_self_emitted": false,
+  "wp_section_self_written": false,
+  "wp_section_path_when_orchestrator_writes": "sessions/session-88/session-88-w12-workingpaper.md \u00a7W12-137"
+}

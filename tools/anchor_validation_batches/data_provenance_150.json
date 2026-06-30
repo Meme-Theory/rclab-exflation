@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 150,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1491",
+      "anchor_type": "data_provenance",
+      "name": "multi_cell_z2_breaking",
+      "script_path": "session-76/s76_multi_cell_z2_breaking.py",
+      "session": "s76",
+      "inputs": "",
+      "outputs": "session-76/s76_multi_cell_z2_breaking.npz, session-76/s76_multi_cell_z2_breaking.png",
+      "source_file": "computations/session-76/s76_multi_cell_z2_breaking.py",
+      "source_context_30_lines": "  769: print(f\"    CHK3 (Leggett stability): {'PASS' if chk3_pass else 'FAIL'}\")\n  770: print(f\"    J_u1 enhancement: {enhancement:.2f}x (need 6.2x)\")\n  771: \n  772: # ============================================================================\n  773: #  STEP 12: Save results\n  774: # ============================================================================\n  775: \n  776: outpath = os.path.join(os.path.dirname(os.path.abspath(__file__)),\n  777:                        \"s76_multi_cell_z2_breaking.npz\")  # (local)\n  778: \n  779: np.savez(outpath,\n  780:          gate_name=\"S76-B6-Z2-BREAK\",\n  781:          gate_verdict=verdict,\n  782:          gate_reason=reason,\n  783:          # Primary\n  784:          n_Z2=n_Z2_final,\n  785:          f_Z2=f_Z2_final,"
+    },
+    {
+      "anchor_id": "prov_1492",
+      "anchor_type": "data_provenance",
+      "name": "off_jensen_moduli",
+      "script_path": "session-76/s76_off_jensen_moduli.py",
+      "session": "s76",
+      "inputs": "",
+      "outputs": "session-76/s76_off_jensen_moduli.npz, session-76/s76_off_jensen_moduli.png",
+      "source_file": "computations/session-76/s76_off_jensen_moduli.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s76_off_jensen_moduli.py -- S76-B10-OFF-JENSEN: 35D Hessian Scan for Restoring Potential\n    4: ========================================================================================\n    5: \n    6: Gate: S76-B10-OFF-JENSEN\n    7:   PASS: At least one negative Hessian eigenvalue found (restoring potential exists off Jensen)\n    8:   FAIL: All eigenvalues positive at fold\n    9:   INFO: Hessian indefinite but minimum requires tau outside [0.1, 1.0]\n   10: \n   11: Background:"
+    },
+    {
+      "anchor_id": "prov_1493",
+      "anchor_type": "data_provenance",
+      "name": "post_fold_h_tau",
+      "script_path": "session-76/s76_post_fold_h_tau.py",
+      "session": "s76",
+      "inputs": "",
+      "outputs": "session-76/s76_post_fold_h_tau.npz, session-76/s76_post_fold_h_tau.png",
+      "source_file": "computations/session-76/s76_post_fold_h_tau.py",
+      "source_context_30_lines": "  698: log(f\"    eps_H(fold)          = {eps_fold_from_w:.4f} (w = {w_at_fold:.4f})\")\n  699: log(f\"    N_total              = {N_total:.2f} e-folds\")\n  700: log(f\"    N_stiff              = {N_stiff:.2f} e-folds\")\n  701: \n  702: # ============================================================================\n  703: #  SECTION 10: Save Data\n  704: # ============================================================================\n  705: \n  706: out_path = os.path.join(data_dir, 's76_post_fold_h_tau.npz')\n  707: np.savez(\n  708:     out_path,\n  709:     # Gate\n  710:     gate_name='S76-A5-POST-FOLD-H',\n  711:     gate_verdict=gate_verdict,\n  712:     gate_detail=gate_detail,\n  713:     # Key results\n  714:     H_fold_friedmann=H_fold_friedmann,"
+    },
+    {
+      "anchor_id": "prov_1494",
+      "anchor_type": "data_provenance",
+      "name": "quasi_robust_verify",
+      "script_path": "session-76/s76_quasi_robust_verify.py",
+      "session": "s76",
+      "inputs": "",
+      "outputs": "session-76/s76_quasi_robust_verify.npz, session-76/s76_quasi_robust_verify.png",
+      "source_file": "computations/session-76/s76_quasi_robust_verify.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s76_quasi_robust_verify.py -- QUASI-ROBUST-VERIFY-76 (W3-A, S76 Wave 3)\n    4: =========================================================================\n    5: \n    6: Gate: S76-C1-QR-VERIFY\n    7:   PASS: 10+ of 15 entries promoted to ROBUST (or 10+ of 9 actual QR entries).\n    8:   FAIL: < 5 entries promoted.\n    9:   INFO: 5-10 entries promoted.\n   10: \n   11:   (NOTE: Task says \"15 entries\" but S75 foundational audit has exactly 9 QUASI-ROBUST"
+    },
+    {
+      "anchor_id": "prov_1495",
+      "anchor_type": "data_provenance",
+      "name": "reheat_temperature",
+      "script_path": "session-76/s76_reheat_temperature.py",
+      "session": "s76",
+      "inputs": "",
+      "outputs": "session-76/s76_reheat_temperature.npz, session-76/s76_reheat_temperature.png",
+      "source_file": "computations/session-76/s76_reheat_temperature.py",
+      "source_context_30_lines": "  418: print(f\"    T_RH(Kerner) = {T_RH_Kerner:.4e} GeV (log10 = {np.log10(T_RH_Kerner):.3f})\")\n  419: print(f\"    Still in PASS band: {1e9 <= T_RH_Kerner <= 1e17}\")\n  420: print(f\"    T_RH(Kerner)/M_KK(Kerner) = {T_RH_Kerner/M_KK_kerner:.4f}\")\n  421: print(f\"{'='*78}\")\n  422: \n  423: # ==========================================================================\n  424: # STEP 8: Save data\n  425: # ==========================================================================\n  426: data_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), \"s76_reheat_temperature.npz\")\n  427: np.savez(data_path,\n  428:     # Decay rates\n  429:     Gamma_grav=Gamma_grav,\n  430:     Gamma_SM=Gamma_SM,\n  431:     Gamma_SM_gauge=Gamma_SM_gauge,\n  432:     Gamma_SM_Higgs=Gamma_SM_Higgs,\n  433:     Gamma_total=Gamma_total,\n  434:     tau_decay_s=tau_decay_hbar,"
+    },
+    {
+      "anchor_id": "prov_1496",
+      "anchor_type": "data_provenance",
+      "name": "spectral_perturbation_theory",
+      "script_path": "session-76/s76_spectral_perturbation_theory.py",
+      "session": "s76",
+      "inputs": "",
+      "outputs": "session-76/s76_spectral_perturbation_theory.npz, session-76/s76_spectral_perturbation_theory.png",
+      "source_file": "computations/session-76/s76_spectral_perturbation_theory.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s76_spectral_perturbation_theory.py -- Analytic derivation of f_conv from D_K\n    4: =============================================================================\n    5: \n    6: Gate: S76-A6-SPEC-PERT\n    7:   PASS: f_conv derived analytically from D_K structure, matches numerical\n    8:         to within factor 2, promotable to permanent.\n    9:   FAIL: > factor 10 discrepancy between analytic and numerical.\n   10:   INFO: Partial derivation, correct structure but requires numerical input\n   11:         for one factor."
+    },
+    {
+      "anchor_id": "prov_1497",
+      "anchor_type": "data_provenance",
+      "name": "transit_fnl",
+      "script_path": "session-76/s76_transit_fnl.py",
+      "session": "s76",
+      "inputs": "",
+      "outputs": "session-76/s76_transit_fnl.npz, session-76/s76_transit_fnl.png",
+      "source_file": "computations/session-76/s76_transit_fnl.py",
+      "source_context_30_lines": " 1379: # ===========================================================================\n 1380: #  SECTION 8: Save Results\n 1381: # ===========================================================================\n 1382: \n 1383: print(\"\\n\" + \"=\" * 78)\n 1384: print(\"SECTION 8: Save Results\")\n 1385: print(\"=\" * 78)\n 1386: \n 1387: save_path = os.path.join(script_dir, 's76_transit_fnl.npz')\n 1388: np.savez(save_path,\n 1389:     # Gate\n 1390:     gate_name='S76-A3-TRANSIT-FNL',\n 1391:     gate_verdict=gate_verdict,\n 1392:     gate_detail=gate_detail,\n 1393:     # f_NL values\n 1394:     f_NL_equil_EFT=f_NL_equil_EFT,\n 1395:     f_NL_equil_best=f_NL_equil_best,"
+    },
+    {
+      "anchor_id": "prov_1498",
+      "anchor_type": "data_provenance",
+      "name": "a2_overshoot",
+      "script_path": "session-77/s77_a2_overshoot.py",
+      "session": "s77",
+      "inputs": "",
+      "outputs": "session-77/s77_a2_overshoot.npz, session-77/s77_a2_overshoot.png",
+      "source_file": "computations/session-77/s77_a2_overshoot.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s77_a2_overshoot.py -- A2-OVERSHOOT (S77-C4-A2-OVERSHOOT)\n    4: ============================================================\n    5: \n    6: Gate: S77-C4-A2-OVERSHOOT\n    7:   PASS:  |delta_G/G| < 0.5 at ALL overshoot tau values\n    8:   FAIL:  |delta_G/G| > 5.0 at tau = 1.614\n    9:   INFO:  0.5 < |delta_G/G| < 5.0 (moderate variation)\n   10: \n   11: Physics (substrate framing):"
+    },
+    {
+      "anchor_id": "prov_1499",
+      "anchor_type": "data_provenance",
+      "name": "a4_gilkey_decomp",
+      "script_path": "session-77/s77_a4_gilkey_decomp.py",
+      "session": "s77",
+      "inputs": "s70_ratio_gilkey_document.npz, s61_heat_kernel_a4.npz",
+      "outputs": "session-77/s77_a4_gilkey_decomp.npz",
+      "source_file": "computations/session-77/s77_a4_gilkey_decomp.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s77_a4_gilkey_decomp.py -- S77-C9-A4-GILKEY\n    4: =============================================\n    5: \n    6: Gate: S77-C9-A4-GILKEY\n    7:   PASS: Decomposition complete and consistent. f_conv^{zeta} obtained.\n    8:   FAIL: Inconsistency > 10% between sum and a_4_fold.\n    9:   INFO: Partial decomposition.\n   10: \n   11: Physics"
+    },
+    {
+      "anchor_id": "prov_1500",
+      "anchor_type": "data_provenance",
+      "name": "bcs_timing_sequence",
+      "script_path": "session-77/s77_bcs_timing_sequence.py",
+      "session": "s77",
+      "inputs": "",
+      "outputs": "session-77/s77_bcs_timing_sequence.npz",
+      "source_file": "computations/session-77/s77_bcs_timing_sequence.py",
+      "source_context_30_lines": "  500: \n  501: # ============================================================\n  502: # SAVE\n  503: # ============================================================\n  504: # Prepare Delta_t arrays for saving\n  505: Delta_t_A = Delta_t_dict.get(\"A (random walk)\", np.array([]))  # (local)\n  506: Delta_t_B = Delta_t_dict.get(\"B (single-mode)\", np.array([]))  # (local)\n  507: \n  508: np.savez(\"computations/session-77/s77_bcs_timing_sequence.npz\",\n  509:     # Gate\n  510:     gate_name=\"S77-B8-BCS-TIMING\",\n  511:     gate_verdict=gate_verdict,\n  512:     gate_reason=gate_reason,\n  513:     # Key results\n  514:     tau_relax=tau_relax,\n  515:     lambda_growth=lambda_growth,\n  516:     ratio_relaxation=ratio_relaxation,"
+    }
+  ]
+}

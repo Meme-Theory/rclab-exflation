@@ -1,0 +1,109 @@
+{
+  "gate_id": "S89-FWD-C2-OBSERVABLE-DISAMBIGUATION",
+  "scheme": "bridge-anatomy-pre-registration",
+  "convention": "fwd-c2-disambiguation-S89-W5",
+  "L_max": 12,
+  "trigger": "[AUDIT]",
+  "classification": "GEOMETRIC",
+  "disambiguation_outcome": "corner-iv-singleton",
+  "outcome_routing_reason": "A.26 hkr_bridge_identified=TRUE -> corner-iv-singleton (Outcome b; PASS path)",
+  "five_anatomy_elements": {
+    "1_substrate_IS_observable": {
+      "description": "Corner-IV K-window log-derivative L(L_max) := d\u00b2 ln P_GGE / d(ln K)\u00b2 evaluated at K=K_horizon on (A_K^{<=L_max}, H_K^{<=L_max}, D_K^{<=L_max}); substrate-IS finite-L observable inherited from A.25/A.26",
+      "declared": true,
+      "source": "A.25 + A.26"
+    },
+    "2_laboratory_IN_observable_OE_form": {
+      "description": "Pillar V BdG spectral triple continuum trace (FWD-C2 candidate); OE-form: \u222b over BdG sub-algebra Tr_{M_2(C)}(P_BdG \u00b7 A) where P_BdG is the named BdG projector on M_2(C) sub-algebra; degenerate \u2211 form for finite-rank Pillar V per Element 2 OE-form regex extension",
+      "declared": true,
+      "OE_form_compliant": true,
+      "source": "Plan \u00a7W5-4.6 + cross-pillar-bridge-anatomy.md \u00a7'Element 2 OE-form discipline'"
+    },
+    "3_bridge_map": {
+      "description": "Connes-Karoubi pairing on the Pillar II Mellin-Barnes residue \u00d7 Pillar V BdG K-theoretic boundary (TBD: final classification at \u00a7VII.AV landing); candidate: Connes-Karoubi (per CM-1995 III.4 finite-spectral-triple residue formula)",
+      "declared": true,
+      "tbd_pending_landing": true,
+      "source": "Plan \u00a7W5-4.6 + cross-pillar-bridge-anatomy.md \u00a7'Hybrid Independence Test'"
+    },
+    "4_algebraic_envelope": {
+      "description": "Casimir-bound proxy \u03b1=5.0679 at R\u00b2=0.9244 (A.26); Level-2-binding declaration via HKR Pillar III <-> Pillar IV anchor at registry \u00a7VII.AF.1.OP-PROJ; envelope is INHERITED from A.26 not re-extracted at FWD-C2 level",
+      "declared": true,
+      "level_2_binding_class": "Level-2-binding",
+      "source": "A.26"
+    },
+    "5_empirical_anchor": {
+      "description": "L_emp = -7.046336474407 at L_max=12 (canonical reference; bit-for-bit reproduction of S87 W2-3); \u00a7W5-2 PASS predecessor",
+      "declared": true,
+      "value": -7.046336474406761,
+      "source": "A.25"
+    }
+  },
+  "three_level_ladder": {
+    "Level_1_cohomology_class_identity": {
+      "description": "K-window log-derivative is regulator-invariant under the algebra-DEPENDENT state-pair functional family (per cross-pillar-bridge-anatomy.md \u00a7'Algebra-axis orthogonality K-counter' MANDATORY at K=3); regulator-class declaration: state-pair functional family is invariant under {cutoff, zeta, anomaly-derived, Zubarev} regulator class",
+      "declared": true,
+      "regulator_invariance_class": "state-pair-functional-family-regulator-INVARIANT"
+    },
+    "Level_2_algebraic_envelope": {
+      "description": "Casimir-bound proxy \u03b1=5.0679; R\u00b2=0.9244; Level-2-binding via HKR L_max -> infinity bridge map at \u00a7VII.AF.1.OP-PROJ; sub-class: Level-2-binding (per cross-pillar-bridge-anatomy.md \u00a7'Level-2 Layer Distinction' MANDATORY at K=3)",
+      "declared": true,
+      "envelope_alpha": 5.067867967547219,
+      "envelope_R_squared": 0.9244214792121855,
+      "level_2_sub_class": "Level-2-binding"
+    },
+    "Level_3_empirical_anchor": {
+      "description": "L_emp = -7.046336474407 at canonical L_max=12 (bit-for-bit reproduction of S87 W2-3 stored canonical -7.046336474406761); L_max=12 sanity diff = 0.00e+00",
+      "declared": true,
+      "value": -7.046336474406761,
+      "L_max": 12
+    }
+  },
+  "hybrid_independence_test": {
+    "clauses": {
+      "(i) distinct substrate-IS pillar": {
+        "fwd_c2": "Pillar II (Mellin-Barnes residue)",
+        "fwd_c1": "Pillar I (n_s spectral-action)",
+        "distinct": true
+      },
+      "(ii) distinct laboratory-IN pillar": {
+        "fwd_c2": "Pillar V (BdG spectral triple)",
+        "fwd_c1": "Pillar II (Planck CMB)",
+        "distinct": true
+      },
+      "(iii) distinct bridge map class": {
+        "fwd_c2": "Connes-Karoubi pairing (TBD at \u00a7VII.AV landing)",
+        "fwd_c1": "HKR",
+        "distinct": true
+      },
+      "(iv) independent algebraic envelope": {
+        "fwd_c2_envelope": "alpha=5.0679 from A.26 (Casimir-bound proxy; Level-2-binding via Pillar III <-> Pillar IV \u00a7VII.AF.1.OP-PROJ HKR anchor)",
+        "fwd_c1_envelope": "FWD-C1 envelope from W3 A.9 closed-form derivation (independent chain)",
+        "independent": true
+      }
+    },
+    "disjunction_i_ii_iii_TRUE": true,
+    "iv_TRUE": true,
+    "HIT_PASS": true
+  },
+  "anatomy_5_complete": true,
+  "n_anatomy_declared": 5,
+  "ladder_3_complete": true,
+  "n_levels_declared": 3,
+  "level_2_sub_class_explicit": true,
+  "corner_cell": "IV",
+  "corner_cell_description": "Cell IV: algebra-DEPENDENT \u00d7 substrate-distance-2 (state-pair functional family at substrate-distance-2 pole s=4); FWD-C2 substrate-IS observable (Pillar II Mellin-Barnes residue) c-projects to Cell IV via the K-window log-derivative anchor inherited from A.25",
+  "cross_corner_co_primary_check": "PASS-distinct-corners",
+  "cross_corner_explanation": "Singleton outcome at Cell IV: only one corner declared; no co-primary structure across cells; registry-landing.md \u00a7'SOURCE-DOUBLE-CITE-CO-PRIMARY' criterion (4) trivially satisfied (no cross-corner conflation possible with single-cell anchor).",
+  "proposed_registry_slot": "\u00a7VII.AV",
+  "proposed_stage_tag": "STAGE-1-CANDIDATE",
+  "sign_verdict": "N/A",
+  "magnitude_verdict": "PASS",
+  "regime_verdict": "VALID",
+  "composite_verdict": "PASS",
+  "predecessor_status": "INFO",
+  "a25_L_emp_canonical": -7.046336474406761,
+  "a26_envelope_alpha": 5.067867967547219,
+  "a26_envelope_R_squared": 0.9244214792121855,
+  "a26_hkr_bridge_identified": true,
+  "a26_level_2_binding_class": "Level-2-binding"
+}

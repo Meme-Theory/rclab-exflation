@@ -45,13 +45,13 @@ Session 19 proposed five physical claims. Some of you dismissed them as philosop
 ### Claim D: Time from Modular Flow
 > The self-interference of phonon propagation generates causal ordering — time emerges from the spectrum.
 
-**What this means operationally**: The Connes-Rovelli thermal time hypothesis, applied to the spectral state on SU(3), means the modular flow IS time. The fundamental time unit is computable from the spectrum. If the modular flow convergence timescale (~1 Gyr from the Einstein-Connes throughline) is a prediction and not an input, it distinguishes this framework from ΛCDM. This is a Tier 2 target — note it, don't compute it this session unless you finish everything else.
+**What this means operationally**: The Connes-Rovelli thermal time hypothesis, applied to the spectral state on SU(3), means the modular flow IS time. The fundamental time unit is computable from the spectrum. If the modular flow convergence timescale (~1 Gyr from the Einstein-Connes throughline) is a prediction and not an input, it distinguishes this framework from ΛCDM. This is a Level 2 target — note it, don't compute it this session unless you finish everything else.
 
 ---
 
 ## III. Session 25 Proposed Computational Goals
 
-### Tier 1: MUST COMPUTE (existing data, no new theory)
+### Level 1: MUST COMPUTE (existing data, no new theory)
 
 These three computations use data already in s23a and s24a. They can be done in a single session. Each evades at least two walls. Each has expected Bayes factor above 1.0.
 
@@ -116,7 +116,7 @@ If Φ crosses π/2 or π, the adiabatic approximation breaks down. Non-adiabatic
 
 ---
 
-### Tier 2: SHOULD COMPUTE (partial data or theory development needed)
+### Level 2: SHOULD COMPUTE (partial data or theory development needed)
 
 **Goal 4: Spectral Flow / Eta Invariant (Path 2)**
 Check whether ANY eigenvalue in ANY sector crosses zero as τ goes from 0 to 0.5. Use multi-sector eigenvalue data at p+q ≤ 6. If spectral flow is nontrivial, it contributes a TOPOLOGICAL term to the effective action that is invisible to every perturbative computation. This evades all four walls simultaneously.
@@ -129,7 +129,7 @@ Compute d_s(σ, τ) including the 741,636 bosonic DOF from TT 2-tensor modes. Se
 
 ---
 
-### Tier 3: Proposed HORIZON TARGETS (theoretical development)
+### Level 3: Proposed HORIZON TARGETS (theoretical development)
 
 **Goal 7: Self-Consistent Chemical Potential**
 Derive the backreaction equation: in a cosmological background with radiation density ρ₄, does backreaction create μ_eff ~ √(ρ₄/M_KK²)? At the Planck epoch, μ_eff ~ M_Pl would swamp the spectral gap, and the BCS mechanism (which K-1e showed is strong enough when μ = λ_min: M ~ 11 ≫ 1) would operate. The problem was never the coupling strength — it was the gap. This path closes W3.
@@ -161,12 +161,12 @@ Current framework posterior: ~3% (from Session 24 addendum).
 
 If all seven paths fail: posterior drops to ~1.5% and we have an extraordinarily well-characterized impossibility result — publishable in its own right.
 
-If ONE of the Tier 1 goals succeeds:
+If ONE of the Level 1 goals succeeds:
 - Goal 1 (graded sum minimum): posterior → 12–16%
 - Goal 2 (finite-Λ minimum): posterior → 10–14%
 - Goal 3 (Berry phase transition): posterior → 8–12%
 
-Expected posterior from pursuing all Tier 1 goals: ~10%. The information value of computation is positive. We are not yet at the point where further work teaches us nothing.
+Expected posterior from pursuing all Level 1 goals: ~10%. The information value of computation is positive. We are not yet at the point where further work teaches us nothing.
 
 ---
 

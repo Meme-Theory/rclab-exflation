@@ -506,7 +506,7 @@ The phonon-exflation framework makes this identification PHYSICAL: the
 
 ### 10.3 The Dirac Spectrum Computations
 
-The project's Tier 1 computations (Sessions 12-14) are direct implementations
+The project's Level 1 computations (Sessions 12-14) are direct implementations
 of Connes' program:
 
 - **Dirac spectrum on SU(3):** 672x672 matrices from Peter-Weyl decomposition
@@ -602,7 +602,7 @@ directly relevant to the phonon-exflation program:
 ### 11.1 Compute the FULL Dirac Spectrum
 
 Not just the low-lying eigenvalues, but the full spectrum of D_K on a specific
-internal geometry. The project's Tier 1 computation (p+q <= 6, 672x672
+internal geometry. The project's Level 1 computation (p+q <= 6, 672x672
 matrices) is a major step but still truncated. Convergence of Seeley-DeWitt
 coefficients at p+q = 5-6 is in progress.
 
@@ -625,7 +625,7 @@ fluctuations of the metric, the Dirac operator, and the algebra simultaneously.
 
 Derive NUMERICAL PREDICTIONS (mass ratios, mixing angles) from the spectral
 data of a specific internal geometry. This is the explicit goal of the
-phonon-exflation Tier 1-2 computation program.
+phonon-exflation Level 1-2 computation program.
 
 
 ---

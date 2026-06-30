@@ -1,0 +1,150 @@
+{
+  "gate_id": "S88-CF-CURV-16-U1-BBN-CHUNKY-HAWKING-METALLICITY",
+  "schema_version": "S87+",
+  "wave": "W1c",
+  "wp_id": "\u00a7W1c-69",
+  "scheme": "Wagoner-BBN-network-non-thermal-injection-cascade-tail-Hawking-F-H5-amplification-LRD-progenitor-metallicity-excess",
+  "convention": "n_PBH-band-from-CF-CURV-6-Lh-Page1976-FH5-1.27pct-protocol-preregistration-S88",
+  "L_max": "N/A_observational",
+  "audit_sha256": "2afd17ef99c81123548642938a4053fb82ea075ea626b5fe6afcbcb73215ed5d",
+  "content_sha256": "5d2597a55ecfa8696b9e91f894b083cdbda862c7272c1df44025168ae93c122a",
+  "wagoner_bbn_network_specification": {
+    "implementation": "in-house simplified 8-isotope ODE network",
+    "literature_basis": [
+      "Wagoner 1973 ApJS 18, 247 (Wagoner network)",
+      "Smith, Kawano, Malaney 1993 ApJS 85, 219",
+      "Cyburt+16 RMP 88, 015004 (canonical baselines)",
+      "Pisanti+21 PArthENoPE 3.0 (production-grade reference; not invoked locally)"
+    ],
+    "isotopes_tracked": [
+      "H",
+      "n",
+      "D",
+      "T",
+      "3He",
+      "4He",
+      "7Li",
+      "Z(A>=12)"
+    ],
+    "canonical_baselines_Cyburt_16": {
+      "Y_p_He4_mass_fraction": 0.247,
+      "DH_ratio": 2.5e-05,
+      "Li7H_ratio": 5e-10
+    },
+    "ODE_integration_method": "scipy.integrate.odeint",
+    "integration_tolerance": {
+      "rtol": 1e-09,
+      "atol": 1e-15
+    },
+    "random_seed": 1729,
+    "t_BBN_s": 1000.0
+  },
+  "non_thermal_injection_branching_ratios": {
+    "n_gamma_channel_amplification": 0.0127,
+    "gamma_n_channel_amplification": 0.0127,
+    "branching_to_metals_fraction": 0.01,
+    "F_H5_provenance": "S87 J8 PROVEN (pixelation-lock workshop closure)",
+    "MeV_scale_amplification": "+1.27% on (n,gamma) and (gamma,n) channels"
+  },
+  "cascade_tail_hawking_spectrum": {
+    "M_PBH_kg": 10000000000000.0,
+    "M_PBH_band_kg": [
+      1000000000000.0,
+      100000000000000.0
+    ],
+    "g_BBN_cascade_generations": 322,
+    "L_H_canonical_W": 3.5e+19,
+    "L_H_direct_Page_1976_eq1_W": 3561622.1425962206,
+    "L_H_table1_scaled_W": 3.500000000000001e+19,
+    "L_H_provenance": "Page 1976 Table 1 photon+e+nu+back-reaction at M=5e11 kg = 1.4e22 W; M^-2 scaling to M=1e13 kg gives 3.5e19 W (canonical convention). Direct photon-only steady-state Page Eq.(1) gives 3.56e6 W; the ~13 OOM gap between the two reflects time-evolution + multi-species back-reaction included in Table 1 but not in the photon-only steady form."
+  },
+  "n_PBH_band_propagation": {
+    "n_PBH_band_lo_m3": 1e-30,
+    "n_PBH_band_hi_m3": 1e-20,
+    "n_PBH_grid_m3": [
+      1e-28,
+      1e-25,
+      1e-22
+    ],
+    "delta_zh_dex_at_grid": [
+      1.2048835504081154e-06,
+      0.00120321691962123,
+      0.5768422567002656
+    ],
+    "inj_MeV_per_s_per_baryon_at_grid": [
+      2.18452815e-05,
+      0.0218452815,
+      21.8452815
+    ],
+    "n_PBH_for_PASS_magnitude_target_m3": 5.449514381831874e-23,
+    "n_PBH_PASS_magnitude_target_dex": 0.4
+  },
+  "predicted_zh_excess_at_three_grid_points": {
+    "nPBH_1e-28_dex": 1.2048835504081154e-06,
+    "nPBH_1e-25_dex": 0.00120321691962123,
+    "nPBH_1e-22_dex": 0.5768422567002656
+  },
+  "observational_comparison_band": {
+    "Maiolino24_z_6_LRD_dex_lo": 0.3,
+    "Maiolino24_z_6_LRD_dex_hi": 0.5,
+    "Maiolino24_central_dex": 0.4,
+    "Maiolino24_citation": "Maiolino et al. 2024, Nature Astronomy, JADES NIRSpec absorption-line LRD-host metallicity",
+    "Bunker23_central_dex": 0.4,
+    "Bunker23_sigma_dex": 0.2,
+    "Bunker23_citation": "Bunker et al. 2023, A&A, JADES Initial Data Release z=7-8 LRD-progenitor environments"
+  },
+  "verdict_bands": {
+    "PASS_magnitude_band_dex": 0.3,
+    "INFO_band_lo_dex": 0.3,
+    "INFO_band_hi_dex": 1.0,
+    "FAIL_band_dex": 1.0,
+    "PASS_DETECT_window_dex": [
+      0.0,
+      0.6
+    ],
+    "INFO_DETECT_window_dex": [
+      0.6,
+      1.5
+    ],
+    "FAIL_DETECT_window_dex": ">1.5"
+  },
+  "JWST_cycle_3_plus_observational_watch": {
+    "status": "PRE-REGISTERED",
+    "horizon_quarter": "Q3 2026+",
+    "refinement_target": "absorption-line LRD-host-galaxy metallicity precision narrowing of Maiolino+24 + Bunker+23 envelope",
+    "carry_forward_S89": "S89-NPBH-BAND-NARROWING-FROM-LRD-METALLICITY-FEEDBACK-TO-CF-CURV-6"
+  },
+  "falsifier_master_inventory_row_prepared": {
+    "row_id": "U1-BBN-CHUNKY-HAWKING-METALLICITY",
+    "watchlist_entry": "JWST cycle-3+ absorption-line LRD-host-galaxy [Z/H] excess refinement",
+    "substrate_prediction": "delta[Z/H] = log10(1 + n_PBH * L_H * F-H5 * branching * t_BBN / (n_baryon * E_baryon)); PASS-magnitude window n_PBH ~ 5.45e-23 m^-3",
+    "sole_writer": "mack-cosmic-bridge (per feedback_mack-bridge-role.md)",
+    "row_status": "PROTOCOL_PRE_REGISTERED_ROW_DRAFT_FOR_MACK_LANDING"
+  },
+  "cross_links": {
+    "W1a_CF_CURV_6_n_PBH_pin": {
+      "gate_id": "S88-CF-CURV-6-N-PBH-PER-CASCADE-GENERATION",
+      "audit_sha256": "<computed-at-dispatch>",
+      "fallback": "CF-CURV-6 PASS band [1e-30, 1e-20] m^-3 mid-band 1e-25 baseline"
+    },
+    "W1a_CF_CURV_7_cascade_tail_mass_pin": {
+      "gate_id": "S88-CF-CURV-7-BULK-CASCADE-GGE-ENERGY-BOOKKEEPING",
+      "audit_sha256": "b3f0210d3f2488f68ae5307b296624bbfb887ede26a3bc1efdfa6deef4772adb",
+      "value_substrate_clock_vs_FRW_proper_time_ratio": "1.1606e-103"
+    },
+    "S87_J8_F_H5_pin": {
+      "verdict": "PROVEN at S87 pixelation-lock workshop",
+      "F_H5_value": 0.0127
+    }
+  },
+  "substitution_chain": {
+    "step_1_definition": "dE_inject/dt/n_baryon = n_PBH * L_H / n_baryon",
+    "step_2_substitution": "n_PBH=1e-25 m^-3 (mid-band), L_H=3.50e+19 W (Page 1976 Table 1 scaled), n_baryon=1e+09 m^-3",
+    "step_3_simplify": "injection_per_baryon = 2.185e-02 MeV/s/baryon",
+    "step_4_direction": "SIGN(delta[Z/H]) > 0 strictly: all factors (n_PBH, L_H, F-H5, branching) positive => predicted excess is positive",
+    "step_5_integrate": "delta_excess = inj * t_BBN * F-H5 * branching = 1.203e-03 dex at mid-band",
+    "step_6_dex_conversion": "delta[Z/H] = log10(1 + delta_excess); mid=1.203e-03 dex, upper=5.768e-01 dex, lower=1.205e-06 dex",
+    "step_7_conclusion": "delta[Z/H] scales linearly with n_PBH; PASS-magnitude window 5.45e-23 m^-3 (substrate-side n_PBH narrowing constraint feeds back into W1a-59 CF-CURV-6 verdict at S89+)"
+  },
+  "substrate_framing": "The substrate IS the cascade-tail-Hawking-radiation source. JWST measures absorption-line metallicity IN the LRD-host-galaxy spectrum (NIRSpec MSA absorption-line spectroscopy through host-galaxy ISM); the cascade-tail Hawking radiation injecting non-thermal MeV-scale energy into the BBN plasma IS the substrate's pixelation-lock end-state radiation chain at the BBN epoch. The Wagoner BBN nucleosynthesis network is the emergent-physics consequence of substrate-injection; the [Z/H] excess at LRD-progenitor environments is the emergent observable. Direction of explanation: substrate cascade physics -> cascade-tail Hawking + F-H5 amplification -> non-thermal MeV-scale injection into BBN plasma -> Wagoner network forward-calculation -> emergent [Z/H] excess -> JWST observable."
+}

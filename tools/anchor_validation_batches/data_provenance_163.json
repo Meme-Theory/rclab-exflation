@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 163,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1621",
+      "anchor_type": "data_provenance",
+      "name": "w1_g3_regulator_priority_proof",
+      "script_path": "session-83/s83_w1_g3_regulator_priority_proof.py",
+      "session": "s83",
+      "inputs": "",
+      "outputs": "session-83/s83_w1_g3_regulator_priority_proof.npz",
+      "source_file": "computations/session-83/s83_w1_g3_regulator_priority_proof.py",
+      "source_context_30_lines": "   75: PROJECT_ROOT = SCRIPT_DIR.parent\n   76: \n   77: SESSION = \"S83\"                                                 # (local)\n   78: GATE_ID = \"S83-SUBSTRATE-NATIVE-REGULATOR-PRIORITY-CONJECTURE\"  # (local)\n   79: SCHEME = \"zeta-vs-alternatives\"                                 # (local)\n   80: CONVENTION = \"A1-A6-axioms\"                                     # (local)\n   81: L_MAX = 5                                                       # (local) task-pinned\n   82: \n   83: OUT_NPZ = SCRIPT_DIR / \"s83_w1_g3_regulator_priority_proof.npz\"\n   84: OUT_PNG = SCRIPT_DIR / \"s83_w1_g3_regulator_priority_proof.png\"\n   85: VERDICT_TXT = SCRIPT_DIR / \"s83_gate_verdicts.txt\"\n   86: SPECTRUM_CACHE = SCRIPT_DIR / \"s74_spectrum_cache_L9_tau019.npz\"  # (local)\n   87: \n   88: INPUT_FILES = [\n   89:     SCRIPT_DIR / \"canonical_constants.py\",\n   90:     SPECTRUM_CACHE,\n   91: ]"
+    },
+    {
+      "anchor_id": "prov_1622",
+      "anchor_type": "data_provenance",
+      "name": "w1_g4_epsilon_h_trajectory_fi",
+      "script_path": "session-83/s83_w1_g4_epsilon_h_trajectory_fi.py",
+      "session": "s83",
+      "inputs": "",
+      "outputs": "session-83/s83_w1_g4_epsilon_h_trajectory_fi.npz, session-83/s83_w1_g4_epsilon_h_trajectory_fi.png",
+      "source_file": "computations/session-83/s83_w1_g4_epsilon_h_trajectory_fi.py",
+      "source_context_30_lines": "  441: value_tag = f\"F_traj={F_traj:.6f}_substrate-derivable={substrate_derivable}\"\n  442: four_tuple = f\"(value={value_tag}, scheme={scheme_tag}, convention={convention_tag}, L_max={Lmax_tag})\"\n  443: print(f\"4-tuple: {four_tuple}\")\n  444: print(\"-\" * 74)\n  445: \n  446: # ============================================================================\n  447: # 10. DATA FILE + PLOT\n  448: # ============================================================================\n  449: NPZ_PATH = SCRIPT_DIR / \"s83_w1_g4_epsilon_h_trajectory_fi.npz\"\n  450: np.savez_compressed(\n  451:     NPZ_PATH,\n  452:     N_axis=N_axis,\n  453:     eps_H_zeta=eps_H_of_N['zeta'],\n  454:     eps_H_Zubarev=eps_H_of_N['Zubarev'],\n  455:     eps_H_SDW=eps_H_of_N['SDW'],\n  456:     P_zeta_zeta=P_zeta_of_N['zeta'],\n  457:     P_zeta_Zubarev=P_zeta_of_N['Zubarev'],"
+    },
+    {
+      "anchor_id": "prov_1623",
+      "anchor_type": "data_provenance",
+      "name": "w1_g5_four_axis_decomposition",
+      "script_path": "session-83/s83_w1_g5_four_axis_decomposition.py",
+      "session": "s83",
+      "inputs": "",
+      "outputs": "session-83/s83_w1_g5_four_axis_decomposition.npz, session-83/s83_w1_g5_four_axis_decomposition.png",
+      "source_file": "computations/session-83/s83_w1_g5_four_axis_decomposition.py",
+      "source_context_30_lines": "   13: Tests:\n   14:   (A) Orthogonality:  |G[i,j]| < 0.1 for all i != j (G = normalized Gram / corr)\n   15:   (B) Completeness:   every row classified; no structural ambiguity\n   16:   (C) Atomicity:      no axis linearly recoverable from the other three\n   17:                        (checked via rank + explained-variance R^2)\n   18: \n   19: Owner: lizzi-spectral-functional-theorist\n   20: Output:\n   21:   s83_w1_g5_four_axis_decomposition.npz\n   22:   s83_w1_g5_four_axis_decomposition.png\n   23: \"\"\"\n   24: \n   25: from __future__ import annotations\n   26: \n   27: import os\n   28: \n   29: os.environ.setdefault(\"OMP_NUM_THREADS\", \"8\")"
+    },
+    {
+      "anchor_id": "prov_1624",
+      "anchor_type": "data_provenance",
+      "name": "w1_g6_fi_duality_theorem",
+      "script_path": "session-83/s83_w1_g6_fi_duality_theorem.py",
+      "session": "s83",
+      "inputs": "",
+      "outputs": "session-83/s83_w1_g6_fi_duality_theorem.npz",
+      "source_file": "computations/session-83/s83_w1_g6_fi_duality_theorem.py",
+      "source_context_30_lines": "   72: # Canonical constants (even though this gate is pure bookkeeping, import per\n   73: # computation standards so downstream audits see the compliant header).\n   74: sys.path.insert(0, str(Path(__file__).resolve().parent))\n   75: from canonical_constants import (  # noqa: F401\n   76:     M_KK, tau_fold, Delta_BCS, v_ew, planck_ns,\n   77: )\n   78: \n   79: SCRIPT_DIR = Path(__file__).resolve().parent                       # (local)\n   80: OUT_NPZ    = SCRIPT_DIR / \"s83_w1_g6_fi_duality_theorem.npz\"       # (local)\n   81: VERDICT_F  = SCRIPT_DIR / \"s83_gate_verdicts.txt\"                  # (local)\n   82: GATE_ID    = \"S83-FI-DUALITY-THEOREM-FORMALIZATION\"                # (local)\n   83: \n   84: # --------------------------------------------------------------------------\n   85: # 1. Canonical 42-row atlas (source: s82-regulator-dressing-taxonomy.md\n   86: #    lines 138-180; lizzi R2-A Table; connes Re:L3 count-verification).\n   87: # --------------------------------------------------------------------------\n   88: #"
+    },
+    {
+      "anchor_id": "prov_1625",
+      "anchor_type": "data_provenance",
+      "name": "w2_g10_as_ledger_meta",
+      "script_path": "session-83/s83_w2_g10_as_ledger_meta.py",
+      "session": "s83",
+      "inputs": "",
+      "outputs": "session-83/s83_w2_g10_as_ledger_meta.npz",
+      "source_file": "computations/session-83/s83_w2_g10_as_ledger_meta.py",
+      "source_context_30_lines": "   92: # -----------------------------------------------------------------\n   93: # 1. Path setup\n   94: # -----------------------------------------------------------------\n   95: SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))                    # (local)\n   96: VERDICT_PATH = os.path.join(SCRIPT_DIR, \"s83_gate_verdicts.txt\")           # (local)\n   97: G7_DATA = os.path.join(SCRIPT_DIR, \"s83_w2_g7_cc7_dynamical.npz\")          # (local)\n   98: G8_DATA = os.path.join(SCRIPT_DIR, \"s83_w2_g8_cc7_lsz_thouless.npz\")       # (local)\n   99: G9_DATA = os.path.join(SCRIPT_DIR, \"s83_w2_g9_cc7_uv_decay.npz\")           # (local)\n  100: OUT_NPZ = os.path.join(SCRIPT_DIR, \"s83_w2_g10_as_ledger_meta.npz\")        # (local)\n  101: \n  102: SUB_GATES = [                                                               # (local)\n  103:     (\"G7\", \"S83-CC7-DYNAMICAL\"),\n  104:     (\"G8\", \"S83-CC7-LSZ-THOULESS\"),\n  105:     (\"G9\", \"S83-CC7-UV-DECAY\"),\n  106: ]\n  107: \n  108: # -----------------------------------------------------------------"
+    },
+    {
+      "anchor_id": "prov_1626",
+      "anchor_type": "data_provenance",
+      "name": "w2_g11_nnlo_band_bound",
+      "script_path": "session-83/s83_w2_g11_nnlo_band_bound.py",
+      "session": "s83",
+      "inputs": "",
+      "outputs": "session-83/s83_w2_g11_nnlo_band_bound.npz, session-83/s83_w2_g11_nnlo_band_bound.png",
+      "source_file": "computations/session-83/s83_w2_g11_nnlo_band_bound.py",
+      "source_context_30_lines": "  573: print()\n  574: \n  575: # ============================================================\n  576: # SECTION 8: Save NPZ artifact\n  577: # ============================================================\n  578: print(\"[SEC 8] Save NPZ artifact\")\n  579: print(\"-\" * 72)\n  580: \n  581: npz_out_path = os.path.join(HERE, 's83_w2_g11_nnlo_band_bound.npz')  # (local)\n  582: np.savez(\n  583:     npz_out_path,\n  584:     # Anchors\n  585:     sigma_floor_SU_inf=SIGMA_FLOOR_SU_INF,\n  586:     sigma_ceil_SU3_W12=SIGMA_CEIL_SU3_W12,\n  587:     sigma_ceil_SU3_target=SIGMA_CEIL_SU3_TARGET,\n  588:     Delta_obs=Delta_obs,\n  589:     # Bands"
+    },
+    {
+      "anchor_id": "prov_1627",
+      "anchor_type": "data_provenance",
+      "name": "w2_g12_dressing_tau_flow",
+      "script_path": "session-83/s83_w2_g12_dressing_tau_flow.py",
+      "session": "s83",
+      "inputs": "s83_w1_g4_epsilon_h_trajectory_fi.npz",
+      "outputs": "session-83/s83_w2_g12_dressing_tau_flow.npz, session-83/s83_w2_g12_dressing_tau_flow.png",
+      "source_file": "computations/session-83/s83_w2_g12_dressing_tau_flow.py",
+      "source_context_30_lines": "  430: \n  431: print(\"-\" * 74)\n  432: \n  433: # ============================================================================\n  434: # 8. OUTPUT: .npz DATA, .png PLOT\n  435: # ============================================================================\n  436: \n  437: # Save data file\n  438: out_npz = SCRIPT_DIR / 's83_w2_g12_dressing_tau_flow.npz'\n  439: np.savez(\n  440:     str(out_npz),\n  441:     tau_grid=tau_grid,\n  442:     F_amp_vals=F_amp_vals,\n  443:     c_sub_vals=c_sub_vals,\n  444:     f_conv_vals=f_conv_vals,\n  445:     V_vals=V_vals,\n  446:     Vp_vals=Vp_vals,"
+    },
+    {
+      "anchor_id": "prov_1628",
+      "anchor_type": "data_provenance",
+      "name": "w2_g13_jensen_flow_trajectory",
+      "script_path": "session-83/s83_w2_g13_jensen_flow_trajectory.py",
+      "session": "s83",
+      "inputs": "",
+      "outputs": "session-83/s83_w2_g13_jensen_flow_trajectory.npz, session-83/s83_w2_g13_jensen_flow_trajectory.png",
+      "source_file": "computations/session-83/s83_w2_g13_jensen_flow_trajectory.py",
+      "source_context_30_lines": "  517: four_tuple = (f\"(value={value_tag}, scheme={scheme_tag}, \"\n  518:               f\"convention={convention_tag}, L_max={Lmax_tag})\")\n  519: print(f\"4-tuple: {four_tuple}\")\n  520: print(\"-\" * 74)\n  521: \n  522: # ============================================================================\n  523: # 9. DATA FILE + PLOT\n  524: # ============================================================================\n  525: NPZ_PATH = SCRIPT_DIR / \"s83_w2_g13_jensen_flow_trajectory.npz\"\n  526: np.savez_compressed(\n  527:     NPZ_PATH,\n  528:     N_axis=N_axis,\n  529:     tau_zeta=tau_by_R['zeta'],\n  530:     tau_Zubarev=tau_by_R['Zubarev'],\n  531:     tau_SDW=tau_by_R['SDW'],\n  532:     a_zeta=a_by_R['zeta'],\n  533:     eps_H_zeta=eps_H_by_R['zeta'],"
+    },
+    {
+      "anchor_id": "prov_1629",
+      "anchor_type": "data_provenance",
+      "name": "w2_g14_cs_regulator_dependence",
+      "script_path": "session-83/s83_w2_g14_cs_regulator_dependence.py",
+      "session": "s83",
+      "inputs": "",
+      "outputs": "session-83/s83_w2_g14_cs_regulator_dependence.npz, session-83/s83_w2_g14_cs_regulator_dependence.png",
+      "source_file": "computations/session-83/s83_w2_g14_cs_regulator_dependence.py",
+      "source_context_30_lines": "  107: PROJECT_ROOT = SCRIPT_DIR.parent\n  108: \n  109: SESSION = \"S83\"                                    # (local)\n  110: GATE_ID = \"S83-CS-REGULATOR-DEPENDENCE\"            # (local)\n  111: SCHEME = \"zeta+Zubarev+SDW\"                        # (local)\n  112: CONVENTION = \"Bogoliubov-dispersion\"               # (local)\n  113: L_MAX = 5                                          # (local) task-pinned\n  114: \n  115: OUT_NPZ = SCRIPT_DIR / \"s83_w2_g14_cs_regulator_dependence.npz\"\n  116: OUT_PNG = SCRIPT_DIR / \"s83_w2_g14_cs_regulator_dependence.png\"\n  117: VERDICT_TXT = SCRIPT_DIR / \"s83_gate_verdicts.txt\"\n  118: SPECTRUM_CACHE = SCRIPT_DIR / \"s74_spectrum_cache_L9_tau019.npz\"  # (local)\n  119: \n  120: INPUT_FILES = [\n  121:     SCRIPT_DIR / \"canonical_constants.py\",\n  122:     SPECTRUM_CACHE,\n  123:     SCRIPT_DIR / \"s83_w2_g14_cs_regulator_dependence.py\","
+    },
+    {
+      "anchor_id": "prov_1630",
+      "anchor_type": "data_provenance",
+      "name": "w2_g15_k_a2_canonical_range",
+      "script_path": "session-83/s83_w2_g15_k_a2_canonical_range.py",
+      "session": "s83",
+      "inputs": "",
+      "outputs": "session-83/s83_w2_g15_k_a2_canonical_range.npz, session-83/s83_w2_g15_k_a2_canonical_range.png",
+      "source_file": "computations/session-83/s83_w2_g15_k_a2_canonical_range.py",
+      "source_context_30_lines": "  129: PROJECT_ROOT = SCRIPT_DIR.parent\n  130: \n  131: SESSION = \"S83\"                                       # (local)\n  132: GATE_ID = \"S83-K-A2-CANONICAL-RANGE\"                  # (local)\n  133: SCHEME = \"5-regulators\"                               # (local)\n  134: CONVENTION = \"Lambda_Z-M_KK-headline\"                 # (local)\n  135: L_MAX = 5                                             # (local) task-pinned\n  136: \n  137: OUT_NPZ = SCRIPT_DIR / \"s83_w2_g15_k_a2_canonical_range.npz\"\n  138: OUT_PNG = SCRIPT_DIR / \"s83_w2_g15_k_a2_canonical_range.png\"\n  139: VERDICT_TXT = SCRIPT_DIR / \"s83_gate_verdicts.txt\"\n  140: SPECTRUM_CACHE = SCRIPT_DIR / \"s74_spectrum_cache_L9_tau019.npz\"  # (local)\n  141: \n  142: INPUT_FILES = [\n  143:     SCRIPT_DIR / \"canonical_constants.py\",\n  144:     SPECTRUM_CACHE,\n  145:     SCRIPT_DIR / \"s83_w2_g15_k_a2_canonical_range.py\","
+    }
+  ]
+}

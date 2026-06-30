@@ -1,0 +1,431 @@
+==============================================================================
+LEPTO-CP-60: Majorana Leptogenesis from B3 Sector
+==============================================================================
+  Date: 2026-03-27
+  M_KK (gravity route): 7.4287e+16 GeV
+  M_KK (Kerner route): 5.0417e+17 GeV
+  tau_fold = 0.19
+
+
+  Input data loaded:
+    fold_idx = 19, tau_fold_ed = 0.193878
+    E_B3 at fold = [1.00439566 1.07857332 1.1700026 ] M_KK
+    E_B3 in GeV:  7.4613e+16, 8.0124e+16, 8.6916e+16
+    V_B3 (B3 interaction matrix):
+      [0.067985  0.007335  0.073789]
+      [0.007335  0.068139  0.073636]
+      [0.073789  0.073636  0.001684]
+
+==============================================================================
+SECTION 1: NCG CONSTRAINTS ON M_R (CAN IT BE COMPLEX?)
+==============================================================================
+
+  The critical question: does the NCG framework force M_R to be real?
+
+  The answer requires distinguishing TWO Dirac operators:
+
+  (A) D_K: the INTERNAL Dirac operator on K = SU(3), deformed by Jensen parameter.
+      This operator satisfies [J, D_K] = 0 at ALL tau (Theorem T11, S43).
+      J = C_2 * K (charge conjugation x complex conjugation).
+      This is a structural property of left-invariant metrics on SU(3).
+
+  (B) D_F: the FINITE Dirac operator of the NCG Standard Model.
+      This operator encodes Yukawa couplings and Majorana masses.
+      It satisfies J_F D_F = D_F J_F (KO-dim 6: epsilon' = +1).
+      The constraint J_F D_F J_F^{-1} = D_F determines the BLOCK STRUCTURE
+      (S, T) of D_F but does NOT force the entries to be real.
+
+  The NCG axiom on D_F is:
+
+    D_F = ( S    T* )     with J_F D_F J_F^{-1} = D_F
+          ( T    S* )
+
+  This means M_R (in the T block) must be SYMMETRIC: M_R = M_R^T.
+  But M_R can be COMPLEX. The symmetry comes from Fermi statistics
+  of Majorana fields, not from reality of the matrix entries.
+
+  In the standard NCG-SM (Chamseddine-Connes-Marcolli 2007):
+    - M_R is a free parameter: a 3x3 symmetric COMPLEX matrix
+    - It has 6 real + 3 imaginary = 9 real parameters
+    - Rephasing of nu_R removes 2 phases, leaving 1 physical CP phase
+      (the Majorana CP-violating phase delta_M)
+    - This is EXACTLY what is needed for leptogenesis
+
+  KEY DISTINCTION:
+    [J, D_K] = 0 constrains the INTERNAL geometry (SU(3) metric).
+    M_R lives in D_F (finite Dirac operator), NOT in D_K.
+    The mapping D_K -> D_F is: eigenvalue MAGNITUDES -> mass SCALES.
+    The PHASES of M_R are generation-space parameters, not geometric.
+
+  HOWEVER: in the framework, D_K on deformed SU(3) plays the role of
+  D_F. The B3 eigenvalues give the Majorana mass SCALE. But the
+  generation structure (3 generations) comes from Z_3 x Z_3 triality
+  on SU(3) (Baptista Paper 18). The off-diagonal entries of M_R
+  in generation space come from INTER-GENERATION mixing, which is
+  NOT constrained by [J, D_K] = 0 (J acts within each generation).
+
+
+  SCENARIO A: Full D_K = D_F identification (pessimistic)
+    [J, D_K] = 0 => M_R real => no CP violation
+    epsilon_1 = 0 EXACT
+    eta_B = 0 EXACT
+    GATE: FAIL
+
+  SCENARIO B: D_K provides eigenvalues, Z3xZ3 provides mixing (optimistic)
+    M_R has 3 real eigenvalues from D_K + complex mixing from Z3xZ3
+    CP violation possible via Majorana phases
+    Requires: Z3xZ3 triality to generate off-diagonal complex entries
+
+
+==============================================================================
+SECTION 2: MAJORANA MASS MATRIX FROM B3 SECTOR
+==============================================================================
+
+  Right-handed neutrino masses (diagonal M_R):
+    M_1 = 1.004396 M_KK = 7.4613e+16 GeV
+    M_2 = 1.078573 M_KK = 8.0124e+16 GeV
+    M_3 = 1.170003 M_KK = 8.6916e+16 GeV
+    Hierarchy: M_3/M_1 = 1.1649
+    M_2/M_1 = 1.0739
+    Splittings: M_2-M_1 = 0.074178 M_KK
+                M_3-M_2 = 0.091429 M_KK
+
+  Mass hierarchy assessment:
+    M_3/M_1 = 1.1649 (MILD hierarchy)
+    Compare: SM charged leptons have m_tau/m_e ~ 3500
+    The B3 masses are nearly degenerate (within 17%)
+    This is the quasi-degenerate regime for leptogenesis
+
+  M_R (mass eigenbasis, diagonal, REAL):
+    [7.4613e+16  0.0000e+00  0.0000e+00]
+    [0.0000e+00  8.0124e+16  0.0000e+00]
+    [0.0000e+00  0.0000e+00  8.6916e+16]
+
+==============================================================================
+SECTION 3: SCENARIO A — REAL M_R (FULL J-CONSTRAINT)
+==============================================================================
+
+  If [J, D_K] = 0 propagates to the FULL finite Dirac operator D_F,
+  then M_R is forced to be real in the J-symmetric basis.
+  A real M_R can still be diagonalized by a REAL orthogonal rotation.
+  In this case:
+    - The PMNS Majorana phases are 0 or pi
+    - The Dirac CP phase delta is 0 or pi (from T-symmetry)
+    - The leptogenesis CP asymmetry epsilon_1 = 0 EXACTLY
+
+  This is the analog of the BCS result: [J, D_K] = 0 forces
+  the Cooper pair phases to be real (S52 ETA-B-52, three proofs).
+
+  Scenario A result:
+    epsilon_1 = 0.00e+00 (EXACT ZERO)
+    eta_B = 0.00e+00 (EXACT ZERO)
+    GATE STATUS: FAIL (no CP violation)
+
+==============================================================================
+SECTION 4: SCENARIO B — COMPLEX M_R (GENERATION MIXING)
+==============================================================================
+
+  If the Z_3 x Z_3 triality on SU(3) provides complex generation mixing,
+  then M_R has complex off-diagonal entries in the FLAVOR basis even though
+  the MASS eigenvalues are real (from D_K).
+
+  The physical setup:
+    M_R^{flavor} = U^T * M_R^{diag} * U
+  where U is a unitary rotation from generation triality.
+  CP violation comes from Im(U) != 0.
+
+  The Dirac Yukawa matrix m_D also gets complex entries from the same
+  generation mixing. The CP asymmetry depends on both M_R and m_D.
+
+  We parameterize the generation mixing matrix U using the framework's
+  known geometric structure: V_B3 (the B3-B3 interaction matrix) provides
+  the natural mixing basis.
+
+  V_B3 eigenvalues: [-0.07202829  0.06072757  0.14910897]
+  V_B3 eigenvectors (columns):
+    v_0 = [-0.408955, -0.407541, 0.816496]
+    v_1 = [-0.706698, 0.707515, -0.000817]
+    v_2 = [0.577350, 0.577350, 0.577350]
+
+  V_B3 is real and symmetric => eigenvectors are REAL
+  => Even with generation mixing from V_B3, M_R remains REAL
+  => Scenario B REDUCES to Scenario A within B3 sector alone
+
+  Inter-sector couplings:
+    V(B3,B2) max = 0.026537 M_KK
+    V(B3,B1) max = 5.772959e-30 M_KK
+    V(B3,B1) ~ machine epsilon (B1 is singlet, selection rule)
+    All V entries are REAL (from [J, D_K] = 0)
+    => No complex phases from inter-sector coupling either
+
+==============================================================================
+SECTION 5: STRUCTURAL THEOREM — J-CONSTRAINT KILLS LEPTOGENESIS CP
+==============================================================================
+
+  THEOREM (J-reality of Majorana sector):
+
+  In the phonon-exflation framework, the internal Dirac operator D_K
+  on deformed SU(3) satisfies [J, D_K] = 0 (Theorem T11).
+
+  All operators derived from D_K — including the effective interaction
+  matrix V_kl, the BCS pairing matrix, and the B3 sub-block that encodes
+  the Majorana mass matrix — inherit J-symmetry.
+
+  Consequence: In any basis, M_R can be made REAL by a J-compatible
+  change of basis. The physical Majorana CP phases are 0 or pi.
+
+  PROOF:
+  1. [J, D_K] = 0 at all tau (T11, proven S43).
+  2. The Kosmann-lifted interaction V = pi_spin(R_{g_tau}) is real-valued
+     in the Peter-Weyl basis (D_K block-diagonal theorem, S22b).
+  3. The B3 sub-block V_B3 is real symmetric: V_B3 = V_B3^T = V_B3*.
+  4. M_R is constructed from D_K eigenvalues (diagonal, real) and V_B3
+     (mixing, real). Therefore M_R is real symmetric in the natural basis.
+  5. A real symmetric M_R is diagonalized by a REAL orthogonal matrix O:
+     M_R = O * diag(M_1, M_2, M_3) * O^T.
+  6. The Dirac Yukawa Y_nu is also real (same J-argument).
+  7. CP asymmetry: epsilon_i ~ Im[(Y^dag Y)^2_{ij}] = 0 (all entries real).
+  QED.
+
+  This is the SAME structural mechanism that killed BCS baryogenesis
+  (S52 ETA-B-52, S59 BARYON-DIAGNOSTIC-59). J-symmetry is the universal
+  CP shield in this framework.
+
+  ESCAPE ROUTES (for future sessions):
+  (E1) J-breaking at energies >> M_KK (UV completion beyond NCG axioms)
+  (E2) Gravitational anomaly (non-perturbative J-breaking via instantons)
+  (E3) Twisted spectral triple (Connes-Devastato-Lizzi: first-order
+       condition relaxed, M_R can acquire complex entries)
+  (E4) Higher-order spectral action terms (beyond heat kernel a_4)
+  (E5) Cosmological J-breaking (time-dependent J during transit?)
+
+
+==============================================================================
+SECTION 6: DAVIDSON-IBARRA BOUND (IF M_R WERE COMPLEX)
+==============================================================================
+
+  Even though the framework forces epsilon_1 = 0, it is instructive to
+  compute the MAXIMUM possible epsilon_1 from the Davidson-Ibarra bound,
+  treating the B3 eigenvalues as the RH neutrino masses and assuming
+  maximal CP violation. This quantifies the "gap" that any J-breaking
+  mechanism would need to fill.
+
+  Light neutrino masses (normal ordering, m_1 = 0):
+    m_1 = 0.0000 eV
+    m_2 = 0.008678 eV = 8.6776e-12 GeV
+    m_3 = 0.049528 eV = 4.9528e-11 GeV
+
+  Davidson-Ibarra bound (hierarchical limit):
+    |epsilon_1| <= 3*M_1*m_3 / (16*pi*v^2)
+    |epsilon_1| <= 3 * 7.4613e+16 * 4.9528e-11 / (16*pi*246.0^2)
+    |epsilon_1| <= 3.644561e+00
+
+  N_1 decay width estimate:
+    (Y^dag Y)_{11} ~ m_3 * M_1 / v^2 = 6.106521e+01
+    Gamma_1 = (Y^dag Y)_{11} * M_1 / (8*pi) = 1.8129e+17 GeV
+
+  Mass splittings:
+    Delta M_12 = M_2 - M_1 = 5.5104e+15 GeV
+    Delta M_13 = M_3 - M_1 = 1.2302e+16 GeV
+    Gamma_1 = 1.8129e+17 GeV
+    Delta_M12 / Gamma_1 = 3.0396e-02
+    Delta_M12 / M_1 = 0.073853
+
+  Resonant regime check: Delta_M12 < 10*Gamma_1? True
+    YES: resonant enhancement possible
+
+  Maximum CP asymmetry: |epsilon_1_max| = 5.000000e-01
+
+==============================================================================
+SECTION 7: BARYON ASYMMETRY (HYPOTHETICAL, IF CP WERE NONZERO)
+==============================================================================
+  Washout parameters:
+    m_tilde_1 ~ m_3 = 4.9528e-02 eV
+    m_* = 1.0800e-03 eV
+    Washout regime: STRONG
+    kappa = 1.563059e-03
+
+  Thermal leptogenesis (hypothetical, maximal CP):
+    eta_B = (28/79) * epsilon_1 * kappa / g_*
+    eta_B = (28/79) * 5.0000e-01 * 1.5631e-03 / 106.75
+    eta_B = 2.594827e-06
+    eta_B(obs) = 6.120e-10
+    Ratio eta_B/eta_B(obs) = 4.2399e+03
+    log10(ratio) = 3.63
+
+  Orders of magnitude comparison:
+    eta_B(hypothetical) / eta_B(obs) = 10^{3.63}
+    Assessment: 2-5 OOM off (would be INFO if CP were nonzero)
+
+==============================================================================
+SECTION 8: NON-THERMAL LEPTOGENESIS FROM SHATTERING
+==============================================================================
+
+  The shattering deposits E_exc = 443 * |E_cond| of energy into the
+  GGE relic. If heavy RH neutrinos are produced during this event,
+  their subsequent decay can generate lepton asymmetry.
+
+  Key question: can the shattering produce N_R non-thermally?
+  Answer: YES, if E_exc > M_R (energy budget sufficient).
+
+  Energy budget:
+    E_exc = 60.6248 M_KK = 4.5036e+18 GeV
+    M_1 = 7.4613e+16 GeV
+    M_2 = 8.0124e+16 GeV
+    M_3 = 8.6916e+16 GeV
+    E_exc / M_1 = 60.36
+    E_exc / M_3 = 51.82
+
+  Maximum N_R production:
+    n_NR(max, M_1) = E_exc/M_1 = 60.36
+    n_NR(max, M_3) = E_exc/M_3 = 51.82
+    Realistic (10% of QP energy -> N_R): 6.04
+
+  Non-thermal leptogenesis estimate:
+    n_NR = 0.1 * n_pairs = 6.0
+    T_acoustic = 0.112 M_KK = 8.3201e+15 GeV
+    epsilon_1 (if maximal CP) = 5.0000e-01
+    eta_B (non-thermal, maximal CP) ~ 9.9274e-05
+    eta_B(obs) = 6.120e-10
+
+
+==============================================================================
+SECTION 9: SEESAW CONSISTENCY CHECK
+==============================================================================
+  Seesaw-predicted Yukawa couplings:
+    Y_1 ~ 0 (m_1 = 0)
+    Y_2 = sqrt(2*m_2*M_2)/v = 4.793566e+00
+    Y_3 = sqrt(2*m_3*M_3)/v = 1.192760e+01
+
+  Perturbativity check:
+    Y_2 / (4*pi) = 3.814599e-01 (OK)
+    Y_3 / (4*pi) = 9.491680e-01 (OK)
+    Compare: top Yukawa Y_t ~ 1.0
+    Y_3/Y_t = 11.9276 (comparable to top Yukawa)
+
+  Seesaw verification (round-trip):
+    m_2(seesaw) = Y_2^2*v^2/(2*M_2) = 0.008678 eV (input: 0.008678 eV)
+    m_3(seesaw) = Y_3^2*v^2/(2*M_3) = 0.049528 eV (input: 0.049528 eV)
+    Fractional error: 1.86e-16, 2.61e-16
+
+  Full seesaw light mass matrix:
+    Eigenvalues: [0.         0.00867756 0.04952777] eV
+    (Input: [0.0000, 0.008678, 0.049528] eV)
+
+==============================================================================
+SECTION 10: tau-DEPENDENCE OF M_R (B3 MASSES vs tau)
+==============================================================================
+  M_R eigenvalues across transit (in M_KK):
+    tau=0.0000: M_1=2.0655, M_2=2.1983, M_3=2.3970, M_3/M_1=1.161
+    tau=0.1020: M_1=1.3994, M_2=1.4987, M_3=1.6189, M_3/M_1=1.157
+    tau=0.1939: M_1=1.0044, M_2=1.0786, M_3=1.1700, M_3/M_1=1.165
+    tau=0.3061: M_1=0.7103, M_2=0.7147, M_3=0.9007, M_3/M_1=1.268
+    tau=0.4082: M_1=0.5143, M_2=0.5928, M_3=0.8571, M_3/M_1=1.667
+    tau=0.5000: M_1=0.5092, M_2=0.6250, M_3=0.6714, M_3/M_1=1.319
+
+  Monotonicity check (all dE/dtau < 0?):
+    M_1: False (min dE/dtau = -0.079958)
+    M_2: False (min dE/dtau = -0.084388)
+    M_3: False (min dE/dtau = -0.093374)
+
+==============================================================================
+SECTION 11: CROSS-CHECKS
+==============================================================================
+  Cross-check 1: M_R comparison with S59
+    S59 estimate: M_R = 7.2669e+16 GeV (used E_B3_mean)
+    This computation: M_1 = 7.4613e+16 GeV
+    Ratio: 0.9739
+    S59 used E_B3_mean = 0.9782 M_KK, we use E_B3[0] = 1.004396 M_KK
+
+  Cross-check 2: epsilon_1 comparison with S59
+    S59 used v_Higgs = 246 GeV and m_nu_3 = 0.05 eV
+    S59 epsilon_1_max = 3.5834e+00
+    This computation epsilon_1_max = 5.0000e-01
+    S59 formula: 3*M_R*m_3 / (16*pi*v^2)
+    S59 used M_R = 7.2669e+16, m_3 = 0.05e-9 GeV, v = 246 GeV
+    S59 recalculated: 3.5834e+00
+    NOTE: S59's epsilon_1_max = 3.5834 is UNPHYSICAL (>1)
+    Davidson-Ibarra bound: epsilon_1 < 1 by unitarity
+    S59 used wrong formula or input. Our result: 5.0000e-01
+
+  Cross-check 3: eta_B(grav) from S59
+    S59: eta_B(grav) = 6.9833e+04 (>> 1, unphysical)
+    This is because R_dot at the fold is enormous in M_KK units
+    The formula assumes thermal equilibrium background
+    NOT applicable to the GGE relic (no B-violating interaction)
+
+  Cross-check 4: Dimensional analysis
+    [M_R] = GeV (mass) -- CHECK
+    [Y_nu] = dimensionless (Yukawa) -- CHECK
+    [m_nu] = Y^2 * v^2 / M_R = GeV^2 / GeV = GeV -- CHECK
+    [epsilon_1] = M * m / v^2 = GeV^2 / GeV^2 = dimensionless -- CHECK
+    [eta_B] = dimensionless (number density ratio) -- CHECK
+
+==============================================================================
+SECTION 12: GATE VERDICT — LEPTO-CP-60
+==============================================================================
+
+  GATE: LEPTO-CP-60
+  VERDICT: FAIL
+  CRITERION: FAIL — NCG axiom [J,D_K]=0 forces M_R real
+              => epsilon_1 = 0 exactly (no CP violation)
+              => eta_B = 0 exactly from leptogenesis
+
+  KEY NUMBERS:
+    M_1 = 7.4613e+16 GeV (lightest RH neutrino)
+    M_2 = 8.0124e+16 GeV
+    M_3 = 8.6916e+16 GeV (heaviest RH neutrino)
+    M_3/M_1 = 1.1649 (quasi-degenerate)
+    epsilon_1 = 0 EXACTLY (J-symmetry structural zero)
+    eta_B = 0 EXACTLY
+    epsilon_1_max (hypothetical, DI bound) = 5.0000e-01
+    eta_B_max (hypothetical) = 2.5948e-06
+    Hypothetical ratio: eta_B_max/eta_B(obs) = 10^{3.6}
+    Y_3 (seesaw Yukawa) = 1.1928e+01 (perturbative)
+    E_exc/M_3 = 51.8 (energy budget OK)
+
+  STRUCTURAL ASSESSMENT:
+    The J-symmetry wall ([J,D_K]=0) that killed BCS baryogenesis
+    (S52 ETA-B-52) also kills Majorana leptogenesis. This is the
+    SAME structural obstruction in a different sector. The framework
+    has zero CP violation in ALL sectors derivable from D_K.
+
+    The 'escape route' identified in S59 BARYON-DIAGNOSTIC-59
+    (leptogenesis via J-breaking Majorana sector) is CLOSED:
+    M_R inherits J-symmetry from D_K and is forced to be real.
+
+    Remaining escape routes require EXTERNAL J-breaking:
+      (E1) UV completion beyond NCG axioms (physics above M_KK)
+      (E2) Twisted spectral triple (Connes-Devastato-Lizzi)
+      (E3) Cosmological CPT violation (time-arrow during transit)
+      (E4) Gravitational CP violation (requires gravitational anomaly)
+
+    The mass budget is NOT the obstruction: E_exc >> M_R, the seesaw
+    works, Yukawas are perturbative. The ONLY problem is CP = 0.
+
+  CONSTRAINT MAP UPDATE:
+    New wall: W_J_Majorana — [J,D_K]=0 forces M_R real in all sectors
+    Structural: same wall as W_J_BCS (S52). Universal CP shield.
+    Surviving region: EXTERNAL J-breaking mechanisms (E1-E4)
+
+  S59 ESCAPE ROUTE (3D) ASSESSMENT:
+    S59 identified 'Leptogenesis via Majorana sector' as UNDETERMINED.
+    We have now DETERMINED it: FAIL.
+    S59's estimate eta_B_lepto_thermal = 1.1898e-04
+    assumed epsilon_1 = epsilon_1_max (Davidson-Ibarra bound).
+    Actual epsilon_1 = 0 (J-symmetry forces it).
+    The S59 estimate was an UPPER BOUND, not a prediction.
+
+==============================================================================
+SAVING RESULTS
+==============================================================================
+  Saved: s60_lepto_cp.npz
+
+  Generating plots...
+  Saved: s60_lepto_cp.png
+
+  Total elapsed: 0.3 s
+
+==============================================================================
+LEPTO-CP-60 COMPLETE
+==============================================================================

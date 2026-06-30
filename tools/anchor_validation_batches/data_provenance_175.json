@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 175,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1741",
+      "anchor_type": "data_provenance",
+      "name": "w4_ska1_phase1_alpha_framework_snr",
+      "script_path": "session-84/s84_w4_ska1_phase1_alpha_framework_snr.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w4_ska1_phase1_alpha_framework_snr.npz",
+      "source_file": "computations/session-84/s84_w4_ska1_phase1_alpha_framework_snr.py",
+      "source_context_30_lines": "   27:   alpha_framework        : read from #38 npz (value, sigma); no recomputation\n   28:   sigma_alpha_SKA1       : 5.118   (plan-authoritative, G45 S83 canonical)\n   29:   sigma_alpha_SKA2       : 0.80    (plan-authoritative, G45 PASS)\n   30:   Threshold              : SNR >= 2\n   31:   SKA-1 timeline         : first-light 2027-Q1, first-science 2027-Q3, Phase-1 full 2029\n   32:   SKA-2 timeline         : 2032-2035 full science operations\n   33: \n   34: Outputs:\n   35:   computations/session-84/s84_w4_ska1_phase1_alpha_framework_snr.py   (this file)\n   36:   computations/session-84/s84_w4_ska1_phase1_alpha_framework_snr.npz\n   37:   verdict line appended to s84_gate_verdicts.txt\n   38:   working-paper section §VI.W4-43 written separately\n   39: \"\"\"\n   40: \n   41: from __future__ import annotations\n   42: \n   43: import hashlib"
+    },
+    {
+      "anchor_id": "prov_1742",
+      "anchor_type": "data_provenance",
+      "name": "w4_uhf_gw_threshold_watch",
+      "script_path": "session-84/s84_w4_uhf_gw_threshold_watch.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w4_uhf_gw_threshold_watch.npz",
+      "source_file": "computations/session-84/s84_w4_uhf_gw_threshold_watch.py",
+      "source_context_30_lines": "  141:   - s77_domain_wall_gw.npz                  (S77 DW-GW route, context)\n  142: \n  143: Output 4-tuple:\n  144:   (value=watch-criterion-registered, scheme=UHF-GW-migration,\n  145:    convention=Omega_GW-at-1mHz, L_max=N/A)\n  146: \n  147: Side effects:\n  148:   - Appends verdict line to s84_gate_verdicts.txt (dual-SHA S84+ schema).\n  149:   - Writes JSON registry payload s84_w4_uhf_gw_threshold_watch.json.\n  150:   - Writes summary NPZ s84_w4_uhf_gw_threshold_watch.npz.\n  151:   - Registry append to sessions/permanent-results-registry.md (orchestrator\n  152:     via Edit tool, tag WALL-MIGRATION-WATCH-C5).\n  153:   - Working-paper §W4-47 body (orchestrator via Edit tool).\n  154: \"\"\"\n  155: \n  156: # ----------------------------------------------------------------------------\n  157: # Environment (CPU-only; this script has no heavy linear algebra)"
+    },
+    {
+      "anchor_id": "prov_1743",
+      "anchor_type": "data_provenance",
+      "name": "w4_yukawa_oom_estimator",
+      "script_path": "session-84/s84_w4_yukawa_oom_estimator.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "session-84/s84_w4_yukawa_oom_estimator.npz",
+      "source_file": "computations/session-84/s84_w4_yukawa_oom_estimator.py",
+      "source_context_30_lines": "  511: # =============================================================================\n  512: # SECTION 7: Save .npz\n  513: # =============================================================================\n  514: print()\n  515: print(\"-\" * 78)\n  516: print(\"[SEC 7] Save outputs\")\n  517: print(\"-\" * 78)\n  518: \n  519: out_npz = SCRIPT_DIR / \"s84_w4_yukawa_oom_estimator.npz\"   # (local)\n  520: np.savez(\n  521:     out_npz,\n  522:     mu_bc_GeV=mu_BC_arr,\n  523:     delta_estimator=delta_est_arr,\n  524:     delta_actual=delta_actual_arr,\n  525:     rel_dev=rel_dev_arr,\n  526:     max_rel_dev=max_rel_dev,\n  527:     verdict=np.array([verdict]),"
+    },
+    {
+      "anchor_id": "prov_1744",
+      "anchor_type": "data_provenance",
+      "name": "w5_alpha_s_partition",
+      "script_path": "session-84/s84_w5_alpha_s_partition.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-84/s84_w5_alpha_s_partition.py",
+      "source_context_30_lines": "<name 'w5_alpha_s_partition' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S84 W5-62 -- GATE-ALPHA-S-PARTITION\n    4: ====================================\n    5: \n    6: Gate: W5-62  [VERIFY] [SIGN]\n    7: Classification: PHONONIC (Leggett-channel xi^2 contribution to alpha_s 2nd-order)\n    8: Owner: volovik-superfluid-universe-theorist\n    9: Pre-reg anchor: sessions/session-plan/session-84-plan-w5.md section W5-62\n   10: \n   11: Pre-registered hypothesis (verbatim):\n   12:   The Leggett-channel (relative-phase mode) contributes to the 2nd-order term\n   13:   in the n_s-1 power expansion ln P_zeta(k) = A + (n_s-1)*ln k\n   14:   + ((n_s-1)^2/2)*(ln k)^2 + xi^2*(ln k)^2 term-from-Leggett.\n   15:   The alpha_s = n_s^2 - 1 = -0.068968 single-parameter result (S50 permanent,\n   16:   S84 Gate 86) survives the f_L-weighted Leggett partition iff the Leggett\n   17:   contribution renormalizes INTO the n_s-1 coefficient (not as independent\n   18:   running). Gate computes f_L-weighted alpha_s and checks Planck consistency.\n   19: \n   20: Pre-registered thresholds (verbatim):\n   21:   PASS: alpha_s (f_L-weighted) within 1 sigma of alpha_s (un-weighted)\n   22:         = -0.068968, i.e. |Delta alpha_s|/|alpha_s| <= 0.05.\n   23:   FAIL: |Delta alpha_s|/|alpha_s| > 0.20 (Leggett partition shifts OOM).\n   24:   INFO: 0.05 < ratio <= 0.20.\n   25:   Tolerance: RATIO.\n   26: \n   27: -----------------------------------------------------------------------------\n   28: SUBSTITUTION CHAIN ([VERIFY] [SIGN] triggers)\n   29: -----------------------------------------------------------------------------\n   30: "
+    },
+    {
+      "anchor_id": "prov_1745",
+      "anchor_type": "data_provenance",
+      "name": "w5_floor_conditioned_on_branch",
+      "script_path": "session-84/s84_w5_floor_conditioned_on_branch.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-84/s84_w5_floor_conditioned_on_branch.py",
+      "source_context_30_lines": "  148: VERDICT_TXT = SCRIPT_DIR / \"s84_gate_verdicts.txt\"\n  149: \n  150: INPUT_FILES = [\n  151:     SCRIPT_DIR / \"canonical_constants.py\",\n  152:     SCRIPT_DIR / \"s82_w1_2_unified_as_79_full.py\",\n  153:     SCRIPT_DIR / \"s82_w1_2_unified_as_79_full.npz\",\n  154:     SCRIPT_DIR / \"s83_w3_g38_k_matching_5_conventions.py\",\n  155:     SCRIPT_DIR / \"s83_w3_g38_k_matching_5_conventions.npz\",\n  156:     SCRIPT_DIR / \"s84_w5_floor_conditioned_on_branch.py\",\n  157: ]\n  158: \n  159: # Pre-registered machinery pins (plan L428-L437)\n  160: RANDOM_SEED = 42                                          # (local)\n  161: np.random.seed(RANDOM_SEED)\n  162: \n  163: # Pre-registered PASS/FAIL/INFO bands (plan L411-L414)\n  164: RATIO_PASS = 0.10                                         # (local) ±10% on floor value"
+    },
+    {
+      "anchor_id": "prov_1746",
+      "anchor_type": "data_provenance",
+      "name": "w5_k_firas_coincidence",
+      "script_path": "session-84/s84_w5_k_firas_coincidence.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-84/s84_w5_k_firas_coincidence.py",
+      "source_context_30_lines": "<name 'w5_k_firas_coincidence' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S84 W5-65: GATE-K-FIRAS-COINCIDENCE\n    4: =====================================================================\n    5: Does K_FIRAS := 2.035 * mu_FIRAS / mu(K=2.035) equal S_IC^cap = 3.556e5\n    6: as a structural identity, or is the L_max=5 coincidence at 3.43%\n    7: a numerical coincidence that fails to tighten under L_max scan?\n    8: \n    9: Gate: S84-W5-65  [VERIFY-THEOREM] [AUDIT]\n   10: Classification: PHONONIC (structural vs coincidence test)\n   11: Owner: volovik-superfluid-universe-theorist\n   12: Pre-reg anchor: sessions/session-plan/session-84-plan-w5.md §W5-65\n   13: \n   14: Phononic framing:\n   15:   K_FIRAS and S_IC^cap are two independently motivated scales in the\n   16:   K-corridor.  K_FIRAS is set by: (i) the CMB mu-distortion FIRAS bound,\n   17:   (ii) the framework-predicted mu(K=2.035), (iii) linear K-dependence of\n   18:   mu(K) (gamma=1 exact under S82 W2-4 matched-IC).  S_IC^cap is set by\n   19:   energy conservation at the fold: total Parker-mode energy divided by\n   20:   N_modes * omega_soft gives the B3 saturation cap.\n   21: \n   22:   If these land at 3.68e5 vs 3.56e5 (3.43% residual at L_max=5), two\n   23:   alternatives are possible:\n   24:     (a) STRUCTURAL IDENTITY: residual is a truncation signature that\n   25:         monotonically shrinks as L_max: 5 -> 7 -> 9.  A closed-form\n   26:         identity K_FIRAS = S_IC^cap would follow as a new Volovik-style\n   27:         vacuum-energy/saturation-cap correspondence.\n   28:     (b) NUMERICAL COINCIDENCE: residual stays flat ~3% across L_max,\n   29:         reflecting the fact that K_FIRAS and S_IC^cap share only the\n   30:         K-scale parameter and are otherwise derivatively uncoupled."
+    },
+    {
+      "anchor_id": "prov_1747",
+      "anchor_type": "data_provenance",
+      "name": "w5_k_floor_reachable",
+      "script_path": "session-84/s84_w5_k_floor_reachable.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-84/s84_w5_k_floor_reachable.py",
+      "source_context_30_lines": "  187: OUT_PNG       = SCRIPT_DIR / \"s84_w5_63_plot.png\"\n  188: VERDICT_TXT   = SCRIPT_DIR / \"s84_gate_verdicts.txt\"\n  189: \n  190: CANONICAL_PY  = SCRIPT_DIR / \"canonical_constants.py\"\n  191: S82_W24_PY    = SCRIPT_DIR / \"s82_w2_4_ps_substrate_matched_ic.py\"\n  192: S82_W24_NPZ   = SCRIPT_DIR / \"s82_w2_4_ps_substrate_matched_ic.npz\"\n  193: S83_G38_NPZ   = SCRIPT_DIR / \"s83_w3_g38_k_matching_5_conventions.npz\"\n  194: S84_W54_NPZ   = SCRIPT_DIR / \"s84_w5_54_data.npz\"\n  195: SELF_PATH     = SCRIPT_DIR / \"s84_w5_k_floor_reachable.py\"\n  196: \n  197: INPUT_FILES = [\n  198:     CANONICAL_PY,\n  199:     S82_W24_PY,\n  200:     S82_W24_NPZ,\n  201:     S83_G38_NPZ,\n  202:     S84_W54_NPZ,\n  203:     SELF_PATH,"
+    },
+    {
+      "anchor_id": "prov_1748",
+      "anchor_type": "data_provenance",
+      "name": "w5_k_floor_regulator_invariance",
+      "script_path": "session-84/s84_w5_k_floor_regulator_invariance.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-84/s84_w5_k_floor_regulator_invariance.py",
+      "source_context_30_lines": "  154: OUT_PNG       = SCRIPT_DIR / \"s84_w5_54_plot.png\"\n  155: VERDICT_TXT   = SCRIPT_DIR / \"s84_gate_verdicts.txt\"\n  156: \n  157: SPECTRUM_CACHE = SCRIPT_DIR / \"s74_spectrum_cache_L9_tau019.npz\"\n  158: S83_G38_SCRIPT = SCRIPT_DIR / \"s83_w3_g38_k_matching_5_conventions.py\"\n  159: S83_G38_NPZ    = SCRIPT_DIR / \"s83_w3_g38_k_matching_5_conventions.npz\"\n  160: S82_W12_NPZ    = SCRIPT_DIR / \"s82_w1_2_unified_as_79_full.npz\"\n  161: CANONICAL_PY   = SCRIPT_DIR / \"canonical_constants.py\"\n  162: SELF_PATH      = SCRIPT_DIR / \"s84_w5_k_floor_regulator_invariance.py\"\n  163: \n  164: INPUT_FILES = [\n  165:     CANONICAL_PY,\n  166:     SPECTRUM_CACHE,\n  167:     S83_G38_SCRIPT,\n  168:     S83_G38_NPZ,\n  169:     S82_W12_NPZ,\n  170:     SELF_PATH,"
+    },
+    {
+      "anchor_id": "prov_1749",
+      "anchor_type": "data_provenance",
+      "name": "w5_k_star_lab_framework_match",
+      "script_path": "session-84/s84_w5_k_star_lab_framework_match.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-84/s84_w5_k_star_lab_framework_match.py",
+      "source_context_30_lines": "    1: \"\"\"\n    2: s84_w5_k_star_lab_framework_match.py — S84 W5-58\n    3: \n    4: Gate: S84-K-STAR-LAB-FRAMEWORK-MATCH\n    5: \n    6: Task: (a) functional-form audit of K_* = coth(x*) — which x* yields the numerical\n    7: anchor 1.313 quoted in the plan?  Direct evaluation settled offline:\n    8:   coth(0.5) = 2.1640   coth(1.0) = 1.3130\n    9:       ⇒ the plan-prose \"coth(0.5) = 1.313\" is inconsistent; 1.313 = coth(1).\n   10: (b) Compute K_*_lab from 3He-B lab ratio (Volovik 2003 Ch. 7 weak-coupling ≈ 1.76;"
+    },
+    {
+      "anchor_id": "prov_1750",
+      "anchor_type": "data_provenance",
+      "name": "w5_kcorridor_canonical_promotion",
+      "script_path": "session-84/s84_w5_kcorridor_canonical_promotion.py",
+      "session": "s84",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-84/s84_w5_kcorridor_canonical_promotion.py",
+      "source_context_30_lines": "<name 'w5_kcorridor_canonical_promotion' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S84 W5-60 — S84-KCORRIDOR-CANONICAL-PROMOTION\n    4: ==============================================\n    5: \n    6: Gate: W5-60 (bookkeeping / NON-PHONONIC / [AUDIT])\n    7: Agent: volovik-superfluid-universe-theorist\n    8: \n    9: Dry-run promotion + audit:\n   10:   1. Pre-audit grep-count each of 7 K-corridor literals across\n   11:      computations/_shared/s8{2,3,4}*.py.\n   12:   2. Verify the 7 new canonical constants are present in\n   13:      computations/_shared/canonical_constants.py (post-edit check).\n   14:   3. Compute the input-pin SHA-256 closure from the ordered input map.\n   15:   4. Emit verdict line and audit artifact.\n   16: \n   17: This script does NOT rewrite scripts to use the new imports. That is a\n   18: post-promotion drift cleanup delegated to the `/weave --update` pipeline\n   19: (which will re-flag occurrences as \"Potential\" until replaced by imports).\n   20: \n   21: The present gate measures only that canonical_constants.py now CARRIES the\n   22: 7 constants with 7-field provenance. PASS = 7/7 promotions verified on\n   23: disk.\n   24: \n   25: INPUT PINS (verified at runtime):\n   26:     computations/_shared/canonical_constants.py\n   27:     computations/session-82/s82_w3_6_sic_physical_cap.py\n   28:     computations/session-83/s83_w3_g38_k_matching_5_conventions.py\n   29:     computations/session-83/s83_w3_g39_leggett_bogoliubov.py\n   30:     computations/session-83/s83_w3_g40_tau_gge_at_K.py"
+    }
+  ]
+}

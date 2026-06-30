@@ -1,0 +1,52 @@
+==============================================================================
+S84 W5-60 — S84-KCORRIDOR-CANONICAL-PROMOTION
+==============================================================================
+
+[1] Input SHA-256 pins (ordered):
+    [ 1] canonical_constants.py                                        ff05c3d64375d9efcd6164210b00746ca1d1756e5b0a945554a6af642ea40e07
+    [ 2] s82_w3_6_sic_physical_cap.py                                  e1733c2e611edc9d9011b721fcfbe2cb84e5a8f2b70f6962623d7638cd72986c
+    [ 3] s83_w3_g38_k_matching_5_conventions.py                        2eb0e9d6cdf50666bd9a1b2f95603d2b98d955e6c116ca66c5ad54444036ac82
+    [ 4] s83_w3_g39_leggett_bogoliubov.py                              4f20b000efea39130ac3d446e63c26564d9c9532c7c0cd6819c8c069e1923517
+    [ 5] s83_w3_g40_tau_gge_at_K.py                                    4239c97e00ba92dc250ebb815381f31f591e741d10deb8df1592110a041fa6a3
+    [ 6] s83_w3_g41_xi_bcs_vs_l_phonon_k_response.py                   5ba151fb57aab1141dd8cb14840ec6d4fa7ec392b995d6180ef988bb5b413097
+    [ 7] s83_w3_g49_evoi_refresh.py                                    ed483557bb8f582c479f5b40f9f42514cae2082e2d4cac2c6676da4b82633913
+    [ 8] s84_w2a_layer_pin_registry_landing.py                         98f2963ec1e638b5695c194919a0f2f6ddca730dfbeb575312f46ec6c0046f7d
+
+[2] Closure SHA-256 (ordered input-pin map): 5c471e3866af06aa4cb097d13084ccd3f631d379544d9b6e84b8fd49a70e4271
+
+[3] Canonical constants import check:
+    [OK] All 7 names importable from canonical_constants
+    [OK] A_s_floor_5conv      actual=5.09e-13             target=5.09e-13
+    [OK] K_R3                 actual=2.035                target=2.035
+    [OK] K_match_need         actual=0.6366               target=0.6366
+    [OK] K_star               actual=1.313                target=1.313
+    [OK] b_LB_ratio           actual=0.6027               target=0.6027
+    [OK] tau_GGE_K_unit       actual=78600.0              target=78600.0
+    [OK] xi_ell_plateau       actual=0.135                target=0.135
+
+[4] Pre-audit literal occurrences across S82/S83/S84 scripts:
+    constant               pattern                         count
+    K_R3                   (?<![0-9.])2\.035(?![0-9])         29
+    K_match_need           (?<![0-9.])0\.6366(?![0-9])         0
+    b_LB_ratio             (?<![0-9.])0\.6027(?![0-9])         0
+    tau_GGE_K_unit         7\.86e(?:\+?04|4)                   1
+    xi_ell_plateau         (?<![0-9.])0\.135(?![0-9])          0
+    K_star                 (?<![0-9.])1\.3130(?![0-9])         0
+    A_s_floor_5conv        (?<![0-9.])5\.09e-13(?![0-9])       0
+    TOTAL                                                     30
+
+[5] Post-edit promotion presence matrix:
+    [OK]       K_R3
+    [OK]       K_match_need
+    [OK]       A_s_floor_5conv
+    [OK]       b_LB_ratio
+    [OK]       tau_GGE_K_unit
+    [OK]       xi_ell_plateau
+    [OK]       K_star
+    promoted_count = 7/7
+
+[6] Output 4-tuple:
+    (value=7/7, scheme=N/A, convention=canonical_constants, L_max=N/A)
+
+[7] Verdict line (canonical form):
+    W5-60: PASS -- value=7/7 scheme=N/A convention=canonical_constants L_max=N/A sha256=5c471e3866af06aa4cb097d13084ccd3f631d379544d9b6e84b8fd49a70e4271

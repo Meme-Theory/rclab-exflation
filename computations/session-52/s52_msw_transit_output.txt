@@ -1,0 +1,224 @@
+========================================================================
+S52 MSW-TRANSIT-52: Internal MSW During Modulus Transit
+========================================================================
+
+SECTION 1: Sector eigenvalue data from s44_dos_tau.npz
+------------------------------------------------------------
+tau points: [0.   0.05 0.1  0.15 0.19]
+B1 min:     [0.8660254  0.84701983 0.83307386 0.82387268 0.81974111]
+B2 min:     [0.83333333 0.83154495 0.83145131 0.83315675 0.83589351]
+B3 min:     [0.8660254  0.86640167 0.86768151 0.87008908 0.87297503]
+
+SECTION 2: Cubic spline interpolation to fine grid
+------------------------------------------------------------
+Fine grid: 2000 points, dtau = 0.000095
+E_B1 range: [0.819741, 0.866025]
+E_B2 range: [0.831277, 0.835894]
+E_B3 range: [0.866025, 0.872975]
+
+SECTION 3: Level crossing detection
+------------------------------------------------------------
+B1-B2 crossings: 1
+  tau_cross = 0.106696, E_cross = 0.831573
+B1-B3 crossings: 0
+B2-B3 crossings: 0
+
+SECTION 4: Mass ordering evolution
+------------------------------------------------------------
+Ordering transitions:
+  tau = 0.106738: B2<B1<B3  -->  B1<B2<B3
+
+Initial (tau=0):    B2<B1<B3
+Final (tau=0.19):   B1<B2<B3
+
+SECTION 5: MSW adiabaticity parameter
+------------------------------------------------------------
+Off-diagonal couplings (S34 spinor V, M_KK units):
+  V(B1,B2) = 0.0770
+  V(B2,B3) = 0.0220
+  V(B1,B3) = 0.0000 (EXACT ZERO, NNI)
+
+MSW / Landau-Zener analysis at each crossing:
+
+Transit parameters:
+  tau range: 0 to 0.19
+  dt_transit = 0.001130 M_KK^{-1}
+  v_terminal = 26.5450 M_KK
+  dtau/dt = 168.12 M_KK (modulus velocity in tau)
+
+B1-B2 crossing at tau = 0.106696:
+  d(E_B1-E_B2)/dtau = -0.238435 M_KK
+  Avoided crossing gap = 2*V_12 = 0.1540 M_KK
+  gamma_LZ = 0.000929
+  P_diabatic (level jump) = 9.985413e-01
+  P_adiabatic (follow level) = 0.001459
+  VERDICT: NON-ADIABATIC (jump through)
+
+SECTION 6: Mass-squared differences and R ratio
+------------------------------------------------------------
+R ratio = dm2_31 / dm2_21 evolution:
+  tau=0.00: dm2_21=-0.055556, dm2_31=0.000000, dm2_32=0.055556, R=-0.0000
+  tau=0.05: dm2_21=-0.025978, dm2_31=0.033206, dm2_32=0.059185, R=-1.2782
+  tau=0.10: dm2_21=-0.002705, dm2_31=0.058855, dm2_32=0.061560, R=-21.7587
+  tau=0.15: dm2_21=0.015379, dm2_31=0.078284, dm2_32=0.062905, R=5.0902
+  tau=0.19: dm2_21=0.026742, dm2_31=0.090110, dm2_32=0.063367, R=3.3695
+
+R at fold (tau=0.19): 3.3695
+  NuFit-6.0 target: 33.8 (= 2.507e-3 / 7.41e-5)
+  Shortfall: 10.0x
+
+SECTION 7: MSW modification of R
+------------------------------------------------------------
+Analysis:
+
+The B1-B2 crossing occurs during transit. Two cases:
+
+B1-B2 crossing at tau = 0.106696
+  gamma_LZ = 0.000929
+  V(B1,B2) = 0.077 M_KK (nonzero coupling)
+
+  VERDICT: NON-ADIABATIC (gamma << 1)
+  States jump diabatically through the crossing.
+  Post-transit: B2(tau=0) remains effectively B2(tau=0.19)
+
+KEY RESULT: R = dm2_31/dm2_21 is determined by the D_K eigenvalues
+at the frozen tau_fold. The transit history does NOT modify R.
+R is a property of the operator, not the occupation.
+
+What MSW DOES affect: the FLAVOR COMPOSITION of the post-transit
+state. If the B1-B2 crossing is adiabatic, the lightest mass
+eigenstate at the fold contains the tau=0 'B2 flavor'. If
+non-adiabatic, it retains the tau=0 'B1 flavor'. This is the
+analog of the MSW solar neutrino solution.
+
+SECTION 8: Effective mixing angles from transit dynamics
+------------------------------------------------------------
+Effective mixing angle theta_m(tau) at selected points:
+
+  tau=0.00: theta_m = 39.01 deg, sin^2(2*theta_m) = 0.956878
+  tau=0.05: theta_m = 42.13 deg, sin^2(2*theta_m) = 0.990001
+  tau=0.10: theta_m = 44.70 deg, sin^2(2*theta_m) = 0.999889
+  tau=0.12: theta_m = 45.57 deg, sin^2(2*theta_m) = 0.999600
+  tau=0.15: theta_m = 46.72 deg, sin^2(2*theta_m) = 0.996381
+  tau=0.19: theta_m = 47.99 deg, sin^2(2*theta_m) = 0.989119
+
+At fold (tau=0.19):
+  E_B1 - E_B2 = -0.016152
+  theta_m = 47.9938 deg
+  sin^2(theta_m) = 0.552157
+  sin^2(2*theta_m) = 0.989119
+
+MSW survival probability (B1->B1):
+  P_LZ = 9.985413e-01
+  cos(2*theta_0) = 0.207659
+  cos(2*theta_f) = -0.104313
+  P_surv = 0.510799
+
+SECTION 9: B1-B3 analysis (NNI constraint)
+------------------------------------------------------------
+B1 and B3 are DEGENERATE at tau=0 (both 0.866025)
+They split immediately: B1 drops below, B3 rises above
+V(B1,B3) = 0 EXACTLY (NNI). No coupling at ANY tau.
+Even at the degenerate point, no avoided crossing exists.
+This is the analog of two neutrino states that never mix.
+
+SECTION 10: B2 near-degeneracy with higher sectors
+------------------------------------------------------------
+Minimum |E_B2 - E_B3| = 0.032692 at tau = 0.000000
+Minimum |E_B2 - E_G1| = 0.136353 at tau = 0.190000
+  E_B2 at min gap: 0.835894
+  E_G1 at min gap: 0.972246
+
+SECTION 11: Physical mass predictions at fold
+------------------------------------------------------------
+Eigenvalues at fold (M_KK units):
+  E_B1 = 0.81974111
+  E_B2 = 0.83589351
+  E_B3 = 0.87297503
+
+Mass-squared differences (M_KK^2 units):
+  dm2_21 = E_B2^2 - E_B1^2 = 0.02674247
+  dm2_31 = E_B3^2 - E_B1^2 = 0.09010992
+  dm2_32 = E_B3^2 - E_B2^2 = 0.06336745
+
+R = dm2_31/dm2_21 = 3.3695
+R' = dm2_32/dm2_21 = 2.3695
+Target R (NuFit-6.0): 33.8
+
+Mass ordering:
+  B1 < B2 < B3: NORMAL ORDERING
+
+Absolute mass scale (using M_KK_gravity = 7.429e+16 GeV):
+  m_1 = 6.090e+16 GeV = 6.090e+25 eV
+  m_2 = 6.210e+16 GeV = 6.210e+25 eV
+  m_3 = 6.485e+16 GeV = 6.485e+25 eV
+  Sum = 1.878e+26 eV
+
+  Measured: m_nu < 0.45 eV (KATRIN 90% CL)
+  Cosmological: Sum < 0.064 eV (Planck+DESI DR2, LCDM)
+  Framework predicts m_i ~ O(10^7) eV. SCALE BRIDGE UNRESOLVED.
+  (Eigenvalues are O(1) * M_KK; need scale suppression mechanism)
+
+SECTION 12: Comparison with standard MSW parameters
+------------------------------------------------------------
+Standard MSW parameters (for reference):
+  Solar: dm2_21 = 7.41e-5 eV^2, theta_12 = 33.4 deg, gamma ~ 100
+  Atmospheric: |dm2_32| = 2.507e-3 eV^2, theta_23 ~ 47 deg
+
+Framework analog:
+  V(B1,B2) = 0.077 M_KK (geometric coupling, not matter)
+  Gap sweep: 0.032692 to -0.016152 M_KK
+  Sweep rate: dtau/dt = 168.12 M_KK
+  gamma_LZ = 0.000929
+
+SECTION 13: Generating plots
+------------------------------------------------------------
+Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s52_msw_transit.png
+
+SECTION 14: Saving results
+------------------------------------------------------------
+Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s52_msw_transit.npz
+
+========================================================================
+MSW-TRANSIT-52: SUMMARY
+========================================================================
+
+1. LEVEL CROSSING DETECTED
+   B1-B2 crossing at tau = 0.106696
+   At tau=0: B2 < B1 (inverted ordering)
+   At tau=0.19: B1 < B2 < B3 (normal ordering)
+   Transit CREATES the normal mass hierarchy
+
+2. LANDAU-ZENER ADIABATICITY
+   gamma_LZ = 0.000929
+   V(B1,B2) = 0.077 M_KK (avoided crossing gap = 0.1540)
+   Sweep rate dtau/dt = 168.1 M_KK
+   VERDICT: NON-ADIABATIC — states jump through
+
+3. MASS HIERARCHY RATIO R
+   R at fold = 3.3695
+   NuFit-6.0 target: 33.8
+   MSW transit does NOT modify R (eigenvalues are properties of D_K)
+
+4. MIXING ANGLES
+   theta_m at fold = 47.99 deg
+   sin^2(theta_m) at fold = 0.552157
+   V(B1,B3) = 0 EXACTLY: B1-B3 mixing impossible (NNI)
+   B2 isolated (block-diagonal, S52 OFFJENSEN): no B2 mixing
+
+5. STRUCTURAL RESULTS
+   (a) Normal ordering is a DYNAMICAL consequence of the transit
+       It is NOT the initial condition — it is created by the B1-B2 crossing
+   (b) The B1-B2 crossing at tau~0.107 is the geometric analog
+       of the MSW resonance in solar neutrinos
+   (c) R is unaffected by transit dynamics (operator property, not state)
+   (d) The transit generates an effective B1-B2 mixing from the Landau-Zener
+       transition, but V(B1,B3)=0 prevents full 3x3 PMNS
+
+6. GATE VERDICT: MSW-TRANSIT-52 = INFO
+   MSW does NOT modify R = 3.3695
+   Transit dynamics do not fix the R shortfall vs target 33.8
+   Normal ordering is structurally robust (created during transit)
+   New finding: ordering INVERTS at early tau, then flips to normal
+
+Elapsed: 0.78 s

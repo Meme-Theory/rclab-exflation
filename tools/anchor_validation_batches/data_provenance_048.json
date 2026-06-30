@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 48,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_471",
+      "anchor_type": "data_provenance",
+      "name": "zubarev_derivation",
+      "script_path": "session-46/s46_zubarev_derivation.py",
+      "session": "s46",
+      "inputs": "",
+      "outputs": "session-46/s46_zubarev_derivation.npz, session-46/s46_zubarev_derivation.png",
+      "source_file": "computations/session-46/s46_zubarev_derivation.py",
+      "source_context_30_lines": "  695:   All consistent methods give alpha in [{consistent_min:.2f}, {consistent_max:.2f}].\n  696:   Median alpha ~ {consistent_median:.1f}, factor {consistent_median/ratio_obs:.1f}x observed.\n  697:   The DM/DE ratio remains an OPEN problem.\n  698: \"\"\")\n  699: \n  700: # ============================================================\n  701: # 9. Save data\n  702: # ============================================================\n  703: np.savez(base / 's46_zubarev_derivation.npz',\n  704:     # Gate\n  705:     gate_name=np.array(['ZUBAREV-DERIVATION-46']),\n  706:     gate_verdict=np.array([verdict]),\n  707:     # Observed\n  708:     ratio_obs=ratio_obs,\n  709:     # Entropy analysis\n  710:     S_Shannon=S_Shannon,\n  711:     S_Shannon_max=S_Shannon_max,"
+    },
+    {
+      "anchor_id": "prov_472",
+      "anchor_type": "data_provenance",
+      "name": "acoustic_horizon",
+      "script_path": "session-47/s47_acoustic_horizon.py",
+      "session": "s47",
+      "inputs": "",
+      "outputs": "session-47/s47_acoustic_horizon.npz",
+      "source_file": "computations/session-47/s47_acoustic_horizon.py",
+      "source_context_30_lines": "  659: print(f\"{'Transit / Target':<45} {'-':>15} {ratio_to_target:>15.3e}\")\n  660: print(\"-\" * 78)\n  661: \n  662: # ============================================================================\n  663: # 15. SAVE DATA\n  664: # ============================================================================\n  665: print(\"\\n--- SAVING DATA ---\")\n  666: \n  667: outfile = base / \"s47_acoustic_horizon.npz\"\n  668: np.savez(outfile,\n  669:     # Gate\n  670:     gate_name=\"ACOUSTIC-HORIZON-48\",\n  671:     gate_verdict=verdict,\n  672:     gate_detail=verdict_detail,\n  673:     # Transit parameters\n  674:     dt_transit=dt_transit,\n  675:     H_fold=H_fold,"
+    },
+    {
+      "anchor_id": "prov_473",
+      "anchor_type": "data_provenance",
+      "name": "aniso_dissip",
+      "script_path": "session-47/s47_aniso_dissip.py",
+      "session": "s47",
+      "inputs": "",
+      "outputs": "session-47/s47_aniso_dissip.npz, session-47/s47_aniso_dissip.png",
+      "source_file": "computations/session-47/s47_aniso_dissip.py",
+      "source_context_30_lines": "  662: \n  663:     # ========================================================================\n  664:     # SAVE\n  665:     # ========================================================================\n  666:     print(f\"\\n{'='*78}\")\n  667:     print(f\"  SAVING\")\n  668:     print(f\"{'='*78}\")\n  669: \n  670:     npz_path = os.path.join(SCRIPT_DIR, 's47_aniso_dissip.npz')\n  671:     np.savez(npz_path,\n  672:              # Gate\n  673:              gate_name=np.array(['ANISO-DISSIP-47']),\n  674:              gate_verdict=np.array([gate_verdict]),\n  675:              # Structural theorems\n  676:              block_diag_inter_frac=bd['inter_fraction'],\n  677:              clifford_order3_frac=fracs_3.get('su2-su2-su2', 0.0),\n  678:              clifford_C2C2u1_frac=fracs_3.get('C2-C2-u1', 0.0),"
+    },
+    {
+      "anchor_id": "prov_474",
+      "anchor_type": "data_provenance",
+      "name": "coherence_response",
+      "script_path": "session-47/s47_coherence_response.py",
+      "session": "s47",
+      "inputs": "",
+      "outputs": "session-47/s47_coherence_response.npz, session-47/s47_coherence_response.png",
+      "source_file": "computations/session-47/s47_coherence_response.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s47_coherence_response.py -- Deformation Response of Character Coherence\n    4: =========================================================================\n    5: \n    6: Session 47 Wave 3, COHERENCE-RESPONSE-47\n    7: \n    8: Computes C(theta, 0; tau) -- the character coherence function on T^2 --\n    9: across the full tau range. Extracts the 1/e^2 radius r_C(tau).\n   10: Correlates with Delta_B2(tau).\n   11: "
+    },
+    {
+      "anchor_id": "prov_475",
+      "anchor_type": "data_provenance",
+      "name": "condensate_torus",
+      "script_path": "session-47/s47_condensate_torus.py",
+      "session": "s47",
+      "inputs": "",
+      "outputs": "session-47/s47_condensate_torus.npz, session-47/s47_condensate_torus.png",
+      "source_file": "computations/session-47/s47_condensate_torus.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s47_condensate_torus.py -- BCS condensate density on the maximal torus T^2 in SU(3)\n    4: ===================================================================================\n    5: \n    6: Session 47 Wave 2, CONDENSATE-T2-47 (INFO gate)\n    7: \n    8: Computes |Delta(t1,t2)|^2 restricted to the maximal torus:\n    9:     g(t1,t2) = diag(e^{it1}, e^{it2}, e^{-i(t1+t2)})\n   10: \n   11: The condensate gap function in the Peter-Weyl basis, restricted to T^2,"
+    },
+    {
+      "anchor_id": "prov_476",
+      "anchor_type": "data_provenance",
+      "name": "curvature_anatomy",
+      "script_path": "session-47/s47_curvature_anatomy.py",
+      "session": "s47",
+      "inputs": "",
+      "outputs": "session-47/s47_curvature_anatomy.npz, session-47/s47_curvature_anatomy.png",
+      "source_file": "computations/session-47/s47_curvature_anatomy.py",
+      "source_context_30_lines": "   31:     U1-C2:    u(1)-C^2         (4 pairs: e_7 with e_3, e_4, e_5, e_6)\n   32:     Total: 3 + 12 + 6 + 3 + 4 = 28.\n   33: \n   34: Baptista reference: Paper 13, Section 2.6 (scalar curvature formula eq 2.40).\n   35:     Uses Riemann tensor from connection infrastructure in dirac_spectrum.py\n   36:     (validated in r20a_riemann_tensor.py, 147/147 checks).\n   37: \n   38: Output:\n   39:     - s47_curvature_anatomy.npz\n   40:     - s47_curvature_anatomy.png (two-panel figure)\n   41: \n   42: Author: Baptista-Spacetime-Analyst (Session 47)\n   43: Date: 2026-03-16\n   44: \"\"\"\n   45: \n   46: import numpy as np\n   47: import matplotlib.pyplot as plt"
+    },
+    {
+      "anchor_id": "prov_477",
+      "anchor_type": "data_provenance",
+      "name": "k7_filter",
+      "script_path": "session-47/s47_k7_filter.py",
+      "session": "s47",
+      "inputs": "",
+      "outputs": "session-47/s47_k7_filter.npz, session-47/s47_k7_filter.png",
+      "source_file": "computations/session-47/s47_k7_filter.py",
+      "source_context_30_lines": "  548: \n  549: # ======================================================================\n  550: #  SAVE RESULTS\n  551: # ======================================================================\n  552: print(f\"\\n{'='*78}\")\n  553: print(\"SAVING RESULTS\")\n  554: print(\"=\" * 78)\n  555: \n  556: np.savez(os.path.join(SCRIPT_DIR, 's47_k7_filter.npz'),\n  557:     # PW-accessible counts by scenario\n  558:     pw_accessible_conservative=pw_conservative,\n  559:     pw_accessible_moderate=pw_moderate,\n  560:     pw_accessible_liberal=pw_liberal,\n  561:     # Inert counts\n  562:     pw_inert=pw_B1,  # B1 inert in all scenarios\n  563:     pw_inert_conservative=pw_inert_conservative,\n  564:     pw_inert_moderate=pw_inert_moderate,"
+    },
+    {
+      "anchor_id": "prov_478",
+      "anchor_type": "data_provenance",
+      "name": "paasch_spiral",
+      "script_path": "session-47/s47_paasch_spiral.py",
+      "session": "s47",
+      "inputs": "",
+      "outputs": "session-47/s47_paasch_spiral.npz, session-47/s47_paasch_spiral.png",
+      "source_file": "computations/session-47/s47_paasch_spiral.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s47_paasch_spiral.py — Paasch Spiral Analysis of Full Dirac Spectrum\n    4: =====================================================================\n    5: \n    6: Session 47, Wave 3-1 (PAASCH-SPIRAL-47)\n    7: \n    8: Tests whether the full Dirac eigenvalue spectrum on Jensen-deformed SU(3)\n    9: exhibits the discrete sequence structure predicted by Paasch's logarithmic\n   10: mass quantization framework.\n   11: "
+    },
+    {
+      "anchor_id": "prov_479",
+      "anchor_type": "data_provenance",
+      "name": "phi_bdg",
+      "script_path": "session-47/s47_phi_bdg.py",
+      "session": "s47",
+      "inputs": "",
+      "outputs": "session-47/s47_phi_bdg.npz, session-47/s47_phi_bdg.png",
+      "source_file": "computations/session-47/s47_phi_bdg.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s47_phi_bdg.py — BdG-Dressed Phi Ratio Across Tau (PHI-BDG-47)\n    4: ================================================================\n    5: \n    6: Session 47 Wave 3-2: Paasch Mass Quantization Analyst\n    7: \n    8: The phi ratio phi_paasch = 1.53158 was found as an INTER-SECTOR ratio:\n    9:     R_phi(tau) = min|lambda_{(3,0)}| / min|lambda_{(0,0)}|\n   10:             = 1.531588 at tau = 0.15 (5 ppm from phi_paasch)\n   11: "
+    },
+    {
+      "anchor_id": "prov_480",
+      "anchor_type": "data_provenance",
+      "name": "pi_sector",
+      "script_path": "session-47/s47_pi_sector.py",
+      "session": "s47",
+      "inputs": "computations/session-46/s46_berry_phase.npz, computations/session-44/s44_dos_tau.npz, computations/session-35/s35_k7_dph...",
+      "outputs": "session-47/s47_pi_sector.npz, session-47/s47_pi_sector.png",
+      "source_file": "computations/session-47/s47_pi_sector.py",
+      "source_context_30_lines": "  171:       f\"{'YES' if np.allclose(evals_00_abs[2:10], E_B2, atol=1e-3) else 'NO'}\")\n  172: print(f\"  Rank 10-15 (B3): range [{evals_00_abs[10]:.5f}, {evals_00_abs[15]:.5f}] \"\n  173:       f\"-> matches E_B3={E_B3:.5f}? \"\n  174:       f\"{'YES' if np.allclose(evals_00_abs[10:], E_B3, atol=1e-3) else 'NO'}\")\n  175: \n  176: # Now classify all pi-phase states\n  177: results = []\n  178: all_pi_evals = []\n  179: all_pi_sectors = []\n  180: all_pi_reps = []\n  181: gate_pass = True  # assume PASS, will set to False if ambiguous\n  182: \n  183: for p, q in reps_with_pi:\n  184:     rep_key = f\"s{p}{q}\"\n  185:     evals = bp[f'{rep_key}_evals']  # (40, N)\n  186:     phases = bp[f'{rep_key}_berry_phases']  # (N,)\n  187:     N = evals.shape[1]"
+    }
+  ]
+}

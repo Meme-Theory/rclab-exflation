@@ -1,0 +1,107 @@
+{
+  "table": "constants",
+  "batch_id": 7,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "const_beta_s",
+      "anchor_type": "constants",
+      "name": "beta_s",
+      "value": "-0.1331",
+      "session": "S84",
+      "source_citation": "S84-W6-BETA-S-CMB-S4-PREREG",
+      "source_file": "computations/_shared/canonical_constants.py",
+      "source_context_30_lines": "  503: # Sharp-cutoff (Andrianov-Lizzi arXiv:1001.2036) FORCES f_0=1/2, f_2=1, f_4=1.\n  504: mellin_f_star_f0 = 0.0883200000   # Mellin moment f_0 of f*(x)=0.912sqrt(x)+0.088exp(-x) (S78 W2-D)\n  505: mellin_f_star_f2 = 214.97335676   # Mellin moment f_2 of f* (X_MAX=50 regulator) (S78 W2-D)\n  506: mellin_f_star_f4 = 6446.63942272   # Mellin moment f_4 of f* (X_MAX=50 regulator) (S78 W2-D)\n  507: \n  508: # ==============================================================================\n  509: sigma_alpha_SKA1 = 5.118  # SKA-1 Phase-1 Fisher sigma(alpha_fNL); G45 canonical; used by S84 W4-43 SNR (S83)\n  510: sigma_alpha_SKA2 = 0.80  # SKA-2 full Fisher sigma(alpha_fNL); G45 PASS threshold for framework alpha detection (S83)\n  511: beta_s = -0.1331  # Second spectral moment of D_K at tau_fold slice, Jensen flow (running-of-running from W8-86 3rd Taylor coefficient) (S84)\n  512: sigma_beta_s_CMB_S4 = 2.2e-3  # CMB-S4 projected 1-sigma forecast on beta_s = running-of-running; used as LCDM-null pull denominator for S85-BETA-S-CMB-S4-PREREG (S85)\n  513: b_DK = 0.006241291005766653  # Dirac-operator-determined dimensionless constant for Weyl-rescaling weak-form parametric bound. b_DK = (1/8 pi^2) * Tr_F[(Y†Y)^2] / Tr_F[Y†Y] = (1/8 pi^2) * y_t^2, with y_t = m_t_pole/v_ew = 0.7020. Used in W6-3 C-gamma-WEAK gate (L_max=10, FAIL: tree-level dominates anomaly at this regulator class). (S86)\n  514: HP0_content_dim = 3  # HP^0(A_F) content dim for §VII.P-v2 HP^0-content-distinct corridor res\n... [truncated]"
+    },
+    {
+      "anchor_id": "const_beta_s_canon_Fairbairn",
+      "anchor_type": "constants",
+      "name": "beta_s_canon_Fairbairn",
+      "value": "-0.00755",
+      "session": "S86",
+      "source_citation": "Fairbairn 2025 arXiv:2511.01612 Table IV running-of-running row; W-2 CANON-5",
+      "source_file": "computations/_shared/canonical_constants.py",
+      "source_context_30_lines": "  520: dE_He_A_lambda_7 = 0.5756  # Lab falsifier δE_a — 3He-A delta_omega_K/omega_K under cross-platform lambda_7 projection; M_KK-normalized. XB1 (Row #19) per S86 W14-6 falsifier-master-inventory. (S86)\n  521: dE_173Yb_lambda_7 = 13.1852  # Lab falsifier δE_a — 173Yb 3-body Gamma-ratio under cross-platform lambda_7 projection; M_KK-normalized. XB3 (Row #21) per S86 W14-6 falsifier-master-inventory. (S86)\n  522: r_PathH = 0.0074705  # Path-H tensor-to-scalar ratio at CMB pivot under H_tilde-divergence-chase resolution at BASELINE; transverse-tensor fiber-oscillation pathway (Hawking-side, B2-mode at fold). Forward-derived: r_PathH = r_PathC * (H_BASELINE/H_TD)^2 = 0.0074705. rel_dev vs workshop-quoted 0.00745 = 0.275%; n_T(Path-H) = -r/8 = -0.000931. Replaces oral citation 'S85 W1b-6' which was a label-confusion error (W1b-6 was MacInnis sigma-alpha-s PRE-REG-INCOMPLETE). (S86)\n  523: r_PathH_published = 0.00745  # Workshop-quoted 4-sig-fig form of r_PathH = 0.0074705. Used in plan-w12 §7, W14 §Row #2 r, s86_bk_array_2026_classifier.py. Verifiers comparing against this published form must use rel_tol >= 1e-3 per Publication-Precision rule (publication_sig_figs = 4). (S86)\n  524: alpha_s_canon_Fairbairn = -0.00323  # External-paper canonical for cross-check; central -0.00323 sigma=0.00389. Framework-canonical alpha_s remains substrate-derived per W-2 sign-lock theorem. (S86)\n  525: alpha_s_canon_FairbairnSPT = +0.00804  # External-paper canonical for cross-check; central +0.\n... [truncated]"
+    },
+    {
+      "anchor_id": "const_c_Gold_over_c_fabric",
+      "anchor_type": "constants",
+      "name": "c_Gold_over_c_fabric",
+      "value": "0.00436",
+      "session": "S52",
+      "source_citation": "s52_gl_josephson.npz",
+      "source_file": "computations/_shared/canonical_constants.py",
+      "source_context_30_lines": "  589: E_B3_mean = 0.9782238787713764  # Mean B3 energy at fold (M_KK)\n  590: \n  591: # ==============================================================================\n  592: #  SECTION E2: S52 Phonon & Structural Results\n  593: # ==============================================================================\n  594: \n  595: # GL-Josephson phonon spectrum (s52_gl_josephson.npz, GL-JOSEPHSON-52 PASS)\n  596: c_Gold = 0.915                    # Goldstone sound speed (M_KK units)\n  597: c_Gold_over_c_fabric = 0.00436    # R-PROTECTED — 229x hierarchy; eigenvalue gradient ratio,\n  598:                                   # bypasses Seeley-DeWitt expansion. STRUCTURAL, drift 0.00% (S74 W4-F #20)\n  599: omega_L1 = 0.138                  # Leggett-1 frequency (M_KK)\n  600: omega_L2 = 0.192                  # Leggett-2 frequency (M_KK)\n  601: omega_H1 = 0.380                  # Higgs-1 frequency (M_KK)\n  602: omega_H2 = 1.410                  # Higgs-2 frequency (M_KK)\n  603: omega_H3 = 11.465                 # Higgs-3 frequency (M_KK)\n  604: \n  605: # Quantum metric dispersion (s52_qm_dispersion.npz, QM-DISPERSION-52 PASS)"
+    },
+    {
+      "anchor_id": "const_c_W12_deficit_FW_PRIMARY_ConvB",
+      "anchor_type": "constants",
+      "name": "c_W12_deficit_FW_PRIMARY_ConvB",
+      "value": "0.0007244",
+      "session": "S90",
+      "source_citation": "CF-46 PASS; W-12 §IV.1 R1∧R2 joint-closure pathway; Conv-B HK-5 substrate-first canonical paired with cache anchor residual_B = 2.615119e-05 at tau_fold² = 0.0361; OOM distinction 1.463 from kappa_2_substrate_FW = 0.021018 per Class-(d) PIN-DERIVATIVE remediation Conv-A→Conv-B",
+      "source_file": "computations/_shared/canonical_constants.py",
+      "source_context_30_lines": "  553: V2_weight_FW_H = 4  # Schur-projected real-dim functional on A_F, H-block component (real_dim of quaternions). Canonical Connes-Marcolli 2008 Thm 11.1. (S88)\n  554: V2_weight_FW_M3 = 18  # Schur-projected real-dim functional on A_F, M_3(C)-block component (real_dim 2*9 of 3x3 complex matrices). Peter-Weyl multiplicity-collapse from spectrum 10424 to 18 via Hom_SU(3) image; collapse factor 579.1111x. Canonical Connes-Marcolli 2008 Thm 11.1. (S88)\n  555: V2_weight_FW_sum = 23  # Schur-projected real-dim functional on A_F, sum across all 3 blocks = 1+4+18 = 23 = real_dim(A_F). Canonical Connes-Marcolli 2008 Thm 11.1; A_F = C+H+M_3(C) Connes-Chamseddine canonical embedding. (S88)\n  556: a_0_FW_zeta = 6440.0  # zeta-regulated zeroth Seeley-DeWitt coefficient of D_K^2 at tau_fold; substrate dimensionless mode count (a_0 = zeta_{D_K}(0) = Tr(1)) per CCM 2007 + S64 / S77 R-protection; W11-124 canonical-write-order Step 2 promotion (regulator-pin-discipline.md MANDATORY at S86 W0c-7) (S88)\n  557: a_2_FW_zeta = 2776.165389  # zeta-regulated second Seeley-DeWitt coefficient of D_K^2 at tau_fold; spectral-zeta sum a_2(spectral, S42) = 2776.165389; S46 a_2 split = a_2^zeta / a_2^SD = 2776.165389 / 0.728234972609 = 3812.18; W11-124 canonical-write-order Step 2 promotion (S88)\n  558: xi_KZ_FW = 0.018760052113614717  # Substrate-natural xi_KZ derived from atlas T1 dt/T_L=1.25e-5 + Bogoliubov-unitary BdG-A_2 (nu=1/2, z=1, m=1/3) + S53 xi_BCS-analog 0.808346 M_KK^-1. M_KK^-1 units. Clos\n... [truncated]"
+    },
+    {
+      "anchor_id": "const_chi_A_FW",
+      "anchor_type": "constants",
+      "name": "chi_A_FW",
+      "value": "1.5",
+      "session": "S88",
+      "source_citation": "s88_w3b_chi_a_chiral_correction_verification.npz",
+      "source_file": "computations/_shared/canonical_constants.py",
+      "source_context_30_lines": "  540: OOM_split_AC_regulator_class = 47.081  # Order-of-magnitude split between (A) and (C) regulator classes for Path-H/Path-C Omega_GW: 47.081 OOM. Promoted per UD-5. (S86)\n  541: xi_sq_0_crit_SR_LO_breakdown_N1 = 2.2256  # Critical xi^2_0 for SR-LO breakdown at N=1 e-fold; brentq solution per W-9 transit T1. (S86)\n  542: xi_sq_0_lin_crit_SR_LO_N55 = 0.395  # Linear-regime critical xi^2_0 for SR-LO at N=55 e-folds; per W-9 transit Q-L2.1+T2. (S86)\n  543: xi_sq_0_SR_LO_valid_crit_N55 = 1.7  # Critical xi^2_0 above which SR-LO regime invalid for full N=55 e-fold integration; ~1.7. (S86)\n  544: rho_inf_zubarev_canonical = -0.810369  # rho_inf for Zubarev convergence sequence under simple-pole fit on L=8..12 cache; canonical extrapolation per W-10 CM-1995 audit Bulletin #4. (S86)\n  545: rho_inf_zubarev_deep_ir = -0.918  # rho_inf for Zubarev convergence in deep-IR limit Lambda_Z -> 0+; band-estimate -0.918 with gap=0.082 from canonical extrapolation. lam_min = 1 - rho_inf_deep_ir derivable in-script per UD-7. (S86)\n  546: f_NL_total_SKA1 = 0.9522  # f_NL_total at SKA1 = 0.9522 (6.348 sigma at sigma_SKA1=0.15) coherent sum across 3 substrate pathways. Per UD-12: prediction FROZEN per FROZEN-PREDICTION-DISCIPLINE; architecture-revision-exempt for path-decomposition relabel only. (S86)\n  547: lambda_min_max_ratio_FW = 0.15127342302947558  # Bit-exact extraction from L_max=12 spectrum cache at tau_fold=0.190; strict |lambda|_min/|lambda|_max ratio (zero-modes excluded if present);\n... [truncated]"
+    },
+    {
+      "anchor_id": "const_cocycle_norm_phi67",
+      "anchor_type": "constants",
+      "name": "cocycle_norm_phi67",
+      "value": "0.793346",
+      "session": "S86",
+      "source_citation": "W-5 C2 substrate-magnitude annotation; W-5 CANONICAL-3; per UD-6 promote",
+      "source_file": "computations/_shared/canonical_constants.py",
+      "source_context_30_lines": "  266: #       (W-5 V4 Step 1 → Step 2) is the only authoritative derivation\n  267: #     - DOWNSTREAM CONSUMERS using `R_universal_HP1_strict_F4` in published quantities MUST cite both:\n  268: #       (a) this canonical pin name, AND\n  269: #       (b) the PRIMARY canonical name `eps_H_HP1_norm` per Class-(d) remediation table\n  270: #   Audit-script verification: `_source_reconciliation_audit.py` Class-(d) chain verification PASSes post-emission\n  271: #   Provenance chain: S86 W-5 V4 substitution chain Step 1 (PRIMARY) → Step 2 (this DERIVATIVE) → S88 W1b1 downstream\n  272: #   landed: CF-27 S90 W2 (mack-cosmic-bridge writer; connes + lizzi co-sign)\n  273: R_universal_HP1_strict_F4 = 1.030902  # Universal HP^1 strict F_4 ratio per W-5 V4 substitution chain Step 2. Downstream-cited via W-5 cross-pillar bridge theorem and W11-C5/C6 lab spec. (S86)\n  274: cocycle_norm_phi67 = 0.793346  # Cocycle norm phi_67 = delta_E_6 * delta_E_7 = 0.793346 M_KK^2 per W-5 C2 substrate-magnitude annotation. (S86)\n  275: cocycle_norm_phi88 = 0.108307  # Cocycle norm phi_88 = (delta_E_8)^2 = 0.108307 M_KK^2; Jensen-rate-limited at tau_fold=0.19 per W-5 C2. (S86)\n  276: substrate_cocycle_ratio_67_88 = 7.324992  # substrate_cocycle_ratio_67_88 = phi_67 / phi_88 = 7.324992 Sage-exact at machine precision; Pillar III HP^1 generators ratio. (S86)\n  277: tau_pivot = 0.190  # Jensen-deformation pivot scale = tau_fold (substrate-first canonical: substrate has ONE Jensen slice; \"pivot\" is CMB-observatio\n... [truncated]"
+    },
+    {
+      "anchor_id": "const_cocycle_norm_phi88",
+      "anchor_type": "constants",
+      "name": "cocycle_norm_phi88",
+      "value": "0.108307",
+      "session": "S86",
+      "source_citation": "W-5 C2 substrate-magnitude annotation; W-5 CANONICAL-4; per UD-6 promote",
+      "source_file": "computations/_shared/canonical_constants.py",
+      "source_context_30_lines": "  267: #     - DOWNSTREAM CONSUMERS using `R_universal_HP1_strict_F4` in published quantities MUST cite both:\n  268: #       (a) this canonical pin name, AND\n  269: #       (b) the PRIMARY canonical name `eps_H_HP1_norm` per Class-(d) remediation table\n  270: #   Audit-script verification: `_source_reconciliation_audit.py` Class-(d) chain verification PASSes post-emission\n  271: #   Provenance chain: S86 W-5 V4 substitution chain Step 1 (PRIMARY) → Step 2 (this DERIVATIVE) → S88 W1b1 downstream\n  272: #   landed: CF-27 S90 W2 (mack-cosmic-bridge writer; connes + lizzi co-sign)\n  273: R_universal_HP1_strict_F4 = 1.030902  # Universal HP^1 strict F_4 ratio per W-5 V4 substitution chain Step 2. Downstream-cited via W-5 cross-pillar bridge theorem and W11-C5/C6 lab spec. (S86)\n  274: cocycle_norm_phi67 = 0.793346  # Cocycle norm phi_67 = delta_E_6 * delta_E_7 = 0.793346 M_KK^2 per W-5 C2 substrate-magnitude annotation. (S86)\n  275: cocycle_norm_phi88 = 0.108307  # Cocycle norm phi_88 = (delta_E_8)^2 = 0.108307 M_KK^2; Jensen-rate-limited at tau_fold=0.19 per W-5 C2. (S86)\n  276: substrate_cocycle_ratio_67_88 = 7.324992  # substrate_cocycle_ratio_67_88 = phi_67 / phi_88 = 7.324992 Sage-exact at machine precision; Pillar III HP^1 generators ratio. (S86)\n  277: tau_pivot = 0.190  # Jensen-deformation pivot scale = tau_fold (substrate-first canonical: substrate has ONE Jensen slice; \"pivot\" is CMB-observational concept mapping to substrate AT the fold). D_max = |log10(0.198/0.190)| =\n... [truncated]"
+    },
+    {
+      "anchor_id": "const_dE_173Yb_lambda_6",
+      "anchor_type": "constants",
+      "name": "dE_173Yb_lambda_6",
+      "value": "5.4938",
+      "session": "S86",
+      "source_citation": "s85_w8_su3_op_lab_predictions.py",
+      "source_file": "computations/_shared/canonical_constants.py",
+      "source_context_30_lines": "  511: beta_s = -0.1331  # Second spectral moment of D_K at tau_fold slice, Jensen flow (running-of-running from W8-86 3rd Taylor coefficient) (S84)\n  512: sigma_beta_s_CMB_S4 = 2.2e-3  # CMB-S4 projected 1-sigma forecast on beta_s = running-of-running; used as LCDM-null pull denominator for S85-BETA-S-CMB-S4-PREREG (S85)\n  513: b_DK = 0.006241291005766653  # Dirac-operator-determined dimensionless constant for Weyl-rescaling weak-form parametric bound. b_DK = (1/8 pi^2) * Tr_F[(Y†Y)^2] / Tr_F[Y†Y] = (1/8 pi^2) * y_t^2, with y_t = m_t_pole/v_ew = 0.7020. Used in W6-3 C-gamma-WEAK gate (L_max=10, FAIL: tree-level dominates anomaly at this regulator class). (S86)\n  514: HP0_content_dim = 3  # HP^0(A_F) content dim for §VII.P-v2 HP^0-content-distinct corridor restriction (S82 W2-3 baseline + S85 W2-7 closeout) (S86)\n  515: dE_He_A_lambda_6 = 1.7267  # Lab falsifier δE_a — 3He-A delta_omega_K/omega_K ratio at sweet-spot lambda_6 direction; M_KK-normalized. SW1 (Row #13) and XA1 (Row #16) per S86 W14-6 falsifier-master-inventory. (S86)\n  516: dE_FeSe_lambda_7 = 1.8226  # Lab falsifier δE_a — FeSe K_anis/K_0 Knight-shift anisotropy at sweet-spot lambda_7 direction; M_KK-normalized. SW2 (Row #14) and XB2 (Row #20) per S86 W14-6 falsifier-master-inventory. (S86)\n  517: dE_173Yb_lambda_8 = 2.8500  # Lab falsifier δE_a — 173Yb 3-body Gamma(unique)/Gamma(inherited) optical-lattice loss-asymmetry ratio at sweet-spot lambda_8 direction; M_KK-normalized. SW3 (Row #15) per S86 W14-6 falsifi\n... [truncated]"
+    },
+    {
+      "anchor_id": "const_dE_173Yb_lambda_7",
+      "anchor_type": "constants",
+      "name": "dE_173Yb_lambda_7",
+      "value": "13.1852",
+      "session": "S86",
+      "source_citation": "s85_w8_su3_op_lab_predictions.py",
+      "source_file": "computations/_shared/canonical_constants.py",
+      "source_context_30_lines": "  513: b_DK = 0.006241291005766653  # Dirac-operator-determined dimensionless constant for Weyl-rescaling weak-form parametric bound. b_DK = (1/8 pi^2) * Tr_F[(Y†Y)^2] / Tr_F[Y†Y] = (1/8 pi^2) * y_t^2, with y_t = m_t_pole/v_ew = 0.7020. Used in W6-3 C-gamma-WEAK gate (L_max=10, FAIL: tree-level dominates anomaly at this regulator class). (S86)\n  514: HP0_content_dim = 3  # HP^0(A_F) content dim for §VII.P-v2 HP^0-content-distinct corridor restriction (S82 W2-3 baseline + S85 W2-7 closeout) (S86)\n  515: dE_He_A_lambda_6 = 1.7267  # Lab falsifier δE_a — 3He-A delta_omega_K/omega_K ratio at sweet-spot lambda_6 direction; M_KK-normalized. SW1 (Row #13) and XA1 (Row #16) per S86 W14-6 falsifier-master-inventory. (S86)\n  516: dE_FeSe_lambda_7 = 1.8226  # Lab falsifier δE_a — FeSe K_anis/K_0 Knight-shift anisotropy at sweet-spot lambda_7 direction; M_KK-normalized. SW2 (Row #14) and XB2 (Row #20) per S86 W14-6 falsifier-master-inventory. (S86)\n  517: dE_173Yb_lambda_8 = 2.8500  # Lab falsifier δE_a — 173Yb 3-body Gamma(unique)/Gamma(inherited) optical-lattice loss-asymmetry ratio at sweet-spot lambda_8 direction; M_KK-normalized. SW3 (Row #15) per S86 W14-6 falsifier-master-inventory. (S86)\n  518: dE_FeSe_lambda_6 = 0.7674  # Lab falsifier δE_a — FeSe K_anis/K_0 ratio under cross-platform lambda_6 projection; M_KK-normalized. XA2 (Row #17) per S86 W14-6 falsifier-master-inventory. (S86)\n  519: dE_173Yb_lambda_6 = 5.4938  # Lab falsifier δE_a — 173Yb 3-body Gamma-ratio under cross-pl\n... [truncated]"
+    },
+    {
+      "anchor_id": "const_dE_173Yb_lambda_8",
+      "anchor_type": "constants",
+      "name": "dE_173Yb_lambda_8",
+      "value": "2.85",
+      "session": "S86",
+      "source_citation": "s85_w8_su3_op_lab_predictions.py",
+      "source_file": "computations/_shared/canonical_constants.py",
+      "source_context_30_lines": "  509: sigma_alpha_SKA1 = 5.118  # SKA-1 Phase-1 Fisher sigma(alpha_fNL); G45 canonical; used by S84 W4-43 SNR (S83)\n  510: sigma_alpha_SKA2 = 0.80  # SKA-2 full Fisher sigma(alpha_fNL); G45 PASS threshold for framework alpha detection (S83)\n  511: beta_s = -0.1331  # Second spectral moment of D_K at tau_fold slice, Jensen flow (running-of-running from W8-86 3rd Taylor coefficient) (S84)\n  512: sigma_beta_s_CMB_S4 = 2.2e-3  # CMB-S4 projected 1-sigma forecast on beta_s = running-of-running; used as LCDM-null pull denominator for S85-BETA-S-CMB-S4-PREREG (S85)\n  513: b_DK = 0.006241291005766653  # Dirac-operator-determined dimensionless constant for Weyl-rescaling weak-form parametric bound. b_DK = (1/8 pi^2) * Tr_F[(Y†Y)^2] / Tr_F[Y†Y] = (1/8 pi^2) * y_t^2, with y_t = m_t_pole/v_ew = 0.7020. Used in W6-3 C-gamma-WEAK gate (L_max=10, FAIL: tree-level dominates anomaly at this regulator class). (S86)\n  514: HP0_content_dim = 3  # HP^0(A_F) content dim for §VII.P-v2 HP^0-content-distinct corridor restriction (S82 W2-3 baseline + S85 W2-7 closeout) (S86)\n  515: dE_He_A_lambda_6 = 1.7267  # Lab falsifier δE_a — 3He-A delta_omega_K/omega_K ratio at sweet-spot lambda_6 direction; M_KK-normalized. SW1 (Row #13) and XA1 (Row #16) per S86 W14-6 falsifier-master-inventory. (S86)\n  516: dE_FeSe_lambda_7 = 1.8226  # Lab falsifier δE_a — FeSe K_anis/K_0 Knight-shift anisotropy at sweet-spot lambda_7 direction; M_KK-normalized. SW2 (Row #14) and XB2 (Row #20) per S86 W14-6 falsifier-master-\n... [truncated]"
+    }
+  ]
+}

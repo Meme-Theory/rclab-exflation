@@ -1,0 +1,95 @@
+{
+  "gate_id": "S84-BLUE-TRANSIT-TILT-INACCESSIBILITY",
+  "gate_type": "AUDIT-bookkeeping",
+  "classification": "GEOMETRIC-OBSERVATIONAL-BOUNDARY",
+  "session": 84,
+  "wave": "W4-41",
+  "owner_agent": "mack-cosmic-bridge",
+  "registered_at": "2026-04-19T15:30:58Z",
+  "registered_date": "2026-04-19",
+  "substrate_framing": {
+    "blue_tilt_transit": 0.4676036871525688,
+    "blue_tilt_scale_Mpc": 5.532390845603097e+52,
+    "decades_above_CMB": 54.04394284969212,
+    "slow_roll_at_CMB": -0.0030235881896944388,
+    "delta_FW_SR_exact": 0.0,
+    "explanation": "The +0.468 blue tilt is the substrate prediction at k_transit = 5.53e52 Mpc^-1 (f_transit = 8.55e37 Hz, 34 decades above LIGO). It is confined to k > k_transit. At k_CMB = 0.05 Mpc^-1, 54.04 decades below transit, modes have not experienced the Bogoliubov squeezing that produces the +0.468; they see only the quasi-de Sitter background, so n_T reverts to -2*eps_H ~ -3e-3 (slow-roll consistency). This is not a framework failure; it is a geometric property of where substrate physics lives."
+  },
+  "discrimination_ratios": {
+    "Delta_CMB_exact_S68": 0.0,
+    "Delta_CMB_floor_planned": 0.0001,
+    "sigma_nT_LB_1yr_G43": 0.08300635512631185,
+    "sigma_nT_LB_2yr_G43": 0.06341256992258566,
+    "sigma_nT_LB_3yr_G43": 0.054005341255141455,
+    "sigma_nT_LBS4_S68": 0.15,
+    "sigma_nT_joint_fid_37": 0.04,
+    "R_LB_3yr_exact": 0.0,
+    "R_LB_3yr_floor": 0.0018516686993525799,
+    "R_joint_exact": 0.0,
+    "R_joint_floor": 0.0025,
+    "reach_factor_LB_3yr": 540.0534125514146,
+    "reach_factor_joint": 400.0,
+    "reach_factor_3sig_LB": 1620.1602376542437,
+    "reach_factor_3sig_J": 1200.0,
+    "sigma_nT_joint_realized_37": 0.06537507509920248,
+    "R_joint_realized_floor": 0.0015296349541206098,
+    "reach_factor_joint_realized": 653.7507509920248,
+    "nT_CMB_predicted_P39": -0.0030235881896944388,
+    "nT_CMB_P39_dev_from_S68": 0.0
+  },
+  "dependency_graph": {
+    "G43_sigma_nT_LB": "S83 W3-G43 LiteBIRD 3-yr Fisher reach (denominator)",
+    "G46_tensor_transfer_r_CMB": "S83 W3-G46 r(k_CMB) = 0.0117 (slow-roll recovery)",
+    "G50_nT_transit_magnitude": "S83 W3-G50 n_T = +0.4676 at transit (Bogoliubov squeezing)",
+    "S68_LITEB_R_FORECAST": "S68 delta_nT_FW_SR = 0 analytic (slow-roll saturation)",
+    "S65_blue_tensor_tilt_origin": "S65 NT-BLUE-65 PASS: +0.468 at transit scale",
+    "P37_LB_CMBS4_joint": "S84 #37 LB+CMB-S4 joint sigma(n_T) (forward-reference)",
+    "P39_nT_CMB_transfer": "S84 #39 n_T(k_CMB) propagation floor (forward-reference)"
+  },
+  "input_sha256_pins": {
+    "canonical_constants.py": "0590ce9b7d05a39a80ebfe47656db00f25aad169396643ddae37e4a19ac1f499",
+    "s68_liteb_r_forecast.npz": "ef6c4d305e8ccb36dcc94200c670202901533fd25656cb1401ec40c11405fe7b",
+    "s83_w3_g43_litebird_sigma_nT_reach.npz": "3671912245c37b1c3fd6550114422a499d3e3b0692cac6c7145095faae3f85d1",
+    "s83_w3_g46_tensor_transfer.npz": "3f004c9a57948780ebd55aba5fefd0b6dd5b9dda51ded9900043ad8a2ad9e8ce",
+    "s83_w3_g50_nT_bogoliubov.npz": "5e8f69875cd04ef9ed0f958e6010ab11b706707a9996a6707ef69d8f436954c4",
+    "s65_blue_tensor_tilt.npz": "ef0064a610f1f1b4f4c426a892644009f14b8435865052fbe0c8bdbae7d9c6ad",
+    "s84_w4_lb_cmbs4_joint_sigma_nt.npz": "e32aaa01cbce6b6416ec96f32b0bf3e1c832b76ec8ea2ea97ed8da77951ac122",
+    "s84_w4_nt_cmb_transfer.npz": "df4e6e89007d31e38322f9254b8713f05f089edcabc75d8b56e2764985e7a34a"
+  },
+  "input_pin_status": {
+    "canonical_constants.py": "present",
+    "s68_liteb_r_forecast.npz": "present",
+    "s83_w3_g43_litebird_sigma_nT_reach.npz": "present",
+    "s83_w3_g46_tensor_transfer.npz": "present",
+    "s83_w3_g50_nT_bogoliubov.npz": "present",
+    "s65_blue_tensor_tilt.npz": "present",
+    "s84_w4_lb_cmbs4_joint_sigma_nt.npz": "present",
+    "s84_w4_nt_cmb_transfer.npz": "present"
+  },
+  "evoi_closure": {
+    "window_years": "2030-2040",
+    "evoi_before_this": "4.50% (S78-W3-C TENSOR-FAMP pre-S83 proxy)",
+    "evoi_after_this": 0.0,
+    "closure_reason": "LiteBIRD (3-yr Fisher sigma_nT = 0.0540) and the projected LB+CMB-S4 joint (sigma_nT = 0.04) cannot discriminate Delta(n_T)_CMB = 1e-4 (or the exact-zero slow-roll saturation) from the slow-roll consistency prediction within the 2030-2040 window. Detection ratio R = 1.85e-3 (LB) to 2.50e-3 (joint); minimum reach factor 400x below 1-sigma. No further computation on the LiteBIRD n_T channel changes this.",
+    "next_weighted_channels": [
+      "21-cm ISW cross-power (S71 21CM-ISW pre-registration, SNR=4.16 ideal)",
+      "CMB-S4 f_NL bispectrum (S77 Mack-QA: 21cm sole novel channel for GGE)",
+      "Euclid ISW tracking (S68 ISW-TRACKING 2.5-sigma)",
+      "CMB-S4 alpha_s running (S84 ALPHA-S-PRE-REGISTRATION 2.94-sig)"
+    ]
+  },
+  "gate_verdict": "PASS",
+  "fourtuple_tag": {
+    "value": "EVOI=0",
+    "scheme": "registry-entry",
+    "convention": "bookkeeping",
+    "L_max": "N/A"
+  },
+  "carry_forward_pointers": {
+    "CF_41_21CM_ISW": "S71 21CM-ISW-PREREGISTRATION-71 SNR=4.16 ideal",
+    "CF_41_CMBS4_FNL": "S77 CMBS4-FNL-FORECAST-68 sigma_eq=5.0",
+    "CF_41_EUCLID_ISW": "S68 ISW-TRACKING-68 2.5-sigma"
+  },
+  "content_sha256": "11370802f478ba4c9ccc12194c5e004a7692e9131af89db6328ce0711eb65a37",
+  "audit_sha256": "9f6df37364b5de799eb9ddecd62ac36ff00fd6ba8d293721f108894d1815f3d6"
+}

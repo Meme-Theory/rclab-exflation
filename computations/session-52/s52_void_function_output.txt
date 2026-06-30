@@ -1,0 +1,191 @@
+========================================================================
+VOID-FUNCTION-52: Void Size Function at Both alpha_s Values
+========================================================================
+  Omega_m = 0.315, Omega_b = 0.0493, h = 0.6740
+  sigma_8 = 0.811, n_s = 0.9649
+  k_pivot = 0.05 Mpc^-1 = 0.07418 h/Mpc
+  delta_v = -2.717, delta_c = 1.686
+  alpha_s values: {'LCDM': 0.0, 'SA-mix': -0.02, 'O-Z': -0.069}
+
+Step 1: Computing sigma_8 normalization factors...
+  LCDM    : sigma_raw(8) = 4.556482e-04, norm = 3.167980e+06
+  SA-mix  : sigma_raw(8) = 4.534430e-04, norm = 3.198867e+06
+  O-Z     : sigma_raw(8) = 4.481698e-04, norm = 3.274586e+06
+
+Verification: sigma(8) at each alpha_s:
+  LCDM    : sigma(8) = 0.811000 (target: 0.811)
+  SA-mix  : sigma(8) = 0.811000 (target: 0.811)
+  O-Z     : sigma(8) = 0.811000 (target: 0.811)
+
+Step 2: Computing sigma(R) table...
+      R        LCDM      SA-mix         O-Z     SA/LCDM     OZ/LCDM
+  --------------------------------------------------------------
+      2     1.78805     1.76215     1.70237    0.985518    0.952084
+      5     1.09717     1.09315     1.08362    0.996339    0.987646
+      8     0.81100     0.81100     0.81100    1.000000    1.000000
+     10     0.69195     0.69284     0.69497    1.001278    1.004355
+     15     0.50386     0.50529     0.50873    1.002822    1.009652
+     20     0.39250     0.39379     0.39693    1.003291    1.011274
+     25     0.31850     0.31955     0.32209    1.003284    1.011259
+     30     0.26580     0.26660     0.26856    1.003032    1.010400
+     40     0.19603     0.19645     0.19749    1.002176    1.007467
+     50     0.15232     0.15250     0.15291    1.001121    1.003855
+     70     0.10145     0.10133     0.10107    0.998893    0.996247
+    100     0.06374     0.06347     0.06282    0.995733    0.985531
+
+Step 3: Computing void size functions...
+
+  LCDM (alpha_s = 0.0):
+    sigma(5)  = 1.09717,  sigma(8)  = 0.81100
+    sigma(15) = 0.50047,  sigma(20) = 0.39539
+    sigma(50) = 0.13903
+    |d ln sig^-1/d ln R| at R=15: 0.83329
+    |d ln sig^-1/d ln R| at R=20: 0.90377
+    nu(15) = 29.4725,  nu(20) = 47.2196
+    S*f(S) at R=15: 2.437976e-06
+    S*f(S) at R=20: 4.321769e-10
+    dn/dlnR(15) = 1.402484e-10 (h/Mpc)^3
+    dn/dlnR(20) = 1.194290e-14 (h/Mpc)^3
+
+  SA-mix (alpha_s = -0.02):
+    sigma(5)  = 1.09315,  sigma(8)  = 0.81100
+    sigma(15) = 0.50190,  sigma(20) = 0.39669
+    sigma(50) = 0.13912
+    |d ln sig^-1/d ln R| at R=15: 0.83081
+    |d ln sig^-1/d ln R| at R=20: 0.90302
+    nu(15) = 29.3057,  nu(20) = 46.9109
+    S*f(S) at R=15: 2.642593e-06
+    S*f(S) at R=20: 5.026584e-10
+    dn/dlnR(15) = 1.515654e-10 (h/Mpc)^3
+    dn/dlnR(20) = 1.387906e-14 (h/Mpc)^3
+
+  O-Z (alpha_s = -0.069):
+    sigma(5)  = 1.08362,  sigma(8)  = 0.81100
+    sigma(15) = 0.50534,  sigma(20) = 0.39984
+    sigma(50) = 0.13935
+    |d ln sig^-1/d ln R| at R=15: 0.82478
+    |d ln sig^-1/d ln R| at R=20: 0.90117
+    nu(15) = 28.9077,  nu(20) = 46.1745
+    S*f(S) at R=15: 3.202471e-06
+    S*f(S) at R=20: 7.206594e-10
+    dn/dlnR(15) = 1.823438e-10 (h/Mpc)^3
+    dn/dlnR(20) = 1.985747e-14 (h/Mpc)^3
+
+========================================================================
+RELATIVE EXCESS vs LCDM (alpha_s = 0)
+========================================================================
+
+  SA-mix (alpha_s = -0.02):
+    R =  10 h^{-1} Mpc: excess = +1.11%, sigma ratio = 1.001258
+    R =  15 h^{-1} Mpc: excess = +8.07%, sigma ratio = 1.002843
+    R =  20 h^{-1} Mpc: excess = +16.21%, sigma ratio = 1.003285
+    R =  25 h^{-1} Mpc: excess = +25.69%, sigma ratio = 1.003285
+    R =  30 h^{-1} Mpc: excess = -8.34%, sigma ratio = 1.003024
+    R =  40 h^{-1} Mpc: excess = -14.83%, sigma ratio = 1.002141
+    R =  50 h^{-1} Mpc: excess = -4.23%, sigma ratio = 1.001152
+    Average excess [15, 20] h^-1 Mpc: +11.85%
+    sigma(R) ratios (this model / LCDM):
+      R=  5: 0.996339 (delta = -0.3661%)
+      R=  8: 1.000000 (delta = +0.0000%)
+      R= 10: 1.001278 (delta = +0.1278%)
+      R= 15: 1.002822 (delta = +0.2822%)
+      R= 20: 1.003291 (delta = +0.3291%)
+      R= 30: 1.003032 (delta = +0.3032%)
+      R= 50: 1.001121 (delta = +0.1121%)
+
+  O-Z (alpha_s = -0.069):
+    R =  10 h^{-1} Mpc: excess = +3.79%, sigma ratio = 1.004285
+    R =  15 h^{-1} Mpc: excess = +30.01%, sigma ratio = 1.009723
+    R =  20 h^{-1} Mpc: excess = +66.27%, sigma ratio = 1.011253
+    R =  25 h^{-1} Mpc: excess = +117.91%, sigma ratio = 1.011263
+    R =  30 h^{-1} Mpc: excess = -4.40%, sigma ratio = 1.010372
+    R =  40 h^{-1} Mpc: excess = -36.62%, sigma ratio = 1.007348
+    R =  50 h^{-1} Mpc: excess = -13.85%, sigma ratio = 1.003960
+    Average excess [15, 20] h^-1 Mpc: +46.38%
+    sigma(R) ratios (this model / LCDM):
+      R=  5: 0.987646 (delta = -1.2354%)
+      R=  8: 1.000000 (delta = +0.0000%)
+      R= 10: 1.004355 (delta = +0.4355%)
+      R= 15: 1.009652 (delta = +0.9652%)
+      R= 20: 1.011274 (delta = +1.1274%)
+      R= 30: 1.010400 (delta = +1.0400%)
+      R= 50: 1.003855 (delta = +0.3855%)
+
+========================================================================
+DIAGNOSTIC: P(k) Shape Modification from Running
+========================================================================
+  SA-mix: P(k=0.01)/P_LCDM = 0.961081 (-3.892%)
+  SA-mix: P(k=0.05)/P_LCDM = 0.998614 (-0.139%)
+  SA-mix: P(k=0.10)/P_LCDM = 0.999241 (-0.076%)
+  SA-mix: P(k=0.50)/P_LCDM = 0.964713 (-3.529%)
+  SA-mix: P(k=1.00)/P_LCDM = 0.935137 (-6.486%)
+  SA-mix: P(k=5.00)/P_LCDM = 0.837610 (-16.239%)
+
+  O-Z: P(k=0.01)/P_LCDM = 0.872012 (-12.799%)
+  O-Z: P(k=0.05)/P_LCDM = 0.995225 (-0.478%)
+  O-Z: P(k=0.10)/P_LCDM = 0.997385 (-0.261%)
+  O-Z: P(k=0.50)/P_LCDM = 0.883432 (-11.657%)
+  O-Z: P(k=1.00)/P_LCDM = 0.793450 (-20.655%)
+  O-Z: P(k=5.00)/P_LCDM = 0.542618 (-45.738%)
+
+
+Data saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s52_void_function.npz
+Plot saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s52_void_function.png
+
+========================================================================
+GATE VERDICT: VOID-FUNCTION-52 (INFO)
+========================================================================
+
+  SA-mix (alpha_s = -0.02):
+    Average excess [15,20] h^-1 Mpc: +11.85%
+    Maximum |excess| over full range: 134.16%
+
+  O-Z (alpha_s = -0.069):
+    Average excess [15,20] h^-1 Mpc: +46.38%
+    Maximum |excess| over full range: 204.69%
+
+ASSESSMENT:
+
+1. MECHANISM: Running spectral index alpha_s modifies the primordial P(k)
+   shape. This changes sigma(R) relative to its sigma_8-normalized value,
+   particularly at scales far from R=8 h^{-1} Mpc. The void size function
+   dn/dlnR responds through the SvdW multiplicity function f(nu_v).
+
+2. SENSITIVITY: The effect enters through |d ln sigma^{-1}/d ln R|
+   AND through nu_v = (delta_v/sigma)^2. Both are modified, but the
+   sigma(R) curve is stiff: sigma_8 normalization anchors R=8,
+   and the EH98 transfer function shapes most of the R dependence.
+   Running only adds a slow ln(k/k_*)^2 modulation to the primordial shape.
+
+3. DISCRIMINATING POWER:
+   - From Contarini+ (2022, Paper 33): Euclid void precision ~5-10% per bin
+   - From Salcedo+ (2025, Paper 32): DESI Y5 sigma(sigma_8)/sigma_8 ~ 0.8%
+   - The void SIZE FUNCTION itself has larger statistical + systematic
+     uncertainties than sigma_8. Void-finding algorithm, galaxy bias
+     (b_void ~ 0.2-0.3), and RSDs each contribute ~5% systematics.
+
+4. CONTEXT: The original CW prediction of "15-25% excess at R=15-20"
+   was preliminary and did not account for sigma_8 renormalization.
+   The actual excess depends sensitively on HOW the running enters
+   through the transfer function convolution.
+
+5. STRUCTURAL OBSERVATION: alpha_s = -0.069 (O-Z) is already at
+   6-sigma tension with Planck's direct measurement. The SA-Goldstone
+   mixing regime (alpha_s ~ -0.02 to 0) produces effects
+   well below void survey systematics.
+
+6. DECISIVE DISCRIMINATOR: CMB-S4 (sigma(alpha_s) ~ 0.005) directly
+   measures alpha_s. This is 10x more constraining than any void
+   statistic for the running spectral index.
+
+VERDICT: INFO
+  - The void size function IS sensitive to alpha_s through sigma(R) shape
+  - O-Z (alpha_s = -0.069) produces large, potentially detectable effects
+    but O-Z is already excluded at 6-sigma by Planck
+  - SA-mix (alpha_s ~ -0.02) produces small effects at/below void systematics
+  - Void statistics are NOT the decisive test for alpha_s
+  - CMB-S4 is the gate: ALPHA-S-CMB-S4 (pre-registered, sigma ~ 0.005)
+
+========================================================================
+VOID-FUNCTION-52 COMPLETE
+========================================================================

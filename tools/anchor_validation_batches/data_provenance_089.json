@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 89,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_881",
+      "anchor_type": "data_provenance",
+      "name": "leggett_squeezing_spectrum",
+      "script_path": "session-61/s61_leggett_squeezing_spectrum.py",
+      "session": "s61",
+      "inputs": "",
+      "outputs": "session-61/s61_leggett_squeezing_spectrum.npz, session-61/s61_leggett_squeezing_spectrum.png",
+      "source_file": "computations/session-61/s61_leggett_squeezing_spectrum.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s61_leggett_squeezing_spectrum.py — Mode-Resolved Leggett Squeezing Spectrum\n    4: =============================================================================\n    5: \n    6: Gate: LEGGETT-SPECTRUM-61\n    7:     PASS if non-thermal (chi^2/dof > 3)\n    8:     FAIL if thermal (chi^2/dof < 1)\n    9:     INFO if intermediate [1, 3]\n   10: \n   11: PHYSICS:"
+    },
+    {
+      "anchor_id": "prov_882",
+      "anchor_type": "data_provenance",
+      "name": "level_spacing",
+      "script_path": "session-61/s61_level_spacing.py",
+      "session": "s61",
+      "inputs": "",
+      "outputs": "session-61/s61_level_spacing.npz, session-61/s61_level_spacing.png",
+      "source_file": "computations/session-61/s61_level_spacing.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s61_level_spacing.py — LEVEL-STATS-61\n    4: Level Spacing Statistics of D_K Eigenvalues at the Jensen Fold\n    5: \n    6: Context\n    7: -------\n    8: S38 CHAOS-1 found <r> = 0.321 (sub-Poisson) from raw level statistics.\n    9: TESLA-6 (Batch 1) proved Josephson coupling preserves integrability.\n   10: AZ classification = BDI (PROVEN, S22b).\n   11: "
+    },
+    {
+      "anchor_id": "prov_883",
+      "anchor_type": "data_provenance",
+      "name": "lichnerowicz_kmin",
+      "script_path": "session-61/s61_lichnerowicz_kmin.py",
+      "session": "s61",
+      "inputs": "",
+      "outputs": "session-61/s61_lichnerowicz_kmin.npz, session-61/s61_lichnerowicz_kmin.png",
+      "source_file": "computations/session-61/s61_lichnerowicz_kmin.py",
+      "source_context_30_lines": "   24:        minimum -- it arises from algebraic competition within Delta_L.\n   25: \n   26: Gate: LICH-KSEC-61\n   27:     The original gate tests |tau(gap_min) - tau(K_sec_min)| < 0.001.\n   28:     Since K_sec has no interior minimum (monotone decrease), the gate\n   29:     question is structurally inapplicable. Verdict: FAIL (structural).\n   30:     The gap minimum is a LICHNEROWICZ-SPECIFIC feature, not a K_sec effect.\n   31: \n   32: Output: s61_lichnerowicz_kmin.{npz,png}\n   33: \n   34: Author: Baptista Spacetime Analyst (Session 61)\n   35: Date: 2026-03-28\n   36: \"\"\"\n   37: \n   38: import numpy as np\n   39: import sys\n   40: import os"
+    },
+    {
+      "anchor_id": "prov_884",
+      "anchor_type": "data_provenance",
+      "name": "moduli_hessian",
+      "script_path": "session-61/s61_moduli_hessian.py",
+      "session": "s61",
+      "inputs": "computations/session-60/s60_hessian_3d.npz",
+      "outputs": "session-61/s61_moduli_hessian.npz, session-61/s61_moduli_hessian.png",
+      "source_file": "computations/session-61/s61_moduli_hessian.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s61_moduli_hessian.py — MODULI-HESS-61: 36D Moduli Space Hessian of Spectral Action\n    4: =====================================================================================\n    5: Gate: MODULI-HESS-61\n    6:   PASS: All sampled second derivatives d^2 SA/d epsilon^2 <= 0 (fold is maximum in all 36D)\n    7:   FAIL: Any direction gives d^2 SA/d epsilon^2 > 0 (fold is saddle, not maximum)\n    8:   INFO: Flat directions found (d^2 SA/d epsilon^2 ~ 0 within numerical noise)\n    9: \n   10: Background:\n   11:   S60 HESSIAN-3D-60 found the fold is a MAXIMUM in the 3D Ad(U(2))-invariant subspace"
+    },
+    {
+      "anchor_id": "prov_885",
+      "anchor_type": "data_provenance",
+      "name": "multi_pair_qtheory",
+      "script_path": "session-61/s61_multi_pair_qtheory.py",
+      "session": "s61",
+      "inputs": "",
+      "outputs": "session-61/s61_multi_pair_qtheory.npz, session-61/s61_multi_pair_qtheory.png",
+      "source_file": "computations/session-61/s61_multi_pair_qtheory.py",
+      "source_context_30_lines": "  593: # =====================================================================\n  594: #  14. SAVE DATA\n  595: # =====================================================================\n  596: \n  597: print(\"\\n\" + \"=\" * 72)\n  598: print(\"  SAVING DATA\")\n  599: print(\"=\" * 72)\n  600: \n  601: save_path = os.path.join(data_dir, 's61_multi_pair_qtheory.npz')\n  602: \n  603: save_dict = {\n  604:     # Input parameters\n  605:     'N_modes': N_modes,\n  606:     'tau_fold': tau_fold,\n  607:     'eps_fold': eps_fold,\n  608:     'V_fold': V_fold,\n  609:     'M_KK': M_KK,"
+    },
+    {
+      "anchor_id": "prov_886",
+      "anchor_type": "data_provenance",
+      "name": "multimode_covariance",
+      "script_path": "session-61/s61_multimode_covariance.py",
+      "session": "s61",
+      "inputs": "",
+      "outputs": "session-61/s61_multimode_covariance.npz, session-61/s61_multimode_covariance.png",
+      "source_file": "computations/session-61/s61_multimode_covariance.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s61_multimode_covariance.py — Multimode Covariance of Squeezed Leggett Modes\n    4: ============================================================================\n    5: \n    6: GATE: MULTIMODE-COV-61\n    7:   PASS if Q > 0.1 (super-Poissonian, non-classical squeezed state)\n    8:   FAIL if |Q| < 0.01 (effectively Poissonian)\n    9:   INFO if Q in [0.01, 0.1]\n   10: \n   11: Physics:"
+    },
+    {
+      "anchor_id": "prov_887",
+      "anchor_type": "data_provenance",
+      "name": "oddeven_stagger",
+      "script_path": "session-61/s61_oddeven_stagger.py",
+      "session": "s61",
+      "inputs": "",
+      "outputs": "session-61/s61_oddeven_stagger.npz, session-61/s61_oddeven_stagger.png",
+      "source_file": "computations/session-61/s61_oddeven_stagger.py",
+      "source_context_30_lines": "  384: print(f\"  {gate_detail}\")\n  385: print(\"=\" * 72)\n  386: print()\n  387: \n  388: # =====================================================================\n  389: #  9. SAVE RESULTS\n  390: # =====================================================================\n  391: \n  392: out_path = os.path.join(data_dir, 's61_oddeven_stagger.npz')\n  393: np.savez(out_path,\n  394:     # Input\n  395:     N_modes=N_modes,\n  396:     tau_fold=tau_fold,\n  397:     E_GS=E_GS,\n  398:     eps_fold=eps_fold,\n  399:     recomputed=recomputed,\n  400:     # 3-point"
+    },
+    {
+      "anchor_id": "prov_888",
+      "anchor_type": "data_provenance",
+      "name": "offjensen_screening",
+      "script_path": "session-61/s61_offjensen_screening.py",
+      "session": "s61",
+      "inputs": "",
+      "outputs": "session-61/s61_offjensen_screening.npz, session-61/s61_offjensen_screening.png",
+      "source_file": "computations/session-61/s61_offjensen_screening.py",
+      "source_context_30_lines": "  851:     detail = f\"R_screen = {R_definitive:.1f} in [100, 10^4] along steepest direction\"\n  852: \n  853: print(f\"\\n  *** VERDICT: {verdict} ***\")\n  854: print(f\"  *** {detail} ***\")\n  855: \n  856: # =============================================================================\n  857: # 13. Save results\n  858: # =============================================================================\n  859: np.savez(data_dir / 's61_offjensen_screening.npz',\n  860:     # Grid data\n  861:     sig_grid=sig_grid, d1_grid=d1_grid,\n  862:     a2_surface=a2_surface, a4_surface=a4_surface, a0_surface=a0_surface,\n  863:     S_surface=S_surface,\n  864:     frac_da2=frac_da2, frac_dS=frac_dS,\n  865:     R_screen_grid=R_screen_grid,\n  866:     # Angular scan data\n  867:     theta_arr=theta_arr,"
+    },
+    {
+      "anchor_id": "prov_889",
+      "anchor_type": "data_provenance",
+      "name": "oneill_crossterms",
+      "script_path": "session-61/s61_oneill_crossterms.py",
+      "session": "s61",
+      "inputs": "",
+      "outputs": "session-61/s61_oneill_crossterms.npz",
+      "source_file": "computations/session-61/s61_oneill_crossterms.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s61_oneill_crossterms.py — O'Neill A-Tensor Cross-Terms (A-TENSOR-61)\n    4: =====================================================================\n    5: \n    6: Gate: A-TENSOR-61\n    7:   PASS if cross-term corrections < 1% of direct terms\n    8:   INFO if 1-10%\n    9:   FAIL if > 10%\n   10: \n   11: Mathematical structure (van den Dungen Paper 01, 1811.07824):"
+    },
+    {
+      "anchor_id": "prov_890",
+      "anchor_type": "data_provenance",
+      "name": "pair_cmb",
+      "script_path": "session-61/s61_pair_cmb.py",
+      "session": "s61",
+      "inputs": "",
+      "outputs": "session-61/s61_pair_cmb.npz, session-61/s61_pair_cmb.png",
+      "source_file": "computations/session-61/s61_pair_cmb.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s61_pair_cmb.py — PAIR-CMB-61: Pair Transfer CMB Propagation\n    4: =============================================================\n    5: \n    6: Gate: PAIR-CMB-61\n    7:   PASS if delta_T/T has structure in [1e-6, 1e-4]\n    8:   FAIL if flat or outside [1e-8, 1e-2]\n    9:   INFO if below Planck sensitivity\n   10: \n   11: Propagation chain (4 links):"
+    }
+  ]
+}

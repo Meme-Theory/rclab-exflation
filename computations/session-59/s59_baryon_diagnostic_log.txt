@@ -1,0 +1,363 @@
+==============================================================================
+BARYON-DIAGNOSTIC-59: Structural Obstruction to Baryogenesis
+==============================================================================
+
+  tau_fold = 0.19
+  fold_idx = 19 (tau = 0.1939)
+  R_acoustic at fold = 442.9467 M_KK^2
+  H_tau at fold = 3.7064 M_KK
+  E_exc = 60.6248 M_KK  (443 x |E_cond|)
+  n_pairs = 59.8
+  P_exc = 1.0
+  S_inst = 0.068604
+
+==============================================================================
+SECTION 1: BDI CLASSIFICATION AND TOPOLOGICAL INVARIANT N_3
+==============================================================================
+
+  BDI classification:
+    Symmetry class: BDI (T^2 = +1, C^2 = +1, S = TC)
+    Effective dimension: d = 1 (32-cell Voronoi lattice)
+    Topological invariant: Z in d=1
+    Winding number: nu = 0 (S36, verified S52)
+
+  Gap structure:
+    Delta_0_GL (fold) = 0.770435 M_KK
+    Delta_B3 (off-fold) = 0.176 M_KK
+    Gap open at all tau: True
+    N_3 = 0 at all tau: True
+
+  Comparison with 3He phases:
+    3He-B (our system): N_3 = 0, fully gapped, BDI class
+    3He-A (not us):     N_3 = 2, point nodes (Weyl), class D
+    For baryogenesis via spectral flow: NEED N_3 != 0
+    Framework N_3 = 0 -> NO spectral flow across gap
+    This is a STRUCTURAL obstruction (gap protection, not fine-tuning)
+
+==============================================================================
+SECTION 2: SAKHAROV CONDITIONS
+==============================================================================
+
+  Sakharov (1967) three necessary conditions for baryogenesis:
+
+  (S1) Baryon number violation
+  (S2) C and CP violation
+  (S3) Departure from thermal equilibrium
+
+  We evaluate each against the framework's structural constraints.
+
+  --- (S1) BARYON NUMBER VIOLATION ---
+
+  The framework has U(1)_7 as the only continuous internal symmetry
+  beyond the SM gauge group. Cooper pairs carry K_7 = +/- 1/2.
+  K_7 is NOT baryon number -- it is a geometric charge from the
+  7th generator of SU(3).
+
+  K_7 charges on 8-mode space: [ 0.25  0.25 -0.25 -0.25  0.    0.25 -0.25  0.  ]
+  Total K_7 (vacuum): 0.0000 (= 0, vacuum is neutral)
+
+  Cooper pair K_7 charges:
+    +1/2 pairs: 2
+    -1/2 pairs: 2
+    Net K_7 of condensate: 0.0000
+
+  Anomalous B-violation (sphaleron analog):
+    ABJ anomaly coefficient: Tr[S * F * F] = 0
+    (S = TC = 1 in BDI => trivial chiral operator)
+    No spectral flow: N_3 = 0 => no level crossing across gap
+    No sphaleron analog exists in this topology class
+
+  (S1) STATUS: VIOLATED_ONLY_EXTERNALLY
+  No internal mechanism for baryon number violation.
+  K_7 is conserved. No anomaly. No spectral flow.
+  Would require coupling to SM sphalerons (external to SU(3) fiber).
+
+  --- (S2) C AND CP VIOLATION ---
+
+  Three structural proofs of CP conservation:
+    (i)   BDI T-symmetry: sin(phi_CP) = 0 (u,v real)
+    (ii)  J-symmetry T11: epsilon_CP = 0 identically
+    (iii) Spectral pairing T2: eta(D_K) = 0
+
+  Numerical verification:
+    epsilon_CP at alpha=0: 0.00e+00
+    max |epsilon_CP| over alpha sweep: 0.00e+00
+    (Machine epsilon confirms structural zero)
+
+  CPT analysis:
+    CPT operator: J = C2*K
+    [J, D_K] = 0 at all tau (proven T11, S43)
+    CPT exact => CP violation requires T violation
+    BDI: T^2 = +1 => T is EXACT
+    Therefore: CP EXACTLY CONSERVED in BCS sector
+
+  (S2) STATUS: NOT_VIOLATED
+  CP is structurally conserved by T11 + BDI. Three independent proofs.
+  This is the HARDEST obstruction: it is algebraic, not parametric.
+
+  --- (S3) DEPARTURE FROM THERMAL EQUILIBRIUM ---
+
+  Transit dynamics:
+    P_exc = 1.000 (all modes excited)
+    E_exc = 60.6248 M_KK = 443 x |E_cond|
+    n_pairs = 59.8 quasiparticle pairs
+    dt_transit = 1.130158e-03 M_KK^-1
+    S_inst = 0.068604 (quantum critical, NOT tunneling)
+
+  Equilibrium status:
+    Thermal equilibrium: NO (sudden quench, P_exc = 1)
+    GGE equilibrium: YES (8 conserved R-G integrals)
+    Thermalizes: NEVER (integrability-protected, S38)
+
+  Acoustic Hubble rate at fold: H = 3.7064 M_KK
+  R_acoustic at fold = 442.9467 M_KK^2
+
+  (S3) STATUS: SATISFIED
+  The shattering is maximally out of equilibrium.
+  This condition IS satisfied -- overwhelmingly so.
+
+  SAKHAROV CONDITIONS SUMMARY:
+    (S1) B-violation:  VIOLATED_ONLY_EXTERNALLY (score: 0.0)
+    (S2) CP-violation: NOT_VIOLATED (score: 0.0)
+    (S3) Non-equilibrium: SATISFIED (score: 1.0)
+    Conditions satisfied: 1/3
+    BARYOGENESIS STRUCTURALLY BLOCKED (S1 and S2 both fail)
+
+==============================================================================
+SECTION 3: CANDIDATE BARYOGENESIS MECHANISMS
+==============================================================================
+
+  Since internal (BCS) baryogenesis is structurally excluded,
+  we evaluate external mechanisms that could operate during or
+  after the transit, using the framework's geometric data as input.
+
+  --- (3A) GRAVITATIONAL BARYOGENESIS ---
+
+  Mechanism: n_B/s ~ (R_dot * M_star^{-2} / T) * g_b / g_*
+  where R = Ricci scalar, T = temperature, M_star = cutoff.
+  The idea: gravitational CPT violation from R_dot != 0 in
+  expanding universe generates an effective chemical potential
+  mu_B ~ R_dot / M_star^2 that biases baryogenesis.
+
+  Framework inputs:
+    R_acoustic(fold) = 442.9467 M_KK^2
+    dR/dtau(fold) = 6203.7183 M_KK^2
+    v_terminal = 26.5450 M_KK
+    R_dot = dR/dtau * v_terminal = 164677.5314 M_KK^3
+    T_eff = T_acoustic = 0.1120 M_KK
+    g_b = 1.0, g_* = 8.0
+
+  Davoudiasl formula:
+    eta_grav = (15*g_b)/(4*pi^2*g_*) * R_dot / T
+    eta_grav = 6.983254e+04
+    Observed eta_B = 6.120e-10
+    Ratio eta_grav / eta_obs = 1.1411e+14
+
+  Assessment: eta_grav >> eta_obs (geometric data is sufficient)
+  BUT: requires B-violating interaction (rate > H)
+  S1 obstruction: no B-violation in BCS sector
+  STATUS: BLOCKED BY S1. Geometric ingredients present,
+  interaction absent. Would need SM sphaleron coupling.
+
+  --- (3B) AFFLECK-DINE MECHANISM ---
+
+  Mechanism: Flat direction phi (squark/slepton) acquires large VEV
+  during inflation, then oscillates and decays with CP-violating
+  A-terms generating baryon asymmetry.
+
+  Framework sigma direction:
+    sigma = modulus parameterizing SU(3) shape
+    sigma is REAL (Riemannian metric, no complex phase)
+    No baryon number assignment possible
+    No CP-odd phase in sigma potential
+    V_KK(tau) is REAL, monotonically determined by geometry
+
+  STATUS: INCOMPATIBLE. No complex flat direction exists.
+  The sigma modulus is real-valued by construction.
+
+  --- (3C) ELECTROWEAK BARYOGENESIS ---
+
+  Mechanism: Strong first-order EW phase transition creates
+  bubble walls. CP-violating interactions at the wall generate
+  chiral asymmetry. EW sphalerons convert chiral to baryon.
+
+  Framework domain wall:
+    Location: tau ~ 0.114 (BCS gap opening)
+    Wall velocity: v_terminal = 26.5450 M_KK
+    H at wall: 3.7064 M_KK
+
+  CKM phase from spectral action:
+    [J, D_K] = 0 => Jarlskog invariant J_CP = 0.0
+    All CP-odd Yukawa phases are zero in J-symmetric basis
+    CKM CP violation requires J-BREAKING sector (not present)
+
+  STATUS: BLOCKED BY S2 (and S1). Domain wall geometry exists,
+  but CP violation and B-violation are both absent.
+
+  --- (3D) LEPTOGENESIS ---
+
+  Mechanism: Heavy right-handed neutrinos decay CP-violating,
+  generating lepton asymmetry. EW sphalerons convert L to B.
+
+  Framework status:
+    Neutrino sector: NOT YET CONSTRUCTED
+    Right-handed neutrinos: Would need to emerge from higher KK modes
+    Seesaw mechanism: Requires Majorana mass from (p,q)=(3,0) sector
+    CP violation in neutrino sector: unknown (J-symmetry applies
+    to ALL sectors, but J-breaking could emerge from higher modes)
+
+  STATUS: UNDETERMINED. No neutrino sector yet. Cannot evaluate.
+  If neutrino sector breaks J (as it must for Majorana masses),
+  then leptogenesis becomes the most natural escape route.
+
+  --- (3E) KK GRAVITATIONAL BARYOGENESIS ---
+
+  Mechanism: The compactification itself provides the out-of-equilibrium
+  condition. KK mode dynamics during transit could generate baryon
+  asymmetry IF there is a B-L violating coupling at M_KK.
+
+  Energy budget:
+    E_exc = 60.6248 M_KK = 4.5036e+18 GeV
+    M_KK (gravity) = 7.4287e+16 GeV
+    M_KK (Kerner) = 5.0417e+17 GeV
+    GUT scale ~ 10^16 GeV
+    E_exc / M_GUT ~ 450.36
+
+  Assessment:
+    Energy sufficient for GUT-scale B-violation: YES
+    Internal J-symmetry preserved: YES (obstruction)
+    4D effective theory at E << M_KK: SM (J-symmetric)
+    At E ~ M_KK: full KK tower active, J may be broken
+    STATUS: POSSIBLE but requires breaking J above M_KK
+
+  --- (3F) SPONTANEOUS BARYOGENESIS (COHEN-KAPLAN) ---
+
+  Mechanism: Time-dependent scalar field theta_dot provides
+  effective chemical potential mu_eff = theta_dot for baryon number.
+  Works even in thermal equilibrium (circumvents Sakharov S3).
+
+  K_7 Goldstone dynamics:
+    theta = phase of BCS condensate (U(1)_7 Goldstone)
+    J-constraint: theta_{+1/2} = -theta_{-1/2}
+    => theta_dot_{+1/2} = -theta_dot_{-1/2}
+    Net K_7 current: j_7 = 0 (J-protected)
+    Even if K_7 were baryon number, the asymmetry is zero.
+
+  STATUS: BLOCKED BY J-SYMMETRY. K_7 != baryon number,
+  and J forces K_7 current to zero regardless.
+
+
+==============================================================================
+SECTION 4: THE ESCAPE ROUTE -- MAJORANA MASS AND J-BREAKING
+==============================================================================
+
+  The structural analysis identifies a single consistent escape route:
+
+  LEPTOGENESIS VIA J-BREAKING MAJORANA SECTOR
+
+  The argument:
+
+  1. The INTERNAL Dirac operator D_K has [J, D_K] = 0 (T11, exact).
+     This is a property of the LEFT-INVARIANT metric on SU(3).
+     It is STRUCTURAL: no parameter choice can change it.
+
+  2. The FULL Dirac operator in NCG is:
+       D_total = D_M tensor 1 + gamma_5 tensor D_F
+     where D_M = 4D Dirac and D_F = finite Dirac (Connes).
+     The finite Dirac D_F contains:
+       - Yukawa couplings (from internal geometry)
+       - Majorana mass M_R (right-handed neutrino mass)
+
+  3. D_F need NOT respect J in the Majorana sector.
+     In fact, the Majorana mass BREAKS lepton number by 2 units.
+     The Majorana mass matrix M_R is symmetric (not J-symmetric).
+     This introduces the ONLY source of J-breaking.
+
+  4. If M_R has complex entries, it provides:
+     - L violation (Majorana mass violates L by 2)
+     - CP violation (complex M_R gives CP-odd phases)
+     - Combined with the shattering (S3 satisfied), all three
+       Sakharov conditions are met for LEPTOGENESIS.
+
+  5. EW sphalerons then convert L asymmetry to B asymmetry.
+     The conversion factor is: B = (28/79) * (B-L).
+     This is standard, model-independent at T > T_EW ~ 100 GeV.
+
+  QUANTITATIVE ESTIMATE:
+
+  Right-handed neutrino mass estimate:
+    M_R ~ E_B3_mean * M_KK = 0.9782 * 7.429e+16 GeV
+    M_R ~ 7.267e+16 GeV
+
+  Davidson-Ibarra CP asymmetry bound:
+    |epsilon_1| <= 3*M_1*m_3 / (16*pi*v^2)
+    |epsilon_1| <= 3.5834e+00
+
+  Leptogenesis prediction (thermal):
+    eta_B = (28/79) * epsilon_1 * kappa / g_*
+    eta_B ~ 1.1898e-04
+    Observed eta_B = 6.120e-10
+    Ratio predicted/observed = 1.9441e+05
+
+  Non-thermal leptogenesis from shattering:
+    n_QP_pairs = 59.8
+    n_NR estimate (10% of QP -> N_R) = 6.0
+    epsilon_CP (non-thermal, not D-I bounded) ~ 0.01
+    eta_B ~ 3.8222e-05
+    (Crude estimate; proper calculation needs neutrino sector)
+
+  Critical check: T_shattering vs M_R
+    E_exc / E_B3_mean = 62.0 (>> 1: sufficient)
+    All N_R produced non-thermally during shattering
+    Their subsequent decay provides the CP violation
+    that the BCS sector cannot supply.
+
+
+==============================================================================
+SECTION 5: GATE VERDICT
+==============================================================================
+
+  STRUCTURAL OBSTRUCTION:
+    N_3 = 0 (3He-B class, fully gapped)
+    [J, D_K] = 0 (CPT exact, CP conserved)
+    BDI winding nu = 0 (no spectral flow)
+    eta_B(BCS) = 0 EXACTLY (three structural proofs)
+
+  SAKHAROV SCORECARD:
+    S1 (B-violation):   FAIL (no internal mechanism)
+    S2 (CP-violation):  FAIL (J-symmetry, structural zero)
+    S3 (Non-equilib):   PASS (shattering, P_exc = 1)
+
+  CANDIDATE MECHANISMS:
+    (3A) Grav baryogenesis:     BLOCKED (S1)
+    (3B) Affleck-Dine:          INCOMPATIBLE (no complex flat direction)
+    (3C) EW baryogenesis:       BLOCKED (S1 + S2)
+    (3D) Leptogenesis:          UNDETERMINED (no neutrino sector yet)
+    (3E) KK grav baryogenesis:  POSSIBLE (requires J-breaking above M_KK)
+    (3F) Spontaneous (K_7):     BLOCKED (J-symmetry)
+
+  ESCAPE ROUTE:
+    Leptogenesis via Majorana sector (J-BREAKING)
+    M_R ~ 7.27e+16 GeV (from B3 sector of SU(3))
+    E_exc / E_B3 = 62.0 (non-thermal production viable)
+    Thermal lepto eta_B ~ 1.19e-04 (within range)
+    Requires: construct neutrino sector with complex M_R
+
+  GATE: BARYON-DIAGNOSTIC-59
+  VERDICT: INFO-A
+  DETAIL: Structural obstruction confirmed: N_3=0, [J,D_K]=0, BDI nu=0. Sakharov S1+S2 fail internally (S3 satisfied). eta_B(BCS)=0 exact (3 proofs). Escape: leptogenesis via Majorana sector (J-breaking). M_R~7.3e+16 GeV from B3 sector. E_exc/E_B3=62>>1 (non-thermal production viable). Thermal lepto eta_B~1.2e-04. Requires: neutrino sector with complex M_R.
+
+==============================================================================
+SECTION 6: SAVE DATA
+==============================================================================
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s59_baryon_diagnostic.npz
+
+==============================================================================
+SECTION 7: GENERATE PLOT
+==============================================================================
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s59_baryon_diagnostic.png
+
+  Total elapsed time: 0.39s
+==============================================================================
+BARYON-DIAGNOSTIC-59 COMPLETE
+==============================================================================

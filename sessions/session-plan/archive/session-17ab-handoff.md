@@ -62,15 +62,15 @@
 
 ## III. SCRIPTS PRODUCED THIS SESSION
 
-All in `tier0-computation/`:
+All in `computations/`:
 
 | Script | Agent | Session | Purpose |
 |:-------|:------|:--------|:--------|
 | `gauge_coupling_derivation.py` | baptista | 17a | B-1: g₁/g₂ = e^{-2s} derivation + numerical |
 | `z3_triality_labeling.py` | baptista | 17a | B-4: Z₃ partition of 28 irreps |
-| `tier1_coleman_weinberg.py` | hawking | 17a | H-1: Raw CW 40-combo sweep |
-| `tier1_cw_regularized.py` | hawking | 17a | H-1: 6 regularization schemes + critical Λ scan |
-| `tier1_spectral_free_energy.py` | hawking | 17a | H-2: Spectral free energy + phase structure |
+| `coleman_weinberg.py` | hawking | 17a | H-1: Raw CW 40-combo sweep |
+| `cw_regularized.py` | hawking | 17a | H-1: 6 regularization schemes + critical Λ scan |
+| `spectral_free_energy.py` | hawking | 17a | H-2: Spectral free energy + phase structure |
 | `sp_metric_and_vtree.py` | sp-geometer | 17a | SP-1 + SP-4: Explicit metric + exact V_tree |
 | `d1_d3_j_compatibility.py` | dirac | 17a | D-1 + D-3: J-audit + eigenvalue pairing |
 | `b2_baptista_verification.py` | baptista | 17b | B-2: 24/24 geometry verification |
@@ -82,8 +82,8 @@ All in `tier0-computation/`:
 ### Pre-existing scripts used by agents:
 | Script | Lines | Used By |
 |:-------|:-----:|:--------|
-| `tier1_dirac_spectrum.py` | ~1580 | ALL agents (D_K eigenvalues, Peter-Weyl) |
-| `tier1_spectral_action.py` | ~900 | H-1, SP-4, B-2 (R(s), heat kernel) |
+| `dirac_spectrum.py` | ~1580 | ALL agents (D_K eigenvalues, Peter-Weyl) |
+| `spectral_action.py` | ~900 | H-1, SP-4, B-2 (R(s), heat kernel) |
 | `branching_computation_32dim.py` | ~1200 | D-1 (J operator, KO-dim) |
 | `session11_gamma_F_correction.py` | ~300 | D-1 (corrected γ_F) |
 
@@ -94,7 +94,7 @@ All in `tier0-computation/`:
 | Quantity | Value | Source |
 |:---------|:------|:-------|
 | s₀ from sin²θ_W | **0.2994** | B-1 (gauge_coupling_derivation.py) |
-| s₀ from Boltzmann V_eff | **0.164** (at Λ_UV=1.23) | H-1 (tier1_cw_regularized.py) |
+| s₀ from Boltzmann V_eff | **0.164** (at Λ_UV=1.23) | H-1 (cw_regularized.py) |
 | g₁/g₂(s) | e^{-2s} | B-1 (derived from Baptista eq 3.71) |
 | g₃ | s-independent | B-1 (RIGHT-regular action) |
 | Gauge-viable window | s₀ ∈ [0.15, 0.50] | B-1 |
@@ -134,7 +134,7 @@ All in `tier0-computation/`:
 - SP-Geometer delivers bonus results unprompted (SP-2 started in 17a as bonus)
 
 ### Python Environment
-- `tier0-computation/` scripts run with system `python` (3.13, CPU-only)
+- `computations/` scripts run with system `python` (3.13, CPU-only)
 - ~8.7s per s-value at max_pq_sum=6 for Dirac spectrum
 - Hawking's full V_eff sweep: 903s (15 min) for 40 combos
 - Hawking's H-2 spectral free energy: 420s (7 min)
@@ -175,7 +175,7 @@ All in `tier0-computation/`:
 3. **Create team `session-17c`** with 3 agents: dirac, hawking, sp-geometer + background coordinator
 4. **Create tasks** from the 17c prompt (D-2, D-4, H-2 extension, SP-3)
 5. **Launch all agents in parallel** — 17c tasks are mostly independent (D-2 is the critical path)
-6. **Key note**: Hawking will likely need to MODIFY `tier1_dirac_spectrum.py` to return eigenvectors (not just eigenvalues) for the Pfaffian. The session-16 notes flagged this as a small code change.
+6. **Key note**: Hawking will likely need to MODIFY `dirac_spectrum.py` to return eigenvectors (not just eigenvalues) for the Pfaffian. The session-16 notes flagged this as a small code change.
 7. **Key note**: Hawking WILL resist shutdown. Plan accordingly.
 8. **Key note**: The `/team-blast` skill is available if agents seem to ignore messages
 

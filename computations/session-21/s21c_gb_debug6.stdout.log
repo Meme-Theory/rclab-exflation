@@ -1,0 +1,51 @@
+======================================================================
+T3-S21C-GB-DEBUG6: BRUTE FORCE EULER DENSITY VIA EPSILON
+======================================================================
+4D Levi-Civita built: shape (4, 4, 4, 4)
+
+--- 4D: S^4 ---
+S(S^4) = 96.000000, chi via S/48 = 2.000000 (expected 2)
+
+--- 4D: U(1) x SU(2) ---
+S(U(1)xSU(2)) = 0.0000000000e+00 (expected 0)
+
+--- 8D: Analytic SU(3) ---
+Building 8D Levi-Civita symbol...
+8D Levi-Civita built: shape (8, 8, 8, 8, 8, 8, 8, 8)
+Step 1: contract eps8 with first R factor...
+  T1 max |.|: 1.666667e-01
+Step 2...
+  T2 max |.|: 3.472222e-02
+Step 3...
+  T3 max |.|: 6.944444e-03
+Step 4...
+  T4 max |.|: 5.421011e-20
+Step 5: full contraction with second epsilon...
+S(SU(3)) = -2.322842921096158e-16, S/6144 = -3.780668816888278e-20 (expected 0)
+
+--- 8D: S^8 ---
+S(S^8) = 645120.000000, S/6144 = 105.000000 (expected 105)
+chi(S^8) via formula = 2.000000 (expected 2)
+
+--- 8D: stored R at tau=0 ---
+S(stored, tau=0) = -2.963861288607768e-16, S/6144 = -4.823992982760038e-20
+
+======================================================================
+SUMMARY
+======================================================================
+S(S^4)                 = 96.000000  (chi=2.000000, exp 2)
+S(U(1)xSU(2))          = 0.0000000000e+00  (exp 0)
+S(SU(3), analytic)     = -2.322842921096158e-16  (exp 0)
+S(SU(3), stored)       = -2.963861288607768e-16  (exp 0)
+S(S^8)                 = 645120.000000  (chi=2.000000, exp 2)
+
+chi(SU(3)) = 0 gate (|S/6144| < 1e-08):
+  analytic SU(3): PASS  |S/6144|=3.781e-20
+  stored SU(3):   PASS  |S/6144|=4.824e-20
+
+Cross-checks:
+  chi(S^4)=2:      PASS  (2.000000)
+  chi(S^8)=2:      PASS  (2.000000)
+  chi(U2)=0:       PASS  (0.000e+00)
+
+OVERALL: PASS

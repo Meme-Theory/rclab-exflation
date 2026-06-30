@@ -1,0 +1,28 @@
+Ainulindale: Unknown command line argument 'Exflation\phonon-exflation-sim\.venv312\Lib\site-packages\_rocm_sdk_core\lib\llvm\bin\offload-arch.exe'.  Try: 'C:\sandbox\Ainulindale --help'
+[INPUT-PIN] canonical_constants.py sha256=ef6243dba5784ba91083ee3980ce8b2867ad58c96eeb76cb02b811705ffac1d0
+[INPUT-PIN] inv12_w3_1_relic_spectrum_ode_lock.npz sha256=323f1c74a9fc8bbc03b838510e157e32d7cba861ef2524400bbff3b7f6718754
+[INPUT-PIN] script sha256=e0fcc09a20d495fbaae93f2a1959e276044ed90b0bafc4805e8418b78fab477a
+[PIN] tau_fold=0.19  M_KK=7.428660e+16  Delta_BCS=0.4642547395
+[PIN] n_pairs(S38 canonical)=59.8
+[ENV] torch_gpu=True
+[W3-1] N_pair_eff(locked,L_band=7)=5.489098  Sum mult*|beta|^2=5.489098  N_trunc_rel=0.3779
+[L=8] n_sectors=45  eta_form(FTC)=-1.465494e-13  eta_form(int)=-1.465494e-13  mode_mix=759.837520  signed_sum(fold)=-1.390e-12  (221.7s)
+Traceback (most recent call last):
+  File "C:\sandbox\Ainulindale Exflation\computations\investigation-12\inv12_w2_5_fwd_c1_bismut_cheeger_eta.py", line 491, in <module>
+    main()
+  File "C:\sandbox\Ainulindale Exflation\computations\investigation-12\inv12_w2_5_fwd_c1_bismut_cheeger_eta.py", line 268, in main
+    traj = build_signed_traj(skel, sectors, tau_grid)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\sandbox\Ainulindale Exflation\computations\investigation-12\inv12_w2_5_fwd_c1_bismut_cheeger_eta.py", line 168, in build_signed_traj
+    ds.get_irrep(p, q, gens, f_abc)              # warm tau-independent irrep cache
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\sandbox\Ainulindale Exflation\computations\_shared\dirac_spectrum.py", line 1155, in get_irrep
+    rho = irrep_symmetric_power(conj_gens, q)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\sandbox\Ainulindale Exflation\computations\_shared\dirac_spectrum.py", line 943, in irrep_symmetric_power
+    term = np.kron(term, I3)
+           ^^^^^^^^^^^^^^^^^
+  File "C:\sandbox\Ainulindale Exflation\phonon-exflation-sim\.venv312\Lib\site-packages\numpy\lib\_shape_base_impl.py", line 1187, in kron
+    result = _nx.multiply(a_arr, b_arr, subok=(not is_any_mat))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+numpy._core._exceptions._ArrayMemoryError: Unable to allocate 52.0 GiB for an array with shape (19683, 3, 19683, 3) and data type complex128

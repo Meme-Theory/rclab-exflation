@@ -52,7 +52,7 @@ The arc runs ALL remaining zero-cost and moderate-cost computations in dependenc
 **What it covers**: The computationally expensive path blocked in all prior sessions — eigenvector extraction and full off-diagonal coupling. The block-diagonal treatment has |coupling|/|gap| = 4-5× at lowest modes. All prior delta_T and V_IR results are block-diagonal artifacts. Coupled computation is the direct test.
 
 **Computations**:
-- PA-1: Eigenvector extraction from the Dirac operator. Modify tier1_dirac_spectrum.py to return eigenvectors via torch.linalg.eigh(). Gap-edge sectors (p+q <= 3, ~120 modes). 9 tau values in physical window. Output s22b_eigenvectors.npz.
+- PA-1: Eigenvector extraction from the Dirac operator. Modify dirac_spectrum.py to return eigenvectors via torch.linalg.eigh(). Gap-edge sectors (p+q <= 3, ~120 modes). 9 tau values in physical window. Output s22b_eigenvectors.npz.
 - PA-2: Kosmann-Lichnerowicz coupling matrix C_{nm}(tau) = <psi_n | (1/4)(L_{ea}g)^{jk} gamma_j gamma_k | psi_m>. Run with both L_X (standard) and L_tilde (Baptista Paper 18 eq 1.4 correction).
 - PB-1: Coupled diagonalization — assemble H_coupled = block_diag + C_offdiag. Diagonalize on GPU.
 - PB-2: Coupled V_IR — N=20,50,100,200 cutoffs. Compare to block-diagonal from s21c_V_IR.npz.
@@ -182,11 +182,11 @@ Each team has at most 3 specialist agents + 1 coordinator. Session 22c has 3 spe
 
 | File | Written by | Session |
 |------|-----------|---------|
-| `tier0-computation/s22a_*.py` and `*.npz` | sp-geometer and qa-theorist | 22a |
+| `computations/s22a_*.py` and `*.npz` | sp-geometer and qa-theorist | 22a |
 | `sessions/session-22/session-22a-synthesis.md` | coordinator (22a) | 22a |
-| `tier0-computation/s22b_*.py` and `*.npz` | phonon-exflation-sim | 22b |
+| `computations/s22b_*.py` and `*.npz` | phonon-exflation-sim | 22b |
 | `sessions/session-22/session-22b-synthesis.md` | coordinator (22b) | 22b |
-| `tier0-computation/s22c_*.py` and `*.npz` | feynman and connes and landau | 22c |
+| `computations/s22c_*.py` and `*.npz` | feynman and connes and landau | 22c |
 | `sessions/session-22/session-22c-synthesis.md` | coordinator (22c) | 22c |
-| `tier0-computation/s22d_*.py` and `*.npz` | einstein | 22d |
+| `computations/s22d_*.py` and `*.npz` | einstein | 22d |
 | `sessions/session-22/session-22d-synthesis.md` | coordinator (22d) | 22d |

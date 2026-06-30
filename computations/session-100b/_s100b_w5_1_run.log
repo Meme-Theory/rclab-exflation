@@ -1,0 +1,172 @@
+=== S100b-BOX-DELTA-BOGOLIUBOV -- input SHA-256 pins (plan-verified) ===
+  computations/_shared/canonical_constants.py: a13dddb1365b35f2... (runtime-pinned)
+  s77_n_pivot_map.npz: 80fbf580234d0e3e... [OK]
+  s78_f_conv_subhorizon.npz: 638d84a0c0bb1b53... [OK]
+  s64_mukhanov_sasaki.npz: e671f535e3a2da78... [OK]
+  s64_epsilon_profile.npz: 40789017c5f0c668... [OK]
+  s64_sound_speed.npz: f8873af64609cb8a... [OK]
+  03_Sparn_Particle-Production-Time-Dependent-Spacetimes-Scattering.pdf: bb7d7d3a2b4f4d58... [OK]
+  04_Schmidt_Cosmological-Particle-Production-Scattering-Problem.pdf: 6541ba3bcfc727e6... [OK]
+  p2-a-as-ledger-dissonance.md: 2f2058358a3be8d7... [OK]
+  audit_sha256:   297a597c3cfe6fa0... (script+canonical+pinmap)
+  content_sha256: 649194ac0119a14f... (script only)
+
+--- Runtime PDF extraction: Sparn (2412.18xxx) Eqs. 2-5 ---
+  [FOUND] Sparn Eq.2 (mode eq, Hubble friction)
+  [FOUND] Sparn Eq.3 (Schrodinger form)
+  [FOUND] Sparn Eq.4 (V(eta) potential)
+  [FOUND] Sparn Eq.5 (S_k oscillation)
+  [FOUND] Sparn N_k dictionary
+  [FOUND] Sparn unitarity
+  [FOUND] Sparn box height (linear expansion)
+  [FOUND] Sparn boundary deltas
+  [FOUND] Sparn box height value check (1/4 adot^2)
+  Extracted convention (verbatim, Sparn p.2):
+    psi_k(eta) = sqrt(a(eta)) v_k(eta);  dη = dt/a(t)
+    [-d2/deta2 + V(eta)] psi_k = k^2 psi_k          (Eq. 3)
+    V(eta) = (1/4) adot^2 + (1/2) addot * a         (Eq. 4, dots=lab t)
+    S_k = 1/2 + N_k + DN_k cos(2 w_k t_h + theta_k) (Eq. 5)
+    N_k = |b_k|^2/|c_k|^2 ;  |c_k|^2 = |a_k|^2 - |b_k|^2 (unitarity)
+    linear expansion -> box of height H0^2/4 + boundary deltas
+
+--- Runtime PDF extraction: Schmidt (2309.07847) Eqs. 75-76 + Table I ---
+  [FOUND] Schmidt Table I rectangular-barrier landscape
+  [FOUND] Schmidt Table I barrier V_r = (H0^2/4) Theta Theta
+  [FOUND] Schmidt Table I barrier deltas V_s = (H0/2)[d_i - d_f]
+  [FOUND] Schmidt Eq.75 marker (sin[mu_k Delta_eta] closed form)
+  [FOUND] Schmidt Eq.76 marker (r_k closed form)
+  [FOUND] Schmidt sin[(eta_f-eta_i) mu_k] structure
+  [FOUND] Schmidt delta-peak matching (psi' jump = (H/2) psi, B41)
+  Extracted convention (verbatim structure, Schmidt p.12 Table I + p.13):
+    linear expansion a(t)=1+H0t -> V_r = (H0^2/4) Theta(eta-eta_i)
+      Theta(eta_f-eta) ;  V_s = (H0/2)[delta(eta-eta_i) - delta(eta-eta_f)]
+      (one REPULSIVE switch-on delta, one ATTRACTIVE switch-off delta;
+       weight = conformal-Hubble-at-boundary / 2)
+    Eq. 75/76: amplitudes carry sin[(eta_f-eta_i) mu_k] /
+      cos[(eta_f-eta_i) mu_k] with mu_k the interior momentum --
+      the SUB-horizon oscillating branch; the super-horizon branch is
+      the continuation mu_k -> i Lambda_k (sin -> sinh), implemented
+      here through the entire functions C=cos(mu L), S=sin(mu L)/mu
+      of mu^2 (exact analytic continuation).
+    Delta-peak matching: [psi'] = +Omega psi at each peak (B41/B42).
+
+--- Runtime extraction: S79 P2-A B2-ladder anchor (line ~613) ---
+  [FOUND] |beta_2|^2 ~ 1700 anchor: 'The stiff-to-dS post-fold dynamics ALSO produces squeezing via B2, with |beta_2|^2 ~ 1700 (if F_amp = |alpha_R...'
+
+--- Input-integrity cross-checks (canonical-first) ---
+  H_fold (canonical) = 586.5267713108  vs s64 npz 586.5267713108  (rel dev 0.00e+00)
+  dS_fold canonical 58672.80241318 vs s64 npz 58672.80241318 (rel 0.00e+00)
+  d2S_fold canonical 317862.84898132 vs s64 npz 317862.84898132 (rel 0.00e+00)
+  Mach_max_framework (canonical) = 13.75 vs Mach_fric (s64) = 13.753964771660 (rel 2.88e-04) -- supersonic fold
+  k/aH at fold: s77 = 14.672121982571 vs s78 = 14.7 (rel 1.90e-03)
+  x_pivot (s78 sub-horizon WKB anchor) = 11.074964845863
+  N_pivot (s77) = 3.118414524029
+
+--- Fold normalization (Convention B; a(tau_fold)=1) ---
+  a_fold (s64 raw) = 386.023934  (N_fold = 5.9559)
+  aH_target = k_pivot/k_over_aH = 14.311092688449/14.672121982571 = 0.975393518773 M_KK
+  clock conversion u = H_fold/aH_target = 586.526771/0.975394 = 601.323220
+  conformal rescale Lambda = u*a_fold = 232125.154998
+
+--- CHK-N normalization pre-flight ---
+  aH|fold re-derived (d ln a~/d eta~) = 0.9753755034 M_KK
+  re-derived z''/z plateau = 2*(aH_re)^2 = 1.9027147453
+  anchor k_pivot^2/107.63558173572 = 1.9027850329
+  CHK_N_ratio = 0.9999630606  (band [0.95, 1.05])
+  CHK-N: PASS
+  [diagnostic] stored s64 zpp_over_z channel in fold units = 2.764080 = 1.4526 x anchor
+    (the known eta_H = 0.956 slow-roll-violation gap, s64 INFO; F_fold = 2.9054 vs quasi-dS 2.0 -- this is
+    the plan's 'cross-check vs stored zpp_over_z channel': documented, branch-(c) sensitivity below)
+
+--- Transit window (fold-normalized M_KK clock) ---
+  dt_transit (canonical) = 1.1301575038e-03 M_KK^-1
+  tau window: [0.189948742, 0.190051272]  (delta_tau = 1.025303e-04; grid spacing 8.817635e-04 -> window/grid = 0.1163 [sub-grid; cubic interpolant = pinned machinery])
+  eta~ window: [-5.65226007e-04, 5.64914581e-04]
+  Delta_eta = 1.1301405880e-03 M_KK^-1  (vs dt_transit: ratio 0.99998503)
+  impulsiveness: aH*Delta_eta = 1.102332e-03 << 1 (fold-conformal clock);
+    canonical S38-clock product H_fold*dt_transit = 0.662868 < 1 (impulsive)
+  V_box (canonical branch b: 2(aH)^2 window mean) = 1.90278504
+    plateau flatness (max/min - 1) = 2.231e-03
+  V_box_c (branch c: stored zpp channel) = 2.76408487 (flatness 2.035e-03)
+  V_a (literal Sparn Eq.4, sqrt(a)-pump diagnostic) = 0.71871292
+    pump correspondence: V_Sparn/V_box = 0.377716 (the psi=sqrt(a)v map gives the sqrt(a)-pump barrier
+     (1/2)a''/a - (1/4)(a'/a)^2 ~ (3/4-eps/2)(aH)^2; the substrate
+     mode barrier is the z-pump z''/z ~ 2(aH)^2 -- the chain's
+     identification V_box ~= (z''/z)|fold uses the z-pump anchor)
+  Omega_on  = +0.48715654  (literal pin (1/2)a[adot]; strict distributional +0.48742511, rel dev 5.51e-04)
+  Omega_off = -0.48823758  (strict -0.48796856)
+    [one REPULSIVE switch-on, one ATTRACTIVE switch-off -- the
+     Schmidt Table I linear-expansion sign structure]
+  z-pump variant (sensitivity, NOT gating): Omega_z_on = +1.287236, Omega_z_off = -1.288529
+
+--- Substitution chain (runtime evaluation) ---
+  Step 1: V_box = 1.90278504 (computed window plateau, canonical branch)
+  Step 2: k_pivot = 14.311092688449; k_pivot^2 = 204.80737394
+  Step 3: mu_pivot^2 = k_pivot^2 - V_box = 202.90458890
+  Step 4: mu_pivot^2/k_pivot^2 = 0.99070939 (chain pre-registration: 1 - 1/107.63558 = 0.99070939)
+  Step 5: mu_pivot^2 = 202.9046 > 0 -> OSCILLATING (sub-horizon) sector; sin[mu_k Delta_eta] branch CORRECT; Lambda_k -> i mu_k continuation NOT engaged at k_pivot
+
+--- N_seg robustness scan (canonical branch b) ---
+  N_seg =   50: |beta_pivot|^2 = 3.0453993282e-07  (det M - 1 = -2.22e-16; unitarity resid = 0.00e+00)
+  N_seg =  100: |beta_pivot|^2 = 3.0453993267e-07  (det M - 1 = +1.55e-15; unitarity resid = 2.00e-15)
+  N_seg =  200: |beta_pivot|^2 = 3.0453993264e-07  (det M - 1 = +2.22e-16; unitarity resid = 6.66e-16)
+  N_seg =  400: |beta_pivot|^2 = 3.0453993263e-07  (det M - 1 = -2.22e-16; unitarity resid = 2.22e-16)
+  var_Nseg = max/min = 1.0000000006  (threshold < 2.0)
+  |beta_pivot|^2_TM (N_seg=400, operational pin) = 3.0453993263e-07
+
+--- Schmidt Eq.75-class closed-form comparison ---
+  |beta_pivot|^2_closed-form = 3.0454042927e-07
+  closed-form unitarity |alpha|^2-|beta|^2-1 = 0.00e+00
+  single-box TM == closed form (independent code paths): rel dev = 1.37e-13 (analytic identity)
+  rel_dev = | beta2_TM/beta2_closed - 1 | = 1.630794e-06  (threshold <= 0.1)
+  mu_pivot*Delta_eta = 1.609824e-02 << pi (plan diagnostic-(ii) expectation ~1.6e-2: CONFIRMED)
+
+--- ODE reference (Radau, rtol=1e-10) ---
+  |beta_pivot|^2_ODE = 3.0453993262e-07  (vs TM: rel dev 7.40e-12; unitarity resid 2.22e-16)
+
+--- Branch-(c) sensitivity (stored s64 zpp_over_z barrier) ---
+  var_Nseg(c) = 1.0000000008; |beta|^2_TM(c) = 3.075988e-07; closed(c) = 3.075995e-07; rel_dev(c) = 2.1348e-06; ODE(c) = 3.075988e-07
+  -> verdict-structure INVARIANT under the F-convention branch (both branches: N_seg-stable, closed-form-consistent)
+
+--- Diagnostic |beta_k|^2 spectrum (64 log k-points + pivot) ---
+  branch crossover sqrt(V_box) = 1.3794 M_KK (sinh sector below, sin sector above; continuation Lambda_k -> i mu_k implemented via entire C,S)
+  max unitarity residual over all evaluations = 1.87e-14 (tolerance 1e-10)
+
+--- Ramsauer-Townsend zeros (mu_k Delta_eta = j pi) ---
+  mu(K_MAX)*Delta_eta/pi = 1.797990e-02 -> 0 zeros in k in [1,50] (expected none: CONFIRMED)
+  first R-T zero at k = 2779.8 M_KK (far above k-window)
+
+--- S79 P2-A B2-ladder OOM context (diagnostic only) ---
+  |beta_2|^2(B2 stage, post-fold WKB -> horizon exit) ~ 1.7e+03
+  |beta_pivot|^2(this gate, impulsive window only) = 3.045e-07
+  log10 ratio = -9.75 OOM -- DIFFERENT ladder stage (window Delta_N ~ 1.1e-03 e-folds vs B2's ~3.1 e-folds of
+    pump growth); the stages are non-comparable by construction; context only, per the plan pin
+
+--- Window-pin sensitivity (diagnostic; NOT gating) ---
+  alt reading (S38 internal clock: delta_tau = v_terminal*dt_transit = 0.030000):
+    Delta_eta_alt = 0.334922; V_box_alt = 1.8791; plateau flatness 0.922 (NOT plateau-like -> box idealization poor there);
+    closed-form |beta_pivot|^2_alt = 1.2860e-03 (vs canonical 3.0454e-07)
+  canonical window pin (fold-normalized M_KK clock) is the unique reading consistent with the plan block's own
+    mu*Delta_eta ~ 1.6e-2 arithmetic; alt reading seeds any future refined-window gate (NEW pre-registration)
+  z-pump delta-weight variant: |beta_pivot|^2 = 2.1195e-06 (x6.96 vs literal pin; verdict criteria INVARIANT -- identical weights both sides of rel_dev)
+  channel split: box-only |beta|^2 = 5.644e-09; deltas-only = 3.060e-07 -> switch-boundary deltas dominate (x54.2) -- the
+    Parra-Lopez switch-on/off-dominance structure (transitions dominate production, stages do not)
+
+========================================================================
+GATE EVALUATION (pre-registered operator)
+========================================================================
+  var_Nseg = 1.0000000006  -> OK (strict < 2.0)
+  rel_dev  = 1.630794e-06  -> OK (<= 0.1)
+  3-tuple: sign=PASS magnitude=PASS regime=VALID
+  composite (collapse rule): PASS
+
+Saved data: C:\sandbox\Ainulindale Exflation\computations\session-100b\s100b_box_delta_bogoliubov.npz
+
+Saved plot: C:\sandbox\Ainulindale Exflation\computations\session-100b\s100b_box_delta_bogoliubov.png
+
+(value='beta2_pivot=3.045e-07;var_Nseg=1.000000;rel_dev=1.631e-06;beta2_closed=3.045e-07;beta2_ODE=3.045e-07;mu2_pivot=202.9046;V_box=1.9028;Om_on=+0.4872;Om_off=-0.4882;Deta=1.1301e-03;CHK_N=1.0000;unit_resid=1.9e-14;branchC_var=1.0000;branchC_reldev=2.13e-06;S85_pathology=SMOOTH-CUSP-SEGMENTATION-CONFIRMED', scheme=BOX-DELTA-SUDDEN, convention=BD-in-out, L_max=N/A)
+<<<EMIT_VERDICT_PAYLOAD>>>
+{"audit_sha256":"297a597c3cfe6fa00eddf97cccc538241f12faf339793c05a195ad915e7e6498","companion_note":"box+delta sudden-limit TM; window=conformal image of dt_transit in fold-normalized M_KK clock (aH|fold=0.975394); verdict invariant under barrier-branch (b)/(c) and delta-weight conventions","content_sha256":"649194ac0119a14fd01e69f360b62d52c872bb75baa99acf16c5732e6fe20110","convention":"BD-in-out","extra_rows":["# predecessor=b17807eb5930d0bb80142b4b45ae579cdb9465ac7181e4b6f9f8e45f46bd579c (S85-W7-CUSP-BOGOLIUBOV FAIL, smooth-cusp-Airy class; cross-gate audit context per honest-re-open law (d) -- explicitly NOT a supersedes= token; the S85 FAIL stands) # S100b-BOX-DELTA-BOGOLIUBOV honest-re-open row","# normalization row: Convention-B fold units (S77 canonical); CHK_N_ratio=0.999963 in [0.95,1.05]; stored eta_H-corrected z''/z channel = 1.4526x anchor (known s64 slow-roll-violation gap; branch-(c) sensitivity: var=1.0000, rel_dev=2.13e-06 -- verdict structure invariant) # S100b-BOX-DELTA-BOGOLIUBOV","# regulator_pin=N/A -- no Seeley-DeWitt a_n citation; no SCHEMATIC helper consumed (npz data + canonical_constants only) # S100b-BOX-DELTA-BOGOLIUBOV"],"gate_id":"S100b-BOX-DELTA-BOGOLIUBOV","l_max":"N/A","magnitude_verdict":"PASS","regime_verdict":"VALID","schema_version":"S84+","scheme":"BOX-DELTA-SUDDEN","session":"100b","sign_verdict":"PASS","value":"beta2_pivot=3.045e-07;var_Nseg=1.000000;rel_dev=1.631e-06;beta2_closed=3.045e-07;beta2_ODE=3.045e-07;mu2_pivot=202.9046;V_box=1.9028;Om_on=+0.4872;Om_off=-0.4882;Deta=1.1301e-03;CHK_N=1.0000;unit_resid=1.9e-14;branchC_var=1.0000;branchC_reldev=2.13e-06;S85_pathology=SMOOTH-CUSP-SEGMENTATION-CONFIRMED","verdict":"PASS"}
+<<<END_EMIT_VERDICT_PAYLOAD>>>
+
+=== S100b-BOX-DELTA-BOGOLIUBOV: PASS (wall 1.3s) ===

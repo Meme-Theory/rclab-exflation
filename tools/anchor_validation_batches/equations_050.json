@@ -1,0 +1,117 @@
+{
+  "table": "equations",
+  "batch_id": 50,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "eq_14310",
+      "anchor_type": "equations",
+      "name": "F6 = f_NL^fo   = 1/sqrt(N_pair)                                  -> {N_pair}",
+      "eq_type": "structural",
+      "file": "",
+      "line": 371,
+      "context_snippet": "F4 = alpha_s   = 0 (structural, independent of all parameters)   -> {} F5 = f_NL^eq   = (85/324)(1-c_BLV^2)/c_BLV^2                    -> {c_BLV}",
+      "source_file": "sessions\\session-69\\session-69-results-workingpaper.md",
+      "source_context_30_lines": "  363: Define F: R^6 -> R^7 mapping the 6 micro-parameters to 7 observables:\n  364: \n  365: ```\n  366: F1 = n_s       = 1 - 2*eps_H                                     -> {eps_H}\n  367: F2 = r         = 16*eps_H * G(c_BLV, eta_H)                      -> {eps_H, eta_H, c_BLV}\n  368: F3 = n_T       = H(eps_H, eta_H)                                 -> {eps_H, eta_H}\n  369: F4 = alpha_s   = 0 (structural, independent of all parameters)   -> {}\n  370: F5 = f_NL^eq   = (85/324)(1-c_BLV^2)/c_BLV^2                    -> {c_BLV}\n  371: F6 = f_NL^fo   = 1/sqrt(N_pair)                                  -> {N_pair}\n  372: F7 = beta_iso  = (eta_perp * N_e)^2                              -> {eta_perp, N_e}\n  373: ```\n  374: \n  375: The Jacobian dF/dtheta is 7x6. Row 4 (alpha_s) is identically zero, reducing rank to at most 6. The critical coupling: c_BLV appears in BOTH Row 2 (r) and Row 5 (f_NL^equil). This means observables (n_s, r, n_T, f_NL^equil) -- 4 observables -- depend on only 3 parameters (eps_H, eta_H, c_BLV). The 4x3 sub-Jacobian generically has rank 3, yielding 4 - 3 = 1 algebraic relation among these 4 observables.\n  376: \n  377: The remaining observables (f_NL^folded, beta_iso) depend on 3 parameters (N_pair, eta_perp, N_e), giving 2 observables from 3 parameters -- no additional constraint.\n  378: \n  379: **The two consistency relations.**"
+    },
+    {
+      "anchor_id": "eq_19882",
+      "anchor_type": "equations",
+      "name": "phi67 = 0.793346 + cocycle_norm_phi88 = 0.108307 + ratio 7.324992",
+      "eq_type": "structural",
+      "file": "",
+      "line": 1816,
+      "context_snippet": "Verification: Step 1: cite the rank-2 calibration corpus W-5 instance: cocycle_norm_",
+      "source_file": "sessions\\session-plan\\session-91-plan-w8.md",
+      "source_context_30_lines": " 1808:       Peter-Weyl block → inheritance morphism target T_χ; NOT inverse).\n 1809:   PASS iff: Element 3 binding declaration substrate-self-consistent;\n 1810:   bridge-map-scheme suffix declared; direction substrate → emergent.\n 1811: \n 1812: CLAUSE (e) — Empirical anchor at rank-2 calibration corpus W-5 + 3He-B\n 1813: vortex-core spectroscopy lab-conversion [Axis-B laboratory-side single-axis].\n 1814:   Verification:\n 1815:     Step 1: cite the rank-2 calibration corpus W-5 instance: cocycle_norm_\n 1816:       phi67 = 0.793346 + cocycle_norm_phi88 = 0.108307 + ratio 7.324992\n 1817:       = 114453/15625 Sage-QQ exact.\n 1818:     Step 2: verify the (Δ_B/Δ_A)^p cancellation theorem operational form\n 1819:       (per inheritance-falsifier-protocol.md): the substrate-derived\n 1820:       ratio 7.324992 IS preserved INTACT in the lab measurement under\n 1821:       common (Δ_B/Δ_A)^p exponent cancellation; the lab-side measurement\n 1822:       yields ratio 7.324992 ± 0.1% per W-5 calibration.\n 1823:     Step 3: confirm Friedrich-Bär saturation bound at L_max=10 on M_3(ℓ)\n 1824:       Peter-Weyl block bounds the substrate-distance-1 pole s=3 observable"
+    },
+    {
+      "anchor_id": "eq_16769",
+      "anchor_type": "equations",
+      "name": "n_pole = (d_dim - s_pole) // 2",
+      "eq_type": "code",
+      "file": "",
+      "line": 192,
+      "context_snippet": "Step 4 — divide by Γ(s/2) and extract residue at s = s_pole: The pole of (IV.5) at the matching n_pole = (d_dim - s_pole)/2 carries the residue.",
+      "source_file": "sessions\\session-85\\session-85-s6-truncation-taxonomy-spectral-geometer.md",
+      "source_context_30_lines": "  184:     # (IV.1) closed-form via (IV.5); (IV.2) numerical, regular; (IV.3) numerical, exp-decay.\n  185:     I1 = sum(2 * a[n] * (4*np.pi)**(-d_dim/2) * ε**((s_pole + 2*n - d_dim)/2) /\n  186:              (s_pole + 2*n - d_dim) for n in range(N_SD + 1))\n  187:     I2 = quad(lambda t: t**(s_pole/2 - 1) * (K(t) - K_asy(t)), 0, ε)\n  188:     I3 = quad(lambda t: t**(s_pole/2 - 1) * K(t), ε, np.inf)\n  189: \n  190:     # Step 4 — divide by Γ(s/2) and extract residue at s = s_pole:\n  191:     # The pole of (IV.5) at the matching n_pole = (d_dim - s_pole)/2 carries the residue.\n  192:     n_pole = (d_dim - s_pole) // 2\n  193:     residue = 2 * (4*np.pi)**(-d_dim/2) * a[n_pole] / gamma((s_pole)/2)\n  194:     return residue, (I1, I2, I3)  # residue + diagnostic decomposition\n  195: ```\n  196: \n  197: ### IV.C Why this converts §W0-11 and §W0-20 from FAIL to evaluable\n  198: \n  199: Substitution chain (Class B remediation):\n  200: "
+    },
+    {
+      "anchor_id": "eq_3800",
+      "anchor_type": "equations",
+      "name": "R_acoustic at fold (from friedmann) = 442.9467 M_KK^2",
+      "eq_type": "structural",
+      "file": "",
+      "line": 19,
+      "context_snippet": "M_Pl_ratio = M_Pl_eff / M_Pl_reduced = 19.6542 G_eff at fold = 1.7372e-41 GeV^{-2}",
+      "source_file": "computations\\session-59\\s59_spatial_aniso_log.txt",
+      "source_context_30_lines": "   11:   R_acoustic at fold = 442.9467 M_KK^2\n   12:   Mach at fold = 421.3\n   13: \n   14: 2. LOADING FRIEDMANN DERIVATION DATA\n   15: ----------------------------------------\n   16:   M_Pl_eff = 4.7858e+19 GeV\n   17:   M_Pl_ratio = M_Pl_eff / M_Pl_reduced = 19.6542\n   18:   G_eff at fold = 1.7372e-41 GeV^{-2}\n   19:   R_acoustic at fold (from friedmann) = 442.9467 M_KK^2\n   20:   Mach at fold (from friedmann) = 421.3\n   21: \n   22: 3. CORE CALCULATION: delta_g / g\n   23: ----------------------------------------\n   24:   M_KK (gravity) = 7.4287e+16 GeV\n   25:   M_Pl_eff = 4.7858e+19 GeV\n   26:   M_KK / M_Pl_eff = 1.552233e-03\n   27:   (M_KK / M_Pl_eff)^2 = 2.409427e-06"
+    },
+    {
+      "anchor_id": "eq_12633",
+      "anchor_type": "equations",
+      "name": "The Hubble parameter in acoustic proper time dt_proper = N dt = sqrt(rho c_s) dt:",
+      "eq_type": "structural",
+      "file": "",
+      "line": 76,
+      "context_snippet": "Step 3. Acoustic Hubble parameter.",
+      "source_file": "sessions\\session-53\\session-53-results-workingpaper.md",
+      "source_context_30_lines": "   68: On a geometric FRW background ds^2_geom = -dt^2 + a_geom^2 dx^2, the acoustic metric for phonons becomes:\n   69: \n   70: $$ds^2_{\\rm acoustic} = -\\rho\\, c_s\\, dt^2 + \\frac{\\rho}{c_s}\\, a_{\\rm geom}^2\\, d\\mathbf{x}^2$$\n   71: \n   72: This has lapse N = sqrt(rho * c_s) and spatial scale factor a_acoustic = a_geom * sqrt(rho / c_s).\n   73: \n   74: **Step 3. Acoustic Hubble parameter.**\n   75: \n   76: The Hubble parameter in acoustic proper time dt_proper = N dt = sqrt(rho c_s) dt:\n   77: \n   78: $$H_{\\rm acoustic} = \\frac{d\\ln a_{\\rm acoustic}}{dt_{\\rm proper}} = \\frac{1}{N}\\frac{d}{dt}\\ln\\left(a_{\\rm geom}\\sqrt{\\frac{\\rho}{c_s}}\\right)$$\n   79: \n   80: $$= \\frac{1}{\\sqrt{\\rho\\, c_s}}\\left[H_{\\rm geom} + \\frac{1}{2}\\left(\\frac{\\dot\\rho}{\\rho} - \\frac{\\dot c_s}{c_s}\\right)\\right]$$\n   81: \n   82: **Step 4. Acoustic e-folds.**\n   83: \n   84: Integrating:"
+    },
+    {
+      "anchor_id": "eq_18911",
+      "anchor_type": "equations",
+      "name": "(c) residual = odd-odd Cartan sector contributions; max_dev =",
+      "eq_type": "structural",
+      "file": "",
+      "line": 520,
+      "context_snippet": "(a) PRESENT; (b) rank(ker)={p even OR q even}, rank(coker)=15 at L_max=10 with no Pillar-V finite-rank match;",
+      "source_file": "sessions\\session-88\\session-88-w9-workingpaper.md",
+      "source_context_30_lines": "  512:    content KILLED BY the quotient. PASS at incarnation level requires\n  513:    all 3 fields PRESENT AND (c) \"killed by quotient\" criterion satisfied.\n  514: \n  515: Step 2 (Substitution): For each surviving V_4 incarnation enumerated\n  516:    in S87 W-8 R3 closure:\n  517:    (i) Cartan-toral V_4 = Z_2(σ_M=(-1)^p) × Z_2(σ_C=(-1)^q):\n  518:        (a) PRESENT; (b) rank(ker)=#{p even OR q even}, rank(coker)=15\n  519:        at L_max=10 with no Pillar-V finite-rank match;\n  520:        (c) residual = odd-odd Cartan sector contributions; max_dev =\n  521:        1.163869 (W11-1 anchor) ≫ 1e-9 INFO ceiling ⇒ NOT KILLED.\n  522:    (ii) V_4-on-strata = Z_2(σ_strata1) × Z_2(σ_strata2) on cv=(2,4,8,6):\n  523:         (a) PRESENT; (b) rank(ker)=3 strata, rank(coker)=1 (stratum 3,\n  524:         c_3=6); (c) Δ_0 LOCALIZATION FORMULA gives Δ_0 = 4·c_3 = 24\n  525:         EXACT in QQ; max_delta = 92.15 (S88 W2-3) ≫ 1e-9 ⇒ NOT KILLED.\n  526:    (iii) V_4-on-triality-mod-2 = Z_2(χ_triality) × Z_2(g_M):\n  527:          (a) PRESENT; (b) rank(coker)=3 (A_F inventory linear span),\n  528:          sip values (8.0, 8.0, 20.0) all non-zero;"
+    },
+    {
+      "anchor_id": "eq_6239",
+      "anchor_type": "equations",
+      "name": "Var(S) = sum_n (f_n Lambda^n)^2 * Var(a_n)                         (2.4)",
+      "eq_type": "structural",
+      "file": "",
+      "line": 71,
+      "context_snippet": "The TOTAL fiber-level variance is the variance of the full spectral action:",
+      "source_file": "computations\\session-76\\s76_spectral_perturbation_theory_output.txt",
+      "source_context_30_lines": "   63: The SCALAR curvature perturbation delta_R couples ONLY to delta a_2:\n   64: \n   65:     delta_R ~ delta a_2 / a_2                                          (2.3)\n   66: \n   67: This is the scalar perturbation in 4D.\n   68: \n   69: The TOTAL fiber-level variance is the variance of the full spectral action:\n   70: \n   71:     Var(S) = sum_n (f_n Lambda^n)^2 * Var(a_n)                         (2.4)\n   72:            + cross terms (which vanish for independent spectral channels)\n   73: \n   74: The 4D scalar power spectrum couples only to the a_2 channel:\n   75: \n   76:     P_s(4D) proportional to Var(delta a_2) / a_2^2                     (2.5)\n   77: \n   78: The fiber-level power spectrum samples the FULL spectral variance:\n   79: "
+    },
+    {
+      "anchor_id": "eq_8357",
+      "anchor_type": "equations",
+      "name": "A^(ab)_0 = 2·(+1) + 4·(-1) + 8·(-1) + 6·(+1)        = -4",
+      "eq_type": "structural",
+      "file": "",
+      "line": 865,
+      "context_snippet": "A^(a)_0  = 2·(+1) + 4·(+1) + 8·(-1) + 6·(-1)        = -8 A^(b)_0  = 2·(+1) + 4·(-1) + 8·(+1) + 6·(-1)        = 0",
+      "source_file": "sessions\\session-87\\workshops\\s87-v4-strata-vs-cartan-relabeling.md",
+      "source_context_30_lines": "  857:   rel_dev_0 := |Δ_0| / |A^(e)_0|\n  858:   FAIL ceiling: rel_dev_0 < 1e-9 (W11-1 pre-registered)\n  859: \n  860: Step 2 (Substitution — connes' natural enumeration S_1→(0,0), S_2→(0,1), S_3→(1,0), S_4→(1,1)):\n  861:   Per-stratum (χ_a, χ_b) values: S_1: (+1,+1), S_2: (+1,-1), S_3: (-1,+1), S_4: (-1,-1)\n  862:   A^(e)_0  = 2·(+1) + 4·(+1) + 8·(+1) + 6·(+1)        = 20\n  863:   A^(a)_0  = 2·(+1) + 4·(+1) + 8·(-1) + 6·(-1)        = -8\n  864:   A^(b)_0  = 2·(+1) + 4·(-1) + 8·(+1) + 6·(-1)        = 0\n  865:   A^(ab)_0 = 2·(+1) + 4·(-1) + 8·(-1) + 6·(+1)        = -4\n  866:   Δ_0      = 20 − (-8) − 0 + (-4) = 24\n  867:   rel_dev_0 = 24/20 = 6/5 = 1.2 [Sage QQ exact, verified backend=sagecell]\n  868: \n  869: Step 3 (Extension — sweep all 4! = 24 permutations of {(0,0),(0,1),(1,0),(1,1)} over {S_1,...,S_4}):\n  870:   Sage transcript (R2 volovik backend=sagecell): for perm in permutations(...) compute Δ_0, rel_dev_0\n  871:   Distinct rel_dev_0 values: {2/5, 4/5, 6/5, 8/5}\n  872:   Each value appears with count 6 (a 4-fold orbit under V_4 generator-flip).\n  873:   Minimum rel_dev_0 = 2/5 = 0.4 [Sage QQ exact]"
+    },
+    {
+      "anchor_id": "eq_1465",
+      "anchor_type": "equations",
+      "name": "SAMPLE TRAJECTORIES (first 5)\n========================================================================",
+      "eq_type": "structural",
+      "file": "",
+      "line": 128,
+      "context_snippet": "========================================================================",
+      "source_file": "computations\\session-43\\s43_hf_cascade_output_STALE_intermediate.txt",
+      "source_context_30_lines": "  120:   eta (linear scale):\n  121:     Median: 1.354e-05\n  122:     [16,84]: [1.354e-05, 1.354e-05]\n  123:     Observed: 6.12e-10\n  124: \n  125:   Discrepancy from observed: +4.34 decades\n  126: \n  127: ========================================================================\n  128: SAMPLE TRAJECTORIES (first 5)\n  129: ========================================================================\n  130: \n  131:   Trajectory 0: 58 steps, n_breaks=0, E_final=0.5125\n  132:     No pair-breaking events (all scattering)\n  133: \n  134:   Trajectory 1: 59 steps, n_breaks=0, E_final=0.0513\n  135:     No pair-breaking events (all scattering)\n  136: "
+    },
+    {
+      "anchor_id": "eq_14299",
+      "anchor_type": "equations",
+      "name": "(4) S(tau, h^a) = S(tau, 0) + (1/2) H_{ab} h^a h^b + ...",
+      "eq_type": "structural",
+      "file": "",
+      "line": 43,
+      "context_snippet": "The off-Jensen correction to A_s enters through the spectral action evaluated on metrics NEAR the Jensen line:",
+      "source_file": "sessions\\session-68\\session-68-workshops-baptista-collab.md",
+      "source_context_30_lines": "   35: where a_{2k}^{(p,q)} is the contribution from sector (p,q). The BCS dressing is NOT uniform across sectors -- the S66 result epsilon = -0.13 non-uniformity (Lizzi L4) means the (p,q)-resolved spectral moments shift differently. This sector non-uniformity is the natural resolution of the alpha_s(M_Z) 15.3-sigma tension: the gauge coupling g_3 couples to the color sector's a_4, not to the full fiber a_4. The sector-resolved BCS correction to the color-sector a_4 may differ substantially from the fiber-averaged 29.8%.\n   36: \n   37: **1.3 Off-Jensen Dynamics Lives in the 36-Dimensional Hessian Landscape**\n   38: \n   39: The A_s gap closure budget (Lizzi-Transit T3, Landau Ld4) identifies off-Jensen dynamics as the primary non-BCS channel (0-0.3 OOM). From my S63-S65 computations, the off-Jensen fiber geometry is characterized by the 36-dimensional Hessian of the scalar curvature functional on the space of left-invariant metrics (S63 HESSIAN-CASIMIR-63: all 36 eigenvectors assigned to Ad(U(2)) irreps). The 10 Hessian eigenvalue clusters decompose under Ad(U(2)) into representations {1, 1, 4, 3, 6, 3, 4, 8, 1, 5}, with the softest mode being the U(1) breathing direction (#30, eigenvalue amplitude -0.71) mixed with C^2-su(2) mixing (#35, amplitude +0.56) (S66 HESSIAN-CUTOFF-66).\n   40: \n   41: The off-Jensen correction to A_s enters through the spectral action evaluated on metrics NEAR the Jensen line:\n   42: \n   43: (4) S(tau, h^a) = S(tau, 0) + (1/2) H_{ab} h^a h^b + ...\n \n... [truncated]"
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 198,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1971",
+      "anchor_type": "data_provenance",
+      "name": "w15_evoi_table_refresh",
+      "script_path": "session-86/s86_w15_evoi_table_refresh.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-86/s86_w15_evoi_table_refresh.py",
+      "source_context_30_lines": "<name 'w15_evoi_table_refresh' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S86 W15-2 — S86-EVOI-TABLE-REFRESH (P13, FINAL)\n    4: ================================================\n    5: \n    6: Gate: S86-EVOI-TABLE-REFRESH ([AUDIT] + [SIGN])\n    7: \n    8: Pre-registered threshold (plan §W15-2 §9):\n    9:   PASS  iff  EVOI table updated AND P_work_complete bracket reported AND\n   10:              P_low >= P_pre_low_S85 = 0.31  (monotone-upward direction\n   11:              confirmed via [SIGN] substitution chain)\n   12:   FAIL  iff  no update written, OR no bracket reported, OR P_high < 0.31\n   13:              (counting error or substitution-chain inequality violated)\n   14:   INFO  iff  some link-list deltas unavailable (with caveats), OR\n   15:              substitution-chain equality (P_post == P_pre exactly).\n   16: \n   17: Inputs (SHA-256 pinned at runtime):\n   18:   - sessions/evoi-framework.md            (PRE-write)\n   19:   - sessions/evoi-framework.md            (POST-write)\n   20:   - computations/session-86/s86_gate_verdicts.txt  (PRE-W15-2 state)\n   21:   - sessions/framework/registry/falsifier-master-inventory.md (POST-W14)\n   22: \n   23: Output 4-tuple:\n   24:   (value=[P_low, P_high], scheme=link-inventory,\n   25:    convention=frozen-since-S66, L_max=NA)\n   26: \n   27: Classification: META\n   28: \n   29: METHODOLOGY\n   30: -----------"
+    },
+    {
+      "anchor_id": "prov_1972",
+      "anchor_type": "data_provenance",
+      "name": "w1a_t1_perm_land_17",
+      "script_path": "session-86/s86_w1a_t1_perm_land_17.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-86/s86_w1a_t1_perm_land_17.py",
+      "source_context_30_lines": "   45: \n   46: # ----------------------------------------------------------------------\n   47: # 1. Pin map (Section 4 of script-template.py; THEOREM tolerance class)\n   48: # ----------------------------------------------------------------------\n   49: PROJECT_ROOT = Path(__file__).resolve().parent.parent\n   50: S85_VERDICTS = PROJECT_ROOT / \"computations\" / \"session-85\" / \"s85_gate_verdicts.txt\"\n   51: REGISTRY_MD = PROJECT_ROOT / \"sessions\" / \"permanent-results-registry.md\"\n   52: OUT_VERDICTS = PROJECT_ROOT / \"computations\" / \"session-86\" / \"s86_gate_verdicts.txt\"\n   53: OUT_JSON = PROJECT_ROOT / \"computations\" / \"session-86\" / \"s86_w1a_t1_perm_land_17.json\"\n   54: \n   55: GATE_ID = \"S86-W0-PERM-LAND-17\"\n   56: SCHEME = \"registry_landing\"\n   57: CONVENTION = \"64-char-dual-SHA\"\n   58: L_MAX_TAG = \"NA\"\n   59: SCHEMA_VERSION = \"S84+\"\n   60: \n   61: # 17-row mapping table: each row is (plan_stem_alias, actual_verdict_stem,"
+    },
+    {
+      "anchor_id": "prov_1973",
+      "anchor_type": "data_provenance",
+      "name": "w1a_t2_reslot_option_b",
+      "script_path": "session-86/s86_w1a_t2_reslot_option_b.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-86/s86_w1a_t2_reslot_option_b.py",
+      "source_context_30_lines": "   46: # physics constants are used in this registry-hygiene script.\n   47: sys.path.insert(0, str(Path(__file__).parent))\n   48: from canonical_constants import *  # noqa: F401,F403\n   49: \n   50: # ---- pin paths (file-scoped) ----\n   51: PROJECT_ROOT = Path(r\"C:\\sandbox\\Ainulindale Exflation\")\n   52: REGISTRY_PATH = PROJECT_ROOT / \"sessions\" / \"permanent-results-registry.md\"\n   53: VERDICT_PATH = PROJECT_ROOT / \"computations\" / \"session-86\" / \"s86_gate_verdicts.txt\"\n   54: JSON_OUT = PROJECT_ROOT / \"computations\" / \"session-86\" / \"s86_w1a_t2_reslot_option_b.json\"\n   55: \n   56: GATE_RESLOT = \"S86-VII-R-NCG-META-THEOREM-LANDING-RESLOT\"  # (local) gate ID\n   57: GATE_RECONCILE = \"S86-VII-Y-RECONCILE\"                       # (local) gate ID\n   58: RESLOT_DATE = \"2026-04-26\"                                    # (local) reslot timestamp\n   59: \n   60: \n   61: def sha256_hex(data: bytes) -> str:\n   62:     \"\"\"SHA-256 of bytes, full 64-char hex.\"\"\""
+    },
+    {
+      "anchor_id": "prov_1974",
+      "anchor_type": "data_provenance",
+      "name": "w1a_t2_vii_r_meta_landing",
+      "script_path": "session-86/s86_w1a_t2_vii_r_meta_landing.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-86/s86_w1a_t2_vii_r_meta_landing.py",
+      "source_context_30_lines": "   65: # 0. Resolve project paths (no canonical_constants needed -- file I/O only)\n   66: # -------------------------------------------------------------------\n   67: HERE = Path(__file__).resolve().parent                    # (local) script dir\n   68: ROOT = HERE.parent                                        # (local) project root\n   69: REGISTRY_PATH = ROOT / \"sessions/permanent-results-registry.md\"\n   70: S85_VERDICTS = ROOT / \"computations/session-85/s85_gate_verdicts.txt\"\n   71: S86_VERDICTS = ROOT / \"computations/session-86/s86_gate_verdicts.txt\"\n   72: CONTEXT_PATH = ROOT / \"sessions/session-plan/session-86-context.md\"\n   73: JSON_OUT = HERE / \"s86_w1a_t2_vii_r_meta_landing.json\"\n   74: \n   75: GATE_ID = \"S86-VII-R-NCG-META-THEOREM-LANDING\"            # (local) gate identifier\n   76: VII_TARGET_NAME = \"§VII.R\"                                # (local) plan-specified target\n   77: SCHEME = \"registry_landing\"                               # (local) per plan §8\n   78: CONVENTION = \"64-char-dual-SHA\"                           # (local) per plan §8\n   79: L_MAX = \"NA\"                                              # (local) per plan §8\n   80: SCHEMA_VERSION = \"R3\"                                     # (local) per plan §7\n   81: "
+    },
+    {
+      "anchor_id": "prov_1975",
+      "anchor_type": "data_provenance",
+      "name": "w1a_t3_perturbative_ledger_immunization_family",
+      "script_path": "session-86/s86_w1a_t3_perturbative_ledger_immunization_family.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-86/s86_w1a_t3_perturbative_ledger_immunization_family.py",
+      "source_context_30_lines": "   90: ROOT = HERE.parent                                        # (local) project root\n   91: REGISTRY_PATH = ROOT / \"sessions/permanent-results-registry.md\"\n   92: S85_VERDICTS = ROOT / \"computations/session-85/s85_gate_verdicts.txt\"\n   93: S86_VERDICTS = ROOT / \"computations/session-86/s86_gate_verdicts.txt\"\n   94: CONTEXT_PATH = ROOT / \"sessions/session-plan/session-86-context.md\"\n   95: LIZZI_SYNTH = ROOT / \"sessions/session-85/session-85-lizzi-synthesis-w6-13.md\"\n   96: GENPHYS_SYNTH = ROOT / \"sessions/session-85/session-85-gen-physicist-synthesis-w6-13.md\"\n   97: WORKSHOP_1C = ROOT / \"sessions/session-85/workshops/s85-1c-perturbative-immunization-family.md\"\n   98: JSON_OUT = HERE / \"s86_w1a_t3_perturbative_ledger_immunization_family.json\"\n   99: PROOFS_OUT = HERE / \"s86_w1a_t3_landing_proofs.md\"\n  100: \n  101: GATE_ID = \"S86-VII-S-PERTURBATIVE-LEDGER-IMMUNIZATION-FAMILY-LANDING\"  # (local)\n  102: VII_TARGET_NAME = \"§VII.S\"                                # (local) plan-specified target\n  103: SCHEME = \"registry-write\"                                  # (local) per plan §8 +\n  104: #                                                            spawn-prompt verdict-line spec\n  105: CONVENTION = \"verbatim-source-9A\"                          # (local) per spawn-prompt spec\n  106: L_MAX = \"N/A\"                                              # (local) per plan §8"
+    },
+    {
+      "anchor_id": "prov_1976",
+      "anchor_type": "data_provenance",
+      "name": "w1a_t4_iep_annotation",
+      "script_path": "session-86/s86_w1a_t4_iep_annotation.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-86/s86_w1a_t4_iep_annotation.py",
+      "source_context_30_lines": "   35:      CC4 (no '(T4 fills)' placeholder remnants in row data), CC5 (3+3\n   36:      balanced partition).\n   37:   6. If all 5 cross-checks PASS, emit verdict PASS; otherwise FAIL per plan\n   38:      §9 thresholds.\n   39:   7. Compute audit_sha256 = SHA-256(ordered input-pin map) and content_sha256\n   40:      = SHA-256(post-edit registry bytes).\n   41:   8. Append canonical verdict line + companion comment row to\n   42:      computations/session-86/s86_gate_verdicts.txt.\n   43:   9. Emit JSON artefact computations/session-86/s86_w1a_t4_iep_annotation.json with\n   44:      6-row partition-rule application table + T3-projected map + T4-derived\n   45:      map + agreement check + computed audit/content SHAs.\n   46: \n   47: Cross-checks (plan §6 cross-checks 1-5):\n   48:   CC1: §VII.S exists in registry (T3 PASS at line 81 of verdict file is\n   49:        sufficient evidence; PASS-by-existence).\n   50:   CC2: Exactly 6 Φ-branch rows present in §VII.S table.\n   51:   CC3: T4-derived tag map matches T3-projected tag map exactly:"
+    },
+    {
+      "anchor_id": "prov_1977",
+      "anchor_type": "data_provenance",
+      "name": "w1b_t5_mellin_strip_land",
+      "script_path": "session-86/s86_w1b_t5_mellin_strip_land.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-86/s86_w1b_t5_mellin_strip_land.py",
+      "source_context_30_lines": "<name 'w1b_t5_mellin_strip_land' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S86 W1b-1 — S86-MELLIN-STRIP-REGISTRY-LANDING\n    4: =============================================\n    5: \n    6: Gate: S86-MELLIN-STRIP-REGISTRY-LANDING ([VERIFY-THEOREM])\n    7: \n    8: Pre-registered threshold (THEOREM tolerance — exact-text-match):\n    9:   PASS iff registry entry exists at sibling slot adjacent to ZETA-NOT-PHYSICAL-75\n   10:        AND contains BOTH (a) Mellin Strip / Convergence Cone theorem statement\n   11:        AND (b) Steps 1-4 substitution chain verbatim from lizzi S-7 §V.6.\n   12:   FAIL iff either component absent post-write, OR insertion not adjacent to\n   13:        ZETA-NOT-PHYSICAL-75 (cross-block separation > 0).\n   14:   INFO iff registry entry written but Steps 1-4 chain found in adjacent\n   15:        paragraph rather than within the entry block.\n   16: \n   17: Inputs (SHA-256 dual-pinned at runtime):\n   18:   - sessions/permanent-results-registry.md        (registry target)\n   19:   - sessions/session-85/session-85-s7-combined-landscape-lizzi.md  (theorem source)\n   20:   - computations/session-85/s85_gate_verdicts.txt       (W0-S6 / W0-L verdict pin)\n   21:   - canonical_constants.py                        (audit_sha only)\n   22:   - script bytes                                  (audit + content)\n   23: \n   24: Output 4-tuple:\n   25:   (value=<theorem_text_SHA>, scheme=registry_landing,\n   26:    convention=lizzi-track, L_max=N/A)\n   27: \n   28: Classification: GEOMETRIC\n   29: \n   30: METHODOLOGY"
+    },
+    {
+      "anchor_id": "prov_1978",
+      "anchor_type": "data_provenance",
+      "name": "w1b_t5fix_zeta_not_physical_land",
+      "script_path": "session-86/s86_w1b_t5fix_zeta_not_physical_land.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-86/s86_w1b_t5fix_zeta_not_physical_land.py",
+      "source_context_30_lines": "<name 'w1b_t5fix_zeta_not_physical_land' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S86 W1b T5fix - S86-ZETA-NOT-PHYSICAL-75-REGISTRY-LANDING\n    4: =========================================================\n    5: \n    6: Gate: S86-ZETA-NOT-PHYSICAL-75-REGISTRY-LANDING ([VERIFY-THEOREM])\n    7: \n    8: In-session fix-now follow-up to T5 (S86-MELLIN-STRIP-REGISTRY-LANDING).\n    9: T5's plan threshold pinned ZETA-NOT-PHYSICAL-75 as a sibling-anchor entity,\n   10: but ZETA-NOT-PHYSICAL-75 was not present as a registry entry -- only as\n   11: in-block citations. T5's verdict was a sound PASS via sibling-by-citation,\n   12: but downstream Lizzi-track sibling-slot cites need a real registry anchor.\n   13: This gate creates that anchor.\n   14: \n   15: Pre-registered threshold (THEOREM tolerance -- exact-text-match):\n   16:   PASS iff registry entry exists at a Lizzi-track sibling slot\n   17:        AND contains BOTH (a) ZETA-NOT-PHYSICAL-75 theorem statement\n   18:        (zeta_D(s) is not physical at the spectral level; S_zeta = zeta_D(0)\n   19:        sits on the s=0 boundary of the Mellin strip and is a renormalized\n   20:        residue rather than an absolutely-convergent sum)\n   21:        AND (b) Steps 1-4 substitution chain (definition -> substitute ->\n   22:        simplify -> direction) ordered verbatim.\n   23:   FAIL iff either component absent post-write, OR insertion not adjacent\n   24:        to existing Lizzi-track entries (HP1-NEAR-INVARIANCE / TWO-LAYER-\n   25:        OBSTRUCTION) and not cross-referenceable to T5 §VII.T-Mellin block.\n   26:   INFO iff registry entry written but Steps 1-4 chain found in adjacent\n   27:        paragraph rather than within the entry block.\n   28: \n   29: Inputs (SHA-256 dual-pinned at runtime):\n   30:   - sessions/permanent-results-registry.md         (registry target)"
+    },
+    {
+      "anchor_id": "prov_1979",
+      "anchor_type": "data_provenance",
+      "name": "w1b_t6_hp1_invariance_land",
+      "script_path": "session-86/s86_w1b_t6_hp1_invariance_land.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-86/s86_w1b_t6_hp1_invariance_land.py",
+      "source_context_30_lines": "<name 'w1b_t6_hp1_invariance_land' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: S86 W1b-T6 — S86-HP1-NEAR-INVARIANCE-LANDING\n    4: ==============================================\n    5: \n    6: Gate: S86-HP1-NEAR-INVARIANCE-LANDING ([VERIFY-THEOREM])\n    7: \n    8: Purpose\n    9: -------\n   10: Land the S85 W5-6 PASS as a permanent registry entry in\n   11: `sessions/permanent-results-registry.md` §VII-B titled\n   12: \"HP^1 Near-Invariance (Lizzi-track)\" containing BOTH:\n   13:   (a) LOOSE statement: ‖[ε_H]‖_{HP^1} R-protected on full 5-atlas\n   14:       {ζ, Zubarev, SDW, cutoff_sqrt, anomaly} with factor 2.0.\n   15:   (b) STRICT statement: on F_4 = {ζ, Zubarev, SDW} (pure-a_4),\n   16:       factor 1.031.\n   17: plus substitution chain (STRICT-on-F_4 → LOOSE-on-5-atlas under\n   18: M-family extension), source citation, and the W5-6 verdict pin\n   19: (content_sha256 + audit_sha256, full 64-hex each).\n   20: \n   21: Pre-registered threshold:\n   22:   PASS iff §VII-B entry exists with BOTH factor statements within a\n   23:        single registry block AND W5-6 SHA pin matches the canonical\n   24:        line in computations/session-85/s85_gate_verdicts.txt.\n   25:   FAIL iff any of: §VII-B section heading not found; either factor\n   26:        statement absent post-write; W5-6 SHA pin mismatch.\n   27:   INFO iff entry exists with both factors but adjacent rather than\n   28:        within a single block.\n   29: \n   30: Tolerance: THEOREM (exact match for factors 2.0 and 1.031; statement"
+    },
+    {
+      "anchor_id": "prov_1980",
+      "anchor_type": "data_provenance",
+      "name": "w1b_t7_two_layer_obstruction_land",
+      "script_path": "session-86/s86_w1b_t7_two_layer_obstruction_land.py",
+      "session": "s86",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-86/s86_w1b_t7_two_layer_obstruction_land.py",
+      "source_context_30_lines": "<name 'w1b_t7_two_layer_obstruction_land' not found in source>\n--- file head ---\n    1: \"\"\"S86-TWO-LAYER-OBSTRUCTION-LANDING (S86 W1b T7).\n    2: \n    3: Lands the W5-7 PASS (n_joint = 0/5 across the 5-regulator atlas\n    4: {zeta, Zubarev, SDW, cutoff_sqrt, anomaly}) into\n    5: sessions/permanent-results-registry.md §VII-B as the permanent\n    6: \"Two-Layer Obstruction Theorem (Lizzi-track)\" entry, with the\n    7: strengthening clause \"every conjunct fails individually for every\n    8: regulator\" and the (definition -> substitution -> simplification ->\n    9: direction) substitution chain.\n   10: \n   11: Pure I/O + SHA hashing. CPU-only. No GPU/numpy linalg.\n   12: \n   13: Substitution chain (verified at write-time):\n   14:     Step 1 (Definition): Joint(r) := AND_i C_i(r); Atlas:= {zeta, Zubarev, SDW, cutoff_sqrt, anomaly}.\n   15:     Step 2 (Substitution): W5-7 measured n_joint = 0/5; Lizzi strengthening:\n   16:         for every r in Atlas and every conjunct C_i, C_i(r) = FALSE.\n   17:     Step 3 (Simplification): if any C_i(r) = FALSE then Joint(r) = FALSE.\n   18:         Strengthening: for-all r, for-all i: C_i(r) = FALSE\n   19:         => for-all r: Joint(r) = FALSE => n_joint = 0/5 (matches measurement).\n   20:     Step 4 (Direction): obstruction is STRONGER than predicted joint failure.\n   21:         Each individual conjunct is a wall, not just their conjunction.\n   22: \"\"\"\n   23: \n   24: from __future__ import annotations\n   25: \n   26: import hashlib\n   27: import re\n   28: import sys\n   29: import time\n   30: from datetime import datetime, timezone"
+    }
+  ]
+}

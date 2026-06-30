@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 188,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1871",
+      "anchor_type": "data_provenance",
+      "name": "w2_ko6_higgs_sign",
+      "script_path": "session-85/s85_w2_ko6_higgs_sign.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-85/s85_w2_ko6_higgs_sign.py",
+      "source_context_30_lines": "  189:         \"mu2_sign_bare\": mu2_sign_bare,\n  190:         \"mu2_sign_rg_corrected\": mu2_sign_rg,\n  191:         \"KO6_signs\": {\"eps\": EPS, \"eps_prime\": EPS_PRIME, \"eps_double_prime\": EPS_DOUBLE_PRIME},\n  192:         \"substitution_chain\": trace,\n  193:         \"closure_sha256\": closure_sha,\n  194:         \"content_sha256\": content_sha,\n  195:         \"input_shas\": input_shas,\n  196:     }\n  197:     out_path = Path(__file__).parent / \"s85_w2_ko6_higgs_sign_trace.json\"\n  198:     out_path.write_text(json.dumps(out_json, indent=2))\n  199:     print(f\"WROTE {out_path}\")\n  200: \n  201:     print(\n  202:         f\"4-tuple: value={mu2_sign_bare}, scheme=ko6-sign-flow, \"\n  203:         f\"convention=CCM-2007/AC-2010, L_max=N/A\"\n  204:     )\n  205:     return 0"
+    },
+    {
+      "anchor_id": "prov_1872",
+      "anchor_type": "data_provenance",
+      "name": "w2_pre_cc1_ko6_on_eta",
+      "script_path": "session-85/s85_w2_pre_cc1_ko6_on_eta.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-85/s85_w2_pre_cc1_ko6_on_eta.py",
+      "source_context_30_lines": "<name 'w2_pre_cc1_ko6_on_eta' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python\n    2: \"\"\"\n    3: S85-W2-PRE-CC-1-KO6-ON-ETA\n    4: \n    5: KO-6 constraint on the APS eta-invariant for the Jensen-SU(3) x A_F product\n    6: spectral triple. Verifies three KO-6 algebraic identities and derives the\n    7: resulting constraint eta(D, 0) in (1/2) Z, i.e. eta mod Z in {0, 1/2}.\n    8: \n    9: This is a PRE-CC-1 DIAGNOSTIC: the actual eta value is computed in W0-23 CC-1,\n   10: but W0-23's output must be constrained to this band by the KO-6 structure. If\n   11: any of the three identities fails, the product triple is not KO-6 in the naive\n   12: sense and W0-23 requires re-scoping.\n   13: \n   14: Reference: Atiyah-Patodi-Singer (APS) eta-invariant; CCM-2007 KO-6 row.\n   15: \"\"\"\n   16: from __future__ import annotations\n   17: \n   18: import hashlib\n   19: import json\n   20: import os\n   21: import sys\n   22: from pathlib import Path\n   23: \n   24: import numpy as np\n   25: \n   26: sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))\n   27: from canonical_constants import J_C2, PI  # noqa: F401\n   28: \n   29: INPUT_FILES = [\n   30:     \"computations/_shared/canonical_constants.py\","
+    },
+    {
+      "anchor_id": "prov_1873",
+      "anchor_type": "data_provenance",
+      "name": "w2_pre_cc2_triality_jensen",
+      "script_path": "session-85/s85_w2_pre_cc2_triality_jensen.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w2_pre_cc2_triality_jensen.npz, session-85/s85_w2_pre_cc2_triality_jensen.png",
+      "source_file": "computations/session-85/s85_w2_pre_cc2_triality_jensen.py",
+      "source_context_30_lines": "  229:     if max_deviation < 1e-10:\n  230:         verdict = \"PASS\"\n  231:     elif max_deviation < 1e-8:\n  232:         verdict = \"INFO\"\n  233:     else:\n  234:         verdict = \"FAIL\"\n  235: \n  236:     # Save NPZ\n  237:     npz_path = Path(__file__).parent / \"s85_w2_pre_cc2_triality_jensen.npz\"\n  238:     np.savez(\n  239:         npz_path,\n  240:         tau_points=np.array(TAU_POINTS),\n  241:         sigma_1=sigma_1,\n  242:         sigma_2=sigma_2,\n  243:         commutator_norms=np.array([r[\"commutator_max_abs\"] for r in per_tau_table]),\n  244:         spectrum_rel_diffs=np.array([r[\"spectrum_rel_diff\"] for r in per_tau_table]),\n  245:     )"
+    },
+    {
+      "anchor_id": "prov_1874",
+      "anchor_type": "data_provenance",
+      "name": "w2_psg_section_11_2_revision",
+      "script_path": "session-85/s85_w2_psg_section_11_2_revision.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-85/s85_w2_psg_section_11_2_revision.py",
+      "source_context_30_lines": "<name 'w2_psg_section_11_2_revision' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python\n    2: \"\"\"\n    3: S85-W2-PSG-SECTION-11-2-REVISION\n    4: \n    5: Documentation-revision audit for PSG §11.2 (\"Cosmological Constant from a_0\"\n    6: in sessions/framework/Phononic-Substrate-Geometry.md).\n    7: \n    8: Revision integrates three post-S82 substrate results:\n    9:   (1) S84 §VII.N three-layer regulator theorem (L1 zeta / L2 Zubarev /\n   10:       L3 per-Q span) — landed in registry per S84 W2a-11.\n   11:   (2) S84 §VII.P disjoint-corridor theorem — NOTE per S85 W2-7 (this session):\n   12:       LANDING BLOCKED by counter-example (C_H, C_epsH) spectral match;\n   13:       refined §VII.P-v2 (restricted to HP^0-content-distinct corridors) is\n   14:       S86 carry-forward. Revision honors the pending status.\n   15:   (3) Cross-references to S85 W2-6 (quantum disjoint corridor PASS) and\n   16:       S85 W2-7 (counter-construction FAIL-with-refinement).\n   17: \n   18: Gate PASS iff integration_count = 3 (all three items land in revised §11.2),\n   19: INFO iff PASS + stylistic gap (e.g. §11.2 length grows > 2x), FAIL iff < 3.\n   20: \"\"\"\n   21: from __future__ import annotations\n   22: \n   23: import hashlib\n   24: import json\n   25: import os\n   26: import re\n   27: import sys\n   28: from pathlib import Path\n   29: \n   30: sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))"
+    },
+    {
+      "anchor_id": "prov_1875",
+      "anchor_type": "data_provenance",
+      "name": "w2_quantum_disjoint_corridor",
+      "script_path": "session-85/s85_w2_quantum_disjoint_corridor.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w2_quantum_disjoint_corridor.npz, session-85/s85_w2_quantum_disjoint_corridor.png",
+      "source_file": "computations/session-85/s85_w2_quantum_disjoint_corridor.py",
+      "source_context_30_lines": "  195: \n  196:     # Verdict\n  197:     if q_values_where_HP2_nonzero == 0 and num_routes_agree >= 3:\n  198:         verdict = \"PASS\"\n  199:     else:\n  200:         verdict = \"FAIL\"\n  201: \n  202:     # Save NPZ q-scan table\n  203:     npz_path = Path(__file__).parent / \"s85_w2_quantum_disjoint_corridor.npz\"\n  204:     np.savez(\n  205:         npz_path,\n  206:         q_values=np.array(Q_SCAN),\n  207:         hp2_A=np.array([r[\"HP2_A\"] for r in per_q_table]),\n  208:         hp2_B=np.array([r[\"HP2_B\"] for r in per_q_table]),\n  209:         hp2_C=np.array([r[\"HP2_C\"] for r in per_q_table]),\n  210:         hp2_D=np.array([r[\"HP2_D\"] for r in per_q_table]),\n  211:         max_dim=np.array([r[\"max_dim\"] for r in per_q_table]),"
+    },
+    {
+      "anchor_id": "prov_1876",
+      "anchor_type": "data_provenance",
+      "name": "w2_s50_t15_registry_upgrade",
+      "script_path": "session-85/s85_w2_s50_t15_registry_upgrade.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-85/s85_w2_s50_t15_registry_upgrade.py",
+      "source_context_30_lines": "<name 'w2_s50_t15_registry_upgrade' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python\n    2: \"\"\"\n    3: S85-W2-S50-T15-REGISTRY-UPGRADE\n    4: \n    5: Promotion audit for S50 theorem T15 (alpha_s = n_s^2 - 1, the OZ single-pole\n    6: identity) from session-local status to permanent-results-registry upgrade.\n    7: \n    8: Three promotion criteria:\n    9:   (1) Proven: mathematical proof exists (direct derivation).\n   10:   (2) Cross-referenced from >= 2 later sessions (S51-S84).\n   11:   (3) Integrated into >= 1 closure chain (mechanism closure or axiomatic chain).\n   12: \n   13: Criteria source: .claude/rules/epistemic-discipline.md + S85 W2-9 plan.\n   14: \n   15: Gate PASS iff num_criteria_met = 3 AND upgrade diff does not collide with\n   16: existing registry entry.\n   17: \"\"\"\n   18: from __future__ import annotations\n   19: \n   20: import hashlib\n   21: import json\n   22: import os\n   23: import re\n   24: import sys\n   25: from pathlib import Path\n   26: \n   27: sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))\n   28: from canonical_constants import *  # noqa: F401,F403\n   29: \n   30: INPUT_FILES = ["
+    },
+    {
+      "anchor_id": "prov_1877",
+      "anchor_type": "data_provenance",
+      "name": "w2_theorem_family",
+      "script_path": "session-85/s85_w2_theorem_family.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-85/s85_w2_theorem_family.py",
+      "source_context_30_lines": "  213:     print(f\"Predicted new instantiations ({num_new_predictions}):\")\n  214:     for inst in PREDICTED_INSTANTIATIONS:\n  215:         r = inst[\"r_crit\"]\n  216:         print(f\"  {inst['section']:<26}  \"\n  217:               f\"k={inst['k']}, R={inst['R_class'][:30]}..., r_crit={r}\")\n  218:     print(\"-\" * 70)\n  219: \n  220:     # Write LaTeX statement\n  221:     tex_path = Path(__file__).parent / \"s85_w2_theorem_family_statement.tex\"\n  222:     tex_body = r\"\"\"\\documentclass{article}\n  223: \\usepackage{amsmath,amssymb,amsthm}\n  224: \\newtheorem{theorem}{Theorem}\n  225: \\begin{document}\n  226: \n  227: \\begin{theorem}[Unified Cross-Session Family, S85-W2-2]\n  228: Let $(\\mathcal{A}, \\mathcal{H}, D)$ be a spectral triple satisfying the $5$-axiom\n  229: subset $\\{\\text{dim}, \\text{reg}, \\text{fin}, \\text{real}, \\text{1st-order}\\}$ of"
+    },
+    {
+      "anchor_id": "prov_1878",
+      "anchor_type": "data_provenance",
+      "name": "w2_three_solo_convergence_verify",
+      "script_path": "session-85/s85_w2_three_solo_convergence_verify.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-85/s85_w2_three_solo_convergence_verify.py",
+      "source_context_30_lines": "<name 'w2_three_solo_convergence_verify' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python\n    2: \"\"\"\n    3: S85-W2-THREE-SOLO-CONVERGENCE-VERIFY\n    4: \n    5: SHA-reproduction audit: the 4-anchor SHAs (W1-G1, W1-G3, G57, G58) and closure\n    6: SHA `cf3b7443be010558592cf7d278d7639de7293728f60b9740daa8caa4f664db42` from the\n    7: S84 W2a-11 three-solo (Connes + Lizzi + VdD) landing must still be present in\n    8: their canonical locations under the §VII.N routing.\n    9: \n   10: PASS iff:\n   11:   (i) All four anchors found with full 64-char SHA in `computations/session-83/s83_gate_verdicts.txt`;\n   12:   (ii) Closure SHA cf3b7443... found in permanent-results-registry.md §VII.N block;\n   13:   (iii) §VII.M slot is occupied by DR3-RESPONSE-PROTOCOL (W1b-9) and §VII.N\n   14:        holds the three-solo Three-Layer Regulator Theorem.\n   15: \"\"\"\n   16: from __future__ import annotations\n   17: \n   18: import hashlib\n   19: import json\n   20: import os\n   21: import re\n   22: import sys\n   23: from pathlib import Path\n   24: \n   25: sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))\n   26: from canonical_constants import *  # noqa: F401,F403\n   27: \n   28: INPUT_FILES = [\n   29:     \".claude/agent-memory/connes-ncg-theorist/s84-w2a-11-vii-m-landing.md\",\n   30:     \"computations/session-83/s83_gate_verdicts.txt\","
+    },
+    {
+      "anchor_id": "prov_1879",
+      "anchor_type": "data_provenance",
+      "name": "w3_bdg_dephasing_at_k",
+      "script_path": "session-85/s85_w3_bdg_dephasing_at_k.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w3_bdg_dephasing_at_k.npz, session-85/s85_w3_bdg_dephasing_at_k.png",
+      "source_file": "computations/session-85/s85_w3_bdg_dephasing_at_k.py",
+      "source_context_30_lines": "  129: PASS_EXP_TOL = 0.05                                          # (local) |exp - 0.5| < 0.05\n  130: FAIL_EXP_TOL = 0.15                                          # (local)\n  131: \n  132: K_SCAN = np.logspace(0, 2, 51)                               # (local) covers K_0, K_R5, K_crit\n  133: # K_FIT: points strictly > K_R5 for log-log fit near threshold\n  134: K_FIT_LOW = K_R5 * 1.01                                      # (local) just above K_R5\n  135: K_FIT_HIGH = K_R5 * 3.0                                      # (local) 3 * K_R5 = ~5.77, still near threshold\n  136: \n  137: OUT_NPZ = resolve_output(85, 's85_w3_bdg_dephasing_at_k.npz')\n  138: OUT_PNG = resolve_output(85, 's85_w3_bdg_dephasing_at_k.png')\n  139: VERDICT_TXT = resolve_output(85, 's85_gate_verdicts.txt')\n  140: \n  141: S82_W2_11_NPZ = resolve_output(82, 's82_w2_11_s_pp_full_ed.npz')\n  142: \n  143: INPUT_FILES = [\n  144:     resolve_script(None, 'canonical_constants.py'),\n  145:     S82_W2_11_NPZ,"
+    },
+    {
+      "anchor_id": "prov_1880",
+      "anchor_type": "data_provenance",
+      "name": "w3_branch_a_as_closure_k2035",
+      "script_path": "session-85/s85_w3_branch_a_as_closure_k2035.py",
+      "session": "s85",
+      "inputs": "",
+      "outputs": "session-85/s85_w3_branch_a_as_closure_k2035.npz, session-85/s85_w3_branch_a_as_closure_k2035.png",
+      "source_file": "computations/session-85/s85_w3_branch_a_as_closure_k2035.py",
+      "source_context_30_lines": "  106: K_central = 2.035                                            # (local) plan §W3-7 Branch-A baseline\n  107: K_band_low = 1.9                                             # (local) sensitivity\n  108: K_band_high = 2.2                                            # (local) sensitivity\n  109: \n  110: PASS_RELERR = 0.10                                           # (local) plan §W3-7\n  111: INFO_LOWER = 0.10                                            # (local)\n  112: INFO_UPPER = 0.30                                            # (local)\n  113: \n  114: OUT_NPZ = resolve_output(85, 's85_w3_branch_a_as_closure_k2035.npz')\n  115: OUT_PNG = resolve_output(85, 's85_w3_branch_a_as_closure_k2035.png')\n  116: VERDICT_TXT = resolve_output(85, 's85_gate_verdicts.txt')\n  117: \n  118: S80_NPZ = resolve_output(80, 's80_unified_as_79_full.npz')\n  119: \n  120: INPUT_FILES = [\n  121:     resolve_script(None, 'canonical_constants.py'),\n  122:     S80_NPZ,"
+    }
+  ]
+}

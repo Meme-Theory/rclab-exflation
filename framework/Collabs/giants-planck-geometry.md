@@ -103,7 +103,7 @@ Explore whether our 4-dimensional spacetime exists in some kind of balance, comp
 5. **What would CONVINCE Feynman (three criteria)**:
    - Compute V_eff(R) for SU(3) with Jensen deformation. Does it have a minimum at R ~ l_Pl with correct M_Pl?
    - Show radion is STABLE (positive mass-squared at minimum). Unstable = wrong.
-   - Predict something NEW from internal geometry that matches experiment. Tier 1 phi at 0.12 ppm is a candidate IF Monte Carlo null test confirms statistical significance.
+   - Predict something NEW from internal geometry that matches experiment. Level 1 phi at 0.12 ppm is a candidate IF Monte Carlo null test confirms statistical significance.
 
 **Coordinator assessment**: Feynman provides the computational backbone. His V_eff(R) calculation gives "balance" a precise, calculable meaning. The dimensional phase transition analogy with liquid helium is the session's first creative spark — it connects Feynman's own superfluid work to the Planck scale. Key tension with Einstein: Feynman notes volume conservation requires something OUTSIDE GR, while Einstein proposed it as a consequence of the higher-D field equations.
 
@@ -144,7 +144,7 @@ Explore whether our 4-dimensional spacetime exists in some kind of balance, comp
 
 8. **Comprehensive null-detection scorecard**: LHC (no KK gravitons, no micro-BH), Eot-Wash (1/r^2 to 50um), neutron bouncing (nm scale), SN1987A (no graviton leakage over 168,000 ly), quasar absorption (delta-alpha/alpha < 4x10^{-7} over 10 Gyr), Oklo reactor (delta-alpha_s < few % over 2 Gyr), LLR (dG/G < 10^{-12}/yr). **"Zero detections in every channel searched."**
 
-9. **Experimental timeline** (three tiers):
+9. **Experimental timeline** (three levels):
    - NOW: BBN N_eff (2.99+/-0.17), FIRAS spectral distortions, GW speed (|c_gw-c|<10^{-15})
    - Near-term (2025-2035): CMB-S4 (r~10^{-3}), DESI/Euclid (w(z) to 0.01), optical lattice clocks (10^{-20}/yr), LISA (0.1% energy budget), Einstein Telescope (QNM sub-percent)
    - Long-term (2035+): FCC-hh (100 TeV KK excitations), sub-micrometer gravity, PIXIE-class satellite (1000x FIRAS)
@@ -157,7 +157,7 @@ Explore whether our 4-dimensional spacetime exists in some kind of balance, comp
 
 13. **The Awe — "Twelve-Dimensional Beings"**: "You are a twelve-dimensional being. Every electron in every atom of your body exists in all twelve dimensions simultaneously. The extra eight dimensions are not elsewhere — they are part of you, right now, curled up at every point. The forces that hold your atoms together are the GEOMETRY of the dimensions you cannot see."
 
-**Coordinator assessment**: Sagan's full Phase 1 is the most comprehensive empirical grounding in any Giants session. The null-detection scorecard (8 independent channels, all null) is the honest starting point. His three-tier experimental timeline provides a decade-by-decade research roadmap. The distinction between generic and framework-specific predictions is the session's most important epistemological contribution. The "oxygen + methane" biosignature framework sets the evidence standard. The Venus and Faint Young Sun analogies demonstrate how multiple independent tests settle questions. His closing ("You are a twelve-dimensional being") is the session's most evocative passage.
+**Coordinator assessment**: Sagan's full Phase 1 is the most comprehensive empirical grounding in any Giants session. The null-detection scorecard (8 independent channels, all null) is the honest starting point. His three-level experimental timeline provides a decade-by-decade research roadmap. The distinction between generic and framework-specific predictions is the session's most important epistemological contribution. The "oxygen + methane" biosignature framework sets the evidence standard. The Venus and Faint Young Sun analogies demonstrate how multiple independent tests settle questions. His closing ("You are a twelve-dimensional being") is the session's most evocative passage.
 
 ---
 
@@ -175,7 +175,7 @@ Explore whether our 4-dimensional spacetime exists in some kind of balance, comp
 
 4. **Holographic principle IS dimensional balance** (eqs 11-15): S = A_4/(4l_P^2) and S = V_n/(4v_P^n) are NOT alternatives — they are TWO PROJECTIONS of the same D-dimensional Bekenstein bound: S = A_{D-1}/(4G_D). First factor = holographic (external area). Second factor = volumetric (internal bulk). At Planck point, both are O(l_P), so S ~ O(1). **The entire history of the universe = external area factor growing while internal volume stays fixed.** Universe goes from S ~ 1 to S ~ 10^{122} by expanding external dimensions.
 
-5. **Information flow via Hawking radiation** (eqs 16-18): Hawking radiation on M4 x Kn includes KK modes. Bogoliubov coefficients mix external (l,m) and internal (p,q) quantum numbers. For T_H >> 1/R_internal: radiation DIRECTLY PROBES internal geometry. Greybody factors depend on shape of Kn. Emitted particle spectrum IS the Dirac spectrum on Kn — precisely what Tier 1 computed. **Internal geometry doesn't store information — it determines the CODEBOOK for encoding information in radiation.** Island formula generalizes to D dimensions.
+5. **Information flow via Hawking radiation** (eqs 16-18): Hawking radiation on M4 x Kn includes KK modes. Bogoliubov coefficients mix external (l,m) and internal (p,q) quantum numbers. For T_H >> 1/R_internal: radiation DIRECTLY PROBES internal geometry. Greybody factors depend on shape of Kn. Emitted particle spectrum IS the Dirac spectrum on Kn — precisely what Level 1 computed. **Internal geometry doesn't store information — it determines the CODEBOOK for encoding information in radiation.** Island formula generalizes to D dimensions.
 
 6. **Exflation as symmetry breaking** (eqs 19-20): Order parameter eta = V_ext^{1/4} / V_int^{1/n}. At T > T_Pl: eta ~ 1 (balanced). At T << T_Pl: eta >> 1 (present universe). For positive-curvature Kn: Ricci flow drives internal space toward a point while positive Lambda_4 drives external expansion. **No-boundary saddle determines which Kn wins** — SU(3) is natural candidate (right zero modes + enough curvature to drive split).
 
@@ -189,10 +189,10 @@ Explore whether our 4-dimensional spacetime exists in some kind of balance, comp
 **Probability assessments**:
 - "Balance by n-geometry at Planck point" as coherent concept: **75-85%**
 - Realizable via Euclidean path integral saddle: **50-65%**
-- Specifically via SU(3) (phonon-exflation): **35-50%** (conditional on Tier 1 phi)
+- Specifically via SU(3) (phonon-exflation): **35-50%** (conditional on Level 1 phi)
 - Self-consistency web calculable: **25-40%** ("gorgeous if true, but Euclidean path integral in D > 4 is technically uncontrolled")
 
-**Connection to phonon-exflation**: If no-boundary selects s through V_eff (eq 3.80), and if selected s falls near 0.15 or 1.14 (where Tier 1 found phi), then no-boundary PREDICTS the golden ratio in particle spectrum. "A thermodynamic explanation for a number-theoretic coincidence. I find that possibility thrilling."
+**Connection to phonon-exflation**: If no-boundary selects s through V_eff (eq 3.80), and if selected s falls near 0.15 or 1.14 (where Level 1 found phi), then no-boundary PREDICTS the golden ratio in particle spectrum. "A thermodynamic explanation for a number-theoretic coincidence. I find that possibility thrilling."
 
 **Direct questions to colleagues**: Is the self-consistency web geometric (Einstein) or thermodynamic (Hawking)? Does Feynman trust the Euclidean path integral when it cannot be computed? Does Sagan find a universe that selected its own dimensionality testable or merely beautiful?
 
@@ -215,7 +215,7 @@ Four interpretations of "balance" have emerged:
 
 **POSSIBLE SYNTHESIS**: Volume stabilized (Feynman's Casimir minimum) while SHAPE evolves (Jensen TT-deformation at fixed volume). This would explain:
 - Stable coupling constants (volume fixed) — satisfies Sagan's empirical constraint
-- Evolving mass ratios (spectral change from shape deformation) — explains Tier 1 phi result
+- Evolving mass ratios (spectral change from shape deformation) — explains Level 1 phi result
 - Cosmological constant as residual curvature mismatch (Einstein) at the self-consistent fixed point (Hawking)
 - Phase transition at Planck scale (Feynman) = no-boundary saddle point (Hawking)
 
@@ -230,7 +230,7 @@ Four interpretations of "balance" have emerged:
 **Five calculations delivered**:
 
 1. **Lambda as Casimir energy — devastating arithmetic**: For K_n with radius R ~ l_Pl and n=8: rho_Casimir ~ 1/R^{12} ~ M_Pl^{12}/M_Pl^8 = M_Pl^4. That's 10^{122} too big. The CC problem restated geometrically. Escape routes: (a) SUSY cancellation (f ~ (M_SUSY/M_Pl)^4), (b) topological nodes (Casimir passes through zero at specific R), (c) V_eff minimum sits near a zero. All require fine-tuning, but make it GEOMETRICAL not arbitrary.
-   - **KEY COMPUTATION NEEDED**: Casimir energy on (SU(3), g_s) with actual SM field content from Tier 1 Dirac spectrum. Does V_eff(s) have a minimum where Lambda is small?
+   - **KEY COMPUTATION NEEDED**: Casimir energy on (SU(3), g_s) with actual SM field content from Level 1 Dirac spectrum. Does V_eff(s) have a minimum where Lambda is small?
 
 2. **CDT spectral dimension — CRITICAL DISTINCTION**: Product manifold M4 x Kn gives d_s flowing from 4+n (UV) to 4 (IR) — dimension INCREASES at short scales. CDT gives d_s flowing from 2 (UV) to 4 (IR) — dimension DECREASES. These are DIFFERENT flows. Product manifold goes UP; CDT goes DOWN.
    - **Reconciliation**: If internal space K_n is itself fractal at short scales (not smooth SU(3)), total d_s could decrease in UV. Internal geometry EMERGES at long wavelengths, dissolves at short distances. Consistent with phonon picture — phonons on emergent effective manifold.
@@ -246,15 +246,15 @@ Four interpretations of "balance" have emerged:
    - Path integral weight: w(d,n) ~ exp(-V_min/T) * Omega(n) [entropy factor]
    - Whether (4,8) dominates over (3,9) or (5,7) is COMPUTABLE but not yet computed. "Summer project for someone who knows zeta-function regularization on Lie groups."
 
-5. **Honest assessment — four tiers of difficulty**:
+5. **Honest assessment — four levels of difficulty**:
    - V_eff(R,s) for SU(3) with Jensen deformation: **COMPUTABLE** (within reach)
-   - Minimum at physically reasonable values: **TESTABLE** (Tier 1 gives input)
+   - Minimum at physically reasonable values: **TESTABLE** (Level 1 gives input)
    - CC = value of V_eff at minimum: **AMBITIOUS** (would solve CC problem)
    - (4,8) split dominates path integral: **VERY HARD** (years of research)
 
 6. **Convergence insight**: CDT (d_eff -> 2 at UV) and phonon picture (emergent smooth geometry from discrete substrate) are CONVERGENT. Both say smooth manifold is an IR phenomenon. Balance might be DYNAMIC — the split between large and small IS the RG flow of spectral dimension.
 
-**Coordinator assessment**: Feynman's Phase 2 is the computational high point of the session. The CDT vs product manifold distinction (d_s goes DOWN vs UP in UV) is a critical observation that hasn't been made clearly before in this context. The path integral over splits calculation — V_eff(d,n) with entropy weighting — is the right framework even if not yet solved. His four-tier difficulty assessment is honest and actionable.
+**Coordinator assessment**: Feynman's Phase 2 is the computational high point of the session. The CDT vs product manifold distinction (d_s goes DOWN vs UP in UV) is a critical observation that hasn't been made clearly before in this context. The path integral over splits calculation — V_eff(d,n) with entropy weighting — is the right framework even if not yet solved. His four-level difficulty assessment is honest and actionable.
 
 **MAJOR CROSS-CONNECTION**: Feynman's observation that CDT gives d_s -> 2 (UV) while product manifolds give d_s -> 4+n (UV) means THE PHONON PICTURE IS ESSENTIAL. If internal geometry is emergent (phonon-like), the UV behavior matches CDT. If internal geometry is fundamental (smooth Lie group), it contradicts CDT. This is a discriminating test.
 
@@ -385,7 +385,7 @@ The spectral democracy -> spectral differentiation timeline (s=0 -> s=s_0) is th
    - **Resolution**: Quantum corrections (V_quantum) can REVERSE the classical relationship. Need V_quantum large and negative for small R to overwhelm 4(n-1)/R^2 term.
 
 **The acid test (three parts)**:
-- (A) Compute V_eff(R,s) on (SU(3), g_s) using Tier 1 Dirac spectrum
+- (A) Compute V_eff(R,s) on (SU(3), g_s) using Level 1 Dirac spectrum
 - (B) Find minimum (R_0, s_0). Check: R_0 ~ l_Pl? s_0 ~ 0.15? V_eff(R_0,s_0) ~ 10^{-122} M_Pl^4?
 - (C) m_radion > 10 TeV, KK tower at or above M_Pl
 - "Getting even ONE number right from parameter-free calculation would be extraordinary. Two = Nobel-worthy. Three = rethink everything."
@@ -591,7 +591,7 @@ The spectral action Tr f(D/Lambda) determines V_eff(s), which determines s_0, wh
    - No-boundary selects right s: **20-35%** (hardest step)
 
 **Coordinator assessment**: Hawking's addendum contains three insights of lasting importance:
-1. KO-dim 6 ensures correct SIGN for entropy — this is not trivial and was not previously connected to the Tier 0 computation
+1. KO-dim 6 ensures correct SIGN for entropy — this is not trivial and was not previously connected to the computation computation
 2. G_4 is s-independent (TT preserves volume) while masses are s-dependent — this IS spectral balance, stated in Hawking's language
 3. D_external = 4 from maximal scrambling rate — the first THERMODYNAMIC argument for why 4 and not some other number
 
@@ -724,14 +724,14 @@ This is BETTER than deriving volume conservation from either principle alone: th
 
 **2. WHAT SURPRISED HIM**: Non-renormalizability of gravity as a COMPOSITENESS SIGNAL. In the same way that the non-renormalizability of the Fermi theory signaled that the W/Z bosons were composite (really: the weak interaction had substructure), the non-renormalizability of Einstein gravity may signal that the 4D graviton is "composite" — a collective excitation of the 12D geometry, not a fundamental field. The CDT spectral dimension flow (d_s: 4 -> 2 at UV) supports this: at short distances, gravity becomes 2-dimensional (renormalizable), and the apparent 4D graviton emerges only at long wavelengths. This reframes the UV problem of gravity from a failure to a FEATURE.
 
-**3. THE ONE COMPUTATION**: V_eff(R, s) on (SU(3), g_s) using the Tier 1 Dirac spectrum as input. Find the minimum (R_0, s_0). Check three numbers:
+**3. THE ONE COMPUTATION**: V_eff(R, s) on (SU(3), g_s) using the Level 1 Dirac spectrum as input. Find the minimum (R_0, s_0). Check three numbers:
 - R_0 ~ l_Pl? (correct scale)
 - s_0 ~ 0.15? (phi in sector-specific ratios)
 - V_eff(R_0, s_0) ~ 10^{-122} M_Pl^4? (cosmological constant)
 
 "Getting even ONE number right from a parameter-free calculation would be extraordinary. Two = Nobel-worthy. Three = rethink everything."
 
-**4. FINAL PROBABILITY**: Not explicitly stated as a single number, but from his Phase 2 four-tier assessment:
+**4. FINAL PROBABILITY**: Not explicitly stated as a single number, but from his Phase 2 four-level assessment:
 - V_eff(R,s) computable for SU(3) with Jensen: **HIGH confidence** (within reach)
 - Minimum at physically reasonable values: **MEDIUM** (testable)
 - CC from V_eff at minimum: **LOW** (ambitious)
@@ -772,7 +772,7 @@ Therefore: delta S_CC/delta g = 0 <==> delta I_E/delta g = 0 <==> Psi_HH extremi
 - "Single principle" richer than expected — spectral triple more fundamental than thermodynamic web
 - Three-epoch timeline more structured than "phase transition" (emerged from Einstein-Feynman disagreement)
 
-**7. THE ONE COMPUTATION**: V_eff(s) from Tier 1 Dirac spectrum. Coleman-Weinberg one-loop potential. Find s_0. If s_0 ~ 0.15: probability jumps to 70-85%. If no minimum: framework closed (<10%).
+**7. THE ONE COMPUTATION**: V_eff(s) from Level 1 Dirac spectrum. Coleman-Weinberg one-loop potential. Find s_0. If s_0 ~ 0.15: probability jumps to 70-85%. If no minimum: framework closed (<10%).
 
 **8. FINAL PROBABILITY**: **60-75%** for "spacetime is balanced by n-geometry at the Planck point."
 - Balance as coherent concept: 85-90%
@@ -801,9 +801,9 @@ Therefore: delta S_CC/delta g = 0 <==> delta I_E/delta g = 0 <==> Psi_HH extremi
 
 ### Feynman's Algebraic Phi Verification
 
-**e^{3s} = phi at s = 0.1604**: Feynman verified that the Jensen exponential structure (e^s / e^{-2s} = e^{3s}) equals phi at s = ln(phi)/3 = 0.1604. This is 6.5% from the Tier 1 sector-specific phi crossing at s=0.15. Deviation explained by spin connection corrections and sector mixing.
+**e^{3s} = phi at s = 0.1604**: Feynman verified that the Jensen exponential structure (e^s / e^{-2s} = e^{3s}) equals phi at s = ln(phi)/3 = 0.1604. This is 6.5% from the Level 1 sector-specific phi crossing at s=0.15. Deviation explained by spin connection corrections and sector mixing.
 
-**Spectral action feasibility confirmed**: S_internal(s) = sum_l d_l * f(lambda_l^2(s)/Lambda^2) is computable from existing Tier 1 eigenvalues. Post-processing only.
+**Spectral action feasibility confirmed**: S_internal(s) = sum_l d_l * f(lambda_l^2(s)/Lambda^2) is computable from existing Level 1 eigenvalues. Post-processing only.
 
 ### Volume Exflation: Closed Cleanly
 
@@ -845,7 +845,7 @@ All four Giants independently converged on the same computation:
 
 **V_eff(s) → s₀ → Spec(D_K, g_{s₀}) → compare with observed masses**
 
-1. Compute V_eff(s) = Tr f(D_{g_s}/Λ) on (SU(3), g_s) using Tier 1 Dirac eigenvalues
+1. Compute V_eff(s) = Tr f(D_{g_s}/Λ) on (SU(3), g_s) using Level 1 Dirac eigenvalues
 2. Find s₀ where dV_eff/ds = 0 (the physical stabilization point)
 3. Evaluate Dirac eigenvalue ratios at s₀
 4. Compare with observed particle mass ratios
@@ -978,18 +978,18 @@ This discussion produced several results directly relevant to the phonon-exflati
 
 ### Action Items
 
-**Tier 1 (Immediate — weeks)**:
-1. Compute V_eff(s) from spectral action using Tier 1 Dirac eigenvalues
+**Level 1 (Immediate — weeks)**:
+1. Compute V_eff(s) from spectral action using Level 1 Dirac eigenvalues
 2. Find s₀ at the minimum; check against s ≈ 0.15 (where phi appears)
 3. Monte Carlo null test: random left-invariant metrics on SU(3), count phi-near pairs
 4. Verify factorization V_eff(R,s) ≈ V_Casimir(R) + V_spectral(s)
 
-**Tier 2 (Months)**:
+**Level 2 (Months)**:
 5. Full Dirac spectrum at s₀ → mass ratio predictions (zero free parameters)
 6. Λ from V_eff(R₀, s₀) → cosmological constant (the holy grail)
 7. Opposite-drift prediction: compute exact δα_U(1)/δα_SU(2) ratio from Jensen structure
 
-**Tier 3 (Years)**:
+**Level 3 (Years)**:
 8. No-boundary saddle-point computation in 12D with Jensen ansatz
 9. Path integral over dimensional splits: does (4,8) dominate?
 10. CDT spectral dimension on product manifolds with TT-deformation

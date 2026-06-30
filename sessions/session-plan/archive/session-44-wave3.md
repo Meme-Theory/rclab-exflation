@@ -47,14 +47,14 @@ The BAO feature at ~147 Mpc is detected at >10 sigma in current surveys. The fir
 - INFO: SNR between 1-3 (marginal detection expected)
 
 **Input files**:
-- `tier0-computation/s43_kk_cmb_transfer.npz`
-- `tier0-computation/s42_constants_snapshot.npz`
+- `computations/s43_kk_cmb_transfer.npz`
+- `computations/s42_constants_snapshot.npz`
 - Standard LCDM cosmological parameters
 
 **Output files**:
-- Script: `tier0-computation/s44_first_sound_fisher.py`
-- Data: `tier0-computation/s44_first_sound_fisher.npz`
-- Plot: `tier0-computation/s44_first_sound_fisher.png`
+- Script: `computations/s44_first_sound_fisher.py`
+- Data: `computations/s44_first_sound_fisher.npz`
+- Plot: `computations/s44_first_sound_fisher.png`
 
 **Working paper section**: W3-1
 
@@ -76,7 +76,7 @@ S43 COHERENT-WALL-44 pre-registered in quicklook: DR > 3 decades at any frequenc
 
 **Computation Steps**:
 
-1. Load impedance data from `tier0-computation/s43_impedance_mismatch.npz` and BdG masses from `tier0-computation/s42_fabric_dispersion.npz`.
+1. Load impedance data from `computations/s43_impedance_mismatch.npz` and BdG masses from `computations/s42_fabric_dispersion.npz`.
 
 2. **Single-wall transfer matrix.** For a domain wall at position x_j with impedance mismatch Z_j, the 2x2 transfer matrix is:
 
@@ -104,14 +104,14 @@ S43 COHERENT-WALL-44 pre-registered in quicklook: DR > 3 decades at any frequenc
 - INFO: periodic case gives DR > 3 but disordered case gives DR < 3
 
 **Input files**:
-- `tier0-computation/s43_impedance_mismatch.npz`
-- `tier0-computation/s42_fabric_dispersion.npz`
-- `tier0-computation/s42_hauser_feshbach.npz`
+- `computations/s43_impedance_mismatch.npz`
+- `computations/s42_fabric_dispersion.npz`
+- `computations/s42_hauser_feshbach.npz`
 
 **Output files**:
-- Script: `tier0-computation/s44_coherent_wall.py`
-- Data: `tier0-computation/s44_coherent_wall.npz`
-- Plot: `tier0-computation/s44_coherent_wall.png`
+- Script: `computations/s44_coherent_wall.py`
+- Data: `computations/s44_coherent_wall.npz`
+- Plot: `computations/s44_coherent_wall.png`
 
 **Working paper section**: W3-2
 
@@ -135,7 +135,7 @@ The BdG Hamiltonian has particle-hole symmetry. In a spectrum with particle-hole
 
 **Computation Steps**:
 
-1. Load BdG data from `tier0-computation/s38_cc_instanton.npz` (BdG amplitudes u_k, v_k) and eigenvalue data from `tier0-computation/s42_hauser_feshbach.npz`.
+1. Load BdG data from `computations/s38_cc_instanton.npz` (BdG amplitudes u_k, v_k) and eigenvalue data from `computations/s42_hauser_feshbach.npz`.
 
 2. **Construct BdG Hamiltonian.** The BdG Hamiltonian in the quasiparticle basis:
 
@@ -166,15 +166,15 @@ The BdG Hamiltonian has particle-hole symmetry. In a spectrum with particle-hole
 - INFO: nodes found but N_3 computation ambiguous
 
 **Input files**:
-- `tier0-computation/s38_cc_instanton.npz`
-- `tier0-computation/s42_hauser_feshbach.npz`
-- `tier0-computation/s35_ed_corrected_dos.npz`
+- `computations/s38_cc_instanton.npz`
+- `computations/s42_hauser_feshbach.npz`
+- `computations/s35_ed_corrected_dos.npz`
 - `researchers/Volovik/04_2008_Volovik_Emergent_Physics_Fermi_Point_Scenario.md`
 
 **Output files**:
-- Script: `tier0-computation/s44_n3_bdg.py`
-- Data: `tier0-computation/s44_n3_bdg.npz`
-- Plot: `tier0-computation/s44_n3_bdg.png`
+- Script: `computations/s44_n3_bdg.py`
+- Data: `computations/s44_n3_bdg.npz`
+- Plot: `computations/s44_n3_bdg.png`
 
 **Working paper section**: W3-3
 
@@ -196,7 +196,7 @@ The physical mechanism: tensor perturbations (gravitational waves) are sourced b
 
 **Computation Steps**:
 
-1. Load BCS data from `tier0-computation/s38_cc_instanton.npz`, constants from `tier0-computation/s42_constants_snapshot.npz`.
+1. Load BCS data from `computations/s38_cc_instanton.npz`, constants from `computations/s42_constants_snapshot.npz`.
 
 2. **Scalar power spectrum.** The curvature power spectrum from KZ perturbations:
 
@@ -224,14 +224,14 @@ The physical mechanism: tensor perturbations (gravitational waves) are sourced b
 - INFO: r computed but strong cutoff dependence
 
 **Input files**:
-- `tier0-computation/s38_cc_instanton.npz`
-- `tier0-computation/s42_constants_snapshot.npz`
-- `tier0-computation/s42_gradient_stiffness.npz`
+- `computations/s38_cc_instanton.npz`
+- `computations/s42_constants_snapshot.npz`
+- `computations/s42_gradient_stiffness.npz`
 
 **Output files**:
-- Script: `tier0-computation/s44_bcs_tensor_r.py`
-- Data: `tier0-computation/s44_bcs_tensor_r.npz`
-- Plot: `tier0-computation/s44_bcs_tensor_r.png`
+- Script: `computations/s44_bcs_tensor_r.py`
+- Data: `computations/s44_bcs_tensor_r.npz`
+- Plot: `computations/s44_bcs_tensor_r.png`
 
 **Working paper section**: W3-4
 

@@ -1,0 +1,70 @@
+{
+  "gate_id": "S93-W4-3-N-PBH-CANONICAL-TRUNCATION-FACTORIZATION",
+  "sage_backend": "sagecell",
+  "purpose": "Multiplicative-normalization factorization pre-flight + N_eigs(L_max) growth-law closed form (Sage-exact). Resolves whether w(L_max) saturates as L_max -> infinity, setting the Eq.(2') convergence-status qualifier for n_PBH at the canonical L_max=14.",
+
+  "n_eigs_growth_law": {
+    "admission_predicate": "p + q <= L_max (matches obs_2 producing script s91_w5_3 lines 287, 405-409); 16-fold replica per Peter-Weyl sector",
+    "dim_SU3_pq": "(p+1)(q+1)(p+q+2)/2",
+    "inner_sector_sum_D_s": "1/12*s^4 + 2/3*s^3 + 23/12*s^2 + 7/3*s + 1   [= sum_{p=0}^{s} dim_SU3(p,s-p)]",
+    "N_eigs_closed_form_sage_exact": "(4/15)*L^5 + (10/3)*L^4 + 16*L^3 + (110/3)*L^2 + (596/15)*L + 16",
+    "N_eigs_closed_form_note": "16-fold replica already folded in. Degree-5 polynomial in L_max. Leading term (4/15)*L^5.",
+    "degree": 5,
+    "leading_coefficient_QQ": "4/15",
+    "anchor_reproduction": {
+      "L_max_10_analytic": 80080,
+      "L_max_10_cache_baseline": 78080,
+      "L_max_10_cache_gap_note": "analytic 80080 - cache 78080 = 2000 = dim_SU3(4,4)*16 (cache (4,4) p+q=8 gap, documented in obs_2 producing script lines 750-762)",
+      "L_max_12": 168896,
+      "L_max_14": 323136,
+      "L_max_15": 434112,
+      "L_max_16": 573648,
+      "obs_2_anchor_match_14_15_16": true
+    },
+    "saturation_classification": "UNBOUNDED (does NOT saturate) — degree-5 polynomial growth; lim_{L_max->oo} N_eigs(L_max) = +Infinity"
+  },
+
+  "factorization_check": {
+    "candidate_decomposition": "n_PBH(L_max, g) = w(L_max) * kappa(g)",
+    "w_L_max": "[N_PBH_L10_BASELINE / n_eigs_cache_L10] * N_eigs(L_max)   = (1.758127e-23 / 78080) * N_eigs(L_max)  [m^-3]",
+    "kappa_g": "1   (the g / cascade-generation kernel cancels EXACTLY under substrate-clock cancellation; obs_2 cancellation_test_pass=True)",
+    "producing_script_n_edge_form": "LINEAR-in-N_eigs (NOT C(N_eigs,2)). The C(N_eigs,2) global-pair count appears in the registry equation, but the substrate-clock cancellation form in the obs_2 producing script (s91_w5_3 lines 444-456) reduces n_PBH to n_PBH = N_PBH_L10 * (n_eigs(L_max)/n_eigs_L10), i.e. LINEAR in N_eigs. This is the alpha/beta discriminator the plan flagged; resolved to LINEAR by reading the actual producing-script form.",
+    "sage_simplify_residual": "n_PBH_sym - w(L)*kappa(g) = 0",
+    "residual_exact_zero": true,
+    "obs_2_reproduction_rel_tol": 1e-6,
+    "obs_2_n_PBH_reproduced": [7.276051822131147e-23, 9.774897902459016e-23, 1.2916829371106556e-22],
+    "obs_2_prob_form_reproduced": [0.6444924344262295, 0.8658332704918033, 1.1441368217213115],
+    "step_ratio_cross_check": {
+      "N_eigs_ratios": [1.3434, 1.3214],
+      "n_PBH_ratios": [1.3434, 1.3214],
+      "prob_form_ratios": [1.3434, 1.3214],
+      "interpretation": "All three ratio sets identical to 4 sig figs => n_PBH tracks N_eigs LINEARLY across {14,15,16}. Confirms producing-script n_edge is LINEAR-in-N_eigs."
+    }
+  },
+
+  "multiplicative_normalization_cancellation": {
+    "K_log_derivative_first": "d ln(w(L)*kappa(g)) / d(ln K) = 0",
+    "K_log_derivative_second": "d^2 ln(w(L)*kappa(g)) / d(ln K)^2 = 0",
+    "flag": "MULTIPLICATIVE-NORMALIZATION-CANCELLATION-DETECTED",
+    "interpretation": "w(L_max) and kappa(g)=1 are both K-INDEPENDENT (K = the K-window observable); the K-log-derivative annihilates the multiplicative pre-factor w(L_max). Per math-scripts.md 'Multiplicative-normalization cancellation invariants', the L_max-stability of any K-log-derivative observable is a STRUCTURAL identity, NOT empirical regulator-class consistency. The DISCRIMINATING content is the ASYMPTOTE of w(L_max) itself (the GROWTH LAW of N_eigs), which is what this gate computes."
+  },
+
+  "saturation_verdict": {
+    "lim_w_L_max_to_infinity": "+Infinity",
+    "classification": "DIVERGENT (resolution beta)",
+    "resolution": "beta",
+    "eq_2prime_qualifier": "(still converging)",
+    "L_max_14_canonical_status": "PROVISIONAL — NEEDS re-determination (the 'canonical L_max=14' label is verdict-orthogonal to JE5=PASS, which holds at every computed truncation; but L_max=14 is NOT a substrate-singled-out saturation point because N_eigs(L_max) grows without bound)",
+    "structural_distinction_note": "N_eigs (TOTAL Peter-Weyl block-admission count) is a STRUCTURALLY DISTINCT observable from the bottom-K spectrum count. Friedrich-Bar saturation (obs_2 friedrich_bar_saturation_status = [True,True,True]) certifies the BOTTOM-K spectrum is invariant for all L_max >= 12 — it does NOT imply N_eigs saturation. The two observables are different functionals of the spectrum (plan substitution-chain Conclusion)."
+  },
+
+  "three_tuple": {
+    "sign_verdict": "PASS",
+    "sign_rationale": "Substitution-chain Step 4/5 predicted w(L_max) DIVERGES (does NOT saturate); computed lim = +Infinity matches the predicted divergent direction.",
+    "magnitude_verdict": "INFO",
+    "magnitude_rationale": "Factorization holds (residual=0 EXACT) BUT w(L_max) is DIVERGENT => resolution beta band (PASS-beta), not the alpha saturation band. Per gate INFO_meaning.",
+    "regime_verdict": "VALID",
+    "regime_rationale": "The N_eigs(L_max) closed form is EXACT (degree-5 polynomial), valid for ALL L_max, verified bit-exact at the anchor grid {14,15,16} and symbolically as L->oo. No asymptotic-validity-window breakdown for the growth-law analysis.",
+    "composite": "INFO"
+  }
+}

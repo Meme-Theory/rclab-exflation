@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 7,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_61",
+      "anchor_type": "data_provenance",
+      "name": "block_diagonal_results",
+      "script_path": "session-22/s22b_block_diagonal_results.py",
+      "session": "s22b",
+      "inputs": "",
+      "outputs": "session-22/s22b_block_diagonal_results.npz",
+      "source_file": "computations/session-22/s22b_block_diagonal_results.py",
+      "source_context_30_lines": "  373:         \"bd_hermiticity_err_rel\": np.array([r[\"hermiticity_err_rel\"] for r in bd_results]),\n  374:         \"bd_max_off_diag\": np.array([max_off_diag]),\n  375:         \"bd_max_eig_err\": np.array([max_eig_err]),\n  376:         \"gate_passes\": np.array([gate_passes]),\n  377:     }\n  378:     for N, E in E_ferm.items():\n  379:         output[f\"E_ferm_N{N}\"] = E\n  380: \n  381:     outpath = os.path.join(SCRIPT_DIR, \"s22b_block_diagonal_results.npz\")\n  382:     np.savez_compressed(outpath, **output)\n  383:     print(f\"\\nSaved: {outpath}\")\n  384:     print(f\"File size: {os.path.getsize(outpath) / 1024:.1f} KB\")\n  385: \n  386:     print(\"\\n\" + \"=\" * 70)\n  387:     print(f\"VERDICT: block-diagonality {'PASS' if gate_passes else 'FAIL'}\")\n  388:     print(f\"  max ||off_diag||_F = {max_off_diag:.3e}  (threshold 1e-14)\")\n  389:     print(f\"  max eig recovery err = {max_eig_err:.3e}  (threshold 1e-10)\")"
+    },
+    {
+      "anchor_id": "prov_62",
+      "anchor_type": "data_provenance",
+      "name": "eigenvector_extraction",
+      "script_path": "session-22/s22b_eigenvector_extraction.py",
+      "session": "s22b",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-22/s22b_eigenvector_extraction.py",
+      "source_context_30_lines": "<name 'eigenvector_extraction' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: Session 22b PA-1: Eigenvector extraction from D_K(tau).\n    3: \n    4: Extracts eigenvectors of the Dirac operator D_K at gap-edge sectors (p+q <= 3)\n    5: for 9 tau values. Uses scipy.linalg.eigh on the Hermitianized operator (1j * D_pi)\n    6: since D_pi is anti-Hermitian in math convention.\n    7: \n    8: Mathematical background:\n    9:     D_pi = sum_{a,b} E_{ab} (rho(X_b) x gamma_a) + I_{dim_rho} x Omega(s)\n   10:     D_pi is anti-Hermitian => 1j * D_pi is Hermitian => eigh gives real eigenvalues\n   11:     and orthonormal eigenvectors.\n   12: \n   13:     The eigenvalues of D_pi are 1j * evals_hermitian (purely imaginary).\n   14:     We store the real eigenvalues of (1j * D_pi) directly, since the absolute values\n   15:     |lambda_D| = |evals_hermitian| are what enter spectral sums.\n   16: \n   17: Output: computations/session-22/s22b_eigenvectors.npz\n   18:     Keys:\n   19:         tau_values          : (9,) float64\n   20:         eigenvalues_{i}     : eigenvalues of (1j * D_pi) per sector, concatenated, for tau_i\n   21:         eigenvectors_{i}    : corresponding eigenvector matrix (columns = eigenvectors)\n   22:         sector_p_{i}        : p-label per eigenvalue\n   23:         sector_q_{i}        : q-label per eigenvalue\n   24:         multiplicities_{i}  : Peter-Weyl multiplicity dim(p,q) per eigenvalue\n   25:         sector_sizes_{i}    : (N_sectors,) array of sector matrix dimensions\n   26:         sector_labels_{i}   : (N_sectors, 2) array of (p,q) labels per sector block\n   27: \n   28: Sectors extracted (p+q <= 3):\n   29:     (0,0): dim=1,  D size=16,   PW mult=1\n   30:     (1,0): dim=3,  D size=48,   PW mult=3"
+    },
+    {
+      "anchor_id": "prov_63",
+      "anchor_type": "data_provenance",
+      "name": "kosmann_matrix",
+      "script_path": "session-22/s22b_kosmann_matrix.py",
+      "session": "s22b",
+      "inputs": "",
+      "outputs": "session-22/s22b_kosmann_matrix.npz",
+      "source_file": "computations/session-22/s22b_kosmann_matrix.py",
+      "source_context_30_lines": "   19:   1. L_X (standard Kosmann-Lichnerowicz) -- eq 4.1 of Paper 17\n   20:   2. L_tilde (corrected derivative) -- eq 1.4/5.11 of Paper 18\n   21:      L_tilde_V = L_V + (1/4) sum_{j!=k} <g^{-1}(L_V phi)(v_j), v_k> v_j.v_k\n   22: \n   23: Dependencies:\n   24:   - computations/session-22/s22b_eigenvectors.npz (from PA-1)\n   25:   - computations/_shared/dirac_spectrum.py (infrastructure)\n   26: \n   27: Output: computations/session-22/s22b_kosmann_matrix.npz\n   28:   Keys: coupling_LX_{i}, coupling_Ltilde_{i}, tau_values,\n   29:         sector_pairs, sector_labels_{i}, diagnostics\n   30: \n   31: Author: baptista-spacetime-analyst (Session 22b)\n   32: Date: 2026-02-20\n   33: \n   34: References:\n   35:   - Baptista Paper 17, Sec 4.1: Kosmann-Lichnerowicz derivative definition"
+    },
+    {
+      "anchor_id": "prov_64",
+      "anchor_type": "data_provenance",
+      "name": "bcs_channel_scan",
+      "script_path": "session-22/s22c_bcs_channel_scan.py",
+      "session": "s22c",
+      "inputs": "",
+      "outputs": "session-22/s22c_bcs_channel_scan.npz, session-22/s22c_bcs_channel_scan.txt",
+      "source_file": "computations/session-22/s22c_bcs_channel_scan.py",
+      "source_context_30_lines": "   19: CRITICAL: The eigenvalue response dE/dtau is DIAGONAL in the eigenstate\n   20: basis. Real BCS pairing requires OFF-DIAGONAL interaction. The only\n   21: source of off-diagonal intra-sector coupling is the Kosmann correction\n   22: K_a (||K_a|| = 1.41-1.76). Part 8 evaluates Kosmann-mediated pairing.\n   23: \n   24: Data source: computations/session-19/s19a_sweep_data.npz (21 tau, p+q<=6)\n   25:              computations/session-22/s22b_eigenvectors.npz (9 tau, p+q<=3)\n   26: \n   27: Output: s22c_bcs_channel_scan.npz, s22c_bcs_channel_scan.txt\n   28: \"\"\"\n   29: \n   30: import numpy as np\n   31: from pathlib import Path\n   32: \n   33: base = Path(__file__).parent\n   34: \n   35: # ============================================================"
+    },
+    {
+      "anchor_id": "prov_65",
+      "anchor_type": "data_provenance",
+      "name": "higgs_sigma",
+      "script_path": "session-22/s22c_higgs_sigma.py",
+      "session": "s22c",
+      "inputs": "",
+      "outputs": "session-22/s22c_higgs_sigma.npz",
+      "source_file": "computations/session-22/s22c_higgs_sigma.py",
+      "source_context_30_lines": "    1: \"\"\"\n    2: S22C-HIGGS-SIGMA: canonical-compliant re-run of s22c_higgs_sigma.py\n    3: ===================================================================\n    4: \n    5: Re-run of computations/session-22/s22c_higgs_sigma.py (Session 22c, 2026-02-20).\n    6: Patch: add `from canonical_constants import *`, tag local intermediates,\n    7: cap CPU threads, and preserve the archive baseline by writing to\n    8: s22c_higgs_sigma.npz/.png (does NOT overwrite archive).\n    9: \n   10: Hypothesis tested (Trap 3): The CCM Higgs-sigma portal coupling"
+    },
+    {
+      "anchor_id": "prov_66",
+      "anchor_type": "data_provenance",
+      "name": "higgs_sigma_legacy",
+      "script_path": "session-22/s22c_higgs_sigma_legacy.py",
+      "session": "s22c",
+      "inputs": "",
+      "outputs": "session-22/s22c_higgs_sigma_legacy.npz, session-22/s22c_higgs_sigma_legacy.png",
+      "source_file": "computations/session-22/s22c_higgs_sigma_legacy.py",
+      "source_context_30_lines": "<name 'higgs_sigma_legacy' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: C-1: HIGGS-SIGMA PORTAL COUPLING lambda_{H,sigma}(tau)\n    3: ======================================================\n    4: \n    5: Computes the Higgs-sigma cross-coupling from the spectral action's a_4\n    6: Seeley-DeWitt coefficient. This is the only untested NCG-native mechanism\n    7: that escapes the Dual Algebraic Trap (Session 21c Theorem 1).\n    8: \n    9: MATHEMATICAL FRAMEWORK\n   10: -----------------------\n   11: \n   12: From Chamseddine-Connes Paper 13 (Resilience, 2012), the spectral action\n   13: on M_4 x F produces a two-field potential V(H, sigma):\n   14: \n   15:     V(H, sigma) = lambda_H |H|^4 + lambda_sigma sigma^4\n   16:                 + lambda_{H,sigma} |H|^2 sigma^2\n   17:                 - mu_H^2 |H|^2 - mu_sigma^2 sigma^2\n   18: \n   19: The quartic couplings at the unification scale Lambda:\n   20: \n   21:     lambda_H(Lambda)         = pi^2 b / (2 f_0 a^2)\n   22:     lambda_sigma(Lambda)     = pi^2 d / (2 f_0 c^2)\n   23:     lambda_{H,sigma}(Lambda) = pi^2 e / (2 f_0 a c)\n   24: \n   25: where the traces are over the Yukawa/Majorana sector of D_F:\n   26: \n   27:     a = Tr(Y_nu^* Y_nu + Y_e^* Y_e + 3 Y_u^* Y_u + 3 Y_d^* Y_d)\n   28:     b = Tr((Y_nu^* Y_nu)^2 + (Y_e^* Y_e)^2 + 3(Y_u^* Y_u)^2 + 3(Y_d^* Y_d)^2)\n   29:     c = Tr(M_R^* M_R)\n   30:     d = Tr((M_R^* M_R)^2)"
+    },
+    {
+      "anchor_id": "prov_67",
+      "anchor_type": "data_provenance",
+      "name": "instanton_action",
+      "script_path": "session-22/s22c_instanton_action.py",
+      "session": "s22c",
+      "inputs": "",
+      "outputs": "session-22/s22c_instanton_action.npz",
+      "source_file": "computations/session-22/s22c_instanton_action.py",
+      "source_context_30_lines": "   58: )\n   59: \n   60: # ============================================================\n   61: # 0. Input pins + closure SHA scaffolding\n   62: # ============================================================\n   63: INPUT_FILES = [  # (local) ordered map for closure SHA\n   64:     (\"s22a_weyl_curvature.npz\", ARCHIVE_DIR / \"s22a_weyl_curvature.npz\"),\n   65:     (\"s19a_sweep_data.npz\", ARCHIVE_DIR / \"s19a_sweep_data.npz\"),\n   66:     (\"s22c_instanton_action.py\", ARCHIVE_DIR / \"s22c_instanton_action.py\"),\n   67:     (\"canonical_constants.py\", SCRIPT_DIR / \"canonical_constants.py\"),\n   68: ]\n   69: \n   70: \n   71: def _sha256_file(p: Path) -> str:\n   72:     \"\"\"SHA-256 hexdigest of a file.\"\"\"\n   73:     h = hashlib.sha256()  # (local)\n   74:     with open(p, \"rb\") as f:"
+    },
+    {
+      "anchor_id": "prov_68",
+      "anchor_type": "data_provenance",
+      "name": "instanton_action_legacy",
+      "script_path": "session-22/s22c_instanton_action_legacy.py",
+      "session": "s22c",
+      "inputs": "",
+      "outputs": "session-22/s22c_instanton_action_legacy.npz, session-22/s22c_instanton_action_legacy.txt",
+      "source_file": "computations/session-22/s22c_instanton_action_legacy.py",
+      "source_context_30_lines": "<name 'instanton_action_legacy' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: Session 22c F-2: Instanton Action S_inst(tau) on Jensen SU(3)\n    3: ================================================================\n    4: Primary: feynman-theorist\n    5: Priority: High (SP + Feynman + QA from R1, SP Level 1 item 5)\n    6: \n    7: Computes:\n    8:   1. Gravitational instanton I_E(tau) = -R(tau)*Vol/(16*pi*G)\n    9:   2. dI_E/dtau profile: sign determines tau preference\n   10:   3. Yang-Mills instanton action on internal SU(3)\n   11:   4. Stokes phenomenon at monopole transitions M0, M1, M2\n   12:   5. Gravitational instanton with Weyl^2 correction\n   13: \n   14: From Session 22a (SP-3): R(tau) is monotonically increasing.\n   15: I_E(tau) ~ -R(tau) is monotonically decreasing.\n   16: => Euclidean action always PREFERS larger tau (OPPOSITE of what we need).\n   17: \n   18: The question for F-2: can Stokes phenomena at the monopole transitions\n   19: M1 (~0.15) or M2 (~1.55) create a non-analytic change in the instanton\n   20: action that reverses this preference inside the physical window?\n   21: \n   22: Data: s22a_weyl_curvature.npz (R, K, Weyl^2, Ric^2 at 21 tau values)\n   23:       Exact formulas from Baptista eq 3.70\n   24: \n   25: Output: s22c_instanton_action.npz, s22c_instanton_action.txt\n   26: \"\"\"\n   27: \n   28: import numpy as np\n   29: from pathlib import Path\n   30: "
+    },
+    {
+      "anchor_id": "prov_69",
+      "anchor_type": "data_provenance",
+      "name": "landau_classification",
+      "script_path": "session-22/s22c_landau_classification.py",
+      "session": "s22c",
+      "inputs": "",
+      "outputs": "session-22/s22c_landau_classification.npz, session-22/s22c_landau_classification.png, session-22/s22c_landau_classificat...",
+      "source_file": "computations/session-22/s22c_landau_classification.py",
+      "source_context_30_lines": "   15:   - s22b_block_diagonal_results.npz: E_ferm at 9 tau values (confirmed baseline)\n   16: \n   17: Constraint Gates:\n   18:   COMPELLING: V_IR'' < 0 at some tau in [0.10, 0.40] (IR spinodal exists)\n   19:   INTERESTING: G_i > 10 (perturbative V_eff unreliable)\n   20:   NEUTRAL: V_total'' > 0 throughout (confirmed from 21a)\n   21:   CLOSED: G_i < 1 AND V_IR'' > 0 everywhere\n   22: \n   23: Output: s22c_landau_classification.npz, s22c_landau_classification.txt\n   24: \"\"\"\n   25: \n   26: import numpy as np\n   27: import matplotlib.pyplot as plt\n   28: import os\n   29: import sys\n   30: \n   31: data_dir = os.path.dirname(os.path.abspath(__file__))"
+    },
+    {
+      "anchor_id": "prov_70",
+      "anchor_type": "data_provenance",
+      "name": "order_one",
+      "script_path": "session-22/s22c_order_one.py",
+      "session": "s22c",
+      "inputs": "",
+      "outputs": "session-22/s22c_order_one.txt",
+      "source_file": "computations/session-22/s22c_order_one.py",
+      "source_context_30_lines": "  233:     M_32[16:, 16:] = rho_minus(M_16)\n  234:     return M_32\n  235: \n  236: \n  237: # =============================================================================\n  238: # SECTION 3: MAIN COMPUTATION\n  239: # =============================================================================\n  240: \n  241: def compute_order_one_norms(tau_values, gens, f_abc, gammas, max_pq_sum=3):\n  242:     \"\"\"\n  243:     Compute the order-one condition norm at each tau value.\n  244: \n  245:     For each tau:\n  246:     1. Build Omega(tau) as a spinor operator\n  247:     2. Embed gamma_a and Omega(tau) into 32-dim space\n  248:     3. For each a_F, b_F in A_F generators:\n  249:        Compute ||[[gamma_a_32, a_32], o(b_32)]|| and ||[[Omega_32, a_32], o(b_32)]||"
+    }
+  ]
+}

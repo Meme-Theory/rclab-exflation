@@ -30,24 +30,24 @@ where Δ_k is the BCS gap amplitude for mode k and ψ_k is the corresponding eig
 
 **Verified data locations**:
 
-- `tier0-computation/s46_number_projected_bcs.npz`:
+- `computations/s46_number_projected_bcs.npz`:
   - `v2_bcs: shape=(3,)` — [0.045, 0.122, 0.002] per sector
   - `Delta_bcs_fold: shape=(3,)` — [0.372, 0.732, 0.084] BCS gaps per sector
   - `V_mat_constrained: shape=(3,3)` — sector V matrix
 
-- `tier0-computation/s46_rg_pair_transfer.npz`:
+- `computations/s46_rg_pair_transfer.npz`:
   - `mode_eps: shape=(8,)` — eigenvalues
   - `mode_sector: shape=(8,)` — B1/B2/B2/B2/B2/B3/B3/B3
   - `n_occ: shape=(8,)` — per-mode occupations
 
-- `tier0-computation/s44_dos_tau.npz`:
+- `computations/s44_dos_tau.npz`:
   - `tau0.19_all_omega: shape=(992,)` — full spectrum at fold
   - `tau0.19_all_dim2: shape=(992,)` — PW degeneracies
 
-- `tier0-computation/s47_pi_sector.npz` (from W1-1):
+- `computations/s47_pi_sector.npz` (from W1-1):
   - Sector assignments per (p,q) rep
 
-- `tier0-computation/canonical_constants.py`
+- `computations/canonical_constants.py`
 
 **Computation Steps**:
 
@@ -76,9 +76,9 @@ where Δ_k is the BCS gap amplitude for mode k and ψ_k is the corresponding eig
 - NOTABLE: If the pattern has lower symmetry than S₃ (spontaneous breaking on the torus).
 
 **Output files**:
-- Script: `tier0-computation/s47_condensate_torus.py`
-- Data: `tier0-computation/s47_condensate_torus.npz`
-- Plot: `tier0-computation/s47_condensate_torus.png`
+- Script: `computations/s47_condensate_torus.py`
+- Data: `computations/s47_condensate_torus.npz`
+- Plot: `computations/s47_condensate_torus.png`
 
 **Working paper section**: W2-1
 
@@ -110,13 +110,13 @@ The Jensen deformation scales: g(X_root, X_root) = e^{2tau} × g(X_root, X_root)
 
 **Verified data locations**:
 
-- `tier0-computation/s46_geometric_a2.npz`:
+- `computations/s46_geometric_a2.npz`:
   - Contains Ricci scalar data at the fold
 
 - `researchers/Baptista/13_Baptista_KK_Paper13.md` through `18_Baptista_KK_Paper18.md`:
   - Metric components, structure constants, curvature formulas
 
-- `tier0-computation/canonical_constants.py`:
+- `computations/canonical_constants.py`:
   - `tau_fold`, structure constants
 
 **Computation Steps**:
@@ -156,9 +156,9 @@ The Jensen deformation scales: g(X_root, X_root) = e^{2tau} × g(X_root, X_root)
 - NOTABLE: If the Cartan-Cartan curvature diverges relative to Root-Root.
 
 **Output files**:
-- Script: `tier0-computation/s47_curvature_anatomy.py`
-- Data: `tier0-computation/s47_curvature_anatomy.npz`
-- Plot: `tier0-computation/s47_curvature_anatomy.png`
+- Script: `computations/s47_curvature_anatomy.py`
+- Data: `computations/s47_curvature_anatomy.npz`
+- Plot: `computations/s47_curvature_anatomy.png`
 
 **Working paper section**: W2-2
 
@@ -183,24 +183,24 @@ You are creating a publication-quality spectral landscape figure showing all 992
 
 **Verified data locations**:
 
-- `tier0-computation/s44_dos_tau.npz`:
+- `computations/s44_dos_tau.npz`:
   - `tau0.19_all_omega: shape=(992,)` — all eigenvalues |λ| at fold
   - `tau0.19_all_dim2: shape=(992,)` — PW degeneracy of each eigenvalue
 
-- `tier0-computation/s47_pi_sector.npz` (from W1-1):
+- `computations/s47_pi_sector.npz` (from W1-1):
   - `pi_phase_eigenvalues` — |eigenvalue| for each of the 13 pi-phase states
   - `pi_phase_sectors` — B1/B2/B3 label for each
   - `pi_phase_reps` — (p,q) rep label for each
   - `pw_pi_B1`, `pw_pi_B2`, `pw_pi_B3`
 
-- `tier0-computation/s46_number_projected_bcs.npz`:
+- `computations/s46_number_projected_bcs.npz`:
   - `Delta_bcs_fold: shape=(3,)` — [0.372, 0.732, 0.084] BCS gaps
   - `v2_bcs: shape=(3,)` — [0.045, 0.122, 0.002] occupations
 
-- `tier0-computation/s46_berry_phase.npz`:
+- `computations/s46_berry_phase.npz`:
   - Per-(p,q) berry phase arrays (for context)
 
-- `tier0-computation/canonical_constants.py`
+- `computations/canonical_constants.py`
 
 **Computation Steps**:
 
@@ -231,10 +231,10 @@ You are creating a publication-quality spectral landscape figure showing all 992
 - Verify: 992 total eigenvalues, 13 pi-phase annotations, 3 sector colors.
 
 **Output files**:
-- Script: `tier0-computation/s47_spectral_landscape.py`
-- Data: `tier0-computation/s47_spectral_landscape.npz` (processed visualization data)
-- Plot: `tier0-computation/s47_spectral_landscape.png`
-- Plot: `tier0-computation/s47_spectral_landscape.pdf`
+- Script: `computations/s47_spectral_landscape.py`
+- Data: `computations/s47_spectral_landscape.npz` (processed visualization data)
+- Plot: `computations/s47_spectral_landscape.png`
+- Plot: `computations/s47_spectral_landscape.pdf`
 
 **Working paper section**: W2-3
 

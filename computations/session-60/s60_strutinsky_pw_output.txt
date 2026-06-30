@@ -1,0 +1,334 @@
+==============================================================================
+STRUTINSKY-PW-60: Strutinsky Smoothing of Peter-Weyl CC Extension
+==============================================================================
+
+--- Section 1: Load PW-CC-59 Data ---
+Levels: [0 1 2 3 4 5]
+N_modes: [   8   56  216  616 1456 3024]
+Lambda_eff: [ 1.39562789e-03 -2.24985601e+01 -5.18707968e+04 -1.91032409e+05
+ -5.21841044e+05 -1.19993121e+06]
+R_cancel: [0.00434459 1.         1.         1.         1.         1.        ]
+  Level 0: n_modes=8, Delta range=[0.3508, 1.5295], mean=0.7173
+  Level 1: n_modes=56, Delta range=[1.6088, 2.5084], mean=2.3924
+  Level 2: n_modes=216, Delta range=[6.0715, 16.7445], mean=14.5954
+  Level 3: n_modes=616, Delta range=[19.2792, 81.5261], mean=62.6040
+  Level 4: n_modes=1456, Delta range=[52.1050, 280.3767], mean=201.8574
+  Level 5: n_modes=3024, Delta range=[123.0561, 794.9221], mean=547.1205
+
+--- Section 2: Reconstruct Single-Particle Eigenvalues ---
+(0,0) sector eigenvalues: [0.819741 0.845269 0.845269 0.845269 0.845269 0.971408 0.971408 0.971408]
+  B1=0.819741, B2_mean=0.845269, B3_mean=0.971408
+
+Casimir shift fit: dE_max = 0.4429 * sqrt(C2)
+  Residuals: [-0.15446915 -0.08770373  0.0050101   0.10677984]
+Level 0: 8 eigenvalue entries, E_range=[0.8197, 0.9714], total weight=8
+Level 1: 24 eigenvalue entries, E_range=[0.8197, 1.4829], total weight=56
+Level 2: 48 eigenvalue entries, E_range=[0.8197, 1.7801], total weight=216
+Level 3: 80 eigenvalue entries, E_range=[0.8197, 2.0564], total weight=616
+Level 4: 120 eigenvalue entries, E_range=[0.8197, 2.3246], total weight=1456
+Level 5: 168 eigenvalue entries, E_range=[0.8197, 2.5888], total weight=3024
+
+--- Section 3: Strutinsky Smoothing — Gaussian Method ---
+
+Approach 1: Smooth Lambda_eff vs n_modes
+
+  L=0: Lambda = +1.395628e-03, n_modes = 8
+  L=1: Lambda = -2.249856e+01, n_modes = 56, Lambda/n^2 = -0.0072
+  L=2: Lambda = -5.187080e+04, n_modes = 216, Lambda/n^2 = -1.1118
+  L=3: Lambda = -1.910324e+05, n_modes = 616, Lambda/n^2 = -0.5034
+  L=4: Lambda = -5.218410e+05, n_modes = 1456, Lambda/n^2 = -0.2462
+  L=5: Lambda = -1.199931e+06, n_modes = 3024, Lambda/n^2 = -0.1312
+
+Power-law fit (L>=1): |Lambda| = 0.0053 * n_modes^2.5554
+  Predicted at each L (L>=1):
+    L=1: pred=-1.5437e+02, actual=-2.2499e+01, residual=+1.3187e+02 (-586.13%)
+    L=2: pred=-4.8607e+03, actual=-5.1871e+04, residual=-4.7010e+04 (+90.63%)
+    L=3: pred=-7.0751e+04, actual=-1.9103e+05, residual=-1.2028e+05 (+62.96%)
+    L=4: pred=-6.3735e+05, actual=-5.2184e+05, residual=+1.1550e+05 (-22.13%)
+    L=5: pred=-4.1258e+06, actual=-1.1999e+06, residual=+2.9259e+06 (-243.84%)
+
+--- Section 4: Polynomial Strutinsky (L>=1) ---
+
+  Level 0 (n_evals=8):
+    E_sp_total = +7.1150e+00
+    p=3: E_smooth=+4.0684e-01, delta_E=+6.7082e+00 (94.28% of E)
+    p=4: E_smooth=+4.0637e-01, delta_E=+6.7087e+00 (94.29% of E)
+    p=5: E_smooth=+4.1440e-01, delta_E=+6.7006e+00 (94.18% of E)
+    p=6: E_smooth=+4.1410e-01, delta_E=+6.7009e+00 (94.18% of E)
+    p=7: E_smooth=+4.1829e-01, delta_E=+6.6967e+00 (94.12% of E)
+    p=8: E_smooth=+4.1808e-01, delta_E=+6.6970e+00 (94.12% of E)
+    Plateau (p=[5, 6, 7]): delta_E = +6.6994e+00 +/- 1.9102e-03
+    |delta_E/E_sp| = 9.4159e-01
+
+  Level 1 (n_evals=24):
+    E_sp_total = +7.4356e+01
+    p=3: E_smooth=+2.0200e+01, delta_E=+5.4155e+01 (72.83% of E)
+    p=4: E_smooth=+2.3534e+01, delta_E=+5.0822e+01 (68.35% of E)
+    p=5: E_smooth=+2.2950e+01, delta_E=+5.1406e+01 (69.13% of E)
+    p=6: E_smooth=+2.2270e+01, delta_E=+5.2085e+01 (70.05% of E)
+    p=7: E_smooth=+2.2183e+01, delta_E=+5.2173e+01 (70.17% of E)
+    p=8: E_smooth=+2.1816e+01, delta_E=+5.2539e+01 (70.66% of E)
+    Plateau (p=[5, 6, 7]): delta_E = +5.1888e+01 +/- 3.4296e-01
+    |delta_E/E_sp| = 6.9784e-01
+
+  Level 2 (n_evals=48):
+    E_sp_total = +3.4339e+02
+    p=3: E_smooth=+1.5266e+02, delta_E=+1.9074e+02 (55.54% of E)
+    p=4: E_smooth=+1.5240e+02, delta_E=+1.9099e+02 (55.62% of E)
+    p=5: E_smooth=+1.4652e+02, delta_E=+1.9687e+02 (57.33% of E)
+    p=6: E_smooth=+1.5128e+02, delta_E=+1.9211e+02 (55.95% of E)
+    p=7: E_smooth=+1.4994e+02, delta_E=+1.9345e+02 (56.34% of E)
+    p=8: E_smooth=+1.7958e+02, delta_E=+1.6381e+02 (47.70% of E)
+    Plateau (p=[5, 6, 7]): delta_E = +1.9415e+02 +/- 2.0020e+00
+    |delta_E/E_sp| = 5.6538e-01
+
+  Level 3 (n_evals=80):
+    E_sp_total = +1.1182e+03
+    p=3: E_smooth=+6.8706e+02, delta_E=+4.3119e+02 (38.56% of E)
+    p=4: E_smooth=+6.8417e+02, delta_E=+4.3408e+02 (38.82% of E)
+    p=5: E_smooth=+6.6534e+02, delta_E=+4.5291e+02 (40.50% of E)
+    p=6: E_smooth=+6.6954e+02, delta_E=+4.4871e+02 (40.13% of E)
+    p=7: E_smooth=+6.4703e+02, delta_E=+4.7122e+02 (42.14% of E)
+    p=8: E_smooth=+6.4974e+02, delta_E=+4.6851e+02 (41.90% of E)
+    Plateau (p=[5, 6, 7]): delta_E = +4.5761e+02 +/- 9.7702e+00
+    |delta_E/E_sp| = 4.0922e-01
+
+  Level 4 (n_evals=120):
+    E_sp_total = +2.9517e+03
+    p=3: E_smooth=+2.3135e+03, delta_E=+6.3821e+02 (21.62% of E)
+    p=4: E_smooth=+2.2961e+03, delta_E=+6.5565e+02 (22.21% of E)
+    p=5: E_smooth=+2.2233e+03, delta_E=+7.2843e+02 (24.68% of E)
+    p=6: E_smooth=+2.2031e+03, delta_E=+7.4861e+02 (25.36% of E)
+    p=7: E_smooth=+2.1314e+03, delta_E=+8.2035e+02 (27.79% of E)
+    p=8: E_smooth=+2.1644e+03, delta_E=+7.8733e+02 (26.67% of E)
+    Plateau (p=[5, 6, 7]): delta_E = +7.6580e+02 +/- 3.9444e+01
+    |delta_E/E_sp| = 2.5944e-01
+
+  Level 5 (n_evals=168):
+    E_sp_total = +6.7511e+03
+    p=3: E_smooth=+6.5006e+03, delta_E=+2.5042e+02 (3.71% of E)
+    p=4: E_smooth=+6.4220e+03, delta_E=+3.2903e+02 (4.87% of E)
+    p=5: E_smooth=+6.1346e+03, delta_E=+6.1651e+02 (9.13% of E)
+    p=6: E_smooth=+6.0311e+03, delta_E=+7.1994e+02 (10.66% of E)
+    p=7: E_smooth=+5.8434e+03, delta_E=+9.0770e+02 (13.45% of E)
+    p=8: E_smooth=+5.8881e+03, delta_E=+8.6294e+02 (12.78% of E)
+    Plateau (p=[5, 6, 7]): delta_E = +7.4805e+02 +/- 1.2053e+02
+    |delta_E/E_sp| = 1.1080e-01
+
+--- Section 5: Direct Strutinsky on Lambda_eff(L) ---
+
+Method A: Polynomial fit of Lambda(n_modes)
+
+  p=2: coeffs = [-2.09518113e-02 -3.40913083e+02  2.20657851e+04]
+    L=1: Lambda_smooth=+2.9089e+03, delta=-2.9314e+03 (13029.4835%)
+    L=2: Lambda_smooth=-5.2549e+04, delta=+6.7817e+02 (1.3074%)
+    L=3: Lambda_smooth=-1.9589e+05, delta=+4.8546e+03 (2.5412%)
+    L=4: Lambda_smooth=-5.1872e+05, delta=-3.1209e+03 (0.5981%)
+    L=5: Lambda_smooth=-1.2005e+06, delta=+5.1960e+02 (0.0433%)
+
+  p=3: coeffs = [ 7.24678098e-06 -5.30263624e-02 -3.08446859e+02  1.73178723e+04]
+    L=1: Lambda_smooth=-1.2017e+02, delta=+9.7671e+01 (434.1224%)
+    L=2: Lambda_smooth=-5.1708e+04, delta=-1.6318e+02 (0.3146%)
+    L=3: Lambda_smooth=-1.9111e+05, delta=+8.0257e+01 (0.0420%)
+    L=4: Lambda_smooth=-5.2183e+05, delta=-1.5903e+01 (0.0030%)
+    L=5: Lambda_smooth=-1.1999e+06, delta=+1.1556e+00 (0.0001%)
+
+  p=4: coeffs = [ 1.17873333e-09  1.21155309e-06 -4.43867397e-02 -3.12069616e+02
+  1.75923724e+04]
+    L=1: Lambda_smooth=-2.2499e+01, delta=+1.6181e-10 (0.0000%)
+    L=2: Lambda_smooth=-5.1871e+04, delta=+4.3656e-11 (0.0000%)
+    L=3: Lambda_smooth=-1.9103e+05, delta=+5.8208e-11 (0.0000%)
+    L=4: Lambda_smooth=-5.2184e+05, delta=+2.9104e-10 (0.0000%)
+    L=5: Lambda_smooth=-1.1999e+06, delta=+4.6566e-10 (0.0000%)
+
+Method B: Power-law Lambda = -A * n^alpha + delta
+  Power law: A = 0.005263, alpha = 2.5554
+  L=1: smooth=-1.5437e+02, delta=+1.3187e+02 (586.1349%)
+  L=2: smooth=-4.8607e+03, delta=-4.7010e+04 (90.6291%)
+  L=3: smooth=-7.0751e+04, delta=-1.2028e+05 (62.9641%)
+  L=4: smooth=-6.3735e+05, delta=+1.1550e+05 (22.1340%)
+  L=5: smooth=-4.1258e+06, delta=+2.9259e+06 (243.8362%)
+
+Method C: Lambda vs Casimir sum
+  L=0: total_C2_weighted = 0.00
+  L=1: total_C2_weighted = 24.00
+  L=2: total_C2_weighted = 456.00
+  L=3: total_C2_weighted = 4056.00
+  L=4: total_C2_weighted = 23688.00
+  L=5: total_C2_weighted = 104832.00
+
+  Quadratic fit in C2: coeffs = [ 1.19509253e-04 -2.35662538e+01 -4.22986508e+04]
+  L=1: smooth=-4.2864e+04, delta=+4.2842e+04 (190419.6242%)
+  L=2: smooth=-5.3020e+04, delta=+1.1492e+03 (2.2155%)
+  L=3: smooth=-1.3592e+05, delta=-5.5115e+04 (28.8512%)
+  L=4: smooth=-5.3348e+05, delta=+1.1636e+04 (2.2298%)
+  L=5: smooth=-1.1994e+06, delta=-5.1163e+02 (0.0426%)
+
+--- Section 6: Gaussian Strutinsky on PW-Weighted Spectrum ---
+
+  Level 0: n_unique=3, d_avg=0.075833, E_exact=+7.1150e+00
+    gamma/d=0.8: E_smooth=+7.1150e+00, delta_E=+1.3109e-06 (0.0000%)
+    gamma/d=1.0: E_smooth=+7.1150e+00, delta_E=+1.3769e-06 (0.0000%)
+    gamma/d=1.2: E_smooth=+7.1150e+00, delta_E=+1.4314e-06 (0.0000%)
+    gamma/d=1.5: E_smooth=+7.1150e+00, delta_E=+1.4926e-06 (0.0000%)
+    gamma/d=2.0: E_smooth=+7.1150e+00, delta_E=+1.5585e-06 (0.0000%)
+    gamma/d=3.0: E_smooth=+7.1150e+00, delta_E=+1.6455e-06 (0.0000%)
+
+  Level 1: n_unique=6, d_avg=0.132627, E_exact=+7.4356e+01
+    gamma/d=0.8: E_smooth=+7.4356e+01, delta_E=+1.0671e-05 (0.0000%)
+    gamma/d=1.0: E_smooth=+7.4356e+01, delta_E=+1.1369e-05 (0.0000%)
+    gamma/d=1.2: E_smooth=+7.4356e+01, delta_E=+1.2117e-05 (0.0000%)
+    gamma/d=1.5: E_smooth=+7.4356e+01, delta_E=+1.3382e-05 (0.0000%)
+    gamma/d=2.0: E_smooth=+7.4356e+01, delta_E=+1.5896e-05 (0.0000%)
+    gamma/d=3.0: E_smooth=+7.4356e+01, delta_E=+2.2054e-05 (0.0000%)
+
+  Level 2: n_unique=12, d_avg=0.087306, E_exact=+3.4339e+02
+    gamma/d=0.8: E_smooth=+3.4339e+02, delta_E=+2.2890e-05 (0.0000%)
+    gamma/d=1.0: E_smooth=+3.4339e+02, delta_E=+2.4418e-05 (0.0000%)
+    gamma/d=1.2: E_smooth=+3.4339e+02, delta_E=+2.6080e-05 (0.0000%)
+    gamma/d=1.5: E_smooth=+3.4339e+02, delta_E=+2.8766e-05 (0.0000%)
+    gamma/d=2.0: E_smooth=+3.4339e+02, delta_E=+3.3754e-05 (0.0000%)
+    gamma/d=3.0: E_smooth=+3.4339e+02, delta_E=+4.5847e-05 (0.0000%)
+
+  Level 3: n_unique=18, d_avg=0.072745, E_exact=+1.1182e+03
+    gamma/d=0.8: E_smooth=+1.1182e+03, delta_E=+4.0924e-05 (0.0000%)
+    gamma/d=1.0: E_smooth=+1.1182e+03, delta_E=+4.2608e-05 (0.0000%)
+    gamma/d=1.2: E_smooth=+1.1182e+03, delta_E=+4.4644e-05 (0.0000%)
+    gamma/d=1.5: E_smooth=+1.1182e+03, delta_E=+4.8383e-05 (0.0000%)
+    gamma/d=2.0: E_smooth=+1.1182e+03, delta_E=+5.6268e-05 (0.0000%)
+    gamma/d=3.0: E_smooth=+1.1182e+03, delta_E=+7.7144e-05 (0.0000%)
+
+  Level 4: n_unique=27, d_avg=0.057880, E_exact=+2.9517e+03
+    gamma/d=0.8: E_smooth=+2.9517e+03, delta_E=+6.6439e-05 (0.0000%)
+    gamma/d=1.0: E_smooth=+2.9517e+03, delta_E=+6.8031e-05 (0.0000%)
+    gamma/d=1.2: E_smooth=+2.9517e+03, delta_E=+6.9765e-05 (0.0000%)
+    gamma/d=1.5: E_smooth=+2.9517e+03, delta_E=+7.2847e-05 (0.0000%)
+    gamma/d=2.0: E_smooth=+2.9517e+03, delta_E=+7.9864e-05 (0.0000%)
+    gamma/d=3.0: E_smooth=+2.9517e+03, delta_E=+1.0196e-04 (0.0000%)
+
+  Level 5: n_unique=36, d_avg=0.050545, E_exact=+6.7511e+03
+    gamma/d=0.8: E_smooth=+6.7511e+03, delta_E=+1.0143e-04 (0.0000%)
+    gamma/d=1.0: E_smooth=+6.7511e+03, delta_E=+1.0329e-04 (0.0000%)
+    gamma/d=1.2: E_smooth=+6.7511e+03, delta_E=+1.0522e-04 (0.0000%)
+    gamma/d=1.5: E_smooth=+6.7511e+03, delta_E=+1.0833e-04 (0.0000%)
+    gamma/d=2.0: E_smooth=+6.7511e+03, delta_E=+1.1485e-04 (0.0000%)
+    gamma/d=3.0: E_smooth=+6.7511e+03, delta_E=+1.3636e-04 (0.0000%)
+
+--- Section 7: Convergence Analysis ---
+
+Convergence table:
+  L     Lambda_eff    delta_poly2    delta_power       delta_C2
+-----------------------------------------------------------------
+    1    -2.2499e+01    -2.9314e+03    +1.3187e+02    +4.2842e+04
+    2    -5.1871e+04    +6.7817e+02    -4.7010e+04    +1.1492e+03
+    3    -1.9103e+05    +4.8546e+03    -1.2028e+05    -5.5115e+04
+    4    -5.2184e+05    -3.1209e+03    +1.1550e+05    +1.1636e+04
+    5    -1.1999e+06    +5.1960e+02    +2.9259e+06    -5.1163e+02
+
+Convergence ratios |delta(L+1)/delta(L)|:
+  poly2: [np.float64(0.23134370175284263), np.float64(7.158299038231474), np.float64(0.6428769650755555), np.float64(0.16649175960481447)]
+  poly3: [np.float64(1.670710412649157), np.float64(0.49182995457305134), np.float64(0.19815668203016482), np.float64(0.0726626987784799)]
+  power: [np.float64(356.4826772099266), np.float64(2.5586407369412463), np.float64(0.9602782755973487), np.float64(25.3312932710509)]
+  C2: [np.float64(0.026824710968514208), np.float64(47.95888597769617), np.float64(0.21111884840571), np.float64(0.04397010868600253)]
+
+Reduction ratio |delta/Lambda_eff|:
+  poly2: ['1.3029e+02', '1.3074e-02', '2.5412e-02', '5.9805e-03', '4.3303e-04']
+  poly3: ['4.3412e+00', '3.1459e-03', '4.2012e-04', '3.0476e-05', '9.6305e-07']
+  power: ['5.8613e+00', '9.0629e-01', '6.2964e-01', '2.2134e-01', '2.4384e+00']
+  C2: ['1.9042e+03', '2.2155e-02', '2.8851e-01', '2.2298e-02', '4.2638e-04']
+
+--- Section 8: The Fermi Surface Problem ---
+
+CRITICAL ANALYSIS (Nazarewicz):
+
+The standard Strutinsky energy theorem E_total = E_smooth + delta_E_shell
+relies on a PARTIAL FILLING of single-particle levels. The shell correction
+arises because the discrete level density oscillates around the smooth
+(Thomas-Fermi) level density near the Fermi energy. States far from E_F
+contribute the same to both E_total and E_smooth.
+
+For the CC (cosmological constant) problem, the situation is fundamentally
+different:
+
+1. EVERY Peter-Weyl sector contributes to Lambda_eff. There is no "Fermi
+   surface" in the PW sum — all sectors from L=0 to L=infinity must be included.
+
+2. The UV catastrophe in PW-CC-59 arises because:
+   - At each level L, the BCS ground state energy scales as n_modes * V^2 * rho
+   - The PW weight dim(p,q)^2 grows as C_2^3 ~ L^6
+   - The number of sectors grows as L^2
+   - Together: Lambda_eff(L) ~ L^8 (roughly) — an unregulated sum
+
+3. The Strutinsky shell correction delta_E_shell applies to FLUCTUATIONS
+   around the smooth background. But in the PW CC sum:
+   - The "fluctuations" (differences from power-law fit) are O(1%) of Lambda_eff
+   - They do NOT converge to a finite limit — they grow with L
+   - The residuals from ANY polynomial fit grow because the sum is divergent
+
+4. The PHYSICAL resolution is NOT Strutinsky smoothing but RENORMALIZATION:
+   - The divergent sum needs a UV regulator (Connes cutoff, zeta function, etc.)
+   - The smooth part is the UV-divergent vacuum energy (cosmological constant)
+   - The physical CC is the FINITE, regulated remainder
+   - This is a different mathematical operation from Strutinsky smoothing
+
+CONCLUSION: The Strutinsky theorem does not apply to the PW CC sum in its
+standard form because there is no Fermi surface. The UV divergence is a
+renormalization problem, not a shell-correction problem.
+
+
+--- Section 9: Modified Strutinsky — Per-Sector Shell Corrections ---
+
+Extracting per-sector Lambda from S59 data...
+  No per-sector data found in S59 npz. Using aggregate data only.
+
+--- Section 10: Weyl Law Prediction ---
+
+  Weyl law test: E_total vs E_max
+    L      E_max        E_total       E_max^10          ratio
+  ------------------------------------------------------------
+    0     0.9714    +7.1150e+00     7.4820e-01     9.5096e+00
+    1     1.4829    +7.4356e+01     5.1410e+01     1.4463e+00
+    2     1.7801    +3.4339e+02     3.1950e+02     1.0748e+00
+    3     2.0564    +1.1182e+03     1.3523e+03     8.2693e-01
+    4     2.3246    +2.9517e+03     4.6082e+03     6.4053e-01
+    5     2.5888    +6.7511e+03     1.3521e+04     4.9930e-01
+
+  Power law: E_total = 3.1489 * E_max^8.1000
+  Expected for 8D Weyl: E_total ~ E_max^10 (beta_weyl should be ~10)
+  Actual beta_weyl = 8.1000
+
+--- Section 11: Gate Verdict ---
+
+Best reduction ratio: |delta/Lambda| = 9.6305e-07 (poly3_L5)
+Threshold for PASS: < 10^{-3} (3 OOM reduction)
+Threshold for INFO: converges but < 3 OOM
+  poly2: NOT converging (ratios ['0.231', '7.158', '0.643', '0.166'])
+  poly3: NOT converging (ratios ['1.671', '0.492', '0.198', '0.073'])
+  power: NOT converging (ratios ['356.483', '2.559', '0.960', '25.331'])
+  C2: NOT converging (ratios ['0.027', '47.959', '0.211', '0.044'])
+
+Gate: STRUTINSKY-PW-60
+  Verdict: INFO
+  Reason: Best reduction 9.63e-07 < 10^-3 at some L, but does not converge at all L
+
+  PHYSICAL DIAGNOSIS:
+  The Strutinsky energy theorem requires a partially-filled shell structure
+  with a Fermi surface. The PW CC sum has no Fermi surface — all sectors
+  contribute. The UV divergence in Lambda_eff(L) is O(n_modes^2.56),
+  which is a power-law divergence requiring renormalization.
+  The polynomial/power-law residuals are O(9.6e-07) of Lambda_eff
+  but grow in absolute magnitude with L.
+  The shell correction to the BCS energy WITHIN each sector is a well-defined
+  1-2% effect, but the cross-sector sum diverges regardless.
+
+--- Section 12: Save ---
+Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s60_strutinsky_pw.npz
+
+--- Section 13: Plot ---
+Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s60_strutinsky_pw.png
+
+Total time: 0.5s
+
+==============================================================================
+STRUTINSKY-PW-60 COMPLETE — Verdict: INFO
+==============================================================================

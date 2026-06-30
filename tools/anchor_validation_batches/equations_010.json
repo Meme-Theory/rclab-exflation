@@ -1,0 +1,117 @@
+{
+  "table": "equations",
+  "batch_id": 10,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "eq_21011",
+      "anchor_type": "equations",
+      "name": "theta(x) = theta_external(x) + theta_internal(x, tau(x))",
+      "eq_type": "structural",
+      "file": "",
+      "line": 301,
+      "context_snippet": "```",
+      "source_file": "sessions\\session-plan\\archive\\session-31C-plan-synthesis-QFoam.md",
+      "source_context_30_lines": "  293: \n  294: Status: Consistent. No additional computation needed to validate. But it means the framework contributes nothing new to the CC question.\n  295: \n  296: **Possibility 2: The internal popcorn dynamics contribute to Carlip's averaging.**\n  297: \n  298: The instanton cycle at each spacetime point produces oscillations in the internal geometry that couple to the external metric through the spectral action. If these oscillations contribute expanding and contracting components to the external expansion scalar theta, then the internal popcorn is a SOURCE of Carlip-type foam. In this case:\n  299: \n  300: ```\n  301: theta(x) = theta_external(x) + theta_internal(x, tau(x))\n  302: ```\n  303: \n  304: where theta_internal is the contribution from the instanton-driven tau oscillation. If theta_internal has zero mean and sufficient variance, it enhances Carlip's destructive interference mechanism.\n  305: \n  306: The quantitative question: does the spectral action at tau ~ 0.18 produce expanding/contracting phases in the external metric that contribute to Carlip's averaging? This requires computing d(spectral action)/d(tau) along the instanton orbit and mapping it to an effective expansion rate. The spectral action gradient is already known (V_total from Session 30Ba). The mapping to expansion rate requires the M^4 x SU(3) Einstein equations, which have been partially computed (the Freund-Rubin ansatz from Session 31Aa, though that was closed on Jensen).\n  307: \n  308: Status: \n... [truncated]"
+    },
+    {
+      "anchor_id": "eq_22589",
+      "anchor_type": "equations",
+      "name": "end = len(lines)",
+      "eq_type": "code",
+      "file": "",
+      "line": 124,
+      "context_snippet": "return \"block-not-found\" End at next section or EOF",
+      "source_file": "computations\\s88_w4a_split_registry_writer.py",
+      "source_context_30_lines": "  116:     start = None\n  117:     for i, line in enumerate(lines):\n  118:         if line.startswith(f\"## §{gate_label}.\") or line.startswith(f\"## §{gate_label} \"):\n  119:             start = i\n  120:             break\n  121:     if start is None:\n  122:         return \"block-not-found\"\n  123:     # End at next ## section or EOF\n  124:     end = len(lines)\n  125:     for j in range(start + 1, len(lines)):\n  126:         if lines[j].startswith(\"## \") and not lines[j].startswith(f\"## §{gate_label}\"):\n  127:             end = j\n  128:             break\n  129:     block_text = \"\\n\".join(lines[start:end])\n  130:     return sha256_hex(block_text)\n  131: \n  132: "
+    },
+    {
+      "anchor_id": "eq_18261",
+      "anchor_type": "equations",
+      "name": "residual = 8 ≥ 3",
+      "eq_type": "structural",
+      "file": "",
+      "line": 6363,
+      "context_snippet": "Step 3 (simplify, mechanical read-off):",
+      "source_file": "sessions\\session-87\\session-87-results-workingpaper.md",
+      "source_context_30_lines": " 6355:   hits_metadata    = 0     (canonical_constants.py contains no cutoff_sqrt mentions)\n 6356:   hits_diagnostic  = 0     (no W-11-marker context lines in target corpus)\n 6357:   hits_historical  = 44    (pre-W-8 narrative in W4/W6 wps + adjudication taxonomy)\n 6358:   hits_load_bear   = 8     (7 in W4 wp + 1 in cutoff-sqrt-adjudication.md)\n 6359:   flagged          = 0     (no LEGACY-flag tags present yet — propagation deferred)\n 6360:   residual         = 8\n 6361: \n 6362: Step 3 (simplify, mechanical read-off):\n 6363:   residual = 8 ≥ 3\n 6364:   residual_in_curated_root      = 1   (cutoff-sqrt-adjudication.md line 234)\n 6365:   residual_in_noncurated_root   = 7   (session-86-w4-workingpaper.md, frozen wp)\n 6366: \n 6367: Step 4 (direction, integer-count canonical form):\n 6368:   residual ≥ 3  ⇒  composite FAIL unconditionally   (per plan §9 Step 4)\n 6369:   3-tuple annotation:\n 6370:     sign_verdict      = FAIL    (predicted \"residual decreases to 0\"; actual: 8)\n 6371:     magnitude_verdict = FAIL    (residual ≥ 3 floor)"
+    },
+    {
+      "anchor_id": "eq_7207",
+      "anchor_type": "equations",
+      "name": "cutoff_AL2010 published Mellin vector v_pub = (f_0, f_2, f_4, f_6) = (1/2, 1, 1, 0)",
+      "eq_type": "structural",
+      "file": "",
+      "line": 161,
+      "context_snippet": "Step 1 (definitions): A := CCM-2007 axiom set = {dim, reg, fin, real, 1st-order, orient, PD}",
+      "source_file": "sessions\\session-86\\workshops\\s86-cutoff-sqrt-gate-abc-trio.md",
+      "source_context_30_lines": "  153: {dim, fin} load-bearing level only — there is NO inner-fluctuation lift\n  154: mechanism available to it.**\n  155: \n  156: **Substitution chain**:\n  157: \n  158: ```\n  159: Step 1 (definitions):\n  160:   A := CCM-2007 axiom set = {dim, reg, fin, real, 1st-order, orient, PD}\n  161:   cutoff_AL2010 published Mellin vector v_pub = (f_0, f_2, f_4, f_6) = (1/2, 1, 1, 0)\n  162:   cutoff_AL2010 framework-truncated v_fw  = (2, 1, 0.5, 0.1)\n  163:   a_0 sourcing routes:\n  164:     (i)   GLOBAL-TRACE:    a_0 = Tr_H(1)/Vol_F          requires {dim, fin}\n  165:     (ii)  HEAT-KERNEL:     a_0 = lim_{t→0+} Tr exp(−tD²)  requires {reg}\n  166:     (iii) MELLIN-RESIDUE:  a_0 = Res_{s=0} ζ_D(s)         requires {reg, 1st-order}\n  167: \n  168: Step 2 (substitute under W2-1 subset-removal):\n  169:   cutoff_AL2010 = sharp Θ(Λ−|D|)/√(|D|²/Λ²) regulator (non-smooth at Λ)."
+    },
+    {
+      "anchor_id": "eq_22473",
+      "anchor_type": "equations",
+      "name": "s_cm2 = float(np.sum(c_arr * m_arr * m_arr))",
+      "eq_type": "code",
+      "file": "",
+      "line": 94,
+      "context_snippet": "\"\"\"Verify Σ c_r = 1 and Σ c_r m_r² = 0 to machine precision.\"\"\" s_c = float(np.sum(c_arr))",
+      "source_file": "computations\\_pauli_villars_subtraction.py",
+      "source_context_30_lines": "   86: PV_PRIMARY_C = np.array([+2.0, -1.0], dtype=np.float64)\n   87: PV_PRIMARY_M_DIMLESS = np.array([1.0, np.sqrt(2.0)], dtype=np.float64)\n   88: # (dimensionless: when λ_k is in M_KK units, m_r is dimensionless mass ratio)\n   89: \n   90: \n   91: def _verify_pv_identities(c_arr=PV_PRIMARY_C, m_arr=PV_PRIMARY_M_DIMLESS):\n   92:     \"\"\"Verify Σ c_r = 1 and Σ c_r m_r² = 0 to machine precision.\"\"\"\n   93:     s_c = float(np.sum(c_arr))\n   94:     s_cm2 = float(np.sum(c_arr * m_arr * m_arr))\n   95:     return s_c, s_cm2\n   96: \n   97: \n   98: # Module-load self-check\n   99: _S_C_CHECK, _S_CM2_CHECK = _verify_pv_identities()\n  100: assert abs(_S_C_CHECK - 1.0) < 1e-15, f\"PV Σc_r = {_S_C_CHECK} != 1\"\n  101: assert abs(_S_CM2_CHECK) < 1e-15, f\"PV Σc_r·m_r² = {_S_CM2_CHECK} != 0\"\n  102: "
+    },
+    {
+      "anchor_id": "eq_10637",
+      "anchor_type": "equations",
+      "name": "\\delta a_4 = -2.756 \\times 10^{-4} \\times 12.793 + \\frac{(2.756\\times 10^{-4})^2}{2}\\times 16",
+      "eq_type": "display",
+      "file": "",
+      "line": 1315,
+      "context_snippet": "With $a_4 \\equiv \\mathrm{Tr}(D_K^4) = 10.468$, $a_2 \\equiv \\mathrm{Tr}(D_K^2) = 12.793$, $a_0 = 16$, $|\\Delta_0|^2 = 2.756 \\times 10^{-4}$:",
+      "source_file": "sessions\\archive\\session-35\\session-35-connes-spectral-geometer-workshop.md",
+      "source_context_30_lines": " 1307: **4. The $a_4$ coefficient and gauge coupling modification (Q3): verified, negligible**\n 1308: \n 1309: connes computes $\\delta a_4/a_4 = -3.4 \\times 10^{-4}$ from the BCS gap correction to $\\tilde{a}_4$. I verify this independently:\n 1310: \n 1311: $$\\tilde{a}_4 = a_4 - |\\Delta|^2 a_2 + \\frac{|\\Delta|^4}{2}a_0$$\n 1312: \n 1313: With $a_4 \\equiv \\mathrm{Tr}(D_K^4) = 10.468$, $a_2 \\equiv \\mathrm{Tr}(D_K^2) = 12.793$, $a_0 = 16$, $|\\Delta_0|^2 = 2.756 \\times 10^{-4}$:\n 1314: \n 1315: $$\\delta a_4 = -2.756 \\times 10^{-4} \\times 12.793 + \\frac{(2.756\\times 10^{-4})^2}{2}\\times 16$$\n 1316: \n 1317: $$= -3.526 \\times 10^{-3} + 6.08 \\times 10^{-7} = -3.525 \\times 10^{-3}$$\n 1318: \n 1319: $$\\delta a_4/a_4 = -3.525 \\times 10^{-3}/10.468 = -3.37 \\times 10^{-4}$$\n 1320: \n 1321: Confirmed: $3.4 \\times 10^{-4}$. The gauge couplings extracted from $a_4$ are modified at the $10^{-4}$ level by BCS condensation. This is entirely negligible for the KK-NCG bridge analysis, which has 31% discrepancies at leading order.\n 1322: \n 1323: **5. The Kosmann--inner fluctuation identification (Q4): partial answer**"
+    },
+    {
+      "anchor_id": "eq_1843",
+      "anchor_type": "equations",
+      "name": "E_gs = 1.4025899717 (delta = -2.5872%)",
+      "eq_type": "structural",
+      "file": "",
+      "line": 118,
+      "context_snippet": "alpha_ph = 1.50: conv=True (46 iter)",
+      "source_file": "computations\\session-52\\s52_hfb_full_output.txt",
+      "source_context_30_lines": "  110:   alpha_ph = 1.00: conv=True (47 iter)\n  111:     E_gs = 1.4263553232 (delta = -0.9367%)\n  112:     E_sp shift: max|Sigma| = 6.47e-02\n  113:     n_k = [0.23288519 0.22240032 0.18452706 0.16981246 0.1767792  0.00404714\n  114:  0.00435947 0.00518917]\n  115:     n_B2=0.809625, n_B1=0.176779, n_B3=0.013596\n  116: \n  117:   alpha_ph = 1.50: conv=True (46 iter)\n  118:     E_gs = 1.4025899717 (delta = -2.5872%)\n  119:     E_sp shift: max|Sigma| = 1.05e-01\n  120:     n_k = [0.25531788 0.23953965 0.19831845 0.18236555 0.1121226  0.00369126\n  121:  0.00396962 0.00467499]\n  122:     n_B2=0.875542, n_B1=0.112123, n_B3=0.012336\n  123: \n  124:   alpha_ph = 2.00: conv=True (54 iter)\n  125:     E_gs = 1.3721251731 (delta = -4.7031%)\n  126:     E_sp shift: max|Sigma| = 1.46e-01"
+    },
+    {
+      "anchor_id": "eq_7516",
+      "anchor_type": "equations",
+      "name": "Saturation of M_n^reg(L=10) requires the high-(p+q) Weyl-dim contributions to",
+      "eq_type": "structural",
+      "file": "",
+      "line": 1745,
+      "context_snippet": "Step 3 (substitute into M_n^reg saturation behavior):",
+      "source_file": "sessions\\session-86\\workshops\\s86-mellin-cone-repair-or-no-go.md",
+      "source_context_30_lines": " 1737:                     where weight^reg(λ) is the regulator-specific Mellin profile\n 1738: \n 1739: Step 2 (substitute the F_4 regulator profiles):\n 1740:   weight^ζ(λ)     ∝ λ^{-s}                                  [zeta scheme, single power]\n 1741:   weight^Zubarev(λ) ∝ exp(-λ²/Λ_Z²)                         [Gaussian decay, scale Λ_Z]\n 1742:   weight^SDW(λ)   ∝ Λ_SDW^{2s} · Γ(s) · (regulated)        [Mellin-Barnes profile]\n 1743: \n 1744: Step 3 (substitute into M_n^reg saturation behavior):\n 1745:   Saturation of M_n^reg(L=10) requires the high-(p+q) Weyl-dim contributions to\n 1746:   decay below ε. For ζ-weight, the decay rate at λ_max(L) is power-law (slow);\n 1747:   for Zubarev-weight, exponential (fast); for SDW-weight, intermediate.\n 1748:   These three decay rates produce DIFFERENT effective κ_n^reg in the formula:\n 1749:     L_∞^{n,reg} ≈ L_0(d_eff) · κ_n^{-n,reg}\n 1750: \n 1751: Step 4 (substitute the empirical L=5 → L=10 growth signatures):\n 1752:   ζ-class    n=0:  growth = 238.7×                            [slow-decaying weight, full impact]\n 1753:   Zubarev    n=0:  ratio_proxy growth = 218.3×                [exponential weight, slightly compressed]"
+    },
+    {
+      "anchor_id": "eq_1062",
+      "anchor_type": "equations",
+      "name": "M_BdG_nm = V_nm / (E_n + E_m) for positive-energy modes",
+      "eq_type": "structural",
+      "file": "",
+      "line": 126,
+      "context_snippet": "2.4 Method 4: Nambu-Gorkov / BdG (parameter-free)",
+      "source_file": "computations\\session-23\\s23a_gap_equation_results.txt",
+      "source_context_30_lines": "  118:   0.35    -1.753e-01       -2.975e-01       1.222e-01        YES\n  119:   0.40    -2.283e-01       -3.297e-01       1.013e-01        YES\n  120:   0.50    -2.826e-01       -4.145e-01       1.319e-01        YES\n  121: \n  122:   All F_cond < 0 (thermodynamically stable) at mu = lambda_min.\n  123: \n  124: 2.4 Method 4: Nambu-Gorkov / BdG (parameter-free)\n  125: \n  126:   M_BdG_nm = V_nm / (E_n + E_m) for positive-energy modes\n  127: \n  128:   tau     M_BdG_max       Factor to critical\n  129:   0.00    0.0775          12.9x below\n  130:   0.10    0.0909          11.0x below\n  131:   0.15    0.0958          10.4x below\n  132:   0.20    0.1013          9.9x below\n  133:   0.25    0.1076          9.3x below\n  134:   0.30    0.1145          8.7x below"
+    },
+    {
+      "anchor_id": "eq_10347",
+      "anchor_type": "equations",
+      "name": "\\langle Y, Y\\rangle = 6L_1",
+      "eq_type": "inline",
+      "file": "",
+      "line": 126,
+      "context_snippet": "4.3 RGE-33a FAIL and the Off-Jensen Landscape",
+      "source_file": "sessions\\archive\\session-33\\session-33-baptista-collab.md",
+      "source_context_30_lines": "  118: The next phase must engage Paper 17 (the Kosmann-Lichnerowicz derivative on the FULL submersion, not just the fiber) and Paper 18 (CP violation from the modified Lie derivative $\\tilde{L}_V$, eq 1.4). The D_phys computation bridges this transition.\n  119: \n  120: ### 4.2 The K-1e Retraction Vindicates the Full Kosmann Framework\n  121: \n  122: Paper 17 Section 4 defines the Kosmann-Lichnerowicz derivative and proves its key properties: $[D_K, L_X] = 0$ when $X$ is Killing (Proposition 4.2), and $[D_K, L_X] \\neq 0$ when $X$ is non-Killing (the source of chiral interactions). The K-1e retraction shows that restricting to a subalgebra of the Killing fields produces qualitatively wrong results. The full su(3) algebra -- all 8 generators, organized as $\\mathrm{u}(1) \\oplus \\mathrm{su}(2) \\oplus \\mathbb{C}^2$ -- must be used. This is exactly Baptista's framework operating as designed.\n  123: \n  124: ### 4.3 RGE-33a FAIL and the Off-Jensen Landscape\n  125: \n  126: The gauge coupling failure is a tension within Baptista's own framework. Paper 13 eq 5.21 / Paper 14 eq 2.93 gives $\\sin^2\\theta_W = 3L_2/(L_1 + 3L_2)$, with the factor of 3 from $\\langle Y, Y\\rangle = 6L_1$. On the Jensen curve, $L_1 = e^{2s}$ and $L_2 = e^{-2s}$, giving $\\sin^2\\theta_W \\to 0$ as $s$ increases. The SM value 0.231 requires $s \\approx 0.576$, far from the dump point $s \\approx 0.190$. The off-Jensen 5D moduli space (Paper 15 eq 3.60) includes breathing (T1) and cross-block (T2) directions that decoupl\n... [truncated]"
+    }
+  ]
+}

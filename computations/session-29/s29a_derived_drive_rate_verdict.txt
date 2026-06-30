@@ -1,0 +1,118 @@
+T3-S29A-DERIVED-DRIVE-RATE: PASS -- value=1.5169 scheme=E_crit_over_V0 convention=n_gap_threshold=20_at_tau=0.50 L_max=NA sha256=215c7524fa7157b524da34761b3b9c6e62f157e35d44af3d0de513e3425b6d38
+
+T3 VERDICT — S29A-DERIVED-DRIVE-RATE
+========================================================================
+Gate-ID:           T3-S29A-DERIVED-DRIVE-RATE
+Script:            computations/_shared/s29a_derived_drive_rate.py
+Session:           S29 (pre-canonical; S33 and below exempt from canonical_constants import rule)
+Classification:    PHONONIC (modulus-driven Bogoliubov drive → gap occupation n_gap via KC-3)
+Run-date:          2026-04-17
+Runtime:           1.0 s
+Python:            C:/sandbox/Ainulindale Exflation/phonon-exflation-sim/.venv312/Scripts/python.exe
+Hardware:          CPU path (small 100×100 grid; no GPU required)
+
+INPUT SHA-256 PINS (full 64-char)
+------------------------------------------------------------------------
+script     s29a_derived_drive_rate.py   472d9244f5d5ae00b0d519284a7c17a5e668531ae4edae502b585b0403ac56b7
+input      s24a_vspec.npz               2880f8274d57d22336101766222457d367887114d6fec868f1b894d75a5a3790
+input      s28c_steady_state_mu.npz     e5453e0fe7927197db0b57af3af87f842945b240dfcf0b5d19f69a78ca6b949d
+input      s22d_rolling_trajectories.npz 645766f121a8f01f3e062315228b5e53c9724ef143d8bd778ee786e802cefc58
+input      s26_multimode_bcs.npz        868f8e817f6c1472dfc2a1113809ab3ecf82c742a00160af7af88a9c00a2eea8
+
+CLOSURE SHA-256 PINS (full 64-char)
+------------------------------------------------------------------------
+output     s29a_derived_drive_rate.npz  215c7524fa7157b524da34761b3b9c6e62f157e35d44af3d0de513e3425b6d38
+output     s29a_derived_drive_rate.png  e70acf888a80f77c9458aa6f96c18c8d94cbf4a6a2d724e21e7ebffeb101f35b
+
+KEY PHYSICS QUANTITIES (canonical-form values)
+------------------------------------------------------------------------
+G_tau_tau              = 5.0                 (modulus-space metric; from s22d)
+V_eff(tau=0, rho=0.010)= 17.7000             (spectral action potential at origin)
+V_eff(tau=0.50)        = 23.3891             (rho=0.010)
+dV(0 -> 0.50)          = 5.6891              (rho=0.010)
+B_gap(tau=0.50)        = 5.099682e-02
+alpha_decay_ref        = 0.003
+n_gap threshold        = 20
+dtau/dt_crit(0.50)     = 1.176544e+00        (from n_gap = B_gap*dt/alpha = 20)
+E_crit(0.50)           = 26.8498
+E_crit(0.50)/V(0)      = 1.5169
+n_gap at E=2*V(0), tau=0.50 = 37.2597        (cross-check: > 20)
+tau crossing n_gap=20 at E=2*V(0) = 0.407    (continuous scan)
+
+SUBSTITUTION CHAIN (gate direction)
+------------------------------------------------------------------------
+Step 1 (definitions):
+  Energy conservation (no friction):
+    E_total = (1/2)*G_tau_tau*(dtau/dt)^2 + V_eff(tau)
+  KC-3 steady-state:
+    n_gap(tau) = B_gap(tau) * |dtau/dt| / alpha_decay
+  Gate criterion:
+    G-29a PASS iff E_crit/V(0) <= 2 at tau=0.50 (natural energy range)
+
+Step 2 (substitution):
+  Solve E-conservation for |dtau/dt|:
+    |dtau/dt| = sqrt(2*(E_total - V_eff(tau))/G_tau_tau) when KE>=0
+  Substitute into KC-3:
+    n_gap(tau, E_total) = (B_gap/alpha_decay) * sqrt(2*(E_total - V_eff)/G_tau_tau)
+
+Step 3 (simplification, invert for E_crit at fixed tau):
+  Set n_gap = n_gap_threshold = 20:
+    dtau/dt_crit = 20 * alpha_decay / B_gap(tau)
+    E_crit(tau)  = (1/2)*G_tau_tau*(dtau/dt_crit)^2 + V_eff(tau)
+
+Step 4 (direction):
+  d(n_gap)/d(E_total) = (B_gap/alpha_decay) * sqrt(2/G_tau_tau) / (2*sqrt(E_total - V_eff)) > 0
+  => n_gap is monotonically INCREASING in E_total at fixed tau.
+  Threshold E_crit inherits the same direction: larger B_gap(tau) -> smaller dtau_crit
+  -> smaller E_crit -> gate easier to satisfy at that tau.
+  At tau=0.50, B_gap is largest in the analysis range (5.10e-2 vs 7.14e-4 at tau=0.15),
+  so tau=0.50 is the MOST FAVORABLE tau for the gate, which is where it is probed.
+
+Step 5 (direction from canonical form):
+  E_crit(0.50)/V(0) = 1.5169 <= 2.0 => PASS band.
+
+CROSS-CHECKS
+------------------------------------------------------------------------
+CC-1  Continuous scan: n_gap crosses 20 at tau ~ 0.407 for E=2*V(0). Consistent with
+      tabulated values n_gap@(0.40) = 18.70 < 20 < 37.26 = n_gap@(0.50).
+CC-2  Rho sensitivity: E=2*V(0), tau=0.50 gives n_gap=37.26 (rho=0.010), 87.94 (0.050),
+      125.15 (0.100). Gate passes more decisively at larger cutoff; sign invariant.
+CC-3  BCS back-reaction: |F_cond| ~ 0.37 at BCS onset (tau~0) vs dV(0->0.5) = 5.69 at
+      rho=0.010 => |F_cond|/dV ~ 0.065 (6.5%). Does not qualitatively alter V_eff.
+CC-4  Classically-allowed check: KE_crit(0.50)/V(0) = 0.1955 > 0 (finite real dtau/dt).
+
+GATE VERDICT
+------------------------------------------------------------------------
+Gate G-29a (soft):
+  PASS band:      E_crit/V(0) <= 2            [n_gap>=20 at tau=0.50 natural]
+  WEAK_PASS band: 2 < E_crit/V(0) <= 10       [moderate tuning]
+  FAIL band:      E_crit/V(0) > 10            [severe tuning]
+
+  Measured:       E_crit/V(0) = 1.5169        at tau=0.50
+  ------------------------------------------------------------
+  VERDICT:        PASS
+
+Detail: Drive rate dtau/dt required for n_gap=20 at tau=0.50 is dynamically
+natural — E_total only needs to exceed V_eff(0) by KE/V(0) ~ 0.20.
+
+PROVENANCE (knowledge-MCP trace)
+------------------------------------------------------------------------
+gate        G-29a           | soft | PASS | s29a_derived_drive_rate.py | session-29Aa-synthesis
+provenance  derived_drive_rate | VSPEC-1, KC-3, G-29a
+constants   S_fold=250360.68 (S42); dS_fold=58672.80; dt_transit=1.130e-3
+            [not used in this script — S29 predates fold-scale canonical]
+
+PRU STATUS
+------------------------------------------------------------------------
+Pre-registration checklist:
+  [x] Gate thresholds (PASS=<2, WEAK=<10, FAIL=>10) hard-coded in script pre-run.
+  [x] All 7 machinery parameters pinned in script source:
+        G_TAU_TAU=5.0, N_GAP_THRESHOLD=20, ALPHA_DECAY_REF=0.003,
+        E_TOTAL_MULTIPLIERS (10 multipliers fixed), RHO_PRIMARY='0.010',
+        TAU_ANALYSIS (5 tau values fixed), tau_scan linspace(0.01,0.60,200).
+  [x] Input datasets fixed by SHA-256 pin.
+  [ ] PRU class: NONE DETECTED. Plan-property failures absent.
+
+S81-CANONICAL SUMMARY LINE
+------------------------------------------------------------------------
+T3 | S29A-DERIVED-DRIVE-RATE | PASS | E_crit/V(0)=1.5169 (<=2.0 band, margin=24%) | closure=215c7524fa7157b524da34761b3b9c6e62f157e35d44af3d0de513e3425b6d38

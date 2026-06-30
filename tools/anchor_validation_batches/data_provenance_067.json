@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 67,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_661",
+      "anchor_type": "data_provenance",
+      "name": "impedance",
+      "script_path": "session-55/s55_impedance.py",
+      "session": "s55",
+      "inputs": "",
+      "outputs": "session-55/s55_impedance.npz, session-55/s55_impedance.png",
+      "source_file": "computations/session-55/s55_impedance.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: IMPEDANCE-55: Impedance Mismatch at Cutoff Edge\n    4: =================================================\n    5: \n    6: Computes acoustic impedance Z(tau) at sharp cutoff Lambda=1.0.\n    7: Tests whether the S_occ barrier height is impedance-controlled or DOS-controlled.\n    8: \n    9: Physics:\n   10:   In acoustic/phononic systems, a sharp boundary between a propagating medium\n   11:   (Z != 0) and vacuum (Z = 0) gives total reflection R = 1. A graded impedance\n   12:   profile (Fermi-Dirac cutoff with finite steepness alpha) creates partial\n   13:   transmission T(alpha) = 1 - R(alpha).\n   14: "
+    },
+    {
+      "anchor_id": "prov_662",
+      "anchor_type": "data_provenance",
+      "name": "impedance_matching",
+      "script_path": "session-55/s55_impedance_matching.py",
+      "session": "s55",
+      "inputs": "",
+      "outputs": "session-55/s55_impedance_matching.png",
+      "source_file": "computations/session-55/s55_impedance_matching.py",
+      "source_context_30_lines": "   66: matplotlib.use('Agg')\n   67: import matplotlib.pyplot as plt\n   68: \n   69: from canonical_constants import (\n   70:     J_C2, J_su2, J_u1, N_cells, tau_fold,\n   71: )\n   72: \n   73: SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))\n   74: OUT_PNG = os.path.join(SCRIPT_DIR, \"s55_impedance_matching.png\")\n   75: OUT_TXT = os.path.join(SCRIPT_DIR, \"s55_impedance_matching_output.txt\")\n   76: DATA_FILE = os.path.join(SCRIPT_DIR, \"s54_tb_hamiltonian.npz\")\n   77: \n   78: # ============================================================\n   79: # Output tee (console + file)\n   80: # ============================================================\n   81: class Tee:\n   82:     def __init__(self, filename):"
+    },
+    {
+      "anchor_id": "prov_663",
+      "anchor_type": "data_provenance",
+      "name": "kretschner_pl",
+      "script_path": "session-55/s55_kretschner_pl.py",
+      "session": "s55",
+      "inputs": "",
+      "outputs": "session-55/s55_kretschner_pl.npz, session-55/s55_kretschner_pl.png",
+      "source_file": "computations/session-55/s55_kretschner_pl.py",
+      "source_context_30_lines": "  675:     print(f\"\\n  STRUCTURAL RESULT:\")\n  676:     print(f\"    Both SU(3) and AN dual have FINITE Kretschner scalar at all tau in [0, 2.0].\")\n  677:     print(f\"    No curvature singularity during modulus transit.\")\n  678:     print(f\"    K(tau) -> infty only as tau -> infty (known: curvature singularity, censored by BCS at tau=0.22).\")\n  679: \n  680:     print(f\"\\n  INFO: KRETSCHNER-PL-55 = REGULAR geometry (no singularity in transit range)\")\n  681: \n  682:     # Save data\n  683:     np.savez(os.path.join(os.path.dirname(os.path.abspath(__file__)), 's55_kretschner_pl.npz'),\n  684:              tau=tau_fine,\n  685:              K_su3=res_su3['K_kretschner'],\n  686:              R_su3=res_su3['R_scalar'],\n  687:              Ric2_su3=res_su3['Ric_norm2'],\n  688:              K_an=res_an['K_kretschner'],\n  689:              R_an=res_an['R_scalar'],\n  690:              Ric2_an=res_an['Ric_norm2'],\n  691:              posdef_an=res_an['metric_posdef'],"
+    },
+    {
+      "anchor_id": "prov_664",
+      "anchor_type": "data_provenance",
+      "name": "kz_domain",
+      "script_path": "session-55/s55_kz_domain.py",
+      "session": "s55",
+      "inputs": "",
+      "outputs": "session-55/s55_kz_domain.npz",
+      "source_file": "computations/session-55/s55_kz_domain.py",
+      "source_context_30_lines": "  494: print(f\"    but is moot when xi_KZ > L (single domain regardless of d_s).\")\n  495: print(f\"  - Pillar II (Volovik): The superfluid coherence length exceeding the\")\n  496: print(f\"    system size is the definition of a quantum liquid — the graph IS the\")\n  497: print(f\"    condensate, not a container for it.\")\n  498: \n  499: # ===========================================================================\n  500: # 10. Save results\n  501: # ===========================================================================\n  502: save_path = os.path.join('computations', 'session-55', 's55_kz_domain.npz')\n  503: np.savez(save_path,\n  504:     # Graph properties\n  505:     N_cells=N_cells,\n  506:     diameter=diameter,\n  507:     mean_distance=mean_distance,\n  508:     mean_coordination=mean_coord,\n  509:     spectral_gap=spectral_gap,\n  510:     lambda_max=lambda_max,"
+    },
+    {
+      "anchor_id": "prov_665",
+      "anchor_type": "data_provenance",
+      "name": "ladder_test",
+      "script_path": "session-55/s55_ladder_test.py",
+      "session": "s55",
+      "inputs": "computations/session-44/s44_dos_tau.npz, computations/session-27/s27_multisector_bcs.npz, computations/session-54/s54_sa...",
+      "outputs": "session-55/s55_ladder_test.npz",
+      "source_file": "computations/session-55/s55_ladder_test.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s55_ladder_test.py — LADDER-TEST-55: Dimensional Ladder Independence Test\n    4: =========================================================================\n    5: \n    6: On 992 modes at N_pair=1, verify that obstructions 1 (pairing collapse) and 3\n    7: (monotonicity) break while obstructions 2 (Anderson) and 6 (integrability) persist.\n    8: \n    9: This discriminates structural-identity vs coincidence interpretations of the\n   10: dimensional ladder.\n   11: "
+    },
+    {
+      "anchor_id": "prov_666",
+      "anchor_type": "data_provenance",
+      "name": "lichnerowicz",
+      "script_path": "session-55/s55_lichnerowicz.py",
+      "session": "s55",
+      "inputs": "",
+      "outputs": "session-55/s55_lichnerowicz.npz, session-55/s55_lichnerowicz.png",
+      "source_file": "computations/session-55/s55_lichnerowicz.py",
+      "source_context_30_lines": "   32:     - S48: Full 27-dim TT sector, no negatives found\n   33:     - Lauret (Paper 37): Universal Lichnerowicz formula\n   34:     - Schwahn (Paper 39): Casimir-based formula for normal homogeneous spaces\n   35: \n   36: Gate: LICHNEROWICZ-55\n   37:     INFO: stability classification (stable/unstable) and spectrum of Delta_L\n   38: \n   39: Output:\n   40:     - s55_lichnerowicz.npz\n   41:     - s55_lichnerowicz.png\n   42: \n   43: Author: Baptista Spacetime Analyst (Session 55)\n   44: Date: 2026-03-22\n   45: \"\"\"\n   46: \n   47: import numpy as np\n   48: import sys"
+    },
+    {
+      "anchor_id": "prov_667",
+      "anchor_type": "data_provenance",
+      "name": "npair2_ed",
+      "script_path": "session-55/s55_npair2_ed.py",
+      "session": "s55",
+      "inputs": "computations/session-54/s54_ed_sweep.npz",
+      "outputs": "session-55/s55_npair2_ed.npz, session-55/s55_npair2_ed.png",
+      "source_file": "computations/session-55/s55_npair2_ed.py",
+      "source_context_30_lines": "  417: \n  418: print(f\"VERDICT: {verdict}\")\n  419: print(f\"DETAIL:  {detail}\")\n  420: \n  421: \n  422: # ============================================================\n  423: # 11. Save all results\n  424: # ============================================================\n  425: np.savez('computations/session-55/s55_npair2_ed.npz',\n  426:     # Tau sweep results\n  427:     tau_vals=results['tau_vals'],\n  428:     r_full=results['r_full'],\n  429:     r_RG=results['r_RG'],\n  430:     eigenvalues_full=np.array(results['eigenvalues_full']),\n  431:     eigenvalues_RG=np.array(results['eigenvalues_RG']),\n  432:     Gamma_breaking=results['Gamma_breaking'],\n  433:     P_vac_DE=results['P_vac_DE'],"
+    },
+    {
+      "anchor_id": "prov_668",
+      "anchor_type": "data_provenance",
+      "name": "optical_theorem",
+      "script_path": "session-55/s55_optical_theorem.py",
+      "session": "s55",
+      "inputs": "",
+      "outputs": "session-55/s55_optical_theorem.npz",
+      "source_file": "computations/session-55/s55_optical_theorem.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s55_optical_theorem.py — T-matrix and Optical Theorem on 8-mode BCS Lattice\n    4: ============================================================================\n    5: Session 55, W3-9: OPTICAL-THEOREM-55\n    6: \n    7: Computes the T-matrix for pair scattering in the 1-pair sector of the\n    8: 8-mode BCS system at the fold (tau ~ 0.19). Verifies the optical theorem:\n    9: \n   10:     Im[T_{kk}(E)] = -eta * sum_l |T_{kl}(E)|^2 / ((E - 2*eps_l)^2 + eta^2)\n   11: "
+    },
+    {
+      "anchor_id": "prov_669",
+      "anchor_type": "data_provenance",
+      "name": "pair_mobility",
+      "script_path": "session-55/s55_pair_mobility.py",
+      "session": "s55",
+      "inputs": "computations/session-54/s54_tb_hamiltonian.npz, computations/session-54/s54_ed_sweep.npz, computations/session-54/s54_sa...",
+      "outputs": "session-55/s55_pair_mobility.npz, session-55/s55_pair_mobility.png",
+      "source_file": "computations/session-55/s55_pair_mobility.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s55_pair_mobility.py — Pair Mobility and Superfluid Density\n    4: =============================================================\n    5: GATE: PAIR-MOBILITY-55 (INFO)\n    6: Agent: landau-condensed-matter-theorist\n    7: \n    8: Computes:\n    9:   1. mu_pair(tau) = E_1(tau)/2  where E_1 = Fiedler eigenvalue of CG graph Laplacian\n   10:   2. n_s(tau) = condensate fraction from ED pair occupations\n   11:   3. rho_s(tau) = mu_pair * n_s"
+    },
+    {
+      "anchor_id": "prov_670",
+      "anchor_type": "data_provenance",
+      "name": "phonon_disp",
+      "script_path": "session-55/s55_phonon_disp.py",
+      "session": "s55",
+      "inputs": "computations/session-54/s54_tb_hamiltonian.npz",
+      "outputs": "session-55/s55_phonon_disp.npz, session-55/s55_phonon_disp.png",
+      "source_file": "computations/session-55/s55_phonon_disp.py",
+      "source_context_30_lines": "  334: ax8.bar(dos_centers, dos_normalized, width=dE * 0.9, color='#4393c3', alpha=0.7)\n  335: ax8.set_xlabel(r'$E$ [$M_{\\rm KK}$]', fontsize=12)\n  336: ax8.set_ylabel(r'$\\rho(E)$ [1/$M_{\\rm KK}$]', fontsize=12)\n  337: ax8.set_title(r'(h) DOS at fold (32 cells)', fontsize=13)\n  338: \n  339: fig.suptitle('PHONON-DISP-55: Phonon Dispersion on 32-Cell CG Lattice',\n  340:              fontsize=16, fontweight='bold', y=0.98)\n  341: \n  342: plt.savefig('computations/session-55/s55_phonon_disp.png', dpi=150, bbox_inches='tight')\n  343: print(\"\\nPlot saved: computations/session-55/s55_phonon_disp.png\")\n  344: \n  345: # =============================================================================\n  346: # 11. Power-law linearity test\n  347: # =============================================================================\n  348: # Test: E_n ~ n for acoustic (linear dispersion) vs E_n ~ n^2 (quadratic)\n  349: # Fit only first 4 modes (lowest acoustic branch)\n  350: n_acoustic = 4"
+    }
+  ]
+}

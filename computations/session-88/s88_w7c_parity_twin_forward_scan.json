@@ -1,0 +1,83 @@
+{
+  "gate_id": "S88-W9c-1-PARITY-TWIN-FORWARD-SCAN",
+  "wp_id": "W7c-86",
+  "verdict": "FAIL",
+  "value": "PRE-REG-INC_blocked_by_S88-GV-HEITSCH-MODULE_status_absent",
+  "scheme": "(\u03b7=0, GV\u22600) parity-twin signature forward-scan rank-2-cocycle",
+  "convention": "axiom-side-c_sub-region-parity-twin-extension-PRIMARY",
+  "L_max": "10",
+  "audit_sha256": "3efd2758aeb1b08a17da85c4be34247bb25a2fcd20678ec2581acbce5c1e5729",
+  "content_sha256": "f8f41ef56e97d137a7e99e2ac01e6d1a513f3fb747747011a7e1ae8b8803f9fe",
+  "schema_version": "S87+",
+  "closure_kind": "mechanical-PRE-REG-INC",
+  "closure_script": "computations/session-88/s88_w7c_parity_twin_forward_scan.py",
+  "verdict_file": "computations/session-88/s88_gate_verdicts.txt",
+  "module_detection": {
+    "module_path": "phonon-exflation-sim\\src\\gv_heitsch.py",
+    "present": false,
+    "src_dir": "phonon-exflation-sim\\src",
+    "src_listing": [
+      "__init__.py",
+      "backend.py",
+      "defect_census.py",
+      "diagnostics.py",
+      "expansion.py",
+      "gpe_solver.py",
+      "initial_conditions.py",
+      "vortex_detection.py"
+    ],
+    "status": "ABSENT"
+  },
+  "pinmap": {
+    "GV_HEITSCH_MODULE": "phonon-exflation-sim\\src\\gv_heitsch.py=ABSENT",
+    "L_max_pin": "10",
+    "_convention": "axiom-side-c_sub-region-parity-twin-extension-PRIMARY",
+    "_gate_id": "S88-W9c-1-PARITY-TWIN-FORWARD-SCAN",
+    "_scheme": "(\u03b7=0, GV\u22600) parity-twin signature forward-scan rank-2-cocycle",
+    "_wp_id": "W7c-86",
+    "level_pin": "LEVEL=1 (live-physical; SCHEMATIC FORBIDDEN)",
+    "parity_twin_n": "n in {2, 4, 6}",
+    "regulator_class": "GV-Heitsch odd-grading"
+  },
+  "mcp_pre_compute_audit": {
+    "tau_fold": {
+      "value": 0.19,
+      "session": "S12/S42",
+      "source": "s42_constants_snapshot.npz",
+      "gate": "CONST-FREEZE-42"
+    },
+    "M_KK": {
+      "value": 7.428660036284456e+16
+    },
+    "phi_67_phi_88_ratio": {
+      "value": "NOT FOUND in canonical_constants.py (plan \u00a7250 cites 7.324992 from S86 W-5 Sage-exact; promotion to canonical pending)"
+    },
+    "gv_canonical_difference_FW": {
+      "value": -40579.1500479506,
+      "provenance": "GV-Heitsch invariant difference on (C_H, C_epsH) parity-twin pair at canonical regulator; full float64 from s84_w10a_115"
+    },
+    "HP1_dim": {
+      "value": 3.0
+    },
+    "trace_S86_W11_Bulletin_2": "no trace_entity hit (W-11 Bulletin #2 = even Seeley-DeWitt parity-blindness theorem at S85 W2-7 promotion; cited via permanent-results-registry.md \u00a7VII.AC.4 STAGE-3-PERMANENT)",
+    "trace_eta_GV_parity_twin_signature": "no trace_entity hit; archive-script provenance edges show s86_w11_eta_gv_joint_probe.py + s87_w8_eta_gv_followup.py + s88_w3c_eta_gv_regulator_independence.py exist with within-script ad-hoc GV evaluation, NOT a shared module"
+  },
+  "blocking_prerequisite": {
+    "symbol": "S88-GV-HEITSCH-MODULE",
+    "module_path": "phonon-exflation-sim\\src\\gv_heitsch.py",
+    "status": "ABSENT",
+    "src_dir_listing": [
+      "__init__.py",
+      "backend.py",
+      "defect_census.py",
+      "diagnostics.py",
+      "expansion.py",
+      "gpe_solver.py",
+      "initial_conditions.py",
+      "vortex_detection.py"
+    ],
+    "rationale": "Plan \u00a7W7c-86 machinery pin \u00a7247 names regulator_class = 'GV-Heitsch odd-grading'; the shared phonon-exflation-sim/src/gv_heitsch.py module is absent at dispatch time. Existing within-script implementations target only (C_H, C_epsH); plan-required forward-scan to (C_n, C_epsN) n \u2208 {2, 4, 6} is structurally untestable without the shared module's parity-twin pair construction API."
+  },
+  "registry_slot_planned": "\u00a7VII.AH.3 (B#2 generic-parity promotion candidate, BLOCKED)",
+  "carry_forward": "S89-W9c-1-PARITY-TWIN-FORWARD-SCAN-RE-EMIT (after S89-GV-HEITSCH-MODULE-LANDING). 4-field spec: (1) what: implement gv_heitsch.py shared module exposing parity_twin_pair_construct(n) + GV_evaluate(C_n) APIs consistent with S86 W-11 / S87 W-8 within-script protocols; (2) inputs: D_K_block_diagonal_cache, regulator atlas A_5_extended, GV anchor (C_H, C_epsH); (3) gate: PASS iff parity_twin_pair_construct(n=2,4,6) produces well-defined cocycles AND GV_n evaluates non-zero AND ratios match substrate anchor 7.324992 within 1%; (4) effort: 1.0 wave-equivalent."
+}

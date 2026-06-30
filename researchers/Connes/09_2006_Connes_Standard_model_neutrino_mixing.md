@@ -305,7 +305,7 @@ SU(3)_c with CORRECT hypercharge assignments determined by the representation.
 ### 6.1 The C^{32} Hilbert Space
 
 The 32-dimensional Hilbert space H_F = C^{32} per generation is EXACTLY the
-Hilbert space used in the Tier 0 computation (Sessions 7-8). The computational
+Hilbert space used in the Computation computation (Sessions 7-8). The computational
 verification confirmed:
 
 - All SM quantum numbers emerge correctly from the A_F representation
@@ -354,7 +354,7 @@ claim is that 3 generations emerge from Z_3 x Z_3 triality on SU(3) (Baptista
 Paper 18, Appendix E). Session 17a deliverable B-4 tested a weaker version:
 Z_3 = (p-q) mod 3 partitions the 28 irreps into 3 classes with O(1) splittings.
 The full Z_3 x Z_3 generation structure requires spinor transport on CP^2
-(Tier 1.5 computation).
+(Level 1.5 computation).
 
 
 ## 7. Summary of Key Results

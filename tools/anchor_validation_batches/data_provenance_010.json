@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 10,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_91",
+      "anchor_type": "data_provenance",
+      "name": "neutrino",
+      "script_path": "session-24/s24a_neutrino.py",
+      "session": "s24a",
+      "inputs": "",
+      "outputs": "session-24/s24a_neutrino.txt",
+      "source_file": "computations/session-24/s24a_neutrino.py",
+      "source_context_30_lines": "  116:     abs_alt = np.sort(np.abs(H_evals_alt))\n  117:     m1a, m2a, m3a = abs_alt[0], abs_alt[1], abs_alt[2]\n  118:     Ra = (m3a**2 - m2a**2) / (m2a**2 - m1a**2) if abs(m2a**2 - m1a**2) > 1e-30 else float('inf')\n  119:     print(f\"  Alt R at tau=0.30: {Ra:.4f}\")\n  120: \n  121: # =====================================================================\n  122: # SAVE RESULTS\n  123: # =====================================================================\n  124: with open(f\"{base}/s24a_neutrino.txt\", 'w') as f:\n  125:     f.write(\"Session 24a Step 3: Neutrino R Diagnostic\\n\")\n  126:     f.write(\"=\" * 50 + \"\\n\\n\")\n  127:     f.write(f\"Gate criterion: R in [17, 66] (experimental ~ 32.6)\\n\\n\")\n  128:     for r in results:\n  129:         f.write(f\"tau = {r['tau']:.2f}:\\n\")\n  130:         f.write(f\"  m1 = {r['m1']:.8f}, m2 = {r['m2']:.8f}, m3 = {r['m3']:.8f}\\n\")\n  131:         f.write(f\"  R = {r['R']:.4f}  [{r['gate']}]\\n\")\n  132:         f.write(f\"  theta_12 = {r['theta_12_deg']:.2f} deg\\n\")"
+    },
+    {
+      "anchor_id": "prov_92",
+      "anchor_type": "data_provenance",
+      "name": "vspec",
+      "script_path": "session-24/s24a_vspec.py",
+      "session": "s24a",
+      "inputs": "",
+      "outputs": "session-24/s24a_vspec.npz, session-24/s24a_vspec.png",
+      "source_file": "computations/session-24/s24a_vspec.py",
+      "source_context_30_lines": "  189: save_dict['tau_IE'] = tau_IE\n  190: for rho in rho_secondary:\n  191:     V_all = V_spec(tau, R_K, Ric_sq, K, rho)\n  192:     V_at_IE = np.interp(tau_IE, tau, V_all)\n  193:     IE = -V_at_IE\n  194:     key = f\"IE_rho_{rho:.3f}\".replace('.', 'p')\n  195:     save_dict[key] = IE\n  196: \n  197: np.savez(f\"{base}/s24a_vspec.npz\", **save_dict)\n  198: print(f\"\\nSaved: {base}/s24a_vspec.npz\")\n  199: \n  200: # =====================================================================\n  201: # PLOT\n  202: # =====================================================================\n  203: fig, axes = plt.subplots(1, 2, figsize=(14, 6))\n  204: \n  205: # Left panel: V_spec(tau) for 5 primary rho values"
+    },
+    {
+      "anchor_id": "prov_93",
+      "anchor_type": "data_provenance",
+      "name": "baptista_results",
+      "script_path": "session-25/s25_baptista_results.py",
+      "session": "s25",
+      "inputs": "",
+      "outputs": "session-25/s25_baptista_results.npz, session-25/s25_baptista_results.png",
+      "source_file": "computations/session-25/s25_baptista_results.py",
+      "source_context_30_lines": "  560: ax.axvline(x=0.15, color='g', linestyle='--', alpha=0.5, label='$\\\\tau=0.15$')\n  561: ax.set_xlabel('$\\\\tau$')\n  562: ax.set_ylabel('$V_{\\\\mathrm{Baptista}}$')\n  563: ax.set_title(f'$V_{{\\\\mathrm{{Baptista}}}}$ at $\\\\kappa={kappa_star:.1f}$, $\\\\mu^2=0.01$')\n  564: ax.legend()\n  565: ax.grid(True, alpha=0.3)\n  566: \n  567: plt.tight_layout()\n  568: plt.savefig(f\"{base}/s25_baptista_results.png\", dpi=150, bbox_inches='tight')\n  569: print(f\"\\nPlot saved: {base}/s25_baptista_results.png\")\n  570: \n  571: # =====================================================================\n  572: # 11. SAVE ALL RESULTS\n  573: # =====================================================================\n  574: print(\"\\n--- Saving Results ---\")\n  575: \n  576: # Key results for the output"
+    },
+    {
+      "anchor_id": "prov_94",
+      "anchor_type": "data_provenance",
+      "name": "berry_results",
+      "script_path": "session-25/s25_berry_results.py",
+      "session": "s25",
+      "inputs": "",
+      "outputs": "session-25/s25_berry_results.npz, session-25/s25_berry_results.png",
+      "source_file": "computations/session-25/s25_berry_results.py",
+      "source_context_30_lines": "  855: ax.set_ylabel('lambda_min', fontsize=12, color='blue')\n  856: ax2_twin.set_ylabel('B_gap', fontsize=12, color='red')\n  857: ax.set_title('Gap-Edge Eigenvalue vs Berry Curvature', fontsize=13)\n  858: ax.tick_params(axis='y', labelcolor='blue')\n  859: ax2_twin.tick_params(axis='y', labelcolor='red')\n  860: ax.grid(True, alpha=0.3)\n  861: \n  862: plt.tight_layout()\n  863: outpath = f\"{base}/s25_berry_results.png\"\n  864: plt.savefig(outpath, dpi=150)\n  865: print(f\"  Saved: {outpath}\")\n  866: \n  867: # =====================================================================\n  868: # SAVE ALL RESULTS\n  869: # =====================================================================\n  870: np.savez(f\"{base}/s25_berry_results.npz\",\n  871:          tau=tau_values,"
+    },
+    {
+      "anchor_id": "prov_95",
+      "anchor_type": "data_provenance",
+      "name": "connes_workshop",
+      "script_path": "session-25/s25_connes_workshop.py",
+      "session": "s25",
+      "inputs": "",
+      "outputs": "session-25/s25_connes_workshop.npz",
+      "source_file": "computations/session-25/s25_connes_workshop.py",
+      "source_context_30_lines": "    1: \"\"\"\n    2: re-run of S25 Connes-NCG workshop (s25_connes_workshop.py)\n    3: ==============================================================\n    4: Gate: S25-CONNES-WORKSHOP\n    5: S81 canonical verdict form.\n    6: \n    7: Migration notes (T3):\n    8:   - Inputs (s19a_sweep_data.npz, s23a_kosmann_singlet.npz, r20a_riemann_tensor.npz)\n    9:     now resolved from computations/_shared (per project structure post-S51 archiving).\n   10:   - Canonical import added per math-scripts.md (no-op binding: no framework constant"
+    },
+    {
+      "anchor_id": "prov_96",
+      "anchor_type": "data_provenance",
+      "name": "connes_workshop_legacy",
+      "script_path": "session-25/s25_connes_workshop_legacy.py",
+      "session": "s25",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-25/s25_connes_workshop_legacy.py",
+      "source_context_30_lines": "<name 'connes_workshop_legacy' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: Connes-NCG-Theorist Workshop Computations -- Session 25\n    3: =======================================================\n    4: Computes all NOT COMPUTED items from the Connes collab document\n    5: and the Investigation Effort documents.\n    6: \n    7: Items:\n    8:   C1: Dixmier trace ratio [Connes Q-4]\n    9:   C2: Random NCG Jacobian [Connes S-4 / P5]\n   10:   C3: Spectral flow verification [Connes S-1 / Goal 4]\n   11:   C4: Truncated eta invariant [Connes S-5]\n   12:   C5: 4D-integrated spectral action g(Y) [Connes S-2]\n   13:   C6: Seeley-DeWitt coefficient ratios [Connes Q-1]\n   14:   C7: Index pairing topological phase diagram [Connes S-3]\n   15: \"\"\"\n   16: \n   17: import numpy as np\n   18: import sys\n   19: \n   20: BASE = \"C:/sandbox/Ainulindale Exflation/computations\"\n   21: \n   22: print(\"=\" * 70)\n   23: print(\"CONNES-NCG WORKSHOP COMPUTATIONS - Session 25\")\n   24: print(\"=\" * 70)\n   25: \n   26: # Load data\n   27: sweep = np.load(f\"{BASE}/s19a_sweep_data.npz\", allow_pickle=True)\n   28: tau_sweep = sweep[\"tau_values\"]\n   29: n_tau = len(tau_sweep)\n   30: print(f\"Loaded sweep data: {n_tau} tau values [{tau_sweep[0]:.2f}, {tau_sweep[-1]:.2f}]\")"
+    },
+    {
+      "anchor_id": "prov_97",
+      "anchor_type": "data_provenance",
+      "name": "einstein_results",
+      "script_path": "session-25/s25_einstein_results.py",
+      "session": "s25",
+      "inputs": "",
+      "outputs": "session-25/s25_einstein_results.npz",
+      "source_file": "computations/session-25/s25_einstein_results.py",
+      "source_context_30_lines": " 1036: # =============================================================================\n 1037: # SAVE RESULTS\n 1038: # =============================================================================\n 1039: \n 1040: print(\"\\n\" + \"=\" * 70)\n 1041: print(\"SAVING RESULTS\")\n 1042: print(\"=\" * 70)\n 1043: \n 1044: _OUTPUT_NPZ = _ARCHIVE / 's25_einstein_results.npz'   # (local) output location\n 1045: np.savez(_OUTPUT_NPZ,\n 1046:          # Kerner decomposition\n 1047:          tau_9=tau_9,\n 1048:          tau_21=tau_21,\n 1049:          R_K_9=R_K_9,\n 1050:          omega3_9=omega3_9,\n 1051:          a4_geom_9=a4_geom_9,\n 1052:          R_K_growth=R_K_growth,"
+    },
+    {
+      "anchor_id": "prov_98",
+      "anchor_type": "data_provenance",
+      "name": "hawking_computations",
+      "script_path": "session-25/s25_hawking_computations.py",
+      "session": "s25",
+      "inputs": "",
+      "outputs": "session-25/s25_hawking_computations.png",
+      "source_file": "computations/session-25/s25_hawking_computations.py",
+      "source_context_30_lines": "  753:     ax.plot(tau_values, vals_norm, 'o-', label=f'beta={beta}')\n  754: ax.set_xlabel('tau')\n  755: ax.set_ylabel('F / F(0)')\n  756: ax.set_title('Partition Function (Feynman verification)')\n  757: ax.legend()\n  758: ax.grid(True, alpha=0.3)\n  759: \n  760: plt.tight_layout()\n  761: plot_path = Path(r\"C:\\sandbox\\Ainulindale Exflation\\computations\\s25_hawking_computations.png\")\n  762: plt.savefig(plot_path, dpi=150)\n  763: print(f\"\\nPlot saved: {plot_path}\")\n  764: \n  765: # ============================================================\n  766: # SUMMARY TABLE\n  767: # ============================================================\n  768: print(\"\\n\" + \"=\"*70)\n  769: print(\"SUMMARY OF ALL COMPUTATIONS\")"
+    },
+    {
+      "anchor_id": "prov_99",
+      "anchor_type": "data_provenance",
+      "name": "kk_workshop",
+      "script_path": "session-25/s25_kk_workshop.py",
+      "session": "s25",
+      "inputs": "computations/session-23/s23a_eigenvectors_extended.npz, computations/session-23/s23c_fiber_integrals.npz, computations/s...",
+      "outputs": "session-25/s25_kk_workshop.npz",
+      "source_file": "computations/session-25/s25_kk_workshop.py",
+      "source_context_30_lines": "  632: \n  633: # d_s at large sigma (probing scale >> KK scale): should approach the finite spectrum limit\n  634: print(f\"\\n  d_s at sigma=100 (far IR): d_s = {d_s_all[:, -1].mean():.4f} (should -> 0 for discrete spectrum)\")\n  635: print(f\"  d_s at sigma=0.01 (deep UV): d_s = {d_s_all[:, 0].mean():.4f} (should -> 8 for SU(3))\")\n  636: \n  637: # ==============================================================\n  638: # Save results\n  639: # ==============================================================\n  640: np.savez('computations/session-25/s25_kk_workshop.npz',\n  641:          tau_values=tau_values,\n  642:          tau_fine=tau_fine,\n  643:          V_FR_phys_norm=V_FR_phys_norm,\n  644:          V_FR_crit_norm=V_FR_crit_norm,\n  645:          V_full_norm=V_full_norm,\n  646:          Lambda_vals=np.array(Lambda_vals),\n  647:          V_nmax_3=V_nmax[3],\n  648:          V_nmax_4=V_nmax[4],"
+    },
+    {
+      "anchor_id": "prov_100",
+      "anchor_type": "data_provenance",
+      "name": "landau_results",
+      "script_path": "session-25/s25_landau_results.py",
+      "session": "s25",
+      "inputs": "",
+      "outputs": "session-25/s25_landau_results.npz",
+      "source_file": "computations/session-25/s25_landau_results.py",
+      "source_context_30_lines": "  711:     'anti_hermiticity_max': np.array([max(max_violations)] if max_violations else [0.0]),\n  712:     'berry_erratum_confirmed': np.array([True]),\n  713: }\n  714: \n  715: # Add S_eff arrays\n  716: for Lambda in Lambda_values:\n  717:     save_dict[f'S_eff_Lambda{Lambda}'] = results.get(f'S_eff_Lambda{Lambda}', np.zeros(1))\n  718: \n  719: np.savez(f'{base}/s25_landau_results.npz', **save_dict)\n  720: print(f\"Results saved to {base}/s25_landau_results.npz\")\n  721: \n  722: print(\"\\n\" + \"=\" * 70)\n  723: print(\"ALL LANDAU COMPUTATIONS COMPLETE\")\n  724: print(\"=\" * 70)"
+    }
+  ]
+}

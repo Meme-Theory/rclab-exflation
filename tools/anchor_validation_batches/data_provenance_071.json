@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 71,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_701",
+      "anchor_type": "data_provenance",
+      "name": "spectral_dim_flow",
+      "script_path": "session-56/s56_spectral_dim_flow.py",
+      "session": "s56",
+      "inputs": "computations/session-54/s54_tb_hamiltonian.npz, computations/session-54/s54_graph_laplacian_ds.npz",
+      "outputs": "session-56/s56_spectral_dim_flow.npz, session-56/s56_spectral_dim_flow.png",
+      "source_file": "computations/session-56/s56_spectral_dim_flow.py",
+      "source_context_30_lines": "    1: \"\"\"\n    2: s56_spectral_dim_flow.py — Spectral Dimension Flow from Collective Modes\n    3: \n    4: Computes d_s(t) = -2 d(ln P)/d(ln t) on the 32-cell tight-binding graph\n    5: at the Jensen fold (tau ~ 0.194), using eigenvalues from s54_tb_hamiltonian.npz.\n    6: \n    7: The heat kernel return probability is:\n    8:     P(t) = (1/N) Sum_n exp(-lambda_n * t)\n    9: \n   10: where lambda_n are the TB eigenvalues (energies, not squared — the TB"
+    },
+    {
+      "anchor_id": "prov_702",
+      "anchor_type": "data_provenance",
+      "name": "strutinsky_fabric",
+      "script_path": "session-56/s56_strutinsky_fabric.py",
+      "session": "s56",
+      "inputs": "",
+      "outputs": "session-56/s56_strutinsky_fabric.npz, session-56/s56_strutinsky_fabric.png",
+      "source_file": "computations/session-56/s56_strutinsky_fabric.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s56_strutinsky_fabric.py — Strutinsky Decomposition on Fabric Hamiltonian\n    4: =========================================================================\n    5: \n    6: Gate: STRUTINSKY-FABRIC-56 (INFO)\n    7: Session: 56, Wave 2-3\n    8: Agent: nazarewicz-nuclear-structure-theorist\n    9: \n   10: Purpose:\n   11:     Perform Strutinsky shell-correction decomposition on the FABRIC Hamiltonian:"
+    },
+    {
+      "anchor_id": "prov_703",
+      "anchor_type": "data_provenance",
+      "name": "andreev_anisotropy",
+      "script_path": "session-57/s57_andreev_anisotropy.py",
+      "session": "s57",
+      "inputs": "",
+      "outputs": "session-57/s57_andreev_anisotropy.npz",
+      "source_file": "computations/session-57/s57_andreev_anisotropy.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s57_andreev_anisotropy.py — ANDREEV-ANISOTROPY-EST-57 (Kitaev, W0-4)\n    4: =====================================================================\n    5: \n    6: Compute the mode-dependent Andreev tunneling amplitude t_k = J_C2 * (u_k^2 - v_k^2)\n    7: for all 8 BCS-active modes at the fold. Characterize the anisotropy parameter\n    8: epsilon_A = std(t_k) / mean(|t_k|) and compare to the random-anisotropy control\n    9: from S56 (<r> = 0.446 at alpha=0.36).\n   10: \n   11: Two approaches:"
+    },
+    {
+      "anchor_id": "prov_704",
+      "anchor_type": "data_provenance",
+      "name": "andreev_integ",
+      "script_path": "session-57/s57_andreev_integ.py",
+      "session": "s57",
+      "inputs": "",
+      "outputs": "session-57/s57_andreev_integ.npz, session-57/s57_andreev_integ.png",
+      "source_file": "computations/session-57/s57_andreev_integ.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s57_andreev_integ.py -- ANDREEV-INTEG-57 (Kitaev, W1-4)\n    4: ========================================================\n    5: \n    6: Explicit Andreev Hamiltonian construction and integrability test.\n    7: \n    8: The question: Does the mode-dependent Andreev tunneling channel break\n    9: Richardson-Gaudin integrability at the fabric level?\n   10: \n   11: W0-4 computed the physical t_k = J_C2 * (u_k^2 - v_k^2) for all 8 modes."
+    },
+    {
+      "anchor_id": "prov_705",
+      "anchor_type": "data_provenance",
+      "name": "bayesian_fabric",
+      "script_path": "session-57/s57_bayesian_fabric.py",
+      "session": "s57",
+      "inputs": "computations/session-57/s57_finite_rate_transit.npz, computations/session-57/s57_leggett_partition.npz, computations/ses...",
+      "outputs": "session-57/s57_bayesian_fabric.npz",
+      "source_file": "computations/session-57/s57_bayesian_fabric.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s57_bayesian_fabric.py — BAYESIAN-FABRIC-57 (W3-5)\n    4: =====================================================\n    5: Gate: INFO — Does Bayesian history-matching constrain the fabric parameters?\n    6: \n    7: Method: Apply Paper 06 (Bayesian history matching) methodology to the fabric\n    8: parameter space {E_J, E_c, epsilon, N_cells}, using S57 scaling relations\n    9: and Planck observables.\n   10: \n   11: The implausibility function:"
+    },
+    {
+      "anchor_id": "prov_706",
+      "anchor_type": "data_provenance",
+      "name": "cayley_josephson",
+      "script_path": "session-57/s57_cayley_josephson.py",
+      "session": "s57",
+      "inputs": "",
+      "outputs": "session-57/s57_cayley_josephson.npz",
+      "source_file": "computations/session-57/s57_cayley_josephson.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s57_cayley_josephson.py — Build the Cayley graph CG(24) Josephson array artifact\n    4: ================================================================================\n    5: Retroactive build of the s57_cayley_josephson.npz data file.\n    6: This artifact was referenced in the S69 plan (W2-B, W5-H) but never constructed.\n    7: The data derives from S52 (Josephson couplings) and S58 (E_J_fold = 7.04).\n    8: \n    9: The 24-cell is a self-dual regular 4-polytope with:\n   10:   - 24 vertices\n   11:   - 96 edges (each vertex has 8 nearest neighbors)"
+    },
+    {
+      "anchor_id": "prov_707",
+      "anchor_type": "data_provenance",
+      "name": "cc_sign",
+      "script_path": "session-57/s57_cc_sign.py",
+      "session": "s57",
+      "inputs": "s57_gge_equilibrium_gap.npz, s54_ed_sweep.npz",
+      "outputs": "session-57/s57_cc_sign.npz",
+      "source_file": "computations/session-57/s57_cc_sign.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s57_cc_sign.py — CC-SIGN-57: Sign of the cosmological constant from GGE departure\n    4: ==================================================================================\n    5: \n    6: Gate: CC-SIGN-57\n    7:   PASS: Lambda_eff > 0 (positive, consistent with observed accelerating expansion)\n    8:   FAIL: Lambda_eff < 0 (negative, deceleration)\n    9: \n   10: Method:\n   11:   1. Compute E_GGE - E_BCS using W0-3 data (direct energy difference)"
+    },
+    {
+      "anchor_id": "prov_708",
+      "anchor_type": "data_provenance",
+      "name": "channel_energy_budget",
+      "script_path": "session-57/s57_channel_energy_budget.py",
+      "session": "s57",
+      "inputs": "computations/session-54/s54_tb_hamiltonian.npz, computations/session-56/s56_gge_fabric.npz, computations/session-56/s56_...",
+      "outputs": "session-57/s57_channel_energy_budget.npz",
+      "source_file": "computations/session-57/s57_channel_energy_budget.py",
+      "source_context_30_lines": "  458: print(f\"\\n  Cross-check 4: 2-cell Josephson gap\")\n  459: print(f\"    2-cell E_J = {E_J_gap_2cell:.4f} M_KK\")\n  460: print(f\"    Fabric E_J = {E_J_fold_fabric:.4f} M_KK\")\n  461: print(f\"    Ratio (fabric/2-cell) = {E_J_fold_fabric / E_J_gap_2cell:.3f}\")\n  462: \n  463: # ============================================================================\n  464: # 11. Save results\n  465: # ============================================================================\n  466: outpath = 'computations/session-57/s57_channel_energy_budget.npz'\n  467: np.savez(outpath,\n  468:     # Constants\n  469:     tau_fold=tau_fold,\n  470:     N_cells=N_cells,\n  471:     n_bonds_C2=n_bonds_C2,\n  472:     n_bonds_su2=n_bonds_su2,\n  473:     n_bonds_u1=n_bonds_u1,\n  474:     n_bonds_total=n_bonds_total,"
+    },
+    {
+      "anchor_id": "prov_709",
+      "anchor_type": "data_provenance",
+      "name": "chi_q_microscopic",
+      "script_path": "session-57/s57_chi_q_microscopic.py",
+      "session": "s57",
+      "inputs": "",
+      "outputs": "session-57/s57_chi_q_microscopic.npz",
+      "source_file": "computations/session-57/s57_chi_q_microscopic.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s57_chi_q_microscopic.py — CHI-Q-MICROSCOPIC-57\n    4: =================================================\n    5: Vacuum compressibility from BCS Hamiltonian (microscopic chi_q).\n    6: \n    7: Gate: CHI-Q-MICROSCOPIC-57 — INFO\n    8: \n    9: Physics:\n   10:   The spectral action gives chi_q(SA) = d^2S/dtau^2 = 317,863 M_KK^4.\n   11:   The PHYSICAL chi_q for CC self-tuning (q-theory) requires the microscopic"
+    },
+    {
+      "anchor_id": "prov_710",
+      "anchor_type": "data_provenance",
+      "name": "desert_dynamics",
+      "script_path": "session-57/s57_desert_dynamics.py",
+      "session": "s57",
+      "inputs": "",
+      "outputs": "session-57/s57_desert_dynamics.npz",
+      "source_file": "computations/session-57/s57_desert_dynamics.py",
+      "source_context_30_lines": "  855:     print(f\"    Inter-cell coherence MAINTAINED through BCS freeze.\")\n  856: \n  857: \n  858: # ==============================================================================\n  859: #  SECTION 18: Save Results\n  860: # ==============================================================================\n  861: \n  862: print(\"\\n--- Saving results ---\")\n  863: outpath = os.path.join(data_dir, 's57_desert_dynamics.npz')\n  864: \n  865: np.savez(outpath,\n  866:     # Gate\n  867:     gate_name='DESERT-DYNAMICS-57',\n  868:     gate_verdict=gate_verdict,\n  869:     gate_detail=gate_detail,\n  870: \n  871:     # Desert boundaries"
+    }
+  ]
+}

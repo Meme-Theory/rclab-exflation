@@ -11,10 +11,10 @@
 ## NO DEPENDENCIES — RUNS FIRST
 
 All inputs exist from Sessions 20a, 23a, and 23c:
-- `tier0-computation/s23c_fiber_integrals.npz` (V_spec inputs: R_K, |Ric|^2, K at 21 tau)
-- `tier0-computation/r20a_riemann_tensor.npz` (Riemann tensor cross-check)
-- `tier0-computation/s23a_kosmann_singlet.npz` (V_nm matrix, eigenvalues for Berry + neutrino R)
-- `tier0-computation/s23a_eigenvectors_extended.npz` (eigenvalues for eigenvalue ratio map)
+- `computations/s23c_fiber_integrals.npz` (V_spec inputs: R_K, |Ric|^2, K at 21 tau)
+- `computations/r20a_riemann_tensor.npz` (Riemann tensor cross-check)
+- `computations/s23a_kosmann_singlet.npz` (V_nm matrix, eigenvalues for Berry + neutrino R)
+- `computations/s23a_eigenvectors_extended.npz` (eigenvalues for eigenvalue ratio map)
 
 ## NO INTERPRETATION IN 24a
 
@@ -29,7 +29,7 @@ Coordinator must classify each result against its pre-registered threshold the M
 Every result classified against its pre-registered gate BEFORE any interpretation. Report the number first. Classify second. Interpret third.
 
 **Python environment**: `"phonon-exflation-sim/.venv312/Scripts/python.exe"`
-**Output directory**: `tier0-computation/`
+**Output directory**: `computations/`
 **Script prefix**: `s24a_`
 
 **COMPLETION SIGNAL**: Session ends ONLY when user approves shutdown explicitly; Password mechanism on team lead. Idle agents are not finished agents — or even actually idle.
@@ -77,7 +77,7 @@ Total runtime for ALL computations: under 5 minutes. If it takes longer, somethi
 
 | Agent | Additional Reading | Researcher Index Ref |
 |:------|:-------------------|:---------------------|
-| phonon-exflation-sim | `tier0-computation/s23c_fiber_integrals_final.py` lines 1-50 (V_spec formula, data loading, curvature invariant definitions), `tier0-computation/s23c_fiber_integrals.npz` (load and verify keys) | Domain 4: Baptista-15 eq 3.80 (V_eff), Connes-07 (spectral action expansion), KK-10 (Freund-Rubin prototype) |
+| phonon-exflation-sim | `computations/s23c_fiber_integrals_final.py` lines 1-50 (V_spec formula, data loading, curvature invariant definitions), `computations/s23c_fiber_integrals.npz` (load and verify keys) | Domain 4: Baptista-15 eq 3.80 (V_eff), Connes-07 (spectral action expansion), KK-10 (Freund-Rubin prototype) |
 | coordinator | This prompt Section IV (pre-registered Constraint Gates). Memorize ALL thresholds before first computation completes | Domain 12: Sagan-10 (methodology), Sagan-13 (Bayesian framework) |
 
 ---
@@ -190,7 +190,7 @@ R = (m_3^2 - m_2^2) / (m_2^2 - m_1^2)
 
 ### Step 7: Mandatory Gate Verdicts
 
-Coordinator produces `tier0-computation/s24a_gate_verdicts.txt` with the full table from Section III, Step 7 of the master prompt.
+Coordinator produces `computations/s24a_gate_verdicts.txt` with the full table from Section III, Step 7 of the master prompt.
 
 Also produce `sessions/YYYY-MM-DD-session-24a-synthesis.md` with gate table and brief number-only summary. No interpretation.
 
@@ -225,18 +225,18 @@ Also produce `sessions/YYYY-MM-DD-session-24a-synthesis.md` with gate table and 
 
 | File | Producer | Content |
 |:-----|:---------|:--------|
-| `tier0-computation/s24a_vspec.py` | phonon-sim | V_spec computation |
-| `tier0-computation/s24a_vspec.npz` | phonon-sim | V_spec data + Euclidean action |
-| `tier0-computation/s24a_vspec.png` | phonon-sim | V_spec(tau) for 5 rho values |
-| `tier0-computation/s24a_berry.py` | phonon-sim | Berry curvature |
-| `tier0-computation/s24a_berry.npz` | phonon-sim | B_n(tau) data |
-| `tier0-computation/s24a_berry.png` | phonon-sim | Berry curvature vs tau |
-| `tier0-computation/s24a_neutrino.py` | phonon-sim | H_eff + R extraction |
-| `tier0-computation/s24a_neutrino.txt` | phonon-sim | R value + gate verdict |
-| `tier0-computation/s24a_eigenvalue_ratios.py` | phonon-sim | Ratio map |
-| `tier0-computation/s24a_eigenvalue_ratios.npz` | phonon-sim | r_n(tau) data |
-| `tier0-computation/s24a_eigenvalue_ratios.png` | phonon-sim | Heatmap with phi_paasch |
-| `tier0-computation/s24a_gate_verdicts.txt` | coordinator | All gate verdicts |
+| `computations/s24a_vspec.py` | phonon-sim | V_spec computation |
+| `computations/s24a_vspec.npz` | phonon-sim | V_spec data + Euclidean action |
+| `computations/s24a_vspec.png` | phonon-sim | V_spec(tau) for 5 rho values |
+| `computations/s24a_berry.py` | phonon-sim | Berry curvature |
+| `computations/s24a_berry.npz` | phonon-sim | B_n(tau) data |
+| `computations/s24a_berry.png` | phonon-sim | Berry curvature vs tau |
+| `computations/s24a_neutrino.py` | phonon-sim | H_eff + R extraction |
+| `computations/s24a_neutrino.txt` | phonon-sim | R value + gate verdict |
+| `computations/s24a_eigenvalue_ratios.py` | phonon-sim | Ratio map |
+| `computations/s24a_eigenvalue_ratios.npz` | phonon-sim | r_n(tau) data |
+| `computations/s24a_eigenvalue_ratios.png` | phonon-sim | Heatmap with phi_paasch |
+| `computations/s24a_gate_verdicts.txt` | coordinator | All gate verdicts |
 | `sessions/YYYY-MM-DD-session-24a-synthesis.md` | coordinator | Number-only synthesis |
 
 ---

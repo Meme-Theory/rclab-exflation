@@ -1,0 +1,107 @@
+{
+  "table": "theorems",
+  "batch_id": 50,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "proven_491",
+      "anchor_type": "theorems",
+      "name": "Inputs**: plan file (`sessions/session-plan/session-87-plan-*.md`); `mcp__knowledge__` MCP tools (get_constant, search_k",
+      "status": "PROVEN",
+      "sessions": "",
+      "statement": "Inputs**: plan file (`sessions/session-plan/session-87-plan-*.md`); `mcp__knowledge__` MCP tools (get_constant, search_knowledge); glob over `researchers/*/`; `_pru_cardinality_audit.py` and `_source_",
+      "source_file": "sessions\\session-86\\workshops\\session-86-1a-s3-lizzi.md",
+      "source_context_30_lines": "  133: \n  134: ## V. Carry-Forward Computations\n  135: \n  136: **MANDATORY per `.claude/rules/feedback_fix-in-session-never-defer.md`**: every entry below has all four fields (What / Inputs / Gate / Effort).\n  137: \n  138: ### V.1. S87-SUBSTRATE-FIRST-PROVENANCE-AUDIT\n  139: \n  140: - **What**: Build `computations/_substrate_first_provenance_audit.py` that, for every plan pin, (a) checks whether the cited canonical-source URL/path exists, (b) if cited as an external-paper section heading, globs the paper file for the heading and emits AUDIT-FAIL on absence, (c) if cited as an order-of-magnitude estimate or schematic-library output, queries `mcp__knowledge__.get_constant(name)` for the substrate-first canonical and emits CLASS-(f) HARD-HALT on D_max ≥ 3.0, (d) if cited correctly from substrate-first computation, emits PASS. Output: per-pin classification table {PASS, CLASS-(f)-HARD-HALT, ABSENT-EXTERNAL-HEADING, SCHEMATIC-UNDISCLOSED}; aggregate session-level signal `sig_6 = 0` if any pin returns non-PASS.\n  141: - **Inputs**: plan file (`sessions/session-plan/session-87-plan-*.md`); `mcp__knowledge__` MCP tools (get_constant, search_knowledge); glob over `researchers/*/`; `_pru_cardinality_audit.py` and `_source_reconciliation_audit.py` as composition-pattern templates.\n  142: - **Gate**: NEW gate `S87-SUBSTRATE-FIRST-PROVENANCE-AUDIT` with PASS = all pins classified PASS; FAIL = at least one pin returns CLASS-(f)-HARD-HALT, ABSENT-EXTERNAL-HEADING, or SCHEMATIC-UNDISCLOSED; INF\n... [truncated]"
+    },
+    {
+      "anchor_id": "proven_492",
+      "anchor_type": "theorems",
+      "name": "Gate**: NEW gate `S87-SUBSTRATE-FIRST-PROVENANCE-AUDIT` with PASS = all pins classified PASS; FAIL = at least one pin re",
+      "status": "PROVEN",
+      "sessions": "",
+      "statement": "Gate**: NEW gate `S87-SUBSTRATE-FIRST-PROVENANCE-AUDIT` with PASS = all pins classified PASS; FAIL = at least one pin returns CLASS-(f)-HARD-HALT, ABSENT-EXTERNAL-HEADING, or SCHEMATIC-UNDISCLOSED; IN",
+      "source_file": "sessions\\session-86\\workshops\\session-86-1a-s3-lizzi.md",
+      "source_context_30_lines": "  134: ## V. Carry-Forward Computations\n  135: \n  136: **MANDATORY per `.claude/rules/feedback_fix-in-session-never-defer.md`**: every entry below has all four fields (What / Inputs / Gate / Effort).\n  137: \n  138: ### V.1. S87-SUBSTRATE-FIRST-PROVENANCE-AUDIT\n  139: \n  140: - **What**: Build `computations/_substrate_first_provenance_audit.py` that, for every plan pin, (a) checks whether the cited canonical-source URL/path exists, (b) if cited as an external-paper section heading, globs the paper file for the heading and emits AUDIT-FAIL on absence, (c) if cited as an order-of-magnitude estimate or schematic-library output, queries `mcp__knowledge__.get_constant(name)` for the substrate-first canonical and emits CLASS-(f) HARD-HALT on D_max ≥ 3.0, (d) if cited correctly from substrate-first computation, emits PASS. Output: per-pin classification table {PASS, CLASS-(f)-HARD-HALT, ABSENT-EXTERNAL-HEADING, SCHEMATIC-UNDISCLOSED}; aggregate session-level signal `sig_6 = 0` if any pin returns non-PASS.\n  141: - **Inputs**: plan file (`sessions/session-plan/session-87-plan-*.md`); `mcp__knowledge__` MCP tools (get_constant, search_knowledge); glob over `researchers/*/`; `_pru_cardinality_audit.py` and `_source_reconciliation_audit.py` as composition-pattern templates.\n  142: - **Gate**: NEW gate `S87-SUBSTRATE-FIRST-PROVENANCE-AUDIT` with PASS = all pins classified PASS; FAIL = at least one pin returns CLASS-(f)-HARD-HALT, ABSENT-EXTERNAL-HEADING, or SCHEMATIC-UNDISCLOSED; INFO = pins\n... [truncated]"
+    },
+    {
+      "anchor_id": "proven_493",
+      "anchor_type": "theorems",
+      "name": "Conceptual framing references",
+      "status": "PROVEN",
+      "sessions": "1996",
+      "statement": "Conceptual framing references",
+      "source_file": "sessions\\session-86\\workshops\\session-86-1a-s3-lizzi.md",
+      "source_context_30_lines": "  118: | 2026-04-27 | Substrate-first canonical-sourcing discipline | IMPLICIT (W0c-3 reactive handling) | EXPLICIT permanent rule (proposed at .claude/rules/substrate-first-canonical-sourcing.md) | Three independent S86 witnesses (W0c-3, W4-2, W5a-1) demonstrate plan-authorship pathology surviving SOURCE-RECON pre-flight |\n  119: | 2026-04-27 | SOURCE-RECON 5-class taxonomy | 5 classes (a)-(e) | 6 classes (a)-(f); class (f) adds HARD-HALT default severity | W5a-2 measured D_max=3.13 hits HARD-HALT band; class (f) is the structural address for placeholder-vs-substrate jumps |\n  120: | 2026-04-27 | Audit pipeline composition order | PRU → SOURCE-RECON → PRDR → execute → v3-recovery | PRU → SOURCE-RECON → SUBSTRATE-FIRST-PROVENANCE → PRDR → execute → v3-recovery | New sub-audit slot inserted between SOURCE-RECON (value test) and PRDR (machinery test); operates on pin-source-existence rather than pin-value-drift |\n  121: \n  122: ### IV.5 — Boundaries of the rule (what it does NOT do)\n  123: \n  124: The rule applies to **canonical sourcing of pinned numerical quantities**. It does not apply to:\n  125: - Methodological cross-checks (CM-2008 cited as anchor for HP1_dim = 3 in W0c-3 entry #2 is correct usage; the substrate cross-check is S84 W10a-117).\n  126: - Conceptual framing references (citing Connes 1996 for Mellin-multiplier formalism is correct usage; the substrate computation is the spectral-action evaluation on D_K).\n  127: - Library helper-function disclosure (the W4-2 SC\n... [truncated]"
+    },
+    {
+      "anchor_id": "proven_494",
+      "anchor_type": "theorems",
+      "name": "Cross-check anchors",
+      "status": "PROVEN",
+      "sessions": "2008",
+      "statement": "Cross-check anchors",
+      "source_file": "sessions\\session-86\\workshops\\session-86-1a-s3-lizzi.md",
+      "source_context_30_lines": "  205: - `substrate-first-canonical-sourcing.md` operates at the sourcing layer: pins must source from the substrate's first-principles computation, not from external-paper provenance treated as authoritative.\n  206: \n  207: The two operate at the same epistemological depth (substrate is logically prior to emergent observables) but apply to disjoint artifact classes (narrative paragraphs vs numerical pin sources).\n  208: \n  209: ## (i) When external-paper provenance is methodological vs canonical\n  210: \n  211: External-paper citations are **METHODOLOGICAL** (correct usage) when they serve as:\n  212: - Conceptual framing references (e.g., \"the Connes-Chamseddine 1996 Mellin-multiplier formalism inspires the schematic helpers in `_spectral_action_regulators.py`\")\n  213: - Cross-check anchors (e.g., \"CM-2008 Table 2 confirms HP1_dim = 3, consistent with S84 W10a-117 R-protection rank-3 image\")\n  214: - Heritage citations (e.g., \"Volovik's superfluid universe analogy maps to the BEC acoustic white hole projection of substrate transit\")\n  215: - Notational source for definitions (e.g., \"Mukhanov-Sasaki gauge per Mukhanov 1985 §3\")\n  216: \n  217: External-paper citations are **CANONICAL** (FORBIDDEN — must reroute to substrate-first source) when they:\n  218: - Provide the NUMERICAL VALUE of a pin without the substrate-first computation having been performed (e.g., \"xi_E_GGE_inv ≈ O(10⁻²) per analytic placeholder\" — the substrate canonical 13.642473 from S86 W4 P4 must be cited ins\n... [truncated]"
+    },
+    {
+      "anchor_id": "proven_495",
+      "anchor_type": "theorems",
+      "name": "Heritage citations",
+      "status": "PROVEN",
+      "sessions": "",
+      "statement": "Heritage citations",
+      "source_file": "sessions\\session-86\\workshops\\session-86-1a-s3-lizzi.md",
+      "source_context_30_lines": "  206: \n  207: The two operate at the same epistemological depth (substrate is logically prior to emergent observables) but apply to disjoint artifact classes (narrative paragraphs vs numerical pin sources).\n  208: \n  209: ## (i) When external-paper provenance is methodological vs canonical\n  210: \n  211: External-paper citations are **METHODOLOGICAL** (correct usage) when they serve as:\n  212: - Conceptual framing references (e.g., \"the Connes-Chamseddine 1996 Mellin-multiplier formalism inspires the schematic helpers in `_spectral_action_regulators.py`\")\n  213: - Cross-check anchors (e.g., \"CM-2008 Table 2 confirms HP1_dim = 3, consistent with S84 W10a-117 R-protection rank-3 image\")\n  214: - Heritage citations (e.g., \"Volovik's superfluid universe analogy maps to the BEC acoustic white hole projection of substrate transit\")\n  215: - Notational source for definitions (e.g., \"Mukhanov-Sasaki gauge per Mukhanov 1985 §3\")\n  216: \n  217: External-paper citations are **CANONICAL** (FORBIDDEN — must reroute to substrate-first source) when they:\n  218: - Provide the NUMERICAL VALUE of a pin without the substrate-first computation having been performed (e.g., \"xi_E_GGE_inv ≈ O(10⁻²) per analytic placeholder\" — the substrate canonical 13.642473 from S86 W4 P4 must be cited instead)\n  219: - Cite a paper section heading as the source of a numerical extraction without verifying the heading exists (e.g., \"vdd §VI extraction at L_max=2\" when no vdd paper has §VI)\n  220: - Treat schemati\n... [truncated]"
+    },
+    {
+      "anchor_id": "proven_496",
+      "anchor_type": "theorems",
+      "name": "Notational source for definitions",
+      "status": "PROVEN",
+      "sessions": "1985",
+      "statement": "Notational source for definitions",
+      "source_file": "sessions\\session-86\\workshops\\session-86-1a-s3-lizzi.md",
+      "source_context_30_lines": "  207: The two operate at the same epistemological depth (substrate is logically prior to emergent observables) but apply to disjoint artifact classes (narrative paragraphs vs numerical pin sources).\n  208: \n  209: ## (i) When external-paper provenance is methodological vs canonical\n  210: \n  211: External-paper citations are **METHODOLOGICAL** (correct usage) when they serve as:\n  212: - Conceptual framing references (e.g., \"the Connes-Chamseddine 1996 Mellin-multiplier formalism inspires the schematic helpers in `_spectral_action_regulators.py`\")\n  213: - Cross-check anchors (e.g., \"CM-2008 Table 2 confirms HP1_dim = 3, consistent with S84 W10a-117 R-protection rank-3 image\")\n  214: - Heritage citations (e.g., \"Volovik's superfluid universe analogy maps to the BEC acoustic white hole projection of substrate transit\")\n  215: - Notational source for definitions (e.g., \"Mukhanov-Sasaki gauge per Mukhanov 1985 §3\")\n  216: \n  217: External-paper citations are **CANONICAL** (FORBIDDEN — must reroute to substrate-first source) when they:\n  218: - Provide the NUMERICAL VALUE of a pin without the substrate-first computation having been performed (e.g., \"xi_E_GGE_inv ≈ O(10⁻²) per analytic placeholder\" — the substrate canonical 13.642473 from S86 W4 P4 must be cited instead)\n  219: - Cite a paper section heading as the source of a numerical extraction without verifying the heading exists (e.g., \"vdd §VI extraction at L_max=2\" when no vdd paper has §VI)\n  220: - Treat schematic librar\n... [truncated]"
+    },
+    {
+      "anchor_id": "proven_497",
+      "anchor_type": "theorems",
+      "name": "Provide the NUMERICAL VALUE of a pin without the substrate-first computation having been performed (e.g., \"xi_E_GGE_inv ",
+      "status": "PROVEN",
+      "sessions": "",
+      "statement": "Provide the NUMERICAL VALUE of a pin without the substrate-first computation having been performed (e.g., \"xi_E_GGE_inv ≈ O(10⁻²) per analytic placeholder\" — the substrate canonical 13.642473 from S86",
+      "source_file": "sessions\\session-86\\workshops\\session-86-1a-s3-lizzi.md",
+      "source_context_30_lines": "  210: \n  211: External-paper citations are **METHODOLOGICAL** (correct usage) when they serve as:\n  212: - Conceptual framing references (e.g., \"the Connes-Chamseddine 1996 Mellin-multiplier formalism inspires the schematic helpers in `_spectral_action_regulators.py`\")\n  213: - Cross-check anchors (e.g., \"CM-2008 Table 2 confirms HP1_dim = 3, consistent with S84 W10a-117 R-protection rank-3 image\")\n  214: - Heritage citations (e.g., \"Volovik's superfluid universe analogy maps to the BEC acoustic white hole projection of substrate transit\")\n  215: - Notational source for definitions (e.g., \"Mukhanov-Sasaki gauge per Mukhanov 1985 §3\")\n  216: \n  217: External-paper citations are **CANONICAL** (FORBIDDEN — must reroute to substrate-first source) when they:\n  218: - Provide the NUMERICAL VALUE of a pin without the substrate-first computation having been performed (e.g., \"xi_E_GGE_inv ≈ O(10⁻²) per analytic placeholder\" — the substrate canonical 13.642473 from S86 W4 P4 must be cited instead)\n  219: - Cite a paper section heading as the source of a numerical extraction without verifying the heading exists (e.g., \"vdd §VI extraction at L_max=2\" when no vdd paper has §VI)\n  220: - Treat schematic library helper outputs as physical regularizations without disclosing the SCHEMATIC level (e.g., `_spectral_action_regulators.py.zeta_a_n(...)` cited as \"the zeta-regulated Seeley-DeWitt coefficient\" without SCHEMATIC disclosure)\n  221: - Use order-of-magnitude estimates as pinned values w\n... [truncated]"
+    },
+    {
+      "anchor_id": "proven_498",
+      "anchor_type": "theorems",
+      "name": "Cite a paper section heading as the source of a numerical extraction without verifying the heading exists",
+      "status": "PROVEN",
+      "sessions": "2",
+      "statement": "Cite a paper section heading as the source of a numerical extraction without verifying the heading exists",
+      "source_file": "sessions\\session-86\\workshops\\session-86-1a-s3-lizzi.md",
+      "source_context_30_lines": "  211: External-paper citations are **METHODOLOGICAL** (correct usage) when they serve as:\n  212: - Conceptual framing references (e.g., \"the Connes-Chamseddine 1996 Mellin-multiplier formalism inspires the schematic helpers in `_spectral_action_regulators.py`\")\n  213: - Cross-check anchors (e.g., \"CM-2008 Table 2 confirms HP1_dim = 3, consistent with S84 W10a-117 R-protection rank-3 image\")\n  214: - Heritage citations (e.g., \"Volovik's superfluid universe analogy maps to the BEC acoustic white hole projection of substrate transit\")\n  215: - Notational source for definitions (e.g., \"Mukhanov-Sasaki gauge per Mukhanov 1985 §3\")\n  216: \n  217: External-paper citations are **CANONICAL** (FORBIDDEN — must reroute to substrate-first source) when they:\n  218: - Provide the NUMERICAL VALUE of a pin without the substrate-first computation having been performed (e.g., \"xi_E_GGE_inv ≈ O(10⁻²) per analytic placeholder\" — the substrate canonical 13.642473 from S86 W4 P4 must be cited instead)\n  219: - Cite a paper section heading as the source of a numerical extraction without verifying the heading exists (e.g., \"vdd §VI extraction at L_max=2\" when no vdd paper has §VI)\n  220: - Treat schematic library helper outputs as physical regularizations without disclosing the SCHEMATIC level (e.g., `_spectral_action_regulators.py.zeta_a_n(...)` cited as \"the zeta-regulated Seeley-DeWitt coefficient\" without SCHEMATIC disclosure)\n  221: - Use order-of-magnitude estimates as pinned values when the \n... [truncated]"
+    },
+    {
+      "anchor_id": "proven_499",
+      "anchor_type": "theorems",
+      "name": "Treat schematic library helper outputs as physical regularizations without disclosing the SCHEMATIC level (e.g., `_spect",
+      "status": "PROVEN",
+      "sessions": "",
+      "statement": "Treat schematic library helper outputs as physical regularizations without disclosing the SCHEMATIC level (e.g., `_spectral_action_regulators.py.zeta_a_n(...)` cited as \"the zeta-regulated Seeley-DeWi",
+      "source_file": "sessions\\session-86\\workshops\\session-86-1a-s3-lizzi.md",
+      "source_context_30_lines": "  212: - Conceptual framing references (e.g., \"the Connes-Chamseddine 1996 Mellin-multiplier formalism inspires the schematic helpers in `_spectral_action_regulators.py`\")\n  213: - Cross-check anchors (e.g., \"CM-2008 Table 2 confirms HP1_dim = 3, consistent with S84 W10a-117 R-protection rank-3 image\")\n  214: - Heritage citations (e.g., \"Volovik's superfluid universe analogy maps to the BEC acoustic white hole projection of substrate transit\")\n  215: - Notational source for definitions (e.g., \"Mukhanov-Sasaki gauge per Mukhanov 1985 §3\")\n  216: \n  217: External-paper citations are **CANONICAL** (FORBIDDEN — must reroute to substrate-first source) when they:\n  218: - Provide the NUMERICAL VALUE of a pin without the substrate-first computation having been performed (e.g., \"xi_E_GGE_inv ≈ O(10⁻²) per analytic placeholder\" — the substrate canonical 13.642473 from S86 W4 P4 must be cited instead)\n  219: - Cite a paper section heading as the source of a numerical extraction without verifying the heading exists (e.g., \"vdd §VI extraction at L_max=2\" when no vdd paper has §VI)\n  220: - Treat schematic library helper outputs as physical regularizations without disclosing the SCHEMATIC level (e.g., `_spectral_action_regulators.py.zeta_a_n(...)` cited as \"the zeta-regulated Seeley-DeWitt coefficient\" without SCHEMATIC disclosure)\n  221: - Use order-of-magnitude estimates as pinned values when the substrate canonical exists (e.g., placeholder vs. canonical xi_E_GGE_inv pathology)\n  222: \n... [truncated]"
+    },
+    {
+      "anchor_id": "proven_500",
+      "anchor_type": "theorems",
+      "name": "Use order-of-magnitude estimates as pinned values when the substrate canonical exists",
+      "status": "PROVEN",
+      "sessions": "",
+      "statement": "Use order-of-magnitude estimates as pinned values when the substrate canonical exists",
+      "source_file": "sessions\\session-86\\workshops\\session-86-1a-s3-lizzi.md",
+      "source_context_30_lines": "  213: - Cross-check anchors (e.g., \"CM-2008 Table 2 confirms HP1_dim = 3, consistent with S84 W10a-117 R-protection rank-3 image\")\n  214: - Heritage citations (e.g., \"Volovik's superfluid universe analogy maps to the BEC acoustic white hole projection of substrate transit\")\n  215: - Notational source for definitions (e.g., \"Mukhanov-Sasaki gauge per Mukhanov 1985 §3\")\n  216: \n  217: External-paper citations are **CANONICAL** (FORBIDDEN — must reroute to substrate-first source) when they:\n  218: - Provide the NUMERICAL VALUE of a pin without the substrate-first computation having been performed (e.g., \"xi_E_GGE_inv ≈ O(10⁻²) per analytic placeholder\" — the substrate canonical 13.642473 from S86 W4 P4 must be cited instead)\n  219: - Cite a paper section heading as the source of a numerical extraction without verifying the heading exists (e.g., \"vdd §VI extraction at L_max=2\" when no vdd paper has §VI)\n  220: - Treat schematic library helper outputs as physical regularizations without disclosing the SCHEMATIC level (e.g., `_spectral_action_regulators.py.zeta_a_n(...)` cited as \"the zeta-regulated Seeley-DeWitt coefficient\" without SCHEMATIC disclosure)\n  221: - Use order-of-magnitude estimates as pinned values when the substrate canonical exists (e.g., placeholder vs. canonical xi_E_GGE_inv pathology)\n  222: \n  223: The distinction is operational: a methodological citation supports the substrate-first computation; a canonical citation REPLACES it. Only the former is allowed.\n  \n... [truncated]"
+    }
+  ]
+}

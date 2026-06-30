@@ -1,0 +1,178 @@
+Ainulindale: Unknown command line argument 'Exflation\phonon-exflation-sim\.venv312\Lib\site-packages\_rocm_sdk_core\lib\llvm\bin\offload-arch.exe'.  Try: 'C:\sandbox\Ainulindale --help'
+==============================================================================
+  S90-W5-5-RETRY-WITH-PV-SUBTRACTED-MELLIN-S3-EXTRACTION
+  Schema: PV-subtracted-Mellin-s3; convention base: substrate-distance-1-canonical
+==============================================================================
+
+--- Step 0: Input SHA-256 pins ---
+=== S90-W5-5-RETRY-WITH-PV-SUBTRACTED-MELLIN-S3-EXTRACTION - input SHA-256 pins ===
+  computations/_shared/canonical_constants.py: 5a19a04e0adef8cd...
+  computations/_shared/dirac_spectrum.py: dadba674e950fad9...
+  computations/session-87/s87_spectrum_cache_L14_tau019.npz: fa2bfb83c74ff151...
+  computations/session-87/s87_w1b_pv_subtraction_recalibration.npz: 20097d01d5f59628...
+  computations/session-89/s89_w5_a28_spectrum_cache_L6_tau038.npz: 86b05b7a4de78621...
+
+--- Step 0b: Pre-registered predictions (Sage substitution chain) ---
+  HK-10(tau=0.19) = 10 / (1 - 0.19/(5*pi)) = 10.1224387484
+  HK-10(tau=0.38) = 10 / (1 - 0.38/(5*pi)) = 10.2479129114
+  Reading-A pred  = HK-10(0.38)/HK-10(0.19) = 1.012396
+  Reading-B pred  = 2*slope_A_LO(0.19)/slope_A_LO(0.19) = 2.000000
+  PASS-A band: (0.95, 1.1)
+  PASS-B band: (1.8, 2.2)
+  slope_A_FW_canonical (anchor) = 10.122438748384
+
+--- Step 1: Load tau=0.19 spectrum (s87 L=14 master cache) ---
+  Loaded 119 sectors at tau=0.19; total modes 321136
+
+--- Step 2: Build tau=0.38 spectrum (seed + extend to L_max) ---
+  Seed: 28 sectors at tau=0.38 (L_max<=6)
+
+--- Build tau=0.38 spectrum at L_max=10 ---
+  (global budget remaining: 297.0s)
+  Building Jensen-deformed Dirac infrastructure ...
+    Built Jensen infrastructure in 0.00s
+    Inherited 28 sectors from seed cache
+    Building NEW sectors with p+q <= 10:
+    ( 0, 7) L= 7  dim=  36  wall=   0.61s  |lam|=[2.0783,4.1550]
+    ( 1, 6) L= 7  dim=  63  wall=   0.17s  |lam|=[1.9617,4.1173]
+    ( 2, 5) L= 7  dim=  81  wall=   0.40s  |lam|=[1.9714,4.0920]
+    ( 3, 4) L= 7  dim=  90  wall=   0.30s  |lam|=[2.0103,4.0793]
+    ( 4, 3) L= 7  dim=  90  wall=   0.29s  |lam|=[2.0103,4.0793]
+    ( 5, 2) L= 7  dim=  81  wall=   0.24s  |lam|=[1.9714,4.0920]
+    ( 6, 1) L= 7  dim=  63  wall=   0.16s  |lam|=[1.9617,4.1173]
+    ( 7, 0) L= 7  dim=  36  wall=   0.06s  |lam|=[2.0783,4.1550]
+    ( 0, 8) L= 8  dim=  45  wall=   0.08s  |lam|=[2.2984,4.5913]
+    ( 1, 7) L= 8  dim=  80  wall=   0.28s  |lam|=[2.1823,4.5515]
+    ( 2, 6) L= 8  dim= 105  wall=   0.41s  |lam|=[2.1884,4.5229]
+    ( 3, 5) L= 8  dim= 120  wall=   0.57s  |lam|=[2.2375,4.5056]
+    ( 4, 4) L= 8  dim= 125  wall=   0.57s  |lam|=[2.2448,4.4998]
+    ( 5, 3) L= 8  dim= 120  wall=   0.58s  |lam|=[2.2375,4.5056]
+    ( 6, 2) L= 8  dim= 105  wall=   0.41s  |lam|=[2.1884,4.5229]
+    ( 7, 1) L= 8  dim=  80  wall=   0.25s  |lam|=[2.1823,4.5515]
+    ( 8, 0) L= 8  dim=  45  wall=   0.08s  |lam|=[2.2984,4.5913]
+    ( 0, 9) L= 9  dim=  55  wall=   0.13s  |lam|=[2.5199,5.0277]
+    ( 1, 8) L= 9  dim=  99  wall=   0.38s  |lam|=[2.4043,4.9862]
+    ( 2, 7) L= 9  dim= 132  wall=   0.75s  |lam|=[2.4075,4.9548]
+    ( 3, 6) L= 9  dim= 154  wall=   1.01s  |lam|=[2.4575,4.9338]
+    ( 4, 5) L= 9  dim= 165  wall=   1.15s  |lam|=[2.4767,4.9233]
+    ( 5, 4) L= 9  dim= 165  wall=   1.15s  |lam|=[2.4767,4.9233]
+    ( 6, 3) L= 9  dim= 154  wall=   1.00s  |lam|=[2.4575,4.9338]
+    ( 7, 2) L= 9  dim= 132  wall=   0.74s  |lam|=[2.4075,4.9548]
+    ( 8, 1) L= 9  dim=  99  wall=   0.38s  |lam|=[2.4043,4.9862]
+    ( 9, 0) L= 9  dim=  55  wall=   0.14s  |lam|=[2.5199,5.0277]
+    ( 0,10) L=10  dim=  66  wall=   0.21s  |lam|=[2.7426,5.4643]
+    ( 1, 9) L=10  dim= 120  wall=   0.59s  |lam|=[2.6272,5.4213]
+    ( 2, 8) L=10  dim= 162  wall=   1.21s  |lam|=[2.6281,5.3876]
+    ( 3, 7) L=10  dim= 192  wall=   1.68s  |lam|=[2.6661,5.3635]
+    ( 4, 6) L=10  dim= 210  wall=   2.02s  |lam|=[2.7071,5.3489]
+    ( 5, 5) L=10  dim= 216  wall=   2.17s  |lam|=[2.7127,5.3441]
+    ( 6, 4) L=10  dim= 210  wall=   2.00s  |lam|=[2.7071,5.3489]
+    ( 7, 3) L=10  dim= 192  wall=   1.69s  |lam|=[2.6661,5.3635]
+    ( 8, 2) L=10  dim= 162  wall=   1.15s  |lam|=[2.6281,5.3876]
+    ( 9, 1) L=10  dim= 120  wall=   0.65s  |lam|=[2.6272,5.4213]
+    (10, 0) L=10  dim=  66  wall=   0.18s  |lam|=[2.7426,5.4643]
+  NEW sectors: 38; build wall: 25.9s
+  Saving L=10 cache -> s90_w8_spectrum_cache_L10_tau038.npz
+
+  After L=10 build: elapsed=25.9s, remaining=514.1s
+
+--- Build tau=0.38 spectrum at L_max=12 ---
+  (global budget remaining: 497.9s)
+  Building Jensen-deformed Dirac infrastructure ...
+    Built Jensen infrastructure in 0.00s
+    Inherited 66 sectors from seed cache
+    Building NEW sectors with p+q <= 12:
+    ( 0,11) L=11  dim=  78  wall=   0.25s  |lam|=[2.9661,5.9009]
+    ( 1,10) L=11  dim= 143  wall=   0.94s  |lam|=[2.8509,5.8567]
+    ( 2, 9) L=11  dim= 195  wall=   1.80s  |lam|=[2.8499,5.8211]
+    ( 3, 8) L=11  dim= 234  wall=   2.69s  |lam|=[2.8759,5.7943]
+    ( 4, 7) L=11  dim= 260  wall=   3.39s  |lam|=[2.9365,5.7763]
+    ( 5, 6) L=11  dim= 273  wall=   3.78s  |lam|=[2.9466,5.7673]
+    ( 6, 5) L=11  dim= 273  wall=   3.74s  |lam|=[2.9466,5.7673]
+    ( 7, 4) L=11  dim= 260  wall=   3.40s  |lam|=[2.9365,5.7763]
+    ( 8, 3) L=11  dim= 234  wall=   2.68s  |lam|=[2.8759,5.7943]
+    ( 9, 2) L=11  dim= 195  wall=   1.80s  |lam|=[2.8499,5.8211]
+    (10, 1) L=11  dim= 143  wall=   0.94s  |lam|=[2.8509,5.8567]
+    (11, 0) L=11  dim=  78  wall=   0.26s  |lam|=[2.9661,5.9009]
+    ( 0,12) L=12  dim=  91  wall=   0.36s  |lam|=[3.1903,6.3377]
+    ( 1,11) L=12  dim= 168  wall=   1.36s  |lam|=[3.0753,6.2924]
+    ( 2,10) L=12  dim= 231  wall=   2.82s  |lam|=[3.0726,6.2551]
+    ( 3, 9) L=12  dim= 280  wall=   4.20s  |lam|=[3.0884,6.2260]
+    ( 4, 8) L=12  dim= 315  wall=   5.47s  |lam|=[3.1534,6.2051]
+    ( 5, 7) L=12  dim= 336  wall=   6.33s  |lam|=[3.1789,6.1925]
+    ( 6, 6) L=12  dim= 343  wall=   6.57s  |lam|=[3.1835,6.1883]
+    ( 7, 5) L=12  dim= 336  wall=   6.26s  |lam|=[3.1789,6.1925]
+    ( 8, 4) L=12  dim= 315  wall=   5.43s  |lam|=[3.1534,6.2051]
+    ( 9, 3) L=12  dim= 280  wall=   4.20s  |lam|=[3.0884,6.2260]
+    (10, 2) L=12  dim= 231  wall=   2.77s  |lam|=[3.0726,6.2551]
+    (11, 1) L=12  dim= 168  wall=   1.33s  |lam|=[3.0753,6.2924]
+    (12, 0) L=12  dim=  91  wall=   0.37s  |lam|=[3.1903,6.3377]
+  NEW sectors: 25; build wall: 73.2s
+  Saving L=12 cache -> s90_w8_spectrum_cache_L12_tau038.npz
+
+  Achieved L_max at tau=0.38: 12
+
+--- Step 3: PV-subtracted Mellin moment at s=3 (M_PV2_frac=0.10) ---
+  tau=0.19, L_max=10: M_pv=7.723513e+04, bare=2.807432e+05, pv_shift=2.035081e+05, lam_max=4.6702, n_modes=78080
+  tau=0.19, L_max=12: M_pv=1.679870e+05, bare=6.087386e+05, pv_shift=4.407516e+05, lam_max=5.4189, n_modes=166896
+  tau=0.19, L_max=14: M_pv=3.273609e+05, bare=1.181035e+06, pv_shift=8.536744e+05, lam_max=6.1681, n_modes=321136
+  tau=0.38, L_max= 6: M_pv=1.181792e+04, bare=3.561945e+04, pv_shift=2.380154e+04, lam_max=3.7190, n_modes=11424
+  tau=0.38, L_max=10: M_pv=8.902406e+04, bare=2.619424e+05, pv_shift=1.729184e+05, lam_max=5.4643, n_modes=80080
+  tau=0.38, L_max=12: M_pv=1.907700e+05, bare=5.583283e+05, pv_shift=3.675583e+05, lam_max=6.3377, n_modes=168896
+
+--- Step 4: Normalization + tau=0.19 baseline cross-check ---
+  M_3^{zeta,PV}(0.19; L_max=14) anchor = 3.273609e+05
+  Normalization C = slope_A_FW_canonical / M_anchor = 3.092134e-05
+  slope_A_emp(0.19; L=14) = C * M_anchor = 10.122439
+  slope_A_FW_canonical    = 10.122439
+  Relative diff = 0.000e+00 (tol 1.0e-05)
+  Baseline PASS: True
+
+--- Step 5: R_emp = M_3^PV(0.38; L) / M_3^PV(0.19; L) at L in {10, 12} ---
+  L_max=10: R_emp = 8.902406e+04 / 7.723513e+04 = 1.152637
+  L_max=12: R_emp = 1.907700e+05 / 1.679870e+05 = 1.135623
+
+  Primary verdict L_max: 12; R_emp = 1.135623
+
+--- Step 6: L_max convergence cross-check ---
+  |R_emp(12) - R_emp(10)| = 0.017013
+  VALID if <0.020, MARGINAL <0.050, else BREAKDOWN; -> VALID
+
+--- Step 7: PV-stability scan over M_PV2_frac ---
+  M_PV2_frac=0.050: R_emp = 1.181217
+  M_PV2_frac=0.100: R_emp = 1.135623
+  M_PV2_frac=0.200: R_emp = 1.079899
+  Drift across M_PV2_frac scan: |max - min| / |R_emp@0.10| = 8.922e-02
+  PV-stability (<=0.5%): INFO
+
+--- Step 8: 3-tuple verdict classification ---
+  sign_verdict      = PASS
+  magnitude_verdict = INFO (INFO (between bands))
+  regime_verdict    = MARGINAL (PV-stability drift > 0.5% across M_PV2_frac scan)
+  reading_winner    = neither
+
+--- Step 9: Composite verdict (S87+ collapse rule) ---
+  COMPOSITE -> INFO
+
+--- Step 10: Reading adjudication ---
+  Distance to Reading-A pred (1.0124): 12.1719%
+  Distance to Reading-B pred (2.0000): 43.2188%
+  Nearest: Reading-A (12.1719%)
+
+--- Step 11: Saving artifacts ---
+  Saved NPZ -> computations\session-90\s90_w8_pv_subtracted_mellin_s3_extraction.npz
+  Plot -> computations\session-90\s90_w8_pv_subtracted_mellin_s3_extraction.png
+
+  audit_sha256   = 23b8e170c59f096c...
+  content_sha256 = 5c01de171a044c2e...
+
+  CANONICAL VERDICT LINE EMITTED:
+  S90-W5-5-RETRY-WITH-PV-SUBTRACTED-MELLIN-S3-EXTRACTION: INFO -- value='R_emp=1.135623;R_A_pred=1.012396;R_B_pred=2.000000;reading_winner=neither;band=INFO_(between_bands);primary_L_max=12;achieved_L_max_tau038=12;dist_to_A=12.1719%;dist_to_B=43.2188%;baseline_PASS=1;baseline_rel_diff=0.000e+00;lmax_convergence_status=VALID;pv_stability_drift_rel=8.922e-02;pv_stability_PASS=0;sign=PASS;mag=INFO;reg=MARGINAL;composite=INFO;hit_K_advance=0;M_PV2_frac=0.100;mellin_s=3' scheme=PV-subtracted-Mellin-s3 convention=substrate-distance-1-canonical L_max=12 audit_sha256=23b8e170c59f096cd86d3acdce7dd08c05e5a17e79459d1405907524d5c19fe9 content_sha256=5c01de171a044c2ee34c96178b0e78578107ae1ce0733627e12d03de559e2f69 schema_version=S87+
+
+  TOTAL ELAPSED: 99.3s
+==============================================================================
+  S90-W5-5-RETRY-WITH-PV-SUBTRACTED-MELLIN-S3-EXTRACTION: INFO
+  R_emp(L_max=12) = 1.135623
+  Reading winner: neither
+  Composite = INFO
+==============================================================================

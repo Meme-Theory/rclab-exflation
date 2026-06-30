@@ -1,0 +1,37 @@
+{
+  "gate": "S110-CF-VIIBS-VERIFY",
+  "registry_slot": "§VII.CD — BdG-Dressing K-Homology Rigidity (S69 W5-G)",
+  "stage": "Stage-2 cross-axis INDEPENDENT verify (joint-theorem-promotion.md)",
+  "axis": "Axis-B (superfluid-universe / substrate)",
+  "reviewer": "volovik-superfluid-universe-theorist",
+  "blind_protocol": "Read ONLY §VII.CD + inv12_w2_3 npz + own memory. Did NOT read inv-12 workshop/digest transcript or the Axis-A reviewer output. Verified from first principles via a DISJOINT anchor (own symbolic Nambu reconstruction + venv numerical monotonicity test), per feedback_stage2-axisB-disjoint-anchor.",
+  "clauses": {
+    "c": {
+      "name": "mass-order dressing-invariance",
+      "verdict": "PASS",
+      "reasoning": "Bogoliubov dressing maps single-particle |lambda_i| to E_i = sqrt(lambda_i^2 + Delta^2) (eigenvalues of the Nambu D_BdG = [[lam,Delta],[Delta,-lam]], independently rebuilt symbolically: eigs = +-sqrt(lam^2+Delta^2)). f(x)=sqrt(x^2+Delta^2) has d/dx = x/sqrt(x^2+Delta^2) > 0 for x>0, any Delta => STRICTLY MONOTONE => preserves the ORDINAL mass ordering. Verified order-preserved for Delta in {0,0.2,0.4642547,1,5,100} and degeneracy-preserved on a degenerate pair. The claim as written ('mass ORDERING') is ordinal and is exactly what monotonicity establishes; note that spacings compress (order-invariance, NOT spectrum-invariance) but the registry claims only ordering."
+    },
+    "d": {
+      "name": "c_s^2 = 0 dressing-invariance",
+      "verdict": "PASS",
+      "reasoning": "c_s^2=0 is a TOPOLOGICAL, scheme-independent zero from the D_K Kasparov-product factorization (m_Goldstone^4D = 0 exactly; canonical PROVEN, van-den-dungen-synthesis; Level-2 lab-IN image is the bound < 9.21e-4). The substrate-IS observable is the band-bottom group velocity of the GAPPED Bogoliubov branch: c_s^2 = (dE/dk)^2|_{k->0} -> 0 for ANY finite Delta (massive => zero sound speed), verified numerically. A bounded (rel-bound 0) dressing keeps the gap finite and leaves the K-homology class rigid, so the topological zero cannot be moved to nonzero. SCOPE: invariance is of the substrate-IS exact zero; the lab image is the Kasparov bound."
+    },
+    "e": {
+      "name": "w_a = 0 dressing-invariance",
+      "verdict": "PASS",
+      "reasoning": "The dark sector is CDM-by-construction: T^{0i}=0 algebraic (PROVEN, 5 independent proofs, atlas-07/S44) => pressureless => w=0 => w_a = dw/da = 0. V_BdG acts on the Nambu factor only and commutes with A_K ([V_BdG,a]=0, tensor-factor-disjoint, independently confirmed [a (x) 1, 1 (x) v]=0), so the bounded dressing cannot generate momentum flux T^{0i} or velocity dispersion v_fs; w stays 0 at all a => w_a=0 invariant. Class-protected, not moment-dependent."
+    },
+    "JOINT": {
+      "name": "physical-observable dressing-invariance AS A CONSEQUENCE of K-homology class invariance (Axis-A) AND substrate-physics reading (Axis-B)",
+      "verdict": "PASS",
+      "reasoning": "Axis-B side confirmed: all three observables (mass-order, c_s^2=0, w_a=0) are functions of the Kasparov / K-homology CLASS [D_K], NOT of the spectral-action MOMENTS a_n. c_s^2=0 is explicitly Kasparov-factorization-derived; w_a=0 is the algebraic T^{0i}=0 class property; mass-ordering is the monotone image of the spectrum whose ordinal structure is class-stable. The bounded BdG dressing (rel-bound 0, [V_BdG,a]=0, [D_K]=[D_K+V_BdG] exact) shifts a_n by a bounded ANALYTIC correction (soft) but leaves the CLASS rigid. Therefore the three class-determined observables are invariant AS A CONSEQUENCE of the bounded-perturbation/K-homology rigidity, NOT an accidental numerical coincidence. PASS-AND across both reviewers required; Axis-B passes."
+    }
+  },
+  "substrate_input": {
+    "disjoint_anchor": "Symbolically rebuilt the Nambu BdG operator D_BdG=[[lam,Delta],[Delta,-lam]] via Sage; verified S82 abelian-subfactor identity D_BdG^2 = (lam^2+Delta^2)*I_2 EXACT (residual 0); eigenvalues +-sqrt(lam^2+Delta^2). Did NOT transcribe registry value 0.4642547.",
+    "independent_numerics": "venv312 python: monotonicity of f(x)=sqrt(x^2+Delta^2) => mass-order preserved (all Delta); band-bottom group-velocity^2 -> 0 for gapped branch => c_s^2=0; tensor-factor-disjoint commutator [a(x)1,1(x)v]=0.",
+    "canonical_grounding": "c_s^2=0 topological scheme-independent (van-den-dungen-synthesis, Kasparov factorization, PROVEN); CDM T^{0i}=0 algebraic (atlas-07/Classification-of-phonon-exflation, S44, 5 independent proofs); Delta_BCS=0.4642547394830737 (S70, R-PROTECTED) confirms the gap is FINITE => dressing bounded => local boundedness a-fortiori.",
+    "substrate_input_orthogonality": "Axis-B consumed the canonical knowledge-MCP grounding (c_s^2 topological provenance, CDM T^{0i}=0) + own symbolic/numeric reconstruction. The npz boundedness witnesses are the shared Axis-A/Axis-B premise; the substrate-physics CONSEQUENCE chain (monotone mass-order, gapped-branch c_s^2=0, T^{0i}=0 => w_a=0) is Axis-B-specific and not loaded by Axis-A. substrate-input-overlap caveat: the npz is read by both reviewers; Axis-B's distinct content is the class-vs-moment substrate reading."
+  },
+  "overall_axisB_verdict": "PASS on all assigned clauses (c, d, e) AND JOINT (Axis-B side)."
+}

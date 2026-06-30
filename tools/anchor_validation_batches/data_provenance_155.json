@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 155,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1541",
+      "anchor_type": "data_provenance",
+      "name": "fnl_coherence",
+      "script_path": "session-78/s78_fnl_coherence.py",
+      "session": "s78",
+      "inputs": "",
+      "outputs": "session-78/s78_fnl_coherence.npz, session-78/s78_fnl_coherence.png",
+      "source_file": "computations/session-78/s78_fnl_coherence.py",
+      "source_context_30_lines": "  116:     n_Bog,\n  117:     # Cosmology\n  118:     planck_ns, A_s_CMB,\n  119:     # Fundamental\n  120:     M_KK, PI,\n  121: )\n  122: \n  123: SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))\n  124: OUT_NPZ = os.path.join(SCRIPT_DIR, 's78_fnl_coherence.npz')\n  125: OUT_PNG = os.path.join(SCRIPT_DIR, 's78_fnl_coherence.png')\n  126: \n  127: # Tag 4-tuple\n  128: SCHEME_TAG = 'f*'                                  # (local)\n  129: CONVENTION_TAG_fNL_S77 = 'Bogoliubov-sudden'       # (local) (5/6) Im[a b*^2]/|b|^4\n  130: CONVENTION_TAG_fNL_plan = 'Komatsu-Maldacena-2P2'  # (local) (5/6) B/(2P)^2\n  131: CONVENTION_TAG_Famp = 'POWER-RATIO'                # (local) per §0.1\n  132: L_MAX_TAG = 'L_max=10'                             # (local)"
+    },
+    {
+      "anchor_id": "prov_1542",
+      "anchor_type": "data_provenance",
+      "name": "josephson_leggett_mix",
+      "script_path": "session-78/s78_josephson_leggett_mix.py",
+      "session": "s78",
+      "inputs": "",
+      "outputs": "session-78/s78_josephson_leggett_mix.npz, session-78/s78_josephson_leggett_mix.png",
+      "source_file": "computations/session-78/s78_josephson_leggett_mix.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s78_josephson_leggett_mix.py -- Josephson-Leggett Mixing delta Omega_DM h^2 Correction\n    4: ========================================================================================\n    5: \n    6: Gate: S78-W3-D-JOSEPHSON-LEGGETT-MIX\n    7: Owner: volovik-superfluid-universe-theorist\n    8: Classification: PHONONIC\n    9: Scheme tag: f*\n   10: \n   11: Task (verbatim from scrubbed plan and shell lines 1236-1280):"
+    },
+    {
+      "anchor_id": "prov_1543",
+      "anchor_type": "data_provenance",
+      "name": "modulus_decay",
+      "script_path": "session-78/s78_modulus_decay.py",
+      "session": "s78",
+      "inputs": "",
+      "outputs": "session-78/s78_modulus_decay.npz, session-78/s78_modulus_decay.png",
+      "source_file": "computations/session-78/s78_modulus_decay.py",
+      "source_context_30_lines": "  386: print(f\"GATE VERDICT: S78-W3-O-MODULUS-DECAY = {verdict}\")\n  387: print(f\"  {verdict_reason}\")\n  388: print(\"=\" * 78)\n  389: \n  390: # ============================================================================\n  391: # SAVE DATA\n  392: # ============================================================================\n  393: out_npz = os.path.join(os.path.dirname(os.path.abspath(__file__)),\n  394:                        's78_modulus_decay.npz')\n  395: np.savez(\n  396:     out_npz,\n  397:     # Convention pins\n  398:     scheme_tag=\"f*\",\n  399:     convention_tag=\"SCHEME-INDEPENDENT-topological\",\n  400:     L_max_tag=10,\n  401:     # Instanton action\n  402:     tau_fold=float(tau_fold),"
+    },
+    {
+      "anchor_id": "prov_1544",
+      "anchor_type": "data_provenance",
+      "name": "mu_eff_96x96",
+      "script_path": "session-78/s78_mu_eff_96x96.py",
+      "session": "s78",
+      "inputs": "",
+      "outputs": "session-78/s78_mu_eff_96x96.npz, session-78/s78_mu_eff_96x96.png",
+      "source_file": "computations/session-78/s78_mu_eff_96x96.py",
+      "source_context_30_lines": "  630: print(f\"  VERDICT: {verdict}\")\n  631: print(f\"  REASON:  {reason}\")\n  632: \n  633: # ============================================================================\n  634: #  PHASE 7: Save data\n  635: # ============================================================================\n  636: \n  637: output_path = os.path.join(os.path.dirname(os.path.abspath(__file__)),\n  638:                            's78_mu_eff_96x96.npz')\n  639: \n  640: np.savez(output_path,\n  641:     # Gate info\n  642:     gate_name='S78-W2-A-MU-EFF-96X96',\n  643:     verdict=verdict,\n  644:     reason=reason,\n  645:     scheme_tag='f*',\n  646:     convention_tag='graph-Laplacian; POWER-RATIO-N/A',"
+    },
+    {
+      "anchor_id": "prov_1545",
+      "anchor_type": "data_provenance",
+      "name": "multi_band_econd",
+      "script_path": "session-78/s78_multi_band_econd.py",
+      "session": "s78",
+      "inputs": "",
+      "outputs": "session-78/s78_multi_band_econd.npz, session-78/s78_multi_band_econd.png",
+      "source_file": "computations/session-78/s78_multi_band_econd.py",
+      "source_context_30_lines": "   95:     # Leggett\n   96:     omega_L1, omega_L2,\n   97:     # M_KK scale\n   98:     M_KK_gravity, M_KK,\n   99:     # A_s normalization\n  100:     A_s_CMB,\n  101: )\n  102: \n  103: OUT_NPZ = os.path.join(SCRIPT_DIR, \"s78_multi_band_econd.npz\")\n  104: OUT_PNG = os.path.join(SCRIPT_DIR, \"s78_multi_band_econd.png\")\n  105: OUT_TXT = os.path.join(SCRIPT_DIR, \"s78_multi_band_econd_output.txt\")\n  106: \n  107: t_start = time.time()  # (local)\n  108: log_lines = []  # (local)\n  109: \n  110: \n  111: def log(msg=\"\"):"
+    },
+    {
+      "anchor_id": "prov_1546",
+      "anchor_type": "data_provenance",
+      "name": "norm_indep_verify",
+      "script_path": "session-78/s78_norm_indep_verify.py",
+      "session": "s78",
+      "inputs": "",
+      "outputs": "session-78/s78_norm_indep_verify.npz, session-78/s78_norm_indep_verify.png",
+      "source_file": "computations/session-78/s78_norm_indep_verify.py",
+      "source_context_30_lines": "  813:     # Additional verdict ingredients\n  814:     x_at_end = x_at_N_end\n  815:     N_pivot_agreement_pct = 100.0 * abs(N_pivot_C_val - N_pivot_scalar) / max(N_pivot_scalar, 1e-6)\n  816: \n  817:     # --------------------------------------------------------\n  818:     # Save artifacts\n  819:     # --------------------------------------------------------\n  820:     out_dir = os.path.dirname(os.path.abspath(__file__))\n  821:     npz_path = os.path.join(out_dir, \"s78_norm_indep_verify.npz\")\n  822:     np.savez(\n  823:         npz_path,\n  824:         # Identifying metadata\n  825:         gate_id=\"S78-W1-B-NORM-INDEP-VERIFY\",\n  826:         scheme_tag=\"SCHEME-INDEPENDENT\",\n  827:         convention_tag=\"POWER-RATIO\",\n  828:         L_max_tag=10,\n  829:         # Background"
+    },
+    {
+      "anchor_id": "prov_1547",
+      "anchor_type": "data_provenance",
+      "name": "pati_salam_further",
+      "script_path": "session-78/s78_pati_salam_further.py",
+      "session": "s78",
+      "inputs": "",
+      "outputs": "session-78/s78_pati_salam_further.npz, session-78/s78_pati_salam_further.png",
+      "source_file": "computations/session-78/s78_pati_salam_further.py",
+      "source_context_30_lines": "  350:     L2_arr = np.array([r[\"L2\"] for r in results])\n  351:     L3_arr = np.array([r[\"L3\"] for r in results])\n  352:     comm_rank_arr = np.array([r[\"commutant_rank\"] for r in results])\n  353:     mat_rank_arr = np.array([r[\"matrix_rank_DK\"] for r in results])\n  354:     kernel_arr = np.array([r[\"kernel_dim_DK\"] for r in results])\n  355:     min_abs_arr = np.array([r[\"min_abs_eval\"] for r in results])\n  356:     max_abs_arr = np.array([r[\"max_abs_eval\"] for r in results])\n  357: \n  358:     npz_path = os.path.join(OUT_DIR, \"s78_pati_salam_further.npz\")\n  359:     np.savez(\n  360:         npz_path,\n  361:         tau=tau_arr,\n  362:         tau_negative=np.array(TAU_NEGATIVE),\n  363:         tau_positive=np.array(TAU_POSITIVE),\n  364:         L1=L1_arr, L2=L2_arr, L3=L3_arr,\n  365:         commutant_rank=comm_rank_arr,\n  366:         matrix_rank_DK=mat_rank_arr,"
+    },
+    {
+      "anchor_id": "prov_1548",
+      "anchor_type": "data_provenance",
+      "name": "pbh_constraint",
+      "script_path": "session-78/s78_pbh_constraint.py",
+      "session": "s78",
+      "inputs": "computations/session-77/s77_transition_scale_pbh.npz, computations/session-78/s78_pre_fold_vacuum.npz, computations/sess...",
+      "outputs": "session-78/s78_pbh_constraint.npz, session-78/s78_pbh_constraint.png",
+      "source_file": "computations/session-78/s78_pbh_constraint.py",
+      "source_context_30_lines": "   36:     at k_pivot); scale dependence via W1-E CHK6 (S_IC(k_pivot)/S_IC(k_pivot/3)=5.25).\n   37: \n   38: Inputs:\n   39:   - computations/session-77/s77_transition_scale_pbh.npz (S77 reference)\n   40:   - computations/session-78/s78_pre_fold_vacuum.npz (W1-E S_IC)\n   41:   - computations/session-78/s78_backreaction_selfconsistent.npz (W1-C F_amp_sc bound)\n   42: \n   43: Outputs:\n   44:   - computations/session-78/s78_pbh_constraint.npz\n   45:   - computations/session-78/s78_pbh_constraint.png (4 panels)\n   46:   - Append TWO lines to s78_gate_verdicts.txt\n   47: \n   48: Cross-checks:\n   49:   CHK1: PBH mass function against Carr press template.\n   50:   CHK2: FIRAS mu-distortion integration over k in [1, 1e4] Mpc^-1; bound 9e-5.\n   51:   CHK3: P_zeta(k) x S_IC(k) as function of k; evaluate at MOST-CONSTRAINING k.\n   52:   CHK4: Scheme-invariant ratio P_zeta(k_trans) x S_IC(k_trans) / P_zeta(k_pivot)."
+    },
+    {
+      "anchor_id": "prov_1549",
+      "anchor_type": "data_provenance",
+      "name": "pre_fold_vacuum",
+      "script_path": "session-78/s78_pre_fold_vacuum.py",
+      "session": "s78",
+      "inputs": "",
+      "outputs": "session-78/s78_pre_fold_vacuum.npz, session-78/s78_pre_fold_vacuum.png",
+      "source_file": "computations/session-78/s78_pre_fold_vacuum.py",
+      "source_context_30_lines": "  101: from scipy.interpolate import interp1d\n  102: from scipy.special import airy\n  103: \n  104: import matplotlib\n  105: matplotlib.use('Agg')\n  106: import matplotlib.pyplot as plt\n  107: from matplotlib.gridspec import GridSpec\n  108: \n  109: OUT_NPZ = SCRIPT_DIR / \"s78_pre_fold_vacuum.npz\"\n  110: OUT_PNG = SCRIPT_DIR / \"s78_pre_fold_vacuum.png\"\n  111: OUT_LOG = SCRIPT_DIR / \"s78_pre_fold_vacuum_output.txt\"\n  112: \n  113: t_start = time.time()  # (local)\n  114: log_lines = []  # (local)\n  115: \n  116: def log(msg=\"\"):\n  117:     print(msg)"
+    },
+    {
+      "anchor_id": "prov_1550",
+      "anchor_type": "data_provenance",
+      "name": "r1_lmax_cross_groups",
+      "script_path": "session-78/s78_r1_lmax_cross_groups.py",
+      "session": "s78",
+      "inputs": "",
+      "outputs": "session-78/s78_r1_lmax_cross_groups.npz, session-78/s78_r1_lmax_cross_groups.png",
+      "source_file": "computations/session-78/s78_r1_lmax_cross_groups.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s78_r1_lmax_cross_groups.py -- W3-K: R_1 L_MAX CROSS-GROUPS\n    4: =============================================================\n    5: \n    6: Gate ID: S78-W3-K-R1-LMAX-CROSS-GROUPS\n    7: \n    8: Task\n    9: ----\n   10: Primary test: rank-scaling exponent of R_1 drift in SDW scheme.\n   11: Cross-check: same test in f* and zeta schemes."
+    }
+  ]
+}

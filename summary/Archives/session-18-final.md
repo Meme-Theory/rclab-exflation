@@ -87,7 +87,7 @@ s requires knowing D_F. Baptista counters that this is resolvable by computing D
 continuous function of s and tracking sgn(Pf(J * D_total(s))) — the same approach used for
 D_K eigenvalues (which also depend on s).
 
-**Practical path** (Baptista): Modify tier1_dirac_spectrum.py to return eigenvectors
+**Practical path** (Baptista): Modify dirac_spectrum.py to return eigenvectors
 (currently discarded). Compute Yukawa integrals using Peter-Weyl orthogonality. Assemble
 D_F(s) on C^32. Track Pfaffian sign. Estimated effort: 4-5 days. Probability of sign
 change: ~40%.
@@ -406,7 +406,7 @@ for the dynamics (1-loop CW) does not work. The search continues.
 Team: 2 agents (Baptista + Dirac). No coordinator needed.
 
 Deliverables:
-1. Eigenvector extraction from tier1_dirac_spectrum.py (modify collect_spectrum())
+1. Eigenvector extraction from dirac_spectrum.py (modify collect_spectrum())
 2. Yukawa integral computation using Peter-Weyl orthogonality
 3. D_F(s) assembly on C^32 for s in [0, 2.5]
 4. sgn(Pf(J * D_total(s))) phase diagram

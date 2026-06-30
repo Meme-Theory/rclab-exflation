@@ -1,0 +1,137 @@
+==============================================================================
+S63 TRANSIT-MODE-CASCADE-63: k=0 Unstable Mode Tracking Through Transit
+==============================================================================
+
+--- Section 1: Load input data ---
+Loaded S62 phonon dispersion: (32, 45) modes
+Target mode at k=0: omega = -2.521236 M_KK
+  Sector weights: A=0.3335, B=0.6665, C=0.0000
+SA Hessian: (36, 36), all evals negative (max = -15.0844)
+tau_values: 50 points, range [0.0000, 0.5000]
+E_J_arr: (50,), E_J(fold) = 7.041511
+
+--- Section 2: Transit trajectory ---
+Transit grid: 100 points
+  tau: [0.4000, 0.1900]
+  t:   [0.000000, 0.007911] M_KK^{-1}
+  dt_transit (canonical) = 0.001130 M_KK^{-1}
+  v_terminal = 26.5450 M_KK * tau/M_KK^-1
+
+--- Section 3: tau-dependent Hamiltonian reconstruction ---
+SA second derivative at fold: d^2S/dtau^2 = 5612175.34
+
+Reconstructing Hamiltonian at 100 transit points...
+  tau=0.4000: omega_0=-0.2374, A=0.1107, B=0.8893, ||V_AB||=1.9106
+  tau=0.3576: omega_0=-0.5161, A=0.1708, B=0.8292, ||V_AB||=2.4535
+  tau=0.3152: omega_0=-0.8585, A=0.2216, B=0.7783, ||V_AB||=3.0095
+  tau=0.2727: omega_0=-1.4119, A=0.2712, B=0.7287, ||V_AB||=3.7378
+  tau=0.2303: omega_0=-2.0026, A=0.3083, B=0.6916, ||V_AB||=4.4659
+
+--- Section 4: Energy transfer rate analysis ---
+
+Mode tracking results:
+  omega_0 range: [-2.5752, -0.1534] M_KK
+  weight_A range: [0.0932, 0.3358]
+  weight_B range: [0.6642, 0.9068]
+  weight_C range: [0.000004, 0.000011]
+
+Energy in sectors:
+  E_geom range: [0.4473, 1.5584] M_KK
+  E_BA range: [0.3180, 0.7127] M_KK
+  V_AB_norm range: [1.7679, 5.1586]
+
+Transfer rates:
+  dE_BA/dtau range: [-10.9152, 8.6377] M_KK/tau
+  dE_BA/dt range: [-229.2884, 289.7444] M_KK^2
+  V_AB matrix element range: [0.462129, 2.423142]
+  Fermi golden rule Gamma_AB: [18.8172, 517.3521] M_KK
+
+--- Section 5: Cumulative energy transfer ---
+
+Direct energy changes during transit:
+  delta_E_BA = 0.365274 M_KK
+  delta_E_geom = 1.026052 M_KK
+  E_transit_total = 60.62 M_KK
+  frac_BA of E_transit = 0.006025 = 0.6025%
+  frac_geom of E_transit = 0.016925 = 1.6925%
+
+Mode-0 sector decomposition:
+  omega_mode0 at start: -0.237400 M_KK
+  omega_mode0 at fold:  -2.575201 M_KK
+  weight_B(start) = 0.889336
+  weight_B(fold)  = 0.664180
+  weight_A(start) = 0.110660
+  weight_A(fold)  = 0.335811
+
+BA dominance (weight_B - weight_A):
+  Range: [0.328369, 0.813656]
+  Monotonic (within noise): True
+  Always positive: True
+
+--- Section 6: Cross-checks ---
+  Eigenvector norm: range [1.0000000000, 1.0000000000]
+    (Should be 1.0 to machine precision)
+  Sector weight sum: range [1.0000000000, 1.0000000000]
+  ||V_AB|| at fold (this computation): 5.158601
+  ||V_AB|| at fold (S62 value): 5.093156
+  Ratio: 1.0128
+  omega_mode0 at fold (this): -2.575201
+  omega_mode0 at fold (S62):  -2.521236
+  Ratio: 1.021404
+  Mode energy conservation: E_in_A + E_in_B + E_in_C:
+    Range: [-2.575201, -0.153428]
+    vs omega_mode0: [-2.575201, -0.153428]
+    Max residual: 1.78e-15
+  Cauchy-Schwarz ratio (matelem/bound): [0.8986, 0.9946]
+    (Must be <= 1.0)
+
+--- Section 7: Gate verdict ---
+
+Gate criteria evaluation:
+  1. BA weight > 50% throughout: True (min weight_B = 0.6642)
+  2. BA dominance always positive: True (min BA_dom = 0.3284)
+  3. V_AB doesn't collapse (>10% of max): True (min/max = 0.3427)
+  4. BA dominance monotonic: True
+  5. Sign changes in dE_B/dt: 0
+  6. Sign changes in d(BA_dom)/dtau: 0
+
+Conversion efficiency:
+  BA fraction at fold: 0.6642 = 66.4%
+  Mean BA fraction:    0.7616 = 76.2%
+  Energy in BA at fold: 1.7104 M_KK
+  Transfer rate: 1513.41 M_KK^2
+  Gamma_AB (Fermi GR) at fold: 517.3521 M_KK
+  Gamma_AB mean: 213.5904 M_KK
+
+============================================================
+Gate TRANSIT-MODE-CASCADE-63: PASS
+  Threshold: geometric->BA transfer monotonic AND >50%
+  Computed:  BA fraction = 66.4%, monotonic = True, V_AB active = True
+  Detail: BA sector receives 66.4% of hybrid mode energy (>50% threshold). Transfer monotonic (BA dominance positive throughout, 0 sign changes in gradient). Mode does NOT decouple: ||V_AB|| ranges [1.768, 5.159].
+============================================================
+
+--- Section 8: Transit mode cascade summary table ---
+     tau    omega_0     wt_A     wt_B     wt_C   |V_AB|    V_mat     E_BA      dE/dt
+  0.4000    -0.2374   0.1107   0.8893 0.000004   1.9106   0.5586   0.3475  -229.2884
+  0.3788    -0.4244   0.1513   0.8487 0.000006   2.2628   0.7870   0.4268    49.2820
+  0.3576    -0.5161   0.1708   0.8292 0.000009   2.4535   0.8985   0.4705    68.8495
+  0.3364    -0.6723   0.1970   0.8030 0.000011   2.7245   1.0617   0.5219    58.5531
+  0.3152    -0.8585   0.2216   0.7783 0.000011   3.0095   1.2305   0.5624    39.9851
+  0.2939    -1.1379   0.2489   0.7511 0.000010   3.3844   1.4470   0.5923    36.1455
+  0.2727    -1.4119   0.2712   0.7287 0.000010   3.7378   1.6471   0.6182    29.8108
+  0.2515    -1.7035   0.2910   0.7090 0.000009   4.1007   1.8489   0.6411    28.2159
+  0.2303    -2.0026   0.3083   0.6916 0.000009   4.4659   2.0491   0.6640    29.3542
+  0.2091    -2.3042   0.3236   0.6764 0.000009   4.8310   2.2470   0.6885    32.1224
+  0.1900    -2.5752   0.3358   0.6642 0.000009   5.1586   2.4231   0.7127    35.2738
+
+--- Section 9: Save results ---
+Saved to C:\sandbox\Ainulindale Exflation\tier0-computation\s63_transit_cascade.npz
+
+--- Section 10: Generate plot ---
+Saved plot to C:\sandbox\Ainulindale Exflation\tier0-computation\s63_transit_cascade.png
+
+Total runtime: 0.61 seconds
+
+==============================================================================
+DONE
+==============================================================================

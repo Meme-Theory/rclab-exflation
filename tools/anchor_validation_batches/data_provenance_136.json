@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 136,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1351",
+      "anchor_type": "data_provenance",
+      "name": "f_star_joint",
+      "script_path": "session-74/s74_f_star_joint.py",
+      "session": "s74",
+      "inputs": "s66_cutoff_ns.npz, s74_transfer_function.npz",
+      "outputs": "session-74/s74_f_star_joint.npz, session-74/s74_f_star_joint.png",
+      "source_file": "computations/session-74/s74_f_star_joint.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s74_f_star_joint.py -- F-STAR-JOINT-74 (Session 74 Wave 2)\n    4: ==========================================================\n    5: \n    6: Gate: F-STAR-JOINT-74\n    7:   PASS: chi^2/dof < 1 AND best-fit c_i has one dominant component > 0.9\n    8:   INFO: chi^2/dof in [1, 3] OR category-4 lock partial\n    9:   FAIL: chi^2/dof > 3\n   10: \n   11: Physics:"
+    },
+    {
+      "anchor_id": "prov_1352",
+      "anchor_type": "data_provenance",
+      "name": "flatness_from_a2",
+      "script_path": "session-74/s74_flatness_from_a2.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_flatness_from_a2.npz, session-74/s74_flatness_from_a2.png",
+      "source_file": "computations/session-74/s74_flatness_from_a2.py",
+      "source_context_30_lines": "  524:     f\"  {sum(all_checks)}/{len(all_checks)} checks pass\"\n  525: )\n  526: ax_d.text(0.02, 0.98, summary_text, transform=ax_d.transAxes,\n  527:           va='top', ha='left', family='monospace', fontsize=9,\n  528:           bbox=dict(boxstyle='round', facecolor='ivory', alpha=0.9))\n  529: \n  530: fig.suptitle('FLATNESS-FROM-A2-74 (S74 W1-H) — Spatial curvature from a$_2$ Seeley-DeWitt',\n  531:              fontsize=13, fontweight='bold')\n  532: fig.savefig('s74_flatness_from_a2.png', dpi=140, bbox_inches='tight')\n  533: plt.close(fig)\n  534: \n  535: print(\"  Plot: s74_flatness_from_a2.png\")\n  536: \n  537: # ------------------------------------------------------------------\n  538: # Save data\n  539: # ------------------------------------------------------------------\n  540: np.savez("
+    },
+    {
+      "anchor_id": "prov_1353",
+      "anchor_type": "data_provenance",
+      "name": "foundational_audit_75_spec",
+      "script_path": "session-74/s74_foundational_audit_75_spec.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_foundational_audit_75_spec.npz",
+      "source_file": "computations/session-74/s74_foundational_audit_75_spec.py",
+      "source_context_30_lines": "  207: \n  208: ### Protocol\n  209: \n  210: For each assumption F_i in {F1,..,F7}, do the following.\n  211: \n  212: STEP 1 -- Define the 1-DOF variation axis.\n  213: \n  214: Use the axis specification loaded from\n  215: `computations/session-74/s74_foundational_audit_75_spec.npz` key `variation_protocols`.\n  216: Each axis has a discrete or continuous alternative (or a scan over epsilon for\n  217: relaxations of block-diagonality). Document the axis precisely before running.\n  218: \n  219: STEP 2 -- For each alternative on the axis, compute the 22 permanent theorems in the\n  220: cheapest form that preserves the theorem statement. Minimum compute:\n  221: \n  222:   T01 (block-diag):          norm of off-(p,q)-block part of D_K under the alternative\n  223:   T02 (SA monotonicity):     sign of d a_{2k}/d tau under the alternative f* or metric"
+    },
+    {
+      "anchor_id": "prov_1354",
+      "anchor_type": "data_provenance",
+      "name": "framework_rescale",
+      "script_path": "session-74/s74_framework_rescale.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_framework_rescale.npz, session-74/s74_framework_rescale.png",
+      "source_file": "computations/session-74/s74_framework_rescale.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s74_framework_rescale.py -- N17-FRAMEWORK-RESCALE-74\n    4: Framework-Level L_max Convergence of sin^2(theta_W), m_H, CC Ratio\n    5: ====================================================================\n    6: \n    7: Gate: N17-FRAMEWORK-RESCALE-74 (W4-G, EVOI 7.35%, Level 2*)\n    8:   PASS  if max drift_{7->9} < 5% across all three observables\n    9:   INFO  if max drift_{7->9} in [5%, 15%)\n   10:   FAIL  if max drift_{7->9} >= 15%  (framework not converged)\n   11: "
+    },
+    {
+      "anchor_id": "prov_1355",
+      "anchor_type": "data_provenance",
+      "name": "friedmann_from_a2",
+      "script_path": "session-74/s74_friedmann_from_a2.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_friedmann_from_a2.npz, session-74/s74_friedmann_from_a2.png",
+      "source_file": "computations/session-74/s74_friedmann_from_a2.py",
+      "source_context_30_lines": "  465:         \"At Lambda=M_KK we get a different factor but same order of magnitude.\"\n  466:     ),\n  467: }\n  468: cross_checks.append(cc5)\n  469: \n  470: # ----------------------------------------------------------------------\n  471: # 9. Save data\n  472: # ----------------------------------------------------------------------\n  473: NPZ_PATH = THIS_DIR / \"s74_friedmann_from_a2.npz\"\n  474: \n  475: np.savez(\n  476:     NPZ_PATH,\n  477:     gate_name=\"FRIEDMANN-FROM-A2-74\",\n  478:     gate_verdict=gate_verdict,\n  479:     gate_detail=gate_detail,\n  480:     # Scan curve (diluted-to-today primary)\n  481:     f_conv_grid=f_conv_grid,"
+    },
+    {
+      "anchor_id": "prov_1356",
+      "anchor_type": "data_provenance",
+      "name": "gap_dominated_dispersion",
+      "script_path": "session-74/s74_gap_dominated_dispersion.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_gap_dominated_dispersion.npz",
+      "source_file": "computations/session-74/s74_gap_dominated_dispersion.py",
+      "source_context_30_lines": "   27: \n   28: Inputs:\n   29:   - canonical_constants.py (M_KK, c_fabric, omega_L1, omega_L2, ...)\n   30:   - s52_gl_josephson.npz  (dispersion m_gap and c_s per branch)\n   31:   - s59_epsilon_canonical.npz (canonical Leggett-1 with V_bare partition)\n   32:   - s64_sound_speed.npz (canonical c_L, c_BA, c_mod)\n   33: \n   34: Outputs:\n   35:   - s74_gap_dominated_dispersion.npz (m_gap, k_gap, l_gap per branch)\n   36: \"\"\"\n   37: \n   38: import numpy as np\n   39: import sys\n   40: import os\n   41: \n   42: sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))\n   43: from canonical_constants import ("
+    },
+    {
+      "anchor_id": "prov_1357",
+      "anchor_type": "data_provenance",
+      "name": "gge_bispectrum",
+      "script_path": "session-74/s74_gge_bispectrum.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_gge_bispectrum.npz, session-74/s74_gge_bispectrum.png",
+      "source_file": "computations/session-74/s74_gge_bispectrum.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s74_gge_bispectrum.py -- N13-GGE-BISPECTRUM-74\n    4: ================================================\n    5: \n    6: f_NL from the in-in formalism on the 8-mode GGE squeezed vacuum via the\n    7: cubic vertex H_3 of the spectral action.\n    8: \n    9: Gate: N13-GGE-BISPECTRUM-74\n   10:   PASS: f_NL^{equil} in [0.6, 1.1]\n   11:   INFO: f_NL^{equil} in [0.3, 1.5]"
+    },
+    {
+      "anchor_id": "prov_1358",
+      "anchor_type": "data_provenance",
+      "name": "gge_partition",
+      "script_path": "session-74/s74_gge_partition.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_gge_partition.npz, session-74/s74_gge_partition.png",
+      "source_file": "computations/session-74/s74_gge_partition.py",
+      "source_context_30_lines": "   49:     omega_L1, omega_L2,\n   50:     N_cells, T_acoustic,\n   51:     f_2_default,\n   52: )\n   53: \n   54: # ---------------------------------------------------------------------\n   55: # Paths and I/O\n   56: # ---------------------------------------------------------------------\n   57: SCRIPT_NAME = \"s74_gge_partition\"\n   58: OUT_NPZ = f\"computations/_shared/{SCRIPT_NAME}.npz\"\n   59: OUT_PNG = f\"computations/_shared/{SCRIPT_NAME}.png\"\n   60: \n   61: BOG_NPZ = \"computations/session-73/s73a_exit_horizon_bog.npz\"\n   62: FP_NPZ  = \"computations/session-73/s73a_fabry_perot_cavity.npz\"\n   63: \n   64: # ---------------------------------------------------------------------\n   65: # Load 8-mode Bogoliubov data (S73A W1-A)"
+    },
+    {
+      "anchor_id": "prov_1359",
+      "anchor_type": "data_provenance",
+      "name": "gs_overlap_cg24",
+      "script_path": "session-74/s74_gs_overlap_cg24.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_gs_overlap_cg24.npz, session-74/s74_gs_overlap_cg24.png",
+      "source_file": "computations/session-74/s74_gs_overlap_cg24.py",
+      "source_context_30_lines": "  595:           f\"F_B (Mott) = {F_B_var:.4f}, \"\n  596:           f\"F_C (DW) = {F_C_var:.4f}\")\n  597: \n  598: # -----------------------------------------------------------------------------\n  599: # SECTION 10 : Save data\n  600: # -----------------------------------------------------------------------------\n  601: print(\"\\n--- SECTION 10 : Save data ---\")\n  602: \n  603: output_npz = os.path.join(HERE, \"s74_gs_overlap_cg24.npz\")\n  604: np.savez(\n  605:     output_npz,\n  606:     # Gate\n  607:     gate_name=\"GS-OVERLAP-CG24-74\",\n  608:     gate_verdict=gate_verdict,\n  609:     gate_detail=gate_detail,\n  610:     gate_structural_note=gate_structural_note,\n  611:     # Graph"
+    },
+    {
+      "anchor_id": "prov_1360",
+      "anchor_type": "data_provenance",
+      "name": "hardening_rate_decay",
+      "script_path": "session-74/s74_hardening_rate_decay.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_hardening_rate_decay.npz",
+      "source_file": "computations/session-74/s74_hardening_rate_decay.py",
+      "source_context_30_lines": "  402:         dtype=object,\n  403:     )\n  404:     s74_candidates = np.array(\n  405:         [f\"{w}|L{ln}|{txt}\" for (w, ln, txt) in S74_CANDIDATE_THEOREMS],\n  406:         dtype=object,\n  407:     )\n  408: \n  409:     np.savez(\n  410:         \"s74_hardening_rate_decay.npz\",\n  411:         session_labels=labels,\n  412:         new_permanents_per_session=new_counts,\n  413:         cumulative_permanents=cumulative,\n  414:         notes=note,\n  415:         s74_permanent_theorem_inventory=s74_items,\n  416:         s74_candidate_theorem_inventory=s74_candidates,\n  417:         s74_n_permanent=np.array([n_s74_permanent]),\n  418:         s74_n_candidates=np.array([n_s74_candidates]),"
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 74,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_731",
+      "anchor_type": "data_provenance",
+      "name": "acoustic_metric",
+      "script_path": "session-58/s58_acoustic_metric.py",
+      "session": "s58",
+      "inputs": "",
+      "outputs": "session-58/s58_acoustic_metric.npz, session-58/s58_acoustic_metric.png",
+      "source_file": "computations/session-58/s58_acoustic_metric.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s58_acoustic_metric.py — ACOUSTIC-METRIC-58\n    4: Unruh acoustic metric construction on the phononic fabric.\n    5: \n    6: Physics\n    7: -------\n    8: Unruh (1981) showed that sound propagation in a moving fluid is governed by\n    9: an effective Lorentzian metric:\n   10: \n   11:     ds^2 = (rho/c_s)[ -(c_s^2 - v^2) dt^2 - 2v dt dx + dx^2 ]"
+    },
+    {
+      "anchor_id": "prov_732",
+      "anchor_type": "data_provenance",
+      "name": "andreev_phase",
+      "script_path": "session-58/s58_andreev_phase.py",
+      "session": "s58",
+      "inputs": "computations/session-56/s56_ba_spectrum.npz, computations/session-54/s54_ed_sweep.npz, computations/session-54/s54_tb_ha...",
+      "outputs": "session-58/s58_andreev_phase.npz, session-58/s58_andreev_phase.png",
+      "source_file": "computations/session-58/s58_andreev_phase.py",
+      "source_context_30_lines": "   11: Criterion: Any loop phase within 5% of pi?\n   12: \n   13: Input:\n   14:   - s56_ba_spectrum.npz: omega_BA(tau, mode), Delta (BCS gap)\n   15:   - s54_tb_hamiltonian.npz: adjacency matrix (32x32), bond counts\n   16:   - s54_ed_sweep.npz: fold_idx\n   17: \n   18: Output:\n   19:   - s58_andreev_phase.npz: all results\n   20:   - s58_andreev_phase.png: loop phase distribution + bond phase histogram\n   21: \n   22: Author: Berry Geometric Phase Theorist\n   23: Session: 58\n   24: \"\"\"\n   25: \n   26: import numpy as np\n   27: import matplotlib"
+    },
+    {
+      "anchor_id": "prov_733",
+      "anchor_type": "data_provenance",
+      "name": "anharmonic_leggett",
+      "script_path": "session-58/s58_anharmonic_leggett.py",
+      "session": "s58",
+      "inputs": "s54_tb_hamiltonian.npz, s56_leggett_fabric.npz, s57_leggett_partition.npz, s58_epsilon_direct.npz",
+      "outputs": "session-58/s58_anharmonic_leggett.npz",
+      "source_file": "computations/session-58/s58_anharmonic_leggett.py",
+      "source_context_30_lines": "  461: print(f\"  Gamma_total * dt = {ratio_total:.4e}\")\n  462: if gate_verdict == \"FAIL\":\n  463:     print(f\"  Safety: {safety_factor:.1e}x\")\n  464: \n  465: # ============================================================================\n  466: #  16. SAVE\n  467: # ============================================================================\n  468: \n  469: np.savez('s58_anharmonic_leggett.npz',\n  470:     gate_name=np.array(['ANHARMONIC-LEGGETT-58']),\n  471:     gate_verdict=np.array([gate_verdict]),\n  472:     gate_detail=np.array([\n  473:         f\"Gamma_total*dt={ratio_total:.2e}. \"\n  474:         f\"V3=0 exact. J_L={J_L_fold:.4e}. \"\n  475:         f\"V4_max={np.max(np.abs(V4_fold_arr)):.2e}. \"\n  476:         f\"Shift max {np.max(np.abs(frac_shift))*100:.1f}%. \"\n  477:         f\"phi_RMS(fold)={phi_RMS_bond_fold:.2f}. \""
+    },
+    {
+      "anchor_id": "prov_734",
+      "anchor_type": "data_provenance",
+      "name": "bkt_kubo",
+      "script_path": "session-58/s58_bkt_kubo.py",
+      "session": "s58",
+      "inputs": "",
+      "outputs": "session-58/s58_bkt_kubo.npz",
+      "source_file": "computations/session-58/s58_bkt_kubo.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s58_bkt_kubo.py — Superfluid Stiffness and BKT on CG(24) Finite Graph\n    4: ========================================================================\n    5: \n    6: Gate: BKT-KUBO-58 (INFO)\n    7: Method: Kubo formula for superfluid stiffness rho_s(T) on the 32-cell\n    8:         Josephson junction array defined by CG(24). Identifies T_BKT\n    9:         from the universal jump condition rho_s(T_BKT) = 2*T_BKT / pi.\n   10: \n   11: Physics:"
+    },
+    {
+      "anchor_id": "prov_735",
+      "anchor_type": "data_provenance",
+      "name": "cc_cancellation_sweep",
+      "script_path": "session-58/s58_cc_cancellation_sweep.py",
+      "session": "s58",
+      "inputs": "",
+      "outputs": "session-58/s58_cc_cancellation_sweep.npz, session-58/s58_cc_cancellation_sweep.png",
+      "source_file": "computations/session-58/s58_cc_cancellation_sweep.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s58_cc_cancellation_sweep.py — CC-CANCELLATION-SWEEP-58\n    4: =======================================================\n    5: \n    6: Extends S57 CC-SIGN-57 to 50 tau values. At each tau:\n    7:   1. Compute 8 positive Dirac eigenvalues from the (0,0) irrep of D_K(tau)\n    8:   2. Assign to branches: B1 (1 mode), B2 (4 modes), B3 (3 modes)\n    9:   3. Build full 256-state BCS Hamiltonian with DOS weights (S36/S43 approach)\n   10:   4. Diagonalize -> ground state -> GGE occupations <n_k>\n   11:   5. Find equilibrium at optimal T_eq(tau) via Boltzmann fit"
+    },
+    {
+      "anchor_id": "prov_736",
+      "anchor_type": "data_provenance",
+      "name": "ej_3d_landscape",
+      "script_path": "session-58/s58_ej_3d_landscape.py",
+      "session": "s58",
+      "inputs": "computations/session-54/s54_tb_hamiltonian.npz, computations/session-57/s57_off_jensen_ej.npz, computations/session-54/s...",
+      "outputs": "session-58/s58_ej_3d_landscape.npz, session-58/s58_ej_3d_landscape.png",
+      "source_file": "computations/session-58/s58_ej_3d_landscape.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s58_ej_3d_landscape.py — EJ-3D-LANDSCAPE-58: Full U(2)-Invariant E_J Surface\n    4: ==============================================================================\n    5: Gate: EJ-3D-LANDSCAPE-58 (INFO) — Does the saddle persist or is it lifted?\n    6: \n    7: Method:\n    8:   1. The U(2)-invariant metric on SU(3) has three parameters (lambda_1, lambda_2, lambda_3)\n    9:      on subspaces (u(1) [dim 1], su(2) [dim 3], C^2 [dim 4]).\n   10:      Paper 13 (Baptista) eq (5.4).\n   11: "
+    },
+    {
+      "anchor_id": "prov_737",
+      "anchor_type": "data_provenance",
+      "name": "epsilon_consistency",
+      "script_path": "session-58/s58_epsilon_consistency.py",
+      "session": "s58",
+      "inputs": "",
+      "outputs": "session-58/s58_epsilon_consistency.npz, session-58/s58_epsilon_consistency.png",
+      "source_file": "computations/session-58/s58_epsilon_consistency.py",
+      "source_context_30_lines": "  482: ax.set_xlabel(r'$\\tau$')\n  483: ax.set_ylabel('Bridge ratio')\n  484: ax.set_title(r'D: Bridge $8 E_c \\cdot \\rho_{B1}\\rho_{B2}/\\rho_{tot}^2$ vs $\\Delta_{harm}$')\n  485: ax.legend(fontsize=9)\n  486: ax.grid(True, alpha=0.3)\n  487: ax.set_xlim(0, 0.5)\n  488: \n  489: plt.tight_layout()\n  490: plot_path = os.path.join(SCRIPT_DIR, 's58_epsilon_consistency.png')\n  491: plt.savefig(plot_path, dpi=150, bbox_inches='tight')\n  492: print(f\"  Saved: {plot_path}\")\n  493: plt.close()\n  494: \n  495: # =============================================================================\n  496: # STEP 12: SAVE DATA\n  497: # =============================================================================\n  498: print(\"\\n--- STEP 12: Save data ---\")"
+    },
+    {
+      "anchor_id": "prov_738",
+      "anchor_type": "data_provenance",
+      "name": "epsilon_direct",
+      "script_path": "session-58/s58_epsilon_direct.py",
+      "session": "s58",
+      "inputs": "",
+      "outputs": "session-58/s58_epsilon_direct.npz",
+      "source_file": "computations/session-58/s58_epsilon_direct.py",
+      "source_context_30_lines": "   29:     This script computes epsilon from V_bare using THREE definitions:\n   30:     1. S48 formula: J_ab = V_band[a,b] * |Delta_a| * |Delta_b|,\n   31:        epsilon = J_23/Delta_B2\n   32:     2. Coupling ratio: epsilon_V = V_23^2 / (V_22 * V_33)\n   33:     3. ED anomalous density: J_ab = sum V_kk' * F_k * F_k',\n   34:        epsilon = J_23/Delta_B2\n   35: \n   36: GATE: EPSILON-DIRECT-58\n   37:     PASS: epsilon_direct in [0.001, 0.005]\n   38:     FAIL: epsilon_direct outside [0.0005, 0.010]\n   39: \n   40: Data inputs:\n   41:     - computations/session-54/s54_ed_sweep.npz (V_bare_cont, eigenvalues)\n   42:     - computations/session-36/s36_multisector_ed.npz (pair correlations from ED)\n   43:     - computations/session-48/s48_leggett_mode.npz (S48 J_23, Delta, rho)\n   44:     - computations/session-46/s46_qtheory_selfconsistent.npz (V_constrained)\n   45: \"\"\""
+    },
+    {
+      "anchor_id": "prov_739",
+      "anchor_type": "data_provenance",
+      "name": "free_streaming",
+      "script_path": "session-58/s58_free_streaming.py",
+      "session": "s58",
+      "inputs": "",
+      "outputs": "session-58/s58_free_streaming.npz",
+      "source_file": "computations/session-58/s58_free_streaming.py",
+      "source_context_30_lines": "  418: print(f\"  {gate_verdict}\")\n  419: print(f\"{'='*72}\")\n  420: print(f\"  {gate_detail}\")\n  421: \n  422: # ============================================================================\n  423: #  SAVE\n  424: # ============================================================================\n  425: \n  426: outpath = os.path.join(script_dir, 's58_free_streaming.npz')\n  427: np.savez(outpath,\n  428:     # Production parameters\n  429:     v_prod=v_prod,\n  430:     gamma_prod=gamma_prod,\n  431:     p_prod_over_m=p_prod_over_m,\n  432:     m_B2_fold_MKK=m_B2_fold_MKK,\n  433:     m_B2_fold_GeV=m_B2_fold_MKK * M_KK,\n  434: "
+    },
+    {
+      "anchor_id": "prov_740",
+      "anchor_type": "data_provenance",
+      "name": "friedmann_derivation",
+      "script_path": "session-58/s58_friedmann_derivation.py",
+      "session": "s58",
+      "inputs": "",
+      "outputs": "session-58/s58_friedmann_derivation.npz, session-58/s58_friedmann_derivation.png",
+      "source_file": "computations/session-58/s58_friedmann_derivation.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s58_friedmann_derivation.py — FRIEDMANN-DERIVATION-58\n    4: Derive the Friedmann equation from spectral action on the phononic fabric.\n    5: \n    6: Physics\n    7: -------\n    8: The Chamseddine-Connes spectral action on M^4 x F (F = internal SU(3))\n    9: gives, in the heat-kernel expansion:\n   10: \n   11:     S_spectral = Tr(f(D^2/Lambda^2))"
+    }
+  ]
+}

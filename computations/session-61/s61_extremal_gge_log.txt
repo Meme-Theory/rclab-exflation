@@ -1,0 +1,216 @@
+==============================================================================
+EXTREMAL-GGE-61: Quantum Stability of the Extremal GGE State
+==============================================================================
+
+STEP 1: Constructing 8-mode BCS Hamiltonian (256-dim Fock space)
+------------------------------------------------------------
+  N_modes = 8, dim = 256
+  eps = [-1.18413693e-16  1.77061960e-01  3.29405571e-01  5.22910373e-01
+  7.26154925e-01  1.00439566e+00  1.07857332e+00  1.17000260e+00]
+  g_eff = 0.275766
+  alpha_crit = 0.5227
+  alpha_total = 0.554717
+  Hermiticity: ||H - H^T||/||H|| = 9.30e-19
+  ||H_integrable|| = 43.5038
+  ||H_nonsep|| = 0.3916
+
+STEP 2: Sweep alpha, track d^2E_GS/d(alpha)^2
+------------------------------------------------------------
+  alpha sweep: [0.000, 1.000], N = 300
+  E_GS range: [-0.003845, -0.002233]
+  d^2E/d(alpha)^2 range: [-0.0018, -0.0009]
+  No sign change found in d^2E/d(alpha)^2 over [0.000, 1.000]
+  Using SP-6 alpha_crit = 0.5227
+
+STEP 3: ED at alpha_crit (extremal point)
+------------------------------------------------------------
+  E_GS(alpha_crit) = -0.0028511694 M_KK
+  E_1 = 0.0000000000 M_KK
+  Gap = 0.0028511694 M_KK
+  First 10 eigenvalues:
+    E_0 = -0.00285117
+    E_1 = 0.00000000
+    E_2 = 0.17310468
+    E_3 = 0.17623695
+    E_4 = 0.32680146
+    E_5 = 0.32943499
+    E_6 = 0.50243440
+    E_7 = 0.50537335
+    E_8 = 0.51872819
+    E_9 = 0.52157562
+
+  <N> = 1.000000
+  <n_k>:
+    n_0 (B2): 0.98847830
+    n_1 (B2): 0.00872490
+    n_2 (B2): 0.00076011
+    n_3 (B2): 0.00080779
+    n_4 (B1): 0.00114721
+    n_5 (B3): 0.00001750
+    n_6 (B3): 0.00003595
+    n_7 (B3): 0.00002825
+
+  GGE mode Lagrange multipliers:
+    lambda_0 (B2): -4.451935
+    lambda_1 (B2): +4.732812
+    lambda_2 (B2): +7.181289
+    lambda_3 (B2): +7.120406
+    lambda_4 (B1): +6.769278
+    lambda_5 (B3): +10.953261
+    lambda_6 (B3): +10.233349
+    lambda_7 (B3): +10.474419
+  |lambda_min| (mode) = 4.451935
+
+STEP 4: Susceptibilities (Lehmann representation)
+------------------------------------------------------------
+  Per-mode susceptibilities:
+    chi_0 (B2): 0.056299 M_KK^{-1}
+    chi_1 (B2): 0.048014 M_KK^{-1}
+    chi_2 (B2): 0.002298 M_KK^{-1}
+    chi_3 (B2): 0.001537 M_KK^{-1}
+    chi_4 (B1): 0.001580 M_KK^{-1}
+    chi_5 (B3): 0.000017 M_KK^{-1}
+    chi_6 (B3): 0.000033 M_KK^{-1}
+    chi_7 (B3): 0.000024 M_KK^{-1}
+  Max: chi_0 = 0.056299
+
+  Alpha susceptibility (Lehmann):
+    chi_alpha = 0.000900 M_KK^{-1}
+    Top 5 contributions:
+      n=13: contrib = 3.474396e-04 (dE = 0.733580)
+      n=5: contrib = 2.751586e-04 (dE = 0.332286)
+      n=3: contrib = 1.983552e-04 (dE = 0.179088)
+      n=19: contrib = 5.271284e-05 (dE = 1.004988)
+      n=9: contrib = 1.796014e-05 (dE = 0.524427)
+
+  Total number susceptibility:
+    chi_N = 6.480216e-33 M_KK^{-1} (expected ~0: [H, N] = 0)
+
+STEP 5: Number fluctuations at extremal point
+------------------------------------------------------------
+  <N> = 1.00000000
+  <(delta N)^2> = -4.440892e-16
+  (Expected ~0: H conserves N)
+
+  Per-mode fluctuations <(delta n_k)^2>:
+    k=0 (B2): 0.01138895
+    k=1 (B2): 0.00864877
+    k=2 (B2): 0.00075953
+    k=3 (B2): 0.00080713
+    k=4 (B1): 0.00114589
+    k=5 (B3): 0.00001750
+    k=6 (B3): 0.00003595
+    k=7 (B3): 0.00002825
+  Sum: 0.022832
+
+  Cross-mode correlation matrix C_kl = <n_k n_l> - <n_k><n_l>:
+  Off-diagonal |C_kl| max = 8.624370e-03
+  Trace(C) = 0.022832 (= sum of per-mode variances)
+
+STEP 6: Fine sweep near alpha_crit
+------------------------------------------------------------
+  Fine sweep: [0.4704, 0.5750], N = 80
+
+  At alpha_crit = 0.5227:
+    chi_alpha = 0.000900 M_KK^{-1}
+    chi_B2_0 = 0.056277 M_KK^{-1}
+    gap = 0.00285008 M_KK
+    d^2E/d(alpha)^2 = -0.001800
+    <(delta N)^2> = 2.220446e-16
+
+  chi_alpha * gap range: [0.000002, 0.000003]
+  chi_alpha * gap at alpha_crit: 0.000003
+  (Finite product = perturbative; diverging = critical)
+
+  Max chi_alpha = 0.0009 at alpha = 0.5750
+
+STEP 7: GGE free energy Hessian at extremal point
+------------------------------------------------------------
+  GGE Hessian eigenvalues:
+    h_0 = -0.0000000000
+    h_1 = 0.0000191939
+    h_2 = 0.0000308518
+    h_3 = 0.0000474607
+    h_4 = 0.0007813857
+    h_5 = 0.0009710410
+    h_6 = 0.0021509395
+    h_7 = 0.0188310970
+
+  min eigenvalue = -0.0000000000
+  max eigenvalue = 0.0188310970
+  det(Hessian) = -5.1314e-41
+  condition number = inf
+  Signature: (7+, 10, 0-)
+  Status: POSITIVE SEMIDEFINITE (1 zero modes = flat directions)
+
+STEP 8: Third law of GGE thermodynamics
+------------------------------------------------------------
+  Fit: |d^2E/d(alpha)^2| ~ |alpha_crit - alpha|^nu
+  nu = -0.0000
+  Full sweep fit: nu = -0.0001
+
+  Third law verdict: NO third law (nu = -0.00 < 0.5, rapid approach to extremality)
+
+  BCS gap protection:
+    Gap at alpha_crit = 2.851169e-03 M_KK
+    Gap / E_GS = 1.0000
+    Even without a third law, the gap PROTECTS the extremal state.
+    Compare: extremal Kerr has ZERO gap (gapless AdS_2 throat).
+
+STEP 9: Extremal Kerr comparison table
+------------------------------------------------------------
+
+  Quantity                 | Extremal Kerr       | Extremal GGE
+  -------------------------+---------------------+-----------------------
+  Surface gravity kappa    | 0 (exact)           | lambda_alpha = 0
+  Hawking temperature T_H  | 0 (kappa/2pi)       | T_SR = 0
+  Entropy S                | 2*pi*M^2 > 0        | S_GGE = 2.455 nats > 0
+  BPS saturation           | M^2 = a^2 + Q^2     | Omega = 0 (exact)
+  Excitation gap           | 0 (AdS_2 gapless)   | 0.002851 M_KK (GAPPED)
+  chi_alpha (susceptibility)| DIVERGENT (AdS_2)   | 0.0009 (FINITE)
+  <(delta N)^2>            | O(S_BH) ~ M^2       | 2.22e-16 (VANISHING)
+  Third law                | Strong (Israel 1986) | nu = -0.00
+  Hessian signature        | (n-1, 0, 1)         | (7+, 10, 0-)
+  -------------------------+---------------------+-----------------------
+
+  KEY PHYSICAL DIFFERENCE:
+  Extremal Kerr has a gapless AdS_2 x S^2 near-horizon geometry, leading to
+  divergent low-energy density of states and infrared instabilities (AdS_2
+  fragmentation, Aretakis instability). The extremal GGE is GAPPED by the
+  BCS pairing interaction. This gap acts as an infrared cutoff that regularizes
+  all susceptibilities and makes the extremal state quantum-mechanically stable.
+
+==============================================================================
+STEP 10: GATE VERDICT -- EXTREMAL-GGE-61
+==============================================================================
+
+  PRIMARY DIAGNOSTICS:
+    chi_alpha = 0.000900 M_KK^{-1} (response to alpha perturbation)
+    chi_k (max) = 0.056299 M_KK^{-1} (mode susceptibility)
+    gap = 0.00285117 M_KK
+    <(delta N)^2> = 2.22e-16 (total)
+    max <(delta n_k)^2> = 0.011389 (per-mode)
+    Hessian: (7+, 10, 0-)
+
+  VERDICT: PASS
+  chi_alpha = 0.0009 (FINITE), gap = 0.002851 M_KK (GAPPED), max <(delta n_k)^2> = 0.011389 (SMALL). Extremal GGE is QUANTUM MECHANICALLY STABLE. No phase transition at lambda_alpha = 0. BCS gap protects against AdS_2-type instabilities. Hessian: (7+,10,0-). Third law: NO third law (nu = -0.00 < 0.5, rapid approach to extremality)
+
+  PHONONIC INTERPRETATION:
+  The extremal GGE is the post-superradiance endpoint of the BCS system.
+  Unlike extremal Kerr (gapless throat, infrared divergences), the BCS
+  pairing gap Delta = 0.002851 M_KK provides an infrared cutoff.
+  The phononic excitations above the gap are the analog of 'Hawking quanta'
+  that would be emitted if the temperature were nonzero.
+  At the extremal point: T_SR = 0, no radiation, stable endpoint.
+  The gap is a PHONONIC property of the M^4 x SU(3) substrate --
+  it arises from Cooper pairing in the internal space.
+
+==============================================================================
+STEP 11: Saving output
+==============================================================================
+  Data saved to computations/session-61/s61_extremal_gge.npz
+  Plot saved to computations/session-61/s61_extremal_gge.png
+
+==============================================================================
+COMPLETE
+==============================================================================

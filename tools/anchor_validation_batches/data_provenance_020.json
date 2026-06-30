@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 20,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_191",
+      "anchor_type": "data_provenance",
+      "name": "k7_dphys",
+      "script_path": "session-35/s35_k7_dphys.py",
+      "session": "s35",
+      "inputs": "",
+      "outputs": "session-35/s35_k7_dphys.npz, session-35/s35_k7_dphys.png",
+      "source_file": "computations/session-35/s35_k7_dphys.py",
+      "source_context_30_lines": "  566:     'gen_ratios': np.array([gen_results.get(name, {}).get('ratio', 0.0) for name, _ in af_gens]),\n  567:     'gen_broken': np.array([gen_results.get(name, {}).get('broken', False) for name, _ in af_gens]),\n  568: }\n  569: if theta is not None:\n  570:     save_dict['mixing_angle_rad'] = theta\n  571:     save_dict['mixing_angle_deg'] = np.degrees(theta)\n  572:     save_dict['sin2_theta'] = np.sin(theta)**2\n  573: \n  574: OUT_NPZ = os.path.join(SCRIPT_DIR, 's35_k7_dphys.npz')\n  575: np.savez_compressed(OUT_NPZ, **save_dict)\n  576: print(f\"\\n  Data saved: {OUT_NPZ}\")\n  577: \n  578: # ======================================================================\n  579: #  PLOT\n  580: # ======================================================================\n  581: \n  582: fig, axes = plt.subplots(2, 2, figsize=(14, 10))"
+    },
+    {
+      "anchor_id": "prov_192",
+      "anchor_type": "data_provenance",
+      "name": "k7_thouless",
+      "script_path": "session-35/s35_k7_thouless.py",
+      "session": "s35",
+      "inputs": "",
+      "outputs": "session-35/s35_k7_thouless.npz, session-35/s35_k7_thouless.png",
+      "source_file": "computations/session-35/s35_k7_thouless.py",
+      "source_context_30_lines": "  720:         'cross_max_tau_gt0': cross_max_tau_gt0,\n  721:         'block_diagonal_exact': cross_max_tau_gt0 < 1e-14,\n  722:         'q7_conserved_through_fold': q7_conserved,\n  723:         'verdict': verdict,\n  724:         'best_wall': best_wall,\n  725:         'ms_factor': ms_factor,\n  726:     }\n  727: \n  728:     out_npz = os.path.join(SCRIPT_DIR, 's35_k7_thouless.npz')\n  729:     np.savez_compressed(out_npz, **save_dict)\n  730:     print(f\"\\nSaved: {out_npz}\")\n  731:     print(f\"File size: {os.path.getsize(out_npz) / 1024:.1f} KB\")\n  732: \n  733:     # ==================================================================\n  734:     # PLOT\n  735:     # ==================================================================\n  736:     fig, axes = plt.subplots(2, 2, figsize=(14, 10))"
+    },
+    {
+      "anchor_id": "prov_193",
+      "anchor_type": "data_provenance",
+      "name": "optical_theorem",
+      "script_path": "session-35/s35_optical_theorem.py",
+      "session": "s35",
+      "inputs": "",
+      "outputs": "session-35/s35_optical_theorem.npz",
+      "source_file": "computations/session-35/s35_optical_theorem.py",
+      "source_context_30_lines": "  113:     if label:\n  114:         print(f\"\\n  {label}:\")\n  115:         print(f\"    max|Im(T) - T*Im(G0)*T^dag| = {diff:.6e}\")\n  116:         print(f\"    relative error = {rel_err:.6e}\")\n  117: \n  118:     return rel_err, diff\n  119: \n  120: \n  121: def check_diagonal_optical_theorem(T, rho, label=\"\"):\n  122:     \"\"\"\n  123:     Check: Im(T_ii) = pi * sum_j |T_ij|^2 * rho_j\n  124: \n  125:     Note: Im(G0) is NEGATIVE (eta > 0), so Im(T_ii) < 0.\n  126:     The standard form with positive rho is:\n  127:       -Im(T_ii) = pi * sum_j |T_ij|^2 * rho_j\n  128: \n  129:     Using self-consistent rho_j = -Im(G0_jj)/pi, this is automatic."
+    },
+    {
+      "anchor_id": "prov_194",
+      "anchor_type": "data_provenance",
+      "name": "pmns_corrected",
+      "script_path": "session-35/s35_pmns_corrected.py",
+      "session": "s35",
+      "inputs": "",
+      "outputs": "session-35/s35_pmns_corrected.npz, session-35/s35_pmns_corrected.png",
+      "source_file": "computations/session-35/s35_pmns_corrected.py",
+      "source_context_30_lines": "   39: \n   40: # ============================================================\n   41: # Configuration\n   42: # ============================================================\n   43: DATA_DIR = Path(r\"C:\\sandbox\\Ainulindale Exflation\\computations\")\n   44: SINGLET_FILE = DATA_DIR / \"s23a_kosmann_singlet.npz\"\n   45: DPHYS_FILE = DATA_DIR / \"s34a_dphys_kosmann.npz\"\n   46: OLD_PMNS_FILE = DATA_DIR / \"s33w3_wall_pmns.npz\"\n   47: OUTPUT_NPZ = DATA_DIR / \"s35_pmns_corrected.npz\"\n   48: OUTPUT_PNG = DATA_DIR / \"s35_pmns_corrected.png\"\n   49: \n   50: # Session 34 corrected spinor V (at phi=gap=0.13, tau=0.20)\n   51: V_B1B2_SPINOR = 0.076994  # from s34a_dphys_kosmann.npz at phi=0.13\n   52: V_B2B3_SPINOR = 0.021959  # from s34a_dphys_kosmann.npz at phi=0.13\n   53: V_B2B2_SPINOR = 0.085940  # from s34a_dphys_kosmann.npz at phi=0.13\n   54: \n   55: # Van Hove smooth-wall DOS"
+    },
+    {
+      "anchor_id": "prov_195",
+      "anchor_type": "data_provenance",
+      "name": "poschl_teller",
+      "script_path": "session-35/s35_poschl_teller.py",
+      "session": "s35",
+      "inputs": "C:/sandbox/Ainulindale Exflation/computations/session-23/s23a_kosmann_singlet.npz, C:/sandbox/Ainulindale Exflation/comp...",
+      "outputs": "session-35/s35_poschl_teller.npz, session-35/s35_poschl_teller.png",
+      "source_file": "computations/session-35/s35_poschl_teller.py",
+      "source_context_30_lines": "  965:     best = min(R21_values, key=lambda x: x[3])\n  966:     summary_text += f\"Best: R_21={best[2]:.4f} ({best[3]*100:.1f}%)\"\n  967: \n  968: ax.text(0.05, 0.95, summary_text, transform=ax.transAxes, fontsize=9,\n  969:         verticalalignment='top', fontfamily='monospace')\n  970: ax.set_title('Gate Evaluation')\n  971: \n  972: plt.tight_layout()\n  973: plt.savefig('C:/sandbox/Ainulindale Exflation/computations/session-35/s35_poschl_teller.png', dpi=150)\n  974: print(\"\\nFigure saved to computations/session-35/s35_poschl_teller.png\")\n  975: \n  976: \n  977: # ===========================================================================\n  978: # 14. SAVE RESULTS\n  979: # ===========================================================================\n  980: \n  981: # Prepare data for saving"
+    },
+    {
+      "anchor_id": "prov_196",
+      "anchor_type": "data_provenance",
+      "name": "rg_bcs_flow",
+      "script_path": "session-35/s35_rg_bcs_flow.py",
+      "session": "s35",
+      "inputs": "computations/session-35/s35a_vh_impedance_arbiter.npz, computations/session-34/s34a_tesla_validation.npz, computations/s...",
+      "outputs": "session-35/s35_rg_bcs_flow.npz, session-35/s35_rg_bcs_flow.png",
+      "source_file": "computations/session-35/s35_rg_bcs_flow.py",
+      "source_context_30_lines": "  525: # ============================================================\n  526: \n  527: # One-loop flow curves for plotting\n  528: mu_1loop = np.geomspace(mu_star_phi0 * 1.001, W_B2, 1000)\n  529: g_1loop_phi0_curve = g_oneloop(mu_1loop, g_bare_phi0, W_B2)\n  530: g_1loop_gap_curve = g_oneloop(mu_1loop, g_bare_gap, W_B2)\n  531: \n  532: # Save\n  533: np.savez('computations/session-35/s35_rg_bcs_flow.npz',\n  534:     # Physical parameters\n  535:     V_bare=V_bare,\n  536:     V_gap=V_gap,\n  537:     rho_smooth=rho_smooth,\n  538:     W_B2=W_B2,\n  539: \n  540:     # Bare couplings\n  541:     g_bare_phi0=g_bare_phi0,"
+    },
+    {
+      "anchor_id": "prov_197",
+      "anchor_type": "data_provenance",
+      "name": "sector_10_spectrum",
+      "script_path": "session-35/s35_sector_10_spectrum.py",
+      "session": "s35",
+      "inputs": "",
+      "outputs": "session-35/s35_sector_10_spectrum.npz, session-35/s35_sector_10_spectrum.png",
+      "source_file": "computations/session-35/s35_sector_10_spectrum.py",
+      "source_context_30_lines": "  596:         save_data['fold_deg'] = np.array([fold_deg])\n  597:         save_data['total_new_modes'] = np.array([total_new_modes])\n  598:     elif b2_analog_10:\n  599:         save_data['nearest_fold_tau'] = np.array([b2_analog_10[0]['tau_min']])\n  600:         save_data['nearest_fold_lambda'] = np.array([b2_analog_10[0]['lambda_min']])\n  601: \n  602:     save_data['V_offdiag_max_at_fold'] = np.array([V_offdiag_max])\n  603: \n  604:     output_path = os.path.join(SCRIPT_DIR, \"s35_sector_10_spectrum.npz\")\n  605:     np.savez_compressed(output_path, **save_data)\n  606:     print(f\"Data saved: {output_path}\")\n  607: \n  608:     # ═══════════════════════════════════════════════════════════════\n  609:     # PLOT\n  610:     # ═══════════════════════════════════════════════════════════════\n  611:     fig, axes = plt.subplots(2, 3, figsize=(18, 10))\n  612: "
+    },
+    {
+      "anchor_id": "prov_198",
+      "anchor_type": "data_provenance",
+      "name": "specificity_su2su2",
+      "script_path": "session-35/s35_specificity_su2su2.py",
+      "session": "s35",
+      "inputs": "computations/session-33/s33a_strutinsky.npz",
+      "outputs": "session-35/s35_specificity_su2su2.npz, session-35/s35_specificity_su2su2.png",
+      "source_file": "computations/session-35/s35_specificity_su2su2.py",
+      "source_context_30_lines": "  626: ax.legend()\n  627: ax.grid(True, alpha=0.3, axis='y')\n  628: \n  629: plt.suptitle(f'SPEC-35: Specificity Test SU(2)xSU(2) vs SU(3)\\n'\n  630:              f'd^2S(SU2xSU2)={d2S_su2xu2:.2f} vs d^2S(SU3)={d2S_su3:.2f}, '\n  631:              f'ratio={d2S_su2xu2/d2S_su3:.3f}',\n  632:              fontsize=13, fontweight='bold')\n  633: plt.tight_layout()\n  634: plt.savefig('computations/session-35/s35_specificity_su2su2.png', dpi=150, bbox_inches='tight')\n  635: print(\"\\nPlot saved: computations/session-35/s35_specificity_su2su2.png\")\n  636: \n  637: \n  638: # ---------------------------------------------------------------\n  639: # Part 12: Save Data\n  640: # ---------------------------------------------------------------\n  641: \n  642: np.savez('computations/session-35/s35_specificity_su2su2.npz',"
+    },
+    {
+      "anchor_id": "prov_199",
+      "anchor_type": "data_provenance",
+      "name": "spectral_entropy",
+      "script_path": "session-35/s35_spectral_entropy.py",
+      "session": "s35",
+      "inputs": "",
+      "outputs": "session-35/s35_spectral_entropy.npz, session-35/s35_spectral_entropy.png",
+      "source_file": "computations/session-35/s35_spectral_entropy.py",
+      "source_context_30_lines": "   57: def fermi_dirac(beta, lam):\n   58:     \"\"\"Fermi-Dirac occupation n_k = 1/(exp(beta*|lam|) + 1).\"\"\"\n   59:     # Use |lambda| so all n_k <= 0.5\n   60:     x = beta * np.abs(lam)\n   61:     # For numerical stability at large x: n = exp(-x)/(1+exp(-x))\n   62:     n = np.where(x < 500, 1.0 / (np.exp(x) + 1.0), np.exp(-x))\n   63:     return n\n   64: \n   65: def spectral_entropy(beta, eigenvalues):\n   66:     \"\"\"\n   67:     Compute S_vN = -sum_k [n_k ln(n_k) + (1-n_k) ln(1-n_k)]\n   68:     where n_k = 1/(exp(beta*|lambda_k|)+1).\n   69: \n   70:     Note on PH symmetry and signed eigenvalues:\n   71:     For a PH-symmetric spectrum {lambda_k, -lambda_k}, using signed eigenvalues\n   72:     gives n(lambda) = 1/(e^{beta*lambda}+1) and n(-lambda) = e^{beta*lambda}/(e^{beta*lambda}+1).\n   73:     The binary entropy h(n) = h(1-n), so the contribution from (+lambda, -lambda)"
+    },
+    {
+      "anchor_id": "prov_200",
+      "anchor_type": "data_provenance",
+      "name": "thouless_multiband",
+      "script_path": "session-35/s35_thouless_multiband.py",
+      "session": "s35",
+      "inputs": "",
+      "outputs": "session-35/s35_thouless_multiband.npz, session-35/s35_thouless_multiband.png",
+      "source_file": "computations/session-35/s35_thouless_multiband.py",
+      "source_context_30_lines": "  842:         'B2_weight': B2_weight,\n  843:         'B3_weight': B3_weight,\n  844: \n  845:         # Gate\n  846:         'gate_verdict': gate_verdict,\n  847:         'M_gate': M_gate,\n  848:     }\n  849: \n  850:     out_npz = os.path.join(SCRIPT_DIR, 's35_thouless_multiband.npz')\n  851:     np.savez_compressed(out_npz, **save_dict)\n  852:     print(f\"\\nSaved: {out_npz}\")\n  853:     print(f\"Size: {os.path.getsize(out_npz) / 1024:.1f} KB\")\n  854: \n  855:     # ================================================================\n  856:     # PLOT\n  857:     # ================================================================\n  858:     fig, axes = plt.subplots(2, 2, figsize=(14, 10))"
+    }
+  ]
+}

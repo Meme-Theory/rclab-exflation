@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 81,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_801",
+      "anchor_type": "data_provenance",
+      "name": "timescape_wa_extract",
+      "script_path": "session-59/s59_timescape_wa_extract.py",
+      "session": "s59",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-59/s59_timescape_wa_extract.py",
+      "source_context_30_lines": "<name 'timescape_wa_extract' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"Extract all key results from s59_timescape_wa.npz to text file.\"\"\"\n    3: import os, sys\n    4: import numpy as np\n    5: \n    6: BASEDIR = os.path.dirname(os.path.abspath(__file__))\n    7: npz = np.load(os.path.join(BASEDIR, \"s59_timescape_wa.npz\"), allow_pickle=True)\n    8: \n    9: out = os.path.join(BASEDIR, \"s59_timescape_wa_results.txt\")\n   10: with open(out, \"w\") as f:\n   11:     f.write(\"=== TIMESCAPE-WA-59: All NPZ Results ===\\n\\n\")\n   12:     for key in sorted(npz.files):\n   13:         val = npz[key]\n   14:         f.write(f\"{key}: {val}\\n\")\n   15:     f.write(\"\\n=== Key Results for W4H-1 ===\\n\\n\")\n   16: \n   17:     # Gate\n   18:     f.write(f\"gate_name: {npz['gate_name']}\\n\")\n   19:     f.write(f\"gate_verdict: {npz['gate_verdict']}\\n\")\n   20:     f.write(f\"gate_detail: {npz['gate_detail']}\\n\\n\")\n   21: \n   22:     # Core numbers\n   23:     f.write(f\"delta_tau_eff: {float(npz['delta_tau_eff']):.6f}\\n\")\n   24:     f.write(f\"sigma_tau: {float(npz['sigma_tau']):.6f}\\n\")\n   25:     f.write(f\"delta_tau_KZ: {float(npz['delta_tau_KZ']):.6f}\\n\")\n   26:     f.write(f\"delta_tau_per_delta_route1: {float(npz['delta_tau_per_delta_route1']):.3e}\\n\")\n   27:     f.write(f\"delta_G_over_G: {float(npz['delta_G_over_G']):.6e}\\n\")\n   28:     f.write(f\"delta_N_over_N: {float(npz['delta_N_over_N']):.6e}\\n\")\n   29:     f.write(f\"corr_factor: {float(npz['corr_factor']):.6e}\\n\\n\")\n   30: "
+    },
+    {
+      "anchor_id": "prov_802",
+      "anchor_type": "data_provenance",
+      "name": "u1_7_gauge_global",
+      "script_path": "session-59/s59_u1_7_gauge_global.py",
+      "session": "s59",
+      "inputs": "",
+      "outputs": "session-59/s59_u1_7_gauge_global.npz, session-59/s59_u1_7_gauge_global.png",
+      "source_file": "computations/session-59/s59_u1_7_gauge_global.py",
+      "source_context_30_lines": "  478: \n  479: # ============================================================================\n  480: #  SECTION 9: Save Results\n  481: # ============================================================================\n  482: print(\"\\n\" + \"=\" * 72)\n  483: print(\"  SECTION 9: Save Results\")\n  484: print(\"=\" * 72)\n  485: \n  486: save_path = os.path.join(DATA_DIR, 's59_u1_7_gauge_global.npz')\n  487: np.savez(save_path,\n  488:     # Classification\n  489:     symmetry_type=np.array([symmetry_type]),\n  490:     proofs_passed=np.array(proofs_passed),\n  491: \n  492:     # Commutator verification (from-scratch build)\n  493:     tau_grid=tau_grid,\n  494:     comm_norms=comm_norms,"
+    },
+    {
+      "anchor_id": "prov_803",
+      "anchor_type": "data_provenance",
+      "name": "universal_survive",
+      "script_path": "session-59/s59_universal_survive.py",
+      "session": "s59",
+      "inputs": "",
+      "outputs": "session-59/s59_universal_survive.npz, session-59/s59_universal_survive.md",
+      "source_file": "computations/session-59/s59_universal_survive.py",
+      "source_context_30_lines": "    2: S59 UNIVERSAL-SURVIVE-59: Universal vs SU(3)-Specific Survival Inventory\n    3: Connes NCG Theorist\n    4: \n    5: Classifies all permanent results, closed mechanisms, and structural walls into:\n    6:   UNIVERSAL    - proven for any compact semisimple Lie group K\n    7:   GENERALIZABLE - proof technique works for any K, but constants/dimensions change\n    8:   SU3_SPECIFIC  - proof uses A_2 root structure, rank 2, CG(24), or dim=8\n    9: \n   10: Outputs: s59_universal_survive.npz with classification counts and gate verdict.\n   11: \"\"\"\n   12: \n   13: import numpy as np\n   14: \n   15: # ============================================================\n   16: # CLASSIFICATION CATEGORIES\n   17: # ============================================================\n   18: UNIVERSAL = \"UNIVERSAL\""
+    },
+    {
+      "anchor_id": "prov_804",
+      "anchor_type": "data_provenance",
+      "name": "wa_error_prop",
+      "script_path": "session-59/s59_wa_error_prop.py",
+      "session": "s59",
+      "inputs": "",
+      "outputs": "session-59/s59_wa_error_prop.npz, session-59/s59_wa_error_prop.png",
+      "source_file": "computations/session-59/s59_wa_error_prop.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s59_wa_error_prop.py — WA-ERROR-PROP-59: w_a Error Propagation for DESI DR3\n    4: ============================================================================\n    5: Gate: WA-ERROR-PROP-59\n    6:   PASS: Framework contour overlaps DESI DR3 projected contour at > 5% area\n    7:   FAIL: Overlap < 1% (framework excluded at > 3 sigma by projected DR3)\n    8:   INFO: Overlap in [1%, 5%]\n    9: \n   10: Physics: The framework predicts w_a ~ 0 (|w_a| < 0.03) because the GGE state\n   11: is integrability-protected and the w(tau) trajectory is nearly flat across"
+    },
+    {
+      "anchor_id": "prov_805",
+      "anchor_type": "data_provenance",
+      "name": "zubarev_cc",
+      "script_path": "session-59/s59_zubarev_cc.py",
+      "session": "s59",
+      "inputs": "computations/session-58/s58_cc_cancellation_sweep.npz, computations/session-58/s58_rg_hessian.npz, computations/session-...",
+      "outputs": "session-59/s59_zubarev_cc.npz, session-59/s59_zubarev_cc.png",
+      "source_file": "computations/session-59/s59_zubarev_cc.py",
+      "source_context_30_lines": "  832:     'E_J_fold': E_J,\n  833:     'Delta_many_body': Delta_many_body,\n  834:     'P_exc_fabric': P_exc_fabric,\n  835:     'gap_norm': gap_norm,\n  836:     'R_cancel_fold': R_cancel[fold_idx],\n  837:     'bandwidth': bandwidth,\n  838: }\n  839: \n  840: np.savez('computations/session-59/s59_zubarev_cc.npz', **save_dict)\n  841: print(\"  Saved: computations/session-59/s59_zubarev_cc.npz\")\n  842: \n  843: # =============================================================================\n  844: # 11. Plot\n  845: # =============================================================================\n  846: fig, axes = plt.subplots(2, 2, figsize=(14, 10))\n  847: fig.suptitle('ZUBAREV-CC-59: CC Relaxation is FAST (Zubarev Paradox)',\n  848:              fontsize=13, fontweight='bold')"
+    },
+    {
+      "anchor_id": "prov_806",
+      "anchor_type": "data_provenance",
+      "name": "a4_trace",
+      "script_path": "session-60/s60_a4_trace.py",
+      "session": "s60",
+      "inputs": "",
+      "outputs": "session-60/s60_a4_trace.npz, session-60/s60_a4_trace.png",
+      "source_file": "computations/session-60/s60_a4_trace.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s60_a4_trace.py — A4-TRACE-60\n    4: Trace factor verification in a_4: does the dim(Delta_8)=16 factor from\n    5: SPINOR-NORM-59 appear identically in a_4, so that particle physics\n    6: predictions (which depend on a_4/a_2 ratios) are unaffected?\n    7: \n    8: Physics\n    9: -------\n   10: The Seeley-DeWitt coefficients of the internal Dirac operator D_K on SU(3)\n   11: are defined as moments of the spectral measure:"
+    },
+    {
+      "anchor_id": "prov_807",
+      "anchor_type": "data_provenance",
+      "name": "andreev_omega",
+      "script_path": "session-60/s60_andreev_omega.py",
+      "session": "s60",
+      "inputs": "",
+      "outputs": "session-60/s60_andreev_omega.npz, session-60/s60_andreev_omega.png",
+      "source_file": "computations/session-60/s60_andreev_omega.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s60_andreev_omega.py -- ANDREEV-OMEGA-60 (Landau, W7-4)\n    4: ========================================================\n    5: \n    6: Derive the overlap parameter omega from first-principles 2D spectral\n    7: statistics, rather than treating it as a modeling parameter.\n    8: \n    9: Physics:\n   10:   The PENROSE-ACCESS-59 conditional PASS used omega = 0.70, a modeling\n   11:   choice for the overlap between multi-pair (intra-cell) and Andreev"
+    },
+    {
+      "anchor_id": "prov_808",
+      "anchor_type": "data_provenance",
+      "name": "bayesian_h0",
+      "script_path": "session-60/s60_bayesian_h0.py",
+      "session": "s60",
+      "inputs": "computations/session-59/s59_spinor_norm.npz, computations/session-59/s59_cheeger_sigma.npz, computations/session-60/s60_...",
+      "outputs": "session-60/s60_bayesian_h0.npz, session-60/s60_bayesian_h0.png",
+      "source_file": "computations/session-60/s60_bayesian_h0.py",
+      "source_context_30_lines": "  656: print(f\"GATE VERDICT: BAYESIAN-H0-60 = {gate_verdict}\")\n  657: print(f\"{'='*72}\")\n  658: print(f\"Detail: {gate_detail}\")\n  659: \n  660: # ==============================================================================\n  661: # 14. Save results\n  662: # ==============================================================================\n  663: \n  664: np.savez('computations/session-60/s60_bayesian_h0.npz',\n  665:     # Raw data\n  666:     L_arr=L_arr,\n  667:     a0_cumul=a0_cumul,\n  668:     a2_cumul=a2_cumul,\n  669:     a4_cumul=a4_cumul,\n  670:     N_cumul=N_cumul,\n  671:     # Ratios\n  672:     r42_cumul=r42,"
+    },
+    {
+      "anchor_id": "prov_809",
+      "anchor_type": "data_provenance",
+      "name": "bayesian_penrose",
+      "script_path": "session-60/s60_bayesian_penrose.py",
+      "session": "s60",
+      "inputs": "computations/session-59/s59_penrose_access.npz",
+      "outputs": "session-60/s60_bayesian_penrose.npz, session-60/s60_bayesian_penrose.png",
+      "source_file": "computations/session-60/s60_bayesian_penrose.py",
+      "source_context_30_lines": "  403:     'P_pass_omega_only': np.float64(P_omega_only),\n  404:     'P_pass_r_only': np.float64(P_r_only),\n  405: \n  406:     # Posterior samples (for downstream use)\n  407:     'alpha_total_samples': alpha_total_samples.astype(np.float32),\n  408:     'omega_crit_samples': omega_crit_valid.astype(np.float32),\n  409: }\n  410: \n  411: np.savez(\"computations/session-60/s60_bayesian_penrose.npz\", **results)\n  412: print(\"  Saved s60_bayesian_penrose.npz\")\n  413: \n  414: # ==============================================================================\n  415: # PLOT\n  416: # ==============================================================================\n  417: \n  418: fig, axes = plt.subplots(2, 3, figsize=(18, 11))\n  419: fig.suptitle('BAYESIAN-PENROSE-60: Uncertainty Propagation for Penrose Threshold',"
+    },
+    {
+      "anchor_id": "prov_810",
+      "anchor_type": "data_provenance",
+      "name": "bekenstein_pw",
+      "script_path": "session-60/s60_bekenstein_pw.py",
+      "session": "s60",
+      "inputs": "",
+      "outputs": "session-60/s60_bekenstein_pw.npz, session-60/s60_bekenstein_pw.png",
+      "source_file": "computations/session-60/s60_bekenstein_pw.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s60_bekenstein_pw.py — BEKENSTEIN-PW-60\n    4: ========================================\n    5: \n    6: Does the Bekenstein bound provide a physical truncation of the Peter-Weyl\n    7: sum for the cosmological constant?\n    8: \n    9: Physics:\n   10:   The Bekenstein bound S_max = 2*pi*R*E bounds the entropy of a system\n   11:   with energy E confined to a sphere of radius R. In the internal space,"
+    }
+  ]
+}

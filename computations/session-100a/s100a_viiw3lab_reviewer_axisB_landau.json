@@ -1,0 +1,100 @@
+{
+  "reviewer": "landau-condensed-matter-theorist",
+  "axis": "B — condensed-matter / 3He-B+3He-A BdG laboratory (Caroli-Matricon ladder, µSR ZF)",
+  "theorem": "VII.W-3.LAB",
+  "clauses": {
+    "B1": {
+      "verdict": "PASS",
+      "rationale": "Element-2 OE-form verified from first principles against the rule's own specification. Both laboratory-IN rows carry the full operator-expression triplet: (i) integration domain '∫_BZ d^d k' present in both rows; (ii) trace 'Tr_{M_2(ℂ)}' with the algebra explicit (M_2(ℂ) is the correct BdG child algebra per the χ: ℂ⊕ℍ⊕M_3(ℂ)→M_2(ℂ) inheritance morphism of inheritance-falsifier-protocol.md — the Nambu particle-hole structure after the spin content is absorbed into the order parameter: BW state Δ(k)=Δ_B(Rk̂)·σ iσ_y reduces the quasiclassical BdG to 2×2 blocks along k̂); (iii) NAMED projectors Π^{vortex}_{B-phase} and Π^{µSR}_{A-phase} in exactly the 'Π^{sup}_{sub}' form the rule explicitly admits (cross-pillar-bridge-anatomy.md §'Element 2 OE-form discipline' item iii: 'P_<index> or Π^{sup}_{sub}; no generic bare P'). Mechanical substance-regex test: both rows MATCH. Physical soundness: the B-phase vortex-core projector onto the Caroli-Matricon minigap ladder (ω_n=(n+1/2)ω_0, ω_0~Δ_B²/E_F) is a standard BdG construction, and the entry correctly invokes the finite-rank Pillar-V degenerate-sum admission for the DISCRETE ladder (the rule admits 'degenerate ∑ for finite-rank Pillar V' — the physically right form, since liquid 3He has no crystalline BZ; ∫_BZ is quasiclassical Fermi-surface bookkeeping). Assigning the A-phase row to ZERO-FIELD µSR is the physically correct discriminator: the ABM state breaks time-reversal (l̂ chirality) and ZF-µSR is the canonical TRS-breaking probe. CAVEAT (non-blocking, documented in key_numbers): the simplified regex string QUOTED in the registry text ('\\int.*d.*Tr.*\\([ΠP]_[a-z0-9_-]+\\)') cannot literally match the rows as printed — it does not compile in Python re (bad escape \\i), and the repaired ASCII variant fails on three counts (rows use Unicode ∫ not '\\int'; Π is followed by '^' not '_'; subscript '{B-phase}' contains brace+uppercase outside [a-z0-9_-]+). The authoritative audit pattern lives in _cross_pillar_bridge_audit.py, which is outside my allowed sources — per dispatch instructions that absence is recorded as a finding. The clause as pinned (OE triplet presence per the rule's element spec) is verified TRUE; the quoted-regex sentence is a lossy rendering of a substantively satisfied discipline.",
+      "key_numbers": {
+        "rowB_domain_trace_named_projector": [true, true, true],
+        "rowA_domain_trace_named_projector": [true, true, true],
+        "substance_regex_match_rowB": true,
+        "substance_regex_match_rowA": true,
+        "quoted_registry_regex_compiles_in_python_re": false,
+        "repaired_ascii_quoted_regex_matches_rows": false,
+        "named_projectors_extracted": ["Π^{vortex}_{B-phase}", "Π^{µSR}_{A-phase}"]
+      }
+    },
+    "B2": {
+      "verdict": "PASS",
+      "rationale": "Element-5 Level-3 anchor verified as DEFERRED-but-pre-registered, exactly as the clause requires. The in-entry anchor (registry line 17059) states Gate-1 NULL on the decisive triplet F1+F2+F5 plus Gate-2 ratio 7.3250 ± 0.1% on any non-NULL detection, citing the 4-gate structure of inheritance-falsifier-protocol.md — and that protocol's canonical 3He realization matches the entry EXACTLY: Gate-1 = F1+F2+F5 decisive NULLs (F1 = Caroli-Matricon ladder asymmetry, canonical S/N anchor 0.573193 M_KK²); Gate-2 = cross-cocycle ratio 7.3250 ± 0.1%; Gate-3 = F3+F4 supporting NULLs; Gate-4 = F4 multi-pressure slope discrimination (Jacobi-cubic vs φ_88-linear over 0–34 bar). Platforms are the correct laboratory assignments: Lancaster MCT-3 / Helsinki ROTA for B-phase vortex-core work (the canonical rotating-cryostat vortex platforms), RHUL/Aalto LTL for the A-phase µSR leg. Level 3 is honestly tagged DEFERRED (multi-year cycle, 2027-2030) with STAGE-1-CANDIDATE status explicitly blocking Stage-3 promotion — the correct deferred-pending classification per cross-pillar-bridge-anatomy.md (slot-reserving, NOT registry-PASS-contributing); the entry claims no Level-3 satisfaction it does not have. THREE NOTED CAVEATS (none blocking the clause as pinned): (1) the per-row F-table with per-row S/N margins and which-generator-each-row-tests declarations lives BY REFERENCE in falsifier-master-inventory.md rows #47-#54b, outside my allowed sources — not independently verified here; (2) textual slip at registry line 17053: 'Supporting F2/F3/F4 channels' double-lists F2, which is DECISIVE per the protocol (the supporting pair is F3+F4); the Element-5 line itself states the gate structure correctly, so this is a one-sentence editorial defect, not substantive; (3) experimental-feasibility (condensed-matter assessment): resolving individual Caroli-Matricon rungs needs T ≪ ω_0 ~ Δ_B²/E_F ~ 10 µK — beyond demonstrated bulk-3He quasiparticle temperatures, so the realistic 2027-2030 deliverable is the INTEGRATED core-bound-state asymmetry NULL (which the Gate-1 NULL form supports without rung resolution); ZF-µSR at A-phase conditions (2.3-2.5 mK, >21 bar, zero field) exceeds demonstrated µSR cryogenics (typical µSR bases ~10-20 mK; muon thermalization heat load at sub-3-mK is unsolved). The horizon is aggressive; the DEFERRED tag absorbs this honestly. The protocol's ratio-test design (conversion factors cancelling, per J1) is precisely what keeps the campaign credible despite these difficulties.",
+      "key_numbers": {
+        "gate1_decisive_triplet": "F1+F2+F5 (matches protocol canonical)",
+        "gate2_band": "7.3250 ± 0.1% = [7.31768, 7.33232]",
+        "gate3_supporting_pair": "F3+F4 (matches protocol; entry line 17053 'Supporting F2/F3/F4' is a textual slip)",
+        "gate4": "F4 multi-pressure slope, 0-34 bar, Jacobi-cubic vs φ_88-linear",
+        "level3_status": "DEFERRED 2027-2030; STAGE-1-CANDIDATE; slot-reserving only",
+        "CM_minigap_resolution_scale_muK": 10,
+        "inventory_rows_by_reference_unverified": "#47-#54b"
+      }
+    },
+    "J1": {
+      "verdict": "PASS",
+      "rationale": "Cancellation theorem verified from the lab side, both algebraically and numerically with PHYSICAL gap values. Algebraic identity: for lab(F_i) = ‖φ_a‖·f_i·(Δ_B/Δ_A)^{p_i}, common exponent p_i = p_j = p gives lab(F_i)/lab(F_j) = (‖φ_a‖/‖φ_b‖)·(f_i/f_j) — the (Δ_B/Δ_A)^p factor cancels EXACTLY, independent of both (Δ_B/Δ_A) and p. Numerical verification using the real gap values at the 3He polycritical point from my pinned npz (Δ_A/k_BT_c = 2.0302 [ABM axial, weak-coupling ≈2.029 ✓], Δ_B/k_BT_c = 1.9597 [BW, strong-coupling-enhanced from weak-coupling 1.764 at p_PCP = 21.22 bar ✓], gap ratio Δ_B/Δ_A = 0.9652476): ratio residual ≤ 1.78e-15 (≈2 ulp, float-exact) across p ∈ {0.5, 1, 2, 3, 7}, while the conversion factor itself varies by 20.5% over that p-range — i.e., the cancellation removes a >20% uncontrolled lab-conversion variation, which is the entire physical point. This is ratio spectroscopy: the strongly pressure/temperature-dependent gap renormalization (the quantity that differs across the 3He phase diagram and a fortiori between substrate and lab) drops out of the cross-row ratio, leaving a substrate-topological number. Consistent with the protocol's '0.0e+00 residual at machine precision' claim. TWO LOAD-BEARING APPLICABILITY CONDITIONS verified as correctly handled: (1) common-exponent p_i = p_j is required — within-platform F-row families (the B-phase vortex family F1/F2/F5) share the platform's gap-exponent; the A-phase µSR platform is a SECOND independent realization of the same substrate number 7.3250 with its own phase-dependent conversion (protocol: 'lab-conversion factors phase-dependent but substrate ratios identical'), NOT one mixed cross-platform ratio — the entry is consistent with this reading; per-row common-p declarations live by reference in inventory rows #47-#54b (protocol audit item 4), unverifiable from my allowed sources. (2) Gate-2 binding the substrate ratio at ±0.1% additionally requires the residual geometric/matrix-element factor f_i/f_j to be unity or independently calibrated within the band — this factor is EXPLICIT in the protocol identity (verified numerically: with f_i/f_j = 1.529412 the lab ratio is exactly ratio_pin × f_i/f_j = 11.202929), so the claim 'ratio preserved INTACT' is correctly scoped to (Δ_B/Δ_A)^p-independence, which is what the registered text asserts.",
+      "key_numbers": {
+        "Delta_A_at_PCP_over_kTc": 2.0302224141802143,
+        "Delta_B_at_PCP_over_kTc": 1.9596673346257327,
+        "gap_ratio_DB_over_DA": 0.9652476108,
+        "PCP": "T = 2.273 mK, p = 21.22 bar (physical 3He polycritical point)",
+        "max_cancellation_residual_over_p_scan": 1.776e-15,
+        "p_scan": [0.5, 1.0, 2.0, 3.0, 7.0],
+        "conversion_variation_removed_pct": 20.5,
+        "distinct_row_factor_check": "lab ratio = ratio_pin × (f_i/f_j) exact: 11.202929 = 7.3249917525961665 × 1.529412"
+      }
+    },
+    "J2": {
+      "verdict": "PASS",
+      "rationale": "Rank-2 inheritance kernel + dual test-class pre-registration verified. (1) Structural coherence of rank(ker ι_*) = 2 from symmetry-first counting: under χ: ℂ⊕ℍ⊕M_3(ℂ) → M_2(ℂ) (M_3(ℂ) → 0), the killed su(3) content is 5-dimensional at Lie-algebra level (λ_4..λ_8), but as cocycle classes modulo the SURVIVING subgroup action the off-block doublet pairs (λ_4,λ_5) and (λ_6,λ_7) are rotated into each other by the residual SU(2) and define ONE equivariant class — the φ_67 'chiral pair' — while the Cartan direction orthogonal to the child block defines the second, φ_88 'Cartan hypercharge'. Two independent killed classes: rank 2, exactly as registered (line 17067), directly instantiating the protocol's rank-2 template. (2) BOTH mandatory test classes pre-registered: Class-A kernel-signature NULL (Gates 1+3: BdG-restricted spectrum carries no ker cocycle) AND Class-B cohomology-asymmetry ratio (Gate 2: 7.3250 ± 0.1%) — the protocol REQUIRES both for rank ≥ 2 and the entry carries both. The why-both logic is physically correct from the lab side: a non-NULL detection alone is reinterpretable as extrinsic parent-symmetry breakdown (e.g., a ZF-µSR TRS-breaking signal could come from trapped vorticity or magnetic impurities rather than substrate inheritance) — the ratio test rescues falsifiability; a double-NULL makes the ratio vacuous — the NULL tests carry the primary prediction. KEY FINDING (npz tension, resolved): my pinned npz reports inheritance_kernel_rank = 1 with verdict = FAIL. Examination shows this attaches to a DIFFERENT morphism/observable: the npz is the S87 W11 EXCESS-INHERITANCE comparison (R_substrate = -1.2122 vs R_3HeB_lit = +0.0354; sign AND magnitude mismatch, ratio_mismatch = 1.0292 = |R_s - R_l|/|R_s| reconstructed exactly; path='lit'), which the registered entry ITSELF cross-links as the REGISTRY-FAIL sister instance #2 (§VII.AJ, Pillar IV ↔ Pillar V, line 17088). The npz contains NO cocycle keys whatsoever (no φ_67/φ_88/ratio fields), so it neither supports nor contradicts the χ-cocycle rank-2 claim; its rank-1 field is the excess-inheritance map's bookkeeping. No contradiction — and the entry's honest disclosure of the sister FAIL (rather than suppression) is an internal-consistency point in its favor. The field-name collision ('inheritance_kernel_rank' meaning different morphisms in the two artifacts) is flagged for the aggregator.",
+      "key_numbers": {
+        "registered_rank": 2,
+        "generators": ["φ_67 (chiral pair; (4,5)+(6,7) doublets = one SU(2)-equivariant class)", "φ_88 (Cartan hypercharge singlet class)"],
+        "npz_inheritance_kernel_rank": 1,
+        "npz_verdict": "FAIL",
+        "npz_observable": "excess-inheritance R_substrate = -1.212218649517685 vs R_3HeB_lit = +0.035355875960583226 (sister instance #2, §VII.AJ, disclosed REGISTRY-FAIL)",
+        "npz_ratio_mismatch_reconstructed": 1.029166253113,
+        "npz_cocycle_keys_present": false,
+        "class_A_preregistered": true,
+        "class_B_preregistered": true
+      }
+    },
+    "J3": {
+      "verdict": "PASS",
+      "rationale": "Level-1 cohomology-class identity verified in structural form and numerical consistency. (1) Form: the registered Level-1 declaration (line 17063) carries everything the 3-level ladder requires of a Level-1 entry — a named pairing (Connes-Karoubi), a named object (Jensen-deformed band-0 projector at τ_fold = 0.190), and explicit regulator-invariance + L-independence assertions. (2) Structural soundness from the condensed-matter side: a RATIO of two cocycle norms evaluated by a topological pairing is a homotopy-rigid characteristic of the order-parameter/projector geometry, not a material constant — the NCG analog of a Chern-pairing quantization (the same structural reason quantized Hall conductance is band-detail-independent). This rigidity is precisely WHY one number (7.3250) can be predicted identically for two laboratory phases (B-phase vortex platform AND A-phase µSR platform) whose material constants (Δ's, T_c, Fermi-liquid parameters) differ from the substrate by tens of orders of magnitude: everything material cancels (J1), everything topological survives (J3). The two clauses are mutually consistent halves of one mechanism. (3) Numerical: ratio sub-check PASS — see ratio_subcheck block; canonical pin sits 1.13e-6 relative from the Gate-2 band center, i.e., 3 orders inside the ±0.1% experimental band. PUBLICATION-PRECISION NOTE (non-blocking): the clause-pinned 'Sage-exact 114453/15625' = 7.3249920000 is verified to be the reduction of 7324992/1000000 — i.e., the exact-rational rendering of the 6-decimal PUBLICATION value 7.324992, NOT an independent exact identity; the full-precision canonical is 7.3249917525961665 (deviation 2.47e-7 absolute, 3.38e-8 relative — compliant with Class-8.3 publication-precision discipline and negligible against every band in play). The registered entry text itself prints only '7.324992 (Sage-exact)' and never the fraction; the fraction appears in my clause enumeration. (4) Scope limit of my axis: L-independence and regulator-invariance of the pairing itself are NCG-axiomatic verifications (Axis-A's clause-side); my single-truncation npz (L_max = 10, consistent with the canonical truncation) cannot test L-independence — my axis confirms structural form, canonical-pin consistency, and the lab-side physical meaning.",
+      "key_numbers": {
+        "canonical_pin": 7.3249917525961665,
+        "published_6dec": 7.324992,
+        "sage_rational_114453_over_15625": 7.324992,
+        "sage_rational_is_reduction_of_7324992_over_1e6": true,
+        "rel_dev_published_vs_pin": 3.377531e-08,
+        "rel_dev_band_center_vs_pin": 1.125927e-06,
+        "gate2_band": [7.31768, 7.33232],
+        "pin_inside_gate2_band": true,
+        "tau_fold": 0.19,
+        "npz_L_max": 10
+      }
+    }
+  },
+  "ratio_subcheck": {
+    "computed": 7.324992,
+    "canonical": 7.3249917525961665,
+    "rel_dev": 3.377531e-08,
+    "within_band": true,
+    "note": "computed = the entry's published Sage-exact form 114453/15625 = 7.3249920000 (exact-rational rendering of the 6-decimal publication value), compared against the full-precision canonical pin substrate_cocycle_ratio_67_88. Band: |computed - canonical|/canonical <= 1e-3; achieved 3.38e-8 (4.5 orders inside). Independent lab-side round-trip through the (Δ_B/Δ_A)^p cancellation at physical PCP gap values returns the input ratio to <= 1.78e-15 residual at all tested p (see J1.key_numbers)."
+  },
+  "additional_findings_for_aggregator": [
+    "Reviewer-assignment note: the entry's own Stage-2 pre-registration (line 17080) names Axis-B = lizzi-spectral-functional-theorist (spectral-functional axis); this dispatch substitutes landau-condensed-matter-theorist (condensed-matter/laboratory axis) per the plan-freeze clause enumeration. Stage-2 protocol conditions remain satisfied — axis-distinctness (NCG-axiomatic vs condensed-matter; arguably cleaner separation than connes/lizzi, two spectral-side axes), original-author exclusion (authors: volovik/connes/mack), audit-coverage (condensed-matter covers all B+J clauses as pinned). Reviewer selection is an orchestrator audit item, not a theorem-text property; recorded, not gated.",
+    "Level-2 sub-class keyword ('Level-2-binding' vs 'non-binding') is not declared verbatim in the entry; the envelope is declared 'structural-exact ... replaces L_max-dependent envelope for inheritance-morphism class per FWD-C3 envelope spec'. Under the current rule status (sub-class declaration SUGGESTION K=2) this is advisory, not blocking; flagged for the aggregator since the binding question gates registry-PASS eligibility once Level-3 lands.",
+    "Quoted-regex lossy rendering in the registry text (B1 caveat): the substantive OE discipline is satisfied per the rule's own element spec; the printed simplified regex neither compiles in Python re nor matches the rows as printed. The authoritative pattern lives in _cross_pillar_bridge_audit.py (outside this review's allowed sources)."
+  ],
+  "inputs_read": [
+    "sessions/permanent-results-registry.md — §VII.W-3.LAB block only (lines 17030-17099)",
+    "computations/session-87/s87_w11_3heb_excess_inheritance_comparison.npz (pinned Axis-B anchor; audit_sha=e1aef7ce0deaed2d85d8031fce1d009384ed0842ffb25585e880a5f475efd9aa, content_sha=9c23976f1a02b3d1e687d98f4e48f87dfcbc0ee83abafff73746267d3fe8ca1d)",
+    ".claude/rules/joint-theorem-promotion.md (Stage-2 protocol)",
+    ".claude/rules/inheritance-falsifier-protocol.md (rank-2 4-gate falsifier structure)",
+    ".claude/rules/cross-pillar-bridge-anatomy.md (5-anatomy + 3-level ladder; Element-2 OE-form discipline)",
+    "knowledge MCP get_constant('substrate_cocycle_ratio_67_88') = 7.3249917525961665 (S86 W-5 CANON-EXTRACT; not superseded)",
+    "knowledge MCP get_constant('cocycle_norm_phi88') = 0.108307 (S86 W-5 CANONICAL-4; not superseded)"
+  ],
+  "no_workshop_context_attestation": true
+}

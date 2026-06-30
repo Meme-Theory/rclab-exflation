@@ -1,0 +1,107 @@
+{
+  "table": "open_channels",
+  "batch_id": 38,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "open_371",
+      "anchor_type": "open_channels",
+      "name": "Definition",
+      "detail_1": "gap_σ := |α_s_fw − α_s_obs| / σ_obs; ratio := |α_s_fw / α_s_obs|",
+      "detail_2": "",
+      "session": "85",
+      "source_file": "sessions\\session-85\\session-85-s5-falsifier-inventory-gen-physicist.md",
+      "source_context_30_lines": "   25: \n   26: The substrate's predictions for these observables flow `D_K eigenvalues → spectral action moments → (n_s, α_s, β_s, w_0, n_T, μ, f_NL, r) as emergent statistics of the post-fold acoustic signature`. None of the framework values in this inventory are tuned: each is reachable from `(n_s_canon, M_KK, c_fabric, c_Gold, Δ_BCS, τ_fold, ε_H)` plus the spectral triple's eigenvalue spectrum at L_max=10 — six canonical-constants pins, no scan. Three of the nine target rows have framework predictions that are **provably zero-free-parameter** in the sense that, given the canonical-constants set frozen at S84, no degree of freedom remains tunable to shift the value: w_0=-0.918 (Volovik effacement, S58), r=0.011732 (S83 G46 PASS), n_T(CMB)=-3.024×10⁻³ (S66 TENSOR-TRANSFER). Two rows are **derived-from-identity** (single-parent provenance: α_s = n_s²-1, β_s = 2 n_s α_s via slow-roll chain rule; W1c-6 PASS at 41.87 ppm). Four rows are **scheme-tuple-tagged** per W1a-1 FAIL (the 4.65% f_conv scheme-variance is now permanent; A_s, A_s pivot, μ, f_NL all carry an explicit (value, scheme) tuple).\n   27: \n   28: ### II.2 σ-distance budget — Python-verified before this synthesis was written\n   29: \n   30: **Result**: 5-row null-elimination σ-distance budget reproduced from W4-7. Classification: **NON-PHONONIC** (Fisher arithmetic).\n   31: \n   32: **Substitution chain (Python-verified at session start):**\n   33: - Definition: `Δ_i = (x_FW_i − x_LCDM_i) / σ_detect_i`\n   34: - Substitu\n... [truncated]"
+    },
+    {
+      "anchor_id": "open_372",
+      "anchor_type": "open_channels",
+      "name": "Substitute",
+      "detail_1": "α_s_fw = -0.06896799 (= 0.9649² - 1, S50-51 identity at n_s_canon); α_s_obs = -0.0045 (Planck 2018); σ_obs = 0.0067",
+      "detail_2": "",
+      "session": "85",
+      "source_file": "sessions\\session-85\\session-85-s5-falsifier-inventory-gen-physicist.md",
+      "source_context_30_lines": "   26: The substrate's predictions for these observables flow `D_K eigenvalues → spectral action moments → (n_s, α_s, β_s, w_0, n_T, μ, f_NL, r) as emergent statistics of the post-fold acoustic signature`. None of the framework values in this inventory are tuned: each is reachable from `(n_s_canon, M_KK, c_fabric, c_Gold, Δ_BCS, τ_fold, ε_H)` plus the spectral triple's eigenvalue spectrum at L_max=10 — six canonical-constants pins, no scan. Three of the nine target rows have framework predictions that are **provably zero-free-parameter** in the sense that, given the canonical-constants set frozen at S84, no degree of freedom remains tunable to shift the value: w_0=-0.918 (Volovik effacement, S58), r=0.011732 (S83 G46 PASS), n_T(CMB)=-3.024×10⁻³ (S66 TENSOR-TRANSFER). Two rows are **derived-from-identity** (single-parent provenance: α_s = n_s²-1, β_s = 2 n_s α_s via slow-roll chain rule; W1c-6 PASS at 41.87 ppm). Four rows are **scheme-tuple-tagged** per W1a-1 FAIL (the 4.65% f_conv scheme-variance is now permanent; A_s, A_s pivot, μ, f_NL all carry an explicit (value, scheme) tuple).\n   27: \n   28: ### II.2 σ-distance budget — Python-verified before this synthesis was written\n   29: \n   30: **Result**: 5-row null-elimination σ-distance budget reproduced from W4-7. Classification: **NON-PHONONIC** (Fisher arithmetic).\n   31: \n   32: **Substitution chain (Python-verified at session start):**\n   33: - Definition: `Δ_i = (x_FW_i − x_LCDM_i) / σ_detect_i`\n   34: - Substitute (cano\n... [truncated]"
+    },
+    {
+      "anchor_id": "open_373",
+      "anchor_type": "open_channels",
+      "name": "Simplify",
+      "detail_1": "gap_σ = 0.06446799 / 0.0067 = **9.6221**; ratio = 0.06896799 / 0.0045 = **15.3262**",
+      "detail_2": "",
+      "session": "85",
+      "source_file": "sessions\\session-85\\session-85-s5-falsifier-inventory-gen-physicist.md",
+      "source_context_30_lines": "   27: \n   28: ### II.2 σ-distance budget — Python-verified before this synthesis was written\n   29: \n   30: **Result**: 5-row null-elimination σ-distance budget reproduced from W4-7. Classification: **NON-PHONONIC** (Fisher arithmetic).\n   31: \n   32: **Substitution chain (Python-verified at session start):**\n   33: - Definition: `Δ_i = (x_FW_i − x_LCDM_i) / σ_detect_i`\n   34: - Substitute (canonical post-W1c-1 values): see Table III.A below\n   35: - Simplify: dimensionless σ-distance in detector 1σ units\n   36: - Direction: |Δ| > 3 ⇒ decisive at the standard \"highly discrepant\" floor\n   37: \n   38: | Channel | x_FW | x_LCDM | σ_detect | **Δ (σ)** | Decisive |\n   39: |:--------|:-:|:-:|:-:|:-:|:-:|\n   40: | CMB-S4 α_s (inflationary) | +0.00117 | -0.0045 | 2.1×10⁻³ | **+2.700** | NO |\n   41: | DESI DR3 w_0 | -0.918 | -1.000 | 2.5×10⁻² | **+3.280** | **YES** |\n   42: | LiteBIRD n_T (CMB scale) | -3.024×10⁻³ | -1.466×10⁻³ | 8×10⁻⁴ | **-1.947** | NO (not a falsifier — STRUCTURAL-FLOOR) |\n   43: | CMB-HD α_s (inflationary) | +0.00117 | -0.0045 | 1.1×10⁻³ | **+5.155** | **YES** |"
+    },
+    {
+      "anchor_id": "open_374",
+      "anchor_type": "open_channels",
+      "name": "Direction",
+      "detail_1": "gap_σ ≫ 3 ⇒ strongly discrepant; ratio > 1 with shared sign (both negative) ⇒ framework OVERPREDICTS magnitude of inflat...",
+      "detail_2": "",
+      "session": "85",
+      "source_file": "sessions\\session-85\\session-85-s5-falsifier-inventory-gen-physicist.md",
+      "source_context_30_lines": "   28: ### II.2 σ-distance budget — Python-verified before this synthesis was written\n   29: \n   30: **Result**: 5-row null-elimination σ-distance budget reproduced from W4-7. Classification: **NON-PHONONIC** (Fisher arithmetic).\n   31: \n   32: **Substitution chain (Python-verified at session start):**\n   33: - Definition: `Δ_i = (x_FW_i − x_LCDM_i) / σ_detect_i`\n   34: - Substitute (canonical post-W1c-1 values): see Table III.A below\n   35: - Simplify: dimensionless σ-distance in detector 1σ units\n   36: - Direction: |Δ| > 3 ⇒ decisive at the standard \"highly discrepant\" floor\n   37: \n   38: | Channel | x_FW | x_LCDM | σ_detect | **Δ (σ)** | Decisive |\n   39: |:--------|:-:|:-:|:-:|:-:|:-:|\n   40: | CMB-S4 α_s (inflationary) | +0.00117 | -0.0045 | 2.1×10⁻³ | **+2.700** | NO |\n   41: | DESI DR3 w_0 | -0.918 | -1.000 | 2.5×10⁻² | **+3.280** | **YES** |\n   42: | LiteBIRD n_T (CMB scale) | -3.024×10⁻³ | -1.466×10⁻³ | 8×10⁻⁴ | **-1.947** | NO (not a falsifier — STRUCTURAL-FLOOR) |\n   43: | CMB-HD α_s (inflationary) | +0.00117 | -0.0045 | 1.1×10⁻³ | **+5.155** | **YES** |\n   44: | 21-cm folded f_NL (SKA-1) | +0.0547 | 0.000 | 5.0 | **+0.011** | NO |"
+    },
+    {
+      "anchor_id": "open_375",
+      "anchor_type": "open_channels",
+      "name": "Truncation",
+      "detail_1": "6",
+      "detail_2": "W0-6 van Hove, W0-9 d_spec, W0-11 CC-3, W0-20 Mellin-cone s=3, W1a-3 d_spec, W3-11 multipole",
+      "session": "85",
+      "source_file": "sessions\\session-85\\session-85-s7-combined-landscape-gen-physicist.md",
+      "source_context_30_lines": "   88: - **W2-7 §VII.P pending-landing refinement** (FAIL-with-refinement): (C_H, C_epsH) twin-pair identity exposes parity-blindness of even Seeley-DeWitt to HP^1 secondary twists; refined §VII.P-v2 (HP^0-content-distinct corridors) is S86 carry-forward.\n   89: - **W3-7 A_s 57% Planck-overshoot** (FAIL under 30%, PASS-F2 under factor-2): adjudicated by W-2 workshop into 4-level taxonomy + Both-Pathways (Path-H/Path-C) FROZEN-PREDICTION-DISCIPLINE-COMMIT 2026-2030.\n   90: - **W0-7 Jensen-Zubarev ρ=−1 identity refuted** (FAIL): unconstrained fit lands at c_0 = −0.8104; constrained R² drops to 0.93; conjecture numerically wrong under tested kernel normalization.\n   91: \n   92: #### (D) Surviving FAIL classes (28 FAILs + 21 non-decisive)\n   93: \n   94: | Class | Count | Representative gates | Cause |\n   95: |:------|:------|:---------------------|:------|\n   96: | **Truncation** | 6 | W0-6 van Hove, W0-9 d_spec, W0-11 CC-3, W0-20 Mellin-cone s=3, W1a-3 d_spec, W3-11 multipole | L_max=8/10/12 too low; cache represents SU(3) alone (8-dim), not SU(3)×M_4 (12-dim); SD-polynomial untruncatable in strong-coupling band |\n   97: | **Methodology** | 5 | W0-7 Zubarev, W1a-1 scheme-dep 2-loop, W1b-1 DR3 regulator-tree flip A1↔B2 at L=12, W1b-9 r_max two-valued, W3-13 CP² 1.21% | direct truncated zeta is not residue extraction; 2-loop Z_R sign-aligned with 1-loop; tree is layer-conditional; r_max is layer-multiplicity not min-identity |\n   98: | **Observability** | 5 | W0-2 folded bispec, W\n... [truncated]"
+    },
+    {
+      "anchor_id": "open_376",
+      "anchor_type": "open_channels",
+      "name": "Observability",
+      "detail_1": "5",
+      "detail_2": "W0-2 folded bispec, W0-18 LiteBIRD rescue, W0-21 n_T two-speed (54% shift), W3-7 A_s under strict 30%, W4-* PRE-REG-INC ...",
+      "session": "85",
+      "source_file": "sessions\\session-85\\session-85-s7-combined-landscape-gen-physicist.md",
+      "source_context_30_lines": "   90: - **W0-7 Jensen-Zubarev ρ=−1 identity refuted** (FAIL): unconstrained fit lands at c_0 = −0.8104; constrained R² drops to 0.93; conjecture numerically wrong under tested kernel normalization.\n   91: \n   92: #### (D) Surviving FAIL classes (28 FAILs + 21 non-decisive)\n   93: \n   94: | Class | Count | Representative gates | Cause |\n   95: |:------|:------|:---------------------|:------|\n   96: | **Truncation** | 6 | W0-6 van Hove, W0-9 d_spec, W0-11 CC-3, W0-20 Mellin-cone s=3, W1a-3 d_spec, W3-11 multipole | L_max=8/10/12 too low; cache represents SU(3) alone (8-dim), not SU(3)×M_4 (12-dim); SD-polynomial untruncatable in strong-coupling band |\n   97: | **Methodology** | 5 | W0-7 Zubarev, W1a-1 scheme-dep 2-loop, W1b-1 DR3 regulator-tree flip A1↔B2 at L=12, W1b-9 r_max two-valued, W3-13 CP² 1.21% | direct truncated zeta is not residue extraction; 2-loop Z_R sign-aligned with 1-loop; tree is layer-conditional; r_max is layer-multiplicity not min-identity |\n   98: | **Observability** | 5 | W0-2 folded bispec, W0-18 LiteBIRD rescue, W0-21 n_T two-speed (54% shift), W3-7 A_s under strict 30%, W4-* PRE-REG-INC (Fisher PDFs) | substrate-correct but observationally closed at near-term instruments; or pre-registration completeness pending external Fisher source |\n   99: | **Infrastructure** | 8 | W0-14 canonical entries 0/5, W0-15 W5-64 absent, W0-17 K-floor/wall registry absent, W0-19 Mellin compliance 1/9, W0-24 R3 schema 9.2%, W2-13 PSG 11.2 length 10.5×, W4-1 Fisher 5/10, W\n... [truncated]"
+    },
+    {
+      "anchor_id": "open_377",
+      "anchor_type": "open_channels",
+      "name": "Infrastructure",
+      "detail_1": "8",
+      "detail_2": "W0-14 canonical entries 0/5, W0-15 W5-64 absent, W0-17 K-floor/wall registry absent, W0-19 Mellin compliance 1/9, W0-24 ...",
+      "session": "85",
+      "source_file": "sessions\\session-85\\session-85-s7-combined-landscape-gen-physicist.md",
+      "source_context_30_lines": "   91: \n   92: #### (D) Surviving FAIL classes (28 FAILs + 21 non-decisive)\n   93: \n   94: | Class | Count | Representative gates | Cause |\n   95: |:------|:------|:---------------------|:------|\n   96: | **Truncation** | 6 | W0-6 van Hove, W0-9 d_spec, W0-11 CC-3, W0-20 Mellin-cone s=3, W1a-3 d_spec, W3-11 multipole | L_max=8/10/12 too low; cache represents SU(3) alone (8-dim), not SU(3)×M_4 (12-dim); SD-polynomial untruncatable in strong-coupling band |\n   97: | **Methodology** | 5 | W0-7 Zubarev, W1a-1 scheme-dep 2-loop, W1b-1 DR3 regulator-tree flip A1↔B2 at L=12, W1b-9 r_max two-valued, W3-13 CP² 1.21% | direct truncated zeta is not residue extraction; 2-loop Z_R sign-aligned with 1-loop; tree is layer-conditional; r_max is layer-multiplicity not min-identity |\n   98: | **Observability** | 5 | W0-2 folded bispec, W0-18 LiteBIRD rescue, W0-21 n_T two-speed (54% shift), W3-7 A_s under strict 30%, W4-* PRE-REG-INC (Fisher PDFs) | substrate-correct but observationally closed at near-term instruments; or pre-registration completeness pending external Fisher source |\n   99: | **Infrastructure** | 8 | W0-14 canonical entries 0/5, W0-15 W5-64 absent, W0-17 K-floor/wall registry absent, W0-19 Mellin compliance 1/9, W0-24 R3 schema 9.2%, W2-13 PSG 11.2 length 10.5×, W4-1 Fisher 5/10, W1c-3 vocab 2193 sites | mechanical carry-forwards: missing canonical entries / registry files / template-lift / schema tags; classifier-window too narrow |\n  100: | **PRE-REG-INC** | 4 | W1b-6 MacInn\n... [truncated]"
+    },
+    {
+      "anchor_id": "open_378",
+      "anchor_type": "open_channels",
+      "name": "PRE-REG-INC",
+      "detail_1": "4",
+      "detail_2": "W1b-6 MacInnis no σ(α_s), W1b-7 Hazumi no σ(α_s), W4-3, W4-6",
+      "session": "85",
+      "source_file": "sessions\\session-85\\session-85-s7-combined-landscape-gen-physicist.md",
+      "source_context_30_lines": "   16: - sessions/session-85/workshops/s85-w3-methodology-debts.md\n   17: - sessions/session-85/workshops/s85-w4-cutoff-sqrt-status.md (running, [NOT STARTED])\n   18: - computations/s85_gate_verdicts.txt\n   19: \n   20: ---\n   21: \n   22: ## I. Session Outcome\n   23: \n   24: S85 W0-W5 closed 92 verdicts across 8 fan-out per-wave working papers (43 PASS / 28 FAIL / 21 non-decisive: INFO + PENDING-EVENT + PRE-REG-INCOMPLETE). Eleven of the PASS verdicts are theorem-grade structural identities promotable to permanent registry; six are observationally pre-registered flagship discriminators awaiting external clocks (CMB-S4 2028+, BK-Array 2026, DR3 2026-04-23, LiteBIRD 2030, PIXIE 2029+, SKA Phase-2). Three workshops landed canonical adjudications: W-1 reduced the W3-9/W3-11 cutoff-authority dispute to S76 R-Protection on the regulator-choice axis with K_crit = 91.5 identified as a triple structural boundary (W3-11 strong-coupling endpoint, W3-1/W3-5 first-order fold, W3-6 lower branch point); W-2 collapsed the A_s factor-2 vs 30% binary into a 4-level unit-class taxonomy with BOTH-Pathways (Path-H r=0.00745, Path-C r=0.0117) registered as parallel canonical entries under FROZEN-PREDICTION-DISCIPLINE-COMMIT through the BK-Array 2026 → LiteBIRD 2030 external-clock window; W-3 produced a 5-mode plan-layer scrambling taxonomy with rule-file v2 diff and 13-test regression harness. Dual-SHA audit on `computations/s85_gate_verdicts.txt` is clean: 149 unique 64-character `audit_sha256` va\n... [truncated]"
+    },
+    {
+      "anchor_id": "open_379",
+      "anchor_type": "open_channels",
+      "name": "PENDING-EVENT",
+      "detail_1": "3",
+      "detail_2": "W1a-4 BK-Array, W1a-5 DR3, W1b-10 joint BF",
+      "session": "85",
+      "source_file": "sessions\\session-85\\session-85-s7-combined-landscape-gen-physicist.md",
+      "source_context_30_lines": "   16: - sessions/session-85/workshops/s85-w3-methodology-debts.md\n   17: - sessions/session-85/workshops/s85-w4-cutoff-sqrt-status.md (running, [NOT STARTED])\n   18: - computations/s85_gate_verdicts.txt\n   19: \n   20: ---\n   21: \n   22: ## I. Session Outcome\n   23: \n   24: S85 W0-W5 closed 92 verdicts across 8 fan-out per-wave working papers (43 PASS / 28 FAIL / 21 non-decisive: INFO + PENDING-EVENT + PRE-REG-INCOMPLETE). Eleven of the PASS verdicts are theorem-grade structural identities promotable to permanent registry; six are observationally pre-registered flagship discriminators awaiting external clocks (CMB-S4 2028+, BK-Array 2026, DR3 2026-04-23, LiteBIRD 2030, PIXIE 2029+, SKA Phase-2). Three workshops landed canonical adjudications: W-1 reduced the W3-9/W3-11 cutoff-authority dispute to S76 R-Protection on the regulator-choice axis with K_crit = 91.5 identified as a triple structural boundary (W3-11 strong-coupling endpoint, W3-1/W3-5 first-order fold, W3-6 lower branch point); W-2 collapsed the A_s factor-2 vs 30% binary into a 4-level unit-class taxonomy with BOTH-Pathways (Path-H r=0.00745, Path-C r=0.0117) registered as parallel canonical entries under FROZEN-PREDICTION-DISCIPLINE-COMMIT through the BK-Array 2026 → LiteBIRD 2030 external-clock window; W-3 produced a 5-mode plan-layer scrambling taxonomy with rule-file v2 diff and 13-test regression harness. Dual-SHA audit on `computations/s85_gate_verdicts.txt` is clean: 149 unique 64-character `audit_sha256` va\n... [truncated]"
+    },
+    {
+      "anchor_id": "open_380",
+      "anchor_type": "open_channels",
+      "name": "A (LSST A_lens 1.3×)",
+      "detail_1": "0.02/1.3 = 0.01538",
+      "detail_2": "1.300",
+      "session": "85",
+      "source_file": "sessions\\session-85\\session-85-w0-workingpaper.md",
+      "source_context_30_lines": " 1588: **4-tuple**: `(value=(1.30, 1.22, 1.43), scheme=Fisher-rescue, convention=LiteBIRD-2020, L_max=8)`.\n 1589: \n 1590: **Results**:\n 1591: \n 1592: ##### (a) Scenario pulls\n 1593: \n 1594: | Scenario | σ_rescue | pull = |n_T|/σ_rescue | Status |\n 1595: |:---------|:---------|:-----------------------|:-------|\n 1596: | A (LSST A_lens 1.3×) | 0.02/1.3 = 0.01538 | **1.300** | INFO |\n 1597: | B (extended mission √(3/2)) | 0.02/√1.5 = 0.01633 | **1.225** | INFO |\n 1598: | C (delensing 0.7×) | 0.02 × 0.7 = 0.01400 | **1.429** | INFO |\n 1599: | Combined (A × C / B) | 0.00879 | 2.275 | INFO (still < 3) |\n 1600: \n 1601: Input anchors: σ(n_T)_baseline = 0.02 (Hazumi 2020 Table 5); |n_T_framework| = 0.02 (S84 W4-41 mid-bracket).\n 1602: \n 1603: ##### (b) Substitution chain\n 1604: "
+    }
+  ]
+}

@@ -1,0 +1,219 @@
+========================================================================
+A4-QT-COMPOUND-61: a_4-Dominated Spectral Action + q-Theory Vacuum
+========================================================================
+
+--- 1. Heat Kernel Coefficients ---
+a_0 (SD normalized)  = 0.866025
+a_2 (SD normalized)  = 0.728235
+a_4 (Gilkey)         = 0.301461
+a_4/a_2 (normalized) = 0.413961
+
+a_0 (full, canonical) = 6440.0
+a_2 (full, canonical) = 2776.1654
+a_4 (full, canonical) = 1350.7216
+a_4/a_2 (full)        = 0.486542
+
+Scalar curvature R_fold = 2.018144
+Vol(SU(3)) = 1349.74
+dim(spinor) = 16
+
+Cross-check: a2_gilkey == a2_SD: PASS (diff = 0.00e+00)
+
+--- 2. Alpha Regime ---
+alpha_crit = 52.39
+alpha at Lambda=M_KK by cutoff:
+  Heat kernel    : alpha = 2.0000  (alpha/alpha_crit = 0.0382)
+  Sharp          : alpha = 0.6667  (alpha/alpha_crit = 0.0127)
+  Gaussian       : alpha = 1.2533  (alpha/alpha_crit = 0.0239)
+  Erfc           : alpha = 1.1266  (alpha/alpha_crit = 0.0215)
+  Smooth-sharp   : alpha = 0.3910  (alpha/alpha_crit = 0.0075)
+  Chi-8          : alpha = 0.1818  (alpha/alpha_crit = 0.0035)
+
+alpha range: [0.1818, 2.0000]
+Safety margin: alpha_crit/alpha_max = 26.2x
+Fold is a_4 minimum: CONFIRMED (ALPHA-REGIME-61 PASS)
+
+--- 3. GL Free Energy Curvature ---
+
+baseline_deg3:
+  n_eq = 0.076371 (interior)
+  F_eq = -6.320995e-02
+  d^2F/dn^2 = 21.0290
+  chi_q = 0.047553
+  delta_Lambda_exact = 0.164917 M_KK^4
+  delta_Lambda_harmonic = 0.164289 M_KK^4
+
+baseline_deg4:
+  n_eq = 0.073555 (interior)
+  F_eq = -7.965864e-02
+  d^2F/dn^2 = 26.7184
+  chi_q = 0.037427
+  delta_Lambda_exact = 0.181900 M_KK^4
+  delta_Lambda_harmonic = 0.208738 M_KK^4
+
+compound_deg3:
+  n_eq = 0.000000 (boundary)
+  F_eq = -9.522862e-03
+  d^2F/dn^2 = -24.7092
+  chi_q = inf
+  delta_Lambda_exact = 0.229634 M_KK^4
+  delta_Lambda_harmonic = -0.193041 M_KK^4
+
+compound_deg4:
+  n_eq = 0.005314 (interior)
+  F_eq = -6.081210e-04
+  d^2F/dn^2 = 42.1768
+  chi_q = 0.023710
+  delta_Lambda_exact = 0.194601 M_KK^4
+  delta_Lambda_harmonic = 0.329507 M_KK^4
+
+*** Selected fit: compound_deg4 ***
+  d^2F/dn^2 at n_eq = 42.1768
+  chi_q = 0.023710
+
+--- 4. Q-Theory Geodesic ---
+Q_total(K7) = 29.9
+N_pair(geodesic) = 1.3464
+delta_geod = 0.052312
+|K_7|^2 = 2.4185
+dm^2 geodesic/Dirac ratio = 0.2545
+
+--- 5. Bare Cosmological Constant ---
+
+Method A (SD normalized, f_4=1):
+  rho_bare = (2/pi^2) * 0.8660 * (7.429e+16)^4
+  rho_bare = 5.344448e+66 GeV^4
+  log10(rho_bare) = 66.73
+  log10(rho_obs)  = -46.57
+  CC gap = 113.30 orders (BARE, before self-tuning)
+
+Method B (full convention a_0=6440.0):
+  rho_bare = 3.974276e+70 GeV^4
+  CC gap = 117.17 orders (BARE)
+
+--- 6. GL Residual CC ---
+Best fit: compound_deg4
+n_eq = 0.005314
+N_eq(continuous) = 0.0425
+N_nearest = 0
+delta_n = n_eq - 0/8 = 0.005314
+d^2F/dn^2 = 42.1768
+
+Harmonic residual: Lambda_res = 0.5 * 42.1768 * (0.005314)^2
+                 = 5.955318e-04 M_KK^4
+
+Exact residual (from GL polynomial): 1.946006e-01 M_KK^4
+Harmonic residual (from GL stored):  3.295065e-01 M_KK^4
+Harmonic residual (recomputed):      5.955318e-04 M_KK^4
+
+In physical units:
+  M_KK = 7.4287e+16 GeV
+  M_KK^4 = 3.0454e+67 GeV^4
+  Lambda_res (exact)    = 5.9263e+66 GeV^4
+  Lambda_res (harmonic) = 1.8136e+64 GeV^4
+
+--- 7. Comparison to Observed CC ---
+rho_Lambda_obs = 2.70e-47 GeV^4
+
+EXACT:    Lambda_res/Lambda_obs = 2.1949e+113 = 10^113.34
+HARMONIC: Lambda_res/Lambda_obs = 6.7171e+110 = 10^110.83
+
+CC gap (bare, no self-tuning): 113.30 orders
+CC gap (after q-theory, exact): 113.34 orders
+CC gap (after q-theory, harmonic): 110.83 orders
+Orders REMOVED by self-tuning: -0.04
+
+--- 8. Systematic: All Fits ---
+
+baseline_deg3 (stable):
+  n_eq = 0.076371, N_near = 1, delta_n = -0.048629
+  d^2F/dn^2 = 21.0290
+  Lambda_res = 1.649170e-01 M_KK^4 = 5.0224e+66 GeV^4
+  Lambda_res/Lambda_obs = 10^113.27
+
+baseline_deg4 (stable):
+  n_eq = 0.073555, N_near = 1, delta_n = -0.051445
+  d^2F/dn^2 = 26.7184
+  Lambda_res = 1.819002e-01 M_KK^4 = 5.5396e+66 GeV^4
+  Lambda_res/Lambda_obs = 10^113.31
+
+compound_deg3 (UNSTABLE (d2F<0)):
+  n_eq = 0.000000, N_near = 0, delta_n = 0.000000
+  d^2F/dn^2 = -24.7092
+  Lambda_res = 2.296339e-01 M_KK^4 = 6.9932e+66 GeV^4
+  Lambda_res/Lambda_obs = 10^113.41
+
+compound_deg4 (stable):
+  n_eq = 0.005314, N_near = 0, delta_n = 0.005314
+  d^2F/dn^2 = 42.1768
+  Lambda_res = 1.946006e-01 M_KK^4 = 5.9263e+66 GeV^4
+  Lambda_res/Lambda_obs = 10^113.34
+
+--- 9. Constraint Equation ---
+f_2 (gravity route) = 1.7474e+05
+  M_Pl = 2.435e+18 GeV
+  M_KK = 7.429e+16 GeV
+  a_2(SD) = 0.728235
+  f_2 * M_KK^2 = 9.6429e+38 GeV^2
+
+Cutoff moment ratios phi_1/phi_2:
+  Heat kernel    : 2.000000
+  Sharp          : 0.666667
+  Gaussian       : 1.253314
+  Erfc           : 1.126632
+  Smooth-sharp   : 0.391048
+  Chi-8          : 0.181818
+
+a_4/a_2 (Gilkey) = 0.413961
+Product (heat kernel): 0.827923
+But alpha_at_MKK[heat kernel] = 2.000000
+Note: alpha definition = phi_1/phi_2 (not phi_1/phi_2 * a4/a2)
+The a4/a2 ratio is SEPARATE from the cutoff moment ratio
+
+========================================================================
+10. PHYSICAL CC PREDICTION (A4-QT-COMPOUND-61)
+========================================================================
+
+Compound deg4 GL fit (best):
+  n_eq = 0.005314
+  d^2F/dn^2 = 42.1768
+  chi_q = 0.023710
+  delta_Lambda = 0.194601 M_KK^4
+
+Physical CC prediction:
+  Lambda_res = 0.194601 * (7.429e+16)^4
+  Lambda_res = 5.926335e+66 GeV^4
+  log10(Lambda_res) = 66.77
+  log10(Lambda_obs) = -46.57
+  log10(ratio)      = 113.34
+
+CC gap (bare):       113.30 orders
+CC gap (after q-th): 113.34 orders
+Orders removed:      -0.04
+
+Spread across ALL GL fits: [113.27, 113.41] orders
+
+--- 11. M_KK Route Dependence ---
+M_KK(gravity) = 7.429e+16: CC gap = 113.34 orders
+M_KK(Kerner)  = 5.042e+17: CC gap = 116.67 orders
+Route spread: 3.33 orders
+
+========================================================================
+12. GATE VERDICT
+========================================================================
+
+Gate: A4-QT-COMPOUND-61
+Verdict: FAIL
+Detail: |log10(Lambda_res/Lambda_obs)| = 113.34 > 5. Q-theory self-tuning is insufficient. GL residual 5.93e+66 GeV^4 >> 2.70e-47 GeV^4.
+
+Key: The GL staircase gives delta_Lambda ~ 0.19 M_KK^4.
+     M_KK^4 = 3.045e+67 GeV^4.
+     Lambda_obs = 2.70e-47 GeV^4.
+     The O(0.1) M_KK^4 residual is 2.19e+113x the observed CC.
+     Self-tuning zeroes the leading term but the DISCRETENESS residual
+     inherits the M_KK^4 scale with O(1/N_modes^2) suppression only.
+
+--- Saving ---
+Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s61_a4_qtheory_compound.npz
+
+DONE.

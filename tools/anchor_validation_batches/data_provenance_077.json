@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 77,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_761",
+      "anchor_type": "data_provenance",
+      "name": "cheeger_sigma",
+      "script_path": "session-59/s59_cheeger_sigma.py",
+      "session": "s59",
+      "inputs": "",
+      "outputs": "session-59/s59_cheeger_sigma.npz, session-59/s59_cheeger_sigma.png",
+      "source_file": "computations/session-59/s59_cheeger_sigma.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s59_cheeger_sigma.py — CHEEGER-SIGMA-59: Cheeger Deformation Theorem for sigma stability\n    4: =========================================================================================\n    5: \n    6: Gate: CHEEGER-SIGMA-59\n    7:   PASS: sigma = 0 dynamically stable (theorem proven)\n    8:   FAIL: counterexample found (sigma grows under perturbation)\n    9:   INFO: partial result (stable for some evolution, not others)\n   10: \n   11: Mathematical setting:"
+    },
+    {
+      "anchor_id": "prov_762",
+      "anchor_type": "data_provenance",
+      "name": "dm_recalc",
+      "script_path": "session-59/s59_dm_recalc.py",
+      "session": "s59",
+      "inputs": "",
+      "outputs": "session-59/s59_dm_recalc.npz, session-59/s59_dm_recalc.png",
+      "source_file": "computations/session-59/s59_dm_recalc.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s59_dm_recalc.py — DM Abundance Recalculation (DM-RECALC-59, W1-2)\n    4: ===================================================================\n    5: \n    6: S58's f_DM calculation used:\n    7:   - epsilon = 0.00248 (S49 value)\n    8:   - m_B2 = E_B2_mean ~ 0.845 M_KK (round-SU(3) spectrum)\n    9: \n   10: S58 W0-3 and W2-1 established corrected values:\n   11:   - epsilon_direct = 0.00143 (42% reduction, EPSILON-DIRECT-58 PASS)"
+    },
+    {
+      "anchor_id": "prov_763",
+      "anchor_type": "data_provenance",
+      "name": "dw_order",
+      "script_path": "session-59/s59_dw_order.py",
+      "session": "s59",
+      "inputs": "computations/session-57/s57_off_jensen_ej.npz, computations/session-58/s58_off_jensen_dw.npz, computations/session-57/s5...",
+      "outputs": "session-59/s59_dw_order.npz, session-59/s59_dw_order.png",
+      "source_file": "computations/session-59/s59_dw_order.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s59_dw_order.py — DW-ORDER-59 (W3-5)\n    4: ======================================\n    5: Gate: DW-ORDER-59\n    6:   PASS: First-order (quenched, supports Interp A)\n    7:   FAIL: Smooth crossover\n    8:   INFO: Mixed (BKT-like)\n    9: \n   10: Physics:\n   11:   E_DW(tau) changes sign at tau ~ 0.114 (S58). Below this tau, domain walls"
+    },
+    {
+      "anchor_id": "prov_764",
+      "anchor_type": "data_provenance",
+      "name": "epsilon_canonical",
+      "script_path": "session-59/s59_epsilon_canonical.py",
+      "session": "s59",
+      "inputs": "",
+      "outputs": "session-59/s59_epsilon_canonical.npz, session-59/s59_epsilon_canonical.png",
+      "source_file": "computations/session-59/s59_epsilon_canonical.py",
+      "source_context_30_lines": "  804: \"\"\")\n  805: \n  806: # =============================================================================\n  807: # STEP 12: SAVE DATA\n  808: # =============================================================================\n  809: print(\"--- Saving data ---\")\n  810: \n  811: np.savez(\n  812:     os.path.join(SCRIPT_DIR, 's59_epsilon_canonical.npz'),\n  813:     # Epsilon candidates\n  814:     eps_bare=eps_bare,\n  815:     eps_S49=eps_S49,\n  816:     eps_implied=eps_implied,\n  817:     eps_canonical=eps_canonical,\n  818:     sigma_eps_bare=sigma_eps_bare,\n  819:     # Omega_L0 from partition formula\n  820:     omega_L0_bare_partition=np.sqrt(2*eps_bare*omega_J_fold**2*f_part_12),"
+    },
+    {
+      "anchor_id": "prov_765",
+      "anchor_type": "data_provenance",
+      "name": "euclidean_volovik",
+      "script_path": "session-59/s59_euclidean_volovik.py",
+      "session": "s59",
+      "inputs": "computations/session-58/s58_volovik_partition.npz",
+      "outputs": "session-59/s59_euclidean_volovik.npz, session-59/s59_euclidean_volovik.png",
+      "source_file": "computations/session-59/s59_euclidean_volovik.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s59_euclidean_volovik.py -- EUCLIDEAN-VOLOVIK-59 (W4E-1)\n    4: ========================================================\n    5: Gate: Can the Volovik partition (F_J = vacuum, excitations = matter) be\n    6: derived from Euclidean quantum gravity via saddle-point decomposition of Z?\n    7: \n    8: Physics (Gibbons-Hawking 1977, Paper 07):\n    9:   Z = Tr(exp(-beta*H)) receives contributions from saddle points of S_E.\n   10:   Thermal equilibrium = dominant saddle; GGE = constrained saddle with HIGHER\n   11:   action. The Volovik partition follows from standard saddle-point decomposition."
+    },
+    {
+      "anchor_id": "prov_766",
+      "anchor_type": "data_provenance",
+      "name": "fdm_depletion",
+      "script_path": "session-59/s59_fdm_depletion.py",
+      "session": "s59",
+      "inputs": "",
+      "outputs": "session-59/s59_fdm_depletion.npz, session-59/s59_fdm_depletion.png",
+      "source_file": "computations/session-59/s59_fdm_depletion.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s59_fdm_depletion.py — Post-Transit Depletion Kinetics (f_DM-DEPLETION-59)\n    4: ===========================================================================\n    5: \n    6: S58 established the energy budget at transit:\n    7:   E_Leggett = 3.01 M_KK (21%, gapped at omega_L = 0.138 M_KK, w = 0)\n    8:   E_BA      = 7.02 M_KK (49%, gapless BA phonons, w = 1/3)\n    9:   E_BCS     = 4.38 M_KK (30%, K_7-charged quasiparticles, can annihilate)\n   10: \n   11: Question: After 13.8 Gyr of cosmological evolution, what fraction survives as"
+    },
+    {
+      "anchor_id": "prov_767",
+      "anchor_type": "data_provenance",
+      "name": "g2_minimal",
+      "script_path": "session-59/s59_g2_minimal.py",
+      "session": "s59",
+      "inputs": "",
+      "outputs": "session-59/s59_g2_minimal.npz, session-59/s59_g2_minimal.png",
+      "source_file": "computations/session-59/s59_g2_minimal.py",
+      "source_context_30_lines": "  895:     print(f\"  CHECK 3 - Van Hove: {'FOUND' if van_hove_found else 'NOT FOUND'}\")\n  896:     if van_hove_found:\n  897:         print(f\"    tau_vH = {van_hove_tau:.4f}, lambda_vH = {van_hove_lambda:.4f}\")\n  898:     print(f\"  VIABILITY SCORE: {score} / 3\")\n  899:     print(f\"  GATE: G2-MINIMAL-59 {'PASS' if score == 3 else 'INFO' if score >= 1 else 'FAIL'}\")\n  900: \n  901:     # Save\n  902:     save_dir = os.path.dirname(os.path.abspath(__file__))\n  903:     npz_path = os.path.join(save_dir, 's59_g2_minimal.npz')\n  904:     png_path = os.path.join(save_dir, 's59_g2_minimal.png')\n  905: \n  906:     spectra_trivial = np.array([all_spectra[tau]['trivial'] for tau in tau_values])\n  907: \n  908:     np.savez(npz_path,\n  909:              n_generators=len(g2_gens),\n  910:              f_abc=f_abc,\n  911:              B_ab=B_ab,"
+    },
+    {
+      "anchor_id": "prov_768",
+      "anchor_type": "data_provenance",
+      "name": "growth_factor",
+      "script_path": "session-59/s59_growth_factor.py",
+      "session": "s59",
+      "inputs": "s58_w_desi.npz",
+      "outputs": "session-59/s59_growth_factor.npz, session-59/s59_growth_factor.png",
+      "source_file": "computations/session-59/s59_growth_factor.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s59_growth_factor.py — GROWTH-FACTOR-59\n    4: =========================================\n    5: \n    6: Compute the linear growth factor D(a) and f*sigma_8(z) for:\n    7:   (1) LCDM: w = -1 (constant)\n    8:   (2) Framework: w_0 = -0.918, w_a = 0 (constant w != -1)\n    9: \n   10: Compare at DESI redshift bins and assess detectability.\n   11: "
+    },
+    {
+      "anchor_id": "prov_769",
+      "anchor_type": "data_provenance",
+      "name": "inspect_inputs",
+      "script_path": "session-59/s59_inspect_inputs.py",
+      "session": "s59",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-59/s59_inspect_inputs.py",
+      "source_context_30_lines": "<name 'inspect_inputs' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"Inspect input .npz files for PENROSE-ACCESS-59.\"\"\"\n    3: import numpy as np\n    4: import os, sys\n    5: \n    6: outlines = []\n    7: \n    8: def inspect(path, label):\n    9:     outlines.append(f\"\\n=== {label}: {path} ===\")\n   10:     if not os.path.exists(path):\n   11:         outlines.append(f\"  FILE NOT FOUND\")\n   12:         return None\n   13:     f = np.load(path, allow_pickle=True)\n   14:     outlines.append(f\"  Arrays: {f.files}\")\n   15:     for k in f.files:\n   16:         v = f[k]\n   17:         outlines.append(f\"  {k}: shape={v.shape}, dtype={v.dtype}\")\n   18:         if v.ndim == 0:\n   19:             outlines.append(f\"    scalar value: {v.item()}\")\n   20:         elif v.size <= 30:\n   21:             outlines.append(f\"    values: {v}\")\n   22:         else:\n   23:             outlines.append(f\"    first 10: {v.flat[:10]}\")\n   24:             outlines.append(f\"    last 5:  {v.flat[-5:]}\")\n   25:     return f\n   26: \n   27: f1 = inspect(\"computations/session-59/s59_npair3_integ.npz\", \"N_pair=3 integrability\")\n   28: f2 = inspect(\"computations/session-58/s58_sa_saddle.npz\", \"S58 SA saddle\")\n   29: f3 = inspect(\"computations/session-58/s58_cc_cancellation_sweep.npz\", \"S58 CC cancellation sweep\")\n   30: "
+    },
+    {
+      "anchor_id": "prov_770",
+      "anchor_type": "data_provenance",
+      "name": "inspect_npz",
+      "script_path": "session-59/s59_inspect_npz.py",
+      "session": "s59",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-59/s59_inspect_npz.py",
+      "source_context_30_lines": "<name 'inspect_npz' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"Inspect NPZ files for Q-VARIABLE-59.\"\"\"\n    3: import numpy as np\n    4: \n    5: out_lines = []\n    6: \n    7: for fname in ['s58_sa_saddle.npz', 's58_ej_3d_landscape.npz']:\n    8:     d = np.load(f'computations/_shared/{fname}', allow_pickle=True)\n    9:     out_lines.append(f'\\n=== {fname} ===')\n   10:     out_lines.append(f'Keys: {list(d.keys())}')\n   11:     for k in sorted(d.keys()):\n   12:         v = d[k]\n   13:         if v.ndim == 0:\n   14:             out_lines.append(f'  {k}: scalar = {v.item()}')\n   15:         elif v.size < 30:\n   16:             out_lines.append(f'  {k}: shape={v.shape}, dtype={v.dtype}')\n   17:             out_lines.append(f'    values = {v}')\n   18:         else:\n   19:             out_lines.append(f'  {k}: shape={v.shape}, dtype={v.dtype}')\n   20:             out_lines.append(f'    first 5 = {v[:5]}')\n   21:             out_lines.append(f'    last 5  = {v[-5:]}')\n   22:             out_lines.append(f'    min={v.min():.6e}, max={v.max():.6e}, mean={v.mean():.6e}')\n   23: \n   24: with open('computations/session-59/s59_npz_inspect.txt', 'w') as f:\n   25:     f.write('\\n'.join(out_lines))\n   26: \n   27: print(\"Written to s59_npz_inspect.txt\")"
+    }
+  ]
+}

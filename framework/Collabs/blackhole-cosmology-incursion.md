@@ -1139,7 +1139,7 @@ The computation that would advance this:
 
 **CC-QTHEORY-43**: Solve the q-theory field equation (Volovik Paper 15, Eq. 11) with the framework's spectral action potential V(q, tau). Extract omega_q (the q-field's oscillation frequency). Compute Lambda_residual = rho_GGE * (H/omega_q)^2 * (d^2V/dq^2). Compare to Lambda_obs ~ 10^{-122} M_Pl^4.
 
-**Input**: Spectral action S_total(tau) from tier0, GGE energy from S38 (E_exc = 443 x |E_cond|), Hubble rate H_0.
+**Input**: Spectral action S_total(tau) from computation, GGE energy from S38 (E_exc = 443 x |E_cond|), Hubble rate H_0.
 **Output**: Lambda predicted from q-theory + GGE.
 **Pass criterion**: Within 3 orders of Lambda_obs.
 **Pre-registered**: YES (this incursion document).

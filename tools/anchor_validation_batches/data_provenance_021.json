@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 21,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_201",
+      "anchor_type": "data_provenance",
+      "name": "vh_sensitivity",
+      "script_path": "session-35/s35_vh_sensitivity.py",
+      "session": "s35",
+      "inputs": "",
+      "outputs": "session-35/s35_vh_sensitivity.npz, session-35/s35_vh_sensitivity.png",
+      "source_file": "computations/session-35/s35_vh_sensitivity.py",
+      "source_context_30_lines": "   60: # ======================================================================\n   61: SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))\n   62: DATA_DIR = SCRIPT_DIR\n   63: \n   64: SINGLET_FILE = os.path.join(DATA_DIR, \"s23a_kosmann_singlet.npz\")\n   65: UMKLAPP_FILE = os.path.join(DATA_DIR, \"s32a_umklapp_vertex.npz\")\n   66: REF_FILE     = os.path.join(DATA_DIR, \"s35a_vh_impedance_arbiter.npz\")\n   67: \n   68: OUTPUT_NPZ = os.path.join(DATA_DIR, \"s35_vh_sensitivity.npz\")\n   69: OUTPUT_PNG = os.path.join(DATA_DIR, \"s35_vh_sensitivity.png\")\n   70: \n   71: # ======================================================================\n   72: #  Constants\n   73: # ======================================================================\n   74: TAU_GRID = np.array([0.0, 0.10, 0.15, 0.20, 0.25, 0.30, 0.35, 0.40, 0.50])\n   75: TAU_EVAL = np.array([0.16, 0.18, 0.20, 0.22, 0.24])  # 5 points within wall\n   76: "
+    },
+    {
+      "anchor_id": "prov_202",
+      "anchor_type": "data_provenance",
+      "name": "beyond_mean_field",
+      "script_path": "session-35/s35a_beyond_mean_field.py",
+      "session": "s35a",
+      "inputs": "",
+      "outputs": "session-35/s35a_beyond_mean_field.npz, session-35/s35a_beyond_mean_field.png",
+      "source_file": "computations/session-35/s35a_beyond_mean_field.py",
+      "source_context_30_lines": "  659:     'rho_scan': rho_scan, 'M_bare_scan': M_bare_scan, 'M_nsr_scan': M_nsr_scan,\n  660:     'rho_c_bare': rho_c_bare if rho_c_bare else np.nan,\n  661:     'rho_c_nsr': rho_c_nsr if rho_c_nsr else np.nan,\n  662: \n  663:     # Gate\n  664:     'verdict': verdict,\n  665: }\n  666: \n  667: out_npz = os.path.join(SCRIPT_DIR, 's35a_beyond_mean_field.npz')\n  668: np.savez_compressed(out_npz, **save_dict)\n  669: print(f\"\\nSaved: {out_npz}\")\n  670: print(f\"File size: {os.path.getsize(out_npz) / 1024:.1f} KB\")\n  671: \n  672: \n  673: # ======================================================================\n  674: #  PLOT\n  675: # ======================================================================"
+    },
+    {
+      "anchor_id": "prov_203",
+      "anchor_type": "data_provenance",
+      "name": "grand_canonical_mu",
+      "script_path": "session-35/s35a_grand_canonical_mu.py",
+      "session": "s35a",
+      "inputs": "",
+      "outputs": "session-35/s35a_grand_canonical_mu.npz, session-35/s35a_grand_canonical_mu.png",
+      "source_file": "computations/session-35/s35a_grand_canonical_mu.py",
+      "source_context_30_lines": "   60: import numpy as np\n   61: from scipy.optimize import minimize_scalar\n   62: import matplotlib\n   63: matplotlib.use('Agg')\n   64: import matplotlib.pyplot as plt\n   65: \n   66: SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))\n   67: DATA_FILE = os.path.join(SCRIPT_DIR, 's23a_kosmann_singlet.npz')\n   68: OUT_NPZ = os.path.join(SCRIPT_DIR, 's35a_grand_canonical_mu.npz')\n   69: OUT_PNG = os.path.join(SCRIPT_DIR, 's35a_grand_canonical_mu.png')\n   70: \n   71: np.set_printoptions(precision=8, linewidth=130, suppress=True)\n   72: \n   73: \n   74: # ======================================================================\n   75: #  Data Loading\n   76: # ======================================================================"
+    },
+    {
+      "anchor_id": "prov_204",
+      "anchor_type": "data_provenance",
+      "name": "kk_validation",
+      "script_path": "session-35/s35a_kk_validation.py",
+      "session": "s35a",
+      "inputs": "",
+      "outputs": "session-35/s35a_kk_validation.npz",
+      "source_file": "computations/session-35/s35a_kk_validation.py",
+      "source_context_30_lines": "  156: for name, r in results.items():\n  157:     key = name.replace(' ', '_').replace('+', 'p').lower()\n  158:     save[f'rho_{key}'] = r['rho']\n  159:     save[f'M_spinor_{key}'] = r['M_spinor']\n  160:     save[f'M_frame_{key}'] = r['M_frame']\n  161: save['M_answer'] = M_answer\n  162: save['rho_answer'] = rho_answer\n  163: \n  164: out = os.path.join(SCRIPT_DIR, 's35a_kk_validation.npz')\n  165: np.savez_compressed(out, **save)\n  166: print(f\"\\nSaved: {out}\")\n  167: print(f\"Size: {os.path.getsize(out) / 1024:.1f} KB\")"
+    },
+    {
+      "anchor_id": "prov_205",
+      "anchor_type": "data_provenance",
+      "name": "mu_physical_basis",
+      "script_path": "session-35/s35a_mu_physical_basis.py",
+      "session": "s35a",
+      "inputs": "",
+      "outputs": "session-35/s35a_mu_physical_basis.npz, session-35/s35a_mu_physical_basis.png",
+      "source_file": "computations/session-35/s35a_mu_physical_basis.py",
+      "source_context_30_lines": "  880:         save_data['mu_crit_bare'] = mu_crit\n  881: \n  882:     for tau, res in sa_results.items():\n  883:         prefix = f'sa_tau{tau:.2f}'.replace('.', 'p')\n  884:         save_data[f'{prefix}_mu_opt_heat'] = res['mu_opt_heat']\n  885:         save_data[f'{prefix}_curvature_0'] = res['curvature_0']\n  886:         save_data[f'{prefix}_dS_at_0'] = res['dS_at_0']\n  887: \n  888:     output_npz = os.path.join(SCRIPT_DIR, 's35a_mu_physical_basis.npz')\n  889:     np.savez_compressed(output_npz, **save_data)\n  890:     print(f\"\\n  Saved: {output_npz}\")\n  891: \n  892:     # ==================================================================\n  893:     # PLOT\n  894:     # ==================================================================\n  895:     fig, axes = plt.subplots(2, 3, figsize=(18, 10))\n  896: "
+    },
+    {
+      "anchor_id": "prov_206",
+      "anchor_type": "data_provenance",
+      "name": "vh_impedance_arbiter",
+      "script_path": "session-35/s35a_vh_impedance_arbiter.py",
+      "session": "s35a",
+      "inputs": "",
+      "outputs": "session-35/s35a_vh_impedance_arbiter.npz, session-35/s35a_vh_impedance_arbiter.png",
+      "source_file": "computations/session-35/s35a_vh_impedance_arbiter.py",
+      "source_context_30_lines": "   42: # ======================================================================\n   43: SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))\n   44: DATA_DIR = SCRIPT_DIR  # computations\n   45: \n   46: SINGLET_FILE = os.path.join(DATA_DIR, \"s23a_kosmann_singlet.npz\")\n   47: UMKLAPP_FILE = os.path.join(DATA_DIR, \"s32a_umklapp_vertex.npz\")\n   48: SECTOR_FILE  = os.path.join(DATA_DIR, \"s33a_landau_sector.npz\")\n   49: \n   50: OUTPUT_NPZ = os.path.join(DATA_DIR, \"s35a_vh_impedance_arbiter.npz\")\n   51: OUTPUT_PNG = os.path.join(DATA_DIR, \"s35a_vh_impedance_arbiter.png\")\n   52: \n   53: # ======================================================================\n   54: #  Constants\n   55: # ======================================================================\n   56: TAU_VALUES = np.array([0.0, 0.10, 0.15, 0.20, 0.25, 0.30, 0.35, 0.40, 0.50])\n   57: \n   58: # Branch indices in A_antisym 8x8 basis"
+    },
+    {
+      "anchor_id": "prov_207",
+      "anchor_type": "data_provenance",
+      "name": "anomaly_kk",
+      "script_path": "session-36/s36_anomaly_kk.py",
+      "session": "s36",
+      "inputs": "",
+      "outputs": "session-36/s36_anomaly_kk.npz",
+      "source_file": "computations/session-36/s36_anomaly_kk.py",
+      "source_context_30_lines": "  655:         save_data[f'{prefix}_A3'] = np.array([r['A3']])\n  656:         save_data[f'{prefix}_Agrav'] = np.array([r['A_grav']])\n  657:         save_data[f'{prefix}_max_asym'] = np.array([r['max_asym']])\n  658:         save_data[f'{prefix}_paired'] = np.array([r['paired']])\n  659:         save_data[f'{prefix}_n_zero'] = np.array([r['n_zero']])\n  660:         save_data[f'{prefix}_total_index'] = np.array([r['total_index']])\n  661: \n  662:     outpath = os.path.join(os.path.dirname(os.path.abspath(__file__)),\n  663:                            's36_anomaly_kk.npz')\n  664:     np.savez(outpath, **save_data)\n  665:     print(f\"\\n  Data saved to: {outpath}\")\n  666: \n  667:     return overall, level_verdicts, results\n  668: \n  669: \n  670: if __name__ == '__main__':\n  671:     main()"
+    },
+    {
+      "anchor_id": "prov_208",
+      "anchor_type": "data_provenance",
+      "name": "b2_trace",
+      "script_path": "session-36/s36_b2_trace.py",
+      "session": "s36",
+      "inputs": "",
+      "outputs": "session-36/s36_b2_trace.npz",
+      "source_file": "computations/session-36/s36_b2_trace.py",
+      "source_context_30_lines": "  240: print(f\"  {'Baptista (1 eigenvalue)':<25s} {np.sqrt(3):>8.4f} {3/4:>8.4f}\")\n  241: print(f\"  {'B2 resonance trace':<25s} {r_B2:>8.4f} {sin2_B2:>8.4f}\")\n  242: print(f\"  {'Connes (all fermions)':<25s} {np.sqrt(3/5):>8.4f} {3/8:>8.4f}\")\n  243: \n  244: print(f\"\\n  Ordering: Baptista > B2 > Connes (if B2 is intermediate)\")\n  245: print(f\"  B2 sits BETWEEN single-eigenvalue and full-trace.\")\n  246: \n  247: # Save\n  248: np.savez('computations/session-36/s36_b2_trace.npz',\n  249:          ad_Y_C2=ad_Y_C2,\n  250:          ad_T3_C2=ad_T3_C2,\n  251:          eig_Y=eig_Y,\n  252:          eig_T3=eig_T3,\n  253:          tr_Y2_B2=np.array([tr_Y2_B2]),\n  254:          tr_T32_B2=np.array([tr_T32_B2]),\n  255:          ratio=np.array([ratio]),\n  256:          )"
+    },
+    {
+      "anchor_id": "prov_209",
+      "anchor_type": "data_provenance",
+      "name": "bayesian_posterior",
+      "script_path": "session-36/s36_bayesian_posterior.py",
+      "session": "s36",
+      "inputs": "computations/session-36/s36_mmax_authoritative.npz, computations/session-36/s36_gcm_self_consistent.npz",
+      "outputs": "session-36/s36_bayesian_posterior.npz",
+      "source_file": "computations/session-36/s36_bayesian_posterior.py",
+      "source_context_30_lines": "  655: \n  656: for claim, status, fp, fals in scorecard:\n  657:     print(f\"  {claim:<35s}  {status:<15s}  {fp:>11s}  {fals:>11s}\")\n  658: \n  659: # ============================================================\n  660: # STEP 11: Save results\n  661: # ============================================================\n  662: print()\n  663: print(\"Saving results to computations/session-36/s36_bayesian_posterior.npz\")\n  664: \n  665: save_dict = {\n  666:     # Scenario results\n  667:     'alpha_A': alpha_unc_B2,\n  668:     'alpha_B_task': alpha_B_task,\n  669:     'alpha_B_consistent': alpha_B_consistent,\n  670:     'alpha_C': alpha_C,\n  671:     'sigma_alpha': sigma_alpha,"
+    },
+    {
+      "anchor_id": "prov_210",
+      "anchor_type": "data_provenance",
+      "name": "bbn_lithium",
+      "script_path": "session-36/s36_bbn_lithium.py",
+      "session": "s36",
+      "inputs": "computations/session-23/s23a_eigenvectors_extended.npz, computations/session-35/s35_rg_bcs_flow.npz",
+      "outputs": "session-36/s36_bbn_lithium.npz",
+      "source_file": "computations/session-36/s36_bbn_lithium.py",
+      "source_context_30_lines": "  612: print(f\"  (e.g., domain wall density, modified tau(t) trajectory, or\")\n  613: print(f\"  new physics beyond the internal spectral action).\")\n  614: \n  615: # ============================================================\n  616: # 14. Save results\n  617: # ============================================================\n  618: print(\"\\n--- Saving results ---\")\n  619: \n  620: np.savez('computations/session-36/s36_bbn_lithium.npz',\n  621:     # Inputs\n  622:     tau_target=0.190,\n  623:     tau_used=tau_used,\n  624:     tau_bracket=np.array([tau_values[idx_lo], tau_values[idx_hi]]),\n  625:     Delta_over_W=Delta_frac,\n  626:     Delta=Delta,\n  627:     W_B2=W_B2,\n  628:     lambda_min=lambda_min,"
+    }
+  ]
+}

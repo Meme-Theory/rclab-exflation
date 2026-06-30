@@ -1,0 +1,235 @@
+C:\sandbox\Ainulindale Exflation\tier0-computation\s61_proj_a2.py:344: ComplexWarning: Casting complex values to real discards the imaginary part
+  n_k_proj[k] += w * nk_rotated
+========================================================================
+PROJ-A2-61: Particle-Number Projection for the Heat Kernel
+========================================================================
+
+Loaded S52 HFB data:
+  N_modes = 8
+  Labels: ['B2[0]' 'B2[1]' 'B2[2]' 'B2[3]' 'B1' 'B3[0]' 'B3[1]' 'B3[2]']
+  E_sp = [0.84526909 0.84526909 0.84526909 0.84526909 0.81914    0.97822388 0.97822388 0.97822388]
+
+Energies (M_KK units):
+    N         E_ED        E_HFB       E_PBCS   (PBCS-ED)/ED
+    1     1.439842     1.426355     1.453878         0.975%
+    2     3.011120     2.956652     3.019375         0.274%
+    3     4.683593     4.609572     4.689905         0.135%
+    4     6.449983     6.354797     6.457218         0.112%
+
+========================================================================
+SECTION 2: Geometric a_2 (state-independent)
+========================================================================
+  tau_fold = 0.19
+  R(tau_fold) = 2.0181439559
+  a_2^{geom} = 0.7282349726
+  a_0^{geom} = 0.8660254038
+  W1 reference: a_2 = 0.728235
+  Agreement: 0.000004%
+
+========================================================================
+SECTION 3: BCS Pairing Correction to a_2
+========================================================================
+
+  BCS pairing analysis per sector:
+    N    <Delta^2>  Delta_rms         mu     <DN^2>     uv_max
+    1     0.006819   0.082576   0.836765     3.0338   0.487276
+    2     0.011326   0.106422   0.842161     4.8916   0.499986
+    3     0.012776   0.113029   0.846152     5.4152   0.496890
+    4     0.012278   0.110808   0.852931     5.2540   0.457780
+
+========================================================================
+SECTION 4: Exact Number Projection (Fomenko Integral)
+========================================================================
+
+  Fomenko projection (N_phi = 64):
+    N  ||n_proj-n_ed|| ||n_proj-n_S52||         Norm  <DN^2>_proj
+    1       0.35858657       0.21586792 -4.683753e-17     2.361153
+    2       0.50946404       0.46020831 2.607403e-01     3.067565
+    3       0.59546657       0.57100816 -4.336809e-17     4.299065
+    4       0.79918978       0.80629769 6.597590e-02     4.690796
+
+  Occupation comparison (N=2 example):
+      k  label      n_HFB     n_proj       n_ED   n_S52_PBCS |kappa_proj|
+      0  B2[0]   0.329104   0.139534   0.379354     0.364712     0.000000
+      1  B2[1]   0.542810   0.337717   0.375275     0.364712     0.000000
+      2  B2[2]   0.310226   0.127930   0.350340     0.364712     0.000000
+      3  B2[3]   0.478054   0.260527   0.339049     0.364712     0.000000
+      4     B1   0.303122   0.123727   0.503737     0.423027     0.000000
+      5  B3[0]   0.010824   0.003113   0.015669     0.039375     0.000000
+      6  B3[1]   0.011555   0.003325   0.015965     0.039375     0.000000
+      7  B3[2]   0.014305   0.004128   0.020610     0.039375     0.000000
+
+========================================================================
+SECTION 5: BCS Pairing Correction to a_2
+========================================================================
+
+  Gap-squared and pairing energy per sector:
+    N   Source    |Delta|^2     E_pair   delta_a2
+    1       ED   0.00681872  -0.100583   0.008109
+    1      HFB   0.00720339  -0.105291   0.008566
+    1     PBCS   0.00764871  -0.111290   0.009096
+    2       ED   0.01132556  -0.165056   0.013468
+    2      HFB   0.01078140  -0.156895   0.012821
+    2     PBCS   0.01212230  -0.175747   0.014416
+    3       ED   0.01277555  -0.184941   0.015193
+    3      HFB   0.01197370  -0.173835   0.014239
+    3     PBCS   0.01361163  -0.197051   0.016187
+    4       ED   0.01227846  -0.178838   0.014602
+    4      HFB   0.01026618  -0.148971   0.012209
+    4     PBCS   0.01249024  -0.182005   0.014854
+    1     PROJ   0.00490545  -0.068653   0.005834
+    2     PROJ   0.00668069  -0.096611   0.007945
+    3     PROJ   0.00948284  -0.138546   0.011277
+    4     PROJ   0.01062999  -0.154142   0.012641
+
+========================================================================
+SECTION 6: Lipkin-Nogami Correction
+========================================================================
+
+  Lipkin-Nogami parameters:
+    N     lambda_2   <DN^2>_HFB      dE_LN   dDelta^2/Delta^2
+    1    -0.010061       3.2084  -0.032281           0.471772
+    2    -0.006840       4.7197  -0.032281           0.471772
+    3    -0.006315       5.1119  -0.032281           0.471772
+    4    -0.007423       4.3488  -0.032281           0.471772
+
+========================================================================
+SECTION 7: Definitive Comparison — ED vs HFB vs PBCS vs PROJ
+========================================================================
+
+  a_2 = a_2^{geom} * (1 + delta)
+  delta = 12*|Delta_eff|^2 / (5*R)
+  a_2^{geom} = 0.7282349726
+  R(tau_fold) = 2.0181439559
+  a_0^{geom} = 0.8660254038
+
+    N          a2_ED         a2_HFB        a2_PBCS        a2_PROJ   |PROJ-ED|/ED
+    1   0.7341401598   0.7344732899   0.7348589485   0.7324832212      0.225698%
+    2   0.7380431990   0.7375719432   0.7387331929   0.7340206208      0.545033%
+    3   0.7392989267   0.7386045006   0.7400229888   0.7364473531      0.385713%
+    4   0.7388684311   0.7371257440   0.7390518341   0.7374408171      0.193216%
+
+========================================================================
+SECTION 8: Fomenko Convergence Test (N=2)
+========================================================================
+
+  N_phi convergence for N=2:
+   N_phi    n_B1_proj      sum_n     delta_a2
+       8   0.15434218   1.151741   0.00912562
+      16   0.12372660   1.000000   0.00794475
+      32   0.12372660   1.000000   0.00794475
+      64   0.12372660   1.000000   0.00794475
+     128   0.12372660   1.000000   0.00794475
+     256   0.12372660   1.000000   0.00794475
+
+========================================================================
+SECTION 9: Nuclear Physics Benchmark
+========================================================================
+
+  Nuclear BCS systems comparison:
+  System       N_dof  (PBCS-BCS)/BCS%  Reference
+  ^16O (sd)       6      8-12%         Paper 03 (Duguet et al.)
+  ^18O             8      5-10%         Paper 02 (HFB continuum)
+  ^24Mg           12      3-8%          Paper 03
+  ^28Si           12      2-6%          Paper 03
+  Ultrasmall      ~8      10-30%        Paper 17 (von Delft & Ralph)
+  Framework        8      see below     This computation
+
+  Key diagnostic: <(Delta N)^2> / N for each sector
+  N=1: <DN^2>_HFB/N = 3.208, <DN^2>_ED/N = 3.034
+         <DN^2>_HFB = 3.208 (comparable to N=1!)
+  N=2: <DN^2>_HFB/N = 2.360, <DN^2>_ED/N = 2.446
+         <DN^2>_HFB = 4.720 (comparable to N=2!)
+  N=3: <DN^2>_HFB/N = 1.704, <DN^2>_ED/N = 1.805
+         <DN^2>_HFB = 5.112 (comparable to N=3!)
+  N=4: <DN^2>_HFB/N = 1.087, <DN^2>_ED/N = 1.313
+         <DN^2>_HFB = 4.349 (comparable to N=4!)
+
+========================================================================
+SECTION 10: Structural Analysis — What Changes Under Projection?
+========================================================================
+
+  The geometric a_2 = (4pi)^{-4} * (20R/3) * Vol = 0.7282349726
+  This is FIXED by the metric. Projection does NOT change it.
+  Only the pairing correction delta = 12*|Delta_eff|^2/(5*R) changes.
+
+  Pairing correction comparison:
+    N    delta_HFB   delta_PROJ     delta_ED   |PROJ-HFB|  Relative%
+    1   0.00856635   0.00583362   0.00810890   0.00273273     0.2710%
+    2   0.01282137   0.00794475   0.01346849   0.00487662     0.4815%
+    3   0.01423926   0.01127710   0.01519284   0.00296216     0.2921%
+    4   0.01220866   0.01264131   0.01460169   0.00043265     0.0427%
+
+========================================================================
+SECTION 11: GATE VERDICT — PROJ-A2-61
+========================================================================
+
+  Method 1: Direct ED vs HFB comparison (most reliable)
+    ED occupations = exact, number-conserving
+    HFB occupations = BCS, number-breaking
+    The ED state IS the number-projected state.
+
+    N    |a2_ED - a2_HFB| / a2_HFB
+    1                    0.045356%
+    2                    0.063893%
+    3                    0.094019%
+    4                    0.236417%
+
+  Maximum fractional difference (ED vs HFB): 0.2364%
+  Mean fractional difference: 0.1099%
+
+  Method 2: Fomenko-projected vs HFB
+
+    N    |a2_PROJ - a2_HFB| / a2_HFB
+    1                      0.270952%
+    2                      0.481488%
+    3                      0.292057%
+    4                      0.042743%
+
+  Maximum fractional difference (PROJ vs HFB): 0.4815%
+  Mean fractional difference: 0.2718%
+
+  GATE VALUE (conservative, max over all N and methods): 0.4815%
+
+  *** PROJ-A2-61: PASS ***
+  < 5% threshold
+  |a_2^{PBCS} - a_2^{BCS}| / a_2^{BCS} = 0.4815%
+
+========================================================================
+SECTION 12: Physics Decomposition
+========================================================================
+
+  The total a_2 has TWO components:
+    1. Geometric: a_2^{geom} = 0.7282349726 (FIXED, state-independent)
+    2. Pairing:   delta * a_2^{geom} (state-dependent)
+
+  The geometric term dominates because:
+    delta ~ |Delta_eff|^2 / R ~ 0.013468 (for N=2)
+    i.e., the pairing correction is ~ 1.347% of geometric a_2
+
+  Number projection modifies delta by:
+    |delta_PROJ - delta_HFB| <= 0.00487662
+    Relative to delta_HFB: 34.25% (of the correction)
+    Relative to total a_2: 0.4808%
+
+  Nuclear physics interpretation:
+    N_dof = 8 modes is equivalent to the sd-shell (^16O-^28Si)
+    In nuclei: PBCS/BCS energy ~ 5-15% for sd-shell
+    Here: a_2 correction ~ 0.48%
+    This is SMALLER than nuclear pairing because:
+      (a) R(tau_fold) = 2.018 >> |Delta_eff|^2 ~ 0.011326
+      (b) a_2 depends on Delta^2 (quadratic), not Delta (linear)
+      (c) The geometric term is the O(1) contribution; pairing is a perturbation
+
+========================================================================
+SECTION 13: Saving Results
+========================================================================
+  Saved: s61_proj_a2.npz
+  Keys: ['N1_Delta_sq_ed', 'N1_Delta_sq_hfb', 'N1_Delta_sq_pbcs', 'N1_a2_ed', 'N1_a2_hfb', 'N1_a2_pbcs', 'N1_a2_proj', 'N1_dN2', 'N1_delta_ed', 'N1_delta_hfb', 'N1_delta_pbcs', 'N1_delta_proj', 'N1_frac_ed_vs_hfb', 'N1_frac_proj_vs_ed', 'N1_frac_proj_vs_hfb', 'N1_kappa_proj', 'N1_n_proj', 'N2_Delta_sq_ed', 'N2_Delta_sq_hfb', 'N2_Delta_sq_pbcs', 'N2_a2_ed', 'N2_a2_hfb', 'N2_a2_pbcs', 'N2_a2_proj', 'N2_dN2', 'N2_delta_ed', 'N2_delta_hfb', 'N2_delta_pbcs', 'N2_delta_proj', 'N2_frac_ed_vs_hfb', 'N2_frac_proj_vs_ed', 'N2_frac_proj_vs_hfb', 'N2_kappa_proj', 'N2_n_proj', 'N3_Delta_sq_ed', 'N3_Delta_sq_hfb', 'N3_Delta_sq_pbcs', 'N3_a2_ed', 'N3_a2_hfb', 'N3_a2_pbcs', 'N3_a2_proj', 'N3_dN2', 'N3_delta_ed', 'N3_delta_hfb', 'N3_delta_pbcs', 'N3_delta_proj', 'N3_frac_ed_vs_hfb', 'N3_frac_proj_vs_ed', 'N3_frac_proj_vs_hfb', 'N3_kappa_proj', 'N3_n_proj', 'N4_Delta_sq_ed', 'N4_Delta_sq_hfb', 'N4_Delta_sq_pbcs', 'N4_a2_ed', 'N4_a2_hfb', 'N4_a2_pbcs', 'N4_a2_proj', 'N4_dN2', 'N4_delta_ed', 'N4_delta_hfb', 'N4_delta_pbcs', 'N4_delta_proj', 'N4_frac_ed_vs_hfb', 'N4_frac_proj_vs_ed', 'N4_frac_proj_vs_hfb', 'N4_kappa_proj', 'N4_n_proj', 'N_values', 'R_fold', 'a0_geom', 'a2_geom', 'gate_name', 'gate_value_pct', 'gate_verdict', 'tau_fold']
+  Saved: s61_proj_a2.png
+
+========================================================================
+COMPUTATION COMPLETE
+  Gate: PROJ-A2-61 = PASS
+  Value: 0.4815%
+========================================================================

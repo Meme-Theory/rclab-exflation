@@ -14,7 +14,7 @@ You are computing the spatial pattern of the 8 GGE occupation numbers n_i(y) on 
 
 **Computation Steps**:
 
-1. Load eigenvectors from `tier0-computation/tier1_dirac_spectrum.py` at tau = 0.19 for the 8 gap-edge modes.
+1. Load eigenvectors from `computations/dirac_spectrum.py` at tau = 0.19 for the 8 gap-edge modes.
 
 2. **Spatial density.** For each mode k, compute |psi_k(y)|^2 on a grid of SU(3) points. Since SU(3) is 8-dimensional, reduce to the 2D Cartan torus (parametrized by the two Casimir eigenvalues) by integrating over the SU(3) fiber.
 
@@ -31,13 +31,13 @@ You are computing the spatial pattern of the 8 GGE occupation numbers n_i(y) on 
 **Pre-registered gate CHLADNI-GGE-44**: INFO (diagnostic, no PASS/FAIL).
 
 **Input files**:
-- `tier0-computation/tier1_dirac_spectrum.py`
-- `tier0-computation/s42_gge_energy.npz`
+- `computations/dirac_spectrum.py`
+- `computations/s42_gge_energy.npz`
 
 **Output files**:
-- Script: `tier0-computation/s44_chladni_gge.py`
-- Data: `tier0-computation/s44_chladni_gge.npz`
-- Plot: `tier0-computation/s44_chladni_gge.png`
+- Script: `computations/s44_chladni_gge.py`
+- Data: `computations/s44_chladni_gge.npz`
+- Plot: `computations/s44_chladni_gge.png`
 
 **Working paper section**: W6-1
 
@@ -57,7 +57,7 @@ You are computing the attenuation length of second sound (u_2 = c/sqrt(3)) in co
 
 **Computation Steps**:
 
-1. Load thermal conductivity data from `tier0-computation/s43_thermal_conductivity.npz` and quality factors from `tier0-computation/s43_quality_factors.npz`.
+1. Load thermal conductivity data from `computations/s43_thermal_conductivity.npz` and quality factors from `computations/s43_quality_factors.npz`.
 
 2. **Attenuation from 3-phonon processes.** Even without Umklapp, normal 3-phonon processes (B2 -> B1 + B1) cause attenuation. The attenuation rate:
 
@@ -76,13 +76,13 @@ You are computing the attenuation length of second sound (u_2 = c/sqrt(3)) in co
 **Pre-registered gate 2ND-SOUND-ATTEN-44**: INFO.
 
 **Input files**:
-- `tier0-computation/s43_thermal_conductivity.npz`
-- `tier0-computation/s43_quality_factors.npz`
+- `computations/s43_thermal_conductivity.npz`
+- `computations/s43_quality_factors.npz`
 
 **Output files**:
-- Script: `tier0-computation/s44_2nd_sound_atten.py`
-- Data: `tier0-computation/s44_2nd_sound_atten.npz`
-- Plot: `tier0-computation/s44_2nd_sound_atten.png`
+- Script: `computations/s44_2nd_sound_atten.py`
+- Data: `computations/s44_2nd_sound_atten.npz`
+- Plot: `computations/s44_2nd_sound_atten.png`
 
 **Working paper section**: W6-2
 
@@ -102,7 +102,7 @@ You are extending MKK-BAYES-43 to a 2-parameter family of cutoff functions, foll
 
 **Computation Steps**:
 
-1. Load eigenvalue data from `tier0-computation/s42_hauser_feshbach.npz` and constants from `tier0-computation/s42_constants_snapshot.npz`.
+1. Load eigenvalue data from `computations/s42_hauser_feshbach.npz` and constants from `computations/s42_constants_snapshot.npz`.
 
 2. **Mittag-Leffler family.** f_{alpha,beta}(x) = E_{alpha,beta}(-x) where:
 
@@ -124,14 +124,14 @@ You are extending MKK-BAYES-43 to a 2-parameter family of cutoff functions, foll
 **Pre-registered gate BAYESIAN-f-44**: INFO (diagnostic for functional form).
 
 **Input files**:
-- `tier0-computation/s42_hauser_feshbach.npz`
-- `tier0-computation/s42_constants_snapshot.npz`
-- `tier0-computation/s43_mkk_bayes.npz`
+- `computations/s42_hauser_feshbach.npz`
+- `computations/s42_constants_snapshot.npz`
+- `computations/s43_mkk_bayes.npz`
 
 **Output files**:
-- Script: `tier0-computation/s44_bayesian_f.py`
-- Data: `tier0-computation/s44_bayesian_f.npz`
-- Plot: `tier0-computation/s44_bayesian_f.png`
+- Script: `computations/s44_bayesian_f.py`
+- Data: `computations/s44_bayesian_f.npz`
+- Plot: `computations/s44_bayesian_f.png`
 
 **Working paper section**: W6-3
 
@@ -153,7 +153,7 @@ CDM-CONSTRUCT-43: ALL GGE energy is CDM (w=0). The framework produces NO dark en
 
 **Computation Steps**:
 
-1. Load GGE data from `tier0-computation/s42_gge_energy.npz` and constants from `tier0-computation/s42_constants_snapshot.npz`.
+1. Load GGE data from `computations/s42_gge_energy.npz` and constants from `computations/s42_constants_snapshot.npz`.
 
 2. **Method 1: GGE mode partition.** Omega_DM = E_exc (all modes). Omega_DE = rho_vac (from spectral action or trace-log, after equilibrium subtraction). Ratio = E_exc / rho_vac. With E_exc = 50.9 M_KK and rho_vac = Delta_S = 5522 M_KK^4: the ratio depends on dimensional factors.
 
@@ -169,15 +169,15 @@ CDM-CONSTRUCT-43: ALL GGE energy is CDM (w=0). The framework produces NO dark en
 - INFO: ratios computed but model-dependent
 
 **Input files**:
-- `tier0-computation/s42_gge_energy.npz`
-- `tier0-computation/s42_constants_snapshot.npz`
-- `tier0-computation/s43_qtheory_selftune.npz`
+- `computations/s42_gge_energy.npz`
+- `computations/s42_constants_snapshot.npz`
+- `computations/s43_qtheory_selftune.npz`
 - `researchers/Volovik/35_2016_Klinkhamer_Volovik_Dark_Matter_Dark_Energy_q_Theory.md`
 
 **Output files**:
-- Script: `tier0-computation/s44_dm_de_ratio.py`
-- Data: `tier0-computation/s44_dm_de_ratio.npz`
-- Plot: `tier0-computation/s44_dm_de_ratio.png`
+- Script: `computations/s44_dm_de_ratio.py`
+- Data: `computations/s44_dm_de_ratio.npz`
+- Plot: `computations/s44_dm_de_ratio.png`
 
 **Working paper section**: W6-4
 
@@ -197,7 +197,7 @@ You are computing the 8-temperature generalization of Jacobson's thermodynamic f
 
 **Computation Steps**:
 
-1. Load GGE temperatures from `tier0-computation/s43_gge_temp.npz` and first law data from `tier0-computation/s43_first_law.npz`.
+1. Load GGE temperatures from `computations/s43_gge_temp.npz` and first law data from `computations/s43_first_law.npz`.
 
 2. **8-fluid decomposition.** Each GGE mode k has: energy density rho_k, pressure P_k = 0 (dust), temperature T_k, entropy S_k.
 
@@ -214,14 +214,14 @@ You are computing the 8-temperature generalization of Jacobson's thermodynamic f
 **Pre-registered gate MULTI-T-JACOBSON-44**: INFO (8-fluid EOS).
 
 **Input files**:
-- `tier0-computation/s43_gge_temp.npz`
-- `tier0-computation/s43_first_law.npz`
-- `tier0-computation/s42_gge_energy.npz`
+- `computations/s43_gge_temp.npz`
+- `computations/s43_first_law.npz`
+- `computations/s42_gge_energy.npz`
 
 **Output files**:
-- Script: `tier0-computation/s44_multi_t_jacobson.py`
-- Data: `tier0-computation/s44_multi_t_jacobson.npz`
-- Plot: `tier0-computation/s44_multi_t_jacobson.png`
+- Script: `computations/s44_multi_t_jacobson.py`
+- Data: `computations/s44_multi_t_jacobson.npz`
+- Plot: `computations/s44_multi_t_jacobson.png`
 
 **Working paper section**: W6-5
 
@@ -241,7 +241,7 @@ You are computing the spectral dimension d_s from the polariton band structure a
 
 **Computation Steps**:
 
-1. Load polariton data from `tier0-computation/s42_polariton.npz` and flat band data from `tier0-computation/s43_flatband.npz`.
+1. Load polariton data from `computations/s42_polariton.npz` and flat band data from `computations/s43_flatband.npz`.
 
 2. **d_s from heat kernel on polariton spectrum.** P(sigma) = sum_n exp(-sigma omega_n^2) where omega_n are the polariton band energies at each crystal momentum.
 
@@ -254,13 +254,13 @@ You are computing the spectral dimension d_s from the polariton band structure a
 **Pre-registered gate SPECTRAL-DIM-BAND-44**: INFO (flow diagnostic).
 
 **Input files**:
-- `tier0-computation/s42_polariton.npz`
-- `tier0-computation/s43_flatband.npz` (if exists, otherwise s43 results)
+- `computations/s42_polariton.npz`
+- `computations/s43_flatband.npz` (if exists, otherwise s43 results)
 
 **Output files**:
-- Script: `tier0-computation/s44_spectral_dim_band.py`
-- Data: `tier0-computation/s44_spectral_dim_band.npz`
-- Plot: `tier0-computation/s44_spectral_dim_band.png`
+- Script: `computations/s44_spectral_dim_band.py`
+- Data: `computations/s44_spectral_dim_band.npz`
+- Plot: `computations/s44_spectral_dim_band.png`
 
 **Working paper section**: W6-6
 
@@ -278,7 +278,7 @@ You are testing whether the spectral triple dissolution threshold epsilon_crosso
 
 **Computation Steps**:
 
-1. Load dissolution data from `tier0-computation/s43_dissolution.npz`.
+1. Load dissolution data from `computations/s43_dissolution.npz`.
 
 2. **Recompute at multiple truncations.** For max_pq_sum = 3, 4, 5, 6 (giving N = 112, 240, 432, 992 modes), compute the dissolution threshold epsilon_c where the spectral triple axioms first fail.
 
@@ -294,13 +294,13 @@ You are testing whether the spectral triple dissolution threshold epsilon_crosso
 - INFO: other scaling
 
 **Input files**:
-- `tier0-computation/s43_dissolution.npz`
-- `tier0-computation/tier1_dirac_spectrum.py`
+- `computations/s43_dissolution.npz`
+- `computations/dirac_spectrum.py`
 
 **Output files**:
-- Script: `tier0-computation/s44_dissolution_scaling.py`
-- Data: `tier0-computation/s44_dissolution_scaling.npz`
-- Plot: `tier0-computation/s44_dissolution_scaling.png`
+- Script: `computations/s44_dissolution_scaling.py`
+- Data: `computations/s44_dissolution_scaling.npz`
+- Plot: `computations/s44_dissolution_scaling.png`
 
 **Working paper section**: W6-7
 
@@ -318,7 +318,7 @@ You are tracking the positions of all 13 van Hove singularities (identified in S
 
 **Computation Steps**:
 
-1. Load eigenvalue data at 5 tau values. If DOS-TAU-44 output exists at `tier0-computation/s44_dos_tau.npz`, use it. Otherwise use `tier0-computation/tier1_dirac_spectrum.py` to compute at tau = 0.05, 0.10, 0.15, 0.19, 0.25.
+1. Load eigenvalue data at 5 tau values. If DOS-TAU-44 output exists at `computations/s44_dos_tau.npz`, use it. Otherwise use `computations/dirac_spectrum.py` to compute at tau = 0.05, 0.10, 0.15, 0.19, 0.25.
 
 2. **Identify singularity positions.** At each tau, compute the DOS histogram and identify peaks (M_0 minima, M_1 saddles, M_2 maxima, M_3 flat). Track each singularity's energy position E_vH(tau).
 
@@ -331,14 +331,14 @@ You are tracking the positions of all 13 van Hove singularities (identified in S
 **Pre-registered gate VAN-HOVE-TRACK-44**: INFO (diagnostic).
 
 **Input files**:
-- `tier0-computation/s44_dos_tau.npz` (W5-3 output, if available)
-- `tier0-computation/tier1_dirac_spectrum.py`
-- `tier0-computation/s43_phonon_dos.npz`
+- `computations/s44_dos_tau.npz` (W5-3 output, if available)
+- `computations/dirac_spectrum.py`
+- `computations/s43_phonon_dos.npz`
 
 **Output files**:
-- Script: `tier0-computation/s44_vanhove_track.py`
-- Data: `tier0-computation/s44_vanhove_track.npz`
-- Plot: `tier0-computation/s44_vanhove_track.png`
+- Script: `computations/s44_vanhove_track.py`
+- Data: `computations/s44_vanhove_track.npz`
+- Plot: `computations/s44_vanhove_track.png`
 
 **Working paper section**: W6-8
 

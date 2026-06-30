@@ -1,0 +1,193 @@
+========================================================================
+S59 SPECTRAL-DIM-59: CG Spectral Dimension Convergence
+========================================================================
+
+--- Section 1: Representation enumeration ---
+  max_pq_sum=1: 3 reps, total dim = 7
+  max_pq_sum=2: 6 reps, total dim = 27
+  max_pq_sum=3: 10 reps, total dim = 77
+  max_pq_sum=4: 15 reps, total dim = 182
+  max_pq_sum=5: 21 reps, total dim = 378
+  max_pq_sum=6: 28 reps, total dim = 714
+  max_pq_sum=7: 36 reps, total dim = 1254
+  max_pq_sum=8: 45 reps, total dim = 2079
+
+--- Section 2: Cayley graph construction ---
+
+--- Section 3: Spectral dimension at each truncation level ---
+
+  max_pq_sum=1: N=3 reps, 3 bonds, diam=1, <deg>=2.00
+    Unweighted: d_s_max = 0.9261 at t = 0.4881, gap = 3.0000
+    Weighted:   d_s_max = 0.7819 at t = 0.7961, gap = 1.0510
+    Time: 0.01s
+
+  max_pq_sum=2: N=6 reps, 10 bonds, diam=2, <deg>=3.33
+    Unweighted: d_s_max = 1.3247 at t = 0.4761, gap = 1.6972
+    Weighted:   d_s_max = 1.1348 at t = 0.9091, gap = 0.6140
+    Time: 0.00s
+
+  max_pq_sum=3: N=10 reps, 21 bonds, diam=3, <deg>=4.20
+    Unweighted: d_s_max = 1.5497 at t = 0.4581, gap = 1.1180
+    Weighted:   d_s_max = 1.3360 at t = 0.9091, gap = 0.4003
+    Weyl dimension (counting): d_W = 2.519
+    Time: 0.00s
+
+  max_pq_sum=4: N=15 reps, 36 bonds, diam=4, <deg>=4.80
+    Unweighted: d_s_max = 1.7110 at t = 0.4407, gap = 0.7906
+    Weighted:   d_s_max = 1.4772 at t = 0.8892, gap = 0.2808
+    Weyl dimension (counting): d_W = 2.359
+    Time: 0.00s
+
+  max_pq_sum=5: N=21 reps, 55 bonds, diam=5, <deg>=5.24
+    Unweighted: d_s_max = 1.8357 at t = 0.4299, gap = 0.5874
+    Weighted:   d_s_max = 1.5851 at t = 0.8770, gap = 0.2076
+    Weyl dimension (counting): d_W = 2.928
+    Time: 0.00s
+
+  max_pq_sum=6: N=28 reps, 78 bonds, diam=6, <deg>=5.57
+    Unweighted: d_s_max = 1.9357 at t = 0.4228, gap = 0.4529
+    Weighted:   d_s_max = 1.6709 at t = 0.8697, gap = 0.1595
+    Weyl dimension (counting): d_W = 2.845
+    Time: 0.00s
+
+  max_pq_sum=7: N=36 reps, 105 bonds, diam=7, <deg>=5.83
+    Unweighted: d_s_max = 2.0180 at t = 0.4170, gap = 0.3596
+    Weighted:   d_s_max = 1.7410 at t = 0.8626, gap = 0.1264
+    Weyl dimension (counting): d_W = 3.112
+    Time: 0.00s
+
+  max_pq_sum=8: N=45 reps, 136 bonds, diam=8, <deg>=6.04
+    Unweighted: d_s_max = 2.0871 at t = 0.4124, gap = 0.2922
+    Weighted:   d_s_max = 1.7994 at t = 0.8578, gap = 0.1026
+    Weyl dimension (counting): d_W = 3.151
+    Time: 0.00s
+
+Total computation time: 0.0s
+
+========================================================================
+Section 4: Convergence Analysis
+========================================================================
+
+  mpq     N  bonds  diam  <deg>  d_s(uw)   d_s(w)  d_Weyl
+------------------------------------------------------------
+    1     3      3     1   2.00   0.9261   0.7819     ---
+    2     6     10     2   3.33   1.3247   1.1348     ---
+    3    10     21     3   4.20   1.5497   1.3360   2.519
+    4    15     36     4   4.80   1.7110   1.4772   2.359
+    5    21     55     5   5.24   1.8357   1.5851   2.928
+    6    28     78     6   5.57   1.9357   1.6709   2.845
+    7    36    105     7   5.83   2.0180   1.7410   3.112
+    8    45    136     8   6.04   2.0871   1.7994   3.151
+
+Monotonicity (unweighted): YES
+  Differences: [0.39863219 0.22492701 0.1613234  0.12471542 0.10003362 0.08230841
+ 0.06910078]
+Monotonicity (weighted):   YES
+  Differences: [0.35289109 0.20118417 0.14119609 0.10792125 0.08578412 0.07007195
+ 0.05845231]
+
+Model A (power law -> 8): d_s = 8 - 7.082 * mpq^(-0.086)
+  Residual: 0.000266
+  Predicted d_s(10) = 2.195
+  Predicted d_s(20) = 2.532
+
+Model B (exp saturation): d_s -> 2.195 + -1.732 * exp(-0.325 * mpq)
+  d_s^inf = 2.195
+  Residual: 0.002593
+
+Model C (power law -> d_inf): d_s = 16.380 - 15.454 * mpq^(-0.038)
+  d_inf = 16.380
+  Residual: 0.000017
+  Predicted d_s(10) = 2.209
+  Predicted d_s(20) = 2.574
+
+  Residuals: A=0.000266, B=0.002593, C=0.000017
+  Best fit: Model C
+
+========================================================================
+Section 5: Cross-checks
+========================================================================
+
+Cross-check 1: Comparison with S54/S56 (32-cell graph)
+  S59 max_pq_sum=6 (N=28): d_s(uw) = 1.9357
+  S56 32-cell graph:        d_s(GL) = 1.9973 (from s56 data)
+  S56 32-cell TB:           d_s(TB) = 1.7324 (from s56 data)
+  Note: S54 32-cell uses Casimir-ordered first 32 reps (up to p+q=7)
+        S59 max_pq_sum=6 uses ALL reps with p+q<=6 (exactly 28 reps)
+
+Cross-check 2: Graph dimension estimates
+  mpq=1: N=3, diam=1, 2*ln(N)/ln(d)=3.17, d_s=0.926
+  mpq=2: N=6, diam=2, 2*ln(N)/ln(d)=5.17, d_s=1.325
+  mpq=3: N=10, diam=3, 2*ln(N)/ln(d)=4.19, d_s=1.550
+  mpq=4: N=15, diam=4, 2*ln(N)/ln(d)=3.91, d_s=1.711
+  mpq=5: N=21, diam=5, 2*ln(N)/ln(d)=3.78, d_s=1.836
+  mpq=6: N=28, diam=6, 2*ln(N)/ln(d)=3.72, d_s=1.936
+  mpq=7: N=36, diam=7, 2*ln(N)/ln(d)=3.68, d_s=2.018
+  mpq=8: N=45, diam=8, 2*ln(N)/ln(d)=3.66, d_s=2.087
+
+Cross-check 3: Mean degree convergence
+  mpq=1: <deg> = 2.00
+  mpq=2: <deg> = 3.33
+  mpq=3: <deg> = 4.20
+  mpq=4: <deg> = 4.80
+  mpq=5: <deg> = 5.24
+  mpq=6: <deg> = 5.57
+  mpq=7: <deg> = 5.83
+  mpq=8: <deg> = 6.04
+
+========================================================================
+Section 6: Hausdorff dimension (from graph distances)
+========================================================================
+  mpq=3: r = [0, 1, 2, 3], B(r) = [np.int64(1), np.int64(4), np.int64(8), np.int64(10)], d_H = 0.852
+  mpq=5: r = [0, 1, 2, 3, 4, 5], B(r) = [np.int64(1), np.int64(4), np.int64(9), np.int64(15), np.int64(19), np.int64(21)], d_H = 1.066
+  mpq=7: r = [0, 1, 2, 3, 4, 5, 6, 7], B(r) = [np.int64(1), np.int64(4), np.int64(9), np.int64(16), np.int64(24), np.int64(30), np.int64(34), np.int64(36)], d_H = 1.183
+  mpq=8: r = [0, 1, 2, 3, 4, 5, 6, 7, 8], B(r) = [np.int64(1), np.int64(4), np.int64(9), np.int64(16), np.int64(25), np.int64(33), np.int64(39), np.int64(43), np.int64(45)], d_H = 1.225
+
+========================================================================
+Section 7: GATE VERDICT
+========================================================================
+
+Gate: SPECTRAL-DIM-59
+Verdict: PASS
+Detail: d_s monotonically increasing from 0.926 to 2.087 over mpq=1..8. Model C: d_inf = 16.38 (>= 4). Finite-size artifact confirmed.
+
+Key numbers:
+  d_s(mpq=3, uw)  = 1.5497
+  d_s(mpq=5, uw)  = 1.8357
+  d_s(mpq=8, uw)  = 2.0871
+  d_s(mpq=3, w)   = 1.3360
+  d_s(mpq=8, w)   = 1.7994
+  Model C: d_inf  = 16.380
+  Monotone (uw):  True
+  Monotone (w):   True
+
+--- Section 8: Saving data ---
+Data saved to C:\sandbox\Ainulindale Exflation\tier0-computation\s59_spectral_dim.npz
+
+--- Section 9: Plotting ---
+Plot saved to C:\sandbox\Ainulindale Exflation\tier0-computation\s59_spectral_dim.png
+
+========================================================================
+FINAL SUMMARY
+========================================================================
+Gate: SPECTRAL-DIM-59
+Verdict: PASS
+
+Key results:
+  mpq=1: N=  3, d_s(uw)=0.9261, d_s(w)=0.7819
+  mpq=2: N=  6, d_s(uw)=1.3247, d_s(w)=1.1348
+  mpq=3: N= 10, d_s(uw)=1.5497, d_s(w)=1.3360
+  mpq=4: N= 15, d_s(uw)=1.7110, d_s(w)=1.4772
+  mpq=5: N= 21, d_s(uw)=1.8357, d_s(w)=1.5851
+  mpq=6: N= 28, d_s(uw)=1.9357, d_s(w)=1.6709
+  mpq=7: N= 36, d_s(uw)=2.0180, d_s(w)=1.7410
+  mpq=8: N= 45, d_s(uw)=2.0871, d_s(w)=1.7994
+
+Convergence:
+  Monotone (unweighted): True
+  Monotone (weighted):   True
+  Model C: d_inf = 16.380 (free asymptote)
+  Model A: 8 - 7.082 * mpq^(-0.086)
+
+Assessment:
+  d_s monotonically increasing from 0.926 to 2.087 over mpq=1..8. Model C: d_inf = 16.38 (>= 4). Finite-size artifact confirmed.

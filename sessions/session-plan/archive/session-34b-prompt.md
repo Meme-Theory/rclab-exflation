@@ -4,7 +4,7 @@
 **Mode**: compute
 **Depends on**: Session 34a complete, DPHYS-34a-1 = PASS
 **Source plan**: `sessions/session-plan/session-34-plan.md`
-**Prerequisite**: `tier0-computation/s34a_dphys_fold.npz` must exist. Read `tier0-computation/s34a_gate_verdicts.txt` to confirm DPHYS-34a-1 PASS before ANY computation.
+**Prerequisite**: `computations/s34a_dphys_fold.npz` must exist. Read `computations/s34a_gate_verdicts.txt` to confirm DPHYS-34a-1 PASS before ANY computation.
 
 This is Wave 2 of 3. Two computations that depend on 34a-1 output. Both feed into Wave 3 (Thouless criterion).
 
@@ -23,22 +23,22 @@ This is Wave 2 of 3. Two computations that depend on 34a-1 output. Both feed int
 ## REQUIRED READING (LEAN)
 
 ### All agents
-- `tier0-computation/s34a_gate_verdicts.txt` — MUST confirm DPHYS-34a-1 PASS before computing
+- `computations/s34a_gate_verdicts.txt` — MUST confirm DPHYS-34a-1 PASS before computing
 - `sessions/session-34/session-34a-synthesis.md` — 34a results summary
 
 ### bap (baptista)
-- `tier0-computation/s33b_trap1_wall_bcs.py` — lines 214-249: Thouless matrix construction template (for context on what 34a-2 feeds into)
+- `computations/s33b_trap1_wall_bcs.py` — lines 214-249: Thouless matrix construction template (for context on what 34a-2 feeds into)
 
 ### sim (phonon-exflation-sim)
-- `tier0-computation/s32b_rpa1_thouless.npz` — bare curvature baseline (key: `bare_curvature` = 20.43)
+- `computations/s32b_rpa1_thouless.npz` — bare curvature baseline (key: `bare_curvature` = 20.43)
 
 ---
 
 ## PRE-SESSION GATE CHECK (MANDATORY FIRST ACTION)
 
 Before any computation:
-1. Read `tier0-computation/s34a_gate_verdicts.txt` — confirm DPHYS-34a-1 = PASS
-2. Verify `tier0-computation/s34a_dphys_fold.npz` exists and loads correctly
+1. Read `computations/s34a_gate_verdicts.txt` — confirm DPHYS-34a-1 = PASS
+2. Verify `computations/s34a_dphys_fold.npz` exists and loads correctly
 3. If DPHYS-34a-1 = FAIL or data missing, STOP and report
 
 ---
@@ -69,8 +69,8 @@ Critical question: does V(B2,B2) remain nonzero and large enough for BCS when B2
 
 **MANDATORY CROSS-CHECK**: At phi=0, V_nm(phi=0) must reproduce the bare Kosmann kernel from Session 23a. Specifically V(B2,B2)(0) should match `V_pairing_{tau_idx}` restricted to B2 indices.
 
-**Script**: `tier0-computation/s34b_dphys_kosmann.py` (~200 lines)
-**Output**: `tier0-computation/s34b_dphys_kosmann.{py,npz,png}`
+**Script**: `computations/s34b_dphys_kosmann.py` (~200 lines)
+**Output**: `computations/s34b_dphys_kosmann.{py,npz,png}`
 **Python**: `"phonon-exflation-sim/.venv312/Scripts/python.exe"`
 
 **Diagnostic** (not standalone gate — feeds 34a-3):
@@ -98,8 +98,8 @@ Critical question: does V(B2,B2) remain nonzero and large enough for BCS when B2
 - From `s34a_dphys_fold.npz`: D_phys eigenvalues at each (tau, phi_VEV) grid point
 - From `s32b_rpa1_thouless.npz`: `bare_curvature` = 20.43, `chi_pass_threshold` = 0.54, `d2S_abs`, `d2S_trace`
 
-**Script**: `tier0-computation/s34b_rpa_curvature.py` (~120 lines)
-**Output**: `tier0-computation/s34b_rpa_curvature.{py,npz,png}`
+**Script**: `computations/s34b_rpa_curvature.py` (~120 lines)
+**Output**: `computations/s34b_rpa_curvature.{py,npz,png}`
 **Python**: `"phonon-exflation-sim/.venv312/Scripts/python.exe"`
 
 **Gate RPA-34a** (diagnostic):
@@ -121,7 +121,7 @@ Critical question: does V(B2,B2) remain nonzero and large enough for BCS when B2
 ## SYNTHESIS & OUTPUT
 
 **Designated writer**: coord
-**Gate verdicts file**: `tier0-computation/s34b_gate_verdicts.txt`
+**Gate verdicts file**: `computations/s34b_gate_verdicts.txt`
 **Synthesis addendum**: append to `sessions/session-34/session-34a-synthesis.md` or create `sessions/session-34/session-34b-synthesis.md`
 
 Coord classifies RPA-34a, records Kosmann kernel diagnostic, assesses readiness for Wave 3 (session-34c: Thouless criterion). If RPA-34a = CHALLENGE, this is a major unexpected result that the user must evaluate before proceeding.
@@ -131,7 +131,7 @@ Coord classifies RPA-34a, records Kosmann kernel diagnostic, assesses readiness 
 ## OPERATIONAL RULES
 
 - Python: `"phonon-exflation-sim/.venv312/Scripts/python.exe"`
-- Output directory: `tier0-computation/`
+- Output directory: `computations/`
 - Script prefix: `s34b_`
 - NUMBERS first. Gate classification second. Interpretation third.
 - Check inbox between computation blocks.

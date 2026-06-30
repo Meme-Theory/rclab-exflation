@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 6,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_51",
+      "anchor_type": "data_provenance",
+      "name": "delta_T_profile",
+      "script_path": "session-22/s22a_delta_T_profile.py",
+      "session": "s22a",
+      "inputs": "",
+      "outputs": "session-22/s22a_delta_T_profile.png, session-22/s22a_delta_T_profile.txt",
+      "source_file": "computations/session-22/s22a_delta_T_profile.py",
+      "source_context_30_lines": "  348: ax.set_xlabel(r'$\\tau$')\n  349: ax.set_ylabel('Z3 fraction')\n  350: ax.set_title('(d) Z3 Sector Fractions')\n  351: ax.legend(fontsize=8)\n  352: ax.grid(True, alpha=0.3)\n  353: ax.set_ylim([0.32, 0.34])\n  354: \n  355: plt.tight_layout()\n  356: plt.savefig(data_dir / 's22a_delta_T_profile.png', dpi=150, bbox_inches='tight')\n  357: print(f\"\\nPlot saved to {data_dir / 's22a_delta_T_profile.png'}\")\n  358: \n  359: # Save text output\n  360: with open(data_dir / 's22a_delta_T_profile.txt', 'w') as f:\n  361:     f.write(\"QA-3 RESULTS SUMMARY\\n\")\n  362:     f.write(f\"gamma = {gamma1:.6f}, tau* = {1/gamma1:.4f}\\n\")\n  363:     f.write(f\"A_b1/A_b2 = {popt_b1[0]/popt_b2[0]:.6f} (4/9 = {4/9:.6f})\\n\")\n  364:     f.write(f\"Bragg agreement: {agreement:.1f}%\\n\")"
+    },
+    {
+      "anchor_id": "prov_52",
+      "anchor_type": "data_provenance",
+      "name": "dnp_bound",
+      "script_path": "session-22/s22a_dnp_bound.py",
+      "session": "s22a",
+      "inputs": "",
+      "outputs": "session-22/s22a_dnp_bound.npz, session-22/s22a_dnp_bound.png",
+      "source_file": "computations/session-22/s22a_dnp_bound.py",
+      "source_context_30_lines": "  265: print(f\"  Detail: {detail}\")\n  266: print(f\"  Probability shift: {prob_shift}\")\n  267: print()\n  268: \n  269: # ===========================================================================\n  270: # SAVE DATA\n  271: # ===========================================================================\n  272: \n  273: np.savez(os.path.join(SCRIPT_DIR, 's22a_dnp_bound.npz'),\n  274:          tau=tau_values,\n  275:          lambda_min_00=lambda_min_arr,\n  276:          lambda_max_00=lambda_max_arr,\n  277:          lambda_min_10=lambda_min_10_arr,\n  278:          lambda_min_01=lambda_min_01_arr,\n  279:          global_min=global_min,\n  280:          m2_gauge=m2_gauge,\n  281:          ratio=ratio,"
+    },
+    {
+      "anchor_id": "prov_53",
+      "anchor_type": "data_provenance",
+      "name": "euclidean_action",
+      "script_path": "session-22/s22a_euclidean_action.py",
+      "session": "s22a",
+      "inputs": "",
+      "outputs": "session-22/s22a_euclidean_action.txt",
+      "source_file": "computations/session-22/s22a_euclidean_action.py",
+      "source_context_30_lines": "<name 'euclidean_action' not found in source>\n--- file head ---\n    1: \"\"\"\n    2: SP-3: EUCLIDEAN ACTION I_E AT THREE MONOPOLES\n    3: ===============================================\n    4: \n    5: Session 22a -- Schwarzschild-Penrose-Geometer\n    6: \n    7: Computes the Euclidean action I_E(tau) at the three Berry curvature monopoles\n    8: M0 (tau=0), M1 (tau~0.15), M2 (tau~1.55).\n    9: \n   10: EQUATIONS:\n   11:     I_E(tau) = -(1/(16 pi G)) integral R_K(tau) dvol(tau)\n   12: \n   13:     On volume-preserving Jensen deformation: Vol(K) = constant.\n   14:     So: I_E(tau) ~ -R_K(tau) * Vol(K) / (16 pi G)\n   15: \n   16:     The ratio I_E(M1)/I_E(M0) = R_K(M1)/R_K(M0) (tau-independent factors cancel).\n   17: \n   18:     Euclidean path integral weight: exp(-I_E) ~ exp(R_K/(16 pi G)).\n   19:     Higher R_K => lower I_E => EXPONENTIALLY PREFERRED.\n   20: \n   21: DATA: R_K(tau) from exact analytical formula (SP-2, Baptista eq 3.70):\n   22:     R(s) = [2e^{2s} - 1 + 8e^{-s} - e^{-4s}] / 4\n   23: \n   24: PRE-REGISTERED Constraint GateS (Hawking R2 collab):\n   25:     INTERESTING: I_E(M1) < I_E(M0)                       (+2-3 pp)\n   26:     COMPELLING:  exp(-delta I_E) > 10 (exponential M1)    (+5-8 pp)\n   27:     NEUTRAL:     I_E(M1) > I_E(M0) (M0 preferred)        (0 pp)\n   28:     CLOSED:        I_E identical at all three monopoles      (-2 pp)\n   29: \n   30: Author: Schwarzschild-Penrose-Geometer (Session 22a)"
+    },
+    {
+      "anchor_id": "prov_54",
+      "anchor_type": "data_provenance",
+      "name": "fano",
+      "script_path": "session-22/s22a_fano.py",
+      "session": "s22a",
+      "inputs": "",
+      "outputs": "session-22/s22a_fano.txt",
+      "source_file": "computations/session-22/s22a_fano.py",
+      "source_context_30_lines": "   32: from pathlib import Path\n   33: \n   34: data_dir = Path(__file__).parent\n   35: \n   36: # ============================================================\n   37: # 1. FANO LINESHAPE FUNCTIONS\n   38: # ============================================================\n   39: \n   40: def fano_profile(epsilon, q):\n   41:     \"\"\"Standard Fano lineshape: sigma = (epsilon + q)^2 / (epsilon^2 + 1)\"\"\"\n   42:     return (epsilon + q)**2 / (epsilon**2 + 1)\n   43: \n   44: def fano_delta_E(tau, tau_0, Gamma, delta_min, q, offset):\n   45:     \"\"\"\n   46:     Gap splitting as a function of tau, modeled as Fano lineshape.\n   47:     delta_E(tau) = offset + delta_min * |(epsilon + q)|^2 / (epsilon^2 + 1)\n   48:     where epsilon = (tau - tau_0) / (Gamma/2)"
+    },
+    {
+      "anchor_id": "prov_55",
+      "anchor_type": "data_provenance",
+      "name": "impedance",
+      "script_path": "session-22/s22a_impedance.py",
+      "session": "s22a",
+      "inputs": "",
+      "outputs": "session-22/s22a_impedance.npz, session-22/s22a_impedance.png, session-22/s22a_impedance.txt",
+      "source_file": "computations/session-22/s22a_impedance.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: Session 22a QA-1: Acoustic Impedance Z(tau) and Reflection Coefficient R_reflect(tau)\n    4: \n    5: Computes the acoustic impedance of the Dirac spectrum at the phonon gap edge,\n    6: and the reflection coefficient at the Berry curvature monopole locations M1 and M2.\n    7: \n    8: Physical picture: The Jensen deformation tau parametrizes an \"internal acoustic medium.\"\n    9: The impedance Z(tau) = sqrt(|rho(tau) * kappa(tau)|) measures the spectral resistance\n   10: to a rolling modulus. At topological phase boundaries (M1, M2), the gap-edge sector\n   11: switches identity, creating an impedance mismatch that partially reflects the modulus.\n   12: \n   13: Definitions:"
+    },
+    {
+      "anchor_id": "prov_56",
+      "anchor_type": "data_provenance",
+      "name": "level_stats",
+      "script_path": "session-22/s22a_level_stats.py",
+      "session": "s22a",
+      "inputs": "",
+      "outputs": "session-22/s22a_level_stats.npz, session-22/s22a_level_stats.png",
+      "source_file": "computations/session-22/s22a_level_stats.py",
+      "source_context_30_lines": "  394: print(f\"  Detail: {detail}\")\n  395: print(f\"  Probability shift: {prob_shift}\")\n  396: print()\n  397: \n  398: # ===========================================================================\n  399: # PART 7: SAVE DATA\n  400: # ===========================================================================\n  401: \n  402: np.savez(os.path.join(data_dir, 's22a_level_stats.npz'),\n  403:          tau_target=np.array(target_taus),\n  404:          tau_all=tau_values,\n  405:          q_vs_tau_N50=q_vs_tau_50,\n  406:          q_vs_tau_N100=q_vs_tau_100,\n  407:          verdict=np.array([verdict]),\n  408:          prob_shift=np.array([prob_shift]),\n  409: )\n  410: "
+    },
+    {
+      "anchor_id": "prov_57",
+      "anchor_type": "data_provenance",
+      "name": "paasch_curve",
+      "script_path": "session-22/s22a_paasch_curve.py",
+      "session": "s22a",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-22/s22a_paasch_curve.py",
+      "source_context_30_lines": "   53: # X2-removed: alias 'SHARED_DIR' = ... 'computations' (replaced by tools.computation_root.resolve_*)\n   54: sys.path.insert(0, str(SHARED_DIR))\n   55: from canonical_constants import phi_paasch  # noqa: E402\n   56: \n   57: # ============================================================\n   58: # Input pins (SHA-256 pre-registered in prep_T3-S22A-PAASCH-CURVE.md)\n   59: # ============================================================\n   60: ARCHIVE = Path(r\"C:/sandbox/Ainulindale Exflation/computations/_shared\")\n   61: ORIG_SCRIPT = ARCHIVE / \"s22a_paasch_curve.py\"\n   62: SWEEP_DATA = ARCHIVE / \"s19a_sweep_data.npz\"\n   63: CANON = resolve_script(None, 'canonical_constants.py')\n   64: \n   65: \n   66: def _sha256(p: Path) -> str:\n   67:     with open(p, \"rb\") as f:\n   68:         return hashlib.sha256(f.read()).hexdigest()\n   69: "
+    },
+    {
+      "anchor_id": "prov_58",
+      "anchor_type": "data_provenance",
+      "name": "paasch_curve_legacy",
+      "script_path": "session-22/s22a_paasch_curve_legacy.py",
+      "session": "s22a",
+      "inputs": "",
+      "outputs": "session-22/s22a_paasch_curve_legacy.npz, session-22/s22a_paasch_curve_legacy.png",
+      "source_file": "computations/session-22/s22a_paasch_curve_legacy.py",
+      "source_context_30_lines": "<name 'paasch_curve_legacy' not found in source>\n--- file head ---\n    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: Session 22a QA-4: phi_paasch Ratio Curve at All 21 tau Values\n    4: \n    5: Session 12 found m_{(3,0)}/m_{(0,0)} = 1.531580 at tau=0.15, which is\n    6: 0.0005% from phi_paasch = 1.53158 (solution to x = e^{-x^2}).\n    7: \n    8: This computation extends that to all 21 tau values to determine:\n    9: 1. Does r(tau) cross phi_paasch? At what tau?\n   10: 2. Is the crossing at M1 (~0.15)?\n   11: 3. Does r(tau) track phi_paasch or just cross it once?\n   12: \n   13: Data: computations/session-19/s19a_sweep_data.npz\n   14: \n   15: Author: quantum-acoustics-theorist\n   16: Date: 2026-02-20\n   17: \"\"\"\n   18: \n   19: import numpy as np\n   20: from scipy.optimize import brentq\n   21: from scipy.interpolate import CubicSpline\n   22: import matplotlib.pyplot as plt\n   23: from pathlib import Path\n   24: \n   25: data_dir = Path(__file__).parent\n   26: \n   27: # ============================================================\n   28: # 1. LOAD DATA AND EXTRACT SECTOR EIGENVALUES\n   29: # ============================================================\n   30: "
+    },
+    {
+      "anchor_id": "prov_59",
+      "anchor_type": "data_provenance",
+      "name": "slow_roll",
+      "script_path": "session-22/s22a_slow_roll.py",
+      "session": "s22a",
+      "inputs": "",
+      "outputs": "session-22/s22a_slow_roll.npz, session-22/s22a_slow_roll.png",
+      "source_file": "computations/session-22/s22a_slow_roll.py",
+      "source_context_30_lines": "  298: for i in pw_indices:\n  299:     sr_check = \"SLOW-ROLL\" if abs(dlnV_dtau[i]) < np.sqrt(10) else \"FAST-ROLL\"\n  300:     print(f\"    tau={tau[i]:4.1f}: |d(ln V)/dtau| = {abs(dlnV_dtau[i]):.6f}  -> {sr_check}\")\n  301: \n  302: # ===========================================================================\n  303: # 8. SAVE DATA\n  304: # ===========================================================================\n  305: \n  306: out_file = os.path.join(data_dir, 's22a_slow_roll.npz')\n  307: np.savez(out_file,\n  308:     tau=tau,\n  309:     V_total=V_total,\n  310:     V_tree=V_tree,\n  311:     V_cw=V_cw,\n  312:     E_casimir=E_casimir,\n  313:     V_prime=V_prime,\n  314:     V_double_prime=V_double_prime,"
+    },
+    {
+      "anchor_id": "prov_60",
+      "anchor_type": "data_provenance",
+      "name": "weyl_curvature",
+      "script_path": "session-22/s22a_weyl_curvature.py",
+      "session": "s22a",
+      "inputs": "",
+      "outputs": "session-22/s22a_weyl_curvature.npz, session-22/s22a_weyl_curvature.png",
+      "source_file": "computations/session-22/s22a_weyl_curvature.py",
+      "source_context_30_lines": "  231: print(f\"  *** VERDICT: {verdict} ***\")\n  232: print(f\"  Detail: {verdict_detail}\")\n  233: print(f\"  Probability shift: {prob_shift}\")\n  234: \n  235: # ===========================================================================\n  236: # 8. SAVE DATA\n  237: # ===========================================================================\n  238: \n  239: out_file = os.path.join(data_dir, 's22a_weyl_curvature.npz')\n  240: np.savez(out_file,\n  241:     tau=tau,\n  242:     Weyl2=Weyl2,\n  243:     Ric2=Ric2,\n  244:     Ric0_2=Ric0_2,\n  245:     K=K_analytic,\n  246:     R_scalar=R_scalar,\n  247:     tidal_ratio=tidal_ratio,"
+    }
+  ]
+}

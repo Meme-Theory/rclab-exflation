@@ -30,15 +30,15 @@ Session 19d delivered a clean CLOSED on Casimir energy for scalar+vector modes (
 
 2. **Connes Paper 07**: `researchers/Connes/07_1996_Connes_Chamseddine_spectral_action_principle.md` — The spectral action and Seeley-DeWitt expansion.
 
-3. **Session 17b SP-2 curvature**: `tier0-computation/sp2_final_verification.py` — 4 curvature invariants as exact analytic functions. R_K(tau), |Ric|^2(tau), Kretschner scalar, Weyl tensor.
+3. **Session 17b SP-2 curvature**: `computations/sp2_final_verification.py` — 4 curvature invariants as exact analytic functions. R_K(tau), |Ric|^2(tau), Kretschner scalar, Weyl tensor.
 
 4. **Your agent memory**: `.claude/agent-memory/connes-ncg-theorist/`
 
 ## For phonon-exflation-sim:
 
-5. **`tier0-computation/b6_scalar_vector_laplacian.py`** — Contains `compute_connection_ON()` and `ricci_tensor_ON()`. You are extending these to produce the full R_{abcd}.
+5. **`computations/b6_scalar_vector_laplacian.py`** — Contains `compute_connection_ON()` and `ricci_tensor_ON()`. You are extending these to produce the full R_{abcd}.
 
-6. **`tier0-computation/tier1_dirac_spectrum.py`** — `jensen_metric()`, Gell-Mann structure constants. The Lie algebra infrastructure.
+6. **`computations/dirac_spectrum.py`** — `jensen_metric()`, Gell-Mann structure constants. The Lie algebra infrastructure.
 
 7. **Session 19d synthesis**: `sessions/session-19/session-19d-synthesis.md` — Section IV (why R_{abcd} is the key differentiator).
 
@@ -113,7 +113,7 @@ Jensen deformation introduces anisotropic corrections through the metric compone
 - VERDICT: NCG path OPEN or CLOSED
 - If OPEN: tau range and required f_2/f_0 ratio
 
-**Write to**: `tier0-computation/sd20a_seeley_dewitt_gate.py`
+**Write to**: `computations/sd20a_seeley_dewitt_gate.py`
 
 ---
 
@@ -127,7 +127,7 @@ Session 20b needs R_{abcd}(tau) for the Lichnerowicz operator. The infrastructur
 
 #### Computation Steps
 
-1. Load Gell-Mann structure constants f^c_{ab} (already in `tier1_dirac_spectrum.py`).
+1. Load Gell-Mann structure constants f^c_{ab} (already in `dirac_spectrum.py`).
 
 2. For each tau in [0, 0.1, ..., 2.0]:
    - Jensen metric g_{ab}(tau) from `jensen_metric(tau)` — 8x8 diagonal
@@ -149,7 +149,7 @@ Session 20b needs R_{abcd}(tau) for the Lichnerowicz operator. The infrastructur
 - |Riem|^2(tau) for SD-1
 - Data file: `r20a_riemann_tensor.npz`
 
-**Write to**: `tier0-computation/r20a_riemann_tensor.py`
+**Write to**: `computations/r20a_riemann_tensor.py`
 
 ---
 
@@ -171,7 +171,7 @@ Session 20b needs R_{abcd}(tau) for the Lichnerowicz operator. The infrastructur
 
 **2 deliverables from 2 agents in 1 day.** Both run in parallel.
 
-All scripts in `tier0-computation/`. Environment: `phonon-exflation-sim/.venv312/Scripts/python.exe`.
+All scripts in `computations/`. Environment: `phonon-exflation-sim/.venv312/Scripts/python.exe`.
 
 ---
 

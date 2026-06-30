@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 61,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_601",
+      "anchor_type": "data_provenance",
+      "name": "eliashberg_sector",
+      "script_path": "session-53/s53_eliashberg_sector.py",
+      "session": "s53",
+      "inputs": "",
+      "outputs": "session-53/s53_eliashberg_sector.npz, session-53/s53_eliashberg_sector.png",
+      "source_file": "computations/session-53/s53_eliashberg_sector.py",
+      "source_context_30_lines": "   33: \n   34: Input:\n   35:   - computations/session-23/s23a_kosmann_singlet.npz (Kosmann K_a matrices, connection)\n   36:   - computations/session-44/s44_dos_tau.npz (eigenvalue spectrum per sector)\n   37:   - computations/session-48/s48_npair_full.npz (singlet V_8x8 cross-check)\n   38:   - dirac_spectrum.py (irrep construction, Dirac operator builder)\n   39: \n   40: Output:\n   41:   - computations/session-53/s53_eliashberg_sector.npz\n   42:   - computations/session-53/s53_eliashberg_sector.png\n   43:   - computations/session-53/s53_eliashberg_sector_output.txt\n   44: \n   45: Author: quantum-acoustics-theorist, Session 53\n   46: Date: 2026-03-21\n   47: \"\"\"\n   48: \n   49: import os"
+    },
+    {
+      "anchor_id": "prov_602",
+      "anchor_type": "data_provenance",
+      "name": "exflation_cmb_temp",
+      "script_path": "session-53/s53_exflation_cmb_temp.py",
+      "session": "s53",
+      "inputs": "",
+      "outputs": "session-53/s53_exflation_cmb_temp.npz",
+      "source_file": "computations/session-53/s53_exflation_cmb_temp.py",
+      "source_context_30_lines": " 1079:     'exponent_nonrel': exponent_nonrel,\n 1080:     'N_required_total': N_required_total,\n 1081:     'N_exfl_cooling_m3': N_exfl_cooling,\n 1082:     'N_std_needed_m3': N_std_needed,\n 1083:     'rho_phonon_GeV4': rho_phonon_GeV4,\n 1084:     'H_GGE_GeV': H_GGE,\n 1085: }\n 1086: \n 1087: np.savez(\"computations/session-53/s53_exflation_cmb_temp.npz\", **results)\n 1088: print(\"\\nSaved: computations/session-53/s53_exflation_cmb_temp.npz\")\n 1089: print(\"Done.\")"
+    },
+    {
+      "anchor_id": "prov_603",
+      "anchor_type": "data_provenance",
+      "name": "exflation_flatness",
+      "script_path": "session-53/s53_exflation_flatness.py",
+      "session": "s53",
+      "inputs": "",
+      "outputs": "session-53/s53_exflation_flatness.png",
+      "source_file": "computations/session-53/s53_exflation_flatness.py",
+      "source_context_30_lines": "   48: from canonical_constants import (\n   49:     tau_fold, Vol_SU3_Haar, G_DeWitt, M_KK_kerner, M_Pl_reduced,\n   50:     a0_fold, a2_fold, g0_diag, PI, N_e_classical,\n   51:     c_light, H_fold, v_terminal, dt_transit,\n   52: )\n   53: \n   54: # Output file\n   55: OUTPUT_DIR = os.path.dirname(os.path.abspath(__file__))\n   56: OUTPUT_FILE = os.path.join(OUTPUT_DIR, 's53_exflation_flatness_output.txt')\n   57: \n   58: # Redirect stdout to both console and file\n   59: import io\n   60: \n   61: class Tee:\n   62:     def __init__(self, *files):\n   63:         self.files = files\n   64:     def write(self, obj):"
+    },
+    {
+      "anchor_id": "prov_604",
+      "anchor_type": "data_provenance",
+      "name": "foam_cc",
+      "script_path": "session-53/s53_foam_cc.py",
+      "session": "s53",
+      "inputs": "",
+      "outputs": "session-53/s53_foam_cc.png",
+      "source_file": "computations/session-53/s53_foam_cc.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s53_foam_cc.py — FOAM-CC-53: Pre-Crystallization Foam Lambda_eff\n    4: ================================================================\n    5: \n    6: Implements Carlip's midisuperspace CC-hiding mechanism for the phonon-exflation\n    7: framework's 12D (M^4 x SU(3)) pre-crystallization epoch.\n    8: \n    9: Physics:\n   10:   Before BCS condensation, the internal SU(3) fiber is a \"foam\" of expanding\n   11:   and contracting Planck-scale regions. Carlip (2019, 2021, 2025) showed that"
+    },
+    {
+      "anchor_id": "prov_605",
+      "anchor_type": "data_provenance",
+      "name": "ginzburg_fabric",
+      "script_path": "session-53/s53_ginzburg_fabric.py",
+      "session": "s53",
+      "inputs": "",
+      "outputs": "",
+      "source_file": "computations/session-53/s53_ginzburg_fabric.py",
+      "source_context_30_lines": "   22: from canonical_constants import (\n   23:     Vol_SU3_Haar, N_cells, xi_BCS, xi_GL, Delta_0_GL, E_B2_mean,\n   24:     J_C2, J_su2, J_u1, L_over_xi, a_GL, b_GL, E_cond, barrier_0d,\n   25:     rho_B2_per_mode, E_B1, E_B3_mean, T_acoustic, PI,\n   26:     omega_PV, N_dof_BCS, E_cond_ED_8mode,\n   27: )\n   28: \n   29: # Output file\n   30: outpath = r\"C:\\sandbox\\Ainulindale Exflation\\computations\\s53_ginzburg_fabric_output.txt\"\n   31: outlines = []\n   32: \n   33: def pr(s=\"\"):\n   34:     print(s)\n   35:     outlines.append(s)\n   36: \n   37: pr(\"=\" * 70)\n   38: pr(\"S53 GINZBURG-FABRIC-53: GL Validity Criterion for the Fabric\")"
+    },
+    {
+      "anchor_id": "prov_606",
+      "anchor_type": "data_provenance",
+      "name": "gl_sweep",
+      "script_path": "session-53/s53_gl_sweep.py",
+      "session": "s53",
+      "inputs": "",
+      "outputs": "session-53/s53_gl_sweep.npz, session-53/s53_gl_sweep.png",
+      "source_file": "computations/session-53/s53_gl_sweep.py",
+      "source_context_30_lines": "   50:     J_C2, J_su2, J_u1, N_cells, c_fabric,\n   51:     rho_B2_per_mode, E_B1, E_B2_mean, E_B3_mean,\n   52:     xi_BCS, xi_GL, omega_PV, tau_fold,\n   53:     E_cond, M_max_thouless, Vol_SU3_Haar,\n   54:     c_Gold, omega_L1, omega_L2, omega_H1, omega_H2, omega_H3\n   55: )\n   56: \n   57: SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))\n   58: OUT_TXT = os.path.join(SCRIPT_DIR, \"s53_gl_sweep_output.txt\")\n   59: \n   60: # Redirect stdout to file AND console\n   61: class Tee:\n   62:     def __init__(self, filename):\n   63:         self.file = open(filename, 'w')\n   64:         self.stdout = sys.stdout\n   65:     def write(self, data):\n   66:         self.file.write(data)"
+    },
+    {
+      "anchor_id": "prov_607",
+      "anchor_type": "data_provenance",
+      "name": "gpe_efold",
+      "script_path": "session-53/s53_gpe_efold.py",
+      "session": "s53",
+      "inputs": "",
+      "outputs": "session-53/s53_gpe_efold.npz, session-53/s53_gpe_efold.png",
+      "source_file": "computations/session-53/s53_gpe_efold.py",
+      "source_context_30_lines": " 1136: \n 1137: # =============================================================================\n 1138: # SECTION 15: SAVE DATA AND PLOT\n 1139: # =============================================================================\n 1140: \n 1141: log(\"\\n--- SECTION 15: Save Data and Plot ---\")\n 1142: \n 1143: # Save data\n 1144: save_path = os.path.join(os.path.dirname(__file__), 's53_gpe_efold.npz')\n 1145: np.savez(save_path,\n 1146:     # Gate\n 1147:     gate_name='GPE-EFOLD-53',\n 1148:     gate_verdict='INFO',\n 1149:     gate_detail=f'N_e^GPE = {N_e_GPE_framework:.4f} (INFO: > {N_e_classical:.4f} but < 3.1)',\n 1150:     # E-fold components\n 1151:     N_e_geom=N_e_geom,\n 1152:     N_e_formation=N_e_formation,"
+    },
+    {
+      "anchor_id": "prov_608",
+      "anchor_type": "data_provenance",
+      "name": "hfb_spectral",
+      "script_path": "session-53/s53_hfb_spectral.py",
+      "session": "s53",
+      "inputs": "",
+      "outputs": "session-53/s53_hfb_spectral.npz, session-53/s53_hfb_spectral.png",
+      "source_file": "computations/session-53/s53_hfb_spectral.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s53_hfb_spectral.py — Extract Bogoliubov Coherence Factors from HFB Output\n    4: ===========================================================================\n    5: Session 53, W0-3: HFB-SPECTRAL-53\n    6: \n    7: Extracts the Bogoliubov transformation coefficients u_k, v_k from the S52\n    8: HFB-FULL-52 converged solution and classifies quasiparticle excitations by\n    9: their phononic character.\n   10: \n   11: Physics (Paper 02, Dobaczewski; Paper 03, Bogoliubov):"
+    },
+    {
+      "anchor_id": "prov_609",
+      "anchor_type": "data_provenance",
+      "name": "kz_power_spectrum",
+      "script_path": "session-53/s53_kz_power_spectrum.py",
+      "session": "s53",
+      "inputs": "",
+      "outputs": "session-53/s53_kz_power_spectrum.npz, session-53/s53_kz_power_spectrum.png",
+      "source_file": "computations/session-53/s53_kz_power_spectrum.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s53_kz_power_spectrum.py — KZ Primordial Power Spectrum from BCS Transit\n    4: =========================================================================\n    5: \n    6: Gate: NS-ACOUSTIC-53 / KZ-POWER-SPECTRUM-53\n    7:   PASS: n_s within [0.955, 0.975] (3σ of Planck 0.965 ± 0.004)\n    8:   INFO: n_s computed but outside 3σ\n    9:   FAIL: spectrum cannot be computed\n   10: \n   11: Physics:"
+    },
+    {
+      "anchor_id": "prov_610",
+      "anchor_type": "data_provenance",
+      "name": "kz_pressure",
+      "script_path": "session-53/s53_kz_pressure.py",
+      "session": "s53",
+      "inputs": "",
+      "outputs": "session-53/s53_kz_pressure.npz, session-53/s53_kz_pressure.png",
+      "source_file": "computations/session-53/s53_kz_pressure.py",
+      "source_context_30_lines": "  901: N_e^afterglow = {N_e_afterglow:.2f} is {Ne_interp}\n  902: \n  903: The phonon gas contributes to expansion but does NOT accelerate it.\n  904: This is a structural result: no distribution (thermal, GGE, or other)\n  905: can make phonon pressure negative.\n  906: \"\"\")\n  907: \n  908: # ── Save results ─────────────────────────────────────────────────────\n  909: np.savez(OUT / \"s53_kz_pressure.npz\",\n  910:     # Primary results\n  911:     w_phonon=w_phonon,\n  912:     w_thermal=w_thermal,\n  913:     w_goldstone=w_goldstone,\n  914:     w_equipopulated=w_eq_tot,\n  915:     N_e_afterglow=N_e_afterglow,\n  916:     H_phonon=H_phonon,\n  917:     H_phonon_GeV=H_phonon_GeV,"
+    }
+  ]
+}

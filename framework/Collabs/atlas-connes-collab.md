@@ -8,9 +8,9 @@
 
 ## 1. What Is Actually NCG vs What Merely Happens on SU(3)
 
-The atlas catalogs 36 publishable results. A precise audit of their NCG content reveals a three-tier structure.
+The atlas catalogs 36 publishable results. A precise audit of their NCG content reveals a three-level structure.
 
-**Tier A -- Results that require the NCG axioms (spectral triple, real structure J, KO-dimension, spectral action principle).** These would not exist without Connes' framework. Count: 11.
+**Level A -- Results that require the NCG axioms (spectral triple, real structure J, KO-dimension, spectral action principle).** These would not exist without Connes' framework. Count: 11.
 
 - KO-dimension = 6 (E9). This is a statement about the signs (epsilon, epsilon', epsilon'') of J and follows from the axioms of a real spectral triple (Paper 05, Connes 1995). Verified S7-8.
 - SM quantum numbers from Psi_+ (E10). The branching Psi_+ = C^16 into SM multiplets is the representation content of the finite spectral triple at KO-dim 6 (Paper 09, Connes 2006). Verified S7.
@@ -22,7 +22,7 @@ The atlas catalogs 36 publishable results. A precise audit of their NCG content 
 - Grading theorem Tr(gamma_9 f(D_K^2)) = 0. The chirality grading gamma is an NCG axiom (Z/2-grading of the spectral triple). The vanishing is a consequence of D_K anticommuting with gamma and Tr(gamma) = 0.
 - Perturbative exhaustion theorem (E17). The argument that F_pert is not the true free energy uses the branch structure of the BCS condensation energy, but the perturbative free energy itself is the spectral action. The theorem's content is that the spectral action is the wrong functional for the physical ground state. This is a result ABOUT NCG (specifically, about its limitations), not a derivation FROM NCG.
 
-**Tier B -- Results that use the Dirac operator D_K on SU(3) but not the full NCG axiom set.** These are spectral geometry on a compact Lie group. They would exist in Riemannian geometry without Connes. Count: 14.
+**Level B -- Results that use the Dirac operator D_K on SU(3) but not the full NCG axiom set.** These are spectral geometry on a compact Lie group. They would exist in Riemannian geometry without Connes. Count: 14.
 
 - Jensen metric and Dirac operator (E1, E2). These are constructions in Riemannian spin geometry, following Baptista's parametrization (Paper 38, Boldt-Lauret for the SU(2) analog).
 - Scalar curvature R_K(tau) (E3). Classical Riemannian geometry.
@@ -36,7 +36,7 @@ The atlas catalogs 36 publishable results. A precise audit of their NCG content 
 - Four curvature invariants (R, |Ric|^2, K, |C|^2). Classical Riemannian invariants.
 - SU(3) anomalously curved vs SU(2)xSU(2). Comparison of spectral action second derivatives on different Lie groups. The spectral action is NCG; the comparison is group theory.
 
-**Tier C -- Results that are cosmological mapping or fabric-level physics, neither NCG nor intrinsic SU(3) geometry.** Count: 11.
+**Level C -- Results that are cosmological mapping or fabric-level physics, neither NCG nor intrinsic SU(3) geometry.** Count: 11.
 
 - Ornstein-Zernike propagator (E20), superfluid stiffness (E21), SA correlator (E22), alpha_s identity (E23), SA-Goldstone mixing (E24), Leggett phi crossing (E25), clock constraint (E27), geometric w = -1 (E28), CDM by construction (E29), Sakharov induced gravity (E30), K_pivot mapping (E31).
 
@@ -159,4 +159,4 @@ The mathematics is permanent. The physics is open.
 
 ---
 
-*This review cites Papers 05, 07, 08, 09, 10, 15, 16, 23, 24, 25, 28 from researchers/Connes/. All axiom verifications reference the computational results in tier0-computation/ as documented in D04 (atlas-04-assumptions.md) and D07 (atlas-07-permanent-results.md).*
+*This review cites Papers 05, 07, 08, 09, 10, 15, 16, 23, 24, 25, 28 from researchers/Connes/. All axiom verifications reference the computational results in computations/ as documented in D04 (atlas-04-assumptions.md) and D07 (atlas-07-permanent-results.md).*

@@ -1,147 +1,163 @@
 # Tesla-Resonance Paper Index
 
-**Researcher**: Tesla-Resonance (cross-domain: electromagnetic resonance, phonon/acoustic physics, superfluid dynamics, analog gravity, alternative cosmology)
-**Papers**: 43 (1787--2026)
-**Primary domain**: Electromagnetic resonance, phonon mathematics, superfluid cosmology, analog gravity, topological metamaterials, black hole cosmology
-**Project relevance**: The entire phonon-exflation thesis -- particles as phononic excitations of M4 x SU(3), expansion from internal compactification -- rests on the condensed-matter-to-cosmology bridge. These papers supply the bridge's load-bearing equations: Volovik's emergent metric, Landau's two-fluid model, Barcelo's analog gravity formalism, Debye/Born-von-Karman phonon spectra, and topological protection of gapless modes. They also supply the alternative expansion frameworks (LQC bounce, CDT emergent de Sitter, CCC) against which exflation must be compared.
+**Researcher**: Tesla-Resonance (cross-domain resonance collection)
+**Papers**: 43 (1787-2026)
+**Primary domain**: Electromagnetic resonance, phonon/acoustic physics, superfluid dynamics, analog gravity, alternative expansion cosmologies, topological metamaterials
+**Project relevance**: The foundational reading list for the resonance-detector perspective -- papers spanning Tesla's cavity physics through Volovik's emergent spacetime to modern phononic topology, unified by the principle that particles are standing waves of a geometric substrate and that the same eigenvalue mathematics governs vibrating plates, superfluid excitations, and the Dirac spectrum on SU(3).
 
 ---
 
 ## Dependency Graph
 
 ```
-TESLA ORIGINALS (1891-1912)
-  01 (Earth resonance) --> 03 (Wardenclyffe wireless)
-  02 (rotating field, Tesla coil) --> 01, 03
-  04 (mechanical oscillator) <-- 01, 02 (resonance principle)
-                      |
-PHONON/ACOUSTIC FOUNDATIONS (1787-2015)
-  07 (Chladni patterns) -- eigenvalue problems on bounded domains
-  05 (Debye phonon) --> 06 (phononic crystals, bandgaps)
-  05 --> 09 (Landau: phonon gas in He-II)
-  06 --> 08 (acoustic Dirac cones, Berry phase)
-  06 --> 34 (acoustic metamaterials forum 2024)
-  06 --> 35 (topological metamaterials)
-  08 --> 35, 36 (phonon magnetic moment)
-  07 --> 08 (both: eigenmode visualization)
-            |
-SUPERFLUID DYNAMICS & ANALOG GRAVITY (1941-2024)
-  09 (Landau two-fluid) --> 10 (Volovik emergent gravity)
-  09 --> 12 (Donnelly quantum turbulence)
-  10 --> 11 (Unruh sonic black holes)
-  10 --> 16 (Barcelo-Liberati-Visser analog gravity v1)
-  10 --> 28 (Volovik topology of vacuum)
-  10 --> 29 (Jannes-Volovik CC from Weyl media)
-  11 --> 16 --> 26 (Barcelo analog gravity v4, 2024)
-  12 --> 21 (Svancara giant quantum vortex, 2024)
-  16 --> 30 (Crowther: limits of analog experiments)
-  16 --> 31 (Dardashti: Bayesian confirmation of analogs)
-  21 --> 26 (experimental analog gravity)
-  24 (KZ holographic superfluid) <-- 09, 12
-  25 (BCS cavity QED) <-- 09
-            |
-ALTERNATIVE COSMOLOGIES (2003-2025)
-  13 (Ashtekar LQC bounce) --> 33 (Gan quantum damping of shear)
-  13 --> 43 (Shahalam pre-inflation LQC)
-  14 (CDT 2005) --> 22 (CDT 2024 review)
-  15 (Penrose CCC 2010) --> 23 (Meissner-Penrose CCC 2025)
-  13, 14, 15, 16 --> independent alternatives to inflation
-            |
-BLACK HOLE COSMOLOGY (1972-2010)
-  17 (Pathria-Good BH cosmology) --> 18 (Smolin CNS)
-  17 --> 19 (Poplawski torsion bounce)
-  18 --> 20 (Easson-Brandenberger string gas)
-  17, 18, 19 --> independent: BH interior = universe
-            |
-VOLOVIK TOPOLOGY & EMERGENT DM (2012-2025)
-  28 (Volovik topology of vacuum) --> 29 (CC from Weyl media)
-  28 --> 32 (Canete-Kobakhidze emergent DM)
-  10, 28 --> 42 (Cavedon supersolid DM)
-            |
-PHONON TOPOLOGY & K-THEORY (2023-2026)
-  36 (phonon magnetic moment, Dirac) <-- 08, 28
-  37 (topology 2D Dirac, variable mass) <-- 08
-  38 (catalog phonon emergent particles) <-- 06, 08, 35
-  39 (K-theory APS index lattice Dirac) <-- 28, 37
-            |
-OBSERVATIONAL & SPECTRAL ACTION
-  27 (DESI BAO 2024) --> 40 (Hussain Gaussian DE + DESI)
-  41 (Chamseddine-Connes entropy = spectral action) <-- 10 (Volovik)
+GROUP 1: TESLA ELECTROMAGNETIC RESONANCE (cavity + resonance principles)
+  01 (Colorado Springs 1899) --> 02 (Rotating Field / Tesla Coil 1891)
+       |                            |
+       v                            v
+  03 (Wardenclyffe / Scalar Waves 1900) --> 04 (Mechanical Oscillator 1912)
+       |
+  [Bridge: Tesla's "ether" --> modern analog gravity medium]
+       v
+
+GROUP 2: PHONON / ACOUSTIC FOUNDATIONS (lattice dynamics + bandgaps)
+  05 (Debye / Born-von Karman 1912) --> 06 (Phononic Crystals / Bandgaps 2006)
+       |                                    |
+       v                                    v
+  07 (Chladni Patterns 1787)          08 (Acoustic Dirac Cones 2010)
+       |                                    |
+  [Bridge: eigenvalue problems on bounded domains]
+       |                                    |
+       +------------------------------------+
+       |
+       v
+  GROUP 8: TOPOLOGICAL METAMATERIALS & PHONON FRONTIER (2023-2026)
+  34 (Chen Acoustic Metamaterials Forum 2024)
+  35 (Ni-Yves Topological Metamaterials 2023) <-- 06, 08
+  36 (Chen Phonon Magnetic Moment / Dirac 2025) <-- 08, 28
+  37 (Rossi Topology 2D Dirac Variable Mass 2023) <-- 08
+  38 (Wang Catalog Phonon Emergent Particles 2026) <-- 35, 36
+  39 (Aoki K-Theory APS Index Lattice Dirac 2025) <-- 37
+
+GROUP 3: SUPERFLUID PHYSICS & ANALOG GRAVITY CLASSICS
+  09 (Landau Two-Fluid 1941) --> 10 (Volovik Universe/Helium 2003)
+       |                            |
+       v                            v
+  12 (Donnelly Quantum Turbulence 2000)  11 (Unruh Sonic Black Holes 1981)
+       |                                       |
+       +---------------------------------------+
+       |
+       v
+  16 (Barcelo-Liberati-Visser Analogue Gravity 2005)
+       |
+  [Bridge: effective metric from medium --> emergent gravity]
+       v
+
+GROUP 5: MODERN ANALOG GRAVITY & EXPERIMENT (2017-2026)
+  26 (Barcelo Analogue Gravity v4 2024) <-- 16 (direct update)
+  21 (Svancara Giant Quantum Vortex 2024) <-- 10, 12, 16
+  24 (Xia Kibble-Zurek Holographic Superfluid 2026) <-- 09, 10
+  25 (Kroeze BCS in Cavity QED 2024) <-- 09
+  30 (Crowther et al. Limits of Analogue Experiments 2019) <-- 16
+  31 (Dardashti Bayesian Analysis of Analogues 2017) <-- 30
+
+GROUP 6: VOLOVIK TOPOLOGY & COSMOLOGICAL CONSTANT
+  28 (Volovik Topology Quantum Vacuum 2012) <-- 10
+  29 (Jannes-Volovik CC from Weyl Media 2012) <-- 28, 10
+  32 (Canete-Kobakhidze Emergent Dark Matter 2025) <-- 10, 28
+  41 (Chamseddine-Connes Entropy = Spectral Action 2019)
+  42 (Cavedon Supersolid DM / Fabric 2024) <-- 10, 16
+
+GROUP 4: QUANTUM GRAVITY & ALTERNATIVE COSMOLOGY
+  13 (Ashtekar LQC Big Bounce 2003)
+  14 (Ambjorn CDT Emergent Spacetime 2005)
+  15 (Penrose CCC Aeons 2010)
+  17 (Pathria-Good Black Hole Cosmology 1972)
+  18 (Smolin Cosmological Natural Selection 1992) <-- 17
+  19 (Poplawski Torsion Black Hole Bounce 2010) <-- 17, 13
+  20 (Easson-Brandenberger String Gas 2001)
+
+GROUP 7: OBSERVATIONAL COSMOLOGY (CDT + CCC updates + DESI + LQC)
+  22 (Ambjorn-Loll CDT 2024 review) <-- 14
+  23 (Meissner-Penrose CCC 2025) <-- 15
+  27 (DESI BAO 2024)
+  33 (Gan Quantum Damping Shear LQC 2025) <-- 13
+  40 (Hussain Gaussian DE from DESI 2025) <-- 27
+  43 (Shahalam Pre-Inflation LQC 2025) <-- 13
+
+MAJOR CROSS-GROUP BRIDGES:
+  10 (Volovik) bridges Groups 3 <-> 6 (superfluid --> topology of vacuum)
+  16 (BLV) bridges Groups 3 <-> 5 (classic --> modern analog gravity)
+  08 (Dirac cones) bridges Groups 2 <-> 8 (acoustics --> topological phonons)
+  28 (Volovik topology) bridges Groups 6 <-> 8 (vacuum topology --> phonon topology)
+  41 (Chamseddine-Connes) bridges Groups 6 <-> 4 (spectral action --> cosmology)
+  36 (Chen phonon moment) bridges Groups 8 <-> 3 (phonon geometry --> emergent gravity)
+  01-04 (Tesla) bridges Groups 1 <-> 2 (cavity resonance --> phonon spectrum)
 ```
 
 ---
 
 ## Topic Map
 
-### A. Tesla Electromagnetic Resonance
+### Group 1: Tesla Electromagnetic Resonance Core
 Papers: 01, 02, 03, 04
-Tesla's experimental and conceptual work on electromagnetic and mechanical resonance: Earth-ionosphere cavity modes (Schumann precursor), LC circuit resonance and Tesla coil voltage magnification, Wardenclyffe wireless power, and destructive mechanical resonance. Establishes the resonance paradigm -- cavity geometry determines eigenfrequencies, and driving at resonance amplifies response.
+Tesla's experimental and conceptual work on electromagnetic cavities, resonant circuits, and mechanical oscillators. Establishes the principle that tuning to natural frequencies enables maximum energy transfer -- the same principle underlying the spectral action's selection of preferred geometric configurations. Paper 01 anticipates Schumann resonance by 53 years. Paper 02 provides the LC resonance and Q-factor formalism reused throughout. Paper 04 connects resonance to structural eigenfrequencies.
 
-### B. Phonon Dispersion and Lattice Dynamics
+### Group 2: Phonon/Acoustic Foundations
 Papers: 05, 06, 07, 08
-Foundational phonon theory from Debye and Born-von Karman through modern phononic crystals and acoustic Dirac cones. Covers dispersion relations (acoustic/optical branches), Brillouin zones, bandgap engineering, Chladni eigenmode visualization, Berry phase in phononic systems, and topological protection of edge states. Direct mathematical substrate for the phonon-exflation spectral action.
+The mathematical language of collective excitations. Paper 05 (Debye/Born-von Karman) establishes phonon dispersion, density of states, and the dynamical matrix eigenvalue problem -- the direct ancestor of the Dirac spectrum computation on SU(3). Paper 06 introduces phononic bandgaps and metamaterial engineering of dispersion. Paper 07 (Chladni) visualizes eigenmodes and connects to Weyl's law. Paper 08 shows Dirac cones and Berry phase emerge in purely classical phononic crystals.
 
-### C. Superfluid Dynamics
-Papers: 09, 12, 21, 24, 25
-Landau two-fluid model (phonons as fundamental excitations of He-II), quantum turbulence (Kolmogorov cascade via vortex reconnection), giant quantum vortex analog gravity experiment, Kibble-Zurek mechanism in holographic superfluids, and BCS dynamical phases in cavity QED. Provides the physical basis for "vacuum as superfluid condensate."
+### Group 3: Superfluid Physics and Analog Gravity Classics
+Papers: 09, 10, 11, 12, 16
+The conceptual backbone of phonon-exflation. Paper 09 (Landau) establishes phonons as the fundamental excitations of a superfluid ground state. Paper 10 (Volovik) is the single most important precursor: emergent Lorentz invariance, gauge fields from defects, the cosmological constant as vacuum energy. Paper 11 (Unruh) demonstrates that Hawking radiation is generic to wave systems with horizons. Paper 12 (Donnelly) shows universal Kolmogorov cascade in quantum turbulence. Paper 16 (BLV) is the comprehensive review establishing that gravity is emergent from any inhomogeneous wave medium.
 
-### D. Volovik Emergent Gravity and Vacuum Topology
-Papers: 10, 28, 29
-Volovik's program: emergent metric from superfluid flow, Lorentz invariance as low-energy symmetry, gauge fields from topological defects, fermion masses from gap structure. Paper 28 classifies the SM vacuum as topological matter (BDI class). Paper 29 shows equilibrium vacuum energy vanishes -- CC requires non-equilibrium state. Most direct precursor to phonon-exflation.
+### Group 4: Quantum Gravity and Alternative Cosmology
+Papers: 13, 14, 15, 17, 18, 19, 20
+Alternative frameworks for early-universe dynamics that avoid or replace inflation. Paper 13 (Ashtekar LQC) resolves the Big Bang singularity via quantum bounce. Paper 14 (CDT) demonstrates emergent 4D de Sitter spacetime from discrete geometry with spectral dimension flow. Paper 15 (Penrose CCC) proposes cyclic aeon structure. Papers 17-20 explore black-hole cosmology (Pathria-Good), cosmological natural selection (Smolin), torsion-bounce (Poplawski), and string gas (Easson-Brandenberger).
 
-### E. Analog Gravity
-Papers: 11, 16, 26, 30, 31
-Unruh's sonic black holes, the comprehensive Barcelo-Liberati-Visser formalism (effective metric from wave equations in inhomogeneous media), and the 2024 updated review. Papers 30-31 provide the epistemological framework: what analog experiments can and cannot confirm, with Bayesian analysis of evidential weight.
+### Group 5: Modern Analog Gravity and Experiment
+Papers: 21, 24, 25, 26, 30, 31
+Experimental frontiers and epistemological analysis. Paper 21 (Svancara 2024) is the first rotating analog black hole in superfluid He-4 with Kerr-like ringdown. Paper 24 (Xia 2026) extends Kibble-Zurek to holographic superfluids, finding post-KZM universal scaling. Paper 25 (Kroeze 2024) observes all three BCS dynamical phases in cavity QED. Paper 26 updates the BLV review to 2024. Papers 30-31 provide the philosophical framework: what analogue experiments can and cannot confirm, via Bayesian analysis.
 
-### F. Loop Quantum Cosmology
-Papers: 13, 33, 43
-LQC bounce replacing Big Bang singularity via quantum geometry (rho^2 correction to Friedmann equation). Paper 33 shows quantum damping of anisotropy (solves isotropy problem without inflation). Paper 43 connects bounce to inflationary attractor.
+### Group 6: Volovik Topology and Cosmological Constant
+Papers: 28, 29, 32, 41, 42
+The topological and thermodynamic structure of the quantum vacuum. Paper 28 (Volovik 2012) classifies quantum vacua by momentum-space topology and shows the SM vacuum is topological matter. Paper 29 (Jannes-Volovik) proves the cosmological constant vanishes in equilibrium -- the observed CC implies non-equilibrium. Paper 41 (Chamseddine-Connes-van Suijlekom) proves entropy = spectral action, the deepest connection between information theory and the framework's action principle. Paper 32 proposes emergent dark matter from three-form fields. Paper 42 proposes a supersolid spacetime substrate.
 
-### G. Causal Dynamical Triangulations
-Papers: 14, 22
-CDT emergent de Sitter spacetime from discrete simplicial geometry. Spectral dimension flow from ~2 at Planck scale to 4 at IR. Paper 22 is the 2024 review with updated spectral dimension results (~1.8 at UV).
+### Group 7: Observational Cosmology
+Papers: 22, 23, 27, 33, 40, 43
+Modern data and updated theoretical predictions. Paper 27 (DESI 2024) provides the BAO measurement showing 2.6-sigma tension with Lambda-CDM constant dark energy. Paper 22 updates CDT with spectral dimension flow to d_s ~ 1.8. Paper 23 (Meissner-Penrose 2025) resolves CCC's transition mechanism via gravitational wave epoch. Papers 33, 43 extend LQC with quantum shear damping and pre-inflationary dynamics. Paper 40 tests Gaussian dark energy models against DESI DR2.
 
-### H. Conformal Cyclic Cosmology
-Papers: 15, 23
-Penrose CCC: infinite sequence of aeons connected by conformal rescaling. Paper 23 (Meissner-Penrose 2025) resolves the transition mechanism via gravitational wave epoch.
-
-### I. Black Hole Cosmology
-Papers: 17, 18, 19, 20
-Pathria-Good R_S = R_H coincidence, Smolin's cosmological natural selection (BH interiors spawn universes with mutated constants), Poplawski's torsion-bounce in BH interiors, Easson-Brandenberger string gas cosmology at Hagedorn temperature.
-
-### J. Topological Metamaterials and Phonon Topology
+### Group 8: Topological Metamaterials and Phonon Frontier
 Papers: 34, 35, 36, 37, 38, 39
-Modern phononic/acoustic metamaterial design (bandgaps, non-Hermitian phenomena, PT symmetry), topological metamaterials review, phonon magnetic moment from Dirac geometry, topology of 2D Dirac operators with variable mass, catalog of phonon emergent particles (25M+ classified), K-theory APS index for lattice Dirac operators.
+The cutting edge of phononic topology. Paper 35 (Ni-Yves 2023) is the comprehensive review of topological metamaterials. Paper 36 (Chen 2025) proves phonons in Dirac materials carry magnetic moments via emergent gauge/gravitational coupling -- the most direct condensed-matter realization of phonons-as-particles. Paper 38 (Wang 2026) catalogs 25 million emergent phonon excitations by symmetry classification. Paper 39 (Aoki 2025) computes the APS index for lattice Dirac operators via K-theory, essential for rigorous topological index computations on discrete internal spaces. Paper 37 (Rossi 2023) restores bulk-edge correspondence for variable-mass Dirac operators.
 
-### K. Observational Cosmology
-Papers: 27, 40
-DESI DR1 BAO constraints (2.6-sigma hint of dynamical DE), and Hussain's Gaussian DE parametrization tested against DESI DR2.
-
-### L. Emergent Dark Matter and Spectral Action
-Papers: 32, 41, 42
-Canete-Kobakhidze emergent DM from three-form gauge field (no new particles), Chamseddine-Connes-van Suijlekom entropy-spectral action duality, Cavedon supersolid DM fabric.
+---
 
 ## Quick Reference
 
 | If your task involves... | Read these papers | Priority |
 |:---|:---|:---|
-| Phonon dispersion, density of states, Debye model | 05, 06, 09 | CRITICAL |
-| Emergent gravity / vacuum as condensate | 10, 16, 26, 28 | CRITICAL |
-| Spectral action and entropy | 41 | CRITICAL |
-| Topological protection of gapless modes | 28, 08, 35, 39 | HIGH |
-| Acoustic Dirac cones, Berry phase | 08, 36, 37 | HIGH |
-| BCS dynamics, Cooper pairing | 25, 24 | HIGH |
-| Kibble-Zurek mechanism | 24 | HIGH |
-| LQC bounce, singularity resolution | 13, 33, 43 | HIGH |
-| Analog black holes, Hawking radiation | 11, 16, 21, 26 | HIGH |
-| CDT emergent spacetime, spectral dimension | 14, 22 | MEDIUM |
-| CCC aeon transitions | 15, 23 | MEDIUM |
-| Black hole cosmology (BH interior = universe) | 17, 18, 19 | MEDIUM |
-| DESI BAO, dark energy w(z) | 27, 40 | MEDIUM |
-| Epistemology of analog experiments | 30, 31 | MEDIUM |
-| Phononic crystal bandgap engineering | 06, 34, 38 | MEDIUM |
-| Tesla resonance, cavity modes, Schumann | 01, 02, 04 | LOW |
-| Emergent dark matter | 32, 42 | LOW |
+| Emergent gravity / effective metric | 10, 16, 26, 11 | CRITICAL |
+| Phonon spectrum / dispersion relations | 05, 06, 08, 38 | CRITICAL |
+| Spectral action / entropy connection | 41, 10, 28 | CRITICAL |
+| Superfluid ground state / excitations | 09, 10, 12, 21 | CRITICAL |
+| Topological protection of particles | 28, 35, 08, 39 | CRITICAL |
+| LC resonance / Q-factor / Tesla coil | 02, 01, 04 | HIGH |
+| Chladni / eigenvalue visualization | 07, 37 | HIGH |
+| Phononic bandgaps / metamaterials | 06, 34, 35 | HIGH |
+| Dirac cones / Berry phase in acoustics | 08, 36, 37 | HIGH |
+| Cosmological constant problem | 29, 41, 10 | HIGH |
+| BCS dynamics / cavity QED simulation | 25, 24 | HIGH |
+| DESI BAO / dark energy tension | 27, 40 | HIGH |
+| Phonon magnetic moment / Dirac coupling | 36, 38 | HIGH |
+| K-theory / index theorem on lattice | 39 | HIGH |
+| Variable-mass Dirac / domain walls | 37 | HIGH |
+| Loop quantum cosmology / bounce | 13, 33, 43 | MEDIUM |
+| Causal dynamical triangulations | 14, 22 | MEDIUM |
+| Conformal cyclic cosmology | 15, 23 | MEDIUM |
+| Black hole cosmology / baby universes | 17, 18, 19, 20 | MEDIUM |
+| Analogue experiment epistemology | 30, 31 | MEDIUM |
+| Emergent dark matter | 32, 42 | MEDIUM |
+| Kibble-Zurek mechanism | 24 | MEDIUM |
 
 ---
 
@@ -151,26 +167,25 @@ Canete-Kobakhidze emergent DM from three-form gauge field (no new particles), Ch
 - **File**: `01_1899_Tesla_Colorado_Springs_Earth_Resonance.md`
 - **arXiv**: N/A
 - **Year**: 1899
-- **Relevance**: LOW
-- **Tags**: electromagnetic resonance, Schumann resonance, cavity modes, standing waves, Earth-ionosphere
+- **Relevance**: HIGH
+- **Tags**: Schumann resonance, electromagnetic cavity, standing waves, eigenfrequencies
 
-**Summary**: Tesla's Colorado Springs experiments (1899-1900) measured the Earth's electromagnetic resonant frequency at ~7.5 Hz, predating Schumann's calculation by 53 years. He excited the Earth-ionosphere cavity using a 200 kW oscillator and detected standing wave patterns at harmonics. Core insight: planetary electromagnetism has discrete spectral structure determined by cavity geometry.
+**Summary**: Tesla measured electromagnetic standing waves in the Earth-ionosphere cavity at Colorado Springs, finding resonant modes near 7.5 Hz -- 53 years before Schumann's calculation (7.83 Hz). He identified the Earth as a spherical resonant cavity with discrete normal modes determined by geometry.
 
 **Key Results**:
-- Earth fundamental resonance f_0 = c/(2*pi*R_E) ~ 7.5 Hz (modern Schumann: 7.83 Hz)
-- Multiple harmonic peaks observed (~15 Hz, ~21 Hz)
-- Phase coherence of standing waves verified at distances up to 200 miles
-- Q-factor of Earth-ionosphere cavity ~100-200
+- Fundamental Earth cavity frequency f_0 = c/(2*pi*R_E) ~ 7.5 Hz
+- Multiple harmonic peaks at 15 Hz, 20-22 Hz confirmed
+- Quality factor Q ~ 100-200 (weak damping, long coherence)
+- First empirical evidence for Schumann resonance
 
 **Key Equations**:
-
 | Label | Description | Reference |
 |:---|:---|:---|
-| eq 1.1 | Earth cavity resonance f_0 = c/(2*pi*R_E) | Section: Resonant Mode Calculation |
-| eq 1.2 | Harmonics f_n = n*c/(2*pi*R_E) | Section: EM Model |
-| eq 1.3 | Cavity wave equation nabla^2 E - mu_0*eps_0 * d^2E/dt^2 = 0 | Section: EM Model |
+| f_0 = c/(2*pi*R_E) | Earth cavity fundamental mode | Sec. 3 |
+| f_n = n*c/(2*pi*R_E) | Harmonic series | Sec. 3 |
+| nabla^2 E - mu_0*eps_0 * d^2E/dt^2 = 0 | EM wave equation in cavity | Sec. 4 |
 
-**Dependencies**: Upstream to 03 (Wardenclyffe). Conceptual parent of all cavity resonance arguments.
+**Dependencies**: Upstream: none. Downstream: 02, 03, 04.
 
 ---
 
@@ -178,26 +193,26 @@ Canete-Kobakhidze emergent DM from three-form gauge field (no new particles), Ch
 - **File**: `02_1891_Tesla_Rotating_Magnetic_Field_Polyphase_AC.md`
 - **arXiv**: N/A
 - **Year**: 1891
-- **Relevance**: LOW
-- **Tags**: rotating field, LC resonance, Tesla coil, polyphase AC, voltage magnification
+- **Relevance**: HIGH
+- **Tags**: LC resonance, quality factor, voltage magnification, polyphase AC, rotating field
 
-**Summary**: Tesla's invention of the rotating magnetic field (three-phase AC producing constant-magnitude rotating B-field) and the Tesla coil (resonant LC transformer achieving 10,000:1 voltage magnification). Demonstrates that resonant frequency matching between coupled oscillators enables efficient energy transfer. Quality factor Q = omega_0 * L / R determines resonance sharpness.
+**Summary**: Tesla's invention of the rotating magnetic field (polyphase AC) and Tesla coil. The Tesla coil operates as a resonant LC oscillator achieving voltage magnification exceeding 10,000:1 via Q-factor enhancement. Introduces omega_0 = 1/sqrt(LC) and Q = omega_0 L/R.
 
 **Key Results**:
-- Three-phase currents produce uniform rotating magnetic field
+- Three-phase AC generates uniform rotating magnetic field
 - Tesla coil voltage magnification V_s/V_p = (N_s/N_p) * Q_s
-- Q ~ 100-1000 achievable at high frequency
-- 70-85% energy transfer efficiency at resonance
+- Resonant frequency omega_0 = 1/sqrt(L_p C_p)
+- Efficiency 70-85% at resonance
 
 **Key Equations**:
-
 | Label | Description | Reference |
 |:---|:---|:---|
-| eq 2.1 | LC resonant frequency omega_0 = 1/sqrt(L*C) | Section: Primary Circuit |
-| eq 2.2 | Quality factor Q = omega_0*L/R | Section: Voltage Magnification |
-| eq 2.3 | Mutual inductance M = k*sqrt(L_p*L_s) | Section: Circuit Configuration |
+| omega_0 = 1/sqrt(LC) | LC resonant frequency | Sec. 3 |
+| Q = omega_0 L / R | Quality factor | Sec. 3 |
+| V_s/V_p = (N_s/N_p)*Q_s | Voltage magnification | Sec. 3 |
+| M = k*sqrt(L_p L_s) | Mutual inductance coupling | Sec. 3 |
 
-**Dependencies**: Feeds into 01 (Earth resonance excitation) and 03 (Wardenclyffe).
+**Dependencies**: Upstream: 01. Downstream: 03, 04.
 
 ---
 
@@ -205,25 +220,23 @@ Canete-Kobakhidze emergent DM from three-form gauge field (no new particles), Ch
 - **File**: `03_1900_Tesla_Wardenclyffe_Wireless_Energy_Scalar_Waves.md`
 - **arXiv**: N/A
 - **Year**: 1900
-- **Relevance**: LOW
-- **Tags**: wireless power, scalar waves, ether, Wardenclyffe, longitudinal waves
+- **Relevance**: MEDIUM
+- **Tags**: wireless power, scalar waves, longitudinal waves, ether, vacuum structure
 
-**Summary**: Tesla's Wardenclyffe Tower project (1901-1915) attempted global wireless power distribution by exciting the Earth-ionosphere cavity at resonance. Scalar wave hypothesis: space is a dynamic medium supporting longitudinal (compression) waves alongside transverse EM waves. Wardenclyffe failed due to weak coupling coefficient (k ~ 0.01) and Earth dissipation. Modern vindication: phonons in condensed matter ARE scalar waves; vacuum as structured medium has analogs in Volovik's framework.
+**Summary**: Tesla's Wardenclyffe tower project for global wireless power. Resonant coupling efficiency eta = k^2 Q_1 Q_2 / (1 + k*sqrt(Q_1 Q_2))^2 gives ~1% at k ~ 0.01. Scalar wave hypothesis -- longitudinal EM waves in structured vacuum. Modern assessment: scalar waves exist in condensed-matter systems (phonons); structured vacuum has analogs in Volovik's superfluid cosmology.
 
 **Key Results**:
-- Resonant coupling efficiency eta = k^2*Q_1*Q_2 / (1 + k*sqrt(Q_1*Q_2))^2
-- For Earth coupling: eta ~ 0.1-1% (too low for practical power)
-- Longitudinal wave speed in elastic medium: v_L = sqrt((K + 4G/3)/rho)
-- Scalar wave = phonon in modern condensed-matter language
+- Coupling coefficient k ~ 0.01 yields poor long-distance efficiency
+- Longitudinal waves exist in elastic/superfluid media, not vacuum EM
+- Tesla's "ether" concept finds modern analog in superfluid vacuum
 
 **Key Equations**:
-
 | Label | Description | Reference |
 |:---|:---|:---|
-| eq 3.1 | Coupling efficiency eta(k, Q_1, Q_2) | Section: Theoretical Feasibility |
-| eq 3.2 | Longitudinal wave speed v_L = sqrt((K+4G/3)/rho) | Section: Scalar Wave Hypothesis |
+| eta = k^2 Q_1 Q_2 / (1+k*sqrt(Q_1 Q_2))^2 | Resonant coupling efficiency | Sec. 2 |
+| v_L = sqrt((K+4G/3)/rho) | Longitudinal wave speed | Sec. 4 |
 
-**Dependencies**: Depends on 01, 02. Conceptual precursor to 10 (Volovik: structured vacuum).
+**Dependencies**: Upstream: 01, 02. Downstream: 10 (conceptual), 16 (conceptual).
 
 ---
 
@@ -231,53 +244,52 @@ Canete-Kobakhidze emergent DM from three-form gauge field (no new particles), Ch
 - **File**: `04_1912_Tesla_Mechanical_Oscillator_Resonance_Vibration.md`
 - **arXiv**: N/A
 - **Year**: 1912
-- **Relevance**: LOW
-- **Tags**: mechanical resonance, driven oscillator, quality factor, structural failure, eigenfrequencies
+- **Relevance**: MEDIUM
+- **Tags**: mechanical resonance, driven oscillator, Q-factor, eigenfrequencies, Tacoma Narrows
 
-**Summary**: Tesla's pneumatic mechanical oscillator matched structural resonant frequencies to amplify vibrations. Driven damped oscillator: amplitude at resonance is x_max = F_0/(2*zeta*omega_0*m), amplification Q = 1/(2*zeta) ~ 5-50 for buildings. Tacoma Narrows collapse (1940) and Mexico City earthquake (1985) confirm the principle. Conceptual analog: spectral action selects geometric configurations (tau values) by resonance.
+**Summary**: Tesla's mechanical oscillator demonstrates resonant amplification. Driven damped oscillator: x_max = F_0/(2*zeta*omega_0*m), amplification Q = 1/(2*zeta) ~ 5-50. Includes Tacoma Narrows analysis. The principle that small forces at resonance cause large effects maps to spectral action selection.
 
 **Key Results**:
-- Resonant amplification factor Q = 1/(2*zeta) for building damping zeta ~ 0.02-0.10
-- Power absorption at resonance P = F_0^2 / (4*m*omega_0*zeta)
-- Beam eigenfrequency f_n = (lambda_n^2 / 4*pi^2) * sqrt(EI / rho*A*L^4)
+- Resonant amplification Q = 1/(2*zeta) for mechanical systems
+- Power absorption P = F_0^2 / (4*m*omega_0*zeta) at resonance
+- Tacoma Narrows confirmed resonant vortex shedding at ~0.3 Hz
 
 **Key Equations**:
-
 | Label | Description | Reference |
 |:---|:---|:---|
-| eq 4.1 | Driven oscillator response x(omega_d) | Section: Driven Damped Oscillator |
-| eq 4.2 | Resonant amplitude x_max = F_0/(2*zeta*omega_0*m) | Section: same |
-| eq 4.3 | Quality factor Q = 1/(2*zeta) | Section: same |
+| x(t) = F_0/m / sqrt((w0^2-wd^2)^2 + (2*zeta*w0*wd)^2) | Driven damped oscillator | Sec. 3 |
+| Q = 1/(2*zeta) | Quality factor | Sec. 3 |
+| f_n = lam_n^2/(4pi^2) * sqrt(EI/(rho*A*L^4)) | Beam natural frequency | Sec. 3 |
 
-**Dependencies**: Conceptual sibling of 01, 02 (resonance principle).
+**Dependencies**: Upstream: 01, 02. Downstream: 07 (eigenvalue link).
 
 ---
 
-### Paper 05: Debye Phonon Dispersion and Born-von Karman Lattice Dynamics
+### Paper 05: Phonon Dispersion -- Debye Model and Born-von Karman Theory
 - **File**: `05_1912_Debye_Phonon_Dispersion_Lattice_Dynamics.md`
 - **arXiv**: N/A
 - **Year**: 1912
 - **Relevance**: CRITICAL
-- **Tags**: phonon, dispersion relation, Debye model, Born-von Karman, density of states, Brillouin zone, heat capacity
+- **Tags**: phonon, dispersion relation, Debye model, dynamical matrix, density of states, Brillouin zone
 
-**Summary**: Foundational phonon theory. Debye model: solid as elastic continuum with omega(k) = v_s|k|, density of states g(omega) ~ omega^2, heat capacity C_V ~ T^3 at low T. Born-von Karman: discrete lattice dynamics via dynamical matrix D(k) eigenvalue problem omega^2*A = D(k)*A. Periodic boundary conditions discretize k-space into Brillouin zone. Optical vs acoustic branches. This is the mathematical substrate of the phonon-exflation spectral action.
+**Summary**: Foundational phonon theory. Debye's linear dispersion omega(k) = v_s|k| with g(omega) ~ omega^2 yields the T^3 heat capacity law. Born-von Karman's dynamical matrix D(k) gives eigenvalue problem omega^2 A = D(k) A. Establishes phonons as collective excitations with discrete spectrum from periodic boundary conditions -- the direct analog of the Dirac spectrum on compactified SU(3).
 
 **Key Results**:
-- Debye cutoff omega_D = v_s*(6*pi^2*n)^{1/3}
-- Debye T^3 law: C_V = (12*pi^4*N*k_B/5)*(T/theta_D)^3
-- Dynamical matrix eigenvalue problem gives dispersion omega_j(k)
-- Phonon occupation: Bose-Einstein <E_omega> = hbar*omega/(exp(hbar*omega/k_BT)-1)
+- Debye density of states g(omega) = V/(2pi^2) * (3/v_s^3) * omega^2
+- Heat capacity C_V ~ T^3 at low T, 3Nk_B at high T
+- Dynamical matrix eigenvalues give dispersion omega_j(k)
+- Brillouin zone construction quantizes allowed wavevectors
 
 **Key Equations**:
-
 | Label | Description | Reference |
 |:---|:---|:---|
-| eq 5.1 | Linear dispersion omega(k) = v_s*|k| | Section: Debye Model |
-| eq 5.2 | DOS g(omega) = V/(2*pi^2) * [3/v_s^3] * omega^2 | Section: same |
-| eq 5.3 | Dynamical matrix D(k) = (1/m)*Sum Phi(n)*exp(ik.R_n) | Section: Born-von Karman |
-| eq 5.4 | Debye temperature theta_D = hbar*omega_D/k_B | Section: Heat Capacity |
+| omega(k) = v_s |k| | Debye linear dispersion | Sec. 2 |
+| g(omega) = V/(2pi^2)(3/v_s^3)*omega^2 | Debye density of states | Sec. 2 |
+| omega^2 A = D(k) A | Dynamical matrix eigenvalue problem | Sec. 3 |
+| C_V = 12pi^4 Nk_B/5 * (T/theta_D)^3 | Debye T^3 law | Sec. 2 |
+| omega_D = v_s (6pi^2 n)^{1/3} | Debye cutoff frequency | Sec. 2 |
 
-**Dependencies**: Upstream to 06, 09. Foundation for all phonon-based arguments.
+**Dependencies**: Upstream: none. Downstream: 06, 07, 08, 09.
 
 ---
 
@@ -285,322 +297,302 @@ Canete-Kobakhidze emergent DM from three-form gauge field (no new particles), Ch
 - **File**: `06_2006_Craster_Guenneau_Phononic_Crystals_Bandgaps.md`
 - **arXiv**: N/A
 - **Year**: 2006
-- **Relevance**: MEDIUM
-- **Tags**: phononic crystal, bandgap, Bragg scattering, negative refraction, acoustic cloaking, metamaterial
+- **Relevance**: HIGH
+- **Tags**: phononic crystal, bandgap, Bragg scattering, negative mass, metamaterial, acoustic cloaking
 
-**Summary**: Review of acoustic metamaterials and phononic crystals. Bragg scattering creates frequency bandgaps (lambda = 2d/n). Local resonance metamaterials exhibit negative effective mass rho_eff(omega) = rho_0*(1 - omega_p^2/(omega*(omega+i*gamma))). Transformation acoustics enables acoustic cloaking. Topological phononic crystals exhibit Berry phase and protected edge states. Bandgap = mass generation analog; impedance contrast = coupling strength analog.
+**Summary**: Periodic structures exhibit phononic bandgaps via Bragg scattering and local resonance. Local resonance creates negative effective mass rho_eff(omega). Transformation acoustics for cloaking. Topological phononic crystals with Berry phase protection. Bandgaps analogous to mass gaps in particle spectra.
 
 **Key Results**:
-- Bandgap width scales with impedance contrast |Z_1 - Z_2|/Z_bar
-- Negative effective mass below plasma frequency
-- Acoustic cloak requires radially varying rho_eff(r)
-- Berry phase gamma = i * oint <n(k)|nabla_k|n(k)> dk
+- Bragg condition lambda = 2d/n creates bandgaps
+- Bandgap width scales with impedance contrast
+- Negative effective mass and bulk modulus achievable simultaneously
+- Topological Berry phase in phononic bands
 
 **Key Equations**:
-
 | Label | Description | Reference |
 |:---|:---|:---|
-| eq 6.1 | Bragg condition lambda = 2d/n | Section: Bragg Scattering |
-| eq 6.2 | Effective mass rho_eff(omega) | Section: Local Resonance |
-| eq 6.3 | Berry phase integral | Section: Topological |
+| lambda = 2d/n | Bragg condition | Sec. 2 |
+| rho_eff(omega) = rho_0(1 - omega_p^2/(omega(omega+i*gamma))) | Effective mass | Sec. 3 |
+| gamma_n = i oint <n(k)|nabla_k n(k)> dk | Berry phase | Sec. 5 |
 
-**Dependencies**: Depends on 05. Feeds into 08, 34, 35, 38.
+**Dependencies**: Upstream: 05. Downstream: 08, 34, 35.
 
 ---
 
-### Paper 07: Chladni Patterns -- Eigenmode Visualization
+### Paper 07: Chladni Patterns and Cymatics -- Visualizing Eigenmodes
 - **File**: `07_1787_Chladni_Patterns_Modal_Analysis.md`
 - **arXiv**: N/A
 - **Year**: 1787
-- **Relevance**: MEDIUM
-- **Tags**: Chladni patterns, cymatics, eigenvalue problem, Helmholtz equation, biharmonic, Weyl's law
+- **Relevance**: HIGH
+- **Tags**: Chladni patterns, eigenmode, Helmholtz equation, biharmonic, Weyl law, inverse spectral problem
 
-**Summary**: Chladni (1787) and Jenny (cymatics, 1967) visualized eigenmodes of vibrating plates: sand accumulates at nodes, revealing eigenfunction structure. Plate vibration: nabla^4 psi = lambda*psi (biharmonic eigenvalue problem). Membrane vibration: nabla^2 psi + k^2*psi = 0 (Helmholtz). Weyl's law: mode density rho(k) = A*k/(2*pi). Inverse spectral problem: "Can you hear the shape of a drum?" (Kac). Geometry determines spectrum -- the central thesis of phonon-exflation.
+**Summary**: Chladni's discovery: sand on vibrating plates accumulates at nodes, visualizing eigenmodes. Plate equation yields biharmonic eigenvalue problem nabla^4 psi = lambda psi. Membranes satisfy Helmholtz equation nabla^2 psi + k^2 psi = 0. Weyl's law: eigenvalue density rho(k) = Ak/(2pi). Geometry determines spectrum, spectrum encodes geometry.
 
 **Key Results**:
-- Plate eigenfrequencies omega_{m,n} ~ (m*pi/L_x)^2 + (n*pi/L_y)^2
-- Weyl's law: asymptotic density of eigenvalues
-- Node patterns directly visualize eigenfunction zero sets
-- Boundary conditions determine spectrum completely
+- Each frequency produces a unique Chladni pattern (eigenmode visualization)
+- Weyl's law connects eigenvalue density to domain area
+- "Can you hear the shape of a drum?" -- inverse spectral problem
 
 **Key Equations**:
-
 | Label | Description | Reference |
 |:---|:---|:---|
-| eq 7.1 | Biharmonic eigenvalue: nabla^4 psi = lambda*psi | Section: Eigenmode Solutions |
-| eq 7.2 | Helmholtz: nabla^2 psi + k^2*psi = 0 | Section: Membrane Vibrations |
-| eq 7.3 | Weyl's law: rho(k) = A*k/(2*pi) | Section: Spectrum and Inverse |
+| rho*h d^2u/dt^2 + D nabla^4 u = 0 | Plate vibration equation | Sec. 2 |
+| nabla^2 psi + k^2 psi = 0 | Helmholtz equation | Sec. 3 |
+| rho(k) = Ak/(2pi) | Weyl's law | Sec. 6 |
 
-**Dependencies**: Conceptual parallel to 05 (both: eigenvalue problems give discrete spectrum).
+**Dependencies**: Upstream: 05. Downstream: 37 (topology of eigenmodes).
 
 ---
 
-### Paper 08: Acoustic Dirac Cones, Topological Insulators, Berry Phase
+### Paper 08: Acoustic Dirac Cones, Topological Insulators, and Berry Phase
 - **File**: `08_2010_Pelinovsky_Sakharov_Acoustic_Dirac_Cones.md`
 - **arXiv**: N/A
 - **Year**: 2010
-- **Relevance**: HIGH
-- **Tags**: Dirac cone, topological insulator, Berry phase, Chern number, phononic band structure, valley degeneracy
+- **Relevance**: CRITICAL
+- **Tags**: Dirac cone, topological insulator, Berry phase, Chern number, phononic crystal, bulk-edge correspondence
 
-**Summary**: Phononic/photonic crystals exhibit Dirac cones (linear band touching omega ~ v*|k-k_D|), topological insulator edge states protected by Chern number C = (1/2pi)*integral Omega d^2k, and Berry phase accumulation. Near Dirac point: effective 2D Dirac Hamiltonian H = v*(sigma_x*k_x + sigma_y*k_y). Anomalous velocity from Berry curvature. Classical waves exhibiting quantum phenomena without quantization postulates -- key evidence that quantum mechanics may emerge from classical wave dynamics in a geometric substrate.
+**Summary**: Phononic crystals exhibit Dirac cones (linear band touching omega ~ v|k-k_0|), topological insulators with protected edge states, and Berry phase. Near a Dirac point, effective Hamiltonian H = v(sigma_x k_x + sigma_y k_y) is the 2D Dirac equation for phonons. Chern number C counts edge states. Demonstrates quantum-like phenomena emerge in purely classical wave systems.
 
 **Key Results**:
-- Dirac cone dispersion omega = v_D*|k - k_D| (linear)
-- Chern number counts protected edge states
-- Anomalous velocity v_anom = -Omega x E/omega^2
-- Valley degeneracy at K, K' points (analog of generation structure)
+- Dirac cones at high-symmetry points in honeycomb phononic lattices
+- Chern number determines topologically protected edge states
+- Anomalous velocity from Berry curvature
+- Valley degeneracy at K and K' analogous to generation structure
 
 **Key Equations**:
-
 | Label | Description | Reference |
 |:---|:---|:---|
-| eq 8.1 | Dirac Hamiltonian H = v_D*(sigma_x*k_x + sigma_y*k_y) | Section: Dirac Hamiltonian |
-| eq 8.2 | Chern number C = (1/2pi)*integral_BZ Omega(k) d^2k | Section: Topological |
-| eq 8.3 | Berry curvature Omega(k) = nabla_k x A(k) | Section: Berry Phase |
+| omega(k) = v_D |k - k_D| | Dirac cone dispersion | Sec. 2 |
+| H = v_D(sigma_x k_x + sigma_y k_y) | Effective Dirac Hamiltonian | Sec. 2 |
+| C = (1/2pi) integral Omega(k) d^2k | Chern number | Sec. 3 |
+| Omega(k) = nabla_k x A(k) | Berry curvature | Sec. 4 |
 
-**Dependencies**: Depends on 06. Feeds into 35, 36, 37.
+**Dependencies**: Upstream: 05, 06. Downstream: 35, 36, 37, 38.
 
 ---
 
-### Paper 09: Landau's Superfluid Two-Fluid Model
+### Paper 09: Landau's Two-Fluid Model -- Superfluid He-4 and Phonon Excitations
 - **File**: `09_1941_Landau_Superfluid_Two_Fluid_Model.md`
 - **arXiv**: N/A
 - **Year**: 1941
 - **Relevance**: CRITICAL
-- **Tags**: superfluidity, two-fluid model, phonon, roton, quantized vortex, He-4, BEC
+- **Tags**: superfluid, two-fluid model, phonon, roton, quantized vortex, BEC
 
-**Summary**: Landau's revolutionary model of He-II: superfluid (ground state, zero viscosity/entropy) + normal fluid (phonon excitations with viscosity/entropy). Phonon dispersion epsilon(p) = c*|p| at low p; roton minimum epsilon = Delta + (p-p_0)^2/(2*mu_r) at finite p_0. Quantized circulation oint v_s.dl = n*h/m. Heat capacity C_V ~ T^3 (phonon gas). The deepest condensed-matter model for phonon-exflation: "particles" are phononic excitations of a coherent quantum ground state.
+**Summary**: Landau's revolutionary model: superfluid He-4 = ground-state condensate (superfluid component) + thermally excited phonons (normal component). Phonon dispersion epsilon(p) = c|p| at low momenta; roton minimum epsilon(p) = Delta + (p-p_0)^2/(2*mu_r) at finite p. C_V ~ T^3. Quantized vortex circulation oint v_s . dl = nh/m. The conceptual parent of phonon-exflation.
 
 **Key Results**:
-- Two-fluid decomposition: rho = rho_s + rho_n
-- Phonon linear dispersion with c ~ 240 m/s in He-II
-- Roton gap Delta ~ 8.6 K at momentum p_0
-- Quantized circulation: integer multiples of h/m_He
-- C_V ~ T^3 at low T (identical to Debye law)
+- Two-fluid density: rho = rho_s + rho_n
+- Phonon dispersion linear, roton minimum at p_0
+- C_V ~ T^3 (superfluid IS phononic)
+- Quantized circulation
 
 **Key Equations**:
-
 | Label | Description | Reference |
 |:---|:---|:---|
-| eq 9.1 | Phonon dispersion epsilon(p) = c*|p| | Section: Phonon Dispersion |
-| eq 9.2 | Roton spectrum epsilon = Delta + (p-p_0)^2/(2*mu_r) | Section: Roton Minimum |
-| eq 9.3 | Quantized circulation oint v_s.dl = n*h/m | Section: Quantized Vortices |
-| eq 9.4 | Superfluid fraction rho_s(T) = rho*(1-(T/T_c)^alpha) | Section: Two-Fluid Picture |
+| rho = rho_s + rho_n | Two-fluid density | Sec. 2 |
+| epsilon(p) = c|p| | Phonon dispersion | Sec. 3 |
+| epsilon(p) = Delta + (p-p_0)^2/(2*mu_r) | Roton spectrum | Sec. 3 |
+| oint v_s . dl = nh/m | Quantized circulation | Sec. 5 |
 
-**Dependencies**: Foundation for 10, 12, 21, 24, 25.
+**Dependencies**: Upstream: 05. Downstream: 10, 11, 12, 24, 25.
 
 ---
 
 ### Paper 10: Volovik -- The Universe in a Helium Droplet
 - **File**: `10_2003_Volovik_Universe_Helium_Droplet_Emergent_Gravity.md`
-- **arXiv**: N/A (book, OUP 2003)
+- **arXiv**: N/A (book)
 - **Year**: 2003
 - **Relevance**: CRITICAL
-- **Tags**: emergent gravity, superfluid cosmology, Lorentz invariance, gauge fields, vacuum energy, Bogoliubov quasiparticle, phonon
+- **Tags**: emergent gravity, superfluid vacuum, Lorentz invariance, gauge fields, cosmological constant, Bogoliubov quasiparticle
 
-**Summary**: Volovik's thesis: the universe IS a superfluid condensate. Spacetime, Lorentz invariance, gravity, and gauge fields all emerge from the ground state. Emergent metric g^{mu nu} = (1/c_s^2)*(u^mu*u^nu - c_s^2*delta^{mu nu}) from superfluid flow. Lorentz invariance emergent at low energy (omega = c_s*|k|). Fermions = Bogoliubov quasiparticles with mass m_f ~ Delta/v_F from gap structure. Vacuum energy rho_Lambda = Sum (1/2)*hbar*omega_i. Most direct precursor to phonon-exflation. Key difference: Volovik leaves microscopic structure unspecified; phonon-exflation uses M4 x SU(3).
+**Summary**: The single most important precursor to phonon-exflation. Universe as superfluid condensate. Emergent metric from superfluid flow. Lorentz invariance emerges at long wavelengths. Gauge fields from topological defects. Fermions are Bogoliubov quasiparticles E_k = sqrt(xi_k^2 + |Delta|^2). CC as zero-point energy sum.
 
 **Key Results**:
-- Emergent metric from superfluid density and flow
-- Lorentz invariance valid at scales >> inter-particle spacing
-- Bogoliubov gap E_k = sqrt(xi_k^2 + |Delta|^2) gives fermion masses
-- Vacuum energy density ~ mu^4 (regularized sum of zero-point energies)
-- Universe near quantum critical point: all symmetries emerge
+- Emergent Lorentz invariance from phonon spectrum (UV deviations)
+- Gauge fields from vortex defects
+- Fermion mass m_f ~ Delta/v_F from gap structure
+- CC as regularized zero-point sum ~ mu^4
+- Universe near quantum critical point
 
 **Key Equations**:
-
 | Label | Description | Reference |
 |:---|:---|:---|
-| eq 10.1 | Emergent metric g^{mu nu} = (u^mu*u^nu - c_s^2*delta^{mu nu})/c_s^2 | Section: Emergent Metric |
-| eq 10.2 | Bogoliubov quasiparticle energy E_k = sqrt(xi_k^2 + |Delta|^2) | Section: Fermions |
-| eq 10.3 | Superfluid velocity v_s = (hbar/m)*nabla phi | Section: Ground State |
-| eq 10.4 | Vacuum energy rho_Lambda = Sum (1/2)*hbar*omega_i | Section: CC |
+| g^{mu nu} = (1/c_s^2)(u^mu u^nu - c_s^2 delta^{mu nu}) | Emergent metric | Sec. 2 |
+| omega(k) = c_s |k| | Emergent Lorentz dispersion | Sec. 2 |
+| E_k = sqrt(xi_k^2 + |Delta|^2) | Bogoliubov quasiparticle | Sec. 4 |
+| rho_Lambda = Sum (1/2)*hbar*omega_i | Vacuum energy density | Sec. 3 |
 
-**Dependencies**: Depends on 09. Foundation for 11, 16, 28, 29. Central reference for the project.
+**Dependencies**: Upstream: 09. Downstream: 11, 12, 16, 21, 24, 28, 29, 32, 42.
 
 ---
 
-### Paper 11: Unruh -- Analog Gravity and Sonic Black Holes
+### Paper 11: Unruh -- Sonic Black Holes and Hawking Radiation
 - **File**: `11_1981_Unruh_Analog_Gravity_Sonic_Black_Holes.md`
 - **arXiv**: N/A
 - **Year**: 1981
-- **Relevance**: HIGH
-- **Tags**: analog gravity, sonic black hole, Hawking radiation, acoustic metric, event horizon, pair creation
+- **Relevance**: CRITICAL
+- **Tags**: analog gravity, acoustic metric, sonic horizon, Hawking radiation, pair creation
 
-**Summary**: Unruh's founding paper: supersonic fluid flow creates an acoustic event horizon (|v| = c_s) where phonon pair creation produces Hawking-like thermal radiation at T_H = hbar*c_s*|nabla v|/(2*pi*k_B). Acoustic metric is formally identical to curved spacetime metric. Dispersion corrections modify Hawking spectrum at high frequencies. Shows Hawking radiation is generic to wave equations in curved backgrounds, not specific to gravity.
+**Summary**: Supersonic fluid flow creates acoustic event horizon at |v| = c_s. Hawking temperature T_H = hbar*c_s*|nabla v|/(2*pi*k_B). Acoustic metric g_{mu nu} = rho diag(u^2 - 1, -1, -1, -1). Hawking radiation is generic to wave systems with horizons. Dispersion corrections modify but preserve thermal-like spectrum.
 
 **Key Results**:
-- Acoustic event horizon at |v| = c_s
-- Hawking temperature T_H = hbar*kappa/(2*pi*k_B) with kappa = c_s*|dv/dr|/2
-- Acoustic metric formally equivalent to Schwarzschild-like metric
-- Dispersion corrections: omega(k) = c_s*k*(1 + alpha*k^2/c_s^2)
+- Acoustic horizon at |v| = c_s
+- Hawking temperature from velocity gradient
+- Formal equivalence between acoustic and gravitational physics
+- Dispersion corrections preserve thermal spectrum in frequency band
 
 **Key Equations**:
-
 | Label | Description | Reference |
 |:---|:---|:---|
-| eq 11.1 | Acoustic metric g_{mu nu} | Section: Acoustic Metric |
-| eq 11.2 | Hawking temperature T_H = hbar*c_s*|nabla v|/(2*pi*k_B) | Section: Hawking Radiation |
-| eq 11.3 | Surface gravity kappa = (c_s/2)*|dv/dr|_horizon | Section: same |
+| g_{mu nu} = rho diag(u^2-1, -1, -1, -1) | Acoustic metric | Sec. 2 |
+| T_H = hbar*c_s*|nabla v|/(2*pi*k_B) | Hawking temperature | Sec. 3 |
+| kappa = c_s/2 * |dv/dr|_{horizon} | Surface gravity | Sec. 3 |
 
-**Dependencies**: Depends on 10. Upstream to 16, 26.
+**Dependencies**: Upstream: 09, 10. Downstream: 16, 21, 26.
 
 ---
 
-### Paper 12: Quantum Turbulence -- Vortex Dynamics and Kolmogorov Cascade
+### Paper 12: Quantum Turbulence -- Vortex Dynamics and Energy Cascade
 - **File**: `12_2000_Donnelly_Vortex_Reconnection_Quantum_Turbulence.md`
 - **arXiv**: N/A
 - **Year**: 2000
-- **Relevance**: MEDIUM
-- **Tags**: quantum turbulence, vortex reconnection, Kolmogorov cascade, Kelvin waves, phonon emission, quantized vortex
+- **Relevance**: HIGH
+- **Tags**: quantum turbulence, quantized vortex, Kolmogorov cascade, vortex reconnection, Kelvin wave
 
-**Summary**: Quantum turbulence in He-II: tangle of quantized vortex lines (each carrying h/m circulation) produces Kolmogorov k^{-5/3} energy spectrum despite discrete vorticity. Vortex reconnection releases energy into Kelvin waves and phonons. Two-scale cascade: vortex interactions above inter-vortex spacing, Kelvin waves below. Universality of cascade -- same scaling in classical and quantum turbulence. Phonon emission is the ultimate dissipation channel.
+**Summary**: Quantum turbulence: tangled quantized vortex lines in superfluid He-4. Kolmogorov E(k) ~ k^{-5/3} is universal across classical and quantum turbulence. Energy cascades via reconnection and Kelvin wave emission, ultimately dissipating as phonons. Vortex line energy E ~ (rho_s hbar^2/m^2) L ln(R/xi).
 
 **Key Results**:
-- Kolmogorov spectrum E(k) = C*epsilon^{2/3}*k^{-5/3} in quantum turbulence
-- Vortex energy ~ (rho_s*hbar^2/m^2)*L*ln(R/xi)
+- Kolmogorov k^{-5/3} in quantum turbulence (universality)
 - Reconnection rate ~ L^{3/2}
-- Kelvin wave dispersion omega ~ alpha*k^2
+- Kelvin waves cascade energy to phonon scales
+- Vortex lattice melting at high rotation
 
 **Key Equations**:
-
 | Label | Description | Reference |
 |:---|:---|:---|
-| eq 12.1 | Kolmogorov spectrum E(k) ~ epsilon^{2/3}*k^{-5/3} | Section: Kolmogorov |
-| eq 12.2 | Vortex line energy E = (rho_s*hbar^2/m^2)*L*ln(R/xi) | Section: Vortex Structure |
-| eq 12.3 | Quantized circulation oint v_s.dl = h/m | Section: same |
+| oint v_s . dl = h/m | Quantized circulation | Sec. 2 |
+| E(k) = C eps^{2/3} k^{-5/3} | Kolmogorov spectrum | Sec. 4 |
+| E_vortex = (rho_s hbar^2/m^2) L ln(R/xi) | Vortex energy | Sec. 2 |
 
-**Dependencies**: Depends on 09. Related to 21 (giant vortex experiment).
+**Dependencies**: Upstream: 09, 10. Downstream: 21.
 
 ---
 
-### Paper 13: Ashtekar -- Loop Quantum Cosmology and Big Bounce
+### Paper 13: Loop Quantum Cosmology -- The Big Bounce
 - **File**: `13_2003_Ashtekar_Loop_Quantum_Cosmology_Big_Bounce.md`
-- **arXiv**: N/A
+- **arXiv**: N/A (review)
 - **Year**: 2003
 - **Relevance**: HIGH
-- **Tags**: LQC, quantum bounce, singularity resolution, discrete geometry, modified Friedmann, Wheeler-DeWitt
+- **Tags**: LQC, quantum bounce, discrete spacetime, modified Friedmann, singularity resolution
 
-**Summary**: LQC replaces Big Bang singularity with quantum bounce: modified Friedmann equation H^2 = (8*pi*G/3)*rho*(1-rho/rho_c). At rho = rho_c ~ 0.41*rho_Pl, H=0 and contraction reverses to expansion. Area and volume quantized: A = 8*pi*l_Pl^2*Sum sqrt(j_i(j_i+1)). Predicts tensor-to-scalar ratio r ~ 10^{-3}-10^{-6} (much smaller than inflation). Pre-Big-Bang phase with low entropy possible.
+**Summary**: LQC replaces Big Bang singularity with quantum bounce at rho_c ~ 0.41 rho_Pl. Quantum-corrected Friedmann: H^2 = (8piG/3)*rho*(1-rho/rho_c). Area and volume quantized. Tensor-to-scalar ratio r ~ 10^{-3} to 10^{-6}. Pre-Big-Bang phase permitted.
 
 **Key Results**:
-- Bounce at critical density rho_c ~ 0.41*rho_Planck
-- Quantum-corrected Friedmann: H^2 = (8piG/3)*rho*(1-rho/rho_c)
-- n_s = 0.95-1.0 (barely distinguishable from inflation)
-- r_LQC ~ 10^{-3}-10^{-6} (testable discriminant)
+- Singularity resolved: bounce at rho_c, finite curvature
+- Quantized area and volume spectra
+- Modified Friedmann with rho^2 correction
+- n_s = 0.95-1.0
 
 **Key Equations**:
-
 | Label | Description | Reference |
 |:---|:---|:---|
-| eq 13.1 | Modified Friedmann H^2 = (8piG/3)*rho*(1-rho/rho_c) | Section: Quantum-Corrected |
-| eq 13.2 | Quantized area A = 8*pi*l_Pl^2*Sum sqrt(j(j+1)) | Section: Quantum Geometry |
-| eq 13.3 | Wheeler-DeWitt constraint H_hat*Psi = 0 | Section: Effective Dynamics |
+| H^2 = (8piG/3)*rho*(1-rho/rho_c) - k/a^2 | Quantum-corrected Friedmann | Sec. 3 |
+| A = 8pi l_Pl^2 Sum sqrt(j(j+1)) | Quantized area | Sec. 2 |
 
-**Dependencies**: Independent. Downstream to 33, 43.
+**Dependencies**: Upstream: none. Downstream: 19, 33, 43.
 
 ---
 
-### Paper 14: Ambjorn-Jurkiewicz-Loll -- CDT Emergent Spacetime (2005)
+### Paper 14: CDT -- Emergent Spacetime from Discrete Geometry
 - **File**: `14_2005_Ambjorn_CDT_Emergent_Spacetime_Discrete_Geometry.md`
 - **arXiv**: N/A
 - **Year**: 2005
-- **Relevance**: MEDIUM
-- **Tags**: CDT, emergent spacetime, simplicial geometry, spectral dimension, de Sitter, path integral
+- **Relevance**: HIGH
+- **Tags**: CDT, emergent spacetime, spectral dimension, de Sitter, path integral, discrete geometry
 
-**Summary**: CDT: lattice quantum gravity via path integral over causal simplicial triangulations. 4D de Sitter spacetime emerges spontaneously from purely discrete, combinatorial rules. Spectral dimension flows from ~2 at Planck scale to ~4 at IR. No inflaton, no background metric, no fine-tuning. Demonstrates that spacetime itself can be emergent from discrete quantum geometry.
+**Summary**: CDT sums over causal triangulations weighted by discretized Einstein-Hilbert action. 4D de Sitter spacetime emerges with spectral dimension d_s ~ 2 (Planck) to d_s ~ 4 (macroscopic). No background metric. De Sitter expansion natural.
 
 **Key Results**:
-- 4D de Sitter spacetime emerges from path integral
-- Spectral dimension d_s ~ 2 at UV, ~4 at IR
-- Preferred time foliation emerges
-- Hubble parameter natural (no fine-tuning)
+- 4D spacetime from combinatorial path integral
+- Spectral dimension flow d_s: 2 -> 4
+- De Sitter metric emergent
+- Preferred foliation emerges
 
 **Key Equations**:
-
 | Label | Description | Reference |
 |:---|:---|:---|
-| eq 14.1 | Simplicial action S = Sum delta_i*R_i + lambda*Sum epsilon_j | Section: Discretized Action |
-| eq 14.2 | Partition function Z = Sum_triangulations exp(-S_eff) | Section: Partition Function |
-| eq 14.3 | Spectral dimension d_s = 2 - d(ln N(r))/d(ln r) | Section: Spectral Dimension |
+| Z = Sum_T exp(-S_Regge[T]) | CDT partition function | Sec. 3 |
+| d_s = 2 - d ln N(r) / d ln r | Spectral dimension | Sec. 4 |
 
-**Dependencies**: Independent. Updated by 22.
+**Dependencies**: Upstream: none. Downstream: 22.
 
 ---
 
-### Paper 15: Penrose -- Conformal Cyclic Cosmology (2010)
+### Paper 15: Penrose's CCC -- Aeons and Conformal Rescaling
 - **File**: `15_2010_Penrose_Conformal_Cyclic_Cosmology_Aeons.md`
 - **arXiv**: N/A
 - **Year**: 2010
 - **Relevance**: MEDIUM
-- **Tags**: CCC, conformal geometry, aeons, cyclic cosmology, Hawking radiation, arrow of time
+- **Tags**: CCC, conformal transformation, aeons, Hawking points, CMB anomalies
 
-**Summary**: Penrose's CCC: universe is infinite sequence of aeons, each with Big Bang and infinite future. Conformal rescaling g~_{mu nu} = Omega^2*g_{mu nu} maps infinite future (only massless radiation remains) to next aeon's Big Bang. No singularity, no quantum gravity needed. Addresses arrow-of-time and fine-tuning problems. No inflaton field needed.
+**Summary**: CCC: infinite aeon sequence via conformal rescaling g_tilde = Omega^2 g. Infinite future maps to next Big Bang. Predicts Hawking points in CMB. No quantum gravity needed. CMB anomaly claims disputed.
 
 **Key Results**:
 - Conformal transformation preserves causal structure
-- Massless radiation dominates infinite future
-- Predicted CMB anomalies at "Hawking points"
-- No inflaton field needed
+- Cyclic structure resolves singularity and initial conditions
+- Hawking points predicted (disputed observational status)
 
 **Key Equations**:
-
 | Label | Description | Reference |
 |:---|:---|:---|
-| eq 15.1 | Conformal rescaling g~_{mu nu} = Omega^2*g_{mu nu} | Section: Conformal Geometry |
+| g_tilde = Omega^2 g | Conformal transformation | Sec. 2 |
+| g_n(t->inf) ~ Omega^2 g_{n+1}(t->0) | Aeon identification | Sec. 4 |
 
-**Dependencies**: Independent. Updated by 23.
+**Dependencies**: Upstream: none. Downstream: 23.
 
 ---
 
-### Paper 16: Barcelo-Liberati-Visser -- Analogue Gravity Review (2005)
+### Paper 16: Barcelo-Liberati-Visser -- Analogue Gravity (2005 review)
 - **File**: `16_2005_Barcelo_Liberati_Visser_Analogue_Gravity_Review.md`
 - **arXiv**: gr-qc/0505065
 - **Year**: 2005
 - **Relevance**: CRITICAL
-- **Tags**: analog gravity, effective metric, wave equation, curved spacetime, BEC, Hawking radiation, emergent gravity
+- **Tags**: analogue gravity, effective metric, emergent gravity, Hawking radiation, Lorentz invariance, universality
 
-**Summary**: Comprehensive review mapping gravitational phenomena to condensed-matter analogs. Master equation: Box_g Psi = (1/sqrt(-g))*d_mu(sqrt(-g)*g^{mu nu}*d_nu Psi) = 0. Any wave in inhomogeneous medium sees an effective curved metric. Systematic mapping: event horizons, Hawking radiation, cosmological expansion. Establishes that gravity is not special -- it is one realization of emergence principles applying to any wave system.
+**Summary**: Comprehensive review (~10,000 citations). Every wave system in an inhomogeneous medium exhibits effective gravitational phenomena. Master equation Box_g Psi = 0. Lorentz invariance emergent at long wavelengths. CC as zero-point energy. Key message: gravity is generic emergent phenomenon.
 
 **Key Results**:
-- Formal equivalence: acoustic wave equation = scalar field in curved spacetime
-- Effective metric g_{mu nu}^eff ~ rho/c * (metric from medium properties)
-- Acoustic Hawking temperature calculable from flow gradient
-- All GR phenomena have condensed-matter analogs
+- Effective metric from any inhomogeneous wave medium
+- Acoustic, EM, and BEC implementations
+- Bekenstein entropy from counting microscopic DOF
+- Lorentz invariance as low-energy effective symmetry
 
 **Key Equations**:
-
 | Label | Description | Reference |
 |:---|:---|:---|
-| eq 16.1 | Wave equation Box_g Psi = 0 (curved spacetime form) | Section: Master Equation |
-| eq 16.2 | Effective metric from medium density and velocity | Section: Core Principles |
+| Box_g Psi = 0 | Wave in curved spacetime | Sec. 2 |
+| g_{mu nu}^eff = rho*c^2 diag(v^2/c^2-1, ...) | Acoustic metric | Sec. 3 |
+| T_H = hbar*kappa/(2pi*k_B) | Hawking temperature | Sec. 4 |
+| rho_Lambda = Sum (1/2)*hbar*omega_i | Zero-point energy | Sec. 6 |
 
-**Dependencies**: Depends on 10, 11. Updated by 26. Foundation for analog gravity program.
+**Dependencies**: Upstream: 09, 10, 11. Downstream: 21, 26, 30, 31, 42.
 
 ---
 
-### Paper 17: Pathria-Good -- Black Hole Cosmology
+### Paper 17: Black Hole Cosmology (Pathria-Good 1972)
 - **File**: `17_1972_Patheria_Good_Black_Hole_Cosmology.md`
 - **arXiv**: N/A
 - **Year**: 1972
 - **Relevance**: MEDIUM
 - **Tags**: black hole cosmology, Schwarzschild radius, Hubble radius, Friedmann equations
 
-**Summary**: Pathria and Good observed: the Schwarzschild radius R_S = 2GM/c^2 of the observable universe's mass matches the Hubble radius R_H = c/H_0, both ~10^26 m. Suggests observable universe may be the interior of a black hole. Friedmann equations admit reinterpretation as BH interior dynamics.
+**Summary**: R_S = 2GM/c^2 matches R_H = c/H_0 for the observable universe (~10^26 m). Friedmann equations in BH-interior-like form. Suggests our universe may be inside a black hole.
 
 **Key Results**:
-- R_S/R_H ~ 0.9-1.1 (coincidence to within observational error)
-- Reinterpretation of cosmic expansion as BH interior growth
-- Friedmann equations admit Schwarzschild-interior mapping
+- R_S/R_H ~ 0.9-1.1 (coincidence)
+- Flat-universe M = c^3/(2GH_0)
 
-**Key Equations**:
-
-| Label | Description | Reference |
-|:---|:---|:---|
-| eq 17.1 | Schwarzschild radius R_S = 2GM/c^2 | Section: Coincidence |
-| eq 17.2 | Hubble radius R_H = c/H_0 | Section: same |
-
-**Dependencies**: Independent. Related to 18, 19.
+**Dependencies**: Upstream: none. Downstream: 18, 19.
 
 ---
 
@@ -609,22 +601,16 @@ Canete-Kobakhidze emergent DM from three-form gauge field (no new particles), Ch
 - **arXiv**: N/A
 - **Year**: 1992
 - **Relevance**: MEDIUM
-- **Tags**: cosmological natural selection, black hole reproduction, fine-tuning, multiverse genealogy
+- **Tags**: CNS, baby universes, black holes, fine-tuning, evolution
 
-**Summary**: Black holes spawn new universes with slightly mutated constants. Natural selection across cosmic generations: universes maximizing BH production dominate. Fitness F(C) = N_BH(C). Testable: constants near-optimal for stellar collapse. Addresses fine-tuning without infinite ensemble.
+**Summary**: Black holes spawn new universes with mutated constants. Natural selection drives constants toward BH-production maximum. Testable: small constant changes should reduce BH production. Addresses fine-tuning without anthropic principle.
 
 **Key Results**:
-- BH interior -> new universe with mutated constants
-- Constants optimized for BH formation by selection
+- BH interiors may spawn child universes
+- Fitness F(C) = N_BH(C) -- number of black holes
 - Testable via neutron star mass limit
 
-**Key Equations**:
-
-| Label | Description | Reference |
-|:---|:---|:---|
-| eq 18.1 | Fitness F(C) = N_BH(C) | Section: Selection Pressure |
-
-**Dependencies**: Related to 17, 19, 20.
+**Dependencies**: Upstream: 17. Downstream: 19.
 
 ---
 
@@ -633,22 +619,22 @@ Canete-Kobakhidze emergent DM from three-form gauge field (no new particles), Ch
 - **arXiv**: N/A
 - **Year**: 2010
 - **Relevance**: MEDIUM
-- **Tags**: Einstein-Cartan, torsion, black hole interior, bounce, singularity resolution, spin density
+- **Tags**: Einstein-Cartan, torsion, black hole interior, bounce, spin density
 
-**Summary**: Einstein-Cartan theory: torsion T^lambda_{mu nu} = (kappa/2)*S^lambda_{mu nu} couples geometry to fermion spin. At extreme density, torsion provides repulsive force causing bounce. BH interior becomes expanding universe for internal observers. Classical mechanism -- no quantization needed.
+**Summary**: Einstein-Cartan theory with torsion prevents BH singularities. Torsion pressure P_torsion ~ (hbar^2/Gm^2)*rho^{2/3} at extreme density causes bounce. Classical mechanism, no quantum gravity needed.
 
 **Key Results**:
-- Torsion from spin density provides repulsion
-- Non-singular BH interior resembles Big Bang
-- Classical mechanism (no quantum gravity needed)
+- Torsion from fermion spin creates repulsive pressure
+- Non-singular BH interior = new expanding universe
+- Bounce at sub-Planck densities
 
 **Key Equations**:
-
 | Label | Description | Reference |
 |:---|:---|:---|
-| eq 19.1 | Torsion T^lambda_{mu nu} = (kappa/2)*S^lambda_{mu nu} | Section: Einstein-Cartan |
+| T^lam_{mu nu} = (kappa/2) S^lam_{mu nu} | Torsion-spin coupling | Sec. 2 |
+| P_torsion ~ (hbar^2/Gm^2) rho^{2/3} | Torsion pressure | Sec. 2 |
 
-**Dependencies**: Related to 17, 18.
+**Dependencies**: Upstream: 13, 17. Downstream: none.
 
 ---
 
@@ -656,164 +642,147 @@ Canete-Kobakhidze emergent DM from three-form gauge field (no new particles), Ch
 - **File**: `20_2001_Easson_Brandenberger_Black_Hole_Gas.md`
 - **arXiv**: N/A
 - **Year**: 2001
-- **Relevance**: LOW
-- **Tags**: string gas, Hagedorn temperature, winding modes, T-duality, singularity resolution
+- **Relevance**: MEDIUM
+- **Tags**: string gas, Hagedorn temperature, winding modes, T-duality, singularity avoidance
 
-**Summary**: Early universe as dense string gas at Hagedorn temperature T_H = 1/(2*pi*sqrt(2*alpha')). Winding modes around compact dimensions as topological defects. Phase transition from string gas to standard cosmology. Scale-invariant perturbations without inflation.
+**Summary**: Early universe as string gas at Hagedorn temperature T_H = 1/(2*pi*sqrt(2*alpha')). Winding modes around compact dimensions dominate at small radius. T-duality: R <-> alpha'/R. Phase transition to hot Big Bang without inflation. Scale-invariant perturbations.
 
 **Key Results**:
-- Hagedorn temperature T_H ~ M_string
-- Winding mode energy E = n*R/alpha'
-- T-duality: R <-> alpha'/R
-- Scale-invariant perturbations without inflaton
+- Hagedorn temperature T_H ~ M_s
+- T-duality at self-dual radius R = sqrt(alpha')
+- Winding + momentum mode democracy
+- Alternative to inflation for perturbation spectrum
 
-**Key Equations**:
-
-| Label | Description | Reference |
-|:---|:---|:---|
-| eq 20.1 | Hagedorn temperature T_H = 1/(2*pi*sqrt(2*alpha')) | Section: Hagedorn |
-| eq 20.2 | Winding mode energy E = n*R/alpha' | Section: Winding Modes |
-
-**Dependencies**: Related to 17, 18 (alternative early-universe models).
+**Dependencies**: Upstream: none. Downstream: none.
 
 ---
 
-### Paper 21: Svancara -- Giant Quantum Vortex Rotating Spacetime
+### Paper 21: Svancara -- Rotating Curved Spacetime from Giant Quantum Vortex
 - **File**: `21_2024_Svancara_Rotating_Curved_Spacetime_Quantum_Vortex.md`
 - **arXiv**: 2308.10773
 - **Year**: 2024
 - **Relevance**: HIGH
-- **Tags**: giant vortex, analog gravity, rotating spacetime, He-4, Kerr analog, ringdown, bound states
+- **Tags**: giant vortex, superfluid He-4, Kerr analog, ringdown, analog black hole, experiment
 
-**Summary**: Experimental milestone: giant quantum vortex (~10^3-10^4 circulation quanta) stabilized in He-4. Wave-vortex interaction measurements detect bound states and analog BH ringdown. First experimental realization of rotating curved spacetime (Kerr-like) in quantum fluid.
+**Summary**: First rotating analog black hole in superfluid He-4. Giant quantum vortex (thousands of circulation quanta) stabilized against splitting. Effective Kerr-like metric with off-diagonal rotation terms. Bound states and ringdown signatures detected. Record-strength rotational flow in quantum fluid.
 
 **Key Results**:
-- Giant vortex with thousands of circulation quanta stabilized
-- Analog black hole ringdown detected
-- Bound states in vortex potential observed
-- GPE governs the order parameter dynamics
+- Giant vortex with kappa >> 1 stabilized in He-4
+- Kerr-like effective metric detected via wave-vortex interaction
+- Bound states and ringdown observed
+- First laboratory rotating curved spacetime
 
-**Key Equations**:
-
-| Label | Description | Reference |
-|:---|:---|:---|
-| eq 21.1 | GPE: i*hbar*dPsi/dt = [-hbar^2/(2m)*nabla^2 + V + g|Psi|^2]*Psi | Section: Giant Vortex |
-
-**Dependencies**: Depends on 09, 12. Experimental validation of 11, 16.
+**Dependencies**: Upstream: 10, 12, 16. Downstream: 26.
 
 ---
 
-### Paper 22: Ambjorn-Loll -- CDT Review (2024)
+### Paper 22: Ambjorn-Loll CDT (2024 update)
 - **File**: `22_2024_Ambjorn_Causal_Dynamical_Triangulations_Quantum_Gravity.md`
 - **arXiv**: 2401.09399
 - **Year**: 2024
 - **Relevance**: MEDIUM
-- **Tags**: CDT, spectral dimension, quantum gravity, emergent spacetime, Planck scale
+- **Tags**: CDT, spectral dimension flow, quantum gravity, nonperturbative
 
-**Summary**: Updated CDT review (25 years). Spectral dimension flows from ~4 at IR to ~1.8 near Planck cutoff (revised from earlier ~2.0). De Sitter-like quantum universe robust. Concrete predictions on diffeomorphism-invariant observables.
+**Summary**: Updated CDT review (25 years). Spectral dimension d_s ~ 1.8 at UV (updated from ~2.0). De Sitter quantum universe confirmed. Phase structure mapped.
 
 **Key Results**:
-- Spectral dimension d_s ~ 1.8 at UV (updated)
-- De Sitter emergence robust across parameter space
-- Causal constraint essential (Euclidean fails)
+- d_s ~ 1.8 at Planck cutoff (updated)
+- 4D continuum at IR confirmed
+- Bifurcation phase structure
 
-**Dependencies**: Updates 14.
+**Dependencies**: Upstream: 14. Downstream: none.
 
 ---
 
-### Paper 23: Meissner-Penrose -- CCC 2025
+### Paper 23: Meissner-Penrose CCC (2025)
 - **File**: `23_2025_Meissner_Penrose_Conformal_Cyclic_Cosmology.md`
 - **arXiv**: 2503.24263
 - **Year**: 2025
 - **Relevance**: MEDIUM
-- **Tags**: CCC, gravitational wave epoch, Hawking points, aeon transition
+- **Tags**: CCC, gravitational wave epoch, Hawking points, crossover, aeon transition
 
-**Summary**: Resolves CCC transition mechanism: crossover during gravitational wave epoch (GWE). Geometry smooth except at Hawking points (BH evaporation imprints). Testable: CMB temperature anomalies correlate with cluster masses from prior aeon.
+**Summary**: Resolves CCC transition via gravitational wave epoch. When only GWs remain, geometry enables conformal rescaling to next aeon. Hawking points at discrete loci. Testable angular correlations.
 
 **Key Results**:
-- GWE as physical mechanism for aeon transition
-- Hawking points: discrete thermal imprints in CMB
-- Testable angular size and temperature correlations
+- GWE enables smooth aeon transition
+- Crossover surface with discontinuous Omega'
+- Testable Hawking point angular predictions
 
-**Dependencies**: Updates 15.
+**Dependencies**: Upstream: 15. Downstream: none.
 
 ---
 
 ### Paper 24: Xia -- Kibble-Zurek in Holographic Superfluid
 - **File**: `24_2026_Xia_Kibble_Zurek_Holographic_Superfluid.md`
-- **arXiv**: N/A (Nature Communications 2026)
+- **arXiv**: N/A
 - **Year**: 2026
 - **Relevance**: HIGH
-- **Tags**: Kibble-Zurek, holographic superfluid, vortex formation, quench, AdS/CFT, topological defect
+- **Tags**: Kibble-Zurek, holographic superconductor, vortex formation, fast quench, AdS/CFT
 
-**Summary**: KZM and beyond in holographic (AdS/CFT) superfluid disk. Slow quenches: vortex density ~ tau_Q^{-alpha}. Fast quenches: universal scaling with final temperature (transcending KZM). Non-Poisson vortex statistics reveal correlations in defect formation. Relevant to transit physics in phonon-exflation.
+**Summary**: KZM in holographic superconductor (Einstein-Abelian-Higgs in AdS4). Slow quenches: KZM scaling N ~ tau_Q^{-alpha}. Fast quenches: new universal regime with final-temperature scaling. Non-Poisson vortex statistics reveal correlations beyond mean-field. Directly relevant to framework's KZ transit.
 
 **Key Results**:
-- KZM scaling confirmed for slow quenches
-- Fast-quench regime: KZM breaks down, new universal scaling
-- Vortex statistics: Poisson binomial (correlated defect formation)
+- KZM confirmed in slow-quench regime
+- New universal fast-quench regime beyond KZM
+- Non-Poisson (Poisson binomial) vortex statistics
+- Holographic access to far-from-equilibrium physics
 
-**Key Equations**:
-
-| Label | Description | Reference |
-|:---|:---|:---|
-| eq 24.1 | KZM defect scaling N ~ tau_Q^{-alpha} | Section: Historical Context |
-
-**Dependencies**: Related to 09, 12.
+**Dependencies**: Upstream: 09, 10. Downstream: none.
 
 ---
 
-### Paper 25: Kroeze -- BCS Dynamical Phases in Cavity QED
+### Paper 25: Kroeze -- BCS Dynamics in Cavity QED
 - **File**: `25_2024_Kroeze_BCS_Superconductors_Cavity_QED.md`
 - **arXiv**: 2306.00066
 - **Year**: 2024
 - **Relevance**: HIGH
-- **Tags**: BCS, cavity QED, quench dynamics, order parameter, Cooper pairing, non-equilibrium, Sr-88
+- **Tags**: BCS, cavity QED, quantum simulation, dynamical phases, quench
 
-**Summary**: First experimental observation of BCS dynamical phases: (I) order parameter decay, (II) non-equilibrium steady state, (III) persistent oscillations. Sr-88 in optical cavity simulates electron-phonon coupling. Directly relevant to BCS-on-SU(3) mechanism.
+**Summary**: First observation of all three BCS dynamical phases: (I) order parameter decay, (II) non-equilibrium steady state, (III) persistent oscillations. Phase boundaries match theory (zero adjustable parameters). Cavity QED simulates electron-phonon coupling.
 
 **Key Results**:
 - Three BCS dynamical phases observed
-- Phase III: persistent order parameter oscillations (pair vibrations)
-- Quench dynamics beyond mean-field theory
+- Phase I/II/III boundaries match theory exactly
+- Persistent order parameter oscillations = pair vibration
 
-**Dependencies**: Related to 09.
+**Dependencies**: Upstream: 09. Downstream: none.
 
 ---
 
-### Paper 26: Barcelo-Liberati-Visser -- Analog Gravity v4 (2024)
+### Paper 26: Barcelo-Liberati-Visser Analogue Gravity v4 (2024)
 - **File**: `26_2024_Barcelo_Analogue_Gravity_Review.md`
 - **arXiv**: gr-qc/0505065v4
 - **Year**: 2024
 - **Relevance**: HIGH
-- **Tags**: analog gravity, experimental validation, rotating spacetimes, cosmological horizons, metamaterials
+- **Tags**: analogue gravity, living review, experimental validation, rotating spacetime
 
-**Summary**: Updated living review (v4, 2024): 20 years of analog gravity. Experimentally validated: sonic horizons, Hawking radiation, vortex analogs. New platforms: metamaterials, polaritons. Mature field.
+**Summary**: Updated living review (20 years). Includes 2024 Svancara experiment, holographic analogs. Analog gravity now mature, experimentally validated across BEC, superfluid, metamaterial platforms.
 
 **Key Results**:
-- Experimental validation of Hawking radiation analog
-- New analog platforms: metamaterials, polaritons
-- Rotating spacetime analogs demonstrated
+- Rotating analog spacetime experimentally realized
+- Hawking radiation analogs in multiple independent systems
+- Field confirmed as mature experimental programme
 
-**Dependencies**: Updates 16.
+**Dependencies**: Upstream: 16. Downstream: none.
 
 ---
 
-### Paper 27: DESI DR1 BAO Cosmological Constraints
+### Paper 27: DESI 2024 BAO Cosmological Constraints
 - **File**: `27_2024_DESI_BAO_Cosmological_Constraints.md`
-- **arXiv**: 2404.03002
+- **arXiv**: 2404.03002v3
 - **Year**: 2024
-- **Relevance**: MEDIUM
-- **Tags**: DESI, BAO, dark energy, w(z), cosmological constant, Omega_m, H_0
+- **Relevance**: HIGH
+- **Tags**: DESI, BAO, dark energy, w(z), LCDM tension
 
-**Summary**: DESI DR1: 6M+ objects, z = 0.1-4.2. Omega_m = 0.307 +/- 0.005, H_0 = 67.97 +/- 0.38. With time-varying DE: w_0 > -1, w_a < 0 at 2.6-sigma. First LSS hint of dynamical dark energy.
+**Summary**: DESI BAO in 6M+ objects across z = 0.1 to 4.2. Omega_m = 0.307 +/- 0.005, H_0 = 67.97 +/- 0.38. Time-varying DE: w_0 > -1, w_a < 0 at 2.6-sigma. First LSS data hinting at dynamical dark energy.
 
 **Key Results**:
 - Omega_m = 0.307 +/- 0.005
-- CPL: w_0 > -1, w_a < 0 at 2.6-sigma
-- 7 redshift bins spanning z = 0.1-4.2
+- H_0 = 67.97 +/- 0.38 km/s/Mpc
+- 2.6-sigma tension with w = -1
+- Sound horizon as standard ruler across 7 z-bins
 
-**Dependencies**: Related to 40.
+**Dependencies**: Upstream: none. Downstream: 40.
 
 ---
 
@@ -822,77 +791,78 @@ Canete-Kobakhidze emergent DM from three-form gauge field (no new particles), Ch
 - **arXiv**: 1111.4627
 - **Year**: 2012
 - **Relevance**: CRITICAL
-- **Tags**: topology, quantum vacuum, Weyl point, gapless fermions, topological protection, hierarchy problem, BDI
+- **Tags**: topological matter, momentum-space topology, Weyl point, hierarchy problem, SM vacuum
 
-**Summary**: Momentum-space topology protects gaplessness of fermions -- hierarchy problem resolved by topology, not fine-tuning. SM vacuum classified as topological matter alongside He-3A, topological insulators, Weyl semimetals. Topological invariants prevent mass generation regardless of parameter deformation. Directly relevant to BDI classification (T^2=+1) of the framework's Dirac operator.
+**Summary**: Quantum vacua classified by momentum-space topology. Gaplessness protected by topology (Chern number, winding number), not fine-tuning -- addresses hierarchy problem. SM vacuum is topological matter, same class as He-3A and Weyl semimetals. Weyl point chirality +/-1 protected by Berry flux.
 
 **Key Results**:
-- SM vacuum is topological matter (same class as He-3A)
-- Gaplessness protected by momentum-space topology
-- Hierarchy problem: topology forbids mass, not cancellations
-- Unifies SM with condensed-matter topological phases
+- SM vacuum = topological matter
+- Hierarchy problem: mass topologically forbidden
+- Weyl point chirality protected by Berry integral
+- Bulk-surface correspondence guarantees Fermi arcs
 
 **Key Equations**:
-
 | Label | Description | Reference |
 |:---|:---|:---|
-| eq 28.1 | Topological invariant N_3 (momentum-space winding) | Section: Classification |
+| C = (1/2pi i) oint A(k) dk | Chern number | Sec. 2 |
+| Gamma = +/-1 | Weyl point chirality | Sec. 2 |
 
-**Dependencies**: Depends on 10. Related to 29, 32, 39.
+**Dependencies**: Upstream: 10. Downstream: 29, 32, 36, 38.
 
 ---
 
-### Paper 29: Jannes-Volovik -- Cosmological Constant from Weyl Media
+### Paper 29: Jannes-Volovik -- CC from Weyl Media
 - **File**: `29_2012_Jannes_Volovik_Cosmological_Constant_Weyl.md`
 - **arXiv**: 1108.5086
 - **Year**: 2012
 - **Relevance**: HIGH
-- **Tags**: cosmological constant, Weyl media, He-3A, vacuum energy, equilibrium, non-equilibrium
+- **Tags**: cosmological constant, Weyl media, He-3A, equilibrium vacuum, non-equilibrium
 
-**Summary**: In topological Weyl media (He-3A analog), the cosmological constant VANISHES in equilibrium. Thermodynamic argument: equilibrium states do not gravitate. Observed CC requires non-equilibrium state. Directly relevant: if the universe is a superfluid near equilibrium, CC problem resolved by identifying non-equilibrium transit state.
+**Summary**: Using He-3A as laboratory cosmos: CC VANISHES in equilibrium vacuum. Observed CC implies non-equilibrium or additional physics. Bi-metric structure with q(r) = (rho_s - rho_0)/rho_0 as gravitational potential.
 
 **Key Results**:
-- Lambda = 0 in equilibrium vacuum (exact)
-- Observed CC requires non-equilibrium universe
-- Equilibrium vacuum does not gravitate
+- CC = 0 in equilibrium Weyl medium
+- Observed CC implies universe is non-equilibrium
+- Bi-metric structure: microscopic vs emergent metrics
+- Thermodynamic argument: equilibrium states do not gravitate
 
-**Dependencies**: Depends on 10, 28.
+**Dependencies**: Upstream: 10, 28. Downstream: 32, 41.
 
 ---
 
-### Paper 30: Crowther-Linnemann-Wuthrich -- Limits of Analog Experiments
+### Paper 30: Crowther et al. -- Limits of Analogue Experiments
 - **File**: `30_2019_Crowther_Linnemann_Wuthrich_Analogue_Experiments.md`
 - **arXiv**: 1811.03859
 - **Year**: 2019
 - **Relevance**: MEDIUM
-- **Tags**: epistemology, analog experiments, confirmation, circularity, philosophy of physics
+- **Tags**: epistemology, analogue experiments, confirmation, circularity
 
-**Summary**: Analog experiments cannot provide genuine confirmation of phenomena in inaccessible target systems (logical circularity). Can illustrate possibilities and constrain mechanisms. Important epistemic discipline for phonon-exflation: condensed-matter analogs support but cannot prove cosmological claims.
+**Summary**: Analogue experiments cannot genuinely confirm target-system phenomena (logical circularity: experiment presupposes the theory it tests). Can illustrate and constrain, not confirm.
 
 **Key Results**:
-- Analog experiments: illustrative, not confirmatory
-- Logical circularity in using analogs to test target theory
-- Two valid roles: illustration and constraint
+- Source-target distinction formalized
+- Logical circularity in confirmation identified
+- Universality arguments needed for confirmatory power
 
-**Dependencies**: Responds to 16, 31.
+**Dependencies**: Upstream: 16. Downstream: 31.
 
 ---
 
-### Paper 31: Dardashti -- Bayesian Confirmation of Analog Experiments
+### Paper 31: Dardashti et al. -- Bayesian Analysis of Analogues
 - **File**: `31_2017_Dardashti_Hawking_Bayesian_Analysis.md`
 - **arXiv**: 1604.05932
 - **Year**: 2017
 - **Relevance**: MEDIUM
-- **Tags**: Bayesian epistemology, analog gravity, confirmation, universality, Hawking radiation
+- **Tags**: Bayesian epistemology, confirmation, analogue experiment, universality
 
-**Summary**: Counter to Paper 30: analog experiments CAN confirm when universality arguments apply. Bayesian framework: evidence accumulates then saturates. Different analogs provide different evidential weight. Optimal experimental design identifiable.
+**Summary**: Counter to Paper 30: analogues CAN confirm under universality arguments. Bayesian framework quantifies confirmation. Multiple independent systems accumulate evidence with saturation.
 
 **Key Results**:
-- Confirmatory IF universality argument holds
-- Evidence accumulates then saturates
-- Different systems = different confirmation levels
+- Bayesian confirmation factor quantified
+- Universality bridges source to target
+- Saturation beyond ~3-5 independent systems
 
-**Dependencies**: Responds to 30. Related to 16, 26.
+**Dependencies**: Upstream: 30. Downstream: none.
 
 ---
 
@@ -900,163 +870,173 @@ Canete-Kobakhidze emergent DM from three-form gauge field (no new particles), Ch
 - **File**: `32_2025_Canete_Kobakhidze_Emergent_Dark_Matter.md`
 - **arXiv**: 2511.09034
 - **Year**: 2025
-- **Relevance**: LOW
-- **Tags**: emergent dark matter, three-form gauge field, dark sector unification
+- **Relevance**: MEDIUM
+- **Tags**: emergent dark matter, three-form field, dark sector unification
 
-**Summary**: DM as emergent phenomenon from three-form gauge field coupled to cosmic fluid. In isolation: non-propagating (DE). Coupled to matter: dynamical in-medium state mimicking DM. Unified dark sector without exotic particles. Predicts particle DM searches futile.
+**Summary**: DM as emergent from three-form gauge field C_{mu nu rho}. No propagating DOF in isolation; interaction with baryons generates effective DM. Unifies DM + DE. Predicts particle DM searches futile.
 
 **Key Results**:
-- DM from three-form + matter coupling (emergent, not fundamental)
-- Unified dark sector (DM + DE)
-- No new particles needed
+- DM as collective excitation, not fundamental particle
+- Three-form field dual to CC in isolation
+- In-medium coupling generates effective DM DOF
 
-**Dependencies**: Related to 28. Independent.
+**Dependencies**: Upstream: 10, 28. Downstream: none.
 
 ---
 
-### Paper 33: Gan -- Quantum Damping of Shear in LQC
+### Paper 33: Gan et al. -- Quantum Damping of Shear in LQC
 - **File**: `33_2025_Gan_Quantum_Damping_Shear_LQC.md`
 - **arXiv**: 2510.14021
 - **Year**: 2025
-- **Relevance**: HIGH
-- **Tags**: LQC, anisotropy, Bianchi I, quantum damping, isotropy problem, mLQC
+- **Relevance**: MEDIUM
+- **Tags**: LQC, Bianchi I, anisotropy, quantum damping, isotropization
 
-**Summary**: In mLQC-I, quantum geometry actively damps anisotropies after the bounce. Bianchi I shear suppressed universally, independent of matter content. Solves isotropy problem without inflation. Novel mechanism: quantum geometry itself is anisotropy-suppressing.
+**Summary**: In mLQC-I, quantum geometry damps anisotropies universally post-bounce. Bianchi I evolves to isotropic Friedmann from quantum regime alone. No inflation needed.
 
 **Key Results**:
-- Shear decays to zero in deep quantum regime (universal)
-- Independent of matter content
-- Isotropy emerges from quantum geometry, not inflation
+- Anisotropy damped universally in deep quantum regime
+- Isotropization without inflation
+- Matter-independent mechanism
 
-**Dependencies**: Extends 13.
+**Dependencies**: Upstream: 13. Downstream: none.
 
 ---
 
 ### Paper 34: Chen -- Acoustic Metamaterials Forum (2024)
 - **File**: `34_2024_Chen_Acoustic_Metamaterials_Forum.md`
-- **arXiv**: N/A (NSR)
+- **arXiv**: N/A
 - **Year**: 2024
 - **Relevance**: MEDIUM
-- **Tags**: acoustic metamaterials, non-Hermitian, PT symmetry, phonon-electron coupling, cloaking
+- **Tags**: acoustic metamaterials, PT-symmetry, non-Hermitian, phonon-electron coupling
 
-**Summary**: 2024 forum on acoustic metamaterials: non-Hermitian phenomena (PT symmetry, exceptional points), phonon-electron coupling, perfect imaging, cloaking, topological edge states. Positions metamaterials as platform for exotic condensed-matter phases.
+**Summary**: Forum reviewing acoustic metamaterials: non-Hermitian phenomena, phonon-electron coupling, cloaking, topological edge states. Positions metamaterials as platform for exotic condensed-matter phases.
 
 **Key Results**:
-- Non-Hermitian acoustic systems with PT symmetry
-- Phonon-electron coupling pathways
-- Comprehensive 2024 state of the art
+- Non-Hermitian metamaterials with exceptional points
+- Phonon-electron hybrid quantum devices
+- 3D printing enables rapid fabrication
 
-**Dependencies**: Depends on 06. Related to 35.
+**Dependencies**: Upstream: 06, 08. Downstream: 35.
 
 ---
 
-### Paper 35: Ni-Yves -- Topological Metamaterials Review
+### Paper 35: Ni-Yves et al. -- Topological Metamaterials
 - **File**: `35_2023_Ni_Yves_Topological_Metamaterials.md`
-- **arXiv**: N/A (Chem. Rev.)
+- **arXiv**: N/A (Chemical Reviews)
 - **Year**: 2023
-- **Relevance**: MEDIUM
-- **Tags**: topological metamaterials, Berry phase, Chern number, edge states, higher-order topology, non-Hermitian
+- **Relevance**: HIGH
+- **Tags**: topological metamaterials, Berry phase, Chern number, higher-order TI, non-Hermitian
 
-**Summary**: Comprehensive review: topological metamaterials across photonic and phononic platforms. Berry phase, Chern numbers, design principles, higher-order topological insulators, non-Hermitian topology. Applications: robust waveguides, topological lasers, edge-state devices.
+**Summary**: Comprehensive review. Berry phase, Chern numbers, topological invariants in engineered photonic/phononic structures. Higher-order topological insulators. Non-Hermitian topology. Topological order engineerable in classical metamaterials.
 
 **Key Results**:
-- Systematic design principles for topological bands
-- Higher-order topological insulators demonstrated
-- Non-Hermitian topological phases identified
+- Complete survey of topological photonic/phononic metamaterials
+- Higher-order TIs with corner/hinge states
+- Non-Hermitian topological phases
+- Design principles for topological transitions
 
-**Dependencies**: Depends on 06, 08. Related to 34, 38.
+**Dependencies**: Upstream: 06, 08. Downstream: 38.
 
 ---
 
-### Paper 36: Chen -- Geometric Origin of Phonon Magnetic Moment
+### Paper 36: Chen et al. -- Phonon Magnetic Moment in Dirac Materials
 - **File**: `36_2025_Chen_Geometric_Origin_Phonon_Magnetic_Moment_Dirac.md`
 - **arXiv**: 2505.09732
 - **Year**: 2025
-- **Relevance**: HIGH
-- **Tags**: phonon magnetic moment, Dirac materials, gauge field, frame field, Hall conductivity, Hall viscosity, Cd3As2
+- **Relevance**: CRITICAL
+- **Tags**: phonon magnetic moment, Dirac material, emergent gauge field, Hall conductivity, Cd3As2
 
-**Summary**: Phonons as emergent gauge and gravitational fields in Dirac materials. Two mechanisms for phonon magnetism: (1) gauge coupling proportional to Hall conductivity, (2) frame field coupling proportional to Hall viscosity. First-principles validation on Cd3As2. Lattice deformations generate effective gravitational fields -- bridge between condensed matter and gravitational theory.
+**Summary**: The most direct condensed-matter realization of phonons-as-particles. Phonons in Dirac materials acquire magnetic moments via gauge field coupling (Hall conductivity) and frame field coupling (Hall viscosity). Lattice distortions = emergent gravitational fields for Dirac fermions. First-principles validated on Cd3As2.
 
 **Key Results**:
-- Phonon magnetic moment from geometric (gauge + frame field) origin
-- Two mechanisms classified by angular momentum channels
-- Cd3As2 first-principles validation
-- Phonons generate effective gravitational fields in electronic subsystem
+- Phonons carry magnetic moments in Dirac materials
+- Two mechanisms: gauge (sigma_H) and frame (eta_H) coupling
+- Lattice deformations = emergent gravity for electrons
+- Quantitative Cd3As2 agreement
 
-**Dependencies**: Depends on 08. Resonates with 10.
+**Key Equations**:
+| Label | Description | Reference |
+|:---|:---|:---|
+| H_{e-ph} = V_scalar + V_vector^a sigma^a + V_tensor^{ab} sigma^a sigma^b | e-ph coupling decomposition | Sec. 2 |
+| A_eff(u) = Sum alpha_a partial_a u_a | Effective gauge from displacement | Sec. 2 |
+
+**Dependencies**: Upstream: 08, 28. Downstream: 38.
 
 ---
 
-### Paper 37: Rossi -- Topology of 2D Dirac Operators with Variable Mass
+### Paper 37: Rossi-Tarantola -- Topology of 2D Dirac with Variable Mass
 - **File**: `37_2023_Rossi_Topology_2D_Dirac_Operators_Variable_Mass.md`
 - **arXiv**: 2307.07548
 - **Year**: 2023
-- **Relevance**: MEDIUM
+- **Relevance**: HIGH
 - **Tags**: Dirac operator, variable mass, bulk-edge correspondence, domain wall, topological index
 
-**Summary**: Variable-mass 2D Dirac operator restores bulk-edge correspondence on non-compact domains. Mass sign change (domain wall) generates topologically protected bound states. Extends to shallow-water models. Relevant: Jensen deformation varies effective "mass" across SU(3), potentially creating domain walls.
+**Summary**: Variable-mass 2D Dirac operator restores bulk-edge correspondence. Mass sign-change = domain wall with protected bound states. Count = bulk Chern number. Extends to shallow-water waves (universality). Relevant to BCS domain walls with spatially varying gap.
 
 **Key Results**:
-- Bulk-edge correspondence restored via variable mass
-- Domain wall generates bound states
-- Framework extends to classical wave systems
+- BEC restored by variable mass
+- Domain wall hosts topologically protected states
+- Framework extends to shallow-water dynamics
+- Lattice-continuum bridge for topology
 
-**Dependencies**: Depends on 08. Related to 39.
+**Dependencies**: Upstream: 08. Downstream: 39.
 
 ---
 
-### Paper 38: Wang -- Catalog of Phonon Emergent Particles
+### Paper 38: Wang et al. -- Catalog of Phonon Emergent Particles
 - **File**: `38_2026_Wang_Catalog_Phonon_Emergent_Particles_Chiral_Phonons.md`
 - **arXiv**: 2601.17353
 - **Year**: 2026
 - **Relevance**: HIGH
-- **Tags**: phonon emergent particles, chiral phonons, space group classification, Weyl phonons, materials database
+- **Tags**: phonon emergent particles, chiral phonons, symmetry classification, materials database
 
-**Summary**: Systematic group-theoretic classification of topological phononic features. 25M+ emergent phonon excitations cataloged across materials databases. Given space group + Wyckoff positions, predicts materials hosting Weyl-like phonons, chiral phonons, surface chirality. No DFT needed. If particles are phonons of SU(3), this classification methodology applies to the internal manifold.
+**Summary**: Systematic symmetry-based classification of topological phononic features. 25+ million emergent phonon excitations cataloged across materials via representation theory. Linear Dirac, quadratic, Weyl-like phonons identified. Database: phonon.nju.edu.cn.
 
 **Key Results**:
-- 25M+ emergent phonon excitations classified
-- Group-theoretic prediction without DFT
-- Surface chirality momentum locking identified
+- Complete group-theoretic phonon topology classification
+- 25M+ emergent phonon excitations
+- Chiral phonons by space group representation
+- No electronic-structure calculation needed
 
-**Dependencies**: Depends on 06, 08, 35.
+**Dependencies**: Upstream: 35, 36. Downstream: none.
 
 ---
 
-### Paper 39: Aoki -- K-Theory APS Index for Lattice Dirac Operators
+### Paper 39: Aoki et al. -- K-Theory APS Index for Lattice Dirac
 - **File**: `39_2025_Aoki_K_Theory_APS_Index_Lattice_Dirac.md`
 - **arXiv**: 2503.23921
 - **Year**: 2025
 - **Relevance**: HIGH
-- **Tags**: K-theory, KO-theory, APS index, lattice Dirac, Wilson fermion, spectral flow, topological index
+- **Tags**: K-theory, KO-theory, APS index, lattice Dirac, Wilson operator, spectral flow
 
-**Summary**: Wilson Dirac operators on lattices embed naturally in K/KO-theory. Spectral flow equals APS index without Ginsparg-Wilson relation. Numerical verification on flat tori. Mod-two index computable. Critical: D_K on SU(3) can be viewed as lattice Dirac; K-theory governs its topology (BDI class).
+**Summary**: Wilson Dirac operators embed naturally in K-theory/KO-theory. Spectral flow = topological index. APS index on lattices with boundaries computed without Ginsparg-Wilson. Extends to mod-two index. Essential for rigorous topological computations on discrete internal spaces.
 
 **Key Results**:
-- Wilson Dirac operator lives naturally in K-theory
-- Spectral flow = APS index (exact)
-- Mod-two index on lattice
-- Numerical verification to machine precision
+- Wilson Dirac naturally in K-theory
+- Spectral flow = topological index (no GW needed)
+- APS index on bounded lattices
+- Mod-two index for BDI/DIII classes
 
-**Dependencies**: Related to 28, 37.
+**Dependencies**: Upstream: 37. Downstream: none.
 
 ---
 
-### Paper 40: Hussain -- Gaussian Dark Energy from DESI BAO
+### Paper 40: Hussain et al. -- Gaussian Dark Energy from DESI
 - **File**: `40_2025_Hussain_Probing_Gaussian_Dark_Energy_DESI_BAO.md`
 - **arXiv**: 2505.09913
 - **Year**: 2025
 - **Relevance**: MEDIUM
-- **Tags**: dark energy, w(z), DESI DR2, BellDE, phantom crossing, BAO
+- **Tags**: dark energy, DESI DR2, w(z), phantom crossing, BellDE
 
-**Summary**: w(z) reconstruction using DESI DR2 + Pantheon+ + Planck. Five parametrizations tested. BellDE avoids phantom domination at high z, allows phantom crossing near z ~ 0.5. Consistent with DESI DR2 tensions.
+**Summary**: Reconstructs w(z) from DESI DR2 + Planck + SN. BellDE (Gaussian-like) avoids phantom high-z while allowing transient phantom crossing near z ~ 0.5. DESI tension with LCDM persists across parametrizations.
 
 **Key Results**:
-- BellDE: transient phantom crossing near z ~ 0.5
-- w_0 > -1 and w_a < 0 consistent with DESI DR2
-- Prior dependence significant
+- BellDE best fits DESI DR2 + Planck
+- Phantom crossing near z ~ 0.5
+- Data-driven w(z) reconstruction
+- LCDM tension persists
 
-**Dependencies**: Extends 27.
+**Dependencies**: Upstream: 27. Downstream: none.
 
 ---
 
@@ -1065,132 +1045,187 @@ Canete-Kobakhidze emergent DM from three-form gauge field (no new particles), Ch
 - **arXiv**: 1809.02944
 - **Year**: 2019
 - **Relevance**: CRITICAL
-- **Tags**: entropy, spectral action, von Neumann entropy, spectral triple, Riemann zeta, heat kernel
+- **Tags**: spectral action, von Neumann entropy, spectral triple, Riemann zeta, heat kernel
 
-**Summary**: Von Neumann entropy of fermionic second-quantized state from spectral triple IS the spectral action for a specific universal function. Heat expansion coefficients expressed via Riemann zeta. Dimension-independent, applies to all spectral triples. Entropy and action are the SAME object in spectral geometry. The spectral action used in phonon-exflation is simultaneously the entropy of the system.
+**Summary**: Proves entropy = spectral action. Von Neumann entropy of fermionic state from second quantization of spectral triple equals Tr[f(D/Lambda)] for universal f. Heat expansion coefficients via Riemann zeta. Dimension-independent, applies to all spectral triples. Deepest connection: universe evolves to maximize information content.
 
 **Key Results**:
-- Von Neumann entropy = spectral action Tr[f(D/Lambda)]
-- Heat kernel coefficients involve zeta(s)
-- Universal (dimension-independent)
-- Entropy uniquely selects spectral action functional
+- S_vN = spectral action for universal f
+- Heat coefficients involve zeta(s)
+- Dimension-independent theorem
+- Entropy and action are the same object
 
-**Dependencies**: Core NCG reference. Related to 10.
+**Key Equations**:
+| Label | Description | Reference |
+|:---|:---|:---|
+| S = Tr[f(D/Lambda)] | Spectral action = entropy | Sec. 3 |
+
+**Dependencies**: Upstream: none (NCG). Downstream: none.
 
 ---
 
-### Paper 42: Cavedon -- Supersolid Dark Matter and Spacetime Fabric
+### Paper 42: Cavedon -- Supersolid Dark Matter
 - **File**: `42_2024_Cavedon_Supersolid_Dark_Matter_Fabric_Spacetime.md`
-- **arXiv**: N/A (IPI Letters)
+- **arXiv**: N/A
 - **Year**: 2024
 - **Relevance**: LOW
-- **Tags**: supersolid, dark matter, spacetime fabric, emergent gravity
+- **Tags**: supersolid, dark matter, spacetime fabric, elasticity
 
-**Summary**: Speculative: DM is supersolid phase forming spacetime fabric. Gravity from deformation restoring force. DE from supersolid outflow. Wave-particle duality from medium oscillations. Qualitative only -- no detailed calculations. Resonates with project philosophy but lacks rigor.
+**Summary**: Speculative: DM is supersolid filling spacetime. Gravity from elastic restoring force. DE from outflow pressure. Qualitative framework, no quantitative predictions.
 
 **Key Results**:
-- DM as supersolid = spacetime fabric (conceptual)
-- Gravity as restoring force
-- Qualitative framework only
+- DM = supersolid condensate
+- Gravity from elasticity
+- Qualitative, not quantitative
 
-**Dependencies**: Related to 10, 28.
+**Dependencies**: Upstream: 10, 16. Downstream: none.
 
 ---
 
-### Paper 43: Shahalam -- Pre-Inflation LQC Evolution
+### Paper 43: Shahalam -- Pre-Inflation in LQC
 - **File**: `43_2025_Shahalam_Evolution_Universe_Prior_Inflation_LQC.md`
-- **arXiv**: N/A (Chinese Phys. C)
+- **arXiv**: N/A
 - **Year**: 2025
 - **Relevance**: MEDIUM
-- **Tags**: LQC, pre-inflation, quantum bounce, slow-roll attractor, phi^4 potential
+- **Tags**: LQC, pre-inflation, quantum bounce, slow-roll, attractor
 
-**Summary**: Pre-inflationary dynamics in LQC: post-bounce kinetic-dominated phase (w ~ +1), transition (w: +1 -> -1), then slow-roll inflation. All trajectories converge to universal attractor. Minimum 60 e-folds from bounce. Inflation emerges generically from LQC bounce dynamics.
+**Summary**: Post-bounce LQC evolution: two universal phases (kinetic-dominated and potential-dominated). All trajectories converge to attractor with 60+ e-folds. Inflation emerges generically from bounce dynamics.
 
 **Key Results**:
-- Universal attractor: all bounce trajectories converge to slow-roll
-- Two phases: kinetic-dominated bounce + potential-dominated inflation
-- Minimum 60 e-folds achievable
+- Bounce at rho_c ~ 10^{94} g/cm^3
+- Two universal post-bounce phases
+- Attractor: all initial conditions converge
+- Inflation natural from LQC
 
-**Dependencies**: Extends 13.
+**Dependencies**: Upstream: 13. Downstream: none.
 
 ---
 
 ## Cross-Paper Equation Concordance
 
-### Resonant Frequency / Eigenvalue
-- eq 1.1 (f_0 = c/(2*pi*R_E)) -- Earth cavity
-- eq 2.1 (omega_0 = 1/sqrt(LC)) -- Tesla coil
-- eq 4.1 (driven oscillator response) -- mechanical resonance
-- eq 5.3 (omega^2 = eigenvalue of dynamical matrix D(k)) -- phonon
-- eq 7.1 (nabla^4 psi = lambda*psi) -- plate vibration
-- eq 7.2 (nabla^2 psi + k^2*psi = 0) -- Helmholtz
-- eq 8.1 (H = v_D*(sigma_x*k_x + sigma_y*k_y)) -- Dirac cone
-All are eigenvalue problems of the form [Operator]*psi = lambda*psi on bounded/periodic domains.
+### Resonant Frequency / Eigenvalue Problem
+| Paper | Form | Context |
+|:---|:---|:---|
+| 02 | omega_0 = 1/sqrt(LC) | LC circuit resonance |
+| 04 | f_0 = (1/2pi)*sqrt(k/m) | Mechanical oscillator |
+| 05 | omega^2 A = D(k) A | Dynamical matrix eigenvalue |
+| 07 | nabla^4 psi = lambda psi | Plate vibration |
+| 07 | nabla^2 psi + k^2 psi = 0 | Helmholtz (membrane) |
 
 ### Dispersion Relations
-- eq 5.1: omega = v_s*|k| (Debye, acoustic)
-- eq 8.1: omega = v_D*|k-k_D| (Dirac cone, linear)
-- eq 9.1: epsilon = c*|p| (Landau phonon)
-- eq 9.2: epsilon = Delta + (p-p_0)^2/(2*mu_r) (roton, gapped at finite p)
-- eq 10.2: E_k = sqrt(xi_k^2 + |Delta|^2) (Bogoliubov quasiparticle)
-- eq 11.3: omega(k) = c_s*k*(1 + alpha*k^2/c_s^2) (dispersive correction)
-- eq 12.2: omega ~ alpha*k^2 (Kelvin wave on vortex)
-Common theme: linear at low k (acoustic), quadratic or gapped at high k (optical/roton).
+| Paper | Form | Context |
+|:---|:---|:---|
+| 05 | omega(k) = v_s |k| | Debye acoustic phonon |
+| 08 | omega(k) = v_D |k - k_D| | Dirac cone |
+| 09 | epsilon(p) = c|p| | Superfluid phonon |
+| 09 | epsilon(p) = Delta + (p-p_0)^2/(2mu_r) | Roton minimum |
+| 10 | omega(k) = c_s|k| | Emergent Lorentz |
+| 11 | omega(k) = c_s k + alpha k^2 + ... | Dispersive corrections |
 
-### Effective / Emergent Metric
-- eq 10.1: g^{mu nu} = (u^mu*u^nu - c_s^2*delta^{mu nu})/c_s^2 (Volovik)
-- eq 11.1: g_{mu nu} from fluid density and velocity (Unruh)
-- eq 16.1: Box_g Psi = 0 (Barcelo-Liberati-Visser master equation)
-All express the same principle: wave equation in inhomogeneous medium = scalar field in curved spacetime.
+### Effective/Emergent Metric
+| Paper | Form | Context |
+|:---|:---|:---|
+| 10 | g^{mu nu} = (1/c_s^2)(u^mu u^nu - c_s^2 delta^{mu nu}) | Superfluid (Volovik) |
+| 11 | g_{mu nu} = rho diag(u^2-1, -1, -1, -1) | Acoustic (Unruh) |
+| 16 | g_{mu nu}^eff = rho c^2 diag(v^2/c^2-1, ...) | General acoustic (BLV) |
+| 21 | ds^2 with dt*d_theta cross-term | Rotating vortex (Kerr) |
+| 29 | g_{mu nu} = diag(-1+2q(r), delta_{ij}) | Weyl medium |
+
+### Quality Factor / Amplification
+| Paper | Form | Context |
+|:---|:---|:---|
+| 02 | Q = omega_0 L / R | LC circuit |
+| 04 | Q = 1/(2*zeta) | Mechanical |
+| 01 | Q ~ 100-200 | Earth-ionosphere cavity |
+
+### Hawking Temperature
+| Paper | Form | Context |
+|:---|:---|:---|
+| 11 | T_H = hbar c_s |nabla v| / (2pi k_B) | Acoustic horizon |
+| 15 | T_H = hbar kappa / (2pi k_B) | Black hole |
+| 16 | T_H = hbar kappa / (2pi k_B) | General analog |
 
 ### Topological Invariants
-- eq 6.3: Berry phase gamma = i*oint <n|nabla_k|n> dk
-- eq 8.2: Chern number C = (1/2pi)*integral Omega d^2k
-- eq 28.1: Momentum-space winding number N_3
-- Paper 39: K-theory APS index = spectral flow
-All protect gapless modes / edge states against perturbation.
+| Paper | Form | Context |
+|:---|:---|:---|
+| 06 | gamma = i oint <n|nabla_k n> dk | Berry phase (phononic) |
+| 08 | C = (1/2pi) integral Omega d^2k | Chern number (acoustic) |
+| 28 | C = (1/2pi i) oint A(k) dk | Chern number (vacuum) |
+| 28 | Gamma = +/-1 | Weyl chirality |
+| 39 | spectral flow = topological index | K-theory (lattice) |
 
 ### Vacuum Energy / Cosmological Constant
-- eq 10.4: rho_Lambda = Sum (1/2)*hbar*omega_i (Volovik)
-- Paper 29: Lambda = 0 in equilibrium (Jannes-Volovik)
-- Paper 41: Entropy = Spectral action Tr[f(D/Lambda)] (Chamseddine-Connes-vS)
-Central tension: field-theoretic sum diverges; condensed-matter analog gives zero in equilibrium.
+| Paper | Form | Context |
+|:---|:---|:---|
+| 10 | rho_Lambda = Sum (1/2) hbar omega_i | Volovik zero-point |
+| 16 | rho_Lambda = Sum (1/2) hbar omega_i | BLV zero-point |
+| 29 | CC = 0 in equilibrium | Jannes-Volovik |
+| 41 | S = Tr[f(D/Lambda)] = entropy | Chamseddine-Connes |
 
 ### Modified Friedmann Equations
-- eq 13.1: H^2 = (8piG/3)*rho*(1-rho/rho_c) (LQC)
-- Paper 33: quantum damping of shear (mLQC-I)
-- Paper 43: bounce -> attractor -> slow-roll
-All modify standard Friedmann at Planck-density regime.
+| Paper | Form | Context |
+|:---|:---|:---|
+| 13 | H^2 = (8piG/3) rho (1 - rho/rho_c) | LQC bounce |
+| 10 | H^2 = (8piG/3) rho_Lambda | Superfluid vacuum |
+
+---
 
 ## Notation Conventions
 
 | Symbol | Meaning | Papers |
 |:---|:---|:---|
-| omega, f | Frequency (angular, cyclic) | All |
-| k, p | Wavenumber, momentum | 05-12, 36-39 |
-| v_s, c_s | Sound speed | 05, 09, 10, 11 |
-| Q, zeta | Quality factor, damping ratio | 01-04 |
-| g_{mu nu} | Metric tensor (emergent or fundamental) | 10, 11, 15, 16 |
-| D, D_K | Dirac operator | 36, 37, 39, 41 |
-| Lambda, rho_Lambda | Cosmological constant / vacuum energy density | 10, 13, 27, 29, 41 |
-| Psi | Order parameter / wave function | 09, 10, 21 |
+| omega, f | Frequency (angular, linear) | All |
+| k, vec{k} | Wavevector | 05, 06, 08, 11 |
+| v_s, c_s | Sound speed | 05, 09, 10, 11, 16 |
+| rho | Density (mass or energy) | 05, 09, 10, 11, 16 |
+| Q | Quality factor | 01, 02, 04 |
+| D(k) | Dynamical matrix | 05 |
+| D, D_K | Dirac operator | 08, 36, 37, 39, 41 |
+| g_{mu nu} | Metric (physical or effective) | 10, 11, 16, 21, 29 |
+| Omega(k) | Berry curvature | 06, 08, 35 |
+| C | Chern number | 08, 28, 37 |
 | Delta | Gap (BCS or roton) | 09, 10, 25 |
-| C | Chern number | 08, 35 |
-| gamma | Berry phase | 06, 08, 35 |
-| tau, s | Deformation parameter (Jensen) | Project-specific |
-| Omega(k) | Berry curvature | 08, 35, 36 |
-| rho_c | Critical / Planck density | 13, 33, 43 |
+| Lambda | Cutoff scale | 41 |
+| tau, s | Deformation parameter (Jensen) | Framework context |
+| rho_Lambda | Vacuum energy density | 10, 16, 29 |
+| kappa | Surface gravity or vortex tension | 11, 12, 16 |
+
+---
 
 ## Computational Verification Status
 
 | Paper | Equation/Result | Verified? | Where |
 |:---|:---|:---|:---|
-| 05 | Debye DOS g(omega) ~ omega^2 | Partial | tier0-computation (spectral DOS) |
-| 07 | Weyl's law density of eigenvalues | Yes | tier0 eigenvalue counts match Weyl scaling |
-| 09 | C_V ~ T^3 phonon gas | No | Not directly computed |
-| 10 | Emergent metric from superfluid flow | No | Conceptual only |
-| 13 | Modified Friedmann H^2 with rho^2 correction | No | Not implemented |
-| 14 | Spectral dimension d_s ~ 2 at UV | Partial | s19a spectral dimension diagnostic |
-| 28 | BDI classification T^2=+1 | Yes | Session 17c: AZ class BDI verified |
-| 29 | Lambda = 0 in equilibrium | Partial | Related to s19a/s19d vacuum energy analyses |
-| 41 | Entropy = spectral action | No | Not numerically tested |
+| 01 | f_0 ~ 7.5 Hz Earth cavity | YES | Schumann resonance 7.83 Hz (observed) |
+| 05 | C_V ~ T^3 (Debye law) | YES | Standard solid-state experiments |
+| 05 | Dynamical matrix eigenvalues | YES | computations (Dirac spectrum on SU(3)) |
+| 08 | Dirac cones in honeycomb lattice | YES | Multiple experimental groups |
+| 09 | C_V ~ T^3 for He-4 | YES | Cryogenic measurements |
+| 09 | Roton minimum at p_0 | YES | Neutron scattering |
+| 10 | Emergent Lorentz invariance | YES | Analog gravity experiments |
+| 11 | Acoustic Hawking T_H | PARTIAL | Steinhauer 2016 (disputed) |
+| 12 | Kolmogorov k^{-5/3} | YES | Multiple groups |
+| 13 | LQC bounce at rho_c | THEORETICAL | No experimental test |
+| 14 | d_s flow 2 -> 4 (CDT) | NUMERICAL | Monte Carlo |
+| 21 | Rotating analog BH ringdown | YES | Svancara 2024 (Nature) |
+| 25 | Three BCS phases | YES | Kroeze 2024 (Nature) |
+| 27 | Omega_m = 0.307 | YES | DESI DR1 |
+| 29 | CC = 0 in equilibrium | THEORETICAL | He-3A thermodynamics |
+| 36 | Phonon magnetic moment Cd3As2 | YES | First-principles + experiment |
+| 38 | 25M emergent phonon excitations | YES | Materials database |
+| 39 | Spectral flow = K-theory index | YES | Numerical lattice verification |
+| 41 | S_vN = spectral action | PROVEN | Mathematical theorem |
+
+---
+
+## LT-6 Signal Processing Reference (S61 Lost Treasures)
+
+Papers in `LT6-signal-processing/` — the spectral action IS a filter bank. These formalize the DSP ↔ NCG connection.
+
+- **LT6-01** (Sakellariadou 2015): Spectral action as filtered PSD. {f_0, f_2, f_4} = moments of transfer function f(u). CC from f_4·a_0, gravity from f_2·a_2, gauge from f_0·a_4.
+- **LT6-02** (Livan et al. 2017): RMT eigenvalue density, Wigner semicircle, DC component. D_K is gapped (rho(0)=0) — semicircle doesn't apply directly but spectral density analysis tools do.
+- **LT6-03** (Akemann et al. 2025): Non-Hermitian spectral density. Maps if BdG extension considered.
+
+**S61 result**: Hausdorff moment constraint f_4 ≥ f_2²/(2f_0). Filter design can't solve CC (0.4 orders only). But DSP vocabulary maps exactly: Debye cutoff = Nyquist, heat kernel = impulse response, Seeley-DeWitt coefficients = spectral moments, aliasing = PW truncation divergence.
+
+**Use for**: Cutoff function analysis, regularization schemes, any computation where f(u) matters. The resonance perspective: the spectral action is a phonon filter bank on the M⁴×SU(3) substrate.

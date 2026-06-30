@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 118,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1171",
+      "anchor_type": "data_provenance",
+      "name": "cmbs4_preregister",
+      "script_path": "session-69/s69_cmbs4_preregister.py",
+      "session": "s69",
+      "inputs": "",
+      "outputs": "session-69/s69_cmbs4_preregister.npz, session-69/s69_cmbs4_preregister.png",
+      "source_file": "computations/session-69/s69_cmbs4_preregister.py",
+      "source_context_30_lines": "  458:     'alpha_c_inf': alpha_c_inf,\n  459:     'ns_sqrt_Lmax_arr': ns_sqrt_arr,\n  460:     'eps_H_bare_L3': eps_H_bare_L3,\n  461:     'eps_H_bcs_L3': eps_H_bcs_L3,\n  462:     'discrimination_sigma': discrimination,\n  463:     'sigma_combined': sigma_combined,\n  464: }\n  465: \n  466: out_npz = os.path.join(base, 's69_cmbs4_preregister.npz')\n  467: np.savez(out_npz, **save_dict)\n  468: print(f\"  Saved: {out_npz}\")\n  469: \n  470: # =============================================================================\n  471: # SECTION 9: PLOT\n  472: # =============================================================================\n  473: print(\"\\n\" + \"=\" * 78)\n  474: print(\"SECTION 9: Generating Plot\")"
+    },
+    {
+      "anchor_id": "prov_1172",
+      "anchor_type": "data_provenance",
+      "name": "conformal_anomaly",
+      "script_path": "session-69/s69_conformal_anomaly.py",
+      "session": "s69",
+      "inputs": "",
+      "outputs": "session-69/s69_conformal_anomaly.npz, session-69/s69_conformal_anomaly.png",
+      "source_file": "computations/session-69/s69_conformal_anomaly.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s69_conformal_anomaly.py -- CONFORMAL-ANOMALY-EPSH-69: Anomaly vs eps_H Protection\n    4: ===================================================================================\n    5: \n    6: Gate: CONF-ANOM-69\n    7:   PASS: eps_H invariant under conformal anomaly (anomaly correction sub-percent)\n    8:   FAIL: Non-uniform correction shifts n_s by > 0.001\n    9: \n   10: Physics:\n   11: --------"
+    },
+    {
+      "anchor_id": "prov_1173",
+      "anchor_type": "data_provenance",
+      "name": "conformal_factor",
+      "script_path": "session-69/s69_conformal_factor.py",
+      "session": "s69",
+      "inputs": "",
+      "outputs": "session-69/s69_conformal_factor.npz, session-69/s69_conformal_factor.png",
+      "source_file": "computations/session-69/s69_conformal_factor.py",
+      "source_context_30_lines": "   22:   - Conformal factor: Omega = a * z / sqrt(2k)  [for mode k at time tau]\n   23: \n   24: The Penrose diagram has three nested boundaries:\n   25:   1. Tachyonic shell: k = k_tach(tau) where omega_k^2 = 0\n   26:   2. BCS stretched horizon: tau_BCS = 0.22 (post-transit freeze)\n   27:   3. Cosmological event horizon: a*H = k (standard Hubble crossing)\n   28: \n   29: Gate: CONF-FACTOR-69 -- INFO\n   30: Output: s69_conformal_factor.npz, s69_conformal_factor.png\n   31: \"\"\"\n   32: \n   33: import sys\n   34: import os\n   35: sys.path.insert(0, os.path.join(os.path.dirname(__file__)))\n   36: \n   37: import numpy as np\n   38: from scipy.interpolate import CubicSpline"
+    },
+    {
+      "anchor_id": "prov_1174",
+      "anchor_type": "data_provenance",
+      "name": "ep_transit",
+      "script_path": "session-69/s69_ep_transit.py",
+      "session": "s69",
+      "inputs": "computations/session-67/s67_transit_ps.npz, computations/session-68/s68_bcs_dressed_mode.npz",
+      "outputs": "session-69/s69_ep_transit.npz",
+      "source_file": "computations/session-69/s69_ep_transit.py",
+      "source_context_30_lines": "  821: \n  822: print(f\"\\n  Gate EP-TRANSIT-69: {verdict}\")\n  823: print(f\"  {detail}\")\n  824: \n  825: # ============================================================================\n  826: # SECTION 13: Save results\n  827: # ============================================================================\n  828: \n  829: np.savez('computations/session-69/s69_ep_transit.npz',\n  830:     # Gate\n  831:     gate_name=np.array('EP-TRANSIT-69'),\n  832:     gate_verdict=np.array(verdict),\n  833:     gate_detail=np.array(detail),\n  834: \n  835:     # Input parameters\n  836:     f_0=np.float64(f_0),\n  837:     tau_onset=np.float64(tau_fold),"
+    },
+    {
+      "anchor_id": "prov_1175",
+      "anchor_type": "data_provenance",
+      "name": "euclid_folded",
+      "script_path": "session-69/s69_euclid_folded.py",
+      "session": "s69",
+      "inputs": "",
+      "outputs": "session-69/s69_euclid_folded.npz, session-69/s69_euclid_folded.png",
+      "source_file": "computations/session-69/s69_euclid_folded.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s69_euclid_folded.py -- EUCLID-FOLDED-69: Galaxy Bispectrum Folded Shape Forecast\n    4: ===================================================================================\n    5: Gate: EUCLID-FOLDED-69 (INFO -- forecast, no pass/fail)\n    6: \n    7: Forecasts the Euclid spectroscopic survey's sensitivity to the framework's\n    8: folded-triangle bispectrum shape (f_NL^folded = 0.129, S67 W2-C).\n    9: \n   10: The folded shape arises from GGE relic Bogoliubov pair momentum conservation\n   11: (k_1 + k_2 = k_3) and is absent in standard slow-roll inflation. This is the"
+    },
+    {
+      "anchor_id": "prov_1176",
+      "anchor_type": "data_provenance",
+      "name": "euclid_joint",
+      "script_path": "session-69/s69_euclid_joint.py",
+      "session": "s69",
+      "inputs": "",
+      "outputs": "session-69/s69_euclid_joint.npz, session-69/s69_euclid_joint.png",
+      "source_file": "computations/session-69/s69_euclid_joint.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s69_euclid_joint.py -- EUCLID-ISW-RSD-JOINT-69: Combined Fisher Forecast\n    4: ==========================================================================\n    5: Gate: EUCLID-JOINT-69 (INFO)\n    6: \n    7: Constructs a combined Fisher matrix forecast for Euclid ISW + RSD + CMB-S4\n    8: lensing to determine the joint discrimination power between the phonon-exflation\n    9: framework (w_0 = -0.918, c_s^2 = 0) and w_0CDM (generic w_0, c_s^2 = 1).\n   10: \n   11: Parameter space: theta = {w_0, c_s^2_DE}"
+    },
+    {
+      "anchor_id": "prov_1177",
+      "anchor_type": "data_provenance",
+      "name": "euclid_lensing",
+      "script_path": "session-69/s69_euclid_lensing.py",
+      "session": "s69",
+      "inputs": "",
+      "outputs": "session-69/s69_euclid_lensing.npz, session-69/s69_euclid_lensing.png",
+      "source_file": "computations/session-69/s69_euclid_lensing.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s69_euclid_lensing.py -- EUCLID-LENSING-TRACKING-69: CMB Lensing from Tracking DE\n    4: ====================================================================================\n    5: Gate: EUCLID-LENS-69\n    6: \n    7: Computes the tracking-induced modification to CMB lensing convergence power spectrum\n    8: C_l^{kk} at l = 100-500. The framework's tracking vacuum (c_s^2_DE = 0) means DE\n    9: perturbations track matter via delta_DE = [(1+w)/(1-3w)] * delta_m, modifying the\n   10: lensing potential growth at z < 2.\n   11: "
+    },
+    {
+      "anchor_id": "prov_1178",
+      "anchor_type": "data_provenance",
+      "name": "four_speed",
+      "script_path": "session-69/s69_four_speed.py",
+      "session": "s69",
+      "inputs": "",
+      "outputs": "session-69/s69_four_speed.npz, session-69/s69_four_speed.png",
+      "source_file": "computations/session-69/s69_four_speed.py",
+      "source_context_30_lines": "   55:   Gate type: INFO (no pass/fail threshold for parent-child correspondence)\n   56: \n   57: Inputs:\n   58:   computations/session-64/s64_sound_speed.npz\n   59:   computations/session-56/s56_leggett_fabric.npz\n   60:   computations/_shared/canonical_constants.py\n   61: \n   62: Outputs:\n   63:   computations/session-69/s69_four_speed.npz\n   64:   computations/session-69/s69_four_speed.png\n   65: \"\"\"\n   66: \n   67: import sys\n   68: import os\n   69: import time\n   70: \n   71: t_start = time.time()"
+    },
+    {
+      "anchor_id": "prov_1179",
+      "anchor_type": "data_provenance",
+      "name": "kk_higgs",
+      "script_path": "session-69/s69_kk_higgs.py",
+      "session": "s69",
+      "inputs": "",
+      "outputs": "session-69/s69_kk_higgs.npz, session-69/s69_kk_higgs.png",
+      "source_file": "computations/session-69/s69_kk_higgs.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s69_kk_higgs.py -- KK-THRESHOLD-HIGGS-QUARTIC-69\n    4: KK threshold correction to the Higgs quartic coupling lambda(M_KK)\n    5: using sector-resolved BCS-corrected a_4 from W1-D.\n    6: \n    7: Gate: KK-HIGGS-69\n    8:   PASS: m_H in [120, 135] GeV\n    9:   FAIL: m_H outside [110, 150] GeV\n   10:   INFO: intermediate\n   11: "
+    },
+    {
+      "anchor_id": "prov_1180",
+      "anchor_type": "data_provenance",
+      "name": "kz_phase_fnl",
+      "script_path": "session-69/s69_kz_phase_fnl.py",
+      "session": "s69",
+      "inputs": "",
+      "outputs": "session-69/s69_kz_phase_fnl.npz, session-69/s69_kz_phase_fnl.png",
+      "source_file": "computations/session-69/s69_kz_phase_fnl.py",
+      "source_context_30_lines": "  864: ax.set_ylabel('|c_n|^2 / Sum')\n  865: ax.set_title('(d) Phase Profile in Laplacian Eigenbasis')\n  866: \n  867: plt.suptitle('KZ-PHASE-FNL-69: Phase Winding Correction to Bispectrum\\n'\n  868:              f'|delta f_NL| = {abs(delta_f_NL_total):.6f}, '\n  869:              f'Gate: {gate_verdict}',\n  870:              fontsize=14, fontweight='bold')\n  871: plt.tight_layout()\n  872: plt.savefig(os.path.join(script_dir, 's69_kz_phase_fnl.png'), dpi=150,\n  873:             bbox_inches='tight')\n  874: print(f\"\\n  Plot saved: computations/session-69/s69_kz_phase_fnl.png\")\n  875: \n  876: # ============================================================================\n  877: #  SECTION 10: Save Results\n  878: # ============================================================================\n  879: \n  880: save_path = os.path.join(script_dir, 's69_kz_phase_fnl.npz')"
+    }
+  ]
+}

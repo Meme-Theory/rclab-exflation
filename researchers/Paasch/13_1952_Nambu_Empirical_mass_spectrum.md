@@ -166,7 +166,7 @@ structure related to phi_paasch ($\phi_P = 1.53158$), while Nambu treated them a
 
 The Nambu paper connects to phonon-exflation in a foundational way:
 
-1. **Integer eigenvalues**: The Tier 1 Dirac spectrum computation (Session 12) found that
+1. **Integer eigenvalues**: The Level 1 Dirac spectrum computation (Session 12) found that
    all eigenvalues squared at $s=0$ (bi-invariant metric) are of the form $n/36$ for
    integer $n$. This is EXACTLY the kind of integer mass quantization that Nambu observed
    empirically -- but now derived from GEOMETRY.

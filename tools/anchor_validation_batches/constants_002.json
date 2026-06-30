@@ -1,0 +1,107 @@
+{
+  "table": "constants",
+  "batch_id": 2,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "const_E_cond_ED_8mode",
+      "anchor_type": "constants",
+      "name": "E_cond_ED_8mode",
+      "value": "-0.13685055970476342",
+      "session": "S36",
+      "source_citation": "s36_multisector_ed.npz (config_4_E_cond)",
+      "source_file": "computations/_shared/canonical_constants.py",
+      "source_context_30_lines": "  343: \n  344: # ==============================================================================\n  345: CC_OOM = 115.5  # CC_OOM = 115.5 OOM cosmological-constant dilution depth from Volovik tracking-vacuum partition; S66 W1-A PASS (rho_vac/rho_obs = 1.032). Substrate cascade-depth multiplier: cascade_depth = CC_OOM * log_2(10) = 383.6827 generations EXACT for pixelation-lock cascade-tail BBN-mass derivation (S88 W1c-66 J7 89-peak detection). (S66)\n  346: #  SECTION C: BCS / Many-Body Constants\n  347: # ==============================================================================\n  348: \n  349: # BCS condensation energy — THREE values exist; each is a DIFFERENT quantity\n  350: # All in M_KK units (dimensionless ratios)\n  351: E_cond_ED_8mode = -0.13685055970476342  # S36 ED-CONV-36: 8-mode (4B2+1B1+3B3), 256-state, canonical\n  352: E_cond_ED_5mode = -0.11507660716341951  # S35 ED: 5-mode (4B2+1B1), 32-state (superseded by 8-mode)\n  353: E_cond_GL = -0.156                      # S37: Ginzburg-Landau functional (different quantity)\n  354: \n  355: # The canonical value is the 8-mode ED result (S36, verified to machine epsilon)\n  356: E_cond = E_cond_ED_8mode               # = -0.137 (alias for downstream use)\n  357: \n  358: # Excitation energy from BCS transit quench (S38)\n  359: E_exc_ratio = 443.0            # E_exc / |E_cond| (S38, Schwinger-instanton duality)"
+    },
+    {
+      "anchor_id": "const_E_cond_GL",
+      "anchor_type": "constants",
+      "name": "E_cond_GL",
+      "value": "-0.156",
+      "session": "S37",
+      "source_citation": "GL functional",
+      "source_file": "computations/_shared/canonical_constants.py",
+      "source_context_30_lines": "  345: CC_OOM = 115.5  # CC_OOM = 115.5 OOM cosmological-constant dilution depth from Volovik tracking-vacuum partition; S66 W1-A PASS (rho_vac/rho_obs = 1.032). Substrate cascade-depth multiplier: cascade_depth = CC_OOM * log_2(10) = 383.6827 generations EXACT for pixelation-lock cascade-tail BBN-mass derivation (S88 W1c-66 J7 89-peak detection). (S66)\n  346: #  SECTION C: BCS / Many-Body Constants\n  347: # ==============================================================================\n  348: \n  349: # BCS condensation energy — THREE values exist; each is a DIFFERENT quantity\n  350: # All in M_KK units (dimensionless ratios)\n  351: E_cond_ED_8mode = -0.13685055970476342  # S36 ED-CONV-36: 8-mode (4B2+1B1+3B3), 256-state, canonical\n  352: E_cond_ED_5mode = -0.11507660716341951  # S35 ED: 5-mode (4B2+1B1), 32-state (superseded by 8-mode)\n  353: E_cond_GL = -0.156                      # S37: Ginzburg-Landau functional (different quantity)\n  354: \n  355: # The canonical value is the 8-mode ED result (S36, verified to machine epsilon)\n  356: E_cond = E_cond_ED_8mode               # = -0.137 (alias for downstream use)\n  357: \n  358: # Excitation energy from BCS transit quench (S38)\n  359: E_exc_ratio = 443.0            # E_exc / |E_cond| (S38, Schwinger-instanton duality)\n  360: E_exc = E_exc_ratio * abs(E_cond)  # = 60.625 M_KK (derived — was 50.9 with old E_cond)\n  361: n_pairs = 59.8                 # Bogoliubov quasiparticle pairs from transit (S38)"
+    },
+    {
+      "anchor_id": "const_G_DeWitt",
+      "anchor_type": "constants",
+      "name": "G_DeWitt",
+      "value": "5.0",
+      "session": "S42",
+      "source_citation": "s42_gradient_stiffness.npz",
+      "source_file": "computations/_shared/canonical_constants.py",
+      "source_context_30_lines": "  445: S_fold = 250360.67696101       # S_full at fold (S42 s42_gradient_stiffness)\n  446: m_tau = 2.062                  # Modulus mass at fold (M_KK units, S42 W2-1)\n  447: omega_att = 1.430              # Attractor frequency, fully geometric (S38)\n  448: omega_tau = 8.27               # Transit frequency d(tau)/dt (M_KK units, S38 attractor)\n  449: \n  450: # Collective inertia and dynamics\n  451: M_ATDHFB = 1.695               # ATDHFB collective mass (S40, s42_gradient_stiffness)\n  452: Z_fold = 74730.76411846        # Gradient stiffness at fold (S42)\n  453: G_DeWitt = 5.0                 # DeWitt moduli kinetic coefficient (S42 s42_gradient_stiffness)\n  454: dS_fold = 58672.80241318       # dS_full/dtau at fold (S42 s42_gradient_stiffness)\n  455: d2S_fold = 317862.84898132     # d^2 S_full/dtau^2 at fold (S42 s42_gradient_stiffness)\n  456: c_fabric = 209.97368021        # substrate sound speed (velocity scale, NOT a momentum cutoff) — S42 s42_gradient_stiffness; docstring per S86 W0b-1\n  457: c_BLV = 0.485                  # Brillouin-Landau-Vortex fabric sound speed (S64 s64_sound_speed; 3He-B four-speed hierarchy inheritance, scalar c_s for post-fold GGE; used 5+ scripts)\n  458: alpha_s_cmb_central = -0.06896799  # S50 identity alpha_s_CMB = n_s^2 - 1 with planck_ns=0.9649 (S85 W13-2; provenance: s50_running_mass.py constant-mass identity + Planck 2018 TT,TE,EE+lowE+lensing)\n  459: f_LISA_pivot = 3.0e-3          # LISA flagship pivot frequency [Hz] (S85 W13-2 pre-regis\n... [truncated]"
+    },
+    {
+      "anchor_id": "const_Gamma_Langer_BCS",
+      "anchor_type": "constants",
+      "name": "Gamma_Langer_BCS",
+      "value": "0.24973624676840844",
+      "session": "S38",
+      "source_citation": "s38_attempt_freq.npz",
+      "source_file": "computations/_shared/canonical_constants.py",
+      "source_context_30_lines": "  403: barrier_1d = 0.15567791157334604  # 1D barrier height (M_KK)\n  404: \n  405: # Pair vibration (s37_pair_susceptibility)\n  406: omega_PV = 0.791658919261384      # Pair vibration frequency (omega_plus)\n  407: omega_split = 1.3371826606372719  # Pair-add/remove splitting\n  408: ratio_Evac_Econd = 28.75624796597024  # E_vac/E_cond (fluctuation dominance)\n  409: \n  410: # Langer decay (s38_attempt_freq)\n  411: Gamma_Langer_BCS = 0.24973624676840844  # Langer decay rate (BCS)\n  412: Kapitza_ratio = 0.030200115133742347    # Corrected Kapitza ratio (S38)\n  413: \n  414: # ==============================================================================\n  415: L_envelope_d4_Lmax10 = 0.001  # L-envelope at d=4 L_max=10: 0.001 = 0.10%; envelope formula L^{-3} per W-5 R2-B DISSENT #1 Step 3. (S86)\n  416: L_J_Laplacian_dressing_kappa = 0.0364  # L_J Laplacian dressing kappa = N_cells/E_pathB^2 = 32/29.67^2 = 0.0364; sector-attribution comment per W-4 CANONICAL-4 provenance. (S86)\n  417: M_zeta_s3 = 3.7074  # Mellin moment at s=3 under zeta regulator; placeholder value pending verification of exact 5-tuple from W-9 extract — orchestrator to confirm. (S86)\n  418: #  SECTION D: Spectral Action Constants\n  419: # =============================================================================="
+    },
+    {
+      "anchor_id": "const_HP0_content_dim",
+      "anchor_type": "constants",
+      "name": "HP0_content_dim",
+      "value": "3",
+      "session": "S86",
+      "source_citation": "S82 W2-3 + S85 W2-7 §VII.P parity-blindness adjudication",
+      "source_file": "computations/_shared/canonical_constants.py",
+      "source_context_30_lines": "  506: mellin_f_star_f4 = 6446.63942272   # Mellin moment f_4 of f* (X_MAX=50 regulator) (S78 W2-D)\n  507: \n  508: # ==============================================================================\n  509: sigma_alpha_SKA1 = 5.118  # SKA-1 Phase-1 Fisher sigma(alpha_fNL); G45 canonical; used by S84 W4-43 SNR (S83)\n  510: sigma_alpha_SKA2 = 0.80  # SKA-2 full Fisher sigma(alpha_fNL); G45 PASS threshold for framework alpha detection (S83)\n  511: beta_s = -0.1331  # Second spectral moment of D_K at tau_fold slice, Jensen flow (running-of-running from W8-86 3rd Taylor coefficient) (S84)\n  512: sigma_beta_s_CMB_S4 = 2.2e-3  # CMB-S4 projected 1-sigma forecast on beta_s = running-of-running; used as LCDM-null pull denominator for S85-BETA-S-CMB-S4-PREREG (S85)\n  513: b_DK = 0.006241291005766653  # Dirac-operator-determined dimensionless constant for Weyl-rescaling weak-form parametric bound. b_DK = (1/8 pi^2) * Tr_F[(Y†Y)^2] / Tr_F[Y†Y] = (1/8 pi^2) * y_t^2, with y_t = m_t_pole/v_ew = 0.7020. Used in W6-3 C-gamma-WEAK gate (L_max=10, FAIL: tree-level dominates anomaly at this regulator class). (S86)\n  514: HP0_content_dim = 3  # HP^0(A_F) content dim for §VII.P-v2 HP^0-content-distinct corridor restriction (S82 W2-3 baseline + S85 W2-7 closeout) (S86)\n  515: dE_He_A_lambda_6 = 1.7267  # Lab falsifier δE_a — 3He-A delta_omega_K/omega_K ratio at sweet-spot lambda_6 direction; M_KK-normalized. SW1 (Row #13) and XA1 (Row #16) per S86 W14-6 falsifier-master-inventory. (S86)\n  516: dE_FeSe_\n... [truncated]"
+    },
+    {
+      "anchor_id": "const_H_fold",
+      "anchor_type": "constants",
+      "name": "H_fold",
+      "value": "586.5267713108464",
+      "session": "S38",
+      "source_citation": "s38_kz_defects.npz",
+      "source_file": "computations/_shared/canonical_constants.py",
+      "source_context_30_lines": "  454: dS_fold = 58672.80241318       # dS_full/dtau at fold (S42 s42_gradient_stiffness)\n  455: d2S_fold = 317862.84898132     # d^2 S_full/dtau^2 at fold (S42 s42_gradient_stiffness)\n  456: c_fabric = 209.97368021        # substrate sound speed (velocity scale, NOT a momentum cutoff) — S42 s42_gradient_stiffness; docstring per S86 W0b-1\n  457: c_BLV = 0.485                  # Brillouin-Landau-Vortex fabric sound speed (S64 s64_sound_speed; 3He-B four-speed hierarchy inheritance, scalar c_s for post-fold GGE; used 5+ scripts)\n  458: alpha_s_cmb_central = -0.06896799  # S50 identity alpha_s_CMB = n_s^2 - 1 with planck_ns=0.9649 (S85 W13-2; provenance: s50_running_mass.py constant-mass identity + Planck 2018 TT,TE,EE+lowE+lensing)\n  459: f_LISA_pivot = 3.0e-3          # LISA flagship pivot frequency [Hz] (S85 W13-2 pre-registration; 3 mHz canonical LISA sensitivity band centre)\n  460: \n  461: # Transit parameters (s38_kz_defects)\n  462: H_fold = 586.5267713108464     # Hubble parameter at fold (M_KK units, S38)\n  463: v_terminal = 26.544972625732246  # Terminal velocity of modulus (S38)\n  464: dt_transit = 0.0011301575037571713  # Transit duration (M_KK^{-1}, S38)\n  465: P_exc_kz = 1.0                 # Kibble-Zurek excitation probability (S38, P=1 exactly)\n  466: n_Bog = 0.9986332220990328     # Bogoliubov fraction per mode (S38)\n  467: \n  468: # -- H_tilde anchors (S85 W7-1 promotion; canonical constants per plan §W7-1 step 5) --\n  469: # Provenance: S84-BASELINE-HTILDE-SENS\n... [truncated]"
+    },
+    {
+      "anchor_id": "const_K_R3",
+      "anchor_type": "constants",
+      "name": "K_R3",
+      "value": "2.035",
+      "session": "S82",
+      "source_citation": "sessions/session-82/session-82-w2-workingpaper.md §W2-4 (s82_w2_4_ps_substrate_matched_ic.py)",
+      "source_file": "computations/_shared/canonical_constants.py",
+      "source_context_30_lines": "  631: # Promoted by S84-KCORRIDOR-CANONICAL-PROMOTION (W5-60 bookkeeping gate).\n  632: # These 7 constants were floating across S82/S83/S84 scripts as repeated\n  633: # literals; canonicalizing them here eliminates hard-code drift.\n  634: #\n  635: # 7-field provenance schema: name, value, unit, session-of-origin,\n  636: # source-document, derivation-pin, gate-id  (all fields present below).\n  637: # -----------------------------------------------------------------------------\n  638: \n  639: # K_R3 — K-corridor multiplicity-weighted primary point (3/3/2 band-weight)\n  640: #   name:              K_R3\n  641: #   value:             2.035\n  642: #   unit:              dimensionless\n  643: #   session-of-origin: S82\n  644: #   source-document:   sessions/session-82/session-82-w2-workingpaper.md §W2-4\n  645: #                      (PS-SUBSTRATE-MATCHED-IC)\n  646: #   derivation-pin:    computations/session-82/s82_w2_4_ps_substrate_matched_ic.py\n  647: #   gate-id:           S82-W2-4-PS-SUBSTRATE-MATCHED-IC"
+    },
+    {
+      "anchor_id": "const_K_match_need",
+      "anchor_type": "constants",
+      "name": "K_match_need",
+      "value": "0.6366",
+      "session": "S83",
+      "source_citation": "sessions/session-83/session-83-w3-workingpaper.md §G38 (s83_w3_g38_k_matching_5_conventions.py)",
+      "source_file": "computations/_shared/canonical_constants.py",
+      "source_context_30_lines": "  642: #   unit:              dimensionless\n  643: #   session-of-origin: S82\n  644: #   source-document:   sessions/session-82/session-82-w2-workingpaper.md §W2-4\n  645: #                      (PS-SUBSTRATE-MATCHED-IC)\n  646: #   derivation-pin:    computations/session-82/s82_w2_4_ps_substrate_matched_ic.py\n  647: #   gate-id:           S82-W2-4-PS-SUBSTRATE-MATCHED-IC\n  648: K_R3 = 2.035\n  649: \n  650: # K_match_need — Minimum K needed for Planck-match (positivity WALL)\n  651: #   name:              K_match_need\n  652: #   value:             0.6366\n  653: #   unit:              dimensionless\n  654: #   session-of-origin: S83\n  655: #   source-document:   sessions/session-83/session-83-w3-workingpaper.md §G38\n  656: #                      (K-MATCHING-5-CONVENTIONS)\n  657: #   derivation-pin:    computations/session-83/s83_w3_g38_k_matching_5_conventions.py\n  658: #   gate-id:           S83-W3-G38-K-MATCHING-5-CONVENTIONS"
+    },
+    {
+      "anchor_id": "const_K_star",
+      "anchor_type": "constants",
+      "name": "K_star",
+      "value": "1.313",
+      "session": "S84",
+      "source_citation": "sessions/session-84/session-84-w5-workingpaper.md §W5-58 (s84_w5_k_star_lab_framework_match.py)",
+      "source_file": "computations/_shared/canonical_constants.py",
+      "source_context_30_lines": "  699: #   unit:              dimensionless (xi_BCS / L_phonon ratio)\n  700: #   session-of-origin: S83\n  701: #   source-document:   sessions/session-83/session-83-w3-workingpaper.md §G41\n  702: #                      (XI-BCS-VS-L-PHONON)\n  703: #   derivation-pin:    computations/session-83/s83_w3_g41_xi_bcs_vs_l_phonon_k_response.py\n  704: #   gate-id:           S83-W3-G41-XI-BCS-VS-L-PHONON\n  705: xi_ell_plateau = 0.135\n  706: \n  707: # K_star — Lab 3He-B vs framework K-star (functional-form audit, x* = 1)\n  708: #   name:              K_star\n  709: #   value:             1.3130   (= coth(1))\n  710: #   unit:              dimensionless\n  711: #   session-of-origin: S84\n  712: #   source-document:   sessions/session-84/session-84-w5-workingpaper.md §W5-58\n  713: #                      (K-STAR-LAB-FRAMEWORK-MATCH)\n  714: #   derivation-pin:    computations/session-84/s84_w5_k_star_lab_framework_match.py\n  715: #                      (pending-W5-58 — placeholder; orchestrator re-pins"
+    },
+    {
+      "anchor_id": "const_Kapitza_ratio",
+      "anchor_type": "constants",
+      "name": "Kapitza_ratio",
+      "value": "0.030200115133742347",
+      "session": "S38",
+      "source_citation": "s38_attempt_freq.npz",
+      "source_file": "computations/_shared/canonical_constants.py",
+      "source_context_30_lines": "  404: \n  405: # Pair vibration (s37_pair_susceptibility)\n  406: omega_PV = 0.791658919261384      # Pair vibration frequency (omega_plus)\n  407: omega_split = 1.3371826606372719  # Pair-add/remove splitting\n  408: ratio_Evac_Econd = 28.75624796597024  # E_vac/E_cond (fluctuation dominance)\n  409: \n  410: # Langer decay (s38_attempt_freq)\n  411: Gamma_Langer_BCS = 0.24973624676840844  # Langer decay rate (BCS)\n  412: Kapitza_ratio = 0.030200115133742347    # Corrected Kapitza ratio (S38)\n  413: \n  414: # ==============================================================================\n  415: L_envelope_d4_Lmax10 = 0.001  # L-envelope at d=4 L_max=10: 0.001 = 0.10%; envelope formula L^{-3} per W-5 R2-B DISSENT #1 Step 3. (S86)\n  416: L_J_Laplacian_dressing_kappa = 0.0364  # L_J Laplacian dressing kappa = N_cells/E_pathB^2 = 32/29.67^2 = 0.0364; sector-attribution comment per W-4 CANONICAL-4 provenance. (S86)\n  417: M_zeta_s3 = 3.7074  # Mellin moment at s=3 under zeta regulator; placeholder value pending verification of exact 5-tuple from W-9 extract — orchestrator to confirm. (S86)\n  418: #  SECTION D: Spectral Action Constants\n  419: # ==============================================================================\n  420: "
+    }
+  ]
+}

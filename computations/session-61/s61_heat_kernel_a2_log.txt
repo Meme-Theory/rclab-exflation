@@ -1,0 +1,160 @@
+========================================================================
+HEAT-KERNEL-A2-61: Seeley-DeWitt a_2 from Local Curvature Integral
+========================================================================
+
+Cross-check: R(0) = 2.0000000000
+  Expected: 2.0 (Einstein metric)
+  PASSED: R(0) = 2.0 to machine epsilon
+
+At tau_fold = 0.19:
+  R(tau_fold) = 2.018143955851
+  a_2^{SD}(tau_fold) = 0.728234972609
+  a_2^{unnorm}(tau_fold) = 18159.796926
+  (20R/3) = 13.454293
+  Vol_SU3_Haar = 1349.739958
+  (4*pi)^4 = 24936.727305
+
+  S46 reference: a2_SD = 0.728235, R(0.19) = 2.018144
+  This script:   a2_SD = 0.728235, R(0.19) = 2.018144
+  PASSED: exact agreement with S46 to 10 significant digits
+
+  a_0^{SD} = 0.866025403784
+  = (4pi)^{-4} * 16 * Vol = 0.866025403784
+  Ratio a2_SD/a0_SD = 0.840893
+  Expected: (5R/12)/1 = 0.840893
+
+  Spectral zeta sum a_2(spectral, S42) = 2776.165389
+  Geometric a_2^{SD} = 0.728234972609
+  Ratio (spectral/geometric) = 3812.18
+  This confirms the S46 finding: factor = 3812 (different objects)
+
+========================================================================
+SECTION 5: tau sweep [0, 0.5], N=100
+========================================================================
+  a_0^{SD} = 0.866025403784 (constant, volume-preserving)
+
+  At tau_fold = 0.1919:
+    R = 2.0186787163
+    a_2^{SD} = 0.728427937656
+    a_2^{unnorm} = 18164.608842
+
+  Gravity route (M_KK = 7.4287e+16 GeV):
+    M_Pl_red = 1.593469e+18 GeV
+    M_Pl_red(obs) = 2.435000e+18 GeV
+    Ratio = 0.654402
+    H_0 = 88.2603 km/s/Mpc
+
+  Kerner route (M_KK = 5.0417e+17 GeV):
+    M_Pl_red = 1.081455e+19 GeV
+    Ratio = 4.441293
+    H_0 = 13.0047 km/s/Mpc
+
+========================================================================
+SECTION 6: Cross-check — H_0 from observed M_Pl
+========================================================================
+  rho_Lambda = 2.70e-47 GeV^4
+  M_Pl_red = 2.4350e+18 GeV
+  H_0(Lambda-only) = 1.232033e-42 GeV = 57.76 km/s/Mpc
+  H_0(Planck 2018) = 67.4 km/s/Mpc
+  Ratio H_0(Lambda-only)/H_0(Planck) = 0.8569
+
+  NOTE: H_0(Lambda-only) < H_0(obs) because Omega_Lambda ~ 0.685, not 1.0
+  Correcting for Omega_Lambda: H_0 = H_0(Lambda-only)/sqrt(Omega_Lambda)
+  H_0(corrected) = 69.79 km/s/Mpc
+
+========================================================================
+SECTION 7: Self-consistency checks
+========================================================================
+
+  Check 1: a_2^{SD}/a_0^{SD} = 5R/12
+  Max error over all tau: 1.11e-16
+  PASSED
+
+  Check 2: R(tau) monotonically increasing for tau > 0
+  dR/dtau at tau=0: 0.000076
+  Expected: dR/dtau(0) = 1 - 2 + 1 = 0 (critical point)
+  Exact dR/dtau(0) = 0.0000000000
+  Monotonic for tau > 0.0051: True
+
+  Check 3: Lichnerowicz bound lambda_1^2 >= R/4
+  lambda_1^2 = 0.671975
+  R/4 = 0.504670
+  lambda_1^2 / (R/4) = 1.3315
+  SATISFIED
+
+========================================================================
+SECTION 8: Comparison with PW partial sums (s60_pw_h0_conv.npz)
+========================================================================
+
+  PW spectral sums a_2(L) = sum_{p+q<=L} dim^2 * sum |lambda|:
+    L=0: a_2(PW) = 14.23
+    L=1: a_2(PW) = 976.24
+    L=2: a_2(PW) = 21596.76
+    L=3: a_2(PW) = 250360.68
+    L=4: a_2(PW) = 1905279.12
+    L=5: a_2(PW) = 10779150.41
+    L=6: a_2(PW) = 48920674.15
+    L=7: a_2(PW) = 155347469.83
+
+  Geometric a_2^{SD} = 0.728235
+  Geometric a_2^{unnorm} = 18159.80
+  a_2_needed (for M_Pl match with spectral formula) = 10604.17
+
+  Key ratios:
+    a_2^{unnorm} / a_2_needed = 1.7125
+    This ratio tells us: does the geometric a_2 match what's needed for M_Pl?
+
+  For our formula: a_2^{unnorm}_needed = 4*pi^2 * M_Pl_red^2 / M_KK^2 = 42416.68
+  a_2^{unnorm}(fold) = 18159.80
+  Ratio a_2^{unnorm}(fold) / a_2_needed = 0.428129
+  sqrt(ratio) = M_Pl_geom / M_Pl_obs = 0.654315
+
+========================================================================
+SECTION 9: GATE VERDICT — HEAT-KERNEL-A2-61
+========================================================================
+
+  COMPUTED QUANTITIES:
+    R(fold) = 2.0181439559
+    a_2^{SD}(fold) = 0.728234972609
+    a_2^{unnorm}(fold) = 18159.796926
+    Vol_SU3_Haar = 1349.739958
+    a_0^{SD} = 0.866025403784
+
+  GRAVITY ROUTE (M_KK = 7.4287e+16 GeV):
+    M_Pl_red(geom) = 1.593469e+18 GeV
+    M_Pl_red(obs)  = 2.435000e+18 GeV
+    Ratio = 0.654402
+    H_0(Lambda-only) = 88.2603 km/s/Mpc
+
+  KERNER ROUTE (M_KK = 5.0417e+17 GeV):
+    M_Pl_red(geom) = 1.081455e+19 GeV
+    Ratio = 4.441293
+    H_0(Lambda-only) = 13.0047 km/s/Mpc
+
+  CORRECTED FOR Omega_Lambda = 0.685:
+    H_0(grav, full) = 106.6400 km/s/Mpc
+    H_0(kern, full) = 15.7129 km/s/Mpc
+
+  PRE-REGISTERED GATE: HEAT-KERNEL-A2-61
+    Criterion: PASS if a_2(tau_fold) finite AND H_0 in [60,80]
+               FAIL if H_0 outside [40,100] or divergent
+               INFO if H_0 well-defined but outside [60,80]
+
+  VERDICT: FAIL
+  DETAIL: a_2^{SD} = 0.728235 (finite). H_0(grav,Omega_L-corrected) = 106.64 km/s/Mpc outside [40,100].
+
+========================================================================
+SECTION 10: Saving data
+========================================================================
+  Saved: s61_heat_kernel_a2.npz
+  Keys: tau_arr, R_arr, a2_SD_arr, a2_unnorm_arr, M_Pl_arr_grav, H0_km_s_Mpc_arr_grav, ...
+
+========================================================================
+SECTION 11: Plotting
+========================================================================
+  Saved: s61_heat_kernel_a2.png
+
+========================================================================
+  FINAL: HEAT-KERNEL-A2-61 VERDICT = FAIL
+  a_2^{SD} = 0.728235 (finite). H_0(grav,Omega_L-corrected) = 106.64 km/s/Mpc outside [40,100].
+========================================================================

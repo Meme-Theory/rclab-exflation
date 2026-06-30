@@ -118,7 +118,7 @@ where K(t; tau) is the heat kernel trace at modulus tau, would capture the quant
 
 > Compute the WDW-averaged spectral dimension d_s(t) = -2 d/d(log t) log[integral d tau |Psi[tau]|^2 Tr(exp(-t D_K^2(tau)))] with Psi from the no-boundary condition on the Jensen line. If d_s(t -> 0) = 2.0 +/- 0.3, Route 4 PASSES.
 
-This gate has never been computed. It requires the full tau-dependent spectrum (which exists in the tier0 data) and a WDW measure (which Section 1 provides). Estimated effort: one computation.
+This gate has never been computed. It requires the full tau-dependent spectrum (which exists in the computation data) and a WDW measure (which Section 1 provides). Estimated effort: one computation.
 
 ---
 

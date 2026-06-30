@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 96,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_951",
+      "anchor_type": "data_provenance",
+      "name": "bcs_gauge_amplify",
+      "script_path": "session-63/s63_bcs_gauge_amplify.py",
+      "session": "s63",
+      "inputs": "",
+      "outputs": "session-63/s63_bcs_gauge_amplify.npz, session-63/s63_bcs_gauge_amplify.png",
+      "source_file": "computations/session-63/s63_bcs_gauge_amplify.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s63_bcs_gauge_amplify.py — Non-Perturbative Higgs Threshold (BCS-GAUGE-AMPLIFY-63)\n    4: ===================================================================================\n    5: \n    6: PROBLEM:\n    7:   The BdG spectral action gives delta_a4/a4 = 3.70e-4 (S62, single-cell perturbative).\n    8:   The Higgs mass requires delta ~ 0.2-0.3 (Chamseddine-Connes-Marcolli).\n    9:   The gap: factor 676 = 0.25 / 3.70e-4.\n   10: \n   11:   Three non-perturbative amplification channels evaluated:"
+    },
+    {
+      "anchor_id": "prov_952",
+      "anchor_type": "data_provenance",
+      "name": "bcs_sa_bridge",
+      "script_path": "session-63/s63_bcs_sa_bridge.py",
+      "session": "s63",
+      "inputs": "",
+      "outputs": "session-63/s63_bcs_sa_bridge.npz, session-63/s63_bcs_sa_bridge.png",
+      "source_file": "computations/session-63/s63_bcs_sa_bridge.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s63_bcs_sa_bridge.py — BCS -> Spectral Action Coefficients (BCS-SA-BRIDGE-63)\n    4: =============================================================================\n    5: \n    6: Derives the leading spectral action coefficients {a_0, a_2, a_4} from the\n    7: Richardson-Gaudin BCS ground state on the D_K spectrum, BYPASSING the\n    8: one-loop expansion.\n    9: \n   10: VOLOVIK METHOD:\n   11: --------------"
+    },
+    {
+      "anchor_id": "prov_953",
+      "anchor_type": "data_provenance",
+      "name": "berry_ktheory",
+      "script_path": "session-63/s63_berry_ktheory.py",
+      "session": "s63",
+      "inputs": "",
+      "outputs": "session-63/s63_berry_ktheory.npz, session-63/s63_berry_ktheory.png",
+      "source_file": "computations/session-63/s63_berry_ktheory.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s63_berry_ktheory.py — Berry Phase at 16 Hybridization Crossings\n    4: ================================================================\n    5: \n    6: BERRY-KTHEORY-63 (W5-02): Compute the Berry phase gamma_n around each of the\n    7: 16 tight A-B avoided crossings from S62 phonon dispersion data. If any\n    8: |gamma| > 0.1*pi, it carries topological charge. Also compute total Chern\n    9: number from the full band structure.\n   10: \n   11: PHYSICS:"
+    },
+    {
+      "anchor_id": "prov_954",
+      "anchor_type": "data_provenance",
+      "name": "blocking_gge",
+      "script_path": "session-63/s63_blocking_gge.py",
+      "session": "s63",
+      "inputs": "",
+      "outputs": "session-63/s63_blocking_gge.npz, session-63/s63_blocking_gge.png",
+      "source_file": "computations/session-63/s63_blocking_gge.py",
+      "source_context_30_lines": "  552: ax4.set_xlabel('Blocked Mode')\n  553: ax4.set_ylabel('Condensate Fraction (ODLRO)')\n  554: ax4.set_title('Condensate Fraction After Blocking')\n  555: ax4.set_xticks(x)\n  556: ax4.set_xticklabels(sector_labels, rotation=45, ha='right')\n  557: ax4.legend(fontsize=8)\n  558: \n  559: plt.tight_layout()\n  560: plt.savefig(os.path.join(SCRIPT_DIR, 's63_blocking_gge.png'), dpi=150)\n  561: print(f\"  Saved: s63_blocking_gge.png\")\n  562: \n  563: # ===========================================================================\n  564: # STEP 12: Gate verdict\n  565: # ===========================================================================\n  566: print(\"\\n\" + \"=\" * 78)\n  567: print(\"GATE VERDICT: BLOCKING-GGE-63\")\n  568: print(\"=\" * 78)"
+    },
+    {
+      "anchor_id": "prov_955",
+      "anchor_type": "data_provenance",
+      "name": "blv_acoustic",
+      "script_path": "session-63/s63_blv_acoustic.py",
+      "session": "s63",
+      "inputs": "computations/session-62/s62_kz_ns.npz",
+      "outputs": "session-63/s63_blv_acoustic.npz, session-63/s63_blv_acoustic.png",
+      "source_file": "computations/session-63/s63_blv_acoustic.py",
+      "source_context_30_lines": "   37:                      FAIL if > 0.05\n   38:                      INFO otherwise\n   39: \n   40: Inputs:\n   41:     computations/session-62/s62_kz_ns.npz\n   42:     computations/session-62/s62_cutoff_london.npz\n   43: \n   44: Outputs:\n   45:     computations/session-63/s63_blv_acoustic.npz\n   46:     computations/session-63/s63_blv_acoustic.png\n   47: \"\"\"\n   48: \n   49: import numpy as np\n   50: import sys\n   51: import os\n   52: \n   53: sys.path.insert(0, os.path.dirname(__file__))"
+    },
+    {
+      "anchor_id": "prov_956",
+      "anchor_type": "data_provenance",
+      "name": "bma_ns",
+      "script_path": "session-63/s63_bma_ns.py",
+      "session": "s63",
+      "inputs": "computations/session-62/s62_kz_ns.npz, computations/session-63/s63_mukhanov_sasaki.npz",
+      "outputs": "session-63/s63_bma_ns.npz",
+      "source_file": "computations/session-63/s63_bma_ns.py",
+      "source_context_30_lines": "  399: print(f\"  n_s = {ns_BMA_res3:.4f} +/- {sig_res3:.4f}\")\n  400: print(f\"  (BMA over Hubble-SA, Gilkey, MS-numerical)\")\n  401: print(f\"  Planck: {ns_planck} +/- {ns_planck_sigma}\")\n  402: print(f\"  Tension: {abs(ns_BMA_res3 - ns_planck)/np.sqrt(sig_res3**2 + ns_planck_sigma**2):.2f} sigma\")\n  403: \n  404: # =============================================================================\n  405: #  SAVE RESULTS\n  406: # =============================================================================\n  407: np.savez('computations/session-63/s63_bma_ns.npz',\n  408:     # Gate metadata\n  409:     gate_name='BMA-NS-63',\n  410:     gate_verdict='INFO',\n  411:     gate_detail=f'n_s_BMA = {ns_BMA:.4f} +/- {sigma_BMA:.4f} (full BMA). '\n  412:                 f'Recommended: n_s = {ns_BMA_res3:.4f} +/- {sig_res3:.4f} '\n  413:                 f'(Hubble-SA + Gilkey + MS-numerical). '\n  414:                 f'In [0.93,0.99]: {0.93 <= ns_BMA_res3 <= 0.99}. '\n  415:                 f'Model error dominates by {np.sqrt(var_between)/np.median(sigma_within[weights > 0.01]):.1f}x. '"
+    },
+    {
+      "anchor_id": "prov_957",
+      "anchor_type": "data_provenance",
+      "name": "bogoliubov_cg24",
+      "script_path": "session-63/s63_bogoliubov_cg24.py",
+      "session": "s63",
+      "inputs": "",
+      "outputs": "session-63/s63_bogoliubov_cg24.npz, session-63/s63_bogoliubov_cg24.png",
+      "source_file": "computations/session-63/s63_bogoliubov_cg24.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s63_bogoliubov_cg24.py — Mode-Resolved Bogoliubov Squeezing on 45-mode CG(24)\n    4: ================================================================================\n    5: \n    6: Gate: BOGOLIUBOV-CG24-63 (INFO)\n    7:     Report f_DM = sum omega_n |beta_n|^2 / rho_crit and compare to 0.26.\n    8: \n    9: Physics:\n   10:     The CG(24) coupled Hamiltonian has 45 modes per k-point:\n   11:         Sector A: 36 geometric deformation modes (SA Hessian eigenvalues)"
+    },
+    {
+      "anchor_id": "prov_958",
+      "anchor_type": "data_provenance",
+      "name": "casimir_jensen",
+      "script_path": "session-63/s63_casimir_jensen.py",
+      "session": "s63",
+      "inputs": "",
+      "outputs": "session-63/s63_casimir_jensen.npz, session-63/s63_casimir_jensen.png",
+      "source_file": "computations/session-63/s63_casimir_jensen.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s63_casimir_jensen.py — CASIMIR-JENSEN-63\n    4: First-Principles Casimir Energy on Jensen SU(3)\n    5: ================================================================\n    6: \n    7: Compute E_Cas = (1/2) zeta_{|D_K|}(-1) from the Peter-Weyl Dirac spectrum\n    8: on (SU(3), g_Jensen(tau_fold)).\n    9: \n   10: Mathematical Framework\n   11: ----------------------"
+    },
+    {
+      "anchor_id": "prov_959",
+      "anchor_type": "data_provenance",
+      "name": "csdr_branching",
+      "script_path": "session-63/s63_csdr_branching.py",
+      "session": "s63",
+      "inputs": "",
+      "outputs": "session-63/s63_csdr_branching.npz",
+      "source_file": "computations/session-63/s63_csdr_branching.py",
+      "source_context_30_lines": "   71: \n   72: We compute:\n   73: 1. Branching of ALL (p,q) sectors up to p+q ≤ 6 under SU(2)×U(1)\n   74: 2. The adjoint (1,1) decomposition (gives gauge + Higgs content)\n   75: 3. The spinor Δ_8 decomposition (gives fermionic content)\n   76: 4. Complete B/F assignment table\n   77: 5. Effective A parameter for LOG-SIGNED-41\n   78: \n   79: Output: s63_csdr_branching.npz\n   80: Gate: INFO with complete branching table\n   81: \n   82: Author: KK Theorist Agent\n   83: Date: 2026-03-30\n   84: \"\"\"\n   85: \n   86: import numpy as np\n   87: from pathlib import Path"
+    },
+    {
+      "anchor_id": "prov_960",
+      "anchor_type": "data_provenance",
+      "name": "cutoff_meissner",
+      "script_path": "session-63/s63_cutoff_meissner.py",
+      "session": "s63",
+      "inputs": "",
+      "outputs": "session-63/s63_cutoff_meissner.npz, session-63/s63_cutoff_meissner.png",
+      "source_file": "computations/session-63/s63_cutoff_meissner.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s63_cutoff_meissner.py — Meissner Length vs Spectral Action Cutoff\n    4: ==================================================================\n    5: Gate: CUTOFF-MEISSNER-63\n    6: Session: S63, Wave 5, Entry W5-09\n    7: \n    8: PHYSICS:\n    9:   Two length scales emerge from the phonon-exflation framework on Jensen-deformed SU(3):\n   10: \n   11:   1. lambda_L(tau) — London penetration depth from the superfluid (Meissner) sector."
+    }
+  ]
+}

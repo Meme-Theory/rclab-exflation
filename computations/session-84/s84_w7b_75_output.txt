@@ -1,0 +1,130 @@
+Ainulindale: Unknown command line argument 'Exflation\phonon-exflation-sim\.venv312\Lib\site-packages\_rocm_sdk_core\lib\llvm\bin\offload-arch.exe'.  Try: 'C:\sandbox\Ainulindale --help'
+==============================================================================
+S84-W7b-75-B-POWER-STABILITY -- b-power stability extending to L=12
+==============================================================================
+torch: 2.9.1+rocmsdk20260116, CUDA avail: True, device: AMD Radeon RX 9070 XT
+Delta_canonical = 0.4642547395 M_KK (S70 R-protected)
+tau = 0.19 (tau_fold)
+
+=== S84-W7b-75-B-POWER-STABILITY -- input SHA-256 pins ===
+  computations/_shared/canonical_constants.py: ff05c3d64375d9ef...
+  computations/session-83/s83_w3_g36_matrix_model_classification.npz: 14c650a2bdfb0c3d...
+  computations/session-74/s74_spectrum_cache_L9_tau019.npz: 3ce853809c61f79d...
+  computations/_shared/dirac_spectrum.py: eee1b6fdcbb86847...
+  computations/session-84/s84_w7b_75_b_power_stability.py: 7fde7611bb6af071...
+closure=786f6ce3e0f99272... (full 64 at end)
+
+Loading G36 anchor: s83_w3_g36_matrix_model_classification.npz
+  G36 L=[np.int64(3), np.int64(4), np.int64(5), np.int64(6), np.int64(7), np.int64(8)], E_cond=[np.float64(-439.1252514205546), np.float64(-1483.752826734707), np.float64(-4164.629061131438), np.float64(-10207.427411743429), np.float64(-22555.894955056683), np.float64(-41449.94331894019)]
+  G36 b_power = 4.680681, R^2 = 0.997906
+
+Loading S74 L9 cache: s74_spectrum_cache_L9_tau019.npz
+  Loaded 52 sectors from cache
+
+Building D_K infrastructure at tau=0.19 ...
+  Clifford algebra error: 0.00e+00
+  Metric compatibility error: 0.00e+00
+  Infrastructure built in 0.00s
+
+Building missing/fresh sectors on GPU (eigvalsh, complex128):
+     (p,q)   L    dim  dim_tot   wall(s)   VRAM(MB)              |lam|range
+  (4,5)   9    165     2640      1.95      475.1  [2.674,4.115]
+  (5,4)   9    165     2640      1.36      475.1  [2.674,4.115]
+  (0,10)  10     66     1056      0.21       78.4  [3.132,4.670]
+  (1,9)  10    120     1920      0.69      252.2  [2.993,4.596]
+  (2,8)  10    162     2592      1.34      458.3  [2.940,4.538]
+  (3,7)  10    192     3072      1.94      643.9  [2.934,4.496]
+  (4,6)  10    210     3360      2.29      769.2  [2.937,4.471]
+  (5,5)  10    216     3456      2.29      814.2  [2.933,4.462]
+  (6,4)  10    210     3360      2.12      769.2  [2.937,4.471]
+  (7,3)  10    192     3072      1.75      643.9  [2.934,4.496]
+  (8,2)  10    162     2592      1.30      458.3  [2.940,4.538]
+  (9,1)  10    120     1920      0.75      252.2  [2.993,4.596]
+  (10,0)  10     66     1056      0.21       78.4  [3.132,4.670]
+  (0,11)  11     78     1248      0.30      107.0  [3.405,5.045]
+  (1,10)  11    143     2288      1.02      357.2  [3.266,4.969]
+  (2,9)  11    195     3120      1.90      663.8  [3.206,4.907]
+  (3,8)  11    234     3744      2.83      955.1  [3.188,4.860]
+  (4,7)  11    260     4160      3.47     1178.8  [3.200,4.829]
+  (5,6)  11    273     4368      3.83     1301.1  [3.196,4.813]
+  (6,5)  11    273     4368      3.74     1301.1  [3.196,4.813]
+  (7,4)  11    260     4160      3.22     1178.8  [3.200,4.829]
+  (8,3)  11    234     3744      2.62      955.1  [3.188,4.860]
+  (9,2)  11    195     3120      1.79      663.8  [3.206,4.907]
+  (10,1)  11    143     2288      1.01      357.2  [3.266,4.969]
+  (11,0)  11     78     1248      0.28      107.0  [3.405,5.045]
+  (0,12)  12     91     1456      0.39      145.4  [3.678,5.419]
+  (1,11)  12    168     2688      1.34      493.4  [3.539,5.341]
+  (2,10)  12    231     3696      2.53      930.5  [3.473,5.277]
+  (3,9)  12    280     4480      3.88     1366.7  [3.446,5.226]
+  (4,8)  12    315     5040      5.25     1730.4  [3.457,5.190]
+  (5,7)  12    336     5376      6.04     1969.7  [3.459,5.168]
+  (6,6)  12    343     5488      6.30     2051.3  [3.456,5.160]
+  (7,5)  12    336     5376      6.00     1969.7  [3.459,5.168]
+  (8,4)  12    315     5040      4.96     1730.4  [3.457,5.190]
+  (9,3)  12    280     4480      3.81     1366.7  [3.446,5.226]
+  (10,2)  12    231     3696      2.55      930.5  [3.473,5.277]
+  (11,1)  12    168     2688      1.40      493.4  [3.539,5.341]
+  (12,0)  12     91     1456      0.39      145.4  [3.678,5.419]
+
+Saving extended sector cache: s84_spectrum_cache_L12_tau019.npz
+  90 sectors in cache
+
+Computing E_cond(L) via V-rescale (Delta fixed at canonical):
+    L  n_sect   n_modes         sum_d       V_pair(L)       Delta           E_cond(L)
+    3      10      1232         12880    2.510979e-04    0.464255           -439.1253
+    4      15      2912         50176    7.390127e-05    0.464255          -1483.7528
+    5      21      6048        159936    2.622827e-05    0.464255          -4164.6291
+    6      28     11424        439488    1.067196e-05    0.464255         -10207.4274
+    7      36     20064       1077120    4.819850e-06    0.464255         -22555.8950
+    8      44     31264       2160320    2.619240e-06    0.464255         -41449.9433
+    9      54     50624       4758432    1.305952e-06    0.464255         -83026.5466
+   10      65     78080       9535776    7.064927e-07    0.464255        -153332.0600
+   11      77    115936      17901952    4.050242e-07    0.464255        -267268.0504
+   12      90    166896      31956720    2.429222e-07    0.464255        -445359.2505
+
+G36 anchor vs fresh (L=3..8) comparison:
+    L          G36 E_cond        Fresh E_cond    rel_diff
+    3           -439.1253           -439.1253     -0.0000
+    4          -1483.7528          -1483.7528     -0.0000
+    5          -4164.6291          -4164.6291     -0.0000
+    6         -10207.4274         -10207.4274     -0.0000
+    7         -22555.8950         -22555.8950     -0.0000
+    8         -41449.9433         -41449.9433     -0.0000
+
+Joint fits (power-law b_power from log-log):
+  8-point JOINT (L=[3, 4, 5, 6, 7, 8, 10, 12], G36-scheme):
+    b = +4.988287
+    log A = +0.404099
+    R^2 (linear |E|) = 0.957706
+    R^2 (log |E|)    = 0.996382
+  8-point JOINT (L=[3, 4, 5, 6, 7, 8, 10, 12], fresh-scheme):
+    b = +4.988287
+    R^2 (linear |E|) = 0.957706
+  10-point diagnostic (L=[np.int64(3), np.int64(4), np.int64(5), np.int64(6), np.int64(7), np.int64(8), np.int64(9), np.int64(10), np.int64(11), np.int64(12)], fresh-scheme):
+    b = +5.015629
+    R^2 (linear |E|) = 0.967542
+
+DIRECTION (pre-registered):
+  Reference: 8-point JOINT G36-scheme fit on L=[3, 4, 5, 6, 7, 8, 10, 12]
+  b_gate  = 4.988287
+  |b_gate - 4.681| = 0.307287 (PASS tol = 0.1, INFO tol = 0.3)
+  R^2_gate = 0.957706 (PASS thr = 0.99, INFO thr = 0.95)
+  PASS: False, INFO: False
+
+=> Verdict: FAIL
+
+STRUCTURAL INTERPRETATION:
+  L=10, 12 data reveals finite-L artifact. S83-G36 matrix-model-classification PASS must be reviewed; IKKT correspondence classification re-opens.
+
+Data saved: s84_w7b_75_data.npz
+Plot saved: s84_w7b_75_plot.png
+
+4-tuple: (value=4.988287, scheme=eigvalsh-joint-logfit, convention=V-rescaled-Delta-fixed, L_max=12)
+Full closure SHA-256: 786f6ce3e0f992722e3d19afea3d4f740e076bf985b9cd4d2008526c4e2a1c53
+
+Verdict line appended to s84_gate_verdicts.txt
+
+=== S84-W7b-75-B-POWER-STABILITY: FAIL (total wall 148.2s) ===
+  Per-L compute wall (fresh sectors only): {9: 4.7, 10: 24.3, 11: 43.7, 12: 75.1}
+  Per-L peak VRAM (MB): {9: 475.1, 10: 814.2, 11: 1301.1, 12: 2051.3}

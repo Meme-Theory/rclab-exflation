@@ -1,0 +1,81 @@
+{
+  "axis": "A",
+  "reviewer": "kaluza-klein-theorist",
+  "gate": "S101-SCHUR-RIGIDITY-STAGE2-VERIFY",
+  "registered_entry": "VII.BR",
+  "method": "first-principles re-derivation off the registered VII.BR text ONLY (Stage-0 berry synthesis OFF-LIMITS); Sage/numpy exact + machine-eps checks; witness clause (g) re-loaded from s100b_nonabelian_metric_fraction.npz",
+  "substrate_input_overlap": true,
+  "substrate_input_overlap_note": "npz s100b_nonabelian_metric_fraction.npz is loaded by BOTH Axis-A and Axis-B for clause (g) by binding gate design; OVERLAP-CAVEAT applies. PASS-AND on clause (g) establishes output-TYPE independence (rep-theoretic vs band-geometry decision pipelines on the same data), NOT structural-INPUT independence. The structural clauses L0/T1/T2/P/U (a-e) are re-derived from generic operators with NO data-file input, so those carry NO overlap caveat.",
+  "lineage": {
+    "npz_audit_sha256": "4a03497c43a97335144bad80f60e16d00097829ca4310f25315dfe4c9c926818",
+    "entry_cited_prefix": "4a03497c43a97335",
+    "sha_match": true,
+    "lc_lineage_lift_landed": true,
+    "lc_lineage_lift_evidence": "s101_gate_verdicts.txt L4-LIFT (iv): s100b line 95 W6-2 S100b-NONABELIAN-METRIC-FRACTION audit 4a03497c43a97335 LIFTED under LC-CANONICAL; gauge-free projector LEMMA + trace identity + Schur/isotropy transfer as-is. Witnesses cite CLEAN (not merely LC-lineage-conditional).",
+    "structural_clauses_operator_independent": true,
+    "operator_independence_basis": "Axis-A re-derivation used generic operators (SU(3) fundamental, SU(2) fund(+)trivial, SO(3) spin-1, anticommuting (H,gamma) pairs), NOT the LC s84-cache operator; L0/T1/T2/P/U all PASS. They use only (E1)-equivariance, functional calculus, constant gamma, reality structure -- none reference the torsion point t. Transfer under EITHER tau=0 canonicity branch."
+  },
+  "boundary_dependency": {
+    "gate": "S101-SCHUR-RIGIDITY-STAGE1-REGISTRATION",
+    "status": "PASS",
+    "block_present_on_disk": true,
+    "not_blocked": true
+  },
+  "clauses": {
+    "L0": {
+      "verdict": "PASS",
+      "claim": "E3 gauge-free band QGT evaluator identity: sum_{n in band} <d_a u_n|(1-P)|d_b u_n> = Tr[(d_a P)(1-P)(d_b P)]",
+      "rederivation": "P=sum|u_n><u_n| => d_aP=sum(|d_a u_n><u_n|+|u_n><d_a u_n|); right-mult by (1-P) kills <u_n|(1-P)=0, leaving (d_aP)(1-P)=sum|u_n><d_a u_n|(1-P); symmetrically (1-P)(d_bP)=sum(1-P)|d_b u_m><u_m|; product+trace collapses to the band diagonal by orthonormality. Proof in entry is complete and correct.",
+      "numerical_check": "rank-2 family in C^4: LHS=7.5029026 = RHS=7.5029026 to 2.9e-11 (FD floor); P gauge-invariant under frame->frame*W (||dP||=4.6e-16) so RHS is basis-free + phase-free.",
+      "verdict_basis": "algebraic identity verified symbolically-structured + numerically; gauge-freedom (immunity to largest-component-phase pi-jumps) confirmed."
+    },
+    "T1": {
+      "verdict": "PASS",
+      "claim": "E4 multiplicity-one isotypic slot => P_band(b)=E_alpha constant => dP=0 => Q_ab=0 (frozen eigenbundle); eigenVALUE nu_alpha(b) may move while eigenSPACE is b-independent.",
+      "rederivation": "(H2) [rho(g),H(b)]=0 => H preserves each isotypic component; Schur on a mult-1 component => H(b)E_alpha=nu_alpha(b)E_alpha scalar. EigenSPACE = im(E_alpha) built from rho alone via (E1) => b-independent. Differentiate (E_alpha const): (dH)E_alpha=(dnu)E_alpha, no leak out of slot. dP=dE_alpha=0; L0 => Q_ab=0. Crossings with OTHER isotypic characters move only the sorted-|lambda| label, not the slot projector (von Neumann-Wigner: no repulsion between distinct symmetry types). Every step in entry is correct.",
+      "numerical_check": "H(t) commuting with fixed SU(2)xtrivial rep (||[rho,H]||=0.0), mult-1 C^2 slot: ||dP_band||=0.0 EXACT while nu(t):0.921->0.622 moves; Q_ab=Tr[(dP)(1-P)(dP)]=0.0.",
+      "witness_table_consistency": "rigidity_vals npz: pair(B1+-)=7.94e-14, B3-=1.43e-14, B3+=1.57e-14 (frozen, ||ΔP||_F at float floor) vs B2±=2.279e-01 (moving). Frozen/moving partition matches the theorem."
+    },
+    "T2": {
+      "verdict": "PASS",
+      "claim": "E5 moving slot's invariant band-matrix is Schur-scalar: M_ab|_ranP = c_ab(b)*1_{d_alpha}, c_ab=<w|(d_a pi)(1-pi)(d_b pi)|w>; no band-index anisotropy.",
+      "rederivation": "P spectral projector => [rho(g),P]=0; differentiate, rho const by (H1) => [rho(g),d_aP]=0; hence [rho(g),M_ab]=0 and M_ab: ranP->ranP. ranP ~ V_alpha irreducible (H4) => M_ab|_ranP in End_G(V_alpha)=C.1 for complex-type (Schur). Tensor route: P=1_{V_alpha}(x)pi, M_ab=1_{V_alpha}(x)[pi(d_a pi)(1-pi)(d_b pi)pi]=c_ab*(1_{V_alpha}(x)pi). Both routes in entry are correct.",
+      "exact_check": "Sage SYMBOLIC (d_alpha=2,m_alpha=2): M_ab - c*(1_{V_alpha}(x)pi) = 0 EXACTLY (zero deviation); Tr M = d_alpha*c = 2c exactly => M|_ranP=c*1_{d_alpha} scalar, no anisotropy. End_G(SU(3) fundamental)=C.1: commutant dim=1, ||X-I||=7e-16.",
+      "commutant_remark": "PASS -- For real/quaternionic-type V_alpha or band=V1(+)V2 inequiv, Schur weakens scalar->commutant-valued block-scalar diag(c.1,c'.1), cross-blocks killed by equivariance (verified: End_G(real-type spin-1 over C)=1; direct-sum commutant dim=#blocks, cross=0). Entry's rigor-honesty note is correct: every reading carries NO member-frame anisotropy, so Corollary U survives regardless of type.",
+      "witness_table_consistency": "b2_scalar_dev npz (5 interior nodes x [tt,mm]): max=1.28e-12 (tt-column ~1e-13, mm-column up to 1.28e-12). Entry states '~1e-13' and 'thirteen decades'; the worst mu-mu node is 1.28e-12 (~12 decades). The ORDER (full Schur collapse, 12-13 decades) is faithfully witnessed; the entry's '~1e-13' mnemonic slightly understates the worst mm node (benign tightness annotation, NOT a defect -- full scalarity to 12+ decades certifies the irreducible/complex-type reading)."
+    },
+    "P": {
+      "verdict": "PASS",
+      "claim": "E6 double protection: {gamma,H}=0 (gamma const) => {gamma,d_aH}=0; u+=gamma u- => m_a=<u+|d_aH|u->=-m_a* (purely imaginary); (H6) reality => m_a real; therefore m_a=0. Cross-band Wilczek-Zee coupling killed TWICE by two independent structures.",
+      "rederivation": "gamma const => differentiate anticommutator: {gamma,d_aH}=0. With u+=gamma u- (phase real-positive, |<u+|gamma|u->|=1): m_a=<gamma u-|dH|u->=<u-|gamma dH|u->=-<u-|(dH)gamma|u->=-<u-|dH|u+>=-m_a* (imaginary-only). Reality (H6): dH real-symmetric, u+- real => m_a real. Imaginary AND real => 0. Every step correct.",
+      "exact_check": "Sage EXACT, gamma=sz / H=cos t sx+sin t sy anticommuting: {gamma,H}=0, {gamma,dH}=0; m_a+conj(m_a)=0 (m_a PURELY IMAGINARY); in the complex frame m_a=I (NONZERO) -- gamma-channel ALONE does NOT force zero, only forces imaginary. Adding reality (gamma=sx real-sym / H=cos t * sz real-sym, u+- real): m_a=0 EXACT. CONFIRMS the killing is genuinely TWO independent structures; neither alone suffices.",
+      "witness_table_consistency": "npz: chir_anticomm=0.0 exactly, chir_lock=|<u+|gamma9|u->|=1.0; A_prot_median=|m_a|/(lambda_- - lambda_+)=1.297e-17 (99.96%=2601 nodes, frac_prot=0.99961553 of nodes<1e-12); f_nonAb(pair)=2.96059473e-15, numerator=-4.44e-15 = 20*eps float-cancellation floor. CKH numerator at floor with no fine-tuning, as claimed."
+    },
+    "U": {
+      "verdict": "PASS",
+      "claim": "Corollary U symmetry-undecidability: on a G-invariant base, NO G-invariant functional of the band geometry distinguishes a genuinely non-Abelian (Wilczek-Zee) band from a direct sum of d_alpha identical Abelian channels.",
+      "rederivation": "CKH discriminator needs EITHER (i) invariant band-matrix anisotropy -- excluded by T2 (M_ab proportional to 1); OR (ii) a canonical band-member frame -- excluded because ranP is an irreducible G-space: no G-invariant frame exists, any frame is gauge, and inside an exactly degenerate eigenspace per-member projectors are not finite-difference-stable. Every invariant factors through {nu(b),c_ab(b)} = EXACTLY the invariant data of d_alpha independent Abelian bands with identical metric c_ab. Models observationally identical. Derivation correct; rests on T2 (verified) + irreducibility (verified End_G=C.1).",
+      "witness_table_consistency": "npz: I_Ab over 8-sample Haar U(2) orbit spans 1.5->1006.9 (orbit_rel=670.3x I_NA, orbit_spread=1005.4) -- the Abelian-sum is FRAME-DEPENDENT (no G-invariant frame); I_NA invariant (||P_M(rot)-P_M||=1.67e-16). d2/d3: pinned-frame I_Ab(B2)=5.77e+03 is an eigh intra-eigenspace-rotation artifact. Concretely instantiates U: the 'Abelian' reading is pure gauge, the invariant content is frame-free."
+    },
+    "witness": {
+      "verdict": "PASS",
+      "g1_frozen_floor": "I_NA_excl(pair)=2.60248115e-24 (entry 2.602e-24 OK); I_Ab_excl=2.60277665e-24; interior integrand ceiling consistent. rigidity_vals frozen rows {7.94e-14,1.43e-14,1.57e-14} all <1e-12 floor; B2 moving rigidity_max=2.279e-01 (rel_tol 1e-3 to entry 2.279e-01 OK).",
+      "g2_moving_content": "I_NA_b2_excl=0.025907652 (entry 2.591e-2 OK). OOM gap Sage-exact RealField(60): I_NA(B2)/I_NA(pair)=9.9549817708e21, log10=21.99804 -> rounds to 22 OOM EXACT.",
+      "g3_schur_and_wz": "b2_scalar_dev max=1.28e-12 (entry '~1e-13'/'thirteen decades': worst mm node ~12 decades, order faithful); A_prot_median=1.297e-17, frac_prot=0.99961553 (>=99% of 2601 nodes<1e-12); chir_anticomm=0.0, chir_lock=1.0.",
+      "g_other": "C_fhs=-0.5 (single pi-plaquette, entry -0.5 OK); Im_int=6.12461303e-18<1e-12 (entry 6.124613e-18, metric-not-curvature companion OK); defect_nodes=[[0,49],[0,50],[1,50]] n_defect=3 (H3-boundary corner-crossing, von Neumann-Wigner excluded from domain, handled by defect-exclusion).",
+      "builder_cache_fixed_fiber": "||builder_00-cache_00||=1.64e-15, cc1_maxdev=9.99e-16 -- the (0,0) singlet C^16 fiber is reproduced bit-for-bit, confirming H1 fixed-fiber realization (S22b block-diagonality, metric-independent).",
+      "lc_clean": "L4-LIFT (iv) landed under LC-CANONICAL => witnesses cite CLEAN (not merely LC-lineage-conditional). npz SHA matches entry's audit prefix.",
+      "verdict_basis": "every witness-table row re-loaded from the pinned npz reproduces the entry value to the stated/floor precision; OOM gap Sage-exact; sole annotation: T2 mm-column worst node ~1.28e-12 vs entry mnemonic ~1e-13 (benign, order-faithful)."
+    },
+    "JOINT": {
+      "verdict": "PASS",
+      "claim": "Band-selective rigidity structural identity across both axes: on the G-invariant (tau,mu) deformation family, the band geometry partitions into FROZEN slots (T1, mult-locked isotypic, zero QGT) and a MOVING slot whose entire invariant content is the Schur-scalar pair {nu(b),c_ab(b)} (T2), so the non-Abelian-vs-Abelian distinction is undecidable by any G-invariant functional (U) -- the BAND-SELECTIVE-RIGIDITY-PAIR-B3-FROZEN-B2-CARRIES-GEOMETRY reading.",
+      "rederivation_axisA_side": "This is the rep-theoretic / Kaluza-Klein-natural statement: V=C^16 is the (0,0) Peter-Weyl singlet spinor fiber over internal K=SU(3); G=U(2) the isotropy; bands = isotypic components of the U(2)-action; the gauge content is the isotropy/equivariance structure. Harmonic analysis on the internal space + Schur is the engine. From the registered text alone (NO Stage-0 synthesis), the JOINT identity reduces to: T1 (frozen, verified) + T2 (Schur-scalar, verified EXACTLY) + U (undecidability, verified) on the irreducible isotypic slots -- a self-consistent structural no-go. The structural_reading string in the npz matches.",
+      "joint_route_note": "Per the entry's REGISTRY-ANATOMY (i), the candidate is single-axis GEOMETRIC with cited cross-axis PROVEN inputs (S22b block-diagonality for H1 fiber; S25 reality-class for H6) -- standard-structural-theorem route, no clause carries a JOINT tag. Under the all-clauses-dual-verified criterion the conjunction L0^T1^T2^P^U^witness strictly SUPERSETS any JOINT PASS-AND; the band-selective rigidity identity is verified on the Axis-A side via the same machinery. Axis-B (band-geometry / QGT) supplies the complementary side; PASS-AND closes the JOINT in BOTH verdicts.",
+      "verdict_basis": "the cross-axis structural identity holds on the Axis-A (representation-theoretic) side from the registered text + Sage re-derivations; awaits Axis-B PASS-AND (band-geometry side) for the conjunctive closure (gen-physicist aggregator)."
+    }
+  },
+  "overall_axisA": "PASS on ALL clauses (L0, T1, T2 + commutant, P, U, witness, JOINT-Axis-A-side). Every structural clause re-derived from the registered VII.BR text alone with operator-independent (generic) machinery; the load-bearing identities (E3 evaluator, E5 Schur-scalar tensor route, E6 double protection, End_G=C.1) verified EXACTLY in Sage; witness table reproduced from the pinned npz; OOM gap Sage-exact 22; LC lineage clean (L4-LIFT landed); W6-6 STAGE1 boundary PASS (not blocked).",
+  "sole_annotation": "T2 witness: entry mnemonic '~1e-13 / thirteen decades' for b2_scalar_dev; the worst mu-mu interior node is 1.28e-12 (~12 decades). Order-faithful, full Schur collapse certified; benign tightness annotation, NOT a clause defect. No down-tag.",
+  "no_verdict_line": "per spawn prompt: gen-physicist aggregator emits the verdict line; this JSON + WP sub-block are my only on-disk artifacts."
+}

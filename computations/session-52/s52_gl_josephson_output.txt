@@ -1,0 +1,191 @@
+======================================================================
+S52 GL-JOSEPHSON-52: Ginzburg-Landau Fabric Dynamical Matrix
+======================================================================
+
+--- Section 1: Ground state from S48 Leggett mode data ---
+  Delta_0 = [0.371795, 0.732026, 0.084152] M_KK
+  rho_0   = [3.9359, 14.6683, 0.4839]
+  J_12 = 0.035402, J_23 = 0.001814, J_13 = 0.000468
+  omega_L1(S48) = 0.069554, omega_L2(S48) = 0.107369
+  S48 evals (phase sector) = [-3.25260652e-19  4.83777551e-03  1.15280168e-02]
+
+--- Section 2: GL free energy functional ---
+  GL coefficients:
+    B1: a = -1.954873, b = 7.071028, Delta_0 = 0.371795 (check: 0.371795)
+    B2: a = -0.524548, b = 0.489443, Delta_0 = 0.732026 (check: 0.732026)
+    B3: a = -15.901508, b = 1122.727909, Delta_0 = 0.084152 (check: 0.084152)
+
+  Condensation energy: [-0.13511219 -0.14054261 -0.05630437]
+  Total: -0.331959
+
+--- Section 3: Inertia matrices ---
+  Phase inertia (rho * Delta^2):
+    B1: 0.544067
+    B2: 7.860199
+    B3: 0.003427
+  Amplitude inertia (rho):
+    B1: 3.935924
+    B2: 14.668320
+    B3: 0.483868
+
+--- Section 4: Stiffness (mass) matrices at K=0 ---
+  Amplitude stiffness V_amp(K=0):
+    [+7.819492  -0.035402  -0.000468]
+    [-0.035402  +2.098190  -0.001814]
+    [-0.000468  -0.001814  +63.606030]
+
+  Phase stiffness V_phase(K=0):
+    [+0.00964979  -0.00963515  -0.00001464]
+    [-0.00963515  +0.00974688  -0.00011172]
+    [-0.00001464  -0.00011172  +0.00012636]
+
+--- Section 5: Cross-check Leggett modes at K=0 ---
+  Generalized eigenvalues (omega^2): [7.86046575e-19 1.89600464e-02 3.68936471e-02]
+  Frequencies:
+    Mode 0: omega = 0 (Goldstone, eval = 7.86e-19)
+    Mode 1: omega = 0.137695
+    Mode 2: omega = 0.192077
+
+  Leggett cross-check:
+    L1: here = 0.137695, S48 = 0.069554, ratio = 1.9797
+    L2: here = 0.192077, S48 = 0.107369, ratio = 1.7890
+
+  Amplitude sector generalized eigenvalues (omega^2): [  0.14303053   1.98670965 131.45325756]
+  Amplitude frequencies: [ 0.37819377  1.40950688 11.46530669]
+
+--- Section 6: BCC lattice geometry ---
+  Vol(SU(3)) = 1349.74
+  V_cell = 42.1794
+  a_BCC = 4.3857
+  K_BZ = pi/a = 0.7163
+
+--- Section 8: Dynamical matrix construction ---
+
+--- Section 9: Dispersion omega(K) ---
+  K range: [0, 0.7163] (51 points)
+
+  Dispersion at K=0:
+    Branch 0: omega(0) = 0.000000, omega^2 = 1.342784e-16
+    Branch 1: omega(0) = 0.137695, omega^2 = 1.896005e-02
+    Branch 2: omega(0) = 0.192077, omega^2 = 3.689365e-02
+    Branch 3: omega(0) = 0.378194, omega^2 = 1.430305e-01
+    Branch 4: omega(0) = 1.409507, omega^2 = 1.986710e+00
+    Branch 5: omega(0) = 11.465307, omega^2 = 1.314533e+02
+
+  Dispersion at K=K_BZ:
+    Branch 0: omega(K_BZ) = 0.507249
+    Branch 1: omega(K_BZ) = 0.529396
+    Branch 2: omega(K_BZ) = 0.985985
+    Branch 3: omega(K_BZ) = 1.455554
+    Branch 4: omega(K_BZ) = 2.792890
+    Branch 5: omega(K_BZ) = 11.467704
+
+  Mode character at K=0 (amplitude fraction):
+    Branch 0: amp_frac = 0.0000 (phase)
+    Branch 1: amp_frac = 0.0000 (phase)
+    Branch 2: amp_frac = 0.0000 (phase)
+    Branch 3: amp_frac = 0.0682 (phase)
+    Branch 4: amp_frac = 0.2541 (phase)
+    Branch 5: amp_frac = 2.0667 (amplitude)
+
+  Branch labels: ['Goldstone', 'Leggett-1', 'Leggett-2', 'Branch-3', 'Branch-4', 'Higgs-1']
+
+--- Section 10: Power-law fit omega ~ K^alpha ---
+  Power-law fits:
+  Branch               gap  alpha(wide)  alpha(gate)    |a-2|    Verdict
+  Goldstone              0     0.9522+-0.0029     0.9644   1.0356    ANOMALOUS
+  Leggett-1         0.1377     1.5219+-0.0578     1.7724   0.2276    ANOMALOUS
+  Leggett-2         0.1921     0.7948+-0.0737     0.9662   1.0338    ANOMALOUS
+  Branch-3          0.3782     3.1579+-0.1904     3.8125   1.8125    ANOMALOUS
+  Branch-4          1.4095     2.4037+-0.1853     1.9862   0.0138          K^2
+  Higgs-1          11.4653     1.9620+-0.0056     1.9868   0.0132          K^2
+
+--- Section 11: Feshbach / level crossing diagnostic ---
+  No exact branch crossings
+  Anti-crossings:
+    Goldstone/Leggett-1: min gap = 0.022147 at K = 0.7163
+    Leggett-1/Leggett-2: min gap = 0.007987 at K = 0.2292
+    Leggett-2/Branch-3: min gap = 0.025233 at K = 0.0716
+    Branch-3/Branch-4: min gap = 0.030478 at K = 0.2865
+
+  Pair-breaking threshold 2*Delta_B3 = 0.168305
+    Goldstone: enters continuum at K = 0.1848
+    Leggett-1: enters continuum at K = 0.0560
+    Leggett-2: always above threshold
+    Branch-3: always above threshold
+    Branch-4: always above threshold
+    Higgs-1: always above threshold
+
+--- Section 12: Gate GL-JOSEPHSON-52 ---
+
+  Gate: GL-JOSEPHSON-52
+  Verdict: PASS
+  Detail: 4 branch(es) anomalous at K<0.2: Goldstone (alpha=0.964, |a-2|=1.036), Leggett-1 (alpha=1.772, |a-2|=0.228), Leggett-2 (alpha=0.966, |a-2|=1.034), Branch-3 (alpha=3.812, |a-2|=1.812)
+
+--- Section 13: Band structure summary ---
+  Goldstone      : omega=[0.000000, 0.507249], BW=0.507249
+  Leggett-1      : omega=[0.137695, 0.529396], BW=0.391701
+  Leggett-2      : omega=[0.192077, 0.985985], BW=0.793907
+  Branch-3       : omega=[0.378194, 1.455554], BW=1.077360
+  Branch-4       : omega=[1.409507, 2.792890], BW=1.383384
+  Higgs-1        : omega=[11.465307, 11.467704], BW=0.002397
+
+  Group velocities at small K:
+    Goldstone      : v_g = 0.978163
+    Leggett-1      : v_g = 0.444135
+    Leggett-2      : v_g = 2.425218
+    Branch-3       : v_g = 0.025200
+    Branch-4       : v_g = 0.006505
+    Higgs-1        : v_g = 0.000333
+
+  Effective masses at small K:
+    Goldstone      : d^2w/dK^2 = -1.269652, m* = -0.3938
+    Leggett-1      : d^2w/dK^2 = 18.103858, m* = 0.0276
+    Leggett-2      : d^2w/dK^2 = 67.924609, m* = 0.0074
+    Branch-3       : d^2w/dK^2 = 1.163957, m* = 0.4296
+    Branch-4       : d^2w/dK^2 = 0.301355, m* = 1.6592
+    Higgs-1        : d^2w/dK^2 = 0.015443, m* = 32.3775
+
+--- Section 14: Sound speed analysis ---
+  Goldstone sound speed (fit): c = 0.9154
+  c_fabric (canonical): 209.9737
+  Ratio: 0.004360
+
+  NOTE: c_fabric >> c_Gold because c_fabric comes from spectral action
+  gradient stiffness (Z_fold = 74730), while c_Gold comes from
+  BCS Josephson coupling (J_C2 = 0.933). The ratio measures
+  the BCS fraction of the total fabric stiffness.
+  sum(Delta^2) = 0.681175
+  sum(rho*Delta^2) = 8.407693
+
+--- Section 15: Saving data ---
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s52_gl_josephson.npz
+
+--- Section 16: Plotting ---
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s52_gl_josephson.png
+
+======================================================================
+SUMMARY: GL-JOSEPHSON-52
+======================================================================
+  Lattice: BCC-derived, a = 4.3857, K_BZ = 0.7163
+  Ground state: Delta = [0.3718, 0.7320, 0.0842]
+  Inertia (generalized eigenvalue): T_phase = rho*Delta^2, T_amp = rho
+
+  6 dispersion branches (K=0 -> K_BZ):
+    0. Goldstone      : omega = [0.000000, 0.507249], alpha_gate = 0.9644
+    1. Leggett-1      : omega = [0.137695, 0.529396], alpha_gate = 1.7724
+    2. Leggett-2      : omega = [0.192077, 0.985985], alpha_gate = 0.9662
+    3. Branch-3       : omega = [0.378194, 1.455554], alpha_gate = 3.8125
+    4. Branch-4       : omega = [1.409507, 2.792890], alpha_gate = 1.9862
+    5. Higgs-1        : omega = [11.465307, 11.467704], alpha_gate = 1.9868
+
+  Goldstone sound speed: 0.9154 (cf. c_fabric = 209.97)
+  BCS/fabric stiffness ratio: 0.000019
+
+  Leggett cross-check:
+    L1: 0.137695 vs S48 0.069554 (ratio 1.980)
+    L2: 0.192077 vs S48 0.107369 (ratio 1.789)
+
+  Gate: PASS
+  Detail: 4 branch(es) anomalous at K<0.2: Goldstone (alpha=0.964, |a-2|=1.036), Leggett-1 (alpha=1.772, |a-2|=0.228), Leggett-2 (alpha=0.966, |a-2|=1.034), Branch-3 (alpha=3.812, |a-2|=1.812)
+======================================================================

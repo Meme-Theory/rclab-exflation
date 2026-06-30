@@ -140,7 +140,7 @@ Net: 2 of 6 Feynman Constraint Conditions fired (K1, K2). 2 SUSPENDED (A: Weinbe
 | 4 | A_F bimodule via order-one with D_K | 10 | OPEN | **ALIVE** | D_K is now fully specified; this can proceed |
 | 5 | QM dynamical postulates | 4 | OPEN | **ALIVE** | Independent of stabilization |
 
-**From Sessions 7-11 (Tier 0 Computation):**
+**From Sessions 7-11 (computation Computation):**
 
 | # | Task | Session | Pre-20 Status | Post-20 Status | Rationale |
 |:--|:-----|:--------|:-------------|:---------------|:----------|
@@ -149,7 +149,7 @@ Net: 2 of 6 Feynman Constraint Conditions fired (K1, K2). 2 SUSPENDED (A: Weinbe
 | 8 | -2y structural factor, C+H order-one obstruction | 11 | Needs D_K elements | **ALIVE** | D_K matrix elements now computed; this is actionable |
 | 9 | Z_3 x Z_3 three generations (Baptista Paper 18 App E) | 11 | OPEN | **ALIVE** | Independent of stabilization; critical for generations |
 
-**From Sessions 12-14 (Tier 1 Dirac Spectrum):**
+**From Sessions 12-14 (Level 1 Dirac Spectrum):**
 
 | # | Task | Session | Pre-20 Status | Post-20 Status | Rationale |
 |:--|:-----|:--------|:-------------|:---------------|:----------|
@@ -195,8 +195,8 @@ Net: 2 of 6 Feynman Constraint Conditions fired (K1, K2). 2 SUSPENDED (A: Weinbe
 
 | # | Task | Session | Pre-20 Status | Post-20 Status | Rationale |
 |:--|:-----|:--------|:-------------|:---------------|:----------|
-| 27 | No-boundary 12D proposal (Hawking) | G3 | OPEN (Tier 3) | **DEFERRED** | Physically motivated but months of work |
-| 28 | CDT product manifold connection | G3 | OPEN (Tier 3) | **DEFERRED** | Same |
+| 27 | No-boundary 12D proposal (Hawking) | G3 | OPEN (Level 3) | **DEFERRED** | Physically motivated but months of work |
+| 28 | CDT product manifold connection | G3 | OPEN (Level 3) | **DEFERRED** | Same |
 
 **From Feynman Predictions Session:**
 
@@ -212,7 +212,7 @@ Net: 2 of 6 Feynman Constraint Conditions fired (K1, K2). 2 SUSPENDED (A: Weinbe
 | **CLOSED** | 2 | #16 (superseded by 18), #19 (superseded by l20 files) |
 | **RESOLVED** | 2 | #10 (no s_0), #13 (SD-1 convergence closed) |
 | **SUPERSEDED** | 1 | #17 (suspended — tau_W evaluation only) |
-| **DEFERRED** | 2 | #27, #28 (Tier 3) |
+| **DEFERRED** | 2 | #27, #28 (Level 3) |
 
 ### NEW Tasks From 20a/20b Results
 
@@ -232,23 +232,23 @@ From the 15-researcher master collab, the following did not exist pre-Session 20
 
 ### Priority-Ranked ALIVE Items for Session 21+
 
-**Tier 1 — Zero cost, existing data, do immediately:**
+**Level 1 — Zero cost, existing data, do immediately:**
 1. N3: Neutrino Delta m^2 ratio R(tau) — if never 32.6, hard closure; if crosses, constrains all future computation
 2. N4: Exact spectral action at finite cutoff — could reveal minimum invisible to asymptotic expansion
 3. N8: Spectral statistics — Berry proposes this must precede any new stabilization attempt
 4. N7: Alpha circularity check (Paasch R4) — gate required before P-tests
 
-**Tier 2 — Low cost, hours, high impact:**
+**Level 2 — Low cost, hours, high impact:**
 5. N2: Cartan 3-form flux (KK-theorist: "highest-value computation")
 6. N5: Modulus ODE w(z) — rolling modulus as DESI DR2 prediction
 7. #26: Spectral back-reaction simulation (Primer §IX)
 
-**Tier 3 — Days, non-perturbative:**
+**Level 3 — Days, non-perturbative:**
 8. N1: Instanton action S_inst(tau)
 9. #21/#22: D_total Pfaffian (blocked by 19c eigenvectors)
 10. N9: Volovik gap equation
 
-**Tier 4 — Paper and theory:**
+**Level 4 — Paper and theory:**
 11. #14: Paper revision (use proven/closed/alive ledger from 20c)
 12. #1: Bell CHSH from SU(3)
 13. #4: A_F bimodule with actual D_K
@@ -291,8 +291,8 @@ Recorded verbatim for completeness. These do not require retroactive changes to 
 |:--|:-----|:-------------------|:-----------|:----------|
 | 10 | V_eff selects s=0.15? | RESOLVED | **CLOSED** | "Resolved" implies the question is answered with useful information. The answer is: NO. This is a Definitive Closure, not a neutral resolution. The broader question (does any mechanism select s=0.15?) is a different task (#18). |
 | 17 | Gauge couplings at s_0 | SUSPENDED | **SUSPENDED (not CLOSED)** | Agreement on SUSPENDED. Sagan flags that labeling it CLOSED implies the formula g_1/g_2 = e^{-2tau} is closed. It is not — it becomes testable the moment any mechanism produces tau_0. |
-| N3 | Neutrino Delta m^2 ratio | Tier 1 | **#1 DIAGNOSTIC** | Sagan elevates this above all other zero-cost diagnostics. It is the only computation that produces a HARD CLOSED orthogonal to stabilization. Failure = framework closed for neutrino physics regardless of tau_0. |
-| 27 | No-boundary 12D (Hawking) | ALIVE (low priority) | **DEFERRED** | Tier 3, years away, no testable output path. "ALIVE" inflates apparent scope without adding evidential weight. Demote to DEFERRED. |
+| N3 | Neutrino Delta m^2 ratio | Level 1 | **#1 DIAGNOSTIC** | Sagan elevates this above all other zero-cost diagnostics. It is the only computation that produces a HARD CLOSED orthogonal to stabilization. Failure = framework closed for neutrino physics regardless of tau_0. |
+| 27 | No-boundary 12D (Hawking) | ALIVE (low priority) | **DEFERRED** | Level 3, years away, no testable output path. "ALIVE" inflates apparent scope without adding evidential weight. Demote to DEFERRED. |
 | 28 | CDT product manifold | ALIVE (low priority) | **DEFERRED** | Same rationale as #27. |
 
 ---
@@ -393,7 +393,7 @@ Recorded verbatim for completeness. These do not require retroactive changes to 
 
 The Session 20 thesis opened with the question: after twenty sessions, does one decisive computation settle the framework's viability? The answer is: yes, decisively — but not in the direction hoped for. The Lichnerowicz computation on TT 2-tensors was the last perturbative spectral mechanism. It ran clean, validated by independent audit (10 modules, 8/8 consistency checks, zero bugs in computation), and returned a CLOSED.
 
-But the thesis document's framing requires more careful reading. The original Session 20 success criteria listed three tiers: minimum success (L-0 OR L-4 produce minimum), full success (tau_0 in [0.15, 0.30] + prediction table), extraordinary success (all of the above + phi_paasch within 1%). What actually happened is a fourth tier — none of these — but accompanied by something the thesis document was silent about: the DISCOVERY of why all perturbative mechanisms fail. The constant-ratio trap is not merely a numerical finding. It is a theorem about Weyl's law on volume-preserving deformations, proven by five independent computations across four sessions, confirmed by 15 independent reviewers, and explained by three independent derivations (Weyl's law, Berry-Tabor conjecture, Debye universality). This theorem is a contribution to the mathematics of Kaluza-Klein theories, independent of whether the phonon-exflation framework is correct.
+But the thesis document's framing requires more careful reading. The original Session 20 success criteria listed three levels: minimum success (L-0 OR L-4 produce minimum), full success (tau_0 in [0.15, 0.30] + prediction table), extraordinary success (all of the above + phi_paasch within 1%). What actually happened is a fourth level — none of these — but accompanied by something the thesis document was silent about: the DISCOVERY of why all perturbative mechanisms fail. The constant-ratio trap is not merely a numerical finding. It is a theorem about Weyl's law on volume-preserving deformations, proven by five independent computations across four sessions, confirmed by 15 independent reviewers, and explained by three independent derivations (Weyl's law, Berry-Tabor conjecture, Debye universality). This theorem is a contribution to the mathematics of Kaluza-Klein theories, independent of whether the phonon-exflation framework is correct.
 
 ### What the Algebraic Skeleton Proves
 
@@ -543,7 +543,7 @@ These insights emerged from cross-pollination in the 15-researcher collaborative
 
 5. **Rolling modulus as prediction, not failure (Einstein + SP + Dirac)**: The monotonically increasing V_eff is the framework's greatest cosmological asset: the modulus naturally rolls toward tau = 0, producing quintessence with w(z) evolving from w > -1 at high redshift toward w = -1 today — precisely matching DESI DR2 data. The CLOSED on static stabilization may convert to a prediction of dynamical dark energy. Hubble damping could arrest the modulus at small s without a potential minimum. Atomic clock bound: |ds/dt| < 5 × 10^{-18}/yr (Dirac).
 
-6. **Neutrino Delta m^2 ratio as independent s_0 constraint (Neutrino)**: R(tau) = (lambda_3^2 - lambda_2^2)/(lambda_2^2 - lambda_1^2) from existing Tier 1 Dirac data. Observed ratio: 32.6. Zero additional computation required. If R(tau) never passes through 32.6: hard closure on neutrino physics independent of stabilization mechanism. If it does: viable tau window constrains every future non-perturbative computation.
+6. **Neutrino Delta m^2 ratio as independent s_0 constraint (Neutrino)**: R(tau) = (lambda_3^2 - lambda_2^2)/(lambda_2^2 - lambda_1^2) from existing Level 1 Dirac data. Observed ratio: 32.6. Zero additional computation required. If R(tau) never passes through 32.6: hard closure on neutrino physics independent of stabilization mechanism. If it does: viable tau window constrains every future non-perturbative computation.
 
 ---
 

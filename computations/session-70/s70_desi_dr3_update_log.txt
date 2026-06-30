@@ -1,0 +1,373 @@
+========================================================================
+DESI-DR3-UPDATE-70: Decision Tree Update with S69-S70 Results
+========================================================================
+
+========================================================================
+1. Loading Upstream Data
+========================================================================
+
+  Framework:  w_0 = -0.918, w_a = 0.0
+  LCDM:       w_0 = -1.0, w_a = 0.0
+  DESI DR2:   w_0 = -0.752, w_a = -0.73
+  DR3 proj:   sigma(w_0) = 0.0403, sigma(w_a) = 0.1768, rho = -0.85
+  r_d = 147.024 Mpc
+  N(BAO bins) = 7, N(RSD bins) = 9
+
+========================================================================
+2. Current Observational Scorecard (S69-S70)
+========================================================================
+
+  --- D_M/r_d (BAO) ---
+  chi^2(FW) = 14.53 / 7 bins = 2.076 per dof
+  chi^2(LCDM) = 9.74 / 7 bins = 1.392 per dof
+  Delta(chi^2) = +4.79 (LCDM preferred)
+
+  Bin-by-bin D_M/r_d pulls (FW):
+       z        Tracer       Obs        FW      LCDM   Pull(FW)   Pull(LCDM)
+   0.295           BGS     7.930     8.205     8.280    +1.832s      +2.336s
+   0.510          LRG1    13.620    13.329    13.500    -1.619s      -0.667s
+   0.706          LRG2    17.850    17.443    17.700    -2.263s      -0.832s
+   0.934     LRG3+ELG1    21.710    21.650    21.995    -0.263s      +1.237s
+   1.321          ELG2    27.790    27.625    28.082    -0.433s      +0.768s
+   1.484           QSO    29.940    29.785    30.276    -0.273s      +0.590s
+   2.330           Lya    39.710    38.583    39.184    -1.761s      -0.823s
+
+  Worst bin: z = 0.706 (LRG2), pull = -2.263 sigma
+  This is the SINGLE MOST CRITICAL bin for DR3 to resolve.
+
+  --- f*sigma_8 (RSD) ---
+  chi^2/dof (FW, diagonal) = 0.761
+  chi^2/dof (LCDM, diagonal) = 0.893
+  Delta(chi^2) FW-LCDM (diagonal) = -1.186
+  Delta(chi^2) FW-LCDM (full cov) = -0.609
+  FW PREFERRED in both diagonal and full-covariance analyses.
+  sigma_8: FW = 0.793, LCDM = 0.811 (FW partially ameliorates S_8 tension)
+
+  --- Pantheon+ SNe (S70 full covariance) ---
+  Delta(chi^2) FW-LCDM (diagonal) = -4.26
+  Delta(chi^2) FW-LCDM (full cov) = -7.82
+  FW PREFERRED, strengthened by off-diagonal systematics.
+  Significance: 2.80-sigma (Wilks, 1 dof)
+
+  --- ISW Tracking (S70 Boltzmann) ---
+  ISW auto-power FW/Quint = +6.72% (PASS, >5% gate)
+  Full TT FW/LCDM at l=2 = -6.87% (FW < Q at low l)
+  This is the substrate-specific discriminant (c_s^2 = 0 vs 1).
+
+========================================================================
+3. DR3 Error Scaling and Projections
+========================================================================
+
+  DR3/DR1 sample ratio: 5x
+  Statistical improvement: sqrt(5) = 2.236x
+
+  D_M/r_d error projections (DR3):
+       z        Tracer   DR1 err   DR3 stat   DR3 total   Improvement
+   0.295           BGS     0.150      0.067       0.071        2.11x
+   0.510          LRG1     0.180      0.080       0.090        1.99x
+   0.706          LRG2     0.180      0.080       0.097        1.86x
+   0.934     LRG3+ELG1     0.230      0.103       0.122        1.89x
+   1.321          ELG2     0.380      0.170       0.189        2.01x
+   1.484           QSO     0.570      0.255       0.270        2.11x
+   2.330           Lya     0.640      0.286       0.310        2.06x
+
+  f*sigma_8 error projections (DR3):
+       z            Survey   DR1 err   DR3 stat   DR3 total
+   0.067             6dFGS     0.055      0.025       0.025
+   0.150          SDSS MGS     0.160      0.072       0.072
+   0.380         BOSS DR12     0.045      0.020       0.021
+   0.510     DESI DR1 LRG1     0.025      0.011       0.012
+   0.610         BOSS DR12     0.034      0.015       0.016
+   0.710     DESI DR1 LRG2     0.022      0.010       0.011
+   0.930  DESI DR1 LRG3+ELG     0.026      0.012       0.013
+   1.320     DESI DR1 ELG2     0.044      0.020       0.020
+   1.480         eBOSS QSO     0.045      0.020       0.021
+
+========================================================================
+4. DR3 Discriminating Power: D_M/r_d (BAO)
+========================================================================
+
+  If current D_M residuals persist, DR3 pulls:
+       z        Tracer   DR1 pull   DR3 pull
+   0.295           BGS    +1.832s    +3.861s
+   0.510          LRG1    -1.619s    -3.229s
+   0.706          LRG2    -2.263s    -4.213s
+   0.934     LRG3+ELG1    -0.263s    -0.496s
+   1.321          ELG2    -0.433s    -0.869s
+   1.484           QSO    -0.273s    -0.575s
+   2.330           Lya    -1.761s    -3.636s
+
+  FW chi^2 (D_M, DR1): 14.53 / 7 = 2.076
+  FW chi^2 (D_M, DR3): 57.64 / 7 = 8.234
+  LCDM chi^2 (D_M, DR1): 9.74 / 7 = 1.392
+  LCDM chi^2 (D_M, DR3): 40.68 / 7 = 5.812
+
+  Mean pull (FW, DR1): -0.683
+  Mean pull (FW, DR3): -1.308
+  Coherent pull significance (DR3): 3.46-sigma
+  (A +0.68-sigma mean pull, scaled by sqrt(7) = 2.65)
+
+  LRG2 (z=0.706) specifically:
+    DR1 pull: -2.263-sigma
+    DR3 pull (if residual persists): -4.213-sigma
+    This bin reaches 4.2-sigma in DR3, becoming decisive by itself.
+
+========================================================================
+5. DR3 Discriminating Power: f*sigma_8 (RSD)
+========================================================================
+
+  With DR3 errors (including systematic floor):
+  chi^2 FW (DR3): 31.89 / 9 = 3.544
+  chi^2 LCDM (DR3): 36.25 / 9 = 4.028
+  Delta(chi^2) FW-LCDM (DR3): -4.36
+  FW preferred at 2.09-sigma (Wilks, 1 dof)
+
+  Per-bin residuals (DR3 errors):
+       z            Survey      Obs       FW     LCDM  DR1 sig(FW)  DR3 sig(FW)
+   0.067             6dFGS    0.423    0.430    0.444       -0.13s       -0.29s
+   0.150          SDSS MGS    0.530    0.443    0.459       +0.54s       +1.22s
+   0.380         BOSS DR12    0.497    0.457    0.476       +0.89s       +1.93s
+   0.510     DESI DR1 LRG1    0.451    0.455    0.474       -0.16s       -0.32s
+   0.610         BOSS DR12    0.436    0.450    0.469       -0.42s       -0.89s
+   0.710     DESI DR1 LRG2    0.436    0.443    0.461       -0.34s       -0.67s
+   0.930  DESI DR1 LRG3+ELG    0.444    0.424    0.439       +0.78s       +1.60s
+   1.320     DESI DR1 ELG2    0.357    0.383    0.395       -0.60s       -1.30s
+   1.480         eBOSS QSO    0.462    0.367    0.377       +2.11s       +4.58s
+
+========================================================================
+6. Combined DR3 Discriminating Power
+========================================================================
+
+  Channel-by-channel Delta(chi^2) FW-LCDM:
+    BAO D_M/r_d (DR3 errors):        +16.96
+    RSD f*sigma_8 (DR3 errors):       -4.36
+    SNe Pantheon+ (S70 full cov):     -7.82
+    RSD f*sigma_8 (S70 full cov):     -0.61
+
+  Combined Delta(chi^2) (current data, DR3 BAO errors):
+    BAO + RSD(full cov) + SNe(full cov) = +8.53
+    LCDM preferred at 2.92-sigma (combined, Wilks 1 dof)
+
+  Pattern: BAO penalizes FW (chi^2 ++16.96),
+           RSD and SNe compensate (-0.61 and -7.82).
+  The BAO penalty comes from the LRG2 z=0.706 bin specifically.
+
+========================================================================
+7. w_0-w_a Fisher Forecast Update
+========================================================================
+
+  DR3 sensitivity projections:
+  S68 baseline (DR2/sqrt(2)):  sigma_w0 = 0.0403, sigma_wa = 0.1768
+  Updated (5x DR1 = DR2/sqrt(2.5)): sigma_w0 = 0.0360, sigma_wa = 0.1581
+
+  --- Scenario A: DR3 confirms DR2 (w_0=-0.75, w_a=-0.73) ---
+    [S68 baseline] FW: 3.91-sigma, LCDM: 6.25-sigma
+    [      5x DR1] FW: 4.44-sigma, LCDM: 7.04-sigma
+
+  --- Scenario B: DR3 shifts toward LCDM (w_0=-0.90, w_a=-0.30) ---
+    [S68 baseline] FW: 2.06-sigma, LCDM: 2.12-sigma
+    [      5x DR1] FW: 2.37-sigma, LCDM: 2.44-sigma
+
+  --- Scenario C: DR3 increases dynamical DE (w_0=-0.65, w_a=-1.00) ---
+    [S68 baseline] FW: 6.33-sigma, LCDM: 37.07-sigma
+    [      5x DR1] FW: 7.13-sigma, LCDM: 37.07-sigma
+
+========================================================================
+8. UPDATED DECISION TREE: DESI DR3
+========================================================================
+
+  Pre-registered thresholds (S60 DR3-PREREGISTER-60, unchanged):
+    w_a < -0.530  =>  framework excluded (>= 3-sigma)
+    w_a > -0.350  =>  framework consistent (<= 2-sigma)
+    -0.530 <= w_a <= -0.350  =>  tension zone
+
+  S68 scenario results vs S70 updated:
+                  w_0      w_a    S68 FW    S70 FW   S68 LCDM    S70 LCDM
+  ----------  -------  -------  --------  --------  ---------  ----------
+       Sc. A   -0.750   -0.730     3.91s     4.44s      6.25s       7.04s
+       Sc. B   -0.900   -0.300     2.06s     2.37s      2.12s       2.44s
+       Sc. C   -0.650   -1.000     6.33s     7.13s     37.07s      37.07s
+
+  Key changes from S68 to S70:
+    1. Scenario sigmas increase slightly because 5x DR1 gives tighter
+       errors than S68's 4x DR1 assumption (sqrt(2) -> sqrt(2.5)).
+    2. FW and LCDM BOTH static (w_a=0). They respond identically to
+       dynamical DE discovery -- both excluded if w_a << 0.
+    3. FW has a persistent ~2-sigma advantage over LCDM from w_0=-0.918
+       vs -1.0, but ONLY in scenarios where |w_a| is small (Sc.B).
+
+========================================================================
+9. New Decision Criteria from S69-S70 Data Tests
+========================================================================
+
+  The S69-S70 data tests add three new decision branches:
+
+  BRANCH 1: D_M/r_d chi^2/dof
+    Current: 2.076 (DR1 errors)
+    If chi^2/dof(D_M) drops below 1.5 with DR3: BAO tension RESOLVED
+    If chi^2/dof(D_M) rises above 3.0 with DR3: w_a=0 under severe stress
+    DR3 projection (residuals persist): chi^2/dof = 8.234
+    => EXCEEDS 3.0 threshold. BAO channel would put w_a=0 under severe stress.
+    DR3 projection (residuals halve): chi^2/dof = 2.059
+
+  BRANCH 2: f*sigma_8 Delta(chi^2)
+    Current (diagonal): -1.186
+    Current (full cov): -0.609
+    DR3 projection (residuals persist): -4.36
+    If Delta(chi^2) < -3.0 with DR3: FW firmly preferred over LCDM
+    If Delta(chi^2) > 0 with DR3: LCDM preferred, FW advantage lost
+
+  BRANCH 3: Combined expansion-history preference
+    Currently: BAO penalizes FW, RSD + SNe compensate.
+    If combined Delta(chi^2) < -10: Strong FW preference
+    If combined Delta(chi^2) > 0: FW no longer preferred overall
+
+========================================================================
+10. Observational Discriminant Hierarchy (Updated)
+========================================================================
+
+   Rank                           Observable                                 Current Status
+  -----  -----------------------------------  ---------------------------------------------
+      1        ISW auto-power (c_s^2=0 vs 1)                                 FW/Quint +6.7%
+                                   Forecast:                                  21cm ~2.6-sig
+                                       Note:  SUBSTRATE-SPECIFIC: only test that probes DE perturbation physics
+      2              f*sigma_8 (growth rate)               chi^2/dof FW=0.761 vs LCDM=0.893
+                                   Forecast:                         DR3 Delta chi^2 ~ -4.4
+                                       Note:          FW preferred; sigma_8=0.793 eases S_8
+      3     Pantheon+ SNe (distance modulus)                 Delta chi^2 = -7.82 (full cov)
+                                   Forecast:                       2.80-sigma FW preference
+                                       Note:  FW preferred; w=-0.918 absorbs calibration systematics
+      4                          D_M/r_d BAO                              chi^2/dof = 2.076
+                                   Forecast:                            DR3 chi^2/dof ~ 8.2
+                                       Note:  Framework's WEAKEST link; LRG2 z=0.706 critical
+      5                  Cluster counts N(z)            LCDM preferred (Delta chi^2 ~ -2.5)
+                                   Forecast:                            Cannot discriminate
+                                       Note:  sigma_8 advantage independent of mass calibration
+      6          n_s, r CMB (pre-registered)                            n_s=0.9590, r=0.024
+                                   Forecast:                              CMB-S4 / LiteBIRD
+                                       Note:  Within 1.4-sigma (n_s), 24-sigma detection (r) of LiteBIRD
+
+========================================================================
+11. Cross-checks Against S68
+========================================================================
+
+  [1] S68 scenario sigmas (rho=-0.85, DR2/sqrt(2)):
+      Sc.A: FW 3.91-sig, LCDM 6.25-sig
+      Sc.B: FW 2.06-sig, LCDM 2.12-sig
+      Sc.C: FW 6.33-sig, LCDM 37.07-sig
+      S70 updated (5x DR1 = tighter errors):
+      Sc.A: FW 4.44-sig, Sc.B: FW 2.37-sig, Sc.C: FW 7.13-sig
+
+  [2] S66 WA-REASSESS-66 confirmed: substrate compaction CLOSED (w_a=+1.121, wrong sign).
+      Pure FW (w_0=-0.918, w_a=0) remains the sole DE prediction.
+
+  [3] S69 data test summary:
+      D_M/r_d: chi^2/dof = 2.076 (weakest link, LRG2 at -2.26 sigma)
+      f*sigma_8: chi^2/dof = 0.761 (FW preferred)
+      SNe: Delta chi^2 = -7.82 (FW strengthened with full cov)
+
+  [4] S70 full-covariance effects:
+      RSD: Delta chi^2 went from -1.186 to -0.609
+      SNe: Delta chi^2 went from -4.26 to -7.82
+      Direction: RSD weakened, SNe strengthened. Net FW advantage robust.
+
+  [5] ISW tracking (S70 Boltzmann-level):
+      S68 Limber: ISW-gal FW/Quint = 7.6%
+      S70 Boltzmann: ISW auto FW/Quint = 6.72% (PASS), ISW-gal = 3.98% (Limber overpredicted 1.9x)
+      The ISW auto-power is the cleaner channel; ISW-gal diluted by galaxy window.
+
+========================================================================
+12. PRE-REGISTERED DESI DR3 DECISION TREE (UPDATED S70)
+========================================================================
+
+  +--------------------------+
+  |    DESI DR3 RELEASED     |
+  +-----------+--------------+
+              |
+              v
+  +---------------------------+
+  | Extract w_0, w_a, errors  |
+  | at each z-bin             |
+  +---------------------------+
+              |
+    +---------+---------+
+    |                   |
+    v                   v
+  w_a < -0.53       w_a > -0.35
+  (3-sigma excl)    (2-sigma OK)
+    |                   |
+    v                   v
+  FW EXCLUDED       FW CONSISTENT
+  LCDM excluded     Test chi^2/dof(D_M)
+  Both static fail  and f*sig8 Delta chi^2
+    |                   |
+    |          +--------+--------+
+    |          |                 |
+    |          v                 v
+    |     chi^2/dof < 1.5   chi^2/dof > 1.5
+    |     BAO RESOLVED      BAO PERSISTS
+    |          |                 |
+    |          v                 v
+    |     FW SURVIVES       Test Delta chi^2(f*sig8)
+    |     w=-0.918 viable        |
+    |                    +-------+-------+
+    |                    |               |
+    |                    v               v
+    |              Delta < -3       Delta > 0
+    |              FW PREFERRED     FW LOSES GROWTH
+    |                                ADVANTAGE
+    |
+    v (if -0.53 < w_a < -0.35)
+  TENSION ZONE
+  Both FW and LCDM under stress
+  ISW tracking becomes discriminant
+              |
+              v
+  +---------------------------+
+  | ISW auto FW/Quint > 5%?  |
+  | (21cm required, ~2040)    |
+  +---------------------------+
+
+
+  ADDITIONAL DR3 TESTS (new from S69-S70):
+  1. LRG2 z=0.706 pull: if |pull| > 3.0 with DR3 -> systematic or real
+  2. sigma_8 from RSD: if sigma_8 < 0.80 confirmed -> S_8 tension eased
+  3. BAO + RSD + SNe combined Delta chi^2:
+     < -10: Strong FW preference (w=-0.918 conclusive)
+     > 0:   FW no longer preferred overall
+     Net direction depends on whether LRG2 residual persists.
+
+========================================================================
+GATE VERDICT: DESI-DR3-UPDATE-70
+========================================================================
+
+  Gate: DESI-DR3-UPDATE-70
+  Verdict: INFO
+  Detail: Updated S68 decision tree with S69-S70 data tests. D_M/r_d chi^2/dof = 2.076 (weakest, LRG2 z=0.706 pull=-2.26). f*sig8 FW preferred (Delta chi^2 = -0.609 full cov). SNe FW preferred (Delta chi^2 = -7.82 full cov). DR3 projections (5x DR1): Sc.A FW 4.44-sig, Sc.B FW 2.37-sig, Sc.C FW 7.13-sig. BAO chi^2/dof < 1.5 threshold (BAO resolved) and f*sig8 Delta chi^2 < -3 threshold (FW firmly preferred) pre-registered. ISW tracking (+6.7% FW/Quint) remains sole substrate-specific discriminant.
+
+========================================================================
+SUMMARY TABLE
+========================================================================
+
+                 Observable |            Current |      FW vs LCDM |       DR3 Forecast
+  --------------------------+--------------------+-----------------+-------------------
+          D_M/r_d chi^2/dof |              2.076 |     LCDM better |             8.2   
+         f*sig8 Delta chi^2 |             -0.609 |       FW better |            -4.4   
+            SNe Delta chi^2 |              -7.82 |       FW better |              --   
+          ISW auto FW/Quint |              +6.7% |      PASS (>5%) |   21cm ~2.6-sig   
+                    sigma_8 |     0.793 vs 0.811 |    FW eases S_8 |              --   
+          LRG2 z=0.706 pull |          -2.26-sig |       Worst bin |        -4.2-sig   
+
+========================================================================
+Generating Plot
+========================================================================
+  Plot saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s70_desi_dr3_update.png
+
+========================================================================
+Saving Data
+========================================================================
+  Data saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s70_desi_dr3_update.npz
+
+========================================================================
+DESI-DR3-UPDATE-70 COMPLETE
+========================================================================

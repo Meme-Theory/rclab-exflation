@@ -1,0 +1,204 @@
+================================================================================
+JENSEN-THRESHOLD-74: Full per-mode Jensen-dependent threshold sum
+S74 W2-J | connes-ncg-theorist
+================================================================================
+  tau_fold          = 0.19
+  M_KK              = 7.429e+16 GeV
+  M_Z               = 91.1876 GeV
+  sin^2(theta_W)|PDG = 0.23122
+
+================================================================================
+1. LOAD W1-C SPECTRUM CACHE
+================================================================================
+  Cache has 52 PW sectors, total 45344 eigenvalues
+  Levels present (L = p + q): [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  Eigenvalue range (M_KK units): [0.8197, 4.2961]
+  All eigenvalues positive (n_zero = 0); Jensen deformation confirmed away from bi-invariant.
+
+================================================================================
+2. LOAD S63 CSDR BRANCHING (SU(3) -> SU(2) x U(1))
+================================================================================
+  S63 branching has 28 sectors (up to L = p+q = 6)
+
+================================================================================
+3. EXTEND DYNKIN DATA TO L = 9
+================================================================================
+  S63 covered 28 sectors; extended by 24 new sectors to cover L = 9
+    Newly computed: [(0, 7), (0, 8), (0, 9), (1, 6), (1, 7), (1, 8), (2, 5), (2, 6)]...
+  S63 overlap re-check: max |delta(T_i)| = 0.00e+00
+
+================================================================================
+4. NORMALIZE U(1) DYNKIN INDEX (GUT: 1/alpha_1 = (3/5)/alpha_Y)
+================================================================================
+  (1,0) fundamental:  dim=3, T_SU3=0.5, T_SU2=0.5, T_U1(phys)=6.0, T_U1(GUT)=3.6000
+  Standard reference: T_SU3(fund)=1/2, T_SU2(fund in (3,1))=1/2, T_U1(fund,Y^2 sum)=6, T_U1_GUT=18/5=3.6
+
+================================================================================
+5. SECTOR-BY-SECTOR JENSEN-DRESSED ENERGY CHECK
+================================================================================
+   (p,q)  L     n  omega_min  omega_max omega_mean
+--------------------------------------------------
+  (0, 0)  0    16     0.8197     0.9714     0.8894
+  (0, 1)  1    48     0.8359     1.3277     1.1134
+  (0, 2)  2    96     0.9722     1.6922     1.3880
+  (0, 3)  3   160     1.2483     2.0606     1.6879
+  (0, 4)  4   240     1.5242     2.4311     2.0011
+  (0, 5)  5   336     1.7875     2.8028     2.3222
+  (0, 6)  6   448     2.0526     3.1755     2.6481
+  (0, 7)  7   576     2.3204     3.5486     2.9774
+  (0, 8)  8   720     2.5900     3.9222     3.3088
+  (0, 9)  9   880     2.8608     4.2961     3.6420
+  ... (42 more sectors)
+
+================================================================================
+6. FULL JENSEN THRESHOLD SUM
+================================================================================
+  Following S71 / S72 convention:
+  delta(1/g_i^2)(tau) = sum_{(p,q) != (0,0)} T_i(p,q)/(8 pi^2)
+                       * ln(Lambda_R^2 / omega_{eff}(p,q)^2)
+                       * exp(-omega_{eff}^2 / Lambda_R^2)
+  where omega_{eff}(p,q) is the per-sector effective mass.
+  W2-J refinement over S72/S71:
+    - We use three choices for omega_eff:
+      (I)  omega_min(p,q)                -- S71 convention, S_inf = 2.353
+      (II) <omega>(p,q)                 -- arithmetic mean over the sector
+      (III) per-mode average of ln(Lambda/omega_k) -- full Jensen resolution
+    - Jensen dependence enters through omega_min, <omega>, {omega_k}
+      (all already baked into the W1-C cache at tau = 0.19).
+
+  Lambda_cut = 1.001 * max(omega) = 4.3004 M_KK units
+  Regulator: Gaussian  f(omega/Lambda_R) = exp(-(omega/Lambda_R)^2)
+    Lambda_R = 2.0480 M_KK (from S71 spectral zeta threshold)
+
+  Method (IV) DECOUPLED (omega_min < Lambda_R = 2.048):
+    Sectors included: 25 / 52
+    delta_1 = 16.941737
+    delta_2 = 2.353019
+    delta_3 = 2.353019
+    (delta_3 matches S71 S_inf = 2.3527 to 0.1%)
+
+  Method (I)  omega_eff = omega_min (S71 convention):
+    delta_1 = -36.747306
+    delta_2 = -5.103793
+    delta_3 = -5.103793
+  Method (II) omega_eff = <omega> (arithmetic mean per sector):
+    delta_1 = -53.835941
+    delta_2 = -7.477214
+    delta_3 = -7.477214
+  Method (III) full per-mode average:
+    delta_1 = -50.838853
+    delta_2 = -7.060952
+    delta_3 = -7.060952
+
+  Cross-check: delta_3 (L<=7, omega_min, S71 recipe) = 1.633511
+  S71 S_inf (Gaussian, L_max=7)                       = 2.352668
+
+  Gate-used deltas at tau = 0.19 (Method IV, decoupled):
+    delta_1 (U(1)_Y, GUT)  = 16.941737
+    delta_2 (SU(2)_L)      = 2.353019
+    delta_3 (SU(3)_c)      = 2.353019
+    delta_1 - delta_2      = 14.588718  (differential drives sin^2)
+    delta_1 / delta_3      = 7.200000
+    delta_2 / delta_3      = 1.000000
+
+================================================================================
+7. BI-INVARIANT (tau = 0) LIMIT -- analytic cross-check
+================================================================================
+  At tau = 0 the Jensen deformation is absent.  The eigenvalues of D_K on
+  the round SU(3) take values |lambda_{(p,q)}| = sqrt(C_2(p,q) + C_2(Spin)).
+  Without per-mode splitting, log(Lambda/omega) is common to every mode in
+  a sector, so the Jensen-dressed sum degenerates to the UNIVERSAL S72 model
+  with the simple ratio
+     delta_i / delta_3 = T_i^{tot} / T_3^{tot}
+  where T_i^{tot} = sum_sectors T_i(p,q) * n_modes(p,q) / dim(p,q)
+  This is the limit that S72 Model A (universal) was approximating.
+  T_1^tot (GUT-normalized): 954086.4000
+  T_2^tot                : 132512.0000
+  T_3^tot                : 132512.0000
+  T_1^tot / T_3^tot      : 7.2000
+  T_2^tot / T_3^tot      : 1.0000
+  (Compare S72 Model A: delta_i / delta_3 = 1:1:1 assumed universal.)
+
+================================================================================
+8. ANCHORED RG RUNNING TO M_Z AND sin^2(theta_W) PREDICTION
+================================================================================
+  ln(M_KK / M_Z) = 34.3338
+  b_1 = 4.1000, b_2 = -3.1667
+  Delta^RG(1/alpha_1) = 22.4040,  Delta^RG(1/alpha_2) = -17.3039
+  sin^2(theta_W)_geo|_M_KK = 0.583853  (matches canonical 0.58385339192799)
+  c_ratio = (3/5)*(1-sin2_geo)/sin2_geo = 0.427655
+  Delta_threshold(1/alpha_1) = 4*pi*delta_1 = 212.8961
+  Delta_threshold(1/alpha_2) = 4*pi*delta_2 = 29.5689
+
+  Anchored M_KK couplings (bare, before threshold):
+    1/alpha_2(M_KK) = -161.4220
+    1/alpha_1(M_KK) = -69.0330
+  Effective M_KK couplings (bare + threshold):
+    1/alpha_2^eff(M_KK) = -131.8531
+    1/alpha_1^eff(M_KK) = 143.8632
+  Ran down to M_Z (one-loop):
+    1/alpha_2(M_Z)  = -149.1570
+    1/alpha_1(M_Z)  = 166.2672
+    1/alpha_em(M_Z) = 127.9550  (anchor: 127.955)
+
+  sin^2(theta_W)|_M_Z (tree, full Jensen threshold) = -1.165699
+  PDG observed                                      = 0.23122
+  Absolute deviation = -1.396919
+  Relative deviation = 604.151 percent
+
+================================================================================
+9. GATE VERDICT: JENSEN-THRESHOLD-74
+================================================================================
+  Threshold: |sin^2(tree) - 0.23122| = 1.396919
+    PASS if < 0.003 (1.3 percent relative)
+    INFO if in [0.003, 0.010)
+    FAIL if >= 0.010
+  Verdict: JENSEN-THRESHOLD-74 = FAIL
+
+================================================================================
+10. COMPARISON WITH S72 MODEL A (UNIVERSAL THRESHOLD)
+================================================================================
+  S72 Model A assumed delta_1 = delta_2 = delta_3 = S_inf = 2.353 (Gaussian).
+  S72 Model A result: sin^2(M_Z) = 0.229 (1.2 percent from PDG)
+  STRUCTURAL FINDING (W2-J): S72 Model A's assumption is internally
+  INCONSISTENT with the Baptista hypercharge embedding.
+  The CORRECT per-sector Dynkin ratio in the Baptista convention is
+    T_1_GUT(p,q) : T_2(p,q) : T_3(p,q) = 7.2 : 1 : 1   (constant across (p,q))
+  so that delta_1 = 7.2 * delta_3 = 16.942 (not delta_3 = 2.353).
+  The 1.2 percent match of S72 Model A was a FALSE COINCIDENCE arising
+  from the SAME wrong ratio (1:1:1) that accidentally anchored sin^2 near
+  0.229.
+  S72 Model A re-computed here = 0.228493
+  W2-J Jensen-dressed result   = -1.165699
+  Delta (Jensen - universal)   = -1.394192
+
+================================================================================
+11. CROSS-CHECKS
+================================================================================
+  (a) alpha_1(M_Z) > 0: PASS
+  (a) alpha_2(M_Z) > 0: FAIL
+  (b) mode counts sum to dim*16 per sector: PASS
+  (b) total eigenvalues = 45344  (expected 45344)
+  (c) sin^2(theta_W) decreases from M_KK to M_Z: PASS
+  (d) T_i^tot ratios at Jensen-off limit:
+        T_1_GUT / T_3 = 7.2000  (would give delta_1 ~ delta_3 for universal model)
+        T_2     / T_3 = 1.0000
+
+================================================================================
+12. SAVE OUTPUT
+================================================================================
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s74_jensen_threshold.npz
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s74_jensen_threshold.png
+
+================================================================================
+JENSEN-THRESHOLD-74 SUMMARY
+================================================================================
+  tau_fold = 0.19
+  Modes summed:  45344 eigenvalues across 52 PW sectors (L_max = 9)
+  delta_1 = 16.941737
+  delta_2 = 2.353019
+  delta_3 = 2.353019
+  sin^2(theta_W)|_M_Z tree = -1.165699
+  PDG target               = 0.23122
+  Deviation                = -1.396919  (604.151 percent)
+  Verdict: JENSEN-THRESHOLD-74 = FAIL

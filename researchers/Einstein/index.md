@@ -1,91 +1,100 @@
 # Einstein Paper Index
 
-**Researcher**: Einstein (+ Bell, Oppenheimer, Pound-Rebka, McAllister, Quevedo, DESI, Will, Zurek, Zloshchastiev, Giulini, Peldan, et al.)
-**Papers**: 34 (1905--2025)
-**Primary domain**: General relativity, equivalence principles, cosmological constant, statistical mechanics, quantum foundations, moduli stabilization, dark energy observations, analog gravity
-**Project relevance**: Foundational GR and equivalence principles underpin the spectral-geometric framework; EIH effacement parallels the substrate's 1/6596 indifference ratio; CC problem is the central open question; DESI w(z) is the primary falsification gate; analog gravity BEC validates phonon creation mechanism
+**Researcher**: Einstein (+ collaborators: Will, Touboul/MICROSCOPE, Blanchet, Brunner et al., Bao et al., Sola Peracaula, Capozziello, DESI Collaboration, Giare et al., McAllister-Quevedo, Bronnikov-Rubin, Vacher et al., Bernardo-Brandenberger, Giulini, Chunn et al., King et al., Suzuki-Zurek, Zloshchastiev)
+**Papers**: 20 (PDF-backed, 1993-2025) + 16 historical references (pre-arXiv)
+**Primary domain**: General relativity experimental tests, equivalence principle, EIH formalism, cosmological constant problem, dark energy dynamics, moduli stabilization, quantum foundations, analog gravity, Kibble-Zurek defect formation
+**Project relevance**: These papers define the gravitational, cosmological, and foundational constraints that the M4 x SU(3) phonon-exflation framework must satisfy -- from the MICROSCOPE precision floor (eta < 10^{-15}) through the DESI DR2 dark energy signal (3-4 sigma), the CC problem and its nonlocal resolution, to the analog gravity and KZM physics that underpin the transit mechanism.
+**Rebuilt**: 2026-03-27 from arXiv source PDFs. All content traces to source PDFs.
 
 ---
 
 ## Dependency Graph
 
 ```
-ANNUS MIRABILIS (1905)
-  01 (SR) ──────────────────────────> 05 (Field Eqs) ──> 06 (GR Foundation) ──> 07 (CC)
-  02 (E=mc^2) ──> 05                                       |                      |
-  03 (Light quanta) ──> 08 (BEC)                            |                      |
-  04 (Brownian motion)                                      |                      |
-                                                            v                      v
-EXPERIMENTAL GR                                     10 (EIH motion)         17 (CC problem)
-  11 (Eddington eclipse) <── 06                      |                      32 (Running vacuum)
-  14 (Pound-Rebka) <── 06                            v                      |
-  12 (Oppenheimer-Snyder) <── 05                 26 (Modified EIH)          v
-                                                 27 (3PN internal)    18 (DESI DR2)
-QUANTUM FOUNDATIONS                                                   19 (Giare dDE)
-  09 (EPR) ──> 13 (Bell) ──> 29 (ER=EPR)
-  08 (BEC) ──> 28 (Phonon BEC analog)
+GR FOUNDATIONS & EQUIVALENCE PRINCIPLE
+  01 (Will 2014 Review) ──────> 02 (MICROSCOPE 2022: tightest WEP, eta<10^{-15})
+       |                              |
+       +────> 03 (Will 2018: Modified EIH, sensitivities)
+       |           |
+       |           +────> 04 (Blanchet 2025: 3PN structure coefficients, SEP test)
+       |
+       +────> 14 (Vacher 2023: Runaway dilaton constraints)
+                   [uses 01 PPN + 02 MICROSCOPE bounds]
 
-MODULI STABILIZATION & EXTRA DIMENSIONS
-  15 (McAllister-Quevedo KKLT/LVS) ──> 34 (Swampland SGC)
-  21 (Carroll-Randall Casimir) ──> 15
-  16 (Weinberg nonlocal) ──> 17
-  22 (Peldan DeWitt) ──> 23 (Giulini superspace)
-  24 (PDG extra dims) <── 25 (MICROSCOPE EP)
-  20 (Runaway dilaton) ──> 18, 19
+QUANTUM FOUNDATIONS
+  05 (Brunner 2014: Bell nonlocality review) ── standalone
+  06 (Bao 2024: ER=EPR operational theorem) ── standalone
+       [both inform framework GGE entanglement structure]
 
-KIBBLE-ZUREK & SUPERFLUID VACUUM
-  30 (King KZ Ising) ──> 33 (Suzuki-Zurek tunable)
-  31 (Zloshchastiev SVT) <── 08
-  28 (Barral phonon BEC) <── 08, 12
+DARK ENERGY & COSMOLOGICAL CONSTANT
+  07 (Sola 2024: Vacuum Energy RVM) <──> 08 (Sola 2022: Running Vacuum review)
+       |                                        |
+       +──── both cite ───> 10 (DESI DR2 2025: BAO, w_0 w_a)
+       |                         |
+       |                    11 (Giare 2025: w(z) non-parametric reconstruction)
+       |                         [uses 10 as primary dataset]
+       |
+  09 (Capozziello 2025: Weinberg no-go + IDG nonlocal evasion)
+       [addresses same CC problem as 07-08 via nonlocality]
+
+EXTRA DIMENSIONS & MODULI
+  12 (McAllister-Quevedo 2023: KKLT/LVS string review)
+       |
+       +────> 13 (Bronnikov-Rubin 2006: F(R) stabilization, classical)
+       |           [same problem, higher-curvature approach]
+       |
+       +────> 14 (Vacher 2023: Runaway dilaton)
+       |           [dilaton = modulus; constrained by 01, 02]
+       |
+       +────> 15 (Bernardo-Brandenberger 2021: Swampland + string gas)
+                   [shape moduli via string gas; swampland compliance]
+
+SUPERSPACE, ANALOG GRAVITY & DEFECTS
+  16 (Giulini 1993: WDW metric on superspace) ── standalone
+       [mathematical foundation for TT sector stability]
+  17 (Chunn 2025: Phonon BEC FLRW) ── standalone
+       [direct BEC analog of phonon creation mechanism]
+  18 (King 2024: KZM Ising domains)
+       |
+       +────> 19 (Suzuki-Zurek 2024: Tunable KZM + nucleation)
+                   [extends KZM to weakly first-order; both inform transit]
+  20 (Zloshchastiev 2020: SVT scale-dependent gravity) ── standalone
+       [superfluid vacuum -> emergent multi-scale gravity]
+
+CROSS-GROUP BRIDGES
+  01 <-> 14: PPN/Eotvos bounds constrain dilaton/modulus coupling
+  02 <-> 14: MICROSCOPE directly bounds alpha_h < 5x10^{-6}
+  03 <-> 04: EIH at 1PN (03) vs 3PN structure dependence (04)
+  07 <-> 10: RVM predicts w > -1 quintessence; DESI tests it
+  09 <-> 07: Nonlocal gravity evades Weinberg no-go; RVM is an example
+  12 <-> 13: String vs classical KK moduli stabilization
+  17 <-> 20: BEC phonon cosmology from experiment (17) vs theory (20)
+  18 <-> 19: KZM for Ising condensed matter (18) extended to first-order (19)
 ```
 
 ---
 
 ## Topic Map
 
-### A. Special Relativity and Mass-Energy Equivalence
-Papers: 01, 02
-Principle-theoretic derivation of the Lorentz transformations and E=mc^2 from two postulates. The electromagnetic field tensor F^{mu nu} unifies E and B. Mass-energy equivalence is the Casimir invariant of the Poincare group.
+### A. GR Foundations & Equivalence Principle
+Papers: 01, 02, 03, 04
+The experimental and theoretical backbone. Paper 01 (Will 2014) is the definitive review of all GR tests establishing the PPN formalism (10 parameters, all consistent with GR). Paper 02 (MICROSCOPE 2022) provides the tightest WEP test at eta < 10^{-15}. Paper 03 (Will 2018) generalizes EIH to include body-dependent sensitivities s_a and preferred-frame effects. Paper 04 (Blanchet 2025) identifies 40 structure-dependent coefficients at 3PN that may or may not cancel -- a direct test of whether SEP holds at the deepest level.
 
-### B. Statistical Mechanics and Light Quanta
-Papers: 03, 04, 08
-Entropy-based reasoning reveals the granularity of light (photons) and the reality of atoms (Brownian motion). BEC statistics predict a phase transition in non-interacting bosons below T_c = (h^2/2pi m k_B)(n/zeta(3/2))^{2/3}.
+### B. Quantum Foundations
+Papers: 05, 06
+Paper 05 (Brunner 2014) is the comprehensive review of Bell nonlocality: local polytope, Tsirelson bound S <= 2sqrt(2), device-independent cryptography, nonlocality vs entanglement inequivalence. Paper 06 (Bao 2024) derives ER = EPR as an operational theorem from LOCC + holographic screens without embedding geometry, showing spacetime topology is observer-relative.
 
-### C. General Relativity: Field Equations and Applications
-Papers: 05, 06, 07, 11, 12, 14
-The Einstein tensor G_{mu nu} = R_{mu nu} - (1/2)g_{mu nu}R = (8 pi G/c^4) T_{mu nu} is derived from general covariance and the contracted Bianchi identity. Applications: Mercury precession (43"/century), light deflection (1.75"), gravitational redshift (Delta nu/nu = gh/c^2), cosmological constant, and gravitational collapse to black holes.
+### C. Dark Energy & Cosmological Constant
+Papers: 07, 08, 09, 10, 11
+Papers 07-08 (Sola 2022, 2024) develop the Running Vacuum Model: rho_vac(H) = rho_0 + nu(H^2-H_0^2) with m^4 terms exactly cancelled by off-shell adiabatic renormalization. Paper 09 (Capozziello 2025) shows nonlocal (IDG) theories evade the Weinberg no-go theorem because infinitely many coupled auxiliary fields prevent independent variation. Papers 10-11 (DESI DR2, Giare 2025) provide 3.1-4.2 sigma evidence for dynamical dark energy with Quintom B behavior (w_0 > -1, w_a < 0).
 
-### D. EIH: Motion from Field Equations
-Papers: 10, 26, 27
-The Bianchi identity nabla_mu G^{mu nu} = 0 implies nabla_mu T^{mu nu} = 0, which constrains worldlines. Bodies' motion follows from the field equations alone -- no separate force law. Effacement: internal structure does not affect orbital dynamics at low PN orders. Modern extensions to modified gravity and 3PN.
+### D. Extra Dimensions & Moduli
+Papers: 12, 13, 14, 15
+Paper 12 (McAllister-Quevedo 2023) reviews KKLT/LVS: flux superpotential fixes complex structure; non-perturbative effects fix Kahler moduli. Paper 13 (Bronnikov-Rubin 2006) demonstrates classical F(R) stabilization -- CC softened by ~30 orders but not solved. Paper 14 (Vacher 2023) constrains runaway dilaton couplings (alpha_{h,0} < 5x10^{-6} from MICROSCOPE). Paper 15 (Bernardo-Brandenberger 2021) shows string gas shape moduli satisfy swampland criteria with c_2 = pi/4.
 
-### E. Quantum Foundations: EPR, Bell, ER=EPR
-Papers: 09, 13, 29
-EPR: locality + reality criterion implies QM is incomplete. Bell: |S| <= 2 violated by QM at 2 sqrt(2). CHSH violation confirmed experimentally (2022 Nobel). ER=EPR: operational equivalence of entanglement and wormhole topology under LOCC.
-
-### F. Cosmological Constant Problem and Dark Energy
-Papers: 07, 16, 17, 32
-Einstein introduced Lambda (1917) for a static universe. QFT predicts rho_vac ~ M_Planck^4, observed rho_Lambda ~ 10^{-47} GeV^4 (122 OOM gap). Weinberg no-go: locality prevents any adjustment mechanism. Nonlocal gravity circumvents the no-go. Running Vacuum Model: Lambda(H) = Lambda_0 + nu H^2 from adiabatic renormalization.
-
-### G. DESI and Dark Energy Observations
-Papers: 18, 19
-DESI DR2 BAO: w_0 = -0.75 +/- 0.08, w_a = -1.05 +/- 0.45 (2.8 sigma from Lambda-CDM). Framework predicts w = -1 + O(10^{-29}), creating a 3-sigma falsification gate.
-
-### H. Moduli Stabilization and Extra Dimensions
-Papers: 15, 20, 21, 24, 34
-KKLT and LVS stabilize string theory moduli via flux + non-perturbative effects. Casimir + higher-curvature terms can self-stabilize KK dimensions (Carroll-Johnson-Randall). PDG 2025: no direct evidence for extra dimensions; M_* > 8 TeV. Swampland conjectures constrain de Sitter vacua and slow-roll inflation.
-
-### I. Superspace Geometry and DeWitt Metric
-Papers: 22, 23
-DeWitt metric G^{ijkl} = h^{-1/2}(h^{ik}h^{jl} + h^{il}h^{jk} - h^{ij}h^{kl}) on Riem(Sigma) has indefinite signature: TT modes positive, conformal modes negative. Wheeler-DeWitt equation is hyperbolic, not elliptic. Geodesics in metric space are generically incomplete.
-
-### J. Equivalence Principle and Experimental Tests
-Papers: 14, 25, 26
-MICROSCOPE: eta(Ti,Pt) = [-1.5 +/- 2.8] x 10^{-15}. Tenfold improvement over previous tests. Framework's frozen tau modulus must satisfy |Delta tau/tau| < 10^{-15} to avoid fifth-force violations.
-
-### K. Analog Gravity and Kibble-Zurek
-Papers: 28, 30, 31, 33
-BEC density engineering simulates FLRW metric; sudden quench creates entangled phonon pairs via Bogoliubov mixing. KZM applies to Ising domains (topologically trivial). Suzuki-Zurek extends KZM to tunable first/second-order transitions. Zloshchastiev SVT: superfluid vacuum naturally transitions from inflation to dark energy.
+### E. Superspace, Analog Gravity & Defects
+Papers: 16, 17, 18, 19, 20
+Paper 16 (Giulini 1993) establishes Lorentzian signature of WDW metric on superspace -- single negative direction is the conformal mode; TT modes positive definite. Paper 17 (Chunn 2025) demonstrates phonon FLRW cosmology in a BEC with Bogoliubov pair creation and entanglement. Papers 18-19 (King 2024, Suzuki-Zurek 2024) verify KZM for Ising domains and extend it to weakly first-order transitions via the combined formula n = f n_nuc + (1-f) n_KZM. Paper 20 (Zloshchastiev 2020) derives seven-term scale-dependent gravity from a logarithmic superfluid vacuum.
 
 ---
 
@@ -93,814 +102,666 @@ BEC density engineering simulates FLRW metric; sudden quench creates entangled p
 
 | If your task involves... | Read these papers | Priority |
 |:---|:---|:---|
-| Equivalence principle, frozen moduli, fifth forces | 10, 14, 25, 26 | CRITICAL |
-| Cosmological constant problem, CC arithmetic | 07, 16, 17, 32 | CRITICAL |
-| DESI w(z), dark energy falsification | 18, 19 | CRITICAL |
-| EIH effacement, motion from geometry | 10, 26, 27 | CRITICAL |
-| EPR/Bell, entanglement, CHSH = 2sqrt(2) | 09, 13, 29 | HIGH |
-| Moduli stabilization, KKLT/LVS, swampland | 15, 21, 34 | HIGH |
-| Analog gravity, phonon creation, BEC cosmology | 28, 31 | HIGH |
-| Kibble-Zurek mechanism, domain formation | 30, 33 | HIGH |
-| DeWitt metric, superspace geometry | 22, 23 | MEDIUM |
-| Extra dimensions, PDG constraints | 24 | MEDIUM |
-| Annus Mirabilis foundations | 01, 02, 03, 04 | MEDIUM |
-| GR derivations, field equations | 05, 06 | MEDIUM |
-| Runaway dilaton, varying constants | 20 | MEDIUM |
-| Gravitational collapse, black holes | 12 | LOW |
-| Eddington eclipse | 11 | LOW |
+| Equivalence principle constraints on tau | Papers 01, 02, 03, 14 | CRITICAL |
+| EIH formalism and effacement | Papers 03, 04, 01 | CRITICAL |
+| Cosmological constant problem | Papers 07, 08, 09 | CRITICAL |
+| DESI dark energy constraints / w(z) | Papers 10, 11 | CRITICAL |
+| Moduli stabilization | Papers 12, 13, 14, 15 | HIGH |
+| KZM and BCS transit physics | Papers 18, 19, 17 | HIGH |
+| Bell nonlocality and EPR | Papers 05, 06 | HIGH |
+| Analog gravity / BEC cosmology | Papers 17, 20 | HIGH |
+| Superfluid vacuum / DM from substrate | Paper 20 | HIGH |
+| Weinberg no-go evasion / nonlocal CC | Paper 09 | HIGH |
+| Superspace geometry / WDW metric | Paper 16 | MEDIUM |
+| Swampland criteria | Papers 15, 12 | MEDIUM |
+| Runaway dilaton / varying constants | Paper 14 | MEDIUM |
 
 ---
 
 ## Paper Entries
 
-### Paper 01: On the Electrodynamics of Moving Bodies
-- **File**: `01_1905_Einstein_On_the_electrodynamics_of_moving_bodies.md`
-- **Year**: 1905
-- **Journal**: Annalen der Physik 17, 891--921
-- **Relevance**: MEDIUM
-- **Tags**: special relativity, Lorentz transformations, principle theory, electromagnetic field tensor
-
-**Summary**: Derives the Lorentz transformations from two postulates (relativity principle + light constancy), demolishing absolute simultaneity. Unifies E and B into a single field tensor. Establishes principle-theoretic methodology: postulates first, consequences second.
-
-**Key Results**:
-- Lorentz transformation: x' = gamma(x - vt), t' = gamma(t - vx/c^2), gamma = 1/sqrt(1 - v^2/c^2)
-- Relativistic velocity addition: u_x = (u'_x + v)/(1 + u'_x v/c^2)
-- E, B transform as components of F^{mu nu}
-
-**Key Equations**:
-
-| Label | Description | Reference |
-|:---|:---|:---|
-| LT | Lorentz transformation | Sec. III |
-| VA | Velocity addition | Sec. V |
-| EMT | Field transformation | Sec. VI |
-
-**Dependencies**: Upstream: none (founding paper). Downstream: 02, 05, 06.
-
----
-
-### Paper 02: Does the Inertia of a Body Depend Upon Its Energy Content?
-- **File**: `02_1905_Einstein_Does_inertia_depend_on_energy_content.md`
-- **Year**: 1905
-- **Journal**: Annalen der Physik 18, 639--641
-- **Relevance**: MEDIUM
-- **Tags**: mass-energy equivalence, E=mc^2, rest energy
-
-**Summary**: Three-page derivation showing that a body emitting radiation L loses mass L/c^2. Generalizes to E = mc^2: mass is a measure of energy content. The conversion factor c^2 ~ 9 x 10^{16} J/kg explains why the effect is invisible in chemistry.
-
-**Key Results**:
-- m_0 - m_1 = L/c^2 (mass decrease equals radiated energy / c^2)
-- Full relativistic: E^2 = (pc)^2 + (mc^2)^2
-- Kinetic energy: K = (gamma - 1)mc^2
-
-**Key Equations**:
-
-| Label | Description | Reference |
-|:---|:---|:---|
-| E=mc^2 | Mass-energy equivalence | Central result |
-| EMR | Energy-momentum relation | E^2 = p^2c^2 + m^2c^4 |
-
-**Dependencies**: Upstream: 01 (SR). Downstream: 05 (energy gravitates), 08 (rest energy in BEC).
-
----
-
-### Paper 03: On a Heuristic Viewpoint Concerning the Production and Transformation of Light
-- **File**: `03_1905_Einstein_Heuristic_viewpoint_on_light_production.md`
-- **Year**: 1905
-- **Journal**: Annalen der Physik 17, 132--148
-- **Relevance**: MEDIUM
-- **Tags**: light quanta, photoelectric effect, Boltzmann entropy, wave-particle duality
-
-**Summary**: Entropy of monochromatic radiation in the Wien regime scales as n k_B ln(V/V_0) with n = E/(h nu), identical to an ideal gas of n particles. Explains the photoelectric effect: E_kin^max = h nu - W. Einstein called this his most "revolutionary" paper.
-
-**Key Results**:
-- n = E/(h nu): radiation behaves as n independent quanta
-- Photoelectric equation: eV_s = h nu - W
-- Threshold frequency: nu_0 = W/h
-
-**Key Equations**:
-
-| Label | Description | Reference |
-|:---|:---|:---|
-| LQ | Light quantum count | n = E/(h nu) |
-| PE | Photoelectric equation | eV_s = h nu - W |
-
-**Dependencies**: Upstream: none. Downstream: 08 (Bose statistics).
-
----
-
-### Paper 04: On the Movement of Small Particles Suspended in Stationary Liquids
-- **File**: `04_1905_Einstein_Movement_of_small_particles_in_stationary_liquids.md`
-- **Year**: 1905
-- **Journal**: Annalen der Physik 17, 549--560
-- **Relevance**: LOW
-- **Tags**: Brownian motion, diffusion, fluctuation-dissipation, Avogadro number
-
-**Summary**: Derives the diffusion equation from random walk statistics. The Stokes-Einstein relation D = k_B T/(6 pi eta a) connects macroscopic transport to molecular reality. Mean-squared displacement <x^2> = 2Dt. Proved atoms exist.
-
-**Key Results**:
-- Stokes-Einstein relation: D = k_B T / (6 pi eta a)
-- Diffusion equation: dn/dt = D d^2n/dx^2
-- Mean-squared displacement: <x^2> = 2Dt
-
-**Key Equations**:
-
-| Label | Description | Reference |
-|:---|:---|:---|
-| SE | Stokes-Einstein relation | D = k_BT/(6 pi eta a) |
-| MSD | Mean-squared displacement | <x^2> = 2Dt |
-
-**Dependencies**: Upstream: none. Downstream: fluctuation-dissipation theorem lineage.
-
----
-
-### Paper 05: The Field Equations of Gravitation
-- **File**: `05_1915_Einstein_Field_equations_of_gravitation.md`
-- **Year**: 1915
-- **Journal**: Sitzungsber. Preuss. Akad. Wiss. 844--847
+### Paper 01: The Confrontation between General Relativity and Experiment
+- **File**: `01_2014_Will_Confrontation_GR_Experiment.md`
+- **arXiv**: 1403.7377
+- **Year**: 2014
 - **Relevance**: CRITICAL
-- **Tags**: Einstein field equations, Ricci tensor, Bianchi identity, Mercury precession
+- **Tags**: PPN, EEP, WEP, LLI, LPI, Shapiro delay, perihelion, frame-dragging, gravitational waves, SEP, binary pulsars
 
-**Summary**: Final form of the gravitational field equations: G_{mu nu} = (8 pi G/c^4) T_{mu nu}. The contracted Bianchi identity guarantees nabla_mu G^{mu nu} = 0, matching energy-momentum conservation. Mercury's perihelion precession (43"/century) computed and confirmed.
+**Summary**: The definitive review of all experimental tests of GR. Establishes the three-part EEP (WEP + LLI + LPI), the 10-parameter PPN formalism, and surveys constraints from torsion balances (eta < 2x10^{-13}), Cassini (gamma-1 = 2.1x10^{-5}), lunar laser ranging (eta_N < 4.4x10^{-4}), and binary pulsars (0.2% quadrupole radiation). All PPN parameters consistent with GR.
 
 **Key Results**:
-- G_{mu nu} = R_{mu nu} - (1/2)g_{mu nu}R = kappa T_{mu nu}
-- kappa = 8 pi G/c^4 (from Newtonian limit)
-- Mercury precession: Delta phi = 6 pi GM/(c^2 a(1-e^2)) = 43"/century
-- Einstein-Hilbert action: S = (c^4/16 pi G) integral R sqrt(-g) d^4x
+- WEP: eta < 2x10^{-13} (Eot-Wash); LLI: delta < 10^{-26}
+- gamma - 1 = (2.1 +/- 2.3)x10^{-5} (Cassini Shapiro delay)
+- Gravitational radiation damping verified to 0.2%
+- All 10 PPN parameters consistent with GR
 
 **Key Equations**:
-
 | Label | Description | Reference |
 |:---|:---|:---|
-| EFE | Einstein field equations | G_{mu nu} = kappa T_{mu nu} |
-| BI | Contracted Bianchi identity | nabla_mu G^{mu nu} = 0 |
-| MP | Mercury precession | Delta phi = 6piGM/c^2a(1-e^2) |
+| Eotvos ratio | eta = 2\|a_1-a_2\|/\|a_1+a_2\| | Eq. (2) |
+| Gravitational redshift | Z = (1+alpha) Delta U/c^2 | Eq. (6) |
+| Perihelion advance | Delta omega = (6pi m/p)[1/3(2+2gamma-beta)+...] | Eq. (64) |
+| Nordtvedt parameter | eta_N = 4beta-gamma-3-10/3 alpha_1-... | Eq. (65) |
+| Sensitivity | s_a = d(ln m_a)/d(ln phi) | Via Will-Yunes |
 
-**Dependencies**: Upstream: 01, 02. Downstream: 06, 07, 10, 11, 12.
-
----
-
-### Paper 06: The Foundation of the General Theory of Relativity
-- **File**: `06_1916_Einstein_Foundation_of_general_theory_of_relativity.md`
-- **Year**: 1916
-- **Journal**: Annalen der Physik 49, 769--822
-- **Relevance**: CRITICAL
-- **Tags**: general covariance, Riemannian geometry, geodesic equation, covariant derivative, Christoffel symbols
-
-**Summary**: Definitive 50-page treatise. Introduces tensor calculus, covariant derivatives, Riemann curvature, geodesic equation, and the field equations in systematic form. Three classical tests computed: perihelion (43"), light deflection (1.75"), gravitational redshift.
-
-**Key Results**:
-- General covariance: laws as tensor equations
-- Geodesic equation: d^2x^alpha/d tau^2 + Gamma^alpha_{mu nu} (dx^mu/d tau)(dx^nu/d tau) = 0
-- Light deflection: delta = 4GM/(c^2 b) (twice Newtonian)
-- Christoffel symbols from metric
-
-**Key Equations**:
-
-| Label | Description | Reference |
-|:---|:---|:---|
-| GEO | Geodesic equation | d^2x/d tau^2 + Gamma dx/d tau dx/d tau = 0 |
-| CD | Covariant derivative | nabla_mu A^nu = partial_mu A^nu + Gamma^nu_{mu alpha} A^alpha |
-| RCT | Riemann curvature | R^rho_{sigma mu nu} = dGamma - dGamma + GammaGamma - GammaGamma |
-| LD | Light deflection | delta = 4GM/(c^2 b) |
-
-**Dependencies**: Upstream: 05. Downstream: 07, 10, 11, 12, 14.
+**Dependencies**: Upstream: none (foundational). Downstream: 02, 03, 04, 14.
 
 ---
 
-### Paper 07: Cosmological Considerations in the General Theory of Relativity
-- **File**: `07_1917_Einstein_Cosmological_considerations_on_GR.md`
-- **Year**: 1917
-- **Journal**: Sitzungsber. Preuss. Akad. Wiss. 142--152
-- **Relevance**: CRITICAL
-- **Tags**: cosmological constant, static universe, Lambda, Mach's principle, de Sitter space
-
-**Summary**: Introduces Lambda to maintain a static universe. The modified field equations G_{mu nu} + Lambda g_{mu nu} = kappa T_{mu nu} admit the Einstein static universe (3-sphere, Lambda = 4 pi G rho/c^2). The static solution is unstable (Eddington 1930). Lambda returns as dark energy (1998+).
-
-**Key Results**:
-- Modified EFE: G_{mu nu} + Lambda g_{mu nu} = kappa T_{mu nu}
-- Einstein static universe: Lambda = 1/a^2, a^2 = c^2/(4 pi G rho)
-- Vacuum EOS: p_Lambda = -rho_Lambda c^2 (w = -1)
-- Lambda as vacuum energy: rho_Lambda = Lambda c^2/(8 pi G)
-
-**Key Equations**:
-
-| Label | Description | Reference |
-|:---|:---|:---|
-| MEFE | Modified field equations | G_{mu nu} + Lambda g_{mu nu} = kappa T_{mu nu} |
-| ESU | Einstein static universe | Lambda = 1/a^2 |
-| FR | Friedmann equations | (a-dot/a)^2 = 8piG rho/3 - kc^2/a^2 + Lambda/3 |
-
-**Dependencies**: Upstream: 05, 06. Downstream: 16, 17, 18, 32.
-
----
-
-### Paper 08: Quantum Theory of the Monoatomic Ideal Gas
-- **File**: `08_1924_Einstein_Quantum_theory_of_monoatomic_ideal_gas.md`
-- **Year**: 1924--1925
-- **Journal**: Sitzungsber. Preuss. Akad. Wiss.
-- **Relevance**: HIGH
-- **Tags**: Bose-Einstein statistics, BEC, indistinguishability, condensation, de Broglie wavelength
-
-**Summary**: Extends Bose's photon counting to massive particles. Below T_c, a macroscopic fraction condenses into the ground state: N_0 = N[1 - (T/T_c)^{3/2}]. Phase transition without interactions -- driven purely by quantum statistics. Realized experimentally in 1995 (Cornell, Wieman, Ketterle).
-
-**Key Results**:
-- Bose-Einstein distribution: n(epsilon) = 1/(z^{-1} e^{epsilon/k_BT} - 1)
-- Critical temperature: T_c = (h^2/2pi m k_B)(n/zeta(3/2))^{2/3}
-- Condensate fraction: N_0/N = 1 - (T/T_c)^{3/2}
-- Bogoliubov dispersion: E(k) = sqrt(hbar^2k^2/2m (hbar^2k^2/2m + 2gn))
-
-**Key Equations**:
-
-| Label | Description | Reference |
-|:---|:---|:---|
-| BED | Bose-Einstein distribution | n = 1/(z^{-1}e^{eps/kT}-1) |
-| TC | Critical temperature | T_c formula |
-| BOG | Bogoliubov dispersion | E(k) = sqrt(...) |
-
-**Dependencies**: Upstream: 03 (light quanta). Downstream: 28 (analog gravity BEC), 31 (SVT).
-
----
-
-### Paper 09: Can Quantum-Mechanical Description of Physical Reality Be Considered Complete?
-- **File**: `09_1935_Einstein_Podolsky_Rosen_Can_QM_be_considered_complete.md`
-- **Year**: 1935
-- **Journal**: Physical Review 47, 777--780
-- **Relevance**: HIGH
-- **Tags**: EPR paradox, entanglement, reality criterion, completeness, locality
-
-**Summary**: EPR construct a two-particle state with perfect position and momentum correlations. By the reality criterion and locality assumption, both x_2 and p_2 are simultaneously real -- but QM forbids this. Conclusion: QM is incomplete (IF locality holds). Catalyzed Bell's theorem.
-
-**Key Results**:
-- Reality criterion: predictable with certainty without disturbance => element of reality
-- Completeness criterion: every element of reality has a counterpart in the theory
-- EPR state: Psi proportional to delta(x_1 - x_2 + x_0), also delta(p_1 + p_2)
-- Disjunction: either QM incomplete OR nonlocal
-
-**Key Equations**:
-
-| Label | Description | Reference |
-|:---|:---|:---|
-| EPR | EPR state | Psi ~ delta(x_1-x_2+x_0) |
-| COM | Commutator | [x_1-x_2, p_1+p_2] = 0 |
-
-**Dependencies**: Upstream: none (foundational). Downstream: 13 (Bell).
-
----
-
-### Paper 10: The Gravitational Equations and the Problem of Motion
-- **File**: `10_1938_Einstein_Infeld_Hoffmann_Gravitational_equations_and_problem_of_motion.md`
-- **Year**: 1938
-- **Journal**: Annals of Mathematics 39(1), 65--100
-- **Relevance**: CRITICAL
-- **Tags**: EIH, motion from geometry, post-Newtonian, effacement, Bianchi identity, surface integrals
-
-**Summary**: Motion of gravitating bodies follows from the field equations alone -- no separate force law. The Bianchi identity provides four constraints that determine worldlines. At 1PN: velocity-dependent forces, gravitational self-energy contribution, perihelion precession recovered. Effacement: motion depends on mass, not internal structure.
-
-**Key Results**:
-- EIH equations of motion at 1PN (velocity-dependent, nonlinear-in-G corrections)
-- Effacement property: internal structure does not affect orbital dynamics
-- No dipole gravitational radiation (contrast to EM)
-- Mechanism: nabla_mu G^{mu nu} = 0 => nabla_mu T^{mu nu} = 0 => motion constrained
-
-**Key Equations**:
-
-| Label | Description | Reference |
-|:---|:---|:---|
-| EIH | 1PN equation of motion | Eq. (III.1) in paper |
-| BIM | Bianchi -> motion | nabla_mu G^{mu nu} = 0 |
-
-**Dependencies**: Upstream: 05, 06. Downstream: 26, 27.
-
----
-
-### Paper 11: Deflection of Light During Solar Eclipse (1919)
-- **File**: `11_1919_Dyson_Eddington_Davidson_Deflection_of_light_during_solar_eclipse.md`
-- **Year**: 1920 (observations 1919)
-- **Journal**: Phil. Trans. Roy. Soc. A 220, 291--333
-- **Relevance**: LOW
-- **Tags**: light deflection, solar eclipse, Eddington, GR confirmation
-
-**Summary**: Two British expeditions measured starlight deflection during the 1919 solar eclipse. Sobral: 1.98" +/- 0.12". Principe: 1.61" +/- 0.30". Both consistent with GR (1.75"), inconsistent with Newtonian (0.87"). Made Einstein world-famous.
-
-**Key Results**:
-- GR deflection confirmed: 1.75" (factor 2 over Newtonian)
-- Factor of 2 from spatial curvature contribution
-- PPN parameterization: delta = (1+gamma)/2 * 4GM/(c^2b), gamma=1 in GR
-
-**Dependencies**: Upstream: 06. Downstream: gravitational lensing.
-
----
-
-### Paper 12: On Continued Gravitational Contraction
-- **File**: `12_1939_Oppenheimer_Snyder_Continued_gravitational_contraction.md`
-- **Year**: 1939
-- **Journal**: Physical Review 56, 455--459
-- **Relevance**: LOW
-- **Tags**: gravitational collapse, black holes, event horizon, Schwarzschild radius, singularity
-
-**Summary**: Pressureless dust collapse solved exactly. Interior = Friedmann cosmology in reverse. Surface crosses r_s in finite proper time; distant observer sees asymptotic freeze. Physical singularity at R=0 (Kretschner scalar diverges). First correct relativistic black hole prediction.
-
-**Key Results**:
-- Collapse to singularity in tau_total = (pi/2) sqrt(R_0^3/(2GM))
-- Event horizon at r = r_s = 2GM/c^2 is a coordinate singularity
-- Birkhoff's theorem: exterior must be Schwarzschild regardless of interior dynamics
-
-**Dependencies**: Upstream: 05, 06. Downstream: Penrose singularity theorems, Hawking radiation.
-
----
-
-### Paper 13: On the Einstein Podolsky Rosen Paradox
-- **File**: `13_1964_Bell_On_the_Einstein_Podolsky_Rosen_paradox.md`
-- **Year**: 1964
-- **Journal**: Physics 1(3), 195--200
-- **Relevance**: HIGH
-- **Tags**: Bell inequality, CHSH, local hidden variables, quantum nonlocality, Tsirelson bound
-
-**Summary**: Proves that ANY local hidden-variable theory satisfies |E(a,b) - E(a,c)| <= 1 + E(b,c). QM violates this for theta=2pi/3. CHSH form: |S| <= 2 (local), S_QM = 2 sqrt(2) (Tsirelson bound). No local realistic completion of QM exists. Experimentally confirmed (2022 Nobel).
-
-**Key Results**:
-- Bell inequality: |E(a,b) - E(a,c)| <= 1 + E(b,c)
-- CHSH inequality: |S| <= 2
-- QM maximum: |S| = 2 sqrt(2) ~ 2.828
-- Three options: abandon realism, abandon locality, or both
-
-**Key Equations**:
-
-| Label | Description | Reference |
-|:---|:---|:---|
-| BELL | Bell inequality | |E(a,b)-E(a,c)| <= 1+E(b,c) |
-| CHSH | CHSH inequality | |S| <= 2 |
-| TSIR | Tsirelson bound | |S|_max = 2sqrt(2) |
-
-**Dependencies**: Upstream: 09 (EPR). Downstream: 29 (ER=EPR).
-
----
-
-### Paper 14: Apparent Weight of Photons
-- **File**: `14_1959_Pound_Rebka_Apparent_weight_of_photons.md`
-- **Year**: 1959
-- **Journal**: Physical Review Letters 3(9), 439--441
-- **Relevance**: HIGH
-- **Tags**: gravitational redshift, Mossbauer effect, equivalence principle, Fe-57
-
-**Summary**: First terrestrial measurement of gravitational redshift using 14.4 keV Fe-57 gamma rays over 22.5 m in the Harvard tower. Delta nu/nu = (5.13 +/- 0.51) x 10^{-15} vs predicted 4.905 x 10^{-15}. Agreement to 10% (later 1% by Pound-Snider 1965). Confirms photons have "weight."
-
-**Key Results**:
-- Gravitational redshift: Delta nu/nu = gh/c^2 = 2.45 x 10^{-15} per 22.5 m
-- Mossbauer linewidth: Gamma/E ~ 3.3 x 10^{-13} (resolves the shift)
-- Equivalence principle confirmed for photons
-
-**Dependencies**: Upstream: 06. Downstream: 25 (MICROSCOPE EP).
-
----
-
-### Paper 15: Moduli Stabilization in String Theory
-- **File**: `15_2023_McAllister_Quevedo_Moduli_Stabilization_String_Theory.md`
-- **arXiv**: 2310.20559
-- **Year**: 2023
-- **Relevance**: HIGH
-- **Tags**: KKLT, LVS, flux compactification, Kahler moduli, swampland, gravitino mass
-
-**Summary**: Comprehensive review of moduli stabilization in string theory. KKLT: flux + non-perturbative superpotential stabilizes all moduli. LVS: exponentially large volume, M_string ~ 10^9-10^13 GeV. Swampland conjectures constrain de Sitter vacua and slow-roll inflation. Framework parallel: SU(3) moduli stabilization via instanton physics.
-
-**Key Results**:
-- KKLT minimum: t_{vol,min} ~ (1/alpha) ln(g_s^{-1})
-- LVS volume: V ~ (t_large/g_s)^{3/2}
-- Superpotential: W = W_0 + A e^{-at} (flux + non-perturbative)
-- de Sitter conjecture: |nabla V|/V >= c/M_p
-
-**Dependencies**: Upstream: KK theory. Downstream: 34 (swampland SGC).
-
----
-
-### Paper 16: Weinberg No-Go Theorem and Nonlocal Gravity
-- **File**: `16_2025_Capozziello_De_Bianchi_Buoninfante_Weinberg_Nonlocal_Gravity.md`
-- **arXiv**: 2502.07321
-- **Year**: 2025
-- **Relevance**: HIGH
-- **Tags**: Weinberg no-go, nonlocal gravity, infinite-derivative gravity, form factors, UV finiteness
-
-**Summary**: Weinberg's theorem: no local symmetry can enforce Lambda=0. Nonlocal gravity (exponential form factors e^{Box/M^2}) circumvents the theorem by modifying UV behavior. The spectral action is inherently nonlocal via the heat kernel -- this is the framework's potential escape from the CC problem.
-
-**Key Results**:
-- Nonlocal action: S = integral sqrt(-g) [R + f(R,G,Box)] d^4x
-- UV suppression via exponential form factors
-- Gravitational wave speed: v_gw = c sqrt(1 + O(H^2/M^2))
-- EP preserved at classical level; violations below M^{-2}
-
-**Dependencies**: Upstream: 07 (CC). Downstream: 17 (CC problem review).
-
----
-
-### Paper 17: The Cosmological Constant Problem
-- **File**: `17_2025_Sola_Peracaula_Cosmological_Constant_Problem.md`
-- **Year**: 2025
-- **Journal**: Phil. Trans. Roy. Soc. A 383(2311)
-- **Relevance**: CRITICAL
-- **Tags**: CC problem, running vacuum model, adiabatic renormalization, RVM, Lambda(H)
-
-**Summary**: Comprehensive review of the CC problem. Running Vacuum Model: Lambda(H) = Lambda_0 + nu H^2 from QFT adiabatic renormalization in curved spacetime. RVM predicts w(z) ~ -1 + delta w (observable deviations at z~1). Framework parallel: tau modulus as running parameter.
-
-**Key Results**:
-- RVM: Lambda(H) = Lambda_0 + nu H^2, nu ~ 10^{-3}
-- Effective EOS: w(a) = -1 + nu H^2/rho_{Lambda,0}
-- Adiabatic renormalization: rho_vac^(2) ~ m^2 R/(12 pi^2)
-- QFT vacuum: rho_vac ~ M_Planck^4 vs observed rho_Lambda ~ 10^{-47} GeV^4
-
-**Dependencies**: Upstream: 07. Downstream: 18, 19, 32.
-
----
-
-### Paper 18: DESI DR2 BAO Cosmological Constraints
-- **File**: `18_2025_DESI_Collaboration_DR2_BAO_Cosmological_Constraints.md`
-- **arXiv**: 2503.14738
-- **Year**: 2025
-- **Journal**: Physical Review D 112(8), 083515
-- **Relevance**: CRITICAL
-- **Tags**: DESI, BAO, dark energy, w(z), CPL parameterization, standard ruler
-
-**Summary**: DESI DR2 measures comoving distances at 8 effective redshifts (0.3 < z < 4.0) from 14M galaxy/quasar redshifts. Combined with Pantheon+ and Planck: w_0 = -0.75 +/- 0.08, w_a = -1.05 +/- 0.45 (2.8 sigma from Lambda-CDM). Framework predicts w = -1 + O(10^{-29}) -- under severe tension.
-
-**Key Results**:
-- BAO sound horizon: r_s ~ 147.6 Mpc
-- Omega_m = 0.312 +/- 0.009, H_0 = 68.5 +/- 1.2 km/s/Mpc
-- w_0 = -0.75 +/- 0.08 (single param), 2.5 sigma from -1
-- w_0w_a: 2.8 sigma from Lambda-CDM
-- Omega_k = 0.001 +/- 0.003 (consistent with flatness)
-
-**Dependencies**: Upstream: 07, 17. Downstream: 19.
-
----
-
-### Paper 19: Dynamical Dark Energy in Light of DESI DR2
-- **File**: `19_2025_Giare_Dynamical_Dark_Energy_DESI_DR2.md`
-- **arXiv**: 2504.06118
-- **Year**: 2025
-- **Journal**: Nature Astronomy 9, 1879--1889
-- **Relevance**: CRITICAL
-- **Tags**: dynamical dark energy, quintessence, modified gravity, Bayes factor, w_0-w_a
-
-**Summary**: Multi-probe analysis combining DESI DR2 + Pantheon+ + Planck yields 2.8--4.2 sigma evidence for w != -1. Bayes factor ln K = 2.5--3.8 (strong evidence for dynamical DE). Quintessence with power-law V ~ phi^n (n~2-4) or exponential potentials preferred. H_0 tension partially resolved (reduced to ~2 sigma).
-
-**Key Results**:
-- Combined: w_0 = -0.75 +/- 0.08, w_a = -1.05 +/- 0.45
-- Bayes factor: 12:1 to 45:1 favoring dynamical DE
-- Preferred potentials: power-law n~2-4
-- H_0 tension reduced from 4 sigma to ~2 sigma with dynamical DE
-
-**Dependencies**: Upstream: 18. Downstream: framework falsification gate.
-
----
-
-### Paper 20: Runaway Dilaton Models: Improved Constraints
-- **File**: `20_2023_Martinelli_Runaway_Dilaton_Models_Cosmological_Evolution.md`
-- **arXiv**: 2301.13500
-- **Year**: 2023
-- **Journal**: Physical Review D 107(10), 104002
-- **Relevance**: MEDIUM
-- **Tags**: dilaton, scalar-tensor, varying constants, Brans-Dicke, fine-structure constant, BBN
-
-**Summary**: Comprehensive constraints on runaway dilaton models (string theory scalar coupling to gravity). Combines BBN, CMB, BAO, SNe, and quasar absorption. omega_BD > 500 (coupling suppressed). Omega_phi < 0.02 (dilaton not primary DE). lambda < 0.1. Framework analog: tau modulus as geometric dilaton.
-
-**Key Results**:
-- Brans-Dicke parameter: omega > 500 at 2 sigma
-- Dilaton density: Omega_phi < 0.02
-- Fine-structure variation: |Delta alpha/alpha| < 10^{-4} at z~1-3
-- Attractor EOS: w_phi = -1 + 2 lambda^2/3
-
-**Dependencies**: Upstream: 07 (CC), string theory. Downstream: 18, 19.
-
----
-
-### Paper 21: Self-Stabilization of Extra Dimensions
-- **File**: `21_2006_Carroll_Johnson_Randall_Self_Stabilization_Extra_Dimensions.md`
-- **Year**: 2006
-- **Journal**: Physical Review D 73, 124019
-- **Relevance**: HIGH
-- **Tags**: Casimir stabilization, higher-curvature gravity, KK modulus, heat kernel, self-stabilization
-
-**Summary**: Casimir effects + higher-order curvature terms (R^2, R_{mu nu}^2) can dynamically stabilize KK moduli without flux or additional fields. Competition between terms creates a minimum for the compactification radius. One-loop quantum corrections via heat kernel. Framework parallel: spectral action a_4 >> |a_2| mirrors the higher-curvature dominance.
-
-**Key Results**:
-- Casimir alone insufficient (too weak, ~1/R^4)
-- R^2 term contributes ~R^4 (grows with expansion), creates minimum
-- Modulus mass: 10^{-2} eV to 10^4 GeV depending on R_*
-- No fine-tuning required for stabilization
-
-**Dependencies**: Upstream: KK theory. Downstream: 15, 24.
-
----
-
-### Paper 22: On the DeWitt Metric
-- **File**: `22_1987_Peldan_On_the_DeWitt_Metric.md`
-- **Year**: 1987
-- **Journal**: Journal of Geometry and Physics 4, 493
-- **Relevance**: MEDIUM
-- **Tags**: DeWitt metric, superspace, ADM formalism, Wheeler-DeWitt, indefinite signature
-
-**Summary**: First rigorous analysis of the DeWitt metric G^{ijkl} = h^{-1/2}(h^{ik}h^{jl} + h^{il}h^{jk} - h^{ij}h^{kl}) on Riem(Sigma). Mixed signature: TT modes positive, conformal modes negative. Geodesics well-defined but generically incomplete. Foundation for quantum geometrodynamics. Framework: tau-geodesic in moduli space.
-
-**Key Results**:
-- DeWitt metric signature: indefinite (TT positive, conformal negative)
-- Geodesic existence and uniqueness (local)
-- Geodesic incompleteness (metrics can reach volume-zero singularity)
-- Curvature computed for S^3
-
-**Dependencies**: Upstream: ADM formalism. Downstream: 23 (Giulini).
-
----
-
-### Paper 23: What Is the Geometry of Superspace?
-- **File**: `23_1995_Giulini_What_Is_the_Geometry_of_Superspace.md`
-- **Year**: 1995
-- **Journal**: Physical Review D 51, 5630
-- **Relevance**: MEDIUM
-- **Tags**: superspace, signature change, Wheeler-DeWitt, lapse dependence, hyperbolic PDE
-
-**Summary**: The DeWitt metric's signature on reduced configuration space depends on the lapse function choice. Constant lapse: one negative direction (conformal). WDW equation is hyperbolic (wave-like), not elliptic. Distributional solutions only. Framework: TT sector (volume-preserving deformations) has positive DeWitt signature throughout tau-transit.
-
-**Key Results**:
-- Superspace inherits indefinite signature from DeWitt metric
-- WDW equation is hyperbolic PDE with causality structure
-- Conformal modes decouple with negative signature (unphysical)
-- TT-restricted sector may remain Riemannian
-
-**Dependencies**: Upstream: 22 (Peldan). Downstream: framework moduli space geometry.
-
----
-
-### Paper 24: Extra Dimensions (PDG Review 2025)
-- **File**: `24_2025_PDG_Extra_Dimensions_Review.md`
-- **Year**: 2025
-- **Journal**: PDG Review
-- **Relevance**: MEDIUM
-- **Tags**: ADD, Randall-Sundrum, KK gluon, collider limits, fifth force, MICROSCOPE
-
-**Summary**: Comprehensive PDG compilation of extra dimension constraints. No direct evidence found. LHC: M_* > 8 TeV (ADD d=2), m_{KK,grav} > 2.5 TeV (RS1). Stellar cooling: M_* > 300 TeV. MICROSCOPE: eta < 10^{-15}. Framework's M_KK ~ 10^{18} GeV is safely above all collider bounds.
-
-**Key Results**:
-- LHC dijet+MET: M_* > 7.9 TeV (UED d=2)
-- CMS KK gluon: m_{KK,g} > 4.3 TeV
-- Fifth force: R < 10^{-5} mm for d=2
-- sin^2(theta_W) = 3/8 at tree level vs 0.2312 experiment
-
-**Dependencies**: Upstream: KK theory, 25. Downstream: framework constraints.
-
----
-
-### Paper 25: MICROSCOPE Final Results: Equivalence Principle
-- **File**: `25_2022_Touboul_MICROSCOPE_Mission_Equivalence_Principle.md`
+### Paper 02: MICROSCOPE Final Results -- Equivalence Principle
+- **File**: `02_2022_Touboul_MICROSCOPE_Equivalence_Principle.md`
+- **arXiv**: 2209.15487
 - **Year**: 2022
-- **Journal**: Physical Review Letters 129, 121102
 - **Relevance**: CRITICAL
-- **Tags**: WEP, Eotvos ratio, MICROSCOPE, fifth force, frozen modulus, drag-free satellite
+- **Tags**: WEP, Eotvos ratio, Ti-Pt, drag-free satellite, systematic errors, dilaton
 
-**Summary**: Space-based EP test comparing Ti and Pt test masses in free fall: eta(Ti,Pt) = [-1.5 +/- 2.8] x 10^{-15}. Tenfold improvement over previous. No violation detected. Framework constraint: |Delta tau/tau| < 10^{-15} for frozen SU(3) modulus. Compositional equivalence rules out fiber-mediated fifth forces coupling to binding energy.
+**Summary**: Final MICROSCOPE results: delta(Ti,Pt) = [-1.5 +/- 2.3(stat) +/- 1.5(syst)] x 10^{-15}. No WEP violation. Factor 4.6 improvement. Temperature-dominated systematics. Constrains dilaton and U-boson couplings.
 
 **Key Results**:
-- Eotvos ratio: eta = [-1.5 +/- 2.3(stat) +/- 1.5(syst)] x 10^{-15}
-- GR confirmed: inertial = gravitational mass to 10^{-15}
-- Framework constraint: |dot(tau)| < 10^{-15} H_0 ~ 10^{-24} s^{-1}
+- delta(Ti,Pt) = [-1.5 +/- 2.3 +/- 1.5] x 10^{-15}
+- Null reference: delta(Pt,Pt) = [0.0 +/- 1.1 +/- 2.3] x 10^{-15}
+- Tightest WEP bound as of 2022
 
-**Dependencies**: Upstream: 06, 14. Downstream: 26 (modified EIH).
+**Key Equations**:
+| Label | Description | Reference |
+|:---|:---|:---|
+| Eotvos ratio | eta = 2(a_A-a_B)/(a_A+a_B) | Eqs. (1)-(2) |
+| Measurement equation | Gamma_d = b_0 + delta_x g_x + Delta_x S_xx + n_d | Eq. (4) |
+| Final constraint | delta(Ti,Pt) = [-1.5 +/- 2.3 +/- 1.5]x10^{-15} | Eq. (5) |
+
+**Dependencies**: Upstream: 01. Downstream: 14 (dilaton coupling bounds).
 
 ---
 
-### Paper 26: Modified EIH Framework for Testing GR
-- **File**: `26_2018_Will_Yunes_Modified_EIH_Framework.md`
+### Paper 03: Modified Einstein-Infeld-Hoffmann Framework
+- **File**: `03_2018_Will_Yunes_Modified_EIH_Framework.md`
 - **arXiv**: 1801.08999
 - **Year**: 2018
-- **Journal**: Classical and Quantum Gravity
 - **Relevance**: CRITICAL
-- **Tags**: modified EIH, sensitivities, effacement, Lorentz violation, Einstein-Aether, binary pulsars
+- **Tags**: EIH, sensitivities, N-body Lagrangian, preferred-frame, Nordtvedt, scalar-tensor, Einstein-Aether, binary pulsars
 
-**Summary**: Extends EIH to Lorentz-violating and scalar-tensor theories via "sensitivities" s_i = d ln(m_grav,i)/d phi. Effacement confirmed at 10^{-6} level: pulsar (extreme density) and white dwarf (moderate density) couple identically to gravity. Framework analog: SU(3) fiber sensitivities sigma_i = 0 (exact effacement).
+**Summary**: Generalizes EIH to include body-dependent parameters (sensitivities) and preferred-frame effects. The 1PN N-body Lagrangian uses parameters G_ab, B_ab, C_ab, E_ab, D_abc. GR: all reduce to 1 or 0. Derives parameters for scalar-tensor, Einstein-Aether, Khronometric theories. Binary pulsar bounds: |alpha_hat_1| < 3.4x10^{-5}.
 
 **Key Results**:
-- Sensitivities parameterize internal-structure coupling: s_i = d ln m_grav / d phi
-- Binary pulsar constraint: |s_NS - s_WD| < 10^{-2}
-- Effacement robust in GR at parts-in-10^6
-- Brans-Dicke: omega_BD > 10^4
+- Modified EIH Lagrangian with 6 body-dependent parameter families
+- GR values: G_ab = B_ab = D_abc = 1; A_a = C_ab = E_ab = 0
+- |alpha_hat_1| < 3.4x10^{-5} (J1738+0333)
+- Nordtvedt effect in J0337+1715 parameterized
 
-**Dependencies**: Upstream: 10 (EIH). Downstream: 27 (3PN).
+**Key Equations**:
+| Label | Description | Reference |
+|:---|:---|:---|
+| Sensitivity | s_a = d(ln m_a)/d(ln psi_A) | Eq. (6) |
+| EIH Lagrangian | L = -sum m_a[1-v^2/2-...] + 1/2 sum (m_a m_b/r_ab)[G_ab+...] | Eq. (9) |
+| Scalar-tensor G_ab | G_ab = 1 - 2zeta(s_a+s_b-2s_as_b) | Eq. (29) |
+| Strong-field alpha_hat_1 | alpha_hat_1 = Delta(C+E) - 6B_- - 2G A^{(2)} | Eq. (50) |
+| Nordtvedt parameter | eta_hat_N = G_12 - G_13 | Eq. (63) |
+
+**Dependencies**: Upstream: 01. Downstream: 04.
 
 ---
 
-### Paper 27: Equations of Motion at 3PN: Internal Structure?
-- **File**: `27_2025_Blanchet_Equations_of_Motion_Compact_Binary_3PN_Internal_Structure.md`
+### Paper 04: Compact Binary EOM at 3PN -- Internal Structure?
+- **File**: `04_2025_Blanchet_3PN_Internal_Structure.md`
 - **arXiv**: 2503.03189
 - **Year**: 2025
 - **Relevance**: HIGH
-- **Tags**: 3PN, EOS dependence, strong equivalence principle, gravitational waveforms, DIRE, MPPM
+- **Tags**: 3PN, DIRE, structure coefficients, SEP, EOS, gravitational waves
 
-**Summary**: At 3PN, GR equations of motion may depend on internal structure through integrals integral rho(r) Phi(r) r^2 dr. Two independent methods (DIRE, MPPM) suggest EOS-dependent corrections exist, potentially altering GW phase by 1-10 radians. Would be subtle (but genuine GR) SEP violation. Framework prediction: SU(3) fiber coupling should exactly cancel any EOS dependence.
+**Summary**: Identifies 40 structure-dependent coefficients at 3PN via the DIRE approach. These dimensionless integrals (Lambda_1, Lambda_2, ...) depend on NS equation of state but not on mass/radius. At 1PN and 2PN they cancel (SEP verified); at 3PN cancellation is unproven. Could alter waveform coefficients by up to 100%. Would appear 2 PN orders earlier than tidal effects.
 
 **Key Results**:
-- 3PN structure-dependent term: Delta a ~ 0.1 (Gm_2/r^2) epsilon^2
-- Phase impact: Delta Phi ~ 1-10 radians over merger
-- Effacement holds at 1PN and 2PN (proven)
-- 3PN calculation incomplete; two groups partially confirm
+- 40 distinct structure coefficients at 3PN
+- Independent of mass/radius, EOS-dependent
+- Could alter 3PN waveforms by up to 100%
+- If cancelled: remarkable SEP support. If not: impacts next-gen GW detectors
 
-**Dependencies**: Upstream: 10, 26. Downstream: GW data analysis.
+**Key Equations**:
+| Label | Description | Reference |
+|:---|:---|:---|
+| Relaxed Einstein equations | Box h^{ab} = -16pi tau^{ab} | Eq. (2.1) |
+| Structure coefficient | Lambda_1 = (4pi/m) int rho r^2 U_int dr | Sec. III |
+| Continuum EOM | dv^i/dt = U_{,i} + a_PN + a_2PN + a_3PN + ... | Eq. (2.9) |
+
+**Dependencies**: Upstream: 01, 03. Downstream: none (frontier).
 
 ---
 
-### Paper 28: Phonon Dynamics in Curved Analog Gravity BEC
-- **File**: `28_2025_Barral_Phonon_Dynamics_Curved_Analog_Gravity_BEC.md`
+### Paper 05: Bell Nonlocality (Review)
+- **File**: `05_2014_Brunner_Bell_Nonlocality_Review.md`
+- **arXiv**: 1303.2849
+- **Year**: 2014
+- **Relevance**: HIGH
+- **Tags**: Bell theorem, CHSH, Tsirelson bound, local polytope, quantum correlations, entanglement, DIQKD, Werner states
+
+**Summary**: Comprehensive review of Bell nonlocality. Develops the hierarchy: local polytope (L) subset quantum (Q) subset no-signaling (NS). CHSH inequality S <= 2 violated by QM at 2sqrt(2). Nonlocality and entanglement are inequivalent. Pure entangled states always nonlocal (Gisin); mixed states may not be. Device-independent QKD and randomness from Bell violation.
+
+**Key Results**:
+- CHSH: S <= 2 (local); 2sqrt(2) (quantum); 4 (no-signaling)
+- Pure entangled => nonlocal (Gisin); mixed entangled may be local (Werner)
+- Detection efficiency threshold eta > 82.8% for CHSH
+- Multipartite: Svetlichny S_3 <= 4 (local); 4sqrt(2) (GHZ)
+
+**Key Equations**:
+| Label | Description | Reference |
+|:---|:---|:---|
+| Locality condition | p(ab\|xy) = int q(lambda) p(a\|x,lambda) p(b\|y,lambda) dlambda | Eq. (3) |
+| CHSH inequality | S <= 2 | Eq. (4) |
+| Quantum violation | S = 2sqrt(2) | Eq. (5) |
+| Svetlichny | S_3 <= 4; GHZ achieves 4sqrt(2) | Sec. VI.B.1 |
+
+**Dependencies**: Upstream: none. Downstream: 06.
+
+---
+
+### Paper 06: ER = EPR Is an Operational Theorem
+- **File**: `06_2024_Bao_ER_EPR_Operational_Theorem.md`
+- **arXiv**: 2410.16496
+- **Year**: 2024
+- **Relevance**: MEDIUM
+- **Tags**: ER=EPR, LOCC, holographic screen, monogamous entanglement, observer-relative topology
+
+**Summary**: Derives ER = EPR operationally: monogamous entanglement is indistinguishable from topological identification of boundary points under LOCC + holographic boundary. No embedding geometry needed. Proves non-traversability without firewalls. Shows spacetime topology is observer/QRF-relative.
+
+**Key Results**:
+- ER = EPR from LOCC + holographic principle
+- Non-traversability without firewalls
+- Spacetime topology is observer-relative
+
+**Key Equations**:
+| Label | Description | Reference |
+|:---|:---|:---|
+| Hamiltonian decomposition | H_E = H_Q + H_Qbar + H_{Q,Qbar} | Proof of Thm. 1 |
+| Decoherence limit | H_{Q,Qbar} -> 0 => Q, Qbar decouple | Proof of Thm. 1 |
+
+**Dependencies**: Upstream: 05. Downstream: none.
+
+---
+
+### Paper 07: Vacuum Energy and CC in QFT in Curved Spacetime
+- **File**: `07_2024_Sola_Peracaula_Vacuum_Energy_CC.md`
+- **arXiv**: 2411.06582
+- **Year**: 2024
+- **Relevance**: CRITICAL
+- **Tags**: RVM, running vacuum, CC problem, adiabatic regularization, off-shell subtraction, m^4 cancellation, quintessence, DESI
+
+**Summary**: The Running Vacuum Model derived from off-shell adiabatic regularization. m^4 terms cancel exactly. VED runs as rho_vac(H) = rho_0 + (3nu/8piG)(H^2-H_0^2) with nu ~ 10^{-3}. RVM-inflation via H^6. Vacuum EoS mimics quintessence (w > -1), consistent with DESI.
+
+**Key Results**:
+- m^4 fine-tuning cancelled by off-shell subtraction (no free parameters)
+- nu_eff ~ 10^{-5} to 10^{-3} for GUT-scale particles
+- RVM-inflation from H^6 provides graceful exit without inflaton
+- Vacuum EoS: w > -1 (quintessence-like)
+
+**Key Equations**:
+| Label | Description | Reference |
+|:---|:---|:---|
+| Canonical RVM | rho_vac(H) = rho_0 + (3nu_eff/8piG)(H^2-H_0^2) | Eq. (27) |
+| Running parameter | nu_eff ~ (1/2)(xi-1/6)(m^2/m_Pl^2) ln(m^2/H_0^2) | Eq. (28) |
+| Running VED (no m^4) | rho_vac(M,H) = rho_vac(M_0,H) + (3xi_bar/16pi^2)H^2[...] | Eq. (24) |
+| RVM-inflation | rho_vac(a) = rho_I(1+(a/a_*)^8)^{-3/2} | Eq. (30) |
+
+**Dependencies**: Upstream: none. Downstream: 08, 10.
+
+---
+
+### Paper 08: Running Vacuum Cosmology (Review)
+- **File**: `08_2022_Sola_Peracaula_Running_Vacuum_Cosmology.md`
+- **arXiv**: 2203.13757
+- **Year**: 2022
+- **Relevance**: HIGH
+- **Tags**: running vacuum, CC problem, effective action, RVM-inflation, H_0 tension, sigma_8 tension, Type-II RRVM
+
+**Summary**: Comprehensive review of the RVM program. Derives running VED from both adiabatic regularization and effective action. Type-II RRVM (evolving G_eff) alleviates H_0 and sigma_8 tensions (H_0 = 70.93, DIC = +5.5). Beta-function for VED running derived.
+
+**Key Results**:
+- m^4 cancellation confirmed via two independent methods
+- Beta-function: beta_vac = (xi-1/6)(3H^2/8pi^2)(M^2-m^2)
+- Type-II RRVM: H_0 = 70.93 +/- 0.90 km/s/Mpc
+
+**Key Equations**:
+| Label | Description | Reference |
+|:---|:---|:---|
+| Generalized RVM | rho_vac = (3/8piG)[c_0 + nu H^2 + nu_tilde Hdot] | Eq. 8.1 |
+| Beta-function | beta_vac = (xi-1/6)(3H^2/8pi^2)(M^2-m^2) | Eq. 6.13 |
+| Quartic cancellation | Delta Lambda + (1/128pi^2)[-M^4+M'^4+...] = 0 | Eq. 5.8 |
+
+**Dependencies**: Upstream: 07. Downstream: 10, 11.
+
+---
+
+### Paper 09: Weinberg No-Go Theorem and Nonlocal Gravity
+- **File**: `09_2025_Capozziello_Weinberg_Nonlocal_Gravity.md`
+- **arXiv**: 2502.07321
+- **Year**: 2025
+- **Relevance**: HIGH
+- **Tags**: Weinberg no-go, CC, nonlocal gravity, IDG, auxiliary fields, recurrence relation
+
+**Summary**: Shows IDG theories evade the Weinberg no-go theorem. The theorem requires independent variation of all fields; IDG's auxiliary fields phi_n = Box^{-n} R are coupled by recurrence phi_n = Box^{-1} phi_{n-1}, preventing independent variation. The transverse hypersurface construction fails. Nonlocal terms can reproduce cosmic acceleration without fine-tuning Lambda.
+
+**Key Results**:
+- Weinberg no-go relies crucially on locality
+- IDG fields coupled by recurrence: no independent variation
+- Nonlocal terms reproduce cosmic acceleration without Lambda
+- Ghost-free under specific propagator conditions
+
+**Key Equations**:
+| Label | Description | Reference |
+|:---|:---|:---|
+| Weinberg constraint | L = e^{4phi} sqrt(-g) L_0(sigma_j) | Eq. (9) |
+| IDG series | R sum f_{1-n} Box^{-n} R | Eq. (12) |
+| Recurrence | phi_n = Box^{-1} phi_{n-1} | Eq. (14) |
+
+**Dependencies**: Upstream: Weinberg (1989). Downstream: connects to 07-08.
+
+---
+
+### Paper 10: DESI DR2 BAO Cosmological Constraints
+- **File**: `10_2025_DESI_DR2_BAO_Cosmological_Constraints.md`
+- **arXiv**: 2503.14738
+- **Year**: 2025
+- **Relevance**: CRITICAL
+- **Tags**: DESI, DR2, BAO, dark energy, w_0 w_a, LCDM tension, neutrino mass, Quintom B
+
+**Summary**: DESI DR2 BAO from 14+ million tracers. Strongest BAO detection at 14.7 sigma. Flat LCDM: 2.3 sigma tension with CMB. Dynamical DE preferred at 3.1 sigma (DESI+CMB) to 4.2 sigma (DESI+CMB+DESY5). Quintom B: w_0 > -1, w_a < 0. Neutrino mass < 0.064 eV (LCDM), tight against oscillation minimum.
+
+**Key Results**:
+- 3.1-4.2 sigma preference for dynamical DE over LCDM
+- Quintom B quadrant: w_0 > -1, w_a < 0
+- sum m_nu < 0.064 eV (LCDM, 95% CL)
+- Signal does not diminish from DR1 to DR2
+
+**Key Equations**:
+| Label | Description | Reference |
+|:---|:---|:---|
+| CPL parametrization | w(a) = w_0 + w_a(1-a) | Eq. (9) |
+| Sound horizon | r_d = 147.05 Mpc x (...) | Eq. (2) |
+| Friedmann equation | H(z)/H_0 = [Omega_bc(1+z)^3 + ...]^{1/2} | Eq. (6) |
+| BAO scaling | alpha_par = D_H r_d^fid / (D_H^fid r_d) | Eq. (11) |
+
+**Dependencies**: Upstream: Planck CMB, SNe compilations. Downstream: 11.
+
+---
+
+### Paper 11: Dynamical Dark Energy in Light of DESI DR2
+- **File**: `11_2025_Giare_Dynamical_Dark_Energy_DESI_DR2.md`
+- **arXiv**: 2504.06118
+- **Year**: 2025
+- **Relevance**: CRITICAL
+- **Tags**: w(z), shape functions, non-parametric, Horndeski, Bayesian evidence, PCA
+
+**Summary**: Non-parametric w(z) reconstruction from DESI DR2: oscillatory pattern with w > -1 at z < 0.2, w < -1 at z ~ 0.75. SNR for w != -1 reaches 4.5 sigma (DR2+DESY5). Bayesian evidence: Delta ln E = 5.2 (moderate). ~3 PCA degrees of freedom. Pattern stable across all datasets and not producible by known systematics.
+
+**Key Results**:
+- Oscillatory w(z) stable across all datasets
+- SNR up to 4.5 sigma for w != -1
+- Bayesian evidence moderate: Delta ln E = 5.2
+- ~3 effective DOF in w(z)
+
+**Key Equations**:
+| Label | Description | Reference |
+|:---|:---|:---|
+| SNR definition | SNR^2 = (w-w_mod)^T C_w^{-1} (w-w_mod) | Eq. (1) |
+| Shape function S_2 | S_2(a) = w(a) - w'(a)/(3w(a)) | Eq. (5) |
+| Horndeski prior | C(a) = 0.05+0.8a^2; R = exp[-(\|ln a-ln a'\|/0.3)^{1.2}] | Eq. (7) |
+
+**Dependencies**: Upstream: 10. Downstream: none (frontier).
+
+---
+
+### Paper 12: Moduli Stabilization in String Theory
+- **File**: `12_2023_McAllister_Quevedo_Moduli_Stabilization.md`
+- **arXiv**: 2310.20559
+- **Year**: 2023
+- **Relevance**: HIGH
+- **Tags**: KKLT, LVS, flux, Calabi-Yau, Kahler moduli, GVW superpotential, de Sitter uplift, swampland
+
+**Summary**: Comprehensive review of string moduli stabilization. Flux superpotential W_flux fixes complex structure; non-perturbative effects (ED3/gaugino condensation) fix Kahler moduli. KKLT: AdS + uplift. LVS: exponentially large volume V ~ e^{a tau_s}. Discusses de Sitter challenges, swampland conjectures, and cosmological moduli problem (m > 30 TeV).
+
+**Key Results**:
+- W_flux fixes complex structure + axiodilaton; Kahler requires NP effects
+- KKLT: AdS + uplift; LVS: V ~ e^{a tau_s}
+- Peccei-Quinn symmetry protects superpotential to all orders
+- Cosmological moduli problem: m > 30 TeV for BBN
+
+**Key Equations**:
+| Label | Description | Reference |
+|:---|:---|:---|
+| GVW superpotential | W_flux = sqrt(2/pi) int G_3 wedge Omega | Eq. (27) |
+| F-term potential | V_F = e^K[K^{MN} D_MW D_NW-bar - 3\|W\|^2] | Eq. (21) |
+| LVS volume | V = tau_b^{3/2} - tau_s^{3/2} | Sec. 4.2 |
+
+**Dependencies**: Upstream: none (review). Downstream: 13, 14, 15.
+
+---
+
+### Paper 13: Self-Stabilization of Extra Dimensions
+- **File**: `13_2006_Bronnikov_Rubin_Self_Stabilization_Extra_Dimensions.md`
+- **arXiv**: gr-qc/0510107
+- **Year**: 2006
+- **Relevance**: HIGH
+- **Tags**: F(R) gravity, extra dimensions, KK, Einstein frame, conformal transformation, slow-change, de Sitter minimum
+
+**Summary**: Higher-curvature F(R) Lagrangians (quadratic, cubic, R_AB R^AB, Kretschner) generate effective potentials with positive minima stabilizing extra dimensions. Quadratic: de Sitter only in F' < 0. Cubic: de Sitter in F' > 0. CC softened by ~30 orders from geometry, not fully solved.
+
+**Key Results**:
+- F(R) generates nontrivial minima for extra-dimension stabilization
+- Cubic gravity: de Sitter in conventional regime
+- CC softened ~30 orders, not solved
+- Higher-curvature corrections add stabilization freedom
+
+**Key Equations**:
+| Label | Description | Reference |
+|:---|:---|:---|
+| Einstein-frame potential | V_Ein = -(sign F')[\|phi\|/(d_1(d_1-1))]^{d_1/2} F/F'^2 | Eq. (17) |
+| Conformal mapping | g_tilde = \|f(phi)\| g, f = e^{d_1 beta} F' | Eq. (11) |
+
+**Dependencies**: Upstream: 12 (context). Downstream: framework a_4/a_2 hierarchy.
+
+---
+
+### Paper 14: Runaway Dilaton: Improved Constraints
+- **File**: `14_2023_Martinelli_Runaway_Dilaton.md`
+- **arXiv**: 2301.13500
+- **Year**: 2023
+- **Relevance**: MEDIUM
+- **Tags**: dilaton, fine-structure variation, MICROSCOPE, attractor, quintessence, Hubble tension
+
+**Summary**: Full self-consistent constraints on the Damour-Piazza-Veneziano runaway dilaton including CMB. Order-unity couplings ruled out. \|alpha_{h,0}\| < 5x10^{-6} (MICROSCOPE). Attractor behavior: initial velocity irrelevant. Coupled to DE: H_0 = 68.2 partially addresses tension. With exponential potential: H_0 can only decrease.
+
+**Key Results**:
+- \|alpha_{h,0}\| < ~5x10^{-6}; order-unity couplings excluded
+- Attractor mechanism operates for wide initial conditions
+- Delta alpha/alpha = (alpha_{h,0}/40)[1 - e^{-(phi-phi_0)}]
+
+**Key Equations**:
+| Label | Description | Reference |
+|:---|:---|:---|
+| Klein-Gordon source | phi-ddot+3H phi-dot = -4piG dV/dphi + sum alpha_i(3P_i-rho_i) | Eq. (6) |
+| Fine-structure variation | Delta alpha/alpha_0 = (alpha_{h,0}/40)[1-e^{-(phi-phi_0)}] | Eq. (10) |
+| Eotvos from dilaton | eta ~ 5.2x10^{-5} alpha_{h,0}^2 | Eq. (12a) |
+
+**Dependencies**: Upstream: 01, 02. Downstream: framework clock constraint.
+
+---
+
+### Paper 15: Shape Moduli Stabilization, String Gas, Swampland
+- **File**: `15_2021_Bernardo_Brandenberger_Swampland_String_Gas.md`
+- **arXiv**: 2008.13251
+- **Year**: 2020
+- **Relevance**: MEDIUM
+- **Tags**: string gas cosmology, shape moduli, swampland, winding modes, T-duality
+
+**Summary**: Shape moduli stabilized at the rectangular torus by winding + momentum modes. V(phi) ~ sqrt(p_nc^2+phi^2), quadratic near minimum. de Sitter conjecture satisfied with c_2 = pi/4. Distance conjecture satisfied (Delta phi < pi M_Pl/2). Stabilization requires stringy (winding) physics.
+
+**Key Results**:
+- Shape moduli stable at theta=0, R=1 (self-dual)
+- de Sitter conjecture: c_2 = pi/4 (automatic)
+- Stabilization inherently stringy (winding modes)
+
+**Key Equations**:
+| Label | Description | Reference |
+|:---|:---|:---|
+| de Sitter conjecture | \|V'/V\| < c_2/m_Pl | Eq. (1) |
+| Modulus potential | V = e^{-2Phi} n sqrt(p_nc^2+phi^2) | Eq. (16) |
+| de Sitter ratio | V'/V = phi/[sqrt(2) sqrt(p_nc^2+phi^2)] | Eq. (17) |
+
+**Dependencies**: Upstream: 12. Downstream: framework swampland (S43).
+
+---
+
+### Paper 16: What Is the Geometry of Superspace?
+- **File**: `16_1993_Giulini_Geometry_of_Superspace.md`
+- **arXiv**: gr-qc/9311017
+- **Year**: 1993
+- **Relevance**: MEDIUM
+- **Tags**: Wheeler-DeWitt metric, superspace, ultralocal, warped product, conformal mode, Lorentzian, ellipticity
+
+**Summary**: WDW metric (beta=1) on superspace has Lorentzian signature (-,+,+,...). Single negative direction = conformal (trace) mode; shape deformations (TT modes) positive definite. At flat geometries the WDW metric fails (V cap H nonempty). beta=1 sits at the boundary of ellipticity. For round S^3: exactly one negative direction in horizontal subspace.
+
+**Key Results**:
+- WDW metric: Lorentzian on superspace
+- Conformal mode negative; TT modes positive definite
+- Fails at flat geometries
+- beta=1 is degenerate elliptic (boundary)
+
+**Key Equations**:
+| Label | Description | Reference |
+|:---|:---|:---|
+| Ultralocal family | G_beta = (sqrt(g)/2)(g^ac g^bd + g^ad g^bc - 2beta g^ab g^cd) | Eq. (6) |
+| Warped product | G_beta = -epsilon dtau^2 + (tau^2/c^2) tr(r^{-1}dr r^{-1}dr) | Eq. (10) |
+| Operator D_beta | D_beta = delta d + 2(1-beta)d delta - 2Ric | Eq. (15) |
+
+**Dependencies**: Upstream: none. Downstream: framework TT sector (Sessions 12, 20b).
+
+---
+
+### Paper 17: Phonon Dynamics in Curved Analog-Gravity BEC
+- **File**: `17_2025_Barral_Phonon_Dynamics_Analog_Gravity_BEC.md`
 - **arXiv**: 2508.03683
 - **Year**: 2025
 - **Relevance**: HIGH
-- **Tags**: analog gravity, BEC, FLRW, phonon creation, Bogoliubov mixing, entanglement, Kibble-Zurek
+- **Tags**: BEC, analog gravity, FLRW, phonon creation, Bogoliubov, two-mode squeezing, entanglement, de Sitter
 
-**Summary**: Engineers BEC density profile to simulate FLRW metric. Sudden scale-factor quench creates entangled phonon pairs via Bogoliubov mixing. N_created ~ 10^3-10^6. Entanglement entropy ~10^3 nats. Direct laboratory testbed for the phonon-exflation creation mechanism. Agreement in exponent (order of magnitude) with framework predictions.
+**Summary**: 2D BEC with engineered density n_0 = n_bar(1+r^2/R^2)^2 realizes spherical FLRW metric (kappa=4/R^2) for phonons. Sudden scale-factor change creates backward-propagating ripples and entangled phonon pairs via Bogoliubov mixing (N = |beta_k|^2, maximal at l=1). Logarithmic negativity E_N quantifies entanglement. Experimentally accessible with K-39 BEC.
 
 **Key Results**:
-- Analog FLRW metric from BEC density engineering
-- Bogoliubov coefficient: |beta_k| ~ (Delta omega / t_quench^{-1})^2
-- Phonon pair creation: N ~ 10^3-10^6
-- Entanglement entropy plateaus (consistent with integrable substrate)
-- Two-mode squeezed states: modes k and -k entangled
+- Engineered BEC density -> spherical FLRW for phonons
+- Bogoliubov pair creation: maximal at l=1
+- Backward-propagating ripples from scale-factor discontinuities
+- Entanglement suppressed by thermal noise
 
-**Dependencies**: Upstream: 08 (BEC). Downstream: framework analog validation.
+**Key Equations**:
+| Label | Description | Reference |
+|:---|:---|:---|
+| FLRW metric | ds^2=-dt^2+a^2[du^2/(1-kappa u^2)+u^2 dphi^2] | Eq. (15) |
+| Mode equation | v-ddot_k + 2(a-dot/a)v-dot_k + (\|h\|/a^2)v_k = 0 | Eq. (44) |
+| Bogoliubov mixing | b_km = alpha*_k a_km + beta*_k a-dag_{km-bar} | Eq. (53) |
+| Particle number | N = \|beta_k\|^2 | Eq. (54) |
+| Log negativity | E_N = max{0,-log_2[(1+2n_B)(sqrt(1+\|beta\|^2)-\|beta\|)^2]} | Eq. (64) |
+
+**Dependencies**: Upstream: Unruh (1981), BLV. Downstream: framework phonon creation (S38).
 
 ---
 
-### Paper 29: ER = EPR Is an Operational Theorem
-- **File**: `29_2024_Bao_ER_EPR_Operational_Theorem.md`
-- **arXiv**: 2410.16496
+### Paper 18: Kibble-Zurek Mechanism of Ising Domains
+- **File**: `18_2024_King_Kibble_Zurek_Ising_Domains.md`
+- **arXiv**: 2306.15821
 - **Year**: 2024
-- **Journal**: Physics Letters B 857, 138972
-- **Relevance**: MEDIUM
-- **Tags**: ER=EPR, LOCC, operational equivalence, wormhole, entanglement monogamy, observer-relative topology
-
-**Summary**: Under LOCC protocols, Alice and Bob cannot distinguish monogamous entanglement (EPR) from a topological identification of spacetime points (ER bridge). ER=EPR recovered as operational theorem without embedding geometry. Non-traversability follows from monogamy of entanglement. Spacetime topology is observer-relative.
-
-**Key Results**:
-- Operational equivalence: EPR correlations = ER bridge under LOCC
-- Non-traversability: follows from entanglement monogamy
-- No embedding geometry required
-- Spacetime topology is observer-relative
-
-**Dependencies**: Upstream: 09 (EPR), 13 (Bell). Downstream: quantum gravity.
-
----
-
-### Paper 30: Kibble-Zurek Mechanism of Ising Domains
-- **File**: `30_2024_King_Kibble_Zurek_Ising_Domains.md`
-- **Year**: 2024
-- **Journal**: Nature Physics 19, 1495--1501
 - **Relevance**: HIGH
-- **Tags**: Kibble-Zurek, Ising domains, NiTiO3, BiTeI, universal scaling, topologically trivial
+- **Tags**: KZM, Ising, NiTiO3, BiTeI, ferro-rotational, polar, dynamical exponent, long-range interactions
 
-**Summary**: Demonstrates KZM applies to topologically trivial Ising domains in 3D materials (NiTiO3 ferro-rotation, BiTeI polar). Defect density scales as tau_Q^{d/(d+z)} with predicted exponent ~0.59. BiTeI exceeds prediction (long-range dipolar enhancement). KZM more universal than expected.
+**Summary**: First KZM verification for topologically-trivial 3D Ising domains. NiTiO3 ferro-rotational: beta_KZM ~ 0.85 (consistent with 3D Ising ~0.81). BiTeI polar: anomalous beta ~ 1.1, implying z ~ 1.14 (vs 2.12), from long-range dipolar interactions. Topological defects immune to dipolar modification; Ising domains are not.
 
 **Key Results**:
-- KZM scaling: n_def ~ tau_Q^{d/(d+z)}, exponent ~0.59 for 3D Ising
-- Applies to topologically trivial domains (not just topological defects)
-- BiTeI enhancement from dipolar interactions
-- Universal power law confirmed in two independent materials
+- KZM valid for topologically-trivial Ising domains
+- NiTiO3: beta ~ 0.85 (agrees with theory ~0.81)
+- BiTeI: anomalous beta ~ 1.1, z ~ 1.14
+- Long-range interactions steepen KZM for non-topological defects
 
-**Dependencies**: Upstream: Kibble (1976), Zurek (1985). Downstream: 33 (tunable KZ).
+**Key Equations**:
+| Label | Description | Reference |
+|:---|:---|:---|
+| KZM exponent | beta_KZM = D nu / (1+nu z) | Eq. (1) |
+| 3D Ising exponents | nu ~ 0.63, z ~ 2.12 | Fig. 2b |
+
+**Dependencies**: Upstream: Kibble-Zurek theory. Downstream: 19.
 
 ---
 
-### Paper 31: SVT Inflation and Dark Energy
-- **File**: `31_2025_Zloshchastiev_SVT_Inflation_Dark_Energy.md`
-- **Year**: 2025
-- **Journal**: Quantum Reports 7(1), art. 7
-- **Relevance**: HIGH
-- **Tags**: superfluid vacuum theory, logarithmic BEC, quinton, inflation-to-DE transition, dilaton
-
-**Summary**: Models physical vacuum as a logarithmic quantum Bose liquid. Laminar superflow generates a 4D relativistic quinton system (dilaton + quintom). Naturally transitions from inflation (w ~ -1) to dark energy era without fine-tuned potential. Framework parallel: vacuum as a BEC substrate.
-
-**Key Results**:
-- Logarithmic Lagrangian: |psi|^4 log(|psi|^2) (thermodynamically stable)
-- Quinton system: dilaton + quintessence + phantom fields emerge from 3D flow
-- Inflation-to-DE transition without inflaton
-- Non-minimally coupled quintessence and tachyonic components
-
-**Dependencies**: Upstream: 08 (BEC). Downstream: framework substrate principle.
-
----
-
-### Paper 32: Running Vacuum Cosmology
-- **File**: `32_2022_Sola_Peracaula_Running_Vacuum_Cosmology.md`
-- **arXiv**: 2203.13757
-- **Year**: 2022
-- **Journal**: Phil. Trans. Roy. Soc. A 380(2230)
-- **Relevance**: HIGH
-- **Tags**: running vacuum, CC problem, adiabatic renormalization, H_0 tension, sigma_8 tension
-
-**Summary**: Earlier companion to Paper 17. Derives RVM from QFT in curved spacetime: rho_vac(H) = rho_0 + nu(H^2 - H_0^2). Alleviates H_0 and sigma_8 tensions. Nu determined by quantum loops: nu = (1/12 pi^2) sum N_i m_i^2 c_i. Inflation emerges from running vacuum.
-
-**Key Results**:
-- RVM: rho_vac(H) = rho_0 + nu(H^2 - H_0^2)
-- Running parameter: nu ~ sum N_i m_i^2/(12 pi^2)
-- Inflation from running vacuum (no inflaton needed)
-- H_0 tension alleviation via early running
-
-**Dependencies**: Upstream: 07, 17. Downstream: 18.
-
----
-
-### Paper 33: Topological Defect Formation in Tunable Transitions
-- **File**: `33_2024_Suzuki_Zurek_Topological_Defect_Tunable_Transition.md`
+### Paper 19: Topological Defects in Tunable Phase Transitions
+- **File**: `19_2024_Suzuki_Zurek_Topological_Defect_Tunable_Transition.md`
 - **arXiv**: 2312.01259
 - **Year**: 2024
-- **Journal**: Physical Review Letters 132, 241601
 - **Relevance**: HIGH
-- **Tags**: Kibble-Zurek, first-order transition, nucleation, tunable order parameter, defect density
+- **Tags**: KZM, first-order, nucleation, Avrami, tunable order, Langevin, bounce action
 
-**Summary**: Extends KZM to transitions interpolating between first-order and second-order. Combines KZM with nucleation theory. For first-order: no critical slowing down; nucleation-dominated. For tunable transitions: unified defect density formula. Framework relevance: BCS transit may be first-order (GL-CUBIC-36 found Z_2 universality, second-order).
+**Summary**: Extends KZM to weakly first-order transitions. Modified LG potential V = (phi^4-2epsilon phi^2)/8 - c|phi|^3/3 tunes transition order. Combined formula n = f n_nuc + (1-f) n_KZM interpolates using the Avrami fraction f. Fast quenches preserve KZM even for c > 0. For c=0: n_KZM ~ tau_Q^{-1/4} confirmed.
 
 **Key Results**:
-- KZM extended to tunable first/second-order transitions
-- First-order: nucleation rate Gamma = Gamma_0 exp(-A/k_BT)
-- Unified defect formula spanning full phase diagram
-- KZM correlation length: xi_KZ = xi_0 tau_Q^{nu/(1+nu z)}
+- Combined KZM + nucleation: n = f n_nuc + (1-f) n_KZM
+- Avrami fraction f diagnoses regime
+- Fast quenches preserve KZM for weakly first-order
+- c=0: n_KZM ~ tau_Q^{-1/4} confirmed
 
-**Dependencies**: Upstream: 30 (King KZ). Downstream: framework transit mechanism.
+**Key Equations**:
+| Label | Description | Reference |
+|:---|:---|:---|
+| Modified LG | V = (phi^4-2epsilon phi^2)/8 - c\|phi\|^3/3 | Eq. (1) |
+| Avrami equation | f = 1 - exp(-Omega) | Eq. (7) |
+| Combined formula | n = f n_nuc + (1-f) n_KZM | Eq. (10) |
+| Nucleation rate | Gamma = A exp[-B(epsilon)/theta] | Eq. (5) |
+
+**Dependencies**: Upstream: 18, Kibble-Zurek. Downstream: framework BCS transit (S36 Z_2).
 
 ---
 
-### Paper 34: Shape Moduli Stabilization, String Gas, and Swampland
-- **File**: `34_2021_Bernardo_Brandenberger_Swampland_String_Gas.md`
-- **arXiv**: 2008.13251
-- **Year**: 2021
-- **Journal**: European Physical Journal C 81, art. 145
-- **Relevance**: MEDIUM
-- **Tags**: string gas cosmology, shape moduli, winding modes, T-duality, de Sitter conjecture, swampland
+### Paper 20: Scale-Dependent Gravity in Superfluid Vacuum Theory
+- **File**: `20_2020_Zloshchastiev_Scale_Dependent_Gravity_SVT.md`
+- **arXiv**: 2011.12565
+- **Year**: 2020
+- **Relevance**: HIGH
+- **Tags**: superfluid vacuum, logarithmic BEC, multi-scale gravity, rotation curves, DM, DE, Hubble tension, Mach principle
 
-**Summary**: Shape moduli in String Gas Cosmology are stabilized by string winding and momentum modes. The resulting effective potential obeys the de Sitter conjecture |nabla V|/V >= c/M_p. SGC is a non-inflationary alternative that respects swampland criteria. Framework parallel: SU(3) shape stabilization via BCS pairing (different mechanism, same problem).
+**Summary**: Logarithmic superfluid vacuum generates seven-term gravitational potential spanning sub-Newtonian to cosmological scales. Logarithmic nonlinearity F(rho)=-b ln(rho/rho_bar) uniquely selected by density-independent c_s (Lorentz symmetry). Flat rotation curves from Phi_gal ~ ln(r). Cosmic acceleration from Phi_dS ~ r^2. Two expansion mechanisms may explain Hubble tension. DM and DE from same superfluid resolve cosmological coincidence.
 
 **Key Results**:
-- Winding + momentum modes stabilize shape moduli
-- Effective potential satisfies de Sitter conjecture
-- No inflaton needed (string gas thermodynamics)
-- T-duality exchanges large and small radii
+- Seven-term gravitational potential from sub-Newtonian to cosmological
+- Flat rotation curves: Phi_gal = c_b^2 chi ln(r)
+- de Sitter: Phi_dS = -c_b^2 r^2/L_dS^2
+- Emergent mass: M = a_1 q/(m l_bar) (quantum Mach)
+- Two expansion mechanisms -> Hubble tension resolution
+- Running G_eff = G[1 + zeta L_chi ln(r)/r]
 
-**Dependencies**: Upstream: 15 (moduli stabilization). Downstream: framework comparison.
+**Key Equations**:
+| Label | Description | Reference |
+|:---|:---|:---|
+| Log-Schrodinger | i hbar d_t Psi = [-hbar^2/(2m) nabla^2 + V - b ln(\|Psi\|^2/rho_bar)] Psi | Eq. (9) |
+| Seven-term potential | Phi = Phi_smi + Phi_RN + Phi_N + Phi_gal + Phi_mgl + Phi_dS + Phi_0 | Eq. (20) |
+| Newtonian | Phi_N = -GM/r, GM = a_1 q/(m l_bar) | Eq. (23) |
+| Galactic flat | Phi_gal = chi b_0 ln(r/l_bar)/m | Eq. (24) |
+| Rotation curve | v = sqrt(GM/R + chi b_0/m + a_1 b_0 R/(m l_bar)) | Eq. (63) |
+
+**Dependencies**: Upstream: Volovik program. Downstream: framework PI-fabric prediction.
+
+---
+
+## Historical References (No PDF Available)
+
+| # | Paper | Year | Modern Coverage |
+|:--|:------|:-----|:----------------|
+| H1 | Einstein, "On the Electrodynamics of Moving Bodies" (SR) | 1905 | Paper 01 |
+| H2 | Einstein, "Does the Inertia of a Body Depend on Its Energy Content?" (E=mc^2) | 1905 | Paper 01 |
+| H3 | Einstein, "On a Heuristic Viewpoint Concerning Light" (photoelectric) | 1905 | Paper 05 |
+| H4 | Einstein, "On the Movement of Small Particles" (Brownian motion) | 1905 | -- (LOW) |
+| H5 | Einstein, "The Field Equations of Gravitation" | 1915 | Paper 01 |
+| H6 | Einstein, "The Foundation of the General Theory of Relativity" | 1916 | Paper 01 |
+| H7 | Einstein, "Cosmological Considerations in GR" (Lambda) | 1917 | Papers 07, 08, 09 |
+| H8 | Einstein, "Quantum Theory of the Monoatomic Ideal Gas" (BEC) | 1924 | Papers 17, 20 |
+| H9 | Einstein, Podolsky, Rosen, "Can QM Be Considered Complete?" (EPR) | 1935 | Paper 05 |
+| H10 | Einstein, Infeld, Hoffmann, "Gravitational Equations and Problem of Motion" | 1938 | Papers 01, 03, 04 |
+| H11 | Dyson, Eddington, Davidson, "Deflection of Light During Solar Eclipse" | 1919 | Paper 01 |
+| H12 | Oppenheimer, Snyder, "On Continued Gravitational Contraction" | 1939 | -- (LOW) |
+| H13 | Bell, "On the Einstein Podolsky Rosen Paradox" | 1964 | Paper 05 |
+| H14 | Pound, Rebka, "Apparent Weight of Photons" | 1959 | Papers 01, 02 |
+| H15 | Peldan, "On the DeWitt Metric" | 1987 | Paper 16 |
+| H16 | PDG, "Extra Dimensions Review" | 2025 | Paper 12 |
 
 ---
 
 ## Cross-Paper Equation Concordance
 
-| Concept | Paper(s) | Equation | Notes |
-|:---|:---|:---|:---|
-| Lorentz transformation | 01 | x' = gamma(x-vt), t' = gamma(t-vx/c^2) | Foundation of SR |
-| Mass-energy | 02 | E = mc^2 | Rest energy = invariant mass x c^2 |
-| Photon energy | 03 | E = h nu | n = E/(h nu) quanta |
-| Diffusion | 04 | D = k_BT/(6 pi eta a) | Stokes-Einstein |
-| Einstein field equations | 05, 06, 07 | G_{mu nu} + Lambda g_{mu nu} = kappa T_{mu nu} | kappa = 8piG/c^4 |
-| Geodesic equation | 06 | d^2x/dtau^2 + Gamma dx/dtau dx/dtau = 0 | Motion from geometry |
-| Bianchi identity | 05, 10 | nabla_mu G^{mu nu} = 0 | Guarantees energy conservation |
-| Perihelion precession | 05, 06 | Delta phi = 6piGM/c^2a(1-e^2) | 43"/century for Mercury |
-| Light deflection | 06, 11 | delta = 4GM/(c^2 b) | 2x Newtonian |
-| Gravitational redshift | 06, 14 | Delta nu/nu = gh/c^2 | Pound-Rebka measurement |
-| BEC critical temperature | 08 | T_c = (h^2/2pi m k_B)(n/zeta(3/2))^{2/3} | Phase transition from statistics |
-| EPR state | 09 | Psi ~ delta(x_1-x_2+x_0) | Position-correlated, momentum-anticorrelated |
-| EIH 1PN acceleration | 10 | a = -Gm_2/r^2 r-hat + (1/c^2) corrections | Velocity-dependent, nonlinear |
-| Bell/CHSH inequality | 13 | \|S\| <= 2 (local), 2sqrt(2) (QM) | Tsirelson bound |
-| Schwarzschild metric | 12 | ds^2 = -(1-r_s/r)dt^2 + ... | r_s = 2GM/c^2 |
-| Friedmann equation | 07 | (a-dot/a)^2 = 8piG rho/3 - kc^2/a^2 + Lambda/3 | Governs cosmic expansion |
-| Running vacuum | 17, 32 | Lambda(H) = Lambda_0 + nu H^2 | nu from QFT loops |
-| CPL parameterization | 18, 19 | w(a) = w_0 + w_a(1-a) | Standard DE test |
-| DeWitt metric | 22, 23 | G^{ijkl} = h^{-1/2}(h^{ik}h^{jl}+h^{il}h^{jk}-h^{ij}h^{kl}) | Indefinite signature |
-| Eotvos ratio | 25 | eta = \|a_1-a_2\|/((a_1+a_2)/2) | < 10^{-15} (MICROSCOPE) |
-| Sensitivity | 26 | s_i = d ln(m_grav,i)/d phi | Effacement parameterization |
-| KZM scaling | 30, 33 | n_def ~ tau_Q^{d/(d+z)} | Universal power law |
-| Bogoliubov mixing | 28 | a_out = alpha a_in + beta a_in^dagger | Phonon pair creation |
+### Eotvos Ratio (eta)
+- Paper 01 Eq. (2): eta = 2|a_1-a_2|/|a_1+a_2| -- general definition
+- Paper 02 Eqs. (1-2): eta = (m_g/m_i)_A - (m_g/m_i)_B -- MICROSCOPE measurement
+- Paper 14 Eq. (12a): eta ~ 5.2x10^{-5} alpha_{h,0}^2 -- dilaton-induced WEP violation
+
+### Sensitivity (Structure Dependence)
+- Paper 01 via Will-Yunes: s_a = d(ln m_a)/d(ln phi) -- PPN context
+- Paper 03 Eq. (6): s_a^{(A)} = partial(ln m_a)/partial(ln psi_A) -- generalized EIH
+- Paper 03 Eq. (29): G_ab = 1 - 2zeta(s_a+s_b-2s_as_b) -- scalar-tensor
+
+### Nordtvedt Parameter
+- Paper 01 Eq. (65): eta_N = 4beta-gamma-3-... -- PPN (weak field)
+- Paper 03 Eq. (63): eta_hat_N = G_12 - G_13 -- modified EIH (strong field)
+
+### Vacuum Energy Density (Running)
+- Paper 07 Eq. (27): rho_vac(H) = rho_0 + (3nu/8piG)(H^2-H_0^2) -- RVM canonical
+- Paper 08 Eq. 5.10: same formula, extended derivation
+- Paper 08 Eq. 8.1: rho_vac = (3/8piG)[c_0 + nu H^2 + nu_tilde Hdot] -- generalized RVM
+
+### Dark Energy Equation of State
+- Paper 07 Sec. 9: w_vac(z) ~ -1 + nu_eff[...] -- RVM prediction
+- Paper 10 Eq. (9): w(a) = w_0 + w_a(1-a) -- CPL parametrization
+- Paper 11 Eq. (5): Shape functions S_0, S_1, S_2 -- model-independent diagnosis
+
+### Bogoliubov Transformation (Particle Creation)
+- Paper 17 Eq. (53): b_km = alpha*_k a_km + beta*_k a-dag_{km-bar}
+- Paper 17 Eq. (54): N = |beta_k|^2
+- Paper 17 Eq. (64): Entanglement via logarithmic negativity E_N
+
+### KZM Universal Scaling
+- Paper 18 Eq. (1): beta_KZM = D nu / (1+nu z) -- pure second-order
+- Paper 19 Eq. (10): n = f n_nuc + (1-f) n_KZM -- combined with nucleation
+
+### FLRW Metric (Real and Analog)
+- Paper 10 Eq. (6): H(z)/H_0 = [...] -- cosmological Friedmann equation
+- Paper 17 Eq. (15): ds^2 = -dt^2 + a^2[du^2/(1-kappa u^2)+u^2 dphi^2] -- BEC analog
+- Paper 20 Eq. (5): emergent metric from superfluid condensate
+
+### Moduli / Scalar Field Potential
+- Paper 12 Eq. (21): V_F = e^K[K^{MN} D_MW D_NW-bar - 3|W|^2] -- string F-term
+- Paper 13 Eq. (17): V_Ein = -(sign F')[|phi|/(d_1(d_1-1))]^{d_1/2} F/F'^2 -- KK F(R)
+- Paper 15 Eq. (16): V = e^{-2Phi} n sqrt(p_nc^2+phi^2) -- string gas
+- Paper 20 Eq. (15): Phi = (1/m)(b_0-q/r^2) ln(|Psi|^2/rho_bar) -- SVT
 
 ---
 
 ## Notation Conventions
 
-| Symbol | Meaning | Sign Convention |
+| Symbol | Meaning | Papers |
 |:---|:---|:---|
-| g_{mu nu} | Spacetime metric | (-,+,+,+) signature |
-| G_{mu nu} | Einstein tensor | R_{mu nu} - (1/2)g_{mu nu}R |
-| R_{mu nu} | Ricci tensor | Contraction of Riemann |
-| Gamma^alpha_{mu nu} | Christoffel symbols | Levi-Civita connection |
-| Lambda | Cosmological constant | Positive for acceleration |
-| kappa | Gravitational coupling | 8 pi G/c^4 |
-| eta | Eotvos parameter | |Delta a|/a_mean |
-| s_i | Sensitivity | d ln m_grav / d phi |
-| w | DE equation of state | p/rho, w=-1 for Lambda |
+| eta | Eotvos ratio (WEP violation parameter) | 01, 02, 14 |
+| gamma, beta | PPN parameters (GR: both = 1) | 01, 03 |
+| s_a | Sensitivity (d ln m_a / d ln psi) | 01, 03 |
+| G_ab, B_ab, C_ab, E_ab, D_abc | Modified EIH Lagrangian parameters | 03 |
+| eta_N, eta_hat_N | Nordtvedt parameter (PPN vs strong-field) | 01, 03 |
+| rho_vac | Vacuum energy density | 07, 08 |
+| nu_eff | RVM running parameter (~10^{-3}) | 07, 08 |
+| w_0, w_a | CPL DE equation of state parameters | 10, 11 |
+| alpha_k, beta_k | Bogoliubov coefficients | 17 |
+| beta_KZM | KZM universal defect exponent | 18, 19 |
+| nu, z | Critical exponents (spatial, dynamical) | 18, 19 |
+| f | Avrami fraction (nucleated volume) | 19 |
+| c_s | Sound speed (BEC, superfluid) | 17, 20 |
+| G_beta | Ultralocal metric on Riem(Sigma) | 16 |
+| tau_a, theta_a | Kahler modulus (volume, axion) | 12 |
+| phi, alpha_i | Dilaton field, coupling functions | 14 |
+| Psi | Superfluid condensate wavefunction | 20 |
+| xi, xi_bar | Non-minimal coupling (xi_bar = xi - 1/6) | 07, 08 |
 
 ---
 
 ## Computational Verification Status
 
-| Paper | Computation | Verified? | Session |
+| Paper | Equation/Result | Verified? | Where |
 |:---|:---|:---|:---|
-| 05 | Mercury precession 43"/century | Yes | Textbook |
-| 06 | Light deflection 1.75" | Yes | Textbook |
-| 07 | CC arithmetic | Yes | S37 (CC-ARITH-37) |
-| 10 | EIH effacement ratio | Yes | S39 (gradient ratio 6596x) |
-| 13 | CHSH = 2sqrt(2) | Framework open | Not yet computed from geometry |
-| 14 | Redshift Delta nu/nu = gh/c^2 | Yes | Textbook |
-| 18 | w_0 = -0.75, framework tension | Yes | S42 (W-Z-42) |
-| 25 | MICROSCOPE eta < 10^{-15} | Framework compatible | S29 (EP satisfied post-freeze) |
-| 28 | Bogoliubov phonon creation | Framework compatible | S38 (P_exc=1.000, 59.8 pairs) |
+| 01 | PPN parameters consistent with GR | Yes (experiments surveyed) | Will 2014 Tables |
+| 02 | delta(Ti,Pt) < 10^{-15} | Yes (MICROSCOPE final) | Paper 02 |
+| 03 | GR: G_ab=B_ab=D_abc=1 | Yes (analytic) | Paper 03 below Eq. (11) |
+| 04 | 40 structure coefficients at 3PN | Identified, not resolved | Paper 04 Table I |
+| 05 | Tsirelson bound S <= 2sqrt(2) | Yes (proven theorem) | Tsirelson 1980 |
+| 07-08 | m^4 cancellation in RVM | Yes (two methods) | Papers 07, 08 |
+| 07 | nu_eff ~ 10^{-3} | Estimated (model-dependent) | Paper 07 Eq. (28) |
+| 10 | DESI DR2 BAO 14.7 sigma | Yes (data) | Paper 10 Sec. III |
+| 10 | 3.1-4.2 sigma w != -1 | Yes (DESI+CMB+SNe) | Paper 10 Sec. VII |
+| 13 | V_Ein minima for cubic F(R) | Yes (numerical) | Paper 13 Figs. 3-4 |
+| 15 | de Sitter c_2 = pi/4 | Yes (analytic) | Paper 15 Eq. (17) |
+| 17 | Bogoliubov N = \|beta\|^2 | Yes (analytic + numerical) | Paper 17 Figs. 6-7 |
+| 18 | beta_KZM ~ 0.85 (NiTiO3) | Yes (experimental) | Paper 18 Fig. 2a |
+| 18 | beta_KZM ~ 1.1 (BiTeI) | Yes (experimental) | Paper 18 Fig. 4c |
+| 19 | n = f n_nuc + (1-f) n_KZM | Yes (Langevin numerics) | Paper 19 Figs. 3-5 |
+| 20 | Flat rotation curves from ln(r) | Yes (analytic) | Paper 20 Eq. (63) |
+| Framework | Effacement: s_a(tau)=0 | Structural (block-diagonal thm) | Session 22b |
+| Framework | Clock dalpha/alpha=-3.08 tau_dot | Yes (computation) | Session 22d |
+| Framework | Swampland \|V'\|/V=7.67 M_Pl | Yes (computation) | Session 43 |

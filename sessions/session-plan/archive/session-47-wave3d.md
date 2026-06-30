@@ -69,7 +69,7 @@ where E_k = sqrt(ξ_k² + Δ_k²) is the BdG quasiparticle energy, and J_a is th
 **s47_curvature_anatomy.npz** (from W2-2):
 - Curvature data for cross-referencing: do soft curvature directions have low ρ_s or high ρ_s?
 
-**tier0-computation/canonical_constants.py**
+**computations/canonical_constants.py**
 
 ### Computation Steps
 
@@ -126,9 +126,9 @@ where E_k = sqrt(ξ_k² + Δ_k²) is the BdG quasiparticle energy, and J_a is th
 - **FAIL**: Eigenvalue variation < 10% (ρ_s is also effectively constant, like C was)
 
 ### Output files
-- Script: `tier0-computation/s47_rhos_tensor.py`
-- Data: `tier0-computation/s47_rhos_tensor.npz`
-- Plot: `tier0-computation/s47_rhos_tensor.png`
+- Script: `computations/s47_rhos_tensor.py`
+- Data: `computations/s47_rhos_tensor.npz`
+- Plot: `computations/s47_rhos_tensor.png`
 
 ### Working paper section: W3-4
 

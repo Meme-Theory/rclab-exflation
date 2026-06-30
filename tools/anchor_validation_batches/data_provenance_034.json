@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 34,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_331",
+      "anchor_type": "data_provenance",
+      "name": "mod_reheating",
+      "script_path": "session-43/s43_mod_reheating.py",
+      "session": "s43",
+      "inputs": "computations/session-43/s43_kz_transfer.npz, computations/session-42/s42_gradient_stiffness.npz, computations/session-43...",
+      "outputs": "session-43/s43_mod_reheating.npz, session-43/s43_mod_reheating.png",
+      "source_file": "computations/session-43/s43_mod_reheating.py",
+      "source_context_30_lines": "    1: \"\"\"\n    2: s43_mod_reheating.py — Full Modulated Reheating: Beyond Linear delta-N (W7-5)\n    3: \n    4: Gate: MOD-REHEAT-43 (INFO)\n    5: \n    6: Physics:\n    7:   W3-5 used linear delta-N: P_R = (dN/dtau)^2 * P_tau(k).\n    8:   The r-n_s tension (r = 0.281 vs BICEP 0.036) requires going beyond single-field\n    9:   linear order.\n   10: "
+    },
+    {
+      "anchor_id": "prov_332",
+      "anchor_type": "data_provenance",
+      "name": "offj_jsymm",
+      "script_path": "session-43/s43_offj_jsymm.py",
+      "session": "s43",
+      "inputs": "",
+      "outputs": "session-43/s43_offj_jsymm.npz, session-43/s43_offj_jsymm.png",
+      "source_file": "computations/session-43/s43_offj_jsymm.py",
+      "source_context_30_lines": "  746: \n  747: elapsed = time.time() - t0\n  748: print(f\"\\n  Elapsed: {elapsed:.1f}s\")\n  749: \n  750: \n  751: # ======================================================================\n  752: # Save data\n  753: # ======================================================================\n  754: out_npz = os.path.join(SCRIPT_DIR, 's43_offj_jsymm.npz')\n  755: \n  756: save_dict = {\n  757:     'tau_fold': TAU_FOLD,\n  758:     'epsilons': np.array(epsilons),\n  759:     'jensen_J_break': rel_j,\n  760:     'jensen_plain_comm': plain_rel_j,\n  761:     'evals_jensen': evals_jensen,\n  762: }"
+    },
+    {
+      "anchor_id": "prov_333",
+      "anchor_type": "data_provenance",
+      "name": "offjensen_z_matrix",
+      "script_path": "session-43/s43_offjensen_z_matrix.py",
+      "session": "s43",
+      "inputs": "",
+      "outputs": "session-43/s43_offjensen_z_matrix.npz, session-43/s43_offjensen_z_matrix.png",
+      "source_file": "computations/session-43/s43_offjensen_z_matrix.py",
+      "source_context_30_lines": "  764:         'convergence_err': np.array([conv_err]),\n  765:         'Z_matrix_h2': Z2,\n  766:     }\n  767: \n  768:     # Per-sector Z\n  769:     for p, q in KK_SECTORS:\n  770:         save_data[f'Z_sector_{p}_{q}'] = Z_per_sector[(p, q)]\n  771: \n  772:     outpath_npz = os.path.join(SCRIPT_DIR, 's43_offjensen_z_matrix.npz')\n  773:     np.savez_compressed(outpath_npz, **save_data)\n  774:     print(f\"  Data saved: {outpath_npz}\")\n  775: \n  776:     # ===================================================================\n  777:     # PLOT\n  778:     # ===================================================================\n  779: \n  780:     fig, axes = plt.subplots(2, 2, figsize=(16, 12))"
+    },
+    {
+      "anchor_id": "prov_334",
+      "anchor_type": "data_provenance",
+      "name": "oneloop_liv",
+      "script_path": "session-43/s43_oneloop_liv.py",
+      "session": "s43",
+      "inputs": "computations/session-42/s42_hauser_feshbach.npz",
+      "outputs": "session-43/s43_oneloop_liv.npz, session-43/s43_oneloop_liv.png",
+      "source_file": "computations/session-43/s43_oneloop_liv.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s43_oneloop_liv.py — One-loop LIV coefficient from integrating out 992 massive KK modes\n    4: =======================================================================================\n    5: \n    6: Gate: LIV-43\n    7:   PASS: alpha_LIV < 10^{-2.5}\n    8:   FAIL: alpha_LIV exceeds any observational bound\n    9: \n   10: Physics:\n   11:   The classical spectral action on M^4 x SU(3) is Lorentz-invariant by construction."
+    },
+    {
+      "anchor_id": "prov_335",
+      "anchor_type": "data_provenance",
+      "name": "pair_form_factor",
+      "script_path": "session-43/s43_pair_form_factor.py",
+      "session": "s43",
+      "inputs": "",
+      "outputs": "session-43/s43_pair_form_factor.npz, session-43/s43_pair_form_factor.png",
+      "source_file": "computations/session-43/s43_pair_form_factor.py",
+      "source_context_30_lines": " 1013:     'natural_orbital_overlap': overlap,\n 1014:     'pair_corr_residual_norm': np.linalg.norm(residual)/np.linalg.norm(pair_corr),\n 1015: \n 1016:     # Gate\n 1017:     'gate_name': np.array(['PAIR-FF-43']),\n 1018:     'gate_type': np.array(['INFO']),\n 1019: }\n 1020: \n 1021: out_npz = os.path.join(SCRIPT_DIR, 's43_pair_form_factor.npz')\n 1022: np.savez_compressed(out_npz, **save_dict)\n 1023: print(f\"Saved: {out_npz}\")\n 1024: print(f\"  Size: {os.path.getsize(out_npz) / 1024:.1f} KB\")\n 1025: \n 1026: # ======================================================================\n 1027: #  Step 14: PLOT\n 1028: # ======================================================================\n 1029: "
+    },
+    {
+      "anchor_id": "prov_336",
+      "anchor_type": "data_provenance",
+      "name": "parametric_resonance",
+      "script_path": "session-43/s43_parametric_resonance.py",
+      "session": "s43",
+      "inputs": "computations/session-42/s42_fabric_dispersion.npz, computations/session-42/s42_gradient_stiffness.npz, computations/sess...",
+      "outputs": "session-43/s43_parametric_resonance.npz, session-43/s43_parametric_resonance.png",
+      "source_file": "computations/session-43/s43_parametric_resonance.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s43_parametric_resonance.py — 2:1 Parametric Near-Resonance Instability (PARAM-RES-43)\n    4: \n    5: Tesla-Resonance agent, Session 43 W6-11.\n    6: \n    7: Physics: The tau modulus oscillates at omega_tau = m_tau = 2.062 M_KK with\n    8: zero-point amplitude sigma_ZP = 0.026. Each BdG quasiparticle mode i has\n    9: energy E_i(tau) that depends on tau. The tau oscillation modulates E_i,\n   10: creating a parametric driving term. If any mode falls within the Mathieu\n   11: instability tongue, its occupation number grows exponentially, challenging"
+    },
+    {
+      "anchor_id": "prov_337",
+      "anchor_type": "data_provenance",
+      "name": "perlman_blur",
+      "script_path": "session-43/s43_perlman_blur.py",
+      "session": "s43",
+      "inputs": "computations/session-42/s42_homogeneity.npz, computations/session-42/s42_gradient_stiffness.npz",
+      "outputs": "session-43/s43_perlman_blur.npz, session-43/s43_perlman_blur.png",
+      "source_file": "computations/session-43/s43_perlman_blur.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s43_perlman_blur.py — PERLMAN-43: Modulus Fluctuation Angular Blur vs Perlman Bound\n    4: \n    5: Gate: PERLMAN-43 (INFO)\n    6: Task: Verify that random-walk modulus fluctuations coupled through the spectral\n    7:       action produce angular blur below the Perlman bound.\n    8: \n    9: PHYSICS SUMMARY:\n   10: \n   11: After the BCS transit, the modulus tau(x) freezes to a spatially varying field:"
+    },
+    {
+      "anchor_id": "prov_338",
+      "anchor_type": "data_provenance",
+      "name": "persistent_homology",
+      "script_path": "session-43/s43_persistent_homology.py",
+      "session": "s43",
+      "inputs": "",
+      "outputs": "session-43/s43_persistent_homology.npz, session-43/s43_persistent_homology.png",
+      "source_file": "computations/session-43/s43_persistent_homology.py",
+      "source_context_30_lines": "  462:         'max_sig_b2': np.array(max_sig_overall),\n  463:     }\n  464:     for enh in enhancements:\n  465:         ek = f\"enh_{enh:.2f}\".replace('.', 'p')\n  466:         for bk in ['b0', 'b1', 'b2']:\n  467:             save_dict[f'{ek}_{bk}_mean'] = stats[enh][f'{bk}_mean']\n  468:             save_dict[f'{ek}_{bk}_std'] = stats[enh][f'{bk}_std']\n  469: \n  470:     np.savez('computations/session-43/s43_persistent_homology.npz', **save_dict)\n  471:     print(f\"\\nData saved to computations/session-43/s43_persistent_homology.npz\")\n  472: \n  473:     # =================================================================\n  474:     # Plot\n  475:     # =================================================================\n  476:     make_plots(stats, fill_ref, enhancements, labels)\n  477: \n  478:     print(f\"\\nTotal: {time.time()-t_start:.1f}s ({(time.time()-t_start)/60:.1f} min)\")"
+    },
+    {
+      "anchor_id": "prov_339",
+      "anchor_type": "data_provenance",
+      "name": "phonon_dos",
+      "script_path": "session-43/s43_phonon_dos.py",
+      "session": "s43",
+      "inputs": "",
+      "outputs": "session-43/s43_phonon_dos.npz, session-43/s43_phonon_dos.png",
+      "source_file": "computations/session-43/s43_phonon_dos.py",
+      "source_context_30_lines": "  576:     'group_n_ev': np.array([group_stats[g]['n_ev'] for g in group_stats]),\n  577:     'group_n_phys': np.array([group_stats[g]['n_phys'] for g in group_stats]),\n  578:     'group_omega_min': np.array([group_stats[g]['omega_min'] for g in group_stats]),\n  579:     'group_omega_max': np.array([group_stats[g]['omega_max'] for g in group_stats]),\n  580:     'group_bandwidth': np.array([group_stats[g]['bandwidth'] for g in group_stats]),\n  581:     'group_flat': np.array([group_stats[g]['flat_band'] for g in group_stats]),\n  582: }\n  583: \n  584: output_path = os.path.join(SCRIPT_DIR, \"s43_phonon_dos.npz\")\n  585: np.savez_compressed(output_path, **output_data)\n  586: print(f\"Saved: {output_path}\")\n  587: \n  588: # ================================================================\n  589: # 10. PLOTS\n  590: # ================================================================\n  591: \n  592: fig = plt.figure(figsize=(16, 14))"
+    },
+    {
+      "anchor_id": "prov_340",
+      "anchor_type": "data_provenance",
+      "name": "polariton_bz",
+      "script_path": "session-43/s43_polariton_bz.py",
+      "session": "s43",
+      "inputs": "",
+      "outputs": "session-43/s43_polariton_bz.npz, session-43/s43_polariton_bz.png",
+      "source_file": "computations/session-43/s43_polariton_bz.py",
+      "source_context_30_lines": "  650: \n  651: print(\"GATE STATUS: INFO — structural band map complete. No pass/fail criterion.\")\n  652: print()\n  653: \n  654: # =============================================================================\n  655: # SECTION 13: SAVE DATA\n  656: # =============================================================================\n  657: \n  658: np.savez(os.path.join(base_dir, 's43_polariton_bz.npz'),\n  659:     # Grid\n  660:     k_grid=k_grid,\n  661:     N_k=N_k,\n  662:     k_BZ=k_BZ,\n  663: \n  664:     # Bare dispersion\n  665:     m_bare=m_bare,\n  666:     omega_bare=omega_bare,"
+    }
+  ]
+}

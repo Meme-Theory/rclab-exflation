@@ -23,7 +23,7 @@ S43 CC workshop emerged insight E4: if SAKHAROV-GN-44 and INDUCED-G-44 (W4-2) ag
 
 **Computation Steps**:
 
-1. Load the full KK spectrum from `tier0-computation/s42_hauser_feshbach.npz` (992 eigenvalues lambda_k with sector labels and multiplicities) and from `tier0-computation/s42_constants_snapshot.npz` (M_KK routes, a_2 coefficient, G_N extraction).
+1. Load the full KK spectrum from `computations/s42_hauser_feshbach.npz` (992 eigenvalues lambda_k with sector labels and multiplicities) and from `computations/s42_constants_snapshot.npz` (M_KK routes, a_2 coefficient, G_N extraction).
 
 2. **Sakharov formula for G_N.** Following Paper 07 (`researchers/Volovik/07_1994_Volovik_Induced_Gravity_3He_A_BCS.md`) and Paper 30 (`researchers/Volovik/30_2022_Volovik_Newton_Constant_Planck_Length.md`):
 
@@ -61,17 +61,17 @@ S43 CC workshop emerged insight E4: if SAKHAROV-GN-44 and INDUCED-G-44 (W4-2) ag
 - BONUS: if |log10(G_N^{Sak}/G_N^{spec})| < 1, the two functionals agree and f is constrained
 
 **Input files**:
-- `tier0-computation/s42_hauser_feshbach.npz` — full 992-eigenvalue spectrum
-- `tier0-computation/s42_constants_snapshot.npz` — M_KK, a_2, G_N extraction
-- `tier0-computation/s36_sfull_tau_stabilization.npz` — S_full(tau), S_fold
+- `computations/s42_hauser_feshbach.npz` — full 992-eigenvalue spectrum
+- `computations/s42_constants_snapshot.npz` — M_KK, a_2, G_N extraction
+- `computations/s36_sfull_tau_stabilization.npz` — S_full(tau), S_fold
 - `researchers/Volovik/07_1994_Volovik_Induced_Gravity_3He_A_BCS.md`
 - `researchers/Volovik/30_2022_Volovik_Newton_Constant_Planck_Length.md`
 - `researchers/Volovik/05_2005_Volovik_Vacuum_Energy_Cosmological_Constant.md`
 
 **Output files**:
-- Script: `tier0-computation/s44_sakharov_gn.py`
-- Data: `tier0-computation/s44_sakharov_gn.npz`
-- Plot: `tier0-computation/s44_sakharov_gn.png`
+- Script: `computations/s44_sakharov_gn.py`
+- Data: `computations/s44_sakharov_gn.npz`
+- Plot: `computations/s44_sakharov_gn.png`
 
 **Working paper section**: W1-1
 
@@ -102,7 +102,7 @@ This computation formalizes the proof, examines domain wall corrections, and map
 
 **Computation Steps**:
 
-1. Load GGE data from `tier0-computation/s42_gge_energy.npz`, domain wall profile from `tier0-computation/s43_pair_form_factor.npz`, and eigenvalue data from `tier0-computation/s42_hauser_feshbach.npz`.
+1. Load GGE data from `computations/s42_gge_energy.npz`, domain wall profile from `computations/s43_pair_form_factor.npz`, and eigenvalue data from `computations/s42_hauser_feshbach.npz`.
 
 2. **T^{mu nu} from KK reduction.** Write the 4D stress-energy tensor from integrating the higher-dimensional T^{MN} over the SU(3) fiber:
 
@@ -132,15 +132,15 @@ This computation formalizes the proof, examines domain wall corrections, and map
 - FAIL: Non-zero T^{0i} from inter-sector coupling or domain wall effects exceeds 10^{-3} c.
 
 **Input files**:
-- `tier0-computation/s42_gge_energy.npz`
-- `tier0-computation/s42_hauser_feshbach.npz`
-- `tier0-computation/s43_pair_form_factor.npz`
-- `tier0-computation/s43_cdm_category.npz`
+- `computations/s42_gge_energy.npz`
+- `computations/s42_hauser_feshbach.npz`
+- `computations/s43_pair_form_factor.npz`
+- `computations/s43_cdm_category.npz`
 
 **Output files**:
-- Script: `tier0-computation/s44_cdm_construct.py`
-- Data: `tier0-computation/s44_cdm_construct.npz`
-- Plot: `tier0-computation/s44_cdm_construct.png`
+- Script: `computations/s44_cdm_construct.py`
+- Data: `computations/s44_cdm_construct.npz`
+- Plot: `computations/s44_cdm_construct.png`
 
 **Working paper section**: W1-2
 
@@ -169,7 +169,7 @@ S43 BCS-CLASS-43: 3D Ising universality (Z_2, nu=0.6301, z=2.024). But this is t
 
 **Computation Steps**:
 
-1. Load eigenvalue data from `tier0-computation/s41_spectral_refinement.npz`, `tier0-computation/s36_sfull_tau_stabilization.npz`, and BCS data from `tier0-computation/s36_mmax_authoritative.npz`.
+1. Load eigenvalue data from `computations/s41_spectral_refinement.npz`, `computations/s36_sfull_tau_stabilization.npz`, and BCS data from `computations/s36_mmax_authoritative.npz`.
 
 2. **Lifshitz anomalous dimension from van Hove scaling.** At the Type I Lifshitz transition, the DOS scales as N(E) ~ |E-E_c|^{(d-2)/2} in d dimensions. For the framework, the effective dimensionality d_eff at the transition point determines eta. The internal space is SU(3) (8-dimensional manifold), but the transition occurs along the 1-dimensional Jensen direction. Compute N(E) near E_c at tau = 0:
 
@@ -203,18 +203,18 @@ S43 BCS-CLASS-43: 3D Ising universality (Z_2, nu=0.6301, z=2.024). But this is t
 - INFO: eta_eff computed but regime of validity unclear
 
 **Input files**:
-- `tier0-computation/s41_spectral_refinement.npz`
-- `tier0-computation/s36_sfull_tau_stabilization.npz`
-- `tier0-computation/s36_mmax_authoritative.npz`
-- `tier0-computation/s43_phonon_dos.npz`
-- `tier0-computation/s43_lifshitz_class.npz`
+- `computations/s41_spectral_refinement.npz`
+- `computations/s36_sfull_tau_stabilization.npz`
+- `computations/s36_mmax_authoritative.npz`
+- `computations/s43_phonon_dos.npz`
+- `computations/s43_lifshitz_class.npz`
 - `researchers/Volovik/24_2016_Volovik_Zhang_Type_II_Weyl_Lifshitz_Transition.md`
 - `researchers/Volovik/33_2017_Volovik_Exotic_Lifshitz_Transitions_Topological_Materials.md`
 
 **Output files**:
-- Script: `tier0-computation/s44_lifshitz_eta.py`
-- Data: `tier0-computation/s44_lifshitz_eta.npz`
-- Plot: `tier0-computation/s44_lifshitz_eta.png`
+- Script: `computations/s44_lifshitz_eta.py`
+- Data: `computations/s44_lifshitz_eta.npz`
+- Plot: `computations/s44_lifshitz_eta.png`
 
 **Working paper section**: W1-3
 
@@ -241,7 +241,7 @@ S43 UV/IR workshop (Nazarewicz R1 Section 5): Delta F_BCS ~ -(1/2) N(E_F) Delta^
 
 **Computation Steps**:
 
-1. Load eigenvalue data from `tier0-computation/s42_hauser_feshbach.npz` (992 eigenvalues at fold with multiplicities), BCS data from `tier0-computation/s38_cc_instanton.npz` (gap, BdG amplitudes), and GGE data from `tier0-computation/s42_gge_energy.npz`.
+1. Load eigenvalue data from `computations/s42_hauser_feshbach.npz` (992 eigenvalues at fold with multiplicities), BCS data from `computations/s38_cc_instanton.npz` (gap, BdG amplitudes), and GGE data from `computations/s42_gge_energy.npz`.
 
 2. **BdG spectrum at the fold.** Construct the BdG quasiparticle energies E_k = sqrt(xi_k^2 + Delta_k^2) for all 992 modes, where xi_k = lambda_k - mu (with mu=0, S34) and Delta_k is the BCS gap for each mode (from the self-consistent gap equation, or approximated as Delta_k = Delta_0 * V_kk' for modes near E_F and 0 otherwise).
 
@@ -283,17 +283,17 @@ S43 UV/IR workshop (Nazarewicz R1 Section 5): Delta F_BCS ~ -(1/2) N(E_F) Delta^
 - INFO: intermediate result with quantified gap
 
 **Input files**:
-- `tier0-computation/s42_hauser_feshbach.npz`
-- `tier0-computation/s38_cc_instanton.npz`
-- `tier0-computation/s42_gge_energy.npz`
-- `tier0-computation/s42_constants_snapshot.npz`
-- `tier0-computation/s36_sfull_tau_stabilization.npz`
+- `computations/s42_hauser_feshbach.npz`
+- `computations/s38_cc_instanton.npz`
+- `computations/s42_gge_energy.npz`
+- `computations/s42_constants_snapshot.npz`
+- `computations/s36_sfull_tau_stabilization.npz`
 - `researchers/Volovik/05_2005_Volovik_Vacuum_Energy_Cosmological_Constant.md`
 
 **Output files**:
-- Script: `tier0-computation/s44_tracelog_cc.py`
-- Data: `tier0-computation/s44_tracelog_cc.npz`
-- Plot: `tier0-computation/s44_tracelog_cc.png`
+- Script: `computations/s44_tracelog_cc.py`
+- Data: `computations/s44_tracelog_cc.npz`
+- Plot: `computations/s44_tracelog_cc.png`
 
 **Working paper section**: W1-4
 
@@ -318,7 +318,7 @@ S43 CW-PREREG-43: FIRST-SOUND-XI-44 pre-registered: xi(r) peak at 305-345 Mpc, S
 
 **Computation Steps**:
 
-1. Load spectral action data from `tier0-computation/s42_gradient_stiffness.npz`, acoustic metric from `tier0-computation/s43_acoustic_metric.npz` (if available, otherwise compute from s43 results), and BAO data from standard LCDM cosmology.
+1. Load spectral action data from `computations/s42_gradient_stiffness.npz`, acoustic metric from `computations/s43_acoustic_metric.npz` (if available, otherwise compute from s43 results), and BAO data from standard LCDM cosmology.
 
 2. **Two-sound system.** The fabric has two acoustic speeds:
    - First sound: c_1 = c (propagation speed in the substrate)
@@ -350,15 +350,15 @@ S43 CW-PREREG-43: FIRST-SOUND-XI-44 pre-registered: xi(r) peak at 305-345 Mpc, S
 - INFO: mechanism exists but amplitude uncertain
 
 **Input files**:
-- `tier0-computation/s42_gradient_stiffness.npz`
-- `tier0-computation/s43_thermal_conductivity.npz`
-- `tier0-computation/s43_kk_cmb_transfer.npz`
-- `tier0-computation/s42_constants_snapshot.npz`
+- `computations/s42_gradient_stiffness.npz`
+- `computations/s43_thermal_conductivity.npz`
+- `computations/s43_kk_cmb_transfer.npz`
+- `computations/s42_constants_snapshot.npz`
 
 **Output files**:
-- Script: `tier0-computation/s44_first_sound_imprint.py`
-- Data: `tier0-computation/s44_first_sound_imprint.npz`
-- Plot: `tier0-computation/s44_first_sound_imprint.png`
+- Script: `computations/s44_first_sound_imprint.py`
+- Data: `computations/s44_first_sound_imprint.npz`
+- Plot: `computations/s44_first_sound_imprint.png`
 
 **Working paper section**: W1-5
 

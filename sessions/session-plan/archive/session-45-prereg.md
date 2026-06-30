@@ -7,9 +7,9 @@
 
 ---
 
-## Priority Tiers
+## Priority Levels
 
-### TIER 1: CRITICAL PATH (Session-defining)
+### LEVEL 1: CRITICAL PATH (Session-defining)
 
 #### OCC-SPEC-45: Occupied-State Spectral Action Minimum Search
 - **Full spec**: `sessions/session-plan/s45-prereg-occupied-state.md`
@@ -31,7 +31,7 @@
 
 ---
 
-### TIER 2: HIGH PRIORITY (CC + DM/DE)
+### LEVEL 2: HIGH PRIORITY (CC + DM/DE)
 
 #### ANALYTIC-TORSION-45: Geometric CC from Analytic Torsion
 - **Agent**: spectral-geometer (primary), nazarewicz (Strutinsky cross-check)
@@ -59,7 +59,7 @@
 
 ---
 
-### TIER 3: MEDIUM PRIORITY (Diagnostics + Infrastructure)
+### LEVEL 3: MEDIUM PRIORITY (Diagnostics + Infrastructure)
 
 #### MKK-TENSION-45: Resolve the 0.83-Decade M_KK Tension
 - **Agent**: baptista (primary), connes (NCG cross-check)
@@ -81,7 +81,7 @@
 
 #### DATA-PROVENANCE-45: Complete Upstream Audit
 - **Agent**: gen-physicist
-- **Gate**: INFO (audit all tier0 .npz files for consistency)
+- **Gate**: INFO (audit all computation .npz files for consistency)
 - **Method**: The S44 parallel audit found 3 issues (Vol(SU(3)) 3 values, E_cond 2 values, stale M_KK). Complete the audit of S7-S24 foundational scripts (the early-sessions audit agent was still running). Produce a canonical constants file imported by all future scripts.
 
 #### DEBYE-WALLER-45: Spectral Action Thermal Correction
@@ -92,7 +92,7 @@
 
 ---
 
-### TIER 4: SPECIALIST (from collab reviews)
+### LEVEL 4: SPECIALIST (from collab reviews)
 
 #### LK-RELAX-45: Landau-Khalatnikov Relaxation Dynamics for n_s
 - **Agent**: landau

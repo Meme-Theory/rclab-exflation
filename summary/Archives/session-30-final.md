@@ -21,7 +21,7 @@ Session 30 produced 14 permanent structural findings, 2 bug detections and fixes
 
 ## I. Results Hierarchy
 
-### Tier 1: Framework-Decisive Results
+### Level 1: Framework-Decisive Results
 
 **1. B-30a FIRES: Pfaffian trivial on Jensen curve (30Ab)**
 
@@ -59,7 +59,7 @@ Quantitative feasibility for soft T3 direction (eigenvalue +8.3 at boundary): Ka
 
 Key epistemic point: the limit-cycle paradigm is in the same position BCS occupied before Session 27 -- mathematically viable, physically motivated, but UNTESTED. It earns zero probability weight until K-1 fires.
 
-### Tier 2: Structural Results
+### Level 2: Structural Results
 
 **7. D_F construction succeeds -- B-30b DOES NOT FIRE (30Aa)**
 
@@ -117,7 +117,7 @@ D_total spectral gap: tau = 0 gives 0.833 (D_K only), minimum 0.790 at tau ~ 0.2
 
 Duistermaat-Guillemin trace formula: N(lambda) = C_d Vol lambda^d + R(lambda), where R oscillates with amplitude O(N^{-1/d}), d = 8. At the gap edge (N ~ 50-200): AC amplitude O(N^{-1/8}) ~ 0.5-0.6, a 50-60% correction to the DC value. The constant-ratio trap does NOT hold at the gap edge. BCS operates entirely in the AC regime.
 
-### Tier 3: Diagnostic Results
+### Level 3: Diagnostic Results
 
 **21. P-30phi PASS at Candidate 1 (30Bb)**: phi_30 = 1.5206 at (tau = 0.180, eps = -0.135), within [1.52, 1.54].
 
@@ -361,22 +361,22 @@ The dynamical paradigm (limit-cycle) has not been tested. It cannot receive prob
 
 | File | Sub-Session | Producer | Content |
 |:-----|:-----------|:---------|:--------|
-| `tier0-computation/s30a_df_construction.py` | 30Aa | phonon-sim | D_F construction script (corrected) |
-| `tier0-computation/s30a_df_construction.npz` | 30Aa | phonon-sim | D_F(tau) matrices, eigenvectors, 9.6 MB |
-| `tier0-computation/s30a_dtotal_pfaffian.py` | 30Ab | phonon-sim | Pfaffian scan script |
-| `tier0-computation/s30a_dtotal_pfaffian.npz` | 30Ab | phonon-sim | Pfaffian data, 75 tau points, 864-dim |
-| `tier0-computation/s30a_gate_verdicts.txt` | 30Aa+30Ab | coordinator | 30A gate verdicts (combined) |
-| `tier0-computation/s30b_sdw_grid.py` | 30Ba | phonon-sim | Seeley-DeWitt landscape script |
-| `tier0-computation/s30b_sdw_grid.npz` | 30Ba | phonon-sim | SDW landscape, 441 grid points |
-| `tier0-computation/s30b_grid_bcs.py` | 30Ba | phonon-sim | BCS grid + V_total landscape |
-| `tier0-computation/s30b_grid_bcs.npz` | 30Ba | phonon-sim | Full V_total landscape data |
-| `tier0-computation/s30b_5d_stability.npz` | 30Ba | phonon-sim | T3/T4 transverse Hessian |
-| `tier0-computation/s30b_full_spectrum.py` | 30Bb | phonon-sim | N_max=6 spectrum script |
-| `tier0-computation/s30b_full_spectrum.npz` | 30Bb | phonon-sim | Full eigenvalue data, both candidates |
-| `tier0-computation/s30b_rge_running.npz` | 30Bb | einstein | RGE curves + NCG-KK analysis |
-| `tier0-computation/s30b_rge_running.png` | 30Bb | einstein | RGE visualization |
-| `tier0-computation/s30b_t1_extension.txt` | 30Bb | phonon-sim | T1 grid extension (negative result) |
-| `tier0-computation/s30b_gate_verdicts.txt` | 30Ba+30Bb | coordinator | 30B gate verdicts (combined) |
+| `computations/s30a_df_construction.py` | 30Aa | phonon-sim | D_F construction script (corrected) |
+| `computations/s30a_df_construction.npz` | 30Aa | phonon-sim | D_F(tau) matrices, eigenvectors, 9.6 MB |
+| `computations/s30a_dtotal_pfaffian.py` | 30Ab | phonon-sim | Pfaffian scan script |
+| `computations/s30a_dtotal_pfaffian.npz` | 30Ab | phonon-sim | Pfaffian data, 75 tau points, 864-dim |
+| `computations/s30a_gate_verdicts.txt` | 30Aa+30Ab | coordinator | 30A gate verdicts (combined) |
+| `computations/s30b_sdw_grid.py` | 30Ba | phonon-sim | Seeley-DeWitt landscape script |
+| `computations/s30b_sdw_grid.npz` | 30Ba | phonon-sim | SDW landscape, 441 grid points |
+| `computations/s30b_grid_bcs.py` | 30Ba | phonon-sim | BCS grid + V_total landscape |
+| `computations/s30b_grid_bcs.npz` | 30Ba | phonon-sim | Full V_total landscape data |
+| `computations/s30b_5d_stability.npz` | 30Ba | phonon-sim | T3/T4 transverse Hessian |
+| `computations/s30b_full_spectrum.py` | 30Bb | phonon-sim | N_max=6 spectrum script |
+| `computations/s30b_full_spectrum.npz` | 30Bb | phonon-sim | Full eigenvalue data, both candidates |
+| `computations/s30b_rge_running.npz` | 30Bb | einstein | RGE curves + NCG-KK analysis |
+| `computations/s30b_rge_running.png` | 30Bb | einstein | RGE visualization |
+| `computations/s30b_t1_extension.txt` | 30Bb | phonon-sim | T1 grid extension (negative result) |
+| `computations/s30b_gate_verdicts.txt` | 30Ba+30Bb | coordinator | 30B gate verdicts (combined) |
 
 ## Appendix C: Einstein Review Key Assessments
 

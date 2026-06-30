@@ -1,0 +1,173 @@
+==============================================================================
+S86 W1c-C23 REGISTRY LANDING DIFF
+Gate: S86-VII-M2-T15-LANDING
+Target: sessions\permanent-results-registry.md
+Old size (chars): 273338
+New size (chars): 284135
+Delta (chars):    10797
+
+Source SHAs (from S85 W2 working-paper):
+  W2-8 audit_sha256:   e8b97457fbeb0e8e71c9d37d5357728a714be72c4f2cadb4320aa203c491e540
+  W2-8 content_sha256: 2861f430a171dba4a25284e642d71da5402a3619f13a41ebde327bdf759bd761
+  W2-9 audit_sha256:   3f5004b1f359b54b91065fb4c824a6864c482344d2e5d1d7cdc617aa4f3c29d1
+  W2-9 content_sha256: 0fca54a66f2e44db7e937a23b2f63055d2f6e660000faf2dbb4e88834f7c0796
+
+Input pin SHAs (closure inputs):
+  sessions/permanent-results-registry.md: de32a518251497541702b3094968bc99d9881c408eaf7cd9b0e423fce3de8195
+  sessions/session-85/session-85-w2-workingpaper.md: c9e8f343cc8556d0be088f0dc705293687c513f308c7ccbe913638c3a052fb86
+  computations/_shared/canonical_constants.py: 06b0d859b2c0321cf77ae88cff679ffa649763623b657bcc71ecb296ee2bea03
+  computations/session-85/s85_gate_verdicts.txt: 1993c0e6ec6aeaef79721d4f7ad11c1bb60b06f8f3a5598d8a8d1f051ee67223
+
+§VII.X next-N rule: highest existing §VII.X.<N> = 0; new sub-slot = §VII.X.1
+
+==============================================================================
+INSERT 1: §VII.M.2 (after §VII.M.scorecard, before §VII.N)
+==============================================================================
+
+### §VII.M.2 — α_s/β_s Pre-Registration Consolidation (S85 W2-8, connes-ncg-theorist, 2026-04-24)
+
+**Source**: S85 W2-8. Script `computations/session-85/s85_w2_alpha_s_pre_reg_landing.py`;
+payload `s85_w2_alpha_s_pre_reg_landing.json`; section draft
+`s85_w2_alpha_s_pre_reg_landing_section.md`.
+Source SHAs (from S85 W2 working-paper §W2-8):
+  `audit_sha256 = e8b97457fbeb0e8e71c9d37d5357728a714be72c4f2cadb4320aa203c491e540`
+  `content_sha256 = 2861f430a171dba4a25284e642d71da5402a3619f13a41ebde327bdf759bd761`
+S86 landing gate: `S86-VII-M2-T15-LANDING` (W1c-C23, 2026-04-26).
+
+**Cross-reference (Mellin compliance lift)**: `α_s` convention inherits the
+zero-free-parameter framework prediction (S50 + S84 W8-86 OZ-derivation chain).
+The CMB-S4 detector pre-registration flagship uses the convention class
+`FRAMEWORK-GGE-single-parameter`; observability projection at the Planck pivot
+inherits the `CMB-PIVOT-k0.05` scheme. Where a downstream W2-Mellin-class
+build cites `α_s`, the `CMB-PIVOT-k0.05` scheme is the carrier of the
+canonical Mellin compliance lift (see W0c-C22 lift). For non-Mellin
+detector projections (LiteBIRD/CMB-HD), the framework central value is
+inherited unchanged; only the σ projection changes per detector.
+
+**PASS-draft text (verbatim quotation from S85 W2 working-paper §W2-8;
+do not paraphrase)**:
+
+> "**Verdict**: **PASS** — `num_contradictions = 0`, `doc_gaps = 0`. All 8 pre-registrations share a coherent canonical central value structure; no two assign contradictory pass-bands to the same (observable, detector) pair. §VII.M.2 draft ready for registry commit."
+>
+> "**4-tuple**: `(value=0, scheme=pre-reg-consolidation-audit, convention=registry-§VII.M.2, L_max=N/A)`"
+>
+> "**Dual-SHA**: `audit_sha256=e8b97457fbeb0e8e71c9d37d5357728a714be72c4f2cadb4320aa203c491e540`, `content_sha256=2861f430a171dba4a25284e642d71da5402a3619f13a41ebde327bdf759bd761`"
+>
+> "**Canonical central values (enforced across all 8 pre-regs)**:
+> - `alpha_s = -0.068968` (= n_s² - 1 at canonical Planck n_s via S50 + S84 W8-86 OZ-derivation).
+> - `beta_s  = -0.1331`    (third Taylor coefficient from W8-86; same derivation chain)."
+>
+> "**Per-pre-reg extraction table**:
+>
+> | # | Pre-reg ID                                  | Observable | Detector                        | σ(1σ)   | Pass-band (±2σ)          | Prior                              |
+> |:-:|:--------------------------------------------|:-----------|:--------------------------------|:--------|:-------------------------|:-----------------------------------|
+> | 1 | CMB-S4-ALPHA-FLAGSHIP                       | α_s        | CMB-S4                          | 0.002   | (-0.073, -0.065)         | framework (zero-free-parameter)    |
+> | 2 | CMB-HD-ALPHA-S-MACINNIS-EXPLICIT            | α_s        | CMB-HD                          | 0.0013  | (-0.0716, -0.0663)       | framework (zero-free-parameter)    |
+> | 3 | LITEBIRD-ALPHA-S-HAZUMI-VERIFIED            | α_s        | LiteBIRD                        | 0.006   | (-0.081, -0.057)         | framework (zero-free-parameter)    |
+> | 4 | ALPHA-S-JOINT-FISHER-CORRELATED             | α_s        | joint (S4+SO+HD+LiteBIRD)       | 0.00108 | (-0.0711, -0.0668)       | framework (correlated Fisher)      |
+> | 5 | ALPHA-S-PRIOR-RANGE-LCDM                    | α_s        | LCDM prior predictive           | N/A     | N/A (prior range 0.03–0.10) | LCDM (Martin+ 2014)            |
+> | 6 | ALPHA-S-TRANSIT-PS-67-SIMULTANEOUS          | α_s        | S84 registry (3 rows)           | 0       | {-0.068968}              | framework (resolves 3-way)         |
+> | 7 | BETA-S-CMB-S4-PREREG                        | β_s        | CMB-S4                          | 0.0022  | (-0.1375, -0.1287)       | framework (3rd Taylor)             |
+> | 8 | W1a-ALPHA-S-REGISTRY-UPGRADE                | α_s (meta) | registry-internal               | 0       | {-0.068968}              | framework (identity → theorem)     |"
+>
+> "**Internal consistency check (pairwise)**: C(8, 2) = 28 pairs evaluated. Each pair is either:
+> (a) different observable (α_s vs β_s) — inherently non-contradictory; or
+> (b) same observable but different detector — inherently non-contradictory (independent measurements); or
+> (c) same observable + same detector — pass-bands must overlap.
+>
+> Only the (CMB-S4 flagship, W0 β_s CMB-S4 pre-reg) pair shares a detector but is across different observables (α_s vs β_s) — non-contradictory. No other pair shares (observable, detector). **0 contradictions found**."
+>
+> "**§VII.M.2 registry-section draft**: emitted at `computations/session-85/s85_w2_alpha_s_pre_reg_landing_section.md`. Contains the 8-row per-pre-reg table + 6 scheme lockouts from W10-123:
+> 1. No post-data auxiliary couplings.
+> 2. No n_s redefinition.
+> 3. No derivation-chain change.
+> 4. No pivot migration.
+> 5. No axiom subtraction.
+> 6. No detector cherry-picking."
+>
+> "**What PASS means**: §VII.M.2 is now the canonical registry section for all α_s/β_s event-driven pre-registrations. Future sessions cite §VII.M.2 without re-enumerating. The 8 pre-regs form a coherent pre-registration bundle: 7 × α_s (across 5 detector configurations + 2 meta-items) + 1 × β_s at CMB-S4, all rooted in the S50 + W8-86 OZ derivation chain (zero-free-parameter framework prediction)."
+>
+> "**Substrate framing**: α_s and β_s are the emergent observational projections of the substrate's a_4 Seeley-DeWitt coefficient at the Planck pivot. The 8 pre-regs are different observational TERMINALS for the same substrate prediction; consolidation audits whether the substrate's prediction survives the detector-diversity test (it does)."
+
+**Substrate framing (META landing addendum, S86 W1c-C23)**: This §VII.M.2
+slot is the canonical citation target for all future α_s / β_s
+event-driven pre-registrations (CMB-S4, CMB-HD, LiteBIRD, joint Fisher).
+It does NOT re-derive the substrate prediction; it consolidates the
+pre-registration bundle anchored on the framework-derived α_s under the
+CMB-PIVOT-k0.05 scheme (a substrate prediction, NOT a fitted observational
+input). Downstream sessions cite this §VII.M.2 entry; re-enumeration of
+the 8 pre-regs is forbidden.
+
+
+==============================================================================
+INSERT 2: §VII.X / §VII.X.1 (appended after §VII.S)
+==============================================================================
+
+## §VII.X — S50 Theorem Promotions (S85+ registry upgrades)
+
+§VII.X holds permanent-registry promotions of S50-era theorems whose
+status changes from "numerical / algebraic" or "session-local" to canonical
+zero-free-parameter theorem with axiomatic closure. Sub-slots are
+cumulative; the next available sub-slot is allocated by the deterministic
+N+1 rule (highest existing §VII.X.<N> integer + 1).
+
+### §VII.X.1 — S50 T15 Registry Upgrade (α_s = n_s² − 1, S85 W2-9, connes-ncg-theorist, 2026-04-24)
+
+**Source**: S85 W2-9. Script `computations/session-85/s85_w2_s50_t15_registry_upgrade.py`;
+payload `s85_w2_s50_t15_registry_upgrade.json`; upgrade diff
+`s85_w2_s50_t15_diff.md`.
+Source SHAs (from S85 W2 working-paper §W2-9):
+  `audit_sha256 = 3f5004b1f359b54b91065fb4c824a6864c482344d2e5d1d7cdc617aa4f3c29d1`
+  `content_sha256 = 0fca54a66f2e44db7e937a23b2f63055d2f6e660000faf2dbb4e88834f7c0796`
+S86 landing gate: `S86-VII-M2-T15-LANDING` (W1c-C23, 2026-04-26).
+
+**Pre-S86 cite (deprecated)**: T15 row at registry line 72 (Casimir-Σ
+annotation) and 1B:15 row at registry line 1743 ("α_s = n_s² − 1 |
+ROBUST | 5 proofs"). These remain in place as forward-pointers; the
+canonical citation MUST now be §VII.X.1.
+
+**PASS-draft text (verbatim quotation from S85 W2 working-paper §W2-9;
+do not paraphrase)**:
+
+> "**Verdict**: **PASS** — `num_criteria_met = 3/3`. S50 T15 is eligible for full registry upgrade. Upgrade diff emitted for registry-steward commit."
+>
+> "**4-tuple**: `(value=3, scheme=registry-upgrade-criteria-check, convention=registry-promotion-standard, L_max=N/A)`"
+>
+> "**Dual-SHA**: `audit_sha256=3f5004b1f359b54b91065fb4c824a6864c482344d2e5d1d7cdc617aa4f3c29d1`, `content_sha256=0fca54a66f2e44db7e937a23b2f63055d2f6e660000faf2dbb4e88834f7c0796`"
+>
+> "**T15 canonical statement (identified)**: α_s = n_s² − 1 — OZ single-pole identity for any K²-quadratic propagator at the Planck pivot. Registry rows affected: T15 (line 72, Casimir Σ Scaling annotation) + 1B:15 (line 1743, "α_s = n_s² − 1 | ROBUST | 5 proofs")."
+>
+> "**Three promotion criteria**:
+>
+> | # | Criterion                                | Metric                               | Value  | Met? |
+> |:-:|:-----------------------------------------|:-------------------------------------|:-------|:----:|
+> | 1 | Proven                                   | Number of independent proofs         | 5      | ✓    |
+> | 2 | Cross-referenced from ≥ 2 S51-S84 sessions | Number of S51-S84 sessions with ≥ 1 match | 16     | ✓    |
+> | 3 | Integrated into ≥ 1 closure chain        | Number of closure chains containing T15 | 1      | ✓    |"
+>
+> "**Closure-chain occurrences**:
+>
+> | Chain                                    | Present in registry? |
+> |:-----------------------------------------|:---------------------|
+> | S84 W10-123 axiomatic closure            | ✓                    |
+> | S84 W8-86 OZ single-pole derivation      | ✓                    |
+> | 1B:15 row (registry line 1743)           | ✓                    |"
+>
+> "**Cross-reference count (S51-S84)**: 16 sessions contain T15-related patterns. Search patterns used: `alpha_s = n_s^2`, `n_s^2 - 1`, `T15`, `1B:15`, `S50 OZ`, `OZ single.pole`."
+>
+> "**Upgrade diff emitted**: `computations/session-85/s85_w2_s50_t15_diff.md` contains:
+> - From-slot: session-local T15 (Casimir-Σ line 72) + 1B:15 row (line 1743).
+> - To-slot: permanent-results-registry §VII.X (cascade to next available §VII slot per slot-allocation protocol).
+> - Upgraded statement: "α_s = n_s² − 1 (OZ SINGLE-POLE ZERO-FREE-PARAMETER THEOREM)".
+> - Load-bearing axioms: {dim, reg, fin, real, 1st-order} per W2-1 audit."
+>
+> "**What PASS means**: T15 is promoted to canonical permanent-results-registry entry. Future sessions cite the registry entry directly rather than re-deriving the identity. The identity's status changes from "numerical / algebraic" (language in 1B:15) to "ZERO-FREE-PARAMETER THEOREM" with axiomatic closure and 5 independent proofs."
+>
+> "**Substrate framing**: T15 is a theorem about the substrate's spectral-action structure — specifically, that the first Taylor moment of the K²-quadratic propagator's spectral density equals n_s² − 1 at the Planck pivot. Registering it promotes a substrate property from ad-hoc algebra to canonical structure. Future agents reading the registry will see it as a first-class structural constraint."
+
+**Promotion landing addendum (S86 W1c-C23)**: §VII.X.1 is the canonical
+citation slot for T15. The pre-S86 row at line 1743 (1B:15) is hereby
+**deprecated as the citation target**; it remains in the registry as a
+forward-pointer. Future session citations of T15 MUST resolve to
+§VII.X.1.
+

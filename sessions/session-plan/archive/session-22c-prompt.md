@@ -33,7 +33,7 @@ Three specialists + coordinator = risk of notification avalanche. Follow strictl
 ## COMPUTATION ENVIRONMENT
 
 **Python**: `"phonon-exflation-sim/.venv312/Scripts/python.exe"`
-**Output directory**: `tier0-computation/`
+**Output directory**: `computations/`
 **Script prefix**: `s22c_`
 
 ---
@@ -70,7 +70,7 @@ The non-perturbative mechanisms in this session operate on the gauge-charged sec
 ## ALL agents (MANDATORY):
 
 1. **R2 master collab**: `sessions/session-21/session-21c-r2-master-collab.md`
-   — Section VI (new physics from R2: VI.2 Landau at d=8, VI.3 envelope reinterpretation). Section VIII Tier 1 (items 3-8: BCS channel scan, Higgs-sigma, order-one condition, instanton, Berry curvature, bowtie fine structure).
+   — Section VI (new physics from R2: VI.2 Landau at d=8, VI.3 envelope reinterpretation). Section VIII Level 1 (items 3-8: BCS channel scan, Higgs-sigma, order-one condition, instanton, Berry curvature, bowtie fine structure).
 
 2. **Session 21c synthesis**: `sessions/session-21/session-21c-phase0-synthesis.md`
    — Section III (structural theorems: Dual Algebraic Trap), Section IV (CP-4 condensate persistence dichotomy), Section VII (per-agent critical questions).
@@ -138,7 +138,7 @@ where V_{nm}^{eff} is the effective intra-sector interaction, xi_m = lambda_m - 
 **Protocol (BCS channel scan)**:
 
 1. **Softening analysis** (using existing eigenvalue data): For each sector (p,q) at each tau, compute the derivative d(lambda_min(p,q))/dtau. Sectors with d(lambda_min)/dtau < 0 are "softening" (becoming lighter), which is the analog of an attractive channel.
-   - Data: `tier0-computation/s19a_sweep_data.npz`
+   - Data: `computations/s19a_sweep_data.npz`
    - Identify all sectors where dE/dtau < 0 at any tau in [0.15, 0.35]
 
 2. **BCS threshold estimate** (using intra-sector Kosmann correction): From Session 22b (corrected):
@@ -155,7 +155,7 @@ where V_{nm}^{eff} is the effective intra-sector interaction, xi_m = lambda_m - 
 
 **Pre-registered Constraint Gates** (Landau R2 collab):
 
-| Tier | Criterion | BF | Prob shift |
+| Level | Criterion | BF | Prob shift |
 |:-----|:----------|:---|:-----------|
 | DECISIVE | BCS gap equation has non-trivial solution at tau in [0.15, 0.35] (condensate exists) | 20 | +8-12 pp |
 | COMPELLING | Attractive channel identified (at least one sector softens monotonically in physical window) | 8 | +4-6 pp |
@@ -164,15 +164,15 @@ where V_{nm}^{eff} is the effective intra-sector interaction, xi_m = lambda_m - 
 
 Note on condensate + DESI tension (CP-4, Session 21c): If condensate forms (Branch A), w = -1 (DESI-incompatible UNLESS disrupted during early universe evolution). Report honestly. Do not assume the condensate is DESI-compatible without computing the thermal disruption.
 
-**Script**: `tier0-computation/s22c_bcs_channel_scan.py`
-**Output**: `tier0-computation/s22c_bcs_channel_scan.npz`, `tier0-computation/s22c_bcs_channel_scan.txt`
+**Script**: `computations/s22c_bcs_channel_scan.py`
+**Output**: `computations/s22c_bcs_channel_scan.npz`, `computations/s22c_bcs_channel_scan.txt`
 
 ---
 
 ### Computation F-2: Instanton Action S_inst(tau) on Jensen SU(3)
 
 **Primary**: feynman-theorist
-**Priority**: High (SP + Feynman + QA from R1, SP Tier 1 item 5)
+**Priority**: High (SP + Feynman + QA from R1, SP Level 1 item 5)
 **Runtime**: 1-4 hours (requires Yang-Mills instanton ansatz)
 
 **Background**: From Session 21b B-2, instanton channels were partially assessed:
@@ -201,15 +201,15 @@ Note on condensate + DESI tension (CP-4, Session 21c): If condensate forms (Bran
 
 **Pre-registered Constraint Gates** (SP + Feynman R2 collab):
 
-| Tier | Criterion | BF | Prob shift |
+| Level | Criterion | BF | Prob shift |
 |:-----|:----------|:---|:-----------|
 | DECISIVE | dI_E/dtau > 0 in [0.15, 0.55] AND Stokes flip at M1 | 20 | +8-12 pp |
 | COMPELLING | dI_E/dtau > 0 in physical window (tau > 0.15 Euclidean-preferred) | 8 | +4-6 pp |
 | INTERESTING | Stokes flip identified even if magnitude small | 3 | +2-3 pp |
 | CLOSED | I_E monotonically decreasing throughout (tau=0 always preferred) | 0.3 | -3-4 pp |
 
-**Script**: `tier0-computation/s22c_instanton_action.py`
-**Output**: `tier0-computation/s22c_instanton_action.npz`, `tier0-computation/s22c_instanton_action.txt`
+**Script**: `computations/s22c_instanton_action.py`
+**Output**: `computations/s22c_instanton_action.npz`, `computations/s22c_instanton_action.txt`
 
 ---
 
@@ -261,7 +261,7 @@ This is the coefficient of the |H|^2 |sigma|^2 coupling in the effective potenti
 
 **Pre-registered Constraint Gates** (Connes R2 collab):
 
-| Tier | Criterion | BF | Prob shift |
+| Level | Criterion | BF | Prob shift |
 |:-----|:----------|:---|:-----------|
 | DECISIVE | lambda_{H,sigma} < 0 at tau in [0.20, 0.35] with |lambda_{H,sigma}| * v^2 > |V_eff'(tau_0)| | 30 | +12-18 pp |
 | COMPELLING | lambda_{H,sigma} < 0 at some tau in [0.10, 0.50] | 12 | +6-10 pp |
@@ -270,8 +270,8 @@ This is the coefficient of the |H|^2 |sigma|^2 coupling in the effective potenti
 
 **Note on independence from spectral sums**: The key property of this mechanism is that it operates on the PRODUCT structure of the spectral triple (H_F cross SU(3)), not on the KK spectral sum alone. The Dual Algebraic Trap applies to spectral sums over (p,q) sectors. The Higgs-sigma portal comes from the finite part of the spectral triple (H_F, J_F, D_F), which is NOT trapped. This is why Connes identifies it as the only remaining NCG-native perturbative escape.
 
-**Script**: `tier0-computation/s22c_higgs_sigma.py`
-**Output**: `tier0-computation/s22c_higgs_sigma.npz`, `tier0-computation/s22c_higgs_sigma.png`
+**Script**: `computations/s22c_higgs_sigma.py`
+**Output**: `computations/s22c_higgs_sigma.npz`, `computations/s22c_higgs_sigma.png`
 
 ---
 
@@ -303,7 +303,7 @@ On the finite algebra A_F, this is automatically satisfied by construction (Barr
 
 **Pre-registered Constraint Gates** (Connes + Baptista R2 collab):
 
-| Tier | Criterion | BF | Prob shift |
+| Level | Criterion | BF | Prob shift |
 |:-----|:----------|:---|:-----------|
 | DECISIVE | ||[[D,a], JbJ^{-1}]|| = 0 for tau in [0, tau_max] with tau_max in [0.30, 0.40] | 40 | +15-20 pp |
 | COMPELLING | tau_max exists and is in [0.20, 0.60] | 15 | +8-12 pp |
@@ -313,8 +313,8 @@ On the finite algebra A_F, this is automatically satisfied by construction (Barr
 
 Note: NEUTRAL is listed for completeness. If the order-one condition fails even at small tau, there is a fundamental inconsistency in the framework that precedes all the stabilization questions.
 
-**Script**: `tier0-computation/s22c_order_one.py`
-**Output**: `tier0-computation/s22c_order_one.txt`
+**Script**: `computations/s22c_order_one.py`
+**Output**: `computations/s22c_order_one.txt`
 
 ---
 
@@ -365,15 +365,15 @@ From Session 21a (post-synthesis, Landau): V''_total > 0 everywhere. The FULL V_
 
 **Pre-registered Constraint Gates** (Landau R2 collab):
 
-| Tier | Criterion | BF | Prob shift |
+| Level | Criterion | BF | Prob shift |
 |:-----|:----------|:---|:-----------|
 | COMPELLING | V_IR'' < 0 at some tau in [0.10, 0.40] (IR spinodal exists) | 8 | +4-6 pp |
 | INTERESTING | G_i > 10 (perturbative V_eff unreliable, but mean-field not exact for modulus) | 3 | +1-2 pp |
 | NEUTRAL | V_total'' > 0 throughout (confirmed from 21a) | 1 | 0 pp |
 | CLOSED | G_i < 1 AND V_IR'' > 0 everywhere (mean-field exact, no spinodal anywhere) | 0.4 | -2 pp |
 
-**Script**: `tier0-computation/s22c_landau_classification.py`
-**Output**: `tier0-computation/s22c_landau_classification.npz`, `tier0-computation/s22c_landau_classification.txt`
+**Script**: `computations/s22c_landau_classification.py`
+**Output**: `computations/s22c_landau_classification.npz`, `computations/s22c_landau_classification.txt`
 
 ---
 
@@ -389,7 +389,7 @@ From Session 21a (post-synthesis, Landau): V''_total > 0 everywhere. The FULL V_
 
 2. **The BCS-BEC crossover** occurs around g*N(0) ~ 1. Above 1: BEC (molecular condensate). Below 1: BCS (Cooper pairs). The crossover tau should be identifiable from the spectrum.
 
-**Data source**: `tier0-computation/s19a_sweep_data.npz`
+**Data source**: `computations/s19a_sweep_data.npz`
 
 **Protocol**:
 

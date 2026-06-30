@@ -1,0 +1,47 @@
+# DESI DR2 raw BAO distance measurements (FETCHED literature data)
+# ============================================================================
+# Source: DESI DR2 Results II — Measurements of Baryon Acoustic Oscillations
+#         and Cosmological Constraints (DESI Collaboration 2025),
+#         arXiv:2503.14738v3 ; Phys. Rev. D 112, 083515 (2025).
+# Machine-readable canonical form fetched 2026-06-15 from the community-standard
+# Cobaya BAO data repository (the exact mean + covariance files the DESI DR2
+# likelihood ships):
+#   mean: https://raw.githubusercontent.com/CobayaSampler/bao_data/master/desi_bao_dr2/desi_gaussian_bao_ALL_GCcomb_mean.txt
+#   cov : https://raw.githubusercontent.com/CobayaSampler/bao_data/master/desi_bao_dr2/desi_gaussian_bao_ALL_GCcomb_cov.txt
+#
+# These are the BAO-only (ALL_GCcomb) Gaussian-approximated distance ratios.
+# r_d (sound horizon at the drag epoch) is the DESI fiducial; the FRAMEWORK does
+# NOT modify r_d (the BCS transition at ~1e-41 s is irrelevant to recombination
+# physics at T ~ 0.26 eV), so the gate holds r_d = 147.0244278618993 Mpc
+# (canonical, s64_desi_dv.npz r_d_Mpc, Planck-2018-fiducial) and does NOT
+# marginalize it.
+#
+# COLUMN FORMAT (mean rows):
+#   z_eff   value(distance/r_d)   quantity   tracer
+# The row ORDER below is the canonical likelihood ordering and MUST be preserved:
+# the 13x13 covariance (separate block) is indexed in this exact order.
+# Note the Lya bin lists DH BEFORE DM (rows 12,13) per the Cobaya file.
+# ============================================================================
+#
+# --- MEAN VALUES (13 measurements, 7 z-bins) ---
+# z_eff        value          quantity        tracer
+0.295    7.92512927      DV_over_rs      BGS
+0.510    13.62003080     DM_over_rs      LRG1
+0.510    20.98334647     DH_over_rs      LRG1
+0.706    17.35069094     DM_over_rs      LRG2
+0.706    19.45534918     DH_over_rs      LRG2
+0.934    21.57563956     DM_over_rs      LRG3+ELG1
+0.934    17.64149464     DH_over_rs      LRG3+ELG1
+1.321    27.60085612     DM_over_rs      ELG2
+1.321    14.17602155     DH_over_rs      ELG2
+1.484    30.51190063     DM_over_rs      QSO
+1.484    12.81699964     DH_over_rs      QSO
+2.330    8.631545674846294   DH_over_rs  Lya
+2.330    38.988973961958784  DM_over_rs  Lya
+#
+# NOTE on the WebSearch-reported DR2 table (cross-check only): the abstract-level
+# summary table lists BGS DV/rd = 7.942 +/- 0.075, LRG1 DM/rd = 13.59 +/- 0.17 /
+# DH/rd = 21.86 +/- 0.43, LRG2 DM/rd = 17.35 +/- 0.18 / DH/rd = 19.46 +/- 0.33,
+# LRG3+ELG1 21.58/17.64, ELG2 27.60/14.18, QSO 30.51/12.82, Lya 38.99/8.63.
+# The Cobaya machine-readable means above agree with this to published precision;
+# the Cobaya files are used as canonical because they carry the full covariance.

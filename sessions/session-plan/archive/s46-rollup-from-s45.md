@@ -18,7 +18,7 @@
 10. `s45_addendum_forward_backward_ns.md`
 11. `s45_tinfoil_minus068.md`
 12. `s45_formula_audit.md`
-13. `tier0-computation/s45_heat_kernel_audit.md`
+13. `computations/s45_heat_kernel_audit.md`
 
 **Files NOT found** (listed in task but absent from disk): `s45_landau_review_nazarewicz.md`, `s45_landau_review_qa.md`, `s45_landau_review_einstein.md`, `s45_landau_review_tesla.md`.
 
@@ -68,7 +68,7 @@ Sorted by convergence count (number of independent sources proposing the same co
 - **Sources**: Spectral-geometer review (Way Forward 4), Connes review (Section V.D), Heat kernel audit (Section 6.3, uncomputed priority), Quicklook (HEAT-KERNEL-AUDIT-45)
 - **Proposer**: Spectral-geometer, Connes, Heat kernel audit
 - **What**: Compute a_2 = (4pi)^{-4} * 16 * integral(R(tau)/6 * dV) directly from the known Jensen metric Ricci scalar R(tau). Compare to spectral a_2 = 2776.17 at fold.
-- **Why**: Quantifies the 30-50% truncation error on a_2, determines whether the 0.83-decade M_KK tension is a truncation artifact, and closes the loop on Tier 2 validity. Purely analytic -- costs nothing.
+- **Why**: Quantifies the 30-50% truncation error on a_2, determines whether the 0.83-decade M_KK tension is a truncation artifact, and closes the loop on Level 2 validity. Purely analytic -- costs nothing.
 - **Input data**: `r20a_riemann_tensor.npz` (R(tau) known analytically from S20a), `canonical_constants.py`
 - **Priority**: HIGH
 - **Pre-registered gate**: A2-GEOMETRIC-46. PASS: spectral a_2 agrees with geometric a_2 within 30%. FAIL: disagreement > 100%.
@@ -99,7 +99,7 @@ Sorted by convergence count (number of independent sources proposing the same co
 - **Proposer**: Spectral-geometer, Connes, Tesla
 - **What**: Compute the Dirac spectrum at max_pq_sum = 6. Track d_Weyl convergence toward 8, M_KK tension narrowing, and Taylor expansion behavior.
 - **Why**: Tests whether the Taylor exactness theorem develops non-perturbative corrections as the spectrum approaches the continuum. Sharpens G_N from a_2. Determines whether the 0.83-decade M_KK tension is a truncation artifact.
-- **Input data**: `tier1_dirac_spectrum.py` (computational infrastructure)
+- **Input data**: `dirac_spectrum.py` (computational infrastructure)
 - **Priority**: MEDIUM (computationally intensive -- ~8.7s per s-value, new irreps add sectors with dim^2 up to 441)
 - **Pre-registered gate**: None explicitly stated. Diagnostics: d_Weyl closer to 8? |c_{n+1}/c_n| growing (asymptotic onset)? M_KK tension < 0.5 decades?
 
@@ -130,7 +130,7 @@ See item 1.8 above. MEDIUM.
 - **Source**: Spectral-geometer review (Section IV, Way Forward 2)
 - **Proposer**: Spectral-geometer
 - **What**: Define spectral current j(lambda, tau) = sum_k delta(lambda - lambda_k(tau)) * (d lambda_k / d tau). Fourier transform in lambda. Extract effective alpha from k-dependence.
-- **Why**: Tier 1 quantity (computed from eigenvalues and derivatives). Weights modes by VELOCITY in spectral plane, producing intermediate alpha between 0 and 6. Modes near van Hove singularities contribute disproportionately.
+- **Why**: Level 1 quantity (computed from eigenvalues and derivatives). Weights modes by VELOCITY in spectral plane, producing intermediate alpha between 0 and 6. Modes near van Hove singularities contribute disproportionately.
 - **Input data**: `s44_dos_tau.npz`, `s44_vanhove_track.npz`
 - **Priority**: HIGH
 - **Pre-registered gate**: SPECTRAL-FLOW-NS-46. PASS: alpha in [0.8, 1.2]. FAIL: alpha outside [0.5, 2.0].
@@ -367,7 +367,7 @@ See item 1.3 above. HIGH.
 - **Source**: Spectral-geometer review (Way Forward 6)
 - **Proposer**: Spectral-geometer
 - **What**: Compute K(t) = |sum_k d_k e^{i lambda_k t}|^2 / (sum d_k)^2. Identify the Heisenberg time t_H, ramp-plateau structure, and tau-dependence.
-- **Why**: Tier 1 quantity. Probes two-point eigenvalue correlations. Heisenberg time is a natural scale in the finite crystal. Non-trivial tau-dependent structure would provide intrinsic observables.
+- **Why**: Level 1 quantity. Probes two-point eigenvalue correlations. Heisenberg time is a natural scale in the finite crystal. Non-trivial tau-dependent structure would provide intrinsic observables.
 - **Input data**: `s44_dos_tau.npz`
 - **Priority**: LOW
 - **Pre-registered gate**: None stated.
@@ -385,7 +385,7 @@ See item 1.3 above. HIGH.
 - **Source**: Spectral-geometer review (Way Forward 3)
 - **Proposer**: Spectral-geometer
 - **What**: Compute zeta(s) for non-integer s (s = 1/2, 3/2, 5/2). Interpolate between well-behaved (large s) and UV-sensitive (small s) regimes.
-- **Why**: Reveals how the q-theory crossing tau* depends on UV completion. Tier 1 quantity.
+- **Why**: Reveals how the q-theory crossing tau* depends on UV completion. Level 1 quantity.
 - **Input data**: `s44_dos_tau.npz`
 - **Priority**: LOW
 - **Pre-registered gate**: None stated.
@@ -440,7 +440,7 @@ See item 1.3 above. HIGH.
 ### 6.6 Dissolution entropy computation (NOT STARTED in S45)
 - **Source**: Working paper (W5-4), Hawking review (Section II)
 - **What**: Script `s45_dissolution_entropy.py` was created but computation was not run. Complete it.
-- **Input data**: Script exists in `tier0-computation/`
+- **Input data**: Script exists in `computations/`
 - **Priority**: LOW
 - **Pre-registered gate**: Original S45 gate.
 
@@ -462,11 +462,11 @@ See item 1.3 above. HIGH.
 
 ### 7.4 Heat kernel reclassifications
 - **Source**: HEAT-KERNEL-AUDIT-45
-- **Status**: d_s is Tier 3 ARTIFACT. Analytic torsion is Tier 3 ARTIFACT. Spectral action is Tier 1 VALID. Seeley-DeWitt a_n are Tier 2 APPROXIMATION. These are PERMANENT reclassifications. No further action except awareness.
+- **Status**: d_s is Level 3 ARTIFACT. Analytic torsion is Level 3 ARTIFACT. Spectral action is Level 1 VALID. Seeley-DeWitt a_n are Level 2 APPROXIMATION. These are PERMANENT reclassifications. No further action except awareness.
 
 ### 7.5 DIMFLOW-44 reclassified as artifact
 - **Source**: Heat kernel audit
-- **Status**: The S44 computation that extracted n_s = 0.961 at sigma = 1.10 was operating on a Tier 3 artifact. The sigma value has no intrinsic meaning on the truncated spectrum. This n_s route is CLOSED. No further action except not citing DIMFLOW-44 as an n_s result.
+- **Status**: The S44 computation that extracted n_s = 0.961 at sigma = 1.10 was operating on a Level 3 artifact. The sigma value has no intrinsic meaning on the truncated spectrum. This n_s route is CLOSED. No further action except not citing DIMFLOW-44 as an n_s result.
 
 ---
 

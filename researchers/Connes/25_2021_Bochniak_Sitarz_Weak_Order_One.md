@@ -183,7 +183,7 @@ The paper influenced:
 
 ## Connection to Phonon-Exflation Framework
 
-**CRITICAL RELEVANCE (Tier 1, axiom selection)**.
+**CRITICAL RELEVANCE (Level 1, axiom selection)**.
 
 The phonon-exflation framework uses a spectral triple where [[D_K,a],b] = 4.000 for (H,H)—a violation of the strict order-one condition. The framework must choose whether to:
 

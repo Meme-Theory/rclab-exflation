@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 36,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_351",
+      "anchor_type": "data_provenance",
+      "name": "twisted_real",
+      "script_path": "session-43/s43_twisted_real.py",
+      "session": "s43",
+      "inputs": "",
+      "outputs": "session-43/s43_twisted_real.npz, session-43/s43_twisted_real.png",
+      "source_file": "computations/session-43/s43_twisted_real.py",
+      "source_context_30_lines": "  379:         'tightest': 2e-12,       # ALPHA 1S-2S\n  380:     }\n  381: \n  382: \n  383: # ============================================================================\n  384: # MODULE 6: Full Analysis\n  385: # ============================================================================\n  386: \n  387: def analyze_twisted_real_structure(tau=0.15, max_pq_sum=2):\n  388:     \"\"\"\n  389:     Main analysis: search for involutive automorphisms sigma that reduce\n  390:     the order-one violation while preserving BDI.\n  391:     \"\"\"\n  392:     print(\"=\" * 72)\n  393:     print(\"TWIST-43: Filaci-Landi Twisted Real Structure Analysis\")\n  394:     print(\"=\" * 72)\n  395:     t0 = time.time()"
+    },
+    {
+      "anchor_id": "prov_352",
+      "anchor_type": "data_provenance",
+      "name": "twofluid_wz",
+      "script_path": "session-43/s43_twofluid_wz.py",
+      "session": "s43",
+      "inputs": "s42_gradient_stiffness.npz, s42_gge_energy.npz, s42_constants_snapshot.npz, s43_qtheory_selftune.npz, s38_attempt_freq.n...",
+      "outputs": "session-43/s43_twofluid_wz.npz, session-43/s43_twofluid_wz.png",
+      "source_file": "computations/session-43/s43_twofluid_wz.py",
+      "source_context_30_lines": "  743: \n  744: # =============================================================================\n  745: # 14. SAVE RESULTS\n  746: # =============================================================================\n  747: print(\"\\n\" + \"=\" * 70)\n  748: print(\"Saving results...\")\n  749: print(\"=\" * 70)\n  750: \n  751: np.savez('s43_twofluid_wz.npz',\n  752:     # Gate\n  753:     gate_name='TWOFLUID-W-43',\n  754:     gate_verdict=verdict,\n  755: \n  756:     # w(z) results\n  757:     z_eval=z_eval,\n  758:     w_framework=w_framework_z,\n  759:     w_0_CPL=w_0_CPL,"
+    },
+    {
+      "anchor_id": "prov_353",
+      "anchor_type": "data_provenance",
+      "name": "twofluid_wz_v2",
+      "script_path": "session-43/s43_twofluid_wz_v2.py",
+      "session": "s43",
+      "inputs": "s43_qtheory_selftune.npz, s43_gge_dm_abundance.npz, s43_twofluid_wz.npz, s42_gradient_stiffness.npz, s42_gge_energy.npz,...",
+      "outputs": "session-43/s43_twofluid_wz_v2.npz, session-43/s43_twofluid_wz_v2.png",
+      "source_file": "computations/session-43/s43_twofluid_wz_v2.py",
+      "source_context_30_lines": "  884: \n  885: # =============================================================================\n  886: # 15. SAVE RESULTS\n  887: # =============================================================================\n  888: print(\"=\" * 72)\n  889: print(\"Saving results...\")\n  890: print(\"=\" * 72)\n  891: \n  892: np.savez('s43_twofluid_wz_v2.npz',\n  893:     # Gate\n  894:     gate_name='TWOFLUID-W-43-V2',\n  895:     gate_verdict=verdict_v2,\n  896:     w0_departure_v2=w0_departure_v2,\n  897: \n  898:     # Corrected w(z) results\n  899:     z_eval=z_eval,\n  900:     w_framework_v2=w_framework_v2,"
+    },
+    {
+      "anchor_id": "prov_354",
+      "anchor_type": "data_provenance",
+      "name": "void_catalog",
+      "script_path": "session-43/s43_void_catalog.py",
+      "session": "s43",
+      "inputs": "",
+      "outputs": "session-43/s43_void_catalog.npz, session-43/s43_void_catalog.png",
+      "source_file": "computations/session-43/s43_void_catalog.py",
+      "source_context_30_lines": "  485: print(f\"{'SvdW agreement':>30s}  {'10-100':>14s}  {'YES':>10s}  {'~5% match':>12s}\")\n  486: print(f\"{'-'*70}\")\n  487: print(f\"* First-sound ring at ~{r_1_h_computed:.0f} h^{{-1}} Mpc should be sought in xi(r)\")\n  488: print(f\"  and P(k), NOT in the void size function n(R_v).\")\n  489: \n  490: # ==============================================================\n  491: # 12. Save data\n  492: # ==============================================================\n  493: np.savez(\"computations/session-43/s43_void_catalog.npz\",\n  494:     # Grid\n  495:     R_v_grid=R_v_grid,\n  496:     n_svdw=n_svdw,\n  497:     # Observed (mock)\n  498:     R_obs_centers=R_obs_centers,\n  499:     R_obs_bins=R_obs_bins,\n  500:     n_obs=n_obs,\n  501:     n_model=n_model_at_centers,"
+    },
+    {
+      "anchor_id": "prov_355",
+      "anchor_type": "data_provenance",
+      "name": "void_expansion",
+      "script_path": "session-43/s43_void_expansion.py",
+      "session": "s43",
+      "inputs": "",
+      "outputs": "session-43/s43_void_expansion.npz, session-43/s43_void_expansion.png",
+      "source_file": "computations/session-43/s43_void_expansion.py",
+      "source_context_30_lines": "  445: \n  446: print(f\"\\nFramework deviation from above: |delta| < 10^{{-28}} at all z.\")\n  447: print(f\"Euclid void-only sigma(w) = {sigma_w_euclid}\")\n  448: print(f\"Euclid void FoM(w0,wa) = {FoM_void_only}\")\n  449: \n  450: # =============================================================================\n  451: # 11. Save results\n  452: # =============================================================================\n  453: np.savez(\"computations/session-43/s43_void_expansion.npz\",\n  454:     z_targets=np.array(z_targets),\n  455:     D_z_LCDM=np.array([growth_results['LCDM (w=-1)'][z] for z in z_targets]),\n  456:     D_z_w09=np.array([growth_results['w = -0.9'][z] for z in z_targets]),\n  457:     D_z_w11=np.array([growth_results['w = -1.1'][z] for z in z_targets]),\n  458:     Rv_z_LCDM=np.array([void_radius_results['LCDM (w=-1)'][z] for z in z_targets]),\n  459:     Rv_z_w09=np.array([void_radius_results['w = -0.9'][z] for z in z_targets]),\n  460:     Rv_z_w11=np.array([void_radius_results['w = -1.1'][z] for z in z_targets]),\n  461:     f_z_LCDM=np.array([growth_rate_results['LCDM (w=-1)'][z] for z in z_targets]),"
+    },
+    {
+      "anchor_id": "prov_356",
+      "anchor_type": "data_provenance",
+      "name": "2nd_sound_atten",
+      "script_path": "session-44/s44_2nd_sound_atten.py",
+      "session": "s44",
+      "inputs": "computations/session-43/s43_thermal_conductivity.npz, computations/session-43/s43_quality_factors.npz, computations/sess...",
+      "outputs": "session-44/s44_2nd_sound_atten.npz, session-44/s44_2nd_sound_atten.png",
+      "source_file": "computations/session-44/s44_2nd_sound_atten.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s44_2nd_sound_atten.py — 2ND-SOUND-ATTEN-44\n    4: \n    5: Attenuation length of second sound (u_2 = c/sqrt(3)) in the SU(3) phononic\n    6: crystal fabric.  Determines whether the BAO analog at 147 Mpc is damped.\n    7: \n    8: Physics background:\n    9:   - THERM-COND-43 established: kappa = infinity (ballistic, no Umklapp)\n   10:   - Fabric supports second sound at u_2 = c/sqrt(3) (Landau two-fluid)\n   11:   - Only normal 3-phonon processes (B2 -> B1 + B1) survive"
+    },
+    {
+      "anchor_id": "prov_357",
+      "anchor_type": "data_provenance",
+      "name": "bayesian_f",
+      "script_path": "session-44/s44_bayesian_f.py",
+      "session": "s44",
+      "inputs": "",
+      "outputs": "session-44/s44_bayesian_f.npz, session-44/s44_bayesian_f.png",
+      "source_file": "computations/session-44/s44_bayesian_f.py",
+      "source_context_30_lines": "  755:     s43_grav_log10=s43_grav,\n  756:     s43_gauge_log10=s43_gauge,\n  757:     sigma_alpha_th=sigma_alpha_th,\n  758:     # Gate\n  759:     gate_name=np.array(['BAYESIAN-f-44']),\n  760:     gate_verdict=np.array(['INFO']),\n  761: )\n  762: \n  763: np.savez(DATA_DIR / 's44_bayesian_f.npz', **save_dict)\n  764: print(\"Saved: computations/session-44/s44_bayesian_f.npz\")\n  765: \n  766: # ============================================================\n  767: # 11. PLOTS\n  768: # ============================================================\n  769: \n  770: fig = plt.figure(figsize=(20, 16))\n  771: gs = GridSpec(3, 3, hspace=0.40, wspace=0.40)"
+    },
+    {
+      "anchor_id": "prov_358",
+      "anchor_type": "data_provenance",
+      "name": "bcs_tensor_r",
+      "script_path": "session-44/s44_bcs_tensor_r.py",
+      "session": "s44",
+      "inputs": "",
+      "outputs": "session-44/s44_bcs_tensor_r.npz, session-44/s44_bcs_tensor_r.png",
+      "source_file": "computations/session-44/s44_bcs_tensor_r.py",
+      "source_context_30_lines": "  545: print(\"  the EIH projection factor. This is the key physics:\")\n  546: print(\"  99.994% of the spectral action is INVISIBLE to 4D gravity\")\n  547: print(\"  (S44 W2-2: EIH singlet ratio = 5.7e-5).\")\n  548: print()\n  549: \n  550: # ============================================================\n  551: # 14. SAVE DATA\n  552: # ============================================================\n  553: output_path = base / \"s44_bcs_tensor_r.npz\"\n  554: np.savez(output_path,\n  555:     # Gate\n  556:     gate_name='BCS-TENSOR-R-44',\n  557:     gate_verdict=verdict,\n  558:     gate_detail=verdict_detail,\n  559: \n  560:     # Physical prediction\n  561:     r_physical=r_physical,"
+    },
+    {
+      "anchor_id": "prov_359",
+      "anchor_type": "data_provenance",
+      "name": "cc_gap_audit",
+      "script_path": "session-44/s44_cc_gap_audit.py",
+      "session": "s44",
+      "inputs": "",
+      "outputs": "session-44/s44_cc_gap_audit.npz",
+      "source_file": "computations/session-44/s44_cc_gap_audit.py",
+      "source_context_30_lines": "  299:   {'S_fold * M_KK^4 / 16pi^2':>45s}  {rho_from_Sfold:14.4e}  {np.log10(rho_from_Sfold/rho_Lambda_obs):>20.2f}\n  300:   {'Trace-log (geometric, post-transit)':>45s}  {rho_geometric:14.4e}  {np.log10(rho_geometric/rho_Lambda_obs):>20.2f}\n  301:   {'Trace-log × EIH singlet':>45s}  {rho_geo_singlet:14.4e}  {np.log10(rho_geo_singlet/rho_Lambda_obs):>20.2f}\n  302:   {'':>45s}  {'':>14s}  {'':>20s}\n  303:   {'RESIDUAL GAP (trace-log × EIH)':>45s}  {'':>14s}  {np.log10(rho_geo_singlet/rho_Lambda_obs):>20.2f}\n  304: \"\"\")\n  305: \n  306: # Save\n  307: np.savez(DATA_DIR / 's44_cc_gap_audit.npz',\n  308:     rho_Lambda_obs=rho_Lambda_obs,\n  309:     rho_Lambda_obs_standard=rho_Lambda_standard,\n  310:     M_KK_GN=M_KK_GN,\n  311:     M_KK_K=M_KK_K,\n  312:     M_KK4_GN=M_KK4_GN,\n  313:     rho_spectral=rho_recompute,\n  314:     rho_Sfold=rho_from_Sfold,\n  315:     rho_geometric=rho_geometric,"
+    },
+    {
+      "anchor_id": "prov_360",
+      "anchor_type": "data_provenance",
+      "name": "cc_gap_resolved",
+      "script_path": "session-44/s44_cc_gap_resolved.py",
+      "session": "s44",
+      "inputs": "",
+      "outputs": "session-44/s44_cc_gap_resolved.npz, session-44/s44_cc_gap_resolved.png",
+      "source_file": "computations/session-44/s44_cc_gap_resolved.py",
+      "source_context_30_lines": "  465:             arrowprops=dict(arrowstyle='<->', color='purple', lw=1.5))\n  466: ax.text((gap_geometric + residual_gap)/2, 3.5, f'{orders_eih:.1f} orders\\n(EIH)',\n  467:         ha='center', va='bottom', fontsize=8, color='purple')\n  468: \n  469: ax.set_xlim(-5, gap_Pl + 10)\n  470: ax.legend(fontsize=10, loc='upper right')\n  471: ax.grid(axis='x', alpha=0.3)\n  472: plt.tight_layout()\n  473: plt.savefig(DATA_DIR / 's44_cc_gap_resolved.png', dpi=150, bbox_inches='tight')\n  474: print(f\"Plot saved: computations/session-44/s44_cc_gap_resolved.png\")\n  475: plt.close()\n  476: \n  477: # ============================================================\n  478: # SAVE DATA\n  479: # ============================================================\n  480: np.savez(DATA_DIR / 's44_cc_gap_resolved.npz',\n  481:     # Vol(SU(3)) audit"
+    }
+  ]
+}

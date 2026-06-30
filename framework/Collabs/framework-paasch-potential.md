@@ -296,7 +296,7 @@ The golden ratio $f_N = 2\phi_{\text{golden}} = 1.236068$ appearing in successiv
 |:-----|:----------|:---------------|
 | WALL-phi | $L_{\text{wall}}/\xi_{\text{BCS}} \in [1.455, 1.608]$ | Within 5% of $\phi_{\text{paasch}} = 1.53158$ |
 
-**Input**: `tier0-archive/s33w3_modulus_equation.npz` (wall profiles), B2 eigenvalue data from existing sessions.
+**Input**: `computations/s33w3_modulus_equation.npz` (wall profiles), B2 eigenvalue data from existing sessions.
 **Depends on**: TRAP-1 for exact $\Delta_{\text{wall}}$ value (but can be scanned over estimated range).
 
 ### 5.2 Priority 2: Poschl-Teller Bound States at the Wall
@@ -508,8 +508,8 @@ What has changed is not the mathematics but the interpretation. The mathematics 
 - `sessions/archive/session-32/session-33-Team-4-synthesis.md` (Round 2)
 - `sessions/archive/session-32/session-33-Team-4-synthesis_r1.md` (Round 1)
 - `sessions/archive/session-32/session-32-paasch-collab.md`
-- `tier0-archive/s33w3_modulus_equation.npz`
-- `tier0-archive/s33w3_paasch_dump_point.npz`
+- `computations/s33w3_modulus_equation.npz`
+- `computations/s33w3_paasch_dump_point.npz`
 
 **Pre-registered gates (new)**:
 

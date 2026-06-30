@@ -92,7 +92,7 @@ The 0D limit has a second consequence that the atlas does not fully acknowledge.
 
 ## 4. First-Sound BAO Imprint (Never Computed)
 
-The S49 wayforward (item 13) assigned FIRST-SOUND-BAO-50 to the Quantum Acoustics agent. It was classified as Tier 4 and never executed through S51. The atlas records it as CF-equivalent status -- a carry-forward that risks being lost.
+The S49 wayforward (item 13) assigned FIRST-SOUND-BAO-50 to the Quantum Acoustics agent. It was classified as Level 4 and never executed through S51. The atlas records it as CF-equivalent status -- a carry-forward that risks being lost.
 
 The physics is straightforward. In standard LCDM, BAO peaks arise from acoustic oscillations of the photon-baryon fluid before decoupling. The framework's fabric, being a phononic crystal with a physical sound speed and lattice constant, would imprint its own acoustic signature. The S44 first-sound computation found:
 

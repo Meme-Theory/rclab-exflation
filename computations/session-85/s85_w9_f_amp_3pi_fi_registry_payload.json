@@ -1,0 +1,65 @@
+{
+  "gate_id": "S85-W9-F-AMP-3PI-FI-REGISTRY-LANDING",
+  "trigger": "VERIFY-THEOREM",
+  "classification": "PHONONIC",
+  "agent": "feynman-theorist",
+  "wave": "S85 W9-2",
+  "source_gates": [
+    "W6-69 (S84 \u2014 s84_w6_f_amp_3pi_fi_chain): FI chain across 5-regulator atlas",
+    "W6-70 (S84 \u2014 s84_w6_field_expansion_convergence): NLO_field margin vs eps_H"
+  ],
+  "source_artifacts": [
+    "computations/session-84/s84_w6_f_amp_3pi_fi_chain.npz",
+    "computations/session-84/s84_w6_field_expansion_convergence.npz"
+  ],
+  "theorem_statement": "Across 5-regulator atlas {zeta, Zubarev, SDW, dim-reg, lattice-BR}, the 3PI self-energy factorization z_R^{-2} and Mukhanov-Sasaki normalization z_R^{+2} invert ALGEBRAICALLY: product_ratio(R) = 1 for every R to machine epsilon (2.22e-16). T4 (Hankel) residual is 6.21e-4 (below 1e-3 cap); NLO_field expansion coefficient is 8.85e-6, 2445x below the eps_H=0.02163 slow-roll bound. F_amp^3PI FI is a PERMANENT theorem of the framework.",
+  "pass_conditions": {
+    "a_product_ratio_max_dev": 2.220446049250313e-16,
+    "a_threshold": 2.220446049250313e-16,
+    "a_pass": true,
+    "b_hankel_residual": 0.0006214678834582781,
+    "b_threshold": 0.001,
+    "b_pass": true,
+    "c_NLO_margin_factor": 2444.6301336801143,
+    "c_threshold": 1000.0,
+    "c_pass": true,
+    "overall_pass": true
+  },
+  "regulators_tested": [
+    "zeta",
+    "Zubarev",
+    "SDW",
+    "dim-reg",
+    "lattice-BR"
+  ],
+  "key_numbers": {
+    "product_ratio_per_regulator": [
+      1.0,
+      1.0,
+      1.0,
+      1.0000000000000002,
+      1.0
+    ],
+    "product_ratio_max_dev_machine_eps": 2.220446049250313e-16,
+    "hankel_residual": 0.0006214678834582781,
+    "eps_H": 0.02163,
+    "NLO_coef_field": 8.847964238843151e-06,
+    "NLO_coef_gauge": 0.003687,
+    "I_margin_factor": 2444.6301336801143,
+    "c_field_worst_case": 1.191827699136659e-05,
+    "combined_expansion_total": 0.001237847964238843,
+    "L_max_W6_69": 3,
+    "L_max_W6_70": 3
+  },
+  "registry_target": "sessions/permanent-results-registry.md \u00a7VII.Q (to be appended by orchestrator)",
+  "dual_sha": {
+    "audit_sha256": "50754a7fd56a238baabcb3b32f4a0ed914fbd4bda494388dabf1aef377b1119a",
+    "content_sha256": "de0a4096b969c498fe9eafba3494b689dced76b769d7db0e6edc1722fafc9241"
+  },
+  "plan_documentation_corrections": [
+    "Plan \u00a75 merged W6-69 (FI chain) and W6-70 (field-expansion convergence) numbers into one line; W9-2 reads BOTH artifacts.",
+    "Plan machinery-pin L_max=10 \u2192 actual L_max=3 for both upstream artifacts.",
+    "Plan pinned eps_H=0.02163 as runtime constant; now promoted to canonical_constants.eps_H_W6 via S85 W9-2.",
+    "Plan registry path sessions/framework/permanent-results-registry.md \u2192 actual sessions/permanent-results-registry.md (canonical-path rule)."
+  ]
+}

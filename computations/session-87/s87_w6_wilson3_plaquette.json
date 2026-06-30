@@ -1,0 +1,76 @@
+{
+  "gate_id": "S87-F-PLAQUETTE-TRIANGULAR-WILSON",
+  "verdict": "PASS",
+  "value": 512,
+  "scheme": "zeta-regulated-wilson_3",
+  "convention": "Z_3-quotient-cyclic-fold-V_4",
+  "L_max": 12,
+  "tau_fold": 0.19,
+  "schema_version": "S87+",
+  "audit_sha256": "52a42fa54862b97aa4583965c8cd4f455b744ae73ae26a12c73cc9d08d440789",
+  "content_sha256": "a377e41aab2fd28fd41fb0ace50e3dff4097fd54936a8fbbe3da6b848b3de9a7",
+  "sign_verdict": "PASS",
+  "magnitude_verdict": "PASS",
+  "regime_verdict": "VALID",
+  "f_plaquette_computed": 512,
+  "target_f_plaquette": 512,
+  "rel_dev": 0.0,
+  "n_z3_nontrivial": 512,
+  "n_z3_trivial": 256,
+  "naive_total_768": 768,
+  "ratio_512_over_768": 0.6666666666666666,
+  "ratio_target_2_over_3": 0.6666666666666666,
+  "ratio_residual": 0.0,
+  "substitution_chain": {
+    "step_1_definition": "wilson_3(p) = Re Tr [U_1 U_2 U_3] for triangular plaquette p on the SU(3) Cartan-Weyl lattice; f_plaquette = count of Z_3-non-trivial elements in canonical basis.",
+    "step_2_substitution": {
+      "naive_768": "3*32*8=768",
+      "corrected_512": "2*32*8=512",
+      "z3_trivial_256": "1*32*8=256",
+      "n_frust_3_FORBIDDEN": "sum 3/2 not in Z (Z_2-winding gauge-forbidden)",
+      "n_frust_0_RULED_OUT": "proven_1738 / S67 frustration triangle"
+    },
+    "step_3_simplification": "512/768 = (2*32*8)/(3*32*8) = 2/3 EXACT",
+    "step_4_direction": "|f_plaq - 512|/512 = 0.000000e+00 < 1e-06 -> PASS"
+  },
+  "registry_anchors": {
+    "section_VII_AG_4": "Z_3 Gauge-Sector Signature: 512 = (2/3) * 768 Plaquette Count (W-6 REG-4)",
+    "section_VII_AG_5": "D1 Gauge-Counting Correction to V1 Step 3 (W-6 REG-5; n_frust in {0,2})",
+    "proven_1738": "S67 frustration triangle wall (rules out n_frust=0 sector)",
+    "cf_69": "S86 W-12 hypercube-vertex character identity (Z_3 commutes with V_4 cyclic-fold)"
+  },
+  "regulator_tag": "a_n^{\u03b6} (zeta-regulated; Seeley-DeWitt convention per regulator-pin-discipline.md)",
+  "spectrum_summary": {
+    "n_sectors": 90,
+    "n_evals_total": 166896,
+    "lambda_min_abs": 0.8197411120665079,
+    "lambda_max_abs": 5.418936754718518
+  },
+  "input_pins": {
+    "gate_id": "S87-F-PLAQUETTE-TRIANGULAR-WILSON",
+    "scheme": "zeta-regulated-wilson_3",
+    "convention": "Z_3-quotient-cyclic-fold-V_4",
+    "L_max": 12,
+    "tau_fold": 0.19,
+    "N_cells": 32,
+    "N_corners_S3": 8,
+    "n_frust_allowed": 2,
+    "target_f_plaquette": 512,
+    "target_naive_total": 768,
+    "target_z3_trivial": 256,
+    "pass_rel_tol": 1e-06,
+    "info_rel_hi": 0.001,
+    "spectrum_cache_sha256": "9e6d9cf7fd6a6949d622441b26fb9c2fa568654a22dc802e99898c326ca0f8d9",
+    "canonical_constants_sha256": "03a5c5fcd8d616095b0fe761f27e82d35c80282837721ba7d9df60672aea8ec8",
+    "legacy_refactor_source_sha256": "NOT_FOUND",
+    "rule_regulator_pin_sha256": "1748273aa534fe7f5fa1087649569c017162db2b66769e4af4939b31851e235c",
+    "rule_math_scripts_sha256": "43649f1979663740cd36307a51100ea966a39b0a65e234433f0aa5fb24580604",
+    "registry_sha256": "7870f2438b335373dcda32effb951c54e1d8b9af65f0f55e3371a3c9b8d28a3d"
+  },
+  "artifacts": {
+    "npz": "C:\\sandbox\\Ainulindale Exflation\\tier0-computation\\s87_w6_wilson3_plaquette.npz",
+    "png": "C:\\sandbox\\Ainulindale Exflation\\tier0-computation\\s87_w6_wilson3_plaquette.png",
+    "json": "C:\\sandbox\\Ainulindale Exflation\\tier0-computation\\s87_w6_wilson3_plaquette.json"
+  },
+  "timestamp_utc": "2026-04-29T23:45:49.017923+00:00"
+}

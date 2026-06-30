@@ -23,7 +23,7 @@ LRD (S42 collab): Observational degeneracy 7th session. CDM-identical at z<10^{2
 **Pre-registered gate CBB-TIMELINE-43**: PASS if complete timeline + 1 falsifiable prediction.
 
 **Input**: All `s43_*.npz` + S42 computation files.
-**Output**: `tier0-computation/s43_cbb_timeline.{py,npz,png}`
+**Output**: `computations/s43_cbb_timeline.{py,npz,png}`
 
 ---
 
@@ -64,7 +64,7 @@ S42 HOMOG-42: delta_tau/tau = 1.75e-6, m_tau/H = 25.9 (superheavy), N_transit ~ 
 **Pre-registered gate QFLUC-43**: PASS if P_R within 10 OOM of A_s AND N_e > 10.
 
 **Input**: `s36_sfull_tau_stabilization.npz`, `s42_gradient_stiffness.npz`, `s42_constants_snapshot.npz`, `researchers/Volovik/04_2008_Volovik_Emergent_Physics_Fermi_Point_Scenario.md`
-**Output**: `tier0-computation/s43_qfluc_tau0.{py,npz,png}`
+**Output**: `computations/s43_qfluc_tau0.{py,npz,png}`
 
 ---
 
@@ -84,7 +84,7 @@ Uses W1-3 results for [J, iK_7] and spectral flow.
 
 **Computation Steps**:
 
-1. Load K_a matrices from `tier0-computation/s23a_kosmann_singlet.npz`. Load J from `tier0-computation/s35_pfaffian_corrected_j.npz`.
+1. Load K_a matrices from `computations/s23a_kosmann_singlet.npz`. Load J from `computations/s35_pfaffian_corrected_j.npz`.
 
 2. Compute [K_a, J] for each of the 8 Kosmann generators a=0,...,7 in the 16×16 representation.
 
@@ -103,7 +103,7 @@ Uses W1-3 results for [J, iK_7] and spectral flow.
 - FAIL: [K_a, J] = 0 for all a (permanent closure)
 
 **Input**: `s23a_kosmann_singlet.npz`, `s35_pfaffian_corrected_j.npz`, W1-3 results
-**Output**: `tier0-computation/s43_jodd_wall.{py,npz,png}`
+**Output**: `computations/s43_jodd_wall.{py,npz,png}`
 
 ---
 
@@ -123,7 +123,7 @@ S42 master collab insight #4: "A nonzero chiral eta invariant at the wall would 
 
 **Computation Steps**:
 
-1. Load D_K eigenvalues and eigenvectors at multiple tau from tier1_dirac_spectrum.py.
+1. Load D_K eigenvalues and eigenvectors at multiple tau from dirac_spectrum.py.
 
 2. Construct wall profile: tau(x) = tau_fold + (Delta_tau/2) * tanh(x / xi_BCS).
 
@@ -142,8 +142,8 @@ S42 master collab insight #4: "A nonzero chiral eta invariant at the wall would 
 - PASS: |eta_+ - eta_-| > 10^{-6} at wall center
 - FAIL: eta_+ = eta_- to machine precision everywhere
 
-**Input**: `tier1_dirac_spectrum.py`, `s35_pfaffian_corrected_j.npz`
-**Output**: `tier0-computation/s43_chiral_eta.{py,npz,png}`
+**Input**: `dirac_spectrum.py`, `s35_pfaffian_corrected_j.npz`
+**Output**: `computations/s43_chiral_eta.{py,npz,png}`
 
 ---
 
@@ -189,7 +189,7 @@ Uses W1-2 (Lifshitz type, critical exponents) and W3-2 (vacuum fluctuation analy
 - FAIL: n_s(KZ) outside [0.80, 1.10]
 
 **Input**: W1-2 results, W3-2 results, `s42_gradient_stiffness.npz`
-**Output**: `tier0-computation/s43_kz_transfer.{py,npz,png}`
+**Output**: `computations/s43_kz_transfer.{py,npz,png}`
 
 ---
 

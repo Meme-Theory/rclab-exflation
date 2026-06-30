@@ -535,9 +535,9 @@ LIFSHITZ-ETA-44 should compute eta at BOTH tau = 0 and tau = fold to resolve thi
 
 **VERDICT: PASS**
 
-**Script**: `tier0-computation/s43_cdm_category.py`
-**Data**: `tier0-computation/s43_cdm_category.npz`
-**Figure**: `tier0-computation/s43_cdm_category.png`
+**Script**: `computations/s43_cdm_category.py`
+**Data**: `computations/s43_cdm_category.npz`
+**Figure**: `computations/s43_cdm_category.png`
 
 ### The Argument
 

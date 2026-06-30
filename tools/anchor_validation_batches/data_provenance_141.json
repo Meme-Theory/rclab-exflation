@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 141,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1401",
+      "anchor_type": "data_provenance",
+      "name": "scorecard_bayes_calibration",
+      "script_path": "session-74/s74_scorecard_bayes_calibration.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_scorecard_bayes_calibration.npz",
+      "source_file": "computations/session-74/s74_scorecard_bayes_calibration.py",
+      "source_context_30_lines": "   16:               BF = prior_range / predicted_window (width of the prediction band).\n   17: \n   18: Input:\n   19:   - sessions/framework/registry/pre-registered-observations.md\n   20:   - sessions/framework/registry/baseline-findings-s66.md\n   21:   - sessions/permanent-results-registry.md\n   22: \n   23: Output:\n   24:   - s74_scorecard_bayes_calibration.npz (layer tags + BF per observable + joint)\n   25: \"\"\"\n   26: \n   27: from canonical_constants import *\n   28: import numpy as np\n   29: \n   30: print(\"=\" * 78)\n   31: print(\"S74 W4-T SCORECARD-BAYES-CALIBRATION-74\")\n   32: print(\"=\" * 78)"
+    },
+    {
+      "anchor_id": "prov_1402",
+      "anchor_type": "data_provenance",
+      "name": "self_consistency",
+      "script_path": "session-74/s74_self_consistency.py",
+      "session": "s74",
+      "inputs": "computations/session-74/s74_transfer_function.npz, computations/session-74/s74_moduli_stabilization.npz, computations/se...",
+      "outputs": "session-74/s74_self_consistency.npz, session-74/s74_self_consistency.png",
+      "source_file": "computations/session-74/s74_self_consistency.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s74_self_consistency.py -- SELF-CONSISTENCY-74: Fixed-Point Iteration (T_b, tau)\n    4: =================================================================================\n    5: Gate: SELF-CONSISTENCY-74\n    6:   PASS if a unique fixed-point is found (all 3 initial conditions converge).\n    7:   INFO if multiple fixed points exist.\n    8:   FAIL if no fixed point (diverges) OR if W1-A or W1-B FAIL (prerequisite).\n    9: \n   10:   CURRENT STATUS: W1-B FAILED (no V_eff minimum in [0.45, 0.70] at any L_max).\n   11:   The gate therefore FAILs by prerequisite. This script documents the failure"
+    },
+    {
+      "anchor_id": "prov_1403",
+      "anchor_type": "data_provenance",
+      "name": "soft_hair_fdm",
+      "script_path": "session-74/s74_soft_hair_fdm.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_soft_hair_fdm.npz, session-74/s74_soft_hair_fdm.png",
+      "source_file": "computations/session-74/s74_soft_hair_fdm.py",
+      "source_context_30_lines": "    1: \"\"\"\n    2: s74_soft_hair_fdm.py -- SOFT-HAIR-FDM-74 (W3-O)\n    3: \n    4: Scale the Richardson-Gaudin (R-G) sector count from the 4-cell N_pair=2-4 regime\n    5: to the cosmological N_pair = 59.8 and check whether the unused/populated sector\n    6: ratio matches the dark-matter mass fraction f_DM = 0.27.\n    7: \n    8: SUBSTRATE FRAMING\n    9: -----------------\n   10: The R-G sectors are the integrable eigenmodes of the flat-band BCS pair Hamiltonian"
+    },
+    {
+      "anchor_id": "prov_1404",
+      "anchor_type": "data_provenance",
+      "name": "spatial_tau_thimble",
+      "script_path": "session-74/s74_spatial_tau_thimble.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_spatial_tau_thimble.npz, session-74/s74_spatial_tau_thimble.png",
+      "source_file": "computations/session-74/s74_spatial_tau_thimble.py",
+      "source_context_30_lines": "  112:   - canonical_constants.py  (G_DeWitt, m_tau, d2S_fold, H_fold, M_KK,\n  113:                             tau_fold, dt_transit, Lambda_L3, S_fold)\n  114:   - s74_lefschetz_gaussian.npz (for cross-check: 35-dim moduli Hessian\n  115:                                 det and one-loop factor)\n  116:   - s73a_spectral_action_profile.npz (for V''(tau_fold) cross-check)\n  117: \n  118: Output\n  119: ------\n  120:   - s74_spatial_tau_thimble.npz   (ratio, Z_field, Z_global, determinants,\n  121:                                   mode spectrum, gate verdict)\n  122:   - s74_spatial_tau_thimble.png   (4 panels: D(k) spectrum, cumulative log-det,\n  123:                                   ratio vs Lambda, ratio vs L)\n  124: \n  125: Pre-registered gate\n  126: -------------------\n  127:   SPATIAL-TAU-THIMBLE-74:\n  128:     PASS if |ln(ratio)| < ln(2)   (ratio in [0.5, 2])"
+    },
+    {
+      "anchor_id": "prov_1405",
+      "anchor_type": "data_provenance",
+      "name": "spectral_ratio_independence",
+      "script_path": "session-74/s74_spectral_ratio_independence.py",
+      "session": "s74",
+      "inputs": "computations/session-74/s74_ec_resolution.npz, computations/session-74/s74_branch_nbar_dk.npz, computations/session-74/s...",
+      "outputs": "session-74/s74_spectral_ratio_independence.npz, session-74/s74_spectral_ratio_independence.png",
+      "source_file": "computations/session-74/s74_spectral_ratio_independence.py",
+      "source_context_30_lines": "   50: All three corrections live on the SAME Dirac operator spectrum D_K restricted\n   51: to the 8 fabric modes near the fold. Any nonlinear coupling between them\n   52: reflects shared spectral structure (i.e., two corrections acting on the same\n   53: eigenvalue branch). The cross-check separates structural independence from\n   54: operational overlap.\n   55: \n   56: OUTPUT\n   57: ------\n   58:   s74_spectral_ratio_independence.npz\n   59:   s74_spectral_ratio_independence.png\n   60: \"\"\"\n   61: \n   62: import sys\n   63: import os\n   64: sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))\n   65: \n   66: import numpy as np"
+    },
+    {
+      "anchor_id": "prov_1406",
+      "anchor_type": "data_provenance",
+      "name": "structure_rg_scale",
+      "script_path": "session-74/s74_structure_rg_scale.py",
+      "session": "s74",
+      "inputs": "s73b_multi_cell_integ.npz, s73b_efold_mapping.npz",
+      "outputs": "session-74/s74_structure_rg_scale.npz",
+      "source_file": "computations/session-74/s74_structure_rg_scale.py",
+      "source_context_30_lines": "   62: to an inverse length via hbar_c, then applies NOT the expansion\n   63: rescaling but the \"aH equivalence\" used in the CMB pivot mapping\n   64: (S73B computed k_pivot_MKK = 4.30e-57 for k_pivot = 0.05 Mpc^{-1}).\n   65: This gives a second estimate by analogy.\n   66: \n   67: Input: computations/session-73/s73b_multi_cell_integ.npz (R-G eigenvalues)\n   68:        computations/session-73/s73b_efold_mapping.npz (expansion history)\n   69:        computations/_shared/canonical_constants.py\n   70: Output: computations/session-74/s74_structure_rg_scale.npz\n   71: \"\"\"\n   72: \n   73: import numpy as np\n   74: import os\n   75: import sys\n   76: import time\n   77: \n   78: sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))"
+    },
+    {
+      "anchor_id": "prov_1407",
+      "anchor_type": "data_provenance",
+      "name": "substrate_info_partition_theorem",
+      "script_path": "session-74/s74_substrate_info_partition_theorem.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_substrate_info_partition_theorem.npz",
+      "source_file": "computations/session-74/s74_substrate_info_partition_theorem.py",
+      "source_context_30_lines": "  411: print(\"=\" * 78)\n  412: \n  413: # ============================================================================\n  414: # SAVE DATA\n  415: # ============================================================================\n  416: \n  417: output_path = os.path.join(                                           # (local)\n  418:     os.path.dirname(os.path.abspath(__file__)),\n  419:     \"s74_substrate_info_partition_theorem.npz\",\n  420: )\n  421: \n  422: np.savez(\n  423:     output_path,\n  424:     theorem_number=THEOREM_NUMBER,\n  425:     theorem_name=THEOREM_NAME,\n  426:     parent_theorem=PARENT_THEOREM,\n  427:     theorem_statement=THEOREM_STATEMENT,"
+    },
+    {
+      "anchor_id": "prov_1408",
+      "anchor_type": "data_provenance",
+      "name": "t_entry_dk",
+      "script_path": "session-74/s74_t_entry_dk.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_t_entry_dk.npz, session-74/s74_t_entry_dk.png",
+      "source_file": "computations/session-74/s74_t_entry_dk.py",
+      "source_context_30_lines": "  347: ax.axvline(tau_entry, color='k', ls='--', alpha=0.6)\n  348: ax.axvline(tau_fold, color='m', ls=':', alpha=0.6)\n  349: ax.set_xlabel(r\"$\\tau$\", fontsize=11)\n  350: ax.set_ylabel(r\"derivative  [M$_{KK}$ / $d\\tau$]\", fontsize=11)\n  351: ax.legend(loc='lower right', fontsize=9, framealpha=0.85)\n  352: ax.grid(True, alpha=0.3)\n  353: \n  354: plt.tight_layout()\n  355: plot_path = os.path.join(HERE, \"s74_t_entry_dk.png\")\n  356: plt.savefig(plot_path, dpi=120)\n  357: plt.close()\n  358: print(f\"[plot] {plot_path}\")\n  359: \n  360: # ------------------------------------------------------------------\n  361: # SECTION 9: Save npz\n  362: # ------------------------------------------------------------------\n  363: out_path = os.path.join(HERE, \"s74_t_entry_dk.npz\")"
+    },
+    {
+      "anchor_id": "prov_1409",
+      "anchor_type": "data_provenance",
+      "name": "thooft_vertex_modulus",
+      "script_path": "session-74/s74_thooft_vertex_modulus.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_thooft_vertex_modulus.npz, session-74/s74_thooft_vertex_modulus.png",
+      "source_file": "computations/session-74/s74_thooft_vertex_modulus.py",
+      "source_context_30_lines": "    1: \"\"\"\n    2: s74_thooft_vertex_modulus.py  —  Session 74 Wave 1 Batch 3b, TH-OOFT-VERTEX-MODULUS-74\n    3: \n    4: Task W1-R: Compute the 't Hooft 6-fermion vertex on Jensen-deformed SU(3) and its\n    5: contribution to dV_eff/dtau.\n    6: \n    7: Physics:\n    8:   The 't Hooft vertex is the effective 2N_f-fermion operator generated by integrating\n    9:   out a single instanton in the Jensen-deformed SU(3) gauge sector.  On SU(3) with\n   10:   N_f = 3 fundamental fermions, the minimum non-trivial instanton gives a"
+    },
+    {
+      "anchor_id": "prov_1410",
+      "anchor_type": "data_provenance",
+      "name": "transfer_function",
+      "script_path": "session-74/s74_transfer_function.py",
+      "session": "s74",
+      "inputs": "",
+      "outputs": "session-74/s74_transfer_function.npz, session-74/s74_transfer_function.png",
+      "source_file": "computations/session-74/s74_transfer_function.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: TRANSFER-FUNCTION-74: Multifield delta-N Transfer from Fiber P(k) to CMB P(k)\n    4: =============================================================================\n    5: \n    6: EVOI Level 1 highest priority (N1, 18.2%). Consolidates:\n    7:   - phonon-first S73B TRANSFER-FUNCTION call\n    8:   - mack-vdd S73B MULTIFIELD-DELTA-N-L7 call\n    9:   - framework chapter 8.4 deferred s75_transfer_function pathway\n   10: \n   11: PHYSICAL SETUP\n   12: ==============\n   13: \n   14: The fabric IS space. The BCS modes at the fold are NOT fields living inside\n   15: a pre-existing spacetime; they are the substrate's internal eigenvalue\n   16: reorganization at tau = 0.190. The \"CMB pivot scale\" is not a wavelength in\n   17: a container: it is the mode whose spectral weight at recombination matches"
+    }
+  ]
+}

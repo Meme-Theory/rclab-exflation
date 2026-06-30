@@ -1,0 +1,24 @@
+{
+  "axis": "B",
+  "reviewer": "landau-condensed-matter-theorist",
+  "theorem": "VII.BZ",
+  "no_workshop_context_attestation": true,
+  "inputs_read": [
+    "permanent-results-registry.md",
+    "s105_w2_2_omega_faithful_normal.npz"
+  ],
+  "clause_verdicts": {
+    "a": {
+      "verdict": "PASS",
+      "rationale": "BdG/CdGM/superfluid-universality first-principles audit of clause (a). (1) BDI / N_3=0 class: the fully-gapped 3He-B-class sector carries the anomaly-free BDI symmetry class (T^2=+1 real BdG, N_3=0, no Fermi points). This is sound vortex-core physics AND an independently framework-PROVEN input (S44 N3-BDG-44), not workshop-novel. (2) CdGM-vs-Weyl ladder distinction: in a gapped BDI superconductor-superfluid the Caroli-de Gennes-Matricon vortex-core ladder is E_n=(n+1/2)omega_0 -- a HALF-INTEGER-OFFSET ladder with NO state pinned at exact zero (|E_0|=1/2*omega_0 != 0). The 3He-A/DIII sibling instead carries a topologically-protected Weyl/Majorana zero (E_0^Weyl=0, N_3!=0). These are genuinely DISTINCT universality classes; the A-phase zero mode does not continue into the B-phase BDI spectrum, so it correctly does NOT inherit through chi: A_K -> M_2(C). The registry's E_0^CdGM = -1/2*omega_0 sign is a branch-labelling convention of the ladder; the load-bearing physics (offset-from-zero minigap, no zero mode) is correct. (3) Occupation witness anchor (s105_w2_2_omega_faithful_normal.npz): I re-derived the Fermi-Dirac closed form f_a=1/(exp(beta_a E_a)+1) at single GGE temperature T_GGE=0.668 (beta=1.497006) and confirmed it to machine precision across ALL 12 Peter-Weyl blocks (f_max@E_min reproduces FD(E_min) bit-for-bit; the modular generator K_a=log[(1-f_a)/f_a]=beta*E_a reproduces K_abs_max bit-for-bit). Faithfulness witness: f in [0.157215163, 0.434510147] STRICTLY interior to (0,1) on every block; all three gaps {0.176, 0.464255, 0.732026} strictly positive (E_a >= Delta > 0, the BdG separating/quasi-free condition -- no gapless/Weyl zero mode); |K|_max=1.679 finite; W_global_min=0.561207 > 1/2 strict; finite beta (normal=True). The P_exc=1.000 datum (PROVEN canonical, S38 Parker/Kibble-Zurek, 'P=1 exactly') certifies saturated-but-FINITE pair production => finite beta => 0<f<1 strict => omega faithful (Tomita-Takesaki: no eigenvalue at 0 or 1). The contrasting T=0 empty-Fock non-faithful case (f->0 for all gapped modes, K->+inf) is structurally EXCLUDED. faithful_bosonic=faithful_fermionic=normal=pass_all=True. All clause-(a) physics is correct from my axis."
+    },
+    "b": {
+      "verdict": "N/A",
+      "rationale": "not Axis-B's clause (connes-axis: Type-II semifinite trace uniqueness + Tomita-Takesaki faithful+normal => modular-operator construction + II_inf trace-scaling)"
+    },
+    "c": {
+      "verdict": "PASS",
+      "rationale": "Axis-B audit of the +1/2 IDENTIFICATION (the JOINT clause; PASS-AND'd with Axis-A). From the BdG/zero-point side: the fermionic CdGM core-ladder minigap floor is genuinely |E_0|=+1/2*omega_0, FORCED by the BDI class (anomaly-free, N_3=0): the ladder is symmetric about zero with a half-integer offset and NO protected zero -- the +1/2 is not adjustable, it is the structural signature of the non-anomalous class. The bosonic Wightman zero-point floor W_GGE=n_k+1/2 -> +1/2 is the zero-point offset of the canonical commutator [a,a^dag]=1. These two +1/2's are the SAME structural object: the zero-point offset of the quantized gapped BdG vacuum mode. The npz confirms +1/2 appears as the EXACT additive floor (W_global_min=0.561207 = 1/2 + 0.061207, the strictly-positive excess being the GGE relic occupation, W>1/2 strict => bosonic faithful, no mode at the exact non-faithful floor). So from my axis the +1/2 IS genuinely the CdGM minigap, IS the single BDI zero-point datum, and DOES equal the bosonic floor both numerically and structurally. SCOPE NOTE (intellectual honesty): the further claim that this SAME datum fixes the Type-II SEMIFINITE TRACE (the trace-defining-datum / EMERGENCE-1 trace-uniqueness leg) is the connes-axis contribution, which I do not independently certify from Axis-B; that leg is covered by the Axis-A reviewer under the PASS-AND. The portion clause (c) requires from MY axis -- that the +1/2 CdGM minigap is genuine, is the single BDI datum, and equals the bosonic Wightman floor, per the occupation witness + BDI universality class -- holds cleanly. PASS."
+    }
+  }
+}

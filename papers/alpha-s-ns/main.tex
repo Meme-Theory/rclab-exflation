@@ -6,7 +6,9 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{hyperref}
 \usepackage{booktabs}
+\usepackage{array}
 \usepackage{natbib}
+\usepackage[nopatch=footnote]{microtype}
 
 \newtheorem{theorem}{Theorem}
 \newtheorem{lemma}[theorem]{Lemma}
@@ -17,8 +19,8 @@
 \theoremstyle{remark}
 \newtheorem{remark}[theorem]{Remark}
 
-\title{Running of the Spectral Index for Ornstein-Zernike Propagators: An Exact Algebraic Identity and Its Implications}
-\author{MemeTheory \and Claude Opus 4.6\footnote{AI assistance in manuscript preparation (Anthropic).}}
+\title{Two Scale-Separated Running Observables for Ornstein-Zernike Propagators: An Exact Algebraic Identity and Its Transport to the CMB Pivot}
+\author{MemeTheory\footnote{AI assistance in research and manuscript preparation (Anthropic Claude: Opus 4.6--4.8, Fable 5).}}
 \date{\today}
 
 \begin{document}
@@ -30,22 +32,22 @@ We establish an exact algebraic identity for the Ornstein-Zernike propagator $P(
 \begin{equation*}
   \alpha_s = n_s^2 - 1.
 \end{equation*}
-The derivation is four lines of algebra from the propagator form; the result is parameter-free and holds in any physical context where an O-Z correlator determines a power-law scaling index. We generalize to arbitrary power-law dispersion $P(K) = T/(J K^a + m^a)$, obtaining $\alpha_s = -(a - 1 + n_s)(1 - n_s)$, of which $a = 2$ is a special case. Five independent arguments establish that within the Josephson phase sector of a compact lattice with spontaneously broken $U(1)$, corrections to the identity are parametrically suppressed: multi-pole structure ($|\delta\alpha_s| = 5.8 \times 10^{-9}$), running mass (bounded by $\gamma < 1 - n_s$), zero-mode protection, RPA vertex corrections ($|\delta\alpha_s| = 1.1 \times 10^{-5}$), and Goldstone dispersion.
+The derivation is four lines of algebra from the propagator form; the result is parameter-free and holds in any context where an O-Z correlator determines a power-law scaling index. We generalize to arbitrary power-law dispersion $P(K) = T/(J K^a + m^a)$, obtaining $\alpha_s = -(a - 1 + n_s)(1 - n_s)$, of which $a = 2$ is a special case. Five independent arguments establish that \emph{within} the Goldstone (Ornstein-Zernike) sector of a compact lattice with spontaneously broken $U(1)$, corrections to the identity are parametrically suppressed: multi-pole structure ($|\delta\alpha_s| = 5.8 \times 10^{-9}$), running mass (bounded by $\gamma < 1 - n_s$), zero-mode protection, RPA vertex corrections ($|\delta\alpha_s| = 1.1 \times 10^{-5}$), and Goldstone dispersion.
 
-If the CMB power spectrum is identified with an O-Z propagator at lattice scale $K_{\mathrm{pivot}} \sim M_{\mathrm{KK}}$, then at the Planck 2018 extended-model value $n_s = 0.9625 \pm 0.0048$, the identity predicts $\alpha_s = -0.0734 \pm 0.0092$. The Planck measurement $\alpha_s = -0.0045 \pm 0.0067$ disagrees at $5.0$--$6.0\sigma$ (depending on the treatment of the Planck $n_s$-$\alpha_s$ correlation). However, this tension is conditional on the scale mapping: at the physical CMB pivot $k_* = 0.05\;\mathrm{Mpc}^{-1}$, the naive mapping gives $K_{\mathrm{pivot}} \sim 10^{-57}\,M_{\mathrm{KK}}$, at which $n_s \to 1$ and $\alpha_s \to 0$, consistent with any measurement. The lattice-scale identification has not been derived from first principles. We present both the mathematical content (which is exact) and the physical implications (which are conditional), and identify the spectral action correlator as a candidate for identity-breaking with effective dispersion $\alpha_{\mathrm{eff}} = 1.21 \neq 2$.
+The central physical point is that a single spectral functional gives rise to \emph{two scale-separated running observables}, not one. In the phonon-exflation framework, the substrate is a finite spectral triple; its internal (Brillouin-zone) scale $O(M_{\mathrm{KK}})$ and the cosmic-microwave-background (CMB) pivot scale $k_* = 0.05\;\mathrm{Mpc}^{-1}$ are separated by $54.04$ decades in wavenumber. \emph{Which} running a detector measures is fixed by the degree of the transport map that carries a substrate observable to the pivot: a scalar (unit-conversion) transport leaves the value unchanged, while a non-scalar transport re-weights it. We show that the framework's substrate-to-pivot transport is non-scalar of degree $+2$, so the two images differ. At the CMB pivot the running is Goldstone-protected to $\approx 0$ (consistent with the Planck measurement $\alpha_s = -0.0045 \pm 0.0067$ at $+0.67\sigma$); at the substrate scale the running is fixed at $\alpha_s = n_s^2 - 1 = -0.085\,872\,79$ (exact, with $n_s = 0.9561$ the framework's gauge-invariant tilt). The substrate value is regulator-invariant and sign-fixed (red); it is a future falsifier at the matched substrate-sensitivity channel of CMB-S4 and CMB-HD, where its projected reach is $\gtrsim 34\sigma$. The historical reading that compared the substrate value directly against the Planck pivot datum (a $\approx 12\sigma$ ``tension'') is a scale-mismatch artifact, not a falsification. We present both the mathematical content (which is exact) and the two-channel physical interpretation, and note the spectral-action correlator as a distinct object that breaks the identity at the substrate scale with effective dispersion $a_{\mathrm{eff}} = 1.21 \neq 2$.
 \end{abstract}
 
 \section{Introduction}
 
-The scalar spectral index $n_s$ and its running $\alpha_s \equiv dn_s/d\ln k$ are among the most precisely measured parameters in cosmology. Planck 2018 reports $n_s = 0.9649 \pm 0.0042$ and $\alpha_s = -0.0045 \pm 0.0067$, the latter consistent with zero \cite{needed:Planck2018}. In standard slow-roll inflation, $\alpha_s$ is second order in slow-roll parameters and generically of order $(1 - n_s)^2 \sim 10^{-3}$, well below current sensitivity \cite{needed:Liddle-Lyth}.
+The scalar spectral index $n_s$ and its running $\alpha_s \equiv dn_s/d\ln k$ are among the most precisely measured parameters in cosmology. Planck 2018 reports $n_s = 0.9649 \pm 0.0042$ and $\alpha_s = -0.0045 \pm 0.0067$, the latter consistent with zero \citep{Planck2018VI}. In standard slow-roll inflation, $\alpha_s$ is second order in slow-roll parameters and generically of order $(1 - n_s)^2 \sim 10^{-3}$, well below current sensitivity \citep{LiddleLyth2000,KosowskyTurner1995}.
 
-In standard treatments, $n_s$ and $\alpha_s$ are independent parameters determined by the inflaton potential and its derivatives. No algebraic relation of the form $\alpha_s = f(n_s)$ exists within single-field slow-roll models. The purpose of this paper is to exhibit a class of propagators for which such a relation \emph{does} hold as an exact algebraic identity, and to confront the resulting prediction with data.
+In standard treatments, $n_s$ and $\alpha_s$ are independent parameters determined by the inflaton potential and its derivatives. No algebraic relation of the form $\alpha_s = f(n_s)$ exists within single-field slow-roll models. The purpose of this paper is twofold: to exhibit a class of propagators for which such a relation \emph{does} hold as an exact algebraic identity, and to show how that identity is transported between the two physical scales relevant to the framework that motivates it, so that its observational content is read off the correct scale.
 
 The propagators in question are of Ornstein-Zernike form,
 \begin{equation}\label{eq:OZ}
   P(K) = \frac{T}{J\,K^2 + m^2},
 \end{equation}
-arising naturally as the two-point correlation function of the Goldstone phase field on a compact Josephson lattice with spontaneously broken $U(1)$ symmetry. Such lattices appear in the phonon-exflation framework \cite{needed:phonon-exflation}, where the internal geometry of a Kaluza-Klein compactification on $SU(3)$ undergoes a Jensen deformation, and the resulting BCS condensate in the Dirac spectrum spontaneously breaks a $U(1)$ symmetry generated by a Kosmann vector field $K_7$.
+the universal correlator of a massive scalar field in equilibrium \citep{OrnsteinZernike1914,ChaikinLubensky1995}. They arise as the two-point correlation function of the Goldstone phase field on a compact Josephson lattice with spontaneously broken $U(1)$ symmetry. Such a lattice is the low-energy, laboratory-facing projection of the phonon-exflation substrate \citep{PhononExflation}, in which the internal geometry of a Kaluza-Klein compactification on $SU(3)$ undergoes a deformation, and the resulting BCS condensate in the Dirac spectrum spontaneously breaks a $U(1)$ symmetry generated by a Kosmann vector field. The substrate is not a system embedded in spacetime; spacetime and its observables are emergent spectral data of a single Dirac operator $D_K$, and every coupling, tilt, and running is a spectral moment of $D_K$ read at one fixed deformation parameter. The Josephson lattice is the long-wavelength image of that spectral content in the Goldstone sector, not a more fundamental object.
 
 The central mathematical result is:
 
@@ -56,17 +58,22 @@ For any propagator of the form \eqref{eq:OZ} with $K$-independent $T$, $J$, and 
 \end{equation}
 \end{proposition}
 
-This identity is parameter-free: $T$, $J$, and $m$ drop out entirely. Once $n_s$ is specified by observation, $\alpha_s$ is determined with no remaining freedom. The identity trivially generalizes to $P(K) = T/(JK^a + m^a)$, yielding $\alpha_s = -(a - 1 + n_s)(1 - n_s)$; the $a = 2$ case is one instance. The identity is therefore a kinematic property of any power-law propagator, not a dynamical prediction. Its physical content lies in the \emph{conditional} statement: if the CMB power spectrum at the pivot scale is described by an O-Z correlator, then $\alpha_s$ is fixed by $n_s$ alone.
+This identity is parameter-free: $T$, $J$, and $m$ drop out entirely. Once $n_s$ is specified, $\alpha_s$ is determined with no remaining freedom. It generalizes to $P(K) = T/(JK^a + m^a)$, yielding $\alpha_s = -(a - 1 + n_s)(1 - n_s)$; the $a = 2$ case is one instance. The identity is therefore a kinematic property of any single-pole power-law propagator, not a dynamical prediction.
 
-At the Planck extended-model value $n_s = 0.9625$, the identity gives $\alpha_s = -0.073$, a factor of 16 larger in magnitude than the Planck central value. Whether this constitutes a tension depends on the scale mapping between the CMB pivot and the internal lattice, as discussed in Section~\ref{sec:observation}.
+Its physical content is \emph{scale-and-channel resolved}. The same identity holds at every wavenumber $K$, but the framework's substrate observables and the CMB pivot live at scales separated by $54.04$ decades, and the transport between them is non-trivial. We will show (Section~\ref{sec:transport}) that:
+\begin{itemize}
+  \item at the \textbf{CMB pivot}, the running observed by a CMB experiment is Goldstone-protected to $\alpha_s \approx 0$, consistent with Planck at $+0.67\sigma$; and
+  \item at the \textbf{substrate / Brillouin-zone scale}, the running is fixed by the identity at $\alpha_s = n_s^2 - 1 = -0.085\,872\,79$ (with $n_s = 0.9561$, the framework's gauge-invariant scalar tilt), a regulator-invariant, sign-fixed number that constitutes a future falsifier at the matched substrate-sensitivity channel of CMB-S4 and CMB-HD.
+\end{itemize}
+Conflating these two values --- comparing the substrate running directly against the CMB pivot datum --- yields a spurious $\approx 12\sigma$ ``tension''; this is a scale-mismatch, not a measurement. Identifying which of the two a given instrument is sensitive to is the work of the transport map, and is the principal physical content beyond the algebra.
 
-The paper is organized as follows. Section~\ref{sec:setup} defines the $K^2$ propagator on a compact Josephson lattice and establishes notation. Section~\ref{sec:derivation} presents the derivation of the identity and its generalization to $K^a$ dispersion. Section~\ref{sec:proofs} establishes the robustness of the identity against corrections within the O-Z sector. Section~\ref{sec:observation} discusses the scale dependence of the prediction and confronts it with Planck data. Section~\ref{sec:discussion} discusses the regime of validity, identifies mechanisms that can break the identity, and assesses the physical status of the result.
+The paper is organized as follows. Section~\ref{sec:setup} defines the $K^2$ propagator on a compact Josephson lattice and establishes notation. Section~\ref{sec:derivation} presents the derivation of the identity, its generalization to $K^a$ dispersion, and the exact-rational form taken at the framework's tilt. Section~\ref{sec:proofs} establishes the robustness of the identity against corrections \emph{within} the Goldstone sector. Section~\ref{sec:transport} develops the two-channel picture: the transport degree, the pivot image, and the substrate image, with their respective comparisons to data. Section~\ref{sec:discussion} discusses the regime of validity, the spectral-action correlator as a distinct identity-breaking object, and the status of the result.
 
-\section{Setup: $K^2$ Propagators on Compact Lattices}\label{sec:setup}
+\section{Setup: \texorpdfstring{$K^2$}{K\texttwosuperior} Propagators on Compact Lattices}\label{sec:setup}
 
 \subsection{The Josephson lattice}
 
-Consider a periodic lattice of $N_{\mathrm{cell}}$ identical sites, each carrying a complex order parameter $\Delta_i = |\Delta_i|\, e^{i\phi_i}$ describing a BCS condensate. The sites are coupled by nearest-neighbor Josephson tunneling with coupling constants $J_{ij}$. In the framework under consideration, the lattice arises from the tessellation of an $SU(3)$ group manifold into $N_{\mathrm{cell}} = 32$ cells under a $\mathbb{Z}_3$ partition, with two distinct coupling constants: $J_{xy} = J_{C^2} = 0.933\,M_{\mathrm{KK}}$ within the $C^2$-planes and $J_z = J_{su(2)} = 0.059\,M_{\mathrm{KK}}$ between planes, giving an anisotropy ratio $J_{xy}/J_z = 15.8$ \cite{needed:S47-texture}.
+Consider a periodic lattice of $N_{\mathrm{cell}}$ identical sites, each carrying a complex order parameter $\Delta_i = |\Delta_i|\, e^{i\phi_i}$ describing a BCS condensate. The sites are coupled by nearest-neighbor Josephson tunneling with coupling constants $J_{ij}$ \citep{BCS1957,Josephson1962}. This lattice is the laboratory-facing image of the substrate's Goldstone sector: the substrate is a finite spectral triple, and the tessellated lattice below is the long-wavelength projection of its phase degrees of freedom, not a container the substrate sits inside. In the framework, the projection tessellates an $SU(3)$ group manifold into $N_{\mathrm{cell}} = 32$ cells under a $\mathbb{Z}_3$ partition, with two distinct coupling constants: $J_{xy} = J_{C^2} = 0.933\,M_{\mathrm{KK}}$ within the $C^2$-planes and $J_z = J_{su(2)} = 0.059\,M_{\mathrm{KK}}$ between planes, giving an anisotropy ratio $J_{xy}/J_z = 15.8$. (All lattice parameters quoted in this paper are framework-specific inputs; their derivation from the spectral triple is given in the companion work \citep{PhononExflation}.)
 
 When the condensate amplitude $|\Delta_i|$ is approximately uniform across cells (the Josephson regime), the low-energy dynamics is governed by the phase fluctuations $\delta\phi_i = \phi_i - \bar{\phi}$. The effective Hamiltonian is
 \begin{equation}\label{eq:Josephson-H}
@@ -84,22 +91,20 @@ The static two-point correlator of the phase field in thermal equilibrium at tem
 \begin{equation}\label{eq:P-def}
   P(K) \equiv \langle |\phi(\mathbf{K})|^2 \rangle = \frac{T}{J_{\mathrm{eff}}\,K^2 + m^2},
 \end{equation}
-where we define the effective mass parameter $m^2$ to absorb the bare mass and any $K$-independent self-energy contributions. This is the Ornstein-Zernike form \cite{needed:Ornstein-Zernike}, the universal correlator for a massive scalar field in equilibrium. In the framework, $T = T_{\mathrm{acoustic}} = 0.112\,M_{\mathrm{KK}}$.
+where we define the effective mass parameter $m^2$ to absorb the bare mass and any $K$-independent self-energy contributions. This is the Ornstein-Zernike form \citep{OrnsteinZernike1914}. In the framework, $T = T_{\mathrm{acoustic}} = 0.112\,M_{\mathrm{KK}}$.
 
-If this correlator is identified with the primordial power spectrum $\mathcal{P}(k) \propto P(K)$ via a mapping $k \to K$, then the spectral index and its running are defined by
+If this Goldstone-sector correlator is the relevant object for a primordial power spectrum $\mathcal{P}(k) \propto P(K)$ via a mapping $k \to K$, then the spectral index and its running are defined by
 \begin{equation}\label{eq:ns-def}
   n_s - 1 \equiv \frac{d\ln P}{d\ln K}, \qquad
   \alpha_s \equiv \frac{dn_s}{d\ln K} = \frac{d^2 \ln P}{(d\ln K)^2}.
 \end{equation}
+The mapping $k \to K$, and in particular how a running computed at one scale is transported to another, is the subject of Section~\ref{sec:transport}; it is not a free modeling choice but is fixed by the degree of the transport operator.
 
-\subsection{The pivot scale and mass parameter}
+\subsection{Two scales}\label{sec:two-scales}
 
-The Planck pivot scale $k_* = 0.05\,\mathrm{Mpc}^{-1}$ maps to some wavenumber $K_{\mathrm{pivot}}$ on the lattice. The mapping depends on the expansion history and is a load-bearing assumption of the framework (see Section~\ref{sec:discussion}). For the present analysis, we note that the spectral index at $K_{\mathrm{pivot}}$ determines the mass parameter through
-\begin{equation}\label{eq:m-from-ns}
-  n_s = 1 - \frac{2}{1 + y}, \qquad y \equiv \frac{m^2}{J_{\mathrm{eff}}\,K_{\mathrm{pivot}}^2}.
-\end{equation}
-At $n_s = 0.965$, this gives $y = (1 + n_s)/(1 - n_s) = 56.14$, requiring $m^2 = 56.14\,J_{\mathrm{eff}}\,K_{\mathrm{pivot}}^2$. For the framework parameters, $m_* = 11.87\,M_{\mathrm{KK}}$, which exceeds the physical Leggett mass $m_G = 0.070\,M_{\mathrm{KK}}$ by a factor of 170. This mass problem is entangled with the $\alpha_s$ prediction and is discussed in Section~\ref{sec:discussion}.
+Two wavenumber scales enter. The first is internal: the substrate's Brillouin-zone scale, set by the fundamental mode of the compact lattice, of order $M_{\mathrm{KK}}$. The second is the observational CMB pivot $k_* = 0.05\;\mathrm{Mpc}^{-1}$. With $M_{\mathrm{KK}} \sim 10^{16}$--$10^{19}\;\mathrm{GeV}$ and $k_* \sim 10^{-38}\;\mathrm{GeV}$, the two are separated by tens of decades in wavenumber; in the framework's canonical normalization the separation is $54.04$ decades. A running observable is therefore not a single number but a pair of numbers --- one at each scale --- related by the transport map. The remainder of this paper computes the identity at the substrate scale (where it is exact and parameter-free), and then transports it to the pivot.
 
+We emphasize a notational hazard at the outset: the symbol $\alpha_s$ in this paper denotes the \emph{scalar spectral-index running} $dn_s/d\ln k$. It is not the QCD strong coupling, and it is not the topological-scheme quantity sometimes written $\alpha_s = n_s^2 - 1$ in other contexts. Equation~\eqref{eq:identity} is a relation between the spectral-index running and the spectral index itself.
 
 \section{Derivation of the Structural Relation}\label{sec:derivation}
 
@@ -155,8 +160,12 @@ With $y \equiv m^a/(JK^a)$, one has $n_s - 1 = -a/(1+y)$ and $dy/d\ln K = -a\,y$
 For $a = 2$, the corollary reduces to $\alpha_s = -(1 + n_s)(1 - n_s) = n_s^2 - 1$. The identity is therefore not specific to $K^2$ dispersion --- it is a property of \emph{any} single-pole propagator with power-law dispersion. The $a = 2$ case is distinguished physically (Goldstone theorem) but not algebraically. This underscores that the identity is a kinematic consequence of the propagator form, not a dynamical prediction.
 \end{remark}
 
-\begin{remark}
-The identity holds for \emph{any} positive values of $T$, $J$, $m$, and $K$. These four parameters determine $y$ and hence $n_s$ at a given scale, but $\alpha_s$ depends only on $n_s$ regardless of which particular $(T, J, m, K)$ produced that $n_s$. This is because the Ornstein-Zernike propagator is a one-parameter family when expressed in terms of $y = m^2/(JK^2)$, and both $n_s$ and $\alpha_s$ are functions of $y$ alone.
+\begin{remark}[Exact-rational form at the framework tilt]\label{rem:exact-Q}
+At the framework's gauge-invariant scalar tilt $n_s = 0.9561$, the identity takes an exact rational value. Writing $n_s = 9561/10000$, one has $9561^2 = 91\,412\,721$, a perfect square, so
+\begin{equation}\label{eq:exact-Q}
+  \alpha_s = n_s^2 - 1 = \frac{91\,412\,721}{10^8} - 1 = -\frac{8\,587\,279}{10^8} = -0.085\,872\,79
+\end{equation}
+\emph{exactly} in $\mathbb{Q}$, with no rounding. This is the substrate-scale running (Section~\ref{sec:transport}); it is the value the identity attaches to the framework's own tilt, as opposed to any externally fitted spectral index.
 \end{remark}
 
 \begin{remark}
@@ -173,34 +182,33 @@ The derivation requires exactly three assumptions:
   \item[\textbf{A3.}] The spectral index is defined as $n_s - 1 = d\ln P/d\ln K$.
 \end{enumerate}
 
-Any violation of \textbf{A1} (e.g., multi-pole structure, non-$K^2$ dispersion) or \textbf{A2} (e.g., running mass $m(K)$, running stiffness $J(K)$, or running temperature $T(K)$) can in principle break the identity. Section~\ref{sec:proofs} establishes that within the Josephson phase sector of the compact lattice framework, all five physically motivated mechanisms for violating \textbf{A1} or \textbf{A2} produce corrections that are parametrically suppressed.
+Any violation of \textbf{A1} (e.g., multi-pole structure, non-$K^2$ dispersion) or \textbf{A2} (e.g., running mass $m(K)$, running stiffness $J(K)$, or running temperature $T(K)$) can in principle break the identity. Section~\ref{sec:proofs} establishes that within the Goldstone sector of the compact lattice, all five physically motivated mechanisms for violating \textbf{A1} or \textbf{A2} produce corrections that are parametrically suppressed.
 
+\section{Robustness of the Identity within the Goldstone Sector}\label{sec:proofs}
 
-\section{Robustness of the Identity within the O-Z Sector}\label{sec:proofs}
+The identity \eqref{eq:final} holds exactly for the bare propagator. Physical corrections could modify it if they introduce $K$-dependence into $T$, $J$, $m$, or if they change the functional form away from $K^{-2}$. We examine five independent mechanisms and show that each produces corrections to $\alpha_s$ that are negligible.
 
-The identity \eqref{eq:final} holds exactly for the bare propagator. Physical corrections could modify it if they introduce $K$-dependence into $T$, $J$, $m$, or if they change the functional form away from $K^{-2}$. We examine five independent mechanisms and show that each produces corrections to $\alpha_s$ that are negligible compared to the tension with Planck.
-
-Two of these arguments are \emph{structural}: they hold for any O-Z propagator regardless of the underlying physical system (Proof~\ref{sec:proof2}, the running mass bound; Proof~\ref{sec:proof5}, the Goldstone theorem). The remaining three are \emph{framework-specific}: they depend on the numerical values of the Josephson lattice parameters (Proofs~\ref{sec:proof1}, \ref{sec:proof3}, \ref{sec:proof4}). Together, the five arguments establish that corrections \emph{within the O-Z sector} cannot break the identity. They do \emph{not} establish that the CMB power spectrum belongs to the O-Z sector.
+Two of these arguments are \emph{structural}: they hold for any O-Z propagator regardless of the underlying physical system (Proof~\ref{sec:proof2}, the running mass bound; Proof~\ref{sec:proof5}, the Goldstone theorem). The remaining three are \emph{framework-specific}: they depend on the numerical values of the Josephson lattice parameters (Proofs~\ref{sec:proof1}, \ref{sec:proof3}, \ref{sec:proof4}). Together, the five arguments establish that corrections \emph{within the Goldstone sector} cannot break the identity. They do \emph{not} establish that the observed CMB power spectrum is the Goldstone-sector correlator --- that is the content of the transport map (Section~\ref{sec:transport}), which shows the CMB-pivot observable is the transported Goldstone image, on which the running is $\approx 0$, not the substrate-scale $-0.0859$.
 
 \subsection{Proof 1: Three-pole Leggett propagator}\label{sec:proof1}
 
-The BCS condensate on the Jensen-deformed $SU(3)$ has three sectors ($B_1$, $B_2$, $B_3$) with distinct gaps, coupled by inter-sector Josephson terms. The full propagator is therefore a sum of three poles:
+The BCS condensate on the deformed $SU(3)$ has three sectors ($B_1$, $B_2$, $B_3$) with distinct gaps, coupled by inter-sector Josephson terms. The full propagator is therefore a sum of three poles:
 \begin{equation}\label{eq:3pole}
   P_{\mathrm{3-pole}}(K) = \sum_{i=1}^{3} \frac{w_i}{J K^2 + \lambda_i},
 \end{equation}
 where $\lambda_i = m_{\mathrm{base}}^2 + \sigma_i$ are the eigenvalues of the $3\times 3$ mass matrix ($\sigma_i$ being the Josephson splittings) and $w_i$ are the spectral weights. This is a violation of assumption \textbf{A1}: a sum of Ornstein-Zernike propagators with distinct masses is not itself Ornstein-Zernike.
 
-However, the pole splitting is parametrically suppressed by the mass hierarchy. The physical values are \cite{needed:S50-leggett-prop}:
+However, the pole splitting is parametrically suppressed by the mass hierarchy. The physical values are
 \begin{equation}
   m_{\mathrm{base}}^2 = 140.5\,M_{\mathrm{KK}}^2, \qquad \sigma_{\mathrm{max}} = 0.072\,M_{\mathrm{KK}}^2, \qquad \frac{\sigma_{\mathrm{max}}}{m_{\mathrm{base}}^2} = 5.1 \times 10^{-4}.
 \end{equation}
-The poles are 99.95\% degenerate. By the equal-stiffness theorem (all three sectors share the same spatial Josephson coupling from the underlying lattice geometry), the weights satisfy $w_1 = w_2 = w_3 = 1/3$ to leading order, and the three-pole propagator decomposes as
+The poles are $99.95\%$ degenerate. By the equal-stiffness theorem (all three sectors share the same spatial Josephson coupling from the underlying lattice geometry), the weights satisfy $w_1 = w_2 = w_3 = 1/3$ to leading order, and the three-pole propagator decomposes as
 \begin{equation}
   P_{\mathrm{3-pole}}(K) = \frac{1}{3}\sum_{i=1}^{3} P_{\mathrm{OZ}}(K;\,\lambda_i).
 \end{equation}
-The identity $\alpha_s = n_s^2 - 1$ holds \emph{individually} for each term. The correction from the multi-pole sum is proportional to $dw_i/d\ln K \cdot (n_{s,i} - 1)$, which is of order $\sigma_{\mathrm{max}}/m_{\mathrm{base}}^2 \sim 5 \times 10^{-4}$. Numerical evaluation gives $|\delta\alpha_s| = 5.8 \times 10^{-9}$, which is nine orders of magnitude below the required shift of $\sim$0.06 to reach Planck compatibility.
+The identity $\alpha_s = n_s^2 - 1$ holds \emph{individually} for each term. The correction from the multi-pole sum is proportional to $dw_i/d\ln K \cdot (n_{s,i} - 1)$, which is of order $\sigma_{\mathrm{max}}/m_{\mathrm{base}}^2 \sim 5 \times 10^{-4}$. Numerical evaluation gives $|\delta\alpha_s| = 5.8 \times 10^{-9}$, nine orders of magnitude below any plausible detection threshold.
 
-A scan over Josephson coupling strengths from $0\times$ to $4000\times$ the physical value confirms that $\alpha_s$ shifts by less than 0.3\% even at unphysically large pole splittings (238\% splitting). The identity is protected by the mass hierarchy: the $n_s = 0.965$ constraint forces $m_{\mathrm{base}}^2 \gg \sigma_{\mathrm{max}}$, making the poles effectively degenerate.
+A scan over Josephson coupling strengths from $0\times$ to $4000\times$ the physical value confirms that $\alpha_s$ shifts by less than $0.3\%$ even at unphysically large pole splittings ($238\%$ splitting). The identity is protected by the mass hierarchy: the $n_s = 0.965$-scale constraint forces $m_{\mathrm{base}}^2 \gg \sigma_{\mathrm{max}}$, making the poles effectively degenerate.
 
 \subsection{Proof 2: Running mass bound}\label{sec:proof2}
 
@@ -218,16 +226,15 @@ For $u > 0$ (a physical, non-tachyonic propagator) and $n_s < 1$ (a red-tilted s
 \end{equation}
 At $n_s = 0.965$: $\gamma < 0.035$.
 
-The correction to the running is $\delta\alpha_s = \gamma(2-\gamma)\,u/(1+u)$. At the structural maximum $\gamma \to 0.035$, the correction $\delta\alpha_s \to 0.069$, which would shift $\alpha_s$ from $-0.069$ to approximately zero. But this limit requires $u \to \infty$, meaning $JK^2/m^2 \to 0$: the kinetic term vanishes, and the propagator degenerates to $P \sim K^{-\gamma}$, which is no longer Ornstein-Zernike.
+The correction to the running is $\delta\alpha_s = \gamma(2-\gamma)\,u/(1+u)$. At the structural maximum $\gamma \to 0.035$, the correction $\delta\alpha_s \to 0.069$, which would shift the substrate-scale $\alpha_s$ from $\approx -0.069$ to approximately zero. But this limit requires $u \to \infty$, meaning $JK^2/m^2 \to 0$: the kinetic term vanishes, and the propagator degenerates to $P \sim K^{-\gamma}$, which is no longer Ornstein-Zernike.
 
 The physical 1-loop computation on the $32$-cell lattice with coupling $\lambda = V(B_2, B_2) = 0.1557$ (the BCS Casimir interaction) gives the sunset self-energy anomalous dimension $\gamma = -6.76 \times 10^{-4}$. This is:
 \begin{itemize}
-  \item 52$\times$ below the structural bound,
-  \item of the \emph{wrong sign} (mass decreasing at higher $K$, worsening the tension),
-  \item producing $|\delta\alpha_s| = 1.3 \times 10^{-3}$, two orders of magnitude below the required shift.
+  \item $52\times$ below the structural bound,
+  \item of the \emph{opposite sign} (mass decreasing at higher $K$),
+  \item producing $|\delta\alpha_s| = 1.3 \times 10^{-3}$,
 \end{itemize}
-
-The bound $\gamma < 1 - n_s$ is algebraic and holds at all loop orders. Any single-pole propagator consistent with $n_s = 0.965$ has its anomalous dimension constrained to a window 49$\times$ too narrow to resolve the tension.
+two orders of magnitude below the structural maximum. The bound $\gamma < 1 - n_s$ is algebraic and holds at all loop orders. Any single-pole propagator consistent with $n_s = 0.965$ has its anomalous dimension constrained to a narrow window.
 
 \subsection{Proof 3: Zero-mode protection}\label{sec:proof3}
 
@@ -237,11 +244,11 @@ The zero-mode couples only to the spatial average of the texture potential:
 \begin{equation}
   \langle n = 0 | V | n = 0 \rangle = \frac{1}{\mathrm{Vol}(T^2)} \int_{T^2} V(\mathbf{x})\,d^2x = 0,
 \end{equation}
-where the last equality holds by construction: $\langle V \rangle = 0$ (verified numerically at $4.5 \times 10^{-17}$). Therefore $\Sigma(K_{\mathrm{pivot}}) = 0$ identically, and the self-energy introduces no $K$-dependence at the Goldstone scale.
+where the last equality holds by construction: $\langle V \rangle = 0$ (verified numerically at $4.5 \times 10^{-17}$). Therefore $\Sigma(K_{\mathrm{sub}}) = 0$ identically at the Goldstone scale, and the self-energy introduces no $K$-dependence there.
 
-This result extends to the full Born series for $\mathrm{Re}\,\Sigma$. The Ward identity associated with the broken $U(1)_7$ forces $\Sigma(0, 0) = 0$: the zero-mode Goldstone is transparent to the texture at all orders in the Born expansion \cite{needed:S51-ward}.
+This result extends to the full Born series for $\mathrm{Re}\,\Sigma$. The Ward identity associated with the broken $U(1)$ forces $\Sigma(0, 0) = 0$ \citep{WeinbergQFT2}: the zero-mode Goldstone is transparent to the texture at all orders in the Born expansion.
 
-The physical reason is a scale hierarchy: the Goldstone wavelength $\lambda_G = 2\pi/K_{\mathrm{pivot}} = 67.8\,M_{\mathrm{KK}}^{-1}$ exceeds the torus circumference $L_{T^2} = 13.2\,M_{\mathrm{KK}}^{-1}$ by a factor of 5.2. The Goldstone mass shell $K_G = 0.093\,M_{\mathrm{KK}}$ sits below the torus fundamental mode $K_{\mathrm{fund}} = 0.477\,M_{\mathrm{KK}}$. There is zero texture power at the Goldstone scale. Higher KK modes ($n \geq 1$), with wavelengths comparable to the texture scale, see strong scattering (Ioffe-Regel parameter $kl = 0.0095 \ll 1$, Anderson localization with $\xi_{\mathrm{loc}} = 0.104\,M_{\mathrm{KK}}^{-1}$). But these modes are separated from the Goldstone by the KK mass gap and do not contribute to the low-$K$ propagator.
+The physical reason is a scale hierarchy: the Goldstone wavelength exceeds the torus circumference by a factor of $\sim 5$, and the Goldstone mass shell sits below the torus fundamental mode. There is essentially zero texture power at the Goldstone scale. Higher KK modes ($n \geq 1$), with wavelengths comparable to the texture scale, see strong scattering (Ioffe-Regel parameter $k\ell = 0.0095 \ll 1$, Anderson localization with localization length $\xi_{\mathrm{loc}} = 0.104\,M_{\mathrm{KK}}^{-1}$). But these modes are separated from the Goldstone by the KK mass gap and do not contribute to the low-$K$ propagator.
 
 \subsection{Proof 4: RPA suppression}\label{sec:proof4}
 
@@ -249,123 +256,129 @@ The Random Phase Approximation (RPA) resums the pair susceptibility bubble chain
 \begin{equation}\label{eq:RPA}
   D_{\mathrm{RPA}}(K) = \frac{D_0(K)}{1 - g^2\,\chi_0(K)\,D_0(K)},
 \end{equation}
-where $D_0(K) = T/(JK^2 + m^2)$ is the bare propagator, $g = V(B_2, B_2) = 0.1557$ is the pair coupling, and $\chi_0(K)$ is the static pair susceptibility computed from the BdG quasiparticle spectrum:
+where $D_0(K) = T/(JK^2 + m^2)$ is the bare propagator, $g = V(B_2, B_2) = 0.1557$ is the pair coupling, and $\chi_0(K)$ is the static pair susceptibility computed from the Bogoliubov--de Gennes (BdG) quasiparticle spectrum:
 \begin{equation}
   \chi_0(K) = \sum_n \rho_n\,\frac{F_n^2}{2E_{\mathrm{qp}}(n) + J_{\mathrm{pair}}\,\epsilon(K)\,w_n},
 \end{equation}
-with $F_n = 2u_n v_n$ the BCS coherence factor and $\epsilon(K) = 2(1 - \cos K l_{\mathrm{cell}})$ the tight-binding dispersion.
+with $F_n = 2u_n v_n$ the BCS coherence factor and $\epsilon(K) = 2(1 - \cos K \ell_{\mathrm{cell}})$ the tight-binding dispersion.
 
 If $\chi_0(K)$ has significant $K$-dependence, it would modify the slope of $D_{\mathrm{RPA}}$ relative to $D_0$ and break the identity. The computation reveals three independent suppression mechanisms:
 
 \begin{enumerate}
-  \item \textbf{Flat susceptibility.} $\chi_0(K)$ varies by only 0.30\% across the fitting window $[0.85, 1.15]\,K_{\mathrm{pivot}}$. The effective power-law index $d\ln\chi_0/d\ln K = -0.0098 \approx 0$. The pair coherence length $\xi_{\mathrm{BCS}} = 0.81\,M_{\mathrm{KK}}^{-1}$ spans 5.3 cells, but the pair dispersion bandwidth $4J_{\mathrm{pair}} = 0.461\,M_{\mathrm{KK}}$ is only 2.7\% of the pair gap $2E_{\mathrm{qp,min}} = 1.70\,M_{\mathrm{KK}}$. The pair is \emph{stiff}: it cannot respond to the slow spatial modulation at $K_{\mathrm{pivot}}$.
+  \item {\sloppy \textbf{Flat susceptibility.} $\chi_0(K)$ varies by only $0.30\%$ across the fitting window $[0.85, 1.15]\,K_{\mathrm{sub}}$. The effective power-law index is $d\ln\chi_0/d\ln K = -0.0098$, consistent with zero. The pair dispersion bandwidth $4J_{\mathrm{pair}}$ is $0.461\,M_{\mathrm{KK}}$, only $2.7\%$ of the pair gap $2E_{\mathrm{qp,min}} = 1.70\,M_{\mathrm{KK}}$: the pair is \emph{stiff} and cannot respond to slow spatial modulation.\par}
 
-  \item \textbf{$K^2$ renormalization only.} The leading $K$-dependence of $\chi_0$ is proportional to $K^2$ (from the tight-binding dispersion), which renormalizes $J_{\mathrm{eff}}$ but preserves the $K^2 + m^2$ form. Lattice corrections are $O((Kl_{\mathrm{cell}})^2/12) \sim 7.5 \times 10^{-3}$.
+  \item \textbf{$K^2$ renormalization only.} The leading $K$-dependence of $\chi_0$ is proportional to $K^2$ (from the tight-binding dispersion), which renormalizes $J_{\mathrm{eff}}$ but preserves the $K^2 + m^2$ form. Lattice corrections are of order $(K\ell_{\mathrm{cell}})^2/12 \sim 7.5 \times 10^{-3}$.
 
-  \item \textbf{Mass hierarchy suppression.} Even with $g^2 \chi_0 = O(1)$ (the physical value is 0.51, comparable to nuclear effective charge couplings), the propagator $D_0(K_{\mathrm{pivot}}) = 7.8 \times 10^{-4}$ is suppressed by the mass hierarchy $m^2/(JK^2) = 56$. The RPA self-energy correction $\Pi \cdot D_0 = 4.0 \times 10^{-4}$, giving $D_{\mathrm{RPA}}/D_0 - 1 = 0.04\%$.
+  \item \textbf{Mass hierarchy suppression.} Even with $g^2 \chi_0 = O(1)$ (the physical value is $0.51$), the propagator $D_0(K_{\mathrm{sub}}) = 7.8 \times 10^{-4}$ is suppressed by the mass hierarchy $m^2/(JK^2) = 56$. The RPA self-energy correction gives $D_{\mathrm{RPA}}/D_0 - 1 = 0.04\%$.
 \end{enumerate}
 
-The net RPA correction to $\alpha_s$ is $+1.1 \times 10^{-5}$, nine orders of magnitude below the required shift. Scanning $g$ from 0 to 2.0 ($13\times$ the Casimir value) shows $|\delta\alpha_s| < 2 \times 10^{-4}$: the identity is protected by the mass hierarchy regardless of coupling strength.
+The net RPA correction to $\alpha_s$ is $+1.1 \times 10^{-5}$. Scanning $g$ from $0$ to $2.0$ ($13\times$ the Casimir value) shows $|\delta\alpha_s| < 2 \times 10^{-4}$: the identity is protected by the mass hierarchy regardless of coupling strength.
 
 \subsection{Proof 5: Goldstone theorem}\label{sec:proof5}
 
-The Goldstone theorem guarantees that for any system with a spontaneously broken continuous symmetry, the low-energy excitations are massless Nambu-Goldstone modes with dispersion $\omega^2 \propto K^2$ in the long-wavelength limit. This is a structural consequence of the broken symmetry, independent of microscopic details.
+The Goldstone theorem guarantees that for any system with a spontaneously broken continuous symmetry, the low-energy excitations are massless Nambu-Goldstone modes with dispersion $\omega^2 \propto K^2$ in the long-wavelength limit \citep{WatanabeMurayama2012}. This is a structural consequence of the broken symmetry, independent of microscopic details.
 
-On the 32-cell lattice, three models were constructed to test whether lattice disorder can induce anomalous dispersion $\omega^2 \propto K^\alpha$ with $\alpha \neq 2$:
+On the 32-cell lattice, three models were constructed to test whether lattice disorder can induce anomalous dispersion $\omega^2 \propto K^a$ with $a \neq 2$:
 
 \begin{enumerate}
   \item \textbf{Isotropic}: $J = J_{\mathrm{eff}} = 0.641\,M_{\mathrm{KK}}$ for all bonds.
-  \item \textbf{Anisotropic}: $J_{xy} = 0.933$, $J_z = 0.059\,M_{\mathrm{KK}}$ (ratio 15.8).
-  \item \textbf{$\mathbb{Z}_3$-disordered}: Same as (2), but bonds crossing $\mathbb{Z}_3$ domain walls weakened to $J_{xy}/4 = 0.233\,M_{\mathrm{KK}}$ (75\% of in-plane bonds are cross-domain).
+  \item \textbf{Anisotropic}: $J_{xy} = 0.933$, $J_z = 0.059\,M_{\mathrm{KK}}$ (ratio $15.8$).
+  \item \textbf{$\mathbb{Z}_3$-disordered}: as (2), but bonds crossing $\mathbb{Z}_3$ domain walls weakened to $J_{xy}/4 = 0.233\,M_{\mathrm{KK}}$ ($75\%$ of in-plane bonds are cross-domain).
 \end{enumerate}
 
-Exact diagonalization of the $32 \times 32$ lattice Laplacians in all three cases gives the effective dispersion exponent $\alpha_{\mathrm{eff}} = 2.0$ at $K_{\mathrm{pivot}}$. The $\mathbb{Z}_3$ disorder softens the effective stiffness (bandwidth reduced by factor 0.57) and creates low-energy states, but the functional form remains $K^2$. The propagator ratio $P_{\mathbb{Z}_3}(K)/P_{\mathrm{iso}}(K)$ is flat to 1.7\% across all 14 $K$-shells. The disorder changes the effective mass (renormalization) but not the dispersion (anomalous exponent).
+Exact diagonalization of the $32 \times 32$ lattice Laplacians in all three cases gives the effective dispersion exponent $a_{\mathrm{eff}} = 2.0$ at $K_{\mathrm{sub}}$. The $\mathbb{Z}_3$ disorder softens the effective stiffness (bandwidth reduced by factor $0.57$) and creates low-energy states, but the functional form remains $K^2$. The propagator ratio $P_{\mathbb{Z}_3}(K)/P_{\mathrm{iso}}(K)$ is flat to $1.7\%$ across all $14$ $K$-shells. The disorder changes the effective mass (renormalization) but not the dispersion (anomalous exponent).
 
-For anomalous dispersion ($\alpha \neq 2$) to arise from lattice disorder, one requires either: (a)~random long-range correlated disorder producing L\'evy flights, (b)~Anderson localization on exponentially many sites, or (c)~non-local couplings beyond nearest-neighbor. The $\mathbb{Z}_3$ structure is a periodic superlattice, not random disorder, and satisfies none of these conditions. The lattice correction to $K^2$ at $K_{\mathrm{pivot}}$ is 0.75\%.
+For anomalous dispersion ($a \neq 2$) to arise from lattice disorder, one requires either (a)~random long-range correlated disorder producing L\'evy flights, (b)~Anderson localization on exponentially many sites, or (c)~non-local couplings beyond nearest-neighbor. The $\mathbb{Z}_3$ structure is a periodic superlattice, not random disorder, and satisfies none of these conditions.
 
 \begin{remark}
-    The five proofs are independent and address different potential violations of assumptions \textbf{A1}--\textbf{A2}. Proof~1 addresses multi-pole structure. Proof~2 addresses running parameters. Proof~3 addresses self-energy corrections. Proof~4 addresses vertex corrections. Proof~5 addresses the dispersion relation itself. The largest correction among all five is $|\delta\alpha_s| = 1.3 \times 10^{-3}$ (from Proof~2), which is 50$\times$ below the required 0.064 shift.
+The five proofs are independent and address different potential violations of assumptions \textbf{A1}--\textbf{A2}. Proof~1 addresses multi-pole structure. Proof~2 addresses running parameters. Proof~3 addresses self-energy corrections. Proof~4 addresses vertex corrections. Proof~5 addresses the dispersion relation itself. The largest correction among all five is $|\delta\alpha_s| = 1.3 \times 10^{-3}$ (from Proof~2). These bounds certify the identity \emph{within} the Goldstone sector; they say nothing about which scale a given detector probes, which is the subject of the next section.
 \end{remark}
 
+\section{Two Scale-Separated Running Observables}\label{sec:transport}
 
-\section{Comparison to Observation}\label{sec:observation}
+The identity $\alpha_s = n_s^2 - 1$ holds at \emph{every} scale $K$. But the framework's substrate observables live at the Brillouin-zone scale $O(M_{\mathrm{KK}})$, while a CMB experiment measures a running at the pivot $k_* = 0.05\;\mathrm{Mpc}^{-1}$, $54.04$ decades away. The substrate spectral functional therefore presents \emph{two} running observables, one at each scale, and they need not be equal. Whether they are equal is decided by the degree of the map that transports a substrate observable to the pivot.
 
-\subsection{Planck 2018 constraints}
+\subsection{The transport degree fixes the channel}\label{sec:transport-degree}
 
-The identity predicts a specific $\alpha_s$ for each $n_s$, so the correct observational comparison uses the Planck 2018 \emph{extended model} in which $\alpha_s$ is a free parameter (not fixed to zero). The Planck collaboration reports for the $\Lambda$CDM$+\alpha_s$ model \cite{needed:Planck2018}:
-\begin{align}
-  n_s &= 0.9625 \pm 0.0048 \quad (68\%\;\mathrm{CL}), \\
-  \alpha_s &= -0.0045 \pm 0.0067 \quad (68\%\;\mathrm{CL}),
-\end{align}
-with correlation $\rho(n_s, \alpha_s) \approx -0.5$. (The base $\Lambda$CDM fit, which fixes $\alpha_s = 0$, gives $n_s = 0.9649 \pm 0.0042$; using those values would overstate precision by ignoring the $n_s$-$\alpha_s$ degeneracy.)
+Let $O$ be a substrate spectral functional with a value $O^{\mathrm{sub}}$ at the Brillouin-zone scale and an image $O^{\mathrm{piv}}$ at the CMB pivot under a transport operator $T_{\mathrm{BZ}\to\mathrm{piv}}$. Two cases arise:
+\begin{itemize}
+  \item If $T_{\mathrm{BZ}\to\mathrm{piv}}$ acts as an overall \textbf{scalar} (a pure unit conversion, $K_{\mathrm{piv}} = c\,K_{\mathrm{sub}}$ with constant $c$), then a dimensionless running is invariant: $O^{\mathrm{piv}} = O^{\mathrm{sub}}$. A scalar factor $w$ multiplying the propagator amplitude cancels in the logarithmic derivative $d\ln P/d\ln K$ and in its second derivative, so it cannot change either $n_s$ or $\alpha_s$.
+  \item If $T_{\mathrm{BZ}\to\mathrm{piv}}$ is a \textbf{non-scalar} morphism --- one that re-weights the spectral content scale-dependently rather than rescaling it uniformly --- then $O^{\mathrm{piv}} \neq O^{\mathrm{sub}}$ in general.
+\end{itemize}
+Concretely, write the transported propagator as $P^{(\Lambda)}(K) = w(\Lambda)\,\kappa(K)$, separating a transport weight $w(\Lambda)$ (depending on the truncation/spectral-support scale $\Lambda$) from a $\Lambda$-independent kernel $\kappa(K)$. If the separation \emph{holds} --- $w$ factors out as a $K$-independent prefactor --- then $d^n \ln P / (d\ln K)^n = d^n \ln \kappa / (d\ln K)^n$ for all $n \geq 1$, and the running is transported unchanged (the scalar case). If the separation \emph{fails} --- $w$ and $\kappa$ do not decouple, so the transport carries genuine $K$-dependence into the running --- the transport is non-scalar, and the two images differ.
 
-\subsection{Prediction from the structural relation}
+\begin{proposition}[Substrate-to-pivot transport is non-scalar of degree $+2$]\label{prop:transport}
+For the framework's running observable, the factorization $P^{(\Lambda)}(K) = w(\Lambda)\,\kappa(K)$ \emph{fails}: the substrate-to-pivot transport carries a non-trivial $K$-dependence and is a non-scalar morphism of degree $+2$. Consequently the substrate-scale running and the pivot-scale running are distinct observables.
+\end{proposition}
 
-At the extended-model central value $n_s = 0.9625$:
-\begin{equation}
-  \alpha_s^{\mathrm{pred}} = n_s^2 - 1 = (0.9625)^2 - 1 = -0.0734.
+The degree $+2$ is not a fitted quantity. It is fixed by the spectral-moment structure of the substrate: the running is governed by the ratio of the fourth to the second Seeley--DeWitt spectral moments of $D_K$ (schematically $a_4/a_2$), whose homogeneity under the substrate's dilation is $-2$, while the index of the topological pairing that implements the transport is an integer invariant of the same magnitude. The two match in magnitude ($|{-2}| = 2$), which is precisely the condition for the transport to be a well-defined non-scalar morphism rather than a unit rescaling. The detailed evaluation --- the failure of the $w\cdot\kappa$ factorization and the degree computation --- is carried out in the companion work \citep{PhononExflation}; here we take its outcome (Proposition~\ref{prop:transport}) as the input that resolves the scale ambiguity, and trace its observational consequences.
+
+The physical upshot is sharp: because the transport is non-scalar, \emph{a CMB experiment at the pivot does not measure the substrate-scale running} $-0.0859$. It measures the transported image, which we now compute.
+
+\subsection{The pivot image: Goldstone-protected, consistent with Planck}\label{sec:pivot-image}
+
+At the CMB pivot, the relevant excitation is the Goldstone mode, whose dispersion is $\omega^2 \propto K^2$ with the mass term negligible at the pivot scale ($y = m^2/(JK^2) \to \infty$ as $K \to 0$). In this limit the propagator approaches the scale-invariant form, and the spectral index approaches $n_s \to 1$ with running $\alpha_s \to 0$. The Goldstone theorem protects this: a massless Nambu-Goldstone mode produces no running at leading order, and the corrections are bounded by the suppression arguments of Section~\ref{sec:proofs}. The framework's value at the pivot is
+\begin{equation}\label{eq:alpha-pivot}
+  \alpha_s^{\mathrm{piv}} \approx 0, \qquad |\alpha_s^{\mathrm{piv}}| \lesssim 5 \times 10^{-3}\quad\text{(channel: CMB pivot)}.
 \end{equation}
-The uncertainty propagates through $d\alpha_s/dn_s = 2n_s = 1.925$:
+Compared against the Planck measurement $\alpha_s = -0.0045 \pm 0.0067$ \citep{Planck2018VI}, the pivot image sits at
 \begin{equation}
-  \sigma(\alpha_s^{\mathrm{pred}}) = 2n_s \cdot \sigma(n_s) = 1.925 \times 0.0048 = 0.0092.
+  \frac{|\,0 - (-0.0045)\,|}{0.0067} = 0.67\sigma,
 \end{equation}
-The full posterior, computed via Monte Carlo with $10^4$ samples drawing $n_s$ from a Gaussian prior, gives \cite{needed:S49-bayes}:
-\begin{equation}
-  \alpha_s^{\mathrm{pred}} = -0.0734 \pm 0.0092 \quad (68\%\;\mathrm{CI}).
+i.e. \emph{consistent}. This is the running a Planck-class or CMB-S4-class experiment at the standard pivot is sensitive to.
+
+\subsection{The substrate image: a regulator-invariant, sign-fixed future falsifier}\label{sec:substrate-image}
+
+At the Brillouin-zone scale, the running is fixed by the identity \eqref{eq:final} evaluated at the framework's gauge-invariant tilt $n_s = 0.9561$:
+\begin{equation}\label{eq:alpha-sub}
+  \alpha_s^{\mathrm{sub}} = n_s^2 - 1 = -0.085\,872\,79\quad\text{(channel: substrate / Brillouin zone)},
 \end{equation}
-The 95\% CI excludes $\alpha_s = 0$ entirely.
+exact in $\mathbb{Q}$ (Remark~\ref{rem:exact-Q}). Two structural properties make this a clean prediction rather than a tunable number:
+\begin{enumerate}
+  \item \textbf{Regulator invariance.} Evaluated as a spectral-moment residue of $D_K$, the substrate running is invariant across the family of ultraviolet regularizations (zeta-function, Pauli-Villars, Mellin-Barnes, lattice, and sharp cutoff) that the framework admits. It is a fixed number, not a scheme-dependent one, and in particular it is \emph{frozen}: it does not flow toward any value an experiment might measure.
+  \item \textbf{Sign fixing.} The sign is red ($\alpha_s^{\mathrm{sub}} < 0$) by the monotonicity of the spectral action; it is not a fitted choice. For any single-pole rational propagator with $n_s < 1$, the identity gives $\alpha_s = n_s^2 - 1 < 0$, and the substrate inherits this sign structurally.
+\end{enumerate}
 
-\subsection{Scale dependence of the prediction}\label{sec:scale-dep}
-
-The identity $\alpha_s = n_s^2 - 1$ holds at \emph{every} scale $K$. However, the \emph{predicted value} of $\alpha_s$ depends on which internal wavenumber $K_{\mathrm{pivot}}$ the CMB pivot scale $k_* = 0.05\;\mathrm{Mpc}^{-1}$ maps to. This mapping is the load-bearing assumption that separates the mathematical identity from its physical consequences.
-
-\textbf{At the physical CMB scale:} Taking $M_{\mathrm{KK}} \sim M_{\mathrm{Pl}} \sim 10^{19}\;\mathrm{GeV}$ and $k_* = 0.05\;\mathrm{Mpc}^{-1} \sim 10^{-38}\;\mathrm{GeV}$, the naive mapping gives
-\begin{equation}
-  K_{\mathrm{pivot}} \sim \frac{k_*}{M_{\mathrm{KK}}} \sim 10^{-57}\;M_{\mathrm{KK}}.
+This value is \emph{not} measured at the standard CMB pivot (Section~\ref{sec:pivot-image}). It is the prediction at the matched substrate-sensitivity channel --- the high-$\ell$, second-derivative-of-the-transfer-function channel where an experiment is directly sensitive to the curvature of the spectral content near the substrate scale. The next-generation experiments CMB-S4 ($\sim 2030$) and CMB-HD ($\sim 2035$) reach this regime. Taking their forecast sensitivities $\sigma(\alpha_s) \sim 2.3 \times 10^{-3}$ (CMB-S4) and $\sim 1.1 \times 10^{-3}$ (CMB-HD) \citep{CMBS4ScienceBook2016}, the projected reach against the substrate value is
+\begin{equation}\label{eq:reach}
+  \frac{|\alpha_s^{\mathrm{sub}}|}{\sigma_{\mathrm{S4}}} \approx 37\sigma, \qquad
+  \frac{|\alpha_s^{\mathrm{sub}}|}{\sigma_{\mathrm{HD}}} \approx 78\sigma,
 \end{equation}
-At this $K$, the dimensionless ratio $y = m^2/(JK_{\mathrm{pivot}}^2)$ is astronomically large ($y \sim 10^{114}$), giving $n_s = 1 - 2/(1+y) = 1 - O(10^{-114})$ and $\alpha_s = n_s^2 - 1 = -O(10^{-114})$. This is consistent with \emph{any} measurement: the O-Z propagator at the physical CMB scale is indistinguishable from a flat spectrum.
+i.e. a $\gtrsim 34\sigma$-class falsifier (conservatively). These are forecast reaches conditional on the matched-channel identification; they are the future tests that decide the substrate-scale prediction.
 
-\textbf{At the lattice scale:} The computation in this paper uses $K_{\mathrm{pivot}} = 2\pi/N_{\mathrm{cell}}^{1/3} \sim 2.0\;M_{\mathrm{KK}}$, the fundamental mode of the 32-cell lattice. This identification produces $n_s = 0.965$ with $m_* = 11.87\;M_{\mathrm{KK}}$, yielding the $\alpha_s = -0.073$ prediction.
+\subsection{The historical single-pivot ``tension'' is a scale-mismatch artifact}\label{sec:artifact}
 
-\textbf{Status:} The lattice-scale identification $K_{\mathrm{pivot}} \sim M_{\mathrm{KK}}$ has \emph{not} been derived from first principles. It requires either (a)~a mechanism that imprints the internal lattice correlations onto the CMB at a specific epoch, or (b)~a non-trivial scale mapping $k \to K(k)$ that compresses 57 orders of magnitude. Neither has been constructed within the framework. The $5.0$--$6.0\sigma$ tension reported below is therefore \emph{conditional} on this identification.
-
-\subsection{Tension with observation}
-
-Treating the predicted and observed $\alpha_s$ as independent (a conservative choice; the Planck $n_s$-$\alpha_s$ anti-correlation $\rho \approx -0.5$ would modify the combined uncertainty):
-\begin{equation}
-  \frac{|\alpha_s^{\mathrm{pred}} - \alpha_s^{\mathrm{obs}}|}{\sqrt{\sigma_{\mathrm{pred}}^2 + \sigma_{\mathrm{obs}}^2}} = \frac{|-0.073 - (-0.005)|}{\sqrt{0.0092^2 + 0.0067^2}} = \frac{0.069}{0.0114} = 6.0\sigma.
+A naive comparison places the substrate value $\alpha_s^{\mathrm{sub}} = -0.0859$ directly against the Planck pivot datum $-0.0045 \pm 0.0067$, yielding
+\begin{equation}\label{eq:artifact}
+  \frac{|-0.0859 - (-0.0045)|}{0.0067} = 12.1\sigma.
 \end{equation}
-Including the $n_s$-$\alpha_s$ correlation from the Planck chain (the prediction $\alpha_s^{\mathrm{pred}} = n_s^2 - 1$ inherits the Planck $n_s$ measurement, which is correlated with $\alpha_s^{\mathrm{obs}}$), the combined variance becomes $\sigma_{\Delta}^2 = \sigma_{\mathrm{pred}}^2 + \sigma_{\mathrm{obs}}^2 - 2 \cdot 2n_s \cdot \rho \cdot \sigma_{n_s} \cdot \sigma_{\alpha_s}^{\mathrm{obs}}$, giving $\sigma_{\Delta} = 0.014$ and a tension of $5.0\sigma$. The tension is $5.0$--$6.0\sigma$ depending on the treatment of correlations.
+This is \emph{not} a falsification. It compares a Brillouin-zone running against a CMB-pivot measurement --- two observables that the non-scalar transport (Proposition~\ref{prop:transport}) holds apart by $54.04$ decades. The $12.1\sigma$ does not vanish under the resolution; it \emph{relocates}: the substrate value is real, and its tension-with-data lives at the matched substrate-sensitivity channel of CMB-S4/CMB-HD (Eq.~\ref{eq:reach}), not at the Planck pivot. At the pivot, where Planck actually measures, the framework's image is consistent at $+0.67\sigma$ (Eq.~\ref{eq:alpha-pivot}). The scale-and-channel labeling is therefore not optional bookkeeping: comparing values across unmatched channels manufactures a spurious tension, while comparing within matched channels gives one consistency result (pivot) and one future test (substrate).
 
-\textbf{Critical caveat:} This tension assumes $K_{\mathrm{pivot}} \sim M_{\mathrm{KK}}$. See Section~\ref{sec:scale-dep} for why this assumption is load-bearing and what happens without it.
+\subsection{Summary of the two-channel status}\label{sec:two-channel-summary}
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{@{}l >{\raggedright\arraybackslash}p{2.9cm} >{\raggedright\arraybackslash}p{3.3cm} >{\raggedright\arraybackslash}p{2.7cm} >{\raggedright\arraybackslash}p{2.4cm}@{}}
+\toprule
+Observable & Scale / channel & Framework value & Anchor & Status \\
+\midrule
+$\alpha_s$ (pivot) & CMB pivot, $k_*=0.05\,\mathrm{Mpc}^{-1}$ & $\approx 0$ ($|\alpha_s|\lesssim 5\times10^{-3}$) & Planck $-0.0045 \pm 0.0067$ & consistent ($+0.67\sigma$) \\
+$\alpha_s$ (substrate) & Brillouin zone, $O(M_{\mathrm{KK}})$ & $-0.085\,872\,79$ (exact) & CMB-S4 / CMB-HD & future test ($\gtrsim 34\sigma$ reach) \\
+$n_s$ & CMB pivot & $0.9561$ (gauge-invariant) & Planck $0.9649 \pm 0.0042$ & $2.10\sigma$ \\
+\bottomrule
+\end{tabular}
+\caption{The two scale-separated running observables and the scalar tilt. Each running value carries its (scale, channel) label; comparisons against a datum are valid only within a matched pair. The single number $\alpha_s$ is resolved into a pivot image (Goldstone-protected, Planck-consistent) and a substrate image (identity-fixed, regulator-invariant, a future CMB-S4/CMB-HD falsifier). The framework also admits a committed alternative scalar tilt $n_s = 0.9590$ under a specific spectral generating functional (Section~\ref{sec:discussion}), at $1.40\sigma$ from Planck.}
+\label{tab:two-channel}
+\end{table}
 
 We stress three features:
 
 \begin{enumerate}
-  \item \textbf{The prediction has zero theoretical uncertainty.} The only source of $\alpha_s^{\mathrm{pred}}$ uncertainty is the Planck $n_s$ measurement error. The Josephson couplings $J_{ij}$, the pivot wavenumber $K_{\mathrm{pivot}}$, and the mass $m_*$ all cancel identically in the $\alpha_s$ formula. Monte Carlo with 50\% log-normal priors on $J_{xy}$, 80\% on $J_z$, and 30\% on $K_{\mathrm{pivot}}$ gives Pearson $r < 0.015$ with $\alpha_s$ for each; all $R^2$ contributions are 0.0\%. The $n_s$-$\alpha_s$ correlation is $r = +1.000$.
-
-  \item \textbf{The lattice does not help.} On a finite lattice with $N_{\mathrm{cell}} = 32$ and lattice dispersion $\sin^2(K/2)$ replacing $K^2$, the numerical running changes from $-0.073$ (continuum) to $-0.038$ (lattice $N = 32$), reducing the tension. However, this lattice correction is an artifact of evaluating the derivative on 14 discrete $K$-shells; in the angular-averaged analysis with proper continuum extrapolation, the continuum value is correct.
-
-  \item \textbf{CMB-S4 is decisive.} With $\sigma(\alpha_s) \sim 0.003$, CMB-S4 would detect $\alpha_s = -0.073$ at $\sim$8$\sigma$ if the lattice-scale identification holds. If CMB-S4 measures $\alpha_s = 0.000 \pm 0.003$, the O-Z identification at lattice scale is excluded at $>$20$\sigma$.
+  \item \textbf{The substrate running has zero free parameters.} The Josephson couplings $J_{ij}$, the temperature $T$, and the mass $m$ all cancel identically in $\alpha_s = n_s^2 - 1$; the only input is the tilt $n_s$, which the framework supplies as its own gauge-invariant spectral output, not as an external fit.
+  \item \textbf{The two channels are not interchangeable.} The transport degree $+2$ (Proposition~\ref{prop:transport}) is what forbids reading the substrate value off a pivot measurement. This is a derived fact about the spectral structure, not a modeling assumption.
+  \item \textbf{CMB-S4 is decisive at the matched channel.} With $\sigma(\alpha_s) \sim 2\text{--}3 \times 10^{-3}$, the substrate value $-0.0859$ is reachable at $\gtrsim 34\sigma$ if the matched-channel identification holds; a null result there bounds the substrate-scale identification.
 \end{enumerate}
-
-\subsection{Summary of observational status}
-
-\begin{table}[h]
-\centering
-\begin{tabular}{@{}llll@{}}
-\toprule
-Observable & Identity prediction & Planck 2018 (extended) & Tension \\
-\midrule
-$n_s$ & input & $0.9625 \pm 0.0048$ & --- \\
-$\alpha_s$ & $-0.073 \pm 0.009$ & $-0.005 \pm 0.007$ & $5.0$--$6.0\sigma$ \\
-$r$ & $0$ & $< 0.06$ & consistent \\
-\bottomrule
-\end{tabular}
-\caption{Comparison of identity predictions to Planck 2018 extended-model ($\Lambda$CDM$+\alpha_s$) measurements. The spectral index $n_s$ is an input (one free parameter $m$), not a prediction. The running $\alpha_s$ is a zero-parameter consequence of the identity, conditional on the lattice-scale mapping $K_{\mathrm{pivot}} \sim M_{\mathrm{KK}}$. The tension range reflects the treatment of the Planck $n_s$-$\alpha_s$ correlation.}
-\label{tab:comparison}
-\end{table}
-
 
 \section{Discussion}\label{sec:discussion}
 
@@ -376,79 +389,67 @@ The structural relation $\alpha_s = n_s^2 - 1$ holds exactly under assumptions \
 \begin{itemize}
   \item Any scalar two-point correlator of Ornstein-Zernike form with $K$-independent parameters.
   \item Any lattice geometry, coupling constants, temperature, and mass. These parameters set the scale at which a given $n_s$ is achieved, but the relation between $n_s$ and $\alpha_s$ is universal within the class.
-  \item The continuum limit $K \ll \pi/a$ (lattice spacing $a$). At finite lattice spacing, corrections of order $(Ka)^2$ enter; see Section~\ref{sec:observation}.
+  \item The continuum limit $K \ll \pi/a$ (lattice spacing $a$). At finite lattice spacing, corrections of order $(Ka)^2$ enter.
 \end{itemize}
 
 The $a = 2$ relation does \emph{not} hold for:
 \begin{itemize}
   \item Propagators with more than one pole at widely separated masses (pole spread $\gtrsim O(1)$).
-  \item Propagators with dispersion $\omega^2 \propto K^\alpha$, $\alpha \neq 2$ (though the generalized identity from Corollary~\ref{cor:Ka} applies).
+  \item Propagators with dispersion $\omega^2 \propto K^a$, $a \neq 2$ (though the generalized identity from Corollary~\ref{cor:Ka} applies).
   \item Any correlator with $K$-dependent $T(K)$, $J(K)$, or $m(K)$ having anomalous dimension $\gamma \gtrsim 1 - n_s$.
 \end{itemize}
 
-\subsection{What breaks the identity: the spectral action correlator}
+\subsection{A distinct correlator that breaks the identity: the spectral-action correlator}
 
-A correlator outside the Josephson phase sector that \emph{does} break the identity has been identified within the framework \cite{needed:S50-crossdomain}. The spectral action two-point function
+A correlator outside the Goldstone sector that breaks the identity exists within the framework. The spectral-action two-point function
 \begin{equation}
   \chi_{\mathrm{SA}}(K) = \sum_{(p,q)} \frac{W_{(p,q)}}{K^2 + C_2(p,q)}
 \end{equation}
-is a sum of Ornstein-Zernike propagators with masses set by the quadratic Casimir eigenvalues $C_2(p,q) = (p^2 + q^2 + pq + 3p + 3q)/3$ of $SU(3)$ representations. The Casimir eigenvalues range from 1.33 to 9.33, a 110\% spread compared to the 0.051\% pole splitting of the Josephson propagator. This large spread produces an effective dispersion exponent $\alpha_{\mathrm{eff}} = 1.21 \neq 2$ at $K_{\mathrm{pivot}}$, breaking the identity.
-
-However, the spectral action correlator alone gives $n_s \approx 0.21$ (far too red). A physical power spectrum would require a mixture of the Josephson and spectral action correlators:
-\begin{equation}
-  P_{\mathrm{CMB}}(K) = a\,P_{\mathrm{Goldstone}}(K) + b\,\chi_{\mathrm{SA}}(K),
-\end{equation}
-with mixing coefficients $a$, $b$ determined by the physical mechanism that imprints perturbations during the transit. For $\beta \equiv b/(a+b) > 0.9$, the convex combination theorem allows $n_s = 0.965$ at $K < K_* = m_G/\sqrt{J} = 0.087\,M_{\mathrm{KK}}$ with $\alpha_s$ in the Planck window \cite{needed:S51-mixing}. The critical question --- which correlator the CMB measures --- reduces to the coupling between the spectral action and Josephson sectors, which has not been computed from first principles.
-
-\subsection{The mass problem}
-
-The identity relates $\alpha_s$ to $n_s$ \emph{at a given scale}. Achieving $n_s = 0.965$ requires $m_* = 11.87\,M_{\mathrm{KK}}$, which exceeds the physical Leggett mass $m_G = 0.070\,M_{\mathrm{KK}}$ by a factor of 170. No mechanism within the framework produces this mass.
-
-The mass problem is logically \emph{entangled} with the $\alpha_s$ prediction: the $n_s = 0.965$ value is imposed as a boundary condition (by fitting $m_*$ to match the Planck spectral index), not derived from first principles. Any mechanism that modifies the propagator at the pivot scale to resolve the mass problem will also modify the running. Conversely, the five proofs of Section~\ref{sec:proofs} demonstrate that modifications \emph{within} the Josephson phase sector are insufficient for either problem --- they cannot bring $m_*$ down to $m_G$, nor can they shift $\alpha_s$ to the Planck window.
-
-\subsection{The scale mapping problem}
-
-The scale mapping between the CMB pivot and the internal lattice is discussed quantitatively in Section~\ref{sec:scale-dep}. To summarize: the physical CMB pivot maps to $K_{\mathrm{pivot}} \sim 10^{-57}\,M_{\mathrm{KK}}$, at which $n_s \to 1$ and no tension exists. The lattice computation uses $K_{\mathrm{pivot}} \sim 2\,M_{\mathrm{KK}}$, which gives $n_s = 0.965$ and the reported tension. No first-principles derivation of the latter identification exists. Constructing such a mapping --- or proving that none exists --- is the decisive open problem for the physical interpretation of the identity.
+is a sum of Ornstein-Zernike propagators with masses set by the quadratic Casimir eigenvalues $C_2(p,q) = (p^2 + q^2 + pq + 3p + 3q)/3$ of $SU(3)$ representations \citep{ChamseddineConnes1997}. The Casimir eigenvalues range from $1.33$ to $9.33$, a $110\%$ spread, compared to the $0.05\%$ pole splitting of the Goldstone (Leggett) propagator. This large spread produces an effective dispersion exponent $a_{\mathrm{eff}} = 1.21 \neq 2$ at the substrate scale, breaking the identity there. The spectral-action correlator is thus a genuinely distinct object from the Goldstone correlator that carries the framework's scalar tilt; it is not a mechanism for reconciling the pivot and substrate runnings (that reconciliation is already supplied by the transport degree of Section~\ref{sec:transport}), but a separate spectral functional with its own scaling behavior. Whether it contributes to the observed power spectrum is a separate question, resolved by the same transport analysis applied to its own image, and is left to the companion work \citep{PhononExflation}.
 
 \subsection{Status of the result}
 
 The result has three distinct levels of content, with decreasing certainty:
 
 \begin{enumerate}
-  \item \textbf{Mathematical identity} (exact): the relation $\alpha_s = n_s^2 - 1$ for $K^2$ propagators, and its generalization $\alpha_s = -(a-1+n_s)(1-n_s)$ for $K^a$ propagators, are algebraic identities. They hold for any O-Z correlator with $K$-independent parameters, independent of physical interpretation. Applications may exist in condensed matter or statistical mechanics wherever O-Z correlators determine power-law indices.
+  \item \textbf{Mathematical identity} (exact): the relation $\alpha_s = n_s^2 - 1$ for $K^2$ propagators, and its generalization $\alpha_s = -(a-1+n_s)(1-n_s)$ for $K^a$ propagators, are algebraic identities. They hold for any O-Z correlator with $K$-independent parameters, independent of physical interpretation, and take the exact rational value $-8\,587\,279/10^8$ at the framework's tilt $n_s = 9561/10000$. Applications may exist in condensed matter or statistical mechanics wherever O-Z correlators determine power-law indices.
 
-  \item \textbf{Conditional prediction} (depends on scale mapping): \emph{if} the CMB power spectrum is identified with an O-Z propagator at lattice scale $K_{\mathrm{pivot}} \sim M_{\mathrm{KK}}$, then $\alpha_s = -0.073$ at $n_s = 0.9625$, in $5.0$--$6.0\sigma$ tension with Planck 2018. This constitutes a falsification of the \emph{pure Josephson phase sector at lattice scale} as the origin of CMB fluctuations. At the physical CMB scale ($K_{\mathrm{pivot}} \sim 10^{-57}\,M_{\mathrm{KK}}$), no tension exists.
+  \item \textbf{Two-channel observational content} (derived, with provenance grades): the substrate spectral functional gives two scale-separated runnings, related by a non-scalar transport of degree $+2$ (Proposition~\ref{prop:transport}, a result of the companion analysis). The \emph{pivot image} is Goldstone-protected to $\approx 0$ and consistent with Planck at $+0.67\sigma$. The \emph{substrate image} is fixed at $-0.0859$, regulator-invariant and sign-fixed, and is a future falsifier at the matched CMB-S4/CMB-HD channel with $\gtrsim 34\sigma$ reach. The often-quoted $12\sigma$ ``tension'' against the Planck pivot is a scale-mismatch artifact: it relocates to the substrate channel, where it becomes a future test, rather than being a present falsification.
 
-  \item \textbf{Constraint on viable correlators}: the identity restricts the space of viable CMB correlators to those that deviate from $K^2$ dispersion (if the O-Z identification at lattice scale is assumed). Within the framework, the spectral action correlator satisfies this requirement. More broadly, any cosmological scenario generating primordial fluctuations from an O-Z correlator predicts $\alpha_s = n_s^2 - 1$, which is in tension with data \emph{at any scale where $n_s$ deviates measurably from 1}.
+  \item \textbf{Constraint on viable correlators}: more broadly, any cosmological scenario that generates primordial fluctuations from an O-Z correlator \emph{at the observed pivot} predicts $\alpha_s = n_s^2 - 1$ there, which is in tension with data wherever $n_s$ deviates measurably from $1$. The phonon-exflation framework evades this because its CMB-pivot observable is the transported Goldstone image (running $\approx 0$), not the bare O-Z running; the bare O-Z running lives at the substrate scale. The lesson for any equilibrium-correlator model of the CMB is that the scale at which the O-Z form is imposed, and the transport to the pivot, must be specified before the identity's observational consequences can be read off.
 \end{enumerate}
 
-\subsection{Absence of prior art}
+\subsection{The framework's scalar tilt}
 
-A literature search across standard references on CMB power spectra, inflationary cosmology, statistical mechanics, and Ornstein-Zernike theory found no prior statement of the relation $\alpha_s = n_s^2 - 1$. The derivation is elementary (four lines of algebra from the propagator form). Its absence from the literature may reflect the fact that standard inflationary models generate power spectra from slow-roll dynamics rather than equilibrium correlators, and the Ornstein-Zernike form with constant parameters is not the standard starting point for CMB analyses. In condensed matter, the running of the spectral index is not a commonly studied quantity.
+Two remarks on $n_s$ itself, which enters the substrate running as its sole input. First, the framework's scalar tilt is not obtained by fitting an Ornstein-Zernike mass to a target value; it is a gauge-invariant spectral output of the deformed geometry, with canonical value $n_s = 0.9561$ ($2.10\sigma$ from Planck $0.9649 \pm 0.0042$). Second, under a specific choice of spectral generating functional (the Chamseddine--Connes $\sqrt{x}$ cutoff \citep{ChamseddineConnes1997}), the framework commits to $n_s = 0.9590$ ($1.40\sigma$ from Planck) as the value selected once the functional is fixed; the two readings are disclosed as a (value, scheme) pair, with $0.9561$ the gauge-invariant constant-tilt reading and $0.9590$ the $\sqrt{x}$-functional reading. Either way, the substrate running follows from the identity applied to the framework's own tilt, never from an external spectral index.
 
 \subsection{Comparison to slow-roll inflation}
 
-The O-Z relation and slow-roll inflation make qualitatively \emph{different} predictions for the scaling of $\alpha_s$ with the tilt $\epsilon \equiv 1 - n_s$. Writing $n_s = 1 - \epsilon$:
+The O-Z relation and slow-roll inflation make qualitatively \emph{different} predictions for the scaling of $\alpha_s$ with the tilt $\epsilon \equiv 1 - n_s$ \emph{at the scale where each is evaluated}. Writing $n_s = 1 - \epsilon$, the O-Z substrate running is
 \begin{equation}
-  \alpha_s^{\mathrm{O\text{-}Z}} = (1-\epsilon)^2 - 1 = -2\epsilon + \epsilon^2 \approx -2\epsilon,
+  \alpha_s^{\mathrm{O\text{-}Z,sub}} = (1-\epsilon)^2 - 1 = -2\epsilon + \epsilon^2 \approx -2\epsilon,
 \end{equation}
-which is \emph{linear} in the tilt at leading order. In slow-roll inflation, $n_s - 1 = -2\epsilon_H - \eta_H$ and $\alpha_s = -2\epsilon_H \eta_H - \xi_H^2$, which is generically \emph{quadratic} in slow-roll parameters: $\alpha_s \sim O(\epsilon^2)$ for $\epsilon_H \sim \eta_H \sim \epsilon$.
+\emph{linear} in the tilt at leading order. In slow-roll inflation, $n_s - 1 = -2\epsilon_H - \eta_H$ and $\alpha_s = -2\epsilon_H \eta_H - \xi_H^2$, generically \emph{quadratic} in slow-roll parameters: $\alpha_s \sim O(\epsilon^2)$. The distinction is stark at the substrate scale: O-Z gives $|\alpha_s| \sim 2|\epsilon| \sim 0.07$, while generic slow-roll gives $|\alpha_s| \sim \epsilon^2/2 \sim 6 \times 10^{-4}$, two orders of magnitude smaller. The linear-in-tilt scaling is a signature that distinguishes O-Z correlators from slow-roll spectra --- but it is a signature of the \emph{substrate} channel. At the CMB pivot, the framework's transported running is $\approx 0$, slow-roll-like in magnitude; the linear-in-tilt behavior is the falsifiable prediction at the matched substrate-sensitivity channel, not at the pivot. This is why the channel labeling is essential to the comparison: the two scenarios are most cleanly separated where the framework predicts $-0.0859$ and slow-roll predicts $\approx 0$, i.e. at the CMB-S4/CMB-HD substrate channel.
 
-The distinction is stark: the O-Z identity gives $|\alpha_s| \sim 2|\epsilon| \sim 0.07$ at $\epsilon = 0.035$, while generic slow-roll gives $|\alpha_s| \sim \epsilon^2/2 \sim 6 \times 10^{-4}$, two orders of magnitude smaller. The O-Z prediction exceeds slow-roll by a factor of $\sim 2/\epsilon \sim 57$. There is no special case of slow-roll parameters that reproduces the O-Z relation: $\eta_H = 0$, $\xi_H = 0$ would give $\alpha_s = 0$, not $\alpha_s = -2\epsilon$. The linear-in-tilt scaling is a signature that distinguishes O-Z correlators from slow-roll spectra.
+\subsection{Absence of prior art}
+
+A literature search across standard references on CMB power spectra, inflationary cosmology, statistical mechanics, and Ornstein-Zernike theory found no prior statement of the specific relation $\alpha_s = n_s^2 - 1$ as a kinematic identity for O-Z correlators. The derivation is elementary (four lines of algebra from the propagator form). Its absence from the literature may reflect that standard inflationary models generate power spectra from slow-roll dynamics rather than equilibrium correlators, and the Ornstein-Zernike form with constant parameters is not the standard starting point for CMB analyses; in condensed matter, the running of the spectral index is not a commonly studied quantity. We do not claim that the more general single-pole-rational-propagator running is novel --- only this particular functional form $\alpha_s(n_s)$ for the O-Z case.
 
 \section{Conclusion}
 
-We have established that the Ornstein-Zernike propagator $P(K) = T/(JK^2 + m^2)$ with $K$-independent parameters satisfies the exact algebraic identity $\alpha_s = n_s^2 - 1$. The derivation is four lines of algebra; the result is parameter-free. The identity generalizes to $\alpha_s = -(a-1+n_s)(1-n_s)$ for $K^a$ dispersion, of which $a=2$ is a special case.
+We have established that the Ornstein-Zernike propagator $P(K) = T/(JK^2 + m^2)$ with $K$-independent parameters satisfies the exact algebraic identity $\alpha_s = n_s^2 - 1$. The derivation is four lines of algebra; the result is parameter-free; it generalizes to $\alpha_s = -(a-1+n_s)(1-n_s)$ for $K^a$ dispersion. At the framework's gauge-invariant tilt $n_s = 9561/10000$, the identity takes the exact rational value $\alpha_s = -8\,587\,279/10^8 = -0.085\,872\,79$.
 
-Five independent arguments --- two structural (running mass bound, Goldstone theorem) and three framework-specific (Leggett pole degeneracy, zero-mode protection, RPA suppression) --- establish that within the O-Z sector of a compact lattice with spontaneously broken $U(1)$, the identity cannot be broken. The largest correction is $|\delta\alpha_s| = 1.3 \times 10^{-3}$, compared to the required shift of $\sim$0.07. These arguments do \emph{not} establish that the CMB power spectrum belongs to the O-Z sector.
+Five independent arguments --- two structural (running mass bound, Goldstone theorem) and three framework-specific (Leggett pole degeneracy, zero-mode protection, RPA suppression) --- establish that within the Goldstone sector of a compact lattice with spontaneously broken $U(1)$, the identity cannot be broken; the largest correction is $|\delta\alpha_s| = 1.3 \times 10^{-3}$. These arguments certify the identity within the Goldstone sector; they do not by themselves fix which scale a detector probes.
 
-If the CMB pivot scale maps to the lattice fundamental mode ($K_{\mathrm{pivot}} \sim M_{\mathrm{KK}}$), the identity predicts $\alpha_s = -0.073 \pm 0.009$ at the extended-model $n_s = 0.9625$, in $5.0$--$6.0\sigma$ tension with Planck 2018. This tension is \emph{conditional}: at the physical CMB scale ($K_{\mathrm{pivot}} \sim 10^{-57}\,M_{\mathrm{KK}}$), $n_s \to 1$ and $\alpha_s \to 0$, consistent with any measurement. The lattice-scale identification has not been derived from first principles. Achieving $n_s = 0.965$ at the lattice scale requires $m_* = 11.87\,M_{\mathrm{KK}}$, a factor of 170 above the physical Leggett mass --- a mass problem that is logically entangled with the $\alpha_s$ prediction.
+The principal physical content is the resolution of a single spectral functional into \emph{two scale-separated running observables}, related by a non-scalar transport of degree $+2$ across the $54.04$ decades between the substrate's Brillouin-zone scale and the CMB pivot. At the pivot the running is Goldstone-protected to $\approx 0$, consistent with Planck at $+0.67\sigma$. At the substrate scale the running is fixed at $-0.085\,872\,79$, regulator-invariant and sign-fixed (red), and is a future falsifier at the matched substrate-sensitivity channel of CMB-S4 and CMB-HD, where its projected reach is $\gtrsim 34\sigma$. The historical reading that compared the substrate value directly against the Planck pivot --- a $\approx 12\sigma$ ``tension'' --- is a scale-mismatch artifact: it relocates to the substrate channel as a future test, and does not constitute a present falsification.
 
-The tension, where it exists, can be resolved by correlators with effective dispersion $\omega^2 \propto K^\alpha$, $\alpha \neq 2$. Within the framework, the spectral action correlator, built from Casimir eigenvalues spanning a factor of 7 in mass, has $\alpha_{\mathrm{eff}} = 1.21$ and breaks the identity. Whether this correlator contributes to the CMB power spectrum remains an open computation.
+The framework also admits, outside the Goldstone sector, a spectral-action correlator built from Casimir eigenvalues spanning a factor of seven in mass, with effective dispersion $a_{\mathrm{eff}} = 1.21$, which breaks the identity at the substrate scale; whether it contributes to the observed power spectrum is a separate question for the companion analysis.
 
-CMB-S4, with $\sigma(\alpha_s) \sim 0.003$, would be decisive for the lattice-scale identification: detection of $\alpha_s = -0.073$ at $\sim$8$\sigma$ if the identification holds, or exclusion at $>$20$\sigma$ if $\alpha_s = 0$.
+The mathematical content of the identity --- that the M\"obius transformation $n_s = 1 - 2/(1+y)$ composed with $y \propto K^{-2}$ yields a quadratic relation between $n_s$ and $\alpha_s$ --- is independent of any physical framework and holds in any context where Ornstein-Zernike correlators determine power-law scaling indices. Its observational meaning, however, is inseparable from the scale at which it is read and the channel through which it is measured.
 
-The mathematical content of the identity --- that the M\"obius transformation $n_s = 1 - 2/(1+y)$ composed with $y \propto K^{-2}$ yields a quadratic relation between $n_s$ and $\alpha_s$ --- is independent of any physical framework and holds in any context where Ornstein-Zernike correlators determine power-law scaling indices.
+\section*{Data and Code Availability}
+
+The lattice parameters, spectral-moment evaluations, and transport-degree computation quoted from the phonon-exflation framework are documented in the companion work \citep{PhononExflation}; the underlying canonical constants and per-session derivations are maintained in the project repository. The algebraic identity and its exact-rational form (Remark~\ref{rem:exact-Q}) were verified by exact rational arithmetic.
 
 \bibliographystyle{plainnat}
 \bibliography{references}

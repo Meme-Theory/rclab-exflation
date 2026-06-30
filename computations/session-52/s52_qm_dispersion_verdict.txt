@@ -1,0 +1,11 @@
+T3-S52-QM-DISPERSION: PASS -- value=-5.794598e-01 scheme=poly_fit_omega_sq_vs_K_sq convention=GoldstoneBranch_G->X_small_K_cut=0.5 L_max=N/A sha256=8803552f031bc1d3b0ce7aec148723d64a5c7c58140871de995d287937568540
+  # target: -0.579 (MCP canonical alpha_QM, QM-DISPERSION-52 PASS)
+  # pre-fix: script already T3-compliant — `from canonical_constants import *` at line 76, all framework constants (N_cells, rho_B2_per_mode, Delta_0_GL, Delta_B3, J_C2, J_su2, PI) imported; all intermediates (Nk, dk, Ng, Nfit, kx_small_K_cut, target, qm_pass_thresh, qm_fail_thresh, K_pivots, rho_B1/B2/B3 fallback, J_12/13/23 fallback) already tagged `# (local)`. No edits required.
+  # fix: none — script passes T3 canonical-import + local-tagging discipline at current SHA (updated since prep-block SHA 9085656d2e094d12 -> current 4b4464b2e9cd93e1).
+  # reproduced: alpha_QM_omega = -5.794598e-01 (Goldstone K^4 correction coefficient on G->X). Also reproduced alpha_QM_omega_sq = -1.158920e+00, delta_alpha_QM = -5.377947e-01, tr_g_BZ_avg = 1.916010e-02, c_eff_xy = 0.172206, c_eff_z = 0.043730. K_pivots {0.1,0.2,0.5,1.0} all PASS |dn_QM|>0.01 threshold (1.55e-2 to 1.24e-1).
+  # rel error vs MCP: 7.94e-4 (0.0794%) — under RATIO 0.5% tolerance; well over 10x under FAIL threshold (5%).
+  # closure_inputs: script=4b4464b2e9cd93e1 canon=68b50cd325d2cc8c npz_s48=14f806285bd25ddf
+  # script_sha=4b4464b2e9cd93e131dc956e651944f90a7aa38f554478eba798f350978452ea  canon_sha=68b50cd325d2cc8c63b775da3b6b92f538da582bee44c5d906c81259f24dd12f
+  # note: s35_thouless_multiband.npz not present -> script took fallback branch for J_12/J_13/J_23 (lines 150-152, approximate Leggett couplings from omega_L1/L2 back-extraction). This is the INTENDED behavior encoded in the script; rho_B1/B2/B3 used the rho_B2_per_mode canonical-derived fallback. Result (-0.579) matches MCP canonical value to 3 decimal places.
+  # GPU path: N/A — Bloch Hamiltonian is 3x3, QGT scan is 16^3 = 4096 points, runtime 1.3s on CPU. No matrix >= 100x100 encountered; GPU would add data-transfer overhead for no benefit.
+  # missing canonical constants flagged: none. alpha_QM itself (value -0.579) IS registered canonical but has no PROVENANCE row — recommend update_constant(alpha_QM, -0.579, "S52", "s52_qm_dispersion.py", "QM-DISPERSION-52 gate PASS W1-G") to close that provenance gap.

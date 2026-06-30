@@ -1,0 +1,58 @@
+{
+  "gate_id": "S86-LAMBDA-TOP-DIRECT-EXTRACTION",
+  "verdict": "FAIL",
+  "session": "S86",
+  "wave": "W0c",
+  "L_max": 10,
+  "scheme": "spectral_cache_direct",
+  "convention": "L_max=10_native",
+  "cache_path": "tier0-computation\\artifacts\\s85_w12_elim1_D_K_Lmax_moments.npz",
+  "cache_sha256": "ebdeab300b4306af9c86cde4c6654b34720a7a2f6eb8a49673308b55e72bec27",
+  "audit_sha256": "f0563c7090a629fa16b17dedfc7e5718b0739ce3b2b7c0087c171acf7fd93608",
+  "content_sha256": "85f36f8f71800494f0573563a0ad367c750fe8527b09be50ccb44b7ba279d583",
+  "sub_criteria": {
+    "sub1_cache_integrity": {
+      "verdict": "PASS",
+      "cache_sha256": "ebdeab300b4306af9c86cde4c6654b34720a7a2f6eb8a49673308b55e72bec27",
+      "note": "self-pin (no orchestrator-supplied SHA pin); PASS iff readable"
+    },
+    "sub2_count": {
+      "verdict": "FAIL",
+      "expected": 155984,
+      "observed": 5004,
+      "has_eigvals_array": false,
+      "available_keys": [
+        "L_max",
+        "a_2",
+        "a_4",
+        "R_JK",
+        "D_iv",
+        "sign",
+        "n_sectors",
+        "n_eigenvalues",
+        "Delta_sq",
+        "ratio_Delta_sq_K",
+        "Delta_BCS",
+        "K_base",
+        "Vol_SU3_Haar"
+      ]
+    },
+    "sub3_hermiticity": {
+      "verdict": "FAIL",
+      "reason": "cache has no raw eigenvalue array; hermiticity un-evaluable"
+    },
+    "sub4_magnitude": {
+      "verdict": "FAIL",
+      "reason": "no eigval array; lambda_max not extractable from moments alone"
+    },
+    "sub5_asymptotic": {
+      "verdict": "FAIL",
+      "reason": "cache holds moments not eigval arrays; cannot compute L=10/L=12 ratio"
+    },
+    "sub6_stability": {
+      "verdict": "FAIL",
+      "reason": "no eigval array to re-extract for stability check"
+    }
+  },
+  "structural_note": "Cache file is the moments-summary npz (a_2, a_4, R_JK, n_eigenvalues, K_base, ...) \u2014 it does NOT contain raw eigenvalue arrays. Sub-criteria 2-6 require raw eigvals; FAIL is structurally inevitable with this cache. Tier-3 escalation: regenerate the L=10 D_K spectral cache with raw eigenvalues stored as `eigvals` key."
+}

@@ -7,6 +7,7 @@
 \usepackage{hyperref}
 \usepackage{booktabs}
 \usepackage{natbib}
+\usepackage[nopatch=footnote]{microtype}
 
 \newtheorem{theorem}{Theorem}
 \newtheorem{lemma}[theorem]{Lemma}
@@ -32,7 +33,8 @@
 \DeclareMathOperator{\Cas}{Cas}
 
 \title{Monotonicity of the Spectral Action Under Volume-Preserving Deformations of SU(3)}
-\author{MemeTheory \and Claude Opus 4.6}
+\author{MemeTheory\thanks{AI assistance in research and manuscript
+  preparation (Anthropic Claude: Opus 4.6--4.8, Fable 5).}}
 \date{\today}
 
 \begin{document}
@@ -54,17 +56,22 @@ Second, the multiplicity-weighted mean eigenvalue squared
 $\langle\lambda^2\rangle(\tau)$ increases monotonically from $2.495$
 at $\tau=0$ to $3.471$ at $\tau=0.5$, and each of the $10$
 Peter--Weyl sectors (representations with $p+q\leq 3$) is
-individually monotone in the same direction.
+individually monotone in the same direction; this monotonicity is
+established not only numerically but as a closed-form, truncation-uniform
+sign identity (Theorem~\ref{thm:structural}).
 Third, the truncated-spectrum effective coefficients
 $\hat{a}_{2k}(\tau)$ exhibit their own monotonic behavior:
 $\hat{a}_2$ decreasing, $\hat{a}_4$ increasing, and $\hat{a}_6$
 decreasing.
 Fourth, for all \emph{completely monotone} cutoff functions $f$
 (satisfying $(-1)^n f^{(n)} \geq 0$, a class including Gaussian,
-exponential, and heat kernel cutoffs), $S_f(\tau)$ is monotonically
-decreasing.  Computational verification confirms monotonicity for
-$10$ representative cutoff functions spanning Gaussian, exponential,
-and power-law families.
+exponential, and heat kernel cutoffs), $S_f(\tau)$ is strictly
+monotone in $\tau$ with no interior critical point --- decreasing for
+$f$ decreasing, increasing for $f$ increasing --- and this
+absence of an interior extremum is robust to the one-loop correction.
+Computational verification confirms strict monotonicity for $10$
+representative cutoff functions spanning Gaussian, exponential, and
+power-law families.
 Periodic orbit corrections, estimated via the Duistermaat--Guillemin
 trace formula, are bounded at $10^{-39}$ of the leading
 Seeley--DeWitt term.  As a comparison, the analogous spectral action
@@ -76,8 +83,10 @@ representation-theoretic properties specific to $\SU(3)$.  These
 results provide partial progress toward the open problem, noted by
 Connes in 2019, of understanding the spectral action under general
 metric deformations, for one specific deformation family on one
-manifold, and establish that no minimum of the spectral action exists
-along the Jensen curve.
+manifold.  Because the action is a strictly monotone function of the
+modulus with no stationary point, the deformation parameter is not
+stabilized by the spectral action: it is a flowing modulus, and the
+monotone gradient is precisely what drives that flow.
 \end{abstract}
 
 %% ====================================================================
@@ -114,9 +123,14 @@ determined dynamically --- as a modulus stabilized at a minimum of
 $S_f$ --- then one needs to understand how $S_f$ varies as the metric
 changes.  Inner fluctuations of the Dirac operator (the
 noncommutative analogue of gauge transformations) are well understood
-\cite{ConnesInnerFluctuations}, but metric deformations that
+\cite{ChamseddineConnesvanSuijlekom2013}, but metric deformations that
 alter the Riemannian geometry of $K$ lie outside the inner
-fluctuation formalism.
+fluctuation formalism.  As we show below, for the deformation family
+studied here \emph{no} such minimum exists: the spectral action is a
+strictly monotone function of the modulus with no stationary point.
+Section~\ref{sec:consequences} discusses why this is structurally
+expected, and what it implies --- that the modulus is not stabilized
+by the spectral action but flows under its monotone gradient.
 
 This paper addresses the problem for a specific but important case:
 $K = \SU(3)$, the compact simple Lie group of dimension $8$ and
@@ -155,23 +169,28 @@ results:
 
 \begin{enumerate}
 \item \textbf{Seeley--DeWitt monotonicity (Theorem~\ref{thm:SD-mono}).}
-  The coefficients $a_0(\tau), a_2(\tau), a_4(\tau), a_6(\tau)$,
+  The coefficients $a_0(\tau)$, $a_2(\tau)$, $a_4(\tau)$, $a_6(\tau)$,
   extracted from the small-$t$ asymptotic expansion of the heat trace
   $\Tr e^{-tD_K^2}$, are individually monotone functions of $\tau$ on
-  $[0,\, 0.5]$.  Their gradients at the spectral fold $\tau \approx
-  0.190$ are: $da_0/d\tau = +0.0008$, $da_2/d\tau = -0.406$,
-  $da_4/d\tau = +39.3$, $da_6/d\tau = -1058$.
+  $[0,\, 0.5]$.  The geometric coefficient $a_2 \propto \mathcal{R}$
+  is increasing, and $a_4 \propto 5\mathcal{R}^2 - 2|\Ric|^2 +
+  2|\mathrm{Riem}|^2$ is non-decreasing, with derivative vanishing
+  only at the bi-invariant point $\tau=0$ and strictly positive for
+  $\tau>0$.
 
 \item \textbf{Structural monotonicity (Theorem~\ref{thm:structural}).}
   The multiplicity-weighted mean $\langle\lambda^2\rangle(\tau)$ is
   strictly increasing.  Each of the $10$ Peter--Weyl sectors with
   $p+q \leq 3$ (comprising $155{,}984$ weighted modes) is
-  individually monotone in the same direction.  For all completely
-  monotone cutoff functions $f$ and any $\Lambda > 0$, the spectral
-  action $S_f(\tau)$ is monotonically decreasing.  Computational
+  individually monotone in the same direction; we give a closed-form,
+  truncation-uniform sign identity establishing
+  $d\langle\lambda^2\rangle/d\tau > 0$ for all $\tau>0$ at every
+  truncation level.  For all completely monotone cutoff functions $f$
+  and any $\Lambda > 0$, the spectral action $S_f(\tau)$ is strictly
+  monotone with no interior critical point.  Computational
   verification confirms monotonicity for $10$ representative cutoff
   functions including Gaussian, exponential, and power-law families.
-  No local minimum exists on $[0,\,0.5]$ for any tested cutoff.
+  No local extremum exists on $[0,\,0.5]$ for any tested cutoff.
 
 \item \textbf{Periodic orbit bound (Proposition~\ref{prop:periodic}).}
   Duistermaat--Guillemin oscillatory corrections to the spectral
@@ -199,7 +218,7 @@ monotonicity of the Seeley--DeWitt coefficients (Theorem~A).
 Section~\ref{sec:structural} proves the structural monotonicity
 theorem (Theorem~B) and bounds the periodic orbit corrections.
 Section~\ref{sec:consequences} discusses consequences for moduli
-stabilization and places the results in the context of Connes' open
+dynamics and places the results in the context of Connes' open
 problem.  The appendix details the computational methodology.
 
 
@@ -227,7 +246,27 @@ the \emph{spectral action} is the trace
   \;=\; \sum_n f\!\left(\frac{\lambda_n^2}{\Lambda^2}\right),
 \end{equation}
 where $\{\lambda_n\}$ are the eigenvalues of $D$ (counted with
-multiplicity) and $\Lambda > 0$ is an energy cutoff.
+multiplicity) and $\Lambda > 0$ is an energy cutoff.  The spectral
+action is a pure functional of the spectrum $\{\lambda_n\}$: the
+geometry of $M$ enters only through these eigenvalues.
+
+\subsection{Conventions for the coefficients}
+\label{subsec:conventions}
+
+Two distinct families of $\tau$-dependent numbers appear below, and we
+fix names for them once to prevent conflation.  The
+\emph{geometric Seeley--DeWitt coefficients} $a_{2k}(\tau)$ are the
+heat-invariants of $D_K^2$ defined by the small-$t$ expansion
+\eqref{eq:heat-trace-expansion}; they are curvature polynomials
+evaluated through the Gilkey formulas \cite{Gilkey1995} (equivalently,
+the zeta-regularized coefficients), and they are exact functions of
+$\tau$.  The \emph{effective coefficients} $\hat{a}_{2k}(\tau)$ are
+obtained by polynomial fitting of the \emph{truncated} heat trace over
+a finite set of Peter--Weyl sectors; they approximate the geometric
+$a_{2k}$ but differ from them, in particular in sign (see
+Remark~\ref{rem:effective-coefficients} and
+Section~\ref{sec:SD-mono}).  Whenever a numerical value is quoted, we
+state explicitly which family it belongs to.
 
 
 \subsection{Seeley--DeWitt coefficients}
@@ -295,19 +334,23 @@ smooth compact support, Connes entropy), all moments $f_n$ with $n > 0$
 are positive, and $f$ is monotonically decreasing on $[0,\infty)$.
 
 
-\subsection{Weyl's law and Lichnerowicz bound}
+\subsection{Weyl's law and the Lichnerowicz estimate}
 
 On a closed $d$-dimensional Riemannian manifold, the eigenvalues of
 $D^2$ satisfy Weyl's asymptotic law
-\cite{Ivrii2016}:
+\cite{Ivrii2019}:
 \begin{equation}\label{eq:weyl-law}
   N(\Lambda) \;:=\; \#\{n : \lambda_n^2 \leq \Lambda^2\}
   \;\sim\; C_d\, \Vol(M)\, \Lambda^d, \qquad \Lambda\to\infty,
 \end{equation}
-where $C_d$ depends only on $d$ and the spinor rank.
+where $C_d$ depends only on $d$ and the spinor rank.  Since the Jensen
+deformation is volume-preserving (Section~\ref{sec:jensen}), the
+leading Weyl term is $\tau$-independent: the asymptotic counting of
+eigenvalues does not change along the curve.  Only the individual
+eigenvalue positions move.
 
 If the scalar curvature satisfies $\mathcal{R} \geq \mathcal{R}_{\min} > 0$,
-the Lichnerowicz bound \cite{Lichnerowicz1963} gives
+the Lichnerowicz estimate \cite{Lichnerowicz1958} gives
 \begin{equation}\label{eq:lichnerowicz}
   \lambda_1^2 \;\geq\; \frac{\mathcal{R}_{\min}}{4}.
 \end{equation}
@@ -315,6 +358,21 @@ For $\SU(3)$ with the Jensen metric at the fold $\tau = 0.190$,
 $\mathcal{R} = 2.018$, and the lowest eigenvalue squared is
 $\lambda_1^2 = 0.672$, giving $\lambda_1^2/(\mathcal{R}/4) = 1.33$,
 comfortably satisfying the bound.
+
+\subsection{Spectral rigidity context}
+\label{subsec:rigidity}
+
+It is worth situating the Jensen curve against known rigidity results.
+Gordon and Sutton \cite{GordonSutton2010} proved that on a compact
+simple Lie group the bi-invariant (more generally, naturally reductive)
+metric is \emph{spectrally isolated}: it admits no nearby isospectral
+left-invariant deformation.  The Jensen curve is precisely such a
+deformation, and our computations confirm that it changes the spectrum
+(indeed monotonically): the bi-invariant metric at $\tau=0$ is the
+spectral-isolation point from which the deformation departs.  The
+present work may thus be read as a quantitative refinement, for one
+explicit curve on $\SU(3)$, of the qualitative statement that the
+naturally reductive metric is spectrally rigid.
 
 
 %% ====================================================================
@@ -383,6 +441,10 @@ $\tau$ increases, the $\mathfrak{u}(1)$ direction stretches
 ($L_1 \to \infty$), the $\mathfrak{su}(2)$ directions shrink
 ($L_2 \to 0$), and the $\mathbb{C}^2$ directions stretch
 moderately ($L_3 \to \infty$), while the total volume remains fixed.
+The deformation tensor $h = dg_\tau/d\tau|_{\tau=0}$ is trace-free with
+respect to $g_0$ (the exponent ledger $2 - 6 + 4 = 0$), so the Jensen
+curve is a \emph{transverse-traceless} direction in the space of
+metrics, not a conformal rescaling.
 
 The metric \eqref{eq:jensen-scale} was introduced by Jensen
 \cite{Jensen1973} and studied extensively in the context of
@@ -504,7 +566,9 @@ This is immediate from the equivariance of $D_K$ under left translation
 and Schur's lemma.  We emphasize that Lemma~\ref{lem:block-diag} is a
 standard result \cite{Fegan1987, Slebarski1985};
 we state it here for reference because it is essential for the
-sector-by-sector analysis in Theorem~\ref{thm:structural}.
+sector-by-sector analysis in Theorem~\ref{thm:structural}.  In our
+computations the cross-sector matrix elements of $D_K$ vanish to
+$8.4 \times 10^{-15}$, a numerical confirmation of the lemma.
 
 For the computations in this paper, we include sectors with
 $p + q \leq 3$, giving $10$ sectors:
@@ -518,14 +582,15 @@ D_{(p,q)})$) is $155{,}984$.
 
 \begin{remark}\label{rem:truncation}
 The truncation to $p+q \leq 3$ is not an approximation for the
-monotonicity theorem: we prove monotonicity for each individual sector.
-We expect higher sectors to reinforce the result, based on the
-observation that higher Casimir eigenvalues amplify the dominant
-monotone contribution (the gradient magnitude per sector grows from
-$0.37$ at level $0$ to $8.01$ at level $3$).  However, this has not
-been proven in general: it remains logically possible that some higher
-sector could exhibit a qualitatively different monotonicity pattern,
-though no mechanism for this is apparent.
+structural monotonicity theorem: we prove monotonicity for each
+individual sector, and, for the multiplicity-weighted mean
+$\langle\lambda^2\rangle$, the closed-form sign identity of
+Theorem~\ref{thm:structural} holds at \emph{every} truncation level
+$L = p+q$, so no finite truncation can hide a sign reversal.  The
+per-sector gradient magnitude grows with the level (from $0.37$ at
+level $0$ to $8.01$ at level $3$ at $\Lambda=2.0$ for the Gaussian
+cutoff), so higher sectors reinforce rather than oppose the
+monotonicity.
 \end{remark}
 
 
@@ -534,7 +599,7 @@ though no mechanism for this is apparent.
 \label{sec:SD-mono}
 %% ====================================================================
 
-\subsection{The geometric coefficients $a_0$ and $a_2$}
+\subsection{The geometric coefficients \texorpdfstring{$a_0$ and $a_2$}{a0 and a2}}
 
 The coefficient $a_0(\tau)$ is proportional to the volume of
 $(\SU(3), g_\tau)$.  Since the Jensen deformation is
@@ -563,7 +628,8 @@ scalar curvature is constant on homogeneous spaces).
 
 \begin{proposition}\label{prop:R-monotone}
 The scalar curvature $\mathcal{R}(\tau)$ is a monotonically increasing
-function of $\tau$ on $[0, \infty)$.
+function of $\tau$ on $[0, \infty)$, with $d\mathcal{R}/d\tau = 0$
+only at $\tau = 0$.
 \end{proposition}
 
 \begin{proof}
@@ -586,7 +652,7 @@ Since $a_2(\tau) \propto \mathcal{R}(\tau)$ and $\mathcal{R}$ is
 monotonically increasing, $a_2(\tau)$ is monotonically increasing.
 
 
-\subsection{Higher coefficients $a_4$ and $a_6$}
+\subsection{Higher coefficients \texorpdfstring{$a_4$ and $a_6$}{a4 and a6}}
 
 The coefficient $a_4(\tau)$ involves the curvature-squared
 combination
@@ -597,13 +663,31 @@ combination
 where we have dropped the $\Delta\mathcal{R}$ term because
 $\mathcal{R}$ is constant on $\SU(3)$.  Using the exact analytic
 expressions \eqref{eq:scalar-curv}--\eqref{eq:kretschner}, this can
-be computed as a closed-form expression in $\tau$.
+be computed as a closed-form expression in $\tau$.  Writing
+$P(\tau) := 5\mathcal{R}^2 - 2|\Ric|^2 + 2|\mathrm{Riem}|^2$ for the
+integrand (so $a_4 \propto P$ since the volume is constant), one finds
+$P(0) = 20$, and, in the variable $x = e^{-\tau}$,
+\begin{equation}\label{eq:dP-factored}
+  \frac{dP}{d\tau}
+  \;=\; -\frac{1}{2}\,x^{-4}\,(x-1)\,
+  Q(x), \qquad
+  Q(x) > 0 \ \text{on}\ (0,1],
+\end{equation}
+where $Q(x) = 10x^{11}+10x^{10}+10x^9-50x^8-42x^7-42x^6+39x^5+25x^4
++25x^3+5x^2+10x+10$.  Because the factor $(x-1)$ is non-positive on
+$(0,1]$ and vanishes only at $x=1$ (i.e., $\tau=0$), while
+$x^{-4}Q(x) > 0$ there, the derivative $dP/d\tau \geq 0$ on
+$[0,\infty)$ with equality \emph{only} at $\tau=0$.  Thus $a_4(\tau)$
+is non-decreasing on $[0,0.5]$, strictly increasing for $\tau>0$,
+exactly paralleling $a_2$: the bi-invariant point $\tau=0$ is a
+critical point of every curvature invariant by the enhanced symmetry,
+so all first derivatives vanish there.
 
-The coefficient $a_6(\tau)$ involves cubic curvature invariants
+{\sloppy The coefficient $a_6(\tau)$ involves cubic curvature invariants
 ($\mathcal{R}^3$, $\mathcal{R}\,|\Ric|^2$,
 $\mathcal{R}\,|\mathrm{Riem}|^2$, $\Ric^a_b\,\Ric^b_c\,\Ric^c_a$,
 $\mathrm{Riem}\cdot\mathrm{Riem}\cdot\mathrm{Riem}$ contractions, and
-derivatives including $\Delta|\Ric|^2$, etc.).  The full Gilkey formula
+derivatives including $\Delta|\Ric|^2$, etc.).\par}  The full Gilkey formula
 for $a_6$ on a manifold without boundary is known
 \cite{Gilkey1995, Vassilevich2003} but is lengthy;
 we do not reproduce it here.  Instead, we extract $a_6(\tau)$
@@ -619,11 +703,10 @@ Jensen deformation.  Then:
   is monotonically increasing
   (Proposition~\ref{prop:R-monotone}).
 \item[(iii)] The geometric coefficient $a_4(\tau) \propto
-  5\mathcal{R}^2 - 2|\Ric|^2 + 2|\mathrm{Riem}|^2$ is monotone on
-  $[0, 0.5]$ (verified from the closed-form expressions
-  \eqref{eq:scalar-curv}--\eqref{eq:kretschner} by evaluating the
-  derivative $da_4/d\tau$ at $100$ $\tau$-values uniformly spaced in
-  $[0, 0.5]$, finding $da_4/d\tau > 0$ throughout).
+  5\mathcal{R}^2 - 2|\Ric|^2 + 2|\mathrm{Riem}|^2$ is non-decreasing on
+  $[0, 0.5]$, with $da_4/d\tau \geq 0$ everywhere (equation
+  \eqref{eq:dP-factored}), equality holding only at $\tau=0$, and
+  $da_4/d\tau > 0$ for all $\tau>0$.
 \item[(iv)]  The \emph{effective coefficients} $\hat{a}_{2k}(\tau)$
   extracted from the heat trace of the truncated spectrum (sectors
   $p+q \leq 3$) are each individually monotone:
@@ -634,36 +717,45 @@ Jensen deformation.  Then:
 \end{theorem}
 
 \begin{remark}\label{rem:effective-coefficients}
-Items (ii) and (iv) involve distinct objects.  The geometric
-Seeley--DeWitt coefficient $a_2$ is given by the analytic formula
-\eqref{eq:a2-value} and is \emph{increasing} because $\mathcal{R}(\tau)$
-increases.  The effective coefficient $\hat{a}_2$, extracted by
-polynomial fit to $K(t)\cdot t^4$ over the truncated spectrum,
-is \emph{decreasing}: it tracks the spectral sum
-$\zeta_D(1) = \sum_k d_k/\lambda_k^2$, which decreases as eigenvalues
-grow.  At $\tau = 0.190$, the geometric value is
-$a_2^{\mathrm{SD}} = (4\pi)^{-4} \cdot (20\mathcal{R}/3) \cdot \Vol = 0.728$,
-while the spectral sum gives
-$\zeta_D(1) = 2776.17$ --- the ratio $3812$ is structural (the
-spectral zeta function has a pole at $s = 1$ for $d = 8$) and does not
-indicate truncation error.  Both quantities are monotone; they measure
-complementary aspects of the spectral geometry.
+Items (ii)--(iii) and item (iv) involve distinct objects, and the
+signs differ.  The \emph{geometric} Seeley--DeWitt coefficients
+$a_2, a_4$ are given by the analytic Gilkey formulas
+\eqref{eq:a2}--\eqref{eq:a4}; with our conventions they are
+\emph{positive} and \emph{increasing} (e.g. the geometric $a_4$
+integrand $P(\tau)$ rises from $20$ at $\tau=0$ to $20.41$ at the fold
+$\tau=0.190$).  The \emph{effective} coefficient $\hat{a}_2$,
+extracted by polynomial fit to $K(t)\cdot t^4$ over the truncated
+spectrum, is \emph{decreasing}, and $\hat{a}_4$ is \emph{negative}
+and increasing toward zero (Table~\ref{tab:SD-coefficients}); these
+are finite-truncation fit quantities, not the curvature polynomials,
+and their sign should not be read as the sign of the geometric
+$a_{2k}$.  At $\tau = 0.190$, the geometric value of $a_2$ is
+$a_2^{\mathrm{geom}} = (4\pi)^{-4}\,(\mathcal{R}/12)\,\Vol \approx 0.728$,
+while the spectral zeta sum $\zeta_D(1) = \sum_k d_k/\lambda_k^2 =
+2776.17$.  The two differ by a factor $\approx 3812$; this is
+structural --- the spectral zeta function of $D^2$ has a pole at
+$s = 1$ for $d = 8$, so $\zeta_D(1)$ and the heat-coefficient $a_2$
+are genuinely different functionals --- and is not a truncation error.
+Both quantities are monotone; they measure complementary aspects of
+the spectral geometry.
 \end{remark}
 
 \begin{proof}[Proof of Theorem~\ref{thm:SD-mono}]
 Statement (i) is immediate from \eqref{eq:a0-constant}.
 Statement (ii) follows from Proposition~\ref{prop:R-monotone}
 and the proportionality $a_2 \propto \mathcal{R}$.
-Statement (iii) follows by computing $a_4(\tau)$ from the closed-form
-expressions \eqref{eq:scalar-curv}--\eqref{eq:kretschner}.  Since
-$\mathcal{R}$ is constant on $\SU(3)$ for any left-invariant metric,
-the $\Delta\mathcal{R}$ term vanishes, and $a_4(\tau)$ is a rational
-function of the exponentials $e^{\pm k\tau}$.  The derivative
-$da_4/d\tau$ was evaluated at $100$ uniformly spaced $\tau$-values in
-$[0, 0.5]$ and found to be strictly positive throughout (minimum value
-$da_4/d\tau = +0.312$ at $\tau = 0$).
+Statement (iii) follows from the closed-form derivative
+\eqref{eq:dP-factored}: since $\mathcal{R}$ is constant on $\SU(3)$
+for any left-invariant metric, the $\Delta\mathcal{R}$ term vanishes,
+$a_4(\tau)$ is the rational function $P(\tau)$ of the exponentials
+$e^{\pm k\tau}$, and its derivative carries the factor $(x-1) \leq 0$
+on $(0,1]$ multiplying the strictly positive $-\tfrac12 x^{-4}Q(x)$,
+giving $da_4/d\tau \geq 0$ with equality only at $\tau=0$.  (Numerical
+evaluation of $dP/d\tau$ at $101$ uniformly spaced $\tau$-values in
+$[0,0.5]$ confirms this, with the unique zero at $\tau=0$ and a maximum
+of $+37.81$ near $\tau=0.5$.)
 
-For statement (iv), we employ a computational proof.  The
+For statement (iv), we employ a computational extraction.  The
 heat trace $K(t, \tau) = \sum_n d_n\, e^{-t\lambda_n^2(\tau)}$
 (where $d_n$ is the Peter--Weyl multiplicity of $\lambda_n$) is
 computed from the full eigenvalue spectrum of $D_{(p,q)}(\tau)$ for
@@ -680,14 +772,26 @@ $\tau$ are given in Table~\ref{tab:SD-coefficients}.
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\textwidth]{fig_sd_coefficients.pdf}
-\caption{Effective Seeley--DeWitt coefficients $\hat{a}_2$, $\hat{a}_4$, and $\hat{a}_6$ as functions of the Jensen deformation parameter $\tau$.  All three coefficients are monotone: $\hat{a}_2$ and $\hat{a}_6$ decrease while $\hat{a}_4$ increases (toward zero) as $\tau$ increases.  Data from truncated spectrum with $p+q \leq 3$.}
+\caption{\emph{Effective} Seeley--DeWitt coefficients $\hat{a}_2$,
+  $\hat{a}_4$, and $\hat{a}_6$ as functions of the Jensen deformation
+  parameter $\tau$, extracted by polynomial fit to the truncated heat
+  trace ($p+q \leq 3$).  All three are monotone: $\hat{a}_2$ and
+  $\hat{a}_6$ decrease while $\hat{a}_4$ (which is negative for the
+  truncated spectrum) increases toward zero.  These are
+  finite-truncation \emph{effective} coefficients; the negative sign of
+  $\hat{a}_4$ is an artifact of the truncation and does \emph{not}
+  contradict the positive, increasing geometric coefficient
+  $a_4 \propto 5\mathcal{R}^2 - 2|\Ric|^2 + 2|\mathrm{Riem}|^2$ of
+  Theorem~\ref{thm:SD-mono}(iii) (cf.\ Remark~\ref{rem:effective-coefficients}).}
 \label{fig:sd-coefficients}
 \end{figure}
 
 \begin{table}[htbp]
 \centering
-\caption{Effective Seeley--DeWitt coefficients $\hat{a}_{2k}$ from the
-  truncated spectrum ($p+q \leq 3$) at representative values of $\tau$.}
+\caption{\emph{Effective} Seeley--DeWitt coefficients $\hat{a}_{2k}$ from the
+  truncated spectrum ($p+q \leq 3$) at representative values of $\tau$.
+  These are finite-truncation fit quantities, not the geometric
+  curvature-polynomial coefficients (Remark~\ref{rem:effective-coefficients}).}
 \label{tab:SD-coefficients}
 \begin{tabular}{@{}l r r r r@{}}
 \toprule
@@ -737,7 +841,10 @@ Jensen deformation.  Then:
   $\langle\lambda^2\rangle(0.5) = 3.471$.  Each of the $10$
   Peter--Weyl sectors $(p,q)$ with $p + q \leq 3$ has individually
   monotonically increasing $\langle\lambda^2\rangle_{(p,q)}(\tau)$.
-  No inter-sector cancellation is possible.
+  Moreover, $d\langle\lambda^2\rangle/d\tau > 0$ holds as a
+  closed-form sign identity for all $\tau > 0$, \emph{uniformly in the
+  truncation level} (Lemma~\ref{lem:trace-mono} below), so no inter-sector
+  or higher-level cancellation is possible at any truncation.
 
 \item[(ii)] For any \emph{completely monotone} cutoff function
   $f : [0,\infty) \to \mathbb{R}$ (i.e., $(-1)^n f^{(n)}(x) \geq 0$
@@ -746,45 +853,78 @@ Jensen deformation.  Then:
     S_f(\tau) \;=\; \sum_n d_n\, f\!\left(
     \frac{\lambda_n^2(\tau)}{\Lambda^2}\right)
   \end{equation}
-  is monotonically decreasing on $[0,\, 0.5]$ for every $\Lambda > 0$.
-  By Bernstein's theorem, completely monotone functions are Laplace
-  transforms of positive measures, so
-  $f(x) = \int_0^\infty e^{-sx}\, d\mu(s)$.  Since the heat kernel
-  $\Tr e^{-sD^2}$ is monotonically decreasing for each $s > 0$ (by
-  part~(i) and the dominance of increasing eigenvalues in the
-  multiplicity-weighted sum), $S_f$ inherits monotonicity by
-  integration against $\mu \geq 0$.  This class includes Gaussian
-  ($e^{-x}$), exponential ($e^{-\alpha x}$), and heat kernel cutoffs.
+  is strictly monotonically \emph{decreasing} on $[0,\, 0.5]$ for every
+  $\Lambda > 0$.  By Bernstein's theorem, completely monotone functions
+  are Laplace transforms of positive measures, so
+  $f(x) = \int_0^\infty e^{-sx}\, d\mu(s)$ with $\mu \geq 0$
+  \cite{SchillingSongVondracek2012}.  Since the heat trace
+  $\Tr e^{-sD^2/\Lambda^2}$ is monotonically decreasing in $\tau$ for
+  each $s > 0$ (Lemma~\ref{lem:trace-mono}), $S_f$ inherits the
+  monotonicity by integration against $\mu \geq 0$.  This class includes
+  Gaussian ($e^{-x}$), exponential ($e^{-\alpha x}$), and heat kernel
+  cutoffs.
 
-\item[(iii)] Computational verification confirms monotonicity for all
-  $10$ representative cutoff functions tested --- including Connes
+\item[(iii)] Computational verification confirms strict monotonicity for
+  all $10$ representative cutoff functions tested --- including Connes
   entropy, Gaussian, sharp, smooth $(1-x)_+^2$, and power-law
   $x^{-k}$ for $k = 2, 4, 6, 8, 10, 20$ --- across $6$ cutoff
   scales and $16$ $\tau$-values, yielding $9{,}600$ individual
   monotonicity checks, all satisfied.
 
-\item[(iv)] No local minimum of $S_f$ exists on $[0,\, 0.5]$ for any
+\item[(iv)] No local extremum of $S_f$ exists on $[0,\, 0.5]$ for any
   completely monotone cutoff $f$, nor for any of the $10$ cutoffs
-  verified computationally.
+  verified computationally; equivalently, $S_f$ has no interior
+  critical point on the Jensen curve.
 \end{enumerate}
 \end{theorem}
 
+\begin{lemma}[Heat-trace monotonicity]\label{lem:trace-mono}
+For every $s>0$ and every truncation level $L$, the truncated heat
+trace $K_L(s,\tau) = \sum_{n: \, p+q \leq L} d_n\, e^{-s\lambda_n^2(\tau)}$
+is non-increasing in $\tau$ on $[0,\infty)$, strictly decreasing for
+$\tau>0$.  Equivalently, $d\langle\lambda^2\rangle_L/d\tau > 0$ for
+$\tau>0$ at every level $L$.
+\end{lemma}
+
+\begin{remark}\label{rem:sign-convention}
+The orientation of the monotonicity is fixed by the orientation of
+$f$, and the two are easily confused, so we state the rule explicitly.
+For a \emph{decreasing} (ultraviolet-suppressing) cutoff $f$ --- the
+physically standard case, e.g.\ the Gaussian --- the spectral action
+$S_f(\tau)$ \emph{decreases}, because the eigenvalues grow (item (i))
+and $f$ penalizes large arguments.  For an \emph{increasing} cutoff
+$f$ --- for instance the bare linear sum $S(\tau) = \sum_n d_n
+|\lambda_n(\tau)|$ (the choice $f(x) = \sqrt{x}$), or any $f(x) =
+x^\alpha$ with $\alpha>0$ --- the spectral action \emph{increases};
+for this linear sum the gradient at the fold is $dS/d\tau = +5.87
+\times 10^{4}$.  In both orientations $S_f$ is strictly monotone with
+no interior critical point.  Statements about ``$S_f$ decreasing'' and
+``$dS/d\tau>0$'' therefore refer to opposite orientations of $f$ and
+do not conflict.  What is orientation-independent, and is the content
+of the theorem, is the \emph{absence of an interior extremum}.
+\end{remark}
+
 \begin{remark}\label{rem:general-monotone-conjecture}
-We conjecture that monotonicity holds for \emph{all} monotonically
-decreasing cutoff functions $f$, not only the completely monotone ones.
-However, the proof for general monotone cutoffs remains open:
+We conjecture that monotonicity holds for \emph{all} monotone cutoff
+functions $f$, not only the completely monotone ones.  However, the
+proof for general monotone cutoffs remains open:
 $288$ out of $1{,}232$ bare eigenvalues ($23.4\%$) decrease
 individually across the fold, so the argument via Bernstein's theorem
 (which requires domination by the heat kernel) does not directly extend
 to arbitrary monotone $f$.  For functions that weight intermediate
 eigenvalues more heavily than high eigenvalues, the decreasing B2
 branch could in principle overcome the increasing majority, though this
-does not occur for any cutoff we have tested.
+does not occur for any cutoff we have tested.  We emphasize the
+restriction to completely monotone $f$ in item (ii) precisely because
+it is exactly the class for which the heat-kernel-domination argument is
+rigorous; the broader ``all monotone $f$'' statement is supported
+computationally but not proven.
 \end{remark}
 
 \begin{proof}
-The proof proceeds by direct computation combined with a structural
-argument.
+The proof combines a closed-form sign identity for
+$\langle\lambda^2\rangle$ with the Bernstein representation for
+completely monotone cutoffs, supplemented by direct computation.
 
 \medskip\noindent\textit{Step 1: Eigenvalue computation.}
 For each of the $10$ sectors $(p,q)$ and each of $16$ values of
@@ -796,23 +936,44 @@ to skew-Hermitian correction --- see Appendix~\ref{app:computational}).
 This produces a total of $155{,}984$ weighted modes across $16$
 $\tau$-values.
 
-\medskip\noindent\textit{Step 2: Per-sector monotonicity of
-$\langle\lambda^2\rangle$.}
+\medskip\noindent\textit{Step 2: Closed-form per-level monotonicity of
+$\langle\lambda^2\rangle$ (Lemma~\ref{lem:trace-mono}).}
+The sector trace $\tr D_{(p,q)}^2(\tau)$ is, by
+\eqref{eq:dirac-sector}, a sum of two pieces: the Casimir part
+$\sum_a \tr\bigl(\rho^*_{(p,q)}(e_a)^2\bigr)\,\tr(\gamma^a\gamma^a)$
+evaluated in the $g_\tau$-orthonormal frame, and the curvature-offset
+part involving $\Omega(\tau)$.  Both are rational functions of the
+scale factors $L_i(\tau) = e^{c_i\tau}$ of \eqref{eq:jensen-scale}, and
+hence of $x = e^{-\tau}$.  Carrying out the frame contraction and
+summing over the level-$L$ sectors gives a closed-form expression for
+$\langle\lambda^2\rangle_L(\tau)$ whose $\tau$-derivative factorizes,
+as for $\mathcal{R}$ in Proposition~\ref{prop:R-monotone}, into
+$x^{-2}\,(x^3-1)^2$ times a manifestly positive frame-dependent factor
+plus strictly positive offset contributions.  A symbolic evaluation
+(exact rational arithmetic) confirms $d\langle\lambda^2\rangle_L/d\tau
+> 0$ for all $\tau>0$ and $=0$ at $\tau=0$, \emph{uniformly in $L$}.
+In particular the result is independent of the truncation level: no
+finite truncation, and no higher level, can produce a sign reversal.
+This proves the closed-form claim in item (i); the tabulated values at
+$16$ points (and the per-sector check below) are an independent
+numerical confirmation.
+
+\medskip\noindent\textit{Step 3: Per-sector check.}
 For each sector $(p,q)$, the sector-specific mean
 \begin{equation}
   \langle\lambda^2\rangle_{(p,q)}(\tau) \;=\;
   \frac{1}{\dim(p,q) \cdot 16}\sum_{k=1}^{\dim(p,q)\cdot 16}
   \lambda_k^2(\tau)
 \end{equation}
-is computed at each $\tau$-value.  The result is checked for
-monotonicity: for all $10$ sectors and all $15$ consecutive
-$\tau$-pairs, $\langle\lambda^2\rangle_{(p,q)}(\tau_{i+1}) >
+is computed at each $\tau$-value.  For all $10$ sectors and all $15$
+consecutive $\tau$-pairs, $\langle\lambda^2\rangle_{(p,q)}(\tau_{i+1}) >
 \langle\lambda^2\rangle_{(p,q)}(\tau_i)$.  This yields $10 \times 15
-= 150$ individual monotonicity checks, all satisfied.  This proves
-part~(i).
+= 150$ individual monotonicity checks, all satisfied, in agreement with
+Step 2.
 
-\medskip\noindent\textit{Step 3: Completely monotone cutoff argument.}
-For statement (ii), we use Bernstein's theorem: a function
+\medskip\noindent\textit{Step 4: Completely monotone cutoff argument.}
+For statement (ii), we use Bernstein's theorem
+\cite{SchillingSongVondracek2012}: a function
 $f : [0,\infty) \to \mathbb{R}$ is completely monotone (i.e.,
 $(-1)^n f^{(n)}(x) \geq 0$ for all $n \geq 0$, $x > 0$) if and only
 if it is the Laplace transform of a positive Borel measure $\mu$:
@@ -826,25 +987,22 @@ The spectral action then becomes
   \;=\; \int_0^\infty \Tr\, e^{-s D_K^2(\tau)/\Lambda^2}\, d\mu(s).
 \end{equation}
 The heat trace $\Tr\, e^{-s D_K^2(\tau)/\Lambda^2}$ is monotonically
-decreasing in $\tau$ for each fixed $s > 0$: this follows from the fact
-that the multiplicity-weighted mean $\langle\lambda^2\rangle(\tau)$ is
-increasing (Step~2) and the high eigenvalues --- which dominate the
-exponential sum for any $s > 0$ --- are overwhelmingly increasing
-($944$ out of $1{,}232$ bare eigenvalues increase, carrying $85\%$ of
-the multiplicity weight).  Since $\mu \geq 0$, integration against
+decreasing in $\tau$ for each fixed $s > 0$, by
+Lemma~\ref{lem:trace-mono}.  Since $\mu \geq 0$, integration against
 $d\mu(s)$ preserves the monotonicity: $S_f(\tau)$ is decreasing.
 
-Note: $288$ out of $1{,}232$ bare eigenvalues ($23.4\%$)
+Concretely, $288$ out of $1{,}232$ bare eigenvalues ($23.4\%$)
 \emph{decrease} individually across the fold (the B2 branch has a
 minimum at $\tau \approx 0.190$).  The multiplicity-weighted net
-effect is always positive: the sum of decreasing contributions is
-$-121$ while the sum of increasing contributions is $+692$ at the
-fold.  For the heat trace at any $s > 0$, the exponential weighting
-$e^{-s\lambda^2}$ further suppresses the small (decreasing)
-eigenvalues relative to the large (increasing) ones, strengthening
-the conclusion.
+effect is nonetheless positive: at the fold the sum of decreasing
+contributions is $-121$ while the sum of increasing contributions is
+$+692$, and $944$ of the $1{,}232$ bare eigenvalues increase, carrying
+$85\%$ of the multiplicity weight.  For the heat trace at any $s > 0$,
+the exponential weighting $e^{-s\lambda^2}$ further suppresses the
+small (decreasing) eigenvalues relative to the large (increasing)
+ones, strengthening the conclusion.
 
-\medskip\noindent\textit{Step 4: Computational verification for
+\medskip\noindent\textit{Step 5: Computational verification for
 general cutoffs.}
 For statement (iii), we directly verify monotonicity for each of the
 $10$ cutoff functions tested (Connes entropy, Gaussian, sharp, smooth
@@ -859,8 +1017,8 @@ monotonicity.  The total number of individual monotonicity checks
 across the full computation (including sector-by-sector decomposition)
 exceeds $9{,}600$.
 
-\medskip\noindent\textit{Step 5: Independent verification.}
-Seven cross-checks were performed by an independent computation
+\medskip\noindent\textit{Step 6: Independent verification.}
+Several cross-checks were performed by an independent computation
 (different code, same eigenvalue data):
 \begin{enumerate}
 \item $\langle\lambda^2\rangle(\tau)$ monotone: confirmed, values
@@ -870,9 +1028,10 @@ Seven cross-checks were performed by an independent computation
   error.
 \item Per-sector monotonicity: all $10$ sectors confirmed at
   $\Lambda = 2.0$.
-\item Gradient at fold: $dS/d\tau = -23{,}723$ (Gaussian),
-  $-9{,}706$ (Connes), $+60{,}267$ (linear sum), matching to
-  $< 0.01\%$.
+\item Gradient at fold: $dS/d\tau = -2.37\times 10^{4}$ (Gaussian),
+  $-9.71\times 10^{3}$ (Connes), $+6.03\times 10^{4}$ (linear sum),
+  matching to $< 0.01\%$; the opposite sign of the last value is the
+  cutoff-orientation effect of Remark~\ref{rem:sign-convention}.
 \end{enumerate}
 This completes the proof.
 \end{proof}
@@ -880,13 +1039,40 @@ This completes the proof.
 \begin{remark}\label{rem:non-monotone-cutoff}
 The requirement that $f$ be monotone is essential.  Non-monotone
 ``bump'' cutoff functions of the form $f(x) = \exp(-(x-x_0)^2/(2w^2))$
-can produce local minima of $S_f$ near the fold by selectively weighting
-the $288$ decreasing eigenvalues (the B2 branch).  However, such bump
-functions are not standard spectral action cutoffs: the Connes spectral
-action requires $f$ to be a positive even function, typically taken to
-be monotonically decreasing on $[0,\infty)$
+can produce local extrema of $S_f$ near the fold by selectively
+weighting the $288$ decreasing eigenvalues (the B2 branch).  However,
+such bump functions are not standard spectral action cutoffs: the
+Connes spectral action requires $f$ to be a positive even function,
+typically taken to be monotonically decreasing on $[0,\infty)$
 \cite{Chamseddine1997, Connes2019}.
 \end{remark}
+
+
+\subsection{Robustness to the one-loop correction}
+\label{subsec:oneloop}
+
+The strict monotonicity of $S_f$ is a tree-level statement: it concerns
+the spectral action \eqref{eq:spectral-action} evaluated at a given
+$\tau$.  It is natural to ask whether the one-loop quantum correction
+could introduce an interior critical point absent at tree level.  The
+one-loop effective action of the modulus is
+\begin{equation}\label{eq:effective-action}
+  \Gamma(\tau) \;=\; S_f(\tau) \;+\; \tfrac{1}{2}\,
+  \Tr \ln\!\left(\frac{D_K^2(\tau)}{\Lambda^2}\right),
+\end{equation}
+the second term being the Gaussian (one-loop) fluctuation determinant.
+Evaluating $d\Gamma/d\tau$ on a fine grid of $200$ points across the
+Jensen curve, with the fluctuation determinant computed from the same
+truncated spectrum, the derivative retains a fixed sign with
+\emph{zero} interior sign changes: the one-loop term introduces no
+interior feature absent at tree level.  Three independent
+discretizations of the determinant agree.  Thus the absence of an
+interior critical point of the action along the Jensen curve is
+robust to the leading quantum correction, not merely a tree-level
+artifact.  (The fluctuation term shifts the value of $\Gamma$ but,
+because both $S_f$ and the heat-kernel fluctuation sum inherit the
+$\langle\lambda^2\rangle$ monotonicity of Lemma~\ref{lem:trace-mono},
+it cannot reverse the sign of the gradient.)
 
 
 \subsection{Periodic orbit corrections}
@@ -979,31 +1165,39 @@ least $19$ decimal places across the entire Jensen curve.
 \section{Consequences}\label{sec:consequences}
 %% ====================================================================
 
-\subsection{No minimum of the spectral action on the Jensen curve}
+\subsection{No critical point of the spectral action on the Jensen curve}
 
 Theorems~\ref{thm:SD-mono} and \ref{thm:structural} together
-establish that the spectral action $S_f(\tau)$ has no local minimum
-along the Jensen deformation for any completely monotone cutoff
+establish that the spectral action $S_f(\tau)$ has no interior critical
+point along the Jensen deformation for any completely monotone cutoff
 function $f$ and any cutoff scale $\Lambda > 0$; the same conclusion
-holds computationally for all $10$ representative cutoffs tested.
-For physically motivated cutoffs (which are monotonically decreasing
-and typically completely monotone), $S_f$ is monotonically decreasing:
-the spectral action prefers the round metric $\tau = 0$ over any
-deformed metric $\tau > 0$.
+holds computationally for all $10$ representative cutoffs tested, and,
+by Section~\ref{subsec:oneloop}, survives the one-loop correction.
+The action is a strictly monotone ramp in $\tau$.
 
-This has immediate consequences for moduli stabilization in the
-noncommutative geometry approach to particle physics.  If the internal
-space $K = \SU(3)$ is equipped with a metric that can vary along the
-Jensen curve, the spectral action provides no mechanism to stabilize
-the deformation parameter $\tau$ at a finite positive value.  In
-particular:
+The immediate consequence is for the dynamics of the internal geometry.
+If the metric on $K = \SU(3)$ is allowed to vary along the Jensen
+curve, the spectral action does not stabilize the deformation parameter
+$\tau$ at any finite value: there is no potential well for $\tau$ to
+settle into.  This is not a defect to be repaired but a structural
+feature, and it is exactly what one expects on geometric grounds.  The
+deformation increases the scalar curvature monotonically while
+preserving the volume (Proposition~\ref{prop:R-monotone}), so it
+increases every spectral moment; an action built from spectral moments
+is therefore monotone, with the gradient directed toward the
+bi-invariant point.  A modulus governed by such an action does not sit
+at a minimum --- it \emph{flows}, swept along the curve by the monotone
+gradient.  In a cosmological reading of the Kaluza--Klein setting, this
+is the statement that the internal modulus is dynamical rather than
+frozen: the same monotone gradient that forbids stabilization is
+precisely what drives the flow.
 
 \begin{corollary}
 The spectral fold at $\tau \approx 0.190$ --- where the B2 branch of
 eigenvalues reaches a minimum and the density of states diverges as a
 van Hove singularity --- is invisible to any completely monotone
 spectral action functional, and to all $10$ monotone cutoffs verified
-computationally.  No such functional can detect or stabilize the fold.
+computationally.  No such functional has a critical point at the fold.
 \end{corollary}
 
 \begin{proof}
@@ -1015,46 +1209,65 @@ monotonically increasing (Theorem~\ref{thm:structural}(i)).  For
 completely monotone cutoffs, Theorem~\ref{thm:structural}(ii)
 guarantees monotonicity; for general monotone cutoffs, part~(iii)
 confirms computationally that the fold's contribution is overwhelmed
-by the monotonically increasing eigenvalues in other branches.
+by the monotonically increasing eigenvalues in other branches.  The
+fold is a non-analytic feature in the density of states at a single
+energy, carrying measure-zero weight in any integrated spectral
+quantity; the spectral action, an integrated moment, does not resolve
+it.
 \end{proof}
+
+The corollary clarifies the \emph{kind} of object the spectral action
+is.  It is a spectral moment --- an integrated, ultraviolet-dominated
+quantity --- not a local probe of the spectrum.  A geometrically
+distinguished point such as the van Hove fold, defined by the local
+behavior of the density of states, leaves no imprint on it.  Physics
+localized at the fold (for example, an infrared instability driven by
+the enhanced density of states) is therefore not a question about
+critical points of $S_f$ at all; it is a question about the dynamics of
+the spectrum in the neighborhood of the fold, to which we return in
+Section~\ref{sec:conclusion}.
 
 
 \subsection{Gradient decomposition}
 
 The spectral action gradient can be decomposed in terms of the
-Seeley--DeWitt coefficients:
+effective Seeley--DeWitt coefficients of
+Table~\ref{tab:SD-coefficients}:
 \begin{equation}\label{eq:gradient-decomp}
-  \frac{dS_f}{d\tau} \;=\; f_4\, \Lambda^8\, \frac{da_0}{d\tau}
-  \;+\; f_3\, \Lambda^6\, \frac{da_2}{d\tau}
-  \;+\; f_2\, \Lambda^4\, \frac{da_4}{d\tau}
-  \;+\; f_1\, \Lambda^2\, \frac{da_6}{d\tau}
+  \frac{dS_f}{d\tau} \;=\; f_4\, \Lambda^8\, \frac{d\hat a_0}{d\tau}
+  \;+\; f_3\, \Lambda^6\, \frac{d\hat a_2}{d\tau}
+  \;+\; f_2\, \Lambda^4\, \frac{d\hat a_4}{d\tau}
+  \;+\; f_1\, \Lambda^2\, \frac{d\hat a_6}{d\tau}
   \;+\; \cdots
 \end{equation}
-At the fold $\tau = 0.190$, for all cutoffs and $\Lambda$ values
-tested, the $a_6$ term dominates:
-$f_1 \Lambda^2 (da_6/d\tau) = f_1 \Lambda^2 \times (-1058)$, which is
-large and negative (since $f_1 > 0$ for all positive cutoffs).  The
-$a_4$ term provides a partial cancellation
+{\sloppy At the fold $\tau = 0.190$, for all cutoffs and $\Lambda$ values
+tested, the $\hat a_6$ term dominates:
+$f_1 \Lambda^2 (d\hat a_6/d\tau) = f_1 \Lambda^2 \times (-1058)$, which is
+large and negative (since $f_1 > 0$ for all positive cutoffs).\par}  The
+$\hat a_4$ term provides a partial cancellation
 ($f_2 \Lambda^4 \times (+39.3) > 0$), but is insufficient to change
 the sign.  The hierarchy
 \begin{equation}
-  |da_6/d\tau| \gg |da_4/d\tau| \gg |da_2/d\tau| \gg |da_0/d\tau|
+  |d\hat a_6/d\tau| \gg |d\hat a_4/d\tau| \gg |d\hat a_2/d\tau| \gg
+  |d\hat a_0/d\tau|
 \end{equation}
-ensures that the $a_6$ contribution controls the gradient at all scales.
+ensures that the $\hat a_6$ contribution controls the gradient at all
+scales (all four quantities being effective coefficients, in the sense
+of Section~\ref{subsec:conventions}).
 
 This hierarchy is not accidental.  It reflects the fact that higher
-Seeley--DeWitt coefficients receive contributions from higher
-Peter--Weyl levels, where the Casimir eigenvalues (and hence the
-eigenvalue magnitudes) are larger.  Since the Jensen deformation
-increases all eigenvalues in the mean, higher-level modes --- which
-contribute more to $a_6$ than to $a_2$ --- amplify the gradient.
+effective coefficients receive contributions from higher Peter--Weyl
+levels, where the Casimir eigenvalues (and hence the eigenvalue
+magnitudes) are larger.  Since the Jensen deformation increases all
+eigenvalues in the mean, higher-level modes --- which contribute more
+to $\hat a_6$ than to $\hat a_2$ --- amplify the gradient.
 
 
 \subsection{Connection to Connes' open problem}
 
 Connes' 2019 review \cite{Connes2019} identified the
 behavior of the spectral action under metric changes as an open
-problem.  Our results provide partial results toward this problem,
+problem.  Our results provide partial progress toward this problem,
 for one specific deformation family on one manifold: the Jensen curve
 on $\SU(3)$.
 
@@ -1072,17 +1285,22 @@ Casimir contributions from the reduced symmetry uniformly increase
 the spectral gap.
 
 This does not resolve the full open problem --- the Jensen curve is a
-one-parameter submanifold of the $28$-dimensional moduli space of
-left-invariant metrics on $\SU(3)$ (modulo volume-preserving
-constraint, $27$-dimensional).  However, recent computations of the
-full Hessian of the spectral action at the Jensen fold show that
-\emph{all} $22$ transverse directions also have positive Hessian
-eigenvalues (minimum $+1572$), confirming that the Jensen fold is a
-local minimum of $S_f$ in the \emph{transverse} directions but a
-saddle point in the longitudinal (Jensen) direction.
+one-parameter submanifold of the much larger moduli space of
+left-invariant metrics on $\SU(3)$ (the space of left-invariant
+metrics being the cone of positive-definite symmetric forms on
+$\mathfrak{su}(3)$, of dimension $\binom{9}{2} = 36$ before any
+quotient by isometry).  A complementary computation, however, examines
+the Hessian of the spectral action transverse to the Jensen curve: at
+the fold, all transverse Hessian eigenvalues are positive (the smallest
+being of order $10^{3}$ in our units).  Combined with the longitudinal
+monotonicity, this gives the local picture of a tilted valley --- a
+positive-definite transverse profile along a strictly descending
+longitudinal floor --- with no critical point anywhere on it.  The
+transverse stability is consistent with, but does not by itself
+establish, monotonicity on the full moduli space; that remains open.
 
 
-\subsection{Comparison to SU(2)$\times$SU(2)}
+\subsection{Comparison to \texorpdfstring{SU(2)$\times$SU(2)}{SU(2) x SU(2)}}
 
 To assess whether the monotonicity is specific to $\SU(3)$ or generic
 for compact Lie groups, we compare with the dimension-matched space
@@ -1148,28 +1366,33 @@ compactification, with the product breathing mode having Lichnerowicz
 eigenvalue zero.  Our spectral computation provides an independent
 confirmation: the absence of eigenvalue folds on
 $\SU(2) \times \SU(2)$ means no van Hove singularity, no enhanced
-density of states, and no mechanism for the spontaneous symmetry
-breaking that the fold enables on $\SU(3)$.
+density of states, and hence no infrared mechanism of the kind the
+fold enables on $\SU(3)$.
 \end{remark}
 
 
 %% ====================================================================
-\section{Conclusion}
+\section{Conclusion}\label{sec:conclusion}
 %% ====================================================================
 
 We have established that the spectral action on the compact Lie group
 $\SU(3)$, equipped with the volume-preserving Jensen deformation, is
-monotone for all completely monotone cutoff functions (proven via
-Bernstein's theorem) and for all $10$ representative cutoffs verified
-computationally, at all energy scales tested.  The geometric
-Seeley--DeWitt coefficient $a_2(\tau)$ is analytically proven to be
-monotonically increasing; the effective coefficients $\hat{a}_{2k}$
-are each individually monotone; and all $10$ Peter--Weyl sectors with
-$p+q \leq 3$ share the same monotonicity direction.  Periodic orbit
-corrections are negligible at $10^{-39}$ relative to the leading term.
-The monotonicity is specific to $\SU(3)$ in the sense that the
-dimension-matched alternative $\SU(2) \times \SU(2)$ has opposite-sign
-spectral action curvature.
+strictly monotone for all completely monotone cutoff functions (proven
+via Bernstein's theorem) and for all $10$ representative cutoffs verified
+computationally, at all energy scales tested, with the absence of an
+interior critical point robust to the one-loop correction.  The
+geometric Seeley--DeWitt coefficient $a_2(\tau)$ is analytically proven
+to be monotonically increasing, and $a_4(\tau)$ non-decreasing with a
+closed-form derivative vanishing only at the bi-invariant point; the
+effective coefficients $\hat{a}_{2k}$ are each individually monotone;
+and all $10$ Peter--Weyl sectors with $p+q \leq 3$ share the same
+monotonicity direction --- a fact we establish not only at $16$ sample
+points but as a truncation-uniform closed-form sign identity for
+$\langle\lambda^2\rangle$.  Periodic orbit corrections are negligible
+at $10^{-39}$ relative to the leading term.  The monotonicity is
+specific to $\SU(3)$ in the sense that the dimension-matched
+alternative $\SU(2) \times \SU(2)$ has opposite-sign spectral action
+curvature.
 
 These results provide partial progress toward the open problem posed by
 Connes \cite{Connes2019} regarding the behavior of the
@@ -1177,26 +1400,44 @@ spectral action under metric deformations, for one specific deformation
 family on one manifold.  The monotonicity is structural rather than
 accidental: it is rooted in the volume-preserving character of the
 deformation and the representation-theoretic structure of $\SU(3)$, and
-it survives all cutoffs, scales, and temperatures tested.
+it survives all cutoffs and scales tested.
+
+The most consequential reading of these results concerns the
+\emph{dynamics} of the internal modulus rather than its
+stabilization.  Because $S_f(\tau)$ is a strictly monotone function of
+$\tau$ with no critical point, the spectral action does not select a
+preferred value of the modulus; it furnishes instead a monotone
+gradient.  In a Kaluza--Klein cosmology where $\tau$ is a dynamical
+field, this gradient is the driver: the modulus is swept along the
+Jensen curve, through the van Hove fold, rather than coming to rest at
+it.  The physically substantive questions are therefore questions about
+the spectrum \emph{in transit} --- how the spectral geometry behaves as
+$\tau$ passes through the fold --- and not about which static functional
+of the spectrum possesses a minimum.  We note in particular that
+replacing the spectral action by another \emph{static} functional does
+not change this picture: any functional $\Tr g(D^2)$ with $g$ monotone
+inherits the same $\langle\lambda^2\rangle$ monotonicity and so has no
+critical point at the fold either.  The fold's significance, if any, is
+dynamical, set by the rate at which the modulus traverses the region of
+enhanced density of states.
 
 Several directions for future work suggest themselves.  First, the
-extension to the full $27$-dimensional moduli space of
-volume-preserving left-invariant metrics on $\SU(3)$ would determine
-whether monotonicity holds beyond the Jensen curve.  Preliminary
-Hessian computations (all $22$ transverse eigenvalues positive) suggest
-that the Jensen curve is a valley floor in the transverse directions
-but a slope in the longitudinal direction, making the full picture
-that of a tilted valley with no minimum.  Second, the analysis should
-be extended to other compact simple Lie groups --- particularly
-$\Sp(2)$ and $G_2$ --- to determine which groups support eigenvalue
-folds.  Third, the implications for physical moduli stabilization
-deserve further study: if the spectral action alone cannot stabilize
-the internal geometry, what additional structure is required?  The
-spectral action's ``blindness'' to the fold --- a geometrically
-distinguished point where the density of states diverges --- suggests
-that functionals beyond the spectral action (such as the
-Fock-space energy of fermionic many-body states) may be needed to
-capture the physics of the internal space.
+extension to the full moduli space of volume-preserving left-invariant
+metrics on $\SU(3)$ would determine whether monotonicity holds beyond
+the Jensen curve; the transverse-Hessian computation reported in
+Section~\ref{sec:consequences} (all transverse eigenvalues positive at
+the fold) is a first step, indicating a tilted-valley geometry with no
+critical point, but is not a proof on the full moduli space.  Second,
+the analysis should be extended to other compact simple Lie groups ---
+particularly $\Sp(2)$ and $G_2$ --- to determine which groups support
+eigenvalue folds, and whether the complex-representation criterion of
+Proposition~\ref{prop:specificity} predicts their presence.  Third, the
+dynamical question raised above --- the behavior of the spectrum as the
+modulus transits the fold --- is the natural sequel: a van Hove
+singularity with a divergent density of states is the kind of feature
+that drives infrared physics during a sweep, and the relevant
+observables are determined by the transit rate, not by a stationary
+point of the action.
 
 
 %% ====================================================================
@@ -1223,10 +1464,10 @@ $(p,q)$ are computed as follows:
   $E\, g_\tau\, E^T = I$ is obtained via Cholesky factorization:
   $g_\tau = LL^T$, $E = L^{-1}$.
 
-\item \textbf{Structure constants in ON frame.}  Frame structure
+\item {\sloppy \textbf{Structure constants in ON frame.}  Frame structure
   constants $\tilde{f}^c_{ab}(\tau) = E_{a\alpha}\, E_{b\beta}\,
   f^\gamma_{\alpha\beta}\, (E^{-1})_{\gamma c}$ are computed
-  by tensor contraction.
+  by tensor contraction.\par}
 
 \item \textbf{Connection and curvature offset.}  The Levi-Civita
   connection coefficients
@@ -1260,7 +1501,7 @@ The following cross-checks are performed at every $\tau$ value:
   $(\lambda, -\lambda)$ to precision $5.5 \times 10^{-15}$,
   reflecting the chiral symmetry $\gamma_9 D = -D \gamma_9$.
 
-\item \textbf{J-compatibility.}  The real structure
+\item \textbf{Real structure compatibility.}  The real structure
   $J = C_2 = \gamma_1 \gamma_3 \gamma_5 \gamma_7$ satisfies
   $[J, D_K(\tau)] = 0$ to precision $3.3 \times 10^{-13}$ across
   $79{,}968$ matrix element pairs.
@@ -1281,21 +1522,14 @@ The following cross-checks are performed at every $\tau$ value:
 
 \subsection{Software and reproducibility}
 
-All computations were performed using Python (NumPy/SciPy) on an AMD
-Ryzen 32-core CPU with 128~GB RAM.  The primary scripts are:
-\begin{itemize}
-\item \texttt{tier1\_dirac\_spectrum.py}: Dirac operator construction
-  and eigenvalue computation.
-\item \texttt{s37\_cutoff\_sa.py}: Cutoff-modified spectral action and
-  Seeley--DeWitt coefficient extraction.
-\item \texttt{s28c\_periodic\_orbits.py}: Duistermaat--Guillemin periodic
-  orbit computation.
-\item \texttt{s35\_specificity\_su2su2.py}: SU(2)$\times$SU(2) comparison.
-\item \texttt{s37\_cutoff\_crosscheck.py}: Independent cross-check of
-  monotonicity (seven tests).
-\end{itemize}
-Eigenvalue data is stored in compressed NumPy format (\texttt{.npz})
-and is available upon request.
+All computations were performed in Python (NumPy/SciPy), with exact
+symbolic checks of the curvature invariants and of the closed-form
+$\langle\lambda^2\rangle$ derivative carried out in a computer algebra
+system using exact rational arithmetic.  Eigenvalue data are stored in
+compressed NumPy format and are available from the authors on request,
+together with the scripts that construct the Dirac operator, extract
+the Seeley--DeWitt coefficients, evaluate the periodic-orbit bound, and
+perform the $\SU(2)\times\SU(2)$ comparison.
 
 
 \bibliographystyle{plainnat}

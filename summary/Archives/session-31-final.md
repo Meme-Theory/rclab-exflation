@@ -66,7 +66,7 @@ Session 31Ca applied six decades of nuclear DFT methodology to the SU(3) Dirac s
 
 **Self-consistency loop**: This computation establishes that the BCS obstruction is not a coupling-distribution problem. The obstacle is absolute scale: ||V|| ~ 0.1-0.28, structurally insufficient regardless of how the coupling is distributed among modes.
 
-**Files**: `tier0-computation/s31Ca_density_dep_pairing.{py,npz,png}`
+**Files**: `computations/s31Ca_density_dep_pairing.{py,npz,png}`
 
 ---
 
@@ -84,7 +84,7 @@ Session 31Ca applied six decades of nuclear DFT methodology to the SU(3) Dirac s
 
 **Truncation error bar**: This result provides the definitive truncation error estimate for ALL BCS-based computations in the project: < 3% at N_max=6. The K-1e result (M_max = 0.077-0.149) is robust.
 
-**Files**: `tier0-computation/s31Cb_bcs_convergence.{py,npz,png}`
+**Files**: `computations/s31Cb_bcs_convergence.{py,npz,png}`
 
 ---
 
@@ -102,7 +102,7 @@ At mu=+lambda_min (diagnostic): M_max = 7.7-15.0 (always above threshold), confi
 
 **Self-consistency loop**: The Kapitza-BCS link is structurally blocked at mu=0. The loop cannot close through BCS unless an external mechanism provides mu > 0.
 
-**Files**: `tier0-computation/s31Cc_bcs_kapitza.{py,npz,png}`
+**Files**: `computations/s31Cc_bcs_kapitza.{py,npz,png}`
 
 ---
 
@@ -116,7 +116,7 @@ At mu=+lambda_min (diagnostic): M_max = 7.7-15.0 (always above threshold), confi
 
 **Physical interpretation**: The Skyrme fitting paradox (Paper 06): when theoretical model error dominates, individual measurements provide weak Bayesian evidence. The NCG-KK tension is real (the ratio is 10^6), but the information content is diluted by the generous prior and tolerance. A more informative prior centered on the GUT scale would yield BF << 0.01.
 
-**Files**: `tier0-computation/s31Cd_bayesian_ncgkk.{py,npz,png}`
+**Files**: `computations/s31Cd_bayesian_ncgkk.{py,npz,png}`
 
 ---
 
@@ -132,7 +132,7 @@ At mu=+lambda_min (diagnostic): M_max = 7.7-15.0 (always above threshold), confi
 
 **Self-consistency loop**: The GCM ground state at tau=0.60 is incompatible with the three-fold convergence at tau~0.18. The self-consistency loop requires a mechanism to PREVENT the modulus from rolling to large tau. GCM does not provide this mechanism; it confirms the modulus prefers large tau.
 
-**Files**: `tier0-computation/s31Ce_gcm_moduli.{py,npz,png}`
+**Files**: `computations/s31Ce_gcm_moduli.{py,npz,png}`
 
 ---
 
@@ -146,7 +146,7 @@ At mu=+lambda_min (diagnostic): M_max = 7.7-15.0 (always above threshold), confi
 
 **Physical interpretation**: The nuclear odd-even mass staggering (Paper 03) shows sharp features at magic numbers where the pairing gap drops to zero. The SU(3) spectrum shows no such features -- the eigenvalue spacing is smooth and regular. In nuclear terms, this is a deformed nucleus in the middle of a shell with uniformly spaced Nilsson levels: no sub-shell closures, no enhanced pairing at specific mode numbers.
 
-**Files**: `tier0-computation/s31Cf_odd_even_stagger.{py,npz,png}`
+**Files**: `computations/s31Cf_odd_even_stagger.{py,npz,png}`
 
 ---
 
@@ -160,7 +160,7 @@ At mu=+lambda_min (diagnostic): M_max = 7.7-15.0 (always above threshold), confi
 
 **Physical interpretation**: In cranked HFB (Paper 08), self-consistency requires omega and J to satisfy omega = dE/dJ simultaneously. On SU(3), the V_Jensen potential is concave at tau=0.18, meaning the "restoring force" has the wrong sign. The Kapitza ponderomotive mechanism requires a convex potential to create a well; it cannot function on a concave landscape. This is structural: the curvature sign is set by the Seeley-DeWitt coefficients, which are monotone (Wall 4).
 
-**Files**: `tier0-computation/s31Cg_selfconsistent_cranking.{py,npz,png}`
+**Files**: `computations/s31Cg_selfconsistent_cranking.{py,npz,png}`
 
 ---
 
@@ -176,7 +176,7 @@ At mu=+lambda_min (diagnostic): M_max = 7.7-15.0 (always above threshold), confi
 
 **Self-consistency loop**: The instanton -> mu_eff -> BCS link is blocked. The instanton gas provides energy (S_inst < 0), but this energy cannot create a Kapitza well at tau~0.18 because the landscape is concave there.
 
-**Files**: `tier0-computation/s31Ch_instanton_eff_freq.{py,npz,png}`
+**Files**: `computations/s31Ch_instanton_eff_freq.{py,npz,png}`
 
 ---
 
@@ -190,7 +190,7 @@ At mu=+lambda_min (diagnostic): M_max = 7.7-15.0 (always above threshold), confi
 
 **Physical interpretation**: Paper 06 methodology applied rigorously. The "three-fold convergence at tau~0.18" (cited since Session 31Ba as the most structurally suggestive feature) is not confirmed statistically. The three observables are spread over a factor-2 range in tau. Human pattern recognition in low-dimensional projections (three curves on one plot) systematically overestimates correlations. The BF provides the honest answer.
 
-**Files**: `tier0-computation/s31Ci_bayesian_convergence.{py,npz,png}`
+**Files**: `computations/s31Ci_bayesian_convergence.{py,npz,png}`
 
 ---
 
@@ -206,7 +206,7 @@ UV (small t): d_s -> 0.046 (truncation artifact -- bounded spectrum |lambda| < 4
 
 **Physical interpretation**: The QFoam synthesis (Section III.2) anticipated that d_s ~ 2 is "not automatic" from the popcorn picture. This computation confirms: tau-averaging over random internal geometries does not produce spectral dimension reduction. The framework's internal geometry is spectrally standard (Weyl scaling) at all probed scales. The CDT connection remains a theoretical aspiration, not a computational result.
 
-**Files**: `tier0-computation/s31Ca_foam_spectral_dim.{py,npz,png}`
+**Files**: `computations/s31Ca_foam_spectral_dim.{py,npz,png}`
 
 ---
 
@@ -222,7 +222,7 @@ l_coh_crit = 5.33e13 l_P = 0.86 fm (sub-nuclear scale). With RMS mismatch: l_coh
 
 **Physical interpretation**: The QFoam synthesis (Section III.3) noted that incoherent popcorn (random tau at each Planck cell) predicts random-walk scaling excluded by Perlman at >3 sigma, but the coherence transition saves the model. This computation quantifies the threshold: l_coh > 0.86 fm suffices. This is a weak requirement compared to the cosmologically-large domains feared in the QFoam assessment. The per-boundary phase mismatch is tiny because the SU(3) eigenvalues change smoothly with tau (Lipschitz continuity of D_K eigenvalues). The popcorn's Perlman survival does not constrain the framework significantly.
 
-**Files**: `tier0-computation/s31Ca_foam_domain_phase.{py,npz,png}`
+**Files**: `computations/s31Ca_foam_domain_phase.{py,npz,png}`
 
 ---
 
@@ -242,7 +242,7 @@ Jensen deformation induces monotonic decrease in alpha. Not holographic (alpha >
 
 **Physical interpretation**: Weyl's law on 6D SU(3) predicts alpha = 3 for scalar modes. The measured alpha = 4-5 at small tau reflects spinor multiplicities (rank(S) = 16) inflating the count. The monotonic decrease of alpha with tau is a novel structural finding: Jensen deformation effectively reduces the dimensionality of the eigenvalue count, even without any quantum gravity mechanism. At tau=0.50, alpha = 2.47, approaching the CDT value alpha_CDT = 2 (for d_s = 4 in 4D). This is suggestive but may be coincidental.
 
-**Files**: `tier0-computation/s31Ca_foam_holo_dof.{py,npz,png}`
+**Files**: `computations/s31Ca_foam_holo_dof.{py,npz,png}`
 
 ---
 
@@ -250,9 +250,9 @@ Jensen deformation induces monotonic decrease in alpha. Not holographic (alpha >
 
 ### III.1 Density-Pairing Chain: N-31Ca -> N-31Cb -> N-31Cc
 
-N-31Ca-G FAIL determined that Tier 2 (N-31Cb, N-31Cc) used constant coupling. Did the coupling choice matter?
+N-31Ca-G FAIL determined that Level 2 (N-31Cb, N-31Cc) used constant coupling. Did the coupling choice matter?
 
-**No.** N-31Ca showed that density-dependent reweighting provides exactly zero enhancement (ratio = 1.000). The V_matrix is already gap-edge concentrated. Using constant coupling for Tier 2 was not a restriction -- it was the optimal choice (any reweighting reduces pairing). The entire density-pairing chain returned the same answer at each link: M_max ~ 0.08-0.15 at mu=0, structurally subcritical, converged at N_max=6.
+**No.** N-31Ca showed that density-dependent reweighting provides exactly zero enhancement (ratio = 1.000). The V_matrix is already gap-edge concentrated. Using constant coupling for Level 2 was not a restriction -- it was the optimal choice (any reweighting reduces pairing). The entire density-pairing chain returned the same answer at each link: M_max ~ 0.08-0.15 at mu=0, structurally subcritical, converged at N_max=6.
 
 The chain quantifies the K-1e obstruction with increasing precision:
 - **K-1e (Session 23a)**: M_max = 0.077-0.149, constant coupling, N_max=6
@@ -474,56 +474,56 @@ The self-consistency loop cannot close with the ingredients tested in Session 31
 ### Scripts (12)
 | File | Computation | Agent |
 |:-----|:-----------|:------|
-| `tier0-computation/s31Ca_density_dep_pairing.py` | N-31Ca | naz |
-| `tier0-computation/s31Cb_bcs_convergence.py` | N-31Cb | naz |
-| `tier0-computation/s31Cc_bcs_kapitza.py` | N-31Cc | sim |
-| `tier0-computation/s31Cd_bayesian_ncgkk.py` | N-31Cd | bap |
-| `tier0-computation/s31Ce_gcm_moduli.py` | N-31Ce | bap |
-| `tier0-computation/s31Cf_odd_even_stagger.py` | N-31Cf | naz |
-| `tier0-computation/s31Cg_selfconsistent_cranking.py` | N-31Cg | bap |
-| `tier0-computation/s31Ch_instanton_eff_freq.py` | N-31Ch | bap |
-| `tier0-computation/s31Ci_bayesian_convergence.py` | N-31Ci | naz |
-| `tier0-computation/s31Ca_foam_spectral_dim.py` | F-1 | sim |
-| `tier0-computation/s31Ca_foam_domain_phase.py` | F-2 | sim |
-| `tier0-computation/s31Ca_foam_holo_dof.py` | F-3 | sim |
+| `computations/s31Ca_density_dep_pairing.py` | N-31Ca | naz |
+| `computations/s31Cb_bcs_convergence.py` | N-31Cb | naz |
+| `computations/s31Cc_bcs_kapitza.py` | N-31Cc | sim |
+| `computations/s31Cd_bayesian_ncgkk.py` | N-31Cd | bap |
+| `computations/s31Ce_gcm_moduli.py` | N-31Ce | bap |
+| `computations/s31Cf_odd_even_stagger.py` | N-31Cf | naz |
+| `computations/s31Cg_selfconsistent_cranking.py` | N-31Cg | bap |
+| `computations/s31Ch_instanton_eff_freq.py` | N-31Ch | bap |
+| `computations/s31Ci_bayesian_convergence.py` | N-31Ci | naz |
+| `computations/s31Ca_foam_spectral_dim.py` | F-1 | sim |
+| `computations/s31Ca_foam_domain_phase.py` | F-2 | sim |
+| `computations/s31Ca_foam_holo_dof.py` | F-3 | sim |
 
 ### Data Archives (12)
 | File | Computation |
 |:-----|:-----------|
-| `tier0-computation/s31Ca_density_dep_pairing.npz` | N-31Ca |
-| `tier0-computation/s31Cb_bcs_convergence.npz` | N-31Cb |
-| `tier0-computation/s31Cc_bcs_kapitza.npz` | N-31Cc |
-| `tier0-computation/s31Cd_bayesian_ncgkk.npz` | N-31Cd |
-| `tier0-computation/s31Ce_gcm_moduli.npz` | N-31Ce |
-| `tier0-computation/s31Cf_odd_even_stagger.npz` | N-31Cf |
-| `tier0-computation/s31Cg_selfconsistent_cranking.npz` | N-31Cg |
-| `tier0-computation/s31Ch_instanton_eff_freq.npz` | N-31Ch |
-| `tier0-computation/s31Ci_bayesian_convergence.npz` | N-31Ci |
-| `tier0-computation/s31Ca_foam_spectral_dim.npz` | F-1 |
-| `tier0-computation/s31Ca_foam_domain_phase.npz` | F-2 |
-| `tier0-computation/s31Ca_foam_holo_dof.npz` | F-3 |
-| `tier0-computation/s31Ca_instanton_kapitza.npz` | IK (addendum) |
+| `computations/s31Ca_density_dep_pairing.npz` | N-31Ca |
+| `computations/s31Cb_bcs_convergence.npz` | N-31Cb |
+| `computations/s31Cc_bcs_kapitza.npz` | N-31Cc |
+| `computations/s31Cd_bayesian_ncgkk.npz` | N-31Cd |
+| `computations/s31Ce_gcm_moduli.npz` | N-31Ce |
+| `computations/s31Cf_odd_even_stagger.npz` | N-31Cf |
+| `computations/s31Cg_selfconsistent_cranking.npz` | N-31Cg |
+| `computations/s31Ch_instanton_eff_freq.npz` | N-31Ch |
+| `computations/s31Ci_bayesian_convergence.npz` | N-31Ci |
+| `computations/s31Ca_foam_spectral_dim.npz` | F-1 |
+| `computations/s31Ca_foam_domain_phase.npz` | F-2 |
+| `computations/s31Ca_foam_holo_dof.npz` | F-3 |
+| `computations/s31Ca_instanton_kapitza.npz` | IK (addendum) |
 
 ### Plots (13)
 | File | Computation |
 |:-----|:-----------|
-| `tier0-computation/s31Ca_density_dep_pairing.png` | N-31Ca |
-| `tier0-computation/s31Cb_bcs_convergence.png` | N-31Cb |
-| `tier0-computation/s31Cc_bcs_kapitza.png` | N-31Cc |
-| `tier0-computation/s31Cd_bayesian_ncgkk.png` | N-31Cd |
-| `tier0-computation/s31Ce_gcm_moduli.png` | N-31Ce |
-| `tier0-computation/s31Cf_odd_even_stagger.png` | N-31Cf |
-| `tier0-computation/s31Cg_selfconsistent_cranking.png` | N-31Cg |
-| `tier0-computation/s31Ch_instanton_eff_freq.png` | N-31Ch |
-| `tier0-computation/s31Ci_bayesian_convergence.png` | N-31Ci |
-| `tier0-computation/s31Ca_foam_spectral_dim.png` | F-1 |
-| `tier0-computation/s31Ca_foam_domain_phase.png` | F-2 |
-| `tier0-computation/s31Ca_foam_holo_dof.png` | F-3 |
+| `computations/s31Ca_density_dep_pairing.png` | N-31Ca |
+| `computations/s31Cb_bcs_convergence.png` | N-31Cb |
+| `computations/s31Cc_bcs_kapitza.png` | N-31Cc |
+| `computations/s31Cd_bayesian_ncgkk.png` | N-31Cd |
+| `computations/s31Ce_gcm_moduli.png` | N-31Ce |
+| `computations/s31Cf_odd_even_stagger.png` | N-31Cf |
+| `computations/s31Cg_selfconsistent_cranking.png` | N-31Cg |
+| `computations/s31Ch_instanton_eff_freq.png` | N-31Ch |
+| `computations/s31Ci_bayesian_convergence.png` | N-31Ci |
+| `computations/s31Ca_foam_spectral_dim.png` | F-1 |
+| `computations/s31Ca_foam_domain_phase.png` | F-2 |
+| `computations/s31Ca_foam_holo_dof.png` | F-3 |
 
 ### Session Documents (2)
 | File | Description |
 |:-----|:-----------|
-| `tier0-computation/s31Ca_gate_verdicts.txt` | All 12 gate verdicts with justification |
+| `computations/s31Ca_gate_verdicts.txt` | All 12 gate verdicts with justification |
 | `sessions/archive/session-31/session-31Ca-synthesis.md` | This document |
 
 ---
@@ -615,7 +615,7 @@ Two obstructions remain:
 
 ### VIII.5 Files
 
-`tier0-computation/s31Ca_instanton_kapitza.{py,npz,png}`
+`computations/s31Ca_instanton_kapitza.{py,npz,png}`
 
 ---
 

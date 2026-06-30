@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 50,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_491",
+      "anchor_type": "data_provenance",
+      "name": "curv_gap_corr",
+      "script_path": "session-48/s48_curv_gap_corr.py",
+      "session": "s48",
+      "inputs": "",
+      "outputs": "session-48/s48_curv_gap_corr.npz, session-48/s48_curv_gap_corr.png",
+      "source_file": "computations/session-48/s48_curv_gap_corr.py",
+      "source_context_30_lines": "   32:     6. Compute Pearson correlations and track across tau.\n   33: \n   34: Gate CURV-GAP-CORR-48:\n   35:     PASS: |r(tau)| > 0.9 at >= 20/26 tau values (8-direction measure)\n   36:     FAIL: |r(tau)| < 0.5 at >= 10/26 tau values\n   37:     INFO: intermediate\n   38: \n   39: Output:\n   40:     - s48_curv_gap_corr.npz\n   41:     - s48_curv_gap_corr.png (three-panel figure)\n   42: \n   43: Author: Gen-Physicist (Session 48, Wave 1)\n   44: Date: 2026-03-17\n   45: \"\"\"\n   46: \n   47: import numpy as np\n   48: import matplotlib"
+    },
+    {
+      "anchor_id": "prov_492",
+      "anchor_type": "data_provenance",
+      "name": "dissolution_berry",
+      "script_path": "session-48/s48_dissolution_berry.py",
+      "session": "s48",
+      "inputs": "",
+      "outputs": "session-48/s48_dissolution_berry.npz, session-48/s48_dissolution_berry.png",
+      "source_file": "computations/session-48/s48_dissolution_berry.py",
+      "source_context_30_lines": "   34:             Count states with |gamma/pi - 1| < tolerance\n   35: \n   36: Gate: DISSOLUTION-48\n   37:     PASS if all 10 strict pi-states survive at eps = 0.5*eps_c\n   38:     INFO if >= 8 survive\n   39:     FAIL if < 8 survive\n   40: \n   41: Input:  s46_berry_phase.npz, s44_dissolution_scaling.npz, dirac_spectrum\n   42: Output: s48_dissolution_berry.{npz,png}\n   43: \n   44: Author: Berry-Geometric-Phase-Theorist (Session 48 W3-B)\n   45: Date: 2026-03-17\n   46: \"\"\"\n   47: \n   48: import sys\n   49: import os\n   50: import time"
+    },
+    {
+      "anchor_id": "prov_493",
+      "anchor_type": "data_provenance",
+      "name": "dmde_refine",
+      "script_path": "session-48/s48_dmde_refine.py",
+      "session": "s48",
+      "inputs": "computations/session-39/s39_richardson_gaudin.npz, computations/session-44/s44_dm_de_ratio.npz, computations/session-45/...",
+      "outputs": "session-48/s48_dmde_refine.npz, session-48/s48_dmde_refine.png",
+      "source_file": "computations/session-48/s48_dmde_refine.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s48_dmde_refine.py — DMDE-REFINE-48: Three DM/DE refinement sub-computations\n    4: =============================================================================\n    5: \n    6: Session 48, Wave 5-C (volovik-superfluid-universe-theorist)\n    7: \n    8: Sub-computations:\n    9:   1. GIBBS-DUHEM-GGE-48: Multi-T Gibbs-Duhem identity for GGE\n   10:   2. DESI-UPDATED-48: w_0/w_a with corrected alpha [0.70, 1.15]\n   11:   3. KELDYSH-PAIR-48: Keldysh sigma with pair-pair interaction correction"
+    },
+    {
+      "anchor_id": "prov_494",
+      "anchor_type": "data_provenance",
+      "name": "eigenvectors",
+      "script_path": "session-48/s48_eigenvectors.py",
+      "session": "s48",
+      "inputs": "",
+      "outputs": "session-48/s48_eigenvectors.npz, session-48/s48_eigenvectors.png",
+      "source_file": "computations/session-48/s48_eigenvectors.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: Session 48 W5-G: EIGENVECTOR-48 — Dirac Eigenvector Analysis at the Fold\n    4: \n    5: Computes eigenvectors of D_K at tau = tau_fold and analyzes:\n    6:   (a) B2 mode concentration on SU(3) internal directions\n    7:   (b) Pi-phase Chladni patterns (where do Z_2-nontrivial states localize?)\n    8:   (c) Soft vs hard spatial extent (mode localization in su(3) subalgebras)\n    9: \n   10: This uses collect_spectrum_with_eigenvectors from dirac_spectrum.py\n   11: directly (no modification needed — the interface already returns eigenvectors).\n   12: \n   13: Gate: EIGENVECTOR-48. INFO (characterization)."
+    },
+    {
+      "anchor_id": "prov_495",
+      "anchor_type": "data_provenance",
+      "name": "goldstone_mass",
+      "script_path": "session-48/s48_goldstone_mass.py",
+      "session": "s48",
+      "inputs": "",
+      "outputs": "session-48/s48_goldstone_mass.npz, session-48/s48_goldstone_mass.png",
+      "source_file": "computations/session-48/s48_goldstone_mass.py",
+      "source_context_30_lines": "  454: ax.set_ylabel(r'$S(\\phi) - S(0)$')\n  455: ax.set_title(f'Random $D$: $\\\\epsilon = {rand_ratio:.3f}$')\n  456: ax.axhline(0, color='gray', linestyle='--', alpha=0.5)\n  457: ax.set_ylim(-1e-13, 1e-13)\n  458: ax.text(0.5, 0.9, f'$\\\\Delta S = {dS_rand:.1e}$',\n  459:         transform=ax.transAxes, ha='center', fontsize=10)\n  460: \n  461: plt.tight_layout()\n  462: plt.savefig(os.path.join(SCRIPT_DIR, 's48_goldstone_mass.png'), dpi=150)\n  463: print(f\"\\n  Plot saved: computations/session-48/s48_goldstone_mass.png\")\n  464: \n  465: \n  466: # ======================================================================\n  467: #  GATE VERDICT\n  468: # ======================================================================\n  469: print(f\"\\n{'='*78}\")\n  470: print(\"GATE VERDICT: GOLDSTONE-MASS-48\")"
+    },
+    {
+      "anchor_id": "prov_496",
+      "anchor_type": "data_provenance",
+      "name": "hfb_selfconsist",
+      "script_path": "session-48/s48_hfb_selfconsist.py",
+      "session": "s48",
+      "inputs": "",
+      "outputs": "session-48/s48_hfb_selfconsist.npz",
+      "source_file": "computations/session-48/s48_hfb_selfconsist.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s48_hfb_selfconsist.py — Self-Consistent HFB Gap Equation in Peter-Weyl Basis\n    4: ===============================================================================\n    5: Session 48, W5-E sub-item 1 (PRIORITY 1)\n    6: \n    7: Solves the HFB gap equation self-consistently with SECTOR-DEPENDENT gaps\n    8: Delta_{(p,q)} for all 9 SU(3) representations with p+q <= 3.\n    9: \n   10: Prior work:\n   11:   - S35: Thouless M_max=1.674 (single-gap BCS on 8 modes)"
+    },
+    {
+      "anchor_id": "prov_497",
+      "anchor_type": "data_provenance",
+      "name": "leggett_mode",
+      "script_path": "session-48/s48_leggett_mode.py",
+      "session": "s48",
+      "inputs": "",
+      "outputs": "session-48/s48_leggett_mode.npz, session-48/s48_leggett_mode.png",
+      "source_file": "computations/session-48/s48_leggett_mode.py",
+      "source_context_30_lines": "  936: \n  937:     # =========================================================================\n  938:     # SAVE DATA\n  939:     # =========================================================================\n  940:     print(f\"\\n{'='*78}\")\n  941:     print(f\"  SAVING DATA\")\n  942:     print(f\"{'='*78}\")\n  943: \n  944:     npz_path = os.path.join(SCRIPT_DIR, 's48_leggett_mode.npz')\n  945: \n  946:     save_dict = {\n  947:         # Fold values\n  948:         'tau_fold': tau_fold,\n  949:         'omega_L1_fold': omega_L1,\n  950:         'omega_L2_fold': omega_L2,\n  951:         'Delta_fold': Delta_fold,\n  952:         'rho_fold': rho_fold,"
+    },
+    {
+      "anchor_id": "prov_498",
+      "anchor_type": "data_provenance",
+      "name": "nilsson",
+      "script_path": "session-48/s48_nilsson.py",
+      "session": "s48",
+      "inputs": "",
+      "outputs": "session-48/s48_nilsson.npz, session-48/s48_nilsson.png",
+      "source_file": "computations/session-48/s48_nilsson.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s48_nilsson.py — Nilsson-Type Diagram: Level Crossings vs Tau\n    4: =============================================================\n    5: Session 48, W5-E sub-item 2\n    6: \n    7: In nuclear physics, the Nilsson diagram tracks single-particle energies vs\n    8: deformation parameter (delta or epsilon). Level crossings and near-degeneracies\n    9: at specific deformations produce enhanced pairing (the \"deformed shell gap\"\n   10: phenomenon, central to superheavy element stability).\n   11: "
+    },
+    {
+      "anchor_id": "prov_499",
+      "anchor_type": "data_provenance",
+      "name": "npair_full",
+      "script_path": "session-48/s48_npair_full.py",
+      "session": "s48",
+      "inputs": "",
+      "outputs": "session-48/s48_npair_full.npz",
+      "source_file": "computations/session-48/s48_npair_full.py",
+      "source_context_30_lines": "  719:     'xi_8': xi_8,\n  720:     'branch_labels': np.array(branch_labels),\n  721:     'tau_used': tau_used,\n  722: }\n  723: \n  724: for ti_scan in range(len(tau_values)):\n  725:     save_dict[f'n_pair_dist_tau{ti_scan}'] = n_pair_dists_all[ti_scan]\n  726: \n  727: out_npz = os.path.join(SCRIPT_DIR, 's48_npair_full.npz')\n  728: np.savez_compressed(out_npz, **save_dict)\n  729: print(f\"\\nSaved: {out_npz}\")\n  730: print(f\"File size: {os.path.getsize(out_npz) / 1024:.1f} KB\")\n  731: \n  732: elapsed = time.time() - t0\n  733: print(f\"\\nRuntime: {elapsed:.1f}s\")\n  734: print(\"=\" * 78)"
+    },
+    {
+      "anchor_id": "prov_500",
+      "anchor_type": "data_provenance",
+      "name": "paasch_backlog",
+      "script_path": "session-48/s48_paasch_backlog.py",
+      "session": "s48",
+      "inputs": "",
+      "outputs": "session-48/s48_paasch_backlog.npz, session-48/s48_paasch_backlog.png",
+      "source_file": "computations/session-48/s48_paasch_backlog.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s48_paasch_backlog.py — Paasch Backlog Clearance (7 sub-computations)\n    4: ======================================================================\n    5: Gate: PAASCH-BACKLOG-48 (diagnostic batch)\n    6: \n    7: Sub-computations:\n    8:   1. LOG-SIGNED-40:  Signed boson-fermion log sum S_signed(tau)\n    9:   2. PHI-GOLDEN-22:  Tau sweep of m_{(2,2)}^min / m_{(0,0)}^min\n   10:   3. FN-CENTROID-47: Pair-transfer centroids at alpha*=0.775\n   11:   4. TRIAL-FACTOR:   Look-elsewhere correction for phi_paasch"
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "table": "gates",
+  "batch_id": 13,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "gate_W-DESI-58",
+      "anchor_type": "gates",
+      "name": "W-DESI-58",
+      "session": "58",
+      "condition": "W0-4",
+      "verdict": "PASS",
+      "source_file": "sessions\\session-58\\session-58-results-workingpaper.md",
+      "source_context_30_lines": "  309: #### Assessment\n  310: \n  311: The V_bare microscopic pairing matrix gives epsilon_direct = 0.00143, which is 0.58x the S49 value derived from the Hauser-Feshbach phenomenological model. The PASS verdict confirms the S49 determination at the order-of-magnitude level. The downward shift is physically meaningful: V_constrained overestimates V[B2,B3] by 1.73x because its uniform alpha_star rescaling cannot enforce the microscopic selection rules (Trap 1 and B1-B3 zero). The Leggett gap omega_L0 drops from 0.073 to 0.055 M_KK, reducing the DM energy fraction by 24%, but the Omega_DM h^2 bracket [0.013, 0.143] still contains the observed value 0.120. The V_bare determination should be adopted as the canonical epsilon going forward, with V_constrained treated as a historical approximation.\n  312: \n  313: ---\n  314: \n  315: ### W0-4: Equation of State Under Volovik Partition [Mack] (phonon-first-cosmologist)\n  316: \n  317: **Gate**: W-DESI-58\n  318: - PASS: |w_0(Volovik) - w_0(DESI DR2)| < 3-sigma (framework consistent with DESI)\n  319: - FAIL: |w_0(Volovik) - w_0(DESI DR2)| > 5-sigma (framework excluded by DESI)\n  320: - INFO: tension between 3-sigma and 5-sigma (marginal)\n  321: \n  322: **Depends on**: W0-1, W0-2\n  323: \n  324: **Gate Verdict: W-DESI-58 = PASS** (Interpretation A, combined Josephson + GGE vacuum)\n  325: "
+    },
+    {
+      "anchor_id": "gate_NPAIR2-INTEG-58",
+      "anchor_type": "gates",
+      "name": "NPAIR2-INTEG-58",
+      "session": "58",
+      "condition": "W1-1",
+      "verdict": "INFO",
+      "source_file": "sessions\\session-58\\session-58-results-workingpaper.md",
+      "source_context_30_lines": "    1: # Session 58 Results: I CC You -- The Cosmological Constant: Integrability, Partition, and Self-Tuning\n    2: \n    3: **Date**: 2026-03-23\n    4: **Format**: Parallel single-agent computations across 4 waves\n    5: **Source**: S57 results (25 computations, 5 collaborative reviews, Volovik-SP workshop, Sagan probability update)\n    6: **Master Gate**: VOLOVIK-PARTITION-58 -- Does the Volovik partition (F_Josephson = vacuum energy) produce NROY > 5%? PASS: NROY > 5% (framework viable; DM prediction stands). FAIL: NROY = 0% even under Volovik partition (framework dead for DM). INFO: NROY in (0%, 5%] (marginal, needs epsilon refinement).\n    7: **Secondary Gate**: NPAIR2-INTEG-58 -- Does integrability survive at N_pair = 2 on the 2-cell system? PASS: <r> > 0.45 (integrability broken; CC solution path opens). FAIL: <r> < 0.40 (integrability persists; CC locked). INFO: <r> in [0.40, 0.45] (intermediate, 3-pair needed).\n    8: \n    9: ---\n   10: \n   11: ## Wave 0: The Volovik Partition (THROUGHLINE)\n   12: \n   13: ### W0-1: Bayesian Emulator Rebuild Under Volovik Partition (phonon-first-cosmologist)\n   14: \n   15: **Gate**: VOLOVIK-PARTITION-58"
+    },
+    {
+      "anchor_id": "gate_RG-HESSIAN-58",
+      "anchor_type": "gates",
+      "name": "RG-HESSIAN-58",
+      "session": "58",
+      "condition": "W1-2",
+      "verdict": "All positive at alpha=0. alpha_crit=0.523",
+      "source_file": "sessions\\session-58\\session-58-results-workingpaper.md",
+      "source_context_30_lines": "  517: - Script: `computations/s58_npair2_integ.py`\n  518: - Data: `computations/s58_npair2_integ.npz`\n  519: - Plot: `computations/s58_npair2_integ.png`\n  520: \n  521: ---\n  522: \n  523: ### W1-2: Richardson-Gaudin Hessian in Integral Space I^8 (volovik-superfluid-universe-theorist)\n  524: \n  525: **Gate**: RG-HESSIAN-58\n  526: - PASS: At least one negative eigenvalue (Penrose process direction exists; CC reduction possible without breaking integrability)\n  527: - FAIL: All eigenvalues positive (GGE is stable minimum in integral space; CC permanently locked by integrability)\n  528: \n  529: **Verdict: FAIL** -- All 7 projected eigenvalues positive at alpha=0. GGE is a local minimum of the thermodynamic potential in integral space. CC permanently locked by integrability.\n  530: \n  531: **Conditional result:** At alpha_crit = 0.523 (Andreev coupling fraction), the Hessian develops a negative eigenvalue. For alpha > 0.523, the GGE becomes a saddle with Penrose process direction B2+B1 -> B3.\n  532: \n  533: **Script**: `computations/s58_rg_hessian.py`"
+    },
+    {
+      "anchor_id": "gate_ANHARMONIC-LEGGETT-58",
+      "anchor_type": "gates",
+      "name": "ANHARMONIC-LEGGETT-58",
+      "session": "58",
+      "condition": "W1-3",
+      "verdict": "Gamma*dt=6.0e-5, safe by 1.7e4x",
+      "source_file": "sessions\\session-58\\session-58-results-workingpaper.md",
+      "source_context_30_lines": "  609: #### Assessment\n  610: \n  611: The GGE is an unconditional minimum of the thermodynamic potential when integrability is preserved. The \"Penrose process\" exists only if the Andreev channel (S56) reactivates pairing above alpha_crit = 0.523. The B3 modes are the bottleneck: they have the right CC sign (Lambda_B3 < 0) but are nearly empty (n ~ 0.003), creating a regime where pairing curvature barely exceeds entropic resistance. This is the condensed-matter analog of the Penrose process existing only inside the ergosphere. The CC problem remains: integrability must be broken before the Penrose direction becomes accessible, and breaking integrability is precisely the open channel from S56. FAIL reinforces the S54/S56 conclusion: CC = integrability problem = thermalization problem.\n  612: \n  613: ---\n  614: \n  615: ### W1-3: Cubic and Quartic Leggett Mode Coupling (quantum-acoustics-theorist)\n  616: \n  617: **Gate**: ANHARMONIC-LEGGETT-58\n  618: - PASS: Gamma_3^2 * rho / omega_L > 1/dt_transit (harmonic approximation breaks; mode-mode redistribution during transit)\n  619: - FAIL: Gamma_3^2 * rho / omega_L < 1/dt_transit (harmonic safe; independent-mode result is exact)\n  620: \n  621: #### Result: FAIL — Harmonic Approximation SAFE by 1.7 x 10^4\n  622: \n  623: **Gate criterion**: Gamma_total * dt_transit vs 1.\n  624: **Computed**: Gamma_total * dt_transit = 6.0 x 10^{-5}. **FAIL** (harmonic safe).\n  625: "
+    },
+    {
+      "anchor_id": "gate_POMERANCHUK-GGE-58",
+      "anchor_type": "gates",
+      "name": "POMERANCHUK-GGE-58",
+      "session": "58",
+      "condition": "W2-3",
+      "verdict": "max",
+      "source_file": "sessions\\session-58\\session-58-results-workingpaper.md",
+      "source_context_30_lines": "  804: **Constraint:** The surviving solution space for off-Jensen physics is restricted to initial conditions with sigma_0 > 0.01 (pre-existing U(2) breaking at percent level or above). Dynamical access from sigma=0 is excluded by a factor of 474x in timescales.\n  805: \n  806: **Files:** `computations/s58_off_jensen_transit.py`, `s58_off_jensen_transit.npz`, `s58_off_jensen_transit.png`\n  807: \n  808: ---\n  809: \n  810: ### W2-3: Landau Parameters and Pomeranchuk Stability (landau-condensed-matter-theorist)\n  811: \n  812: **Gate**: POMERANCHUK-GGE-58\n  813: - PASS: Any F_l violates stability bound -(2l+1) (GGE spontaneously deforms; integrability-breaking candidate)\n  814: - FAIL: All F_l satisfy stability bounds (GGE is Pomeranchuk-stable)\n  815: \n  816: **Verdict: FAIL** -- The GGE is Pomeranchuk-stable. All Landau parameters satisfy their stability bounds by large margins.\n  817: \n  818: **Method.** The 8-mode GGE occupation numbers f_k^{GGE} define mode-resolved susceptibilities N_k(0) = beta_k * f_k * (1 - f_k), where beta_k = 1/T_k are the Volovik effective inverse temperatures. The Lindhard response chi_0 = -diag(N_k(0)) and pairing interaction V_bare (8x8, from s54_ed_sweep.npz at fold) determine the stability matrix M = 1 + V * diag(N_0). Pomeranchuk instability occurs when any eigenvalue of M becomes non-positive. The generalized Landau parameters F_alpha are eigenvalues of the symmetrized matrix S = sqrt(N_0) * V * sqrt(N_0).\n  819: \n  820: **Conventional Landau P\n... [truncated]"
+    },
+    {
+      "anchor_id": "gate_ANDREEV-PHASE-58",
+      "anchor_type": "gates",
+      "name": "ANDREEV-PHASE-58",
+      "session": "58",
+      "condition": "W3-2",
+      "verdict": "0/62 pi-junctions (mode-resolved). Closest: 0.240*pi from pi",
+      "source_file": "sessions\\session-58\\session-58-results-workingpaper.md",
+      "source_context_30_lines": " 1006: - Script: `computations/s58_acoustic_metric.py`\n 1007: - Data: `computations/s58_acoustic_metric.npz`\n 1008: - Plot: `computations/s58_acoustic_metric.png`\n 1009: \n 1010: ---\n 1011: \n 1012: ### W3-2: Sub-Gap Andreev Phase Shift and Pi-Junction Search (berry-geometric-phase-theorist)\n 1013: \n 1014: **Gate**: ANDREEV-PHASE-58 (INFO)\n 1015: - Criterion: Any loop phase within 5% of pi?\n 1016: \n 1017: **Verdict: INFO (NO pi-junctions under mode-resolved analysis; uniform-phase model finds 18/62 but is unphysical)**\n 1018: \n 1019: #### Setup\n 1020: \n 1021: The 32-cell CG(24) fabric has 93 bonds and first Betti number b_1 = 93 - 32 + 1 = 62 independent loops. At the fold (tau = 0.1939), the BCS gap is Delta_GL = 0.464 M_KK, giving a pair-breaking threshold 2*Delta = 0.929 M_KK. Of 31 Bogoliubov-Anderson modes, **17 are sub-gap** (omega_BA < 2*Delta).\n 1022: "
+    },
+    {
+      "anchor_id": "gate_OMEGA-J-SWEEP-58",
+      "anchor_type": "gates",
+      "name": "OMEGA-J-SWEEP-58",
+      "session": "58",
+      "condition": "W3-8",
+      "verdict": "omega_J crosses omega_att at tau=0.1938 (fold).",
+      "source_file": "sessions\\session-58\\session-58-results-workingpaper.md",
+      "source_context_30_lines": " 1242: **Condensed matter analog**: Phonon transmission at grain boundaries in polycrystals. The CG(24) lattice behaves like a polycrystal with small grain-boundary mismatch -- more like a high-quality alloy than a collection of isolated quantum dots. The Kapitza resistance is negligible.\n 1243: \n 1244: **Scripts**: `computations/s58_impedance_boundary.py`, data: `s58_impedance_boundary.npz`, plot: `s58_impedance_boundary.png`\n 1245: \n 1246: ---\n 1247: \n 1248: ### W3-8: omega_J vs omega_att Full Transit Verification (tesla-resonance)\n 1249: \n 1250: **Gate**: OMEGA-J-SWEEP-58 (INFO)\n 1251: - Criterion: |omega_J/omega_att - 1| < 1% at all tau?\n 1252: \n 1253: **Result**: FAIL. omega_J = omega_att only at a single CROSSING near the fold. The identification is fold-specific, not global.\n 1254: \n 1255: **Method**: omega_J(tau) = sqrt(8 * E_J(tau) * E_c(tau)) computed at 50 tau values from the BA spectrum data. omega_att = 1.430 M_KK (constant, from S38 geometric attractor). Track ratio omega_J / omega_att across full transit [0, 0.5].\n 1256: \n 1257: **Key Numbers**:\n 1258: "
+    },
+    {
+      "anchor_id": "gate_TRANSFER-FUNCTION-58",
+      "anchor_type": "gates",
+      "name": "TRANSFER-FUNCTION-58",
+      "session": "58",
+      "condition": "W3-14",
+      "verdict": "m_WDM = 10^{20.4} keV >> 5.3 keV. T(k) = 1.0000 at k = 1, 10, 100, 1000 h/Mpc. k_cut = 4.3e23 h/Mpc.",
+      "source_file": "sessions\\session-58\\session-58-results-workingpaper.md",
+      "source_context_30_lines": " 1603: **Script**: `computations/s58_epsilon_consistency.py`\n 1604: **Data**: `computations/s58_epsilon_consistency.npz`\n 1605: **Plot**: `computations/s58_epsilon_consistency.png`\n 1606: \n 1607: ---\n 1608: \n 1609: ### W3-14: Phononic DM Transfer Function T(k) [Mack] (mack-cosmic-bridge)\n 1610: \n 1611: **Gate**: TRANSFER-FUNCTION-58\n 1612: - PASS: WDM mass equivalent > 5.3 keV (Lyman-alpha compatible; DM candidate survives)\n 1613: - FAIL: WDM mass equivalent < 2.0 keV (excluded by Lyman-alpha; DM candidate dead)\n 1614: - INFO: WDM mass equivalent in [2.0, 5.3] keV (marginal)\n 1615: \n 1616: **Depends on**: W3-6 (S(q,omega)), W3-7 (impedance)\n 1617: \n 1618: **Verdict: PASS** -- m_WDM equivalent = 10^{20.4} keV >> 5.3 keV Lyman-alpha bound. The phononic DM is effectively CDM at all observable scales. T(k) = 1.0000 at k = 1, 10, 100, 1000 h/Mpc.\n 1619: "
+    },
+    {
+      "anchor_id": "gate_FREE-STREAMING-58",
+      "anchor_type": "gates",
+      "name": "FREE-STREAMING-58",
+      "session": "58",
+      "condition": "W3-15",
+      "verdict": "z_tr = 6.75e29 >> 6.2e7 (22 OOM margin). v_prod=0.915c, z_prod=1.05e29",
+      "source_file": "sessions\\session-58\\session-58-results-workingpaper.md",
+      "source_context_30_lines": " 1675: **Script**: `computations/s58_transfer_function.py`\n 1676: **Data**: `computations/s58_transfer_function.npz`\n 1677: **Plot**: `computations/s58_transfer_function.png`\n 1678: \n 1679: ---\n 1680: \n 1681: ### W3-15: Free-Streaming Bound from Paper 16 [Mack] (baptista-spacetime-analyst)\n 1682: \n 1683: **Gate**: FREE-STREAMING-58\n 1684: - PASS: z_tr > 6.2 x 10^7 (DM becomes non-relativistic early enough; structure formation compatible)\n 1685: - FAIL: z_tr < 6.2 x 10^7 (DM free-streams too long; conflicts with observed small-scale structure)\n 1686: \n 1687: **Depends on**: W3-10 (mass variation integral)\n 1688: \n 1689: #### Method\n 1690: \n 1691: The phononic DM (B2 quasiparticle) is produced relativistic at the fold and must become non-relativistic early enough for small-scale structure to form. The free-streaming bound requires z_tr > 6.2 x 10^7."
+    },
+    {
+      "anchor_id": "gate_Gate",
+      "anchor_type": "gates",
+      "name": "Gate",
+      "session": "58",
+      "condition": "",
+      "verdict": "PASS",
+      "source_file": "sessions\\session-58\\session-58-results-workingpaper.md",
+      "source_context_30_lines": "    1: # Session 58 Results: I CC You -- The Cosmological Constant: Integrability, Partition, and Self-Tuning\n    2: \n    3: **Date**: 2026-03-23\n    4: **Format**: Parallel single-agent computations across 4 waves\n    5: **Source**: S57 results (25 computations, 5 collaborative reviews, Volovik-SP workshop, Sagan probability update)\n    6: **Master Gate**: VOLOVIK-PARTITION-58 -- Does the Volovik partition (F_Josephson = vacuum energy) produce NROY > 5%? PASS: NROY > 5% (framework viable; DM prediction stands). FAIL: NROY = 0% even under Volovik partition (framework dead for DM). INFO: NROY in (0%, 5%] (marginal, needs epsilon refinement).\n    7: **Secondary Gate**: NPAIR2-INTEG-58 -- Does integrability survive at N_pair = 2 on the 2-cell system? PASS: <r> > 0.45 (integrability broken; CC solution path opens). FAIL: <r> < 0.40 (integrability persists; CC locked). INFO: <r> in [0.40, 0.45] (intermediate, 3-pair needed).\n    8: \n    9: ---\n   10: \n   11: ## Wave 0: The Volovik Partition (THROUGHLINE)\n   12: \n   13: ### W0-1: Bayesian Emulator Rebuild Under Volovik Partition (phonon-first-cosmologist)\n   14: "
+    }
+  ]
+}

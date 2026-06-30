@@ -1,0 +1,140 @@
+============================================================================
+  Q-VARIABLE-59: Explicit q-Variable Identification
+============================================================================
+
+s58_sa_saddle.npz keys: ['EJ_Hessian', 'EJ_det', 'EJ_evals', 'H_SA_fold', 'H_SA_saddle', 'a0_spectrum', 'a2_spectrum', 'a4_spectrum', 'cos_align_neg', 'cos_align_pos', 'd2V_dsig2_scan', 'd2V_dtau2_scan', 'd2V_mixed_scan', 'd2a2_fold_analytic', 'd2a2_fold_num', 'd2a4_fold_analytic', 'd2a4_fold_num', 'det_SA_fold', 'det_SA_saddle', 'det_scan', 'eig_max_scan', 'eig_min_scan', 'evals_SA_fold', 'evals_SA_saddle', 'evecs_SA_fold', 'gate_detail', 'gate_name', 'gate_verdict', 'ratio_neg', 'ratio_pos', 'tau_scan', 'tau_sweep']
+s58_ej_3d_landscape.npz keys: ['EJ_H_2d_S57', 'EJ_evals_2d_S57', 'E_J_3d', 'F_anom_3d', 'H_EJ_2d_sub', 'H_EJ_3d', 'H_V_3d', 'J_C2_3d', 'R_3d', 'V_3d', 'Vol_3d', 'd1_range', 'evals_EJ_2d_sub', 'evals_EJ_3d', 'evals_V_3d', 'evecs_EJ_3d', 'gate_detail', 'gate_name', 'gate_verdict', 'morse_index', 'sig_range', 'tau_range']
+
+s54_ed_sweep.npz loaded: 50 tau values, fold_idx=19
+  tau_fold from data = 0.193878 (canonical = 0.19)
+
+Seeley-DeWitt at fold (tau=0.19):
+  a2_red = 13.454293
+  a4_red = 5.623014
+  d(a2_red)/dtau = 1.840218
+  d(a4_red)/dtau = 1.535175
+  d2(a2_red)/dtau2 = 18.651747
+  d2(a4_red)/dtau2 = 15.543122
+  det(coefficient matrix) = -3.094969e-02
+
+Spectral action decomposition S = A + B*a2_red + C*a4_red:
+  A (constant) = 92010951.9741
+  B (a2 coeff) = -13699122.6869
+  C (a4 coeff) = 16459397.6101
+  Verification: S(fold)=250360.6770 (canon=250360.6770)
+  Verification: dS(fold)=58672.8024 (canon=58672.8024)
+  Verification: d2S(fold)=317862.8490 (canon=317862.8490)
+
+============================================================================
+  CANDIDATE 1: q = tau
+============================================================================
+
+At fold (tau = 0.1900):
+  epsilon(fold) = 250358.2105
+  d(eps)/d(tau) = 58542.3410
+  rho_vac = eps - tau*deps = 239237.6294
+  d2(eps)/dtau2 = 5960464.4775
+  chi^{-1} (Volovik) = tau^2 * d2eps = 215077.4585
+  chi^{-1} / Z_Hessian = 0.323031
+
+At tau = 0 (round SU(3)):
+  epsilon(0) = 248434.0623
+  rho_vac(0) = epsilon(0) = 248434.0623 (NOT zero)
+
+  rho_vac = 0 crossings: [np.float64(0.28338904032624884)]
+  rho_vac range: [-4132329.7670, 250888.5749]
+    tau_eq = 0.283389, chi^{-1} = 2156315.6001, chi^{-1}/Z_H = 3.2386
+
+============================================================================
+  CANDIDATE 2: q = det(g_K)^{1/8}
+============================================================================
+
+Volume-preservation check: 3*c_su2 + 4*c_C2 + c_u1 = 0.0000 (should be 0)
+  a0 variation across tau: std = 0.000000 (should be 0)
+
+  CONCLUSION: det(g_K) = const under Jensen deformation
+  q = det(g_K)^{1/8} = constant => NOT a dynamical variable
+  Candidate 2: EXCLUDED (trivially)
+
+============================================================================
+  CANDIDATE 3: q = (1/8) * e^I_a * E^a_I (tetrad contraction)
+============================================================================
+
+Tetrad contraction q(tau):
+  q(0) = 1.000000 (should be 1.0)
+  q(fold) = 1.002849
+  dq/dtau(0) = 0.000000
+  dq/dtau(fold) = 0.030149
+  q range: [1.000000, 1.016234]
+  dq/dtau range: [0.000156, 0.073204]
+  Monotonic: True
+
+Candidate 3 at fold (tau = 0.1900, q = 1.002848):
+  d(eps)/dq = 1942209.8774
+  d2(eps)/dq2 = 6215595571.4262
+  rho_vac = -1697382.4113
+  chi^{-1} = 6251045723.1283
+  chi^{-1} / Z_Hessian = 9388.632978
+  chi^{-1} / d2S = 19665.858225
+  rho_vac = 0 crossings: [np.float64(0.09993736056840734), np.float64(0.16488349803036242)]
+    tau_eq = 0.099937, q_eq = 1.000784, chi^{-1} = 11882425439.8931
+    tau_eq = 0.164883, q_eq = 1.002142, chi^{-1} = 4340142504.9663
+
+============================================================================
+  VOLOVIK IDENTITY: P_vac = epsilon(N) - mu*N
+============================================================================
+
+  P_vac (Volovik identity) = -0.6880 M_KK
+  N_pair = 1
+  E_GGE = N_pair + P_vac = 0.3120 M_KK
+  mu = d(epsilon)/dN = (E_GGE - P_vac)/N = E_GGE = 1.0000
+  rho_vac = epsilon - N*mu = E_GGE - 1*(E_GGE - P_vac) ... 
+
+  IDENTIFICATION:
+  The Volovik identity P_vac = E_GGE - N_pair IS the q-theory formula
+  with q = N_pair (conserved BCS particle number)
+  P_vac = -0.688 != 0 => system NOT at q-theory equilibrium
+  BUT: Zubarev says Lambda_eq -> 0 (equilibrium theorem)
+  RESOLUTION: q = N_pair is conserved (integrability) and DISCRETE
+  System cannot continuously tune q to reach P=0
+
+============================================================================
+  STIFFNESS COMPARISON
+============================================================================
+
+  d2S/dtau2 (spectral Hessian) = 317863
+  Z_Hessian (elastic tensor) = 665810
+  chi^{-1}(q=tau, Volovik) = tau^2*d2S = 11475
+  chi^{-1}(q=tetrad, Volovik) = 6251045723
+
+  Ratios:
+    Z_Hessian / d2S = 2.0946 (chain rule correction)
+    Z_Hessian / chi^{-1}_tau = 58.0234
+    Z_Hessian / chi^{-1}_tetrad = 0.0001
+    d2S / chi^{-1}_tau = 27.7008 = 1/tau^2
+    d2S / chi^{-1}_tetrad = 0.0001
+
+  MATCH TEST (chi^{-1} = Z_Hessian?):
+    q=tau: ratio = 0.0172 (NO MATCH)
+    q=tetrad: ratio = 9388.6330 (NO MATCH)
+    d2S/Z_H: ratio = 0.4774 (= 1/2.0946, chain rule)
+
+============================================================================
+  GATE VERDICT: Q-VARIABLE-59
+============================================================================
+
+Candidate                           rho_vac(fold)      chi^-1             chi^-1/Z_H      Status
+----------------------------------------------------------------------------------------------------
+1. q = tau                          239237.6294        215077.5           0.3230          VIABLE
+2. q = det(g_K)^1/8                 N/A                N/A                N/A             EXCLUDED
+3. q = tetrad contraction           -1697382.4113      6251045723.1       9388.6330       VIABLE
+4. q = N_pair (emergent)            -0.6880            ~1.54              ~2.3e-6         PHYSICAL
+
+  Reference: Z_Hessian = 665810, d2S/dtau2 = 317863
+
+GATE: Q-VARIABLE-59 = INFO
+
+DETAIL: Candidate 2 (det^{1/8}) EXCLUDED: Jensen is volume-preserving, det(g_K) = const. Candidate 1 (tau): rho_vac(fold)=239237.6, chi^{-1} = 215077 (Volovik formula), rho_vac=0 crossings: 1. Candidate 3 (tetrad): rho_vac(fold)=-1697382.4, chi^{-1} = 6251045723, rho_vac=0 crossings: 2. Emergent Candidate 4 (q = N_pair) is the physically correct identification: the Volovik identity P_vac = E_GGE - N_pair IS the q-theory formula. N_pair is conserved (integrability) and discrete (cannot continuously tune to P=0). Z_Hessian = 665810 is the elastic stiffness (chain-rule corrected d2S), not the Volovik compressibility of any single q-variable.
+
+Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s59_q_variable.npz
+Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s59_q_variable.png

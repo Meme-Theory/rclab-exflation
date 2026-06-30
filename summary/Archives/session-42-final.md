@@ -5,7 +5,7 @@
 **Master Gate**: Z-FABRIC-42 (gradient stiffness at the fold)
 **Agents**: gen-physicist, cosmic-web-theorist, nazarewicz-nuclear-structure-theorist, quantum-acoustics-theorist, einstein-theorist, landau-condensed-matter-theorist, tesla-resonance, sagan-empiricist + reviewers: dirac-antimatter-theorist, quantum-foam-theorist, baptista-spacetime-analyst, little-red-dots-jwst-analyst, hawking-theorist, volovik-superfluid-universe-theorist
 **Source Files**: 14 documents in `sessions/archive/session-42/`
-**Tier 0 Scripts**: 16 computations in `tier0-computation/s42_*.py`
+**computation scripts**: 16 computations in `computations/s42_*.py`
 
 ---
 
@@ -252,7 +252,7 @@ Dimension zero for ALL tested equilibrium AND fabric mechanisms. Three surviving
 
 ## IX. Priority-Ordered Next Steps
 
-### Tier 0: Zero-Cost Diagnostics
+### computation: Zero-Cost Diagnostics
 
 | # | Computation | Suggested By | Priority |
 |:--|:-----------|:-------------|:---------|
@@ -264,7 +264,7 @@ Dimension zero for ALL tested equilibrium AND fabric mechanisms. Three surviving
 | T0-6 | Paper 16 adiabaticity diagnostic | Baptista | LOW |
 | T0-7 | DESI DR2 void catalog comparison | Cosmic Web | MEDIUM |
 
-### Tier 1: New Computations, High Priority
+### Level 1: New Computations, High Priority
 
 | # | Computation | Suggested By | Priority |
 |:--|:-----------|:-------------|:---------|
@@ -275,7 +275,7 @@ Dimension zero for ALL tested equilibrium AND fabric mechanisms. Three surviving
 | T1-5 | Breathing mode of 32-cell tessellation | Quantum Acoustics | HIGH |
 | T1-6 | Lichnerowicz Laplacian stability at fold | Baptista | HIGH |
 
-### Tier 2: Medium Priority
+### Level 2: Medium Priority
 
 | # | Computation | Suggested By | Priority |
 |:--|:-----------|:-------------|:---------|
@@ -290,7 +290,7 @@ Dimension zero for ALL tested equilibrium AND fabric mechanisms. Three surviving
 | T2-9 | Q-theory self-tuning for CC | Volovik | MEDIUM |
 | T2-10 | Discrete+continuum Fano at 4D boundaries | Nazarewicz | MEDIUM |
 
-### Tier 3: Longer-Term
+### Level 3: Longer-Term
 
 | # | Computation | Suggested By |
 |:--|:-----------|:-------------|
@@ -409,23 +409,23 @@ The framework's surviving region is **geometric Lambda-CDM**: w = -1 derived, CD
 ### Computation Scripts and Data
 | File | Description |
 |:-----|:------------|
-| `tier0-computation/s42_gradient_stiffness.{py,npz,png}` | Z(tau) gradient stiffness |
-| `tier0-computation/s42_giant_voronoi.{py,npz,png}` | 32-cell Voronoi test |
-| `tier0-computation/s42_hauser_feshbach.{py,npz,png}` | HF KK branching ratios |
-| `tier0-computation/s42_coupled_doorway.{py,npz,png}` | Coupled doorway Fano |
-| `tier0-computation/s42_fabric_dispersion.{py,npz,png}` | Fabric sound speed + dispersion |
-| `tier0-computation/s42_tau_dyn_reopening.{py,npz,png}` | TAU-DYN reopening analysis |
-| `tier0-computation/s42_dark_energy_wz.{py,npz,png}` | w(z) v0 (superseded) |
-| `tier0-computation/s42_fabric_wz.{py,npz,png}` | w(z) v1 (superseded, epoch error) |
-| `tier0-computation/s42_fabric_wz_v2.{py,npz,png}` | w(z) v2 (correct, epoch-matched) |
-| `tier0-computation/s42_dm_profile.{py,npz,png}` | DM profile + rotation curves |
-| `tier0-computation/s42_constants_snapshot.{py,npz,png}` | Constants as frozen snapshots |
-| `tier0-computation/s42_ns_tilt.{py,npz,png}` | Primordial tilt n_s |
-| `tier0-computation/s42_gge_energy.{py,npz,png}` | GGE energy budget + eta |
-| `tier0-computation/s42_s8_tension.{py,npz,png}` | S8 tension analysis |
-| `tier0-computation/s42_polariton.{py,npz,png}` | Polariton analysis |
-| `tier0-computation/s42_kz_fnl.{py,npz,png}` | KZ defects + f_NL |
-| `tier0-computation/s42_homogeneity.{py,npz,png}` | Spatial homogeneity |
+| `computations/s42_gradient_stiffness.{py,npz,png}` | Z(tau) gradient stiffness |
+| `computations/s42_giant_voronoi.{py,npz,png}` | 32-cell Voronoi test |
+| `computations/s42_hauser_feshbach.{py,npz,png}` | HF KK branching ratios |
+| `computations/s42_coupled_doorway.{py,npz,png}` | Coupled doorway Fano |
+| `computations/s42_fabric_dispersion.{py,npz,png}` | Fabric sound speed + dispersion |
+| `computations/s42_tau_dyn_reopening.{py,npz,png}` | TAU-DYN reopening analysis |
+| `computations/s42_dark_energy_wz.{py,npz,png}` | w(z) v0 (superseded) |
+| `computations/s42_fabric_wz.{py,npz,png}` | w(z) v1 (superseded, epoch error) |
+| `computations/s42_fabric_wz_v2.{py,npz,png}` | w(z) v2 (correct, epoch-matched) |
+| `computations/s42_dm_profile.{py,npz,png}` | DM profile + rotation curves |
+| `computations/s42_constants_snapshot.{py,npz,png}` | Constants as frozen snapshots |
+| `computations/s42_ns_tilt.{py,npz,png}` | Primordial tilt n_s |
+| `computations/s42_gge_energy.{py,npz,png}` | GGE energy budget + eta |
+| `computations/s42_s8_tension.{py,npz,png}` | S8 tension analysis |
+| `computations/s42_polariton.{py,npz,png}` | Polariton analysis |
+| `computations/s42_kz_fnl.{py,npz,png}` | KZ defects + f_NL |
+| `computations/s42_homogeneity.{py,npz,png}` | Spatial homogeneity |
 
 ### Session Documents
 | File | Description |

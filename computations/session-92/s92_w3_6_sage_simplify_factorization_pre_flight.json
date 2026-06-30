@@ -1,0 +1,23 @@
+{
+  "gate_id": "S92-W3-CF-S92-W5-2.2-VII-AV-LEVEL-2-INVARIANCE-EXTENSION",
+  "sage_mcp_invocation": "mcp__sage__sage_eval",
+  "sage_mcp_backend": "sagecell",
+  "expression_under_test": "Var_a(|v_a(K; τ)|²) where |v_a(K; τ)|² = Δ²/(2(ξ_a(K; τ)² + Δ²)) with ξ_a(K; τ) = ξ0_a(τ) · K²",
+  "candidate_factorization": "Var_a = m(τ) · κ_K(K)",
+  "symbolic_per_mode_verdict": "NOT clean factorization at per-mode level",
+  "symbolic_per_mode_reason": "ξ_K = ξ0(τ) · K² couples τ and K multiplicatively inside √(ξ_K² + Δ²); per-mode |v_a|² entangles τ and K dependences non-multiplicatively",
+  "protocol_level_verdict": "factorization HOLDS at canonical s52 8-mode protocol level",
+  "protocol_level_reason": "Canonical W5-1 protocol pins the s52 8-mode static reference (u_a, v_a, E_a, Δ_a) at τ_fold and treats them as τ-INVARIANT during the K-sweep. The τ-moduli axis enters ONLY via the L_max Mellin-PV truncation weight M_PV(L_max; τ) computed on the off-fold D_K(τ) spectrum cache. M_PV(L_max; τ) has NO K-dependence — it is a PURE multiplicative pre-factor on the Bogoliubov-variance K-window kernel. d² ln(M_PV(L_max; τ) · Var_a(|v_a(K)|²)) / d(ln K)² = d² ln Var_a(|v_a(K)|²) / d(ln K)² is τ-INVARIANT by structural identity.",
+  "second_log_derivative_at_K_horizon": "d² ln Var_a(|v_a(K)|²) / d(ln K)² evaluated at K_horizon depends ONLY on the static s52 Bogoliubov amplitudes (which are τ-INVARIANT) and the K-window grid (which is τ-INVARIANT); the M_PV(L_max; τ) τ-dependent pre-factor drops out under the second log-derivative by structural identity (additive constant in ln-space; annihilated by d²/d(ln K)²)",
+  "k_counter_advancement_criterion": "DISSENT-sharpened",
+  "k_counter_before": 1,
+  "k_counter_after": 2,
+  "structurally_distinct_factorization_mechanisms": [
+    "K=1 (S91 W5-1): m = M_PV(L_max) — eigenvalue-cache-truncation level",
+    "K=2 (this gate): m = m(τ) — τ-moduli spectrum-weight via D_K(τ) shift"
+  ],
+  "advancement_legitimate": true,
+  "pre_flight_at_script_start": true,
+  "math_scripts_clause_compliance": "clause 4 (sage_simplify pre-flight)",
+  "verdict_propagation": "structural identity holds at protocol level; empirical verification via bit-precision Level_2_invariance_witness on off-fold caches is the K=2 calibration corpus instance"
+}

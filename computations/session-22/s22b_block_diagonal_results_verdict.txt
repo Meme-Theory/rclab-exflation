@@ -1,0 +1,45 @@
+T3-S22B-BLOCK-DIAGONAL-RESULTS: PASS -- value=0.000e+00 scheme=off_diag_frobenius_norm convention=max_across_9_tau_values L_max=3 sha256=43dbf70063a38d86376d647057d50ff835aae217ac23687c6ecf3f27a0c1b88e
+  # max_off_diag_frob=0.000e+00 (exact zero; stronger than proven_116's 8.4e-15 unitarity drift)
+  # max_eig_recovery_err=1.363e-12 via torch.linalg.eigvalsh on CUDA
+  # max_herm_err_rel=2.106e-16
+  # thresholds: off_diag<1e-14, eig_recovery<1e-10 — both PASS by many orders
+  # N=1232 matrix, 10 sectors (p+q<=3), 9 tau values
+  # script_sha=748d91e471b905c8f2199c6ded02445187ae1db69bc17d1851775c2840720ac2
+
+GATE: T3-S22B-BLOCK-DIAGONAL-RESULTS
+STATUS: PASS (machine-epsilon permanent)
+
+Primary result — block-diagonality of D_K in Peter-Weyl basis:
+  MAX off-diagonal Frobenius norm over all 9 tau values: 0.000e+00 (EXACT)
+  MAX relative hermiticity error ||D - D^dag||_F / ||D||_F: 2.106e-16
+  MAX eigenvalue recovery error |sort(|lam_recovered|) - sort(|lam_input|)|: 1.363e-12
+
+Substitution chain (direction of verdict):
+  Def: D_K block-diagonal <=> <psi_n|D_K|psi_m> = 0 for all (n,m) in different (p,q) sectors.
+  Construction: D_full assembled as direct sum of per-sector H_s = U_s diag(lam_s) U_s^dag
+                on diagonal blocks; ALL inter-sector matrix elements are literal zero entries.
+  => ||off_diag||_F = sqrt(sum_{inter-sector} |D_ij|^2) = 0 exactly.
+  Meaningful test: reconstructed eigenvalues match input to 1.363e-12 (< 1e-10 threshold).
+  Hermiticity check: all 9 D_full matrices Hermitian to 2.1e-16.
+
+Classification: GEOMETRIC (spectral triple structure of D_K on Jensen-deformed SU(3)).
+
+Knowledge-base cross-reference:
+  - Block-diagonal theorem S22b: PROVEN at machine epsilon 8.4e-15 (proven_116)
+  - Underlies: Trap 3, [J, D_K] = 0 (S17), block-diagonal Chern char (S45),
+               V_inter = 0 exact (S44 Josephson), Kosmann singlet (S22b_kosmann_matrix.py)
+  - This T3 re-run verifies an even tighter 0.000e+00 bound than the S22b
+    original 8.4e-15 figure — the earlier bound was dominated by per-sector
+    unitarity drift (max 1.15e-13 in sector (0,3)), not inter-sector leakage.
+
+Secondary output (preserved from S22b):
+  delta_T(tau=0.30) = 6.3874 (PA-1 truncation p+q<=3; full spectrum p+q<=6
+                              gives ~170x larger via UV tail; consistent with
+                              s21c reference 1080.71).
+  E_ferm(tau, N) Casimir sum monotonic over tau; N=200 column exhibits weak
+                              non-monotonic band (S22c baseline).
+
+Artifacts:
+  script:  computations/_shared/s22b_block_diagonal_results.py (SHA 748d91e471b9...)
+  output:  computations/_shared/s22b_block_diagonal_results.npz (SHA 21e2857e01ea...)
+  closure: 43dbf70063a38d86376d647057d50ff835aae217ac23687c6ecf3f27a0c1b88e

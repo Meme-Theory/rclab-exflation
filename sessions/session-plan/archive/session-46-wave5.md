@@ -7,9 +7,9 @@
 **Global rules for all W5 tasks**:
 - Python: `"phonon-exflation-sim/.venv312/Scripts/python.exe"`
 - Working dir: `C:\sandbox\Ainulindale Exflation` (quote all paths with spaces)
-- Import constants from `tier0-computation/canonical_constants.py`
+- Import constants from `computations/canonical_constants.py`
 - Script prefix: `s46_`
-- Output to `tier0-computation/` (scripts) and `sessions/session-46/` (documents)
+- Output to `computations/` (scripts) and `sessions/session-46/` (documents)
 
 ---
 
@@ -25,12 +25,12 @@ You are updating the CC balance sheet (`sessions/session-45/s45_cc_balance_sheet
 **Computation Steps**:
 
 1. **Load all CC-relevant results.** From this session:
-   - W1-1: `tier0-computation/s46_qtheory_selfconsistent.npz` — self-consistent tau*, Delta(tau), T3-T5 lock
-   - W1-3: `tier0-computation/s46_geometric_a2.npz` — geometric a_2, truncation error
-   - W2-5: `tier0-computation/s46_number_projected_bcs.npz` — PBCS tau* shift
-   - W4-8: `tier0-computation/s46_multi_jacobson.npz` — sector-by-sector consistency
-   - W4-9: `tier0-computation/s46_gcm_zero_point.npz` — GCM zero-point correction
-   From prior sessions: `tier0-computation/s45_cc_gap_update.npz`, `tier0-computation/s44_cc_gap_resolved.npz`
+   - W1-1: `computations/s46_qtheory_selfconsistent.npz` — self-consistent tau*, Delta(tau), T3-T5 lock
+   - W1-3: `computations/s46_geometric_a2.npz` — geometric a_2, truncation error
+   - W2-5: `computations/s46_number_projected_bcs.npz` — PBCS tau* shift
+   - W4-8: `computations/s46_multi_jacobson.npz` — sector-by-sector consistency
+   - W4-9: `computations/s46_gcm_zero_point.npz` — GCM zero-point correction
+   From prior sessions: `computations/s45_cc_gap_update.npz`, `computations/s44_cc_gap_resolved.npz`
 
 2. **Update the CC balance sheet.** For each new result:
    - State the computed value

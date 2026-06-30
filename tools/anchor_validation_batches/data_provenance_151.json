@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 151,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1501",
+      "anchor_type": "data_provenance",
+      "name": "bogoliubov_friedmann_as",
+      "script_path": "session-77/s77_bogoliubov_friedmann_as.py",
+      "session": "s77",
+      "inputs": "",
+      "outputs": "session-77/s77_bogoliubov_friedmann_as.npz, session-77/s77_bogoliubov_friedmann_as.png",
+      "source_file": "computations/session-77/s77_bogoliubov_friedmann_as.py",
+      "source_context_30_lines": "   66:     c_Gold, omega_L1,\n   67:     # Cosmological\n   68:     A_s_CMB, H_0_GeV, Mpc_to_GeV_inv,\n   69:     planck_ns,\n   70:     # Conversion\n   71:     hbar_GeV_s,\n   72: )\n   73: \n   74: OUT_NPZ = os.path.join(SCRIPT_DIR, \"s77_bogoliubov_friedmann_as.npz\")\n   75: OUT_PNG = os.path.join(SCRIPT_DIR, \"s77_bogoliubov_friedmann_as.png\")\n   76: \n   77: t_start = time.time()  # (local)\n   78: log_lines = []  # (local)\n   79: \n   80: def log(msg=\"\"):\n   81:     print(msg)\n   82:     log_lines.append(msg)"
+    },
+    {
+      "anchor_id": "prov_1502",
+      "anchor_type": "data_provenance",
+      "name": "cmpp_turnaround",
+      "script_path": "session-77/s77_cmpp_turnaround.py",
+      "session": "s77",
+      "inputs": "",
+      "outputs": "session-77/s77_cmpp_turnaround.npz",
+      "source_file": "computations/session-77/s77_cmpp_turnaround.py",
+      "source_context_30_lines": "  896: # Weyl operator eigenvalues\n  897: for case_tag, case_dict in [('static', static_results), ('dynamic', dynamic_results)]:\n  898:     for tau in TAU_VALUES:\n  899:         wo = case_dict[tau]['weyl_op']\n  900:         save_data[f'{case_tag}_weyl_eigs_tau{tau:.3f}'] = np.array(wo['unique_eigs'])\n  901:         save_data[f'{case_tag}_weyl_mults_tau{tau:.3f}'] = np.array(wo['multiplicities'])\n  902: \n  903: out_path = os.path.join(os.path.dirname(os.path.abspath(__file__)),\n  904:                         's77_cmpp_turnaround.npz')\n  905: np.savez(out_path, **save_data)\n  906: \n  907: elapsed = time.time() - t_start  # (local)\n  908: print(f\"\\n\\nTotal runtime: {elapsed:.1f}s\")\n  909: print(f\"Data saved to: {out_path}\")"
+    },
+    {
+      "anchor_id": "prov_1503",
+      "anchor_type": "data_provenance",
+      "name": "direct_sum_fstar",
+      "script_path": "session-77/s77_direct_sum_fstar.py",
+      "session": "s77",
+      "inputs": "",
+      "outputs": "session-77/s77_direct_sum_fstar.npz, session-77/s77_direct_sum_fstar.png",
+      "source_file": "computations/session-77/s77_direct_sum_fstar.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s77_direct_sum_fstar.py -- S77-A4-DIRECT-SUM-FSTAR\n    4: =====================================================\n    5: \n    6: Gate: S77-A4-DIRECT-SUM-FSTAR\n    7:   PASS: |S_direct/N - chi_2| < 0.02 for at least one f* route\n    8:         => HP4 and SA CC unification (same spectral data through different lenses)\n    9:   FAIL: |S_direct/N - chi_2| > 0.10 for ALL f* routes\n   10:         => HP4 and SA CC are genuinely independent channels\n   11:   INFO: 0.02 < |S_direct/N - chi_2| < 0.10 (suggestive but not decisive)"
+    },
+    {
+      "anchor_id": "prov_1504",
+      "anchor_type": "data_provenance",
+      "name": "domain_wall_gw",
+      "script_path": "session-77/s77_domain_wall_gw.py",
+      "session": "s77",
+      "inputs": "",
+      "outputs": "session-77/s77_domain_wall_gw.npz, session-77/s77_domain_wall_gw.png",
+      "source_file": "computations/session-77/s77_domain_wall_gw.py",
+      "source_context_30_lines": "  634: # ============================================================\n  635: # STEP 8: Save results\n  636: # ============================================================\n  637: \n  638: print()\n  639: print(\"--- Saving results ---\")\n  640: \n  641: outpath = os.path.join(os.path.dirname(os.path.abspath(__file__)),\n  642:                        \"s77_domain_wall_gw.npz\")\n  643: \n  644: np.savez(outpath,\n  645:          # Gate\n  646:          verdict=verdict,\n  647:          # Domain wall parameters\n  648:          sigma_wall_MKK3=sigma_wall_MKK3,\n  649:          sigma_wall_GeV3=sigma_wall_GeV3,\n  650:          epsilon_bias_MKK4=epsilon_bias_MKK4,"
+    },
+    {
+      "anchor_id": "prov_1505",
+      "anchor_type": "data_provenance",
+      "name": "epoch_convergence",
+      "script_path": "session-77/s77_epoch_convergence.py",
+      "session": "s77",
+      "inputs": "",
+      "outputs": "session-77/s77_epoch_convergence.npz",
+      "source_file": "computations/session-77/s77_epoch_convergence.py",
+      "source_context_30_lines": "  385: print(f\"CHK3 (Omega_Lambda(a->inf)->1): PASS\")\n  386: print(f\"CHK4 (monotonicity): PASS\")\n  387: print(f\"CHK5 (analytic vs numerical): PASS (rel err = {abs(a_star_analytic - a_star)/a_star:.2e})\")\n  388: print(f\"\\nAll {chk_passed}/5 cross-checks PASS.\")\n  389: print(f\"Gate: INFO. a* = {a_star:.4f} (z* = {z_star:.4f}, {t_future_Gyr:.1f} Gyr future).\")\n  390: print(f\"Physical: chi_2/Omega_Lambda coincidence is STRUCTURAL, not fine-tuned.\")\n  391: \n  392: # ── Save data ─────────────────────────────────────────────────────────────\n  393: np.savez(\"s77_epoch_convergence.npz\",\n  394:     # Gate metadata\n  395:     gate_id=\"S77-D2-EPOCH-CONV\",\n  396:     gate_verdict=\"INFO\",\n  397: \n  398:     # Input parameters\n  399:     chi_2=chi_2,\n  400:     chi_2_fstar=chi_2_fstar,\n  401:     Omega_r=Omega_r,"
+    },
+    {
+      "anchor_id": "prov_1506",
+      "anchor_type": "data_provenance",
+      "name": "equil_tau",
+      "script_path": "session-77/s77_equil_tau.py",
+      "session": "s77",
+      "inputs": "s73b_efold_mapping.npz, s73a_spectral_action_profile.npz, s76_modulus_sm_decay_rate.npz, s61_heat_kernel_a4.npz",
+      "outputs": "session-77/s77_equil_tau.npz, session-77/s77_equil_tau.png",
+      "source_file": "computations/session-77/s77_equil_tau.py",
+      "source_context_30_lines": "   45:   CHK2: Damping consistent with 3H/2 Hubble friction\n   46:   CHK3: tau_equil in [0.0, 0.5]\n   47:   CHK4: Energy conservation during transit\n   48:   CHK5: If tau_equil = tau_fold, all shifts vanish\n   49: \n   50: Input: s73b_efold_mapping.npz, s73a_spectral_action_profile.npz,\n   51:        s76_modulus_sm_decay_rate.npz, s76_post_fold_h_tau.npz,\n   52:        s61_heat_kernel_a4.npz, canonical_constants.py\n   53: Output: s77_equil_tau.npz, s77_equil_tau.png\n   54: \"\"\"\n   55: \n   56: import numpy as np\n   57: import sys\n   58: import os\n   59: import time\n   60: import matplotlib\n   61: matplotlib.use('Agg')"
+    },
+    {
+      "anchor_id": "prov_1507",
+      "anchor_type": "data_provenance",
+      "name": "equil_tau_bcs",
+      "script_path": "session-77/s77_equil_tau_bcs.py",
+      "session": "s77",
+      "inputs": "s73b_efold_mapping.npz, s73a_spectral_action_profile.npz, s77_equil_tau.npz",
+      "outputs": "session-77/s77_equil_tau_bcs.npz, session-77/s77_equil_tau_bcs.png",
+      "source_file": "computations/session-77/s77_equil_tau_bcs.py",
+      "source_context_30_lines": "   32: Cross-checks:\n   33:   CHK1: V_bare is monotonically increasing (MUST reproduce -- known)\n   34:   CHK2: E_cond(tau_fold) < 0 (condensation lowers energy)\n   35:   CHK3: E_cond(tau) -> 0 for |tau - tau_fold| >> Delta/slope\n   36:   CHK4: V_eff(tau_fold) < V_bare(tau_fold) (BCS dressing lowers energy)\n   37: \n   38: Input: s73b_efold_mapping.npz, s73a_spectral_action_profile.npz,\n   39:        canonical_constants.py\n   40: Output: s77_equil_tau_bcs.npz, s77_equil_tau_bcs.png\n   41: \"\"\"\n   42: \n   43: import numpy as np\n   44: import sys\n   45: import os\n   46: import time\n   47: import matplotlib\n   48: matplotlib.use('Agg')"
+    },
+    {
+      "anchor_id": "prov_1508",
+      "anchor_type": "data_provenance",
+      "name": "f_conv_fstar",
+      "script_path": "session-77/s77_f_conv_fstar.py",
+      "session": "s77",
+      "inputs": "",
+      "outputs": "session-77/s77_f_conv_fstar.npz, session-77/s77_f_conv_fstar.png",
+      "source_file": "computations/session-77/s77_f_conv_fstar.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s77_f_conv_fstar.py -- F-CONV-F-STAR: f_conv Under f*-Weighted M_1 Channel\n    4: ============================================================================\n    5: \n    6: Gate: S77-B3-FCONV-FSTAR\n    7:   PASS: f_conv(f*)/f_conv(SDW) in [1.2, 2.0]\n    8:   FAIL: f_conv(f*) < f_conv(SDW) (gap worsens)\n    9:   INFO: ratio > 2.0 (overcloses, needs recalibration)\n   10: \n   11: Physics (substrate framing):"
+    },
+    {
+      "anchor_id": "prov_1509",
+      "anchor_type": "data_provenance",
+      "name": "friction_integral",
+      "script_path": "session-77/s77_friction_integral.py",
+      "session": "s77",
+      "inputs": "s73b_efold_mapping.npz",
+      "outputs": "session-77/s77_friction_integral.npz",
+      "source_file": "computations/session-77/s77_friction_integral.py",
+      "source_context_30_lines": "   43: to create a minimum. Consequently, the ODE trajectory shows\n   44: ZERO oscillations: tau rolls monotonically after the fold.\n   45: \n   46: This computation characterizes the damping of whatever trajectory\n   47: the ODE produces -- if there were oscillations, how fast would\n   48: friction kill them? And does friction or modulus decay dominate?\n   49: \n   50: Input: s73b_efold_mapping.npz, canonical_constants.py\n   51: Output: s77_friction_integral.npz\n   52: \"\"\"\n   53: \n   54: import numpy as np\n   55: import sys\n   56: import os\n   57: import time\n   58: \n   59: sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))"
+    },
+    {
+      "anchor_id": "prov_1510",
+      "anchor_type": "data_provenance",
+      "name": "gge_occupation_correction",
+      "script_path": "session-77/s77_gge_occupation_correction.py",
+      "session": "s77",
+      "inputs": "",
+      "outputs": "session-77/s77_gge_occupation_correction.npz, session-77/s77_gge_occupation_correction.png",
+      "source_file": "computations/session-77/s77_gge_occupation_correction.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s77_gge_occupation_correction.py -- GGE Occupation Correction to CC Spectral Weight\n    4: =====================================================================================\n    5: \n    6: Gate: S77-C7-GGE-OCC\n    7:   PASS: delta_chi_2 in [-0.10, -0.07] (GGE correction brings chi_2 from 0.741\n    8:         to ~0.685 = Omega_Lambda, resolving the 8.2% overshoot).\n    9:   FAIL: |delta_chi_2| < 0.01 (GGE correction negligible, overshoot unresolved).\n   10:   INFO: delta_chi_2 wrong sign or too large (GGE makes it worse or overcompensates).\n   11: "
+    }
+  ]
+}

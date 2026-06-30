@@ -1,0 +1,212 @@
+==============================================================================
+  GL-STABILITY-63: Gregory-Laflamme Fiber Stability on SU(3)
+==============================================================================
+
+Parameters:
+  tau_freeze    = 0.22
+  tau_fold      = 0.19
+  Delta_BCS     = 0.37 M_KK
+  dim(SU(3))    = 8
+
+==============================================================================
+  STEP 1: Metric and Curvature at tau_freeze = 0.22
+==============================================================================
+
+  Killing form diagonal: [3. 3. 3. 3. 3. 3. 3. 3.]
+  Off-diagonal max: 0.00e+00
+
+  Jensen scale factors at tau = 0.22:
+    L1 (U(1))  = 1.552707
+    L2 (SU(2)) = 0.644036
+    L3 (C^2)   = 1.246077
+    Volume check L1 * L2^3 * L3^4 = 1.0000000000
+
+  Metric compatibility error: 0.00e+00
+
+==============================================================================
+  STEP 2: Riemann and Ricci Tensors
+==============================================================================
+
+  Ricci tensor (diagonal):
+    Ric[0,0] = -0.29334978
+    Ric[1,1] = -0.29334978
+    Ric[2,2] = -0.29334978
+    Ric[3,3] = -0.22441154
+    Ric[4,4] = -0.22441154
+    Ric[5,5] = -0.22441154
+    Ric[6,6] = -0.22441154
+    Ric[7,7] = -0.25000000
+
+  Ricci tensor off-diagonal max: 0.00e+00
+  Ricci scalar R = -2.02769548
+  Ricci symmetry error: 0.00e+00
+
+==============================================================================
+  STEP 3: Lichnerowicz Operator on Left-Invariant TT Tensors
+==============================================================================
+
+  Symmetric 2-tensor space dimension: 36
+
+  Building Lichnerowicz operator on 36D symmetric 2-tensor space...
+  Lichnerowicz symmetry error (before symmetrization): 0.00e+00
+
+==============================================================================
+  STEP 4: Projection to Transverse-Traceless Subspace
+==============================================================================
+
+  Constraint matrix shape: (9, 36)
+  Constraint singular values:
+    sigma_0 = 2.82842712
+    sigma_1 = 0.31680095
+    sigma_2 = 0.31680095
+    sigma_3 = 0.31680095
+    sigma_4 = 0.31680095
+    sigma_5 = 0.00000000
+    sigma_6 = 0.00000000
+    sigma_7 = 0.00000000
+    sigma_8 = 0.00000000
+
+  Independent constraints: 5
+  TT subspace dimension:  31
+  TT projector shape: (31, 36)
+  Constraint verification ||C @ P_TT^T||_max = 1.11e-16
+
+==============================================================================
+  STEP 5: Lichnerowicz Eigenvalues on TT Subspace
+==============================================================================
+
+  L_TT symmetry error: 1.39e-17
+
+  Lichnerowicz eigenvalues on TT subspace (m^2 in M_KK^2 units):
+  Mode      m^2 (Lich)   m^2 + Delta^2    Status
+  ----  --------------  --------------  --------
+     0     -0.00000000      0.13690000      ZERO
+     1     -0.00000000      0.13690000      ZERO
+     2     -0.00000000      0.13690000      ZERO
+     3     -0.00000000      0.13690000      ZERO
+     4     -0.00000000      0.13690000      ZERO
+     5      0.00000000      0.13690000      ZERO
+     6      0.00000000      0.13690000      ZERO
+     7      0.00000000      0.13690000      ZERO
+     8      0.00000000      0.13690000      ZERO
+     9      0.00000000      0.13690000      ZERO
+    10      0.08862607      0.22552607       POS
+    11      0.08862607      0.22552607       POS
+    12      0.08862607      0.22552607       POS
+    13      0.08862607      0.22552607       POS
+    14      0.16077160      0.29767160       POS
+    15      0.16077160      0.29767160       POS
+    16      0.16077160      0.29767160       POS
+    17      0.16077160      0.29767160       POS
+    18      0.16077160      0.29767160       POS
+    19      0.16077160      0.29767160       POS
+    20      0.16077160      0.29767160       POS
+    21      0.16077160      0.29767160       POS
+    22      0.24163502      0.37853502       POS
+    23      0.24163502      0.37853502       POS
+    24      0.24163502      0.37853502       POS
+    25      0.28063385      0.41753385       POS
+    26      0.28063385      0.41753385       POS
+    27      0.28063385      0.41753385       POS
+    28      0.28063385      0.41753385       POS
+    29      0.28063385      0.41753385       POS
+    30      0.28063385      0.41753385       POS
+
+  Summary:
+    Total TT modes:     31
+    Positive m^2:       21
+    Zero m^2:           10
+    Negative m^2:       0
+    Minimum m^2 (Lich): -0.00000000
+    Maximum m^2 (Lich): 0.28063385
+
+  With BCS gap Delta = 0.37:
+    Delta^2 = 0.13690000
+    Minimum m^2_eff:    0.13690000
+    Negative m^2_eff:   0
+
+==============================================================================
+  STEP 6: Cross-Checks
+==============================================================================
+
+  Cross-check 1: Full 36D Lichnerowicz spectrum
+    Min eigenvalue: -0.02045467
+    Max eigenvalue: 0.28063385
+    # negative:     4
+
+  Cross-check 2: Rough Laplacian spectrum (should be >= 0)
+    Min eigenvalue: -0.00000000
+    Max eigenvalue: 0.84548409
+    # negative:     0
+
+  Cross-check 3: Round SU(3) (tau = 0) Lichnerowicz spectrum
+    TT dimension (round): 35
+    R_scalar (round):     -2.00000000
+    Min Lich eig (round): -0.00000000
+    Max Lich eig (round): 0.00000000
+    # negative (round):   0
+
+  Cross-check 4: tau sweep of minimum Lichnerowicz eigenvalue
+    tau = 0.000: n_TT = 35, min(m^2) = -0.000000
+    tau = 0.050: n_TT = 31, min(m^2) = -0.000000
+    tau = 0.100: n_TT = 31, min(m^2) = -0.000000
+    tau = 0.150: n_TT = 31, min(m^2) = -0.000000
+    tau = 0.200: n_TT = 31, min(m^2) = -0.000000
+    tau = 0.250: n_TT = 31, min(m^2) = -0.000000
+    tau = 0.300: n_TT = 31, min(m^2) = -0.000000
+    tau = 0.350: n_TT = 31, min(m^2) = -0.000000
+    tau = 0.400: n_TT = 31, min(m^2) = -0.000000
+    tau = 0.450: n_TT = 31, min(m^2) = +0.000000
+    tau = 0.500: n_TT = 31, min(m^2) = -0.000000
+
+  Cross-check 5: GL scale estimates
+    R_scalar(tau=0.22) = -2.027695
+    R_curvature = sqrt(n(n-1)/R) = 5.255241 M_KK^{-1}
+    lambda_GL ~ 2*pi*R_curv = 33.019654 M_KK^{-1}
+    m_GL ~ 1/R_curv = 0.190286 M_KK
+    Delta_BCS / m_GL = 1.944439
+
+==============================================================================
+  STEP 7: Gate Verdict
+==============================================================================
+
+  GL-STABILITY-63: PASS
+  Reason: ALL 31 TT Lichnerowicz eigenvalues > 0 (min = -0.000000 M_KK^2)
+
+  BCS gap provides additional margin:
+    min(m^2_Lich) = -0.00000000
+    Delta^2       = 0.13690000
+    min(m^2_eff)  = 0.13690000
+    Stability margin = min(m^2_eff) / Delta^2 = 1.0000
+
+==============================================================================
+  STEP 8: Save Data
+==============================================================================
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s63_gl_stability.npz
+
+  Generating plot...
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s63_gl_stability.png
+
+==============================================================================
+  FINAL SUMMARY
+==============================================================================
+
+  Gate: GL-STABILITY-63
+  Verdict: PASS
+  Criterion: all m^2 > 0 on TT subspace
+
+  Key numbers:
+    tau_freeze        = 0.22
+    TT dimension      = 31
+    min(m^2_Lich)     = -0.00000000 M_KK^2
+    max(m^2_Lich)     = 0.28063385 M_KK^2
+    Delta_BCS^2       = 0.13690000 M_KK^2
+    min(m^2_eff)      = 0.13690000 M_KK^2
+    R_scalar          = -2.02769548
+    R_curvature       = 5.255241 M_KK^-1
+    lambda_GL         = 33.019654 M_KK^-1
+    n_neg (bare)      = 0
+    n_neg (effective) = 0
+
+  Elapsed: 0.7 s
+==============================================================================

@@ -1,0 +1,107 @@
+{
+  "table": "gates",
+  "batch_id": 5,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "gate_GSL-40",
+      "anchor_type": "gates",
+      "name": "GSL-40",
+      "session": "40",
+      "condition": "CONSISTENCY",
+      "verdict": "0 neg steps, dS=+2.575 bits, v_min=0",
+      "source_file": "sessions\\archive\\session-40\\session-40-results-workingpaper.md",
+      "source_context_30_lines": "   98: \n   99: **Assessment:** The acoustic Hawking temperature at the B2 fold is a geometric invariant of the internal-space dispersion, computed without free parameters. Its agreement with T_Gibbs = 0.113 M_KK to within a factor of 1.4 (Rindler) or 0.7% (acoustic metric) establishes a quantitative link between analog gravity and the BCS thermodynamics of the internal space. The T_acoustic/Delta_pair = 0.34 ratio falling within the nuclear backbending range (0.3-0.5) supports the E5 universality interpretation: the B2 fold is a van Hove-driven pair-breaking transition of exactly the type seen in rare-earth backbending.\n  100: \n  101: **Data files:**\n  102: - Script: `computations/s40_acoustic_temperature.py`\n  103: - Data: `computations/s40_acoustic_temperature.npz`\n  104: - Plot: `computations/s40_acoustic_temperature.png`\n  105: \n  106: ### W1-3: GSL Through Transit (GSL-40)\n  107: \n  108: **Gate Verdict: PASS (MONOTONICALLY NON-DECREASING)**\n  109: \n  110: The three-term generalized second law S_total = S_particles + S_condensate + S_spectral is monotonically non-decreasing through the entire transit (tau: 0.10 -> 0.30). Zero negative steps out of 499, strictly stronger than the pre-registered criterion of < 3 consecutive. All three terms are individually non-decreasing.\n  111: \n  112: **Key Numbers:**\n  113: \n  114: | Quantity | Value | Unit |"
+    },
+    {
+      "anchor_id": "gate_CC-TRANSIT-40",
+      "anchor_type": "gates",
+      "name": "CC-TRANSIT-40",
+      "session": "40",
+      "condition": "CONSISTENCY",
+      "verdict": "dL/S_fold=2.85e-6, dL_GGE=0.714 M_KK^4",
+      "source_file": "sessions\\archive\\session-40\\session-40-results-workingpaper.md",
+      "source_context_30_lines": "  135: **Entropy decomposition:**\n  136: \n  137: - **S_condensate dominates** (77% of total increase): The BCS coherence factor entropy -2 sum_k [v_k^2 ln v_k^2 + u_k^2 ln u_k^2] increases as the instantaneous BCS state evolves from tau=0.1 (moderate pairing, n_k ~ 0.09-0.20) toward tau=0.3 (strong B1 mixing, n_k -> 0.23). This is the entropy of the instantaneous ground state itself, not of excitations.\n  138: - **S_particles** (22%): Quasiparticle creation entropy from Bogoliubov overlap. Starts at zero, grows quadratically near tau_init, reaches 0.565 bits at transit end.\n  139: - **S_spectral** (1%): Spectral weight entropy from eigenvalue redistribution. Small but positive throughout.\n  140: \n  141: **v_min = 0 (structural result):** All three entropy terms are individually non-decreasing through the transit. This means the GSL holds for ANY transit speed v > 0, not just for v_terminal = 26.545. The monotonicity is a structural property of the BCS ground state manifold along the tau trajectory, not a speed-dependent dynamical effect. Physically: faster transit creates MORE quasiparticles (stronger non-adiabaticity), so if the GSL holds at the sudden limit it holds a fortiori at all finite speeds.\n  142: \n  143: **S_particles vs S_GGE gap:** The Bogoliubov S_particles at transit end (0.565 bits) is far below S_GGE (3.542 bits). This is not a deficiency -- the two quantities measure different things. S_particles counts excitations ABOVE the instantaneous BCS ground state; S\n... [truncated]"
+    },
+    {
+      "anchor_id": "gate_NOHAIR-40",
+      "anchor_type": "gates",
+      "name": "NOHAIR-40",
+      "session": "40",
+      "condition": "INFO",
+      "verdict": "T var 64.6% [10,100], S var 18.1%",
+      "source_file": "sessions\\archive\\session-40\\session-40-results-workingpaper.md",
+      "source_context_30_lines": "  212: 5. Fermi-Dirac with single-particle masses at T_Gibbs: f_FD ~ 5.5e-4 (Boltzmann-suppressed, m/T ~ 7.5), giving delta_Lambda_FD = 0.0025 M_KK^4 -- 280x smaller than actual occupations, confirming the pair creation is far from thermal equilibrium\n  213: \n  214: **Assessment:** The CC shift through transit is perturbative by 5.5 orders of magnitude below the spectral action scale. This is not a marginal pass -- it is structurally guaranteed because the 8-mode BCS system has O(1) occupation numbers and O(1) masses, while S_full sums over ~250,000 eigenvalues across all 10 (p,q) sectors. The pair creation shifts the CC by approximately 1 part in 10^5 of the vacuum spectral action. The transit dynamics and the cosmological constant problem are decoupled: whatever mechanism (or absence thereof) addresses the CC, the transit pair creation does not interfere.\n  215: \n  216: **Data files:**\n  217: - Script: `computations/s40_cc_transit.py`\n  218: - Data: `computations/s40_cc_transit.npz`\n  219: \n  220: ### W1-5: No-Hair Sensitivity (NOHAIR-40)\n  221: \n  222: **Gate:** NOHAIR-40\n  223: **Verdict: FAIL (SENSITIVE)** -- T varies by 64.6% > 50% in [10, 100]. Gap hierarchy creates mode-dependent LZ thresholds. S varies by 18.1%.\n  224: \n  225: **Method:** Landau-Zener excitation probability P_exc(k; v) = exp(-pi Delta_k^2 / (2 |dE_k/dtau| v_transit)) for each of 8 BCS modes. Pair occupation p_k(v) = v_k^2 P_exc(k) / Z(v). Total energy E_dep(v) = sum_k p_k(v) E_k where E_k = 2 xi_k (p\n... [truncated]"
+    },
+    {
+      "anchor_id": "gate_QRPA-40",
+      "anchor_type": "gates",
+      "name": "QRPA-40",
+      "session": "40",
+      "condition": "DECISIVE",
+      "verdict": "min(w^2)=2.665, V_rem^odd=0, alpha_crit=3.1x",
+      "source_file": "sessions\\archive\\session-40\\session-40-results-workingpaper.md",
+      "source_context_30_lines": "  254: - Plot: `computations/s40_nohair_sensitivity.png`\n  255: \n  256: **Assessment:** The compound nucleus analogy is structurally limited by the 3-decade gap hierarchy. The physical transit speed v = 26.5 sits right at the B1 threshold (v_crit = 14.9), making T sensitive to the precise LZ excitation fraction. The B2 modes never participate at the physical speed. The no-hair property holds for S (18% variation) but fails for T (65% variation). This is a STRUCTURAL constraint on the compound nucleus interpretation: the thermal endpoint depends on which modes the transit excites, and the answer depends on v_transit through the mode-dependent LZ formula.\n  257: \n  258: ---\n  259: \n  260: ## Wave 2: Low-Cost Structure\n  261: \n  262: ### W2-1: QRPA Collective Modes (QRPA-40)\n  263: \n  264: **Gate: QRPA-40 -- FAIL (STABLE)**\n  265: \n  266: **Pre-registered criterion:**\n  267: - PASS (INSTABILITY): Any eigenvalue omega_n^2 < 0\n  268: - FAIL (STABLE): All omega_n^2 > 0\n  269: \n  270: **Decisive numbers:**"
+    },
+    {
+      "anchor_id": "gate_PAGE-40",
+      "anchor_type": "gates",
+      "name": "PAGE-40",
+      "session": "40",
+      "condition": "INFO",
+      "verdict": "S_max=0.422 nats (18.5% Page), PR=3.17",
+      "source_file": "sessions\\archive\\session-40\\session-40-results-workingpaper.md",
+      "source_context_30_lines": "  322: - Script: `computations/s40_qrpa_modes.py`\n  323: - Data: `computations/s40_qrpa_modes.npz`\n  324: - Plot: `computations/s40_qrpa_modes.png`\n  325: \n  326: **Assessment:**\n  327: \n  328: The BCS ground state is locally stable against all collective excitations of the 13% non-separable residual interaction V_rem. Both Hawking and Nazarewicz correctly predicted FAIL (STABLE). The time-odd component of V_rem is identically zero -- the Kosmann pairing interaction is manifestly time-reversal invariant, so there is no mechanism for spontaneous T-breaking through the residual channel. The stability margin (3.1x) is substantial but not enormous: the fold is the softest point in the transit, and a 3x amplification of V_rem (e.g., from higher-order corrections to the Kosmann lift) could in principle trigger instability. The QRPA also reveals the internal mode structure: nearly all pair transfer strength (97.5%) is concentrated in a single B2-dominated collective state at omega = 3.245, while the lowest mode is a B1-dominated excitation at 1.632. The GPV frequency (0.792) sits well below the 2QP threshold, confirming it is a bound pair vibration and not a QRPA resonance. This closes the last route to a qualitatively new condensate phase via the residual interaction identified by Nazarewicz in S39.\n  329: \n  330: ### W2-2: Internal Page Curve (PAGE-40)\n  331: \n  332: **Gate PAGE-40: FAIL** -- S_ent(B2|rest) max = 0.422 nats (18.5% of S_Page). B2 does not thermalize.\n  333: \n  334:\n... [truncated]"
+    },
+    {
+      "anchor_id": "gate_B2-DECAY-40",
+      "anchor_type": "gates",
+      "name": "B2-DECAY-40",
+      "session": "40",
+      "condition": "DIAGNOSTIC",
+      "verdict": "t_decay=0.922, shift=4.2%, N_B2_diag=0.891",
+      "source_file": "sessions\\archive\\session-40\\session-40-results-workingpaper.md",
+      "source_context_30_lines": "  381: - Script: `computations/s40_internal_page_curve.py`\n  382: - Data: `computations/s40_internal_page_curve.npz`\n  383: - Plot: `computations/s40_internal_page_curve.png`\n  384: \n  385: **Assessment:**\n  386: \n  387: The BCS ground state at the fold does NOT thermalize under the post-transit Hamiltonian. The sudden quench from tau_fold=0.190 to tau=0.20 creates a state with participation ratio PR=3.17 -- only 3 low-lying energy eigenstates carry 93% of the weight. The dynamics is coherent Rabi-like oscillation among these states, producing quasi-periodic entanglement entropy that oscillates between 0 and 0.6 bits, far below the Page value of 3.28 bits. Survival probability shows definitive Poincare recurrences (P=0.94 at t=47.5), not exponential Fermi Golden Rule decay. This resolves Divergence 2 from the master synthesis: post-transit dynamics is dominated by coherent oscillations, not thermalization. The FGR timescale t_therm~6 from S39 is irrelevant because the initial state violates FGR assumptions (concentrated on 3 states, not spread over a quasi-continuum). The GGE prediction of a permanent non-thermal relic is confirmed from the dynamical side -- the system never thermalizes at any timescale up to 33 * t_therm.\n  388: \n  389: ### W2-3: B2 Decay-Out Time-Dependent ED (B2-DECAY-40)\n  390: \n  391: **Gate: B2-DECAY-40 -- B2-FIRST**\n  392: \n  393: **Pre-registered criterion:**\n  394: - B2-FIRST: t_decay(B2) < 1 (B2 thermalizes faster than full system, Nazarewicz predic\n... [truncated]"
+    },
+    {
+      "anchor_id": "gate_HESS-40",
+      "anchor_type": "gates",
+      "name": "HESS-40",
+      "session": "40",
+      "condition": "FRAMEWORK-DECISIVE",
+      "verdict": "min(H)=+1571.8, 22/22 positive, margin=1.57e7",
+      "source_file": "sessions\\archive\\session-40\\session-40-results-workingpaper.md",
+      "source_context_30_lines": "  462: **Assessment:**\n  463: \n  464: The B2 doorway state dephases on a timescale t_decay = 0.92, inside the B2-FIRST window (t < 1). This confirms Nazarewicz's physical intuition that B2 loses coherent information faster than the full system thermalizes (t_therm ~ 6). However, the mechanism is NOT Fermi Golden Rule decay (Nazarewicz's Gamma_B2 = 7.5 overestimates by 7x). Instead, B2 undergoes oscillatory dephasing: the GGE mode-basis coherences wash out as the 8 eigenstates of H_1 precess at incommensurate frequencies. The B2 content shifts from 93.0% (GGE) to 89.1% (diagonal ensemble) -- a mere 4.2% redistribution. The Schwarzschild-Penrose \"spectral horizon\" interpretation is partially correct: 89% of B2 information IS permanently retained in the diagonal ensemble, but the remaining 4% leaks out on the t ~ 1 dephasing timescale. The resolution of the S39 divergence is: BOTH camps are partly right. B2 dephases FIRST (Nazarewicz) but RETAINS 96% of its content (Schwarzschild-Penrose). The dephasing is structural (eigenstate composition of H_1) and the retention is structural (B2 content concentrated in 5 of 8 eigenstates carrying 91% of weight). Neither FGR nor horizon protection captures the full picture; the correct framework is diagonal-ensemble dephasing in a finite integrable system.\n  465: \n  466: ---\n  467: \n  468: ## Wave 3: Decisive Structure\n  469: \n  470: ### W3-1: Off-Jensen Hessian (HESS-40)\n  471: \n  472: **Gate:** HESS-40 (FRAMEWORK-DECISIVE)\n  473: **Verdict\n... [truncated]"
+    },
+    {
+      "anchor_id": "gate_M-COLL-40",
+      "anchor_type": "gates",
+      "name": "M-COLL-40",
+      "session": "40",
+      "condition": "STRUCTURAL",
+      "verdict": "M_ATDHFB=1.695, sigma_ZP=0.026, 0.34x G_mod",
+      "source_file": "sessions\\archive\\session-40\\session-40-results-workingpaper.md",
+      "source_context_30_lines": "  524: **Data files:**\n  525: - Script: `computations/s40_hessian_offjensen.py`\n  526: - Data: `computations/s40_hessian_offjensen.npz`\n  527: - Plot: `computations/s40_hessian_offjensen.png`\n  528: \n  529: **Assessment:**\n  530: HESS-40 returns FAIL with overwhelming margin. The Jensen trajectory is a robust local minimum of S_full in all 22 tested transverse directions, with the smallest Hessian eigenvalue still 1.6 x 10^7 times above the noise threshold. No tachyonic direction exists within the diagonal or off-diagonal metric deformation space. The spectral action cannot stabilize the modulus by any mechanism — not along Jensen (monotonic by theorem), not transverse to Jensen (local minimum by HESS-40). The compound-nucleus dissolution during transit, producing a permanent non-thermal GGE relic, remains the unique physical interpretation.\n  531: \n  532: ### W3-2: ATDHFB Collective Inertia (M-COLL-40)\n  533: \n  534: **Gate: M-COLL-40 -- FAIL (CLASSICAL REGIME)**\n  535: \n  536: **Pre-registered criterion:**\n  537: - PASS (QUANTUM DELOCALIZATION): sigma_ZP > delta_tau_BCS = 0.09\n  538: - FAIL (CLASSICAL REGIME): sigma_ZP < 0.05\n  539: - INFO: Report M_ATDHFB(tau) profile, sigma_ZP, and g_FS vs M_ATDHFB peak comparison\n  540: "
+    },
+    {
+      "anchor_id": "gate_SELF-CONSIST-40",
+      "anchor_type": "gates",
+      "name": "SELF-CONSIST-40",
+      "session": "40",
+      "condition": "INFO",
+      "verdict": "dwell_SC=6.08e-4 (0.58x UC), v_fold=151.6 (1.72x UC), Q=1.25e-3",
+      "source_file": "sessions\\archive\\session-40\\session-40-results-workingpaper.md",
+      "source_context_30_lines": "  600: **Assessment:**\n  601: \n  602: The ATDHFB cranking mass at the fold is O(1), not O(250-850). The Naz-Hawking workshop's central prediction (E-FINAL: sigma_ZP > delta_tau_BCS, establishing quantum delocalization) is refuted. The physical reason is structural: the SU(3) van Hove singularity at the fold is a velocity zero with a LARGE BCS gap (Delta_B2/eps_B2 = 2.44), not a gap closure. This is the opposite of nuclear backbending, where the cranking mass diverges because E_qp -> 0 at the level crossing. In the SU(3) internal space, the gap protects the quasiparticle spectrum from near-degeneracy, and the vanishing B2 velocity eliminates the dominant diagonal cranking contribution. The transit remains in the CLASSICAL regime: the collective zero-point fluctuation (sigma_ZP = 0.026) is 3.5x smaller than the BCS window width (delta_tau_BCS = 0.09), meaning the tau coordinate is well-localized relative to the pairing region. The B1 branch controls 71% of the cranking mass through its gap derivative, not B2. This inversion of the expected hierarchy (B2 was predicted to dominate) is a direct consequence of the van Hove kinematics.\n  603: \n  604: ---\n  605: \n  606: ## Wave 4: Conditional Interpretation\n  607: \n  608: ### W4-1: Self-Consistent Modulus ODE (SELF-CONSIST-40)\n  609: \n  610: **Gate: SELF-CONSIST-40 -- FAIL (ACCELERATES)**\n  611: \n  612: **Pre-registered criterion:**\n  613: - PASS (RELEVANT CORRECTION): Dwell time increases by > 10x from FRIED-39 value\n  614: - FAIL (\n... [truncated]"
+    },
+    {
+      "anchor_id": "gate_Z-FABRIC-42",
+      "anchor_type": "gates",
+      "name": "Z-FABRIC-42",
+      "session": "42",
+      "condition": "Structural",
+      "verdict": "PASS",
+      "source_file": "sessions\\archive\\session-42\\session-42-results-workingpaper.md",
+      "source_context_30_lines": "    1: # Session 42 Results: LCDM Clarification through F-exflation\n    2: \n    3: **Date**: 2026-03-13\n    4: **Format**: Parallel single-agent computations, 5 waves (4 core + 1 marathon)\n    5: **Master gate**: Z-FABRIC-42 (gradient stiffness Z(tau) at the fold)\n    6: \n    7: ---\n    8: \n    9: ## W1-1: Gradient Stiffness Z(tau)\n   10: \n   11: **Agent**: gen-physicist | **Gate**: Z-FABRIC-42\n   12: **Status**: PASS\n   13: "
+    }
+  ]
+}

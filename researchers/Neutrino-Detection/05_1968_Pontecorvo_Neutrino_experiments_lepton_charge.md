@@ -422,7 +422,7 @@ $$\Delta m^2_{31} = 2.5 \times 10^{-3} \text{ eV}^2 \quad \longrightarrow \quad 
 The ratio $\Delta m^2_{31} / \Delta m^2_{21} \approx 33$ must emerge from the
 eigenvalue structure of $D_K(s)$ at the stabilized value $s_0$. This is a
 non-trivial constraint: the Dirac spectrum must produce a hierarchy of ~33 in
-the lowest eigenvalue spacings. In Tier 1 computations (Session 12), the
+the lowest eigenvalue spacings. In Level 1 computations (Session 12), the
 eigenvalue ratios show rich structure as a function of $s$, and the existence
 of such hierarchies at specific $s$ values is testable.
 

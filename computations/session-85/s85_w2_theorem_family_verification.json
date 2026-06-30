@@ -1,0 +1,85 @@
+{
+  "gate_id": "S85-W2-CROSS-SESSION-THEOREM-FAMILY",
+  "verdict": "PASS",
+  "value_4tuple": {
+    "value": 3,
+    "scheme": "theorem-family-unification",
+    "convention": "registry-\u00a7VII-unified",
+    "L_max": "N/A"
+  },
+  "unified_theorem_statement": "UNIFIED THEOREM (Cross-Session Family, S85-W2-2):\n\n  Let (A, H, D) be a spectral triple satisfying the 5-axiom subset\n  {dimension, regularity, finiteness, reality, first-order} of CCM-2007,\n  with finite fiber sector carried by an algebra/group structure G\n  (compact simply-laced Lie, direct-sum finite-dim, or product with\n  spacetime).  Let:\n\n    k      = cohomology layer of observation (HP^k or HP^even),\n    R      = admissible regulator class (single-regulator, multi-regulator\n             family, or full taxonomy),\n    r_crit = rank or dim-summability threshold on G.\n\n  Then HP^k-structural-triviality of the G-fiber sector (manifested as\n  HC^k-primary vanishing, HP^k completeness taxonomy, or HP^k multi-layer\n  stratification) forces every R-regulated observable at rank/dim r(G) >= r_crit\n  to inherit the corresponding structural constraint.\n\n  Instantiations form a family keyed by (k, R, G, r_crit).",
+  "instantiations": [
+    {
+      "section": "\u00a7VII.J",
+      "title": "Cartan Level-2 Exclusion",
+      "session": "S83 W3-G62",
+      "k": 2,
+      "R_class": "a_2 (Seeley-DeWitt second moment; U(1) r-protection)",
+      "G_fiber": "Simply-laced compact Lie (A_n, D_n, E_6-8)",
+      "r_crit": 2,
+      "structural_content": "HC^2_primary(C) = 0 for C = abelian Cartan subfactor",
+      "consequence": "drift_u1 ~ noise floor by Weyl-equivalence; non-simply-laced (G_2, F_4) falsified at r=2",
+      "verified": true
+    },
+    {
+      "section": "\u00a7VII.K",
+      "title": "HP^even Completeness (4-bucket taxonomy)",
+      "session": "S83 W3-G54",
+      "k": "even",
+      "R_class": "ALL (framework-wide 4-bucket classifier: P/CM/M/GV)",
+      "G_fiber": "A_F = C + H + M_3(C) (finite algebra)",
+      "r_crit": "N/A (taxonomy, not rank-based)",
+      "structural_content": "HP^even classifies 53/53 rows: P=35, CM=7, M=10, GV=1",
+      "consequence": "Every framework observable is assigned one of 4 bucket labels; GV excluded from admissibility per CE6",
+      "verified": true
+    },
+    {
+      "section": "\u00a7VII.N",
+      "title": "Three-Layer Regulator Theorem",
+      "session": "S84 W2a-11",
+      "k": 0,
+      "R_class": "5-regulator family {zeta, Zubarev, SDW, dim-reg, lattice-BR}",
+      "G_fiber": "C^inf(M^4) (x) A_F = (x)^F \u2297 spacetime",
+      "r_crit": "dim-summability d >= 6",
+      "structural_content": "L1 zeta (axiomatic global) / L2 Zubarev (substrate-action at tau_fold) / L3 per-Q span (residual)",
+      "consequence": "Regulator uniqueness in 2/3 layers; 3rd layer is residual; CC-5 propagation applies ONLY at L3",
+      "verified": true,
+      "note": "Plan references \u00a7VII.M, but actual registry slot is \u00a7VII.N (per S84 W2a-11 landing memo collision note; \u00a7VII.M occupied by DR3-RESPONSE-PROTOCOL)"
+    }
+  ],
+  "predicted_instantiations": [
+    {
+      "section": "\u00a7VII.P-prime (predicted)",
+      "title": "HP^3 Rank-2 Extension (conjectured)",
+      "k": 3,
+      "R_class": "a_4 (Seeley-DeWitt fourth moment; higher-degree co-chain)",
+      "G_fiber": "Spin(8)-extended SU(3) (embedding via rank-2 lift)",
+      "r_crit": 2,
+      "structural_content": "HP^3(A_F^{Spin8}) \u2229 a_4-regulated observable class -> ?",
+      "consequence": "Would extend \u00a7VII.J's rank-2 protection from HC^2 to HP^3, providing falsification handle for the family at k=3",
+      "verified": false,
+      "testing_slot": "S84 W2a-12 (LAYER-ORDERING-FALSIFIER) references HP^4 / Spin(8)-SU(3) / T^4 / T^8 tests; HP^3 extension is a natural sibling"
+    },
+    {
+      "section": "\u00a7VII.K-DUAL-q (predicted)",
+      "title": "HP^even 4-bucket taxonomy under q-deformation",
+      "k": "even",
+      "R_class": "ALL (4-bucket classifier at generic q)",
+      "G_fiber": "A_F^q = U_q(A_F) deformation at generic q",
+      "r_crit": "N/A",
+      "structural_content": "4-bucket partition survives q-deformation; verified for Cartan sub-factor in S83 W2-G20",
+      "consequence": "Extends \u00a7VII.K to quantum substrates; tested explicitly in S85-W2-QUANTUM-DISJOINT-CORRIDOR (W2-6)",
+      "verified": false
+    }
+  ],
+  "family_member_count": 3,
+  "num_new_predictions": 2,
+  "closure_sha256": "8a8ca54fff237ddd03c11b5e3fa571898d6fce94f8a2b0a6cd75bd9c4652e869",
+  "content_sha256": "1cd688793a8548ef8ef3eb8ab78a49126be91272708a789c917cacca2822669f",
+  "input_shas": {
+    "sessions/permanent-results-registry.md": "19b5efd944a007a57b9837d5dbec90b4bcc89897d7af2a3965911447c25a097d",
+    ".claude/agent-memory/connes-ncg-theorist/s83-w3-g62-vii-j-landing.md": "bec57bbfa1a5f4df77581421dd7935729e4f15a491ec2e64243d947748c10b2f",
+    ".claude/agent-memory/connes-ncg-theorist/s83-w3-g54-hp-even-audit.md": "d0da21eb1d0bc6398f8c8f5697ddfe928136a8a7f2d6fc7b53df1d9929f13f51",
+    ".claude/agent-memory/connes-ncg-theorist/s84-w2a-11-vii-m-landing.md": "fb87a573ed84cf678c849ade4583d1ecdd262dfdc1faa7c657c2a1185ce84817"
+  }
+}

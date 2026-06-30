@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 52,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_511",
+      "anchor_type": "data_provenance",
+      "name": "analog_trapped",
+      "script_path": "session-49/s49_analog_trapped.py",
+      "session": "s49",
+      "inputs": "",
+      "outputs": "session-49/s49_analog_trapped.npz, session-49/s49_analog_trapped.png",
+      "source_file": "computations/session-49/s49_analog_trapped.py",
+      "source_context_30_lines": "   25:   7. Construct effective (1+1)D Penrose diagram\n   26: \n   27: Gate: ANALOG-TRAPPED-49\n   28:   PASS: unambiguous classification with theta_+/- computed\n   29:   INFO: depends on metric details beyond current data\n   30:   FAIL: Mach-1 contour not well-defined\n   31: \n   32: Input: s48_volovik_string.npz, s47_condensate_torus.npz\n   33: Output: s49_analog_trapped.npz, s49_analog_trapped.png\n   34: \n   35: Author: Schwarzschild-Penrose-Geometer (Session 49)\n   36: \"\"\"\n   37: \n   38: import sys\n   39: import os\n   40: sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))\n   41: "
+    },
+    {
+      "anchor_id": "prov_512",
+      "anchor_type": "data_provenance",
+      "name": "bragg_goldstone",
+      "script_path": "session-49/s49_bragg_goldstone.py",
+      "session": "s49",
+      "inputs": "s48_curv_extend.npz, s47_texture_corr.npz, s48_aniso_oz.npz",
+      "outputs": "session-49/s49_bragg_goldstone.npz, session-49/s49_bragg_goldstone.png",
+      "source_file": "computations/session-49/s49_bragg_goldstone.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s49_bragg_goldstone.py — Bragg gap in the 32-cell Goldstone phononic crystal\n    4: =============================================================================\n    5: \n    6: Gate: BRAGG-GOLDSTONE-49\n    7:   PASS: m_Bragg / M_KK in [10^{-60}, 10^{-30}]\n    8:   INFO: gap exists but outside target range\n    9:   FAIL: no gap or gap at KK scale\n   10: \n   11: Physics:"
+    },
+    {
+      "anchor_id": "prov_513",
+      "anchor_type": "data_provenance",
+      "name": "cavity_resonance",
+      "script_path": "session-49/s49_cavity_resonance.py",
+      "session": "s49",
+      "inputs": "",
+      "outputs": "session-49/s49_cavity_resonance.npz, session-49/s49_cavity_resonance.png",
+      "source_file": "computations/session-49/s49_cavity_resonance.py",
+      "source_context_30_lines": "   30:   INFO: modes exist but matching > 10%\n   31:   FAIL: no confined modes\n   32: \n   33: Input:\n   34:   - s47_condensate_torus.npz (Delta field on T^2)\n   35:   - s48_leggett_mode.npz (omega_L1, omega_L2)\n   36: \n   37: Output:\n   38:   - s49_cavity_resonance.npz\n   39:   - s49_cavity_resonance.png\n   40: \n   41: Author: Tesla-Resonance (Session 49)\n   42: \"\"\"\n   43: \n   44: import sys\n   45: import os\n   46: sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))"
+    },
+    {
+      "anchor_id": "prov_514",
+      "anchor_type": "data_provenance",
+      "name": "cmpp_transition",
+      "script_path": "session-49/s49_cmpp_transition.py",
+      "session": "s49",
+      "inputs": "",
+      "outputs": "session-49/s49_cmpp_transition.npz, session-49/s49_cmpp_transition.png",
+      "source_file": "computations/session-49/s49_cmpp_transition.py",
+      "source_context_30_lines": "   34:   2. Extract Weyl tensor.\n   35:   3. Map Weyl to operator on Lambda^2 (28x28 matrix).\n   36:   4. For CMPP: choose preferred null direction from SU(2) sector (most deformed).\n   37:      Decompose C_IJ into boost-weight blocks.\n   38:   5. Classify by which boost-weight blocks vanish.\n   39:   6. Track classification across tau = 0.537 transition.\n   40: \n   41: Input: dirac_spectrum.py (geometry), canonical_constants.py\n   42: Output: s49_cmpp_transition.npz, s49_cmpp_transition.png\n   43: \n   44: Gate: CMPP-TRANSITION-49\n   45:   PASS: CMPP type changes at tau = 0.537\n   46:   INFO: type changes at nearby tau\n   47:   FAIL: constant CMPP type across scan\n   48: \n   49: Author: schwarzschild-penrose-geometer (Session 49)\n   50: Date: 2026-03-17"
+    },
+    {
+      "anchor_id": "prov_515",
+      "anchor_type": "data_provenance",
+      "name": "conformal_transition",
+      "script_path": "session-49/s49_conformal_transition.py",
+      "session": "s49",
+      "inputs": "",
+      "outputs": "session-49/s49_conformal_transition.npz, session-49/s49_conformal_transition.png",
+      "source_file": "computations/session-49/s49_conformal_transition.py",
+      "source_context_30_lines": "   14:     (III) tau in [1.382, inf): NEC violation, C2 Ricci eigenvalue < 0\n   15:     (IV)  tau -> inf: Curvature singularity (K -> inf, NOT Kasner)\n   16:   - tau = 0.537 is a genuine curvature transition (topology of positive cone changes)\n   17:   - tau = 1.382 is the NEC boundary (C2 Ricci eigenvalue = 0)\n   18:   - tau -> inf is a genuine curvature singularity, not a coordinate artifact\n   19:   - The transit only reaches tau ~ 0.22 (Zone I only)\n   20: \n   21: Input: s48_curv_extend.npz (curvature data)\n   22: Output: s49_conformal_transition.npz, s49_conformal_transition.png\n   23: \n   24: Gate: CONFORMAL-TRANSITION-49\n   25:   PASS: Penrose diagram with clear boundary classification\n   26:   INFO: constructed but classification ambiguous\n   27:   FAIL: conformal structure trivial\n   28: \n   29: Author: schwarzschild-penrose-geometer (Session 49)\n   30: Date: 2026-03-17"
+    },
+    {
+      "anchor_id": "prov_516",
+      "anchor_type": "data_provenance",
+      "name": "cosmic_censorship",
+      "script_path": "session-49/s49_cosmic_censorship.py",
+      "session": "s49",
+      "inputs": "",
+      "outputs": "session-49/s49_cosmic_censorship.npz, session-49/s49_cosmic_censorship.png",
+      "source_file": "computations/session-49/s49_cosmic_censorship.py",
+      "source_context_30_lines": "  898: # =============================================================================\n  899: # SECTION 10: Save data\n  900: # =============================================================================\n  901: \n  902: print(\"\\n  Saving data...\")\n  903: \n  904: outdir = os.path.dirname(os.path.abspath(__file__))\n  905: np.savez_compressed(\n  906:     os.path.join(outdir, 's49_cosmic_censorship.npz'),\n  907:     # Trajectories\n  908:     t_free=t_free, tau_free=tau_free, v_free=v_free,\n  909:     t_fric=t_fric, tau_fric=tau_fric, v_fric=v_fric,\n  910:     # Energy conditions (free trajectory)\n  911:     rho_free=rho_free, p_free=p_free, w_free=w_free,\n  912:     nec_free=nec_free, wec_free=wec_free, sec_free=sec_free, dec_free=dec_free,\n  913:     # Energy conditions (friction trajectory)\n  914:     rho_fric=rho_fric, p_fric=p_fric, w_fric=w_fric,"
+    },
+    {
+      "anchor_id": "prov_517",
+      "anchor_type": "data_provenance",
+      "name": "desi_dr3_prep",
+      "script_path": "session-49/s49_desi_dr3_prep.py",
+      "session": "s49",
+      "inputs": "s48_dmde_refine.npz, s49_multi_t_friedmann.npz",
+      "outputs": "session-49/s49_desi_dr3_prep.npz, session-49/s49_desi_dr3_prep.png",
+      "source_file": "computations/session-49/s49_desi_dr3_prep.py",
+      "source_context_30_lines": "  525:     'B_scan_dr2': B_scan_dr2,\n  526:     'B_scan_dr3': B_scan_dr3,\n  527:     # Gate\n  528:     'gate_name': np.array(['DESI-DR3-PREP-49']),\n  529:     'gate_verdict': np.array([gate_verdict]),\n  530:     'B_canonical': B_canonical,\n  531: }\n  532: \n  533: np.savez('s49_desi_dr3_prep.npz', **results)\n  534: print(f\"\\n  Saved: s49_desi_dr3_prep.npz\")\n  535: \n  536: # =============================================================================\n  537: # Step 10: Diagnostic plot\n  538: # =============================================================================\n  539: \n  540: fig, axes = plt.subplots(2, 2, figsize=(14, 10))\n  541: "
+    },
+    {
+      "anchor_id": "prov_518",
+      "anchor_type": "data_provenance",
+      "name": "dipolar_catalog",
+      "script_path": "session-49/s49_dipolar_catalog.py",
+      "session": "s49",
+      "inputs": "",
+      "outputs": "session-49/s49_dipolar_catalog.npz, session-49/s49_dipolar_catalog.png",
+      "source_file": "computations/session-49/s49_dipolar_catalog.py",
+      "source_context_30_lines": "  843: print(f\"\\n  *** omega_L1 / m_req = {leggett_over_req:.3f} ***\")\n  844: print(f\"  The Leggett mode mass is within 18% of the mass required for n_s = 0.965!\")\n  845: print(f\"  This is the FIRST mechanism to give a mass at the right scale.\")\n  846: \n  847: # ==============================================================================\n  848: # SAVE\n  849: # ==============================================================================\n  850: \n  851: np.savez(os.path.join(os.path.dirname(__file__), 's49_dipolar_catalog.npz'),\n  852:     # Catalog entries\n  853:     n_breakers=len(breakers),\n  854:     n_preservers=len(preservers),\n  855: \n  856:     # Leggett (primary breaker)\n  857:     leggett_breaks=True,\n  858:     leggett_epsilon=leggett_epsilon,\n  859:     leggett_m_G=leggett_m_G,"
+    },
+    {
+      "anchor_id": "prov_519",
+      "anchor_type": "data_provenance",
+      "name": "fabric_npair",
+      "script_path": "session-49/s49_fabric_npair.py",
+      "session": "s49",
+      "inputs": "",
+      "outputs": "session-49/s49_fabric_npair.npz",
+      "source_file": "computations/session-49/s49_fabric_npair.py",
+      "source_context_30_lines": " 1094:                                 for L in sorted(results_cluster.keys())]),\n 1095:     'cluster_p_mott': np.array([results_cluster[L]['p_mott']\n 1096:                                  for L in sorted(results_cluster.keys())]),\n 1097:     'cluster_egs_per_site': np.array([results_cluster[L]['E_gs'] / L\n 1098:                                        for L in sorted(results_cluster.keys())]),\n 1099:     'elapsed_s': elapsed,\n 1100: }\n 1101: \n 1102: out_npz = os.path.join(SCRIPT_DIR, 's49_fabric_npair.npz')\n 1103: np.savez_compressed(out_npz, **save_dict)\n 1104: print(f\"\\nSaved: {out_npz}\")\n 1105: print(f\"File size: {os.path.getsize(out_npz) / 1024:.1f} KB\")\n 1106: print(f\"Runtime: {elapsed:.1f}s\")\n 1107: print(\"=\" * 78)"
+    },
+    {
+      "anchor_id": "prov_520",
+      "anchor_type": "data_provenance",
+      "name": "friedmann_goldstone",
+      "script_path": "session-49/s49_friedmann_goldstone.py",
+      "session": "s49",
+      "inputs": "s47_rhos_tensor.npz, s47_texture_corr.npz, s39_richardson_gaudin.npz, s39_gge_lambdas.npz",
+      "outputs": "session-49/s49_friedmann_goldstone.npz, session-49/s49_friedmann_goldstone.png",
+      "source_file": "computations/session-49/s49_friedmann_goldstone.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s49_friedmann_goldstone.py — Friedmann-Goldstone Coupling\n    4: ==========================================================\n    5: \n    6: Session 49, Wave 1-A (Volovik agent)\n    7: Gate: FRIEDMANN-GOLDSTONE-49\n    8: \n    9: Computes the effective Goldstone mass when the fabric phase field is\n   10: coupled to 4D Friedmann dynamics through the superfluid density tensor.\n   11: "
+    }
+  ]
+}

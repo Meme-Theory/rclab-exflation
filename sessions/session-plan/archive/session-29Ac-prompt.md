@@ -5,14 +5,14 @@
 **Depends on**: Session 29Ab (free energy crossing exists, one-loop survives, tau(t) trajectory + t_BCS + H(t_BCS) computed)
 **Prerequisite**: 29Ab must complete with free energy crossing existing (K-29c did not fire) AND one-loop not destroying the minimum (K-29d did not fire). If either fires, this sub-session does not run.
 **Input data**:
-- `tier0-computation/s29b_modulus_eom.npz` (tau(t), t_BCS, H(t_BCS) for range of M_KK) — FROM 29Ab
-- `tier0-computation/s29b_free_energy_comparison.npz` (tau_cross, F_condensed vs F_normal) — FROM 29Ab
-- `tier0-computation/s29b_gaussian_correction.npz` (one-loop assessment) — FROM 29Ab
-- `tier0-computation/s29a_gate_verdicts.txt` (KC-3 and entropy verdicts) — FROM 29Aa
-- `tier0-computation/s28a_bogoliubov_coefficients.npz` (|beta_k|^2 per mode per tau)
-- `tier0-computation/s28a_spectral_action_comparison.npz` (I_E(tau))
-- `tier0-computation/s28b_self_consistent_tau_T.npz` (F_total landscape)
-- `tier0-computation/s28c_bcs_van_hove.npz` (L-9 cubic invariant data)
+- `computations/s29b_modulus_eom.npz` (tau(t), t_BCS, H(t_BCS) for range of M_KK) — FROM 29Ab
+- `computations/s29b_free_energy_comparison.npz` (tau_cross, F_condensed vs F_normal) — FROM 29Ab
+- `computations/s29b_gaussian_correction.npz` (one-loop assessment) — FROM 29Ab
+- `computations/s29a_gate_verdicts.txt` (KC-3 and entropy verdicts) — FROM 29Aa
+- `computations/s28a_bogoliubov_coefficients.npz` (|beta_k|^2 per mode per tau)
+- `computations/s28a_spectral_action_comparison.npz` (I_E(tau))
+- `computations/s28b_self_consistent_tau_T.npz` (F_total landscape)
+- `computations/s28c_bcs_van_hove.npz` (L-9 cubic invariant data)
 
 ## Motivation
 
@@ -36,12 +36,12 @@ If **any** of these predictions falls in an observable and testable range, the f
 Every result classified against its pre-registered gate BEFORE any interpretation. Report the number first. Classify second. Interpret third.
 
 **Python environment**: `"phonon-exflation-sim/.venv312/Scripts/python.exe"`
-**Output directory**: `tier0-computation/`
+**Output directory**: `computations/`
 **Script prefix**: `s29c_`
 
 ## 29Ab GATE CHECK (MANDATORY FIRST ACTION)
 
-Before any computation, read `tier0-computation/s29b_gate_verdicts.txt` and verify:
+Before any computation, read `computations/s29b_gate_verdicts.txt` and verify:
 1. Free energy crossing exists (K-29c did not fire)
 2. One-loop correction does not reverse the sign (K-29d did not fire)
 
@@ -353,19 +353,19 @@ Update the modulus mini-superspace diagram from Session 29A plan Section VIII wi
 
 | File | Computation | Producer |
 |:-----|:-----------|:---------|
-| `tier0-computation/s29c_gibbons_hawking_temperature.py` | 29c-1 | hawking |
-| `tier0-computation/s29c_gibbons_hawking_temperature.npz` | 29c-1 data | hawking |
-| `tier0-computation/s29c_gibbons_hawking_temperature.png` | 29c-1 plot | hawking |
-| `tier0-computation/s29c_k_transition.py` | 29c-2 | cosmic-web |
-| `tier0-computation/s29c_k_transition.npz` | 29c-2 data | cosmic-web |
-| `tier0-computation/s29c_k_transition.png` | 29c-2 plot | cosmic-web |
-| `tier0-computation/s29c_cdl_bounce.py` | 29c-3 | phonon-sim |
-| `tier0-computation/s29c_cdl_bounce.npz` | 29c-3 data | phonon-sim |
-| `tier0-computation/s29c_cdl_bounce.png` | 29c-3 plot | phonon-sim |
-| `tier0-computation/s29c_gw_spectrum.py` | 29c-4 | cosmic-web or hawking |
-| `tier0-computation/s29c_gw_spectrum.npz` | 29c-4 data | cosmic-web or hawking |
-| `tier0-computation/s29c_gw_spectrum.png` | 29c-4 plot | cosmic-web or hawking |
-| `tier0-computation/s29c_gate_verdicts.txt` | All 29c gate verdicts | coordinator |
+| `computations/s29c_gibbons_hawking_temperature.py` | 29c-1 | hawking |
+| `computations/s29c_gibbons_hawking_temperature.npz` | 29c-1 data | hawking |
+| `computations/s29c_gibbons_hawking_temperature.png` | 29c-1 plot | hawking |
+| `computations/s29c_k_transition.py` | 29c-2 | cosmic-web |
+| `computations/s29c_k_transition.npz` | 29c-2 data | cosmic-web |
+| `computations/s29c_k_transition.png` | 29c-2 plot | cosmic-web |
+| `computations/s29c_cdl_bounce.py` | 29c-3 | phonon-sim |
+| `computations/s29c_cdl_bounce.npz` | 29c-3 data | phonon-sim |
+| `computations/s29c_cdl_bounce.png` | 29c-3 plot | phonon-sim |
+| `computations/s29c_gw_spectrum.py` | 29c-4 | cosmic-web or hawking |
+| `computations/s29c_gw_spectrum.npz` | 29c-4 data | cosmic-web or hawking |
+| `computations/s29c_gw_spectrum.png` | 29c-4 plot | cosmic-web or hawking |
+| `computations/s29c_gate_verdicts.txt` | All 29c gate verdicts | coordinator |
 | `sessions/session-29/session-29A-synthesis.md` | **FULL Session 29A synthesis** | coordinator |
 
 ---

@@ -1,8 +1,9 @@
 # Observational Avenues Reference -- Phonon-Exflation Framework
 
-**Compiled**: 2026-02-28
-**Scope**: `sessions/` (all subdirectories), `tier0-computation/` (.py, .txt, .npz), `researchers/` (.md), `tools/knowledge-index.json`
+**Compiled**: 2026-04-04 (updated from S28 through S66)
+**Scope**: `sessions/` (all subdirectories), `computations/` (.py, .txt, .npz), `researchers/` (.md), `tools/knowledge-index.json`
 **Method**: Exhaustive cross-reference of instrument names, observable quantities, gate identifiers, and prediction keywords across all project files
+**Major S29–S66 changes**: n_s recovery (S62), CC Volovik reframe (S66), Leggett DM candidate (S58/S66), r prediction (S63–S64), spectral functional crisis (S66), 17 permanent theorems (S63), 112+ proven mathematical results
 
 ---
 
@@ -10,10 +11,10 @@
 
 | Program | Type | Sessions | Observable | Framework Prediction | Gate Status |
 |:--------|:-----|:---------|:-----------|:--------------------|:------------|
-| DESI | Galaxy survey / BAO | 22d, 23c, 24a, 24b, 28, 29Aa | w_0, w_a; P(k) features | w = -1 (frozen modulus); P(k) feature at k_transition | CLOSED (rolling); OPEN conditional (P(k)) |
+| DESI | Galaxy survey / BAO | 22d, 23c, 24a, 24b, 28, 29Aa, 63, 65, 66 | w_0, w_a; P(k) features | w_0 = −0.918 (GGE+Josephson); w_a ~ 0; Volovik w(z) tracking | TENSION (2.9σ DR2); DR3 pre-registered |
 | Euclid | Galaxy survey / weak lensing | 22d, 28 | P(k), void statistics, sigma_8 | P(k) feature; void size distribution | OPEN conditional |
 | SDSS / BOSS | Galaxy survey / BAO | misc/giants-bao | BAO standard ruler T(k) | T(k) reproduction to < 1% | Structural consistency |
-| Planck | CMB satellite | 22d, many | Cosmological parameters, sum m_nu | sum m_nu < 0.072 eV; H_0 | OPEN conditional |
+| Planck | CMB satellite | 22d, 50, 58, 62, 66, many | n_s, sum m_nu, ΔN_eff, H_0, Ω_DM | n_s = 0.9567 (1.9σ); ΔN_eff = 0.027 (PASS); Ω_DM h² = 0.120 (0.7σ) | Multiple PASS; SCHEME-DEPENDENT (n_s) |
 | JWST | Space telescope | 23a, 24b, 28 | Early galaxies z > 10, LRDs z ~ 4-9 | Directional consistency with early structure | Speculative |
 | KATRIN | Neutrino mass | 16, 19d, 20b, 21c, 22, 28 | m_nu (absolute) | m_nu1 from Dirac spectrum at tau_0 | OPEN conditional |
 | JUNO | Reactor neutrino | 19d, 22, 28 | Mass ordering | Normal ordering (bowtie, tau_0 > 0.11) | OPEN conditional |
@@ -25,12 +26,12 @@
 | LISA | Space GW detector | G2, G3, 28 | Stochastic GW background | f_peak ~ 10^7-10^9 Hz (KK-scale) | Speculative |
 | NANOGrav / IPTA | Pulsar timing array | G2 | Stochastic GW background | SM-like QCD contribution | Consistent |
 | Einstein Telescope | Next-gen GW | G1, G2, G3 | Ringdown spectroscopy | eta/s correction to QNM damping | Speculative (20-yr timeline) |
-| CMB-S4 | CMB ground | G3 | Damping tail, r | Debye cutoff; r from Weyl curvature | Speculative |
-| BICEP / Keck | CMB B-mode | G2 | Tensor-to-scalar ratio r | r from initial |C|^2 = 5/14 | Speculative |
-| LiteBIRD | CMB satellite | -- | r measurement | Not explicitly referenced | -- |
-| Simons Observatory | CMB ground | -- | CMB lensing | Not explicitly referenced | -- |
+| CMB-S4 | CMB ground | G3, 63, 64, 65, 66 | r, α_s, f_NL, damping tail | r = 0.024–0.033 (burst); f_NL^{equil} ~ 1.12; α_s decisive | OPEN (testable 2028+) |
+| BICEP / Keck | CMB B-mode | G2, 63, 64 | Tensor-to-scalar ratio r | r = 0.024–0.033 (second-order tensor, burst spectrum) | PASS (r < 0.036 current limit) |
+| LiteBIRD | CMB satellite | 63, 64 | r measurement | r = 0.024–0.033; burst (Gaussian in ln k), not scale-invariant | OPEN (testable) |
+| Simons Observatory | CMB ground | -- | CMB lensing, f_NL | f_NL^{equil} ~ 1.12 (from c_BLV = 0.485) | OPEN |
 | Rubin / LSST | Optical survey | 28 | P(k), voids | Void size distribution | OPEN conditional |
-| Roman (WFIRST) | Space telescope | 24b | Dark energy, deceleration | w = -1 | Speculative |
+| Roman (WFIRST) | Space telescope | 24b | Dark energy, deceleration | w_0 = −0.918; Volovik tracking | Speculative |
 | LHC / ATLAS / CMS | Particle collider | misc/giants | KK gravitons, micro-BH | No KK below ~15 TeV | PASS (null consistency) |
 | KamLAND | Reactor neutrino | 22, 28 | CPT test (oscillation) | nu_e = nu_e_bar parameters | PASS (consistency) |
 | KamLAND-Zen | Double beta decay | 28 | Majorana vs Dirac | J^2 = +1 permits Majorana; undetermined | OPEN |
@@ -60,13 +61,24 @@
 ## 1. Dark Energy and Equation of State
 
 **Programs**: DESI, Euclid, Roman, Rubin/LSST
-**Source files**: Sessions 22d, 23c, 24a, 24b, 28, 29Aa; `researchers/Cosmic-Web/17_2025_DESI_BAO_Cosmological_Constraints.md`
+**Source files**: Sessions 22d, 23c, 24a, 24b, 28, 29Aa, 58, 63, 65, 66; `researchers/Cosmic-Web/17_2025_DESI_BAO_Cosmological_Constraints.md`
 
 ### 1.1 Equation of State Parameters
 
-DESI DR2 central values (2026-02): w_0 = -0.83 +/- 0.09, w_a = -0.45 +/- 0.31.
+**S66 state**: The framework equation of state has evolved significantly since S28.
 
-The rolling quintessence branch (E-1, Session 22d) produces w_0 in the DESI range. The clock constraint (E-3, Session 22d) excludes all rolling scenarios: dalpha/alpha = -3.08 * tau_dot violates atomic clock bounds (|dalpha/alpha| < 10^{-16}/yr) by a factor of 15,000 for minimum plausible rolling rates (tau_dot ~ 0.007 H_0). The frozen modulus (tau_dot = 0) predicts w = -1 exactly. This lies 1.9 sigma from the DESI central value. Bayesian factor: BF = 0.5 (marginal closure).
+DESI DR2 central values (2026-02): w_0 = −0.752 ± 0.057, w_a = −0.73 ± 0.25.
+
+**w_0**: The frozen modulus prediction (w = −1 exactly) is superseded. The combined GGE + Josephson contribution gives w_0 = −0.918 (S66). This lies 2.9σ from the DESI DR2 central value. The rolling quintessence branch (E-1, Session 22d) remains CLOSED by the clock constraint (15,000x violation, Section 4.1).
+
+**w_a**: The framework predicts w_a ~ 0 (no CPL-parametrized evolution). DESI DR2 measures w_a = −0.73 ± 0.25, producing 2.9σ tension. However, CPL parametrization is structurally inadequate for the framework: the S66 CPL fit yields w_a = +1.121 (wrong sign), confirming that CPL cannot capture Volovik w(z) tracking dynamics. The proper comparison requires the Volovik tracking function w(z) = −1 + δw(H(z)/H_0), not CPL.
+
+**Cosmological constant**: The CC problem is reframed by DILUTION-CC-66. Volovik Scenario B (q-theory relaxation: ρ_vac ~ M_Pl² H²) lands at ρ_vac(today)/ρ_obs = 1.032 — within 0.01 OOM of observation. The 114 OOM raw gap IS exflation itself (the expansion history), not a fine-tuning problem. Standard inflation carries an equivalent ~111 OOM gap. Conservative stackable corrections reach only 6.84 OOM (insufficient without Volovik relaxation). The a_0 topological obstruction (a_0 = 6440 is an integer mode count) remains the sole structural issue for the Volovik mechanism; the zeta action avoids it by excluding a_0 from the noncommutative integral.
+
+**Pre-registered DESI DR3 decision rules (S63)**:
+- If DR3 w_0 shifts toward −1.0 (within 1σ of framework): PASS — GGE+Josephson mechanism confirmed
+- If DR3 w_a remains negative at > 3σ: framework must deliver Volovik w(z) tracking prediction or FAIL
+- If DR3 w_0 shifts further from −1.0 (toward −0.7): 4σ+ tension — framework under severe pressure
 
 ### 1.2 P(k) Feature from BCS Transition
 
@@ -89,9 +101,9 @@ If k_transition falls in the recombination-era range, BAO compatibility requires
 
 If the BCS condensate has a characteristic coherence length (healing length xi_heal), void sizes below xi_heal are suppressed, producing a secondary peak in the void size distribution. Testable with the VIDE pipeline applied to SDSS and DESI void catalogs. Status: OPEN conditional.
 
-### 1.4 S8 Tension
+### 1.4 σ_8 Tension
 
-DESI: sigma_8 = 0.777 +/- 0.020. Planck: sigma_8 = 0.811 +/- 0.006. A modified growth rate at z < 1 from the framework would be tested by Euclid tomographic weak lensing. No growth rate prediction has been computed. Status: speculative.
+**S50 update**: σ_8 = 0.799 confirmed viable (S50, within 2σ of both Planck 0.811 ± 0.006 and lensing 0.777 ± 0.020). The Leggett DM candidate (Section 8a) reproduces the correct matter density, and σ_8 follows from standard structure growth with Ω_DM h² = 0.120. No anomalous growth rate is required. Euclid tomographic weak lensing (2027+) will test at 2.96σ discriminant reach.
 
 ### 1.5 Gate Verdicts
 
@@ -99,10 +111,13 @@ DESI: sigma_8 = 0.777 +/- 0.020. Planck: sigma_8 = 0.811 +/- 0.006. A modified g
 |:-----|:----------|:-------|:--------|
 | E-1 (decisive) | w_0 in [-0.9, -0.75], w_a in [-0.8, -0.2] | CLOSED (rolling excluded) | 22d |
 | E-1 (compelling) | w_0 in [-0.95, -0.65], w_a in [-1.2, -0.1] | CLOSED | 22d |
-| E-1 (marginal) | w_0 = -1 | BF = 0.5 | 22d |
+| E-1 (marginal) | w_0 = -1 | Superseded by w_0 = −0.918 (GGE+Josephson) | 22d→66 |
+| DILUTION-CC-66 | Volovik Scenario B: ρ_vac/ρ_obs ~ 1 | PASS (1.032, 0.01 OOM) | 66 |
+| QTHEORY-NPAIR-66 | Discrete q-theory self-tuning | FAIL (min|P_vac| = 2.34e-7 M_Pl⁴, 113.5 OOM) | 66 |
 | P(k) feature | Sub-percent feature in DESI/Euclid range | OPEN conditional | 28/29 |
 | P-29f | f_peak in LISA range + multi-peaked GW | OPEN | 28/29 |
 | K-29e | delta(r_s)/r_s < 0.5% if t_BCS in recombination window | OPEN | 29 (plan) |
+| DR3 decision | Pre-registered w_0/w_a decision rules | OPEN (awaiting DR3 2026–2027) | 63 |
 
 ---
 
@@ -144,7 +159,7 @@ Without M_scale, no comparison is possible. Once tau_0 is fixed, the absolute ma
 
 ### 2.4 Massless Lightest Neutrino
 
-If the Pfaffian of D_total changes sign at some tau_c, topological protection produces a massless or near-massless fermion. The D_K Pfaffian is trivially +1 (Session 17c, D-2). The D_total Pfaffian has not been computed (Tier C computation, prerequisites ~3 weeks as of Session 16).
+If the Pfaffian of D_total changes sign at some tau_c, topological protection produces a massless or near-massless fermion. The D_K Pfaffian is trivially +1 (Session 17c, D-2). The D_total Pfaffian has not been computed (Level C computation, prerequisites ~3 weeks as of Session 16).
 
 Cosmological bound sum m_i < 0.072 eV is consistent with NO minimum sum ~0.06 eV, inconsistent with IO minimum sum ~0.10 eV.
 
@@ -171,13 +186,20 @@ J^2 = +1 at KO-dimension 6 permits Majorana mass terms. Whether they are generat
 
 delta_CP from eigenspinor overlaps at tau_0. The Z_3 x Z_3 geometry (Baptista Paper 18) qualitatively predicts near-maximal CP violation. No computed value exists. DUNE/Hyper-K target 10-20 degree precision. Status: qualitative prediction only.
 
-### 2.10 Gate Verdicts
+### 2.10 ΔN_eff
+
+**S66 update**: The framework predicts ΔN_eff = 0.027 from GGE relic quasiparticles (Leggett channel excitations contributing subdominant radiation density). Observed: ΔN_eff = 0.15 ± 0.23 (Planck). Tension: 0.5σ. Verdict: PASS. This is FUNCTIONAL-INDEPENDENT (holds across all cutoff families).
+
+### 2.11 Gate Verdicts
 
 | Gate | Condition | Result | Session |
 |:-----|:----------|:-------|:--------|
 | R-1 | R = (m3^2 - m2^2)/(m2^2 - m1^2) in [17, 66] | FAIL (R ~ 10^{14} Kramers; K_a cross-check R = 5.68) | 24a |
 | D-1 | [J, D_K] = 0 | PROVEN | 17a |
 | Ordering (structural) | NO from bowtie for tau_0 in [0.11, 1.58] | OPEN conditional (JUNO) | 22b |
+| ΔN_eff | 0.027 vs 0.15 ± 0.23 | PASS (0.5σ) | 66 |
+
+**Note on R-1**: R-1 remains a FAIL, but the framework makes a structural normal ordering prediction from the bowtie eigenvalue topology that is independent of the mass ratio computation. The Kramers degeneracy that produces R ~ 10^{14} may be an artifact of the degenerate perturbation treatment (K_a cross-check gives R = 5.68, still outside [17, 66]).
 
 ---
 
@@ -219,6 +241,8 @@ dalpha/alpha = -3.08 * tau_dot (derived from g_1/g_2 = e^{-2tau}, Session 17a id
 
 Atomic clock bound: |dalpha/alpha| < 10^{-16}/yr. Minimum plausible rolling (tau_dot ~ 0.007 H_0) produces |dalpha/alpha| ~ 1.5 * 10^{-12}/yr, exceeding the bound by a factor of 15,000. This excludes all rolling modulus scenarios at 5 orders of magnitude (Session 22d).
 
+**S66 status**: Unchanged. Rolling CLOSED at 15,000x. The clock constraint is now part of the Permanent Results Registry (Clock constraint, proven).
+
 ### 4.2 Quasar Absorption
 
 delta-alpha/alpha < 4 * 10^{-7} over 10 Gyr. Rolling at H_0 rate produces 155% change over 10 Gyr (violation by 10^4). Frozen condensate (tau_dot = 0) satisfies trivially.
@@ -252,7 +276,7 @@ Next-generation optical lattice clocks target 10^{-20}/yr sensitivity. The predi
 
 ### 5.1 BAO Scale
 
-BAO standard ruler: ~150 Mpc comoving. The framework in frozen state (w = -1) reproduces LCDM expansion history and is structurally consistent with BAO measurements. Predicted transfer function T(k) must match to < 1% across ~2500 CMB multipoles.
+BAO standard ruler: ~150 Mpc comoving. The framework with w_0 = −0.918 (GGE+Josephson, S66) is structurally consistent with BAO measurements. Predicted transfer function T(k) must match to < 1% across ~2500 CMB multipoles.
 
 ### 5.2 P(k) Feature from BCS Transition
 
@@ -318,13 +342,44 @@ QCD acoustic fossils at f ~ 10^{-8} Hz. SM crossover gives Omega_GW ~ 10^{-12}; 
 ## 7. CMB Power Spectrum and Polarization
 
 **Programs**: Planck, CMB-S4, BICEP/Keck, LiteBIRD, Simons Observatory
-**Source files**: misc/giants-bao, misc/giants-planck-geometry, `researchers/Cosmic-Web/`
+**Source files**: misc/giants-bao, misc/giants-planck-geometry, `researchers/Cosmic-Web/`; Sessions 50, 57, 62, 63, 64, 65, 66
 
 ### 7.1 Power Spectrum Reproduction
 
-CMB power spectrum (7 acoustic peaks) and BAO scale (150 Mpc) must be reproduced to < 1% precision. Frozen modulus (w = -1) is consistent with Planck parameters.
+CMB power spectrum (7 acoustic peaks) and BAO scale (150 Mpc) must be reproduced to < 1% precision. The framework with w_0 = −0.918 is consistent with Planck parameters at the background level. The spectral tilt n_s is now a computed prediction (Section 7.2).
 
-### 7.2 CMB Resonance Hypothesis
+### 7.2 Spectral Tilt n_s (S62 Recovery)
+
+**S62 breakthrough**: n_s = 0.9567 from the Hubble spectral action (SA) route, with zero free geometric parameters. Observed: n_s = 0.9649 ± 0.0042 (Planck). Tension: 1.9σ. Verdict: CONDITIONAL PASS.
+
+Alternative route: BCS + Coleman-Weinberg corrections give n_s = 0.9595 (1.3σ, INFO).
+
+**SCHEME-DEPENDENT (S66)**: The Hubble slow-roll parameter ε_H changes SIGN between cutoff families:
+- sqrt(x) cutoff: ε_H = +0.02163 → n_s = 0.9567 (red tilt, Planck-compatible)
+- Zeta / exponential cutoff: ε_H < 0 → n_s > 1 (blue tilt, excluded)
+- n_s spread across functionals: 0.164 (39× Planck error bar)
+
+The spectral functional crisis (Section 7.2a below) must be resolved before n_s is a genuine prediction.
+
+**Structural result**: The mode-independent occupation theorem (S57/S62) proves n_s is independent of Bogoliubov |β|². The tilt comes from spectral geometry only — not from occupation numbers.
+
+**Gauge invariance**: T7 (S63) proves ε_BLV = 2 − 1/ε_SA exactly. The BLV and SA formulations give identical n_s. This is structural.
+
+#### 7.2a Spectral Functional Crisis
+
+The spectral action depends on the cutoff function f(x). Different choices yield different ε_H at the sign level. Resolution path: the anomaly + conservation hierarchy constrains f to a one-parameter dilaton family c_k(φ) = (−1)^k φ^k/k. Bayesian evidence collapses model space: exp(−x) excluded at 15.5σ, compact at 36.9σ. Only sqrt(x) and anomaly(φ) survive. The Higgs mass discriminant breaks the residual degeneracy: m_H^{zeta} ~ 174 GeV vs m_H^{cutoff} ~ 127.5 GeV. Observation at 125.1 GeV selects the cutoff family at percent level. FUNCTIONAL-SELECT-67 is a CRITICAL S67 gate.
+
+### 7.3 Running of the Spectral Index α_s
+
+**S66 state**: α_s = −0.038 at 5.0σ FAIL from Planck (observed: −0.0045 ± 0.0067). The slow-roll formula is suspect at Mach 13.8 (deeply supersonic transit). The structural identity α_s = n_s² − 1 (T15, S50, five proofs) holds for any K² propagator on a compact Josephson lattice, but applies to the spectral action running, not the CMB observable directly.
+
+Two resolution paths:
+- **ATDHFB calibration** (nuclear fission analog): factor 2–5× reduction, saturates at deeply diabatic limit. Pre-registered range: [−0.019, −0.008].
+- **Acoustic prediction** (QA, S66): α_s(CMB) ~ 0 from 56 OOM scale hierarchy between fold and CMB (sinc² spectral envelope). The acoustic power spectrum at CMB scales is dominated by the envelope of the GGE relic, not the local fold curvature.
+
+**TRANSIT-PS-67 is the decisive gate**: must deliver α_s as a function of k. If |α_s(k_CMB)| < 0.015: PASS. If > 0.019: FAIL.
+
+### 7.4 CMB Resonance Hypothesis
 
 Alternative interpretation: CMB as primordial substrate resonance rather than thermal relic. Observational constraints:
 
@@ -337,17 +392,41 @@ Alternative interpretation: CMB as primordial substrate resonance rather than th
 
 No current mechanism addresses constraints (b)-(d). Status: OPEN challenge.
 
-### 7.3 Damping Tail (CMB-S4)
+### 7.5 Damping Tail (CMB-S4)
 
 If the substrate has a UV cutoff at k_substrate, the Silk damping tail is modified: exp(-(k/k_D)^2) * [1 + (k/k_substrate)^n * correction]. CMB-S4 measures damping tail to l ~ 5000. If k_substrate > 10 Mpc^{-1}, the substrate modification is undetectable. Status: speculative diagnostic.
 
-### 7.4 Tensor-to-Scalar Ratio
+### 7.6 Tensor-to-Scalar Ratio r (S63–S64)
 
-BICEP/Keck: r < 0.036. CMB-S4 target: r ~ 0.001. The framework's initial Weyl curvature at tau = 0 is |C|^2 = 5/14 (topological obstruction, Session 20b). This potentially maps to a specific initial GW spectrum and hence a specific r value. Not yet computed.
+**S63–S64 breakthrough**: r = 0.024–0.033 from second-order tensor production. First-order tensor production is killed by the H2 theorem (T1–T3, S63; H2, S64): five independent proofs establish that homogeneous transit on M⁴ × K produces π_{ij} = 0 at linear order. Volume-preserving (traceless transverse) deformation cannot source first-order gravitational waves.
 
-### 7.5 N_eff at BBN
+**The tensor spectrum is a BURST** (Gaussian in ln k), not scale-invariant. This is a distinctive signature: no single-field slow-roll model produces a burst tensor spectrum. The burst shape follows from the impulsive (Mach 13.8) transit through the van Hove fold.
 
-N_eff = 2.99 +/- 0.17 (measured). Extra dynamical dimensions at BBN produce extra energy density (higher N_eff). Constraint: segregation of internal geometry must be complete by t ~ 1 s. The ~35 decades between symmetry-breaking and BBN are sufficient. Status: constraint satisfied qualitatively.
+r depends on exactly 3 numbers (Exflation Tensor Theorem T4, S63): ε(0.0216), c_s(0.485), N_e. This is FUNCTIONAL-INDEPENDENT — holds across all cutoff families.
+
+Current observational status: BICEP/Keck r < 0.036. The framework prediction r = 0.024–0.033 is consistent with the current upper bound and testable by CMB-S4 (σ_r ~ 0.001, 2028+) and LiteBIRD (σ_r ~ 0.002).
+
+### 7.7 Non-Gaussianity f_NL (S65–S66)
+
+**S66 predictions**:
+
+| Type | Value | Source | Status |
+|:-----|:------|:-------|:-------|
+| f_NL^{equilateral} | ~1.12 | c_BLV = 0.485 (subluminal fabric sound speed) | CMB-S4 testable |
+| f_NL^{GGE diagonal} | ~0.13 | Diagonal GGE state occupation | Prediction |
+| f_NL shape | Folded triangles (k_1 + k_2 = k_3) | Unique to GGE (no single-field model produces it) | Novel signature |
+
+Current Planck bound: f_NL^{equil} = −26 ± 47. The prediction at ~1.12 is consistent. CMB-S4 sensitivity (σ ~ 5) will probe this at ~0.2σ per measurement, but the distinctive folded triangle shape provides a qualitative discriminant.
+
+The Bogoliubov gaussianity preservation theorem (S65) proves f_NL = O(ε) regardless of squeezing, confirming the small amplitude prediction structurally.
+
+GGE-BISPECTRUM-67 is the S67 computation that will sharpen the f_NL prediction from the in-in formalism on the GGE relic.
+
+### 7.8 ΔN_eff
+
+**S66**: ΔN_eff = 0.027 from Leggett-channel GGE quasiparticles. Observed: 0.15 ± 0.23. Tension: 0.5σ. PASS. FUNCTIONAL-INDEPENDENT.
+
+N_eff = 2.99 ± 0.17 (measured). The ~35 decades between symmetry-breaking and BBN ensure segregation of internal geometry is complete by t ~ 1 s. Status: constraint satisfied both qualitatively and quantitatively.
 
 ---
 
@@ -369,6 +448,59 @@ The prediction chain requires tau_0. Status: OPEN conditional.
 ### 8.2 Alternative (CMB Resonance)
 
 In the phononic interpretation (CMB as substrate resonance), early-universe and late-universe measurements probe different physics. This depends on the CMB resonance hypothesis, which faces independent observational constraints (Section 7.2).
+
+---
+
+## 8a. Dark Matter (S58/S66 — New Section)
+
+**Programs**: Planck (Ω_DM h²), Euclid (lensing), LUX-ZEPLIN/XENONnT (direct detection), Fermi-LAT (annihilation), DESI (z_eq)
+**Source files**: Sessions 42–44, 50, 57, 58, 66
+
+### 8a.1 Leggett-Channel GGE Quasiparticle (S58/S66)
+
+The framework dark matter candidate is the Leggett-channel GGE quasiparticle — an inter-band coherence mode of the post-transit Generalized Gibbs Ensemble relic. This is NOT a new particle added to the model. It is a necessary consequence of the supersonic transit through the van Hove fold: any first-order transition on the SU(3) fiber produces 59.8 quasiparticle pairs (P_exc = 1.000, deeply diabatic), and the Leggett channel carries the inter-band component.
+
+Key properties:
+- **CPT-neutral** (J-even, follows from [J, D_K] = 0)
+- **Non-annihilating** (GGE diagonal ensemble; off-diagonal coherences dephase, diagonal occupations are conserved)
+- **Collisionless** (σ/m = 0: no point-particle scattering vertex exists)
+- **λ_fs = 9.85 × 10⁻²³ Mpc** (free-streaming length, 22 OOM below WDM bound of 0.1 Mpc — CDM-like)
+
+### 8a.2 Observational Predictions
+
+| Observable | Framework | Observed | Tension | Verdict |
+|:-----------|:----------|:---------|:--------|:--------|
+| Ω_DM h² | 0.120 (Leggett-only) | 0.1186 ± 0.0020 | 0.7σ | PASS |
+| z_eq | 3425 | 3402 ± 26 | 0.88σ | PASS |
+| σ/m | 0 | < 1.25 cm²/g | — | PASS |
+| Direct detection cross-section | 0 | null (LZ, XENONnT) | — | PASS |
+| Annihilation cross-section | 0 | null (Fermi-LAT) | — | PASS |
+| λ_fs | 9.85e-23 Mpc | < 0.1 Mpc (Lyman-α) | 22 OOM safe | PASS |
+
+The Ω_DM h² = 0.120 result is FUNCTIONAL-INDEPENDENT (holds across all cutoff families). The Volovik partition (S58) cleanly separates F_Josephson = −336.6 M_KK (95.9% → vacuum) from F_BCS + F_BA + F_Leggett = 14.411 M_KK (→ matter).
+
+### 8a.3 Critical Open: LEGGETT-GRAV-DECAY-67
+
+**CRITICAL S67 gate**: The gravitational decay channel Γ_grav(4D) ~ 1.4 × 10⁻¹³ GeV (29 OOM above H_0). If no selection rule forbids this decay, the Leggett quasiparticle is unstable on cosmological timescales and the DM sector collapses entirely (Ω_DM h² = 0.120 becomes meaningless).
+
+Gate condition: PASS if Γ_grav < H_0; FAIL if Γ_grav > H_0. A symmetry-based selection rule (e.g., from GGE integrability or Leggett mode quantum numbers) could forbid the decay. This computation is the single highest-stakes gate for the DM sector.
+
+### 8a.4 What This Is NOT
+
+- NOT a WIMP (no electroweak coupling, no annihilation, direct detection is exactly zero)
+- NOT an axion (no U(1)_PQ, no θ-vacuum)
+- NOT a sterile neutrino (not a fermion mass eigenstate)
+- NOT warm DM (λ_fs is 22 OOM below the warm threshold)
+- IS a collective mode of the substrate's post-transit state — CDM-like phenomenologically, substrate-native ontologically
+
+### 8a.5 Gate Verdicts
+
+| Gate | Condition | Result | Session |
+|:-----|:----------|:-------|:--------|
+| Ω_DM (Leggett) | h² = 0.120 vs 0.1186 ± 0.0020 | PASS (0.7σ) | 58/66 |
+| z_eq (Leggett) | 3425 vs 3402 ± 26 | PASS (0.88σ) | 66 |
+| σ/m | 0 vs < 1.25 cm²/g | PASS | 58 |
+| LEGGETT-GRAV-DECAY-67 | Γ_grav < H_0 | OPEN (CRITICAL) | 67 (planned) |
 
 ---
 
@@ -398,13 +530,25 @@ GR predicts 2 tensor polarizations. LIGO observes 2. The framework predicts exac
 
 No KK gravitons below ~15 TeV. No micro-BH. No supersymmetry. Consistent with KK compactification at SU(3) scale (far above LHC reach).
 
+**S62–S66 particle physics predictions**:
+
+| Observable | Framework | Observed | Tension | Verdict | Session |
+|:-----------|:----------|:---------|:--------|:--------|:--------|
+| m_H (Gaussian, L=6) | 131.8 GeV | 125.1 GeV | 5.4% | CONDITIONAL PASS | 62 |
+| m_H (Aitken extrapolation) | 127.5 GeV | 125.1 GeV | 1.9% | CONVERGING | 66 |
+| sin²θ_W | 0.2307 | 0.2312 | 0.2% | PASS | 62 |
+| M_W | 80.41 GeV | 80.38 GeV | 0.05% | PASS | 62 |
+| Yukawa rank | 2 | 3 | rank deficient | OPEN | — |
+
+m_H is filter-independent across all 6 cutoff families at tree level (134 GeV, Filter-Independence Theorem S62). KK threshold corrections bring it to 131.8 GeV (Gaussian L=6). The Aitken extrapolation to L→∞ gives 127.5 GeV (1.9% from observation). The m_H discriminant selects the cutoff family: m_H^{zeta} ~ 174 GeV vs m_H^{cutoff} ~ 127.5 GeV, with observation at 125.1 GeV selecting cutoff at percent level.
+
 ### 10.2 FCC-hh
 
 If KK mass scale is accessible at 100 TeV: KK excitations predicted at M_KK = M_Pl / sqrt(Vol(K, g_{tau_0})). Requires tau_0. Timeline: 2035+.
 
 ### 10.3 Proton Decay
 
-Super-Kamiokande: tau > 10^{34} yr (p -> e+ pi0). GUT-scale proton decay is not a prediction of this framework.
+Super-Kamiokande: τ > 10³⁴ yr (p → e⁺ π⁰). **S63 update**: τ_p = 6.26 × 10³⁹ yr (T17, S63). Tree-level proton decay is exactly zero by Peter-Weyl orthogonality on SU(3). The computed lifetime (from loop-level processes) exceeds the current bound by 5 orders of magnitude. PASS with large margin. Hyper-K (2028+) will improve the bound to ~10³⁵ yr, still 4 OOM below the prediction.
 
 ---
 
@@ -421,7 +565,7 @@ Galaxies at z > 10 with stellar masses ~10^9-10^10 M_sun challenge hierarchical 
 
 LRDs at z ~ 4-9: compact, overmassive AGN with number densities ~100x UV-selected quasars (24-paper corpus in `researchers/Little-Red-Dots/`). Two indirect connections:
 
-1. LRD demographics constrain H(z) and rho(z) at z ~ 4. The frozen modulus (w = -1) predicts a specific H(z) that must be consistent.
+1. LRD demographics constrain H(z) and rho(z) at z ~ 4. The framework with w_0 = −0.918 predicts a specific H(z) that must be consistent.
 2. LRD black hole masses (10^6-10^9 M_sun within 1 Gyr) constrain density contrast growth. No framework prediction for growth rate exists.
 
 Status: indirect constraint.
@@ -434,13 +578,22 @@ Predictions qualifying as genuinely novel (Level 4: not contained in the Standar
 
 | Prediction | Condition | Instrument | Timeline | Gate Status |
 |:-----------|:----------|:-----------|:---------|:------------|
+| r = 0.024–0.033 (burst tensor spectrum) | Structural (T4, 3 numbers: ε, c_s, N_e) | CMB-S4, LiteBIRD, BICEP | 2028+ | PASS (r < 0.036 current); testable at σ_r ~ 0.001 |
+| f_NL^{equil} ~ 1.12 | c_BLV = 0.485 | CMB-S4 | 2028+ | CONSISTENT (Planck: −26 ± 47) |
+| GGE folded bispectrum shape (k_1+k_2=k_3) | GGE diagonal relic | CMB-S4 | 2028+ | Novel (no single-field model produces this) |
+| Volovik w(z) tracking (ρ_vac ~ H² M_Pl²) | Scenario B PASS | DESI DR3 | 2026–2027 | Pre-registered decision rules (S63) |
+| Ω_DM h² = 0.120 (Leggett quasiparticle) | LEGGETT-GRAV-DECAY-67 PASS needed | Planck | — | PASS (0.7σ); stability gate OPEN |
+| τ_p = 6.26 × 10³⁹ yr | PW orthogonality (T17) | Hyper-K | 2028+ | PASS (5 OOM margin) |
+| m_H = 127.5 GeV (Aitken extrap.) | Filter-independence theorem | LHC | — | 1.9% from observation |
+| n_s = 0.9567 (Hubble SA) | FUNCTIONAL-SELECT-67 | Planck | — | CONDITIONAL PASS (1.9σ, scheme-dependent) |
+| ΔN_eff = 0.027 | GGE relic | Planck, CMB-S4 | — | PASS (0.5σ) |
 | m_nu1 = 0 (massless lightest neutrino) | Pfaffian sign change at tau_c | KATRIN, Planck+DESI | 2025-2028 | Conditional (Pfaffian not computed; D_K Pfaffian = +1) |
 | Normal mass ordering | tau_0 in [0.11, 1.58] | JUNO, DUNE | 2026-2030 | OPEN conditional on tau_0 |
 | P(k) feature at k_transition | BCS backreaction computed | DESI, Euclid | After backreaction | OPEN conditional |
 | Multi-peaked stochastic GW background | First-order BCS cascade (L-9) | LISA, Einstein Telescope | 10-20 yr | Speculative (f_peak likely above detector band) |
 | Decorrelated coupling drift (U(1)/SU(2)) | Condensate oscillation around tau_0 | Optical lattice clocks 10^{-20}/yr | 2030s | OPEN (conflicts with frozen prediction if tau_dot = 0) |
 | Hubble tension zero-parameter resolution | tau_0 fixed from dynamics | SH0ES + Planck | After tau_0 | OPEN conditional |
-| Weinberg angle from dynamics | sin^2 theta_W = e^{-4tau_0}/(1 + e^{-4tau_0}) | Precision electroweak | After tau_0 | OPEN conditional (currently fitted, not derived) |
+| Weinberg angle from dynamics | sin²θ_W = e^{-4τ_0}/(1 + e^{-4τ_0}) | Precision electroweak | After tau_0 | OPEN conditional (currently fitted, not derived) |
 | Fine structure constant from geometry | beta/alpha = 0.28 from 12D | Precision QED | After beta/alpha | OPEN conditional (currently fitted) |
 
 Consistency checks (not novel predictions):
@@ -449,7 +602,10 @@ Consistency checks (not novel predictions):
 |:-------|:-----------|:-------|
 | a_g = g exactly | ALPHA-g | PASS (consistency; follows from [J, D_K] = 0) |
 | CPT equality nu = nu_bar | KamLAND, DUNE | PASS (algebraic theorem) |
-| w = -1 (frozen modulus) | DESI | Marginal (BF = 0.5, 1.9 sigma from central value) |
+| sin²θ_W = 0.2307 | Precision electroweak | PASS (0.2% from obs) |
+| M_W = 80.41 GeV | LHC/LEP | PASS (0.05% from obs) |
+| σ_8 = 0.799 | Euclid, DES | PASS (within 2σ of both Planck and lensing) |
+| z_eq = 3425 (Leggett) | Planck/DESI | PASS (0.88σ) |
 | No 4th generation | IceCube, KATRIN | PASS (Z_3 grading) |
 | G constant | LLR | PASS (volume-preserving TT) |
 | c_GW = c | LIGO | PASS (construction) |
@@ -480,16 +636,38 @@ Consistency checks (not novel predictions):
 | P-29f | GW multi-peaked spectrum | OPEN | 28/29 | LISA, Einstein Telescope |
 | K-29e | BAO compatibility | OPEN | 29 (plan) | DESI, Euclid |
 | Ordering | NO from bowtie | OPEN conditional | 22b | JUNO, DUNE, Super-K, Hyper-K |
+| KZ-NS-62 | n_s = 0.9567 (1.9σ) | CONDITIONAL PASS (scheme-dependent) | 62 | Planck, CMB-S4 |
+| DILUTION-CC-66 | Volovik Scenario B ρ_vac/ρ_obs = 1.032 | PASS (0.01 OOM) | 66 | DESI DR3, Euclid |
+| TENSOR-BURST-64 | r = 0.024–0.033 (second-order, burst) | PASS (r < 0.036) | 63–64 | BICEP/Keck, CMB-S4, LiteBIRD |
+| ZETA-SA-66 | ε_H sign reversal between cutoffs | INFO (spectral functional crisis) | 66 | Planck (n_s), CMB-S4 (α_s) |
+| AMPLITUDE-NORM-66 | A_s gap 3.15 OOM (Route B) | FAIL (marginal) | 66 | Planck (A_s normalization) |
+| QTHEORY-NPAIR-66 | Discrete q-theory self-tuning | FAIL (113.5 OOM) | 66 | -- (internal CC mechanism) |
+| LEGGETT-GRAV-DECAY-67 | Γ_grav < H_0 | OPEN (CRITICAL) | 67 (planned) | Planck (Ω_DM), Euclid, direct detection |
+| TRANSIT-PS-67 | α_s(k_CMB) < 0.015 | OPEN (CRITICAL) | 67 (planned) | CMB-S4 (α_s), Planck (n_s) |
+| FUNCTIONAL-SELECT-67 | Unique φ: n_s ∩ m_H | OPEN (CRITICAL) | 67 (planned) | Planck (n_s), LHC (m_H) |
+| BBN-VOLOVIK-67 | |w_vac − 1/3| < 0.03 at T_BBN | OPEN (CRITICAL) | 67 (planned) | BBN abundances |
 
 ---
 
 ## Quantitative Predictions Summary
 
-### Computed (tau_0-independent)
+### Computed (tau_0-independent, S66 state)
 
 | Quantity | Value | Source | Instrument |
 |:---------|:------|:-------|:-----------|
-| w (frozen modulus) | -1 exactly | E-3 closure, Session 22d | DESI |
+| n_s (Hubble SA) | 0.9567 | S62, KZ-NS-62 | Planck (1.9σ, scheme-dependent) |
+| r (second-order tensor) | 0.024–0.033 | S63–S64, TENSOR-BURST-64 | BICEP/Keck, CMB-S4 |
+| ΔN_eff | 0.027 | S66 | Planck (0.5σ PASS) |
+| f_NL^{equil} | ~1.12 | S65–S66, c_BLV = 0.485 | CMB-S4 |
+| Ω_DM h² (Leggett) | 0.120 | S58/S66 | Planck (0.7σ PASS) |
+| z_eq (Leggett) | 3425 | S66 | Planck (0.88σ PASS) |
+| w_0 (GGE+Josephson) | −0.918 | S66 | DESI (2.9σ tension) |
+| CC (Volovik Scenario B) | ρ_obs × 1.032 | S66, DILUTION-CC-66 | 0.01 OOM PASS |
+| m_H (Aitken extrap.) | 127.5 GeV | S66 | LHC (1.9%) |
+| sin²θ_W | 0.2307 | S62 | 0.2% PASS |
+| M_W | 80.41 GeV | S62 | 0.05% PASS |
+| τ_p | 6.26 × 10³⁹ yr | S63, T17 | 5 OOM margin |
+| σ_8 | 0.799 | S50 | Within 2σ of both |
 | [J, D_K] | 0 (algebraic) | Session 17a | ALPHA, BASE |
 | Number of generations | 3 (Z_3) | Session 7 | IceCube, KATRIN |
 | G_4 drift | 0 (TT volume-preserving) | Session 12 | LLR |
@@ -501,11 +679,22 @@ Consistency checks (not novel predictions):
 | Quantity | Expression | Source | Instrument |
 |:---------|:-----------|:-------|:-----------|
 | Neutrino mass ratios | D_K eigenvalue ratios at tau_0 | Session 16 pipeline | KATRIN, JUNO, DUNE |
-| sin^2 theta_W | e^{-4tau_0}/(1 + e^{-4tau_0}) | Session 17a identity | Precision electroweak |
-| H_0 (CMB) | tau_0 -> mass ratios -> recombination | Session 28 | SH0ES, Planck |
+| sin²θ_W (derived) | e^{-4τ_0}/(1 + e^{-4τ_0}) | Session 17a identity | Precision electroweak |
+| H_0 (CMB) | tau_0 → mass ratios → recombination | Session 28 | SH0ES, Planck |
 | KK excitation mass | lambda_next * M_scale | Session 22 | KATRIN-TRISTAN, FCC-hh |
 | P(k) feature | k_transition = a(t_BCS) * H(t_BCS) | Session 28 cosmic-web-collab | DESI, Euclid |
 | GW peak frequency | f_peak from backreaction | Session 28b (L-9) | LISA |
+
+### Awaiting S67 Computations
+
+| Quantity | Prerequisite | Source |
+|:---------|:-------------|:-------|
+| α_s(k_CMB) | TRANSIT-PS-67 (full Bogoliubov power spectrum) | S66 |
+| A_s (amplitude normalization) | TRANSIT-PS-67 (occupied-state, not vacuum) | S66 |
+| Leggett DM stability | LEGGETT-GRAV-DECAY-67 (selection rule) | S66 |
+| Spectral functional selection | FUNCTIONAL-SELECT-67 (dilaton φ) | S66 |
+| BBN Volovik tracking | BBN-VOLOVIK-67 (w_vac at T_BBN) | S66 |
+| GGE bispectrum shape | GGE-BISPECTRUM-67 (in-in formalism) | S66 |
 
 ### Awaiting Further Computation
 
@@ -513,6 +702,5 @@ Consistency checks (not novel predictions):
 |:---------|:-------------|:-------|
 | Pfaffian sign (massless neutrino) | D_total Pfaffian computation | Session 16, 17c |
 | delta_CP | Eigenspinor overlaps at tau_0 | Baptista Paper 18 |
-| r (tensor-to-scalar) | Map |C|^2 = 5/14 to GW spectrum | Session 20b |
 | n (LIV exponent) | Phonon dispersion from internal geometry | Session 16 |
 | Void size distribution | xi_heal from BCS coherence length | Session 28 cosmic-web-collab |

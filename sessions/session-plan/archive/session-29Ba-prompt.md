@@ -4,11 +4,11 @@
 **Author**: Team-lead (decomposed from 29B plan)
 **Depends on**: Session 28 (all sub-sessions). Does NOT depend on Session 29A — all three computations are 29A-independent.
 **Input data**:
-- `tier0-computation/s27_multisector_bcs.npz` (F_cond[9 sectors, 9 tau, 12 mu])
-- `tier0-computation/s28b_hessian.npz` (Hessian eigenvalues at minima)
-- `tier0-computation/s23a_kosmann_singlet.npz` (V_pairing matrices and eigenvalues at 9 tau values)
-- `tier0-computation/s24a_eigenvalue_ratios.npz` (singlet eigenvalue structure)
-- `tier0-computation/s24a_vspec.npz` (spectral potential V_spec(tau))
+- `computations/s27_multisector_bcs.npz` (F_cond[9 sectors, 9 tau, 12 mu])
+- `computations/s28b_hessian.npz` (Hessian eigenvalues at minima)
+- `computations/s23a_kosmann_singlet.npz` (V_pairing matrices and eigenvalues at 9 tau values)
+- `computations/s24a_eigenvalue_ratios.npz` (singlet eigenvalue structure)
+- `computations/s24a_vspec.npz` (spectral potential V_spec(tau))
 
 ## Motivation
 
@@ -29,7 +29,7 @@ All three produce results with **standalone mathematical value** regardless of t
 Every result classified against its pre-registered gate BEFORE any interpretation. Report the number first. Classify second. Interpret third.
 
 **Python environment**: `"phonon-exflation-sim/.venv312/Scripts/python.exe"`
-**Output directory**: `tier0-computation/`
+**Output directory**: `computations/`
 **Script prefix**: `s29b_`
 
 ## PRE-SESSION GATE
@@ -56,7 +56,7 @@ Session ends ONLY when user approves shutdown explicitly. Idle agents are not fi
 
 | Agent | Additional Reading |
 |:------|:-------------------|
-| phonon-exflation-sim | `tier0-computation/s27_multisector_bcs.py` (multi-sector BCS infrastructure), `tier0-computation/s24a_neutrino.py` (existing neutrino computation to extend) |
+| phonon-exflation-sim | `computations/s27_multisector_bcs.py` (multi-sector BCS infrastructure), `computations/s24a_neutrino.py` (existing neutrino computation to extend) |
 | neutrino-detection-specialist | `researchers/Neutrino/index.md` — PDG mixing angle values, PMNS parametrization conventions |
 | coordinator | This prompt Section III (gate conditions). Memorize ALL thresholds before first computation completes |
 
@@ -209,7 +209,7 @@ The effective mass matrix H_eff = diag(E_1, E_2, E_3) + V_pairing is tridiagonal
 | 29B-1 + 29B-6 | `s29b_3sector_fbcs.npz` | `s29b_3sector_fbcs.py` | B-3 depth + gradient balance (3-sector) |
 | 29B-2 | `s29b_pmns_extraction.npz` | `s29b_pmns_extraction.py` | sin^2(theta_13) gate |
 
-Gate verdicts appended to: `tier0-computation/s29b_gate_verdicts.txt`
+Gate verdicts appended to: `computations/s29b_gate_verdicts.txt`
 
 ---
 

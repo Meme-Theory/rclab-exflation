@@ -1,0 +1,69 @@
+T3-S30A-DTOTAL-PFAFFIAN: PASS -- value=+1 scheme=Pfaffian-Z2-per-sector convention=Parlett-Reid_Xi*D_total L_max=MAX_PQ_SUM=2_N_TAU=75 sha256=3207b176d66160519def580acdb8f827586ccd06bd4ab7c49b7418daa0b8530a
+
+=== Provenance ===
+Script          : computations/_shared/s30a_dtotal_pfaffian.py
+Session         : S81 (Tier 3 re-run wave) — reproduces S30Ab / S17c closure
+Trigger         : [VERIFY-THEOREM] (reproducibility under PRU+GPU)
+Classification  : GEOMETRIC (topological Z_2 invariant of D_total on H_total)
+Pre-edit SHA    : fa76aec9637b1426
+Post-edit SHA   : de0dbb6452d6e559
+Closure SHA     : bc1ac18162b078b4
+Runtime         : 26.0s (CPU path; matrices <=192x192 per sector, GPU not needed)
+Date            : 2026-04-17
+
+=== Input pins (ordered, SHA-256 head-16) ===
+  de0dbb6452d6e559 s30a_dtotal_pfaffian.py
+  23833f8c7b55516d s30a_df_construction.py
+  9624e056e8695309 s30a_df_construction.npz
+  267035cb598b08e9 dirac_spectrum.py
+  5a86d54d830ae35d branching_computation_32dim.py
+  412f8b65afaa0b60 s23a_kosmann_singlet.py
+  10bceb1a4e8b8018 canonical_constants.py
+
+=== PRU machinery pins ===
+N_TAU           : 75 (linspace 0.0 -> 2.5)
+MAX_PQ_SUM      : 2 (from s30a_df_construction.py; 6 sectors, 864-dim H_total)
+Pfaffian method : Parlett-Reid LTL^T (Wimmer Algorithm 923)
+Scheme          : Pf(M_sector) where M = Xi_ext * D_total, Xi_ext = I_dim_rho (x) Xi_{spinor}
+Convention      : Baptista Paper 18, Lemma 6.4 (G5_ext = I_{dim_rho} (x) G5)
+GPU path        : not required; per-sector blocks <= 192x192 complex; scipy dense OK
+
+=== Numerical result ===
+Per-sector Z_2    : (0,0)=+1, (0,1)=+1, (0,2)=+1, (1,0)=+1, (1,1)=+1, (2,0)=+1
+Sign changes      : 0 per sector across all 75 tau (range [0, 2.5])
+Total Z_2(tau)    : +1 identically (product of 6 positive reals)
+Antisymmetry err  : [5.55e-17, 2.64e-14] (machine epsilon, verified <= 1e-10)
+Minimum gap       : 7.896e-01 at tau = 0.2703 (positive; no level crossing)
+||D_F||/||D_K||   : [0.0, 3.3374] over tau in [0, 2.5]
+
+=== Substitution chain (Pfaffian-sign claim) ===
+Step 1 (definition)    : Pf(tau) = prod_{s in 6 sectors} Pf_s(tau)
+Step 2 (substitution)  : sgn(Pf(tau)) = prod_s sgn(Pf_s(tau)), each factor real on Xi*D_total
+Step 3 (simplification): per-sector scan shows sgn(Pf_s) = +1 for all s, all 75 tau
+Step 4 (direction)     : Z_2(tau) = prod_s (+1) = +1 identically
+Conclusion             : No sign change; topological invariant CONSTANT (+1) for all tau in [0, 2.5]
+Total-Pfaffian NaN     : float64-magnitude artifact at tau >= 1.52 (|Pf| exceeds ~1e308),
+                         NOT a sign event. Sector-level invariants are the authoritative Z_2.
+
+=== PASS criterion ===
+Gate B-29f fires   : Pf CONSTANT for all tau -> topological route fully exhausted.
+Matches MCP target : proven_778 "D_K Pfaffian Z_2 = +1 throughout"
+                     closed_140 "D_total Pfaffian | topological stabilization" (CLOSED)
+                     closed_244 "Source: Session 30Ab, s30a_dtotal_pfaffian.npz, 75 tau"
+                     closed_249 "Topological stabilization via Pfaffian sign change exhausted"
+Ratio tolerance    : THEOREM-level (Z_2 is an integer invariant; machine epsilon in antisymmetry)
+|reproduced - MCP| : 0 (exact match: sgn = +1 throughout, 0 sign changes, 6/6 sectors)
+
+=== Derived gate inferences (informed by this verdict, not produced by it) ===
+B-29f : PASS -- Z_2 = +1 throughout, topological route exhausted (reproduced).
+P-29f : DOES NOT FIRE -- no sign change, no Level 4 protected massless-fermion prediction.
+P-29g : DOES NOT FIRE -- no tau_c to compare against BCS ~0.35.
+(Note: P-29g was reported as FIRES from Gi = 0.361 < 0.5 in a separate mean-field check,
+ which is unrelated to this Pfaffian scan. See s29b_gaussian_correction.py for that path.)
+
+=== Boundary this gate maps ===
+ELIMINATES: topological (Z_2) route to fermion protection, generation count, or Jensen-curve
+            phase transition via D_total sign change. No such mechanism exists on the
+            truncated H_total with MAX_PQ_SUM=2 across the physically relevant tau window.
+SURVIVES  : spectral-action route, inner-fluctuation route, non-Pfaffian topology
+            (eta invariants, higher-Z_n indices) — all unaddressed by this gate.

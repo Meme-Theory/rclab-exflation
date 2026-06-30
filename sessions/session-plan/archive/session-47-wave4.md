@@ -41,8 +41,8 @@ Your own S46 assessment: "The n_s crisis is real and deep... may require physics
 1. `sessions/session-47/session-47-wave1-workingpaper.md` — ALL sections W1-1 through W3-4
 2. `sessions/session-47/session-47-crystal-geometry.md` — Tesla's synthesis
 3. `sessions/session-47/session-47-volovik-coherence-response.md` — your own coherence response
-4. `tier0-computation/s47_rhos_tensor.npz` — the superfluid density tensor data
-5. `tier0-computation/s47_curvature_anatomy.npz` — curvature data
+4. `computations/s47_rhos_tensor.npz` — the superfluid density tensor data
+5. `computations/s47_curvature_anatomy.npz` — curvature data
 
 **Key S47 results relevant to n_s**:
 
@@ -111,7 +111,7 @@ Does direction-weighting the 976 non-singlet modes by their ρ_s projections clo
 
 ### Verified data locations
 
-**tier0-computation/s47_rhos_tensor.npz**:
+**computations/s47_rhos_tensor.npz**:
 - `rho_s_all: shape=(16, 8, 8)` — full tensor at 16 tau values
 - `rho_s_eigs_all: shape=(16, 8)` — eigenvalues at each tau
 - `rho_s_fold: shape=(8, 8)` — tensor at fold
@@ -120,8 +120,8 @@ Does direction-weighting the 976 non-singlet modes by their ρ_s projections clo
 - `tau_sweep: shape=(16,)` — tau values
 
 **S46 non-singlet dissipation data** — check for:
-- `tier0-computation/s46_nonsinglet_dissipation.npz` — may contain the S46 isotropic LZ result
-- `tier0-computation/s46_landau_zener_ns.npz` — LZ transition data
+- `computations/s46_nonsinglet_dissipation.npz` — may contain the S46 isotropic LZ result
+- `computations/s46_landau_zener_ns.npz` — LZ transition data
 
 **s44_dos_tau.npz** — full 992-mode spectrum at 5 tau values
 
@@ -160,9 +160,9 @@ Does direction-weighting the 976 non-singlet modes by their ρ_s projections clo
 - **FAIL**: Shortfall ≥ 3.8x (anisotropy doesn't help or makes it worse)
 
 ### Output files
-- Script: `tier0-computation/s47_aniso_dissip.py`
-- Data: `tier0-computation/s47_aniso_dissip.npz`
-- Plot: `tier0-computation/s47_aniso_dissip.png`
+- Script: `computations/s47_aniso_dissip.py`
+- Data: `computations/s47_aniso_dissip.npz`
+- Plot: `computations/s47_aniso_dissip.png`
 
 ### Working paper section: W4-2
 

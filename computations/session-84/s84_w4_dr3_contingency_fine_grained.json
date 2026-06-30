@@ -1,0 +1,330 @@
+{
+  "gate_id": "S84-DR3-CONTINGENCY-FINE-GRAINED",
+  "session": "S84",
+  "scheme": "pre-registration",
+  "convention": "CPL (w_0, w_a)",
+  "L_max": "N/A",
+  "frozen_date": "2026-04-19",
+  "frozen_note": "Single-authority freeze: 7-scenario decision tree committed once; post-release application REQUIRES NO re-registration. Lockouts A-F (S83 sagan-synthesis V.9 + S84 W1b-9 DR3-RESPONSE-PROTOCOL) enforced: NO rectangle-resizing, NO dual-pin retreat, NO scheme-shopping, NO w_a axis migration, NO post-2026-04-23 branch-(iv) redefinition, NO tau_fold relocation.",
+  "parent_gate": "S84-DR3-RESPONSE-PROTOCOL (W1b-9)",
+  "parent_verdict_required": "FAIL (DR3 central OUTSIDE R_842)",
+  "pre_registered_predictions": {
+    "branch_iv_w0": -0.842454,
+    "branch_iv_wa": 0.0,
+    "canonical_constants_w0_FW": -0.918,
+    "canonical_constants_wa_FW": 0.0
+  },
+  "rectangle_R842": {
+    "w0_range": [
+      -0.942,
+      -0.742
+    ],
+    "wa_range": [
+      -0.2,
+      0.2
+    ],
+    "center": [
+      -0.842,
+      0.0
+    ],
+    "half_widths": [
+      0.09999999999999998,
+      0.2
+    ],
+    "half_widths_in_DR3_sigma": [
+      2.1739130434782603,
+      1.1299435028248588
+    ]
+  },
+  "dr3_projected_cov": {
+    "sigma_w0": 0.046,
+    "sigma_wa": 0.177,
+    "rho_w0_wa": -0.85,
+    "source": "S71 DESI-DR3-SCENARIO-B-PRECISE-71 (5x DR1 statistics)"
+  },
+  "taxonomy_inheritance": {
+    "from_gate": "S73b W4-C DESI-DR3-PREP-73B",
+    "frozen_at": "2026-04-10",
+    "coarse_scenarios": {
+      "A": {
+        "w_0": -0.75,
+        "w_a": -0.73,
+        "desc": "Confirms DR2 (DESY5 systematics dominate)",
+        "sub_scenario_classification": "B1"
+      },
+      "B": {
+        "w_0": -0.9,
+        "w_a": -0.3,
+        "desc": "Moves toward LCDM (partial regression)",
+        "sub_scenario_classification": "B1"
+      },
+      "C": {
+        "w_0": -0.65,
+        "w_a": -1.0,
+        "desc": "More dynamical (DR2 trend amplified)",
+        "sub_scenario_classification": "C1"
+      }
+    }
+  },
+  "cross_reference_s83_w0_workshop": {
+    "branch_iv_retention": "S83 W0-REGULATOR-RESOLUTION retired strict branches (i)-(iii); branch (iv) single-branch promotion at w_0 = -0.842454 ADOPTED (see project_s83_w0_regulator_workshop_r3.md).",
+    "r_842_migration": "R_918 retrospective: framework w_0 = -0.918 was OUTSIDE upper edge (self-falsifier under branch (iv)). Migrated to R_842 centered on branch (iv); no rectangle-resizing.",
+    "no_scheme_shopping_commitment": "S83 sagan-synthesis V.9: post-data scheme selection is unacceptable. DR3 release either corroborates branch (iv) or forces genuine mechanism reassessment. Strict (iii) RETIRED; dual-pin NOT available as escape hatch."
+  },
+  "scenarios": [
+    {
+      "scenario_id": "A1",
+      "label": "branch-(iv) mild corroboration (w_0 slightly deep)",
+      "w0_range": [
+        -0.988,
+        -0.942
+      ],
+      "wa_range": [
+        -0.2,
+        0.2
+      ],
+      "framework_verdict": "CORROBORATES branch-(iv) at -0.842 within 1-sigma deep shift; Volovik-Josephson partition confirmed to leading order; scorecard \u00a7VII.M.scorecard.corroborations entry REQUIRED (not an automatic PASS, since DR3 landed deeper than R_842).",
+      "dr3_center_example": [
+        -0.965,
+        0.0
+      ],
+      "sigma_distance_from_R842_edge": "(-0.023 in w_0) ~ 0.50-sigma deep of R_842 lower edge",
+      "evoi_post_release": {
+        "rank_1": "Josephson-sector amplitude recompute: promote w_0 from -0.842 to DR3 central value; verify S58/S83 partition still closes Gibbs-Duhem consistency.",
+        "rank_2": "Volovik-partition scheme variance: re-evaluate 0.06 scheme uncertainty band; does DR3 center lie within the scheme band?",
+        "rank_3": "Cross-correlate with Pantheon+ / DESY5 / Union3 SN calibrations (S72 systematic 0.08 in w_0).",
+        "rank_4": "Update canonical_constants.w0_FW to DR3 central via S85 promotion."
+      },
+      "post_release_action": "Framework SURVIVES; scorecard corroboration entry; carry-forward to S85: promote w0_FW, recompute GGE relic via Josephson amplitude."
+    },
+    {
+      "scenario_id": "A2",
+      "label": "branch-(iv) stretched corroboration (w_0 ~ 2-sigma deep)",
+      "w0_range": [
+        -1.05,
+        -0.988
+      ],
+      "wa_range": [
+        -0.2,
+        0.2
+      ],
+      "framework_verdict": "MARGINAL corroboration of branch-(iv); w_0 sits ~2-sigma deeper than R_842; Volovik partition requires recalibration but remains the right mechanism. Not a refutation; flags scheme-systematic larger than the S72 workshop A-Q2 estimate (0.06).",
+      "dr3_center_example": [
+        -1.02,
+        0.0
+      ],
+      "sigma_distance_from_R842_edge": "(-0.078 in w_0) ~ 1.70-sigma deep of R_842 lower edge",
+      "evoi_post_release": {
+        "rank_1": "Audit S83 W0-REGULATOR-RESOLUTION branches: is there a five-regulator variant landing at w_0 ~ -1.0? Branch (i)-(iv) extended scan REQUIRED.",
+        "rank_2": "Scheme-systematic inflation: increase 0.06 band to match DR3-pinned scheme variance; document INFO-demote rule.",
+        "rank_3": "Phantom-crossing audit: if w_0 < -1, check substrate impedance mismatch for phantom-DE-compatible mechanism.",
+        "rank_4": "Re-check four-fold w_a lock stability under w_0 = -1 shift."
+      },
+      "post_release_action": "Framework SURVIVES with scheme-systematic inflation; carry-forward to S85: full W0-regulator re-scan, scheme-band audit."
+    },
+    {
+      "scenario_id": "B1",
+      "label": "w_a-driven exclusion (w_0 corridor, w_a dynamical)",
+      "w0_range": [
+        -0.942,
+        -0.742
+      ],
+      "wa_range": [
+        -1.0,
+        -0.2
+      ],
+      "framework_verdict": "REFUTES four-fold w_a lock; Volovik w_0 partition SURVIVES. Four-fold lock (GGE integrability + Josephson + texture + thermal barrier) was exact; w_a != 0 means one of the four mechanisms is broken at DR3 level. scorecard \u00a7VII.M.scorecard.refutations entry REQUIRED for w_a lock.",
+      "dr3_center_example": [
+        -0.85,
+        -0.4
+      ],
+      "sigma_distance_from_R842_edge": "(-0.20 in w_a) ~ 1.13-sigma below lock corridor",
+      "evoi_post_release": {
+        "rank_1": "Four-fold w_a lock diagnostic: which of GGE-integrability, Josephson, texture, thermal-barrier channels releases? Pre-registered discriminant required.",
+        "rank_2": "Leggett-channel dispersion: w_a-running contribution from inter-band coherence; recompute S68 w_a integration.",
+        "rank_3": "Bayesian model comparison: LCDM vs CPL vs framework-with-w_a-run; Pantheon+ + DESY5 + BAO full joint.",
+        "rank_4": "GGE-thermal leakage audit: which relic freezes dynamical w_a."
+      },
+      "post_release_action": "Framework PARTIALLY REFUTED; scorecard refutation entry for w_a lock; carry-forward to S85: four-fold diagnostic, w_a mechanism audit."
+    },
+    {
+      "scenario_id": "B2",
+      "label": "w_0-driven exclusion (w_0 shallow, w_a lock preserved)",
+      "w0_range": [
+        -0.742,
+        -0.5
+      ],
+      "wa_range": [
+        -0.2,
+        0.2
+      ],
+      "framework_verdict": "REFUTES Volovik w_0 = -0.842 partition; four-fold w_a lock SURVIVES. w_0 landing shallow (closer to LCDM/Quintom thaw) means either (a) the Volovik mechanism over-estimates the effacement residual or (b) substrate impedance mismatch Gamma = 0.99970 is wrong. Refutes branch-(iv) canonical.",
+      "dr3_center_example": [
+        -0.65,
+        0.0
+      ],
+      "sigma_distance_from_R842_edge": "(+0.092 in w_0) ~ 2.00-sigma shallow of R_842 upper edge",
+      "evoi_post_release": {
+        "rank_1": "Substrate impedance audit: is Gamma = 0.99970 correct? S58 effacement-residual recalculation REQUIRED.",
+        "rank_2": "Alternative branch scan: does branch (i), (ii), (iii), (v) canonical land closer to DR3 w_0? S85 W0-regulator re-scan.",
+        "rank_3": "Cross-check w_a lock survival: does DR3 w_a actually fall in [-0.2, 0.2] at 2-sigma? If so, four-fold lock corroborated.",
+        "rank_4": "tau_fold relocation audit (lockout F requires fresh pre-reg)."
+      },
+      "post_release_action": "Framework PARTIALLY REFUTED; scorecard refutation entry for Volovik w_0 partition; carry-forward to S85: branch re-scan, impedance audit, alternative-canonical pre-registration."
+    },
+    {
+      "scenario_id": "B3",
+      "label": "joint shift (w_0 shallow, w_a moderately dynamical)",
+      "w0_range": [
+        -0.742,
+        -0.5
+      ],
+      "wa_range": [
+        -0.5,
+        -0.2
+      ],
+      "framework_verdict": "REFUTES both Volovik w_0 partition AND four-fold w_a lock simultaneously. Joint exclusion is the MOST CONSTRAINING B-case: the DR2 drift (shallow w_0 + negative w_a) has continued in DR3; framework requires dual-mechanism reassessment. scorecard refutation entry for BOTH w_0 and w_a.",
+      "dr3_center_example": [
+        -0.65,
+        -0.35
+      ],
+      "sigma_distance_from_R842_edge": "(+0.092 in w_0, -0.15 in w_a) joint ~2.3-sigma",
+      "evoi_post_release": {
+        "rank_1": "Unified mechanism failure audit: is there a SINGLE broken substrate assumption that yields both w_0 shallow and w_a dynamical? (e.g., GGE thermalization onset shifts both.)",
+        "rank_2": "CPL-vs-quintessence model selection: does the data prefer a free-field quintessence over framework? Bayesian BF.",
+        "rank_3": "Substrate-emergence vs inflation dichotomy: if DR3 joint shift matches standard quintessence, framework discriminant power on DE disappears.",
+        "rank_4": "Full S85 re-scan: partition + lock + impedance all on test."
+      },
+      "post_release_action": "Framework JOINT-PARTIAL-REFUTED; scorecard dual refutation entry; carry-forward to S85: unified-failure audit, model-selection Bayes factor vs free quintessence."
+    },
+    {
+      "scenario_id": "C1",
+      "label": "extreme Quintom (w_0 shallow, w_a strongly dynamical)",
+      "w0_range": [
+        -0.742,
+        -0.2
+      ],
+      "wa_range": [
+        -1.5,
+        -0.5
+      ],
+      "framework_verdict": "STRONGLY REFUTES framework; DR3 confirms DR2 drift at extreme Quintom region (S73b Scenario C: w_0 = -0.65, w_a = -1.0). At 3-sigma this is CLOSED region: Volovik partition AND four-fold lock AND substrate impedance all simultaneously incorrect. Framework w_0 = -0.918 incompatible. scorecard triple refutation entry.",
+      "dr3_center_example": [
+        -0.65,
+        -1.0
+      ],
+      "sigma_distance_from_R842_edge": "(+0.092 in w_0, -0.80 in w_a) joint >6-sigma",
+      "evoi_post_release": {
+        "rank_1": "Framework-exclusion analysis: at what confidence is the substrate DE mechanism ruled out? Precompute for 3-sigma, 5-sigma rejection.",
+        "rank_2": "Forensic: which S58 assumption broke? Can the framework be restored with a single corrected mechanism, or is a fundamental rewrite needed?",
+        "rank_3": "Alternative substrate-DE: is there any configuration of D_K eigenvalues that yields Quintom-like w(z)? Spectral moment audit.",
+        "rank_4": "Retraction protocol: if no substrate mechanism survives, retract DE predictions; framework retains GW/particle physics content."
+      },
+      "post_release_action": "Framework DE-SECTOR REFUTED at high confidence; scorecard entry; S85 carry-forward: full substrate-DE forensic, retraction preparation."
+    },
+    {
+      "scenario_id": "C2",
+      "label": "deep phantom or boundary outliers",
+      "w0_range": [
+        -1.2,
+        -1.05
+      ],
+      "wa_range": [
+        -0.5,
+        0.5
+      ],
+      "framework_verdict": "REFUTES framework via phantom crossing; w_0 < -1.05 places DE below phantom divide where substrate effacement residual cannot provide negative-pressure excess. OR w_a highly positive (> +0.5) with shallow w_0 indicates freezing/thaw inconsistent with four-fold lock. Either branch demands reassessment of substrate impedance OR retraction of phantom-exclusion claim.",
+      "dr3_center_example": [
+        -1.1,
+        0.0
+      ],
+      "sigma_distance_from_R842_edge": "(-0.158 in w_0) ~ 3.43-sigma deep of R_842",
+      "evoi_post_release": {
+        "rank_1": "Phantom-compatibility audit: can substrate impedance mismatch produce w < -1 without violating null energy condition? S58/S67 Volovik partition re-examination.",
+        "rank_2": "Check A2 boundary: if DR3 falls near -1.05, is it A2 (corroboration) or C2 (refutation)? Boundary rule: strict < -1.05 is C2; [-1.05, -0.988] is A2.",
+        "rank_3": "Null energy condition: does framework predict NEC preservation at substrate level? Theorem required.",
+        "rank_4": "Alternative mechanism: quintom with phantom-crossing."
+      },
+      "post_release_action": "Framework REFUTED via phantom divide or high-freezing thaw; scorecard entry; S85 carry-forward: phantom compatibility audit, NEC theorem registration."
+    }
+  ],
+  "classification_rule": {
+    "logic": "1. Check R_842 containment (parent gate G42): w_0 in [-0.942,-0.742] AND w_a in [-0.2,0.2] -> PASS (not this gate). 2. Outside R_842: apply w_0/w_a axis partition:\n   - w_0 < -0.942 AND w_a-lock: A1 (-0.988<=w_0) or A2 ([-1.05,-0.988]) or C2 (<-1.05).\n   - w_0 in [-0.942,-0.742] AND w_a out of lock: B1.\n   - w_0 > -0.742 AND w_a in lock: B2.\n   - w_0 > -0.742 AND w_a in [-0.5,-0.2]: B3.\n   - w_0 > -0.742 AND w_a < -0.5: C1.\n   - w_0 > -0.742 AND w_a > 0.2: C2 (phantom-thaw).\n   - w_0 < -1.05: C2 (deep phantom).",
+    "example_classifications": [
+      {
+        "point": [
+          -0.965,
+          0.0
+        ],
+        "scenario_id": "A1"
+      },
+      {
+        "point": [
+          -1.02,
+          0.0
+        ],
+        "scenario_id": "A2"
+      },
+      {
+        "point": [
+          -0.85,
+          -0.4
+        ],
+        "scenario_id": "B1"
+      },
+      {
+        "point": [
+          -0.65,
+          0.0
+        ],
+        "scenario_id": "B2"
+      },
+      {
+        "point": [
+          -0.65,
+          -0.35
+        ],
+        "scenario_id": "B3"
+      },
+      {
+        "point": [
+          -0.65,
+          -1.0
+        ],
+        "scenario_id": "C1"
+      },
+      {
+        "point": [
+          -1.1,
+          0.0
+        ],
+        "scenario_id": "C2"
+      },
+      {
+        "point": [
+          -0.842,
+          0.0
+        ],
+        "scenario_id": "INSIDE_R_842"
+      }
+    ]
+  },
+  "post_release_action_matrix": {
+    "A1": "SURVIVE+promote: scorecard corroboration, S85 canonical w_0 update",
+    "A2": "SURVIVE+recal: scorecard corroboration, scheme-band inflation",
+    "B1": "PARTIAL-REFUTE-w_a: scorecard refutation on four-fold lock",
+    "B2": "PARTIAL-REFUTE-w_0: scorecard refutation on Volovik partition",
+    "B3": "DUAL-REFUTE: scorecard refutation on both partition AND lock",
+    "C1": "STRONG-REFUTE: substrate DE mechanism ruled out at high conf",
+    "C2": "PHANTOM-REFUTE or thaw-REFUTE: impedance audit required"
+  },
+  "input_pins": {
+    "computations/_shared/canonical_constants.py": "0590ce9b7d05a39a80ebfe47656db00f25aad169396643ddae37e4a19ac1f499",
+    "computations/_shared/s73b_desi_dr3_predictions.py": "154cf7b4d7ee01d9314d05a2cc8421b470b04e5623bf5607c00d6d5d8d6d5bc0",
+    "computations/_shared/s73b_desi_dr3_predictions.npz": "d001196ad93d224bd19e299dc23d8e7412f9a5680ae50d180161ea68a2acc17c",
+    "computations/session-83/s83_w3_g42_dr3_live_watch.py": "705ffa4028c55016a9f88f9495c8da230461fd4c0f92ccdb4745458165c7622c",
+    "computations/session-83/s83_w3_g42_dr3_live_watch.npz": "739a7806eb4edf9307de79cdee560ea0c028d635667e37a9be5f64a8b1528b93"
+  },
+  "closure_sha256": "801e4690eee8e7f4c4152be7701567229a377ab3d23a66a5a39b318469323d6f",
+  "audit_sha256": "f6e102fd5f322dd3f6fa1e4866c6a2f0c425f344d359cf07e37e4d5877cb265e"
+}

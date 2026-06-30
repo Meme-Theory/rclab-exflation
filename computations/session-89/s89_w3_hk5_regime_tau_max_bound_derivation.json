@@ -1,0 +1,108 @@
+{
+  "gate_id": "S89-HK-5-REGIME-OF-VALIDITY-TAU-MAX-BOUND-DERIVATION",
+  "scheme": "HK-5-regime-of-validity-tau-max-bound-derivation",
+  "convention": "min-over-3-sources-pole-substrate-IS-numerical-breakdown",
+  "L_max": 12,
+  "tau_max": 12.475002651266877,
+  "binding_source": "S3_numerical_breakdown",
+  "sources": {
+    "S1_closed_form_pole": {
+      "name": "closed-form pole (analytic)",
+      "tau_max_S1": 15.707963267948966,
+      "derivation": "HK-5(\u03c4) = 5/(1 \u2212 \u03c4/(5\u03c0)) has a simple pole at \u03c4 = 5\u03c0; closed form is INVALID for \u03c4 \u2265 5\u03c0 (diverges or becomes negative).",
+      "is_finite": true
+    },
+    "S2_substrate_IS_transition": {
+      "name": "substrate-IS structural transition (substrate algebra \u03c4-stable)",
+      "tau_max_S2": Infinity,
+      "derivation": "Substrate algebra A_K = \u2102 \u2295 \u210d \u2295 M_3(\u2102) is \u03c4-invariant under Jensen TT-deformation (only D_K(\u03c4) varies; algebra structure fixed). No substrate-IS structural transition in [0, \u221e); defaults to +\u221e as a non-binding upper bound. Per S82 / S86 W4 / S87 W3 closures + S88 W6a-51 / W6a-52 substrate-algebra stability demonstration + W-21 \u00a7V.5 line 192 'next-order Jensen correction becomes same order as leading term' criterion equivalent to Source-1 pole reading.",
+      "is_finite": false
+    },
+    "S3_numerical_breakdown": {
+      "name": "numerical breakdown at L_max-truncation",
+      "tau_max_S3_truncation_estimate": 12.475002651266877,
+      "tau_fold_anchor_residual": 5.230238e-05,
+      "tau_fold_anchor_residual_at_5pct_threshold": true,
+      "x_breakdown_taylor": 0.7941833348134493,
+      "L_max_truncation_order": 13,
+      "derivation": "Taylor-truncation argument: HK-5(\u03c4) = \u03a3_n 5\u00b7(\u03c4/(5\u03c0))^n; truncation at L_max=12 leaves O(x^{13}) error; for 5% relative deviation, x^{13} = 0.05 \u21d2 x = 0.794183 \u21d2 \u03c4_breakdown \u2248 5\u03c0 \u00b7 0.7942 \u2248 12.4750. Cross-check at \u03c4_fold = 0.19: cache rel_dev = 5.230238e-05 << 5% (S88 W6a-51 INFO anchor). As L_max \u2192 \u221e, \u03c4_breakdown \u2192 5\u03c0 = Source-1 limit.",
+      "is_finite": true
+    }
+  },
+  "boundary_check": {
+    "step1_tau_fold": {
+      "tau": 0.19,
+      "hk5": 5.061219374192111,
+      "pass": true
+    },
+    "step2_below_pole": {
+      "tau": 15.706963267948966,
+      "hk5": 78539.81633978125,
+      "pass": true
+    },
+    "step3_above_pole": {
+      "tau": 15.708963267948965,
+      "hk5": -78539.81633978125,
+      "pass": true
+    },
+    "step4_zero": {
+      "tau": 0.0,
+      "hk5": 5.0,
+      "pass": true
+    },
+    "boundary_direction_verification_pass": true
+  },
+  "criteria": {
+    "a_tau_max_derived": true,
+    "b_boundary_direction": true,
+    "c_W21_V5_empirical_consistency": true,
+    "d_a28_downstream_safe": true,
+    "e_promotion_eligible": true
+  },
+  "margins": {
+    "tau_fold_margin": 65.6579086908783,
+    "a28_consumer_margin": 32.82895434543915
+  },
+  "composite": "PASS",
+  "sign_verdict": "N/A",
+  "magnitude_verdict": "PASS",
+  "regime_verdict": "VALID",
+  "promotion_status": "PROMOTED",
+  "audit_sha256": "136630ecc2869880c879aa805ce28e088374f77688755b1c2d8c82a8884026df",
+  "content_sha256": "84fef870915eb29019603683fc8ed20c26fba2cdee45c742f1930485cb1dcd15",
+  "substitution_chain": [
+    "Step 1 [Boundary direction at \u03c4 = \u03c4_fold = 0.19]: HK-5(\u03c4_fold) = 5/(1 \u2212 0.19/15.707963) = 5.061219 (canonical regime; well below pole).",
+    "Step 2 [Boundary direction below pole at \u03c4 = \u03c4_pole \u2212 0.001]: HK-5(15.706963) = 7.853982e+04 (diverges to +\u221e; valid regime).",
+    "Step 3 [Boundary direction above pole at \u03c4 = \u03c4_pole + 0.001]: HK-5(15.708963) = -7.853982e+04 (negative; HK-5 INVALID for \u03c4 > \u03c4_pole).",
+    "Step 4 [Trivial small-\u03c4 limit at \u03c4 = 0]: HK-5(0) = 5 (consistent with substrate's intrinsic d_eff).",
+    "Source-1 (closed-form pole, analytic theorem): \u03c4_max^{S1} = 5\u03c0 \u2248 15.7079632679.",
+    "Source-2 (substrate-IS structural transition): substrate algebra A_K = \u2102 \u2295 \u210d \u2295 M_3(\u2102) \u03c4-invariant; no transition; \u03c4_max^{S2} = +\u221e (non-binding).",
+    "Source-3 (numerical breakdown at L_max=12): Taylor-truncation gives x^{13} = 0.05 \u21d2 x = 0.794183 \u21d2 \u03c4_max^{S3} \u2248 12.4750; cache anchor at \u03c4_fold gives rel_dev = 5.23e-5 << 5%.",
+    "Combine: \u03c4_max = min(5\u03c0, +\u221e, 12.4750) = 12.4750026513 (binding source: S3_numerical_breakdown).",
+    "\u03c4_fold margin: 12.4750 / 0.19 = 65.6579\u00d7 \u2265 10\u00d7 W-21 V.5 PASS criterion \u21d2 PASS.",
+    "A.28 downstream regime check: \u03c4_A28 = 2\u00b7\u03c4_fold = 0.3800; \u03c4_max / \u03c4_A28 = 32.8290\u00d7 \u2265 10\u00d7 \u21d2 A.28 SAFE within regime.",
+    "Conclusion: \u03c4_max = 12.4750026513 (M_KK^{\u22121} units); HK-5 closed form is the substrate-IS d_eff representation throughout [0, \u03c4_max)."
+  ],
+  "input_pin_map": {
+    "gate_id": "S89-HK-5-REGIME-OF-VALIDITY-TAU-MAX-BOUND-DERIVATION",
+    "scheme": "HK-5-regime-of-validity-tau-max-bound-derivation",
+    "convention": "min-over-3-sources-pole-substrate-IS-numerical-breakdown",
+    "L_max": 12,
+    "tau_fold": "0.19",
+    "M_KK": "7.428660036284456e+16",
+    "tau_pole_5pi": "15.707963267948966",
+    "HK_5_form": "5/(1 \u2212 \u03c4/(5\u03c0))",
+    "S88_W6a_51_residual_at_tau_fold": "5.230238e-05",
+    "input_files_sha256": {
+      "canonical_constants_py": "f42ce60e4a1de957bf5edf6e411cc8edf941692c55d2fcef5f833c541c93ee6b",
+      "s84_spectrum_cache_L12_tau019_npz": "FILE-MISSING",
+      "s88_w21_w6b_d_spec_B_k1_k2_md": "384f5c4e74c57f4769716fa39d95fa9226e6492f70f09f3a50e01bd8e2d6d98b"
+    },
+    "tau_max_pin": 12.475002651266877,
+    "binding_source": "S3_numerical_breakdown",
+    "boundary_direction_verification_pass": true,
+    "tau_fold_margin": 65.6579086908783,
+    "a28_consumer_margin": 32.82895434543915,
+    "promotion_pre_check": true
+  }
+}

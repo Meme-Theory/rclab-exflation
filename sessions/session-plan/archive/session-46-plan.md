@@ -152,8 +152,8 @@ Vacuum q-theory crossing at tau* = 0.472. BCS-corrected crossing at tau* = 0.209
 1. ALL physics agents use opus
 2. Script prefix: `s46_`
 3. Python: `"phonon-exflation-sim/.venv312/Scripts/python.exe"`
-4. Output directory: `tier0-computation/`
-5. Import constants from `tier0-computation/canonical_constants.py`
+4. Output directory: `computations/`
+5. Import constants from `computations/canonical_constants.py`
 6. Formula audit protocol mandatory
 7. Path quoting: double-quote all paths with "Ainulindale Exflation"
 8. No cross-checks (S45 lesson: agents just shrug at scripts)

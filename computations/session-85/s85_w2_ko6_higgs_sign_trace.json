@@ -1,0 +1,73 @@
+{
+  "gate_id": "S85-W2-KO6-HIGGS-SIGN-DIRECTION",
+  "verdict": "PASS",
+  "value_4tuple": {
+    "value": 1,
+    "scheme": "ko6-sign-flow",
+    "convention": "CCM-2007/AC-2010",
+    "L_max": "N/A"
+  },
+  "mu2_sign_bare": 1,
+  "mu2_sign_rg_corrected": -1,
+  "KO6_signs": {
+    "eps": 1,
+    "eps_prime": 1,
+    "eps_double_prime": -1
+  },
+  "substitution_chain": {
+    "steps": [
+      {
+        "step": 1,
+        "label": "Define KO-6 signs",
+        "eq": "eps = J^2, eps' = coef(J gamma = eps' gamma J), eps'' = coef(J D = eps'' D J)",
+        "values": {
+          "eps": 1,
+          "eps_prime": 1,
+          "eps_double_prime": -1
+        },
+        "source": "CCM-2007 Table 1, KO-6 row (dim 6 mod 8)"
+      },
+      {
+        "step": 2,
+        "label": "a_2 Higgs-quadratic coefficient template",
+        "eq": "mu^2 |H|^2 coefficient ~ -(eps'' / Z_H) * Tr_F(Y^dag Y)",
+        "source": "AC-2010 (Phys Rev D 82, 085015) eq. 4.15; CCM-2007 eq. 3.14-3.15"
+      },
+      {
+        "step": 3,
+        "label": "Substitute eps'' = -1",
+        "eq": "-(eps'') = -(-1) = 1",
+        "result_sign": 1
+      },
+      {
+        "step": 4,
+        "label": "Sign of Tr_F(Y^dag Y) and Z_H",
+        "eq": "Tr_F(Y^dag Y) = sum |y_i|^2 > 0; Z_H > 0",
+        "tr_YdagY_sign": 1,
+        "Z_H_sign": 1
+      },
+      {
+        "step": 5,
+        "label": "Bare mu^2 sign (from a_2, KO-6 signature)",
+        "eq": "mu^2_bare ~ (-eps'') * Tr_F(Y^dag Y) / Z_H  ~ (+1)*(+1)/(+1) = 1",
+        "mu2_sign_bare": 1
+      },
+      {
+        "step": 6,
+        "label": "RG-corrected mu^2 sign at EW vacuum",
+        "eq": "mu^2_phys < 0 at EW vacuum; top-Yukawa RG flow per AC-2010 \u00a7V, eq. 5.12 drives mu^2(Lambda) > 0 -> mu^2(M_EW) < 0",
+        "mu2_sign_rg": -1
+      }
+    ],
+    "mu2_sign_bare": 1,
+    "mu2_sign_rg_corrected": -1,
+    "direction_from_canonical": "Bare (a_2, KO-6): SIGN = 1 (> 0) => unbroken EW at cutoff. RG-corrected at M_EW: SIGN = -1 (< 0) => EWSB."
+  },
+  "closure_sha256": "782669638c9d9f128388cc360ed7bd49f181a0e67cdf6a52567c85e4f12a6654",
+  "content_sha256": "72b5ab07f4f99e66498e06cdc6199653fcd05dcab176f30c16f655497ec12742",
+  "input_shas": {
+    "computations/_shared/canonical_constants.py": "784edf52626583e855e31fcbe82740c882b69d23bfa07a771680a5ac6d097b7c",
+    "researchers/Connes/10_2007_Chamseddine_Connes_Marcolli_Gravity_standard_model.md": "073a8dfe64ec56370258518d59a002deb6e6220e034365e487df2aedab9cb6e3",
+    "researchers/Connes/20_2010_Chamseddine_Connes_Resilience_spectral_standard_model.md": "9d4732653e42f1f61d82664706c0e177a97bbc9ac4b2def7c57da83b75549ae0"
+  }
+}

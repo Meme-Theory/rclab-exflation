@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 149,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1481",
+      "anchor_type": "data_provenance",
+      "name": "fstar_self_consistency",
+      "script_path": "session-76/s76_fstar_self_consistency.py",
+      "session": "s76",
+      "inputs": "s75_anomaly_derived_fstar.npz",
+      "outputs": "session-76/s76_fstar_self_consistency.npz, session-76/s76_fstar_self_consistency.png",
+      "source_file": "computations/session-76/s76_fstar_self_consistency.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s76_fstar_self_consistency.py -- F-STAR-SELF-CONSISTENCY-76\n    4: =============================================================\n    5: \n    6: Gate: S76-C7-FSTAR\n    7:   PASS: f* derived from non-anomaly principle, n_s = 0.9649 follows\n    8:   FAIL: no non-anomaly principle fixes f* (multiple solutions)\n    9:   INFO: f* partially constrained (narrows range but not unique)\n   10: \n   11: Physics:"
+    },
+    {
+      "anchor_id": "prov_1482",
+      "anchor_type": "data_provenance",
+      "name": "hp4_first_principles",
+      "script_path": "session-76/s76_hp4_first_principles.py",
+      "session": "s76",
+      "inputs": "",
+      "outputs": "session-76/s76_hp4_first_principles.npz, session-76/s76_hp4_first_principles.png",
+      "source_file": "computations/session-76/s76_hp4_first_principles.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s76_hp4_first_principles.py — CC from Spectral Triple Normalization (S76-A4-HP4)\n    4: =================================================================================\n    5: \n    6: Gate: S76-A4-HP4\n    7:   PASS: CC prediction within 2 OOM of observed, zero free parameters.\n    8:   FAIL: CC prediction > 5 OOM from observed OR requires free parameter adjustment.\n    9:   INFO: CC prediction within 2-5 OOM, structural understanding advanced but gap remains.\n   10: \n   11: Derivation:"
+    },
+    {
+      "anchor_id": "prov_1483",
+      "anchor_type": "data_provenance",
+      "name": "instanton_liquid",
+      "script_path": "session-76/s76_instanton_liquid.py",
+      "session": "s76",
+      "inputs": "s75_multi_instanton_lmax10.npz",
+      "outputs": "session-76/s76_instanton_liquid.npz, session-76/s76_instanton_liquid.png",
+      "source_file": "computations/session-76/s76_instanton_liquid.py",
+      "source_context_30_lines": "   33:   At S_inst << 1, the semiclassical expansion breaks down. We must:\n   34:   (a) Use the correct instanton interaction for small S_inst\n   35:   (b) Cross-check that energy scales remain physical\n   36:   (c) Distinguish artifacts from genuine sign changes\n   37: \n   38: Volovik analog: Dense vortex liquid in superfluid 3He-A.\n   39: \n   40: Input: s75_multi_instanton_lmax10.npz, canonical_constants.py\n   41: Output: s76_instanton_liquid.npz, s76_instanton_liquid.png\n   42: \n   43: Cross-checks:\n   44:   CHK1: Dilute limit (n_inst -> 0) recovers S75 result (V_eff/V_bare ~ 5e-4)\n   45:   CHK2: V_eff(tau) -> 0 as S_inst -> infinity (suppressed tunneling)\n   46:   CHK3: Energy scales: |V_liquid| < |E_cond| * N_modes (BCS ceiling)\n   47: \"\"\"\n   48: \n   49: import numpy as np"
+    },
+    {
+      "anchor_id": "prov_1484",
+      "anchor_type": "data_provenance",
+      "name": "jlo_local_index",
+      "script_path": "session-76/s76_jlo_local_index.py",
+      "session": "s76",
+      "inputs": "",
+      "outputs": "session-76/s76_jlo_local_index.npz, session-76/s76_jlo_local_index.png",
+      "source_file": "computations/session-76/s76_jlo_local_index.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s76_jlo_local_index.py — JLO Cocycle / Connes-Moscovici Factor for chi_2 Residual\n    4: ==================================================================================\n    5: \n    6: Gate: S76-C3-JLO\n    7:   PASS: CM factor computed, closes CC factor-3 to < 0.1 OOM.\n    8:   FAIL: CM factor = 1.\n    9:   INFO: CM factor non-trivial but does not close CC factor-3.\n   10: \n   11: Mathematical Framework:"
+    },
+    {
+      "anchor_id": "prov_1485",
+      "anchor_type": "data_provenance",
+      "name": "kosmann_chirality",
+      "script_path": "session-76/s76_kosmann_chirality.py",
+      "session": "s76",
+      "inputs": "",
+      "outputs": "session-76/s76_kosmann_chirality.npz",
+      "source_file": "computations/session-76/s76_kosmann_chirality.py",
+      "source_context_30_lines": "  745:     save_data['M_LR_01_fold'] = M_01\n  746:     save_data['M_LR_11_fold'] = M_11\n  747:     save_data['block_norms_10'] = block_norms_10\n  748:     save_data['block_norms_11'] = block_norms_11\n  749:     save_data['mixing_ratio_10'] = np.array([mixing_ratio])\n  750:     save_data['mixing_ratio_11'] = np.array([mixing_ratio_11])\n  751:     save_data['spec_diff_fund_CPT'] = spec_diff_norm\n  752: \n  753:     output_path = os.path.join(SCRIPT_DIR, \"s76_kosmann_chirality.npz\")  # (local)\n  754:     np.savez_compressed(output_path, **save_data)\n  755:     file_size = os.path.getsize(output_path)  # (local)\n  756: \n  757:     elapsed = time.time() - t_start  # (local)\n  758:     print(f\"\\n{'='*78}\")\n  759:     print(f\"Saved: {output_path}\")\n  760:     print(f\"File size: {file_size / 1024:.1f} KB\")\n  761:     print(f\"Total runtime: {elapsed:.2f}s\")"
+    },
+    {
+      "anchor_id": "prov_1486",
+      "anchor_type": "data_provenance",
+      "name": "moduli_decay_gw_spectrum",
+      "script_path": "session-76/s76_moduli_decay_gw_spectrum.py",
+      "session": "s76",
+      "inputs": "",
+      "outputs": "session-76/s76_moduli_decay_gw_spectrum.npz, session-76/s76_moduli_decay_gw_spectrum.png",
+      "source_file": "computations/session-76/s76_moduli_decay_gw_spectrum.py",
+      "source_context_30_lines": "  541:              fontsize=13)\n  542: ax.legend(fontsize=10, loc='upper left')\n  543: ax.set_xlim(10**(log_f_min), 10**(log_f_max))\n  544: ax.set_ylim(1e-40, 1e-3)\n  545: ax.grid(True, which='both', alpha=0.3)\n  546: \n  547: plt.tight_layout()\n  548: plt.savefig(os.path.join(os.path.dirname(os.path.abspath(__file__)),\n  549:             's76_moduli_decay_gw_spectrum.png'), dpi=150)\n  550: print(\"\\nPlot saved: s76_moduli_decay_gw_spectrum.png\")\n  551: \n  552: # ============================================================\n  553: # STEP 8: Save data\n  554: # ============================================================\n  555: output_path = os.path.join(os.path.dirname(os.path.abspath(__file__)),\n  556:                            's76_moduli_decay_gw_spectrum.npz')\n  557: np.savez(output_path,"
+    },
+    {
+      "anchor_id": "prov_1487",
+      "anchor_type": "data_provenance",
+      "name": "moduli_phonon_decay",
+      "script_path": "session-76/s76_moduli_phonon_decay.py",
+      "session": "s76",
+      "inputs": "",
+      "outputs": "session-76/s76_moduli_phonon_decay.npz, session-76/s76_moduli_phonon_decay.png",
+      "source_file": "computations/session-76/s76_moduli_phonon_decay.py",
+      "source_context_30_lines": "  827: #  SAVE DATA\n  828: # ============================================================================\n  829: \n  830: print(\"\\n\" + \"=\" * 78)\n  831: print(\"SAVING DATA\")\n  832: print(\"=\" * 78)\n  833: \n  834: save_path = os.path.join(os.path.dirname(os.path.abspath(__file__)),\n  835:                          's76_moduli_phonon_decay.npz')  # (local)\n  836: \n  837: np.savez(save_path,\n  838:     # Gate\n  839:     gate_name='S76-A2-MODULI-DECAY',\n  840:     gate_verdict=gate_verdict,\n  841:     gate_detail=gate_detail,\n  842:     # Frequency reconciliation\n  843:     omega_drive=omega_drive,"
+    },
+    {
+      "anchor_id": "prov_1488",
+      "anchor_type": "data_provenance",
+      "name": "modulus_sm_decay_rate",
+      "script_path": "session-76/s76_modulus_sm_decay_rate.py",
+      "session": "s76",
+      "inputs": "",
+      "outputs": "session-76/s76_modulus_sm_decay_rate.npz",
+      "source_file": "computations/session-76/s76_modulus_sm_decay_rate.py",
+      "source_context_30_lines": "  616: print(f\"  tau_total:              {tau_total_s:.4e} s\")\n  617: print(f\"  T_RH:                   {T_RH_GeV:.4e} GeV\")\n  618: print(f\"  Gate verdict:           {verdict}\")\n  619: \n  620: # ============================================================================\n  621: #  SECTION 14: Save results\n  622: # ============================================================================\n  623: \n  624: outpath = os.path.join(os.path.dirname(__file__), \"s76_modulus_sm_decay_rate.npz\")  # (local)\n  625: np.savez(outpath,\n  626:     # Input spectral data\n  627:     a0_fold=a0_fold,\n  628:     a2_fold=a2_fold,\n  629:     a4_fold=a4_fold,\n  630:     da4_dtau=da4_dtau,\n  631:     da2_dtau=da2_dtau,\n  632:     d2a4_dtau2=d2a4_dtau2,"
+    },
+    {
+      "anchor_id": "prov_1489",
+      "anchor_type": "data_provenance",
+      "name": "mpl_spec_convergence",
+      "script_path": "session-76/s76_mpl_spec_convergence.py",
+      "session": "s76",
+      "inputs": "",
+      "outputs": "session-76/s76_mpl_spec_convergence.npz, session-76/s76_mpl_spec_convergence.png",
+      "source_file": "computations/session-76/s76_mpl_spec_convergence.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s76_mpl_spec_convergence.py -- M-PL-SPEC-CONVERGENCE-76 (W2-A)\n    4: ================================================================\n    5: \n    6: Gate: S76-B1-MPL-CONV\n    7:   PASS: f_conv stable to < 50% across L_max >= 7.\n    8:   FAIL: f_conv varies by > 3 OOM across L_max range.\n    9:   INFO: f_conv varies by 0.5-3 OOM.\n   10: \n   11: Physics (substrate framing):"
+    },
+    {
+      "anchor_id": "prov_1490",
+      "anchor_type": "data_provenance",
+      "name": "mu_eff_richardson",
+      "script_path": "session-76/s76_mu_eff_richardson.py",
+      "session": "s76",
+      "inputs": "",
+      "outputs": "session-76/s76_mu_eff_richardson.npz, session-76/s76_mu_eff_richardson.png",
+      "source_file": "computations/session-76/s76_mu_eff_richardson.py",
+      "source_context_30_lines": "  816: print(f\"  Reason:  {gate_reason}\")\n  817: print(f\"  Target:  mu_eff = 0.0102 (S75 n_s = 0.9649)\")\n  818: \n  819: # ============================================================================\n  820: #  STEP 12: Save data\n  821: # ============================================================================\n  822: \n  823: output_path = os.path.join(os.path.dirname(os.path.abspath(__file__)),\n  824:                            's76_mu_eff_richardson.npz')\n  825: \n  826: np.savez(output_path,\n  827:     # Gate\n  828:     gate_name='S76-A1-MU-EFF',\n  829:     gate_verdict=gate_verdict,\n  830:     gate_reason=gate_reason,\n  831:     # Main results\n  832:     mu_eff=mu_eff,"
+    }
+  ]
+}

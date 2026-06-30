@@ -1,0 +1,166 @@
+{
+  "gate_id": "S87-M2-STRUCTURAL-SOURCE-FOR-LAMBDA-SA-FINITE-L-RESIDUAL-LANDING",
+  "schema_version": "S87+",
+  "scheme": "meta-aggregation-6-anchors",
+  "convention": "NCG-M2-Lambda-SA-finite-L-residual",
+  "L_max": "mixed",
+  "n_anchors_required": 6,
+  "n_sha_acceptable": 2,
+  "n_necessity_OK": 6,
+  "n_converse_failure_witness": 1,
+  "composite_verdict": "FAIL",
+  "sign_verdict": "PASS",
+  "magnitude_verdict": "FAIL",
+  "regime_verdict": "MARGINAL",
+  "value": "sha_harvest_2_of_6_anchors_available_necessity_6_of_6_OK_converse_failure_1",
+  "audit_sha256": "fa225aac6eee7456536782a0715d7f03dcfc218ac470f55005f260bc0cba9815",
+  "content_sha256": "18b78dfa1624c6ec6646cdd403d4f6ae87cd4dfba18ebbec9f7dd3acd31e2c75",
+  "rows": [
+    {
+      "anchor_index": 1,
+      "label": "S46 a_2 split (zeta vs SD geometric)",
+      "source_session": "S46",
+      "primary_gate_id_patterns": [
+        "^S46-A_2[-_]SPLIT",
+        "^S46-SPECTRAL[-_]ZETA[-_]A2"
+      ],
+      "successor_gate_id_patterns": [],
+      "matched_verdict_file": "",
+      "matched_verdict_line": "",
+      "audit_sha256_full_64": "",
+      "sha_source": "absent",
+      "sha_acceptable": false,
+      "magnitude": "factor 3812 (a_2_zeta=2776.17 / a_2_SD=0.7282)",
+      "slot": "a_2 (s=1)",
+      "input_a_M2_satisfied": true,
+      "input_b_residual_nonzero": true,
+      "input_c_regime": "VALID-pre-S52-archive",
+      "necessity_OK": true,
+      "is_converse_failure_witness": false,
+      "necessity_source_doc": "memory permanent-theorems.md S46 a_2 split entry; s64_bdg_kasparov.py canonical comment 'a_2^zeta / a_2^SD = 2776.17 / 0.7282 = 3812.18'"
+    },
+    {
+      "anchor_index": 2,
+      "label": "S64 finite-L Lambda_SA residual + a_0 paired split (factor 7436)",
+      "source_session": "S64",
+      "primary_gate_id_patterns": [
+        "^S64-LAMBDA[-_]SA",
+        "^S64-FRIEDMANN"
+      ],
+      "successor_gate_id_patterns": [],
+      "matched_verdict_file": "",
+      "matched_verdict_line": "",
+      "audit_sha256_full_64": "",
+      "sha_source": "absent",
+      "sha_acceptable": false,
+      "magnitude": "factor 7436 at a_0 slot (a_0_zeta=6440 / a_0_Gilkey=0.866); Lambda_SA finite-L component bounded ~1 OOM at L_max=10",
+      "slot": "a_0 (s=0)",
+      "input_a_M2_satisfied": true,
+      "input_b_residual_nonzero": true,
+      "input_c_regime": "VALID-pre-S52-archive",
+      "necessity_OK": true,
+      "is_converse_failure_witness": false,
+      "necessity_source_doc": "framework-cc-oom.md S64 entry (114 OOM Lambda_SA->Lambda_obs gap; finite-L component is non-zero); s64_bdg_kasparov.py comment block"
+    },
+    {
+      "anchor_index": 3,
+      "label": "S65 a_0/a_2 = C/R universal (continuum, M2-PASS-conditioned)",
+      "source_session": "S65",
+      "primary_gate_id_patterns": [
+        "^S65-A_0[-_]A_2[-_]UNIVERSAL",
+        "^S65-RATIO[-_]C[-_]OVER[-_]R"
+      ],
+      "successor_gate_id_patterns": [],
+      "matched_verdict_file": "",
+      "matched_verdict_line": "",
+      "audit_sha256_full_64": "",
+      "sha_source": "absent",
+      "sha_acceptable": false,
+      "magnitude": "Continuum a_0/a_2 ratio = C/R depends ONLY on R (M2-PASS-conditioned); this is the CONVERSE-FAILURE WITNESS \u2014 M2 satisfied AND finite-L residual = 0 by symmetry at the CONTINUUM",
+      "slot": "a_0 + a_2 (continuum)",
+      "input_a_M2_satisfied": true,
+      "input_b_residual_nonzero": false,
+      "input_c_regime": "VALID-continuum-limit",
+      "necessity_OK": true,
+      "is_converse_failure_witness": true,
+      "necessity_source_doc": "memory s65-connes-collab.md (a_0/a_2 = C/R universal at smooth SU(3); CCM-2007 continuum trace theorem)"
+    },
+    {
+      "anchor_index": 4,
+      "label": "S77 R-protection-universal-fails-at-a_0",
+      "source_session": "S77",
+      "primary_gate_id_patterns": [
+        "^S77-R[-_]PROTECTION",
+        "^S77-A_0[-_]R[-_]PROTECTION"
+      ],
+      "successor_gate_id_patterns": [
+        "^S86-R-PROTECTION-MELLIN-CRITERION",
+        "^S84-R-PROTECTION-K-AUDIT",
+        "^S84-R-PROTECTED-ATLAS-COMPLETENESS"
+      ],
+      "matched_verdict_file": "s84",
+      "matched_verdict_line": "S84-R-PROTECTED-ATLAS-COMPLETENESS: PASS -- value=1.223686 scheme=Mellin-label-balanced convention=5-regulator L_max=5 sha256=5baaa51ca58174cb009757641c42e297efd07096a6f942836205d3e591e4622f",
+      "audit_sha256_full_64": "5baaa51ca58174cb009757641c42e297efd07096a6f942836205d3e591e4622f",
+      "sha_source": "successor",
+      "sha_acceptable": true,
+      "magnitude": "R-protection universally fails at a_0 slot (sole Lizzi-observable where the regulator-class K-pairing collapses)",
+      "slot": "a_0 (s=0)",
+      "input_a_M2_satisfied": true,
+      "input_b_residual_nonzero": true,
+      "input_c_regime": "VALID-S77-S86-confirmed",
+      "necessity_OK": true,
+      "is_converse_failure_witness": false,
+      "necessity_source_doc": "project_s77_synthesis (a_0 R-protection failure); permanent-theorems.md line 71; S86-R-PROTECTION-MELLIN-CRITERION successor-grade FAIL re-confirmation at L_max=10"
+    },
+    {
+      "anchor_index": 5,
+      "label": "S82 W2-5 MP-Exclusion (regulator-class, sqrt-cusp outside CM Sd)",
+      "source_session": "S82",
+      "primary_gate_id_patterns": [
+        "^S82-HEAT-KERNEL-MP-EXCLUSION",
+        "^S82-MP-EXCLUSION"
+      ],
+      "successor_gate_id_patterns": [],
+      "matched_verdict_file": "s82",
+      "matched_verdict_line": "S82-HEAT-KERNEL-MP-EXCLUSION: PASS -- value=PROOF-COMPLETE scheme=CONTINUUM-LIMIT convention=MP-INTEGRABILITY L_max=50 sha256=98267d631c9f7a2c57f68e5feb767284a211f1987bc1e7fd412f2cfdfbf693c0",
+      "audit_sha256_full_64": "98267d631c9f7a2c57f68e5feb767284a211f1987bc1e7fd412f2cfdfbf693c0",
+      "sha_source": "primary",
+      "sha_acceptable": true,
+      "magnitude": "sqrt(x) cusp regulators outside CM Sd; t^{-3/2} branch-point. Regulator-class restriction at all slots; tightest at high-n.",
+      "slot": "All slots (regulator-class)",
+      "input_a_M2_satisfied": true,
+      "input_b_residual_nonzero": true,
+      "input_c_regime": "VALID-S82-canonical",
+      "necessity_OK": true,
+      "is_converse_failure_witness": false,
+      "necessity_source_doc": "memory s82-mp-exclusion-theorem.md; computations/session-82/s82_gate_verdicts.txt line 16 (S82-HEAT-KERNEL-MP-EXCLUSION PASS)"
+    },
+    {
+      "anchor_index": 6,
+      "label": "C9 (S86 W-1 workshop) a_0/Lambda_CC ratio 9.46x F_4 ratio FAIL",
+      "source_session": "S86",
+      "primary_gate_id_patterns": [
+        "^S86-W1-C9",
+        "^S86-MELLIN-CONE-C9",
+        "^S86-W1-C9-A_0-RATIO"
+      ],
+      "successor_gate_id_patterns": [
+        "^S86-MELLIN-CONE-RESIDUE-INFRASTRUCTURE",
+        "^S86-ZETA-REGULATOR-STABILIZATION-THEOREM-LANDING"
+      ],
+      "matched_verdict_file": "",
+      "matched_verdict_line": "",
+      "audit_sha256_full_64": "",
+      "sha_source": "absent",
+      "sha_acceptable": false,
+      "magnitude": "9.46x a_0/Lambda_CC ratio FAIL under F_4 algebra at L_max=10 (workshop intermediate; never emitted as tier0 verdict line)",
+      "slot": "a_0 (s=0)",
+      "input_a_M2_satisfied": true,
+      "input_b_residual_nonzero": true,
+      "input_c_regime": "VALID-S86-workshop-only",
+      "necessity_OK": true,
+      "is_converse_failure_witness": false,
+      "necessity_source_doc": "sessions/session-86/workshops/s86-mellin-cone-repair-or-no-go.md C9 module (9.46x ratio computation under F_4 = {zeta, Zubarev, SDW})"
+    }
+  ]
+}

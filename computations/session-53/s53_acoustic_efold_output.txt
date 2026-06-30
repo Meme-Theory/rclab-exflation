@@ -1,0 +1,279 @@
+========================================================================
+ACOUSTIC-EFOLD-53: BLV Acoustic Metric E-folds
+========================================================================
+
+--- PART 1: Input Data ---
+
+N_e^geom        = 0.1734  (EFOLD-MAPPING-52 theorem)
+c_fabric        = 209.97368 M_KK
+c_Gold          = 0.915 M_KK
+c_Gold/c_fabric = 0.004358  (229x hierarchy)
+Delta_0_GL      = 0.7704 M_KK
+tau_fold        = 0.19
+E_cond          = -0.136851 M_KK
+
+--- PART 2: Sound Speed Contribution ---
+
+Sound speed e-folds:
+  -(1/2)*ln(c_Gold/c_fabric) = -(1/2)*ln(0.004358)
+  = +2.7179 e-folds
+
+c_Gold variation within GL regime:
+  Range: [0.9135, 0.9154] M_KK
+  Fractional variation: 2.1503e-03 (0.21%)
+  Internal c_s e-folds: 1.0755e-03 (negligible)
+
+--- PART 3: Superfluid Density Model ---
+
+GL sweep gap values at tau_fold=0.19:
+  tau[9] = 0.19
+  Delta_B1 = 0.3718 M_KK
+  Delta_B2 = 0.7320 M_KK
+  Delta_B3 = 0.0842 M_KK
+
+Delta_B2 maximum: 0.732026 at tau = 0.19
+Delta_B2 at fold: 0.732026
+
+Total gap (weighted by multiplicity):
+  Delta_total = sqrt(4*Delta_B2^2 + Delta_B1^2 + 3*Delta_B3^2)
+  Range: [1.4741, 1.5175] M_KK
+
+--- PART 4: Density Ratio Analysis ---
+
+SCENARIO ANALYSIS:
+
+The superfluid density rho_s(tau) traverses: 0 -> rho_max -> 0
+due to BCS formation followed by sudden quench (P_exc=1.000).
+
+CRITICAL RESULT: For symmetric formation/destruction (P_exc=1.000),
+the density contribution to e-folds CANCELS EXACTLY.
+
+  N_e_formation  = +(1/2)*ln(rho_max/epsilon)
+  N_e_destruction = -(1/2)*ln(rho_max/epsilon)
+  Sum = 0
+
+This is the EQUILIBRIUM THEOREM applied to acoustic e-folds:
+what the condensate gives during formation, the quench takes back.
+The superfluid analog is Volovik's vacuum energy argument:
+the ground state energy does not gravitate because it is the ground state.
+Here: the density-driven expansion does not persist because the
+condensate does not persist.
+
+--- PART 5: Surviving Contributions ---
+
+After quench (P_exc=1.000):
+  - Condensate destroyed: rho_s -> 0
+  - Acoustic metric CEASES TO EXIST (no condensate = no phonons)
+  - GGE state has no superfluid component
+
+Sound speed regime:
+  Pre-condensation:  c_s = c_fabric = 209.97 M_KK (substrate)
+  Condensed epoch:   c_s = c_Gold  = 0.915 M_KK (Goldstone)
+  Post-quench:       acoustic metric undefined (no condensate)
+
+--- PART 6: Numerical Computation ---
+
+PRIMARY RESULT (symmetric formation/destruction, P_exc=1.000):
+  N_e^geom    = 0.1734
+  N_e^sound   = +(1/2)*ln(c_fabric/c_Gold) = +2.7179
+  N_e^density = 0.0000  (cancels: formation + destruction = 0)
+  -------
+  N_e^acoustic = 2.8913
+
+--- PART 7: Asymmetric Scenarios ---
+
+Sensitivity: N_e^acoustic(P_exc) if condensate partially survives
+
+CAREFUL ANALYSIS: Acoustic e-folds during condensed epoch only
+
+Superfluid density proxy rho_s propto Delta_B2^2:
+  rho_s(tau=0.01) = Delta^2 = 0.505813
+  rho_s(tau=0.19) = Delta^2 = 0.535862
+  rho_s(tau=0.35) = Delta^2 = 0.505639
+  rho_s_max / rho_s_min = 1.0598
+  (1/2)*ln(rho_max/rho_min) = 0.0290
+
+Density e-folds WITHIN GL regime (tau=0.01 to fold):
+  (1/2)*ln(rho_s(fold)/rho_s(0.01)) = 0.0289
+
+--- PART 8: Full Numerical Integration ---
+
+IMPORTANT: The condensate exists at ALL tau in the GL sweep.
+The BCS gap is always nonzero (1D theorem: any g>0 flows to strong coupling).
+The sound speed is c_Gold at all tau during the condensed epoch.
+The c_fabric -> c_Gold transition occurs at BCS onset, BEFORE the GL regime.
+
+GL-internal acoustic e-fold contributions (cumulative from tau=0.01):
+   tau      Ne_rho       Ne_cs   Ne_total_GL
+  0.01    0.000000   -0.000000      0.000000
+  0.03    0.001801   -0.000064      0.001736
+  0.05    0.008378   -0.000299      0.008079
+  0.07    0.013988   -0.000499      0.013488
+  0.10    0.020663   -0.000735      0.019927
+  0.12    0.023992   -0.000851      0.023141
+  0.14    0.026450   -0.000934      0.025516
+  0.16    0.028049   -0.000985      0.027064
+  0.18    0.028798   -0.001005      0.027793
+  0.19    0.028855   -0.001003      0.027852
+  0.20    0.028701   -0.000993      0.027707
+  0.22    0.027754   -0.000951      0.026803
+  0.25    0.024725   -0.000830      0.023894
+  0.30    0.015242   -0.000476      0.014766
+  0.35   -0.000172    0.000070     -0.000101
+
+Maximum GL-internal acoustic e-folds: 0.027852
+
+--- PART 9: Condensate Destruction and Divergence Analysis ---
+
+POSSIBILITY A (cutoff at destruction): Acoustic metric ceases.
+  Only formation-phase e-folds count. Post-quench: no phonons.
+  This gives a FINITE contribution from rho_s formation.
+
+POSSIBILITY B (include destruction divergence): a_acoustic -> 0.
+  Destruction gives NEGATIVE infinity e-folds (big crunch).
+  Net with formation: 0 + sound speed contribution only.
+
+ADOPTED TREATMENT: Possibility A (physically correct).
+  The acoustic metric is valid only while rho_s > 0.
+  Post-quench, the observer transitions to a different metric.
+  The GGE state is NOT described by the acoustic metric.
+
+========================================================================
+PART 10: FINAL RESULT
+========================================================================
+
+CASE 1: Density cancels (symmetric P_exc=1.000)
+  N_e^acoustic = 0.1734 + 2.7179 + 0.0000
+  N_e^acoustic = 2.8913
+
+CASE 2: Formation only (tau=0.01 to fold, c_s=c_Gold throughout)
+  rho_s_i = 0.505813  (at tau=0.01)
+  rho_s_f = 0.535862  (at fold)
+  (1/2)*ln(rho_f/rho_i) = 0.0289
+  N_e^acoustic = 0.1734 + 0.0000 + 0.0289
+  N_e^acoustic = 0.2023
+  (Sound speed constant within GL -> no c_s contribution)
+
+CASE 3: Accounting for 229x hierarchy
+
+The 229x ratio c_fabric/c_Gold determines the INITIAL VALUE of
+a_acoustic relative to a_geom, not the e-fold count.
+
+At onset: a_acoustic = a_geom * sqrt(rho_s_onset / c_Gold)
+At fold:  a_acoustic = a_geom * sqrt(rho_s_fold / c_Gold)
+
+The e-folds measure ln(a_f/a_i), which is INDEPENDENT of the absolute
+value of c_Gold. The 229x hierarchy makes the phononic universe LARGER
+(larger a_acoustic for same a_geom), but does NOT generate more e-folds.
+
+This is the superfluid analog of: the speed of sound in helium is
+much less than c, making the acoustic universe LARGER in sonic units,
+but the NUMBER of e-folds depends on the RATIO a_f/a_i, not on c_s.
+
+CASE 4: Full c_s transition (c_fabric -> c_Gold) + density growth
+  N_e^geom    = 0.1734
+  N_e^sound   = 2.7179
+  N_e^density = 0.0289
+  N_e^acoustic = 2.9202
+
+  WARNING: Case 4 double-counts. The c_s transition and the appearance
+  of the Goldstone mode are the SAME event. You cannot have Goldstone
+  phonons with c_s = c_fabric.
+
+--- PART 11: Sensitivity Analysis ---
+
+Baseline rho_f/rho_i = 1.0594 (GL internal)
+
+ rho_f/rho_i  Ne_density   Ne_acoustic   vs 0.1734    vs 3.1
+        0.50     -0.3466       -0.1732       -1.00x  FAIL
+        0.75     -0.1438        0.0296        0.17x  FAIL
+        1.00      0.0000        0.1734        1.00x  FAIL
+        1.25      0.1116        0.2850        1.64x  FAIL
+        1.50      0.2027        0.3761        2.17x  FAIL
+        1.53      0.2126        0.3860        2.23x  FAIL
+        1.75      0.2798        0.4532        2.61x  FAIL
+        2.00      0.3466        0.5200        3.00x  FAIL
+        3.00      0.5493        0.7227        4.17x  FAIL
+        5.00      0.8047        0.9781        5.64x  FAIL
+       10.00      1.1513        1.3247        7.64x  FAIL
+      100.00      2.3026        2.4760       14.28x  FAIL
+
+Including sound speed transition (Case 4, if applicable):
+ rho_f/rho_i  Ne_density   Ne_acoustic    vs 3.1
+        0.50     -0.3466        2.5447  INFO
+        0.75     -0.1438        2.7475  INFO
+        1.00      0.0000        2.8913  INFO
+        1.25      0.1116        3.0029  INFO
+        1.50      0.2027        3.0940  INFO
+        1.53      0.2126        3.1039  PASS
+        1.75      0.2798        3.1711  PASS
+        2.00      0.3466        3.2379  PASS
+        3.00      0.5493        3.4406  PASS
+        5.00      0.8047        3.6960  PASS
+       10.00      1.1513        4.0426  PASS
+      100.00      2.3026        5.1939  PASS
+
+To achieve N_e > 3.1 with sound speed:
+  Need: (1/2)*ln(rho_f/rho_i) > 0.2087
+  Need: rho_f/rho_i > 1.5180
+
+To achieve N_e > 3.1 without sound speed:
+  Need: (1/2)*ln(rho_f/rho_i) > 2.9266
+  Need: rho_f/rho_i > 348.3473
+
+========================================================================
+GATE VERDICT: ACOUSTIC-EFOLD-53
+========================================================================
+
+BEST ESTIMATE (Case 1: c_s transition + geometry, density cancels):
+  N_e^acoustic = 2.8913
+
+CONSERVATIVE ESTIMATE (Case 2: GL-internal only, c_s constant):
+  N_e^acoustic = 0.2023
+
+VERDICT: INFO
+
+  N_e^acoustic = 2.8913 > N_e^geom = 0.1734 (enhancement: 16.7x)
+  N_e^acoustic = 2.8913 < 3.1 (insufficient for PASS)
+
+  The acoustic metric provides a 16.7x enhancement over
+  pure geometric e-folds, but falls short of the 3.1 threshold.
+
+  The gap to PASS: 0.2087 e-folds.
+  Would require rho_f/rho_i > 1.52 (density enhancement)
+  on top of the sound speed contribution.
+
+--- PHYSICAL INTERPRETATION (Superfluid Perspective) ---
+
+The BLV acoustic metric result N_e = 2.89 has a clear superfluid analog.
+In superfluid 3He-A, the acoustic metric for Bogoliubov-Nambu phonons
+gives an effective spacetime with c_s << c (the 'speed of light').
+The NUMBER of e-folds is determined by how much the effective scale
+factor CHANGES during the condensed epoch, not by the absolute value
+of c_s.
+
+The 229x hierarchy (c_fabric/c_Gold) generates +2.72 e-folds from the
+sound speed channel IF the c_s transition is treated as a dynamical
+evolution within the acoustic metric. This is the correct treatment
+when the condensation epoch is viewed as a continuous transition from
+substrate-dominated (c_fabric) to condensate-dominated (c_Gold) propagation.
+
+The density contribution (rho_s) cancels for P_exc = 1.000 because the
+condensate is fully destroyed at the quench. This is the equilibrium
+theorem in action: what the ground state gives, the excitation takes back.
+In Volovik's language: the vacuum energy of the condensate does not
+gravitate because it is restored to the pre-condensation state.
+
+The 0.21 e-fold gap to PASS (2.89 vs 3.1) could be closed by a modest
+density enhancement (rho_f/rho_i > 1.53), but P_exc = 1.000 forbids this
+in the single-mode BCS picture. Multi-channel effects or partial
+condensate survival could modify this conclusion.
+
+--- PART 13: Output Files ---
+
+Saved: computations/session-53/s53_acoustic_efold.npz
+Saved: computations/session-53/s53_acoustic_efold.png
+
+========================================================================
+ACOUSTIC-EFOLD-53 COMPLETE: INFO (N_e = 2.8913)
+========================================================================

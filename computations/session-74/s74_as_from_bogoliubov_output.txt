@@ -1,0 +1,157 @@
+==============================================================================
+S74 W1-G  A-S-FROM-BOGOLIUBOV-74: A_s from 8-mode squeezed vacuum
+==============================================================================
+
+--- Section 1: Load input data ---
+  s73a labels: ['B2[0]' 'B2[1]' 'B2[2]' 'B2[3]' 'B1' 'B3[0]' 'B3[1]' 'B3[2]']
+  r_k_bcs: [1.78566125 1.78566125 1.78566125 1.78566125 3.5713225  1.96347194
+ 1.96347194 1.96347194]
+  mode weights: [0.00795737 0.00795737 0.00795737 0.00795737 0.15023886 0.27272315
+ 0.27272315 0.27248538]
+
+  S74 W1-A transfer function:
+    omega_B1=0.8184, omega_B2=0.8388, omega_B3=0.8758
+    r_B1=3.5713, r_B2=1.7857, r_B3=1.9635
+    W_B1=0.1502, W_B2=0.0318, W_B3=0.8179
+    A_s_4D (post-transfer) = 1.434897e-03
+    A_s gap (post-transfer) = 5.8346 OOM
+
+  S65 inputs:
+    c_BLV = 0.4849 (subluminal scalar sound speed)
+    eps_H(fold) = 0.021629
+    M_Pl^2 = a_2/(48*pi^2) = 5.860091 M_KK^2
+    H_phys = 0.404266 M_KK  (from GM-inverse of gap_occ)
+    S64 PW suppression (0,0 only): -3.4960 OOM
+    S64 gap tunneling: -0.2300 OOM
+    S64 revised gap (PW route): 3.1647 OOM
+
+  S64 sector data (top 10 sectors):
+    (0,0): S_occ=6.016e+00, <v^2>=0.4275
+    (1,0): S_occ=1.142e+02, <v^2>=0.2506
+    (0,1): S_occ=1.142e+02, <v^2>=0.2506
+    (1,1): S_occ=1.465e+03, <v^2>=0.1413
+    (2,0): S_occ=5.766e+02, <v^2>=0.1278
+    (0,2): S_occ=5.766e+02, <v^2>=0.1278
+    (3,0): S_occ=1.695e+03, <v^2>=0.0660
+    (0,3): S_occ=1.695e+03, <v^2>=0.0660
+    (2,1): S_occ=6.305e+03, <v^2>=0.0761
+    (1,2): S_occ=6.305e+03, <v^2>=0.0761
+    S_occ_total = 1.885e+04
+
+--- Section 2: Pre-registered baselines ---
+  Planck A_s_obs = 2.100e-09
+  Baseline (S73B, 3.15 OOM): A_s = 2.966e-06
+  Baseline (S74 W1-A, 5.83 OOM): A_s = 1.435e-03
+  Target: closure to within 1 OOM (PASS) or 1-2 OOM (INFO)
+
+--- Section 3: Per-mode squeezed vacuum variance ---
+  Mode index  Branch  omega_k   r_k_bcs    phi_k
+  0      B2    0.8388  1.7857   3.141833
+  1      B2    0.8388  1.7857   3.141833
+  2      B2    0.8388  1.7857   3.141833
+  3      B2    0.8388  1.7857   3.141833
+  4      B1    0.8184  3.5713   3.141833
+  5      B3    0.8758  1.9635   3.141833
+  6      B3    0.8758  1.9635   3.141833
+  7      B3    0.8758  1.9635   3.141833
+
+  Bare squeezed-state variance sigma_k^2 = (1/(2 omega_k)) [cosh(2r)-sinh(2r)cos(phi)]:
+  0 B2: sigma^2=2.1199e+01   (vac = 5.9610e-01, amp exp(2r) = 3.56e+01)
+  1 B2: sigma^2=2.1199e+01   (vac = 5.9610e-01, amp exp(2r) = 3.56e+01)
+  2 B2: sigma^2=2.1199e+01   (vac = 5.9610e-01, amp exp(2r) = 3.56e+01)
+  3 B2: sigma^2=2.1199e+01   (vac = 5.9610e-01, amp exp(2r) = 3.56e+01)
+  4 B1: sigma^2=7.7267e+02   (vac = 6.1092e-01, amp exp(2r) = 1.26e+03)
+  5 B3: sigma^2=2.8975e+01   (vac = 5.7092e-01, amp exp(2r) = 5.08e+01)
+  6 B3: sigma^2=2.8975e+01   (vac = 5.7092e-01, amp exp(2r) = 5.08e+01)
+  7 B3: sigma^2=2.8975e+01   (vac = 5.7092e-01, amp exp(2r) = 5.08e+01)
+
+  Total bare squeezed variance (sum over 8 modes) = 9.4439e+02
+  Total vacuum variance (sum of 1/(2 omega_k)) = 4.7081e+00
+  Amplification vs vacuum: 2.01e+02
+
+--- Section 4: Peter-Weyl (p,p) even-parity filter ---
+  Per-mode PW weights d_(p,q)^2:
+    0 B2: d^2=16.00, Theta_(p,p)=1.0
+    1 B2: d^2=16.00, Theta_(p,p)=1.0
+    2 B2: d^2=16.00, Theta_(p,p)=1.0
+    3 B2: d^2=16.00, Theta_(p,p)=1.0
+    4 B1: d^2=1.00, Theta_(p,p)=1.0
+    5 B3: d^2=6.00, Theta_(p,p)=0.0
+    6 B3: d^2=6.00, Theta_(p,p)=0.0
+    7 B3: d^2=6.00, Theta_(p,p)=0.0
+
+  Total bare PW-weighted variance = 2.6510e+03
+  Total filtered PW-weighted variance (B1+B2 kept) = 2.1294e+03
+  Filter retention fraction = 8.032594e-01
+  Filter OOM suppression = -0.0951
+
+  [Cross-check, loose S53 convention]
+    B1 (p,p) Theta = 0.0526 (only (0,0) fraction)
+    Filtered total (loose) = 2.1294e+03
+    Difference from strict: +0.0000 OOM
+
+--- Section 5: BLV acoustic dilution ---
+  c_BLV = 0.4849
+  BLV dilution factor (c_BLV)^(-3) = 8.7722
+  log10(BLV factor) = 0.9431 OOM (enhancement)
+  Post-BLV filtered variance = 1.8680e+04
+
+--- Section 6: Convert to dimensionless A_s ---
+  GM template P_0 = H^2/(8 pi^2 eps M_Pl^2) = 1.6331e-02
+  gap_from_P0 = log10(P_0/A_s_obs) = 6.8908 OOM  (matches gap_occ = 6.8908)
+
+  Mode-level correction factors (strict S52 convention):
+    F_squeeze_bare = 5.4060e+01  (squeeze amplification)
+    F_filter_factor = 8.0326e-01  (PW (p,p) filter retention)
+    F_BLV_factor = 8.7722e+00  (c_BLV^-3 enhancement)
+    F_mode_total = 3.8093e+02
+
+  A_s_computed = P_0 * F_mode_total = 6.2208e+00
+  A_s_Planck = 2.1000e-09
+
+  gap_OOM = log10(A_s_computed/A_s_Planck) = 9.4716 OOM
+
+--- Section 7: Step-by-step OOM breakdown ---
+  Step 0 (GM template P_0 alone): A_s = 1.6331e-02, OOM = +6.8908
+  Step 1 (+ squeeze amplification): A_s = 8.8283e-01, OOM = +8.6237
+  Step 2 (+ PW (p,p) filter):      A_s = 7.0914e-01, OOM = +8.5285
+  Step 3 (+ c_BLV^-3 dilution):    A_s = 6.2208e+00, OOM = +9.4716
+
+  Delta_OOM from squeezing:    +1.7329  (worsens by Bogoliubov amp)
+  Delta_OOM from PW filter:     -0.0951  (suppression from (p,p) filter)
+  Delta_OOM from BLV dilution: +0.9431  (enhancement from c_BLV<1)
+
+--- Section 8: Gate verdict ---
+  Gap vs Planck A_s_obs: +9.4716 OOM
+  Change vs S73B baseline (3.15): +6.3216 OOM
+  Change vs S74 W1-A baseline (5.83): +3.6370 OOM
+
+  VERDICT: A-S-FROM-BOGOLIUBOV-74 = FAIL
+  Reason: A_s gap 9.47 OOM > 2.0 OOM threshold; Bogoliubov-amplitude route alone does NOT close the tension.
+
+--- Section 9: Cross-checks ---
+  Cross-check 1 (r_k=0): F_mode = 1.000000 (should be 1.000)
+    PASS: vacuum limit recovers BD normalization.
+  Cross-check 2: c_BLV^-3 = 8.7722 > 1  (PASS: subluminal enhances amplitude)
+  Cross-check 3: Filter retention 8.0326e-01 <= 1.0  (PASS)
+  Cross-check 4: P_0 gap = 6.8908 vs S65 gap_occ = 6.8908  (|diff| = 0.0000)
+  Cross-check 5: loose S53 convention A_s = 6.2208e+00, gap = 9.4716 (vs strict 9.4716, diff = +0.0000)
+  Cross-check 6: P_0 * filter alone (no squeeze, no BLV): gap = 6.7956 OOM
+    S65 PW+gaps baseline was 3.1647 (strict is looser/tighter by sector choice)
+    Note: S65 used only (0,0) -> -3.50 OOM; strict (p,p)=(0,0)+(1,1) -> -0.0951 OOM
+
+--- Section 10: Save results ---
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s74_as_from_bogoliubov.npz
+
+--- Section 11: Generate plot ---
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s74_as_from_bogoliubov.png
+
+==============================================================================
+S74 W1-G  A-S-FROM-BOGOLIUBOV-74: FAIL
+==============================================================================
+  A_s_computed      = 6.2208e+00
+  A_s_Planck        = 2.1000e-09
+  gap (OOM)         = +9.4716
+  vs S73B baseline: +6.3216 OOM change
+  vs S74 W1-A base: +3.6370 OOM change
+  Runtime: 0.18 s

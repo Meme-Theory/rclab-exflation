@@ -1,0 +1,298 @@
+======================================================================
+GPE-EFOLD-53: Gross-Pitaevskii Condensate E-folds
+======================================================================
+
+--- SECTION 1: GPE Parameters from Microscopic Theory ---
+m_tau = 2.062 M_KK
+a_scatter = -1.5800e-03 M_KK^{-1} (ATTRACTIVE)
+g_3D = 4*pi*a/m = -9.628936e-03 M_KK^{-1}
+  sign: ATTRACTIVE
+g_onsite = |E_cond| = 0.136851 M_KK (BCS condensation energy)
+
+--- SECTION 2: KK Potential V_KK(tau) ---
+GL sweep: 15 tau points from 0.01 to 0.35
+c_Gold range: [0.9135, 0.9154]
+c_Gold(tau_fold=0.19) = 0.9154
+barrier_0d = 0.0047 M_KK
+S_inst = 0.0686 (quantum critical, not tunneling)
+v_terminal = 26.54 M_KK (terminal velocity)
+dt_transit = 0.001130 M_KK^{-1} (transit duration)
+
+--- SECTION 3: GPE Evolution — Three Regimes ---
+Gap relaxation time: tau_Delta = 1/Delta_0 = 1.2980 M_KK^{-1}
+Transit time: dt_transit = 0.001130 M_KK^{-1}
+Ratio dt_transit/tau_Delta = 8.7071e-04
+  => Transit is 1148x FASTER than gap formation
+  => INVERTED BORN-OPPENHEIMER: geometry fast, pairing slow
+
+--- SECTION 4: Condensate Growth Model ---
+BCS growth rate: gamma = M_max * Delta_0 = 1.2897 M_KK
+  M_max_thouless = 1.674
+  Delta_0_GL = 0.7704 M_KK
+Condensate growth factor: exp(gamma * dt) = exp(0.001458) = 1.001459
+  => 0.1459% growth during transit
+
+Quantum vacuum condensate fraction:
+  exp(-2*S_inst) = exp(-0.1372) = 0.8718
+  => Vacuum already has 87.2% of equilibrium condensate density
+  => This is NOT the BCS weak-coupling limit
+
+--- SECTION 5: GPE Numerical Evolution ---
+Setting up 1D GPE on tau-grid
+  N_grid = 512
+  tau range: [0.00, 0.50]
+  dtau = 0.000977
+  t_total = 0.001130 M_KK^{-1}
+  N_time = 2000, dt = 5.6508e-07
+
+Equilibrium condensate density:
+  rho_s_eq = -a_GL/b_GL = 1.187140 M_KK^3
+  a_GL = -0.524548
+  b_GL = 0.441858
+  c_s_eq = sqrt(2|a|/m) = 0.713285 M_KK
+  c_Gold (from GL-JOSEPHSON) = 0.9150 M_KK
+  mu_eq = -a_GL = 0.524548 M_KK
+
+GL parameters at round metric (tau=0.01):
+  Delta_B2 = 0.361220, Delta_B1 = 0.711205, Delta_B3 = 0.081759
+  rho_B2 = 3.813655, rho_B1 = 14.687038, rho_B3 = 0.535486
+  c_Gold = 0.913604
+
+GL parameters at fold (tau=0.19):
+  Delta_B2 = 0.371795, Delta_B1 = 0.732026, Delta_B3 = 0.084152
+  rho_B2 = 3.935924, rho_B1 = 14.668320, rho_B3 = 0.483868
+  c_Gold = 0.915439
+
+--- SECTION 6: Condensate Fraction Evolution ---
+BCS condensate growth time: 0.6490 M_KK^{-1}
+Transit time: 0.001130 M_KK^{-1}
+Ratio: 1.7414e-03
+
+Condensate growth during transit:
+  gamma_BCS * dt_transit = 0.001458
+  rho_s(dt_transit) / rho_s_eq = 2.910902e-03
+  => Condensate reaches 0.2911% of equilibrium
+
+--- SECTION 7: Full GPE Simulation — 0D Pair Dynamics ---
+Total condensate density vs tau:
+  tau=0.01: rho_s_eq = 19.036179
+  tau=0.03: rho_s_eq = 19.039491
+  tau=0.05: rho_s_eq = 19.051608
+  tau=0.07: rho_s_eq = 19.061936
+  tau=0.10: rho_s_eq = 19.074137
+  tau=0.12: rho_s_eq = 19.080123
+  tau=0.14: rho_s_eq = 19.084431
+  tau=0.16: rho_s_eq = 19.087100
+  tau=0.18: rho_s_eq = 19.088167
+  tau=0.19: rho_s_eq = 19.088112
+  tau=0.20: rho_s_eq = 19.087672
+  tau=0.22: rho_s_eq = 19.085655
+  tau=0.25: rho_s_eq = 19.079869
+  tau=0.30: rho_s_eq = 19.063209
+  tau=0.35: rho_s_eq = 19.038345
+
+rho_s range: [19.036179, 19.088167]
+Variation: 0.27%
+
+--- SECTION 8: Acoustic E-fold Computation ---
+Using BLV exact formula from W0-1:
+  N_e^acoustic = N_e^geom + (1/2)*ln(rho_f/rho_i) - (1/2)*ln(c_sf/c_si)
+
+=== CASE A: Full BCS epoch, equilibrium condensate ===
+rho_s(tau=0.01) = 19.036179
+rho_s(tau=0.19) = 19.088112
+c_Gold(tau=0.01) = 0.913604
+c_Gold(tau=0.19) = 0.915439
+N_e^geom = 0.1734
+N_e^rho = (1/2)*ln(rho_f/rho_i) = 0.001362
+N_e^cs = -(1/2)*ln(c_sf/c_si) = -0.001003
+N_e^GPE (Case A) = 0.1738
+
+=== CASE B: Sound speed transition from fabric to condensate ===
+c_fabric = 209.97
+c_Gold = 0.9150
+N_e^cs (fabric->Gold) = 2.7179
+  (This is the W0-1 result)
+
+=== CASE C: Condensate growth from zero ===
+rho_s_eq (GL) = 1.187140
+rho_s_seed = rho_s_eq * exp(-2*S_inst) = 1.034936
+N_e^formation = (1/2)*ln(rho_eq/rho_seed) = (1/2)*ln(1.1471) = 0.0686
+  = S_inst = 0.0686 (exact: this is just the instanton action)
+
+=== CASE D: Energy ratio (S52 estimate) ===
+E_exc = 60.625 M_KK
+|E_cond| = 0.136851 M_KK
+E_exc / |E_cond| = 443.0
+N_e^energy = ln(E_exc/|E_cond|) = ln(443.0) = 6.0936
+
+Per-pair energy ratio:
+  E_exc/pair = 1.0138 M_KK
+  E_cond/pair = 0.1369 M_KK
+  N_e^per_pair = ln(7.41) = 2.0026
+
+=== CASE E: Full GPE with condensate lifecycle ===
+Condensate lifecycle model:
+  rho_s variation: 19.0362 to 19.0882 (0.3%)
+  c_Gold variation: 0.9135 to 0.9154 (0.22%)
+  N_e^rho (formation) = 0.0686
+  N_e^rho (BCS epoch) = 0.001362
+  N_e^cs (BCS epoch) = -0.001003
+
+  N_e^GPE (total) = N_e^geom + N_e^formation + N_e^rho + N_e^cs
+                   = 0.1734 + 0.0686 + 0.001362 + -0.001003
+                   = 0.2424
+
+--- SECTION 9: GPE Time-Resolved Evolution ---
+t_fold = tau_fold / v_terminal = 0.007158 M_KK^{-1}
+dt_transit = 0.001130 M_KK^{-1}
+Ratio t_fold/dt_transit = 6.3333
+
+Time-resolved GPE simulation:
+  Condensate epoch: t = [0.000000, 0.005651]
+  tau range: [0.0000, 0.1500]
+  Duration: 0.005651 M_KK^{-1}
+  N_e^geom (sim) = 0.136895
+  N_e^rho (sim) = 0.001153
+  N_e^cs (sim) = -0.000851
+  N_e^acoustic (sim) = 0.137197
+
+--- SECTION 10: The Condensation Transition ---
+Sound speed hierarchy:
+  c_fabric = 209.97 M_KK (spectral action modulus)
+  c_Gold = 0.9150 M_KK (Goldstone mode in condensate)
+  c_fabric/c_Gold = 229.5
+  N_e^cs (transition) = (1/2)*ln(c_fabric/c_Gold) = 2.7179
+
+Density comparison:
+  rho_normal ~ a0_fold = 6440 (spectral action modes)
+  rho_s_condensate = 1.1871 (GL equilibrium)
+  rho_s / rho_normal = 1.8434e-04
+  N_e^rho (transition) = (1/2)*ln(rho_s/rho_normal) = -4.2994
+  => NEGATIVE: acoustic universe CONTRACTS during condensation
+
+Pair density:
+  N_pair = 1
+  xi_GL = 0.9763 M_KK^{-1}
+  rho_pair = 1/xi^3 = 1.0745 M_KK^3
+
+--- SECTION 11: Correct GPE E-fold Accounting ---
+N_e^GPE (within condensate epoch) = 0.1738
+  Breakdown: geom=0.1734, rho=0.001362, cs=-0.001003
+
+N_e^GPE (including formation) = 0.2424
+  Breakdown: within=0.1738, formation=0.0686
+
+N_e^combined (GPE + W0-1 BLV) = 2.9603
+  Breakdown:
+    geom = 0.1734
+    cs(fabric->Gold) = 2.7179 [W0-1]
+    formation = 0.0686 [GPE]
+    rho variation = 0.001362 [GPE]
+    cs variation = -0.001003 [GPE]
+
+--- SECTION 12: Comparison to S52 Estimate ---
+S52 estimate: N_e ~ 4.3 from ln(E_exc/E_eq)
+  E_exc = 60.6 M_KK
+  E_eq ~ |E_cond| = 0.137 M_KK
+  ln(E_exc/E_eq) = ln(443) = 6.09
+  BUT: energy ratio != scale factor ratio. Wrong formula.
+
+Actual GPE e-folds:
+  N_e^GPE (condensate epoch only) = 0.1738
+  N_e^GPE (with formation) = 0.2424
+  The S52 estimate was 25x too large.
+  The error was equating energy ratio to scale factor ratio.
+  In a superfluid, N_e ~ (1/2)*ln(rho_f/rho_i) ~ S_inst = 0.069
+
+NOTE: The dominant e-fold source is the c_s transition (W0-1):
+  N_e^cs = 2.72 (from c_fabric=209.97 -> c_Gold=0.915)
+  The GPE adds only 0.0686 from condensate dynamics.
+  Total (GPE + W0-1): 2.9603
+
+--- SECTION 13: Gate Verdict ---
+N_e^GPE (pure condensate contribution) = 0.0690
+N_e^GPE (framework total) = 0.2424
+  = N_e^geom (0.1734) + N_e^GPE_pure (0.0690)
+
+Gate GPE-EFOLD-53:
+  N_e^GPE (pure condensate) = 0.0690
+  N_e^GPE (framework) = 0.2424
+  Threshold PASS: > 3.1
+  Threshold INFO: > 0.1734
+  Threshold FAIL: <= 0.1734
+  Verdict (pure): FAIL
+  Verdict (framework): INFO
+
+  FINAL VERDICT: INFO
+  N_e^GPE = 0.2424 exceeds geometric ceiling
+  0.2424 > 0.1734 (1.50x enhancement)
+  but far below PASS threshold 3.1 (7.8%)
+
+--- SECTION 14: Why the GPE Contribution is Small ---
+The GPE contributes only 0.087 additional e-folds because:
+  1. The system is 0D (L/xi_GL = 0.031)
+     In 0D, the condensate density is spatially uniform.
+     There are no condensate density WAVES (no spatial variation).
+     N_e^rho = (1/2)*ln(rho_f/rho_i) requires rho to CHANGE.
+
+  2. The BCS condensate fraction is nearly constant across tau:
+     rho_s varies by only 0.3% from tau=0 to tau_fold.
+     This is because BCS pairing depends on DOS (nearly constant)
+     not on the Jensen deformation.
+
+  3. The instanton action is tiny: S_inst = 0.0686
+     N_e^formation = S_inst = 0.0686
+     The condensate forms nearly instantaneously from vacuum
+     fluctuations (87% already present).
+
+  4. In a superfluid, N_e ~ (1/2)*ln(rho_f/rho_i)
+     Not N_e ~ ln(E_f/E_i) as assumed in S52.
+     The energy ratio (443x) does NOT translate to e-folds
+     because energy goes into quasiparticle EXCITATIONS,
+     not into expanding the acoustic scale factor.
+
+  Volovik analogy: In superfluid 3He, the acoustic metric
+  gives tiny 'cosmological' expansion because the superfluid
+  density is nearly constant in equilibrium. To get large
+  acoustic e-folds, you need large DENSITY CHANGES, which
+  require spatial inhomogeneity (flow, vortices, textures).
+  Our 0D system has none of these.
+
+--- SECTION 15: Save Data and Plot ---
+Data saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s53_gpe_efold.npz
+Plot saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s53_gpe_efold.png
+
+======================================================================
+SUMMARY: GPE-EFOLD-53
+======================================================================
+Gate: GPE-EFOLD-53 = INFO
+
+N_e^GPE (pure condensate contribution) = 0.0690
+N_e^GPE (framework total = geom + condensate) = 0.2424
+  Geometric: 0.1734
+  Condensate formation: 0.0686
+  Condensate rho variation: 0.001362
+  Condensate cs variation: -0.001003
+
+N_e^combined (GPE + W0-1 BLV) = 2.9603
+  c_s transition (fabric->Gold): 2.7179 [from W0-1]
+
+S52 estimate N_e ~ 4.3: WRONG (energy ratio != scale factor ratio)
+  ln(E_exc/E_cond) = ln(443) = 6.09 is dimensionally correct
+  but physically wrong: energy goes to excitations, not expansion
+  Correct formula: N_e ~ (1/2)*ln(rho_f/rho_i) = 0.0686
+
+Why small:
+  - 0D system: no spatial density gradients
+  - rho_s nearly constant across tau (3.5% variation)
+  - S_inst = 0.069 (condensate forms from 87% vacuum seed)
+  - Energy ratio 443x is irrelevant for acoustic metric
+
+Volovik verdict:
+  The GPE treats tau as a CONDENSATE, not a scalar field.
+  This is conceptually correct but quantitatively insufficient.
+  In a superfluid, acoustic e-folds require density FLOW,
+  not just density existence. The 0D system has no flow.
+  The c_s transition (229x hierarchy) is the dominant effect,
+  and it comes from the PHASE TRANSITION, not the GPE dynamics.

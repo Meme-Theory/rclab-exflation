@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 113,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_1121",
+      "anchor_type": "data_provenance",
+      "name": "bcs_4pt_wilson",
+      "script_path": "session-67/s67_bcs_4pt_wilson.py",
+      "session": "s67",
+      "inputs": "",
+      "outputs": "session-67/s67_bcs_4pt_wilson.npz, session-67/s67_bcs_4pt_wilson.png",
+      "source_file": "computations/session-67/s67_bcs_4pt_wilson.py",
+      "source_context_30_lines": "   53: import matplotlib.pyplot as plt\n   54: \n   55: PROJECT_ROOT = r'C:\\sandbox\\Ainulindale Exflation'\n   56: SCRIPT_DIR = os.path.join(PROJECT_ROOT, 'computations')\n   57: ARCHIVE_DIR = os.path.join(PROJECT_ROOT, \"computations\", \"_shared\")\n   58: sys.path.insert(0, SCRIPT_DIR)\n   59: \n   60: # Logging for Windows 0kb bash workaround\n   61: _LOG_PATH = os.path.join(SCRIPT_DIR, 's67_bcs_4pt_wilson_log.txt')\n   62: class _Tee:\n   63:     def __init__(self, *streams):\n   64:         self.streams = streams\n   65:     def write(self, data):\n   66:         for s in self.streams:\n   67:             s.write(data)\n   68:             s.flush()\n   69:     def flush(self):"
+    },
+    {
+      "anchor_id": "prov_1122",
+      "anchor_type": "data_provenance",
+      "name": "cheung_ns_correction",
+      "script_path": "session-67/s67_cheung_ns_correction.py",
+      "session": "s67",
+      "inputs": "",
+      "outputs": "session-67/s67_cheung_ns_correction.npz, session-67/s67_cheung_ns_correction.png",
+      "source_file": "computations/session-67/s67_cheung_ns_correction.py",
+      "source_context_30_lines": "   45:   INFO: Magnitude of dc_s correction at the fold. Could shift n_s by O(0.003).\n   46: \n   47: Inputs:\n   48:   computations/session-42/s42_gradient_stiffness.npz    (tau-dependent Z, dS, d2S, S)\n   49:   computations/session-64/s64_s_asymptotic.npz      (SA, a2 at 62 tau values)\n   50:   computations/session-62/s62_kz_ns.npz             (epsilon_H, eta_H reference)\n   51: \n   52: Outputs:\n   53:   computations/session-67/s67_cheung_ns_correction.npz\n   54:   computations/session-67/s67_cheung_ns_correction.png\n   55: \"\"\"\n   56: \n   57: import sys\n   58: import os\n   59: import time\n   60: \n   61: t_start = time.time()"
+    },
+    {
+      "anchor_id": "prov_1123",
+      "anchor_type": "data_provenance",
+      "name": "conservation_hierarchy",
+      "script_path": "session-67/s67_conservation_hierarchy.py",
+      "session": "s67",
+      "inputs": "",
+      "outputs": "session-67/s67_conservation_hierarchy.npz, session-67/s67_conservation_hierarchy.png",
+      "source_file": "computations/session-67/s67_conservation_hierarchy.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s67_conservation_hierarchy.py -- CONSERVATION-HIERARCHY-TEST-67\n    4: ================================================================\n    5: \n    6: Gate: CONSERVATION-HIERARCHY-TEST-67\n    7:   PASS: eps_H > 0 (red tilt) guaranteed by conservation hierarchy\n    8:   FAIL: eps_H < 0 (blue tilt) -- conservation hierarchy insufficient\n    9: \n   10: Physics:\n   11: --------"
+    },
+    {
+      "anchor_id": "prov_1124",
+      "anchor_type": "data_provenance",
+      "name": "desi_volovik",
+      "script_path": "session-67/s67_desi_volovik.py",
+      "session": "s67",
+      "inputs": "",
+      "outputs": "session-67/s67_desi_volovik.npz, session-67/s67_desi_volovik.png",
+      "source_file": "computations/session-67/s67_desi_volovik.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s67_desi_volovik.py — DESI-VOLOVIK-67: w(z) from Volovik Tracking\n    4: ===================================================================\n    5: Gate: DESI-VOLOVIK-67\n    6:   INFO: Report w_0, w_a from Volovik rho_vac ~ H^2 tracking.\n    7:   Pre-register for DR3 comparison.\n    8: \n    9: Physics:\n   10:   The Volovik relaxation mechanism (q-theory / thermodynamic identity)\n   11:   gives rho_vac(H) = chi * H^2 where chi is a susceptibility."
+    },
+    {
+      "anchor_id": "prov_1125",
+      "anchor_type": "data_provenance",
+      "name": "dissipative_as",
+      "script_path": "session-67/s67_dissipative_as.py",
+      "session": "s67",
+      "inputs": "",
+      "outputs": "session-67/s67_dissipative_as.npz, session-67/s67_dissipative_as.png",
+      "source_file": "computations/session-67/s67_dissipative_as.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s67_dissipative_as.py — Dissipative A_s: Noise-Dominated Power Spectrum Normalization\n    4: ======================================================================================\n    5: \n    6: Gate: DISSIPATIVE-AS-67\n    7:   PASS: Dissipative A_s within 1 OOM of Planck (2.1e-9)\n    8:   FAIL: Dissipative A_s still > 2 OOM from Planck\n    9:   INFO: Dissipative correction is O(1) but insufficient alone\n   10: \n   11: PHYSICS:"
+    },
+    {
+      "anchor_id": "prov_1126",
+      "anchor_type": "data_provenance",
+      "name": "eft_matching",
+      "script_path": "session-67/s67_eft_matching.py",
+      "session": "s67",
+      "inputs": "",
+      "outputs": "session-67/s67_eft_matching.npz",
+      "source_file": "computations/session-67/s67_eft_matching.py",
+      "source_context_30_lines": "  924:     'a2_fold': a2_fold,\n  925:     'a4_fold': a4_fold,\n  926:     'S_fold': S_fold,\n  927:     'dS_fold': dS_fold,\n  928:     'd2S_fold': d2S_fold,\n  929:     'Z_fold': Z_fold,\n  930: }\n  931: \n  932: out_path = os.path.join(SCRIPT_DIR, 's67_eft_matching.npz')\n  933: np.savez(out_path, **results)\n  934: \n  935: t_elapsed = time.time() - t_start\n  936: print(f\"\\nSaved: {out_path}\")\n  937: print(f\"Elapsed: {t_elapsed:.2f} s\")\n  938: print(\"\\nDone.\")"
+    },
+    {
+      "anchor_id": "prov_1127",
+      "anchor_type": "data_provenance",
+      "name": "fabric_projected_moments",
+      "script_path": "session-67/s67_fabric_projected_moments.py",
+      "session": "s67",
+      "inputs": "",
+      "outputs": "session-67/s67_fabric_projected_moments.npz",
+      "source_file": "computations/session-67/s67_fabric_projected_moments.py",
+      "source_context_30_lines": "  630:     # Single-cell reference (W2-B)\n  631:     'delta_a2_single_cell': np.array([ed_data[N]['delta_a2'] for N in range(1, 5)]),\n  632:     'delta_a4_single_cell': np.array([ed_data[N]['delta_a4'] for N in range(1, 5)]),\n  633: \n  634:     # Combined shift\n  635:     'combined_shift_linear': np.array(abs(ed_data[4]['delta_a2']) + decisive_ratio),\n  636: }\n  637: \n  638: out_path = data_dir / 's67_fabric_projected_moments.npz'\n  639: np.savez(out_path, **save_data)\n  640: print(f\"\\nSaved: {out_path}\")\n  641: \n  642: # ============================================================================\n  643: # 13. Summary table\n  644: # ============================================================================\n  645: \n  646: print(\"\\n\" + \"=\" * 70)"
+    },
+    {
+      "anchor_id": "prov_1128",
+      "anchor_type": "data_provenance",
+      "name": "feature_amplitude",
+      "script_path": "session-67/s67_feature_amplitude.py",
+      "session": "s67",
+      "inputs": "",
+      "outputs": "session-67/s67_feature_amplitude.npz",
+      "source_file": "computations/session-67/s67_feature_amplitude.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s67_feature_amplitude.py — D_K Eigenvalue Discreteness Features in P(k)\n    4: ========================================================================\n    5: \n    6: Gate: FEATURE-AMPLITUDE-67\n    7:   PASS: Feature amplitude < 1% of A_s\n    8:   FAIL: Feature amplitude > 5% of A_s\n    9: \n   10: Physics:\n   11:   The D_K eigenvalue spectrum is discrete (992 eigenvalues at L_max=6,"
+    },
+    {
+      "anchor_id": "prov_1129",
+      "anchor_type": "data_provenance",
+      "name": "finite_size_scaling",
+      "script_path": "session-67/s67_finite_size_scaling.py",
+      "session": "s67",
+      "inputs": "",
+      "outputs": "session-67/s67_finite_size_scaling.npz, session-67/s67_finite_size_scaling.png",
+      "source_file": "computations/session-67/s67_finite_size_scaling.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s67_finite_size_scaling.py -- FINITE-SIZE-SCALING-67\n    4: =====================================================\n    5: \n    6: Gate: FINITE-SIZE-SCALING-67\n    7:   PASS: |gap(L=6) / gap(L=4)| < 0.6 (convergence to universal)\n    8:   FAIL: |gap(L=6) / gap(L=4)| > 0.9 (no convergence)\n    9:   INFO: intermediate (0.6-0.9)\n   10: \n   11:   NOTE: Task originally specified L_max = {6,8,10,12,14}. In the actual"
+    },
+    {
+      "anchor_id": "prov_1130",
+      "anchor_type": "data_provenance",
+      "name": "floquet_post_transit",
+      "script_path": "session-67/s67_floquet_post_transit.py",
+      "session": "s67",
+      "inputs": "",
+      "outputs": "session-67/s67_floquet_post_transit.npz",
+      "source_file": "computations/session-67/s67_floquet_post_transit.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s67_floquet_post_transit.py — Floquet/Mathieu Analysis of Post-Transit Parametric Resonance\n    4: ============================================================================================\n    5: \n    6: Session 67, Gate: FLOQUET-POST-TRANSIT-67\n    7: Agent: Kitaev Quantum Chaos Theorist\n    8: \n    9: Physics:\n   10:   After the supersonic transit through the van Hove fold at tau=0.190, does the\n   11:   modulus tau undergo oscillatory ringing that could parametrically amplify GGE"
+    }
+  ]
+}

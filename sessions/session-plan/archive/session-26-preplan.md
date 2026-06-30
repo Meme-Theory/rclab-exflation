@@ -352,7 +352,7 @@ which produce mass terms in four dimensions from the left-regular action of $\ma
 | 1 | **T-1** | Torsion Gap Gate | ~5 hrs | $f^a_{bc}$, $g_{ab}(\tau)$ (existing) | $\min|\lambda_T| < \min|\lambda_K|$ at some $\tau$ | 10--15% | 5--15 | phonon-sim |
 | 2 | **B-1** | $V_{\text{Baptista}}$ Kerner Bridge | ~2 hrs | s25_baptista_results.npz, s23c_fiber_integrals.npz | $\kappa_{\text{12D}} > 100$ | 15--25% | 3--8 | phonon-sim |
 | 3 | **RB-1** | Route B: Twisted spectral action (theory) | 2--4 weeks | Literature (Connes-Moscovici 2008) | Self-consistent $\Delta > 0$ | 5--10% | 10--25 | baptista-analyst |
-| 4 | **DP-1** | 12D Dirac operator (singlet sector) | ~8 hrs | tier1_dirac_spectrum.py | Infrastructure (no gate) | 80% | 1 (infrastructure) | phonon-sim |
+| 4 | **DP-1** | 12D Dirac operator (singlet sector) | ~8 hrs | dirac_spectrum.py | Infrastructure (no gate) | 80% | 1 (infrastructure) | phonon-sim |
 | 5 | **H-1** | Hubble prediction chain | ~1 hr | Conditional on $\tau_0$ | $H_0 \in [67, 73]$ | Conditional | 20--50 | any |
 
 ### 4.2 Dependencies
@@ -440,25 +440,25 @@ This is a theoretical task, not a numerical computation. The deliverable is a fo
 
 ### 5.1 What Would Success Look Like?
 
-**Tier 1 Success (framework-changing)**:
+**Level 1 Success (framework-changing)**:
 - Route B yields self-consistent $\tau_0$ with $\Delta > 0$
 - The resulting $\tau_0$ falls in [0.10, 0.40]
 - The Hubble prediction chain produces $H_0$ in the tension gap [67.4, 73.0]
 - **Probability update**: Panel 25--50%, Sagan 20--40%. Framework re-enters "plausible, needs independent confirmation."
 
-**Tier 2 Success (structurally significant)**:
+**Level 2 Success (structurally significant)**:
 - Torsion Gate T-1 passes: $\lambda_T < \lambda_K$ at some $\tau$
 - This breaches W3, opening a new channel for gap closure
 - BCS re-evaluated with torsion-modified spectrum; $M_{\max}$ may exceed threshold
 - **Probability update**: Panel 15--25%, Sagan 10--18%. New mechanism identified.
 
-**Tier 3 Success (incremental)**:
+**Level 3 Success (incremental)**:
 - $V_{\text{Baptista}}$ Kerner bridge closes: $\kappa_{\text{12D}} > 100$
 - The 12D spectral action derives $\kappa$ near the required value
 - V_Baptista minimum becomes a zero-parameter prediction
 - **Probability update**: Panel 15--20%, Sagan 10--15%. Bridge from NCG to KK established.
 
-**Tier 4 Success (mathematical)**:
+**Level 4 Success (mathematical)**:
 - 12D Dirac operator construction succeeds
 - Pure math paper and no-go paper submitted
 - Structural theorems published regardless of physical outcome
@@ -549,12 +549,12 @@ Run the numbers. Honor the result.
 
 | Data File | Contents | Session | Location |
 |:----------|:---------|:--------|:---------|
-| s25_baptista_results.npz | $R_K(\tau)$, $m^2(\tau)$, $V_{\text{Baptista}}$, Lichnerowicz | 25 | tier0-computation/ |
-| s23a_kosmann_singlet.npz | Kosmann matrices $K_a$, 16x16, 9 $\tau$ values | 23a | tier0-computation/ |
-| s24a_vspec.npz | $V_{\text{spec}}(\tau; \rho)$, monotone for all $\rho$ | 24a | tier0-computation/ |
-| s23c_fiber_integrals.npz | $a_4$ geometric invariants, $|F|^2$, normalization | 23c | tier0-computation/ |
-| s24a_berry.npz | Berry curvature (= 0), quantum metric (= 982) | 24a | tier0-computation/ |
-| s24a_eigenvalue_ratios.npz | $\phi_{\text{paasch}}$ crossing data | 24a | tier0-computation/ |
+| s25_baptista_results.npz | $R_K(\tau)$, $m^2(\tau)$, $V_{\text{Baptista}}$, Lichnerowicz | 25 | computations/ |
+| s23a_kosmann_singlet.npz | Kosmann matrices $K_a$, 16x16, 9 $\tau$ values | 23a | computations/ |
+| s24a_vspec.npz | $V_{\text{spec}}(\tau; \rho)$, monotone for all $\rho$ | 24a | computations/ |
+| s23c_fiber_integrals.npz | $a_4$ geometric invariants, $|F|^2$, normalization | 23c | computations/ |
+| s24a_berry.npz | Berry curvature (= 0), quantum metric (= 982) | 24a | computations/ |
+| s24a_eigenvalue_ratios.npz | $\phi_{\text{paasch}}$ crossing data | 24a | computations/ |
 
 ## Appendix B: Baptista Paper References for Session 26
 

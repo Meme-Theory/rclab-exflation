@@ -1,0 +1,120 @@
+T3-S35-PFAFFIAN-CORRECTED-J: PASS -- value=-1 scheme=Pfaffian-Parlett-Reid_C1_at_D_K_Cliff8 convention=KO-dim=6_corrected-J_C2=g1g3g5g7_C1=g2g4g6g8 L_max=16 sha256=1f6bf36f828513d4c384abcd30857b6cf396b98dc440f83acff62b6a077f4733
+
+Gate: T3-S35-PFAFFIAN-CORRECTED-J  (re-run, S81 canonical verdict form)
+Script: computations/_shared/t3-intake/_t3_s35_pfaffian_corrected_j_rerun.py
+Original: computations/session-35/s35_pfaffian_corrected_j.py  (SHA head: f2317ea9ac5053e7)
+Classification: GEOMETRIC  (pure NCG; KO-dim 6 Pfaffian diagnostic; fabric property, not excitation)
+Closure SHA-256 (full 64-char): 1f6bf36f828513d4c384abcd30857b6cf396b98dc440f83acff62b6a077f4733
+
+Hypothesis
+----------
+BDI topological classification (T^2=+1, P^2=+1, S^2=+1) with the S34-corrected
+real structure J (C2 = gamma_1 gamma_3 gamma_5 gamma_7) produces
+sgn(Pf(C1 @ D_K(tau))) CONSTANT across tau on the Jensen family [0.0, 2.5].
+PASS iff sgn(Pf) constant AND spectral gap OPEN everywhere.
+
+Structural theorem (pre-registered)
+-----------------------------------
+M := C1 @ D_K(tau) is antisymmetric because {P = C1*K, D_K} = 0 and D_K is Hermitian:
+  {P, D_K} = 0     => C1 conj(D_K) + D_K C1 = 0
+  Hermitian D_K    => D_K^T = conj(D_K)
+  C1 symmetric     => M^T = D_K^T C1 = -C1 D_K = -M.   QED.
+
+Pf(M)^2 = det(M) = det(C1) * det(D_K);  det(C1) = +1 (tau-independent).
+sgn(Pf(M)) changes iff Pf passes through 0 iff det(D_K) = 0 iff spectral gap closes.
+
+S34 correction (C2) acts on T=C2*K (time-reversal), NOT on the Pfaffian matrix M
+which is built from C1 (particle-hole). So the correction is a structural sanity
+check: the BDI algebra (T^2=P^2=+1, S=TP=gamma_9) must still hold at machine
+epsilon under the corrected T, and the Pfaffian sign must remain constant.
+
+Substitution chain (sign direction, KO-dim=6 diagnostic)
+--------------------------------------------------------
+Def 1:  sgn(Pf(M(tau))) in {-1, 0, +1}, single-valued away from zero-loci.
+Def 2:  Pf(M)^2 = det(M) = det(C1) * det(D_K),   det(C1) = +1 verified.
+Def 3:  Pf is continuous in tau wherever M is continuous.
+Sub:    sgn(Pf(M(tau))) can change only at tau where Pf(M(tau))=0,
+        i.e. det(D_K(tau))=0, i.e. min|ev(D_K(tau))|=0.
+Meas:   min|ev(D_K(tau))| >= 0.8186 across all 34 tau points (union).
+Simp:   No zero-crossing => sgn(Pf) constant on [0.0, 2.5].
+Dir:    Observed sgn(Pf) = -1 at all 34 tau (sign is convention-dependent;
+        CONSTANCY is the invariant).
+Concl:  Z_2 BDI invariant TRIVIAL on Jensen curve. No topological phase transition.
+
+Input SHA-256 pins (64-char, PRDR-verified)
+-------------------------------------------
+computations/session-35/s35_pfaffian_corrected_j.py     f2317ea9ac5053e7d5159afa4b55cb2a0064014e67be05610deb409060df7138
+computations/_shared/dirac_spectrum.py         267035cb598b08e94117a3245cb07b29fbe6bff7b5a614a1bde64982851809c3
+computations/_shared/s23a_kosmann_singlet.npz        ef547e583cf73e91b3f0d26e1ba14ee74c28d3718ee08dde12e0f17ad2775214
+computations/_shared/canonical_constants.py      68b50cd325d2cc8c63b775da3b6b92f538da582bee44c5d906c81259f24dd12f
+t3-intake/_t3_s35_pfaffian_corrected_j_rerun  b72bbb1b473d62fdb57bf2a14abbfa7d1cd422ca72b171d405a85d08ba3c726b
+
+Machinery pins (PRDR-complete)
+------------------------------
+L_max              = 16  (Cliff(R^8) spinor dim; fixed by Clifford algebra, not a scan)
+N_TAU_STORED       = 9   (from s23a npz: {0.00, 0.10, 0.15, 0.20, 0.25, 0.30, 0.35, 0.40, 0.50})
+N_TAU_EXTENDED     = 25  (np.linspace(0.0, 2.5, 25), first-principles D_K at each)
+TAU_EXT_MIN        = 0.0
+TAU_EXT_MAX        = 2.5
+C2 definition      = gammas[0] @ gammas[2] @ gammas[4] @ gammas[6]   (corrected J, S34)
+C1 definition      = gammas[1] @ gammas[3] @ gammas[5] @ gammas[7]   (particle-hole)
+gamma_9            = build_chirality(gammas); verified gamma_9 = C2 @ C1
+Pfaffian algorithm = Parlett-Reid LTL^T (Wimmer, ACM TOMS 38(4), 2012), O(n^3)
+ASYM_TOL           = 1e-12
+HERM_TOL           = 1e-13
+GAP_TOL            = 1e-10  (min|ev(D_K)| > this => gap OPEN)
+CPU threads        = OMP/MKL capped at 8 (16x16 matrix; GPU not warranted)
+
+Numerical results
+-----------------
+Stored tau scan (9 values in [0.0, 0.5]):
+  sgn(Pf) = -1 at all 9 tau (CONSTANT)
+  Re(Pf) range = [-1.116, -0.316]
+  |Im(Pf)/Re(Pf)| <= 1.84e-15   (real to machine epsilon)
+  max ||M+M^T||/||M|| <= 1.02e-14
+  max |Pf^2-det|/|det| <= 8.58e-15
+  min|ev(D_K)| = 0.8186
+
+Extended tau scan (25 values in [0.0, 2.5]):
+  sgn(Pf) = -1 at all 25 tau (CONSTANT; same sign as stored)
+  Re(Pf) range = [-2.80e+06, -0.316]
+  max ||M+M^T||/||M|| = 0.00e+00 identically (direct-frame construction)
+  min|ev(D_K)| >= 0.8186 (no zero-crossing anywhere on [0, 2.5])
+
+BDI symmetry verification
+-------------------------
+max |[T, D_K]|  = 4.85e-15    (T = C2*K, T^2 = +1)
+max |{P, D_K}|  = 4.90e-15    (P = C1*K, P^2 = +1)
+max |{S, D_K}|  = 8.97e-15    (S = gamma_9 = C2*C1, chiral anticommuting)
+gamma_9 - C2*C1 = 0.00e+00
+C2^2 - I        = 0.00e+00
+C1^2 - I        = 0.00e+00
+det(C1)         = +1.000000 (tau-independent, as required)
+runtime         = 0.05 s
+
+Verdict
+-------
+PASS: sgn(Pf(C1 @ D_K(tau))) is CONSTANT (= -1 in the current gamma-basis
+convention) across all 34 tau values spanning [0.0, 2.5]. Spectral gap is OPEN
+everywhere (min|ev(D_K)| = 0.8186 >> GAP_TOL = 1e-10). BDI class is TRIVIAL
+under the corrected J: the Z_2 invariant does not change. S34 J-correction
+(C2 = g1 g3 g5 g7) has NO EFFECT on the Pfaffian sign, because the Pfaffian is
+built from C1 (particle-hole), not C2 (time-reversal); the correction only
+affects T, whose BDI algebra is re-verified here at machine epsilon.
+
+Cross-check vs T3-S30A-DTOTAL-PFAFFIAN
+--------------------------------------
+T3-S30A: sgn(Pf(Xi @ D_total)) = +1 CONSTANT, 864-dim space, Z_2 = +1.
+T3-S35:  sgn(Pf(C1 @ D_K))     = -1 CONSTANT, 16-dim space,  Z_2 trivial.
+NOT AN INCONSISTENCY. Both tests confirm Z_2 TRIVIALITY (constancy of sign
+across the Jensen family). The absolute sign is gamma-basis-orientation
+convention: Xi and C1 build different real structures on different-dim
+spaces. Topology depends on CONSTANCY, not absolute sign. Both runs PASS.
+FLAG: differing absolute signs (+1 vs -1) are NOT a contradiction;
+ensure any future comparisons report CONSTANCY, not the absolute value.
+
+Files produced / referenced
+---------------------------
+computations/_shared/t3-intake/_t3_s35_pfaffian_corrected_j_rerun.py   (re-run script)
+computations/_shared/t3-intake/t3_S35_PFAFFIAN_CORRECTED_J_verdict.txt (this file)
+computations/_shared/t3-intake/prep_T3-S35-PFAFFIAN-CORRECTED-J.md     (prep block)

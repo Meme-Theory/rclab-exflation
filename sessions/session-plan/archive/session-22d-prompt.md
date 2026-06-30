@@ -32,7 +32,7 @@ Session ends ONLY when coordinator broadcasts: "SESSION 22d COMPLETE — all age
 ## COMPUTATION ENVIRONMENT
 
 **Python**: `"phonon-exflation-sim/.venv312/Scripts/python.exe"`
-**Output directory**: `tier0-computation/`
+**Output directory**: `computations/`
 **Script prefix**: `s22d_`
 
 ---
@@ -99,8 +99,8 @@ Run THREE scenarios:
 - Equation of state w(t) = p/rho where p = G_ττ * tau_dot^2 / 2 - V, rho = G_ττ * tau_dot^2 / 2 + V
 - w_0 = w(today), w_a = -dw/da|_{today}
 
-**Script**: `tier0-computation/s22d_rolling_modulus.py`
-**Output**: `tier0-computation/s22d_rolling_trajectories.npz`
+**Script**: `computations/s22d_rolling_modulus.py`
+**Output**: `computations/s22d_rolling_trajectories.npz`
 
 **Keys in output**: `tau_A`, `H_A`, `w_A`, `tau_B`, `H_B`, `w_B`, `tau_C`, `H_C`, `w_C`, all as time arrays; `w0_A`, `wa_A`, `w0_B`, `wa_B`, `w0_C`, `wa_C` as scalars.
 
@@ -163,8 +163,8 @@ From the ODE trajectory in E-1, extract tau_dot(today). Is it consistent with th
 | |alpha_dot / alpha| in [10^{-17}, 10^{-16}] yr^{-1} | MARGINAL | BF = 0.9 |
 | |alpha_dot / alpha| > 10^{-16} yr^{-1} | CLOCK CLOSED | BF = 0.1 |
 
-**Script**: `tier0-computation/s22d_constraints.py`
-**Output**: `tier0-computation/s22d_constraint_results.npz`
+**Script**: `computations/s22d_constraints.py`
+**Output**: `computations/s22d_constraint_results.npz`
 
 ---
 
@@ -342,11 +342,11 @@ The following results are established at machine epsilon or better. Use them dir
 
 **TT deformation metric**: g_s(tau) = alpha * diag(e^{2tau}, e^{-2tau} * I_3, e^{tau} * I_4), where the first entry is 1x1 (u(1)), the second is 3x3 (su(2)), and the third is 4x4 (C^2). Total: 1+3+4 = 8 = dim SU(3). Volume-preserving: det g_s = const. Session 12, machine epsilon.
 
-**Dirac spectrum**: Available in `tier0-computation/tier1_dirac_spectrum.py` and `kk1_bosonic_spectrum.npz`. Eigenvalues lambda_{p,q} for all sectors.
+**Dirac spectrum**: Available in `computations/dirac_spectrum.py` and `kk1_bosonic_spectrum.npz`. Eigenvalues lambda_{p,q} for all sectors.
 
-**T''(0)**: +7,969. From `tier0-computation/s21c_T_double_prime_result.txt`. Do not recompute.
+**T''(0)**: +7,969. From `computations/s21c_T_double_prime_result.txt`. Do not recompute.
 
-**delta_T values**: tau=0 → 3399, tau=0.5 → 530, tau=1.0 → 96.9, tau=1.5 → 17.6, tau=2.0 → 3.04. From `tier0-computation/s21c_cp1_investigation.npz`. Do not recompute.
+**delta_T values**: tau=0 → 3399, tau=0.5 → 530, tau=1.0 → 96.9, tau=1.5 → 17.6, tau=2.0 → 3.04. From `computations/s21c_cp1_investigation.npz`. Do not recompute.
 
 **CP-1 algebraic identity**: S_b1/S_b2 = 4/9 exactly. Confirmed. This is Trap 2, not a minimum prediction.
 
@@ -357,8 +357,8 @@ The following results are established at machine epsilon or better. Use them dir
 Session 22d is complete when coordinator confirms ALL of the following:
 
 Einstein deliverables:
-- [ ] `tier0-computation/s22d_rolling_trajectories.npz` written with all scenario keys
-- [ ] `tier0-computation/s22d_constraint_results.npz` written with Omega_tau and alpha_dot results
+- [ ] `computations/s22d_rolling_trajectories.npz` written with all scenario keys
+- [ ] `computations/s22d_constraint_results.npz` written with Omega_tau and alpha_dot results
 - [ ] w_0/w_a for all three scenarios reported with DESI comparison verdict
 - [ ] Atomic clock and EDE bounds classified against Constraint Gates
 

@@ -1,0 +1,34 @@
+# S96-CONSOL-REPRO-BUNDLE — LOCKED ENVIRONMENT MANIFEST
+# The reproducibility contract for the capstone headline numbers.
+# A fresh checkout with this env + these two input SHAs reproduces the
+# headline table bit-stably via:
+#   .venv312/Scripts/python.exe computations/_shared/s96_consol_repro_bundle.py
+
+[toolchain]
+python            = 3.12.10 (CPython)
+python_executable = phonon-exflation-sim/.venv312/Scripts/python.exe
+platform          = Windows 11 (AMD64)
+numpy             = 2.4.2
+scipy             = 1.17.0
+matplotlib        = 3.10.8
+torch             = 2.9.1+rocmsdk20260116
+torch_cuda_active = True  (RX 9070 XT / ROCm when True)
+sage              = Sage-MCP (mcp__sage; exact-rational QQ cross-check service; not an in-venv import)
+
+[inputs]  # the ONLY two files the reproducer reads
+canonical_constants = computations/_shared/canonical_constants.py
+canonical_sha256    = 88f1e9b107dc30c49a2dbcde33cecbee14cc17404994a2ad8f76adceec8a7258
+canonical_plan_pin  = 7a66eaf17fa6729389172114ec7041f67ef5d4fc8a00cd36b1e495c7044c7995  [DRIFT-FROM-PLAN-PIN]
+spectrum_cache      = computations/session-84/s84_spectrum_cache_L12_tau019.npz
+cache_sha256        = 9e6d9cf7fd6a6949d622441b26fb9c2fa568654a22dc802e99898c326ca0f8d9
+cache_plan_pin      = 9e6d9cf7fd6a6949d622441b26fb9c2fa568654a22dc802e99898c326ca0f8d9  [MATCH]
+
+[contract]
+no_hidden_inputs    = True  (reproducer reads ONLY the two [inputs] files)
+L_max               = 10 and 12 (cache supplies both; bottom-K Friedrich-Bar saturated)
+tau_now             = tau_fold = 0.190
+precision_floor     = Class-8.3 per-row 10^(-published_sig_figs)
+
+# Plan-text-drift (substrate-first-canonical-sourcing.md §(ii.B)): canonical_constants.py
+# DRIFT-FROM-PLAN-PIN vs plan §W8-5 pin; resolved at RUNTIME (live SHA feeds audit_sha256),
+# NOT hardcoded to the stale plan pin. Cache MATCH.

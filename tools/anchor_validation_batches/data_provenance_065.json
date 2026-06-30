@@ -1,0 +1,117 @@
+{
+  "table": "data_provenance",
+  "batch_id": 65,
+  "count": 10,
+  "anchors": [
+    {
+      "anchor_id": "prov_641",
+      "anchor_type": "data_provenance",
+      "name": "sft_cutoff",
+      "script_path": "session-54/s54_sft_cutoff.py",
+      "session": "s54",
+      "inputs": "computations/session-44/s44_dos_tau.npz",
+      "outputs": "session-54/s54_sft_cutoff.npz",
+      "source_file": "computations/session-54/s54_sft_cutoff.py",
+      "source_context_30_lines": "  684:     # Spectral sum ratios at Lambda = omega_max\n  685:     \"a0_exp_over_sharp\": ratio_a0,\n  686:     \"a2_exp_over_sharp\": ratio_a2,\n  687:     \"a4_exp_over_sharp\": ratio_a4,\n  688:     # Amplification factor\n  689:     \"CC_EH_amplification\": (CC_exp / EH_exp) / (CC_sharp / EH_sharp),\n  690: }\n  691: \n  692: np.savez(\"computations/session-54/s54_sft_cutoff.npz\", **results)\n  693: print(f\"\\nSaved: computations/session-54/s54_sft_cutoff.npz\")\n  694: print(\"DONE.\")"
+    },
+    {
+      "anchor_id": "prov_642",
+      "anchor_type": "data_provenance",
+      "name": "starobinsky_r2",
+      "script_path": "session-54/s54_starobinsky_r2.py",
+      "session": "s54",
+      "inputs": "",
+      "outputs": "session-54/s54_starobinsky_r2.npz, session-54/s54_starobinsky_r2.png",
+      "source_file": "computations/session-54/s54_starobinsky_r2.py",
+      "source_context_30_lines": "  141:   The scalaron mass in GeV: m_s = sqrt(m_s^2) * Lambda where Lambda = M_KK.\n  142: \n  143:   S53 prediction: m_s ~ M_KK ~ 7.4e16 GeV >> 3e13 GeV (Starobinsky bound).\n  144: \n  145: Inputs:\n  146:   - canonical_constants.py: a0_fold, a2_fold, a4_fold, M_KK, M_Pl\n  147: \n  148: Output:\n  149:   - s54_starobinsky_r2.npz\n  150:   - s54_starobinsky_r2.png\n  151:   - Console printout for W3-12 section\n  152: \n  153: Author: Baptista-Spacetime-Analyst (Session 54)\n  154: Date: 2026-03-21\n  155: \"\"\"\n  156: \n  157: import sys"
+    },
+    {
+      "anchor_id": "prov_643",
+      "anchor_type": "data_provenance",
+      "name": "swampland",
+      "script_path": "session-54/s54_swampland.py",
+      "session": "s54",
+      "inputs": "",
+      "outputs": "session-54/s54_swampland.npz",
+      "source_file": "computations/session-54/s54_swampland.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s54_swampland.py — SWAMPLAND-CHECKS-54\n    4: =======================================\n    5: \n    6: Tests surviving expansion routes against three swampland conjectures:\n    7:   1. Distance conjecture: Delta_phi < M_Pl (field traversal sub-Planckian)\n    8:   2. de Sitter conjecture: |nabla V|/V > c ~ O(1) (no stable dS)\n    9:   3. Refined dS conjecture: min(|nabla V|/V, |nabla^2 V|/V) > c' (gradient bound)\n   10: \n   11: Surviving expansion routes tested:"
+    },
+    {
+      "anchor_id": "prov_644",
+      "anchor_type": "data_provenance",
+      "name": "tb_hamiltonian",
+      "script_path": "session-54/s54_tb_hamiltonian.py",
+      "session": "s54",
+      "inputs": "",
+      "outputs": "session-54/s54_tb_hamiltonian.npz, session-54/s54_tb_hamiltonian.png",
+      "source_file": "computations/session-54/s54_tb_hamiltonian.py",
+      "source_context_30_lines": "   55: import matplotlib.pyplot as plt\n   56: \n   57: from canonical_constants import (\n   58:     J_C2, J_su2, J_u1, N_cells, tau_fold,\n   59:     Vol_SU3_Haar, c_Gold, T_acoustic,\n   60: )\n   61: \n   62: SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))\n   63: OUT_NPZ = os.path.join(SCRIPT_DIR, \"s54_tb_hamiltonian.npz\")\n   64: OUT_PNG = os.path.join(SCRIPT_DIR, \"s54_tb_hamiltonian.png\")\n   65: OUT_TXT = os.path.join(SCRIPT_DIR, \"s54_tb_hamiltonian_output.txt\")\n   66: \n   67: # ============================================================\n   68: # Output tee (console + file)\n   69: # ============================================================\n   70: class Tee:\n   71:     def __init__(self, filename):"
+    },
+    {
+      "anchor_id": "prov_645",
+      "anchor_type": "data_provenance",
+      "name": "thermo_expansion",
+      "script_path": "session-54/s54_thermo_expansion.py",
+      "session": "s54",
+      "inputs": "",
+      "outputs": "session-54/s54_thermo_expansion.npz",
+      "source_file": "computations/session-54/s54_thermo_expansion.py",
+      "source_context_30_lines": "  544: print(\"  (between DESI w_0 = -0.71 and cosmological constant w = -1)\")\n  545: print(\"  but the magnitude is catastrophic.\")\n  546: \n  547: # ============================================================================\n  548: # Save results\n  549: # ============================================================================\n  550: \n  551: np.savez(\n  552:     os.path.join(os.path.dirname(__file__), 's54_thermo_expansion.npz'),\n  553:     # 1-pair results\n  554:     epsilon_1pair=epsilon_1pair,\n  555:     P_vac_1pair=P_vac_1pair,\n  556:     w_1pair=w_1pair,\n  557:     euler_sum=euler_sum,\n  558:     # Branch decomposition\n  559:     E_B2_gge=E_B2_gge,\n  560:     E_B1_gge=E_B1_gge,"
+    },
+    {
+      "anchor_id": "prov_646",
+      "anchor_type": "data_provenance",
+      "name": "threshold",
+      "script_path": "session-54/s54_threshold.py",
+      "session": "s54",
+      "inputs": "",
+      "outputs": "session-54/s54_threshold.npz",
+      "source_file": "computations/session-54/s54_threshold.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s54_threshold.py — String-Motivated Threshold Corrections to sin²θ_W\n    4: =====================================================================\n    5: \n    6: Gate: THRESHOLD-54 (INFO)\n    7: Agent: kaku-speculative-theorist\n    8: \n    9: Context:\n   10:   S52 DDG-MKK-52 computed sin²θ_W = 0.584 at the fold (FAIL, 2.5× above 0.231).\n   11:   Standard SM 1-loop running from M_KK to M_Z gives sin²θ_W(M_Z) ~ 0.448 —"
+    },
+    {
+      "anchor_id": "prov_647",
+      "anchor_type": "data_provenance",
+      "name": "atensor_gauge",
+      "script_path": "session-55/s55_atensor_gauge.py",
+      "session": "s55",
+      "inputs": "",
+      "outputs": "session-55/s55_atensor_gauge.npz, session-55/s55_atensor_gauge.png",
+      "source_file": "computations/session-55/s55_atensor_gauge.py",
+      "source_context_30_lines": "   36: 1. The EXTERNAL A-tensor for M4 x K -> M4: this is Baptista's F (eq 3.6)\n   37:    F_X Y = (nabla_X^H Y^H)^V = (1/2)[X^H, Y^H]^V = F_A (gauge curvature)\n   38: \n   39: 2. The INTERNAL A-tensor for the coset submersion K -> K/U(2):\n   40:    A_{e_a} e_b = (1/2)[e_a, e_b]^{u(2)}  for e_a, e_b in m = C^2\n   41:    This measures the fiber geometry and is what we compute here.\n   42: \n   43: Gate: ATENSOR-GAUGE-55 — PASS if |A|^2 > 0 with gauge fields. FAIL if A = 0.\n   44: Output: s55_atensor_gauge.npz, s55_atensor_gauge.png\n   45: \n   46: Author: Baptista-Spacetime-Analyst (Session 55)\n   47: Date: 2026-03-22\n   48: \"\"\"\n   49: \n   50: import sys\n   51: import os\n   52: sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))"
+    },
+    {
+      "anchor_id": "prov_648",
+      "anchor_type": "data_provenance",
+      "name": "berry_fold",
+      "script_path": "session-55/s55_berry_fold.py",
+      "session": "s55",
+      "inputs": "",
+      "outputs": "session-55/s55_berry_fold.npz, session-55/s55_berry_fold.png",
+      "source_file": "computations/session-55/s55_berry_fold.py",
+      "source_context_30_lines": "   54: matplotlib.use('Agg')\n   55: import matplotlib.pyplot as plt\n   56: from matplotlib.patches import Circle\n   57: from matplotlib.collections import LineCollection\n   58: \n   59: from canonical_constants import J_C2, J_su2, J_u1, N_cells, tau_fold\n   60: \n   61: SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))\n   62: OUT_NPZ = os.path.join(SCRIPT_DIR, \"s55_berry_fold.npz\")\n   63: OUT_PNG = os.path.join(SCRIPT_DIR, \"s55_berry_fold.png\")\n   64: OUT_TXT = os.path.join(SCRIPT_DIR, \"s55_berry_fold_output.txt\")\n   65: \n   66: # ============================================================\n   67: # Output tee (console + file)\n   68: # ============================================================\n   69: class Tee:\n   70:     def __init__(self, filename):"
+    },
+    {
+      "anchor_id": "prov_649",
+      "anchor_type": "data_provenance",
+      "name": "blv_8d",
+      "script_path": "session-55/s55_blv_8d.py",
+      "session": "s55",
+      "inputs": "",
+      "outputs": "session-55/s55_blv_8d.npz, session-55/s55_blv_8d.png",
+      "source_file": "computations/session-55/s55_blv_8d.py",
+      "source_context_30_lines": "    1: #!/usr/bin/env python3\n    2: \"\"\"\n    3: s55_blv_8d.py -- BLV Acoustic Scale Factor in d=8 Dimensions\n    4: =============================================================\n    5: \n    6: Gate: BLV-8D-55 (INFO)\n    7: Purpose: Compute the Barcelo-Liberati-Visser conformal factor in d=8 dimensions\n    8:          and compare to the 4D result from S53.\n    9: \n   10: Physics:\n   11:   The BLV acoustic metric for an irrotational barotropic fluid at rest"
+    },
+    {
+      "anchor_id": "prov_650",
+      "anchor_type": "data_provenance",
+      "name": "bogoliubov_992",
+      "script_path": "session-55/s55_bogoliubov_992.py",
+      "session": "s55",
+      "inputs": "computations/session-44/s44_dos_tau.npz, computations/session-52/s52_bogoliubov_amp.npz",
+      "outputs": "session-55/s55_bogoliubov_992.npz, session-55/s55_bogoliubov_992.png",
+      "source_file": "computations/session-55/s55_bogoliubov_992.py",
+      "source_context_30_lines": "    1: \"\"\"\n    2: s55_bogoliubov_992.py — Continuum 992-mode Bogoliubov spectrum non-thermality\n    3: Gate: BOGOLIUBOV-992-55\n    4: \n    5: Physics:\n    6:   The transit from tau=0 to tau=0.19 (van Hove fold) is Parker-type cosmological\n    7:   particle creation — NOT Hawking radiation. No horizon => no thermal Planck spectrum.\n    8: \n    9:   Bogoliubov transformation: when the Hamiltonian changes from H(tau_i) to H(tau_f),\n   10:   the vacuum at tau_i contains particles as viewed from tau_f."
+    }
+  ]
+}

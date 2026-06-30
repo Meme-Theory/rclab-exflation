@@ -1,0 +1,250 @@
+==============================================================================
+S62 PHONON-DISPERSION-FULL-62: Full 3-Sector Coupled Dispersion on CG(24)
+==============================================================================
+
+--- Section 1: Load input data ---
+Loaded all input data:
+  Sector A: 36 deformation modes from SA Hessian
+  Sector B: 8 modes/cell x 32 k-points = 256 lattice modes
+  Sector C: 1 Leggett mode with k-dispersion
+  Total per k-point: 45
+  fold_idx = 19, tau_fold = 0.1939
+  E_J at fold = 7.041511 M_KK
+  A_coset^2 = 2.200
+  eps_canonical = 0.00374
+  omega_L0 = 0.049 M_KK
+
+--- Section 2: Uncoupled sector spectra ---
+
+Sector A frequencies (sqrt|lambda_Hessian|):
+  A- 0: omega = 3.8839 M_KK
+  A- 1: omega = 4.6034 M_KK
+  A- 2: omega = 4.6034 M_KK
+  A- 3: omega = 4.6034 M_KK
+  A- 4: omega = 4.6034 M_KK
+  A- 5: omega = 4.9919 M_KK
+  A- 6: omega = 5.2564 M_KK
+  A- 7: omega = 5.2564 M_KK
+  A- 8: omega = 5.2564 M_KK
+  A- 9: omega = 5.3143 M_KK
+  A-10: omega = 5.3143 M_KK
+  A-11: omega = 5.3143 M_KK
+  A-12: omega = 5.3143 M_KK
+  A-13: omega = 5.3143 M_KK
+  A-14: omega = 5.3143 M_KK
+  A-15: omega = 7.1069 M_KK
+  A-16: omega = 7.1069 M_KK
+  A-17: omega = 7.1069 M_KK
+  A-18: omega = 7.8600 M_KK
+  A-19: omega = 7.8600 M_KK
+  A-20: omega = 7.8600 M_KK
+  A-21: omega = 7.8600 M_KK
+  A-22: omega = 8.1952 M_KK
+  A-23: omega = 8.1952 M_KK
+  A-24: omega = 8.1952 M_KK
+  A-25: omega = 8.1952 M_KK
+  A-26: omega = 8.1953 M_KK
+  A-27: omega = 8.1953 M_KK
+  A-28: omega = 8.1953 M_KK
+  A-29: omega = 8.1953 M_KK
+  A-30: omega = 11.4769 M_KK
+  A-31: omega = 12.1939 M_KK
+  A-32: omega = 12.1939 M_KK
+  A-33: omega = 12.1940 M_KK
+  A-34: omega = 12.1940 M_KK
+  A-35: omega = 12.1940 M_KK
+  Range: [3.8839, 12.1940] M_KK
+
+Sector B single-particle energies at fold:
+  B2 (modes 0-3): [-1.18413693e-16  1.77061960e-01  3.29405571e-01  5.22910373e-01]
+  B1 (mode 4):    0.726155
+  B3 (modes 5-7): [1.00439566 1.07857332 1.1700026 ]
+  V_bare (8x8) norms:
+    ||V[B2,B2]|| = 0.168065
+    ||V[B2,B1]|| = 0.159827
+    ||V[B2,B3]|| = 0.062658
+    ||V[B1,B1]|| = 3.44e-29 (Trap 1: must be 0)
+    ||V[B1,B3]|| = 7.33e-30 (selection rule)
+    ||V[B3,B3]|| = 0.176379
+
+Sector C Leggett mode:
+  omega_L0 = 0.0490 M_KK (gap)
+  J_L = eps * E_J = 0.00374 * 7.0415 = 0.026335 M_KK
+  omega_L(k=0) = 0.0490 M_KK
+  omega_L(k=max) = sqrt(0.049^2 + 0.0263*7.3284) = 0.442037 M_KK
+  Leggett bandwidth: 0.393037 M_KK
+
+--- Section 3: Inter-sector couplings ---
+
+d(E_sp)/d(tau) at fold:
+  mode 0: -0.000000 M_KK per tau
+  mode 1: -0.512438 M_KK per tau
+  mode 2: -1.189304 M_KK per tau
+  mode 3: -1.658800 M_KK per tau
+  mode 4: -2.156273 M_KK per tau
+  mode 5: -3.463250 M_KK per tau
+  mode 6: -3.861522 M_KK per tau
+  mode 7: -3.700178 M_KK per tau
+
+A-B coupling matrix V_AB (36x8):
+  ||V_AB|| = 5.093156 M_KK
+  max|V_AB| = 0.989391 M_KK
+  Diagonal modes (alpha<8): max = 0.989391
+  Off-diag modes (alpha>=8): max = 0.045459
+
+Leggett mode projection in 8-mode space:
+  Eigenvalue: 0.041875 (target: 0.049)
+  Eigenvector: [-2.26820941e-01  2.76909631e-01  5.95553798e-01 -6.45642488e-01
+  3.33513856e-17  2.22834363e-01 -2.25109831e-01  2.27546822e-03]
+  B2 weight: 0.8997
+  B1 weight: 0.0000
+  B3 weight: 0.1003
+
+B-C coupling vector V_BC (8):
+  V_BC = [-3.55228688e-05  4.33673560e-05  9.32708389e-05 -1.01115326e-04
+  1.29757316e-19  3.48985231e-05 -3.52548886e-05  3.56365504e-07]
+  ||V_BC|| = 0.000157 M_KK
+  max|V_BC| = 0.000101 M_KK
+
+A-C coupling vector V_AC (36):
+  d(omega_L)/d(tau) = -0.003142 M_KK/tau
+  ||V_AC|| = 0.009756 M_KK
+  max|V_AC| = 0.003777 M_KK
+
+--- Section 4: Full 45x45 Hamiltonian diagonalization ---
+Diagonalized 32 Hamiltonians of size 45x45
+
+Spectrum at k=0 (Gamma point):
+  Lowest 5: [-2.5212363   0.01403573  0.04900618  0.19602774  0.39076581]
+  Highest 5: [12.1938833  12.19391074 12.19395281 12.19395348 12.19625089]
+
+Spectrum at k=max (zone boundary):
+  Lowest 5: [0.4420111  3.74226192 4.32143974 4.60341338 4.60341357]
+  Highest 5: [52.15579759 52.46019646 52.64855223 52.71392122 53.31106881]
+
+--- Section 5: Hybridization gap analysis ---
+
+Uncoupled spectra computed.
+  Sector A: 36 modes, constant across k
+  Sector B at fold: [0.0019, 52.8626] M_KK
+  Sector C: [0.0490, 0.442037] M_KK
+
+--- A-B Near-Crossing Analysis ---
+Found 69 unique A-B near-crossings (detuning < 0.5)
+  Coupled gap range: [0.008707, 3.274401] M_KK
+  Delta gap range: [-0.148372, 3.168616] M_KK
+  Coupled gaps > 0.01: 68
+  Coupled gaps > 0.001: 69
+  Delta > 0.01 (coupling-induced opening): 26
+
+  Top 15 closest near-crossings:
+    k= 4 A- 5/B-0: omega_A=4.992, omega_B=4.980, det=0.0118, coupled=0.0903, uncoupled=0.0118, delta=0.0786
+    k= 5 A-18/B-4: omega_A=7.860, omega_B=7.847, det=0.0129, coupled=0.2604, uncoupled=0.0129, delta=0.2475
+    k= 3 A- 4/B-5: omega_A=4.603, omega_B=4.624, det=0.0204, coupled=0.0525, uncoupled=0.0204, delta=0.0321
+    k= 7 A-22/B-0: omega_A=8.195, omega_B=8.174, det=0.0209, coupled=0.0087, uncoupled=0.0209, delta=-0.0122
+    k= 4 A-14/B-2: omega_A=5.314, omega_B=5.347, det=0.0331, coupled=0.0522, uncoupled=0.0331, delta=0.0190
+    k= 5 A-22/B-6: omega_A=8.195, omega_B=8.152, det=0.0429, coupled=0.0375, uncoupled=0.0429, delta=-0.0054
+    k= 8 A-31/B-3: omega_A=12.194, omega_B=12.145, det=0.0492, coupled=0.0399, uncoupled=0.0492, delta=-0.0093
+    k= 6 A-22/B-3: omega_A=8.195, omega_B=8.141, det=0.0546, coupled=0.0440, uncoupled=0.0546, delta=-0.0106
+    k= 5 A-15/B-0: omega_A=7.107, omega_B=7.043, det=0.0635, coupled=0.0529, uncoupled=0.0635, delta=-0.0106
+    k= 6 A-18/B-1: omega_A=7.860, omega_B=7.787, det=0.0735, coupled=0.0708, uncoupled=0.0735, delta=-0.0027
+    k= 4 A- 6/B-1: omega_A=5.256, omega_B=5.174, det=0.0824, coupled=0.0821, uncoupled=0.0824, delta=-0.0003
+    k= 3 A- 0/B-2: omega_A=3.884, omega_B=3.967, det=0.0832, coupled=0.1911, uncoupled=0.0832, delta=0.1080
+    k= 9 A-31/B-0: omega_A=12.194, omega_B=12.107, det=0.0869, coupled=0.0755, uncoupled=0.0869, delta=-0.0114
+    k= 3 A- 0/B-1: omega_A=3.884, omega_B=3.794, det=0.0903, coupled=0.1911, uncoupled=0.0903, delta=0.1008
+    k= 4 A- 8/B-2: omega_A=5.256, omega_B=5.347, det=0.0911, coupled=0.0576, uncoupled=0.0579, delta=-0.0004
+
+  Top 10 gap-opening crossings (largest delta_gap):
+    k= 5 A-29/B-7: omega_A=8.195, omega_B=8.301, coupled=3.2744, delta=3.1686
+    k= 2 A- 0/B-7: omega_A=3.884, omega_B=3.609, coupled=0.5517, delta=0.2765
+    k= 2 A- 0/B-6: omega_A=3.884, omega_B=3.460, coupled=0.5517, delta=0.2765
+    k= 5 A-18/B-4: omega_A=7.860, omega_B=7.847, coupled=0.2604, delta=0.2475
+    k= 3 A- 0/B-2: omega_A=3.884, omega_B=3.967, coupled=0.1911, delta=0.1080
+    k= 3 A- 5/B-7: omega_A=4.992, omega_B=4.857, coupled=0.2387, delta=0.1041
+    k= 3 A- 0/B-1: omega_A=3.884, omega_B=3.794, coupled=0.1911, delta=0.1008
+    k= 5 A-21/B-7: omega_A=7.860, omega_B=8.301, coupled=0.1684, delta=0.0835
+    k= 6 A-29/B-4: omega_A=8.195, omega_B=8.396, coupled=0.2834, delta=0.0823
+    k= 3 A- 1/B-3: omega_A=4.603, omega_B=4.148, coupled=0.3359, delta=0.0802
+
+--- B-C Near-Crossing Analysis ---
+Found 2 B-C near-crossings
+  k= 0, B-0: omega_B=0.0019, omega_L=0.0490, det=0.0471, delta=-0.0122
+  k= 0, B-1: omega_B=0.1957, omega_L=0.0490, det=0.1467, delta=0.0003
+
+--- A-C Separation ---
+  Sector A minimum: 3.8839 M_KK
+  Sector C maximum: 0.4420 M_KK
+  No A-C crossings (separation = 3.4418 M_KK)
+
+--- Section 6: Detailed hybridization gap measurement ---
+
+Largest coupling-induced gap opening:
+  Type: A-B
+  k_idx: 5
+  delta_gap: 3.168616 M_KK
+  coupled_gap: 3.274401 M_KK
+  uncoupled_gap: 0.105785 M_KK
+  omega_A=8.1953, omega_B=8.3011
+
+--- Gap vs coupling strength sweep ---
+  alpha=0 (uncoupled): gap = 0.105785
+  alpha=1 (full):      gap = 3.274401
+  Max gap over sweep:  3.274401
+
+--- Section 7: Sector mixing analysis ---
+
+Sector weights at k=0 (most mixed modes):
+  Mode  0: omega=-2.5212, A=0.3335, B=0.6665, C=0.0000, mixing=0.3335
+  Mode 38: omega=8.4049, A=0.7491, B=0.2509, C=0.0000, mixing=0.2509
+  Mode 30: omega=8.1337, A=0.9320, B=0.0680, C=0.0000, mixing=0.0680
+  Mode 26: omega=7.8454, A=0.9906, B=0.0094, C=0.0000, mixing=0.0094
+  Mode  9: omega=4.0036, A=0.9968, B=0.0032, C=0.0000, mixing=0.0032
+  Mode 13: omega=4.8907, A=0.9980, B=0.0020, C=0.0000, mixing=0.0020
+  Mode 14: omega=5.1302, A=0.9982, B=0.0018, C=0.0000, mixing=0.0018
+  Mode  6: omega=0.8956, A=0.0011, B=0.9989, C=0.0000, mixing=0.0011
+  Mode 23: omega=7.1032, A=0.9993, B=0.0007, C=0.0000, mixing=0.0007
+  Mode  1: omega=0.0140, A=0.0006, B=0.9994, C=0.0001, mixing=0.0006
+
+Overall mixing statistics:
+  Maximum mixing parameter: 0.497119
+  Average mixing parameter: 0.006937
+  Number of modes with mixing > 0.01: 70
+  Number of modes with mixing > 0.001: 184
+
+Sector-resolved bandwidths:
+  A (geometric): [-0.4191, 12.3025] M_KK, count=1154
+  B (BA): [-2.5212, 53.3111] M_KK, count=254
+  C (Leggett): [0.0490, 0.4420] M_KK, count=32
+
+==============================================================================
+GATE: PHONON-DISPERSION-FULL-62
+==============================================================================
+
+  Total near-crossings (detuning < 0.1): 17
+    A-B: 16
+    B-C: 1
+  Maximum coupled gap: 0.260425 M_KK
+  Maximum delta gap (coupling-induced): 0.247512 M_KK
+  Coupled gaps > 0.01 M_KK: 16
+  Coupled gaps > 0.001 M_KK: 17
+  All coupled gaps < 0.001: False
+
+  VERDICT: PASS
+  PASS: 16 coupled gaps > 0.01 M_KK at tight crossings (detuning<0.1). Max coupled gap = 0.2604 M_KK, max delta = 0.2475 M_KK. Sectors hybridize at crossings — phononic crystal structure confirmed.
+
+--- Section 9: Save data ---
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s62_phonon_dispersion_full.npz
+
+--- Section 10: Plotting ---
+  Saved: C:\sandbox\Ainulindale Exflation\tier0-computation\s62_phonon_dispersion_full.png
+
+==============================================================================
+COMPUTATION COMPLETE
+  Time: 9.3 s
+  Modes: 45 per k-point x 32 k-points = 1440 total
+  Near-crossings: 69 A-B + 2 B-C = 71
+  Tight crossings (det<0.1): 17
+  Max coupled gap (tight): 0.260425 M_KK
+  Max delta gap (tight): 0.247512 M_KK
+  VERDICT: PASS
+==============================================================================

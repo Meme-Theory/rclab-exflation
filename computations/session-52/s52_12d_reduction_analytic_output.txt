@@ -1,0 +1,78 @@
+========================================================================
+  ANALYTIC CROSS-CHECK: N_e saturation in stiff-matter limit
+========================================================================
+
+  N_e = tau_fold * sqrt(G_DeWitt / 6)
+      = 0.19 * sqrt(5.0/6)
+      = 0.19 * 0.912871
+      = 0.173445
+
+  Numerical result: N_e = 0.1734
+  Analytic result:  N_e = 0.173445
+  Agreement: 0.03%
+
+  K_pivot = exp(-N_e) = 0.840763
+  K* = 0.087
+  K_pivot / K* = 9.6639
+
+  For N_e = 3.1: need tau_fold = 3.396
+  Actual tau_fold = 0.19
+  Shortfall: 17.9x
+
+  For N_e = 3.1 with tau_fold = 0.19:
+  Need G_DeWitt = 6*(3.1/0.19)^2 = 1597.2
+  Actual G_DeWitt = 5.0
+  Shortfall: 319.4x
+
+========================================================================
+  PHYSICAL INTERPRETATION
+========================================================================
+
+  The e-fold count N_e = tau_fold * sqrt(G_DeWitt/6) is a STRUCTURAL result.
+
+  In the stiff-matter limit (w=1), both the Hubble rate and the modulus
+  velocity scale the same way with the initial conditions:
+    - Faster tau_dot_0 => higher H => more expansion per unit time
+    - BUT faster tau_dot_0 => shorter transit time (tau_fold / tau_dot_0)
+    - These two effects EXACTLY CANCEL.
+
+  The result depends ONLY on:
+    1. tau_fold = 0.19 (the Jensen parameter at the van Hove singularity)
+    2. G_DeWitt = 5.0 (the modulus kinetic coefficient, exact for Jensen)
+
+  N_e = 0.19 * sqrt(5/6) = 0.1734
+
+  This is 17.9x SHORT of the N_e = 3.1 requirement.
+
+  Possible escape routes:
+  1. SLOW-ROLL regime (w << 1): requires V_KK gradient to dominate,
+     which doesn't happen because Delta_V/V ~ 0.9% over the transit.
+  2. Multi-modulus: additional internal degrees of freedom could increase
+     the effective G_DeWitt. Would need G_eff ~ 1595.
+  3. Non-trivial Lambda_P: a 12D cosmological constant adds a constant
+     to V_KK, which can create a plateau and slow-roll phase.
+  4. |S|^2 contribution: The second fundamental form might contribute
+     additional terms beyond the simple G_mod * tau_dot^2 kinetic term.
+  5. Extended modulus range: if the BCS transition occurs at tau > 0.19,
+     the additional range could help (but tau_fold is set by the DOS).
+
+  The dominant effect: Delta_V = -0.42 M_KK^4 over 0.19 in tau,
+  compared to V_KK(0) = -46.65 M_KK^4. The potential is nearly FLAT
+  relative to its depth, giving a stiff equation of state.
+
+
+========================================================================
+  SENSITIVITY ANALYSIS
+========================================================================
+  Potential flatness: Delta_V / |V(0)| = 0.91%
+  This confirms: the stiff limit is an excellent approximation
+  The N_e result is robust to O(1%) corrections from V_KK
+
+  12D Lambda_P threshold for V > 0:
+  Lambda_P > 0.0346 M_KK^10 (with Vol_K = 1349.74)
+  This would enable a de Sitter (inflationary) phase
+  But introduces a fine-tuning problem (CC problem in 12D)
+
+========================================================================
+  END OF ANALYTIC CROSS-CHECK
+========================================================================

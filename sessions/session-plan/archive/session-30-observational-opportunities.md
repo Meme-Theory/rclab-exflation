@@ -6,7 +6,7 @@
 
 ---
 
-## 1. DESI BAO as w(z) Constraint (Tier 1, Actionable Now)
+## 1. DESI BAO as w(z) Constraint (Level 1, Actionable Now)
 
 **Connection**: The framework's w = -1 null prediction (clock-kill, Session 22d E-3) is the cleanest near-term test. DESI provides the most precise current constraint on w_0 and w_a.
 
@@ -23,7 +23,7 @@
 
 ---
 
-## 2. Proton Decay Bounds (Tier 2, Actionable if RGE-B Passes)
+## 2. Proton Decay Bounds (Level 2, Actionable if RGE-B Passes)
 
 **Connection**: If RGE-B determines M_KK, the proton lifetime is tau_p ~ M_KK^4 / (alpha_GUT^2 * m_p^5). This is a one-parameter prediction testable by Hyper-K.
 
@@ -36,7 +36,7 @@
 
 **Timing**: Pull AFTER Step 4 (RGE running) delivers M_KK. Before that, the proton lifetime is not constrained by the framework.
 
-**Honest Assessment**: Proton decay is an indirect observable -- M_KK enters through the GUT-scale gauge boson mass. The relationship between M_KK and the X/Y boson mass depends on the compactification details (Baptista Paper 15), not just M_KK itself. This is a Tier 2 prediction with one free parameter.
+**Honest Assessment**: Proton decay is an indirect observable -- M_KK enters through the GUT-scale gauge boson mass. The relationship between M_KK and the X/Y boson mass depends on the compactification details (Baptista Paper 15), not just M_KK itself. This is a Level 2 prediction with one free parameter.
 
 ---
 
@@ -112,9 +112,9 @@
 
 ---
 
-## 7. Cosmological Constant and H(z) (Tier 3-4, Deferred but Worth Documenting)
+## 7. Cosmological Constant and H(z) (Level 3-4, Deferred but Worth Documenting)
 
-**Connection**: The CC is the framework's Tier 3 prediction (requires 12D self-consistent back-reaction, Hawking Option (c), deferred to Session 30C+). However, H(z) measurements from DESI BAO provide the observational anchor for any future CC computation.
+**Connection**: The CC is the framework's Level 3 prediction (requires 12D self-consistent back-reaction, Hawking Option (c), deferred to Session 30C+). However, H(z) measurements from DESI BAO provide the observational anchor for any future CC computation.
 
 **MCP Server**: Astro MCP -> DESI data source.
 
@@ -127,7 +127,7 @@
 
 ---
 
-## 8. JWST Little Red Dots and Early Structure (Tier 4, No Direct Connection)
+## 8. JWST Little Red Dots and Early Structure (Level 4, No Direct Connection)
 
 **Connection**: LRDs constrain H(z) at z ~ 4-9 indirectly. The frozen modulus (w = -1) predicts standard LCDM H(z), consistent with all current high-z measurements. No unique LRD prediction from the framework.
 
@@ -149,7 +149,7 @@
 
 ---
 
-## 10. CMB-S4 and N_eff (Tier 3, Future Instrument)
+## 10. CMB-S4 and N_eff (Level 3, Future Instrument)
 
 **Connection**: The framework has an open binary question: Delta_N_eff = 0 (gauged BCS U(1), Anderson-Higgs eats Goldstone) vs Delta_N_eff ~ 0.03 (global BCS U(1), Goldstone survives). CMB-S4 (sigma ~ 0.03, ~2030) discriminates.
 

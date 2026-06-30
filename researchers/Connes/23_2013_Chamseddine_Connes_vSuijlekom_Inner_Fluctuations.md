@@ -123,7 +123,7 @@ The paper demonstrated that NCG's mathematical rigor does not come from restrict
 
 ## Connection to Phonon-Exflation Framework
 
-**CRITICAL RELEVANCE (Tier 1 axiom test)**.
+**CRITICAL RELEVANCE (Level 1 axiom test)**.
 
 The phonon-exflation framework uses a spectral triple (M^4 x SU(3), H, D_K, gamma_F, J) with a finite-dimensional internal space. Session 34–35 computations revealed that [[D_K,a],b] = 4.000 for (H,H) elements—a direct violation of the first-order condition.
 

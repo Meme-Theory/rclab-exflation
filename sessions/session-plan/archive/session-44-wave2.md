@@ -21,7 +21,7 @@ Hawking R1 A.3: Gibbons-Hawking de Sitter entropy S_dS = 3 pi / (Lambda l_P^2). 
 
 **Computation Steps**:
 
-1. Load all 992 eigenvalues from `tier0-computation/s42_hauser_feshbach.npz`. Load KZ domain parameters: N_domains = 32, xi_KZ = 0.152 M_KK^{-1} (S42), domain volume V_domain = V_SU(3) / 32.
+1. Load all 992 eigenvalues from `computations/s42_hauser_feshbach.npz`. Load KZ domain parameters: N_domains = 32, xi_KZ = 0.152 M_KK^{-1} (S42), domain volume V_domain = V_SU(3) / 32.
 
 2. **Boundary mode count.** For a KZ domain of linear size L_domain ~ xi_KZ, the boundary area is A_domain ~ L_domain^7 (7-dimensional boundary of 8-dimensional SU(3)). The boundary mode count:
 
@@ -57,16 +57,16 @@ Hawking R1 A.3: Gibbons-Hawking de Sitter entropy S_dS = 3 pi / (Lambda l_P^2). 
 - INFO: suppression computed but depends on boundary mode identification
 
 **Input files**:
-- `tier0-computation/s42_hauser_feshbach.npz`
-- `tier0-computation/s42_constants_snapshot.npz`
-- `tier0-computation/s43_gsl_transit.npz`
-- `tier0-computation/s43_first_law.npz`
+- `computations/s42_hauser_feshbach.npz`
+- `computations/s42_constants_snapshot.npz`
+- `computations/s43_gsl_transit.npz`
+- `computations/s43_first_law.npz`
 - `researchers/Hawking/05_1998_Hawking_Penrose_Nature_Space_Time.md`
 
 **Output files**:
-- Script: `tier0-computation/s44_holographic_spec.py`
-- Data: `tier0-computation/s44_holographic_spec.npz`
-- Plot: `tier0-computation/s44_holographic_spec.png`
+- Script: `computations/s44_holographic_spec.py`
+- Data: `computations/s44_holographic_spec.npz`
+- Plot: `computations/s44_holographic_spec.png`
 
 **Working paper section**: W2-1
 
@@ -99,10 +99,10 @@ Paper 57 (`researchers/Baptista/57_2024_van_Suijlekom_NCG_Particle_Physics_2ed.m
 
 **Computation Steps**:
 
-1. Load eigenvalue data from `tier0-computation/s42_hauser_feshbach.npz` (992 eigenvalues at fold) and from `tier0-computation/s41_spectral_refinement.npz` (eigenvalues at multiple tau).
+1. Load eigenvalue data from `computations/s42_hauser_feshbach.npz` (992 eigenvalues at fold) and from `computations/s41_spectral_refinement.npz` (eigenvalues at multiple tau).
 
 2. **Compute d_s(sigma, tau) at 10 tau values.** For tau = 0.00, 0.02, 0.05, 0.08, 0.10, 0.12, 0.15, 0.17, 0.19, 0.25:
-   - Recompute eigenvalues using `tier0-computation/tier1_dirac_spectrum.py` if not available at that tau.
+   - Recompute eigenvalues using `computations/dirac_spectrum.py` if not available at that tau.
    - Compute P(sigma) = sum_k d_k exp(-sigma lambda_k^2) for sigma in [10^{-4}, 10^{4}] (100 log-spaced points).
    - Extract d_s(sigma) = -2 d ln P / d ln sigma by numerical differentiation.
 
@@ -130,15 +130,15 @@ Paper 57 (`researchers/Baptista/57_2024_van_Suijlekom_NCG_Particle_Physics_2ed.m
 - UNIFICATION: |n_s(DIM) - n_s(LIFSHITZ)| < 0.005
 
 **Input files**:
-- `tier0-computation/s42_hauser_feshbach.npz`
-- `tier0-computation/s41_spectral_refinement.npz`
-- `tier0-computation/tier1_dirac_spectrum.py`
+- `computations/s42_hauser_feshbach.npz`
+- `computations/s41_spectral_refinement.npz`
+- `computations/dirac_spectrum.py`
 - `researchers/Baptista/57_2024_van_Suijlekom_NCG_Particle_Physics_2ed.md`
 
 **Output files**:
-- Script: `tier0-computation/s44_dimflow.py`
-- Data: `tier0-computation/s44_dimflow.npz`
-- Plot: `tier0-computation/s44_dimflow.png`
+- Script: `computations/s44_dimflow.py`
+- Data: `computations/s44_dimflow.npz`
+- Plot: `computations/s44_dimflow.png`
 
 **Working paper section**: W2-2
 
@@ -167,7 +167,7 @@ where a_2 is the second Seeley-DeWitt coefficient (encoding the Ricci scalar of 
 
 **Computation Steps**:
 
-1. Load a_2 from `tier0-computation/s42_constants_snapshot.npz` and eigenvalue data from `tier0-computation/s42_hauser_feshbach.npz`.
+1. Load a_2 from `computations/s42_constants_snapshot.npz` and eigenvalue data from `computations/s42_hauser_feshbach.npz`.
 
 2. **a_2 route.** The gravitational coupling from the a_2 coefficient:
 
@@ -195,14 +195,14 @@ where a_2 is the second Seeley-DeWitt coefficient (encoding the Ricci scalar of 
 - INFO: intermediate result
 
 **Input files**:
-- `tier0-computation/s42_constants_snapshot.npz`
-- `tier0-computation/s42_hauser_feshbach.npz`
-- `tier0-computation/s36_sfull_tau_stabilization.npz`
+- `computations/s42_constants_snapshot.npz`
+- `computations/s42_hauser_feshbach.npz`
+- `computations/s36_sfull_tau_stabilization.npz`
 
 **Output files**:
-- Script: `tier0-computation/s44_eih_grav.py`
-- Data: `tier0-computation/s44_eih_grav.npz`
-- Plot: `tier0-computation/s44_eih_grav.png`
+- Script: `computations/s44_eih_grav.py`
+- Data: `computations/s44_eih_grav.npz`
+- Plot: `computations/s44_eih_grav.png`
 
 **Working paper section**: W2-3
 
@@ -231,7 +231,7 @@ The integral over K projects onto the (0,0) singlet. Non-singlet components inte
 
 **Computation Steps**:
 
-1. Load GGE occupation numbers from `tier0-computation/s42_gge_energy.npz` and eigenvalue data from `tier0-computation/s42_hauser_feshbach.npz`.
+1. Load GGE occupation numbers from `computations/s42_gge_energy.npz` and eigenvalue data from `computations/s42_hauser_feshbach.npz`.
 
 2. **Decompose E_exc by sector.** The GGE energy per sector:
    - E_B2 = sum over B2 modes of n_k * E_k
@@ -256,14 +256,14 @@ The integral over K projects onto the (0,0) singlet. Non-singlet components inte
 - INFO: intermediate
 
 **Input files**:
-- `tier0-computation/s42_gge_energy.npz`
-- `tier0-computation/s42_hauser_feshbach.npz`
-- `tier0-computation/s35_ed_corrected_dos.npz`
+- `computations/s42_gge_energy.npz`
+- `computations/s42_hauser_feshbach.npz`
+- `computations/s35_ed_corrected_dos.npz`
 
 **Output files**:
-- Script: `tier0-computation/s44_singlet_cc.py`
-- Data: `tier0-computation/s44_singlet_cc.npz`
-- Plot: `tier0-computation/s44_singlet_cc.png`
+- Script: `computations/s44_singlet_cc.py`
+- Data: `computations/s44_singlet_cc.npz`
+- Plot: `computations/s44_singlet_cc.png`
 
 **Working paper section**: W2-4
 

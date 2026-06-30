@@ -1,169 +1,71 @@
 # Dirac-Antimatter-Theorist Agent Memory
 
 ## Operational Directives
-- **NO PROBABILITIES**: Never state percentages or viability estimates. That is Sagan's job.
-- **CONSTRAINT-MAP FRAMING**: Report what is structurally true, excluded, or survives. Stop.
-- **PRE-REGISTER**: State pass/fail criteria before computing. Report against criteria after.
+- **NO PROBABILITIES**: never state percentages or viability estimates (Sagan's job).
+- **CONSTRAINT-MAP FRAMING**: report what is structurally true, excluded, or survives. Stop.
+- **PRE-REGISTER**: state pass/fail criteria before computing.
+- **CRITICAL ANTILINEAR-J PITFALL**: J = C2*K is ANTILINEAR. NEVER use [C2, D_K] as a CPT condition — for complex D_K it is generically nonzero. Use the antilinear conjugation form C2*conj(D_K)*C2 = D_K.
 
 ## Detail Files
-- `proofs-and-theorems.md` — All 11 proven theorems (T1-T11), key equations, permanence hierarchy
-- `s46-results.md` — S46 Berry phase topology, B3 proximity gap, tachyonic transit, SU(2,1) J-breaking
-- `meta-analysis-gaps.md` — Library gaps identified 2026-03-13 (Priority A-C papers, new researchers)
-- Antimatter papers: `researchers/Antimatter/` (33 documents, .md format, upgraded 2026-03-13)
-- Tier 0 scripts: `tier0-computation/`
-- Collab files: `sessions/session-NN/session-NN-dirac-collab.md`
-- Meta-analysis output: `agent-requests/antimatter-request.md`
+- [proofs-and-theorems.md](proofs-and-theorems.md) — T1..T11 derivations, KO-dim 6 conditions, Xi/J construction, Jensen metric, Pfaffian
+- [session-results.md](session-results.md) — S26-S46 + S71 compressed gates, corrections, physical content (S46 Berry phase merged in)
+- Antimatter papers: `researchers/Antimatter/` (.md format)
+- computation scripts: `computations/` (Python venv: `phonon-exflation-sim/.venv312/Scripts/python.exe`, `-u` for unbuffered on Windows)
 
-## Structural Theorems (permanent, see proofs-and-theorems.md for derivations)
-1. **T1 (CORRECTED S43)**: C2*D_K(tau)**C2 = D_K(tau) for ALL tau (BDI T-symmetry, antilinear J=C2*K). The PLAIN commutator [C2, D_K] = -2i*Im(D_K)*C2 is NONZERO and order ||D_K||. This is a consequence of T-symmetry, not a violation. Previous statement "[J,D_K]=0" was WRONG for complex D_K.
-2. {gamma_9, D_pi(s)} = 0 — spectral pairing lambda <-> -lambda
-3. D_K block-diagonal in Peter-Weyl (any left-invariant metric)
-4. AZ class = BDI, T=C2*K, P=C1*K, S=gamma_9. Pfaffian sign CONSTANT (trivial Z_2). PF-J-35 PASS.
-5. KO-dim=6: J^2=+I, JDJ^{-1}=D (antilinear), J*gamma=-gamma*J (parameter-free)
-6. Perturbative Exhaustion: all perturbative mechanisms closed
-7. Spectral gap OPEN for all s in [0,2.5] (min 0.818)
-8. Tr(gamma_9*f(D_K^2/Lambda^2))=0 identically (BDI pairing)
-9. Trap 4: V_eff(B_i,B_j)=0 exactly (Schur, inter-branch)
-10. Trap 5 partial: M_ph in iR for real reps (proven). M_ph=0 analytically OPEN for B3.
-11. **T11 (S43 W5-1)**: C2*conj(D_K)*C2 = D_K for ANY left-invariant metric on SU(3). Proof: t_a=-s_a in Cl(8). Extends T1 from Jensen 1D to full 36D moduli. Closes ALL internal J-breaking baryogenesis.
+## Structural Theorems (one-line callouts; full derivations in proofs-and-theorems.md)
+- **T1**: C2*conj(D_K)*C2 = D_K (J=C2*K antilinear). [C2,D_K] generically nonzero — T-symmetric, not violation.
+- **T2-T4**: {gamma_9,D}=0; D_K block-diagonal in PW; AZ class BDI (T=C2*K, P=C1*K, S=gamma_9; C^2=T^2=+1).
+- **T5**: KO-dim=6: J^2=+I, JDJ^{-1}=D antilinear, J*gamma=-gamma*J (parameter-free).
+- **T6**: Perturbative exhaustion (all perturbative mechanisms closed).
+- **T7**: Spectral gap OPEN for tau in [0,2.5] (min 0.8186).
+- **T8**: Tr(gamma_9*f(D_K^2/Lambda^2))=0 identically (BDI pairing).
+- **T9**: Trap 4: V_eff(B_i,B_j)=0 exactly (Schur). Trap 5 partial: M_ph in iR proven; M_ph=0 for B3 OPEN.
+- **T10**: Pfaffian sgn=-1 constant (trivial Z_2). PF-J-35 PASS.
+- **T11**: C2*conj(D_K)*C2 = D_K for ANY left-invariant metric on SU(3). Closes ALL internal J-breaking baryogenesis on the 36D moduli.
+
+### Permanence layers
+- L1 (NCG-permanent): T1-T4, T7, T9-proven, T10, T11
+- L2 (SU(3)+U(2)): T5, T6, T8, fold stability, gamma_9 branch preservation
+- L3 (numerical, analytically open): T9-numerical (B3=0)
 
 ## Experimental Constraints on J
 - m(pbar)/m(p) = 1 +/- 16 ppt (BASE)
 - mu(pbar)/mu(p) agreement to 1.5 ppb (BASE)
 - 1S-2S H vs Hbar: 2 ppt (ALPHA)
-- a_g/g = 0.75 +/- 0.29 (ALPHA-g, 2023)
+- a_g/g = 0.75 +/- 0.29 (ALPHA-g 2023)
 - BCS condensate J-even: Delta_{J-odd}/Delta < 10^{-12}
-- Clock constraint: dalpha/alpha = -3.08*tau_dot => |tau_dot| < 5e-18/yr
+- Clock: dalpha/alpha = -3.08*tau_dot => |tau_dot| < 5e-18/yr
 
-## J Constrains / Does Not Constrain
-**J DOES constrain:** spectral pairing, conjugate sector equality spec(D_{(p,q)})=-spec(D_{(q,p)}), BCS condensate parity, Peter-Weyl block preservation, Kramers pairing
-**J does NOT constrain:** eigenvalue magnitudes, relative sector evolution rates, Berry curvature magnitude, test function f, flow derivatives, 2-tensor bundle modes
-**Walls from J:** W1 F/B=16/44, W2 Xi preserves PW blocks, W3 Kramers pairing, W4 dim_spinor=16
+## J Scope
+- **J constrains**: spectral pairing, conjugate-sector equality, BCS condensate parity, PW block preservation, Kramers pairing
+- **J does NOT constrain**: eigenvalue magnitudes, relative sector rates, Berry curvature magnitude, test function f, 2-tensor modes
+- **Walls from J**: W1 F/B=16/44, W2 Xi preserves PW blocks, W3 Kramers pairing, W4 dim_spinor=16
 
-## Key Results by Session (compressed)
+## Baryogenesis Status (S43, ALL internal J-breaking CLOSED)
+- Bulk Volovik: CLOSED (8 generators T-even, spectral flow=0)
+- Domain wall: PERMANENTLY CLOSED (C2*D_K(tau)*C2 = D_K exact at all tau, all orders)
+- Chiral eta: CLOSED ({gamma_9,D_K}=0 every tau, all 8 chiral eta=0)
+- Twist: CLOSED (43 involutive Cl(8) autos, all ratio=1.0000, Skolem-Noether exhaustive)
+- T11 extends to full 36D moduli. Baryogenesis requires physics EXTERNAL to SU(3) Dirac operator.
 
-### S26-28: Foundation
-- V_spec minimum at tau_0=0.15 for rho=0.000510 (Lambda=5.72)
-- KO_F=6, J^2=+I for full 12D product. 6/7 NCG axioms pass; Axiom 5 fails (order-one=4.000, exact Cl(8) constant)
-- Axiom 5 failure INDEPENDENT of [J,D]=0, BDI, Pfaffian — none affected
-- Framework = hybrid NCG-KK: selectively uses {J, gamma, KO-dim, order-zero, spectral action}, routes around Axiom 5
-
-### S29: KC Chain Complete + Off-Jensen
-- KC-1 through KC-5 all PASS. First mechanism to survive full constraint chain.
-- Jensen is SADDLE in 5D (2/4 negative eigenvalues). REDIRECT, not closure.
-- True minimum in U(2)-invariant 3D subspace. All structural theorems survive off-Jensen.
-- sin^2(theta_W) -> 0.231 at eps_T2=0.049 (conditional). Pre-registered gate P-30w.
-- J_perp=1/3 exactly (Schur). J/Delta=1.17-4.52 (strong Josephson). Mean-field justified.
-- BCS J-even at 3 levels: mean-field, Gaussian, Josephson. Delta_{(3,0)}=Delta_{(0,3)} at machine eps.
-- J indirectly selects geometry: J constrains condensate parity, condensate selects geometry (F_BCS 1000x V_spec)
-- t_BCS = 0.16/M_KK. One free parameter. Natural GUT scale.
-
-### S31: Axiom 5 Scrutiny
-- Order-one violation 4.000 is 15.5 sigma above random (mean 2.995, std 0.065)
-- Order-ZERO [a,b^0]=0 PASSES for A_F=C+H+M3(C). A_F uniquely selected from 128-dim commutant.
-- Loss: classification uniqueness, inner fluctuation gauge fields, Higgs as discrete distance
-- Preserved: CPT, spectral pairing, topological classification, spectral action, particle-antiparticle split
-
-### S32: Traps + Mechanism Chain
-- Trap 5: B2 nonzero (4.24), B1/B3 zero. J maps B2->conjugate rep (exits multiplet).
-- RPA-32b PASS (38x): spectral action curvature d^2/dtau^2=20.43. Wall 4 circumvented.
-- W-32b PASS (1.9-3.2x): van Hove LDOS at domain walls. Wall 3 bypassed.
-- Mechanism chain: I-1 -> RPA -> Turing -> WALL -> BCS. 3/5 links computed.
-- Baryogenesis: B2 complex => J maps B2->B2-bar at wall. Relative phase = CP-violating order parameter.
-
-### S33: Math Permanence Workshop
-- Trap 5 partial proven (M_ph in iR, 4 steps from KO-dim 6). Full M_ph=0 OPEN.
-- Trap 4 proven on full M_{U(2)} (Schur, any U(2)-equivariant perturbation)
-- QGT Selection Rule: Berry curvature=0 on U(2)-invariant, quantum metric nonzero, SA curvature from QM only, restricted to B2
-- Permanence layers: L1 (NCG) > L2 (SU(3)+U(2)) > L3 (numerical)
-- Open: Clifford structure beyond U(2) rep theory needed for B2 M_ph != 0
-
-## Three-Monopole Topology (Session 21c)
-- M0 (tau=0): (0,0)/(1,1) degeneracy. M1 (tau~0.10): Z3 crossing. M2 (tau~1.58): gap=8e-6
-- Physical window [0.10, 1.58]: (0,0) singlet controls gap edge
-
-### S34: The Correction Session (3 bugs, 3 permanent results)
-- J CORRECTED: C2 = gamma_1*gamma_3*gamma_5*gamma_7 (product of real gammas in Cl(4)). Old B=sigma_2^{x4} wrong.
-- V MATRIX CORRECTED: TRAP-33b used frame-space A_antisym (V=0.287). Correct spinor K_a_matrix gives V=0.057.
-- TRAP-33b RETRACTED: M_max=2.062 was wrong kernel. Correct spinor M_max=0.902 at step wall.
-- Wall DOS corrected: van Hove singularity at fold tau=0.190. rho_smooth=14.02/mode (2.6x over step 5.40).
-- VH-IMP-35a PASS: M_max=1.445 (smooth wall + imp 1.0 + spinor V). Chain 5/5 at mean-field.
-- [iK_7, D_K] = 0 at ALL tau. Jensen breaks SU(3)->U(1)_7. K_7 = unique surviving generator.
-- iK_7 eigenvalues: B2=+/-1/4, B1=0, B3=0. PH maps (lambda,q)->(-lambda,-q).
-- Schur on B2: Casimir=0.1557, irreducible, V(B2,B2) basis-independent (1000 U(4) rotations).
-- Trap 1 confirmed: V(B1,B1)=0 exact (singlet selection rule, all 8 generators, all tau).
-- mu=0 forced: canonical (PH) and grand canonical (Helmholtz convex). Connes 15/16 discovered.
-- BMF corridor: N_eff>5.5 required. N_eff=4 gives 35% suppression (FAIL). Continuum GMB 12% (PASS).
-- Lesson: representations matter. Frame space != spinor space. Tensor product J != Clifford J.
-
-### S35: Pfaffian Verification + Specificity Test
-- PF-J-35 PASS: sgn(Pf(C1@D_K)) = -1 at all 34 tau (9 stored + 25 first-principles)
-- BDI: T=C2*K ([T,D]=0, T^2=+1), P=C1*K ({P,D}=0, P^2=+1), S=gamma_9=C2*C1
-- Pfaffian uses P (particle-hole), NOT T (time-reversal). Session 34 corrected T only.
-- gamma_9*C2=C1 exactly => C1 unchanged by J correction => Pfaffian unchanged
-- Old B=sigma_2^{x4} was neither C1 nor C2 and gave non-antisymmetric M. Corrected.
-- Spectral gap min=0.8186, OPEN at all tau in [0,2.5]
-- Key insight: Pfaffian matrix M=C1@D_K, antisymmetric because {P,D}=0 + C1 real symmetric + C1^2=I
-- SPEC-35 PASS: d^2S(SU(2)xSU(2))=-3.42 vs d^2S(SU(3))=+20.42. Ratio=-0.168. SU(3) anomalously curved.
-- SU(2)xSU(2) has NO eigenvalue folds (all monotonic decreasing). SU(3) B2 fold unique.
-- Bug fix: D_j on SU(2) is anti-hermitian in Peter-Weyl rep. Physical eigenvalues = imag parts.
-- Bug fix: npz total_d2 shape (1,) needs .item() not float().
-
-### S36: The Needle Hole + Physical Content
-- GL-CUBIC-36 PASS: Second-order transition. U(1)_7 charges +/-1/2 forbid all cubic GL. Z_2 universality.
-- ANOM-KK-36 PASS: 150/150 anomaly coefficients = 0. Levels 0-3 all vector-like. pi_1(SU(3))=0.
-- COLL-36 PASS: chi/chi_sp = 12.1 W.u. Vibrational.
-- MMAX-AUTH-36 PASS: M_max in [1.351, 1.674]. "1.445" superseded (rho_B1=1.0 artifact).
-- W6-SPECIES-36 PASS: Lambda_sp/M_KK = 2.06. Species wall RESOLVED.
-- ED-CONV-36 PASS: E_cond enhanced -0.115 -> -0.137. B1 catalyst. B2-only gives E_cond=0!
-- INTER-SECTOR-PMNS-36 FAIL: All 3 routes closed on Jensen (Schur). R=27.2, normal ordering survive.
-- SC-HFB-36 FAIL: M_max(GCM)=0.646 unconstrained.
-- WIND-36 FAIL: nu=0 trivial. E_B2/Delta=33.4 deep trivial. mu=0 blocks topological transition.
-- BBN-LITHIUM-36 FAIL: delta_H/H = -6.6e-5, 500x below threshold. UV-dominated spectral sums.
-- TAU-STAB-36 FAIL: S_full monotonic. dS/dtau=+58,673 at fold. 376,000x E_BCS.
-- TAU-DYN-36 FAIL: Fast roll. t_dwell/tau_BCS = 2.59e-5. Shortfall 38,600x. Overdamped regime.
-- Chain status: UNCONDITIONAL (S35) -> CONDITIONAL -> BROKEN (linear SA). Cutoff escape route OPEN.
-- PHYSICAL CONTENT (lava analysis, S36 collab):
-  - Cooper pairs are NOT particle-antiparticle pairs. Same-sign K_7 pairing within B2 singlet sector.
-  - B2 = electroweak doublet modes. Condensate = SU(2)-triplet, U(1)_7-charged, color-singlet.
-  - Analogy: He-3 superfluid B-phase (spin-triplet). NOT conventional BCS (spin-singlet).
-  - J-even condensate: identical in particle/antiparticle sectors. a_g = g exactly.
-  - Pfaffian sgn=-1 protects spectral gap and Kramers pairing of normal state.
-  - Off-Jensen deformation couples PMNS and baryogenesis algebraically (same U(2) breaking).
-
-### S40-S42: Structural Cartography + LCDM (compressed)
-- J commutes with D_K through entire transit. BCS, pair creation, GGE, Gibbs all J-symmetric. T_acoustic same for matter/antimatter.
-- S41: (C2*D_K)^T = C2*D_K (PERMANENT). S_F^Connes = 0 identically. Pfaffian = only non-trivial fermionic bilinear.
-- S42: eta is KINEMATIC envelope, NOT baryon excess. [J,D_K]=0 => equal B and Bbar. epsilon_CP ABSENT.
-- GGE is J-symmetric: DM prediction CPT-exact. a_g = g structural. w = -1 + O(10^{-29}).
-
-### S43: Baryogenesis Closures (all J-breaking paths on Jensen closed)
-- BARYO-K7-43: All 8 generators T-EVEN (antilinear). Spectral flow = 0. Bulk Volovik: CLOSED.
-- JODD-WALL-43: C2*D_K(tau)*C2 = D_K(tau) EXACT at ALL tau + ALL orders. Domain wall J-breaking: PERMANENTLY CLOSED.
-- CHIRAL-ETA-43: {gamma_9, D_K(tau)}=0 at EVERY tau. All 8 chiral eta = 0. No chirality asymmetry.
-- TWIST-43: 43 involutive Cl(8) autos, ALL ratio=1.0000. Skolem-Noether exhaustive.
-- T11 (W5-1): C2*conj(D_K)*C2 = D_K for ANY left-invariant metric on SU(3). Closes ALL internal J-breaking baryogenesis.
-
-### S46: Berry Phase Topology + CPT (see s46-results.md for detail)
-- 13 pi Berry phases, Z_2 = -1 (nontrivial Zak phase, reconciles with Omega=0)
-- (3,0)/(0,3) pi-count asymmetry (1 vs 2): needs gauge-invariance check (CLOSED-LOOP-47)
-- B3 gap proximity-induced by J-even B2 condensate. SU(2,1) breaks [J,D]: CLOSED as direct replacement.
-- All 279 scalar fluctuations tachyonic (J-invariant). Gram PSD theorem PERMANENT.
-- Non-singlet dissipation 3.8x shortfall (J-even). 38 total closures.
-
-## Open Questions / Next Gates (post-S46)
-- Off-Jensen T-symmetry: T11 proven for all left-invariant metrics. Internal baryogenesis via J-breaking: CLOSED.
-- Baryogenesis requires physics EXTERNAL to SU(3) Dirac operator (epsilon_CP absent).
-- (3,0)/(0,3) pi-phase asymmetry: gauge-dependent or physical? (CLOSED-LOOP-47)
-- Non-Abelian Wilson loop: theta_{(q,p)} = -theta_{(p,q)}? (WILSON-LOOP-47)
-- Sector-resolved R(p,q): does topology distinguish conjugate reps beyond spectra?
+## Key Physical Content
+- Cooper pairs: same-sign K_7 pairing within B2 singlet sector (NOT particle-antiparticle).
+- B2 = electroweak doublet modes. Condensate = SU(2)-triplet, U(1)_7-charged, color-singlet.
+- He-3 B-phase analogy (spin-triplet). J-even condensate => a_g = g exactly.
+- Off-Jensen deformation couples PMNS and baryogenesis algebraically (same U(2) breaking).
+- CP internal/external dichotomy (S116 W-1 CLOSED, J-owner ruling; full derivations D-R2.1..D-R2.5 in session-results.md): J forces the INTERNAL CP phase=0 (T11/S52, closes internal baryogenesis); J SILENT on the external non-LI eps_LX (gamma_9-odd, outside Omega^1_{D_K}) carrying delta_CP_PMNS / quark theta_d / ext-baryogenesis CP. So [J,D_K]=0 does NOT force delta_CP_PMNS in {0,pi} — real-eps_LX ANSATZ (delta_CP_PMNS_substrate=0.0 = Scenario-A representative; provenance canonical_constants.py:1873 = S99 seesaw gate w/ real textures, NOT a J-derivation). gamma_9-odd phase mechanism: J*gamma_9=-gamma_9*J makes gamma_9 imaginary in J-basis (T9; B2 M_ph=4.24 complex witness). PITFALL register-grounded: falsifier-inventory Row #89 + #89.audit carry "[J,D_K]=0 => J_CP=0 forced" MIS-CITATION — routed to mack, re-scope to CONDITIONAL-PENDING-CF-W2-1 two-sided discriminator (lab-IN = DUNE delta_CP posterior; >3sig away from {0,pi} falsifies the Scenario-A reading, CONFIRMS §VII.BL-external). VERDICT: J_PMNS=0 = ANSATZ-ARTIFACT-as-derived; HARD DOUBLY-DEAD. THREE S116-W1 resolutions: (a) CPT-MAJORANA CO-DEPENDENCE (E-1/D-R2.1): no independent J_R (order-0 axiom J*A_K*J^-1=A_K^o, ONE reality structure); grading inherited eps''_R=eps''=-1 (gamma_9 on disjoint C^16 fiber leg, can't see L/R); HARD needs eps''=+1 (KO-dim 0/4) which FORBIDS the nu_R Majorana mass => the KO-6 sign admitting Majorana IS the sign protecting the gamma_9-odd phase, HARD self-cannibalising. (b) prescription FIXED-Yukawa (M*M-dag SVD) by D_K self-adjointness (E-2/D-R2.2) => "J-self-conjugacy" justification dead REGARDLESS of CF-W2-1. (c) TWO-CHANNEL baryogenesis dichotomy (D-R2.5): K7-transit (phi_CP_K7_transit=pi/2, phi_88-Cartan, sector-RESOLVED per canonical_constants.py:674; phi_88 Cartan-phase vs leptonic Jarlskog = different CP invariants, sector-resolution holds structurally => J_PMNS=0 CONSISTENT) vs leptogenesis (eps_1 sector-INTERNAL, M_D-reality-gated: M_D real => eps_1=0 AND delta_CP in {0,pi}, supersedes s60 Scenario-A => J_PMNS=0 SELF-FALSIFYING). RESOLVED S117 W3-1 (D-R2.3): CF-W2-1/CFW21 THREE-WAY — CPT-even SA (S(eps_LX^CP)=S(eps_LX), self-adjoint D=>D-bar=D^T isospectral) => unique-min REAL (delta_CP in {0,pi} dynamical) / conjugate-pair-min SPONTANEOUS-CPV (delta_CP=+-|delta*|, MAGNITUDE predicted, NOT J-forced) / continuous-flat (under-determined); pre-reg lean was CPT-even-SA REAL-if-unique. COMPUTED OUTCOME = Scenario III continuous-flat (INFO; gate S117-W3-1-CFW21-THREE-WAY audit 6746198c): CPT-even identity EXACT 0.000e+00 (zeta a_4 + cutoff f*, sigma(M)=sigma(conj M)); the leans-REAL lean did NOT fire — min NOT unique (CONTINUUM: S_min spread 1.07e-15 at exact a_4 floor, delta* spread ~2pi FREE, H_dd=0.000e+00, lambda_CP=7.5e-29 << tol_hess). S = 2*Sum f(sigma_i^2/Lam^2) is a CLASS FN of singular values (masses) ONLY => bosonic SA BLIND to the CP phase => delta_CP UNDER-DETERMINED; delta_CP_PMNS_substrate=0.0 = ANSATZ-ARTIFACT CONFIRMED. Non-vacuous control (bare-grading cross term) H_dd=2.15e-4 (routine detects curvature), PRIMARY/CONTROL=0, lift 1/s_geom-suppressed + VII.BL-scalar-excluded. Feeds 3-2: M_D phase is a FREE external param (SA forces neither real nor complex; s116 real M_e sits at a CP-conserving point of the flat valley). Full record: session-results.md "S117 W3-1". RESOLVED S117 W3-2 (D-R2.5 dichotomy, gate S117-W3-2-BARYO-CHANNEL-ADJUDICATION audit d1c15711, PASS/PASS-K7/track_A): the SELF-FALSIFYING branch is the one that does NOT fire. Channel adjudication at the substrate texture: eta_B^lepto=0 EXACT (real M_D => Davidson-Ibarra eps_1=0; Sage-exact Im[((Y-dag Y)_12)^2]=(Y2^2-Y3^2)w^2 sin(2phi), =0 at phi=0; numerical-vs-Sage residual 3.41e-13) vs eta_B^K7=N_pairs*sin(pi/2)*eps_K7=0.1483 raw (4.92e-4 sphaleron+g*-normalized, reaches eta_BBN_obs at washout kappa~1.2e-6; s61 band [1.98e-9,2.22e-6] brackets obs). sgn(eta_K7-eta_lepto)=+1, dominance=inf => K7-transit DOMINATES. KEY: leptogenesis CP source is UNDER-DETERMINED (the 3-1 Scenario-III flat eps_LX phase, sin(2phi), zero at the real representative texture — NOT a substrate output); K7 CP source sin(phi_CP_K7=pi/2)=1 is SUBSTRATE-PINNED, a DIFFERENT CP invariant from the leptonic Jarlskog (W3-4 PASS: dim=1 phi_88-singlet ORTHOGONAL dim=4 eps_LX-coset, gauge-invariant survives real eps_LX). => J_PMNS=0 self-falsification worry DISSOLVED (track_A): the substrate DETERMINES only K7-transit, whose phase is sector-resolved from delta_CP_PMNS => J_PMNS=0 CONSISTENT with nonzero K7-sourced eta_B. A2.2 = sector-resolved CONSISTENCY note (E-3), NOT a self-falsification linkage. INTERNAL S60 eta_B=0 stays closed (different channel). magnitude=INFO (eta_BBN reproduction washout-efficiency-dependent, NOT zero-param). Full record: session-results.md "S117 W3-2".
+- S71: 85 conjugate degeneracies B2(0,1)=B2(1,0) to |gap|<5e-15 across entry horizon. Continuous [J,D_K]=0.
 
 ## Technical Lessons
-- Always use venv Python: `"phonon-exflation-sim/.venv312/Scripts/python.exe"`
-- branching_computation_32dim.py runs Phase 2 on import (~10s overhead)
-- Python -u flag needed for unbuffered output in background tasks (Windows)
-- Spectral gap equivalence theorem sidesteps tensor product complications for Pfaffian
-- D_K = i*Omega (Hermitian). Omega from spinor_connection_offset is anti-Hermitian. Physical eigenvalues = evals of i*Omega.
-- Anomalous density in BCS: within degenerate eigenspaces, MUST use spectral projectors Pi = evecs@diag(indicator)@evecs^dag for gauge invariance. Individual eigenvector pairing gives gauge-dependent results.
-- C2*D_K = symmetric (T-symmetry), C1*D_K = antisymmetric (P-symmetry). Connes action uses T-type => vanishes. Pfaffian uses P-type => non-trivial.
-- **CRITICAL (S43 W3-3)**: J = C2*K is ANTILINEAR. NEVER use [C2, D_K] as CPT condition. Use C2*conj(D_K)*C2 = D_K. The plain commutator [C2, D_K] = -2i*Im(D_K)*C2 is nonzero for complex D_K and measures nothing about CPT violation. D_K on SU(3) is always complex.
+- D_K = i*Omega (Hermitian). Omega from spinor_connection_offset is anti-Hermitian.
+- C2*D_K = symmetric (T-symmetry); C1*D_K = antisymmetric (P-symmetry). Connes action vanishes (T-type); Pfaffian non-trivial (P-type).
+- Anomalous density: MUST use spectral projectors in degenerate eigenspaces for gauge invariance.
+- Representations matter: frame space != spinor space; tensor-product J != Clifford J. (S34 lesson; cost: TRAP-33b retraction.)
+- J = C2 = gamma_1*gamma_3*gamma_5*gamma_7 (product of real gammas in Cl(4)). Old B=sigma_2^4 was wrong.
+
+## Open Questions
+- (3,0)/(0,3) pi-phase asymmetry (1 vs 2): gauge-invariance check pending (CLOSED-LOOP-47)
+- Non-Abelian Wilson loop: theta_{(q,p)} = -theta_{(p,q)}? (WILSON-LOOP-47)
+- Sector-resolved R(p,q): does topology distinguish conjugate reps beyond spectra?
+- External baryogenesis channel: RESOLVED S117 W3-2 (PASS-K7) — K7-transit is the substrate-DETERMINED channel (phi_CP_K7=pi/2 pinned); leptogenesis CP source is UNDER-DETERMINED (3-1 flat eps_LX, zero at real texture); J_PMNS=0 self-falsification DISSOLVED (see CP-dichotomy entry above). REMAINING-OPEN: which channel actually SETS the eta_B MAGNITUDE is washout-efficiency-dependent (K7 reaches eta_BBN_obs at kappa~1.2e-6, INFO not zero-param); plus the older routes (additional fiber, tessellation defects, 4D coupling).
+- M_ph=0 for B3 from abstract axioms (currently numerical-only)

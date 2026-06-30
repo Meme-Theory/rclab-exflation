@@ -1,0 +1,25 @@
+{
+  "axis": "B",
+  "reviewer": "kitaev-quantum-chaos-theorist",
+  "theorem": "VII.AD",
+  "no_workshop_context_attestation": true,
+  "inputs_read": [
+    "permanent-results-registry.md",
+    "s87_w11_hypercube_vertex_identity.npz",
+    "s88_gate_verdicts.txt"
+  ],
+  "clause_verdicts": {
+    "a": {
+      "verdict": "N/A",
+      "rationale": "not Axis-B's clause (V_input NCG-axiomatic substitution chain; reviewed only insofar as it appears in the sequential CO-PRIMARY chain of clause c)"
+    },
+    "b": {
+      "verdict": "PASS",
+      "rationale": "First-principles exhaustive-enumeration completeness CONFIRMED on my axis. (1) Symbolic proof: I evaluated lhs = sum_i (1-sigma_1(i))(1-sigma_2(i)) c_i minus rhs = 4*c_{sigma^-1((-1,-1))} over all 24 faithful V_4 bijections with a GENERIC sympy QQ partition (c0,c1,c2,c3) -- all 24 give lhs-rhs = 0 EXACT, proving the localization for ALL rational partitions, not merely the substrate one. (2) Literal 576-config sweep (24 bijections x 24 partition orderings) specialized at substrate (2,4,8,6): all 576 EXACT in QQ, distinct Delta_0 values {8,16,24,32} = 4*{2,4,8,6}, matching the registry's substrate-specialization exactly. (3) The npz pinned artifact certifies the underlying d=2 hypercube alternating-sum cancellation: identity_result_per_d[d=2]='0' (Sage-exact), identity_exact_zero_per_d[d=2]=True, sage_invariance_zero_per_d[d=2]=True, per_d_pass all True, verdict='PASS', pass_count=4 (SageMath 10.8). The coset_action_table_d2 tabulates the 4 signed 2-cube vertices; I independently expanded (1-s1)(1-s2)=1-s1-s2+s1*s2 and confirmed via Schur orthogonality that this factor equals 4 ONLY at the (-1,-1) V_4 element and 0 at e,a,b -- this IS the localization, character-orthogonality-exact. (4) The S88 substrate anchor delta_0_numerical=+2.400e+01=24=4*c_4 matches the registry cross-link faithful sigma (sigma_1=[+1,-1,+1,-1], sigma_2=[+1,+1,-1,-1] => unique (-1,-1) stratum = stratum 4, c_4=6); I verified this sigma gives 24 BOTH by direct alternating sum AND by the localization formula (self-consistent). The apparent S88 discrepancy delta_0_formula_QQ=8 / cc2_delta_0_match=False is NOT a counterexample: I verified over all 256 (sigma_1,sigma_2) assignments that the formula's 'unique (-1,-1) stratum' precondition holds iff the assignment is a faithful V_4 bijection; formula=8=4*c_1 and the mismatch arise only for NON-faithful labelings (k=0,2,3,4 strata satisfying (-1,-1)), which lie OUTSIDE the theorem's stated domain ('the UNIQUE stratum index where both sigma_1=sigma_2=-1'). The exhaustive-completeness claim over the theorem domain is sound and, if anything, subsumed by my generic-QQ symbolic proof."
+    },
+    "c": {
+      "verdict": "PASS",
+      "rationale": "Axis-B assessment of the A_F->C_output exhaustive-certification leg of the SOURCE-DOUBLE-CITE-CO-PRIMARY chain. The chain V_input (Schur/NCG mechanism: (1-sigma_1)(1-sigma_2) localizes at (-1,-1)) -> A_F (substrate stratum specialization at bot-20 cardinality (2,4,8,6)) -> C_output (exhaustive 576-config QQ certification) -> conclusion is genuinely non-fungible and sequential. From my axis the C_output leg is the NECESSARY completion of the universal-quantifier claim 'EXACT in QQ for EVERY (c,sigma)': the V_input Schur statement supplies the per-element mechanism but a mechanism statement alone does not discharge closure over the full discrete domain of 24 faithful characters x 24 orderings. My independent enumeration reproduces exactly that closure (576/576 EXACT). C_output cannot stand alone (a finite numerical/Sage sweep carries no structural NCG derivation), and V_input cannot stand alone (a mechanism is not exhaustive certification); both must remain accessible, satisfying the registry-landing.md CO-PRIMARY detection criteria (sequential, non-fungible, both-accessible). NOT PRIMARY+CONFIRMATION (the anchors do not independently reproduce the conclusion via parallel routes; the certification is downstream of the mechanism). Strengthening note (does not alter the PASS): my Enumeration-1 generic-QQ symbolic proof corroborates and subsumes the finite 576-instance exhaustiveness of C_output, so the chain's certification leg is independently robust on my axis."
+    }
+  }
+}

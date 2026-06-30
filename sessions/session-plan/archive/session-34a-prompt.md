@@ -22,11 +22,11 @@ This is Wave 1 of 3. Two independent computations run in parallel. If DPHYS-34a-
 ## REQUIRED READING (LEAN — max 4 files per agent)
 
 ### All agents
-- `tier0-computation/s33b_gate_verdicts.txt` — confirms TRAP-33b PASS baseline
+- `computations/s33b_gate_verdicts.txt` — confirms TRAP-33b PASS baseline
 
 ### bap (baptista)
 - `sessions/session-33/session-33-connes-collab.md` — eq 15: eigenvector rotation formula for first-order phi correction
-- `tier0-computation/tier1_dirac_spectrum.py` — Dirac infrastructure (su3_generators, structure_constants, metric, spin connection)
+- `computations/dirac_spectrum.py` — Dirac infrastructure (su3_generators, structure_constants, metric, spin connection)
 
 ### connes
 - `sessions/session-33/session-33-connes-collab.md` — eq 3: branching rule, eq 18: cyclic cohomology interpretation
@@ -66,8 +66,8 @@ The inner fluctuation phi = sum_i a_i[D_K, b_i] with a_i, b_i in A_F = C + H + M
 - `tau_values` — array of 9 tau values
 - `A_antisym_{tau_idx}_{gen}` — antisymmetrized algebra action matrices (tau_idx 0-8, gen 0-7)
 
-**Script**: `tier0-computation/s34a_dphys_fold.py` (~350 lines)
-**Output**: `tier0-computation/s34a_dphys_fold.{py,npz,png}`
+**Script**: `computations/s34a_dphys_fold.py` (~350 lines)
+**Output**: `computations/s34a_dphys_fold.{py,npz,png}`
 **Python**: `"phonon-exflation-sim/.venv312/Scripts/python.exe"`
 
 **Gate DPHYS-34a-1** (pre-registered):
@@ -101,8 +101,8 @@ If V(gap,gap) = 0 with the full kernel, the gap-edge divergence M ~ V/|xi| is re
 - `eigenvectors_{tau_idx}` — eigenspinor basis
 - `eigenvalues_singlet_{tau_idx}` — eigenvalues (to identify gap edge)
 
-**Script**: `tier0-computation/s34a_trap1_reeval.py` (~120 lines)
-**Output**: `tier0-computation/s34a_trap1_reeval.{py,npz}`
+**Script**: `computations/s34a_trap1_reeval.py` (~120 lines)
+**Output**: `computations/s34a_trap1_reeval.{py,npz}`
 **Python**: `"phonon-exflation-sim/.venv312/Scripts/python.exe"`
 
 **Gate TRAP1-34a** (pre-registered):
@@ -123,7 +123,7 @@ If V(gap,gap) = 0 with the full kernel, the gap-edge divergence M ~ V/|xi| is re
 ## SYNTHESIS & OUTPUT
 
 **Designated writer**: coord
-**Gate verdicts file**: `tier0-computation/s34a_gate_verdicts.txt`
+**Gate verdicts file**: `computations/s34a_gate_verdicts.txt`
 **Synthesis file**: `sessions/session-34/session-34a-synthesis.md`
 
 Coord classifies both gates against pre-registered criteria. Records verdicts. If DPHYS-34a-1 FAIL, writes closure assessment and session ends. If PASS, writes interim synthesis and notes readiness for Wave 2 (session-34b).
@@ -133,7 +133,7 @@ Coord classifies both gates against pre-registered criteria. Records verdicts. I
 ## OPERATIONAL RULES
 
 - Python: `"phonon-exflation-sim/.venv312/Scripts/python.exe"`
-- Output directory: `tier0-computation/`
+- Output directory: `computations/`
 - Script prefix: `s34a_`
 - NUMBERS first. Gate classification second. Interpretation third.
 - Check inbox between computation blocks.
