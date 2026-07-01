@@ -106,8 +106,6 @@ S67 resolved the functional crisis structurally (FUNCTIONAL-SELECT-67: the Chams
 - **The layer-functor F** (substrate ↔ methodology ↔ audit), the **PRU Class-8 pre-registration taxonomy**, dual-SHA verdict closure, and the **25-rule methodology floor** that closes silent class-conflation pathways.
 - **Observational re-pins**: the GW flagship was *retired* (S96: structural walls = 0 EXACT; the peak GW signal at 8.48×10³⁹ Hz is detector-sterile, so the falsifier migrated GW → large-scale structure); H₀ re-pinned to **67.40** (S101, spinor factor √16 = 4 EXACT); m_H route-pinned to the **KK-threshold-direct 131.8 GeV** (S100a/S102).
 
-Per project hygiene rules, the **EVOI/probability table has been frozen since S66**; post-S66 sessions annotate movement *directionally* (UP-tick / DOWN-tick / flat / PARADIGM-SHIFT) pending a formal Sagan re-anchoring. Directionally the framework sits around **5–8%** on structural grounds — but see the honest caveat in [Key Findings](#probability-trajectory).
-
 ---
 
 ## Agent Architecture
@@ -168,13 +166,6 @@ Grounded in curated research folders (10–20 papers each in `/researchers/`).
 ### Infrastructure Agents
 
 `coordinator` (session management) · `knowledge-weaver` (knowledge-index maintenance) · `web-researcher` (paper-folder population) · `latex-typesetting-specialist` (paper preparation).
-
-### Observed Behavioral Characteristics
-
-- **phonon-exflation-sim** auto-executes code; requires an explicit "do NOT execute" mandate.
-- **hawking-theorist** resists shutdown when finding interesting results.
-- **baptista-spacetime-analyst** is fast and thorough; completes verification before broadcast messages arrive.
-- **schwarzschild-penrose-geometer** delivers bonus results unprompted.
 
 ---
 
@@ -315,7 +306,6 @@ S66 Volovik CC PASS + Leggett DM:         UP (net) -- but eps_H sign reversal
 S67-S116 methodology-floor era:           ~5-8% directional; EVOI table FROZEN since S66
 ```
 
-**Honest caveat:** the EVOI / probability table has been formally frozen since Session 66. Post-S66 sessions annotate movement *directionally only* — a formal Sagan re-anchoring is a standing recommendation. The probability figure is the project's least-calibrated output: language-model agents are demonstrably poor at probability estimation (one mid-project margin note put it at 40% on gut feel), which is precisely why the methodology pins everything else to pre-registered gates and machine-epsilon proofs instead.
 
 ### Verification Framework — The Venus Rule
 
