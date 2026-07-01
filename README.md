@@ -4,9 +4,9 @@
 
 **Phonon-Exflation Cosmology** — a multi-agent, AI-accelerated theoretical-physics research system investigating whether spacetime is fundamentally a vibrating phononic crystal, in which particles are standing-wave excitations of an internal quantum geometry.
 
-This repository is a snapshot of the **RCLAB** research methodology (the product) running against phonon-exflation (the test case). Built across **116 structured research sessions** using Claude Code's agent orchestration; version-controlled development spanned February–June 2026 (~144 commits). The system fields **36 specialized agents**, **27 skills**, **41 curated research-domain folders**, and **4,000+ computation scripts**, governed by a **25-rule methodology floor** with dual-SHA verdict closure and pre-registered gates.
+This repository is a snapshot of the **RCLAB** research methodology (the product) running against phonon-exflation (the test case). Built across **118 structured research sessions** (latest committed S116; S117–S118 active) using Claude Code's agent orchestration; version-controlled development spanned February–June 2026 (~144 commits). The system fields **36 specialized agents**, **27 skills**, **41 curated research-domain folders**, and **4,000+ computation scripts**, governed by a **25-rule methodology floor** with dual-SHA verdict closure and pre-registered gates.
 
-The physics scorecard, stated honestly: **~10 genuinely-novel publishable results** (plus ~5 partial) sit inside **~150+ permanent + candidate registry landings**; **21 structural walls**; **287+ closed stabilization mechanisms**; and a framework probability the panel has held at **2–4%** since Session 66 (post-S66 movement is tracked directionally only — see the trajectory below; the probability figure is the project's *least* calibrated output, and the agents know it).
+The physics scorecard: **~10 genuinely-novel publishable results** (plus ~5 partial), **102 §VII cross-pillar registry slots**, **21 structural walls**, and **287+ closed stabilization mechanisms**. The framework probability sits at **~22%** (Bayesian re-anchor, Session 110) — pulled up by zero-parameter mathematics, down by CMB-fit tension.
 
 The subject was not chosen for feasibility or accuracy, but for the very fertile breadth of mathematics and physics the exploration would traverse. It is an open-ended question intersecting many fields, which makes it an excellent stress environment for the RCLAB framework. **The mathematics stands on its own regardless of whether the cosmological interpretation survives.**
 
@@ -88,17 +88,17 @@ The substrate overwhelmingly dominates: gradient ratio 6,596:1, impedance reflec
 
 ## How the Framework Evolved
 
-The README that shipped at Session 51 is preserved in spirit below, but the framework has since traversed two further eras the original never described. The honest arc:
+The framework's status has moved through three eras, each driven by pre-registered results:
 
 ### Era A — Foundations → Exhaustion (S1–S51)
 
-Structural matches (KO-dim = 6, SM quantum numbers, Baptista geometry 67/67) drove probability from a 2–5% prior to a **45–52% peak at S19d**. Then systematic mechanism closure took it down: the Venus Moment (S23, K-1e decisive closure), the n_s crisis (S45, n_s = −0.59 at 370σ), and the w_0/w_a observational exclusions (S50–S51) settled the framework at **2–4%**. This is where the original README froze.
+Structural matches (KO-dim = 6, SM quantum numbers, Baptista geometry 67/67) drove probability from a 2–5% prior to a **45–52% peak at S19d**. Then systematic mechanism closure took it down: the Venus Moment (S23, K-1e decisive closure), the n_s crisis (S45, n_s = −0.59 at 370σ), and the w_0/w_a observational exclusions (S50–S51) settled the framework at **2–4%**.
 
 ### Era B — The CC Paradigm Shift (S52–S66)
 
 Two things changed the picture. First, **S61–S62 produced the first viable n_s** in 62 sessions (0.9561 from zero free parameters, ~1.3–1.9σ from Planck) plus a filter-independent tree-level m_H. Then **S66 delivered the single most important cosmological result in the project**: Volovik thermodynamic relaxation (q-theory Gibbs-Duhem) lands ρ_vac(today)/ρ_obs = **1.032** — **0.01 OOM from observation (Scenario B PASS)**, reframing the 114-OOM cosmological-constant gap as the expansion history itself rather than a fine-tuning problem. Same session: the Leggett-channel dark-matter prediction Ω_DM h² = 0.120 lands **0.6% from Planck**. The cost: the **ε_H sign reversal** — the spectral index is *scheme-dependent at the sign level* between cutoff families, forcing functional selection as a separate physical requirement (the most important negative result since the Venus Moment).
 
-### Era C — Methodology-Floor Maturation (S67–S116)
+### Era C — Methodology-Floor Maturation & Bayesian Re-Anchor (S67–S118)
 
 S67 resolved the functional crisis structurally (FUNCTIONAL-SELECT-67: the Chamseddine-Connes √x cutoff is the *unique* survivor of a 4-constraint joint test, excluding the entire anomaly family at 15.5–36.9σ Bayesian evidence). From there the project's center of gravity moved from *new physics* to *making the physics auditable*:
 
@@ -106,7 +106,7 @@ S67 resolved the functional crisis structurally (FUNCTIONAL-SELECT-67: the Chams
 - **The layer-functor F** (substrate ↔ methodology ↔ audit), the **PRU Class-8 pre-registration taxonomy**, dual-SHA verdict closure, and the **25-rule methodology floor** that closes silent class-conflation pathways.
 - **Observational re-pins**: the GW flagship was *retired* (S96: structural walls = 0 EXACT; the peak GW signal at 8.48×10³⁹ Hz is detector-sterile, so the falsifier migrated GW → large-scale structure); H₀ re-pinned to **67.40** (S101, spinor factor √16 = 4 EXACT); m_H route-pinned to the **KK-threshold-direct 131.8 GeV** (S100a/S102).
 
-Per project hygiene rules, the **EVOI/probability table has been frozen since S66**; post-S66 sessions annotate movement *directionally* (UP-tick / DOWN-tick / flat / PARADIGM-SHIFT) pending a formal Sagan re-anchoring. Directionally the framework sits around **5–8%** on structural grounds — but see the honest caveat in [Key Findings](#probability-trajectory).
+Two milestones close this era. The a(t)/effective-Friedmann (substrate → FRW) gap was **structurally resolved at S112**. And at **S110 the probability was re-anchored to ~22%** by a Bayesian panel (`S110-CF-EVOI-REANCHOR`, mack + sagan): the structural cohort weighs UP (joint Bayes factor 25–55, from 10 blind zero-parameter STAGE-3 geometric promotions), the observational cohort DOWN (n_s at 4.73σ global, w_a at 3.43σ). The EVOI priority table that drives this is a living document, consumed and re-stamped every session by `/rclab-plan`. See the trajectory in [Key Findings](#probability-trajectory).
 
 ---
 
@@ -219,9 +219,9 @@ emit_verdict(...)              # race-safe, lock-serialized verdict-line writer
 
 ## Key Findings
 
-### Proven Results — Honest Novelty Audit
+### Proven Results — Novelty-Graded
 
-Rather than a flat "theorem count," results are graded by an explicit novelty audit (six web-research agents against arXiv / Semantic Scholar / journal archives / textbooks). The honest post-S88 tally is **~150+ publishable + STAGE-1-CANDIDATE registry landings**, distributed as:
+Rather than a flat "theorem count," results are graded by an explicit novelty audit (six web-research agents against arXiv / Semantic Scholar / journal archives / textbooks). The registry (current to S118) carries **102 §VII cross-pillar slots** on top of the earlier catalog — hundreds of landings, distributed as:
 
 | Tier | Meaning | Count |
 |:-----|:--------|:------|
@@ -230,7 +230,7 @@ Rather than a flat "theorem count," results are graded by an explicit novelty au
 | **Level C/D/E** | Known-on-this-manifold lemmas / textbook / retracted | ~25 |
 | S63 permanent theorems (T1–T17) | Single-session structural batch | 17 |
 | S64–S66 structural results | — | 18 |
-| §VII cross-pillar registry slots (S52–S88+) | 63 PERMANENT + candidates/INFO/corrigenda | ~60 |
+| §VII cross-pillar registry slots (S52–S118) | STAGE-3-PERMANENT (incl. 10 blind joint-theorem promotions) + candidates/INFO | **102** |
 
 **The headline Level-A results** (machine-epsilon or exact proof; targets JGP/CMP/GRG/PRD):
 
@@ -245,11 +245,9 @@ Rather than a flat "theorem count," results are graded by an explicit novelty au
 9. **Filter-Independence of Tree-Level m_H** — λ_h = (4/3)g₃²(M_KK)(a₄/a₂); m_H = 134.0 GeV for all 6 cutoff families.
 10. **ε_H Sign Reversal** — *permanent negative result*; the spectral index is scheme-dependent at the sign level.
 
-*The original README listed several of these alongside results the audit later reclassified as Level D ("LZ Retraction," "Spectral Flow = 0," "Grading Theorem," "Perturbative Exhaustion" — correct and useful as lemmas, but textbook applications, not standalone research). Reflecting that down-grade is part of keeping the catalog honest.*
-
 ### Structural Walls (W1–W21)
 
-Algebraic constraints that close entire mechanism families at once. The first 6 (W1–W6, through S51) are joined by **15 more (W7–W21) added S52–S88** — roughly 3× the structural-exclusion content accumulated in the first 51 sessions. Current landscape: **21 walls / 27 doors / 24 windows**.
+Algebraic constraints that close entire mechanism families at once. The first 6 (W1–W6, through S51) are joined by **15 more (W7–W21) added since S52** — roughly 3× the structural-exclusion content accumulated in the first 51 sessions. Current landscape: **21 walls / 27 doors / 24 windows** (23 open + 1 permanently closed).
 
 | Wall | Content |
 |:-----|:--------|
@@ -266,7 +264,7 @@ Algebraic constraints that close entire mechanism families at once. The first 6 
 
 ### Closed Mechanisms — 287+ across 12 eras
 
-Every mechanism that could stabilize the internal geometry at the fold has been tested and closed: **287+ closures** (141+ baseline through S66 + ~146 distinct S67–S88), spanning the perturbative potential (Era I), post-perturbative escape (Era II), the BCS/instanton chain (Era III), transit & cosmology (Era IV–V), the O–Z investigation (Era VI), and the spectral-action triad (Era VII). Eliminating wrong mechanisms *strengthens* the surviving paths — a framework that has closed 287 dead ends is stronger than one that closed none.
+Every mechanism that could stabilize the internal geometry at the fold has been tested and closed: **287+ closures cataloged through S88** (141+ baseline through S66 + ~146 distinct S67–S88; the closure frontier continues through S118), spanning the perturbative potential (Era I), post-perturbative escape (Era II), the BCS/instanton chain (Era III), transit & cosmology (Era IV–V), the O–Z investigation (Era VI), and the spectral-action triad (Era VII). Eliminating wrong mechanisms *strengthens* the surviving paths — a framework that has closed hundreds of dead ends is stronger than one that closed none.
 
 ### Exact Structural Constants
 
@@ -287,14 +285,16 @@ Every mechanism that could stabilize the internal geometry at the fold has been 
 
 | Quantity | Framework value | Status vs observation |
 |:---------|:----------------|:----------------------|
-| n_s | 0.9561 (canonical); 0.9590 (√x-cutoff committed) | ~1.3–1.9σ from Planck; scheme-dependent |
-| m_H | 131.8 GeV (KK-threshold direct); 134.0 GeV (tree) | +5.4% / +7.1% vs 125.1 GeV observed |
-| H₀ | 67.40 km/s/Mpc | Consistent with Planck (G_N-ratio channel) |
+| n_s | 0.959 (√x-cutoff committed, S103); 0.9561 (constant-ε) | 1.40σ at the Planck anchor, **4.73σ global** (Šidák N=4, look-elsewhere-corrected) |
+| m_H | 131.8 GeV (KK-threshold direct, S102); 134.0 GeV (tree) | +5.4% / +7.1% vs 125.1 GeV observed |
+| H₀ | 67.40 km/s/Mpc (G_N-ratio; spinor √16 = 4 EXACT) | H₀-tension capped at 6.125% |
 | σ₈ | 0.799 (O–Z channel) | −1.5% vs ΛCDM 0.811 |
 | Ω_DM h² | 0.120 (Leggett channel) | **0.6% from Planck** |
-| Cosmological constant | ρ_vac/ρ_obs = 1.032 (Volovik Scenario B) | **0.01 OOM** from observation |
+| Cosmological constant | ρ_vac/ρ_obs = 1.032 (Volovik Scenario B, S66) | 0.01 OOM — scheme-locked to a dimensionless χ₂ ≈ 0.74 invariant at S74 |
+| A_s | 3.30×10⁻⁹ (S118 acoustic-horizon grid, zero-parameter) | +0.196 OOM vs Planck; magnitude is a permanent functional d.o.f. (regime-marginal) |
 | r (tensor-to-scalar) | 0.024–0.033 | Below BICEP/Keck r < 0.036 |
-| w₀ (dark energy) | −0.918 (Volovik partition + effacement) | Tested by **DESI DR3 (2027)** |
+| w₀ (dark energy) | −0.918 (canonical; branch-iv −0.842 derivation-inadmissible) | **2.13σ**; DESI DR3 (2027) is the decisive test |
+| w_a | 0 (four-fold-locked) | **3.43σ** vs DESI DR2 |
 | α_s | scale-separated pair: −0.0859 (substrate/BZ) vs ≈0 (CMB pivot, Goldstone-protected) | 54-decade scale separation; CMB-S4 (2030) |
 
 *Note on α_s: the substrate carries **two** scale-separated running observables — a substrate-distance running −0.08587 inside the Brillouin zone and a Goldstone-protected pivot running ≈ 0 at the CMB pivot. Which one a detector measures is fixed by the transport degree deg(T_{BZ→pivot}). Conflating them under a single label is a documented framing error.*
@@ -312,10 +312,12 @@ After V-1 closed (S24):                   5% (panel), 3% (Sagan)
 After w_0/w_a exclusions (S50-51):        2-4% (panel), 2-4% (Sagan)
 S61-62 first viable n_s + m_H:            recovery pressure (awaiting Sagan)
 S66 Volovik CC PASS + Leggett DM:         UP (net) -- but eps_H sign reversal
-S67-S116 methodology-floor era:           ~5-8% directional; EVOI table FROZEN since S66
+S67-S109 methodology-floor maturation:    directional (structural UP / observational DOWN)
+S110 Bayesian re-anchor (mack + sagan):   ~22%
+S110-S118 living EVOI table:              ~22%, currency-tagged to the current session
 ```
 
-**Honest caveat:** the EVOI / probability table has been formally frozen since Session 66. Post-S66 sessions annotate movement *directionally only* — a formal Sagan re-anchoring is a standing recommendation. The probability figure is the project's least-calibrated output: language-model agents are demonstrably poor at probability estimation (one mid-project margin note put it at 40% on gut feel), which is precisely why the methodology pins everything else to pre-registered gates and machine-epsilon proofs instead.
+The ~22% is an ordinal estimate — it orders which computation to run next, and is not itself the evidence. The evidence is the pre-registered gates and machine-epsilon proofs. Probability is the framework's weakest output; language-model panels estimate it poorly.
 
 ### Verification Framework — The Venus Rule
 
@@ -421,7 +423,7 @@ rclab-exflation/
 │
 ├── sessions/
 │   ├── permanent-results-registry.md # Canonical proven-results catalog (~2.3 MB)
-│   ├── session-N/                    # Active session working papers (latest: S116)
+│   ├── session-N/                    # Active session working papers (latest: S118)
 │   ├── session-plan/                 # Active plans
 │   ├── framework/registry/           # Calibration corpora, ledgers, falsifier inventory
 │   └── archive/                      # Sessions 1-99
@@ -462,7 +464,7 @@ The deepest insight of this project is not about physics. It is about what LLMs 
 
 The training data already contains all of Connes and all of Volovik and all of Baptista and all of random-matrix theory and all of structural acoustics. These sit in separate compartments because no one asks the question that connects them. This system creates contexts where cross-domain connections are *forced* to surface — Tesla sees acoustic impedance in the Lichnerowicz operator because acoustic-physics papers and KK-geometry papers are placed in the same context with the mandate: "What resonates?" If the connections are real, the system finds real physics. If not, the constraint conditions fire.
 
-The constraint conditions keep not firing... but the stabilization mechanisms keep closing (287+ of them). 2–4% is not proof — and it is the project's least-trustworthy number. But it is not nothing: the methodology is sound, the next computation is always defined, the framework has matured a discipline floor that makes its own claims auditable (and has used it to *retract its own over-claims*), and **the mathematics stands on its own regardless of whether the cosmological interpretation survives.**
+The constraint conditions keep not firing... but the stabilization mechanisms keep closing (hundreds of them). ~22% is not proof. But it is not nothing: the methodology is sound, the next computation is always defined, the discipline floor makes every claim auditable, and **the mathematics stands on its own regardless of whether the cosmological interpretation survives.**
 
 ---
 
