@@ -1,6 +1,6 @@
 # Atlas D08: Open Questions
 
-**Current through S117.** Each entry leads with its **STATUS** and **NEXT** step. The full session-by-session revision history (what changed each session, with audit SHAs) lives in `sessions/framework/registry/atlas-08-freshness-S{97..117}.md` — this file shows current state only.
+**Current through S118.** Each entry leads with its **STATUS** and **NEXT** step. The full session-by-session revision history (what changed each session, with audit SHAs) lives in `sessions/framework/registry/atlas-08-freshness-S{97..117}.md` — this file shows current state only.
 
 **Totals**: 67 questions (44 baseline + 31 new S52–S114 − closures/reroutes). Classes: Decisive · Structural · Observational · Methodology (5th class, post-S82) · Carry-Forward. Verified arithmetic in §IX.
 
@@ -27,11 +27,11 @@
 
 ### 🟡 Parked on external data (nothing to do but wait)
 
-`Q37` DESI DR3 w₀/wₐ (~2027; branch-iv DR3-NOT-READY) · `Q21` σ₈ convergence · `Q39` g₁/g₂ 3.5% tension · `Q40` ε_H sign (CMB-S4 ~2030) · `Q41` lab SW1 (2031) · **`Q42` lab SW3 — strongest single-row falsifier (2031)** · `Q22` void/filament α. *(`Q19`/`Q20` are stale-value duplicates → reconcile to Q37/Q38.)*
+`Q37` DESI DR3 w₀/wₐ (~2027; branch-iv DR3-NOT-READY) · `Q21` σ₈ convergence · `Q39` g₁/g₂ 3.5% tension · `Q40` ε_H sign (CMB-S4 ~2030) · `Q41` lab SW1 (2031) · **`Q42` lab SW3 — strongest single-row falsifier (2031)** · `Q22` void/filament α. *(`Q19` is a stale-value duplicate → reconcile to Q37; `Q20`/`Q38` α_s RECONCILED to the S92 scale-separated pair.)*
 
 ### 🔵 Housekeeping / methodology (not physics)
 
-`Q29` BBN cross-channel xcorr (reconciled, BBN-arm stays a live falsifier) · `Q32` knowledge.db round-trip gap · `Q34` §VII.AT slot · `Q35` atlas-01 S52–S60 backfill · `Q38` α_s canon-shift annotation propagation · `Q43` methodology K-counter promotions.
+`Q29` BBN cross-channel xcorr (reconciled, BBN-arm stays a live falsifier) · `Q32` knowledge.db round-trip gap · `Q34` §VII.AT slot · `Q35` atlas-01 S52–S60 backfill · `Q43` methodology K-counter promotions. *(`Q38` α_s propagation RESOLVED — see §III.)*
 
 ### ⚪ Partially open, resting on settled results (low urgency)
 
@@ -153,7 +153,7 @@
 - **Source**: S49 DESI-DR3-PREP-49; atlas-04 C4. History: freshness-S97.
 
 ### Q20: CMB-S4 / Simons Observatory α_s measurement
-- **STATUS**: STALE VALUE — supersede by **Q38**. α_s re-pinned S85 to **+0.00117** (S63 RUNNING-NS-63), superseding −0.069; +2.70σ vs ΛCDM at CMB-S4 σ_detect=2.1e-3.
+- **STATUS**: RECONCILED (S92 scale-separation). The current canonical α_s is the **scale-separated PAIR** — Goldstone-pivot **≈0** (`alpha_s_pivot_goldstone`, the CMB-channel value; 0.37σ vs ACT-DR4+Planck) · substrate-distance **−0.0858728** (`alpha_s_substrate_distance_1`, BZ geometric floor, NOT CMB-detector-comparable). The single-labels **+0.00117** (S85 RUNNING-NS-63) and **−0.069** (S49 O-Z) are SUPERSEDED — they conflated the two channels (container-thinking trap; deg(T_{BZ→pivot})=2 NON-SCALAR sets which a detector sees). CMB-S4 (~2030) probes the pivot channel.
 - **Source**: S49 ALPHA-S-BAYES-49; atlas-04 C12. History: freshness-S97.
 
 ### Q21: Lensing σ₈ convergence
@@ -271,7 +271,7 @@ Six baseline questions answered or structurally replaced post-S51. Original entr
 | Q | Question | Status | Horizon / source |
 |:--|:---------|:-------|:-----------------|
 | **Q37** | **Window-14 DESI DR3 binding** for the R_842 (w₀,w_a) rectangle. | **LIVE-PENDING (~2027)** — canonical w₀=−0.918 → 2.130σ; w_a (four-fold lock=0) → 3.429σ. Branch-(iv) w₀=−0.842 evaluator EXISTS but **NOT truncation-converged** (S105 direct spread 0.0443, INFO band) → **DR3-NOT-READY**; R_842 reversal protocol stays ARMED. | `falsifier-master-inventory.md` row 1; atlas-05 Window-14. History: freshness-S102..S105. |
-| **Q38** | **Window-15 CMB-S4 α_s canon-shift annotation propagation** (−0.069 → +0.00117). | **OPEN** — annotation propagation incomplete across atlas-05 + atlas-08 (Q20 cites the old value). | `falsifier-watchlist.md:140`; atlas-05 Window-15. |
+| **Q38** | **α_s canon reconciliation to the S92 scale-separated pair** (single-label −0.069 / +0.00117 → Goldstone-pivot ≈0 · substrate-distance −0.0858728). | **RESOLVED** — propagation COMPLETE across atlas-03 (E23/E48), atlas-04 (C12 + §IX row 5), atlas-05 (Door-8 + W7 + Window-15), atlas-07 (ALPHA-S-BAYES-49 tagged SUPERSEDED), atlas-08 (Q20). The single-label was a channel-conflation; current canonical = the pair. | `falsifier-watchlist.md`; atlas-05 Window-15; S92 AH-TR-1. |
 | **Q39** | **g₁/g₂ = 0.684 vs 0.709 LIVE 3.5% tension.** | **LIVE-PENDING** — 3.5% below; not yet decisive (observational uncertainty on 0.709 dominates). | `falsifier-watchlist.md:46-50`; atlas-05 Window-18. |
 | **Q40** | **ε_H sign reversal observational discrimination** (functional-family path). | **LIVE-PENDING** (CMB-S4 ~2030 / CMB-HD ~2035). Structural theorem A13 PERMANENT. | atlas-10 #20; atlas-07 §A13. |
 | **Q41** | **Lab-falsifier SW1** (³He-A NMR sweet-spot λ₆): δω_K/ω_K=1.7267 at 58.96 MHz. | **LIVE** (P_decisive 0.30–0.50; horizon 2031). | `falsifier-master-inventory.md` row #13; atlas-05 Window-20. |
@@ -296,8 +296,8 @@ Six baseline questions answered or structurally replaced post-S51. Original entr
 |:---|:-----|:---------------|
 | **CF21** | TD/LI Mukhanov-Sasaki H̃-branch divergence chase | **Figure conflict RECONCILED (S116-W1-HTILDE-RECON)**: `2.38`-OOM (H̃-space) and `4.76`-OOM (A_s-space) are CC3-conjugate (`4.76 = 2×2.38`, A_s ∝ H̃², `INV12-W3-5` PASS `cc3=2.000000`); atlas-04's "`4.56`" was the STALE rendering of the live `4.76`. Residual A_s-MAGNITUDE closure (regime axis `+0.196↔+0.864`, 410.7σ) **RESOLVED zero-parameter (S118 W1 `CF-S118-AS-CS-SUBSTRATE-FIRST` PASS, regime-MARGINAL)**: the transfer prefactor `𝒩` (deg=+2) is now the IDENTIFIED sole carrier — substrate c_s=0.5685 M_KK ∈ GS-1 window closes the fork to the H̃/+0.196 grid (3.2994e-9, 1.57× Planck); no longer the rate-limiter for A_s closure (Q23). |
 | **CF22** | A_s ledger F_amp_3PI vs F_amp_slot adjudication (122× discrepancy) | RESOLVED-as-coherent-within-envelope (S104). The slot phases are DERIVED and modulate within the S_W window; not a change to the A_s floor. |
-| **CF23** | A_s amplitude floor | **SPLIT (S110; b-leg refined S116)**: (a) the FLOOR `A_s ≥ A_s^{BD}` (inequality >1) is PERMANENT, 3-axis-confirmed; (b) the MAGNITUDE / upper-edge is a SCHEME-DEPENDENT FILTER, **OPEN → structural-closure (S116-W1-AS-CF2 FAIL)**: the exact finite-rate greybody is irreducibly FITTED at NO substrate scale (regime VALID, eps_WKB decoupled), so the A2-knob upper-edge is NOT substrate-derivable; the magnitude is PLURALISM (floor + sudden↔adiabatic axis), CF-S117-conditional. Only the inequality is "permanent". |
-| **CF24** | LISA Ω_GW (A)/(C) regulator-class discriminator | OPEN (Level 4; LISA 2035). (A)-class O(10⁻¹⁰) vs (C)-class 8.299e-58 (Sage-exact null); 11+ OOM PASS-margin. |
+| **CF23** | A_s amplitude floor | **SPLIT (S110; b-leg refined S116)**: (a) the FLOOR `A_s ≥ A_s^{BD}` (inequality >1) is PERMANENT, 3-axis-confirmed; (b) the MAGNITUDE / upper-edge is a SCHEME-DEPENDENT FILTER, **OPEN → structural-closure (S116-W1-AS-CF2 FAIL)**: the exact finite-rate greybody is irreducibly FITTED at NO substrate scale (regime VALID, eps_WKB decoupled), so the A2-knob upper-edge is NOT substrate-derivable; the magnitude is PLURALISM (floor + sudden↔adiabatic axis). **S118 W1** resolved the transport-degree sub-fork zero-parameter (substrate c_s=0.5685 M_KK ∈ GS-1 window → +0.196 grid, A_s=3.2994e-9, regime-MARGINAL); the surviving open axis is the exit-greybody prefactor knob (irreducibly fitted, no structural no-go) → `CF-S119-GREYBODY-NOGO-PROOF`. Only the floor inequality is "permanent". |
+| **CF24** | Ω_GW (A)/(C) regulator-class discriminator — **RETIRED as a live detector channel** | The GW amplitude leg is RETIRED (walls=0 EXACT, π₀(U(1))=0; peak GW-detector-STERILE 8.4835e39 Hz, atlas-09 Item-49); the falsifier MIGRATED **GW→LSS** (first-sound BAO ring A_FS=0.204 + f·σ8 growth, Rows #71/#72). The (A)-class O(10⁻¹⁰) vs (C)-class 8.299e-58 (Sage-exact null) split survives ONLY as an internal regulator-class consistency check, NOT a live LISA-2035 detection. |
 | **CF25** | LiteBIRD n_T Path-H vs Path-C decisive | OPEN (Level 2; LiteBIRD 2030). Path-H r=0.00745 vs Path-C r=0.0117 (36.3% split). |
 | **CF26** | f_NL_folded (Window-23) + φ₃ substrate-IS counterpart (Window-24) | OPEN (Level 2). 3-pathway GGE-coupling discriminator; φ₃ cocycle STAGE-1-CANDIDATE pending Stage-2. |
 | **CF27** | Lab-falsifier Window-20/21 (SW1/SW2) cross-platform | OPEN (Level 4; 2031). ³He-A NMR + FeSe NMR. |
@@ -342,4 +342,4 @@ Pattern: the FUNCTIONAL-SELECT / BBN / TD-LI computational queue stagnated durin
 
 ---
 
-*Compiled from session-50-51-collective-analysis, atlas-04/05/06/07/09, and the per-session freshness audits `sessions/framework/registry/atlas-08-freshness-S{97..114}.md` (full revision history). Current state only; history in the freshness files.*
+*Compiled from session-50-51-collective-analysis, atlas-04/05/06/07/09, and the per-session freshness audits `sessions/framework/registry/atlas-08-freshness-S{97..117}.md` (full revision history). Current state only; history in the freshness files.*

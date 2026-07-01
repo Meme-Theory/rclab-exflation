@@ -1,12 +1,13 @@
 # Atlas D03: Equation Flow Map
 
-**Total load-bearing equations**: 60 (S52-S88 uplift: 36 baseline + 24 extensions)
-**Flow**: Geometry → Spectrum → BCS → Fabric → Observables → Cross-pillar bridge → Methodology floor
-**Last updated**: 2026-05-09 (S88-current; 24 new equations E37-E60 across S58-S88; extends from 5 to 7 domains)
+**Total load-bearing equations**: 76 (36 baseline + 24 S52–S88 extensions + 16 S89–S118 extensions)
+**Flow**: Geometry → Spectrum → BCS → Fabric → Observables → Cross-pillar bridge → Methodology floor → SM-texture externality
+**Updated**: 2026-07-01 (S89-S118 uplift; S119-current). 16 new load-bearing equations E61-E76 across S93-S118: the intra-pillar **SM-texture-externality obstruction family** (the single largest new structural cluster — the substrate proves it does NOT deliver the Yukawa/CKM/SHAPE texture), the **exflation-gradient closed form** dM₂/dτ>0, the **emergent-metric** and **CMB-pivot-transport** cross-pillar bridges, and the two-layer substrate sound speed. Extends from 7 to 8 domains.
+**Prior stamp**: 2026-05-09 (S88-current; 24 new equations E37-E60 across S58-S88; extended from 5 to 7 domains)
 
 ---
 
-## Domain 1: Spectral Geometry (17 equations: 10 baseline + 7 extensions)
+## Domain 1: Spectral Geometry (21 equations: 10 baseline + 11 extensions)
 
 ### Baseline (E1-E10, S7-S37)
 
@@ -69,6 +70,14 @@ Transit-dynamics reads via substrate Friedmann + dS cascade through N_pivot=55; 
 **E58: Mellin-Strip / Convergence-Cone Theorem** -- $S_d = \{0, 2, 4, 6, 8\}$ (CM-1995 dim spectrum at $d=8$ for SU(3)); $\alpha_R(L=3) \approx 0.761,\quad \alpha_R(L=7) \approx 1.032$
 INFINITE-VECTOR class extension of the Mellin-Dirichlet identity via Zubarev profile $\mathcal{M}[\exp(-x/\Lambda_Z^2)](s) = \Lambda_Z^{2s}\Gamma(s)$. Pole set $S_d = \{0,2,4,6,8\}$ for SU(3) at d=8 fixes Mellin-pole structure of every regulator-class Λ-asymptotic expansion. S85 / S86 W1b-T5 (§VII.U.6 / §VII.T). Feeds: E48, E59.
 
+### Extensions (E67-E68 — S89-S118 era)
+
+**E67: λ²-Moment Monotonicity Closed Form (the exflation gradient)** -- $\dfrac{dM_2}{d\tau} = d\cdot\!\!\sum_{(p,q)}\!\big[C_2(p,q)\,g_C(\tau) + g_S(\tau)\big] > 0 \quad \forall\,\tau>0,\quad = 0\ \text{at}\ \tau=0,\ \text{L-uniform}$
+Weitzenböck–Lichnerowicz closed form for the τ-derivative of the second spectral moment $M_2 = \langle\lambda^2\rangle$. STRICTLY positive for all τ>0, vanishing ONLY at the cold bi-invariant point τ=0, uniform in L_max. This IS the exflationary spectral-complexification gradient — the substrate-first content of "space expands": at τ=0 (maximally symmetric cold start) the spectrum is stationary; any τ>0 strictly grows spectral complexity. Anchors the canonical action gradient $dS/d\tau = \lambda_{\text{action-grad}} = 58672.8 \approx +58{,}673$ (the Jensen-flow driver; $\lambda^2_{\text{grad}} = 213991.8$; $\min\,dM_2/d\tau = 1.733\times10^{-4}$). Sharpens E7 (structural monotonicity) from "no interior minimum" to the explicit sign-definite gradient off τ=0. S102 (`TRD2-MONOTONICITY-ANALYTIC`, Sage-QQ closed form) → S103 W1-2 landing (§VII.BW, STAGE-1-CANDIDATE). Feeds: E7, E28 (exflation direction).
+
+**E68: a₂^{Mellin}(LC) Genesis Gravity Moment** -- $a_2^{\text{Mellin}}(\text{LC}) = -0.01259583 \neq 0$ at the τ=0 Levi-Civita genesis operator; load-bearing pole $(\text{pole\_in\_}s=3,\ \text{curvature-grade}\ n=2)$; LC pole-tower index $s=7$
+The $a_2$ Seeley–DeWitt (gravity) spectral moment is NONZERO at the τ=0 genesis (cold Levi-Civita) operator — gravity is already present as the second spectral moment at the substrate's cold start, before the Jensen deformation switches on. Evaluated as a Mellin-cone residue of $\zeta_{D_K}^{\text{LC}}(s)$ on the genesis pole-tower. **Pole-labeling** (per `regulator-pin-discipline.md §"Mellin Pole-Set Labeling"`): the tower-NAMING index is $s=7$; the LOAD-BEARING $a_2$ pole is curvature-grade $n=2$ = $\text{pole\_in\_}s=3$ (Conv. A double-power), NOT the literal $s=7$. Cross-pillar (Pillar-VII genesis ↔ emergent gravity). S103 W2-2 (§VII.BT, STAGE-3). Feeds: E30 (Sakharov G_N context), E75 (emergent metric).
+
 ---
 
 ## Domain 2: BCS Many-Body (9 equations)
@@ -102,7 +111,7 @@ Barcelo acoustic-metric temperature matches BCS thermodynamics to 0.7%. Zero fre
 
 ---
 
-## Domain 3: Josephson / Fabric (6 equations)
+## Domain 3: Josephson / Fabric (7 equations)
 
 **E20: Ornstein-Zernike Propagator** -- $P_G(K) = T/(J K^2 + m_G^2)$
 Goldstone phase propagator on Josephson lattice. $K^2$ protected by Goldstone theorem. $m_G = 0.070\;M_{KK}$ (Leggett mode). S47-48. Feeds: E23-E25.
@@ -114,7 +123,7 @@ Josephson couplings: $J_{C^2}=0.933$, $J_{su(2)}=0.059$, $J_{u(1)}=0.038\;M_{KK}
 Spectral action two-point function. Pole spread 110% ($C_2$: 1.33 to 9.33), qualitatively distinct from Goldstone (0.051%). Breaks the $\alpha_s = n_s^2-1$ identity. S50-51. Feeds: E24.
 
 **E23: $\alpha_s = n_s^2 - 1$ Identity** -- Five proofs lock running to tilt for $K^2$ propagators on compact Josephson lattices
-Gives $\alpha_s = -0.069$ at 6$\sigma$ from Planck. WALL (W7) for the phase sector; SA correlator (E22) is the escape. **Note**: Superseded by E48 with Sage-exact rational form post-S82-W3 single-pole-Mellin closure; current canonical α_s is +0.00117 (RUNNING-NS-63 re-pin S85). S50 → S87 W2-1. Feeds: E24, E33; superseded by E48.
+Gives $\alpha_s = -0.069$ at 6$\sigma$ from Planck. WALL (W7) for the phase sector; SA correlator (E22) is the escape. **Note**: Superseded by E48 with Sage-exact rational form post-S82-W3 single-pole-Mellin closure; current canonical α_s is the S92 scale-separated PAIR — substrate-distance (BZ) −0.0858728 vs Goldstone-pivot ≈0 (CMB channel), per E76 — NOT the single-label +0.00117 (S85 RUNNING-NS-63) / −0.069 (S49 O-Z), which conflated the two channels. S50 → S87 W2-1. Feeds: E24, E33; superseded by E48.
 
 **E24: SA-Goldstone Mixing** -- $P_{\mathrm{phys}}(K) = (1-\beta)P_G(K) + \beta\,\chi_{SA}(K)$
 Convex combination: $n_s \in [\min, \max]$ at each $K$. At $K < K^* = 0.087\;M_{KK}$: $n_s = 0.965$ achievable with $\beta > 0.9$. S51 (Window 1, Wall W9). Feeds: E31.
@@ -122,9 +131,14 @@ Convex combination: $n_s \in [\min, \max]$ at each $K$. At $K < K^* = 0.087\;M_{
 **E25: Leggett Phi Crossing** -- $\omega_{L2}/\omega_{L1} = \phi_{\mathrm{paasch}} = 1.53158$ at $\tau = 0.211686$
 Machine precision ($4.4\times10^{-15}$). Geometric identity connecting BCS collective dynamics to Dirac eigenvalue ratio. $Q = 670{,}000$. S49-50. Feeds: E20.
 
+### Extension (E71 — S89-S118 era)
+
+**E71: Two-Layer Substrate Sound Speed** -- $c_s^2 = 0$ (topological, Layer-1; $< 9.21\times10^{-4}$, Kasparov-product factorization); $\quad c_s = 0.56853$ (a₂-hydrodynamic, GGE-fold; regime-MARGINAL)
+The substrate carries TWO structurally distinct sound speeds at two layers — a substrate-first subtlety that a single "c_s" label conflates. (i) The TOPOLOGICAL Goldstone-phase sound speed is EXACTLY zero: $c_s^2 = 0$ by Kasparov-product factorization ($m_{\text{Goldstone}}^{4D} = 0$ exactly; S74 QA-VdD → S96 → §VII.BH), bound $< 9.21\times10^{-4}$, scheme-independent — the dark-sector sound-speed falsifier reads off this topological zero. (ii) The a₂-HYDRODYNAMIC sound speed at the GGE fold is $c_s = c_{s,\text{a2curv,GGE-fold}} = 0.5685294372$ (S118, regime-MARGINAL) — the emergent-fluid sound speed entering the A_s amplitude (E73). NOT in tension: c_s²=0 is the topological Goldstone mode (the phase propagator E20); c_s=0.5685 is the a₂-curvature hydrodynamic mode. §VII.BH (S96 W7-8, `c_s²=0` Kasparov) + `c_s_a2curv_GGE_fold` (S118 `CF-S118-AS-CS-SUBSTRATE-FIRST`). Feeds: E73 (A_s via c_s), dark-sector sound-speed falsifier.
+
 ---
 
-## Domain 4: Cosmological Mapping (11 equations: 6 baseline + 5 extensions)
+## Domain 4: Cosmological Mapping (16 equations: 6 baseline + 10 extensions)
 
 ### Baseline (E26-E31, S17a-S52)
 
@@ -135,16 +149,16 @@ Gauge coupling ratio from Jensen modulus. $\tau_0 = 0.2994$ reproduces SM Weinbe
 Rolling modulus violates atomic clock bounds by 15,000x. Closes all rolling quintessence. S22d E-3. Feeds: E28.
 
 **E28: Geometric $w=-1$** -- $w_0 = -1 + O(10^{-29})$, $w_a = 0$
-From monotonicity (E7) + effacement (E34) + clock (E27). Zero free parameters. Triple-locked. S42/S50. Feeds: E33. **Note**: Volovik-partition branch w_0 = -0.918 (canonical) at S58+ via E44/E45 closes the 114 OOM CC gap; w_0 = -1 here is the substrate-monotonicity-only limit.
+From monotonicity (E7) + effacement (E34) + clock (E27). Zero free parameters. Triple-locked. S42/S50. Feeds: E33. **Note**: Volovik-partition branch w_0 = -0.918 (canonical) at S58+ via E44/E45 closes the 114 OOM CC gap; w_0 = -1 here is the substrate-monotonicity-only limit. **S118 observational status**: w_0 = -0.918 @ 2.13σ (LIVE-PENDING DESI DR3; R_842 branch -0.842454); w_a = 0 @ 3.43σ vs DESI DR2 (atlas-04 C5 BROKEN — framework prediction fixed, data moving away).
 
 **E29: CDM by Construction** -- $T^{0i}_{4D} = 0$ (algebraic), $v_{\mathrm{eff}} = 3.48\times10^{-6}c$, $\sigma/m = 5.7\times10^{-51}$ cm$^2$/g
 Fiber-localized Bogoliubov quasiparticles. Five independent proofs. S44. Feeds: E33, E47.
 
 **E30: Sakharov Induced Gravity** -- $G_N^{\mathrm{ind}}/G_N^{\mathrm{obs}} = 2.29$ at $\Lambda = 10\,M_{KK}$ (0.36 OOM)
-Newton's constant from KK spectrum via Sakharov (1968). Polynomial and log agree to factor 2.6. S44. Feeds: E28.
+Newton's constant from KK spectrum via Sakharov (1968). Polynomial and log agree to factor 2.6. S44. **S101 sharpening**: the G_N ratio closes EXACTLY, G_N^FW/G_N^obs = 1.000000, via the spinor factor √16 = 4 (E74), pinning the H₀ anchor 67.40. Feeds: E28, E74, E75.
 
 **E31: $K_{\mathrm{pivot}}$ Scale Mapping** -- $K_{\mathrm{fabric}} = k_{\mathrm{CMB}} \cdot e^{N_{\mathrm{total}}} / M_{KK}$
-THE load-bearing mapping. Requires $K < 0.087\,M_{KK}$ for viable $n_s$, needing $\geq 3.1$ e-folds from $\tau_i \leq 1.7\times10^{-5}$. S51 (EFOLD-MAPPING-52). Feeds: E24, E33. THE decisive gate.
+THE load-bearing mapping. Requires $K < 0.087\,M_{KK}$ for viable $n_s$, needing $\geq 3.1$ e-folds from $\tau_i \leq 1.7\times10^{-5}$. S51 (EFOLD-MAPPING-52). Feeds: E24, E33. THE decisive gate. **S116 reframing**: the "≥3.1 e-folds" count is an inflation-internal (category-C) intermediate that does NOT transfer as a binding substrate gate (`phononic-framing.md §"IS-NOT-IN A/B/C"`); the genuine obligations it proxied — Ω_k flatness (PASS 0.368σ, S117), n_s, the k-window — are re-homed on substrate-native gates.
 
 ### Extensions (E44-E51, S58-S88)
 
@@ -161,17 +175,28 @@ Tests Volovik tracking-vacuum scenario survival across nucleosynthesis. ρ_vac(B
 DM-to-DE ratio determined by ratio of two gaps (Leggett collective vs Josephson). DM = δq fluctuations of vacuum variable around q_0. Substrate-IS state-pair functional; Type-F partition admits algebra-INVARIANT central-projection trace closed-form mechanical evaluation per `mechanical-closure-discipline.md §"Layer-separability carve-out"`. 0.6% from Planck Ω_DM h². S70 / S56 anchor (LEGGETT-MOMENT-70 / S83). Feeds: external test.
 
 **E48: α_s Sage-Exact Identity (post-S82 sharpening)** -- $\alpha_s = n_s^2 - 1 = -8587279/100000000$ (Sage-exact rational at u_pivot = 19649/351)
-Single-pole Mellin closure at substrate-distance-1; algebra-axis Cell I (INVARIANT × s=3) per §VII.U.2 4-corner classification. Substrate ceiling $|\delta\alpha_{\text{substrate}}| \leq 8.65\times10^{-5}$ absolute (10⁴× below sign-flip requirement δα = 0.069). Hardens 11.31σ → 16.90σ vs Fairbairn-2025 ACT+P+SPT+eBOSS canon. **Supersedes E23** with the post-S82-W3 single-pole-Mellin-grade theorem. Note: canonical S85 RUNNING-NS-63 re-pin gives α_s framework value +0.00117 (current LCDM tension +2.70σ, was 6.0σ pre-S85). S87 W2-1 + W2-4 / S86 W-2 6-row family (§VII.X.1 / §VII.AB). Feeds: E60.
+Single-pole Mellin closure at substrate-distance-1; algebra-axis Cell I (INVARIANT × s=3) per §VII.U.2 4-corner classification. Substrate ceiling $|\delta\alpha_{\text{substrate}}| \leq 8.65\times10^{-5}$ absolute (10⁴× below sign-flip requirement δα = 0.069). Hardens 11.31σ → 16.90σ vs Fairbairn-2025 ACT+P+SPT+eBOSS canon. **Supersedes E23** with the post-S82-W3 single-pole-Mellin-grade theorem. Note: the S85 RUNNING-NS-63 +0.00117 re-pin is HISTORICAL — SUPERSEDED by the E76 two-scale resolution below (it conflated the BZ and pivot channels; the pivot-channel CMB value is ≈0, not +0.00117). S87 W2-1 + W2-4 / S86 W-2 6-row family (§VII.X.1 / §VII.AB). Feeds: E60, E76. **Scale-tagging (E76)**: the substrate-distance (BZ) running is −0.08587279 (Mellin s=3, inside the BZ); the Goldstone-pivot running is ≈0 (P_{∇φ}=K⁰ at the CMB pivot); which a detector measures is set by deg(T_{BZ→pivot})=2 NON-SCALAR — TWO scale-separated observables (54.04 decades apart), not competing re-pins of one value.
 
 **E49: UNIFIED A_s Closure** -- $A_s^{\text{UNIFIED}} = A_{s,\text{bare}}\cdot F_{\text{amp}}\cdot c_{\text{sub}}^{-1}\cdot f_{\text{conv}}$, $A_{s,\text{bare}} = \tilde{H}^2/(8\pi^2\,\varepsilon_H)$, $c_{\text{sub}}(\tau_{\text{fold}}) = 2.238$, $F_{\text{amp}}^{\text{3PI}} = 47.92$
-Ledger form for the scalar power-spectrum amplitude consolidating Mukhanov-Sasaki bare squeeze with substrate-compaction multiplier (c_sub) and parametric amplification ceiling (F_amp 3PI NLO 1/N closure). c_sub_baseline = 2.238 is the S78 W2-E central pin; F_amp_3PI = 47.92 PASS at L_max=3. **Substitution chain**: c_sub > 1 ⇒ 1/c_sub < 1 ⇒ A_s suppressed at fold; F_amp > 1 ⇒ A_s amplified. S80 (UNIFIED-AS-79) / S82 W3-5 / S83 G7 (falsifier-master-inventory). Feeds: gate.
+Ledger form for the scalar power-spectrum amplitude consolidating Mukhanov-Sasaki bare squeeze with substrate-compaction multiplier (c_sub) and parametric amplification ceiling (F_amp 3PI NLO 1/N closure). c_sub_baseline = 2.238 is the S78 W2-E central pin; F_amp_3PI = 47.92 PASS at L_max=3. **Substitution chain**: c_sub > 1 ⇒ 1/c_sub < 1 ⇒ A_s suppressed at fold; F_amp > 1 ⇒ A_s amplified. S80 (UNIFIED-AS-79) / S82 W3-5 / S83 G7 (falsifier-master-inventory). Feeds: gate, E73. **S111+ update**: the canonical A_s is now the impulse-quench Bogoliubov form A_s_FW = 1.5367e-8 (E73), FUNCTIONAL-PLURALISM-PERMANENT (S114); the "3.15-OOM-gap / excluded" framing is REMOVED — A_s is a POINT observable.
 
 **E51: f_NL Three-Pathway Prediction** -- $f_{NL}^{\text{equilateral}} = 0.0547$, $f_{NL}^{\text{folded,GGE}} = 0.129$, $f_{NL}^{\text{folded,analytic}} = 0.7685$
 3-point spectral moment from GGE-relic 3-pt correlation (S82 equilateral); GGE-folded (S67 BISPECTRUM-67); analytic-template-folded (S85 W9-3). Pathway-keyed canonical_constants entries `f_NL_FW_{S82,S67,S85}_{equilateral,folded,analytic}`. CMB-S4 / 21-cm / LiteBIRD discriminator. S82 (GGE) / S67 (folded) / S85 W9-3 (analytic-template). Feeds: external test.
 
+### Extensions (E72-E74 — S89-S118 era)
+
+**E72: Route-D KK-Reduction Factor** -- $\dfrac{M_{\text{phys}}}{M_{\text{spec}}} = \sqrt{\dfrac{4}{64}} = \dfrac14 = \dfrac{1}{\sqrt{16}};\quad \dim\Delta_{12}=64=4\times16,\ \dim\Delta_4=4,\ \mathrm{Tr}\,\Delta_8=16$
+Only 4 of the 64 KK blocks survive the Route-D reduction (surviving-block dimension 4 out of $\dim\Delta_{12}=64=4\times16$), giving the physical-to-spectral mass ratio $\sqrt{4/64}=1/4$. This is the KK-threshold reduction factor underlying the $m_H = 131.8$ GeV route-pin (KK-threshold DIRECT, `m_H_FW_KK_threshold`; supersedes the 127.5 Aitken cross-check). Cross-term proviso $a_2^\zeta(M)\cdot a_0^\zeta(K)$ PASS-verified. S101 W6-5 → STAGE-3 S102 W2-2 (§VII.BQ, audit `46e0350e`). Feeds: m_H = 131.8 GeV.
+
+**E73: A_s Impulse-Quench Bogoliubov Form (functional-pluralism)** -- $A_s \propto |\beta_k|^2\ \text{(impulse-quench Bogoliubov pair-creation)};\quad A_s^{\text{FW}} = 1.5367\times10^{-8}\ (+0.864\ \text{OOM}),\quad A_s^{(c_s)} = 3.2994\times10^{-9}\ (+0.196\ \text{grid})$
+The scalar power-spectrum amplitude from the impulse-quench (supersonic-transit) Bogoliubov coefficient $|\beta_k|^2$ — the parametric pair-creation route, structurally distinct from the E49 UNIFIED ledger form. FUNCTIONAL-PLURALISM-PERMANENT (S114): multiple substrate functionals converge to A_s as a POINT observable (impulse-quench $A_s^{\text{FW}} = 1.5367\times10^{-8}$, +0.864 OOM; c_s-grid route $3.2994\times10^{-9}$, +0.196 — the c_s of E71). **Supersedes the "3.15-OOM-gap / excluded" framing** — A_s is no longer excluded. S111 (impulse-quench) + S114 (functional-pluralism); `A_s_FW` cc.py:720. Updates E49; feeds external CMB-amplitude test.
+
+**E74: H₀ G_N-Ratio Anchor (spinor factor √16 = 4)** -- $H_0 = H_{\text{obs}}\cdot\sqrt{N},\quad \sqrt{N} = \sqrt{16} = 4\ \text{EXACT},\quad G_N^{\text{FW}}/G_N^{\text{obs}} = 1.000000 \Rightarrow H_0 = 67.40\ \text{km/s/Mpc}$
+The H₀ anchor via the G_N-ratio channel: the spinor factor $\sqrt{16}=4$ (16 = $\dim\mathbb{C}^{16}$ = one SM generation's fiber Hilbert space, E10) closes $G_N^{\text{FW}}/G_N^{\text{obs}} = 1.000000$, pinning $H_0 = 67.40$. **Framing caveat** (per E66 normalization non-universality): H₀ is a DIMENSIONFUL observable the substrate does NOT set from within — this is an ANCHOR-LADDER value, NOT a bare zero-parameter prediction (`H0_FW` is not a stored canonical constant). Supersedes the RETIRED 65.4 and 68.77. Sharpens E30 (Sakharov G_N, was 2.29 at 0.36 OOM) to the exact G_N ratio via the spinor factor. S100a/S101 W4-4 (√16=4 resolved S100a; NON-PROMOTION-BY-HELD-NUMBER lifted). Updates E30; feeds anchor-independent H₀ → CF-S102.
+
 ---
 
-## Domain 5: Structural Identities (5 equations)
+## Domain 5: Structural Identities (7 equations)
 
 **E32: Trace Theorem** -- $S[UDU^\dagger] = S[D]$ for all $D$, $f$, $U$
 Spectral action blind to Goldstone mass by cyclic invariance. S48 (Wall W11). Feeds: E20.
@@ -188,6 +213,14 @@ $U(1)_7$ cannot be gauged within NCG. $K_7$ is diffeomorphism, not gauge. Three 
 **E36: $a_2^{\mathrm{bos}}/a_2^{\mathrm{Dirac}} = 61/20$** -- Exact, representation-theoretic, $\tau$-independent
 Gilkey formula ratio. TT tensors 87.7% of bosonic $a_2$. S44. Feeds: E4, E30.
 
+### Extensions (E69-E70 — S89-S118 era)
+
+**E69: Metric-Without-Curvature 12-Invariant Triviality Chain** -- $c_1 = 0\ \wedge\ e_2 = 0\ \wedge\ \mathcal{A}^{\text{WZ}} = 0\quad\text{on non-degenerate band metric}\ g \approx 982.5$
+The lowest J/BDI-real Dirac doublet eigenbundle is topologically TRIVIAL on every curvature invariant — Chern $c_1=0$ (S96 P-30w), Euler $e_2=0$ (S105, defect-masked $4.51\times10^{-17}$), graded-Ω Wilczek–Zee $\mathcal{A}^{\text{WZ}}=0$ (S105, analytic $1.284\times10^{-17}$, chirality-frac EXACTLY 1.0) — while the band metric is NON-DEGENERATE ($g\approx982.5$). Substrate-first: the emergent metric EXISTS (non-degenerate) but carries no intrinsic curvature/holonomy — curvature is an emergent a₂-channel property (E75), not a band-eigenbundle invariant. 12-invariant triviality chain consolidating three independent geometric zeros. S106 W3-1 (§VII.CA, STAGE-3; feeds S105-EULER-DEFECT-MASKED + S105-AWZ-ANALYTIC). Feeds: E75 (emergent metric without intrinsic curvature).
+
+**E70: ε_LX Foam-Protection Operator Identity** -- $[\,H_{\text{foam}}(N),\ \varepsilon_{LX}\,] = 0\quad \forall\,N\ \text{in the Wheeler-}\sqrt{N}\ \text{class}$
+The external between-generation coupling $\varepsilon_{LX}$ (the channel carrying the E61 Yukawa magnitude + E64 SHAPE) commutes EXACTLY with the Wheeler-$\sqrt{N}$ foam Hamiltonian for every foam configuration $N$ — a foam-stable index. Concrete robust-topological occupant of the geometry/topology dichotomy wall (W22): topological-index observables $[H_{\text{foam}},\text{index}]=0$ survive all foam configurations, while spectral-geometry observables are foam-fragile. Substrate-first: the texture-carrying channel is a topological invariant of the substrate, robust against Planck-scale foam. S100a W4-14 / S101 W6-1 (§VII.BM, STRUCTURAL-THEOREM permanent). Feeds: E61 (ε_LX externality carrier); Wall W22 exemplar.
+
 ---
 
 ## Domain 6: Methodology Floor (NEW; 2 equations) — S86-S88
@@ -202,7 +235,7 @@ Algebra-INVARIANT spectrum-only functionals and algebra-DEPENDENT state-pair fun
 
 ---
 
-## Domain 7: Cross-Pillar Bridge (NEW; 6 equations) — S86-S88
+## Domain 7: Cross-Pillar Bridge (8 equations) — S86-S118
 
 > **Provenance**: Domain added 2026-05-09 per S86 W-5 + S88 W4a-17 K=3 MANDATORY closure. Hosts substrate-IS / laboratory-IN bridge identities whose calibration corpus is the K=3 MANDATORY-status discipline at `cross-pillar-bridge-anatomy.md`. Connects TWO pillars via HKR (Hochschild-Kostant-Rosenberg) / Connes-Karoubi pairing / K-theory boundary maps with 5-IS-not-IN anatomy + 3-level structural-confidence ladder. Cross-link to Atlas-11 (cross-pillar-bridge-corpus) for the per-instance K-counter advancement log.
 
@@ -223,6 +256,38 @@ Inheritance-falsifier cohomology-asymmetry test (Class B; (Δ_B/Δ_A)^p cancella
 
 **E57: χ_* Inheritance Morphism (rank-2 ker)** -- $\chi_*: \mathcal{A}_K = \mathbb{C}\oplus\mathbb{H}\oplus M_3(\mathbb{C}) \to M_2(\mathbb{C})$, $\chi_*(M_3(\mathbb{C})) = 0$, $\mathrm{rank}(\ker \iota_*) = 2$
 Inheritance morphism χ_* (3He-B BdG-restriction). Algebra projection from substrate finite NCG algebra to BdG sector M_2(ℂ); kernel carries substrate degrees-of-freedom that do not inherit. rank-2 invokes Class-A NULL row-wise + Class-B cohomology-asymmetry ratio test. Forward dispatch: 4-gate falsifier (F1/F2/F5 NULL + ratio 7.3250 ± 0.1% + F3/F4 NULL + Gate-4 multi-pressure slope). S86 W-5 / S87 W11-C5/C6 (`inheritance-falsifier-protocol.md` / falsifier-master-inventory §47-§54b).
+
+### Extensions (E75-E76 — S89-S118 era)
+
+**E75: Type-IV Core EMT → Emergent Metric g_M Bridge (BINDING L⁻³, REGISTRY-PASS)** -- $\mathrm{Tr}_{M_2(\mathbb{C})}\!\big(P_{a_2}\cdot T^{(\text{IV})}\big) \xrightarrow{\ \text{HKR}\,\circ\,\text{Connes-Karoubi}\ } g_M\ (\text{lab a₂-emergent metric});\quad \|\cdot\| \leq C\,L^{-3},\ \text{Level-3}\ 7.5\times10^{-9} < \text{Level-2}\ 10^{-3}$
+Pillar I↔VI↔IV bridge: the Type-IV core energy-momentum-tensor trace against the $a_2$ central projection converges, under the HKR ∘ Connes-Karoubi bridge map, to the laboratory $a_2$-emergent 4-metric $g_M$. BINDING Level-2 envelope $L^{-3}$; empirical Level-3 residual $7.5\times10^{-9} < 10^{-3}$ Level-2 ⇒ REGISTRY-PASS. Substrate-first realization of "the metric emerges from the a₂ Seeley–DeWitt coefficient" as a registry-grade cross-pillar bridge (E69: the emergent metric carries no intrinsic curvature). S106 W3-3 (§VII.CB, STAGE-3). Feeds: E30 (a₂→G_N), E71 (a₂-hydrodynamic c_s).
+
+**E76: Composite Bridge-Map Transport Degree + Parity Selection Rule** -- $O^{\text{pivot}} = O^{\text{substrate}}\ \text{IFF}\ \deg(T_{BZ\to\text{pivot}})\ \text{is the T2-VACUOUS (scalar) case};\quad B = \big(M_{KK}^{d_A}\ \text{scale leg}\big)\odot(\text{dimensionless morphism})$
+The composite bridge map decides whether a substrate (BZ) observable and its CMB-pivot image coincide. $\deg(T_{BZ\to\text{pivot}}) = 2.0$ NON-SCALAR for α_s ⇒ the substrate-distance running $\alpha_s^{\text{sub}} = -0.08587279$ (Mellin s=3, inside the BZ) and the Goldstone-pivot running $\alpha_s^{\text{pivot}} \approx 0$ are DISTINCT observables (which a detector sees is set by the transport degree). **Parity selection rule** (S110 W4): the morphism sector is EVEN-degree ($-2(s-s')$ Wodzicki ratios, $0$ HKR); the only ODD carrier is the $M_{KK}^1$ scale leg ($\deg=+1$); so every odd-mass-dimension observable ($d_A$ odd) is FORCED onto the sign-locked $M_{KK}^1$ scale leg — no even-degree morphism can correct it. Machinery behind the α_s two-scale split (E48), the κ-sign-lock (§VII.CF: LRD-T [3500,6500] K unreachable knob-free), and the r=16ε clock-not-field obstruction (E65). S94 W1-3 → STAGE-3 S95 W1-1 (§VII.BG, Connes-Karoubi K₀-pairing at a₄ pole s=2) + `deg_T_BZ_pivot=2.0` (S93 W7-1 / S110 W4) + §VII.CF (S110 W4 → S111 W5). Feeds: E48 (α_s scale-tag), E65 (r-obstruction).
+
+---
+
+## Domain 8: Intra-Pillar SM-Texture Externality (NEW; 6 equations) — S97-S117
+
+> **Provenance**: Domain added 2026-07-01 per the S97–S117 intra-pillar obstruction cluster — the single largest new structural family of the S89–S118 era (RECON2 §E). These are substrate SELF-statements: the finite algebra $\mathcal{A}_K = \mathbb{C}\oplus\mathbb{H}\oplus M_3(\mathbb{C})$ proves, from its own Wedderburn structure, that the Standard-Model fermion-mass texture (magnitude, generation-crossing sign, CKM mixing, per-generation shape) and the dimensional scale are NOT deliverable by any $\mathcal{A}_K$-built form — they are EXTERNAL inputs (the $\varepsilon_{LX}$ channel + an imported unit). Substrate-first reading: the spectral triple fixes the *conformal / dimensionless / representation-theoretic* content and forecloses the rest; the SM texture is not IN the substrate. STRUCTURALLY ORTHOGONAL to Domains 1–5 (algebra-DEPENDENT multiplicity-leg statements per `cross-pillar-bridge-anatomy.md §"Algebra-axis orthogonality K-counter"`). Cross-link atlas-07 §XVI (BL/BN/BQ/BS/BV/BX/CG/CK) + atlas-02 closures.
+
+**E61: Skolem–Noether Multiplicity-Scalar Commutant Identity (generation-blindness)** -- $\mathcal{A}_K = \mathbb{C}\oplus\mathbb{H}\oplus M_3(\mathbb{C})\ (\text{3 non-isomorphic simple summands}) \Rightarrow \forall\,\sigma\in\mathrm{Aut}(\mathcal{A}_K):\ \sigma\ \text{block-inner} \Rightarrow \text{every}\ \mathcal{A}_K\text{-built operator is multiplicity-SCALAR};\quad R_{\text{cross}} = 1.019704 \approx 1$
+The physical-generation hierarchy lives on the multiplicity leg $\mathbb{C}^{n_{\text{gen}}}$; NO $\mathcal{A}_K$-built form (inner-fluctuation / twisted-inner / opposite / left-metric / C₂-or-C₃-Casimir-graded / γ₉-traced / right-regular) resolves it — Skolem–Noether forces multiplicity-scalar, so the between-class Yukawa ratio saturates at $R_{\text{cross}}=1.0197$ (vs SM ratios $\sim10^2$–$10^3$). ⇒ the Yukawa MAGNITUDE is EXTERNAL to A_K (delivered by the $\varepsilon_{LX}$ between-generation channel, $[H_{\text{foam}}(N),\varepsilon_{LX}]=0$ per E70). Algebraic basis: Wedderburn $\dim_{\text{HS}} = \sum_i \mathrm{rank}_i^2\cdot\dim(D_i)$ on A_K (§VII.BC.OP-PROJ). S97 W-2 auth → STAGE-3 S99 W3-1 (§VII.BL, Stage-2 PASS-AND connes×axis-B, audit `0f0c4f65`). Feeds: E62, E64, E66.
+
+**E62: CKM Triality Center-Character Selection Rule** -- $t(p,q) = (p-q)\bmod 3;\quad \langle\psi_a|O|\psi_b\rangle \neq 0\ \text{admissible IFF}\ t(a)\equiv t(b)+t(O)\ (\mathrm{mod}\ 3);\quad t(|f|^2)\equiv 0$
+Generation sectors carry $\{t(\text{gen3}), t(\text{gen2}), t(\text{gen1})\} = \{1, 0, 0\}$; the mass operator has $t(O)=0$. gen3↔gen2 and gen3↔gen1: $1 \not\equiv 0\ (\mathrm{mod}\ 3)$ ⇒ CG-INADMISSIBLE ⇒ $M[\text{gen3},\text{gen2}] = M[\text{gen3},\text{gen1}] = 0$ EXACTLY (triality-masked); gen2↔gen1 (Cabibbo): $0 \equiv 0$ ⇒ SOLE admissible channel, $M[\text{gen2},\text{gen1}] = 0.1534$. The inter-generation mixing PATTERN is an SU(3) center-character selection rule, not a fitted texture. $\Omega_D/\Omega_c = 2.0$ Sage-exact. S103 W1-3 (§VII.BX, STAGE-3; SOURCE-DOUBLE-CITE-CO-PRIMARY: center-character CG rule + generation t-charges). Feeds: external CKM test.
+
+**E63: Dual-Z₃ Generation Lever (exact closed form, lepton-only)** -- $c(\varphi) = \dfrac{1}{1+8\cos^2\varphi} \xrightarrow{\ \varphi\in\{Z_3\ \text{fixed pts}\}\ } \{\tfrac19,\ \tfrac13,\ \tfrac13\},\quad \text{heavy/light}=3\ \text{EXACT},\quad \left.\dfrac{\partial\Omega}{\partial\varphi}\right|_{\text{quark}}\equiv 0$
+The one EXACT positive handle inside the obstruction family: a dual-Z₃ lever $c(\varphi)$ collapses to the ratio set $\{1/9, 1/3, 1/3\}$ at the Z₃ fixed points (heavy:light $= 3$ exactly). Structurally LEPTON-ONLY — the quark sector's $\partial\Omega/\partial\varphi \equiv 0$, so the lever cannot act on quark generations. Confirms the SM texture is external EXCEPT for this single substrate-internal lepton-generation ratio. S100a W2-1 / S101 W6-2 (§VII.BN, EXACT-RESULT permanent). Feeds: PMNS / lepton-generation test.
+
+**E64: SHAPE-Branch Homogeneity Obstruction (unconditional)** -- $\mathrm{Tr}[\gamma_9\,D_K^{\text{odd}}] \equiv 0\ (\text{machine-exact});\quad \nexists\ \text{G-invariant sign-changing per-generation SHAPE}\in\{\mathcal{A}_K\text{-built}\cup\text{Casimir-graded}\cup\gamma_9\text{-traced}\cup\text{right-regular}\}$
+The fermion-mass SHAPE texture (per-generation sign structure of mass splittings) has NO G-invariant non-monotone sign-changing degree of freedom in any of the four exhaustive functional classes on $(\mathcal{A}_K, H_K, D_K, \gamma_9, J)$. D1: the γ₉-graded odd-power trace vanishes identically (machine-exact); D4: the right-regular representation closes external-as-a-coupling. ⇒ the SHAPE is EXTERNAL (the same $\varepsilon_{LX}$ channel that carries the E61 magnitude). S114 W3-3 → S115 W1-1, **UNCONDITIONAL S117 W2-1** (§VII.CK, STAGE-3-PERMANENT). Feeds: E61 (joint texture-externality); Wall W24.
+
+**E65: r=16ε Layer-Obstruction (clock is a modulus, not a field)** -- $\epsilon_H^{\text{sub}}\ \text{has no substrate image} \Rightarrow r = 16\epsilon\ \text{INAPPLICABLE};\quad \tau\in\text{Level-2 (moduli-deformation)},\ \tau\notin\text{Level-1 (field)}$
+Exact-solution form of the 5-argument VdD–Hawking inapplicability: the inflationary single-field consistency relation $r = 16\epsilon$ has NO substrate image because the "clock" $\tau$ is a Level-2 Jensen-TT deformation MODULUS, not a Level-1 dynamical field — there is no substrate slow-roll $\epsilon_H$ to feed $16\epsilon$. Substrate-first: exflation is a supersonic transit through a moduli-space fold (Mach 13.75), not a slow-rolling field, so the inflaton-consistency relation simply does not map. $r$ is instead set by the dual-pathway $r = 0.0075 / 0.0117$. S111 W1-4 → STAGE-3 S112 W2 (§VII.CG). Feeds: atlas-09 (r=16ε applicability retraction); replaces the LCDM $r=16\epsilon$ row per `phononic-framing.md`.
+
+**E66: Normalization Non-Universality + M_KK Self-Referential-Unit No-Go** -- $\mathcal{A}_K\ \text{fixes}\ [\text{conformal class} + \text{all dimensionless shapes}],\ \text{NOT}\ [\text{dimensional normalization}];\quad \mathrm{rank}[P_{\text{norm}}]=1\ (N_3=0\ \text{corollary})$
+The substrate spectral triple determines the conformal class and every dimensionless dynamical shape, but the overall dimensional metric normalization is rank-1 UNDETERMINED (the $N_3=0$ corollary). Equivalently (S112): $M_{KK}$ is a self-referential unit — the substrate cannot set its own dimensional scale from within; the scale is an EXTERNAL import. This is WHY dimensionful observables (H₀, M_KK) enter as anchor values, not bare zero-parameter predictions (E74). Companion no-go: no nontrivial Z/2-graded superalgebra extension of A_K exists (§VII.BJ — SUSY completion structurally excluded, Wall W23). S102 W1-4 (§VII.BS, STAGE-3) + §VII.CH root (S112 W2). Feeds: E74 (H₀ anchor caveat); Walls W23.
 
 ---
 
@@ -306,13 +371,46 @@ E4 (SA), E38 (a_n^SD) ---> E59 (layer-functor F + Phi correspondence)
                                          |
                                   cross-corner co-primary FORBIDDEN
                                   cross-pole co-primary FORBIDDEN
+
+
+              ========== S89-S118 Extensions ==========
+
+              --- Domain 8: SM-texture externality (the substrate does NOT deliver it) ---
+
+E2, E9, E10 --> E61 (Skolem-Noether: A_K-built => multiplicity-scalar; R_cross=1.02)
+                     |                                    |
+                     +--> E62 (CKM triality t={1,0,0}; Cabibbo sole admissible)
+                     +--> E64 (SHAPE Tr[g9 D^odd]=0; UNCONDITIONAL) --> [Wall W24]
+                     +--> E63 (dual-Z3 lever c(phi)=1/(1+8cos^2); lepton-only) [one exact handle]
+                     +--> E66 (normalization N3=0; M_KK external) --> E74 (H0 anchor)
+                                                                       |  [Wall W23: no SUSY ext.]
+E61 <-- E70 (eps_LX foam-protection [H_foam,eps_LX]=0) [Wall W22 occupant]
+E65 (r=16eps INAPPLICABLE: clock=Level-2 modulus, not field) <-- E76
+
+
+              --- Domain 1/4/3 extensions: exflation gradient, moments, observables ---
+
+E7 (mono.) --> E67 (dM2/dtau>0 L-uniform; dS/dtau=+58,673) --> E28 (exflation direction)
+E2, E4 --> E68 (a2^Mellin(LC)=-0.0126 genesis gravity moment) --> E30, E75
+E20 (Goldstone) --> E71 (c_s^2=0 topological | c_s=0.5685 a2-hydro) --> E73 (A_s)
+E4, E37 --> E72 (M_phys/M_spec=1/4 KK-reduction) --> m_H=131.8 GeV
+E49 --> E73 (A_s impulse-quench Bogoliubov 1.5367e-8; "excluded" REMOVED)
+
+
+              --- Domain 5/7 extensions: emergent metric + CMB-pivot transport ---
+
+E36, E60 --> E69 (metric-without-curvature c1=e2=A^WZ=0; g~982.5) --> E75
+E2, E38, E52 --> E75 (Type-IV EMT --HKR.CK--> emergent g_M; BINDING L^-3; REGISTRY-PASS)
+E48, E37 --> E76 (deg T_{BZ->pivot}=2 NON-SCALAR; parity: odd-d_A -> M_KK^1 sign-lock)
+                     |
+                     +--> alpha_s two-scale (sub -0.0859 | pivot ~0); CF kappa-sign-lock; E65
 ```
 
 ---
 
 ## Key Flow Paths
 
-The original five flow paths (Geometry to Dark Energy / Dark Matter / CMB Tilt / Gravity / SM) remain valid; the S52–S88 era introduces three new principal flows.
+The original five flow paths (Geometry to Dark Energy / Dark Matter / CMB Tilt / Gravity / SM) remain valid; the S52–S88 era introduces three new principal flows (6-8, + the Volovik-partition supplement 9); the S89–S118 era adds three more (10-12: SM-texture externality, emergent metric, CMB-pivot transport).
 
 ### Original baseline paths (Geometry → emergent physics)
 
@@ -332,6 +430,12 @@ The original five flow paths (Geometry to Dark Energy / Dark Matter / CMB Tilt /
 
 9. **Substrate-compaction relaxation**: E1 → E2 → E44 (Volovik tracking vacuum) → E45 (DILUTION-CC closure 1.032) → E48 (α_s Sage-exact identity, post-S82 sharpening). Closes the 114 OOM CC gap as expansion-history exflation observable at 0.01 OOM today.
 
+### S89-S118 extension paths
+
+10. **Substrate to SM-texture externality**: E2 → E9/E10 (SM quantum numbers) → E61 (Skolem–Noether multiplicity-scalar) → {E62 CKM triality selection rule, E64 SHAPE obstruction} → the SM fermion-mass texture is EXTERNAL to A_K (the ε_LX channel, E70). The framework DERIVES that it does not derive the Yukawa/CKM/SHAPE texture — a sharp structural boundary, not a gap. Exception: E63 dual-Z₃ lepton-generation lever (the one exact substrate-internal ratio). This is the single largest new structural cluster of S89–S118.
+11. **Substrate to emergent metric**: E1 → E2 → E4 (a₂ moment) → E68 (a₂^Mellin genesis ≠ 0) → E75 (Type-IV EMT → g_M, BINDING L⁻³, REGISTRY-PASS) → E69 (metric non-degenerate, curvature-trivial). The a₂ Seeley–DeWitt coefficient IS the emergent 4-metric, now a registry-grade cross-pillar bridge; the emergent metric exists without intrinsic band curvature.
+12. **Substrate to CMB-pivot transport**: E37 → E48 (α_s substrate) → E76 (deg T_{BZ→pivot} + parity selection) → α_s two-scale split (BZ −0.0859 vs pivot ≈0) + κ-sign-lock (§VII.CF) + r=16ε obstruction (E65). The transport degree governs which substrate observable a CMB detector actually measures; odd-mass-dim observables are forced onto the sign-locked M_KK¹ scale leg.
+
 **Gate status (post-S88)**:
 
 | Path | Status |
@@ -339,11 +443,14 @@ The original five flow paths (Geometry to Dark Energy / Dark Matter / CMB Tilt /
 | 1, 2, 4, 5 | STRUCTURALLY COMPLETE (baseline; S37-S52 era) |
 | 3 | CONDITIONAL on E31 (EFOLD-MAPPING-52, decisive gate); FUNCTIONAL-SELECT-67 carry-forward open |
 | 6 | STRUCTURALLY CLOSED (cross-pillar K=3 MANDATORY at S88 W4a-17 close) |
-| 7 | STAGE-1-CANDIDATE per `joint-theorem-promotion.md`; Stage-2 cross-axis verify queued for S89+ landau-path |
+| 7 | STRUCTURALLY CLOSED — §VII.W-3.LAB promoted **STAGE-3-PERMANENT at S100a** (blind Stage-2 11/11 PASS-AND, vdd×landau); 3He-B cocycle ratio 7.324992 preserved-intact falsifier LIVE |
 | 8 | STRUCTURALLY CLOSED (algebra-axis K=3 MANDATORY at S87 W-2 R3 close) |
 | 9 | STRUCTURALLY CLOSED (DILUTION-CC-66 PASS at 0.01 OOM); BBN-VOLOVIK-67 + TRANSIT-PS-67 carry-forwards open |
+| 10 | STRUCTURALLY CLOSED — SM-texture externality; §VII.BL/BX/CK STAGE-3-PERMANENT (CK unconditional S117); the ε_LX SHAPE+magnitude channel is EXTERNAL by Skolem–Noether (E61). E63 lepton lever is the sole substrate-internal handle |
+| 11 | STRUCTURALLY CLOSED — §VII.CB emergent-metric bridge STAGE-3, REGISTRY-PASS (Level-3 7.5e-9 < Level-2 L⁻³ 1e-3) |
+| 12 | STRUCTURALLY CLOSED — transport-degree machinery; §VII.BG STAGE-3 + §VII.CF κ-sign-lock STAGE-3; α_s two-scale split + parity sign-lock (E76) |
 
-The 22-session uplift hardens **substrate-IS / laboratory-IN** as the canonical framing axis for all forward bridges. Forward bridge candidates FWD-C1 (Pillar I↔II), FWD-C2 (Pillar II↔V), FWD-C3 (Pillar IV↔V) are pre-registered in atlas-11 for S88+ dispatch.
+The S52-S88 uplift hardened **substrate-IS / laboratory-IN** as the canonical framing axis for all forward bridges. **S89-S118 update**: FWD-C1 (Pillar I↔II) LANDED as §VII.AU (STAGE-3-PERMANENT S93) — the spectral-action↔CMB spine; the α_s a₄-transport bridge §VII.BG (E76) and the Type-IV EMT↔emergent-metric bridge §VII.CB (E75) joined it. FWD-C4 (Pati-Salam, §VII.BE) is a new STAGE-1 candidate. The dominant S89-S118 equational output, however, is the intra-pillar **SM-texture-externality** family (Domain 8, E61-E66): a cluster of STAGE-3-PERMANENT obstruction theorems proving — from the Wedderburn/Skolem–Noether structure of A_K alone — that the SM Yukawa magnitude, CKM mixing, per-generation SHAPE, and dimensional scale are EXTERNAL to the substrate algebra. This is a substrate-first sharpening of the framework's own boundary: it derives precisely what it does not derive.
 
 ---
 
@@ -353,3 +460,5 @@ The 22-session uplift hardens **substrate-IS / laboratory-IN** as the canonical 
 - **atlas-11-cross-pillar-bridge-corpus** (NEW): equations E52-E57 are jointly cited; atlas-03 carries the LaTeX form, atlas-11 carries the corpus instance number + K-counter status + Stage-2 verification queue.
 - **atlas-12-methodology-floor** (NEW): equations E59-E60 are jointly cited; atlas-03 carries substrate-physics derivation, atlas-12 carries enforcement framework (M1-M4 wave-classification conjunction, dual-SHA closure schema, methodology-wave-allowlist).
 - **atlas-02-mechanism-lifecycle**: equations driving closures (E45 DILUTION-CC, E47 LEGGETT-MOMENT, E48 α_s) appear as closure rows in atlas-02 era IX-XII partitioning.
+- **atlas-07-permanent-results §XVI (S89-S118 slots)** (NEW): E61/§VII.BL; E62/§VII.BX; E63/§VII.BN; E64/§VII.CK; E65/§VII.CG; E66/§VII.BS + §VII.CH; E67/§VII.BW; E68/§VII.BT; E69/§VII.CA; E70/§VII.BM; E71/§VII.BH; E72/§VII.BQ; E75/§VII.CB; E76/§VII.BG + §VII.CF. (E73 A_s + E74 H₀ are observable re-pins carried in the falsifier inventory / observable table, not §VII slots.)
+- **atlas-02-mechanism-lifecycle (Era XIII-XVI, S89-S118)** (NEW): the SM-texture-externality family (E61/E62/E64) + E65 (r=16ε INAPPLICABLE) + E71 (c_s²=0 topological → GW-walls=0 closure) appear as closure rows; E75/E76 + the §VII.AU/BG bridges as new doors. Cross-link RECON3 §1 Era XIII-XVI.

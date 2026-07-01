@@ -1,21 +1,21 @@
 # Atlas D10: Breakthrough Genealogy
 
-**Major breakthroughs cataloged**: 39
-**Updated**: 2026-05-09 (S67-S88 amendments; entries #23–#39 added)
+**Major breakthroughs cataloged**: 50
+**Updated**: 2026-07-01 (S89-S118 uplift; S119-current; entries #40–#50 added). Prior: 2026-05-09 (S67-S88 amendments; #23–#39).
 
 **Taxonomy** (7 categories — original 5 + 2 NEW post-S82):
 
-- **STRUCTURAL THEOREM** (machine-epsilon proof events): #1, #3, #6, #14, #17, #18, #28, #30, #31, #33, #38
-- **WALL DISCOVERY** (constraint-region exclusion events): #2, #4, #11, #20, #24
-- **PARADIGM SHIFT** (framing-error correction events): #7, #8, #9, #15, #19
-- **OBSERVATIONAL MATCH WITH 0 FREE PARAMETERS** (decisive computational closure events): #5, #10, #12, #13, #16, #23
+- **STRUCTURAL THEOREM** (machine-epsilon proof events): #1, #3, #6, #14, #17, #18, #28, #30, #31, #33, #38, #40, #43, #44, #46, #49
+- **WALL DISCOVERY** (constraint-region exclusion events): #2, #4, #11, #20, #24, #42, #47
+- **PARADIGM SHIFT** (framing-error correction events): #7, #8, #9, #15, #19, #41, #45
+- **OBSERVATIONAL MATCH WITH 0 FREE PARAMETERS** (decisive computational closure events): #5, #10, #12, #13, #16, #23, #48
 - **PROTECTION-STABILIZATION** (radiative-correction-survival events): #21, #22
-- **METHODOLOGY-FLOOR** (NEW post-S82; rule-file / template / skill structural advances closing audit-floor pathologies): #26, #27, #29, #34, #35, #36, #37
+- **METHODOLOGY-FLOOR** (NEW post-S82; rule-file / template / skill structural advances closing audit-floor pathologies): #26, #27, #29, #34, #35, #36, #37, #50
 - **CALIBRATION-CORPUS** (NEW post-S82; K-counter promotion events at K=3 or K=4): #25, #32, #39
 
-The two new categories surface because the post-S82 era is dominated by methodology-floor and calibration-corpus events; without them, the genealogy collapses post-S70 (only paradigm-shift and observational-match would survive, missing the structural backbone of the S82-S88 maturation).
+The two new categories surface because the post-S82 era is dominated by methodology-floor and calibration-corpus events; without them, the genealogy collapses post-S70 (only paradigm-shift and observational-match would survive, missing the structural backbone of the S82-S88 maturation). **The S89-S118 span REVERSES this composition** — 10 of its 11 breakthroughs (#40–#49) are substrate-physics and only one (#50) is methodology-floor — because the methodology machinery had matured by S88 and the physics frontier reopened along three fronts: matter-sector externality (#44), the derive/import boundary (#45/#46), and cosmological-amplitude closure (#48).
 
-> **Layer-distinction warning (per Sagan finding 10-2; added 2026-05-10)**: **Methodology-floor advances do NOT increase the framework's substrate-physics directional probability.** The METHODOLOGY-FLOOR (#26, #27, #29, #34, #35, #36, #37) and CALIBRATION-CORPUS (#25, #32, #39) categories collectively contain 10 of 39 entries (25.6%) but advance methodology-floor maturation only — they close audit-floor pathologies by construction at the layer-functor F methodology-side image (per `epistemic-discipline.md §"Layer-Decomposition"`), structurally distinct from the substrate-physics observational viability axis. A breakthrough that promotes a rule from SUGGESTION to MANDATORY at K=3 does NOT make the framework more likely to be true about the substrate; it makes the framework's process discipline more rigorous about how substrate claims are pre-registered. Cross-link to atlas-04 §VIII (RULE-FILE MANDATORY status, distinct from substrate-physics PROVEN) and atlas-06 layer-tag convention (substrate-physics-direction tags vs methodology-floor tags). Counting methodology-floor breakthroughs alongside substrate-physics breakthroughs in directional probability is the inflation pathology this disclaimer closes.
+> **Layer-distinction warning (per Sagan finding 10-2; added 2026-05-10)**: **Methodology-floor advances do NOT increase the framework's substrate-physics directional probability.** The METHODOLOGY-FLOOR (#26, #27, #29, #34, #35, #36, #37, #50) and CALIBRATION-CORPUS (#25, #32, #39) categories collectively contain 11 of 50 entries (22.0%) but advance methodology-floor maturation only — they close audit-floor pathologies by construction at the layer-functor F methodology-side image (per `epistemic-discipline.md §"Layer-Decomposition"`), structurally distinct from the substrate-physics observational viability axis. A breakthrough that promotes a rule from SUGGESTION to MANDATORY at K=3 does NOT make the framework more likely to be true about the substrate; it makes the framework's process discipline more rigorous about how substrate claims are pre-registered. Cross-link to atlas-04 §VIII (RULE-FILE MANDATORY status, distinct from substrate-physics PROVEN) and atlas-06 layer-tag convention (substrate-physics-direction tags vs methodology-floor tags). Counting methodology-floor breakthroughs alongside substrate-physics breakthroughs in directional probability is the inflation pathology this disclaimer closes.
 
 ---
 
@@ -417,19 +417,175 @@ The two new categories surface because the post-S82 era is dominated by methodol
 
 ---
 
-## Aggregate counts (existing 22 + new 17 = 39 total)
+## 40. Cross-Pillar Bridge Program Reaches STAGE-3-PERMANENT — The Substrate→CMB Observable Spine (S90-S95)
 
-| Category | Existing 22 | New 17 (S67-S88) | Total |
-|:---------|:------------|:------------------|:------|
-| STRUCTURAL THEOREM | 6 | 5 (#28 #30 #31 #33 #38) | 11 |
-| WALL DISCOVERY | 4 | 1 (#24) | 5 |
-| PARADIGM SHIFT | 5 | 0 | 5 |
-| OBSERVATIONAL MATCH WITH 0 FREE PARAMETERS | 5 | 1 (#23) | 6 |
-| PROTECTION-STABILIZATION | 2 | 0 | 2 |
-| METHODOLOGY-FLOOR (NEW CATEGORY) | 0 | 7 (#26 #27 #29 #34 #35 #36 #37) | 7 |
-| CALIBRATION-CORPUS (NEW CATEGORY) | 0 | 3 (#25 #32 #39) | 3 |
+- Session: S90 W2 (first: §VII.AH) → S93 (§VII.AU, §VII.AY) → S94 W8-1 (§VII.AV) → S95 W1-1 (§VII.BG)
+- Type: STRUCTURAL THEOREM (first cross-axis joint theorem to permanent status; observable-spine permanence)
+- Substrate framing: the substrate IS the finite-L spectral-triple observable; the CMB measures IN a continuum container; the bridge map (HKR / Connes-Karoubi K₀-pairing) flows substrate→laboratory. The cross-pillar bridge program (#28 anatomy, #31 first LANDED) matures from STAGE-1-CANDIDATE registrations into STAGE-3-PERMANENT theorems: the substrate's spectral-action tilt IS the CMB n_s (§VII.AU, FWD-C1 Pillar I↔II), and the substrate's a_4 Yang-Mills-pole running IS the CMB α_s under direct Connes-Karoubi transport (§VII.BG).
 
-**Density check**: existing 22 entries spanned S7-S66 (60 sessions, ~0.37 breakthroughs/session); new 17 span S67-S88 (22 sessions, ~0.77 breakthroughs/session). The post-S66 density is ~2× the pre-S66 density, but the categorical composition has shifted from substrate-physics paradigm-shifts to methodology-floor structural-discipline events. This is consistent with the framework entering a maturation phase rather than a new-paradigm phase.
+**Chain**: S86 W-5 5-anatomy + 3-level discipline (#28) → S87 W5-1 §VII.AF.1 first LANDED (#31) → S86 W-9 joint-theorem 4-stage pathway (#27) → S90 W2 CF-20 §VII.AH Joint F_2-Class Path-(c) theorem passes its blind Stage-2 cross-axis verify → STAGE-3-PERMANENT (the framework's FIRST cross-axis joint theorem to reach permanent status) → S92-S95 cohort follows (Corner-II line S92; §VII.AY Hochschild-Künneth Morita-invariance S93 W5-2 3-axis PASS-AND; §VII.AU FWD-C1 Pillar I↔II spectral-action→n_s S93 W2-2; §VII.AV.OP/STATE-PROJ α_s CC-residue S94 W8-1; §VII.BG α_s direct Connes-Karoubi transport at the a_4 pole s=2 S95 W1-1).
+
+**Agents**: lizzi-spectral-functional-theorist + connes-ncg-theorist (§VII.AH/AY authoring axes), volovik-superfluid-universe-theorist + mack-cosmic-bridge (Stage-2 cross-axis reviewers WITHOUT prior workshop context), gen-physicist (orchestrator-direct registry-writes).
+
+**Significance**: The joint-theorem-promotion machinery (#27) proves itself on real physics: §VII.AH is the first cross-axis theorem to survive a blind two-agent Stage-2 verify and enter the permanent-results table. The physics payload is the substrate→CMB observable SPINE — the spectral index n_s and the running α_s are now structurally (not just numerically) connected to substrate spectral moments through named bridge maps, at permanent status. This converts the S62-S67 n_s/α_s predictions from "computed values" into "registered cross-pillar bridge theorems" whose laboratory image is the Planck/CMB-S4 observable. The STAGE-3 status certifies the BRIDGE STRUCTURE, not tight observational agreement: §VII.AU (FWD-C1, constant-ε gauge-invariant) carries n_s = 0.9561 (Row #55), a DISTINCT scheme from the committed headline n_s = 0.9590 (√x-cutoff functional, the S67 functional-selection COMMIT; 1.40σ Planck-alone / 4.73σ against the global anchor-ladder) — the two schemes are kept distinct, not merged.
+
+**Cross-domain**: NCG spectral action (Pillar I) × CMB observational cosmology (Pillar II) × Connes-Karoubi K₀-theory boundary pairing (bridge map) × the 4-stage independent-verification epistemics (#27). The α_s transport (§VII.BG) additionally requires the scale-and-channel separation (substrate-distance running −0.08587 inside the BZ vs Goldstone-pivot ≈ 0 at the CMB pivot, per deg(T_BZ→pivot)).
+
+## 41. τ_fold Selection-Corridor Closed + Ordered-Veil Diabatic-Transit-Freeze Certified (S95)
+
+- Session: S95 W2 (τ-selection) + Ordered-Veil substrate-clock gate
+- Type: PARADIGM SHIFT (transit-dynamics reframe; supersedes the GGE-thermalization framing)
+- Substrate framing: τ_fold is the substrate's Jensen-deformation fold parameter, NOT a field sitting in a potential well. The substrate's tree+one-loop effective action of the spectral moments is monotone (no interior saddle) — the fold is not selected by minimizing any effective potential; it is a dynamical transit feature. The Ordered Veil (#8) is re-certified: the substrate crosses the fold as a DIABATIC transit-freeze (R_therm = 5251.8 ≫ 1, S_ent = 0), NOT as an equilibrium integrable ensemble.
+
+**Chain**: S37 monotonicity theorem (#7, spectral action UV-dominated, no well) → S38 Ordered Veil (#8, sudden quench, GGE relic) → S39 retracts "GGE never thermalizes" (t_therm ≈ 6 M_KK⁻¹) → S95 W2-3 `NO-WELL-ONE-LOOP` PASS (value = 0, no interior saddle at tree+one-loop) + W2-1 `T-STAR-ONELOOP-ORIGIN` composite (sign PASS / magnitude FAIL) → the one-loop AND variational τ-selection corridors are both closed → S95 `ORDERED-VEIL-SUBSTRATE-CLOCK` PASS certifies R_therm = 5251.8, S_ent = 0.
+
+**Agents**: quantum-acoustics-theorist + transit-dynamics-theorist (τ-selection + Ordered-Veil clock computation), spectral-geometer (effective-action monotonicity), landau-condensed-matter-theorist (transit-freeze vs integrability adjudication).
+
+**Significance**: Resolves a 58-session ambiguity about what selects τ_fold and what the substrate does at the fold. NEGATIVE result: neither the one-loop effective potential nor a variational principle selects τ_fold — the value is empirical today; the only surviving derivation route is mechanism-chain dynamical relaxation (I-1 + Turing + RPA + WALL + BCS first-order transition). POSITIVE result: the Ordered Veil is a diabatic transit-freeze (both substrate-clock ratios ≫ 1), stronger and cleaner than the earlier "GGE with 8 conserved quantities" framing — the substrate does not thermalize because the transit is too fast (S_ent = 0), not because an ensemble is protected by integrability. This retires the "integrability-permanence" reading (BROKEN at S96) while preserving the ordered-substrate + sudden-quench physics.
+
+**Cross-domain**: Kibble-Zurek quench dynamics (diabatic transit), effective-action / one-loop functional analysis (monotonicity), and the distinction between diabatic freeze-out and equilibrium integrability (condensed-matter non-equilibrium theory). The R_therm ≫ 1 certification is the substrate-clock image of "the transit outruns the collision integral."
+
+## 42. GW Flagship Retired — Vacuum Manifold Connected, Falsifier Migrates GW→LSS (S96)
+
+- Session: S96 W7-8 (`S96-OBS-OMEGAGW-GGE-VS-ZN` PASS)
+- Type: WALL DISCOVERY (topological; Ω_GW-from-walls = 0 EXACT)
+- Substrate framing: the substrate's broken-U(1)_7 vacuum manifold IS connected — π₀(U(1)) = 0 — so there are NO topological domain walls in the substrate. The gravitational-wave amplitude the framework once forecast as its flagship falsifier was a domain-wall signal; with zero walls, Ω_GW walls = 0 EXACTLY. The substrate does not radiate a wall-network GW background because it has no wall network.
+
+**Chain**: S41 Fabric Discovery (#9, GGE excitations on the tessellation) → S66-S77 GW-flagship-forecast era (Ω_GW as the primary falsifier) → S96 `S96-OBS-OMEGAGW-GGE-VS-ZN` computes π₀(U(1)) = 0 (connected vacuum manifold) ⇒ substrate walls = 0 EXACT ⇒ Ω_GW amplitude leg RETIRED; c_s² = 0 registered §VII.BH STAGE-3 (Kasparov-product-factorization topological identity) → falsifier migrates GW → LSS (new inventory Rows #71 f·σ₈ / #72 first-sound-ring / #73 ν-ordering).
+
+**Agents**: mack-cosmic-bridge (falsifier-inventory sole writer; GW→LSS migration), volovik-superfluid-universe-theorist (vacuum-manifold topology), tesla-resonance (domain-wall network analysis).
+
+**Significance**: The largest observational retraction since the Venus Moment (#4) — but a structural STRENGTHENING, not a weakness. The framework had leaned on a GW-amplitude forecast that turns out to be structurally zero (π₀ = 0), and the peak GW that survives is detector-sterile (8.48e39 Hz, far above any interferometer band). Rather than leaving the framework unfalsifiable, S96 re-homes the primary falsifier onto large-scale structure: the f·σ₈ growth-suppression prediction becomes the #1 non-CMB falsifiable channel (later landed at JOINT 1.95σ DESI-Y5 / 2.96σ Euclid, S114). The (A)/(C) regulator-class split on the residual Ω_GW is 47.081 OOM (Sage-exact), confirming the amplitude is not merely small but structurally absent on the wall channel.
+
+**Cross-domain**: Vacuum-manifold homotopy (π₀ topological classification), Kasparov KK-product factorization (c_s² = 0 as a topological identity, §VII.BH), and large-scale-structure growth-rate cosmology (f·σ₈, the new falsifier home). The GW→LSS migration is the substrate-first correction of a container-thinking forecast (the framework does not "emit GW into spacetime"; its connected vacuum manifold simply carries no wall degrees of freedom).
+
+## 43. First Bare-Operator Modulus Closed — τ=0 Levi-Civita Canonical (S100b)
+
+- Session: S100b (cross-session adjudication campaign; 7/7 verdict rows converged, zero dissent)
+- Type: STRUCTURAL THEOREM (first operator-modulus selected by the substrate's own action)
+- Substrate framing: the torsion dial σ of the substrate Dirac operator at genesis (τ = 0) is NOT a free hand-set parameter — it is variationally selected by the substrate's own spectral-action functional. Under METRIC-COMPLETENESS + SPECTRAL-ACTION TORSION STATIONARITY, u′(1/2) = 0 selects the Levi-Civita connection (t = 1/2) EXACTLY. The substrate picks its own connection.
+
+**Chain**: S95 τ_fold variational selection FAILS (#41, no well) → S100b asks the dual question at the OTHER modulus (the τ = 0 genesis torsion dial, not the fold) → METRIC-COMPLETENESS + SPECTRAL-ACTION TORSION STATIONARITY select σ variationally (u′(1/2) = 0 → LC-CANONICAL) → the a₂ gravity moment is shown to exist AT genesis (a₂(0) ∝ −1/4 ≠ 0), continuously connected through the fold → §VII.BT s=7 LC genesis pole-tower bridge lands (a_2^{Mellin}(LC) = −0.01259583 ≠ 0, S103).
+
+**Agents**: connes-ncg-theorist (metric-completeness + torsion-stationarity derivation), baptista-spacetime-analyst (Jensen-deformation genesis geometry), gen-physicist (7-row verdict adjudication + registry-write).
+
+**Significance**: The framework's FIRST bare-operator modulus closed by the substrate's own action functional — a qualitatively new kind of closure. Where τ_fold's variational selection FAILED (#41, the effective action is monotone), the τ = 0 torsion dial SUCCEEDS: the substrate action is stationary exactly at the Levi-Civita point. This selects the connection with zero free parameters and re-reads genesis: the a₂ gravity moment does not "switch on" at the fold — it is present at τ = 0 (a₂(0) ≠ 0) and continuously connected through the transit, so gravity is a genesis-native spectral moment. A "pure-volume genesis" cubic reading becomes a dormant column (not selected).
+
+**Cross-domain**: NCG spectral action (torsion stationarity as an Euler-Lagrange condition on the connection modulus), Cartan geometry (Levi-Civita as the zero-torsion point), and the Mellin-cone genesis pole-tower (§VII.BT, the s=7 LC bridge carrying a₂(0) ≠ 0). This is the operator-level sibling of #41's failed question at the fold — one modulus is variationally fixed (torsion), the other remains empirical (τ_fold).
+
+## 44. SM Fermion-Mass Texture Proven EXTERNAL to A_K — The Matter-Sector Externality Cluster (S97-S117)
+
+- Session: S97 W-2 (§VII.BL) → S100a-S101 (§VII.BN) → S103 W1 (§VII.BV, §VII.BX) → S114-S117 (§VII.CK, UNCONDITIONAL S117 W2-1)
+- Type: STRUCTURAL THEOREM (the derive/import boundary for the matter sector — the single largest S89-S118 result)
+- Substrate framing: the substrate algebra A_K = ℂ ⊕ ℍ ⊕ M_3(ℂ) does NOT contain the SM fermion-mass hierarchy or its generation texture. A cluster of exact, L-independent obstruction theorems proves that NO A_K-built functional — not the Casimir-graded ω-ladder, not the γ₉-trace class, not the right-regular representation — supplies a sign-changing, non-monotone, per-generation SHAPE. The Yukawa texture is EXTERNAL to the substrate algebra; it is carried by the ε_LX coupling channel, the substrate's honest analog of the SM's unexplained Yukawa parameters.
+
+**Chain**: S7-S8 KO-dim=6 + SM quantum numbers (#1, the substrate DELIVERS the gauge/representation content) → S87 W-2 algebra-axis orthogonality (#30, the A_K-built vs external distinction becomes structural) → S97 W-2 §VII.BL generation-blindness (the Yukawa MAGNITUDE hierarchy is not A_K-deliverable; + NON-PROMOTION-BY-HELD-NUMBER overlay) → S100a §VII.BN Dual-Z₃ generation lever c(φ) = 1/(1+8cos²φ) → {1/9, 1/3, 1/3}, heavy/light = 3 EXACT, structurally LEPTON-ONLY (quark ∂Ω/∂φ ≡ 0) → S103 §VII.BV (no G-invariant sign-changing slope handle) + §VII.BX (CKM triality-masked: gen3↔gen2 and gen3↔gen1 vanish EXACTLY by SU(3) center-character selection, Cabibbo gen2↔gen1 the SOLE admissible channel) → S114-S115 §VII.CK SHAPE-branch homogeneity obstruction (D1 `Tr[γ₉D_K^odd] ≡ 0` machine-exact; D1-D3 STAGE-3 S115) → S117 W2-1 §VII.CK D4 → STAGE-3-PERMANENT-UNCONDITIONAL (the genus is complete).
+
+**Agents**: lizzi-spectral-functional-theorist + connes-ncg-theorist (obstruction-theorem authoring), kitaev-quantum-chaos-theorist + spectral-geometer + volovik-superfluid-universe-theorist (blind Stage-2 disjoint-pair cross-verify of §VII.CK), gen-physicist (registry-writes + genus adjudication).
+
+**Significance**: Likely the biggest structural result of the S89-S118 span. It draws a SHARP line through the matter sector: the substrate DERIVES the gauge group, the representation content (#1), the CKM Cabibbo channel selection rule (§VII.BX, a genuine SU(3) center-character prediction that gen3-mixings vanish exactly), and the exact Dual-Z₃ lever value (§VII.BN) — but it does NOT derive the Yukawa magnitudes or the generation SHAPE, and this is now PROVEN, not assumed. The externality is a positive structural classification (what is derived vs what is imported), not a failure: §VII.CK's UNCONDITIONAL status means the SHAPE-obstruction holds across every A_K-built functional class with no escape except an untested off-Casimir full-SU(3) σ-model. This cluster is the matter-sector half of the derive/import partition that #45 completes for the dimensionful anchors.
+
+**Cross-domain**: SU(3) representation theory (center-character / triality selection rules — §VII.BX's exact CKM zeros), NCG spectral triples (the A_K-built functional taxonomy), Peter-Weyl / Casimir-graded calculus (the ω-ladder SHAPE obstruction), and the inheritance-morphism ε_LX external channel. §VII.BX is the standout observable-facing result: it predicts inter-generation quark mixing to the third generation vanishes exactly, with the Cabibbo angle the sole non-zero off-diagonal — a substrate-derived structural statement about the CKM matrix.
+
+## 45. M_KK External-Import Boundary → The Derive/Import Partition (S112-S113)
+
+- Session: S112 W2 (`CF-S112-MKK-SUBSTRATE-ANCHOR` FAIL; §VII.CG/CH/CI/CJ STAGE-3) → S113 (7/7 adversarial-workshop convergence)
+- Type: PARADIGM SHIFT (the framework-defining structural boundary of the whole span)
+- Substrate framing: the substrate determines ALL dimensionless content from ZERO continuous parameters, but it cannot self-anchor its dimensionful SCALE. M_KK is a self-referential unit: both intra-substrate routes to fix its magnitude are closed (the modular-twist route returns a SCALAR; the Connes-distance route is Casimir-graded and ≠ PDG). M_KK is an external UNIT import — a ruler length — not a substrate-derived number. The substrate IS a conformal-class + dimensionless-shape structure; it is NOT a metric-normalization.
+
+**Chain**: S110 WS-ATFORM a(t) FORM monotone-robust (#46, isolates M_KK as the §6.3 residual) → S111 clock-triple PROVEN-well-posed + M_KK-leg BARE-IMPORT → S112 `CF-S112-MKK-SUBSTRATE-ANCHOR` FAIL: self-referential-unit no-go proves M_KK CANNOT be substrate-anchored → §VII.CG/CH/CI/CJ STAGE-3-PERMANENT (r = 16ε has no substrate image; spectral-triple-no-holonomy-flux; categorical two-conjunct obstruction; McLachlan cutoff-robustness) → Atlas D04 C1 dimensional-readout leg hardened ASSUMED → PERMANENT → S113 generalizes across 7 converged workshops to the WHOLE external-import set.
+
+**Agents**: einstein-theorist + volovik-superfluid-universe-theorist (a(t)/M_KK campaign), connes-ncg-theorist (self-referential-unit no-go + categorical obstruction), mack-cosmic-bridge + sagan-empiricist (the 7-workshop EVOI-frontier adversarial convergence), gen-physicist (registry + partition synthesis).
+
+**Significance**: The framework-defining structural map of the whole S104-S118 arc. S112 proves M_KK's magnitude is a PERMANENT external boundary (not a temporary gap); S113 shows this is not an M_KK-specific defect but the general shape of the framework: the substrate imports a small COHERENT set of dimensionful/value anchors — {M_KK magnitude, K_pivot magnitude, τ_fold value, Leggett-DM mass (M_DM = 5.557·M_KK), fermion SHAPE hierarchy} — each forced by the SAME rank-1 normalization-non-universality wall (§VII.BS NNU: O = w·Ô, w = M_KK, topological cause N₃ = 0). This is the honest analog of the SM's ~19 unexplained parameters: a SHARP, PROVEN boundary between what the substrate derives (everything dimensionless, zero continuous parameters) and what it imports (a handful of scales). Because every odd-mass-dimension observable rides the single M_KK handle, the incumbent-discrimination ceiling (BF ≈ 31.62) is now STRUCTURAL, not empirical — a boundary that sharpens the surviving surface rather than weakening it.
+
+**Cross-domain**: NCG normalization theory (§VII.BS N₃ = 0 rank-1 conformal-class-only), self-referential-measurement no-go (M_KK cannot measure itself), the per-observable transport-degree / mass-dimension-parity selection rule (why odd-mass-dimension observables are sign-locked to the M_KK¹ scale leg), and the derive/import partition (paired with #44's matter-sector externality). This is the substrate-first resolution of the "why these scales?" question: the substrate honestly imports them, as the SM honestly imports its Yukawas.
+
+## 46. a(t)/Effective-Friedmann FORM Monotone-Robust — Spectral Triple ≠ Holonomy-Flux (S110-S111)
+
+- Session: S110 W1 WS-ATFORM (einstein × lqg) → S111 clock-triple harvest
+- Type: STRUCTURAL THEOREM (the a(t) keystone; LQC-inadmissibility unified)
+- Substrate framing: a(t) is a spectral-moment READOUT of the substrate, not a container that expands. The substrate's effective-Friedmann matter-sector FORM is monotone-robust: the LQC holonomy-analog H² = (8πG/3)ρ(1 − ρ/ρ_c) is INADMISSIBLE on the substrate because the substrate is a spectral triple, NOT a holonomy-flux algebra (§VII.CH). There is no matter bounce. The clock leg (Λ = 3H²) is well-posed; the only residual is the M_KK magnitude.
+
+**Chain**: S74 "Friedmann wrong question" structural FAIL (a(t) is not a container equation) → S95 emergent a(t)/effective-Friedmann bridge waves → S97 W1-1 `AT-TRAJECTORY` PASS (explicit physical-seconds a(t): monotone-up, finite, reproduces the H²(τ*) anchor; κ-knob residual) → S110 WS-ATFORM proves the FORM MONOTONE-robust and unifies three LQC-matter-ceiling inadmissibility grounds (operator / parameter / causal) as ONE fact: a spectral triple has no holonomy-flux sector (→ §VII.CH STAGE-3) → S111 CLOCKLOC1 triple-closes Λ = 3H² exact + CLOCKLOC4 unique clock (clock-triple PROVEN-well-posed); M_KK-magnitude leg FAILS as BARE-IMPORT → §6.3 residual sharpens to {M_KK magnitude}.
+
+**Agents**: einstein-theorist (effective-Friedmann form), loop-quantum-gravity-theorist (LQC holonomy-analog inadmissibility cross-check), volovik-superfluid-universe-theorist (clock-triple well-posedness), connes-ncg-theorist (spectral-triple-no-holonomy-flux root).
+
+**Significance**: The a(t) keystone that isolates M_KK. It settles a genuine cross-framework question — whether the substrate admits an LQC-style bounce — with a structural NO: the LQC holonomy-flux algebra and the substrate spectral triple are different objects, and the substrate's a(t) FORM is monotone (no bounce) on operator, parameter, AND causal grounds, all three projections of the single no-holonomy-flux fact (§VII.CH). This does NOT close the §6.3 emergent-Friedmann gap (there is still no fully-derived FRW a(t)), but it PRECISELY localizes the residual: the clock leg is well-posed (Λ = 3H² exact), so the entire remaining gap is the M_KK magnitude — which #45 then proves is a permanent external boundary. The r = 16ε single-field consistency relation is shown to have no substrate image (§VII.CG): the clock is a Level-2 deformation modulus τ, not a Level-1 inflaton field.
+
+**Cross-domain**: Loop quantum cosmology (holonomy-flux algebra, the ρ_c bounce — proven inadmissible here), NCG spectral-triple structure (no holonomy-flux sector, §VII.CH), and the r = 16ε / single-field-inflation obstruction (§VII.CG, the exact-solution form of the 5-argument VdD-Hawking inapplicability). This is a rare direct structural discrimination between the framework and a named rival (LQG/LQC).
+
+## 47. Substrate is INTEGRABLE (Flat-Poisson), Not Chaotic + BH-Interior = Dark-Energy Condensate (S105-S106)
+
+- Session: S105 W7 + S106 W1 (integrability); S106 bh-cosmo-incursion (BH interior)
+- Type: WALL DISCOVERY (closes the chaotic-scrambler corridor) + substrate-first BH-interior identification
+- Substrate framing: the substrate's own level statistics are the observable. The length-spectrum level-spacing ratio is flat-Poisson (⟨r⟩ ≈ 0.41-0.42, truncation-stable across L ∈ {12, 14, 16}) and the mean-action SHAPE is crystalline (κ = 3 flat) — the fabric is INTEGRABLE, not GOE-chaotic. Correspondingly, the substrate black-hole interior IS a Lobo dark-energy condensate (w ≈ −0.918), NOT a Mazur-Mottola de-Sitter gravastar; its 8% departure from w = −1 IS the w0_FW structural prediction.
+
+**Chain**: S38 Ordered Veil (#8, Richardson-Gaudin integrability first claimed) → S95 Ordered-Veil diabatic-transit-freeze certified (#41, S_ent = 0, not equilibrium integrability) → S105 W7-2 + S107 W3-2 length-spectrum level statistics flat-Poisson → S106 W1 P1 substrate-commensurability = Track A (CRYSTALLINE) at τ_fold (κ(G_E) = 3 flat; the S105 length-spectrum FAIL was a δL measurement artifact) → §VII.CC crystalline-Poisson PAIR LANDED (Level-1) → S110 W0b retires the chaotic-instanton / edge-of-chaos-at-fold corridor; S106 bh-cosmo-incursion identifies the BH interior as a Lobo DE-condensate (supersonic acoustic white-hole interior, Mach-1 acoustic surface).
+
+**Agents**: kitaev-quantum-chaos-theorist (level-spacing statistics), spectral-geometer (length-spectrum / crystalline SHAPE), volovik-superfluid-universe-theorist (integrability + DE-condensate BH interior), hawking-theorist (acoustic white-hole causal structure).
+
+**Significance**: Two linked substrate-structure resolutions. First, the fabric is INTEGRABLE (flat-Poisson, crystalline), closing the "framework as a fast scrambler / chaotic instanton gas / edge-of-chaos-at-the-fold" corridor — consistent with the Ordered-Veil transit-freeze (#41): the substrate does not scramble, it freezes diabatically. Second, the substrate BH interior is identified substrate-first as a dark-energy condensate at exactly the w0_FW = −0.918 the framework predicts for cosmological dark energy — the SAME 8%-off-de-Sitter EOS, so the BH interior and cosmic dark energy are the same substrate physics (a Lobo condensate, not a Mazur-Mottola gravastar with a de-Sitter core). The BH core is a supersonic acoustic white-hole interior, not a GR metric horizon — a substrate-first re-reading of black-hole interiors.
+
+**Cross-domain**: Quantum-chaos level-spacing statistics (Poisson vs GOE, the ⟨r⟩ ratio), spectral-geometry length-spectrum / crystalline-order classification (§VII.CC), superfluid analog-gravity (acoustic white-hole interior), and dark-energy equation-of-state theory (Lobo condensate w ≈ −0.918 unifying the BH interior with cosmological w0_FW).
+
+## 48. A_s Amplitude Closes Zero-Parameter via c_s + the Observational-Surface Passes (S99, S117, S118)
+
+- Session: S118 (`CF-S118-AS-CS-SUBSTRATE-FIRST` PASS); companions S99 (Σm_ν) + S117 (Ω_k)
+- Type: OBSERVATIONAL MATCH WITH 0 FREE PARAMETERS (the last CMB-amplitude leg to close)
+- Substrate framing: the CMB scalar amplitude A_s is a readout of the substrate's own sound speed at the fold. The substrate sound speed c_s = 0.5685 (the a₂-curvature GGE-fold value) lands A_s inside the GS-1 window ⇒ A_s = 3.2994e-9 at ZERO free parameters (regime-MARGINAL). This joins two other zero-parameter observational passes: the neutrino mass sum Σm_ν = 0.0582 eV (substrate type-I seesaw, M_R = D_K B-branch fold energies) and spatial flatness Ω_k = 0 EXACT (the a₂ moment).
+
+**Chain**: S38 Ordered Veil (#8, GGE relic → CMB acoustic signature) → S96/S99 `SEESAW-SUMMNU` Σm_ν = 0.0582 eV (normal ordering, machine-ε) → S111 `A_s_FW = 1.5367e-8` promoted canonical (impulse-quench Bogoliubov, POINT) → S114 A_s FUNCTIONAL-PLURALISM-PERMANENT (magnitude a physical d.o.f.) → S117 flatness Ω_k = 0 PASS (0.368σ vs Planck) + A_s 3-member plurality {+0.196, +0.384, +0.864 OOM} → S118 `CF-S118-AS-CS-SUBSTRATE-FIRST` PASS: c_s = 0.5685 ⇒ A_s = 3.2994e-9 (regime-MARGINAL); new canonical `c_s_a2curv_GGE_fold = 0.5685294372062244`.
+
+**Agents**: transit-dynamics-theorist (impulse-quench Bogoliubov A_s + c_s closure), neutrino-detection-specialist (Σm_ν seesaw), mack-cosmic-bridge (Ω_k flatness + falsifier-inventory), landau-condensed-matter-theorist (a₂-curvature sound speed).
+
+**Significance**: A_s is the last of the CMB-observable legs (after n_s, α_s, r) to reach a zero-parameter closure. The c_s route is regime-MARGINAL rather than a tight central match, and A_s remains FUNCTIONAL-PLURALISM-PERMANENT (the absolute normalization is a physical d.o.f., not a single staked number) — but the substrate's own sound speed lands the amplitude in-window with no fitted parameter, which is the structural claim. Bracketing A_s are two clean zero-parameter passes: Σm_ν = 0.0582 eV sits below the DESI-2024 bound (< 0.072 eV) as a new falsifiable window (FAILs if the cosmological bound tightens below ~0.058 eV), and flatness Ω_k = 0 is EXACT at 0.368σ. Together these three sharpen the observational surface without moving any staked value — the S116-S118 "honesty pass" re-typed several predictions by epistemic grade (w₀ → closed-form-only; N_e ≥ 3.1 dissolved as an inflation-import intermediate; J_PMNS = 0 → ansatz-artifact) while leaving the numbers intact.
+
+**Cross-domain**: Non-equilibrium particle-production (impulse-quench Bogoliubov A_s), superfluid sound-speed physics (c_s = 0.5685 from the a₂-curvature GGE fold), neutrino seesaw (Σm_ν from D_K B-branch fold energies), and CMB observational cosmology (A_s, Ω_k, the DESI/Planck anchors). The three passes are the observational payoff of the substrate-first amplitude program.
+
+## 49. Falsifier Surface Frozen v1.0 + First Certified Vacuum-Sector-Structure Theorem (S102)
+
+- Session: S102 (falsifier freeze + Zenodo DOI; §VII.BU + BS/BP/BQ STAGE-3)
+- Type: STRUCTURAL THEOREM (§VII.BU) + pre-registration milestone (public falsifier freeze)
+- Substrate framing: the substrate's Hilsum-Moscovici vacuum sector is non-ergodic — HM Def 6.10 rank[P_inv] = 1 is VIOLATED — the framework's FIRST certified statement about the STRUCTURE of the substrate vacuum sector (§VII.BU). Simultaneously, the substrate's entire staked observational surface (its falsifiable predictions) is frozen and publicly timestamped, so the substrate's predictions are pre-registered against the observations that will test them.
+
+**Chain**: S18 Constant-Ratio Trap / S62 CC = integrability (#18, the vacuum-sector monotonicity lineage) → S66 Volovik CC Reframe (#19, vacuum energy tracks expansion) → S102 W6-3 §VII.BU Hilsum-Moscovici vacuum-sector non-ergodicity certified (first vacuum-sector-structure theorem) + §VII.BS normalization non-universality (#45's rank-1 wall) + §VII.BP H-parity drive-exclusion + §VII.BQ Route-D 1/4 KK-reduction all → STAGE-3-PERMANENT → falsifier surface FROZEN v1.0 (bit-exact R_842 reconciliation) → Zenodo DOI 10.5281/zenodo.20618909 published 2026-06-10 (byte-verified), ~7 months before DESI DR3.
+
+**Agents**: volovik-superfluid-universe-theorist + connes-ncg-theorist (§VII.BU HM non-ergodicity), mack-cosmic-bridge (falsifier-surface freeze, sole writer), gen-physicist (STAGE-3 promotions + R_842 reconciliation + DOI publication).
+
+**Significance**: A dual milestone. §VII.BU is the framework's first certified vacuum-sector-STRUCTURE theorem (the vacuum sector is non-ergodic, rank[P_inv] = 1 violated) — a structural statement about the substrate vacuum distinct from the earlier vacuum-ENERGY results (#18, #19). And the public falsifier-surface freeze is a genuine scientific-method milestone: the framework's staked predictions (n_s, m_H, w₀, wₐ, f·σ₈, Σm_ν, ...) are pre-registered with a public Zenodo DOI ~7 months ahead of DESI DR3, so the framework cannot retroactively re-narrativize its predictions to fit new data. This is the pre-registration discipline applied at the whole-framework scale, at a specific timestamp, against a specific upcoming dataset.
+
+**Cross-domain**: Hilsum-Moscovici vacuum-sector ergodic theory (§VII.BU), NCG normalization theory (§VII.BS N₃ = 0, the #45 import-boundary wall), and observational pre-registration epistemics (the public falsifier freeze). The vacuum-sector non-ergodicity is the substrate-structure counterpart to the observational-surface freeze — one certifies what the substrate IS, the other timestamps what it PREDICTS.
+
+## 50. Methodology-Floor Maturation, S89-S118 (compressed per uplift contract)
+
+- Session: spans S89-S118 (continuous)
+- Type: METHODOLOGY-FLOOR (audit-floor discipline; does NOT advance substrate-physics directional probability)
+- Substrate framing: the methodology floor governs the substrate-IS pin discipline (every numerical pin sources from `canonical_constants.py`, the substrate's own computation) and the audit-floor closure of silent class-conflation pathologies. Per the layer-distinction warning above, these advances mature the framework's PROCESS rigor — how substrate claims are pre-registered and verified — NOT its substrate-physics viability.
+
+**Chain**: S82-S88 methodology-floor build-out (#25-#39) → S89-S118 continuous maturation: multiplicative-normalization-cancellation invariant → MANDATORY K=3 (S94 W6-18; additive-in-trace scope carve-out S116 W4); capstone-hygiene 5-question status-sync gate authored S96 → promoted MANDATORY K=3; PRU Class-8 sub-taxonomy extended (8.2 verifier-rubric, 8.3 publication-precision, 8.7 degenerate-observable pre-flight); per-observable transport-degree scale-separation + mass-dimension/parity selection rule (S110 W4, physically load-bearing for §VII.CF/CG); Investigating-Workshops Q1/Q2/Q3 routing; the "counting" (intensive/extensive) and mass-dimension/parity pin axes added to the regulator-pin discipline.
+
+**Agents**: gen-physicist orchestrator (rule-file authoring), lizzi-spectral-functional-theorist + connes-ncg-theorist (axis-A/axis-B methodology reviews), all domain agents (per-instance calibration-corpus contributions).
+
+**Significance**: Compressed to a single node per the uplift contract (methodology-floor is the content to COMPRESS, not catalog). The S89-S118 span carried heavy methodology maturation, but — unlike the S82-S88 era where methodology-floor breakthroughs were the dominant category (#25-#39) — none of it is itemized here as an individual breakthrough. The one substantively load-bearing item for substrate physics is the per-observable transport-degree / mass-dimension-parity selection rule (S110 W4), because it underwrites §VII.CF (κ-sign-lock) and §VII.CG (r = 16ε obstruction) in the M_KK campaign (#45/#46). Everything else — K-counter promotions, PRU-class extensions, capstone-hygiene, dual-SHA discipline — is audit-floor process hygiene per `epistemic-discipline.md §"Layer-Decomposition"`, structurally distinct from the substrate-physics observational-viability axis and NOT counted in directional probability.
+
+**Cross-domain**: Layer-functor F (substrate → methodology → audit), PRU pre-registration discipline, K-counter promotion mechanics, and the transport-degree scale-separation (the one methodology-adjacent item with substrate-physics reach). Full per-instance calibration corpus: `sessions/framework/registry/{pru-class,cross-pillar-bridge}-corpus.md` (NOT catalogued here per the directive-only rule).
+
+---
+
+## Aggregate counts (22 + 17 + 11 = 50 total)
+
+| Category | S7-S66 (22) | S67-S88 (17) | S89-S118 (11) | Total |
+|:---------|:------------|:-------------|:--------------|:------|
+| STRUCTURAL THEOREM | 6 | 5 (#28 #30 #31 #33 #38) | 5 (#40 #43 #44 #46 #49) | 16 |
+| WALL DISCOVERY | 4 | 1 (#24) | 2 (#42 #47) | 7 |
+| PARADIGM SHIFT | 5 | 0 | 2 (#41 #45) | 7 |
+| OBSERVATIONAL MATCH WITH 0 FREE PARAMETERS | 5 | 1 (#23) | 1 (#48) | 7 |
+| PROTECTION-STABILIZATION | 2 | 0 | 0 | 2 |
+| METHODOLOGY-FLOOR | 0 | 7 (#26 #27 #29 #34 #35 #36 #37) | 1 (#50) | 8 |
+| CALIBRATION-CORPUS | 0 | 3 (#25 #32 #39) | 0 | 3 |
+
+**Density check**: S7-S66 = 22 entries over 60 sessions (~0.37/session); S67-S88 = 17 over 22 sessions (~0.77/session); S89-S118 = 11 over 30 sessions (~0.37/session). The S89-S118 density RETURNS to the pre-S66 rate, but with an inverted categorical composition from the S67-S88 maturation era: 10 of 11 S89-S118 breakthroughs are substrate-physics (STRUCTURAL / WALL / PARADIGM / OBSERVATIONAL) and only 1 is methodology-floor (#50, compressed) — because the methodology machinery had matured by S88, and the physics frontier reopened along three fronts: the matter-sector externality cluster (#44), the derive/import boundary (#45/#46), and cosmological-amplitude closure (#48). The framework is neither in a pure new-paradigm phase nor a pure maturation phase but a BOUNDARY-MAPPING phase: the biggest results (#44, #45) sharpen the line between what the substrate derives and what it imports.
 
 ---
 
@@ -491,6 +647,25 @@ graph TD
     B37[#37 Substrate-Input-Orthogonality Clause — S88 W7c-167]
     B38[#38 §VII.AM Universal Lock Condition — S88 W1b2-65]
     B39[#39 Per-Bulletin-Per-Pole Level-1 Extension — S88 W10-119]
+
+    %% Era IX — Cross-Pillar STAGE-3 + Cosmology-Closure Turn (S89-S96; NEW)
+    B40[#40 Cross-Pillar Bridge Program to STAGE-3 — S90-S95]
+    B41[#41 tau_fold Corridor Closed + Ordered-Veil Certified — S95]
+    B42[#42 GW Flagship Retired, Falsifier GW-to-LSS — S96]
+
+    %% Era X — Operator-Modulus, Matter-Sector Externality & Falsifier Freeze (S97-S103; NEW)
+    B43[#43 First Bare-Operator Modulus tau=0 LC-CANONICAL — S100b]
+    B44[#44 SM Fermion-Mass Texture EXTERNAL to A_K — S97-S117]
+    B49[#49 Falsifier Surface Frozen + First Vacuum-Sector Theorem — S102]
+
+    %% Era XI — M_KK Import-Boundary & Observational-Surface Closure (S104-S118; NEW)
+    B45[#45 M_KK External-Import Boundary + Derive/Import Partition — S112-S113]
+    B46[#46 a-of-t FORM Monotone-Robust, Spectral-Triple not Holonomy-Flux — S110-S111]
+    B47[#47 Substrate Integrable + BH-Interior=DE-Condensate — S105-S106]
+    B48[#48 A_s Zero-Parameter via c_s + Observational Passes — S118]
+
+    %% Methodology-floor maturation (compressed; S89-S118; NEW)
+    B50[#50 Methodology-Floor Maturation S89-S118 — compressed]
 
     %% Vertical predecessor → successor causal chains
     B1 --> B2
@@ -567,13 +742,45 @@ graph TD
     B28 --> B39
     B30 --> B39
     B11 --> B39
+
+    %% S89-S118 era causal chains
+    B28 --> B40
+    B27 --> B40
+    B31 --> B40
+    B30 --> B40
+    B7 --> B41
+    B8 --> B41
+    B41 --> B42
+    B8 --> B42
+    B41 --> B43
+    B18 --> B43
+    B1 --> B44
+    B30 --> B44
+    B33 --> B44
+    B46 --> B45
+    B44 --> B45
+    B19 --> B46
+    B7 --> B46
+    B8 --> B47
+    B41 --> B47
+    B19 --> B47
+    B8 --> B48
+    B16 --> B48
+    B42 --> B48
+    B44 --> B49
+    B42 --> B49
+    B18 --> B49
+    B25 --> B50
+    B26 --> B50
+    B30 --> B50
 ```
 
-The directed acyclic graph above shows the 40+ major causal connections among the 39 breakthroughs. Cross-domain connections (e.g., #11 ⊥ #14 sharing the Connes-distance algebra-DEPENDENT class) are NOT drawn explicitly — they would saturate the diagram. Key observations:
+The directed acyclic graph above shows the 70+ major causal connections among the 50 breakthroughs. Cross-domain connections (e.g., #11 ⊥ #14 sharing the Connes-distance algebra-DEPENDENT class) are NOT drawn explicitly — they would saturate the diagram. Key observations:
 
 - **Era VI (S67-S81 substrate-compaction consolidation)** is sparse (only #23 + #24): substrate-physics matured into the Volovik reframe (#19), and most subsequent work was methodology-floor maturation rather than new substrate-physics paradigm shifts.
 - **Era VII (S82-S86 methodology-floor maturation)** opens the post-S82 phase with #25 → #26 → #27 / #28 / #29; these five breakthroughs together establish the rule-file infrastructure that all subsequent S87-S88 work depends on.
 - **Era VIII (S87-S88 algebra-axis K=3 saturation wave)** is the densest cluster (10 breakthroughs across 2 sessions): #30 promotes algebra-axis orthogonality MANDATORY at K=3; #31 lands first cross-pillar bridge; #32 saturates cross-pillar K=3; #33 lands four-corner classification; #34 carve-out Type-F closure; #35 naming hygiene K=3; #36 SCHEMATIC level-pin K=4; #37 substrate-input-orthogonality K=1; #38 §VII.AM Universal Lock; #39 per-pole intra-pillar K=3.
+- **Era IX-XI (S89-S118 physics-frontier reopening)** inverts the S82-S88 composition: 10 of 11 breakthroughs are substrate-physics. **Era IX (S89-S96)** is the cosmology-closure turn — #41 (τ_fold selection-corridor closed + Ordered-Veil diabatic-transit-freeze certified) and #42 (GW flagship retired, π₀=0, falsifier GW→LSS) — plus the bridge-program permanence milestone #40 (first cross-axis joint theorem to STAGE-3). **Era X (S97-S103)** opens the matter-sector externality cluster (#44, the SM Yukawa texture proven EXTERNAL to A_K) and lands the first bare-operator-modulus closure (#43, τ=0 → LC-CANONICAL) + the public falsifier freeze (#49). **Era XI (S104-S118)** maps the derive/import boundary (#46 a(t) keystone → #45 M_KK import partition), resolves substrate integrability + the BH interior (#47), and closes the CMB scalar amplitude (#48, A_s via c_s). The two load-bearing convergences: #44 (matter-sector externality) + #45 (dimensionful-anchor externality) together draw the framework's SHARP derive/import line; #41 + #47 together settle the substrate's transit and level-statistics as diabatic-freeze + integrable (not thermal, not chaotic). The DAG's densest late in-edges land on #45 (from #44 matter-sector + #46 a(t) keystone) — the framework-defining boundary result of the span.
 
 ---
 
@@ -626,6 +833,14 @@ The directed acyclic graph above shows the 40+ major causal connections among th
 - W20 Joint-Theorem Single-Axis Wall ↔ #27
 - W21 Cross-Pillar Bridge 5+3 Wall ↔ #28
 
+**S89-S118 additions** (new breakthroughs #40-#50 → downstream atlas landings):
+
+- **atlas-02 mechanism-lifecycle** — #41 ↔ S95 `NO-WELL-ONE-LOOP` τ-selection-corridor closure; #42 ↔ S96 Ω_GW-walls=0 closure; #44 ↔ §VII.BL/BV/BX/CK matter-sector-externality closures; #45 ↔ S112 `CF-S112-MKK-SUBSTRATE-ANCHOR` closure; #46 ↔ §VII.CH spectral-triple-no-holonomy-flux; #47 ↔ S110 W0b chaotic-scrambler-corridor retirement.
+- **atlas-07 permanent-results §VII** — #40 ↔ §VII.AH/AU/AV/AY/BG STAGE-3; #43 ↔ §VII.BT (a₂(0)≠0 genesis pole-tower); #44 ↔ §VII.BL/BN/BV/BX/CK; #45 ↔ §VII.BS/CG/CH/CI/CJ; #46 ↔ §VII.CD/CE/CH; #47 ↔ §VII.CA/CC; #48 ↔ `A_s_FW` / `c_s_a2curv_GGE_fold` canonical; #49 ↔ §VII.BU/BS/BP/BQ.
+- **atlas-05 walls-doors-windows** — #41 ↔ W25 One-Loop Effective-Action Monotonicity (τ-selection); #44 ↔ W24 Recursive-Casimir SHAPE Wall (§VII.CK) + §VII.BJ ↔ W23 Superalgebra-Extension Obstruction; #45 ↔ the M_KK external-import boundary (Window-19 H₀ / Window-6 m_H reconciled); #42 ↔ Window-12 LISA-Ω_GW down-tag (amplitude leg retired).
+- **atlas-09 retractions** — #42 ↔ GW/Ω_GW amplitude retirement (Item-49 GW→LSS migration); #47 ↔ HK-CHAOTIC scrambling-corridor retirement + HK-PENROSE bidirectional→one-directional; #46 ↔ HK-JACOBSON 17-OOM CC estimate RETRACTED (S110). #44/#48 carry no physical retraction (down-tags only: J_PMNS ansatz-artifact, A_s scoped, N_e dissolved — all values intact).
+- **atlas-06 probability-trajectory** — #45 (M_KK import boundary) is the span's largest inflection: a proven SHARP boundary that sharpens the surviving surface, NOT a weakness; framework probability held ~22% (stationary-by-cancellation, EVOI actively maintained through S118). #42/#48 re-home and close the observational surface (GW→LSS #1 falsifier; A_s zero-parameter).
+
 ---
 
 ## Substrate-framing audit
@@ -646,16 +861,25 @@ NO breakthrough entry uses LCDM / inflation vocabulary. NO entry uses container 
 
 ## Carry-forwards (genuine future computational work, NOT bookkeeping)
 
-Per `feedback_fix-in-session-never-defer.md`, this atlas identifies the following 4-field genuinely-future carry-forwards from the post-S66 breakthrough chain:
+Per `feedback_fix-in-session-never-defer.md`, this atlas identifies the following genuinely-future carry-forwards from the post-S66 breakthrough chain.
 
-- **CF-1**: Stage-2 cross-axis verify of §VII.AH Path-(c) F_2-Class Theorem (`S88-OR-LATER-EXTENDED-THEOREM-INDEPENDENT-VERIFY`); cross-reviewers connes-spectral + volovik-substrate WITHOUT prior workshop context. Owner: orchestrator. Effort: ~1.0 wave-equivalents.
-- **CF-2**: Stage-2 cross-axis verify of §VII.W-3.LAB STAGE-1-CANDIDATE; cross-reviewers axis-A + axis-B WITHOUT prior workshop context. Owner: orchestrator. Effort: ~1.0 wave-equivalents (multi-year experimental cycle blocking; pre-registration valid through 2027-2030 horizon).
-- **CF-3**: Stage-2 cross-axis verify of §VII.AM Universal Lock Condition; cross-reviewers axis-A axiomatic + axis-B substrate-physics WITHOUT prior workshop context. Owner: hawking-theorist (PRIMARY) + transit-dynamics-aether-mechanic (axis-B substrate-physics). Effort: ~1.0 wave-equivalents.
-- **CF-4**: §W10-120 DORMANT-shell activation (Per-Bulletin-per-pole pole-distinct K=3 MANDATORY promotion); upon activation, the Per-Bulletin-per-pole rule promotes from SUGGESTION-pending-pole-distinct-K=3 to fully-MANDATORY at K=3 across both criteria. Owner: connes-ncg-theorist + lizzi-spectral-functional-theorist. Effort: ~0.5 wave-equivalents.
-- **CF-5**: Substrate-input-orthogonality clause K=3 promotion (currently SUGGESTION at K=1; calibration corpus extension queued); when K=3 reached, cross-clause cross-reference at `joint-theorem-promotion.md §"Audit at plan-freeze"` item 6 promotes from SUGGESTION to MANDATORY. Owner: gen-physicist + volovik-superfluid-universe-theorist. Effort: ~0.5 wave-equivalents.
+**DISCHARGED since the S88 freeze** (the S88-era carry-forwards below all LANDED during S89-S118 — recorded here as closed, not live):
 
-These carry-forwards feed `/rclab-plan` for S89 plan authoring. They are NOT workshop dispatches but COMPUTE-class gates with pre-registered thresholds.
+- ~~CF-1 Stage-2 verify of §VII.AH Path-(c) F_2-Class Theorem~~ → **DISCHARGED S90 W2 CF-20** (blind Stage-2 PASS-AND → STAGE-3-PERMANENT; #40).
+- ~~CF-2 Stage-2 verify of §VII.W-3.LAB (3He-B cocycle-ratio bridge)~~ → **DISCHARGED S100a** (blind Stage-2 11/11 vdd×landau → STAGE-3-PERMANENT). The 3He-B laboratory falsifier (Gate 2 ratio 7.3250 ± 0.1%) remains open on the experimental horizon (Lancaster / Helsinki cells, 2027-2030).
+- ~~CF-3 Stage-2 verify of §VII.AM Universal Lock Condition~~ → **DISCHARGED S100a** (3-agent blind PASS-AND → STAGE-3-PERMANENT).
+- CF-4 / CF-5 (per-pole DORMANT-shell activation; substrate-input-orthogonality K=3) — methodology-floor K-counter items, folded into #50; not tracked here as physics carry-forwards.
+
+**Live S119-forward physics carry-forwards** (from the S89-S118 breakthrough chain):
+
+- **CF-A (off-Casimir SHAPE test)**: the SOLE untested escape from the §VII.CK SHAPE-branch homogeneity obstruction (#44) — an off-Casimir full-SU(3) σ-model that could supply a G-invariant sign-changing per-generation SHAPE. Inputs: the D_K spectrum + the §VII.CK D1-D4 obstruction genus. Gate: does any off-Casimir functional produce the crossing-sign the Casimir-graded ω-ladder cannot? Effort: ~1.0 wave-equivalents. Owner: lizzi + connes.
+- **CF-B (greybody-wall no-go)**: `CF-S119-GREYBODY-NOGO-PROOF` — promote the S118 `CF-S118-ALT-GREYBODY-WALL` FAIL (WALL-STRENGTHENED-4-CLASS-EMPIRICAL) to a structural no-go on the exit-greybody filter leg of A_s (#48). Inputs: the 3-construction-class A_s plurality + the fitted-Γ greybody. Gate: is the greybody filter structurally un-derivable (a 4th external-import), or is there a substrate route? Effort: ~0.5 wave-equivalents. Owner: transit-dynamics + mack.
+- **CF-C (τ_fold mechanism-chain relaxation)**: the only surviving τ_fold-selection route after #41 closed the one-loop + variational corridors — dynamical relaxation via the mechanism chain (I-1 + Turing + RPA + WALL + BCS first-order transition). Inputs: the S95 no-well result + the mechanism-chain gates. Gate: does the dynamical transition select τ_fold, or does τ_fold stay empirical? Effort: ≥2.0 wave-equivalents (multi-gate). Owner: transit-dynamics + tesla.
+
+These live carry-forwards feed `/rclab-plan` for S119+ authoring. They are COMPUTE-class gates with pre-registered thresholds, not workshop dispatches.
 
 ---
 
-*Compiled from: atlas-01-session-timeline.md, atlas-02-mechanism-lifecycle.md, session-50-oz-crossdomain-finding.md, session-50-master-collab.md, framework/spectral-post-mortem.md, session finals (S8, S22, S23, S32, S35, S37, S38, S41, S49, S50, S51), session-61-results.md, session-62-results-workingpaper.md, baseline-findings-s66.md, session-66 workshop syntheses, S70 LEGGETT-MOMENT synthesis, S75 ZETA-NOT-PHYSICAL closure, S82 W-3 FI/RD/MIXED taxonomy, S86 W-5/W-9/W-13 workshop syntheses, S87 W-2 R3 / W4-2 / W6-1 / W11-meta workshops, S88 W4a-17 / W5b-45 / W8-89 / W8-92 / W7b-83 / W7c-167 / W1b2-65 / W10-119 / W13 W-1 R3 closures, atlas-uplift materials packet (atlas-10-breakthrough-genealogy-materials.md, 718 lines), and MEMORY.md. Agent attributions from session metadata. Causal chains traced through session dependency structure and the mechanism lifecycle map. Updated 2026-05-09 (S67-S88 amendments; entries #23–#39 added).*
+*Compiled from: atlas-01-session-timeline.md, atlas-02-mechanism-lifecycle.md, session-50-oz-crossdomain-finding.md, session-50-master-collab.md, framework/spectral-post-mortem.md, session finals (S8, S22, S23, S32, S35, S37, S38, S41, S49, S50, S51), session-61-results.md, session-62-results-workingpaper.md, baseline-findings-s66.md, session-66 workshop syntheses, S70 LEGGETT-MOMENT synthesis, S75 ZETA-NOT-PHYSICAL closure, S82 W-3 FI/RD/MIXED taxonomy, S86 W-5/W-9/W-13 workshop syntheses, S87 W-2 R3 / W4-2 / W6-1 / W11-meta workshops, S88 W4a-17 / W5b-45 / W8-89 / W8-92 / W7b-83 / W7c-167 / W1b2-65 / W10-119 / W13 W-1 R3 closures, atlas-uplift materials packet (atlas-10-breakthrough-genealogy-materials.md, 718 lines), and MEMORY.md. Agent attributions from session metadata. Causal chains traced through session dependency structure and the mechanism lifecycle map.*
+
+*S89-S118 uplift (entries #40–#50, 2026-07-01) compiled from the S119-uplift recon packet: `_uplift-S119-materials/10-timeline-S89-S103.md` + `11-timeline-S104-S118.md` (RECON-1a/1b per-session + cross-cutting breakthrough threads), `20-theorems-results-S89-S118.md` (RECON-2 §VII landings AU→CK), `30-closures-walls-S89-S118.md` (RECON-3 closures C1-C10 + walls W23-W25), and the canonical value-set in `00-CONTRACT.md §6` (n_s 0.9590 / m_H 131.8 / w₀ −0.918@2.13σ / wₐ 0@3.43σ / A_s 3.2994e-9 via c_s / Ω_DM h² 0.120 / Σm_ν 0.0582 / Ω_k 0@0.368σ). Per contract §2, physics RESULTS foregrounded (#40-#49) and methodology-floor maturation COMPRESSED to a single node (#50). Updated 2026-07-01 (S89-S118 uplift; S119-current); prior 2026-05-09 (S67-S88 amendments; #23–#39).*

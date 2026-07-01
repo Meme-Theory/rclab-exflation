@@ -1,7 +1,7 @@
 # Atlas D11: Cross-Pillar Bridge Corpus
 
-**Sessions covered**: S86 W-5 (rule origin) — S88 W-25 (current MANDATORY-K=3 corpus + Hybrid Independence Test K=1 + Per-Bulletin-per-pole K=3 cohomology-class-distinct)
-**Updated**: 2026-05-09
+**Sessions covered**: S86 W-5 (rule origin) — S88 W-25 (MANDATORY-K=3 corpus + Hybrid Independence Test K=1 + Per-Bulletin-per-pole K=3 cohomology-class-distinct); S89–S118 currency reconcile in §XIV
+**Updated**: 2026-07-01 (S89-S118 currency reconcile; S119-current). The 5-anatomy + 3-level discipline below is FROZEN at S88 and remains current; the ~45 §VII bridge/obstruction landings S89–S118 (slots AU→CK) extend the calibration set and are cataloged in atlas-07 §XVI + `sessions/framework/registry/cross-pillar-bridge-corpus.md`, summarized in §XIV.
 **Companion atlas (methodology-side)**: `atlas-12-methodology-floor.md`
 **Source rule**: `.claude/rules/cross-pillar-bridge-anatomy.md` (323 lines; rule body)
 **Source corpus**: `sessions/framework/registry/cross-pillar-bridge-corpus.md` (per-instance corpora)
@@ -461,6 +461,29 @@ The substrate is logically prior to the laboratory image at BOTH the conceptual 
 The K=3 MANDATORY discipline at S88-close (2026-05-04) is the structural mechanism that forces this framing: NEW bridge entries that lack the 5-anatomy + 3-level ladder cannot land; entries that conflate substrate-IS with laboratory-IN cannot land; entries that invert the direction of explanation (treating Pillar B as fundamental and Pillar A as derived) cannot land.
 
 The cross-pillar bridge corpus IS the framework's structural answer to: "how does substrate IS Pillar A connect to laboratory IN Pillar B without inverting the substrate-prior discipline?" The five anatomy elements, the three confidence levels, the K=3 corpus, the Hybrid Independence Test, the Level-2 sub-class taxonomy, the OE-form discipline, the substrate-input-orthogonality clause, the per-Bulletin-per-pole intra-pillar extension, the two-clause registry-PASS-vs-K-counter separation, the parallel algebra-axis orthogonality K=3, and the FWD-C1/C2/C3 forward calibration — all are structural mechanisms that PRESERVE the substrate-prior direction at registry-entry granularity.
+
+---
+
+## XIV. S89–S118 currency delta (corpus extension; catalog lives elsewhere)
+
+The 5-anatomy + 3-level ladder, the K=3 MANDATORY discipline, the Hybrid Independence Test, and the Level-2-binding/non-binding sub-class taxonomy above are **frozen at S88 and remain current** — no re-derivation of the anatomy occurred S89–S118. What changed is CONTENT: the discipline was applied at plan-freeze to ~45 new §VII cross-pillar / intra-pillar landings (slots **AU → CK**), the live calibration set. This atlas does NOT re-catalog them; the per-slot inventory lives in **atlas-07 §XVI** (retitled "S52–S118") and the per-instance corpora + K-counter logs in **`sessions/framework/registry/cross-pillar-bridge-corpus.md`**.
+
+**Structurally-notable new bridge instances** (highlights only — NOT the catalog; source: `_uplift-S119-materials/20-theorems-results-S89-S118.md §A.1`):
+
+| slot | S{N} | bridge (substrate-IS → lab-IN) | corpus role |
+|:-----|:-----|:-------------------------------|:------------|
+| §VII.AU.OP-PROJ | S89 →3 S93 | FWD-C1 realized: substrate spectral-action tilt → CMB n_s; regulator-invariant α = −3 | the §XI FWD-C1 forward-candidate is now LANDED (STAGE-3-PERMANENT) |
+| §VII.BG | S94 →3 S95 | α_s direct Connes-Karoubi K₀-pairing transport at the a₄ Yang-Mills pole s=2 | new bridge-map-class instance (K₀-pairing, not HKR L→∞) |
+| §VII.BK | S97 | D_K ≅ D_F low-energy recovery of the Connes–Chamseddine SM finite geometry | substrate ↔ SM-geometry bridge |
+| §VII.CB | S106 →3 | Type-IV core EMT `Tr_{M₂}(P_a₂·T^{(IV)})` → emergent metric g_M; **BINDING L⁻³**; Level-3 7.5e-9 < Level-2 1e-3 | new **REGISTRY-PASS** instance — structural sibling of the §VII.AF.1 baseline |
+| §VII.CF | S110 →3 S111 | κ-sign-lock ∧ Wodzicki-parity joint foreclosure (only admissible transport = sign-locked `M_KK¹` scale leg) | anchors the new transport-degree / parity discipline |
+
+**K-counter status deltas** (one line each; source: `20-theorems-results-S89-S118.md §B` + `cross-pillar-bridge-anatomy.md`):
+
+- **Algebra-axis orthogonality** (§X): **held MANDATORY at K=3** — no change; re-confirmed across S89–S118 landings.
+- **Per-observable transport-degree scale-separation** (`deg T_{BZ→pivot}`): **NEW — SUGGESTION at K=2**; its mass-dimension/parity selection rule (S110 W4) forces every odd-`d_A` observable onto the sign-locked `M_KK¹` scale leg. Physically load-bearing for §VII.CF and §VII.CG (the LRD-temperature and r=16ε foreclosures).
+- Additional plan-freeze sub-directives landed S89–S118 as SUGGESTION/K=1–K=2 — Composite Bridge-Map dimensional-class admissibility; Tier-1/Tier-2 dimensional-re-anchorability gate (K=2); Level-3 annotation discipline; Non-Promotion-by-Held-Number meta-taxonomy — **pointer only**; see `cross-pillar-bridge-corpus.md`.
+- **No new §VII.M-letter methodology slots** were opened S89–S118; the maturation is in `.claude/rules/*` + the corpus files, not the registry (see atlas-12 §XX).
 
 ---
 

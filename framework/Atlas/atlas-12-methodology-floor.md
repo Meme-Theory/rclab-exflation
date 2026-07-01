@@ -1,10 +1,10 @@
 # Atlas D12: Methodology Floor
 
-**Sessions covered**: S78 (PRU Class 8 origin) — S88 W-25 (current methodology-floor maturation)
-**Updated**: 2026-05-09
+**Sessions covered**: S78 (PRU Class 8 origin) — S88 W-25 (methodology-floor maturation); S89–S118 currency reconcile in §XX
+**Updated**: 2026-07-01 (S89-S118 currency reconcile; S119-current). The floor below is FROZEN at S88 and remains current; per the user's "focus on results, not meta" directive the S89–S118 maturation is COMPRESSED to §XX, not expanded into per-rule sections.
 **Companion atlas (substrate-side)**: `atlas-11-cross-pillar-bridge-corpus.md`
-**Source rule files**: 24 framework rules at `.claude/rules/`
-**Source templates**: 9 framework templates at `.claude/templates/` + 1 frozen example at `.claude/templates/examples/`
+**Source rule files**: 25 framework rules at `.claude/rules/`
+**Source templates**: 12 framework templates at `.claude/templates/` + 1 frozen example at `.claude/templates/examples/`
 
 This atlas describes HOW the substrate is investigated, NOT WHAT the substrate IS. Atlas-12 is the audit-trail-layer atlas of the layer-functor F. Cross-link to atlas-11 (substrate-IS bridges) makes the substrate-vs-methodology orthogonality explicit. Methodology rules are NOT physics — they govern process.
 
@@ -16,10 +16,10 @@ The two atlases are STRUCTURALLY ORTHOGONAL: atlas-11 captures substrate-IS obse
 
 The methodology floor is the substrate ↔ methodology ↔ audit infrastructure that emerged S82-S88. It includes:
 
-- **24 framework rule files** at `.claude/rules/` (process discipline; see §"NEW-RULES" enumeration)
-- **9 templates** at `.claude/templates/` + 1 frozen example (canonical scaffolds for synthesis, plans, working papers, workshops, agents; see §"TEMPLATES" enumeration)
+- **25 framework rule files** at `.claude/rules/` (process discipline; see §XVI enumeration + §XX delta)
+- **12 templates** at `.claude/templates/` + 1 frozen example (canonical scaffolds for synthesis, plans, working papers, workshops, agents; see §XVII enumeration + §XX delta)
 - **The layer-functor F** mapping substrate-physics quantities to methodology images to audit images (§II)
-- **PRU Class 8.0–8.6 sub-class taxonomy** (machinery-pin cardinality / verifier-rubric / output-precision / representation-convention-pin / joint-hypersurface-form / layered-substitution-chain) (§IV)
+- **PRU Class 8.0–8.7 sub-class taxonomy** (machinery-pin cardinality / verifier-rubric / output-precision / representation-convention-pin / joint-hypersurface-form / layered-substitution-chain / degenerate-observable-pre-flight) (§IV)
 - **Joint-theorem 4-stage promotion pathway** (workshop-internal candidate → registered candidate → two-axis cross-verify → permanent) (§V)
 - **AMRI (Agent-Memory Registry Inversion)** detection and cleanup history (§VIII)
 - **Methodology-wave classification** (M1–M4 strict conjunction with allowlist enforcement) (§VI–VII)
@@ -101,7 +101,7 @@ Step 7 (Extension):   weight-n substrate observable → enforcement-strength-n
 
 ---
 
-## IV. PRU Class 8.0–8.6 sub-class taxonomy
+## IV. PRU Class 8.0–8.7 sub-class taxonomy
 
 Source: `epistemic-discipline.md §"Pre-Registration Completeness — PRU Class-8 sub-class taxonomy formal extension"`.
 
@@ -113,6 +113,7 @@ Source: `epistemic-discipline.md §"Pre-Registration Completeness — PRU Class-
 | 8.4 | representation-convention-pin failure | S88 W-16 W5b-50 V.5 (operator-domain dim > natural rep dim of substrate algebra; Pad-block convention dependence) | K=1 advisory until K=3 | `pru-class-corpus.md §5` |
 | 8.5 | joint-hypersurface-pre-registration-form failure | S88 W-15 W4c-36 V.9 (gates consuming substrate-IS through CHILD pin must emit 2D hypersurface verdict-line value field) | K=1 advisory until K=3 | `pru-class-corpus.md §6` |
 | 8.6 | layered-substitution-chain-audit failure | S88 W-17 W5b-47 V.5 (3-layer substitution chain crossing §VII.U.2 corner cells; arithmetic / parse-tree / operationalization layers must be pre-registered) | K=1 advisory until K=3 | `pru-class-corpus.md §7` |
+| 8.7 | degenerate-observable pre-flight failure | S89–S118 (single-pole CM-1995 §III.4 residue on a degenerate dimension-spectrum; coincident-root + per-pole-multiplicity + compositional-corridor degeneracy-witness required) | advisory until K=3 | `epistemic-discipline.md` + `pru-class-corpus.md §"Class 8.7"` |
 
 ### Source-Reconciliation Class-(a)–(f) taxonomy (companion to Class 8.0/8.1)
 
@@ -618,9 +619,9 @@ When a gate's output VALUE will be cited downstream:
 
 ---
 
-## XVI. The 24 framework rule files
+## XVI. The framework rule files (25 on disk; 24 enumerated below)
 
-Every rule file cited below is verified to exist (24/24 confirmed via `Glob ".claude/rules/*.md"`).
+The 24 rule files enumerated below are verified to exist via `Glob ".claude/rules/*.md"`. A 25th — `capstone-hygiene-gate.md` (MANDATORY at K=3; capstone prose-tag ↔ register-status synchronization), added S89–S118 — is summarized in §XX rather than expanded here.
 
 | # | Rule file | Origin | Role (1-line) |
 |:-:|:----------|:-------|:--------------|
@@ -636,7 +637,7 @@ Every rule file cited below is verified to exist (24/24 confirmed via `Glob ".cl
 | 10 | `inheritance-falsifier-protocol.md` | S86 W-5 RULE-3 | Rank-2 ker(ι_*) protocol with 4 gates (kernel-signature decisive + cohomology-asymmetry ratio + kernel-signature supporting + slope-discrimination); (Δ_B/Δ_A)^p cancellation theorem. |
 | 11 | `registry-landing.md` | S86 W-3 RULE-1 | SOURCE-DOUBLE-CITE-CO-PRIMARY (sequential V+C chains); Bridge-Landing Script Architecture (single-shot pattern, S88 W3c-30); Operator-Projection Reading-A Naming Hygiene (OP-PROJ vs STATE-PROJ; MANDATORY at K=3, S88 W8-92). |
 | 12 | `phononic-framing.md` | S86 W-5 RULE-2 | IS-not-IN convention (substrate IS observable, not IN container); LCDM-vs-substrate vocabulary table; Single-τ-slice vs moduli-deformation substrate-IS levels (S88 W-2 W2-10; K=2 advisory). |
-| 13 | `epistemic-discipline.md` | S82+ (extended; v3 union landing S86 W0a-1) | Layer-Decomposition (F functor); Phi correspondence; PRU Class 8.0–8.6 sub-class taxonomy; Source Reconciliation Class-(a)–(f) taxonomy; Verifier-rubric pre-registration (Class 8.2); Publication-precision pre-registration (Class 8.3); Pole-Scope sub-clause (MANDATORY at K=4, S88 W7a-72); Resolution-Specificity Scoping sub-clause; Closing-Paragraph-Coherence Audit Pattern (EG1). |
+| 13 | `epistemic-discipline.md` | S82+ (extended; v3 union landing S86 W0a-1) | Layer-Decomposition (F functor); Phi correspondence; PRU Class 8.0–8.7 sub-class taxonomy; Source Reconciliation Class-(a)–(f) taxonomy; Verifier-rubric pre-registration (Class 8.2); Publication-precision pre-registration (Class 8.3); Pole-Scope sub-clause (MANDATORY at K=4, S88 W7a-72); Resolution-Specificity Scoping sub-clause; Closing-Paragraph-Coherence Audit Pattern (EG1). |
 | 14 | `evoi-prioritization.md` | S82+ | Framework probability methodology; EVOI = P(pass)·\|delta_P(pass)\| + P(fail)·\|delta_P(fail)\|; effort-based probability tracking. |
 | 15 | `agent-standards.md` | S82+ (HIGH-DENSITY WORKSHOP TEMPLATE T2-5 from S86 W-12) | Universal agent standards (formal rigor, persistent memory); AMRI 3-test detection; HIGH-DENSITY WORKSHOP TEMPLATE (multi-layer output-slot decomposition). |
 | 16 | `output-standards.md` | S82+ (T1-13/T1-14 from S86 W-3) | 7-component action items format; 7-section handoff document; Workshop Wrap-Up "What Changed" numerical-vs-structural distinction; Carry-Forward Dependency Enumeration. |
@@ -649,13 +650,13 @@ Every rule file cited below is verified to exist (24/24 confirmed via `Glob ".cl
 | 23 | `gate-verdicts.md` | S82+ (Option A landed S88 W8-100) | Verdict-line schema (canonical line + dual-SHA companion comment row); Option A `supersedes=<old_audit_sha>` tag protocol under absolute verdict permanence; canonical `append_verdict()` helper. |
 | 24 | `v3-closure-recovery.md` | S82+ (S78 origin) | Stage 1 automatic re-dispatch (max 2 iterations per signal); Stage 2 V3-NON-COMPLIANT fallback; Stage 3 user-intervention trigger; PROHIBITED_ACTIONS Class 1–4 (convention-shopping, iterate-until-PASS, post-hoc pre-registration editing, ansatz-forced PASS); bounded-iteration termination proof. |
 
-**Total: 24 rule files** (target ≥14 — substantially exceeded).
+**Total: 25 rule files** (24 enumerated above + `capstone-hygiene-gate.md` from S89–S118, see §XX; target ≥14 — substantially exceeded).
 
 ---
 
-## XVII. The 9 framework templates (+1 frozen example)
+## XVII. The framework templates (12 on disk; 9 enumerated below, +1 frozen example)
 
-Every template cited below is verified to exist (9/9 confirmed via `Glob ".claude/templates/*.md"`).
+The 9 templates enumerated below are verified to exist via `Glob ".claude/templates/*.md"`. 3 more — `session-housekeeping.md`, `plan-investigation.md`, `external-conceptual-search-prompt.md` (added S89–S118; 12 total) — are summarized in §XX.
 
 | # | Template | Role |
 |:-:|:---------|:-----|
@@ -671,7 +672,7 @@ Every template cited below is verified to exist (9/9 confirmed via `Glob ".claud
 
 **Plus**: `examples/workingpaper-shell-example.md` (frozen 10-gate dispatch shell, does not get filled in by runtime).
 
-**Total: 9 templates + 1 frozen example** (target ≥6 — exceeded).
+**Total: 12 templates + 1 frozen example** (9 enumerated above + 3 added S89–S118, see §XX; target ≥6 — exceeded).
 
 ---
 
@@ -721,8 +722,23 @@ This atlas treats methodology rules as PROCESS, not physics:
 - §IV–§XIV frames each rule as a discipline that GOVERNS HOW the substrate is investigated, never as substrate physics itself
 - §XII (registry landing) explicitly cross-links to `cross-pillar-bridge-anatomy.md §"Algebra-axis orthogonality K-counter"` MANDATORY clause to enforce that atlas-11 (substrate) and atlas-12 (methodology) are STRUCTURALLY ORTHOGONAL — cross-corner co-primary FORBIDDEN
 
-The methodology floor IS the framework's structural answer to: "how do you ENFORCE substrate-priority discipline at registry-entry granularity, plan-freeze-time, and audit-trail emission, without the substrate being able to police itself?" The 24 rule files, 9 templates, layer-functor F, Phi correspondence, PRU Class 8.0–8.6 taxonomy, joint-theorem 4-stage pathway, AMRI cleanup, methodology-wave M1-M4 + allowlist, workshop 4-condition + 3-question discriminator, mechanical-closure 5-clause + Layer-separability L1-L4 carve-out, substrate-first canonical-sourcing 4-step audit + SCHEMATIC level pin, registry-landing SOURCE-DOUBLE-CITE-CO-PRIMARY + OP-PROJ vs STATE-PROJ, verifier-rubric Class 8.2 K=5 + publication-precision Class 8.3 K=4 — all are structural mechanisms that PRESERVE the substrate-prior direction at the methodology-floor layer.
+The methodology floor IS the framework's structural answer to: "how do you ENFORCE substrate-priority discipline at registry-entry granularity, plan-freeze-time, and audit-trail emission, without the substrate being able to police itself?" The 25 rule files, 12 templates, layer-functor F, Phi correspondence, PRU Class 8.0–8.7 taxonomy, joint-theorem 4-stage pathway, AMRI cleanup, methodology-wave M1-M4 + allowlist, workshop 4-condition + 3-question discriminator, mechanical-closure 5-clause + Layer-separability L1-L4 carve-out, substrate-first canonical-sourcing 4-step audit + SCHEMATIC level pin, registry-landing SOURCE-DOUBLE-CITE-CO-PRIMARY + OP-PROJ vs STATE-PROJ, verifier-rubric Class 8.2 K=5 + publication-precision Class 8.3 K=4 — all are structural mechanisms that PRESERVE the substrate-prior direction at the methodology-floor layer.
 
 ---
 
-*Sources: 24 rule files at `.claude/rules/` (verified via `Glob`); 9 templates at `.claude/templates/` + 1 frozen example at `.claude/templates/examples/`; `epistemic-discipline.md §"Layer-Decomposition"` (F functor + Phi correspondence); `agent-standards.md §"Agent-Memory Registry Inversion (AMRI)"` (3-test protocol); `joint-theorem-promotion.md` (4-stage pathway + Axis-B Selection Protocol + substrate-input-orthogonality clause + cross-reviewer-machinery-self-authorship requirement); `wave-classification.md` (M1-M4 strict conjunction + NROY clause + Forward-pinned-follow-up wave class); `methodology-wave-allowlist.md` (append-only orchestrator-only allowlist + recursion-attack closure); `Investigating-Workshops.md` (4-condition workshop definition + 3-question discriminator + S87 batch-1 + S88 W13 calibration); `mechanical-closure-discipline.md` (5-clause acceptability + Layer-separability L1-L4 carve-out); `substrate-first-canonical-sourcing.md` (4-step audit pattern + SCHEMATIC level pin K=4 MANDATORY); `registry-landing.md` (SOURCE-DOUBLE-CITE-CO-PRIMARY + Bridge-Landing Script Architecture + OP-PROJ vs STATE-PROJ Naming Hygiene K=3 MANDATORY); `regulator-pin-discipline.md` + `regulator-convention-lockdown.md`; `pru-class-corpus.md` (PRU Class 8.0-8.6 corpus); `methodology-wave-instances.md` (per-instance provenance ledger); `gate-verdicts.md` (Option A protocol); `v3-closure-recovery.md` (PROHIBITED_ACTIONS Class 1-4).*
+## XX. S89–S118 methodology-floor currency delta (compressed per "focus on results" directive)
+
+The layer-functor F, Phi correspondence, PRU taxonomy, joint-theorem 4-stage pathway, wave-classification M1–M4, AMRI protocol, workshop 3-question discriminator, mechanical-closure carve-out, and registry-landing conventions above are **frozen at S88 and remain current** — the S89–S118 maturation EXTENDED them without overturning any. Per the user's "focus on results, not meta-claude stuff" directive this delta is COMPRESSED here, not expanded into per-rule sections. It landed almost entirely in `.claude/rules/*` + `sessions/framework/registry/{pru-class,cross-pillar-bridge,capstone-hygiene}-corpus.md`; per the S89–S118 recon (`20-theorems-results-S89-S118.md §B`), **no new §VII.M-letter methodology slots** were opened in the permanent-results registry.
+
+**Deltas since S88:**
+
+- **Rule count 24 → 25**: new rule `capstone-hygiene-gate.md` (**MANDATORY at K=3**) — a standing 5-question gate synchronizing the curated capstone (`sessions/framework/phonic-exflation-equation.md`) prose confidence-tags to their register status (Atlas D04 assumptions / D09 retractions / `permanent-results-registry.md`); the audit hook HARD-HALTs a capstone-touching session that omits the 5-question block. Preserves substrate-first framing on every down-tag.
+- **Template count 9 → 12**: `session-housekeeping.md` (the canonical Q2 ledger for `Investigating-Workshops.md` workshop-vs-carry-forward routing, §A–§E lifecycle partition), `plan-investigation.md`, `external-conceptual-search-prompt.md`.
+- **SUGGESTION → MANDATORY (K=3) promotions**: the multiplicative-normalization cancellation invariant (`math-scripts.md`; K=3 at S94 W6-18 — a K-dependent log-derivative annihilates ANY multiplicative L_max / τ-moduli / Casimir-ceiling pre-factor, so an L_max-"plateau" is a structural identity, NOT regulator-class evidence; S116 W4 additive-in-trace scope carve-out); capstone-hygiene (above).
+- **PRU Class-8 taxonomy extended 8.6 → 8.7** (degenerate-observable pre-flight; advisory until K=3) — single-pole CM-1995 §III.4 residue on a degenerate dimension-spectrum. See §IV.
+- **New plan-freeze pin axis — per-observable transport-degree / mass-dimension-parity** (S110 W4; `cross-pillar-bridge-anatomy.md` + `regulator-pin-discipline.md`): a transported degree `deg T_{BZ→pivot}` MUST carry the observable's `d_A`/parity tag (odd-`d_A` observables are forced onto the sign-locked `M_KK¹` scale leg). METHODOLOGY-floor, but physically load-bearing for §VII.CF/CG — see atlas-11 §XIV. SUGGESTION at K=1–K=2.
+- Numerous within-corpus K-counter advances + queued audit-script landings across `pru-class-corpus.md` + `cross-pillar-bridge-corpus.md` — **pointer only**; those corpora are the canonical ledger, not this atlas.
+
+---
+
+*Sources: 25 rule files at `.claude/rules/` (verified via `Glob`); 12 templates at `.claude/templates/` + 1 frozen example at `.claude/templates/examples/`; `epistemic-discipline.md §"Layer-Decomposition"` (F functor + Phi correspondence); `agent-standards.md §"Agent-Memory Registry Inversion (AMRI)"` (3-test protocol); `joint-theorem-promotion.md` (4-stage pathway + Axis-B Selection Protocol + substrate-input-orthogonality clause + cross-reviewer-machinery-self-authorship requirement); `wave-classification.md` (M1-M4 strict conjunction + NROY clause + Forward-pinned-follow-up wave class); `methodology-wave-allowlist.md` (append-only orchestrator-only allowlist + recursion-attack closure); `Investigating-Workshops.md` (4-condition workshop definition + 3-question discriminator + S87 batch-1 + S88 W13 calibration); `mechanical-closure-discipline.md` (5-clause acceptability + Layer-separability L1-L4 carve-out); `substrate-first-canonical-sourcing.md` (4-step audit pattern + SCHEMATIC level pin K=4 MANDATORY); `registry-landing.md` (SOURCE-DOUBLE-CITE-CO-PRIMARY + Bridge-Landing Script Architecture + OP-PROJ vs STATE-PROJ Naming Hygiene K=3 MANDATORY); `regulator-pin-discipline.md` + `regulator-convention-lockdown.md`; `pru-class-corpus.md` (PRU Class 8.0-8.7 corpus); `methodology-wave-instances.md` (per-instance provenance ledger); `gate-verdicts.md` (Option A protocol); `v3-closure-recovery.md` (PROHIBITED_ACTIONS Class 1-4).*

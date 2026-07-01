@@ -1,10 +1,10 @@
 # Atlas D01: Session Timeline
 
-**Scope**: Sessions 1-88 (Feb 2026 — May 2026)
-**Updated**: 2026-05-09 (S67-S88 uplift; Era IX substrate-compaction-mature + Era X methodology-floor with sub-eras X-a foundation / X-b mature)
-**Total**: 88 sessions, ~1500+ computations, 287+ mechanism closures, ~150+ permanent + STAGE-1-CANDIDATE registry landings
+**Scope**: Sessions 1-118 (Feb 2026 — Jun 2026)
+**Updated**: 2026-07-01 (S89-S118 uplift; S119-current) — adds Eras XI-XIX: bridge build-out → cosmology-closure/GW-retirement → emergent-FRW compute arc → first operator-modulus closure → falsifier-surface freeze → M_KK-keystone → external-import partition → observational honesty pass. Prior: 2026-05-09 (S67-S88 uplift; Eras IX-X).
+**Total**: 118 sessions (S1-S118; S100 split a/b), ~2000+ computations, 300+ mechanism closures, 200+ permanent + STAGE-1-CANDIDATE registry landings (§VII through §VII.CK)
 
-> **Note on era-label collision**: The two "Era VII" headers below (lines for S47-S51 "Fabric, O-Z, and the Scale Mapping" and S61-S62 "Spectral Action Triad and n_s Recovery") are a pre-existing label-collision in the atlas. Per `feedback_fix-in-session-never-defer.md`, the second has been renamed to "Era VII-bis" for indexing disambiguation; content is unchanged. The pre-existing S52-S60 gap (no per-session rows; sessions consolidate into atlas-00 line 80 references) remains as a separate backfill carry-forward not addressed by this S67-S88 uplift.
+> **Note on era-label collision**: The two "Era VII" headers below (lines for S47-S51 "Fabric, O-Z, and the Scale Mapping" and S61-S62 "Spectral Action Triad and n_s Recovery") are a pre-existing label-collision in the atlas. Per `feedback_fix-in-session-never-defer.md`, the second has been renamed to "Era VII-bis" for indexing disambiguation; content is unchanged. The pre-existing S52-S60 gap (no per-session rows; sessions consolidate into atlas-00 line 80 references) remains as a separate backfill carry-forward not addressed by this S67-S88 uplift (and still open after the S89-S118 uplift).
 
 ---
 
@@ -460,6 +460,215 @@
 
 ---
 
+## Era XI: Cross-Pillar Bridge Build-Out and Methodology Maturation (Sessions 89-93)
+
+> **Era boundary justification**: S89 opens the post-methodology-floor build-out. The §VII cross-pillar bridge registry expands from the single §VII.W / §VII.AF.1 calibration instances (S86-S88) into a systematic slot build-out — FWD-Cn candidates, Wodzicki-BCS, Pati-Salam — with the first cross-axis joint theorems reaching STAGE-3-PERMANENT. Methodology machinery (PRU 8.x, algebra-axis orthogonality, SCHEMATIC-vs-FULL level-pin) keeps hardening but is now subordinate to the physics landings. LQG/CDT cross-framework comparison workshops open. The era closes at S93 as the build-out pivots (S94) to cosmology closure.
+
+### Session 89: FWD-C1 Pillar I↔II Bridge Landed
+- **Question**: Does the n_s spectral-action observable bridge to the Planck CMB pivot as a registered cross-pillar theorem?
+- **Answer**: 7 waves / 44 gates. FWD-C1 Pillar I↔II cross-pillar bridge (substrate-IS n_s spectral-action ↔ laboratory-IN Planck CMB) LANDED as §VII.AV.OP-PROJ (W7c) via the n_s_FW-vs-c_sub-corrected Mellin-cone closure. §VII.AH Joint F_2-Class Path-(c) theorem passed its Stage-2 cross-axis independent-verify (W4-7). α(M) horizon-microstate count + cascade-tail; Connes-Karoubi pairing canonical pipeline; 3He-B inheritance retry. (Meta: audit-script wave W6.)
+- **Changed**: First FWD-Cn cross-pillar bridge registered; §VII.AH clears Stage-2.
+
+### Session 90: First Cross-Axis Joint Theorem to STAGE-3
+- **Question**: Can a cross-axis joint theorem complete the 4-stage promotion pathway to permanent?
+- **Answer**: 8 waves / 66 gates. §VII.AH Joint F_2-Class Path-(c) promoted STAGE-3-PERMANENT (W2 CF-20) — the framework's FIRST cross-axis joint theorem to reach permanent status. §VII.AZ.OP-PROJ Cross-Morphism M_3(ℂ)-Kernel Universality (Reading A wins). Var_a(n_a^GGE) ∈ Cell-II Stage-1 candidate (three-machinery convergence). Cascade-tail / α(M) / LRD / PBH substrate-physics. (Meta: 17-gate rule-file/audit wave W1.)
+- **Changed**: First joint theorem to STAGE-3-PERMANENT via cross-axis Stage-2 PASS-AND.
+
+### Session 91: Wedderburn Image + Pati-Salam Candidate
+- **Question**: What structural relations and algebra-extension bridges land as the build-out widens?
+- **Answer**: 9 waves. Wedderburn-Image Relation dim_HS = Σ rankᵢ²·dim(Dᵢ) on A_K = ℂ⊕ℍ⊕M_3(ℂ) (§VII.BC). Pillar-2 (Δ_B/Δ_A)^p cocycle-cancellation structural theorem (§VII.BD). Pati-Salam FWD-C4 cross-pillar bridge candidate registered STAGE-1 (§VII.BE). §VII.AX PBH-cluster completeness; SCHEMATIC-vs-FULL + Wodzicki-BCS closure-pathway groundwork.
+- **Changed**: Algebra-extension (Pati-Salam) and cocycle-cancellation bridge candidates enter the registry.
+
+### Session 92: SCHEMATIC-vs-FULL Adjudication + Second STAGE-3
+- **Question**: Can the SCHEMATIC-vs-FULL evaluation ambiguity be adjudicated, and does a second joint theorem reach permanent?
+- **Answer**: 9 waves / 64 wave-items. SCHEMATIC-vs-FULL adjudication campaign (§VII.AF.1 + §VII.AU + composite Wodzicki∘HKR bridge map). Wodzicki-BCS §VII.BA Stage-2 pathway advanced. A second cross-axis joint theorem reached STAGE-3-PERMANENT (W4-7, the Corner-II / §VII.U.2 line). LQG-comparison workshop seeds. (Meta: allowlist orchestrator-only-edit discipline lesson.)
+- **Changed**: Second cross-axis joint theorem permanent; SCHEMATIC-vs-FULL level-pin discipline exercised.
+
+### Session 93: Hochschild-Künneth Morita Permanent + LQG Cluster
+- **Question**: Do the Wodzicki-BCS and Morita-invariance bridges advance, and does the LQG comparison open?
+- **Answer**: 10 waves / 46 gates. §VII.AY Hochschild-Künneth Morita-Invariance theorem promoted STAGE-3-PERMANENT (W5-2, 3-axis Stage-2 PASS-AND). §VII.BA Wodzicki-BCS composite-bridge map built (Pillar II Mellin ↔ Pillar V BdG). §VII.AV anchor-reconciliation + slot-split; §VII.AX PBH cluster. α_s transport-degree + SCHEMATIC-vs-FULL + spectral-dimension d_s. LQG narrow-path cluster (W8). (Meta: STAGE-3 slot pre-allocation lockfile.)
+- **Changed**: Morita-invariance permanent; Wodzicki-BCS composite bridge built; LQG cross-framework thread opens.
+
+---
+
+## Era XII: Cosmology-Closure and GW-Retirement Turn (Sessions 94-96)
+
+> **Era boundary justification**: S94 pivots from registry build-out to substrate-cosmology closure. Three sessions retire or re-scope long-standing physical claims (the B2 van-Hove label, the GW flagship, the seesaw framing), certify the Ordered-Veil transit-freeze, close the t*/one-loop τ-selection corridor, and complete the d=8 spectral cone. This is the "removal of stale data" turn at the physics layer.
+
+### Session 94: van-Hove Demotion + BAO Reach Qualify
+- **Question**: Does the B2 "infinite-order van Hove flat band" claim survive, and how far does the two-speed BAO signature reach?
+- **Answer**: The B2 "infinite-order van Hove" + "flat band" label is REFUTED (W7-22: the band disperses linearly, v_g(fold)=0.0227≠0; n_dispersion=1) and RETAINED only as a finite, velocity-slaved, BCS-driving DOS edge (ρ_smooth = 14.02 M_KK⁻¹ = 1/(π·v_g), the N(0) feeding g·N(0)=3.24). §VII.AV.OP-PROJ (FWD-C1) + §VII.AX.STATE-PROJ (PBH) promoted STAGE-3-PERMANENT. LQG-CDT cross-framework rows Stage-2-verified. BAO: the substrate-first B1-dominant peak shift transports to 0.14% — BELOW DESI DR2 ruler (0.24%) and all per-tracer BAO; the naive 19% is container-thinking; live two-speed channel = S43 first-sound ring r₁=325.3 Mpc (amplitude-gated).
+- **Changed**: "infinite-order van Hove"/"flat band" DEMOTED (→ atlas-09); BAO peak-position reach qualified below current precision (Row #67).
+
+### Session 95: t* Corridor Closed + Ordered-Veil Certified
+- **Question**: Can t*/τ_fold be selected variationally at one loop, and is the Ordered-Veil transit-freeze certified?
+- **Answer**: The one-loop + variational τ-selection corridors CLOSE — T-STAR-ONELOOP-ORIGIN composite (sign=PASS, magnitude=FAIL: the one-loop origin fails on magnitude) + NO-WELL-ONE-LOOP PASS (no interior saddle at tree+one-loop; effective-action monotonicity). τ_fold remains empirical today; surviving route = mechanism-chain dynamical relaxation. Ordered-Veil CERTIFIED: ORDERED-VEIL-SUBSTRATE-CLOCK PASS, R_therm = 5251.8 (both substrate-clock ratios ≫1 → diabatic transit-freeze, NOT integrability; S_ent=0). Acoustic white-hole causal structure + emergent-a(t) bridge waves.
+- **Changed**: Variational τ-selection corridor closed (τ_fold empirical); Ordered-Veil diabatic-transit-freeze certified (supersedes "GGE never thermalizes").
+
+### Session 96: GW Flagship Retired + Neutrino Reframe
+- **Question**: Does the GW amplitude survive as a falsifier, and how does the neutrino/CC sector reconcile?
+- **Answer**: GW flagship RETIRED — OMEGAGW-GGE-VS-ZN: π₀(U(1))=0, substrate walls = 0 EXACT; Ω_GW amplitude leg retired; falsifier migrates GW→LSS (new Rows #71 f·σ₈ / #72 first-sound-ring / #73 ν-ordering). c_s²=0 registered §VII.BH STAGE-3-PERMANENT. Neutrino reframe: §0 "no seesaw" → "no external seesaw parameter"; ν Majorana DEFINITE with INTERNAL M_R; prediction m_ββ 0νββ next-gen + δ_CP∈{0,π} DUNE/Hyper-K falsifier; bare R=27.2 PROVEN → §8.5-conditional. Leggett-DM Γ_grav/H₀ re-pinned 3.31e-66. d=8 spectral cone completed {a₀,a₂,a₄,a₆,a₈}: a₆=765.59, a₈=521.18, Λ_sp/M_KK=2.06. Capstone status-sync: f_NL point→BOUND, w_a→BROKEN, GGE integrability-permanence→BROKEN. (Meta: capstone-hygiene 5-Q gate authored.)
+- **Changed**: GW/Ω_GW amplitude falsifier RETIRED (GW→LSS); w_a BROKEN; f_NL point→bound; d=8 cone completed; seesaw framing corrected.
+
+---
+
+## Era XIII: Emergent-FRW and DILUTION-CC Compute Arc (Sessions 97-99)
+
+> **Era boundary justification**: S97-S99 form a focused compute arc on the two cosmology keystones — the emergent-FRW a(t)/effective-Friedmann frontier (C1) and the DILUTION-CC/C10 discharge — running in parallel with matter-sector frontiers and a broad literature-review sweep. The a(t) trajectory reaches PASS with a residual κ-knob; the arc feeds the S110-S112 M_KK-keystone campaign.
+
+### Session 97: Emergent a(t) Trajectory PASS
+- **Question**: Does an explicit physical-seconds a(t) trajectory exist, and what does the q-theory CC exponent do?
+- **Answer**: 6 waves / 20 gates. AT-TRAJECTORY PASS (W1-1): explicit physical-seconds a(t), monotone-up + finite, reproduces the H²(τ*) anchor — but τ_dot one-parameter band unresolved (κ-knob residual). C10-N-EXPONENT (sign=FAIL/mag=PASS): the q-theory departure exponent n_eff → 2 from below (anharmonic softening); core n_eff→2 confirmed. Matter frontiers (#7 Yukawa, #9 baryogenesis); Ω_GW-shape + f·σ₈ + Bayes-factor observational wave.
+- **Changed**: Emergent a(t) trajectory PASS (κ-knob residual); DILUTION-CC exponent n_eff→2 from below.
+
+### Session 98: C1 Route Reconciliation + Spectral-Moment Robustness
+- **Question**: Does the a(t) route reconcile and the CC/C10 cluster discharge?
+- **Answer**: 6 waves / 11 gates. Emergent-FRW a(t) route reconciliation (C1 keystone) continued; CC closure & C10-sign/BBN cluster (relaxation-closure consumes the route-selected H(τ)); matter sector (#7 Yukawa ε_LX + #9 baryogenesis uniqueness); a₀/a₂ Pauli-Villars-invariance (spectral-moment robustness). (Meta: σ₈ channel-keyed canonical-constants hygiene.)
+- **Changed**: Incremental C1/C10 discharge; a₀/a₂ PV-invariance confirmed.
+
+### Session 99: C1 Unblocker + DILUTION-CC Discharge + Research Sweep
+- **Question**: Can the a(t) keystone be unblocked and DILUTION-CC discharged, and what does the literature sweep return?
+- **Answer**: 4 waves / 7 gates. C1 keystone Q-NONRATIO-OBSERVABLE (a(t) unblocker); C10 DILUTION-CC discharge cluster (RELAXATION-CLOSURE, BBN-RELIEF); matter/neutrino (SEESAW-SUMMNU — Σm_ν = 0.0582 eV vs DESI <0.072 PASS; E1 Stage-2 verify); robustness closures (a₀/a₂ L_max=13; κ-alt-observable scan). In parallel: a broad multi-domain literature-review sweep (consolidated) across emergent-spacetime, dark-energy, neutrino-seesaw, spectral-geometry, non-equilibrium-transit, flat-band-geometry, JWST-LRD.
+- **Changed**: DILUTION-CC discharge cluster; Σm_ν = 0.0582 eV PASS window; literature sweep consolidated.
+
+---
+
+## Era XIV: Adjudication Campaign and First Operator-Modulus Closure (Sessions 100a-101)
+
+> **Era boundary justification**: S100 splits into a planned-compute half (100a) and an adjudication half (100b) — a multi-workshop campaign that pins fermion-mass conventions, reconciles the D5 seesaw at zero numeric motion, holds the H₀ magnitude, and (the landmark) closes the framework's FIRST bare-operator modulus (τ=0 → LC-CANONICAL) by the substrate's own action. S101 harvests: H₀ re-pins to 67.40, the Dual-Z₃ generation lever lands.
+
+### Session 100a: Texture-Cluster Pins + H₀ Held
+- **Question**: Can the fermion-mass texture cluster's convention freedom be pinned, and is the published H₀ reproducible?
+- **Answer**: Adjudication campaign (workshops/reviews; no new gate verdicts). Fermion-mass texture-cluster spine (EVOI rank-9b): counting convention PINNED RATIO-NORMALIZED-TRACE-MEAN; heavy-pair ordering τ=(1,0), μ=(1,1), e=(3,0) (two [SIGN] chains); carrier = Reading A (one operator, three charts). §VII.BN Dual-Z₃ Generation Lever c(φ)=1/(1+8cos²φ) → {1/9,1/3,1/3}, heavy/light=3 EXACT, lepton-only. D5 seesaw RECONCILED-INTERNAL-M_R at ZERO numeric motion (the §0 "seesaw" attribution was a citation phantom; one Clifford reality ledger → three tree-zeros; Σm_ν = 0.0582 eV, m_ββ = 3.695 meV stand). H₀ FLAGSHIP Row #81 value HELD — the published 65.4 km/s/Mpc found non-reproducible + sign-inverted; magnitude undecidable; recompute gate S101-H0-PROPER-A2 MANDATORY; spinor factor √16=4 EXACT.
+- **Changed**: Texture-cluster conventions pinned; D5 reconciled zero-motion; H₀ 65.4 held/retired (→ atlas-09).
+
+### Session 100b: τ=0 Operator Canonicity → LC-CANONICAL
+- **Question**: Is the substrate's τ=0 Dirac operator canonically selected, or a second empirical modulus?
+- **Answer**: Cross-session adjudication campaign. τ=0 operator canonicity CLOSED → LC-CANONICAL (t=1/2) under METRIC-COMPLETENESS + SPECTRAL-ACTION TORSION STATIONARITY (7/7 verdict rows Converged, zero dissent) — the framework's FIRST bare-operator modulus closed by the substrate's own action functional (the torsion-dial σ is variationally selected exactly, u′(1/2)=0, where τ_fold's variational selection FAILED at S95). Genesis reading: the a₂ gravity moment exists AT genesis (a₂(0)∝−1/4≠0), continuously connected through the fold. Band-selective Schur-rigidity Stage-0 candidate: Abelian-vs-non-Abelian band geometry symmetry-UNDECIDABLE on any U(2)-invariant base (release condition = isotropy breaking).
+- **Changed**: First bare-operator modulus closed (LC-CANONICAL); a new candidate-grade undecidability wall (invariant-base band geometry).
+
+### Session 101: H₀ Re-Pinned to 67.40
+- **Question**: What is the substrate's H₀ magnitude once the S100a hold is discharged?
+- **Answer**: 8 waves / 44 gates. H₀ re-pinned to 67.40 km/s/Mpc — S101-H0-PROPER-A2 PASS (N=0.999859; H_FW ∝ N_struct^{+1}·a₂^{−1/2}, G_N-ratio anchor-ladder channel with anchor-degeneracy disclosure; 65.4 and 68.77 both retired). S₀-knob: S_0 = τ_fold/T_acoustic = 95/56 EXACT selected. §VII.BN Dual-Z₃ lever registry-landed (W6-2). Texture-cluster computes (block-trace widening, envelope-carrier discriminate, quark [SIGN], neutrino Dirac shape/off-diag); τ=0 LC verification suite; Stage-2 verification cohort.
+- **Changed**: H₀ = 67.40 recovered (G_N-ratio channel; carried as anchor, not a registered zero-param constant); S_0 = 95/56 EXACT; Dual-Z₃ generation lever permanent.
+
+---
+
+## Era XV: Falsifier-Surface Freeze and DR3-Readiness (Sessions 102-103)
+
+> **Era boundary justification**: S102-S103 freeze the observational falsifier surface at v1.0 and timestamp it publicly (Zenodo DOI) ~7 months before DESI DR3, land five §VII STAGE-3 promotions (including the first certified vacuum-sector-structure theorem), route-pin m_H, and author the atlas-09 correction rows — closing the S89-S103 arc on a public pre-registration footing.
+
+### Session 102: Five STAGE-3 Promotions + Falsifier Freeze + DOI
+- **Question**: Which §VII theorems reach permanent, and can the observational surface be frozen and publicly timestamped pre-DR3?
+- **Answer**: 32 gates (16 PASS / 11 INFO / 5 FAIL bookkeeping census). Five §VII STAGE-3-PERMANENT promotions: §VII.BS Normalization Non-Universality (rank-1); §VII.BP H-Parity Drive-Exclusion; §VII.BQ Route-D 4-of-64 KK-Reduction; §VII.BU HM Vacuum-Sector Non-Ergodicity (the framework's FIRST certified vacuum-sector-structure theorem). §VII.BT s=7 LC Genesis Pole-Tower LANDED STAGE-1 (Level-3 HELD Tier-2-dimensionful). m_H route-PINNED KK-threshold DIRECT → m_H = 131.8 GeV (134.0 tree). Falsifier surface FROZEN v1.0 pre-DR3 (bit-exact R_842 reconciliation) → Zenodo DOI 10.5281/zenodo.20618909 published (byte-verified), publicly timestamped ~7 months before DESI DR3. E7 λ²-monotonicity proven exact closed form; Fegan τ=0 keystone PASS at machine ε.
+- **Changed**: Five STAGE-3 theorems (first vacuum-sector-structure theorem); m_H route-pinned 131.8 (supersedes 127.5 Aitken); falsifier surface frozen + public DOI.
+
+### Session 103: atlas-09 Correction Rows + m_H Down-Tag
+- **Question**: Do the standing corrections formalize into the retraction log, and does m_H prose reconcile?
+- **Answer**: 4 gated waves / 15 gates. Registry landings §VII.BV-BY + §VII.BR/§VII.BS patches. atlas-09 formal CORRECTION rows authored (ATLAS09-ROWS PASS): Item-47 α_s transport-degree scale-and-channel separation; Item-48 SF54 frame-robust closure (SF54 retired as comparison object); Item-49 CGWB GW→LSS migration — interpretive-DOF-ledger 1/4→4/4. m_H prose down-tag (capstone §7.1 cells + §7 route-pinned). NNU bundle test + §VII.BT Stage-2 re-anchor + foreign-stack B1/B2 (W2). F_amp exact-edge re-pin + coset2 WZ holonomy (W3). Q28-A₆ COMMIT/WITHDRAW → Row #85 (W5). W4 fermion-mass NOT-DISPATCHABLE (δA construction unpinnable — stays in triage).
+- **Changed**: atlas-09 Items 47/48/49 formalized (α_s scale-channel, SF54 closure, GW→LSS); m_H prose reconciled to route-pin.
+
+---
+
+## Era XVI: §VII Bridge Genus and Registry Maturation (Sessions 104-109)
+
+> **Era boundary justification**: S104-S109 continue the cross-pillar bridge build-out into a genus (§VII.CA-CF) with Stage-2/3 promotions, resolve substrate-commensurability (crystalline at τ_fold), and establish the one structurally HELD sub-result of the span — the §VII.CB Level-3 magnitude channel is un-anchorable on any finite-L truncation. An RH/zeta-geography feed-forward thread opens.
+
+### Session 104: Standing-Precision Closeout
+- **Question**: Do the standing precision CFs close and the geometric invariants land?
+- **Answer**: 5 waves / 14 gates. §VII.AM deeper-truncation pathway CLOSED-PASS at L=11 (envelope-row registry-PASS-eligible). §VII.BS clause-(b) bundle-exhaustiveness upgraded "separate open premise" → result (STAGE-3-PERMANENT unchanged). Geometric invariants (Euler class of the J-doublet + γ₉ sub-curvature); Krylov/log-periodic spectral diagnostics. Transit-shape W4-1 internal-inconsistency FAIL (memory-slope vs n_T-transfer) → routed to S105 adjudication (closes a consistency corridor, informative). mack §7: Row #85 multi-anchor σ-table; NEW Row #86 LIV species-universality null.
+- **Changed**: §VII.AM truncation pathway PASS; §VII.BS exhaustiveness upgraded to result.
+
+### Session 105: §VII.U.2 Parent Permanent + Zeta-Geography Seed
+- **Question**: Does the §VII.U.2 parent reach permanent, and can a substrate trace-formula map the zeta-zero geography?
+- **Answer**: 7 waves / 19 gates. §VII.U.2 PARENT + §VII.AG.1 → STAGE-3-PERMANENT (blind Stage-2 PASS-AND). §VII.BZ landed STAGE-1 (BDI Horizon-Faithfulness). NEW falsifier Row #87 — SN-null structural zero (self-gravity channel; ω_SN_substrate=0.0). Emergent-horizon modular corridor (Stage-1). NEW thread: substrate trace-formula / zeta-zero geography (W7, off-session RH feed-forward) — geometric-side first map + length-spectrum FT; W7-4 FAIL = deformed-incommensurable (Jensen deformation breaks the τ=0 rational lattice).
+- **Changed**: §VII.U.2 parent permanent; Row #87 SN-null; RH/zeta-geography thread opens (seed).
+
+### Session 106: First §VII.C Bridge Cohort + Crystalline Resolution
+- **Question**: Is the substrate crystalline or incommensurable at τ_fold, and does the first §VII.C-genus cohort land?
+- **Answer**: 4 waves / 14 gates. P1 substrate-commensurability = Track A (CRYSTALLINE) at τ_fold — δL-free anisotropy trend κ(G_E)=3 flat across L∈{12,14,16} (the S105 length-spectrum FAIL was a δL measurement artifact). Two joint theorems → STAGE-3-PERMANENT (blind Stage-2): §VII.BZ (BDI Horizon-Faithfulness) + §VII.AD (Δ_0 Localization, proven over generic QQ). Two NEW landings: §VII.CA (metric-without-curvature joint wall) + §VII.CB (Pillar I↔VI↔IV bridge, REGISTRY-PASS, binding L⁻³ envelope). ω'_z modular successor bulk-faithful but carries NO area-clock (the Hawking-dressed-relic corridor closes at the area-clock level). L14-full + L16-partial Friedrich-Bär cache built.
+- **Changed**: Substrate crystalline at τ_fold; first §VII.C bridge cohort (CA/CB) lands; two joint theorems permanent.
+
+### Session 107: DESI-DR3 Decision-Rule + bh-cosmo Down-Tag
+- **Question**: How does the §VII.CB Level-3 magnitude behave, and how is the causal-disconnection claim scoped?
+- **Answer**: 4 waves / 8 gates. §VII.CB Level-3 magnitude-convergence discharge attempt; Stage-2 cohort (K2/K7/K9/K11); BH-cosmo DESI-DR3 w(z) decision-rule (post-checkpoint fold). bh-cosmo capstone down-tag: "sealed causal disconnection" → "asymmetric one-directional Unruh-type acoustic disconnection" (matches S95-W4-1; the S85 white-hole theorem STANDS — a confidence-match, not a retraction). GW amplitude leg stays RETIRED.
+- **Changed**: Causal-disconnection scoped to one-directional (S85 theorem intact); §VII.CB Level-3 discharge in progress.
+
+### Session 108: Four STAGE-3 Promotions + Last Defective Entry Closed
+- **Question**: Do the S107 INFO cohort promote and the registry's last defective bridge entry close?
+- **Answer**: 2 waves / 5 gates. K2 §VII.AC.1 / K7 §VII.X.W4-1 / K9 §VII.X.2-NECESSITY / K11 §VII.AC.4 → STAGE-3-PERMANENT. §VII.AG.1 Element-2 OE-form hygiene closes the registry's LAST genuinely-defective cross-pillar entry (genuinely_defective 1→0). §VII.CB Level-3 magnitude remediation (convergent |λ|⁻⁶ partial-sum 4.27× below g_M). (Meta-lean: promotion/hygiene; the physics is the four STAGE-3 promotions.)
+- **Changed**: Four STAGE-3 promotions; registry defective-entry count → 0.
+
+### Session 109: §VII.CB Level-3 Magnitude Un-Anchorable on Finite-L
+- **Question**: Can the §VII.CB Level-3 magnitude channel be anchored on any finite-L truncation?
+- **Answer**: 1 gate (close-out). VIICB-ZETA-NATIVE-LEVEL-3 → FAIL. Structural boundary: the §VII.CB Level-3 MAGNITUDE channel is un-anchorable on ANY finite-L truncation — the convergent |λ|⁻⁶ form sits below g_M, the ζ-native |λ|⁻³ Mellin form is Weyl-DIVERGENT above g_M, and g_M (= a_2_FW_zeta, residue-subtracted continuation at s=3<d/2=4) lies outside both truncation limit-sets. HELD tag preserved (NOT flipped to SATISFIED). The §VII.CB theorem-STRUCTURE + Level-1 cohomology identity + SIGN-channel Level-3 + binding L⁻³ Level-2 all remain STAGE-3-PERMANENT. Registry reconcile: atlas-07 K-cohort re-stamp (K1-K7,K10,K11 STAGE-1→STAGE-3; only K8 remains candidate).
+- **Changed**: §VII.CB Level-3 magnitude un-anchorable on finite-L (informative structural boundary; HELD, not flipped).
+
+---
+
+## Era XVII: The M_KK-Keystone Campaign (Sessions 110-112)
+
+> **Era boundary justification**: S110-S112 isolate and then permanently close the framework's largest structural residual. The a(t)/effective-Friedmann matter-sector FORM is proven monotone-robust (no bounce; the substrate is a spectral triple, NOT a holonomy-flux algebra), sharpening the §6.3 residual to the M_KK magnitude alone — which S112 proves CANNOT be substrate-anchored (a permanent external-import boundary). This is the load-bearing structural inflection of the S104-S118 arc.
+
+### Session 110: a(t) FORM Monotone-Robust + Investigation Triage
+- **Question**: Is the emergent-Friedmann matter-sector form monotone-robust, and what do the standing investigation claims reconcile to?
+- **Answer**: W0 ~38 hygiene + W1 8 workshops + W2-W4 21 compute. WS-ATFORM (einstein×lqg): the a(t) matter-sector FORM is MONOTONE-robust — the LQC holonomy-analog H²=(8πG/3)ρ(1−ρ/ρ_c) is INADMISSIBLE (operator/parameter/causal), unified as one fact: the substrate is a spectral triple, NOT a holonomy-flux algebra; no matter bounce. The §6.3 residual sharpens to {M_KK magnitude + orthogonal clock leg}. WS-CC-H0: H₀=67.40 and the tracking vacuum COEXIST (shared rank-1 w=M_KK import); BBN ΔN_eff=2.06× is the H-sector's SOLE w-free falsifiable observable (currently FAILS, 2.09× budget). WS-CO-1: compact-object sector STERILE-confirmed. §VII.CD + §VII.CE → STAGE-3-PERMANENT. Retractions (13-finding triage): HK-JACOBSON — the S62 "17-OOM Jacobson" RETRACTED (dimensionally inconsistent, ~54-OOM residual; DILUTION-CC is the sole ≤1-OOM route); HK-CHAOTIC scrambling-corridor RETIRED; HK-NEUTRINO R=27.2 SUPERSEDED by S96 R=9.86 FAIL; HK-PENROSE causal-disconnect → one-directional.
+- **Changed**: a(t) FORM monotone-robust (no bounce; spectral triple ≠ holonomy-flux); §6.3 residual = M_KK magnitude; HK-JACOBSON retracted (→ atlas-09).
+
+### Session 111: §6.3 Half-Closed + Four Obstruction Theorems
+- **Question**: Does the §6.3 clock leg close and the M_KK-magnitude leg resolve?
+- **Answer**: 5 waves / 23 gates. §6.3 now HALF-CLOSED: the clock-triple leg PROVEN-well-posed (CLOCKLOC1 triple-closes Λ=3H² exact; CLOCKLOC2 monotone corridor; CLOCKLOC4 unique clock); the M_KK-magnitude leg FAILS as BARE-IMPORT (M_KK not τ-RG-invariant; CODATA-imported — an external boundary, not closed). Four NEW STAGE-1 theorems: §VII.CG (r=16ε layer-obstruction), §VII.CH (no-holonomy-flux root), §VII.CI (categorical two-conjunct obstruction), §VII.CJ (McLachlan cutoff-robustness exponent). §VII.CF → STAGE-3-PERMANENT (κ-sign parity foreclosure). A_s_FW=1.5367e-08 promoted canonical (impulse-quench Bogoliubov, POINT).
+- **Changed**: §6.3 clock leg PROVEN-well-posed; M_KK-magnitude leg BARE-IMPORT; A_s_FW canonical.
+
+### Session 112: M_KK → CLOSED-PERMANENT External
+- **Question**: Can M_KK be substrate-anchored, or is it a permanent external import?
+- **Answer**: 3 waves / 8 gates. HEADLINE — M_KK magnitude → CLOSED-PERMANENT external. MKK-SUBSTRATE-ANCHOR FAIL: the self-referential-unit no-go proves M_KK cannot be substrate-anchored (both intra-substrate routes closed — modular-twist SCALAR ∧ Connes-distance Casimir-graded ≠ PDG). H0-relief ceiling 6.125% (Row #81.audit; no H₀=67.40 change). §VII.CG/CH/CI/CJ STAGE-1 → STAGE-3-PERMANENT (4× blind Stage-2). §VII.CI categorical upgrade: obstructed-on-two-decidable-axes → categorically-obstructed-for-all-bridge-maps. Atlas D04 C1 dimensional-readout leg hardened ASSUMED → PERMANENT.
+- **Changed**: M_KK external-import boundary CLOSED-PERMANENT — the load-bearing structural closure of the campaign (a proven sharp boundary, sharpening not weakening); §VII.CG-CJ permanent.
+
+---
+
+## Era XVIII: EVOI-Frontier Campaign and External-Import Realization (Sessions 113-115)
+
+> **Era boundary justification**: S113 crystallizes the M_KK closure into a general structure — the framework determines all dimensionless content from zero continuous parameters but imports a small coherent set of dimensionful anchors, each forced by the same rank-1 normalization-non-universality wall (§VII.BS). S114-S115 make the campaign into compute (f·σ₈ landed, K_pivot/τ_fold external, §VII.CK SHAPE-wall genus built).
+
+### Session 113: The Permanent External-Import Set
+- **Question**: Is there a single structure behind the M_KK closure — a boundary between what the substrate derives and what it imports?
+- **Answer**: 7 adversarial workshops (7/7 converged). HEADLINE: the permanent external-import set. Five of seven workshops independently converged on ONE structure — the framework determines ALL dimensionless content from zero continuous parameters, but imports a small coherent set of dimensionful/value anchors, each forced by the same rank-1 normalization-non-universality wall (§VII.BS NNU, O=w·Ô, w=M_KK, topological cause N₃=0) — the honest analog of the SM's unexplained parameters. Imported set: M_KK magnitude, K_pivot magnitude, τ_fold value (van-Hove cusp localizes to ~16%), Leggett-DM mass (rides M_KK, M_DM=5.557·M_KK), fermion SHAPE hierarchy. Anchored-side weight-free falsifiers: σ_SI = 1.299e-63 cm² DM-nucleon NULL (≥26.5 OOM below LZ); f·σ₈ growth-suppression −4.058%, S8_FW=0.8128, Euclid ≈1.534σ — named the #1 next non-CMB falsifiable prediction. The incumbent-discrimination ceiling (BF≈31.62) is now STRUCTURAL, not empirical.
+- **Changed**: External-import partition — the durable structural map of the span (feeds atlas-06 as a boundary-establishment inflection); f·σ₈ named #1 non-CMB falsifier.
+
+### Session 114: Import Realization + §VII.CK SHAPE-Wall
+- **Question**: Do the S113 imports realize in compute, and does the Yukawa SHAPE wall land?
+- **Answer**: 4 waves / 10 gates. f·σ₈-Euclid-7bin landed — JOINT σ-distance 1.95 (DESI-Y5) / 2.96 (Euclid) across 7 spectroscopic z-bins (Row #71). K_pivot: an even (deg-0) transport degree is extractable but TRIVIAL-on-ratio ⇒ K_pivot structural-external on all 3 legs. τ_fold confirmed region-selected by the van-Hove cusp, VALUE conditional. CCRESID residual-3% confirmed a standing q-departure-channel limitation. A_s functional-pluralism-permanent. §VII.CK SHAPE-Branch Homogeneity Obstruction landed STAGE-1 (D1 machine-exact Tr[γ₉D_K^odd]≡0). Row #88 FRIB-L STRUCTURAL NO-GO; Row #79 HK-170×-DM mis-attributed → CLOSED (σ_SI NULL robust).
+- **Changed**: f·σ₈ JOINT 1.95/2.96σ landed; K_pivot external; §VII.CK SHAPE-wall STAGE-1; Row #79 170× re-scoped out of the DM ledger.
+
+### Session 115: §VII.CK D1-D3 Permanent + PMNS Under-Determination
+- **Question**: Does the §VII.CK SHAPE-wall genus reach permanent, and is the lepton PMNS texture forced?
+- **Answer**: 3 waves / 6 gates. §VII.CK D1-D3 → STAGE-3-PERMANENT (6-of-6 blind Stage-2, disjoint reviewer pairs). §VII.CK D4 = INFO — the D4-external CONCLUSION holds but the exclusion MECHANISM is STATUS-unreconciled (commutant/leg-membership vs center-character), forward-routed to S116. Lepton-PMNS forced texture WASHED-OUT (mix_grp 0/4; J_PMNS=0; U_eL under-determined). A_s no-selector evidence widened. (Meta-lean: genus-promotion; the physics is §VII.CK D1-D3 permanence + PMNS under-determination.)
+- **Changed**: §VII.CK SHAPE-wall D1-D3 permanent; lepton PMNS under-determined (texture washed out).
+
+---
+
+## Era XIX: Observational-Falsifier Honesty Pass and A_s Zero-Parameter Closure (Sessions 116-118)
+
+> **Era boundary justification**: S116-S118 re-type the observational surface to derivation-grade honesty (values unchanged, epistemic status corrected), complete the §VII.CK genus unconditionally, pass the flatness test (Ω_k=0), and close the CMB amplitude A_s zero-parameter via the substrate sound speed. The span ends with fewer over-claimed derivations, the same staked numbers, and sharper falsifiers.
+
+### Session 116: Derivation-Grade Honesty Pass
+- **Question**: Which staked predictions are genuinely zero-parameter derivations vs closed-form/imported, without moving any value?
+- **Answer**: 9 in-session waves (82 verdicts) + 13-deliverable review campaign. HEADLINE: the observational surface got more HONEST without getting less FALSIFIABLE — zero staked values moved; five predictions re-typed by status. w₀ = −0.918 → CLOSED-FORM-ONLY (Volovik-partition + effacement Γ_eff=0.99970 thermodynamic identity, NOT D_K-spectral-derived); DESI-DR3 falsifier rests on the clean −0.918 stake. N_e ≥ 3.1 DISSOLVED as an e-fold count (category-C inflation-import); the "gap_to_3.1 liability" REMOVED, obligations transferred (horizon DISCHARGED S85; flatness → a₂-Ω_k=0 OPEN parameter-free; scale-range → TRANSIT-PS-67). J_PMNS=0 → ANSATZ-ARTIFACT-as-derived (the HARD KO-6-forced reading doubly-dead). A_s magnitude: floor + over-production sign + tilt-flatness genuine zero-parameter, absolute normalization NOT a stake-claim. Other: §VII.AV two-axis PARTIAL (secondary-class {APS,CS,BC} FORCED ∧ UV-regulator {ζ,PV,Mellin} SD-OPEN); FWD-C2 L_emp landing PASS.
+- **Changed**: w₀, J_PMNS, A_s, N_e re-typed to honest grades (→ atlas-04/07/09) — all corrections, no value falsification.
+
+### Session 117: §VII.CK Unconditional + Flatness PASS
+- **Question**: Does the §VII.CK genus complete unconditionally, and does the substrate pass the flatness test?
+- **Answer**: 10 waves / 30 gates (14 PASS + 1 review PASS-AND, 3 FAIL, 12 INFO). §VII.CK D4 → STAGE-3-PERMANENT-UNCONDITIONAL (blind PASS-AND on the corrected commutant/leg-membership mechanism) — the SHAPE-Branch Homogeneity Obstruction genus is COMPLETE (D1-D4). Row #93 flatness → PASS (Ω_k=0 EXACT, 0.368σ vs Planck); scale-range → INFO. §VII.AJ.STATE-PROJ → substrate-first (Track-A R_summand=+0.955). w₀ wall re-typed TWO-GRADE (placement THEOREM; value Γ_eff-contingent). Lepton-CP: J_PMNS=0 self-falsification DISSOLVED (φ_88 ⊥ ε_LX moduli INDEPENDENT ⇒ consistent with K7 baryogenesis; φ_CP=π/2 substrate-pinned). A_s leg = 3-member plurality.
+- **Changed**: §VII.CK genus COMPLETE (unconditional); flatness Ω_k=0 PASS (0.368σ).
+
+### Session 118: A_s Amplitude Zero-Parameter Closure
+- **Question**: Does the CMB amplitude A_s close zero-parameter from the substrate sound speed?
+- **Answer**: 4 waves / 8 gates (6 PASS / 1 FAIL / 1 INFO). HEADLINE: A_s amplitude closes ZERO-PARAMETER. AS-CS-SUBSTRATE-FIRST PASS: the substrate sound speed c_s = 0.5685 ∈ the GS-1 window ⇒ A_s = 3.2994e-9 (regime-MARGINAL); NEW canonical c_s_a2curv_GGE_fold = 0.5685294372062244. Greybody-wall FAIL (ALT-GREYBODY-WALL) → WALL-STRENGTHENED-4-CLASS-EMPIRICAL (pre-registered) → carry CF-S119-GREYBODY-NOGO-PROOF. PMNS-joint-admissibility PASS (lepton under-determination survives the NuFIT box). L_emp OQ-4 vacuum-Fermi-pin INFO. 170× DM-mass kinematic discharge on 3 axes (Row #79).
+- **Changed**: A_s amplitude zero-parameter closure via c_s (last CMB-amplitude leg to close; regime-MARGINAL); greybody-filter leg = structural-wall candidate → S119 no-go.
+
+---
+
 ## Probability Trajectory
 
 | Session | Event | Panel | Sagan |
@@ -484,7 +693,7 @@
 | S64 | R-monotonicity, r=0.033 PASS, CC-COMBO FAIL, 8 closures | MIXED | — |
 | S65 | CC budget 102.7 OOM, BCS n_s +0.0206, B/F=0 permanent, 8 CC closures | NEUTRAL | — |
 | S66 | Volovik CC PASS 0.01 OOM, eps_H sign reversal, Leggett DM 0.6% | UP (net) | — |
-| S67 | Spectral functional sole-survivor (Chamseddine-Connes sqrt); Leggett DM lock-down; 8 permanent theorems | UP-tick (structural) | TBD (frozen since S66) |
+| S67 | Spectral functional sole-survivor (Chamseddine-Connes sqrt); Leggett DM lock-down; 8 permanent theorems | UP-tick (structural) | — (see Note; EVOI re-anchored, no longer frozen) |
 | S70 | LEGGETT-MOMENT mass anchor; c_s²=0 algebraic distinction from inflation | UP-tick (structural distinction) | TBD |
 | S74 | Three-route CC convergence on chi_2=0.74 dimensionless; DILUTION-CC PASS scheme-locked | UP (structural) but PASS scheme-locked | TBD |
 | S75 | f_conv closes A_s gap to 0.12 OOM (zero free parameters); BCS-CW n_s=0.9595 + isocurvature n_s=0.9649 | UP (observational + structural) | TBD |
@@ -497,16 +706,26 @@
 | S86 | Rule-file-v3 union; 5 permanent rule files; FIRST cross-pillar bridge (§VII.W); §VII.U.1 + §VII.U.6 Mellin classes | UP (cross-pillar bridge canonical) | TBD |
 | S87 | Algebra-axis orthogonality K=3 MANDATORY; Class 8.3 publication-precision K=4 MANDATORY; §VII.AF.1 LANDED, §VII.AG.1 STAGE-1 | UP (structural-orthogonality wall canonicalized) | TBD |
 | S88 | Cross-pillar-bridge K=3 MANDATORY; Reading-A naming K=3 MANDATORY; §VII.U.2 four-corner LANDED; §VII.AM Universal Lock STAGE-1; layer-functor F TRIPLET-VERIFIED | UP (3 K=3+ MANDATORY methodology promotions) | TBD |
+| S90-S93 | First cross-axis joint theorems STAGE-3 (§VII.AH / §VII.AY); bridge-genus build-out; LQG cross-framework | UP (structural) | — |
+| S95 | Ordered-Veil certified (R_therm=5252, S_ent=0); t*/variational τ-selection corridor closed (τ_fold empirical) | FLAT (closure) | — |
+| S96 | GW flagship RETIRED (walls=0 EXACT; falsifier GW→LSS); seesaw reframe; d=8 cone complete | NEUTRAL (surface sharpens) | — |
+| S97-S99 | Emergent a(t) trajectory PASS (κ-knob); DILUTION-CC n_eff→2 from below; Σm_ν=0.0582 eV PASS | UP (observational) | — |
+| S100b | First bare-operator modulus closed (τ=0 → LC-CANONICAL) | UP (structural) | — |
+| S101 | H₀ re-pin 67.40 (G_N-ratio anchor-ladder); §VII.BN Dual-Z₃ lever; S_0=95/56 EXACT | UP (observational) | — |
+| S102 | 5 §VII STAGE-3 (first vacuum-sector theorem); m_H route-pin 131.8; falsifier surface FROZEN v1.0 + public Zenodo DOI | UP (public pre-registration) | — |
+| S110-S112 | a(t) FORM monotone-robust (no bounce; spectral triple ≠ holonomy-flux); **M_KK → CLOSED-PERMANENT external-import boundary** | UP (boundary sharpens surface) | — |
+| S113 | External-import partition (all dimensionless derived / a coherent dimensionful set imported); f·σ₈ named #1 non-CMB falsifier | UP (framework-defining structure) | — |
+| S116-S118 | Observational honesty pass (values unchanged, epistemic status re-typed); Ω_k=0 PASS (0.368σ); A_s zero-parameter via c_s | NET-STATIONARY (sharper falsifiers) | **~22% headline** |
 
-**Note**: per `feedback_framework-hygiene.md`, the EVOI / probability assessment has been formally frozen since S66 (no Sagan adjudication S67-S88). Directional language ("UP-tick" / "DOWN-tick" / "FLAT" / "PARADIGM-SHIFT") above is descriptive of structural-evidence movement, NOT numerical probability assignment. The atlas-06 packet recommends a S89 Sagan workshop to formally re-anchor the trajectory against post-S66 evidence weighting (Mack-cosmic-bridge + sagan-empiricist co-dispatch).
+**Note**: The trajectory is DESCRIPTIVE of structural-evidence movement, not a per-session numerical assignment (the full re-anchor is atlas-06's domain). Current headline: **~22%** (S69 anchor, stationary-by-cancellation; re-anchored S110 `CF-EVOI-REANCHOR`), with the structural Bayes-factor rising (BF ~25-55) and observational tension rising in opposition — a *net-stationary* figure, NOT a frozen one. The EVOI/probability assessment is **ACTIVELY MAINTAINED through S118** (`sessions/evoi-framework.md`, currency S118). The earlier "2%→52%→2-4%→5-8%, frozen since S66" ladder is HISTORY, superseded by the maintained ~22% headline; the directional tags above describe structural-evidence movement only. The largest single inflection of the S89-S118 arc is the **M_KK external-import boundary (S112)** and its generalization to the external-import partition (S113): a proven SHARP boundary that sharpens the surviving surface rather than weakening it.
 
 ---
 
 ## Cumulative Statistics
 
-- **Proven at machine epsilon**: KO-dim=6, SM quantum numbers, [J,D_K]=0, g1/g2=e^{-2tau}, 67/67 Baptista checks, block-diagonal theorem, BDI class, Pfaffian sgn=-1, CF-9 identity (Berry=NCG=KK), Cauchy-Schwarz spectral moment bound, block-diagonal for ALL compact Lie groups (S61), R-monotonicity (S64), B/F asymmetry=0 (S65), **Frozen Spectrum Theorem (S79 C12, 10^{-113} through fold)**, **Mellin-Dirichlet identity §VII.U.1 (S86, rel_diff = 0e+00 at L_max=12 across 31.9M weighted eigenvalue contributions)**, **Mellin-Strip / Convergence-Cone §VII.U.6 (S86, max_rel_err 8.066e-28)**, **§VII.AJ.partition-stability 4-stratum (2,4,8,6) (S87)**, **§VII.AD Δ_0 localization formula (S88)**, **algebra-axis orthogonality K=3 MANDATORY (S87 W-2)**, **§VII.AF.1.OP-PROJ Pillar III↔IV bridge calibration (S87, 0.0095% F_4 strict at L_max=10; 10× inside L^{-3} envelope)**, **cross-pillar-bridge anatomy K=3 MANDATORY (S88 W4a-17)**
+- **Proven at machine epsilon**: KO-dim=6, SM quantum numbers, [J,D_K]=0, g1/g2=e^{-2tau}, 67/67 Baptista checks, block-diagonal theorem, BDI class, Pfaffian sgn=-1, CF-9 identity (Berry=NCG=KK), Cauchy-Schwarz spectral moment bound, block-diagonal for ALL compact Lie groups (S61), R-monotonicity (S64), B/F asymmetry=0 (S65), **Frozen Spectrum Theorem (S79 C12, 10^{-113} through fold)**, **Mellin-Dirichlet identity §VII.U.1 (S86, rel_diff = 0e+00 at L_max=12 across 31.9M weighted eigenvalue contributions)**, **Mellin-Strip / Convergence-Cone §VII.U.6 (S86, max_rel_err 8.066e-28)**, **§VII.AJ.partition-stability 4-stratum (2,4,8,6) (S87)**, **§VII.AD Δ_0 localization formula (S88)**, **algebra-axis orthogonality K=3 MANDATORY (S87 W-2)**, **§VII.AF.1.OP-PROJ Pillar III↔IV bridge calibration (S87, 0.0095% F_4 strict at L_max=10; 10× inside L^{-3} envelope)**, **cross-pillar-bridge anatomy K=3 MANDATORY (S88 W4a-17)**, **LC-CANONICAL τ=0 operator — first bare-operator modulus, variationally selected u′(1/2)=0 (S100b)**, **M_KK external-import boundary CLOSED-PERMANENT — self-referential-unit no-go (S112)**, **§VII.CK SHAPE-Branch Homogeneity Obstruction genus D1-D4 (S115/S117; D1 machine-exact Tr[γ₉D_K^odd]≡0)**, **§VII.CB Level-1 cohomology identity + binding L⁻³ envelope (S106; Level-3 magnitude un-anchorable on finite-L, S109)**, **§VII.CG-CJ four-obstruction genus incl. categorically-obstructed-for-all-bridge-maps §VII.CI (S112)**, **Ω_k = 0 flatness PASS 0.368σ (S117)**, **A_s zero-parameter via c_s=0.5685 (S118)**, **E7 λ²-monotonicity exact closed form + Fegan τ=0 keystone (S102)**
 - **Major closures (selected, S17-S88)**: V_tree (S17), CW (S18), Casimir (S19-S20), SD balance (S20), BCS at mu=0 (S23), V_spec monotone (S24), spectral action all orders (S26), rolling quintessence (S22d), Friedmann-BCS (S39), HESS full moduli (S40), alpha_s identity (S50), Berry CP (S61 structural), PW spectral route (S61 truncation wall), CC q-theory monotonicity (S62 PERMANENT), BCS sigma stabilization (S62), mixed B-F q-theory T9 (S63), IDG nonlocality T11 (S63), CC Path C (S64), CC Gaudin (S64), B/F asymmetry (S65), Mott transition (S65), theta-vacuum (S65), **anomaly family for n_s (S67 T2 — anomaly family excluded structurally)**, **off-Jensen 5D moduli (S76 W2-J, 35D restoring potential — Mechanism D substantially closed)**, **UV-regulator conflation closure (S75-G3-ZETA-NOT-PHYSICAL, basis for W13 candidate wall)**, **even Seeley-DeWitt parity-blindness (S85 W2-7)**, **bare spectral action no tau equilibrium (S77)**, **WEINBERG-72 / MODULAR-CHIRP-72 / G2-CONSTANCY-72 residual CC channels (S72)**, **PARAMETRIC-GGE-70 (no parametric resonance reheating, three independent obstructions)**
 - **Unconditional chain**: I-1 -> RPA -> Turing -> WALL -> BCS (5/5 PASS, S35)
-- **Paradigm shifts**: Perturbative exhaustion (S20), BCS as only route (S22), Instanton gas (S37), Ordered Veil (S38), Fabric (S41), Geometric LCDM (S42), O-Z propagator (S47-S49), SA-Goldstone mixing (S51), Hubble SA n_s recovery (S62), Filter-independence theorem (S62), Volovik CC reframe (S66), Spectral functional crisis (S66), **A_s problem inverts to suppression (S77)**, **Methodology-discipline pivot (S78)**, **PRU-ZERO infrastructure floor (S81)**, **Workshop-schedule format introduced (S82)**, **A_s_floor = 3.02× Planck as permanent substrate-IC structural wall (S83)**, **Rule-file-v3 union landing (S86)**, **First cross-pillar bridge §VII.W (S86)**, **Algebra-axis orthogonality MANDATORY at K=3 (S87)**, **Cross-pillar-bridge anatomy MANDATORY at K=3 (S88)**, **Layer-functor F TRIPLET-VERIFIED (S88)**, **3-clause Universal Lock Condition unifying BH-horizon + fold-effacement + Page-time (S88)**
-- **Observational predictions (S88-current)**: n_s = 0.9567-0.9649 (1.3-1.9 sigma, scheme-dependent across the surviving sqrt cutoff family); m_H = 127.5-134 GeV (Aitken/tree, 1.9-7% from observed); sigma_8 = 0.799; Omega_DM h² = 0.120 (0.6%); r = 0.024-0.033; CC Scenario B 0.01 OOM (DILUTION-CC PASS, scheme-locked to chi_2 route post-S74); α_s framework re-pinned to +0.00117 (S85 RUNNING-NS-63; current LCDM tension +2.70σ at CMB-S4, was 6.0σ pre-S85); LEGGETT-MOMENT mass anchor Mass_LeggettDM/Δ_BCS = 11.97 (S70); 9-row 3He-B lab-falsifier suite (LAB-FALSIFIER-A 2026-2031 horizon); LiteBIRD n_T = -3.024e-3 STRUCTURAL-FLOOR pre-registered (S85); LISA Companion-null Ω_GW = 8.299e-58 at 2035; DESI DR3 R_842 binding-event-pending (2027 horizon); MUSR cocycle ratio 7.3250 substrate-derived (S86 W-5)
-- **Open (S88-current)**: Spectral functional selection (FUNCTIONAL-SELECT-67, OPEN since S67 — 22-session horizon-stagnation flagged); BBN constraint on Volovik (BBN-VOLOVIK-67, partial PASS at S72; xcorr cross-channel OPEN since S85 W4); transit power spectrum (TRANSIT-PS-67); LEGGETT-GRAV-DECAY-67 (Γ_grav < H_0 survival predicate); TD/LI H̃-divergence (S82 W-1, 4.56-OOM gap on same observable); Stage-2 cross-axis verify for §VII.W-3.LAB STAGE-1-CANDIDATE (S88 W4a-17 carry-forward); Stage-2 verify for §VII.AM Universal Lock Condition (S88 W1b2-65); §VII.AJ.STATE-PROJ NEEDS-COMPUTATION pending S89 landau-path BCS-physics-grounded derivation; W11 §VII.AT slot allocation for Volovik CC Tracking (atlas-05 W11 promotion gap); D3 audit knowledge.db round-trip gap (~37/66 §VII slots missing direct slot-card entries; /weave --update + entity-extractor refinement queued); S52-S60 atlas-01 backfill (pre-existing gap, separate from S67-S88 uplift); W13-149 wave-classification rule validation NOT-STARTED; W13-150 MCP pre-check hook implementation NOT-STARTED; Sagan workshop S89 to re-anchor probability trajectory (frozen since S66 per `feedback_framework-hygiene.md`); PRU 8.4/8.5/8.6 sub-class K=1→K=3 promotion (advisory pending corpus accumulation)
+- **Paradigm shifts**: Perturbative exhaustion (S20), BCS as only route (S22), Instanton gas (S37), Ordered Veil (S38), Fabric (S41), Geometric LCDM (S42), O-Z propagator (S47-S49), SA-Goldstone mixing (S51), Hubble SA n_s recovery (S62), Filter-independence theorem (S62), Volovik CC reframe (S66), Spectral functional crisis (S66), **A_s problem inverts to suppression (S77)**, **Methodology-discipline pivot (S78)**, **PRU-ZERO infrastructure floor (S81)**, **Workshop-schedule format introduced (S82)**, **A_s_floor = 3.02× Planck as permanent substrate-IC structural wall (S83)**, **Rule-file-v3 union landing (S86)**, **First cross-pillar bridge §VII.W (S86)**, **Algebra-axis orthogonality MANDATORY at K=3 (S87)**, **Cross-pillar-bridge anatomy MANDATORY at K=3 (S88)**, **Layer-functor F TRIPLET-VERIFIED (S88)**, **3-clause Universal Lock Condition unifying BH-horizon + fold-effacement + Page-time (S88)**, **Ordered-Veil diabatic-transit-freeze certified (S95)**, **GW flagship retired → falsifier migrates GW→LSS (S96)**, **First bare-operator modulus closed: τ=0 LC-CANONICAL (S100b)**, **M_KK external-import boundary — the substrate's honest SM-parameter analog (S112)**, **The permanent external-import partition: all dimensionless content derived, a coherent dimensionful set imported (S113)**, **Falsifier surface FROZEN v1.0 + public Zenodo DOI pre-DESI-DR3 (S102)**, **Observational derivation-grade honesty pass — values unchanged, epistemic status re-typed (S116)**, **A_s amplitude zero-parameter closure via c_s (S118)**
+- **Observational predictions (S118-current)** — canonical per `computations/_shared/canonical_constants.py` + knowledge MCP (2026-07-01; supersedes the S88-frozen figures): **n_s = 0.9590** committed (√x generating functional `n_s_FW_sqrt_cutoff`; **1.40σ** Planck-alone, **4.73σ** global anchor-ladder, Šidák N=4), with **0.9561** the distinct constant-ε gauge-invariant FWD-C1 scheme (`n_s_framework`, Row #55; kept separate, not merged); **m_H = 131.8 GeV** (`m_H_FW_KK_threshold`, KK-threshold DIRECT route-pin, S102; 134.0 tree) — supersedes the "127.5 Aitken" figure; **H₀ = 67.40** km/s/Mpc (S101 G_N-ratio anchor-ladder re-pin, spinor √16=4 — an anchor value, NOT a registered zero-param constant; 65.4 and 68.77 RETIRED); **CC ρ_vac/ρ_obs = 1.032** (Volovik Scenario B, 0.01 OOM); **w_0 = −0.918 @ 2.13σ** (Volovik-partition + effacement closed form; LIVE-PENDING DESI DR3 — the "χ²=23 / w_0=−0.509" reading RETIRED); **w_a = 0 @ 3.43σ** (triple-locked vs DESI DR2); **A_s = 1.5367e-8** (impulse-quench Bogoliubov, +0.864 OOM) / 3.2994e-9 via c_s (S118) — FUNCTIONAL-PLURALISM-PERMANENT (S114; no longer "excluded"); **σ_8 = 0.799** (Planck-anchor 0.811); **Ω_DM h² = 0.120** (Leggett channel, 0.6% from Planck); **r = 0.0075 / 0.0117** (dual-pathway; supersedes "0.024-0.033"); **Σm_ν = 0.0582 eV** vs DESI <0.072 — PASS (S99); **Ω_k = 0** — PASS (0.368σ, S117); **f·σ₈ growth-suppression −4.058%, S8_FW = 0.8128** — the #1 non-CMB falsifier (JOINT 1.95σ DESI-Y5 / 2.96σ Euclid, S113/S114); **c_s = 0.5685** substrate (`c_s_a2curv_GGE_fold`, S118, regime-MARGINAL); **α_s** carries TWO scale-separated substrate-IS values — substrate-distance running −0.08587 (Mellin residue s=3, inside the BZ) vs Goldstone-pivot running ≈0 at the CMB pivot (S103 Item-47; supersedes the single-label −0.069/+0.00117 readings); Leggett-DM mass anchor M_DM = 5.557·M_KK (S113); 9-row 3He-B lab-falsifier suite (2026-2031 horizon); LiteBIRD n_T structural-floor pre-registered; DESI DR3 R_842 binding-event-pending (2027); MUSR cocycle ratio 7.3250 substrate-derived. **GW/Ω_GW amplitude leg RETIRED** (walls=0 EXACT; falsifier migrated GW→LSS, S96) — the S88 "LISA Companion-null Ω_GW=8.299e-58 at 2035" prediction is REMOVED.
+- **Open / live (S118-current)**: DESI DR3 R_842 w_0/w_a binding-event-pending (2027 horizon; w_0=−0.918 @ 2.13σ, w_a=0 @ 3.43σ staked); **f·σ₈ growth-suppression = #1 non-CMB falsifier** (S8_FW=0.8128, −4.058%; Euclid 7-bin ~1.5σ / DESI-Y5 1.95σ — live, S113/S114); **BBN ΔN_eff = 2.06× currently FAILS** the H-sector w-free budget (2.09×, S110 — a live tension); A_s greybody-filter leg = 4-class structural-wall candidate → CF-S119-GREYBODY-NOGO-PROOF (S118 FAIL); §VII.CB Level-3 magnitude un-anchorable on finite-L (HELD, S109); lepton PMNS texture under-determined + CP-phase leg external-ε_LX (S115/S117); TRANSIT-PS-67 scale-range window (OPEN/CRITICAL, S116); §6.3 emergent-FRW a(t) — clock leg PROVEN-well-posed, residual = the M_KK external-import magnitude (a permanent boundary, NOT a gap; S111/S112); RH/zeta-zero geography feed-forward thread (seed, S105); §VII.AM / §VII.W-3.LAB Stage-2 verifies; S52-S60 atlas-01 per-session backfill (pre-existing gap). **RESOLVED since S88** (no longer open): spectral-functional selection (sqrt, S67; A_s functional-pluralism-permanent, S114), §VII.AJ.STATE-PROJ (→ substrate-first, S117), LEGGETT-GRAV-DECAY-67 (PASSED with explicit margin, S96), M_KK-anchoring (→ CLOSED-PERMANENT external boundary, S112). EVOI/probability **actively maintained through S118** (~22% headline; `sessions/evoi-framework.md` currency S118) — the "frozen since S66" flag is retired.

@@ -1,11 +1,11 @@
-# Atlas D07: Permanent Results Catalog (Updated Through Session 88)
+# Atlas D07: Permanent Results Catalog (Updated Through Session 118)
 
 **Original registry**: S1-S28 (`sessions/permanent-results-registry.md`)
-**Atlas extension**: S29-S88 (this document)
-**Generated**: 2026-03-20 | **Updated**: 2026-05-09 (S67-S88 uplift; +60 §VII slot inventory rows added; Section XVI introduced)
+**Atlas extension**: S29-S118 (this document)
+**Generated**: 2026-03-20 | **Updated**: 2026-07-01 (S89-S118 uplift; S119-current — §XVI.M added, +46 §VII slot rows S89-S118) | prior: 2026-05-09 (S67-S88 uplift; §XVI introduced)
 **Novelty audit**: 2026-03-20 (6 web-research agents) + 2026-05-09 round-trip audit (~37/66 §VII slots flagged for `/weave --update` entity-extractor refinement)
 
-**Honest count (post-S88)**: 10 Level A novel + 5 Level B partial + 25 known/textbook/retracted + 17 permanent theorems (S63 T1-T17) + 18 structural results (S64-S66) + ~60 §VII registry slots S52-S88 (63 PERMANENT + 1 STAGE-1-CANDIDATE + 1 CANDIDATE-PENDING + 2 INFO + 2 CORRIGENDUM + 4 OPEN + 2 DEPRECATED; K-cohort synced to canonical at S109 MAINTAIN — 10 joint theorems STAGE-1-CANDIDATE→STAGE-3-PERMANENT, only K8 §VII.AF.1.STATE-PROJ remains pending) = **~150+ total publishable + STAGE-1-CANDIDATE registry landings**
+**Honest count (post-S118)**: 10 Level A novel + 5 Level B partial + 25 known/textbook/retracted + 17 permanent theorems (S63 T1-T17) + 18 structural results (S64-S66) + ~60 §VII registry slots S52-S88 (63 PERMANENT + 1 STAGE-1-CANDIDATE + 1 CANDIDATE-PENDING + 2 INFO + 2 CORRIGENDUM + 4 OPEN + 2 DEPRECATED; K-cohort synced to canonical at S109 MAINTAIN — 10 joint theorems STAGE-1-CANDIDATE→STAGE-3-PERMANENT, only K8 §VII.AF.1.STATE-PROJ remains pending) + **~46 §VII registry slots S89-S118** (§XVI.M; ~34 STAGE-3-PERMANENT + 8 STAGE-1-CANDIDATE + 3 LANDED-companion + 1 REJECTED [§VII.BF] + 2 supporting machine-ε — the S89-S118 headline is the **intra-pillar obstruction family** proving the SM fermion-mass texture is EXTERNAL to A_K: §VII.BL magnitude / §VII.BV slope-sign / §VII.BX CKM-triality / §VII.BN Dual-Z₃ / §VII.CK SHAPE-unconditional; plus §VII.BK D_K≅D_F SM-recovery, §VII.CG r=16ε-has-no-substrate-image, §VII.BH c_s²=0) = **~195+ total publishable + STAGE-1-CANDIDATE registry landings**
 
 ---
 
@@ -360,7 +360,7 @@ K(tau) = (23/96)e^{-8tau} - e^{-5tau} + (5/16)e^{-4tau} + (11/6)e^{-2tau} - (3/2
 | HESS-40 | All 22 eigenvalues positive (no trapping) | 40 |
 | CUTOFF-SA-37 | Structural monotonicity | 37 |
 | NS-TILT-42 | n_s = 0.746 (52 sigma) | 42 |
-| ALPHA-S-BAYES-49 | alpha_s = -0.069 (6 sigma from Planck) | 49 |
+| ALPHA-S-BAYES-49 | alpha_s = -0.069 (6 sigma from Planck) — SUPERSEDED by the S92 scale-separated pair (Goldstone-pivot ~0 CMB-channel / substrate-distance -0.0858728 BZ) | 49 |
 | SA-GOLDSTONE-MIXING-51 | FAIL at K_pivot = 2.0 (convex combination) | 51 |
 
 ---
@@ -623,7 +623,7 @@ After Session 51 (Anderson-Higgs):       2-4%
 | r (tensor-to-scalar) | 3.86e-10 | Unobservable (9.3e7x below BICEP) | 44 |
 | sigma_8 | 0.799 | VIABLE (between Planck 0.811 and lensing ~0.77) | 50 |
 | n_s | 0.965 achievable at K < K* = 0.087 | CONDITIONAL on K_pivot mapping (S52 master gate) | 51 |
-| alpha_s | n_s^2 - 1 = -0.069 (O-Z), or ~-0.035 (SA mixing) | O-Z at 6 sigma from Planck; SA mixing within window | 49-51 |
+| alpha_s | n_s^2 - 1 = -0.069 (O-Z), or ~-0.035 (SA mixing) — SUPERSEDED by S92 scale-separated pair (pivot ~0 / substrate -0.0858728) | O-Z at 6 sigma from Planck; SA mixing within window | 49-51 |
 | f_NL | 0.014 | CONSISTENT with Planck (far below bound) | 42 |
 
 ---
@@ -642,9 +642,9 @@ After Session 51 (Anderson-Higgs):       2-4%
 
 ---
 
-## XVI. S52-S88 §VII Registry Slot Inventory (NEW)
+## XVI. S52-S118 §VII Registry Slot Inventory
 
-> **Provenance**: Section added 2026-05-09 per S88 atlas-uplift workshop. The S52-S88 era added ~60 substantive registry landings to `sessions/permanent-results-registry.md` under §VII slot identifiers. This section catalogs them with status, author(s), and substrate-IS framing per `phononic-framing.md` §"IS Space, Not IN Space".
+> **Provenance**: Section added 2026-05-09 per S88 atlas-uplift workshop (S52-S88 rows, §XVI.A–L). **Extended 2026-07-01 (S89-S118 uplift, §XVI.M)**: the S89-S118 era added ~46 substantive registry landings (`sessions/permanent-results-registry.md` slots §VII.AU → §VII.CK). This section catalogs all S52-S118 landings with status, author(s), and substrate-IS framing per `phononic-framing.md` §"IS Space, Not IN Space". The 8 S86-S88 slots STAGE-3-promoted during S89-S118 (§VII.AH/W-3.LAB/U.2/AG.1/AD/X.W4-1/X.2-NECESSITY/AM) already carry their STAGE-3 tags below (synced S109 MAINTAIN).
 
 ### Status legend
 
@@ -748,6 +748,73 @@ The cross-pillar bridge corpus per `cross-pillar-bridge-anatomy.md` MANDATORY at
 | §VII.AS | Geometric-Resummation Closure | S88 W18 W6a-51 | gen-physicist | PERMANENT |
 | §VIII.METHODOLOGY-FORWARD-BACKWARD-CLOSURE | First fb_pair(M) construction at S86 W-7 (per `epistemic-discipline.md §"Forward-Backward Inference Closure"`) | S86 W-7 | gen-physicist | PERMANENT (methodology-floor) |
 
+### XVI.M. S89–S118 §VII landings (uplift 2026-07-01)
+
+> **S89-S118 headline (physics-foreground).** The dominant structural development of this era is the **intra-pillar obstruction family**: five independent theorems prove the Standard-Model fermion-mass texture is *external* to the substrate algebra A_K = ℂ⊕ℍ⊕M₃(ℂ), all by the same Skolem–Noether multiplicity-scalar / commutant leg-membership mechanism — §VII.BL (Yukawa **MAGNITUDE**), §VII.BV (crossing-slope **SIGN**), §VII.BX (CKM triality selection rule), §VII.BN (Dual-Z₃ generation lever, exact), §VII.CK (fermion-mass **SHAPE**, STAGE-3-PERMANENT-UNCONDITIONAL at S117). The mass/mixing texture lives in the external ε_LX / crossed-product SU(3)_R channel, never in A_K. Adjacent landmark landings: §VII.BK (D_K ≅ D_F controlled recovery of the Connes–Chamseddine SM finite geometry), §VII.CG (the inflationary r=16ε consistency relation has **no substrate image** — the clock is a Level-2 modulus τ, not a Level-1 field), §VII.BH (topological sound-speed zero c_s²=0), §VII.CB (Pillar I↔VI↔IV EMT convergence to the a₂-emergent metric g_M, binding L⁻³). Pinned prediction values these results sit beside (canonical per contract §6): **m_H = 131.8 GeV** (KK-threshold, S102); **n_s = 0.9590** committed (√x) and **0.9561** (FWD-C1 constant-ε scheme, the §VII.AU Level-3 anchor); **w_0 = −0.918** @ 2.13σ; **A_s = 1.5367e-8** (functional-pluralism-permanent, S114); **n_PBH = 7.276e-23 m⁻³** (§VII.AX); **H₀ = 67.40** (anchor-ladder, NOT a registered zero-parameter constant).
+
+#### XVI.M.1. S89–S118 cross-pillar bridges (substrate-IS → laboratory-IN)
+
+| §VII slot | Theorem name | Landing session | Author(s) | Status |
+|:----------|:-------------|:----------------|:----------|:-------|
+| §VII.AU.OP-PROJ | **FWD-C1 Pillar I↔II bridge**: substrate spectral-action tilt → CMB n_s; regulator-invariant asymptotic α = −3; Level-3 anchor = n_s FWD-C1 constant-ε scheme 0.9561 | S89 W7c (→3 S93 W2-2) | connes (substrate) + mack sole-writer | **STAGE-3-PERMANENT** (CORRIDOR-CONFIRMED-NUMERICAL-DEFERRED; Stage-2 PASS-AND S92 §W5-4 ∧ W5-5) |
+| §VII.AV.OP-PROJ | FWD-C1 Cell-II companion — trace-residue OP-side of the α_s CC-residue bridge (STRUCTURAL-ORTHOGONAL-COMPANION, NOT co-primary) | S93 W3-1 (→3 S94 W8-1) | mack sole-writer | **STAGE-3-PERMANENT** (S116 W4: two-axis PARTIAL — secondary-class {APS,CS,BC} axis FORCED, UV-regulator {ζ,PV,Mellin} axis **SD-OPEN** via a₀-counterterm survival, §VII.AV L_emp) |
+| §VII.AV.STATE-PROJ | FWD-C1 Cell-IV companion — K-window log-derivative STATE-side | S93 W3-1 (→3 S93 W3-6) | mack sole-writer | **STAGE-3-PERMANENT** |
+| §VII.AX.OP-PROJ | **PBH band-edge PREDICTION n_PBH = 7.276e-23 m⁻³** (substrate-distance-2 pole s=4, operator-projection; Tier-2-dimensionful anchor) | S91 W5-4 (→3) | mack sole-writer + connes co-signer | **STAGE-3-PERMANENT** |
+| §VII.AX.STATE-PROJ | Cell-IV state-pair PBH occupation functional ⟨ψ_GGE-PBH n_a^PBH ψ⟩ (companion) | S93 W4-4 | mack + connes | LANDED (companion) |
+| §VII.AX.MULTI-PIN-ATLAS | s=4 χ' restriction multi-pin regulator atlas under FULL CM-1995 §III.4 | S93 | mack | **STAGE-3-PERMANENT** |
+| §VII.AY.OP-PROJ | Hochschild-Künneth Morita-invariance structural theorem (3-axis Stage-2 PASS-AND, rel_tol 1e-5) | S91 W8-6 (→3 S93 W5-2) | mack sole-writer | **STAGE-3-PERMANENT** |
+| §VII.AZ.OP-PROJ | Cross-morphism M_3(ℂ)-kernel universality (Reading-A wins) | S90 W-3 / S91 W8-3 | mack sole-writer | STAGE-1-CANDIDATE |
+| §VII.BA | Wodzicki-BCS bridge theorem | S91 W9-9 / W1-14 | mack sole-writer + volovik | STAGE-1-CANDIDATE |
+| §VII.BB | HH¹ cocycle norm at substrate-distance-3 pole s=5 on M_3(ℂ) Peter-Weyl block; FIRST-EXTRACTION discharged (empirical Level-3 present) | S92 W9-8 | mack sole-writer | **STAGE-3-PERMANENT** |
+| §VII.BC.OP-PROJ | Wedderburn-image relation dim_HS = Σ rankᵢ²·dim(Dᵢ) on A_K = ℂ⊕ℍ⊕M₃(ℂ) | S91 W2 CF#2 (S92 land) | mack sole-writer | STAGE-1-CANDIDATE |
+| §VII.BD.OP-PROJ | Pillar-2 (Δ_B/Δ_A)^p cocycle-cancellation structural theorem (3He inheritance) | S91 W6 EMRG-3 (S92 land) | mack sole-writer | STAGE-1-CANDIDATE |
+| §VII.BE | FWD-C4 Pati-Salam cross-pillar bridge candidate | S91 W7 EMRG (S92 land) | mack sole-writer | STAGE-1-CANDIDATE |
+| §VII.BG | **α_s T5** direct Connes-Karoubi K₀-pairing transport bridge at the a_4 Yang-Mills home pole s=2 | S94 W1-3 (→3 S95 W1-1) | mack sole-writer + connes (substrate) | **STAGE-3-PERMANENT** |
+| §VII.BH | **Topological sound-speed zero c_s²=0** (Kasparov-product-factorization bridge; Layer-1 / topology; π₀(U(1))=0) | S96 W7-8 | van-den-dungen-bridge-theorist | LANDED (Layer-1 topology) |
+| §VII.BI.OP-PROJ | ONE-SIDED partial **a_2/area-law** bridge: substrate spectral-monotonicity → horizon S = A/4G_N (2 horizon types); PRIMARY + INDEPENDENT-CROSS-CHECK | S96 W-3 | string-theory (substrate) + mack sole-writer | STAGE-1-CANDIDATE |
+| §VII.BK | **D_K ≅ D_F** controlled low-energy recovery of the Connes–Chamseddine SM finite geometry (slot rerouted BH→BK per registry-write hygiene) | S97 W5-1 (→3 S97) | connes (substrate) | **STAGE-3-PERMANENT** |
+| §VII.BT | s=7 Pillar-VII LC (Levi-Civita) genesis pole-tower cross-pillar bridge; a_2^{Mellin}(LC) = −0.01259583 ≠ 0 (gravity moment at τ=0 genesis) | S103 (→3 W2-2) | cross-axis joint (registry) | **STAGE-3-PERMANENT** |
+| §VII.CB | **Pillar I↔VI↔IV bridge**: Type-IV core EMT Tr_{M₂}(P_a₂·T^{(IV)}) → lab a₂-emergent metric g_M under HKR∘Connes-Karoubi; BINDING L⁻³; Level-3 7.5e-9 < Level-2 1e-3 (REGISTRY-PASS) | S106 W3-3 | van-den-dungen + transit-dynamics; mack sole-writer | **STAGE-3-PERMANENT** |
+| §VII.CF | **κ-sign-lock ∧ Wodzicki-parity joint foreclosure**: no substrate-natural transport lands an odd-mass-dim observable's pivot band knob-free (LRD-T [3500,6500]K unreachable; only admissible transport = sign-locked M_KK¹ scale leg) | S110 W4 (→3 S111 W5) | connes × mack (cross-axis joint) | **STAGE-3-PERMANENT** |
+
+#### XVI.M.2. S89–S118 intra-pillar obstruction / structural theorems (substrate self-statements)
+
+| §VII slot | Theorem name | Landing session | Author(s) | Status |
+|:----------|:-------------|:----------------|:----------|:-------|
+| §VII.AW.OP-PROJ | **Substrate-clock-uniqueness theorem** (the emergent time is unique) | S90 W2 CF-19 (→3 2026-05-24) | mack sole-writer | **STAGE-3-PERMANENT** |
+| §VII.BF | SU(3)-coloured chirality spectral triple (γ_F^c per Connes-Marcolli 2008 §11) — **REJECTED S91 W7-2b on substrate-IS grounds** (a closed door; slot renamed AW→BF at S93 W5-6) | S90 W7 CF-45 | mack sole-writer | **REJECTED** (STAGE-0; closed door — see atlas-09) |
+| §VII.BJ | **Superalgebra-extension obstruction**: no nontrivial Z/2-graded superalgebra extension of A_K exists (exact, L-independent) | S96 S-1 | connes (substrate) + mack sole-writer | STAGE-1-CANDIDATE |
+| §VII.BL | **Generation-blindness obstruction**: the Yukawa hierarchy is NOT deliverable by any A_K-built form (+ NON-PROMOTION-BY-HELD-NUMBER overlay, sign-lock differentia) | S97 W-2 | connes | **STAGE-3-PERMANENT** |
+| §VII.BM | **ε_LX foam-protection** exact operator identity [H_foam(N), ε_LX]=0 ∀N in the Wheeler-√N class | S100a W4-14 (S101 W6-1 land) | gen-physicist | STRUCTURAL-THEOREM (PERMANENT) |
+| §VII.BN | **Dual-Z₃ generation lever** c(φ) = 1/(1+8cos²φ) → {1/9,1/3,1/3}, heavy/light = 3 EXACT, structurally lepton-only (quark ∂Ω/∂φ ≡ 0) | S100a W2-1 (S101 W6-2 land) | gen-physicist | EXACT-RESULT (PERMANENT) |
+| §VII.BO.STATE-PROJ | Commutative-channel cure theorem + star-metric closed forms + generation resolution in the state-pair metric | S101 (→3 W7-1) | cross-axis joint (registry) | **STAGE-3-PERMANENT** |
+| §VII.BP | **H-parity-drive-exclusion** (fixed-backbone q-channel) — resonance DEAD | S102 (→3 W2-1) | cross-axis joint (registry) | **STAGE-3-PERMANENT** |
+| §VII.BQ | Route-D **4-of-64 surviving-block KK-reduction** lemma: M_phys/M_spec = √(4/64) = 1/4 | S101 W6-5 (→3 S102 W2-2) | connes + kaluza-klein; gen-physicist land | **STAGE-3-PERMANENT** |
+| §VII.BR | Band-selective Schur rigidity + symmetry-undecidability of Abelian-vs-non-Abelian band geometry on G-invariant deformation families | S101 W6-6 (→3 W7) | gen-physicist | **STAGE-3-PERMANENT** |
+| §VII.BS | **Normalization non-universality** (N₃=0 corollary, rank-1): substrate fixes the conformal class + all dimensionless dynamical shapes, NOT the dimensional metric normalization | S102 (→3 W1-4) | cross-axis joint (registry) | **STAGE-3-PERMANENT** |
+| §VII.BU | **Hilsum-Moscovici vacuum-sector non-ergodicity** certification (framework's FIRST certified vacuum-sector-structure theorem; HM 2412.00628 Def 6.10 rank[P_inv]=1 VIOLATED, regime-free) | S102 W6-3 | mack sole-writer | **STAGE-3-PERMANENT** (single-gate analytic certification) |
+| §VII.BV | **No G-invariant sign-changing slope handle**: the joint quark crossing is NOT deliverable by any A_K-built per-generation slope kernel (crossing-slope-SIGN axis) | S103 W1-1 | connes + kaluza-klein; gen-physicist land | **STAGE-3-PERMANENT** |
+| §VII.BW | **λ²-moment monotonicity** closed form dM₂/dτ = d·[C₂·gC(τ)+gS(τ)] > 0 ∀τ>0, L-uniform (the exflationary spectral-complexification gradient off the cold bi-invariant point) | S103 W1-2 | connes; gen-physicist land | STAGE-1-CANDIDATE |
+| §VII.BX | **CKM triality-masked texture**: inter-generation mixing is an SU(3) center-character selection rule — gen3↔gen2 & gen3↔gen1 vanish EXACTLY (CG-inadmissible), Cabibbo gen2↔gen1 is the SOLE admissible channel | S103 W1-3 | connes + kaluza-klein; gen-physicist land | **STAGE-3-PERMANENT** |
+| §VII.BY | Second-order **isotropy-BREAKING of the B2 (1,1)-fiber band**: U(2) isotropy releases via a frame-invariant non-Abelian Wilczek–Zee holonomy at O(ε²) (Release-Condition-R companion of §VII.BR Corollary U) | S103 W1-5 | berry-geometric-phase; gen-physicist land | **STAGE-3-PERMANENT** |
+| §VII.BZ | **BDI horizon-faithfulness protection** on the emergent crossed product A_hor = A_K ⋊_{σ^ω} ℝ | S106 W4-1 (→3) | cross-axis joint (blind Stage-2 vdd × landau) | **STAGE-3-PERMANENT** (K12 in the joint-theorem cohort) |
+| §VII.CA | **Metric-without-curvature joint wall**: lowest J/BDI-real Dirac doublet eigenbundle is TRIVIAL (Chern c₁=0 ∧ Euler e₂=0 ∧ graded-Ω A^WZ=0) while band metric non-degenerate g≈982.5 (12-invariant triviality chain; consolidates S96 Chern=0, S105 Euler=0, S105 A^WZ=0) | S106 W3-1 | berry-geometric-phase | **STAGE-3-PERMANENT** |
+| §VII.CC | Single-τ-slice scoped-PAIR: mean-action-SHAPE crystalline ∧ length-spectrum incommensurate-**Poisson** (Level-1, τ_fold=0.19) | S106 W1 | spectral-geometer × kitaev; mack sole-writer | LANDED (Level-1 scoped-pair) |
+| §VII.CD | **BdG-dressing K-homology rigidity** | S110 W4b (→3; S69 origin) | Stage-2 PASS-AND (registry) | **STAGE-3-PERMANENT** |
+| §VII.CE | **dq/da two-q-distinctness** theorem (sharpens S95-W4-4) | S110 W4b (→3; inv-12 W3-3) | Stage-2 PASS-AND (registry) | **STAGE-3-PERMANENT** |
+| §VII.CG | **r=16ε layer-obstruction**: the inflationary single-field consistency relation has NO substrate image — the clock is a Level-2 deformation modulus τ, not a Level-1 field (exact-solution form of the 5-argument VdD-Hawking inapplicability) | S111 W1-4 (→3 S112 W2) | schwarzschild-penrose land; einstein × transit-dynamics (Stage-2) | **STAGE-3-PERMANENT** |
+| §VII.CH | **Spectral-triple-no-holonomy-flux root**: the three LQC-matter-ceiling inadmissibility grounds (operator/parameter/causal) are three projections of the single fact that a spectral triple has no holonomy-flux sector | S112 W2 (→3) | cross-axis joint (Stage-2, registry) | **STAGE-3-PERMANENT** |
+| §VII.CI | **Categorical two-conjunct obstruction** for the χ inheritance morphism: χ:A_K=ℂ⊕ℍ⊕M₃(ℂ)→M₂(ℂ) is the Connes-Karoubi DELETION for ALL constructions/bridges, NOT the Kasparov shriek π_!^{CP²} of SU(3)→CP² | S112 W2 (→3) | cross-axis joint (Stage-2, registry) | **STAGE-3-PERMANENT** |
+| §VII.CJ | **McLachlan tongue-half-width** cutoff-robustness scaling-exponent: n-th Mathieu instability-tongue half-width ~ q^n (exponent n registered; prefactors diagnostic-only) ⇒ no L_max≥12 extension reopens the §VII.BP DEAD resonance | S111 W5-4 (→3 S112 W2) | transit-dynamics | **STAGE-3-PERMANENT** |
+| §VII.CK | **SHAPE-branch homogeneity obstruction**: on (A_K,H_K,D_K,γ₉,J), NO G-invariant functional in {A_K-built ∪ Casimir-graded ∪ γ₉-traced ∪ right-regular} supplies a sign-changing per-generation SHAPE — the fermion-mass SHAPE texture is EXTERNAL (the ε_LX channel that also carries the §VII.BL magnitude). D1 Tr[γ₉D_K^odd]≡0 machine-exact; D4 right-regular closed-external-as-a-coupling | S114 W3-3 (→3 S115 W1-1; **UNCONDITIONAL** S117 W2-1) | gen-physicist (registration); connes/paasch (Stage-0 workshop) | **STAGE-3-PERMANENT-UNCONDITIONAL** |
+
+#### XVI.M.3. S89–S118 supporting machine-ε structural results (non-§VII; feed §VII.CA)
+
+| result | statement | landing session | author | status |
+|:-------|:----------|:----------------|:-------|:-------|
+| S105-EULER-DEFECT-MASKED | graded-Euler defect masked = 4.51e-17; Pf²=det residual 1.78e-14 (band-metric eigenbundle Euler e₂=0) | S105 W3-1 | (compute) | PROVEN (feeds §VII.CA) |
+| S105-AWZ-ANALYTIC | graded-Ω A^WZ analytic = 1.284e-17 < 1e-12; chirality-frac EXACTLY 1.0 (Wilczek–Zee curvature vanishes) | S105 W3-2 | (compute) | PROVEN (feeds §VII.CA) |
+
 ### XVI.H. Promotion-gap & deprecated slots
 
 | §VII slot | Status | Notes |
@@ -757,7 +824,9 @@ The cross-pillar bridge corpus per `cross-pillar-bridge-anatomy.md` MANDATORY at
 | §VII.P → §VII.AF.2 v2 | DEPRECATED (S86 W9 C24 HP^0-content-distinct attempt superseded by §VII.AF.2 HP^1-content-distinct at S87 W5-4) | atlas-09 Item 39 cross-link |
 | §VII.Y → §VII.S.C-eta + §VII.S.C-theta | DEPRECATED placeholder; sub-rows relocated to §VII.S parent on 2026-04-26 | Registry hygiene |
 
-### XVI.I. Aggregate (S52-S88)
+### XVI.I. Aggregate (S52-S118)
+
+**S52-S88 sub-count** (unchanged; the S89-S118 delta + grand total follow):
 
 | Status class | Count | Notes |
 |:------------|:-----:|:------|
@@ -774,6 +843,18 @@ The cross-pillar bridge corpus per `cross-pillar-bridge-anatomy.md` MANDATORY at
 **By landing session**: S83 = 2; S84 = 4; S85 = 5; S86 ≈ 28; S87 ≈ 12; **S88 ≈ 25**.
 
 **By PRIMARY author**: connes-ncg-theorist 19; lizzi-spectral-functional-theorist 8; volovik-superfluid-universe-theorist 4; gen-physicist 5; knowledge-weaver 2; hawking-theorist 1; orchestrator-direct ~4; mack-cosmic-bridge sole-writer ~9 (technical content co-authored per individual rows).
+
+**S89-S118 delta (§XVI.M; uplift 2026-07-01)**:
+
+| Status class | Count (S89-S118) | Slots |
+|:------------|:----------------:|:------|
+| STAGE-3-PERMANENT (incl. UNCONDITIONAL / PERMANENT-structural / EXACT-RESULT) | ~34 | AU, AV.OP, AV.STATE, AX.OP, AX.MULTI, AY, AW, BB, BG, BK, BL, BM, BN, BO, BP, BQ, BR, BS, BT, BU, BV, BX, BY, BZ, CA, CB, CD, CE, CF, CG, CH, CI, CJ, CK |
+| STAGE-1-CANDIDATE (Stage-2 pending) | 8 | AZ, BA, BC, BD, BE, BI, BJ, BW |
+| LANDED (companion / Layer-1 / scoped-pair; not STAGE-3-graded) | 3 | AX.STATE, BH, CC |
+| REJECTED (closed door) | 1 | §VII.BF (S91 W7-2b; atlas-09) |
+| Supporting machine-ε (non-§VII) | 2 | S105-EULER-DEFECT-MASKED, S105-AWZ-ANALYTIC |
+
+**Grand total (S52-S118)**: ~112 distinct §VII slot rows in this inventory (66 S52-S88 + ~46 S89-S118) + 2 supporting machine-ε; of these **~97 STAGE-3-PERMANENT / PERMANENT-structural**, **9 STAGE-1-CANDIDATE**, 1 CANDIDATE-PENDING (§VII.AB.8), 1 REJECTED (§VII.BF), plus the S52-S88 INFO/CORRIGENDUM/OPEN/DEPRECATED rows unchanged. The S89-S118 promotion cadence is heavy: 34 of ~46 new slots reached STAGE-3 within the window (many same-session Stage-1→Stage-2→Stage-3 via `joint-theorem-promotion.md`).
 
 ### XVI.J. D3 audit knowledge.db round-trip status (S88-current)
 
